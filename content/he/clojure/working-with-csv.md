@@ -46,5 +46,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 בקישורים המצורפים תוכלו למצוא ספריות נוספות לעיבוד נתוני CSV ב-Clojure ומדריכים נוספים לעבודה עם פורמט זה.
 
 - [Data CSV](https://github.com/clojure/data.csv)
-- [Webbiv](https://github.com/yogthos/webbiv)
 - [איך לעבוד עם CSV ב-Clojure](https://elbenshira.medium.com/how-to-work-with-csv-in-clojure-901860d8c0a8)

@@ -73,5 +73,4 @@ YAML实现的方式是通过将YAML文本解析为Map对象来读取和操作数
 ## 相关链接：
 
 - [YAML官方网站](https://yaml.org/)
-- [Yaml库文档](https://github.com/snakeyaml-engine/snakeyaml)
 - [Yaml入门指南](https://www.baeldung.com/java-snake-yaml)

@@ -42,8 +42,5 @@ La mise en œuvre de l'interpolation de chaînes est basée sur le protocole `St
 
 Pour une exploration plus profonde de l'interpolation de chaînes en Swift, consultez ces ressources:
 
-- "La syntaxe de Swift: L'interpolation de chaîne" du blog [SwiftBysundell](https://www.swiftbysundell.com/basics/string-interpolation/)
   
 - "L'interpolation de chaîne" dans le [Swift Programming Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-
-- "StringInterpolation" dans la [Swift Standard Library](https://developer.apple.com/documentation/swift/stringinterpolation)

@@ -49,6 +49,4 @@ Gleam에서 command line arguments는 `main` 함수의 `args` 매개변수를 �
 
 ## 참고 자료:
 
-- Gleam Documentation: [Command Line Arguments](https://gleam.run/book/tour/loops.html)
 - Stackoverflow: [What are command line arguments in programming?](https://stackoverflow.com/questions/21503865/what-are-command-line-arguments-in-programming)
-- Command Line Arguments in Unix and Shell Programming: [Environment Variables](https://www.geeksforgeeks.org/environment-variables-unix/)

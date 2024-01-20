@@ -39,5 +39,3 @@ int main() {
 
 ## 参阅资料
 - C语言教程：[链接](http://c.biancheng.net/view/2236.html)
-- C语言 printf 函数用法： [链接](http://c.biancheng.net/cpp/html/3028.html)
-- C语言调试技巧：[链接](http://c.biancheng.net/view/5643.html)

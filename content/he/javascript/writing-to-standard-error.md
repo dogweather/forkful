@@ -33,4 +33,3 @@ console.error('התחילה ריצה שגיאה: מפתח המשתמש לא נמ
 ## ראה גם
 
 - [המדריך המלא של דוקומנציה בנושא כתיבת שגיאות סטנדרטיות בג'אווהסקריפט](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [פתרונות אלטרנטיביים לניהול שגיאות בקוד](https://www.codementor.io/blog/best-practices-error-handling-javascript-du1086j1a)

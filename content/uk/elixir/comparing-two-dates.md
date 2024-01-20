@@ -42,4 +42,3 @@ IO.puts rezultat  # Вивід: :lt
 
 - [Elixir School: Dates and times](https://elixirschool.com/en/lessons/basics/date_time/)
 - [Official Elixir Documentation: Date](https://hexdocs.pm/elixir/Date.html)
-- [Pragmatic Studio: Working with Dates and Times in Elixir](https://pragmaticstudio.com/tutorials/elixir-dates-times-and-time-zones)

@@ -43,7 +43,6 @@ Questo produrrà l'output:
 Se sei interessato ad approfondire, ecco alcuni link utili:
 
 - [String - Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
-- [Capitalizing Strings in Swift - Blog post](https://nshipster.com/string/)
 - [Manipulating Strings in Swift - Swift by Sundell](https://www.swiftbysundell.com/basics/strings/) 
 
 Bene, ora sai come capitalizzare le stringhe in Swift! Ricordati sempre di utilizzare questi strumenti per migliorare la leggibilità del tuo codice. Buona programmazione!

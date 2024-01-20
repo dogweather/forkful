@@ -37,4 +37,3 @@ Rustの一時ファイル作成に関連する詳細な情報をお求めの方�
 
 - [tempfile - Github](https://github.com/Stebalien/tempfile)
 - [Rust Documentation](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Rustのファイル操作まとめ](http://rust-lang.github.com/book/ch12-02-reading-a-file.html)

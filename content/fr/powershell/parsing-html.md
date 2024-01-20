@@ -39,6 +39,5 @@ Il y a plusieurs alternatives à PowerShell pour parser HTML, notamment Beautifu
 La méthode InvokeScript exécute un bloc de script, le rendant idéal pour interagir avec une page web en utilisant son DOM.
 
 ## À voir également
-- [Window.IHTMLDocument2_write method - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms633519(v=vs.85))
 - [BeautifulSoup Python Library](https://www.crummy.com/software/BeautifulSoup/)
 - [Cheerio Node.js Library](https://cheerio.js.org)

@@ -55,5 +55,3 @@ HTTPリクエストの送信は、1980年代からweb通信の基礎となって
 - [HttpClient Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 
 - [HTTP (Wikipedia)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-
-- [Making HTTP requests using HttpClient (Microsoft Learn)](https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/http)

@@ -50,6 +50,5 @@ fun main() {
 *Implementeringsdetaljer:* Funktionen `LocalDate.now()` i Kotlin använder i grunden systemets standardtidszon för att bestämma det aktuella datumet.
  
 ## Se Även
-- Officiell Kotlin-dokumentation: [LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html) och [LocalDateTime](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date-time/index.html)
 - Kotlin-handbok: [Arbete med datum och tid i Kotlin](https://play.kotlinlang.org/hands-on/Working%20with%20Dates%20and%20Times/01_Introduction)
 - Stack Overflow: [Hämta aktuellt datum och tid i Kotlin](https://stackoverflow.com/questions/48741298/get-current-date-time-in-kotlin)

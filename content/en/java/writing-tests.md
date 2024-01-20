@@ -50,6 +50,4 @@ When writing tests, it's essential to have a good understanding of the code you'
 To learn more about writing tests in Java, check out the following resources:
 
 - [JUnit Tutorial](https://www.tutorialspoint.com/junit/index.htm)
-- [TestNG Documentation](https://testng.org/doc/index.html)
 - [Mockito Tutorial](https://www.baeldung.com/mockito-series)
-- [Effective Java by Joshua Bloch](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997) (chapter 10 covers writing tests)

@@ -47,6 +47,5 @@ console.log(result);  // Ausgabe: "Das Produkt von 5 und 10 ist 50."
 
 - [Mozilla Developer Network (MDN)Template Strings Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
   
-- [TypeScript Handbuch über String Interpolation](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
 
 Mit Template Strings und ihrer interpolation in TypeScript können Sie Ihren Code effizienter und einfacher lesbar gestalten. Fangen Sie an, sie noch heute in Ihre Codebasis zu integrieren!

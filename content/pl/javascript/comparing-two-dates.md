@@ -46,5 +46,4 @@ Jeśli chcesz dowiedzieć się więcej na temat pracy z datami w JavaScript, oto
 
 - Dokumentacja Mozilla: [Date (JavaScript)](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - Poradnik moment.js: [Manipulacja i formatowanie dat](https://momentjs.com/)
-- Artykuł o porównywaniu dat: [Porównywanie dat w JavaScript](https://dmitripavlutin.com/compare-dates-javascript/)
 - Artykuł Stack Overflow: [Jak porównać dwie daty bez uwzględniania czasu](https://stackoverflow.com/questions/2698725/comparing-date-part-only-without-comparing-time-in-javascript)

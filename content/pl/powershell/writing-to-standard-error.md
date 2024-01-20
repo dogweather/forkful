@@ -45,4 +45,3 @@ Pisanie do standardowego błędu jest praktykowane od dawna przez programistów,
 # Zobacz także:
 
 - [Dokumentacja o pisaniu do standardowego błędu w PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
-- [Poradnik o zarządzaniu błędami w PowerShell](https://adamtheautomator.com/powershell-error-handling/)

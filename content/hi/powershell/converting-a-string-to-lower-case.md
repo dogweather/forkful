@@ -36,5 +36,3 @@ PowerShell स्ट्रिंग्स के लिए `.ToLower()` वि�
 ## यह भी देखें (See Also):
 
 - [Microsoft PowerShell Documentation in Hindi](https://docs.microsoft.com/hi-in/powershell/)
-- [Working with Strings in PowerShell](https://learn-powershell.net/2014/07/24/working-with-strings-in-powershell/)
-- [Case-Insensitive String Comparison](https://devblogs.microsoft.com/scripting/perform-a-case-sensitive-query-with-powershell/)

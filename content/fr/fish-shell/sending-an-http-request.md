@@ -44,5 +44,4 @@ En termes de détails d'implémentation, Fish Shell ne fait que passer la comman
 ## Voir aussi:
 
 - [Documentation officielle de curl](https://curl.haxx.se/docs/manpage.html)
-- [Guide de HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Guide)
 - [Documentation de Fish Shell](https://fishshell.com/docs/current/index.html)

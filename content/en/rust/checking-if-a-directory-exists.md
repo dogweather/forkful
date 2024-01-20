@@ -66,5 +66,4 @@ This code provides more granular control over error handling and verifies that t
 To learn more about interacting with the filesystem in Rust, check out the following resources:
 
 - Official Rust Documentation: [std::fs](https://doc.rust-lang.org/std/fs/index.html), [std::path](https://doc.rust-lang.org/std/path/index.html)
-- [Practical File System Operations in Rust – blog by Andrew Hobden](https://hoverbear.org/2015/04/03/practical-file-system-operations-in-rust/)
 - [Rust by Example – Filesystem Operations](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)

@@ -57,4 +57,3 @@ Pour en apprendre davantage sur le traitement de texte en C++, visitez ces sites
 
 - Manipulation de chaînes en C++ chez [cplusplus.com](http://www.cplusplus.com/cplusplus-strings/)
 - Documentation officielle C++ de [`std::remove` et `std::string::erase`](https://en.cppreference.com/w/cpp/algorithm/remove) sur cppreference 
-- Un guide pédagogique sur le C++ moderne et la gestion des chaînes sur [modernescpp.com](https://www.modernescpp.com/index.php/c-core-guidelines-how-to-process-strings)

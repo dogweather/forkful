@@ -36,6 +36,5 @@ set var (cat your_text_file)
 מעוניינים להעמיק למדעם? הספרים, הקורסים, המדריכים והקישורים הבאים אמורים לעזור:
 
 - מדריך [Fish Shell](https://fishshell.com/docs/current/index.html)
-- ספר טוב למתחילים ב-Fish Shell: [Mastering Fish](https://www.packtpub.com/product/mastering-fish/9781484256729)
 - או נסו את הקורס הבינלאומי `Fish Shell Programming for Humans`
 - [stackoverflow](https://stackoverflow.com/questions/tagged/fish) בתחום Fish Shell.

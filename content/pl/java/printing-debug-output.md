@@ -54,4 +54,3 @@ Debugging Finished
 
 - [Logging w Javie](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
 - [Logger od SLF4J](http://www.slf4j.org/manual.html)
-- [Logger od Log4J](https://logging.apache.org/log4j/2.x/manual/introduction.html)

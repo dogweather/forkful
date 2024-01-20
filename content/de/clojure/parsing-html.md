@@ -46,4 +46,3 @@ Die `hickory` Bibliothek bietet eine schöne Schnittstelle zum Parsen und Auswä
 
 - [Clojure's clj-http Bibliothek](https://github.com/dakrone/clj-http)
 - [Hickory](https://github.com/davidsantiago/hickory)
-- [Hickory's select Modul](https://github.com/davidsantiago/hickory/blob/master/src/hickory/select.clj)

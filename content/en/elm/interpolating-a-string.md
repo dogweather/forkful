@@ -52,6 +52,5 @@ sentence name age =
 
 ## See Also
 
-- [The Official Elm Guide to Strings](https://guide.elm-lang.org/interop/strings.html): Dive deeper into Elm's approach to strings and concatenation.
 - [Elm's Syntax Documentation](https://elm-lang.org/docs/syntax): Brush up on how Elm structures its syntax, including how it handles strings.
 - [Discussion on String Interpolation in Elm](https://discourse.elm-lang.org/t/the-absence-of-string-interpolation/6676): Community discussion on why Elm doesn't have built-in string interpolation.

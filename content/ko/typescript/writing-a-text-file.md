@@ -36,4 +36,3 @@ console.log(newText); // Output: This is an example of writing a text file in Ty
 
 ## 더 알아보기:
 - [Node.js의 파일 시스템 모듈](https://nodejs.org/api/fs.html)
-- [텍스트 파일과 다른 데이터 저장 방식 비교하기](https://www.lemoda.net/comparison/textvsdatabase/index.html)

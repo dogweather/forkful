@@ -40,6 +40,3 @@ file.close();
 ファイルを作成する際には、ファイル名、ファイルパス、ファイルの種類など、様々な情報を指定する必要があります。また、ファイルに書き込むデータは、文字列やバイト列の形式で指定することができます。
 
 ## 関連情報を見る
-
-- [Gleam ドキュメント: ファイル操作](https://gleam.run/books/standard-library.html#file)
-- [Gleam の入門ガイド](https://gleam.run/docs/learn-stdlib#file)

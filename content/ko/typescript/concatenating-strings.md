@@ -50,5 +50,4 @@ console.log(result); // "안녕, 세상"
 ## 참고할 만한 자료:
 
 - [MDN Web Docs: 문자열](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [TypeScript Handbook: 문자열](https://www.typescriptlang.org/docs/handbook/2/strings.html)
 - [JavaScript 문자열 연결: + 연산자 vs concat() 함수](https://medium.com/@coderasha/javascript-concat-vs-operator-performance-test-80a61d97df03)

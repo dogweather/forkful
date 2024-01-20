@@ -43,6 +43,4 @@ chat
 
 ## Voir aussi :
 
-- [Apprendre Lua en 15 minutes](https://www.lua.org/manual/5.3/fr/manual.html)
-- [Tutoriel sur les expressions régulières en Lua](https://docs.lua.org/5.3/manual/manual.html#6.4.1)
 - [Autre tutoriel sur les expressions régulières en Lua](https://www.lua.org/pil/20.2.html)

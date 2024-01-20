@@ -37,4 +37,3 @@ describe "My Function" {
 # 参考资料：
 
 - [Gleam语言官方网站](https://gleam.run/)
-- [关于写测试的更多信息](https://www.freecodecamp.org/news/software-testing-explained-dbe743def859/)

@@ -38,4 +38,3 @@ PHP:n `substr()` -funktion toteutus on tehokas, tapa, jolla se käsittelee merkk
 
 - [PHP:n virallinen dokumentaatio substr-funktiosta](https://www.php.net/manual/en/function.substr.php)
 - [PHP The Right Way - suositukset ja parhaat käytännöt](https://phptherightway.com)
-- [Algoritmit ja tietorakenteet PHP:ssä](https://www.packtpub.com/product/algorithms-and-data-structures-in-php/9781838644028)

@@ -48,4 +48,3 @@ JSON é um acrônimo para JavaScript Object Notation e foi criado como um format
 ## Veja também:
 - [Documentação oficial do módulo Json.Decode](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
 - [Tutorial sobre JSON em Elm](https://guide.elm-lang.org/effects/json.html)
-- [Artigo sobre os prós e contras de diferentes formatos de dados](https://www.kenneth-truyers.net/2016/05/12/xml-vs-json-vs-yaml/)

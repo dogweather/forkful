@@ -30,5 +30,4 @@ CSV-formatet ble opprinnelig utviklet i 1972 og har vært et populært format fo
 ## Se også:
 
 - [Official Bash documentation on csvtool](http://tldp.org/LDP/abs/html/csvtool.html)
-- [Tutorial on working with CSV in Bash](https://www.linode.com/docs/tools-reference/tools/how-to-use-csvtool/)
 - [Comparison of CSV, XML, and JSON formats](https://medium.com/better-programming/csv-vs-json-vs-xml-which-is-the-best-response-format-833082bbd8d5)

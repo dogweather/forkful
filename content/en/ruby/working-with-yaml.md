@@ -63,4 +63,3 @@ The implementation of YAML in Ruby is done through the `Psych` library, which is
 ## See Also:
 - [YAML Specification](https://yaml.org/spec/1.2/spec.html)
 - [Psych Library Documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/psych/rdoc/Psych.html)
-- [YAML vs. JSON: Which is Best for Configuration Files?](https://deliciousbrains.com/yaml-vs-json/)

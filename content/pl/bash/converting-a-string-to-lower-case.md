@@ -42,4 +42,3 @@ Wszystkie te metody zwrócą identyczny rezultat, czyli "hello, world".
 
 - Strona man dla [tr](https://man7.org/linux/man-pages/man1/tr.1.html), [awk](https://man7.org/linux/man-pages/man1/awk.1p.html) i [bash](https://man7.org/linux/man-pages/man1/bash.1.html) daje więcej opcji i przykładów użycia tych poleceń.
 - [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/) zawiera wiele informacji o skryptach Bash, w tym o operacji na ciągach.
-- [Bash String Manipulation](https://linuxconfig.org/bash-string-manipulation) jest świetnym zasobem, jeśli chcesz dowiedzieć się więcej o manipulacji ciągami w Bashu.

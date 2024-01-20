@@ -41,5 +41,4 @@ let output = delete_pattern("Hello, World!", "[^A-Za-z ]") // "Hello World"
 
 Додаткова інформація про роботу з рядками та регулярними виразами у Gleam доступна в офіційній документації Gleam:
 
-- Документація Gleam: [https://gleam.run/book/tour/regular-expressions.html](https://gleam.run/book/tour/regular-expressions.html)
 - Github Gleam: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

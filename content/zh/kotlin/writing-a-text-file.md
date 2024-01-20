@@ -31,6 +31,3 @@ file.writeText(data) // 将 data 存储到文件中
 除了Kotlin中的 `File` 类，还有其他的API可以用来实现写 "text file"。例如，使用 `PrintWriter` 类来实现更复杂的数据格式化，并将它们写入文件中。
 
 ## 相关网址
-
-- 更多有关写 "text file" 的信息，请参考[官方文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/write-text.html)
-- 若要了解 `PrintWriter` 类的更多信息，[点击此处](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-writer/)

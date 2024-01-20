@@ -48,6 +48,4 @@ Wyrażenia regularne zostały wprowadzone przez matematyka Stephena Kleene'a w l
 
 ## Zobacz również:
 
-- [Dokumentacja: Kotlin Regex](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Tutorial: Wyrażenia regularne w Kotlinie](https://www.tutorialkart.com/kotlin/regex-regular-expression/)
 - [Praktyczne zastosowania wyrażeń regularnych](https://www.rexegg.com/)

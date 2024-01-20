@@ -46,6 +46,4 @@ Når du parser en datostreng i Swift, er det viktig å være klar over enkelte d
 ## Se Også:
 
 Du kan lese mer om date parsing og relaterte emner på følgende lenker:
-- [Apple's Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming/) 
 - [Swift Date Formats From String](https://nsdateformatter.com/)
-- [Parsing ISO-8601 DateTime with Swift](https://useyourloaf.com/blog/parsing-iso-8601-dates-with-swift/)

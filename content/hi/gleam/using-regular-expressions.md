@@ -35,4 +35,3 @@ Regular expressions ek powerful tool hain jiski shuruat 1950s mein ki gayi thi. 
 # Aur Dekhein:
 - [Gleam Language Website](https://gleam.run/)
 - [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Regex Playground](https://regexr.com/)

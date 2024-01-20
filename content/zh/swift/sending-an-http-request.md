@@ -48,5 +48,4 @@ HTTP请求的历史可以追溯到1990年代早期的万维网。从那时起，
 
 - [Apple Swift Documentation](https://developer.apple.com/documentation/swift)
 - [The Swift Programming Language Book by Apple](https://docs.swift.org/swift-book/)
-- [Online URL Encoding/Decoding](http://meyerweb.com/eric/tools/dencoder/ )
 - [HTTP: The Protocol Every Web Developer Must Know](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)

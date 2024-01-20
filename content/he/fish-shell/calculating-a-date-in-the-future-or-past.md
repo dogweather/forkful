@@ -35,6 +35,5 @@ Fish Shell הוא למעשה המשך של רוב שפות ה- shell שהתפת�
 
 ## ראה גם
 הקישורים להלן מתאים למידע נוסף על נושא זה, כולל קודים דוגמה ומדריכים:
-* [Fish Shell בויקיפדיה](https://he.wikipedia.org/wiki/Fish_(%D8%B4%D8%A7%D9%84)
 * [מדריך חישוב תאריך ב-Fish Shell](https://fishshell.com/docs/current/commands.html)
 * [דיון בStackOverflow על נושא זה](https://stackoverflow.com/questions/32483837/date-calculation-in-the-fish-shell)

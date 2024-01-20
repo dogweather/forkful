@@ -47,5 +47,4 @@ calculateFutureDate days = do
 ## 関連情報：
 
 - Haskellの日付と時間に関する詳細なドキュメント: [Data.Time モジュールドキュメント](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- 日付と時間の計算に関する全般的な情報: [Wikipedia: Date arithmetic](https://en.wikipedia.org/wiki/Date_arithmetic)
 - PythonやJavaでの同様な操作の情報: [Python: datetime Module](https://docs.python.org/3/library/datetime.html#timedelta-objects), [Java: java.time.Period](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Period.html)

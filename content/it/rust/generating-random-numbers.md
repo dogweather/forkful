@@ -42,5 +42,4 @@ A livello di implementazione, `rand` utilizza un tipo di generatore di numeri ca
 ## Vedi Anche
 Per ulteriori informazioni su come generare numeri casuali in Rust, puoi consultare i seguenti link:
 
-- Documentazione Ufficiale Rust: [Rust Official Documentation](https://doc.rust-lang.org/rand/rand/index.html)
 - Thread su StackOverflow: [How to generate a random number in Rust](https://stackoverflow.com/questions/36821263/how-to-generate-a-random-number-in-rust)

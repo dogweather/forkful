@@ -43,5 +43,4 @@ Gleam에서 기본 httpc 모듈을 통해 제공하는 get 메서드를 사용�
 
 ## 참조:
 
-- [Gleam Documentation](https://gleam.run/docs)
 - [Gleam HTTP Library](https://github.com/gleam-lang/http)

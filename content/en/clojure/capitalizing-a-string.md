@@ -47,4 +47,3 @@ Implementation-wise, we combine Clojure's `first` to get the first character, `c
 
 - If you need more details about Clojure's string functions you can visit [Clojure.String API](https://clojuredocs.org/clojure.string)
 - For more information regarding Clojure's sequences, check out [Clojure - Sequences](https://clojure.org/reference/sequences)
-- Also, here's a good article about using strings in clojure: [Mastering Clojure Strings](https://dzone.com/articles/mastering-clojure-strings)

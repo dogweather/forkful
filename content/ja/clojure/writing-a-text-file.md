@@ -30,5 +30,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 他の方法としては、```.append```を使用してファイルを追記したり、```.flush```を使用してファイルに書き込んだ内容を即時に保存したりすることもできます。
 
 ## 関連情報
-- [「Clojure入門 - ファイル操作の基礎」](https://qiita.com/ykiops/items/5ce53f825fc38b1ea3a0) 
-- [「Javaのファイルファイルを書き込む方法【初心者向け】」](https://techacademy.jp/magazine/18533)

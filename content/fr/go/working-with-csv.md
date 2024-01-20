@@ -61,5 +61,3 @@ Les fichiers CSV ont été initialement développés pour être utilisés avec d
 Pour en savoir plus sur le travail avec des fichiers CSV en Go, voici quelques ressources utiles:
 
 - [Documentation du paquet "encoding/csv"](https://golang.org/pkg/encoding/csv/)
-- [Un tutoriel pratique sur la manipulation de fichiers CSV en Go](https://www.sohamkamani.com/blog/golang/working-with-csv-in-golang/)
-- [Un article expliquant pourquoi les fichiers CSV sont toujours pertinents pour les programmeurs](https://www.techrepublic.com/blog/linux-and-open-source/why-csv-files-can-be-problem-children-for-developers/)

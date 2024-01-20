@@ -46,8 +46,5 @@ Il risultato sarà `12`, perché ci sono 12 caratteri nella stringa "Ciao a tutt
 
 ## Vedi anche:
 
-- Documentazione Lua: [www.lua.org/docs.html](www.lua.org/docs.html)
-- Lua-Users wiki: [www.lua-users.org/wiki/StringsTutorial](www.lua-users.org/wiki/StringsTutorial)
-- Passaggio da Python a Lua: [www.learnxinyminutes.com/docs/lua](www.learnxinyminutes.com/docs/lua)
 
 ---

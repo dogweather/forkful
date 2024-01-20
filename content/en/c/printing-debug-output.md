@@ -54,6 +54,5 @@ As an implementation detail, keep in mind that `printf()` function has a return 
 
 Interested in other debugging methods in C? Here are a few additional resources:
 
-- [Programming Debugging Techniques In C](https://www.softwaretestinghelp.com/debugging-techniques-in-c/)
 - [How to Debug C Program using gdb in 6 Simple Steps](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)
 - [Mastering printf Debugger](https://beej.us/guide/bgc/html/#the-printf-debugger)

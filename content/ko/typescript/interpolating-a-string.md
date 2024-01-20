@@ -35,5 +35,4 @@ Hello, John!
 
 ## 참고 자료:
 
-- TypeScript 공식 문서, [Template literals and String interpolation](https://www.typescripttutorial.net/typescript-tutorial/typescript-string-interpolation/)
 - MDN Web Docs, [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

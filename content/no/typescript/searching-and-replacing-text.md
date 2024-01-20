@@ -55,5 +55,3 @@ Under metoden `.replace()`, søkemekanismen går gjennom hvert tegn i strengen e
 # "## Se Også:"
 
 - [Mozilla Developer Network - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [TypeScript Deep Dive: Text Manipulation](https://basarat.gitbook.io/typescript/future-javascript/text-manipulation)
-- [TypeScript - String replace() Method](https://www.tutorialsteacher.com/typescript/typescript-string-replace)

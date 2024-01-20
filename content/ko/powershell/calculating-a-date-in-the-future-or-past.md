@@ -44,4 +44,3 @@ PowerShell에서는 `DateTime` 객체를 사용하여 날짜와 시간 조작을
 
 - [PowerShell 공식 문서](https://docs.microsoft.com/ko-kr/powershell/)
 - [System.DateTime 공식 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
-- [날짜 및 시간을 조작하는 PowerShell 스크립트](https://devblogs.microsoft.com/scripting/manipulating-dates-and-times-in-powershell/)

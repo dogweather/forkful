@@ -41,5 +41,4 @@ int main() {
 
 ## ראה גם
 - [מדריך לבדיקות קאפי](https://github.com/catchorg/Catch2)
-- [דפדפן מתקדם בכתיבת בדיקות בשפת C](https://github.com/bendikro/plutoc)
 - [ספריית GTest לכתיבת קוד בדיקות בשפת C++](https://github.com/google/googletest)

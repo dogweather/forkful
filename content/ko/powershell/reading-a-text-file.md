@@ -36,4 +36,3 @@ $file | Foreach-Object { $_ }
 ## 참고 링크:
 - [PowerShell Documentation: Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
 - [StreamReader Object in .NET API](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
-- [File Encoding in PowerShell](https://devblogs.microsoft.com/powershell/powershell-default-encoding-update-utf-8)

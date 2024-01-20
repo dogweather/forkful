@@ -40,6 +40,5 @@ Gleamissa testien kirjoittaminen on helppoa ja selkeää, ja `gleam/test`-kirjas
 
 ## Katso myös:
 
-- [Gleam-dokumentaatio](https://gleam.run/book/testing.html)
 - [Junit.org](https://junit.org/)
 - [Selenium.dev](https://www.selenium.dev/)

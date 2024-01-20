@@ -35,5 +35,3 @@ Hierbei erstellen und senden wir eine einfache GET-Anfrage zu `http://example.co
 ## Mehr Informationen
 - [http-conduit auf Stackage](https://www.stackage.org/package/http-conduit) 
 - [HTTP-Anfrage/Response in Haskell](https://wiki.haskell.org/Web/Libraries)
-- [Restful Services in Haskell](https://seanhess.github.io/2015/08/04/practical-haskell-json-api.html)
-- [Haskell School of Expression](http://www.haskell.org/haskellwiki/Haskell_School_of_Expression)

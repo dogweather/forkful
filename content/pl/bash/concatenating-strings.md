@@ -43,4 +43,3 @@ Choć łączenie ciągów jest dość prostym zadaniem w Bashu, warto znać kilk
 ## Zobacz też:
 
 - Unix & Linux Stack Exchange: [How to concatenate strings in bash](https://unix.stackexchange.com/questions/76329/how-to-concatenate-strings-in-bash)
-- Baeldung on Linux: [Bash String Concatenation](https://www.baeldung.com/linux/bash-string-concatenation)

@@ -47,6 +47,4 @@ Pour faire du parsing HTML en Gleam, nous utilisons le crate Rust `scraper`. Il 
 
 ## Voir également
 
-- [Documentation officielle de Gleam](https://gleam.run/docs/)
-- [Guide de parsing HTML en Rust](https://dev.to/deciduously/use-rust-to-concatenate-all-text-in-an-html-file-2ejo)
 - [Tutoriel BeautifulSoup pour Python](https://realpython.com/beautiful-soup-web-scraper-python/)

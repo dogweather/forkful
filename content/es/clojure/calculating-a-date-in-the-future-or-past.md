@@ -59,5 +59,4 @@ Para aprender más sobre el manejo del tiempo en Clojure, revisa los siguientes 
    
 Para entender las diferencias entre `java.util.Date`, `java.util.Calendar` y Joda-Time, visita:
 
-- [Joda-time vs java.util.Date](https://www.baeldung.com/java-date)
 - [Java 8, Date Time API overview](https://www.baeldung.com/java-8-date-time-intro)

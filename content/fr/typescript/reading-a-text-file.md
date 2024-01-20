@@ -47,4 +47,3 @@ Pour plus d'informations sur la manipulation de fichiers en JavaScript/TypeScrip
 
 - [Documentation officielle de Node.js sur fs/promises](https://nodejs.org/api/fs.html#fs_fs_promises_api)
 - [Article Mozilla sur l'API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-- [Guide de survie à la programmation asynchrone en JavaScript/TypeScript](https://www.freecodecamp.org/news/async-programming-in-typescript/)

@@ -37,6 +37,4 @@ Navn: Kari, Alder: 30
 CSV ble opprinnelig utviklet på 1970-tallet som en enkel måte å lagre og dele data mellom ulike programmer. Alternativer til CSV inkluderer XML, JSON og SQL-databaser. I Lua er det også mulig å jobbe med CSV-filer ved å bruke standardbiblioteket io og string-funksjoner som "split" og "gsub".
 
 ## Se også:
-- [Dokumentasjon for csv-biblioteket i Lua](https://csv.luaforge.net/)
-- [Eksempler på hvordan jobbe med CSV i Lua](https://www.tutorialspoint.com/lua/lua_csv_processing.htm)
 - [Generell informasjon om CSV-filer](https://no.wikipedia.org/wiki/CSV)

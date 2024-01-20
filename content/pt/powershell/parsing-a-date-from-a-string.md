@@ -37,4 +37,3 @@ Por favor, note que ao analisar uma data de uma string, o PowerShell assume que 
 ## Veja Também:
 
 - [Métodos de DateTime no site do .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Introdução ao PowerShell para .NET Developers](https://devblogs.microsoft.com/scripting/getting-started-with-windows-powershell/)

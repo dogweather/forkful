@@ -44,5 +44,4 @@ Att läsa kommandoradsargument på detta sätt fungerar genom att programmet lys
 
 ## Se också
 - [Arduino Serial Documentation](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Understanding Command Line Arguments](https://www.cs.bu.edu/teaching/cpp/command-line-arguments/)
 - [Arduino Programming Tutorial](https://startingelectronics.org/software/arduino/learn-to-program-course/)

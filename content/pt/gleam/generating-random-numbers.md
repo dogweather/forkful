@@ -48,6 +48,5 @@ Em termos de implementação, Gleam simplesmente acessa as bibliotecas de Erlang
 
 ## Veja também
 
-- Documentação oficial da biblioteca Gleam: [https://hexdocs.pm/gleam_stdlib/otp.Listener.html](https://hexdocs.pm/gleam_stdlib/otp.Listener.html)
 - Introdução ao módulo Erlang `rand`: [https://erlang.org/doc/man/rand.html](https://erlang.org/doc/man/rand.html)
 - Guia detalhado para geradores de números aleatórios: [https://prng.di.unimi.it/](https://prng.di.unimi.it/)

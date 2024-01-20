@@ -40,4 +40,3 @@ main =
 ये कुछ उपयोगी स्रोत हैं जो अतिरिक्त जानकारी प्रदान करते हैं:
 - [Elm के लिए अधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org)
 - [पुराने दौर में तारीख की गणना](https://en.wikipedia.org/wiki/Date_and_time_notation_in_Europe)
-- [Date.Extra पैकेज](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)

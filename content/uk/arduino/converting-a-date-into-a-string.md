@@ -50,5 +50,4 @@ void loop() {
 ## Бачте також: 
 
 - [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-- [Arduino sprintf](https://www.arduino.cc/reference/en/language/functions/characters/printf/)
 - [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

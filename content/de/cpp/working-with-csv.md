@@ -67,6 +67,4 @@ In der C++ Implementierung gibt es verschiedene Methoden, um mit CSV-Daten umzug
 
 ## Weitere Informationen
 
-- [CSV auf Wikipedia](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
 - [C++ CSV Parser Library](https://github.com/ben-strasser/fast-cpp-csv-parser)
-- [CSV vs. XML vs. JSON](https://www.alfresco.com/blogs/developer/2013/05/28/data-interchange-csv-json-xml/)

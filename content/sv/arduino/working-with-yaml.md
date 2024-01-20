@@ -50,4 +50,3 @@ YAML är också ett stöd för flera programmeringsspråk, vilket gör det enkel
 
 ## Se även:
 - [YAML.org](https://yaml.org/)
-- [Arduino-yaml bibliotek](https://github.com/zs5n/Arduino-YAML)

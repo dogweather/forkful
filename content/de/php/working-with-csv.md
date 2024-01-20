@@ -75,6 +75,5 @@ CSV wurde in den 1970er Jahren entwickelt und hat sich seitdem zu einem der am h
 
 ## Siehe auch
 
-- [Offizielle PHP-Dokumentation zu CSV-Funktionen](https://www.php.net/manual/de/book.csv.php)
 - [CSV-Bibliothek von PHP League](https://csv.thephpleague.com/)
 - [Wikipedia-Artikel über CSV](https://de.wikipedia.org/wiki/Comma-separated_values)

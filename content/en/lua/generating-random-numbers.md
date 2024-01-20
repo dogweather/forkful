@@ -45,5 +45,4 @@ Alternatively, you could implement your own random number generator or use libra
 ## See Also
 - More about Lua's [`math.random`](https://www.lua.org/manual/5.3/manual.html#pdf-math.random)
 - Pseudo-random number generation: [PRNGs](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- ENIAC's early RNG: [book](https://books.google.com/books?id=7XJ3jdRFBcoC&pg=PA14)
 - Generate random numbers based on time: [os.time](https://www.lua.org/pil/22.1.html)

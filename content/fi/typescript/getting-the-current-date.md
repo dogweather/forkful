@@ -39,4 +39,3 @@ Voit käyttää `Date`-objektin metodeja nykyisen päivämäärän muokkaamiseen
 
 - [Working with Dates - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [Moment.js](https://momentjs.com/)
-- [JavaScript Basics: The Date Object - DigitalOcean](https://www.digitalocean.com/community/tutorials/javascript-date-object-how-to)

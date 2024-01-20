@@ -37,7 +37,6 @@ catch(Exception e)
 
 ## इससे जुड़े कुछ और स्रोत:
 
-- [Microsoft Docs का आर्टिकल](https://docs.microsoft.com/en-us/dotnet/standard/io/errors-and-exception-handling)
 - [C# Exceptions के बारे में अधिक जानकारी](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
 
 आप ऊपर दिए गए स्रोतों से और जानकारी प्राप्त कर सकते हैं। इनमें C# console applications के लिए और भी उपयोगी जानकारी है।

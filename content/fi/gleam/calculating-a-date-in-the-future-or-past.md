@@ -42,6 +42,4 @@ Päivämäärän laskemista varten Gleam hyödyntää tp:n (Tuple Protocol) dyna
     
 ## Katso Myös:
 Tutustu Gleam-dokumentaatioon tietääksesi enemmän Gleamin päivämäärä- ja aikafunktioista:
-- [Gleam-calendar](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)
 - [Erlang-otp](https://erlang.org/doc/man/erlang.html#type-time)
-- [Gleam-otp](https://gleam.run/book/tour/otp-applications.html)

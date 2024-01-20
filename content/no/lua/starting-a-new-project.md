@@ -50,4 +50,3 @@ For å implementere et nytt Lua-prosjekt, vil man begynne med å definere prosje
 - Lua hjemmeside: [https://www.lua.org](https://www.lua.org)
 - Deres kildekode på GitHub: [Lua GitHub](https://github.com/lua/lua)
 - Lua dokumentasjon: [Lua 5.4 manual](https://www.lua.org/manual/5.4/)
-- Gratis online Lua tutorialer: [Learn Lua](https://www.learn-lua.org/)

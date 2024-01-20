@@ -39,4 +39,3 @@ Linkkejä, joista saat lisätietoja:
 
 - Ruby-dokumentaatio: [Time-luokka](https://ruby-doc.org/core-2.7.0/Time.html)
 - Ruby-dokumentaatio: [Date-luokka](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-- [Ruby Basics: Päivämäärät ja ajat](https://www.rubyguides.com/ruby-tutorial/dates-times/), RubyGuides.

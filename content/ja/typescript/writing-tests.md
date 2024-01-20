@@ -44,4 +44,3 @@ console.log(removeMinus(-10));
 # 関連リンク：
 - テストフレームワークのドキュメント：[Jasmine](https://jasmine.github.io/)、[Mocha](https://mochajs.org/)
 - TypeScriptの公式ドキュメント：[TypeScript](https://www.typescriptlang.org/)
-- テスト駆動開発（TDD）についての記事：[テスト駆動開発について理解する](https://qiita.com/WWW-Brad/items/eb157fe6b06e8df14a08)

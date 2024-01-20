@@ -69,5 +69,4 @@ JSON最初是由Douglas Crockford在2001年创建的，它是一种基于JavaScr
 ## 查看更多
 
 - [JSON官方网站](https://www.json.org/json-en.html)
-- [Gleam的JSON模块文档](https://gleam.run/modules/gleam_json/latest/gleam_json/)
 - [JavaScript的JSON对象文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)

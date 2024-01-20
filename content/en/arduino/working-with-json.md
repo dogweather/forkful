@@ -82,5 +82,3 @@ The ArduinoJson library supports both the JSON standard (RFC 8259) and the JSON-
 ## See Also:
 - [ArduinoJson Library Documentation](https://arduinojson.org/)
 - [JSON Official Website](https://www.json.org/)
-- [More About Douglas Crockford and JSON](https://www.merixstudio.com/blog/douglas-crockford-interview/)
-- [Comparison of JSON and other data interchange formats](https://www.tutorialspoint.com/json/json_introduction.htm)

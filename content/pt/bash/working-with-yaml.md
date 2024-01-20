@@ -53,4 +53,3 @@ O YAML (YAML Ain't Markup Language) foi criado em 2001 por Clark Evans e Ingy d�
 
 - [Documentação oficial do YAML](https://yaml.org/)
 - [Tutorial de YAML para iniciantes](https://medium.com/swlh/a-beginners-guide-to-yaml-f9a85999b25d)
-- [Comparação entre YAML e JSON](https://stackify.com/json-vs-yaml/)

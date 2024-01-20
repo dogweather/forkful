@@ -51,5 +51,3 @@ Os detalhes da implementação podem variar dependendo do método escolhido. De 
 ## Veja Também:
 
 - [Documentação de strings do TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [JavaScript String Methods: substr() vs substring() vs slice()](https://www.digitalocean.com/community/tutorials/js-string-methods-substr-substring-slice)
-- [Explicação de métodos de string do JavaScript com exemplos](https://www.freecodecamp.org/news/21-javascript-string-methods-a-quick-reference-cheat-sheet-just-for-you/)

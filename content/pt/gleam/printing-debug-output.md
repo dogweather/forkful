@@ -36,5 +36,3 @@ Quando você utiliza `{println}`, a função envia sua saída para `stdio`, espe
 
 ## Veja Também
 Para mais informações sobre depuração no Gleam, visite:
-* [Guia Oficial de Gleam](https://gleam.run/book/tour/debugging.html)
-* [Documentação do io.println](https://hexdocs.pm/gleam_io/gleam/io/#println)

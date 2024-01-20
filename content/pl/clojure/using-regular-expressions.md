@@ -40,6 +40,4 @@ Po uruchomieniu powyższego kodu, otrzymamy:
 
 ## Zobacz też
 
-- [Wyrażenia regularne - Dokumentacja Clojure](https://clojure.org/guides/learn/regular_expressions)
 - [Clojure i wyrażenia regularne - Przewodnik](https://kimh.github.io/clojure-by-example/)
-- [Zrozumienie Wyrażeń Regularnych](https://web.mit.edu/hackl/www/lab/turkshop/slides/regex-slides.pdf)

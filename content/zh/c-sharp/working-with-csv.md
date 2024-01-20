@@ -66,4 +66,3 @@ See Also:
 
 - [CsvHelper](https://joshclose.github.io/CsvHelper/) - 一个用于读取、写入和转换CSV文件的开源库。
 - [CsvReader](https://www.codeproject.com/Articles/9258/A-Fast-CSV-Reader) - 一个高性能的CSV文件读取器。
-- [CSV格式](https://www.w3school.com.cn/html/html_table.asp) - 在HTML中使用CSV格式创建数据表。

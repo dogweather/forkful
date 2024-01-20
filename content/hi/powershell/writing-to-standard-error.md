@@ -58,7 +58,6 @@ if ($outVar) {
 
 आप स्टैंडर्ड त्रुटि द्वारा लिखने के बारे में और भी बहुत कुछ जान सकते हैं। और जानकारी के लिए, नीचे दिए गए लिंक को देखें:
 
-- [PowerShell ErrorHandling](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-error-handling?view=powershell-7)
 - [PowerShell Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7)
 - [PowerShell Write-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7)
 

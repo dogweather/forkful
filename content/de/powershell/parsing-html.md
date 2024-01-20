@@ -67,4 +67,3 @@ Hier sind einige Ressourcen, die Ihnen helfen können, Ihre Kenntnisse über Pow
 - [Invoke-WebRequest](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 - [HtmlAgilityPack](https://html-agility-pack.net/)
 - [Einführung in HTML-Parsing](https://realpython.com/python-web-scraping-practical-introduction/) (Englisch)
-- [Vergleich von Scrape und Parse](https://www.octoparse.de/blog/der-unterschied-zwischen-web-scraping-und-html-parsing)

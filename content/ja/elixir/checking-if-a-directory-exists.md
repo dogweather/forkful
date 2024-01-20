@@ -37,6 +37,5 @@ IO.puts DirectoryExists.check("/path/to/directory")
 ## 関連情報：
 
 * Elixir `File` モジュールドキュメント: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
-* Elixirのエラーハンドリングについての情報: [http://elixir-recipes.github.io/error-handling/](http://elixir-recipes.github.io/error-handling/) 
 
 以上の内容を理解して、ディレクトリの存在チェックをうまく活用しましょう。

@@ -39,4 +39,3 @@ YAML kehitettiin vuonna 2001, ja se oli alun perin suunniteltu helpottamaan tiet
 ## Katso myös:
 - [YAML.org](https://yaml.org/) - YAML-kielen virallinen verkkosivusto
 - [Python YAML Library Documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) - ohjeet YAML-kirjaston käytöstä Pythonissa
-- [XML vs. YAML: Which is More Flexible for Programming?](https://keepify.com/technical/xml-vs-yaml-comparison) - vertailu XML:n ja YAML:n välillä

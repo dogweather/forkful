@@ -41,4 +41,3 @@ end
 
 - [Ruby on Rails Guide: Testing](http://guides.rubyonrails.org/testing.html)
 - [RSpec Documentation](https://rspec.info/documentation/)
-- [Test-Driven Development in Ruby](https://thoughtbot.com/blog/test-driven-development-in-ruby)

@@ -51,5 +51,4 @@ Writing tests also allows developers to continuously run and monitor their code'
 
 ## See Also:
 - [Catch2 Official Documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md)
-- [Google Test Official Documentation](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
 - [Test-Driven Development Explained](https://www.agilealliance.org/glossary/tdd/)

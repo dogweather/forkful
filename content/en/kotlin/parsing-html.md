@@ -45,4 +45,3 @@ Check out these sources for more information:
 - [Jsoup Documentation](https://jsoup.org/)
 - [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
 - [HTML Parsing and Web Scraping in Java Using Jsoup](https://www.baeldung.com/java-with-jsoup)
-- [Web Scraping In Kotlin With Jsoup: A Comprehensive Guide](https://www.ubuntupit.com/web-scraping-in-kotlin-with-jsoup-a-comprehensive-guide/)

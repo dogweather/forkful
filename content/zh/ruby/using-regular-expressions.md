@@ -33,6 +33,4 @@ puts string.match(regex) # 输出: example@example.com
 正则表达式最早由计算机科学家肯·汤普森和罗·贝利发明于20世纪60年代，它是一种通用的模式匹配语言，被应用在各种不同的编程语言和软件中。除了Ruby自带的正则表达式引擎外，程序员还可以选择使用其他第三方库，如Nokogiri和Pcre，来完成更复杂的字符串处理任务。
 
 ## 相关资料：
-- [Grep and Regex – A Quick Tutorial](https://www.digitalocean.com/community/tutorials/using-grep-and-regex-in-the-linux-or-unix-command-line)
 - [Ruby Regular Expressions](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Mastering Regular Expressions (book)](https://regex.info/blog/)

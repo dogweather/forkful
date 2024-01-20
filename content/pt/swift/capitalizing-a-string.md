@@ -47,7 +47,6 @@ A função `capitalized` em Swift faz mais do que apenas capitalizar a primeira 
 Para mais informações sobre a manipulação de strings em Swift, consulte os seguintes recursos:
 
 - A documentação oficial da Swift da Apple: [The Swift String Manifesto](https://github.com/apple/swift/blob/main/docs/StringManifesto.md)
-- Para uma deep dive na classe String do Swift: [Swift by Sundell](https://www.swiftbysundell.com/articles/strings-in-swift/)
 - Do Stack Overflow, exemplos de como capitalizar cada palavra de uma string: [Stack Overflow Swift capitalized](https://stackoverflow.com/questions/26306326/swift-capitalization-of-words-in-a-string)  
 
 Espero que isto tenha ajudado a pôr um pouco mais de clareza sobre a capitalização de strings em Swift. Feliz codificação!

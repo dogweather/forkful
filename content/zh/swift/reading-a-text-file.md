@@ -43,7 +43,6 @@ if let filePath = Bundle.main.path(forResource: "example", ofType: "txt") {
 ## 另见 (`See Also`)
 
 - [Apple 官方关于 String 的文档](https://developer.apple.com/documentation/swift/string)
-- [掘金: Swift 中文本的读写](https://juejin.cn/post/6844903787657838600)
 - [stackoverflow: Swift 中文件的读写](https://stackoverflow.com/questions/24097826/read-and-write-a-string-from-text-file)
 
 欢迎继续探索并深入学习 Swift 的世界。

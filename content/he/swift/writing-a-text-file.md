@@ -40,5 +40,4 @@ if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMa
 למידע נוסף על קריאת וכתיבת קבצי טקסט בשפת סוויפט, הסתכלו על המקורות הבאים:
 
 - [ספריית ה-FileManager של אפל](https://developer.apple.com/documentation/foundation/filemanager)
-- [מדריך על כתיבת קבצי טקסט בסוויפט](https://learnappmaking.com/read-write-string-swift-string-interpolation/)
 - [רפרנס לשפת סוויפט](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

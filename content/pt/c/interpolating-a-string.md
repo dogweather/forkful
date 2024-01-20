@@ -51,4 +51,3 @@ Em termos de implementação, `sprintf` basicamente leva uma string e argumentos
 
 - [Documentação sprintf - cplusplus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
 - [Documentação snprintf - cplusplus.com](https://www.cplusplus.com/reference/cstdio/snprintf/)
-- [Interpolação de String no C# - Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/interpolation)

@@ -56,5 +56,4 @@ println(greeting)  // 输出：“Hello, World!”
 
 请参阅 Kotlin 的官方文档，以了解更多关于字符串拼接的信息：
 
-- [Kotlin官方字符串文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 - [Kotlin官方StringBuilder文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)

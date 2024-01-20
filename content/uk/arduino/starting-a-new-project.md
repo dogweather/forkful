@@ -41,7 +41,6 @@ void loop() {
 ## Дивіться також:
 
 - [Arduino офіційний сайт](https://www.arduino.cc/)
-- [Введення в Arduino для початківців](https://www.makeuseof.com/tag/arduino-beginners-guide-intro/)
 - [Огляд початоку нового проекту Arduino](https://www.youtube.com/watch?v=fCxzA9_kg6s)
 - [Arduino Tutorial for Beginners](https://create.arduino.cc/projecthub/ROBINTHOMAS/programming-arduino-with-c-3a2860)  
 - [Відео-курси Arduino на українській мові](https://www.youtube.com/playlist?list=PL3yE_I_mq0oDxlTjPhI5GLgVqAQNIyQ3Q)

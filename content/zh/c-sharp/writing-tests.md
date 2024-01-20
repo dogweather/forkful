@@ -48,5 +48,4 @@ namespace Calculator
 
 相关链接
 更多关于TDD的信息，请查看以下链接：
-- [Test-Driven Development: By Example](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
 - [Exploring TDD in C#](https://www.pluralsight.com/guides/exploring-test-driven-development-c-sharp)

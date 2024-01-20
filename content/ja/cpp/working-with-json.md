@@ -63,5 +63,4 @@ JSONには、規格や構文が定められているわけではありません�
 
 ## 関連リンク：
 - [JSON公式サイト](https://www.json.org/json-ja.html)
-- [JSONファイルを読み込む方法](https://qiita.com/masaru-b-cl/items/abd7d0ac43bbc03580da)
 - [JSON入門](https://techacademy.jp/magazine/14242)

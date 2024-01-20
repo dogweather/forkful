@@ -60,7 +60,6 @@ Esistono molte alternative a IntelliJ IDEA per iniziare un nuovo progetto Kotlin
 Per approfondire l'iniziazione dei nuovi progetti Kotlin, consulta i seguenti link:
 - [Documentazione Kotlin ufficiale](https://kotlinlang.org/docs/home.html)
 - [Come creare un progetto tramite la riga di comando](https://kotlinlang.org/docs/command-line.html) 
-- [Creare un progetto Kotlin con Gradle](https://kotlinlang.org/docs/multiplatform-gradle.html) 
 - [Creare un progetto Kotlin con Maven](https://kotlinlang.org/docs/maven.html)
 
 Buona programmazione a tutti voi, programmatori Kotlin!

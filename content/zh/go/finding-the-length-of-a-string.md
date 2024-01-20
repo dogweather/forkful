@@ -59,6 +59,5 @@ func main() {
 
 ## 提示
 如果你有兴趣进一步研究，你可以查看以下链接：
-- 了解更多关于`len`函数和Go中的字符串：[Go 文档：字符串](https://golang.org/pkg/string/)
 - 在Go中处理Unicode：[Go Blog：Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
 - Go设计之初的一些决定：[Go at Google: Language Design in the Service of Software Engineering](https://talks.golang.org/2012/splash.article)

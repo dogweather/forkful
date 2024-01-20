@@ -32,4 +32,3 @@ This is a test message to standard error: This is an error message to standard e
 
 ## 参考资料：
 - [https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error)
-- [https://clojure.org/reference/errors](https://clojure.org/reference/errors)

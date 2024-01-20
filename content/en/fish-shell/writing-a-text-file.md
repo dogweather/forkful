@@ -35,4 +35,3 @@ Under the hood, the Fish Shell uses the `write()` function from the C programmin
 # See Also:
 - [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
 - [Introduction to Text Files](https://www.computerhope.com/jargon/t/textfile.htm)
-- [C write() function](https://www.tutorialspoint.com/c_standard_library/c_function_write.htm)

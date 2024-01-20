@@ -33,4 +33,3 @@ CSV:llä on pitkä historia, ja se on peräisin jo 1970-luvulta. Siinä käytety
 
 ## Lue myös:
 - [Elmin virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Csv-kirjasto](https://package.elm-lang.org/packages/elm-explorations/csv/latest/Csv)

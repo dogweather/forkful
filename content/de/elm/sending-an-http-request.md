@@ -50,4 +50,3 @@ Was die Implementierungsdetails betrifft, so haben wir in unserem obigen Code de
 Für weitere Details:
 - [Elm Guide](https://guide.elm-lang.org/): Offizielles Lehrbuch für Elm.
 - [Elm Http Package Dokumentation](https://package.elm-lang.org/packages/elm/http/latest/): Dokumentation zum `Http`-Paket in Elm.
-- [Elm Json Decode Explained](https://korban.net/posts/elm/2018-12-28-elm-json-decode-explained/): Erklärung zu Json Decoding in Elm.

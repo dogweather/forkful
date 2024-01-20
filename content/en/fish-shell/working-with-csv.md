@@ -51,4 +51,3 @@ When working with CSV files, it's important to note that the data is not restric
 ## See Also
 
 - [The Art of Command Line: CSV Manipulation](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md#csv-manipulation)
-- [Fish Shell Documentation: CSV Command](https://fishshell.com/docs/current/cmds/csv.html)

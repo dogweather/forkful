@@ -38,6 +38,5 @@ console.log(newText);
 
 다음은 텍스트 검색 및 교체와 관련된 몇 가지 유용한 리소스입니다:
 
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace): MDN 웹 문서에서 JavaScript의 replace 함수의 기능과 사용 방법을 자세히 설명하고 있습니다.
 - [JavaScript 정규식 가이드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D): JavaScript에서 정규식을 사용하는 방법을 배움니다.
 - [JavaScript로 텍스트 검색 및 교체 사용 예제](https://www.w3schools.com/jsref/jsref_replace.asp): 연습을 위한 실제 검색 및 교체 사례를 확인해 보세요.

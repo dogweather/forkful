@@ -40,4 +40,3 @@ En cuanto a su implementación, `IO.inspect/2` simplemente toma tus datos y los 
 Para más información sobre la depuración en Elixir, consulta estas fuentes:
 - [Guía oficial de Elixir](https://elixir-lang.org/getting-started/debugging.html)
 - [Módulo IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Módulo Logger](https://hexdocs.pm/elixir/Logger.html)

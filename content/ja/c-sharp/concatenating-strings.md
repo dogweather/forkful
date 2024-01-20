@@ -52,4 +52,3 @@ Console.WriteLine(fullName);
 ## 参照元(Reference)
 
 * [C# 文字列操作(Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/strings/)
-* [C#: 文字列の結合、分割(StackOverflow)](https://ja.stackoverflow.com/questions/579/%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%B5%90%E5%90%88-%E5%88%86%E5%89%B2)

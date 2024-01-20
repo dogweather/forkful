@@ -45,4 +45,3 @@ Tecnicamente, o método `.ToTitleCase()` funciona analisando cada caractere da s
 
 - [Documentação Oficial do PowerShell](https://docs.microsoft.com/pt-br/powershell/)
 - [Como Usar o Método ToTitleCase](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.textinfo.totitlecase)
-- [Manipulação de Strings no PowerShell](https://devblogs.microsoft.com/scripting/manipulating-strings-with-powershell/)

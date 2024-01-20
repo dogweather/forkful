@@ -47,6 +47,5 @@ Gemfile  lib  my_project.gemspec  Rakefile  README.md
 
 ## Дивись також:
 
-* Детальніше про Bundler можна прочитати тут: [Bundler Documentation](https://bundler.io/doc.html)
 * Докладна інформація по організації Ruby проєктів доступна тут: [How to Structure Large Ruby on Rails Codebases](https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial)
 * Якщо ви хочете дізнатися більше про Rails або Sinatra, відвідайте їхні сайти: [Ruby on Rails](https://rubyonrails.org/), [Sinatra](http://sinatrarb.com/)

@@ -35,5 +35,4 @@ As expressões regulares foram inventadas na década de 1950 por Stephen Cole Kl
 
 ## Veja também:
 - [Documentação oficial de strings em Lua](https://www.lua.org/manual/5.4/manual.html#6.4.2)
-- [Tutorial sobre expressões regulares em Lua](https://anenadic.github.io/regular-expressions/regular-expressions-in-lua.html)
 - [Ferramenta online para testar expressões regulares em Lua](https://regex101.com/r/8cFjZA/1/)

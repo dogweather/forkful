@@ -44,5 +44,4 @@ YAML a été créé en 2001 et est basé sur la syntaxe des listes dans le langa
 
 ## Voir aussi:
 - [Documentation officielle YAML](https://yaml.org)
-- [Bibliothèque YAML pour Arduino](https://www.arduinolibraries.info/libraries/yaml)
 - [Format de données YAML sur Wikipédia](https://fr.wikipedia.org/wiki/YAML)

@@ -57,7 +57,6 @@ Implementera 'Directory exists'-kontrollen är relativt enkelt i Arduino tack va
 För mer information, se följande resurser på ämnet
 
 - [Arduino - SD Library](https://www.arduino.cc/en/Reference/SD)
-- [Arduino - File I/O](https://www.arduino.cc/en/tutorial/files)
 - [Arduino Stack Exchange](https://arduino.stackexchange.com/questions/578/how-to-check-if-a-file-exists)
   
 Observera att dessa resurser är på engelska.

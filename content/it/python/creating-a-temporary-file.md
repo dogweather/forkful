@@ -54,5 +54,4 @@ I file temporanei sono implementati come file normali, con l'eccezione che vengo
 ## See Also / Vedi Anche:
 
 - Modulo Python Tempfile: [https://docs.python.org/3/library/tempfile.html](https://docs.python.org/3/library/tempfile.html)
-- Guide su Python Guru: [https://thepythonguru.com/python-howto-guide/](https://thepythonguru.com/python-howto-guide/)
 - File temporanei in Python su Real Python: [https://realpython.com/python-tempfile/](https://realpython.com/python-tempfile/)

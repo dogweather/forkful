@@ -48,5 +48,4 @@ set fecha_custom (date -u "+%Y-%m-%d")
 ## Consulta también:
 
 Echa un vistazo a estos enlaces para aprender más:
-- [Variables en Fish](https://fishshell.com/docs/current/lang-vars.html)
 - [Tutorial de la línea de comandos de Fish](https://fishshell.com/docs/current/tutorial.html)

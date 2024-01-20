@@ -44,4 +44,3 @@ En termes de mise en œuvre, l'opérateur `+` est surchargé pour la classe `std
 ## Voir Aussi
 Pour plus d'informations, vous pouvez consulter les ressources suivantes:
 - [La documentation officielle sur les chaînes en C++](http://www.cplusplus.com/reference/string/string/)
-- [Un article sur l'interpolation des chaînes en C++](https://www.techiedelight.com/interpolate-strings-in-cpp/)

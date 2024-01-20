@@ -44,4 +44,3 @@ CSV wurde in den 1970er Jahren als einfaches Datenformat entwickelt, um den Aust
 ## Siehe auch
 
 - Die offizielle [Elm-Dokumentation](https://guide.elm-lang.org/effects/json.html), die weitere Informationen und Beispiele zu CSV in Elm bietet.
-- Das [Csv-Bibliothek](https://package.elm-lang.org/packages/elm-community/csv/latest/), das verschiedene Funktionen für das Lesen und Schreiben von CSV-Daten in Elm bereitstellt.

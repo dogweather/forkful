@@ -42,6 +42,3 @@ L'écriture de fichiers texte remonte aux débuts de la programmation informatiq
 L'implémentation de l'écriture de fichiers texte varie en fonction du langage de programmation utilisé, mais les étapes de base restent les mêmes: création d'un fichier, ajout ou modification de contenu, puis enregistrement du fichier sur le disque.
 
 ## Voir aussi:
-- [Documentation officielle TypeScript sur l'écriture de fichiers](https://www.typescriptlang.org/docs/handbook/file-system-io.html)
-- [Tutorial sur l'écriture de fichiers texte en TypeScript](https://www.tutorialspoint.com/typescript/typescript_file_io.htm)
-- [Autres alternatives pour stocker des données](https://www.guru99.com/difference-between-csv-vs-json.html)

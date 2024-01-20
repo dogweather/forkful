@@ -37,6 +37,5 @@ Output:
 
 ## और भी देखें:
 
-* [Haskell String Type](https://www.haskell.org/tutorial/strings.html)
 * [Haskell Data.Char Module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
 * [Haskell Data.Text Module](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)

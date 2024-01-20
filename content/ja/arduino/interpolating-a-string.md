@@ -35,6 +35,4 @@ The number is: 5
 他の代替策としては、`sprintf()`関数を使う方法もあります。しかし、この関数はメモリーを多く消費し、Arduinoのようなリソースが限られている環境では推奨されません。
 
 ## 関連資料 (See Also)
-- [Arduino Reference: String()](https://www.arduino.cc/reference/jp/language/variables/data-types/string/functions/string/)
-- [Arduino Reference: printf()](https://www.arduino.cc/reference/jp/language/functions/communication/serial/printf/)
 - [The Evils of Arduino Strings](https://hackingmajenkoblog.wordpress.com/2016/02/04/the-evils-of-arduino-strings/)

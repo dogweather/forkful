@@ -50,4 +50,3 @@ När det gäller genomförande använder C++ regex-biblioteket ECMAScript-syntak
 ## Se Även:
 
 - För ytterligare studier om reguljära uttryck, besök: [C++ Reguljära Uttryck](http://www.cplusplus.com/reference/regex/)
-- För en mer interaktiv upplevelse använd [RegExr](https://regexr.com/), en online reguljär uttryckstestare.

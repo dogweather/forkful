@@ -49,4 +49,3 @@ Além disso, a autenticação básica não fornece nenhum mecanismo de logoff. Q
 
 - [MDN Web Docs: Usando Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch)
 - [MDN Web Docs: Autenticação HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
-- [Autenticação básica HTTP no Wikipedia](https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o_b%C3%A1sica_por_HTTP)

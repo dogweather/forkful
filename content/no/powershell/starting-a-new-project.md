@@ -56,4 +56,3 @@ For mer informasjon om PowerShell, sjekk ut disse kildene:
 
 - PowerShell dokumentasjon: [link](https://docs.microsoft.com/en-us/powershell/)
 - Opprettelse av nye elementer: [link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.1)
-- Om PowerShell prosjektstrukturering: [link](https://devblogs.microsoft.com/scripting/structuring-powershell-scripts/)

@@ -44,4 +44,3 @@ CSV-formatet ble opprinnelig utviklet for regnearkprogrammer som Excel, og har b
 
 - [Swift Guide: Lesing og skriving av CSV](https://medium.com/@khushwanttanwar/read-write-csv-file-in-swift-3f150072c0ed)
 - [CSV i Nettleseren](https://www.npmjs.com/package/csv)
-- [Sammenligning av XML, JSON og CSV](https://raygun.com/blog/xml-json-csv/)

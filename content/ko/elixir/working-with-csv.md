@@ -28,5 +28,4 @@ CSV.encode(content)
 CSV는 1970년대부터 사용되어 왔으며 데이터를 쉽게 저장하고 전송하며 공유할 수 있는 포맷으로 널리 알려져 있습니다. CSV로 작업하는 대안으로는 JSON, XML, 혹은 텍스트 형식 등이 있습니다. Elixir에서는 Erlang 라이브러리인 `:csv`를 사용하여 CSV 파일을 다룰 수 있습니다.
 
 ## 출처 알아보기:
-- [Elixir 문서: `:csv` 모듈](https://hexdocs.pm/elixir/csv.html)
 - [나무위키: CSV](https://namu.wiki/w/CSV)

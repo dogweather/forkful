@@ -50,5 +50,4 @@ Dans Ruby, la méthode ```CSV.read``` renvoie un tableau avec toutes les lignes 
 ## Voir aussi:
 
 - [La documentation officielle de Ruby sur la gestion des fichiers CSV](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
-- [Une introduction aux fichiers CSV en Ruby](https://www.rubyguides.com/2018/10/csv-ruby/)
 - [Un tutoriel vidéo sur la manipulation de fichiers CSV en Ruby](https://www.youtube.com/watch?v=dX4Hease1W8)

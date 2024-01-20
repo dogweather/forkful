@@ -58,4 +58,3 @@ C#では、日付と時刻はDateTimeとTimeSpanオブジェクトとして表�
 
 - [DateTime Struct (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
 - [Working with Dates and Times in C# (Pluralsight Blog Post)](https://www.pluralsight.com/guides/working-with-dates-and-times-in-csharp)
-- [Date and Time Data (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/datetime/)

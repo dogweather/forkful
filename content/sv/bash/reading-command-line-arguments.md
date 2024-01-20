@@ -52,4 +52,3 @@ För mer information om kommandoradsargument i bash, se dessa länkar:
 
 - [Bash Programming Introduction by Mike G](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 - [Linux Shell Scripting Tutorial (LSST) v2.0](https://bash.cyberciti.biz/guide/Pass_arguments_into_a_function)
-- [How to handle command-line arguments in bash](https://opensource.com/article/19/5/how-handle-command-line-arguments-bash)

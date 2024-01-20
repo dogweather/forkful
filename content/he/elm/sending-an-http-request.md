@@ -57,5 +57,4 @@ main =
 למידה נוספת על שליחת בקשת HTTP באמצעות Elm:
 
 - [The official Elm guide on HTTP requests](https://guide.elm-lang.org/)
-- [A practical guide to Elm HTTP requests](https://korban.net/posts/elm/2018-02-18-practical-guide-elm-http-requests/)
 - [HTTP in Elm - video tutorial](https://www.youtube.com/watch?v=t2YWnZSFsg0)

@@ -46,6 +46,5 @@ Drugi argument: World
 
 ## Zobacz też:
 
-- [Dokumentacja Microsoft o parametrach](https://docs.microsoft.com/pl-pl/powershell/scripting/learn/deep-dives/everything-about-parameters?view=powershell-7.1)
 - [Artykuł o obsłudze argumentów w PowerShell](https://adamtheautomator.com/powershell-parameters/)
 - [Dokumentacja Microsoft o $args](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#args)

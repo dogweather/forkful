@@ -48,6 +48,4 @@ YAML został stworzony w 2001 roku jako alternatywa dla XML-u i szybko stał si�
 Alternatywnie, jeśli nie chcesz używać modułu `PowerYaml`, istnieje możliwość konwertowania plików z YAML do JSON przy użyciu polecenia `ConvertFrom-Json` lub do XML przy użyciu polecenia `ConvertTo-Xml`.
 
 ## Zobacz także:
-- [Dokumentacja modułu PowerYaml](https://www.powershellgallery.com/packages/PowerYaml/)
 - [Dokumentacja formatu YAML](https://yaml.org/)
-- [Porównanie między YAML a innymi formatami danych](https://www.infoworld.com/article/3567033/what-is-yaml-a-better-format-for-data-exchange.html)

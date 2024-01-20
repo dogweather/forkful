@@ -39,5 +39,4 @@ Das Schreiben von Textdateien ist seit vielen Jahren ein grundlegendes Konzept i
 Bei der Erstellung von Textdateien in Swift ist es wichtig, den Code sorgfältig zu handhaben, da es keine integrierte Fehlerbehandlung gibt. Es ist also ratsam, den Code in einem `do-catch`-Block auszuführen und Fehler entsprechend zu behandeln.
 
 ## Siehe auch
-- [Apple's Dokumentation zu Textverarbeitung in Swift](https://developer.apple.com/documentation/foundation/filemanager/2293412-createfile)
 - [Ein Tutorial zu Textdateien in Swift mit tiefergehender Erklärung](https://www.hackingwithswift.com/read/14/2/reading-from-and-writing-to-a-file)

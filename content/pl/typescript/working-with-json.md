@@ -56,4 +56,3 @@ W języku TypeScript możliwe jest również wykorzystanie interfejsów w celu d
 
 - [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs)
 - [Strona projektu JSON](https://www.json.org/)
-- [Porównanie JSON i XML](https://json.vscode.rocks/)

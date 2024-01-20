@@ -54,6 +54,4 @@ Write-Verbose '¡Esto es un mensaje detallado!'
 
 Para seguir aprendiendo, te recomiendo estos enlaces:
 - [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
-- [Tutorial de Debug en PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/samples/working-with-debugging?view=powershell-7.1)
 - [Uso de Write-Debug en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7&viewFallbackFrom=powershell-7.1)
-- [Uso de Write-Verbose en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_verbose?view=powershell-7.1)

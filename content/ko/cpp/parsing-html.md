@@ -59,7 +59,6 @@ C++에서 HTML 파싱을 구현하는 방법은 여러 가지가 있습니다. �
 
 ## 참고 자료:
 
-* [HTML parsing in C++ with libxml](https://www.yolinux.com/TUTORIALS/XMLCppLibxml2.html)
 * [Google Gumbo example](https://github.com/google/gumbo-parser)
 * [HTML Parser: MyHTML](https://github.com/lexborisov/myhtml)
 * [HTMLcxx library](http://htmlcxx.sourceforge.net/)

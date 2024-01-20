@@ -51,7 +51,5 @@ elm-test
 
 ## और जानें
 
-- [Elm: The Elm Test Package](https://www.learning-elm.com/introduction/testing/)
 - [Elm: The Test Framework Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm: The Official Guide for Testing](https://guide.elm-lang.org/testing/)
 - [Elm: The Official Documentation](https://elm-lang.org/docs)

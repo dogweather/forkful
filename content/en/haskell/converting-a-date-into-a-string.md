@@ -56,6 +56,5 @@ Get started with more time in Haskell:
 - [The Data.Time Package Hackage](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
 - [The Thyme Package](https://hackage.haskell.org/package/thyme)
 - [The Time-lens Package](https://hackage.haskell.org/package/time-lens)
-- 'Lies, Damned Lies and Datetimes' Blog Post by Henrik Hjelt: [https://baatz.io/posts/lies-damned-lies-and-datetimes/](https://baatz.io/posts/lies-damned-lies-and-datetimes/)
 
 Remember, exploring is the key to mastery. Happy coding!

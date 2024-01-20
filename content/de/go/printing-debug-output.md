@@ -46,5 +46,4 @@ Details zur Implementierung: `fmt.Println()` ist eine Funktion in Go, die die Fo
 
 - [Go-Dokumentation zu fmt](https://golang.org/pkg/fmt/)
 - [Go-Dokumentation zu log](https://golang.org/pkg/log/)
-- [Ein kurzer Leitfaden zur Debug-Ausgabe in Go](https://yourbasic.org/golang/fmt-println-print-fprintf/)
 - [Eine Anleitung zur Fehlerbehandlung in Go](https://blog.golang.org/error-handling-and-go)

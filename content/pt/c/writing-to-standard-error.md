@@ -35,4 +35,3 @@ Além disso, existem outras formas de lidar com mensagens de erro em C, como o u
 
 - [Tutorial sobre Mensagens de Erro em C](https://www.codingame.com/playgrounds/2205/manejo-de-erros-conceitos-basicos/tratamento-de-erros-no-c)
 - [Documentação Oficial do C](https://devdocs.io/c/)
-- [Livro "The C Programming Language"](https://www.amazon.com/C-Programming-Language-Kernighan/dp/0131103628/)

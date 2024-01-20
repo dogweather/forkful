@@ -40,4 +40,3 @@ Lors de l'envoi d'une requête HTTP, il y a plusieurs détails d'implémentation
 - [clj-http GitHub](https://github.com/dakrone/clj-http)
 - [http-kit GitHub](https://github.com/http-kit/http-kit)
 - [aleph GitHub](https://github.com/ztellman/aleph)
-- [HTTP dans Clojure - Guide pratique](https://practicalli.github.io/clojure-webapps/http-in-clojure.html)

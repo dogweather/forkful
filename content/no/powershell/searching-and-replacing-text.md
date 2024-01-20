@@ -47,4 +47,3 @@ PowerShell’s `-replace` og `-match` operatører stammer fra .NET’s Regular E
 For mer informasjon og eksempler for søk og erstatting i PowerShell, kan du besøke følgende kilder:
 - Microsoft PowerShell dokumentasjon: [About Comparison Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 - .NET Regular Expressions (Regex): [Quick Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [PowerShell Tutorial: Text manipulation](https://www.tutorialspoint.com/powershell/powershell_text_manipulation.htm) på TutorialsPoint.

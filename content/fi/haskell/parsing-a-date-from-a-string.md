@@ -40,5 +40,3 @@ Haskellin aikapäivämäärän parseaushistoria perustuu POSIX-tyylisiin aikatoi
 - [Data.Time-moduuli Hoogle-ohjelmassa](https://hoogle.haskell.org/?hoogle=Data.Time)
 
 - [Parsec-kirjasto Hackage-sivustolla](https://hackage.haskell.org/package/parsec) 
-
-- [Haskell Wiki: Päivämäärät ja ajat](https://wiki.haskell.org/Dates_and_times)

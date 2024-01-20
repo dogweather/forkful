@@ -72,6 +72,4 @@ Elmでは、[Csvパッケージ](https://package.elm-lang.org/packages/elm-commu
 
 ## See Also
 
-- [Csvパッケージ](https://package.elm-lang.org/packages/elm-community/csv/latest/Csv)
 - [elm-parser](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [CSVファイルの形式](https://ja.wikipedia.org/wiki/CSV_(%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%BD%A2%E5%BC%8F))

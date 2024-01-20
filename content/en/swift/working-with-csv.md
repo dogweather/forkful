@@ -40,5 +40,3 @@ In terms of implementation, CSV files can vary in terms of their delimiter (comm
 
 ## See Also:
 - [Hacking with Swift: Reading CSV data](https://www.hackingwithswift.com/example-code/strings/how-to-load-a-string-from-a-website-url)
-- [NSHipster: CSV](https://nshipster.com/csv/)
-- [Apple Developer Documentation: CSV](https://developer.apple.com/documentation/foundation/csv)

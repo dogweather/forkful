@@ -73,5 +73,3 @@ Det finnes ulike måter å håndtere CSV-data på i C, som for eksempel å bruke
 # Se også
 
 - [RFC 4180: Common format and MIME type for CSV files](https://tools.ietf.org/html/rfc4180)
-- [libcsv](https://github.com/akheron/libcsv) – et populært CSV-bibliotek for C
-- [Using CSV Files in C/C++](https://www.geeksforgeeks.org/csv-file-handling-c/), en guide for å lese og behandle CSV-filer i C

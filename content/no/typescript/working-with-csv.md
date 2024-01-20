@@ -41,6 +41,5 @@ Når det gjelder implementasjon av CSV-biblioteket i TypeScript, er det verdt å
 For mer informasjon om å jobbe med CSV i TypeScript, sjekk ut disse ressursene:
 
 - [TypeScript CSV Documentation](https://www.npmjs.com/package/ts-csv)
-- [CSV vs JSON vs XML: Which is the Right Data Format to Use?](https://www.datasciencecentral.com/profiles/blogs/csv-vs-json-vs-xml-which-is-the-right-data-format-to-use)
 
 Lykke til med å jobbe med CSV i TypeScript!

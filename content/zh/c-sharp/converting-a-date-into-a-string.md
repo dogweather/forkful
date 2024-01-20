@@ -52,5 +52,3 @@ Console.WriteLine(strFullDate);
 ## 另请参阅
 
 - [C# 中的日期和时间格式化](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/standard-date-and-time-format-strings)
-- [C# DateTime ToString() 方法](https://www.dotnetperls.com/datetime-tostring)
-- [维基百科：日期表示法](https://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%9F%E8%A1%A8%E7%A4%BA%E6%B3%95)

@@ -42,6 +42,4 @@ Implementationen av slumpmässig nummergenerering i Rust är baserat på en algo
 
 För mer detaljer och guider om antalet generering och programmering i Rust, se följande resurser:
 
-- [Rust Dokumentation för `rand::Rng` trait](https://doc.rust-lang.org/rand/rand/trait.Rng.html)
-- [Rust by Example, Kapitel 15.2: Genrer](https://doc.rust-lang.org/rust-by-example/std_misc/rand.html)
 - [Wikipedia: Slumpmässiga Nummer Generering](https://en.wikipedia.org/wiki/Random_number_generation)

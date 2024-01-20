@@ -59,5 +59,3 @@ Lors de l'envoi d'une requête HTTP, PowerShell fait plus que simplement envoyer
 Pour plus d'informations, jetez un oeil à ces sources :
 
 - ["Invoke-WebRequest" sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- ["About_Http" sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/scripting/learn/deep-dives/everything-about-https)
-- [Guide complet sur les requêtes HTTP en PowerShell](https://adamtheautomator.com/powershell-http-request)

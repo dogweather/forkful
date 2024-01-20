@@ -39,6 +39,4 @@ fun counter(): Int {
 टेस्ट लिखने के अलावा, कोटलिन में कई और उपयोगी फ़ंक्शनलिटी हैं जो प्रोग्रामिंग को और भी आसान और मोटिवेट करती हैं। कोटलिन के सभी अनुप्रयोगों को जानकारी के लिए, कृपया [कोटलिन वेबसाइट](https://kotlinlang.org/docs/reference/) पर जाएं।
 
 ## अन्य संसाधन देखें
-- [कोटलिन टेस्टिंग गाइड](https://kotlinlang.org/docs/tutorials/kotlin-for-py/pytest.html)
-- [कोटलिन में JUnit और TestNG का उपयोग करना](https://kotlinlang.org/docs/tutorials/junit.html)
 - [KotlinTest: अनुमति टेस्ट कल्याणिका के बिना कोड को टेस्ट करना](https://github.com/kotlintest/kotlintest)

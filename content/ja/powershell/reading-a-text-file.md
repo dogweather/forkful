@@ -42,5 +42,3 @@ Jane Doe
 ## 参考資料：
 
 - [MSDN公式ドキュメンテーション: Get-Content](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
-- [PowerShellでファイルの内容を読み込む方法](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-reading-text-files/)
-- [聖書 - PowerShellガイド：ファイルとディレクトリ](http://www.vivekanantha.net/powershell/powershell-guide-to-files-and-folders/)

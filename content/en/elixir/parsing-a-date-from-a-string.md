@@ -52,5 +52,4 @@ As for the implementation, `Date.from_iso8601/1` first checks the format of the 
 ## See Also 
 
 - [The Elixir `Date` module documentation](https://hexdocs.pm/elixir/Date.html)
-- [Guide to Date and Time in Elixir](https://codingmindfully.com/elixir-date-time-guide/) 
 - [Mastering DateTime in Elixir](https://medium.com/@cblavier/mastering-datetime-in-elixir-1-elixir-datetime-basics-b9307d0b2fb2)

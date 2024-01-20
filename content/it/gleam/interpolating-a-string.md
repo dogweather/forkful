@@ -41,6 +41,3 @@ Ciao, Mario! Hai 30 anni.
 (3) In Gleam, l'interpolazione delle stringhe avviene tramite la funzione `Io.print()`. I valori all'interno delle parentesi graffe { } vengono sostituiti dai valori specificati nell'elenco di argumenti alla fine della funzione.
 
 ## Vedere Anche
-
-- [Gleam: String interpolation](https://gleam.run/book/tour/basic-types.html#string)
-- [The Gleam Programming Language Guide](https://gleam.run/guides/)

@@ -39,5 +39,3 @@ var_dump($response);
 ## भी देखें:
 
 - [PHP cURL डॉक्युमेंटेशन](https://www.php.net/manual/en/book.curl.php)
-- [HTTP मैनुअल](https://www.php.net/manual/en/book.http.php)
-- [PHP और HTTP](https://www.tutorialrepublic.com/php-tutorial/php-http-protocol.php)

@@ -51,4 +51,3 @@ I file temporanei in Swift sono basati sul sistema di file del sistema operativo
 
 - Documentazione ufficiale di Apple su [URL](https://developer.apple.com/documentation/foundation/url)
 - Post del blog [Working with Files in Swift](https://www.raywenderlich.com/666-working-with-files-in-swift)
-- Guida allo sviluppo di Swift [I/O and Persistence](https://docs.swift.org/swift-book/LanguageGuide/IOandPersistence.html)

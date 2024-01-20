@@ -50,4 +50,3 @@ Haskell implementa la capitalización en un estilo funcional, tomando una cadena
 ## Ver También 
 
 - Documento de la biblioteca de Haskell [Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- Documentación para [Text.ICU.Transform](https://hackage.haskell.org/package/text-icu-0.7.0.1/docs/Data-Text-ICU-Transform.html) en caso de que necesites más opciones de capitalización.

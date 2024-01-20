@@ -48,7 +48,6 @@ Mehr Informationen und Beispiele können Sie aus den folgenden Quellen erhalten:
 
 - GNU Bash-Handbuch: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
 
-- Datum und Zeit in bash: [https://www.linuxjournal.com/content/working-dates-and-times-bash](https://www.linuxjournal.com/content/working-dates-and-times-bash)
 
 - Einführung zum Vergleichen von Daten in Bash: [https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html)
 

@@ -38,4 +38,3 @@ fs.mkdtemp('/tmp/foo-', (err, folder) => {
 ## देखें भी:
 
 - अधिक जानकारी के लिए, आप [Node.js fs.mkdtemp() डॉक्युमेंटेशन](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback) को देख सकते हैं।
-- एक विस्तृत तुलनात्मक मार्गदर्शन के लिए, [Ramdisk vs Temporary File](https://www.novell.com/coolsolutions/appnote/19386.html) पढ़ें।

@@ -30,5 +30,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## Також дивіться:
 Для отримання додаткової інформації про запис до текстових файлів у Clojure, дивіться наступні джерела:
 - [Офіційна документація Clojure](https://clojure.org/)
-- [Clojure for the Brave and True: Learn the Ultimate Language and Become a Better Programmer](http://www.braveclojure.com/writing/)
-- [Туторіал по роботі з текстовими файлами в Clojure](https://github.com/clojure/clojure/blob/master/doc/cheatsheet.txt)

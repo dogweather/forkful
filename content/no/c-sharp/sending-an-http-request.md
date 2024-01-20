@@ -46,6 +46,5 @@ Som et alternativ, kan du bruke RestSharp, et populært open-source prosjekt. Re
 Når du bruker HttpClient, sørg for å gjenbruke HttpClient-instanser så langt det er mulig. HttpClient er ment å være instantiert en gang og gjenbrukt gjennom hele livsløpet til en applikasjon. 
 
 ## Se også 
-* [Microsoft HttpClient-dokumentasjon](https://docs.microsoft.com/no-no/dotnet/api/system.net.http.httpclient?view=net-5.0)
 * [RestSharp-prosjekt](https://restsharp.dev/)
 * [HttpWebRequest vs HttpClient vs WebClient](https://www.infoworld.com/article/3044133/httpwebrequest-vs-httpclient-vs-webclient.html)

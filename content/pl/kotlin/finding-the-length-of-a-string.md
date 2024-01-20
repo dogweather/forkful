@@ -37,4 +37,3 @@ Szczegół realizacji: W Kotlinie, właściwość .length dla ciągu znaków zwr
 Możesz zapoznać się z większą ilością przykładów i szczegółów na temat znalezienia długości ciągu znaków w Kotlinie, odwiedzając te strony:
 - [Dokumentacja Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
 - [Przewodnik Programowania Kotlin](https://www.programiz.com/kotlin-programming/string)
-- [Kotlin Tutorial - String Length](https://www.tutorialkart.com/kotlin/string-length-in-kotlin/)

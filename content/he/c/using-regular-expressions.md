@@ -44,4 +44,3 @@ result = regexec(&regex, string2, 0, NULL, 0); // בודק האם המחרוזת
 
 ## ראה גם
 - [מדריך להתחיל ללמוד רגילר אקספרשנז ב-C](https://www.cs.cf.ac.uk/Dave/C/node33.html)
-- [מדריך מלא על רגילר אקספרשנז בשפת C](https://www3.nd.edu/~pbui/teaching/cse.20289.sp17/notes/week-05.html)

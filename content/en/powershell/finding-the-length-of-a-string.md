@@ -54,4 +54,3 @@ $str.Length
 ## See Also
 - Learn more about strings in [Strings in .NET and PowerShell](https://devblogs.microsoft.com/scripting/understanding-powershell-and-basic-string-formatting/).
 - Understand more about the Length property in [.NET's official Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0).
-- For string manipulation techniques in PowerShell, see [An Introduction to String Functions in PowerShell](https://www.computerperformance.co.uk/powershell/powershell-string-functions/).

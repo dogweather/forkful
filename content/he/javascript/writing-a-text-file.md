@@ -35,5 +35,4 @@ fs.writeFile("myFile.txt", "Hello World!", function(err) {
 
 - [פקודת fs.writeFile המפורטת במסמך הרשמי של ג'אווהסקריפט](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_writefile_file_data_options_callback)
 - [הפרדה בין טקסט לקבצי טקסט עם JQuery](https://stackoverflow.com/questions/16657935/how-to-pass-from-html-to-jquery-ajax-php-the-method-post-without-an-express)- [שימוש בתוכנית משתמש של fs להשתמש בקבצי טקסט](https://github.com/lodash/lodash/blob/4.17.11-npm/misc/scripts/build-dist.bundle.js)
-- [יישומי שימוש של post וכיפולר כ"נתיבים"](https://gist.github.com/noah12498/d4b94846a9b0d01e2994e5fe725ebdeb)
 - [Node.js תיאור קודי קומפיות WriteStream באבטחה על הכתובת 난 팔다의 쥐죽

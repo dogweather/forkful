@@ -72,6 +72,5 @@ tag name:  p
 ## ראה גם
 
 טיפים נוספים ועומק נוסף בנושא ניתוח HTML ב Go מוצגים במקורות הבאים:
-- מדריך Go הרשמי: [המדריך הרשמי](https://golang.org/pkg/net/html/)
 - מידע על החבילה "x/net/html": [GoDoc](https://godoc.org/golang.org/x/net/html)
 - מדריך פרקטי לאנליזת HTML ב- Go: [מדריך](https://www.devdungeon.com/content/web-scraping-go)

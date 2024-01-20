@@ -41,6 +41,4 @@ Alternativen zu regulären Ausdrücken sind beispielsweise String-Methoden oder 
 Bei der Verwendung von regulären Ausdrücken müssen Programmierer auch auf die Effizienz achten, da komplexe Ausdrücke die Ausführungsgeschwindigkeit beeinträchtigen können. Deshalb ist es wichtig, das richtige Gleichgewicht zwischen Codelesbarkeit und Leistung zu finden.
 
 ## Weitere Informationen
-- [Offizielle Rust-Dokumentation zu regulären Ausdrücken](https://doc.rust-lang.org/std/regex/)
 - [Rust-Bibliothek für reguläre Ausdrücke](https://github.com/rust-lang/regex)
-- [Einführung in reguläre Ausdrücke in Rust von The Rust Programming Language Blog](https://blog.rust-lang.org/2021/11/26/regular-expressions-in-rust.html)

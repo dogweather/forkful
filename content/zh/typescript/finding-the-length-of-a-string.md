@@ -54,6 +54,5 @@ console.log('真实的字符串长度: ', realLength);
 
 ## 另请参阅：
 
-- [MDN字符串指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/字符类)
 - [了解TypeScript字符串](https://www.tutorialsteacher.com/typescript/typescript-string)
 - [Unicode 和 JavaScript](https://mathiasbynens.be/notes/javascript-unicode)

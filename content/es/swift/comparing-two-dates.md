@@ -45,4 +45,3 @@ Para profundizar en el manejo de fechas con Swift, te recomiendo los siguientes 
 
 - Documentación oficial de Swift: [Date](https://developer.apple.com/documentation/foundation/date)
 - Stack Overflow: [Comparando fechas](https://stackoverflow.com/questions/24070450/how-to-get-the-difference-between-two-nsdates)
-- NSHipster: [Date y DateComponents](https://nshipster.com/date/)

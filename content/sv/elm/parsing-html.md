@@ -54,5 +54,4 @@ När vi pratar om implementeringsdetaljer använder Elm-bibliotek som `Html.Pars
 ## Se även:
 
 - [Elm's Html.Parser modul](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser): Det huvudsakliga biblioteket för att parsa HTML i Elm.
-- [Elm's Guide to Parsing](https://guide.elm-lang.org/parsing.html): En grundlig genomgång av parsing i Elm, inklusive HTML-parsing.
 - [Parser Combinators in Elm](https://medium.com/@_rchaves_/parser-combinators-in-elm-22654ffd02f2): En djupare dykning i parser combinators, som är grunden för Elm's parsing bibliotek.

@@ -43,5 +43,4 @@ Históricamente, muchos lenguajes de programación permiten leer argumentos de l
 ## Ver También:
 
 - [Documentación Oficial de Elm](https://elm-lang.org/docs)
-- [Uso de argumentos de línea de comando en Node.js](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line) 
 - [Parámetros y argumentos de la línea de comandos en bash](https://www.gnu.org/software/bash/manual/)

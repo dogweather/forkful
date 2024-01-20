@@ -36,5 +36,3 @@ The chosen number is: 42
 
 ## ראה גם
 - [הסברים נוספים על Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- [כלים ל- Debug ב- Elm](https://elmprogramming.com/debugging.html)
-- [מדריך ל- Debug.log](https://elmprogramming.com/debug.html)

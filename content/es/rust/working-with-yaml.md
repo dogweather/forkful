@@ -57,6 +57,3 @@ La implementación de `yaml-rust` se basa en el analizador `libyaml` escrito en 
 
 ## Véase También
 - [Documentación oficial de YAML](https://yaml.org/)
-- [Crates.io - yaml-rust](https://crates.io/crates/yaml-rust)
-- [xi-editor/yaml-rust en GitHub](https://github.com/xi-editor/yaml-rust)
-- [rhsanson/rust-serde-yaml en GitHub](https://github.com/rhsanson/rust-serde-yaml)

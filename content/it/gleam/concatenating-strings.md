@@ -45,6 +45,5 @@ print(greeting)
 
 Per ulteriori informazioni sulla programmazione in Gleam, controlla i seguenti link:
 
-- [La documentazione ufficiale di Gleam](https://gleam.run/docs/)
 - [Esercizi pratici su Gleam](https://exercism.io/tracks/gleam)
 - [FAQ di Gleam](https://github.com/gleam-lang/gleam/wiki/FAQs)

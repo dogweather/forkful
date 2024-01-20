@@ -35,5 +35,4 @@ println(no_name) // output: False
 
 ## Дивіться також
 
-- [Gleam regex documentation](https://gleam.run/documentation/library/regex.html)
 - [Regular Expression Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

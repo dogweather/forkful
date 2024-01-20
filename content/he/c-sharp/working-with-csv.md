@@ -67,5 +67,3 @@ CSV הוא פורמט פשוט ונפוץ מאוד לשיתוף נתונים ב�
 ראו גם:
 
 - [CsvHelper](https://joshclose.github.io/CsvHelper/)
-- [FastCSV](https://fastcsv.codeplex.com/)
-- [JSON vs XML vs CSV: איזה פורמט יישום טוב לנכם?](https://www.datasciencecentral.com/profiles/blogs/json-xml-csv-which-one-is-better-for-data-interchange)

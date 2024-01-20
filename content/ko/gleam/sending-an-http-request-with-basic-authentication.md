@@ -42,6 +42,5 @@ client.send(request)
 
 다음은 HTTP 요청을 기본 인증과 함께 보내는 데 관한 추가 정보를 찾을 수 있는 몇가지 참고 차례입니다:
 
-- [Gleam official documentation](https://gleam.run/book/tour/http-requests.html)
 - [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
 - [Mozilla Developer Network - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

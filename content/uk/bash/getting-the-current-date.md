@@ -43,6 +43,5 @@ $ date +"%d/%m/%Y"
 - Деталі реалізації: Команда `date` конвертує поточний час (виконання), представлений як кількість секунд, що минали з `UNIX Epoch (1970-01-01 00:00:00 UTC)`, в більш зручний формат.
 
 ## Дивись також:
-- Основи Bash: [bOtskOOl](https://www.botskool.com/geeks/bash-basic-commands)
 - Більше про команду `date`: [Cyberciti](https://www.cyberciti.biz/faq/unix-linux-getting-current-date-in-bash-ksh-shell-script/)
 - Інформація про форматування дати й часу bash: [GNU](https://www.gnu.org/software/bash/manual/bash.html#Date-Manipulation)

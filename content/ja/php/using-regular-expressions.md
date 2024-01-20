@@ -52,5 +52,4 @@ if (preg_match($pattern, $password)) {
 ## 関連リソース:
 
 - [PHPで正規表現を使う方法](https://www.php.net/manual/en/book.pcre.php)
-- [正規表現の基礎](https://www.sitepoint.com/expressions-php/)
 - [PHP正規表現チュートリアル](https://www.tutorialspoint.com/php/php_regular_expression.htm)

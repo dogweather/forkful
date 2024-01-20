@@ -51,6 +51,5 @@ fi
 Testowanie kodu jest częścią rozwoju oprogramowania, które powstało na początku lat 50. XX wieku. Alternatywą dla pisania testów w Bash jest użycie narzędzia do automatyzacji testów, np. Selenium. W Bash możemy pisać testy jednostkowe dla pojedynczych funkcji w skrypcie lub testować całe skrypty na różnych systemach operacyjnych.
 
 ## Zobacz także:
-- [Bash nieformalny podręcznik](http://intertwingly.net/projects/bashcmd/) - przydatna strona z instrukcjami i przykładami dla początkujących użytkowników Bash.
 - [SeleniumHQ](https://www.seleniumhq.org/) - narzędzie do automatyzacji testów dla stron internetowych.
 - [Testowanie jednostkowe w Bash](https://github.com/lehmannro/assert.sh) - biblioteka pozwalająca na pisanie testów jednostkowych w Bash.

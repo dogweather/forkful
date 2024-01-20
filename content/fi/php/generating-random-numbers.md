@@ -34,5 +34,4 @@ Satunnaislukujen luomiseen PHP:ssä on myös muita monimutkaisempia tapoja, kute
 ## Katso myös: 
 - PHP:n ohjekirja satunnaislukuja varten: [PHP Manual for Random Numbers](https://php.net/manual/en/book.math.php)
 - random_int():n virallinen dokumentaatio: [PHP random_int() Function](https://www.php.net/manual/en/function.random-int.php)
-- Opi lisää rand():sta, mt_rand():sta ja niiden eroista: [Why mt_rand is better than rand in PHP](https://www.exakat.io/php-likes-random/)
 - Kattavampi opas satunnaislukujen luomiseen PHP:ssä: [Generating random numbers in PHP](https://www.sitepoint.com/community/t/generating-random-numbers-in-php/6484)

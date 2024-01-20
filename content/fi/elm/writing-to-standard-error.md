@@ -38,4 +38,3 @@ Vakioerolle kirjoittamisessa käytetään standardipuskurialuetta, joka on osa t
 
 - [Elm Debug moduuli dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug)
 - [Elm Result ja Maybe tyyppitiedot](https://guide.elm-lang.org/error_handling/)
-- [Mitä on vakioerolle kirjoittaminen?](https://www.geeksforgeeks.org/what-is-debugging/)

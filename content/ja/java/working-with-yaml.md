@@ -54,6 +54,5 @@ YAML形式のファイルをJavaで操作するためには、SnakeYAMLやYAMLBe
 ## 関連情報:
 - [YAML 公式サイト](https://yaml.org/)
 - [YAMLBeans ライブラリ](https://yamlbeans.sourceforge.net/)
-- [SnakeYAML ライブラリ](https://bitbucket.org/asomov/snakeyaml)
 
 このように、YAMLを使用することで、プログラムの設定やデータを簡単に保存し、読み込むことができます。Javaでは、様々なライブラリを使用して、YAMLを操作することができるので、ぜひ活用してみてください。

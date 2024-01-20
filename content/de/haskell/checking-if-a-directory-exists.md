@@ -46,4 +46,3 @@ Historisch gesehen war das Arbeiten mit Dateien und Verzeichnissen in Haskell im
 Weitere Informationen und Anleitungen zum Umgang mit Dateien und Verzeichnissen in Haskell finden Sie in den folgenden Links:
 
 - [System.Directory in Haskell](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-- [Working with files & directories in Haskell](https://wiki.haskell.org/Introduction_to_IO_and_System.IO)

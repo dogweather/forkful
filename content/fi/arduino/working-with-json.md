@@ -63,5 +63,4 @@ JSONia voi käyttää myös vaihtoehtona relaatiotietokannoille ja XML-tiedostoi
 ## Katso myös:
 
 - [ArduinoJSON-kirjaston dokumentaatio](https://arduinojson.org/)
-- [JSON-wikipedia-artikkeli](https://fi.wikipedia.org/wiki/JavaScript_Object_Notation)
 - [JSON-opetusvideo](https://www.youtube.com/watch?v=iiADhChRriM)

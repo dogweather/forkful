@@ -45,4 +45,3 @@ Ready to learn more about strings in Elixir? Explore these links:
 - Elixir's guide to [Strings and Binaries](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).
 - Documentation for [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
 - Unicode Standard Annex [#29](https://www.unicode.org/reports/tr29/) with sentence boundaries rules.
-- More about [Elixir on Wikipedia](https://en.wikipedia.org/wiki/Elixir_(programming_language)).

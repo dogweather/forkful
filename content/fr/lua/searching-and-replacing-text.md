@@ -39,4 +39,3 @@ Pour aller plus loin dans votre apprentissage de Lua et mieux comprendre sa gest
 
 - [Le Manuel de Référence Lua 5.4](https://www.lua.org/manual/5.4/)
 - [La documentation de la bibliothèque string de Lua](http://lua-users.org/wiki/StringLibraryTutorial)
-- [Programmation Lua chez Wikibooks](https://fr.wikibooks.org/wiki/Programmation_Lua)

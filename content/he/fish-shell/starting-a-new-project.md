@@ -47,4 +47,3 @@ echo $my_var
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 - [Getting Started with Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Understanding Fish Shell](https://jvns.ca/blog/2017/04/23/fish-shell-is-awesome/)

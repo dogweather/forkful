@@ -44,6 +44,5 @@ Når det gjelder implementasjonsdetaljer, sender `simpleHttp` en "GET" forespør
 - [http-conduit på Hackage](http://hackage.haskell.org/package/http-conduit)
 - [Haskell's HTTP pakke](http://hackage.haskell.org/package/HTTP)
 - [Boken "Real World Haskell"](http://book.realworldhaskell.org/)
-- [Haskell's Tutorial for Web Scraping](https://wiki.haskell.org/Web_scraping_with_Haskell)
 
 Husk at programmeringsspråket aldri burde være en begrensing. Bruk det riktige verktøyet for jobben.

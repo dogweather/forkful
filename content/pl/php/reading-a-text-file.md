@@ -44,4 +44,3 @@ Podczas odczytywania dużych plików tekstowych, trzeba zachować ostrożność,
 
 - [Oficjalna dokumentacja PHP na temat odczytywania plików](https://www.php.net/manual/en/function.file-get-contents.php)
 - [Alternatywne metody odczytywania plików w PHP](https://www.php.net/manual/en/function.fread.php)
-- [Historia i kontekst czytania plików](https://en.wikipedia.org/wiki/History_of_computer_data_storage)

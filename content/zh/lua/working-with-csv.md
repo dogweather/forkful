@@ -85,4 +85,3 @@ CSV格式最早由IBM公司在20世纪70年代开发，用于在不同的计算�
 - [Lua官方文档](https://www.lua.org/docs.html)
 - [CSV格式简介](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [lua-csv库](https://github.com/geoffleyland/lua-csv)
-- [lua-xsd库](https://github.com/moteus/lua-xsd)

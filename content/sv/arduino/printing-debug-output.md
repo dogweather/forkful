@@ -39,5 +39,4 @@ När det gäller implementeringsdetaljer, `Serial.begin(9600)` öppnar seriellt 
 ## Se Även
 För vidare läsning, se följande länkar (alla på engelska):
 - [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino Debugging Techniques](https://learn.sparkfun.com/tutorials/serial-debugging-techniques)
 - [Baud Rate](https://learn.sparkfun.com/tutorials/serial-communication#baud-rate)

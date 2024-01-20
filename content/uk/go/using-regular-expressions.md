@@ -44,5 +44,4 @@ func main() {
 ## Дивіться також:
 
 * Довідник Go: [Регулярні вирази](https://golang.org/pkg/regexp/)
-* Як використовувати регулярні вирази в Go: [Посібник](https://yourbasic.org/golang/regexp-another-example/)
 * Розширений посібник з регулярних виразів: [Регулярні вирази для новачків](https://www.regular-expressions.info/tutorial.html)

@@ -47,4 +47,3 @@ Aquí tienes algunos recursos útiles para entender más profundamente este conc
 
 - "toupper", la función estándar de C - [Documentación](https://www.cplusplus.com/reference/cctype/toupper/)
 - "towupper", para cadenas anchas - [Documentación](https://en.cppreference.com/w/c/string/wide/towupper)
-- Capitalización de palabras en C - [Tutorial](https://www.geeksforgeeks.org/program-capitalize-first-letter-word-string/) de GeeksForGeeks.

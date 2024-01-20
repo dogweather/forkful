@@ -37,7 +37,3 @@ Tässä esimerkissä on määritelty funktio, joka summaa kaksi kokonaislukua. S
 Testien kirjoittaminen on keino varmistaa ohjelman toiminnallisuus ja löytää mahdolliset virheet jo ennen kuin ohjelma julkaistaan. Testien lisäksi on olemassa myös muita tapoja varmistaa koodin laatu, kuten koodin tarkastaminen ja käsin tehtävä debuggaus. On tärkeää löytää oma tapa testata ja varmistaa oman koodin toimivuus.
 
 ## Katso myös:
-
-- [Unit testaus Kotlinilla](https://kotlinlang.org/docs/tutorials/unittesting.html)
-- [Johdatus testaamiseen Kotlinilla](https://www.99trustworthy.com/kotlin-testing/)
-- [Kotlin Kaavio ja testausesimerkki](https://blog.mgm-tp.com/2018/06/testing-kotlin-code-with-kotlin-dsl/)

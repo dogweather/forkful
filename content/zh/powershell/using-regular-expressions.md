@@ -31,6 +31,4 @@ PowerShell is cool!
 正则表达式最早是由计算机科学家之一的Stephen Kleene在20世纪50年代提出的，它的出现极大地简化了文本处理的工作。除了PowerShell，其他编程语言如Python、Java和C#也都可以使用正则表达式来进行文本处理。当然，还有许多其他的文本处理工具也可以用来完成类似的任务，但正则表达式通常是最简单、最有效的解决方案。如果你想深入了解正则表达式的语法和使用技巧，可以参考下方的相关资源。
 
 ## 链接参考
-- [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/core-powershell/regular-expressions?view=powershell-7)
 - [正则表达式教程（网易云课堂）](https://study.163.com/course/courseMain.htm?courseId=1005498027)
-- [正则表达式在线测试工具](https://regexr.com/)

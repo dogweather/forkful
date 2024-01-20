@@ -42,6 +42,5 @@ The `String.length` operation in Elm, despite its simplicity, has a meaningful h
 For further reading and examples, refer to these sources:
 
 - [Elm's Official String Guide](https://package.elm-lang.org/packages/elm/core/latest/String#length): The definitive source on strings in Elm, including `String.length`.
-- [Elm Exercises](https://elmprogramming.com/strings.html): This page provides additional practical examples involving strings.
 - [Elm's Style Guide](https://elm-lang.org/docs/style-guide): If you want to write clean, idiomatic Elm code, this guide is the gold standard.
 - [Elm's Syntax Guide](https://elm-lang.org/docs/syntax): A comprehensive overview of Elm's syntax and core language constructs, including string manipulations.

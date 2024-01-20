@@ -39,5 +39,3 @@ Det är viktigt att notera att när du använder 'string replace' i Fish Shell, 
 
 För mer information om hur du arbetar med strängar i Fish Shell, se följande resurser:
 - [Fish Shell Documentation: string](https://fishshell.com/docs/current/cmds/string.html)
-- [Intro to Fish Shell for Beginners](https://www.geekhideout.com/fish.shtml)
-- [Fish Shell Tutorial: String Manipulation](https://www.learnbyexample.org/fish-shell-string-manipulation/)

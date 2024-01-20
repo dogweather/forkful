@@ -38,4 +38,3 @@ Per ulteriori informazioni su come utilizzare l'interpolazione delle stringhe in
 
 - [Documentazione ufficiale Fish Shell](https://fishshell.com/docs/current/index.html)
 - [Guida di stringhe Fish Shell](https://fishshell.com/docs/current/commands.html#string)
-- [Tutorial su Comefare Fish Shell](https://howto.fish/fish-shell)

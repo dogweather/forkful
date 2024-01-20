@@ -47,4 +47,3 @@ For more information or additional context about converting a date to a string i
 
 * [Microsoft's PowerShell documentation on Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
 * [DateTime.ToString Method documentation](https://docs.microsoft.com/dotnet/api/system.datetime.tostring)
-* [A great blog article on how to format dates with PowerShell](https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-display-date-in-specific-format/)

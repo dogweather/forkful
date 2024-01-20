@@ -47,4 +47,3 @@ Existem outras alternativas além do `HttpClient` padrão do Java. Por exemplo, 
 ## Veja também
 - [Documentação oficial do HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 - [OkHttp](https://square.github.io/okhttp/)
-- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.0.x/index.html)

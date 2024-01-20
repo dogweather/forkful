@@ -39,8 +39,6 @@ Weiterführende Informationen:
 
 Es gibt viele Ressourcen zu regulären Ausdrücken im Internet, aber hier sind einige ausgewählte Links, die besonders hilfreich für Anfänger sind:
 
-- [Reguläre Ausdrücke Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Reguläre Ausdrücke Tutorial von Ninite](https://ninite.com/blog/regex/)
 - [Fish Shell Manual](https://fishshell.com/docs/current/index.html#regexp)
 
 Jetzt bist du bereit, reguläre Ausdrücke im Fish Shell zu verwenden und deine Programmieraufgaben zu erleichtern!

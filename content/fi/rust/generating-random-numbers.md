@@ -40,6 +40,4 @@ Vaihtoehtoina rust-lang:n rand-kirjastolle on saatavilla muutamia, kuten fastran
 
 Lisätietoja satunnaisluvun tuottamisesta ja Rust-rand- kirjastosta:
 
-- Rust’s Random Number Library: [Lukijaopas](https://rust-lang.github.io/book/ch02-00-guessing-game-tutorial.html)
 - Rand-kirjaston [Käyttöopas](https://docs.rs/rand/0.8.3/rand/)
-- Vaihtoehtoja rust-lang:in rand-kirjastolle [fastrand](https://crates.io/crates/fastrand) ja [nanorand](https://crates.io/crates/nanorand)

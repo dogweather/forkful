@@ -39,5 +39,4 @@ fun main(args: Array<String>) {
 ## 참고:
 
 - Kotlin 공식 문서: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
-- InnovationM blog의 Kotlin 프로젝트 시작 방법 가이드: [https://www.innovationm.com/creating-kotlin-project-in-intellij-idea/](https://www.innovationm.com/creating-kotlin-project-in-intellij-idea/)
 - Stack Overflow에서 Kotlin 관련 질문 참고: [https://stackoverflow.com/questions/tagged/kotlin](https://stackoverflow.com/questions/tagged/kotlin)

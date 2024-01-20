@@ -37,6 +37,3 @@ assert suma(dane_wejsciowe) = oczekiwany_wynik
 Testowanie kodu stało się nieodłączną częścią programowania wraz z rozwojem metodyk agile i test-driven development. W Gleam istnieje wiele narzędzi i bibliotek do pisania testów, na przykład ```gleam_testing``` oraz wbudowane makra takie jak ```assert``` i ```expect```. Alternatywnymi metodami testowania są na przykład manualne testy czy analiza statyczna kodu. W Gleam możliwe jest również pisanie testów jednostkowych, integracyjnych oraz akceptacyjnych.
 
 ## Zobacz także:
-
-- [Dokumentacja gleam_testing](https://gleam.run/testing/)
-- [Przykładowe testy w repozytorium Gleam](https://github.com/gleam-lang/gleam/tree/master/examples/testing)

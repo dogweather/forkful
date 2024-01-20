@@ -42,6 +42,5 @@ När datumobjekt jämförs i JavaScript och TypeScript, omvandlas de faktiskt ti
 För vidare läsning om hantering av datum i TypeScript, se följande källor:
 
 - [Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Working with Dates in TypeScript](https://typeofnan.dev/working-with-dates-in-typescript/)
 
 Observera att jämföra datum kan vara mer komplicerat i vissa situationer, som att hantera tidszoner och skottår. Var noga med att även förstå dessa koncept.

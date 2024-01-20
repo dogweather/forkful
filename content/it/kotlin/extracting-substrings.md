@@ -37,5 +37,4 @@ println(substr2)  // Risultato: a Kotle
 
 ## Vedi anche:
 - [Documentazione Ufficiale di Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html) per ulteriori dettagli su come usare le funzioni di estrazione delle sottocatene.
-- [Tutorial per sottocatene Kotlin su TutorialsPoint](https://www.tutorialspoint.com/kotlin/kotlin_string_subsequence.htm)
 - [Discussione StackOverflow](https://stackoverflow.com/questions/36529972/how-do-i-get-a-substring-in-kotlin) su come ottenere una sottocatena in Kotlin.

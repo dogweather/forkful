@@ -38,4 +38,3 @@ Elixirin päivämäärien vertailu periytyy Erlang-kielestä, jonka pohjalta Eli
 ## Katso Myös:
 - Elixirin virallinen dokumentaatio: [Date](https://hexdocs.pm/elixir/Date.html)
 - Erlangin päivämäärien käsittely - [Calendar](http://erlang.org/doc/man/calendar.html)
-- Great article on Elixir Date & Time handling - [Working with dates and times in Elixir](https://www.amberbit.com/blog/2019/4/25/dates-and-times-in-elixir/)

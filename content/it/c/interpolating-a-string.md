@@ -41,6 +41,3 @@ In C, l'interpolazione delle stringhe viene gestita principalmente da `printf()`
 ## Leggi Anche
 
 Per un approfondimento sull'interpolazione delle stringhe e sulla funzione `printf()`, visita i seguenti collegamenti:
-
-- [C Programming/String usage](https://www.wikibooks.org/wiki/C_Programming/String_usage) su Wikibooks
-- [What is Interpolation in PHP?](https://www.geeksforgeeks.org/what-is-variable-interpolation-in-php/) su GeeksforGeeks (anche se si riferisce a PHP, il concetto di interpolazione è lo stesso)

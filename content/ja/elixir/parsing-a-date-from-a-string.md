@@ -38,5 +38,4 @@ Elixirのバージョン1.3から、ISO8601の日付と時刻の形式を解析�
 ## 関連資料
 
 - Elixirの公式ドキュメンテーション：[DateTime.from_iso8601](https://hexdocs.pm/elixir/DateTime.html#from_iso8601/1)
-- Timexライブラリ：[Timex Docs](https://hexdocs.pm/timex/readme.html)
 - ISO8601について：[ISO8601 - Wikipedia](https://ja.wikipedia.org/wiki/ISO_8601)

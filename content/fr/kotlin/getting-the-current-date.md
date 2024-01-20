@@ -58,7 +58,6 @@ L'implémentation de `LocalDate.now()` utilise le calendrier du système (Systè
 
 Pour en savoir plus sur le travail avec les dates et heures dans kotlin, consultez ces ressources utiles:
 
-- Documentations officielles de Kotlin: [Date and Time API](https://kotlinlang.org/docs/dates-times.html)
 - Blog de Baeldung: [Guide to java.time](https://www.baeldung.com/java-8-date-time-intro)
 
 Allez-y et explorez toutes les possibilités offertes par la gestion moderne des dates et des heures avec Kotlin et Java!

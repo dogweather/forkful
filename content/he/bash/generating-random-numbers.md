@@ -27,6 +27,5 @@ echo $(( RANDOM % 10 ))
 הגנרציה של מספרים אקראיים במחשבים החלה במחקר באנגליה בשנות ה-40, במטרה לפתור בעיות אקראיות בשימוש במחשבים. יחד עם Bash, קיימות אפשרויות רבות אחרות ליצירת מספרים אקראיים, כולל `openssl`, PHP, Python ועוד. Bash משתמש במשתנה מיוחד, `$RANDOM`, המחזיר מספר אקראי בין 0 ו-32,767. השימוש ב-% מאפשר להגביל את הטווח של המספרים האקראיים.
 
 ## ר' גם:
-- [מספרים אקראיים ב-Linux](https://www.linux.com/training-tutorials/using-randomness-linux-shell-scripts/)
 - [גנרציה של מספרים אקראיים ב-Python](https://realpython.com/python-random/)
 - [ספריית openssl](https://www.openssl.org/docs/manmaster/man3/RAND_bytes.html)

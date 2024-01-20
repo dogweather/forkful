@@ -46,5 +46,3 @@ A saída será: '2022-10-21'.
 - Documentação oficial do Kotlin sobre a Classe LocalDate: [Tutorial Kotlin LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)[PT]
 
 - Guia rápido para Parsing, formatação e manipulação de datas no Java 8: [Guia Java 8 Date](https://www.baeldung.com/java-8-date-time-intro) [EN]
-
-- Kotlin Cookbook: Um guia completo e prático para o Kotlin: [Kotlin Cookbook](https://www.amazon.com/Kotlin-Cookbook-Problem-Focused-Ken-Kousen/dp/1492046671) [EN]

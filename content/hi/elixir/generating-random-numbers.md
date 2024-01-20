@@ -40,4 +40,3 @@ Enum.random([:spades, :clubs, :hearts, :diamonds])
 
 - [इलिक्सिर प्रलेखन](https://hexdocs.pm/elixir/Enum.html#random/1) 
 - [Random number generation (संख्या उत्पन्न करने की क्रिया)](https://en.wikipedia.org/wiki/Random_number_generation)
-- [StreamData डॉक्यूमेंटेशन](https://github.com/elixir-lang/stream_data)

@@ -46,4 +46,3 @@ A função `aleatorio.Next(1, 100)` que usamos anteriormente, utiliza por debaix
 
 - Documentação da Microsoft sobre a classe `Random`: [https://docs.microsoft.com/pt-br/dotnet/api/system.random?view=net-5.0](https://docs.microsoft.com/pt-br/dotnet/api/system.random?view=net-5.0)
 - Artigo da Microsoft sobre segurança e aleatoriedade: [https://docs.microsoft.com/pt-br/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0](https://docs.microsoft.com/pt-br/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
-- Artigo relacionado sobre a geração de números aleatórios em C#: [https://www.c-sharpcorner.com/UploadFile/f0b2ed/random-number-generation-in-C-Sharp/](https://www.c-sharpcorner.com/UploadFile/f0b2ed/random-number-generation-in-C-Sharp/)

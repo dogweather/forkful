@@ -33,5 +33,4 @@ test "나이가 18살 이상인지 체크", do:
 
 ## 더 많은 정보:
 
-- [Elixir 공식 문서 - 테스트](https://hexdocs.pm/elixir/ex_unit.html)
 - [테스트에 대한 좋은 글](https://medium.com/@WEtl/how-to-write-great-elixir-tests-2b52c7c8733b)

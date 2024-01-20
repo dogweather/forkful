@@ -41,4 +41,3 @@ if (fs.existsSync('/निर्दिष्ट/पथ')) {
 
 - Node.js डॉक्स के `fs` मॉड्यूल ([स्रोत](https://nodejs.org/api/fs.html))
 - StackOverflow पर "Check if directory exists in Node.js" ([स्रोत](https://stackoverflow.com/questions/11458068/how-to-check-if-a-directory-or-a-file-exists-in-system-or-not-using-node-js))
-- "Understanding fs module in Node.js" ([स्रोत](https://www.geeksforgeeks.org/understanding-fs-module-in-node-js/))

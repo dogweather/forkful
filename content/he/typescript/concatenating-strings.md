@@ -28,4 +28,3 @@ console.log(str3);  // "שלום, עולם!"
 
 ## ראה גם:
 - [String ב- MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [TypeScript ב- MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/TypeScript)

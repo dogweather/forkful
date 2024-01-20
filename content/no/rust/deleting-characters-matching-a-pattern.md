@@ -49,6 +49,4 @@ Vedrørende **implementeringsdetaljer**: metoden vi brukte i 'Hvordan:' seksjone
 ## Se Også
 
 - [Rust Programmeringsspråk](https://www.rust-lang.org/)
-- [Regex Crate](https://crates.io/crates/regex)
 - [Rust Standard Library](https://doc.rust-lang.org/stable/std/)
-- [Arbeider med tekster i Rust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-string-manipulations.html)

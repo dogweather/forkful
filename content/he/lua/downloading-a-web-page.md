@@ -38,5 +38,4 @@ print(body)
 ## ראה גם:
 
 - [הורדת קבצים ב-Lua באמצעות cURL](https://stackoverflow.com/questions/25467009/download-a-file-with-lua/25472279#25472279)
-- [הסבר אמיתי על תכנת ה-Lua socket.http בוויקיבוקס](https://en.wikibooks.org/wiki/Lua_Programming/web_fetch)
 - [היסטוריית הספרייה 'socket' ב-Lua](http://w3.impa.br/~diego/software/luasocket/home.html)

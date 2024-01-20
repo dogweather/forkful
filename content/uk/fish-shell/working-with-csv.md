@@ -48,5 +48,4 @@ CSV виник як спрощений формат для збереження 
 
 # Дивись також
 
-- [GitHub repository for csvutil](https://github.com/fishpkg/csvutil)
 - [Official Fish Shell documentation](https://fishshell.com/docs/current/index.html)

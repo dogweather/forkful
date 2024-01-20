@@ -36,4 +36,3 @@ test "गणितीय ऑपरेशन" {
 ## देखें भी:
 - [Gleam दस्तावेज़ीकरण](https://gleam.run/documentation)
 - [Gleam समुदाय](https://github.com/gleam-lang/gleam/discussions)
-- [Gleam को डाउनलोड करें](https://gleam.run/getting-started/installation.html)

@@ -45,6 +45,4 @@ Chodź `Data.Text.replace` nie obsługuje wzorców, jest ona znacznie szybsza i 
 
 ## Zobacz także
 
-- ["Text processing in Haskell"](https://wiki.haskell.org/Text_processing_in_Haskell): Podstawowe informacje o przetwarzaniu tekstu w Haskellu.
-- [Tutorial: Regular Expressions in Haskell](https://wiki.haskell.org/Tutorial:Regular_expressions_in_Haskell): Wstęp do użycia wyrażeń regularnych w Haskellu.
 - ["Data.Text Documentation"](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html): Dokumentacja biblioteki `Data.Text`.

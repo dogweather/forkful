@@ -53,5 +53,4 @@ Le code ci-dessus est assez direct. Il crée un en-tête d'autorisation avec des
 
 Visitez les liens ci-dessous pour plus d'informations :
 - [Documentation officielle de Microsoft sur HttpClient](https://docs.microsoft.com/fr-fr/dotnet/api/system.net.http.httpclient)
-- [Un bon tutoriel sur l'authentification HTTP en C#](https://www.c-sharpcorner.com/UploadFile/2b876a/http-authentication-and-authorization-in-web-api/)
 - [Pourquoi utiliser l'authentification Basic over Digest](https://security.stackexchange.com/questions/9907/basic-vs-digest-authentication-over-http)

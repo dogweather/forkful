@@ -37,5 +37,3 @@ Optional(2022-09-15 00:00:00 +0000)
 
 ## ראה גם - See Also
 - [Apple's Documentation on DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift by Sundell on Dates](https://www.swiftbysundell.com/basics/dates)
-- [NSHipster's Article on DateFormatter](https://nshipster.com/dateformatter/)

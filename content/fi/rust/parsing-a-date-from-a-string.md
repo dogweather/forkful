@@ -48,5 +48,3 @@ Toisiin aiheeseen liittyviin lähteisiin:
 
 - [Rust Book](https://doc.rust-lang.org/book/)
 - [Chrono Crate Docs](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/std_misc/chrono.html)
-- [About Parsing in Rust](https://stevedonovan.github.io/rustifications/2017/09/09/parsing-in-rust.html)

@@ -46,5 +46,4 @@ I Haskell, funksjonen `parseTimeM` er del av `Data.Time.Format` modulen. Det bru
 For mer informasjon, sjekk ut disse lenkene:
 
 - [Data.Time.Format documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell/Dates_and_times)
 - [Stack Overflow: How to convert String to Data.Time in Haskell?](https://stackoverflow.com/questions/3030675/how-to-convert-string-to-data-time-in-haskell)

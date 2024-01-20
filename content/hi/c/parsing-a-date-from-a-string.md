@@ -50,6 +50,5 @@ C में, `strptime` और `strftime` फंक्शन का उपयो
 ## "अन्य उपयोगी संसाधन" (See Also)
 
 * [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-* [C - Date & Time](https://www.tutorialspoint.com/cprogramming/c_date_time.htm)
 * [strftime function](http://www.cplusplus.com/reference/ctime/strftime/)
 * [strptime function](https://man7.org/linux/man-pages/man3/strptime.3.html)

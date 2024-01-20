@@ -41,4 +41,3 @@ YAMLは、XMLやJSONに比べてシンプルで読みやすい表現ができる
 
 - [YAML 公式サイト](https://yaml.org/)
 - [js-yaml Library](https://github.com/nodeca/js-yaml)
-- [JSON vs YAML vs XML: The Battle of the Data Format Titans](https://stackify.com/what-are-json-xml-yaml-and-yaml-used-for/)

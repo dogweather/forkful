@@ -56,6 +56,3 @@ Für weitere Informationen und alternative Implementierungsdetails, siehe die fo
 
 - [Elixir HTTPoison GitHub Repo](https://github.com/edgurgel/httpoison)
 - [HTTParty GitHub Repo](https://github.com/jnunemaker/httparty)
-- [Elixir School: HTTP-Anfragen](https://elixirschool.com/de/lessons/libraries/httpoison/)
-- [Eine genaue Betrachtung von OAuth und seiner Sicherheitsarchitektur](https://auth0.com/de/blog/a-look-at-the-latest-oauth2-security-attacks/)
-- [JWT vs. Sessions](https://dzone.com/articles/jwt-vs-sessions)

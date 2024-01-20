@@ -45,5 +45,4 @@ When using regular expressions in Lua, there are a few implementation details to
 
 ## See Also:
 - [Official Lua documentation on `string.match`](https://www.lua.org/manual/5.4/manual.html#pdf-string.match)
-- [LuaPatterns library](https://github.com/luapatterns/luapatterns)
 - [Lrexlib library](https://github.com/rrthomas/lrexlib)

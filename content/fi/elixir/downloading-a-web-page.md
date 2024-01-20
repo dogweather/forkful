@@ -59,4 +59,3 @@ Vaihtoehtoisia tapoja verkkosivujen lataamiseen Elixirissä ovat `HTTPotion` ja 
 
 - Elixirin virallinen dokumentaatio: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
 - HTTPoison-kirjaston Github-sivu: [https://github.com/edgurgel/httpoison](https://github.com/edgurgel/httpoison)
-- Verkkoskrapaus Elixirissä: [https://www.smashingmagazine.com/2018/05/web-scraping-elixir/](https://www.smashingmagazine.com/2018/05/web-scraping-elixir/)

@@ -29,5 +29,3 @@ YAML נוצרה בשנת 2001 ונחשבת לשפת מממודרגת. ישנן �
 ## ראה גם:
 למידע נוסף על YAML, ניתן לבחון את הקישורים הבאים:
 - [הגדרת YAML](https://yaml.org/spec/1.2/spec.html)
-- [מדריך לשימוש ב-YAML בקוד (באנגלית)](https://www.baeldung.com/kotlin/yaml)
-- [דוגמאות של קבצי YAML](https://github.com/chbrown/magic-strings/blob/master/lib/magic_strings.py)

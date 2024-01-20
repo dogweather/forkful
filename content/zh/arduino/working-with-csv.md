@@ -52,6 +52,4 @@ void loop(){
 - 另外一个常见的替代格式是JSON，它也可以用来存储和读取表格数据，而且比CSV更具可读性和灵活性。
 
 ## 参考链接：
-- [官方的CSV库](https://www.arduino.cc/reference/en/libraries/csv/)
-- [FastCSV库](https://github.com/cristiansteib/FastCSV)
 - [JSON格式](https://www.json.org/)

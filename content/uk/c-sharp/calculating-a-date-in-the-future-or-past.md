@@ -50,6 +50,4 @@ class Program {
 ## Подивіться також:
 
 - [System.DateTime в .NET](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime?view=net-6.0)
-- [Робота з датами і часом в C#](https://code-maze.com/datetime-csharp/)
 - [NodaTime](https://nodatime.org/)
-- [DateNet on GitHub](https://github.com/Galarius/DateNet)

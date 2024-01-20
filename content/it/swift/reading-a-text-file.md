@@ -50,6 +50,4 @@ Riguardo i dettagli implementativi, Swift utilizza dietro le quinte le funzioni 
 
 ## Vedi Anche:
 
-- [Documentazione ufficiale di Apple sulla lettura di file](https://developer.apple.com/documentation/swift/string/1415645-init) 
 - [Guida Swift per la gestione dei file](https://www.raywenderlich.com/418-working-with-the-filemanager-in-swift)
-- [Tutorial iOS sulla lettura e scrittura di file di testo](https://www.appcoda.com/working-with-files-in-swift/)

@@ -46,5 +46,4 @@ Un dettaglio chiave della rimozione di caratteri corrispondenti a un modello in 
 ## Vedi Anche:
 
 - [Java String replaceAll () Metodo con esempio](https://www.javatpoint.com/java-string-replaceall)
-- [Metodo replaceAll () in Java](https://www.geeksforgeeks.org/replaceall-method-in-java/)
 - [Espressioni regolari in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

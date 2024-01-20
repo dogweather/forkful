@@ -45,5 +45,4 @@ Per quanto riguarda i dettagli di implementazione, la funzione `from_string` in 
 Qui ci sono alcuni riferimenti utili per approfondire l'argomento:
 
 - Documentazione Gleam: [https://gleam.run/book/tour/](https://gleam.run/book/tour/)
-- Documentazione della libreria di date di Gleam: [https://hexdocs.pm/gleam_stdlib/gleam/date/](https://hexdocs.pm/gleam_stdlib/gleam/date/)
 - Informazioni sul formato ISO8601: [https://it.wikipedia.org/wiki/ISO_8601](https://it.wikipedia.org/wiki/ISO_8601)

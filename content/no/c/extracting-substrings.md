@@ -51,5 +51,4 @@ De viktigste detaljene i implementeringen er selve utdraget og avslutningen av d
 
 For mer informasjon og alternative måter å håndtere substring utdrag, se følgende linker:
 
-- [String Manipulation i C: memcpy vs strncpy](https://www.differencebetween.com/difference-between-strcpy-and-vs-memcpy/)
 - [C Standard Library - string.h](https://en.cppreference.com/w/c/string)

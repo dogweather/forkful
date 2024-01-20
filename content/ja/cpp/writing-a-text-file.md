@@ -55,7 +55,4 @@ int main() {
 
 ## 関連リンク：
 
-- [C++ファイルストリーム](https://tutorials.yushroom.io/io/fstream/)
-- [バイナリファイルとテキストファイルの違い](https://www.guru99.com/binary-vs-ascii-vs-unicode.html)
-- [データベースの基礎知識](https://searchcio.techtarget.jp/feature/1192121/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E7%A4%8E)
 - [テキストファイルの読み込みの例](https://www.youtube.com/watch?v=qotxawN6EhA)

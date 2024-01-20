@@ -64,4 +64,3 @@ print("Hello, my name is %s and I'm %d years old." % (name, age))
 
 - [Python官方文档](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 - [Real Python 的文章](https://realpython.com/python-f-strings/)
-- [Python Tips 的文章](http://book.pythontips.com/en/latest/f_string.html)

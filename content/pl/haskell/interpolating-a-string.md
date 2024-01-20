@@ -43,4 +43,3 @@ Co do realizacji, `Text.Printf` wykorzystuje technikę o nazwie "typy formatu", 
 ## Zobacz również:
 
 - [Printf w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
-- [Interpolacja stringów w Haskellu](https://ro-che.info/articles/2017-03-26-haskell-string-interpolation)

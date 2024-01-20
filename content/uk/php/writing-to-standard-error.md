@@ -35,5 +35,4 @@ if (!is_numeric($number)) {
 
 ## Також прочитайте:
 
-- Навчальний матеріал з PHP на [MDN](https://developer.mozilla.org/en-US/docs/Web/PHP)
 - Офіційна документація PHP на [php.net](https://www.php.net/manual/en/langref.php)

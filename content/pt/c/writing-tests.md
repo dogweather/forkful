@@ -54,5 +54,4 @@ Testes de unidade, também conhecidos como testes de caixa branca, se tornaram p
 ## Veja também:
 
 - [Artigo sobre testes de unidade na Wikipedia](https://pt.wikipedia.org/wiki/Teste_de_unidade)
-- [Livro sobre testes de software: "Art of Unit Testing"](https://www.amazon.com.br/Art-Unit-Testing-Examples/dp/1617290890)
 - [Ferramenta de testes em C: CUnit](http://cunit.sourceforge.net/)

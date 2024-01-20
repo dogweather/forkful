@@ -50,6 +50,4 @@ Passed    Square function test should return 25 when input is 5
 
 ## 参考资料：
 
-- [Elm官方文档 - 测试](https://guide.elm-lang.org/testing/)
-- [测试驱动开发（TDD）介绍 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/01/what_is_tdd.html)
 - [关于测试的各种方法的比较 - Medium](https://medium.com/@kentbeck_7670/technical-debt-terminology-f6267088c11#.orge3mzcp)

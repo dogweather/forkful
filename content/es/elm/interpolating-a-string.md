@@ -40,7 +40,6 @@ mensaje = "Tu edad es " ++ toString edad
 ## Ver También
 Para obtener más información sobre las cadenas en Elm y métodos alternativos para usar datos dinámicos en una cadena, consulta los siguientes enlaces:
 
-- [Guía oficial de Elm sobre cadenas](https://guide.elm-lang.org/types/string.html)
 - [Documentación de Elm sobre el módulo String](https://package.elm-lang.org/packages/elm/core/latest/String) 
 
 Recuerda siempre que cada lenguaje tiene sus propias peculiaridades y Elm no es una excepción. La ausencia de interpolación de cadena no disminuye su eficiencia para los fines para los que fue diseñado.

@@ -50,4 +50,3 @@ Huruvida du ska använda 'delete', 'gsub', eller 'tr' beror mycket på vilken ty
 För mer läsning, kolla in dessa källor:
 - [Ruby's Officiella Dokumentation om Strängar](https://ruby-doc.org/core/String.html)
 - [TutorialsPoint's Ruby Tutorial](https://www.tutorialspoint.com/ruby/index.htm)
-- [RubyGuides on String Manipulation](https://www.rubyguides.com/2015/06/ruby-string-methods/)

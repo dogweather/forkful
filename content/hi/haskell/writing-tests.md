@@ -52,9 +52,6 @@ main = do
 
 यदि आप हास्केल में टेस्टिंग करना चाहते हैं तो निम्नलिखित स्रोतों को देखें:
 
-- [HUnit विकि पेज](https://wiki.haskell.org/HUnit)
 - [QuickCheck विकि पेज](https://wiki.haskell.org/Introduction_to_QuickCheck1)
 - [Selenium विकि पेज](https://hackage.haskell.org/package/selenium)
 - [Hspec विकि पेज](https://hspec.github.io/)
-- [tasty विकि पेज](http://documentup.com/feuerbach/tasty)
-- [test-framework विकि पेज](https://wiki.haskell.org/Test-framework)

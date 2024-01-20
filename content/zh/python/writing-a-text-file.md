@@ -26,4 +26,3 @@ with open("myfile.txt", "w") as f:
 ## 参考：
 - [Python文档：文本文件的读取和写入](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 - [维基百科：文本文件](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6)
-- [CSDN：Python文本文件写入介绍](https://blog.csdn.net/eric61016191/article/details/82746878)

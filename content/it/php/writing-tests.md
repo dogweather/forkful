@@ -39,5 +39,4 @@ Per implementare correttamente i test automatizzati, è importante seguire alcun
 # Vedi anche:
 
 - [PHPUnit documentazione](https://phpunit.de/manual/6.5/en/index.html)
-- [Codeception documentazione](https://codeception.com/docs/)
 - [Behat documentazione](https://docs.behat.org/en/latest/)

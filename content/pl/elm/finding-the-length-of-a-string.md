@@ -41,4 +41,3 @@ Jeżeli chcesz zgłębić temat operacji na łańcuchach w Elm, zapraszam do lek
 
 - Dokumentacja Elm: [String](https://package.elm-lang.org/packages/elm/core/latest/String)
 - Dokumentacja o listach w Elm: [List](https://package.elm-lang.org/packages/elm/core/latest/List)
-- Przydatny artykuł na blogu: [Understanding Strings in Elm](https://elmprogramming.com/strings.html)

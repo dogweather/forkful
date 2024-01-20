@@ -48,4 +48,3 @@ In Bezug auf Implementierungsdetails verwendet `parseTimeM` eine Monade, um das 
 
 - Die Dokumentation zur `Data.Time` Bibliothek finden Sie [hier](https://hackage.haskell.org/package/time-1.5/docs/Data-Time.html).
 - Eine ausführliche Anleitung zur Haskell-Programmiersprache finden Sie auf der offiziellen [Haskell-Website](https://www.haskell.org/).
-- Um mehr zu erfahren, sehen Sie sich dieses Tutorial zur [Haskell-Datums- und Zeitverarbeitung](https://williamyaoh.com/posts/2020-07-12-dates-and-time-in-haskell.html) an.

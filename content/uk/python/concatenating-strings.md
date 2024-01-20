@@ -49,4 +49,3 @@ print(f"Привіт, {name}!")
 
 - Python Documentation: [Вбудовані типи](https://docs.python.org/3/library/stdtypes.html#string-methods)
 - Python For Beginners: [Рядки](https://www.pythonforbeginners.com/basics/string-manipulation-in-python)
-- Python Tutor: [Concise Introduction to Strings](https://pythontutor-ru.herokuapp.com/course18/v2/ch02.html)

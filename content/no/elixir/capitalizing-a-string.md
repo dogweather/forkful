@@ -42,6 +42,5 @@ For detaljert informasjon og ytterligere lesning, se følgende ressurser:
 
 - Elixir offisiell dokumentasjon på `String.capitalize/2` [her](https://hexdocs.pm/elixir/String.html#capitalize/2)
 
-- Diskusjon om bruk av `String.capitalize/2` versus direkte strengmanipulering [her](https://elixirforum.com/t/string-capitalize/1340)
 
 - For en bredere forståelse av hvordan Elixir håndterer strenger og Unicode, se [dette](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).

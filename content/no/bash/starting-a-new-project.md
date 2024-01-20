@@ -58,4 +58,3 @@ Hvis du ønsker å fordype deg mer kan du sjekke ut disse ressursene:
 
 - [The Bash Guide](http://guide.bash.academy/): En omfattende guide for å lære Bash fra grunnen av. 
 - [Bash scripting cheatsheet](https://devhints.io/bash): Oppslagstavle for vanlige bash-kommandoer og konsepter.
-- [Awesome Bash](https://awesome.re/t/bash): En kurert liste over Bash-relaterte ressurser.

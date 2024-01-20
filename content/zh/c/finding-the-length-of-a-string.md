@@ -44,4 +44,3 @@ The length of the string is 13
 ## 参见：
 
 - C库函数: [strlen()函数](https://www.runoob.com/cprogramming/c-function-strlen.html)
-- C语言字符串处理: [C字符串处理技巧和实践](https://zhuanlan.zhihu.com/p/134308513)

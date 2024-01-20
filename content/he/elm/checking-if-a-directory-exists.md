@@ -45,5 +45,4 @@ app.ports.checkDirExists.subscribe(function(dirPath) {
 ## ראה גם
 - [Elm Official Guide](https://guide.elm-lang.org/)
 - [Elm Language GitHub](https://github.com/elm/compiler)
-- [Working with Filepaths in Elm](https://korban.net/posts/elm/2018-11-28-working-file-paths-elm/)
 - [Node.js fs documentation](https://nodejs.org/api/fs.html)

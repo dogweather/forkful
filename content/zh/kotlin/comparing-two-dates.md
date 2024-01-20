@@ -49,6 +49,4 @@ date1 is before date2
 
 ## 参见：
 
-- [日期和时间的Kotlin官方文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js.date/-date/index.html)
 - [Kotlin日期时间API的Java文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [关于Kotlin日期比较的StackOverflow讨论](https://stackoverflow.com/questions/44680602/comparing-dates-java-8-date-time-api-and-kotlin)

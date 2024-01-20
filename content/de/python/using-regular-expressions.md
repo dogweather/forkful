@@ -44,7 +44,6 @@ Hier sind einige nützliche Ressourcen zum Lernen von regulären Ausdrücken:
 
 - [Offizielle Python-Dokumentation](https://docs.python.org/3/library/re.html)
 - [Regular Expressions 101](https://www.regular-expressions.info/tutorial.html)
-- [RegExr - Online regulärer Ausdrucks-Tester](https://regexr.com/)
 
 ## Weitere Informationen
 

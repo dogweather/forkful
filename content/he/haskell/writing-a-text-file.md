@@ -27,6 +27,4 @@ main = do
 כתיבת קובץ טקסט ב-Haskell יחד עם קריאת קבצים טקסט הם חלק משמעותי מתהליך הפיתוח המתקדם. קוד חברתי נוסף נחשב לפיתוח ראשוני בלבד וקיימים כמה אלטרנטיבות אחרות לכתיבת קבצי טקסט. בנוסף, ישנם חומרים מומלצים נוספים ללמידה נוספים על יכולות קוד חברתי נוספים.
 
 ## לראות גם:
-- [קובץ טקסט כתיבה וקריאה עם Haskell](https://www.tutorialspoint.com/haskell/haskell_file_io.htm)
 - [התיעוד הרשמי של לשונית Control.Monad ב-Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Control-Monad.html)
-- [קובץ הגדרות ומסמכים בלינקס](https://www.linuxguide.it/command_line/ch03_da3.php)

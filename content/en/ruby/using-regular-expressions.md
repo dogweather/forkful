@@ -72,6 +72,5 @@ It is also important to note that regular expressions in Ruby are case sensitive
 ## See Also
 - [Ruby's official documentation on regular expressions](https://ruby-doc.org/core-2.7.2/Regexp.html)
 - [A beginners guide to regular expressions in Ruby](https://www.rexegg.com/regex-ruby.html)
-- [Regular expressions in Ruby vs. other programming languages](https://www.codeschool.com/blog/2017/03/22/whats-the-difference-regex-ruby-python-php-javascript-golang/)
 
 Happy coding! 🚀

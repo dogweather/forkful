@@ -43,4 +43,3 @@ In der Implementierung kann es hilfreich sein, die Charset-Einstellung anzugeben
 ## Siehe auch
 - [Kotlin Dokumentation zum Schreiben von Dateien](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-text.html)
 - [Java FileWriter Dokumentation](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
-- [Tutorial: Dateien in Kotlin erstellen und schreiben](https://www.tutorialspoint.com/kotlin/kotlin_files.htm)

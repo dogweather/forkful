@@ -39,6 +39,4 @@ Gleam में HTTP अनुरोध का कार्यान्वयन
 
 ## अन्य संदर्भ स्रोत
 
-- [Gleam डॉक्युमेंटेशन के HTTP अनुभाग](https://gleam.run/book/tour/http-requests.html)
-- [Erlang OTP डॉक्युमेंटेशन](https://erlang.org/doc/man/OTP.html)
 - [HTTP: ये हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल क्या है](https://www.w3schools.com/whatis/whatis_http.asp)

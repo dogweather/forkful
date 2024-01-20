@@ -41,4 +41,3 @@ Implementasjonsdetaljer: .to_lowercase() funksjonen i Rust er en Unicode-kompati
 ## Se Også
 
 - Rust Standard Library: [to_lowercase documentation](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- Rust string manipulation guide: [String cheat sheet](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

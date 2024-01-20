@@ -49,5 +49,4 @@ The `strings` package's functions, including `Title`, utilize specific rules of 
 ## See Also:
 
 - Go's official strings library documentation: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
-- An useful introduction to Go string manipulation: [https://www.callicoder.com/golang-string/](https://www.callicoder.com/golang-string/)
 - Deep-dive into Go's unicode implementation: [https://blog.golang.org/strings](https://blog.golang.org/strings)

@@ -48,5 +48,4 @@ L'implementazione di un parser HTML può variare, ma di solito si tratta di legg
 ## Vedi Anche
 
 - Documentazione di Nokogiri: [http://nokogiri.org](http://nokogiri.org)
-- Tutorial su come fare scraping con Nokogiri: [https://www.tutorialspoint.com/ruby-on-rails/rails-web-services.htm](https://www.tutorialspoint.com/ruby-on-rails/rails-web-services.htm)
 - Parsing HTML con Ruby: [https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html](https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html)

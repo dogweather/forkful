@@ -47,4 +47,3 @@ public class Main {
 문자열과 관련된 Java의 기타 메소드를 더 배우려면 아래 링크를 참조하세요.
 - [Oracle Java Documentation: String](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
 - [StackOverflow: length() in java](https://stackoverflow.com/questions/3793650/length-and-length-in-java)
-- [GeeksforGeeks: String length() Method in Java](https://www.geeksforgeeks.org/string-length-method-in-java-with-examples/)

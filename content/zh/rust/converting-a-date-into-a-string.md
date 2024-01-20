@@ -39,6 +39,4 @@ fn main() {
 - **實作細節**：在轉換日期到字串時，程式實際上是在進行序列化。日期被分解為其組成部分（年、月、日、時、分、秒），然後以特定格式的字串進行表示。
 
 ## 4. 參考資源
-- Rust 的日期和時間處理，你可以參考 [Chrono 函式庫](https://crates.io/crates/chrono)。
 - 更深入的日期和時間轉換，請參閱 [RFC 3339](https://tools.ietf.org/html/rfc3339)。
-- 另一款處理日期時間的函式庫 [Time](https://crates.io/crates/time)。

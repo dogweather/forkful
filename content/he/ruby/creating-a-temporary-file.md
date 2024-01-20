@@ -34,5 +34,3 @@ temp_file.unlink
 
 ## ראה גם:
 - תיעוד רשמי ל- [`Tempfile`](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
-- ["הדרך הנכונה לטפל בקבצים זמניים ב- Ruby"](https://www.jstorimer.com/blogs/workingwithcode/7766151-the-right-way-to-deal-with-temporary-files-in-ruby)
-- ["יצירת קבצים זמניים ב- Ruby"](https://www.thoughtco.com/creating-temporary-files-in-ruby-2907739)

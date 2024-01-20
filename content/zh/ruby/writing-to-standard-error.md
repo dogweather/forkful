@@ -32,4 +32,3 @@ $stderr.puts "This is standard error output" # 标准错误输出语句
 了解更多关于标准错误输出的用法，请参考以下链接：
 
 - [标准错误输出 - Ruby官方文档](https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts)
-- [标准错误输出 - Ruby快速教程](https://www.rubyguides.com/2019/02/ruby-stderr-stdout/)

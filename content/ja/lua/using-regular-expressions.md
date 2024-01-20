@@ -50,6 +50,4 @@ local result = string.match(text, pattern)
 
 ## 参考サイト：
 
-- [Lua正規表現チュートリアル](https://lua-users.org/wiki/PatternsTutorial)
 - [正規表現クイックリファレンス](https://www.regular-expressions.info/quickstart.html)
-- [正規表現でパターンマッチングを行うメリット](https://www.homeandlearn.co.uk/java/string_regex_and_matching.html)

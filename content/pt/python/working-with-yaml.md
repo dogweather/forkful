@@ -34,5 +34,3 @@ Alguns outros formatos populares de armazenamento de dados em formato de texto i
 
 ## Veja também:
 - [Documentação oficial do módulo pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Introdução ao YAML](https://yaml.org/start.html)
-- [Diferença entre YAML, JSON e XML](https://www.educba.com/yaml-vs-json-vs-xml/)

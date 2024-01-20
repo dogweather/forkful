@@ -37,4 +37,3 @@ Notera att `replace()` funktionen i JavaScript inte ändrar den ursprungliga str
 ## Se även
 För mer information om `replace()` och reguljära uttryck i JavaScript, se följande länkar:
 - [JavaScript Replace() metoden från W3Schools](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [Intro till Reguljära Uttryck (Regex) i JavaScript från DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-regex-in-javascript)

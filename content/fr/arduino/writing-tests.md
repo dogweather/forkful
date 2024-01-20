@@ -49,8 +49,5 @@ L'écriture de tests est une pratique courante dans le développement logiciel d
 
 Pour en savoir plus sur l'écriture de tests avec Arduino, vous pouvez consulter les ressources suivantes :
 
-- [Documentation officielle d'Arduino sur les tests unitaires](https://www.arduino.cc/en/Guide/UnitTesting)
-- [Tutoriel sur les tests unitaires avec Arduino](https://learn.sparkfun.com/tutorials/unit-testing-with-the-arduino-environment/all)
-- [Bibliothèque CppUnit pour Arduino](https://github.com/aberman/cppunit-arduino)
 
 Maintenant que vous savez comment écrire des tests dans Arduino, allez-y et commencez à écrire du code robuste et sans bugs !

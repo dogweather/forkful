@@ -41,4 +41,3 @@ curl https://www.example.com
 
 - [דוקומנטציה של `curl`](https://curl.haxx.se/docs/manual.html)
 - [מדריך להעברת HTTP](https://developer.mozilla.org/he/docs/Web/HTTP/Overview)
-- [ספר בנושא שליחת בקשות HTTP ב-Bash](https://www.shellscript.sh/ftp.html)

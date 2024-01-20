@@ -40,4 +40,3 @@ La funzione ToLower() è implementata nel .NET Framework, che PowerShell utilizz
 ## Guarda Anche:
 
 - Documentazione Microsoft su [ToLower()](https://docs.microsoft.com/it-it/dotnet/api/system.string.tolower?view=net-5.0) e [ToLowerInvariant()](https://docs.microsoft.com/it-it/dotnet/api/system.string.tolowerinvariant?view=net-5.0).
-- Blog su [Come usare i metodi stringa di PowerShell](https://devblogs.microsoft.com/scripting/using-powershell-string-manipulation/).

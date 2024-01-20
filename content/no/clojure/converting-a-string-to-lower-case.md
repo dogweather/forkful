@@ -48,6 +48,5 @@ Mens denne implementasjonen er grei, vil du kanskje vite mer om funksjonene vi h
 
 - Clojure.string dokumentasjon [her](https://clojuredocs.org/clojure.string/lower-case)
 
-- Clojure.lang.Character dokumentasjon [her](https://clojuredocs.org/clojure.core/Character) 
 
 - Java's `Character.toLowerCase` dokumentasjon [her](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-)

@@ -57,4 +57,3 @@ Początki pisania plików tekstowych sięgają początków programowania kompute
 ## Zobacz także:
 - [Dokumentacja biblioteki <fstream>](https://en.cppreference.com/w/cpp/header/fstream)
 - [Podstawy tworzenia plików w C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
-- [Różnice między plikami tekstowymi a binarnymi](https://www.guru99.com/difference-text-file-binary-file.html)

@@ -32,8 +32,6 @@ fn main() {
 
 ## עיין גם
 עיין במקורות הבאים למידע נוסף על ניתוח HTML:
-- [HTML Parsing Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)
-- [Gleam HTML parsing library documentation](https://docs.gleam.run/tour/)
 - [HTML5 parsing techniques and specifications](https://html.spec.whatwg.org/multipage/parsing.html)
 
 #### בלי סיכום:

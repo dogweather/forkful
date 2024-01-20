@@ -43,6 +43,4 @@ Hoy en día, existen otras herramientas para escribir pruebas en Bash, como `shu
 
 Si quieres aprender más sobre el uso de `assert` y otras herramientas de pruebas en Bash, te recomendamos revisar estas fuentes:
 
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/html_node/Assertions.html)
-- [Artículo sobre pruebas en Bash en Opensource.com](https://opensource.com/article/19/4/functional-tests-bash)
 - [Tutorial de pruebas en Bash de Tutorialspoint](https://www.tutorialspoint.com/unix/shell_scripting.htm)

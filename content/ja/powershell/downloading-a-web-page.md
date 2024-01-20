@@ -39,4 +39,3 @@ Invoke-WebRequestコマンドについて詳しく見ていくと、-Uriパラ�
 
 - [公式PowerShellドキュメンテーション](https://docs.microsoft.com/ja-jp/powershell/)
 - [Invoke-WebRequestコマンドの詳細](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [PowerShellによるWebスクレイピング](https://gist.github.com/hrbrmstr/5c59e4a50f8c9416fda8)

@@ -50,4 +50,3 @@ Lua에서는 `cjson` 라이브러리와 같은 다른 JSON 라이브러리를 �
 # 관련 자료:
 
 - [JSON 공식 사이트](https://www.json.org/json-ko.html)
-- [Lua에서 JSON 다루는 방법](https://shane-xdepth.netlify.app/programming/json-in-lua/)

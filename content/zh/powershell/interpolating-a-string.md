@@ -60,4 +60,3 @@ Hello, Alice
 
 ## 参考资料：
 - 查阅[微软官方文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)了解PowerShell字符串插值的更多细节和例子。
-- 加深理解，你可以参考[这篇文章](https://kevinswiber.com/2012/07/23/string-interpolation-with-powershell/)揭示的PowerShell字符串插值详细运作原理。

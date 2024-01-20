@@ -42,6 +42,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## בהמשך
 למדענים ולסטודנטים שאוהבים לחקור יותר, הנה קודם מאמרים וקישורים שיכולים לעזור:
-- [אינטרפולציה של מחרוזת בקוטלין](https://kotlinlang.org/docs/quickstart.html#variables)
-- [מונחי קוטלין](https://kotlinlang.org/docs/tutorials/kotlin-for-py/declaration-site-variance.html)
 - [הצגת מחרוזת בקוטלין](https://kotlinlang.org/docs/idioms.html#string-interpolation)

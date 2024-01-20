@@ -34,5 +34,4 @@ PowerShell Set-Content 'назва_файла.txt' -value 'це текст, як
 Щоб дізнатися більше про роботу з текстовими файлами, рекомендую ознайомитися з офіційною документацією [PowerShell на сайті Microsoft](https://docs.microsoft.com/powershell/scripting/).
 
 ## Додаткові посилання
-- [Робота з файлами і папками в PowerShell на Dev.ua](https://devua.net/programirovanie/310-powershell-rabota-s-fajlami-i-papkami.html)
 - [Навчальний курс Microsoft про роботу з файлами у PowerShell](https://mva.microsoft.com/en-us/training-courses/getting-started-with-microsoft-powershell-8276)

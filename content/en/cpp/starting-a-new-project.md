@@ -36,5 +36,4 @@ When this code is compiled and run, it displays "Hello, World!" on the terminal.
 
 ## See Also
 - For a complete guide on C++, check out [The C++ Programming Language](https://www.stroustrup.com/C++.html) by the creator of C++, Bjarne Stroustrup.
-- Understanding how to structure your C++ code? Explore [this guide](https://www.learncpp.com/cpp-tutorial/best-practices-for-header-files/)
 - You might also find [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) helpful for recommendations about best practices in C++.

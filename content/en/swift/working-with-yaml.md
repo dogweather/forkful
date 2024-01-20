@@ -62,4 +62,3 @@ Internally, the SwiftYAML library uses the LibYAML C library, making it fast and
 
 - [SwiftYAML GitHub page](https://github.com/behrang/YamlSwift)
 - [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [Introduction to YAML](https://www.datacamp.com/community/tutorials/working-yaml-python)

@@ -41,4 +41,3 @@ Hello, World
 - [תיעוד Offical Lua](http://www.lua.org/manual/5.4/manual.html#pdf-arg)
 - [Lua בקנה המידה](http://luatut.com/crash_course.html)
 - [אינטראקציה עם שורת הפקודה](http://lua-users.org/wiki/CommandLineParsing)
-- [העמוד של Lua ב-Wikibooks](https://he.wikibooks.org/wiki/%D7%A2%D7%96%D7%A8%D7%94:%D7%AA%D7%99%D7%9B%D7%95%D7%A0%D7%95%D7%AA_%D7%94%D7%A1%D7%A4%D7%A8_%D7%94%D7%97%D7%93%D7%A9/%D7%9C%D7%95%D7%A2%D7%94)

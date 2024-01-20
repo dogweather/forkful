@@ -40,5 +40,3 @@ if (match) {
 ## 参考资料：
 
 - [正则表达式基础教程](https://www.runoob.com/regexp/regexp-syntax.html)
-- [TypeScript内置的正则表达式API文档](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Regexr在线正则表达式测试工具](https://regexr.com/)

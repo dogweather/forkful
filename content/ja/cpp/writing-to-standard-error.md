@@ -39,6 +39,5 @@ cerr << "エラーが発生しました" << endl;
 
 ##関連リンク：
 
-- [C++標準ライブラリ](https://cpprefjp.github.io/reference/iostream/ostream/cerr.html)
 - [C言語の標準エラー出力](https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rtref/ccerr.htm)
 - [C++での例外処理](https://ja.cppreference.com/w/cpp/error/exception)

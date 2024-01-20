@@ -28,5 +28,3 @@ Las expresiones regulares tienen su origen en la teoría matemática y son una h
 
 ## Ver también:
 - [Documentación oficial de expresiones regulares en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tutorial de expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regex)
-- [Ejercicios prácticos de expresiones regulares en Kotlin](https://github.com/diligrep/kotlin-regex-practice)

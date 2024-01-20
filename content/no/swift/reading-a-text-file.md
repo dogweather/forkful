@@ -42,5 +42,4 @@ Historisk har det vært flere måter å lese filer på i forskjellige programmer
 For mer informasjon om filhåndtering i Swift, sjekk ut følgende kilder:
 
 - Apple Developer Dokumentasjon: [String](https://developer.apple.com/documentation/swift/string) and [FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- Swift Programmering Guide: [Working with Files](https://docs.swift.org/swift-book/LanguageGuide/WorkingWithFiles.html)
 - StackOverflow: [How to read data from a txt file in Swift](https://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift)

@@ -37,6 +37,4 @@ print(data["name"]) # מציג את הערך "John Smith"
 
 ## ראה גם:
 לקריאה נוספת על עבודה עם JSON בפייתון, הנה כמה מקורות מומלצים:
-- [למדו JSON תוך 5 דקות](https://python.org.il/wiki/Chapter_3_Part_II#JSON)
 - [המדריך המפורט של W3Schools על JSON בפייתון](https://www.w3schools.com/python/python_json.asp)
-- [מסמך הרשמי של פייתון על מודול ה-JSON](https://docs.python.org/he/3/library/json.html)

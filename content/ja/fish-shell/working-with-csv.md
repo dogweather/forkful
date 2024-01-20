@@ -47,6 +47,4 @@ Fish Shellの内部コードは、Open CSV - Java CSVライブラリを使用し
 CSVについてさらに学ぶためのリンクをいくつか紹介します。
 
 - [Open CSV - Java CSV library](http://opencsv.sourceforge.net/)
-- [Introducing CSV: Use CSV for data munging](https://opensource.com/article/17/1/csv-munging-hacks)
-- [Comparing CSV Files with diff](https://www.linuxjournal.com/content/comparing-csv-files-diff)
 - [CSVとは - Wikipedia](https://ja.wikipedia.org/wiki/Comma-Separated_Values)

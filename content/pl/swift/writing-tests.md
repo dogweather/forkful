@@ -65,6 +65,4 @@ Test passed!
 Pisanie testów jest praktykowane od wielu lat i jest częścią metodyki programowania zwanej Test Driven Development (TDD). Istnieją również inne metody testowania, takie jak Behavior Driven Development (BDD) czy Acceptance Test Driven Development (ATDD). Istotne jest to, aby pisać testy na różnych poziomach, od testów jednostkowych po testy integracyjne.
 
 ## Zobacz też:
-- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/Assertions.html)
-- [Test Driven Development w praktyce](https://semaphoreci.com/blog/2018/11/27/test-driven-development-benefits-best-practices.html)
 - [Jak pisać testy - przewodnik dla początkujących](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html)

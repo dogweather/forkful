@@ -44,6 +44,4 @@ Em Rust, a biblioteca padrão que oferece suporte a JSON é a rustc_serialize. N
 
 ## Veja também:
 
-- [Aprenda Rust - JSON](https://www.learnrust.pro/crates/serde_json/index.html)
-- [Documentação oficial sobre JSON em Rust](https://docs.rs/rustc-serialize/0.3.24//rustc_serialize/json/index.html)
 - [Um tutorial sobre JSON e Rust](https://medium.com/real-world-rust/build-a-json-deserializer-in-rust-1ff12e3993d7)

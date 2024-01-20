@@ -36,4 +36,3 @@ JSON har funnits sedan 2002 och har blivit ett populärt alternativ till XML fö
 ## Se även:
 - [JSON - officiell hemsida](https://www.json.org/)
 - [JSON Tutorial för Java](https://www.tutorialspoint.com/json/json_java_example.htm)
-- [Alternativ till JSON](https://www.atmantra.com/machine-learning-101/serialization/json-vs-xml-vs-yaml-a-comparison/) (jämförelse mellan JSON, XML och YAML)

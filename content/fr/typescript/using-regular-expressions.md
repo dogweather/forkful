@@ -36,5 +36,4 @@ Les expressions régulières existent depuis plus de 50 ans, vu pour la premièr
 
 ## À voir aussi :
 
-- [Documentation sur les expressions régulières en TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
 - [Documentation sur les expressions régulières en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)

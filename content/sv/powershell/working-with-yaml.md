@@ -61,4 +61,3 @@ Vid implementering är det viktigt att vara noggrann med indrag och använda kor
 ## Se även
 - [PSYaml-modulen på PowerShell Gallery](https://www.powershellgallery.com/packages/PSYaml)
 - [YAML-specifikationen](https://yaml.org/spec/1.2/spec.html)
-- [YAMLDotNet-modulen på PowerShell Gallery](https://www.powershellgallery.com/packages/YamlDotNet)

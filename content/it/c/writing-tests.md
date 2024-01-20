@@ -50,6 +50,5 @@ Oggi ci sono diverse alternative per scrivere test, come ad esempio i "test di i
 Per implementare dei test efficaci è importante seguire alcune buone pratiche, come ad esempio scrivere test semplici ed indipendenti l'uno dall'altro e utilizzare strumenti specifici per questo scopo.
 
 ## Vedi anche:
-- [The Art of Unit Testing](https://www.amazon.it/Art-Unit-Testing-Practices-Writing/dp/1617290890/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&keywords=the+art+of+unit+testing&qid=1571768000&sr=8-1) - libro sulle migliori pratiche per scrivere test di unità efficaci.
 - [JUnit](https://junit.org/junit5/) - uno dei più famosi framework per scrivere test in Java e altre lingue.
 - [PyTest](https://docs.pytest.org/en/latest/) - framework per scrivere test in Python.

@@ -38,6 +38,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 你可以参阅下列链接以更全面地了解Ruby的字符串处理：
 
-- [Ruby官方字符串文档](https://www.ruby-lang.org/zh_cn/documentation/tutorial/strings/)
 - [Ruby字符串方法大全](https://ruby-doc.org/core-2.7.2/String.html)
-- [Ruby学习笔记: 字符串处理](https://www.w3cschool.cn/ruby/ruby-string-methods.html)

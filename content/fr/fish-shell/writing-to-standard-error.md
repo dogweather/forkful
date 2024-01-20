@@ -41,4 +41,3 @@ Techniquement, écrire sur la sortie d'erreur standard est réalisé en dirigean
 
 - [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
 - [Tutoriel sur l'utilisation des erreurs standard en C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
-- [Article sur la différence entre la sortie standard et la sortie d'erreur standard](https://www.geeksforgeeks.org/difference-stdout-stderr/)

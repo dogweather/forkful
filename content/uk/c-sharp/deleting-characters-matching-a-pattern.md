@@ -44,4 +44,3 @@ class Program {
 
 * [Офіційна документація Microsoft по Regex](https://docs.microsoft.com/uk-ua/dotnet/standard/base-types/regular-expressions)
 * [Підручник по регулярним виразам в C#](https://metanit.com/sharp/tutorial/7.1.php)
-* [Історія регулярних виразів (англ.)](https://www.johndcook.com/blog/2019/03/20/regex-history/)

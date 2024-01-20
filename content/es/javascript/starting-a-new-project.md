@@ -46,7 +46,6 @@ El resultado será:
 
 - Tutorial de JavaScript de Mozilla: [https://developer.mozilla.org/es/docs/Web/JavaScript/Guide](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide)
 
-- Node.js Docs: [https://nodejs.org/es/docs/](https://nodejs.org/es/docs/)
 
 - Create React App: [https://create-react-app.dev/](https://create-react-app.dev/)
 

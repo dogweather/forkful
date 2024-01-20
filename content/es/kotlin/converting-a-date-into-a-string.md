@@ -44,6 +44,5 @@ La implementación de `DateTimeFormatter` es bastante directa, solo necesitas pr
 ## Ver También
 Aquí te dejo algunas fuentes útiles para entender mejor el trabajo con fechas en kotlin:
 
-- Documentación oficial de kotlin `DateTimeFormatter`: [link](https://kotlinlang.org/docs/dates-and-times.html#parse-and-format-dates)
 - Tutorial sobre cómo utilizar `DateTimeFormatter`: [link](https://www.journaldev.com/17899/java-simpledateformat-java-date-format)
 - Comparación de `SimpleDateFormat` y `DateTimeFormatter`: [link](https://www.baeldung.com/java-8-date-time-intro)

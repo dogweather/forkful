@@ -42,5 +42,4 @@ Em termos de implementação, o parsing de HTML envolve uma análise em duas eta
 ## Veja Também
 - [Documentação LuaHtmlParser](https://github.com/msva/lua-htmlparser)
 - [Por que não usar regex para analisar HTML](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
-- [Lua User Wiki: Parsing HTML](https://lua-users.org/wiki/ScrapingHtml)
 - [Manual de Referência Lua 5.4](https://www.lua.org/manual/5.4/)

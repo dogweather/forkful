@@ -56,6 +56,4 @@ For those interested in the nitty gritty details, the `regex` crate uses an algo
 
 ## See Also:
 
-- [The Rust Book: Using Regular Expressions](https://doc.rust-lang.org/book/ch09-06-repetition.html)
-- [Rust Regular Expressions Cookbook](https://rust-lang-nursery.github.io/regex-cookbook/)
 - [Regex101: An Online Regular Expression Tester](https://regex101.com/)

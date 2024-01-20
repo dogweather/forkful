@@ -48,5 +48,4 @@ Haskellの`Data.Time.Format`ライブラリは、1975年のICU(International Com
 以下に関連するリソースをいくつか紹介します：
 
 - Haskellの公式ドキュメンテーション: [Data.Time.Format](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- Haskellの日付と時刻に関するチュートリアル: [Haskellでの日付と時刻の扱い方](https://www.schoolofhaskell.com/user/Ollie/Haskell/time.html)
 - Haskellでの純粋なパーサの作成: [Text.Parsec](https://hackage.haskell.org/package/parsec-3.1.14.0/docs/Text-Parsec.html)

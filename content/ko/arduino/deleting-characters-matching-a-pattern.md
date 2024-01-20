@@ -33,5 +33,4 @@ Adino
 ## 참고 자료:
 아래 링크에서 문자열 관련하여 더 많은 정보를 얻을 수 있습니다:
 
-- Arduino 공식 문서: [String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
 - Stack Overflow: [How to remove a character from a string using Arduino](https://stackoverflow.com/questions/14343812/how-to-remove-a-character-from-a-string-using-arduino)

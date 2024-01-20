@@ -58,6 +58,4 @@ About implementation, Swift's randomness is cryptographically secure, using a so
 
 ## See Also
 
-- Official Swift Random API Documentation, [swift.org](https://developer.apple.com/documentation/swift/random)
 - Understanding random number generation and Swift’s new random API, [hackingwithswift.com](https://www.hackingwithswift.com/articles/73/understanding-random-numbers-in-swift)
-- Random number generation in Swift explained, [donnywals.com](https://www.donnywals.com/random-number-generation-in-swift-explained/)

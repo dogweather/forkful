@@ -38,4 +38,3 @@ fetch('https://api.github.com/users/octocat')
 
 - [MDNのFetch APIドキュメント](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [MDNのHTTPリクエスト詳細](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
-- [Node.jsでHTTPリクエストを行う方法](https://nodejs.dev/learn/making-http-requests-with-nodejs)

@@ -43,6 +43,5 @@ Es gibt jedoch Alternativen. Frameworks wie Swift Argument Parser bieten detaill
 
 ## Siehe auch
 
-- SWIFT CommandLine.Argument: [Apple Swift CommandLine.Argument](https://developer.apple.com/documentation/swift/commandline/2876009-arguments)
 - Swift Argument Parser: [Swift Argument Parser auf Github](https://github.com/apple/swift-argument-parser)
 - Blog über die Verwendung des Swift Argument Parser: [Swift Argument Parser Tutorial](https://www.hackingwithswift.com/articles/216/complete-guide-to-swift-argumentparser)

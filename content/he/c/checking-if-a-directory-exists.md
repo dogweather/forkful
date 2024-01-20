@@ -61,4 +61,3 @@ int main(){
 - [Man page of stat on Linux](https://man7.org/linux/man-pages/man2/stat.2.html)
 - [Man page of opendir on Linux](https://man7.org/linux/man-pages/man3/opendir.3.html)
 - [Microsoft documentation on _stat for Windows](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/stat-functions?view=msvc-160)
-- [Microsoft documentation on _wopendir for Windows](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/wopendir-wopendir?view=msvc-160)

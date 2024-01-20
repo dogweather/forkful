@@ -41,4 +41,3 @@ toLowerCase()-menetelmän toteutus perustuu ASCII-taulukkoon, jossa jokaisella m
 Tarkista nämä linkit saadaksesi lisätietoja Arduino String -luokasta ja sen toiminnasta:
 - [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 - [ASCII Kooditaulukko](http://www.asciitable.com/)
-- [Arduino ToLowerCase - koodin läpikäynti](https://www.electronicwings.com/arduino/arduino-string-to-lowercase)

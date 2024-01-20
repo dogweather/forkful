@@ -43,4 +43,3 @@ Når det gjelder implementasjonen av tester, bruker Haskell funksjonell programm
 ## Se også:
 - [Hspec](https://hspec.github.io/)
 - [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
-- [Property-based Testing](https://martinfowler.com/articles/property-based-testing.html)

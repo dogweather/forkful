@@ -39,5 +39,3 @@ Wyrażenia regularne mają swoje korzenie w matematyce, a zostały wprowadzone d
 ## Zobacz też
 
 - [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Artykuł na temat wyrażeń regularnych w Ruby](https://www.freecodecamp.org/news/learn-regular-expressions-in-about-55-minutes/)
-- [Podstawy wyrażeń regularnych w Ruby](https://www.rubyguides.com/ruby-tutorial/regex/)

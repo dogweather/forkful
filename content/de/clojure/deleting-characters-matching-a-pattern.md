@@ -52,5 +52,4 @@ Es ist auch nützlich zu wissen, dass `clojure.string/replace` das Muster als re
 ## Siehe Auch:
 
 - Clojure API: `clojure.string/replace`. Siehe [Clojurescript API-Dokumentation](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace)
-- Praktische Clojure-Tipps: [Clojure CookBook](https://clojure-cookbook.com/)
 - Wann und Wie Java interop benutzt werden sollte: [Clojure for the Brave and True](https://www.braveclojure.com/java/)

@@ -42,5 +42,4 @@ Cela fonctionne en renvoyant le nombre actuel de secondes écoulées depuis l'é
 ## Voir aussi
 Pour plus d'informations, vous pouvez consulter ces ressources:
 - Document de la bibliothèque C Standard, Section 7.27: [Time.h](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
-- Tutorial C: [Manipulation de date et d'heure](https://www.codingunit.com/c-tutorial-the-time-date-and-calendar-functions)
 - L'Epoch Unix: [Explication](https://www.epochconverter.com/)

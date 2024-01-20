@@ -39,4 +39,3 @@ När det gäller informan om hur denna teknik implementeras i Java: metoden toLo
 För mer information om strängar och teckenhantering i Java, ta en titt på följande länkar:
 - [Oracle Official Java Documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#toLowerCase())
 - [Java Tutorial Point](https://www.javatpoint.com/java-string-tolowercase)
-- [Geeks for Geeks Java library](https://www.geeksforgeeks.org/java-lang-string-tolowercase-java/)

@@ -36,6 +36,5 @@ fn lowercased_string() {
 물론, 필요하다면 사용자 정의 변환 함수를 작성할 수도 있습니다. 하지만 대부분의 경우 표준 라이브러리를 사용하는 것이 더 효율적일 것입니다.
 
 ## 참고 자료
-- Gleam에서 문자열을 변경하는 다른 방법에 대해서는 [Gleam String Documentation](https://gleam.run/documentation/data-types/strings-functions)을 참고하십시오.
 - 다른 문자열 변환 작업에 대해서는 [Unicode Transformation Formats](http://unicode.org/reports/tr15/)를 참고하세요.
 - 전반적인 문자열 처리에 대한 연구를 원한다면 [Practical Unicode](http://unicodebook.readthedocs.io/)가 좋은 출발점이 될 것입니다.

@@ -43,5 +43,3 @@ Luaでは、`gsub`関数がこの目的のために利用されます。`gsub`�
 以下のリンクは、テキストの検索と置換について更に深く学習するためのリソースです:
 
 - Luaの公式ドキュメンテーション: [こちら](http://www.lua.org/manual/5.3/manual.html#pdf-string.gsub)
-- Learn X in Y MinutesのLuaセクション: [こちら](https://learnxinyminutes.com/docs/ja-jp/lua-jp/)
-- Luaのパターンマッチングについてのチュートリアル: [こちら](https://www.tutorialspoint.com/lua/lua_pattern_matching.htm)

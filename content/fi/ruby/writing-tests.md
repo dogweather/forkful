@@ -47,5 +47,3 @@ Varsinaisen koodin testaamisen lisäksi on myös olemassa muita testauksen vaiht
 Jos haluat oppia lisää testien kirjoittamisesta Rubyssa, voit tutustua seuraaviin lähteisiin:
 
 - [RSpec - Ruby-ohjelmistojen testauskirjasto](https://rspec.info/)
-- [Testivetoiset kehitysmenetelmät](https://fi.wikipedia.org/wiki/Testivetoiset_kehitysmenetelm%C3%A4t)
-- [Testausvetoisen kehityksen (TDD) perusteet Rubyssa](https://www.rubyguides.com/2016/07/rspec-tdd-in-ruby/)

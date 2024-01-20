@@ -47,6 +47,5 @@ Hello, Elixir
 
 ## Siehe auch:
 
-- Erlang's Trace-Funktionen: [Erlang Trace Functions](https://erlang.org/doc/apps/runtime_tools/erlang_trace.html)
 - IEx Helpers Dokumentation: [IEx Helpers Documentation](https://hexdocs.pm/iex/IEx.Helpers.html)
 - Elixir's offizielle Funktionen für Debug-Ausgabe: [Elixir's IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)

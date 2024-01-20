@@ -48,6 +48,5 @@ Eksempelutgang: ```bil```
 3. Implementeringsdetaljer: Lua tilbyr et innebygd JSON-bibliotek som gjør det enkelt å konvertere data til og fra JSON-format. Dette biblioteket er også kompatibelt med andre Lua-rammeverk og biblioteker.
 
 # Se også:
-- [Lua JSON dokumentasjon](http://luaforge.net/projects/luajson/)
 - [Offisiell JSON-nettside](https://www.json.org/)
 - [Hva er JSON og hvorfor er det så populært?](https://medium.com/swlh/what-is-json-and-why-is-it-so-popular-9aa7d37ce06a) (engelsk)

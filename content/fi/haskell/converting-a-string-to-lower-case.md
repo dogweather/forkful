@@ -44,5 +44,4 @@ Näyttää siltä, että yksinkertainen toiminto, kuten merkkijonon muuttaminen 
 
 Lisätietoja Haskellin merkkijonojen käsittelystä ja `Data.Char`-moduulista löydät seuraavista lähteistä:
 
-- Haskell Wiki: [Haskell/Strings](https://en.wikibooks.org/wiki/Haskell/Strings)
 - Haskell Library: [Data.Char](http://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)

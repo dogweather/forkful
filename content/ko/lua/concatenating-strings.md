@@ -51,4 +51,3 @@ Lua에서 문자열 연결을 사용할 때 주의해야 할 기억해야 할 �
 ## 연관 참고자료:
 
 - Lua 공식 설명서의 문자열 연산 부분: [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#3.4.5)
-- Lua 문자열 함수와 연산에 대한 좋은 튜토리얼: [Learn Lua](https://www.learn-lua.org/en/Strings)

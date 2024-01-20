@@ -40,6 +40,3 @@ if(result === expectedResult) {
 テストは、プログラミングの歴史の中でも重要な役割を果たしてきました。代替手段として、デバッガーやロギングもありますが、テストは信頼性と保守性の面で優れています。また、テスト駆動開発という手法を用いることで、より品質の高いコードを作ることができます。
 
 ## 関連情報:
-- [テスト駆動開発の基礎](https://qiita.com/it__ssei/items/795c742fcf8b2116682a)
-- [デバッガーとテストの違い](https://neulog.net/test-or-debug/)
-- [JavaScriptのテストの書き方](https://jsprimer.net/use-case/testing/)

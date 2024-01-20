@@ -40,5 +40,3 @@ Implementeringdetaljer i Swift inkluderer det faktum at `CommandLine.arguments` 
 Sjekk ut disse nyttige linkene for mer informasjon og eksempler:
 
 - Apple's Swift-programmeringsguide: [https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
-
-- SwiftRocks dykk i kommandolinjeargumenter i Swift: [https://swiftrocks.com/command-line-arguments-in-swift.html](https://swiftrocks.com/command-line-arguments-in-swift.html)

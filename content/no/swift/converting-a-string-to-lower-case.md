@@ -33,5 +33,4 @@ Du ser at 'Hei Verden!' nå er blitt til 'hei verden!'.
 3. Var mustered av 'String' klassen, `lowercased()` returnerer en ny streng med alle alfabeter i små bokstaver. Denne metoden fungerer ikke bare for engelske bokstaver, men også for andre språkaldersbokstaver.
 
 ## Se Også
-- [Apple Documentation: lowercased()](https://developer.apple.com/documentation/swift/string/2293301-lowercased) for ytterligere informasjon om `lowercased()` metoden.
 - [Stack Overflow: Swift](https://stackoverflow.com/questions/tagged/swift) for praktiske diskusjoner om Swift programmering.

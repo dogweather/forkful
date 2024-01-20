@@ -57,5 +57,4 @@ Este código imprime el mensaje de error "Error al abrir el archivo: No such fil
 
 ## Ver también:
 
-- [Documentación sobre la función fprintf en C](https://www.programiz.com/c-programming/library-function/stdio.h/fprintf)
 - [Escribir a la salida estándar de error en otros lenguajes de programación](https://es.stackoverflow.com/questions/165/por-qu%C3%A9-escribir-en-la-salida-de-error-stderr-rather-than-stdout)

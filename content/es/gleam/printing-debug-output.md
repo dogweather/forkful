@@ -47,6 +47,4 @@ En cuanto a `io.debug`, esta implementación es bastante simple. Vale la pena me
 
 Si quieres aprender más, te recomendamos seguir estos enlaces:
 
-- La [documentación oficial de Gleam](https://gleam.run/book/tour/file_io.html) te hará entender mejor la función `io.debug`.
 - El [artículo en wikipedia sobre debug](https://es.wikipedia.org/wiki/Depuraci%C3%B3n) te dará un resumen de los métodos de debug.
-- Para entender más sobre las alternativas a la impresión de debug, puedes leer la [documentación de The Elixir School](https://elixirschool.com/es/lessons/specifics/debugging) sobre debug en Elixir, que también aplica a Gleam.

@@ -30,5 +30,3 @@ In diesem Beispiel wird getestet, ob die Addition von 2 und 2 das erwartete Erge
 Tests werden bereits seit vielen Jahren in der Softwareentwicklung eingesetzt, um die Qualität von Programmen zu verbessern. Alternativen zu `Pester` sind beispielsweise `NUnit` oder `xUnit`, die auf anderen Programmiersprachen basieren. Bei der Implementierung von Tests ist es wichtig, dass sie einfach zu warten und ausführbar sind.
 
 # Siehe auch
-- [Pester-Dokumentation](https://pester.dev/docs/)
-- [Einführung in Test-getriebene Entwicklung mit PowerShell](https://dev.to/thedavecarroll/introduction-to-test-driven-development-with-powershell-4f5j)

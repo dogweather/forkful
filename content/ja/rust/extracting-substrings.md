@@ -45,5 +45,4 @@ Rustでサブストリングを抽出するためには、指定した範囲の�
 ## 参考になる：
 
 以下に関連するリンクを示します：
-* [Rustプログラミング入門](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 * [Rustでの文字列スライシング](https://doc.rust-lang.org/book/ch08-02-strings.html)

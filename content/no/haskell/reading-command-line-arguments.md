@@ -41,6 +41,5 @@ En interessant ting å merke seg er at `getArgs` returnerer en liste over `Strin
 
 ## Se også
 Hvis du vil læle mer om dette emnet, er her noen nyttige kilder:
-- [Haskell Wiki: Kommandolinjeoparguments](https://wiki.haskell.org/Command_line_argument_handling)
 - [Biblioteksdokumentasjon for System.Environment](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
 - [Dokumentasjon for optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)

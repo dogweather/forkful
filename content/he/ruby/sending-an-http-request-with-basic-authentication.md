@@ -45,6 +45,5 @@ puts res.body
 כאשר אנחנו משתמשים באימות HTTP בסיסי, השם משתמש והסיסמה נשלחים לשרת כקודלק בבסיס64, ניכר. אימות זה לא מבצע הצפנה, לכן אינו מומלץ כאשר אתה שולח מידע רגיש.
 
 ## קישורים רלוונטיים
-- [דף הוויקיפדיה של HTTP basic authentication](https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%9E%D7%95%D7%AA_%D7%91%D7%A1%D7%99%D7%A1%D7%99_HTTP)
 - [מדריך Net::HTTP של Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
 - [מסמך IETF של HTTP Basic Authentication](https://tools.ietf.org/html/rfc7617)

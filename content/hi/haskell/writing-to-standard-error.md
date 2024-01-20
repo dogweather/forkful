@@ -43,5 +43,4 @@ main = do
 
 ## देखें भी:
 
-- [Haskell: Writing to standard error](https://wiki.haskell.org/Writing_to_stderr)
 - [Haskell Docs: System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)

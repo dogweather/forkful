@@ -32,4 +32,3 @@ Det å skrive til standardfeil er en praksis som går helt tilbake til Unix-oper
 For å lære mer om å skrive til standardfeil i Javascript, kan du sjekke ut disse kildene:
 
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [FreeCodeCamp](https://www.freecodecamp.org/news/writing-to-standard-error-in-javascript/)

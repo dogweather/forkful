@@ -37,4 +37,3 @@ Für weitere Informationen und Beispiele, schauen Sie sich diese Ressourcen an:
 
 - [PowerShell-Dokumentation zu Write-Debug](http://go.microsoft.com/fwlink/?LinkID=113426)
 - [Set-PSDebug-Dokumentation](http://go.microsoft.com/fwlink/?linkid=2116527)
-- [Artikel über alternative Debugging-Methoden in PowerShell](https://devblogs.microsoft.com/scripting/weekend-scripter-the-many-ways-to-use-powershell/)

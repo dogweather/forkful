@@ -40,4 +40,3 @@ Les détails de l'implémentation diffèrent selon les plateformes. Par exemple,
 - Documentation GHC pour [System.IO.Temp](http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
 - Discussion StackOverflow sur [fichiers temporaires en Haskell](https://stackoverflow.com/questions/6001627/generating-temporary-file-names-in-haskell)
 - Article en depth sur [la gestion des fichiers temporaires](https://www.haskell.org/tutorial/io.html#tempfiles) dans le Tutorial Haskell 
-- Source code de la module [System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/src/System-IO-Temp.html) sur Hackage

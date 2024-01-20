@@ -42,5 +42,4 @@ fun main() {
 以下リンクも参考にしてください。
 
 * [LocalDate (Oracle Java Documentation)](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-* [Kotlin and Java 8 java.time API (Baeldung)](https://www.baeldung.com/kotlin-java-8-date-time-api)
 * [Java 8 Date (JavaPoint)](https://www.javatpoint.com/java-8-date)

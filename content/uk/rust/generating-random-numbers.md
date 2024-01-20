@@ -36,5 +36,4 @@ fn main() {
 
 ## Дивитись також:
 - Докладніше про бібліотеку `rand`: [https://docs.rs/rand/*/rand/](https://docs.rs/rand/*/rand/)
-- Rust By Example глава про `rand`: [https://doc.rust-lang.org/stable/rust-by-example/std_misc/rand.html](https://doc.rust-lang.org/stable/rust-by-example/std_misc/rand.html)
 - 'Secret Rust': ефективна генерація випадкових чисел: [https://www.youtube.com/watch?v=HCvE2v5K6O8](https://www.youtube.com/watch?v=HCvE2v5K6O8)

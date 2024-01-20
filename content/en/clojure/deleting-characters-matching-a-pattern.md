@@ -49,4 +49,3 @@ Remember to choose the right tool for the job considering factors like readabili
 ## See Also
 - [clojure.string API](https://clojure.github.io/clojure/clojure.string-api.html)
 - [Clojure - Regular Expressions](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
-- [Splitting and Joining Strings in Clojure](https://kiramclean.com/blog/splitting-and-joining-strings-in-clojure/)

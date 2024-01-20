@@ -50,5 +50,4 @@ The `parseTimeM` functions are locale-aware that parses time textual representat
 For more details and date formatting options, check the following links:
 
 - [`Data.Time.Format` module documentation](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time-Format.html)
-- [`parseTimeM` function documentation](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time-Format-Parse.html#v:parseTimeM)
 - [Haskell date and time utility libraries](https://haskell.libhunt.com/categories/310-date)

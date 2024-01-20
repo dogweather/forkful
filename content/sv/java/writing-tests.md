@@ -43,6 +43,5 @@ Det finns många olika metoder för att skriva tester, men ett vanligt sätt är
 
 ## Se även:
 - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [TestNG](https://testng.org/doc/index.html)
 - [Mockito](https://site.mockito.org/)
 - [Test-driven development (Wikipedia)](https://en.wikipedia.org/wiki/Test-driven_development)

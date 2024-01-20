@@ -29,4 +29,3 @@ print("यह एक एरर है", file=sys.stderr)
 ## इसका और भी से संबंधा है:
 - [अधिक जानकारी के लिए यह ब्लॉग पोस्ट पढ़ें](https://realpython.com/python-print/)
 - [यह संबंधित स्टैक ओवरफ्लो पोस्ट भी भेंट करें](https://stackoverflow.com/questions/5574702/how-to-print-to-stderr-in-python)
-- [यह विकिपीडिया लेख भी अधिक जानकारी प्रदान करता है](https://en.wikipedia.org/wiki/Standard_error_(computing))

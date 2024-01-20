@@ -42,6 +42,5 @@ if let emailRange = text.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2
 
 ## 查看更多
 
-- [Swift正则表达式指南](https://www.avanderlee.com/swift/regular-expressions/)
 - [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 - [语法参考](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#grammar_lexical-structure-regular-expression-literal)

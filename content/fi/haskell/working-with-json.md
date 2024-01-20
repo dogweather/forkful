@@ -44,4 +44,3 @@ JSONin kyky käsitellä monenlaisia tietotyyppejä, kuten numeroita, merkkijonoj
 
 - [Aeson kirjaston virallinen dokumentaatio](https://hackage.haskell.org/package/aeson)
 - [JSON käsittelemisestä Haskelliin ja muista kielistä](https://www.json.org/)
-- [Blogikirjoitus, jossa esitellään Aeson-kirjaston käyttöä JSONin käsittelyssä Haskellissa](https://www.snoyman.com/blog/2017/12/beware-of-aeson)

@@ -60,5 +60,4 @@ While `replace` seems straightforward, it performs multiple transformations: `pa
 
 * [Haskell Text Library](https://hackage.haskell.org/package/text)
 * [Intro To Haskell](https://www.futurelearn.com/info/courses/functional-programming-haskell/0/steps/27233)
-* [Haskell String Vs Text Vs ByteString](https://williamyaoh.com/posts/2020-04-14-strings-in-haskell.html)
 * [Haskell stringsearch Library](https://hackage.haskell.org/package/stringsearch)

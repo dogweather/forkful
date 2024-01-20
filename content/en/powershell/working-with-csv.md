@@ -54,4 +54,3 @@ While working with CSV files, it is essential to consider data types as they can
 ## See Also:
 - [PowerShell CSV documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
 - [CSV file format  history](https://en.wikipedia.org/wiki/Comma-separated_values#History)
-- [CSV in Different Programming Languages](https://www.tektutorialshub.com/csv/python-csv-file-read-write/)

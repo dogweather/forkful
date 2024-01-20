@@ -49,5 +49,4 @@ I serde-biblioteket används en datastruktur som heter "Value" för att represen
 
 ## Se också:
 - [serde_json Dokumentation](https://docs.serde.rs/serde_json/) - Officiell dokumentation för serde-biblioteket för JSON-hantering i Rust.
-- [Rust Cookbook - Läsa och Skriva JSON](https://rust-lang-nursery.github.io/rust-cookbook/web/encoding/working_with_json.html) - Ett brett utbud av kodexempel för att hantera JSON i Rust.
 - [JSON Formatter & Validator](https://jsonformatter.org/) - En användbar online-verktyg för att formatera och validera JSON-data.

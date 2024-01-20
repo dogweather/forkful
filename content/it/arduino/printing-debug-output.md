@@ -41,6 +41,5 @@ Questo codice invierà il messaggio "Ciao, Mondo!" alla console seriale ogni sec
 
 ## Vedi Anche:
 
-- [Documentazione Arduino: Debugging](https://www.arduino.cc/en/main/FAQ#toc10)
 - [StackOverflow: Tecniche di debugging Arduino](https://stackoverflow.com/questions/20457596/how-to-debug-arduino)
 - [Progetto Arduino: Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)

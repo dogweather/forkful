@@ -63,6 +63,5 @@ Under panseret bruker `str` en Java StringBuilder, som håndterer sammenføyning
 
 For mer informasjon om strenger i Clojure, se disse kildene:
 
-- Clojure's offisielle dokumenter om strenger: [Strings | Clojure v1.10.3](https://clojure.org/reference/strings)
 - Clojuredocs eksempler på `str` funksjonen: [clojure.core/str | ClojureDocs](https://clojuredocs.org/clojure.core/str)
 - Stack Overflow diskusjon om strengkonkatenering i Clojure: [How to concatenate strings in clojure?](https://stackoverflow.com/questions/6120141/how-to-concatenate-strings-in-clojure)

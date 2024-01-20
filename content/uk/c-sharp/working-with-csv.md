@@ -68,6 +68,4 @@ Console.WriteLine(table[1, 2]); // Виведе дані з другого ря�
 
 ## Дивись також 
 Для детальнішої інформації про формат CSV та роботу з ним у C#, рекомендуємо переглянути наступні ресурси: 
-- [Документація Microsoft для роботи з CSV у C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-read-from-a-csv-file)
 - [Стаття на CodeProject про роботу з CSV у C#](https://www.codeproject.com/Articles/30705/C-CSV-Reader)
-- [GitHub репозиторій з книгою "A Guide to Working with CSV Files in C#"](https://github.com/efleurine/CSharp-CSV-Guide)

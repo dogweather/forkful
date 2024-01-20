@@ -51,4 +51,3 @@ Vad gäller implementationen lagrar Swift alla dessa argument i en array som vi 
 
 - [Swift Argument Parser](https://github.com/apple/swift-argument-parser): Ett kraftfullt, Swift-nativt bibliotek för kommandoradsparsering.
 - [Swift Documentation](https://swift.org/documentation/): Apples officiella Swift-dokumentation.
-- [Command Line Programming](https://www.objc.io/issues/16-command-line/command-line-programs/): En bra artikel om command line programming i allmänhet.

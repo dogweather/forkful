@@ -43,6 +43,3 @@ Swift oferece várias formas de manipular datas. Acima usamos `Calendar.date(byA
 
 ## Veja Também
 Para aprofundar ainda mais os seus conhecimentos, vale a pena conferir estes links:
-- [Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming_guide): um guia abrangente da Apple sobre a programação de datas e horários.
-- [Working with Dates in Swift](https://learnappmaking.com/dates-date-swift-how-to/): um exemplo detalhado de como trabalhar com datas em Swift.
-- [Swift By Sundell](https://www.swiftbysundell.com/articles/dealing-with-date-and-time-in-swift/): um artigo interessante sobre a manipulação de datas e horários no Swift.

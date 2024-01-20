@@ -32,4 +32,3 @@ Måten å skrive til en tekstfil på har endret seg gjennom årene, og det er fl
 Her er noen nyttige ressurser for å lære mer om å skrive til en tekstfil i Javascript: 
 - [Node.js FileSystem dokumentasjon](https://nodejs.org/api/fs.html)
 - [Tutorialspoint sin artikkel om skriving til filer i Node.js](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
-- [W3Schools sin guide til å skrive til filer i JavaScript](https://www.w3schools.com/jsref/met_win_localstorage_setitem.asp)

@@ -45,7 +45,6 @@ YAML最初是由Clark Evans开发的，作为Tom Preston-Werner的特殊发行�
 - [YAML官方网站](https://yaml.org/)
 - [YAML规范说明](https://yaml.org/spec/)
 - [YAML实践指南](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
-- [YAML和JSON的比较](https://www.educative.io/blog/json-vs-yaml-difference)
 
 没有结论：
 如此见闻，你现在已经初步了解了YAML，并可以慢慢尝试在你的项目中使用它。更多信息和资源可以在以上链接中找到。祝编程愉快！

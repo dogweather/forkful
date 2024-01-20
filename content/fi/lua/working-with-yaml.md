@@ -48,6 +48,5 @@ Lua tarjoaa kirjaston nimeltä luayaml, joka mahdollistaa YAML-tiedostojen käsi
 
 ## Katso myös
 
-- [LuaYaml-kirjaston GitHub-sivu](https://github.com/gvvaughan/luayaml)
 - [YAML-dokumentaatio](https://yaml.org/)
 - [Lua-opas: Perusteet](https://lua.org/docs.html)

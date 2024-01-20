@@ -42,6 +42,4 @@ Hei, Ola
 
 For mer ressurser om programmering i Gleam, sjekk ut disse linkene:
 
-- Gleam's offisielle dokumentasjon: [https://docs.gleam.run/](https://docs.gleam.run/)
-- Boken "Programming Gleam": [https://pragprog.com/titles/lotlearn/programming-gleam/](https://pragprog.com/titles/lotlearn/programming-gleam/)
 - Gleam GitHub Repo: [https://github.com/gleam-lang/gleam/](https://github.com/gleam-lang/gleam/)

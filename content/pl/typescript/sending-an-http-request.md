@@ -38,4 +38,3 @@ Sprawdź te źródła, aby nauczyć się więcej na temat wysyłania żądań HT
 - [MDN Web Docs - Fetch API](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API)
 - [Axios - Promise based HTTP client](https://axios-http.com/)
 - [HTTP request methods - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [TypeScript Deep Dive - AJAX Request](https://basarat.gitbook.io/typescript/nodejs/http)

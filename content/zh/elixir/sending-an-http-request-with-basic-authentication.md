@@ -44,5 +44,4 @@ HTTP基本认证可以追溯到HTTP/1.0规范，旨在为应用程序提供一�
 ## 另请参阅：
 
 - [Elixir Docs: HTTPoison](https://hexdocs.pm/httpoison/readme.html)
-- [Elixir School: HTTP requests](https://elixirschool.com/en/lessons/libraries/httpoison/)
 - [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)

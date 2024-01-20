@@ -21,4 +21,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ראה גם:
 - [הוראות ומדריכים רשמיים של Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [LandofZ](https://www.landofz.com/notes/2012/11/redirect-stdout-stderr/)

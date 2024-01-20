@@ -43,5 +43,4 @@ Debug Data
 
 ## See Also:
 
-- [Gleam Documentation - io.debug](https://hexdocs.pm/gleam_erlang_stdlib/gleam/io/)
 - [Debugging Techniques](https://en.wikipedia.org/wiki/Debugging)

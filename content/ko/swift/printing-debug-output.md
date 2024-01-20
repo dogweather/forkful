@@ -48,6 +48,4 @@ dump(array)
 
 ## 참고 자료:
 더 많은 정보를 얻고 싶다면 아래의 레퍼런스를 참고하세요:
-- Swift 공식 문서: [print](https://developer.apple.com/documentation/swift/swift_standard_library/debugging_and_reflection/functions)
-- Swift 아카이브: [Advanced Swift Debugging](https://swift.org/debugging)
 - Swift 스택오버플로우: [Better ways to debug in Swift](https://stackoverflow.com/questions/27168025/better-ways-to-debug-in-swift)

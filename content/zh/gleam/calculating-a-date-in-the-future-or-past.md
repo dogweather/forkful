@@ -46,6 +46,4 @@ Gleam 的 `gleam/datetime` 模块提供了一种高级且标准的方式来处�
 
 ## 参考资料
 
-* Gleam 官方文档: [https://gleam.run/docs/](https://gleam.run/docs/)
-* `gleam/datetime`库文档: [https://hexdocs.pm/gleam_datetime/gleam/datetime.html](https://hexdocs.pm/gleam_datetime/gleam/datetime.html)
 * 日期计算相关的知识: [https://www.timeanddate.com/date/workdays.html](https://www.timeanddate.com/date/workdays.html)

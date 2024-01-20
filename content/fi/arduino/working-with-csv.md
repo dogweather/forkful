@@ -68,6 +68,5 @@ CSV-kirjasto Arduino:lle on vielä kehitysvaiheessa, joten tulevaisuudessa siihe
 
 ## Katso myös:
 
-- [Arduino reference for CSV library](https://www.arduino.cc/reference/en/libraries/csv/)
 - [CSV file format explanation](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [Alternatives to CSV for data storage and manipulation](https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats)

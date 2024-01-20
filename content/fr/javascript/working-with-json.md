@@ -44,4 +44,3 @@ Il existe également des alternatives à JSON telles que YAML et TOML, mais JSON
 ## À voir également: 
 - [Documentation officielle JSON](https://json.org)
 - [Introduction à JSON](https://www.w3schools.com/js/js_json_intro.asp)
-- [Comparaison de JSON avec d'autres formats de données](https://www.slant.co/versus/1227/1319/~json_vs_yaml)

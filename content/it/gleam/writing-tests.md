@@ -37,5 +37,4 @@ Per quanto riguarda l'implementazione dei test in Gleam, è tornato in auge graz
 
 ## Vedi anche:
 
-- [Documentazione ufficiale di Gleam sugli unit test](https://gleam.run/documentation/guides/unit_tests)
 - [Articolo su Medium che spiega l'importanza dei test nel codice](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)

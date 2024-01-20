@@ -43,5 +43,4 @@ JSON, que significa JavaScript Object Notation, foi criado em 2001 por Douglas C
 
 ## Veja também:
 - [Documentação oficial da biblioteca ArduinoJson](https://arduinojson.org/)
-- [Exemplo de código utilizando ArduinoJson](https://github.com/bblanchon/ArduinoJson/blob/master/examples/StaticJsonDocument/StaticJsonDocument.ino)
 - [Tutorial em vídeo sobre como trabalhar com JSON no Arduino](https://www.youtube.com/watch?v=re1inm-jPCM)

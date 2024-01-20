@@ -34,5 +34,4 @@ YAML a été créé en 2001 dans le but de fournir un moyen simple et lisible de
 
 ## Voir aussi:
 - [Documentation officielle de YAML](https://yaml.org/)
-- [Comparaison entre YAML, JSON et XML](https://www.baeldung.com/java-yaml-json-xml)
 - [Guide de démarrage de TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

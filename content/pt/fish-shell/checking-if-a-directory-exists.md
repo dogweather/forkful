@@ -48,4 +48,3 @@ Esta implementação envolve o redirecionamento do stdout e stderr para /dev/nul
 
 - [Documentação oficial do Fish Shell sobre o comando `test`](https://fishshell.com/docs/current/cmds/test.html)
 - [Tutorial completo sobre manipulação de arquivos e diretórios no Fish Shell](https://tutorial.djangogirls.org/pt/python_introduction/#o-que-e-a-linha-de-comando)
-- [Dicas e truques do Fish Shell](https://www.sitepoint.com/tips-tricks-for-the-fish-shell/)

@@ -42,7 +42,5 @@ File.stream!('your_file.txt')
 ## Ver También:
 
 - [Documentación Oficial de Elixir en File module](https://hexdocs.pm/elixir/File.html)
-- [Sobre la lectura de archivos en Elixir](http://learningelixir.joekain.com/reading-files-in-elixir/)
-- [Ejemplos de código de Elixir](https://elixir-examples.github.io/examples/read-a-file)
    
 Recuerda que la práctica hace al maestro. ¡Sigue codificando!

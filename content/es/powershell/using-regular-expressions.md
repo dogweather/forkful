@@ -37,5 +37,4 @@ En lugar de expresiones regulares, se pueden utilizar otras técnicas, como las 
 Enlaces a fuentes relacionadas con el uso de expresiones regulares en PowerShell. 
 
 - [Documentación de Microsoft sobre Expressions regulares en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
-- [Artículo de TechNet sobre cómo usar expresiones regulares en PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/21745.powershell-using-regular-expressions-regex.aspx)
 - [Tutorial en YouTube sobre expresiones regulares en PowerShell por LearnWinAutomation](https://www.youtube.com/watch?v=xX3c-kQ94Sg)

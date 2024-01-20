@@ -43,6 +43,3 @@ Zgodnie z dokumentacją `System.IO.Temp`, Haskell tworzy tymczasowy plik w folde
 ## Zobacz również:
 
 Haskell ma wiele bibliotek do zarządzania plikami i folderami. Sprawdź je:
-
-- `System.IO.Temp`: [Biblioteka Temp](https://www.haskell.org/ghc/docs/latest/html/libraries/temporary-1.3/System-IO-Temp.html)
-- `System.Directory`: [Biblioteka Directory](https://www.haskell.org/ghc/docs/latest/html/libraries/directory-1.3.6.0/System-Directory.html)

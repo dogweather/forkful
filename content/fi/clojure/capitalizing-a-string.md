@@ -49,5 +49,3 @@ Tämä funktio jakaa merkkijonon sanoihin, suurentaa jokaisen sanan ensimmäisen
 Lisää tietoa merkkijonon käsittelystä Clojurella löydät näistä lähteistä:
 
 - Clojuren virallinen dokumentaatio: [clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
-- Opas Clojuren string-funktioista: [Clojure programming - working with strings](https://www.learn-clojure.com/clojure_strings)
-- Blogipostaus merkkijonon käsittelystä Clojurella: [String Manipulation in Clojure](https://www.baeldung.com/clojure-string-manipulation)

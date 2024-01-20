@@ -47,6 +47,4 @@ In Elm, the `toLower` function uses Unicode's lower-mapping of characters. This 
 
 Go deeper into strings in Elm following these links:
 
-- The Elm Guide's section on [Strings](https://guide.elm-lang.org/types/strings.html)
 - Elm's [String library](https://package.elm-lang.org/packages/elm/core/latest/String) documentation
-- A thorough article on String Normalization - [Building Real-World Frontend Web Apps in Elm: tutorial series](https://korban.net/posts/elm/2019-11-22-elm-json-encoders-decoders/)

@@ -86,5 +86,4 @@ Para utilizar o YAML no Arduino, é necessário instalar a biblioteca "ArduinoYa
 ## Veja Também:
 
 - [Site oficial do YAML](https://yaml.org/)
-- [Documentação da biblioteca ArduinoYaml](https://github.com/arduino-libraries/ArduinoYaml)
 - [Explicação detalhada sobre o formato YAML](https://medium.com/@HudsonGIslander/what-is-yaml-42a17a1ab152)

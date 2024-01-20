@@ -36,6 +36,5 @@ En alternativ metod för att hantera felmeddelanden är att använda loggbibliot
 Vid implementering av skrivning till standard error bör man vara medveten om eventuella problem med utdataströmmar och se till att de hanteras på ett korrekt sätt för att undvika potentiella problem.
 
 ## Se även:
-- [Kotlin Dokumentation: System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system.err/)
 - [Log4j](https://logging.apache.org/log4j/)
 - [SLF4J](https://www.slf4j.org/)

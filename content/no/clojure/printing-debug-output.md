@@ -48,6 +48,4 @@ Clojure's `println` funksjon skriver til standard utdatastrøm (som vanligvis er
 
 ## Se også
 For å bli mer dyktig i feilsøking av Clojure kode anbefaler jeg følgende ressurser:
-* [Clojure - Debugging](https://www.tutorialspoint.com/clojure/clojure_debugging.htm)
-* [A Guide to Clojure REPL](https://clojurerepl.com/)
 * [Debugging with the Scientific Method](https://www.youtube.com/watch?v=FihU5JxmnBg) - fra av Clojure's skaper, Rich Hickey.

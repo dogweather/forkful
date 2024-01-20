@@ -39,6 +39,5 @@ Historiskt sett, har utskrift av felsökningsdata varit ett grundläggande verkt
 
 - [Elm Guide: Debugging](https://guide.elm-lang.org/effects/): Fullständig guide på engelska till debuggan i Elm.
 - [Elm: Beyond Hello World](https://guide.elm-lang.org/error_handling/): Avancerade koncept, inklusive felsökning och felhantering.
-- [Elm Debug Tutorial](https://www.elm-tutorial.org/en-v01/02-elm-arch/06-debug.html): Enkel tutoriel på engelska som visar hur man kan debugga Elm program med `Debug.log`.
 
 ---

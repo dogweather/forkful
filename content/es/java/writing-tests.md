@@ -39,5 +39,3 @@ Escribir pruebas automatizadas es una práctica común en el desarrollo de softw
 ## Vea también:
 
 - [Tutorial de JUnit](https://www.baeldung.com/junit)
-- [Qué son las pruebas unitarias y cómo escribirlas en Java](https://www.oracle.com/technical-resources/articles/java/junit-5-testing-in-java.html)
-- [JUnit vs TestNG: ¿Cuál es la diferencia?](https://stackify.com/junit-vs-testng/)

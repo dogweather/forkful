@@ -51,6 +51,5 @@ describe("더하기 함수 테스트", () => {
 테스트 작성에는 여러 가지 방법이 있지만, 가장 일반적인 방법은 유닛 테스트(Unit Test)와 통합 테스트(Integration Test) 입니다. 유닛 테스트는 함수 또는 클래스와 같은 작은 단위의 코드를 테스트하는 것이며, 통합 테스트는 다른 모듈과 상호작용하는 코드를 테스트하는 것입니다.
 
 ## 참고 자료:
-- [Jest - JavaScript 테스트 프레임워크](https://jestjs.io/ko/)
 - [커버리지 기반 애플리케이션 테스트](https://wiki.c2.com/?CoverageBasedApplicationTesting)
 - [클린코드 - 테스트 기법](https://book.naver.com/bookdb/book_detail.nhn?bid=7390287)

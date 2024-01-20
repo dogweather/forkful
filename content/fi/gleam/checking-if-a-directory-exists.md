@@ -34,6 +34,4 @@ Gleam-kielessä, hakemiston olemassaolon tarkistaminen tehdään `filesystem`-mo
 
 ## Katso myös:
 
-- [Gleam Filesystem documentation](https://hexdocs.pm/gleam_stdlib/gleam/filesystem/)
 - [Understanding file systems](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)
-- [Gleam introduction](https://gleam.run/introduction/)

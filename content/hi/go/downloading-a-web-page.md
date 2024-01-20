@@ -62,5 +62,4 @@ func main() {
 
 ## इसके साथ देखिए:
 
-- Go में [वेब स्क्रेपिंग](https://yourbasic.org/golang/web-scraping/) कैसे करें।
 - HTTP रिक्वेस्ट के बारे में और जानने के लिए [Go Docs](https://golang.org/pkg/net/http/) का उपयोग करें।

@@ -62,7 +62,6 @@ L'analisi della data da una stringa è una pratica comune da quando le date sono
 ## Vedi Anche
 Per ulteriori dettagli e opzioni, consultare la documentazione PHP ufficiale e le guide disponibili online.
 
-- [Funzioni di data e ora di PHP](https://www.php.net/manual/it/book.datetime.php)
 - [Parser di sintassi datetime compatibile con 
 Strtotime()](https://www.php.net/manual/it/datetime.formats.date.php)
 - [Carbon - Una semplice libreria PHP per Date and Time](https://carbon.nesbot.com/)

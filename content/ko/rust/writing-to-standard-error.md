@@ -37,4 +37,3 @@ Rust에서는 표준 에러에 쓰는 것을 간단하게 하기 위해 ```io::s
 ## 더 알아보기
 
 - [Rust 표준 입력과 출력 라이브러리](https://doc.rust-lang.org/std/io/)
-- [표준 에러에 쓰는 이유](https://stackify.com/what-is-stderr/)

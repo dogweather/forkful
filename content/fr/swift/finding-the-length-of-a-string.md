@@ -44,5 +44,3 @@ Dans les coulisses, quand un programmeur appelle `.count` sur une chaîne, Swift
 ## Voir Aussi:
 
 - Documentation officielle de Swift sur les chaînes : [Strings and Characters in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- Guide sur les chaînes en Swift par NSHipster : [NSHipster String](https://nshipster.com/string/)
-- Swift par Sundell sur les propriétés et méthodes de String : [Swift by Sundell: Strings](https://www.swiftbysundell.com/posts/strings-in-swift)

@@ -41,5 +41,3 @@ PowerShell Import-CSV -Header Name,Age,Gender -Path C:\Users\User\Desktop\file.c
 
 ## ראו גם
 - [סרטון על עבודה עם CSV בפויז'רשל](https://www.youtube.com/watch?v=aH2rCslOD3s)
-- [פקודות חשובות בפויז'רשל לעבודה עם CSV](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-content?view=powershell-7.1)
-- [מדריך לעבודה עם קבצי CSV בפויז'רשל](https://www.petri.com/working-csv-files-powershell)

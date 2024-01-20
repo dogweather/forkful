@@ -48,8 +48,3 @@ A comparação de datas tem sido uma prática desde o início da programação. 
 Leve em conta que `Date.new/3` pode lançar um erro. Assim, é recomendado usar com a função `try` para lidar com isso. Neste exemplo, simplificamos para manter a simplicidade.
 
 ## Veja também:
-
-- Documentação Gleam's [`Date.new/3`](https://hexdocs.pm/gleam_stdlib/gleam/datetime/Date.html#new/3) 
-- Documentação Gleam's [`Date.compare/2`](https://hexdocs.pm/gleam_stdlib/gleam/datetime/Date.html#compare/2)
-- [Tutorial Gleam de manipulação de datas](https://gleam.run/book/tour/dates-and-time.html)
-- [Guia de tratamento de erros em Gleam](https://gleam.run/book/tour/errors.html)

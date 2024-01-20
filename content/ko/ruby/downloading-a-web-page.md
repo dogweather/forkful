@@ -39,5 +39,4 @@ puts download_webpage('http://www.example.com')
 
 ## 참고 자료
 - Ruby net/http 공식 문서: [https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- 웹 스크레이핑에 대한 더 깊은 이해를 위한 링크: [https://www.w3schools.com/python/python_web_scraping.asp](https://www.w3schools.com/python/python_web_scraping.asp)
 - Ruby 외의 다른 언어에서 웹 페이지를 다운로드하는 방법: [https://www.twilio.com/blog/2017/05/http-requests-in-python-3.html](https://www.twilio.com/blog/2017/05/http-requests-in-python-3.html)

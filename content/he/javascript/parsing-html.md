@@ -28,5 +28,4 @@ console.log(htmlDoc.body.textContent); // "Hello World"
 
 #ראה גם
 - [מסמך MDN על DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [מבט מתקדם על פענוח HTML בוויקיפדיה](https://he.wikipedia.org/wiki/HTML_%D7%9B%D7%A0%D7%99%D7%A1%D7%AA)
 - [הבנת שפת ה-HTML](https://he.khanacademy.org/computing/computer-programming/html-css)

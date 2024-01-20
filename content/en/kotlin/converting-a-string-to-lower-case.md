@@ -45,5 +45,4 @@ Instead of producing "Çiğ", a Turkish user might expect, it produces "çiğ".
 For more information:
 
 - [Kotlin's toLowerCase documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Char.toLowerCase() in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case-char.html) 
 - [Locale sensitivity in string conversion](https://docs.oracle.com/javase/tutorial/i18n/locale/defLocale.html)

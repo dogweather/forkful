@@ -54,5 +54,4 @@ Detalles de implementación: Las cadenas en Elixir están representadas internam
 Podrás encontrar más detalles en los siguientes recursos (todos en inglés):
 
 - [Elixir Lang: String](https://hexdocs.pm/elixir/String.html)
-- [Concatenating Strings in Elixir](http://learningelixir.joekain.com/concatenating-strings-in-elixir/)
 - [Elixir Forum: How to concatenate strings?](https://elixirforum.com/t/how-to-concatenate-strings/346)

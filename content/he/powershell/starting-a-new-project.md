@@ -43,6 +43,5 @@ PowerShell הוא שפה אידיאלית למחשבים בסביבת Windows ו
 
 ## ראו גם (See Also)
 
-- [החלטת המחשב - מאמר המסביר את תהליך יצירת PowerShell חדש](http://www.decidingonthe.net/create-new-powershell-script/)
 - [שפת PowerShell באתר Docs של Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
 - [מדריכים מקוונים בנושא PowerShell](https://www.stackoverflow.com/questions/tagged/powershell)

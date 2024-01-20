@@ -35,5 +35,3 @@ File.write "hello.txt" "Привіт, світ!"
 #Дивіться також:
 
 * [Документація Elm по `File` модулю](https://package.elm-lang.org/packages/elm/file/latest/File)
-* [Стаття на сайті Learn Elm](https://guide.elm-lang.org/architecture/effects/file_system.html)
-* [Приклади використання Elm для створення текстових файлів](https://gist.github.com/jarho/97fe272773461ad98c02b6de4ce4ef20)

@@ -45,4 +45,3 @@ int main() {
 ## 참고 링크
 
 - "time.h" 라이브러리에 대한 자세한 사항: [https://www.cplusplus.com/reference/ctime/](https://www.cplusplus.com/reference/ctime/)
-- 시간 관련 프로그래밍에 대한 자세한 내용: [https://en.wikipedia.org/wiki/Time_(Unix)](https://en.wikipedia.org/wiki/Time_(Unix))

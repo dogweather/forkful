@@ -43,4 +43,3 @@ Per quanto riguarda l'implementazione di scrivere su standard error, ci sono div
 
 - [Documentazione ufficiale di Go: fmt](https://golang.org/pkg/fmt/)
 - [Stack Overflow: Difference between Fmt.Fprintln(os.Stderr) and Fmt.Println()?](https://stackoverflow.com/questions/38036438/difference-between-fmt-fprintlnos-stderr-and-fmt-println)
-- [Tutorial: Debugging Go Code with Standard Error](https://blog.golang.org/using-go-x-tools-with-language-server)

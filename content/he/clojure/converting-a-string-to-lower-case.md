@@ -33,6 +33,5 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 אבל שים לב - JVM יודעת לתמוך ב-RFCs ו-standards בשפות רבות, מה שיכול להיות מורכב ליישם באופן ידני.
 
 ## ראה גם:
-- [תיעוד Clojure למתודה .toLowerCase](https://clojuredocs.org/clojure.core/lower-case)
 - [הסבר עלמודל ה-string של JVM](https://stackoverflow.com/questions/4655193/java-utf-8-character-encoding)
 - [תקנים ו-RFCs בנושא לוקאליזציה](https://www.ietf.org/rfc/rfc2277.txt)

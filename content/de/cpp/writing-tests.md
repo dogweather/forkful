@@ -78,7 +78,3 @@ Eine Alternative zum Schreiben von Tests ist das sogenannte "Test-Driven Develop
 Ein wichtiger Aspekt beim Schreiben von Tests ist die Wahl der richtigen Testfälle. Es ist wichtig, sowohl positive als auch negative Testfälle abzudecken, um sicherzustellen, dass der Code in allen möglichen Szenarien richtig funktioniert. Eine gute Testabdeckung sorgt für mehr Vertrauen in den Code und erleichtert die Wartung und Erweiterung im späteren Verlauf.
 
 Sieh dir auch an
-
-- [Einführung in das Testen von C++-Code](https://www.tutorialspoint.com/cplusplus/cpp_unit_testing.htm)
-- [Testen mit Google Test in C++](https://www.inf.hs-flensburg.de/lang/cplusplus/CppUnit.html)
-- [Test-Driven Development mit C++](https://www.softwaretestinghelp.com/test-driven-development-with-cpp-tdd/)

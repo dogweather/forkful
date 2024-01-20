@@ -44,5 +44,4 @@ JSON का विस्तृत समर्थन 1990 के दशक म�
 ## इससे जुड़े देखें:
 
 - [PHP Manual: JSON फंक्शन](https://www.php.net/manual/en/book.json.php)
-- [W3Schools: PHP JSON उदाहरण](https://www.w3schools.com/php/php_json_example.asp)
 - [What is JSON? एक सरल गाइड](https://www.digitalocean.com/community/tutorials/an-introduction-to-json)

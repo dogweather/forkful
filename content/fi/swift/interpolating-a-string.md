@@ -54,4 +54,3 @@ Tuotos:
 Lisätietoja Swift-merkkijonojen interpoloinnista voit lukea seuraavista lähteistä:
 - [Apple's Swift Documentation: String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
 - [Swift String Interpolation - Hacking with Swift](https://www.hackingwithswift.com/example-code/strings/how-to-use-string-interpolation-to-make-custom-strings)
-- [Swift by Sundell: "Tips & Tricks about String Interpolation"](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)

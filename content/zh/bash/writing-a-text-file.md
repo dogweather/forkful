@@ -37,4 +37,3 @@ Hello world!
 ## 参考：
 
 - [Bash参考手册](https://www.gnu.org/software/bash/manual/bash.html)
-- [如何使用Bash来管理文件和目录](https://www.digitalocean.com/community/tutorials/how-to-manage-files-from-the-linux-command-line)

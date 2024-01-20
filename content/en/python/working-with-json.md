@@ -66,5 +66,4 @@ JSON operates in Python with the built-in json module. It uses simple methods to
 
 - Python's official [json documentation](https://docs.python.org/3/library/json.html)
 - Douglas Crockford's [original JSON specification site](https://www.json.org/json-en.html)
-- Discussion on [XML vs JSON](https://www.pluralsight.com/blog/tutorials/xml-vs-json) 
 - Introductory guide to [Python's data structures](https://docs.python.org/3/tutorial/datastructures.html)

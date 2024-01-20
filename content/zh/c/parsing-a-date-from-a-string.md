@@ -53,7 +53,6 @@ Year: 2022; Month: 7; Day: 31
 
 ## 另请参阅
 
-- [C库函数 - strptime()](https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm)
 
 - [C datetime函数库](http://www.cplusplus.com/reference/ctime/)
 

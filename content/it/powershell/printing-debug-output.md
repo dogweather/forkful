@@ -41,4 +41,3 @@ DEBUG: Il valore della mia variabile è: Ciao, Mondo!
 ## Vedi anche
 
 - [Write-Debug](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.utility/write-debug)
-- [about_Debuggers](https://docs.microsoft.com/it-it/powershell/scripting/learn/debugging-from-command-line?view=powershell-7.1)

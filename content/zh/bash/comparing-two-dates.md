@@ -47,4 +47,3 @@ Bash `date`命令已在UNIX早期版本就出现了。`-d`选项可以 解析各
 
 - Bash `date`命令使用手册：[https://www.man7.org/linux/man-pages/man1/date.1.html](https://www.man7.org/linux/man-pages/man1/date.1.html)
 - Bash编程指南：[https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- 对比`date`和其他语言日期函数：[https://www.baeldung.com/linux/date-difference](https://www.baeldung.com/linux/date-difference)

@@ -51,5 +51,4 @@ PowerShellissa `DateTime`-luokka hoitaa kaiken työn. Se huomioi sekä aikavyöh
 
 Vastaavat resurssit, jotka käsittelevät päivämäärien vertailua ja niiden käyttöä PowerShellin kanssa:
 
-- PowerShellin `TimeSpan`-luokka: [Linkki](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/timespan-object?view=powershell-7.1)
 - PowerShellin `DateInterval`-luokka: [Linkki](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0)

@@ -37,5 +37,4 @@ Falando em implementação, a escrita para o erro padrão é feita usando a inte
 ## Veja também:
 
 - [Documentação oficial do Console.Error](https://docs.microsoft.com/pt-br/dotnet/api/system.console.error?view=net-5.0)
-- [Artigo sobre Debugging em C#](https://www.educba.com/debugging-in-c-sharp/)
 - [Vídeo tutorial sobre como usar a saída de erro em C#](https://www.youtube.com/watch?v=c-wpWzmIOGo)

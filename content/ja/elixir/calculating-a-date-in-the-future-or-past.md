@@ -39,4 +39,3 @@ iex> DateTime.add(now, 5*24*60*60, :second)
 
 - [公式ドキュメント](https://hexdocs.pm/elixir/DateTime.html)
 - [Elixir School日付と時間](https://elixirschool.com/jp/lessons/basics/date_time/)
-- [Elixirで日付・時間の計算をする](https://qiita.com/7kaji/items/bae8c5d6a907409de12c)

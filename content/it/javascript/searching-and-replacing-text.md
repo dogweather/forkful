@@ -53,5 +53,4 @@ L'output sarà:
 Per ulteriori informazioni sulla ricerca e la sostituzione del testo in Javascript, visita i seguenti link:
 
 - [Documentazione di Mozilla su String.prototype.replace()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Esempi e dettagli su come usare espressioni regolari in Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript/Guida/Regular_Expressions)
 - [Più informazioni sulle espressioni regolari in Javascript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

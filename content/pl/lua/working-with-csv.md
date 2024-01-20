@@ -71,5 +71,4 @@ Pierwsza wersja pliku CSV została stworzona w roku 1972 i od tego czasu jest sz
 
 ## Zobacz też:
 
-- [Dokumentacja modułu CSV dla języka Lua](http://csv.luaforge.net/)
 - [Podstawowe operacje na plikach z formatem CSV w języku Lua](https://medium.com/@luapermutation/basic-csv-file-operations-in-lua-8f079e1fa520)

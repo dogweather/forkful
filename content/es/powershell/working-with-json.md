@@ -92,5 +92,3 @@ En cuanto a la implementación, PowerShell utiliza el formato JSON para almacena
 Si quieres saber más sobre JSON y cómo trabajar con él en PowerShell, estas son algunas fuentes de información que pueden ser de ayuda:
 
 - [Documentación oficial de Microsoft sobre ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Json?view=powershell-7.1)
-- [Tutorial en español sobre el manejo de JSON en PowerShell](https://www.jesusninoc.com/2017/07/02/convertir-objetos-json-a-objetos-de-powershell/)
-- [Módulo externo "ConvertFrom-JsonCmdlet"](https://www.powershellgallery.com/packages/ConvertFrom-JsonCmdlet/3.1.0/Content/ConvertFrom-Json/about_ConvertFrom-JsonCmdlet_help.md)

@@ -42,5 +42,4 @@ This is content of file.txt.
 ## See Also (関連情報)
 
 - 公式PHPマニュアルの`file_get_contents`のページ: [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
-- 'PHPでファイルを安全に読み書きする方法'についての記事: [https://www.tutorialrepublic.com/php-tutorial/php-file-handling.php](https://www.tutorialrepublic.com/php-tutorial/php-file-handling.php)
 - 'PHPのストリームラッパー'についての説明: [http://php.net/wrappers](http://php.net/wrappers)

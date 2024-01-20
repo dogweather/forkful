@@ -44,5 +44,4 @@ Un detalle de implementación importante a tener en cuenta es que demasiadas con
 Para más información, consulte los siguientes recursos:
 
 - Documentación oficial de Arduino sobre String: [arduino.cc/reference/en/language/variables/data-types/string/](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- Tutorial de String Manipulation en Bald Engineer: [baldengineer.com/string-concatenation-with-arduino.html](https://www.baldengineer.com/string-concatenation-with-arduino.html)
 - Stack Overflow para consejos prácticos de la comunidad: [stackoverflow.com/questions/tagged/arduino+string](https://stackoverflow.com/questions/tagged/arduino+string)

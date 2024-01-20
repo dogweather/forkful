@@ -37,5 +37,4 @@ La implementación de la escritura a la salida de error en Clojure es sencilla, 
 
 ## Ver también:
 
-- [Documentación de la función System/err en Clojure](https://clojuredocs.org/clojure.core/err)
 - [¿Qué es la salida de error estándar?](https://en.wikipedia.org/wiki/Standard_error)

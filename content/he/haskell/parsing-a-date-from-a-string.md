@@ -32,5 +32,4 @@ readTime defaultTimeLocale "%Y-%m-%d" "2021-07-21" :: UTCTime
 הפרטים של המימוש של readTime εינם פשוטים, עם רזולוציית מיקרו (10-6 שניות), מה שמבטיח שיש לנו כל המידע שאנו צריכים, אך זה יכול להיות יותר מדי מה שאנחנו מצפים על תאריך.
 
 ## ראה גם
-- [Haskell - Absolute beginner's guide to date and binary parsing](http://qnighy.github.io/haskell-beginners-guide/date-and-binary/)
 - [Official Haskell Library Documentation for Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)

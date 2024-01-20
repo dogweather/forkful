@@ -27,6 +27,3 @@ Si no quieres usar PowerShell para escribir un archivo de texto, también puedes
 
 ## Ver también
 Mira estos recursos para obtener más información sobre cómo escribir archivos de texto con PowerShell:
-- [Documentación de Microsoft sobre el cmdlet Out-File](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.management/out-file?view=powershell-7.1)
-- [Artículo sobre cómo escribir y leer archivos de texto en PowerShell](https://adamtheautomator.com/powershell-write-file/)
-- [Tutorial para principiantes sobre PowerShell](https://www.hostinger.es/tutoriales/que-es-powershell/)

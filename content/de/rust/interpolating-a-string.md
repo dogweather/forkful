@@ -42,5 +42,4 @@ Drittens Implementierungsdetails: Die Funktion `format!()` in Rust wird zur Stri
 
 Einige hilfreiche Links zu diesem Thema:
 - Die offizielle [Rust Dokumentation](https://doc.rust-lang.org/stable/rust-by-example/std/str.html) über Zeichenketten.
-- Eine [einführende Anleitung](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html) zur String-Interpolation in Rust.
 - Eine [StackOverflow-Diskussion](https://stackoverflow.com/questions/29483365/what-is-the-format-macro-in-rust) über die `format!()` Funktion in Rust.

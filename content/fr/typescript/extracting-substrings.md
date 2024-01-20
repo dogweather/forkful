@@ -46,4 +46,3 @@ Quant aux détails de l'implémentation, `slice` et `substring` diffèrent lég�
 
 Pour plus d'informations sur l'extraction de sous-chaînes dans TypeScript, consultez ces liens intéressants:
 - La documentation officielle de Mozilla sur les strings et leurs méthodes: [MDN String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
-- Un bon article de blog sur le sujet: [Understanding Strings in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-strings-in-javascript)

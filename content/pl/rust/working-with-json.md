@@ -55,4 +55,3 @@ Wiek: 25
 
 - [Dokumentacja serde_json](https://docs.rs/serde_json/latest/serde_json/)
 - [Wprowadzenie do JSON](https://www.json.org/json-pl.html)
-- [Porównanie JSON z innymi formatami danych](https://www.lifewire.com/json-vs-xml-3469129)

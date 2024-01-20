@@ -42,5 +42,3 @@ Output vil være en tidsstempel som representerer datoen 5 dager senere.
 ## Se Også:
 
 - [Offisiell Elm Dokumentasjon for Tid (Time)](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Dato- og tidhåndtering i Elm](https://elmprogramming.com/dates-and-times.html)
-- [Tid og Datoer i Elm: en Grundig Guide](https://korban.net/posts/elm/2019-12-13-date-and-time-in-elm-a-thorough-guide/)

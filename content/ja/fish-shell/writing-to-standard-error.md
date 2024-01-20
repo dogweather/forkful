@@ -38,7 +38,3 @@ Something went wrong. # 標準エラーへの出力
 標準エラーへの書き込みは、通常、コード内で``` >&2 ```を使用することで実現されます。これは、Unixシステムで広く使用されている標準的な方法です。また、エラーメッセージをファイルに書き込む方法や、ログファイルへの書き込みなど、標準エラーへの書き込み以外の方法もあります。しかし、標準エラーへの書き込みは、コードのデバッグにおいて直感的で簡単な方法です。
 
 ## 関連情報：
-
-- [Shell Scripting Tutorial - Standard Error](https://www.shellscript.sh/standard.html)
-- [Understanding Standard Error in UNIX / Linux](https://www.tutorialspoint.com/unix/unix-standard-error.htm)
-- [Bash Shell - Writing to Standard Error](https://bash.cyberciti.biz/guide/Writing_to_standard_error)

@@ -52,6 +52,5 @@ Tämä koodi vertailee päivämäärien välillä ja tulostaa "LT" jos ensimmäi
 
 - [Data.Time moduuli Haskellin dokumentaatiossa](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
 
-- [Haskellin päivämäärät ja ajat - School of Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/date-and-time)
 
 - [Haskellin `Ordering` tyyppi](http://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#t:Ordering)

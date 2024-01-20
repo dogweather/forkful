@@ -48,4 +48,3 @@ Per saperne di più sul calcolo delle date future e passate e sulla gestione del
 
 - [The GNU C Library: Date and Time](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
 - [C Programming - Date and Time, Tutorials Point](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [Time library functions in C++](https://www.geeksforgeeks.org/time-library-c-set-1/)

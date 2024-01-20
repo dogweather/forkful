@@ -37,5 +37,4 @@ Haskellは一時ファイルの作成が可能な数多くの言語の一つで�
 
 ## 参考に：
 - [Haskell System.IO.Temp Documentation](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
-- [Haskell Cookbook - Managing Temporary Files and Directories](https://haskell.fpcomplete.com/tutorial/managing-temporary-files-and-directories)
 - [Haskell Tempfile Source Code](https://github.com/haskell/unix/blob/master/System/Posix/Temp.hsc)

@@ -34,5 +34,4 @@ assert capitalise_string("नमस्ते दुनिया") == "नमस�
 
 ## और देखिए:
 
-- Gleam Docs: [String](https://gleam.run/documentation/the-gleam-standard-library/std/string/)
 - संबंधित स्रोत: [Learning Gleam](https://gleam.run/getting-started/)

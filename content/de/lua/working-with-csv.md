@@ -53,5 +53,4 @@ Die Implementierung der "csv" Bibliothek in Lua folgt dem RFC 4180 Standard, der
 
 ## Siehe auch
 - [Offizielle Lua CSV Bibliothek Dokumentation](https://github.com/geoffleyland/lua-csv/wiki)
-- [CSV Wikipedia Artikel auf Deutsch](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
 - [RFC 4180 Spezifikation für CSV Format](https://datatracker.ietf.org/doc/html/rfc4180)

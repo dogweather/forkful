@@ -61,4 +61,3 @@ Dodatkowo, warto zauważyć, że ten kod używa funkcji `strlen()` w pętli, co 
 
 - Dokumentacja GNU C Library: [String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
 - StackOverflow: [How to delete certain character from a string using C](https://stackoverflow.com/questions/5457608/how-to-remove-the-character-at-a-given-index-from-a-string-in-c)
-- Kursy Programowania C: [Operacje na ciągach znaków](https://www.learn-c.org/pl/Strings)

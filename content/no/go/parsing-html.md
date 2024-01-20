@@ -56,6 +56,5 @@ b :  []
 **Implementeringsdetalj**: I praksis kan HTML parsing bli kompleks avhengig av hvor sammensatt HTML-koden er. Men Go's innebygde 'net/html' pakke forenkler denne kompleksiteten ved å behandle HTML's hierarkiske DOM-struktur som en rekke noder.
 
 ## Se Også
-- For mer informasjon om "net/html" pakken, sjekk ut Go's offisielle dokumentasjon: [Go Doc](https://golang.org/pkg/net/html/).
 - Hvis du ønsker å fordype deg enda mer innen HTML parsing, kan du sjekke ut denne artikkelen: [Advanced HTML parsing in Go](https://medium.com/@ankurgel/working-with-go-1-11-4ca098a178a).
 - For en mer detaljert veiledning i HTML parsing i andre programmeringsspråk, sjekk ut disse linkene: [Parsing HTML in Python](https://realpython.com/python-web-scraping-practical-introduction/), [Parsing HTML in Javascript](https://javascript.info/dom-parsing).

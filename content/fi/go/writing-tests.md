@@ -50,5 +50,4 @@ Testien kirjoittamisessa käytetään yleensä yksikkö- ja integraatiotestejä.
 # Katso myös:
 
 - [Go testauksen viralliselta sivustolta](https://golang.org/pkg/testing/)
-- [Martin Fowlerin artikkeli testien refactoroinnista](https://martinfowler.com/articles/refactoring-test-code.html)
 - [Go testauksen aloittelijan opas](https://blog.alexellis.io/golang-writing-unit-tests/)

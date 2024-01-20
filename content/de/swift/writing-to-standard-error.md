@@ -40,5 +40,4 @@ Eine Alternative zum Schreiben auf den Standarderror ist das Verwenden von benut
 Zur Umsetzung des Schreibens auf den Standarderror verwendet Swift eine Konstante namens `standardError`, welche einen Pointer auf den Standardfehlerstream darstellt. Durch die Verwendung von Referenzen, ist es möglich, direkt auf diesen Stream zu schreiben, ohne die normale Ausgabe des Programms zu beeinflussen.
 
 # Sieh dir auch an
-- [Apple Dokumentation über das Schreiben auf den Standarderror](https://developer.apple.com/documentation/swift/1541261-write)
 - [Stack Overflow Diskussion über das Schreiben auf den Standarderror in Swift](https://stackoverflow.com/questions/24008958/writing-to-standard-error-in-swift)

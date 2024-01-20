@@ -46,4 +46,3 @@ En cuanto a la implementación, Fish Shell utiliza un sistema interno llamado te
 
 - [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
 - [Introducción a la escritura de pruebas en Fish Shell](https://fishshell.com/docs/current/tutorial.html#sec-testing)
-- [Ejemplos de escribir pruebas con Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/test)

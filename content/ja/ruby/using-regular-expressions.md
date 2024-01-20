@@ -41,5 +41,3 @@ Rubyでは、`=~`演算子を使って正規表現を使用することができ
 ## 関連リンク
 
 - [Rubyの正規表現ガイド](https://rubular.com)
-- [正規表現のチュートリアル](https://docs.ruby-lang.org/ja/latest/doc/regexp_rdoc.html)
-- [正規表現の基礎と応用](https://www.javadrive.jp/ruby/string/index11.html)

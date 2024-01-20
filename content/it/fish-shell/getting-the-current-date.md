@@ -53,5 +53,4 @@ Alcune alternative potrebbero includere il comando `printf` con il formato `%T` 
 Per informazioni più dettagliate, visitate:
 
 - Documentazione ufficiale di Fish Shell: [fishshell.com/docs/current](https://fishshell.com/docs/current/)
-- Tutorial su date e time in Unix: [tutorialspoint.com/unix/unix-date-time.htm](https://www.tutorialspoint.com/unix/unix-date-time.htm)
 - Guida agli Shell Scripts in Linux: [linuxconfig.org/bash-scripting-tutorial-for-beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

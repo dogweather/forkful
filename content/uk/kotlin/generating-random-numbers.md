@@ -43,4 +43,3 @@ fun main() {
 
 ## Дивіться також:
 * [Докладніше про Random в Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-* [Ефективні методи генерації випадкових чисел](https://sample-space.com/uk/efficient-methods-for-random-number-generation/)

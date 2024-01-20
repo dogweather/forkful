@@ -52,6 +52,5 @@ Die Implementierung in Gleam basiert auf der OTP-Bibliothek, die auf vielen Eben
 
 ## Siehe auch
 
-- [Die Gleam HTTP Dokumentation](https://gleam.run/book/tour/http.html)
 - [Gun HTTP Client Bibliothek](https://github.com/ninenines/gun)
 - [hackney: Simple HTTP client](https://github.com/benoitc/hackney)

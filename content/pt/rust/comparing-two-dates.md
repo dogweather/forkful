@@ -61,5 +61,3 @@ A lógica de comparação da Chrono baseia-se na implementação do trait `Parti
 ## Ver Também
 
 - [Documentação Chrono](https://docs.rs/chrono/0.4.11/chrono/) 
-- [Rust by Example - Datas e Horas](https://doc.rust-lang.org/stable/rust-by-example/std_misc/chrono.html)
-- [Comparando datas em outras linguagens](https://dev.to/vaidehijoshi/lets-compare-things-date-edition)

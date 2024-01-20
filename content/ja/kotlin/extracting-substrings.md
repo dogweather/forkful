@@ -40,4 +40,3 @@ Kotlin
 ## 参照資料
 
 - [Kotlin Official Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Baeldung on Kotlin String](https://www.baeldung.com/kotlin/strings)

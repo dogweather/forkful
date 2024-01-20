@@ -40,6 +40,4 @@ $ echo $אותיותגדולות
 
 ## ראה גם:
 
-- [שיעור Bash מקוון חינמי](https://he.learnshell.org/)
-- [חוברת Bash ב-Vim](https://vim.fandom.com/wiki/Bash)
 - [תיעוד Bash](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)

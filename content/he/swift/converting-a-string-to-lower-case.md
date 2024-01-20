@@ -34,5 +34,4 @@ print(lowercasedString)
 אלטרנטיבה מקובלת לממירה לאותיות קטנות היא "נרמול". מתודה זו מאפשרת לנו להמיר הכול לאותיות גדולות, או להביא לאיזון בין השניים.
 
 ## ראה גם:
-- [התיעוד הרשמי של Swift על `lowercased`](https://developer.apple.com/documentation/swift/string/2293861-lowercased)
 - [מאמר מעניין שמתאר טכניקות שונות של מילול](https://en.wikipedia.org/wiki/Letter_case#Case_folding_and_case_conversion)

@@ -63,4 +63,3 @@ Jos haluat käyttää JSONia Swiftissä, tarvitset lisäksi JSONSerialization -l
 ## Lisätietoa
 - [Swiftin dokumentaatio JSONSerializationista](https://developer.apple.com/documentation/foundation/jsonserialization)
 - [JSON-formatin virallinen verkkosivu](https://www.json.org/)
-- [Lyhyt opas JSONiin](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-swift)

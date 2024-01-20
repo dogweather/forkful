@@ -44,6 +44,5 @@ W TypeScript, wyrażenia regularne są obiektami typu RegExp i wykorzystują met
 
 ## Zobacz także:
 
-- [Dokumentacja TypeScript o wyrażeniach regularnych](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
 - [Tutorial wyrażeń regularnych w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [Online edytor do wyrażeń regularnych](https://regex101.com/)

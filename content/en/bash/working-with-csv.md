@@ -35,7 +35,3 @@ CSV files have been around since the early 1970s and have been a popular choice 
 Working with CSV files in Bash requires the installation of the `csvtool` package. This package is part of the `debianutils` package and is usually pre-installed in most Linux distributions. `csvtool` is a set of command-line tools that use Unix's philosophy of small, simple, and composable tools to handle CSV data efficiently.
 
 ## See Also
-
-- [csvtool man page](https://manpages.debian.org/buster/debianutils/csvtool.1.en.html)
-- [Introduction to CSV](https://www.w3schools.com/python/python_csv.asp)
-- [Alternatives to CSV](https://stackify.com/what-is-the-best-format-for-data-transfer-csv-json-or-xml/)

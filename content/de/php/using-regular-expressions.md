@@ -38,4 +38,3 @@ Für weitere Informationen zu regulären Ausdrücken in PHP können folgende Que
 
 - [Offizielle Dokumentation von PHP zu regulären Ausdrücken](https://www.php.net/manual/de/reference.pcre.pattern.syntax.php)
 - [Reguläre Ausdrücke bei Wikipedia](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
-- [Reguläre Ausdrücke Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)

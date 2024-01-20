@@ -45,5 +45,4 @@ Extrair substrings tem raízes na programação desde os primeiros dias, e não 
 ## Veja também
 
 - Documentação oficial JavaScript MDN para [substring](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring), [slice](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice), e [substr](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr).
-- Post no blog Explorando [JavaScript for...of vs for...in Loops](https://www.alura.com.br/artigos/javascript-for-of-vs-for-in)
 - Tutorial em vídeo: [JavaScript String Functions](https://www.youtube.com/watch?v=09Bw3_ODGLs)

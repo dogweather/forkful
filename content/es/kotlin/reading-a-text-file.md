@@ -42,6 +42,5 @@ En términos de implementación, readText() y readLines() están diseñados para
 ## Ver también
 Para profundizar tus conocimientos en Kotlin y la lectura de archivos, echa un vistazo a estas fuentes:
 
-- Documentación oficial de Kotlin: [Leyendo y escribiendo archivos](https://kotlinlang.org/docs/io-files.html)
 - Artículo del blog: [Lectura de archivos en Kotlin] (https://www.baeldung.com/kotlin-read-file)
 - Tutorial en video: [Programación en Kotlin: ¿Cómo leer y escribir archivos de texto?](https://www.youtube.com/watch?v=XYZ)

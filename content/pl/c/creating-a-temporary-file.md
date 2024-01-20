@@ -58,5 +58,3 @@ Szczegóły implementacji: Funkcja 'mkstemp' tworzy unikalny plik tymczasowy z p
 
 - 'man 3 mkstemp' - pełny opis funkcji i jej zastosowań.
 - Książka "Programowanie w języku ANSI C" - Brian W. Kernighan, Dennis M. Ritchie
-- [C Programming/Files - Wikibooks]("https://en.wikibooks.org/wiki/C_Programming/Files")
-- [Creating Temporary Files securely - GNU C Library]("https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html")

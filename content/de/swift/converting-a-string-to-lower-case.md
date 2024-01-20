@@ -34,5 +34,4 @@ Bei der Umwandlung von Strings in Kleinbuchstaben ist zu beachten, dass dies in 
 
 ## Mehr dazu
 
-- Die offizielle Swift Dokumentation zur `lowercased()` Methode: [Swift.org - lowercased()](https://developer.apple.com/documentation/swift/string/2997127-lowercased)
 - Informationen über Unicode und Zeichenumwandlungen: [Unicode.org - Case Operations](https://unicode.org/notes/tn21/)

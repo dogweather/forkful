@@ -45,6 +45,4 @@ Los detalles de implementación para descargar una página web en Clojure son si
 Aquí tienes algunas fuentes relacionadas para ampliar tus conocimientos:
 
 - [Documentación oficial de clj-http](https://github.com/dakrone/clj-http)
-- [Tutorial Clojure para principiantes](https://www.learn-clojure.com/)
 - [Guía de HTTP en Clojure](https://www.clojure-toolbox.com/)
-- [Domando a las peticiones HTTP con http-kit en Clojure](https://practicalli.github.io/clojure/web-server/http-client-with-http-kit.html)

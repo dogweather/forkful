@@ -44,5 +44,4 @@ To dive deeper into the `date` command, consider the following resources:
 
 - `man date` : Use the command line to access the manual page for `date` itself.
 - [GNU Coreutils](https://www.gnu.org/software/coreutils/date) : The official GNU page on `date`.
-- [Bash Date Command](https://linuxize.com/post/bash-date-command/) : A comprehensive guide to the `date` command.
 - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) : A guide for advanced bash scripting.

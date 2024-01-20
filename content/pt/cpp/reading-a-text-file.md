@@ -56,6 +56,5 @@ Artigos relacionados que você pode achar útil:
 
 - Mais sobre a biblioteca `fstream`: [cplusplus.com | fstream](http://www.cplusplus.com/reference/fstream/)
 - Leitura de arquivos com a biblioteca `cstdio`: [cplusplus.com | cstdio](http://www.cplusplus.com/reference/cstdio/)
-- Tutorial sobre manipulação de arquivos em C++: [tutorialspoint.com | file I/O](https://www.tutorialspoint.com/cplusplus/cpp_files.htm)
 
 Não existe uma única "maneira correta" de ler um arquivo de texto em C++. A melhor abordagem depende das necessidades específicas do seu programa.

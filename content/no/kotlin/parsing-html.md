@@ -41,4 +41,3 @@ Implementation-wise, Jsoup fungerer ved å oversette HTML til en intern datastru
 ## Se Også:
 - [Jsoup Hjemmeside](https://jsoup.org/)
 - [Kotlin Dokumentasjon](https://kotlinlang.org/docs/home.html)
-- [Alternativ til Jsoup](https://www.baeldung.com/java-html-parsing)

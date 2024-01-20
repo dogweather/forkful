@@ -45,6 +45,5 @@ class Program
 
 Слідкуйте за цими посиланнями, щоб отримати додаткову інформацію:
 
-* [Official Documentation on File Handling in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
 * [C# StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
 * [File.ReadLines Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readlines?view=net-5.0)

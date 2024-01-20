@@ -56,5 +56,4 @@ A implementação atual da biblioteca `yaml` para Haskell é baseada em um anali
 
 ## Veja também:
 - [Documentação da biblioteca yaml](https://hackage.haskell.org/package/yaml)
-- [Tutorial de YAML em Haskell](https://www.gandaldf.xyz/post/working-with-yaml/)
 - [Site oficial do YAML](https://yaml.org/)

@@ -55,4 +55,3 @@ Second line of file.
 
 - [Microsoft: StreamReader Class](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.streamreader?view=net-5.0)
 - [Microsoft: File and Stream I/O](https://docs.microsoft.com/ja-jp/dotnet/standard/io/)
-- [C# Station: Reading Text Files](http://www.csharp-station.com/HowTo/ReadWriteTextFile.aspx)

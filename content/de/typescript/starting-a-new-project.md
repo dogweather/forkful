@@ -48,4 +48,3 @@ Für weitere Informationen zu TypeScript und wie Sie mit neuen Projekten beginne
 
 - [Offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
-- [TypeScript-Kurs auf Udemy](https://www.udemy.com/course/typescript-the-complete-developers-guide)

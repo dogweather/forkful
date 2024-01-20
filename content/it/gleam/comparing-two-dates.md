@@ -41,6 +41,3 @@ Il confronto delle date in Gleam avviene attraverso la funzione `less_than`, la 
 
 ## Vedere anche:
 Consulta le seguenti fonti per una comprensione più approfondita del confronto delle date in Gleam:
-- *[Gleam Docs - Date and Time](https://gleam.run/book/tour/dates-and-times.html)*
-- *[Gleam DateTime module Github](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/datetime.gleam)*
-- *[Gleam Compare module Github](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/compare.gleam)*

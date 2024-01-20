@@ -32,6 +32,3 @@ awk -F ',' '$2 == "Manager"' example.csv
 Format CSV został stworzony w 1972 roku przez Petera Critchlowa. Jest to jeden z najprostszych sposobów na ustrukturyzowanie danych w postaci tabelarycznej. Alternatywą dla CSV jest format JSON, który jest bardziej popularny w nowszych aplikacjach webowych. W Bash, obsługa plików CSV jest możliwa dzięki wykorzystaniu poleceń takich jak ```sed``` czy ```awk```. Możemy także wykorzystać narzędzia dedykowane do przetwarzania danych tabelarycznych, takie jak Pandas w języku Python.
 
 ## Zobacz także
-
-- [Wikipedia - CSV](https://pl.wikipedia.org/wiki/Comma-separated_values)
-- [Tutorial Bash - Working with CSV](https://www.gnu.org/software/bash/manual/html_node/Working-with-CSV-files.html)

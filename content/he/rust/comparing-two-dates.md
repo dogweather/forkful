@@ -48,5 +48,4 @@ fn main() {
 למידע נוסף, שיעורים נוספים, או פרקטיקות מומלצות, בקרו במשאבים הבאים:
 
 * [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
-* [Rust Date & Time Tutorial](https://www.tutorialspoint.com/rust/rust_date_time.htm)
 * [Rust Programming Language Official Documentation](https://doc.rust-lang.org/std/)

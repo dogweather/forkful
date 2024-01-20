@@ -58,6 +58,5 @@ Implementationen av `strcat()` och `strncat()` är tillräckligt komplicerat att
 
 ## Se även:
 
-- `strcat`-dokumentationen i GNU C-biblioteket: [https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html](https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html)
 - `strcat` på Cplusplus: [http://www.cplusplus.com/reference/cstring/strcat/](http://www.cplusplus.com/reference/cstring/strcat/)
 - `strncat` på Cplusplus: [http://www.cplusplus.com/reference/cstring/strncat/](http://www.cplusplus.com/reference/cstring/strncat/)

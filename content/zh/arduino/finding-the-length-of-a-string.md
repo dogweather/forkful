@@ -46,5 +46,4 @@ void loop() {
 ## 参考资料 "See Also"
 
 - Arduino函数库: [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)
-- C语言字符串处理: [https://www.geeksforgeeks.org/c-string-library-strlen/](https://www.geeksforgeeks.org/c-string-library-strlen/)
 - Arduino上的字符串: [https://startingelectronics.org/software/arduino/learn-to-program-course/10-strings/](https://startingelectronics.org/software/arduino/learn-to-program-course/10-strings/)

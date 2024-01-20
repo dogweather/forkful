@@ -43,7 +43,6 @@ Längden på en sträng i C# beräknas genom att räkna antalet Unicode-tecken. 
 
 ## Se även:
 
-* [Microsofts Officiella Dokument om Stränghantering i .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-manipulation)
 * [Stack Overflow Diskussion om Stränglängd vs Count()](https://stackoverflow.com/questions/94591/what-is-the-difference-between-length-and-count) 
 
 Glöm inte att pröva dig fram och experimentera med det du har lärt dig. Lycka till med din programmeringsresa!

@@ -50,5 +50,3 @@ Las manipulaciones de fecha en Bash son sencillas, pero bajo el capó usan algor
 ## Ver también: 
 
 - Página del manual de Bash `date`: [https://man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
-- Tutorial de Bash para principiantes en español: [https://likegeeks.com/es/scripting-de-bash-script-tutorial/](https://likegeeks.com/es/scripting-de-bash-script-tutorial/)
-- Guía detallada de manipulación de fecha y hora en Bash en inglés: [https://www.howtogeek.com/410442/how-to-work-with-date-and-time-on-the-bash-command-line/](https://www.howtogeek.com/410442/how-to-work-with-date-and-time-on-the-bash-command-line/)

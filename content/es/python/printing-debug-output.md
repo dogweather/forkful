@@ -47,4 +47,3 @@ La suma es: 8
 
 * [Módulo de logging de Python](https://docs.python.org/3/library/logging.html)
 * [Depurador de Python PDB](https://docs.python.org/3/library/pdb.html)
-* [Depurador gráfico para Python pudb](https://docs.pudb.org/)

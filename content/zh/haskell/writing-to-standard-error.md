@@ -45,4 +45,3 @@ main = do
 
 - [Hackage文档 - System.IO模块](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
 - [Haskell入门教程](https://www.haskell.org/tutorial/io.html)
-- [Haskell标准库 - System.IO模块](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.15.0.0/System-IO.html)

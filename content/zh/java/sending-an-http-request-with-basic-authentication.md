@@ -53,6 +53,4 @@ public class OkHttpExample {
 
 ## 另请参阅 (See Also)
 - [OkHttp官方文档](https://square.github.io/okhttp/)
-- [Apache HttpClient官方文档](https://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/)
 - [HttpUrlConnection官方文档](https://developer.android.com/reference/java/net/HttpURLConnection)
-- [HTTP请求认证--维基百科](https://zh.wikipedia.org/wiki/HTTP%E8%AA%8D%E8%AD%89)

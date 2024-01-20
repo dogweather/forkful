@@ -42,6 +42,5 @@ Mayormente la implementación se basa en las bibliotecas subyacentes del sistema
 
 ## Ver También
 
-- [Comandos de la fecha de Bash en Linux Geeks](https://linuxhint.com/bash_date_command/)
 - [Análisis de fecha de cadena en Stackoverflow](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
 - [Manipulando cadenas en Bash](https://tldp.org/LDP/abs/html/string-manipulation.html)

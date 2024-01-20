@@ -38,6 +38,4 @@ Wszystko to jest możliwe dzięki interopcji Gleam z Erlangiem. Dzięki temu mo�
 
 ## Zobacz Również:
 
-- Dokumentacja Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
 - Kurs Erlanga o parsowaniu daty: [https://learnyousomeerlang.com/time](https://learnyousomeerlang.com/time)
-- Moduł Erlang time: [https://erlang.org/doc/man/time.html](https://erlang.org/doc/man/time.html)

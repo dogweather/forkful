@@ -42,5 +42,3 @@ Pamiętaj, że podstawowe uwierzytelnienie przesyła dane uwierzytelniające jak
 ## Zobacz również
 
 - [Dokumentacja Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Podstawowe uwierzytelnienie w Elm](https://github.com/truqu/elm-basic-auth)
-- [Jak korzystać z HTTPS w Elm](https://korban.net/posts/elm/2018-07-23-using-https-elm/)

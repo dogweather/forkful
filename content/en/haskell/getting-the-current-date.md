@@ -69,5 +69,3 @@ The `getCurrentTime` function comes from the base library, and it uses a straigh
 For more details on Haskell's date and time functions, check the following links:
 
 - [Haskell Data.Time library documentation](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [How to use the Haskell Date and Time library](https://www.schoolofhaskell.com/user/commercial/content/date-and-time)
-- [The Evolution of Date and Time in Haskell](https://www.fpcomplete.com/blog/the-evolution-of-date-and-time-in-haskell)

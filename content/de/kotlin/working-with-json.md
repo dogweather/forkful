@@ -62,5 +62,3 @@ JSON wurde entwickelt, um eine einfache Alternative zu XML zu sein. Es ist lesba
 
 - [Kotlin Standardbibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html)
 - [JSON-Spezifikation](https://www.json.org/json-de.html)
-- [Vergleich von JSON, XML und YAML](https://blog.restcase.com/restful-api-design-put-vs-patch/)
-- [AJAX mit JSON erklärt](https://www.w3schools.com/js/js_json_ajax.asp)

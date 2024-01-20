@@ -47,6 +47,5 @@ JSON ble utviklet som et lettere og enklere alternativ til XML for å lagre og s
 
 ## Se også:
 
-- [jsonlæreplan](https://www.jsonlæreplan.com/)
 - [Python offisiell dokumentasjon for JSON](https://docs.python.org/3/library/json.html)
 - [Real Python: Intro til JSON i Python](https://realpython.com/python-json/)

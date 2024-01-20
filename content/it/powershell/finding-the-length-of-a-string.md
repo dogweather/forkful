@@ -41,5 +41,4 @@ Write-Output "La lunghezza della stringa è: $lunghezza"
 ## Vedi Anche
 Per ulteriori informazioni sulle stringhe in PowerShell, consulta i seguenti link:
 
-- [Microsoft Docs: About Strings](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - [Microsoft Docs: Measure-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.1)

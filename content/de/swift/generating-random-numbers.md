@@ -36,5 +36,4 @@ Historisch gesehen wurde die Generierung von Zufallszahlen früher durch kompliz
 
 ## Siehe auch:
 - [Apple Docs zu random(in:) Funktion](https://developer.apple.com/documentation/swift/int/2995648-random) 
-- [Swift.org: Random Numbers in Swift](https://swift.org/blog/se-0202/)
 - [SO: How to generate random numbers in Swift](https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language)

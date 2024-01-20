@@ -54,7 +54,6 @@ Die zweite Methode ist performanter, besonders bei großen Listen oder komplexer
 ## Siehe auch
 Für mehr Details:
 
-- Offizielle Kotlin Dokumentation zur [Verkettung von Zeichenketten](https://kotlinlang.org/docs/reference/strings.html) und zur [String Interpolation](https://kotlinlang.org/docs/reference/strings.html#string-interpolation)
 - Fallstudie zur [Leistungssteigerung durch Verwendung von String Interpolation](https://proandroiddev.com/a-deep-dive-into-kotlin-s-string-templates-and-string-interpolation-5fa9e1df2ead) in Kotlin
 
 Schnappen Sie sich Ihren Kaffee und genießen Sie die Codierung!

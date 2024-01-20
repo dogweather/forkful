@@ -37,7 +37,5 @@ Tulostettu tulos olisi:
 Regular expressionit ovat olleet osa ohjelmointia jo vuosikymmeniä ja niitä käytetään edelleen paljon eri kielissä. Vaikka Gleamin valmiiksi määritetty regular expression-kirjasto on hyvä, on olemassa myös muita vaihtoehtoja, kuten PCRE ja POSIX. Myös eri käyttöjärjestelmät voivat tarjota omia versioitaan regular expressioneista, joilla voi olla pieniä eroja syntaxissa.
 
 # Katso myös
-- [Regular expressions - Wikipedia](https://fi.wikipedia.org/wiki/Regular_expression)
-- [Gleam.string - Gleam Docs](https://gleam.run/documentation/stdlib/string/#string-module)
 - [PCRE - Regular expression library](https://www.pcre.org/)
 - [POSIX - Portable Operating System Interface](https://en.wikipedia.org/wiki/POSIX)

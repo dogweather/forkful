@@ -46,4 +46,3 @@ Na implementação da função `random()`, o Arduino usa a função C `rand()`, 
 
 - Documentação oficial do Arduino para a função `random()`: [https://www.arduino.cc/en/Reference/random](https://www.arduino.cc/en/Reference/random)
 - Detalhes técnicos sobre Geradores Lineares Congruenciais: [https://en.wikipedia.org/wiki/Linear_congruential_generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- Utilizando leituras de sensores para gerar números realmente aleatórios: [https://www.instructables.com/True-Random-Number-Generation/](https://www.instructables.com/True-Random-Number-Generation/)

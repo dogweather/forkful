@@ -40,5 +40,3 @@ print(result2)  // "Mon 03, Oct 2022"
 
 ## ראה גם:
 - [מדריך רשמי מ-Apple ל-DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [יעילות של DateFormatter](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)
-- [רשימה מלאה של Date Formats](http://waracle.com/iphone-nsdateformatter-date-formatting-table/)

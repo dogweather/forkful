@@ -45,4 +45,3 @@ Hello, World!
 
 - ['सी' प्रोग्रामिंग ट्यूटोरियल](https://www.learn-c.org/) 
 - ['सी' भाषा ट्यूटोरियल — GeeksForGeeks](https://www.geeksforgeeks.org/c-programming-language/)
-- [सी - विकिपीडिया](https://en.wikipedia.org/wiki/C_(programming_language))

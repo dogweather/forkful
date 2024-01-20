@@ -53,5 +53,4 @@ Remember, time_t values (UNIX timestamp) are stored as the number of seconds pas
 
 ## See Also
 - Time library for Arduino: [https://www.arduino.cc/reference/en/libraries/time/](https://www.arduino.cc/reference/en/libraries/time/)
-- Alternative RTC approaches: [https://learn.adafruit.com/adafruit-rtc-library](https://learn.adafruit.com/adafruit-rtc-library)
 - Dating with ESP32: [https://randomnerdtutorials.com/esp32-date-time-ntp-client-server-arduino/](https://randomnerdtutorials.com/esp32-date-time-ntp-client-server-arduino/)

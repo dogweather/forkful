@@ -37,6 +37,3 @@ fn main() {
 Особливості реалізації цього у Gleam включають використання 'File.new_temp()' для створення нового тимчасового файлу з унікальним ім'ям.
 
 ## Дивіться також
-
-- Gleam stdlib File documentation: [https://hexdocs.pm/gleam_stdlib/gleam/file/](https://hexdocs.pm/gleam_stdlib/gleam/file/)
-- Process sleeping in Gleam: [https://hexdocs.pm/gleam_stdlib/gleam/process/](https://hexdocs.pm/gleam_stdlib/gleam/process/)

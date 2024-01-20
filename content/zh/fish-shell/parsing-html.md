@@ -44,5 +44,4 @@ Fish Shell并非解析HTML的唯一工具。有许多其他解析器，如Python
 ## 另请参阅
 
 - [Fish Shell官方网站](https://fishshell.com): 更多关于Fish Shell的信息和示例。
-- [html-parser库](https://github.com/jorgebucaran/html-parser.fish): html-parser库的具体使用和实现细节。
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): 强大的Python库，可进行深度HTML解析。(Translation: A powerful Python library for deep HTML parsing)

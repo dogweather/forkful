@@ -36,4 +36,3 @@ Segue links para aprofundar o conhecimento:
 
 - [Documentação oficial da biblioteca clojure.tools.logging](https://clojure.github.io/tools.logging/)
 - [Guia Prático de Clojure](https://practicalli.github.io/clojure/)
-- [Artigo sobre Debugging in Clojure](https://clojure.org/guides/debugging)

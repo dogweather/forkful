@@ -54,7 +54,6 @@ Pour implémenter le support YAML dans vos projets Java, vous pouvez utiliser la
 ## À voir également :
 
 - [Site officiel de YAML](https://yaml.org/)
-- [La librairie SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
 - [La librairie JAXB](https://www.oracle.com/java/technologies/jaxb.html)
 
 Fini les configurations complexes et les données illisibles ! Le YAML en Java vous permet de travailler avec des données structurées de manière simple et efficace. N'hésitez pas à l'essayer dans vos prochains projets.

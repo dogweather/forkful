@@ -42,4 +42,3 @@ Dettagli implementativi: `String.format()` utilizza internamente `Formatter` che
 ## Vedi anche:
 
 - Documentazione ufficiale di Java su [String.format()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
-- Documentazione di [MessageFormat](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/MessageFormat.html) da Apache Commons.

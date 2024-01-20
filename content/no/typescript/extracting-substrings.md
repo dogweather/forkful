@@ -45,5 +45,4 @@ console.log(tekst.substr(-1));  // utskrifter: "Verden!"
 
 ## Se Også 
 
-- MDN Web Docs for detaljer om [`substr()`](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/substr) og [`slice()`](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 - Microsofts TypeScript Handbook for mer informasjon om [strenger i TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string).

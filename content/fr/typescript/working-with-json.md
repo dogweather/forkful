@@ -41,6 +41,5 @@ let newUser = JSON.parse('{"name":"Jane","age":25,"city":"Lyon"}');
 Le JSON a été créé en 2001 par Douglas Crockford, et a rapidement gagné en popularité en raison de sa simplicité et de sa flexibilité. Il a rapidement remplacé d'autres formats de données tels que XML pour les applications Web et les services Web. Bien qu'il existe de nombreuses alternatives, le JSON reste un choix populaire en raison de sa compatibilité avec de nombreux langages de programmation et sa facilité d'utilisation.
 Pour travailler avec des données JSON en TypeScript, on peut utiliser la bibliothèque `JSON` intégrée qui fournit des méthodes pour traiter les données JSON telles que `stringify()` et `parse()`. TypeScript prend également en charge l'utilisation des types définis par l'utilisateur pour représenter des données JSON afin de faciliter la lecture et la validation des données.
 ## Voir aussi : 
-- [La documentation officielle de TypeScript sur le traitement du JSON](https://www.typescriptlang.org/docs/handbook/working-with-json.html)
 - [Le site officiel de JSON](https://www.json.org/)
 - [Le cours interactif de Codecademy sur le JSON](https://www.codecademy.com/learn/learn-json)

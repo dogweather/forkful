@@ -50,5 +50,4 @@ A função `ioutil.TempFile()` em Go cria um arquivo temporário de maneira segu
 
 ## Veja Também:
 - Documentação oficial Go para `io/ioutil`: https://golang.org/pkg/io/ioutil/
-- Artigo detalhado sobre manipulação de arquivos em Go: [Working with Files in Go](https://www.developer.com/lang/working-with-files-in-go/)
 - Mais sobre bancos de dados em memória e uso de pipelines de dados: [Redis In-Memory Database](https://redis.io/) e [Using Data Pipelines](https://www.tutorialspoint.com/data_pipeline/data_pipeline_introduction.htm)

@@ -29,6 +29,5 @@ $data | Out-File -FilePath C:\new_data.csv
 CSVは、データの交換や共有に幅広く利用されてきた古典的なフォーマットです。代わりにJSONやXMLといったフォーマットがあるものの、今でも多くのシステムでCSVが用いられています。PowerShell以外にも、PythonやJavaなどの言語でもCSVを処理することができます。
 
 ## 関連情報：
-- [PowerShellでCSVを処理する方法](https://zetawiki.com/wiki/PowerShell%E3%81%A7CSV%E3%82%92%E5%87%A6%E7%90%86%E3%81%99%E3%82%8B)
 - [CSVとは？その基本を学ぼう](https://techacademy.jp/magazine/16620)
 - [CSVのメリットとデメリット](https://www.sejuku.net/blog/10836)

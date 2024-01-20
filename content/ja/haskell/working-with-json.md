@@ -47,5 +47,4 @@ JSONは、プログラミング言語に依存しない一般的なフォーマ�
 ## 関連情報を見る：
 
 - [Hackage: Data.Aeson](https://hackage.haskell.org/package/aeson)
-- [Haskell Wiki: JSON](https://wiki.haskell.org/JSON)
 - [JSON公式サイト](https://www.json.org/json-ja.html)

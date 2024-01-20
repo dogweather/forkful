@@ -52,5 +52,3 @@ An important detail to bear in mind: `Serial.print()` does not have an automatic
 ## See Also
 
 - If you want to get a deeper understanding of `Serial.print()`, the Arduino reference is a great place to start: [Arduino - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- For a detailed use-case example: [Reading Serial data from an Arduino using C#](https://maker.pro/arduino/tutorial/how-to-send-serial-data-from-an-arduino-to-a-c-sharp-program)
-- If you want to dig into alternatives like `sprintf()`, check out: [How to Use sprintf() on Arduino](https://www.baldengineer.com/arduino-how-to-use-sprintf.html)

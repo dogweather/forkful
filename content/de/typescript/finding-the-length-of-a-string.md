@@ -46,4 +46,3 @@ Jetzt, da Sie wissen, wie man die Länge eines Strings ermittelt, können Sie we
 
 - [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - [TypeScript: Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Microsoft: Variablen und Datentypen in TypeScript](https://docs.microsoft.com/de-de/learn/modules/typescript-declare-variable-datatypes/)

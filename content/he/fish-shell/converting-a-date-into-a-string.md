@@ -35,4 +35,3 @@ echo $date_string
 
 * [ציוות השפה של Fish](https://fishshell.com/)
 * [מדריך למשתמש של Fish](https://fishshell.com/docs/current/index.html)
-* [חלופות לפקודת date של Fish Shell](https://fishshell.com/docs/current/cmds/date.html)

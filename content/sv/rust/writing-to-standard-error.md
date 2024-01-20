@@ -40,4 +40,3 @@ För implementationen av att skriva till standardfel, används en modul som kall
 
 # Se även:
 - [Rust dokumentation om standardfel](https://doc.rust-lang.org/std/io/struct.Stderr.html)
-- [En guide till hur man skriver till standardfel i Rust](https://www.joshmcguigan.com/blog/redirecting-error-stream-rust/)

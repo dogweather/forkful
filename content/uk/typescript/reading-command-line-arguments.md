@@ -33,5 +33,4 @@ $ node yourscript.ts firstArg secondArg thirdArg
 ## Дивись також:
 - [модуль Node.js `yargs`](https://www.npmjs.com/package/yargs)
 - [модуль Node.js `minimist`](https://www.npmjs.com/package/minimist)
-- [Передача аргументів командного рядка в Node.js (EN)](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)
 - [Аргументи командного рядка в C (EN)](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html#Program-Arguments)

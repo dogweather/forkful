@@ -29,6 +29,4 @@ Serial.println(temp);
 
 ## ראה גם
 עיינו במקורות הבאים למידע נוסף:
-- [מסמך עזר Arduino - sprintf()](https://www.arduino.cc/en/Reference/Printf)
-- [שיטח היישום של האינטרפולציה של מחרוזות](https://nipunbatra.github.io/blog/2013/variable-substitution-python.html)
 - [היסטוריה של אינטרפולציה של מחרוזות](https://stackoverflow.com/questions/89007/string-interpolation-in-javascript)

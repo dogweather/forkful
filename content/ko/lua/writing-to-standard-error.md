@@ -31,4 +31,3 @@ io.stderr:write("에러 출력")
 "## 관련 자료:"
 - [Lua API 문서](https://www.lua.org/manual/5.4/manual.html#6.8)
 - [C 언어의 Standard Error](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [디버깅에 대한 자세한 설명 (영어)](https://stackify.com/how-to-log-to-stdout-in-php/)

@@ -35,4 +35,3 @@ main =
 ## לגיפוי:
 תוכל לחפש מידע נוסף בנושא זה בדפים הבאים:
 - Elm String Module Documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Elm tutorial on String manipulation: [https://guide.elm-lang.org/interop/strings.html](https://guide.elm-lang.org/interop/strings.html).

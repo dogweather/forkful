@@ -63,4 +63,3 @@ Implementeringen av JSON i C++ är möjlig genom olika bibliotek, som nlohmann/j
 ## Se även:
 - [nlohmann/json bibliotekets hemsida](https://github.com/nlohmann/json)
 - [En introduktion till JSON](https://www.json.org/json-sv.html)
-- [XML vs JSON - What's the Difference?](https://www.webfx.com/blog/web-design/xml-vs-json/)

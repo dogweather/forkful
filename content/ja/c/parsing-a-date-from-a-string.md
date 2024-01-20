@@ -44,5 +44,4 @@ Cにおける`sscanf`の基本的な機能では、「%d」は整数を検索し
 
 ## 参考資料：
 - Cプログラミングにおける[`sscanf`](https://www.cplusplus.com/reference/cstdio/sscanf/)
-- 日付と時間についての[Cプログラミングチュートリアル](https://www.programiz.com/c-programming/library-function/time.h/strptime)
 - [`strftime`](https://www.cplusplus.com/reference/ctime/strftime/)によるCにおける日付フォーマットのカスタマイズ。

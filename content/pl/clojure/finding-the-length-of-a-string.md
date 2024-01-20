@@ -58,5 +58,4 @@ Szczegóły implementacji: Funkcja `count` w Clojure działa tak szybko, jak to 
 ## Zobacz także
 
 - [Dokumentacja funkcji "count" z Clojure](https://clojuredocs.org/clojure.core/count)
-- [Manipulacja łańcuchami w Clojure](https://clojure.org/guides/learn/strings) 
 - [Porównanie funkcji `count` z innymi językami](https://www.tutorialspoint.com/count-function-in-clojure)

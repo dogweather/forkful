@@ -50,4 +50,3 @@ Per ulteriori informazioni e esempi, consulta le seguenti risorse:
 
 - [Guida alle espressioni regolari di Arduino](https://www.arduino.cc/en/Reference/HomePage)
 - [Tutorial dettagliato sulle espressioni regolari](https://www.regular-expressions.info/tutorial.html)
-- [Documentazione sulla libreria `<regex.h>` di Arduino](https://www.nongnu.org/avr-libc/user-manual/group__avr__regexp.html)

@@ -38,6 +38,4 @@ En términos de implementación, Lua utiliza internamente las funciones de la bi
 
 Para obtener más información sobre este tema, consulte las siguientes fuentes:
 
-- Documentación oficial de Lua: [https://www.lua.org/manual/5.4/man.html#6.9](https://www.lua.org/manual/5.4/man.html#6.9)
 - GitHub de LuaDate: [https://github.com/Tieske/date](https://github.com/Tieske/date)
-- Chronos GitHub: [https://github.com/ashkamath/chronos](https://github.com/ashkamath/chronos)

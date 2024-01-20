@@ -43,4 +43,3 @@ Le système ‘parse-opts’ de Clojure vous permet de décortiquer facilement l
 ## Voir Aussi:
 
 - Documentation officielle Clojure sur les espaces de noms, qui explique comment les arguments de la ligne de commande sont passés à la fonction `-main`: [https://clojure.org/reference/namespaces#_the_namespace](https://clojure.org/reference/namespaces#_the_namespace)
-- Guide pratique Clojure sur l'utilisation de ‘parse-opts’: [https://clojure.org/guides/cli_options](https://clojure.org/guides/cli_options)

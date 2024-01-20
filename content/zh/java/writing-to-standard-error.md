@@ -32,4 +32,3 @@ This is an error message.
 
 - [Java文档 - System类](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
 - [Stack Overflow问答 - What is System.err in Java?](https://stackoverflow.com/questions/1589046/what-is-system-err-in-java)
-- [CSDN博客 - 在Java中使用Standard Error输出错误信息](https://blog.csdn.net/chenjiazhen/article/details/55225298)

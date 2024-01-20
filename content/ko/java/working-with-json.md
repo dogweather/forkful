@@ -37,5 +37,4 @@ JSON이 무엇인지 이해하기 위해선, 이것의 역사적 배경과 대�
 ## 더 알아보기:
 관련 정보를 확인하고 싶다면 아래 링크를 참고해보세요.
 - [JSON 공식 사이트](https://www.json.org/json-ko.html)
-- [Java에서 JSON 데이터 다루기](https://www.tutorialspoint.com/java_json/java_json_tutorial.pdf)
 - [JSON vs XML: 무엇이 더 좋을까?](https://www.ibm.com/developerworks/library/ws-xmljava/)

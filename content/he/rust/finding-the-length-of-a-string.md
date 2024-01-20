@@ -33,5 +33,4 @@ let length = chiko.chars().count();
 ## ראה גם
 
 - התיעוד הרשמי של Rust לגבי מחרוזות [כאן](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- מדריך מעשי לעבודה עם מחרוזות ב-Rust [כאן](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 - פוסט בלוג המתמקד ביחס מדויק של Rust למחרוזות Unicode [כאן](https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html)

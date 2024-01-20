@@ -37,6 +37,4 @@ Wenn Sie diese Codezeile ausführen `parseNode "<div>Hello World</div>"`, wird d
 Historisch gesehen wurde HTML-Parsing ursprünglich für Web-Crawling und Datenextraktion eingesetzt. Alternativ könnten Sie auch reguläre Ausdrücke verwenden, aber das ist meistens schwieriger und fehleranfällig. In Elm erledigen die Pakete `Html.Parser` und `Html.Parser.run` die meiste Arbeit hinter den Kulissen.
 
 ## Siehe auch
-- Elm Docs zu [HTML Parser](https://package.elm-lang.org/packages/eeue56/elm-html-parser/latest/)
-- Ein einfacher [HTML Parser Tutorial](https://elmprogramming.com/decoding-html.html) auf elmprogramming.com
 - Weitere Informationen zur [Html.Parser.run Funktion](https://package.elm-lang.org/packages/elm-lang/html/2.0.0/Html-Parser#run)

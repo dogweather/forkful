@@ -32,4 +32,3 @@ writeFile path content =
 ## 관련 정보:
 
 - Elm 공식 문서: [https://elm-lang.org/](https://elm-lang.org/)
-- 텍스트 파일 작성 예제: [https://guide.elm-lang.org/io/files.html](https://guide.elm-lang.org/io/files.html)

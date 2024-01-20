@@ -40,6 +40,5 @@ On myös tärkeää huomata, että vaikka Rustin `replace()` -funktio on tehokas
 # # Katso myös:
 
 - [Rustin dokumentaatio merkkijonojen muokkaamisesta](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Rustin Regex-kirjasto](https://doc.rust-lang.org/regex/regex/index.html)
 - [JavaScript String Replace -metodi](https://www.w3schools.com/jsref/jsref_replace.asp)
 - [Python string replace -metodi](https://docs.python.org/3/library/stdtypes.html#str.replace)

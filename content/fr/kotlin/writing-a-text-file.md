@@ -43,5 +43,3 @@ Historiquement, l'écriture dans un fichier texte était utilisée pour stocker 
 # Voir aussi:
 
 - [Documentation officielle de Kotlin sur l'écriture de fichiers](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-text.html)
-- [Tutoriel sur l'écriture et la lecture de fichiers textes en Kotlin](https://www.baeldung.com/kotlin-write-to-file)
-- [Comparaison des différentes façons de stocker des données en programmation](https://www.edgewater.com/2015/05/26/databasevsflatfile/)

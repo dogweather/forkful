@@ -49,5 +49,4 @@ Asegúrate de gestionar correctamente estos archivos temporales, eliminándolos 
 Aquí hay algunos enlaces para explorar más sobre la creación de archivos temporales en Rust:
 
 - Documentación de Rust sobre [El módulo std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html)
-- Paquete de Rust [tempfile](https://crates.io/crates/tempfile)
 - Artículo de la Wiki de Rust sobre [Gestión de errores](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

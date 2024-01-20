@@ -49,7 +49,6 @@ Das Datum ist 2020-12-31 00:00:00 +0000.
 Für weitere Informationen zum Parsen von Datumswerten, schauen Sie sich die folgenden Quellen an:
 
 - Apple's offizielle Dokumentation zu [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [International Components for Unicode (ICU) User Guide](https://unicode-org.github.io/icu/userguide/formatParse/messages/)
 - Stack Overflow Diskussion zu [Date Parsing in Swift](https://stackoverflow.com/questions/35700281/date-format-in-swift) 
 
 Erinnern Sie sich, Date Parsing ist ein alltägliches Problem in der Programmierung, und Swift macht es uns leicht, es zu lösen!

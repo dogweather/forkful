@@ -43,5 +43,4 @@ fun main() {
 ## देखें भी:
 कृपया निम्नलिखित लिंक्स देखें जिसमें विषय से संबंधित और गहन जानकारी है:
 - [Official Java™ Tutorials - Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
-- [Baeldung Guide on How to Check If a Directory Exists in Java](https://www.baeldung.com/java-check-directory-exists)
 - [StackOverflow - How to check if a directory exists in Kotlin?](https://stackoverflow.com/questions/49173273/how-to-check-if-a-directory-exists-in-kotlin)

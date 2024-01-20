@@ -42,4 +42,3 @@ Alternatywą jest użycie funkcji `sprintf()`, która może być nieco bardziej 
 
 - [Dokumentacja strcat()](http://www.cplusplus.com/reference/cstring/strcat/)
 - [Dokumentacja strcpy()](http://www.cplusplus.com/reference/cstring/strcpy/)
-- [Szczegóły na temat łączenia łańcuchów znakowych w C](https://www.geeksforgeeks.org/concatenating-strings-in-c/)

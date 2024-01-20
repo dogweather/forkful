@@ -45,4 +45,3 @@ JSON står for JavaScript Object Notation og ble utviklet som et enklere og mer 
 
 ## Se også:
 - [Haskell Aeson dokumentasjon](https://hackage.haskell.org/package/aeson)
-- [Alternativer for å arbeide med JSON i Haskell](https://wiki.haskell.org/JSON)

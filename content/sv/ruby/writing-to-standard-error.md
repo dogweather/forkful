@@ -45,5 +45,3 @@ Historiskt sett har standardfel använts för att skriva ut felmeddelanden vid k
 ## Se även:
 
 - [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
-- [Logging in Ruby](https://www.rubyguides.com/2019/01/ruby-logging/)
-- [Error handling in Ruby](https://www.ruby-guides.com/2019/02/ruby-exception-handling/)

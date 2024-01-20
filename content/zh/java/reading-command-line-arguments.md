@@ -56,4 +56,3 @@ World
 ## 另请参阅 (See Also)
 
 - [Java命令行参数（Oracle 官方文档）](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Java命令行参数（教程）](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)

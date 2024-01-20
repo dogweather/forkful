@@ -37,4 +37,3 @@ En termes de mise en œuvre, `String.toLower` fonctionne en parcourant la chaîn
 
 Pour plus d'informations sur les chaines de caractères en Elm, consultez la documentation officielle :
 - [Documentation Elm pour String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Tutorial Elm](https://elmprogramming.com/strings.html)

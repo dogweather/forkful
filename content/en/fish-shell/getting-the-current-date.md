@@ -55,5 +55,3 @@ Under the hood, when you run the `date` command, Fish is calling a system functi
 To dive deeper into the date command and the Fish shell coding, check out these resources:
 
 - [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Linux `date` command](https://www.geekhideout.com/software/linux-man-pages/1/date.shtml)
-- [UNIX and Linux System Administration Handbook](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554)

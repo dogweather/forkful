@@ -50,4 +50,3 @@ Rustの世界では、基本認証はユーザー名とパスワードを含む 
 
 - [Reqwest クレートの公式ドキュメント](https://docs.rs/reqwest)
 - [RFC 7617 - Basic Authentication](https://tools.ietf.org/html/rfc7617)
-- [RustでのHTTPリクエストの送信方法についての詳しいチュートリアル](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-an-io-introduction.html)

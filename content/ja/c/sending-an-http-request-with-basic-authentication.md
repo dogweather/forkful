@@ -67,4 +67,3 @@ Date: Mon, 01 Jan 2020 00:00:00 GMT
 
 - [libcurlのドキュメント](https://curl.haxx.se/libcurl/)
 - [HTTP認証について](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
-- [Basic認証とは](https://www.infraexpert.com/studytcpip1.html)

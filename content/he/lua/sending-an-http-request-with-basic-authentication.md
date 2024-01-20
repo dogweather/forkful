@@ -48,4 +48,3 @@ end
 ## ראה גם:
 - [מרכז עזרה של LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html)
 - [דוקומנטציה של HTTP Basic Authentication ב-MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [מדריך להגנה על מידע אישי](https://www.itpc.gov.il/MY-Privacy/34-4)

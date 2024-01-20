@@ -38,4 +38,3 @@ Scrivere test è una buona pratica di programmazione e viene spesso utilizzata n
 
 ## Vedi anche:
 - [Tutorial su test in C# con NUnit](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [Blog post su test-driven development](https://thoughtbot.com/blog/3-reasons-to-practice-test-driven-development)

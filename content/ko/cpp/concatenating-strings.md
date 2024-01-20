@@ -47,4 +47,3 @@ C++에서는 더 개선된 `std::string` 클래스와 `+` 연산자를 사용해
 
 - [String library in C++](https://www.cplusplus.com/reference/string/)
 - [Stack Overflow: Concatenating strings in C++](https://stackoverflow.com/questions/18892281/most-logical-way-to-concatenate-strings)
-- [C++ Standards Committee Paper: std::string Concatenation and Operator ‘+’ vs. ‘+=’](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0980r0.html)

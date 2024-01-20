@@ -41,7 +41,3 @@ Ett alternativ till `gleam/calendar`-modulen är `gleam/date`-modulen, som ocks�
 När det gäller genomförande av datum och tid i framtiden eller det förflutna, har alltid betydelsen av tidzoner och skottår beaktats, eftersom de spelar en stor roll i korrekta beräkningar.
 
 ## Se Även
-
-- Gleam Dokumentation: [Gleam Calendar Modul](https://gleam.run/documentation/tour/advanced/)
-- Gleam GitHub: [Gleam Date Modul](https://github.com/gleam-experiments/datetime)
-- Ytterligare läsning: [Behandla datum och tid i Gleam](http://learngleam.com/dates-and-times/)

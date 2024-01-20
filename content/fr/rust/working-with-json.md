@@ -66,6 +66,5 @@ La plupart des échanges d'informations entre un serveur et un client Web se fon
 
 Voici quelques ressources supplémentaires utiles pour en savoir plus sur la manipulation de JSON en utilisant Rust:
 
-- Documentation officielle de Rust pour le module `rustc_serialize`: [https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/](https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/)
 - Documentation officielle de Rust pour le module `serde_json`: [https://docs.serde.rs/serde_json/](https://docs.serde.rs/serde_json/)
 - Article de Douglas Crockford sur l'histoire et la spécification de JSON: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

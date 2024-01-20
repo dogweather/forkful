@@ -45,4 +45,3 @@ Arg[1]: your_argument
 Знайдіть додаткову інформацію про працю з командним рядком в Arduino за наступними посиланнями:
 
 - [Arduino Command Line Interface](https://arduino.github.io/arduino-cli/latest/)
-- [Working with Command Line Arguments on Arduino](https://learn.sparkfun.com/tutorials/command-line-esp8266-ota/)

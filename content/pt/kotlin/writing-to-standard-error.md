@@ -34,7 +34,3 @@ No passado, mensagens de erro costumavam ser enviadas para a saída padrão, o q
 Além disso, a implementação da escrita para o stderr depende do sistema operacional e da linguagem de programação utilizada. Por exemplo, em Kotlin, podemos usar o objeto System.err para acessar o stderr enquanto em outras linguagens, como C++, podemos usar a função std::cerr.
 
 ## Veja também:
-
-- [Documentação do Kotlin para System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-input-stream-writer/system.err.html)
-- [Artigo sobre a importância de distinguir mensagens de erro](https://www.oreilly.com/library/view/linux-system-programming/0596009585/re45.html)
-- [Exemplos de uso do System.err em C++](https://www.geeksforgeeks.org/stderr-stderr-stderr-stderr-stderr-ctypes/)

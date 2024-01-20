@@ -30,6 +30,4 @@ let greeting = message1 |> String.concat(message2)
 - פרטים על איך זה מבוצע: בתוך המנוע, רשימת מחרוזת שמשרשרת מחרוזת לרשימה אחרת נוצרת. את המחרוזות מאחדים לװמחרוזת הסופית ״.
 
 ## ראה גם
-- [מדריך Official Gleam](https://gleam.run/tour/#?part=basics)
 - [מדריך למחרוזות ב-Gleam](https://gleam.run/book/tour/strings.html) 
-- [מבוא לשפת Gleam](https://gleam.run/introduction/)

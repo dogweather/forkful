@@ -58,5 +58,3 @@ Pour lire et écrire des fichiers CSV en C#, il existe des bibliothèques telles
 # Voir aussi:
 
 - [CsvHelper Documentation](https://joshclose.github.io/CsvHelper/)
-- [FileHelpers Documentation](https://www.filehelpers.net/documentation/)
-- [Working with CSV Files in C#](https://www.c-sharpcorner.com/article/working-with-csv-files-in-C-Sharp/)

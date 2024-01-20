@@ -45,5 +45,4 @@ tokenize "\\d+" "1234 abc" -- יחזיר ["1234", "abc"]
 ## ראה גם:
 
 - [המדריך המקוצר לפקודות ב-regex](https://www.rexegg.com/)
-- [כלי בדיקת regex בקו החום](https://regexr.com/)
 - [מאמר על

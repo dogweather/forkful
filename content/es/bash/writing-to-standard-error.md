@@ -39,5 +39,4 @@ En términos de implementación, escribir en el flujo de error estándar se real
 ## Ver también:
 
 - [Documentación oficial de redirección en Bash](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Usando el flujo de error estándar en scripts de Bash](https://www.baeldung.com/linux/bash-redirect-stderr-stdout)
 - [Explicación detallada de redirección en Bash](https://www.tldp.org/LDP/abs/html/io-redirection.html)

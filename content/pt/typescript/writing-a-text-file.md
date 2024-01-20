@@ -41,5 +41,3 @@ Além do módulo "fs" mencionado acima, o TypeScript também possui outras bibli
 ## Você também pode se interessar em:
 
 - [Documentação oficial do módulo fs](https://nodejs.org/api/fs.html)
-- [Exemplo de uso do módulo fs](https://stackabuse.com/writing-files-using-node-js/)
-- [Explicação sobre escrita e leitura de arquivos em TypeScript](https://www.digitalocean.com/community/tutorials/how-to-handle-files-in-typescript)

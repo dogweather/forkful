@@ -52,4 +52,3 @@ Difference is: -15 days
 
 - [cppreference의 C++ 날짜/시간 라이브러리](http://en.cppreference.com/w/cpp/chrono)
 - [StackOverflow 날짜 비교에 대한 토론](https://stackoverflow.com/questions/14218892/compare-two-dates-in-c)
-- [C++20의 새로운 날짜/시간 기능에 대해](https://www.modernescpp.com/index.php/the-first-parts-of-date-time-in-c-20)

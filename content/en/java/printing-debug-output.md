@@ -48,6 +48,5 @@ A significant difference exists between `System.out.println()` and `System.err.p
 
 For further reading, consider these sources:
 
-- [Oracle’s Guide on Debugging](https://docs.oracle.com/en/java/javase/14/troubleshoot/debugging.html)
 - [Introduction to the Java Logging API](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
 - [Apache Log4j Manual](https://logging.apache.org/log4j/2.x/manual/index.html)

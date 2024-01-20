@@ -53,5 +53,3 @@ Tekstitiedostojen kirjoittaminen on ollut oleellinen osa ohjelmointia jo vuosien
 Tutustu seuraaviin lähteisiin saadaksesi lisätietoja tekstitiedostojen kirjoittamisesta PowerShellilla:
 
 - [PowerShell-asiakirja](https://docs.microsoft.com/fi-fi/powershell/scripting/overview) – Lisätietoja PowerShell-skriptikielestä ja sen käytöstä.
-- [Tekstitiedoston kirjoittaminen](https://www.tutorialspoint.com/powershell/powershell_writing_files.htm) – Hyödyllinen opas tekstitiedoston kirjoittamisesta PowerShellilla vaihe vaiheelta.
-- [PowerShell-skriptiesimerkkejä](https://github.com/PowerShell/PowerShell/tree/master/examples) – Monipuolinen valikoima valmiita PowerShell-skriptejä, joihin kuuluu myös tekstitiedostojen kirjoittamiseen liittyviä esimerkkejä.

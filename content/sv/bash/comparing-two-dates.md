@@ -39,5 +39,4 @@ De verktyg vi använde här, `date` och `-d`, finns tillgängliga i de flesta Un
 För ytterligare läsning och lärande, ta en titt på följande användbara källor:
 - [Bash manpage](https://man7.org/linux/man-pages/man1/bash.1.html)
 - [GNU Date Manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Tutorial om Bash Date Jämförelser](https://www.baeldung.com/linux/compare-dates)
 - [Forumsdiskussioner om Bash Date Jämförelser](https://stackoverflow.com/questions/3430181/bash-date-compare)

@@ -51,4 +51,3 @@ Here are few other places you might want to check out:
 
 - The [official Kotlin documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html) on strings, especially the `length` property.
 - This [Kotlin string guide by TutorialsPoint](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm) covers a lot more than just the `length` property.
-- For deep-dives into more complex Kotlin topics, you might like this [Kotlin cookbook by Ken Kousen](https://www.oreilly.com/library/view/kotlin-cookbook/9781492046672/).

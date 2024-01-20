@@ -46,5 +46,3 @@ En términos de implementación, Fish Shell utiliza su propio lenguaje de script
 ## Ver también:
 
 - [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://www.linuxito.com/programacion/775-introduccion-a-fish-shell)
-- [Tutorial de Vim en español](https://www.linuxito.com/programacion/1195-vim-editor-texto)

@@ -56,6 +56,4 @@ I implementeringen av PowerShell, vil '+' operatøren opprette en ny streng i mi
 
 For mer detaljert info om strengsamkjøring og tekstbehandling i PowerShell, sjekk ut disse ressursene:
 
-- [Om_Operators - Microsoft Docs](https://docs.microsoft.com/no-no/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
 - [How to concatenate strings efficiently in c#](https://stackoverflow.com/questions/29557/how-to-concatenate-strings-efficiently-in-c-sharp)
-- [Working with Strings - PowerShell | Microsoft Docs](https://docs.microsoft.com/no-no/powershell/scripting/samples/working-with-strings?view=powershell-7.1)

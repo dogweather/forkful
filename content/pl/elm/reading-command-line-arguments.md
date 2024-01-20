@@ -52,4 +52,3 @@ Szczegółowa implementacja może zależeć od specyfiki twojego projektu, ale g
 ## Zobacz też
 
 - [Elm Guide - Interoperability](https://guide.elm-lang.org/interop/)
-- [Node.js - Process.argv](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)

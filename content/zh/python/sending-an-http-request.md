@@ -47,4 +47,3 @@ print(response.text)
 
 - [Requests:HTTP for Humans](https://requests.readthedocs.io/en/master/)
 - [Python官方文档](https://docs.python.org/3/library/http.client.html)
-- [HTTP：// Python](http://python-requests.org)

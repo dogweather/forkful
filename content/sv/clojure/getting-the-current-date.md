@@ -53,7 +53,6 @@ Histories sett har Java haft problem med datum- och tidsmanipulering, men tack v
 
 För mer information och alternativ för att hämta och hantera datum och tid i Clojure, se följande resurser:
 
-- Official Clojure Documentation: [https://clojure.org/guides/dates_and_time](https://clojure.org/guides/dates_and_time)
 - Clojure Cookbook: [https://www.braveclojure.com/zombie-metaphysics/](https://www.braveclojure.com/zombie-metaphysics/)
   
 Där har du det, ett snabbt sätt att hämta det aktuella datumet i Clojure!

@@ -40,4 +40,3 @@ main =
 ## 参考情報:
 - Elmの公式ドキュメンテーションの [Time](https://package.elm-lang.org/packages/elm/time/latest/) モジュール
 - Elmの公式ドキュメンテーションの [Task](https://package.elm-lang.org/packages/elm/core/latest/Task) モジュール
-- [Understanding Time in Elm](https://www.sketchingdev.co.uk/blog/understanding-time-in-elm.html) - Elmで時間を理解するための詳細なガイド.

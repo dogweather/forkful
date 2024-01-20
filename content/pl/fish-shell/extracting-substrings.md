@@ -33,6 +33,4 @@ W pewnych sytuacjach możesz chcieć użyć alternatywnych metod ekstrakcji podc
 ## Zobacz też:
 Chcesz się dowiedzieć więcej? Sprawdź poniższe linki:
 
-- Dokumentacja Fish Shell: [Fish shell documentation](https://fishshell.com/documentation.html)
 - Podstawy stringów w Fish Shell: [Fish shell string fundamentals](https://fishshell.com/docs/current/cmds/string.html)
-- Strona z przykładami korzystania z Fish Shell: [Fish shell examples](https://www.fishshellframework.com/examples)

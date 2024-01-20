@@ -39,7 +39,6 @@ Hello, World!
 
 以下のリンクでは、関連する情報を見つけることができます。
 
-- 文字列の基本操作について：[Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
 - +演算子について：[Arduino Operators](https://www.arduino.cc/reference/en/language/structure/arithmetic-operators/addition/)
 
 以上の内容が、Stringの連結方法についてあなたの理解を深める手助けになれば幸いです。

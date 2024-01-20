@@ -55,4 +55,3 @@ Pour implémenter des tests en Kotlin, il existe plusieurs frameworks populaires
 
 - [Introduction aux tests en Kotlin](https://www.kotlindevelopment.com/testing-kotlin/)
 - [Tutoriel JUnit pour les tests en Kotlin](https://medium.com/@jmathieu/tutoriel-junit-pour-tester-ses-applications-kotlin-91d2dc539c1c)
-- [Documentation officielle de Kotest](https://kotest.io/docs/framework/introduction.html)

@@ -54,5 +54,4 @@ Luaのos.date関数は、C言語の標準ライブラリの便利な関数を利
 以下は、Luaで日付を扱うためのさらに詳しい情報を見つけるためのリンク先です。
 
 - Luaの公式ドキュメンテーション: [os.date](https://www.lua.org/manual/5.2/manual.html#pdf-os.date)
-- 総合的なチュートリアル: [Lua Date and Time](https://www.tutorialspoint.com/lua/lua_date_and_time.htm)
 - lua-dateライブラリ公式ドキュメンテーション: [lua-date](https://github.com/Tieske/date)

@@ -36,5 +36,4 @@ puts lower_text
 Für mehr Details:
 
 - Ruby-Dokumentation: [String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- Anwendung von `.downcase` in Ruby-Programmen: [Praktische Beispiele](https://www.rubyguides.com/2018/08/ruby-downcase-method/)
 - Unterschieden zwischen `.downcase` und `.downcase!`: [Erläuterungen](https://stackoverflow.com/questions/3832261/what-is-the-difference-between-downcase-and-downcase-in-ruby)

@@ -38,4 +38,3 @@ Il formato CSV è stato introdotto negli anni '70 per semplificare lo scambio di
 ## Vedi anche:
 
 - [Documentazione ufficiale della libreria clojure.data.csv](https://clojure.github.io/data.csv/)
-- [Libreria incanter.io per il lavoro scientifico in Clojure](https://incanter.github.io/incanter/tables.html)

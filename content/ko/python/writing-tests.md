@@ -64,4 +64,3 @@ OK
 ## See Also:
 
 - [Python unittest 모듈 공식 문서](https://docs.python.org/3/library/unittest.html)
-- [Test-Driven Development: By Example](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530) (테스트 주도 개발과 관련된 켄트 벡의 책)

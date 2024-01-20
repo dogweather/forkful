@@ -50,6 +50,3 @@ Per quanto riguarda i dettagli implementativi, `HttpClient.GetAsync` invia una r
 
 - Documentazione ufficiale Microsoft sulla HttpClient Class: [link qui](https://docs.microsoft.com/it-it/dotnet/api/system.net.http.httpclient?view=net-5.0)
 
-- Articolo su come scaricare file da internet in C#: [link qui](https://www.c-sharpcorner.com/article/how-to-download-a-file-from-internet-url-in-c/)
-
-- Codice di esempio per HttpClient su GitHub per raccogliere informazioni web: [link qui](https://github.com/dotnet/samples/tree/main/snippets/csharp/VS_Snippets_Misc/hc_gettingstarted/cs)

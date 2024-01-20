@@ -42,4 +42,3 @@ Tässä esitellyssä menetelmässä käytetään `time()`-funktiota, joka palaut
 - [Linuxin `time()`-manuaali](https://man7.org/linux/man-pages/man2/time.2.html)
 - [cplusplus.com `ctime` library reference](http://www.cplusplus.com/reference/ctime/)
 - [Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-- [UNIX Epoch Wikipedia](https://fi.wikipedia.org/wiki/Ajanlaskun_aloitus)

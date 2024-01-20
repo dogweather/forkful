@@ -39,4 +39,3 @@ Write-Output "שלום, $firstName $lastName"
 ## ראו גם:
 
 - [תיעוד של Microsoft על מחרוזות ב־ PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1)
-- [פוסט בבלוג על משלוב מחרוזות ב־ PowerShell](https://devblogs.microsoft.com/scripting/weekend-scripter-use-powershell-to-easily-create-strings-from-variables/)

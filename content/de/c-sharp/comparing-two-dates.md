@@ -49,5 +49,4 @@ Unabhängig von der Methode, die du verwendest, musst du bedenken, dass der Verg
 Für weitere Informationen zum Umgang mit Daten in C# könnten folgende Links hilfreich sein:
 
 - [DateTime Struktur](https://docs.microsoft.com/de-de/dotnet/api/system.datetime?view=net-5.0)
-- [Vergleich von Daten und Zeiten](https://docs.microsoft.com/de-de/dotnet/standard/base-types/comparing-dates-and-times)
 - [Arbeiten mit Daten in .NET](https://docs.microsoft.com/de-de/dotnet/standard/datetime)

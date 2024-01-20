@@ -41,5 +41,3 @@ Aqui estão alguns links úteis para saber mais sobre a saída de impressão de 
 - Guia Oficial do Elm: [Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
 
 - Guia do Usuário Elm: [Debugging](https://guide.elm-lang.org/effects/time.html)
-
-- Artigo: [Debugging Elm Applications](https://www.divio.com/blog/debugging-elm-applications/)

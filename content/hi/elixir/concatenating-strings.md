@@ -43,6 +43,5 @@ IO.puts message
 
 ## अधिक देखें (See Also)
 
-* [नियमित अभिव्यक्तियों से जुड़े सूत्रों का उपयोग करके स्ट्रिंग्स मिलाना](https://elixirschool.com/en/lessons/advanced/regular-expressions/)
 * [Elixir डॉक्स में स्ट्रिंग कंकटिनेशन](https://hexdocs.pm/elixir/String.html#module-concatenation)
 * [Elixir में I/O और स्ट्रिंग्स का उपयोग](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

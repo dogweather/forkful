@@ -51,5 +51,3 @@ Em Go, a biblioteca padrão `encoding/json` possui funcionalidades avançadas, c
 
 ## Ver também:
 - [Documentação oficial do pacote `encoding/json`](https://golang.org/pkg/encoding/json/)
-- [Tutorial de JSON em Go da plataforma Learn Go](https://learn.go.dev/lessons/json)
-- [Um comparativo entre JSON, XML e YAML](https://www.afternerd.com/blog/difference-between-json-xml-yaml/)

@@ -42,4 +42,3 @@ fclose($file);
 ## Дивись також:
 - [Документація PHP для fwrite](https://www.php.net/manual/ru/function.fwrite.php)
 - [Приклади різних функцій для запису файлів в PHP](https://www.php.net/manual/ru/function.file-put-contents.php)
-- [Стаття про створення і редагування файлів в PHP](https://www.freecodecamp.org/news/learn-the-basics-of-file-handling-in-php/)

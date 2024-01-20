@@ -29,5 +29,4 @@ Alternatywnym podejściem do użycia regulaminowych wyrażeń jest wykorzystanie
 # Zobacz również:
 
 - [Bash: Polecenie Grep](https://pl.wikipedia.org/wiki/Grep)
-- [Tutorial: Wykorzystanie Wyrażeń Regularnych w Bashu](https://linuxconfig.org/tutorial-on-bash-regular-expressions)
 - [Oficjalna Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)

@@ -32,4 +32,3 @@ Når det kommer til implementasjonen av hvordan Haskell lagrer tekstfiler, er de
 # Se også:
 - [Dokumentasjon for `writeFile`](https://hackage.haskell.org/package/base/docs/System-IO.html#v:writeFile)
 - [Alternativ til `writeFile`: `Data.Text.IO.writeFile`](https://hackage.haskell.org/package/text/docs/Data-Text-IO.html#v:writeFile)
-- [Lese og skrive CSV-filer i Haskell](https://www.snoyman.com/blog/2016/12/beware-csv)

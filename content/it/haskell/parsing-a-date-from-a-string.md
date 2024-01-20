@@ -32,4 +32,3 @@ Nel contesto storico, l'elaborazione di stringhe di data è un problema antico n
 ## Vedi Anche
 
 - Documentazione ufficiale Haskell su [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- Post sul blog ["Parsing Time – the Haskell Way"](https://24daysindecember.net/2018/12/11/parsing-time-the-haskell-way/) che offre suggerimenti e trucchi utili nella gestione delle date in Haskell.

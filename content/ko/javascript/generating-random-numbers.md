@@ -43,5 +43,3 @@ console.log(getRandomInt(9));
 ## 참고:
 다음은 주제에 대한 추가 학습을 위한 몇 가지 유용한 링크입니다:
 - [MDN (getRandomValues) documentation](https://developer.mozilla.org/ko/docs/Web/API/Crypto/getRandomValues) - 'getRandomValues' 함수에 대한 MDN 문서입니다.
-- [JavaScript randomness](https://www.javascript.info/random) - JavaScript에서 난수를 생성하는 다양한 방법을 자세히 설명한 글입니다.
-- [Speaking JavaScript](http://speakingjs.com/es5/ch11.html) – JavaScript의 Math.random ()의 동작에 대한 깊은 이해를 제공합니다.

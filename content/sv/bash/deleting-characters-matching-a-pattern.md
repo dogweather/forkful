@@ -50,6 +50,5 @@ Generellt sett, Bash tar bort tecken genom att först jämföra varje tecken i s
 Mer detaljerade guider och information finns på följande sidor:
 
 - [GNU Bash manual](https://www.gnu.org/software/bash/manual/)
-- [tr-kommando (Wikipedia)](https://en.wikipedia.org/wiki/Tr_(Unix))
 - [Komplett guide till 'sed'-kommandot](https://www.grymoire.com/Unix/Sed.html)
 - [Tutorial om 'awk'](https://www.tutorialspoint.com/awk/index.htm)

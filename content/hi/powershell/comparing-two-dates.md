@@ -45,5 +45,4 @@ if ($date1 -gt $date2) {
 ## भी देखें:
 
 - [पॉवरशेल डाक्युमेंटेशन: तारीखों की तुलना](https://docs.microsoft.com/powershell/)
-- [Powershell: Working with Dates](https://www.computerperformance.co.uk/powershell/powershell-dates/)
 - [StackOverflow: Comparing Two Dates in Powershell](https://stackoverflow.com/questions/7835422/comparing-two-dates-in-powershell)

@@ -68,5 +68,4 @@ CSV以外にも、データを表現するファイル形式はあります。�
 
 ## 関連情報を見る
 
-- [Haskell入門-はじめてのプログラミング言語-](https://www.amazon.co.jp/dp/B07YF3C1CQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)：Haskellの基本的な概念を学べる本です。
 - [Haskell Wiki](https://wiki.haskell.org/CSV)：HaskellでCSVを扱うための解説やリンクがまとめられています。

@@ -56,6 +56,5 @@ Quanto aos detalhes de implementação, quando você emite uma solicitação GET
 
 - [Documentação Go net/http](https://golang.org/pkg/net/http/)
 - [Um tutorial mais detalhado sobre requisições HTTP em Go](https://medium.com/rungo/making-external-http-requests-in-go-eb4c015f8839)
-- [Artigo do blog Go: um olhar mais atento ao pacote net/http](https://go.dev/blog/net-http)
 
 ---

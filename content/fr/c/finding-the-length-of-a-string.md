@@ -47,6 +47,4 @@ D'un point de vue de l'implémentation, `strlen()` compte simplement le nombre d
 
 Vous pouvez consulter ces ressources pour en savoir plus sur le traitement des chaînes en C :
 
-- [Pointeurs et Tableau de caractères](https://e-campus.vermeg.com/cours/C/cours/C/pointeurs.html)
-- [Fonctions de la bibliothèque string.h](https://www.commentcamarche.net/contents/695-fonctions-de-la-bibliotheque-string-h)
 - [La fonction strlen](https://www.cplusplus.com/reference/cstring/strlen/) (en anglais)

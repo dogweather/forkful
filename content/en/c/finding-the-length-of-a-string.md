@@ -54,5 +54,3 @@ The `strlen()` function in the `<string.h>` library was a welcome upgrade. Inter
 ## See Also
 To continue your journey into string manipulation in C, here are some useful links:
 - [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm) on TutorialsPoint.
-- [String Handling in C](https://www.geeksforgeeks.org/string-handling-in-c-set-1/) on GeeksForGeeks.
-- [C Programming/String handling](https://en.wikibooks.org/wiki/C_Programming/String_handling) on Wikibooks.

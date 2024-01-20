@@ -45,7 +45,6 @@ Tuttavia, tenete presente che la lettura di un file con le funzioni Bash è più
 
 ## Vedere Anche:
 
-- [Guida Bash per principianti](https://linuxhint.com/bash_beginners_guide/)
 - [Ubuntu Manpage - bash](http://manpages.ubuntu.com/manpages/focal/it/man1/bash.1.html)
 - [AWK Manpage](https://www.gnu.org/software/gawk/manual/gawk.html)
 - [SED Manpage](https://www.gnu.org/software/sed/manual/sed.html)

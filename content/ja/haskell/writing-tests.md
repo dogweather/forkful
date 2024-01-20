@@ -49,4 +49,3 @@ True
 
 - [HUnit公式ドキュメント](https://hackage.haskell.org/package/HUnit)
 - [QuickCheck公式ドキュメント](https://hackage.haskell.org/package/QuickCheck)
-- [テスト駆動開発の概要](https://qiita.com/jflaw/items/524a162056a381925b67)

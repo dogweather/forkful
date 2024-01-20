@@ -47,6 +47,5 @@ Nedlastningen skjer over HTTP eller HTTPS protokoller. Når en GET forespørsel 
 
 - [Python Requests Dokumentasjon](https://docs.python-requests.org/en/latest/)
 - [W3School: Python Requests Tutorial](https://www.w3schools.com/python/ref_requests_get.asp)
-- [Mozilla Developer Network HTTP Oversikt](https://developer.mozilla.org/nb/docs/Web/HTTP/Overview)
 
 Husk at informatisk etikk og databehandlingslover bør alltid overholdes når du laster ned og behandler data fra internett.

@@ -47,6 +47,5 @@ Beim Herunterladen von Webseiten ist es wichtig, den "robots.txt" der jeweiligen
 Verwandte Ressourcen zum Thema:
 
 - Elixir's offizielle Dokumentation auf [Elixir School](https://elixirschool.com/de/)
-- [HTTPotion Dokumentation auf Hexdocs](https://hexdocs.pm/httpotion/HTTPotion.html)
 - Erlaubnisse und ethisches Surfen - [Robots.txt](https://developers.google.com/search/docs/advanced/robots/create-robots-txt?visit_id=637672168116277084-3858952796&rd=1)
 - Alternative Bibliotheken zur HTTP-Anforderung in Elixir - [HTTPoison auf Github](https://github.com/edgurgel/httpoison) und [:httpc in Erlang/OTP](http://erlang.org/doc/man/httpc.html)

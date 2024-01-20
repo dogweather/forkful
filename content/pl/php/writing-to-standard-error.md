@@ -31,5 +31,4 @@ Ta technika została wprowadzona w PHP już w wersji 4.3 i jest często stosowan
 
 ## Zobacz także:
 - [Dokumentacja PHP dla funkcji `ini_set`](https://www.php.net/manual/en/function.ini-set.php)
-- [Artykuł na temat pisania do standardowego błędu w PHP](https://www.php.net/manual/en/features.errors.php)
 - [Inne sposoby obsługi błędów w PHP](https://www.php.net/manual/en/ref.errorfunc.php)

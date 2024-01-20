@@ -31,4 +31,3 @@ Die Implementierung von JSON in C# ist relativ einfach und schnell zu erlernen. 
 ## Weitere Informationen: 
 - [Newtonsoft.Json Dokumentation](https://www.newtonsoft.com/json/help/html/Introduction.htm)
 - [JSON Wikipedia Eintrag](https://de.wikipedia.org/wiki/JavaScript_Object_Notation)
-- [XML vs. JSON vs. YAML vs. CSV Vergleich](https://www.guru99.com/json-v-s-xml.html)

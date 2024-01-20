@@ -35,6 +35,5 @@ In questo esempio, `re-find` cerca nella stringa `frase` l'espressione regolare 
 
 ## Vedere Anche
 
-- Per ulteriori informazioni sulle espressioni regolari in Clojure, consulta la [guida ufficiale](https://clojure.org/guides/learn/regular_expressions)
 - Per esercizi pratici sulle regex in Clojure, visita [4Clojure](http://www.4clojure.com)
 - Per maggiori dettagli sulla storia ed utilizzo delle espressioni regolari, vedi [Wikipedia](https://it.wikipedia.org/wiki/Espressione_regolare)

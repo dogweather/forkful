@@ -39,6 +39,5 @@ fn main() {
 
 如果你对Rust的随机数生成器产生兴趣，请访问以下链接以获取更多信息：
 
-- [官方文档](https://doc.rust-lang.org/rand/rand/trait.Rng.html)
 - [Rand 库在 Github 上的源码](https://github.com/rust-random/rand)
 - [关于随机数生成的维基百科条目](https://en.wikipedia.org/wiki/Random_number_generation)

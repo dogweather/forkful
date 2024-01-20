@@ -39,4 +39,3 @@ JSON kehitettiin alunperin vaihtoehdoksi XML:lle tiedon hallinnassa, ja se tuli 
 ## Katso myös:
 
 - [JSON Home Page](https://www.json.org/)
-- [Elixir JSON Moduuli](https://hexdocs.pm/elixir/1.12/JSON.html)

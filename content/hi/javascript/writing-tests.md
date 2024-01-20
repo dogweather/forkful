@@ -36,5 +36,4 @@ add(5, 10); // Output: 15
 
 ## আপনারা যে আপনি প্রদর্শন করছি
 * [ঝরঝর কিভাবে টেস্ট লেখা শিক্ষা পান](http://www.crockford.com)
-* [PerfectionismগীতিকোকেনাIদৃটপক্কি হতে ডাকা তাদের পরিভাষা](http://facebook.github.io/jest)
 * [কিছু সময় আপনি প্রেক্ষাপকিগত ](http://www.channel9.com/19/ 23/22b-3d0b-41cd-a977-d1tBB-foo-bar-tutorial.html)

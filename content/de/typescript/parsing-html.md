@@ -42,5 +42,4 @@ JSDOM bietet uns eine einfache und effiziente Möglichkeit, HTML in TypeScript z
 
 Weitere Informationen über HTML-Parsing und JSDOM findest du hier: 
 - [JSdom Dokumentation](https://github.com/jsdom/jsdom)
-- [HTML Parsing - Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)
 - [XML vs HTML](https://www.w3schools.com/xml/xml_whatis.asp)

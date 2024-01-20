@@ -48,6 +48,3 @@ There are other alternatives to YAML, such as JSON and XML. However, YAML stands
 When working with YAML in PowerShell, it's essential to keep in mind that indentation is significant. Similar to Python, the hierarchy of YAML data is defined by the indentation level. Incorrect indentation can lead to syntax errors or unexpected behavior when converting the YAML file into a PowerShell object.
 
 ## See Also:
-- [YAML Tutorial](https://yaml.org/start.html)
-- [PowerShell documentation for YAML](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-yaml?view=powershell-7.1)
-- [YAML vs JSON](https://cloudhero.io/json-vs-yaml/)

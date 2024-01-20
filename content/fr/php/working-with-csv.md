@@ -60,4 +60,3 @@ En PHP, la fonction `fgetcsv()` permet de lire les données d'un fichier CSV lig
 
 - [Documentation officielle de PHP sur la fonction `fgetcsv()`](https://www.php.net/manual/fr/function.fgetcsv.php)
 - [Article sur l'historique du format CSV](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/) (en anglais)
-- [Comparaison entre différents formats de fichiers de données](https://stackify.com/programming-big-data-file-formats/) (en anglais)

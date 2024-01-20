@@ -43,5 +43,4 @@ Dette vil gi samme resultat som det første eksemplet. Men det er verdt å merke
 Hvis du vil lære mer om strengmanipulasjon i Ruby, kan du sjekke ut disse linkene:
 
 - Ruby Dokumentasjon om Strenger: [Link](https://ruby-doc.org/core/String.html)
-- Ruby Monks module på Strenger: [Link](https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/31-string-basics)
 - Stack Overflow spørsmål om å fjerne tegn fra strenger: [Link](https://stackoverflow.com/questions/14348494/remove-character-from-string-ruby)

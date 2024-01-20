@@ -35,5 +35,3 @@ Decode.encode 1.2 "Ukrainian"
 - **Деталі реалізації**: Elm має вбудовану підтримку для роботи з JSON через модуль ```Json.Decode```.
 
 ## Дивись також:
-- [Офіційна документація Elm для роботи з JSON](https://guide.elm-lang.org/json/)
-- [Стаття про переваги використання JSON у програмуванні](https://www.itpro.co.uk/network-internet/30494/what-is-json-everything-you-need-to-know)

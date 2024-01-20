@@ -45,5 +45,4 @@ Befehlszeilenargumente wurden von Anfang an in der Programmierung verwendet, als
 
 ## Weiterführende Literatur:
 - [Oracle Docs - Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html) 
-- [GeeksforGeeks - Command line arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-java/) 
 - [StackOverflow - How does the JVM handle command line arguments?](https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java)

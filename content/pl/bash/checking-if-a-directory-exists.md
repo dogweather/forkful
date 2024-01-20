@@ -35,5 +35,4 @@ Koncepty sprawdzania istnienia katalogu są jednymi z najważniejszych w Bash i 
 ## Zobacz także
 
 - Inne flagi do testowania rodzaju pliku w Bash: [GNU Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- Plik inode i jak Bash go używa: [Understanding Inodes](https://opensource.com/article/19/3/what-inode)
 - Więcej o poleceniu `test`: [GNU Coreutils Manual](https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html)

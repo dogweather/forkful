@@ -54,6 +54,5 @@ fn main() {
 
 ## さらに詳しく
 
-- [Wikipedia文章: 文字列関数](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E5%88%97%E9%96%A2%E6%95%B0)
 - [Rustの文字列ドキュメンテーション](https://doc.rust-lang.org/std/string/index.html)
 - [Rustのcharメソッドドキュメンテーション](https://doc.rust-lang.org/std/primitive.char.html)

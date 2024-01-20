@@ -34,4 +34,3 @@ I Swift brukes regulære uttrykk ved hjelp av POSIX-standarden, noe som kan vær
 ## Se også:
 - [NSRegularExpression Class](https://developer.apple.com/documentation/foundation/nsregularexpression)
 - [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Swift Standard Library](https://developer.apple.com/documentation/swift/1695203-nsregularexpression)

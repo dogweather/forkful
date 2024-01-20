@@ -46,4 +46,3 @@ Pour davantage d'informations et de ressources sur la concatenation des chaînes
 
 - [La documentation officielle de Elixir](https://elixir-lang.org/getting-started/basic-types.html#strings)
 - [Un guide pratique sur la concaténation en Elixir](https://elixirschool.com/fr/lessons/basics/strings/)
-- [Post de blog sur la concaténation en Elixir](https://learningelixir.joekain.com/concatenate-strings-in-elixir/)

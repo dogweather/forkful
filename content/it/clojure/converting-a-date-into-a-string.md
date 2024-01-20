@@ -46,5 +46,3 @@ In termini di implementazione, `clj-time.format/unparse` converte una data o un'
 Per comprendere meglio il lavoro con le date in Clojure, potresti trovare utili queste risorse:
 
 - [Documentazione ufficiale di clj-time](https://clj-time.github.io/clj-time/)
-- [Esempi di clj-time](https://github.com/clj-time/clj-time/blob/master/docs/intro.md)
-- [Manuale di Clojure per date e ora](https://clojurebridge.github.io/community-docs/docs/clojure/date-time/)

@@ -47,6 +47,4 @@ Strenglengden er: 13
 
 For videre lesing om bruk av strenger i PowerShell, sjekk ut disse kildene:
 
-- [Microsofts veileder om strenger](https://docs.microsoft.com/nb-no/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
-- [PowerShell strengmanipulasjon](https://adamtheautomator.com/powershell-string-manipulation/)
 - [Strenglengde i PowerShell - Stack Overflow](https://stackoverflow.com/questions/1122555/get-string-length-in-powershell)

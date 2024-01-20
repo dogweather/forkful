@@ -47,6 +47,5 @@ Alternativ till att skapa temporära filer inkluderar användning av databaser e
 Lua hanterar temporära filer på operativsystemnivå, vilket innebär att din Laravel-applikation måste ha tillräckliga rättigheter för att skapa och radera filer på systemet. Generellt sett ansvarar Lua för rensning och borttagning av dessa filer, men det är alltid bra praxis att manuellt ta bort temporära filer när du är klar med dem för att undvika onödigt skräp på disken.
 
 ## Se även:
-* [Lua IO Library Tutorial](https://www.tutorialspoint.com/lua/lua_io.htm)
 * [Lua Documentation: File Objects](https://www.lua.org/pil/21.2.2.html)
 * [OS Library Functions in Lua](https://www.lua.org/pil/22.html)

@@ -72,7 +72,6 @@ L'implemetazione specifica del download delle pagine web in Elm dipende da come 
 Per continuare a imparare Elm, fai riferimento alle seguenti risorse:
 
 - [Guida ufficiale di Elm](https://guide.elm-lang.org)
-- [Elm Tutorial](https://www.elm-tutorial.org)
 - [Elm Cheat Sheet](https://github.com/izdi/elm-cheat-sheet)
   
 Per approfondire gli argomenti relativi al download delle pagine web, considera le seguenti risorse:

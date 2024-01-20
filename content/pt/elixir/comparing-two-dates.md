@@ -51,6 +51,3 @@ Esse recurso permite uma comparação precisa mesmo através dos fusos horários
 
 * [Documentação oficial do Elixir](https://elixir-lang.org/docs.html): uma excelente fonte para ler mais sobre a linguagem de programação Elixir e suas funcionalidades.
   
-* [Comparando datas e horários em Elixir](https://pragmaticstudio.com/tutorials/comparing-dates-and-times-in-elixir): um guia mais aprofundado sobre a comparação de datas e horários em Elixir. 
-
-* [Como trabalhar com datas e horários em Elixir](https://www.tutorialspoint.com/elixir/elixir_date_and_time.htm): mais exemplos de código e explicações em torno do tópico.

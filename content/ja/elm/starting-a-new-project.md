@@ -35,5 +35,3 @@ elm init
 **## 参照先**
 
 - Elm公式ドキュメンテーション: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-- Elmプロジェクトの初期設定について: [https://elmprogramming.com/init-and-install.html](https://elmprogramming.com/init-and-install.html)
-- Elmのエラーメッセージ: [https://elmprogramming.com/error-messages.html](https://elmprogramming.com/error-messages.html)

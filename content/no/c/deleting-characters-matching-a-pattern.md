@@ -50,6 +50,5 @@ Husk at hver gang du manipulerer en streng på denne måten, endrer du faktisk d
 ## Se Også
 For mer informasjon, sjekk ut følgende kilder:
 
-- "Mastering Algorithms with C" av Kyle Loudon: [Link](https://www.amazon.com/Mastering-Algorithms-C-Kyle-Loudon/dp/1565924533)
 - C Programming på TutorialsPoint: [Link](https://www.tutorialspoint.com/cprogramming/index.htm)
 - Stack Overflow for C programmeringsspørsmål: [Link](https://stackoverflow.com/questions/tagged/c)

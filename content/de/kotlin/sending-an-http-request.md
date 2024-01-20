@@ -39,6 +39,5 @@ HTTP-Anfragen begannen 1991 mit der Veröffentlichung des HTTP/0.9-Protokolls un
 
 ## Siehe auch:
 
-- Http-Client Dokumentation: [https://ktor.io/docs/http-client.html](https://ktor.io/docs/http-client.html)
 - OkHttp: [https://square.github.io/okhttp](https://square.github.io/okhttp)
 - Retrofit: [https://square.github.io/retrofit](https://square.github.io/retrofit)

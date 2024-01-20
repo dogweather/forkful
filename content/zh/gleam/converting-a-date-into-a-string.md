@@ -53,6 +53,4 @@ datetime_to_string(date) // "2022-05-20"
 
 你可以通过以下链接来学习更多有关字符串和日期的知识和操作：
 
-- Gleam官方文档: [https://gleam.run/book/tour/integers.html](https://gleam.run/book/tour/integers.html)
-- Gleam中datetime模块的链接: [https://hexdocs.pm/gleam_stdlib/gleam/datetime.html](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)
 - Gleam中细节处理模块bit_builder的链接: [https://hexdocs.pm/gleam_stdlib/gleam/bit_builder.html](https://hexdocs.pm/gleam_stdlib/gleam/bit_builder.html)

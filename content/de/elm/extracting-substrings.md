@@ -43,5 +43,3 @@ Für weitere Details zur Verwendung von `String.slice` und anderen String-Funkti
 - [Elm String Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
 
 Um mehr über die Geschichte von Zeichenketten und ihre Handhabung in der Informatik zu lernen, könnten diese Quellen interessant sein:
-- [Geschichte der Zeichenketten in der Informatik](https://en.wikipedia.org/wiki/String_(computer_science))
-- [Behandlung von Zeichenketten in verschiedenen Programmiersprachen](https://en.wikibooks.org/wiki/An_Introduction_to_Programming_Languages/Strings)

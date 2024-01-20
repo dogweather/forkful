@@ -53,4 +53,3 @@ Remember that `tmpfile()` creates a binary-safe file. This means it can also hol
 
 - PHP Official Documentation on [`tmpfile`](https://www.php.net/manual/en/function.tmpfile.php)
 - An insightful blog post on [Working with Files in PHP](http://www.php.net/manual/en/ref.filesystem.php)
-- For Linux users: [What is `/dev/shm` and its practical usage](https://www.howtogeek.com/116778/htg-explains-what-is-devshm-and-its-practical-usage/)

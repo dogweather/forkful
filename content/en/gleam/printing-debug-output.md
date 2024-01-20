@@ -55,7 +55,5 @@ The implementation of these functions in the Gleam core library revolves around 
 
 ## See Also
 
-- Gleam Core Library: [https://hexdocs.pm/gleam_stdlib/gleam/io/index.html](https://hexdocs.pm/gleam_stdlib/gleam/io/index.html)
 - Great overview of debugging: [https://en.wikipedia.org/wiki/Debugging](https://en.wikipedia.org/wiki/Debugging)
-- Alternative printing functions in Gleam: [https://gleam.run/book/tour/printing-to-the-console.html](https://gleam.run/book/tour/printing-to-the-console.html)
 - XML for Erlang (to use with Gleam): [https://github.com/willemdj/erlsom](https://github.com/willemdj/erlsom)

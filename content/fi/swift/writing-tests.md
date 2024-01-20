@@ -38,4 +38,3 @@ On myös olemassa erilaisia testaustapoja, kuten yksikkötestaus, integraatiotes
 
 - [XCTest Documentation](https://developer.apple.com/documentation/xctest)
 - [Unit Testing in Swift](https://www.raywenderlich.com/960290-ui-testing-and-continuous-integration-with-xcode-and-swift)
-- [Different Types of Tests in Software Development](https://www.geeksforgeeks.org/different-types-of-tests-in-software-development/)

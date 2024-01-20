@@ -43,4 +43,3 @@ test_file.txt існує.
 
 ## Дивіться також:
 * [Bash туторіал для початківців](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-* [Три типи тестів для розробки програмного забезпечення](https://www.atlassian.com/continuous-delivery/continuous-integration/automated-testing-types)

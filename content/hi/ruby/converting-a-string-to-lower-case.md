@@ -40,4 +40,3 @@ puts lowercase_str
 ## यह संसाधन भी देखें
 
 - [रूबी डॉक्स](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
-- [Ruby के string मेथड्स](https://www.geeksforgeeks.org/ruby-string-class-and-string-methods/)

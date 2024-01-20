@@ -38,5 +38,4 @@ int main() {
 
 ## 参考资料：
 
-- [C test suite - Learn C programming language](https://beginnersbook.com/2014/01/c-test-suite/)
 - [Introduction to software testing - Wikipedia](https://en.wikipedia.org/wiki/Software_testing)

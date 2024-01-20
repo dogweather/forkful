@@ -48,5 +48,4 @@ Pour travailler avec des fichiers CSV en Bash, vous pouvez également utiliser d
 ## Voir aussi:
 
 - [Documentation sur les outils Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Guide de survie Linux sur les fichiers CSV](https://linuxsurvival.com/linux-tutorials-introduction-to-learning-sed/working-with-comma-separated-csv-files-sed/)
 - [Guide de référence des commandes Bash](https://www.tldp.org/LDP/abs/html/abs-guide.html)

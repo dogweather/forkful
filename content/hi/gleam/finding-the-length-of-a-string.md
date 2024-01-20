@@ -32,5 +32,3 @@ let length = string.len(my_string)
 ग्लीम स्ट्रिंग्स के बारे में और अधिक जानने के लिए, निम्नलिखित स्रोतों का संदर्भ लें:
 
 - [Gleam Documentation: Strings](https://gleam.run/book/tour/strings.html)
-- [How to use strings in Gleam](https://blog.gleam.io/strings.html)
-- [A deeper look into Gleam strings](https://gleam.run/notes/strings.html)

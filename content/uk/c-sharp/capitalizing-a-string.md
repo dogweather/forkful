@@ -49,4 +49,3 @@ class CapitalizeString
 
 - Про роботу з рядками в C#: [Microsoft C# Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
 - Про метод TextInfo.ToTitleCase(): [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-- Про маніпуляції з рядками за допомогою LINQ: [Dot Net Perls](https://www.dotnetperls.com/string-linq)

@@ -57,4 +57,3 @@ Implementationen av att arbeta med CSV i TypeScript är enkel tack vare paketet 
 
 - [Csv-parser på npm](https://www.npmjs.com/package/csv-parser)
 - [Wikipedia-artikel om CSV](https://sv.wikipedia.org/wiki/CSV)
-- [Exempelkod för att arbeta med CSV i TypeScript](https://github.com/tylerlong/csv-parser/blob/master/examples/typescript.ts)

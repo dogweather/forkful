@@ -35,6 +35,4 @@ print(root("p"):getcontent())
 תחליפים ל-Parsing HTML מסבירים סינטקס של HTML הבינוני, ואפשרות נוספת היא להשתמש ב-Python או ב-JavaScript. עבודה עם הספרייה של htmlparser ב-Lua, מאפשרת ניתוח של  HTML בצורה יותר יעילה ונוחה.
 
 ## ראה גם:
-- [הספרייה של HTML Parser (מאת Craig Barnes)](https://github.com/craigbarnes/lua-htmlparser)
-- [התיעוד של HTML Parser](https://craigbarnes.gitlab.io/lua-htmlparser/) 
 - [הספרייה של Lua (המסעיף שמתאר את HTML Parser)](https://www.lua.org/manual/5.1/)

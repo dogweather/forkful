@@ -45,6 +45,3 @@ class Program
 3. **Імплементація**: Важливо знати, що `C#` автоматично видаляє тимчасові файли, коли програма закінчує роботу. Якщо вам необхідно зберігати деякі дані після закінчення роботи програми, вам необхідно зберігати дані в постійних файлах.
 
 ## Дивись також
-
-* [Документація C# щодо тимчасових файлів](https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/file-system/how-to-create-a-temporary-file)
-* [Проект у GitHub з прикладами роботи з файлами в C#](https://github.com/dotnet/samples/tree/main/core/extensions/PortMonitor)

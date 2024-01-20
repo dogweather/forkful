@@ -49,4 +49,3 @@ Vogliamo che il nostro codice sia sempre il migliore possibile, quindi è import
 
 - [Documentazione ufficiale di Go sul testing](https://golang.org/pkg/testing/)
 - [Tutorial su TDD con Go](https://medium.com/@roderickhsiao/test-driven-development-with-go-f7eb4a62a4c8)
-- [Articolo su GoLand per scrivere test in modo efficiente](https://blog.jetbrains.com/go/2019/03/11/test-with-goland-tips-and-tricks/)

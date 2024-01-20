@@ -47,7 +47,6 @@ Keep in mind that these string functions make a new string and do not modify the
 
 For more information, it would be beneficial to check out:
 
-- [Kotlin’s Standard Functions](https://kotlinlang.org/docs/standard-library.html)
 - [Unicode Standard](https://unicode.org/standard/standard.html)
 - [Kotlin capitalize() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
 - [Kotlin replaceFirstChar() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)

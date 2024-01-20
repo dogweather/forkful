@@ -36,6 +36,5 @@ assert lower_case_sentence == "hello, gleam!"
 ## 参照 ("See Also")
 関連リソースは以下の通りです：
 
-- 公式ドキュメンテーション: [Gleam Language](https://gleam.run/docs/)
 - [string.to_lower function details](https://hexdocs.pm/gleam_stdlib/gleam/string.html#to_lower/1)
 - [GitHub repository](https://github.com/gleam-lang/gleam) for Gleam project and examples.

@@ -33,5 +33,4 @@ Para trabalhar com JSON em Fish Shell, você também pode precisar usar módulos
 
 # Veja também
 
-- [Documentação oficial do Fish Shell: JSON](https://fishshell.com/docs/current/cmds/json.html)
 - [Documentação oficial do jq](https://stedolan.github.io/jq/)

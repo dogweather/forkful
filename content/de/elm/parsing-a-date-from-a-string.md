@@ -56,5 +56,3 @@ Die Implementierungsdetails variieren je nach Sprache und Framework. In Elm verw
 Weitere Informationen finden Sie in den offiziellen Elm-Dokumenten und in verwandten Tutorials:
 
 - [Elm Time Paket](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Parse a Date from a String in Elm](https://korban.net/posts/elm/2019-11-20-parse-date-string-elm/)
-- [Understanding Dates in Elm](https://dev.to/michaeljacobdavis/understanding-dates-in-elm-3i2a)

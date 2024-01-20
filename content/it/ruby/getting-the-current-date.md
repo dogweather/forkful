@@ -51,4 +51,3 @@ Per una comprensione più approfondita di come Ruby gestisce le date e gli orari
 
 - Documentation: [https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
 - StackOverflow: [https://stackoverflow.com/questions/8512562/how-to-get-current-date-time-in-ruby](https://stackoverflow.com/questions/8512562/how-to-get-current-date-time-in-ruby)
-- Ruby Inside Custom Date and Time Formats: [https://www.rubyinside.com/custom-rails-date-and-time-formats-2874.html](https://www.rubyinside.com/custom-rails-date-and-time-formats-2874.html)

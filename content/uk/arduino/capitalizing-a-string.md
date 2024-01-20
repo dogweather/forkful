@@ -44,5 +44,4 @@ void loop() {}
 ## Дивись також:
 
 - [Офіційна документація до Arduino](https://www.arduino.cc/reference/pl/)
-- [Розділ Arduino про рядки](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/)
 - [Детальніше про функцію toupper()](http://www.cplusplus.com/reference/cctype/toupper/)

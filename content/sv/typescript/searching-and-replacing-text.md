@@ -56,4 +56,3 @@ console.log(nyText);
 
 - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) - Innehåller mer detaljerad information om replace-funktionen, flaggor och dess användning.
 - [w3schools](https://www.w3schools.com/jsref/jsref_replace.asp) - Enkel och tydlig guide om replace-funktionen och dess användningsområden.
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/fundamentals.html) - Grundläggande funktionalitet och syntax i TypeScript.

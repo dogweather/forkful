@@ -41,7 +41,6 @@ int main() {
 
 ## 另见
 - [C语言时间日期函数](http://www.runoob.com/cprogramming/c-standard-library-time-h.html)
-- [POSIX日期和时间函数](http://man7.org/linux/man-pages/man3/time.3.html)
 - [关于UNIX时间戳](https://en.wikipedia.org/wiki/Unix_time)
   
 请注意，本文中的示例代码，其运行结果可能因操作系统、时区和本地化设置的不同而有所差异。

@@ -57,4 +57,3 @@ print(lastThree)
 
 - [Apple's Swift Documentation Substrings](https://developer.apple.com/documentation/swift/substring)
 - [Swift Standard Library String methods](https://developer.apple.com/documentation/swift/string)
-- [SwiftRocks Tutorial on String Manipulation](https://swiftrocks.com/string-manipulation-in-swift-a-comprehensive-guide)

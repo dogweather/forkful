@@ -42,5 +42,4 @@ fun addToList(list: MutableList<String>, item: String) {
 테스트를 작성할 때, 일반적으로 각 함수마다 테스트 함수를 작성하여 각각의 입력값과 예상 출력값을 정의합니다. 이를 통해 원하는 동작을 확인할 수 있습니다.
 
 ## 더 보기:
-- [Kotlin Test](https://kotlinlang.org/docs/reference/test.html)
 - [Spek Test Framework](https://spekframework.org/)

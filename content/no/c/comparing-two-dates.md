@@ -52,6 +52,5 @@ Alternativer inkluderer bruk av tredjepart biblioteker som gir utvidede funksjon
 Når det gjelder sammenligning, implementerer vi dette ved å konvertere begge datoene til UNIX-tid (antall sekunder siden 1. januar 1970) ved hjelp av `mktime` funksjonen, and så sammenligner vi de.
 
 ## Se Også:
-- [Complete Time.h Library Tutorial](https://www.geeksforgeeks.org/time-h-library-in-c-with-examples/)
 - [Comparing Dates: Stackoverflow](https://stackoverflow.com/questions/1676632/how-to-compare-dates-in-c)
 - [Date and Time in C: TutorialsPoint](https://www.tutorialspoint.com/c_standard_library/time_h.htm)

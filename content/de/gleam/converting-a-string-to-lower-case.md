@@ -41,5 +41,3 @@ In Bezug auf die Implementierung verfügt Gleam über die eingebaute Funktion `s
 ## Siehe Auch 
 
 - Gleam’s [Dokumentation für Strings](https://gleam.run/book/tour/strings.html)
-- Gleam’s [API-Dokumentation für die `string.lower`](https://hexdocs.pm/gleam_stdlib/Gleam/String.html#lower/1)
-- [Gleam Einführung in deutsch](https://gleam.run/getting-started/deutsch/)

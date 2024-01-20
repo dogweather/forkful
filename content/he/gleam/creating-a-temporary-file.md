@@ -56,6 +56,5 @@ fn main() {
 ## ראה גם
 
 ניתן למצוא מידע נוסף בנושאים חשובים במרגעי ביקורת:
-* [חיבורי קבצים ומנהלי המשאבים של Gleam](https://gleam.run/book/tour/file-io.html)
 * [שימוש בקבצים בשפת התכנות C](https://en.wikipedia.org/wiki/C_file_input/output) 
 * [פונקציות מערכת הקבצים של Erlang](http://erlang.org/doc/man/file.html)

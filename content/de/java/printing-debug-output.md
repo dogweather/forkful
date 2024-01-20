@@ -50,6 +50,5 @@ Bei der Implementierung von Debug-Ausgaben ist es wichtig, sorgfältige Überleg
 ## Siehe auch:
 
 - Oracle Java-Dokumentation: `System.out.println()` : [Link](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println--)
-- Tutorialspoint - Java Debugging: [Link](https://www.tutorialspoint.com/java/java_debugging.htm)
 - Java Logging Basics : [Link](https://www.loggly.com/ultimate-guide/java-logging-basics/)
 - Log4j 2 API: [Link](https://logging.apache.org/log4j/2.x/manual/api.html)

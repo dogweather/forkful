@@ -50,6 +50,5 @@ Make sure you explore further!
 
 - Official Clojure Documentation: [Random Numbers](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)
   
-- Strength of randomness: [Clojure Forum Discussion](https://clojureverse.org/t/how-random-is-clojures-rand-function/4568)
 
 - Testing with seed: [StackOverflow Thread](https://stackoverflow.com/questions/25609153/how-to-return-random-but-deterministic-results-in-clojure)

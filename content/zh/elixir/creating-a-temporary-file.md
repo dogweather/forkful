@@ -42,4 +42,3 @@ Erlang的 `:file.mkstemp` 函数首先接受一个包含 `"XXXXXX"`的路径参�
 
 - [Elixir Docs](https://hexdocs.pm/elixir/File.html): 更多关于Elixir工作中文件操作的信息。
 - [Erlang Docs](http://erlang.org/doc/man/file.html#mkstemp-1): Erlang原生的 `:file.mkstemp` 函数的文档。
-- [Exfile](https://github.com/talentdeficit/exfile): 一个用于处理文件和文件系统任务的强大的Elixir库。

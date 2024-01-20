@@ -43,5 +43,4 @@ Se også:
 Her er noen nyttige ressurser for å lære mer om skriving av tester i Java:
 
 - [Javas offisielle dokumentasjon om JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [En veiledning til skriving av tester i Java](https://www.baeldung.com/java-testing)
 - [En sammenligning av JUnit, TestNG og Mockito](https://www.baeldung.com/junit-vs-testng)

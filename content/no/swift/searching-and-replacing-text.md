@@ -41,6 +41,5 @@ Detaljert, `replacingOccurrences(of:with:)` funksjonen fungerer ved å først op
 
 Her er noen nyttige ressurser for å lære mer om søker og erstatter tekst i Swift:
 
-- Apple's Swift Documentation: [Replacing Occurrences](https://developer.apple.com/documentation/foundation/nsstring/1416398-replacingoccurrences)
 - Swift by Sundell: [Working with strings in Swift](https://www.swiftbysundell.com/basics/strings)
 - Hacking with Swift: [How to replace parts of a string](https://www.hackingwithswift.com/example-code/strings/how-to-replace-parts-of-a-string-using-replacingoccurrences-of)

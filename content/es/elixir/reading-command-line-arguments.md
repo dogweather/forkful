@@ -49,4 +49,3 @@ La implementación de la lectura de argumentos de línea de comandos en Elixir e
 Para profundizar más en este tema, puedes consultar las siguientes fuentes:
 - Para familiarizarte más con Elixir y la línea de comandos, visita la [guía de inicio de Elixir](https://elixir-lang.org/getting-started/introduction.html).
 - Para obtener más detalles sobre `System.argv/0`, consulta la [documentación oficial de Elixir](https://hexdocs.pm/elixir/System.html#argv/0).
-- Para entender más acerca del Input/Output en Elixir, puede visitar [IO en la documentación oficial de Elixir](https://hexdocs.pm/elixir/io.html).

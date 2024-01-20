@@ -49,6 +49,5 @@ Counts {cases = 1, tried = 1, errors = 0, failures = 0}
 
 ## 관련 정보:
 
-- [HUnit 개요](https://hunit.github.io/)
 - [QuickCheck 개요](https://github.com/nick8325/quickcheck)
 - [Tasty 개요](https://github.com/feuerbach/tasty)

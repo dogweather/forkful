@@ -51,4 +51,3 @@ Implementeringsdetaljene av regex i C++ kan variere avhengig av operativsystem o
 
 - C++ Reference: [regex](http://www.cplusplus.com/reference/regex/)
 - Stack Overflow: [How to use regex in C++](https://stackoverflow.com/questions/12530406/is-c11-regex-library-broken)
-- Bucher/Cox: [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

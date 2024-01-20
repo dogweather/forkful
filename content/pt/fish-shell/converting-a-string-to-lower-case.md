@@ -46,7 +46,6 @@ No Fish Shell, o `string lower` é implementado através de uma função do C++ 
 ## Veja Também
 
 - [Manual Oficial do Fish Shell](https://fishshell.com/docs/current/commands.html#string)
-- [Recursos do Fish Shell](https://opensource.com/article/19/8/getting-started-fish-shell)
 - [StackOverflow - Convertendo string para caixa baixa](https://stackoverflow.com/questions/tagged/fish+lowercase)
 
 ---

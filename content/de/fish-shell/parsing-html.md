@@ -43,6 +43,5 @@ In unseren Fish Shell Beispiel nutzen wir das Perl-kompatible Regex von `grep` (
 ## Siehe auch:
 
 - [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Grep in Perl-kompatibles Regex](https://www.gnu.org/software/grep/manual/html_node/Perl_002dCompatible-Regular-Expressions.html)
 - [HTML Parsing in Python](https://docs.python.org/3/library/html.parser.html)
 - [HTML Parsing in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)

@@ -53,5 +53,4 @@ Output:
 
 - [ממד טכנולוגיות Microsoft לעבוד עם JSON פורמט](https://docs.microsoft.com/he-il/dotnet/standard/serialization/system-text-json-how-to)
 - [יישומונט DotNet: עולים ויורדים שונים של ביצועים (הנושאי מזל סביבה) שעובדים על פני מדריכים ופרקים שונים](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-core-3-0/)
-- [סימן שאתה-במכונת התנועהשמוע בעולם מזל דיאגרמות נושא low המוניטי](https://docs.microsoft.com/he-il/dotnet/api/system.text.json.serialization.jsonserializableattribute<STRING>TUNNEL>TheInheritsader-dited-withif 2115)
 - [התמרה קברמה לביתדיאמונלי (H2RM) - יותר כאלמטהע ממאבת רכינ

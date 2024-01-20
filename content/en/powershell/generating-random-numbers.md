@@ -45,4 +45,3 @@ An alternative would be using the .NET classes directly. For instance, you could
 Check out these resources to learn more about random numbers in PowerShell and .NET:
 - PowerShell `Get-Random` cmdlet: [Official Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
 - .NET `System.Random` class: [Official Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- Best practices for randomness in .NET: [Microsoft Security Blog](https://cloudblogs.microsoft.com/microsoftsecure/2014/02/19/the-dangers-of-key-reuse-random-number-generation-and-low-entropy/)

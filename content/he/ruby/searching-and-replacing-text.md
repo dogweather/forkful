@@ -38,4 +38,3 @@ Hello, Ruby!
 #**ראו גם:**
 * [Ruby Documentation on gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
 * [Ruby Regular Expressions Tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-* [A Good Book About Ruby](https://pragprog.com/titles/ruby3/programming-ruby-1-9/)

@@ -35,5 +35,4 @@ Cmdlet `Get-Content` to jeden z najwcześniejszych sposobów na odczyt plików t
 ## Zobacz też:
 
 - [Dokumentacja Microsoft dla Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
-- [Porównanie wydajności cmdlet 'Get-Content'](https://powershell.org/2013/10/the-get-content-cmdlet/)
 - [Wiecej o System.IO.File]::ReadAllText](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0)

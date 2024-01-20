@@ -34,6 +34,5 @@ I koden over sender vi en GET-forespørsel til "api.example.com/data". Responsen
 
 ## Se også:
 
-- [MDN Web Docs: bruk av Fetch](https://developer.mozilla.org/no/docs/Web/API/Fetch_API/Using_Fetch)
 - [JavaScript.info: Fetch](https://javascript.info/fetch)
 - [Axios på GitHub](https://github.com/axios/axios)

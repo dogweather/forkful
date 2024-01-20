@@ -47,6 +47,5 @@ Write-Output $jsonObject.city
 
 ## Дивіться також:
 
-- [PowerShell документація](https://docs.microsoft.com/en-us/powershell/scripting/samples/reading-and-writing-json?view=powershell-7)
 - [JSON офіційне руководство](https://www.json.org/json-en.html)
 - [Робота з JSON в PowerShell](https://blog.netspi.com/working-with-json-in-powershell/)

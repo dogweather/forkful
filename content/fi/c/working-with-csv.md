@@ -64,6 +64,3 @@ CSV kehitettiin vuonna 1972, joten se on ollut käytössä yli 40 vuotta. Tänä
 CSV-tiedoston sisällä voi olla myös erilaisia erottimia, kuten puolipiste tai tabulaattori, ja se voi aiheuttaa ongelmia tiedoston lukemisessa. On tärkeää käsitellä näitä erikoistapauksia ja varmistaa, että CSV-tiedoston käsittely on joustavaa.
 
 ## Katso myös:
-
-- [CSV-tiedostomuodon Wikipedia-sivu](https://fi.wikipedia.org/wiki/CSV_(tiedostomuoto))
-- [C-kielen opas ja resurssit](https://finland.dev/c-kieli)

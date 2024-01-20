@@ -27,4 +27,3 @@ Regex.find Regex.AllNumbers "Hello world 123" == Just "123"
 ## 관련 자료:
 - [Elm 정규 표현식 공식 문서](https://package.elm-lang.org/packages/elm/regex/latest/)
 - [정규 표현식 소개 영상](https://www.youtube.com/watch?v=8CEYlKUCN-k)
-- [정규 표현식 연습문제 사이트](https://regexr.com/)

@@ -48,5 +48,4 @@ Para escribir en archivos binarios (que no son legibles para los humanos), se pu
 ## Ver también:
 
 - [Funciones de manejo de archivos en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Escribir en archivos en C](https://www.geeksforgeeks.org/write-a-simple-text-file-in-c/)
 - [Biblioteca estándar de C](https://es.wikipedia.org/wiki/Biblioteca_est%C3%A1ndar_de_C)

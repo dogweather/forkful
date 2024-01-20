@@ -33,6 +33,5 @@ Die Implementierung von Date.to_string in Elixir basiert auf dem ISO 8601-Datums
 Weitere Informationen zum Arbeiten mit Daten in Elixir sind in den offiziellen Elixir-Dokumenten zu findern:
 
 - Date — Elixir v1.12.3 : [Link](https://hexdocs.pm/elixir/Date.html)
-- Timex Library : [Link](https://hexdocs.pm/timex/readme.html)
 
 Examining the Date.to_string Source Code : [Link](https://github.com/elixir-lang/elixir/blob/v1.12/lib/elixir/lib/calendar/date.ex)

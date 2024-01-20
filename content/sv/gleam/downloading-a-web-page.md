@@ -38,5 +38,4 @@ När det gäller implementation, är grundläggande idén att skicka en GET-beg�
 
 ## Se även:
 - Gleam's officiella webbplats: [här](https://gleam.run/)
-- Gleam's http-klient dokumentation: [här](https://hexdocs.pm/gleam_http/gleam/http/0.9.0/) 
 - Mer information om HTTP-begäran: [här](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Overview)

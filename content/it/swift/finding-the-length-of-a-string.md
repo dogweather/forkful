@@ -40,5 +40,3 @@ Per saperne di più su come gestire le stringhe in Swift, consulta i seguenti li
 - La documentazione ufficiale di Swift sulle Stringhe e i Caratteri: [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
 
 - Un tutorial dettagliato sulle stringhe in Swift: [Swift Strings](https://www.hackingwithswift.com/read/0/5/string-interpolation).
-
-- Un articolo woospeak pieno di esempi su come utilizzare le stringhe in Swift: [String Manipulation In Swift](https://www.woospeak.com/string-manipulation-in-swift/).

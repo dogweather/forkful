@@ -41,5 +41,3 @@ Implementationen av `substring` skapar en ny sträng istället för att visa til
 För mer information om att arbeta med strängar i Kotlin, se följande resurser:
 
 - Officiell Kotlin dokumentation på att arbeta med strängar: [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- En djupare dykning i Kotlin's Strings med exempel: [Baeldung's Guide to Kotlin Strings](https://www.baeldung.com/kotlin-strings)
-- Ytterligare läsning om Kotlin's prestanda frågor: [Kotlin Performance](https://kotlinlang.org/docs/performance.html)

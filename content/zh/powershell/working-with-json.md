@@ -32,4 +32,3 @@ JSON最初是由Douglas Crockford在2001年提出的，它的设计灵感来自�
 
 - [PowerShell官方文档](https://docs.microsoft.com/en-us/powershell/)
 - [Newtonsoft.Json库](https://www.newtonsoft.com/json)
-- [JSON vs XML:Which Is Right for You?](https://www.lifewire.com/json-vs-xml-differences-and-similarity-3480581)

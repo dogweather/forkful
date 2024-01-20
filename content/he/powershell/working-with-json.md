@@ -46,5 +46,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## רק הפומונימ המתאימים
 הנה כמה קישורים כאשר ניתן למצוא מידע נוסף על עבודה עם JSON בפוארשל:
 - [שיווקי עבודה עם JSON עבור המתחיל מבעלי יכולות בספריות המונטש מנסה](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7)
-- [טיוטה עבודה עם JSON בכליות החשיבות הימודות המחדשות בפוארשל כי ממי התפל'ה ניתן לעטות?](https://blogs.technet.microsoft.com/vishalagarwal/2011/07/25/playing-with-json-data-in-powershell/)
 - [תופשים עבודה עם JSON השמות שאנחנו ניתכנסים שה

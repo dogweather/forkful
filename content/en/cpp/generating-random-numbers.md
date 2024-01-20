@@ -49,5 +49,4 @@ Programmers can choose to generate random integers or floating-point numbers, va
 ## See Also
 Use these resources for more:
 - Visit [CPP Reference](https://en.cppreference.com/w/cpp/numeric/random) for more details on `<random>`.
-- Use [this guide](https://www.codespeedy.com/generating-random-float-numbers-in-cpp/) to generate random floating-point numbers.
 - Check out [this](https://www.cplusplus.com/reference/random/) for a detailed explanation on random number distributions in C++.

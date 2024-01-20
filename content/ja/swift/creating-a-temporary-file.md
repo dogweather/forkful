@@ -45,5 +45,4 @@ iOSやmacOSでは、一時ディレクトリが提供され、アプリケーシ
 ## 参照:
 
 - Apple開発者ドキュメンテーション: [URLs(for:in:)](https://developer.apple.com/documentation/foundation/filemanager/1407726-urls)
-- Swift公式サイト: [String.write(to:atomically:encoding:)](https://developer.apple.com/documentation/swift/string/1641510-write)
 - Stack Overflow: ["How to create a temporary file with Swift?"](https://stackoverflow.com/questions/37696762/how-to-create-a-temporary-file-with-swift)

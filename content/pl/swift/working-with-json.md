@@ -88,5 +88,4 @@ do {
 JSON został stworzony jako alternatywa dla bardziej skomplikowanego formatu XML. Jest on bardzo podobny do notacji obiektowej w języku JavaScript, co czyni go łatwym do zrozumienia i implementacji w wielu językach programowania. Istnieje wiele innych bibliotek w języku Swift, które pozwalają na pracę z JSON, takich jak `Codable` czy `SwiftyJSON`.
 
 ## Zobacz również:
-- [Oficjalna dokumentacja JSON w Swift](https://developer.apple.com/documentation/foundation/json_serialization)
 - [Jak przetwarzać dane JSON w Swift z użyciem `Codable`](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift-a-comprehensive-guide)

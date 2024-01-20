@@ -50,5 +50,3 @@ fn main() {
 
 ## ראה גם:
 * [מסמך ראשי של Chrono](https://docs.rs/chrono/0.4.19/chrono/)
-* [דוגמאות קוד נוספות של Chrono](https://github.com/chronotope/chrono/tree/master/examples)
-* [הסברים נוספים בנושא פענוח תאריכים ממחרוזות בRust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

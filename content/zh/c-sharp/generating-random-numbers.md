@@ -45,6 +45,5 @@ C#中的Random类使用线性同余生成器（LCG）算法。但该算法并非
 
 - [MSDN: Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
 - [Understanding Random Number Generators, and Their Limitations](https://www.codeproject.com/articles/43408/understanding-random-number-generators-and-their-l)
-- [A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf) 
 
 以上就是在C#中生成随机数的入门知识。最重要的是实践和在各种应用程序中尝试和改进。

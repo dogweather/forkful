@@ -42,4 +42,3 @@ På implementeringsnivå virker `replace`-funksjonen ved å iterere gjennom teks
 For mer informasjon om søk og erstatting i Kotlin, besøk disse kildene:
 - [Kotlin Dokumentasjon: String-funksjoner](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 - [Kotlin Guide: Tekst Manipulasjon](https://www.programiz.com/kotlin-programming/string)
-- [Java8 Eksempler: Regex med Kotlin](https://www.javacodeexamples.com/kotlin-regex-examples/7826)

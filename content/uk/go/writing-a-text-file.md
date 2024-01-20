@@ -48,5 +48,3 @@ func main() {
 ## Дивіться також
 
 - [Офіційна документація Go](https://golang.org/doc/)
-- [Туторіал по запису до файлів в Go](https://www.golangprograms.com/how-to-write-data-into-file.html)
-- [Стаття про роботу з файлами в Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go)

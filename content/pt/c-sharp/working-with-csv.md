@@ -54,4 +54,3 @@ O formato CSV é amplamente utilizado desde a década de 1970 para facilitar a t
 ## Veja também:
 
 - [Documentação oficial do C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
-- [Tutorial sobre leitura e escrita em arquivos CSV em C#](https://www.c-sharpcorner.com/article/export-import-csv-file-in-c-sharp/)

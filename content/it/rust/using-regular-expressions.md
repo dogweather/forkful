@@ -38,6 +38,3 @@ Un'alternativa alle espressioni regolari sono i parser, che sono più potenti e 
 In Rust, le espressioni regolari sono implementate tramite la crate regex, che utilizza il motore di ricerca adattativo di Thompson. Questo motore ha una buona velocità e utilizza un algoritmo non deterministico, rendendo le espressioni regolari più semplici da utilizzare rispetto ad altri motori.
 
 ## Vedi anche:
-- [Crate regex](https://crates.io/crates/regex)
-- [Guida alle espressioni regolari in Rust](https://doc.rust-lang.org/stable/rust-by-example/std/regex.html)
-- [Regex in altri linguaggi di programmazione](https://www.regular-expressions.info/programming.html)

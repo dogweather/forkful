@@ -51,4 +51,3 @@ YAML, que es un acrónimo de "YAML Ain't Markup Language", es un formato de seri
 ## See Also:
 
 - [Página oficial de YAML](https://yaml.org)
-- [Documentación de Kotlin sobre SnakeYAML](https://kotlinlang.org/docs/kotlin-eap-1.4.0.html#yaml)

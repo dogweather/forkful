@@ -46,4 +46,3 @@ Pour plus d'informations sur la concaténation de chaînes en PHP et les alterna
 
 - [PHP: L'opérateur de concaténation](https://www.php.net/manual/fr/language.operators.string.php)
 - [PHP: `sprintf`](https://www.php.net/manual/fr/function.sprintf.php)
-- [Améliorer la performance de concaténation en PHP](http://www.phpbench.com/)

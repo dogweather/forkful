@@ -48,5 +48,3 @@ Bitte beachten Sie, dass dies alle Buchstaben in der Zeichenkette in Großbuchst
 ## Siehe auch:
 
 - Elm String API-Dokumentation: [Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
-
-- Elm Paket zur Textmanipulation: [Jono's String Extras](https://package.elm-lang.org/packages/jono/string-extras/latest/)

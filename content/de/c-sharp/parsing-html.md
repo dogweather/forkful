@@ -44,6 +44,5 @@ Die im Beispiel verwendete Methode `SelectSingleNode` ist ein fundamentaler Teil
 ## Siehe auch
 
 - Die Dokumentation von HtmlAgilityPack ist eine großartige Ressource, um tiefer in das HTML-Zerlegen einzutauchen. [(Link)](https://html-agility-pack.net/)
-- Die Dokumentation von AngleSharp bietet weitere Perspektiven und Tutorial-Materialien. [(Link)](https://anglesharp.github.io/docs/)
 
 Mit den angegebenen Informationen sollten Sie in der Lage sein, den Prozess des Zerlegens von HTML in C# zu verstehen und ihn effektiv in Ihren Projekten zu nutzen.

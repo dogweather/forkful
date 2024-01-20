@@ -48,6 +48,5 @@ fn main() {
 
 ## Дивіться також:
 
-- [Докладніше про вбудовані функції дати в Gleam](https://gleam.run/book/tour/basic-types.html#date-time)
 - [Офіційна документація Gleam](https://gleam.run/book/)
 - [Відеокурси про Gleam](https://www.youtube.com/playlist?list=PLh_thOjTnxi46lTgEvJIK5pSPC-aahjLZ)

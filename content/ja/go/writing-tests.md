@@ -48,5 +48,4 @@ ok      _/home/test  0.006s
 関連する情報源は、以下のリンクから参照することができます。
 
 - [Go言語 公式ドキュメント](https://golang.org/doc/)
-- [ロバート・C・マーティンによる「Clean Code」](https://www.pearson.co.jp/book/9784822299972.html)
 - [Tests in Go](https://medium.com/@teivah/tests-in-go-8d0709a4eea6)

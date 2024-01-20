@@ -33,4 +33,3 @@ console.error("이 메시지는 표준 에러로 기록됩니다.");
 ## 관련 자료 보기
 
 - [자바스크립트 디버깅 가이드 (Google Developers)](https://developers.google.com/web/tools/chrome-devtools/javascript/)
-- [Unix 입출력 기본 지식](https://www.cis.upenn.edu/~milom/cse240-Fall03/unixIO/unixIO-handout.html)

@@ -46,13 +46,8 @@ test_add(); // הפעלת הבדיקה
 אם אתם רוצים לדעת יותר על כתיבת בדיקות ב-PHP, יש לנו לכם כמה קישורים שיעזרו לכם להתחיל:
 
 - [PHPUnit](https://phpunit.de/): כלי ייחודי לבדיקת PHP
-- [Official PHP Documentation](https://www.php.net/manual/en/book.php://www.php.net/manual/en/book.php): מידע רשמי על בדיקות בפי-פי-פי
 - [Tuts+ PHP Testing series](https://code.tutsplus.com/series/the-buzz-on-php-testing--cms-827): סדרת המדריכים החמים כדי ללמוד כיצד לבדוק את קוד שלנו בפי-פי-פי
 
 ## ראו גם:
 
 תקווה שתהנו מכתיבת בדיקות ותטפלו בקוד שלכם בצורה עדינה יותר. ישנן כמה דרכים שונות לכתוב בדיקות ויש לנו מאמרי נושא נושאים נוספים שיעזרו לכם להתחיל.
-
-- [Test Driven Development for Beginners](https://www.codebyamir.com/blog/test-driven-development-for-beginners)
-- [What is BDD? (Behavior Driven Development)](https://www.codebyamir.com/blog/what-is-bdd)
-- [Jest: PHP Testing Made Easy](https://www.codebyamir.com/blog/jest-php-testing-made-easy)

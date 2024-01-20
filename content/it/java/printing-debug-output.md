@@ -55,6 +55,5 @@ Per quanto riguarda i dettagli di implementazione, `System.out.println()` stampa
 
 Per un approfondimento sulla stampa del debug output e sulle tecniche di debug in Java, questi sono alcuni link utili:
 
-- ["Debugging in Java"](https://docs.oracle.com/en/java/javase/16/troubleshoot/debugging.html)
 - ["How to Use Log4J"](https://logging.apache.org/log4j/2.x/manual/index.html)
 - ["How to Use Java Logger"](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html)

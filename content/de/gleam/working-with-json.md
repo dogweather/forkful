@@ -58,4 +58,3 @@ Es gibt einige Alternativen zu JSON, wie z.B. YAML oder MessagePack, aber aufgru
 ## Siehe auch:
 
 - [JSON Tutorial auf w3schools.com](https://www.w3schools.com/js/js_json_intro.asp)
-- [Gleam-Dokumentation für JSON](https://gleam.run/articles/json/overview)

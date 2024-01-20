@@ -60,6 +60,5 @@ In diesem Code fügen wir einen "Content-Type" und "Cookie" Header zu unserer An
 Für weitere Informationen, siehe diese Links:
 
 - [LuaSocket HTTP Documentation](https://w3.impa.br/~diego/software/luasocket/http.html)
-- [Lua HTTP client library comparison](https://notebook.kulchenko.com/programming/http-requests-in-lua-comparison-of-5-tools)
 - [LuaJIT Request GitHub Page](https://github.com/LPGhatguy/luajit-request)
 - [Lua HTTP GitHub Page](https://github.com/daurnimator/lua-http)

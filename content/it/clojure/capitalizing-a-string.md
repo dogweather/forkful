@@ -42,4 +42,3 @@ In questo codice, la funzione `capitalize` divide la stringa in parole, usa `map
 Per ulteriori informazioni sulle funzioni di manipolazione delle stringhe in Clojure, dai un'occhiata a questi collegamenti:
 
 - [clojure.string API](https://clojuredocs.org/clojure.string) fornisce un elenco completo delle funzioni di stringa supportate in Clojure.
-- [Capitalization in programming](https://stackoverflow.com/questions/409533/capitalization-in-programming) discute l'uso e il significato della capitalizzazione nelle stringhe di programmazione in diversi linguaggi.

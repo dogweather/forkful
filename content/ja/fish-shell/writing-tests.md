@@ -50,5 +50,4 @@ Add function works correctly
 テストの具体的な書き方や、テストを書くことの重要性についてより詳しく知りたい方は、以下のリンクを参考にしてください。
 
 - [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [テスト駆動開発（TDD）についての詳細](https://bit.ly/2Uv4X7D)
 - [テスティングに関するベストプラクティス](https://bit.ly/2HDDN5x)

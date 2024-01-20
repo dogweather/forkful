@@ -39,6 +39,5 @@ CSV格式最初是为了在电子表格程序之间共享数据而设计的，�
 
 - [Fish Shell官方文档](https://fishshell.com/docs/current/)
 
-- [《CSV数据处理简介》（英文）](https://www.datacamp.com/community/tutorials/csv-data-processing-python)
 
 - [《如何使用Fish Shell处理数据》（英文）](https://medium.com/@crible/dive-into-fish-shell-ff70ba5865d5)

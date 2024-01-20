@@ -48,6 +48,5 @@ main = getZonedTime >>= print
 
 아래의 문서들에서 Haskell의 `Data.Time` 라이브러리에 대해 더 많은 정보를 얻을 수 있습니다.
 
-- [Data.Time Documentation](https://hackage.haskell.org/package/time-1.10.0.1/docs/Data-Time.html)
 
 - [Haskell Date and Time Guide](https://two-wrongs.com/haskell-time-library-tutorial)

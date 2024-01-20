@@ -41,6 +41,5 @@ Dettagli sul come `string.lower` funzioni: si basa sulla funzione `unicode:downc
 Per ulteriori informazioni e per consultare la documentazione completa su `string.lower`, visita il sito [https://gleam.run/stdlib/string/#lower](https://gleam.run/stdlib/string/#lower).
 
 Si consiglia anche di leggere gli articoli correlati:
-- [Manipolazione delle stringhe in Gleam](https://learnxinyminutes.com/docs/gleam/)
 - [Una breve storia delle codifiche dei caratteri](http://www.diveintopython3.net/strings.html)
 - [Documentazione di Erlang su unicode:downcase_list](https://erlang.org/doc/man/unicode.html#downcase_list-1)

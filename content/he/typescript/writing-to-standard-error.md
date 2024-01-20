@@ -55,4 +55,3 @@ let area = calculateCircleArea(-5);
 
 ראו גם
 - [דוקומנטציה של TypeScript על כתיבה לשגיאות סטנדרטיות](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#write-only-data-errors-to-standard-error)
-- [מדריך מפורט על כתיבה לשגיאות ב TypeScript](https://jstobigdata.com/ts/typescript-console-error-write-to-standard-error/)

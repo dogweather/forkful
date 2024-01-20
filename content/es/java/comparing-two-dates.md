@@ -59,4 +59,3 @@ La fecha1 es anterior a la fecha2
 
 - [Documentación de Oracle para la clase LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
 - [Información adicional sobre la fecha y hora en Java 8](https://www.baeldung.com/java-8-date-time-intro)
-- [Artículo sobre problemas con las clases de fecha antiguas](https://www.joelonsoftware.com/2003/10/14/the-java-util-date-class-is-badly-designed/)

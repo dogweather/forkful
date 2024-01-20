@@ -38,4 +38,3 @@ Les expressions régulières ont été inventées dans les années 1950 et ont d
 # Voir aussi:
 
 - [Documentation officielle de Go sur les expressions régulières](https://golang.org/pkg/regexp/)
-- [Article sur les expressions régulières en Go](https://www.wiut.uz/uploads/CSE/regular-expressions-in-go-pdf.pdf) par Jaehoon Lim

@@ -45,6 +45,5 @@ $today = new DateTime(null, new DateTimeZone('Europe/London'));
 
 ## See Also
 - PHP.net documentation on DateTime class: [https://www.php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
-- How to use date and time in PHP: [https://dzone.com/articles/how-to-use-date-and-time-in-php](https://dzone.com/articles/how-to-use-date-and-time-in-php)
 - Explaining the "Year 2038" problem: [https://en.wikipedia.org/wiki/Year_2038_problem](https://en.wikipedia.org/wiki/Year_2038_problem)
 - List of supported timezones in PHP: [https://www.php.net/manual/en/timezones.php](https://www.php.net/manual/en/timezones.php)

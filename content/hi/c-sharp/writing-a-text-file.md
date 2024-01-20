@@ -37,6 +37,3 @@ Console.WriteLine(text); // Output: This is the text from the file.
 # अन्य स्रोत देखें
 
 - [MSDN: Writing to a Text File](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
-- [W3Schools: File Handling in C#](https://www.w3schools.com/cs/cs_filehandling.asp)
-- [C# Corner: Writing to a File Using C#](https://www.c-sharpcorner.com/article/writing-to-a-text-file/)
-- [GeeksforGeeks: File Class in C#](https://www.geeksforgeeks.org/file-class-in-c-sharp/?ref=leftbar-rightbar)

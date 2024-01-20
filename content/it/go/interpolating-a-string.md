@@ -47,4 +47,3 @@ Per ulteriori informazioni sull'interpolazione delle stringhe in Go, consulta qu
 
 - [Documentazione ufficiale di fmt](https://pkg.go.dev/fmt)
 - [Sprintf on Go by Example](https://gobyexample.com/string-formatting)
-- [Articolo di blog su DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-go)

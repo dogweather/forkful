@@ -52,7 +52,6 @@ Diving deeper into implementation, the `main` method in Java accepts an array of
 For more insights, put your snorkel on and dive in the ocean of these resources:
 
 - Understanding command line arguments in depth: [IBM’s guide to Java’s main method](https://www.ibm.com/developerworks/java/library/j-dcl/index.html)
-- If you're craving more finesse, check out Apache Commons CLI tutorial: [Quick Guide](https://www.tutorialspoint.com/apache_commons/apache_commons_cli.htm)
 - Need a variation of the theme? Explore JCommander: [JCommander guide](http://jcommander.org/)
  
 Life made easy! Happy coding!

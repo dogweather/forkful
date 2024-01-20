@@ -35,7 +35,3 @@ Escrever testes é uma prática comum em desenvolvimento de software, pois ajuda
 O módulo de testes do Gleam é escrito em Gleam e usa o assertor do `gleam_assert` por baixo dos panos.
 
 ## Veja também:
-
-- [Documentação Gleam: Testes](https://gleam.run/book/tour/test.html)
-- [Gleam Expect](https://github.com/gleam-lang/gleam-expect)
-- [Gleam Assert](https://github.com/gleam-lang/gleam-assert)

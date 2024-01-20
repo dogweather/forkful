@@ -77,6 +77,5 @@ Gleam utilizza una libreria esterna, `nodjson`, per gestire dati JSON. Questa li
 
 ## Vedi anche:
 
-- [Documentazione Gleam JSON](https://gleam.run/modules/json.html)
 - [Gleam repository su GitHub](https://github.com/gleam-lang/gleam)
 - [The JSON data format](https://www.json.org/json-it.html)

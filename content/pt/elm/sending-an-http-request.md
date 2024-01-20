@@ -42,5 +42,4 @@ Quando enviamos uma requisição GET, como no exemplo acima, Elm cria uma tarefa
 ## Veja Mais
 Aqui estão alguns recursos adicionais se você quiser mergulhar mais fundo em HTTP com Elm:
 - A [documentação oficial do Http](https://package.elm-lang.org/packages/elm/http/latest) é um ótimo lugar para começar.
-- [Este post no Elm Discourse](https://discourse.elm-lang.org/t/how-do-you-handle-http-requests-in-elm-0-19/2251) possui vários exemplos de como lidar com requisições HTTP de diferentes maneiras. 
 - O [guia oficial](https://guide.elm-lang.org/) tem um capítulo inteiro dedicado a interações com o servidor, incluindo como trabalhar com JSON.

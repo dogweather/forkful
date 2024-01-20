@@ -51,4 +51,3 @@ Escrever testes é uma prática recomendada por muitos desenvolvedores como form
 
 - [Tutorial Lua para Iniciantes](https://www.lua.org/pil/contents.html)
 - [Documentação Oficial do Módulo de Testes do Lua](https://www.lua.org/manual/5.3/manual.html#6.7)
-- [Artigo sobre Testes Automatizados em Lua](https://www.oreilly.com/content/testing-automated-lua-tests/)

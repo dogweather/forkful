@@ -50,5 +50,4 @@ HTML:n jäsentämisen toteutus Elm:llä on tehokas ja siinä on mahdollisuus hy�
 ## Katso myös:
 
 - [Elm-parserin dokumentaatio](https://package.elm-lang.org/packages/elm/parser/latest)
-- [Elm:ssä tehty HTML-jäsentäjä](https://github.com/elm-community/html-parser)
 - [Puppeteer](https://pptr.dev/) luotettava, mutta monimutkainen vaihtoehto.

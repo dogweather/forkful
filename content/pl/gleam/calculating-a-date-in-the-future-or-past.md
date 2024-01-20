@@ -42,6 +42,3 @@ Alternatywą do powyższego kodu byłoby dodawanie lub odejmowanie milisekund be
 Szczegółem implementacyjnym jest to, że funkcje `add_days_to_date` i `subtract_days_from_date` używają funkcji `new_span` do tworzenia okresu czasu do dodania lub odjęcia, a następnie przeliczają ten okres na milisekundy za pomocą `span_to_ms` zanim dodadzą lub odejmą ten czas od daty.
 
 ## Zobacz również
-- [Dokumentacja Gleam time](https://hexdocs.pm/gleam_stdlib/gleam/time/)
-- [Wprowadzenie do programowania w Gleam](https://gleam.run/book/tour/introduction.html)
-- [Dokument GNU o obliczaniu dat](https://www.gnu.org/software/libc/manual/html_node/Calculating-Dates.html)

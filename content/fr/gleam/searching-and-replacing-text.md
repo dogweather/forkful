@@ -34,7 +34,3 @@ En ce qui concerne les alternatives, vous pouvez également utiliser des express
 Dans Gleam, `string.replace` est implémenté en utilisant la fonction `string.split` suivie par `list.join`, ce qui n'est pas le moyen le plus efficace. Toutefois, pour la plupart des cas d'utilisation courants, cela devrait suffire.
 
 ## Voir Aussi:
-
-- Documentation officielle de Gleam: [Gleam Documentation](https://gleam.run/docs/)
-- Bibliothèque de chaînes de caractères de Gleam: [Gleam String Library](https://hexdocs.pm/gleam_stdlib/latest/gleam/string/)
-- Référence rapide de Gleam: [Gleam Cheat Sheet](https://gleam.run/cheat-sheet/)

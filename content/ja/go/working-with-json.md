@@ -42,4 +42,3 @@ JSONは1999年にダグラス·クロックフォードによって作成され�
 ## 関連情報を見る：関連リソースへのリンク
 
 - [Go言語公式ドキュメント：encoding/json](https://golang.org/pkg/encoding/json/)
-- [Go言語でのJSONの扱い方のチュートリアル](https://www.callicoder.com/golang-json/)

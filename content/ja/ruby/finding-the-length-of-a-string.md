@@ -38,5 +38,3 @@ puts str.length # ブロックの結果を出力します
 - [Ruby Documentation: String](https://docs.ruby-lang.org/ja/latest/class/String.html): 文字列に関する全面的な情報と所属するメソッドを提供します。
 
 - [Stack Overflow: Difference between length and size](https://stackoverflow.com/questions/6083219/): `length` と `size` の違いについての議論を提供します。
-
-- [How To Ruby: String Length](https://howtoruby.com/string-length/): Rubyでの文字列の長さの照会方法を解説します。

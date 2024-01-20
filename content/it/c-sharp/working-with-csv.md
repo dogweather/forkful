@@ -59,7 +59,4 @@ Il formato CSV è stato sviluppato negli anni '70 per permettere lo scambio di d
 Esistono anche altri formati di file per rappresentare dati tabellari, come ad esempio il formato Excel (.xlsx), ma spesso il formato CSV è preferito perché è più leggero e facile da lavorare con i dati. Tuttavia, è importante fare attenzione ad eventuali errori di formattazione nel file CSV, poiché possono causare problemi di importazione o esportazione dei dati.
 
 ## Vedi anche:
-- [Documentazione ufficiale di C# su lavorare con file CSV](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
 - [Esempi di codice per lavorare con file CSV in C#](https://www.codeproject.com/Tips/387327/Handling-CSVs-using-Csharp)
-- [Un'approfondimento sulla storia del formato CSV](https://blog.derefnull.com/convert-csv-to-json/)
-- [Un confronto tra diversi formati di file per dati tabellari](https://www.altexsoft.com/blog/datascience/csv-vs-xml-vs-json-vs-yaml-which-is-the-best-for-data-serialization/)

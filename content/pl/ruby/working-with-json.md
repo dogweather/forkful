@@ -56,4 +56,3 @@ W implementacji JSON-a ważną rolę odgrywa model danych `hash`, który pozwala
 Jeśli chcesz dowiedzieć się więcej o pracy z JSON-em w Ruby, zobacz poniższe źródła:
 - [Dokumentacja Ruby o bibliotece json](https://ruby-doc.org/stdlib-2.6.6/libdoc/json/rdoc/JSON.html)
 - [JSON w Ruby na przykładzie Railstutorial](https://www.railstutorial.org/book/filling_in_the_layout#sec-the_json_field_and_validation_errors)
-- [10 sposobów na lepsze wykorzystanie biblioteki json w Ruby](https://www.telerik.com/blogs/10-reasons-to-use-json-in-ruby)

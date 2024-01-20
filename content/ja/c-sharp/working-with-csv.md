@@ -41,5 +41,4 @@ CSVは、1970年代にIBMによって開発されたデータ形式です。プ�
 
 # 関連情報
 
-- [Microsoft Docs: CSVファイルの読み込みと書き込み](https://docs.microsoft.com/ja-jp/dotnet/standard/io/how-to-read-and-write-csv-files)
 - [Wikipedia: CSV](https://ja.wikipedia.org/wiki/CSV)

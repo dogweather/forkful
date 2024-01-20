@@ -36,4 +36,3 @@ println(lowerCaseEnglishGreeting) // вивести: hello, world!
 
 ## Дивіться також:
 - [Документація Kotlin про рядки](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [GitHub: базові функції Kotlin](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/text/StringCapitalizeDecapitalize.kt)

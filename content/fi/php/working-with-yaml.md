@@ -79,4 +79,3 @@ YAML kehitettiin alun perin JavaScript Object Notation (JSON) tiedostomuodon vai
 ## Katso myös
 - [YAML:n virallinen verkkosivusto](http://www.yaml.org/)
 - [Symfony YAML-komponentti](https://symfony.com/doc/current/components/yaml.html)
-- [Alfred YAML editori](https://yaml-online-parser.appspot.com/)

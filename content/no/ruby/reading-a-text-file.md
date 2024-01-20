@@ -30,5 +30,4 @@ Historisk sett har lesing av tekstfiler vært en grunnleggende operasjon i progr
 
 ## Se Også
 For mer informasjon om filhåndtering i Ruby, sjekk ut disse nyttige lenkene:
-- [Offisiell Ruby-dokumentasjon om Fil-Klassen](https://ruby-doc.org/core-2.7.1/File.html")
 - [Detaljert tutorial om filhåndtering i Ruby](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

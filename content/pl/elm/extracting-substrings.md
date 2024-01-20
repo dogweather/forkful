@@ -44,5 +44,3 @@ Szczegóły implementacyjne: Funkcja `String.slice` w Elm działa w czasie linio
 ## Zobacz również:
 
 - Oficjalna dokumentacja Elm do manipulacji ciągami: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Więcej o ciągach w Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
-- Poradnik Elm dla początkujących: [https://www.elm-tutorial.org/en/](https://www.elm-tutorial.org/en/)

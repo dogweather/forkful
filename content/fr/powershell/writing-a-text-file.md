@@ -52,6 +52,4 @@ Bien que PowerShell dispose de nombreuses commandes pour écrire des fichiers te
 
 Si vous souhaitez en savoir plus sur l'écriture de fichiers texte en utilisant PowerShell, voici quelques liens utiles :
 
-- [La documentation officielle de Microsoft sur `Out-File`](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/out-file?view=powershell-7.1)
-- [Le guide de base pour écrire des fichiers texte avec PowerShell](https://dev.to/tw20000000/what-is-a-powershell-script-file-and-how-to-write-one-415c)
 - [Un tutoriel YouTube sur l'écriture de fichiers texte avec PowerShell](https://www.youtube.com/watch?v=vq-PoTP3P6w)

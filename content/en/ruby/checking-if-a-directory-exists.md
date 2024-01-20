@@ -48,5 +48,4 @@ Another thing to note is that checking directory existence is not atomic in natu
 ## See Also
 
 - Ruby's [Dir class Documentation](https://ruby-doc.org/core-2.7.0/Dir.html)
-- [Errno::ENOENT Documentation](https://ruby-doc.org/core-2.7.2/Errno/ENOENT.html) 
 - Stackoverflow Post: ["How to check if a directory exists in Ruby"](https://stackoverflow.com/questions/753918/how-to-check-if-a-directory-exists-in-ruby)

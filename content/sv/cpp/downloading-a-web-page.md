@@ -59,5 +59,4 @@ Vad gäller implementeringsdetaljerna, tar libcurl hand om mycket bakom kulisser
 ## Se också
 
 - *[libcurl Documentation](https://curl.haxx.se/libcurl/)*: För mer information om att använda libcurl.
-- *[Boost.Asio HTTP Client Example](https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/example/cpp11/http/client/async_client.cpp)*: En mer avancerad metod för att ladda ner webbsidor i C++. 
 - *[Stackoverflow](https://stackoverflow.com/questions/1011339/how-do-you-make-a-http-request-with-c)*: Diskussioner om olika sätt att utföra HTTP-anrop i C++.

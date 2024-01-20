@@ -41,5 +41,4 @@ In Kotlin ist das Schreiben auf der Standardfehlerausgabe auch Teil des Kotlin-S
 
 ## Siehe auch
 
-- [Kotlin Standard Library - System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-system.err/)
 - [Log4j](https://logging.apache.org/log4j/2.x/)

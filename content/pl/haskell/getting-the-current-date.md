@@ -60,4 +60,3 @@ Gdzie wynikiem powyższego kodu będzie:
 
 - [Dokumentacja Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
 - [Projekt time-lens w GitHub](https://github.com/ekmett/lens)
-- [Repozytorium time-parsers](https://github.com/chrisdone/time-parsers)

@@ -33,5 +33,4 @@ För att skriva till standardfel i Python, använder man en inbyggd metod som ka
 
 ## Se även:
 - [Python dokumentation om skrivning till standardfel](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [En förklaring om användningen av standardfel på Real Python (engelska)](https://realpython.com/python-exceptions-errmsg/)
 - [En diskussion om användningen av standardfel på Stack Overflow (engelska)](https://stackoverflow.com/questions/53395323/when-to-use-sys-stdout-write-instead-of-print)

@@ -36,5 +36,4 @@ Serial.println(s); // "Hello, Arduino!"が出力されます
 
 以下リンクでより深く学べます：
 - [Arduino String Reference（英語）](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Arduino Programming Guide（英語）](https://www.arduino.cc/en/main/howto)
 以上で、テキストの検索と置換については一通り理解できたはずです。これであなたもArduinoにおけるテキスト処理の達人に一歩近づいたはず！

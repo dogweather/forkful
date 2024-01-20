@@ -55,5 +55,4 @@ Dette vil gi resultatet:
 ## Se Også
 
 - [TagSoup på Hackage](https://hackage.haskell.org/package/tagsoup)
-- [Real World Haskell: Kapittel 19, Parsing HTML and XML](http://book.realworldhaskell.org/read/parsing-a-binary-data-format.html)
 - [Andre parsing biblioteker på Hackage](https://hackage.haskell.org/packages/#cat:Parsing)

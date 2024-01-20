@@ -60,5 +60,3 @@ void printDateTime(const tmElements_t & tm) {
 
 ## 関連リンク (See Also)
 - [TimeLib公式ドキュメンテーション](https://www.arduinolibraries.info/libraries/time)
-- [日付と時間を扱うRTClibライブラリ](https://www.arduino.cc/reference/en/libraries/rtclib-by-neironv)
-- [Arduinoでの時間管理について](https://tutorial-arduino.com/Arduino_time_control)

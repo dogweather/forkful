@@ -41,4 +41,3 @@ Historia uwierzytelnienia HTTP sięga roku 1996, kiedy to został ono oficjalnie
 ## Zobacz też
 - Spójrz na [dokumentację clj-http](https://github.com/dakrone/clj-http) do dogłębnego zrozumienia, jak korzystać z tej biblioteki w Clojure.
 - Przeczytaj [dokumenty uwierzytelnienia HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) na MDN dla pełniejszego obrazu uwierzytelnienia HTTP.
-- Sprawdź nasz [przewodnik po uwierzytelnianiu Digest](link-to-digest-guide), jeśli chcesz dowiedzieć się więcej o bezpieczniejszych alternatywach.

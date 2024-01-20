@@ -35,6 +35,4 @@ Jeśli chcemy napisać bardziej skomplikowane testy, możemy skorzystać z zaawa
 
 Jeśli chcesz dowiedzieć się więcej o testowaniu w PowerShell, polecamy następujące źródła:
 
-- [Dokumentacja PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/test-command)
-- [Blog o PowerShell](https://devblogs.microsoft.com/powershell/writing-powershell-tests/)
 - [Książka "PowerShell in Depth"](https://www.manning.com/books/powershell-in-depth)

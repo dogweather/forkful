@@ -42,5 +42,3 @@ Em Gleam, a função "error!" é implementada utilizando a função "sys::printf
 ## Veja também:
 
 - [Função "error!" na documentação oficial de Gleam](https://gleam.run/documentation/#error!)
-- [Um guia completo sobre a escrita para o erro padrão em diversas linguagens](https://www.geeksforgeeks.org/different-ways-to-print-error-message/)
-- [Comparação entre o uso do erro padrão e registros de log (em inglês)](https://stackify.com/error-log-options/)

@@ -41,6 +41,5 @@ void loop() {
 
 ## 참고할 만한 자료
 
-- [Arduino - Time](https://www.arduino.cc/en/Reference/Time)
 - [Arduino - TimeLib Library](https://www.pjrc.com/teensy/td_libs_Time.html)
 - [Date and Time Programming](https://en.wikipedia.org/wiki/Date_and_time_notation_in_Asia#South_Korea)

@@ -60,4 +60,3 @@ However, unlike in JavaScript where an HTTP request runs automatically once crea
 - [Elm Guide: The Http package](https://guide.elm-lang.org/effects/http.html) 
 - [MDN: Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [GitHub: elm-http-builder](https://github.com/lukewestby/elm-http-builder)
-- [GitHub: elm-ajax](https://github.com/evancz/elm-ajax)

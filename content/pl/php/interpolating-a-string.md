@@ -39,7 +39,6 @@ Powinno zwrócić: `Cześć, Jan! Masz już 25 lat.`
 
 ## Zobacz również
 
-- [Dokumentacja PHP na temat ciągów znaków](https://www.php.net/manual/pl/language.types.string.php)
 - [Pełna dokumentacja PHP](https://www.php.net/docs.php)
 
 Remember programming is a continuous endeavor, always seek ways to improve your craft. Happy Coding!

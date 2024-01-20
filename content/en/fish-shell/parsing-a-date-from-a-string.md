@@ -41,6 +41,5 @@ In Fish Shell, the `-d` option is fed the date string and the `+%s` option is us
 For more details on the Fish Shell, check out these resources:
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Dates and Times in Unix](https://www.eecis.udel.edu/~bmiller/UNIXandC/UNIX02.html)
 - [Python dateutil Library](https://dateutil.readthedocs.io/en/stable/)
 - [JavaScript Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)

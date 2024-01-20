@@ -25,5 +25,3 @@ Wypisywanie do standardowego błędu jest częstą praktyką w programowaniu, po
 
 ## Zobacz także:
 - [Dokumentacja C++ na temat strumieni wyjściowych](https://en.cppreference.com/w/cpp/io)
-- [Wypisywanie do strumienia wyjściowego w C++](https://www.geeksforgeeks.org/c-ostream-with-examples/)
-- [Strumienie wyjściowe w C++ - poradnik dla początkujących](https://www.learncpp.com/cpp-tutorial/151-output-with-ostream-and-wofstream/)

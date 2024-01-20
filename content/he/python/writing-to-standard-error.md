@@ -37,5 +37,3 @@ sys.stderr.write("הודעת שגיאה!")
 
 ### קישורים נוספים:
 * [מדריך מערכת sys מאת המודול הרשמי בשימוש פייתון](https://docs.python.org/3/library/sys.html)
-* [תערובת קוד המראה את העומק של כתיבה לערך השגיאה המקובל בפייתון](https://gist.github.com/simeonhova/ba3146136ebbcfa935a805586b492eb2)
-* [פוסט בבלוג קוד שמסביר בפרט כיצד לכתוב לערך השגיאה המקובל בפייתון](https://pythontips.com/2013/08/07/the-between-stdout-and-stderr/)

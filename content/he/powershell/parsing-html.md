@@ -51,6 +51,5 @@ PowerShell הושקה ב-2006 כאמצעי ממוחשב לניהול ואוטו�
 
 ## ראה גם:
 
-- [Invoke-WebRequest official documentation](https://docs.microsoft.com/he-il/powershell/scripting/learn/deep-dives/everything-about-html-parsing?view=powershell-7.1)
 - [HTML parsing in Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [HTML parsing in Node.js](https://cheerio.js.org/)

@@ -43,5 +43,4 @@ $page.Content
 ## 查看更多：
 
 - [官方 PowerShell 文档](https://docs.microsoft.com/zh-cn/powershell/scripting/overview?view=powershell-7.1)
-- [Invoke-WebRequest 命令详解](https://www.gngrninja.com/script-ninja/2016/5/24/powershell-getting-web-content-using-invoke-webrequest)
 - [HTTP 和 HTTPS 协议详解](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)

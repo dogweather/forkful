@@ -35,6 +35,4 @@ Gleam에는 Python의 f-string방식이나 C#의 string.Format 방식과 같은 
 
 ## 참고 자료:
 
-- [Gleam Documentation](https://gleam.run/docs/)
 - [String interpolation on Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)
-- [Comparison of string interpolation methods in various languages](https://en.wikibooks.org/wiki/Comparison_of_programming_languages_(string_functions)#Interpolation)

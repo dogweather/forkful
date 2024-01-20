@@ -41,4 +41,3 @@ Haskell використовує типи даних UTCTime і Day для ро�
 
 - [Data.Time вікі Hackage](http://hackage.haskell.org/package/time-1.6.0.1/docs/Data-Time.html)
 - [Робота з датами і часом в Haskell, Стаковерфлоу](https://stackoverflow.com/questions/2408976/haskell-datetime-library)
-- [Огляд моделі часу в Haskell, Лі Суї Йенсен](https://byorgey.wordpress.com/2009/12/22/beginnings-of-a-time-library/)

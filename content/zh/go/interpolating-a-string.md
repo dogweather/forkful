@@ -38,4 +38,3 @@ func main() {
 ## 查看更多
 - Go 文档：[fmt - The Go Programming Language](https://golang.org/pkg/fmt/)
 - 开源书籍：[《Go by Example》](https://gobyexample.com/)
-- 文章：[《Go 中的格式化字符串》](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-go)

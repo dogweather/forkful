@@ -63,6 +63,3 @@ Quanto à implementação da função `mktime`, ela pega uma estrutura `tm`, con
 ## Veja Também:
 
 - [`time.h` Reference](http://www.cplusplus.com/reference/ctime/)
-- [Man page of `mktime`](https://man7.org/linux/man-pages/man3/mktime.3.html)
-- [Date and Time in C - GeeksforGeeks](https://www.geeksforgeeks.org/date-time-c/)
-- [Funções de tempo e data na linguagem de programação C - Embarcados](https://www.embarcados.com.br/funcoes-de-tempo-e-data-na-linguagem-de-programacao-c/)

@@ -46,5 +46,4 @@ Behind the scenes, "yq" uses the "jq" library to parse and manipulate the YAML d
 ## See Also:
 
 - [yq GitHub repo](https://github.com/mikefarah/yq)
-- [shyaml GitHub repo](https://github.com/martinblech/xml2json)
 - [YAML official website](https://yaml.org/)

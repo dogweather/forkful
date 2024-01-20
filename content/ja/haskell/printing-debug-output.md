@@ -39,5 +39,4 @@ main = putStrLn (trace "This will be printed to the console" "Hello, world!")
 より詳しい情報や別の視点を得るためには、以下のページが役立つかもしれません。
 
 - [Debug.Traceの公式ドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
-- [Real World Haskell](http://book.realworldhaskell.org/read/debugging-and-profiling.html)のデバッグとプロファイリングの節
 - [HaskellのIO](http://learnyouahaskell.com/input-and-output)についての詳細なガイド

@@ -54,4 +54,3 @@ Implementation Details: Calculation in Elm is straightforward. Days are converte
 
 - [Elm Time Module Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
 - Elm's date library: [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/)
-- [Elm's guide on Time and Date](https://guide.elm-lang.org/architecture/effects/time.html)

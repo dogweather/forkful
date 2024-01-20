@@ -44,7 +44,3 @@ Pomimo że `strlen()` jest łatwy do użycia i często stosowany, ma również s
 Alternatywą dla `strlen()` jest iterowanie przez łańcuch samodzielnie używając pętli, co daje więcej kontroli nad procesem. Pamiętaj, że każdy łańcuch zakończy się null-terminatorem.
 
 ## Zobacz również
-
-- `strnlen()`: Funkcja podobna do `strlen()`, ale z dodatkowym limitem długości. [Link tutaj](https://www.cplusplus.com/reference/cstring/strnlen/)
-- `sizeof()`: Inny sposób do znalezienia rozmiaru łańcucha. Pamiętaj, że dla łańcuchów zarezerwowanych dynamicznie `sizeof()` zwróci tylko wielkość wskaźnika. [Link tutaj](https://www.cplusplus.com/reference/cstring/sizeof/)
-- `strlcpy() i strlcat()`: Bezpieczne metody do kopiowania i łączenia łańcuchów. [Link tutaj](https://www.cplusplus.com/reference/cstring/strlcpy/, https://www.cplusplus.com/reference/cstring/strlcat/)

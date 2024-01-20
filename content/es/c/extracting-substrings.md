@@ -55,4 +55,3 @@ Si esta guía te fue útil, quizás quieras explorar temas relacionados. Aquí t
 
 - Sobre `snprintf()`: [cplusplus.com](http://www.cplusplus.com/reference/cstdio/snprintf/)
 - Sobre `memcpy()`: [cplusplus.com](http://www.cplusplus.com/reference/cstring/memcpy/)
-- Más detalles sobre `strncpy()`: [geeksforgeeks.org](https://www.geeksforgeeks.org/strncpy-in-c-cpp/)

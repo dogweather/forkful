@@ -47,4 +47,3 @@ Check out these resources on random numbers in Kotlin:
 - [Kotlin official docs on Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
 - [xorshift on Wikipedia](https://en.wikipedia.org/wiki/Xorshift)
 - [Java's Random library](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Random.html) for comparison
-- [Randomness in Cryptography](https://www.sciencedirect.com/science/article/pii/S001999586790140X) for a use-case discussion.

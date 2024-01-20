@@ -48,4 +48,3 @@ Die Implementierung von YAML in Gleam basiert auf der Bibliothek "js-yaml". Sie 
 
 - [Gleam Dokumentation](https://gleam.run/documentation/)
 - [The Basics of YAML](https://www.codeproject.com/Articles/1214409/The-Basics-of-YAML)
-- [TOML vs. YAML](https://www.toptal.com/developers/toml/toml-vs-yaml)

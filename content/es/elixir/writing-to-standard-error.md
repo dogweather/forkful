@@ -40,4 +40,3 @@ En Elixir, escribir a la salida de error estándar se realiza utilizando la func
 
 - [Documentación oficial de Elixir sobre `IO.puts/2`](https://hexdocs.pm/elixir/IO.html#puts/2)
 - [Ejemplos de cómo utilizar `IO.puts/2`](https://elixir-lang.org/getting-started/io-and-the-file-system.html#io-and-the-file-system)
-- [Más sobre la salida de error estándar y otras opciones de depuración en Elixir](https://elixirschool.com/es/lessons/basics/io-n-enumerables/)

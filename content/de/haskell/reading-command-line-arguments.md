@@ -44,4 +44,3 @@ Die Implementierung von `getArgs` ist recht geradlinig. `getArgs` gibt eine List
 Weitere Informationen finden Sie auf den folgenden Seiten:
 
 - [Haskell Wiki: Command line argument handling](https://wiki.haskell.org/Tutorials/Programming_Haskell/Argument_handling)
-- [Haskell Handbook: System.Environment module](https://haskell-lang.org/library/System.Environment)

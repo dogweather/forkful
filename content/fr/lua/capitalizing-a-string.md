@@ -41,5 +41,4 @@ Dans cet exemple, nous utilisons la fonction `upper()` intégrée à Lua. Elle c
 Voici quelques ressources pour en savoir plus sur Lua et la manipulation des chaînes de caractères :
 
 - [Manuel de référence Lua 5.4](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Guide LuaRocks sur les chaînes Lua](https://luarocks.org/modules/luarocks/lua-strings)
 - [Gestion des chaînes en Lua - Tutorialspoint](https://www.tutorialspoint.com/lua/lua_strings.htm)

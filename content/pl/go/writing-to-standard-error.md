@@ -44,4 +44,3 @@ Pisanie do standardowego wyjścia błędów jest często wykorzystywane do debug
 ## Zobacz także:
 
 - [Dokumentacja języka Go](https://golang.org/doc/)
-- [Wprowadzenie do standardowego wyjścia błędów w języku Go](https://tutorialedge.net/golang/io-writer-interface-tutorial/)

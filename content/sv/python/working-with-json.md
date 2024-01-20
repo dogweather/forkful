@@ -35,6 +35,3 @@ json_str = json.dumps(my_list)
 Historiskt sett har JSON utvecklats för att ersätta XML som standard för datautbyte på webben. Ett alternativ till JSON är YAML, som har liknande syntax men är mer läsbar för människor. Implementationsdetaljer för JSON i Python finns på den officiella dokumentationen [här](https://docs.python.org/3/library/json.html).
 
 ## Se även:
-
-- [JSON i Python - en grundläggande handledning](https://hackersandslackers.com/json-in-python/)
-- [YAML vs JSON: Vilket är bäst för din applikation?](https://www.cloudsavvyit.com/9190/yaml-vs-json-which-is-best-for-your-application/)

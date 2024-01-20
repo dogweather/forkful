@@ -60,5 +60,3 @@ Der Start eines neuen Projekts beinhaltet oft mehr als nur das Erstellen einer `
 - [NPM Dokumentation](https://docs.npmjs.com/)
 - [Yarn Dokumentation](https://classic.yarnpkg.com/lang/en/)
 - [pnpm Dokumentation](https://pnpm.io/)
-- [Einführung in Linting](https://eslint.org/docs/about/)
-- [Unit Testing mit Jest](https://jestjs.io/docs/tutorial-javascript)

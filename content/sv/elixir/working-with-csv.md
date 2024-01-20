@@ -48,5 +48,4 @@ CSV-formatet har funnits sedan 1972 och användes ursprungligen för tabellforma
 ## Se även:
 
 - Elixir's officiella dokumentation om [String-modulen](https://hexdocs.pm/elixir/String.html) som innehåller funktioner för att arbeta med text och teckensträngar.
-- [csv-elixir](https://github.com/csv-elixir/csv) biblioteket för att läsa och skriva CSV-filer i Elixir.
 - [Elixir School](https://elixirschool.com/en/) en gratis läroplattform för att lära sig Elixir och dess ekosystem.

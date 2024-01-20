@@ -55,5 +55,3 @@ En cuanto a la implementación, `basic_auth` codifica las credenciales en base64
 * [Gema de Ruby 'net/http'](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
 * [Documentación de la RFC de Autenticación HTTP](https://datatracker.ietf.org/doc/html/rfc7617)
 * [Codificación base64 en Ruby](https://apidock.com/ruby/Base64/encode64)
-* [Protocolo HTTPS en Ruby](https://www.rubyguides.com/2018/04/ruby-https/)
-* [Autenticación de portador de token en Ruby](https://www.loginradius.com/engineering/blog/how-to-implement-token-based-authentication-in-ruby/)

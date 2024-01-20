@@ -39,4 +39,3 @@ Pour plus d'informations sur le maniement de fichiers en Lua, consultez les lien
    
 - [Programming in Lua: Files and I/O](http://www.lua.org/pil/21.html)
 - [Lua-Users Wiki: File Input/Output](http://lua-users.org/wiki/FileInputOutput)
-- [LuaFileSystem library](https://keplerproject.github.io/luafilesystem/)

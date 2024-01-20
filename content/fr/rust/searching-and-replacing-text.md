@@ -40,4 +40,3 @@ En ce qui concerne les alternatives, Rust propose aussi les expressions réguli�
 
 - [Documentation Rust sur les chaînes de caractères](https://doc.rust-lang.org/book/ch08-02-strings.html)
 - [Documentation Rust sur regex crate](https://docs.rs/regex/1.4.3/regex/) 
-- [Tutorial Rust chaînes de caractères](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

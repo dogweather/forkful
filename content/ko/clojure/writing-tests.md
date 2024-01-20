@@ -40,5 +40,3 @@ Ran 1 tests containing 2 assertions.
 # 자료 참고:
 
 - [ClojureDocs 테스트 라이브러리](https://clojuredocs.org/clojure.test)
-- [Onyx 테스트 라이브러리](https://onyxplatform.org/guide/testing.html)
-- [Clojure 테스트 설정하기](https://www.braveclojure.com/testing/)

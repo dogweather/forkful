@@ -48,5 +48,4 @@ Länkar till relaterade artiklar, videor och andra resurser kan hjälpa till att
 
 - [Officiell Lua-dokumentation](https://www.lua.org/manual/5.3/) (Engelska)
 - [Lua Programmeringstutorial på Wikibooks](https://en.wikibooks.org/wiki/Lua_Programming) (Engelska)
-- [Lua professionell utbildning](https://www.educba.com/careers/learn-lua-programming/)
 - [En kort historik om Lua](https://www.lua.org/history.html) (Engelska)

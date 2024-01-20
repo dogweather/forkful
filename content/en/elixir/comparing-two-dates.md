@@ -46,4 +46,3 @@ IO.inspect Date.diff(date1, date2) # 31
 
 - [Official Elixir's Date Documentation](https://hexdocs.pm/elixir/Date.html)
 - [Comparison Operators in Elixir](https://hexdocs.pm/elixir/operators.html)
-- [Timex Library](https://hexdocs.pm/timex/readme.html)

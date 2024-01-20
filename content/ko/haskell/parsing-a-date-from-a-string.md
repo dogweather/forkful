@@ -42,4 +42,3 @@ main = print $ parseDate "21-01-2021"
 
 ## 참고자료
 - `Data.Time` 라이브러리의 Haskell hackage: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- Haskell에서 날짜와 시간 다루기: [https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time#parsing-and-formatting-dates-and-times](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time#parsing-and-formatting-dates-and-times)

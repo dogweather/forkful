@@ -40,5 +40,3 @@ Java言語以外でも、文字列の大文字化は通常、組み込み関数�
 
 * OracleのJavaドキュメンテーション: [Stringクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
 * Stack Overflow: ["How to convert a string to all caps in java?"](https://stackoverflow.com/questions/5054995/how-to-convert-a-string-to-all-caps-in-java)
-* Baeldung: ["Convert String to UpperCase in Java"](https://www.baeldung.com/java-convert-string-to-uppercase) 
-* geeksforgeeks.org: ["String toUpperCase() Method in Java"](https://www.geeksforgeeks.org/java-lang-string-touppercase-java/)

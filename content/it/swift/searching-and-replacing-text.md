@@ -36,7 +36,6 @@ Un'alternativa a `replacingOccurrences` è l'utilizzo di funzioni di regex (regu
 ## See Also:
 Per ulteriori approfondimenti, visita i seguenti link:
 
-- Apple Developer Documentation - [`replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/swift/string/2893958-replacingoccurrences)
 - Esempi di regex in Swift - [RegexOne](https://regexone.com/lesson/introduction_abcs)
 
 Ricorda, la pratica fa la perfezione. Continua a codificare in Swift, esplora e sperimenta!

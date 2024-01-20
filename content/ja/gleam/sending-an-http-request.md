@@ -39,6 +39,3 @@ case response {
 
 ## 参考リンク
 GleamでHTTPリクエストを深く探求したい方は以下のリンクをチェックしてください。
-
-* [Gleam公式ドキュメンテーション](https://gleam.run/book/tour/http-requests.html)
-* [httpcライブラリについての詳細](https://hexdocs.pm/gleam/httpc.Gleam.html)

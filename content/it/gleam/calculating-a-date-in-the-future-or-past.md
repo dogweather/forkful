@@ -29,5 +29,4 @@ Un'altra opzione sarebbe l'utilizzo di librerie esterne o costruzioni di linguag
 Per quanto riguarda l'implementazione in Gleam, la funzione `add` della libreria `datetime` prende come argomento un `interval` da aggiungere alla data corrente.
 
 ## Vedi anche
-- [Gleam Documentation on DateTime](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html) per approfondire l'uso delle funzioni `add` e `interval`
 - [Understanding Time in Programming](https://medium.com/swlh/understanding-time-in-programming-b5429ef87cbc) per una panoramica generale sulla gestione del tempo nella programmazione.

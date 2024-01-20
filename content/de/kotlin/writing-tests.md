@@ -32,6 +32,5 @@ Tests spielen eine wichtige Rolle in der Geschichte der Softwareentwicklung und 
 Die Implementierung von Tests in Kotlin erfolgt durch Annotationen wie "@Test" und Assertions wie "assertEquals". Diese helfen dabei, Tests übersichtlich und leicht verständlich zu gestalten.
 
 ## Siehe auch:
-- [Kotlin Test-Unterstützung](https://kotlinlang.org/docs/reference/testing.html)
 - [JUnit](https://junit.org/junit5/)
 - [MockK](https://mockk.io/)

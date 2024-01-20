@@ -49,5 +49,3 @@ postData data =
 
 ## 참고 자료
 * [Elm 공식 문서 - Http](https://package.elm-lang.org/packages/elm/http/latest/)
-* [Elm 공식 문서 - Json.Decode](https://package.elm-lang.org/packages/elm-lang/core/6.0.0/Json-Decode)
-* [Elm 언어 소개](https://ko.wikipedia.org/wiki/Elm_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4))

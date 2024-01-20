@@ -54,4 +54,3 @@ Para mais detalhes sobre a comparação de datas e as funções date em Bash, co
 
 - Manual do Bash: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
 - Guia Avançado de Scripting Bash: [https://tldp.org/LDP/abs/html/](https://tldp.org/LDP/abs/html/)
-- Manipulação de datas com Bash: [https://www.linuxjournal.com/content/doing-date-manipulations-bash](https://www.linuxjournal.com/content/doing-date-manipulations-bash)

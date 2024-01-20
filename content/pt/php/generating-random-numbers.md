@@ -61,6 +61,4 @@ Como alternativas, existem bibliotecas PHP que fornecem mais funcionalidades par
 Quer entrar ainda mais fundo no assunto? São links úteis:
 
 - [PHP Manual on Random Functions](https://www.php.net/manual/en/book.math.php)
-- [PHP Manual on Cryptography Extensions](https://www.php.net/manual/en/book.crypt.php)
-- [RandomLib on GitHub](https://github.com/ircmaxell/random-lib)
 - [SecureRandom on GitHub](https://github.com/paragonie/random_compat)

@@ -48,5 +48,4 @@ Hoy en día, se prefiere la función `length()` porque es más sencilla y eficie
 Para obtener más detalles sobre la programación de Arduino, puedes visitar los siguientes enlaces:
 
 - [Referencia oficial de Arduino](https://www.arduino.cc/reference/en/)
-- [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
 - [Documentación de la función length()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)

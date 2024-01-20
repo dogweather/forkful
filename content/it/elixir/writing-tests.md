@@ -58,7 +58,3 @@ Scrivere test è una pratica comune nel processo di sviluppo del software. Sebbe
 Un modo comune per scrivere test in Elixir è utilizzare il modulo ```ExUnit.Case```, che fornisce una serie di macro per definire test e assert personalizzati. Inoltre, Elixir offre anche il supporto per i test generativi con il modulo ```StreamData```, che genera dati casuali per testare il nostro codice in modo più approfondito.
 
 Vedi anche: Link correlati
-
-- [Documentazione su testing in Elixir](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-mocks.html)
-- [Articolo su come scrivere test di integrazione in Elixir](https://thoughtbot.com/blog/testing-and-dumping-external-http-apis-in-elixir)
-- [Esempi di test generativi in Elixir](https://elixirschool.com/en/lessons/advanced/stream-data/)

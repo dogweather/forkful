@@ -48,4 +48,3 @@ Pour implémenter l'écriture vers la sortie d'erreur standard en Haskell, il su
 
 - [Documentation officielle de Haskell](https://www.haskell.org/)
 - [Module System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Bibliothèque de journalisation "log"](https://hackage.haskell.org/package/log-0.12.0/docs/System-Log-Logger.html)

@@ -33,5 +33,4 @@ Uma alternativa ao uso da saída padrão de erro é o uso de um sistema de log m
 Em Clojure, tanto a função `pr` quanto a função `prn` podem ser usadas para escrever na saída padrão de erro. A diferença é que a `prn` adiciona uma linha em branco após a mensagem e a `pr` não.
 
 ## Veja também:
-- [Documentação oficial de Clojure](https://clojure.org/reference/io)
 - [Artigo sobre erros e saídas em Clojure](https://www.newbedev.com/clojure/what-is-the-difference-between-print-and-println-in-clojure/)

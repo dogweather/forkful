@@ -42,4 +42,3 @@ For ytterligere lesning og ressurser, se de følgende kildene:
 
 - [Clojure Regex Manual](https://clojuredocs.org/clojure.core/re-seq)
 - [Regular Expressions Intro](https://www.regular-expressions.info/tutorial.html)
-- [Clojure Regular Expressions Guide](http://www.learn-clojure.com/clojure_regex)

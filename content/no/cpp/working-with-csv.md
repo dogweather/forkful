@@ -57,4 +57,3 @@ For mer informasjon om CSV-formatet og hvordan man kan bruke det i C++, sjekk ut
 
 - [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [CSV-parser på GitHub](https://github.com/vincentlaucsb/csv-parser)
-- [Tutorial for å lese og skrive CSV-filer i C++](https://www.ai-camp.net/post/2015/08/a-simple-csv-parser-in-cpp)

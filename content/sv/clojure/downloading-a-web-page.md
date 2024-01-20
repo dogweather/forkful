@@ -38,7 +38,6 @@ Om vi dyker djupare in i implementeringen, använder koden ovan clj-http, ett Cl
 ## Se också
 För mer information och resurser om att ladda ner webbsidor med Clojure, se följande länkar:
 
-- Clj-http dokumentation: [https://clj-http.lambdaisland.com/](https://clj-http.lambdaisland.com/)
 
 - Web scraping med Clojure: [https://kimh.github.io/clojure-by-example/](https://kimh.github.io/clojure-by-example/)
 

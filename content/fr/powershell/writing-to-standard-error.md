@@ -51,4 +51,3 @@ Pour implémenter l'écriture vers la sortie standard erreur, PowerShell utilise
 # Voir aussi:
 
 - [Documentation officielle de Microsoft sur la commande Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
-- [Tutoriel sur l'écriture vers la sortie standard erreur en PowerShell](https://adamtheautomator.com/powershell-write-error/)

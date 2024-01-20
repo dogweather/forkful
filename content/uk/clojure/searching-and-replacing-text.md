@@ -38,5 +38,3 @@ Clojure має декілька функцій для пошуку та замі
 ## Також бачити:
 
 - Документація Clojure: [clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
-- Регулярні вирази в Clojure: [clojure-doc](https://clojure-doc.org/articles/tutorials/regular_expressions.html)
-- Базові функції обробки рядків у Clojure: [practicalli](https://practicalli.github.io/clojure/clojure-essentials/clojure.string.html)

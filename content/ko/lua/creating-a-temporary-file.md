@@ -33,4 +33,3 @@ print(tmp_file)
 ## 참고 자료
 - Lua 공식 문서: [os.tmpname() 함수](https://www.lua.org/manual/5.4/manual.html#pdf-os.tmpname)
 - Python 임시 파일 생성: [tempfile 모듈](https://docs.python.org/3/library/tempfile.html)
-- 임시 파일 사용법: [Using Temporary Files In Your Application](https://www.2ality.com/2019/07/temporary-files-nodejs.html)

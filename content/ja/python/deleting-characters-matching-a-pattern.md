@@ -42,7 +42,3 @@ Hello, World!
 3. **実装の詳細：** `re.sub()`は、最初に文中でパターンを検索し、その後該当部分を指定した文字列で置き換えます。パターンが見つからない場合、テキストはそのまま返されます。
 
 # 参照：
-
-- Python公式ドキュメンテーション：正規表現の操作 [https://docs.python.org/ja/3/library/re.html]()
-- Regular Expression HOWTO [https://docs.python.org/ja/3/howto/regex.html]()
-- Pythonの文字列操作のまとめ [https://note.nkmk.me/python-str-extract-substring/]()

@@ -38,6 +38,5 @@ Når det gjelder implementeringsdetaljer, er Elm's manglende filsystemfunksjonal
 
 ## Se Også:
 
-- [Elm's 'elm/file' NPM-pakke](https://www.npmjs.com/package/elm/file)
 - [Python File I/O](https://docs.python.org/3/tutorial/inputoutput.html)
 - [Node.js Filesystem Modul](https://nodejs.org/api/fs.html)

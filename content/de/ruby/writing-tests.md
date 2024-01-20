@@ -62,4 +62,3 @@ Tests zu schreiben ist nicht nur eine moderne Praxis, sondern hat auch eine inte
 - [Minitest Dokumentation](https://github.com/seattlerb/minitest)
 - [RSpec](https://rspec.info/)
 - [Cucumber](https://cucumber.io/)
-- [Test-Driven Development in Ruby](https://www.rubyguides.com/2018/07/test-driven-development-by-example/)

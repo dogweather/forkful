@@ -61,5 +61,4 @@ No entanto, este método precisa de cautela, pois pode abrir seu código para vu
 ## Veja Também
 
 - Guia de programação Bash: [https://tldp.org/LDP/abs/html/](https://tldp.org/LDP/abs/html/)
-- Introdução à interpolação de strings em Bash: [https://linuxize.com/post/bash-string-interpolation/](https://linuxize.com/post/bash-string-interpolation/)
 - Saiba mais sobre a injeção de código: [https://www.owasp.org/index.php/Code_Injection](https://www.owasp.org/index.php/Code_Injection)

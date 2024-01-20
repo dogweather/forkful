@@ -31,5 +31,4 @@ Co więcej, szczegółowa implementacja `.ToLower()` zależy od konkretnego .NET
 
 ## Zobacz także:
 - Dokumentacja Microsoft na temat metody `.ToLower()`: [link](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- Poradnik Microsoft na temat sortowania łańcuchów znaków: [link](https://docs.microsoft.com/en-us/dotnet/standard/base-types/comparing-strings?view=net-5.0)
 - Dokumentacja Microsoft na temat znaków niezależnych od kultury: [link](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings?view=net-5.0)

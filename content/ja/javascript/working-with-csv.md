@@ -49,8 +49,3 @@ CSVの代替としては、JSONやXMLなどがありますが、特に大量の�
 CSVの実装には、他にも [Papa Parse](https://www.papaparse.com/) や [D3.js](https://d3js.org/) などのライブラリがあります。
 
 ## 関連リンク：
-
-- [Working with CSV files in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-csv-files-using-node-js)
-- [The history of CSV](https://chadoh.com/the-history-of-csv/)
-- [CSV vs. Excel: What's the Difference?](https://www.datasciencecentral.com/profiles/blogs/csv-vs-excel-what-s-the-difference)
-- [Top 10 JavaScript data visualization libraries](https://dev.to/ljcdev/top-10-javascript-charting-libraries-for-every-data-visualization-14d)

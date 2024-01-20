@@ -58,4 +58,3 @@ For more details on strings and their manipulation in Elixir, check out these ge
 
 - [Elixir official docs on Strings](https://hexdocs.pm/elixir/String.html)
 - [Elixir School's guide to Basic Strings](https://elixirschool.com/en/lessons/basics/strings)
-- [Erlang's Efficiency Guide on IO Lists](http://erlang.org/doc/efficiency_guide/ioLists.html)

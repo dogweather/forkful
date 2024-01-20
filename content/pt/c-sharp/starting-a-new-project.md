@@ -39,6 +39,5 @@ Os detalhes de implementação irão depender do tipo de aplicação que você e
 ## Ver também:
 - [Criando um aplicativo .NET Core com linha de comando](https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new)
 - [Criando um aplicativo .NET Core com Visual Studio](https://docs.microsoft.com/pt-br/visualstudio/containers/container-tools?view=vs-2019)
-- [Melhores práticas para projetos C#](https://docs.microsoft.com/pt-br/visualstudio/ide/dotnet-template-creation-workflow?view=vs-2019)
 
 Lembre-se, não importa quantos projetos você inicie, o que importa é como eles evoluem e se aperfeiçoam ao longo do tempo. Pratique, experimente e aprenda sempre!

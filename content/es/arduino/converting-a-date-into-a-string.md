@@ -51,6 +51,5 @@ El proceso de conversión básicamente toma los componentes individuales de la f
 
 ## Ver también:
 
-- [La documentación oficial de Arduino sobre sprintf()](https://www.arduino.cc/reference/en/language/functions/characters/printf/).
 - [El tutorial de Adafruit sobre RTC lib](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit).
 - [Discusión en StackOverflow sobre la conversión de fechas en Arduino](https://stackoverflow.com/questions/8492968/display-the-date-and-time-in-lcd-by-using-arduino).

@@ -38,4 +38,3 @@ Jäsennys tapahtuu aikavyöhykkeestä riippumatta, mikä tarkoittaa, että sisä
 
 - [Elm Time dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/)
 - [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/)
-- [Opettavainen artikkeli päivämäärien käsittelystä Elm:ssä](https://korban.net/posts/elm/2019-12-08-handling-dates-times-elm/)

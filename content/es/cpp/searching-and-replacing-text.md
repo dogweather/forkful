@@ -52,4 +52,3 @@ En C++, podemos utilizar la biblioteca de cadena estándar, que proporciona un m
 - [cplusplus.com - std::string::replace](http://www.cplusplus.com/reference/string/string/replace/)
 - [cplusplus.com - std::string::find](http://www.cplusplus.com/reference/string/string/find/)
 - [stackoverflow.com - How do I replace a string in C++?](https://stackoverflow.com/questions/4643512/replace-substring-with-another-substring-c)
-- [geeksforgeeks.org - std::replace in C++](https://www.geeksforgeeks.org/std-replace-in-c/)

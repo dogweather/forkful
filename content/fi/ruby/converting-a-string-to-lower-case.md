@@ -45,6 +45,5 @@ Ilmeisyyden vuoksi, kulissien takana `downcase` vertaa jokaista merkkijonon kirj
 Jos haluat tietää lisää Ruby-ohjelmoinnista, tutustu seuraaviin linkkeihin:
 
 - [Ruby Official Documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)
-- [Ruby Guides - Strings in Ruby](https://www.rubyguides.com/2015/05/ruby-string-methods/) 
 
 Tämän lisäksi, merkkijonotoiminnot ovat keskeinen osa kaikkia ohjelmointikieliä, ja näin ollen, niitä löytyy myös useissa muissa Ruby-algoritmeissa ja -menetelmissä.

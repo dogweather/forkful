@@ -34,4 +34,3 @@ Bash और Zsh जैसी अन्य शेल्स से तुलना
 ## देखें भी:
 
 - Fish Shell डॉक्यूमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Substring Extraction में विभिन्न Programming Languages की तुलना: [https://www.programiz.com/article/substring-different-languages](https://www.programiz.com/article/substring-different-languages)

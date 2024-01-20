@@ -50,7 +50,3 @@ Concernant les détails d'implémentation, en Arduino, la méthode `length()` fa
 ## Voir Aussi 
 
 Pour plus d'informations sur la manipulation des chaînes en Arduino, consultez les ressources suivantes :
-
-- La référence Arduino officielle sur la classe `String` : [https://www.arduino.cc/reference/en/language/variables/data-types/string-object/](https://www.arduino.cc/reference/en/language/variables/data-types/string-object/)
-- Un tutoriel utile sur les chaînes en Arduino : [https://learn.adafruit.com/arduino-tips-tricks-and-techniques/string-theory](https://learn.adafruit.com/arduino-tips-tricks-and-techniques/string-theory)
-- Une discussion approfondie sur `length()` et d'autres méthodes de chaîne : [https://www.codecademy.com/learn/focus-arduino/modules/learn-arduino-string/cheatsheet](https://www.codecademy.com/learn/focus-arduino/modules/learn-arduino-string/cheatsheet)

@@ -50,7 +50,3 @@ fn main() -> Nil {
 3. **Деталі реалізації**: Gleam використовує свій модуль ```gleam/otp/process``` для введення/виведення потоків. Це дозволяє робити зчитування текстового файла асинхронним.
 
 ## Додатково:
-
-- Документація Gleam по введенню/виведенню [тут](https://hexdocs.pm/gleam_stdlib/gleam/otp/process.html).
-- Основи роботи з файлами в Gleam можна знайти [тут](https://gleam.run/getting-started/getting-started/#working-with-files).
-- Як працювати з JSON у Gleam, дивіться [тут](https://github.com/rjdellecese/gleam-json).

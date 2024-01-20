@@ -41,4 +41,3 @@ Die Implementierungsdetails der `os.date` Funktion können von der zugrunde lieg
 
 - [Lua `os.date` Dokumentation](https://www.lua.org/manual/5.4/manual.html#6.9)
 - [Formatierende Zeit und Datum in Lua](https://riptutorial.com/lua/example/20310/formatting-date-and-time)
-- [Einführung in Lua](http://learncodethehardway.org/lua/)

@@ -61,6 +61,5 @@ Under the hood, Bash does simple string replacement for interpolation, no biggie
 ## See Also 
 
 - [Bash 3.0 ChangeLog](https://tiswww.case.edu/php/chet/bash/NEWS) for official release notes.
-- Explore more [`printf`](https://www.gnu.org/software/bash/manual/html_node/Printf-Examples.html) possibilities.
 - Dive deeper into [`string manipulation`](https://www.tldp.org/LDP/abs/html/string-manipulation.html) in Bash.
 - Check out the [`Parameter Expansion`](http://www.gnu.org/software/bash/manual/bash.html#Parameter-Expansion) in the Bash manual.

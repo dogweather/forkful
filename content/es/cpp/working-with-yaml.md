@@ -74,5 +74,4 @@ YAML significa "YAML Ain't Markup Language" y es un formato de serialización de
 ## Ver también:
 
 - [Sitio web oficial de YAML](https://yaml.org/)
-- [YAML vs. JSON: ¿cuál usar?](https://www.baeldung.com/yaml-vs-json)
 - [Documentación de yaml-cpp](https://github.com/jbeder/yaml-cpp/wiki)

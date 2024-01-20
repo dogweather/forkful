@@ -49,4 +49,3 @@ El módulo `tempfile` en Python usa una rutina subyacente segura para generar no
 
 * [Documentación oficial de Python para el módulo tempfile](https://docs.python.org/3/library/tempfile.html)
 * [Tutorial de Python sobre manejo de archivos](https://realpython.com/read-write-files-python/)
-* [Ejemplos de Literatura de Python sobre archivos temporales](https://python-literature.blogspot.com/2019/07/temporary-files-in-python.html)

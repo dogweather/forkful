@@ -44,6 +44,4 @@ void loop() {
 
 了解更多关于标准错误的背景和用法，可以参考下面的链接：
 
-- [What is Standard Error? - GeeksforGeeks](https://www.geeksforgeeks.org/what-is-standard-error/)
-- [Standard error (computing) - Wikipedia](https://en.wikipedia.org/wiki/Standard_error_(computing))
 - [Serial.println() - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)

@@ -59,4 +59,3 @@ W celu lepszego zrozumienia struktury i sposobu działania JSON można zapoznać
 - [Oficjalna strona JSON](https://www.json.org/json-pl.html)
 - [RapidJSON - biblioteka do pracy z JSON w C++](http://rapidjson.org/)
 - [JSON for Modern C++](https://github.com/nlohmann/json)
-- [JSON Toolkit](https://github.com/cinemast/libjson)

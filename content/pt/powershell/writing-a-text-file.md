@@ -40,4 +40,3 @@ Ao executar este comando, um arquivo de texto será criado no local indicado e o
 
 - [Documentação oficial do PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting)
 - [Exemplo de como escrever um arquivo de texto em Python](https://www.geeksforgeeks.org/reading-writing-text-files-python/)
-- [Curso online gratuito de PowerShell](https://www.udemy.com/course/curso-online-powershell/)

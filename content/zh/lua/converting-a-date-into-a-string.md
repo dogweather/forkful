@@ -51,5 +51,4 @@ print("当前时间是: " .. time)
 ## 另请参见:
 
 - [Lua os.date 官方文档](https://www.lua.org/manual/5.1/manual.html#pdf-os.date)
-- [Lua 日期和时间教程](https://www.tutorialspoint.com/lua/lua_date_time.htm)
 - [Lua 格式化字符串教程](https://eduonix.com/blog/everything-you-need-to-know-about-strings-in-lua/)

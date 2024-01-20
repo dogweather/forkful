@@ -46,7 +46,6 @@ JSON由Douglas Crockford于2001年创建，最初被用于在客户端和服务�
 # 参考资料：
 
 - [Poison源码](https://github.com/devinus/poison)
-- [Jiffy文档](https://hexdocs.pm/jiffy/Jiffy.html)
 - [Jason文档](https://hexdocs.pm/jason/)
 
 通过本文，你已经学会如何在Elixir中使用JSON，以及为什么程序员要使用它。希望本文能够帮助你更加轻松地处理JSON数据，提高你的编程效率。Happy coding!

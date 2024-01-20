@@ -38,6 +38,4 @@ I Gleam, kan vi bruke Pakken `gleam/httpc` for å sende HTTP-forespørsler. Pakk
 Alternativt kan programmerere også bruke bibliotekene `lhttpc` eller `hackney` for å sende HTTP-forespørsler i Gleam. Valget mellom disse bibliotekene beror ofte på personlig preferanse eller prosjektbehov.
 
 ## Se Også
-- Gleam HTTP-forespørsel Doc: [Link](https://hexdocs.pm/gleam_stdlib/httpc.html)
-- Gleam HTTP-forespørsel API: [Link](https://docs.gleam.run/tour/http-client.html)
 - Lær mer om HTTP-forespørsler: [Link](https://www.w3schools.com/tags/ref_httpmethods.asp)

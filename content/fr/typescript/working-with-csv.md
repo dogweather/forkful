@@ -62,4 +62,3 @@ La bibliothèque "csv-parser" utilisée dans l'exemple ci-dessus est basée sur 
 ## See Also
 
 - [Documentation de la bibliothèque "csv-parser"](https://csv.js.org/parse/)
-- [Différence entre fichiers CSV et Excel](https://techdifferences.com/difference-between-csv-and-excel.html)

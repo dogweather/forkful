@@ -47,5 +47,4 @@ Quando adicionar ou subtrair dias, meses ou anos, é importante lembrar que o Ru
 ## Veja Também:
 
 - [Ruby API Dock - Date](https://apidock.com/ruby/Date)
-- [Ruby Guides - Ruby DateTime](https://www.rubyguides.com/2015/12/ruby-time-date-datetime/)
 - [Ruby Documentation - Calculations for Date](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)

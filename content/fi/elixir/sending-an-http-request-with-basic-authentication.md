@@ -38,4 +38,3 @@ Elixir-version 1.12:n uusin versio mahdollistaa HTTP-pyyntöjen lähettämisen s
 ## Katso myös:
 - [Official Elixir documentation](https://elixir-lang.org/getting-started/introduction.html)
 - [HTTPoison documentation](https://hexdocs.pm/httpoison/readme.html)
-- [Basic authentication on Wikipedia](https://fi.wikipedia.org/wiki/HTTP/1.1:n_perusautentikointi)

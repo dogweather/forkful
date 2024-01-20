@@ -61,4 +61,3 @@ Para mais informações sobre YAML e como usá-lo em sua programação, confira 
 - [Página oficial do YAML](https://yaml.org/)
 - [Documentação da biblioteca libYAML](https://pyyaml.org/wiki/LibYAML)
 - [Tutorial de YAML para desenvolvedores C](https://www.ibm.com/developerworks/library/l-yaml/)
-- [Comparação entre JSON, XML e YAML](https://www.educba.com/json-vs-xml-vs-yaml/)

@@ -28,5 +28,4 @@ As expressões regulares têm sua origem na década de 1950, com a criação dos
 
 ## Veja também:
 - [Documentação oficial da classe RegExp em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Ferramenta online para testar expressões regulares](https://regexr.com/)
 - [Validator.js - biblioteca para validação de dados em Javascript](https://www.npmjs.com/package/validator)

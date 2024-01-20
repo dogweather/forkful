@@ -35,5 +35,4 @@ YAML最早由Clark Evans于2001年创建，旨在作为一种更简单和易于�
 ## 参考资料: 
 - [js-yaml包](https://github.com/nodeca/js-yaml)
 - [YAML官方网站](https://yaml.org)
-- [JSON与YAML比较](https://www.baeldung.com/linux/yaml-vs-json)
 - [JSON教程](https://www.w3schools.com/js/js_json_intro.asp)

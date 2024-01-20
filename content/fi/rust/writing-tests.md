@@ -46,4 +46,3 @@ Rustin testikehys käyttää assert-makroja tarkistamaan, että odotetut tulokse
 # Katso myös:
 
 - Rustin testausdokumentaatio: [https://doc.rust-lang.org/book/ch11-00-testing.html](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- Yksikkötestauksen merkitys: [https://www.geeksforgeeks.org/unit-testing-its-importance/](https://www.geeksforgeeks.org/unit-testing-its-importance/)

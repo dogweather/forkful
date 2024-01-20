@@ -63,6 +63,4 @@ file.Close();
 
 Подивіться також
 Детальніше про роботу з текстовими файлами можна дізнатися з таких джерел:
-- [MSDN офіційна документація з написання текстових файлів у C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [Стаття на Habr про роботу з текстовими файлами в C#](https://habr.com/ru/post/462702/)
 - [Відеоурок з написання текстових файлів на YouTube](https://www.youtube.com/watch?v=INcxSHxQVZY)

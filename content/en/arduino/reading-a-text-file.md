@@ -74,5 +74,4 @@ In terms of implementation details, the `SD.open()` function is crucial. It open
 ## See Also
 
 - [SD Card library](https://www.arduino.cc/en/Reference/SD)
-- [Arduino - File Read](https://www.tutorialspoint.com/arduino/arduino_file_read.htm)
 - [SPI library](https://www.arduino.cc/en/reference/SPI)

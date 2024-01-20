@@ -63,6 +63,4 @@ Es gibt auch Alternativen wie `awk`, `sed` und `perl`:
 Diese Methoden sind mächtig und bieten weitere Funktionen, aber sie sind auch komplexer und schwieriger zu benutzen als die eingebaute Bash-Funktion.
 
 ## Siehe Auch
-- [Bash Parameter Expansion](https://wiki.bash-hackers.org/syntax/pe): Weitere Informationen zur Parametererweiterung in Bash.
 - [AWK-Befehl in Unix](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/): Ein tiefer Einblick in den `awk`-Befehl.
-- [Sed & Perl](https://www.linuxjournal.com/content/transforming-text): Wie Sie Text mit `sed` und `perl` manipulieren können.

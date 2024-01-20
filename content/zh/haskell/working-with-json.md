@@ -51,5 +51,4 @@ Haskell 也提供了一些其他的数据格式用于数据交换，例如 XML�
 ## 参考资料
 
 - [Aeson documentation](https://hackage.haskell.org/package/aeson/docs/Data-Aeson.html)
-- [Aeson tutorial](https://www.snoyman.com/blog/2016/12/beware-of-aeson-defaults)
 - [Hackage - One stop shop for Haskell packages](https://hackage.haskell.org/packages/search?terms=json)

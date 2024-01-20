@@ -38,6 +38,3 @@ int main()
 他の言語には、標準エラーに書き込むための独自の方法があります。例えば、Pythonでは`sys.stderr`モジュールを使用し、Javaでは`System.err`クラスを使用します。
 
 ## 関連リンク：
-- [C言語ガイド](https://www.tohoho-web.com/ex/c.htm)
-- [C++の標準エラー出力](https://itsakura.com/cpp-io)
-- [Pythonの標準エラー処理](https://note.nkmk.me/python-logging-basic/)

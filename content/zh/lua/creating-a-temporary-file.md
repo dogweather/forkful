@@ -43,4 +43,3 @@ file:close()
 
 - Lua 用户手册： [os.tmpname](https://www.lua.org/manual/5.3/manual.html#pdf-os.tmpname)
 - Lua 用户手册： [io.tmpfile](https://www.lua.org/manual/5.3/manual.html#pdf-io.tmpfile)
-- 在线 Lua 教程： [Learn Lua](https://www.learn-lua.org/)

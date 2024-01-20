@@ -46,4 +46,3 @@ When writing a text file in Ruby, it's essential to pay attention to the writing
 ## See Also:
 
 - [Ruby File Class Documentation](https://ruby-doc.org/core-3.0.0/File.html)
-- [Ruby Monk - Reading and Writing Files in Ruby](https://rubymonk.com/learning/books/1-ruby-primer/chapters/18-reading-writing-files-in-ruby)

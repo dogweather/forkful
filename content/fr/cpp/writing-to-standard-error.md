@@ -55,4 +55,3 @@ Pour écrire vers la sortie standard d'erreur en C ++, on utilise l'objet «cerr
 Pour en savoir plus sur l'écriture vers la sortie standard d'erreur en C ++, voici quelques liens utiles :
 
 - [Documentation officielle de la bibliothèque standard C ++](https://en.cppreference.com/w/)
-- [Tutoriel sur les exceptions en C ++](https://www.learncpp.com/cpp-tutorial/exceptions-throwing-exceptions-and-catching-exceptions/)

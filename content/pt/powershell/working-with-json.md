@@ -58,6 +58,5 @@ JSON foi criado inicialmente em 2001 por Douglas Crockford e se tornou amplament
 
 ## Veja também:
 
-- [Documentação oficial do PowerShell sobre JSON](https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/everything-about-json?view=powershell-7)
 - [Tutorial em vídeo sobre trabalhar com JSON em PowerShell](https://www.youtube.com/watch?v=5o-AQoGNPWI)
 - [Artigo em português sobre JSON e seus usos](https://renatogroffe.medium.com/como-manipular-json-usando-powershell-e1dda2569566)

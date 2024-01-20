@@ -41,4 +41,3 @@ print("I am", age, "years old.")
 
 ## 参考资料：
 - [Apple 官方 Swift 教程: 打印打印和插入函数](https://developer.apple.com/documentation/swift/1541053-print)
-- [使用 Swift 的 debugPrint](https://nshipster.com/print-debugprint/)

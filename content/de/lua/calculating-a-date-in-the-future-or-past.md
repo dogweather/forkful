@@ -54,6 +54,5 @@ Für mehr Informationen und weiterführende Themen ans Herz gelegt:
 
 - Die offizielle Lua-Dokumentation zum os-Modul: [https://www.lua.org/manual/5.3/manual.html#6.9](https://www.lua.org/manual/5.3/manual.html#6.9)
 - Eine umfassende Erklärung zu Datum und Zeit in Lua: [http://lua-users.org/wiki/DateAndTime](http://lua-users.org/wiki/DateAndTime)
-- Ein Vergleich verschiedener Programmiersprachen und ihrer Handhabung von Datum und Zeit: [https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time)](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time))
 
 Dranbleiben und weitercoden! Du machst das schon klasse.

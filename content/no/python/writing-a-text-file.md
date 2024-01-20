@@ -29,5 +29,4 @@ file.close()
 Skriftlig informasjon har vært en del av menneskeheten i århundrer, og det er ikke annerledes i programmering. Noen alternativer til å skrive tekstfiler inkluderer å bruke en database eller en annen form for datalagring. Når du skriver en tekstfil, må du være oppmerksom på filnavnet, modusen (som "w" for å skrive) og språket du bruker for å skrive filen.
 
 ## Se også:
-- [Python dokumentasjon](https://docs.python.org/no/3/tutorial/inputoutput.html)
 - [Tutorialspoint - Writing Files in Python](https://www.tutorialspoint.com/python/file_write.htm)

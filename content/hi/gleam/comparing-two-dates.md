@@ -49,6 +49,4 @@ fn main() {
 
 ## आगे देखें
 
-- Gleam कार्यालय की [दस्तावेज़ीकरण](https://hexdocs.pm/gleam_stdlib/gleam/dates.html)
-- [Gleam कोडिंग टुटोरियल](https://gleam.run/book/tour/integers.html)
 - [UNIX एपोक के बारे में विकिपीडिया लेख](https://en.wikipedia.org/wiki/Unix_time)

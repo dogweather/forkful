@@ -44,6 +44,5 @@ Naturalmente, a escolha entre imprimir debug output simples e usar ferramentas m
 
 - [Python Debugging Techniques](https://realpython.com/python-debugging-pdb/): Um excelente aprofundamento nas diferentes formas de depuração em Python.
   
-- [Python Logging Tutorial](https://realpython.com/tutorials/logging/): Um tutorial sobre como usar o módulo de logging.
 
 - [Python's Built-in print function](https://docs.python.org/3/library/functions.html#print): A documentação oficial da função print em Python.

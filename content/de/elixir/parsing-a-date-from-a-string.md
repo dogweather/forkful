@@ -40,4 +40,3 @@ Die `DateTime.from_iso8601/1`-Funktion in Elixir überprüft das Format streng. 
 ## Siehe auch
 
 - Offizielle Elixir-Dokumentation zum Umgang mit Datums- und Zeitangaben: [Elixir DateTime official documentation](https://hexdocs.pm/elixir/DateTime.html#content)
-- Anleitung zur Elixir Library Timex: [Using Timex guide](https://hexdocs.pm/timex/readme.html)

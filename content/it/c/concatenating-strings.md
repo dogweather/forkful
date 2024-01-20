@@ -42,4 +42,3 @@ La funzione `strcat()` è presente in C sin dalla sua prima versione (1972). Alt
 ## Vedi Anche 
 - [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
 - [Secure Coding in C and C++: Strings](https://resources.sei.cmu.edu/asset_files/Presentation/2013_017_001_497063.pdf)
-- [Learn to program in C: Strings and string functions](https://opensource.com/life/15/7/learn-how-to-program-C-strings)

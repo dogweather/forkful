@@ -46,5 +46,4 @@ $PastDate
 ## ראה גם
 
 - [DateTime Struct (System) | Microsoft Docs](https://docs.microsoft.com/he-il/dotnet/api/system.datetime?view=net-5.0)
-- [PowerShell Basics: Date and DateTime](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-date-and-datetime/)
 - [Working with DateTime PowerShell](https://adamtheautomator.com/powershell-get-date/)

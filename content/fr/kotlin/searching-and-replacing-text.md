@@ -37,4 +37,3 @@ Le détail d'implémentation de la fonction `replace()` en Kotlin est assez simp
 ## Voir aussi :
 
 - [Documentation officielle de Kotlin sur les chaînes de caractères](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Guide sur les expressions régulières en Kotlin](https://kotlinlang.org/docs/regex.html)

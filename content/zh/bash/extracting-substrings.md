@@ -55,4 +55,3 @@ World
 ## 参考资料
 - Bash文档: [www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
 - Bash详细教程, 关于字符串提取: [www.tldp.org/LDP/abs/html/string-manipulation.html](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- 场景式应用: [www.linuxjournal.com/content/bash-string-manipulation](https://www.linuxjournal.com/content/bash-string-manipulation).

@@ -38,6 +38,5 @@ echo $current_date
 
 - Документація Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
 - Fish Shell GitHub Repo: [https://github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
-- Онлайн курс про Fish Shell: [https://www.udemy.com/course/fish-shell/](https://www.udemy.com/course/fish-shell/)
 
 З цими ресурсами ви зможете більш глибоко вивчити тему перетворення дати в рядок в контексті Fish Shell.

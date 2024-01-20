@@ -52,6 +52,5 @@ Hier sind einige nützliche Links zum Thema temporäre Dateien:
 
 - Das [Java API-Dokument](https://docs.oracle.com/javase/7/docs/api/java/io/File.html) für die File Klasse.
 
-- Ein ausführlicher [Tutorial-Artikel](https://www.baeldung.com/java-create-temporary-directory) über das Erstellen von temporären Dateien.
 
 Vergessen Sie nicht, Ihre temporären Dateien zu löschen, wenn Sie mit ihnen fertig sind!

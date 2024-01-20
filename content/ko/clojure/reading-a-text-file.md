@@ -41,5 +41,3 @@ Clojure에서 파일을 읽는 방법은 시간이 지남에 따라 발전했습
 ## 또한 보세요 
 
 - Clojure 공식 문서: [https://clojure.org](https://clojure.org)
-- Clojure 파일 입출력 가이드: [https://clojure.org/guides/io](https://clojure.org/guides/io)
-- Clojure Cookbook의 파일 읽기 섹션: [https://www.clojure-cookbook.com](https://www.clojure-cookbook.com)

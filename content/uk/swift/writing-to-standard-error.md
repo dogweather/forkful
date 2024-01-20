@@ -34,5 +34,4 @@ print("Ця помилка буде виведена до стандартног
 
 ### Дивіться Також:
 
-- [Запис до стандартного виводу помилок в мові програмування C](https://en.wikipedia.org/wiki/Standard_Stream#Standard_error)
 - [Відстеження та керування помилками в програмуванні](https://medium.com/better-programming/error-handling-in-swift-60d9f44f3e8e)

@@ -48,5 +48,4 @@ Un dettaglio di implementazione importante da considerare durante l'avvio di un 
 Per ulteriori dettagli e tutorial su Fish Shell, visita questi link:
 
 - Documentazione ufficiale di Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Introduzione a Fish Shell: [https://opensource.com/article/19/1/productivity-tool-fish-shell](https://opensource.com/article/19/1/productivity-tool-fish-shell)
 - Guida per iniziare con Yeoman: [https://yeoman.io/learning/index.html](https://yeoman.io/learning/index.html)

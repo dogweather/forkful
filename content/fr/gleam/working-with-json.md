@@ -52,6 +52,3 @@ Bien que JSON soit populaire, il existe des alternatives telles que XML et YAML.
 En utilisant Gleam, vous pouvez facilement créer des objets JSON à l'aide de la bibliothèque standard Json.Encode. Vous pouvez également utiliser Json.Decode pour analyser des données JSON et les convertir en objets Gleam pour une manipulation facile.
 
 ## Voir aussi:
-
-- [Documentation officielle de Gleam sur JSON](https://gleam.run/documentation/json/)
-- [Plus d'informations sur la syntaxe Gleam](https://gleam.run/book/tour/good_reads/json.html)

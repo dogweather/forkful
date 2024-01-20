@@ -51,7 +51,5 @@ Every temporary file is assigned a unique filename in the OS's temporary directo
 Creating a temporary file is just a tiny fraction of what Ruby can do. Check out the following links for more Pearls on Programming in Ruby:
 
 - [Ruby Docs: Tempfile](https://ruby-doc.org/stdlib-3.0.0/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby Guides: File I/O](https://www.rubyguides.com/2015/05/ruby-file-io/)
-- [Ruby Guides: StringIO](https://www.rubyguides.com/2019/04/ruby-stringio-class/)
   
 Enjoy coding, and until we meet again!

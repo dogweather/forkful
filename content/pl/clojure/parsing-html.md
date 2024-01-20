@@ -46,4 +46,3 @@ Pomocne źródła:
 - `Enlive`: [link](https://github.com/cgrand/enlive)
 - `Jsoup`: [link](https://jsoup.org/)
 - `HTMLUnit`: [link](http://htmlunit.sourceforge.net/)
-- Przewodnik po DOM, SAX, Pull i Stream: [link](https://www.baeldung.com/java-xml-parsers)

@@ -36,6 +36,4 @@ Swift에서는 `replacingOccurrences(of:with:)` 메서드를 통해 이 작업�
 
 ## 참고문헌
 
-- Swift 공식 문서 ["String.replacingOccurrences"](https://developer.apple.com/documentation/swift/string/2893959-replacingoccurrences)
-- 정규식에 대한 자세한 정보 ["Regular Expressions in Swift"](https://www.swiftbysundell.com/basics/regular-expressions/)
 - 문자열 처리에 대한 일반적인 가이드 ["Working with Strings in Swift"](https://www.hackingwithswift.com/articles/141/8-powerful-swift-features-that-more-developers-should-be-using)

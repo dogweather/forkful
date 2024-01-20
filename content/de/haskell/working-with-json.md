@@ -48,4 +48,3 @@ Die Bibliothek `Data.Aeson` implementiert JSON mithilfe von algebraischen Datent
 ## Weitere Informationen und Quellen
 
 - [Offizielle Dokumentation von Aeson](https://hackage.haskell.org/package/aeson)
-- [Ein Tutorial zu Aeson](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/parsing-floats-externally-produced-pleasures/aeson)

@@ -41,5 +41,4 @@ Internally, Clojure uses Java's `java.io.FileWriter` class to write text files. 
 ## See Also:
 
 - [The Clojure Documentation on `spit`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/spit)
-- [Exploring Clojure's I/O capabilities](https://www.braveclojure.com/reading-and-writing/)
 - [Java's `java.io.FileWriter` class documentation](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)

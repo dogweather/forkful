@@ -43,5 +43,4 @@ stringLength (_:xs) = 1 + stringLength xs
 ## קרא גם: 
 
 - [Haskell Wiki - Strings](https://wiki.haskell.org/Strings)
-- [Haskell: The Craft of Functional Programming](https://www.amazon.com/Haskell-Programming-International-Computer-Science/dp/0201882957) - Book that explores string functions and more deeply.
 - [StackOverflow - How is the length function implemented in Haskell?](https://stackoverflow.com/questions/23222472/how-is-the-length-function-implemented-in-haskell) - For a discussion on implementation details.

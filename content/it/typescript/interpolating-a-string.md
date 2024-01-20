@@ -35,6 +35,4 @@ Quando interpoliamo una stringa, TypeScript sostituisce l'espressione all'intern
 ## Vedi Anche
 Per ulteriori informazioni sull'interpolazione delle stringhe in TypeScript, potete consultare le seguenti risorse:
 
-- [La documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
-- [Una guida approfondita all'interpolazione delle stringhe in TypeScript](https://javascript.info/string-interpolation)
 - [Un tutorial su YouTube sull'interpolazione delle stringhe in TypeScript](https://www.youtube.com/watch?v=2Nt8gQD4g5A)

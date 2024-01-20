@@ -44,6 +44,4 @@ Les CSV ont été créés dans les années 1970 comme un moyen d'importer et d'e
 
 ## Voir aussi:
 
-- [Documentation officielle de Kotlin pour le traitement des CSV](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-csv-reader/)
 - [OpenCSV: Une bibliothèque pour lire et écrire des fichiers CSV en Java et Kotlin](http://opencsv.sourceforge.net/) 
-- [Kotlin CSV: Une bibliothèque simple pour lire et écrire des fichiers CSV en Kotlin](https://github.com/doyaaaaaken/kotlincsv)

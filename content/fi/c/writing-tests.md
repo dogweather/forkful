@@ -39,6 +39,4 @@ Tässä esimerkissä luodaan yksinkertainen testi funktiolle add, joka laskee ka
 Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin laadun ja vähentämään virheiden määrää. Nykypäivänä on myös olemassa erilaisia testauksen työkaluja, kuten järjestelmätestaus ja yksikkötestaus, jotka auttavat kehittäjää testaamaan ohjelmansa toimintaa. Testien kirjoittaminen on myös osa hyvää ohjelmointikäytäntöä ja auttaa kehittäjää ymmärtämään paremmin omaa koodiaan.
 
 ## Katso myös:
-- [Wikipedia-artikkeli testaamisesta](https://fi.wikipedia.org/wiki/Testaaminen)
 - [An introduction to testdriven development in C](https://developer.ibm.com/technologies/systems/articles/au-cintrotesting/)
-- [Testaamisen perusteet ohjelmistokehittäjille](https://www.sqav.fi/fi/testaamisen-perusteet-ohjelmistokehittajille/)

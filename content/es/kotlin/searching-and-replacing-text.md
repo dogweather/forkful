@@ -54,5 +54,3 @@ El `replace()` trabaja devolviendo una nueva cadena basada en la original, susti
 
 Para profundizar más en este tema puedes visitar estos enlaces:
 - Documentación oficial de Kotlin [replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- Guía de estudio de investigación sobre el uso de [expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regex) 
-- Comparación de métodos de búsqueda y reemplazo en Kotlin [replace() vs substring()](https://www.geeksforgeeks.org/kotlin-string-replace-method/)

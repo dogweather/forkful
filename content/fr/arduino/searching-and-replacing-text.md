@@ -34,6 +34,5 @@ Dans le détail, la méthode `replace` de la classe `String` prend deux argument
 
 ## Voir aussi
 Pour une understanding plus approfondie, consultez ces liens :
-- [Documentation de la classe String sur Arduino](https://www.arduino.cc/reference/tr/stringobject/)
 - [Fonctions de manipulation de chaînes en C (en anglais)](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
 - [Fonctions de manipulation de chaînes en C++ (en anglais)](https://www.cplusplus.com/reference/cstring/)

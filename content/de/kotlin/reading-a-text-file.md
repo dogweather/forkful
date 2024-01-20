@@ -43,7 +43,6 @@ fun main() {
 
 ## Siehe auch:
 
-- [Offizielle Kotlin-Dokumentation: Dateien lesen und schreiben](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html)
 
 - [stackoverflow: Wie liest man in Kotlin eine Datei?](https://stackoverflow.com/questions/47166369/how-to-read-a-text-file-in-kotlin)
 

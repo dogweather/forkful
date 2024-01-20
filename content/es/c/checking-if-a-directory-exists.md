@@ -67,4 +67,3 @@ Para aprender más sobre la manipulación de directorios y archivos en C, aquí 
 
 - [Documentación de `sys/stat.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/sysstat.h.html)
 - [Documentación de `dirent.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html)
-- [Tutoriales en Tutorialspoint para la programación de archivos en C](https://www.tutorialspoint.com/c_standard_library/c_file_io.htm)

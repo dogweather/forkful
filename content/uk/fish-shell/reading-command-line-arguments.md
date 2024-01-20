@@ -70,4 +70,3 @@ greet Анна Ігор Володимир
 
 - [Офіційна документація fish shell](https://fishshell.com/docs/current/index.html)
 - [Fish Shell для початківців](https://fishshell.com/docs/current/tutorial.html)
-- [Глибоке вивчення аргументів командного рядка](https://www.baeldung.com/linux/command-line-arguments)

@@ -48,4 +48,3 @@ Käytettävät laitteet: kannettava, puhelin, älykello
 
 - [YAML.org](https://yaml.org/) - YAMLin kotisivu.
 - [PowerShell-komentoikkunan dokumentaatio](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.1#convertto-yaml) - Lisätietoja `ConvertTo-YAML` ja `ConvertFrom-YAML` komennoista.
-- [PowerYaml](https://github.com/manojlds/PowerYaml) - PowerShell-kirjasto YAML-tiedostojen käsittelyyn.

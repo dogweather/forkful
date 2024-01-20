@@ -37,4 +37,3 @@ Bash
 ## ראה גם: 
 
 - [מדריכים לשליטה במחרוזות ב-Bash](https://tldp.org/LDP/abs/html/string-manipulation.html)
-- [חנוכה מבית geek לטיפים ל-Bash](https://www.cyberciti.biz/faq/unix-linux-bash-script-string-comparisons/)

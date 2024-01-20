@@ -49,4 +49,3 @@ Per approfondimenti e maggiori informazioni sul calcolo delle date e le manipola
 
 - [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/it-it/dotnet/api/system.datetime?view=net-6.0)
 - [Handle Date and Time in C# .NET (PluralSight)](https://www.pluralsight.com/guides/handle-date-time-in-csharp-dotnet)
-- [Working with Dates in C# (C# Station)](https://www.csharp-station.com/tutorials/lesson17)

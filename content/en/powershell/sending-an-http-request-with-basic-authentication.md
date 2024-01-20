@@ -61,5 +61,3 @@ For further reading, do check out these sources:
 
 - [About Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-5.0)
 - [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-- [PowerShell Basic Authentication](https://adamtheautomator.com/powershell-basic-authentication/)
-- [Understanding HTTP Authentication](https://www.loginradius.com/engineering/blog/understanding-http-authentication-scheme/)

@@ -44,5 +44,4 @@ No Go, a saída para o erro padrão é implementada usando a interface `io.Write
 Para saber mais sobre a escrita para o erro padrão em Go, confira as seguintes fontes:
 
 - [A documentação oficial da função `fmt.Fprintln()` em Go.](https://golang.org/pkg/fmt/#Fprintln)
-- [Uma discussão sobre alternativas para escrever no erro padrão em Go.](https://blog.gopheracademy.com/advent-2014/advanced-logging-with-go/)
 - [Um exemplo de uso do pacote `log` para registro avançado em Go.](https://medium.com/@deadkarma/logging-in-golang-the-right-way-b0a90a1f7a8d)

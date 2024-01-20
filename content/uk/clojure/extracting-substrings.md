@@ -44,6 +44,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Дивіться також:
 
-- [Офіційна документація Clojure по рядкам і підрядках](https://clojure.org/guides/learn/strings)
 - [Зразки коду на Clojure](https://clojuredocs.org/clojure.core/subs)
-- [Стаття про роботу з рядками в Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/strings)

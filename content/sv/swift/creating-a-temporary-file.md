@@ -45,6 +45,5 @@ När det gäller att skapa temporära filer i Swift, använder vi `NSTemporaryDi
 
 ## Se också:
 Kolla in dessa resurser för mer information om att hantera tillfälliga filer i Swift och andra programmeringsspråk:
-- [Apple Developer Documentation: NSTemporaryDirectory()](https://developer.apple.com/documentation/foundation/1413049-nstemporarydirectory)
 - [StackOverflow: Best way to create temporary/temp files in Java and .NET?](https://stackoverflow.com/questions/178046/best-way-to-create-temporary-temp-files-in-java-and-net)
 - [Wikipedia: Temporary folder](https://en.wikipedia.org/wiki/Temporary_folder)

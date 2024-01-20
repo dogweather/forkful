@@ -47,4 +47,3 @@ Aunque la función ```fmt.Fprintln()``` es la forma recomendada de escribir a la
 
 - [Documentación de la función fmt.Fprintln() en Go](https://golang.org/pkg/fmt/#Fprintln)
 - [Información sobre la salida de error estándar en Go](https://gobyexample.com/reading-files)
-- [Tutorial completo sobre cómo imprimir a la salida de error estándar en Go](https://www.digitalocean.com/community/tutorials/how-to-use-the-error-handling-in-golang-es)

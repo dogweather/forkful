@@ -44,4 +44,3 @@ case response {
 如果你对于Gleam编程语言有更多的兴趣，以下是一些有用的附加资源：
 - [Gleam官方网站](https://gleam.run/)
 - [Gleam GitHub 项目](https://github.com/gleam-lang/gleam)
-- [Gleam语法详解](https://gleam.run/book/tour/introduction.html)

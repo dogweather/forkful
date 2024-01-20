@@ -49,5 +49,4 @@ Yksityiskohtia väliaikaistiedostojen käytöstä: Tehokkuutta parantaa se, ett�
 Suosittelen perehtymään seuraaviin linkkeihin syvemmän ymmärryksen saamiseksi:
 
 - Node.js File System Module: [Linkki](https://nodejs.org/api/fs.html)
-- Temporary Files in Operating System: [Linkki](https://www.geeksforgeeks.org/temporary-files-operating-system/)
 - Creating and Using Temporary Files Securely: [Linkki](https://www.ibm.com/docs/en/zos/2.3.0?topic=services-creating-using-temporary-datasets-program-function)

@@ -37,5 +37,4 @@ När du skriver en textfil i Javascript är det viktigt att tänka på filens ko
 
 ## Se även: 
 - [Node.js dokumentation för att skriva filer](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Enkel guide för att skriva textfiler i Javascript](https://www.freecodecamp.org/news/how-to-read-and-write-data-in-node-js/)
 - [Jämför olika kodningssystem i Javascript](https://flaviocopes.com/javascript-unicode/)

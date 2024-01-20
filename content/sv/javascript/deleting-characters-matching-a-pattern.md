@@ -40,5 +40,4 @@ Det är viktigt att notera att metoden `replace()` inte modifierar originalet ut
 För mer information om att arbeta med reguljära uttryck i JavaScript, kolla in följande länkar:
 
 - [Reguljära uttryck (Regular Expressions) på MDN Web Docs](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Rensa strängar med reguljära uttryck](https://www.freecodecamp.org/news/javascript-regex-expressions/)
 - [replace()-metoden på MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

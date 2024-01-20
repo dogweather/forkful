@@ -49,5 +49,3 @@ city = person.address.city
 # Дивитися також:
 
 - [Офіційна документація YAML](https://yaml.org/)
-- [Огляд мови YAML для програмістів](https://www.gleam.run/tutorials/yaml-intro.html)
-- [Використання YAML для конфігурації Gleam проектів](https://blog.gleam.run/using-yaml-configuration-for-gleam-projects)

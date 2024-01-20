@@ -43,4 +43,3 @@ The implementation in Rust respects the language's focus on ownership and borrow
 
 Further reading and examples on the topic:
 - Rust Documentation: [Strings](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings)
-- Rust by Example: [Slice Type](https://doc.rust-lang.org/rust-by-example/primitives/slice.html)

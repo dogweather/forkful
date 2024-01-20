@@ -49,6 +49,3 @@ Gleam on suhteellisen uusi kieli, joka on rakennettu turvallisemman ja luotettav
 Rinnakkaisia menetelmiä, kuten tempdirin tai tempfile::tempnoran käyttöä muissa kielissä ei erityisemmin suositella Gleamissa, koska ne eivät tarjoa samanlaista turvallisuustasoa.
 
 ## Katso myös:
-* [Gleam-ohjelmointikielen dokumentaatio](https://gleam.run/docs/)
-* [Miten käsitellä tiedostoja Gleamissa](https://gleam.run/tutorials/file-handling/)
-* [Tilapäisen tiedoston luominen eri ohjelmointikielissä](https://dev.to/agrinman/ultimate-guide-to-handling-temporary-files-in-different-programming-languages-1dei)

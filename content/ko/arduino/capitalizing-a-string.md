@@ -40,6 +40,5 @@ void loop() {
 
 ## 참고 자료
 
-- Arduino 공식 documentation의 [문자열 메서드](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/) 페이지에서 `toUpperCase()`에 대해 더 자세히 알아볼 수 있습니다.
 
 - C++의 [문자열 관련 메서드](http://www.cplusplus.com/reference/string/string/) 및 Java의 [문자열 관련 메서드](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)는 같은 도구를 제공합니다. 이들 언어의 `toUpperCase()` 메서드는 Arduino의 것과 개념적으로 비슷합니다.

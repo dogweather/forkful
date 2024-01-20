@@ -46,4 +46,3 @@ console.log(newJSON); // виведення об'єкта у консоль
 
 - [Документація по JSON в TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#-feat-recursive-conditional-types)
 - [Стандарт JSON](https://www.json.org/json-en.html)
-- [Корисні інструменти для роботи з JSON](https://www.sisense.com/blog/typescript-json/)

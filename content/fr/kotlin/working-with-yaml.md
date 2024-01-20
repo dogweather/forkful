@@ -68,6 +68,4 @@ YAML in Kotlin is implemented using the Snakeyaml library, which is a YAML 1.1 p
 
 ## See Also:
 To learn more about working with YAML in Kotlin, check out the following resources:
-- [Official Kotlin Docs on YAML](https://kotlinlang.org/api/latest/jvm/stdlib/kotlinx.io/-yaml/)
-- [Snakeyaml Documentation](https://bitbucket.org/asomov/snakeyaml/src/master/src/main/java/org/yaml/snakeyaml/)
 - [YAML Tutorial](https://www.tutorialspoint.com/yaml/)

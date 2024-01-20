@@ -39,6 +39,5 @@ JSON kehitettiin alun perin JavaScriptin yhteydessä, mutta se on nykyään suos
 
  "## Katso myös:"
 
-- ["Working with JSON in Kotlin" - Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/serialization-json.html)
 - ["JSON - JavaScript Object Notation" - W3Schoolsin opas JSONista](https://www.w3schools.com/js/js_json_intro.asp)
 - ["Why JSON Has Replaced XML" - Blogikirjoitus JSONin ja XML:n eroista](https://www.talend.com/blog/2016/01/20/why-json-has-become-the-1-data-format-for-web-services/#:~:text=Now%2C%20JSON%20is%20the%20preferred,resource%20consumption%20with%20XML%20handling.)

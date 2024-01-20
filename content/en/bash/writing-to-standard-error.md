@@ -40,8 +40,5 @@ In Bash, using the ">&2" redirect operator is the most common and recommended wa
 
 ## See Also:
 
-- [Bash Basics: Writing to Standard Error](https://linuxize.com/post/bash-redirect-stderr-to-file/)
-- [UNIX tutorial: Standard Streams](https://www.tutorialspoint.com/unix/unix-basic-concepts.htm)
-- [Using standard streams in C](https://www.geeksforgeeks.org/using-unistd-h-write-function/)
 
 Note: Keep in mind that writing to standard error can sometimes be used to suppress error messages, so use it wisely in your Bash scripts.

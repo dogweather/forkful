@@ -42,6 +42,5 @@ Los detalles de implementación de leer un archivo de texto en Swift incluyen el
 Para más detalles y funciones, puedes revisar los siguientes recursos:
 
 - Documentación de Apple sobre la manipulación de archivos en Swift: [https://developer.apple.com/documentation/foundation/filemanager](https://developer.apple.com/documentation/foundation/filemanager)
-- Tutorial de Ray Wenderlich sobre el manejo de archivos en Swift: [https://www.raywenderlich.com/7181016-ios-file-management-with-filemanager-in-protocols](https://www.raywenderlich.com/7181016-ios-file-management-with-filemanager-in-protocols)
 
 Recuerda, la clave es practicar. Así que, manos a la obra. ¡Buena suerte!

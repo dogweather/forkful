@@ -40,5 +40,4 @@ Existen alternativas como JSON o XML para el almacenamiento de datos estructurad
 En Lua, la biblioteca estándar incluye una función para leer archivos CSV, pero también hay bibliotecas externas más completas y personalizables disponibles.
 
 ## Ver también:
-- [Documentación oficial de la biblioteca csv](https://github.com/FourierTransformer/lua-csv/blob/master/doc/csv.usage.md)
 - [Biblioteca tercerizada con soporte para escribir archivos CSV](https://github.com/geoffleyland/lua-csv)

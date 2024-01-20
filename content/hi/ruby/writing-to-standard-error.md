@@ -25,5 +25,4 @@ $stderr.puts "यहां आपका एरर या वार्निं�
 
 ## और देखें
 - [The Ruby Standard Error Class](https://ruby-doc.org/core-3.0.0/StandardError.html)
-- [Debugging with $stderr](https://www.rubyguides.com/2017/01/ruby-stderr-stdout/)
 - [Difference between puts and $stdout.puts](https://stackoverflow.com/questions/16572825/what-is-the-difference-between-puts-and-stdout-puts)

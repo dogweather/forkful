@@ -61,4 +61,3 @@ O formato CSV foi introduzido pela Microsoft na década de 80 e desde então, se
 
 - [Tutorial sobre CSV no Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
 - [Biblioteca do Arduino para leitura e escrita de arquivos em cartão SD](https://www.arduino.cc/en/Reference/SD)
-- [História do formato CSV](https://www.speich.net/articles/2021/03/01/a-brief-history-of-csv/)

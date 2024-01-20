@@ -50,6 +50,4 @@ L'implementazione in `clj-http` converte username e password in un header "Autho
 
 ## Per Approfondire
 Per maggiori informazioni, consulta le seguenti risorse:
-- Documentazione di clj-http: [https://clj-http.org](https://clj-http.org)
 - Specifica dell'autenticazione HTTP: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
-- Un blog post utile su come lavorare con richieste HTTP in Clojure: [http://thegeez.net/tech_clojure_and_http.html](http://thegeez.net/tech_clojure_and_http.html)

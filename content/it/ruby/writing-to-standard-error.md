@@ -45,5 +45,4 @@ Per quanto riguarda l'implementazione, è interessante notare che il "standard e
 ## Vedi anche:
 
 - [Documentazione ufficiale di Ruby su StandardError](https://ruby-doc.org/docs/keywords/1.9/Object.html#label-StandardError)
-- [Articolo su RubyGuides sull'uso di `STDERR` e `STDOUT`](https://www.rubyguides.com/2019/02/ruby-standard-error/)
 - [Spiegazione approfondita di STDOUT e STDERR su TheStreets](https://medium.com/we-are-the-streets/the-difference-between-stderr-and-stdout-cab4175120a7)

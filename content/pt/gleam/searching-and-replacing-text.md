@@ -36,7 +36,3 @@ Executando o código acima, o resultado seria `"Olá, Gleam!"`.
 3. Detalhes de implementação: Em Gleam, `string.replace()` é uma função pura que retorna uma nova string, ao invés de modificar a string original.
 
 ## Veja Também:
-
-- Para entender as funções de string em Gleam, confira a documentação de Gleam [aqui](https://gleam.run/documentation/tour/#strings).
-- Para aprender mais sobre a linguagem Gleam, dê uma olhada neste [guia prático](https://gleam.run/documentation/introduction/).
-- Para um curso mais detalhado sobre programação Gleam, confira este [curso gratuito](https://gleam.run/documentation/learning/).

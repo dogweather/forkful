@@ -40,5 +40,4 @@ int main() {
 C++の詳細なチュートリアルや新しいプロジェクトの開始に役立つその他のリソースについては、以下のリンクを参照してください。
 
 * [cplusplus.com](http://www.cplusplus.com/)
-* [C++ Primer (5th Edition)](http://www.amazon.com/C-Primer-5th-Stanley-Lippman/dp/0321714113)
 * [Learn C++](https://www.learncpp.com/)

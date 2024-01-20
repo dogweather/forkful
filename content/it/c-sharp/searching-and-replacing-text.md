@@ -47,5 +47,4 @@ Nella sostituzione del testo, C# prima trova la corrispondenza esatta e poi iniz
 
 ## Da Vedere Anche
 - [Microsoft C# Guide - Strings](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [Microsoft C# Guide - Regular Expressions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/regular-expressions/)
 - [StackOverflow - Practical Use Cases of `String.Replace`](https://stackoverflow.com/questions/2289608/practical-use-cases-of-string-replace)

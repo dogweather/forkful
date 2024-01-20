@@ -32,5 +32,4 @@ import Text.Regex.Posix ((=~))
 正则表达式最早起源于20世纪50年代，随着计算机技术的发展和普及，它逐渐成为现代编程语言中不可或缺的一部分。除了Haskell，其他流行的语言如JavaScript、Python和Perl也都提供了正则表达式的支持。在Haskell中，正则表达式使用`Text.Regex.Posix`模块的函数来处理。通过学习正则表达式的语法和常用的模式匹配方法，可以大大提高文本处理的效率。
 
 # 相关参考：
-- [Haskell正则表达式文档](https://www.haskell.org/ghc/docs/latest/html/libraries/regex-posix-0.96.0.0/Text-Regex-Posix.html)
 - [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)

@@ -43,6 +43,5 @@ Elixir som följer sin föregångare Erlang för dess sträng hantering, stödje
 Om du letar efter mer detaljerad information om stränginterpolation i Elixir, kan dessa källor vara till hjälp:
 
 - Elixir Officiella dokumentation: [String interpolations](https://hexdocs.pm/elixir/String.html#module-interpolation)
-- Röd Guide till Elixir: [String Interpolation](https://www.red-grep.com/elixir-string-interpolation)
 
 Vänligen notera att dessa källor är på engelska.

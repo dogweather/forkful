@@ -70,4 +70,3 @@ La implementación detallada no es posible en el lado de Elm debido a restriccio
 - Elm Guide on Ports: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
 - FileReader API Documentation: [https://developer.mozilla.org/en-US/docs/Web/API/FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 - Elm Language: A Deep Dive: [https://elmprogramming.com/](https://elmprogramming.com/)
-- Practical Elm for a Busy Developer: [https://korban.net/posts/elm/2019-03-06-practical-elm-for-busy-developer/](https://korban.net/posts/elm/2019-03-06-practical-elm-for-busy-developer/)

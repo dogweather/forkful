@@ -44,4 +44,3 @@ Rust에서 이용할 수 있는 다른 문자열 조작 기능들도 많이 있�
 
 - Rust 공식 문서: [문자열 조작](https://doc.rust-lang.org/book/ch08-02-strings.html)
 - [Rust의 `str` 타입 API 문서](https://doc.rust-lang.org/std/primitive.str.html)
-- [Rust - 문자열 슬라이싱 튜토리얼](https://www.tutorialspoint.com/rust/rust_string_slices.htm)

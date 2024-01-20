@@ -70,5 +70,3 @@ L'analyse d'une date à partir d'une chaîne utilise la méthode Parse ou ParseE
 Pour en savoir plus sur les opérations de date et d'heure avec PowerShell, consultez ces ressources :
 
 - Guide officiel MS : [tout ce que vous devez savoir sur les dates](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-6.0)
-- [PowerShell et les Dates : Le Guide Complet](https://practical365.com/powershell/date-operations)
-- [Formatage des dates et des heures](https://docs.microsoft.com/fr-fr/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)

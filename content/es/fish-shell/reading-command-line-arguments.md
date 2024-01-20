@@ -51,4 +51,3 @@ Para obtener más detalles y algunas recetas geniales, consulta los siguientes e
 
 - Documentación oficial | [Parámetros y Variables de Estado](https://fishshell.com/docs/current/commands.html#variables)
 - Fish Scripting | [Tutorial](https://fishshell.com/docs/3.1/tutorial.html)
-- Sitio de la comunidad de Fish Shell | [Obtén Ayuda](https://fishshell.com/community.html)

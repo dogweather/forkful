@@ -49,6 +49,5 @@ Bei der Arbeit mit CSV ist es wichtig, auf die richtige Formatierung zu achten, 
 
 Unter folgenden Links findest du weitere Informationen zum Arbeiten mit CSV-Dateien in TypeScript:
 
-- [TypeScript Docs - CSV-Dateien](https://www.typescriptlang.org/docs/handbook/working-with-csv-files.html)
 - [CSV-Bibliothek für TypeScript](https://github.com/wdavidw/node-csv)
 - [Ein Vergleich von CSV und anderen Dateiformaten](https://medium.com/@psayre23/csvs-json-a6ab88599e07)

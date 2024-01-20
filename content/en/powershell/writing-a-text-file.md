@@ -47,5 +47,4 @@ When writing a text file in PowerShell, it is important to understand the differ
 
 ## See Also:
 - [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-- [Introduction to PowerShell for Programmers](https://www.pluralsight.com/courses/introduction-powershell-programmers)
 - [Microsoft Dev Blogs - PowerShell](https://devblogs.microsoft.com/powershell/)

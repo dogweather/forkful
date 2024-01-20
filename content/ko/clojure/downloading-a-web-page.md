@@ -35,4 +35,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 웹 크롤링과 관련된 더 복잡한 예제는 다음 링크들을 참조하세요:
 - [Web Scraping with Clojure](https://kimh.github.io/clojure-by-example/#web-scraping)
 - [Introduction to Web Scraping with Clojure](https://realpython.com/tutorials/web-scraping/)
-- [Clojure Cookbook - Reading from URLs](https://www.clojure-cookbook.com/posts_reading_from_url.html)

@@ -53,6 +53,5 @@ En cuanto a la implementación, es importante tener en cuenta que las pruebas de
 ## See Also:
 
 - [Documentación de ArduinoUnit](https://github.com/mmurdoch/arduinounit)
-- [Documentación de UnitTest](http://majenko.co.uk/wiki/creating_unit_tests_for_arduino_projects)
 - [Documentación de CppUTest](https://cpputest.github.io/)
 - [Documentación de Google Test](https://github.com/google/googletest)

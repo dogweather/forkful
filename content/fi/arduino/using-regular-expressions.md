@@ -52,5 +52,3 @@ Jos haluat tietää lisää säännöllisten lausekkeiden käytöstä Arduinossa
 - Arduino Regex kirjasto: [Arduino-Regex](https://github.com/nickgammon/Regexp)
 
 - Säännölliset lausekkeet: [Regular-Expressions.info](http://www.regular-expressions.info/)
-
-- Arduino String kirjasto: [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

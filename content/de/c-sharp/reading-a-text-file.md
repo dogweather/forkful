@@ -45,6 +45,4 @@ Historisch gesehen, waren Textdateien eine der ersten Methoden zur Speicherung v
 Das `File.ReadAllLines` ist eine High-Level-Methode, die die Datei öffnet, jede Zeile liest und dann die Datei schließt. Es ist einfach zu benutzen, aber nicht so flexibel wie ein `StreamReader`, der mehr Kontrolle ermöglicht, aber ebenso komplizierter ist.
 
 ## Siehe Auch:
-- [Microsoft Dokumentation: Textdateien lesen](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
-- [DotNetPerls: Textdateien lesen](https://www.dotnetperls.com/readfile)
 - [Stackoverflow: Alternativen zum Lesen von Textdateien](https://stackoverflow.com/questions/507863/when-to-use-file-readalllines-over-streamreader-in-c)

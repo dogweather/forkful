@@ -60,4 +60,3 @@ CSV는 1970년대에 발명된 데이터 관리 방법 중 하나로, 현재 많
 
 - [Swift CSV Parser](https://github.com/yaslab/CSV.swift)
 - [How to Read and Write CSV Files](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-csv-files)
-- [The History of CSV Files](https://www.science.co.il/programming/History-of-CSV.php)

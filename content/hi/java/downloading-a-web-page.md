@@ -49,5 +49,4 @@ public class Main {
 ## संबंधित देखें:
 
 - [Java के साथ HTML पृष्ठों को पर्स करने के लिए JSoup गाइड](https://jsoup.org/cookbook/extracting-data/selector-syntax)
-- [Java NIO के साथ वेब पेज डाउनलोड करने के लिए गाइड](https://www.baeldung.com/java-nio-download-file)
 - [Apache HttpClient लाइब्रेरी का उपयोग कर के वेब पेज डाउनलोड](https://mkyong.com/java/apache-httpclient-examples/)

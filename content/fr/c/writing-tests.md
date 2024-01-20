@@ -44,5 +44,4 @@ Il existe différentes façons d'écrire des tests en C, telles que l'utilisatio
 
 ## Voir aussi :
 
-- [Guide de tests unitaires en C](https://www.apriorit.com/dev-blog/556-testing-c-code)
 - [Tutoriel sur CUnit](https://triia.fr/articles/][https://triia.fr/articles/tutoriel-csqa-cunit/]

@@ -42,5 +42,3 @@ Le `Write-Debug` est spécialement conçu pour afficher des informations de déb
 Pour en savoir plus sur le dépannage avec PowerShell, consultez les liens suivants:
 
 - [Documentation Officielle de PowerShell](https://docs.microsoft.com/fr-fr/powershell/)
-- [Guide sur les préférences PowerShell](https://docs.microsoft.com/fr-fr/powershell/scripting/learn/deep-dives/everything-about-preferences?view=powershell-7.1)
-- [Article sur le débogage dans PowerShell](https://4sysops.com/archives/debugging-with-powershell-write-debug-write-verbose-write-error-and-set-psdebug/)

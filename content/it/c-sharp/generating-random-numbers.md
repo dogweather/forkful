@@ -52,6 +52,5 @@ La classe Random genera un flusso di numeri casuali partendo da un punto di part
 #### ## Vedi anche:
 
 - Documentazione Microsoft su [Random](https://docs.microsoft.com/it-it/dotnet/api/system.random?view=net-5.0)
-- Tutorial Microsoft su [generazione di numeri casuali](https://docs.microsoft.com/it-it/dotnet/csharp/tutorials/random-numbers) 
 - Discussione StackOverflow sul [migliore modo per generare numeri casuali in C#](https://stackoverflow.com/questions/2706500/simplest-way-to-create-a-random-number)
 ---

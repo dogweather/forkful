@@ -43,5 +43,3 @@ main =
 ## Корисні посилання :
 
 - [Elm Regex : Документація](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Регулярні вирази: Керівництво](https://regexr.com/)
-- [Регулярні вирази в Elm : Руководство](http://elmprogramming.com/regular-expressions.html)

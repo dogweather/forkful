@@ -38,4 +38,3 @@ Haskell є чистою функціональною мовою, вперше п
 Для більш глибокого вивчення рекомендуємо вам ці ресурси:
 - *Learn You a Haskell for Great Good!*: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
 - *Real World Haskell*: [http://book.realworldhaskell.org/](http://book.realworldhaskell.org/)
-- *Haskell School of Music*: [https://haskell.red/](https://haskell.red/)

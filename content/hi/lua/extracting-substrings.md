@@ -41,5 +41,3 @@ print(string.char(72, 101, 108, 108, 111))  -- "Hello"
 विस्तार से जानने के लिए, आप निम्नलिखित लिंक्स देख सकते हैं:
 
 - [Lua 5.4 Reference Manual: string.sub](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- [Wikibooks: Lua Programming - Strings](https://en.wikibooks.org/wiki/Lua_Programming/strings)
-- [Learn Lua: Substrings](http://www.learn-lua.org/basics/strings.html)

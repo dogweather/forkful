@@ -51,4 +51,3 @@ Lisää esimerkkejä ja tietoa String.split ja String.join -funktioista Elm-ohje
 
 - [Elm String.join dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String#join)
 - [Elm String.split dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String#split)
-- [Elegant String Replacing in Elm](https://www.ivarhaslam.com/posts/elegant-string-replacing-elm/)

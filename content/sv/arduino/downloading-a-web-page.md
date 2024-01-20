@@ -67,6 +67,5 @@ Tänk på att ladda ner stora mängder data kan påverka din Arduinos prestanda.
 
 - [Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet): För mer information om "Ethernet.h"
 
-- [Internet of Things (IoT) med Arduino](https://www.coursera.org/learn/arduino): En omfattande kurs att lära dig mer om hur du kopplar samman Arduino med internet.
 
 Kom ihåg att alltid respektera webbplatsernas användarvillkor och inte överbelasta deras servrar med för många förfrågningar. God programmering!

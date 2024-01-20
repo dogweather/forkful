@@ -65,6 +65,5 @@ Historisch gesehen wurde die Basisauthentifizierung für den Webserver-Betrieb e
 
 Weitere Informationen zum Senden einer HTTP-Anfrage mit Basisauthentifizierung finden Sie hier:
 
-- [HTTP Client Library](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
 - [RFC 7617 (Basisauthentifizierung)](https://tools.ietf.org/html/rfc7617)
 - [OAuth](https://de.wikipedia.org/wiki/OAuth)

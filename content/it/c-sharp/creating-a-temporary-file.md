@@ -69,5 +69,4 @@ Quando chiami `Path.GetTempFileName()`, genera un file con estensione `.tmp` e u
 Per ulteriori informazioni sulla creazione di file temporanei e sulla gestione dei file in C#, consulta le risorse seguenti:
 
 - [Documentazione ufficiale Microsoft](https://docs.microsoft.com/it-it/dotnet/api/system.io.path.gettempfilename)
-- [Introduzione alla programmazione di file e flussi in C#](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/file-system/introduction-to-file-and-stream-programming)
 - [Flussi di file e I/O](https://msdn.microsoft.com/it-it/library/k3352a4w(vs.71).aspx)

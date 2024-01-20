@@ -40,5 +40,4 @@ Swiftでは、`lowercased()`は文字列から新たな小文字の文字列を�
 以下では、Stringクラス、`lowercased()`メソッド、およびSwiftの文字列操作に更について学ぶことができます:
 
 - [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
-- [Apple Developer Documentation: lowercased()](https://developer.apple.com/documentation/swift/string/2296851-lowercased)
 - [Swift Programming Guide: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

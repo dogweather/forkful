@@ -48,7 +48,3 @@ Alternatywy: Alternatywą dla metody, którą przedstawiliśmy, jest użycie fun
 Szczegóły implementacji: nasz kod najpierw przekształca tekst na listę punktów kodowych, po czym każdy punkt kodowy jest zamieniany na wielką literę. Na koniec, wszystkie te pojedyncze punkty kodu są łączone w jeden ciąg. Dzięki temu metoda jest bardzo skuteczna dla dowolnej długości tekstu, a także obsługuje znaki specjalne i diakrytyczne.
 
 ## Zobacz także
-
-- Dokumentacja Gleam na temat [funkcji String](https://hexdocs.pm/gleam_stdlib/gleam/string/)
-- Artykuł na temat [operacji na ciągach znaków w języku programowania Gleam](https://learnxinyminutes.com/docs/gleam/)
-- Post na blogu na temat [podstaw operacji na ciągu znaków w Gleam](https://blog.gleam.run/posts/)

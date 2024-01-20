@@ -60,4 +60,3 @@ res, err := client.Do(req)
 
 - [Goの公式ドキュメンテーションのnet/httpパッケージ](https://golang.org/pkg/net/http/)
 - [Go by Example: HTTPクライアント](https://gobyexample.com/http-clients)
-- [Go言語でRESTful APIを呼び出す](http://mattn.kaoriya.net/software/lang/go/20140313143654.htm)

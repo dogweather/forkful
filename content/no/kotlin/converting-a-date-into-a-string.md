@@ -42,6 +42,4 @@ Når du kjører denne koden, får du utskrift som:
 3. Implementasjonsdetaljer: `SimpleDateFormat` fungerer ved å ta et datomønster som en streng (for eksempel "dd-MM-yyyy"). Dette brukes til å definere ønsket utgående format.
 
 **## Se Også**
-- Kotlin sin offisielle dokumentasjon på dato- og tidsbehandling: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-clock/)
-- Guide på nettet om Kotlin-datoformattering: [link](https://www.baeldung.com/kotlin/date-time-formating)
 - Stack Overflow-tråder om emnet: [link1](https://stackoverflow.com/questions/5369682/get-current-time-and-date-on-android) [link2](https://stackoverflow.com/questions/46481789/kotlin-dates)

@@ -64,4 +64,3 @@ Für weitere Informationen, bitte sehen Sie die folgenden Ressourcen:
 
 - [`libcurl` offizielle Dokumentation](https://curl.haxx.se/libcurl/c/)
 - [Das `libcurl-tutorial`](https://curl.se/libcurl/c/libcurl-tutorial.html)
-- [Andere Methoden zum herunterladen von Webseiten in C](http://zetcode.com/articles/curl/)

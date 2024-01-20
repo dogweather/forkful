@@ -26,5 +26,4 @@ Pour créer un fichier texte en Elm, il suffit d'utiliser la fonction ```File.wr
 Il est important de noter que la capacité d'écrire des fichiers texte en Elm n'est pas disponible dans tous les navigateurs. Cela signifie que cette technique peut ne pas être adaptée à toutes les applications web. Cependant, il existe d'autres options telles que l'utilisation de bases de données en ligne ou de services tiers pour stocker vos informations.
 
 ## Voir aussi:
-- [Documentation officielle Elm pour l'écriture de fichiers](https://guide.elm-lang.org/effects/file.html)
 - [Article sur la gestion des fichiers en Elm](https://medium.com/@spielhuus/working-with-files-in-elm-4c686054ca24)

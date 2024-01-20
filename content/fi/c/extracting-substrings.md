@@ -65,5 +65,4 @@ Sopivan funktion valinta riippuu siitä, mitä tarkalleen ottaen haluat saavutta
 ## Katso myös
 
 - [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm) TutorialsPointissa.
-- [Function strncpy() in C](https://www.geeksforgeeks.org/function-strncpy-in-c/) GeeksforGeeksissä.
 - [How to take a substring in C](https://stackoverflow.com/questions/4214314/get-a-substring-of-a-char) StackOverflow'ssa.

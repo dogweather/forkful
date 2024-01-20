@@ -56,4 +56,3 @@ Lorsque vous utilisez des regex en C#, l'analyse réelle de l'expression réguli
 
 - [Documentation officielle de Microsoft sur les expressions régulières](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions)
 - [Regex101](https://regex101.com/): Un outil en ligne pour tester et déboguer des expressions régulières.
-- [Regexr](https://regexr.com/): Un autre outil en ligne pour apprendre, construire et tester les expressions régulières.

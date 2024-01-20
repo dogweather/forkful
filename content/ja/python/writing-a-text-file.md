@@ -34,5 +34,3 @@ with open('existing_file.txt', 'a') as file:
 
 ## 関連リンク：
 - [Pythonのopen関数について（公式ドキュメント）](https://docs.python.org/ja/3/library/functions.html#open)
-- [テキストファイルを書き込む方法（Qiitaの記事）](https://qiita.com/kaityo256/items/11e9af781b580a6414ff)
-- [プログラムでのテキストファイルの生成方法（Tech Academyの記事）](https://www.tech-learn.net/2020/04/10374.html)

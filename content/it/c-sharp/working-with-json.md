@@ -56,4 +56,3 @@ JSON (JavaScript Object Notation) è stato inventato da Douglas Crockford nel 20
 ## Vedi anche:
 - [Documentazione ufficiale di Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Learn/JavaScript/Objects/JSON)
-- [JSON vs XML](https://programmaticponderings.com/2014/09/09/number-8-json-vs-xml-which-is-the-best-for-your-enviroment/)

@@ -53,4 +53,3 @@ public class CompareDates {
 ## 関連リンク
 
 - [Oracle Java 8 Date and Time API Guide](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Jenkov Java Date Comparison Tutorial](http://tutorials.jenkov.com/java-date-time/comparing-dates.html)

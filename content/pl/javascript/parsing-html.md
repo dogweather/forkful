@@ -41,6 +41,5 @@ DOMParser jest wbudowany w większość przeglądarek i przekształca ciąg znak
 
 ## Zobacz także
 - Dokumentacja DOMParser API - [link](https://developer.mozilla.org/pl/docs/Web/API/DOMParser)
-- Jak zabezpieczyć swoją stronę przed XSS - [link](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 - Pakiet npm htmlparser2 - [link](https://npmjs.com/package/htmlparser2)
 - Pakiet npm jsdom - [link](https://npmjs.com/package/jsdom)

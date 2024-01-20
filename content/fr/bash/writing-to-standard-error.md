@@ -54,6 +54,5 @@ La syntaxe utilisée pour écrire dans la sortie d'erreur standard est `>&2`. Ce
 
 Pour en savoir plus sur l'écriture dans la sortie d'erreur standard, consultez ces sources utiles :
 
-- [Bash Tutorial - Standard Input and Output](https://ryanstutorials.net/bash-scripting-tutorial/bash-input-output.php)
 - [The Linux Command Line - Standard I/O and Redirection](https://linuxcommand.org/lc3_lts0070.php)
 - [GNU Bash Manual - Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)

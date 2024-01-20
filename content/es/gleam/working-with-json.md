@@ -62,6 +62,4 @@ En términos de implementación, Gleam utiliza la biblioteca Rust `serde` para t
 
 Si estás interesado en aprender más sobre JSON en Gleam, aquí tienes algunos recursos útiles:
 
-- [Documentación de Gleam sobre JSON](https://gleam.run/modules/json.html)
 - [Sitio web oficial de JSON](https://www.json.org/json-es.html)
-- [Tutorial de JSON en Gleam](https://learnbyexample.github.io/learn_gleam/json_gleam/)

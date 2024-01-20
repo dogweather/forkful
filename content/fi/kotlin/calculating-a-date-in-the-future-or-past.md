@@ -42,6 +42,5 @@ Vaihtoehtona on käyttää kirjastoa, kuten Joda-Time, jos sinun on työskennelt
 Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on pohjimmiltaan suhteellisen aikayksikön lisäämistä tai vähentämistä. Kotlin / Java tekevät tämän sisäisesti päivän millisekunteina.
 
 ## Katso myös:
-- [Kotlinin virallinen dokumentaatio päivämäärien ja ajan käsittelystä](https://kotlinlang.org/docs/dates-periods-in-standard-library.html)
 - [Java 8 Date Time API](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
 - [Joda-Time -kirjasto](https://www.joda.org/joda-time/)

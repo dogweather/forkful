@@ -54,7 +54,6 @@ int main() {
 
 ## 参照
 
-- cURLpp公式ドキュメント: [こちら](https://www.cpp-netlib.org/)
 - cURL公式ドキュメント: [こちら](https://curl.haxx.se/)
 - Wgetマニュアル: [こちら](https://www.gnu.org/software/wget/manual/wget.html) 
 - Python Requests: [こちら](https://requests.readthedocs.io/en/master/) 

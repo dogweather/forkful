@@ -53,4 +53,3 @@ La méthode `Path.GetTempFileName()` en C# crée un fichier temporaire avec un n
 ## Voir aussi:
 
 - [Documentation sur `Path.GetTempFileName()` (anglais)](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
-- [Autres manières de créer des fichiers temporaires en C# (anglais)](https://www.c-sharpcorner.com/UploadFile/mahesh/how-to-create-a-temporary-file-in-C-Sharp/)

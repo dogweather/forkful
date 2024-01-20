@@ -57,6 +57,5 @@ Console.WriteLine("There are {0} days between date1 and date2.", span.TotalDays)
 
 - DateTime luokka: [https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0)
   
-- Microsoftin ohjeet päivämäärien vertailusta: [https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/datetime/how-to-compare-dates-and-times](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/datetime/how-to-compare-dates-and-times)
   
 - Lisätietoja TimeSpan luokasta: [https://docs.microsoft.com/fi-fi/dotnet/api/system.timespan?view=net-5.0](https://docs.microsoft.com/fi-fi/dotnet/api/system.timespan?view=net-5.0)

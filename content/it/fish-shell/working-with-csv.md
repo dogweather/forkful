@@ -30,6 +30,3 @@ Esistono diversi tipi di file CSV, come ad esempio quelli delimitati da tabulazi
 L'implementazione di Fish Shell per lavorare con i file CSV si basa su una libreria esterna chiamata `libcsv`. Questa libreria fornisce funzioni di lettura e scrittura per i file CSV e viene utilizzata anche da altri programmi come Excel o LibreOffice.
 
 ## Vedi anche: 
-- [Manuale di utilizzo di fgetcsv](https://fishshell.com/docs/current/cmds/fgetcsv.html)
-- [Libreria libcsv](https://github.com/npobel/libcsv)
-- [Introduzione ai file CSV](https://support.google.com/docs/answer/40608?co=GENIE.Platform%3DDesktop&hl=it)

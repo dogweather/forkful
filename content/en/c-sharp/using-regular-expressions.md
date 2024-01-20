@@ -50,7 +50,6 @@ Regex also supports various options like case-insensitive (`RegexOptions.IgnoreC
 ## See Also
 - [MSDN Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-framework-4.8)
 - [Learn Regex The Hard Way](https://regex.learncodethehardway.org/book/)
-- [Regexr - An online tool to learn, build, & test Regular Expressions](https://regexr.com/)
 - [Regex Crossword – a crossword puzzle with regular expressions](https://regexcrossword.com/)
 
 Tap into regex's potential to become a more productive C# coder. The flexibility and power make them an indispensable tool in your coding toolkit.

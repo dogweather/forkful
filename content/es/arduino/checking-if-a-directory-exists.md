@@ -56,5 +56,4 @@ En cuanto a la implementación, la función SD.exists utiliza debajo de su capa 
 Puedes encontrar más información y ejemplos de código sobre la biblioteca SD para Arduino en los siguientes enlaces:
 
 - [Documentación de la Biblioteca SD](https://www.arduino.cc/en/Reference/SD)
-- [Ejemplos de Código con la Biblioteca SD](https://www.arduino.cc/en/Tutorial/LibraryExamples)
 - [Foro de Arduino - Dudas y discusiones acerca de programación con Arduino](https://forum.arduino.cc/index.php?topic=63667.0)

@@ -42,4 +42,3 @@ Gdy chodzi o szczegóły implementacji, komenda `Serial.available()` sprawdza, c
 Oto kilka linków do pokrewnych źródeł:
 - [Dokumentacja Arduino](https://www.arduino.cc/reference/pl/)
 - [Serial - komunikacja UART](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
-- [Kurs Arduino](https://www.udemy.com/course/arduino-step-by-step-getting-started/)

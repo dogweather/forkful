@@ -43,5 +43,4 @@ Ce qui est génial avec `Test-Path`, c'est qu'il n'est pas seulement limité à 
 Pour plus d'informations, consultez ces ressources utiles:
 
 - [Test-Path sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/test-path)
-- [PowerShell: Test d'existence d'un fichier ou d'un répertoire](https://blog.it-koehler.com/Archive/1534)
 - [PowerShell: Comment vérifier si un répertoire ou un fichier existe](https://adamtheautomator.com/powershell-check-if-file-exists/)

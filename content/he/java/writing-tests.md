@@ -37,5 +37,4 @@ public void testCalculate() {
 
 למידע נוסף על כתיבת בדיקות ב-Java ניתן לעיין בקישורים הבאים:
 
-- [בלוג רשמי של ג'אווה](https://blogs.oracle.com/javamagazine/java-unit-testing-support-in-intellij-idea)
 - [גיטהאב של מיתוג ג'אווה](https://github.com/junit-team/junit5)

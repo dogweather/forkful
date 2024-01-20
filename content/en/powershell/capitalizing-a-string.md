@@ -49,5 +49,3 @@ When it comes to the execution of these scripts, PowerShell directly utilizes .N
 Get familiar with string manipulation in PowerShell with these superb resources:
 
 - [Microsoft's `string` class documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
-- [PowerShell and the .NET framework](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparison?view=powershell-7.1)
-- [Working with strings in PowerShell](https://www.cyberciti.biz/faq/powershell-split-string-into-array/)

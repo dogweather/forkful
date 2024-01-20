@@ -60,5 +60,3 @@ When working with CSV files in Lua, it is important to be mindful of the differe
 
 ## See Also:
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) for more information on the ```io``` library in Lua.
-- [LuaCSV documentation](https://www.lua.org/extras/5.1/csv/) for a popular Lua library for parsing CSV files.
-- [LuaDataTables documentation](https://github.com/moteus/lua-datatables) for another Lua library for working with CSV files.

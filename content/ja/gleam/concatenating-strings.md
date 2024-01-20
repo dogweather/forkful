@@ -34,6 +34,4 @@ io.println(full_str) //--> "こんにちは、世界"
 
 ## 参考リンク
 
-- [Gleam公式ドキュメント](https://gleam.run/docs/introduction/): Gleamの概要や基本的な特性について詳しく説明しています。
-- [Erlangのリストの扱い](http://erlang.org/doc/programming_examples/list_processing.html): 文字列連結の背後にあるErlangのリスト操作についての詳細です。
 - [Gleamの文字列操作](https://gleam.run/book/tour/strings.html): Gleamでの他の文字列操作についての情報。

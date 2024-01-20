@@ -44,5 +44,4 @@ Når du jobber med CSV-filer i PowerShell, er det viktig å huske på at kolonne
 
 ## Se også:
 - [PowerShell dokumentasjon for Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
-- [Eksempelfil for å prøve ut kodene](https://github.com/powershell/powershell/tree/master/docs/reference/)
 - [Wikipedia artikkel om CSV formatet](https://en.wikipedia.org/wiki/Comma-separated_values)

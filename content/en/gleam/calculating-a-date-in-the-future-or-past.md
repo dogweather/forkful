@@ -50,7 +50,6 @@ When creating `add_days` or `subtract_days`, Gleam essentially converts the spec
 ## See Also
 
 For deeper insights, consider the following:
-- Official Gleam Docs: [Gleam’s `calendar` library](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)
 - Age - Chronological Calculations: [`age` library](https://hex.pm/packages/age)
 
 Do keep these bits handy, as you'll find yourself dealing with dates more often than you might think in your programmer's journey.

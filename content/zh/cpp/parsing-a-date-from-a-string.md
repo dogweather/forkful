@@ -63,5 +63,4 @@ Day: 13
 ## 查看更多
 
 - [C++官方文档—<ctime>](http://www.cplusplus.com/reference/ctime/)
-- [C++时间与日期处理全攻略](https://zhuanlan.zhihu.com/p/144656369)
 - [GCC标准库文档—std::get_time](https://gcc.gnu.org/onlinedocs/libstdc++/libstdc++-html-USERS-4.3/a02089.html)

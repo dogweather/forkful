@@ -41,5 +41,4 @@ Innholdet for begge disse funksjonene kan være i form av variabler, datatyper o
 ## Se også
 
 - [PHP: strtolower - Manual](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP 4.0: New Features](https://www.php.net/manual/en/new-features.php)
 - [PHP: mb_strtolower - Manual](https://www.php.net/manual/en/function.mb-strtolower.php)

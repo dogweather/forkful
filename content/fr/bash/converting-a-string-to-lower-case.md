@@ -48,5 +48,4 @@ La commande `tr` utilisée dans notre exemple est une commande UNIX standard qui
 Voici quelques sources utiles pour approfondir le sujet:
 
 - GNU Coreutils: [Tr](https://www.gnu.org/software/coreutils/manual/coreutils.html#tr-invocation)
-- GNU Awk User’s Guide: [Built-in Functions](https://www.gnu.org/software/gawk/manual/html_node/Built_002din-Functions.html)
 - Advanced Bash-Scripting Guide: [Case Conversion](http://www.tldp.org/LDP/abs/html/case-conversion.html)

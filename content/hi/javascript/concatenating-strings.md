@@ -38,7 +38,6 @@ let result = str1 + str2; // "नमस्ते दुनिया!"
 
 ## यह भी देखें:
 
-- [MDN Web Docs - श्रृंखला जोड़ना](https://developer.mozilla.org/hi/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
 - [JavaScript Info - Strings](https://javascript.info/string)
 
 > Note: यह मेचिन ट्रांसलेशन है। कृपया मानवीय त्रुटियों माफ करें।

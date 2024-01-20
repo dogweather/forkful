@@ -45,5 +45,4 @@ Anche se Enlive permette di analizzare facilmente l'HTML, è importante ricordar
 ## Vedi Anche:
 
 - **Documentazione ufficiale Enlive**: [link qui](https://github.com/cgrand/enlive)
-- **Jsoup**, un'altra libreria Clojure per parsing HTML: [link qui](https://github.com/jsoup/jsoup)
 - **Hickory**, una libreria per trasformare HTML in Clojure data structures: [link qui](https://github.com/davidsantiago/hickory)

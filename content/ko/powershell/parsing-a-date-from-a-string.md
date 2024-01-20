@@ -44,7 +44,3 @@ Write-Output $date
 PowerShell에서 날짜 파싱은 .NET의 DateTime 클래스를 이용하여 진행합니다. 파싱 함수인 [DateTime]::Parse()는 여러 형식의 날짜 문자열을 다룰 수 있어 매우 유용합니다. 
 
 ## 참고자료 
-
-- [PowerShell: Working with Dates and Time](https://www.sqlshack.com/powershell-working-with-dates-and-time/)
-- [CMDLET: Parsing Dates](https://docs.microsoft.com/PowerShell/module/microsoft.powershell.utility/parseexact?view=powershell-7.1)
-- [Working with PowerShell Date Command](https://www.technipages.com/powershell-how-to-add-days-weeks-months-seconds-to-current-date-or-given-date)

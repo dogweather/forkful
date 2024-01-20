@@ -49,4 +49,3 @@ println(subStr)  // 输出：你好
 有关Kotlin字符串操作的更多信息，可以参考：
 - [Kotlin官方文档](https://kotlinlang.org/docs/reference/basic-types.html#strings)
 - [Kotlin字符串提取教程](https://www.programiz.com/kotlin-programming/string)
-- [Kotlin Mastermind: 字符串操作](https://kotlinmastermind.com/kotlin-string-functions/)

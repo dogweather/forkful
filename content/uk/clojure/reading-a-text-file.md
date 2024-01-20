@@ -35,6 +35,4 @@ Clojure - сучасна версія мови Lisp, яка вперше з'яв
 
 ## Дивіться ще
 
-- [Читання і записування файлів в Clojure](https://clojure-doc.org/articles/tutorials/reading_writing.html)
-- [Слайди про читання файлів в Clojure](https://www.slideshare.net/4clojure/clojure-reading-files)
 - [Документація Clojure по `slurp`](https://clojuredocs.org/clojure.core/slurp)

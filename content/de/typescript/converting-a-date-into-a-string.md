@@ -37,5 +37,4 @@ Zudem ist die genaue Implementierung von `toLocaleString()` browserabhängig, so
 ## Siehe auch
 
 - [MDN: Date.prototype.toLocaleString()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-- [ECMAScript Internationalization API](https://262.ecma-international.org/ECMA-402/1.0/#sec-13.3.1)
 - [TC39: Proposal Temporal](https://github.com/tc39/proposal-temporal), eine moderne Alternative zu `Date`.

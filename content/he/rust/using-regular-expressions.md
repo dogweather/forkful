@@ -44,5 +44,3 @@ println!("{}", result); // Hi, World!
 ## ראה גם
 
 - [דרכון השפה Rust](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)
-- [מדריך לשימוש בביטויים רגילים בשפת Rust](https://doc.rust-lang.org/regex/regex/index.html)
-- [קבוצת בעיות לתרגילים שנכתבו בשפת Rust באמצעות ביטויים רגילים](https://doc.rust-lang.org/rust-by-example/std/regex.html)

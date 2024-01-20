@@ -40,5 +40,4 @@ int main() {
 
 ## 참고자료 (See Also)
 * [toupper 함수에 대한 cplusplus.com 문서](http://www.cplusplus.com/reference/cctype/toupper/)
-* [문자열 처리에 대한 geeksforgeeks.org 가이드](https://www.geeksforgeeks.org/string-handling-in-c/)
 * [C표준 라이브러리에 대한 Wikipedia 글](https://en.wikipedia.org/wiki/C_standard_library)

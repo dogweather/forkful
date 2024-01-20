@@ -62,7 +62,5 @@ Lors de l'utilisation de `before?` ou `after?` en Clojure pour comparer les date
 ## Voir Aussi :
 
 Pour plus de détails sur la manipulation de dates en Clojure :
-- [clojure.java-time](https://cljdoc.org/d/java-time/java-time/0.3.2/api/java-time)
-- [Clojure Cookbook: Manipulating Dates and Times](https://clojure-cookbook.com/recipes/03_dates_and_times/)
 - [Java SE 8 Date and Time](https://docs.oracle.com/javase/tutorial/datetime/)
 - [clojure/clj-time](https://github.com/clj-time/clj-time)

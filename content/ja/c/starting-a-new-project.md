@@ -34,8 +34,6 @@ int main() {
 
 ## 参照
 C言語：
-- [C Programming Language: Brian W. Kernighan, Dennis M. Ritchie](https://www.amazon.co.jp/Programming-Language-Brian-W-Kernighan/dp/0131103628)
 
 新しいプロジェクトの開始：
 - [Starting a New Project: GitHub Guide](https://guides.github.com/activities/hello-world/)
-- [Starting a New Programming Project: a General Guide](https://www.codementor.io/@npostolovski/40-important-c-questions-for-technical-interview-14jvp91lpop)

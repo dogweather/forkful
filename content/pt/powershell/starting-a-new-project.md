@@ -47,4 +47,3 @@ Ao iniciar um novo projeto no PowerShell, é uma boa prática seguir os princíp
 Se você quiser conhecer mais sobre a programação em PowerShell, sugiro os seguintes recursos:
 - Documentação do PowerShell da Microsoft: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
 - PowerShell para iniciantes: [https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7)
-- Livro "Aprendendo PowerShell": [https://www.amazon.com.br/Aprendendo-PowerShell-Jonathan-Hassell/dp/8575224862](https://www.amazon.com.br/Aprendendo-PowerShell-Jonathan-Hassell/dp/8575224862)

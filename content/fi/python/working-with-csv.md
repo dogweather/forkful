@@ -34,4 +34,3 @@ CSV-tiedoston käsittely Pythonilla on melko suoraviivaista, mutta on kuitenkin 
 ## Katso myös:
 - [Pythonin virallinen dokumentaatio CSV-moduulista](https://docs.python.org/3/library/csv.html)
 - [CSV-tiedostojen käsittelykurssi Codecademyltä](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-files/cheatsheet)
-- [JSON vs. CSV: Mikä on parempi?](https://www.cagedata.org/articles/json-vs-csv/)

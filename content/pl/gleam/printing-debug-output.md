@@ -42,6 +42,3 @@ Wynikowa informacja wyjściowa:
 (3) W Gleam, `println` wykorzystuje funkcję `display` do konwersji wartości na ciągi znaków. W rezultacie wartości są zapisywane w reprezentacji, która jest użyteczna dla debugowania, ale nie zawsze jest czytelna dla człowieka. 
 
 ## Zobacz też:
-
-- [Dokumentacja do `gleam/io`](https://hexdocs.pm/gleam_stdlib/gleam/io)
-- [Gleam: Introduction to Error Handling](https://gleam.run/tour/error-handling.html)

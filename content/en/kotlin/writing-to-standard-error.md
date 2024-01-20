@@ -33,6 +33,3 @@ Although writing to standard error is a common practice, there are alternatives 
 Internally, writing to standard error in Kotlin uses the standard error stream, which is used to output error messages or log information in the console. This stream is separate from the standard output stream, which is used for regular program output.
 
 ## See Also:
-
-- [Kotlin Standard Streams Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/err.html)
-- [Logging Libraries for Kotlin](https://kotlinlang.org/docs/reference/logging.html)

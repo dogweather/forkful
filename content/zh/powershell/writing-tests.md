@@ -69,6 +69,3 @@ Passed: 2 Failed: 0 Skipped: 0 Pending: 0
 在PowerShell中，可以使用Pester测试框架来编写和运行测试。它提供了一组简单的语法来定义和描述测试，同时还包含了丰富的断言函数来验证代码的输出。
 
 # 参考资料：
-- [PowerShell Pester文档](https://pester.dev/docs/introduction)
-- [测试编写的来源和发展](https://www.pcquest.com/the-history-of-test-writing/) 
-- [跟我学PowerShell：测试编写](https://github.com/PowerShellChina/129.-Test-Writing)

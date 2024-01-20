@@ -45,5 +45,4 @@ En este caso, el substring sería `"Mundo!"`.
 Para más información y recursos relacionados, puede visitar los siguientes enlaces:
 
 - [Gleam Docs: Slice](https://gleam.run/documentation/)
-- [Gleam Examples: String Slicing](https://github.com/gleam-prog/gleam)
 - [Gleam Discussion: String Functions](https://github.com/gleam-lang/gleam/discussions)

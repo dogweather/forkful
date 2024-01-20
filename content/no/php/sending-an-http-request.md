@@ -53,5 +53,4 @@ For det første, når du bruker cURL, er det viktig å alltid lukke cURL ressu
 ## Se også:
 
 - Lær mer om PHP cURL biblioteket i [PHP dokumentasjonen](https://www.php.net/manual/en/book.curl.php)
-- Les hva [Mozilla har å si](https://developer.mozilla.org/no/docs/Web/HTTP/Overview) om HTTP.
 - Bli kjent med alternative biblioteker: [GuzzleHttp](http://docs.guzzlephp.org/en/stable/), [HTTPful](http://nategood.com/httpful/)

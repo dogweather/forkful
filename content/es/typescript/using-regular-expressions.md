@@ -28,6 +28,5 @@ El `g` al final de la expresión indica que se buscan todas las ocurrencias de l
 Las expresiones regulares tienen sus raíces en la teoría matemática y lógica, y han sido utilizadas en informática desde la década de 1950. Aunque pueden ser poderosas, también pueden ser complicadas de entender y escribir. Algunas alternativas a las expresiones regulares incluyen el uso de métodos de cadenas incorporados en TypeScript, como `includes()` o `replace()`. También hay bibliotecas de terceros disponibles que ofrecen funcionalidades y sintaxis más amigables para trabajar con patrones en cadenas de texto. 
 
 ## Ver también:
-- [Documentación de TypeScript sobre expresiones regulares](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
 - [Expresiones regulares en JavaScript (sintaxis similar a TypeScript)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [Biblioteca `XRegExp` para expresiones regulares mejoradas en JavaScript](https://xregexp.com/)

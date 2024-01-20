@@ -50,4 +50,3 @@ No Ruby, é possível também criar, escrever e manipular arquivos CSV usando ap
 # Veja também:
 
 - [Documentação da biblioteca CSV do Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
-- [Tutorial de como trabalhar com arquivos CSV no Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-csv-files-in-ruby)

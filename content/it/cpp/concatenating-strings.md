@@ -55,6 +55,5 @@ Rispetto alle stringhe concatenate manualmente, questi metodi offrono più contr
 Per maggiori informazioni sulla concatenazione di stringhe in C++, consulta i seguenti link:
 
 - [Stringhe in C++ su cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- [String concatenation: The good, the bad, and the ugly](https://www.fluentcpp.com/2017/01/20/the-most-important-thing-about-string-concatenation-in-cpp/)
 - [Documentazione su std::stringstream](http://www.cplusplus.com/reference/sstream/stringstream/)
 - [Guide alla libreria {fmt}](https://fmt.dev/latest/index.html)

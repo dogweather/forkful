@@ -49,4 +49,3 @@ Z punktu widzenia implementacji, zarówno `take` jak i `drop` są dosyć proste,
 - [Dokumentacja funkcji `take`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:take)
 - [Dokumentacja funkcji `drop`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:drop)
 - [Dokumentacja funkcji `splitAt`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:splitAt)
-- [Poradnik o ciągach znaków w Haskellu](https://www.tutorialspoint.com/haskell/haskell_strings.htm)

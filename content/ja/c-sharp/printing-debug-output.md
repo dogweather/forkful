@@ -41,5 +41,4 @@ class Program
 # 参考リンク ("See Also")
 
 - Debug Class: [公式文書](https://docs.microsoft.com/ja-jp/dotnet/api/system.diagnostics.debug)
-- Debugging in C#: [Tutorial](https://www.tutorialsteacher.com/csharp/csharp-debugging)
 - Debug and Trace Classes: [MSDN Article](https://msdn.microsoft.com/en-us/library/3y86e45b.aspx)

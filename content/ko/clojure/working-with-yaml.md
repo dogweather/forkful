@@ -37,5 +37,3 @@ YAML은 2001년에 처음 개발되었고, JSON이나 XML과 비슷한 형식을
 ## 참고 자료:
 
 - [YAML 공식 사이트](https://yaml.org/)
-- [Clojure의 YAML 라이브러리](https://github.com/clj-commons/yaml)
-- [JSON vs YAML: 당신이 선택해야 할 포맷은 무엇인가?](https://dzone.com/articles/json-vs-yaml-which-format)

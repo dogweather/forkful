@@ -38,5 +38,4 @@ let matches = pattern |> Regex.matches("some example")
 ## 参考链接：
 
 - [正则表达式维基百科页面](https://zh.wikipedia.org/zh-hans/正则表达式)
-- [Gleam官方文档中关于正则表达式的说明](https://gleam.run/stdlib/gleam_Std.Regex.html)
 - [Java官方文档中关于使用正则表达式的教程](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)

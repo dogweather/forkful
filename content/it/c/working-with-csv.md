@@ -70,4 +70,3 @@ Inoltre, ci sono diverse librerie disponibili per lavorare con file CSV in C, co
 
 - [Funzioni di input/output della libreria stdio.h](https://www.programiz.com/c-programming/c-input-output)
 - [Libcsv - Libreria C per lavorare con file CSV](https://sourceforge.net/projects/libcsv/)
-- [Libcsv-parser - Libreria C per parsing di file CSV](https://github.com/evanphx/libcsv-parser)

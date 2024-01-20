@@ -26,6 +26,3 @@ salutation -- הופך להיות "שלום עולם"
 בהיסטוריה של שפת התכנות Elm, מאז הגירסאות הראשונות, מתכנתים שימשו בפעולת החיבור במחרוזות. זו נתינה יעילה אך מוגבלת - יעילה מאחר והיא מאפשרת המרה של מחרוזות, מוגבלת מאחר והיא לא תומכת במשתנים מסוגים אחרים בצורה ישירה.
 
 ## ראה גם:
-- [חיבור מחרוזות ב-Elm](https://korban.net/elm/elm_in_action/3/#combining-string-values-with-)
-- [תיעוד מדרייך Elm ומחרוזות](https://guide.elm-lang.org/types/strings.html)
-- [תחביר string ב-Elm](https://elmprogramming.com/strings.html)

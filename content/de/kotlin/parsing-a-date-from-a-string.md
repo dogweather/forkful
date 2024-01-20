@@ -47,5 +47,4 @@ Wenn es um Implementierungsdetails geht, entspricht das Muster, das Sie in `ofPa
 ## Siehe auch:
 
 - [Umgang mit Daten und Zeiten in Kotlin - baeldung.com](https://www.baeldung.com/kotlin/dates)
-- [Datumsformatierung - offizielle Kotlin-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/format.html)
 - [SimpleDateFormat - Oracle Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

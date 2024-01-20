@@ -63,4 +63,3 @@ När man skriver till en textfil måste man se till att den har rätt filändels
 
 - [Introduction to Go Programming](https://golang.org/doc/)
 - [Creating and Writing Files in Go](https://gobyexample.com/writing-files)
-- [Working with Files and Folders in Go](https://www.calhoun.io/working-with-files-and-folders-in-go/)

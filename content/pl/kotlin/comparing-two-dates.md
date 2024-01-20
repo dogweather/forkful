@@ -37,8 +37,3 @@ Możemy zdecydować się na takie podejście, jeżeli operacje na datach są zł
 
 ## Zobacz też
 Więcej szczegółów na temat porównywania dat w Kotlinie możesz znaleźć w tych źródłach:
-
-- Porównywanie dat w Kotlinie: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/compare-to.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/compare-to.html)
-- Praca z datami i czasem w Kotlinie: [https://kotlinlang.org/docs/dates-periods.html](https://kotlinlang.org/docs/dates-periods.html)
-- Klasa LocalDateTime: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date-time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date-time) 
-- Klasa ZonedDateTime: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-zoned-date-time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-zoned-date-time)

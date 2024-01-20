@@ -46,4 +46,3 @@ W Bash, `jq` wykorzystuje język wyrażeń regularnych oraz składniowe elementy
 ## Zobacz też
 
 - [Dokumentacja oficjalna `jq`](https://stedolan.github.io/jq/)
-- [Tutorial o `jq` w Bash](https://www.freecodecamp.org/news/how-to-parse-json-in-bash/)

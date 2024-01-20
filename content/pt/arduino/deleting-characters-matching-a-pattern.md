@@ -51,6 +51,5 @@ A função 'replace' procura pela string "Mundo" e a substitui por "Arduino".
 
 - [Documentação oficial do Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 - [W3Schools: Manipulação de String em C++](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [Explain That Stuff: Introdução à Programação](https://www.explainthatstuff.com/introduction-to-programming.html)
 
 Nota: As fontes estão em inglês. Se necessário, utilize uma ferramenta de tradução.

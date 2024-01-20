@@ -34,4 +34,3 @@ file.append({path="/my-file.txt", contents="잘가요!"})
 
 ## 관련 자료:
 - [Gleam 문서](https://gleam.run/)
-- [파일 시스템 모듈 문서](https://gleam.run/modules/io/)

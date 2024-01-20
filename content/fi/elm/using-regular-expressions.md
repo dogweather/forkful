@@ -53,4 +53,3 @@ Säännöllisten lausekkeiden toteutus perustuu tekstin parsimiseen ja vertailuu
 ## Katso myös
 
 - [Elm-kirjasto: Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Blogikirjoitus säännöllisten lausekkeiden käytöstä Elm-kielessä](https://www.jancona.com/posts/2016-12-13-elm-regex.html)

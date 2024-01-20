@@ -60,5 +60,4 @@ En tout état de cause, il est important de savoir que `File.createTempFile` cr�
 Pour en savoir plus sur la création de fichiers temporaires en Java:
 
 - [Oracle Java Documentation: File (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Baeldung: Guide to File.createTempFile()](https://www.baeldung.com/java-create-temporary-file)
 - [StackOverflow: Java Create Temp File](https://stackoverflow.com/questions/16624982/java-create-temp-file)

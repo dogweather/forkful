@@ -39,5 +39,4 @@ Implementointidetaljien osalta, Rubyllä on monia muita tapoja kirjoittaa ja muo
 # Katso myös:
 
 - [Ruby-dokumentaatio](https://ruby-doc.org/core-2.6/File.html)
-- [Tekstitiedostojen käyttäminen Rubyssa](https://www.rubyguides.com/ruby-tutorial/reading-writing-files/)
 - [Miten luoda tekstitiedostoja Rubyssa](https://stackoverflow.com/questions/3689133/quickly-create-a-large-file-on-a-windows-system)

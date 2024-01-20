@@ -41,4 +41,3 @@ Fish Shell提供了多种连接字符串的方式，如上面提到的`string jo
 
 ## 另请参阅：
 - Fish Shell的[官方手册](https://fishshell.com/docs/current/index.html)对该主题有深入的研究。
-- 对于字符串操作的各种情况，[GNU操作手册](https://www.gnu.org/software/coreutils/manual/html_node/string-operations.html)是一个不错的资源。

@@ -55,4 +55,3 @@ Tekstitiedoston lukemisessa tietojen siirtäminen levyltä muistiin (I/O-toiminn
 
 * [Cplusplus.com - std::ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : Perusteellinen tietopaketti C++:n `ifstream`-luokasta.
 * [Cppreference.com - Input/Output Library](https://en.cppreference.com/w/cpp/io) : Yksityiskohtainen C++:n I/O-kirjaston kuvaus.
-* [GeeksforGeeks - C++ File Handling](https://www.geeksforgeeks.org/c-plus-plus-file-handling/?ref=lbp) : Paljon esimerkkejä ja vinkkejä tekstitiedostojen käsittelystä C++:ssa.

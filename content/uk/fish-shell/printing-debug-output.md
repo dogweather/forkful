@@ -48,4 +48,3 @@ echo $greeting
 
 ## Дивіться також
 - Офіційна документація Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- Інструкція з інструментів відладки Fish Shell: [https://fishshell.com/docs/current/debugging.html](https://fishshell.com/docs/current/debugging.html)

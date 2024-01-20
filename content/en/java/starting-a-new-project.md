@@ -64,4 +64,3 @@ There's a mountain of resources out there for new Java coders. Here are links to
 - Oracle Java Documentation [link](https://docs.oracle.com/javase/tutorial/)
 - JetBrains IntelliJ IDEA Documentation [link](https://www.jetbrains.com/help/idea/)
 - Eclipse Foundation's Java IDE (Eclipse) Tutorial [link](https://www.vogella.com/tutorials/Eclipse/article.html)
-- Apache Foundation's Java IDE (NetBeans) Tutorial [link](https://netbeans.apache.org/kb/docs/java/quickstart.html)

@@ -49,5 +49,4 @@ La funzione `Date.add/2` calcola il nuovo giorno, mese e anno, tenendo conto del
 ## Vedi Anche
 
 - [Documentazione modulo Date](https://hexdocs.pm/elixir/Date.html)
-- [Package Timex](https://hexdocs.pm/timex/readme.html)
 - [Package Calendar](https://hexdocs.pm/calendar/readme.html)

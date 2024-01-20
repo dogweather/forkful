@@ -67,4 +67,3 @@ Other alternatives to JSON include YAML and CSV, but these formats have their ow
 
 - [Microsoft Docs: Working with JSON data in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.1)
 - [JSON.org: Introducing JSON](https://www.json.org/json-en.html)
-- [PowerShell for Beginners: How to Convert JSON to PowerShell Objects and PowerShell Objects to JSON](https://adamtheautomator.com/convert-json-powershell/)

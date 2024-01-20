@@ -51,4 +51,3 @@ Per utilizzare il formato YAML in Bash, è necessario installare il pacchetto py
 
 - [Documentazione ufficiale di YAML](https://yaml.org/spec/)
 - [Strumento di parsing bash YAML](https://github.com/jasperes/bash-yaml) 
-- [Tutorial su come utilizzare YAML in Bash](https://opensource.com/article/19/7/yaml-open-source)

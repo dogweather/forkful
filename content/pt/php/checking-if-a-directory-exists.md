@@ -52,6 +52,5 @@ E se o diretório não existir, a saída será:
 
 ## Veja Também:
 
-* [Referência oficial da função PHP is_dir()](https://www.php.net/manual/pt_BR/function.is_dir)
 * [Fórum Stackoverflow sobre checar se diretório existe em PHP](https://stackoverflow.com/questions/1707801/making-a-new-directory-in-php)
 * [Tutorial detalhado sobre manipulação de diretório em PHP](https://www.w3schools.com/php/php_ref_directory.asp)

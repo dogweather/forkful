@@ -49,6 +49,3 @@ Pero la interpolación de cadenas es mucho más legible y preferida en la mayor�
 ## Ver más
 
 Si deseas seguir aprendiendo sobre Kotlin y la interpolación de cadena, aquí puedes visitar estos enlaces:
-
-- Kotlin Language Documentation: [String Templates](https://kotlinlang.org/docs/string-templates.html)
-- Kotlin koans: [Work with Strings](https://play.kotlinlang.org/byExample/01_introduction/05_String%20Templates)

@@ -40,4 +40,3 @@ Hvis du vil dykke dypere i hvordan `doesDirectoryExist` funksjonen er implemente
 ## Se Også
 
 - [Haskell System.Directory Modul Dokumentasjon](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-- [Haskell håndtering av I/O feil](https://wiki.haskell.org/Error_handling)

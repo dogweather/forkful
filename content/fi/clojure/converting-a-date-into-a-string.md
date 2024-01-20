@@ -64,4 +64,3 @@ Vieraile seuraavissa lähteissä saadaksesi lisää apua ja tietoa:
 
 - [Clojure for the Brave and True: Dates and Time](https://www.braveclojure.com/core-functions-in-depth/#Dates_and_Times)
 - [Java SE 8 Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clojure.contrib.str documentation](https://clojuredocs.org/clojure.contrib.str/format)

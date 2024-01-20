@@ -50,4 +50,3 @@ If you're searching for more detail or use-cases on how to work with regex in Ko
 
 - Kotlin documentation on regular expressions: [KotlinDoc: Regular Expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 - For scenarios where you need to replace a pattern with a specific character rather than deleting it: [StackOverflow: Kotlin replace character](https://stackoverflow.com/questions/56542080/kotlin-replace-character-in-string-at-given-index)
-- Tutorial on Kotlin and regex: [Baeldung: Working with regular expressions in Kotlin](https://www.baeldung.com/kotlin/regex)

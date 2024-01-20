@@ -45,6 +45,5 @@ My name is Tanaka and I am 25 years old.
 ## 参考資料:
 以下は、関連するソースへのリンクです:
 
-- cppreference: [input/output library](http://cppreference.com/w/cpp/io)
 - Wikipedia: [String interpolation](https://en.wikipedia.org/wiki/String_interpolation)
 - StackOverflow: [String interpolation in C++](https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf)

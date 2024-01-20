@@ -39,5 +39,3 @@ Esto es porque la cadena "¡Hola, mundo!" tiene 13 caracteres, incluyendo espaci
 ## Ver también
 Echa un vistazo a estos recursos para obtener más información (*Links simulados*):
 - [Documentación oficial de Kotlin](https://kotlinlang.org/docs/strings.html#string-length)
-- [Tutorial sobre Strings en Kotlin](http://www.myexample.com/kotlin-string)
-- [Trabajar con Strings en Kotlin](https://www.fakeexample.com/kotlin-string-tutorial)

@@ -42,6 +42,5 @@ Per manipolare i file CSV, esistono diversi moduli e librerie disponibili per va
 
 ## Vedi anche:
 
-- [Modulo CSV su Gleam Hub](https://hub.gleam.run/modules/ninemillimeter/csv/latest/)
 - [Documentazione ufficiale di Gleam](https://gleam.run/documentation/)
 - [Il formato CSV su Wikipedia](https://it.wikipedia.org/wiki/Comma-separated_values)

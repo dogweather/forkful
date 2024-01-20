@@ -44,5 +44,4 @@ PowerShellには、JSONを操作するための`ConvertTo-Json`、`ConvertFrom-J
 以下のリンクから、JSONについてさらに学ぶことができます。
 
 - [Wikipedia - JSON](https://ja.wikipedia.org/wiki/JavaScript_Object_Notation)
-- [Microsoft Docs - PowerShellでJSONを操作する](https://docs.microsoft.com/ja-jp/powershell/scripting/learn/deep-dives/everything-about-json?view=powershell-7.1)
 - [JSON.org](https://www.json.org/)

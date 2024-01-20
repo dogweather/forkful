@@ -61,4 +61,3 @@ Pour obtenir la date actuelle avec Arduino, vous pouvez utiliser la bibliothèqu
 Vous pouvez approfondir vos connaissances sur la gestion du temps dans Arduino en consultant ces sources:
 - La documentation officielle du RTC DS1307: [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf)
 - Guide d'introduction à la bibliothèque RTClib: [RTClib](https://github.com/adafruit/RTClib)
-- Tutoriel instructif pour obtenir la date et l'heure avec un module GPS: [Obtenir la date et l'heure avec GPS](https://www.instructables.com/id/How-to-Use-GPS-Module-With-Arduino-to-Get-Time-and/)

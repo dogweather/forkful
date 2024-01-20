@@ -47,4 +47,3 @@ En Haskell, les expressions régulières sont implémentées dans le module Text
 
 - [Documentation de base sur les expressions régulières en Haskell](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html)
 - [Cours avancé sur les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions)
-- [Démo interactive pour tester les expressions régulières en Haskell](https://regex-haskell.com/)

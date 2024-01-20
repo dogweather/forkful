@@ -42,4 +42,3 @@ In Elm, the `Debug.crash` function is the only way to write to standard error. O
 ## See Also:
 
 - [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Debugging Elm Application](https://guide.elm-lang.org/debugging/index.html)

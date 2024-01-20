@@ -36,4 +36,3 @@ Przykładowy błąd
 
 - [Dokumentacja Pythona o sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
 - [Przewodnik po błędach w Pythonie](https://realpython.com/python-exceptions/)
-- [Korzystanie ze standardowego błędu w kodzie Python](https://www.bogotobogo.com/python/python_fncs/Python_Errors_Exceptions.php)

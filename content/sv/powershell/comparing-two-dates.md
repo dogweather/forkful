@@ -62,4 +62,3 @@ Om du vill veta mer om att arbeta med datum i PowerShell, kolla följande länka
 
 - Microsofts officiella dokumentation om [`Get-Date`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
 - [`Compare-Object`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.1)
-- En bra artikel om datumanvändning i PowerShell på [`4SysOps`](https://4sysops.com/archives/use-powershell-to-work-with-dates-and-times/)

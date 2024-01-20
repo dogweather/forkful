@@ -35,5 +35,3 @@ In terms of implementation, standard error is typically handled by the operating
 ## See Also:
 
 - [Microsoft Docs: Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- [Codeguru: Writing to the Standard Error Stream in .NET C#](https://www.codeguru.com/csharp/writing-to-the-standard-error-stream-in-.net-c.html)
-- [C# Corner: Standard Error and Standard Output in C#](https://www.c-sharpcorner.com/article/standard-error-and-standard-output-in-c-sharp/)

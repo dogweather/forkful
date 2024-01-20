@@ -55,5 +55,4 @@ jane@example.com
 想要了解更多关于正则表达式的知识，可以参考以下资源：
 
 - [Java正则表达式教程](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [正则表达式在线测试工具](https://regexr.com/)
 - [正则表达式语法参考](https://www.rexegg.com/regex-quickstart.html)

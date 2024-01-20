@@ -34,4 +34,3 @@ Implementeringen av standard error handler kan variere avhengig av operativsyste
 
 ## Se også:
 - [fprintf documentation](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Standard error handler in C](https://stackify.com/standard-error-handler-in-c/)

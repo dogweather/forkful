@@ -43,5 +43,3 @@ Lorsque vous téléchargez une page web avec `Invoke-WebRequest`, PowerShell env
 Pour plus d'informations sur `Invoke-WebRequest` et le téléchargement de pages web avec PowerShell, vous pouvez consulter les ressources suivantes :
 
 - [Documentation officielle de Microsoft sur Invoke-WebRequest](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-- [Tutorial sur le scrapping de données web avec PowerShell](https://adamtheautomator.com/powershell-web-scraping-tutorial/)
-- [Guide sur l'utilisation de System.Net.WebClient en PowerShell](https://devblogs.microsoft.com/scripting/using-windows-powershell-to-work-with-the-net-framework-classes/)

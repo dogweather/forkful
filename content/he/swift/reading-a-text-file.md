@@ -39,6 +39,5 @@ Hello, Swift!
 
 ## ראו גם
 - [Reading and Writing Files in Swift](https://www.hackingwithswift.com/read/0/17/reading-and-writing-files-with-string)
-- [Swift Documentation: String(contentsOf:encoding:)](https://developer.apple.com/documentation/swift/string/1414957-init)
 
 כאן, אתם מוזמנים להכיר יותר על Swift וקריאת קבצי טקסט.

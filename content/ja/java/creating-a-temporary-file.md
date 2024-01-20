@@ -54,4 +54,3 @@ Javaのさらなる学習に役立つリンクを提供します：
 
 - `Files.createTempFile`: [Oracle oficial documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)
 - `java.nio.file`: [Oracle official documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/package-summary.html)
-- Temporary file in Java: [Java Code Geeks](https://www.javacodegeeks.com/2012/07/java-temporary-files.html)

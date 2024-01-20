@@ -57,5 +57,4 @@ Moreover, the function's implementation varies depending on the system's locale 
 Here are few online resources to further explore the conversion of date to string in C:
 
 - [C Library function - strftime()](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Date and Time - C Programming](https://www.zentut.com/c-tutorial/c-date-time/)
 - [Date Time Formatting In C Programming](https://www.itrelease.com/2011/11/date-time-formatting-c-programming/)

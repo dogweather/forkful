@@ -37,6 +37,4 @@ main = do
 
 ## ראה גם
 
-- [מתיאד גולדג'אן - דינאמיקות מחרוזות בהסקל](https://he.wikipedia.org/wiki/%D7%9B%D7%AA%D7%99%D7%91%D7%AA_Haskell)
 - [הספרייה `Data.String.Utils` בהסקל](https://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-String-Utils.html)
-- [פוטר גשם - שפות תוכנה עתיקות](https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98%D7%A8%D7%9F_%28%D7%A9%D7%A4%D7%AA_%D7%AA%D7%9B%D7%A0%D7%95%D7%AA%29)

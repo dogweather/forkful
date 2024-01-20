@@ -54,6 +54,5 @@ arg3
 
 - [פרמטרים מקו הפקודה](http://he.cppreference.com/w/cpp/language/main_function)
 - [Boost.Program_options](https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html)
-- [קריאת קלט מקו הפקודה](https://he.wikipedia.org/wiki/ארגומנט_שורת_פקודה)
 
 לא תמצאו כאן סעיף 'מסקנה'. במקום זאת, תמצאו מקום לחקור עוד על הנושא. בהתקנו!

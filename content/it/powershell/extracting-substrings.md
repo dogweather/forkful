@@ -37,4 +37,3 @@ Per quanto riguarda l'implementazione, la funzione `Substring` inizia a contare 
 ## Guarda anche
 Per saperne di più sulla gestione delle stringhe in PowerShell, dai un'occhiata a questi link: 
 - [Microsoft Official Documentation on Substrings](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-- [Understanding PowerShell Substring Method](https://www.tutorialsteacher.com/articles/understanding-powershell-substring-method)

@@ -49,6 +49,4 @@ puts str_array.join  # => "你好，世界！"
 ## 另请参阅
 更多有关于Ruby字符串连接和其他相关主题的信息，可以参考以下链接：
 
-- [Ruby中的字符串连接](https://www.rubyguides.com/2018/06/ruby-string-concatenation/)
 - [Ruby中的字符串方法文档](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby中关于性能的话题](https://www.fastruby.io/blog/ruby/performance/a-faster-hash.html)

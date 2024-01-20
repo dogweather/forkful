@@ -34,6 +34,4 @@ Alternativene til regulære uttrykk inkluderer strengmetoder og biblioteker som 
 
 ## Se også:
 
-- [Kotlins dokumentasjon om regulære uttrykk](https://kotlinlang.org/docs/regular-expressions.html)
-- [RegExr - online regulære uttrykkredigerer](https://regexr.com/)
 - [Regulære uttrykk - en interaktiv veiledning](https://www.regular-expressions.info/tutorial.html)

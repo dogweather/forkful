@@ -43,6 +43,5 @@ När du arbetar med JSON i TypeScript måste du följa strikta regler för den f
 
 ## Se också:
 
-- [Mozilla Developer Network - JSON](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - [JSON - Officiell hemsida](https://www.json.org/json-en.html)
 - [Förstå JSON - En lättbegriplig guide](https://www.w3schools.com/js/js_json_intro.asp)

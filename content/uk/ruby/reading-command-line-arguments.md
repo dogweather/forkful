@@ -44,7 +44,6 @@ ARGV[2] = arg3
 
 ## Дивіться також:
 
-- Розділ про аргументи командного рядка у офіційному посібнику Ruby: [https://www.ruby-lang.org/uk/documentation/beginner’s-guide/cmdline/](https://www.ruby-lang.org/uk/documentation/beginner’s-guide/cmdline/)
 
 - Пост на StackOverflow про `ARGV` і `OptionParser`: [https://stackoverflow.com/questions/26434923/parse-command-line-arguments-in-a-ruby-script](https://stackoverflow.com/questions/26434923/parse-command-line-arguments-in-a-ruby-script)
 

@@ -30,5 +30,4 @@ Fish Shell은 2005년에 첫 릴리스되어, Bash나 Zsh와 비교하여 대체
 ## 참고 자료들
 날짜를 비교하는 다른 방법을 알아보려면:
 - [Fish Shell 튜토리얼](https://fishshell.com/docs/current/index.html)
-- [날짜에 대한 리눅스 문서](https://www.linux.com/topic/desktop/date-command-linux/)
 - [Python에서 날짜와 시간을 다루는 방법](https://docs.python.org/3/library/datetime.html)

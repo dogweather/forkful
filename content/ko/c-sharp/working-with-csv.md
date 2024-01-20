@@ -61,6 +61,4 @@ CSV 파일을 읽기 위해서는 StreamReader 클래스를, 쓰기 위해서는
 ## 관련 자료:
 
 - [CSV 파일 형식](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [CSV를 다루는 방법](https://docs.microsoft.com/en-us/visualstudio/data-tools/load-and-save-data-as-a-csv-file)
-- [나외바와 CSV](https://www.itworld.co.kr/news/128704)
 - [데이터 형식 비교](https://medium.com/on-coding/data-format-comparison-json-vs-xml-vs-csv-1497262ad055)

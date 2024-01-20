@@ -40,4 +40,3 @@ try {
 # 参考链接：
 - [Java文件操作文档](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
 - [如何使用Java写入文件](https://www.w3schools.com/java/java_files_create.asp)
-- [不同编程语言写入文件的比较](https://www.geeksforgeeks.org/file-handling-c-2/)

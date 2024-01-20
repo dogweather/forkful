@@ -35,4 +35,3 @@ Historiallisesti komentoriviparametrin lukeminen on ollut oleellinen osa komento
 
 - Hyvä perehdytys komentoriviparametrien lukemisen perusteisiin on saatavilla [Clojure Doc](https://clojure.org/guides/getting_started#_command_line_arguments) sivuilla.
 - Lisätietoja komentoriviparametrien käsittelystä Midnightship/javan kanssa löydät seuraavasta [linkistä](https://github.com/bhauman/lein-figwheel/wiki/Node.js-development-with-figwheel).
-- Edistyneempiä aiheita, kuten komentoriviparametrit bibliografianjaksoista, voit tutkia JUXTin [blogissa](https://juxt.pro/blog/posts/gnuplot-in-clojure.html).

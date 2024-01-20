@@ -35,6 +35,4 @@ Eksempel på utoutput:
 CSV ble utviklet på 1970-tallet som et enkelt og åpent filformat for å lagre og utveksle data mellom forskjellige dataprogrammer. Et alternativ til å jobbe med CSV kan være å bruke XML eller JSON som også er vanlige filformater for å lagre og utveksle data. Implementasjonen av CSV i Haskell er basert på RFC 4180-standard, som spesifiserer det formelle formatet for CSV-filer.
 
 ## Se også:
-- [Data.CSV-modulen i Haskell standard library](https://hackage.haskell.org/package/csv/docs/Data-CSV.html)
 - [RFC 4180: Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
-- [CSV vs XML vs JSON: Which is the best format for storing data? (Artikkel)](https://www.educba.com/csv-vs-xml-vs-json/)

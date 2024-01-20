@@ -41,6 +41,5 @@ Det finns också alternativ till att skriva en textfil i Swift, som att spara da
 När du skriver en textfil i Swift finns det också flera olika sätt att formatera den på. Den mest vanliga är att använda teckenkodningen `.utf8`, men det finns andra alternativ som `.ascii`, `.utf16` och `.utf32`. Det är viktigt att se till att filen har samma kodning som den data du vill spara för att undvika problem med specialtecken och icke-ASCII-tecken.
 
 ## Se också:
-- [Apples dokumentation om att skriva till filer i Swift](https://developer.apple.com/documentation/foundation/filemanager/2293072-write)
 - [En tutorial om att skriva och läsa från filer i Swift](https://www.hackingwithswift.com/read/12/2/reading-and-writing-strings-to-a-file)
 - [En diskussion om variationer och alternativ till att skriva textfiler i Swift](https://stackoverflow.com/questions/2586747/writing-data-to-a-file-in-swift)

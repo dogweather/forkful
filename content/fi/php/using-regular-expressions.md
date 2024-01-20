@@ -27,4 +27,3 @@ Säännölliset lausekkeet ovat olleet käytössä jo vuosikymmeniä ja niitä k
 
 ## Katso myös:
 - [W3Schools: PHP Regular Expressions](https://www.w3schools.com/php/php_regex.asp)
-- [PHP.net: Regular Expressions](https://www.php.net/manual/en/book.regex.php)

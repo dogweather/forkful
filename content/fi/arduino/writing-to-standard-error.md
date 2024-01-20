@@ -39,4 +39,3 @@ Standardivirheen kirjoittaminen juontaa juurensa C-kieleen, jossa se oli tapa il
 
 ## Katso myös:
 - [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Using Standard Error in C](https://www.geeksforgeeks.org/using-standard-error-c/)

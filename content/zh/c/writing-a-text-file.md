@@ -40,4 +40,3 @@ fclose(fp);
 
 ## 参考资料：
 - [C语言官方文档](https://zh.cppreference.com/w/c)提供了关于文件操作的详细说明。
-- [C语言中文网](https://c.biancheng.net/view/2173.html)提供了更多关于C语言中文本文件写入和读取的实例。

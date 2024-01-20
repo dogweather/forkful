@@ -60,5 +60,4 @@ Detaljer rundt implementeringsmetodene er varierte. Kodeeksempelet over bruker `
 ## Se Mer:
 
 - [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
-- [HTTP](https://developer.mozilla.org/no/docs/Web/HTTP)
 - [Protokoller](https://www.sololearn.com/Course/Networking/))

@@ -26,4 +26,3 @@ Reguljära uttryck har funnits sedan 50-talet och har utvecklats till en standar
 
 ## Se även:
 - [MDN Reguljära Uttryck Guide](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExp-klassen i TypeScript Dokumentationen](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)

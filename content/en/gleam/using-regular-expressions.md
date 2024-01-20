@@ -51,6 +51,5 @@ As for alternatives, case matching and string functions can sometimes replace re
 
 Looking for more? Check out these links:
 
-* [Gleam regex documentation](https://hexdocs.pm/gleam_stdlib/gleam/regex/): The official docs are always a trusted starting point.
 * [Rust regex library](https://github.com/rust-lang/regex): This is the Rust library Gleam's regex is built on. A great place for the curious. 
 * [Regular-Expressions.Info](https://www.regular-expressions.info/): If regex has caught your fancy, this is a resource dedicated to all things regex. You'll get an understanding of it beyond Gleam or even Rust.

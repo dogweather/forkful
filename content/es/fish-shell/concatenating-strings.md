@@ -43,6 +43,5 @@ La concatenación de cadenas en Fish Shell se realiza en tiempo de ejecución. E
 Aprenda más sobre la programación en Fish Shell mirando los siguientes enlaces: 
 
 - [Tutorial oficial de Fish Shell](https://fishshell.com/docs/3.1/tutorial.html)
-- [Cómo concatenar cadenas en otros lenguajes de programación](https://www.learnpython.org/en/String_Concatenation_and_Formatting)
 
 Y ahí lo tienes, un vistazo rápido a la concatenación de cadenas en Fish Shell. ¡Feliz programación!

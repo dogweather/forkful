@@ -51,5 +51,4 @@ Per ulteriori informazioni sul networking in Swift, consiglio i seguenti link:
 - Documentazione ufficiale Apple URLSession: [link](https://developer.apple.com/documentation/foundation/urlsession)
 - Corso su "Networking in Swift" da Ray Wenderlich: [link](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
   (nota: in inglese)
-- Articolo "HTTP Requests in Swift": [link](https://fluffy.es/http-request-in-swift/)
   (nota: in inglese)

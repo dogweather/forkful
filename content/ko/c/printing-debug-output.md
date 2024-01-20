@@ -41,4 +41,3 @@ int main() {
 
 - [GDB 공식 문서](https://sourceware.org/gdb/current/onlinedocs/gdb/) : GDB에 대한 상세한 정보를 제공합니다.
 - [LLDB 공식 문서](https://lldb.llvm.org/) : LLVM의 LLDB에 대한 모든 사항을 알려줍니다.
-- [printf와 버퍼링](https://www.learn-c.org/en/Buffer_Overflow) : printf의 내부 버퍼링 시스템에 대한 설명이 있습니다.

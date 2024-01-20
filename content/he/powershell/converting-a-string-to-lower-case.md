@@ -36,4 +36,3 @@ hello, powershell!
 
 ## ראו גם:
 - [מסמכי Microsoft על ToLower()](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netframework-4.8)
-- [מדריך PowerShell מקיף](https://he.learnpowershell.net/)

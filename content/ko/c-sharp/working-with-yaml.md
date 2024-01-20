@@ -47,4 +47,3 @@ using (var reader = new StreamReader("file.yaml"))
 ## 더 알아보기:
 - [YAML 공식 사이트](https://yaml.org/)
 - [YAML 와 JSON 비교](https://json2yaml.com/)
-- [https://wiki.kldp.org/wiki.php/Yaml](https://wiki.kldp.org/wiki.php/Yaml)

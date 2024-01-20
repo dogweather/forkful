@@ -40,5 +40,4 @@ In termini di dettagli implementativi, il comando `date` di Fish Shell restituis
 Per approfondire ulteriormente le tue competenze in questo ambito, consiglio i seguenti link:
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Date Command in Unix](https://www.geekhideout.com/softhelp/cmd-date.html)
 - [Date Formatting in Python](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)

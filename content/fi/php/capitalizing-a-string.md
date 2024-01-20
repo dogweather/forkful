@@ -39,5 +39,3 @@ PHP:n `strtoupper` toteutus muuntaa yksinkertaisesti jokaisen merkkijonon merkin
 
 ## Lisätietoja
 Lisätietoja php:n `strtoupper`- ja `mb_strtoupper`-funktioista löydät PHP:n virallisesta dokumentaatiosta seuraavista linkeistä:
-- [strtoupper()](https://www.php.net/manual/fi/function.strtoupper.php)
-- [mb_strtoupper()](https://www.php.net/manual/fi/function.mb-strtoupper.php)

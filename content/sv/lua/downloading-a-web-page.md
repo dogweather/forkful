@@ -38,5 +38,4 @@ Lua implementeringen är ganska grundläggande. Den använder "socket.http" bibl
 
 ## Se Även
 - [Lua socket biblioteket](http://w3.impa.br/~diego/software/luasocket/http.html)
-- [Hur man skrapar webbsidor med Lua](https://scrapingant.com/blog/web-scraping-with-lua)
 - [HTTP/1.1 specifikation](https://tools.ietf.org/html/rfc2616)

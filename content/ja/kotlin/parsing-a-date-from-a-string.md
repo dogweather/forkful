@@ -40,6 +40,5 @@ Tue Jun 15 00:00:00 CST 2021
 
 ## 関連資料
 - [公式ドキュメンテーション](https://developer.android.com/reference/java/text/SimpleDateFormat)
-- [Kotlin for Android: Beginner to Advanced](https://www.udemy.com/course/kotlin-android/)
 
 その他の詳細や情報については、公式ドキュメンテーションや上記のリンクを参照してください。

@@ -45,4 +45,3 @@ In obigem Code verwenden wir das `fs` (File System) Modul in Node.js, um auf das
 
 * [Node.js `fs` Modul Dokumentation](https://nodejs.org/api/fs.html)  
 * [`fs-extra` auf npm](https://www.npmjs.com/package/fs-extra)  
-* [Error Handling in Node.js](https://nodejs.dev/learn/error-handling-in-nodejs)

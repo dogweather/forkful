@@ -48,5 +48,3 @@ val jsonString = jsonObject.toString() // output: "{ "name": "Lars", "age": 30, 
 JSON ble opprinnelig utviklet for JavaScript, men har blitt populært i mange andre programmeringsspråk på grunn av sin enkelhet og lesbarhet. Et alternativ til JSON er XML, som også brukes til å strukturere data, men er mer kompleks og mindre populær. Implementasjonen av JSON i Kotlin er basert på Java-biblioteket org.json, som gir en enkel og effektiv måte å jobbe med JSON på.
 
 ## Se også:
-- [Official Kotlin documentation for JSON](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-json-object/)
-- [Med Kotlin - En praktisk guide til datakontering med JSON](https://www.ba.no/kotlin/partner/med-kotlin-en-praktisk-guide-til-datakontering-med-json/s/5-8-142855)

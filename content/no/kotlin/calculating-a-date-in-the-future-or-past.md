@@ -44,6 +44,5 @@ Alternativer til de native Kotlin-metodene kan være biblioteker som Joda-Time, 
 Når det gjelder implementering, foregår beregningen av datoer i framtiden eller fortiden på bakgrunn av den gregorianske kalenderen, og tar hensyn til skuddår og varierende lengde på månedene.
 
 ## Se også
-- [Kotlin dokumentasjon om Dato og Tid](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js.date/-date/)
 - [Oracle Guide for Date Time API](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
 - [Joda-Time Bibliotek](https://www.joda.org/joda-time/)

@@ -28,5 +28,3 @@ echo "त्रुटि संदेश।"
 ## अन्य स्रोत:
 अगर आप और अधिक जानकारी चाहते हैं, तो आप इन स्रोतों को देख सकते हैं:
 - [PHP मैनुअल](https://www.php.net/manual/en/function.error-reporting.php)
-- [Standard Error के बारे में डॉक्यूमेंटेशन](https://en.wikipedia.org/wiki/Standard_error_(standard_input))
-- [दूसरे तरीके त्रुटि रिपोर्टिंग के लिए](https://www.tutorialspoint.com/php/php_error_reporting.htm)

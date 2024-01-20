@@ -39,5 +39,4 @@ An alternative to writing text files in Haskell is using the `Data.ByteString` m
 
 ## See Also:
 
-- [Haskell I/O Functions](https://www.tutorialspoint.com/haskell/haskell_io_functions.htm)
 - [Haskell Data.ByteString module documentation](http://hackage.haskell.org/package/bytestring-0.11.1.0/docs/Data-ByteString.html)

@@ -31,6 +31,3 @@ Otra forma de lograr un resultado similar en Elm es a través de la función `De
 Además, al escribir a la salida de errores estándar, es importante tener en cuenta que esta información no será visible para los usuarios finales de la aplicación, ya que se mostrará solo en la consola del navegador de los desarrolladores.
 
 ## Véase también
-
-- [Debugging Elm Programs](https://guide.elm-lang.org/debugging/debugging.html)
-- [A Beginner's Guide to Elm](https://thoughtbot.com/blog/a-beginners-guide-to-elm)

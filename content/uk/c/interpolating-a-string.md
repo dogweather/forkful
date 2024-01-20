@@ -40,4 +40,3 @@ I am 22 years old.
 ## Див. також:
 - [Документація про `printf`](http://www.cplusplus.com/reference/cstdio/printf/)
 - [Стаття про інтерполяцію рядків у Perl на StackOverflow](https://stackoverflow.com/questions/1103407/perl-string-interpolation)
-- [Чоловічий гід по роботі із рядками в C](https://beej.us/guide/bgc/output/html/multipage/strings.html)

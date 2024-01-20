@@ -39,4 +39,3 @@ Detaljer om implementasjonen er ikke utstilt i dette eksemplet, men det er verdt
 - For mer informasjon om `System.Random` biblioteket, sjekk ut [Haskell Documentation](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
 - Du kan lære mer om generering av tilfeldige tall i datamaskiner fra [Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation) 
 - For alternativer til `System.Random`, se på [RandomGen](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html#g:4) som gir en måte å produsere din egen strøm av tilfeldige tall.
-- For å forstå hvordan Haskell implementerer pseudo-tilfeldige tallgeneratorer, se [monadic pseudorandom number generators](https://wiki.haskell.org/Random_numbers).

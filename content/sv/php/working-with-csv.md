@@ -47,5 +47,4 @@ Förutom att läsa in och manipulera data från en CSV-fil, kan PHP även skapa 
 
 ## Se även:
 - [PHP manual: CSV functions](http://php.net/manual/en/ref.filesystem.php)
-- [PHP for beginners: How to read a CSV file with PHP](https://phpforbeginners.com/working-with-csv-files/)
 - [PHP League CSV: A PHP library for reading and writing CSV files](https://csv.thephpleague.com/)

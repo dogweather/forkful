@@ -55,4 +55,3 @@ A implementação da solicitação HTTP envolve a criação de um socket, config
 ## Veja Também
 - Documentação Libcurl: [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
 - Tutorial Libcurl: [https://curl.se/libcurl/c/libcurl-tutorial.html](https://curl.se/libcurl/c/libcurl-tutorial.html)
-- Detalhes do HTTP: [https://developer.mozilla.org/p/http](https://developer.mozilla.org/p/http)

@@ -43,4 +43,3 @@ fn main() {
 関連するリソースについては、以下のリンクをチェックしてみてください：
 
 - Gleamの公式ドキュメンション：[文字列](https://gleam.run/book/tour/strings.html)
-- `string.length`の詳細なAPIドキュメンテーション：[API Docs](https://hexdocs.pm/gleam_stdlib/Gleam.String.html#length/1)

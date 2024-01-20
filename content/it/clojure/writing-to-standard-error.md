@@ -31,6 +31,3 @@ Scrivere su standard error significa inviare un messaggio di errore o avviso che
 Scrivere su standard error è stato introdotto inizialmente nei sistemi Unix come una parte del sistema di gestione degli errori. In alcuni casi, utilizzare questo approccio può essere preferibile rispetto a scrivere un messaggio su standard output, poiché si separa chiaramente il contenuto normale del programma dai messaggi di errore. Altre opzioni includono l'utilizzo di log file o librerie apposite per la gestione degli errori.
 
 ## Vedi anche:
-
-- ["Gestione degli errori in Clojure"](https://clojure.org/guides/error_handling) su clojure.org
-- ["Clojure: writing to standard error"](https://dzone.com/articles/clojure-writing-to-standard-error) su dzone.com

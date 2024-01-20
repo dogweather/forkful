@@ -34,4 +34,3 @@ JSON को Clojure में प्रसंस्करण करने के
 ## आपको आगे पढ़ना चाहिए:
 - [Clojure के लिए Cheshire Github repository](https://github.com/dakrone/cheshire): आप इस लाइब्रेरी को अपने प्रोजेक्ट में इस्तेमाल करना चाहते हैं, तो आप इस गाइड को देख सकते हैं।
 - [Clojure data.json लाइब्रेरी दस्तावेज़](https://clojure.github.io/data.json/): अगर आप इस दौरान Clojure के साथ काम कर रहे हैं तो आप यह लाइब्रेरी भी देख सकते हैं।
-- [Clojure clj-json लाइब्रेरी दस्तावेज़](https://github.com/myfreeweb/clj-json): यह दूसरा पॉपुलर Clojure जस्ट फॉरमेट लाइब्रेरी है और आप इसका भी इस्तेमाल कर सकते हैं।

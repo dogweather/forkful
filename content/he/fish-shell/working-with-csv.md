@@ -38,5 +38,4 @@ end
 ## ראו גם
 
 - [דף התיעוד הרשמי של פקודת Fish shell לעבוד עם CSV](https://fishshell.com/docs/current/cmds/set.html)
-- [מאמר מהו CSV](https://www.thespruce.com/csv-definition-3470019)
 - [פקודת set של Linux](https://man7.org/linux/man-pages/man1/set.1p.html)

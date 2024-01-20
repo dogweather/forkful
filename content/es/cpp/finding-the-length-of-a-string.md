@@ -49,5 +49,4 @@ Respecto a los detalles de implementación, `length()` y `size()` simplemente de
 Echa un vistazo a estos enlaces para aprender más sobre las cadenas en C++:
 
 - [C++ Strings](http://www.cplusplus.com/reference/string/string/)
-- [String Length in C++](https://www.geeksforgeeks.org/string-length-in-c-plus-plus/)
 - [C++ String Class and its Applications](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)

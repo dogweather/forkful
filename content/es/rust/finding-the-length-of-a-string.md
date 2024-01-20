@@ -50,4 +50,3 @@ Rust implementa este método de manera muy eficiente. A diferencia de otros leng
 
 Para ampliar información sobre cadenas en Rust, consulta los siguientes enlaces:
 - Documentación oficial de Rust sobre cadenas: [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- Guía de Rust para el manejo de cadenas: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-issues.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-issues.html)

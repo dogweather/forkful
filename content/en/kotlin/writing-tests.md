@@ -43,7 +43,5 @@ Under the hood, writing tests in Kotlin uses annotations, such as @Test, to iden
 
 ## See Also:
 
-- [Kotlin Test Documentation](https://kotlinlang.org/docs/tutorials/testing.html)
 - [JUnit Website](https://junit.org/junit5/)
-- [TestNG Website](https://testng.org/doc/)
 - [Spek Website](https://spekframework.org/)

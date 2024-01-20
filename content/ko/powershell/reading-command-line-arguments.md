@@ -51,6 +51,4 @@ PowerShell 같은 스크립트 언어는 넓은 범위의 사용을위해 이러
 
 ## 더 찾아보기:
 
-- PowerShell 공식 문서: [About Parameters](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/deep-dives/everything-about-parameters?view=powershell-7)
 - Stack Overflow: [How can I read command line parameters from an alias?](https://stackoverflow.com/questions/8475232/how-can-i-read-command-line-parameters-from-an-alias)
-- DevBlog: [Passing and returning values in PowerShell](https://devblogs.microsoft.com/scripting/passing-and-returning-values-in-powershell/)

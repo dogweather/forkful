@@ -56,4 +56,3 @@ In Elixir, è possibile utilizzare la funzione `IO.puts/2` per scrivere su stand
 ## Vedi anche:
 
 - [Documentazione di IO.puts/2 in Elixir](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Esempio di utilizzo di IO.puts/2](https://programming-elixir.com/rw/elixir/io/2017/02/25/puts-to-stdout-or-stderr-in-elixir.html)

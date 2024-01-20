@@ -51,5 +51,3 @@ fn main() {
 ## Також дивіться:
 
 - [Chrono Documentation](https://docs.rs/chrono/0.4.11/chrono/) 
-- [Rust Date and Time Manipulation with Chrono](https://www.joshmcguigan.com/blog/date-and-time-rust-chrono/)
-- [Rust Programming By Example: Date and Time](https://learning.oreilly.com/library/view/rust-programming-by/9781788390637/3b3dff6d-7204-4dbd-baab-d7758391f48b.xhtml)

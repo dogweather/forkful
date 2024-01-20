@@ -57,5 +57,3 @@ Lastly, remember that JavaScript compares dates based on the UTC timestamp, whic
 
 - Mozilla has an excellent web docs, here's a [comprehensive guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) on the Date object.
 - For complex date manipulations, check [Moment.js](https://momentjs.com/)
-- Here's [Timezone Considerations](https://www.w3resource.com/javascript/date-time-and-javascript.php) when working with Dates for  beginners.
-- And an interesting read on [history of JavaScript Dates](https://2ality.com/2012/06/dates-timestamps.html).

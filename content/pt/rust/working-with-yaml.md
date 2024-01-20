@@ -71,6 +71,4 @@ Existem muitas outras bibliotecas e ferramentas disponíveis para trabalhar com 
 
 ## Veja também:
 
-- [Página oficial do pacote `yaml-rust`](https://crates.io/crates/yaml-rust)
 - [Especificação YAML](https://yaml.org/spec/)
-- [Outros pacotes YAML para Rust](https://crates.io/keywords/yaml)

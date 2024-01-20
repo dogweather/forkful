@@ -48,5 +48,4 @@ Ny tekst ble lagt til i tekstfilen.
 Når du skriver en tekstfil, må du være oppmerksom på hvilken type koding du bruker. Dette vil påvirke hvordan filen blir lest og tolket av datamaskinen. For eksempel bruker Windows og Mac forskjellige typer koding. Du kan spesifisere kodingen du ønsker å bruke ved å legge til et tredje argument i ```writeFile()``` og ```appendFile()``` metoden.
 
 ## Se også:
-- [TypeScript File System-modulen](https://www.typescriptlang.org/docs/handbook/nodejs.html#working-with-file-systems)
 - [Node.js File System-modulen](https://nodejs.org/api/fs.html#fs_file_system)

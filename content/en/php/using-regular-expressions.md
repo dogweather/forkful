@@ -50,6 +50,4 @@ When implementing regular expressions in PHP, it's important to use delimiters. 
 
 ## See Also:
 - [PHP Manual on Regular Expressions](https://www.php.net/manual/en/regexp.reference.php)
-- [Regular Expressions Guide for PHP Developers](https://www.freecodecamp.org/news/php-regular-expressions-examples/)
-- [A Visual Guide to Regular Expressions](https://dev.to/sarah_chima/a-visual-guide-to-regular-expressions-210j)
 - [Online regex tester](https://regex101.com/)

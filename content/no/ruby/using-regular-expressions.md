@@ -58,4 +58,3 @@ For mer informasjon om bruk av regulære uttrykk i Ruby, sjekk ut disse ressurse
 
 - [Ruby Regexp dokumentasjon](https://ruby-doc.org/core/Regexp.html)
 - [Pragmatic Programing: Chapter 7 - Regular Expressions](https://pragprog.com/book/btlang/best-of-ruby-quiz)
-- [Regexp-Online](https://www.regexp-online.com)

@@ -37,4 +37,3 @@ end
 
 ## Дивіться також:
 - [Офіційна документація Ruby про роботу з файлами](https://ruby-doc.org/core-2.7.2/File.html)
-- [Стаття про створення та запис до файлу в Ruby](https://www.rubyguides.com/ruby-file/)

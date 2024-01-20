@@ -82,4 +82,3 @@ Implementations of YAML in Lua, such as the `yaml` module, use the libyaml libra
 ## See Also:
 
 - [YAML website](https://yaml.org/)
-- [LuaRocks page for yaml module](https://luarocks.org/modules/genericlama/yaml)

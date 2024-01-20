@@ -31,4 +31,3 @@ An error has occurred
 
 ## 参考：
 - [JavaのSystem.errを使用したエラーメッセージの表示](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/System.html#err)
-- [エラーログの書き込みの標準](https://www.linode.com/docs/uptime/logging/write-log-messages-to-standard-error/)

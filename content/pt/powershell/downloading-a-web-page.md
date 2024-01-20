@@ -37,5 +37,3 @@ O `Invoke-WebRequest` processa a página web baixada e a disponibiliza de forma 
 ## Veja também:
 
 - Documentação do Microsoft PowerShell `Invoke-WebRequest`: [link](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- Mais detalhes sobre o cmdlet `Invoke-WebRequest` no PowerShell: [link](https://www.powershellmagazine.com/2012/11/06/pstip-how-to-download-a-website-with-powershell/)
-- Alternativas ao `Invoke-WebRequest` para download de páginas web: [link](https://www.shellhacks.com/download-file-powershell/)

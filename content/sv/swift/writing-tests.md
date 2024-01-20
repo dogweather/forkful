@@ -49,6 +49,5 @@ class Calculator {
 Tester har funnits sedan programmeringens tidiga dagar. En av de mest populära testningsramverken är JUnit, som är utformat för Java-programmerare. Det finns också alternativ till XCTest för Swift, såsom Quick och Nimble. För att skriva effektiva tester är det viktigt att veta vilka delar av koden som måste testas och att skriva testfall för olika scenarier.
 
 ## Se även:
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/xctest)
 - [Quick: A behavior-driven development framework for Swift](https://github.com/Quick/Quick)
 - [Nimble: A matcher framework for Swift and Objective-C](https://github.com/Quick/Nimble)

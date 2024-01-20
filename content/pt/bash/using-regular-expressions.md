@@ -45,7 +45,6 @@ Expressões regulares foram desenvolvidas na decada de 1950 e estão presentes e
 1. "Mastering Regular Expressions" por Jeffrey E.F. Friedl
 2. [RegexOne](https://regexone.com/): Tutorial interativo online
 
-- Para testar as expressões regulares, você pode usar o [RegExr](https://regexr.com/)
 
 - Websites Oficiais:
 1. [GNU Bash](https://www.gnu.org/software/bash/)

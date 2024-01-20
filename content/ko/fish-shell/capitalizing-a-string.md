@@ -45,5 +45,4 @@ HELLO WORLD
 ## 참고 자료
 
 - [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [대문자, 소문자 변환 관련 가이드](https://www.geeksforgeeks.org/fish-shell-string-operation-functions/)
 - [Fish Shell 스크립팅 튜토리얼](https://fishshell.com/docs/current/tutorial.html)

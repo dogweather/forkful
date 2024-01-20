@@ -53,4 +53,3 @@ CSV foi criado em 1972 como uma forma de salvar dados no formato de texto. Apesa
 
 - [Documentação sobre CSV na Wikipédia](https://pt.wikipedia.org/wiki/CSV)
 - [Api da biblioteca csv-parser](https://csv.js.org/parse/api/)
-- [Exemplos de código com TypeScript e CSV](https://github.com/StratoDem/CSV.ts)

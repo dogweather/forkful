@@ -44,4 +44,3 @@ Dieser Befehl lädt die Webseite example.com herunter und speichert sie auf dein
 
 - Mehr Informationen zur Verwendung von `curl`: [Curl Dokumentation](https://curl.haxx.se/docs/manpage.html)
 - Alternative Tools: [Wget](https://www.gnu.org/software/wget/)
-- Python für das Herunterladen von Webseiten: [Requests: HTTP für Menschen](https://requests.readthedocs.io/de/latest/)

@@ -41,7 +41,6 @@ The implemented `readFile` method uses a buffered read strategy to conserve memo
 
 Investigate these sources for further reading:
 
-- [Node.js fs Documentation](https://nodejs.dev/learn/the-nodejs-fs-module)
 - [JavaScript File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
 - [Async/Await Introduction](https://javascript.info/async-await)
 - [JavaScript Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)

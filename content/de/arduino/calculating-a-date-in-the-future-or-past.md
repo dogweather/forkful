@@ -57,5 +57,4 @@ Die Berechnung eines zukünftigen oder vergangenen Datums in Arduino beinhaltet 
 ## Siehe auch:
 
 - [Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [DateTime Library](https://github.com/adafruit/Adafruit_RTClib)
 - [NTP Client Library](https://github.com/arduino-libraries/NTPClient)

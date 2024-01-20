@@ -52,6 +52,5 @@ The implementation details of sending an HTTP request involve creating an HTTP/H
 For further reading:
 
 - More on Fetch API: [MDN Web Docs Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- Comparison of Fetch with Axios: [Fetch vs Axios](https://www.smashingmagazine.com/2020/06/rest-api-fetch-axios/)
 - More on XMLHttpRequest: [MDN Web Docs XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 - HTTP Methods explained: [RESTful API Methodology](https://restfulapi.net/http-methods/)

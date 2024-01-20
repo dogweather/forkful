@@ -44,4 +44,3 @@ Para mais informações sobre a substituição de texto em PHP, consulte os segu
 
 - Documentação oficial do PHP: [php.net/manual/pt_BR/function.str-replace.php](https://www.php.net/manual/pt_BR/function.str-replace.php), [php.net/manual/pt_BR/function.preg-replace.php](https://www.php.net/manual/pt_BR/function.preg-replace.php)
 - [stackoverflow.com](https://stackoverflow.com/questions/1252693/using-str-replace-so-that-it-only-acts-on-the-first-match) (em inglês): Exemplos de substituição de texto utilizando `str_replace()`
-- [regexr.com](https://regexr.com/): Ótima ferramenta para aprender e testar expressões regulares.

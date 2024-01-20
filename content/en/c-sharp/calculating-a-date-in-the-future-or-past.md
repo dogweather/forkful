@@ -50,6 +50,5 @@ Note that `DateTime` is immutable. Every time you use an `Add` method, it return
 ## See Also
 
 - Official Documentation: [`DateTime`](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
-- C# Programming Guide: [Dates, times, and time zones](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/datetime/)
 - NodaTime: [NodaTime library](https://nodatime.org/)
 - StackOverflow: [Date and Time Mathematics](https://stackoverflow.com/questions/tagged/datetime+arithmetic)

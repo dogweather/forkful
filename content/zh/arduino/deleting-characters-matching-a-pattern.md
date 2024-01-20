@@ -35,6 +35,4 @@ Serial.println(str);   // 输出 H e l l,  A r d u i n !
 
 以下链接提供了更多关于Arduino编程技巧和`replace`函数的详细信息：
 
-- [Arduino Replace Function](https://www.arduino.cc/reference/en/language/variables/data-types/String/functions/replace/)
 - [Arduino Programming Language](https://www.arduino.cc/reference/en/)
-- [Handling Strings in C](http://www.learn-cocoa.org/view/15/)

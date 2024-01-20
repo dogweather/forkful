@@ -46,5 +46,4 @@ In PowerShell werden CSV-Dateien standardmäßig als UTF-8-Dateien erstellt, was
 ## Siehe auch:
 
 - [PowerShell-Dokumentation zu CSV](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.1)
-- [Beispiel für die Arbeit mit CSV in PowerShell](https://www.thomasmaurer.ch/2019/01/powershell-how-to-export-and-import-csv-files/)
 - [Alternativen zu CSV: Excel, JSON und XML](https://medium.com/@bcorcos/why-i-still-use-csv-3b113736df8f)

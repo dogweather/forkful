@@ -39,6 +39,5 @@ La implementación de las expresiones regulares en Rust se basa en la biblioteca
 
 ## Ver también:
 
-- [Documentación de expresiones regulares en la biblioteca estándar de Rust](https://doc.rust-lang.org/std/re/)
 - [Ejemplos de uso de expresiones regulares en Rust](https://riptutorial.com/rust/topic/855/expressions-regulieres)
 - [Expresiones regulares en otros lenguajes de programación](https://en.wikipedia.org/wiki/Regular_expression#Programming_languages)

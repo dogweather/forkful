@@ -60,5 +60,4 @@ This script chooses a file (`test.txt`), checks it can be opened, scans it line 
 ## See Also:
 
 - Full Go documentation on file reading: [Go Docs on package os](https://golang.org/pkg/os/)
-- Walkthrough on Go file operations: [File handling in Go](https://www.golangprograms.com/go-language/file-handling)
 - Good comparison of `ioutil` vs `os`: [Reading Files in Go - The Full Guide](https://levelup.gitconnected.com/reading-files-in-go-the-full-guide-83f59ab5e7a9)

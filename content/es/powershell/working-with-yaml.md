@@ -58,5 +58,3 @@ Para aprender más sobre YAML, puedes consultar la documentación oficial o revi
 
 ## Ver también:
 - [YAML.org](https://yaml.org/)
-- [Documentación oficial de PowerShell sobre YAML](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/yaml/)
-- [Ejemplo de configuración de YAML en un proyecto de código abierto](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/swagger.yaml)

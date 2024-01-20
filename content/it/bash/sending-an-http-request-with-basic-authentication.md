@@ -63,5 +63,4 @@ Ricorda che l'autenticazione di base invia username e password come una stringa 
 
 - Manuali `curl`: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 - Introduzione alle API RESTful: [https://restfulapi.net/](https://restfulapi.net/)
-- Documentazione delle API dell'esempio: [http://esempio.com/api](http://esempio.com/api)
 - HTTP Basic Authentication su MDN: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication)

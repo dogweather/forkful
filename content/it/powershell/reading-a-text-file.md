@@ -57,7 +57,6 @@ Nota che `Get-Content` legge i file di testo in modo lineare. Cioè, non legge t
 ## Vedi Anche:
 Per approfondire, consulta questi collegamenti:
 - [Get-Content](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
-- [PowerShell Pipeline](https://docs.microsoft.com/it-it/powershell/scripting/learn/deep-dives/everything-about-powershell-pipelines?view=powershell-7.1)
 - [ForEach-Object](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1)
 
 ---

@@ -55,4 +55,3 @@ For further information, consider checking out the following resources:
 
 - DateTimeFormatter Official Docs: [Java Docs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html)
 - An Introduction to Dates and Times in Kotlin: [Baeldung Tutorial](https://www.baeldung.com/kotlin/dates)
-- Formatting and Parsing Date in Kotlin: [Buggy Programmer's Guide](https://buggyprogrammer.com/2020/02/20/formatting-and-parsing-date-and-time-in-kotlin/)

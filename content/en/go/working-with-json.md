@@ -94,4 +94,3 @@ Behind the scenes, the encoding/json package in Go uses the "reflect" package to
 
 - [Official Go documentation on JSON](https://golang.org/pkg/encoding/json/)
 - [JSON syntax rules](https://www.json.org/json-en.html)
-- [Difference between JSON and XML](https://www.thoughtco.com/the-differences-between-json-and-xml-2033970)

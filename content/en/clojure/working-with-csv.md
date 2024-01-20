@@ -58,4 +58,3 @@ Clojure's java-csv library uses the OpenCSV library under the hood, which is a w
 ## See Also:
 - [clojure.java-csv documentation](https://clojure.github.io/java.jdbc/)
 - [OpenCSV library](http://opencsv.sourceforge.net/)
-- [Clojure for Data Science](https://clojure.org/guides/data_science)

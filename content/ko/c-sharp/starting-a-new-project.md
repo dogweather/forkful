@@ -43,5 +43,3 @@ public static void Main() {
 
 ## 참고자료
 - [C# 프로그래밍 가이드](https://docs.microsoft.com/ko-kr/dotnet/csharp/)
-- [C# 프로젝트 관리](https://www.c-sharpcorner.com/article/project-management-using-c-sharp/)
-- [프로젝트 계획 수립](https://www.pmi.org/learning/library/project-planning-programming-building-5860)

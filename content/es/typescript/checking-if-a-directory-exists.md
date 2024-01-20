@@ -59,4 +59,3 @@ Para obtener más información, puedes consultar las siguientes fuentes:
 
 - Documentación oficial de Node.js sobre el módulo 'fs': [Node.js fs](https://nodejs.org/api/fs.html)
 - Discusión sobre `existsSync()` vs `fs.promises.access()`: [Stack Overflow Discussion](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
-- Un blog útil sobre la manipulación del sistema de archivos en Node.js: [Interacting with the file system in Node.js](https://blog.logrocket.com/interacting-with-the-file-system-in-node-js/)

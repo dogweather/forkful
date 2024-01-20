@@ -56,4 +56,3 @@ For en mer detaljert gjennomgang av strenginterpolering, og hvordan den kan forb
 
 - Go Dokumentasjon: [fmt](https://golang.org/pkg/fmt/)
 - Go By Example: [String Formatting](https://gobyexample.com/string-formatting)
-- Go 101: [String Interpolation](https://go101.org/article/string-interpolation.html)

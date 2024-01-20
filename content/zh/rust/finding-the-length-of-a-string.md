@@ -41,5 +41,4 @@ Length : 6
 你可以在 Rust 官方手册中了解更多信息：
 - [The String Type](https://doc.rust-lang.org/stable/book/ch08-02-strings.html)
 - [len() method](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
-- [The Chars Type](https://doc.rust-lang.org/std/string/struct.Chars.html)
 - [The Graphemes Type](https://unicode-rs.github.io/unicode-segmentation/unicode_segmentation/struct.Graphemes.html)

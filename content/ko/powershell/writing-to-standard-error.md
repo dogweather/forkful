@@ -39,5 +39,3 @@ PowerShell에서 표준 오류를 기록할 때, `Write-Error` 명령어를 사�
 
 ## 관련 자료:
 - [PowerShell Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7.1)
-- [Debugging Scripts with Write-Error](https://docs.microsoft.com/en-us/powershell/scripting/samples/debugging-scripts-with-write-error?view=powershell-7.1)
-- [PowerShell Error Handling](https://docs.microsoft.com/en-us/powershell/scripting/diagnostics/psake/handling?view=powershell-7.1)

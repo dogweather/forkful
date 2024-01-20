@@ -40,5 +40,3 @@ As primeiras expressões regulares foram utilizadas na década de 1950 por matem
 ## Veja também:
 
 - [Documentação oficial do PowerShell sobre expressões regulares](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
-- [Artigo sobre expressões regulares do PowerShell no blog Microsoft Scripting](https://devblogs.microsoft.com/scripting/use-regex-to-replace-text/)
-- [Tutorial interativo sobre expressões regulares no PowerShell em inglês](https://regexone.com/references/powershell)

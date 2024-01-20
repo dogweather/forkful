@@ -36,5 +36,3 @@ Escrever testes é uma prática importante na programação moderna, pois ajuda 
 ## Veja Também:
 
 - [Documentação oficial do Fish Shell para testes](https://fishshell.com/docs/current/#fish-unittest)
-- [Artigo sobre práticas de teste no Fish Shell](https://www.signalvnoise.com/posts/3350-test-driven-development-with-fish-shell)
-- [Ferramenta de teste Fish-Mock](https://fish-mock.readthedocs.io/en/latest/)

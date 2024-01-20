@@ -33,4 +33,3 @@ L'implémentation de tests en C# peut être réalisée en utilisant des framewor
 - [Introduction to Automated Software Testing](https://www.guru99.com/automated-testing.html)
 - [xUnit.net](https://xunit.net/)
 - [NUnit](https://nunit.org/)
-- [Microsoft Visual Studio Test Platform](https://docs.microsoft.com/en-us/visualstudio/test/overview-of-the-visual-studio-test-platform?view=vs-2019)

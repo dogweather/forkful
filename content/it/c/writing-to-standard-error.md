@@ -46,5 +46,4 @@ Qui, ```_iob``` è un array di file descriptor usato per le operazioni di input/
 
 ## Vedi anche:
 - [Documentazione di printf](https://www.cplusplus.com/reference/cstdio/fprintf/?kw=fprintf)
-- [Tutorial su stderr e la gestione degli errori](https://www.thegeekstuff.com/2013/01/c-stderr-printf/)
 - [Spiegazione dettagliata sulla differenza tra stdout e stderr](https://stackoverflow.com/questions/23643694/difference-between-stdout-and-stderr-in-plain-english)

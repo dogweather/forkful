@@ -56,4 +56,3 @@ For mer detaljerte instruksjoner og eksempler på dato- og tidsfunksjoner i Cloj
 
 - [Clojure official documentation](https://clojure.org/guides/getting_started)
 - [Java Platform Standard Edition 8 API Specification](https://docs.oracle.com/javase/8/docs/api/)
-- [Working with Dates and Times in Clojure](https://www.baeldung.com/java-dates-clojure)

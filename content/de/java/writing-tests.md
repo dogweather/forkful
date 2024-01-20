@@ -48,5 +48,3 @@ Es gibt auch spezielle Frameworks wie JUnit, TestNG oder Mockito, die die Erstel
 
 ## Siehe auch
 - [Offizielle JUnit-Dokumentation (auf Englisch)](https://junit.org/junit5/docs/current/user-guide/)
-- [Informationen über den Einsatz von JUnit in der Java-Entwicklung](https://www.codecademy.com/articles/using-junit-with-java)
-- [Test-Driven Development (TDD) erklärt (auf Deutsch)](https://entwickler.de/online/agile/test-driven-development-tdd-was-ist-das-579460351.html)

@@ -42,9 +42,6 @@ Gli algoritmi di parsing sono di solito implementati come automi a stati finiti,
 
 ## Vedere anche:
 Sei interessato a saperne di più? Ecco alcune risorse utili:
-- `"html5ever"` pacchetto su [crates.io](https://crates.io/crates/html5ever)
-- [`"scraper"` pacchetto su crates.io](https://crates.io/crates/scraper)
-- [`"kuchiki"` pacchetto su crates.io](https://crates.io/crates/kuchiki)
 - [W3C HTML standard](https://www.w3.org/TR/html52/)
 
 Buona programmazione a tutti!

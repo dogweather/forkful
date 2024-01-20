@@ -46,4 +46,3 @@ Die Erstellung einer temporären Datei über das `tmp`-Modul ist sehr einfach: e
 
 - [tmp Modul Dokumentation](https://www.npmjs.com/package/tmp)
 - [File System Modul in Node.js](https://nodejs.org/api/fs.html)
-- [Arbeiten mit Dateien in Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)

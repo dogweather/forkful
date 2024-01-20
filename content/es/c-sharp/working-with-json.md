@@ -42,4 +42,3 @@ En cuanto a la implementación, JSON utiliza llaves y valores para almacenar los
 
 - [Documentación oficial de Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Tutorial de C# y JSON en Code Project](https://www.codeproject.com/Tips/79435/Working-with-JSON-in-C)
-- [Especificación de JSON en el sitio web de ECMA](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)

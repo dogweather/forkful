@@ -57,7 +57,6 @@ print(resposta.text)
 
 ## Veja Também
 
-* Documentação oficial de [`requests`](https://docs.python-requests.org/pt_BR/latest/)
 * Documentação oficial do [`httplib2`](https://httplib2.readthedocs.io/en/latest/)
 * Documentação oficial do [`aiohttp`](https://docs.aiohttp.org/en/stable/)
 * [Guia HTTP para iniciantes da Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview), excelente recurso para entender os fundamentos do HTTP.

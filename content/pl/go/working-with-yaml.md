@@ -50,5 +50,4 @@ Praca z YAML to nic innego jak obsługa pewnego rodzaju formatu danych w program
 
 # Zobacz również:
 - [Dokumentacja pakietu yaml.v2](https://pkg.go.dev/gopkg.in/yaml.v2)
-- [Porównanie formatów YAML, JSON i XML](https://www.edrawsoft.com/comparison-yaml-json-xml.html)
 - [Oficjalna strona YAML](https://yaml.org/)

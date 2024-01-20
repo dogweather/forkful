@@ -52,4 +52,3 @@ En termes de détails d'implémentation, il convient de noter que `std::tolower`
 ## Voir Aussi
 - [Documentation de `std::transform`](https://en.cppreference.com/w/cpp/algorithm/transform)
 - [Discussion détaillée sur StackOverflow](https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case)
-- [Article plus détaillé sur la conversion de chaînes](https://www.fluentcpp.com/2017/12/05/making-stdstring-uppercase-lowercase)

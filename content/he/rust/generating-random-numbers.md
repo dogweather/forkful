@@ -37,5 +37,4 @@ Random Number: 36417
 
 ## ראה גם:
 * [Rust Book](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
-* [Rust API Documentation](https://doc.rust-lang.org/rand/rand/index.html)
 * [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html)

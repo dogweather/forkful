@@ -44,5 +44,4 @@ Ruby створює тимчасовий файл в директорії, що 
 ## Дивитися також:
 
 * [Документація Ruby про клас Tempfile](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
-* [Ruby API документація про IO і дискові операції](https://ruby-doc.org/core-3.2.0/IO.html)
 * [Уроки по Ruby від Codecademy](https://www.codecademy.com/learn/learn-ruby)

@@ -46,5 +46,4 @@ Si la API se basa en tokens en lugar de en credenciales de usuario, puedes usar 
 ## See Also (Ver también)
 Para más detalles, consulta los siguientes recursos:
 - [Documentación HTTPoison](https://hexdocs.pm/httpoison/readme.html)
-- [Módulo BasicAuth](https://hexdocs.pm/httpoison/HTTPoison.BasicAuth.html)
 - [Documentación sobre las solicitudes HTTP en Erlang](http://erlang.org/doc/man/httpc.html)

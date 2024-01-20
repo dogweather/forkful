@@ -55,6 +55,4 @@ Attenzione, la creazione di un nuovo progetto tramite PowerShell è semplice, ma
 ## Guarda Anche
 
 * [Guida di introduzione a PowerShell](https://docs.microsoft.com/it-it/powershell/scripting/overview?view=powershell-7.1)
-* [Guida di Microsoft su come creare script PowerShell](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/02-creating-scripts?view=powershell-7.1)
-* [Syntaxis e strutture di comandi in PowerShell](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/03-syntax-and-structures?view=powershell-7.1)
 * [Visual Studio Code](https://code.visualstudio.com/) per la gestione avanzata dei progetti.

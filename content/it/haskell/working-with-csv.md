@@ -98,4 +98,3 @@ Il pacchetto ```Data.Csv``` utilizza il tipo di dati ```Record``` per rappresent
 ## Vedi anche:
 
 - [Hackage: Data.Csv](http://hackage.haskell.org/package/cassava)
-- [Haskell Weekly: Working with CSV in Haskell](https://haskellweekly.news/blog/posts/2020-06-11-working-with-csv-in-haskell/)

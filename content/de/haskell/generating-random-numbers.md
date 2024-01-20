@@ -36,4 +36,3 @@ Das `System.Random` Modul in Haskell stammt aus den 1990er Jahren und hatte das 
 
 - Die `random` Bibliothek auf Hackage: [http://hackage.haskell.org/package/random](http://hackage.haskell.org/package/random)
 - Der `random` Modul auf stackage: [https://www.stackage.org/lts-16.15/package/random-1.2.0](https://www.stackage.org/lts-16.15/package/random-1.2.0)
-- Die Haskell-Wiki-Seite zur Zufallszahlengenerierung: [https://wiki.haskell.org/Random_numbers](https://wiki.haskell.org/Random_numbers)

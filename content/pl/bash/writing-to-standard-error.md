@@ -27,4 +27,3 @@ Pisanie do standardowego wyjścia błędów jest powszechną praktyką w program
 ## Zobacz też
 Linki do podobnych źródeł:
 - [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html#Redirections)
-- [Przykłady użycia polecenia](https://www.geeksforgeeks.org/stderr-redirecting-stderr-stdout/)

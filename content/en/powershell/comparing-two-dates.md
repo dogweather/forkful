@@ -48,5 +48,3 @@ Remember, PowerShell relies on the system's timezone for date comparison unless 
 ## See Also
 
 - [Microsoft's Official Documentation on Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
-- [Working with PowerShell Date Command (Get-Date)](https://www.computerperformance.co.uk/powershell/powershell-get-date/)
-- [Use PowerShell to Compare Two Dates](https://devblogs.microsoft.com/scripting/use-powershell-to-compare-two-dates/)

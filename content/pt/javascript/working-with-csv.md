@@ -56,4 +56,3 @@ Ao trabalhar com arquivos CSV, é importante estar ciente de alguns desafios, co
 ## Veja Também:
 
 - [Documentação oficial do JavaScript sobre a API *fetch*](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
-- [Lista de bibliotecas em JavaScript para lidar com arquivos CSV](https://www.javascripting.com/chart-libraries/)

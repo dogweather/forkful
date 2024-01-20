@@ -49,6 +49,5 @@ Além disso, um ponto importante é que o IO.inspect retorna o valor inspecionad
 ## Veja Também
 Para mais informação confira:
 
-- Elixir School: [Elixir School - Basics (Debugging)](https://elixirschool.com/pt/lessons/basics/debugging/)
 - Documentação Oficial do Elixir: [IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
 - Depurador Elixir: [Debugger - Debugging](https://elixir-lang.org/getting-started/debugging.html)

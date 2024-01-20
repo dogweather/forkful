@@ -48,4 +48,3 @@ welcome
 מאמרים שקשורים:
 
 - [מדריך למחרוזות בשפת C# באתר Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [הסבר על הפונקציה Substring באתר GeeksforGeeks](https://www.geeksforgeeks.org/c-sharp-string-substring-method/)

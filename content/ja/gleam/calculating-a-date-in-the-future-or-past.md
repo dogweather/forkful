@@ -43,6 +43,3 @@ let past_date =
     Gleamの`future`と`past`関数は、Unixエポックからのミリ秒として表される日時を操作します。これらの関数は、指定された時間単位をミリ秒に変換し、元の日時に追加または減算します。
 
 ## 参照：
-- Gleam公式ドキュメンテーション: [https://gleam.run/docs/](https://gleam.run/docs/)
-- オンライン書籍 "Programming Gleam": [https://www.programming-elixir.com/](https://www.programming-elixir.com/)
-- Gleamコミュニティフォーラム: [https://gleam.run/forum/](https://gleam.run/forum/)

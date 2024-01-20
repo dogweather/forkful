@@ -63,4 +63,3 @@ This testing approach took root during the TDD (Test-Driven Development) wave in
 
 - Elixir's official ExUnit documentation: [https://hexdocs.pm/ex_unit/ExUnit.html](https://hexdocs.pm/ex_unit/ExUnit.html)
 - Tutorial on Test-Driven Development (TDD) with Elixir: [https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234](https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234)
-- Comparison of Elixir testing libraries: [https://www.amberbit.com/blog/2018/9/4/comparison-of-elixir-testing-libraries/](https://www.amberbit.com/blog/2018/9/4/comparison-of-elixir-testing-libraries/)

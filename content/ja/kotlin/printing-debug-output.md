@@ -47,4 +47,3 @@ Kotlinの`println()`関数は、Javaの`System.out.println()`から直接派生�
 
 - Kotlinの公式ドキュメント: [Basic Types](https://kotlinlang.org/docs/basic-types.html#strings) 
 - [Logging in Kotlin](https://www.baeldung.com/kotlin/logging)
-- Duo Mobileのブログ: [5 Tips For Debugging in Kotlin](https://duo.com/decipher/five-tips-for-debugging-in-kotlin)

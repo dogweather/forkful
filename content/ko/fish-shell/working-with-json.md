@@ -54,9 +54,7 @@ JSON은 Lightweight markup 형식이며, 다양한 프로그래밍 언어에서 
 
 만약 Fish Shell에서 JSON 데이터를 더욱 쉽게 다루고 싶다면, 다음과 같은 추가 패키지를 사용할 수 있습니다.
 
-- [fish-json](https://github.com/tuvistavie/fish-json): JSON 데이터를 파싱하고 다루는 데 유용한 기능을 제공합니다.
 
-- [fish-jq](https://github.com/oh-my-fish/plugin-jq): jq 구문과 비슷한 구문을 사용해 JSON 데이터를 다룰 수 있도록 도와줍니다.
 
 더 자세한 내용은 위의 링크를 참고하시기 바랍니다.
 

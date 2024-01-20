@@ -45,6 +45,5 @@ Szczegóły implementacji: Metoda `readFile` wczytuje cały plik do pamięci prz
 ## Zobacz też:
 
 - [Dokumentacja fs Node.js](https://nodejs.org/api/fs.html)
-- [Przewodnik po stream'ach Node.js](https://nodejs.dev/learn/nodejs-streams)
 
 Pamiętaj, że TypeScript jest tylko nakładką na JavaScript, więc wiele informacji na tematy JavaScript również będzie przydatne!

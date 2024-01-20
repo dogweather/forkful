@@ -30,6 +30,5 @@ Vaihtoehtoisia tapoja tekstien muodostamiseen ja käsittelyyn ovat esim. merkkij
 Clojuren `re-seq`-funktio palauttaa sekvenssin otteluista annetussa merkkijonossa. Jos otteluja ei ole, it returns `nil`.
 
 ## Katso myös:
-- [Clojuren säännöllisten lausekkeiden dokumentaatio](https://clojure.org/guides/learn/regex)
 - [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html)
 - [Säännöllisten lausekkeiden tutoriaali](https://regexone.com/)

@@ -51,7 +51,6 @@ JSON是一种轻量级的数据格式，它比传统的XML和CSV文件更易于�
 想要了解更多关于在Kotlin中使用JSON的信息，可以查阅以下资源：
 
 - [Kotlinx序列化官方文档](https://github.com/Kotlin/kotlinx.serialization)
-- [使用Kotlin实现JSON处理的详细教程](https://www.baeldung.com/kotlin-serialization-json)
 - [GSON库文档](https://github.com/google/gson)
 
  想要学习更多关于Kotlin编程的知识，可以浏览[Kotlin官方网站](https://kotlinlang.org/)。

@@ -36,4 +36,3 @@ YAML-kieli julkaistiin vuonna 2001 ja sen tavoitteena oli korvata XML-tiedostot.
 
 ## Katso myös:
 - [YAML virallinen sivusto](https://yaml.org/)
-- [Kotlin yaml-kirjaston dokumentaatio](https://www.kotlinal.com/api/::yaml/)

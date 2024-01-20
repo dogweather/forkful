@@ -38,4 +38,3 @@ En travaillant avec des fichiers CSV en PowerShell, il est important de noter qu
 Pour en savoir plus sur le format CSV et comment travailler avec en PowerShell, vous pouvez consulter les ressources suivantes:
 
 - [Documentation Microsoft sur Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.1)
-- [Article de blog sur la manipulation de fichiers CSV avec PowerShell](https://adamtheautomator.com/powershell-csv/)

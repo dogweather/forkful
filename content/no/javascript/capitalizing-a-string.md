@@ -46,7 +46,3 @@ Det er andre metoder for å oppnå samme resultat, som bruk av CSS (Cascading St
 Når det gjelder implementeringsdetaljer, vil du kanskje merke at vi først konverterer alle tegnene til små bokstaver i den andre funksjonen (`capitalizeWords(str)`). Dette gjøres for å sikre at alle ordene starter med små bokstaver, slik at vi deretter bare kan konvertere det første tegnet til stort bokstav.
 
 ## Se Også
-
-- [MDN dokumentasjon på String.charAt()](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [MDN dokumentasjon på String.slice()](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [CSS text-transform egenskap](https://developer.mozilla.org/no/docs/Web/CSS/text-transform)

@@ -44,6 +44,5 @@ Storicamente, Haskell era un lisp-like, quindi i `print` e `trace` fanno cose si
 Ricordate, `trace` non è perfetto - esso vìola la trasparenza referenziale (uno dei principi fondanti di Haskell) e non dovrebbe essere usato in codice di produzione. 
 
 ##Vedi Anche
-- [Haskell Debug Tutorial](https://www.schoolofhaskell.com/school/starting-with-haskell/debugging)
 - [Haskell Trace](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
 - [Debugging Haskell Haskell Wiki](https://wiki.haskell.org/Debugging)

@@ -48,5 +48,4 @@ format(pattern: String, date: Date) -> Result(String, Nil)
 
 ## 참고资料
 
-- Gleam 언어 공식 홈페이지: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
 - Gleam 언어 Github: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

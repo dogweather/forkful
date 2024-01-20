@@ -38,5 +38,4 @@ CSV-formatet uppfanns på 1970-talet som ett sätt att enkelt överföra data me
 ## Se även:
 För mer information och tips på hur man kan arbeta med CSV i Bash, besök följande länkar:
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/)
-- [csvtool documentation](https://github.com/Chris00/ocaml-csv/blob/master/src/csvtool/csvtool.1)
 - [awk tutorial](https://www.gnu.org/software/gawk/manual/gawk.html)

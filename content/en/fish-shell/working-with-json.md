@@ -44,6 +44,4 @@ To work with JSON in Fish Shell, the `json` function uses the `eval` command to 
 
 ## See Also
 
-- [Fish Shell documentation for JSON](https://fishshell.com/docs/current/cmds/json.html)
 - [JSON official website](https://www.json.org/)
-- [XML vs JSON: The debate](https://www.upwork.com/resources/xml-vs-json)

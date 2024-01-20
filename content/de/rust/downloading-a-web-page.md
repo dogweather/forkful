@@ -43,5 +43,4 @@ Die genauen Einzelheiten der Implementierung hängen von der verwendeteten Techn
 Haben Sie Lust auf mehr? Schauen Sie sich diese Quellen an:
 - [Offizielle Rust-Dokumentation](https://doc.rust-lang.org/book/)
 - [Reqwest-Dokumentation](https://docs.rs/reqwest/)
-- [Webseiten herunterladen mit Python](https://python-requests.org)
 - [Webseiten herunterladen mit Java](https://jsoup.org/)

@@ -74,6 +74,4 @@ CSV格式最初是由微软在20世纪80年代开发的。它经常被用作数�
 
 ## 参考资料
 
-- [C语言标准库文档](https://zh.cppreference.com/w/c/)
 - [如何解析复杂的CSV文件](https://medium.com/@jhjhjhsu/how-to-parse-csv-files-in-c-92bf6043472)
-- [其他格式与CSV的比较](https://www.softwaretestinghelp.com/csv-vs-xml-vs-json/)

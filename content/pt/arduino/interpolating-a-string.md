@@ -44,4 +44,3 @@ Os detalhes da implementação são que o operador + para strings foi sobrecarre
 
 - Visite a [Documentação Oficial do Arduino](https://www.arduino.cc/reference/en/) para aprender mais sobre a classe String e outras funcionalidades.
 - Leia sobre a [Função Sprintf em C++](https://www.cplusplus.com/reference/cstdio/sprintf/) para aprofundar no uso dessa alternativa de concatenação.
-- Consulte o [Blog do Arduino](https://blog.arduino.cc/category/tutorial/) para tutoriais práticos e exemplos de projetos.

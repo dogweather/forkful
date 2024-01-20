@@ -41,5 +41,4 @@ Un'altra alternativa è usare il pacchetto NodaTime che fornisce una serie di fu
 
 ## Leggi Anche
 - [Documentazione ufficiale Microsoft su System.DateTime](https://docs.microsoft.com/it-it/dotnet/api/system.datetime?view=net-5.0)
-- [Gestione delle date e delle ore in C#](https://www.c-sharpcorner.com/article/handle-datetime-and-datetimeoffset-like-a-pro-in-net-core/)
 - [NodaTime | Date, time and time zone API for .NET](https://nodatime.org/)

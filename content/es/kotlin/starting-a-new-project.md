@@ -42,6 +42,5 @@ Al iniciar un nuevo proyecto de Kotlin, debes pensar en cuál será la arquitect
 ## Ver También
 Si quieres aprender más sobre Kotlin, aquí tienes algunos recursos:
 - [Kotlin Documentación Oficial](https://kotlinlang.org/docs/home.html)
-- [Curso de Kotlin para Principiantes](https://www.udemy.com/course/kotlin-for-beginners/)
 
 Siempre es una buena idea buscar documentación adicional y tutoriales mientras estás aprendiendo. ¡Buena suerte en tu aventura de codificación con Kotlin!

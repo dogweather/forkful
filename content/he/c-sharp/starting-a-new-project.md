@@ -31,6 +31,5 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ההיסטוריה של התחלת פרויקטים חדשים התפתחה לאורך הזמן, בהתאם לשיפורי כלים וטכנולוגיות. ישנם שיטות אלטרנטיביות להתחלת פרויקטים כמו באמצעות שורת פקודה או עורכים מקומיים, וכן הפתרונות המגוונים תלויים בעיקר בצורך הספציפי של המפתח. 
 
 ## ראה גם:
-- [Microsoft Docs: יצירת הפרויקט הראשון שלך באמצעות ה-C#](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/your-first-app)
 - [W3Schools  C# Tutorial: התחלת פרויקט חדש](https://www.w3schools.com/cs/cs_getstarted.php)
 - [Stackoverflow: האם C# הוא שפה טובה למתכנתים מתחילים?](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)

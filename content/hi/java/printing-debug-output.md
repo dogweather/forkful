@@ -42,6 +42,4 @@ Debug: i का मूल्य 4 है।
 सभी भाषाओं में debugging एक महत्वपूर्ण हिस्सा है। Debugging का उपयोग coordinated system को understand करने और troubleshoot करने के लिए हमेशा से किया जा रहा है। आप `System.out.print` के अलावा जैसे कि logging libraries का उपयोग कर सकते हैं। Logging libraries, जैसे कि Log4j या SLF4J, विस्तारपूर्वक तत्वों को handle करने का समर्थन करते हैं, जैसे कि log message का प्रारूप बदलना, और log messages को अलग-अलग file में लिखना।
 
 ## इसे भी देखें / See Also:
-- [Log4j introduction (यहाँ क्लिक करें)](https://logging.apache.org/log4j/2.x/manual/introduction.html)
 - [SLF4J Introduction (यहाँ क्लिक करें)](https://www.slf4j.org/manual.html)
-- [Java Logging Overview (यहाँ क्लिक करें)](https://www.oracle.com/technical-resources/articles/javase/core-patterns-logging.html)

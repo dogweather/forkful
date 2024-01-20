@@ -50,5 +50,4 @@ Temporary file created: temp/prefix-123456
 ב-Go, פונקציה TempFile מייצרת קובץ זמני חדש בתיקייה הנתונה, פותחת את הקובץ לכתיבה, ומחזירה את הקובץ.
 ## ראו גם:
 - דוקומנטציה אינטרנטית של הGo: [io/ioutil.TempFile](https://pkg.go.dev/io/ioutil#TempFile)
-- [יעילות של קבצים זמניים נוספי](https://www.oreilly.com/library/view/linux-system-programming/0596009585/ch04s03.html) בקטע 4.3.2 של הספר "Linux System Programming".
 - [מדריך שיפור הביצועים של הקובץ הזמני](https://www.ibm.com/developerworks/aix/library/au-perf_tune/index.html) מ-IBM.

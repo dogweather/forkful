@@ -41,5 +41,4 @@ The versatility of Fish's string manipulation functions demonstrates its power. 
 ## See Also
 
 - Full documentation for Fish String functions: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
-- An article comparing Fish's capabilities to other shells: [https://jamsek.dev/posts/fish-shell-vs-zsh/](https://jamsek.dev/posts/fish-shell-vs-zsh/)
 - ASCII Table for manual capitalization: [http://www.asciitable.com/](http://www.asciitable.com/)

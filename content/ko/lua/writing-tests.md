@@ -38,5 +38,4 @@ assert(add(2, 2) == 4, "2와 2를 더한 결과는 4가 되어야만 합니다!"
 # 관련 자료
 
 - [Lua 공식 홈페이지](https://www.lua.org/): Lua 언어의 공식 홈페이지입니다.
-- [TNT - Test Notation Toolkit](http://tnt-fdw.com/): Lua에서 사용할 수 있는 테스트 작성 도구입니다.
 - [Learn Lua in 15 minutes](http://tylerneylon.com/a/learn-lua/): 15분 만에 Lua 언어를 배울 수 있는 자료입니다.

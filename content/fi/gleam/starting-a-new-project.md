@@ -39,4 +39,3 @@ Gleam on suhteellisen uusi kieli, joka on luotu tarjoamaan turvallisempi, tehokk
 - [Gleam-koti](https://gleam.run/)
 - [Gleam GitHub](https://github.com/gleam-lang/gleam)
 - [Rebar3 opas](https://www.rebar3.org/docs/getting-started)
-- [Gleam-oppaat ja esimerkit](https://github.com/gleam-lang/example-projects)

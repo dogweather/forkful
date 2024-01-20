@@ -43,6 +43,5 @@ int main()
 
 ## 관련 자료:
 
-- [C 프로그래밍 언어 공식 문서](https://docs.microsoft.com/ko-kr/cpp/c-runtime-library/reference/fprintf-fprintf-l-output-to-stream)
 - [Java 프로그래밍 언어 공식 문서](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4)
 - [생각보다 중요한 표준 에러 로그에 대해 알아보기](https://medium.com/@rajatmehra0506/the-one-thing-you-should-really-know-about-logging-tools-standard-error-9e6d4c27e1f3)

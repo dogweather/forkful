@@ -43,6 +43,5 @@ Aunque YAML es una opción popular, existen algunas alternativas como TOML y HCL
 La implementación de YAML en Javascript es posible gracias a la librería js-yaml, que permite convertir datos YAML en objetos Javascript y viceversa. Esta librería es fácil de instalar y de usar, lo que hace que trabajar con YAML en proyectos de Javascript sea sencillo y eficiente.
 
 # Ver también:
-- [Tutorial de YAML de Mozilla](https://developer.mozilla.org/es/docs/Web/Tutorials/Converting_between_formats/YAML_for_a_JavaScript_app)
 - [Documentación de la librería js-yaml](https://github.com/nodeca/js-yaml)
 - [Especificación de YAML](https://yaml.org/spec/1.2/spec.html)

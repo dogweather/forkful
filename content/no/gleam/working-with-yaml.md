@@ -26,6 +26,5 @@ gleam_yaml.dumps(YAML_DATA) // => "min_datafil.yml"
 YAML ble utviklet i 2001 av Clark Evans og Ingy döt Net for å være et menneskelesbart og konsist dataformat. Det har blitt et populært valg for å representere komplekse datastrukturer i programmeringsspråk som Python, Ruby og nå også Gleam. Alternativene til YAML inkluderer JSON og XML, men YAML har en mer menneskelesbar syntaks og støtter kommentarer og referanser til andre deler av YAML-filen. I Gleam er YAML-implementasjonen basert på en parser som bruker en tilpasset versjon av `libyaml`-biblioteket.
 
 ## Se også:
-- [Gleam `gleam_yaml` modul dokumentasjon](https://gleam.run/modules/gleam_yaml/latest/gleam_yaml.html)
 - [YAML offisiell nettside](https://yaml.org)
 - [YAML dokumentasjon](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)

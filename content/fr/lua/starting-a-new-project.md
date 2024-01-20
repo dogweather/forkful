@@ -41,5 +41,4 @@ Pour plus d'informations sur Lua, consultez ces ressources :
 
 - [Site officiel de Lua](http://www.lua.org)
 - [Manuel de référence de Lua](http://www.lua.org/manual/5.4)
-- [Cours en ligne Lua pour les débutants](https://www.learn-lua.org)
 - [Codecademy : Apprenez Lua](https://www.codecademy.com/learn/learn-lua)

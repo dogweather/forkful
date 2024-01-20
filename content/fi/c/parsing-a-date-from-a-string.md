@@ -50,4 +50,3 @@ Jäsennyksen yksityiskohdat: `strptime` ottaa merkkijonon "2021-09-05", jäsente
 Lue lisää päivämäärien jäsennyksestä merkkijonoista ja `strptime` funktion käytöstä näistä lähteistä:
 - [C Library - <time.h> (tutorialspoint.com)](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
 - [Date and time functions (cplusplus.com)](http://www.cplusplus.com/reference/ctime/)
-- [C Date and Time (programiz.com)](https://www.programiz.com/c-programming/library-function/time.h/strptime)

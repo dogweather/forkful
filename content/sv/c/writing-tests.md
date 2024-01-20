@@ -44,7 +44,5 @@ Att skriva tester har blivit allt viktigare inom programmering, särskilt med ta
 
 ## Se även:
 
-- [C assert function](https://www.geeksforgeeks.org/using-assert-h-header-function-c/)
 - [CUnit](http://cunit.sourceforge.net/) och [Check](https://libcheck.github.io/check/)
-- [An overview of test-driven development in C](https://www.cloudbees.com/blog/journey-test-driven-development-c)
 - [A brief history of testing in C](https://medium.com/codingthesmartway-com-blog/a-brief-history-of-testing-in-c-ed5b34e053d5)

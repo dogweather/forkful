@@ -44,4 +44,3 @@ Es importante tener en cuenta que la función `binary_part/3` toma un rango en f
 ## Ver También
 
 - [Documentación de Elixir: String](https://hexdocs.pm/elixir/String.html)
-- [Documentación de Elixir: Binary](https://hexdocs.pm/elixir/Binary.html)

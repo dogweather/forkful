@@ -41,5 +41,4 @@ Seuraavat lähteet ovat hyödyllisiä sekä aloittelijoille että kokeneille ohj
 
 - Microsoft PowerShell-dokumentaatio: [Get-Random](https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.utility/get-random)
 - .NET-dokumentaatio: [System.Random](https://docs.microsoft.com/fi-fi/dotnet/api/system.random) 
-- PowerShellin [Get-Random cmdletin](https://learn-powershell.net/2013/07/02/use-get-random-in-powershell-to-get-a-random-number/) käyttö
 - Satunnaisten lukujen generointia käsittelevä [Wikipedia-artikkeli](https://fi.wikipedia.org/wiki/Satunnaisluku) (englanniksi)

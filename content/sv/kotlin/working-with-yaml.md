@@ -58,5 +58,4 @@ För mer information om hur man arbetar med YAML i Kotlin, rekommenderar vi föl
 
 - [YAML-specifikationen](https://yaml.org/spec/1.2/spec.html)
 - [Officiell YAML-webbplats](https://yaml.org/)
-- [Dokumentation för Kotlin YAML-biblioteket](https://github.com/mabe02/lanterna/blob/master/docs/yaml.md)
 - [Jackson YAML biblioteket för övergripande hantering av YAML-data](https://github.com/FasterXML/jackson-dataformats-text)

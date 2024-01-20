@@ -32,6 +32,5 @@ x equals 5
 
 ## Додатково
 Рекомендую глибше ознайомитись з налагодженням програм за цими посиланнями:
-- [Основи Debugging в Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/debugging.html)
 - [Використання інструментів Debugging в IntelliJ IDEA](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
 - [Чудові техніки Debugging для Kotlin](https://proandroiddev.com/great-android-debugging-tools-kotlin-1f91ee9be9c5)

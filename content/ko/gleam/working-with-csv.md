@@ -38,5 +38,4 @@ let data = my_data |> io.to_csv()
 CSV 파일 형식은 1980년대에 최초로 개발되었습니다. 당시에는 컴퓨터 간에 데이터를 공유하기 위해 만들어졌는데, 지금도 여러 가지 형태의 데이터를 교환하는 데 많이 사용됩니다. Gleam 외에도 다양한 프로그래밍 언어에서 CSV를 다루는 다양한 라이브러리가 제공되고 있습니다. Gleam에서는 io 라이브러리를 사용하여 CSV를 손쉽게 다룰 수 있습니다.
 
 ## 관련 자료:
-- [io 라이브러리 문서](https://gleam.run/documentation/stdlib/io)
 - [CSV 형식 소개](https://en.wikipedia.org/wiki/Comma-separated_values)

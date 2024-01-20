@@ -38,5 +38,4 @@ To implement test writing in your Arduino code, you will need to have a thorough
 
 ## See Also:
 - [ArduinoUnit Library](https://github.com/mmurdoch/arduinounit)
-- [Introduction to Test Driven Development in Arduino](https://blog.arduino.cc/2019/08/16/introduction-to-test-driven-development-in-arduino/)
 - [Test Writing in Arduino tutorial](https://canvas.okstate.edu/courses/41515/files/2237283/preview?verifier=edBMdfEHK7g9X98I1G2fxNVFN91GmiGjo37g04p2)

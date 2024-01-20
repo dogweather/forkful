@@ -41,5 +41,4 @@ In TypeScript ist console.log auf JavaScript zurückzuführen. JavaScript hat se
 
 - [MDN Web Docs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/log) 
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [The Basics of Debugging in JavaScript](https://www.digitalocean.com/community/tutorials/javascript-debugging)
 - [Step-by-Step Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)

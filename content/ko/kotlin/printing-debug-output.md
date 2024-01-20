@@ -41,6 +41,5 @@ fun main() {
 
 - 대표적인 Kotlin 문서인 [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
 - Kotlin 공식 사이트에서 제공하는 [Kotlin Playground](https://play.kotlinlang.org/)
-- [`println`, `print`와 `printf`에 대해](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/printf.html)
 
 이들 링크를 통해 디버깅 기법과 문법, Kotlin의 다양한 기능을 학습할 수 있습니다.

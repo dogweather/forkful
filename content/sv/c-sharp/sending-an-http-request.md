@@ -46,4 +46,3 @@ if(response.IsSuccessStatusCode)
 ## Se Även
 - [MSDN HttpClient Dokument](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient): Officiell `HttpClient` dokumentation.
 - [RestSharp](http://restsharp.org): Alternativ C#-bibliotek.
-- [Flurl.Http](https://flurl.dev/docs/flurl-http/): Modernt, flytande URL-bibliotek.

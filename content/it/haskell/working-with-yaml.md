@@ -42,5 +42,4 @@ Per implementare l'utilizzo di YAML in Haskell, è necessario importare la libre
 ## Vedi Anche:
 
 - [Documentazione ufficiale di YAML](https://yaml.org)
-- [Tutorial su YAML in Haskell](https://www.stackbuilders.com/tutorials/haskell/yaml/) 
 - [Progetto GitHub della libreria `Data.Yaml`](https://github.com/snoyberg/yaml)

@@ -39,7 +39,5 @@ Durante il calcolo delle date passate e future, Fish eseguirà la sottrazione o 
 Per ulteriori informazioni su come calcolare le date future o passate, consulta i seguenti link:
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Calculating Dates in Fish](https://www.baeldung.com/linux/date-arithmetic-fish)
-- [Date Command in Unix or Linux (geeksforgeeks.org)](https://www.geeksforgeeks.org/date-command-linux-unix-examples/) 
 
 Ricorda che le capacità di calcolo della data variano da un sistema operativo all'altro e da un linguaggio di programmazione all'altro. Fai attenzione a queste differenze durante la programmazione.

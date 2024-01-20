@@ -41,5 +41,4 @@ getUsers username password =
 
 ## ראו גם:
 - Elm Http: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
-- Elm BasicAuth: [https://package.elm-lang.org/packages/truqu/elm-basic-auth/latest/](https://package.elm-lang.org/packages/truqu/elm-basic-auth/latest/)
 - HTTP Basic authentication: [https://en.wikipedia.org/wiki/Basic_access_authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

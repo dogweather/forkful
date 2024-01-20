@@ -47,7 +47,6 @@ Kun suoritat merkkijonojen yhdistämisen Elm:ssä, se tapahtuu tehokkaasti ja tu
 Lisätietoja merkkijonojen yhdistämisestä Elm-ohjelmointikielessä löydät seuraavista lähteistä:
 
 - Elm-kielen virallinen dokumentaatio: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-- Elm-kielen syntaksioppaan osio merkkijonoista: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
 
 ---
 

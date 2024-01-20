@@ -43,4 +43,3 @@ Au niveau de l'implémentation, quand nous appelons `Date.today()`, nous interro
 ## Voir Aussi:
 
 - Documentation Erlang pour date module: [http://erlang.org/doc/man/calendar.html](http://erlang.org/doc/man/calendar.html)
-- Guide d'interopérabilité Gleam-Erlang: [https://gleam.run/book/tour/erlang-interop.html](https://gleam.run/book/tour/erlang-interop.html)

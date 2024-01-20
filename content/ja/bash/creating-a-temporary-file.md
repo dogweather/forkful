@@ -39,5 +39,4 @@ Hello, World!
 
 ## 参照リンク：
 - [`mktemp` man page（英語）](https://linux.die.net/man/1/mktemp)
-- [Temporary file Wikipedia（日本語）](https://ja.wikipedia.org/wiki/%E4%B8%B2%E6%99%82%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)
 - [Bash programming guide（英語）](https://www.tldp.org/LDP/abs/html/)

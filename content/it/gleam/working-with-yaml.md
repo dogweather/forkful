@@ -52,4 +52,3 @@ Attualmente, Gleam implementa il formato YAML versione 1.2, offrendo una precisa
 
 - [Documentazione ufficiale di YAML](https://yaml.org/)
 - [Specifica della versione 1.2 di YAML](https://yaml.org/spec/1.2/spec.html)
-- [Gleam Yaml module source code](https://github.com/gleam-lang/gleam_stdlib/blob/master/std/yaml/)

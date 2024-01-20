@@ -37,5 +37,3 @@ El número es par
 Escribir a la salida estándar se remonta a los primeros días de programación, cuando los programadores no tenían herramientas avanzadas para depurar y necesitaban imprimir mensajes de error directamente en la pantalla. Hoy en día, hay otras técnicas más sofisticadas disponibles, como el uso de un depurador, pero escribir a la salida estándar sigue siendo una herramienta valiosa y fácil de implementar.
 
 ## Ver también:
-- [Documentación de la función cerr en el sitio web de Cplusplus.com](http://www.cplusplus.com/reference/iostream/ios/cerr/)
-- [Artículo sobre imprimir a la salida estándar en GeeksforGeeks](https://www.geeksforgeeks.org/printing-stderr-standard-error/)

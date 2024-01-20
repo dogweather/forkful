@@ -44,5 +44,4 @@ Elm에서 랜덤 숫자를 생성하는 것은 순수 함수를 이용해야 합
 ## 참고 자료:
 
 - [Elm의 Random 모듈 문서](https://package.elm-lang.org/packages/elm/random/latest/)
-- [랜덤 숫자 생성에 대한 컴퓨터 과학계의 연구 자료](https://www.jstor.org/stable/2003355)
 - [다른 언어에서의 랜덤 숫자 생성 방법](https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/)

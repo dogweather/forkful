@@ -50,6 +50,5 @@ Gleamでは存在チェックはシェルコマンドを呼び出し実行しま
 ## 参照 | See Also
 以下のリンクで、より深くGleamの説明、さらに詳細な情報が見られます：
 
-- [公式Gleamドキュメンテーション](https://gleam.run/docs/)
 - [fs module in Node.js](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
 - [Pythonのos library](https://docs.python.org/3/library/os.path.html)

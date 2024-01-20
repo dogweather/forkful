@@ -49,4 +49,3 @@ Co do szczegółów implementacyjnych, metoda setDate() działa zarówno dla prz
 
 - [Podręcznik TypeScript: Data](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
 - [Przewodnik po manipulacji datami w JavaScript](https://flaviocopes.com/how-to-date-javascript/)
-- [Libraries for working with dates in TypeScript and JavaScript](https://www.smashingmagazine.com/2021/06/complete-guide-date-time-strings-javascript/)

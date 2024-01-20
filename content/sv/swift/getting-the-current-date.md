@@ -54,5 +54,3 @@ Däremot kan enklare användningar, som att helt enkelt få dagens datum, uppnå
 - Apple officiella dokumentation om Swifts `Date` och `Calendar` klasser: 
   - [Date](https://developer.apple.com/documentation/foundation/date)
   - [Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- Swift programmeringsspråkets historia: [här](https://en.wikipedia.org/wiki/Swift_(programming_language)).
-- Digital Trends djupdykningar i Swift: [här](https://www.digitaltrends.com/computing/what-is-swift/).

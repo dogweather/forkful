@@ -49,4 +49,3 @@ int main() {
 
 - C语言教程: [https://www.learn-c.org/](https://www.learn-c.org/)
 - Linux stat函数详解: [https://man7.org/linux/man-pages/man2/stat.2.html](https://man7.org/linux/man-pages/man2/stat.2.html)
-- 关于目录操作的更多信息: [https://pubs.opengroup.org/onlinepubs/009695399/functions/directory.html](https://pubs.opengroup.org/onlinepubs/009695399/functions/directory.html)

@@ -42,7 +42,6 @@ CSV格式最初是在1972年由IBM公司开发的，并且在当时主要用于�
 
 ## 还有什么？
 
-- [edcsv](https://github.com/javier-z/edcsv)
 - [node-csv](https://github.com/adaltas/node-csv)
 - [JSON vs CSV: Which format to choose?](https://www.jotform.com/blog/json-vs-csv/)
 - [What is CSV (comma separated values)?](https://www.computerhope.com/jargon/c/csv.htm)

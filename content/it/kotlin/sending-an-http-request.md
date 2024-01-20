@@ -40,4 +40,3 @@ Come dettaglio di implementazione, le richieste HTTP seguono un modello di `requ
 
 - Per saperne di più su `khttp` [clicca qui](https://github.com/jkcclemens/khttp).
 - Documentazione sulle richieste HTTP [qui](https://developer.mozilla.org/it/docs/Web/HTTP/Overview).
-- Per un tutorial più dettagliato su Kotlin e HTTP, [visita questo link](https://www.baeldung.com/kotlin-http-requests).

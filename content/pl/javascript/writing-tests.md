@@ -59,4 +59,3 @@ Implementacja testów może różnić się w zależności od biblioteki, ale zaz
 ## Zobacz też:
 
 - [Dokumentacja biblioteki "Jest"](https://jestjs.io/docs/en/getting-started) - informacje o metodach i funkcjach dostępnych w bibliotece
-- [Kurs "Test-Driven Development z Javascript"](https://www.udemy.com/course/test-driven-development-with-javascript/) - kompleksowy kurs na platformie Udemy dotyczący pisania testów z użyciem Javascript i biblioteki "Jest"

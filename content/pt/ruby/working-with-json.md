@@ -50,4 +50,3 @@ JSON (JavaScript Object Notation) é uma formatação de dados baseada em texto 
 
 - [Documentação da biblioteca JSON em Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
 - [Introdução ao JSON](https://www.json.org/)
-- [Tutorial JSON em Ruby](https://www.rubyguides.com/2018/10/ruby-json-tutorial/)

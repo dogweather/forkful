@@ -52,4 +52,3 @@ Die Implementierungsdetails des `date`-Befehls in der Fish Shell sind ziemlich k
 ## Siehe auch:
 
 - Offizielle Fish Shell Dokumentation über `date`: [https://fishshell.com/docs/current/commands.html#date](https://fishshell.com/docs/current/commands.html#date)
-- Weitere Informationen zur Datums- und Zeitkonvertierung: [https://de.wikipedia.org/wiki/Datums-_und_Zeitangaben_in_Informatik](https://de.wikipedia.org/wiki/Datums-_und_Zeitangaben_in_Informatik)

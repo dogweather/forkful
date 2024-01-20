@@ -65,4 +65,3 @@ Die Implementierung dieser Funktion in Arduino setzt auf die Ethernet-Bibliothek
 
 - [Arduino Ethernet Bibliothek](https://www.arduino.cc/en/Reference/Ethernet)
 - [Raspberry Pi Web Scraping](https://projects.raspberrypi.org/en/projects/secret-agent-chat)
-- [ESP8266 Web Client](https://randomnerdtutorials.com/esp8266-web-client/)

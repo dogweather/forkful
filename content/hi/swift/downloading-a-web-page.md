@@ -47,5 +47,3 @@ task.resume()
 ## अधिक जानकारी के लिए:
 
 - [Apple Developer Documentation: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Swift Web Scraping Guide](https://www.raywenderlich.com/1228252/web-scraping-with-swift)
-- [Comparison of different methods for downloading a web page in Swift](https://programmingwithswift.com/how-to-download-a-url-in-swift/)

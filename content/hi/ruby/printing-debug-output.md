@@ -34,8 +34,5 @@ debug_print("Checking debug output in ruby programming.")
 
 ## अधिक जानें:
 
-- [Ruby Debugging](https://www.rubyguides.com/2015/06/ruby-debugging/)
-- [Debugging Techniques for Ruby Programmers](https://www.toptal.com/ruby/debugging-ruby-applications)
-- [Debugging in Ruby](https://www.leighhalliday.com/debugging-in-ruby)
 
 ये संसाधन रूबी प्रोग्रामिंग में डीबग आउटपुट की जानकारी प्रदान करते हैं और आपको आपके प्रोग्राम्स को बेहतर बनाने में मदद करेंगे। उन्हें आखिर तक पढ़ें और उनपर अनुशासन लाएं!

@@ -39,6 +39,5 @@ main = trace "This will be printed before the main function" (return ())
 
 디버그 기술에 대한 더 깊은 이해를 원한다면, 이러한 참고자료들이 도움이 될 것입니다:
 
-- Real World Haskell: 디버깅 공부에 대한 좋은 시작점입니다. [링크](http://book.realworldhaskell.org/read/debugging-and-profiling.html)
 - Hackage: Debug.Trace 모듈에 대한 자세한 문서를 제공합니다. [링크](http://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
 - Haskell Wiki: 디버깅에 대한 다양한 팁과 트릭이 제공됩니다. [링크](https://wiki.haskell.org/Debugging)

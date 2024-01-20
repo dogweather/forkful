@@ -56,6 +56,4 @@ func main() {
 Controlla i link sottostanti per ulteriori informazioni ed esempi:
 
 - Documentazione ufficiale: [Pacchetto stringhe](https://golang.org/pkg/strings/)
-- Go by Example: [Stringhe](https://gobyexample.com/strings)
-- Una guida completa sulle stringhe in Go [link](https://yourbasic.org/golang/strings-explained/)
 - Post del blog di Go: [Stringhe, byte, rune e caratteri in Go](https://blog.golang.org/strings)

@@ -44,5 +44,4 @@ Hello
 ## Zobacz również
 
 - [Dokumentacja Pythona dotycząca ciągów znaków](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Opis metody slice() na geeksforgeeks.org](https://www.geeksforgeeks.org/python-string-slicing/)
 - [Podstawy regularnych wyrażeń w Pythonie na realpython.com](https://realpython.com/regex-python/)

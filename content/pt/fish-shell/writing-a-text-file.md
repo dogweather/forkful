@@ -56,5 +56,3 @@ Escrever arquivos de texto é uma prática comum entre programadores desde os pr
 
 ## Ver também:
 - [Documentação oficial do Fish Shell sobre o comando "echo"](https://fishshell.com/docs/current/commands.html#echo)
-- [Tutorial do Linux sobre como escrever em arquivos de texto](https://linuxconfig.org/how-to-append-to-a-text-file-using-fish-shell-in-linux)
-- [Exemplos de uso do comando "echo" no Fish Shell](https://www.cyberciti.biz/faq/bash-append-text-to-a-file/)

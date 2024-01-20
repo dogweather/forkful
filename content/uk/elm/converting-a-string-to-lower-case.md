@@ -36,5 +36,4 @@ main =
 
 ## Дивіться також
 - [Документація Elm `String` модуля](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Стаття про обробку тексту в Elm](https://elmprogramming.com/text-processing.html)
 - [форум Elm з обговореннями щодо роботи з рядками](https://discourse.elm-lang.org/)

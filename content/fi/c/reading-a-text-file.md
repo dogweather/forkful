@@ -53,4 +53,3 @@ Tiedoston käsittelemiseen liittyy resurssienhallinta, mm. tiedoston avaaminen j
 Lisätietoja ja lähteitä:
 - [C Library - <stdio.h>](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
 - [File I/O in C programming with examples](https://beginnersbook.com/2014/01/c-file-io/)
-- [C Programming Files I/O](https://www.learn-c.org/en/Files_IO)

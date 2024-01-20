@@ -48,6 +48,4 @@ Die `stat()` Funktion wurde ursprünglich in der Unix-Betriebssystemfamilie eing
 
 Für mehr Informationen schauen Sie diese Ressourcen an:
 
-- [C Library - <sys/stat.h>](https://www.tutorialspoint.com/c_standard_library/sys_stat_h.htm)
 - [C Programming Files I/O](https://www.programiz.com/c-programming/c-file-input-output)
-- [Directory in C](https://www.geeksforgeeks.org/directory-in-c/)

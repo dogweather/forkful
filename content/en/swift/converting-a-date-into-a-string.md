@@ -56,7 +56,5 @@ A word of caution though: Converting dates to strings will cost you some perform
 ## See Also:
 
 - [Apple Developer Documentation for DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift By Sundell on Date Formatting](https://www.swiftbysundell.com/articles/dealing-with-dates-and-time-in-swift/)
-- [NSHipster Article About DateFormatter](https://nshipster.com/dateformatter/)
  
 The more you know about your tools, the more elegantly you can code. So, check out these amazing resources to deep dive into date handling in Swift. Remember, great apps are powered by great code. Happy coding!

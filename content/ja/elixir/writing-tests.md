@@ -26,5 +26,3 @@ assert 5 / 2 == 2.5
 
 ## 関連情報：
 - [Elixir: ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [radicle: テスト駆動開発とは？](https://radicle.jp/post/7/)
-- [YangTech: テストを書くことの重要性](https://yangtech.tokyo/topics/why-do-we-test/)

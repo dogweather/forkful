@@ -63,5 +63,3 @@ A documentação oficial de Elixir e HTTPoison são boas fontes para aprender ma
 - HTTPoison: [https://hexdocs.pm/httpoison/HTTPoison.html](https://hexdocs.pm/httpoison/HTTPoison.html) 
 
 Hackney também possui uma documentação abrangente:
-
-- Hackney: [https://hexdocs.pm/hackney/readme.html](https://hexdocs.pm/hackney/readme.html)

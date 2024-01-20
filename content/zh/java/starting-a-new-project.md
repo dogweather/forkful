@@ -45,5 +45,4 @@ Hello World
 
 以下是一些相关的学习资源：
 * [Oracle官方Java教程](https://docs.oracle.com/en/java/javase/15/)
-* [开源Java编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#java)
 * Java编程网上课程：[Codecademy](https://www.codecademy.com/learn/learn-java)、[Udemy](https://www.udemy.com/topic/java/)

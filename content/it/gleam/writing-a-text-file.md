@@ -43,4 +43,3 @@ Per quanto riguarda l'implementazione della scrittura di un file di testo, è im
 ## Vedi anche:
 
 - [Documentazione ufficiale di Gleam](https://gleam.run/documentation/)
-- [Tutorial di scrittura di file di testo in Gleam](https://gleam.run/tutorials/file-io/)

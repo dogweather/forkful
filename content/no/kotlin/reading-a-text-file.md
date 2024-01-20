@@ -46,4 +46,3 @@ For mer informasjon om filbehandling i Kotlin, sjekk ut:
 
 - [Lese og skrive til filer](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html) i den offisielle Kotlin-dokumentasjonen.
 - [Håndtering av unntak](https://kotlinlang.org/docs/exceptions.html) for når filer ikke eksisterer eller andre problemer oppstår.
-- [Kotlin Tutorial: Lese og skrive til en fil](https://www.programiz.com/kotlin-programming/file-io), for en mer detaljert tutorial om hvordan lese og skrive til filer med Kotlin.

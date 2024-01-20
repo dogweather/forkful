@@ -42,5 +42,4 @@ console.log(result);
 
 ## 另请参见
 - MDN 关于 `toLowerCase()` 方法的文档：[toLowerCase() 文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- StackOverflow 上关于 `toLowerCase()` 和 `toLocaleLowerCase()` 区别的讨论：[讨论链接](https://stackoverflow.com/questions/26827535/javascript-tolowercase-vs-tolocalelowercase)
 - MDN 关于 `localeCompare()` 方法的文档：[localeCompare() 文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)

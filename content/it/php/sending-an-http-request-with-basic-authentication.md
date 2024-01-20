@@ -47,6 +47,4 @@ Dettagli implementativi: L'autenticazione di base utilizza l'intestazione `Autho
 
 - [Documentazione PHP cURL](https://www.php.net/manual/en/book.curl.php)
 - [RFC 7617 - Autenticazione HTTP Basic](https://tools.ietf.org/html/rfc7617)
-- [Tutorial Auenticazione Digest](https://www.tutorialspoint.com/php/php_http_digest_authentication.htm)
-- [Tutorial Autenticazione basata su token in PHP](https://www.cloudways.com/blog/rest-api-in-php-and-token-based-authentication)
 - [Guida OAuth 2.0](https://oauth.net/getting-started/)

@@ -44,5 +44,4 @@ Esistono anche molti strumenti e librerie che semplificano il lavoro con CSV in 
 Per implementare una lettura e scrittura di CSV più sofisticata, è possibile utilizzare le API di Foundation, come ad esempio CSVParser e CSVWriter.
 
 ## Vedi anche:
-- [SwiftCSV](https://github.com/willowtreeapps/swift-csv)
 - [Apple Foundation Framework](https://developer.apple.com/documentation/foundation)

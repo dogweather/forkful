@@ -40,4 +40,3 @@ end
 ## 参考文献
 * [RubyのNet::HTTPについて](https://docs.ruby-lang.org/ja/latest/library/net=2fhttp.html)
 * [HTTP Basic Authentication](https://www.ietf.org/rfc/rfc2617.txt)
-* [Upgrading HTTP to HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)

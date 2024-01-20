@@ -41,7 +41,3 @@ CSV הוא אקרונים ל-Comma Separated Values, והטכניקה שמאחו
 ## ראו גם
 
 למידע נוסף על כיצד לעבוד עם קבצי CSV ב-Haskell, בקרו בקישורים הבאים:
-
-- [Haskell wiki page on Working with CSV files](https://wiki.haskell.org/Working_with_CSV_files)
-- [hscsv - A CSV parser and printer for Haskell](https://hackage.haskell.org/package/hscsv)
-- [CSV Basics in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/csv-basics)

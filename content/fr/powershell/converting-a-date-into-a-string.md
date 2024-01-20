@@ -43,5 +43,4 @@ Exemple de résultat de sortie :
 Pour en savoir plus sur la conversion de date en chaîne en PowerShell, consultez les sources suivantes :
 
 - Documentation Microsoft sur la méthode ToString() : [Lien](https://docs.microsoft.com/fr-Fr/dotnet/api/system.datetime.tostring?view=netframework-4.8)
-- Blog de TobyU sur la gestion des dates en PowerShell : [Lien](https://tobyu.github.io/posts/2020/06/02/powershell-date-formatting/)
 - StackOverflow, un autre excellent exemple de conversion de date en chaîne : [Lien](https://stackoverflow.com/questions/26156213/format-get-date-output-format)

@@ -45,4 +45,3 @@ Para saber más acerca de estas temáticas, puedes consultar los siguientes enla
 
 - Documentación oficial de Gleam: [Gleam HTTP API](https://hexdocs.pm/gleam_httpc/gleam/httpc.html)
 - Documentación de Mozilla sobre HTTP: [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- Un tutorial para principiantes sobre HTTP con Gleam: [A Simple Guide to HTTP with Gleam](https://example.com/tutorial-http-gleam)

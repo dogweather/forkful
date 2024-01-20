@@ -38,5 +38,3 @@ Just 2020-05-20
 
 ## 参考链接：
 - 官方Haskell文档：[Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- Haskell解析日期教程： [Practical Haskell - Parsing Date and Time](http://www.yellosoft.us/practical-haskell/parsing-date-and-time)
-- `Data.Time.Format.Parse`库的GitHub页面：[Data.Time.Format.Parse](https://hackage.haskell.org/package/time-1.10/docs/Data-Time-Format-Parse.html)

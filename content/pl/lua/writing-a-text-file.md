@@ -36,4 +36,3 @@ Podczas pisania pliku tekstowego, warto pamiętać o trybie, w jakim go otwieram
 
 - [Oficjalna dokumentacja Lua](https://www.lua.org/docs.html)
 - [Pisanie plików tekstowych w języku Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- [Książka "Programowanie w języku Lua"](http://www.wydawnictwohelion.pl/book/174/programowanie-w-jezyku-lua-praktyka-ewolucyjna.html)

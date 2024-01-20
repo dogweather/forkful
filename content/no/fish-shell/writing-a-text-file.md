@@ -28,5 +28,4 @@ Etter å ha opprettet en tekstfil, kan du endre filens tillatelser ved å bruke 
 ##Se også:
 Få mer informasjon om Fish Shell og tekstbehandling i terminalen ved å sjekke ut disse kildene:
 - [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Intro to Text Files](https://www.learncodethehardway.org/c/](https://www.learncodethehardway.org/c/])programmers_guide_intro.html)
 - [chmod kommandoen](http://man7.org/linux/man-pages/man1/chmod.1.html)

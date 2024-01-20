@@ -39,10 +39,8 @@ Når det kommer til implementasjonsdetaljer, kan det å laste ned en webside væ
 
 For mer informasjon, sjekk ut disse superbegrensningene:
 
-- 'Fetch API' dokumentasjon: [https://developer.mozilla.org/no/docs/Web/API/Fetch_API](https://developer.mozilla.org/no/docs/Web/API/Fetch_API)
 
 - 'axios' bibliotek dokumentasjon: [https://axios-http.com/](https://axios-http.com/)
 
-- MDN veiledning på 'Web scraping' med Node.js: [https://developer.mozilla.org/no/docs/Learn/JavaScript/Client-side_web_APIs/Fetch](https://developer.mozilla.org/no/docs/Learn/JavaScript/Client-side_web_APIs/Fetch)
 
 God kodepraksis!

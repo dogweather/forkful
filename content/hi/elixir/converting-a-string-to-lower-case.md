@@ -39,4 +39,3 @@ Elixir में `String.downcase/1` का परिचय 1.0.0 संस्�
 
 - Elixir डॉक्स की `String` मॉड्यूल: [link](https://hexdocs.pm/elixir/String.html).
 - Erlang `:string` मॉड्यूल: [link](https://erlang.org/doc/man/string.html).
-- यूनिकोड और Elixir: [link](https://elixir-lang.org/blog/2017/01/05/unicode-and-elixir/).

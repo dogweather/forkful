@@ -45,4 +45,3 @@ Python toteuttaa nämä toiminnot sisäisesti C-kielen standardikirjaston avulla
 
 ## Katso myös:
 - Pythonin virallinen dokumentaatio: [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- Vertailu eri string-funktioiden välillä: [casefold vs lower](https://www.geeksforgeeks.org/python-casefold-vs-lower/)

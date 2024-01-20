@@ -40,4 +40,3 @@ Bashin sisäänrakennettu `-d` -testi on peräisin Unixin varhaisista päivistä
 ## Katso myös
 - GNU Bash Manual: [`test`](https://www.gnu.org/software/bash/manual/bash.html#Bourne-Shell-Builtins)
 - `man test`: Komentorivin manuaalinen sivu sisäänrakennetulle `test`-käskylle eri unix-järjestelmissä.
-- Nachum Dotanin kirjoitus [Test command in Unix/Linux](https://www.geeksforgeeks.org/test-command-linux-examples/)

@@ -35,5 +35,4 @@ JSON fue creado en 2001 por Douglas Crockford como una alternativa al formato de
 ## Vea también:
 
 - [Documentación oficial de ArduinoJson](https://arduinojson.org/)
-- [Tutorial de ArduinoJson de Adafruit](https://learn.adafruit.com/arduino-json)
 - [Introducción a JSON de W3Schools](https://www.w3schools.com/js/js_json_intro.asp)

@@ -50,5 +50,4 @@ When working with CSV files, it's important to handle special characters and esc
 
 ## See Also:
 - [C++ reference for getline function](https://www.cplusplus.com/reference/string/string/getline/)
-- [Tutorial on working with CSV files in C++](https://www.programmingworldtech.com/2019/01/how-to-read-and-write-data-from-csv-file-in-c.html)
 - [Comparison of different file formats](https://www.computerhope.com/issues/ch001356.htm)

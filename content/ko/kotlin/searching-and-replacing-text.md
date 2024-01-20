@@ -46,7 +46,6 @@ Kotlin에서는 String 클래스가 위의 기능을 제공합니다. 기본적�
 
 ## 참고자료:
 
-- [Kotlin 공식문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
 - [정규 표현식에 대한 깊이 있는 이해](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [자바 String replace(), replaceAll() 메소드](https://www.javatpoint.com/java-string-replace)
 - [Python replace() 메소드](https://www.w3schools.com/python/ref_string_replace.asp)

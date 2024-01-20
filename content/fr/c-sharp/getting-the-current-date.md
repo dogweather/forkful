@@ -45,4 +45,3 @@ Si vous avez besoin d'une horloge haute-résolution pour la mesure de performanc
 Visitez ces liens pour une information plus détaillée:
 - [La documentation officielle du Microsoft C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-6.0)
 - [StackOverflow : DateTime vs DateTimeOffset](https://stackoverflow.com/questions/4331189/datetime-vs-datetimeoffset)
-- [Discussion: Mesurer le temps en C#](https://www.c-sharpcorner.com/UploadFile/BlogAuthor/942-improve-the-performance-of-a-c-sharp-application/)

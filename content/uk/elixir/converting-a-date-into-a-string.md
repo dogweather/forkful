@@ -46,5 +46,4 @@ IO.puts Calendar.strftime(date, "%A %d %B %Y")
 ## Дивіться також:
 
 - [Документація Elixir](https://hexdocs.pm/elixir/DateTime.html#to_string/1) - Докладно про DateTime.to_string
-- [Підручник з Elixir про дату та час](https://elixir-lang.org/getting-started/io-and-the-filesystem.html#date-and-time) - Огляд щодо роботи з датою та часом в Elixir
 - [Керівництво по Elixir strftime](https://hexdocs.pm/elixir/Calendar.html#strftime/3) - Деталі про форматування дати по заданому шаблону.

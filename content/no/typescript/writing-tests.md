@@ -33,5 +33,4 @@ Det å teste kode er en viktig del av utviklingsprosessen fordi det sikrer kvali
 
 ## Se også:
 - [Jest dokumentasjon](https://jestjs.io/docs/getting-started)
-- [Why Writing Tests Is Important?](https://www.business.com/articles/why-writing-tests-is-important/)
 - [Alternatives to Jest for TypeScript testing](https://medium.com/agoldis-one/alternatives-to-jest-for-typescript-testing-d2f6d419ce3d)

@@ -32,4 +32,3 @@ Textdateien sind eine der ältesten Arten von Datenformaten und werden immer noc
 # Siehe auch
 - [fs-Modul in der Node.js Dokumentation](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
 - [Ein Tutorial zum Schreiben von Textdateien in Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Eine Einführung in das Schreiben von Dateien in Javascript](https://www.geeksforgeeks.org/how-to-write-a-file-synchronously-using-filesystems-in-node-js/)

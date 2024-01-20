@@ -44,5 +44,3 @@ Haskell implementiert das Verketten von Strings durch das Zusammenfügen der int
 ## Siehe auch:
 
 - [Haskell/Lists and tuples](http://en.wikibooks.org/wiki/Haskell/Lists_and_tuples)
-- [Haskell Wiki](https://wiki.haskell.org/How_to_work_with_strings)
-- [Haskell: Manipulieren von Zeichenketten](https://www.tutorialspoint.com/haskell/haskell_strings.htm)

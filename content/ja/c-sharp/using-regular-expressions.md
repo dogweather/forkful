@@ -45,4 +45,3 @@ Console.WriteLine(replacedString); // 出力 : abc#def#
 ## 関連情報 :
 
 - [C# ガイド - 正規表現](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expressions)
-- [Microsoft Docs - 正規表現を使用して文字列を操作する](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/using-regular-expressions-in-csharp)

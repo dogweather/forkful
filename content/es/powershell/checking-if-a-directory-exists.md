@@ -68,6 +68,5 @@ if (!(Test-Path $dir))
 
 - [Documentos Oficiales de Microsoft PowerShell](https://docs.microsoft.com/es-es/powershell/)
 - [Comunidad de Desarrolladores de PowerShell - Stack Overflow](https://stackoverflow.com/questions/tagged/powershell)
-- [Recurso educativo para aprender PowerShell - Microsoft Learn](https://docs.microsoft.com/es-es/learn/modules/powershell-in-cloud-shell/)
 
 ---

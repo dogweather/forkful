@@ -37,5 +37,3 @@ New-Item -Path C:\Users\Username\Documents\ -Name "new_sample.txt" -ItemType "fi
 
 ## आपको भी देखना चाहिए:
 - [PowerShell documentation](https://docs.microsoft.com/en-us/powershell/scripting)
-- [Scripting basics](https://www.advancedinstaller.com/user-guide/tutorial-powershell-script.html)
-- [Tutorial on writing text files with PowerShell](https://www.joseespitia.com/2017/04/16/powershell-games-write-files-writing-text-files/)

@@ -46,4 +46,3 @@ När det gäller komplikationerna, om den inmatade strängen inte matchar ett gi
 ## Se även:
 
 - [.NET DateTime dokumentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [PowerShell-dokumentation om datum och tidsomvandlingar](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1)

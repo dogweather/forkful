@@ -54,6 +54,5 @@ JSON - це формат обміну даними, який був розроб
 
 Дивись також
 
-- [Офіційна документація Fish Shell для роботи з JSON](https://fishshell.com/docs/current/cmds/jq.html)
 - [JSON Tutorial](https://www.json.org/)
 - [Цікавий блог про використання JSON у програмуванні](https://medium.com/swlh/what-is-json-and-why-should-you-know-about-it-10646e3a5b90)

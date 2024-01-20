@@ -53,5 +53,4 @@ main = do
 以下は、今回のテーマに関連する資料へのリンクです。
 
 - [Haskell `wreq`ライブラリのドキュメンテーション](http://www.haskell.org/haddock/doc/html/Wreq.html)
-- [ウェブスクレイピングのためのHaskellライブラリ](https://github.com/sras/scrapegood)
 - [HTTPリクエストとレスポンスについての詳細な説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Messages)

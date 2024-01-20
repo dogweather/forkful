@@ -41,6 +41,5 @@ Gleam implementerar detta genom att först skapa ett RegExp-objekt med det önsk
 
 ## Se även
 För mer information, se följande länkar:
-- [Gleam's regex documentation](https://gleam.run/stdlib/regex/)
 - [A Gentle Introduction to Regex](https://www.rubyguides.com/2015/06/ruby-regex/)
 - [Mozilla's Regex guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

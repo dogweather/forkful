@@ -47,5 +47,4 @@ Do note that underneath, every interpolated string is transformed into a `String
 ## See Also
 
 * [String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation)
-* [Concept: String Formatting and Interpolation](https://education.10pines.com/concept_string_formatting_and_interpolation)
 * [Mastering C# 6.0 features](https://www.infoworld.com/article/2989972/what-is-string-interpolation-in-c-6.html)

@@ -50,4 +50,3 @@ W bibliotece `text.CSV` w języku Haskell znajdują się funkcje, które pozwala
 ## Zobacz także:
 
 - [Dokumentacja biblioteki `text.CSV` w Hackage](https://hackage.haskell.org/package/csv)
-- [Poradnik na temat czytania i pisania plików CSV w Haskell](https://wiki.haskell.org/Reading_and_writing_CSV_files)

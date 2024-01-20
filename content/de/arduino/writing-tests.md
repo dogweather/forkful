@@ -36,6 +36,3 @@ Die Ausgabe sollte nun "1 test, 1 passed, 0 failed" sein, was bedeutet, dass uns
 Die ArduinoUnit.h Bibliothek wurde von M. F. Mc Laughlin erstellt und ist eine Alternative zu anderen Test-Frameworks wie beispielsweise Unity oder CppUnit. Mit ihr können sowohl Unit-Tests als auch Integrationstests geschrieben werden. Eine ausführlichere Dokumentation und weitere Beispiele findest du auf der offiziellen GitHub-Seite.
 
 ## Siehe auch:
-- [ArduinoUnit.h GitHub](https://github.com/mmcaughlin/ArduinoUnit)
-- [Einführung in das Testen von Arduino-Code](https://www.arduino.cc/en/Guide/IntroductionToArduinoUnitTesting)
-- [Ein ausführliches Tutorial zu ArduinoUnit.h](https://www.arduino.cc/en/Tutorials/ArduinoUnitTesting)

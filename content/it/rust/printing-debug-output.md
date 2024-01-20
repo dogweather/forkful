@@ -54,6 +54,5 @@ Visualizzerà:
 
 Per ulteriori informazioni sulla stampa del debug output in Rust, consulta le seguenti risorse:
 
-- [Documentazione ufficiale Rust](https://doc.rust-lang.org/book/ch18-01-all-the-places-for-panic.html)
 - [Rust by Example](https://doc.rust-lang.org/rust-by-example/hello/print.html)
 - [Stack Overflow](https://stackoverflow.com/questions/27582739/how-do-i-print-a-rust-variable-for-debugging)

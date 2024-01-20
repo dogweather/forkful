@@ -44,4 +44,3 @@ YAMLは、データの構造をインデントによって表現します。ま�
 
 - [YAML公式サイト](https://yaml.org/)
 - [YAMLの仕様書](https://yaml.org/spec/1.2/spec.html)
-- [YAMLを使用したトリビアゲームの例](https://github.com/jamesdobson/yaml-trivia-game)

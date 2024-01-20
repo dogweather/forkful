@@ -46,5 +46,4 @@ O processo de escrever testes é um processo importante para garantir que o cód
 
 Para mais informações sobre testes com TypeScript, consulte:
 
-- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/handbook/testing.html)
 - [Artigo sobre testes unitários com Jasmine e TypeScript](https://medium.com/@bryanmanuele/type-safe-jasmine-unit-testing-with-typescript-ebd8da1df0f2)

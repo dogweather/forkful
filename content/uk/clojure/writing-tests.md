@@ -51,6 +51,5 @@ Ran 2 tests containing 2 assertions.
 
 ## Дивіться також
 
-- [Clojure документація по тестуванню](https://clojure.org/guides/testing)
 - [Clojure.test документація](https://clojure.github.io/clojure/clojure.test-api.html)
 - [RSpec для Ruby](https://rspec.info/)

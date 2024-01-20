@@ -39,5 +39,4 @@ Elixirin `CSV`-moduuli on erityisen hyödyllinen, sillä se käsittelee dataa te
 
 ## Katso myös
 - [Elixirin virallinen dokumentaatio CSV-moduulille](https://hexdocs.pm/csv/)
-- [Grokking CSV in Elixir](https://rossta.net/blog/grokking-csv-in-elixir.html)
 - [CSV-muodon historia](https://en.wikipedia.org/wiki/Comma-separated_values#History)

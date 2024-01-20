@@ -40,4 +40,3 @@ JSON, sigla para JavaScript Object Notation, foi criado em 2001 por Douglas Croc
 
 - [Documentação Python sobre JSON](https://docs.python.org/3/library/json.html)
 - [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)
-- [JSON vs XML: qual escolher?](https://www.geeksforgeeks.org/json-vs-xml/)

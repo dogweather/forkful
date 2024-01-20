@@ -45,5 +45,3 @@ Scrivere file di testo ha un'importante storia nella programmazione. In passato,
 ## Vedi anche:
 
 - [Documentazione ufficiale Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Come iniziare con la Fish Shell](https://dev.to/bertolinimarco/getting-started-with-fish-shell-3lb2)
-- [L'importanza dei file di testo nella programmazione](https://www.smashingmagazine.com/2011/11/text-editors-are-file-managers/)

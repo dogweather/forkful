@@ -47,6 +47,4 @@ void loop() {
 CSV-filer har funnits sedan 1972 och är ett av de mest använda filformaten i världen. Alternativ till CSV inkluderar JSON och XML, men CSV är mer lättläst och behöver mindre lagringsutrymme. Implementeringsdetaljer inkluderar att man måste ange tecknet som separerar kolumnerna (default är kommatecken) och att man måste hantera tecken som kan störa som citattecken eller radbrytningar.
 
 ## Se även:
-- [ArduinoCSV Library](https://github.com/evyatronix/ArduinoCSV)
 - [CSV-filer](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [Alternativ till CSV](https://raygun.com/blog/xml-vs-json-vs-csv/)

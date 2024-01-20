@@ -69,5 +69,4 @@ CSVファイルはコンマでデータを区切るだけではなく、タブ�
 ## 関連リンク
 
 - [Python公式ドキュメント - CSVモジュール](https://docs.python.org/ja/3/library/csv.html)
-- [CSVファイルの基礎知識](https://qiita.com/tomomoto/items/947dcadccdf3a95227b7)
 - [CSVファイルのフォーマット詳細](https://tools.ietf.org/html/rfc4180)

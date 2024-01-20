@@ -49,6 +49,5 @@ There are also other alternatives to writing to standard error, such as using a 
 
 ## See Also
 
-- [Rust documentation on standard error](https://doc.rust-lang.org/std/io/enum.Stdin.html)
 - [Difference between standard error and standard output](https://askubuntu.com/questions/350208/command-piping-mkdir-error-message-to-text-file)
 - [Logging in Rust with the log and env_logger crates](https://www.reddit.com/r/rust/comments/4asrtr/logging_in_rust_with_the_log_and_env_logger/)

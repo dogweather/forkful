@@ -44,4 +44,3 @@ Per ulteriori informazioni e per approfondire l’argomento, vi suggerisco i seg
 
 - Documentazione ufficiale Elixir: [System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0) 
 - Documentazione ufficiale Elixir: [OptionParser](https://hexdocs.pm/elixir/OptionParser.html) 
-- Elixir School: [Linea di comando](https://elixirschool.com/it/lessons/basics/command-line/)

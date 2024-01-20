@@ -34,5 +34,4 @@ npx tsc --init // יוצר tsconfig.json
 ## ראה גם:
 
 * [תיעוד TypeScript](https://www.typescriptlang.org/docs/)
-* [דרכים שונות להתחיל פרויקט TypeScript](https://www.freecodecamp.org/news/how-to-start-a-typescript-project/)
 * [Flow - שפת תכנות אלטרנטיבית](https://flow.org/)

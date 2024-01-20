@@ -47,6 +47,5 @@ Côté mise en œuvre, `std::filesystem::exists` interroge le système de fichie
 
 ## Voir aussi
 
-- [Documentation C++ sur filesystem](http://www.cplusplus.com/reference/filesystem/)
 - [Un aperçu de la bibliothèque Boost et de Boost::filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
 - [Comment définir les permissions d'accès aux fichiers en C++](https://en.cppreference.com/w/cpp/filesystem/perms)

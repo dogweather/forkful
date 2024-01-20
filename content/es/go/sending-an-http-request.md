@@ -55,6 +55,5 @@ Hay múltiples maneras de realizar solicitudes HTTP en Go más allá del método
 
 Aquí tienes algunos enlaces que ofrecen más información y tutoriales detallados sobre cómo enviar solicitudes HTTP con Go:
 
-- [Go por Ejemplo: Solicitudes HTTP](https://gobyexample.com/http-requests)
 - [Paquete net/http](https://golang.org/pkg/net/http/)
 - [Hacer solicitudes HTTP en Go](https://medium.com/rungo/making-external-http-requests-in-go-eb4c015f8839)

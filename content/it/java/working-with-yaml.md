@@ -46,4 +46,3 @@ Il formato YAML è stato creato dalla comunità open-source nel 2001 come altern
 ## Vedi anche:
 
 - [Sito ufficiale di YAML](https://yaml.org/) per informazioni dettagliate e documentazione.
-- [Libreria SnakeYAML](https://bitbucket.org/asomov/snakeyaml/src/default/) per lavorare con YAML in Java.

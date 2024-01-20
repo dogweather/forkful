@@ -49,5 +49,3 @@ Når du starter et nytt Gleam prosjekt, opprettes en rekke filer og kataloger so
 ## Se Også:
 
 - [Gleam's GitHub repo](https://github.com/gleam-lang/gleam)
-- [Gleam koekkbok](https://github.com/gleam-lang/gleam-cookbook)
-- [Offisiell dokumentasjon](https://gleam.run/docs/)

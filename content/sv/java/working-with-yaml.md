@@ -42,8 +42,6 @@ För mer information om hur du arbetar med YAML och utveckling i Java, se gärna
 
 ## Se även
 
-- [SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
 - [Jackson](https://github.com/FasterXML/jackson-dataformat-yaml)
 - [JavaBeans](https://docs.oracle.com/javase/8/docs/api/java/beans/package-summary.html)
 - [YAML.org](https://yaml.org)
-- [Java](https://www.java.com/sv/)

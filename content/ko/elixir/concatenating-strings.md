@@ -40,4 +40,3 @@ Elixir의 문자열 연결 방식은 언어의 불변성(Immutable) 성질에 �
 
 - [Elixir 공식 문서: 문자열 연결](https://hexdocs.pm/elixir/String.html#concat/2)
 - [Elixir 학습자료: 문자열 핸들링](https://elixirschool.com/en/lessons/basics/strings/)
-- [Elixir 튜토리얼: Enum](https://elixir-lang.org/getting-started/enum-and-streams.html)

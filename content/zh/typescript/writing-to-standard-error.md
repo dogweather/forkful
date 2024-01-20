@@ -29,5 +29,3 @@ ERROR!
 3. **实现细节：** 在TypeScript中，console.error()函数由控制台对象提供，该对象提供了各种用于输出信息的函数。
 
 # 查看相关资源：
-- [TypeScript控制台对象](https://www.typescriptlang.org/docs/handbook/console.html)
-- [如何使用控制台输出错误信息](https://www.tutorialspoint.com/typescript/typescript_error_handling.htm)

@@ -54,4 +54,3 @@ Console.WriteLine(sb.ToString());
 ## Zobacz Również:
 * Microsoft Docs o łączeniu stringów: [link](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/how-to-concatenate-multiple-strings)
 * Wydajność String.Concat vs StringBuilder: [link](https://stackoverflow.com/questions/21078/string-concatenation-vs-string-builder-performance) 
-* Dogłębne studium nad wydajnością operacji na stringach w C#: [link](https://jonskeet.uk/csharp/stringbenchmark.html)

@@ -49,6 +49,5 @@ HTTP-pyyntöjen lähetys on ollut perusteknologia, jota käyttävät verkkosovel
 ## Katso myös:
 
 - [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
-- [Curl vs Wget: Their Differences, Usage and Which One You Should Use](https://www.hostinger.com/tutorials/curl-vs-wget-differences)
 - [`man`-sivut `curl`](https://curl.haxx.se/docs/manpage.html)
 - [`man`-sivut `wget`](https://www.gnu.org/software/wget/manual/wget.html)

@@ -50,7 +50,6 @@ La práctica de escribir pruebas de código va de la mano con el desarrollo de s
 ## Ver también:
 
 - [Mastering Visual Studio Testing Tools](https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019)
-- [Unit Testing C# Code](https://www.geeksforgeeks.org/unit-testing-of-c-code/)
 
 ___
 **Nota del traductor:** Este artículo se ha escrito en un estilo informal y directo, evitando palabras y frases innecesarias para una lectura fluida y concisa.

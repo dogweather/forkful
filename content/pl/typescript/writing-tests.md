@@ -33,6 +33,4 @@ Pisanie testów jest częścią procesu TDD (Test Driven Development), który po
 
 ## Zobacz także:
 
-- [Wprowadzenie do testowania w TypeScript](https://www.typescriptlang.org/docs/handbook/testing.html)
-- [Kurs testowania w TypeScript na Udemy](https://www.udemy.com/course/typescript-unit-testing/)
 - [Wprowadzenie do Test Driven Development](https://www.agilealliance.org/glossary/tdd/)

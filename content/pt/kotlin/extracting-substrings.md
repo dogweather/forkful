@@ -46,6 +46,5 @@ Existem alternativas para a extração de substrings. Você pode usar expressõe
 No que diz respeito a detalhes de implementação, Kotlin usa os índices de string 0-based, o que significa que o primeiro caractere está no índice 0. Além disso, a string original não é alterada quando uma substring é extraída - uma nova string é criada.
 
 ## Veja Também
-- [Documentação oficial Kotlin - Funções de String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 - [Tutorial Rápido Kotlin - Substrings](https://www.tutorialkart.com/kotlin/kotlin-substring/)
 - [Trabalhando com Strings em Kotlin - Medium](https://medium.com/@elizarov/kotlin-strings-1c19d26a948b)

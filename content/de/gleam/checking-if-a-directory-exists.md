@@ -32,6 +32,5 @@ Einige Alternativen wären zum Beispiel der Aufruf von Erlang/OTP-Bibliotheken o
 
 ## Siehe Auch:
 
-- Die Gleam-Dokumentation: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
 - Erlang-Datei- und Verzeichnisoperationen: [https://erlang.org/doc/man/file.html](https://erlang.org/doc/man/file.html)
 - Einführung in Gleam für Erlang-Entwickler: [https://gleam.run/news/gleam-v0.15-released/](https://gleam.run/news/gleam-v0.15-released/)

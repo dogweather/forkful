@@ -43,6 +43,4 @@ CSVは1970年代に開発されたデータフォーマットであり、現在�
 
 ## 関連リンク
 
-- [CSVフォーマットの詳細](https://ja.wikipedia.org/wiki/CSV_%28%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%29)
-- [TSVとは？](https://www.tabipedia.jp/zine/C0030.aspx)
 - [JSON形式とは？](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON)

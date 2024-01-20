@@ -50,5 +50,4 @@ In this script, it reads a line from the text file in the while loop until the e
 ## See Also
 
 - [Fish Shell Tutorial](https://fishshell.com/docs/3.1/tutorial.html)
-- [Fish Scripting 101](https://fishshell.com/docs/3.1/scripting.html)
 - [Handling large files with Fish](https://github.com/fish-shell/fish-shell/issues/600)

@@ -44,6 +44,5 @@ int main()
 ישנם דרכים חלופיות לפרסונג תאריך, כמו כאלה המבוססות על ביטויים רגילים או שימוש בספריות ספציפיות.
 
 ## ראה גם:
-- [תיעוד הפונקציית strptime ב- GNU](https://www.gnu.org/software/libc/manual/html_node/Date_002dInput-Functions.html)
 - [תיעוד strptime ב- POSIX](https://pubs.opengroup.org/onlinepubs/009695399/functions/strptime.html)
 - [ISO 8601 - תקן זמן ותאריך](https://www.iso.org/iso-8601-date-and-time-format.html)

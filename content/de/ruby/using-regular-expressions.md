@@ -33,6 +33,4 @@ Reguläre Ausdrücke wurden in den 50er Jahren entwickelt und fanden in den 60er
 Um reguläre Ausdrücke in Ruby zu implementieren, verwendet Ruby die Oniguruma-Bibliothek. Diese Bibliothek unterstützt alle regulären Ausdrucksoperatoren und bietet auch einige zusätzliche Funktionen, wie z.B. die Möglichkeit, bedingte Ausdrücke zu verwenden.
 
 ## Sieh dir auch an:
-- [Eine praktische Anleitung zu regulären Ausdrücken in Ruby](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
-- [Die Oniguruma-Bibliothek auf Ruby-Doc.org](https://ruby-doc.org/core-2.7.0/Oniguruma.html)
 - [Reguläre Ausdrücke als Werkzeug für effiziente Textmanipulation](https://medium.com/free-code-camp/an-introduction-to-regular-expressions-regex-in-ruby-5786cf8b900c)

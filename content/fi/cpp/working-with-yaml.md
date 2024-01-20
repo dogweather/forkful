@@ -56,4 +56,3 @@ Yamlcpp-kirjasto on avoimeen lähdekoodiin perustuva, joten voit löytää virhe
 # Katso myös:
 - [Yamlcpp dokkari](https://github.com/jbeder/yaml-cpp/wiki)
 - [YAML-standardeja](https://yaml.org/spec/)
-- [YAML-editorit](https://yaml.org/resolver.html#yaml-editors)

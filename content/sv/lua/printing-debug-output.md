@@ -52,4 +52,3 @@ För en djupare förståelse av felsökning i Lua, se dessa resurser:
 
 - [Programming in Lua: Input and Output](http://www.lua.org/pil/21.1.html)
 - [Lua-users Wiki: Simple Stand Alone Debug Info](http://lua-users.org/wiki/SimpleStandAloneDebugInfo)
-- [Dev.To: Debugging in Lua - A deep dive](https://dev.to/nabbisen/debugging-in-lua-a-deep-dive-3m3f)

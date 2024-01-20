@@ -53,6 +53,4 @@ En cuanto a detalles de implementación, cuando PowerShell compara fechas, las c
 
 ## Ver También
 
-- [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1)
 - [Comparación de operadores en PowerShell](https://ss64.com/ps/syntax-compare.html)
-- [Cálculo de la diferencia entre dos fechas](https://learn-powershell.net/2011/03/27/powershell-calculating-the-difference-between-two-dates/)

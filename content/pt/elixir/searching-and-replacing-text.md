@@ -39,5 +39,3 @@ Em termos de implementação, Elixir, como Erlang, efetivamente imutável, o que
 Aqui estão alguns links para você explorar mais:
 
 - Documentação oficial do Elixir para `String.replace/3`: [https://hexdocs.pm/elixir/String.html#replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
-- Uma discussão detalhada sobre expressões regulares em Elixir: [https://elixir-lang.org/getting-started/regex.html](https://elixir-lang.org/getting-started/regex.html)
-- Uma explicação das strings no Elixir: [https://howelixirworks.com/post/how_elixir_handles_strings/](https://howelixirworks.com/post/how_elixir_handles_strings/)

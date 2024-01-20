@@ -31,5 +31,4 @@ Vaihtoehtoisesti, voit käyttää HTTP-pyyntöjä tiedostojärjestelmä tietojen
 
 ## Katso myös:
 - [Elm:n virallinen opas](https://guide.elm-lang.org/)
-- [Elm: tiedostojen käsittely JavaScipt:ssä](https://elmprogramming.com/file-handling-in-javascript.html)
 - [HTTP-pyynnöt Elm:ssä](https://guide.elm-lang.org/effects/http.html)

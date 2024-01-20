@@ -40,6 +40,5 @@ HTML 구문 분석은 프로그래밍의 초창기부터 존재했습니다. 오
 더 깊게 알아보려면, 다음 링크를 확인하세요.
 - [공식 Elm 문서](https://package.elm-lang.org/packages/elm/html/latest/)
 - [Elm로 HTML 구문 분석 학습 가이드](https://guide.elm-lang.org/install/elm.html)
-- [HTML 구문 분석에 대한 자세한 기술 문서](https://developer.mozilla.org/ko/docs/Web/HTML/Parser)  
 
 ---

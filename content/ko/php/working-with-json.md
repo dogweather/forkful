@@ -63,5 +63,4 @@ PHP에서는 ```json_decode()``` 함수를 사용하여 JSON 형식의 데이터
 
 ## 관련 자료:
 
-- [PHP 공식 문서: JSON](https://www.php.net/manual/kr/book.json.php)
 - [JSON in 5 Minutes](https://json.org/json-ko.html)

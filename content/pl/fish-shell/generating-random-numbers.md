@@ -35,4 +35,3 @@ Szczegółowo, `random` w Fish Shell działa poprzez wykorzystanie wewnętrznej 
 ## Zobacz również:
 - [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
 - [Wikipedii na temat generowania liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
-- [Artykuł o generowaniu liczb losowych w różnych językach programowania](https://www.freecodecamp.org/news/how-to-generate-random-numbers/)

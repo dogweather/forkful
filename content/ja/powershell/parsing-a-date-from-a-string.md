@@ -47,8 +47,6 @@ Saturday, May 11, 2022 12:00:00 AM
 
 ## 参照資料：
 
-- [PowerShellの日付時間の扱い方](https://dev.classmethod.jp/articles/powershell-datetime-handle/)
 - [Microsoft公式ドキュメンテーション：DateTime.Parse メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse?view=net-5.0)
-- [PowerShellの文字列の日付変換について](https://qiita.com/om_taka0113/items/53ee60c20f7f3ef7ad2e)
 
 以上で日付の解析に関する解説を終わります。

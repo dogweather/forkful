@@ -45,4 +45,3 @@ Per ulteriori informazioni e dettagli su come lavorare con i file temporanei in 
 
 - Documentazione di Rust su `std::fs`: [https://doc.rust-lang.org/std/fs/index.html](https://doc.rust-lang.org/std/fs/index.html)
 - Documentazione ufficiale di `tempfile` crate: [https://docs.rs/tempfile](https://docs.rs/tempfile)
-- Guida introduttiva alla programmazione di file in Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html)

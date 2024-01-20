@@ -46,7 +46,4 @@ Tarkistaakseen, onko hakemisto olemassa, ohjelmoijat ovat käyttäneet erilaisia
 
 ## Katso myös
 
-- *[C Standard Library: access()](https://en.cppreference.com/w/c/io/access)*: Lisätietoja access()-funktiosta ja sen käytöstä.
-- *[C Standard Library: stat()](https://en.cppreference.com/w/c/io/stat)*: Lisätietoja stat()-funktiosta ja sen käytöstä.
-- *[C Standard Library: opendir()](https://en.cppreference.com/w/c/io/opendir)*: Lisätietoja opendir()-funktiosta ja sen käytöstä.
 - *[C Tutorial: File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)*: Laajempi opas C:n tiedosto- ja hakemisto-operaatioihin.

@@ -45,5 +45,4 @@ CSV 파일은 1972년 IBM에서 개발되었습니다. 기존에는 포터블 �
 
 ## 참고:
 
-- [CSV 파일 - 위키백과](https://ko.wikipedia.org/wiki/CSV_(%ED%8C%8C%EC%9D%BC_%ED%98%95%EC%8B%9D))
 - [Python csv 모듈 - 공식 문서](https://docs.python.org/3/library/csv.html)

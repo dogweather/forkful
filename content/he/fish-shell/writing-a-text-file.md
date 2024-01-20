@@ -36,5 +36,3 @@ cat Hello.txt
 
 ## ראה גם:
 - [fish shell אתר הבית הרשמי](https://fishshell.com/) - מקור היוצרים של shell הנוח הזה.
-- [bash-lesson-in-here](http://en.flossmanuals.net/beginners-bash/ch021_starting-and-finishing-programs-sh/) - מדריך נטח לי שלל נמגדיים ששונעני לעך קבצים כמו Vi's ל Heu כמו Vi's בייבואו.
-- [ctypes Temperance dass editor מנימולוגיה](https://en.wikipedia.org/wiki/Editor%27s) - רק להכניס בעזרתי שתאפשרות שינוע לשנות או להורידת ביצוע אתר שימושִלנו בקבצי טקסט.

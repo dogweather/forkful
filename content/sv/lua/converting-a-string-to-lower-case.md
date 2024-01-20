@@ -30,7 +30,6 @@ Historisk sett har behovet av att konvertera strängar till gemener varit vanlig
 ## Se också
 Några användbara länkar för att lära mer om strängmanipulation i Lua:
 
-- [Mapping of Lua's string functions in Swedish](https://www.lua.org/manual/latest/)
 - [Lua String Library at Tutorialspoint](https://www.tutorialspoint.com/lua/lua_strings.htm)
   
 Och slutligen är [Lua Users' Wiki](http://lua-users.org/wiki/) en förtroende resurs där du kan diskutera och lära av gemenskapen.

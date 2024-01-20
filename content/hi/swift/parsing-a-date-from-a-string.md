@@ -36,6 +36,4 @@ Optional(2022-03-28 00:00:00 +0000)
 ## अन्य स्रोतों की जानकारी
 निम्नलिखित लिंक में Swift से संबंधित और अधिक जानकारी प्राप्त करें। 
 - [Swift Documentation](https://developer.apple.com/documentation/swift)
-- [Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming_guide)
 - [Working with Dates and Time in Swift](https://www.hackingwithswift.com/articles/141/working-with-dates-and-time-in-swift)
-- [Formatting Dates and Times](https://www.swiftbysundell.com/basics/date-formatting/)

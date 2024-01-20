@@ -36,7 +36,6 @@ print(substring1)  // prints "World"
 
 Приступаючи до видобування підрядків у Swift, можливо, вам захочеться більше дізнатися про інші операції з рядками:
 
-- [Вивчення рядків в Swift](https://learnswift.tiye.me/strings/): Комплексний посібник по рядкам у Swift.
 - [Документація Apple по Swift Strings](https://developer.apple.com/documentation/swift/string): Офіційна документація Apple, яка дає загальне введення в роботу з рядками в Swift. 
 
 ---

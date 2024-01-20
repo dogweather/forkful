@@ -55,5 +55,4 @@ JSON foi criado por Douglas Crockford em 2001, com o objetivo de fornecer um for
 ## Veja também:
 
 - [C++ JSON Lib](https://github.com/nlohmann/json)
-- [Introdução ao JSON](https://www.devmedia.com.br/introducao-ao-formato-json/28274)
 - [Histórico do JSON](https://www.json.org/json-en.html)

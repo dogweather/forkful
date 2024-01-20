@@ -45,5 +45,4 @@ El constructor `Date()` acepta varios formatos de string, como ISO 8601 ("YYYY-M
 ## Ver También
 
 - Documentación oficial del objeto Date en MDN: [Date - JavaScript | MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Comparación entre bibliotecas de fechas en Javascript: [You don't need Moment.js - use these native alternatives instead](https://toggl.com/blog/moment-js-alternatives)
 - Un detallado artículo sobre la manipulación de fechas en Javascript: [A Comprehensive Guide to JavaScript Dates](https://flaviocopes.com/javascript-dates/)

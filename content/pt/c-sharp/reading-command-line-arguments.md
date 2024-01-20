@@ -53,4 +53,3 @@ Na implementação padrão, `args[0]` é o caminho e o nome do arquivo executáv
 ## Veja Também:
 
 - Documentação Microsoft para o objeto `System.Environment`: [Aqui](https://docs.microsoft.com/pt-br/dotnet/api/system.environment?view=net-5.0)
-- TOm Patterson's 'Understanding Command Line Arguments and Environment Variables': [Aqui](https://www.tomsguide.com/us/command-line-arguments,news-18350.html)

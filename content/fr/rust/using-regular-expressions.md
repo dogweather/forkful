@@ -50,6 +50,4 @@ Les expressions régulières ont été inventées dans les années 1950 par un m
 
 ## Voir aussi :
 
-- [Documentation officielle sur les expressions régulières en Rust](https://doc.rust-lang.org/std/regex/index.html)
-- [Tutoriel en français sur les expressions régulières en Rust](https://www.azriel.dev/rust_regex_tuto/)
 - [Site de référence pour tester et expérimenter des expressions régulières en temps réel](https://regex101.com/)

@@ -45,4 +45,3 @@ replaceText "בוקר" "לילה" "בוקר טוב"
 
 - [מדריך התחלתי ל Elm](https://guide.elm-lang.org)
 - [String functions in Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Comparing JavaScript and Elm replace functions](https://www.javascriptvselm.com/replace)

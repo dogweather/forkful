@@ -45,4 +45,3 @@ else {
 ## 参考文献 (See Also)
 
 - [.NETのDateTimeドキュメンテーション](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=net-5.0)
-- [PowerShellでの日付操作ガイド](https://devblogs.microsoft.com/scripting/working-with-dates-and-times-in-powershell/)

@@ -42,5 +42,3 @@ Deep Dive:
 Tekstfiler har vært brukt i programmering siden de første datamaskinene ble laget. I tillegg til å lagre tekst, kan de også inneholde annen informasjon som tall og symboler. Alternativet til å skrive til en tekstfil er å lagre data i en database. I Swift, kan du også bruke String-interpolering til å skrive variabler og konstanter direkte til en tekstfil.
 
 See Also:
-- [Swift Documentation on Writing Files](https://developer.apple.com/documentation/foundation/filewritingoptions)
-- [Difference Between Writing a Text File and Saving Data in a Database](https://www.bbc.co.uk/bitesize/guides/zjb6cj6/revision/1)

@@ -44,5 +44,4 @@ Remove-Item -Path "C:\Users\John\Desktop\example.txt"
 
 ## 참고 페이지:
 - [PowerShell 공식 홈페이지](https://docs.microsoft.com/en-us/powershell/)
-- [Microsoft Learn에서 PowerShell 학습하기](https://docs.microsoft.com/en-us/learn/modules/intro-to-powershell/)
 - [PowerShell 예제 모음](https://powershellexamples.com/basic/a_sample_powershell_script.htm)

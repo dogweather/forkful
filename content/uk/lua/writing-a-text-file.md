@@ -39,4 +39,3 @@ file:close()
 ## Також подивіться:
 - [Офіційна документація Lua](https://www.lua.org/)
 - [Приклади запису текстових файлів у Lua](https://www.lua.org/pil/21.1.html)
-- [Стаття про роботу з файлами у Lua](https://www.tutorialspoint.com/lua/lua_input_output.htm)

@@ -47,6 +47,5 @@ end
 
 ## ראה גם
 רשימה של כמה משאבים שיכולים לעזור לכם להעמיק את הידע שלכם בנושא זה:
-- [LuaFileSystem - ממשק קבצי Lua](https://keplerproject.github.io/luafilesystem)
 - [Lua 5.1 המדריך למתחילים](http://lua-users.org/wiki/ForTutorial)
 - [StackOverflow - בדיקה אם ספרייה קיימת ב-Lua](https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua)

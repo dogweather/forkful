@@ -42,4 +42,3 @@ fun main() {
 ## Див. також:
 - Докладніше про `java.nio.file.Files`: [Oracle Docs - Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
 - Про обробку помилок в Kotlin: [Handling Exceptions in Kotlin](https://kotlinlang.org/docs/exceptions.html) 
-- Туторіал про операції з файлами в Kotlin: [Kotlin - Read and Write Operations in File](https://www.tutorialkart.com/kotlin-tutorial/kotlin-read-write-operations-in-file/)

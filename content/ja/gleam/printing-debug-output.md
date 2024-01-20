@@ -37,5 +37,4 @@ fn main() {
 
 ## 参考資料：
 
-- Gleam公式ドキュメントの[io.debug](https://gleam.run/documentation/io.debug/)ページ
 - デバッグ手法について詳しくは[Wikipedia: Debugging](https://en.wikipedia.org/wiki/Debugging)ページを参照してください。

@@ -72,4 +72,3 @@ fn main() {
 
 - [Dokumentacja Rust dla `std::path::Path`](https://doc.rust-lang.org/std/path/struct.Path.html)
 - [Przewodnik "Jak używać systemu plików w Rust"](http://blog.guillaume-gomez.fr/articles/2016-03-15+How+to+use+rust+filesystem%3F)
-- [Poradnik "Obsługa błędów w Rust"](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-error-patterns.html)

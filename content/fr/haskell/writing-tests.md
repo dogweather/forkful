@@ -41,5 +41,3 @@ Les tests ont toujours été une partie importante du développement logiciel. C
 
 ## Voir aussi:
 - [Documentation officielle de HUnit](https://hackage.haskell.org/package/HUnit/docs/Test-HUnit.html)
-- [Introduction aux tests en Haskell avec QuickCheck](https://www.haskell.org/tutorial/testing.html)
-- [Pourquoi écrire des tests en tant que programmeur ?](https://www.freecodecamp.org/news/just-enough-testing-d400ab647a00/)

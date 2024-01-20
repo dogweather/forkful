@@ -49,4 +49,3 @@ O método `delete` na verdade cria uma nova string sem os caracteres especificad
 
 - Documentação Ruby sobre `String#delete`: [https://ruby-doc.org/core-2.7.3/String.html#method-i-delete](https://ruby-doc.org/core-2.7.3/String.html#method-i-delete)
 - 'How to Remove a Character from String in Ruby' na Stack Overflow: [https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby](https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby)
-- 'Ruby String delete Method': [https://www.tutorialspoint.com/ruby/ruby_string_delete.htm](https://www.tutorialspoint.com/ruby/ruby_string_delete.htm)

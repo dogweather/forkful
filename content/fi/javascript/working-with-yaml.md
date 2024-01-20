@@ -41,6 +41,3 @@ YAML-tiedostot ovat rakenteeltaan erittäin yksinkertaisia, koska ne käyttävä
 
 ## Katso myös:
 - [YAML-spesifikaatio](http://www.yaml.org/spec/1.2/spec.html)
-- [YAML-tutorial](http://www.yaml.org/start.html)
-- [webpack-yaml-loader](https://github.com/webpack-contrib/yaml-loader)
-- [yamljs](https://github.com/jeremyfa/yamljs)

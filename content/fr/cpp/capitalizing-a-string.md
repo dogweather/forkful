@@ -48,4 +48,3 @@ En termes de détails d'implémentation, la fonction `toupper` convertit chaque 
 ## Voir également
 - [std::transform](https://en.cppreference.com/w/cpp/algorithm/transform) pour une explication plus approfondie sur `std::transform`.
 - [std::toupper](http://www.cplusplus.com/reference/cctype/toupper/) pour une connaissance complète de `std::toupper`.
-- [C++ String manipulation](https://www.learn-cpp.org/en/String_Manipulation) pour plus de conseils et astuces sur la manipulation des chaînes de caractères en C++.

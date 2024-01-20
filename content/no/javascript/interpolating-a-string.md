@@ -35,6 +35,4 @@ Implementeringen av strenginterpolering i Javascript er relativt rett frem. Den 
 
 ## Les Mer
 For å dykke dypere, kan du sjekke følgende kilder for mer informasjon og veiledning:
-- [MDN Web Docs: Template literals](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Template_literals)
 - [ES6 for Everyone](https://es6.io/)
-- [JavaScript.info: String interpolation](https://javascript.info/string-interpolation)

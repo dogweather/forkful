@@ -46,4 +46,3 @@ func main() {
 
 ## 참고 자료
 - [Go Docs: Time Package](https://pkg.go.dev/time): Go 언어의 time 패키지에 대한 공식 문서입니다. 이 패키지의 기능과 메소드에 대해 자세히 알아봅시다.
-- [Go Playground: Date Comparison](https://play.golang.org/p/PYpXil6l7tT): Go Playground에서 실행 가능한 날짜 비교 코드 예제입니다. 직접 실행해보고 변형해보세요.

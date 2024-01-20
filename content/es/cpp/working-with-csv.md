@@ -46,6 +46,3 @@ int main()
 CSV se introdujo por primera vez en los años 70 como una forma de almacenar datos en hojas de cálculo. Hoy en día, es un formato de archivo ampliamente utilizado en aplicaciones de bases de datos y sistemas de gestión de contenido. Además de C++, hay otros lenguajes de programación que también pueden trabajar con archivos CSV, como Python y Java. Los desarrolladores pueden encontrar bibliotecas y paquetes de software que facilitan el trabajo con CSV.
 
 ## Ver también:
-- [Tutorial de CSV en C++](https://www.geeksforgeeks.org/storing-data-in-csv-file/)
-- [Librería CSV para C++](https://github.com/awdeorio/csv)
-- [Manipulación de archivos CSV en C++](https://www.tutorialspoint.com/cpp_standard_library/cpp_csv_handling.htm)

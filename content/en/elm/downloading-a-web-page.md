@@ -74,4 +74,3 @@ The Elm example works by making a simple HTTP GET request to the page's URL, the
 
 Checkout these resources:
 - Elm's doc about [HTTP library](https://package.elm-lang.org/packages/elm/http/latest/)
-- For scraping, a discussion on how to parse HTML in Elm in [Elm Discourse](https://discourse.elm-lang.org/t/parse-html-in-elm/5096)

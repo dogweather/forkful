@@ -37,5 +37,3 @@ Hello, Jake!
 
 ## 참고 자료
 더 자세한 내용은 다음의 링크를 확인해보세요:
-- [Kotlin 공식 문서: 문자열 템플릿](https://kotlinlang.org/docs/string-templates.html)
-- [Kotlin 문자열 사용법 바로알기](https://www.androidhuman.com/lecture/kotlin/2016/07/06/basic_string/)

@@ -40,5 +40,4 @@ Wyrażenia regularne są powszechnie stosowane w programowaniu tekstowym od lat 
 
 ## Zobacz też:
 - [Oficjalna dokumentacja wyrażeń regularnych w Fish Shell](https://fishshell.com/docs/current/cmds/string.html#description)
-- [Wyrażenia regularne w praktyce - tutorial](https://www.codedoct.com/mini-poradnik-wyrazenia-regularne/)
 - [Język programowania C](https://www.learn-c.org/)

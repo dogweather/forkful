@@ -55,5 +55,4 @@ No mencionado exemplo, `DateTime.TryParse` tenta converter a string fornecida em
 Para uma visão mais detalhada do parsing de datas em C#, dê uma olhada nestes recurso:
 
 - [Documentação oficial da Microsoft](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime.tryparse?view=net-5.0)
-- [Exemplos de código C# para parsing de date](https://www.delftstack.com/pt/howto/csharp/how-to-parse-date-in-csharp/)
 - [Exemplos de parsing de data com TryParseExact](https://www.codingame.com/playgrounds/6179/c-tricks-2---date-and-time-parsing-using-tryparseexact)

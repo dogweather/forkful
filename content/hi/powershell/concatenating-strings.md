@@ -56,5 +56,4 @@ Hello, World
 
 ## अधिक जानकारी के लिए:
 
-- [Concatenation Operators in PowerShell](https://www.powershellmagazine.com/2012/07/23/pstip-concatenation-operators-in-powershell/)
 - [About Join Operator](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-7.1)

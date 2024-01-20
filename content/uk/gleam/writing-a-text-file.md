@@ -45,5 +45,4 @@ io.println(file_contents)
 
 # Дивіться також:
 - [Офіційна документація Gleam з прикладами використання](https://gleam.run/documentation/)
-- [Порівняння різних типів файлів у програмуванні](https://www.techopedia.com/definition/18853/file-type)
 - [Стаття про принцип KISS ("Keep it simple, stupid") в програмуванні](https://medium.com/@slamait/keep-it-simple-stupid-principle-kiss-for-programmers-db34b28ef487)

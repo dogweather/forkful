@@ -45,5 +45,3 @@ In Kotlin, è possibile utilizzare la libreria SnakeYAML per lavorare con le str
 
 ## Vedi anche:
 - [Documentazione ufficiale di YAML](https://yaml.org/)
-- [Libreria SnakeYAML per Kotlin](https://bitbucket.org/asomov/snakeyaml-kotlin)
-- [Guida di Kotlin su come lavorare con dati YAML](https://kotlinlang.org/docs/reference/playground-collections.html#yaml)

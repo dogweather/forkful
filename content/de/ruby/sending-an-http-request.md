@@ -40,6 +40,5 @@ Die genauen technischen Details des Sendens einer HTTP-Anfrage hängen von viele
 
 ## Siehe auch:
 
-- Ruby Dokumentation für `Net::HTTP`: [https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
 - httparty Gem: [https://rubygems.org/gems/httparty](https://rubygems.org/gems/httparty)
 - RestClient Gem: [https://rubygems.org/gems/rest-client](https://rubygems.org/gems/rest-client)

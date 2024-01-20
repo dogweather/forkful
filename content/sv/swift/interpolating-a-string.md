@@ -47,5 +47,4 @@ Vid stränginterpolering översätter Swift-kompilatorn din interpolerade strän
 För mer detaljerad information, ta en titt på dessa resurser:
 
 - Swift's dokumentation om stränginterpolering [här](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- En djupgående artikel om stränginterpolering i Swift på [Swift by Sundell](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)
 - En diskussion om effektiviteten av stränginterpolering mot strängsammanfogning på [Stack Overflow](https://stackoverflow.com/questions/51017084/swift-string-interpolation-vs-string-concatenation-efficiency)

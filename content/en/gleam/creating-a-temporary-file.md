@@ -46,6 +46,5 @@ Gleam leverages the existing Erlang library in its implementation of temp files.
 
 ## See Also
 
-* [Gleam IO docs](https://gleam.run/docs/standard-libraries/gcf/io)
 * [Erlang docs on file operations](http://erlang.org/doc/man/file.html)
 * [A guide to temp files in Unix](https://www.tldp.org/LDP/abs/html/tempfiles.html)

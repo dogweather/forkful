@@ -35,4 +35,3 @@ curl -O https://example.com
  
 - [GNU Bashマニュアル](https://www.gnu.org/software/bash/manual/bash.html)
 - [Bashコマンドラインとシェルスクリプト](https://linuxconfig.org/bash-scripting-tutorial)
-- [`curl` vs `wget`: 主要な違い](https://linuxize.com/post/curl-vs-wget/)

@@ -68,6 +68,5 @@ While Fish Shell doesn’t require explicit declaration of variable types like s
 
 - Official Fish Shell Documentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
 - Quick Fish Scripting Guide: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-- In-depth look at UNIX Shell string manipulation: [https://bash.cyberciti.biz/guide/Cut,_copy,_and_paste](https://bash.cyberciti.biz/guide/Cut,_copy,_and_paste)
 
 Dive into these resources for more wealth on string concatenation and other stellar tricks in the Fish Shell universe!

@@ -32,4 +32,3 @@ Standardivirheellä on historiallisia juuria Unix-käyttöjärjestelmästä, jos
 # Katso myös:
 
 - [Clojure - Virheiden hallinta](https://clojuredocs.org/clojure.core/throw)
-- [Unix - Standardivirhe](https://www.computerhope.com/unix/unix-stderr.htm)

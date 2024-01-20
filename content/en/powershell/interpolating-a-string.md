@@ -60,5 +60,4 @@ PowerShell's implementation of string interpolation with variable expansion dire
 For more in-depth understanding and applications of string interpolation in PowerShell, you may check these links:
 
 - Microsoft Documentation on [About Quoting Rules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
-- Article from Red Gate: [String Theory in PowerShell: Do We Have Concatenation?](https://www.red-gate.com/simple-talk/sysadmin/powershell/string-theory-in-powershell-do-we-have-concatenation/)
 - Stack Overflow Discussion: [How do I do string interpolation in PowerShell?](https://stackoverflow.com/questions/3438518/how-do-i-do-string-interpolation-in-powershell)

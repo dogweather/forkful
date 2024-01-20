@@ -47,6 +47,5 @@ Einige nützliche Ressourcen zum Thema Testen in TypeScript sind:
 - [Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
 - [Mocha Dokumentation](https://mochajs.org/#table-of-contents)
 - [Einführung in Behavior-Driven Development](https://www.agilealliance.org/glossary/bdd/)
-- [TypeScript Beispielprojekt mit Tests](https://github.com/microsoft/TypeScript-Node-Starter/tree/master/src/tests)
 
 Es ist auch hilfreich, sich mit anderen Entwicklern auszutauschen und Erfahrungen zu teilen, um das Schreiben von Tests in TypeScript zu verbessern. Mit ausreichendem Fokus auf die Qualität und die Integration von Tests können Probleme früher erkannt und die Gesamtqualität des Codes verbessert werden.

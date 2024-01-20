@@ -37,7 +37,6 @@ Remember, `capitalized` is a computed property, not a method. It returns a new s
 
 ## See Also
 Capitalize strings with special rules? Check out `uppercased(with: Locale?)`:
-- [Apple Documentation](https://developer.apple.com/documentation/swift/string/2294250-uppercased)
 
 Expecting a string already in memory when capitalizing? Dive into:
 - [Swift's copy on write.](https://developer.apple.com/videos/play/wwdc2015/414/)

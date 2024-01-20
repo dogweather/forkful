@@ -42,5 +42,3 @@ En cuanto a los detalles de implementación, cuando usas interpolación de strin
 Para aprender más sobre la interpolación de string en C#, puedes consultar los siguientes enlaces:
 
 - Documentación oficial de Microsoft: [String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated).
-- Tutorial de C#: [String Interpolation](https://www.c-sharpcorner.com/blogs/string-interpolation-in-c-sharp).
-- Understanding C# string.Format, String interpolation: [Understanding C# string Formatting](https://makolyte.com/csharp-string-formatting-and-string-interpolation/)

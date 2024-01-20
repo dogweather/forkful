@@ -42,6 +42,5 @@ Du kan også bruke spesielle programmer som "unittest" eller "pytest" for å skr
 
 # Se også:
 
-- [Hva er tester og hvorfor skal vi skrive dem?](https://www.techopedia.com/definition/27995/test)
 - [Test Driven Development - en oversikt](https://agilemanifesto.org/principles.html)
 - [Hvordan bruke unittest og pytest i Python](https://realpython.com/python-testing/)

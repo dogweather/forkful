@@ -50,5 +50,4 @@ Gleamでは、Erlangランタイムから直接コマンドライン引数を取
 ## 参考にして:
 
 - [Gleamの公式ドキュメンテーション](https://gleam.run/documentation/)
-- [コマンドライン引数についての総合ガイド](https://www.codecademy.com/articles/command-line-arguments)
 - [Erlangのコマンドライン引数の取り扱い](http://erlang.org/doc/man/init.html#id98707)

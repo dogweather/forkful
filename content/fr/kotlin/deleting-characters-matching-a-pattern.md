@@ -41,4 +41,3 @@ Visiter ces ressources pour plus d'informations:
 
 - [Documentation officielle de Kotlin sur les expressions régulières](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 - [Une excellente explication des modèles d'expressions régulières](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Plus de détails sur le fonctionnement des chaînes de caractères en Kotlin](https://kotlinlang.org/docs/character-strings.html)

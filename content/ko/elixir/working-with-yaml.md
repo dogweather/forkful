@@ -36,4 +36,3 @@ YAML에서는 위와 같이 `key:value` 형태로 데이터를 표현합니다. 
 ## 관련 자료
 
 - [YAML 공식 사이트](http://yaml.org/)
-- [Elixir YAML 모듈 문서](https://hexdocs.pm/elixir/YAML.html)

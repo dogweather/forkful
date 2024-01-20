@@ -63,6 +63,5 @@ bool doesDirectoryExist2(char* path) {
 しかし、この場合はパスが存在するだけでなく、プログラムが実際にそれにアクセスできるかどうかを確認します。そのため、必ずしもディレクトリが存在することを意味するわけではありません。
 
 ## 参考文献：
-- [File Access and Permissions - Gnu](https://www.gnu.org/software/libc/manual/html_node/File-Access.html)
 - [The GNU C Library: Testing File Type](https://www.gnu.org/software/libc/manual/html_node/Testing-File-Type.html)
 これらのソースは、`stat`と`access`機能を詳しく議論しています。 深く理解したい場合*にはぜひ参照してください。

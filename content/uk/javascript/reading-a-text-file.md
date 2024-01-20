@@ -41,4 +41,3 @@ fs.readFile('MyFile.txt', 'utf8', function(err, data){
 
 - Документація Node.js про модуль 'fs': [Посилання](https://nodejs.org/api/fs.html)
 - MDN Web Docs - Читання файлів у браузері: [Посилання](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
-- Блог про читання і запис файлів в Node.js: [Посилання](https://blog.logrocket.com/reading-writing-files-in-node-js/)

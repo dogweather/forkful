@@ -55,4 +55,3 @@ Podczas implementacji pamiętaj, że Elm jest czystym językiem funkcyjnym – c
 
 - Dokumentacja Elm `Time` module: [Elm Time](http://package.elm-lang.org/packages/elm-lang/core/latest/Time)
 - Elm Architecture Tutorial: [Elm Architecture](https://guide.elm-lang.org/architecture/)
-- Wprowadzenie do programowania funkcyjnego w Elm: [Function Programming Elm](https://pragmaticstudio.com/tutorials/elm/where-to-start)

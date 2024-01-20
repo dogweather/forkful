@@ -46,4 +46,3 @@ Al comparar fechas, la implementación detallada dependerá de las peculiaridade
 
 - Documentación oficial de Java para [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html).
 - Biblioteca [clj-time](https://github.com/clj-time/clj-time) en GitHub.
-- Para un enfoque más detallado a la manipulación de tiempo y fechas, puedes consultar [este recurso](https://www.baeldung.com/clojure-date-time).

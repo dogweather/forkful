@@ -68,4 +68,3 @@ Además, HttpClient es una clase de alto nivel que encapsula las funcionalidades
 
 - [Documentación oficial de HttpClient](https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=net-5.0)
 - [Más información sobre solicitudes HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
-- [Tutorial completo sobre HttpClient en C#](https://www.tutorialsteacher.com/articles/send-http-request-from-csharp)

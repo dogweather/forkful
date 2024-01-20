@@ -50,7 +50,6 @@ Tuloksena:
 
 ## Katso myös:
 
-- [PowerShell Replace Method Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/replace?view=powershell-7.1)
 - [Regex Replace in Python](https://docs.python.org/3/library/re.html#re.sub)
 - [JavaScript Replace Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - [C# Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)

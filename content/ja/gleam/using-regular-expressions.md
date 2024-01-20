@@ -27,6 +27,5 @@ let result = Regex.find(regex, "hello, world")
 正規表現は、最初にUnixのテキスト処理ツールとして開発されました。その後、多くのプログラミング言語に組み込まれるようになり、現在では非常に一般的なツールとなっています。まだ正規表現を使ったことがない場合は、パターンマッチングの代替として試してみることをお勧めします。
 
 # ＃＃ 参考：
-- [Gleamで正規表現を使う方法](https://gleam.run/articles/regex.html)
 - [正規表現の基礎](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)

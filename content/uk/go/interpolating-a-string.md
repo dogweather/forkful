@@ -46,5 +46,3 @@ Oleh is a programmer.
 ## Див. також:
 
 * [Детальніше про функцію Sprintf в Go] (https://golang.org/pkg/fmt/#Sprintf)
-* [Iнтерполяція рядків в Perl](https://perlmaven.com/string-interpolation)
-* [Iнтерполяція рядків в Ruby](https://www.rubyguides.com/2019/07/ruby-string-interpolation/)

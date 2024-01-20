@@ -37,4 +37,3 @@ Att skapa och hantera textfiler är en grundläggande del av programmering och h
 Här är länkar till andra källor med mer information om att skriva textfiler i PHP:
 - [W3Schools - PHP File Handling](https://www.w3schools.com/php/php_file.asp)
 - [PHP Manual - fopen()](https://www.php.net/manual/en/function.fopen.php)
-- [GeeksforGeeks - How to write data in a text file using PHP?](https://www.geeksforgeeks.org/how-to-write-data-in-a-text-file-using-php/)

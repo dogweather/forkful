@@ -63,5 +63,3 @@ Sum is 30
 ## 関連情報
 
 - [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
-- [Learn Ruby: String Interpolation](https://www.learnruby.com/strings/string-interpolation)
-- [Ruby Guides: Ruby String Interpolation](https://www.rubyguides.com/2018/10/ruby-string-interpolation/)

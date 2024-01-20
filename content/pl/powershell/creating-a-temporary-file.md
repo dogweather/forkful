@@ -39,6 +39,5 @@ W PowerShell, funkcja [System.IO.Path]::GetTempFileName() tworzy unikalne pliki 
 
 ## See Also:
 
-- Kompendium o plikach tymczasowych w Windows: [Windows Temporary Files](https://www.howtogeek.com/285710/what-are-the-windows-a400-and-a417-folders)
 - Dokumentacja Microsoft odnośnie do funkcji GetTempFileName(): [System.IO.Path.GetTempFileName Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
 - Alternatywa dla plików tymczasowych - Pamięci RAM: [RAM as a storage in computing](https://en.wikipedia.org/wiki/Random-access_memory)

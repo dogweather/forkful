@@ -35,4 +35,3 @@ void loop() {
 ## 참고자료:
 아래의 링크는 프로그램 설치 및 사용에 도움이 될 수 있습니다.
 - [아두이노 공식 홈페이지](https://www.arduino.cc)
-- [테스트 코드 작성에 대한 도움말](https://www.arduino.cc/en/Guide/ArduinoUnit)

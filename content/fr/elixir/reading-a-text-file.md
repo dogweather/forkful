@@ -38,5 +38,4 @@ Concernant l'implémentation, `File.read` utilise sous le capot le module Erlang
 
 Pour des informations supplémentaires, consultez ces liens :
 - Documentation officielle Elixir pour le module `File` ([https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)).
-- Guide pratique pour manipuler des fichiers et du texte avec Elixir ([https://elixirschool.com/fr/lessons/basics/files/](https://elixirschool.com/fr/lessons/basics/files/)).
 - Tutoriel vidéo sur la lecture et l'écriture de fichiers en Elixir ([https://www.youtube.com/watch?v=pOhVj0Mhu1M](https://www.youtube.com/watch?v=pOhVj0Mhu1M)).

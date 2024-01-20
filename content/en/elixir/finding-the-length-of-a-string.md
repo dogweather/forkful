@@ -58,4 +58,3 @@ For more information, refer to the following resources:
 
 - Elixir official doc: [String](https://hexdocs.pm/elixir/String.html)
 - Unicode Standard: [UTF-8, UTF-16, UTF-32 & BOM](http://www.unicode.org/faq/utf_bom.html)
-- Practical Elixir blog post: [Elixir strings and binary data](https://pragtob.wordpress.com/elixir-strings-and-binary-data/)

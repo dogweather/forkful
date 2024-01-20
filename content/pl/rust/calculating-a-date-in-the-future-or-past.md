@@ -54,4 +54,3 @@ Niektóre szczegóły implementacji do rozważenia podczas pracy z datami i czas
 
 - [Chrono Documentation](https://docs.rs/chrono/): Dokumentacja paczki `chrono`, której używamy w powyższym przykładzie.
 - [Rust Programming](https://www.rust-lang.org/learn): Zarówno dla początkujących jak i zaawansowanych, strona zawiera przydatne informacje o programowaniu w Rust.
-- [Dates and Times in Rust](https://blog.thoughtram.io/dates-and-times-in-rust/): Artykuł eksplorujący daty i czasy w Rust.

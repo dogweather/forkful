@@ -51,5 +51,4 @@ Die direkte Vergleichsoperation verwendet intern `valueOf()`, die das gleiche Er
 ## Siehe auch
 Für weitere Informationen können Sie die folgenden Ressourcen besuchen:
 - [MDN Web Docs: Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [JavaScript Date Comparison – How to Compare Dates with JavaScript](https://www.freecodecamp.org/news/javascript-date-comparison-how-to-compare-dates-with-javascript/)
 - [ECMAScript® 2020 Language Specification: Date Objects](https://tc39.es/ecma262/#sec-date-objects)

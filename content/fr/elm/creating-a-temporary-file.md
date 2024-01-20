@@ -49,5 +49,3 @@ Notez que si vous utilisez une bibliothèque ou une API pour créer le fichier t
 ## Voir aussi
 
 - [Documentation officielle Elm](https://guide.elm-lang.org/)
-- [Article à lire: Elm et JavaScript Interop](https://elmprogramming.com/interop.html)
-- [Guide pour les ports Elm](https://elmprogramming.com/ports.html)

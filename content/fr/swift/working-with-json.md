@@ -57,4 +57,3 @@ Pour en savoir plus sur JSON et comment l'utiliser en Swift, voici quelques sour
 - [La documentation officielle de Swift sur le traitement de JSON](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID346)
 - [Un tutoriel vidéo sur l'utilisation de SwiftyJSON](https://www.youtube.com/watch?v=MQEL2OSvDZM)
 - [Un article sur les différentes bibliothèques de traitement de JSON en Swift](https://medium.com/@olton/processing-json-with-swift-5ef83ed2e826)
-- [Un exemple de projet utilisant SwiftyJSON et Codable](https://github.com/iamchiwon/SwiftyJSON-Sample-Project)

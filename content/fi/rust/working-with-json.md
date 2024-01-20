@@ -54,5 +54,4 @@ JSON-muoto otettiin käyttöön jo vuonna 2001 ja siitä tuli nopeasti suosittu 
 Rustin serde-kirjasto tarjoaa monipuolisen ja tehokkaan tavan koodata ja dekoodata JSON-muotoa. Kirjasto pystyy käsittelemään monenlaisia JSON-tietorakenteita ja tukee myös tiettyjä lisäominaisuuksia, kuten järjestettyä JSON:ia ja dataa merkkijonoina.
 
 ## Katso myös:
-- [serde-kirjasto](https://crates.io/crates/serde)
 - [JSON-esimerkki: API-pyyntö Rustilla](https://github.com/serde-rs/json#example-making-an-api-request-from-rust)

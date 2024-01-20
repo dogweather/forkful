@@ -67,4 +67,3 @@ El formato de archivo CSV fue creado en la década de 1970 para facilitar el int
 - [Documentación de la librería Data.CSV](https://hackage.haskell.org/package/csv)
 - [RFC 4180 sobre formato CSV](https://tools.ietf.org/html/rfc4180)
 - [Librería cassava para trabajar con CSV en Haskell](https://hackage.haskell.org/package/cassava)
-- [Librería opencsv para trabajar con CSV en Haskell](https://hackage.haskell.org/package/opencsv)

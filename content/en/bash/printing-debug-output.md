@@ -49,4 +49,3 @@ Under the hood, printing debug output doesn't happen in a vacuum: it writes to t
 
 ## See Also
 - Check `man echo` and `man printf` for all the nitty-gritties.
-- For more on file descriptors, see: [Understanding Linux File Descriptors](https://www.linuxjournal.com/article/10681).

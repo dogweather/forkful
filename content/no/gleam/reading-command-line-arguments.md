@@ -48,5 +48,4 @@ Implementeringen av `os.args` i Gleam skjer ved å hente verdien av `ARGV` globa
 
 ## Se også
 
-- Utforsk [Gleam documentation](https://gleam.run/docs/) for mer informasjon om `os.args` og andre nyttige biblioteker.
 - For en dypere dykk inn i kommandolinjeargumenter og deres historie, sjekk ut [Command Line Arguments (Wikipedia)](https://en.wikipedia.org/wiki/Command-line_argument_parsing) og [Command Line Arguments in Erlang](https://erlang.org/doc/man/init.html#id226226).

@@ -49,7 +49,3 @@ Good Morning
 
 ## 参考資料:
 以下に文字列の連結に関する詳細な情報を提供している資料のリンクを掲載します:
-
-- [Cパフォーマンスチューニングのポイント](http://example.com/performance_tuning)
-- [C++の文字列連結テクニック](http://example.com/cpp_string_concatenation)
-- [Pythonでの文字列連結の方法](http://example.com/python_string_join)

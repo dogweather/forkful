@@ -39,5 +39,3 @@ Gleamには、テストを書くための便利な機能がたくさんありま
 ## 関連情報:
 
 - [Gleam公式ウェブサイト](https://gleam.run/)
-- [Gleamのテストについてのガイド](https://gleam.run/book/testing.html)
-- [Gleamのチュートリアル](https://gleam.run/book/getting-started.html)

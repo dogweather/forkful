@@ -33,6 +33,5 @@ fun main() {
 ## 延伸阅读：
 * Kotlin官方文档对`capitalize()`的详细解释： [官方文档链接（英文）](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
 
-* 更多处理字符串的Kotlin函数： [详细函数列表（英文）](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 
 * 文字规范和美学在编程中的重要性： [阅读链接（英文）](https://medium.com/@s.a.khan/importance-of-coding-style-and-standards-41941d8225c0)

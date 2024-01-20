@@ -59,4 +59,3 @@ Existem também outras maneiras de escrever arquivos de texto no Arduino, como u
 
 ## Veja Também:
 - [Documentação da biblioteca SD do Arduino](https://www.arduino.cc/en/reference/SD)
-- [Tutorial de escrita de arquivos de texto no Arduino usando a biblioteca SPIFFS](https://randomnerdtutorials.com/esp32-esp8266-arduino-write-read-file-spiffs/)

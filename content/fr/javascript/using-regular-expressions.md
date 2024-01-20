@@ -41,4 +41,3 @@ Outre la méthode `match()` utilisée dans l'exemple ci-dessus, Javascript propo
 Pour en savoir plus sur les expressions régulières en Javascript, consultez ces sources :
 - [La documentation officielle de Mozilla](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)
 - [Regex101.com - un site pour tester et debugger des expressions régulières](https://regex101.com/)
-- [Le tutoriel en ligne "Expressions régulières - Apprendre à les utiliser"](https://openclassrooms.com/fr/courses/1304236-apprenez-a-utiliser-les-expressions-regulieres/1304421-les-expressions-regulieres-cest-quoi)

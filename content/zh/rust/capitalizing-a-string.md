@@ -41,4 +41,3 @@ println!("{}", capitalized_s);
 
 - [官方字串大写文档](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
 - [字符串和Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [如何在 Rust 中处理 Unicode](https://www.joshmcguigan.com/blog/unicode-chars-rust/)

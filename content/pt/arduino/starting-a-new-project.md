@@ -35,5 +35,3 @@ O Arduino surgiu na Itália em 2005 para proporcionar aos hobbyistas e aos artis
 
 ## Veja Também
 * [Documentação Oficial do Arduino](https://www.arduino.cc/reference/en/)
-* [Tutoriais Arduino no Programar Facil](https://www.programarfacil.com/blog/tutoriales-arduino/)
-* [Livros Arduino na Amazon](https://www.amazon.com.br/Arduino/livros/s?k=Arduino)

@@ -57,4 +57,3 @@ Den `mktime()` funksjonen brukes til å konvertere en lokal tid, gitt som en `tm
 
 ## Se Også:
 - For ytterligere læring, les [C library to handle dates](http://www.cplusplus.com/reference/ctime/)
-- Se også [Date and time manipulation in C](https://www.geekhideout.com/ctime.shtml) for å utdype kunnskapen om emnet.

@@ -51,7 +51,5 @@ La implementación de la concatenación de cadenas en C reserva espacio para la 
 
 Para más información sobre la concatenación de cadenas en C y funciones relacionadas, puedes visitar los siguientes enlaces:
 
-- [Documentación oficial de GCC (GNU Compiler Collection)](https://gcc.gnu.org/onlinedocs/gcc-4.4.1/gcc/String-Handling.html)
 - [Tutorial de TutorialsPoint sobre la concatenación de cadenas en C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
 - [Información profunda sobre `strcat()`](https://www.cplusplus.com/reference/cstring/strcat/) 
-- [Información sobre el manejo de cadenas en C](http://www.learn-c.org/en/String_Manipulation)

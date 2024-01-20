@@ -50,5 +50,4 @@ Elm використовує інтуїтивно зрозумілий, але �
 ## Дивіться також
 
 * [Elm HTML Parser](https://package.elm-lang.org/packages/elm/html/latest/)
-* [Парсінг HTML в Elm](https://korban.net/posts/elm/2018-12-15-parsing-html-in-elm/)
 * [Застосування парсерів в Elm](https://www.elm-spa.dev/guide/parsers)

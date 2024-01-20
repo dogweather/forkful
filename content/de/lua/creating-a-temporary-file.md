@@ -55,4 +55,3 @@ In Bezug auf die Implementierungsdetails, `os.tmpname()` gibt einfach nur einen 
 
 - [Lua 5.2 Referenzhandbuch - os.tmpname()](https://www.lua.org/manual/5.2/manual.html#pdf-os.tmpname)
 - [Lua-Users Wiki: Temporary Files](http://lua-users.org/wiki/TemporaryFiles)
-- [LuaFileSystem Dokumentation](https://keplerproject.github.io/luafilesystem/)

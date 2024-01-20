@@ -51,5 +51,4 @@ foreach ($headings as $heading) {
 
 - [PHP DOMDocument Manual](https://www.php.net/manual/en/class.domdocument.php)
 - [phpQuery on GitHub](https://github.com/phpquery/phpquery)
-- [Simple HTML DOM Parser Manual](https://simplehtmldom.sourceforge.io/manual.htm)
 - [libxml2](http://xmlsoft.org/)

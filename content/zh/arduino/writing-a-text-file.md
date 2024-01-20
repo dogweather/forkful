@@ -44,5 +44,4 @@ if(myFile) {
 ## 参考资料
 
 - [可编程文件库（SD）参考指南（英文）](https://www.arduino.cc/en/Reference/SD) - Arduino官方文档中关于SD卡库的说明。
-- [使用Arduino读写文本文件（英文）](https://randomnerdtutorials.com/reading-and-writing-files-to-and-from-an-sd-card-with-an-arduino/) - 一个详细的教程，介绍了如何使用Arduino来读写文本文件。
 - [更多Arduino资源](https://www.arduino.cc/) - 访问Arduino官方网站，查阅更多有关Arduino的信息和资源。

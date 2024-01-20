@@ -49,6 +49,4 @@ Data e ora nel formato stringa: 04-03-2022 11:39
 
 ## Vedi anche
 
-- Kotlin official documentation: [Link](https://kotlinlang.org/docs/dates-and-times.html)
-- Android developer guide on how to work with dates and times: [Link](https://developer.android.com/training/basics/dates-times)
 - Tutorial su come lavorare con le date e le volte in Kotlin: [Link](https://www.raywenderlich.com/324-working-with-date-and-time-in-kotlin)

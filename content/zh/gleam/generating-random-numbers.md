@@ -38,7 +38,6 @@ fn main() {
 
 如果你需要进一步了解Gleam的`rand`模块或随机化技术，以下链接会提供更多信息：
 
-- [Gleam's rand documentation](https://gleam.run/book/tour/rand.html) 
 - [A Brief History of Random Numbers](https://www.philforhumanity.com/Random_Number_History.html)
   
 谨慎使用随机数生成功能，它可以为你的代码添加强大的随机性。

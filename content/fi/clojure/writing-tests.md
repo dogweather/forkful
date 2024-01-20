@@ -73,5 +73,4 @@ Testien kirjoittamisessa on tärkeää kattaa mahdollisimman paljon erilaisia sk
 
 ## Katso myös
 - [Official ClojureDoc for clojure.test](https://clojuredocs.org/clojure.test)
-- [A great tutorial on TDD in Clojure](https://github.com/lissom/tdd-in-clojure-tutorial)
 - [Clojure-test: a Competent Testing Library for Clojure](https://medium.com/funding-circle-engineering/clojure-test-a-competent-testing-library-for-clojure-2c221e6f58df)

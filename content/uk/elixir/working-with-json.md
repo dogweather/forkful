@@ -45,4 +45,3 @@ JSON був створений лабораторією MIT в 2001 році т�
 - [Офіційний сайт JSON](https://www.json.org/)
 - [Документація по бібліотеці Poison](https://hexdocs.pm/poison/readme.html)
 - [Документація по бібліотеці Jason](https://hexdocs.pm/jason/readme.html)
-- [Приклади використання модуля Json](https://hexdocs.pm/elixir/Json.html#content)

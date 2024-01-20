@@ -36,5 +36,4 @@ Além disso, existem diferentes abordagens para escrever testes, como a Test Dri
 ## Veja também:
 
 - [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [TestNG](https://testng.org/doc/)
 - [Mockito](https://site.mockito.org/)

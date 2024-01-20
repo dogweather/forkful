@@ -76,5 +76,4 @@ Elmin implementaatio noudattaa tiukasti funktionaalista ohjelmointiparadigmaa. H
 - [Elmin virallinen Http-paketti dokumentaatio](https://package.elm-lang.org/packages/elm/http/latest/)
 - [Elm-http-extra kirjasto](https://package.elm-lang.org/packages/lukewestby/elm-http-extra/latest/)
 - [Elmin virallinen opas](https://guide.elm-lang.org/)
-- [Elm-lang slack kanava](https://elmlang.herokuapp.com/) - Hyvä paikka kysyä neuvoja ja saada tukea
 - [Elm Discourse](https://discourse.elm-lang.org/) - Are we missing something? You can find more discussion about Elm here.

@@ -41,4 +41,3 @@ Per iniziare un nuovo progetto TypeScript, dovrai installare l'interprete TypeSc
 Se vuoi saperne di più sul TypeScript, questo è un ottimo punto di partenza:
 - [Documentazione ufficiale TypeScript](https://www.typescriptlang.org/docs/)
 - [Guida per principianti a TypeScript](https://www.freecodecamp.org/news/the-definitive-typescript-handbook/)
-- [Comprensione di TypeScript](https://www.udemy.com/course/understanding-typescript/)

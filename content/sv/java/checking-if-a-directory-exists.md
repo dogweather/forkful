@@ -46,5 +46,4 @@ Implementeringsfaktumen är att `Files.exists(path)` metod faktiskt anropar oper
 ## Se även
 
 - Java 7 File I/O (Paths and Files) ([Oracle docs](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html))
-- Understanding Path and File in NIO ([Baeldung](https://www.baeldung.com/java-nio-path-files))
 - Apache Commons IO Library ([Apache Commons IO](https://commons.apache.org/proper/commons-io/))

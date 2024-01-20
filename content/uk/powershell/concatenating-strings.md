@@ -48,6 +48,4 @@ Write-Output $concatenatedStr
 
 ## Більше інформації можна знайти тут:
 
-- [Чудова стаття з прикладами об'єднання рядків в PowerShell](https://www.pdq.com/powershell/concatenate-strings/)
-- [Об'єднання рядків в PowerShell: посібник](https://adamtheautomator.com/concatenate-strings-powershell/)
 - [Microsoft Docs: Про об'єднання рядків в PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#string-concatenation-operator-)

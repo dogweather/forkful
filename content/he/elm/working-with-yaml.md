@@ -49,4 +49,3 @@ Ok (Dict.fromList [("language", "Elm"), ("version", "0.19"), ("date_created", "2
 ## ראה גם
 
 * [`https://www.yaml.info/`](https://www.yaml.info/) - אתר YAML הרשמי עם מידע נוסף ורשימת כל החבילות הקיימות לשפות תכנות שונות.
-* [`https://github.com/elm/compiler/tree/master/hints/0097-yaml-basics`](https://github.com/elm/compiler/tree/master/hints/0097-yaml-basics) - מדריך רשמי על פורמט ה־YAML ואיך לעבוד איתו בתוך קוד Elm.

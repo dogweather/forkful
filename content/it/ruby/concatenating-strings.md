@@ -50,5 +50,4 @@ L'unione di stringhe è una operazione comune e quasi tutti i linguaggi di progr
 
 ## Vedi Anche
 - [Documentazione Ruby su String](https://ruby-doc.org/core-2.7.0/String.html)
-- [Guida alla Concatenazione di Stringhe su RubyGuides](https://www.rubyguides.com/2018/08/ruby-string-concatenation/).
 - [Stackoverflow: Differenze tra '+', '<<' e 'concat'](https://stackoverflow.com/questions/4684446/why-is-used-for-string-concatenation-in-ruby)

@@ -49,6 +49,5 @@ Rispetto alla concatenazione di stringhe, questo approccio può essere più legg
 
 - [PHP Manual: Concatenazione di stringhe](http://php.net/manual/en/language.operators.string.php)
 - [PHP: The Right Way - Concatenazione di stringhe](http://www.phptherightway.com/pages/The-Basics.html#string-concatenation)
-- [Bello e semplice: Un'introduzione alla stringa in PHP](https://developer.mozilla.org/it/docs/Learn/PHP/Stringhe)
   
 Ricorda, la pratica rende perfetti. Quindi continua a codificare!

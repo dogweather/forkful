@@ -31,4 +31,3 @@ Co do szczegółów implementacji, to `substring()` zwraca nowy obiekt String, k
 
 ## Zobacz także:
 - Dokumentacja Arduino na temat funkcji `substring()`: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring)
-- Przykłady operacji na ciągach w Arduino: [https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringManipulation](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringManipulation)

@@ -39,5 +39,4 @@ io.close()
 
 - [Lua 공식 문서](https://www.lua.org/docs.html)
   - Lua의 공식 문서에서 더 많은 정보를 얻을 수 있습니다.
-- [Write a Text File in Lua](https://www.guru99.com/lua-write-file.html)
   - 더 많은 예제와 설명을 포함한 자세한 가이드입니다.

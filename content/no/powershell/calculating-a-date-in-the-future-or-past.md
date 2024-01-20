@@ -45,7 +45,3 @@ Datoobjekter i PowerShell er instanser av .NET `DateTime`-klassen, så du kan br
 
 ## Se Også
 For mer informasjon om dato-beregning i PowerShell, se følgende kilder:
-
-- [Manipuler datoer i PowerShell med AddDays, AddHours, AddSeconds, osv.](https://www.powershellmagazine.com/2014/01/10/manipulate-dates-in-powershell-with-adddays-addhours-addseconds-etc/)
-- [Arbeide med DateTime-objekter og tidssoner i PowerShell](https://www.computerperformance.co.uk/powershell/powershell_date_math/)
-- [PowerShell DateTime - Objekt](https://www.advancedinstaller.com/user-guide/powershell-datetime-object.html)

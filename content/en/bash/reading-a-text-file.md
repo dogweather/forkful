@@ -47,6 +47,5 @@ About implementation. When Bash reads, it buffers stuff. Means less disk access,
 
 - Man page for [Bash's built-in commands](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
 - A [quick tutorial](https://www.learnshell.org/) to level up your shell scripting.
-- Lutz Horn's detailed [article](https://lutzhorn.github.io/bash-guide/) on Bash guide and scripting.
 - For a deep dive, check out the [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) on The Linux Documentation Project's website!
 Happy scripting!

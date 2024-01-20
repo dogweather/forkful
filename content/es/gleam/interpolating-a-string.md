@@ -45,5 +45,4 @@ La implementación de la interpolación de cadena en Gleam se basa, en última i
 Echa un vistazo a estas fuentes relacionadas para aprender más sobre la interpolación de cadenas en Gleam:
 
 * [Documentación Oficial de Gleam: Interpolación de Cadenas](https://gleam.run/book/tour/strings.html)
-* [Blog de Gleam: Interpolación de Cadenas](https://blog.gleam.run/posts/)
 * [StackOverflow: ¿Cómo hacer Interpolación de Cadenas en Gleam?](https://stackoverflow.com/questions/tagged/gleam)

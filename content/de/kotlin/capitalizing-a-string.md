@@ -35,7 +35,5 @@ Als Alternativen zur Großschreibung des gesamten Strings können Sie nur den er
 Wenn Sie scharfsinnig auf die Implementierungsdetails achten: `capitalize()` und `replaceFirstChar()` verwenden intern `Char.titlecase()`, was bedeutet, dass sie den Unicode-Standard für die Großschreibung von Zeichen respektieren.
 
 ## Siehe auch
-- [Kotlin Dokumentation: String Funktionen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
-- [Blog-Post: Kotlin 1.5: Neue String-APIs](https://blog.jetbrains.com/kotlin/2021/02/new-string-api)
 
 Durch den Einsatz sinnvoller Funktionen wie `capitalize()` und `replaceFirstChar()` können Sie die Qualität Ihres Kotlin-Codes erheblich verbessern und sowohl Ihre Arbeitskollegen als auch Ihre Nutzer glücklich machen.

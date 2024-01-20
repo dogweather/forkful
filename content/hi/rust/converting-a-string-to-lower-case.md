@@ -38,4 +38,3 @@ hello world
 ## नजर डालें:
 अधिक जानकारी के लिए इन लिंकों को देखें:
 - [Rust std::char Documentation](https://doc.rust-lang.org/std/char/index.html)
-- [A deep dive into Unicode](https://diveintounicode.com/)

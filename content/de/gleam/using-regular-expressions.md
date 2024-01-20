@@ -39,6 +39,5 @@ assert [Ok("100")] = result;
 Reguläre Ausdrücke wurden bereits in den 1950er Jahren entwickelt, um Textverarbeitungsprogramme zu vereinfachen. Es gibt auch andere Möglichkeiten, Text zu suchen und zu extrahieren, wie z.B. String-Funktionen und Parser. Die Implementation von regulären Ausdrücken basiert auf dem sogenannten "finite-state-automaton" Ansatz, der es ermöglicht, Muster sehr effizient zu erkennen.
 
 ## Siehe Auch:
-- [Gleam Dokumentation](https://gleam.run/concepts/regular-expressions.html)
 - [Reguläre Ausdrücke Tutorial](https://www.regular-expressions.info/tutorial.html)
 - [Python Regular Expressions](https://docs.python.org/3/howto/regex.html)

@@ -36,6 +36,5 @@ Elmの`String.length`は、Unicodeのコードポイントを数えるため、�
 以下のリンクでさらに情報を得ることができます：
 
 - [Elmの公式ドキュメンテーション](https://package.elm-lang.org/packages/elm/core/latest/String#length)
-- [Elmにおける文字列操作の詳細](https://elmprogramming.com/strings.html)
 
 以上がElmで文字列の長さを探す方法についての記事です。この情報が役立つことを願っています。

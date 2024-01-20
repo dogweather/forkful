@@ -38,5 +38,4 @@ Haskell中的日期到字符串转换是建立在 `Data.Time` 包的基础上的
 以下链接提供了更多相关的知识和参考资料：
 
 - [Haskell `Time` 包的文档](http://hackage.haskell.org/package/time)
-- [Haskell 的日期和时间指南](https://wiki.haskell.org/Introduction_to_date_and_time_in_Haskell)
 Haskell日期转换功能的详细介绍和使用示例。

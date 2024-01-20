@@ -40,4 +40,3 @@ ghci> searchAndReplace "Hello" "Hi" "Hello, World!"
 ## Дивіться також:
 
 - [Data.Text documentation](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
-- [An introduction to regex in Haskell](https://wiki.haskell.org/Regex)

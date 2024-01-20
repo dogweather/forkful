@@ -56,4 +56,3 @@ Por ejemplo, `ToString('MM/dd/yyyy')` dará la fecha en formato "mes/día/año�
 - [Formato de cadena personalizado para DateTime](https://docs.microsoft.com/es-es/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.7.2)
 - [Clase DateTime](https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0)
 - [Get-Date (Cmdlet de PowerShell)](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
-- [Cómo formatear fechas y horas](https://www.powershellmagazine.com/2012/10/03/pstip-how-to-format-datetime/)

@@ -57,5 +57,4 @@ In terms of implementation, Go compares two dates utilizing Coordinated Universa
 
 For additional information, check out the official documentation:
 - [Go's time package](https://golang.org/pkg/time/)
-- [Date and Time in Go](https://yourbasic.org/golang/dates-times-difference-duration/)
 - [Go by Example: Time](https://gobyexample.com/time)

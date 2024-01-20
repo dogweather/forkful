@@ -36,6 +36,3 @@ io.println(viesti)  // Tulostaa: Hei, maailma!
 ```
 
 ## Katso Myös
-- [Gleam List Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/list/): Täältä löydät lisätietoja List-moduulin `concat` -funktiosta.
-- [Gleam IO Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/io/): Täältä löydät lisää tietoa `io.format/2` -funktiosta ja muista hyödyllisistä IO-operaatioista.
-- [String Concatenation Performance in Erlang](https://erlangcentral.org/wiki/index.php/String_Concatenation): Tämä artikkeli käsittelee merkkijonojen yhdistämiseen liittyviä suorituskykyongelmia Erlangissa ja Gleamissa.

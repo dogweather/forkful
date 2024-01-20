@@ -66,8 +66,6 @@ All tests passed!
 - בכדי לכתוב בדיקות אוטומטיות בלואה, ניתן להשתמש בכלי תוכנה כמו LuaUnit או busted. חשוב להיות יציבים בכתיבת הקוד ולכתוב בדיקות הרמוניות כמו שאפשר, כדי לעזור לכם לזהות ולתקן בעיות במהלך הפיתוח של התוכנה שלכם.
 
 # ראו גם:
-- [מדריך לכתיבת בדיקות ידידותיות בלואה](https://www.adam-james.co.uk/how-to-write-friendly-unit-tests-in-lua/)
 
-- [busted - מסגרת אופנה לכתיבת בדיקות בלואה](http://olivinelabs.com/busted/)
 
 - [LuaUnit - כלי תוכנה לבדיקות אוטומטיות בלואה](https://github.com/bluebird75/luaunit)

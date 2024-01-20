@@ -76,4 +76,3 @@ En cuanto a la implementación en el ejemplo anterior, utilizamos la función `t
 
 - [Biblioteca TimeLib](https://github.com/PaulStoffregen/Time)
 - [Biblioteca RTClib](https://github.com/adafruit/RTClib)
-- [Operadores de Comparación en Arduino](https://www.arduino.cc/reference/es/language/variables/comparison-operators/)

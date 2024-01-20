@@ -42,6 +42,3 @@ void loop() {
 Історично, аналіз HTML використовувався для створення індексів пошукових систем і сайтів з новинами. Для аналізу HTML є багато альтернатив, включаючи XPath і CSS селектори. Щодо деталей реалізації для Arduino, важливо пам'ятати про обмежені ресурси цих пристроїв, отже, написаний шматок коду треба оптимізувати.
 
 ## Дивіться також:
-* [ Arduino HTML Parsing Library GitHub Repo](https://github.com/timothyblynjacobs/html-parser)
-* [ Посібник по XPath](https://www.devopsschool.com/tutorial/xpath/tutorial/html/)
-* [ Стаття про працю із CSS селекторами](https://www.digitalocean.com/community/tutorials/css-selectors-explained)

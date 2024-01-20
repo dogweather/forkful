@@ -33,4 +33,3 @@ Reguläre Ausdrücke haben ihren Ursprung in der Theoretischen Informatik und wu
 
 ## Siehe auch:
 - [PowerShell Regular Expressions Documentation](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- [RegExr - Eine nützliche Online-RegEx-Tester](https://regexr.com/)

@@ -56,4 +56,3 @@ CSVには、各行のデータの並び順や区切り記号など、厳密な�
 
 - [PHPでCSVファイルを扱う方法](https://www.php.net/manual/ja/function.fgetcsv.php)
 - [CSVフォーマットの詳細](https://tools.ietf.org/html/rfc4180)
-- [CSVの使用例とよくある問題](https://www.smashingmagazine.com/2018/05/data-formats-developers-csv/)

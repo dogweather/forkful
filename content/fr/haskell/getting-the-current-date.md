@@ -40,4 +40,3 @@ Il existe d'autres fonctions dans le module Data.Time pour gérer le format de l
 ## A voir aussi :
 
 - Pour un aperçu complet du module Data.Time, consultez la [documentation officielle](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
-- Pour une discussion plus approfondie sur le temps et les dates en Haskell, vous pouvez lire l'[article sur School of Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time).

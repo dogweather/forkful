@@ -36,4 +36,3 @@ end
 
 - [Lua में टेस्ट लिखने के बारे में जानकारी](https://www.lua.org/pil/11.html)
 - [Lua में "lunit" टेस्टिंग टूल का उपयोग](https://luaunit.readthedocs.io)
-- [Lua में "busted" टूल का उपयोग](https://olivinelabs.com/busted)

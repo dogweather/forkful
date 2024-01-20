@@ -40,5 +40,3 @@ Le module `Regex` d'Elixir utilise le moteur d'expressions régulières PCRE (Pe
 ## Voir aussi 
 
 - Pour approfondir votre compréhension des regex : [RegexOne](https://regexone.com/)
-- Documentation Elixir pour le module `Regex` : [HexDocs](https://hexdocs.pm/elixir/master/Regex.html)
-- Tutoriel sur les Regex en Elixir : [Elixir School](https://elixirschool.com/en/lessons/libraries/regex/)

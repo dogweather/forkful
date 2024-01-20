@@ -35,4 +35,3 @@ Puoi trovare ulteriori informazioni su come lavorare con CSV in Java nei seguent
 
 - [Java Doc per la classe BufferedReader](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
 - [Tutorial su Come Leggere un File CSV in Java](https://www.baeldung.com/java-csv-file-array)
-- [Origini e Storia di CSV](https://www.idg.com/blog/csv-an-abbreviated-family-history/)

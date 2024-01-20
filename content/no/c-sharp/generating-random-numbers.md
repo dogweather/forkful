@@ -50,4 +50,3 @@ Alternativt, hvis du trenger sikkerhetssensitive tilfeldige tall (som for eksemp
 For mer informasjon om generering av tilfeldige tall, kan du se på følgende ressurser:
 * [.NET API Dokumentasjon - Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
 * [.NET API Dokumentasjon - RNGCryptoServiceProvider](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
-* [How To Generate Random Numbers In C#](https://www.c-sharpcorner.com/article/how-to-generate-random-numbers-in-C-Sharp/)

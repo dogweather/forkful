@@ -36,4 +36,3 @@ Tehtäessä näitä merkkijonosta päivämäärän jäsentämisiä on tärkeää
 * [Mozilla Developer Network: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * [Moment.js](https://momentjs.com/)
 * [Day.js](https://day.js.org/)
-* [ECMAScript Specification](https://www.ecma-international.org/ecma-262/12.0/index.html#sec-date-objects)

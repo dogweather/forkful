@@ -53,7 +53,3 @@ Aunque hay alternativas como GraphQL o gRPC, las solicitudes HTTP siguen siendo 
 En el Gleam, las solicitudes HTTP se basan en la biblioteca de cliente HTTP subyacente de Erlang, que es conocida por su robustez y fiabilidad.
 
 ## Ver También
-
-- Documento principal de Gleam http client: [https://hexdocs.pm/gleam_http/gleam/http.html]()
-- Tutorial sobre HTTP Request y Response en Gleam: [https://gleam.run/book/tour/http-requests.html]()
-- JSON Placeholder, una API falsa para pruebas y prototipos: [https://jsonplaceholder.typicode.com/]()

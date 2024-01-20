@@ -41,4 +41,3 @@ $ swift my_program.swift 첫번째_인수 두번째_인수
 ## 참고 자료
 - [공식 Swift 문서](https://developer.apple.com/documentation/swift/commandline)
 - [ArgumentParser 라이브러리](https://github.com/apple/swift-argument-parser)
-- [Swift의 입/출력에 대한 세부적인 설명](http://alisoftware.github.io/swift/command-line/2016/04/09/command-line/)

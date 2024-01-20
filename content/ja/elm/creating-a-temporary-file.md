@@ -44,8 +44,6 @@ update msg model =
 
 ## 参考資料：
 
-- ElmのEffect managerについて深く学びたい方は、[Elmの公式ガイド](https://guide.elm-lang.org/effect_managers/)をご覧ください。
 
-- ElmとJavaScriptの連携について詳しく知りたい方は、[こちら](https://elmprogramming.com/interop-with-javascript.html) をご覧ください。
 
 以上が一時ファイル作成に関する情報です。楽しくElmプログラミングを進めて行きましょう！

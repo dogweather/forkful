@@ -45,5 +45,3 @@ Hva gjelder ytelse, mens slicing er raskere (O(1)), kan det være lurt å være 
 For mer informasjon om strengbehandling og utvinning av delstrenger i Rust, sjekk ut disse nyttige ressursene:
 - [Den offisielle Rust dokumentasjonen](https://doc.rust-lang.org/book/ch08-02-strings.html)
 - [Rust String eksempler på StackOverflow](https://stackoverflow.com/questions/tagged/rust+string)
-- ["Using Rust For The First Time"](https://www.sitepoint.com/rust-for-first-time/) (SitePoint)
-- ["Using Strings in Rust"](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misunderstandings.html#strings) (Steve Donovan's Rust Blog)

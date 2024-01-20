@@ -47,4 +47,3 @@ Förutom jq, finns det andra Bash-verktyg som kan hjälpa till att bearbeta och 
 
 ## Se även:
 - [jq dokumentation](https://stedolan.github.io/jq/)
-- [Alternativ till JSON](https://dev.to/snjh/alternative-to-json-58da)

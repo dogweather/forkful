@@ -52,6 +52,4 @@ Wyjście:
 ## Zobacz też
 
 - [Dokumentacja Swift dla print()](https://developer.apple.com/documentation/swift/1541053-print)
-- [Dokumentacja Swift dla debugPrint()](https://developer.apple.com/documentation/swift/1541283-debugprint)
-- [Poradnik do debugowania w Swift](https://www.raywenderlich.com/11393054-debugging-with-xcode-12-getting-started)
 - [Unified Logging](https://developer.apple.com/documentation/os/logging)

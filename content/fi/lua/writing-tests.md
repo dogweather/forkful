@@ -49,6 +49,3 @@ Testien kirjoittamisella on pitkä historia ohjelmistokehityksessä, ja se on va
 Lua:ssa on useita testikirjastoja, kuten "LuaUnit" ja "busted", jotka tarjoavat erilaisia testausominaisuuksia ja -ratkaisuja. Testien kirjoittaminen vaatii tarkkuutta ja huolellisuutta, jotta ne ovat tehokkaita ja luotettavia.
 
 ## Katso myös:
-
-- Lua-testaukseen liittyviä vinkkejä ja esimerkkejä: [Lua-testitutorial](https://www.lua.org/pil/1.5.html) 
-- LuaUnit-testikirjaston virallinen dokumentaatio: [LuaUnit](http://luaunit.luaforge.net/)

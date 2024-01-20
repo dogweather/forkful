@@ -48,5 +48,4 @@ Por baixo do capô, `clj-http` está usando Java's `HttpURLConnection` ou apache
 ## Veja Também
 
 - Documentação clj-http: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
-- Tutorial Clojure HTTP: [https://www.learnreagent.com/clojure-http-get-request](https://www.learnreagent.com/clojure-http-get-request)
 - Basics of HTTP Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

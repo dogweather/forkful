@@ -43,5 +43,3 @@ Sobre los detalles de implementación, Elm utiliza una implementación optimizad
 Para más detalles sobre trabajar con strings en Elm, puedes consultar estos recursos:
 
 - [Documentación oficial de Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Cómo trabajar con strings en Elm: Guía completa](https://www.example.com/working-with-strings-in-elm)
-- [Elm String API](https://www.elm-lang.org/0.19.1/string)

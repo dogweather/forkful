@@ -33,5 +33,4 @@ Znalezienie długości ciągu jest jednym z najstarszych tricków w książce pr
 Zaleca się zapoznanie z poniższymi źródłami:
 
 - [Dokumentacja Arduino na temat klasy String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Tutorial o ciągach tekstu na Arduino](https://arduino.pl/kurs/jedenastyliterowe-napisy.php)
 - [Różnice między C string i Arduino String](https://arduino.stackexchange.com/questions/556/what-exactly-does-this-thing-refer-to)

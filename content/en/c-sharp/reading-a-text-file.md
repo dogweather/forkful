@@ -65,4 +65,3 @@ When it comes to implementation details, remember that all forms of file reading
 For more details, consider these resources:
 - Microsoft's official documentation on File I/O: [https://docs.microsoft.com/en-us/dotnet/standard/io/](https://docs.microsoft.com/en-us/dotnet/standard/io/)
 - Various methods to read a text file: [https://stackoverflow.com/questions/5282999/reading-text-file-in-c-sharp](https://stackoverflow.com/questions/5282999/reading-text-file-in-c-sharp)
-- Specifics of handling I/O operations in C#: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/exception-handling/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/exception-handling/)

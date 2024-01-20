@@ -31,5 +31,3 @@ As expressões regulares surgiram na década de 1950 e são comumente associadas
 
 ## Veja Também:
 - [Guia de Expressões Regulares em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Documentação oficial do TypeScript sobre Expressões Regulares](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Livro "Mastering Regular Expressions" de Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

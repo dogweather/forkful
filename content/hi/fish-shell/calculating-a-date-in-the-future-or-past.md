@@ -42,4 +42,3 @@ echo $past_date
 ## देखें भी:
 - [Fish Shell डॉक्युमेंटेशन](https://fishshell.com/docs/current/index.html)
 - [Fish Shell कोडिंग संदर्भ](https://fishshell.com/docs/current/commands.html)
-- [Date Command in Linux](https://www.geekhideout.com/date.shtml)

@@ -40,5 +40,3 @@ catch (Exception ex)
 想要了解更多关于写入标准错误的信息，可以参考以下资源：
 
 - [Microsoft官方文档：Console类](https://docs.microsoft.com/zh-cn/dotnet/api/system.console?view=netcore-3.1)
-- [C#基础教程：Console的标准输入输出](https://www.runoob.com/csharp/csharp-console-input-output.html)
-- [C#高级编程：日志处理](https://www.tutorialsteacher.com/csharp/csharp-logging)

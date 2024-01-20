@@ -51,5 +51,4 @@ Dopo aver eseguito il codice, l'output sarà simile a questo:
 ## Vedere anche:
 
 - Documentazione Lua os.date: [http://www.lua.org/manual/5.4/manual.html#6.8](http://www.lua.org/manual/5.4/manual.html#6.8)
-- Programmare con i tempi e date in Lua: [https://www.tutorialspoint.com/lua/lua_date_and_time.htm](https://www.tutorialspoint.com/lua/lua_date_and_time.htm)
 - Funzione strftime per formattare la data in C: [http://www.cplusplus.com/reference/ctime/strftime/](http://www.cplusplus.com/reference/ctime/strftime/)

@@ -42,5 +42,4 @@ En implémentant des tests, les programmeurs peuvent également mieux comprendre
 Pour en savoir plus sur l'écriture de tests en Java, voici quelques ressources utiles :
 
 - [Documentation officielle de JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Guide de test Java de Baeldung](https://www.baeldung.com/java-testing)
 - [Vidéo explicative sur l'écriture de tests](https://www.youtube.com/watch?v=K1YvYc5HarY)

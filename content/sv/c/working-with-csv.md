@@ -49,6 +49,4 @@ Det finns alternativ till CSV som kan hantera specialtecken bättre, till exempe
 När det gäller implementation så är det viktigt att ha i åtanke att CSV-filer kan ha olika separatorer, inte bara kommatecken. Det finns också specifika regler för att hantera citattecken, som används för att inkludera specialtecken inuti datafält.
 
 ## Se även:
-- [The history of CSV](https://www.computerworld.com/article/2280176/the-story-behind-the-developer-s-workhorse-csv-utilty.html)
-- [Comparison of data interchange formats](https://en.wikipedia.org/wiki/Comparison_of_data_interchange_formats)
 - [Reading and Writing CSV files in C](https://www.geeksforgeeks.org/csv-file-management-using-c/)

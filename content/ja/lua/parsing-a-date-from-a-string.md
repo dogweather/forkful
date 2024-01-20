@@ -53,4 +53,3 @@ Lua言語の日付と時間に関連する公式ドキュメンテーション:
 - [os.time](https://www.lua.org/manual/5.3/manual.html#pdf-os.time)
 
 Luaで日付を処理するための追加ライブラリ：
-- [luadate](https://github.com/umegaya/luadate)

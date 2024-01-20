@@ -56,7 +56,5 @@ Nel nostro esempio di codice Gleam, stiamo usando la funzione `from_utf_codepoin
 
 Per ulteriori informazioni sulla programmazione con Gleam, consulta le seguenti risorse:
 
-- [Documentazione ufficiale di Gleam](https://gleam.run/docs/introduction/)
 - [Github di Gleam](https://github.com/gleam-lang/gleam)
 - [Pratica con Gleam](https://exercism.io/tracks/gleam)
-- [Guide sull'uso di Date e stringhe in Gleam](https://gleam.run/documentation-guides/)

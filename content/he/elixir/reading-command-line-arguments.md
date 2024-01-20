@@ -37,5 +37,3 @@ $ elixir my_app.exs arg1 arg2 arg3
 ## ראה גם
 תוכל ללמוד עוד על ערכי command line באליקסיר בקישורים הבאים:
 - [מסמכי האליקסיר הרשמיים](https://elixir-lang.org/getting-started/io-and-the-file-system.html#command-line-arguments)
-- [המדריך לקריאת ארגומנטים ב-CLI באליקסיר](https://hexdocs.pm/elixir/master/IO.html#module-command-line-arguments)
-- [מאמר על קריאת command line arguments באליקסיר](https://learningelixir.joekain.com/reading-command-line-arguments-in-elixir/)

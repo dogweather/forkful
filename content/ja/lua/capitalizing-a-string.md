@@ -38,5 +38,4 @@ Luaでは文字列を管理するための豊富な関数群が提供されて�
 ## 関連情報
 
 - [Lua公式ドキュメンテーション](https://www.lua.org/manual/5.4/)
-- [Text Manipulation(Francis Szcześniakによるチュートリアル)](https://lua-users.org/wiki/TextManipulation)
 - [Luaの文字列関数について（Programming in Lua）](https://www.lua.org/pil/20.html)

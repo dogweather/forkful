@@ -37,4 +37,3 @@ Por baixo dos panos, o método .downcase no Ruby verifica cada caractere da stri
 Para saber mais sobre o processamento de strings em Ruby, confira os seguintes links:
 
 - [Ruby Doc - Downcase](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
-- [Ruby Guides - Strings](https://www.rubyguides.com/2017/07/ruby-strings/)

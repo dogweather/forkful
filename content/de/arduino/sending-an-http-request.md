@@ -57,6 +57,5 @@ Früher gab es keine HTTP-Anfragen. Seit der Erfindung des Internets wurde das H
 
 Wenn du mehr über Arduinos und HTTP-Anfragen lernen möchtest, hier sind einige hilfreiche Links:
 
-- Arduino Ethernet-Bibliothek Dokumentation: [Link](https://www.arduino.cc/en/reference/ethernet)
 - HTTP-Protokollspezifikationen: [Link](https://tools.ietf.org/html/rfc2616)
 - Tutorial zum Senden von HTTP-Anfragen mit Arduino: [Link](https://startingelectronics.org/tutorials/arduino/ethernet-shield-web-server-tutorial/SD-card-GET-requests/)

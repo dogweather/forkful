@@ -33,5 +33,4 @@ I historisk kontext var standard error en del av Unix-systemet och tillät utskr
 ## Se även
 
 - [HDocs för System.IO modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [En guide till hantering av fel i Haskell](https://mmhaskell.com/blog/2017/4/3/throwing-errors-and-handling-expectations)
 - [Ett diskussionsforum om Haskell](https://www.reddit.com/r/haskell/)

@@ -39,5 +39,3 @@ Når det gjelder implementeringsdetaljer, anbefales det å bruke `String.format(
 ## Se også
 For mer detaljerte eksempler og praktiske bruksområder for stringinterpolering i Java, se følgende ressurser:
 - [String.format() dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax)
-- [Java String Tutorial](https://www.baeldung.com/java-strings)
-- [String Interpolation in Java: An overview](https://dzone.com/articles/string-interpolation-in-java-16)

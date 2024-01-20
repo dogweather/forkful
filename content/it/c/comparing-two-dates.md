@@ -55,4 +55,3 @@ Un dettaglio di implementazione importante da notare è che, in C, l'anno è spe
 ## Vedere Anche:
 
 - Documentazione da cplusplus.com: [struct tm](http://www.cplusplus.com/reference/ctime/tm/)
-- Esempio da geeksforgeeks.org: [Comparing two dates in C](https://www.geeksforgeeks.org/comparing-two-dates-in-c/)

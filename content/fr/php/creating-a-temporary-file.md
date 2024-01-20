@@ -46,4 +46,3 @@ En ce qui concerne les fichiers temporaires en PHP, l'implémentation est géré
 Visitez les liens ci-dessous pour plus d'informations:
 - [Documentation PHP officielle sur tmpfile()](http://php.net/manual/fr/function.tmpfile.php)
 - [Guide sur l'utilisation des fichiers temporaires](https://www.geekhideout.com/urlcode.shtml)
-- [Approfondir les fichiers temporaires avec PHP](https://www.phpenthusiast.com/blog/how-to-create-temporary-files-with-php)

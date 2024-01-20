@@ -38,5 +38,4 @@ Received argument: second_arg
 ARGV는 배열로 표현되며, 각 요소는 스페이스로 구분된 문자열로 채워집니다. 이 첫 번째로 숫자를 사용하여 인덱싱될 수 있습니다.
 
 ## 참고 자료
-* [루비 공식 문서](https://ruby-doc.org/core-2.7.0/ARGV.html)
 * [Command Line Arguments in Ruby - Stack Overflow](https://stackoverflow.com/questions/4840688/command-line-arguments-in-ruby)

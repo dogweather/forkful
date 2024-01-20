@@ -36,5 +36,4 @@ fun main() {
 ## 参见
 如果你想了解更多关于这个主题的信息，推荐访问以下网站：
 - [Oracle官方文档](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.nio.file.Path-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)
-- [Kotlin官方文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
 - [StackOverflow: How to create a temporary file in java?](https://stackoverflow.com/questions/617414/create-a-temp-file-in-java)

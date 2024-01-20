@@ -38,6 +38,5 @@ fn main() {
 בהקשר של Rust, html5ever הוא דרייברים מבוססי Rust שמאפשרים פירוס של HTML5. 
 
 ## ראה גם
-- [html5ever on crates.io](https://crates.io/crates/html5ever)
 - [html5ever on Github](https://github.com/servo/html5ever)
 - [Rust Documentation](https://www.rust-lang.org/learn)

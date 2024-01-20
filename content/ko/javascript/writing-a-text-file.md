@@ -58,4 +58,3 @@ fs.readFile('example.txt', 'utf8', (err, data) => {
 
 - [Node.js 파일 시스템 모듈 공식 문서](https://nodejs.org/api/fs.html)
 - [W3Schools - JavaScript Files 모듈](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Learn to Code HTML & CSS - File Paths](https://learn.shayhowe.com/html-css/getting-to-know-html/writing-your-first-html-markup/)

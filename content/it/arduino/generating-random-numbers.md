@@ -43,4 +43,3 @@ Link a risorse correlate per ulteriori dettagli su argomenti correlati:
 
 - [Documentazione Arduino sulla funzione `random()`](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
 - [Approfondimenti sui numeri pseudo-casuali](https://it.wikipedia.org/wiki/Generatore_di_numeri_pseudo-casuali)
-- [Generare veri numeri casuali in Arduino](https://learn.adafruit.com/true-random-number-generator-for-arduino/overview)

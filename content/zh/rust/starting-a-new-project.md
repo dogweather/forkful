@@ -38,5 +38,3 @@ my_project/
 ## 另请参阅：
 
 - [Cargo指南](https://doc.rust-lang.org/stable/cargo/guide/)
-- [Rust新项目起步](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetimes.html)
-- [一张快照：Rust项目的生命周期](https://smallcultfollowing.com/babysteps/blog/2018/08/20/a-tour-of-rust-in-ten-steps/)

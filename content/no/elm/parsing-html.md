@@ -59,5 +59,4 @@ Når du parser HTML i Elm, bruker du faktisk en funksjonell tilnærming til prob
 Her er noen nyttige lenker til relaterte ressurser:
 
 - [Elm HTML Parser Docs](https://package.elm-lang.org/packages/elm-lang/html/latest/Html-Parser) - Den offisielle dokumentasjonen er alltid et bra sted å starte.
-- [Html Parser in Elm](https://becoming-functional.com/html-parser-in-elm-1-5efe4922a28d) - En god tutorial som går mer detaljert inn på hvordan du bruker `Html.Parser`.
 - [HTML Parsing in Elm](https://www.youtube.com/watch?v=Nf6a8ub9smM) - Om du foretrekker videoformat, presenterer denne YouTube-videoen parsing i Elm på en klar og forståelig måte.

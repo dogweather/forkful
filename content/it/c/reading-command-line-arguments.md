@@ -62,5 +62,4 @@ Per un'analisi più dettagliata, vedi:
 - [Tutorial GNU - Argp](https://www.gnu.org/software/libc/manual/html_node/Argp.html)
 
 Per le alternative, vedi:
-- [C library function - getopt()](https://www.tutorialspoint.com/c_standard_library/c_function_getopt.htm)
 - [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)

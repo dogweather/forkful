@@ -51,5 +51,4 @@ length (_:xs) = 1 + length xs
 더 많은 정보를 얻고자 할 때, 아래의 링크를 확인해 보세요.
 
 - [Haskell Documentation for length](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:length)
-- [Haskell Wiki](https://wiki.haskell.org/How_to_determine_the_length_of_a_list)
 - [StackOverflow Answer about alternatives](https://stackoverflow.com/questions/2026912/quick-way-to-find-the-length-length-of-a-text-string-in-haskell)

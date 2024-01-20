@@ -39,4 +39,3 @@ Dieser Code gibt "Willkommen bei Gleam!" aus.
 
 - Gleam Dokumentation: [Gleam String Interpolation](https://gleam.run/book/tour/strings.html)
 - Blogpost: [Introduction to Gleam](https://gleam.run/news/gleam-v0.8-released/)
-- Externer Leitfaden: [A Guide to String Interpolation in Programming Languages](https://stackabuse.com/a-guide-to-string-interpolation-in-programming-languages/)

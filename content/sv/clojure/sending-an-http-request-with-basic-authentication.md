@@ -54,4 +54,3 @@ Här är några resurser där du kan lära dig mer om att skicka HTTP-förfrågn
 
 - [HTTP authentication: Basic and Digest Access Authentication.](https://tools.ietf.org/html/rfc2617)
 - [clj-http Github documentation.](https://github.com/dakrone/clj-http)
-- [Clojure HTTP library tutorial.](https://www.baeldung.com/clojure-http-library)

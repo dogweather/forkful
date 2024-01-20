@@ -41,4 +41,3 @@ testAddition()
 
 - [Офіційна документація Lua](https://www.lua.org/docs.html)
 - [Підручник програміста з Lua](https://www.lua.org/pil/contents.html)
-- [Busted - бібіліотека для тестування на Lua](https://olivinelabs.com/busted/)

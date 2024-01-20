@@ -41,7 +41,6 @@ En términos de implementación, el método `.delete` opera escaneando la cadena
 Para obtener más información sobre el trabajo con cadenas en Ruby, te recomiendo consultar los siguientes recursos:
 
 - El método `.delete` en la [documentación de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-delete)
-- Tutorial sobre cadenas en [RubyMonk]( https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/31-string-basics)
 - Ejemplos de uso del método `.gsub` en [Stack Overflow](https://stackoverflow.com/questions/19445003/using-ruby-gsub-to-replace-a-string-with-variable-content)
 
 La programación es un continuo aprendizaje. ¡No dejes de explorar nuevas formas de resolver problemas!

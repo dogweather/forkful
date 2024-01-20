@@ -52,4 +52,3 @@ Pour plus d'informations sur les chaînes de caractères et la manipulation de t
 
 * [Documentation officielle Elixir String](https://hexdocs.pm/elixir/String.html)
 * [Exploration des chaînes de caractères Elixir](https://elixirschool.com/fr/lessons/basics/strings/)
-* [Présentation des expressions régulières Elixir](https://elixirschool.com/fr/lessons/advanced/regular-expressions/)

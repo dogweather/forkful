@@ -45,5 +45,3 @@ Implementation details are less about the function's inner workings, and more ab
 ## See Also
 
 - [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Function Syntax](https://guide.elm-lang.org/types/function_types.html)
-- [Understanding Strings in Elm](https://thoughtbot.com/blog/understanding-strings-in-elm)

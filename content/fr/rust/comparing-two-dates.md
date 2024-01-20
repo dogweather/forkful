@@ -55,4 +55,3 @@ Pour plus d'informations, consultez ces liens utiles de la documentation de Rust
 
 - Documentation sur Chrono : [https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
 - Documentation sur le type DateTime : [https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html)
-- Tutoriel Rust sur ces concepts : [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

@@ -44,4 +44,3 @@ Escribir archivos de texto es una parte crucial de la programación en Java. Fue
 ## Ver también
 
 - [Clase FileWriter en la documentación de Java](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
-- [Tutorial sobre escritura de archivos en Java](https://www.edureka.co/blog/writing-a-file-in-java/)

@@ -40,6 +40,5 @@ Clojure में, `str` बिल्ट-इन फंक्शन स्ट्�
 
 ## संबंधित स्रोतों में देखें: (See Also:)
 
-- [Clojure की आधिकारिक मानुअल](https://clojure.org/reference/strings)
 - [Clojure Docs `str`](https://clojuredocs.org/clojure.core/str)
 - [Clojure Docs `clojure.string/join`](https://clojuredocs.org/clojure.string/join)

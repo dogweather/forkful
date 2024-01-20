@@ -39,6 +39,5 @@ print(data)
 
 जुड़े प्रसंग:
 
-- [Swift टुटोरियल: टेक्स्ट फ़ाइल कैसे लिखें और पढ़ें](https://www.tutorialspoint.com/swift/swift_text_file_handling.htm)
 - [Swift डॉक्यूमेंटेशन: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
 - [आईओएस और macOS के फाइल और डायरेक्टरी प्रबंधन](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)

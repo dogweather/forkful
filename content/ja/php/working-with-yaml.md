@@ -42,4 +42,3 @@ YAMLの代替としては、JSONやXMLなどがありますが、YAMLはより�
 - [公式YAMLドキュメント](https://yaml.org/)
 - [PHPのYAMLライブラリドキュメント](https://www.php.net/manual/en/book.yaml.php)
 - [YAML vs. JSON](https://www.educba.com/yaml-vs-json/)
-- [YAML vs. XML](https://www.guru99.com/yaml-vs-xml-difference.html)

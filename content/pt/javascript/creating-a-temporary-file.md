@@ -50,5 +50,4 @@ Quando você usa o pacote 'tmp' no Javascript, os arquivos temporários que voc�
 
 Para aprender mais sobre a criação de arquivos temporários, confira os seguintes links:
 - [Pacote npm 'tmp'](https://www.npmjs.com/package/tmp)
-- [Guia Node.js para E/S de arquivos](https://nodejs.dev/learn/the-nodejs-fs-module)
 - [Tutorial Mdn sobre a leitura de arquivos em Javascript](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)

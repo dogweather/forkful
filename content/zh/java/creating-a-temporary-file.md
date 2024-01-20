@@ -54,5 +54,3 @@ Temporary file path: /tmp/tempFile1234567890.txt
 ## 查看更多 (See Also)
 
 - [Oracle官方文档: Files.createTempFile](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.nio.file.Path-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)
-- [创建临时文件 in Java](https://www.baeldung.com/java-create-temporary-file)
-- [Java I/O: java.nio.file 文件](https://www.w3cschool.cn/java/java-io-java-nio-file.html)

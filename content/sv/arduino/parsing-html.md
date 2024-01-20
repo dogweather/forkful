@@ -41,6 +41,4 @@ Det finns andra bibliotek för att parse HTML, som Html-Parser (för C++), men A
 När du tolkar HTML på Arduino är det viktigt att övervaka din minnesanvändning. HTML-dokument kan snabbt äta upp resurser om de inte hanteras korrekt i stora applikationer eller spädbarn.
 
 ## Se Även
-- [Arduino-Xml Biblioteket](https://github.com/forwardat/Arduino-Xml)
-- [HTMLParser Biblioteket](https://github.com/efeiefei/node-html-parser)
 - [Mozilla Developer Network - HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)

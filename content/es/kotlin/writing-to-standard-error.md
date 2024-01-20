@@ -42,6 +42,3 @@ Además, también es posible redirigir la salida de error estándar a un archivo
 En cuanto a la implementación, escribir a la salida de error estándar se logra utilizando la clase `System` y su propiedad `err`. A través de esta propiedad, se puede acceder al flujo de la salida de error estándar y escribir mensajes utilizando el método `println()`.
 
 ## Ver También:
-
-* [System Class in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_system_class.htm)
-* [Cómo redirigir la salida de error estándar a un archivo en Linux](https://www.tecmint.com/redirect-linux-terminal-output-to-file/)

@@ -51,7 +51,6 @@ Se også
 For mer informasjon om JSON og hvordan du kan bruke det i din programmering, kan du se på disse kildene:
 
 - [JSON offisiell nettside](https://json.org)
-- [Fish Shell documentation](https://fishshell.com/docs/current/cmds/jq.html)
 - [Tutorial om JSON i Fish Shell](https://fishshell.com/docs/current/tutorial.html#json)
 
 Lykke til med å jobbe med JSON i Fish Shell!

@@ -39,6 +39,4 @@ console.log(newString);
 
 ## ראה גם:
 להלן כמה קישורים למידע נוסף על ביטויים רגולריים בתוכנה TypeScript:
-* [תיעוד ראמי של ביטויים רגולריים ב-TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-* [הכרחים ודוגמאות ביטויים רגולאריים של תיעוד ב-TypeScript](https://www.typescriptlang.org/docs/handbook/regex.html)
 * [מדריך תברואתית ביטויים רגולריים ב-TypeScript נכתב ב־CodeTuts+](https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know-a-tutorial-by-the-experts--net-6149)

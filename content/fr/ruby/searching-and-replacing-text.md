@@ -55,4 +55,3 @@ Le résultat sera:
 
 - Documentation Ruby sur les chaînes : [Ruby Doc: String](https://ruby-doc.org/core-3.1.0/String.html)
 - Tutoriel sur la manipulation de chaînes en Ruby : [RubyLearning: String Manipulation](http://rubylearning.com/satishtalim/ruby_strings.html)
-- Exemples de code supplémentaires de substitution en Ruby : [OkMaybe: Ruby String Sub and Gsub](https://www.okmaybe.com/examples/ruby-string-sub-and-gsub)

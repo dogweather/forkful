@@ -50,5 +50,3 @@ Husk at for å sikre maksimal kompatibilitet og presisjon, bruker TypeScript mil
 
 ## Se også
 * [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [TypeScript Deep Dive: Date](https://basarat.gitbook.io/typescript/future-javascript/date)
-* [TypeScript Tutorial: Date](https://www.tutorialsteacher.com/typescript/typescript-date)

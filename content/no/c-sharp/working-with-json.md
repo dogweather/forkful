@@ -50,5 +50,3 @@ Som et alternativ til å jobbe med JSON i C#, kan du også bruke JavaScriptSeria
 Se også:
 
 - [Newtonsoft.Json Documentation](https://www.newtonsoft.com/json/help/html/SerializingJSON.htm)
-- [Working with JSON Data in C#](https://www.c-sharpcorner.com/article/working-with-json-data-in-C-Sharp/)
-- [Introduction to JSON with C#](https://www.codeproject.com/Articles/24986/Introduction-to-JSON-with-CSharp)

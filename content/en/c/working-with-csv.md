@@ -65,4 +65,3 @@ When working with CSV, it's important to handle edge cases like escaped characte
 
 - [Official C Documentation](https://devdocs.io/c/)
 - [Libcsv](http://libcsv.sourceforge.net/)
-- [CSVParser](https://github.com/zieckey/csvparser)

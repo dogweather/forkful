@@ -58,5 +58,4 @@ In terms of implementation details, note that `regcomp()` compiles a regular exp
 ## See Also
 For more advanced usage of regular expressions in C programming, refer to the following links: 
 - GNU C Library: [Regular Expression Library](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- POSIX regular expressions: [comp.unix.shell](http://www.faqs.org/faqs/unix-faq/regexp/)
 - Comparison of Regular Expression Engines: [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines)

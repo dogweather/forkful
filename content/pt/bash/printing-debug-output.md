@@ -55,6 +55,3 @@ Quanto à implementação, o `echo` é uma função interna do Bash, tornando-o 
 ## Veja Também:
 
 Para aprender mais sobre a depuração em Bash, confira essas fontes:
-
-- [Debugging Bash scripts](https://www.linuxjournal.com/content/debugging-bash-scripts)
-- [Bash Scripting: How to Output and Format Text on Linux Shell](https://phoenixnap.com/kb/bash-echo-command)

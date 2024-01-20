@@ -41,6 +41,5 @@ Il risultato è "Ciao, Mondo". Questo metodi sono più versatili quando si lavor
 Per saperne di più sulla concatenaione delle stringhe in Elm, consiglio le seguenti fonti:
 - [Elm's offical guide](https://guide.elm-lang.org/)
 - [Elm's String module documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm String concat example](https://www.elm-tutorial.org/en/03-datatypes/02-strings.html)
 
 Lavora sodo e divertiti con Elm!

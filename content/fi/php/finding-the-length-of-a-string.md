@@ -47,6 +47,5 @@ Tämä on tärkeää, koska `strlen()`-funktio laskee merkkijonon tavujen määr
 Lisätietoja merkkijonojen pituuden löytämisestä PHP:ssä voit löytää seuraavista lähteistä:
 
 - [PHP strlen() Function](https://www.w3schools.com/php/func_string_strlen.asp) W3Schools-artikkeli strlen()-funktiosta
-- [PHP mb_strlen() Function](https://www.w3schools.com/php/func_string_mb_strlen.asp) W3Schools-artikkeli mb_strlen()-funktiosta
 - [PHP: strlen - Manual](https://php.net/manual/en/function.strlen.php) PHP:n virallinen manuaali `strlen()`-funktiosta
 - [PHP: mb_strlen - Manual](https://php.net/manual/en/function.mb-strlen.php) PHP:n virallinen manuaali `mb_strlen()`-funktiosta.

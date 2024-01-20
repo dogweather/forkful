@@ -50,4 +50,3 @@ Testing ka concept pehli baar 1950s me introduce hua tha. Exponentially growing 
 
 # Aur Bhi Dekhe:
 - [JUnit](https://junit.org/junit5/) - A popular Java testing framework
-- [TutorialsPoint - Java Testing](https://www.tutorialspoint.com/java_testing/index.htm) - A comprehensive tutorial on testing in Java

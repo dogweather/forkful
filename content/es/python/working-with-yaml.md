@@ -54,4 +54,3 @@ En cuanto a la implementación de YAML en Python, existen varias bibliotecas que
 
 - [Documentación oficial de PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
 - [Introducción a YAML en Python](https://realpython.com/python-yaml/)
-- [YAML vs JSON vs XML](https://stevesie.com/docs/json-vs-xml-vs-yaml)

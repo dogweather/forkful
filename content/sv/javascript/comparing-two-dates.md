@@ -54,5 +54,3 @@ You kan också använda `valueOf()` funktionen.
 ## Se även
 
 Referera till dessa länkar för att få mer information -
-- MDN Web Docs: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date]()
-- W3Schools: [https://www.w3schools.com/js/js_date_methods.asp]()

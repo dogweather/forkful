@@ -41,6 +41,4 @@ Un'alternativa a busted è [luaunit](https://github.com/bluefoot/luaunit), che s
 Per implementare i test nel proprio codice, è importante seguire alcune best practice come scrivere test atomici, il più possibile indipendenti tra loro, e utilizzare dati di test di input diversi per coprire tutti i casi possibili.
 
 ## Vedi anche:
-- [busted](https://olivinelabs.com/busted/): Libreria per scrivere test in Lua
-- [luaunit](https://github.com/bluefoot/luaunit): Alternativa a busted basata su JUnit
 - [JUnit](https://junit.org/): Libreria per scrivere test in Java

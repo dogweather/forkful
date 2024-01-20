@@ -64,6 +64,4 @@ Plongée en profondeur
 Les tests unitaires, qui sont des tests pour des parties spécifiques du code, ont été introduits pour la première fois dans le cadre de la méthodologie de développement piloté par les tests (TDD). Cette approche consiste à écrire les tests avant même l'écriture du code, et à s'assurer que tous les tests réussissent avant de passer à la phase de développement suivante. Certains développeurs préfèrent également utiliser des outils de test tels que GoConvey pour optimiser le processus de test.
 
 Voir également
-- [Apprenez à écrire des tests en Go](https://blog.golang.org/test)
-- [Code de l'exemple de test en Go](https://gist.github.com/asankov/5322deccd565ffce0659bd9f16607e5c)
 - [Documentation Go sur les tests](https://golang.org/pkg/testing/)

@@ -49,7 +49,5 @@ Bei der Implementierung von Textdateien sollte man auch auf die Codierung achten
 Um mehr über das Schreiben von Textdateien in C# zu erfahren, kann man die offizielle Dokumentation von Microsoft lesen. Hier sind einige hilfreiche Ressourcen:
 
 - [Microsoft Dokumentation über Textdateien in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
-- [Tutorial zum Schreiben von Textdateien in C#](https://www.c-sharpcorner.com/article/writing-a-text-file-in-c-sharp/)
-- [Gebräuchliche Codierungen in C#](https://www.c-sharpcorner.com/article/c-sharp-multilingual-support-using-system-text-encoding/)
 
 Viel Spaß beim Schreiben von Textdateien mit C#!

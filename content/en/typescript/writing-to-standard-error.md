@@ -37,5 +37,3 @@ Another alternative to using `console.error()` is throwing an error using the `t
 
 ## See Also:
 - [Official TypeScript Documentation on console methods](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#prioritized-overloads)
-- [Article on the difference between console.error() and throw](https://spin.atomicobject.com/2011/05/24/the-difference-between-console-log-and-console-error/)
-- [Blog post on debugging with console methods in TypeScript](https://blog.logrocket.com/debugging-typescript-with-the-console-api/)

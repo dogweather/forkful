@@ -43,6 +43,4 @@ Implementations of JSON libraries can vary in terms of performance, memory usage
 - [Official Lua Documentation](https://www.lua.org/docs.html)
 - [JSON Official Website](https://www.json.org/)
 - [LuaRocks](https://luarocks.org/) package manager
-- [lua-cjson Documentation](https://www.kyne.com.au/~mark/software/lua-cjson-doc/)
-- [lua-json GitHub Repository](https://github.com/harningt/lua-json)
 - [rxi-json GitHub Repository](https://github.com/rxi/json.lua)

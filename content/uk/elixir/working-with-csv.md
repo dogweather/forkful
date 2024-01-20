@@ -29,4 +29,3 @@ CSV.read("file.csv")
 ## Дивіться також
 - [Elixir документація для CSV](https://hexdocs.pm/csv/CSV.html)
 - [Порівняння з форматом JSON](https://stackoverflow.com/questions/2044583/csv-versus-json-structured-versus-flat-files)
-- [Порівняння з форматом XML](https://www.sitepoint.com/parsing-csv-with-elixir/)

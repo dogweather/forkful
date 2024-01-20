@@ -46,4 +46,3 @@ Implementoinnin suhteen alakielen erottaminen Swiftissä on joustavaa. Käytämm
 Lisää tietoa ja koodiesimerkkejä alakielten erottamisesta Swiftissä voit löytää alla olevista linkeistä:
 
 - Swiftin virallinen dokumentointi: [Merkkijonot ja merkit](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- Swift by Sundell: [Käyttämällä kielten ja osakielten](https://www.swiftbysundell.com/tips/using-string-and-substring-effectively/)

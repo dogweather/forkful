@@ -39,6 +39,5 @@ Vær oppmerksom på at `replace()` i TypeScript ikke endrer den opprinnelige str
 
 ## Se også
 
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - [TypeScript docs on Strings](https://www.typescripttutorial.net/typescript-tutorial/typescript-string/)
 - [Wikipedia - Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)

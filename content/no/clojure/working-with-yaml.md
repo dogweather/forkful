@@ -40,6 +40,5 @@ Koding eksempler og eksempeloutput innenfor ```Clojure...``` kodeblokker.
 YAML ble utviklet i 2001 og står for "YAML Ain't Markup Language". Det er et enkelt og leselig dataformat, basert på avfestede datamaskinrepresentasjoner av typet objekter og lister. Alternativer til YAML inkluderer JSON og XML. I Clojure brukes YAML for å representere java objekter og datastrukturer i en leselig format.
 
 # Se også:
-- [Clojure YAML bibliotek](https://github.com/yogthos/yaml)
 - [Offisielt YAML nettsted](https://yaml.org/)
 - [YAML syntax guide](https://learnxinyminutes.com/docs/yaml/)

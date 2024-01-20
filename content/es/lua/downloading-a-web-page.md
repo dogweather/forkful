@@ -45,4 +45,3 @@ En cuanto a los detalles de implementación, LuaSocket abre una conexión TCP co
 
 - [HTTP Programming in Lua](http://w3.impa.br/~diego/software/luasocket/http.html)
 - [LuaSocket Reference Manual](http://w3.impa.br/~diego/software/luasocket/reference.html)
-- [Scraping in lua](https://lua-users.org/wiki/ScrapingHtml)

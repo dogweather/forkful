@@ -36,6 +36,4 @@ CSV格式起源于20世纪70年代，当时计算机科学家发现需要一种�
 
 # 相关资源
 
-- [The Power of CSV Processing in Bash](https://linuxhint.com/csv_bash_processing/)
 - [Introduction to Working with CSV Data in Python](https://realpython.com/python-csv/)
-- [An Easy Guide to Working with CSV Files in R](https://www.datacamp.com/community/tutorials/r-read-csv)

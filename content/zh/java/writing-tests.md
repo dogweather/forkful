@@ -41,4 +41,3 @@ public class TestCode {
 
 - [JUnit官方网站](https://junit.org/)
 - [TestNG官方网站](https://testng.org/)
-- [博客：如何使用自动化测试提高软件质量](https://blog.csdn.net/it_xf/article/details/87436003)

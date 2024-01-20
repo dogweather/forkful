@@ -45,5 +45,4 @@ fmt.Println("रचित फ़ाइल का नाम:", file.Name())
 
 इस लेख में हमने पाठ फ़ाइल के साथ संबंधित कुछ भीड़-भाड़ को दिखाया है। यदि आप और विस्तृत जानकारी चाहते हैं, तो हमारे अन्य उपलब्ध स्रोतों को देखें:
 
-- [पाठ फ़ाइल और इसे कैसे संपादित करें](https://www.golangprograms.com/example-to-create-a-text-file-and-write-content-into-it-in-golang.html)
 - [गो प्रोग्रामिंग भाषा का आधिकारिक वेबसाइट](https://golang.org/)

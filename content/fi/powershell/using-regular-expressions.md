@@ -52,5 +52,4 @@ Säännölliset lausekkeet kehitettiin 1950-luvulla matematiikan ja laskennan al
 Säännöllisten lausekkeiden toteutus PowerShellissä perustuu .NET Frameworkin System.Text.RegularExpressions-luokkaan. Tämä luokka tarjoaa useita hyödyllisiä ominaisuuksia, kuten kyvyn poimia säännöllisillä lausekkeilla määrättyjä osia merkkijonosta.
 
 # Katso myös:
-- [PowerShellin säännölliset lausekkeet (Microsoft)](https://docs.microsoft.com/fi-fi/powershell/scripting/learn/ps101/09-regular-expressions?view=powershell-7)
 - [Säännöllisten lausekkeiden opas (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

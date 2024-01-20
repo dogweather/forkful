@@ -54,5 +54,4 @@ JSON을 다루는 라이브러리는 많이 존재하며, Rust에서는 serde_js
 
 ## 관련 자료: 
 - [Rust 레포지토리 전체 메뉴얼](https://doc.rust-lang.org/stable/book/)
-- [Rust 웹사이트](https://www.rust-lang.org/ko/)
 - [JSON 홈페이지](https://www.json.org/)

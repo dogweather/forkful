@@ -30,7 +30,6 @@ En términos de detalles de implementación, si eliges esta opción, podrías ut
 
 ## Ver también:
 
-- [Node.js y la API de FileSystem](https://nodejs.dev/learn/the-nodejs-fs-module)
 - [Comunicación Elm-JavaScript](https://guide.elm-lang.org/interop/)
 
 Recuerda, mientras más conozcas sobre cómo interactúan las diferentes partes de tu stack tecnológico, más preparado estarás para resolver los desafíos que se presenten.

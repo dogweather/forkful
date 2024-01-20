@@ -62,4 +62,3 @@ För vidare studier om ämnet, kolla in dessa källor:
 
 - [Arduino EEPROM Dokumentation](https://www.arduino.cc/en/Reference/EEPROM)
 - [EEPROM tålighet](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=4096093) 
-- [Alternativ till EEPROM](https://www.avrfreaks.net/forum/avr-eeprom-alternatives)

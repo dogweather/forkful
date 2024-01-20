@@ -32,7 +32,6 @@ end
 
 # ראה גם
 - [דף רשמי של פרומ פיש](https://fishshell.com)
-- [מדריך עבודה עם YAML בשל פרום פיש](https://fishshell.com/docs/current/cmds/yaml.html)
 - [תיעוד YAML הרשמי](https://yaml.org/)
 - [קו מנחה עבור YAML בשל פרום פיש](https://fishshell.com/docs/current/commands.html#yaml)
 - [דוגמאות של קבצי YAML עבור תחמולנים](https://segmentfault.com/a/1190000000651054)

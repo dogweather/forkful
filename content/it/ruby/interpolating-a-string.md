@@ -36,4 +36,3 @@ Se per qualche motivo dovessi evitare l'interpolazione, potresti concatenare le 
 
 ## Vedi Anche 
 - La documentazione ufficiale su String Interpolation in Ruby: [https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
-- Un ottimo tutorial su Ruby String Interpolation: [https://www.rubyguides.com/2018/11/ruby-string-interpolation](https://www.rubyguides.com/2018/11/ruby-string-interpolation)

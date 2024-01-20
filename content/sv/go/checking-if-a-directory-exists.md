@@ -49,4 +49,3 @@ Notera att vi använder ett understreck `_` för att ignorera det första return
 Mer information om att hantera filer och mappar i Go kan du hitta på följande platser:
 
 - Go Dokumentation: [os paket](https://golang.org/pkg/os/)
-- Go Blog: [Go Filesystem](https://blog.golang.org/io2013-talk-file-system)

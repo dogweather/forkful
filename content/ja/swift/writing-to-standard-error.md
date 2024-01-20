@@ -27,5 +27,4 @@ print("エラーが発生しました", to: &stderr)
 ## 関連情報： 
 関連するソースへのリンクを記載します。
 
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/2894606-print)：標準エラーへの書き込みについてさらに詳しい情報が掲載されています。
 - [Stack Overflow](https://stackoverflow.com/questions/29712371/how-to-print-output-to-error-console-swift)：標準エラーへの書き込み方法についてのコミュニティの質問と回答があります。

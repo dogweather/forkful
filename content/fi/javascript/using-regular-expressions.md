@@ -32,4 +32,3 @@ Säännöllisten lausekkeiden käyttöliittymä Javascriptissä on suhteellisen 
 ## Lue Lisää
 - [MDN Web Docs - Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [Regex101 - Säännöllisten lausekkeiden testaaja ja selityksiä](https://regex101.com/)
-- [RegExr - Interaktiivinen säännöllisten lausekkeiden editori, jossa voit kokeilla erilaisia säännöllisiä lausekkeita](https://regexr.com/)

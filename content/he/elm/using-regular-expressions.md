@@ -44,5 +44,3 @@ Regex.find regex string
 ## ראו גם
 
 לינקים למקורות נוספים המסבירים את יכולות ביטויי רגולריים בקוד Elm:
-- [הדגמה שפירסמה חברת המפתחים Humblebee](https://www.humblebee.se/blog/using-regular-expressions-in-elm)
-- [המדריך הרשמי של אתר Elm](https://guide.elm-lang.org/interop/regex.html)

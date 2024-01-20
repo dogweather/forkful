@@ -103,6 +103,5 @@ Install-Package YamlDotNet
 ```
 
 ## Vedi anche:
-- [Documentazione PowerShell su YAML](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/10-working-with-yaml?view=powershell-7.1)
 - [Sito ufficiale di YAML](https://yaml.org/)
 - [YamlDotNet su GitHub](https://github.com/aaubry/YamlDotNet)

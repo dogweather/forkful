@@ -57,4 +57,3 @@ println(randomElement)
 Kotlin 공식문서의 Random 클래스 설명: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
 이외에도, 더 깊게 알고 싶다면 다음 링크를 참고해보세요:
 - [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
-- [https://developer.android.com/reference/kotlin/kotlin.random.Random](https://developer.android.com/reference/kotlin/kotlin.random.Random)

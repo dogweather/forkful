@@ -47,4 +47,3 @@ Hello world!
 
 ## 関連情報
 - [File.ReadAllText メソッド (System.IO)](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file.readalltext?view=netcore-3.1)
-- [C#について学ぼう](https://www.javadrive.jp/csharp/)

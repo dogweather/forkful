@@ -55,5 +55,4 @@ Merkittävä yksityiskohta verkkosivujen lataamisessa on URL-yhteyden avaaminen 
 ## Katso myös
 
 - Oracle Java-dokumentaatio: [Lue verkkoresurssista](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
-- Apache HttpClient: [Käyttöohje](https://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/fundamentals.html)
 - Jsoup: [Java HTML Parserin dokumentaatio](https://jsoup.org/)

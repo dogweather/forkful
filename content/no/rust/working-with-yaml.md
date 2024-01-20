@@ -49,5 +49,4 @@ I Rust finnes det også alternativer for å jobbe med datastrukturer som Toml, s
 
 # Se også:
 - [YAML-spesifikasjonen](https://yaml.org/spec/)
-- [Yaml-rust bibliotek](https://crates.io/crates/yaml-rust)
 - [Sammenligning av YAML, JSON og Toml](https://stackshare.io/stackups/json-vs-toml-vs-yaml)

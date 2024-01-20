@@ -47,5 +47,4 @@ Infine, riguardo ai dettagli di implementazione, la funzione `clojure.string/rep
 Per saperne di più sulla manipolazione delle stringhe in Clojure, dai un'occhiata a questi link:
 
 - La documentazione ufficiale del modulo Clojure string: [https://clojuredocs.org/clojure.string](https://clojuredocs.org/clojure.string) 
-- Una guida sull'utilizzo delle espressioni regolari in Clojure: [https://www.regular-expressions.info/clojure.html](https://www.regular-expressions.info/clojure.html)
 - Una spiegazione più dettagliata sulla funzione `replace` di Clojure: [https://clojuredocs.org/clojure.string/replace](https://clojuredocs.org/clojure.string/replace)

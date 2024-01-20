@@ -32,6 +32,3 @@ Podczas wykonania kodu wejściowego `"witam"`, wyjście będzie wyglądało jak 
 3. Szczegóły implementacji: Metoda `toUpperCase()` jest wbudowana w bibliotekę łańcuchów Arduino. Przechodzi przez każdą literę w łańcuchu i zamienia ją na wielką literą, jeśli jest to litera mała.
 
 ## Zobacz także:
-
-- [Dokumentacja Arduino String](https://arduino.cc/en/ref.string)
-- [Więcej o funkcjach górnych i dolnych liter](https://arduino.cc/en/Tutorial.StringCaseChanges)

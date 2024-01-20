@@ -40,5 +40,3 @@ Implementeringsdetaljer: `String.upcase/1` och `String.capitalize/1` använder E
 
 ## Se Även:
 - Elixir officiella dokumentation om [String.upcase/1](https://hexdocs.pm/elixir/String.html#upcase/1) och [String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- En bra [tutorial](https://elixircasts.io/string-upcase-and-downcase) om `String.upcase` och `String.downcase` i Elixir
-- Artikel om [Elixirs Unicode-stöd](https://www.cogini.com/blog/working-with-unicode-in-elixir/)

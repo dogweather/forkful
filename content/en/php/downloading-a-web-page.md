@@ -59,5 +59,3 @@ This function will return the content of a given URL.
 
 - Official PHP docs for `file_get_contents`: [here](https://www.php.net/manual/en/function.file-get-contents.php)
 - `cURL` in the PHP docs: [here](https://www.php.net/manual/en/book.curl.php)
-- Web scraping with PHP and DOM: [here](https://www.sitepoint.com/php-web-scraping/)
-- Downloading files with PHP: [here](https://davidwalsh.name/php-download-file)

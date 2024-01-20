@@ -30,5 +30,4 @@ Error.raise "Something went wrong!"
 ## 관련 자료
 
 - [Elm 공식 문서](https://guide.elm-lang.org/error_handling/)
-- [Elm 에러 핸들링 패턴](https://dennisreimann.de/articles/elm-error-handling-patterns.html)
 - [JavaScript의 표준 오류에 대한 설명](https://developer.mozilla.org/ko/docs/Web/API/Console/error)

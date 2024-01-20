@@ -36,6 +36,4 @@ Ciekawe jest to, że `string replace` w Fish operuje na całych linijkach, a nie
 
 ## Zobacz również:
 
-- [Dokumentacja Fish Shell 'string replace'](https://fishshell.com/docs/3.0/cmds/string-replace.html)
 - [Przewodnik po używaniu 'awk' w UNIX](https://www.grymoire.com/Unix/Awk.html)
-- [Tutoriale 'sed' - Używanie 'sed' do wyszukiwania i zastępowania tekstu](https://how-to.fandom.com/wiki/How_to_use_sed_to_find_and_replace_text_in_files)

@@ -51,4 +51,3 @@ print("The interval between date1 and date2 is \(interval) seconds.")
 ## 参考文献
 - [Apple: Date](https://developer.apple.com/documentation/foundation/date)
 - [Apple: Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift by Sundell: Working with dates in Swift](https://www.swiftbysundell.com/basics/dates/)

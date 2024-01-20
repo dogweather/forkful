@@ -53,6 +53,5 @@ Arduino के alternatives में Particle, BeagleBone Black, और Raspber
 
 ## और भी देखें:
 
-- Arduino's HTTPClient Library documentation: [link](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient/readme.html)
 - More about HTTP requests: [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 - Alternatives to Arduino: [Raspberry Pi](https://www.raspberrypi.org/), [BeagleBone](https://beagleboard.org/bone), [Particle](https://www.particle.io/)

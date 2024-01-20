@@ -68,5 +68,4 @@ do {
 - CSV का प्रयोग किसी भी भाषा में किया जा सकता है, इसलिए प्रोग्रामरों को इसकी ज्ञानकारी होना आवश्यक है।
 
 ## देखें भी:
-- [Apple डॉक्यूमेंटेशन उदाहरण](https://developer.apple.com/documentation/foundation/nsstring/1409103-components)
 - [CSV फाइल की संरचना के बारे में अधिक जानकारी के लिए](https://www.computerhope.com/issues/ch001356.htm)

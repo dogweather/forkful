@@ -43,5 +43,4 @@ main = do
 ## Дивіться також:
 
 - [http-conduit on Hackage](http://hackage.haskell.org/package/http-conduit)
-- [Haskell HTTP package comparison](https://wiki.haskell.org/Haskell_HTTP_package_comparison)
 - [Haskell School of Music](http://www.haskellforall.com/2012/01/haskell-school-of-music.html)

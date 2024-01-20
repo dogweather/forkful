@@ -61,5 +61,4 @@ El comando que se acaba de compartir generará un archivo processes.txt con una 
 ## Ver también
 
 - [Documentación oficial de PowerShell](https://docs.microsoft.com/en-us/powershell/)
-- [PowerShell: Crear, leer, actualizar, eliminar archivos](https://ps1.guru/powershell-files/)
 - [Tutorial de PowerShell para principiantes](https://www.tutorialspoint.com/powershell/index.htm)

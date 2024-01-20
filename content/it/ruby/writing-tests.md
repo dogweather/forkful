@@ -34,5 +34,3 @@ La pratica di scrivere test è diventata sempre più popolare negli ultimi anni 
 Per implementare i test, è importante comprendere i concetti di "assertions" e "fixtures". Le assertions sono dichiarazioni che descrivono i risultati attesi del test, mentre le fixtures sono dati di prova utilizzati per eseguire i test.
 
 ## Vedi anche:
-- [The Pragmatic Programmer: From Journeyman to Master by Andrew Hunt and David Thomas](https://www.amazon.it/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
-- [Test Driven Development: By Example by Kent Beck](https://www.amazon.it/Test-Driven-Development-By-Example/dp/0321146530)

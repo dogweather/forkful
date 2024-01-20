@@ -36,4 +36,3 @@ File.stat("existing_file.txt").size
 
 관련 자료:
 - [Elixir 공식 문서 - 파일](https://hexdocs.pm/elixir/File.html)
-- [ElixirSchool - 파일 다루기](https://elixirschool.com/lessons/basics/basics/#files)

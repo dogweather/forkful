@@ -49,4 +49,3 @@ For mer informasjon, se følgende lenker:
 
 - Microsofts dokumentasjon på `ParseExact`: [https://docs.microsoft.com/dotnet/api/system.datetime.parseexact](https://docs.microsoft.com/dotnet/api/system.datetime.parseexact)
 - Microsofts dokumentasjon på `TryParse`: [https://docs.microsoft.com/dotnet/api/system.datetime.tryparse](https://docs.microsoft.com/dotnet/api/system.datetime.tryparse)
-- PowerShell Basics: Parsing Dates: [https://devblogs.microsoft.com/scripting/powertip-convert-string-to-datetime-with-powershell/](https://devblogs.microsoft.com/scripting/powertip-convert-string-to-datetime-with-powershell/)

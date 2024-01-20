@@ -41,6 +41,3 @@ echo "Jane, 30, Female" >> new_file.csv
 3. Деталі реалізації: Для роботи з CSV у Bash використовується команда "read", яка дозволяє читати та обробляти рядки файлу за роздільниками, у нашому випадку - це кома.
 
 ## See Also:
-- [CSV: Як працювати з цим форматом даних](https://www.codecademy.com/articles/what-is-csv)
-- [Керування файлами та робота з даними у Bash](https://www.learnshell.org/en/Multiline_Commands)
-- [XML та JSON: Який формат даних обрати](https://programmergroup.ru/xml-i-json/)

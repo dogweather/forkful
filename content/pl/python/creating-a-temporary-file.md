@@ -46,6 +46,5 @@ Co do szczegółów implementacji, w Pythonie moduł `tempfile` używa specjalny
 
 ## Zobacz też 
 
-- [Python Tempfile – Create Temporary File and Directory](https://www.pythonguides.com/python-tempfile/)
 
 - [Python Docs - 15.2. tempfile — Generate temporary files and directories](https://docs.python.org/3/library/tempfile.html)

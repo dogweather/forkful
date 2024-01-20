@@ -36,6 +36,3 @@ Temporary file created: C:\Users\...\AppData\Local\Temp\tempFile5874387397786809
 
 ## ראה גם:
 - [Oracle - Creating, Reading, and Writing Files](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html)
-- [Baeldung - A Guide to Java Temporary Files](https://www.baeldung.com/java-temporary-files)
-- [Kotlin Documentation - java.nio.file](https://kotlinlang.org/api/latest/jvm/stdlib/java.nio.file/)
-- [GeeksforGeeks - Kotlin | Temporary file](https://www.geeksforgeeks.org/temporary-file-write-function-in-kotlin/)

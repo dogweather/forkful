@@ -45,6 +45,4 @@ Go言語の `time` パッケージの `Format` 関数について深く理解す
 
 ## 参照:
 
-- Golang公式ドキュメンテーション（`time` パッケージ）: [https://pkg.go.dev/time@v0.0.0-20221109144857-69f9f4ec42b9#Time.Format](https://pkg.go.dev/time@v0.0.0-20221109144857-69f9f4ec42b9#Time.Format)
-- Golang公式ブログ（時間について）: [https://blog.golang.org/time](https://blog.golang.org/time)
 - UNIX時間についてのWikipediaの記事: [https://ja.wikipedia.org/wiki/UNIX%E6%99%82%E9%96%93](https://ja.wikipedia.org/wiki/UNIX%E6%99%82%E9%96%93)

@@ -41,6 +41,4 @@ Eines der Dinge, die bei der Datumsberechnung zu beachten sind, ist die Berücks
 
 Prüfen diese Ressourcen aus, um weiter zu lernen:
 
-- Gleam-Dokumentation: [https://gleam.run/book/tour/dates-and-times.html](https://gleam.run/book/tour/dates-and-times.html)
 - Allgemeine Datums- und Zeitfunktionen: [https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Über die Complexity of Time Data Types und Time Arithmetic: [https://infolab.stanford.edu/~ullman/fcdb/material/handouts/time.pdf](https://infolab.stanford.edu/~ullman/fcdb/material/handouts/time.pdf)

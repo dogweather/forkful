@@ -43,5 +43,4 @@ En ce qui concerne les détails de mise en œuvre, la méthode `slice` est en r�
 ## Voir aussi:
 
 - Documentation sur la méthode `slice` de Ruby : [https://ruby-doc.org/core-2.7.2/String.html#method-i-slice](https://ruby-doc.org/core-2.7.2/String.html#method-i-slice)
-- Guide sur les chaînes en Ruby : [https://www.rubyguides.com/2015/01/ruby-string-methods/](https://www.rubyguides.com/2015/01/ruby-string-methods/)
 - Documentation officielle sur la classe `String`de Ruby : [https://ruby-doc.org/core-2.7.2/String.html](https://ruby-doc.org/core-2.7.2/String.html)

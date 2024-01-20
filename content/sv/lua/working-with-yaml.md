@@ -70,5 +70,4 @@ Det finns olika implementationer av YAML för olika programmeringsspråk, inklus
 
 ## Se även:
 - [YAML.org](https://yaml.org/) - officiell hemsida för YAML
-- [LuaYAML](https://github.com/davidm/lua-yaml) - YAML-bibliotek för Lua
 - [YAML lint](http://www.yamllint.com/) - verktyg för att validera YAML-filer

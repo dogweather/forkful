@@ -58,6 +58,5 @@ Es gibt verschiedene Arten von Tests, die in der Softwareentwicklung verwendet w
 Das Schreiben von Tests erfordert ein gutes Verständnis der zu testenden Funktionen und des erwarteten Verhaltens. Es ist wichtig, gut lesbaren und wartbaren Code zu schreiben, um die Tests effektiv gestalten zu können. Zudem sollte man die Tests regelmäßig ausführen, um mögliche Fehler frühzeitig zu erkennen und zu beheben.
 
 # Siehe auch:
-- [Das unittest-Modul in der Python-Dokumentation](https://docs.python.org/de/3/library/unittest.html)
 - [Das pytest-Framework](https://docs.pytest.org/en/latest/)
 - [Video-Tutorial: Test-driven Development in Python](https://www.youtube.com/watch?v=IN6j2QMkegA)

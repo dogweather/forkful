@@ -49,5 +49,4 @@ throw new Error("这是一个错误信息");
 ## 参考文章：
 
 - ["Understanding Node.js' Console Object"](https://developer.ibm.com/zh/languages/nodejs/articles/understanding-nodejs-console-object/)
-- ["What is Standard Error?"](https://www.geeksforgeeks.org/what-is-standard-error/)
 - ["The Difference Between Standard Output and Standard Error"](https://www.lifewire.com/standard-output-vs-standard-error-2626112)

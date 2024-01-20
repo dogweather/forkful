@@ -37,4 +37,3 @@ CSV는 1972년 미국의 데이터베이스 전문가 존 존슨에 의해 개�
 ## 관련 정보:
 
 - [Elm 공식 문서 - Csv 모듈](https://package.elm-lang.org/packages/elm/core/latest/Csv)
-- [CSV 정보 저널 - 개발자들을위한 CSV 가이드](https://www.csvj.com/csv-tutorial-for-developers/)

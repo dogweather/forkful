@@ -20,6 +20,4 @@ I Ruby finns det en populär testsvit som heter MiniTest. För att använda den,
 Det är viktigt att skriva tester eftersom det hjälper dig hitta och förhindra buggar tidigt. Dessutom hjälper det dig att förstå din kod bättre och ger dig mer självförtroende när du programmerar. En annan metod för att skriva tester är Behavior-Driven Development (BDD) där man fokuserar på hur koden beter sig istället för hur den är skriven.
 
 # Se även:
-- [MiniTest dokumentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/minitest/rdoc/MiniTest.html)
 - [Artikel om BDD](https://medium.com/@KerrySheldon/behaviour-driven-development-and-rspec-ruby-on-rails-1c55601388c9)
-- [Exempel på ett testetui i Ruby](https://www.qaiter.com/testify/)

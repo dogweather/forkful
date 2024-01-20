@@ -43,5 +43,3 @@ L'implémentation de CSV en Elixir utilise les protocoles Enumerable et Collecta
 ## Voir aussi
 
 - [Documentation de la bibliothèque CSV](https://hexdocs.pm/csv/2.1.0/index.html)
-- [FasterCSV](https://hex.pm/packages/faster_csv)
-- [CSVix](https://hex.pm/packages/csvix)

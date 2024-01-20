@@ -55,5 +55,3 @@ The implementation details of writing a text file may vary depending on the oper
 ## See Also:
 
 - [C++ ofstream documentation](https://www.cplusplus.com/reference/fstream/ofstream/)
-- [Differences between text and binary files](https://www.cs.uregina.ca/Links/class-info/210/BinaryVsText.html)
-- [Creating and Writing to a File in C++](https://www.programiz.com/cpp-programming/files-input-output)

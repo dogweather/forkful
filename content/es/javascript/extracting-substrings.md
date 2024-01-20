@@ -54,4 +54,3 @@ Para más detalles y ejemplos de substrings, puedes consultar las siguientes fue
 
 - [MDN: substring()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
 - [MDN: slice()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [JavaScript Info: substrings](https://javascript.info/substring)

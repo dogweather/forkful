@@ -41,5 +41,3 @@ echo $str1$str2
 # "## ראה גם:"
 
 - [תיעוד Fish Shell ל- String](https://fishshell.com/docs/3.1/commands.html#string)
-- [מנהג מאמר על מילול בשפת תכנות](http://www.bagrit.com/concatenation-in-programming-languages/)
-- [הסבר על פונקציות אחזקה](https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A0%D7%A7%D7%A6%D7%99%D7%99%D7%AA_%D7%90%D7%97%D7%96%D7%A7%D7%94)

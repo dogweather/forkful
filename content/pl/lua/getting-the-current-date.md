@@ -50,4 +50,3 @@ W przypadku większego stopnia personalizacji, możemy użyć alternatywnych bib
 
 - Dokumentacja Lua: [os.date](https://www.lua.org/pil/22.1.html)
 - GitHub: [LuaDate](https://github.com/Tieske/date)
-- GitHub: [chrono](https://github.com/bsm/chrono.lua)

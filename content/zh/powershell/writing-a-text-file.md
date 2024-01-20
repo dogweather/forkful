@@ -43,6 +43,5 @@ Hello, World!
 
 - [Microsoft文档：写入文件 | Microsoft Docs](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.management/add-content?view=powershell-7)
 - [C语言文本文件简单操作 | 菜鸟教程](https://www.runoob.com/cprogramming/c-file-io.html)
-- [通过PowerShell保存文本文件 | 码霸笔记](https://www.codenong.com/cs107566977/)
 
 没有结论。

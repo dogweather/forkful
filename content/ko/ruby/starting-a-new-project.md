@@ -32,4 +32,3 @@ Ruby에서 프로젝트를 구현하면 일반적으로 `puts`라는 메소드�
 ## 참고 자료
 - [Ruby 공식 문서](https://www.ruby-lang.org/ko/documentation/)
 - [GitHub에서 Ruby 샘플 프로젝트](https://github.com/search?l=Ruby&q=ruby+projects&type=Repositories)
-- [점프 투 루비](https://ruby-korea.github.io/jump2ruby/) : 루비 학습자를 위한 훌륭한 자료입니다.

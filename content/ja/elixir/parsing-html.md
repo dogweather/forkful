@@ -47,4 +47,3 @@ FlokiライブラリはNokogiri（Rubyライブラリ）の"CSSセレクタに�
 - [公式Elixirドキュメント](https://hexdocs.pm/elixir/Kernel.html)
 - [FlokiのGitHubリポジトリ](https://github.com/philss/floki)
 - [mochiweb_html GitHubリポジトリ](https://github.com/mochi/mochiweb)
-- [html5ever_elixir GitHubリポジトリ](https://github.com/HTMLParseErrorsSoft/html5ever_elixir)

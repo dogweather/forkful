@@ -55,4 +55,3 @@ func main() {
 
 - [Go 공식 문서: 날짜와 시간](https://golang.org/pkg/time/)
 - [Go 시간 포맷에 대한 흥미로운 글](https://yourbasic.org/golang/format-parse-string-time-date-example/)
-- [Go의 Time 패키지에 대한 자세한 설명](https://www.golangprograms.com/golang-time-package.html)

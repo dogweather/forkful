@@ -55,4 +55,3 @@ Durante a compilação, as strings interpoladas são convertidas em invocações
 Para mais informações sobre a interpolação de string, consulte os links a seguir:
 
 - [Interpolação de String (C# Guia de Programação)](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated)
-- [Interpolação de String C# 6.0](https://www.c-sharpcorner.com/blogs/string-interpolation-in-c-sharp-60)

@@ -36,5 +36,4 @@ Although CSV is a simple format, programmers should consider edge cases such as 
 
 ## See Also:
 - [Simple CSV node package](https://www.npmjs.com/package/simple-csv)
-- [Parsing CSV in TypeScript](https://www.digitalocean.com/community/tutorials/js-typescript-csv-parsing)
 - [CSV vs XML vs JSON](https://softwareengineering.stackexchange.com/questions/123947/comparison-of-data-interchange-formats)

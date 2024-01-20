@@ -45,6 +45,5 @@ I din Gleam-kod hanteras autentiseringen genom att skapa ett "Authorization"-huv
 
 ## Se Även 
 För mer information, kolla in följande resurser:
-- [Gleam HTTP Documentation](https://gleam.run/book/tour/http.html)
 - [MDN: HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 - [RFC 7617: 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)

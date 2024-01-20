@@ -54,6 +54,4 @@ Tenha isso em mente ao usar `$args`: ele ignora argumentos que são reconhecidos
 
 ## Veja Também
 
-* Documentação oficial do Microsoft PowerShell: [Sobre Argumentos da Linha de Comando](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_line_arguments?view=powershell-7.1)
-* Guia de Scripting: [Usando Argumentos da Linha de Comando](https://www.computerperformance.co.uk/powershell/powershell_args_argumentlist/)
 * Tutorial de vídeo: [PowerShell e Argumentos da Linha de Comando](https://www.youtube.com/watch?v=8uAo8X00Q9o)

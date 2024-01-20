@@ -43,6 +43,5 @@ En sak att notera med Elm är att den behandlar datum konvertering på ett mycke
 
 Om du vill veta mer om datumkonvertering och hantering i Elm, kolla in dessa länkar:
 
-- [Elm Date Tutorial](https://elmprogramming.com/dates.html)
 - [Elm Date Library Documentation](https://package.elm-lang.org/packages/elm/time/latest)
 - [DateFormat Library](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest)

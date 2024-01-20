@@ -84,7 +84,4 @@ When working with CSV, it is essential to have a good understanding of how the d
 
 ## See Also
 
-- [MDN CSV](https://developer.mozilla.org/en-US/docs/Glossary/CSV)
 - [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
-- [Comparing CSV vs JSON](https://www.json-csv.com/csv-vs-json.html)
-- [CSV file format: A formal structure](https://support.monday.com/hc/en-us/articles/360007686480-CSV-file-format-A-formal-structure)

@@ -53,5 +53,4 @@ O YAML (acrônimo de "YAML Ain't Markup Language") é um formato de serializaç�
 A biblioteca `yaml` foi desenvolvida pela comunidade Elm e se baseia na biblioteca JavaScript `js-yaml`, mantida por nodeca. Ela oferece diversas funcionalidades além da função de decodificação, tais como codificação, validação e manipulação de dados YAML. Para mais informações e exemplos, consulte a documentação oficial da biblioteca `yaml`.
 
 ## Veja também:
-- [Documentação da biblioteca `yaml`](https://package.elm-lang.org/packages/elm-community/yaml/latest/)
 - [Formato YAML](https://yaml.org/)

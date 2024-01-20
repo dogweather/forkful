@@ -41,4 +41,3 @@ Clojure में substring निकालने के लिए आप `subs`
 
 - Clojure आधिकारिक प्रलेखन: [https://clojure.org/](https://clojure.org/)
 - Clojure कोर स्ट्रिंग API: [https://clojuredocs.org/clojure.core](https://clojuredocs.org/clojure.core)
-- स्ट्रिंगों के साथ काम करने के लिए Clojure ट्यूटोरियल: [https://www3.ntu.edu.sg/home/ehchua/programming/java/images/javaString.png](https://www3.ntu.edu.sg/home/ehchua/programming/java/images/javaString.png)

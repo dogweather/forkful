@@ -42,4 +42,3 @@ A função `withSystemTempFile` em Haskell cria um novo arquivo temporário no s
 Segue abaixo alguns links úteis para consulta posterior.
 
 - Documentação da System.IO.Temp: [aqui](http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
-- Tutorial Haskell para trabalhar com arquivos: [aqui](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/files-and-directories)

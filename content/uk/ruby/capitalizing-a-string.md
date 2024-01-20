@@ -53,4 +53,3 @@ Output:
 ## Дивіться також
 
 - Розділ ["String" в Ruby Doc](https://ruby-doc.org/core-3.0.0/String.html)
-- Стаття ["Working with strings in Ruby"](https://www.rubyguides.com/2015/01/working-with-strings/)

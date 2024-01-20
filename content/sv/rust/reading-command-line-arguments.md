@@ -46,4 +46,3 @@ En viktig detalj är att `std::env::args()` inkluderar programmets sökväg som 
 För mer information om Rusts kommandorads gränssnitt, se följande länkar:
 
 - [std::env i Rust-Dokumentation](https://doc.rust-lang.org/std/env/index.html)
-- [Command Line Argumenter i Rust-Lehre](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-command-line-macros.html)

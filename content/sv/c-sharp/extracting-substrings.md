@@ -49,4 +49,3 @@ När det gäller att implementera substring extrahering i C# så sker det med en
 För mer detaljerad information, kolla följande länkar:
 
 - Microsoft's C#-guide om `Substring`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-- En djupare dykning i string manipulation i C#: [Link](https://www.c-sharpcorner.com/UploadFile/mahesh/manipulate-strings-in-C-Sharp/)

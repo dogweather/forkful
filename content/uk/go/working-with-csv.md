@@ -74,4 +74,3 @@ func main() {
 Дивись також:
 
 - [Стандартна бібліотека CSV у Go](https://golang.org/pkg/encoding/csv/)
-- [Стаття про роботу з CSV у Go](https://www.calhoun.io/reading-and-writing-csv-files-in-go/)

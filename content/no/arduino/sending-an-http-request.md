@@ -54,4 +54,3 @@ Detaljer om implementeringen: I vårt eksempel definerte vi en MAC-adresse og IP
 
 - Arduino Ethernet-biblioteket: [link](https://www.arduino.cc/en/Reference/Ethernet)
 - Mer informasjon om HTTP-forespørsler: [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- Hvordan bruke POST forespørsler med Arduino: [link](https://randomnerdtutorials.com/esp8266-web-client/)

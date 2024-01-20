@@ -38,4 +38,3 @@ Att starta ett nytt Java-projekt kan ske i olika utvecklingsmiljöer, såsom Ecl
 - [Official Oracle Java Documentation](https://docs.oracle.com/en/java/)
 - [Java Programming Tutorials on Coursera](https://www.coursera.org/courses?query=java%20programming)
 - [Comprehensive Java Guide on Codecademy](https://www.codecademy.com/learn/learn-java)
-- [Java Project Ideas on GitHub](https://github.com/dreamtocode/java-project-ideas)

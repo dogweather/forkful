@@ -38,5 +38,4 @@ Clojure에서 공식적으로 제공하는 `rand` 함수 외에도, 다양한 �
 
 ## 참고 자료
 - Clojure 공식 문서의 [랜덤 함수에 대한 섹션](https://clojure.org/guides/learn/functions#_random_numbers)
-- Alan Tate의 ["Clojure에 대하여"](https://martinfowler.com/articles/clojure-antilibrary.html), Martin Fowler의 블로그 (영문)
 - [선형 합동 방법](https://en.wikipedia.org/wiki/Linear_congruential_generator), 랜덤 수의 전통적인 생성 방법에 대한 위키피디아 페이지.

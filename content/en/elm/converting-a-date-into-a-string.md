@@ -50,7 +50,6 @@ When using `Date.toIsoString`, a date is converted to a String following the ISO
 ## See Also
 
 - Elm documentation: [Time](https://package.elm-lang.org/packages/elm/time/latest/) & [Date](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
-- Conversion between different time types in Elm: [Time management](https://elmprogramming.com/time-management.html)
 - Library for additional formatting options: [rluiten/elm-date-extra](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/Date-Extra-Formats)
 - Differences between `toIsoString`, `toRfc1123String`, and `toRfc3339String`: [Date formats](https://www.w3.org/TR/NOTE-datetime)
 - Elm Reddit discussion on [date and time manipulation](https://www.reddit.com/r/elm/comments/ah9onw/decoding_and_managing_dates_and_times_in_elm/)

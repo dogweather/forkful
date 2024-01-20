@@ -53,5 +53,4 @@ Si se pasan más de 9 argumentos, deben referenciarse con corchetes: `${10}`, `$
 Para más información sobre argumentos en línea de comandos, visita estes enlaces:
 
 - [Tutorial de Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php)
-- [Argumentos de línea de comandos en Bash](https://www.baeldung.com/linux/bash-script-command-line-arguments)
 - [Guía de Bash de GNU](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters)

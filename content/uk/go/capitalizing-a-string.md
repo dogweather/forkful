@@ -47,5 +47,4 @@ func main() {
 ## Дивись також:
 
 - [Документація Go по бібліотеці `strings`](https://golang.org/pkg/strings/)
-- [Введення в Go на офіційному сайті](https://golang.org/doc/intro)
 - [Go by Example: String Functions](https://gobyexample.com/string-functions)

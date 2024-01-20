@@ -54,4 +54,3 @@ Fish Shell posiada wbudowane polecenia do obsługi plików YAML, takie jak `yq` 
 
 - [Dokumentacja Fish Shell dotycząca YAML](https://fishshell.com/docs/current/tutorial.html#yaml-support)
 - [Strona domowa YAML](https://yaml.org/)
-- [Porównanie YAML z innymi formatami](https://yaml.org/comparison.html)

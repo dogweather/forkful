@@ -42,4 +42,3 @@ February 14, 2021 00:00:00
 ## Zobacz również:
 
 - Dokumentacja Microsoft na temat metody ParseExact: [https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=net-5.0)
-- Dokumentacja PowerShell na temat operacji z datą: [https://docs.microsoft.com/pl-pl/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1](https://docs.microsoft.com/pl-pl/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1)

@@ -50,7 +50,3 @@ echo 'Привіт, ' . $name . '!';
 Інтерполяція рядків в PHP використовується в runtime, тож виконання цієї операції може мати вплив на продуктивність, особливо при великій кількості великих змінних.
 
 ## Дивіться також:
-
-- [PHP: рядки](http://php.net/manual/uk/language.types.string.php)
-- [PHP: sprintf()](http://php.net/manual/uk/function.sprintf.php)
-- [PHP: Конкатенація рядків](http://php.net/manual/uk/language.operators.string.php)

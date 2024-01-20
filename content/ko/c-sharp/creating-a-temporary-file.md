@@ -33,6 +33,4 @@ C#에서 임시 파일을 생성하려면, 보통 `Path.GetTempPath`와 `Path.Co
 
 ## 참고자료
 다음은 임시 파일 뿐 아니라 C# 파일 입출력에 대한 추가 정보를 얻을 수 있는 링크입니다.
-- [Microsoft 대한민국 공식 홈페이지](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-create-a-temp-file)
 - [Stack Overflow: C#에서 임시 파일 생성하는 방법](https://stackoverflow.com/questions/581570/how-can-i-create-a-temp-file-in-c-sharp)
-- [C# 입출력 (I/O) 모음](https://www.csharp.com/fileio.html)

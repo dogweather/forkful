@@ -45,6 +45,4 @@ Per approfondire l'uso delle espressioni regolari in Fish Shell, è possibile co
 
 ## Vedi anche:
 
-- [La guida ufficiale delle espressioni regolari in Fish Shell](https://fishshell.com/docs/current/guides.html#regular-expressions)
-- [Introduzione alle espressioni regolari in programmazione](https://www.tutorialspoint.com/regex/)
 - [Utilizzare AWK per operazioni con i dati di testo](https://www.gnu.org/software/gawk/manual/gawk.html#AWK-Introduction)

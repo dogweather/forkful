@@ -39,6 +39,5 @@ if now.compare(laterDate) == ComparisonResult.orderedAscending {
 
 ## 참고자료:
 
-- [Apple's Documentation on Date comparison](https://developer.apple.com/documentation/foundation/date/2293334-compare)
 - [Swift API Reference](https://swift.org/documentation/)
 - [Swift's Handling of Dates](http://seventhsoulmountain.blogspot.com/2017/09/swift-date-handling.html)

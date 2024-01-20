@@ -45,5 +45,4 @@ L'implémentation de l'écriture vers la sortie standard error peut varier selon
 ## Voir aussi:
 
 - [Documentation de la fonction fprintf() en C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Guide pour la gestion des erreurs en C](https://www.guru99.com/c-error-handling.html)
 - [Plus d'informations sur la redirection de la sortie en C](https://www.tldp.org/LDP/abs/html/io-redirection.html)

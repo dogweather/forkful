@@ -39,4 +39,3 @@ Para mais referências sobre o trabalho com strings no Fish Shell, confira estes
 
 - [Documentação Oficial do Fish Shell String](https://fishshell.com/docs/current/cmds/string.html)
 - [Treinamento de Shell Scripting](https://www.shellscript.sh/)
-- [Tutorial GeeksforGeeks Shell Scripting](https://www.geeksforgeeks.org/shell-scripting-basics/)

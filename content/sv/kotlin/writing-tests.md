@@ -45,6 +45,5 @@ När vi skriver tester är det viktigt att tänka på att det inte bara handlar 
 
 ## Läs mer:
 - [JUnit](https://junit.org/junit5/) - officiell hemsida
-- [TestNG](https://testng.org/doc/) - alternativt testramverk
 - [Selenium](https://www.selenium.dev/documentation/en/) - för test av webbapplikationer
 - [Mockito](https://site.mockito.org/) - för att skapa "mock" objekt i tester

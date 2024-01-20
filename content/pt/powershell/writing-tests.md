@@ -38,5 +38,4 @@ O Pester também oferece recursos de "mocking", que permitem simular os resultad
 ## Veja também:
 
 - [Documentação do Pester](https://pester.dev/)
-- [Artigo sobre testes em PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-unit-testing/?_ga=2.91197619.1608793478.1598850420-943589564.1592880562)
 - [Vídeo sobre a importância de testes em PowerShell](https://www.youtube.com/watch?v=HXbZPHXgfYM)

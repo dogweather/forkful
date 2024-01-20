@@ -49,6 +49,5 @@ rm $tempfile
 
 - [mktemp man page](https://man7.org/linux/man-pages/man1/mktemp.1.html): `mktemp` 명령에 대한 자세한 정보를 얻을 수 있는 공식 사용자 메뉴얼.
 
-- [Working with temporary files safely](https://www.2daygeek.com/create-handle-temporary-files-directories-linux-shell-scripting/): 임시 파일을 안전하게 처리하는 방법에 대한 훌륭한 가이드.
 
 - [Discussion on Stack Overflow](https://stackoverflow.com/questions/4632028/how-to-create-a-temporary-directory): 임시 디렉터리를 만드는 법에 대한 토론.

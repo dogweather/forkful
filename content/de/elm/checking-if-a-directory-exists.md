@@ -51,4 +51,3 @@ Für mehr zu diesem Thema, siehe folgende Links:
 
 - [Elm Ports Dokumentation](https://guide.elm-lang.org/interop/ports.html)
 - [NodeJS Dateisystem API](https://nodejs.org/api/fs.html)
-- [Erläuterung der Trennung von Elm und JavaScript](https://elm.christmas/2019/16)

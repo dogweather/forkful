@@ -55,5 +55,3 @@ En termes d'implémentation, YAML peut être utilisé dans une variété de lang
 
 - [Site officiel de YAML](https://yaml.org/)
 - [Documentation de l'extension YAML pour PHP](https://symfony.com/doc/current/components/yaml.html)
-- [Comparaison de YAML avec JSON et XML](https://yaml.org/start.html#WhyUse?)
-- [Exemples de YAML dans le monde réel](https://yaml.org/use.html)

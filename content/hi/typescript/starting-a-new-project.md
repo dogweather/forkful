@@ -40,5 +40,3 @@ console.log(message);
 ## देखने के लिए भी:
 
 - [TypeScript आधिकारिक डॉक्युमेंटेशन](https://www.typescriptlang.org/docs/)
-- [TypeScript प्रोग्रामिंग: मिसाल द्वारा सीखें](https://www.learnbyexample.org/typescript/)
-- [TypeScript: मूलभूत से उन्नत](https://www.udemy.com/course/understanding-typescript/)

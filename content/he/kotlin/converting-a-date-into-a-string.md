@@ -39,4 +39,3 @@ fun main() {
 ## ראה גם:
 * [תיעוד של SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
 * [הסבר על פורמט תאריך בקוטלין באתר StackOverflow](https://stackoverflow.com/questions/43339298/how-to-format-date-and-time-in-kotlin)
-* [מדריך של מרק צ'יצ'יליה על קוטלין](https://t.me/Kotlin_in_Hebrew)

@@ -43,4 +43,3 @@ Au niveau de l'implémentation, Get-Random utilise un générateur de nombres al
 Pour plus d'informations sur la génération de nombres aléatoires en PowerShell :
 
 - Documentation officielle de `Get-Random` sur le site de Microsoft : [LIEN](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/get-random)
-- Un article de blog détaillé sur la génération de nombres aléatoires en PowerShell : [LIEN](https://www.howtogeek.com/183351/how-to-generate-a-random-number-in-windows-powershell/)

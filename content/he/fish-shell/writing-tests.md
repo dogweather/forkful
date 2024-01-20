@@ -39,6 +39,3 @@ end
 
 ## ראו גם
 בלינקים שלמטה תמצאו מידע נוסף על כתיבת בדיקות ושימוש בפלטפורמת Fish Shell:
-- [מדריך בסיסי לכתיבת בדיקות בשפת Fish Shell](https://fishshell.org/docs/current/Tutorial.html#tut_tests)
-- [מאמר על היתרונות של כתיבת בדיקות ושימוש בפיתוח תוכנה](https://martinfowler.com/articles/testing-cultures.html)
-- [אתר הרשמי של Fish Shell](https://fishshell.org/)

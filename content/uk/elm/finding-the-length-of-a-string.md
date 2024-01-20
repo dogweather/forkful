@@ -41,4 +41,3 @@ main =
 Перегляньте ці корисні ресурси для глибшого розуміння:
 
 - Офіційна документація Elm про `String.length`: [https://package.elm-lang.org/packages/elm/core/latest/String#length](https://package.elm-lang.org/packages/elm/core/latest/String#length)
-- База знань Elm про рядки: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)

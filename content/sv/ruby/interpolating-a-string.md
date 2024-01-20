@@ -42,5 +42,4 @@ puts "Hej, " + förnamn + " " + efternamn + "!"
 
 ## Se Även
 
-- [String Interpolation in Ruby](https://www.rubyguides.com/2018/11/ruby-string-interpolation/) 
 - [How does string interpolation work in Ruby?](https://stackoverflow.com/questions/10076579/how-does-string-interpolation-work-in-ruby)

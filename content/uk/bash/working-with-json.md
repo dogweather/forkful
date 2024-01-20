@@ -55,4 +55,3 @@ JSON (або JavaScript Object Notation) був створений у 2001 ро�
 - [Офіційна документація jq](https://stedolan.github.io/jq/)
 - [jq на командній стрічці](https://stedolan.github.io/jq/manual/)
 - [Спільнота користувачів jq](https://stackoverflow.com/questions/tagged/jq)
-- [Ресурси для роботи з JSON у Bash](https://linuxconfig.org/json-manipulation-on-the-command-line-with-jq)

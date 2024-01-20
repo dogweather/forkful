@@ -57,5 +57,3 @@ Past Date:    2020-06-28
 
 - [Go 문서](https://golang.org/pkg/time/)
 - [`time` 패키지에 대한 Go 블로그](https://blog.golang.org/toward-go2)
-- [Go에서 날짜 및 시간 다루기](https://yourbasic.org/golang/time-duration-date-format/)
-- [Go로 작업하는 동안 시간/날짜 다루기](http://go-database-sql.org/date-time.html)

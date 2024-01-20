@@ -56,6 +56,4 @@ Utmärkande för `str/lower-case` funktionen är att den returnerar en ny strän
 
 Om du vill ha ytterligare referenser och resurser om detta ämne, kolla in följande länkar:
 
-* Officiell Clojure dokmentation: [https://clojure.org/reference/strings](https://clojure.org/reference/strings)
-* Clojure `.toLowerCase` metoden på ClojureDocs: [https://clojuredocs.org/clojure.core/lower-case](https://clojuredocs.org/clojure.core/lower-case)
 * Javas `toLowerCase` metod i Oracle Docs: [https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)

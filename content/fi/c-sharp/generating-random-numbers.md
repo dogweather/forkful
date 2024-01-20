@@ -42,5 +42,4 @@ Kun suoritat tämän koodin, saat tulostuksena satunnaisen numeron väliltä 0-1
 
 ## Katso myös:
 - [Microsoftin virallinen dokumentaatio `Random`-luokasta](https://docs.microsoft.com/fi-fi/dotnet/api/system.random?view=net-5.0)
-- [Ohjelmoijan pikaopas generaattoreiden käyttöön](https://blog.submain.com/guide-random-number-generators-csharp/)
 - [Microsoftin artikkeli satunnaislukujen tuottamisesta krypto- vahvistetulla tavalla](https://docs.microsoft.com/fi-fi/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)

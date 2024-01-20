@@ -51,5 +51,3 @@ Historisk sett, siden Arduinos ikke har en innebygd klokke, har de alltid vært 
 ## Se Også
 
 For å lære mer om dette, kan du lese disse:
-* [DS3231 RTC modul (Arduino Offisiell Side)](https://store.arduino.cc/usa/arduino-rtc-ds1307)
-* [RTC moduler og Arduino (Artikkel)](http://www.hobbytronics.co.uk/arduino-tutorial9-real-time-clock)

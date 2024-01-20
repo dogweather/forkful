@@ -56,4 +56,3 @@ As for implementation details, it's noteworthy that `chrono` deals with date-tim
 
 - [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/index.html)
 - [Rust Time Library](https://docs.rs/time/0.3.4/time/index.html)
-- [Rust by Example: DateTime](https://doc.rust-lang.org/stable/rust-by-example/std_misc/chrono.html)

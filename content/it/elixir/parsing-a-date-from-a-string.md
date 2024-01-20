@@ -40,6 +40,4 @@ Per quanto riguarda i dettagli dell'implementazione, la funzione `Date.from_iso8
 ## Vedere Anche:
 
 - Documentazione di Elixir sul modulo [`Date`](https://hexdocs.pm/elixir/Date.html)
-- Conoscere meglio la libreria [`Timex`](https://hexdocs.pm/timex/readme.html)
 - Specifiche della ISO sul formato [`ISO 8601`](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Elixir School](https://elixirschool.com/en/lessons/basics/date_and_time/) per lezioni pratiche riguardanti la manipolazione di date e tempo in Elixir.

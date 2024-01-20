@@ -45,5 +45,4 @@ Recuerda que las cadenas en Go son inmutables: cuando extraes una subcadena, bá
 Para más detalles y ejemplos avanzados, puede consultar las siguientes fuentes:
 
 - Documentación oficial de Go: [Paquete Strings](https://pkg.go.dev/strings)
-- Muy completo tutorial sobre manipulación de cadenas en Go en [dotnettutorials.net](https://www.dotnettutorials.net/lesson/string-manipulation-go/)
 - Específico para subcadenas, chequea [Go by Example: String functions](https://gobyexample.com/string-functions).

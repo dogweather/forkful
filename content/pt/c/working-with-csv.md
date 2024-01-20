@@ -49,5 +49,3 @@ CSVs surgiram na década de 1970 como uma forma de compartilhar dados entre dife
 
 ## Veja também:
 - [Aprenda a trabalhar com CSV em C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Outros formatos de dados tabulares](https://www.businessnewsdaily.com/10953-choosing-right-file-format.html)
-- [História do CSV](https://blog.benestudio.co/csv-file-format-what-is-it-why-is-it-so-popular-a86501a98903)

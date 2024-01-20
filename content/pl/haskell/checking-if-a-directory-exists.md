@@ -33,5 +33,4 @@ Konkretnie, `doesDirectoryExist` zaczyna od sprawdzenia, czy ścieżka istnieje 
 ## Zobacz też
 
 * Ogólne informacje o System.Directory można znaleźć [tutaj](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
-* Historyczne źródło informacji o Haskell 98 można znaleźć [tutaj](https://www.haskell.org/onlinereport/haskell98/).
 * Niezmiernie przydatne wprowadzenie do programowania w Haskellu znajdziesz [tutaj](http://learnyouahaskell.com/).

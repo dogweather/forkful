@@ -44,6 +44,5 @@ I love Phoenix programming
 
 - Elixir官方文档: [String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
 
-- 更深入的Elixir字符操作教程: [Working with strings in Elixir](https://www.ampproject.org/docs/tutorials/working-with-strings-in-elixir)
 
 在编程中，懂得使用搜索和替换文本的技巧可以为你节省大量时间，提高工作效率。投入时间熟练掌握搜索和替换的方法是值得的。

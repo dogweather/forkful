@@ -52,6 +52,5 @@ La comparazione delle date in Arduino è basata sulle epoch Unix, contando i sec
 
 Per più informazioni su come comparare le date in Arduino, puoi consultare i seguenti link:
 
-- Documentazione ufficiale di [Arduino Time Library](https://www.arduino.cc/en/Reference.Time)
 - Un articolo utile su come utilizzare la libreria [Time](https://www.makerguides.com/time-arduino-library/) con Arduino.
 - Un esempio pratico di come comparare le date in un tutorial di [Arduino Project Hub](https://create.arduino.cc/projecthub/SurtrTech/ds1307-real-time-clock-brick-rtc-7b4189).

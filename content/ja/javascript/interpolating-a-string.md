@@ -47,4 +47,3 @@ console.log(message);
 
 ## 関連資料(See Also)
 - [MDN Web Docs: Template Literals](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
-- [JavaScript.info: Template Literals](https://ja.javascript.info/template-literals)

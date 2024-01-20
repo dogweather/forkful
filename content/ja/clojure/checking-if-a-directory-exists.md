@@ -46,4 +46,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 - ClojureのJava interopについて: [https://clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)
 - Javaの `File` クラスについて: [https://docs.oracle.com/javase/7/docs/api/java/io/File.html](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- ファイルとディレクトリの操作についてのClojureのガイド: [https://clojure.org/guides/io](https://clojure.org/guides/io)

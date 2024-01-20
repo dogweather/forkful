@@ -27,5 +27,4 @@ JSON har funnits sedan 2001 och används ofta för att representera data på web
 Fish Shell implementerar stöd för JSON genom att använda en extern kommandoradverktyg `jq` som måste installeras separat. För att installera `jq` inom Fish Shell, kan du köra kommandot `fisher install ilancosman/tide`.
 
 ## Se även
-- [Fish Shell dokumentation om JSON](https://fishshell.com/docs/current/cmds/jq.html)
 - [Officiell `jq` dokumentation](https://stedolan.github.io/jq/)

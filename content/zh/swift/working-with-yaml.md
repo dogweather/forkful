@@ -60,5 +60,4 @@ YAML的设计目标是易于阅读和编写，并且可以与多种编程语言�
 ## 相关资源
 
 - [YamlSwift](https://github.com/behrang/YamlSwift)
-- [YamlKit](https://github.com/kylef/YamlKit)
 - [YAML官方网站](https://yaml.org/)

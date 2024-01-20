@@ -43,7 +43,6 @@ Os detalhes de implementação específicos para análise de HTML no Gleam envol
 
 # Veja Também
 
-- Documentação oficial do Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
 - Bibliotecas relevantes de Gleam: [https://hex.pm/packages?search=gleam](https://hex.pm/packages?search=gleam) 
 - Tutorial de Beautiful Soup para parsing de HTML em Python: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - Tutorial de Cheerio para parsing de HTML em Node.js: [https://cheerio.js.org/](https://cheerio.js.org/)

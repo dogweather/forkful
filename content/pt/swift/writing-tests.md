@@ -50,6 +50,5 @@ A implementação de testes em Swift é suportada pela ferramenta de linha de co
 
 ## Veja também:
 
-- [Documentação oficial do Swift sobre testes](https://swift.org/testing/)
 - [Tutorial sobre testes em Swift](https://www.raywenderlich.com/71-ios-unit-testing-and-ui-testing-tutorial)
 - [Vídeo explicando a importância dos testes em programação](https://www.youtube.com/watch?v=Eu35xM76kKY)

@@ -39,5 +39,4 @@ Uma alternativa para escrever um arquivo de texto em Haskell é utilizando a fun
 # Veja Também:
 
 - [Funções de escrita de arquivos em Haskell](https://hackage.haskell.org/package/base/docs/System-IO.html#v:writeFile)
-- [Tutorial sobre manuseio de arquivos em Haskell](https://haskell.fpcomplete.com/io)
 - [Documentação oficial do Haskell](https://www.haskell.org/documentation/)

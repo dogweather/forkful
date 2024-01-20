@@ -46,6 +46,4 @@ Konseptet med å skrive tekstfiler har eksistert siden de tidligste dager av pro
 Implementasjonen av å skrive en tekstfil kan variere avhengig av programmeringsspråket du bruker. I C# brukes StreamWriter-klassen, men andre språk kan ha forskjellige metoder og klasser for å utføre samme oppgave.
 
 ## Se også:
-- [Writing Text Files using C#](https://www.c-sharpcorner.com/article/writing-text-files-using-C-Sharp/)
-- [File Handling in C#](https://www.tutorialspoint.com/csharp/csharp_file_handling.htm)
 - [The Evolution of File Processing in Programming](https://hackernoon.com/the-evolution-of-file-processing-in-programming-2051319e8c23)

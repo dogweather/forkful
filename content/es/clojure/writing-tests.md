@@ -54,5 +54,4 @@ La implementación de pruebas en Clojure se realiza utilizando la biblioteca `cl
 ## Ver también
 
 - [Documentación de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Desarrollo Guiado por Pruebas (TDD)](https://vimeo.com/41355848)
 - [Desarrollo impulsado por Pruebas (BDD)](https://vimeo.com/105770914)

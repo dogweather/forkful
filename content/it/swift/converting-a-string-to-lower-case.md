@@ -37,4 +37,3 @@ Questo codice converte il testo "Ciao Mondo" in "ciao mondo", quindi lo stampa.
 ## Vedi Anche:
 
 - Documentazione di Swift: [String](https://developer.apple.com/documentation/swift/string)
-- Swift Standard Library: [lowercased()](https://developer.apple.com/documentation/swift/string/2997127-lowercased)

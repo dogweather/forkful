@@ -44,4 +44,3 @@ Zusätzlich zur Verwendung von `fprintf` gibt es auch die Möglichkeit, den Prä
 
 - [Offizielle C-Dokumentation zu `fprintf`](https://www.cplusplus.com/reference/cstdio/fprintf/)
 - [Eine Einführung in die Standard Streams in C](https://www.codingame.com/playgrounds/14213/understanding-c-inputs-and-outputs)
-- [Detaillierter Artikel über stderr und stdout in C](https://www.geeksforgeeks.org/understanding-stderr-stdout-linux/)

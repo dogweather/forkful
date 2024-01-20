@@ -46,4 +46,3 @@ YAML最早是由Clark Evans和Ingy döt Net在2001年创建，是一种被设计
 ## 查看更多：
 - [YAML官方网站](https://yaml.org)
 - [YAML解析器](https://yaml.org)
-- [使用YAML进行数据解析的示例代码](https://github.com/anunesse/yaml-parser)

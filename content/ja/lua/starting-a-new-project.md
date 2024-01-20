@@ -43,5 +43,4 @@ Hello, World!
 
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
 - [Programming in Lua](https://www.lua.org/pil/)
-- [Using Lua with C++](https://eliasdaler.github.io/using-lua-and-cpp-in-practice/)
 - [Creating a project from scratch](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-projects-solutions?view=vs-2019)

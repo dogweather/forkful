@@ -53,4 +53,3 @@ Die Implementierung von YAML in Rust erfolgt durch die library serde_yaml, die v
 ## Siehe auch
 - [YAML dokumentation](https://yaml.org/)
 - [Serde library](https://github.com/serde-rs/serde)
-- [YAML und Rust](https://serde.rs/deserialize.html)

@@ -48,5 +48,4 @@ In Bash, le espressioni regolari sono interpretate dall'argomento del comando o 
 Per saperne di più sulle espressioni regolari e su come utilizzarle in Bash, guarda questi collegamenti:
 
 - [Guida ufficiale GNU a Grep](https://www.gnu.org/software/grep/manual/grep.html)
-- [Espressioni Regolari di Bash nel manuale GNU](https://www.gnu.org/software/bash/manual/html_node/Regular-Expressions.html)
 - [Tutorial sulle Espressioni Regolari di Ryan's Tutorials](https://ryanstutorials.net/regular-expressions-tutorial/)

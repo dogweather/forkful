@@ -48,7 +48,5 @@ gleam.toml            # Gleam configuration file
 
 ## See Also
 
-- [Gleam's Official Tutorial](https://gleam.run/tour/)
-- [Project Setup in Gleam](https://gleam.run/guides/creating-our-first-project/)
 - [Rebar3 Docs](https://www.rebar3.org/docs/getting-started)
 - [Erlang Language Basics](http://erlang.org/doc/getting_started/users_guide.html)

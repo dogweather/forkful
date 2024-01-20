@@ -38,5 +38,3 @@ The implementation details of writing to standard error may differ depending on 
 
 ## See Also:
 - [C Programming - Error Handling](https://www.geeksforgeeks.org/error-handling-c-programs/)
-- [The `stdio.h` C Header File](https://www.geeksforgeeks.org/stdio-h-c-header-file/)
-- [Logging in C Programs](https://www.geeksforgeeks.org/logging-in-c-programs/)

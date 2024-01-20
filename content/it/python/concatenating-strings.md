@@ -57,4 +57,3 @@ print(stringa_unificata)  # Output: Ciao Mondo
 Per una panoramica più dettagliata sulla concatenazione di stringhe, considera i seguenti link:
 - Documentazione ufficiale di Python su [Stringhe](https://docs.python.org/3/tutorial/introduction.html#strings)
 - Post del blog Real Python su [String Formatting in Python](https://realpython.com/python-string-formatting/)
-- Post del blog Stack Abuse su [Python String Concatenation](https://stackabuse.com/python-string-concatenation/)

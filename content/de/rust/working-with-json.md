@@ -50,5 +50,4 @@ Die Verwendung von Bibliotheken wie serde_json oder json-rust erleichtert das Ar
 
 ## Siehe auch
 - [serde_json Dokumentation](https://docs.rs/serde_json/1.0.64/serde_json/)
-- [json-rust Dokumentation](https://docs.rs/json-rust/0.11.16/json_rust/)
 - [JSON-Tutorial für Anfänger](https://www.w3schools.com/js/js_json_intro.asp)

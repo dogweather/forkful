@@ -50,4 +50,3 @@ CSV는 1970년대에 탄생한 데이터 형식으로, 기존의 테이블 형�
 
 ## 관련 자료:
 - [Lua에서 CSV 처리하기](https://web.archive.org/web/20210119165520/https://jrgraphix.net/r/Unicode/0020-007F)
-- [CSV 형식 소개](https://web.archive.org/web/20210119165625/https://www.passeidireto.com/arquivo/3810495/java-io-streams)

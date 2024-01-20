@@ -47,4 +47,3 @@ Djupare in i kodningen, `substr()` funktionen skapar och returnerar en ny strän
 För att ytterligare förstå konceptet extrahera substrängar rekommenderas följande källor:
 - CPlusPlus.com: [std::string::substr](http://www.cplusplus.com/reference/string/string/substr/)
 - Stack Overflow: [Understanding the use of 'std::string::substr'](https://stackoverflow.com/questions/4643512/when-we-use-substr-in-c)
-- GeeksforGeeks: [std::string substr() in C++ library](https://www.geeksforgeeks.org/stdstringsubstr-in-cpp-library/)

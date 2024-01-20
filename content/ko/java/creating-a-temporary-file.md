@@ -45,5 +45,4 @@ Temporary file created: /tmp/my-temp-file8341982734712839.txt
 
 ## 참고자료
 * 자바 `Files` 클래스: [Oracle 공식 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html)
-* 임시 파일 관리: [Baeldung's Guide](https://www.baeldung.com/java-create-temporary-directory-file)
 * Java I/O와 NIO 관련: [Jenkov's Tutorial](http://tutorials.jenkov.com/java-io/index.html)

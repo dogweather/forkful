@@ -38,5 +38,4 @@ end
 ## ראה גם
 
 - [דוקומנטציה](http://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
-- [מאמר חמוד בנושא](https://www.honeybadger.io/blog/debugging-ruby-with-puts-print-pp-and-awesome-print/)
 - [בלוג מעניין עם טריקים לניפוי שגיאות](https://betterprogramming.pub/5-ways-you-can-debug-your-app-in-ruby-2df8ca72a394)

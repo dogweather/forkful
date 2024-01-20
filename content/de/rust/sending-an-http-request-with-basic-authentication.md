@@ -50,4 +50,3 @@ In Rust wird die Basic Authentication normalerweise über die HeaderProperties i
 
 - [reqwest Dokumentation](https://docs.rs/reqwest)
 - [Basic Authentication auf MDN](https://developer.mozilla.org/de/docs/Web/HTTP/Headers/Authorization)
-- [Alternativen zur Basic Authentication](https://www.loginradius.com/engineering/blog/the-seven-types-of-authentication/)

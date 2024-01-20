@@ -60,4 +60,3 @@ CSV 파일은 1970년대 부터 사용되어온 데이터 저장 및 처리 방�
 
 ## 참고 자료:
 - [C++ Boost 라이브러리](https://www.boost.org/)
-- [CsvParser 라이브러리](https://github.com/evandrix/CsvParser)

@@ -48,5 +48,4 @@ Dettagli di implementazione:
 I test in Kotlin possono essere scritti utilizzando la sintassi `assert` o il framework di test prescelto. È importante assicurarsi che i test siano completi e coprano tutti i casi possibili.
 
 ## Vedi anche:
-- [La guida ufficiale su come scrivere test in Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/creating-java-library.html)
 - [KotlinTest framework](https://github.com/kotlintest/kotlintest)

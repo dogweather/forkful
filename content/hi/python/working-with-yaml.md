@@ -48,6 +48,5 @@ age: 25
 
 अगर आप और अधिक जानना चाहते हैं तो निम्न स्रोतों को देख सकते हैं:
 
-- [यामल की विकिपीडिया परिभाषा](https://hi.wikipedia.org/wiki/%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%B2_(%E0%A4%B2%E0%A5%87%E0%A4%96_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE))
 - [PyYAML डॉक्यूमेंटेशन](https://pyyaml.org/wiki/PyYAMLDocumentation)
 - [यामल पाइथन लाइब्रेरी की आधिकारिक वेबसाइट](https://yaml.org/)

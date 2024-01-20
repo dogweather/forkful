@@ -37,6 +37,4 @@ Bei der Implementierung von `lowercase()` unter der Haube verwendet Kotlin inter
 
 Für detailliertere Informationen über die String-Konvertierung in Kotlin, hier sind ein paar Links zu relevanten Dokumenten und Tutorials:
 
-- [Kotlin String Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/lowercase.html)
 - [String in Kotlin: Grundlegende Operationen](https://www.programiz.com/kotlin-programming/string)
-- [Kotlin Praxistutorial: Arbeiten mit Zeichenketten](https://www.tutorialkart.com/kotlin/kotlin-string-class-and-methods/)

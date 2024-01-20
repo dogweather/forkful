@@ -42,6 +42,5 @@ CSV був створений у 1972 році і був широко попул
 При роботі з CSV важливо враховувати, що дані можуть містити коми та інші спеціальні символи, тому їх потрібно правильно обробляти при читанні та записі.
 
 ## Дивись також:
-- [Офіційна документація Swift для роботи з CSV](https://developer.apple.com/documentation/foundation/archives_and_serialization/reading_and_writing_csv_data)
 - [Стаття про CSV на Вікіпедії](https://uk.wikipedia.org/wiki/CSV)
 - [Бібліотека для легкого роботи з CSV у Swift](https://github.com/yaslab/CSV.swift)

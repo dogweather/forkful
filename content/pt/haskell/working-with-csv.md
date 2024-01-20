@@ -65,6 +65,3 @@ Além disso, a biblioteca é bem documentada e possui código fonte aberto, o qu
 
 
 ##Veja Também:
-- [Documentação oficial do "haskell-csv"](https://hackage.haskell.org/package/haskell-csv)
-- [Pacote "haskell-csv" no Hackage](https://hackage.haskell.org/package/haskell-csv)
-- [Exemplo de uso da biblioteca "haskell-csv"](https://wiki.haskell.org/How_to_read_a_csv_file)

@@ -32,5 +32,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 另请参阅：
 
-- Clojure官方文档中的 [正则表达式](https://clojure.org/guides/learn/regex) 部分，包含许多有用的示例和解释。
 - Java的 [`Pattern`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html) 类文档，可以详细了解其正则表达式语法和特性。

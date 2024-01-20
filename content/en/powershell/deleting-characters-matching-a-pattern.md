@@ -51,5 +51,4 @@ Understanding PowerShell's implementation of regex includes knowing about its au
 ## See Also
 
 For a deep dive into PowerShell's regex capabilities, check out these resources:
-- [Microsoft's Regex Overview in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
 - [A Practical Guide to PowerShell Regex](https://adamtheautomator.com/powershell-regex)

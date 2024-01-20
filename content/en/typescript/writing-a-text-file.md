@@ -35,4 +35,3 @@ In terms of implementation, the `writeFile` function in the `fs` module uses a c
 
 ## See Also:
 - [Node.js: File System module](https://nodejs.org/api/fs.html)
-- [Managing file operations in TypeScript](https://docs.microsoft.com/en-us/archive/msdn-magazine/2014/july/typescript-managing-file-operations)

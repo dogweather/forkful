@@ -38,5 +38,4 @@ fmt.Println(phoneRegExp.MatchString("abc123")) // 輸出：false
 
 # 相關資源：
 - [Go 語言官方網站](https://golang.org/)
-- [Go 語言中文網站](https://golangtc.com/)
 - [Awesome Go：收藏了許多 Go 語言相關的資源](https://github.com/avelino/awesome-go)

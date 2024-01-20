@@ -65,6 +65,5 @@ En ce qui concerne les détails de mise en œuvre, cet exemple est basé sur l'u
 ## Voir aussi
 
 Pour de plus amples informations, suivez ces liens:
-- [HTTP Client Library](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
 - [ESP8266WiFi library](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
 - [Arduino - Client](https://www.arduino.cc/en/Reference/ClientConstructor)

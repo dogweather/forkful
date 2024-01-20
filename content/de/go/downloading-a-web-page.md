@@ -67,5 +67,4 @@ In Bezug auf die Implementierungsdetails hängt die genaue Methode des Webseiten
 ## Siehe auch:
 
 - Go-Dokumentation zum `net/http` Paket: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/)
-- Tutorial zum Download von Dateien in Go: [https://golangcode.com/download-a-file-from-a-url/](https://golangcode.com/download-a-file-from-a-url/)
 - Ausführlichere Diskussion über HTTP-Clients in Go: [https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779](https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779)

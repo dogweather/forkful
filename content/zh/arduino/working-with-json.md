@@ -41,5 +41,4 @@ JSON最初由Douglas Crockford在2001年提出，它现在已成为前端开发�
 
 ## 相关资源：
 
-- [Arduino官方文档：JSON库](https://www.arduino.cc/reference/en/libraries/json/)
 - [ArduinoJson库官方文档](https://arduinojson.org/)

@@ -33,5 +33,4 @@ Swift-kieli tarjoaa `count`-ominaisuuden, joka on tehokkaampi ja turvallisempi t
 ## Katso myös:
 
 - Swiftin dokumentaatio String-tyypistä: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
-- `count`-ominaisuuden turvallisuudesta: [https://developer.apple.com/documentation/swift/string/2996991-count](https://developer.apple.com/documentation/swift/string/2996991-count)
 - Hyödyllinen Swift-oppaan kappale merkkijonojen kanssa työskentelystä: [https://swift.org/documentation](https://swift.org/documentation)

@@ -66,4 +66,3 @@ CSV最早于1972年出现，是纺织业用于传输数据的标准格式。它�
 
 - [Go官方文档：package csv](https://golang.org/pkg/encoding/csv/)
 - [gocsv：高性能CSV包](https://github.com/gocarina/gocsv)
-- [gocsv-tag：CSV和结构体互转工具](https://github.com/jinzhu/gocsv/tree/master/tag)

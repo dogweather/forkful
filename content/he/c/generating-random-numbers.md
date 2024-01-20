@@ -38,4 +38,3 @@ int main(){
 לקבלת מידע נוסף והגדרות מורחבות, הקישורים הבאים יכולים להיות שימושיים:
 - [דוקומנטציה של הפונקציה rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
 - [רעיון מאחורי אקראיות במחשב](https://medium.com/dev-genius/there-is-no-such-thing-as-a-random-number-d284759f4dae)
-- [מדריך להפקת מספרים אקראיים ב-C](https://www.geekhideout.com/rand.shtml)

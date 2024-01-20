@@ -49,5 +49,4 @@ io.println(file_contents)
 
 ## 関連リンク
 * [gleam/otp ドキュメンテーション](https://hexdocs.pm/gleam_otp/)
-* [gleam/io ドキュメンテーション](https://hexdocs.pm/gleam_io/)
 * [Erlang/OTPドキュメンテーション](https://erlang.org/doc/apps/stdlib/io_protocol.html)

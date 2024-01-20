@@ -43,4 +43,3 @@ Hello, John
 관련 자료를 참고할 수 있는 링크입니다.
 
 - [PHP fwrite() 함수 문서](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP에서 로그 파일 작성하기](https://www.w3schools.com/php/php_error_log.asp)

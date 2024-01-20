@@ -37,6 +37,3 @@ fn main() {
 CSVが登場したのは1970年代で、表計算ソフトでのデータ取り扱いのために開発されました。その後、インターネットの爆発的な普及に伴い、データのやりとりにおいても重要なフォーマットとなりました。CSV以外にも、ExcelやJSONなどのデータ形式がありますが、CSVはどのアプリケーションでも簡単に扱えるため、非常に人気があります。
 
 ## 参考文献：
-- [GleamのCSVモジュールドキュメント (英語)](https://gleam.run/modules/csv/)
-- [CSVの歴史 (英語)](https://digitalassetmanagementnews.org/developers/a-brief-history-of-csv/)
-- [CSVとは - Wikipedia (日本語)](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E4%BD%8D%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)

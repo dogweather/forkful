@@ -46,6 +46,5 @@ La implementación de JSON en Kotlin se basa en la biblioteca `org.json` del paq
 
 ## Ver también
 
-- [Documentación oficial de Kotlin sobre JSON](https://kotlinlang.org/docs/reference/json.html)
 - [JSON.org](https://www.json.org/json-es.html)
 - [Introducción a JSON en programación (video en español)](https://www.youtube.com/watch?v=Lxmy7Ww3ndo)

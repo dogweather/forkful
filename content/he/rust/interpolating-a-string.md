@@ -50,5 +50,4 @@ fn main() {
 
 ## ראה גם:
 
-- [מדריך Rust על מחרוזות מעוצבות](https://doc.rust-lang.org/book/ch02-02-strings.html#storing-strings)
 - [מסמך האפיון של Rust לחילוף מחרוזת](https://doc.rust-lang.org/std/fmt/)

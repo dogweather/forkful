@@ -53,4 +53,3 @@ Node.jsでは、標準の'fs'モジュールを使用して一時ファイルを
 ## 関連リンク
 - Node.jsの公式ドキュメンテーション（'fs'モジュール）: [こちら](https://nodejs.org/api/fs.html)
 - TypeScriptの公式ドキュメンテーション: [こちら](https://www.typescriptlang.org/docs/)
-- 一時データの格納について深める: [こちら](https://www.databaselabs.io/blog/temporary-data-storage)

@@ -52,7 +52,5 @@ Concernant les détails d'implémentation, clj-http fournit une abstraction haut
 ## Voir aussi
 D'autres ressources pour affiner vos compétences en Clojure:
 
-- [Documentation clj-http](https://clj-http.org)
 - [HTTP Basic Authentication, Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#basic_authentication)
 - Blog de [Martin Klepsch](https://martinklepsch.org) sur Clojure et clj-http
-- [Basic authentication, Wikipedia](https://fr.wikipedia.org/wiki/Authentification_Basic)

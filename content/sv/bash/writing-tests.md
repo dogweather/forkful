@@ -60,5 +60,4 @@ När det gäller implementation finns det många olika strategier och praxis fö
 ### Se även:
 - [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
 - [Bash man page](https://linux.die.net/man/1/bash)
-- [JUnit documentation](https://junit.org/junit5/docs/current/)
 - [pytest documentation](https://docs.pytest.org/en/latest/)

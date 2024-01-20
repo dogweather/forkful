@@ -49,4 +49,3 @@ The implementation details of writing a text file on an Arduino can vary dependi
 ## See Also:
 
 - [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [Writing Files to an SD Card with an Arduino](https://www.instructables.com/Writing-Files-to-an-SD-Card-with-an-Arduino/)

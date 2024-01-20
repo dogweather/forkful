@@ -43,4 +43,3 @@ $ cargo run hello world
 
 - [חבילת structopt](https://docs.rs/structopt/0.3.21/structopt/) ב-crates.io, שמקלה על כתיבת מנגנון קומפלקס יותר לעיבוד ארגומנטים.
 - [דוקומנטציה של std::env::args](https://doc.rust-lang.org/std/env/fn.args.html)
-- [מאמרים בפורום ראסט ובספר חינמי "Rust By Example"](https://rustbyexample.com/std_misc/arg.html) שנותנים מידע נוסף על האופציה הזאת.

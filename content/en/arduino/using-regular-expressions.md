@@ -58,7 +58,6 @@ While using the `Regexp` library, it's worth noting that it's quite memory-hungr
 Nick Gammon's [Regexp](http://www.gammon.com.au/Arduino/Regexp.zip) library
 
 Learning Resources:
-- [Regexr](https://regexr.com/) - Learn, build, & test Regular Expressions
 - [Regular Expression Info](https://www.regular-expressions.info/tutorial.html)
 
 Community:

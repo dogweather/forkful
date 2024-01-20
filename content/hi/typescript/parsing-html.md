@@ -40,7 +40,6 @@ HTML पार्सिंग का पहला उदाहरण 1990 के
 
 ज्यादा जानकारी के लिए, नीचे दिए गए स्रोतों की जांच करें:
 
-- [MDN - HTML Parsing](https://developer.mozilla.org/en-US/docs/Glossary/HTML_parser)
 - [Fast HTML Parser](https://www.npmjs.com/package/fast-html-parser)
 - [Cheerio.js](https://cheerio.js.org/)
 - [htmlparser2](https://www.npmjs.com/package/htmlparser2)

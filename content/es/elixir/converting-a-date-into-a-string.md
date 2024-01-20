@@ -42,5 +42,3 @@ Sobre la implementación, la función `Date.to_string/1` convierte la fecha en s
 Para más información y ejemplos acerca de cómo trabajar con fechas y tiempos en Elixir, visita los siguientes enlaces:
 
 - [Documentación oficial de Elixir - Date](https://hexdocs.pm/elixir/Date.html)
-- [Elixir School - Fechas y Tiempos](https://elixirschool.com/es/lessons/basics/date-and-time/)
-- [PragTob - El mundo de las fechas, los tiempos y las zonas horarias](https://pragtob.wordpress.com/2019/08/29/the-world-of-dates-times-and-timezones/)

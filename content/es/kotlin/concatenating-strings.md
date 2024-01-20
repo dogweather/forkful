@@ -58,4 +58,3 @@ println(saludo)
 ## Ver También:
 
 - Kotlin Docs sobre cadenas: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- Implementando interpolación de cadenas en Kotlin: [https://kotlinlang.org/docs/languages.html#string-templates](https://kotlinlang.org/docs/languages.html#string-templates)

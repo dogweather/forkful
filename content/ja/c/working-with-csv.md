@@ -58,4 +58,3 @@ CSVファイルを作成するときに注意することは、データのフ�
 ## 関連情報：
 - [RFC 4180 (CSVフォーマットの標準仕様)](https://www.ietf.org/rfc/rfc4180.txt)
 - [CSVファイルを扱うライブラリ (libcsv)](http://libcsv.sourceforge.net/)
-- [情報スパイシリーズ：はじめてのCSV](https://www.infoq.com/jp/news/2011/07/csv/)

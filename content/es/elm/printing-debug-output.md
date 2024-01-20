@@ -38,7 +38,3 @@ En este código, `label` es una etiqueta descriptiva para la salida y `value` es
 3. **Detalles de Implementación**: La función `Debug.log` imprime la salida en la consola del navegador. Sin embargo, usar `Debug.log` en exceso puede ralentizar la aplicación, debido a que la transformación de datos y la escritura en consola son operaciones costosas.
 
 ## Ver También:
-
-- Documentación oficial de Elm sobre depuración: [Debug - Elm guide](https://guide.elm-lang.org/versions/0.19.1/effects/debugging.html)
-- Artículo en Elm Discourse sobre cómo usar `Debug.log`: [How to Use Debug.log - Elm Discourse](https://discourse.elm-lang.org/t/how-to-use-debug-log/538)
-- Buenas prácticas de depuración en Elm: [Elm Debugging Techniques](http://debug.elm-lang.org/)

@@ -55,5 +55,4 @@ La funzione `capitalize` che abbiamo scritto sopra prende il primo carattere del
 ## Per Ulteriori Informazioni
 
 - Elm: [Documentazione ufficiale](https://elm-lang.org/docs)
-- Stringhe in Elm: [Elm String - A Guide to Using Strings in Elm](https://www.kindsonthegenius.com/blog/elm-string-a-guide-to-using-strings-in-elm/)
 - `Char.toUpper`: [Elm - Funzione Char.toUpper](https://package.elm-lang.org/packages/elm/core/latest/Char)

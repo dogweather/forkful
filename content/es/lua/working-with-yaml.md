@@ -66,4 +66,3 @@ Para trabajar con YAML en Lua, se utiliza la librería [lua-yaml](https://github
 ### Ver también:
 
 - [Sitio oficial de YAML](https://yaml.org/)
-- [Documentación de lua-yaml](https://github.com/gvvaughan/lua-yaml)

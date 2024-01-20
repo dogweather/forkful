@@ -50,5 +50,3 @@ CSV形式は、1970年代から使用されている古くからあるファイ�
 ## 関連リンク：
 
 - [encoding/csvパッケージドキュメント](https://golang.org/pkg/encoding/csv/)
-- [CSV vs TSV: Which is better?](https://www.ablebits.com/office-addins-blog/2015/03/04/csv-vs-tsv/)
-- [CSVの歴史](https://www.openbookproject.net/tutorials/getdown/html/HistoryASCII.html#SectionHistoryCSV)

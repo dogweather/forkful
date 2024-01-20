@@ -40,5 +40,4 @@ Esistono anche alternative per scrivere file di testo, come ad esempio il format
 ## Vedi anche:
 
 - [Documentazione del modulo fs di Node.js](https://nodejs.org/api/fs.html)
-- [Tutorial su come scrivere e leggere file con Javascript](https://www.digitalocean.com/community/tutorials/reading-and-writing-files-with-node-js)
 - [Introduzione all'utilizzo di file in Javascript](https://javascript.info/file)

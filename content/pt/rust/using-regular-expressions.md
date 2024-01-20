@@ -36,5 +36,3 @@ A implementação de expressões regulares em Rust é fornecida pela biblioteca 
 ## Veja também:
 
 - [Documentação da biblioteca `regex` para Rust](https://docs.rs/regex/1.3.9/regex/)
-- [Tutorial de expressões regulares em Rust](https://blog.burntsushi.net/ripgrep/regex/)
-- [Repositório no GitHub do Rust com exemplos de uso de regex](https://github.com/rust-lang/regex/tree/master/examples)

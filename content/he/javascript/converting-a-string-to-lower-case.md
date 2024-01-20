@@ -27,4 +27,3 @@ console.log(lowerCaseString);
 ## ראו גם:
 - [מדריך JavaScript מפורט לעבודה עם מחרוזות](https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [המרת מחרוזת לאותיות חסרוניות בשפת Python](https://stackoverflow.com/questions/6797984/how-do-i-lowercase-a-string-in-python)
-- [הבנת ההבדל בין אותיות גדולות לקטנות בשפת C](https://www.geeksforgeeks.org/isupper-islower-lower-toupper-transform-functions-c/)

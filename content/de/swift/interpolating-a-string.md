@@ -55,5 +55,3 @@ Die Implementierungsdetails der Stringinterpolation in Swift sind eigentlich zie
 Für weitere Informationen über Stringinterpolation in Swift, schauen Sie bitte in die offizielle Swift-Dokumentation. Hier ein paar nützliche Links zu verwandten Themen:
 
 - [Apple's Swift Programming Language Guide - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Custom String Interpolation in Swift](https://www.swiftbysundell.com/basics/string-interpolation/)
-- [Advanced String Interpolation in Swift](https://www.swiftbysundell.com/articles/constructing-strings-in-swift/)

@@ -48,5 +48,4 @@ La supresión de caracteres que coinciden con un patrón se implementa en Rust a
 
 Para más información sobre el tema, puedes consultar los siguientes enlaces:
 - [Documentación oficial de Rust sobre la función `replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Tutorial de Rust Strings](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 - [Discusión de la comunidad de Rust sobre el manejo de cadenas](https://users.rust-lang.org/t/how-to-handle-string-in-rust/26396)

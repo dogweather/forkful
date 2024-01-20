@@ -37,4 +37,3 @@ console.log(stringExample.toLowerCase());
 
 - [MDN документація для toLowerCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 - [Документація по TypeScript](https://www.typescriptlang.org/docs/)
-- [Стековерфлоу: відмінності між toLowerCase() та toLocaleLowerCase()](https://stackoverflow.com/questions/51126953/what-is-the-difference-between-tolocalelowercase-vs-tolowercase-in-typescript)

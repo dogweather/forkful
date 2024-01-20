@@ -51,5 +51,3 @@ Sobre detalles de implementación, es importante mencionar que Elm usa la Semán
 Te invito a revisar documentación relacionada para profundizar en el tema:
 
 - La [documentación oficial de Elm sobre Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- Este [artículo en profundidad](https://korban.net/posts/elm/2019-01-02-elm-date-and-time/) sobre fechas y horas en Elm
-- Este [tutorial intermedio](https://www.elm-tutorial.org/en-v01/03-date-and-time/01-intro.html) sobre el manejo de fechas y horas en Elm.

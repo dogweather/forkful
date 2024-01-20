@@ -46,6 +46,5 @@ Die Ausgabe hängt vom Inhalt Ihrer Datei ab. Der Code vor liest alles aus der D
 ## Lesenswert:
 - Offizielle Dokumentation: [Lua 5.4 Referenzhandbuch](https://www.lua.org/manual/5.4/)
 - Andere Methoden zur Dateiverarbeitung in Lua: [Tutorialspoint](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- Englischsprachiger Blogpost zum Lesen und Schreiben von Dateien: [dev.to](https://dev.to/0xbf/reading-and-writing-files-in-lua-4o2n)
 
 In der Programmierung ist das Lesen einer Textdatei eine grundlegende, aber mächtige Fähigkeit. Beeindruckend, wie einfach es in Lua ist!

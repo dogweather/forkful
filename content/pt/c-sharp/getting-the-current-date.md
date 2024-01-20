@@ -44,5 +44,4 @@ E a saída seria algo como:
 O .NET possui muitas classes e métodos para trabalhar com datas e horas. Aqui estão alguns links úteis para obter mais informações:
 
 - [Documentação Oficial da Classe DateTime](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-6.0)
-- [Artigo no C# Corner sobre a Classe DateTime](https://www.c-sharpcorner.com/UploadFile/mahesh/working-with-datetime-in-C-Sharp/)
 - [Artigo no StackOverflow sobre a diferença entre Now e UtcNow](https://stackoverflow.com/questions/6222291/when-would-one-use-datetime-now-over-datetime-utcnow)

@@ -59,4 +59,3 @@ Quando `GetTempFileName()` é chamado, um arquivo de 0 bytes é criado no disco 
 
 - [Documentação Oficial da Microsoft sobre a Classe Path](https://docs.microsoft.com/pt-br/dotnet/api/system.io.path?view=net-5.0)
 - [Conceitos básicos de E/S de arquivo](https://docs.microsoft.com/pt-br/dotnet/standard/io/)
-- [Leitura e gravação para arquivos em C#](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/file-system/how-to-read-from-and-write-to-a-newly-created-data-file)

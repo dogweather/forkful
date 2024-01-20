@@ -41,5 +41,3 @@ Implementing these conversions is routine—just remember, dates are managed as 
 
 ## See Also
 - Oracle Docs: [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Baeldung: Converting between Date, Calendar, and LocalDate](https://www.baeldung.com/java-convert-date-to-localdate-and-back)
-- [Princeton Java: Dates, times and intervals](https://introcs.cs.princeton.edu/java/stdlib/javadoc/edu/princeton/cs/stdlib/Date.html)

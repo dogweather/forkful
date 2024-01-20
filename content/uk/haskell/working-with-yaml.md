@@ -34,4 +34,3 @@ Just (Object (fromList [("name",String "John"),("age",Number 25),("hobbies",Seq 
 Дивись також:
 - [YAML офіційний сайт](https://yaml.org/)
 - [JSON vs YAML: яка різниця?](https://www.educative.io/edpresso/json-vs-yaml-whats-the-difference)
-- [Haskell документація по YAML](https://hackage.haskell.org/package/yaml/docs/Data-YAML.html)

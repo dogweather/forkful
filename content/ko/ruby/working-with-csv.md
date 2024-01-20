@@ -41,6 +41,4 @@ Jane is a Designer who is 30 years old.
 CSV는 Comma Separated Values의 약자로써, 과거에는 데이터를 컴퓨터에서 인식하기 쉬운 형식으로 저장하기 위해 개발되었습니다. 현재에는 다양한 데이터 형식이 있지만 여전히 많은 프로그래머들이 CSV를 사용하는 이유 중 하나는 간단하고 읽기 쉬운 구조 때문입니다. 또한, CSV 파일을 가져와서 다른 형식으로 변환하는 도구들도 많이 존재합니다.
 
 ## 관련 자료:
-- [Ruby CSV 문서](https://ruby-doc.org/stdlib/libdoc/csv/rdoc/CSV.html)
 - [CSV vs XML vs JSON](https://stackoverflow.com/questions/911195/csv-vs-xml-vs-json-which-is-the-best-for-mobile-apps)
-- [CSV와 관련된 라이브러리들](https://www.ruby-toolbox.com/categories/government)

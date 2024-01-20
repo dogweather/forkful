@@ -42,4 +42,3 @@ Vid implementering, `ToUpper()`-metoden i PowerShell använder .NET ramverket un
 
 - [Microsoft .NET Documentation - ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
 - [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-- [String Capitalization Methods in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/string-formatting-with-powershell/)

@@ -42,4 +42,3 @@ YAML (YAML Ain't Markup Language) è un formato di serializzazione di dati creat
 
 ## Vedi anche:
 - [Documentazione YAML](https://yaml.org/) per ulteriori informazioni sul formato YAML.
-- [Wiki di Ruby su YAML](https://github.com/ruby/ruby/blob/master/lib/yaml/README) per una documentazione più dettagliata sulla gemma "yaml".

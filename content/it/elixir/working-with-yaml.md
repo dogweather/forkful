@@ -55,5 +55,4 @@ Per quanto riguarda l'implementazione, la libreria YAML Elixir utilizza la libre
 ## Vedi anche:
 
 - [Documentazione sulla libreria YAML Elixir](https://hexdocs.pm/yaml/readme.html)
-- [Libreria YAMLix per Elixir](https://github.com/jc00ke/yamlix)
 - [Sintassi di YAML](https://yaml.org/spec/1.2/spec.html)

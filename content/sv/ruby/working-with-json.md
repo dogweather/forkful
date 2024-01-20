@@ -43,5 +43,3 @@ När det gäller implementation är JSON-integration inbyggd i Ruby, vilket gör
 
 ## Se även:
 - [Ruby JSON-dokumentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
-- [An Introduction to JSON and Ruby](https://www.sitepoint.com/an-introduction-to-json-and-ruby/)
-- [Why JSON has become the lingua franca for data exchange](https://www.infoworld.com/article/3513308/why-json-has-become-the-lingua-franca-for-data-exchange.html)

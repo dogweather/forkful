@@ -42,4 +42,3 @@ int main() {
 ## 参考情報
 - The C Programming Language 2nd Edition（Brian W. KernighanとDennis M. Ritchieの著書）: `fopen`や`fgets`に関する詳細情報を得ることができます。
 - [C Tutorial – File I/O](https://www.cprogramming.com/tutorial/cfileio.html): より幅広いファイル操作技術を説明しています。
-- [C File handling](https://www.geeksforgeeks.org/c-file-handling/): さらなる資料としてこのリンクも参考にしてみてください。

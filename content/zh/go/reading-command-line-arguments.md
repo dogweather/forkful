@@ -51,7 +51,6 @@ func main() {
 如果你想了解更多关于命令行参数的信息，这里有几个不错的地方：
 
 * [Go官方文档](https://pkg.go.dev/os) ： 帮助你更深入地理解`os.Args`。
-* [Unix Programming Environment](https://www.amazon.com/UNIX-Programming-Environment-Prentice-Hall-Software/dp/013937681X)：一本经典的书，可以帮助你理解Unix环境下程序的行为和原理。
 * [Go flag包](https://pkg.go.dev/flag)：一个用于处理命令行选项的强大工具。
 
 祝你学习愉快！

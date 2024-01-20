@@ -51,4 +51,3 @@ Hello, TypeScript!
 
 - TypeScript 공식 문서: [TypeScript Tutorial](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
 - TypeScript 프로젝트 설정: [Get started with TypeScript](https://www.digitalocean.com/community/tutorials/typescript-new-project)
-- TypeScript와 JavaScript의 차이: [What’s the difference?](https://www.freecodecamp.org/news/what-s-the-difference-between-javascript-and-typescript-4b0b38e2ebc0/)

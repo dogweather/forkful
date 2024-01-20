@@ -50,4 +50,3 @@ Being aware of certain details like the first argument always being your program
 
 - Check [Apple’s Swift Documentation](https://developer.apple.com/documentation/swift/commandline) on `CommandLine.arguments` for more.
 - Read about Swift libraries for command-line programs: [Commander](https://github.com/kylef/Commander) and [SwiftArgs](https://github.com/NSomar/SwiftArgs) for more complex needs.
-- Visit [Swift Command-Line Programming](https://www.freecodecamp.org/news/get-started-with-the-basics-of-the-swift-command-line/) for an excellent guide on getting started.

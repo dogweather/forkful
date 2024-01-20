@@ -40,5 +40,4 @@ Para escribir en un archivo, es necesario abrirlo en un modo específico (escrit
 
 ## Ver también:
 - [The Rust Standard Library](https://doc.rust-lang.org/std/fs/) - Documentación oficial sobre el módulo `std::fs`.
-- [Writing and Reading Files in Rust](https://www.educative.io/blog/writing-read-files-rust) - Tutorial sobre cómo escribir y leer archivos en Rust.
 - [Rust Programming Language Book](https://doc.rust-lang.org/book/) - Recurso completo para aprender Rust desde cero.

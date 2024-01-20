@@ -63,6 +63,4 @@ C++ RUBY JAVA PYTHON
 
 Ruby has a lot to offer with text manipulation. Dive deeper with these links:
 - Ruby Documentation [`gsub`](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub): A detailed explanation of the method.
-- RegexOne [`Ruby`](https://regexone.com/references/ruby): Tutorial on handling Regex in Ruby.
 - StackOverflow [`ruby-regex`](https://stackoverflow.com/questions/tagged/ruby+regex): Need help? Use the tag `ruby-regex`.
-- Ruby Tuesday [`Method: String#gsub`](http://www.rubyfleebie.com/method-stringgsub/): Explores implementation details and performance.

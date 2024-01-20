@@ -51,6 +51,5 @@ Kirjoittaessasi testejä Bashilla, on hyvä olla tietoinen siitä, että aiemmat
 ## Katso myös:
 
 - [Bash testikomennot](https://www.tutorialspoint.com/unix_commands/test.htm)
-- [Bash-bugit: tunnistaminen ja korjaus](https://ryanstutorials.net/bash-debugging.php)
 - [Bats-testauskehys Bashille](https://github.com/sstephenson/bats)
 - [shunit2-testauskehys Bashille](https://github.com/kward/shunit2)

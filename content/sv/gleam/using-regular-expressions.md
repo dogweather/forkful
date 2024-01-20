@@ -35,8 +35,5 @@ Implementera regex i Gleam kan vara lite komplicerat eftersom du behöver matcha
 
 ## Se även
 Vill du veta mer? Här är några användbara länkar:
-- Gleam Documentation: [Gleam regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
-- Learn Regex The Hard Way: [Learn Regex](https://learnxinyminutes.com/docs/gleam/)
-- RegExr: [RegEx testing site](https://regexr.com/)
 
 Ovanstående länkar erbjuder djupgående studiematerial och verktyg för att vidareutveckla din förståelse och färdigheter inom regex.

@@ -35,5 +35,4 @@ Elm没有直接访问操作系统底层的能力，包括命令行参数。但�
 
 ## 参见
 - [Elm Process](https://package.elm-lang.org/packages/elm/core/latest/Process)
-- [Elm Console](https://package.elm-lang.org/packages/elm-community/console/latest/)
 - [Haskell optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)

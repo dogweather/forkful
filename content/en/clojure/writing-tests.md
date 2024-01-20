@@ -41,4 +41,3 @@ Writing tests has become an essential practice in modern software development du
 ## See Also
 
 - [Official Clojure documentation for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Practical Guide to Clojure Test Driven Development](https://purelyfunctional.tv/guide/clojure-test-driven-development/)

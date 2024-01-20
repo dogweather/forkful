@@ -37,4 +37,3 @@ I Elixir är det möjligt att skriva textfiler på olika sätt, till exempel med
 
 ## Se även:
 - [Elixir Documentation on File Module](https://hexdocs.pm/elixir/File.html)
-- [Elixir-CSV Library](https://github.com/beatrichartz/elixir-csv)

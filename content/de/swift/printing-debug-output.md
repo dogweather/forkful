@@ -49,6 +49,4 @@ Interessanterweise implementiert Swift das Drucken von Debug-Ausgaben durch Umle
 
 Hier sind einige Ressourcen, wenn du dich weiter mit dem Thema beschäftigen willst:
 
-- "Swift by Sundell": [What's the difference between print, dump and debugPrint in Swift](https://www.swiftbysundell.com/articles/debugging-in-swift/)
 - "Hacking with Swift": [Printing debug text with print()](https://www.hackingwithswift.com/read/0/3/printing-debug-text-with-print)
-- Apple's Dokumentation: [Debugging with Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/debugging-and-reflection)

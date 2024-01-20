@@ -32,4 +32,3 @@ JSON (JavaScript Object Notation) був розроблений в 1999 році
 ## Дивіться також:
 - [JSON у Вікіпедії](https://uk.wikipedia.org/wiki/JSON)
 - [Офіційна документація по Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/Introduction.htm)
-- [Курс по роботі з JSON у С#](https://www.pluralsight.com/courses/deserialize-json-csharp-getting-started)

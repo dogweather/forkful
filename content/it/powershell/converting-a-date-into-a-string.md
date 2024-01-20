@@ -59,4 +59,3 @@ In termini di implementazione, PowerShell si basa sulla libreria di classi .NET 
 
 - [Documentazione Microsoft su Get-Date](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.utility/get-date)
 - [Documentazione Microsoft su System.DateTime](https://docs.microsoft.com/it-it/dotnet/api/system.datetime)
-- [Articolo su come lavorare con date e orari in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/working-with-dates-and-times-in-powershell/)

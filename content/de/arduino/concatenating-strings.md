@@ -47,4 +47,3 @@ Dies lässt `str3` zur kombinierten Zeichenkette werden, während `str1` und `st
 
 Für weitere Informationen, schauen Sie sich die offizielle Arduino-Referenz an:
 - Arduino String `concat()` Funktion: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-- Arduino String `+` Operator: [https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/plus/](https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/plus/)

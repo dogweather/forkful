@@ -29,4 +29,3 @@ Existen otras formas de escribir archivos de texto en Bash, como "printf" o "cat
 # Ver también
 
 - [Comando echo en Bash](https://linux.die.net/man/1/echo)
-- [Uso de bash para crear un archivo de texto en Linux](https://www.howtogeek.com/107537/lesser-known-linux-commands-echo-touch-find/)

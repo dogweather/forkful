@@ -46,4 +46,3 @@ Clojuren toteutus käyttää sisäisesti Joda-Time-menetelmiä, jotka tekevät s
 Linkit liittyviin lähteisiin:
 - [Clojure Date Time Documentation](https://clojuredocs.org/clojure.instant)
 - [Joda-Time Github](https://github.com/JodaOrg/joda-time)
-- [More on Time in Clojure](https://www.baeldung.com/clojure-time-and-date)

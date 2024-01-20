@@ -29,4 +29,3 @@ Att skriva textfiler har funnits sedan de första datorerna, och är fortfarande
 
 # Se även:
 - [Elm-dokumentation för "File" modul](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm-dokumentation för "String" modul](https://package.elm-lang.org/packages/elm/string/latest/) - användbar för att manipulera text innan den skrivs till en fil.

@@ -45,5 +45,4 @@ Working with JSON in Java involves using the JSON library, which provides a set 
 ## See Also
 
 - [Official JSON website](https://www.json.org/)
-- [Java JSON library documentation](https://www.json.org/java/)
 - [Comparison between JSON and XML](https://medium.com/@cstegel/comparing-json-and-xml-understanding-the-physical-differences-9ed3d1c222bc)

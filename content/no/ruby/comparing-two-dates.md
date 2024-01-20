@@ -51,5 +51,3 @@ Den overnevnte koden vil også returnere "true", fordi ajd-verdien til date2 er 
 
 Hvis du er interessert i Ruby eller dato-håndtering, kan du prøve å lese mer om følgende temaer og ressurser:
 - Ruby's offisielle dokumentasjon på 'Date' klassen: [Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-- Julius Mendegorias "How To Work With Dates And Times In Ruby" på ThoughtCo er et flott sted å starte: [How To Work With Dates And Times In Ruby](https://www.thoughtco.com/dates-and-times-in-ruby-2907742)
-- For en dypere forståelse av tid og dato i programmering, Jim Menard's bok "Time for Ruby" er en fantastisk ressurs: [Time for Ruby](https://www.amazon.com/Time-Ruby-Jim-Menard/dp/0578144874)

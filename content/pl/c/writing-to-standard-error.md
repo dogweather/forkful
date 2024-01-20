@@ -44,5 +44,3 @@ Istnieją różne sposoby wypisywania informacji o błędach w C, ale wypisywani
 ## Zobacz także:
 
 - [Dokumentacja funkcji `fprintf()`](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Porównanie standardowych strumieni w C](https://www.geeksforgeeks.org/comparison-standard-input-output-streams-c/)
-- [Artykuł o wypisywaniu na stderr w C++](https://www.techiedelight.com/redirect-both-stdout-stderr-file-cpp/)

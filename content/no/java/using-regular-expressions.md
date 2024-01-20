@@ -37,4 +37,3 @@ Når du bruker regex i Java, er det viktig å forstå syntaksen og bruken av spe
 # Se også:
 - [Java Regex API](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
 - [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Regex Cheatsheet](https://www.debuggex.com/cheatsheet/regex/java)

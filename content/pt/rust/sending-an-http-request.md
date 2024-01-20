@@ -59,5 +59,4 @@ Por baixo dos panos, estas bibliotecas estão lidando com a geração de uma req
 Para mais detalhes sobre como fazer requisições HTTP com Rust, confira estes links:
 
 - [Documentação do Reqwest](https://docs.rs/reqwest)
-- [Tutorial Hyper](https://hyper.rs/guides/client/basic/)
 - [Uso do Ureq](https://github.com/algesten/ureq)

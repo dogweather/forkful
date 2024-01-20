@@ -71,5 +71,3 @@ Quando um arquivo de texto é criado, ele é salvo em formato ASCII, que atribui
 # Veja também:
 
 - [Manipulação de arquivos em C++](https://www.cplusplus.com/doc/tutorial/files/)
-- [Tutorial de C++ para iniciantes](https://www.tutorialspoint.com/cplusplus/cpp_text_files.htm)
-- [O que é ASCII?](https://www.geeksforgeeks.org/ascii-codes-in-c/)

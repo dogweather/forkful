@@ -50,4 +50,3 @@ In Fish, command-line arguments live in the `$argv` variable. Arguments are just
 ## See Also
 
 - Fish Shell Official Documentation: [Command Line Arguments](https://fishshell.com/docs/current/index.html#syntax)
-- Practical Fish: [Using Command Line Arguments](https://practical-fish.readthedocs.io/en/latest/commands.html#command-line-arguments)

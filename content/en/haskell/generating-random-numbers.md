@@ -49,6 +49,5 @@ Did you notice `IO` in `IO Int`? It's because random number generation is an eff
 ## See Also:
 
 - [Haskell Library: System.Random](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-- [Random Number Generation in The Haskell School of Expression](https://www.cs.yale.edu/homes/hudak/Paul/HSoE.pdf)
 - [The "random-fu" Package](http://hackage.haskell.org/package/random-fu) 
 - [The "mwc-random" Package](http://hackage.haskell.org/package/mwc-random)

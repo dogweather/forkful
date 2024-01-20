@@ -41,4 +41,3 @@ Når du skriver tester i PowerShell, er det nyttig å ha et godt strukturert og 
 ## Se også:
 - [Pester documentation](https://pester.dev)
 - [NUnit framework documentation](https://nunit.org)
-- [PowerShell testing best practices](https://adamtheautomator.com/powershell-testing-best-practices/)

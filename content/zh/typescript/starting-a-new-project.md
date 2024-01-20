@@ -60,4 +60,3 @@ touch tsconfig.json
 
 - [TypeScript官方文档](https://www.typescriptlang.org/)
 - [TypeScript Github项目](https://github.com/microsoft/TypeScript)
-- [深入了解TypeScript](https://www.udemy.com/course/typescript-the-complete-developers-guide/)

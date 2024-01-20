@@ -60,5 +60,4 @@ See Also:
 आप अतिरिक्त जानकारी के लिए इन स्रोतों को देख सकते हैं: 
 
 - [Node.js File System Module](https://nodejs.org/api/fs.html)
-- [Writing Files in TypeScript](https://stackabuse.com/writing-files-with-node-js-using-the-fs-module/)
 - [Node.js Docs](https://nodejs.org/docs/latest-v12.x/api/fs.html)

@@ -53,5 +53,4 @@ void loop() {
 
 ##Дивись також
 
-- [Документація Arduino про написання тестів](https://www.arduino.cc/en/Reference/ArduinoUnit)
 - [Стаття про тестування програм на основі бібліотеки для моделювання поведінки](https://www.dummies.com/programming/software-testing/model-driven-testing-for-software-development/)

@@ -44,6 +44,4 @@ Implementeringsdetaljer vil variere avhengig av system og språk, men hovedkonse
 
 ## Se Også:
 
-- [Unix Tid](https://no.wikipedia.org/wiki/Unix-tid)
-- [Bash Date Command](https://www.linuxtechi.com/date-command-linux-examples/)
 - [Bash Comparison Operators](https://tldp.org/LDP/abs/html/comparison-ops.html)

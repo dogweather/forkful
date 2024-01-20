@@ -39,4 +39,3 @@ För mer information, här är några användbara länkar:
 
 - [`Test-Path` dokumentation](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
 - [Diskussion om alternativa metoder](https://stackoverflow.com/questions/9149997/different-ways-to-check-if-a-directory-exists-in-powershell)
-- [Mer om PowerShell och mappar](https://devblogs.microsoft.com/scripting/weekend-scripter-use-powershell-to-easily-find-system32-folder/)

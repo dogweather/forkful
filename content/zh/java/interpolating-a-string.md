@@ -53,4 +53,3 @@ System.out.println(sentence);  // "I love Java"
 
 - Oracle 的 [printf 方法文档](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax)
 - Oracle 的 [String.format 方法文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
-- [String 的 join 方法教程](https://www.journaldev.com/867/java-string-join-examples)

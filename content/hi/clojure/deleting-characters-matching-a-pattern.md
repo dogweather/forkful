@@ -39,7 +39,6 @@ Clojure का इस्तेमाल 2007 में प्रारंभ ह
 
 ## अधिक जानकारी:
 
-- Clojure की आधिकारिक [डॉक्यूमेंटेशन](https://clojure.org/reference/reading)
 - Clojure की API [clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
 - Clojure के लिए [Practical LiSP](http://www.gigamonkeys.com/book/) बुक
 - Clojure के बारे में [StackOverflow](https://stackoverflow.com/questions/tagged/clojure) पर सवाल जवाब

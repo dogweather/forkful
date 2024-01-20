@@ -47,5 +47,4 @@ YAML був створений у 2001 році як альтернатива XM
 
 ## Дивись також:
 - [YAML.org](https://yaml.org/) - офіційний сайт YAML
-- [Lua-YAML](https://github.com/gdubicki/lua-yaml) - бібліотека для роботи з YAML у Lua
 - [LYAML](https://github.com/gvvaughan/lyaml) - ще одна бібліотека для роботи з YAML у Lua

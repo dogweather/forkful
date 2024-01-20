@@ -38,6 +38,5 @@ Les programmeurs peuvent également trouver utile d'utiliser des flots de donné
 
 ## Voir aussi :
 
-- [Microsoft Docs sur l'écriture et la lecture d'un fichier texte en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
 - [Code Envato Tuts sur l'écriture de fichiers en C#](https://code.tutsplus.com/articles/file-io-in-c-101--cms-32815)
 - [Tutoriel sur les flots de données en C#](https://csharp-station.com/Tutorial/CSharp/Lesson23)

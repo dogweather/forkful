@@ -46,6 +46,5 @@ Serial.println(streng);
 ## Se også
 
 - For mer informasjon om printf på Arduino, referer til [printf Arduino](https://www.arduino.cc/reference/en/)
-- For alternativer til interpolering av strenger i Arduino, se [Interpolating Strings in Arduino](https://arduinogetstarted.com/tutorials/arduino-string-format)
   
 Husk, effektiv programmering handler om å kjenne dine verktøy. Se referansene for å ytterligere forstå interpolering av strenger!

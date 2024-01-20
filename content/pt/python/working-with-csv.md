@@ -53,4 +53,3 @@ Ao trabalhar com arquivos CSV, e importante ter em mente que ele e apenas um for
 
 - [Documentacao oficial do modulo CSV do Python](https://docs.python.org/3/library/csv.html)
 - [Introducao ao analise de dados com arquivos CSV em Python](https://realpython.com/python-csv/)
-- [Tutorial sobre manipulacao de arquivos CSV em Python](https://www.dataquest.io/blog/python-read-write-csv/)

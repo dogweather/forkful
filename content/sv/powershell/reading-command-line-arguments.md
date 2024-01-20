@@ -49,6 +49,3 @@ Kommandoradsargument användas i programmering länge och har sina rötter i UNI
 Det är värt att notera att `$args` fungerar lite annorlunda beroende på scriptets kontext. I script och funktioner representerar `$args` alla icke-namngivna parametrar som inte matchas till en parameterdeklaration. I en fil som inte har någon parametrar deklarerade representerar `$args` alla argument som överförs till filen.
 
 ## Se även
-
-- [Om_Functions_Advanced_Parameters](https://docs.microsoft.com/sv-se/powershell/scripting/learn/deep-dives/everything-about-param?view=powershell-7.1)
-- [Om_Arguments](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.core/about/about_argumentCompleters?view=powershell-7.1)

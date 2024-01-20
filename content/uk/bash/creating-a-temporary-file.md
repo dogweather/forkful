@@ -35,4 +35,3 @@ cat $tempfile
 ## Дивіться також:
 
 - Bash Scripting Tutorial: [Процедура створення тимчасових файлів](https://linuxconfig.org/bash-scripting-tutorial)
-- Linux Journal: [Створення та використання тимчасових файлів](https://www.linuxjournal.com/content/working-temp-files-bash)

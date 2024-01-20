@@ -36,5 +36,4 @@ La implementación de `random(in:)` utiliza un generador de números aleatorios 
 
 ## Ver También:
 
-- Documentación de Swift de Apple: [https://developer.apple.com/documentation/swift/int/2995643-random](https://developer.apple.com/documentation/swift/int/2995643-random)
 - Página de Wikipedia sobre la generación de números aleatorios: [https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios](https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios)

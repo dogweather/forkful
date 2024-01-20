@@ -55,4 +55,3 @@ Pour travailler avec des fichiers CSV en C++, vous pouvez utiliser des biblioth√
 ## Voir aussi:
 
 - [Tutorialspoint: Working with CSV files in C++](https://www.tutorialspoint.com/working-with-c-plus-plus-csv-files)
-- [GeeksforGeeks: Reading and writing CSV files in C++](https://www.geeksforgeeks.org/reading-and-writing-csv-files-in-cpp/)

@@ -31,4 +31,3 @@ puts difference_in_days
 
 ## ראה גם
 * [מדריך ה-Ruby הרשמי לעבודה עם זמן dan-תאריכים](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-* [מאמר clearfix בנושא החשיבות של השוואת תאריכים בתכנות](https://medium.com/clearf/site/why-date-comparisons-are-important-in-programming-acd666ec37a9)

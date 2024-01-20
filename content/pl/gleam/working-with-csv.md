@@ -42,5 +42,4 @@ Jeśli chcesz dowiedzieć się więcej o tym, jak działają pliki CSV oraz jaki
 
 ## Zobacz również
 
-- [Gleam dokumentacja: CSV](https://gleam.run/documentation/stdlib/csv/)
 - [CSV na Wikipedii](https://pl.wikipedia.org/wiki/CSV)

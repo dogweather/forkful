@@ -56,4 +56,3 @@ Se stai cercando di personalizzare ulteriormente il tuo file di testo, puoi util
 
 - [Documentazione di Microsoft su Out-File cmdlet](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Out-File?view=powershell-7)
 - [Documentazione di Microsoft su Set-Content cmdlet](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Set-Content?view=powershell-7)
-- [Guida su come scrivere file di testo con PowerShell](https://www.itechguides.com/write-file-in-powershell/)

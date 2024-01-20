@@ -55,6 +55,4 @@ Per quanto riguarda i dettagli di implementazione, è importante notare che l'in
 
 Per ulteriori informazioni sull'interpolazione delle stringhe in PHP, consulta queste risorse:
 
-- [PHP: Stringhe - Manual](https://www.php.net/manual/it/language.types.string.php)
-- [Interpolazione di stringhe in PHP: Guida completa](https://phpdelusions.net/articles/string_interpolation)
 - [Uso di variabili all'interno di stringhe in PHP](https://stackoverrun.com/it/q/8723283)

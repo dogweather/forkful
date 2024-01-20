@@ -35,4 +35,3 @@ Was Implementierungsdetails betrifft, so ersetzt `replace()` tatsächlich den Or
 
 - Weitere Informationen zur `replace()` Methode finden Sie in der [Arduino-Referenz](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/).
 - Für sehr große Textmengen, empfiehlt sich die Verwendung eines spezielleren Tools wie [grep](https://www.gnu.org/software/grep/), das auf effizientere Textsuch- und Ersatzmethoden zurückgreift.
-- Ein vertiefender Blick in die Textsuch- und Ersetzungsalgorithmen kann in der [Wikipedia](https://de.wikipedia.org/wiki/String-Suchalgorithmus) gefunden werden.

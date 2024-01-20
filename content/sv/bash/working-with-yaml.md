@@ -46,4 +46,3 @@ Det finns också andra sätt att arbeta med YAML i Bash, som att använda "yamll
 ## Se även:
 - [yq dokumentation](https://mikefarah.gitbook.io/yq/)
 - [yamllint dokumentation](https://github.com/adrienverge/yamllint)
-- [yq merge dokumentation](https://mikefarah.gitbook.io/yq/commands/merge)

@@ -31,5 +31,4 @@ HelloPowerShell
 
 ## ראו גם:
 * [דוקומנטציה הרשמית של פעול Elace PowerShell R](https://docs.microsoft.com/he-il/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#example-4--replace-operator)
-* [הסקירה של RegExr על ביטויים רגולריים](https://regexr.com/)
 * [הערכה מהירה של תוכנית סקריפטים בשפת PowerShell](https://stackoverflow.com/questions/8762406/how-can-i-remove-a-specific-character-from-a-string-in-powershell)

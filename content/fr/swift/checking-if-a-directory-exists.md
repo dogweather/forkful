@@ -59,4 +59,3 @@ Pour de plus amples informations, vous pouvez consulter les ressources suivantes
 
 - La documentation officielle de Swift sur [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
 - Un exemple détaillé sur [how to check if a file exists or not, using Swift](https://www.hackingwithswift.com/example-code/system/how-to-check-whether-a-file-exists)
-- Un guide sur [work with files and directories in Swift](https://www.swiftbysundell.com/basics/working-with-files-and-directories-in-swift/)

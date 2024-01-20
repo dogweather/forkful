@@ -38,6 +38,4 @@ Historisk sett har HTTP forespørsler vært sentrale i mange former for nettbase
 
 ## Se også:
 - [HTTP-forespørsler med Fish Shell - Offisiell dokumentasjon](https://fishshell.com/docs/current/commands.html)
-- [Curl (komputer program) - Wikipedia](https://no.wikipedia.org/wiki/CURL)
 - [HTTPie](https://httpie.io/)
-- [HTTP-forespørsler – Lær mer om HTTP-forespørsler](https://developer.mozilla.org/no/docs/Web/HTTP/Overview)

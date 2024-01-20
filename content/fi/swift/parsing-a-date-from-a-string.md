@@ -53,4 +53,3 @@ Seuraavista lähteistä löydät lisätietoa päivämääräjäsennyksestä Swif
 
 - Swiftin virallinen käsikirja: [Date ja DateFormatter](https://developer.apple.com/documentation/foundation/date)
 - Stack Overflow: [Keskustelua päivämäärien jäsennyksestä Swiftissä](https://stackoverflow.com/questions/35700281/date-format-in-swift)
-- NSHipster: [NSDateFormatter](https://nshipster.com/nsdateformatter/)

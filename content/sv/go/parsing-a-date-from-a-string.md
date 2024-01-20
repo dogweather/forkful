@@ -54,5 +54,4 @@ Implementationsdetaljerna för datumtolkning i Go handlar om att använda layout
 ## Se också:
 
 - Go Docs: [The `time` package](https://golang.org/pkg/time/)
-- Go Blog: ["The Go time package"](https://blog.golang.org/two-go-talks-unicode-shebang)
 - StackOverflow: [Parsing dates from strings in Go](https://stackoverflow.com/questions/14106541/parsing-date-string-in-go)

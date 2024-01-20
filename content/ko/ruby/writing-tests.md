@@ -43,6 +43,3 @@ Test::Unit은 오래된 라이브러리로 RSpec과 같은 새로운 테스트 �
 테스트 작성에는 여러 가지 방법이 있지만 가장 일반적인 방법은 메소드 단위의 테스트, 클라스 단위의 테스트, 그리고 적절한 입력과 예외를 다루는 시나리오 테스트입니다. 또한 테스트하는 동안 프로그램의 상태를 수정하지 않도록 주의해야 합니다.
 
 ## 또 보기:
-
-- [RSpec 기본 사용법](https://www.rubyguides.com/2019/07/rspec-tutorial/)
-- [TDD(테스트 주도 개발)란 무엇인지 이해하기](https://blog.asamaru.net/2017/09/11/tdd-test-driven-development/)

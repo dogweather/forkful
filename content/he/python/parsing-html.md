@@ -39,6 +39,5 @@ for link in links:
 
 ## ראה גם:
 - [מדריך BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [הבדלים בין BeautifulSoup ו- lxml](https://www.azavea.com/blog/2014/03/11/intro-to-virtualenv-and-beautiful-soup/)
 - [מדריך לספריית pyquery](https://pythonhosted.org/pyquery/)
 - [מדריך ל- html5lib](https://html5lib.readthedocs.io/en/latest/)

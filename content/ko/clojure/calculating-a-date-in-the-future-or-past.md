@@ -48,4 +48,3 @@ clj-time 라이브러리는 일시를 표현하는 유연한 방법을 제공합
 
 - [clj-time 공식 문서](https://github.com/clj-time/clj-time)
 - [Java Calendar 공식 문서](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Lisp Programming and Data Manipulation](https://books.google.co.kr/books?id=jcbZDwAAQBAJ)

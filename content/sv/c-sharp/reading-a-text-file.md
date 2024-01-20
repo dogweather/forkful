@@ -50,6 +50,4 @@ Det är värt att notera att för att läsa större filer, är det mer effektivt
 
 ## Se även:
 För mer detaljerad information och fler exempel på att läsa textfiler i C#, kan du besöka:
-- [Microsoft C# Guideline](https://docs.microsoft.com/en-gb/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
-- [W3Schools C# File Handling - Read](https://www.w3schools.com/cs/cs_file_read.php)
 - [Dot Net Perls](https://www.dotnetperls.com/streamreader)

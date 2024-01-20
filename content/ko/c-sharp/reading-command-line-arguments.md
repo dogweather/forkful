@@ -54,4 +54,3 @@ C#에서 `args` 배열은 명령줄 인자들을 담아두는데 사용됩니다
 
 - [Microsoft Docs: Command-Line Arguments (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args)
 - [Stackoverflow: How do I use command line arguments in C#?](https://stackoverflow.com/questions/8141/how-do-i-use-command-line-arguments-in-csharp)
-- [Dot Net Perls: Command Line Arguments](https://www.dotnetperls.com/command-line-arguments)

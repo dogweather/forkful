@@ -48,5 +48,4 @@ Expected list {사과, 바나나, 딸기} to contain "자두", but it didn't.
 
 ## 관련 자료:
 - [PowerShell 공식 웹사이트](https://docs.microsoft.com/powershell/)
-- [PowerShell 테스트 작성 가이드](https://docs.microsoft.com/powershell/scripting/learn/chapter07/powershell-test)
 - [PowerShell 테스트 작성을 위한 도구들](https://github.com/PowerShell/PowerShell/wiki/Testing-your-PowerShell-scripts)

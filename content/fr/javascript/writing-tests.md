@@ -42,6 +42,5 @@ Il est également important de noter que l'écriture de tests ne garantit pas à
 
 ## Voir aussi:
 
-- [Introduction au développement piloté par les tests](https://www.digitalocean.com/community/tutorials/js-intro-testing)
 - [Comparaison des frameworks de tests en Javascript](https://blog.bitsrc.io/which-javascript-testing-library-should-i-use-a-comparison-guide-eventloop-ca5360ed2967)
 - [Guide de Cypress pour les tests end-to-end](https://docs.cypress.io/guides/overview/why-cypress.html)

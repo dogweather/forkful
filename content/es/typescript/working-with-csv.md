@@ -80,4 +80,3 @@ Al trabajar con CSV en TypeScript, es importante tener en cuenta que se trata de
 
 - [Documentación de CSV en TypeScript](https://csv.js.org/parse/)
 - [Especificaciones del formato CSV](https://tools.ietf.org/html/rfc4180)
-- [Uso de CSV para importar y exportar datos en aplicaciones de hojas de cálculo](https://www.business2community.com/infographics/revealed-why-csv-files-are-the-best-file-format-for-spreadsheets-01288361)

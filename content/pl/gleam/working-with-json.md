@@ -45,4 +45,3 @@ JSON pojawił się po raz pierwszy w 2001 roku i od tego czasu jest jednym z naj
 
 * [Oficjalna dokumentacja Gleam](https://gleam.run/)
 * [Proste wyjaśnienie czym jest JSON](https://www.json.org/json-pl.html)
-* [Porównanie JSON z innymi formatami](https://www.quora.com/What-are-the-main-differences-between-XML-and-JSON)

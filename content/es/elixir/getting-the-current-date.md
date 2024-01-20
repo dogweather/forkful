@@ -46,4 +46,3 @@ Si quieres profundizar en estas cuestiones, aquí tienes algunas fuentes relacio
 
 - La [documentación oficial de Elixir](https://hexdocs.pm/elixir/DateTime.html) sobre `DateTime`.
 - La [documentación sobre el módulo `:os` de Erlang](http://erlang.org/doc/man/os.html).
-- La [biblioteca `Timex`](https://hexdocs.pm/timex/readme.html) si necesitas más funcionalidades.

@@ -50,6 +50,5 @@ Den fullständiga processen för att ladda ner en webbsida innefattar att skapa 
 För mer information om webbskrapning och HTTP-förfrågningar med Rust, se följande källor:
 
 - [Rust reqwest dokumentation](https://docs.rs/reqwest/0.10.10/reqwest/)
-- [Webbläsare och Rust](https://arewebrowseryet.org/)
 - [Rust hyper bibliotek](https://hyper.rs/)
 - [Rust curl bibliotek](https://docs.rs/curl/0.4.38/curl/)

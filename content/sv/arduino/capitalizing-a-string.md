@@ -38,6 +38,5 @@ I Arduino är `toUpperCase()` implementerad så att den itererar över varje tec
 ## Se även
 
 För mer detaljer och alternativa metoder, se följande resurser:
-- [Arduino String Reference:](https://www.arduino.cc/en/Reference/String)
 - [Comparison of string methods:](https://www.arduino.cc/en/Tutorial/StringComparisonOperators)
 - [Arduino Forum Discussion on String Capitalization:](https://forum.arduino.cc/index.php?topic=181847.0)

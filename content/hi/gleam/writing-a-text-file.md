@@ -32,5 +32,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## और देखें:
 
-- [ग्लीम प्रोग्रामिंग भाषा के ट्यूटोरियल](https://gleam.run/tutorials/getting-started) 
 - [

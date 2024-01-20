@@ -44,8 +44,6 @@ Para más información, visita estas páginas web:
 
 - [String.ToLower Method (System) | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
 
-- [Everything you ever wanted to know about string manipulation with PowerShell | 4sysops](https://4sysops.com/archives/everything-you-ever-wanted-to-know-about-string-manipulation-with-powershell)
 
-- [Working with Strings | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/06-working-with-strings)
 
 No dudes en explorar y aprender más acerca de la manipulación de strings en PowerShell.

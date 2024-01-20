@@ -50,5 +50,4 @@ string dateString = $"{currentDate:dd MMMM yyyy}";
 In Bezug auf die Implementierung ist es wichtig zu wissen, dass die `ToString()` Methode unterschiedliche Formate akzeptiert. Z.B. "MM/dd/yyyy" erstellt einen String in einem Format, das in den USA weit verbreitet ist, während "dd/MM/yyyy" in Ländern wie Deutschland verbreitet ist.
 
 ## Siehe auch
-- [Microsoft: Standard DateTimeFormat strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-datetime-format-strings)
 - [Microsoft: Custom DateTimeFormat strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

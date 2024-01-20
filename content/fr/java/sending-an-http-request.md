@@ -54,5 +54,4 @@ En ce qui concerne les détails de mise en œuvre, `HttpClient` offre un paradig
 ## Voir Aussi
 
 - [Java - Envoi de demandes HTTP](https://www.baeldung.com/java-http-request)
-- [Java HttpClient Tutorial](https://www.callicoder.com/java-11-http-client-api-tutorial-example/)
 - [API HttpClient (Java 11 et plus récent)](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)

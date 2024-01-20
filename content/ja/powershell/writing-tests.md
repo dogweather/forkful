@@ -37,4 +37,3 @@ $fruits[0] | Should Be "apple"
 ## 関連リンク：
 
 - [PowerShell Testing Framework](https://github.com/pester/Pester)
-- [テスト駆動開発（TDD）とは？](https://www.t-wash.net/it/tdd-definition/)

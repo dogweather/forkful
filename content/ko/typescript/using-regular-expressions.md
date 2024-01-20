@@ -40,4 +40,3 @@ str.match(regex); // ['hello', 'hello']
 # 관련 자료:
 
 - [MDN web docs - 정규식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScript 공식 문서 - 정규식](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)

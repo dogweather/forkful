@@ -43,6 +43,4 @@ Hei Maailma!
 
 ## Katso myös:
 
-- ["C Programming Language" -WikiArtikkeli](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli))
 - [GeeksForGeeks: "C Programming Language"](https://www.geeksforgeeks.org/c-programming-language/)
-- Comparitech: [Erilaisten Ohjelmointikielten Vertailu](https://www.comparitech.com/net-admin/programming-languages/)

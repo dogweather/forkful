@@ -38,5 +38,4 @@ fn main() {
 
 標準エラー出力に関するより詳しい情報や、他のプログラミング言語における標準エラー出力の使い方については、以下のリンクを参考にしてください。
 
-- [Gleam公式ドキュメントの標準エラー出力についてのページ](https://gleam.run/documentation/guides/error_handling)
 - [標準エラー出力の仕組みについての解説] (https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%80%E3%83%BC%E3%83%89%E3%82%A8%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B)

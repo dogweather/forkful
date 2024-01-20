@@ -29,6 +29,4 @@ require CSV
 CSV 最早是由微软在 1983 年创建，将此格式作为 Excel 文档的一部分。目前，它已经成为处理数据的标准格式，广泛用于数据库、电子表格等软件中。除了 Elixir 内置的 CSV 库，还有一些其他的库也支持 CSV 文件的读写，例如 `:csv_parser` 和 `nimble_csv`。此外，CSV 文件可以包含各种各样的数据类型，因此在处理时要小心处理，避免出现错误。
 
 ## 参考资料:
-- Elixir's CSV 模块文档: [https://hexdocs.pm/elixir/CSV.html](https://hexdocs.pm/elixir/CSV.html)
 - CSV 文件的历史: [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/Comma-separated_values)
-- Elixir CSV 库的源码: [https://github.com/elixir-lang/elixir/blob/master/lib/csv/](https://github.com/elixir-lang/elixir/blob/master/lib/csv/)

@@ -29,5 +29,4 @@ Kirjoittaminen standardivirheeseen on osa virheen käsittelyä ja virheilmoitust
 ## Katso myös:
 Lisätietoja TypeScriptista ja virheiden käsittelystä löytyy alla olevista lähteistä:
 - [TypeScriptin viralliselta verkkosivustolta](https://www.typescriptlang.org/)
-- [W3Schoolsin TypeScript-opetusohjelma](https://www.w3schools.com/typescript/default.asp)
 - [MDN:n opas virheiden käsittelyyn JavaScriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)

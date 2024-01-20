@@ -45,4 +45,3 @@ Para implementar testes em C#, é recomendado o uso de frameworks de testes, com
 ## Veja também:
 
 - [Artigo sobre TDD](https://www.devmedia.com.br/test-driven-development-conceitos/30770)
-- [Tutorial de testes com NUnit](https://code.tutsplus.com/pt/tutorials/common-unit-testing-scenarios-with-nunit--net-10458)

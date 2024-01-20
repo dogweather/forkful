@@ -55,5 +55,4 @@ CSV即Comma Separated Values，它是一种常见的文本文件格式，用于�
 
 ## 查看更多：
 - [kotlinx-csv](https://github.com/doyaaaaaken/kotlin-csv)
-- [使用Kotlin和CSV进行数据处理](https://blog.mindorks.com/using-kotlin-and-csv-for-processing-data)
 - [Comma-separated values (CSV) format](https://en.wikipedia.org/wiki/Comma-separated_values)

@@ -37,4 +37,3 @@ console.log(message); // नमस्कार, Viraj!
 ## अधिक देखें:
 
 - [MDN Web Docs: Template literals(शब्दों के साँचे)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [TypeScript Deep Dive: Template literals](https://basarat.gitbook.io/typescript/type-system/template-strings)

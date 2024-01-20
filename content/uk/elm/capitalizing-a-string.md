@@ -36,5 +36,3 @@ main =
 
 ## Також дивіться
 - [Elm: API для рядків](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm: Робота з Unicode](https://guide.elm-lang.org/interop/unicode.html)
-- [Elm: Рядки в Elm](https://www.elm-tutorial.org/uk/01-chapter2/about-strings.html)

@@ -39,5 +39,4 @@ Enkelte viktige detaljer vedrørende utnyttelse av regulære uttrykk i Elm inklu
 For en detaljert opplæring på bruk av regulære uttrykk i Elm, sjekk følgende lenker:
 
 - Elm's Regex Modul Dokumentasjon [her](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- En tutorial om Regulære Uttrykk i Elm på [Elm For Beginners](https://www.elmforbeginners.com/)
 - For en mer omfattende forklaring på regulære uttrykk og hvordan man bruker dem i programmering, se [Regulære Uttrykk for Nybegynnere](https://www.regular-expressions.info/tutorial.html)

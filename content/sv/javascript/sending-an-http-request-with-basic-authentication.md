@@ -47,6 +47,5 @@ Vid implementering, använd alltid HTTPS för att säkerställa att dina autenti
 
 ## Se också
 - [Axios Dokumentation](https://axios-http.com/docs/intro)
-- [HTTP Autentisering på MDN](https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication)
 - [Bearer Authentication](http://www.ietf.org/rfc/rfc6750.txt)
 - [JWT Authenticaction](https://jwt.io/introduction/)

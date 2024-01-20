@@ -31,5 +31,4 @@ print(result?.value)
 
 ## 관련 자료:
 
-- [정규 표현식 레퍼런스](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-regex/)
 - [수업 영상: 코틀린과 정규 표현식](https://youtu.be/hPVAo06yN_g)

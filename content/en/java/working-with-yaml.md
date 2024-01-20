@@ -45,6 +45,5 @@ Alternatives to working with YAML in Java include XML and JSON. However, YAML of
 Working with YAML in Java requires the use of a YAML library, such as SnakeYAML or Jackson YAML. These libraries provide methods for parsing and extracting data from YAML files.
 
 ## See Also:
-- [SnakeYAML library](https://bitbucket.org/asomov/snakeyaml)
 - [Jackson YAML library](https://github.com/FasterXML/jackson-dataformats-text)
 - [YAML official website](https://yaml.org/)

@@ -43,6 +43,5 @@ Podstawowe uwierzytelnianie HTTP, które jest stosunkowo starym systemem uwierzy
 Ostateczne wdrożenie tej techniki w TypeScript zależy od biblioteki, z której korzystasz do obsługi żądań HTTP. W przypadku "axios", wykorzystujemy obiekt "auth" do przekazania identyfikacji i hasła.
 
 ## Zobacz też:
-* [Dokumentacja Axios - Podstawowe Uwierzytelnianie](https://axios-http.com/docs/auth)
 * [Podstawy Uwierzytelniania HTTP - MDN](https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication)
 * [Wprowadzenie do JSON Web Tokens](https://jwt.io/introduction/)

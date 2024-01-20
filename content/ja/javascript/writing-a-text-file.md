@@ -42,5 +42,3 @@ console.log(data); // 出力：こんにちは！私はプログラミングを�
 ## 関連リンク：
 
 - [MDN Web Docs - File API](https://developer.mozilla.org/ja/docs/Web/API/File)
-- [w3schools - Javascript File Objects](https://www.w3schools.com/jsref/dom_obj_file.asp)
-- [Techopedia - Text File](https://www.techopedia.com/definition/347/text-file)

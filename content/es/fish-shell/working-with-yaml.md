@@ -34,6 +34,4 @@ YAML fue creado en 2001 por el fundador de Ruby, Ingy döt Net, como una alterna
 Fish Shell también tiene otra herramienta integrada llamada "jq" que puede ser utilizada para trabajar con JSON. Además, puedes encontrar otras herramientas de terceros que pueden facilitar la manipulación de datos YAML en Fish Shell.
 
 ## Véase también:
-- [Documentación oficial de Fish Shell sobre el módulo yq](https://fishshell.com/docs/current/cmds/yq.html)
 - [Página oficial de YAML](https://yaml.org/)
-- [Documentación oficial de Fish Shell sobre el módulo jq](https://fishshell.com/docs/current/cmds/jq.html)

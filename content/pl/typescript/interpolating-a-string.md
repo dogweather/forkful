@@ -37,6 +37,4 @@ Interpolacja stringów jest realizowana poprzez funkcję `String.raw` w TypeScri
 
 Garść przydatnych źródeł na temat interpolacji stringów:
 
-- Dokumentacja [MDN Web Docs o literałach szablonów](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/template_strings)
 - Artykuł na [Stack Overflow na temat interpolacji stringów](https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation)
-- Dokumentacja [TypeScript o literałach szablonów](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)

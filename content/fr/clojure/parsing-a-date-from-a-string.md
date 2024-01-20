@@ -39,5 +39,4 @@ En ce qui concerne les détails de l'implémentation, il est important de noter 
 Pour plus d'informations sur la manipulation des dates en Clojure, consultez les liens suivants :
 
 - La documentation de clj-time : [ici](https://github.com/clj-time/clj-time)
-- Un excellent tutoriel sur le parsing de date en Clojure : [ici](https://www.baeldung.com/clojure-date-time-parsing)
 - La documentation de `java.time` pour plus d'informations sur l'évolution moderne du traitement de la date et l'heure : [ici](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

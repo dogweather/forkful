@@ -52,4 +52,3 @@ Pour implémenter l'écriture dans la sortie d'erreur standard en JavaScript, vo
 
 - [Documentation de console.error() sur MDN](https://developer.mozilla.org/fr/docs/Web/API/Console/error)
 - [Documentation de process.stderr sur Node.js](https://nodejs.org/api/process.html#process_process_stderr)
-- [Article sur la différence entre console.log() et console.error()](https://wdevotional.com/console-log-vs-console-error-which-one-to-use-when-adbed975727f)

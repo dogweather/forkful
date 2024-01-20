@@ -48,4 +48,3 @@ Ao trabalhar com YAML, é importante notar que espaços e indentação são fund
 
 - [Documentação do módulo PSYaml](https://github.com/cloudbase/powershell-yaml/blob/master/README.md)
 - [Site oficial do YAML](https://yaml.org/)
-- [YAML vs JSON: Qual escolher?](https://www.freecodecamp.org/news/yaml-vs-json-which-is-better-for-configuration-c43fd70cf9db/)

@@ -36,5 +36,4 @@ Początki YAML sięgają lat 90., kiedy został zaprojektowany jako alternatywa 
 Implementacja parsera YAML w Rust odbywa się za pomocą bibliotek `serde_yaml` i `syntex_syntax`, które wykorzystują parser języka Rust do przetwarzania plików YAML.
 ## Zobacz więcej
 - [Dokumentacja biblioteki `serde_yaml`](https://docs.serde.rs/serde_yaml/)
-- [Porównanie YAML z innymi formatami danych](https://stackify.com/json-vs-xml-vs-yaml-vs-hcl/)
 - [Oficjalna strona YAML](https://yaml.org/)

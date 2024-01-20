@@ -46,5 +46,4 @@ For implementation details, note that the `fetch` method doesn't support CORS (C
 - [MDN - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 - [MDN - Basic authentication scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
 - [Wikipedia - Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [How To Code -JWT vs Cookie](https://www.howtocode.io/learning-path/html-and-javascript-for-beginners/jwt-vs-cookie)
 - [Token-Based Authentication With AngularJS & NodeJS](https://devdactic.com/jwt-authentication-ionic-node/)

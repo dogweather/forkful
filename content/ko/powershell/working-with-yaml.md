@@ -48,5 +48,3 @@ YAML은 대화형 설정 파일에서부터 대규모 응용 프로그램에서�
 
 - [YAML 문서](https://yaml.org/spec/)
 - [PowerShell 문서](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-- [ConvertTo-Yaml 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/ConvertTo-Yaml)
-- [ConvertFrom-Yaml 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/ConvertFrom-Yaml)

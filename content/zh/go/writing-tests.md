@@ -35,4 +35,3 @@ Sum(2, 3) // 输出5
 
 ## 参考资源：
 - [Go语言官方文档：测试](https://golang.org/pkg/testing/)
-- [《Go语言编程》- 编写测试](https://www.bookstack.cn/read/The-Go-Programming-Language/ch11s06.md)

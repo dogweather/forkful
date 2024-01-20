@@ -49,6 +49,4 @@ luarocks install lua-cjson
 
 ## Ver también
 
-- [Tutorial de cjson en Lua](https://www.tutorialspoint.com/lua/lua_json_cjson.htm)
 - [Documentación oficial de cjson](http://www.kyne.com.au/~mark/software/lua-cjson-manual.html)
-- [Otras opciones para trabajar con JSON en Lua](https://stackify.com/json-in-lua/)

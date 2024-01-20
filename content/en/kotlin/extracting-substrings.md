@@ -47,6 +47,4 @@ Finally, let's talk about implementation. Under the hood, `substring()` works by
 ## See Also
 
 To dive deeper into substrings in Kotlin, you should:
-- Refer to [Kotlin's Standard Library Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html) to discover more about `substring()`.
 - Read up on [Efficient Java String Manipulations](https://javarevisited.blogspot.com/2013/01/how-substring-works-in-java-internals-string.html) (applicable to Kotlin!) for an understanding of how substrings are implemented for efficiency.
-- Checkout [GeeksForGeeks](https://www.geeksforgeeks.org/kotlin-string-substring/) Kotlin substring tutorial for more examples and related methods.

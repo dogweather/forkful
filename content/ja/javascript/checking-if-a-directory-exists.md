@@ -51,5 +51,4 @@ if (fs.existsSync('/path/to/directory')) {
 ## 関連資料
 
 - [`fs` APIドキュメンテーション](https://nodejs.org/api/fs.html)
-- [Node.jsでのファイル・ディレクトリの確認方法](https://www.metachris.com/2015/12/different-ways-to-check-if-a-file-exists-in-node-js/)
 - [ディレクトリ操作関連のnpmパッケージ](https://www.npmjs.com/package/mkdirp)

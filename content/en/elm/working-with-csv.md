@@ -60,6 +60,5 @@ Internally, `elm-csv` uses a parser combinator library called `nom` to parse the
 
 ## See Also
 
-- [elm-csv package](https://package.elm-lang.org/packages/elm-community/csv/latest/)
 - [Url library](https://package.elm-lang.org/packages/elm/http/latest/)
 - [nom library](https://github.com/Geal/nom)

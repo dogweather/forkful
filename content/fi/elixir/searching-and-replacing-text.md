@@ -44,6 +44,5 @@ Elixirin merkkijonokäsittelyyn liittyviä resursseja ja ohjeita voit löytää 
 
 - Elixirin String-moduuli: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - Elixirin Regex-moduuli: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
-- Elixirin merkkijonojen ja säännöllisten lausekkeiden opas: [https://elixircasts.io/string-replacement-and-regex](https://elixircasts.io/string-replacement-and-regex)
  
 Muista, että paras tapa oppia on käytäntö, joten sovella tietojasi ja koodaa!

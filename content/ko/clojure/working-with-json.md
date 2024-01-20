@@ -40,5 +40,4 @@ JSON은 1999년에 더글라스 크록포드(Douglas Crockford)가 개발한 데
 ## 관련 자료:
 
 - [JSON 공식 사이트](https://www.json.org/)
-- [JSON 스펙 문서](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)
 - [Clojure JSON 라이브러리](https://github.com/clojure/data.json)

@@ -39,6 +39,4 @@ När du kör den här kodspoken, kommer utmatningen att bli `"Hej, Gleam!"`.
 
 ## Se även
 
-* [Gleam Docs](https://gleam.run/tour/)
 * [String.replace documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html#replace/3)
-* [Text Manipulation in Gleam](https://github.com/gleam-experiments/text)

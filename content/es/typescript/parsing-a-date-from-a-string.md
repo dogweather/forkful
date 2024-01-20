@@ -44,6 +44,5 @@ Históricamente, la manipulación de fechas y tiempo ha sido una fuente de error
 Si quieres profundizar más en este tema puede revisar los siguientes enlaces:
 
 * [MDN - Date](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [TypeScript - Date](https://www.tutorialsteacher.com/typescript/typescript-date)
 * [moment.js](https://momentjs.com/)
 * [date-fns](https://date-fns.org/)

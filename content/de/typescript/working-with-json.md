@@ -44,7 +44,3 @@ JSON wurde erstmals im Jahr 2001 von Douglas Crockford eingeführt und hat sich 
 In TypeScript gibt es verschiedene Methoden zum Arbeiten mit JSON, wie zum Beispiel das Validieren von JSON-Daten durch Verwendung von Typen oder das Verwenden von JSON APIs zum Abrufen und Senden von Daten.
 
 ## Siehe auch
-
-- [JSON vs XML: Which One is Better?](https://www.programiz.com/json-vs-xml)
-- [Working with JSON in TypeScript](https://blog.logrocket.com/working-with-json-data-in-typescript/)
-- [JSON in TypeScript](https://blog.logrocket.com/json-typescript/)

@@ -44,4 +44,3 @@ En termes de mise en œuvre, le C utilise un tampon pour stocker les chaînes fo
 Pour plus d'informations et de ressources sur l'interpolation de chaînes en C, vous pouvez consulter les liens suivants:
 - [Interpolation de chaîne en C](https://www.cprogramming.com/tutorial/c/lesson4.html)
 - [Documentation officielle sur les fonctions printf et sprintf](https://fr.cppreference.com/w/c/io/fprintf)
-- [Introduction à l'interpolation de chaînes](http://www.learn-chinese-mandarin-language.com/C-string-interpolation-and-variable-replacement.html)

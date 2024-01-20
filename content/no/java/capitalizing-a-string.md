@@ -41,4 +41,3 @@ Når det gjelder implementasjonsdetaljer, `toUpperCase()` metoden konverterer al
 ## Se Også:
 - [Java String substring() Method](https://www.javatpoint.com/java-string-substring)
 - [Java String toUpperCase() Method](https://www.javatpoint.com/java-string-touppercase)
-- [Apache Commons Lang – WordUtils.capitalize()](https://www.baeldung.com/java-capitalizing-lowercase)

@@ -55,5 +55,4 @@ La salida sería
 Para más profundidad en el trabajo con cadenas y Unicode en Elixir, consulta los siguientes recursos:
 
 - [Elixir String Module](https://hexdocs.pm/elixir/String.html) (inglés)
-- Documentación Oficial de Elixir: [Binary module](https://hexdocs.pm/elixir/1.12/Binary.html) (inglés)
 - Artículo sobre [Unicode y UTF-8](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) por Joel Spolsky (inglés)

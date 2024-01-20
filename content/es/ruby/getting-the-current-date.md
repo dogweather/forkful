@@ -45,4 +45,3 @@ Un detalle de implementación a tener en cuenta es la precisión. `DateTime.now`
 
 - La documentación oficial de `Date`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
 - La documentación oficial de `DateTime`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
-- Ejemplos y tutoriales con `Time`: [https://www.rubyguides.com/ruby-tutorial/ruby-time-date/](https://www.rubyguides.com/ruby-tutorial/ruby-time-date/)

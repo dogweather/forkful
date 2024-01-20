@@ -61,4 +61,3 @@ För ytterligare detaljer om strängmanipulation i PHP, se följande källor:
 
 - [PHP.net's sträng funktioner](https://www.php.net/manual/en/ref.strings.php)
 - [W3Schools PHP Strängreferens](https://www.w3schools.com/php/php_ref_string.asp)
-- [GeeksforGeeks artikel om PHP strängfunktioner](https://www.geeksforgeeks.org/string-functions-in-php/)

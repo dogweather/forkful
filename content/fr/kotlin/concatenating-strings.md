@@ -69,6 +69,3 @@ Bonjour, le monde!
 ## Voir aussi :
 
 Pour plus d'informations, consultez les ressources suivantes :
-- La documentation officielle de Kotlin : [Working with Strings](https://kotlinlang.org/docs/reference/strings.html)
-- Le guide de la concaténation des chaînes en Kotlin : [Kotlin String concatenation](https://www.baeldung.com/kotlin-string-concatenation)
-- Autres méthodes de manipulation des chaînes en Kotlin : [String Operations](https://www.programiz.com/kotlin-programming/string-operations)

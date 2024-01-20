@@ -52,4 +52,3 @@ strncat(s1, s2, sizeof(s1)-strlen(s1)-1);
 
 - Documentation C: [http://tigcc.ticalc.org/doc/stdlib.html#string_h](http://tigcc.ticalc.org/doc/stdlib.html#string_h)
 - Discussion du dépassement de mémoire tampon: [https://fr.wikipedia.org/wiki/Dépassement_de_tampon](https://fr.wikipedia.org/wiki/Dépassement_de_tampon)
-- K&R C par Brian W. Kernighan et Dennis M. Ritchie: [https://www.amazon.fr/Programmation-langage-Brian-W-Kernighan/dp/2100073513](https://www.amazon.fr/Programmation-langage-Brian-W-Kernighan/dp/2100073513)

@@ -38,6 +38,4 @@ Das Capitalizing von Strings hat lange Tradition und kann bis zu den Anfängen d
 
 ## Siehe auch:
 
-- [PowerShell-String-Manipulationsmethoden](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-7.1)
 - [.NET Framework String.ToUpper Methode](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [PowerShell Grundlagen für die Textverarbeitung](https://4sysops.com/archives/powershell-string-manipulation-guide/)

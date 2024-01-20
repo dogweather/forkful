@@ -53,4 +53,3 @@ En termes d'implémentation, certains outils de test populaires en PowerShell so
 ## Voir aussi:
 
 - [Documentation officielle de Pester](https://pester.dev/)
-- [Exemples de tests automatisés avec PSTest](https://github.com/Powershell/PSTest)

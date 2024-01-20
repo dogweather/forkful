@@ -40,6 +40,5 @@ Powyższy kod utworzy nowy plik "moj_plik.txt" w folderze, w którym uruchomiono
 
 ## Zobacz też:
 
-- [Apple's documentation on writing files in Swift](https://developer.apple.com/documentation/foundation/data_writing)
 - [A guide to file handling in Swift](https://medium.com/@jacobawenger/file-handling-in-swift-1f851551c2a6)
 - [Apple's guide to using FileHandle for file operations in Swift](https://developer.apple.com/documentation/foundation/filehandle)

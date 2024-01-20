@@ -41,4 +41,3 @@ Historisch gesehen wurde String-Interpolation in vielen Sprachen verwendet. In E
 ## Siehe auch
 - [Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
 - [String fromInt documentation](https://package.elm-lang.org/packages/elm/core/latest/String#fromInt)
-- [Wikipedia: String Interpolation](https://de.wikipedia.org/wiki/String_Interpolation)

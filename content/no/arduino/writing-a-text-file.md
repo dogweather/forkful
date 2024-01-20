@@ -38,4 +38,3 @@ I historisk sammenheng ble tekstfiloppsettet utviklet for å lagre dokumenter p�
 
 ## Se også:
 - [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [Explanation of File.printf() and File.println()](https://www.arduino.cc/en/Tutorial/FilePrintf)

@@ -59,4 +59,3 @@ En termes de détails d'implémentation, `argc` et `argv` sont automatiquement p
 
 Pour plus d'informations sur les arguments de ligne de commande, consultez les ressources suivantes:
 - GNU C Library documentation: [Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
-- C Programming Notes: [Command line arguments](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cn1b_CommandLineArguments.html)

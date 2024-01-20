@@ -52,5 +52,3 @@ xとyの和は30です
 ## 関連リソース
 
 - [Microsoft Docs: 文字列の内挿 (C# チュートリアル)](https://docs.microsoft.com/ja-jp/dotnet/csharp/tutorials/string-interpolation)
-- [tutorialsteacher.com: C# String Interpolation](https://www.tutorialsteacher.com/csharp/csharp-string-interpolation)
-- [it-swarm.dev: 変数を含む文字列を出力するには (日本語)](https://ja.it-swarm.dev/csharp/%E5%A4%89%E6%95%B0%E3%82%92%E5%90%AB%E3%82%80%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF/823918848/)

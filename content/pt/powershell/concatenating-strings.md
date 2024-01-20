@@ -55,5 +55,3 @@ Além disso, tenha cuidado ao concatenar strings em loops, pois pode ser custoso
 * [Documentation for about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
 
 * [Working with Strings](https://powershellexplained.com/2017-01-13-powershell-variable-substitution-in-strings)
-
-* [PowerShell: String concatenation vs. Sub-Expressions](https://sid-500.com/2018/02/25/powershell-string-concatenation-vs-sub-expressions/)

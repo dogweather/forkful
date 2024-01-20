@@ -35,4 +35,3 @@ Tytuł: Example Domain
 
 - [JSoup Documentation](https://jsoup.org/)
 - [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-- [HTML Parsing Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)

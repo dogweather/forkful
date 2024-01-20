@@ -57,5 +57,4 @@ För mer om läsa och skriva till filer i C:
 - [C Fil I/O från tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
 
 För mer om historia och standarder:
-- [Historien om C på Wikipedia](https://en.wikipedia.org/wiki/C_(programming_language))
 - [POSIX standarden på opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/)

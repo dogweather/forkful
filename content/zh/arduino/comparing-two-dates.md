@@ -46,4 +46,3 @@ if(t1 > t2){
 如果你需要进一步研究，这里有一些资源：
 - [`TimeLib.h`库文档](https://www.arduino.cc/reference/en/libraries/time/)
 - [使用`RTCLib`库查看和设置时间和日期](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/overview)
-- [深入理解时间和日期计算](https://www.nist.gov/pml/time-and-frequency-division/popular-links/time)

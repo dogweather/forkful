@@ -50,7 +50,6 @@ Når det gjelder implementeringsdetaljer, bruker C++ `iostream` biblioteket for 
 ## Se Også
 Til videre lesning og forståelse, sjekk ut følgende ressurser:
 
-- "The C++ Programming Language" av Bjarne Stroustrup: [link](https://www.stroustrup.com/book.html)
 - C++ Standard Library: [link](http://www.cplusplus.com/reference/clibrary/)
 - Debugging med GDB: [link](https://sourceware.org/gdb/current/onlinedocs/gdb/)
 - Komplett guide for C++ Debugging: [link](https://www.jetbrains.com/help/clion/debugging-code.html)

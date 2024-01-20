@@ -48,5 +48,4 @@ Bash utför strängkonkatenering genom att helt enkelt skriva strängarna direkt
 
 ## Se också
 - För grundläggande Bash-strängoperationer, se [Bash string manipulations](https://tldp.org/LDP/abs/html/x24683.html).
-- För en djupare förståelse av hur Bash-processer fungerar, se [Understanding Bash fork system call](https://www.linuxjournal.com/content/understanding-bash-fork-bomb).
 - För mer avancerade strängoperationer med externa kommandon, se [Awk commands](https://www.grymoire.com/Unix/Awk.html) och [Printf syntax](https://www.man7.org/linux/man-pages/man1/printf.1.html).

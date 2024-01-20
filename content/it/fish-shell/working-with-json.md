@@ -28,6 +28,4 @@ L'output sarà il valore associato alla chiave specificata all'interno del file 
 JSON è stato creato nel 2001 da Douglas Crockford ed è diventato uno standard per lo scambio di dati grazie alla sua semplicità e flessibilità. Anche se è molto popolare, ci sono anche altri formati simili come YAML e XML. Fish Shell utilizza un'implementazione interna di JSON per gestire i dati, ma ci sono anche plugin disponibili per una maggiore flessibilità nell'utilizzo di JSON all'interno della shell.
 
 ## Vedi anche:
-- [Documentazione ufficiale di Fish Shell su JSON](https://fishshell.com/docs/current/cmds/fromjson.html)
 - [Documentazione di JSON su json.org](https://www.json.org/json-it.html)
-- [Plugin Fish-J](https://github.com/seanedwards/fish-j) per una maggiore flessibilità nell'utilizzo di JSON in Fish Shell.

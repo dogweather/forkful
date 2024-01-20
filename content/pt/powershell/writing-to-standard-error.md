@@ -64,7 +64,3 @@ O cmdlet "Write-Host" é outra opção, mas geralmente é usado para exibir mens
 ## Veja Também:
 
 Saiba mais sobre como escrever mensagens de erro em código PowerShell:
-
-- [Documentação Oficial do Microsoft PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-you-wanted-to-know-about-warnings?view=powershell-7.1)
-- [Tutorial: Escrevendo ferramentas PowerShell avançadas](https://www.red-gate.com/simple-talk/sysadmin/powershell/write-advanced-tools-powershell)
-- [Comunicando Erros no PowerShell com Estilo e Cor](https://knowledge.informatica.com/s/article/Comunicando-Erros-no-PowerShell-com-Estilo-e-Cor)

@@ -50,7 +50,5 @@ Lorsqu'on commence un nouveau projet, Leiningen génère une structure de fichie
 ## Voir Aussi:
 Pour plus d'informations, consultez ces ressources:
 
-- [Leiningen et Clojure: Introduction](https://www.learn-clojure.com/leiningen-and-clojure-introduction)
 - [Documentation officielle de Clojure](https://clojure.org/guides/getting_started)
-- [Guide: Créer des projets Clojure avec Leiningen](https://www.freecodecamp.org/news/clojure-projects-with-leiningen/)
 - [Clojure for the Brave and True (livre en ligne gratuit)](https://www.braveclojure.com/)

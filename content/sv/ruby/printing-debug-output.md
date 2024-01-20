@@ -49,4 +49,3 @@ För mer information och resurser om Ruby och debugging, kolla in följande:
 - Officiella Ruby API dokumnetationen för puts [här](https://ruby-doc.org/core-2.6.3/IO.html#method-i-puts).
 - Officiella Ruby Dokumentationen för p [här](https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-p).
 - En guide i hur man använder `byebug` [här](https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-byebug-gem).
-- En guide i hur man använder `pry` [här](https://www.rubyguides.com/2020/04/ruby-pry-tutorial/).

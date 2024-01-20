@@ -36,6 +36,4 @@ YAML on tiedostoformaatti, jota käytetään tietojen tallentamiseen ja siirtäm
 YAML kehitettiin vuonna 2001, ja siitä on tullut suosittu tiedostoformaatti ohjelmistokehittäjien keskuudessa sen yksinkertaisuuden ja selkeyden vuoksi. Toisin kuin muut tiedostoformaatit, kuten XML ja JSON, YAML ei vaadi erikoismerkkejä tai tagiksiä, mikä tekee siitä helpommin luettavan ihmisille. Lisäksi YAML tukee kommentteja, mikä tekee siitä hyödyllisen monimutkaisemmissa asetustiedostoissa.
 
 ## Katso myös:
-- [Clojure-yaml-kirjaston virallinen dokumentaatio](https://github.com/ninjudd/clojure-yaml)
 - [YAML-spesifikaatio](https://yaml.org/)
-- [Clojure-yaml-kirjaston lähdekoodi GitHubissa](https://github.com/ninjudd/clojure-yaml)

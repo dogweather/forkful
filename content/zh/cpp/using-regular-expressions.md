@@ -49,6 +49,5 @@ int main(){
 
 ## 更多信息:
 
-- C++正则表达书的详细教程: [https://www.cnblogs.com/fnlingnzb-learner/p/5835571.html](https://www.cnblogs.com/fnlingnzb-learner/p/5835571.html)
 - 正则表达式在线测试工具: [https://regex101.com/](https://regex101.com/)
 - ECMAScript正则表达式规范: [https://www.ecma-international.org/ecma-262/5.1/#sec-15.10](https://www.ecma-international.org/ecma-262/5.1/#sec-15.10)

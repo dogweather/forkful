@@ -50,5 +50,4 @@ Si quieres profundizar más en cómo escribir archivos de texto en Go, puedes co
 # Ver también:
 
 - [Documentación oficial de Go](https://golang.org/doc/)
-- [Tutorial de Go sobre cómo escribir archivos de texto](https://www.golangprograms.com/golang-write-file.html)
 - [Ejemplos de escritura de archivos de texto en Go en GitHub](https://github.com/search?q=go+file+write)

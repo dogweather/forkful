@@ -49,5 +49,4 @@ Pamiętaj jedno - zarówno Substring jak i Slice tworzą nowy ciąg. Nie zmienia
 ## Zobacz też:
 
 - Dokumentacja [Substring](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.substring?view=net-5.0)
-- Dokumentacja [Slice](https://docs.microsoft.com/pl-pl/dotnet/api/system.memoryextensions.slice?view=net-5.0)
 - Artykuł [Ciągi w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/)

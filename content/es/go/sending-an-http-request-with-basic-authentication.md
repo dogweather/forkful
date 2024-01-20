@@ -57,6 +57,5 @@ Puedes encontrar más información y detalles técnicos en los siguientes recurs
 
 - [Golang 'net/http' paquete de documentación](https://golang.org/pkg/net/http/)
 - [Http y Web autenticación básica](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
-- [REST API autenticación básica en detalle](https://nordicapis.com/understanding-basic-and-bearer-http-authentication/)
 
 ---

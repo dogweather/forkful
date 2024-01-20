@@ -56,4 +56,3 @@ main =
 Per ulteriori informazioni sulla ricerca e la sostituzione del testo in Elm, visita:
 
 - [Documentazione Ufficiale Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Elm Tutorial su Stringhe](http://elmprogramming.com/strings.html)

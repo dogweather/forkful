@@ -45,8 +45,5 @@ W JavaScript, funkcje jak slice(), substring() oraz substr() są wbudowane w obi
 ## Zobacz Również
 
 Jak już zrozumiesz podstawy wyodrębniania podłańcuchów, możesz zgłębić temat korzystając z poniższych linków:
-- [MDN Web Docs - String.prototype.slice()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/slice)
-- [MDN Web Docs - String.prototype.substring()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring)
-- [MDN Web Docs - String.prototype.substr()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substr)
 
 Ponadto, aby porównać te metody, oto [artykuł na StackOverflow](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring) wyjaśniający różnice między slice(), substring() i substr().

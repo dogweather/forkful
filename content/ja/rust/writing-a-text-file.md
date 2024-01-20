@@ -40,4 +40,3 @@ fn main() {
 ## 関連リンク：
 - [Rust標準ライブラリのドキュメント](https://doc.rust-lang.org/std/fs/index.html)
 - [Rustのファイル操作についての記事「Rustでファイルを扱う方法」](https://aruno14.medium.com/rust-%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%89%B1%E3%81%86%E6%96%B9%E6%B3%95-3a47fb023708)
-- [テキストファイルとバイナリファイルの違いについての記事「テキストファイルとバイナリファイル、それぞれの違い」](https://proengineer.internous.co.jp/content/columnfeature/9877)

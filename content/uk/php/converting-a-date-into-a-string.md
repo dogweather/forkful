@@ -42,4 +42,3 @@ echo $date_string; // Виводимо рядок
 ## Додатково:
 - [PHP date() Function](https://www.php.net/manual/en/function.date.php)
 - [PHP DateTime::format](https://www.php.net/manual/en/datetime.format.php)
-- [UNIX Timestamp, Datetime, Conversion in PHP](https://www.geekhideout.com/php-unix-time.php)

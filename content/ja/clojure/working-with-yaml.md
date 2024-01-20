@@ -36,4 +36,3 @@ YAMLのルーツは、プログラム言語であるPerlのモジュールであ
 関連リソースへのリンク
 - [Official YAML website](https://yaml.org/)
 - [Clojure.data.yaml official documentation](https://clojure.github.io/data.json/)
-- [Comparison of YAML, JSON and XML](https://www.yaml.info/comparison/)

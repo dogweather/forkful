@@ -33,5 +33,4 @@ main = do
 
 ## Див. також
 - [Random Module in Haskell](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-- [Generating Random Data in Haskell](https://www.tutorialspoint.com/haskell/haskell_random_numbers.htm) 
 - [StackOverflow: How do I generate a random value in Haskell?](https://stackoverflow.com/questions/30740366/how-do-i-generate-a-random-string-in-haskell)

@@ -35,4 +35,3 @@ JSON luotiin alunperin Javascript-kielen yhteyteen, mutta siitä on tullut yleis
 ## Katso myös:
 - [JSON:n virallinen sivusto](https://www.json.org/)
 - [Bashin JSON-kirjasto jq](https://stedolan.github.io/jq/)
-- [Ohjelmointiopas Bashilla työskentelyyn](https://csivola.net/bash/)

@@ -56,6 +56,4 @@ Históricamente, escribir un archivo de texto ha sido una forma común de almace
 Implementar la escritura de un archivo de texto en TypeScript es sencillo gracias a las librerías integradas en NodeJS. Sin embargo, es importante tener en cuenta que este proceso puede variar según la plataforma en la que se esté ejecutando el código, ya sea en un servidor o en un navegador.
 
 ## También puede interesarte:
-- [Tutorial de NodeJS sobre cómo escribir archivos de texto](https://nodejs.dev/learn/writing-files-with-nodejs)
-- [Documentación oficial de TypeScript sobre la librería "fs"](https://www.typescriptlang.org/docs/handbook/nodejs/fs.html)
 - [Documentación oficial de "fs-extra"](https://github.com/jprichardson/node-fs-extra)

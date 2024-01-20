@@ -31,4 +31,3 @@ fn main() {
 
 ## Дивіться також
 - [Документація зі стандартного пакету `std::io`](https://doc.rust-lang.org/std/io/index.html)
-- [Стаття про обробку помилок у мові програмування Rust](https://www.ameyalokare.com/rust/2017/10/12/rust-proper-error-handling.html)

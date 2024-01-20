@@ -49,6 +49,5 @@ Also note: `argv[argc]` is always null, and `argv` is not modifiable: any change
 
 ## See Also
 
-- [POSIX getopt() function](http://man7.org/linux/man-pages/man3/getopt.3.html)
 - [Official ISO C Standard](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf)
 - [Using argc and argv in C programming](https://www.cprogramming.com/tutorial/c/lesson14.html)

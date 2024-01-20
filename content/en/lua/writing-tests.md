@@ -59,4 +59,3 @@ Writing tests in Lua often involves breaking down a larger program into smaller,
 - [LuaUnit GitHub repository](https://github.com/bluebird75/luaunit)
 - [LuaRocks website](https://luarocks.org/)
 - [Telescope testing framework](https://github.com/norman/telescope)
-- [Lutest testing framework](https://github.com/devm33/lutest)

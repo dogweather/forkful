@@ -46,5 +46,4 @@ A biblioteca `Jason` usa o módulo `Poison` para fazer a codificação e decodif
 ## Veja Também:
 
 - [Documentação da Biblioteca Jason](https://hexdocs.pm/jason/1.2.2/Jason.html)
-- [Tutorial de JSON em Elixir](https://www.tutorialspoint.com/elixir/elixir_json.htm)
 - [Introdução ao JSON](https://www.json.org/json-pt.html)

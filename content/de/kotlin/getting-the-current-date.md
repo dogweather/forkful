@@ -64,5 +64,4 @@ In Bezug auf die Implementierung zu beachten ist, dass `java.time.LocalDate.now`
 
 Für mehr Details und weiterführende Informationen, sehen Sie bitte die offizielle Dokumentation:
 
-- [Working with dates and times in Kotlin](https://kotlinlang.org/docs/dates-periods.html)
 - [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

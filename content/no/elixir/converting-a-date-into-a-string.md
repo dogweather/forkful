@@ -44,4 +44,3 @@ For mer informasjon, sjekk ut følgende:
 
 - [Date module official documentation](https://hexdocs.pm/elixir/Date.html)
 - [Timex library on GitHub](https://github.com/bitwalker/timex)
-- [Strftime function usage guide](https://hexdocs.pm/timex/readme.html#usage)

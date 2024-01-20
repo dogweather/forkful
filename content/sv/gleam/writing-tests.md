@@ -36,6 +36,4 @@ Outputen vid körning av testet blir:
 Test-driven development kommer från den agila utvecklingsmetodiken och har funnits sedan tidigt 2000-tal. Alternativ till Gleam för att skriva tester är till exempel ExUnit för Elixir eller Jest för JavaScript. I Gleam använder man sig av biblioteket Gleam Expect som tillhandahåller funktioner för att skriva och köra tester.
 
 ## Se även:
-- [Gleam Expect documentation](https://github.com/gleam-lang/expect)
 - [Test-driven development explained](https://www.agilealliance.org/glossary/tdd/)
-- [Alternative testing frameworks](https://www.slant.co/options/24563/alternatives/~elixir-exunit-alternatives)

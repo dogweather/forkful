@@ -45,6 +45,5 @@ Haskell에서는 기본적으로 제공하는 `toLower` 함수 외에도, 패키
 ## 연관된 정보:
 
 - [Haskell 'toLower' 공식 문서](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Haskell 'map' 함수와의 시너지](https://www.schoolofhaskell.com/school/starting-with-haskell/lists-and-types)
 - [텍스트 패키지 사용 방법](https://hackage.haskell.org/package/text)
 - [코드의 일관성을 위한 대소문자 변환의 중요성](http://www.drdobbs.com/architecture-and-design/normalization-in-programming-languages/240168319)

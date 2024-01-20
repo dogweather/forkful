@@ -38,4 +38,3 @@ A implementação deste método está na biblioteca-padrão de Kotlin e usa regr
 ## Veja também
 Para mais informações, consulte o link a seguir: 
 - [Documentação oficial do Kotlin sobre Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
-- [Post do blog JetBrains sobre Kotlin 1.5](https://blog.jetbrains.com/kotlin/2021/02/new-language-features-preview-in-kotlin-1-5-0/)

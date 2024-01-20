@@ -64,4 +64,3 @@ For `:fold`, the output is like `ğhello, world!`.
 For more information, see:
 
 - [Ruby String downcase method (ruby-doc.org)](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
-- [Working with unicode strings (rubyguides.com)](https://www.rubyguides.com/2015/05/working-with-unicode-strings/)

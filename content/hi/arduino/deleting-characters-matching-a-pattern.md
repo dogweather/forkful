@@ -42,4 +42,3 @@ void loop() {
 
 * [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
 * [Arduino Characters Reference](https://www.arduino.cc/reference/en/language/variables/data-types/char/)
-* [Arduino String Library](https://www.arduinolibraries.info/libraries/string)

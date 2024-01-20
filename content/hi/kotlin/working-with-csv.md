@@ -43,6 +43,5 @@ CSV फाइलें १९७० के दशक से प्रयुक�
 
 ## देखें भी:
 
-- [How to Parse CSV in Kotlin](https://www.baeldung.com/kotlin/parse-csv)
 - [Comparison of CSV, JSON, and XML](https://medium.com/gocodee/csv-vs-json-vs-xml-443b3a9e6f27)
 - [Handling CSV Formatting Errors](https://stackoverflow.com/questions/19206418/how-do-i-handle-csv-files-when-some-fields-are-quoted-and-some-aren-t-in-kotlin)

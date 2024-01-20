@@ -58,4 +58,3 @@ On myös tärkeää mainita, että JSON ei tue monimutkaisia tietorakenteita kut
 Katso myös
 - [Elm's official JSON documentation](https://guide.elm-lang.org/interop/json.html)
 - [JSON format specification](https://www.json.org/)
-- [Comparison of different data formats](https://stackify.com/json-vs-xml/)

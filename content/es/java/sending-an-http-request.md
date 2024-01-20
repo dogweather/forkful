@@ -56,5 +56,3 @@ En el ejemplo anterior, `HttpResponse.BodyHandlers.ofString()` se usa para conve
 
 ## Ver También
 - Documentación oficial de Java HttpClient: [Aquí](https://docs.oracle.com/en/java/javase/13/docs/api/java.net.http/java/net/http/HttpClient.html)
-- Tutorial de HttpClient en Java: [Aquí](https://www.baeldung.com/java-11-http-client)
-- Comparación de librerías HTTP en Java: [Aquí](https://www.baeldung.com/httpclient-vs-httpurlconnection-vs-okhttp)

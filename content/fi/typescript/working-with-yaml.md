@@ -35,4 +35,3 @@ YAML kehitettiin alun perin XML: n korvaajaksi helpottamaan tiedoston käsittely
 
 ## Katso myös:
 - [YAML-spesifikaatio](https://yaml.org/spec/)
-- [JSON: sta YAML: ään muunnettu tieto](https://blog.formidable.com/from-json-to-yaml/)

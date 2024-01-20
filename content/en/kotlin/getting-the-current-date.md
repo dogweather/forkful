@@ -53,7 +53,6 @@ In terms of implementation details, the `LocalDate.now()` function internally us
 ## See Also
 For a more extensive understanding of date/time handling in Kotlin, you can refer to the official Kotlin documentation:
 - [Kotlin Date and Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
-- [Working with date and time in Kotlin – Guide](https://www.baeldung.com/kotlin/dates-timestamps)
 
 For date-time best practices and Java 8 date-time APIs (which Kotlin uses):
 - [Oracle Docs – Date-Time](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html) 

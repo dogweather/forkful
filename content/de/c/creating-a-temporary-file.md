@@ -64,4 +64,3 @@ Die `tmpfile()`-Funktion erstellt eine einzigartige temporäre Datei im Modus "w
 
 - [tmpfile in der C Standard Library](http://www.cplusplus.com/reference/cstdio/tmpfile/)
 - [Stackoverflow Diskussion: Verwendung von temporären Dateien in C](https://stackoverflow.com/questions/1510297/what-is-the-most-secure-way-to-create-a-temporary-file-with-iso-c-and-posix)
-- [Verständnis der tmpfile()-Funktion](https://www.geekhideout.com/programming/understanding-the-tmpfile-function.shtml)

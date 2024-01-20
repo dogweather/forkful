@@ -46,5 +46,3 @@ Pour en savoir plus sur le module Date, consultez:
 - [Documentation Elm pour le module Date](http://package.elm-lang.org/packages/elm/time/latest/Date)
 
 Pour une exploration plus étendue de la comparaison de temps, vous pouvez consulter:
-
-- [La page Time sur le wiki Elm](https://elmprogramming.com/time.html)

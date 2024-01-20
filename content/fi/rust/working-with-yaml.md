@@ -44,5 +44,3 @@ YAML-tiedosto koostuu avain-arvo pareista, jotka on jäsennetty sisennyksillä. 
 
 ## Katso myös
 - [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/stable/book/ch11-00-testing.html)
-- [Ross Cruickshank: Yaml-rust](https://github.com/rust-lang-nursery/yaml-rust)
-- [Buster Neece: Yaml-rs](https://github.com/cybergeek94/yaml-rs)

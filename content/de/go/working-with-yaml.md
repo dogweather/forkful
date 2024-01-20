@@ -91,5 +91,4 @@ YAML wurde ursprünglich von Clark Evans im Jahr 2001 entwickelt und ist eine Er
 
 ## Siehe auch
 - [YAML offizielle Website](https://yaml.org/)
-- [YAML vs JSON vs XML](https://www.geeksforgeeks.org/difference-json-vs-xml-vs-yaml/)
 - [Dokumentation der YAML-Bibliothek in Go](https://pkg.go.dev/gopkg.in/yaml.v2)

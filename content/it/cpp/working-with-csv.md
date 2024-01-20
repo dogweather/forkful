@@ -70,5 +70,4 @@ Oltre al formato CSV, ci sono anche altri formati di file utilizzati per memoriz
 Per implementare la lettura e scrittura di file CSV in un programma C++, si possono utilizzare diverse librerie disponibili online, come ad esempio Libcsv o TinyCSV.
 
 ## Vedi anche:
-- [Libcsv](https://github.com/ahcub/libcsv)
 - [TinyCSV](https://github.com/ben-strasser/fast-cpp-csv-parser)

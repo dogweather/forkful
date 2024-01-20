@@ -53,4 +53,3 @@ Em relação às alternativas, outras linguagens de programação têm funções
 Você pode encontrar mais informações e utilizações da função `String.split` em:
 
 - Documentação oficial do Elm: [https://package.elm-lang.org/packages/elm/core/latest/String#split](https://package.elm-lang.org/packages/elm/core/latest/String#split)
-- Estudo profundo sobre manipulação de string no Elm: [https://elmprogramming.com/string-manipulation.html](https://elmprogramming.com/string-manipulation.html)

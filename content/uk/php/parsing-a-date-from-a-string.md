@@ -44,6 +44,3 @@ echo $datetime->format("d-m-Y");
 ## Дивіться також
 
 Для отримання детальної інформації та більшіх прикладів, перегляньте офіційну документацію PHP: 
-
-- Manual PHP за посиланням [strtotime()](https://www.php.net/manual/uk/function.strtotime.php)
-- Manual PHP за посиланням [DateTime](https://www.php.net/manual/uk/class.datetime.php)

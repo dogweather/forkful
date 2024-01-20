@@ -45,5 +45,3 @@ Avec cette technique, il est possible d'accéder aux lignes spécifiques en util
 
 Si vous souhaitez vous aventurez davantage avec les fichiers en Fish Shell, je vous recommande ces ressources :
 - [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
-- [Tutorial on reading and writing files with Fish shell](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-from-shell-scripts)
-- [An Introduction to UNIX/Linux file handling](https://swcarpentry.github.io/shell-novice/04-pipefilter/index.html)

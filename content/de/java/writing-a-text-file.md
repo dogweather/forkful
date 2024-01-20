@@ -54,5 +54,4 @@ Die Klasse FileWriter aus dem java.io-Paket ermöglicht das Schreiben von Textda
 
 **Siehe auch**
 - [Oracle Dokumentation zum Schreiben von Textdateien in Java](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Beispielprojekt auf GitHub mit Schreiben und Lesen von Textdateien](https://github.com/Java-Examples/Java-File-Reader-and-Writer)
 - [Tutorial zum Schreiben von Textdateien in Java auf YouTube](https://www.youtube.com/watch?v=XP4Ehb_Hbsc)

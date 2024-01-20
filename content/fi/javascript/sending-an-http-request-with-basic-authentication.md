@@ -48,4 +48,3 @@ Lähettäessäsi HTTP-pyynnön perusautentikoinnilla, käyttäjänimesi ja salas
 
 - Fetch API: [https://developer.mozilla.org/fi/docs/Web/API/Fetch_API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API)
 - Axios: [https://axios-http.com/](https://axios-http.com/)
-- HTTPs ja tietoturva: [https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/](https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/)

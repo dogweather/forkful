@@ -44,5 +44,4 @@ Men, för de flesta ändamål, kommer `count` att ge dig den information du beh�
 För mer information om att hantera strängar i Swift, utforska följande länkar:
 
 - [Swift Dokumentation: Strängar och tecken](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [NSHipster: Swift Sträng Manifest](https://nshipster.com/string/)
 - [Swift av Sundell: Arbeta med strängar i Swift](https://www.swiftbysundell.com/basics/strings/)

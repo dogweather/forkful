@@ -49,5 +49,4 @@ Una implementación más detallada del código anterior implica el uso de bloque
 ## Ver también:
 
 - [Documentación de Kotlin para escritura de archivos](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-bytes.html)
-- [Tutorial de escritura de archivos con Kotlin](https://blog.mindorks.com/kotlin-learn-using-java-file-ap-is-to-create-write-and-read-data-from-file)
 - [Escribiendo archivos de texto con otras opciones en Java](https://www.baeldung.com/java-write-to-file)

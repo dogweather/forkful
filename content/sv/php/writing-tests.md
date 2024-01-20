@@ -42,5 +42,4 @@ Implementeringen av tester kan också variera beroende på vilken utvecklingsmet
 ## Se även:
 
 - [PHP-manualen om inbyggda tester](https://www.php.net/manual/en/function.assert.php)
-- [PHPUnit-dokumentation](https://phpunit.readthedocs.io/en/9.5/)
 - [Codeception-hemsida](https://codeception.com/)

@@ -54,6 +54,3 @@ Scrivere un file di testo significa creare un documento digitale che contiene te
 Scrivere file di testo è un processo fondamentale nella programmazione, che risale ai primi linguaggi di programmazione come il COBOL e il FORTRAN. Oltre a creare e salvare file di testo su un dispositivo, i programmatori spesso utilizzano librerie o moduli specifici per manipolare file di testo, come ad esempio per leggere o modificare il contenuto di un file.
 
 ## Vedi anche:
-
-- [L'interfaccia "io" di Clojure](https://clojuredocs.org/clojure.core/io)
-- [Esempi di utilizzo di file di testo in Clojure](https://www.baeldung.com/clojure-working-with-files)

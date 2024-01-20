@@ -45,4 +45,3 @@ JSON最初是由Douglas Crockford在1999年提出的，它的设计灵感来自�
 如果你想深入学习如何使用JSON，你可以参考以下资源：
 - [JSON官方网站](https://www.json.org/)
 - [《A Brief Introduction to JSON》](https://www.json.org/)
-- [Bash官方文档中关于JSON的章节](https://www.gnu.org/software/bash/manual/html_node/JSON.html)

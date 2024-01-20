@@ -44,6 +44,5 @@ For mer informasjon om strengbehandling i Swift, se:
 
 Og for mer generell informasjon om String i datavitenskap:
 
-- Wikipedia: [String (computer science)](https://en.wikipedia.org/wiki/String_(computer_science))
 
 Husk, å vite hvordan du behandler tekstdata er en viktig del av enhver programmerers verktøykasse. Lykke til med kodingen!

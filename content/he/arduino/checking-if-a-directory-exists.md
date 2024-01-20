@@ -50,6 +50,3 @@ The directory doesn't exist.
 ניתן להשתמש בפונקציות מתכנתות תוך כדי שמירה על ראש פתוח לשילוב של שיטות חדשות ומכניזמים נוספים במערכת שלך. 
 
 ##ראה גם
-- [מדריך חיבור לשרת FTP בשפת Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/FTP)
-- [מאמר בנושא השתמש ב-Firebase עם Arduino](https://howtomechatronics.com/tutorials/arduino/how-to-connect-the-arduino-with-google-assistant-and-google-sheets/)
-- [מאמר אחר בנושא בדיקת האם תיקייה קיימת בשפת Java](https://www.geeksforgeeks.org/check-if-a-directory-exists-in-java/)

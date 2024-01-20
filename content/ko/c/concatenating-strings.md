@@ -52,6 +52,4 @@ int main() {
 
 ## 참고 자료
 
-- [C 언어에서의 문자열 핸들링](https://www.geeksforgeeks.org/string-handling-in-c/)
 - [C 언어의 strcat와 strncat 함수](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- [string.h 라이브러리 도큐먼트](https://www.gnu.org/software/libc/manual/html_node/String-Functions.html)

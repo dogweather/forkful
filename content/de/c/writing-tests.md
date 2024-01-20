@@ -51,6 +51,5 @@ Um Tests effektiv zu schreiben, sollte man sich mit den verschiedenen Testarten,
 
 ## Siehe auch
 
-- [Testing C Code with assert](https://www.embedded.com/testing-c-code-with-assert/)
 - [Unit Testing in C with Check](https://libcheck.github.io/check/)
 - [Test-Driven-Development in C](http://c.learncodethehardway.org/book/ex47.html)

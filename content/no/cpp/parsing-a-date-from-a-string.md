@@ -53,5 +53,4 @@ Her er noen detaljer angående implementasjonen: 'get_time' funksjonen brukes ti
 For en dypere forståelse av hvordan å parse datoer I C++, kan du sjekke ut følgende kilder:
 
 - [cppreference](https://en.cppreference.com/w/cpp/io/manip/get_time)
-- [cplusplus](http://www.cplusplus.com/reference/ctime/strptime/?kw=strptime)
 - [StackOverflow](https://stackoverflow.com/questions/14136833/stdget-time-vs-strptime) discussion on get_time versus strptime.

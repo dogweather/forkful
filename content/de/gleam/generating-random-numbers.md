@@ -44,6 +44,4 @@ In Gleam wird der Zufallszahlengenerator so implementiert, dass er einen Initial
 
 ## Siehe auch
 
-- Gleam's [random module](https://hexdocs.pm/gleam_stdlib/gleam/random/index.html) Dokumentation bietet detailliertere Informationen und Beispiele.
 - Für einen technischen Überblick über Zufallszahlengeneratoren, lesen Sie die [Wikipedia-Seite](https://de.wikipedia.org/wiki/Pseudozufallszahl).
-- Für eine ausführlichere Diskussion über die Nutzung von Zufallszahlen in der Programmierung, empfehle ich dieses [Artikel](https://www.johndcook.com/blog/2016/01/30/9999963619/).

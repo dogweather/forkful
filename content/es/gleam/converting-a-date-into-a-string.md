@@ -39,6 +39,4 @@ El módulo `erlang` en Gleam convierte las fechas en cadenas por medio de la con
 ## Ver También
 Para más información sobre Gleam y sus utilidades, puedes visitar los siguientes enlaces:
 
-- Documentación oficial de Gleam: [https://gleam.run/docs/](https://gleam.run/docs/)
-- Libro de programación Gleam ["Programming Gleam"](https://pragprog.com/titles/lotwb/programming-gleam/)
 - Artículo útil sobre la conversión de fechas a cadenas: [https://www.toptal.com/software/definitive-guide-to-datetime-manipulation](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)

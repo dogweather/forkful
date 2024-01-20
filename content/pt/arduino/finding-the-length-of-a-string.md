@@ -36,5 +36,4 @@ A saída será '21', que é o número de caracteres na string "Programação Ard
 ## Veja também
 
 - [Referência oficial da função length() no Arduino](https://www.arduino.cc/en/Tutorial/StringLengthTrim)
-- [Como usar Strings no Arduino](https://www.arduino.cc/en/Reference.StringObject)
 - [Arduino String Manipulation Using Minimal Ram](https://forum.arduino.cc/index.php?topic=131806.0)

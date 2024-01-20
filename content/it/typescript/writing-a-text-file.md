@@ -47,4 +47,3 @@ Per implementare correttamente la scrittura di un file di testo, è importante a
 ## Vedi anche:
 
 - [Documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs/)
-- [Tutorial su come scrivere e leggere file di testo in TypeScript](https://www.digitalocean.com/community/tutorials/how-to-write-and-read-text-files-in-typescript)

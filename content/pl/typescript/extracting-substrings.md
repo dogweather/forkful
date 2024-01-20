@@ -36,6 +36,4 @@ Pod względem implementacji, `substring()` działa przez przeiterowanie przez ci
 
 ## Zobacz też:
 
-- Dokumentacja TypeScript na temat ciągów: [https://www.typescriptlang.org/docs/handbook/strings.html](https://www.typescriptlang.org/docs/handbook/strings.html)
 - Porównanie `substring()` i `slice()`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- Szczegółowy przewodnik po ciągach w TypeScript: [https://www.digitalocean.com/community/tutorials/typescript-strings](https://www.digitalocean.com/community/tutorials/typescript-strings)

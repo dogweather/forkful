@@ -44,6 +44,4 @@ The directory does not exist.
 פרטי אימפלמנטציה: הפונקציה בודקת את הנתיב שנמסר לה, ואם הנתיב כתובת (כתובת הדיסק של הקובץ) היא לספרייה, היא מחזירה true.
 
 ## ראה גם:
-* [Java - Files exists() Method](https://www.tutorialspoint.com/java_nio/java_nio_files_exists.htm)
 * [Path Operations (The Java™ Tutorials > Essential Classes > Basic I/O)](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
-* [Java check if file exists](https://www.journaldev.com/861/java-check-if-file-exists)

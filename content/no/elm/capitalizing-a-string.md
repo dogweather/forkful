@@ -62,5 +62,4 @@ Implementeringsdetaljer handler om hvordan Elm håndterer strenger. Elm ser på 
 Elms offisielle dokumentasjon gir mer informasjon om strenger og innebygde string-funksjoner som kan være nyttige:
 
 - Elm String API: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Utforsk mer om strenger i Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
 - For dem som ønsker å dykke dypere inn i hvordan strenger håndteres i Elm: [https://guide.elm-lang.org/core_language.html](https://guide.elm-lang.org/core_language.html)

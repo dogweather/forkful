@@ -54,4 +54,3 @@ PowerShell calcola le date future e passate basandosi sull'ora UTC, piuttosto ch
 
 - [Documentazione ufficiale di Microsoft su Get-Date](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
 - [Documentazione ufficiale di Microsoft su AddDays](https://docs.microsoft.com/it-it/dotnet/api/system.datetime.adddays?view=net-5.0)
-- [Blog sulle funzionalità di manipolazione della data e dell'ora in PowerShell](https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-add-days-to-date/)

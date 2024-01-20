@@ -41,5 +41,4 @@ JSON був створений в 2001 році та став популярни
 
 ## Дивись також:
 - [JSON офіційний сайт](https://www.json.org/json-uk.html)
-- [Курс "Віртуальний Планета": Робота з JSON](https://www.virtualplanet.org.ua/training/programming/7325)
 - [Редактор JSON онлайн](https://jsoneditoronline.org/)

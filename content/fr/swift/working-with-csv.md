@@ -55,6 +55,5 @@ Les fichiers CSV ont été développés dans les années 1970 pour stocker des d
 Alors que les fichiers CSV sont faciles à utiliser, ils peuvent avoir des limitations lorsqu'il s'agit de données complexes et structurées. Dans de tels cas, les programmeurs peuvent utiliser d'autres formats de données tels que JSON ou XML. De plus, il existe des librairies et des outils tels que SwiftCSV et CSVParser pour aider à travailler avec des fichiers CSV en Swift.
 
 # Voir aussi :
-- [La documentation officielle de Swift sur la manipulation de fichiers](https://docs.swift.org/swift-book/LanguageGuide/WorkingWithFiles.html)
 - [SwiftCSV library](https://github.com/naoty/SwiftCSV)
 - [CSVParser library](https://github.com/yaslab/CSV.swift)

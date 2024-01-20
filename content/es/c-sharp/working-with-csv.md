@@ -85,6 +85,5 @@ Alternativas al formato CSV incluyen bases de datos relacionales y formatos como
 Si deseas trabajar con archivos CSV en C#, también puedes considerar las librerías externas como CsvHelper y LumenWorksCsvReader, que ofrecen funcionalidades adicionales como lectura y escritura en archivos grandes, mapeo de datos a tipos específicos y manejo de errores.
 
 ## Ver también
-- [Documentación oficial de C# sobre lectura y escritura de archivos CSV](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
 - [CsvHelper library](https://joshclose.github.io/CsvHelper/)
 - [LumenWorksCsvReader library](https://github.com/phatcher/CsvReader)

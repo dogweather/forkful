@@ -44,4 +44,3 @@ Il formato CSV è stato sviluppato negli anni '70 quando la prima versione di Mi
 ## Vedi Anche:
 
 - [Pagina Wikipedia sul formato CSV](https://it.wikipedia.org/wiki/Comma-separated_values)
-- [Tutorial su come lavorare con CSV su Arduino](https://www.instructables.com/Lesson-6-How-to-Use-Arduino-CSV-Library/)

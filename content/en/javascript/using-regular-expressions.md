@@ -67,5 +67,4 @@ In terms of implementation, regular expressions in Javascript are created using 
 If you want to learn more about regular expressions in Javascript, check out the following resources:
 
 - [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Codecademy: Regular Expressions Cheatsheet](https://www.codecademy.com/learn/learn-regular-expressions/modules/learn-regular-expressions/cheatsheet)
 - [Regular Expressions 101: Test and Debug Javascript Regular Expressions](https://regex101.com/)

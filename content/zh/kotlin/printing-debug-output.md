@@ -46,4 +46,3 @@ Hello, Kotlin!
 ## 可参见:
 
 - Kotlin 文档: [Basic Syntax](https://kotlinlang.org/docs/basic-syntax.html)
-- Jetbrains 论坛: [Discussion on println() vs print()](https://discuss.jetbrains.com/t/println-vs-print/203)

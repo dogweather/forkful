@@ -56,5 +56,4 @@ Alternativamente, si necesita más control sobre los argumentos de línea de com
 Para profundizar en los argumentos de línea de comandos y cómo usarlos en Swift, consulta los siguientes enlaces:
 
 - [Apple: Basics of Command Line Programming](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW1)
-- [GitHub: Swift-Args](https://github.com/apple/swift-args)
 - [GitHub: CommandLineKit](https://github.com/objecthub/swift-commandlinekit)

@@ -77,4 +77,3 @@ CSV文件格式已经存在很长时间，它最早是由Lotus软件开发用于
 # 参考资料：
 - [Java官方文档](https://docs.oracle.com/javase/8/docs/api/java/io/)
 - [OpenCSV官方网站](http://opencsv.sourceforge.net/)
-- [CSV格式介绍](https://www.techopedia.com/definition/27724/csv-file)

@@ -48,6 +48,4 @@ Nell'implementazione dei writing test, esistono diverse librerie e framework dis
 
 ## See Also:
 
-- [Introduzione al writing test con PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/introduction-to-writing-tests-with-powershell/)
 - [Documentazione ufficiale di Pester](https://pester.dev/)
-- [Approfondimenti sul TDD con PowerShell](https://adamtheautomator.com/test-driven-development-powershell/)

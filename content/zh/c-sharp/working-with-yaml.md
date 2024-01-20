@@ -36,5 +36,4 @@ Console.WriteLine(students[1].age);
 历史上，程序员使用 XML 格式来存储和传输数据。然而，XML 格式的语法繁琐，使得它不易于阅读和编写。YAML 的出现解决了这个问题，它是一种更加简洁、易于理解的替代方案。在 .NET Framework 中，我们可以通过安装 `YamlDotNet.Core` 包来使用 YAML。
 
 ## 查看更多：
-- [YAML 入门教程](https://www.yanbin.me/yaml-primer/)
 - [YAML 官方文档](https://yaml.org/spec/1.2/spec.html)

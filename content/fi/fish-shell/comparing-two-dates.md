@@ -47,5 +47,4 @@ Fish Shell päivämäärien vertailussa on tärkeää muistaa, että se linjaa p
 ## Katso myös:
 
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Programming with Dates and Times](https://pubs.opengroup.org/onlinepubs/009695399/functions/xdg_date.html)
 - [Comparison of Shell Scripting Languages](https://www.wikibooks.org/wiki/Bourne_Shell_Scripting)

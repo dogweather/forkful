@@ -43,4 +43,3 @@ Implementeringen av YAML i C er mulig ved hjelp av biblioteket "yaml.h", som er 
 ## Se også:
 - [YAML.org](https://yaml.org/) for offisiell dokumentasjon og nyheter om YAML
 - [C YAML](https://github.com/yaml/libyaml) for mer informasjon om å jobbe med YAML i C
-- [YAML vs. XML](https://yaml.org/docs/history.html) for en sammenligning mellom YAML og XML

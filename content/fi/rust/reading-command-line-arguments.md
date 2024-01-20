@@ -41,5 +41,4 @@ Rustin `std::env::args` funktion tekeminen on yksinkertaista: alustaa Vec<String
 ## Katso myös
 
 - [Rustin virallinen dokumentaatio komentoriviparametreistä](https://doc.rust-lang.org/std/env/fn.args.html)
-- [`getopts`-kirjaston dokumentaatio](https://doc.rust-lang.org/getopts/getopts/index.html)
 - [`clap`-kirjaston dokumentaatio](https://docs.rs/clap/2.33.3/clap/)

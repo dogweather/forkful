@@ -41,6 +41,4 @@ Detale implementacji mogą się różnić, ale zasada jest taka sama - wysyłka 
 
 ## Zobacz też
 - [Dokumentacja libcurl](https://curl.haxx.se/libcurl/c/)
-- [Poradnik "How to download a webpage using C"](https://www.example.com/download-webpage)
 - [Artykuł "Anatomy of an HTTP Transaction"](https://developer.mozilla.org/pl/docs/Web/HTTP)
-- [Poradnik "Scraping a web page in C"](https://progur.com/2016/09/how-to-scrape-web-pages-in-c.html)

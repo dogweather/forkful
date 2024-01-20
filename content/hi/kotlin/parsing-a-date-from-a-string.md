@@ -39,6 +39,4 @@ println(actualDate)  // Output: 2021-12-23
 
 ## यदि आप और अधिक जानना चाहते हैं:
 
-- [Java 8 Date-Time API]("https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant") -  Java 8 में नए डेट-टाइम API के बारे में अधिक जानकारी के लिए। 
-- [DateTimeFormatter]("https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html") - DateTimeFormatter वर्ग का विवरण और उपयोग की जानकारी। 
 - [ISO Date-Time Standards](https://www.w3.org/TR/NOTE-datetime) - ISO के द्वारा मान्यता प्राप्त तारीख-समय प्रारूप के बारे में अधिक।

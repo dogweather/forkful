@@ -47,5 +47,4 @@ Nesse exemplo, `sed 's/mundo!/Programação Bash/g'` localiza 'mundo!' e substit
 ## Veja também:
 
 * [Tutorial sed em Português](http://aurelio.net/sed/)
-* [Manipulação de strings no Bash](https://www.cyberciti.biz/faq/unix-linux-bash-remove-string/)
 * [Referência de expressões regulares para sed](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)

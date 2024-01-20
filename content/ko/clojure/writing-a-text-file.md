@@ -26,6 +26,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 텍스트 파일 작성은 컴퓨터 프로그래밍에서 매우 중요한 기술입니다. 예전에는 파일을 쓰는 것이 다소 복잡했지만 요즘에는 매우 쉽고 간단해졌습니다. `with-open` 함수는 파일을 열고 닫는 번거로운 작업을 알아서 처리해 줍니다. 이런 방식으로 코드를 작성하면 실수를 줄이고 코드를 더 간결하게 만들 수 있습니다.
 
 # 관련 자료:
-- [Clojure 공식 문서 - 파일 다루기](https://clojure.org/reference/io)
-- [Clojure Cookbook - 파일 다루기](https://clojure-cookbook.com/06-io/06-07)
 - [Clojure Style Guide - 파일 다루기](https://github.com/bbatsov/clojure-style-guide#files-and-folders)

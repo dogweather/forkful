@@ -61,4 +61,3 @@ Pour plus d'informations, consultez les sources suivantes :
 - [Documentation C++ - std::string::size](http://www.cplusplus.com/reference/string/string/size/) 
 - [Documentation C++ - std::string::length](http://www.cplusplus.com/reference/string/string/length/)
 - [Documentation C++ - std::strlen](https://www.cplusplus.com/reference/cstring/strlen/)
-- [Documentation C++ - sizeof operator](https://www.cplusplus.com/reference/keyword/sizeof/)

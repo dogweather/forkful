@@ -54,4 +54,3 @@ Das Schreiben einer Textdatei ist eine grundlegende Funktion in der Programmieru
 - [touch Befehl](https://ss64.com/bash/touch.html)
 - [echo Befehl](https://ss64.com/bash/echo.html)
 - [cat Befehl](https://ss64.com/bash/cat.html)
-- [Linux Dokumentation über Texte erstellen](https://www.linuxtv.org/wiki/index.php/Creating_Text_files_with_the_Command_Line)

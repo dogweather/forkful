@@ -32,6 +32,5 @@ echo $temp_file
 
 ##ראו גם:
 
-- [מאמר Fish Shell בוויקיפדיה](https://he.wikipedia.org/wiki/Fish_(shell))
 - [מדריך החלפת אינטרפרטר בספריית GNU C](https://www.gnu.org/software/libc/manual/html_node/Executing-a-File.html)
 - [הסבר על מנגנון העבודה של mktemp](https://www.gnu.org/software/autogen/mktemp.html)

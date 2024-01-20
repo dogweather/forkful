@@ -40,8 +40,5 @@ Históricamente, la necesidad de analizar fechas de las cadenas de texto surge c
 
 Para más información, visita estas fuentes:
 
-- Documentación de [Fish Shell 'date'](https://fishshell.com/docs/current/cmds/date.html)
 
 - Manual de [Fish Shell](https://fishshell.com/docs/current/index.html)
-
-- Documentación de la función [strftime de Fish Shell](https://fishshell.com/docs/current/cmds/strftime.html).

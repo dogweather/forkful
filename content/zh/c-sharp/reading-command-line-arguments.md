@@ -58,5 +58,4 @@ Arg[2] = [arg3]
 ## 参考资料：
 
 - [C# 101: Introduction to C# & .NET Core](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/)
-- [Command-Line Parsing in C#](https://m.dotnetperls.com/command-line-args)
 - [CommandLineParser Library](https://github.com/commandlineparser/commandline)

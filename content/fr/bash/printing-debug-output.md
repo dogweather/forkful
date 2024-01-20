@@ -32,5 +32,4 @@ Historiquement, Bash a toujours eu la faculté d'imprimer les sorties de déboga
 ## Voir Aussi 
 Pour plus d'informations, consultez:
 - [Redirections de flux en bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.fr.html): une introduction aux redirections de flux en bash.
-- [Debugging Bash scripts by Mitch Frazier](https://www.linuxjournal.com/content/debugging-bash-scripts): un guide plus approfondi sur le débogage en Bash.
 - [Bash Scripting Cheatsheet](https://devhints.io/bash): une feuille de triche avec les commandes de script Bash les plus courantes.

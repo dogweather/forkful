@@ -30,6 +30,3 @@ Det finns också alternativ till textfiler, som till exempel att använda databa
 När du skriver en textfil i Kotlin används en teckenkodning som standard för att översätta tecken till binära värden. Det är viktigt att välja rätt teckenkodning för att kunna läsa och tolka filens innehåll korrekt.
 
 ## Se även:
-- [Kotlins officiella dokumentation om filhantering](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/)
-- [Enkel guide till att skriva textfiler i Kotlin](https://www.journaldev.com/1900/kotlin-write-to-file-append)
-- [Diskussion om fördelar och nackdelar med att använda textfiler vs databaser](https://www.quora.com/Which-is-better-for-storing-data-database-or-text-files)

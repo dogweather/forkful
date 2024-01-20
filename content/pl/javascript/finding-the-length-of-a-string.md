@@ -49,4 +49,3 @@ Szczegółowe informacje na temat operacji na ciągach w JavaScript znajdziesz n
 Harmonogram szkoleń oraz kursy, w których omawiane są podobne tematy znajdują się na stronach:
 
 - [Codecademy - JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
-- [JavaScript dla początkujących – kurs dostępny na platformie Udemy.](https://www.udemy.com/topic/javascript/)

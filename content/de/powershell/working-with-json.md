@@ -40,6 +40,5 @@ Alter: 25
 JSON wurde ursprünglich als Alternative zu XML entwickelt, um das Austauschen von Daten zwischen Anwendungen zu vereinfachen. Es ist leichtgewichtig, einfach zu verstehen und in verschiedenen Programmiersprachen unterstützt. Es gibt auch andere Methoden, um mit JSON in PowerShell zu arbeiten, wie z.B. der `ConvertFrom-Json` cmdlet. Außerdem können Entwickler JSON-Serialisierungsschemata verwenden, um strukturierte Daten zu speichern und abzurufen.
 
 ## Siehe auch
-- Microsoft's Dokumentation zu [Working with JSON in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/accepting-input/working-with-json-in-powershell?view=powershell-7.1) 
 - JSON-Serialisierung mit [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Die offizielle JSON-Website](https://www.json.org/json-de.html)

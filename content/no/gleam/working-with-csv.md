@@ -39,6 +39,3 @@ CSV-formatet ble utviklet i 1972 som en enkel måte å lagre data på, og har si
 Når du arbeider med CSV i Gleam, bør du være oppmerksom på eventuelle problemer med tegnsett og tegn som kan bryte med CSV-formatet. Det er også viktig å ha en god forståelse av hvordan CSV-dataene dine er strukturert, siden det kan påvirke ytelsen når du leser og manipulerer dataene.
 
 ## Se også:
-- [Offisiell Gleam dokumentasjon for File.csv](https://gleam.run/docs/stdlib/file.csv/)
-- [Mer informasjon om CSV-formatet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/CSV)
-- [Sammenligning av CSV, JSON og XML](https://stackify.com/learn-csv-vs-json-vs-xml/)

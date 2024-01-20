@@ -40,6 +40,4 @@ När det gäller implementation, se till att du tar bort debug utskrifter från 
 ## Se också
 För mer information om C programmering och debug tekniker, se följande källor:
 
-- [C Programming Language (2nd Edition) av Brian W. Kernighan och Dennis M. Ritchie](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
 - [GDB: The GNU Project Debugger](https://www.gnu.org/software/gdb/) 
-- [Effective Debugging: 66 Specific Ways to Debug Software and Systems av Diomidis Spinellis](https://www.amazon.com/Effective-Debugging-Specific-Software-Systems/dp/0134394798)

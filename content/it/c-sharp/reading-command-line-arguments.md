@@ -53,4 +53,3 @@ arg3
 
 - "Command-Line Arguments" (Argomenti da riga di comando) - Documentazione Microsoft: [link](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/main-and-command-args/#:~:text=in%20C%23-,Main()%20Return%20Values,Application%20object%20in%20WPF%20applications.)
 - "How to read command line arguments" (Come leggere gli argomenti della riga di comando) – Tutorial di C# Station: [link](https://csharp-station.com/Tutorial/CSharp)
-- "Command Line Arguments In C#" (Argomenti della riga di comando in C#) – C# Corner: [link](https://www.c-sharpcorner.com/UploadFile/a777ce/command-line-arguments-in-C-Sharp/)

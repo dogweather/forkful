@@ -50,4 +50,3 @@ YAML נוצר לראשונה על ידי מתכנתים של חברת תוכנה
 
 ##ראו גם:
 - [The official YAML website](https://yaml.org/)
-- [A Beginner's Guide to YAML by DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml)

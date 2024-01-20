@@ -51,4 +51,3 @@ Para más información sobre la generación de números aleatorios en Clojure, p
 
 - [Documentación de Clojure](https://clojure.org/)
 - [Tutoriales de Clojure](https://www.learn-clojurescript.com/)
-- [Generación de números aleatorios en Java](https://www.baeldung.com/java-random)

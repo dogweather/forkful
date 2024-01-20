@@ -44,4 +44,3 @@ CSVとは、Comma-Separated Valuesの略称で、データをカンマで区切�
 ## 関連情報：
 - [clojure.data.csvドキュメンテーション](https://clojure.github.io/data.csv/)
 - [RFC4180 - CSVフォーマットの仕様書](https://tools.ietf.org/html/rfc4180)
-- [ExcelやGoogle Sheetsなどのスプレッドシートソフトウェアを使用する方法](https://support.google.com/docs/answer/40608?hl=ja)

@@ -48,5 +48,4 @@ Når det kommer til implementeringsdetaljer i `Floki`, bruker den Elixir's kraft
 ## Se også:
 
 - [Floki Dokumentasjon](https://hexdocs.pm/floki)
-- [Elixir School](https://elixirschool.com/nb/lessons/libraries/floki)
 - [Alternativer til Floki](https://elixirforum.com/t/how-do-you-parse-html-in-elixir/2385)

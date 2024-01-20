@@ -29,5 +29,4 @@ Implementacja standardowego strumienia błędów w języku C# jest prostym proce
 
 ## Zobacz również:
 - Dokumentacja C# dotycząca standardowego strumienia błędów: [https://docs.microsoft.com/en-us/dotnet/api/system.console.error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- Przydatny artykuł na temat wysyłania komunikatów do standardowego strumienia błędów: [https://www.c-sharpcorner.com/blogs/how-to-use-standard-error-in-c-sharp](https://www.c-sharpcorner.com/blogs/how-to-use-standard-error-in-c-sharp)
 - Video tutorial na temat standardowego strumienia błędów w języku C#: [https://www.youtube.com/watch?v=PT7qH5PTCb0](https://www.youtube.com/watch?v=PT7qH5PTCb0)

@@ -46,6 +46,5 @@ Drukowanie debugowania ma długą historię w świecie programowania i jest pows
 
 - [Debugger.Display attribute](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debuggerdisplayattribute?view=net-5.0)
 - [Debugger in Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/?view=vs-2019)
-- [Debugging Techniques and Tools](https://docs.microsoft.com/pl-pl/visualstudio/debugger/debugging-techniques-and-tools?view=vs-2019)
 
 Oprócz tego polecam zagłębić się w zagadnienia debugowania i poznania różnych technik debugowania, które mogą przyspieszyć i ułatwić proces rozwijania oprogramowania.

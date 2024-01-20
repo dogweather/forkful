@@ -38,5 +38,4 @@ CSV-tiedostojen tyypillinen rakenne koostuu sarakkeista ja riveistä, joissa jok
 
 ## Katso myös:
 - [PowerShell CSV-dokumentaatio](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
-- [CSV-tiedostojen luominen ja muokkaaminen PowerShellilla](https://www.techrepublic.com/article/how-to-create-and-modify-csv-files-using-powershell/)
 - [PowerShell CSV-tutoriaali](https://www.youtube.com/watch?v=2lNx33fH_pM)

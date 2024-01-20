@@ -36,4 +36,3 @@ int main() {
 
 ## 参考资料：
 - [C++标准库参考手册](https://cppreference.com/)
-- [Boost.Exception](https://www.boost.org/doc/libs/1_75_0/libs/exception/doc/index.html)

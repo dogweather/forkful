@@ -43,6 +43,5 @@ Entretanto, esteja ciente de que elas não são sempre a melhor solução. Em si
 
 Para se aprofundar no assunto, sugerimos os seguintes recursos:
 
-- Documentação oficial de expressões regulares em Clojure: [cljdoc.org](https://cljdoc.org/d/clojure/clojure/1.10.3/doc/core-functions#re-seq)
 - Um guia detalhado e interativo sobre expressões regulares: [regex101.com](https://regex101.com/)
 - Para problemas mais complicados, considere bibliotecas como: [instaparse](https://github.com/Engelberg/instaparse) e [parsec](https://github.com/satta/parsec)

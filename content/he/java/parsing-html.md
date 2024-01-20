@@ -45,4 +45,3 @@ Hello, world!
 ## ראו גם
 - [תיעוד Jsoup](https://jsoup.org/)
 - [XPath](https://www.w3schools.com/xml/xpath_intro.asp)
-- [DOM Parsing](https://www.w3schools.com/js/js_htmldom_parsing.asp)

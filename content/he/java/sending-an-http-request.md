@@ -51,7 +51,5 @@ public class Main {
 
 ## ראה גם:
 
-* המדריך השלם ל- HttpClient של [Baeldung](https://www.baeldung.com/java-11-http-client)
 * דוקומנטציה רשמית של [Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
 * מרכז למידה חינמי ל-[OkHttp](https://square.github.io/okhttp/)
-* מדריך ל-[Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/)

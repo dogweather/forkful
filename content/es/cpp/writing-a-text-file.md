@@ -37,4 +37,3 @@ Escribir archivos de texto ha sido una función crucial en la programación desd
 ## Consulte también:
 - [Documentación de la biblioteca estándar de C++](https://www.cplusplus.com/reference/fstream/ofstream/)
 - [Tutorial de C++ sobre archivos de texto](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)
-- [Historia de los archivos de texto](https://www.britannica.com/technology/text-file)

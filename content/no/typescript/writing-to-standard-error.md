@@ -32,6 +32,4 @@ Skriving til standard error har vært en vanlig praksis i programmering i mange 
 Implementeringen av å skrive til standard error kan variere avhengig av programmeringsspråk, men i TypeScript kan dette gjøres ved hjelp av console.error() -funksjonen som nevnt ovenfor.
 
 "## Se også:"
-- ["Introduksjon til JavaScript feilhåndtering"](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Error_handling)
-- ["The difference between console.log and console.error"](https://www.geeksforgeeks.org/difference-between-console-log-and-console-error-in-javascript/)
 - ["Console object documentation in TypeScript"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#object-spread-and-rest-for-javascript-types)

@@ -43,6 +43,5 @@ Siguiendo con detalles más específicos, puedes usar el objeto 'cerr' de la bib
 
 - [Tutorial oficial de C++](http://www.cplusplus.com/doc/tutorial/)
 - [C++ Reference](http://www.cplusplus.com/reference/)
-- [GUÍA RÁPIDA C++](https://developerinsider.co/c-guia-rapida-para-principiantes/)
   
 Recuerda siempre que la impresión de depuración es solo una de las muchas herramientas a tu disposición. Utilízala con discreción y siempre busca la manera más eficiente de resolver los problemas de programación.

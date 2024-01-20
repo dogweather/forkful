@@ -41,4 +41,3 @@ Para trabajar con CSV en Rust, se puede utilizar la biblioteca oficial de Rust l
 
 ## Ver también:
 - [Documentación de la biblioteca CSV de Rust](https://docs.rs/csv)
-- [Guía para trabajar con archivos CSV en Rust](https://www.techiedelight.com/working-with-csv-files-rust/)

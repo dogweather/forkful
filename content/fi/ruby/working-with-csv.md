@@ -25,5 +25,4 @@ CSV on ollut käytössä jo vuodesta 1972 lähtien, mutta sen suosio on kasvanut
 ## Katso myös:
 
 - [Ruby CSV Dokumentaatio](https://docs.ruby-lang.org/en/2.6.0/CSV.html)
-- [Ruby CSV Hakemisto](https://ruby-doc.org/stdlib-2.6.0/libdoc/csv/rdoc/index.html)
 - [Wikipedia: CSV](https://en.wikipedia.org/wiki/Comma-separated_values)

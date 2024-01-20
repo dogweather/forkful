@@ -55,5 +55,4 @@ CSV ble utviklet på 1970-tallet som et enkelt filformat for å importere og eks
 
 ## Se også:
 - [Go's dokumentasjon om CSV-pakken](https://golang.org/pkg/encoding/csv/)
-- [En guide til å arbeide med CSV-filer i Go](https://blog.gopheracademy.com/advent-2014/parsing-xml-and-json-with-go/)
 - [Et populært tredjepartsbibliotek for CSV-håndtering i Go](https://github.com/gocarina/gocsv)

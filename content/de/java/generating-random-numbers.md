@@ -40,5 +40,4 @@ Die Implementierungsdetails variieren je nach Methode, aber im Allgemeinen verwe
 Um mehr über Zufallszahlen und ihre Anwendungen in Java zu erfahren, empfehle ich die folgenden Quellen:
 
 - [Offizielle Java Doku zufor java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java Tutorials - Zufallszahlen](https://www.programiz.com/java-programming/examples/generate-random-number)
 - [Offizielle Java Doku für Math.random()](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)

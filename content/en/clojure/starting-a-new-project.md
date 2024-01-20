@@ -44,5 +44,4 @@ Understanding how Leiningen works under the hood isn’t necessary for starting 
 ## See Also
 Consider exploring these additional resources to reinforce your understanding:
 - [Clojure for the Brave and True](https://www.braveclojure.com/)
-- [Leiningen tutorial](http://clojure-doc.org/articles/tutorials/leiningen.html)
 - [Getting started with Clojure](https://clojure.org/guides/getting_started)

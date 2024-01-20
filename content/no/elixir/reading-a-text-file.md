@@ -48,5 +48,3 @@ Diskusjonen rundt implementeringsdetaljer er ganske teknisk, men det er viktig �
 - Ønsker du å lese mer om filhåndtering i Elixir, sjekk ut [den offisielle dokumentasjonen](https://hexdocs.pm/elixir/File.html)
   
 - For mer informasjon om `File.stream!` og strømmer generelt i Elixir, les [Streams-guiden](https://hexdocs.pm/elixir/Stream.html)
-
-- En dyptgående diskusjon av I/O i Erlang og Elixir kan bli funnet i denne [posten på Erlang Solutions blogg](https://www.erlang-solutions.com/blog/erlang-and-elixir-i-o-its-not-what-you-think.html).

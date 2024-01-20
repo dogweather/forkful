@@ -35,6 +35,5 @@ A `replace` em Kotlin usa internamente a classe `Matcher` da Java, isto é, apli
 
 ## Veja Também
 
-- [Documentação oficial Kotlin para funções de String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html)
 - [Tutoriais de Regex no Regexone](https://regexone.com)
 - [Referência da API Java para a classe Matcher](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html)

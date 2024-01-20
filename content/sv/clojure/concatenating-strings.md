@@ -42,6 +42,5 @@ Gällande implementeringsdetaljer är det viktigt att komma ihåg att överdrive
 ## Se Även
 Ytterligare resurser för att hjälpa dig förstå konkatenering av strängar i Clojure:
 
-- [Clojure Docs](https://clojure.org/guides/learn/strings)
 - [Clojure by Example](https://kimh.github.io/clojure-by-example/#strings)
 - [Practical Clojure Book](https://www.apress.com/gp/book/9781430272311)

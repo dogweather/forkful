@@ -58,6 +58,5 @@ Este código produzirá a mesma saída que o exemplo anterior.
 Agora sobre a implementação. Quando você chama `LocalDateTime.now()`, o Kotlin pega a data e hora do relógio do sistema. O formato padrão é "yyyy-MM-dd-HH-mm-ss.zzz". Então, usamos `DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")` para formatar a data e hora no formato desejado.
 
 ## Veja Também
-- [Documentação Oficial Kotlin - Pacote java.time](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
 - [Tutorial de Java - Date-Time API ](https://docs.oracle.com/javase/tutorial/datetime/)
 - [Blog da Baeldung - Como obter a data / hora atual em Java] (https://www.baeldung.com/java-8-date-time-intro)

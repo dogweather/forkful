@@ -32,4 +32,3 @@ Regex.match("Gleam", ~r/[A-Z][a-z]/)
 ## 관련 자료:
 
 - [Gleam 공식 문서](https://gleam.run/documentation/)
-- [정규 표현식 테스트 사이트](https://regexr.com/)

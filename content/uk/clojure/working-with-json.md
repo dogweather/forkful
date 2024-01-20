@@ -32,6 +32,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 JSON був створений для заміни складних форматів обміну даними, таких як XML. Особливістю JSON є його простота та універсальність, що робить його популярним у багатьох мов програмування. Альтернативою для роботи з JSON можуть бути бібліотеки, такі як Cheshire та Jsonista. Для роботи з JSON у Clojure використовується бібліотека clojure.data.json, яка надає зручні функції для роботи з цим форматом даних.
 
 ## Дивись також:
-
-- [Офіційна документація Clojure для роботи з JSON](https://clojure.github.io/clojure/clojure.data.json-api.html)
-- [Детальна стаття про роботу з JSON у Clojure](https://www.baeldung.com/clojure-json)

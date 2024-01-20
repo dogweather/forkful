@@ -55,5 +55,4 @@ Al correr este código, el resultado será:
 ## Ver También:
 
 - El paquete time: [https://golang.org/pkg/time/](https://golang.org/pkg/time/) 
-- Date and Time Format in Go: [https://www.guru99.com/date-time-format-golang.html](https://www.guru99.com/date-time-format-golang.html) 
 - Go por Ejemplo: Time: [https://gobyexample.com/time](https://gobyexample.com/time)

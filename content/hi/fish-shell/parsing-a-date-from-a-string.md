@@ -41,4 +41,3 @@ echo $parsed_date
 
 - [[Fish Shell डॉक्यूमेंटेशन]](https://fishshell.com/docs/current/index.html)
 - [[Fish Shell GitHub]](https://github.com/fish-shell/fish-shell)
-- [[Unix Shell पार्सिंग टयूटोरियल]](https://www.baeldung.com/linux/command-line-json-parsing)

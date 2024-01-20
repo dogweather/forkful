@@ -42,6 +42,3 @@ Reguljära uttryck har funnits sedan 1950-talet och används i många olika prog
 I Swift används reguljära uttryck genom att använda strukturen `NSRegularExpression`. Det finns också många olika metoder för att söka och manipulera text med hjälp av reguljära uttryck, t.ex. `replacingMatches` och `rangeOfFirstMatch`.
 
 ## Se även:
-
-- [Apple Developer dokumentation om Regular Expressions](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStringsUsingFormatSpecifiers.html#//apple_ref/doc/uid/TP40004265)
-- [RegExr - Verktyg för att testa reguljära uttryck](https://regexr.com/)

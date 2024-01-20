@@ -41,5 +41,4 @@ En cuanto a detalles de implementación, Lua cuenta las fechas y los horarios en
 Para profundizar aún más en el cálculo de fechas con Lua, te recomiendo los siguientes recursos:
 
 - Manual oficial de Lua: [os.time](https://www.lua.org/manual/5.4/manual.html#6.9)
-- Tutorial Lua, manipulación de fecha y hora: [tutorialspoint.com](https://www.tutorialspoint.com/lua/lua_date_time.htm) 
 - Documento sobre fechas y horas en Lua: [lua-users.org](http://lua-users.org/wiki/DateAndTime)

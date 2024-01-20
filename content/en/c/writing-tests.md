@@ -43,4 +43,3 @@ When writing tests, it's essential to have a good understanding of your code's l
 
 - [Official C documentation on <assert.h>](https://en.cppreference.com/w/c/error/assert)
 - [cmocka testing library](https://cmocka.org/)
-- [seatest testing library](https://github.com/phil-wilson/seatest)

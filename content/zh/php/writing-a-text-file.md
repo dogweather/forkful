@@ -40,4 +40,3 @@ echo $contents; // 打印出文件内容，即输出 "Hello World!"
 ## 参考资料:
 
 - [PHP 官方文档](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP 程序员指南](https://www.php.net/manual/en/refs.basic.other.php.php)

@@ -36,5 +36,4 @@ Szczegóły implementacji dotyczące Get-Date wystarczają, aby dostarczyć aktu
 Emocjonujące jest, że istnieje wiele źródeł do nauki i doskonalenia umiejętności codingu w PowerShell!
 
 - [Get-Date - Dokumentacja Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-- [Formatowanie dat i czasu w PowerShell](http://www.computerperformance.co.uk/powershell/plus_get-date.htm)
 - [System.DateTime Struktura](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)

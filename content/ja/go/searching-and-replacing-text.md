@@ -53,5 +53,4 @@ Hello, Go!
 ## 関連情報
 
 - Go公式ドキュメンテーション: [strings package](https://golang.org/pkg/strings/)
-- Learn Go: [String Manipulation](https://www.learn-go.dev/topics/string-manipulation)
 - Go playground: 練習や実験のための [サンドボックス環境](https://play.golang.org/)

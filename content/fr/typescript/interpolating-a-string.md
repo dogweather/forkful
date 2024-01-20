@@ -36,8 +36,5 @@ Au niveau de l'implémentation, l'interpolation de chaîne est mise en œuvre co
 
 Pour plus d'informations sur l'interpolation de chaînes en TypeScript, référez-vous à ces sources supplémentaires :
 
-- La documentation officielle de TypeScript sur les littéraux de chaînes modélisés : [https://www.typescriptlang.org/docs/handbook/2/template-literals.html](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
 
 - Un tutoriel complet sur l'interpolation de chaînes avec des exemples : [https://www.tutorialsteacher.com/typescript/typescript-string](https://www.tutorialsteacher.com/typescript/typescript-string)
-
-- Un billet de blog sur l'utilisation efficace de l'interpolation de chaîne : [https://mariusschulz.com/blog/string-interpolation-in-typescript](https://mariusschulz.com/blog/string-interpolation-in-typescript)

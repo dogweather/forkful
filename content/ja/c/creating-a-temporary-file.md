@@ -48,5 +48,4 @@ int main() {
 一時ファイルの更なる情報については以下のリンクをご覧ください:
 
 - [tmpfile()関数 - cppreference.com](https://en.cppreference.com/w/c/io/tmpfile)
-- [一時ファイルとは - TechTargetジャパン](https://whatistechtarget-jp.com)
 - [UNIXとその設計哲学 - Wikipedia](https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6)

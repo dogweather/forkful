@@ -57,4 +57,3 @@ Este exemplo é bem direto. Ele primeiro adiciona "Basic [base64 de 'usuario:sen
 - [HttpClient Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - [Basic Access Authentication (Wikipedia)](https://en.wikipedia.org/wiki/Basic_access_authentication)
 - [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth)
-- [The Dangers of Basic Authentication](https://securityboulevard.com/2020/02/the-dangers-of-basic-authentication/)

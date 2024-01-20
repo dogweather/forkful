@@ -36,4 +36,3 @@ För mer information om arbetet med strängar i TypeScript, besök följande lä
 
 - [String - TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
 - [JavaScript String Length Property (kan tillämpas på TypeScript)](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [TypeScript - String length Property - Tutorialsteacher](https://www.tutorialsteacher.com/typescript/typescript-string-length)

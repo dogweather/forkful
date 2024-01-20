@@ -59,5 +59,4 @@ När det gäller detaljer, när du startar ett nytt projekt, skapar Visual Studi
 ## Se Även
 
 - [Microsoft Visual Studio dokumentation](https://docs.microsoft.com/sv-se/visualstudio/?view=vs-2019)
-- [.NET Core CLI manual](https://dotnet.microsoft.com/download/dotnet-core)
 - [JetBrains Rider Documentation](https://www.jetbrains.com/help/rider/)

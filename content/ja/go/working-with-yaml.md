@@ -53,6 +53,3 @@ YAMLは、XMLやJSONなどのデータフォーマットの一つです。その
 YAMLの実装には、多くのオプションがありますが、私たちが使用したのはgopkg.in/yaml.v2でした。これは、Go言語で最もよく使用されるYAMLライブラリの一つです。
 
 ## 関連情報:
-
-- [JSONのように読みやすい、ざっくりしたデータフォーマット：YAML](https://www.atmarkit.co.jp/ait/articles/0609/22/news118.html)
-- [Go言語でYAMLを扱う方法](https://qiita.com/taizo/items/db8336376a07ece5b4ea)

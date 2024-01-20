@@ -41,5 +41,4 @@ console.log(length);
 ## 参考資料:
 
 - [Mozilla Developer Network's Guide on Strings](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Grammar_and_types#String)
-- [Microsoft TypeScript language specification](https://github.com/Microsoft/TypeScript/blob/main/doc/spec.md#3.7)
 - [StackOverflow: How do I get the length of a string in TypeScript?](https://stackoverflow.com/questions/43607288/how-do-i-get-the-length-of-a-string-in-typescript)

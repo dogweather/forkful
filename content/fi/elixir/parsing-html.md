@@ -45,5 +45,4 @@ Elixir-koodi toimii eri tavalla kuin monissa muissa kielissä, koska se hyödynt
 
 - [Floki GitHub](https://github.com/philss/floki)
 - [Mochiweb GitHub](https://github.com/mochi/mochiweb)
-- [html5ever_elixir GitHub](https://github.com/HuddleEng/html5ever_elixir)
 - [Parsing HTML with Elixir: A guide](https://hackernoon.com/parsing-html-with-elixir-a-how-to-guide-9eb07f7dde0c)

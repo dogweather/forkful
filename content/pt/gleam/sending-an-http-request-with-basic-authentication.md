@@ -44,6 +44,4 @@ Em Gleam, estamos usando o módulo `http` para construir nossa solicitação HTT
 
 Para mais informações sobre a autenticação HTTP e outras opções de segurança do Gleam, você pode achar útil as seguintes leituras:
 
-- [Documentação Gleam HTTP](https://hexdocs.pm/gleam_http/readme.html)
 - [Tutorial de Autenticação HTTP da MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Artigo sobre Autenticação Base64](https://www.base64decode.net/base64-overview)

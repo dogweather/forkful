@@ -63,5 +63,3 @@ Pour utiliser YAML en Lua, vous pouvez installer une bibliothèque comme "lua-ya
 # Voir aussi:
 
 - [Site officiel de YAML](https://yaml.org/)
-- [Documentation de la bibliothèque lua-yaml](https://github.com/clanehin/lua-yaml)
-- [Documentation de la bibliothèque lua-resty-yaml](https://github.com/bungle/lua-resty-yaml)

@@ -41,7 +41,6 @@ La `println` semplicemente stampa i suoi argomenti separati da spazi sullo stand
 
 Per un approfondimento sul debugging in Clojure, vi consigliamo le seguenti risorse:
 
-- Clojure per il coraggioso e l'ardito: [Debugging](https://www.braveclojure.com/debugging/)
 - Clojure Docs: [println](https://clojuredocs.org/clojure.core/println)
 - La libreria di logging [tools.logging](https://clojure.github.io/tools.logging/)
 - La libreria di logging [timbre](https://github.com/ptaoussanis/timbre)

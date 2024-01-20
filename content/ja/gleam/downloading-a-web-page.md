@@ -51,5 +51,4 @@ Gleamでの実装については、上記のコードを参照してください
 **## 参考リンク：**
 
 - Gleamの公式ドキュメント: [https://gleam.run/book](https://gleam.run/book)
-- httpライブラリのドキュメント: [https://hexdocs.pm/gleam_http/readme.html](https://hexdocs.pm/gleam_http/readme.html)
 - ウェブスクレイピングのチュートリアル: [https://realpython.com/beautiful-soup-web-scraper-python/](https://realpython.com/beautiful-soup-web-scraper-python/)

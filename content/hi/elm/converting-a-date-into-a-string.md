@@ -46,4 +46,3 @@ viewTime timeZone posix
 
 ## अधिक जानके लिए
 * Elm टाइम डॉक्यूमेंटेशन: [http://package.elm-lang.org/packages/elm/time/latest](http://package.elm-lang.org/packages/elm/time/latest)
-* के Epiloug से एल्म 'Bot' जो यहां उपयोगी हो सकता है: [https://korban.net/posts/elm/2019-11-23-elm-date-utc-local-timezone/](https://korban.net/posts/elm/2019-11-23-elm-date-utc-local-timezone/)

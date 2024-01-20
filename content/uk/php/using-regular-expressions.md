@@ -38,5 +38,4 @@ Array
 
 ## Дивись також
 - [Документація PHP про регулярні вирази](https://www.php.net/manual/ru/book.pcre.php)
-- [Регулярні вирази у веб-програмуванні](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B8%D1%80%D0%B0%D0%B7_(%D0%B2%D0%B8%D0%BC%D0%BE%D0%B3%D0%B0))
 - [Онлайн редактор для тестування і перевірки регулярних виразів](https://regex101.com/)

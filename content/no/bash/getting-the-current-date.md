@@ -40,4 +40,3 @@ Når Bash tolker din `date` kommando, kaller den opp en systemfunksjon som heter
 
 ## Se Også
 - [`date` Man Page](https://linux.die.net/man/1/date): Komplett beskrivelse av `date` kommandoen og dens alternativer.
-- [Bash Programming in Linux](https://www.linux.org/forums/bash-programming.54/): Forum dedikert til Bash-programmering.

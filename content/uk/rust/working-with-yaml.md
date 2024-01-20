@@ -41,6 +41,5 @@ YAML був створений у 2001 році як альтернатива ф
 
 ## Дивись також:
 
-- [Офіційна документація з мови програмування Rust](https://www.rust-lang.org/uk)
 - [YAML формат даних](https://yaml.org/)
 - [JSON, TOML та інші формати даних](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats)

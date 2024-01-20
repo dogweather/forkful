@@ -52,5 +52,4 @@ Bei der String-Interpolation wird der innerhalb der `{}`-Klammern liegende Ausdr
 
 ## Siehe auch
 - Offizielle Ruby-Dokumentation zur String-Interpolation: [Link](https://ruby-doc.org/core-2.7.0/String.html#method-i-25-3C)
-- Einführung in die String-Interpolation in Ruby: [Link](https://www.rubyguides.com/2018/11/ruby-string-interpolation/)
 - Unterschied zwischen `sprintf`, `%`-Operator und String-Interpolation: [Link](https://stackoverflow.com/questions/610839/how-do-i-use-string-formatting-in-ruby)

@@ -53,5 +53,4 @@ Gli argomenti della riga di comando sono rappresentati come un array di stringhe
 
 Per un'analisi più dettagliata e completa, dai un'occhiata a questi link:
 - [Oracle Docs - argomenti della riga di comando](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Jenkov - Java Command Line Arguments](http://tutorials.jenkov.com/java/command-line-arguments.html)
 - [Baeldung - Guida agli argomenti della riga di comando in Java](https://www.baeldung.com/java-command-line-arguments)

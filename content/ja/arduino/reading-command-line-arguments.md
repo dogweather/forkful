@@ -45,6 +45,5 @@ void loop() {
 ## 参照情報
 以下リンクで関連する情報をさらに詳しく学べます。
 
-- [Arduino.cc: CommandLineArgs Library](https://www.arduino.cc/reference/en/libraries/commandlineargs/)
 - [Arduino.cc: Serial Input Basics](https://forum.arduino.cc/index.php?topic=396450)
 - [Arduino Stack Exchange: How to read command line arguments](https://arduino.stackexchange.com/questions/333/how-to-read-command-line-arguments-in-arduino)

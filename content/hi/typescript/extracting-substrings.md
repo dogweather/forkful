@@ -40,6 +40,5 @@ console.log(domain);  // Outputs: "domain.com"
 
 ## अधिक देखें:
 
-- [TypeScript डॉक्यूमेंटेशन स्ट्रिंग](https://www.typescriptlang.org/docs/handbook/string-manipulation.html)
 - [TypeScript ट्यूटोरियल उप-स्ट्रिंग](https://www.javatpoint.com/typescript-string-substr)
 - [JavaScript और TypeScript में स्ट्रिंग्स (mdn web docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)

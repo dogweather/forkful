@@ -32,5 +32,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## קישורים נוספים: 
 - [ספר ייעודי של Clojure לשליחת בקשות HTTP](https://github.com/dakrone/clj-http)
-- [אימות בסיסי בוויקיפדיה](https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%9E%D7%95%D7%AA_%D7%91%D7%A1%D7%99%D7%A1%D7%99)
 - [RFC 1945 - פרוטוקול העברת טקסט היפר](https://tools.ietf.org/html/rfc1945)

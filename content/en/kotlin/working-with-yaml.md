@@ -53,4 +53,3 @@ The `yaml` library in Kotlin uses the SnakeYAML implementation, which follows th
 # See Also:
 - [YAML Official Website](https://yaml.org/)
 - [SnakeYAML GitHub Repository](https://github.com/snakeyaml/)
-- [Kotlin - Working with Configuration Files](https://kotlinlang.org/docs/tutorials/configuration.html)

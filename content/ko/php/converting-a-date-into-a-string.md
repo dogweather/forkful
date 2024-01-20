@@ -47,6 +47,5 @@ PHP에서 날짜와 시간을 다루기 위한 다양한 함수들은 PHP4부터
 
 ## 참고 자료:
 다음은 날짜를 문자열로 변환하는 방법과 관련된 참고 자료들입니다.
-- PHP 공식 문서: [date_format()](https://www.php.net/manual/kr/function.date-format.php)
 - 샘플 코드: [PHP Date/Time Functions](https://www.w3schools.com/php/php_ref_date.asp) 
 - TutorialsPoint 글: [PHP - Function date_format()](https://www.tutorialspoint.com/php/php_function_date_format.htm)

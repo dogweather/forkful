@@ -38,4 +38,3 @@ Le code ci-dessus crée un nouveau fichier nommé "nouveau.txt" et y ajoute le t
 
 ## Voir aussi:
 - [Documentation officielle de l'utilisation des fichiers en Haskell](https://www.haskell.org/tutorial/io.html)
-- [Un exemple de tutoriel sur l'écriture de fichiers texte en Haskell](https://www.devdungeon.com/content/working-files-haskell#write-file)

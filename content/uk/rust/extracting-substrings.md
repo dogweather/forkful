@@ -42,4 +42,3 @@ println!("{} {}!", hello, world);
 ## Дивіться також:
 - [Руст документація рядку](https://doc.rust-lang.org/std/string/struct.String.html)
 - [Вікіпедія: Substring](https://en.wikipedia.org/wiki/Substring)
-- Блог про Руст: [https://www.ameyalokare.com/rust/2017/11/02/rust-string-slicing.html](https://www.ameyalokare.com/rust/2017/11/02/rust-string-slicing.html)

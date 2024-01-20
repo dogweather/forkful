@@ -39,5 +39,4 @@ Tempfile crée les fichiers dans un répertoire spécifique à la plate-forme, g
 ## Voir aussi
 Voici quelques liens vers des sources connexes pour en savoir plus:
 - [Documentation Python pour tempfile](https://docs.python.org/fr/3/library/tempfile.html)
-- [Tutorial sur Real Python](https://realpython.com/python-tempfile/)
 - [Post StackOverflow](https://stackoverflow.com/questions/3924117/how-to-use-tempfile-in-python)

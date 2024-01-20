@@ -44,6 +44,5 @@ No input detected
 ## ראה גם
 
 למידע נוסף על בדיקות קוד עבור ארדוינו, ראה:
-- [Arduino Testing Tutorial](https://www.arduino.cc/en/Guide/ArduinoTestingTutorial)
 - [Arduino Unit Testing Library](https://github.com/mmurdoch/arduinounit)
 - [How to Test Arduino Code by Writing Unit Tests](https://www.theengineeringprojects.com/2018/08/how-to-test-arduino-code-by-writing-unit-tests.html)

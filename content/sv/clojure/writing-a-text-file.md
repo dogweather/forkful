@@ -63,5 +63,4 @@ För att skriva till en fil använder Clojure sig av JVM-funktioner som `FileOut
 ## See Also
 
 - [Clojure Dokumentation för spit](https://clojuredocs.org/clojure.core/spit)
-- [Tutorial: "Working With Files in Clojure" by Daniel Denermon](http://daniel.denermon.com/2010/04/clojure-working-with-files.html)
 - [Java Dokumentation för FileWriter](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)

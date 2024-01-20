@@ -42,5 +42,3 @@ För att arbeta med JSON i Kotlin finns det flera bibliotek att välja mellan, t
 
 # Se även:
 - [JSON](https://www.json.org/)
-- [Kotlin Docs: JSON](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-pretty-json.html)
-- [JSON and Kotlin: A Perfect Match](https://www.baeldung.com/kotlin-json)

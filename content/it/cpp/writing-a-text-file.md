@@ -46,4 +46,3 @@ Scrivere un file di testo è un'operazione molto comune nella programmazione. Ci
 
 - [Documento ufficiale di <fstream>](https://en.cppreference.com/w/cpp/header/fstream)
 - [Tutorial su come usare <fstream>](https://www.geeksforgeeks.org/file-handling-c-classes/)
-- [Altre tecniche per la gestione dei dati in C++](https://www.tutorialspoint.com/cplusplus/cpp_data_storage.htm)

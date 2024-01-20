@@ -52,6 +52,5 @@ Regular expressions in Haskell are implemented using automata theory, specifical
 
 ## See Also:
 
-- [HaskellRegex - Regex tutorial for beginners](https://wiki.haskell.org/HaskellRegex)
 - [Real World Haskell - Chapter on regular expressions](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)
 - [Hackage - Text.Regex package documentation](https://hackage.haskell.org/package/regex-base)

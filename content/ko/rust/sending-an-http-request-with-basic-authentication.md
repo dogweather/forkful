@@ -51,5 +51,4 @@ Rust에서 HTTP 요청에 기본 인증을 보내기 위해 예전에는 hyper�
 ## 참고 자료:
 
 - [reqwest 라이브러리](https://docs.rs/reqwest)
-- [Rust로 HTTP 요청 보내기](https://dev.to/sean_lawless/build-a-concurrent-http-server-in-rust-2o4k)
 - [Rust Basic Authentication](https://stackoverflow.com/questions/43023205/how-do-you-set-the-authorization-header-in-rust-reqwest)

@@ -48,5 +48,4 @@ HTML解析の歴史は、ウェブ自体の進化と共に発展してきまし�
 
 - Jsoup公式サイト：[https://jsoup.org/](https://jsoup.org/)
 - Kotlin公式サイト：[https://kotlinlang.org/](https://kotlinlang.org/)
-- HTML解析についてのWikipediaの記事：[https://en.wikipedia.org/wiki/HTML_parsing](https://en.wikipedia.org/wiki/HTML_parsing)
 - Document Object Model (DOM)：[https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model)

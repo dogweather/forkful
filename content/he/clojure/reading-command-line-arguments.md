@@ -39,4 +39,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## ר'אה גם
 
 - [מסמך הפקודות של השורה של קלוזר](https://clojuredocs.org/clojure.core/*command-line-args*)
-- [מדריך קלוזר לקריאת ארגומנטים משורת פקודה](https://www.baeldung.com/clojure-command-line-arguments)

@@ -50,4 +50,3 @@ L'implémentation des tests en TypeScript est relativement simple, car il dispos
 
 - [Documentation officielle de Jest](https://jestjs.io/docs/en/getting-started)
 - [Introduction au développement piloté par les tests en JavaScript](https://www.agilealliance.org/glossary/tdd/)
-- [Dix règles pour le développement piloté par les tests](https://pragprog.com/magazines/2012-01/pragpub/january-2012-tdd)

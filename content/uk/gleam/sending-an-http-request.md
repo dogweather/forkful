@@ -45,6 +45,4 @@ case httpc.send(request) {
 
 ## Див. також
 
-* [Документація Gleam по httpc](https://hexdocs.pm/gleam_httpc/gleam/httpc/index.html)
 * [Докладніше про HTTP-запити](https://developer.mozilla.org/uk/docs/Web/HTTP/Overview)
-* [Порівняння між HTTP-запитами та gRPC](https://www.ionos.com/digitalguide/websites/web-development/grpc/)

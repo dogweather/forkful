@@ -40,6 +40,5 @@ Per quanto riguarda i dettagli di implementazione, quando crei un nuovo oggetto 
 
 ## Approfondimenti
 
-- [Tutorial MDN per date e ora in JavaScript](https://developer.mozilla.org/it/docs/Web/JavaScript/Guida/Date_and_time)
 - [Documentazione completa per Moment.js](https://momentjs.com/docs/)
 - [Dettagli ECMAScript sulla Date](http://www.ecma-international.org/ecma-262/11.0/index.html#sec-date-constructor)

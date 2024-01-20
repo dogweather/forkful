@@ -29,6 +29,3 @@ print(randomNumber)
 מחוללי המספרים האקראיים של Swift מבוססים על האלגוריתם Xorshift.
 
 ## ראו גם:
-- [Apple Documentation on Random](https://developer.apple.com/documentation/swift/random/)
-- [Wikipedia article on Pseudorandomness](https://he.wikipedia.org/wiki/%D7%90%D7%A7%D7%A8%D7%90%D7%99%D7%95%D7%AA_%D7%93%D7%9E%D7%95%D7%AA%D7%99%D7%AA)
-- [SwiftRocks Tutorial on Swift's Random API](https://swiftrocks.com/an-in-depth-look-at-swifts-random-number-api.html)

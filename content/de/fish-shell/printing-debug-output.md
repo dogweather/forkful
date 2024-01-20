@@ -40,4 +40,3 @@ Die Implementierung in Fish Shell ist recht einfach. Bei der Ausführung der `ec
 Weitere Ressourcen zum Thema Debugging in Fish Shell sind verfügbar auf: 
 - [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
 - [Fish Shell Tutorial von GitHub](https://github.com/jorgebucaran/fish-cookbook)
-- [Entwickler-Forum zu Fish Shell](https://fishshell.com/community.html)

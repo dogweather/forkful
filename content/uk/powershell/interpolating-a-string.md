@@ -33,5 +33,3 @@ Write-Host $text
 - Офіційна документація PowerShell з примерами інтерполяції рядків: [Тут](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
 
 - Чудова стаття по інтерполяції рядків в PowerShell: [Тут](https://ss64.com/ps/syntax-f-operator.html)
-
-- Стаття про інтерполяцію рядків із оглядом різних мов програмування: [Тут](https://www.baeldung.com/cs/string-interpolation-vs-format)

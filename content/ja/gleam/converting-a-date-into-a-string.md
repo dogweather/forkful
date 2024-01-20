@@ -47,8 +47,5 @@ Gleamでは、
 
 ## 関連情報
 
-- Gleam公式ドキュメント： [gleam/datetime](https://hexdocs.pm/gleam_stdlib/gleam/datetime/)
-- Gleamコミュニティ： [Gleam Forum](https://community.gleam-lang.org/)
-- Gleamチュートリアル: [Learning Gleam](https://gleam.run/getting-started/mix-and-elixir/)
 
 これらのリンクは、日付の文字列変換のほかにも、Gleamの基本的な使い方やその他の技術についての詳細な情報を提供しています。

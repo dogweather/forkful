@@ -41,4 +41,3 @@ public class Program
 ## Дивитись також
 - [DateTime в .NET](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime?view=net-6.0)
 - [DateTime vs DateTimeOffset](https://docs.microsoft.com/uk-ua/dotnet/standard/datetime/choosing-between-datetime)
-- [Дата і час в C#](https://www.c-sharpcorner.com/blogs/date-and-time-in-c-sharp)

@@ -39,8 +39,5 @@ Arg value: arg2
 
 ישנם מגוון משאבים וחומרי למידה אוויר-ליין שמתמקדים בנושא הקריאה של ארגומנטים משורת הפקודה.
 
-- [דוקומנטציה הרשמית של Ruby](https://ruby-doc.org/core-2.7.0/ARGV.html)
-- [ראיון טכני Ruby - קריאה של ארגומנטים משורת הפקודה](https://www.interviewbit.com/ruby-interview-questions/)
-- [הדרכה של W3Schools על ארגומנטים שורת הפקודה ב-Ruby](https://www.w3schools.com/ruby/ruby_command_line.asp)
 
 עבודה מהנה ומרתקת!

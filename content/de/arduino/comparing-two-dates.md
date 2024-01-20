@@ -54,5 +54,4 @@ Etwas, das beachtet werden muss, ist die Möglichkeit von Seiteneffekten bei gle
 ## Siehe auch:
 
 - [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-- [Arduino DateTime Library](https://www.arduino.cc/reference/en/libraries/rtclib-by-neironet)
 - [Gute Codierungspraktiken](https://www.arduino.cc/en/Tutorial/Foundations)

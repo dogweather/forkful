@@ -43,5 +43,4 @@ While implementing, note that these temporary files have permission defaults to 
 
 To learn more, check out these sources:
 
-- [Haskell's I/O Inside: Temporary Files](https://wiki.haskell.org/Tutorials/Programming_Haskell/IO_inside#Temporary_files)
 - [Haskell System.IO.Temp Library Documentation](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)

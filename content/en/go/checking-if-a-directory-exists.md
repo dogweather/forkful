@@ -65,5 +65,4 @@ Some alternatives include using the `os.Open` function, which also returns an er
 
 - [os package - The Go Programming Language](https://golang.org/pkg/os/)
 - [os.Stat function - GoDoc](https://godoc.org/os#Stat)
-- [Go by Example: Error Handling](https://gobyexample.com/error-handling)
 - [A discussion about different methods of checking file or directory existence in Go on StackOverflow](https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go)

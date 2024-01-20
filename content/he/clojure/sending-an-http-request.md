@@ -32,4 +32,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## ראה גם
 - [HTTP Kit](http://www.http-kit.org/)
 - [clj-http](https://github.com/dakrone/clj-http)
-- [Clojure Cookbook: Making HTTP Requests](https://clojure-cookbook.com/posts_output/clojure_make_http_requests/)

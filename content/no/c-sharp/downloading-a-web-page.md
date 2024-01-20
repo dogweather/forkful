@@ -57,8 +57,5 @@ Et alternativ til HttpClient er RestSharp, en tredjeparts bibliotek som har noen
 
 ## Se også
 
-- [Microsofts HttpClient dokumentasjon](https://docs.microsoft.com/no-no/dotnet/api/system.net.http.httpclient)
-- [Microsofts detaljerte guide for å laste ned filer](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/download-files)
-- [RestSharp biblioteket](https://restsharp.dev/getting-started/installation.html)
 
 Husk at beste praksis anbefaler å gjenbruke HttpClient-objekter i stedet for å opprette nye for hver forespørsel.

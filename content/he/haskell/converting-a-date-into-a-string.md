@@ -34,5 +34,3 @@ formatTime defaultTimeLocale "%B %d, %Y" date
 
 # ראה גם:
 - [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html) - המסמך הראשי לסיפריה `Data.Time.Format`.
-- [https://hackage.haskell.org/package/stringtemplate-0.2.1.1/docs/Text-StringTemplate.html](https://hackage.haskell.org/package/stringtemplate-0.2.1.1/docs/Text-StringTemplate.html) - המסמך הראשי לסיפריה StringTemplate.
-- [http://www.haskell.org/ghc/docs/latest/html/libraries/time/Data-Time-Calendar.html](http://www.haskell.org/ghc/docs/latest/html/libraries/time/Data-Time-Calendar.html) - המסמך הראשי מ-GHC עבור `Data.Time.Calendar`.

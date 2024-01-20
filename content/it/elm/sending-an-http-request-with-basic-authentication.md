@@ -46,5 +46,4 @@ Una cosa da notare su questo esempio è che stiamo utilizzando il modulo Http.He
 
 ## Guardate Anche
 - Documentazione sul modulo Http di Elm [qui](https://package.elm-lang.org/packages/elm/http/latest/)
-- Informazioni sulla codifica Base64 [qui](https://developer.mozilla.org/it/docs/Glossario/Base64) 
 - La documentazione ufficiale sulle richieste HTTP con autenticazione di base [qui](https://tools.ietf.org/html/rfc7617).

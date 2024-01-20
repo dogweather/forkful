@@ -45,4 +45,3 @@ console.log(newStr); // Output: Hello, Universe!
 ## 関連情報：
 
 - [正規表現のドキュメント(英語)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [正規表現チュートリアル(日本語)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Tutorial)

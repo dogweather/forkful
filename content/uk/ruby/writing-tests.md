@@ -42,6 +42,5 @@ end
 
 ## Дивись також:
 
-- [Ruby документація - Minitest](https://ruby-doc.org/stdlib-2.7.2/libdoc/minitest/rdoc/index.html)
 - [RSpec документація](https://rspec.info/documentation/)
 - [Cucumber](https://cucumber.io/docs/)

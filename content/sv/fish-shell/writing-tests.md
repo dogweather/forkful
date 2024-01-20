@@ -56,4 +56,3 @@ Förutom att testa funktioner kan man också skapa tester för olika scenarion, 
 ## Se också
 
 - [Fish Shell dokumentationen om testing](https://fishshell.com/docs/current/tutorial.html#alternate-commands-and-testing)
-- [The Art of Software Testing, 3rd Edition](https://www.amazon.com/Art-Software-Testing-Glenford-Myers/dp/0471358460) (eng.)

@@ -58,4 +58,3 @@ Bei der Implementierung eines neuen Projekts in Haskell ist es wichtig, auf Modu
 
 - [Haskell Stack Documentation](https://docs.haskellstack.org/en/stable/README)
 - [Introduction to Cabal](https://www.haskell.org/cabal/users-guide/intro.html)
-- [Getting Started with GHC](https://www.haskell.org/ghc/docs/latest/html/users_guide/using-ghc.html)

@@ -62,4 +62,3 @@ Implementar métodos de impresión de depuración en Ruby es fácil, ya que el l
 Para más detalles, puedes visitar estos enlaces de la documentación de Ruby:
 - [El método de impresión `puts`](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
 - [El método de impresión `p`](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-p)
-- [El módulo `pp` (pretty print)](https://ruby-doc.org/stdlib-2.7.0/libdoc/pp/rdoc/PP.html)

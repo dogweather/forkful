@@ -55,4 +55,3 @@ fun main() {
 ## 参照：
 - [Kotlinの公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
 - [Java 8の日付/時間API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Kotlinでの日付と時間の操作](https://qiita.com/k5n/items/affb12ac9c8b91d419e6)

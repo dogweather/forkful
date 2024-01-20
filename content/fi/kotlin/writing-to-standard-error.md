@@ -47,5 +47,4 @@ Historiallisesti standardivirheen käyttö on ollut yleistä ohjelmoinnissa. Toi
 
 ## Katso myös:
 
-- [Kotlin System.err Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/-system/err.html)
 - [Exception Handling in Kotlin](https://kotlinlang.org/docs/exceptions.html)

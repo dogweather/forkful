@@ -60,4 +60,3 @@ Możesz dowiedzieć się więcej na temat operacji na plikach i katalogach w C#,
 
 - [Dokumentacja Microsoft na temat klasy Directory](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory?view=net-5.0)
 - [StackOverflow: Sprawdzanie, czy katalog istnieje w C#](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory)
-- [MSDN: Jak: Sprawdzić, czy plik lub katalog istnieje](https://docs.microsoft.com/pl-pl/dotnet/standard/io/how-to-check-if-a-file-or-directory-exists)

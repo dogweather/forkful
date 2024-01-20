@@ -57,6 +57,5 @@ fun main() {
 `LocalDate.now()`의 구현 세부 사항을 보면, 내부적으로는 시스템의 기본 시계를 사용하여 현재 날짜를 가져옵니다. 그리고 이 시계는 사용자 환경의 기본 시간대를 사용하여 현재 시간을 계산합니다.
 
 ## 참고자료:
-- 공식 Kotlin 문서: [날짜와 시간](https://kotlinlang.org/docs/dates-and-times.html)
 - 자바 8 날짜와 시간 API 가이드: [https://www.baeldung.com/java-8-date-time-intro](https://www.baeldung.com/java-8-date-time-intro)
 - Joda-Time 라이브러리: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

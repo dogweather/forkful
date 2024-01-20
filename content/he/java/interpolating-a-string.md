@@ -30,6 +30,4 @@ System.out.println(intro);
 
 ## ראה גם:
 אם אתה מעוניין ללמוד יותר על אינטרפולציה של מחרוזות, ממליץ לך לקרוא את הכתבות הבאות:
-- [Java String.format() - JournalDev](https://www.journaldev.com/360/java-string-format-examples)
-- [Java String Interpolation - Baeldung](https://www.baeldung.com/java-string-format)
 - [String Interpolation in Java - StackOverflow](https://stackoverflow.com/questions/49357631/java-string-interpolation)

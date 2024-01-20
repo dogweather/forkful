@@ -72,5 +72,4 @@ This method doesn't create new string instances for each operation and maintains
 ## See Also
 
 - [Kotlin String class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- [StringBuilder in Kotlin](https://www.programiz.com/kotlin-programming/stringbuilder)
 - [joinToString function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html)

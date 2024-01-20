@@ -49,7 +49,6 @@ Alternatives to NUnit in C# include Xunit and Microsoft's MSTest framework. Whil
 NUnit supports various assertion methods such as Assert.AreEqual() and Assert.IsTrue(), which can be used to verify the expected results of a test. It also allows for setting up and tearing down test fixtures, which can be useful for setting up common data or objects needed for multiple tests.
 
 ## See Also:
-- [NUnit Documentation](https://nunit.org/documentation/)
 - [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
 - [Xunit Documentation](https://xunit.net/)
 - [MSTest Documentation](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)

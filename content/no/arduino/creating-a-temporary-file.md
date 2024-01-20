@@ -57,5 +57,3 @@ Historisk sett har programmerere alltid hatt behov for å lagre data midlertidig
 For mer informasjon om hvordan du jobber med filer og SD-kort i Arduino, besøk disse kildene:
 
 - [Arduino SD-biblioteket](https://www.arduino.cc/en/reference/SD)
-- [SD-kortmodulveiledning](https://lastminuteengineers.com/arduino-sd-card-module-tutorial/)
-- [Lær mer om EEPROM](https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROM)

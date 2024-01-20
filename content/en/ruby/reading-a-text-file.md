@@ -48,5 +48,4 @@ On OS-level implementation, Ruby internally uses buffered I/O operations. It rea
 Great articles to further your reading:
 
 - Ruby file I/O: [link](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
-- Buffered and unbuffered I/O: [link](https://www.ionos.com/digitalguide/server/know-how/buffered-vs-unbuffered-io/)
 - API documentation for Ruby File class: [link](https://ruby-doc.org/core-3.0.0/File.html)

@@ -51,5 +51,4 @@ foreach ($args as $key => $value) {
 ## देखें भी:
 
 - [PHP Command line usage](https://www.php.net/manual/en/features.commandline.usage.php) - PHP Manual
-- [Manual parsing of command line arguments](https://www.jonathan-petitcolas.com/2014/01/27/parsing-command-line-arguments-in-php.html) - Jonathan Petitcolas
 - [PHP getopt](https://www.php.net/manual/en/function.getopt.php) - PHP Manual

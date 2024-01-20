@@ -35,4 +35,3 @@ Käyttää `ToLower` tai `ToLowerInvariant` syntyy uusi merkkijono, koska .NET-m
 ## Katso Myös:
 - Microsoft .NET-dokumentaatio: [ToLower](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.tolower?view=net-5.0)
 - Microsoft .NET-dokumentaatio: [ToLowerInvariant](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.tolowerinvariant?view=net-5.0)
-- Ohjelmointiartikkeli: [C# String Operations](https://www.c-sharpcorner.com/blogs/string-operations-in-c-sharp)

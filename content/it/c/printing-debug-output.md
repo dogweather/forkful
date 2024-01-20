@@ -49,5 +49,4 @@ Inoltre, per un approccio più moderno e sicuro, si può considerare l'uso del m
 Qui ci sono alcuni link per ulteriori approfondimenti:
 
 - [Documentazione di `printf`](http://www.cplusplus.com/reference/cstdio/printf/)
-- [Documentazione di `syslog`](https://www.gnu.org/software/libc/manual/html_node/System-Logger.html)
 - [`printf` vs `fprintf` vs `sprintf`](https://stackoverflow.com/questions/7124882/what-is-the-difference-between-printf-fprintf-and-sprintf)

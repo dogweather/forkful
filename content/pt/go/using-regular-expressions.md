@@ -37,5 +37,3 @@ As expressões regulares foram inventadas em 1951 pelo matemático Stephen Cole 
 
 ## Veja também:
 - [Documentação oficial do pacote "regexp" em Go](https://golang.org/pkg/regexp/)
-- [Exemplos práticos de uso de expressões regulares em Go](https://blog.golang.org/regular-expressions)
-- [Tutorial sobre expressões regulares em Go](https://www.tutorialspoint.com/go/golang_regular_expressions.htm)

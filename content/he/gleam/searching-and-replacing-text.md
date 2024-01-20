@@ -38,4 +38,3 @@ fn main() {
 #ראה גם
 
 * [תיעוד ה-Immutable.js הרשמי](https://docs.rs/gleam/0.1.1/gleam/string/fn.replace.html) - מסביר את פעולות המחרוזת המרכזיות.
-* [הובלת קוד והחלפת וידור](https://www.gleam.run/book/tour/pattern-matching.html) - מדריך מעשי למימוש החלפת טקסט מותאם אישית ב-Gleam.

@@ -54,5 +54,4 @@ fun main() {
 För mer information, se följande länkar:
 
 - [Reading Files in Kotlin Explained](https://baeldung.com/kotlin-read-file) – En djupare teknisk guide.
-- [Kotlin för JVM](https://kotlinlang.org/docs/reference/jvm-overview.html) – Officiell dokumentation.
 - [Kotlin and Java IO](https://medium.com/@OhadShai/kotlin-and-java-io-c0b0b3429300) – Djupare diskussion om Kotlin och Java IO-funktionalitet.

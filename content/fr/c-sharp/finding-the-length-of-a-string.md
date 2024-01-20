@@ -56,5 +56,4 @@ public class Program
 
 ## Voir Aussi:
 - Documentation sur la propriété `Length` sur Microsoft Docs: [String.Length Propriété](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.length?view=net-5.0)
-- Blog C# Corner sur le comptage des caractères dans une chaîne: [How to count characters in string in C#](https://www.c-sharpcorner.com/article/c-sharp-program-to-count-total-number-of-alphabets-in/)
 - Documentation sur `Count()` sur Microsoft Docs: [Enumerable.Count Méthode](https://docs.microsoft.com/fr-fr/dotnet/api/system.linq.enumerable.count?view=net-5.0)

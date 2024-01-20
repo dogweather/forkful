@@ -55,5 +55,4 @@ JSON wurde als Alternative zu XML entwickelt, da es weniger komplex und leichter
 
 ## Siehe auch
 - [Apple Dokumentation zu JSON](https://developer.apple.com/documentation/foundation/archives_and_serialization/using_json_with_custom_types)
-- [JSON Tutorial für Swift Einsteiger](https://www.ioscreator.com/tutorials/json-swift)
 - [Liste von alternativen Datenformatierungen](https://developers.squarespace.com/what-is-json/)

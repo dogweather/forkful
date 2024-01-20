@@ -52,4 +52,3 @@ The `yaml-rust` crate is an implementation of the YAML 1.2 spec for Rust. This c
 ## See Also:
 - [The yaml-rust crate documentation](https://docs.rs/yaml-rust/)
 - [Official YAML website](https://yaml.org/)
-- [Comparison of YAML with other data serialization languages](https://lzone.de/cheat-sheet/YAML)

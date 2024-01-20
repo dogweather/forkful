@@ -41,4 +41,3 @@ Write-Output $replaced
 Посилання на додаткові ресурси:
 
 - [MSDN: String.Replace Method in PowerShell](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [TechNet: Using Regular Expressions in PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/4585.powershell-working-with-regular-expressions-regex.aspx)

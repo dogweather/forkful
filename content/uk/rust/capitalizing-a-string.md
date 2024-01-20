@@ -49,4 +49,3 @@ fn main() {
 
 - [Rust String документація](https://doc.rust-lang.org/std/string/struct.String.html)
 - [Rust Char методи](https://doc.rust-lang.org/std/primitive.char.html)
-- [Бібліотека `titlecase` в Crates.io](https://crates.io/crates/titlecase)

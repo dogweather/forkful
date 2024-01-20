@@ -36,4 +36,3 @@ $response.Content
 
 * [למידת PowerShell](https://docs.microsoft.com/he-il/powershell/scripting/overview?view=powershell-7.1): תיעוד הרשמי של Microsoft של שפת תכנות PowerShell.
 * [מסמך ה-API של פרוטוקול HTTP](https://tools.ietf.org/html/rfc2616): מסמך ה-RFC המוגדר לפרוטוקול ה-HTTP.
-* [ספר ב-Powershell Scripting](https://www.amazon.com/Windows-PowerShell-Scripting-Guide-Ed/dp/0735675112): ספר אשר מעמיק יותר לגבי שפת תכנות Powershell.

@@ -31,4 +31,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## इससे जुड़ी लिंक:
 इस आर्टिकल से जुड़ी और अधिक जानकारी के लिए आप इन लिंक की जांच कर सकते हैं:
 - [Clojure की आधिकारिक वेबसाइट](https://clojure.org/)
-- [Clojure में टेस्टिंग कैसे करें](https://clojure.org/guides/testing)

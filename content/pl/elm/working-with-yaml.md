@@ -49,4 +49,3 @@ ELM udostępnia moduł Data.Yaml, który pozwala na łatwe wczytywanie i zapisyw
 ## Zobacz także:
 
 - [Oficjalna strona YAML](https://yaml.org/)
-- [Dokumentacja ELM dla modułu Data.Yaml](https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)

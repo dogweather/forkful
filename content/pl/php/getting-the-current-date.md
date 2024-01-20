@@ -67,4 +67,3 @@ Wynik jest taki sam jak w przypadku funkcji `date()`:
 
 - Dokumentacja PHP na temat funkcji [date()](http://php.net/manual/en/function.date.php) (EN).
 - Dokumentacja PHP na temat klasy [DateTime()](http://php.net/manual/en/class.datetime.php) (EN).
-- Artykuł na [PHPenthusiast](https://phpenthusiast.com/blog/working-with-date-and-time-in-php) na temat pracy z datami i czasem w PHP (EN).

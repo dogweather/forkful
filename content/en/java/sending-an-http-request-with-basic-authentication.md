@@ -60,6 +60,5 @@ Also, it's worth noting the downside of basic authentication: It's not as safe f
 
 ## See Also
 
-- The Java `HttpURLConnection` Documentation: [https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/HttpURLConnection.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/HttpURLConnection.html)
 - Overview of HTTP Authentication Schemes: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 - More authentication options (OAuth, Bearer JWT, etc.): [https://auth0.com/docs/authorization/flows](https://auth0.com/docs/authorization/flows)

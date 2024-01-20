@@ -33,6 +33,4 @@ En Fish Shell, el envío de solicitudes HTTP con autenticación básica se imple
 ## Ver también
 Para aprender más sobre el uso de Fish Shell y el envío de solicitudes HTTP con autenticación básica, puedes visitar las siguientes fuentes:
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/documentation.html)
 - [Guía de cURL para solicitudes HTTP](https://ec.haxx.se/http/http-auth)
-- [Comparativo de OAuth, JWT, y Autenticación Básica](https://developer.okta.com/blog/2019/03/11/oauth-jwt-bearer-tokens)

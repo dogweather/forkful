@@ -44,6 +44,5 @@ TypeScriptissä päivämäärien vertailu toteutetaan muuntamalla ne ensin milli
 ## Katso myös:
 
 - [JavaScript Date-objekti - MDN Web Docs](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript - Date Objekti](https://www.typescripttutorial.net/typescript-tutorial/typescript-date/)
 - [Moment.js](https://momentjs.com/)
 - [date-fns](https://date-fns.org/)

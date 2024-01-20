@@ -35,6 +35,3 @@ Führen Sie dieses Programm aus, und es gibt den Substring "lerne" aus.
 Der Umgang mit Strings und Substrings ist ein zentrales Prinzip in der Programmierung und wurde schon in den ältesten Hochsprachen wie FORTRAN implementiert. Es gibt viele Wege, wie Sie das in unterschiedlichen Sprachen machen könnten, und in Gleam, ist es natürlich auch möglich, eigene Funktionen zu schreiben, die Unterstrings extrahieren. Dennoch, die `slice` Funktion ist eine eingebaute und performante Methode zur Unterstring-Extraktion, da sie direkt auf niedrigerer Ebene mit den Bytes des Strings arbeitet.
 
 ## Weitere Literatur:
-
-- Die offizielle Dokumentation von `gleam/string`: [Gleam Lang String Module](https://hexdocs.pm/gleam_stdlib/gleam/string/index.html)
-- Ein Guide zum Arbeiten mit Strings in Gleam: [Strings in Gleam](https://hexdocs.pm/gleam_guide/strings.html)

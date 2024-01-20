@@ -36,4 +36,3 @@ addDaysToCurrentDate 3
 
 ## ראה גם
 * [האנשי העיון של Haskell ל- `Data.Time`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-* [הסברים מעמיקים יותר על חריגת זמן ב- Haskell](https://wiki.haskell.org/Haskell_for_dates_and_times)

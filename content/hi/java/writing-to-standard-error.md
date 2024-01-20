@@ -41,4 +41,3 @@ try {
 ## और देखें:
 
 - [Java Docs: Standard Error](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
-- [Exception Handling in Java](https://www.geeksforgeeks.org/exception-handling-java/)

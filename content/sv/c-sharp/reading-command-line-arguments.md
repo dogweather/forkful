@@ -47,4 +47,3 @@ För mer information om att använda kommandoradsargument i C#, se följande lä
 
 - Microsoft's [Command-Line Arguments Tutorial](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
 - En StackOverflow-diskussion om [Command Line Arguments in C#](https://stackoverflow.com/questions/490570/command-line-arguments-in-c-sharp)
-- Artikel på GeeksforGeeks: [Command Line Parameters in C#](https://www.geeksforgeeks.org/command-line-parameters-in-c-sharp/)

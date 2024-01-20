@@ -35,6 +35,5 @@ $s.Length
 
 ## 참고자료:
 
-- [PowerShell의 문자열 사용법](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-7.1)
 - [Python에서 문자열의 길이 찾기](https://www.w3schools.com/python/ref_func_len.asp)
 - [Java에서 문자열의 길이 찾기](https://www.tutorialspoint.com/java/java_string_length.htm)

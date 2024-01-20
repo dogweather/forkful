@@ -34,4 +34,3 @@ println(sub) // Output: "programmers"
 ## देखें भी:
 - [Kotlin डॉक्यूमेंटेशन: स्ट्रिंग](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
 - [Kotlin Tutorial: सबस्ट्रिंग और स्लाइसिंग](https://www.programiz.com/kotlin-programming/string)
-- [GeeksForGeeks: Kotlin substring() Functions](https://www.geeksforgeeks.org/kotlin-string-substring/)

@@ -35,6 +35,3 @@ Console.Error.WriteLine($"変数numの値は{num}です。");
 
 ## 関連情報：
 標準エラーに書き込むことについてもっと学びたい場合は、以下の情報を参考にしてください。
-
-- エラーハンドリングの詳細については、[Microsoft Docs](https://docs.microsoft.com/ja-jp/dotnet/standard/io/how-to-read-and-write-to-the-console)をご覧ください。
-- 標準エラーを使用したデバッグ方法については、[C#標準出力／エラー出力の使い方](https://zukucode.com/2016/01/sysout-stderr-csharp.html)を参考にしてください。

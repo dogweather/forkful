@@ -39,5 +39,4 @@ if osoite.contains("@") && osoite.contains(".") {
 Säännölliset lausekkeet ovat olleet käytössä jo 1950-luvulta lähtien ja niitä käyttävät monet ohjelmointikielet, kuten Perl ja Python. Rust tarjoaa Tetchi-makroja, jotka mahdollistavat säännöllisten lausekkeiden käytön tavallisten ilmaisujen sijaan. Toisin kuin joidenkin muiden kielten tapauksessa, Rustin säännölliset lausekkeet ovat täysin kääntämisaikaisia, mikä tarkoittaa, että ne tarkistetaan jo ennen ohjelman suorittamista. Tämä auttaa havaitsemaan mahdolliset virheet jo ennen ohjelman suorittamista.
 
 ## Katso myös:
-* [Rustin virallinen dokumentaatio säännöllisistä lausekkeista](https://doc.rust-lang.org/std/regex/)
 * [Hyödyllisiä vinkkejä ja temppuja Rustin säännöllisiin lausekkeisiin](https://medium.com/@krishna14anu/mastering-regular-expressions-in-rust-ba32ca8b8e01)

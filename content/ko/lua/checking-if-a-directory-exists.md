@@ -42,5 +42,4 @@ lfs.attributes 함수는 주어진 경로에 대한 속성을 가져 오거나 �
 
 ## 참고 자료:
 
-* Lua File System (lfs) module: [https://keplerproject.github.io/luafilesystem/](https://keplerproject.github.io/luafilesystem/)
 * Lua manual: [https://www.lua.org/manual](https://www.lua.org/manual)

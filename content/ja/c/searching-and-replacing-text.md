@@ -55,4 +55,3 @@ C言語でのテキスト検索や置換の実装では、メモリ管理に注�
 
 - C Library - <string.h>: [http://www.cplusplus.com/reference/cstring/](http://www.cplusplus.com/reference/cstring/)
 - Regular Expressions in C: [https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- Memory Management in C: [https://www.geeksforgeeks.org/memory-management-in-c/](https://www.geeksforgeeks.org/memory-management-in-c/)

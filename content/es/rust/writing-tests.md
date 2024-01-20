@@ -42,7 +42,5 @@ Además, escribir pruebas nos ayuda a documentar nuestro código y a comprender 
 ## Ver también:
 
 - [Documentación oficial de Rust sobre pruebas](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Ejemplo de proyecto de Rust con pruebas](https://github.com/jonhoo/rust-fuzzing)
-- [¿Por qué es importante escribir pruebas?](https://www.freecodecamp.org/news/why-testing-your-code-is-important/)
 
 ¡Ahora que conoces la importancia de escribir pruebas en Rust, asegúrate de integrar esta práctica en tu flujo de trabajo de programación! Con pruebas robustas, podrás confiar en tu código y reducir el tiempo de depuración en el futuro.

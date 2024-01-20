@@ -34,6 +34,5 @@ An alternative to writing to standard error is using logging frameworks, such as
 Behind the scenes, writing to standard error uses the `stderr` stream, which is part of the UNIX file descriptor system. This stream is used to output text specifically for error messages, while the `stdout` stream is reserved for normal program output.
 
 ## See Also:
-- [Swift Standard Library Reference](https://developer.apple.com/documentation/swift/standard_library)
 - [Logging in Swift](https://developer.apple.com/documentation/os/logging)
 - [Standard Streams in UNIX](https://en.wikipedia.org/wiki/Standard_streams)

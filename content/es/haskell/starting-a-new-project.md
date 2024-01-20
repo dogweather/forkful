@@ -41,4 +41,3 @@ Para continuar aprendiendo, te recomendamos los siguientes recursos:
 - ["Learn You a Haskell for Great Good!"](http://learnyouahaskell.com/)
 - [Sitio Web Oficial de Haskell](https://www.haskell.org/)
 - [Documentación de Stack](https://docs.haskellstack.org/en/stable/README/) (inglés)
-- [Tutorial de Haskell en Español](https://wiki.haskell.org/Tutorial_de_Haskell) en la wiki de Haskell.

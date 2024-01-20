@@ -31,7 +31,3 @@ Skrivning till standardfelströmmen är en standardfunktion inom C# sedan versio
 Implementeringen av skrivning till standardfel görs genom att ändra standardfelströmmen till standardutströmmen. Detta kan då skrivas ut som vanligt med Console.Write() eller Console.WriteLine() metoden. Det finns även möjlighet att återställa standardfelströmmen till standardutströmmen, vilket skulle låta programmet skriva till båda strömmarna.
 
 # Se även:
-
-- [Console.Error.WriteLine() - Microsoft Docs](https://docs.microsoft.com/sv-se/dotnet/api/system.console.error.writeline?view=netcore-3.1)
-- [Logging Frameworks in C# - C# Corner](https://www.c-sharpcorner.com/UploadFile/9582c9/logging-frameworks-in-C-Sharp/)
-- [C# Console Class - W3Schools](https://www.w3schools.com/cs/cs_console.asp)

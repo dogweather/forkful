@@ -59,5 +59,4 @@ Taking a closer look at our test, we use Gleam's imported libraries - `gleam/sho
 While this is a quick introduction to writing tests in Gleam, each aspect discussed has depth. Dive into these resources for detailed knowledge:
 
 - Dive deeper into Gleam Programming at [Gleam Language](https://gleam.run/)
-- Learn more about testing in Gleam with the [Gleam Docs](https://gleam.run/book/tour/tests.html).
 - Explore generative testing with [QuickCheck](http://www.quviq.com/products/erlang-quickcheck/).

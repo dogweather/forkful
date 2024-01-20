@@ -43,4 +43,3 @@ När man skriver en textfil i Rust används vanligtvis modulen `std::fs` tillsam
 Länkar till andra relevant information om att skriva textfiler i Rust:
 - [Rust Standardbiblioteket - Filhantering](https://doc.rust-lang.org/std/fs/)
 - [Rust dokumentation - I/O-biblioteket](https://doc.rust-lang.org/std/io/)
-- [RustByExample - Fil I/O](https://rustbyexample.com/std_io/file.html)

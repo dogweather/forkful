@@ -40,4 +40,3 @@ JSON.parse(your_ruby_object)
 
 - [מדריכי JSON עבור Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
 - [ספריית JSON עבור Ruby על גיטהאב](https://github.com/flori/json)
-- [תיעוד עבור JSON ו-Ruby](https://docs.ruby-lang.org/en/2.6.0/json/JSON.html)

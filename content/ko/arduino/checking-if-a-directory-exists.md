@@ -48,5 +48,4 @@ Arduino 프로그래밍에서는 SD 라이브러리를 활용해 SD 카드 안�
 ## 참고 자료
 
 - [Arduino 공식 SD 라이브러리 문서](https://www.arduino.cc/en/Reference/SD)
-- [ESP8266 File System Guide (SPIFFS / LittleFS)](https://randomnerdtutorials.com/install-update-delete-esp32-littlefs-spiffs/)
 - [SD Card Directory Checking Tips](https://forum.arduino.cc/index.php?topic=632377.0)

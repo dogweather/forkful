@@ -52,6 +52,4 @@ Floki implementation uses a combination of different libraries like :mochiweb_ht
 ## See Also
 
 - Official documentation for the Floki library: [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html)
-- A comprehensive tutorial on scraping with Elixir and Floki: [https://nerves.build/posts/elixir-scraping-with-floki](https://nerves.build/posts/elixir-scraping-with-floki)
 - For an alternative look into html parsing with Meeseeks: [https://hexdocs.pm/meeseeks/readme.html](https://hexdocs.pm/meeseeks/readme.html)
-- The history of parsing and more parsing in Elixir: [https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html](https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html)

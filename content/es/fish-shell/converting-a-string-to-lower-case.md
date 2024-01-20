@@ -51,4 +51,3 @@ echo "HOLA MUNDO" | tr '[:upper:]' '[:lower:]'
 
 Para mayor información y orientación, visita los siguientes enlaces:
 - Documentación de Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- Referencia útil de convertir string a minúsculas en diferentes lenguajes: [https://www.tutorialsteacher.com/articles/convert-string-to-lowercase-in-different-languages](https://www.tutorialsteacher.com/articles/convert-string-to-lowercase-in-different-languages)

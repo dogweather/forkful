@@ -75,6 +75,5 @@ Temperatur, Feuchtigkeit
 CSV wurde in den 1970er Jahren entwickelt und ist immer noch ein beliebtes Format für den Datenaustausch. Alternativen wie JSON oder XML werden häufig in modernen Programmiersprachen verwendet, aber CSV hat den Vorteil, dass es einfach zu lesen und zu schreiben ist. Um mit CSV zu arbeiten, musst du die Daten in Zeilen und Spalten aufteilen und trennen.
 
 ## Weitere Informationen:
-- [CSV auf Wikipedia](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
 - [Offizielle Arduino Dokumentation zu SD-Karten](https://www.arduino.cc/en/Reference/SD)
 - [YouTube Tutorial zu CSV mit Arduino](https://www.youtube.com/watch?v=Sx_kUzXpM18&ab_channel=GreatScoots)

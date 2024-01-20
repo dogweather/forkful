@@ -43,4 +43,3 @@ Na implementação, é importante lembrar que o uso excessivo de mensagens de er
 ## Veja Também:
 
 - [Documentação oficial da classe System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
-- [Tutorial sobre o uso de mensagens de erro em Java](https://www.baeldung.com/java-logging-errors)

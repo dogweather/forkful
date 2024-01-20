@@ -37,4 +37,3 @@ console.log(`שלום, ${name}!`); // פלט: "שלום, Dani!"
 
 - [TypeScript שיעורים ומדריכים](https://www.typescriptlang.org/docs/)
 - [המסמך המקורי של תרגול מחרוזות](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/template_strings)
-- [השוואה בין שיטות תרגול](https://www.digitalocean.com/community/tutorials/how-to-use-string-literals-in-typescript)

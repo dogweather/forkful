@@ -52,4 +52,3 @@ echo $string
 ## 참고 자료:
 
 - StackOverflow : [문자열 연결 - PowerShell](https://stackoverflow.com/questions/8475232/how-to-concatenate-strings-and-variables-in-powershell)
-- Microsoft Documentation : [문자열 연결에 관한 PowerShell 가이드](https://docs.microsoft.com/ko-kr/powershell/scripting/samples/working-with-strings?view=powershell-7.1)

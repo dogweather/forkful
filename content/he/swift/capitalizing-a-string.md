@@ -28,5 +28,4 @@ print(capitalizedString)
 
 ## ראה גם
 - [דוקומנטציה של Swift](https://developer.apple.com/documentation/swift)
-- [מדריכים לשפת Swift](https://www.w3schools.com/swift/)
 - [StackOverflow: איך להפוך מחרוזת לאותיות גדולות ב-Swift](https://stackoverflow.com/questions/26350709/upper-case-string-in-swift)

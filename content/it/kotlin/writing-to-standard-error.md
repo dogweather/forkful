@@ -34,5 +34,3 @@ Un'alternativa alla scrittura di standard error è l'utilizzo di logger, che per
 Per scrivere su standard error in Kotlin, è possibile utilizzare il metodo ```println``` della classe ```System.err```. In questo modo, il messaggio verrà stampato correttamente sul terminale.
 
 ## Vedi anche:
-
-* [Documentazione di Kotlin su standard error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-output-stream-writer/standard-error.html)

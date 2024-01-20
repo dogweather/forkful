@@ -50,4 +50,3 @@ Det er viktig å merke seg at forskjellige metoder kan ha forskjellige egenskape
 For mer informasjon om generering av tilfeldige tall i Bash og alternativer til `$RANDOM`, sjekk ut følgende ressurser:
 
 - Bash Handbook: [https://github.com/denysdovhan/bash-handbook](https://github.com/denysdovhan/bash-handbook)
-- Artikkel på LinuxConfig.org om bruk av `/dev/random` og `/dev/urandom`: [https://linuxconfig.org//random-vs-urandom](https://linuxconfig.org//random-vs-urandom)

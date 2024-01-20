@@ -32,6 +32,5 @@ Reguläre Ausdrücke haben eine lange Geschichte, die bis in die 1950er Jahre zu
 
 ## Siehe auch:
 
-- Die [Haskell Regex Wiki](http://www.haskell.org/haskellwiki/Regex) für weitere Details und Beispiele.
 - Eine vollständige Referenz von Regex-Syntax in [RegexOne](https://regexone.com/).
 - Die offizielle Dokumentation für die [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix) Bibliothek.

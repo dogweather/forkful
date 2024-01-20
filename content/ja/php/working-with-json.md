@@ -56,5 +56,3 @@ JSONの代替としては、XMLやYAMLなどのデータフォーマットがあ
 
 - [PHP公式ドキュメント：json_decode](https://www.php.net/manual/ja/function.json-decode.php)
 - [JSONの歴史について知る](https://ja.wikipedia.org/wiki/JavaScript_Object_Notation)
-- [JSON以外のデータフォーマットについて学ぶ](https://dev.classmethod.jp/server-side/php/vs-json-and-others/)
-- [無料で学べる最高のPHP講座](https://h-navi.jp/php-school/)

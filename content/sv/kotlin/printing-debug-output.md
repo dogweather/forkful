@@ -50,4 +50,3 @@ I Kotlin, metoden `println()` är en inbyggd standardkod för att skriva ut info
 ## Se också
 
 - Kotlin Dokumentationen om [println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
-- JetBrains artikel om [Debuggering i Kotlin](https://www.jetbrains.com/help/idea/debugging-your-first-kotlin-application.html)

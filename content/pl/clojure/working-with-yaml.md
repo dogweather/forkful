@@ -38,4 +38,3 @@ Implementacja YAML w języku Clojure odbywa się dzięki bibliotece clojure-yaml
 ## Zobacz też:
 
 - [Oficjalna strona formatu YAML](https://yaml.org)
-- [Dokumentacja biblioteki clojure-yaml](https://github.com/xsc/clojure-yaml)

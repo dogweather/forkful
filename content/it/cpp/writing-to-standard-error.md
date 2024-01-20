@@ -39,5 +39,3 @@ Per quanto riguarda l'implementazione, scrivere sulla standard error funziona al
 
 Vedi anche:
 - [La funzione "fprintf" di C](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Informazioni sulle standard streams in C++](https://www.learncpp.com/cpp-tutorial/standard-input-output-cout-cin-and-cerr/)
-- [Istruzioni di Microsoft su "printf" e "fprintf"](https://docs.microsoft.com/en-us/cpp/c-runtime-library/crt-functions/fprintf-fprintf-l-printw-printw-l?view=msvc-160)

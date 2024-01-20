@@ -49,6 +49,5 @@ Die Implementation von YAML in Elixir basiert auf der `libyaml` Bibliothek. Dies
 
 ## Siehe auch:
 
-* [`YAML` Elixir Bibliothek Dokumentation](https://github.com/jeremyong/yaml_elixir)
 * [YAML Spezifikation](https://yaml.org/spec/)
 * [Offizielle YAML Website](https://yaml.org/)

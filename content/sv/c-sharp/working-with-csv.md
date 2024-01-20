@@ -83,6 +83,5 @@ En alternativ metod för att läsa och skriva CSV filer i C# är att använda en
 Om du behöver behandla stora CSV filer kan du också tänka på att använda strömning istället för att läsa hela filen på en gång. Detta kan förbättra prestandan i ditt program.
 
 ## Se även: 
-- [Microsoft Docs: Läsa och skriva CSV filer i C#](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
 - [CsvHelper](https://joshclose.github.io/CsvHelper/)
 - [FileHelpers](https://www.filehelpers.net/)

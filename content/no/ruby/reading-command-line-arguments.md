@@ -44,7 +44,3 @@ La oss se litt dypere inn i denne egenskapen av Ruby.
 ## Se også
 
 Her er noen hjelpsomme kilder som du kan se for å lære mer:
-
-- [Ruby docs om ARGV](https://ruby-doc.org/core-2.1.4/ARGV.html)
-- [Offisielle Ruby ARGV eksempler](http://www.ruby-doc.org/core-2.1.5/doc/syntax/command_line_rdoc.html)
-- [Kommandolinje-argumenter-guide fra RubyGarage](https://rubygarage.org/blog/ruby-command-line-arguments)

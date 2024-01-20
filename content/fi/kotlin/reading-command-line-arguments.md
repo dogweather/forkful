@@ -42,4 +42,3 @@ Kotlinin `main`-funktiolle komentoriviparametrien syöttäminen perustuu Javalle
 
 - [Kotlinin viralliset dokumentit komentorivisovellusten luomisesta](https://kotlinlang.org/docs/command-line.html)
 - [CommandLine-kirjasto](https://picocli.info/)
-- [Hyvä artikkeli komentoriviparametrien käsittelystä](https://www.baeldung.com/kotlin-command-line-args)

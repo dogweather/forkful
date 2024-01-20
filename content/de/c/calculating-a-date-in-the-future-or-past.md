@@ -58,5 +58,4 @@ Ein wichtiger Punkt ist, dass `mktime` und `localtime` die Zeitzone des Systems 
 Für mehr Informationen und weitere Beispiele, schauen Sie hier:
 
 - Cplusplus.com, "Time library": [Link](http://www.cplusplus.com/reference/ctime/)
-- GNU.org, "Time functions": [Link](https://www.gnu.org/software/libc/manual/html_node/Time-Functions.html)
 - Stackoverflow, "Add one week to current time in C": [Link](https://stackoverflow.com/questions/3024197/what-is-the-easiest-way-to-get-the-current-time-in-current-time-milliseconds-in-c)

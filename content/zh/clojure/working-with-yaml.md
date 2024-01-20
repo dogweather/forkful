@@ -44,6 +44,5 @@ YAML最初是由亚伦·斯文波尔在2001年开发的，旨在成为一种比X
 在Clojure中，我们可以使用yaml/lib库来操作YAML格式的数据，它提供了一系列函数来读取、解析和生成YAML字符串。
 
 ## 相关资源
-- [yaml/lib官方文档](https://github.com/benedekfazekas/yaml)
 - [YAML官方网站](https://yaml.org/)
 - [Clojure官方网站](https://clojure.org/)

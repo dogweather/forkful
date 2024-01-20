@@ -67,6 +67,5 @@ En C, trabajar con JSON requiere el uso de una biblioteca externa, como jansson 
 
 ## Ver También:
 
-- [Documentación de jansson](https://jansson.readthedocs.io/en/v2.11/)
 - [Documentación de cJSON](https://github.com/DaveGamble/cJSON/blob/master/README.md)
 - [Introducción a JSON](https://www.json.org/json-es.html)

@@ -44,7 +44,6 @@ Détails d'implémentation : L'opératrice d'interpolation est `$`. Les doubles 
 
 ## Voir Aussi 
 
-- [PowerShell 3.0 : Chaînes interpolées](https://docs.microsoft.com/fr-fr/powershell/scripting/language-syntax/format-operators?view=powershell-7.1)
 - [Documentation de Microsoft sur les opérations de chaîne](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#string)
 
 N'oubliez pas que l'interpolation des chaînes est un outil puissant pour rendre votre code plus lisible et facile à comprendre. Amusez-vous à coder !

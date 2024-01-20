@@ -36,4 +36,3 @@ YAML (acrônimo para "YAML Ain't Markup Language") foi criado em 2001 por um gru
 ## Veja também
 - [Documentação oficial do pacote js-yaml](https://github.com/nodeca/js-yaml)
 - [Website oficial do YAML](https://yaml.org)
-- [Outras alternativas para estruturação de dados](https://www.freecodecamp.org/news/json-vs-xml-which-is-the-best-data-format/)

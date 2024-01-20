@@ -45,4 +45,3 @@ CSV-tiedostojen käsittely perustuu tietojen erottamiseen pilkulla, mutta tilant
 ## Katso myös
 - [Haskellin viralliset dokumentaatiot](https://www.haskell.org/documentation/)
 - [Text.CSV-moduulin dokumentaatio](https://hackage.haskell.org/package/csv/docs/Text-CSV.html)
-- [CSV-tiedostojen taustaa ja historiaa](https://www.computerworld.com/article/3274157/what-is-csv-a-simple-guide-to-csv-files.html)

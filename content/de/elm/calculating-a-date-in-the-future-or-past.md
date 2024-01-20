@@ -57,6 +57,5 @@ Neben dem `elm/time`-Paket, das wir hier verwendet haben, bietet Elm auch das `D
 # Siehe auch
 
 - [Elm Time Dokumentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Date Dokumentation](https://package.elm-lang.org/packages/elm/date/latest/)
 - [Elm Date Extra Dokumentation](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/)
 - [Justin Mimbs Date Dokumentation](https://package.elm-lang.org/packages/justinmimbs/date/latest/)

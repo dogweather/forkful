@@ -36,4 +36,3 @@ Detalhes de implementação são surpreendentemente complicados, como a interpol
 ## Veja Também:
 
 - [Ruby Doc sobre Strings](https://ruby-doc.org/core-2.7.0/String.html)
-- [Artigo sobre Interpolação de String em Ruby](https://www.rubyguides.com/2018/01/ruby-string-interpolation/).

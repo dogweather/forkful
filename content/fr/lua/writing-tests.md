@@ -47,4 +47,3 @@ Pour implémenter des tests, il est important de suivre les bonnes pratiques de 
 ## Voir aussi:
 
 - [Le guide de programmation Lua officiel](https://www.lua.org/pil/contents.html)
-- [Tutoriel sur les tests unitaires en Lua](https://dev.to/javierdiazmes/on-unit-testing-with-lua-33o)

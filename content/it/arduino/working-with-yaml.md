@@ -35,5 +35,3 @@ YAML è stato creato nel 2001 per rispondere alla mancanza di un formato di dati
 ## Vedi anche:
 
 - [Documentazione ufficiale di YAML](https://yaml.org/)
-- [Esempi pratici sulla gestione di dati con YAML](https://www.arduino.cc/en/Tutorial/YamlParsing)
-- [Altro esempio di utilizzo di YAML con Arduino](https://forum.arduino.cc/index.php?topic=243360.0)

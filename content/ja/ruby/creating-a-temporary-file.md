@@ -37,4 +37,3 @@ temp_file.unlink # ファイルを削除
 ## 参考情報
 * [Tempfile (Ruby 2.7.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/class/Tempfile.html)
 * [File (Ruby 2.7.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/class/File.html)
-* [Rubyで一時ファイル(Tempfile)を使う](https://www.javadrive.jp/ruby/ior/index5.html)

@@ -48,5 +48,3 @@ Dettagli importanti sulla comparazione di date in Swift: la classe `Date` in Swi
 Se desideri approfondire la gestione delle date in Swift, potresti trovare utili le seguenti risorse:
 
 - [Documentazione Apple ufficiale su Date](https://developer.apple.com/documentation/foundation/date)
-- [Confrontare le date in Swift](https://nshipster.com/date/)
-- [Gestione del tempo e delle date in Swift](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)

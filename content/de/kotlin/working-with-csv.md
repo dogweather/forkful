@@ -48,6 +48,4 @@ writer.writeNext(data) // Schreiben der Daten in die CSV-Datei
 
 ## Siehe auch
 
-- [Kotlin CSV Library von JetBrains](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/csv/README.md)
-- [Wikipedia Artikel über CSV](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
 - [CSV-Format Spezifikation](https://tools.ietf.org/html/rfc4180)

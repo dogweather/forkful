@@ -45,4 +45,3 @@ Alternativen für die Konvertierung und den Vergleich von Daten könnten in ande
 
 - [UNIX timestamp – Wikipedia](https://de.wikipedia.org/wiki/Unixzeit)
 - [Fish - eine smarte Shell für den Terminal | heise Download](https://www.heise.de/download/product/fish-50937)
-- [Einführung in die fish shell | Zdnet.de](https://www.zdnet.de/88201978/einfuehrung-in-die-fish-shell/)

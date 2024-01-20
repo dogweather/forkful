@@ -60,6 +60,4 @@ Esto es una prueba.
 ## También puedes ver 
 
 - Documentación oficial de Microsoft sobre `StreamReader`: [Link](https://docs.microsoft.com/es-es/dotnet/api/system.io.streamreader?view=net-5.0)
-- Información más detallada sobre la lectura de archivos de texto: [Link](https://www.c-sharpcorner.com/article/c-sharp-streamreader-class/)
-- Más ejemplos y explicaciones de W3 Schools: [Link](https://www.w3schools.com/cs/cs_files_read.asp)
 ---

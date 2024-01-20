@@ -46,5 +46,4 @@ Det er viktig å merke seg at interpolering bare fungerer med doble anførselste
 ## Se Også
 For mer informasjon og relaterte ressurser, kan du besøke følgende lenker:
 - PHP Manual String Syntax: [Her](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
-- String Interpolation in PHP: [Her](https://www.baeldung.com/php-string-interpolation)
 - PHP The Right Way: [Her](https://phptherightway.com/)

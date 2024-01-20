@@ -37,4 +37,3 @@ Haskellでは、日付の操作は "Data.Time" モジュールを使用して行
 
 ## その他の参考文献
 - [Haskellの公式ドキュメンテーション](https://www.haskell.org/documentation/)
-- [Haskellでの日付と時刻（Data.Time）](http://learnyouahaskell.com/dates-and-times)

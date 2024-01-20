@@ -48,7 +48,6 @@ $emails | where {$_ -match "^\w+@\w+\.\w+$"}
 # 더 알아보기
 더 많은 정보를 원하신다면, 다음 링크들을 참고해보세요!
 - [Microsoft Docs의 PowerShell 정규식 가이드](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [자세한 정규식 문법들을 보여주는 사이트](https://regexr.com/)
 - [정규식을 사용한 문자열 처리 예시들](https://towardsdatascience.com/regex-cookbook-most-wanted-regex-aa4dde43a9f1)
 
 이제 정규식에 대해 조금 더 알게 되셨을 것입니다. 바쁜 일상에서도 이를 활용하여 보다 효율적인 문자열 처리를 해보세요!

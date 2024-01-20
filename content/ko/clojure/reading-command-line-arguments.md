@@ -42,4 +42,3 @@ $ lein run 인자1 인자2 인자3
 Crojure 명령행 인자에 대한 더 깊은 이해를 위해 다음 링크를 확인하십시오:
 - [Clojure 공식 문서](https://clojure.org/)
 - [Command Line Arguments in Clojure](https://clojuredocs.org/clojure.core/*command-line-args*)
-- [Command-line argument parsing in Clojure](http://web.archive.org/web/20100621051006/http://programming-puzzler.blogspot.com/2009/05/command-line-argument-parsing-in.html)

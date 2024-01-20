@@ -33,4 +33,3 @@ CSV був створений в 1972 році і використовуєтьс
 ## Дивись також:
 - [ClojureDocs: clojure.data.csv](https://clojuredocs.org/clojure.data.csv)
 - [Official Clojure CSV Library Documentation](https://clojure.github.io/data.csv/)
-- [A Comprehensive Guide to Working with CSV files in Clojure](https://purelyfunctional.tv/guide/clojure-csv/)

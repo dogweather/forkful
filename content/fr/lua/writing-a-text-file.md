@@ -34,5 +34,4 @@ fichier:close()
 ## Voir aussi:
 
 - [Documentation officielle de Lua](https://www.lua.org/manual/5.3/manual.html#pdf-io.open)
-- [Tutoriel sur les fichiers en Lua](https://www.tutorialspoint.com/lua/lua_input_output.htm)
 - [Vidéo explicative sur l'utilisation des fichiers en Lua](https://www.youtube.com/watch?v=ds4DI865QjI)

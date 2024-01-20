@@ -50,5 +50,4 @@ La característica más importante a considerar al convertir una fecha en una ca
 ## Vea también
 
 - [Documentación de Elm Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Biblioteca de Elm Date Extra](https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/)
 - [Biblioteca de Elm Community Elm Time](https://package.elm-lang.org/packages/elm-community/elm-time/latest/)

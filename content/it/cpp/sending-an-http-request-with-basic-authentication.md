@@ -71,4 +71,3 @@ Tuttavia, per l'utilizzo di base e i test, l'autenticazione con credenziali di b
 ## Per saperne di più
 - Per una panoramica più completa dell'autenticazione di base: [HTTP Basic Access Documentation](https://datatracker.ietf.org/doc/html/rfc7617)
 - Per prendere in considerazione metodi di autenticazione alternativi: [OAuth 2.0](https://oauth.net/2/)
-- Per gli approfondimenti sulla libreria `Casablanca`: [C++ REST SDK Documentation](https://github.com/microsoft/cpprestsdk/blob/master/Release/README.md)

@@ -47,6 +47,4 @@ printf "Дата: %s\n" "$(date)"
 
 ## Дивіться також:
 
-- УрСкифиціальна Bash документація про формат дати тут: [Bash Date Format](https://www.gnu.org/software/bash/manual/html_node/Date-Manipulation.html)
-- Гарна стаття про роботу з датою та часом в Bash: [Dealing with dates in bash](https://linuxconfig.org/how-to-use-date-command-in-bash-script)
 - Більше прикладів перетворення дати в рядок в Bash: [Bash date to string](https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script)

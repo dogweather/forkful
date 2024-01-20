@@ -54,4 +54,3 @@ Parse- ja ValueOf -metodit tarjoavat myös erilaisia vaihtoehtoja päivämäär�
 ## Lisätietoja:
 - [JavaScript Date Objekti](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [Aikaleimat JavaScriptissä](https://www.w3schools.com/js/js_date_methods.asp)
-- [Päivämäärien vertaaminen JavaScriptissä](https://stackabuse.com/javascript-check-if-date-is-greater-than-other/)

@@ -38,4 +38,3 @@ end
 
 - [Fish-Shell स्वीकार्य विचारनीय प्रक्रिया](https://fishshell.com/docs/current/tutorial.html)
 - [Fish-Shell के साथ डिबगिंग](https://fishshell.com/docs/current/faq.html#faq-debugging) 
-- [Shell Scripting: डिबगिंग स्क्रिप्ट्स](https://ryanstutorials.net/bash-scripting-tutorial/bash-debugging.php)

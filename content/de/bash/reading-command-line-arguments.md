@@ -41,5 +41,4 @@ Die Implementierung des Lesens dieser Argumente in Bash ist relativ einfach, da 
 ## Siehe auch
 Für weitere Informationen verweisen wir auf folgende Quellen: 
 - [Bash Guide for Beginners: Chapter 3. The Bash environment](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
-- [Linuxize: How to Pass Arguments to a Bash Script](https://linuxize.com/post/how-to-pass-arguments-to-a-bash-script/)
 - [Bash Handbook: Command Line Arguments](https://github.com/denysdovhan/bash-handbook/blob/master/README.md#command-line-arguments)

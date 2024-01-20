@@ -37,5 +37,4 @@ Jeśli chodzi o implementację w języku Go, jest ona bardzo prosta i wykorzystu
 
 ## Zobacz także: 
 - [Dokumentacja języka Go dotycząca tworzenia plików](https://golang.org/pkg/os/#Create)
-- [Przykładowy kod tworzenia pliku tekstowego w języku Go](https://play.golang.org/p/UEW6o-Ze1Vf)
 - [Zalety i wady pisania plików tekstowych w porównaniu do innych sposobów przechowywania danych](https://www.javatpoint.com/os-create-function-in-golang)

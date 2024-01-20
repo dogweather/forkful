@@ -51,4 +51,3 @@ main =
 
 - Elmの公式ドキュメント: [Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
 - さまざまな正規表現に関するチュートリアル: [Regular-Expressions.info](https://www.regular-expressions.info/)
-- 正規表現のデザインと実装について: [A Design for Regular Expressions](https://www.fing.edu.uy/inco/cursos/intropln/material/p419-kernighan.pdf)

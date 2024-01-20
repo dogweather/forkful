@@ -49,4 +49,3 @@ Para una mayor profundidad sobre el manejo del tiempo y la comparación de fecha
 
 - [Biblioteca estándar de Rust - SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
 - [Biblioteca Chrono](https://docs.rs/chrono/0.4.19/chrono/)
-- [Wikipedia - Epoch (informática)](https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica))

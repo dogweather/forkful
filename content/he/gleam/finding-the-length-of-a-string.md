@@ -42,7 +42,6 @@ fn main() {
 
 ## ראו גם 
 
-- [מסמך עזרה של Gleam](https://hexdocs.pm/gleam/gleam/string.html) - המסמך מוכיח ראייה מעמיקה על פונקציות נוספות של מחרוזת ב-Gleam.
 
 - [ספר מתכנתים של Gleam](https://gleam.run/book/) - ספר חינם שמדריך דרך חלק מהמאפיינים של השפה.
 

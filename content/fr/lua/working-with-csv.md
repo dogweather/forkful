@@ -60,7 +60,6 @@ Il est important de noter que les fichiers CSV peuvent être sujets à des erreu
 Si vous souhaitez en savoir plus sur la manipulation de fichiers CSV en Lua, voici quelques ressources utiles à consulter:
 
 - [Documentation Lua pour la bibliothèque io](https://www.lua.org/pil/21.2.html)
-- [Bibliothèque Lua pour la manipulation de fichiers CSV](https://github.com/akunq/isf)
 - [Tutoriel vidéo sur la manipulation de fichiers CSV en Lua](https://www.youtube.com/watch?v=-r6fQY2efEs)
 
 Avec ces informations, vous devriez être en mesure de facilement travailler avec des fichiers CSV dans vos projets Lua. Bonne programmation!

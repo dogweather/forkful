@@ -54,6 +54,4 @@ Die Implementierungsdetails für das Berechnen von Daten in der Zukunft oder Ver
 ## Siehe Auch:
 
 - ["NaiveDateTime" in Elixir-Dokumentation](https://hexdocs.pm/elixir/NaiveDateTime.html)
-- ["Timex" Dokumentation](https://hexdocs.pm/timex/readme.html)
 - ["Calendar" in Elixir-Dokumentation](https://hexdocs.pm/calendar/readme.html)
-- ["Ecto.DateTime in Ecto-Dokumentation"](https://hexdocs.pm/ecto/Ecto.DateTime.html)

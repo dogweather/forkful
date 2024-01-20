@@ -51,4 +51,3 @@ C:\errors.txtファイルにエラーが書き込まれました。
 参考情報:
 
 - [PowerShellの標準エラーについて](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1#stream-numbers)
-- [標準エラー出力をログファイルに書き込む方法](https://www.petri.com/powershell-tip-redirect-errors-log-file)

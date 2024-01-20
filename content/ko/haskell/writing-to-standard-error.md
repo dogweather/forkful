@@ -32,4 +32,3 @@ This is an error message!
 
 ## 참고 자료:
 - [Haskell 표준 라이브러리 문서](https://hackage.haskell.org/package/base-4.11.1.0/docs/GHC-IO-Handle.html#v:hPutStrLn)
-- [프로그래밍 언어 기본 개념 설명문서](https://en.wikipedia.org/wiki/Standard_error_(Unix))

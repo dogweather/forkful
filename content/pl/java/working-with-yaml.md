@@ -58,4 +58,3 @@ Główną zaletą YAML jest jego elastyczność - może być używany do przecho
 
 - [Oficjalna strona YAML](https://yaml.org/)
 - [Dokumentacja YAMLBeans](https://yamlbeans.sourceforge.io/)
-- [Porównanie YAML i XML](https://stackify.com/yaml-vs-xml-comparison/)

@@ -47,4 +47,3 @@ replace str regex replaceWith = subRegex (str =~ regex :: AllTextMatches [] Stri
 ## 関連リンク：
 - [正規表現入門 (wikipedia)](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE)
 - [正規表現チュートリアル (qiita)](https://qiita.com/jnchito/items/57ffda5712636a9a1e62)
-- [正規表現コンパイラの実装 (qiita)](https://qiita.com/shmsw25/items/6a8d31627aad35e1a22e)

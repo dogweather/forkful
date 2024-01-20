@@ -59,4 +59,3 @@ La classe `Date` enregistre le temps écoulé depuis une date de référence (1e
 
 - Documentation Apple sur [Date](https://developer.apple.com/documentation/foundation/date)
 - How to format dates with [Swift DateFormatter](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
-- Swift by Sundell's article on [Dealing with dates](https://www.swiftbysundell.com/basics/dates/)

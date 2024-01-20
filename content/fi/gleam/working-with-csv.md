@@ -38,6 +38,5 @@ CSV-tiedostoon tallennettuja tietoja käsitellään Gleamissa sisäisesti binä�
 
 ## Katso myös:
 
-- [csv-paketti Gleam documentaatiossa](https://github.com/gleam-lang/csv)
 - [CSV Wikipediassa](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [CSV-tiedostoja käsittelevät libraryt Pythonissa](https://docs.python.org/3/library/csv.html)

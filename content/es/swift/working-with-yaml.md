@@ -62,6 +62,5 @@ Si quieres aprender más sobre YAML y cómo usarlo en tus proyectos de Swift, aq
 - [Documentación oficial de YAML](https://yaml.org/)
 - [Biblioteca Swift para trabajar con YAML](https://github.com/jpsim/Yams)
 - [Tutorial de YAML para principiantes](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)
-- [Comparación entre YAML, JSON y XML](https://stackify.com/yaml-vs-json-vs-xml/)
 
 ¡Ahora estás listo para empezar a trabajar con YAML en Swift! Recuerda siempre considerar los requisitos y necesidades de tu proyecto antes de decidir qué formato utilizar para almacenar tus datos estructurados.

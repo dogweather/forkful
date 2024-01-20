@@ -40,5 +40,3 @@ La implementación del debug en Arduino es bastante directa gracias a la bibliot
 ## Ver También
 
 - [Documentación oficial de Arduino en la biblioteca Serial (en inglés)](https://www.arduino.cc/en/Reference/Serial)
-- [Control de errores en Arduino (en español)](https://programarfacil.com/blog/arduino-blog/control-de-errores-arduino/)
-- [Depuración de programas en Arduino (en español)](https://www.luisllamas.es/arduino-depuracion-paso-a-paso/)

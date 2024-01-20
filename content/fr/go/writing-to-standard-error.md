@@ -53,4 +53,3 @@ La fonction "Fprint" utilisée dans l'exemple ci-dessus est seulement une des no
 
 - [Documentation officielle de la fonction "Fprint" de Go](https://golang.org/pkg/fmt/#Fprint)
 - [Article sur les méthodes de gestion des erreurs en Go](https://blog.golang.org/defer-panic-and-recover)
-- [Exemple de code utilisant la sortie d'erreur standard dans un programme d'enregistrement de fichiers journaux en Go](https://github.com/vjeantet/log/blob/master/log.go)

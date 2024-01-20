@@ -44,5 +44,3 @@ String.concat(["Hei, ", "maailma!"])
 ## Katso myös:
 
 * Elixirin virallinen dokumentaatio merkkijonoista: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
-* Joel Quenneville's artikkeli "Understanding Elixir's String Module": [https://www.bignerdranch.com/blog/elixir-and-io-lists-part-2-io-lists-in-the-wild/](https://www.bignerdranch.com/blog/elixir-and-io-lists-part-2-io-lists-in-the-wild/)
-* Rob Conery's artikkeli "Hexdocs and Elixir Strings"[https://rob.conery.io/2018/04/21/hexdocs-and-elixir-strings/](https://rob.conery.io/2018/04/21/hexdocs-and-elixir-strings/)

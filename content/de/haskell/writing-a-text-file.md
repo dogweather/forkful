@@ -37,6 +37,4 @@ Bei der Implementierung von Textdateien gibt es verschiedene Wege, wie z.B. Lazy
 
 # Siehe auch
 
-- [Tutorial zu Textdateien in Haskell](https://haskell.fpcomplete.com/library/files-and-serialization/text-files)
-- [Weitere Optionen zum Speichern von Daten in Haskell](https://lexi-lambda.github.io/blog/2017/02/12/in-memoriam-monads/)
 - [Einführung zu Haskell](https://haskell.org/)

@@ -63,5 +63,3 @@ int main(){
 
 Поглиблене розуміння теми об'єднання стрічок в C++ ви можете знайти за посиланнями:
 - ["Basic String Operations"](http://www.cplusplus.com/reference/string/string/) від cplusplus.com
-- ["How to concatenate strings in C++"](https://www.fluentcpp.com/2018/12/06/strcat-vs-strlcat/) від fluentcpp.com
-- ["Concatenating Strings in C++"](https://www.learncpp.com/cpp-tutorial/concatenating-strings/) від learncpp.com.

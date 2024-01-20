@@ -42,5 +42,4 @@ Vale la pena notare che `process.argv` include due argomenti predefiniti: il per
 
 ## Per approfondire
 
-- Documentazione Node.js sulla [gestione degli argomenti da linea di comando](https://nodejs.org/it/knowledge/command-line/how-to-parse-command-line-arguments/).
 - Documentazione delle librerie [Commander.js](https://www.npmjs.com/package/commander) e [yargs.js](https://www.npmjs.com/package/yargs).

@@ -33,4 +33,3 @@ console.log(add(3, 5));
 ראה גם:
 
 - [הדרכה על Jest](https://jestjs.io/docs/getting-started)
-- [למידע נוסף על כתיבת בדיקות ב-Javascript](https://www.telerik.com/blogs/what-is-javascript-unit-testing)

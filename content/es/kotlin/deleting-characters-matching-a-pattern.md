@@ -51,4 +51,3 @@ Para más información sobre Regex en Kotlin, consulta la documentación oficial
 - [Kotlin Regular Expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 
 Para una visión más profunda de la función replace, mira en Kotlin Playground:
-- [Replace Function in Kotlin](https://play.kotlinlang.org/byExample/05_Collections/24_replace)

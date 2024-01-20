@@ -42,4 +42,3 @@ case decoded of
 ## À voir:
 
 - [Documentation officielle de Data.Aeson](https://hackage.haskell.org/package/aeson-2.0.1.0/docs/Data-Aeson.html)
-- [Tutoriel en ligne sur le traitement de JSON en Haskell](https://www.stackbuilders.com/tutorials/haskell/json-encoding-and-decoding/)

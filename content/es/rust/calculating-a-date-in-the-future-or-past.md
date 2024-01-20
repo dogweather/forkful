@@ -71,6 +71,5 @@ Históricamente, los programadores han usado muchas maneras para calcular fechas
 
 ## Ver También:
 
-* Chrono en [crates.io](https://crates.io/crates/chrono)
 * Documentación oficial de Chrono [aquí](https://docs.rs/chrono/)
 * Rústica [Guía de Programación del Tiempo](https://rust-lang-nursery.github.io/rust-cookbook/datetime/duration.html).

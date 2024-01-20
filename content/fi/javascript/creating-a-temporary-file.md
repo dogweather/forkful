@@ -44,7 +44,6 @@ Lisätietoa löytyy seuraavista lähteistä:
 
 - `tmp-promise` kirjaston dokumentaatio: [https://github.com/benjamingr/tmp-promise](https://github.com/benjamingr/tmp-promise)
 
-- Artikkeli tilapäisten tiedostojen käytöstä: [https://www.2ality.com/2018/02/nodejs-temp-files.html](https://www.2ality.com/2018/02/nodejs-temp-files.html)
 
 Koodiesimerkki perustuu lähteestä: [https://www.npmjs.com/package/tmp-promise](https://www.npmjs.com/package/tmp-promise)
 

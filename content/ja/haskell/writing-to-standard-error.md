@@ -27,5 +27,4 @@ main = do
 プログラミングの歴史的背景では、標準エラーへの書き込みはデバッグの際に非常に重要な役割を果たしました。代替手段として、ファイルやログにエラーメッセージを書き込む方法もありますが、標準エラーへの書き込みはコード内で直接行うことができるので簡単です。また、Haskellでは`System.IO`モジュールを使用して標準エラーへの書き込みが行われます。
 
 ## 関連リンク：
-- [HaskellのIOモジュール - 標準出力と標準エラー](https://www.haskell.or.jp/tutorial/io.html#i_o-例外および標準エラー)
 - [HaskellのSystem.IOモジュールのドキュメント](https://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/io-channels.html)

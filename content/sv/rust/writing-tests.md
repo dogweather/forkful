@@ -39,4 +39,3 @@ Det är också möjligt att testa privata funktioner och metoder genom att anvä
 ## Se även:
 För mer information om hur man skriver tester i Rust, se följande länkar:
 - [Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Official Rust Documentation - Testing](https://doc.rust-lang.org/std/test/index.html)

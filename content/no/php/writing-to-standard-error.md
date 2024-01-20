@@ -34,4 +34,3 @@ Dette er en feilmelding.
 
 - [PHP Manualens sider om Writing to Standard Error](https://www.php.net/manual/en/function.fwrite.php)
 - [Unix Documentation om Standard Output and Standard Error](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdout.html) 
-- [Ressurser for å lære mer om feilsøking i PHP](https://www.makeuseof.com/tag/troubleshoot-php-html-css-scripts-easily/)

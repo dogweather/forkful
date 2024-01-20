@@ -50,4 +50,3 @@ Men, HTML-tolkning tillåter interaktion med webbsidor på ett mycket mer detalj
 
 - [W3Schools Tutorial på HTML DOM Traversal & Manipulation](https://www.w3schools.com/js/js_htmldom_navigation.asp)
 - [Mozilla dokumentation om HTML tolkning](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Gleam dokumentation](https://gleam.run/docs/introduction/)

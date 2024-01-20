@@ -46,5 +46,4 @@ Gleamissa `http.send()` -metodi antaa vastauksen, johon sisältyy palvelimen lä
 Jos haluat tutkia Gleam-ohjelmointikieltä lisää, seuraavat resurssit voivat olla hyödyllisiä:
 - [Gleam kotisivu](https://gleam.run/)
 - [Gleam GitHub repo](https://github.com/gleam-lang/gleam)
-- [HTTP-kirjaston dokumentointi](https://hexdocs.pm/gleam_http/readme.html)
 - [Gleam-yhteisön Discord-chat](https://discord.gg/Fm8Pday2Jg)

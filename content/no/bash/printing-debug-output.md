@@ -49,6 +49,5 @@ Fra implementasjonsdetaljene, skal `printf` og `echo` skrive til standard output
 ## Se Også
 
 For mer informasjon om debugging og logger i Bash, sjekk følgende lenker:
-* [GNU Bash manual - debugging](https://www.gnu.org/software/bash/manual/html_node/Debugging.html)
 * [Advanced Bash-Scripting Guide - debugging](http://tldp.org/LDP/abs/html/debugging.html)
 * [Bash man side](http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html) - en detaljert manual for Bash, inkludert 'echo' og 'printf'

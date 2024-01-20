@@ -37,6 +37,3 @@ Scrivere file di testo è una pratica comune nella programmazione, ma ha avuto o
 
 ## Vedi anche:
 Se vuoi saperne di più su come scrivere file di testo in Swift, puoi consultare questi link:
-
-- [Apple Developer Documentation on File Handling](https://developer.apple.com/documentation/foundation/file_handling)
-- [Swift Tutorial: Reading and Writing Files](https://www.raywenderlich.com/718101-filemanager-class-tutorial-for-reading-and-writing-files-in-swift)

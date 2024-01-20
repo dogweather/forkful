@@ -43,5 +43,3 @@ Beim Vergleichen von Daten ist zu beachten, dass Zeitzonen massiven Einfluss auf
 
 ## Siehe auch
 * Die [chrono crate Dokumentation](https://docs.rs/chrono/0.4.19/chrono/) bietet tiefschürfende Informationen und Beispiele.
-* Für eine gründliche Einführung in die Handhabung von Datum und Zeit in Rust, siehe [dieser Artikel](https://programmingzen.com/handling-date-and-time-in-rust/) von Antonio Cangiano.
-* Eine Diskussion über das Vergleichen von Daten in Rust kann [im Rust-Forum](https://users.rust-lang.org/t/comparing-dates-in-rust/2032) gefunden werden.

@@ -40,5 +40,4 @@ if fileManager.fileExists(atPath: directoryPath) {
 ## 参考資料:
 
 - [Apple Developer Documentation: fileExists(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists)
-- [Apple Developer Documentation: attributesOfItem(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1412643-attributesofitem)
 - [Stack Overflow: How to check if a directory exists in Swift?](https://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file)

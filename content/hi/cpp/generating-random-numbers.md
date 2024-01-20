@@ -45,5 +45,4 @@ int main() {
 हालांकि, अगर आप को हरद्वेयर आधारित रैंडम नंबर की आवश्यकता होती है, तब आप लाइब्रेरी `<random>` के आधार पर std::random_device का उपयोग कर सकते हैं।
 
 ## विशेष जानकारी
-- [नल्लेल पर प्रकाशन: रेंडम नंबर जेनेरेशन](https://nulll-pointer.com/random-number-generation)
 - [C++ विकी: random प्रलेखन](http://en.cppreference.com/w/cpp/numeric/random)

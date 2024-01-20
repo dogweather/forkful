@@ -45,5 +45,3 @@ La implementación de regex en C++ utiliza una clase del estándar STL, std::reg
 Para buscar más información sobre el uso y las capacidades de las expresiones regulares, puedes consultar los siguientes recursos:
 
 - Documentación oficial de C++ [regex](http://www.cplusplus.com/reference/regex/)
-- Tutorial básico de [regex en C++](https://www.geeksforgeeks.org/regex-in-cpp/)
-- Guía práctica de [regex](https://regexr.com/)

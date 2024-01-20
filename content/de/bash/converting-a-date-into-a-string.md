@@ -54,8 +54,6 @@ Die Umwandlung eines Datums in einen String in Bash geschieht im Wesentlichen du
 
 Für eine detailliertere Anleitung zur Formatierung von Datum und Zeit in Bash, siehe: 
 - [Bash by example - Date and Time](https://www.ibm.com/developerworks/library/l-bash2/index.html)
-- [Conquering Dates with UNIX](https://www.linuxjournal.com/content/conquering-dates-unix)
 
 Für Alternativen zur Datumsformatierung in awk oder perl, siehe:
 - [Date Manipulation in Awk](http://www.awk.info/?date)
-- [Date manipulation in Perl](https://perlmaven.com/how-to-get-the-current-date-and-time-in-perl)

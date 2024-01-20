@@ -39,4 +39,3 @@ CSV wurde in den 1960er Jahren entwickelt, um den Austausch von Daten zwischen v
 ## Siehe auch
 
 - [Ruby-Dokumentation zu CSV](https://ruby-doc.org/stdlib-2.7.0/libdoc/csv/rdoc/CSV.html)
-- [Eine Einführung in CSV](https://www.oreilly.com/learning/introduction-to-csv)

@@ -48,4 +48,3 @@ El `lowercase()` examina cada carácter de la cadena y si es una letra mayúscul
 Para aprender más sobre la conversión de cadenas a minúsculas en Kotlin, visita las siguientes fuentes:
 
 - Documentación oficial de Kotlin: [Funciones de cadenas y caracteres](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
-- Guía de JetBrains: [Trabajar con cadenas en Kotlin](https://www.jetbrains.com/help/idea/working-with-kotlin-string-literals.html)

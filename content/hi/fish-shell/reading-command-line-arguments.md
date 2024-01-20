@@ -33,5 +33,3 @@ echo $argv[2] # प्रिंट "आर्गुमेंट2"
 
 ## देखें भी
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Command Line Arguments in Unix/Linux Shell](https://www.baeldung.com/linux/command-line-arguments)
-- [Getting Started with Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-fish-shell)

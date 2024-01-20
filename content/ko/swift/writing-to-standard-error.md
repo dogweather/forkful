@@ -34,4 +34,3 @@ print("Oops! 에러 발생!", to: &stderr)
 
 - [Swift 문서 - 표준 출력과 표준 에러](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID282)
 - [Swift WikiDocs - 오류 처리](https://wikidocs.net/476)
-- [Swift Korea - 에러 메세지 출력하기](https://swiftkorea.github.io/2019/07/15/error-handling/)

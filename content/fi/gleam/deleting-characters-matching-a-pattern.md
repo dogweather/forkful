@@ -55,6 +55,5 @@ Teknisesti, pattern matching toimii vertaamalla merkkijonoja säännölliseen il
 
 ## Katso myös:
 
-* Gleam’s Regex module official documentation: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 * Regular Expressions guide: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 * Erlang Regex library: [https://erlang.org/doc/man/re.html](https://erlang.org/doc/man/re.html)

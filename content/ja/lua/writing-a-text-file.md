@@ -31,5 +31,3 @@ file:close()
 
 ## 関連情報：
 - [Lua公式ドキュメント：ファイル操作](https://www.lua.org/pil/21.1.html)
-- [Web上でのファイル書き込みと読み込みの仕組み](https://www.suug.ch/~tisan/computer/luasysseries.html#files)
-- [Luaでのテキストファイルの読み書きチュートリアル](https://www.lua-tutorial.com/file-io)

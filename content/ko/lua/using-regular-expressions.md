@@ -33,5 +33,4 @@ print(sentence:match("こんにちは、(.*)")) -- output: ごめんなさい
 
 ## 관련 자료:
 - [Lua string 라이브러리 문서](http://lua-users.org/wiki/StringLibraryTutorial)
-- [루아스크립트: 정규식(RegExp) 적용법](https://luascript.tistory.com/43)
 - [PCRE 패턴 문법 가이드](http://www.lua.org/manual/5.3/manual.html#6.4.2)

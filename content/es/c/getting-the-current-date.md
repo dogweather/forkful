@@ -51,6 +51,5 @@ Una implementación detallada podría implicar el manejo de zonas horarias y aju
 ## Ver también:
 - Documentación de C en [cplusplus.com](http://www.cplusplus.com/)
 - Guía avanzada de programación en C [learn-c.org](https://www.learn-c.org/)
-- [thispointer.com](https://thispointer.com/c-program-to-get-current-date-and-time-in-given-format/) para más en códigos de formato de tiempo.
 
 ---

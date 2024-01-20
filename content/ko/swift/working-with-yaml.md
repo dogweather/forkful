@@ -51,4 +51,3 @@ Swift에서는 로컬 라이브러리인 Yams를 사용하여 YAML을 다룰 수
 
 - [YAML 공식 웹사이트](https://yaml.org/)
 - [Yams 라이브러리 github 페이지](https://github.com/jpsim/Yams)
-- [Swift에서 YAML 사용하기](https://www.raywenderlich.com/1159761-yaml-tutorial-get-started-in-swift)

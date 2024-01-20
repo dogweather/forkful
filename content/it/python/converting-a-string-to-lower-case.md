@@ -43,7 +43,6 @@ La sua implementazione specifica può variare tra le diverse versioni di Python 
 ## Altri riferimenti
 
 - [Documentazione ufficiale Python sul metodo `.lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- ["Understanding Python String Lower() Method" su Python Pool](https://www.pythonpool.com/python-string-lower/)
 - [Esempi Python String lower() su Programiz](https://www.programiz.com/python-programming/methods/string/lower) 
 
 ---

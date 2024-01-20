@@ -51,6 +51,5 @@ A prática de escrever testes tem suas raízes na metodologia ágil e no desenvo
 
 ## Veja também:
 
-- [The Art of Unit Testing: With Examples in Python](https://www.amazon.com.br/Art-Unit-Testing-Examples-Python/dp/1617295981)
 - [Documentação oficial do Unittest](https://docs.python.org/3/library/unittest.html)
 - [Documentação oficial do Pytest](https://docs.pytest.org/en/latest/)

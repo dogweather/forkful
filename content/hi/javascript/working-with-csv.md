@@ -44,6 +44,4 @@ CSV या Comma Separated Values, एक विशेष तरह की फ�
 
 ## देखें:
 
-- [CSV परिभाषा और उदाहरण](https://www.w3schools.com/js/js_csv.asp)
-- [CSV और जेसन का उपयोग डेटा मेंा 設定 ت ](https://dzone.com/articles/using-csv-and-json-data-my-settings-app)
 - [CSV फ़ॉर्मेट का सारांश](https://tools.ietf.org/html/rfc4180)

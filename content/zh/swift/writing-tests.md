@@ -36,6 +36,5 @@ XCTAssertEqual(add(2, 3), 5)
 如果你想深入了解编写测试的相关内容，可以阅读一些相关的文章和教程，或者参加一些相关的讨论活动。总之，编写测试是程序开发过程中的一项重要技能，值得我们花时间去学习和掌握。
 
 ## 参考资料：
-- [Swift 官方文档](https://docs.swift.org/swift-book/LanguageGuide/Assertions.html)
 - [XCTest 框架指南](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/08-automation.html)
 - [Quick 测试框架](https://github.com/Quick/Quick)

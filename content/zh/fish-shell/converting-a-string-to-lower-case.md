@@ -34,4 +34,3 @@ hello, world!
 
 ## 另请参见
 - Fish Shell文档的[字符串操作部分](https://fishshell.com/docs/current/cmds/string.html): 这里提供了Fish Shell内置的`string`命令的详细说明，包括更多的用例和其他有用的字符串操作。
-- [Fish Shell vs Bash comparison](https://scriptingosx.com/2017/09/fish-shell-vs-bash/): 这篇文章详细的比较了Fish Shell和Bash，可以帮你更好的理解这两者之间的区别以及Fish Shell的优势。

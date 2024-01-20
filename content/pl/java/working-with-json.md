@@ -38,4 +38,3 @@ JSON został stworzony w 2001 roku i jest powszechnie używany w dzisiejszych cz
 ## Zobacz też:
 - [Oficjalna dokumentacja JSON](https://www.json.org/json-pl.html)
 - [Kurs JSON w Javie na YouTube](https://www.youtube.com/watch?v=071UmQJ1F-U)
-- [Porównanie JSON-a z innymi formatami danych](https://www.geeksforgeeks.org/json-vs-xml/)

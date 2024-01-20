@@ -33,4 +33,3 @@ io.error.write(message)
 
 - [Gleam 공식 문서](https://gleam.run/documentation/)
 - [프로그래밍 관련 블로그](https://medium.com/topic/programming)
-- [표준 에러에 쓰기 예제 코드](https://github.com/gleam-lang/gleam/blob/master/examples/io/error.gleam)

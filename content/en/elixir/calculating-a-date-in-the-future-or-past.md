@@ -47,4 +47,3 @@ Implementation of date calculation in Elixir is precise, following ISO 8601 stan
 
 - Elixir’s official documentation: [Date](https://hexdocs.pm/elixir/Date.html)
 - Practical Elixir use-cases: [Dates and times in Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
-- Community-led Elixir Forum: [Handling date and time](https://elixirforum.com/c/learning-questions/help/5)

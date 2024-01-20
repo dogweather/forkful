@@ -64,6 +64,4 @@ CSV文件格式最初是在20世纪70年代由IBM开发的，它被用于存储�
 
 ## 查看更多资料
 
-- [PHP官方文档 - CSV函数](https://www.php.net/manual/en/ref.csv.php)
-- [W3Schools - PHP CSV教程](https://www.w3schools.com/php/php_csv.asp)
 - [IBM Developer - CSV文件格式简介](https://developer.ibm.com/articles/l-php-csv/)

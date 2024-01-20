@@ -39,6 +39,4 @@ Du point de vue de l'implémentation, Kotlin utilise la bibliothèque Java `java
 
 Pour en savoir plus sur les expressions régulières en Kotlin, voici quelques ressources utiles:
 
-- [La documentation officielle de Kotlin sur les expressions régulières](https://kotlinlang.org/docs/regex.html)
-- [Un tutoriel en français sur les expressions régulières en Kotlin](https://www.jmdoudoux.fr/java/dej/chap-utilistationExpressionsRegulieres.htm)
 - [Le site Regex101 pour tester et expérimenter avec les expressions régulières en temps réel](https://regex101.com)

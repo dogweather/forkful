@@ -30,4 +30,3 @@ Voir aussi:
 Si vous souhaitez en savoir plus sur les fichiers CSV et leur utilisation en programmation, consultez ces ressources:
 - [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
 - [Un tutoriel sur la manipulation de fichiers CSV en Python](https://realpython.com/python-csv/)
-- [Une introduction aux fichiers CSV sur le site Khan Academy](https://fr.khanacademy.org/computing/hour-of-code/hour-of-code-tutorial/a/reading-and-writing-csv-files)

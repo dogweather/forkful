@@ -106,7 +106,6 @@ CSV是一种通用的数据存储格式，但不适合用来存储复杂的数�
 在Elm中，可以使用第三方库来处理CSV文件，比如Csv，它提供了一些函数来解析和生成CSV数据。也可以直接使用Http库来请求和处理CSV文件，然后使用Html库来显示数据。另外，File库也可以用来处理文件的保存和下载。
 
 ## 参考资料:
-- [Csv package](https://package.elm-lang.org/packages/dillonkearns/elm-csv/latest/)
 - [Http package](https://package.elm-lang.org/packages/elm/http/latest/)
 - [Html package](https://package.elm-lang.org/packages/elm/html/latest/)
 - [File package](https://package.elm-lang.org/packages/elm/file/latest/)

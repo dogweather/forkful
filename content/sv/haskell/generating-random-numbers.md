@@ -38,6 +38,3 @@ Enda begränsningen att notera är att Haskell's random funktioner inte är helt
 ## Se även
 Websites med mer information och diskussion om generering av slumpmässiga nummer i Haskell:
 - [Random Number Generation in Haskell: A Complicated Story](https://kowainik.github.io/posts/haskell-mini-patterns#random-number-generation)
-- [Good Practices for Random in Haskell](https://alex-charlton.com/posts/Good_practices_for_Random_in_Haskell/)
-- [Randomness and Haskell, Part 1](http://www.randomhacks.net/2007/02/21/randomness-and-haskell-part-1/)
-- [Haskell | Random Numbers](https://www.geeksforgeeks.org/haskell-random-numbers/)

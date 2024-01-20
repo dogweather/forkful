@@ -42,7 +42,6 @@ int main() {
 
 ## 参考文献
 - [GumboライブラリのGitHubページ](https://github.com/google/gumbo-parser)
-- [HTML5パーサーの比較](https://html5test.com/)
 - [BeautifulSoupの公式ドキュメンテーション](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Jsoupの公式ドキュメンテーション](https://jsoup.org/)
 - [JSDOMの公式ドキュメンテーション](https://github.com/jsdom/jsdom)

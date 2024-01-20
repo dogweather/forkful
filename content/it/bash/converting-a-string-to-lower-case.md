@@ -49,4 +49,3 @@ Per saperne di più sulla manipolazione delle stringhe in Bash, dai un'occhiata 
 
 - [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 - [Bash String Manipulation Guide](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [String Operations in Bash](https://www.baeldung.com/linux/bash-string-operations)

@@ -52,4 +52,3 @@ $ stack build
 
 - Stack公式ドキュメンテーション: [https://docs.haskellstack.org/](https://docs.haskellstack.org/)
 - Haskellプロジェクトの作成：[https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm](https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm)
-- Haskellのビルドツールについて: [https://tech.fpcomplete.com/haskell/tutorial/stack](https://tech.fpcomplete.com/haskell/tutorial/stack)

@@ -42,6 +42,3 @@ Also, wie funktioniert das wirklich in Kotlin? Das `createTempFile` ist eigentli
 ## Siehe auch
 
 Für weitere Informationen über Kotlin und temporäre Dateien, verweisen wir auf die folgenden Links:
-
-- Offizielle Kotlin-Dokumentation: [http://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html](http://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
-- Benutzung von temporären Dateien in Java: [https://www.baeldung.com/java-io-temporary-files](https://www.baeldung.com/java-io-temporary-files)

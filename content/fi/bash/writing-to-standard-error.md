@@ -32,4 +32,3 @@ STDERR:iin kirjoittamisella on myös historiallinen merkitys UNIX-järjestelmiss
 
 - [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html#redirections)
 - [UNIX-historia](https://www.tutorialspoint.com/unix/unix-what-is-shell.htm)
-- [Logging in Bash](https://www.loggly.com/blog/bash-shell-sh-how-to-control-your-command-line-scripts/)

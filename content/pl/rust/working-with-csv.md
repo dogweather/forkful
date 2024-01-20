@@ -61,5 +61,3 @@ Jan lat 30
 ## Zobacz także:
 
 - [Dokumentacja dla biblioteki CSV w języku Rust](https://docs.rs/csv/)
-- [Poradnik dla początkujących: Jak pracować z plikami CSV w języku Rust](https://www.aidansteele.io/blog/rust-beginners-csv/)
-- [Github: Przykład użycia biblioteki csv](https://github.com/BurntSushi/rust-csv/blob/master/examples/wikipedia_titles.rs)

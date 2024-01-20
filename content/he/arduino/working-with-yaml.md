@@ -45,5 +45,3 @@ YAML פותח בשנת 2001 על ידי קבוצת מתכנתים כדי להו�
 ## ראה גם
 למידע נוסף ניתן למצוא בקישורים הבאים:
 - אתר הרשמי של פרויקט Arduino: [https://www.arduino.cc/](https://www.arduino.cc/)
-- קוד מקור של ספריית YAML לבארדוין: [https://github.com/edlins/ArduinoYAML](https://github.com/edlins/ArduinoYAML)
-- פרסומים נוספים על YAML ובארדוין: [https://www.baldengineer.com/tag/yaml](https://www.baldengineer.com/tag/yaml)

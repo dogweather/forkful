@@ -39,4 +39,3 @@ print(#string1)
 
 - [Lua String Documentation](http://lua-users.org/wiki/StringLibraryTutorial)
 - [Lua String Length Operator](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- [Lua Programming/Strings](https://en.wikibooks.org/wiki/Lua_Programming/strings)

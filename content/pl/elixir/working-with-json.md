@@ -45,6 +45,4 @@ Biblioteka :jason opiera się na wydajnej bibliotece C, więc jest szybka i niez
 
 ## Zobacz także:
 
-- [Instrukcja obsługi JSON w Elixir](https://elixir-lang.org/getting-started/json.html)
 - [Oficjalna dokumentacja biblioteki :jason](https://hexdocs.pm/jason/Jason.html)
-- [Popularne formaty danych używane w programowaniu](https://www.programiz.com/article/json-xml-csv-data-formats)

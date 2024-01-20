@@ -28,5 +28,3 @@ L'écriture vers la sortie d'erreur standard est une pratique courante en progra
 
 ## Voir aussi :
 - [Documentation officielle de Ruby sur la sortie d'erreur standard](https://ruby-doc.org/core-3.0.0/IO.html#class-IO-label-Standard+Streams)
-- [Article sur l'écriture vers la sortie d'erreur standard en Ruby](https://www.rubyguides.com/2015/12/ruby-standard-error/)
-- [Guide de débogage en Ruby avec Pry](https://thoughtbot.com/blog/debugging-with-pry)

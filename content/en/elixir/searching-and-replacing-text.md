@@ -41,5 +41,4 @@ In Elixir, the `Regex` module provides the functionality to search and replace t
 For more in-depth understanding:
 
 - Elixir Doc: [Regex Module](https://hexdocs.pm/elixir/Regex.html)
-- Regular expressions in Elixir: [Hexdocs](https://elixir-lang.org/getting-started/regex.html)
 - Overview of algorithms for text search and replace: [Wikipedia](https://en.wikipedia.org/wiki/String_searching_algorithm)

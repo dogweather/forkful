@@ -29,4 +29,3 @@ La ricerca e la sostituzione del testo risalgono ai primi giorni del computing, 
 Per ulteriori dettagli sulla programmazione con Arduino in italiano, i seguenti links possono essere utili:
 - [Documentazione Ufficiale di Arduino](https://www.arduino.cc/reference/it/)
 - [Forum Italiano di Arduino](http://forum.arduino.cc/index.php?board=33.0)
-- [Manuale di Arduino](https://www.mauroalfieri.it/elettronica/manuale-arduino.html)

@@ -77,4 +77,3 @@ Hier sind einige hilfreiche Ressourcen für zusätzliche Informationen und tiefe
 
 - Microsoft- Dokumentation zur PowerShell-Zeichenkettenmanipulation: [Link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#string-operators)
 - Artikel auf StackOverflow über die Leistung von String-Verkettung in PowerShell: [Link](https://stackoverflow.com/questions/37519129/how-can-i-concatenate-strings-in-powershell)
-- Blogbeitrag zum Thema Stringmanipulation in PowerShell: [Link](https://devblogs.microsoft.com/scripting/stringing-together-powershell-string-manipulation/)

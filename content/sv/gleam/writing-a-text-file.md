@@ -33,6 +33,5 @@ fn main() {
 Att skriva en textfil är inte bara uppgift för Gleam-programmerare - det är en vanlig uppgift för alla programmeringsspråk. Ett alternativ till att använda `gleam/io` är att använda en specifik modul för att skriva textfiler, till exempel `std/fs` i Språket, eller att använda standardmetoden `FileWriter` i Java. Det är också värt att notera att det finns flera olika sätt att öppna och skriva till en fil i Gleam, beroende på vad man är van vid eller bekväm med.
 
 ## Se även:
-- [Gleam dokumentation om IO](https://gleam.run/documentation/stdlib/io/)
 - [Inför IO i Språket](https://spektrakel.de/2009/11/24/io-file-handling-in-språket/)
 - [Java FileWriter guide](https://www.w3schools.com/java/java_files_create.asp)

@@ -46,5 +46,4 @@ Si bien escribir pruebas puede ser una tarea tediosa, es una práctica muy útil
 Si deseas obtener más información sobre cómo escribir pruebas en Go, te recomendamos estos recursos:
 
 - [Documentación oficial de pruebas en Go](https://golang.org/pkg/testing/)
-- [Artículo sobre pruebas en "Go Official Blog"](https://blog.golang.org/go15drs)
 - [Paquete "Testify" para mejorar tus pruebas](https://github.com/stretchr/testify)

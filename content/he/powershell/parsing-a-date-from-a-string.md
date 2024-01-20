@@ -53,4 +53,3 @@ Saturday, January 01, 2022 12:00:00 AM
 ## ראו גם:
 
 - התיעוד הרשמי של Microsoft ל-[DateTime.ParseExact](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact)
-- כמה דוגמאות של [מה ניתן למר עם ParseExact](https://www.dotnetperls.com/datetime-parseexact) על dotnetperls.com.

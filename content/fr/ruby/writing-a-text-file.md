@@ -29,4 +29,3 @@ Historiquement, les programmeurs ont dû écrire manuellement des fichiers texte
 
 ## Voir aussi:
 - [Ruby Documentation officielle sur File](https://ruby-doc.org/core-2.7.1/File.html)
-- [Les bases de la manipulation de fichiers en Ruby](https://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization)

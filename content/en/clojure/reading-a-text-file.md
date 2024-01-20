@@ -51,5 +51,4 @@ If you want stream-oriented reading instead of reading the entire file, consider
 
 Further reading to polish your file handling skills in Clojure: 
 - [Clojure Docs - slurp](https://clojuredocs.org/clojure.core/slurp)
-- [Clojure for the Brave - File I/O](https://www.braveclojure.com/file-io/)
 - [Stackoverflow - Reading a text file in Clojure](https://stackoverflow.com/questions/33488140/reading-a-text-file-in-clojure)

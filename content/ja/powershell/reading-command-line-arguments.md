@@ -50,6 +50,4 @@ Location: Tokyo
 
 コマンドライン引数の詳細については以下のリンクをご覧ください：
 
-- [About Parameters](https://docs.microsoft.com/ja-jp/powershell/scripting/language/cmdlets/parameters?view=powershell-7.1)
-- [About Functions](https://docs.microsoft.com/ja-jp/powershell/scripting/developer/cmdlet/about-functions-cmdlet-parameters?view=powershell-7.1)
 - [$args](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#$args)

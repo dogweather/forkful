@@ -46,4 +46,3 @@ assert(person.greet() == "こんにちは、私の名前は太郎です。30歳�
 
 - [テスト駆動開発（TDD）について](https://www.geeksforgeeks.org/test-driven-development-tdd/)
 - [Swift でのユニットテストの作成](https://www.hackingwithswift.com/articles/101/how-to-write-unit-tests-in-swift)
-- [デバッグの基本](https://www.oreilly.co.jp/ldblog/blog/2014/05/debugging_basics.html)

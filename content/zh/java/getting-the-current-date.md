@@ -49,4 +49,3 @@ public class Main {
 
 * [Java 8日期和时间API](https://www.baeldung.com/java-8-date-time-intro)
 * [Java LocalDate 文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-* [Java Date vs Calendar](https://www.baeldung.com/java-date-vs-calendar)

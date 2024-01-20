@@ -34,4 +34,3 @@ För mer information och djupgående exempel, kolla in dessa källor:
 
 - [MDN Web Docs: Template literals (Template literals (Template Strings))](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [W3schools: JavaScript String Interpolation (JavaScript stränginterpolering)](https://www.w3schools.com/js/js_string_templates.asp)
-- [JavaScript.info: Template literals](https://javascript.info/strings#tagged-templates)

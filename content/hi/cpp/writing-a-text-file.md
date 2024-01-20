@@ -57,6 +57,4 @@ int main()
 ## संबंधित स्रोत देखें:
 लिंक जुड़े हैं संबंधित स्रोतों की ओर।
 
-- [C++ उदाहरण - फ़ाइल लिखना](https://www.programiz.com/cpp-programming/examples/write-file)
-- [How to Write to a Text File in C++](https://www.geeksforgeeks.org/write-text-file-c/)
 - [पीएचपी संदेश फाइलों में ल

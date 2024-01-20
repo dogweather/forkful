@@ -48,5 +48,4 @@ Na implementação mostrada acima, usamos o encoding `.utf8`, que é um dos padr
 
 ## Veja também:
 
-- [Documentação oficial da Apple sobre escrita de arquivos](https://developer.apple.com/documentation/foundation/filemanager/1412642-write)
 - [Tutorial sobre escrita de arquivos em Swift](https://www.hackingwithswift.com/example-code/system/how-to-write-strings-to-a-text-file-on-disk)

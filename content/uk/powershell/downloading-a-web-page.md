@@ -38,5 +38,3 @@ Invoke-WebRequest - це встроєна команда PowerShell, яка ви
 
 ## Дивитись також
 - [Офіційна документація PowerShell по Invoke-WebRequest](https://docs.microsoft.com/uk-ua/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest?view=powershell-7.1)
-- [Глибоке вивчення автоматизації PowerShell](https://leanpub.com/learnpowershell)
-- [Основи скрапінгу веб-сторінок](https://www.freecodecamp.org/news/scraping-ecommerce-website-with-python-and-beautifulsoup/)

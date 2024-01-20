@@ -46,7 +46,3 @@ Når det gjelder alternative måter å sende HTTP-forespørsler på, finnes det 
 I henhold til implementeringsdetaljer for HTTP-forespørsler, er det viktig å merke seg at fetch API returnerer et Promise som løser til Response-objektet som representerer svaret på forespørselen.
 
 ## Se Også
-
-- Dokumentasjon om [Fetch API](https://developer.mozilla.org/no/docs/Web/API/Fetch_API)
-- Lære mer om [HTTP](https://developer.mozilla.org/no/docs/Web/HTTP)
-- En dypere forståelse av [Promise](https://developer.mozilla.org/no/docs/Web/JavaScript/Guide/Using_promises)

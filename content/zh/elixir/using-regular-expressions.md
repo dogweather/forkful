@@ -44,4 +44,3 @@ Regex.scan(~r/https?:\/\/\S+/i, "Check out this link: https://www.example.com")
 
 - [Elixir Regex文档](https://hexdocs.pm/elixir/Regex.html)
 - [正则表达式教程（英文）](https://www.regular-expressions.info/)
-- [如何用正则表达式改变你的编程生活（中文）](https://coolshell.cn/articles/9083.html)

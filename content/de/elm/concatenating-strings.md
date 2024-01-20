@@ -37,4 +37,3 @@ Was die Implementierung angeht, so ist die `++`-Funktion in Elm sehr effizient u
 
 - [Elm Programmiersprache Dokumentation](https://elm-lang.org/docs)
 - [Elm String Bibliothek](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Funktionen zur Strings-Verarbeitung](https://www.tutorialsteacher.com/elm/elm-string-functions)

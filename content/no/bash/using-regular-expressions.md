@@ -37,6 +37,5 @@ Regulære uttrykk oppsto først på 50-tallet og har siden blitt et essensielt v
 ## Se også
 
 For mer informasjon om regulære uttrykk: 
-- [Regulære uttrykk i Bash guide](https://www.gnu.org/software/bash/manual/html_node/Regular-Expressions.html)
 - [GEDP online regex tester](https://regex101.com/)
 - [Stack Overflow tråder om regulære uttrykk](https://stackoverflow.com/questions/tagged/regex).

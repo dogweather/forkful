@@ -63,6 +63,4 @@ Detalles de implementación: En Elm, las solicitudes HTTP son un poco diferentes
 ## Vea también.
 
 - [Documentación oficial de Elm](https://guide.elm-lang.org/)
-- [Ejemplos de Elm Http en elmprogramming.com](https://elmprogramming.com/http.html)
-- [Manual de Python `BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc_es/)
 - [Documentación de Puppeteer en Node.js](https://developers.google.com/web/tools/puppeteer)

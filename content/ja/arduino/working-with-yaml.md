@@ -51,5 +51,3 @@ YAMLについて詳しく知りたい方は、以下のリンクを参考にし�
 
 - [YAML公式サイト](http://www.yaml.org/)
 - [YAMLチュートリアル](https://learnxinyminutes.com/docs/yaml/)
-- [ArduinoでYAMLを使用する方法](https://arduinojson.org/2016/02/02/the-php-yaml-Android/)
-- [YAML vs JSON vs XML:どちらが最適か？](https://www.quora.com/YAML-vs-JSON-vs-XML-Which-is-the-preferred-data-interchange-format-and-why)

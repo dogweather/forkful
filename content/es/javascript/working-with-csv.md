@@ -53,5 +53,4 @@ En la mayoría de los casos, los archivos CSV contienen datos en formato de text
 Vea también
 
 - [Documentación de Node.js para trabajar con archivos CSV](https://docs.nodejs.org/api/fs.html)
-- [Ejemplo de cómo crear un archivo CSV con datos](https://stackabuse.com/reading-and-writing-csvs-in-node-js/)
 - [Módulo CSV de NPM](https://www.npmjs.com/package/csv-parser)

@@ -92,4 +92,3 @@ Under the hood, the YAML extension in PHP uses the libyaml library, which has C 
 
 - [Official Documentation for YAML in PHP](https://www.php.net/manual/en/book.yaml.php)
 - [YAML Specification](https://yaml.org/spec/1.2/spec.html) 
-- [Alternative Data Formats: XML vs JSON vs YAML](https://www.sitepoint.com/data-formats-json-xml-csv/)

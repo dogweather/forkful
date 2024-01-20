@@ -46,4 +46,3 @@ fun main() {
 
 - [Kotlin语言官方文档](https://kotlinlang.org/)
 - [JetBrains公司的Kotlin程序设计语言教程](https://www.jetbrains.com/zh-cn/kotlin/)
-- [菜鸟教程上关于Kotlin字符串插值的讲解](https://www.runoob.com/kotlin/kotlin-strings.html)

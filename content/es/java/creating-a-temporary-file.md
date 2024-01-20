@@ -55,4 +55,3 @@ Puedes referirte a estos enlaces para obtener más información sobre la creaci�
 
 - Documentación de Oracle para la clase [java.nio.file.Files](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/nio/file/Files.html)
 - Tema pertinente en [Stack Overflow](https://stackoverflow.com/questions/5973632/how-to-create-temporary-file-in-java)
-- [Tutorial de Baeldung](https://www.baeldung.com/java-create-temporary-file-directory) sobre la creación de archivos y directorios temporales.

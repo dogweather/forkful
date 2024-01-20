@@ -34,6 +34,5 @@ puts new_str
 ```
 
 ## ראה גם:
-- [מתכנת ה-Ruby: מחיקת תווים ממחרוזת](https://www.rubyguides.com/2018/10/ruby-string-methods/#delete-method)
 - [תיעוד שיטה `.delete`](https://ruby-doc.org/core-2.6.1/String.html#method-i-delete)
 - [תיעוד שיטה `.gsub`](https://ruby-doc.org/core-2.6.1/String.html#method-i-gsub)

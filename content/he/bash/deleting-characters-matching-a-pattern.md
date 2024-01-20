@@ -39,4 +39,3 @@ echo "ד-ו-ג-מ-ה" | tr -d '-'
 
 - [דף ה-man של tr](https://www.man7.org/linux/man-pages/man1/tr.1.html)
 - [מדריך על tr ב- Bash ](http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm)
-- [השוואה של השימוש ב- tr, awk, ו- sed ](https://www.geekhideout.com/tr.shtml)

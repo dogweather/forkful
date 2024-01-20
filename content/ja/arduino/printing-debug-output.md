@@ -50,5 +50,3 @@ void loop() {
 ## その他参照
 
 Arduinoでより高度なデバッグを行う方法については次のリンクをご覧ください:
-- [Arduinoのデバッガーツール](https://www.arduino.cc/en/main/debug)
-- [Arduinoでのシリアル通信の使用](https://learn.arduino.cc/)

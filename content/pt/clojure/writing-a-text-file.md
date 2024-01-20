@@ -43,7 +43,3 @@ Além da função `spit` mencionada anteriormente, também é possível utilizar
 Outra alternativa para escrever arquivos de texto é utilizar bibliotecas externas, como a `clomp` ou a `unilog`. Essas bibliotecas oferecem funcionalidades adicionais, como escrever em arquivos de texto em outros formatos, como CSV ou JSON.
 
 ## Veja também:
-
-- [Documentação oficial sobre arquivos I/O em Clojure](https://clojure.org/reference/io)
-- [Tutorial sobre manipulação de arquivos em Clojure](https://practicalli.github.io/clojure/io.html)
-- [Exemplos de uso da função `spit`](https://purelyfunctional.tv/guide/working-with-files/)

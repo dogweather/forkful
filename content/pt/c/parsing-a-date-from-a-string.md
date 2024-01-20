@@ -57,7 +57,6 @@ O analisador de datas da string convertida em uma estrutura `tm` pela função `
 
 ## Ver Também
 
-* Documentação da função `strptime`: [cplusplus.com](http://www.cplusplus.com/reference/ctime/strptime/)
 * Tutorial completo sobre a biblioteca de tempo em C: [tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
 * Outras funções de manipulação de tempo e data: [geekhideout.com](http://www.geekhideout.com/urlcode.shtml)
 

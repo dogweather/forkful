@@ -53,4 +53,3 @@ L'implémentation de CSV en Rust est basée sur la spécification officielle CSV
 
 - [Documentation officielle de la bibliothèque CSV pour Rust](https://docs.rs/csv/1.0.0/csv/)
 - [Spécification officielle CSV RFC 4180](https://tools.ietf.org/html/rfc4180)
-- [Comparaison des formats de fichiers CSV, JSON et XML](https://stackify.com/compare-csv-vs-json-vs-xml/)

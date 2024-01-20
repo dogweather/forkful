@@ -45,6 +45,4 @@ Als Alternativen zu `printf` können Sie überlegen, fortgeschrittene Funktionen
 
 ## Weiterführende Informationen
 
-- [Dieser Link](https://www.learn-c.org/en/Debugging) bietet eine umfassende Einführung in das Debugging in C.
 - [Hier](https://www.cplusplus.com/reference/cstdio/printf/) finden Sie ausführliche Informationen zur `printf`-Funktion und deren Verwendung.
-- Um mehr über Alternativen zu `printf` für Debugging-zwecke zu erfahren, besuchen Sie [diesen](https://www.geekhideout.com/urlget.shtml) Artikel.

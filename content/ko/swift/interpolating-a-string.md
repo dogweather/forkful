@@ -36,4 +36,3 @@ Swift 내부에는 `String Interpolation`이 어떻게 구현되었는지 살펴
 
 ## 참고 자료:
 - Apple 공식 문서: [String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285)
-- Swift by Sundell: [String Interpolation in Swift](https://www.swiftbysundell.com/posts/string-interpolation-in-swift)

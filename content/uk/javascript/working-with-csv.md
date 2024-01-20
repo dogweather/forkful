@@ -34,6 +34,5 @@ fs.createReadStream('data.csv')
 CSV формат був створений у 1972 році і є стандартом для імпорту та експорту даних у багатьох програмах для обробки тексту та електронної таблиці. Існують альтернативні формати, такі як JSON та XML, але CSV переваги в простоті та доступності. У Javascript, CSV можна обробляти за допомогою різних бібліотек, таких як Papa Parse та CSV Parser.
 
 ## Дивись також:
-- [Приклад роботи з CSV у JavaScript](https://www.codementor.io/kellystannard/javascript-csv-parser-how-to-parse-csv-files-in-javascript-du107rgla)
 - [Документація по бібліотеці CSV Parser](https://www.npmjs.com/package/csv-parser)
 - [Документація по бібліотеці Papa Parse](https://www.papaparse.com/)

@@ -48,5 +48,3 @@ As funções de leitura de arquivo em Kotlin, como `readLines()`, trabalham inte
 ## Veja Também:
 
 * Documentação oficial do Kotlin em leitura e escrita de arquivos: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
-* Introdução à programação de arquivos em Kotlin: [link](https://www.baeldung.com/kotlin-file-read)
-* Tratando exceções durante a leitura de arquivos: [link](https://thdev.tech/kotlin/2020/05/11/Kotlin-Effective-Reading-File/)

@@ -45,4 +45,3 @@ Implementeringen av regex i Rust er basert på NFA (Non-Deterministic Finite Aut
 ## Se også:
 - [The Rust Programming Language](https://www.rust-lang.org/)
 - [Rust Regex Dokumentasjon](https://docs.rs/regex/)
-- [Rust Regex Markedsplace](https://crates.io/keywords/regex)

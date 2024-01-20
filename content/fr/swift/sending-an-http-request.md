@@ -49,5 +49,4 @@ Le détail de mise en œuvre : URLSession de Foundation en Swift utilise des tâ
 ## Voir aussi
 
 - La [documentation Apple sur URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- Une introduction plus détaillée aux [requêtes HTTP dans Swift avec URLSession](https://www.vadimbulavin.com/networking-with-urlsession-in-swift/)
 - Pour une approche de plus haut niveau, regardez [Alamofire](https://github.com/Alamofire/Alamofire) sur GitHub.

@@ -40,6 +40,5 @@ Il existe également des alternatives à l'écriture de tests en PHP, comme l'ut
 ## A voir également:
 
 - [Documentation PHPUnit](https://phpunit.de/documentation.html)
-- [Documentation Codeception](https://codeception.com/docs/)
 - [Cucumber](https://cucumber.io/)
 - [Selenium](https://www.selenium.dev/)

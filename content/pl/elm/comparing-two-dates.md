@@ -46,5 +46,3 @@ Szczegóły implementacji porównywania dat w Elm są dosyć proste: Elm przecho
 Jeżeli chcesz dowiedzieć się więcej na temat dat i czasu w Elm, zobacz poniższe linki:
 
 - [Dokumentacja Elm na temat czasu (Time)](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Porównanie dat w Elm](https://korban.net/posts/elm/2019-12-04-idiomatic-guide-to-dates-and-time-in-elm/)
-- [JavaScript i Elm: Praca z datami i czasem](https://elmprogramming.com/dates-and-time.html)

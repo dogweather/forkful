@@ -44,4 +44,3 @@ Côté mise en œuvre, les méthodes `println`, `print` et `printf` sont toutes 
 ## À voir également :
 
 - [En savoir plus sur `kotlin.io`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
-- [Approfondir le débogage avec Kotlin](https://blog.jetbrains.com/kotlin/2019/05/dive-into-debugging-jvm-and-js/)

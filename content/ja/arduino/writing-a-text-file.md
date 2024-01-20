@@ -39,5 +39,3 @@ File written successfully.
 ## 関連情報：
 
 - [Arduino SDライブラリリファレンス](https://www.arduino.cc/en/Reference/SD)
-- [SDライブラリの使用例](https://www.arduino.cc/en/Tutorial/LibraryExamples/SDReadWrite)
-- [データの保存方法について詳しくはこちら](https://www.arduino.cc/en/Tutorial/Fat16Format)

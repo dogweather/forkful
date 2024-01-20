@@ -59,5 +59,4 @@ Rust é !
 Para mais informações sobre manipulação de strings em Rust, confira estes links:
 
 - Documentação do Rust: [String](https://doc.rust-lang.org/std/string/struct.String.html) 
-- Blog "Learning Rust": Artigo [Strings](https://learning-rust.github.io/docs/c2.strings.html)
 - Stack Overflow: [Tag Rust](https://stackoverflow.com/questions/tagged/rust)

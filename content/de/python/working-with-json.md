@@ -62,4 +62,3 @@ Für weitere Informationen zu JSON und dessen Verwendung in Python, folgen Sie d
 
 - [Offizielle JSON Dokumentation von Python](https://docs.python.org/3/library/json.html)
 - [Einführung in JSON für Python-Anfänger](https://realpython.com/python-json/)
-- [Vergleich von JSON, XML und CSV](https://www.edureka.co/blog/xml-vs-json-vs-csv-vs-plain-text/)

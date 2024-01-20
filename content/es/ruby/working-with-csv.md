@@ -45,4 +45,3 @@ El formato CSV fue creado en los años 70 como una forma de compartir datos entr
 ## Vea también
 
 - [Documentación de Ruby sobre CSV](https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html)
-- [The Basics of Working with CSV in Ruby](https://www.codementor.io/@nithinthomas/working-with-csv-files-in-ruby-46d8j4rh0)

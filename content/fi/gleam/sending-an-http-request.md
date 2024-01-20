@@ -36,6 +36,4 @@ Implementointi Gleamilla ohjaa BEAM-virtuaalikonetta (joka käyttää Erlangia),
 
 ## Katso myös:
 Perehdy seuraaviin lähteisiin saadaksesi tietoa aiheesta:
-- Gleamin HTTP-asiakaskirjaston [ohjeet](https://gleam.run/book/tour/http-clients.html)
-- Gleam [HTTP](https://hexdocs.pm/gleam_http/readme.html) moduuli Hexdocsissa
 - [HTTP-pyynnöt](https://developer.mozilla.org/fi/docs/Web/HTTP/Messages) Mozilla Developer Network (MDN) sivustolla.

@@ -29,5 +29,4 @@ IO.puts("temporary file created with path: #{path}")
 - פרטי ביצוע: במחשבים רבים, קבצים זמניים מאוחסנים במיני-מערכת קבצים שנקראת tmpfs, ששימשה את הזיכרון האקראי לאחסון.
 
 ## ראה גם 
-- [מתוך התיעוד של Elixir - File module](http://elixir-lang.org/docs/stable/elixir/File.html)
 - [איך ליצור קבצים זמניים באמצעות Erlang - Stack Overflow](https://stackoverflow.com/questions/35520946/erlang-write-to-temporary-file)

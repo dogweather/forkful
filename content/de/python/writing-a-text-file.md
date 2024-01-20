@@ -37,6 +37,4 @@ Das Schreiben von Textdateien ist ein wichtiger Teil der Programmierung und wird
 
 ## Siehe auch
 
-- [Python Tutorial: Dateien öffnen und schließen](https://www.python-kurs.eu/python_3_dateien.php)
-- [GeeksforGeeks: Working with Text Files in Python](https://www.geeksforgeeks.org/working-with-text-files-in-python/)
 - [Real Python: Reading and Writing Files in Python (Guide)](https://realpython.com/read-write-files-python/)

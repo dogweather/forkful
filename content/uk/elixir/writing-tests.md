@@ -36,6 +36,3 @@ end
 
 # Дивіться також:
 - [Документація по ExUnit (англійською)](https://hexdocs.pm/ex_unit/api-reference.html)
-- [Стаття про TDD та його використання в Еліксирі (англійською)](https://semaphoreci.com/community/tutorials/test-driven-development-tdd-in-elixir-with-exunit)
-- [Стаття про BDD та його використання в Еліксирі (англійською)](https://lobotuerto.com/blog/behaviour-driven-development-in-elixir/)
-- [Стаття про ATDD та його використання в Еліксирі (англійською)](https://www.scalyr.com/blog/acceptance-test-driven-development-with-p cyn-labs-in-elixir)

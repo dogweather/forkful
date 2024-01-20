@@ -50,5 +50,4 @@ JSON स्थापित होने से पहले, XML से डे�
 ## सहायता मिलेगी
 
 - [JSON Wikipedia पेज](https://en.wikipedia.org/wiki/JSON)
-- [Bash JSON स्क्रिप्टिंग उदाहरण](https://devhints.io/bash-json)
 - [Bash JSON मैन्युअल](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)

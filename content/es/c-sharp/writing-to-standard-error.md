@@ -43,5 +43,3 @@ En cuanto a la implementación, se recomienda utilizar try-catch-finally para ca
 
 ## Ver también:
 - [Documentación de la clase Console (en inglés)](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
-- [Artículo sobre la manipulación de flujo en C# (en español)](https://www.campusmvp.es/recursos/post/Ciclo-de-instrucciones-try-catch-finally-en-CSharp.aspx)
-- [Biblioteca para escribir en stderr en diferentes lenguajes de programación (en inglés)](https://github.com/cppforlife/better-stderr)

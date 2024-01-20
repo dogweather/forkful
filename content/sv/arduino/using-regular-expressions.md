@@ -65,5 +65,4 @@ Vid implementering av regex i Arduino är det viktigt att notera att det tar myc
 
 Ett antal bra källor för mer information om att använda reguljära uttryck inom Arduino inkluderar:
 - [officiella Arduino-referenser](https://www.arduino.cc/reference/en/)
-- ["Hävstångsreguljära uttryck för Arduino"](https://regexr.com/)
 - [Inlärningsportal för Reguljära Uttryck](http://www.regular-expressions.info/tutorial.html)

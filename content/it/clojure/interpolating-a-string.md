@@ -43,7 +43,6 @@ Clojure implementa l'interpolazione di stringhe utilizzando le stringhe di forma
 
 Per ulteriori informazioni su come utilizzare l'interpolazione di stringhe in Clojure, consulta questi utili link:
 
-- Clojure Cookbook: [Formatting Strings](https://clojure-cookbook.com/posts-output/2013-06-22-formatting-strings.html)
 - Stack Overflow: [How to do string interpolation in Clojure?](https://stackoverflow.com/questions/6414120/how-to-do-string-interpolation-in-clojure)
 - Clojure Docs: [clojure.core/format](https://clojuredocs.org/clojure.core/format)
 - Clojure Docs: [clojure.string/replace](https://clojuredocs.org/clojure.string/replace)

@@ -41,5 +41,4 @@ Wysyłanie żądania HTTP to dość proste zadanie - od strony implementacji naj
 
 ## Zobacz również
 - [Dokumentacja net/http](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Jak korzystać z HTTParty](https://www.rubyguides.com/2018/08/ruby-http-requests/)
 - [Dokładny opis protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)

@@ -45,4 +45,3 @@ Na przykład, gdy program jest uruchamiany w ten sposób: `./program 5`, wydruku
 
 - [Dokumentacja GNU Getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
 - [Dokumentacja GNU Argp](https://www.gnu.org/software/libc/manual/html_node/Argp.html)
-- [Informacje o C od Software Preservation Group](http://www.softwarepreservation.org/projects/c_lang/)

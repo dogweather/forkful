@@ -41,4 +41,3 @@ Elixirでは、`Poison`や`Jason.so`などのモジュールもJSONの処理に�
 - [Elixir 公式ウェブサイト](https://elixir-lang.org/)
 - [JSON フォーマット仕様書](https://www.json.org/json-ja.html)
 - [Poison モジュール](https://github.com/devinus/poison)
-- [Jason.so モジュール](https://github.com/michalmuskala/jason.so)

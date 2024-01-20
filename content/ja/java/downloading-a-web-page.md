@@ -56,5 +56,4 @@ Javaはもともと1995年にウェブアプリケーションの作成のため
 
 ## 参照リンク
 - Oracleの公式Javaドキュメント: [ここをクリック](https://docs.oracle.com/en/java/)
-- Javaによるウェブスクレイピングについてのトピック: [ここをクリック](https://www.geeksforgeeks.org/web-scraping-with-java/)
 - Javaによるネットワーキングに関する詳細なチュートリアル: [ここをクリック](https://www.tutorialspoint.com/java/java_networking.htm)

@@ -46,5 +46,3 @@ public void TestCalculatorAddition()
 # See Also:
 
 - [מדריך לבדיקות יחידה ב- C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [בדיקות אוטומטיות ב-C#](https://docs.microsoft.com/en-us/dotnet/core/testing/automated-ui-tests)
-- [מאמר על כתיבת בדיקות באתר web.dev](https://web.dev/testing/)

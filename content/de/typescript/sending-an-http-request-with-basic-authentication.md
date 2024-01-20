@@ -53,4 +53,3 @@ Die Zwei wichtigsten Teile der Implementierung von HTTP-Anfragen mit Basic-Authe
 
 * [Axios-Dokumentation (englisch)](https://axios-http.com/docs/intro)
 * [Grundlagen zur Basic-Authentifizierung (englisch)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-* [JWT vs OAuth2 (englisch)](https://blog.logrocket.com/jwt-vs-oauth-2-0-whats-the-difference/)

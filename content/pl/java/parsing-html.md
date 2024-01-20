@@ -58,5 +58,4 @@ Implementacja analizy składni HTML z za pomocą Jsoup polega na zastosowaniu DO
 ## Zobacz także:
 
 - [Dokumentacja Jsoup](https://jsoup.org/cookbook/)
-- [Porównanie bibliotek do analizy składni HTML w Javie](https://www.baeldung.com/java-html-parsing)
 - [Tutorial HtmlUnit](http://htmlunit.sourceforge.net/)

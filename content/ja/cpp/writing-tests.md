@@ -54,5 +54,4 @@ void testFunc() {
 
 ## 関連リンク：
 
-- [C++ ユニットテストの書き方](https://codezine.jp/article/detail/7888)
 - [Google テスト](https://github.com/google/googletest)

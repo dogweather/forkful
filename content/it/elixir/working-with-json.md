@@ -37,5 +37,4 @@ Il modulo "Poison" utilizza il parser JSON di C e lo integra con Elixir. Se si d
 ## Vedi anche:
 
 - [Documentazione ufficiale di Poison](https://hexdocs.pm/poison/readme.html)
-- [Documentazione ufficiale di Jason](https://hexdocs.pm/jason/README.html)
 - [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/JSON)

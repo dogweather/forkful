@@ -51,5 +51,4 @@ YAML은 2001년에 처음 소개되었으며, XML과 같은 다른 마크업 언
 
 ## 관련 자료:
 - [YAML 공식 웹사이트](https://yaml.org/)
-- [Kotlin에서 YAML 사용하기](https://www.baeldung.com/kotlin/yaml)
 - [다른 마크업 언어 비교 - JSON vs YAML](https://medium.com/@richirufinoygur/marshalling-in-kotlin-with-jackson-leon-yaml-859a235db273)

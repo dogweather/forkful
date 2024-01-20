@@ -36,4 +36,3 @@ Clojure में, आप `println` फ़ंक्शन का उपयोग
 
 - Clojure का अधिकारिक डॉक्यूमेंटेशन: [https://clojure.org](https://clojure.org)
 - Clojure प्रिंटलें और डिबग: [https://clojuredocs.org/clojure.core/println](https://clojuredocs.org/clojure.core/println)
-- Clojure Debugging: [https://clojure.org/guides/repl/debugging](https://clojure.org/guides/repl/debugging)

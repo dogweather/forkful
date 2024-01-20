@@ -48,6 +48,3 @@ argv[1]: argument
 **कार्यान्वयन विवरण**: `argc` का उपयोग कमांड लाइन पर प्रदान की गई आर्गुमेंट्स की संख्या ज्ञात करने के लिए किया जाता है| `argv[]` array में प्रदान की गई सभी आर्गुमेंट्स संग्रहित की जाती हैं।
 
 ## देखिए भी:
-
-- [रिफरेंस](https://www.computingcodes.com/C/command-line-arguments.php)
-- [एक्सरसाइज प्रोब्लेम्स](https://www.w3resource.com/c-programming-exercises/command-line-argument/index.php)

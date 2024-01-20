@@ -48,4 +48,3 @@ YAML fue desarrollado originalmente para Ruby en 2001, pero hoy en día es ampli
 ## Ver también
 
 - [Sitio oficial de YAML](https://yaml.org/)
-- [Tutorial básico sobre YAML en Bash](https://www.baeldung.com/yaml-bash)

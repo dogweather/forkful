@@ -55,4 +55,3 @@ En cuanto a los detalles de implementación, recuerda que mientras `Random.nextI
 Para una visión más profunda de la generación de números aleatorios en Kotlin, consulta los siguientes enlaces:
 
 - Documentación oficial de Kotlin para la clase `Random`: [Random - Kotlin Programming Language](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- Un artículo útil sobre generadores de números aleatorios: [A Quick Look at Kotlin's Random Number Generators](https://www.baeldung.com/kotlin-random-number-generation)

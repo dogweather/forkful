@@ -38,6 +38,5 @@ Per utilizzare l'interpolazione delle stringhe in Bash, fai attenzione a utilizz
 
 ## Vedi Anche
 
-- [Interpolazione delle stringhe in altri linguaggi di programmazione](https://www.journaldev.com/2552/java-string-format-examples)
 - [Differenza tra interpolazione delle stringhe e concatenazione](https://stackoverflow.com/questions/2909633/what-is-string-interpolation-in-php)
 - [Documentazione ufficiale Bash su variabili](http://www.gnu.org/software/bash/manual/bash.html#Shell-Variables)

@@ -37,6 +37,5 @@ print(capitalLetterString)
 
 ## Дивіться також:
 
-- [Документація Apple до Swift](https://developer.apple.com/documentation/swift/string/2290191-capitalized)
 - [A Swift Tour](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html) Англійською мовою
 - [StackOverflow: Capitalize each word in string Swift?](https://stackoverflow.com/questions/26306326/capitalize-each-word-in-string-swift)

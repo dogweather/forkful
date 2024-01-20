@@ -55,4 +55,3 @@ Em termos de implementação interna, quando um programa Kotlin é iniciado, o s
 Para mais informações sobre argumentos de linha de comando em Kotlin e em programação em geral, consulte os recursos a seguir:
 
 - Documentação oficial do Kotlin: [https://kotlinlang.org/docs/tutorials/command-line.html](https://kotlinlang.org/docs/tutorials/command-line.html)
-- Para uma análise mais profunda de argumentos de linha de comando em programação: [https://www.tutorialspoint.com/programmingmethodology/programming_invocation_arguments.htm](https://www.tutorialspoint.com/programmingmethodology/programming_invocation_arguments.htm)

@@ -60,5 +60,4 @@ La implementación de `date` en Bash está influenciada por el estándar POSIX. 
 Para obtener más información sobre el manejo de fechas y horas en Bash, echa un vistazo a estos recursos:
 
 - [Bash Date Command (ss64.com)](https://ss64.com/bash/date.html)
-- [Date Command In Linux (linuxize.com)](https://linuxize.com/post/date-command-in-linux/)
 - [How To Get Current Date And Time In Bash (cyberciti.biz)](https://www.cyberciti.biz/faq/unix-linux-getting-current-date-in-bash-ksh-shell-script/)

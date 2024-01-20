@@ -41,5 +41,4 @@ Podstawowa autoryzacja jest implementowana wyłącznie na poziomie nagłówków 
 Dalsze zasoby dla zainteresowanych podstawową autoryzacją HTTP:
 
 - [Podstawowa autoryzacja HTTP na MDN](https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication)
-- [Bezpieczeństwo podstawowej autoryzacji](https://www.owasp.org/index.php/Basic_access_authentication)
 - [Alternatywny sposób autoryzacji w HTTP na wiki](https://en.wikipedia.org/wiki/Digest_access_authentication)

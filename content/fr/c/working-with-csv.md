@@ -64,5 +64,4 @@ CSV a Ã©tÃ© crÃ©Ã© dans les annÃ©es 1970 par des sociÃ©tÃ©s inform
 # Voir aussi:
 - [Le format CSV sur Wikipedia](https://fr.wikipedia.org/wiki/Comma-separated_values)
 - [Documentation sur les fonctions de manipulation de chaÃ®nes en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Libcsv: une bibliothÃ¨que en C pour la manipulation de CSV](https://github.com/aclements/libcsv)
 - [Csvkit: une suite d'outils en ligne de commande pour travailler avec les donnÃ©es CSV](https://csvkit.readthedocs.io/en/latest/)

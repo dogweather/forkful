@@ -28,4 +28,3 @@ Kirjoittaminen testeihin tuli suosituksi lähestymistavaksi ohjelmistokehitykses
 ## Katso myös:
 - [Catch2-kirjasto](https://github.com/catchorg/Catch2)
 - [Google Test -kirjasto](https://github.com/google/googletest)
-- [Ohjelmistotestauksen perusteet](https://www.cs.helsinki.fi/u/tukimuu/tite/k07/luennot/06/Testaus/materiaali/Testaus.pdf)

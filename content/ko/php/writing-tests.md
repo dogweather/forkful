@@ -35,5 +35,4 @@ echo add(5, 10); // 출력 결과: 15
 ## 더 알아보기:
 
 - [PHP의 테스트 케이스 작성 방법 가이드](https://www.phpunit.de/doc/phpunit-book.html)
-- [테스트 주도 개발(TDD) 방법론 소개](https://www.slideshare.net/jonnytorresphp/tdd-142712777)
 - [자동화된 PHP 테스트 도구인 PHPUnit 공식 사이트](https://phpunit.de/)

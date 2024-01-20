@@ -39,5 +39,3 @@ La funzione `os.date` di Lua è stata introdotta nella versione 5.1 per affronta
 
 ## E Anche
 - Riferimenti sulla funzione `os.date`: [www.lua.org](https://www.lua.org/pil/22.1.html)
-- Tutorial sulla gestione delle date e ore in Lua: [www.tutorialspoint.com](https://www.tutorialspoint.com/lua/lua_date_and_time.htm)
-- Spiegazione dettagliata su come `os.date` interpreta il formato: [en.wikibooks.org](https://en.wikibooks.org/wiki/Lua_Programming/os_library#os.date)

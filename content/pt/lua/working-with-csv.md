@@ -41,5 +41,4 @@ Para lidar com arquivos CSV no Lua, é importante importar uma biblioteca como a
 
 ## Veja também:
 - [Documentação oficial do Lua](https://www.lua.org/docs.html)
-- [Biblioteca lunajson](http://luaforge.net/projects/lunajson/)
 - [Biblioteca lua-csv](https://github.com/geoffleyland/lua-csv)

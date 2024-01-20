@@ -43,4 +43,3 @@ HELLO WORLD
 - C++ Reference(`std::transform`): [https://en.cppreference.com/w/cpp/algorithm/transform](https://en.cppreference.com/w/cpp/algorithm/transform)
 - C++ Reference(`std::toupper`): [https://en.cppreference.com/w/cpp/string/byte/toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)
 - Boost String Algorithms Library: [https://www.boost.org/doc/libs/1_71_0/doc/html/string_algo.html](https://www.boost.org/doc/libs/1_71_0/doc/html/string_algo.html)
-- POCO String Manipulation: [https://pocoproject.org/docs/Poco.String.html](https://pocoproject.org/docs/Poco.String.html)

@@ -38,7 +38,6 @@ Per approfondimenti maggiori sull'argomento, controlla queste risorse:
 
 - [MDN Web Docs: DOMParser](https://developer.mozilla.org/it/docs/Web/API/DOMParser)
 - [HTML Parser su npm](https://www.npmjs.com/package/html-parser)
-- [Articolo di Smashing Magazine su "Come effettuare il parsing HTML"](https://www.smashingmagazine.com/2023/working-with-html5-parse/)
 - [Github: Progetti di parsing di HTML](https://github.com/topics/html-parsing?l=javascript)
 
 E con questo, avete acquisito una buona conoscenza sull'analisi del codice HTML con JavaScript. Continuate a codificare e a imparare!

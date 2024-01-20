@@ -51,5 +51,3 @@ main =
 
 以下に関連するリソースへのリンクを示します:
 - Elmの公式ドキュメンテーション（日付と時間）: [リンク](https://package.elm-lang.org/packages/elm/time/latest/)
-- GitHub上の`justinmimbs/date-extra`パッケージ : [リンク](https://github.com/justinmimbs/date-extra)
-- Elmの日付や時間に関するチュートリアル: [リンク](https://elmprogramming.com/datetime.html)

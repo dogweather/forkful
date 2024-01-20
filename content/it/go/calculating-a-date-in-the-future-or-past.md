@@ -51,4 +51,3 @@ Qui ci sono alcuni collegamenti a risorse correlate che potrebbero essere utili:
 
 - [Pacchetto time di Go](https://golang.org/pkg/time/)
 - [Github di date package](https://github.com/jinzhu/now)
-- [Managing Dates and Times Using Go](https://www.digitalocean.com/community/tutorials/managing-date-and-time-in-golang)

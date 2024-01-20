@@ -60,8 +60,6 @@ Implementar la autenticación básica con solicitudes HTTP en Java implica confi
 
 Para más detalles y prácticas recomendadas, puede consultar estas fuentes:
 
-- Documentación oficial de Java [HttpURLConnection](https://docs.oracle.com/en/java/javase/14/docs/api/java.net/java/net/HttpURLConnection.html)
 - Documentación [MDN en Autenticación HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
-- Artículos de [Baeldung](https://www.baeldung.com/httpurlconnection-basic-authentication-java) sobre autenticación HTTP básica en Java.
 
 Nota: La autenticación básica transmite contraseñas en texto plano (aunque en Base64) y no es segura si no se usa junto al protocolo HTTPS. Considere métodos de autenticación más seguros para aplicaciones en producción.

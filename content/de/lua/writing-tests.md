@@ -52,5 +52,4 @@ Unit Testing ist eine gängige Praxis in der Softwareentwicklung und wird bereit
 
 ## Siehe auch:
 - [Luaunit Dokumentation](https://github.com/bluebird75/luaunit)
-- [Busted Framework](https://olivinelabs.com/busted/)
 - [Lua assert Dokumentation](http://www.lua.org/manual/5.3/manual.html#6.3)

@@ -59,5 +59,3 @@ set +x
 디버그 출력의 개념 및 다른 디버깅 기법을 배우려면 다음 웹사이트를 참조하세요:
 
 - [GNU Bash 수동](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash 디버깅 기법](https://www.linuxjournal.com/content/debugging-bash-scripts)
-- [Bash Script의 고급 디버깅](http://bashdb.sourceforge.net/remake/advanced-bash-debugging.html)

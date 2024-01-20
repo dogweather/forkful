@@ -41,6 +41,3 @@ fn main() {
 פלטפורמות ושפות תכנות יש שונות במימוש שלהם אך בגלים, אנחנו משתמשים `gleam/otp/time.Now` לקבלת הזמן הנוכחי.
 
 ## ראה גם
-
-* [מסמך הספרייה של Gleam/OTP](https://hexdocs.pm/gleam_otp/gleam/otp/time.html)
-* [ויקיפדיה על Unix Time](https://he.wikipedia.org/wiki/%D7%94%D7%97%D7%96%D7%9F_%D7%A9%D7%9C_%D7%99%D7%A0%D7%A7%D7%A1)

@@ -47,5 +47,4 @@ Sous le capot, `String.format()` et `MessageFormat.format()` utilisent les class
 ## Voir aussi
 
 - API Java Docs pour [String.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) et [MessageFormat.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/text/MessageFormat.html#format(java.lang.Object))
-- Tutoriel sur l'interpolation de chaînes en Java sur [Let's Code](https://lets-code-java.com/interpolation-strings-java)
 - Comparaison de performance entre `String.format()` et la concaténation de chaînes sur [Stack Overflow](https://stackoverflow.com/questions/513600/should-i-use-java-string-format-if-performance-is-important)

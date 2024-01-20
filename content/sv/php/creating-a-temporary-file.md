@@ -54,5 +54,3 @@ Implementationen av `tmpfile()` vill automatiskt ta bort filen när den är stä
 ## Se också
 
 - php.net officiella dokumentation om hantering av filsystemet, specifikt de temporära filfunktionerna [tmpfile()](https://www.php.net/manual/en/function.tmpfile.php), [tempnam()](https://www.php.net/manual/en/function.tempnam.php) och [sys_get_temp_dir()]().
-- StackOverflow frågeforum för specifika frågor och svar om [PHP och temporära filer]().
-- Blogginlägg om att "Lagra data i temporära filer" på [PHP Delusions]() och [PHPEasyStep]().

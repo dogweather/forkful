@@ -49,4 +49,3 @@ void loop() {
 
 - Arduinoの公式ドキュメント: [Stringオブジェクト](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 - [文字列処理の基本](http://www.musashinodenpa.com/arduino/ref/index.php?f=1#string_indexof)
-- [Arduino String Manipulation](https://learn.adafruit.com/adafruit-arduino-lesson-22-arduino-tftp)

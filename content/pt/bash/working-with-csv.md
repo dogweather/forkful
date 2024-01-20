@@ -36,5 +36,3 @@ CSV foi criado na década de 1970 para facilitar a troca de dados entre programa
 
 ## Veja também:
 - [CSV no Wikipedia](https://pt.wikipedia.org/wiki/Comma-separated_values)
-- [Explicação detalhada de CSV](https://www.sitepoint.com/csv-in-bash-tutorial/)
-- [Outros formatos de arquivo populares](https://www.sitepoint.com/file-formats-comparison/)

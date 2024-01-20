@@ -45,5 +45,4 @@ Toteuttaessa, `std::filesystem::exists` funktio tarkistaa tiedoston tai kansion 
 
 ## Katso Myös:
 Lisätietoja voit löytää seuraavista lähteistä:
-- [std::filesystem::exists](http://www.cplusplus.com/reference/filesystem/exists/)
 - [Boost.Filesystem library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

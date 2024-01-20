@@ -62,5 +62,3 @@ Para más información sobre la interpolación de cadenas en Ruby, consulta las 
 
 - [Interpolación de cadena en el libro de Ruby](http://rubylearning.com/satishtalim/ruby_string_interpolation.html)
 - [Documento oficial de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-25-3C)
-- [Tutorial de String Interpolation de Launch School](https://launchschool.com/books/ruby/read/strings#stringinterpolation)
-- [Artículo en RubyGuides sobre Interpolación de cadenas](https://www.rubyguides.com/2018/11/ruby-string-interpolation/)

@@ -49,5 +49,4 @@ Som alternativ till att skriva till standard error, kan vi också använda loggf
 Om du vill lära dig mer om att skriva till standard error, kan du titta på följande länkar för mer information:
 
 - [Bash dokumentation om stderr](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [En översikt av Bash stderr och stdout](https://www.howtoforge.com/tutorial/working-with-standard-output-and-error-output/)
 - [En diskussion om skillnaderna mellan stdout och stderr](https://unix.stackexchange.com/questions/157133/what-is-the-difference-between-stdout-and-stderr)

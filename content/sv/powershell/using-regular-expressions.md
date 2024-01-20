@@ -38,5 +38,4 @@ I PowerShell används [regex-metoderna](https://docs.microsoft.com/en-us/powersh
 
 # Se även:
 - [Microsofts documenation om reguljära uttryck i PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
-- [Online regex-testare RegExr](https://regexr.com/)
 - [Online regex-testare Regex101](https://regex101.com/)

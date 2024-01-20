@@ -34,4 +34,3 @@ L'exécution de ce programme affiche la chaîne "bienvenue en france", où toute
 ## Voir Aussi:
 - Documentation officielle sur les chaînes de caractères en Kotlin : [Strings Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
 - Guide détaillé sur les chaînes en Kotlin : [Guide Strings Kotlin](https://www.programiz.com/kotlin-programming/string)
-- Méthodes pour les chaînes de caractères en Kotlin : [String Functions](https://www.geeksforgeeks.org/kotlin-string-class-and-fun-ctions/)

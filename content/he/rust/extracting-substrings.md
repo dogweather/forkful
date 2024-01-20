@@ -45,5 +45,4 @@ fn main() {
 האם אתה מעוניין ללמוד עוד? הנה כמה מקורות:
 
 - [הספר הרשמי של Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [המדריך למתכנת הראסט](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 - [דיון בפורום של Rust](https://users.rust-lang.org/t/how-to-get-a-substring-of-a-string/1351)

@@ -49,5 +49,4 @@ Detalhes importantes sobre a implementação do download de web pages incluem o 
 Aqui estão alguns links para aprender mais sobre o download de páginas da web com TypeScript:
 
 - Documentação do node-fetch: [https://github.com/node-fetch/node-fetch](https://github.com/node-fetch/node-fetch)
-- Uma comparação entre bibliotecas populares de solicitação HTTP: [https://www.smashingmagazine.com/2020/01/understanding-promises-fetch-async-await-around/](https://www.smashingmagazine.com/2020/01/understanding-promises-fetch-async-await-around/)
 - Guia da Mozilla sobre a API Fetch: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

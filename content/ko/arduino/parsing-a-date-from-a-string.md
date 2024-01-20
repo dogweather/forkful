@@ -53,4 +53,3 @@ void loop() {
 여기에는 문자열에서 날짜를 구문 분석하는 방법과 관련된 추가 정보를 찾을 수 있는 몇 가지 링크가 있습니다.
 - RTE 라이브러리: [RTClib Library](https://github.com/adafruit/RTClib)
 - Arduino 활용 가이드: [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-- 날짜 및 시간 처리에 대한개발자 가이드: [Developer Guide](https://arduinogetstarted.com/tutorials/arduino-time-date)

@@ -44,5 +44,4 @@ En ce qui concerne Gleam, cette méthode effectue une requête en utilisant une 
 
 ## Voir de plus
 - Lisez la [RFC 7617](https://tools.ietf.org/html/rfc7617) pour comprendre les détails de l'authentification de base.
-- [Documentation de Gleam HTTP authentification](https://hexdocs.pm/gleam_http/gleam/httpc/#auth_basic) pour plus de détails sur la mise en œuvre.
 - Voici une [alternative à l'authentification de base](https://auth0.com/docs/tokens) pour une approche plus sécurisée.

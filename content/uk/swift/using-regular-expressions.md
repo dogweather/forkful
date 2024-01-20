@@ -31,5 +31,4 @@ for match in matches {
 
 ## Дивіться також: 
 - [Офіційна документація Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID287)
-- [Регулярні вирази на сайті RegExr](https://regexr.com/)
 - [Відеоуроки по регулярним виразам на YouTube](https://www.youtube.com/playlist?list=PL1QoYy59E_fiedCVpgabxVh4BoANL8gqn)

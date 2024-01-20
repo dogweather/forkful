@@ -40,5 +40,3 @@ CSV 파일은 1972년에 처음 개발되었으며, 전산 연구실을 위한 �
 
 ## 참고 자료:
 - [CSV 파일 생성 및 내보내기](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/export-csv)
-- [CSV 파일 가져오기 및 내보내기](https://4sysops.com/archives/export-csv-csv-import-csv-powershell-csv/)
-- [PowerShell에서 CSV(쉼표로 구분되는 값을 포함하는 직렬 데이터) 가져오기 및 내보내기](https://docs.microsoft.com/ko-kr/previous-versions//bb415435(v=vs.85))

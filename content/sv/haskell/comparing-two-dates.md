@@ -37,4 +37,3 @@ För mer information om datumhantering i Haskell, besök följande länkar:
 
 - Haskell's [`Data.Time` module documentation](https://hackage.haskell.org/package/time-1.6.0.1/docs/Data-Time.html)
 - [A deep dive into Haskell's dates and times on StackOverflow](https://stackoverflow.com/questions/37089029/how-do-i-parse-and-format-dates-in-haskell)
-- [Comparison and Equality in Haskell tutorial](https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/2-equality-and-comparisons)

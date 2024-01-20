@@ -47,7 +47,6 @@ Os detalhes da implementação de um projeto dependerão do que você deseja alc
 
 ## Veja também:
 
-- [Tutorial Node.js para iniciantes](https://nodejs.dev/learn)
 - [criar reagir aplicativo](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 - [yeoman gerador](http://yeoman.io/)
 - [npm documentação](https://docs.npmjs.com/)

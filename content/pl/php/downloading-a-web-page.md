@@ -37,8 +37,6 @@ Omawiana funkcja `file_get_contents` działa poprzez nawiązanie połączenia z 
 ## Zobacz również:
 
 Najlepszym miejscem do dalszego zgłębiania tematu jest oficjalna dokumentacja PHP. Znajdziesz tam więcej informacji na temat `file_get_contents` i o wiele więcej:
-- [file_get_contents](https://www.php.net/manual/pl/function.file-get-contents.php)
-- [cURL](https://www.php.net/manual/pl/book.curl.php)
 
 Jeśli chcesz dowiedzieć się więcej o HTTP, polecam dokumentacje Mozilla Developer Network:
 - [Zrozumienie HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)

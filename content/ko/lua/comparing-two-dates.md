@@ -46,4 +46,3 @@ Lua의 날짜 비교 구현은 초 단위의 타임 스탬프를 이용합니다
 ## 참고 자료 (See Also)
 
 - Lua os 모듈 문서: [os.time, os.difftime](https://www.lua.org/manual/5.4/manual.html#6.9)
-- 날짜와 시간에 관한 Lua 튜토리얼: [Lua Date & Time](https://www.tutorialspoint.com/lua/lua_date_time.htm)

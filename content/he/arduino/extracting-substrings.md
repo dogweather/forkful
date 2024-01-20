@@ -32,5 +32,3 @@ Serial.println(extract);
 
 ## ראה גם
 - [מדריך לשפת בראשית Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [ממונחים מתכנתים: מחרוזות](https://en.wikipedia.org/wiki/String_(computer_science))
-- [דוגמאות שימוש של `substring()`](http://string-functions.com/arduino-string-substring.aspx)

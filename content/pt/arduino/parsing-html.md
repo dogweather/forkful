@@ -55,5 +55,4 @@ A implementação da análise HTML no Arduino é bastante simples. Ela envolve a
 Para conhecer mais sobre o assunto, visite os links abaixo:
 
 - [Documentação Arduino](https://www.arduino.cc/reference/pt/)
-- [Biblioteca arduino-html-parser](https://github.com/hideakitai/Arduino-HTML-Parser)
 - [Biblioteca Ethernet Arduino](https://www.arduino.cc/en/Reference/Ethernet)

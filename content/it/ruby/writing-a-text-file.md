@@ -54,4 +54,3 @@ Per implementare la scrittura di un file di testo in Ruby, è necessario utilizz
 ## Vedi anche:
 
 - [La documentazione ufficiale di Ruby sul modulo File](https://ruby-doc.org/core-3.0.0/File.html)
-- [Un tutorial su come gestire i file di testo in Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-in-ruby)

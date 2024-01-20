@@ -54,4 +54,3 @@ result =
 # 查看更多
 
 - [Official YAML Website](https://yaml.org/)
-- [Elm Yaml Package](https://package.elm-lang.org/packages/BrianHicks/elm-yaml/latest/)

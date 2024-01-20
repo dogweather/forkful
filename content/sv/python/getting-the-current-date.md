@@ -58,4 +58,3 @@ För mer information om att hantera datum och tid i Python, se följande länkar
 
 - [Officiella Python Dokumentation för 'datetime'](https://docs.python.org/3/library/datetime.html)
 - [Python 'time' Modulen](https://docs.python.org/3/library/time.html)
-- [Python 'date' Funktionen](https://www.w3schools.com/python/ref_func_date.asp)

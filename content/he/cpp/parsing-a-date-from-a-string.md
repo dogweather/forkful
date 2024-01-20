@@ -37,7 +37,6 @@ ss >> std::chrono::parse("%F", ymd);
 
 ## קישורים למקורות נוספים
 העמקה:
-- [std::chrono דוקומנטציה](https://cppreference.com/w/cpp/chrono)
 - [הפענוח של מחרוזות תאריך וזמן](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time/posix_time.html)
 
 קודדים וקודים אחרים:

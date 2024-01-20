@@ -46,5 +46,3 @@ int main() {
 ## 참고 자료:
 
 - [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C Programming/Time](https://en.wikibooks.org/wiki/C_Programming/Time)
-- [UNIX 시간과 날짜 관련 함수](https://www.gribble.org/c/programming2.html)

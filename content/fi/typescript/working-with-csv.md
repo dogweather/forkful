@@ -44,6 +44,5 @@ Anna, 30, punainen
 CSV-muoto kehitettiin 1970-luvulla IBM:n käyttöön, mutta se on sittemmin yleistynyt myös muilla alustoilla. CSV ei ole ainoa tapa tallentaa taulukkodataa tekstitiedostoon, mutta se on yksi yleisimmin käytetyistä. Muita vaihtoehtoja ovat esimerkiksi XML, JSON ja YAML. CSV-tiedoston käsittelyyn on olemassa useita erilaisia npm-paketteja ja TypeScript tarjoaa myös omia sisäänrakennettuja työkaluja kuten ```fs```-moduulin.
 
 ## Katso myös:
-- [CSV-tiedoston muoto Wikipedia:ssa](https://fi.wikipedia.org/wiki/CSV-tiedoston_muoto)
 - [csvtojson npm-paketti](https://npmjs.com/package/csvtojson)
 - [TypeScriptin ```fs```-moduuli](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)

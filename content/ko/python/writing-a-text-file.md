@@ -52,5 +52,4 @@ Hello world!
 #참고:
 - [Python 파일 다루기](https://dojang.io/mod/page/view.php?id=2333)
 - [파일 입출력 - open()과 close()](https://wikidocs.net/26)
-- [파이썬을 이용한 유용한 파일 처리 팁](https://www.analyticsvidhya.com/blog/2019/10/6-useful-python-libraries-for-any-data-scientist/)
 - [파일 처리 방식 비교](https://blog.naver.com/lm3357/221408662194)

@@ -94,6 +94,4 @@ La libreria CSV di Elixir è basata sulla libreria di parsing di CSV di Erlang, 
 ## Vedi anche:
 
 - [Documentazione ufficiale della libreria CSV di Elixir](https://hexdocs.pm/csv/CSV.html)
-- [Libreria ExJSON per la gestione di file JSON](https://hexdocs.pm/ex_json/ExJSON.html)
-- [Libreria Xmerl per la manipolazione di file XML](https://erlang.org/doc/apps/xmerl/intro.html)
 - [RFC 4180 che definisce il formato CSV](https://tools.ietf.org/html/rfc4180)

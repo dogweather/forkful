@@ -63,4 +63,3 @@ Dla głębszego zrozumienia, przejrzyj następujące źródła:
 - Więcej o bibliotece Ethernet: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/Ethernet)
 - Więcej o bibliotece WiFiNINA: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/WiFiNINA)
 - Więcej o bibliotece GSM: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/GSM)
-- Przewodnik po monitorze szeregowym Arduino: [Przewodnik Sparkfun](https://learn.sparkfun.com/tutorials/serial-monitor-tutorial/all)

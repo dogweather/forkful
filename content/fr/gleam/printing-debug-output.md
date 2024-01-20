@@ -40,6 +40,5 @@ Quant à l'implémentation, `io.debug` fonctionne en affichant des messages sur 
 
 Pour en savoir plus sur le débogage en Gleam, consultez les ressources suivantes :
 
-- [Gleam IO Documentation](https://hexdocs.pm/gleam_stdlib/gleam/io/)
 - [Gleam Language Guide](https://gleam.run/book/tour/)
 - [Visual Studio Code - Debugger Extension](https://code.visualstudio.com/docs/editor/debugging)

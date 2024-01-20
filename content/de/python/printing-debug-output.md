@@ -77,4 +77,3 @@ DEBUG:root:Summe bis jetzt: 30
 - Python `print()` in die [Python docs](https://docs.python.org/3/library/functions.html#print)
 - Python `logging`-Modul in den [Python docs](https://docs.python.org/3/library/logging.html)
 - Python Debugger (`pdb`) in den [Python docs](https://docs.python.org/3/library/pdb.html)
-- [Effective Debugging](https://www.amazon.de/Effective-Debugging-Diomidis-Spinellis/dp/0134394798) - ein Buch, das allgemeine Debugging-Techniken beschreibt.

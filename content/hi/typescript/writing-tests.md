@@ -32,4 +32,3 @@ console.log(add(2, 3)); // output: 5
 ## देखें भी:
 - [Jasmine](https://jasmine.github.io/): टेस्ट ड्राइवन डेवलपमेंट (TDD) और सिस्टम टेस्टिंग के लिए एक प्रसिद्ध ओपन स्रोत फ्रेमवर्क।
 - [Mocha](https://mochajs.org/): एक उन्नत टेस्टिंग फ्रेमवर्क जो अनुक्रमणिका, असिन्क्रॉनस टेस्टिंग और अधिक को समर्थन करता है।
-- [Testing in TypeScript](https://www.typescriptlang.org/docs/handbook/testing.html): टाइपस्क्रिप्ट ऑफिशियल डॉक्यूमेंटेशन म

@@ -45,5 +45,4 @@ Con respecto a la implementación, cuando compilas TypeScript a JavaScript, `con
 Para más información y ejemplos del uso de `console.log()` y sus variantes, te recomiendo los siguientes recursos:
 
 - [Guía de developer.mozilla.org](https://developer.mozilla.org/es/docs/Web/API/Console/log)
-- [Artículo en sitepoint.com](https://www.sitepoint.com/javascript-debugging-techniques/)
 - [Preguntas de Stack Overflow sobre console.log()](https://stackoverflow.com/questions/tagged/console.log)

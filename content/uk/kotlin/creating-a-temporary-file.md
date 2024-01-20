@@ -35,6 +35,3 @@ fun main() {
 - **Деталі реалізації**: Коли ви створюєте тимчасовий файл у Kotlin, він створюється в директорії, заданої системною властивістю `java.io.tmpdir`.
 
 ## См. також:
-- Детальніше про управління файлами в Kotlin: [https://kotlinlang.org/docs/io-files.html](https://kotlinlang.org/docs/io-files.html)
-- Створення тимчасових файлів в Java: [https://www.baeldung.com/java-create-temporary-file](https://www.baeldung.com/java-create-temporary-file)
-- Введення в обробку файлів Kotlin: [https://www.tutorialkart.com/kotlin-io/file-handling-in-kotlin/](https://www.tutorialkart.com/kotlin-io/file-handling-in-kotlin/)

@@ -47,4 +47,3 @@ Die Implementierung in Haskell macht Gebrauch von monadischen Aspekten, um den t
 - Weiterführende Informationen zu HTTP-Anfragen in Haskell gibt es hier: [Http Conduit in Haskell](https://hackage.haskell.org/package/http-conduit)
 - Für eine tiefere Analyse von Zuständen in Haskell empfehlen wir: [State Monad](https://wiki.haskell.org/State_Monad)
 - Weitere Informationen zur Basic Authentication: [Basic Authentication](https://tools.ietf.org/html/rfc7617)
-- Alternative Authentifizierungsmethoden: [OAuth in Haskell](http://haskellwiki.com/wiki/OAuth)

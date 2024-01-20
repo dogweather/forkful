@@ -42,6 +42,3 @@ fun main() {
 **実装詳細**：Kotlinでは、`createTempFile`メソッドを使用して一時ファイルを生成します。このメソッドは一時ファイルをシステムの一時ディレクトリに作成します。
 
 ## 参考資料：
-
-* [Kotlin公式ドキュメンテーション](https://kotlinlang.org/docs/reference/io-files.html)
-* [Javaの一時ファイル](https://www.baeldung.com/java-create-temporary-file)

@@ -56,4 +56,3 @@ Biblioteka *aeson* wykorzystuje mechanizm generycznych typów danych w Haskellu,
 
 ## Zobacz też:
 - [Aeson documentation](http://hackage.haskell.org/package/aeson/docs/Data-Aeson.html)
-- [Haskell and JSON Tutorial](https://www.stackbuilders.com/tutorials/haskell/json-tutorial)

@@ -45,5 +45,4 @@ O método substring() aceita dois parâmetros, o índice inicial e o final (excl
 ## Veja Também:
 
 - Documentação oficial da Oracle sobre strings: [Oracle Docs](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- Tutorial mais aprofundado sobre o método substring(): [Tutorial do Método Substring](https://www.baeldung.com/java-string-substring)
 - Informações adicionais sobre expressões regulares em Java: [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

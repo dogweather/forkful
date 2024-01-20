@@ -32,4 +32,3 @@ npm run test
 
 ## Подивіться також:
 - [Документація Jest](https://jestjs.io/)
-- [Туторіал по тестуванню у TypeScript за допомогою Jest](https://dev.to/pianglespin/test-driven-development-with-jest-and-typescript-in-node-js-3of6)

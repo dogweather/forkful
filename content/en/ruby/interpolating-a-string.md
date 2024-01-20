@@ -63,4 +63,3 @@ Look up these related topics:
 - [Ruby docs: String](https://ruby-doc.org/core-2.7.0/String.html)
 - [Ruby docs: String interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
 - [Intro to Ruby: String Interpolation](http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html)
-- [ThoughtCo: How to Use String Interpolation in Ruby](https://www.thoughtco.com/string-interpolation-in-ruby-2907742).

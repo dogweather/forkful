@@ -51,4 +51,3 @@ W języku C# istnieje narzędzie o nazwie *Newtonsoft.Json*, które udostępnia 
 
 ## Zobacz także:
 - [Dokumentacja Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/introduction.htm)
-- [Inne formaty danych: XML, CSV, YAML](https://stackify.com/json-xml-yaml-csv/)

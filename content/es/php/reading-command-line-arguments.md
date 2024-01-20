@@ -35,5 +35,4 @@ A nivel de implementación, PHP almacena los argumentos de línea de comandos co
 
 ## Ver también
 - [Documentación Oficial de Argumentos de Línea de Comandos en PHP](https://www.php.net/manual/es/reserved.variables.argv.php)
-- [Cómo trabajar con argumentos de línea de comandos en PHP](https://www.sitepoint.com/php-command-line-arguments)
 - [Función getopt()](https://www.php.net/manual/es/function.getopt.php)

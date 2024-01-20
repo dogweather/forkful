@@ -31,5 +31,3 @@ fn main(args: List(String)) {
 텍스트 검색 및 교체는 컴퓨터 과학의 초기 단계부터 존재했습니다. 원시 코드에 존재하는 특정 문자열을 변경하려는 프로그래머의 요구로부터 시작되었습니다. 상기 코드 예제에서는 기본 string.replace 함수를 사용했습니다. 이는 간단한 예제에서는 효과적이지만, 정규식을 사용하여 더 복잡한 패턴을 검색하거나 교체하는 경우도 많습니다. Gleam에서는 이를 위해 [gleam/regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/) 라이브러리를 사용할 수 있습니다. 
 
 ## 추가로 보기
-- Gleam string.replace 함수에 대한 문서는 [여기](https://hexdocs.pm/gleam_stdlib/gleam/string/)에서 확인할 수 있습니다.
-- 정규식 및 Gleam에서의 사용법에 대해 더 배우고 싶다면, [여기](https://hexdocs.pm/gleam_stdlib/gleam/regex/)를 참조하세요.

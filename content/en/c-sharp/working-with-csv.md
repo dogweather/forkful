@@ -67,6 +67,4 @@ In terms of implementation, working with CSV files involves parsing and formatti
 
 ## See Also:
 
-- [Microsoft Documentation on Working with CSV Files in C#](https://docs.microsoft.com/en-us/dotnet/core/pcs/load-text)
 - [CSV File Format Overview](https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba) from Microsoft Office Support
-- [CSV File Format History](https://www.bttger.com/owy/guidebooks/textfiles.html) from Bulkowski's Guidebooks

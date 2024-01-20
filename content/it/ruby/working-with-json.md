@@ -43,5 +43,4 @@ Per implementare il supporto JSON in una web application, si può utilizzare una
 
 ## Vedi anche:
 * [Documentazione ufficiale di Ruby su JSON](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html)
-* [Tutorial su come utilizzare JSON in Ruby](https://www.rubyguides.com/2018/10/ruby-json-library/)
 * [Sintassi JSON - guida rapida](https://www.youtube.com/watch?v=iiADhChRriM)

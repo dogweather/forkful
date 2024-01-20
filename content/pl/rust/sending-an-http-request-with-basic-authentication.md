@@ -57,4 +57,3 @@ Podczas wysyłania żądania HTTP z podstawową autoryzacją, wartości user i p
 
 - Dokumentacja Rust'a [`reqwest`](https://docs.rs/reqwest/0.11.3/reqwest/): 
 - Więcej o [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- Więcej o [Base64 Encoding](https://www.base64encode.net/base64-encode-in-rust)

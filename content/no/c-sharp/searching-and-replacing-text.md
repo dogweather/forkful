@@ -44,5 +44,4 @@ Implementeringsdetaljer: 'Replace'-funksjonen i C# opererer ved å først finne 
 ## Se Også
 Du kan finne mer detaljerte informasjon og eksempler på disse nettstedene:
 - [Microsoft C# Guide](https://docs.microsoft.com/nb-no/dotnet/csharp/)
-- [C# Text Manipulation](https://www.tutorialsteacher.com/csharp/csharp-string-replace)
 - [Regex i C#](https://docs.microsoft.com/nb-no/dotnet/standard/base-types/regular-expression-language-quick-reference)

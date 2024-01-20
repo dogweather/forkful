@@ -44,5 +44,3 @@ L'implementazione di `toIsoString` in Elm segue l'ora UTC. Questo significa che 
 ## Vedi Anche
 - Documentazione Elm su [Time.toIsoString](https://package.elm-lang.org/packages/elm/time/latest/Time#toIsoString)
 - Standard [ISO 8601](https://it.wikipedia.org/wiki/ISO_8601) su Wikipedia
-- ISO 8601 in Elm: [Date and Time Formats](https://discourse.elm-lang.org/t/iso-8601-date-and-time-formats/2997)
-- Esempi di codice Elm per manipolare le date: [Elm Date Examples](https://ellie-app.com/a/Dm63Q8b9N7ja1)

@@ -46,4 +46,3 @@ Die Implementierung von regulären Ausdrücken in Go basiert auf der PCRE (Perl 
 
 ## See Also:
 - [Golang 'regexp' Paket Dokumentation](https://golang.org/pkg/regexp/)
-- [Tutorial zu regulären Ausdrücken in Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-de)

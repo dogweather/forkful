@@ -50,5 +50,4 @@ Under the hood, `jq` uses an internal DSL (Domain-Specific Language) for working
 
 ## See Also:
 - [Official `jq` documentation](https://stedolan.github.io/jq/)
-- [Alternative JSON processing tools for Bash](https://www.tecmint.com/json-processing-tools-for-linux/)
 - [Online JSON validator and formatter](https://jsonformatter.curiousconcept.com/)

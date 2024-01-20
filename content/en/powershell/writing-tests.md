@@ -49,6 +49,4 @@ When writing tests in PowerShell, it's important to follow best practices to ens
 
 ## See Also:
 
-- [PowerShell Testing with Pester](https://docs.microsoft.com/en-us/powershell/scripting/testing/pester/pester?view=powershell-7)
 - [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)
-- [PSRule](https://github.com/Microsoft/PSRule)

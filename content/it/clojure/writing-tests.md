@@ -49,8 +49,6 @@ Scrivere test è un'attività fondamentale nella pratica della programmazione te
 
 ## Vedi anche:
 
-- [Documentazione ufficiale di Clojure](https://clojure.org/guides/learn/testing)
 
-- [Articolo di blog di Joel Hooks su TDD in Clojure](https://joelhooks.com/blog/2013/03/02/writing-tests-with-clojure-test/)
 
 - [Documentazione di Leiningen](https://leiningen.org/), il gestore di progetto consigliato per sviluppare applicazioni in Clojure.

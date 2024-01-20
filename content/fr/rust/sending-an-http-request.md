@@ -49,6 +49,4 @@ Une implémentation en Rust pourrait utiliser le crate `reqwest`, qui se charge 
 
 Pour plus d'information sur l'envoi de requêtes HTTP en Rust, vous pouvez consulter ces ressources :
 
-- [Documentation officielle de Rust sur les requêtes HTTP](https://doc.rust-lang.org/stable/beta/nomicon/ffi.html)
-- [Tutoriel: Comment envoyer des requêtes HTTP en Rust](https://dev.to/seanokie/tutorial-how-to-make-http-requests-in-rust-2edj)
 - [Documentation sur le crate `reqwest`](https://docs.rs/reqwest/0.11.0/reqwest/index.html)

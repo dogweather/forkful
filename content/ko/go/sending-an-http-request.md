@@ -49,4 +49,3 @@ HTTP 요청은 웹 프로토콜이 메인스트림이 되기 전의 1990년대�
 ## 또 보기:
 - Go Documentation: [net/http](https://golang.org/pkg/net/http/) 패키지
 - Go by Example: [HTTP 클라이언트](https://gobyexample.com/http-clients) 제작
-- Go Blog: [Go에서 http 요청 생성하기](https://blog.golang.org/making-http-requests-in-go)

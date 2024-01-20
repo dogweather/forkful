@@ -38,5 +38,3 @@ let now = datetime.now()
 在Gleam中，日期和时间是使用ISO 8601格式表示的，这也是为什么你在输出中看到一个带有`Utc`的`zone`字段。
 
 ## 参见
-- Gleam官方文档中的`datetime`模块： [Gleam datetime](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)
-- Gleam中日期和时间的相关讨论： [Gleam Forum Date and Time](https://community.gleam-lang.org/t/best-practice-for-date-and-time/135)

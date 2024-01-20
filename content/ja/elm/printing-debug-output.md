@@ -36,5 +36,3 @@ main =
 以下は、デバッグ出力に関する関連するリソースへのリンクです：
 
 - Elmの公式文書: [Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- Elmのデバッグについての詳細なブログ記事: [Elm Debug Tutorial](https://elmprogramming.com/elm-debug.html)
-- Elmのデバッグについてのフォーラムディスカッション: [Debug.logが期待すべき出力を表示しない](https://discourse.elm-lang.org/t/debug-log-not-showing-expected-output/3574)

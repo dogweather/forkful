@@ -36,4 +36,3 @@ Rubyでは、テキストファイルを作成するために`File`クラスを�
 
 ## 関連情報：
 - [RubyのFileクラスについて（英語）](https://ruby-doc.org/core-2.7.0/File.html)
-- [他の言語でのテキストファイルの作成方法（英語）](https://www.guru99.com/working-file-io-python.html)

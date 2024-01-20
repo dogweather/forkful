@@ -41,5 +41,4 @@ Fish Shell是一种用户友好的shell，最初是在2005年由Axel Liljencrant
 
 ## 更多参考：
 - Fish Shell官方文档: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Linux `date` 命令: [https://www.cyberciti.biz/faq/unix-linux-get-time-in-seconds-since-the-epoch-jan-1970/](https://www.cyberciti.biz/faq/unix-linux-get-time-in-seconds-since-the-epoch-jan-1970/)
 - Fish Shell比较操作: [https://fishshell.com/docs/current/cmds/test.html](https://fishshell.com/docs/current/cmds/test.html)

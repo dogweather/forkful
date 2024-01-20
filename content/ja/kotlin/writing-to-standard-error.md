@@ -33,5 +33,3 @@ fun main() {
 標準エラーへの書き込みは、プログラミングの歴史が古くからある方法です。現在では、標準エラーへの書き込みよりもより詳細なデバッグ情報を提供するために、ログやデバッガーを使用することが推奨されています。しかし、標準エラーへの書き込みは依然として標準的なデバッグ方法の1つです。
 
 ## 関連サイト：
-- [The Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system.err/index.html)
-- [Debugging with Kotlin](https://kotlinlang.org/docs/tutorials/debugging.html)

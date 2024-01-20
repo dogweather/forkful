@@ -48,4 +48,3 @@ In termini di implementazione, il metodo `.replace()` in Rust effettua una ricer
 Per approfondire l'argomento, dai un'occhiata a queste risorse utili:
 
 - Documentazione ufficiale di Rust - [replace](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Crate regex](https://crates.io/crates/regex) per gestire espressioni regolari in Rust

@@ -45,5 +45,4 @@ JSON був створений у 1999 році та став популярни
 # Дивіться також:
 
 - [Офіційна документація serde_json](https://docs.serde.rs/serde_json/index.html)
-- [Стаття про використання serde_json у Rust проекті](https://www.ameyalokare.com/rust/2017/09/02/rust-serdejson.html)
 - [Порівняння з іншими бібліотеками JSON у Rust](https://github.com/serde-rs/json-benchmark)

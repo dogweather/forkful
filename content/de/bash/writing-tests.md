@@ -52,4 +52,3 @@ Das Schreiben von Tests in Bash ist Teil des Test Driven Development (TDD) Konze
 # Weitere Informationen
 - [Test Driven Development (TDD)](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)
 - [Bats - Bash Automated Testing System](https://github.com/bats-core/bats-core)
-- [The Bash Guide - Writing Test Suites](https://guide.bash.academy/development/testing.html)

@@ -49,4 +49,3 @@ Lisätietoja saadaksesi, tutustu seuraaviin lähteisiin:
 
 - MDN Web Docs ja sen artikkeli ["String.prototype.substring()"](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
 - W3Schoolsin opas ["JavaScript String Methods"](https://www.w3schools.com/js/js_string_methods.asp)
-- Blogikirjoitus ["JavaScript Substring: How to Use Slice and Substring in JS"](https://coderrocketfuel.com/article/javascript-substring-how-to-use-slice-and-substring-in-js) Coder Rocket Fuel -sivustolla.

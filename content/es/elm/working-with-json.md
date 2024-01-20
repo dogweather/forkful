@@ -46,6 +46,5 @@ En Elm, el trabajo con JSON es muy eficiente debido a la biblioteca incorporada.
 
 Si quieres seguir aprendiendo sobre cómo trabajar con JSON en Elm, aquí tienes algunos enlaces útiles para continuar tu aprendizaje:
 
-- [La documentación oficial de Elm sobre JSON](https://elm-lang.org/docs/json)
 - [Una guía paso a paso sobre cómo trabajar con JSON en Elm](https://medium.com/@jxxcarlson/hitchhikers-guide-to-elm-and-json-6c7d18f1ae86)
 - [Una presentación sobre cómo trabajar con JSON en Elm](https://www.youtube.com/watch?v=p8yUrZQa-iM&t=213s)

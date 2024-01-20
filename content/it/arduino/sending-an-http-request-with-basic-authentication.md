@@ -65,6 +65,5 @@ L'autenticazione di base HTTP è un protocollo antico e diffuso, ma ricorda che 
 Un dettaglio interessante riguardo a come inviare le richieste HTTP con autenticazione di base in Arduino: la funzione `setAuthorization` imposta l'header 'Authorization' della richiesta HTTP. È essenziale che le credenziali siano corrette, altrimenti il server restituirà un codice di stato '401 Non autorizzato'.
 
 ## Vedi Anche
-- [Documentazione ufficiale della libreria ESP8266HTTPClient](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
 - [HTTP Basic Authentication su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
 - [Autenticazione Digest su Wikipedia](https://it.wikipedia.org/wiki/Digest_access_authentication)

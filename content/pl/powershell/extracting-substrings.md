@@ -39,4 +39,3 @@ jest ła
 ## Zobacz też:
 
 * Dokumentacja Microsoft dla [`substring`](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0) w .NET 5.0.
-* Dokumentacja Microsoft dla [manipulacji ciągami](https://docs.microsoft.com/pl-pl/powershell/scripting/samples/string-manipulation?view=powershell-7.1) w PowerShell.

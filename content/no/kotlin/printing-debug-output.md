@@ -50,4 +50,3 @@ En detalj er at `println` i Kotlin faktisk kaller System.out.println i Java, noe
 
 - Dokumentasjon for Kotlin logging bibliotek: [Kotlin Logging](https://github.com/MicroUtils/kotlin-logging)
 - Offisiell Kotlin dokumentasjon: [println funksjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
-- Hvordan debugge Kotlin-kode: [Debugging med IntelliJ IDEA](https://www.jetbrains.com/help/idea/debugging-your-first-kotlin-application.html)

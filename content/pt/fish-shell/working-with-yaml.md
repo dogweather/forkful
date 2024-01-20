@@ -38,5 +38,4 @@ Ao trabalhar com YAML no Fish Shell, é importante lembrar que nem todas as func
 ## Veja também:
 
 - [Site oficial do YAML](https://yaml.org/)
-- [Página do módulo yaml no GitHub](https://github.com/jorgebucaran/fish-yaml)
 - [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)

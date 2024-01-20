@@ -32,5 +32,3 @@ YAML fue creado por Clark Evans en el 2001 para solucionar problemas comunes en 
 
 ## Ver también:
 - [Documentación oficial de YAML](https://yaml.org/)
-- [YAML en Clojure](https://github.com/yaml-clojure/yaml-clojure)
-- [Diferencias entre YAML, JSON y XML](https://yaml.org/YAML_vs_XML.html)

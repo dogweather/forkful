@@ -35,6 +35,5 @@ JSON står för "JavaScript Object Notation" och har sitt ursprung från JavaScr
 I Clojure är `clojure.data.json` ett standardbibliotek som innehåller hjälpfunktioner för att arbeta med JSON. Det finns också andra bibliotek som tillhandahåller liknande funktioner, till exempel `cheshire` och `data.json`.
 
 ## Se även:
-- [Clojure Data Formats guide](https://clojure.org/guides/data_format)
 - [Officiell dokumentation för clojure.data.json](https://clojure.github.io/data.json/)
 - [Jämförelse mellan olika dataformat](https://www.distilled.net/resources/json-vs-xml-a-performance-comparison/)

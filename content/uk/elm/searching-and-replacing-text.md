@@ -42,5 +42,3 @@ replaceExample =
 ## Дивіться Також:
 
 - [Офіційна документація Elm по String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Курси Elm на UkrainianCode](https://ukrainiancode.com/courses/elm)
-- [Podcast про Elm з головним мейнтейнером](https://podcasts.google.com/elm?hl=uk-UA)

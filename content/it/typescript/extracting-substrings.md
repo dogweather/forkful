@@ -46,6 +46,5 @@ La scelta del metodo da utilizzare dipende dal tuo caso specifico. Ricorda, `sub
 
 ## Link Utili:
 
-- Documentazione ufficiale di TypeScript: [Strings and their methods](https://www.typescriptlang.org/docs/handbook/strings.html)
 - MDN Web Docs: [Basic Data Structures in JavaScript: Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#strings)
 - W3Schools: [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

@@ -47,4 +47,3 @@ Vær oppmerksom på at 'bogstavaktivering' handler om teksttransformasjon, ikke 
 
 - String-metoder i JavaScript: https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String
 - En mer detaljert introduksjon til TypeScript: https://www.typescriptlang.org/docs/handbook/basic-types.html
-- Tekstformatering og -transformasjon i programmering: [knytte](https://www.tutorialsteacher.com/articles/transform-string-in-programming)

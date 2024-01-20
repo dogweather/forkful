@@ -47,5 +47,4 @@ Go언어에서는 `strings.Replace` 이외에도 `strings.Trim`, `strings.Replac
 
 ## 참고 자료:
 - [Go: strings 패키지 공식 문서](https://golang.org/pkg/strings/)
-- [Go 로 시작하는 문자열 처리](https://gobyexample.com/strings)
 - [Go 튜토리얼: 문자열](https://www.tutorialspoint.com/go/go_strings.htm)

@@ -35,5 +35,4 @@ $string.substring(7)
 
 ## בחנו גם:
 דוגמאות ומדריכים נוספים ניתן למצוא ב:
-- [PowerShell: שמירה על מחרוזות](https://www.powershellmagazine.com/2013/08/20/pstip-working-with-strings/)
 - [MSDN: חליצת תת-מחרוזות ב-PowerShell](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_operators#substring-operator)

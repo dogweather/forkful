@@ -40,5 +40,4 @@ IO.println(hello)
 
 ## さらに学ぶ：
 
-- Gleam公式ドキュメント: [https://gleam.run/book/tour/introduction.html](https://gleam.run/book/tour/introduction.html)
 - 文字列連結と補間: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

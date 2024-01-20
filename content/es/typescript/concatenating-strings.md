@@ -50,6 +50,5 @@ Respecto a la implementación, la concatenación de cadenas en JavaScript (y por
 
 Para más detalles sobre el tema y cómo usar de manera más eficiente la concatenación de cadenas en TypeScript, te recomendamos estos recursos:
 
-- [TypeScript string concatenation](https://www.typescripttutorial.net/typescript-tutorial/typescript-string-concatenation/)
 - [JavaScript String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
 - [TypeScript template strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

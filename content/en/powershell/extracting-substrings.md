@@ -43,6 +43,4 @@ Alternatives to this method exist. For example, you could use regex (regular exp
 ## See Also
 If you want to delve further into manipulating strings in PowerShell, check out these resources:
 
-- [Working with Strings](https://docs.microsoft.com/powershell/scripting/samples/working-with-strings?view=powershell-7.1): A practical guide to strings on the official PowerShell documentation.
 - [About Regular Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1): If you fancy learning regex, this article is a good place to start.
-- [Mastering everyday XML tasks in PowerShell](https://docs.microsoft.com/previous-versions//dd878284(v=vs.85)): Learn about handling XML, a situation where substring extraction often comes in handy.

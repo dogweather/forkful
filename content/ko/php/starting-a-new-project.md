@@ -43,5 +43,4 @@ PHP 프로젝트를 시작할 때, 여러가지 생각해야 할 사항들이 �
 
 ## 참고하기:
 - [PHP 공식 웹사이트](https://www.php.net/)
-- [PHP 매뉴얼](https://www.php.net/manual/ko/index.php)
 - [PHP 튜토리얼](https://www.w3schools.com/php/)

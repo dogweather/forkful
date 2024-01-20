@@ -37,5 +37,3 @@ I tillegg, hvis du vil skrive til både standard output og standard error samtid
 For mer informasjon og eksempler, se følgende ressurser:
 
 - [Haskell dokumentasjon om I/O](https://www.haskell.org/documentation/)
-
-- [Wikipedia artikkel om standard error](https://en.wikipedia.org/wiki/Standard_error_(computing))

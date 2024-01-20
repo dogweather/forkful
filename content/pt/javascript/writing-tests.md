@@ -36,6 +36,4 @@ Escrever testes não é uma prática nova, mas com o aumento da popularidade do 
 
 ## Veja também:
 
-- [Por que escrever testes é tão importante?](https://www.publicaaweb.com.br/importancia-testes-software/)
-- [Guia para iniciantes em automação de testes](https://blog.cedrosolucoes.com.br/testes-automatizados-primeiros-passos-para-iniciantes/)
 - [Documentação do framework Jest](https://jestjs.io/docs/getting-started)

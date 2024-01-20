@@ -34,4 +34,3 @@ YAMLは2001年に登場したマークアップ言語です。主な競合相手
 
 ## 参照:
 - [YAML公式サイト](https://yaml.org/)
-- [KotlinでのYAMLの使用方法](https://www.baeldung.com/kotlin/yaml)

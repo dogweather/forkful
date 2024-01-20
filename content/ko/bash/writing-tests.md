@@ -52,5 +52,4 @@ fi
 
 ## 관련 자료:
 - [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash 스크립트 테스트 가이드](https://www.shellscript.sh/testing.html)
 - [테스트 작성의 이점에 대한 더 자세한 설명](https://www.codetriage.com/blog/writing-tests-for-your-code)

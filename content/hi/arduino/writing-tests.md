@@ -53,5 +53,3 @@ Arduino mein code ko test karne ke liye hum ```assertEquals()``` function ka bhi
 
 ## See Also:
 - [Arduino Testing Library](https://github.com/mmurdoch/arduinounit)
-- [In-depth guide to writing Arduino tests](https://www.remcobotics.com/writing-arduino-unit-tests/)
-- [Official Arduino documentation on testing](https://www.arduino.cc/en/main/testing)

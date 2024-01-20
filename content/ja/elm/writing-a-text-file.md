@@ -33,5 +33,4 @@ Text.write "hello.txt" text
 
 ## 関連リンク：
 - [Elm公式ドキュメント](https://elm-lang.org/docs)
-- [プログラミング初心者のためのテキストファイル入門](https://techacademy.jp/magazine/20105)
 - [プログラミング言語の歴史](https://www.computerhope.com/issues/ch002321.htm)

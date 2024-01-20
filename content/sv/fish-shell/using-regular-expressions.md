@@ -48,5 +48,4 @@ Det finns många olika verktyg och bibliotek för reguljära uttryck, men Fish S
 Fish Shell använder sig av standardbiblioteket för reguljära uttryck, PCRE (Perl Compatible Regular Expressions), vilket ger en flexibel och kraftfull funktionalitet.
 
 ## Se också:
-- [Fisk shell dokumentation för reguljära uttryck](https://fishshell.com/docs/current/cmds/grep.html)
 - [En interaktiv handledning för reguljära uttryck](https://regexone.com/)

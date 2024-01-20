@@ -47,5 +47,4 @@ main = do
 
 文字列連結について更に学びたい方は、以下のリンクをご覧ください：
 - [Haskellでの文字列操作](http://learnyouahaskell.com/starting-out#strings)
-- [Haskellプログラミング](https://www.haskell.org/tutorial/strings.html)
 - [Haskellで文字列連結を最適化する](https://stackoverflow.com/questions/31279545/why-is-string-concatenation-so-slow-in-haskell)

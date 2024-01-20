@@ -42,5 +42,4 @@ Historicamente, a maneira de passar argumentos para programas em muitos sistemas
 ## Veja também: 
 
 - [Processo Node.js](https://nodejs.org/api/process.html#process_process_argv)
-- [Argumentos da Linha de Comando em Node.js](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)
 - [Documentação TypeScript](https://www.typescriptlang.org/docs/)

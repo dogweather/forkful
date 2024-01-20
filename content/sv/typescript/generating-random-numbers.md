@@ -45,4 +45,3 @@ Kolla in följande källor för mer information och alternativa tillvägagångss
 
 - [MDN Web Docs on Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [Node.js crypto module documentation](https://nodejs.org/api/crypto.html)
-- [Understanding UUIDs](https://www.sohamkamani.com/blog/uuid-versions-explained/)

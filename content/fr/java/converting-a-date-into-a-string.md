@@ -81,6 +81,5 @@ Lors de la conversion d'une date en chaîne, il est important de gérer les exce
 
 Pour plus d'informations sur les différentes classes et méthodes liées à la conversion de dates en chaînes de caractères en Java, vous pouvez consulter : 
 
-- [Java SimpleDateFormat](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/SimpleDateFormat.html)
 - [Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 - [Java LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)

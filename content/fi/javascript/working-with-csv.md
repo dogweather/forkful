@@ -49,4 +49,3 @@ CSV-tiedostoja voidaan lukea ja kirjoittaa monilla eri ohjelmointikielillä, kut
 
 ## Katso myös:
 - [Wikipedia-artikkeli CSV-muodosta](https://fi.wikipedia.org/wiki/CSV)
-- [JSON-muodon vertailu CSV-muotoon](https://csveditor.com/fi/csv-vs-json)

@@ -42,5 +42,4 @@ Når du oppretter en midlertidig fil i C, bruker du funksjonen `tmpnam()`. Denne
 
 ## Se også
 - [tmpfile function in C](https://www.cplusplus.com/reference/cstdio/tmpfile/) 
-- [Advantages and Disadvantages of different file storage methods](https://www.geeksforgeeks.org/advantages-and-disadvantages-of-different-file-storage-methods/)
 - [The C library function tmpnam()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)

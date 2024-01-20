@@ -63,7 +63,6 @@ When creating a new project, certain details like managing dependencies with Bun
 ## See Also
 
 - [The official Ruby website](https://www.ruby-lang.org/)
-- [Intro to Gemfile and Bundler](https://bundler.io/v1.5/gemfile.html)
 - [RSpec testing for Ruby](https://rspec.info/)
 - [Learning Ruby from the ground up](https://www.codecademy.com/learn/learn-ruby)
 - [Getting started with Rails](https://guides.rubyonrails.org/getting_started.html)

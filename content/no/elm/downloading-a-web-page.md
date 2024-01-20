@@ -54,5 +54,4 @@ Når det gjelder nedlasting av websider i Elm, det er effektivt fordi Elm håndt
 
 For mer informasjon, sjekk ut disse ressursene: 
 - Elm's offisielle dokumenter: [Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
-- En dyp dykket i Elm HTTP: [Making HTTP requests in Elm](https://thoughtbot.com/blog/making-http-requests-in-elm)
 - Elm's guide til å håndtere effekter: [Effects](https://guide.elm-lang.org/effects/)

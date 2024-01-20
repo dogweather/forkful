@@ -45,6 +45,4 @@ PowerShell के अतिरिक्त, आप CSV फ़ाइल की fo
 ## देखें भी:
 
 - [Understanding CSV File Format](https://www.youtube.com/watch?v=VXLbJScZGpI)
-- [Getting Started with CSV Files in PowerShell](https://adamtheautomator.com/csv-files-powershell/)
 - [Working with CSV Files in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7)
-- [Manipulating CSV Files Using PowerShell](https://www.codedigest.com/quick-start/81/powershell-tutorial-manipulating-csv-file-using-powershell)

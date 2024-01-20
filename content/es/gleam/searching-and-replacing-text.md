@@ -39,4 +39,3 @@ En cuanto a la implementación, básicamente, `string.replace` busca todas las o
 Para más información acerca de la búsqueda y reemplazo de texto en Gleam, y usos más complejos de `string.replace`, consulte estos enlaces:
 - Documentación oficial de Gleam: [link](https://gleam.run/)
 - Manual de la biblioteca de cadenas Gleam: [link](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/string.gleam)
-- Discusión en el foro de Gleam sobre búsqueda y reemplazo de texto: [link](https://discuss.gleam-lang.org/)

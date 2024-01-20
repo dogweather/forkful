@@ -33,4 +33,3 @@ In termini di implementazione, la funzione `File.read/1` in realtà utilizza le 
 ## Per Approfondire:
 Per ulteriori informazioni su `File.read/1` e le altre funzioni di lettura file in Elixir, visita i link seguenti:
 - [Elixir's official documentation on File module](https://hexdocs.pm/elixir/File.html)
-- [Handling files and IO in Elixir](https://dev.to/wagslane/handling-files-and-io-in-elixir-jk5)

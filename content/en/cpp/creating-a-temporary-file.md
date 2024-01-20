@@ -50,5 +50,3 @@ In our code, `mkstemp` generates a unique temporary file, replacing 'XXXXXX' in 
 
 For further knowledge:
 - [C++ Filesystem library](https://en.cppreference.com/w/cpp/filesystem)
-- [Using Temporary Files Securely](https://owasp.org/www-community/Using_Temporary_Files_Securely)
-- [C++ mkstemp function](http://www.cplusplus.com/reference/cstdlib/mkstemp/)

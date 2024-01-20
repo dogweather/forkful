@@ -57,7 +57,6 @@ if(date1.getTime() < date2.getTime()){
 ## 另请参阅
 
 - [MDN - Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript - Date](https://www.tutorialsteacher.com/typescript/typescript-date)
 - [Moment.js](https://momentjs.com/)
 - [date-fns](https://date-fns.org/)
 

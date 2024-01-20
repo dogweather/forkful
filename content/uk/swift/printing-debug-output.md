@@ -39,5 +39,3 @@ City name is Kyiv
 ## Дивіться також:
 
 - [Apple Developer Documentation](https://developer.apple.com/documentation/swift/1541053-print)
-- [Using NSLog and print for debugging with Swift](https://fluffy.es/nslog-print-swift/)
-- [5 Tips for Effective Debugging](https://www.raywenderlich.com/113259/debugging-ios-swift)

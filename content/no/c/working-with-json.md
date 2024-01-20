@@ -45,4 +45,3 @@ JSON ble opprinnelig utviklet av Douglas Crockford på slutten av 90-tallet som 
 ## Se også:
 - [cJSON dokumentasjon](https://github.com/DaveGamble/cJSON/blob/master/README.md)
 - [Jansson dokumentasjon](https://jansson.readthedocs.io/en/2.12/)
-- [jsmn dokumentasjon](https://github.com/zserge/jsmn/blob/master/docs/usage.md)

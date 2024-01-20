@@ -52,6 +52,4 @@ Passed: 3, Failed: 0
 Testaaminen on tärkeä osa ohjelmointia jo pitkään ollut käytäntö. Se auttaa ohjelmoijia löytämään ja korjaamaan virheitä nopeasti ja välttämään mahdollisia ongelmia tulevaisuudessa. Elm-kielellä on monia muitakin testaamistyökaluja, kuten elm-test-rs, joka tarjoaa helpon tavan suorittaa testejä projektissasi. Lisäksi voi myös olla hyödyllistä lukea lisää testaamisesta yleisesti ja löytää parhaita käytäntöjä testaamiseen.
 
 ## Katso myös:
-- [Elm-test-rs](https://github.com/gdotdesign/elm-test-rs)
 - [Testaaminen yleisesti](https://en.wikipedia.org/wiki/Software_testing)
-- [Testaamisen parhaat käytännöt](https://www.softwaretestinghelp.com/software-testing-best-practices/)

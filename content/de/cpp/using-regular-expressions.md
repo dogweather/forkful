@@ -54,5 +54,4 @@ Reguläre Ausdrücke werden seit den 1950er Jahren verwendet und waren eine Schl
 ## Siehe auch
 
 - [C++ Referenz: Reguläre Ausdrücke](http://en.cppreference.com/w/cpp/regex)
-- [RegExr: Lerne, erstelle und teste reguläre Ausdrücke](http://regexr.com/)
 - [RegexOne: Interaktive Lektionen](https://regexone.com/)

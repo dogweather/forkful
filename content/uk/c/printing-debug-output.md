@@ -53,5 +53,4 @@ int main() {
 ## Ще почитати
 
 - Функція printf визначена в стандартній бібліотеці Сі. Більше тут [printf](http://www.cplusplus.com/reference/cstdio/printf/)
-- Ускладнені теми debug-програмування, такі як додавання умов виведення debug-informations, методи дебагу на рівні змінних тощо. Більше читайте [тут](https://cprogramming.com/debugging.html) та [тут](https://barrgroup.com/Embedded-Systems/How-To/printf-scanf-serial-ports).
 - Хоча `printf` це класика, в сучасному програмуванні C часто використовуються більш комплексні техніки дебагування, такі як gdb або static analysis. Дізнайтеся більше про gdb [тут](https://sourceware.org/gdb/current/onlinedocs/gdb/) та про static analysis [тут](https://scan.coverity.com/tutorials).

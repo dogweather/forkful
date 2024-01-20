@@ -45,5 +45,4 @@ För mer information om stränginterpolering och formaterade strängar, ta en ti
 
 - [Oracle Java Dokumentation](https://docs.oracle.com/)
 - [String Formatting in Java](https://dzone.com/articles/java-string-format-examples)
-- [Java String Formatter](http://www.javased.com/index.php?api=java.util.Formatter)
 - [Java String Interpolation Tutorial](https://www.baeldung.com/java-string-interpolation)

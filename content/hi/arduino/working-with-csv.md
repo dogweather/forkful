@@ -46,6 +46,4 @@ void loop() {}
 दूरस्थ सूचना प्रपात करने के लिए CSV का उपयोग 1972 में फ़ॉर्मेटिंग प्रारूप के रूप में पहली बार गर्हित हुआ। वैकल्पिक उपायोगिताओं में JSON, XML, और डेटाबेस आदि शामिल हैं।
 
 ## अध्ययन भी:
-- [CSV शुरू करने के लिए Arduino लाइब्रेरी](https://github.com/tonyomy/CSV)
-- [CSV के बारे में और अधिक जानकारी के लिए](https://www.theserverside.com/definition/CSV-Comma-Separated-Values)
 - [CSV से कैसे फ़ाइल खोलें और पढ़ें](https://www.arduino.cc/en/Reference/SDopen)

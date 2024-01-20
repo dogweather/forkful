@@ -42,4 +42,3 @@ YAML ble utviklet i 2001 av Clark Evans for å være en mer menneskelig-leselig 
 
 ## Se også:
 - [Offisiell YAML-nettside](https://yaml.org/)
-- [elm-yaml pakke](https://package.elm-lang.org/packages/avh4/elm-yaml/latest/)

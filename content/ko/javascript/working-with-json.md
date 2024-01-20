@@ -40,4 +40,3 @@ JSON은 2001년에 더글라스 크락포드(Douglas Crockford)가 만든 형식
 ## 더 알아보기:
 
 - [JSON 공식 홈페이지](https://www.json.org/json-ko.html)
-- [JSON의 장단점 비교하기](https://www.mobilize.net/blog/bid/66525/Comparing-XML-and-JSON)

@@ -39,4 +39,3 @@ void setup() {
 ## देखे भी:
 
 - [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
-- [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

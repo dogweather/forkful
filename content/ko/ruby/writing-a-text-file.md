@@ -45,6 +45,4 @@ end
 
 ## 관련 정보 보기:
 
-- [Ruby 파일 입출력 가이드](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/48-ruby-on-your-system/lessons/122-file-i-o-in-your-system)
 - [텍스트 파일 개념 이해하기](https://www.computerhope.com/jargon/t/textfile.htm)
-- [텍스트 파일 작성에 관련된 더 많은 예제](https://gist.github.com/codertimo/829280)

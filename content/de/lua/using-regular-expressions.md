@@ -48,6 +48,5 @@ Die Ausgabe wäre dann:
 Reguläre Ausdrücke wurden in den 1950er Jahren von einem Mathematiker entwickelt und ursprünglich von Texteditoren verwendet. Heutzutage werden sie von vielen Programmiersprachen unterstützt, einschließlich Lua. Es gibt auch Alternative Methoden zur Textmanipulation, wie z.B. das Verwenden von Mustern und das Splitten von Textstrings. Die Implementierung von regulären Ausdrücken in Lua basiert auf dem sogenannten "Pattern Matching", das auf Algorithmen der formalen Spracherkennung beruht.
 
 ## Sieh dir auch an:
-- [Lua wiki Seite über reguläre Ausdrücke](https://wiki.multitheftauto.com/wiki/Regular_expressions)
 - [Tutorial zur Verwendung von regulären Ausdrücken in Lua](https://www.tutorialspoint.com/pattern-matching-in-lua)
 - [Lua regelbasierte Ausdrücke reference manual](https://www.lua.org/manual/5.3/manual.html#6.4.1)

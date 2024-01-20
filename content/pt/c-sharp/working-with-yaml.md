@@ -41,5 +41,4 @@ Quando se trata de implementação de YAML, existem diferentes bibliotecas e fer
 
 ## Veja também:
 
-- [YAML Aprendizado](https://www.yamllernen.de/)
 - [Documentação da biblioteca YamlDotNet](https://github.com/aaubry/YamlDotNet)

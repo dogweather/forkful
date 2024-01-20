@@ -45,4 +45,3 @@ Für weitere Details und verwandte Themen, siehe:
 
 - [Cplusplus.com - string::substr](http://www.cplusplus.com/reference/string/string/substr/)
 - [Stackoverflow - Wie Substrings in C++ extrahieren](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-a-delimiter)
-- [Das komplette C++ Tutorial - Strings und ihre Funktionen](https://www.learncpp.com/cpp-tutorial/4-8a-an-introduction-to-stdstring/)

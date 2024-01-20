@@ -58,5 +58,4 @@ Beim Schreiben einer Textdatei müssen Programme bestimmte Regeln und Formatieru
 # Siehe auch
 
 - [C++ ifstream & ofstream](https://www.geeksforgeeks.org/basic-input-output-c/)
-- [Textdatei speichern mit C++](https://www.programiz.com/cpp-programming/files-input-output)
 - [Verschiedene Dateiformate](https://www.digitalocean.com/pricing/#:~:text=Welcome-,to%20the%20World%2Drenowned%20Digital%20Ocean%20Network,-With%2012%20data)

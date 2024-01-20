@@ -53,4 +53,3 @@ Nell'implementazione nell'esempio di codice, è importante notare come la funzio
 Per ulteriori approfondimenti sul lavoro con le API HTTP in Go, risorse:
 - [HTTP package - The Go Programming Language](https://golang.org/pkg/net/http/)
 - [Making HTTP Requests in Golang](https://medium.com/@masnun/making-http-requests-in-golang-dd123379efe7)
-- [An Introduction to HTTP Basic Authentication Using Golang](https://tutorialedge.net/golang/http-basic-authentication-tutorial/)

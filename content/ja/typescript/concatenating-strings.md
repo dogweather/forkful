@@ -60,4 +60,3 @@ console.log(concatString);
 以下は、TypeScriptの文字列連結の詳細について参照できるリンクです：
 
 - [MDN：テンプレートリテラル](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
-- [TypeScript Deep Dive：文字列](https://typescript-jp.gitbook.io/deep-dive/future-javascript/strings)

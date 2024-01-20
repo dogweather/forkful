@@ -70,4 +70,3 @@ Quant à l'implémentation, le module `tmp-promise` que nous avons utilisé est 
 - [Documentation de `tmp-promise`](https://www.npmjs.com/package/tmp-promise)
 - [Fichiers temporaires sur Wikipedia](https://fr.wikipedia.org/wiki/Fichier_temporaire)
 - [Module `fs` de Node.js pour travailler avec le système de fichiers](https://nodejs.org/api/fs.html).
-- [Comment gérer les fichiers temporaire en JavaScript](https://stackabuse.com/temporary-files-in-javascript/)

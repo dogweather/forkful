@@ -52,4 +52,3 @@ Heo, Word!
 ## Дивіться також:
 
 - [Уроки Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduino String Library](https://www.arduino.cc/en/Reference/String)

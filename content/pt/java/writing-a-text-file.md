@@ -60,4 +60,3 @@ Existem outras formas de armazenar informações de forma persistente em Java, c
 
 - [Documentação oficial do FileWriter em Java](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
 - [Tutorial sobre escrita de arquivos em Java](https://www.devmedia.com.br/trabalhando-com-arquivos-em-java/23142)
-- [Outras formas de armazenamento persistente em Java](https://www.caelum.com.br/apostila-java-orientacao-objetos/bancos-de-dados-e-jdbc/#16-7-mas-e-se-nao-quiser-usar-jdbc)

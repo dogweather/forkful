@@ -53,5 +53,3 @@ YAML का इतिहास भी बेहद रोचक है। इस
 
 ## देखें भी:
 - [ऑफिशियल YAML दस्तावेज़ीकरण](https://yaml.org/spec/1.2/spec.html)
-- [XML और JSON की तुलना में YAML](https://stackify.com/json-vs-xml/)
-- [PowerShell में ConvertFrom-Yaml और ConvertTo-Yaml का उपयोग](https://mcpmag.com/articles/2016/07/12/working-with-yaml-files.aspx)

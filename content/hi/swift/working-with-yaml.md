@@ -41,4 +41,3 @@ YAML का अर्थ है "YAML अद्यतन मार्कअप �
 ## देखें भी
 - [YAML मानक दस्तावेज़ीकरण](https://yaml.org/)
 - [YAML गाइड](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
-- [YAML online parser](https://yaml-online-parser.appspot.com/)

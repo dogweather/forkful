@@ -48,7 +48,5 @@ Existem muitas alternativas disponíveis se você quiser mais versatilidade. Voc
 
 ## Veja Também:
 
-- [Documentação oficial sobre LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date/)
-- [Comparing dates in Java](https://www.baeldung.com/java-date-comparison)
 - [Joda-Time library](https://www.joda.org/joda-time/)
 - [ThreeTenABP library](https://github.com/JakeWharton/ThreeTenABP)

@@ -47,6 +47,3 @@ Pisanie testów jest stosunkowo nowym podejściem w programowaniu. Do niedawna w
 Pisanie testów może być zaburzające dla programisty, ponieważ wymaga dodatkowego czasu i wysiłku. Jednak jest to inwestycja, która zwraca się w przyszłości, ponieważ pomaga w unikaniu błędów i ułatwia rozwój i utrzymanie aplikacji.
 
 ## Zobacz również:
-
-- [The Importance of Writing Tests in Software Development](https://www.freecodecamp.org/news/what-are-software-tests-and-why-are-they-important/)
-- [Benefits of Test-Driven Development](https://dzone.com/articles/test-driven-development-tdd-the-benefits-of-test)

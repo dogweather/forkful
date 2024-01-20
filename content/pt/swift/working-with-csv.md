@@ -49,6 +49,4 @@ Ao trabalhar com CSV no Swift, é importante ter em mente que os dados não são
 
 ## Veja Também:
 
-- [Documentação do SwiftCSV](https://github.com/yas99en/swiftcsv)
-- [Introdução ao CSV](https://www.clker.com/clipart-588.html)
 - [Artigo sobre o histórico do formato CSV](https://en.wikipedia.org/wiki/Comma-separated_values)

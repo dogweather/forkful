@@ -44,5 +44,3 @@ Use a abordagem que melhor atenda às necessidades do seu projeto, seja para int
 
 - Documentação oficial do JavaScript [Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date) na MDN Web Docs
 - Library [Moment.js](https://momentjs.com/) para manipulação de datas e horas
-- Guia de comparação de [Date libraries](https://programmingwithmosh.com/javascript/javascript-date-libraries-momentjs-date-fns-luxon-dayjs/)
-- Conceitos básicos de [Time and Date](https://www.tutorialspoint.com/typescript/typescript_date_object.htm) no TypeScript

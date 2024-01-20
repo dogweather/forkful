@@ -40,4 +40,3 @@ Les messages d'erreur affichés sur la sortie d'erreur standard peuvent être pe
 ## Voir aussi:
 - [La documentation officielle de Java sur la sortie d'erreur standard](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
 - [Un guide sur la gestion des erreurs en Java](https://www.baeldung.com/java-exceptions)
-- [Une explication détaillée de la journalisation en Java](https://stackify.com/guide-logging-java/)

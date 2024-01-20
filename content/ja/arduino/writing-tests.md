@@ -38,5 +38,3 @@ void loop() {
 テストに関する詳細な情報やチュートリアル、サンプルコードなどを含む、他のリソースを紹介します。
 
 - [Arduino公式ページ](https://www.arduino.cc/)：Arduinoに関する情報やコミュニティを見つけることができます。
-- [Arduino Software Testing Library](https://github.com/igormiktor/ArduinoSoftwareTesting)：Arduino向けのテストライブラリです。
-- [Arduinoのテスト方法ガイド](https://www.oreilly.com/library/view/arduino-cookbook/0596802471/ch10.html)：実際のArduinoプロジェクトでテストを実装する方法について説明されています。

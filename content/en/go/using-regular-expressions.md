@@ -71,5 +71,4 @@ Under the hood, regular expressions in Go are implemented using a modified versi
 
 ## See Also:
 - [Go Regexp package documentation](https://golang.org/pkg/regexp/)
-- [Regular Expression tutorial on GoDocs](https://godoc.org/github.com/google/re2j#Regexp)
 - [Regular Expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)

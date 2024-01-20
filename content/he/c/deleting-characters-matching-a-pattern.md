@@ -40,5 +40,4 @@ hello
 - עבודה עם פונקציה `strpbrk` מחייבת זהירות, שכן כל שינוי במחרוזת המקורית או בתבנית ישפיע על התוצאה.
 
 ## ראה גם
-- [מסמך הספרייה הסטנדרטית של C](https://he.wikipedia.org/wiki/%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%AA_C)
 - [strpbrk - C++ Reference](https://en.cppreference.com/w/c/string/byte/strpbrk)

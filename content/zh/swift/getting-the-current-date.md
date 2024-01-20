@@ -54,5 +54,4 @@ print("当前时间： \(components.hour!):\(components.minute!):\(components.se
 为了更多关于Swift的日期和时间操作，可以参看以下链接：
 
 - Apple官方文档关于Date的介绍: [Apple Date Documentation](https://developer.apple.com/documentation/foundation/date)
-- Swift日期和时间详解: [Working with Dates and Times in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)
 - Swift时间操作库: [SwiftDate](https://github.com/malcommac/SwiftDate)

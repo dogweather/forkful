@@ -63,7 +63,6 @@ Sobre a implementação, o Bash simplesmente junta os valores sem adicionar espa
 
 - Manual do Bash: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
 - Guia avançado de Bash: [http://tldp.org/LDP/abs/html/](http://tldp.org/LDP/abs/html/)
-- Artigos relacionados em Português: [https://www.vivaolinux.com.br/artigo/Dominando-o-Shell-Bash?pagina=3](https://www.vivaolinux.com.br/artigo/Dominando-o-Shell-Bash?pagina=3)
 
 ---
 

@@ -51,5 +51,4 @@ La librairie GSON a été développée par Google pour faciliter la manipulation
 ## Voir aussi:
 
 - [Documentation de GSON](https://github.com/google/gson)
-- [Tutoriel sur le JSON en Java](https://www.baeldung.com/gson)
 - [Documentation officielle sur le format JSON](https://www.json.org/json-fr.html)

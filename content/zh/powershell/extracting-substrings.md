@@ -44,4 +44,3 @@ echo $sub
 
 - PowerShell官方文档: [Substring()](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1#substring)
 - 更深入子字符串提取的介绍: [Understanding And Working with Strings in PowerShell](https://adamtheautomator.com/powershell-string/)
-- PowerShell在线教程: [.NET 的 Substring 方法在 PowerShell 中的应用](https://www.pstips.net/substring-in-powershell.html)

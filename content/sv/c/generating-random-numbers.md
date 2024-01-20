@@ -46,6 +46,5 @@ Man kan också utforska andra funktioner som `random()`, `drand48()` eller bibli
 
 För mer läsning, besök följande länkar:
 
-- [C Standard Library](https://sv.wikipedia.org/wiki/Standardbiblioteket_f%C3%B6r_C)
 - [Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
 - [OpenSSL Library](https://www.openssl.org/)

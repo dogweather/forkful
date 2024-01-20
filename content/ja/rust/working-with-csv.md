@@ -39,4 +39,3 @@ CSVは、1972年にMicrosoft社によって開発されたものであり、現�
 ## 参考文献：
 - [Rustの公式ドキュメント：ファイルとI/O](https://doc.rust-lang.org/std/fs/struct.File.html)
 - [CSVとは - IT用語辞典集](https://www.sophia-it.com/content/CSV)
-- [CSV vs JSON vs XML - Comparision between the three popular data exchange formats](https://bytearcher.com/articles/csv-json-xml-comparison/)

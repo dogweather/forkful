@@ -49,4 +49,3 @@ För mer information kring ämnet, ta gärna en titt på följande källor:
 - [Elm Guide](https://guide.elm-lang.org/)
 - [Introduction to Elm](https://elmprogramming.com/)
 - [Elm Regex library](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [String manipulation in Elm](https://korban.net/posts/elm/2018-02-27-string-manipulation-in-elm/)

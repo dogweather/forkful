@@ -49,4 +49,3 @@ Clojure est construit sur la JVM (Java Virtual Machine) et peut donc utiliser le
 - [Documentation officielle de Clojure 'count'](https://clojuredocs.org/clojure.core/count)
 - [API Java String 'length'](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#length())
 - [Guide de programmation Clojure de Clojure.org](https://clojure.org/guides/getting_started)
-- [Introduction à Clojure - Sequences](https://clojure.org/guides/learn/sequences)

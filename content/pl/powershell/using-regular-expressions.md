@@ -52,5 +52,3 @@ Wyrażenia regularne są powszechnie stosowane od ponad 60 lat. Powstały na pot
 ## Zobacz także
 
 - [Regex101](https://regex101.com/) - narzędzie online do testowania i eksperymentowania z wyrażeniami regularnymi.
-- [PowerShell dla programistów](https://github.com/vexx32/PowerShell-Docs/blob/pre-release/languages/pl-PL/PSLogic.md) - przydatny poradnik zawierający wiele przykładów i wyjaśnień dotyczących programowania w PowerShell.
-- [Python dla każdego](https://www.python.pl/) - serwis z artykułami i poradnikami dla początkujących programistów, w którym znajdziesz również wiele informacji na temat wyrażeń regularnych w języku Python.

@@ -41,6 +41,5 @@ add 10 20 30
 写测试作为软件开发过程中的重要步骤，可以追溯到20世纪90年代。除了Bash语言之外，还有其他语言也可以进行写测试，如Python的unittest模块和Java的JUnit框架。在实际的应用中，写测试可以采用TDD（测试驱动开发）和BDD（行为驱动开发）的方法来实现。
 
 ## 相关资源：
-- [Bash测试入门指南](https://github.com/lucentminds/bash-testing-guide)
 - [Python unittest模块官方文档](https://docs.python.org/3/library/unittest.html)
 - [Java JUnit官方文档](https://junit.org/junit4/)

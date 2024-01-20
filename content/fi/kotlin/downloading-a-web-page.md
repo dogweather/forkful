@@ -33,6 +33,5 @@ Kotlinin sisäänrakennettu `readText`-metodi tekee verkkosivun lataamisesta hel
 ## Katso Myös
 - [Kotlinin verkkosivu](https://kotlinlang.org/)
 - [JSoup-dokumentaatio](https://jsoup.org/)
-- [Kotlinin IO-opas](https://kotlinlang.org/docs/io-operations.html)
 
 Hyödynnä näitä resursseja syventyäksesi aiheeseen tai selvittääksesi mahdollisesti eteen tulevia ongelmia.

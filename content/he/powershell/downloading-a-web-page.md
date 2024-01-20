@@ -44,5 +44,3 @@ $Page.Content
 - [דוקומנטציה רשמית של מיקרוסופט על `Invoke-WebRequest`](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest)
 
 - [הסבר מקיף על מודל האובייקטים של PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-file-based-data/)
-
-- [הורדת קבצים דרך PowerShell](http://fossies.org/windows/misc/PowerShell-6.0.0-alpha.9-linux-x64.tar.gz:a/PowerShell-6.0.0-alpha.9/powershell/Modules/Microsoft.PowerShell.Utility/Utility.help.txt)

@@ -44,4 +44,3 @@ Writing a text file using Bash involves using a command-line text editor, such a
 
 - [nano - The GNU Nano homepage](https://www.nano-editor.org/)
 - [Bash scripting basics](https://www.shellscript.sh/)
-- [Vim tips and tricks](https://vim.secretsauce.net/)

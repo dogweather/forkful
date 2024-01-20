@@ -55,6 +55,4 @@ void loop(){}
 
 ## 参照：
 
-- [Arduino公式ドキュメンテーション](https://www.arduino.cc/en/SdCard/exists)
 - [Arduino SDライブラリについて詳細に説明](https://www.arduino.cc/en/Reference/SD)
-- [さらに進んだテクニックのためのArduinoプログラミングガイド](http://arduino-tutorials.net/tutorial/advanced-arduino-programming)

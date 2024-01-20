@@ -64,6 +64,4 @@ An alternative to writing to standard error is using a log file. This can be use
 In terms of implementation, writing to standard error is typically done by redirecting the standard error stream to the desired output destination, such as a console or log file. This can be done using the command-line `2>` syntax, or within the code using `std::freopen`.
 
 ## See Also:
-- [C++ I/O Streams](https://www.tutorialspoint.com/cplusplus/cpp_streams.htm)
-- [C++ Standard Error Stream (std::cerr)](https://www.geeksforgeeks.org/c-standard-error-stream-cerr/)
 - [Redirecting standard error in C++](https://stackoverflow.com/questions/1374804/redirecting-standard-error-in-c-c)

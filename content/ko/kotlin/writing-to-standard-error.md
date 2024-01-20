@@ -40,6 +40,4 @@ This is standard error
 ## 관련 자료:
 표준 오류에 쓰기와 관련된 자세한 내용은 아래 링크를 참고하세요.
 
-- [Kotlin official documentation on system streams](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-system.out/)
-- [Article explaining the difference between standard output and error](https://www.baeldung.com/java-printstream-println-vs-print-error)
 - [Comparison of different logging frameworks in Kotlin](https://logging.apache.org/log4j/log4j-2.1/manual/api.html)

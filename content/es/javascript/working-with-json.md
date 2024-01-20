@@ -45,4 +45,3 @@ JSON fue diseñado originalmente por Douglas Crockford en 2002 y es ampliamente 
 
 - [Documentación oficial de JSON](https://www.json.org/)
 - [Tutorial de JSON en W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Cómo trabajar con JSON en Node.js](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-node-js)

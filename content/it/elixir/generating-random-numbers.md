@@ -48,4 +48,3 @@ Per capire meglio la generazione di numeri casuali in Elixir, guarda questi riso
 
 - Documentazione Elixir su `:rand`: [https://hexdocs.pm/elixir/1.12/Kernel.html#id4878](https://hexdocs.pm/elixir/1.12/Kernel.html#id4878)
 - Esempi di codice dell'Elixir School:  [https://elixirschool.com/en/lessons/basics/basics/](https://elixirschool.com/en/lessons/basics/basics/)
-- Post sul blog di Erlang Solutions su numeri casuali per scopi crittografici: [https://www.erlang-solutions.com/blog/crypto-random-in-erlang.html](https://www.erlang-solutions.com/blog/crypto-random-in-erlang.html)
