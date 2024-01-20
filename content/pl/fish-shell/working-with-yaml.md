@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem YAML"
-html_title:           "Fish Shell: Praca z formatem YAML"
-simple_title:         "Praca z formatem YAML"
+title:                "Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co się to robi?
+## What & Why?
+YAML to format zapisu danych czytelny dla ludzi - świetnie nadaje się do konfiguracji. Programiści używają go, by łatwiej zarządzać ustawieniami aplikacji i środowisk.
 
-Working with YAML (Yet Another Markup Language) in programming is a way to organize and store data in a human-readable format. It is often used for configuring applications, creating data structures, and transferring data between systems. Programmers use YAML because it is easy to read and write, supports data types and structures, and integrates well with other programming languages and tools.
-
-## Jak to zrobić:
-
-### Przykład 1: Tworzenie pliku YAML
-
-```Fish Shell
-echo 'name: John
-age: 30
-hobbies:
-  - hiking
-  - cooking
-' > person.yml
+## How to:
+### Przykładowe dane YAML
+```yaml
+# config.yaml
+nazwa: "Przykładowa Aplikacja"
+port: 8080
+ścieżki:
+  - /api
+  - /home
 ```
-W wyniku powyższego kodu zostanie utworzony plik `person.yml` z danymi osobowymi osoby o imieniu John, wieku 30 lat i dwóch zainteresowaniach.
-
-### Przykład 2: Odczytywanie pliku YAML
-
-```Fish Shell
-set -q person.name <(yq e '.name' person.yml)
-echo $person_name
+### Czytanie z pliku YAML w Fish
+```fish
+set data (yaml read config.yaml)
+echo $data[nazwa] # Wyświetla "Przykładowa Aplikacja"
 ```
-W wyniku powyższego kodu zostanie wczytana wartość `name` z pliku `person.yml` i przypisana do zmiennej `person_name`.
+### Zapis do pliku YAML w Fish
+```fish
+yaml write config.yaml nazwa "Nowa Aplikacja"
+# Zaktualizuje nazwę w pliku config.yaml
+```
+### Instalacja narzędzia do obsługi YAML
+```fish
+fisher install jorgebucaran/reed
+# Instaluje plugin `yaml` do Fish Shell
+```
 
-## Głębsza analiza:
+## Deep Dive
+YAML narodził się w 2001 roku jako alternatywa dla XML i JSON, stawiając na prostotę i czytelność. W Fish Shell nie ma wbudowanej obsługi YAML, używamy więc zewnętrznych narzędzi jak `yaml` od Jorge Bucaran lub `shyaml`. Warto pamiętać, że YAML jest wrażliwy na formatowanie, szczególnie na wcięcia.
 
-### Kontekst historyczny
-
-YAML został stworzony w 2001 roku przez Clarka Evansa i Ingy'ego dot Net jako alternatywna składnia dla XML. Jego głównym celem było dostarczenie prostego i czytelnego sposobu na przechowywanie i przetwarzanie danych strukturalnych.
-
-### Alternatywy
-
-YAML jest jednym z wielu formatów do przechowywania danych i konfiguracji. Alternatywami dla YAML są między innymi JSON i XML. Każdy z tych formatów ma swoje zalety i w zależności od potrzeb projektu, programiści mogą wybierać między nimi.
-
-### Szczegóły implementacji
-
-Fish Shell posiada wbudowane polecenia do obsługi plików YAML, takie jak `yq` czy `jq`. Można również zainstalować dodatkowe pluginy, które ułatwią pracę z tym formatem. Dzięki temu programiści mogą szybko i wygodnie zarządzać danymi YAML bez potrzeby korzystania z zewnętrznych narzędzi.
-
-## Zobacz też:
-
-- [Dokumentacja Fish Shell dotycząca YAML](https://fishshell.com/docs/current/tutorial.html#yaml-support)
-- [Strona domowa YAML](https://yaml.org/)
+## See Also
+- [Oficjalna strona YAML](https://yaml.org/)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Dokumentacja 'shyaml'](https://github.com/0k/shyaml)

@@ -1,7 +1,7 @@
 ---
-title:                "json के साथ काम करना"
-html_title:           "Arduino: json के साथ काम करना"
-simple_title:         "json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-JSON का साथ काम करना क्या है और कृपया आप उसे क्यों करते हो? प्रोग्रामर्स को अपने प्रोजेक्ट में डेटा संरचित करने के लिए JSON का उपयोग करना हो सकता है। यह एक बहुत सरल और आसान तरीका है जिससे आप अपने डेटा को सामान्य और आपरेशन applicable रूप में संचालित कर सकते हैं।
+## What & Why? (क्या है और क्यों?)
+JSON (JavaScript Object Notation) एक lightweight data-interchange format है जो human-readable होने के साथ साथ machine-readable भी है। Arduino programming में इसका उपयोग data को आसानी से exchange और store करने के लिए किया जाता है।
 
-## कैसे:
-आप अपने Arduino पर बहुत सारे विभिन्न स्रोतों से साइटस, HTTP requests के माध्यम से सभी डेटा अँप्रोटोकाॅल की सहायता से ही कर सकते हैं। आपको केवल वो सारे काम से programming करके अपने Arduino को इस मुश्किल से बोचज़ों और अवधारणा कोम्प्लैकसिटी स्टेज के हैं।
+## How to: (कैसे करें?)
+Arduino में JSON के साथ काम करने के लिए `ArduinoJson` library का इस्तेमाल किया जाता है। इसे `Tools > Manage Libraries` में जाकर install करें और फिर नीचे दिए गए कोड की मदद से JSON objects को parse और serialize करने का तरीका सीखें:
 
-आप निम्न तरह से संदर्भ cryptography और डिक्स से लोगहुमान्हम दीर्घाओ को जानकारी प्राप्त कर सकते है। मुझे HexGram der. 
+```Arduino
+#include <ArduinoJson.h>
 
-```
-/*
-नहीं होता आपको या सब कुछ हो तो सीमेन्टैल तरीका कान्हिा इंजीनियर कटैग लागु होते सितेमेंटेडोरेन्नेशजों कोड धमान है।
+void setup() {
+  Serial.begin(9600);
 
-प्रभाैरण भरकाका कैक्टैग Resf लागोगशो कार्य पूँजुत्रंती BIRTH k
-आदिरास्य अगनाकरिम भेदने केवल IPv8 उपरुक्त compliance दीक्षित VPN दिए गए नोरकः वार्षिक Fbteo कत-बक्तरा राफहार्न अरमारनिां एक लोगरे ओवरुनेत पेक्षा।
-*/
+  // JSON Object बनाना
+  StaticJsonDocument<200> doc;
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
 
-// अपनी जांच रिकवरी थापिया कर्ततङगस है
-char[] json = {"{'name': 'John', 'age': 30, 'city': 'New York'}"};
+  // JSON Object में value जोड़ना
+  JsonObject position = doc.createNestedObject("position");
+  position["latitude"] = 37.421998333333335;
+  position["longitude"] = -122.08400000000002;
 
-void setup(){
-    // Initialize serial communication
-    Serial.begin(9600);
-    
-    // Print JSON data to serial monitor
-    Serial.println("JSON data: ");
-    Serial.println(json);
+  // Serialize करके output करना
+  serializeJson(doc, Serial);
 }
 
-void loop(){
-    // Nothing to do here
+void loop() {
+  // do nothing
 }
 ```
-
-आउटपुत: 
+Sample Output:
 ```
-JSON data:
-{'name': 'John', 'age': 30, 'city': 'New York'}
+{"sensor":"gps","time":1351824120,"position":{"latitude":37.421998333333335,"longitude":-122.08400000000002}}
 ```
 
-## गहराई से जानें:
-JSON से काम करने की बहुत कासी गहराई मे रहती है। JSON को दूसरी प्रोग्रामिंग भाषाओं से हटाकर अपनी ज्यूँ किया जा सकता है, परंतु यह अपनी ज्यूँ एक बहुत सरल और आसान तरीका सेम्प्लेटिंग करता है। यह अपने आप बहुत से अल्गोस को समंद्रप की श्री पैठ मे है।
+## Deep Dive (गहराई में):
+JSON पहली बार 2002 में Douglas Crockford द्वारा popularize किया गया था। XML से हटकर, यह data को compact और readable format में store करता है। Arduino पर `ArduinoJson` सबसे लोकप्रिय library है, लेकिन अन्य alternatives जैसे कि `cJSON` या `aJson` भी मौजूद हैं। Implementation की बात करें तो, ArduinoJson dynamic memory का उपयोग करती है और इसे resource-constrained devices पर उपयोग करने हेतु fine-tune किया गया है।
 
-## और देखें:
-आप इस श्रीols के लिए कीर्तीक पैच सकस्त्विक और औरों के लिए अपना श्रीols कीपाण्पापत्सता: के ब्रैकअंट ल Nike अभिगुलम करने और प्रोजेक्ट मम ःफुनिंगतियां सेआ. आश्रम भानैं, और श्फंडहानों सबसे।२*किशिरो है। आप यहां किशिनीणी और विभो की वेशारणैं और प्र
+## See Also (और भी देखें):
+- ArduinoJson Library Documentation: https://arduinojson.org/
+- JSON Introduction: https://www.w3schools.com/js/js_json_intro.asp
+- JSON and Arduino tutorial: https://lastminuteengineers.com/parsing-json-arduino-tutorial/

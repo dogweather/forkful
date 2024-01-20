@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Fish Shell: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att jobba med JSON är ett sätt för programmerare att hantera och manipulera data på ett enkelt och strukturerat sätt. JSON står för JavaScript Object Notation och är ett populärt format för att representera och utbyta data.
+## Vad & Varför?
+Jobba med JSON handlar om att hantera data i JavaScript Object Notation-format, ett vanligt textbaserat format för att lagra och utbyta data. Programmerare använder JSON för dess lättvikt, enkelhet att läsa och språkoberoende natur, vilket gör det perfekt för webbapplikationer och API:er.
 
-## Hur?
-Fish Shell stödjer direkt åtkomst till JSON-data genom att använda kommandot `jq`. Det låter dig filtrera, manipulera och format HTML-data direkt i terminalen.
+## Hur man gör:
+Fish Shell kan inte hantera JSON utan hjälp, så vi använder `jq`, ett kommandoradsverktyg för att bearbeta JSON-data.
 
+Installera `jq`:
 ```fish
-Fish Shell ~ $ curl 'https://swapi.dev/api/people/1' | jq '.name'
-"Luke Skywalker"
+sudo apt-get install jq
+```
+
+Läsa in och filtrera JSON:
+```fish
+echo '{"namn": "Ola", "yrke": "Utvecklare"}' | jq '.namn'
+```
+Output:
+```
+"Ola"
+```
+
+Förvandla Fish-variabel till JSON med `jq`:
+```fish
+set person "Ola"
+echo "{\"namn\": \"$person\"}" | jq .
+```
+Output:
+```
+{
+  "namn": "Ola"
+}
+```
+
+Iterera över JSON-array:
+```fish
+echo '["Linux", "Fish", "jq"]' | jq '.[]'
+```
+Output:
+```
+"Linux"
+"Fish"
+"jq"
 ```
 
 ## Fördjupning
-JSON har funnits sedan 2001 och används ofta för att representera data på webben. Alternativ till JSON inkluderar XML och YAML, men JSON anses vara enklare och mer lättläst för människor.
+JSON skapades i början av 2000-talet av Douglas Crockford och har blivit standard för datadelning. Alternativ som XML och YAML finns, men JSON står ut för dess kompatibilitet och tillgänglighet på webben. Fish Shell kräver externa verktyg som `jq` för JSON-manipulering, som är implementerade genom att utnyttja Fishs pipelining-funktioner och kraftfulla string-manipulering.
 
-Fish Shell implementerar stöd för JSON genom att använda en extern kommandoradverktyg `jq` som måste installeras separat. För att installera `jq` inom Fish Shell, kan du köra kommandot `fisher install ilancosman/tide`.
-
-## Se även
-- [Officiell `jq` dokumentation](https://stedolan.github.io/jq/)
+## Se även:
+- Fish Shell officiella dokumentation: https://fishshell.com/docs/current/index.html
+- `jq` officiella dokumentation: https://stedolan.github.io/jq/
+- Lär dig mer om JSON-formatet: https://www.json.org/json-en.html

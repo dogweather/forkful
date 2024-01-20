@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם YAML"
-html_title:           "Python: עובדים עם YAML"
-simple_title:         "עובדים עם YAML"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-עבודה עם YAML היא תהליך נפוץ בתכנות שמאפשר למפענחים ולמתכנתים להפעיל וליצור נתונים מסוגים שונים בקובץ נקרא YAML. מספר רב של תכנים כמו בניית קונפיגורציות ותיעוד מבוסס YAML ויכולותיו הגדולות כשמדובר בכתיבת קצרה, עושים עבודה עם קבצי YAML חשובה מאוד למפענחים בשפת Python.
+## מה ולמה?
+YAML הוא פורמט המרה של נתונים, נוח לקריאה וכתיבה אנושית. תכניתנים משתמשים בו כדי לקבוע קונפיגורציה או לשמש כפורמט החלפה בין שונות מערכות.
 
-# איך ל:
-
-הנה דוגמאות של קוד Python כדי להציג התנהגות של קבצים YAML:
-
-```
-# ייבוא ספריות הנחוצות
-from yaml import load, dump  
-
-# קבצי ימאל ניתנים לקריאה עם פקודה הבאה
-with open("example.yaml", 'r') as stream:
-    yaml_data = load(stream)
-
-# כדי לכתוב קבצי YAML ניתן להשתמש בפקודה הבאה
-with open("output.yaml", 'w') as out:
-    yaml_data = dump(yaml_data, out)
+## איך לעשות:
+קודם כל, התקנו את חבילת PyYAML:
+```Python
+pip install PyYAML
 ```
 
-# מחקר מעמיק
+קריאת קובץ YAML:
+```Python
+import yaml
 
-### היסטוריית תאימות
+with open('config.yaml', 'r') as stream:
+    try:
+        data = yaml.safe_load(stream)
+        print(data)
+    except yaml.YAMLError as exc:
+        print(exc)
+```
 
-נוסד בשנת 2001 על ידי שתי חברות טכנולוגיות גרמניות, YAML היום מחרשיות עם פופולריות ותמיכה רחבה בכמה שפות תכנות כמו Python, C # ו- Java. כיום, YAML משמש כקובץ המכיל מידע תדינמי ויכולת הכתיבה הפשוטה שלו הופכת אותו לאטרקטיבי במיוחד לתכנות פייתון.
+כתיבת קובץ YAML:
+```Python
+import yaml
 
-### אלטרנטיבות
+data = {'database': {'user': 'root', 'password': 'example'}}
 
-במקום לעבוד עם YAML, אפשר גם להשתמש בפורמטים אחרים כמו JSON או XML. גם אם ישנן תכונות חדשות כמו JSONB ו- JSONS, YAML עדיין נחשב לאחד הפורמטים המוצלחים ביותר בתכנות.
+with open('config.yaml', 'w') as file:
+    yaml.dump(data, file, default_flow_style=False)
+```
 
-### פיתוח עם YAML בפייתון
+אם תשמרו ותריצו את הקוד הזה, תקבלו קובץ `config.yaml` המכיל את הנתונים שהוגדרו בתוך `data`.
 
-כדי להתאים ליישומים בפייתון יותר קשרי YAML ניתן להשתמש בספריית PyYAML, השומרת על קוד בטוח כשמדובר במרחב של פרוטוקולי הקוד בתכנון מערכות.
+## צלילה עמוקה
+YAML, שם מקוצר של "YAML Ain't Markup Language" (המתחיל בצורה רקורסיבית), נוצר באופן פורמלי ב-2001. אלטרנטיבות פופולריות כוללות JSON ו-XML. ב-YAML, רווחים והיכול לציין קשרי היררכיה, וזה חשוב להבין כאשר מבצעים parse לקובץ.
 
-# ראו גם
-
-* [קובץ YAML הרשמי](https://yaml.org/)
-* [תיעוד YAML עבור שפת Python](https://pyyaml.org/wiki/PyYAMLDocumentation)
+## ראו גם
+- מסמכי PyYAML הרשמיים: https://pyyaml.org/wiki/PyYAMLDocumentation
+- מבוא ל-YAML: https://gettaurus.org/docs/YAMLTutorial/
+- Stack Overflow לשאלות ותשובות על YAML בפייתון: https://stackoverflow.com/questions/tagged/yaml+python

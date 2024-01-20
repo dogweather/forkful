@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "C#: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "C#"
 category:             "C#"
@@ -10,53 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-C#-Programmierung: Wie man schnell und einfach Tests schreibt
-
 ## Was & Warum?
-Wenn du schon einmal mit Programmierern gesprochen hast, hast du sicherlich schon einmal den Begriff "Tests" gehört. Aber was sind Tests überhaupt und warum schreiben Programmierer sie? Ganz einfach: Tests sind kleine Programme, die prüfen, ob ein größeres Programm richtig funktioniert. Programmierer schreiben Tests, um sicherzustellen, dass ihr Code fehlerfrei ist und wie erwartet arbeitet.
+Tests schreiben bedeutet, Code zu kreieren, der deinen Code überprüft. Es sichert Qualität und erspart später Kopfschmerzen, indem Fehler früh erkannt werden.
 
-## Wie geht's:
-Tests zu schreiben ist in C# ganz einfach! In den meisten Fällen werden sogenannte "Unit Tests" verwendet, die einzelne Methoden oder Klassen testen. Ein Beispiel für einen einfachen Unit Test kann wie folgt aussehen:
+## How to:
+Zum Testen verwende das NUnit Framework. Installiere es über NuGet, und schreib dann folgenden Test:
 
 ```C#
-using NUnit.Framework; // Namespace für die Test-Framework-Bibliothek
+using NUnit.Framework;
 
-[TestFixture] // Dekorator, der anzeigt, dass es sich um eine Test-Klasse handelt
-public class CalculatorTests
+namespace BeispielTests
 {
-  [TestCase] // Dekorator für einen einzelnen Testfall
-  public void TestAddition() 
-  {
-    // Arrange
-    var calculator = new Calculator();
-    var x = 5;
-    var y = 10;
-    var expected = 15;
+    public class EinfacheTests
+    {
+        [Test]
+        public void Addieren_ZweiPlusZwei_ErgibtVier()
+        {
+            // Arrange
+            var erwartetesErgebnis = 4;
 
-    // Act
-    var actual = calculator.Add(x, y);
+            // Act
+            var ergebnis = Addieren(2, 2);
 
-    // Assert
-    Assert.AreEqual(expected, actual); // Assert-Statement, das prüft, ob die erwartete und tatsächliche Ausgabe übereinstimmen
-  }
+            // Assert
+            Assert.AreEqual(erwartetesErgebnis, ergebnis);
+        }
+
+        int Addieren(int a,int b)
+        {
+            return a + b;
+        }
+    }
 }
 ```
-Und hier eine mögliche Ausgabe des Tests:
+
+Führe den Test aus. Resultat:
 
 ```
-Tests run: 1, Failures: 0, Not run: 0, Time: 0.135 seconds
+Test Passed: Addieren_ZweiPlusZwei_ErgibtVier
 ```
 
-## Tief im Detail:
-Tests zu schreiben ist mittlerweile ein fester Bestandteil der Softwareentwicklung geworden. Früher wurden Tests oft manuell durchgeführt, was jedoch sehr zeitaufwändig und fehleranfällig war. Die Verwendung von automatisierten Tests ermöglicht es Programmierern, Fehler schneller zu finden und zu beheben. Alternativ zu NUnit gibt es auch andere Test-Frameworks für C#, wie zum Beispiel xUnit oder MSTest.
+## Deep Dive:
+Tests begannen mit dem Aufkommen von TDD (Test Driven Development) um die Jahrtausendwende an Popularität zu gewinnen. Alternativen zu NUnit sind MSTest und xUnit, die ähnlich funktionieren. Beim Testen ist wichtig, kleine und isolierte Testfälle zu schreiben, um spezifische Funktionen zu prüfen.
 
-Bei der Implementierung von Tests ist es wichtig, dass sie unabhängig und isoliert voneinander ausgeführt werden können. Dies bedeutet, dass jeder Testfall keine Abhängigkeit von anderen Tests haben sollte und somit auch einzeln ausgeführt werden kann. Außerdem sollten Tests leicht verständlich und gut dokumentiert sein, damit auch andere Programmierer sie einfach nachvollziehen können.
-
-## Weitere Informationen:
-Wenn du mehr über das Schreiben von Tests in C# erfahren möchtest, empfehlen wir dir folgende Quellen:
-
-- [NUnit Dokumentation](https://github.com/nunit/docs/wiki)
-- [xUnit Dokumentation](https://xunit.net/docs/getting-started/netcore/cmdline)
-- [MSTest Dokumentation](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
-
-So, das war's auch schon! Jetzt bist du bereit, mit dem Schreiben von Tests in C# loszulegen und dein Code wird in Zukunft sicherlich fehlerfrei sein. Viel Spaß beim Coden!
+## See Also:
+- [NUnit Documentation](https://nunit.org/docs/)
+- [Microsofts xUnit-Testframework](https://xunit.net/)
+- [Test Driven Development (TDD) auf Wikipedia](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)

@@ -11,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehlermeldungen und Warnungen auf der Konsole auszugeben. Dadurch können Entwickler schnell und einfach potenzielle Probleme in ihrem Code identifizieren und beheben.
+Schreiben auf Standard Error (stderr) bedeutet, Fehlermeldungen und Diagnoseinformationen getrennt von der normalen Ausgabe (stdout) zu behandeln. Programmierer tun dies, um Fehler leicht zu identifizieren und mit Log-Dateien oder Konsolenausgaben effizienter zu arbeiten.
 
-## Wie geht's?
-Der folgende Code zeigt, wie man einen Text auf den Standardfehler ausgibt:
+## So geht's:
+Arduino bietet keine native Unterscheidung zwischen stdout und stderr. Wir verwenden `Serial.print` für die normale Ausgabe und definieren eine eigene Funktion für Fehlermeldungen.
+
 ```Arduino
-#include <stdio.h>
-int main() {
-  fprintf(stderr, "Hallo Welt!");
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Normal output
+  Serial.println("Alles in Ordnung");
+
+  // Error output
+  if (analogRead(A0) > 400) {
+    errorPrint("Spannung zu hoch!");
+  }
+}
+
+void errorPrint(String errMsg) {
+  Serial.print("ERROR: ");
+  Serial.println(errMsg);
 }
 ```
-Ausgabe:
+
+Erwartete Ausgabe:
 ```
-Hallo Welt!
+Alles in Ordnung
+ERROR: Spannung zu hoch!
 ```
 
-## Tiefere Einblicke
-Das Konzept des Schreibens auf den Standardfehler stammt aus der Zeit der UNIX-Betriebssysteme, als die Standardein- und -ausgabe auf die Konsole umgeleitet werden konnten. Heutzutage gibt es auch alternative Methoden, um Nachrichten auf der Konsole auszugeben, wie z.B. die Verwendung von Debugging-Tools oder Logging-Bibliotheken.
+## Hintergrundwissen:
+Standard Error ist eine Standard-Datenstrom, der ursprünglich in UNIX-Systemen eingeführt wurde, um Programmfehler von normalen Ausgaben zu trennen. Arduino selbst unterscheidet nicht zwischen stdout und stderr, aber wir können mit `Serial` beides simulieren. Alternativen wie `stderr`-Streams sind typischer auf Betriebssystem-Ebene oder in komplexeren Programmiersprachen wie C oder Python zu finden, nicht in der Arduino-Welt.
 
-Die Implementierung des Schreibens auf den Standardfehler ist in der Programmiersprache C verwendet, daher kann sie auch in anderen Programmiersprachen wie Arduino verwendet werden.
-
-## Siehe auch
-- [Die Verwendung von fprintf in C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Debugging-Optionen in der Arduino-IDE](https://www.arduino.cc/en/Guide/Environment#debugging-options)
+## Siehe auch:
+- [Serial - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Understanding Standard Streams - GNU](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+- [Error Handling in Arduino - Arduino Project Hub](https://create.arduino.cc/projecthub)

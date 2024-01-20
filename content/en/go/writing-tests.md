@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Go recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Go"
 category:             "Go"
@@ -12,57 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests is the process of creating small pieces of code to check if the main code is working as expected. Programmers do this to ensure that their code is functional, maintainable, and free of bugs. It also helps catch any errors or unexpected behavior before the code is deployed, saving time and effort in the long run.
+Writing tests means crafting code to check if other code works. Programmers do this to catch bugs early, ensure functionality, and avoid future heartache.
 
 ## How to:
 
-Writing tests in Go is a simple and efficient process. Here are some examples to get you started:
+Go has a built-in testing package named `testing`. To demonstrate, suppose you have a function `Add` that sums two ints:
 
 ```Go
-// Create a test file with the suffix _test.go, e.g. mycode_test.go
-package main
+// add.go
+package math
+
+func Add(x, y int) int {
+    return x + y
+}
+```
+
+Write a test like so:
+
+```Go
+// add_test.go
+package math
 
 import (
-    "testing" // Import testing package
-    "math"
+    "testing"
 )
 
-// Write a function to be tested
-func SquareRoot(x float64) float64 {
-    return math.Sqrt(x)
-}
-
-// Write a test function with the prefix Test
-func TestSquareRoot(t *testing.T) {
-    result := SquareRoot(16)
-    if result != 4 {
-        t.Errorf("SquareRoot(16) = %v; want 4", result)
+func TestAdd(t *testing.T) {
+    result := Add(1, 2)
+    expected := 3
+    if result != expected {
+        t.Errorf("Add(1, 2) = %d; want %d", result, expected)
     }
 }
 ```
 
-Running the test with `go test` should produce the following output:
+Run tests with `go test`. You'll see output like:
 
-```Go
---- FAIL: TestSquareRoot (0.00s)
-    mycode_test.go:14: SquareRoot(16) = 5.656854249492381; want 4
-FAIL
 ```
-
-The output shows that the test has failed due to the incorrect expected result. This helps identify bugs or issues in the code.
-
-More complex tests involving different scenarios and conditions can also be written using functions like `t.Run()` and assertions like `t.Errorf()`.
+PASS
+ok      example.com/your-module/math   0.002s
+```
 
 ## Deep Dive
 
-Writing tests has become a common practice in software development, especially with the rise of agile methodologies. It not only helps in catching errors but also aids in designing and refactoring code. In Go, tests are an integral part of the language and are executed with the `go test` command.
+Go introduced built-in testing in 2011. It's simpler than using a separate library. You write tests in `_test.go` files, using `testing.T` to report failures.
 
-There are other alternative testing frameworks in Go such as Testify and Ginkgo, which provide additional features and functionalities.
+Alternatives? Sure, you can use Testify for assertions, Ginkgo for BDD, or GoCheck for more advanced features. But the `testing` package is zero-dependency, easy, and often enough.
 
-When writing tests, it is important to follow good practices like naming test functions with the `Test` prefix, testing one specific behavior at a time, and using appropriate assertions. These practices help in writing maintainable tests and reduce the chances of unexpected results.
+Under the hood, `go test` compiles your code and tests together, runs them, and reports results. It's idiomatic Go: common case easy, special cases possible.
 
 ## See Also
 
-- [Official Go documentation on testing](https://golang.org/pkg/testing/)
-- [Testify framework](https://github.com/stretchr/testify)
-- [Ginkgo framework](https://github.com/onsi/ginkgo)
+For extras, check the docs:
+
+- Testing package: [https://pkg.go.dev/testing](https://pkg.go.dev/testing)
+- Table-driven tests: [https://github.com/golang/go/wiki/TableDrivenTests](https://github.com/golang/go/wiki/TableDrivenTests)

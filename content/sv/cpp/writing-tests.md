@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "C++: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "C++"
 category:             "C++"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Vad är testning och varför borde programmerare göra det? Testning är en process där man kontrollerar att ens kod fungerar som det ska och uppfyller de önskade kraven. Det är viktigt för att säkerställa att programmet är pålitligt och fungerar som det ska när det används av användare. Det är också ett sätt att upptäcka och åtgärda fel i koden innan de når slutanvändaren.
+## Vad & Varför?
+Att skriva tester handlar om att skapa kod som kontrollerar att annan kod fungerar som den ska. Programmerare gör detta för att upptäcka buggar tidigt, spara tid och säkerställa kodkvalitet.
 
-## Hur man gör det:
-Ett grundläggande sätt att testa sin kod är att använda sig av "assertions". Det innebär att man skriver kod som kontrollerar att ett uttryck är sant, annars kastas ett felmeddelande. Här är ett exempel på en assertion i C++:
+## How to:
+Testa vår kod med `assert` och generera rapporter. Upprätta först ett enkelt testfall:
 
 ```C++
-assert(2+2 == 4);
+#include <cassert>
+
+int Add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    assert(Add(2, 3) == 5); // Testar vår Add-funktion
+    // assert(Add(2, 2) == 5); // Detta skulle orsaka ett fel
+    return 0;
+}
 ```
 
-Om uttrycket är sant kommer inget att hända, men om det är falskt kommer det att kasta ett felmeddelande. Det är ett enkelt sätt att kontrollera att ens förväntningar om vad koden ska göra stämmer överens med vad som faktiskt händer.
+Kör och se att det inte finns några felmeddelanden - vårt test passerade!
 
-## Djupdykning:
-Testning har alltid varit en viktig del av programmering, men i takt med att programmen blir allt mer komplext och används i större skala, blir testning ännu viktigare. Ett annat sätt att testa sin kod är genom att använda sig av testramverk som till exempel Google Test eller Catch2. Dessa ramverk ger fler möjligheter för att skriva och köra tester och ger en mer strukturerad och organiserad approach.
+## Deep Dive
+Tester började bli allmänt i 70-talet. Alternativ till `assert` inkluderar enhetstestramverk som Google Test. Dessa ramverk tillåter mer komplex tester och bättre rapportering.
 
-Ett annat alternativ är "Test Driven Development" (TDD), där man skriver testkod innan man skriver själva produktionskoden. Detta hjälper till att fokusera på vad koden ska åstadkomma och skapar även en säkerhetsnet för att upptäcka eventuella problem senare.
-
-## Se även:
-- [Google Test](https://github.com/google/googletest)
-- [Catch2](https://github.com/catchorg/Catch2)
-- [Test Driven Development för nybörjare](https://youtu.be/q1xob-rDD2g)
+## See Also
+- [Google Test GitHub Repository](https://github.com/google/googletest)
+- [C++ Reference on assert](http://cplusplus.com/reference/cassert/assert/)

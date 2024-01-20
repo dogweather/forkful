@@ -1,7 +1,7 @@
 ---
-title:                "シ answered Jun 12 'テストを書く"
-html_title:           "Swift: シ answered Jun 12 'テストを書く"
-simple_title:         "シ answered Jun 12 'テストを書く"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なんで？
+## What & Why? (テストの書き方とその理由)
+テストとは、コードが正しく動作することを保証するためのものです。バグを見つけ、将来的な機能追加やリファクタリングでのリスクを減らすためにプログラマはテストを行います。
 
-テストを書くとは、単純にコードの動作を確認することです。プログラマーがそれをする理由は、コードの品質を保証し、バグを見つけて修正するためです。また、チームで作業する際には、同じコードを複数人で書くことによってコードの一貫性を保つこともできます。
-
-## 作り方：
-
-```Swift
-func add(_ a: Int, _ b: Int) -> Int {
-    return a + b
-}
-// add 関数をテストする
-assert(add(2, 2) == 4, "add 関数は正しく動作しません。")
-```
+## How to: (やり方)
+Swiftでのテスト書き方の例は次の通りです。XCTestフレームワークを使用しています。
 
 ```Swift
-struct Person {
-    let name: String
-    let age: Int
-    
-    func greet() -> String {
-        return "こんにちは、私の名前は\(name)です。\(age)歳です。"
+import XCTest
+
+class MyTests: XCTestCase {
+    func testExample() {
+        let result = "Hello, World!"
+        XCTAssertEqual(result, "Hello, World!", "The result should be 'Hello, World!'")
     }
 }
-// Person 構造体をテストする
-let person = Person(name: "太郎", age: 30)
-assert(person.greet() == "こんにちは、私の名前は太郎です。30歳です。", "greet 関数は正しく動作しません。")
+
 ```
 
-## 詳しく：
+コードを実行すると、以下の出力が得られます。
 
-テストは、プログラミングの歴史の中で重要な役割を果たしてきました。以前は、人間が手動でコードをテストすることが一般的でしたが、現在ではプログラマーが自動化されたテストを作成することができるようになりました。代替手法としては、デバッグツールを使用したり、コードをレビューしたりすることもあります。テストを実装する際には、テストカバレッジ（コードのどの部分がテストされているか）を確認することも重要です。
+```
+Test Case '-[MyTests testExample]' passed (0.001 seconds).
+```
 
-## 参考にする：
+## Deep Dive (深堀り)
+テストはTDD（テスト駆動開発）の中核で、初期はSmalltalkの開発に使われました。他のテストフレームワークにはQuick/NimbleやSpectreなどがあります。XCTestはAppleのXcodeに組み込まれており、テストケース、アサーション、テストスイート管理が可能です。
 
-- [テスト駆動開発（TDD）について](https://www.geeksforgeeks.org/test-driven-development-tdd/)
-- [Swift でのユニットテストの作成](https://www.hackingwithswift.com/articles/101/how-to-write-unit-tests-in-swift)
+## See Also (関連情報)
+- AppleのXCTestドキュメント: [Testing Your Apps in Xcode](https://developer.apple.com/documentation/xctest)
+- SwiftにおけるTDDについての記事: [Test-Driven Swift Development](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
+- 別のテストフレームワークQuick/NimbleのGitHub: [Quick/Nimble on GitHub](https://github.com/Quick/Nimble)

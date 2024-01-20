@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "PowerShell: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Testaaminen on prosessi, jossa ohjelmoija varmistaa koodin toimivuuden ja virheettömyyden. Testaaminen on tärkeä osa ohjelmointia, koska se auttaa vähentämään bugien määrää ja parantaa ohjelman laatua.
+## What & Why? - Mikä & Miksi?
+Testaus tarkoittaa koodisi varmistamista: tekeekö se mitä pitää. Testaamalla säilytät mielenrauhan ja säästät aikaa, kun bugit löytyvät nopeasti.
 
-## Näin teet sen:
-PowerShell-ohjelmointikieli sisältää sisäänrakennetun unittest-moduulin, joka mahdollistaa testien kirjoittamisen koodin yhteyteen. Alla on esimerkki siitä, miten voit kirjoittaa yksinkertaisen testin:
+## How to: - Kuinka Tehdään:
+Testien kirjoittaminen PowerShellissa käyttämällä Pester-testikehystä:
 
 ```PowerShell
-Describe "Luvun neliö" {
-    It "Toimii oikein" {
-        $luku = 5
-        $tulos = $luku * $luku
-        $odotettu = 25
-        $tulos | Should -Be $odotettu
+# Asenna Pester-moduuli, jos sitä ei vielä ole
+Install-Module -Name Pester -Scope CurrentUser -Force -SkipPublisherCheck
+
+# Lataa Pester
+Import-Module Pester
+
+# Luo yksinkertainen funktio, jota testataan
+function Get-MultiplyResult($a, $b) {
+    return $a * $b
+}
+
+# Kirjoita testit
+Describe "Get-MultiplyResult Tests" {
+    It "Kertoo luvut oikein" {
+        Get-MultiplyResult 7 3 | Should -Be 21
+    }
+    It "Ei palauta virheellistä tulosta" {
+        Get-MultiplyResult 2 2 | Should -Not -Be 5
     }
 }
+
+# Suorita testit
+Invoke-Pester
 ```
 
-Testin nimi annetaan avainsanalla *Describe*, jonka jälkeen avainsanan *It* avulla määritellään testin tarkoitus. Testissä annetaan muuttujille arvoja ja verrataan odotettua tulosta saatuun tulokseen *Should* -avainsanalla.
+Testien tulokset näyttävät seuraavalta:
 
-## Syvällisempi sukellus:
-Testaukseen on olemassa myös muita menetelmiä kuten manuaalinen testaus tai käyttöliittymätestaus. Kuitenkin automaattiset yksikkötestit, kuten PowerShellin unittest-moduuli, ovat yleisesti käytettyjä ja luotettavia tapoja testata koodia. Testien kirjoittaminen myös auttaa kehittäjää ymmärtämään koodin toimintaa ja havaitsemaan mahdollisia virheitä.
+```
+Describing Get-MultiplyResult Tests
+ [+] Kertoo luvut oikein 40ms
+ [+] Ei palauta virheellistä tulosta 5ms
+```
 
-## Katso myös:
-Voit löytää lisätietoja PowerShellin unittest-moduulista ja testaamisesta yleisesti esimerkiksi seuraavista lähteistä:
-- https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/differences-between-unit-tests-and-functional-tests?view=powershell-7
-- https://powershellexplained.com/2017-03-21-Powershell-unit-testing-introduction/
-- https://www.softwaretestinghelp.com/unit-testing-tutorial/
+## Deep Dive - Syväsukellus:
+Testaaminen PowerShellissä ei ole aina ollut yhtä helppoa. Pester-testikehys ilmestyi vuonna 2015 ja muutti pelin. Vaihtoehtoja on, esimerkiksi PSUnit, mutta Pester on suosituin ja PowerShellin yhteisön eniten hyväksymä. Testeissä käytetään BDD-tyylisiä "Describe" ja "It" lohkoja, mikä tekee niistä luettavia ja ylläpidettäviä.
+
+## See Also - Katso Myös:
+- Pester-projektin GitHub-sivu: https://github.com/pester/Pester
+- PowerShellin testaamisen parhaat käytännöt: https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/writing-portable-modules?view=powershell-7.1
+- Mikä on BDD (Behavior-Driven Development): https://en.wikipedia.org/wiki/Behavior-driven_development

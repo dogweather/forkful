@@ -1,7 +1,7 @@
 ---
-title:                "「CSVを活用する」"
-html_title:           "Lua: 「CSVを活用する」"
-simple_title:         "「CSVを活用する」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSVとは？プログラマーが使う理由とは？
+## What & Why? 何となぜ？
+CSVは「Comma-Separated Values」の略だ。テキストデータを簡単に表形式で保持、交換するために使う。プログラマはデータを保存したり他のプログラムと共有するためにCSVを扱う。
 
-CSVとは、Comma Separated Valuesの略で、データをコンマで区切った形式で保存するファイル形式です。プログラマーは、CSVを使うことでデータを簡単に取り扱うことができ、より柔軟なデータ処理が可能になります。
+## How to: どうやるか
+LuaでCSVファイルを読み込む、編集する、そして書き出す基礎を見ていこう。
 
-## How to:
-使い方：
-
-CSVファイルを読み込むには、まずLuaにcsvパッケージをインストールし、その後ファイルを開くためのファイルハンドルを作成します。
 ```Lua
-local csv = require("csv")
-local file = csv.open("example.csv")
-```
-
-次に、データを読み込みます。例えば、ヘッダー行を除いたデータ全体を読み込む場合は、次のようにします。
-```Lua
-local data = file:lines() --データを読み込む
-for i, record in ipairs(data) do --データをループで処理する
-  print(record[1]) --1列目を出力する
+-- CSVファイルを読み込む
+function read_csv(file_path)
+  local file = io.open(file_path, "r")
+  local data = {}
+  for line in file:lines() do
+    table.insert(data, line:split(","))
+  end
+  file:close()
+  return data
 end
+
+-- ストリングのスプリット機能を追加する（Luaには標準でないので）
+function string:split(separator)
+  local fields = {}
+  local pattern = string.format("([^%s]+)", separator)
+  self:gsub(pattern, function(c) fields[#fields+1] = c end)
+  return fields
+end
+
+-- CSVを編集する
+function edit_csv(data)
+  -- たとえば、全ての行の最初の値を大文字にする
+  for _, row in ipairs(data) do
+    row[1] = row[1]:upper()
+  end
+end
+
+-- CSVファイルに書き出す
+function write_csv(file_path, data)
+  local file = io.open(file_path, "w")
+  for _, row in ipairs(data) do
+    file:write(table.concat(row, ",") .. "\n")
+  end
+  file:close()
+end
+
+-- 実行例
+local csv_data = read_csv("example.csv")
+edit_csv(csv_data)
+write_csv("example_modified.csv", csv_data)
 ```
 
-CSVファイルにデータを追加するには、次のようにします。
-```Lua
-file:write({"John", "Doe", 30, "john@example.com"}) --データを1行追加する
-```
+## Deep Dive 深掘り
+CSVは1983年にIBM PCで使われ始めた。JSONやXMLなどの形式があるが、CSVはそのシンプルさで広く使われる。CSVファイルはテキストエディタで開け、人間が読める。しかし、CSVは規格が厳格でなく、パースが面倒な場合もある。Luaでは、標準ライブラリが限られているため、CSVを操作するには独自の関数を書くか、外部ライブラリを使用する必要がある。
 
-## Deep Dive:
-詳細情報：
-
-CSVの歴史的な背景は、1972年にテキサス州の債券トレーダーであるグリーンダムによって開発されたことにあります。当時、債券の価格を計算するためにコンピューターを使用する必要があり、コンマを使ってデータが分かれるようにすることでデータ処理を効率化することを目的としていました。
-
-代替手段として、プログラマーはJSONやXMLなどの他のフォーマットを使用することができますが、CSVはよりシンプルであるため、あまり複雑なデータ処理が必要がない場合には便利です。
-
-CSVの実装に関しては、Luaのcsvパッケージの他にも、CSVライブラリを使用することもできます。また、一部のデータベースでもCSV形式でのデータのインポートやエクスポートが可能です。
-
-## See Also:
-参考リンク：
-
-- Luaのcsvパッケージ - https://github.com/leegao/lua-csv
-- CSVライブラリ - https://github.com/geoffleyland/luacsv
-- データベースとCSV - http://www.mlwiki.org/index.php/Database_tools_and_CSV
+## See Also 関連情報
+- Lua公式ドキュメント: https://www.lua.org/manual/5.4/
+- CSVの仕様（RFC 4180）: https://tools.ietf.org/html/rfc4180
+- LuaRocksで利用可能なCSVライブラリ: https://luarocks.org/modules/tags/csv

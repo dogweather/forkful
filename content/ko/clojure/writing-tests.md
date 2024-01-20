@@ -1,6 +1,6 @@
 ---
 title:                "테스트 작성하기"
-html_title:           "Clojure: 테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이며 왜?
+테스트 코딩은 코드가 올바르게 동작하는지 확인하기 위한 과정입니다. 프로그래머는 예상치 못한 오류를 방지하고, 코드의 품질을 보증하기 위해 테스트를 작성합니다.
 
-프로그래머는 테스트를 작성하는 이유가 있습니다. 테스트를 작성하는 것은 코드가 예상대로 작동하는지 확인하는 것입니다. 이렇게 하면 버그가 발생할 가능성을 줄일 수 있어 작업이 더 쉬워집니다.
-
-# 하는 방법:
+## 작성 방법:
+Clojure에서 테스트를 작성하려면 `clojure.test` 라이브러리를 사용합니다.
 
 ```Clojure
+(require '[clojure.test :refer [deftest is testing]])
+
 (deftest test-addition
-  (is (= (+ 1 2) 3))
-  (is (= (+ 5 10) 15)))
+  (testing "기본 덧셈 기능"
+    (is (= 4 (+ 2 2)))
+    (is (= 7 (+ 3 4)))))
+
+(clojure.test/run-tests)
 ```
 
-출력:
+위 코드는 두 개의 덧셈 테스트를 수행하며, 테스트 결과는 다음과 같습니다.
 
-```
-lein test
-
-lein test user
-
-Ran 1 tests containing 2 assertions.
-0 failures, 0 errors
+```Clojure
+{:test 2, :pass 2, :fail 0, :error 0, :type :summary}
 ```
 
-# 깊게 파고들기:
+## 깊이 알아보기:
+Clojure의 테스트 프레임워크는 JUnit 같은 자바의 테스팅 도구와 같은 역할을 합니다. 다른 대안으로는 Midje나 Speclj 같은 도구가 있지만 `clojure.test`는 Clojure 코어에 포함되어 있어서 별도의 설치 없이 사용할 수 있습니다. 테스트 함수 안에서는 `is` 매크로를 사용하여 실제 값과 예상 값을 비교합니다.
 
-테스트를 작성하는 것은 코드를 안전하고 신뢰할 수 있게 만들어 줍니다. 예전에는 테스트를 수동으로 작성해야 했지만, Clojure에서는 테스트를 쉽게 작성할 수 있는 라이브러리가 제공됩니다. 또 다른 옵션으로는 REPL을 사용하여 직접 코드를 실행해 보는 것도 있습니다. Clojure는 기본적으로 테스트를 작성하기 쉬운 언어이기 때문에 이미 잘 알려진 테스트 프레임워크를 사용하지 않는 것이 좋습니다.
-
-# 자료 참고:
-
-- [ClojureDocs 테스트 라이브러리](https://clojuredocs.org/clojure.test)
+## 참고자료:
+- Clojure 공식 가이드: [Clojure - Functional Programming for the JVM](https://clojure.org/)
+- `clojure.test` 사용법: [Clojure Test Framework](https://clojure.github.io/clojure/clojure.test-api.html)
+- 대안적인 테스트 라이브러리:
+  - [Midje on GitHub](https://github.com/marick/Midje)
+  - [Speclj on GitHub](https://github.com/slagyr/speclj)

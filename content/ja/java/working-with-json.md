@@ -1,7 +1,7 @@
 ---
-title:                "JSONを使う"
-html_title:           "Java: JSONを使う"
-simple_title:         "JSONを使う"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
+## What & Why?
+JSONはデータを保存・転送するフォーマット。軽く、読み書きしやすく、多言語対応で人気。
 
-JSONとは、JavaScript Object Notationのことで、データをハイレベルで扱えるようにするために使用されるフォーマットです。プログラマーたちは、JSONを使用してデータを交換したり、保存したりすることができるようになります。
+## How to:
+JavaでJSONを扱うには`org.json`か`com.google.gson`ライブラリ使うのが定番。例を見よう。
 
-## 使い方：
+```java
+import org.json.JSONObject;
 
-```Java
-// JSONライブラリをインポートする
-import org.json.*;
+public class JsonExample {
+    public static void main(String[] args) {
+        // JSONオブジェクトを作成
+        JSONObject obj = new JSONObject();
+        obj.put("name", "Yamada");
+        obj.put("age", 25);
 
-// Mapを作成する
-Map<String, String> member = new HashMap<>();
-member.put("name", "Bob");
-member.put("age", "25");
-member.put("occupation", "programmer");
-
-// MapをJSON形式に変換する
-JSONObject json = new JSONObject(member);
-
-// JSONを表示する
-System.out.println("Member: " + json);
-
-// JSONからデータを取得する
-String name = json.getString("name");
-int age = json.getInt("age");
-String occupation = json.getString("occupation");
-
-// 取得したデータを表示する
-System.out.println("Name: " + name);
-System.out.println("Age: " + age);
-System.out.println("Occupation: " + occupation);
+        // JSON文字列に変換
+        String jsonStr = obj.toString();
+        System.out.println(jsonStr);
+        
+        // JSON文字列からオブジェクトを読み込む
+        JSONObject obj2 = new JSONObject(jsonStr);
+        System.out.println("Name: " + obj2.getString("name"));
+        System.out.println("Age: " + obj2.getInt("age"));
+    }
+}
 ```
-
-出力結果は以下のようになります：
-
+出力:
 ```
-Member: {"name": "Bob", "age": 25, "occupation": "programmer"}
-Name: Bob
+{"name":"Yamada","age":25}
+Name: Yamada
 Age: 25
-Occupation: programmer
 ```
 
-## 詳しく見る：
+## Deep Dive
+JSON（JavaScript Object Notation）は、2001年にJavaScript内のオブジェクト表記法から派生。REST APIや設定ファイルで定番。XMLやYAMLが代替えとしてあるが、JSONはパースが速く、書式がシンプル。Javaでは`javax.json`やJacksonなど、さまざまな実装があります。
 
-JSONは、2001年にDouglas Crockfordによって作成されました。XMLやCSVのような他のデータフォーマットに比べて、書きやすい構文を持つことで人気があります。JSONの代替として、XMLやCSVなどがありますが、JSONはユーザーにとってより読みやすく、処理も速いと言われています。
-
-JSONは、プログラミング言語で直接サポートされています。Javaでは、JSONを扱うためのライブラリが提供されています。
-
-## 関連リンク：
-
-- [JSON公式サイト](https://www.json.org/)
-- [JSON Wikipediaページ](https://ja.wikipedia.org/wiki/JSON)
-- [JavaでJSONを扱う方法のチュートリアル](https://www.baeldung.com/java-org-json)
+## See Also
+- JSON.org（概要と文法）: [http://json.org/](http://json.org/)
+- Google Gson GitHubページ（ドキュメントとダウンロード）: [https://github.com/google/gson](https://github.com/google/gson)
+- JSON in Java（org.jsonライブラリのリファレンス）: [https://stleary.github.io/JSON-java/](https://stleary.github.io/JSON-java/)

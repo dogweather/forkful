@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Elixir: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist YAML & Warum benutzen es Programmierer?
+## Was & Warum?
+YAML ist ein Format für Datenstrukturen, ähnlich wie JSON, aber menschenlesbarer. Programmierer nutzen es oft für Konfigurationsdateien und Datenaustausch, weil es einfach zu schreiben und zu lesen ist.
 
-YAML ist eine plattformübergreifende Sprache zur Darstellung von Daten in einem menschenlesbaren Format. Programmierer nutzen YAML, um Konfigurationsdateien und andere strukturierte Daten zu erstellen, die leicht zu lesen und zu bearbeiten sind.
+## How to:
+### YAML in Elixir lesen:
+```elixir
+# Abhängigkeit in mix.exs: 
+# {:yamerl, "~> 0.8"}
 
-## Wie man es benutzt:
+defmodule Example do
+  def read_yaml do
+    {:ok, yaml} = File.read("config.yml")
+    :yamerl_constr.string(yaml)
+  end
+end
 
-Benutze die `Elixir YAML` Bibliothek, um Daten in YAML-Format zu konvertieren und umgekehrt.
-
-```Elixir
-# YAML zu Elixir
-YAML.decode("""
-  - name: Max
-    age: 25
-  - name: Anna
-    age: 30
-""")
-# => [%{"name" => "Max", "age" => 25}, %{"name" => "Anna", "age" => 30}]
-
-# Elixir zu YAML
-YAML.encode([
-  %{"name" => "Max", "age" => 25},
-  %{"name" => "Anna", "age" => 30}
-])
-# => - name: Max
-#    age: 25
-#  - name: Anna
-#    age: 30
+# Verwendung:
+Example.read_yaml()
+# => [{:ok, [deine_yaml_daten_hier]}]
 ```
 
-## Tiefere Einblicke:
+### YAML in Elixir schreiben:
+```elixir
+# YAML-Writer gibt es nicht direkt in Elixir, aber du kannst Jason
+# für JSON nutzen und dann zu YAML konvertieren (mit anderen Tools).
 
-YAML wurde ursprünglich als Alternative zu XML entwickelt und zeichnet sich durch eine einfachere und intuitivere Syntax aus. Es wird von vielen Programmiersprachen, einschließlich Elixir, unterstützt und eignet sich ideal für das Erstellen von Konfigurationsdateien, Datenübertragung und Speichern von strukturierten Daten.
+data = %{name: "Max", age: 28, languages: ["Elixir", "Ruby"]}
+json_string = Jason.encode!(data)
 
-Einige Programmierer bevorzugen möglicherweise JSON oder TOML gegenüber YAML. JSON hat eine sehr ähnliche Syntax zu YAML, aber es werden unterschiedliche Datentypen unterstützt. TOML ist eine noch jüngere Alternative, die sich durch eine strengere Syntax auszeichnet.
+# Konvertierung nach YAML außerhalb von Elixir durchführen
+```
 
-Die Implementation von YAML in Elixir basiert auf der `libyaml` Bibliothek. Diese Bibliothek ermöglicht es Elixir, Daten in YAML-Format zu lesen und zu schreiben.
+## Deep Dive
+YAML, "YAML Ain't Markup Language", wurde Anfang der 2000er als einfacheres Format gegenüber XML entwickelt. Manchmal gilt JSON als Alternative zu YAML, besonders wenn Performance zählt, aber YAML bietet bessere Lesbarkeit für komplexe Konfigurationen. Die `yamerl` Bibliothek ermöglicht das Parsen von YAML in Elixir, für das Schreiben muss man meist auf externe Tools zurückgreifen, da es aktuell keine reine Elixir-Lösung gibt.
 
-## Siehe auch:
-
-* [YAML Spezifikation](https://yaml.org/spec/)
-* [Offizielle YAML Website](https://yaml.org/)
+## See Also
+YAML-Spezifikation: https://yaml.org/spec/1.2/spec.html  
+`yamerl` Hex Paket: https://hex.pm/packages/yamerl  
+Elixir's offizielle Website: https://elixir-lang.org/  
+JSON in Elixir mit `Jason`: https://hex.pm/packages/jason

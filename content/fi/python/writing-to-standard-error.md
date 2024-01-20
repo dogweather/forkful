@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Python: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,19 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Kirjoittaminen standardi virheeseen (standard error) on tapa, jolla ohjelmoijat voivat näyttää virheviestejä ohjelmastaan. Tämä auttaa ohjelmoijia löytämään ja korjaamaan ohjelmansa virheitä nopeammin.
+## What & Why? (Mikä ja Miksi?)
+Kirjoitetaan standardivirheeseen, kun halutaan erottaa ohjelman virheilmoitukset ja tavallinen output. Näin logien luku ja virheiden käsittely helpottuvat.
 
-## Kuinka:
-`` ` Python
+## How to: (Kuinka tehdä:)
+```Python
 import sys
-sys.stderr.write("Tämä on virheviesti!")
-`` `
-Esimerkkilähtö:
-`Tämä on virheviesti!`
 
-## Syventävä syventyminen:
-Kirjoittaminen standardi virheeseen on keksitty osaksi Unix käyttöjärjestelmää, ja on nykyään yleisesti käytetty tapa näyttää virheviestejä. Vaihtoehtoisia tapoja ovat esimerkiksi tulostaminen standardiin tulosvirtaan tai luokkien käyttäminen virheiden käsittelemiseen. Implementation yksityiskohdat vaihtelevat eri ohjelmointikielissä.
+# Tavallinen tuloste
+print("Tämä menee standarditulosteeseen.")
 
-## Katso myös:
-[Python virheiden käsittely](https://docs.python.org/3/tutorial/errors.html)
+# Virheilmoitus
+print("Tämä on virheilmoitus!", file=sys.stderr)
+
+# Esimerkkitulostus
+# Tavallinen tuloste:
+#   Tämä menee standarditulosteeseen.
+# Virheilmoitus:
+#   Tämä on virheilmoitus!
+```
+
+## Deep Dive (Syväsukellus)
+Ennen oli vain tuloste. Unixissa keksittiin standardivirhe eroon ohjaamaan virheet. Voit käyttää `sys.stderr.write()`, joka on matalan tason vaihtoehto. Tämä kirjoittaa virheilmoitusten virtaan ilman puskurointia, toisin kuin `print`.
+
+## See Also (Katso Myös)
+- [Pythonin virallinen dokumentaatio sys-moduulista](https://docs.python.org/3/library/sys.html)
+- [Unix-philosophy ja standard streams](http://www.catb.org/esr/writings/taoup/html/ch01s06.html)
+- [SO-ketju standardivirheen käsittelystä](https://stackoverflow.com/questions/5574702/how-to-print-to-stderr-in-python)

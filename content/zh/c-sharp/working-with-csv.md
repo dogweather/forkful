@@ -1,7 +1,7 @@
 ---
-title:                "cscv 文件处理"
-html_title:           "C#: cscv 文件处理"
-simple_title:         "cscv 文件处理"
+title:                "处理 CSV 文件"
+html_title:           "Bash: 处理 CSV 文件"
+simple_title:         "处理 CSV 文件"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-What & Why?
+## What & Why? (是什么 & 为什么?)
+CSV，即逗号分隔值，简单且广泛用于存储表格数据。程序员处理CSV是因为它的通用性强，轻松与Excel和数据库配合使用。
 
-CSV（逗号分隔值）是一种用于存储和交换数据的格式，在计算机编程中经常被使用。它使用逗号作为字段之间的分隔符，因此被称为“逗号分隔值”。程序员经常使用CSV来读取和写入数据，因为它是一种简单和方便的格式，可被大多数编程语言轻松处理。
-
-How to:
-
+## How to: (如何操作)
+读取CSV文件：
 ```C#
-// 创建一个CSV文件并写入数据
 using System;
 using System.IO;
 
-namespace CSVExample
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // 创建一个包含4列的数据表
-            string[,] data = new string[,] { {"Name", "Age", "City", "Country"}, {"John", "25", "New York", "USA"}, {"Maria", "30", "London", "UK"}, {"Gao", "28", "Beijing", "China"} };
+class Program {
+    static void Main() {
+        var csvData = File.ReadAllLines("data.csv");
+        foreach (var line in csvData) {
+            var values = line.Split(',');
+            Console.WriteLine($"Name: {values[0]}, Age: {values[1]}");
+        }
+    }
+}
+```
+输出样例：
+```
+Name: John, Age: 30
+Name: Jane, Age: 25
+```
 
-            // 创建CSV文件并写入数据
-            using (StreamWriter writer = new StreamWriter("data.csv"))
-            {
-                for (int i = 0; i < data.GetLength(0); i++)
-                {
-                    string line = "";
-                    for (int j = 0; j < data.GetLength(1); j++)
-                    {
-                        // 在每个值之间用逗号分隔
-                        line += data[i, j] + ",";
-                    }
-                    writer.WriteLine(line.TrimEnd(',')); // 去除最后一个逗号并写入文件
-                }
+写入CSV文件：
+```C#
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Program {
+    static void Main() {
+        var people = new List<(string Name, int Age)>
+        {
+            ("John", 30),
+            ("Jane", 25)
+        };
+
+        using (var writer = new StreamWriter("output.csv"))
+        {
+            foreach (var person in people) {
+                var line = $"{person.Name},{person.Age}";
+                writer.WriteLine(line);
             }
         }
     }
 }
 ```
+无需样例输出，创建了 `output.csv` 文件。
 
-输出:
+## Deep Dive (深入探索)
+CSV出现于早期计算机，便于文本数据表示。XML和JSON是现代替代品，但CSV因其简洁性依然流行。C# 处理CSV可以直接使用字符串操作或依赖第三方库如`CsvHelper`。面对复杂CSV数据，考虑规范化处理，比如引号和逗号的数据封装，避免解析错误。
 
-```C#
-Name,Age,City,Country
-John,25,New York,USA
-Maria,30,London,UK
-Gao,28,Beijing,China
-```
-
-Deep Dive:
-
-CSV最早用于电子表格软件的数据交换，但现在也被广泛应用于Web开发和数据库管理。它比其他格式如Excel和JSON更简单，因为它只使用文本字符来表示数据，而不需要复杂的编码。有时，CSV文件可能会带来一些挑战，比如处理嵌套数据或带有特殊字符的数据。此时，程序员可以尝试使用库来解析CSV文件，如CsvHelper或CsvReader，以简化操作。
-
-See Also:
-
-- [CsvHelper](https://joshclose.github.io/CsvHelper/) - 一个用于读取、写入和转换CSV文件的开源库。
-- [CsvReader](https://www.codeproject.com/Articles/9258/A-Fast-CSV-Reader) - 一个高性能的CSV文件读取器。
+## See Also (参考资料)
+- Microsoft C# 文档: https://docs.microsoft.com/zh-cn/dotnet/csharp/
+- CsvHelper 库: https://joshclose.github.io/CsvHelper/
+- CSV 规范详解: https://tools.ietf.org/html/rfc4180

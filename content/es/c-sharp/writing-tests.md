@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "C#: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "C#"
 category:             "C#"
@@ -10,46 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Escribir pruebas de código es un proceso clave en el desarrollo de software que implica crear y ejecutar casos de prueba para garantizar que el código funcione correctamente. Los programadores realizan este proceso para detectar y corregir errores en su código antes de que llegue a los usuarios finales, lo que a su vez mejora la calidad y estabilidad del software.
+Escribir tests significa crear código que verifica que otros códigos funcionan como deben. Programadores los usan para asegurarse de que sus aplicaciones son estables y para prevenir fallas futuras al modificar el código.
 
-## Cómo:
+## Cómo hacerlo:
 
-El primer paso para escribir pruebas en C# es asegurarse de tener un proyecto de Visual Studio creado y una clase de prueba en la que se puedan escribir las pruebas. A continuación, se deben importar los espacios de nombres necesarios para escribir las pruebas:
-
-```C#
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-```
-
-A continuación, se puede proceder a escribir las pruebas utilizando los diferentes atributos y métodos proporcionados por el marco de pruebas de Visual Studio. Por ejemplo, para probar una función que devuelve un número entero, se puede utilizar el atributo ```[TestMethod]``` y el método de aserción ```Assert.AreEqual()```:
+Para escribir pruebas en C#, se utiliza principalmente el framework NUnit. A continuación, un ejemplo de cómo implementar una prueba unitaria básica con NUnit:
 
 ```C#
-[TestMethod]
-public void TestSum() 
+using NUnit.Framework;
+
+namespace Tests
 {
-    Assert.AreEqual(10, sum(5, 5)); //se espera que la suma de 5 y 5 sea igual a 10
+    public class CalculosTest
+    {
+        [Test]
+        public void Suma_DeberiaRetornarSumaCorrecta()
+        {
+            // Arrange
+            var a = 5;
+            var b = 10;
+            var esperado = 15;
+
+            // Act
+            var resultado = Suma(a, b);
+
+            // Assert
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        private int Suma(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+    }
 }
 ```
 
-Al ejecutar las pruebas, se obtendrá una salida similar a la siguiente:
+Y así se ve la salida cuando la prueba pasa exitosamente:
 
 ```
-Passed! 
-Total tests: 1 
-Passed: 1 
-Failed: 0 
-Time taken: 0.04 seconds
+Test Passed: Suma_DeberiaRetornarSumaCorrecta
 ```
 
-## Profundizando:
+## Deep Dive
 
-La práctica de escribir pruebas de código va de la mano con el desarrollo de software y es esencial para garantizar la seguridad y calidad de los programas. Existen diferentes marcos y herramientas para escribir pruebas, como NUnit o xUnit, que ofrecen características adicionales y flexibilidad. Además, escribir pruebas ayuda a la detección temprana de errores en el código, lo que a su vez reduce el tiempo y el costo necesarios para arreglarlos más adelante en el proceso de desarrollo.
+Historia: Kent Beck creó el desarrollo impulsado por pruebas (TDD) en la década de 1990. TDD promueve escribir tests antes del código de producción.
+
+Alternativas: A parte de NUnit, existen otros frameworks como MSTest y xUnit en el mundo de .NET para pruebas unitarias.
+
+Detalles de Implementación: Al escribir tests, es importante mantenerlos aislados y enfocados. Utiliza mocks y stubs para simular comportamientos externos.
 
 ## Ver también:
 
-- [Mastering Visual Studio Testing Tools](https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019)
-
-___
-**Nota del traductor:** Este artículo se ha escrito en un estilo informal y directo, evitando palabras y frases innecesarias para una lectura fluida y concisa.
+- Documentación oficial de NUnit: https://nunit.org/
+- Tutorial de TDD en C#: https://docs.microsoft.com/en-us/learn/modules/test-driven-development-csharp/
+- Comparación entre frameworks de tests para .NET: https://dzone.com/articles/comparing-net-unit-testing-frameworks

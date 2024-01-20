@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "Java: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Java"
 category:             "Java"
@@ -11,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Skrivning till standardfelet (stderr) används för att rapportera felmeddelanden. Programmerare gör detta för att skilja vanlig utdata från felrapporter, vilket förenklar felsökning och loggning.
 
-Att skriva till standard error är en vanlig praxis bland programmerare för att rapportera fel eller avvikelser i ett program. Istället för att skriva ut felmeddelanden till standardutmatningen, som kan vara svår att hitta bland annan utmatning, kan man skriva dem till standard error för tydligare och mer strukturerad rapportering.
+## How to:
+Skriv till `System.err` för att få meddelanden till standardfelet.
 
-## Hur man gör:
-
-```
-Java System:
-System.err.println("Detta är ett felmeddelande!"); 
-```
-Output: ```Detta är ett felmeddelande!```
-
-```
-Try-Catch:
-try {
-  // kodblock där felet kan uppstå
-} catch (Exception e) {
-  System.err.println("Detta är ett felmeddelande!");
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("Detta är vanlig utdata.");
+        System.err.println("Detta är ett felmeddelande.");
+    }
 }
 ```
-Output: ```Detta är ett felmeddelande!```
 
-## Djupdykning:
+Kör kodexemplet. Utdata kommer se ut såhär, men ordningen kan variera beroende på systemets buffring:
 
-Att skriva till standard error är en standardiserad metod för att rapportera fel och varningar i program. Det kan göras genom att använda ```System.err.println()```, som utnyttjar standard error-flödet i JVM. Alternativet till att skriva till standard error är att använda loggfilning, men det är mer lämpligt för att spåra händelser i produktion istället för att rapportera fel under utveckling.
+```
+Detta är vanlig utdata.
+Detta är ett felmeddelande.
+```
 
-Det är också värt att nämna att flera programmeringsspråk, som till exempel C++, Java och Python, tillåter att man skriver till standard error på liknande sätt.
+## Deep Dive
+Historiskt har felmeddelanden och vanlig utdata separerats för att underlätta behandlingen av dessa strömmar oberoende av varandra. Alternativ för att skriva till stderr inkluderar loggningbibliotek som Log4j, som erbjuder mer sofistikerad hantering av felmeddelanden. Intern användning av `System.err` innebär att Java använder en intern `PrintStream`-instans kopplad till stderr-strömmen som definieras av värdmiljön.
 
-## Se också:
-
-[Java System klassens dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+## See Also
+- [Oracle's documentation on System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Tutorial on Java logging](https://www.baeldung.com/java-logging-intro)
+- [Log4j – A popular Java logging framework](https://logging.apache.org/log4j/2.x/)

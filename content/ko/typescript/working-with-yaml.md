@@ -1,7 +1,7 @@
 ---
-title:                "YAML로 작업하기"
-html_title:           "TypeScript: YAML로 작업하기"
-simple_title:         "YAML로 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why?
+프로그래머들이 YAML을 다루는 것은 설정, 인프라 코드, 데이터 교환 등을 위해 사용되는 데이터 직렬화 형식입니다. YAML은 읽기 쉽고 간단해서 널리 채택되고 있어요.
 
-YAML 작업은 데이터 직렬화 및 구성 파일 생성을 위한 유용한 방법입니다. 프로그래머들은 YAML 작업을 통해 코드를 더 쉽게 읽고 유지 관리할 수 있으며, 가독성이 높은 구성 파일을 생성할 수 있습니다.
+## How to:
+YAML 파일을 읽고 쓰는 예제를 확인해보세요.
 
-## 하고자하는 것:
+```TypeScript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
 
-```Typescript
 // YAML 파일 읽기
-const yaml = require('js-yaml');
-const fs = require('fs');
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.safeLoad(fileContents);
+console.log(data);
 
-try {
-  // YAML 파일 로드
-  const config = yaml.safeLoad(fs.readFileSync('config.yaml', 'utf8'));
-
-  console.log(config);
-} catch (error) {
-  console.log(error);
-}
-
-// YAML 파일 생성
-const yaml = require('js-yaml');
-const fs = require('fs');
-
-const config = {
-  server: 'localhost',
-  username: 'admin',
-  password: '123456'
-};
-
-try {
-  // YAML 파일 쓰기
-  fs.writeFileSync('config.yaml', yaml.dump(config));
-} catch (error) {
-  console.log(error);
-}
+// YAML 파일 쓰기
+const newData = { title: 'YAML Example', value: 42 };
+const yamlStr = yaml.safeDump(newData);
+fs.writeFileSync('./new-config.yaml', yamlStr, 'utf8');
 ```
 
-## 깊이 파고들기:
+실행 결과는 `config.yaml`의 내용과 새로 작성된 `new-config.yaml` 파일 내용을 보여주게 되겠죠.
 
-YAML은 2001년에 처음 나타난 마크업 언어인 XML의 대안으로 개발되었습니다. YAML은 코드의 가독성을 높이고, 파일 크기를 줄여주며, 사람이 읽고 수정하기 쉬운 방식으로 데이터를 표현합니다. 다른 대안으로는 JSON이 있지만, YAML은 그보다 사람이 읽고 작성하기 쉽기 때문에 프로그래머들 사이에서 인기가 높습니다. 타입스크립트에서 YAML을 작업하기 위해서는 'js-yaml' 라이브러리를 사용할 수 있습니다.
+## Deep Dive
+YAML은 "YAML Ain't Markup Language" (원래는 "Yet Another Markup Language")의 재귀 약어이며, XML이나 JSON처럼 데이터를 표현하기 위한 언어예요. JSON에 비해 가독성이 뛰어나지만, 파싱하기는 조금 더 복잡해요. `js-yaml` 라이브러리는 TypeScript나 JavaScript에서 YAML을 쉽게 다룰 수 있게 해줍니다. 대안으로는 `yamljs`, `yaml` 등이 있어요.
 
-## 더 알아보기:
+## See Also
+- YAML 공식 사이트: https://yaml.org
+- `js-yaml` GitHub 페이지: https://github.com/nodeca/js-yaml
+- TypeScript 공식 페이지: https://www.typescriptlang.org 
 
-- YAML 공식 사이트: https://yaml.org/
-- YAML 문서: https://yaml.org/spec/
-- 타입스크립트에서 YAML 사용 예제: https://www.npmjs.com/package/js-yaml
+온라인 YAML 검증 도구를 사용하면 데이터 구조가 올바른 YAML인지 확인할 수 있어요.

@@ -1,7 +1,7 @@
 ---
-title:                "テストを書く"
-html_title:           "Elixir: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,19 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & なんで？
-テストの書き方とは、プログラマーがソフトウェアの動作を確認するための手法です。我々がテストをする理由は、ソフトウェアが想定通りに動作するかどうかを確認するためです。また、コードのバグやエラーを早期に発見し、修正することができるようにするためでもあります。
+## What & Why? (何となぜ?)
+テストコードとは、プログラムが意図した通りに動作することを保証するためのコードです。バグを早期に発見し、安心して機能を追加・改良できるようにするためにプログラマはテストを書きます。
 
-## やり方：
-```Elixir
-# このようにして、単純なテストを行うことができます
-assert 1 + 1 == 2
-# もちろん、より複雑なテストを書くこともできます
-assert 5 / 2 == 2.5
+## How to: (やり方)
+Elixirでテストを書く基礎を紹介します。ExUnitが標準のテストフレームワークです。
+
+```elixir
+# test/example_test.exs
+defmodule ExampleTest do
+  use ExUnit.Case
+  doctest YourModule
+
+  test "the truth" do
+    assert 1 + 1 == 2
+  end
+end
 ```
 
-## 深堀り：
-テストを書くという概念は、プログラミングの世界においては非常に古くから存在しています。その起源の一つには、ドナルド・クヌースによる「ライティング・コンピュータ・ソフトウェア」という本が挙げられます。テストを行う代替手段としては、デバッガーを使用する方法や、静的コード解析ツールを使用する方法があります。Elixirにおいては、テストを書くためのモジュールとしてExUnitが提供されています。
+テストを実行するには、以下のコマンドを使います。
 
-## 関連情報：
-- [Elixir: ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+```shell
+$ mix test
+```
+
+期待する出力は以下の通りです。
+
+```
+..
+
+Finished in 0.04 seconds
+2 tests, 0 failures
+```
+
+## Deep Dive (深堀り)
+テストはXP(エクストリーム・プログラミング)の出現と共に普及しました。Elixirでは、ExUnitを使うことが一般的ですが、ErlangのCommon Testなどの代替品もあります。ExUnitはsetup/bare_testなど、細かいテストの設定やコンテキストの管理が可能です。
+
+## See Also (関連情報)
+- [Elixir の公式ドキュメント（ExUnitについて）](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Programming Elixir（書籍）](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+- [Elixir School（テストレッスン）](https://elixirschool.com/en/lessons/basics/testing/)

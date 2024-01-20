@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Arduino: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Working with JSON (JavaScript Object Notation) means being able to easily store and interchange data in a structured format. Programmers use JSON because it is lightweight, human-readable, and widely supported by programming languages.
+## Che cosa e perché?
+
+JSON, acronimo di JavaScript Object Notation, è un formato leggero per lo scambio di dati. Programmatori lo usano perché è semplice da leggere e scrivere per gli umani, e facile da analizzare e generare per le macchine.
 
 ## Come fare:
-```
-ArduinoJsonArray array = doc.to<ArduinoJsonArray>();
-int value = array[0]["key"];
-```
-L'esempio sopra mostra come leggere un valore da un array JSON utilizzando la libreria ArduinoJson. Il parametro "key" indica la chiave del valore che vogliamo ottenere. Il valore viene quindi memorizzato in una variabile int.
 
+Per lavorare con JSON in Arduino, avrai bisogno della libreria `ArduinoJson`. Installala tramite il Library Manager in Arduino IDE. Ecco un esempio semplice:
+
+```c++
+#include <ArduinoJson.h>
+
+void setup() {
+  Serial.begin(9600);
+
+  // Crea un oggetto JSON
+  StaticJsonDocument<200> doc;
+  doc["temperatura"] = 23.5;
+  doc["umidità"] = 48.2;
+
+  // Serializza JSON e invialo alla seriale
+  serializeJson(doc, Serial);
+}
+
+void loop() {
+  // Funzioni non necessarie per questo esempio
+}
+```
+Output della seriale:
+```
+{"temperatura":23.5,"umidità":48.2}
+```
 
 ## Approfondimento:
-La storia di JSON inizia negli anni '90, in cui veniva utilizzato principalmente come forma di scambio dati tra applicazioni web. Ora è diventato uno standard importante per lo scambio di dati fra diverse piattaforme. Un'alternativa a JSON è XML, ma in confronto JSON è più leggero e più facile da leggere e scrivere. Per utilizzare JSON con Arduino, è necessario installare la libreria ArduinoJson, disponibile su GitHub.
+
+La libreria `ArduinoJson` è stata creata da Benoit Blanchon e rilasciata intorno al 2013. Rispetto ad altre soluzioni come la manipolazione manuale delle stringhe, `ArduinoJson` offre un modo robusto e ottimizzato per il parsing e la serializzazione di JSON, essenziale per IoT e progetti web con Arduino. La libreria utilizza la deserializzazione "zero-copy" per elevata efficienza in ambienti con risorse limitate.
 
 ## Vedi anche:
-- [Introduzione a JSON](https://www.w3schools.com/js/js_json_intro.asp)
-- [Documentazione della libreria ArduinoJson](https://arduinojson.org/)
-- [Tutorial su come utilizzare JSON con Arduino](https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/)
+
+- Documentazione ufficiale ArduinoJson: [https://arduinojson.org/](https://arduinojson.org/)
+- GitHub di ArduinoJson: [https://github.com/bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson)
+- Introduzione a JSON: [https://www.json.org/json-it.html](https://www.json.org/json-it.html)

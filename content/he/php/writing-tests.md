@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "PHP: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-
-כתיבת בדיקות היא תהליך שאנחנו, כמתכנתים, מבצעים כדי לוודא שהקוד שלנו עובד כפי שצריך. בדיקות ממומנות מסייעות לנו לזהות שגיאות ותקלות בקוד שלנו ולתקן אותן בשלב מוקדם יותר, כך שהקוד שאנחנו מפרסמים יהיה במצב מושלם יותר.
+## מה ולמה?
+כתיבת בדיקות זה לבדוק שהקוד שלנו עובד כמתוכנן. מתכנתים עושים את זה כדי למצוא ולתקן באגים בצורה מסודרת ולהבטיח איכות ויציבות באפליקציה.
 
 ## איך לעשות:
+בדוגמה הבאה נשתמש ב-PHPUnit - כלי פופולרי לבדיקות יחידה ב-PHP.
 
-```PHP
-<?php
-// כתיבת פונקציות לבדיקות
-function add($num1, $num2) {
-  return $num1 + $num2;
-}
-
-function test_add() {
-  if (add(2, 2) === 4) { // בדיקה אם התוצאה תואמת למצופה
-    echo "הבדיקה עברה בהצלחה";
-  } else {
-    echo "הבדיקה נכשלה";
-  }
-}
-
-test_add(); // הפעלת הבדיקה
-?>
+התקנה:
+```bash
+composer require --dev phpunit/phpunit
 ```
 
-כפי שאתם יכולים לראות בדוגמא הזו, אנו משתמשים בפונקציות כדי לבדוק את התצוגה של קודנו. הפונקציות הללו בדרך כלל מתבצעות על ידי עוד פונקציות של בדיקה וסידור אותם בקוד שלנו.
+כתיבת בדיקה בסיסית:
+```PHP
+<?php
+use PHPUnit\Framework\TestCase;
 
-## חפירה עמוקה:
+class SampleTest extends TestCase
+{
+    // בדיקה שאחד ועוד אחד שווים שניים
+    public function testAddition()
+    {
+        $this->assertEquals(2, 1 + 1);
+    }
+}
+```
 
-בעבר, היה לקבוצת תוכנית מיוחדת בשם "QA" (איכות התוכנה) שהייתה מפעילה את הבדיקות שלנו על ידי ניסיון ומתן משותפות. ביום זה, יש לנו מספר כלי אוטומטיים שעושים את העבודה עבורנו, כך שהמוצרים שלנו יכולים להיות באיכות טובה יותר בזמן יותר קצר.
+הרצת הבדיקות:
+```bash
+./vendor/bin/phpunit tests
+```
 
-אם אתם מתקשים לכתוב סיפורי בדיקה, שיטות אחרות כמו Test-Driven Development ו- Behavior-Driven Development יכולות לעזור לכם. הן עזרו לכם לרדת לפרטים יותר מדי המימוש שלנו, ולסייע לנו להגיע לפתרון המתאים יותר.
+תוצאת הבדיקה:
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
-אם אתם רוצים לדעת יותר על כתיבת בדיקות ב-PHP, יש לנו לכם כמה קישורים שיעזרו לכם להתחיל:
+.                                                                   1 / 1 (100%)
 
-- [PHPUnit](https://phpunit.de/): כלי ייחודי לבדיקת PHP
-- [Tuts+ PHP Testing series](https://code.tutsplus.com/series/the-buzz-on-php-testing--cms-827): סדרת המדריכים החמים כדי ללמוד כיצד לבדוק את קוד שלנו בפי-פי-פי
+OK (1 test, 1 assertion)
+```
 
-## ראו גם:
+## צלילה עמוקה:
+ב-2004 PHPUnit יצא לאור, והשפיע רבות על פיתוח ה-Testing culture ב-PHP. חלופות כוללות Codeception לאינטגרציה ואפשרויות UI, ו-PHPSpec ל-BDD. כאשר אתה כותב בדיקות, חשוב למקם את הבדיקה קרוב לתיקייה של הקוד שהיא בודקת ולהשתמש ב-naming convention שקל להבין.
 
-תקווה שתהנו מכתיבת בדיקות ותטפלו בקוד שלכם בצורה עדינה יותר. ישנן כמה דרכים שונות לכתוב בדיקות ויש לנו מאמרי נושא נושאים נוספים שיעזרו לכם להתחיל.
+## גם ראו:
+- הדוקומנטציה של PHPUnit: [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
+- סדרת הדרכות ל-PHP Testing ב-YouTube: [PHP Testing Tutorials](https://www.youtube.com/playlist?list=PLfdtiltiRHWFsPxAGO-SVbCEvhSPHxS7w)
+- מאמר על הבדיקות ב-PHP בעבודה מול בסיסי נתונים: [Testing PHP with Databases](https://phpunit.de/manual/current/en/database.html)

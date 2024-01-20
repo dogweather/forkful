@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Javascript: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і зачому?
-Робота з JSON це швидкий і простий спосіб обміну даними між веб-сервером та клієнтом. Цей формат дозволяє програмістам легко перетворювати дані у JavaScript об’єкти та зворотньо.
+## Що це таке і навіщо?
+JavaScript Object Notation (JSON) - це легкий формат обміну даними. Програмісти використовують його через простоту читання та написання даних, а також легку інтеграцію з мережами.
 
 ## Як це зробити:
-Для початку, ви можете створити об’єкт JSON, використовуючи функцію `JSON.stringify()`. Наприклад:
-```Javascript
-const car = {
-  brand: "Tesla",
-  model: "Model 3",
-  year: 2021,
-  color: "black"
-};
+У наступних прикладах показано, як працювати з JSON у JavaScript:
 
-const json = JSON.stringify(car);
+```javascript
+// Парсинг JSON рядка
+let jsonData = '{"name": "Oleksiy", "age": 30}';
+let user = JSON.parse(jsonData);
+console.log(user.name); // Виведе: Oleksiy
 
-console.log(json); // output: {"brand":"Tesla","model":"Model 3","year":2021,"color":"black"}
-```
-Щоб перетворити JSON назад у об’єкт JavaScript, використовуйте функцію `JSON.parse()`. Наприклад:
-```Javascript
-const jsonObj = '{"brand":"Tesla","model":"Model 3","year":2021,"color":"black"}';
-
-const car = JSON.parse(jsonObj);
-
-console.log(car); // output: {brand: "Tesla", model: "Model 3", year: 2021, color: "black"}
+// Перетворення об'єкта в JSON рядок
+let userObject = { name: "Iryna", age: 25 };
+let jsonString = JSON.stringify(userObject);
+console.log(jsonString); // Виведе: {"name":"Iryna","age":25}
 ```
 
 ## Поглиблене вивчення:
-JSON був створений в 2001 році та став популярним форматом для передачі даних у світі Веб. Існують інші альтернативи, такі як XML, але JSON став вибором програмістів завдяки своїй простоті та широкій підтримці. У JavaScript, є також функція `JSON.stringify()` та `JSON.parse()` для роботи з цим форматом даних.
+JSON виник у 2001 році як альтернатива XML. На відміну від XML, він не містить тагів, що робить його менш об'ємним та швидшим для аналізу. Крім того, більшість мов програмування підтримують JSON нативно або через бібліотеки. Fetch API та XMLHttpRequest - приклади інструментів, що працюють з JSON у веб-програмуванні.
 
-## Дивись також:
-- [JSON офіційний сайт](https://www.json.org/json-uk.html)
-- [Редактор JSON онлайн](https://jsoneditoronline.org/)
+## Дивіться також:
+- [MDN JSON Documentation](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON) - всебічний ресурс по JSON від Mozilla.
+- [JSON.org](https://www.json.org/json-en.html) - основи JSON, з ілюстраціями та прикладами.
+- [ECMA-404 The JSON Data Interchange Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/) - офіційний стандарт JSON.

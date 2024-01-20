@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱う」"
-html_title:           "Kotlin: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## JSONとは？
-JSONは、データを表現するための軽量で人間に理解しやすい形式です。プログラマーがJSONを作成する理由は、データを簡単に扱えるようにするためです。JSONは現在、Webアプリケーションやモバイルアプリケーションなど、広い範囲で使用されています。
+## What & Why?
+JSONはデータ交換のフォーマット。シンプルで軽量、多言語対応が理由でプログラマは使う。
 
-## 使い方：
-以下のように、KotlinでJSONを作成し処理することができます。
+## How to:
+KotlinでJSONを扱う一例を見ていこう。Kotlinx.serializationライブラリを使う方法です。
 
 ```Kotlin
-// JSONオブジェクトを作成する
-val jsonObj = jsonObject("name" to "John", "age" to 25)
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
-// JSON文字列に変換する
-val jsonStr = jsonObj.toString()
+@Serializable
+data class User(val name: String, val age: Int)
 
-// JSON文字列からオブジェクトを作成する
-val parsedJson = json.parseJSON(jsonStr)
+fun main() {
+    // シリアライズ
+    val user = User("Taro", 25)
+    val jsonString = Json.encodeToString(User.serializer(), user)
+    println(jsonString) // {"name":"Taro","age":25}
 
-// フィールドにアクセスする
-val name = parsedJson["name"]
-val age = parsedJson["age"]
-
-// フィールドの値を変更する
-parsedJson["name"] = "Jane"
-
-// フィールドを追加する
-parsedJson["city"] = "Tokyo"
-
-// JSON文字列に変換する
-val newJsonStr = parsedJson.toString()
+    // デシリアライズ
+    val userObj = Json.decodeFromString(User.serializer(), jsonString)
+    println(userObj) // User(name=Taro, age=25)
+}
 ```
 
-## 詳細を掘り下げる：
-JSONは、JavaScript Object Notationの略であり、JavaScriptでデータを扱うために開発されました。しかし、現在ではJavaScript以外の多くのプログラミング言語でも使用されています。代替として、XMLやCSVなどの別のフォーマットがありますが、より簡単に扱えるJSONが人気です。Kotlinでは、KlaxonやJacksonといったライブラリを使用してJSONを処理することができます。
+## Deep Dive
+JSONはJavaScript Object Notationの略。1999年に登場。XMLより読みやすくて軽い。
+代わりにYAMLやTOMLもあるが、ウェブAPIではJSONが主流。KotlinではGson, Moshiなど他にもライブラリが存在する。Kotlinx.serializationは公式対応ライブラリで、コンパイル時のシリアライズコード自動生成が特徴。
 
-## 関連情報：
-- [Klaxon](https://github.com/cbeust/klaxon)
-- [Jackson](https://github.com/FasterXML/jackson)
-- [JSON入門](https://www.json.org/json-ja.html)
+## See Also
+- Kotlinx.serializationドキュメント： [Kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+- JSON 公式: [JSON.org](https://www.json.org/json-ja.html)
+- Gsonライブラリ: [Gson on GitHub](https://github.com/google/gson)
+- Moshiライブラリ: [Moshi on GitHub](https://github.com/square/moshi)

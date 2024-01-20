@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire sur la sortie d'erreur standard"
-html_title:           "Go: Ecrire sur la sortie d'erreur standard"
-simple_title:         "Ecrire sur la sortie d'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## What & Why?
+En Go, écrire dans l'erreur standard (`stderr`) permet de séparer les messages d'erreur des autres sorties. On le fait pour diagnostiquer les problèmes sans interférer avec la sortie (`stdout`) utilisée pour les données.
 
-Ecrire vers la sortie d'erreur standard est une méthode utilisée par les programmeurs pour afficher des informations sur les erreurs ou les avertissements dans leur code. Cela peut être utile pour déboguer et identifier les problèmes dans un programme.
-
-## Comment faire:
-
-Voici un exemple de code en Go qui utilise la fonction "Fprint", qui permet d'écrire du texte dans la sortie d'erreur standard:
-
-```
+## How to:
+```Go
 package main
 
 import (
-  "fmt"
-  "io"
-  "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-  // Crée une variable contenant le texte à écrire dans la sortie d'erreur
-  msg := "Attention, une erreur s'est produite!"
-  
-  // Utilise la fonction "Fprint" pour écrire le message dans la sortie d'erreur standard
-  _, err := fmt.Fprint(os.Stderr, msg)
-  
-  if err != nil {
-    // En cas d'erreur, affiche la description de l'erreur
-    fmt.Println("Une erreur s'est produite:", err)
-  }
+	fmt.Fprintln(os.Stderr, "Ceci est un message d'erreur.")
 }
 ```
+Sortie dans `stderr` :
+```
+Ceci est un message d'erreur.
+```
 
-Lorsque vous exécutez ce code, vous devriez obtenir le message d'erreur "Attention, une erreur s'est produite!" dans la sortie d'erreur standard, qui est généralement la console ou le terminal.
+## Deep Dive
+Traditionnellement, Unix distingue la sortie standard (`stdout`) et l'erreur standard (`stderr`) pour permettre des redirections flexibles. En Go, `os.Stderr` est un `*os.File`, similaire à `os.Stdout`. On utilise souvent `log` ou `fmt` avec `os.Stderr` pour l'implémentation. Des alternatives avec différentes bibliothèques comme `logrus` offrent plus d'options de formatage et de gestion des erreurs.
 
-## Plongée en profondeur:
-
-L'écriture vers la sortie d'erreur standard a été introduite dans le langage de programmation C, et de nombreux autres langages ont également adopté cette méthode. Cependant, il existe d'autres alternatives, telles que l'utilisation de fichiers journaux ou de bibliothèques de gestion des erreurs.
-
-La fonction "Fprint" utilisée dans l'exemple ci-dessus est seulement une des nombreuses fonctions disponibles dans la bibliothèque "fmt" de Go qui permettent d'écrire vers la sortie d'erreur standard. Vous pouvez également utiliser "Fprintf" pour formater le texte avant de l'écrire, ou "Fprintln" pour ajouter une nouvelle ligne à la fin du message.
-
-## Voir aussi:
-
-- [Documentation officielle de la fonction "Fprint" de Go](https://golang.org/pkg/fmt/#Fprint)
-- [Article sur les méthodes de gestion des erreurs en Go](https://blog.golang.org/defer-panic-and-recover)
+## See Also
+- Documentation Go sur `os`: https://golang.org/pkg/os/
+- Tutoriel sur la gestion d'erreur en Go: https://blog.golang.org/error-handling-and-go
+- Projet `logrus`, une alternative puissante au paquet `log` de Go: https://github.com/sirupsen/logrus

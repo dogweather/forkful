@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Ruby: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Escribir pruebas (tests) es un proceso en el que los programadores crean pequeños bloques de código para verificar si su código principal funciona correctamente. Esto les ayuda a detectar y solucionar errores antes de que su código se implemente en producción. 
+## Qué y Por Qué?
+Escribir pruebas es crear código que verifica que otro código funciona como se espera. Los programadores lo hacen para asegurar calidad, facilitar el mantenimiento y permitir el desarrollo ágil.
 
-## ¿Cómo hacerlo?
-A continuación se muestran dos ejemplos de pruebas escritas con Ruby. Estos ejemplos asumen que ya tienes el entorno de desarrollo de Ruby y la gema (gem) RSpec instalados.
+## Cómo Hacerlo:
+Ruby usa Minitest y RSpec como sus bibliotecas de pruebas más comunes. Aquí hay un ejemplo simple con Minitest.
 
-```
-# Ejemplo 1: Prueba de suma
-require 'rspec/autorun'
- 
-RSpec.describe "Suma" do
-  it "debe sumar dos números correctamente" do
-    expect(1+2).to eq(3)
+```Ruby
+# archivo test_example.rb
+require 'minitest/autorun'
+
+class Calculadora
+  def sumar(a, b)
+    a + b
+  end
+end
+
+class CalculadoraTest < Minitest::Test
+  def test_sumar
+    calc = Calculadora.new
+    resultado = calc.sumar(2, 3)
+    assert_equal 5, resultado
   end
 end
 ```
 
+Ejecuta este script en la línea de comandos y deberías ver algo como esto:
+
 ```
-# Ejemplo 2: Prueba de división
-require 'rspec/autorun'
- 
-RSpec.describe "División" do
-  it "debe dividir dos números correctamente" do
-    expect(10/2).to eq(5)
-  end
-end
+Run options: --seed 33443
+
+# Running:
+
+.
+
+Finished in 0.001025s, 975.6098 runs/s, 975.6098 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-La salida de estas pruebas debe ser ```0 failures``` si se ejecutan correctamente.
+## Profundización
+Minitest ha estado en Ruby desde su versión 1.9, reemplazando a Test::Unit. RSpec ofrece más sintaxis de "comportamiento" y es ampliamente usado en desarrollo BDD (Desarrollo Guiado por Comportamiento). Estas bibliotecas permiten TDD (Desarrollo Guiado por Pruebas), donde primero se escribe una prueba fallida y luego el código necesario para pasarla.
 
-## Profundizando
-Las pruebas se han vuelto una parte fundamental del desarrollo de software en la actualidad. Detectar y solucionar errores desde el principio del proceso ahorra tiempo y dinero a largo plazo. 
-
-Existen otras herramientas para escribir pruebas en Ruby, como Minitest y Test::Unit. Además, también se pueden escribir pruebas para otros lenguajes de programación, como Java y Python. 
-
-Para implementar pruebas en un proyecto, se recomienda seguir un enfoque conocido como TDD (Test-Driven Development). Este consiste en escribir las pruebas primero y luego el código que las cumpla. 
-
-## Ver también
-- [RSpec documentation](https://rspec.info/)
-- [Minitest documentation](https://github.com/seattlerb/minitest)
-- [Test::Unit documentation](https://apidock.com/ruby/Test/Unit)
+## Ver También
+- [RSpec Website](https://rspec.info/)
+- [Better Specs {Testing Guidelines}](http://www.betterspecs.org/)
+- ["Why's Poignant Guide to Ruby" {For a fun introduction to Ruby}](https://poignant.guide/)

@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Rust: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? 什么和为什么?
+测试是检查代码功能是否按预期工作的方法。通过编写测试，开发者可以验证代码质量，预防未来的错误，确保软件的健壮性和可靠性。
 
-编写测试是指为代码编写可自动化的验证步骤，以确保代码的正确性和可靠性。程序员编写测试的原因是为了避免代码出现错误和故障，从而提高代码的质量和稳定性，以及节省时间和资源。
+## How to: 如何进行
+```Rust
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
 
-## 如何：
-
-```Rust 
-//创建一个名为 "addition" 的测试模块
-mod addition {
-  //导入需要测试的函数
-  use super::add;
-
-  //定义测试函数
-  #[test]
-  fn test_add() {
-    //断言函数的结果是否符合预期
-    assert_eq!(add(2, 3), 5);
-  }
+    #[test]
+    #[should_panic(expected = "assertion failed")]
+    fn it_panics() {
+        assert!(false, "This should panic!");
+    }
 }
 
-//定义需要测试的函数
-fn add(a: i32, b: i32) -> i32 {
-  return a + b;
+fn main() {
+    println!("If you see this, tests are not being run!");
 }
+```
+运行 `cargo test`，你会看到：
+```
+running 2 tests
+test tests::it_works ... ok
+test tests::it_panics ... ok
 
-//运行测试
-$ cargo test
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## 深入了解：
+## Deep Dive 深入探讨
+Rust的测试起源于软件工程的早期实践，它体现了极限编程(XP)中的测试驱动开发(TDD)原则。与其他语言相比，Rust内置的测试框架简单易用，不需要额外库。除了单元测试，还有集成测试和文档测试。在复杂项目中，可以使用外部测试框架如`proptest`或`quickcheck`进行属性测试。
 
-编写测试的概念始于软件测试的发展。除了编写测试，程序员也可以使用其他方式来确保代码的正确性，如手动测试或代码审查。Rust提供了内置的测试框架和断言宏来简化编写测试的过程。
-
-## 参考链接：
-
-- [Rust编程语言官方文档：测试](https://doc.rust-lang.org/book/testing.html) 
-- [Rust By Example：测试](https://doc.rust-lang.org/rust-by-example/testing.html)
+## See Also 参考链接
+- [Rust Book's Testing Chapter](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rust by Example - Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
+- [API documentation for `assert!` macro](https://doc.rust-lang.org/std/macro.assert.html)

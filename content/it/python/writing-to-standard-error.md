@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su errore standard"
-html_title:           "Python: Scrivere su errore standard"
-simple_title:         "Scrivere su errore standard"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## What & Why?
+Scrivere su standard error (stderr) significa inviare messaggi di errore e log in un canale separato dall'output standard. Si fa per differenziare gli errori dai risultati validi e per facilitare il debugging.
 
-Scrivere a standard error è il processo di inviare output ai messaggi di errore anziché al normale output del programma. I programmatori fanno questo per fornire informazioni su eventuali errori che si verificano durante l'esecuzione del codice, facilitando così il processo di debugging.
-
-## Come fare:
-
-Ecco un esempio di codice Python che utilizza la funzione di stampa per inviare un messaggio a standard error:
+## How to:
+Python rende semplice scrivere su stderr tramite il modulo `sys`. Ecco come:
 
 ```Python
 import sys
-print("Errore: divisione per zero", file=sys.stderr)
+
+print("Questo va all'output standard", file=sys.stdout)
+print("Questo è un messaggio di errore", file=sys.stderr)
 ```
 
 Output:
-
 ```
-Errore: divisione per zero
+Questo va all'output standard
+Questo è un messaggio di errore
 ```
 
-## Approfondimento:
+Se esegui questo script, il primo messaggio apparirà come normale output, mentre il secondo, quello di errore, andrà su stderr.
 
-Scrive a standard error esiste fin dai primi tempi della programmazione, quando i programmi venivano eseguiti su terminali. Quando si utilizzano molteplici output, come ad esempio standard output e standard error, si consiglia di utilizzare uno dei molti moduli disponibili per facilitare il processo.
+## Deep Dive
+Nella storia dell'informatica, differenziare i canali di output è cruciale. In UNIX, il concetto di stderr esiste dagli anni '70. In Python, `sys.stderr` è un oggetto file-like, quindi si possono usare metodi come `.write()`. Alternativamente, è possibile usare moduli di logging, che offrono più flessibilità e configurazione. Gli errori scritti in stderr possono essere reindirizzati su file o gestiti separatemente se stai eseguendo lo script da una shell.
 
-In alternativa, si può anche utilizzare la funzione ```logging.error()``` per inviare messaggi di errore a standard error. Questo offre ulteriori funzionalità come la possibilità di specificare il livello di gravità dell'errore.
-
-Per implementare efficientemente la scrittura a standard error, è importante assicurarsi che il codice sia compatibile con tutti i sistemi operativi su cui si desidera eseguirlo, in quanto il modo di gestire i messaggi di errore potrebbe variare tra di loro.
-
-## Vedi anche:
-
-- Documentazione ufficiale Python: https://docs.python.org/3/library/sys.html#sys.stderr
-- Tutorial dettagliato su come utilizzare la scrittura a standard error: https://realpython.com/python-logging/
-- Spiegazione più tecnica delle differenze tra standard output e standard error: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stdout-and-when-to-use-stderr
+## See Also
+- Documentazione Python su I/O: https://docs.python.org/3/tutorial/inputoutput.html
+- Documentazione Python sul modulo `sys`: https://docs.python.org/3/library/sys.html
+- Articolo sul logging in Python: https://docs.python.org/3/howto/logging.html

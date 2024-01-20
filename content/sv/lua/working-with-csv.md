@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Lua: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,40 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att arbeta med CSV (Comma Separated Values) betyder att man hanterar filer eller data där informationen är separerad med kommatecken. Detta gör det enkelt att läsa och dela information med andra system. Programmers använder CSV för att lagra och överföra data på ett strukturerat sätt, vilket underlättar bearbetning och analys av stora datamängder.
+CSV står för "Comma-Separated Values" och används för att lagra data på ett tabelliknande, textbaserat format. Programmerare använder det för dess enkelhet att importera, exportera och bearbeta data mellan olika system och applikationer.
 
-## Hur man gör:
-Här är ett enkelt exempel på hur man kan läsa in en CSV-fil och skriva ut innehållet i en tabell i Lua-programmering:
-```
--- Läser in filen som en textsträng
-local file = io.open("exempel.csv", "r")
-local content = file:read("*all")
-file:close()
+## Steg för steg:
+För att läsa och skriva CSV-filer i Lua, kan vi använda den inbyggda `io`-biblioteket. Där kan vi enkelt iterera genom varje rad och dela upp raderna baserat på kommatecken.
 
--- Delar upp innehållet utifrån kommatecken
-local rows = {}
-for row in content:gmatch("[^,\r\n]+") do 
-  rows[#rows+1] = row 
-end 
+```Lua
+-- Läs in en CSV-fil
+local function read_csv(filepath)
+    local result = {}
+    local file = io.open(filepath, "r")
 
--- Skriver ut varje rad i en tabell
-for i = 1, #rows do 
-  print(rows[i]) 
+    for line in file:lines() do
+        table.insert(result, line:split(","))
+    end
+
+    file:close()
+    return result
+end
+
+-- Skriv ut till en CSV-fil
+local function write_csv(filepath, data)
+    local file = io.open(filepath, "w+")
+    
+    for _, row in ipairs(data) do
+        file:write(table.concat(row, ",") .. "\n")
+    end
+
+    file:close()
 end
 ```
-
-Output:
+Antag att vi har en CSV-fil `data.csv` med följande innehåll:
 ```
-Förnamn,Efternamn,Ålder
-Lisa,Larsson,25
-Erik,Jansson,36
-Anna,Nilsson,42 
+name,age,city
+Alice,30,Stockholm
+Bob,25,Göteborg
 ```
+Exemplet ovan skulle läsa filen och skriva datan till en ny CSV-fil.
 
-## Djupdykning:
-CSV är ett vanligt format för att lagra och överföra data och har funnits sedan 1972. Ett alternativ till CSV är JSON (JavaScript Object Notation), som har blivit allt mer populärt på senare år. CSV-filer kan också ha olika tecken för att separera data, såsom semikolon eller tabb, beroende på vilket system som använder filen. Det är viktigt att ha detta i åtanke vid hantering av CSV-filer för att undvika datafel.
+## Fördjupning
+CSV-formatet har använts sedan 1970-talet och är ett av de enklaste sätten att importera och exportera enkelt strukturerad data. Lua saknar native stöd för CSV men dess flexibilitet låter en lätt implementera funktionalitet med basbiblioteket `io`. Alternativ till CSV inkluderar JSON och XML, vilka hanterar komplexa datastrukturer bättre men är inte lika raka att arbeta med för enkla datatabeller.
 
-## Se även:
-- [Lua Reference Manual](https://www.lua.org/manual/5.3/)
-- [Komma igång med Lua](https://www.lua.org/start.html)
-- [CSV i Lua](https://riptutorial.com/lua/example/23265/csv-in-lua)
+## Se även
+- Lua Manual för IO-biblioteket: https://www.lua.org/manual/5.4/manual.html#6.8
+- CSV på Wikipedia: https://sv.wikipedia.org/wiki/Komma-separerade_v%C3%A4rden
+- Lua CSV moduler på LuaRocks: https://luarocks.org/search?q=csv

@@ -1,7 +1,7 @@
 ---
-title:                "テストを書く"
-html_title:           "C#: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-何をしてるんだと思うだろうけど、プログラマーはテストを書くことでプログラムを維持し、問題を特定し、コードを改善することができるんだ。だからテストを書くのはとても重要な作業だ。
+## What & Why? (テストの「何」と「なぜ」?)
+テストコードはプログラムが正しい動作をする保証をするために書かれます。バグを早く見つけ、将来の機能追加やリファクタリングで発生するリスクを減らすためです。
 
-## What & Why?
-
-プログラムを書くときにテストを書く理由は、そのプログラムを確認し、問題を特定し、改善するためだ。テストはプログラムが期待通りの動作をするかどうかを確認する重要な手段だ。また、将来コードを変更したときに予期せぬ問題が発生していないかをチェックすることもできる。
-
-## How to:
-
-下の例は、2つの数字を足す簡単なプログラムをテストする方法だ。
+## How to: (やり方)
+C#のテストを書く一例を以下に示します。`NUnit` フレームワークを使った単体テストのサンプルです。
 
 ```C#
-// テストケースを定義する
-int number1 = 5;
-int number2 = 10;
-int expectedResult = 15;
+using NUnit.Framework;
 
-// テストするメソッドを呼び出す
-int result = AddNumbers(number1, number2);
-
-// 期待通りの結果が得られたかをチェックする
-if (result == expectedResult)
+namespace SampleTests
 {
-    Console.WriteLine("テストがパスしました！");
-}
-else
-{
-    Console.WriteLine("テストが失敗しました。");
-}
+    [TestFixture]
+    public class CalculatorTests
+    {
+        [Test]
+        public void Add_TwoNumbers_ReturnsSum()
+        {
+            // Arrange
+            var calculator = new Calculator();
+            int a = 5;
+            int b = 7;
 
-// 期待通りの結果が得られなかった場合、コンソールには「テストが失敗しました。」と表示される
+            // Act
+            int result = calculator.Add(a, b);
+
+            // Assert
+            Assert.AreEqual(12, result);
+        }
+    }
+
+    public class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+}
+```
+実行すると、次のような出力が得られます。
+
+```
+Test Passed - Add_TwoNumbers_ReturnsSum
 ```
 
-## Deep Dive:
+## Deep Dive (詳細解説)
+テストの考え方はTDD（テスト駆動開発）から来ています。旧来は、コードを書いてからテストを作る流れでしたが、TDDではテストを先に書きます。代替手段としてはBDD（ビヘイビア駆動開発）があり、より行動にフォーカスを当てたテストが可能です。C#では、`NUnit`, `xUnit`, `MSTest` などのテストフレームワークが使われます。
 
-テストにはいくつかの方法やアプローチがあるが、一般的に単体テストと統合テストが一番よく使われる。単体テストは、個々のコンポーネントやメソッドを個別にテストすることで、そのコンポーネントやメソッドが期待通りに動作するかを検証する。統合テストは、複数のコンポーネントを組み合わせてテストすることで、プログラム全体の動作を確認する。
-
-他にも、テスト駆動開発 (TDD) という手法があり、プログラマーがコードを書く前に、テストを書くことでソフトウェアの動作を実際にコードが書かれる前に確認することができるようにする。さらに、自動化されたテストツールを使用することで、手動でテストする必要がなくなり、より簡単にテストを実行できるようになる。
+## See Also (関連情報)
+- [NUnit公式ドキュメント](https://nunit.org/docs/)
+- [Microsoftの単体テストの概要](https://docs.microsoft.com/ja-jp/dotnet/core/testing/)
+- [TDDに関するMartin Fowlerの記事](https://martinfowler.com/bliki/TestDrivenDevelopment.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo en el error estándar"
-html_title:           "Go: Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "Go"
 category:             "Go"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Oye! ¿Qué es y por qué escribe a la salida de error estándar?
+## Qué y Por Qué?
 
-Es posible que hayas visto a los programadores escribir a la salida de error estándar y te preguntes ¿qué es esto y por qué lo hacen? Bueno, ¡sigue leyendo para descubrirlo!
+Escribir en el error estándar es enviar mensajes de error a un flujo específico, separado de la salida estándar. Los programadores lo hacen para diferenciar la salida normal de la información de diagnóstico y errores, ayudando en la depuración y el registro de eventos.
 
-## Cómo hacerlo:
+## Cómo se Hace:
 
-Para escribir a la salida de error estándar en Go, debes usar la función ```Go fmt.Fprintln(os.Stderr, "¡Hola, mundo!") ``` Esta función toma dos argumentos, el primero es el destino donde se escribirá el mensaje (en este caso, la salida de error estándar) y el segundo es el mensaje en sí. Aquí hay un ejemplo de cómo se vería en un programa completo:
+Escribir en el error estándar en Go se hace usando el paquete `os` y su variable `Stderr`.
 
 ```Go
 package main
@@ -27,23 +27,34 @@ import (
 )
 
 func main() {
-	fmt.Fprintln(os.Stderr, "¡Hola, mundo!")
+	errMsg := "Hubo un error crítico en el proceso."
+
+	// Escribir en el error estándar
+	_, err := fmt.Fprintln(os.Stderr, errMsg)
+	if err != nil {
+		panic("No se pudo escribir el mensaje en el error estándar.")
+	}
 }
 ```
 
-El resultado de este programa sería:
+Salida esperada en el error estándar:
 
 ```
-¡Hola, mundo! 
+Hubo un error crítico en el proceso.
 ```
 
-## Inmersión profunda:
+## Profundizando:
 
-La práctica de escribir a la salida de error estándar es común entre los programadores, ya que es una forma fácil y rápida de imprimir mensajes de error en caso de que algo salga mal en el programa. En lugar de esperar a que el programa se bloquee o se cierre inesperadamente, los programadores pueden utilizar la salida de error estándar para mostrar mensajes de diagnóstico útiles.
+Históricamente, la separación de la salida estándar y el error estándar proviene de Unix, donde las herramientas de línea de comando utilizan tres flujos principales: entrada estándar (stdin), salida estándar (stdout) y error estándar (stderr).
 
-Aunque la función ```fmt.Fprintln()``` es la forma recomendada de escribir a la salida de error estándar en Go, también es posible usar la función ```fmt.Fprintf()``` si se desea formatear el mensaje. Además de la salida de error estándar, también es posible escribir a la salida estándar o a un archivo utilizando estas funciones.
+Alternativas a `fmt.Fprintln(os.Stderr, errMsg)` incluyen el uso de `log` o `os.Stderr.WriteString(errMsg+"\n")`. La implementación básica de estas funciones eventualmente hace llamadas al sistema para escribir en el file descriptor asociado con stderr, que generalmente es el número 2.
 
-## Véase también:
+## Ver También:
 
-- [Documentación de la función fmt.Fprintln() en Go](https://golang.org/pkg/fmt/#Fprintln)
-- [Información sobre la salida de error estándar en Go](https://gobyexample.com/reading-files)
+Para aprender más sobre los flujos de salida en Go y la gestión de errores, visita los siguientes enlaces:
+
+- Documentación de Go para el paquete os: https://pkg.go.dev/os
+- Blog de Go sobre manejo de errores: https://blog.golang.org/error-handling-and-go
+- Ejemplos de como utilizar el paquete `log` para errores: https://pkg.go.dev/log
+
+Recuerda también explorar las funciones como `log.Fatalf` o `log.Panicf` que también escriben en el error estándar y manejan los errores de forma ligeramente diferente, dependiendo de tus necesidades específicas.

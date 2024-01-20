@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Javascript recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing to standard error in Javascript means sending error messages to the developer's console instead of the regular output destination. Programmers do this to provide a separate and distinct channel for error messages, making it easier to identify and troubleshoot issues in their code.
+Writing to standard error (stderr) is outputting text to the error stream. It separates normal output (stdout) from errors, allowing easier debugging and log analysis.
 
 ## How to:
 
-To write to standard error in Javascript, use the "console.error()" function. This function takes in a string or object as an argument and prints it to the console in red, distinguishing it from regular console logs.
+```javascript
+// Writing a simple error message to stderr
+console.error('Error: Something went wrong');
 
-```
-// Example code
-console.error("Something went wrong!"); // Outputs "Something went wrong!" in red
-```
-
-In the following example, an object is passed as an argument and the console prints out the object's properties:
-
-```
-// Example code
-let errorObj = {
-  errorCode: 404,
-  errorMessage: "Page not found"
-};
-console.error(errorObj); // Outputs "{ errorCode: 404, errorMessage: "Page not found" }" in red
+// Example with formatted output
+const errorCode = 404;
+console.error(`Error: Page not found - Code ${errorCode}`);
 ```
 
-## Deep Dive:
+Sample output:
+```
+Error: Something went wrong
+Error: Page not found - Code 404
+```
 
-### Historical Context:
+## Deep Dive
+Historically, Unix-like systems differentiate between standard output and standard error to allow separate handling of regular messages and error messages. While `console.log` in Javascript writes to stdout, `console.error` specifically writes to stderr. 
+Alternatives for writing to stderr include using `process.stderr.write()` which doesn't include a newline character at the end, unlike `console.error`.
+Implementation-wise, when writing Node.js scripts, the output to `console.error()` can be redirected separately from `console.log()` when executing a script from the command line, which can be useful for logging errors to a different file.
 
-Writing to standard error is a common practice in programming, especially in languages like C and Java. It allows developers to separate error messages from normal output, making debugging and error handling more efficient. In Javascript, this feature was introduced in ES5.
-
-### Alternatives:
-
-An alternative to using console.error() is to throw an error using the "throw" keyword. Throwing an error will stop the execution of the code and display the error message in the console. However, this method is usually used for critical errors that require the program to stop running.
-
-### Implementation Details:
-
-Under the hood, console.error() sends the error message to the standard error stream, which is usually associated with the developer's console. However, the exact implementation may differ depending on the browser or environment where the code is run.
-
-## See Also:
-
-- [console.error() - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Throw statement - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+## See Also
+- MDN Web Docs on Console: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- Node.js documentation on `process.stderr`: https://nodejs.org/api/process.html#process_process_stderr
+- Explanation of stdout vs stderr: https://www.jstor.org/stable/25860673

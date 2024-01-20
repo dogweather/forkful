@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "C# recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "C#"
 category:             "C#"
@@ -11,44 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests is the process of creating automated checks to verify that a piece of code behaves as expected. It is an essential part of the software development process as it helps to identify potential bugs and errors in the code. By writing tests, programmers can ensure that their code is functioning correctly, leading to more efficient and reliable software.
+Writing tests in programming means creating mini-programs to check if your code works as expected. Programmers do it to catch bugs, ensure quality, and save time fixing issues later.
 
 ## How to:
-To write tests in C#, we use the built-in testing framework called NUnit. First, we need to create a new console project in Visual Studio. Then, we add the NUnit framework through the NuGet Package Manager. We can then create a new class for our tests and decorate it with the [TestFixture] attribute. Within this class, we can write test methods and use the [Test] attribute to indicate that these methods are tests. Finally, we can run our tests using the Test Explorer in Visual Studio.
+Let's dive into some C# code using NUnit, a popular testing framework:
+
+1. Set up your testing framework - typically included as a NuGet package.
+2. Write a test for a simple function.
+
+Here's a quick example of a test for a `Sum` method:
 
 ```C#
-[TestFixture]
-public class CalculatorTests
-{
-    [Test]
-    public void Add_WithPositiveNumbers_ReturnsCorrectResult()
-    {
-        // Arrange
-        int num1 = 5;
-        int num2 = 10;
-        int expectedResult = 15;
+using NUnit.Framework;
 
-        // Act
-        int result = Calculator.Add(num1, num2);
+namespace CalculatorTests {
+    public class Calculator {
+        public int Sum(int a, int b) {
+            return a + b;
+        }
+    }
 
-        // Assert
-        Assert.AreEqual(expectedResult, result);
+    [TestFixture]
+    public class CalculatorTests {
+        [Test]
+        public void TestSum() {
+            var calculator = new Calculator();
+            var result = calculator.Sum(2, 3);
+            Assert.AreEqual(5, result);
+        }
     }
 }
 ```
 
-Sample output in the Test Explorer:
+Run the test. If it passes, you'll see:
 
-![Test Explorer](https://image.ibb.co/kSdRDF/test_explorer.png)
+```
+Test Passed
+```
 
-## Deep Dive:
-Unit testing, the process of testing individual units or components of code, was first introduced in the 1970s with the advent of structured programming. Prior to that, integration testing, where multiple units of code were tested together, was the norm. Today, there are various testing frameworks available for different languages, but NUnit remains one of the most popular for C#.
+Otherwise, you'll get details on why it failed.
 
-Alternatives to NUnit in C# include Xunit and Microsoft's MSTest framework. While NUnit and Xunit are open-source and cross-platform, MSTest is only available for use within the Windows ecosystem. However, MSTest does offer features such as running tests in parallel and integrating with Azure DevOps.
+## Deep Dive
+Unit testing has evolved since the 1970s. Notable advances include test-driven development and automated testing frameworks. For C#, MSTest and xUnit are solid alternatives to NUnit. Key points include:
 
-NUnit supports various assertion methods such as Assert.AreEqual() and Assert.IsTrue(), which can be used to verify the expected results of a test. It also allows for setting up and tearing down test fixtures, which can be useful for setting up common data or objects needed for multiple tests.
+1. **Historical Context**: Kent Beck, among others, developed the xUnit architecture that underpins many frameworks.
+2. **Alternatives**: MSTest is Microsoft's native test framework, while xUnit is a free, open-source tool.
+3. **Implementation Details**: Tests should be isolated, repeatable, and fast. Run them as part of your build process.
 
-## See Also:
-- [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
-- [Xunit Documentation](https://xunit.net/)
-- [MSTest Documentation](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
+## See Also
+- [NUnit Documentation](https://docs.nunit.org/)
+- [Microsoft Testing Overview](https://docs.microsoft.com/en-us/dotnet/core/testing/)
+- [xUnit GitHub](https://github.com/xunit/xunit)

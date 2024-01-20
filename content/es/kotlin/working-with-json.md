@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Kotlin: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se utiliza JSON?
+## Qué es & Por qué?
+Trabajar con JSON implica manipular una estructura de datos ligera y formativa para el intercambio de datos. Los programadores lo utilizan porque es fácil de leer y escribir para humanos, y simple de parsear y generar para máquinas.
 
-JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos que se utiliza ampliamente en la programación para almacenar y transmitir información. Los programadores usan JSON porque es fácil de leer y escribir, y es compatible con muchos lenguajes de programación y plataformas.
-
-## ¡Cómo hacerlo!
-
-`Kotlin` proporciona una manera fácil de trabajar con JSON a través de la clase `JSONObject`. Podemos crear un objeto JSON utilizando su constructor y agregar pares clave-valor utilizando el operador `put`:
+## Cómo hacerlo:
+En Kotlin, puedes usar la biblioteca `kotlinx.serialization` para trabajar con JSON. Aquí tienes un ejemplo:
 
 ```Kotlin
-val json = JSONObject()
-json.put("nombre", "María")
-json.put("edad", 25)
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    // Serializando un objeto a JSON
+    val json = Json.encodeToString(User("Carlos", 29))
+    println(json) // Output: {"name":"Carlos","age":29}
+
+    // Deserializando JSON a un objeto
+    val jsonString = """{"name":"Ana", "age":34}"""
+    val user = Json.decodeFromString<User>(jsonString)
+    println(user) // Output: User(name=Ana, age=34)
+}
 ```
 
-También podemos crear objetos JSON a partir de cadenas de texto utilizando el método `JSONObject()` y acceder a sus elementos utilizando el operador `get`:
+## Análisis Profundo:
+JSON (JavaScript Object Notation) surgió como una alternativa a XML, más sencilla y ligera. Mientras que otras alternativas, como YAML o TOML, también existen para la configuración y serialización de datos, JSON destaca por su compatibilidad universal en APIs web y su eficiencia en términos de rendimiento. Kotlin ofrece una integración moderna y potente con JSON a través de `kotlinx.serialization`, la cual se centra en la seguridad de los tipos y la interoperabilidad con el lenguaje.
 
-```Kotlin
-val userJson = JSONObject("{\"nombre\":\"Juan\",\"edad\":20}")
-val nombre = userJson.get("nombre")  // Juan
-val edad = userJson.get("edad")      // 20
-```
-
-Para convertir un objeto JSON a una cadena de texto, podemos usar el método `toString()`:
-
-```Kotlin
-val jsonString = json.toString() // {"nombre":"María","edad":25}
-```
-
-## Inmersión profunda
-
-JSON fue creado originalmente por Douglas Crockford en 2001, como una alternativa más ligera al formato XML. Ha ganado gran popularidad en la programación web y en el intercambio de datos entre aplicaciones. Algunas alternativas a JSON son YAML, CSV y XML.
-
-La implementación de JSON en Kotlin se basa en la biblioteca `org.json` del paquete `Java` y proporciona una API sencilla y eficiente para trabajar con objetos JSON.
-
-## Ver también
-
-- [JSON.org](https://www.json.org/json-es.html)
-- [Introducción a JSON en programación (video en español)](https://www.youtube.com/watch?v=Lxmy7Ww3ndo)
+## Ver También:
+- Documentación oficial de `kotlinx.serialization`: [https://kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
+- Guía de JSON: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Java: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא פעולה חשובה בעולם התכנות שמאפשרת למפתחים לשמור מידע בצורה מקובלת וקלה לטיפול ועריכה. למעשה, כל טקסט שאתם כותבים בתוכנית שלכם הוא מאוחסן בקובץ טקסט.
+כתיבה בקובץ טקסט היא פעולה בה אנחנו שומרים נתונים או מידע בקובץ מתוך התוכנית שלנו. תכניתנים עושים זאת כדי לשמור נתונים לשימוש מאוחר יותר, לאחסון לוגים ולצרכי דיבאג.
 
-## איך לעשות זאת?
-בקוד הבא בשפת Java תוכלו לראות דוגמה קלה ופשוטה לכתיבת קובץ טקסט:
+## איך לעשות:
 
 ```Java
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class TextFileWriter {
     public static void main(String[] args) {
-        try {
-            // יצירת אובייקט FileWriter שמאפשר לנו לכתוב לקובץ טקסט
-            FileWriter writer = new FileWriter("myFile.txt");
-            // כתיבת טקסט לקובץ על ידי שימוש בפונקצית write
-            writer.write("זה טקסט ישן ורגיל.");
-            // סגירת הקובץ
-            writer.close();
+        String content = "שלום, עולם!";
+        String path = "output.txt";
+        
+        // גישה עם BufferedWriter
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write(content);
         } catch (IOException e) {
-            // מקרה של חריגה מהתוכנית במידה והקובץ לא ניתן לפתיחה או כתיבה
+            e.printStackTrace();
+        }
+        
+        // גישה עם Files
+        try {
+            Files.write(Paths.get(path), content.getBytes());
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
 ```
 
-אחרי הריצה של הקוד הזה, תקבלו קובץ טקסט חדש בשם "myFile.txt" עם הטקסט "זה טקסט ישן ורגיל" בתוכו.
+הפלט בשני המקרים יהיה קובץ בשם `output.txt` עם הטקסט "שלום, עולם!".
 
-## העולמה העמוקה
-כתיבת קובץ טקסט הייתה מאוד חשובה במחשבים ישנים כתכנית משמרת במידה והמחשב נכשל ונצטרך להתחיל את התהליך מחדש. כיום ישנן גם טכנולוגיות אחרות כמו בסיסי נתונים שמאפשרות שמירה וקריאה של מידע, אבל כתיבת קובץ טקסט נשארת חשובה ליישומים רבים.
+## מבט מעמיק:
+היכולת לכתוב לקבצי טקסט קיימת מראשית ימי התכנות והיא אמצעי חשוב לשמירת מידע באופן פשוט וגישה. בנוסף לגישות שהוצגו, יש גם אפשרות כתיבה באמצעות `PrintWriter`, `FileOutputStream` ועוד. חשוב לטפל בשגיאות עם try-catch כדי לא לגרום לבעיות בריצה או אובדן מידע, והשימוש בטכניקת try-with-resources מבטיח שהמשאבים יסגרו תקין.
 
-## למידע נוסף
-כדי ללמוד עוד על קריאת וכתיבת קבצים טקסט בשפת Java, ניתן להתייעץ במדריכים ותיעודים המצויים ברשת. המדריכים הרשמיים של Java כמו גם הפורומים והספריות המקצועיות ברשת יכולים לספק מידע נוסף על הנושא הזה.
+## ראה גם:
+
+- [BufferedWriter Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
+- [Files.write Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#write(java.nio.file.Path,byte[],java.nio.file.OpenOption...))
+- [Handling IO exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)

@@ -1,7 +1,7 @@
 ---
-title:                "json 처리하기"
-html_title:           "Rust: json 처리하기"
-simple_title:         "json 처리하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜: 
-JSON 작업이란 무엇인지와 왜 프로그래머들이 그것을 하는지에 대해 알아보겠습니다. 
-JSON 작업은 데이터를 다루는 방법 중 하나로서 많은 프로그래머들이 사용하는 방법 중 하나입니다. 
+## What & Why?
+JSON은 데이터를 저장하고 전송할 때 사용하는 텍스트 기반의 가벼운 데이터 교환 형식이에요. 프로그래머들은 구조가 단순하고 읽기 쉬워서 서버와 클라이언트 간 통신이나 설정 파일에서 자주 쓰고 있죠.
 
-## 사용 방법: 
-Rust 코드 블록 내에 코딩 예제와 출력 예제를 보여드리겠습니다.
+## How to:
+JSON 다루기 위해 `serde`와 `serde_json` 크레이트를 사용해봅시다. 다음 예시는 JSON 값을 읽고, 쓰고, 변환하는 기본적인 방법을 보여드릴 거예요.
+
 ```Rust
-extern crate serde_json; // Rust에서 JSON을 다루는 라이브러리
-use serde_json::{Result, Value}; // JSON 작업을 위한 라이브러리
+extern crate serde;
+extern crate serde_json;
+
+use serde::{Serialize, Deserialize};
+
+// 단순한 구조체를 정의합니다.
+#[derive(Serialize, Deserialize, Debug)]
+struct Person {
+    name: String,
+    age: u8,
+    is_programmer: bool,
+}
+
 fn main() {
-    // JSON 형식의 문자열
-    let json_str = r#"
+    // JSON 문자열
+    let data = r#"
         {
-            "name": "John",
-            "age": 30,
-            "is_married": false
-        }
-    "#;
-    // String 타입의 JSON 데이터를 파싱
-    let parsed: Value = serde_json::from_str(json_str).expect("JSON 파싱 실패");
-    // name 속성 값 출력
-    println!("이름: {}", parsed["name"]);
-    // age 속성 값 출력
-    println!("나이: {}", parsed["age"]);
-    // is_married 속성 값 출력
-    println!("결혼 여부: {}", parsed["is_married"]);
+            "name": "홍길동",
+            "age": 25,
+            "is_programmer": true
+        }"#;
+    
+    // JSON을 구조체로 변환
+    let p: Person = serde_json::from_str(data).unwrap();
+    println!("이름: {}", p.name);
+
+    // 구조체를 JSON 문자열로 변환
+    let serialized = serde_json::to_string(&p).unwrap();
+    println!("{}", serialized);
 }
 ```
 
-출력 결과: 
+샘플 출력:
 ```
-이름: John
-나이: 30
-결혼 여부: false
+이름: 홍길동
+{"name":"홍길동","age":25,"is_programmer":true}
 ```
 
-## 자세히 알아보기: 
-JSON 작업은 현재 많은 프로그래밍 언어에서 지원하고 있는 유용한 데이터 형식입니다. 
-JSON은 JavaScript Object Notation의 약자로서, 자바스크립트의 데이터 형식을 따르고 있으며, 손쉽게 다른 프로그래밍 언어에서도 사용할 수 있습니다. 
-JSON을 다루는 라이브러리는 많이 존재하며, Rust에서는 serde_json 라이브러리를 사용하여 JSON 데이터를 파싱하고 다룰 수 있습니다. 
-다른 대안으로는, JSON 형식을 바로 사용하지 않고 더 쉽게 다룰 수 있는 TOML 과 YAML이 있지만, JSON은 많은 프로그래머들이 익숙한 형식이기 때문에 많이 사용됩니다. 
+## Deep Dive
+JSON은 JavaScript Object Notation의 약자로, 2001년에 더글라스 크록포드에 의해 소개되었습니다. XML이나 YAML 같은 대안이 있지만, JSON은 더 간결하고 파싱이 빠르다는 장점이 있어요. Rust에서 `serde`는 직렬화(Serialization)/역직렬화(Deserialization)를 위한 에코시스템을 제공하며, `serde_json`은 이를 JSON 데이터 포맷에 특화시킨 크레이트입니다.
 
-## 관련 자료: 
-- [Rust 레포지토리 전체 메뉴얼](https://doc.rust-lang.org/stable/book/)
-- [JSON 홈페이지](https://www.json.org/)
+## See Also
+- [Serde 공식 웹사이트](https://serde.rs/)
+- [JSON 공식 사이트](https://www.json.org/json-en.html)

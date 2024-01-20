@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Clojure: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é YAML?
+## O Que é & Por Quê?
+YAML, que significa "YAML Ain't Markup Language", é um formato de serialização de dados legível por humanos, comumente usado para arquivos de configuração. Programadores o utilizam pela sua simplicidade e facilidade de leitura/escrita em comparação com formatos como XML ou JSON.
 
-YAML é uma linguagem de marcação de dados que foi criada para ser facilmente legível por humanos e máquinas. É comumente usado para representar estruturas de dados hierárquicas, como configurações para aplicações ou dados para troca entre sistemas.
+## Como Fazer:
+Vamos usar a biblioteca `clj-yaml` para trabalhar com YAML em Clojure. Primeiro, instale adicionando `[clj-yaml "0.7.0"]` ao seu arquivo `project.clj`.
 
-## Por que os programadores usam YAML?
+```Clojure
+(require '[clj-yaml.core :as yaml])
 
-Os programadores usam YAML porque é uma forma simples e intuitiva de organizar e armazenar dados estruturados. Além disso, YAML é amplamente suportado por muitas linguagens de programação, incluindo Clojure, tornando-o uma escolha popular para troca de dados entre aplicações.
-
-## Como fazer:
-
-``` Clojure 
-(require '[clojure-yaml.core :as yaml])
-
-(def data {:nome "João"
-           :idade 30
-           :hobbies ["leitura" "caminhada" "jardinagem"]})
-
-(yaml/yaml-str data)
-```
-
-Output:
-
-``` yaml
+; Ler YAML de uma string
+(def yaml-string "
 nome: João
 idade: 30
-hobbies:
-  - leitura
-  - caminhada
-  - jardinagem
+linguagens:
+  - Clojure
+  - Python
+")
+(def dados (yaml/parse-string yaml-string))
+(println dados)
+; Saída: {:nome "João", :idade 30, :linguagens ["Clojure" "Python"]}
+
+; Escrever um mapa Clojure para uma string YAML
+(def clojure-map {:nome "Maria", :idade 28, :linguagens ["Ruby" "Elixir"]})
+(def yaml-output (yaml/generate-string clojure-map))
+(println yaml-output)
+; Saída:
+; nome: Maria
+; idade: 28
+; linguagens:
+; - Ruby
+; - Elixir
 ```
 
-## Mergulho Profundo:
+## Mergulho Profundo
+YAML foi introduzido em 2001 e é frequentemente comparado com JSON, outro formato amplamente usado. Enquanto JSON é baseado em estruturas de array e objeto do JavaScript, YAML emprega espaços e indentação para representar hierarquia de dados, favorecendo a legibilidade humana. Além de `clj-yaml`, existem outras bibliotecas como `snakeyaml` (para Java) e `PyYAML` (para Python), que permitem a manipulação de YAML em diferentes ecossistemas de programação. Ao implementar o suporte a YAML, deve-se ter atenção com a segurança, pois a carga de objetos arbitrários pode apresentar riscos.
 
-YAML foi criado em 2001 por Clark Evans e representa "YAML Ain't Markup Language". É uma alternativa aos formatos mais verbosos, como XML e JSON. O parsing de YAML é suportado em Clojure através da biblioteca clojure-yaml, mas também pode ser usado com outras linguagens como Python e Ruby.
-
-## Veja Também:
-
-- Site oficial do YAML: https://yaml.org/
-- Documentação da biblioteca clojure-yaml: 
-https://oliyh.github.io/clojure-yaml/
-- Comparação entre vários formatos de dados: https://www.smashingmagazine.com/2018/01/rise-json/
+## Veja Também
+- [clj-yaml GitHub repository](https://github.com/clj-commons/clj-yaml)
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [Clojure Official Website](https://clojure.org/)

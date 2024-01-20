@@ -1,7 +1,7 @@
 ---
-title:                "Écriture des tests"
-html_title:           "Javascript: Écriture des tests"
-simple_title:         "Écriture des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
+Écrire des tests, c'est comme faire une check-list pour ton code. Ça aide à s'assurer que tout fonctionne nickel, même après des modifs. T'as moins de bugs et tu dors sur tes deux oreilles.
 
-Ecrire des tests en Javascript est une pratique courante parmi les programmeurs pour garantir le bon fonctionnement de leur code. Les tests sont des morceaux de code qui vérifient si une partie spécifique du code fonctionne correctement. Cela permet aux programmeurs de détecter et de corriger les erreurs avant qu'elles ne deviennent des problèmes pour les utilisateurs.
-
-## Comment procéder:
-
-Pour écrire des tests en Javascript, il est important de comprendre comment les tests sont structurés. Voici un exemple simple de test unitaire pour une fonction nommée "add" qui additionne deux nombres:
+## How to:
+Pour tester, on utilise des cadriciels (frameworks) comme Jest. Voici un exemple de test:
 
 ```Javascript
-function add(a, b) {
-  return a + b;
+// fonction à tester
+function ajouteDeux(a) {
+  return a + 2;
 }
 
-// test unitaire pour la fonction "add"
-test("test add function", () => {
-  const sum = add(5, 10);
-  expect(sum).toBe(15); // vérifie si le résultat est bien égal à 15
+// Test avec Jest
+test('ajouteDeux ajoute 2 à n’importe quel nombre', () => {
+  expect(ajouteDeux(3)).toBe(5);
 });
 ```
 
-Dans cet exemple, nous créons une fonction "add" qui prend deux paramètres et renvoie la somme de ces deux nombres. Pour tester cette fonction, nous utilisons la fonction "test" et la méthode "expect" pour vérifier si le résultat de la fonction est bien égal à 15. Si c'est le cas, le test est réussi. Sinon, le test échoue et nous devons réviser notre fonction "add" pour qu'elle fonctionne correctement.
+Si t'as bien fait le job, la console te dira:
 
-## Plongée en profondeur:
+```
+PASS  ./example.test.js
+✓ ajouteDeux ajoute 2 à n’importe quel nombre (5 ms)
+```
 
-La pratique de l'écriture de tests en Javascript a pris de l'importance avec l'avènement du développement piloté par les tests (TDD). Cette approche consiste à écrire d'abord des tests avant d'écrire le code réel, ce qui permet de s'assurer que le produit final fonctionne correctement dès le début. Il existe également d'autres frameworks de tests populaires en Javascript tels que Jest, Mocha et Jasmine.
+## Deep Dive
+Back in the day, on testait à la mano en checkant le code ligne par ligne. Aujourd'hui, on a des outils automatiques. Jest est populaire car il est simple, mais t'as aussi Mocha, Jasmine ou bien d'autres. Choisir c'est renoncer - chaque outil a ses forces, ses faiblesses et sa façon de faire.
 
-En plus des tests unitaires, il existe également des tests d'intégration qui vérifient le bon fonctionnement de différentes parties d'une application ensemble. Certains outils, comme Cypress, permettent même d'effectuer des tests end-to-end pour vérifier le comportement d'une application dans son ensemble.
+Pour écrire des tests qui tiennent la route, pense SOLID et DRY. Teste aussi les cas limites - c'est là que les bugs se planquent.
 
-Il est également important de noter que l'écriture de tests ne garantit pas à 100% un code sans erreurs, mais cela aide grandement à minimiser les problèmes et à améliorer la qualité de votre code.
-
-## Voir aussi:
-
-- [Comparaison des frameworks de tests en Javascript](https://blog.bitsrc.io/which-javascript-testing-library-should-i-use-a-comparison-guide-eventloop-ca5360ed2967)
-- [Guide de Cypress pour les tests end-to-end](https://docs.cypress.io/guides/overview/why-cypress.html)
+## See Also
+Va jeter un œil ici pour plus d'info :
+- Jest: [https://jestjs.io/fr/](https://jestjs.io/fr/)
+- Mocha: [https://mochajs.org/](https://mochajs.org/)
+- Jasmine: [https://jasmine.github.io/](https://jasmine.github.io/)

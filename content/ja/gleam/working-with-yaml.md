@@ -1,7 +1,7 @@
 ---
-title:                "Yamlでの作業"
-html_title:           "Gleam: Yamlでの作業"
-simple_title:         "Yamlでの作業"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## GleamでのYAMLの扱い方
+## What & Why? (なにとなぜ？)
+YAMLは設定ファイルやデータ交換に使うシンプルな形式です。可読性が高く、人間にも機械にも理解しやすいため、広くプログラマーに使われています。
 
-## なに & なぜ?
-YAMLは、データを記述するためのファイルフォーマットです。プログラマーたちは、コードの設定や構成、データの保存など、さまざまな用途でYAMLを使います。
+## How to: (どうやって？)
+Gleamには標準でYAMLを解析するライブラリがないので、外部クレートを使います。以下はGleamでYAMLを扱う簡単な例です。
 
-## 手順:
-```Gleam
-import yaml
+```gleam
+// 外部クレートを使ってYAMLをパースする
+// 注: 実際のGleamコードとして実行可能なものではない
+import yaml_crate
 
-// YAMLファイルを読み込む
-let data = yaml.decode_file("config.yaml")
+pub fn parse_yaml(yaml_str: String) -> Result(any, String) {
+    yaml_crate.parse(yaml_str)
+}
 
-// YAMLデータを整形して出力
-let formatted_data = yaml.encode(data)
+fn main() {
+    let yaml_data = "
+    age: 35
+    name: John Doe
+    children:
+      - name: Jane Doe
+        age: 15
+    "
+
+    let result = parse_yaml(yaml_data)
+    case result {
+        Ok(value) -> value
+        Error(e) -> e
+    }
+}
 ```
 
-## 詳細を掘り下げる:
-### 歴史的背景:
-YAMLは、2001年に開発されたマークアップフォーマットです。 XMLやJSONよりもシンプルで読みやすいため、人気があります。
+このコードは、YAML文字列を解析し、結果またはエラーメッセージを出力します。
 
-### 代替案:
-YAMLには、同じような目的で使われるJSONやXMLなどの代替案があります。しかし、YAMLのシンプルさと読みやすさは、プログラマーたちから支持されています。
+## Deep Dive (深い潜水)
+YAML (YAML Ain't Markup Language)は、JSONのより読みやすい代替として2001年に登場しました。JSONやXMLと比べて、スペースでストラクチャを表現し、繰り返しを避けるアンカーやエイリアスが使えます。Gleamにおいては、RustやElixirのライブラリをバインディングするか、もしくは独自のパーサを実装することが可能です。
 
-### 実装の詳細:
-Gleamでは、YAMLを扱うための標準ライブラリが用意されています。このライブラリを使用することで、簡単にYAMLファイルを読み込み、データを取得することができます。
-
-## 関連リンク:
-- Gleam公式サイト: https://gleam.run/
-- GleamのYAMLライブラリのドキュメント: https://gleam.run/packages/yaml/
+## See Also (関連情報)
+- YAML公式サイト: https://yaml.org
+- YAML仕様: https://yaml.org/spec/1.2/spec.html
+- JSONとYAMLの比較: https://www.json2yaml.com/
+- Gleamの外部クレート: https://hex.pm/packages?search=gleam

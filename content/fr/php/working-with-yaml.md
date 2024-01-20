@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "PHP: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que YAML et pourquoi les programmeurs l'utilisent-ils?
+## Quoi & Pourquoi ?
+YAML, c'est pour dire "YAML Ain't Markup Language". Les devs utilisent YAML car c'est simple à comprendre et à modifier, parfait pour configurer des projets ou définir des données.
 
-YAML (Yet Another Markup Language) est un format de sérialisation de données populaire parmi les programmeurs, utilisé pour stocker et échanger des informations sous une forme lisible par l'homme. Il est couramment utilisé pour configurer des systèmes, stocker des données de configuration et échanger des informations entre applications.
+## How to:
+Pour travailler avec YAML en PHP :
 
-Les programmeurs choisissent souvent YAML pour sa simplicité et sa lisibilité, ce qui en fait un choix populaire pour les projets open-source et les collaborateurs techniques.
-
-## Comment utiliser YAML en PHP:
-
-Voici un exemple simple de YAML en PHP:
-
+1. Installer le parseur YAML via Composer :
+```bash
+composer require symfony/yaml
 ```
+2. Lire un fichier YAML :
+```php
 <?php
+use Symfony\Component\Yaml\Yaml;
 
-// Charger la bibliothèque YAML
-require 'vendor/autoload.php';
-
-// Définir une variable contenant une chaîne YAML
-$yaml = <<<YAML
-greetings:
-  - Salut
-  - Bonjour
-  - Hello
-YAML;
-
-// Analyser la chaîne de YAML en un tableau PHP
-$greetings = Yaml::parse($yaml);
-
-// Afficher le deuxième élément du tableau
-echo $greetings['greetings'][1]; // Bonjour
+$yaml = Yaml::parse(file_get_contents('config.yml'));
+print_r($yaml);
+?>
 ```
+3. Écrire en YAML :
+```php
+<?php
+use Symfony\Component\Yaml\Yaml;
 
-Dans cet exemple, nous utilisons la bibliothèque PHP Symfony YAML pour charger, analyser et utiliser un fichier YAML. La méthode `parse()` convertit la chaîne YAML en un tableau PHP associatif.
+$array = ['foo' => 'bar', 'bar' => 'baz'];
+$yaml = Yaml::dump($array);
 
-## Plongez dans l'histoire de YAML, ses alternatives et ses détails d'implémentation:
+file_put_contents('config.yml', $yaml);
+?>
+```
+## Deep Dive
+YAML est sorti en 2001. C'est une alternative à XML et JSON. En PHP, la librairie la plus connue pour gérer YAML est Symfony Yaml, mais il existe yaml pecl extension pour une approche plus directe si on préfère.
 
-YAML a été créé en 2001 par Clark Evans, Ingy döt Net et Oren Ben-Kiki. Son objectif était de créer un langage de sérialisation plus humain et plus facile à lire que les autres formats de données existants, tels que le XML et le JSON.
-
-Bien qu'il y ait des alternatives à YAML comme JSON et XML, YAML est devenu populaire grâce à sa lisibilité et à sa simplicité. Cependant, il est important de noter que YAML peut également être plus lent à analyser que d'autres formats, ce qui peut être un facteur à prendre en compte dans des applications sensibles aux performances.
-
-En termes d'implémentation, YAML peut être utilisé dans une variété de langages de programmation, et il existe de nombreuses bibliothèques et outils disponibles pour travailler avec le format.
-
-## À voir également:
-
-- [Site officiel de YAML](https://yaml.org/)
-- [Documentation de l'extension YAML pour PHP](https://symfony.com/doc/current/components/yaml.html)
+## See Also
+- Documentation de Symfony Yaml : https://symfony.com/doc/current/components/yaml.html
+- YAML officiel : https://yaml.org/
+- Extension PECL YAML : https://pecl.php.net/package/yaml

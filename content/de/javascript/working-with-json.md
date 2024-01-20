@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "Javascript: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-JSON (Javascript Object Notation) ist ein leichtgewichtiges Datenformat, das von Programmierern verwendet wird, um Daten zu speichern und auszutauschen. Es ist besonders nützlich, da es einfach zu lesen und zu schreiben ist und von vielen Programmiersprachen unterstützt wird.
+## Was & Warum?
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Datenformat zum Austausch von Daten. Entwickler nutzen es wegen seiner Einfachheit und Weil's von so ziemlich jeder Programmiersprache gelesen werden kann.
 
-# Wie geht das?
+## How to:
 ```Javascript
-// Beispiel JSON-Objekt
-let person = {
-    name: 'Max Mustermann',
-    alter: 30,
-    hobbies: ['Lesen', 'Reisen', 'Programmieren']
-};
+// JSON-String erstellen
+let jsonString = '{"name": "Max", "alter": 25, "hobbys": ["Fahrradfahren", "Schwimmen"]}';
 
-// JSON-Objekt in String umwandeln
-let json = JSON.stringify(person);
-console.log(json);
-// Ausgabe: {"name":"Max Mustermann","alter":30,"hobbies":["Lesen","Reisen","Programmieren"]}
+// JSON zu einem JavaScript-Objekt umwandeln
+let objekt = JSON.parse(jsonString);
 
-// String in JSON-Objekt zurückwandeln
-let person2 = JSON.parse(json);
-console.log(person2);
-// Ausgabe: { name: 'Max Mustermann', alter: 30, hobbies: [ 'Lesen', 'Reisen', 'Programmieren' ] }
+console.log(objekt.name); // Ausgabe: Max
+
+// Ein JavaScript-Objekt zu einem JSON-String umwandeln
+let neuerJsonString = JSON.stringify(objekt);
+
+console.log(neuerJsonString); // Ausgabe: '{"name":"Max","alter":25,"hobbys":["Fahrradfahren","Schwimmen"]}'
 ```
 
-# Tiefere Einblicke
-JSON wurde von Douglas Crockford im Jahr 2001 entwickelt und basiert auf der Javascript-Syntax. Es ist eine alternative Methode zur Speicherung von Daten im Vergleich zu XML oder CSV. JSON wird häufig im Web verwendet, um Daten zwischen Client und Server auszutauschen.
+## Deep Dive
+JSON gibt's seit den frühen 2000ern, inspiriert von JavaScript, ist aber komplett unabhängig. XML war die Alternative, ist aber weniger effizient und schwerer zu lesen. Beim Umgang mit JSON geht's oft um `parse()` und `stringify()` in JavaScript. Auf Server-Seite ist's egal, ob du Node.js oder was anderes benutzt, JSON geht immer glatt durch.
 
-# Weitere Quellen
-- [JSON auf Wikipedia](https://de.wikipedia.org/wiki/JavaScript_Object_Notation)
-- [offizielle JSON-Website](https://www.json.org/json-de.html)
-- [Einführung in JSON von MDN](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
+## See Also
+- [MDN Web Docs zum Thema JSON](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [JSON.org](https://www.json.org/json-de.html)
+- [ECMAScript Spezifikation (gibt's auch auf Deutsch)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)

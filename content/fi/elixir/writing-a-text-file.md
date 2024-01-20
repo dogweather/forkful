@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Elixir: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,19 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Kirjoittaminen teksti tiedostoon on yksinkertainen tapa tallentaa tietoa, jota voidaan käyttää myöhemmin ohjelmoinnissa. Koodaajat käyttävät teksti tiedostoja tallentaakseen esimerkiksi käyttäjän syötteitä, ohjelman loki tietoja tai muita muuttujia.
+## What & Why?
+Tekstitiedoston kirjoittaminen Elixirissä tarkoittaa tiedon tallentamista levylle. Se on olennaista, kun halutaan säilyttää tietoa ohjelman ajon yli tai vaihtaa dataa eri systeemien kesken.
 
-## Kuinka:
-```Elixir
-File.write("teksti.txt", "Tervetuloa") 
+## How to:
+Kirjoita tiedosto:
+```elixir
+File.write!("hello.txt", "Hei maailma!")
 ```
-Tämä koodi luo teksti tiedoston nimeltä "teksti.txt" ja tallentaa siihen tekstin "Tervetuloa". Voit vaihtaa tekstin ja tiedoston nimen halutessasi. Voit myös käyttää `File.append` komentoa lisätäksesi uutta tietoa olemassa olevaan teksti tiedostoon.
+Lue tiedosto:
+```elixir
+IO.puts(File.read!("hello.txt"))
+# Output: Hei maailma!
+```
+Lisää rivejä tiedostoon:
+```elixir
+File.write!("hello.txt", "Tervetuloa Elixirin maailmaan!", [:append])
+```
 
-## Syvempi sukellus:
-Teksti tiedostojen luominen ja muokkaaminen on ollut perusosa ohjelmoinnissa jo vuosikymmenien ajan. Kyseessä on yksinkertainen, mutta tehokas tapa tallentaa ja käsitellä tietoa. On myös useita muita tapoja tallentaa tietoa, kuten tietokantoja tai taulukoita, mutta teksti tiedostot ovat edelleen erittäin hyödyllisiä monissa tilanteissa.
+## Deep Dive
+Elixir-koodin tiedostonkäsittely perustuu Erlangin :file-moduuliin. Vaihtoehtoja ovat esimerkiksi Stream-moduuli suurempien tiedostojen käsittelyyn tai erilaiset tietokantakirjastot pysyvään datanhallintaan. Suorituskyky ja virheenkäsittely ovat tärkeitä tekijöitä, joita pohditaan tiedostoja kirjoitettaessa.
 
-## Katso myös:
-- [Elixirin viralliset dokumentaatiot tiedoston käsittelystä](https://hexdocs.pm/elixir/File.html)
-- [Elixirin viralliset dokumentaatiot tiedoston käsittelystä](https://hexdocs.pm/elixir/File.html)
-- [Elixirin viralliset dokumentaatiot teksti tiedostojen lukemisesta](https://hexdocs.pm/elixir/File.html#content)
+## See Also
+- Elixirin virallinen dokumentaatio tiedostonkäsittelyyn: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+- Erlangin :file-moduuli: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+- Stream-moduuli suurien tiedostojen käsittelyyn: [https://hexdocs.pm/elixir/Stream.html](https://hexdocs.pm/elixir/Stream.html)

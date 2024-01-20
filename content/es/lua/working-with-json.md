@@ -1,6 +1,6 @@
 ---
 title:                "Trabajando con JSON"
-html_title:           "Lua: Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
 simple_title:         "Trabajando con JSON"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## ¿Qué y Por Qué?
 
-Trabajar con JSON es una tarea común en la programación moderna. JSON, o JavaScript Object Notation, es un formato ligero para almacenar y transmitir datos. Los programadores lo usan porque es fácil de leer y escribir en comparación con otros formatos de datos, como XML. Además, JSON es ampliamente utilizado en aplicaciones web y móviles, por lo que es importante para los programadores aprender cómo trabajar con él.
+Trabajar con JSON significa manipular el formato de intercambio de datos JavaScript Object Notation en tus programas. Los programadores lo hacen porque JSON es ligero, fácil de leer y estándar en la web, ideal para comunicarse con APIs y almacenar configuraciones.
 
-## ¿Cómo hacerlo?
+## Cómo Hacerlo:
 
-En Lua, hay una biblioteca estándar llamada "cjson" que nos permite trabajar con JSON de forma sencilla. Podemos usarla para convertir una tabla Lua en una cadena JSON y viceversa. Aquí hay un ejemplo de cómo hacerlo:
+Para manejar JSON en Lua, utilizamos `dkjson`, una librería popular. Aquí están los pasos básicos:
 
-```lua
--- Convertir una tabla Lua a una cadena JSON
-local t = {nombre = "Juan", edad = 25, ciudad = "Madrid"}
-local json = require("cjson")
-local jsonString = json.encode(t)
-print(jsonString)
--- Salida: {"ciudad":"Madrid","edad":25,"nombre":"Juan"}
+1. Instalar dkjson (a través de luarocks o descargando directamente).
+2. Importar la librería en tu código.
+3. Convertir datos Lua a JSON (serialización).
+4. Convertir JSON a datos Lua (deserialización).
 
--- Convertir una cadena JSON a una tabla Lua
-local jsonString = '{"ciudad":"Madrid","edad":25,"nombre":"Juan"}'
-local t = json.decode(jsonString)
-print(t.nombre)
--- Salida: Juan
+```Lua
+local dkjson = require 'dkjson'
+
+-- Serializar datos de Lua a JSON
+local datos_lua = {
+  nombre = "Juan",
+  edad = 30,
+  intereses = {"programación", "videojuegos", "viajar"}
+}
+local json_str = dkjson.encode(datos_lua)
+print(json_str) -- {"edad":30,"intereses":["programación","videojuegos","viajar"],"nombre":"Juan"}
+
+-- Deserializar JSON a datos de Lua
+local str_json = '{"nombre":"Ana","edad":25,"intereses":["arte","lectura"]}'
+local datos_json, pos, err = dkjson.decode(str_json)
+if err then
+  error("Error al parsear JSON: "..err)
+end
+print(datos_json.nombre) -- Ana
 ```
 
-Como se puede ver en el ejemplo, podemos usar las funciones "encode" y "decode" de la biblioteca "cjson" para convertir entre tablas Lua y cadenas JSON.
+## Profundización:
 
-## Profundizando
+JSON se originó en 2001, diseñado por Douglas Crockford. Hoy, es el formato estándar de intercambio de datos debido a su simplicidad y legibilidad. Hay alternativas como XML, pero JSON predomina por su eficiencia y facilidad de uso. En la implementación, considere que Lua no tiene soporte nativo para JSON, así que se necesitan librerías externas como `dkjson`, `cjson`, o `json.lua`. Estas diferencias principalmente en rendimiento y facilidades adicionales.
 
-JSON fue creado originalmente por Douglas Crockford en 2001, como una alternativa más sencilla a XML. Aunque todavía se utiliza XML en ciertas aplicaciones, JSON se ha convertido en el formato preferido para el intercambio de datos en aplicaciones web y móviles.
+## Ver También:
 
-Además de la biblioteca estándar "cjson", existen otras opciones para trabajar con JSON en Lua, como "dkjson" y "lua-json". Sin embargo, "cjson" es la más utilizada debido a su rendimiento y funcionalidad.
-
-La implementación estándar de Lua no incluye "cjson" por defecto, pero se puede instalar fácilmente con la ayuda de un gestor de paquetes como "luarocks". Solo necesitas ejecutar el siguiente comando en la terminal:
-
-```bash
-luarocks install lua-cjson
-```
-
-## Ver también
-
-- [Documentación oficial de cjson](http://www.kyne.com.au/~mark/software/lua-cjson-manual.html)
+- Documentación `dkjson`: http://dkolf.de/src/dkjson-lua.fsl/home
+- LuaRocks `dkjson`: https://luarocks.org/modules/dkolf/dkjson
+- JSON en la Wikipedia: https://es.wikipedia.org/wiki/JSON
+- Comparativa entre JSON y XML: https://www.json.org/json-es.html

@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely .csv:n kanssa"
-html_title:           "Haskell: Työskentely .csv:n kanssa"
-simple_title:         "Työskentely .csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-CSV-tiedostot (Comma-Separated Values) ovat yleisesti käytettyjä tietomuotoja, jotka mahdollistavat dataa sisältävän taulukon tallentamisen yksinkertaisessa tekstimuodossa. Tätä tietomuotoa käytetään usein, koska se on helppo lukea ja ymmärtää sekä soveltuu hyvin tietojen jakamiseen eri ohjelmistojen ja järjestelmien välillä.
+## What & Why? - Mitä ja Miksi?
+CSV on datan tallennusmuoto, jota käytetään taulukollisen tiedon tallentamiseen tekstimuodossa. Ohjelmoijat käyttävät sitä, koska se on yksinkertainen, laajalti tuki ja helppo lukea sekä kirjoittaa ohjelmallisesti.
 
-## Kuinka?
-Käyttäen Haskellia voimme helposti työskennellä CSV-tiedostojen kanssa. Alla on esimerkki, joka lukee ja tulostaa CSV-tiedoston sisällön.
+## How to: - Kuinka tehdään:
+Käytetään `cassava`-kirjastoa CSV:n käsittelyyn Haskellissa.
 
 ```Haskell
-import Text.CSV
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 
+-- Oleta että Meillä on CSV-tiedosto nimeltään data.csv seuraavalla sisällöllä:
+-- name,age
+-- John Doe,30
+-- Jane Smith,25
+
+-- Määritellään tyyppi riviä varten
+data Person = Person { name :: !String, age :: !Int }
+
+instance FromNamedRecord Person where
+  parseNamedRecord m = Person <$> m .: "name" <*> m .: "age"
+
+main :: IO ()
 main = do
-  let fileName = "testi.csv"
-  csvData <- parseCSVFromFile fileName
-  case csvData of
-    Left err -> putStrLn "Tiedoston lukeminen epäonnistui"
-    Right rows -> mapM_ (putStrLn . show) rows
-  ```
-  Tuloste:
+    csvData <- BL.readFile "data.csv"
+    case decodeByName csvData of
+        Left err -> putStrLn err
+        Right (_, vector) -> V.forM_ vector $ \person ->
+            putStrLn $ name person ++ " on " ++ show (age person) ++ " vuotias"
+```
 
-  ```
-  ["Tieto1", "Tieto2", "Tieto3"]
-  ["1", "2", "3"]
-  ["4", "5", "6"]
-  ```
-  Koodin ensimmäinen rivi tuo Text.CSV-moduulin, joka sisältää työkalut CSV-tiedoston käsittelyyn. Seuraavaksi määritellään pääfunktio `main`, joka lukee tiedoston ja tulostaa sen sisällön. Tulosteen muotoilun hoitaa `mapM_`-funktio.
+Tuloste olisi:
 
-## Syventävä sukellus
-CSV-tiedostojen käyttö on yleistynyt 1970-luvulta lähtien etenkin liiketoiminnassa ja tietoanalytiikassa. Vaikka Haskelliin on saatavilla monia CSV-käsittelyyn tarkoitettuja kirjastoja, voimme myös käyttää sisäänrakennettuja listafunktioita kuten `map` ja `filter` CSV-tiedoston käsittelyyn.
+```
+John Doe on 30 vuotias
+Jane Smith on 25 vuotias
+```
 
-Vaihtoehtoisesti voimme käyttää myös erilaisia ohjelmistoja ja työkaluja, kuten Exceliä, jotka tarjoavat käyttäjäystävällisen käyttöliittymän CSV-tiedostojen käsittelyyn.
+## Deep Dive - Syväsukellus:
+CSV (Comma-Separated Values) on yksi vanhimmista tiedonvaihtoformaatteja, joka erottaa arvot pilkulla. Vaikka se on yksinkertainen, ei ole standardia, minkä takia eri järjestelmät voivat tulkita CSV-tiedostoja eri tavoin. Haskellissa `cassava` on suosittu kirjasto CSV:n kanssa työskentelyyn, mutta muitakin vaihtoehtoja, kuten `csv-conduit`, ovat olemassa. `cassava` tukee sekä nimettyjä että nimettömiä tietueita.
 
-CSV-tiedostojen käsittely perustuu tietojen erottamiseen pilkulla, mutta tilanteesta riippuen voidaan käyttää myös muita erottimia kuten puolipistettä tai välilyöntiä.
-
-## Katso myös
-- [Haskellin viralliset dokumentaatiot](https://www.haskell.org/documentation/)
-- [Text.CSV-moduulin dokumentaatio](https://hackage.haskell.org/package/csv/docs/Text-CSV.html)
+## See Also - Katso Myös:
+- `cassava` kirjaston dokumentaatio: https://hackage.haskell.org/package/cassava
+- CSV:n yleistietoa: https://tools.ietf.org/html/rfc4180
+- `csv-conduit` kirjasto, toinen valinta CSV-käsittelyyn: https://hackage.haskell.org/package/csv-conduit

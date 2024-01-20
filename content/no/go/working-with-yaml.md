@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med yaml"
-html_title:           "Go: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,88 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å jobbe med YAML er å lage og lese strukturerte datafiler. Dette er nyttig for å organisere og dele informasjon i programmering. Ved å bruke YAML, kan programmene våre være mer effektive og skalerbare.
+## What & Why?
+YAML er et dataformat som er lett å lese for mennesker, og brukes ofte for konfigurasjonsfiler. Programmerere bruker YAML for å organisere data og innstillinger på en enkel og oversiktlig måte.
 
-## Hvordan:
-Kodeeksempler og output kan ses innenfor ```Go ... ``` kodeblokker.
+## How to:
+For å jobbe med YAML i Go, bruk `go-yaml` pakken. Her er et enkelt eksempel på hvordan parse en YAML-streng:
 
-For å lage en YAML-fil i Go, kan vi bruke pakken "gopkg.in/yaml.v2". Her er et eksempel på hvordan dette kan gjøres:
 ```Go
+package main
+
 import (
     "fmt"
-    "gopkg.in/yaml.v2"
+    "log"
+
+    "gopkg.in/yaml.v3"
 )
 
-type Person struct {
-    Name  string `yaml:"name"`
-    Age   int    `yaml:"age"`
-    Email string `yaml:"email"`
+type Config struct {
+    Hovedstilling string `yaml:"hovedstilling"`
+    Erfaring int `yaml:"erfaring"`
 }
 
 func main() {
-    // Oppretter en person med data
-    p := Person{Name: "Lisa", Age: 25, Email: "lisa@example.com"}
+    ymlData := `
+hovedstilling: "Utvikler"
+erfaring: 5
+`
+    var config Config
 
-    // Konverterer til YAML og skriver til konsoll
-    yamlData, _ := yaml.Marshal(p)
-    fmt.Printf(string(yamlData))
+    err := yaml.Unmarshal([]byte(ymlData), &config)
+    if err != nil {
+        log.Fatalf("error: %v", err)
+    }
+
+    fmt.Printf("Stilling: %s\nErfaring: %d år\n", config.Hovedstilling, config.Erfaring)
 }
 ```
-Dette vil gi følgende output:
-```Go
-name: Lisa
-age: 25
-email: lisa@example.com
+
+Kjøring vil gi dette resultatet:
+
+```
+Stilling: Utvikler
+Erfaring: 5 år
 ```
 
-For å lese en YAML-fil i Go, kan vi bruke samme pakke og metoden "yaml.Unmarshal()". Her er et eksempel på hvordan dette kan gjøres:
-```Go
-import (
-    "fmt"
-    "gopkg.in/yaml.v2"
-)
+## Deep Dive
+YAML ("YAML Ain't Markup Language") ble først lansert i 2001. Det tillater komplekse datastrukturer å representeres på en menneskelesbar måte. Alternativer til YAML inkluderer JSON og XML, men YAML er ofte foretrukket for sin lesbarhet. Internt bruker Go-`yaml` pakken refleksjon for å tilordne YAML-data til Go-strukturer, noe som gjør det enkelt å arbeide med tilpassede datatyper.
 
-type Person struct {
-    Name  string `yaml:"name"`
-    Age   int    `yaml:"age"`
-    Email string `yaml:"email"`
-}
-
-func main() {
-    // Definerer en variabel for å lagre YAML-data
-    var data Person
-
-    // Leser YAML-filen og lagrer i variabelen
-    file, _ := ioutil.ReadFile("person.yaml")
-    yaml.Unmarshal(file, &data)
-
-    // Skriver dataen til konsoll
-    fmt.Println(data.Name)
-    fmt.Println(data.Age)
-    fmt.Println(data.Email)
-}
-```
-Hvis filen "person.yaml" inneholder følgende data:
-```Go
-name: Lisa
-age: 25
-email: lisa@example.com
-```
-Vil konsollen skrive ut:
-```
-Lisa
-25
-lisa@example.com
-```
-
-## Dypdykk:
-YAML står for "YAML Ain't Markup Language" og er et format som ble utviklet i begynnelsen av 2000-tallet. Det er et alternativ til XML og JSON, og er spesielt populært innenfor programmeringsverdenen.
-
-En annen måte å jobbe med YAML i Go er å bruke pakken "gopkg.in/yaml.v3", som ble lansert i 2018 og er en oppdatering av versjon 2. Denne gir mer funksjonalitet og bedre ytelse, men krever også en annen konverteringsprosess. 
-
-Implementasjonen av YAML i Go er basert på YAML 1.2-spesifikasjonen. Dette betyr at alle funksjonene og reglene i denne versjonen blir støttet. 
-
-## Se også:
-- Offisiell dokumentasjon for pakken "gopkg.in/yaml.v2": https://pkg.go.dev/gopkg.in/yaml.v2
-- Oppdateringen av pakken til versjon 3: https://blog.golang.org/yaml-v3.0.0-released
+## See Also
+- YAML spesifikasjonen: https://yaml.org/spec/1.2/spec.html
+- `go-yaml` GitHub repo: https://github.com/go-yaml/yaml
+- Go-dokumentasjon for pakken refleksjon: https://pkg.go.dev/reflect

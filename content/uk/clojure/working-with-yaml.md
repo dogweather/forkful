@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Clojure: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Зачем и зачем?
+## Що це таке і навіщо?
+YAML - це формат серіалізації даних, читабельний для людей. Програмісти використовують його для конфігураційних файлів та обміну даними завдяки його простоті та лаконічності.
 
-YAML (YAML Ain't Markup Language) - це формат даних, який широко використовується у програмуванні для зберігання та обміну даними. Він є читабельним для людей та легко інтерпретованим для комп'ютерів, що робить його улюбленим серед програмістів. Робота з YAML дозволяє зручно створювати та організовувати дані, що досить часто виникає у різних проектах.
-
-Як це зробити:
-
+## Як це зробити:
 ```Clojure
-(def data
-    {:person {:name "John"
-              :age 27
-              :occupation "developer"}})
+(require '[clj-yaml.core :as yaml])
 
-(require '[hara.data :as string])
+; Зчитування YAML
+(def config-string "
+http:
+  port: 80
+  hostname: example.com
+")
 
-(string/to-data "person:
-  name: John
-  age: 27
-  occupation: developer")
-=> {:person {:name "John"
-             :age 27
-             :occupation "developer"}}
+(def config-map (yaml/parse-string config-string))
+(println config-map)
+
+; Вивід: {:http {:port 80, :hostname "example.com"}}
+
+; Запис YAML
+(def config-data 
+  {:database {:user "dbuser", :password "dbpass"}})
+
+(println (yaml/generate-string config-data))
+
+; Вивід: "database:\n  user: dbuser\n  password: dbpass\n"
 ```
 
-Глибоке занурення:
+## Поглиблене вивчення:
+YAML (YAML Ain't Markup Language) з'явився в 2001 році і позиціонувався як легша альтернатива XML. Альтернативи YAML - це JSON і TOML. У Clojure для роботи з YAML можна використовувати бібліотеку `clj-yaml`, яка ґрунтується на Java-бібліотеці `snakeyaml`. В Clojure важливо управління залежностями, тому не забувайте вказати бібліотеку у файлі `project.clj` або `deps.edn`.
 
-YAML був створений у 2001 році для заміни складної і нечитабельної форми XML. Його синтаксис надзвичайно простий та зрозумілий, що дозволяє людям та програмістам легко редагувати та використовувати дані без додаткових інструментів. Існують альтернативи YAML, такі як JSON та CSV, але YAML надає більшу гнучкість та читабельність.
-
-```Clojure
-(require '[clojure.data.yaml :as yaml])
-
-;; convert Clojure data to YAML string
-(def data
-    {:person {:name "John"
-              :age 27
-              :occupation "developer"}})
-
-(yaml/generate-string data)
-=> "person:
-      name: John
-      age: 27
-      occupation: developer"
-
-;; convert YAML string to Clojure data
-(def string "person:
-                name: Jane
-                age: 30
-                occupation: designer")
-
-(yaml/parse-string string)
-=> {:person {:name "Jane"
-             :age 30
-             :occupation "designer"}}
-```
-
-Дивись також:
-
-Для детальнішої інформації про роботу з YAML в Clojure рекомендується ознайомитись із документацією та прикладами за посиланням: https://github.com/ragnard/cljs-yaml
-
-Для порівняння різних форматів даних та їх використання в різних ситуаціях можна переглянути статтю за посиланням: https://www.smashingmagazine.com/2018/05/json-versus-xml-versus-yaml-which-is-the-best-serialization-format/
+## Більше інформації:
+- Clojure офіційна сторінка: https://clojure.org
+- `clj-yaml` бібліотека на GitHub: https://github.com/clj-commons/clj-yaml
+- Як працювати з Leiningen та `project.clj`: https://leiningen.org
+- Ресурси для вивчення Clojure: https://clojurecademy.com

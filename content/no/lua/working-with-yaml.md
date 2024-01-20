@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med YAML"
-html_title:           "Lua: Å jobbe med YAML"
-simple_title:         "Å jobbe med YAML"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & hvorfor? 
-YAML står for "YAML Ain't Markup Language," og det er et enkelt og leselig format for å representere datar strukturert som nøkkel-verdi par. Dette gjør YAML til et populært verktøy blant programmere fordi det er enkelt å forstå og bruke.
+## Hva & Hvorfor?
+YAML, "YAML Ain't Markup Language", er et dataformat for å strukturere data. Programmere bruker YAML for enkel lesbarhet og skrivbarhet i konfigurasjonsfiler og datautveksling.
 
-Hvordan:
-Lua har innebygde funksjoner for å enkelt lese og skrive YAML-filer. For å lese en YAML-fil i Lua, bruk følgende kode:
-```Lua
-local yaml = require("yaml")
-local file = io.open("eksempel.yaml", "r") -- Åpner en fil med navn "eksempel.yaml" for lesing
-local data = yaml.load(file:read("*all")) -- Leser og konverterer YAML-dataen til en Lua-tabell
-file:close() -- Lukker filen når vi er ferdige
-```
-For å skrive en YAML-fil i Lua, bruk denne koden som et eksempel:
-```Lua
-local yaml = require("yaml")
-local data = {navn = "John Doe", alder = 30} -- Lager en Lua-tabell med nøkkel-verdi par
-local file = io.open("eksempel.yaml", "w") -- Åpner en fil med navn "eksempel.yaml" for skriving
-file:write(yaml.dump(data)) -- Konverterer og skriver dataen til filen
-file:close() -- Lukker filen når vi er ferdige
+## Hvordan:
+Lua har ikke innebygget YAML-støtte, så vi bruker `lyaml` biblioteket. Installer via luarocks:
+
+```bash
+luarocks install lyaml
 ```
 
-Dykk ned:
-YAML ble opprinnelig utviklet for å være en enklere og mer leselig formattering alternativ til andre strukturerte dataformater som JSON og XML. Det brukes ofte til å konfigurere programmer og konvertere data mellom forskjellige filer og systemer. Alternativene til YAML inkluderer JSON, XML og andre programmeringsspråk spesifikke formater.
+Enkelt eksempel for å laste inn YAML-streng:
+```lua
+local lyaml = require('lyaml')
+local yaml_data = [[
+- Hanne
+- Ole
+- Kari
+]]
 
-Se også:
-LUA YAML-bibliotek: https://github.com/golgote/lua-yaml
-Offisiell YAML-dokumentasjon: https://yaml.org/spec/1.2/spec.html
+local table_from_yaml = lyaml.load(yaml_data)
+print(table_from_yaml[2])  -- Output: Ole
+```
+
+For å serialisere table til YAML:
+```lua
+local table_to_yaml = lyaml.dump({[1] = "Hanne", [2] = "Ole", [3] = "Kari"})
+print(table_to_yaml)
+```
+
+## Dypdykk
+YAML startet i 2001, en enklere og mer menneske-vennlig alternativ til XML og JSON. Alternativer til YAML er JSON for datautveksling eller TOML for konfigurasjon. Detaljene i YAML-implementeringen avhenger av biblioteket, men det følger standarden YAML 1.2.
+
+## Se Også
+- Offisiell YAML-nettside: https://yaml.org
+- `lyaml` dokumentasjon: http://gvvaughan.github.io/lyaml/
+- YAML 1.2 spesifikasjon: https://yaml.org/spec/1.2/spec.html

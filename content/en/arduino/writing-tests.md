@@ -11,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests in Arduino refers to the process of creating small programs to check the functionality of your main code. This is done to ensure that your code works as intended and to catch any potential bugs before they become a bigger problem. Programmers do it to improve the overall quality and reliability of their code, making sure it performs correctly in different scenarios.
+Writing tests means creating a set of conditions to check if your code behaves as expected. Programmers do it to catch bugs early, ensure software quality, and save the headache when adding new features.
 
 ## How to:
-
-To write tests in Arduino, you can use a framework called "ArduinoUnit". This makes it easy to create and run tests directly on your Arduino board. Check out the following example code:
-
 ```Arduino
-#include <ArduinoUnit.h>
+#include <Arduino.h>
+#include <unity.h>
 
-test(helloWorld) {
-  Assert.assertEquals("Hello World!", "Hello World!");
+void setUp(void) {
+// set stuff up here
+}
+
+void tearDown(void) {
+// clean up here
+}
+
+void test_led_builtin_pin_number(void) {
+    TEST_ASSERT_EQUAL(13, LED_BUILTIN);
+}
+
+void test_led_state_high(void) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    TEST_ASSERT_EQUAL(digitalRead(LED_BUILTIN), HIGH);
 }
 
 void setup() {
-  test::run();
+    UNITY_BEGIN();
+    RUN_TEST(test_led_builtin_pin_number);
+    RUN_TEST(test_led_state_high);
+    UNITY_END();
 }
 
-void loop() {}
+void loop() {
+    // Usually empty in testing
+}
+```
+Output:
+```
+.
+.
+OK
 ```
 
-In this code, we first include the necessary library and then use the ```test()``` function to define a test called "helloWorld". We then use the ```Assert.assertEquals()``` function to check if the expected result matches the actual result. Finally, we use the ```test::run()``` function to run our test. You can add as many tests as you need and even test specific functions or variables within your main code.
+## Deep Dive
+Historical context: Testing in Arduino came later than in software dev and was less common due to hardware interaction. Alternatives: Manual testing, or more complex test frameworks like Google Test. Implementation details: Typically we use a library like ArduinoUnit or AUnit. Place tests in `setup()` and keep `loop()` empty as tests run once.
 
-## Deep Dive:
-
-In the early days of Arduino, writing tests was not a common practice. However, as more and more complex projects were developed, the need for a reliable way to test code also increased. This led to the creation of ArduinoUnit, which now comes pre-installed with the Arduino IDE. Other popular alternatives include "Unity" and "CppUTest".
-
-To implement tests in your Arduino projects, you first need to understand the structure of a test. A test consists of three parts: a setup, the code to be tested, and an assertion. The setup prepares the environment for the test, the code to be tested is the part of your main code that you want to test, and the assertion checks if the expected result matches the actual result.
-
-## See Also:
-
-- ArduinoUnit: https://github.com/mmurdoch/arduinounit
-- Unity: https://github.com/ThrowTheSwitch/Unity
-- CppUTest: https://github.com/cpputest/cpputest
+## See Also
+- ArduinoUnit library: https://github.com/mmurdoch/arduinounit
+- AUnit library: https://github.com/bxparks/AUnit
+- Introduction to Unit Testing: https://www.arduino.cc/en/Guide/UnitTesting

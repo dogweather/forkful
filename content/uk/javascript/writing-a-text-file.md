@@ -1,7 +1,7 @@
 ---
-title:                "Написання текстового файлу"
-html_title:           "Javascript: Написання текстового файлу"
-simple_title:         "Написання текстового файлу"
+title:                "Створення текстового файлу"
+html_title:           "Arduino: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## Що і Чому?
+Запис текстового файлу — це процес збереження даних у форматі, що читається людьми. Програмісти роблять це для логування, збереження налаштувань, експорту даних.
 
-Текстові файли - це збережені набори даних, які можуть містити тексти, числа та інші типи даних. Програмісти використовують їх для зберігання та обробки великих обсягів даних. Одним з прикладів використання текстових файлів є збереження налаштувань або конфігурацій програм.
+## Як це робити:
+У JavaScript, для запису файлів на стороні сервера, використовують Node.js. На прикладі fs модуля:
 
-## Як?
-
-Ми можемо створити новий текстовий файл за допомогою `createWriteStream` функції з модуля `fs`. Нижче показано код, який створює текстовий файл з назвою `data.txt` та записує в нього рядок "Hello World".
-
-```Javascript
+```javascript
 const fs = require('fs');
+const data = 'Привіт, це текстовий файл.';
 
-let data = "Hello World";
-
-fs.createWriteStream('data.txt').write(data);
+fs.writeFile('textFile.txt', data, 'utf8', (err) => {
+    if (err) throw err;
+    console.log('Файл було створено!');
+});
 ```
 
-Результатом цього коду буде створення нового текстового файлу `data.txt` та запис в нього рядка "Hello World".
+Коли запустиш код, з'являється файл `textFile.txt` з нашим повідомленням.
 
-## Глибше
+## Поглиблено:
+Запис файлів у Node.js з'явився з появою платформи в 2009 році. Альтернативами є використання баз даних, об'єктів Blob у браузері або cloud services. Деталі: модуль `fs` використовує системні виклики, асинхронність Node.js уможливлює ефективну роботу з I/O операціями. 
 
-Текстові файли використовувалися ще з перших років розробки програм. На сьогоднішній день існують інші формати для зберігання даних, такі як бази даних, але текстові файли залишаються важливим інструментом для роботи з даними.
-
-
-## Дивіться також
-
-Якщо ви хочете дізнатися більше про роботу з текстовими файлами в Javascript, перегляньте наступні джерела:
-
-- [Документація Node.js про модуль fs](https://nodejs.org/api/fs.html)
-- [Відеоурок завдяки w3schools.com](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+## Дивись також:
+- Node.js `fs` documentation: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- MDN Веб-API для роботи з файлами: [https://developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- Stream-handling in Node.js: [https://nodejs.org/api/stream.html](https://nodejs.org/api/stream.html)

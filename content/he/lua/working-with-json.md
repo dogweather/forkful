@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Lua: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -11,41 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
- JSON הוא סוג של תבנית המשמשת לפיענוח ושימוש בנתונים מקודדים. מתכנתים משתמשים ב- JSON כדי להעביר ולשלוח מידע מתוך קוד שפותח לקוד אחר כגון JavaScript.
+JSON הוא פורמט חליפין נתונים, פשוט לקריאה וכתיבה על ידי בני אדם, ולעיבוד על ידי מכונות. תכניתנים משתמשים ב-JSON בגלל התאימות הרחבה והיכולת להמיר בקלות מבני נתונים למחרוזת וחזרה.
 
 ## איך לעשות:
- בלואה, ניתן להשתמש בספריית "Json" כדי לפענח וליצור נתונים תקניים בפורמט JSON.
+```Lua
+-- טעינת ספריית cjson
+local cjson = require "cjson"
 
-```lua
-local json = require("json")
-
--- יצירת עץ JSON
-local json_tree = {
-  name = "John",
-  age = 25,
-  interests = {"coding", "reading"}
-}
-
--- המרה לסטרינג JSON
-local json_string = json.encode(json_tree)
+-- יצירת אובייקט JSON מתוך מילון
+local my_table = { name = "Yossi", age = 30, is_programmer = true }
+local json_string = cjson.encode(my_table)
 print(json_string)
+-- פלט: {"name":"Yossi","age":30,"is_programmer":true}
 
--- הפיכת סטרינג JSON לעץ
-local decoded_json = json.decode(json_string)
-print(decoded_json.name)
+-- המרת מחרוזת JSON למילון
+local decoded_table = cjson.decode(json_string)
+print(decoded_table.name, decoded_table.age)
+-- פלט: Yossi 30
 ```
 
-התוצאה שבתנועה היא:
+## צלילה לעומק
+השימוש ב-JSON כמערכת נתונים התחיל בשנים המוקדמות של המילניום עם הטמעה ב-JavaScript. הלטרנטיבות כוללות XML ו-YAML, אך JSON נשאר פופולרי עקב פשטותו. ב-Lua, המרת JSON מתבצעת באמצעות ספריות חיצוניות כמו cjson או dkjson, שמאפשרות את הטמעת הפונקציות הדרושות.
 
-```
-{"name":"John","age":25,"interests":["coding","reading"]}
-John
-```
-
-## מה עומק:
- JSON נוצר כבולט ב- 1990 על ידי דוויד פורטר כדי להעביר נתונים מרחש צד אחד לצד אחר. ספריות נוספות כגון "dkjson" ניתנות לשימוש בלואה, אך לפני כן אפשרות זו הייתה זמינה רק לשפת גאמר.
-
-## ראה גם:
- למידע נוסף על ספריית "Json" ללואה, בקר באתר של קהילת הלואה הישראלית: https://lualinux.net/forums/viewtopic.php?f=26&t=126077
-
-לפרטים נוספים על תבנית JSON, בקר באתר המקורי: https://json.org/
+## ראה גם
+- מדריך לספריית cjson: https://www.kyne.com.au/~mark/software/lua-cjson-manual.html
+- מדריך לספריית dkjson: http://dkolf.de/src/dkjson-lua.fsl/home
+- השוואת פורמטים לחילופי נתונים: https://www.json.org/json-en.html

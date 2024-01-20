@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업하기"
-html_title:           "Ruby: CSV 작업하기"
-simple_title:         "CSV 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜?: 
-CSV를 다루는 것은 텍스트 파일로 데이터를 저장하고 읽는 것을 말합니다. 프로그래머들은 CSV를 사용하는 이유는 간단합니다. 이것은 텍스트 데이터를 다루는 데 가장 일반적인 방식이기 때문입니다.
+## What & Why? (무엇인가? 그리고 왜?)
+CSV(Comma-Separated Values)는 데이터를 저장하고 교환하기 위한 간단한 파일 형식입니다. 프로그래머는 범용적이고 호환성이 뛰어나기 때문에 CSV를 자주 사용합니다.
 
-## 사용 방법:
-다음 코드 블록에는 CSV 작업에 대한 기초적인 예와 샘플 출력이 포함되어 있습니다.
-
-```Ruby 
+## How to (방법)
+```Ruby
 require 'csv'
-# 파일 쓰기
-CSV.open("example.csv", "w") do |csv|
-    csv << ["Name", "Age", "Occupation"]
-    csv << ["John", "25", "Programmer"]
-    csv << ["Jane", "30", "Designer"]
+
+# CSV 파일 쓰기
+CSV.open("example.csv", "wb") do |csv|
+  csv << ["Name", "Age", "City"]
+  csv << ["Alice", "30", "Seoul"]
+  csv << ["Bob", "22", "Busan"]
 end
 
-# 파일 읽기
-CSV.foreach("example.csv") do |row|
-    puts "#{row[0]} is a #{row[2]} who is #{row[1]} years old."
+# CSV 파일 읽기
+CSV.foreach("example.csv", headers: true) do |row|
+  puts "#{row['Name']} is from #{row['City']}."
 end
 ```
-
 출력:
 ```
-John is a Programmer who is 25 years old.
-Jane is a Designer who is 30 years old.
+Alice is from Seoul.
+Bob is from Busan.
 ```
 
-## 깊이 있는 정보:
-CSV는 Comma Separated Values의 약자로써, 과거에는 데이터를 컴퓨터에서 인식하기 쉬운 형식으로 저장하기 위해 개발되었습니다. 현재에는 다양한 데이터 형식이 있지만 여전히 많은 프로그래머들이 CSV를 사용하는 이유 중 하나는 간단하고 읽기 쉬운 구조 때문입니다. 또한, CSV 파일을 가져와서 다른 형식으로 변환하는 도구들도 많이 존재합니다.
+## Deep Dive (심층 분석)
+CSV 형식은 1970년대부터 사용되어 왔습니다. CSV를 다루기 위해 Ruby는 `csv` 라이브러리를 포함합니다. 엑셀이나 SQL 처럼 데이터베이스와도 호환됩니다. 대안으로 JSON이나 YAML 같은 형식이 있지만, 텍스트 기반의 데이터 교환에는 여전히 CSV가 많이 사용됩니다.
 
-## 관련 자료:
-- [CSV vs XML vs JSON](https://stackoverflow.com/questions/911195/csv-vs-xml-vs-json-which-is-the-best-for-mobile-apps)
+## See Also (참고자료)
+- Ruby의 CSV 라이브러리 문서: https://ruby-doc.org/stdlib-2.6/libdoc/csv/rdoc/CSV.html
+- CSV 파일 포맷에 대한 더 자세한 정보: https://en.wikipedia.org/wiki/Comma-separated_values
+- CSV 데이터를 다루는 다른 언어들의 라이브러리 비교: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats

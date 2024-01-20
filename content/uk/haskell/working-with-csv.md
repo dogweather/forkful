@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Haskell: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і чому?
+## Що & Чому?
+Робота з CSV (Comma-Separated Values) – це операції з текстовими файлами, які містять дані, розділені комами. Програмісти використовують CSV для простої передачі табличних даних між різними програмами.
 
-Робота з CSV є надзвичайно важливим і корисним навичкою для програмістів. CSV (Comma Separated Values) представляє собою формат зберігання даних, який використовує коми для розділення полів. Це дозволяє легко читати і записувати дані, що робить його популярним форматом для обміну даними між різними програмами.
-
-# Як?
-
-Щоб працювати з CSV у Haskell, потрібно встановити пакет ```csv```. Приклади коду та вихідні дані наведені нижче:
-
+## Як це робити:
 ```Haskell
-import qualified Data.Csv as Csv
-import qualified Data.ByteString as BS
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
+import Data.Csv
 
-csvFile = "data.csv"
+type Person = (String, Int, String)
 
--- Читання CSV файлу
-readCSV :: BS.ByteString -> IO (Either String (V.Vector (Ссv.Header, Ссv.Record)))
-readCSV file = Csv.decode Csv.NoHeader file
+-- Зчитуємо CSV-файл
+readCsv :: FilePath -> IO (Either String (V.Vector Person))
+readCsv filePath = do
+    csvData <- BL.readFile filePath
+    return $ decode NoHeader csvData
 
--- Запис CSV файлу
-writeCSV :: BS.ByteString -> IO ()
-writeCSV file = BS.appendFile file
+-- Записуємо CSV-файл
+writeCsv :: FilePath -> V.Vector Person -> IO ()
+writeCsv filePath dataToWrite = BL.writeFile filePath (encode dataToWrite)
 
--- Приклад вихідних даних
-header = ["id", "name", "age"]
-data = [["1", "John", "20"], ["2", "Mary", "25"], ["3", "Tom", "30"]]
+main :: IO ()
+main = do
+  -- Читаємо
+  persons <- readCsv "people.csv"
+  case persons of
+    Left err -> putStrLn err
+    Right ps -> print ps
 
--- Читання CSV файла за допомогою наших функцій
-readCSV csvFile
--- Вивід: Right (fromList [("id",["1","2","3"]),("name",["John","Mary","Tom"]),("age",["20","25","30"])])
-
--- Запис вихідних даних у CSV файл за допомогою наших функцій
-writeCSV csvFile (Csv.encode header <> Csv.encode data)
-
-readCSV csvFile
--- Вивід:
-
--- id,name,age
--- 1,John,20
--- 2,Mary,25
--- 3,Tom,30
-
+  -- Пишемо
+  let newPersons = V.fromList [("Alice", 30, "Doctor"), ("Bob", 22, "Engineer")]
+  writeCsv "new_people.csv" newPersons
+```
+### Вивід
+```
+[("John Doe", 43, "Software Developer"), ("Jane Smith", 29, "Data Scientist")]
 ```
 
-# Більш детально
+## Поглиблений розбір
+CSV файл - це старий і універсальний формат обміну даними. Історично він зарекомендував себе через свою простоту і підтримку багатьма програмами. Як альтернативи існують JSON, XML та інші формати; кожен має свої переваги. У Haskell робота з CSV може використовувати пакет `cassava`, який надає потужні засоби серіалізації та десеріалізації CSV.
 
-Формат CSV був розроблений у 1972 році для зберігання і обміну даними між програмами. Сьогодні він залишається одним з найпопулярніших форматів для зберігання і обробки табличних даних.
-
-Існують інші альтернативи для роботи з даними, такі як JSON та XML. Але CSV залишається популярним завдяки своїй простоті та легкості прочитання людиною.
-
-У Haskell пакет ```csv``` використовує бібліотеку ```cassava```, яка надає швидку та ефективну реалізацію для роботи з CSV.
-
-# Більше інформації
-
-- [Документація пакету ```csv```] (https://hackage.haskell.org/package/csv)
-- [Документація бібліотеки ```cassava```] (https://hackage.haskell.org/package/cassava)
-- [Огляд формату CSV] (https://en.wikipedia.org/wiki/Comma-separated_values)
+## Дивіться також
+- [Hackage `cassava` package](https://hackage.haskell.org/package/cassava)
+- [Haskell Wiki CSV page](https://wiki.haskell.org/CSV)
+- [Stack Overflow topics on Haskell CSV handling](https://stackoverflow.com/questions/tagged/csv+haskell)

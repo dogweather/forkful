@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "C: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,58 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-C - Pisanie pliku tekstowego
+## Co & Dlaczego?
 
-## Co to jest i dlaczego to robimy?
-
-Pisanie pliku tekstowego w języku C polega na zapisaniu danych w formie czytelnej dla człowieka, zwykle w formacie tekstu. Jest to przydatne w przypadku przechowywania informacji lub tworzenia konfiguracji programów. Programiści często korzystają z tej metody, ponieważ pliki tekstowe są łatwe w modyfikacji i dostosowaniu pod indywidualne potrzeby.
+Zapisywanie plików tekstowych to podstawowe działanie, pozwalające na trwałe zapisanie danych. Programiści używają tej metody, aby zachować wyniki, konfiguracje czy komunikaty.
 
 ## Jak to zrobić:
 
-```C
+```c
 #include <stdio.h>
- 
+
 int main() {
-   FILE *plik;
+    FILE *plik = fopen("przykladowy.txt", "w");
+    if (plik == NULL) {
+        printf("Błąd przy otwieraniu pliku!\n");
+        return 1;
+    }
+    fprintf(plik, "Cześć! To przykładowy tekst.\n");
+    fclose(plik);
 
-   // otwórz plik tekstowy "moj_plik.txt" do zapisu 
-   plik = fopen("moj_plik.txt", "w");
-
-   // sprawdź, czy plik został pomyślnie otwarty
-   if (plik == NULL) {
-      printf("Nie można otworzyć pliku!");
-      return -1;
-   }
-
-   // zapisz tekst w pliku
-   fprintf(plik, "To jest tekst do zapisania w pliku\n");
-
-   // zamknij plik
-   fclose(plik);
-
-   // wyświetl informację o pomyślnym zapisaniu pliku
-   printf("Plik został pomyślnie zapisany!");
-
-   return 0;
+    return 0;
 }
 ```
 
-**Wyjście:**
+Po uruchomieniu programu, tworzy się plik "przykladowy.txt" z tekstem "Cześć! To przykładowy tekst."
 
-W pliku "moj_plik.txt" pojawi się następujący tekst:
+## Dogłębniej
 
-```text
-To jest tekst do zapisania w pliku
-```
+Zapisywanie plików tekstowych jest możliwe w C od początku języka (1972). Alternatywą może być użycie funkcji `fwrite`, ale `fprintf` jest lepsze do tekstów. Ważne jest zamknięcie pliku (`fclose`) by zapisać bufor i uniknąć wycieków pamięci.
 
-## Głębsze zagadnienia:
+## Zobacz też
 
-**Kontekst historyczny:** Pisanie plików tekstowych jest jedną z najstarszych metod zapisu danych, sięgającą początków informatyki. Współcześnie, z powodu rozwoju technologii, zaczęto stosować również inne formaty, takie jak bazy danych czy pliki binarne.
-
-**Alternatywy:** Istnieją również inne sposoby na przechowywanie danych w języku C, takie jak zapisywanie do plików binarnych lub używanie baz danych. Każda z tych metod ma swoje zalety i w zależności od konkretnego zadania, programiści wybierają najbardziej odpowiednią.
-
-**Szczegóły implementacji:** Podczas pisania plików tekstowych, konieczne jest odpowiednie formatowanie tekstu, tak aby był czytelny dla użytkownika. Oprócz tego, ważne jest również prawidłowe otwieranie i zamykanie pliku, oraz przeprowadzenie odpowiednich operacji na danych przed zapisaniem ich w pliku.
-
-## Zobacz także:
-
-Dla więcej informacji na temat pisania plików tekstowych w języku C, zapoznaj się z dokumentacją [stdio.h](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm).
+- Tutorial C File I/O: https://www.cprogramming.com/tutorial/cfileio.html
+- Dokumentacja standardu C11: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
+- Przewodnik po funkcjach we/wy w C: https://en.cppreference.com/w/c/io

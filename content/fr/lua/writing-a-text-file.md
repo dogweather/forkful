@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Lua: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que & Pourquoi?
+## What & Why?
+En Lua, écrire dans un fichier texte permet de sauvegarder des données persistentes. Les programmeurs utilisent cette fonction pour stocker des configurations, des logs ou partager des informations entre différents programmes.
 
-Écrire un fichier texte en programmation consiste à créer un fichier contenant du texte qui peut être lu par un ordinateur. Les programmeurs le font pour stocker des données ou des instructions qui seront utilisées par leur programme.
-
-## Comment faire:
+## How to:
+Pour écrire dans un fichier texte, il suffit de quelques lignes :
 
 ```Lua
 -- Ouvrir un fichier en mode écriture
-local fichier = io.open("mon_fichier.txt", "w")
+local fichier = io.open("exemple.txt", "w")
+-- Verifie si le fichier est accessible
+if not fichier then
+  error("Impossible d'ouvrir le fichier.")
+end
 
--- Écrire du texte dans le fichier
-fichier:write("Bonjour, le monde!")
+-- Écrire du texte
+fichier:write("Hello, monde!\n")
 
--- Fermer le fichier
+-- Toujours fermer le fichier à la fin
 fichier:close()
 ```
 
-## Plongée en profondeur:
+Après avoir exécuté ce code, vous trouverez un fichier `exemple.txt` contenant le texte "Hello, monde!".
 
-Écrire des fichiers texte a été une partie essentielle de la programmation depuis les premiers jours de l'informatique. Bien qu'il existe aujourd'hui différentes façons de stocker des données, comme les bases de données, les fichiers texte restent une méthode simple et efficace pour les programmeurs. En Lua, la fonction ```io.open()``` est utilisée pour ouvrir un fichier et la méthode ```write()``` est utilisée pour écrire du texte dans le fichier. Il est également important de fermer le fichier avec la méthode ```close()``` pour éviter les problèmes de mémoire.
+## Deep Dive
+Ecrire dans un fichier avec Lua est introduit dès les premières versions du langage. Historiquement, Lua fournissait des méthodes simples pour l'I/O (entrées/sorties) qui continue à être utilisées. Des alternatives, comme `io.output` ou les bibliothèques tiers `lfs` (Lua File System), existent. L'importance de bien gérer l'accès au fichier (comme utiliser `close`) aide à prévenir les fuites de ressources.
 
-## Voir aussi:
-
-- [Documentation officielle de Lua](https://www.lua.org/manual/5.3/manual.html#pdf-io.open)
-- [Vidéo explicative sur l'utilisation des fichiers en Lua](https://www.youtube.com/watch?v=ds4DI865QjI)
+## See Also
+- La documentation officielle pour la manipulation de fichiers en Lua : https://www.lua.org/pil/21.2.html
+- Lua File System pour des fonctionnalités avancées : http://keplerproject.github.io/luafilesystem/
+- Un guide sur le système d'entrées/sorties en Lua : https://www.tutorialspoint.com/lua/lua_file_io.htm

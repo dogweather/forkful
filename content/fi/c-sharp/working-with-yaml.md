@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "C#: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-YAML tarkoittaa "YAML Ain't Markup Language" ja se on yksinkertainen ja luettava formaatti tietojen tallentamiseen. Se on hyödyllinen ohjelmoijille, koska se mahdollistaa tietojen tallentamisen rakenteisessa muodossa, jota voidaan helposti lukea ja muokata.
+## What & Why? (Mitä & Miksi?)
+YAML on ihmisen luettava datan serialisointiformaatti konfiguraatioihin, automaatioon ja sovellusten asetuksiin. Ohjelmoijat käyttävät YAML:ia sen selkeyden ja yksinkertaisuuden vuoksi, mikä tekee siitä ihanteellisen nopeasti muuttuviin ympäristöihin.
 
-## Miten: 
-Käytä seuraavaa koodin palaa tallentaaksesi merkkijonoja YAML-muodossa:
-
-```C#
-var yaml = @"name: John Smith
-age: 30
-address: 123 Main Street";
-Console.WriteLine(yaml);
-```
-
-Tulostus:
-
-```
-name: John Smith
-age: 30
-address: 123 Main Street
-```
-
-Voit myös käyttää `YamlDotNet`-kirjastoa helpottaaksesi YAML-tiedostojen lukemista ja muokkaamista. Käytä seuraavaa koodia esimerkkinä:
+## How to: (Kuinka tehdä:)
+C# koodiesimerkki, joka käsittelee YAML-dataa käyttäen YamlDotNet-kirjastoa. Asenna YamlDotNet nuget-paketista ennen koodin testaamista.
 
 ```C#
+using System;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-var deserializer = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
-var yaml = @"name: John Smith
-age: 30
-address: 123 Main Street";
+public class Program
+{
+    public static void Main()
+    {
+        var input = @"
+            name: Mikko Mallikas
+            age: 30
+            occupation: Developer
+        ";
 
-var person = deserializer.Deserialize<Person>(yaml);
-Console.WriteLine(person.Name); // Output: John Smith
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .Build();
+
+        var person = deserializer.Deserialize<Person>(input);
+
+        Console.WriteLine($"Nimi: {person.Name}, Ikä: {person.Age}, Ammatti: {person.Occupation}");
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Occupation { get; set; }
+}
 ```
 
-## Syvemmälle:
-YAML luotiin ensimmäisen kerran vuonna 2001 ja sen tarkoituksena oli tarjota vaihtoehto XML-formaatille tietojen tallentamisessa. Siitä lähtien se on kasvanut suosituksi vaihtoehdoksi muille formaateille kuten JSON ja XML. YAML on myös helposti tuettu monilla ohjelmointikielillä, kuten C#.
+#### Tuloste:
+```
+Nimi: Mikko Mallikas, Ikä: 30, Ammatti: Developer
+```
 
-### Vaihtoehtoja:
-Jos haluat tallentaa tietoja rakenteisessa muodossa, voit myös käyttää JSON- tai XML-formaatteja. Kumpikin niistä toimii hyvin, mutta YAML on usein helpompi lukea ja kirjoittaa, kun kyseessä ovat suuremmat tiedostot.
+## Deep Dive (Syväsukellus)
+YAML (YAML Ain't Markup Language) kehitettiin vuonna 2001, helpottamaan datan luettavuutta ja konfiguraatioita XML:n sijaan. YAML-formaattia vertaillaan usein JSON:iin; kumpikin on datan serialisointikieli, mutta YAML on usein helpommin luettavissa ihmisille. C# -ohjelmoijat voivat käyttää YamlDotNet-kirjastoa YAML-tiedostojen deserialisointiin ja serialisointiin. Kirjasto tukee sekä .NET Framework että .NET Core sovelluksia.
 
-### Toteutus:
-YAML-muoto on peräisin Python-kielestä ja se tukee useita ohjelmointikieliä, mukaan lukien C#. YAML-formaatti on myös saatavana JavaScript- ja Java-kirjastoina, joten sen käyttö on mahdollista lähes kaikissa ohjelmointikielissä.
-
-## Katso myös:
-- [YAML-spesifikaatio] (https://yaml.org/)
-- [YamlDotNet kirjasto] (https://github.com/aaubry/YamlDotNet)
+## See Also (Katso Myös)
+- YamlDotNet GitHub: https://github.com/aaubry/YamlDotNet
+- YAML virallinen sivusto: https://yaml.org
+- Microsoftin C# dokumentaatio: https://docs.microsoft.com/en-us/dotnet/csharp/

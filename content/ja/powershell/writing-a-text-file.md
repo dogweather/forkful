@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "PowerShell: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何＆なぜ？
+## What & Why? (何となぜ？)
+テキストファイルを書くとは、データをテキスト形式で保存することです。プログラマーはログ情報の保存、設定の保存、またはデータ交換のためにこれを行います。
 
-テキストファイルを書くとは、パソコン上にある情報を文字や数字の形で保存することを指します。プログラマーは主に、それぞれのプログラムやコードの結果やログを保存するためにテキストファイルを書くことがあります。
-
-## 方法
-
+## How to: (方法)
 ```PowerShell
-# テキストファイルを作成する
-"こんにちは！これはテストファイルです。" | Out-File test.txt
+# ファイルへの単純なテキストの書き込み
+"こんにちは、世界！" | Out-File -FilePath "hello.txt"
 
-# 存在するテキストファイルに追記する
-"追記する文章" | Out-File -Append test.txt
+# ファイルの読み込みと表示
+Get-Content -Path "hello.txt"
+```
+出力:
+```
+こんにちは、世界！
+```
+```PowerShell
+# ファイルへの追加書き込み
+"さようなら、世界" | Out-File -FilePath "hello.txt" -Append
 
-# ファイルから情報を読み込む
-Get-Content test.txt
+# 再度ファイルの読み込みと表示
+Get-Content -Path "hello.txt"
+```
+出力:
+```
+こんにちは、世界！
+さようなら、世界
 ```
 
-上記のコードを実行すると、まずはじめに"test.txt"という名前のファイルが作成されます。その後、ファイルに"こんにちは！これはテストファイルです。"という文章が書き込まれ、さらに"追記する文章"が追加されます。最後に、書き込まれた情報が読み込まれてコンソールに表示されます。
+## Deep Dive (深掘り)
+PowerShellでは`Out-File`や`Set-Content`コマンドレットを使ってファイルに書き込むことができます。`Out-File`は特に出力をファイルにリダイレクトしたい場合に使われます。歴史的には、以前のバージョンのPowerShellや他のスクリプト言語ではリダイレクト演算子 (`>` や `>>`) も使用されました。代わりに`.NET`のクラスを使って書き込む方法 (`[System.IO.File]::WriteAllText()` など) もありますが、簡単なタスクではPowerShellのコマンドレットの方が直感的です。
 
-## より詳しく
-
-テキストファイルの歴史は古く、プログラミング言語の初期から使用されてきました。テキストファイルの代わりに、データベースなどのより高度なデータベースを使用することもできますが、簡単に情報を保存することができるテキストファイルは今でも重要な役割を果たしています。また、PowerShell以外にも、BashやCMDなどのシェルスクリプトでもテキストファイルを書くことができます。
-
-## 関連リンク
-
-- [PowerShellドキュメント](https://docs.microsoft.com/ja-jp/powershell)
-- [Bashドキュメント](https://www.gnu.org/software/bash/manual/)
-- [CMDドキュメント](https://docs.microsoft.com/ja-jp/windows-server/administration/windows-commands/windows-commands)
+## See Also (関連情報)
+- [Out-File コマンドレットの公式ドキュメント](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/out-file)
+- [Get-Content コマンドレットの公式ドキュメント](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-content)
+- [PowerShell スクリプト基本ガイド](https://docs.microsoft.com/ja-jp/powershell/scripting/overview)
+- [.NET の System.IO.File クラス](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file)

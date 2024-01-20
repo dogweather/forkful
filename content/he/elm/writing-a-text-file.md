@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Elm: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+כתיבת קובץ טקסט היא יצירת קובץ שמכיל טקסט ברמת המערכת או האפליקציה. תוכניתנים עושים זאת כדי לשמור מידע בצורה קבועה, ללוגים, או לאחסון נתונים לשימוש חוזר.
 
-כתיבת קבצי טקסט היא פעולה חשובה ושכיחה בתחום התכנות. זהו תהליך שבו יוצרים קבצים המכילים טקסט פשוט, בדרך כלל לצורך שימוש בתוכנות אחרות או לצורך הגשה של מידע ברשת. כתיבת קבצי טקסט מאפשרת למתכנתים ליצור תוכניות והשקעות נוספות בפורמט נוח וקל לקריאה.
-
-## כיצד לעשות זאת:
+## איך לעשות:
+Elm לא מאפשר כתיבה ישירה לקובץ מהדפדפן בגלל מגבלות האבטחה. עליך לשלוח את הנתונים לשרת, או ליצור הורדת קובץ מהדפדפן. להלן דוגמא ליצירת קישור להורדת קובץ:
 
 ```Elm
-main = writeFile "myFile.txt" "היי, עולם!"
+module Main exposing (main)
+import Browser
+import Html exposing (Html, a, text, attribute)
+import Html.Attributes exposing (href)
+
+main : Html msg
+main =
+    let
+        fileContent = "תוכן לדוגמא בעברית"
+        encodedContent = "data:text/plain;charset=utf-8," ++ (encodeURIComponent fileContent)
+    in
+    a [ href encodedContent, attribute "download" "example.txt" ] [ text "הורד את הקובץ" ]
+
+-- כדי לעשות encode לתוכן בעברית:
+encodeURIComponent : String -> String
+encodeURIComponent =
+    -- פה תהיה המימוש של הפונקציה לביצוע Encode לתוכן.
 ```
 
-כדי לכתוב קובץ טקסט ב- Elm, ניתן להשתמש בפונקציה ```writeFile``` שמקבלת שני מפרמטרים - שם קובץ ותוכן הקובץ. בדוגמה זו, הקובץ הנוצר ייקרא "myFile.txt" ויכיל את המילים "היי, עולם!". בנוסף, ניתן להשתמש בפונקציה ```writeText``` כדי להוסיף תוכן נוסף לקובץ קיים.
+בחר בקישור יתחיל הורדה של קובץ עם התוכן שהגדרת.
 
-## כיולונגיה:
+## צלילה עמוקה
+בעבר, כתיבה לקבצים הייתה אפשרית בשפות תכנות המופעלות מחוץ לדפדפן עם גישה ישירה למערכת הפעלה. ב-Elm, המופעל בדפדפן, האבטחה מחייבת שימוש ב-API של הדפדפן או בקשת HTTPS לשרת. אפשרות נוספת לכתיבת קבצים היא על ידי השתמשות ב-LocalStorage או IndexedDB, אך זה לא כולל יצירת קבצי טקסט פיזיים ותלוי בדפדפן.
 
-ניתן לכתוב קבצי טקסט בכל שפת תכנות מתאימה. במקום להשתמש בפונקציות מובנות כמו ב- Elm, ניתן להשתמש בתעריפים עבור למבני נתונים וליצור אותם בקוד עצמו. כתיבת קבצי טקסט היא חיונית ליצירת תוכניות ושיתופם בין מתכנתים.
-
-## ראה גם:
-
-למידע נוסף על כתיבת קבצי טקסט ב- Elm, אפשר לבקר באתר הרשמי של השפה https://elm-lang.org/ ולקרוא את התיעוד המפורט והמכוון למתכנתים. כמו כן, לכבוד תמיד ניתן לעיין בפרויקטים והקהילה הפעילה של Elm על GitHub https://github.com/elm/projects ולקבל השראה מפרויקטים אחרים וקוד פתוח.
+## ראו גם
+- [Elm File](https://package.elm-lang.org/packages/elm/file/latest/) - משפחת חבילות לעבודה עם קבצים ב-Elm.
+- [MDN Web Docs - Using files from web applications](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) - מדריך על כיצד לשלוט ולגשת לקבצים באפליקציות ווב.
+- [Elm Guide - HTTP](https://guide.elm-lang.org/effects/http.html) - מדריך על פעולות HTTP ב-Elm, כולל שליחה וקבלה של נתונים מ/אל שרת.

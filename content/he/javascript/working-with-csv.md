@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קבצי csv"
-html_title:           "Javascript: עבודה עם קבצי csv"
-simple_title:         "עבודה עם קבצי csv"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
-
-עבודה עם קבצי CSV היא תהליך נפוץ בתחום התכנות, שמאפשר לנו לקרוא ולכתוב נתונים מקבצים בפורמט פשוט ונוח. קבצי CSV משמשים ליצירת טבלאות נתונים ומועילים במיוחד כאשר אנו צריכים להעביר מידע בלתי מובנה בין יישומים שונים. תהליך זה נחשב יעיל ומועיל עבור מפתחים, שמאפשר להם לעבוד במהירות ולשמור על מידות קובץ נמוכות.
+## מה ולמה?
+עבודה עם קבצי CSV מאפשרת לנהל ולעבד נתונים בפורמט טבלאי: כל שורה היא רשומה, וכל עמודה מופרדת בפסיק. תכניתנים עושים זאת כדי לייבא, לעבד ולייצא נתונים בצורה נוחה וכללית.
 
 ## איך לעשות:
-
-ניתן לתכנת ב-Javascript קוד שיאפשר לנו לקרוא ולכתוב נתונים מקבצי CSV בקלות ובפשטות. ישנן מספר ספריות וכלים שניתן להשתמש בהם כדי לעשות זאת, אחד הדוגמאות הנפוצות הוא הספריה "CSV" ששימשתי בדוגמאות הבאות:
-
 ```javascript
-const csv = require('csv');
+// קריאת CSV
+const fs = require('fs');
+const csvData = fs.readFileSync('data.csv', 'utf8');
 
-// קריאת קובץ CSV
-csv.parse('שם, מין, גיל\nדניאל, זכר, 30', (err, data) => {
-    if(err) throw err;
-    console.log(data);
-    // פלט:
-    // [['שם', 'מין', 'גיל'], ['דניאל', 'זכר', '30']]
-});
+// פיצול הנתונים לשורות ועמודות
+const rows = csvData.split('\n').map(row => row.split(','));
 
-// כתיבת קובץ CSV
-const data = [
-    ["שם", "מין", "גיל"],
-    ["דניאל", "זכר", "30"]
+// הדפסת השורה הראשונה
+console.log(rows[0]);
+
+// כתיבת CSV
+const newData = [
+  ['name', 'age', 'city'],
+  ['Alice', '22', 'Wonderland'],
+  ['Bob', '30', 'Builderland']
 ];
-csv.stringify(data, (err, output) => {
-    if(err) throw err;
-    console.log(output);
-    // פלט: 
-    // שם,מין,גיל\n
-    // דניאל,זכר,30
-});
+const csvContent = newData.map(e => e.join(',')).join('\n');
+fs.writeFileSync('newData.csv', csvContent);
+
+// הפלט יהיה: name,age,city
 ```
 
-## העומק:
+## עיון מעמיק
+ה-CSV (Comma-Separated Values - ערכים מופרדי פסיקים) קיים כבר עשרות שנים ונחשב לפשוט וגמיש. ישנם אלטרנטיבות כמו JSON או XML שמאפשרות מבני נתונים מורכבים יותר. בעבודה עם CSV צריך לזכור לטפל במיוחד בשורות ריקות, גרשיות ופסיקים בתוך טקסט.
 
-קבצי CSV נוצרו והותאמו במקור לשימוש במכשירים בעלי זיכרון נמוך, כדי ליצור פתרון פשוט ומאוד נפוץ לפריסת מידע. היום, קבצי CSV משמשים גם בתחומים נוספים, כגון מדעי הנתונים, בינה מלאכותית ותכנות אינטרנטי. עם זאת, ישנן תבניות נתונים אחרות שנמצאות יעילות יותר ומתאימות יותר לקריאה וכתיבה מקבצי CSV, כגון JSON ו-XML. ניתן להשתמש בספריות נוספות כדי לשלב נתונים מקבצי CSV לתבניות אלו, כך שניתן יהיה לנהל את הנתונים בצורה יותר מאורגנת ונוחה.
-
-## ראה גם:
-
-כדי ללמוד עוד על עבודה עם קבצי CSV ב-Javascript, ניתן לבדוק את המקורות הבאים:
-
-- דוגמאות נוספות ומדריכים בעברית שתורגמו למעברית:
-https://github.com/daniellwdb/javascript-csv
-- ספריית CSV עבור נודג'ס:
-https://csv.js.org/
-- ספריית csv-parser לבניית JSON מקבצי CSV:
-https://www.npmjs.com/package/csv-parser
+## ראו גם
+- [MDN Web Docs - Working with Text](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_json_data)
+- [CSV on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [Node.js fs Module](https://nodejs.org/api/fs.html)

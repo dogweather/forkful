@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Elixir: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+## Що це та Навіщо?
+YAML – це формат для серіалізації даних, любимий за легкість читання. Програмісти використовують його для конфігурації проектів, документації та обміну даними між різними мовами програмування.
 
-Працювання з YAML це про те, щоб зберігати та читати структуровані дані в Elixir. Це корисно для програмістів, оскільки вони можуть легше організувати та обробляти велику кількість інформації.
+## Як робити:
+Щоб працювати з YAML в Elixir, використовуємо бібліотеку `YamlElixir`. Спочатку встановлюємо:
 
-Як:
-
-```Elixir
-# Завантажити бібліотеку YAML
-{:ok, yaml} = File.read("config.yml") |> YAML.decode()
-# Змінити значення "count" на 2
-yaml = %{yaml | count: 2}
-# Зберегти зміни
-yaml |> YAML.encode() |> File.write("config.yml")
+```elixir
+# Додаємо в mix.exs
+defp deps do
+  [
+    {:yaml_elixir, "~> 2.5"}
+  ]
+end
 ```
-
-Результат:
-
+Парсимо YAML файл:
+```elixir
+# Приклад парсингу YAML файлу
+{:ok, yaml} = YamlElixir.read_from_file("config.yaml")
+IO.inspect(yaml)
+```
+Генеруємо YAML з Elixir структур:
+```elixir
+# В YAML з Elixir map
+map = %{name: "Oleh", age: 28}
+yaml_content = YamlElixir.write_to_string(map)
+IO.puts(yaml_content)
+```
+Вивід:
 ```yaml
-count: 2
+---
+age: 28
+name: Oleh
 ```
 
-Глибоке занурення:
+## Поглиблений огляд:
+YAML (YAML Ain't Markup Language) з'явився у 2001 році як зручний формат для серіалізації даних. В Elixir, зазвичай, працюють з YAML через зовнішні бібліотеки, оскільки стандартна бібліотека цього не підтримує. Альтернативою YAML є JSON і XML, які також широко використовуються для подібних цілей, але YAML виграш у читабельності. Передбачається, що YAML ефективніше для людського сприйняття, а JSON – для машинного. В Elixir працювати з YAML легко та ефективно завдяки бібліотекам, які хендлять усі нюанси парсингу та генерації.
 
-У принципі, YAML створений для людей, щоб було легше створювати та читати структуровані дані. Це було запроваджено в 2001 році та з тих пір отримало популярність у багатьох мов програмування. У Elixir також є інші засоби для роботи зі структурованими даними, такими як JSON та CSV.
-
-Дивіться також:
-
-- [Офіційна документація для YAML](https://yaml.org/)
-- [Дані структури в Elixir](https://elixir-lang.org/getting-started/structs.html)
-- [Вибір між YAML, JSON та іншими форматами для зберігання даних](https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other)
+## Дивіться також:
+- Документація `YamlElixir`: [https://hexdocs.pm/yaml_elixir](https://hexdocs.pm/yaml_elixir)
+- YAML офіційний сайт: [https://yaml.org](https://yaml.org)
+- Серіалізація даних в Elixir: [https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)

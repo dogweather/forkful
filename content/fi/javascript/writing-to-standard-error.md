@@ -1,6 +1,6 @@
 ---
 title:                "Kirjoittaminen vakiovirheeseen"
-html_title:           "Javascript: Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja Miksi?
+## What & Why?
+Standard error on virheiden ja lokiviestien streami. Koodaajat käyttävät sitä raportoimaan ohjelman suorituksen aikaisia ongelmia ilman, että se sekoittuu pääohjelman tulosteeseen.
 
-Kirjoittaminen standardivirheen ulostuloon on tapa koodata, jossa käyttäjä voi tulostaa virheviestejä ohjelman suorituksen aikana. Tämä on hyödyllinen tapa selventää ohjelman toimintaa ja auttaa kehittäjiä tunnistamaan ja korjaamaan mahdollisia virheitä.
+## How to:
+```
+// Kirjoittaminen standard erroriin Javascriptillä
+console.error('Tapahtui virhe!');
 
-# Miten?
-
-```Javascript
-console.error("Tämä on virheviesti");
+// Esimerkkituloste konsolissa:
+// Tapahtui virhe!
 ```
 
-**Tulostus:** Tämä on virheviesti
+## Deep Dive
+Historiallisesti standard error (stderr) erotettiin standard outputista (stdout), jotta virheet saatiin käsiteltyä eri tavoin. Javascriptissä `console.error()` näyttää lähetetyn viestin stderr-virrassa. Tämä on lineäärinen tapa välittää virhesanomia, mutta näppärä väline kehitysvaiheessa. Vaihtoehtoisesti voit kirjoittaa lokitiedoston tai käyttää kolmannen osapuolen kirjastoja, kuten Winston tai Bunyan, jotka tarjoavat monipuolisempaa lokinhallintaa.
 
-Voit myös lisätä muita tietoja viestiin, kuten:
+## See Also
+- MDN Web Docs, Console API: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- Node.js, Console Class: https://nodejs.org/api/console.html#console_console_error_data_args
 
-```Javascript
-console.error("Virhe sivulla " + sivunNimi + ": " + virheKoodi);
-```
-
-**Tulostus:** Virhe sivulla Etusivu: 404
-
-# Syväsukellus
-
-Kirjoittaminen standardivirheen ulostuloon on osa virheenkäsittelyä ohjelmoinnissa. Ennen standardivirheen käyttöönottoa, kehittäjät joutuivat käsittelemään virheitä vaihtoehtoisilla tavoilla, kuten kirjoittamalla ne konsoliin tai tallentamalla ne lokitiedostoon.
-
-On myös olemassa muita tapoja käyttää standardivirhettä, kuten käytettäessä ns. error event listeneria. Tämä mahdollistaa muiden virheiden kuuntelemisen, kuten verkkovirheet, ja virheiden hallitsemisen eri tavalla.
-
-# Tutustu myös
-
-Voit lukea lisää standardivirheestä ja sen käytöstä täältä: [MDN web docs - console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/error)
+Useissa ympäristöissä `console.error` voi olla mukautettavissa ja kytkettävissä osaksi laajempaa lokinhallintaa, mutta standardikäyttö konsoliin kirjoittamiseen on edelleen yleinen ja käyttökelpoinen.

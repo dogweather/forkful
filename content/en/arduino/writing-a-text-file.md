@@ -11,41 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing a text file is essentially the process of creating and saving a text document on your computer or a specific device. Programmers often write text files as a way to store and organize code, data, or other types of information that can be easily accessible when needed.
+Writing a text file on Arduino means storing data as text in a file, typically on an SD card. Programmers do this to save data like sensor readings for later analysis or to log events over time.
 
 ## How to:
+First, hook up an SD card reader to your Arduino. Then you’ll need the SD library. Here's a quick script:
 
-To write a text file on your Arduino, you can use the built-in SD library. Here's how:
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 
-```
-#include <SD.h> // include the SD library
-
-File myFile; // create a file object
+File myFile;
 
 void setup() {
-  Serial.begin(9600); // initialize the serial monitor
-  SD.begin(10); // initialize the SD card
-  myFile = SD.open("myFile.txt", FILE_WRITE); // create or open a file named "myFile.txt" for writing
-  if (myFile) { // if the file opened successfully
-    myFile.println("Hello World!"); // write "Hello World!" to the file
-    myFile.close(); // close the file
+  // Start the serial communication
+  Serial.begin(9600);
+  
+  // Check for SD card initialization
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  
+  // Create/open a text file
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
+  // If the file opened okay, write to it
+  if (myFile) {
+    myFile.println("Hello, world!");
+    myFile.close(); // Close the file
+    Serial.println("Write done.");
+  } else {
+    // If the file didn't open, print an error
+    Serial.println("Error opening test.txt");
   }
 }
 
 void loop() {
-  // do nothing
+  // Nothing here
 }
 ```
 
-When you run this code, you should see "Hello World!" printed to the serial monitor and the text file will be created on your SD card.
+Sample output would be "Write done." on the serial monitor, and "Hello, world!" in "test.txt" on the SD card.
 
-## Deep Dive:
+## Deep Dive
+Historically, Arduino's memory constraints made data logging a chore. With modern modules and SD cards, it's simpler. Alternatives like EEPROM or direct transmission to a computer are fine but have limits (EEPROM wears out, transmission needs a connection). Writing to a file is straightforward with `SD.h` but remember: the library uses quite a bit of memory, so it's better for boards with more SRAM.
 
-Writing text files has been a common practice in programming for many years. It allows for better organization and simplifies the process of updating or modifying code. There are alternative methods for writing and storing data, such as using EEPROM (Electrically Erasable Programmable Read-Only Memory), but text files are often preferred due to their simplicity and ease of access.
-
-The implementation details of writing a text file on an Arduino can vary depending on the specific project and setup. The above example uses an SD card as the storage medium, but you can also write text files to other types of external memory such as a USB drive or an external hard drive. Additionally, the SD library offers various functions for reading, writing, and modifying files, giving you flexibility in how you handle your data.
-
-## See Also:
-
-- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
+## See Also
+For more info, check these:
+- The official SD library documentation: https://www.arduino.cc/en/Reference/SD
+- Detailed SD card module hookup guide: https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial
+- Arduino's File class for file operations: https://www.arduino.cc/en/Reference/File

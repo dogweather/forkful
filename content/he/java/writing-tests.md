@@ -1,7 +1,7 @@
 ---
-title:                "כותבים בדיקות"
-html_title:           "Java: כותבים בדיקות"
-simple_title:         "כותבים בדיקות"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? (מה ולמה?)
+כתיבת בדיקות היא בניית קוד שמוודא את תקינות קוד אחר. תכנתים כדי לשפר את האיכות, לזהות באגים ולהקל על תחזוקה.
 
-כתיבת בדיקות היא תהליך שמיועד לבדוק תכונות של קוד מחשב באופן אוטומטי. כמו כן, בדיקות מאפשרות למפתחים להיות בטוחים שקודם להפעלתו, הקוד עומד במצב תקין ועובד כפי שצריך.
+## How to: (איך לעשות:)
+בואו נראה איך כותבים בדיקה פשוטה עם JUnit. 
 
-## איך לעשות זאת:
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-תוך שימוש במשפטי קוד בשפת ג'אווה, נוכל לראות דוגמאות של כיצד לעשות בדיקות.
+class CalculatorTest {
 
-```Java
-@Test
-public void testCalculate() {
-    Calculator calculator = new Calculator();
-    int result = calculator.calculate(2, 3);
-    assertEquals(5, result);
+    @Test
+    void testAddition() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
+    }
+}
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
+פלט לדוגמא אם הבדיקה עוברת:
+```
+Test passed.
+```
 
-בדוגמה זו אנו מבדיקים את פעולת החיבור במחשבון, על אמצעות השוואת התוצאה לתוצאה הצפויה. כאשר הבדיקה עוברת בהצלחה, נקבל הודעה משמחת שכל התנאים עומדים.
+או פלט לדוגמא אם היא נכשלת:
+```
+org.junit.ComparisonFailure: 2 + 3 should equal 5 expected:<5> but was:<4>
+```
 
-## חפירה עמוקה:
+## Deep Dive (צלילה עמוקה)
+JUnit התחיל כפרויקט ב-1997. הוא הופך לסטנדרט לכתיבת בדיקות ב-Java. ישנם אלטרנטיבות כמו TestNG או Spock. כתיבת בדיקות דורשת שימוש במערכת בניית תוכנה כמו Maven או Gradle ולעיתים הטמעה עם CI/CD.
 
-ההיסטוריה של בדיקות מחשב נמשכת כבר מזמן רב, וכיום יישומן נפוץ במיוחד בתחום הפיתוח התוכנה. יישומים אחרים שיכולים לשמש כאלטרנטיבות לבדיקות כוללים בדיקות ידניות ובדיקות לא פורמליות. בסופו של דבר, בדיקות מחשב מסייעות למפתחים להפגין את הקוד שלהם כדי לוודא שהוא נמצא בסטנדרטים.
-
-## ראו גם:
-
-למידע נוסף על כתיבת בדיקות ב-Java ניתן לעיין בקישורים הבאים:
-
-- [גיטהאב של מיתוג ג'אווה](https://github.com/junit-team/junit5)
+## See Also (ראה גם)
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Maven – Surefire Plugin (for running tests)](http://maven.apache.org/surefire/maven-surefire-plugin/)
+- [Introduction to CI/CD with GitLab](https://docs.gitlab.com/ee/ci/introduction/)

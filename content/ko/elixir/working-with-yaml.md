@@ -1,7 +1,7 @@
 ---
-title:                "Yaml 작업하기"
-html_title:           "Elixir: Yaml 작업하기"
-simple_title:         "Yaml 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# YAML와 함께하는 프로그래밍
+## What & Why?
+YAML은 구성 파일에서 자주 사용되는 데이터 직렬화 형식입니다. 프로그래머들은 YAML을 사용하여 설정이나 데이터를 쉽고 읽기 쉽게 표현합니다.
 
-## 무엇이고 왜?
+## How to:
+Elixir에서 YAML 파일을 다루려면 `yaml_elixir`라는 외부 라이브러리를 추가해야 합니다.
 
-YAML은 코드를 쉽게 읽고 작성할 수 있는 사람과 기계가 모두 이해할 수 있는 포맷을 가지고 있습니다. 프로그래머들은 YAML을 사용하여 데이터 구조를 정의하고 설정 파일을 작성하는 등 다양한 용도로 활용합니다.
-
-## 어떻게 하나요?
-
-```Elixir
-username: "John"
-password: "password123"
+`mix.exs`에 의존성 추가:
+```elixir
+def deps do
+  [
+    {:yaml_elixir, "~> 2.5"}
+  ]
+end
 ```
 
-YAML에서는 위와 같이 `key:value` 형태로 데이터를 표현합니다. 쉽게 읽을 수 있고, 들여쓰기를 통해 데이터의 계층 구조를 표현할 수 있습니다. 위 예시에서는 `username`과 `password`라는 키와 그에 해당하는 값들이 정의되어 있습니다.
+의존성을 가져온 후, YAML 파일을 Elixir로 읽기:
+```elixir
+defmodule Example do
+  def read_yaml do
+    {:ok, result} = YamlElixir.read_from_file("config.yaml")
+    result
+  end
+end
+```
 
-## 깊이 있는 알아보기
+YAML 파일 `config.yaml`:
+```yaml
+default:
+  app_name: AwesomeApp
+  secret_key_base: SUPERSECRET
+```
 
-1. 역사적 배경: YAML은 2001년에 처음 등장했고, 인간이 쉽게 읽을 수 있도록 디자인된 것이 특징입니다.
+Elixir 코드를 실행하면:
+```elixir
+iex> Example.read_yaml()
+%{"default" => %{"app_name" => "AwesomeApp", "secret_key_base" => "SUPERSECRET"}}
+```
 
-2. 대안들: YAML 대신 XML, JSON 등의 다른 데이터 포맷을 사용할 수 있지만, YAML은 읽기 쉽고 구조적으로 명확하게 표현할 수 있어서 많은 프로그래머들이 선호합니다.
+## Deep Dive:
+- YAML(YAML Ain't Markup Language)은 JSON처럼 데이터를 저장하고 전송하기 위해 설계된 언어 독립적인 포맷입니다. 약간 더 읽기 쉬운 형태로 JSON의 대안으로 사용됩니다.
+- YAML은 다수의 프로그래밍 언어에서 지원되고 임시 구성이나 배포 스크립트에 주로 쓰입니다.
+- Elixir에서는 `yaml_elixir`과 같은 라이브러리를 통해 YAML과 상호 작용하지만, 이는 내부적으로 Erlang의 YAML 파서를 활용하여 구현됩니다.
 
-3. 구현 세부사항: YAML은 주로 들여쓰기로 계층 구조를 나타내기 때문에 들여쓰기에 규칙을 따라야 합니다. 또한 Elixir에서는 `YAML` 모듈을 사용하여 YAML 파일을 읽고 쓰는 기능을 제공합니다.
-
-## 관련 자료
-
-- [YAML 공식 사이트](http://yaml.org/)
+## See Also:
+- `yaml_elixir` GitHub 페이지: https://github.com/KamilLelonek/yaml-elixir
+- YAML 공식 사이트: https://yaml.org
+- JSON과 YAML 차이점 비교하는 기사: https://www.redhat.com/sysadmin/yaml-vs-json

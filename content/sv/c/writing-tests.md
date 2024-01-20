@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande av tester"
-html_title:           "C: Skrivande av tester"
-simple_title:         "Skrivande av tester"
+title:                "Skriva tester"
+html_title:           "Arduino: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why? (Vad & Varför?)
+Att skriva tester innebär att koda små program som kontrollerar att annan kod fungerar som avsett. Programmerare gör det för att upptäcka buggar tidigt, säkerställa kodkvalitet och förenkla framtida underhåll.
 
-Att skriva tester är en viktig del av programmering. Det innebär att man skriver kod som kontrollerar att programmet gör det som det är tänkt att göra. Det är viktigt för att säkerställa att programmet fungerar korrekt och undvika buggar och fel.
+## How to: (Hur man gör:)
+```C
+#include <assert.h>
 
-## Hur man gör:
+// En enkel funktion som adderar två tal
+int add(int a, int b) {
+    return a + b;
+}
 
-Ett enkelt sätt att skriva tester i C är att använda sig av assert-funktionen. Den används för att uttrycka förväntningar om ett specifikt uttryck. Om uttrycket är sant, så fortsätter programmet utan några problem. Om det däremot är falskt, så kommer assert-funktionen att avbryta programmet och visa ett felmeddelande. Här är ett exempel:
+// Testfunktion för att verifiera 'add'-funktionen
+void test_add() {
+    assert(add(2, 3) == 5);
+    assert(add(-1, 1) == 0);
+    // Lägg till fler tester vid behov...
+}
 
- ```C
- #include <stdio.h>
- #include <assert.h>
+int main() {
+    test_add(); // Kör testfunktionen
+    printf("Alla tester gick igenom!\n");
+    return 0;
+}
+```
+Output:
+```
+Alla tester gick igenom!
+```
 
- int main()
- {
-     int a = 5;
-     int b = 3;
-     int sum = a + b;
-     
-     assert(sum == 8);
-     
-     printf("Summan av a och b är: %d\n", sum);
-     
-     return 0;
- }
- ```
- 
- Om allt fungerar som det ska, så kommer programmet att skriva ut "Summan av a och b är: 8". Om inte, så kommer assert-funktionen att avbryta programmet och visa ett felmeddelande.
+## Deep Dive (Djupdykning)
+Historiskt sett växte testningen fram som nödvändig del i mjukvaruutveckling för att hantera ökande komplexitet. Alternativ till `assert` inkluderar större testramverk som Unity och CMocka. Dessa ramverk erbjuder mer sofistikerade funktioner såsom mockning och setup/teardown för tester.
 
-## Djupdykning:
-
-Att skriva tester har blivit allt viktigare inom programmering, särskilt med tanke på den ökande komplexiteten av program och system. Istället för att manuellt testa programmet steg för steg, kan man använda sig av automatiserade tester för att spara tid och resurser. Det finns även andra testramverk som kan användas för att skriva tester i C, som till exempel CUnit och Check.
-
-## Se även:
-
-- [CUnit](http://cunit.sourceforge.net/) och [Check](https://libcheck.github.io/check/)
-- [A brief history of testing in C](https://medium.com/codingthesmartway-com-blog/a-brief-history-of-testing-in-c-ed5b34e053d5)
+## See Also (Se också)
+- [Unity Test Framework](https://www.throwtheswitch.org/unity)
+- [CMocka](https://cmocka.org/)

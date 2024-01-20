@@ -1,6 +1,6 @@
 ---
 title:                "CSV के साथ काम करना"
-html_title:           "Swift: CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
 simple_title:         "CSV के साथ काम करना"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,62 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSV क्या है और क्यों करते हैं?
-CSV (Comma Separated Values) एक फॉर्मेट है जो डेटा को अलग-अलग कॉलमों में अलग करता है ताकि उसे आसानी से स्प्रेडशीट या डेटा बेस हो या अन्य प्रोग्रामों में इम्पोर्ट/एक्सपोर्ट किया जा सके। प्रोग्रामर इस्तेमाल करते हैं CSV ताकि वे अपने प्रोग्राम को और उपयोगकर्ता अन्य स्थानों से डेटा लाने या स्टोर करने में सहायता कर सकें।
+## What & Why? (क्या और क्यों?)
+CSV (Comma-separated values) से हम सरलता से डेटा स्टोर और एक्सचेंज कर सकते हैं. प्रोग्रामर्स इसे इसलिए इस्तेमाल करते हैं क्योंकि यह फॉर्मेट बहुत सारे एप्लीकेशन्स के साथ कॉम्पेटिबल है और डेटा प्रॉसेसिंग में आसानी प्रदान करता है.
 
-## कैसे:
+## How to: (कैसे करें:)
 ```Swift
 import Foundation
 
-// एक CSV फाइल से डेटा पढ़ें
-let csvFilePath = "data.csv"
-do {
-    let csvData = try String(contentsOf: URL(fileURLWithPath: csvFilePath))
-    let rows = csvData.components(separatedBy: "\n")
+// CSV फाइल की कंटेंट्स को पढ़ना
+let csvString = """
+name,age,city
+John Doe,29,New York
+Jane Smith,35,Los Angeles
+"""
+
+// CSV डेटा को पार्स करने का फंक्शन
+func parseCSV(contents: String) {
+    let rows = contents.components(separatedBy: "\n")
     
-    // सभी पंक्तियों को लूप करें
     for row in rows {
-        // प्रत्येक पंक्ति में अलग अलग कॉलमों को अलग करें
         let columns = row.components(separatedBy: ",")
-        
-        // प्रत्येक कॉलम को प्रिंट करें
-        for column in columns {
-            print(column)
-        }
+        print("Name: \(columns[0]), Age: \(columns[1]), City: \(columns[2])")
     }
-} catch {
-    print("फाइल खोलने में गड़बड़ी हुई।")
 }
 
-// CSV फाइल में नए डेटा लिखें
-let data = "1, 2, 3\n4, 5, 6\n7, 8, 9"
-do {
-    try data.write(toFile: "new_data.csv", atomically: true, encoding: .utf8)
-    print("नई CSV फाइल बनाई गई।")
-} catch {
-    print("फाइल लिखने में गड़बड़ी हुई।")
-}
+// पार्स फंक्शन को कॉल करना
+parseCSV(contents: csvString)
+```
+Sample Output:
+```
+Name: name, Age: age, City: city
+Name: John Doe, Age: 29, City: New York
+Name: Jane Smith, Age: 35, City: Los Angeles
 ```
 
-**आउटपुट:**
-```
-1
-2
-3
-4
-5
-6
-7
-8
-9
+## Deep Dive (गहराई से जानकारी):
+CSV 1972 से डेटा के सिम्पल एक्सचेंज फॉर्मेट के रूप में इस्तेमाल हो रहा है. इसके विकल्प में जेसन (JSON), एक्सएमएल (XML), और एक्सेल फॉर्मेट्स (XLS) आते हैं. हालांकि, CSV की सादगी और सार्वत्रिकता इसे हमेशा की तरह पसंदीदा बनाए रखती है.
 
-नई CSV फाइल बनाई गई।
-```
-
-## डीप डाइव:
-- CSV को वर्कशीट फाइलों में प्रयोग करने की शुरुआत 1972 में अमेरिकी कंपनी IBM ने की थी।
-- अल्टर्नेटिव के रूप में, प्रोग्रामर अक्सर डेटा को फाइल्स से पढ़ना और लिखना चुनते हैं लेकिन CSV के फायदे वहाँ हो सकते हैं जहाँ कि डेटा को अलग अलग तरीके से स्टोर किया जाए जैसे कि स्प्रेडशीट फाइल, डेटाबेस या अन्य प्रोग्रामों में।
-- CSV का प्रयोग किसी भी भाषा में किया जा सकता है, इसलिए प्रोग्रामरों को इसकी ज्ञानकारी होना आवश्यक है।
-
-## देखें भी:
-- [CSV फाइल की संरचना के बारे में अधिक जानकारी के लिए](https://www.computerhope.com/issues/ch001356.htm)
+## See Also (यह भी देखें):
+- CSV के बारे में और [Apple के Swift डॉक्यूमेंटेशन](https://developer.apple.com/documentation) में पढ़ें.
+- Swift में डेटा प्रॉसेसिंग के लिए [Swift Algorithms GitHub रिपोजिटरी](https://github.com/apple/swift-algorithms).
+- प्रोग्रामेटिक CSV प्रॉसेसिंग के लिए [SwiftCSV GitHub रिपोजिटरी](https://github.com/swiftcsv/SwiftCSV).

@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Gleam recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,47 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with CSV (Comma Separated Values) files involves reading from and writing data to CSV format. Programmers work with CSV as it's a widely accepted, simple, and human-friendly data format.
+Working with CSV (Comma-Separated Values) files means handling data in a simple, text-based format that stores tabular data. Programmers use it because it's widely supported, easy to read, and straightforward to parse or generate.
 
 ## How to:
 
-In Gleam, this task can be executed by creating custom functions, but for now, let's focus on reading CSV files.
+Currently, Gleam does not have a dedicated standard library for CSV manipulation, but you can implement basic parsing with the built-in functions. Here's a simple example:
 
-```Gleam
-import gleam/row.{Row, from_list, to_list}
+```gleam
 import gleam/string
 
-fn read_csv(content: String) -> List(Row(String)) {
-  content
-  |> string.split_on("\n")
-  |> list.map(split_fields)
-  |> list.map(from_list)
+fn parse_csv_line(line: String) -> List(String) {
+  string.split(line, ",")
 }
 
-fn split_fields(line: String) -> List(String) {
-  string.split_on(line, ",")
+pub fn main() {
+  let csv_content = "name,age,city\nAlice,30,New York\nBob,22,Los Angeles"
+  let lines = string.split(csv_content, "\n")
+  case lines {
+    [] -> []
+    [.., _header | rows] -> rows
+      |> list.map(parse_csv_line)
+      |> io.debug
+  }
 }
+
+// Sample output inside `main` function:
+// [
+//   ["Alice", "30", "New York"],
+//   ["Bob", "22", "Los Angeles"],
+// ]
 ```
-
-The `read_csv` function breaks down a CSV content into rows, while `split_fields` splits a single row into individual fields. 
-
-For a CSV content `"Alice,28\nBob,30"`, the output would be:
-```Gleam
-[
- Row(from_list(["Alice", "28"])),
- Row(from_list(["Bob", "30"]))
-]
-```
-
-Writing to CSV can be done with a similar approach. 
+Remember to handle edge cases like commas in values, newlines, and text qualifiers in a full implementation.
 
 ## Deep Dive
 
-CSV, first introduced in the 70s, is popular due to its simplicity and broad application. However, it lacks expressiveness, doesn’t handle complex types, and could be inefficient for large datasets. Thus, formats like JSON, XML or even database-specific file formats are often chosen for more complex scenarios. 
-
-The provided Gleam implementation maps directly onto lists. It relies on the simplicity of Gleam's standard library and adheres to Gleam's design philosophy of simplicity and immutability. However, it considers all fields as strings and doesn't support changing types.
+CSV is an old format, dating back to early computing, which contributes to its wide adoption. Alternatives like JSON or XML provide more structure but can be more complex to parse. How you handle CSV data in Gleam may involve using external libraries if available, or creating a custom parser. Serializing to CSV might require appending commas and newlines carefully, escaping necessary characters.
 
 ## See Also
 
-2. The Gleam CSV Issue: [https://github.com/gleam-lang/](https://github.com/gleam-lang/)
-3. Gleam Community: [https://gleam.run/community/](https://gleam.run/community/)
+- To understand different file formats, check out [JSON](https://www.json.org/json-en.html) and [XML](https://www.w3.org/XML/) specifications.
+- For complex CSV handling, consider contributing to or using a CSV library in the [Gleam ecosystem](https://hex.pm/) when available.

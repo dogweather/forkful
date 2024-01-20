@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Kotlin: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,29 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Skriving til standardfeil (`stderr`) er hvordan programmer rapporterer feil under kjøring. Programmerere bruker det for å skille vanlig utdata fra feilmeldinger for enklere feilsøking og logging.
 
-Skriving til standardfeil er en måte for utviklere å uttrykke feil, advarsler og annen viktig informasjon under kjøring av et program. Dette er spesielt nyttig når du arbeider med store prosjekter, da det kan bidra til å identifisere potensielle problemer og feilsøke dem på en effektiv måte.
-
-## Slik gjør du:
-
-```Kotlin
-fun main(args: Array<String>) {
-  val age = 25
-  println("Din alder er $age år.")
-  System.err.println("Advarsel: Alder må være en positiv verdi.")
+## Hvordan:
+```kotlin
+fun main() {
+    println("Dette er vanlig utdata.")
+    System.err.println("Dette er en feilmelding.")
 }
+
+// Forventet utdata:
+// Dette er vanlig utdata.
+// Dette er en feilmelding.
 ```
-Output:
-```
-Din alder er 25 år.
-Advarsel: Alder må være en positiv verdi.
-```
+Koden over viser to utskriftslinjer: en til standard utdata (`stdout`), og en til standardfeil (`stderr`). Prøv selv og se forskjellen.
 
-## Dykk dypere:
+## Dypdykk
+Historisk har `stderr` vært brukt for å skille normal utdata fra feilmeldinger. Det har tillatt brukere å omdirigere dem til forskjellige destinasjoner. I Kotlin, som i Java, bruker vi `System.err` for å skrive til `stderr`. Alternativer inkluderer logging-biblioteker som Log4j som tilbyr mer avanserte funksjoner og konfigurasjoner.
 
-Historisk sett, som ønsket å skrive til standardfeil, måtte utviklere ty til å bruke lavnivåfunksjoner og systemanrop. Med Kotlin kan vi enkelt bruke `System.err`-objektet til å skrive til standardfeil på en mer robust og plattform-uavhengig måte. Alternativt kan utviklere også bruke logging rammeverk som logback eller log4j for å ta vare på loggføring og skrive til standardfeil.
+I visse tilfeller kan man ønske å omdirigere `stderr` til en fil eller en annen utdatastrøm. Denne handlingen kan utføres både på operativsystemnivå og fra Kotlin-koden ved å bruke `System.setErr()` med en ny `PrintStream`.
 
-## Se også:
-
-- Offisiell Kotlin dokumentasjon om `System.err`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/err.html
-- Mer informasjon om Logging: https://www.baeldung.com/kotlin-logging
+## Se Også
+- [Kotlin Dokumentasjon](https://kotlinlang.org/docs/reference/)
+- [Oracle Java-tutorials – I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [Log4j – Apache Logging Services](https://logging.apache.org/log4j/2.x/)

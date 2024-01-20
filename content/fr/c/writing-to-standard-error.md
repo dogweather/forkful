@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers la sortie d'erreur standard"
-html_title:           "C: Écrire vers la sortie d'erreur standard"
-simple_title:         "Écrire vers la sortie d'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why? (Quoi et Pourquoi ?)
+Écrire dans l'erreur standard permet de séparer les messages d’erreur du flux principal de données. C'est crucial pour le débogage et le diagnostic.
 
-Ecrire vers la sortie standard error est un moyen pour les programmeurs de fournir des messages d'erreurs et des informations de débogage à l'utilisateur lors de l'exécution d'un programme. Cela permet de séparer les messages d'erreurs des messages de sortie normaux et ainsi, de simplifier la compréhension et la résolution des problèmes.
+## How to (Comment faire) :
+Utilisez `fprintf` ou `fputs` avec `stderr`. Voici un exemple:
 
-## Comment faire:
-
-Voici un exemple de code qui écrit un message d'erreur vers la sortie standard error en utilisant la fonction ```fprintf()```:
-
-```
+```C
 #include <stdio.h>
 
 int main() {
-
-    fprintf(stderr, "Erreur: impossible d'ouvrir le fichier.");
+    fprintf(stderr, "Ceci est une erreur!\n");
     return 0;
 }
+
+// Sortie attendue : Ceci est une erreur!
 ```
 
-Cela produirait la sortie suivante:
+Autre méthode simple :
 
+```C
+#include <stdio.h>
+
+int main() {
+    fputs("Encore une erreur!\n", stderr);
+    return 0;
+}
+
+// Sortie attendue : Encore une erreur!
 ```
-Erreur: impossible d'ouvrir le fichier.
-```
 
-## Plongée en profondeur:
+## Deep Dive (Plongée en profondeur) :
+Historiquement, `stderr` est séparé de `stdout` pour que les erreurs puissent être traitées différemment. Par exemple, en les redirigeant vers un fichier ou un outil de journalisation sans mélanger avec la sortie standard.
 
-Avant l'utilisation du standard error, les messages d'erreurs étaient souvent mélangés avec la sortie normale du programme, ce qui pouvait rendre la résolution des problèmes plus difficile. L'utilisation de la sortie standard error permet également aux développeurs de rediriger les messages d'erreurs vers un fichier pour un examen ultérieur.
+Il existe des alternatives comme écrire dans un fichier de log ou utiliser `syslog` sur les systèmes UNIX pour gérer les erreurs.
 
-Il existe d'autres moyens d'afficher des messages d'erreurs, tels que l'utilisation de la fonction ```perror()``` ou l'émission de codes d'erreurs spécifiques avec la fonction ```exit()```. De plus, il est important de gérer correctement les erreurs pour garantir une bonne expérience utilisateur.
+Techniquement, `stderr` est un flux tamponné, mais en pratique, souvent configuré pour être à vidage automatique (flush) après chaque sortie pour que les messages d'erreur apparaissent immédiatement.
 
-L'implémentation de l'écriture vers la sortie standard error peut varier selon le système d'exploitation utilisé.
-
-## Voir aussi:
-
-- [Documentation de la fonction fprintf() en C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Plus d'informations sur la redirection de la sortie en C](https://www.tldp.org/LDP/abs/html/io-redirection.html)
+## See Also (Voir aussi) :
+- Documentation man de `fprintf`: http://man7.org/linux/man-pages/man3/fprintf.3.html
+- GNU C Library - Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- Open Group Base Specifications - `stderr`: https://pubs.opengroup.org/onlinepubs/009695399/functions/stderr.html

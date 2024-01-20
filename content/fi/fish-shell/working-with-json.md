@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Fish Shell: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-JSON on tapa tallentaa ja jakaa tietoa ohjelmointiympäristössä. Se on yleisesti käytetty tiedonvaihtomuoto ja monille ohjelmoijille hyödyllinen taito. JSON:n käyttö auttaa ohjelmoijia siirtämään ja tallentamaan tietoa järjestelmästä toiseen, mikä tekee työnkulusta helpompaa ja tehokkaampaa.
+## What & Why? (Mikä & Miksi?)
+Työskenteleminen JSON:n kanssa tarkoittaa JavaScript Object Notation -muotoisten tietojen käsittelyä. Ohjelmoijat käyttävät JSON:ia sen yksinkertaisuuden ja web-teknologioiden yhteensopivuuden takia.
 
-## Kuinka:
-Fish Shellin avulla voit helposti työskennellä JSON-tiedostojen kanssa. Ensimmäinen vaihe on avata JSON-tiedosto käyttämällä komentoa ```fish```:
-```
-fish tiedostonimi.json
-```
-Tämän jälkeen voit käyttää erilaisia Fish Shellin komentoja käsittelyyn ja muokkaamiseen, esimerkiksi ```jq```-komentoa, joka auttaa valitsemaan haluttuja tietoja tiedostosta:
-```
-fish jq '.kohde.tiedosto'
-```
-Tämän jälkeen voit käyttää muita komentoja kuten ```cat```, ```grep``` ja ```sort``` haluamiesi tulosten käsittelyyn.
+## How to: (Kuinka tehdä:)
+Fish Shell:ssä JSON-tiedon käsittely onnistuu `jq`-työkalulla. Asenna `jq` ja käsittele JSON-tietoa näin:
 
-## Syvemmälle:
-JSON kehitettiin JavaScriptin yhteydessä ja se on lyhenne sanoista JavaScript Object Notation. Tämä tiedonvaihtomuoto on saavuttanut suuren suosion ohjelmistokehittäjien keskuudessa sen yksinkertaisuuden ja helppokäyttöisyyden ansiosta. On myös muita vaihtoehtoisia tiedonvaihtomuotoja, kuten XML, mutta monet ohjelmoijat suosivat JSON:ia sen yksinkertaisuuden vuoksi.
+```Fish Shell
+# Asenna jq
+sudo apt install jq
 
-Fish Shellissä JSON-tiedostojen käsittelyyn liittyy muutamia käytännön seikkoja, kuten pisteet ja sulkumerkit, jotka voivat vaikuttaa tiedoston tuloksiin. On tärkeää varmistaa, että tiedosto on oikein muotoiltu ennen kuin käytät sitä Fish Shellin komentojen kanssa.
+# Tallenna JSON-tiedostoon
+echo '{"nimi": "Mikko", "ammatti": "Ohjelmoija"}' > henkilo.json
 
-## Katso myös:
-- [Fish Shellin viralliset verkkosivut](https://fishshell.com/)
-- [JSON dokumentaatio](https://www.json.org/json-en.html)
-- [JQ dokumentaatio](https://stedolan.github.io/jq/)
+# Tulosta kenttä jq:lla
+cat henkilo.json | jq '.nimi'
+```
+
+Esimerkin tuloste:
+```
+"Mikko"
+```
+
+## Deep Dive (Syväsukellus)
+JSON julkaistiin 2000-luvun alussa helpottamaan tietojen siirtoa. XML oli ennen JSON:ia valtavirtaa datan vaihtoon, mutta JSON vei voiton yksinkertaisuudellaan ja luettavuudellaan. Fish Shell:ssä `jq` on yksi tehokkaimmista työkaluista JSON:n käsittelyyn, mutta vaihtoehtoisesti voi käyttää myös Python- tai Node.js-skriptejä.
+
+## See Also (Katso Myös)
+- jq:n viralliset dokumentit: https://stedolan.github.io/jq/manual/
+- Fish Shell:n kotisivu: https://fishshell.com/
+- JSON:n virallinen määrittely: https://www.json.org/json-fi.html

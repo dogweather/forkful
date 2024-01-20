@@ -1,6 +1,6 @@
 ---
 title:                "写入标准错误"
-html_title:           "Elixir: 写入标准错误"
+html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-请注意：无需多余的词句，该篇文章将使用非正式的语气和简洁的写作风格，旨在向 Mandarin 读者介绍使用 Elixir 编程语言时如何向标准错误输出写入内容。
+## What & Why? (是什么？为什么？)
+写入标准错误(stderr)用于输出错误信息。程序员这样做可以把程序的错误信息和正常输出分开，方便调试和日志记录。
 
-## 什么是标准错误输出与为何要使用它？
-标准错误输出是指将程序中的错误信息输出到控制台的过程。程序员使用标准错误输出来追踪和调试错误，这有助于提高程序的稳定性和可靠性。
+## How to: (如何操作：)
+在Elixir里，使用 `IO` 模块中的 `IO.puts/2` 和 `IO.warn/2` 函数，可以把信息直接写入标准错误：
 
-## 如何实现：
-在 Elixir 编程中，我们可以使用 `IO.write(:stderr, "错误信息")` 来向标准错误输出写入内容。下面是一个简单的例子，可以看到程序的输出结果中包含了我们写入的错误信息。
+```elixir
+# 写入标准错误示例
+IO.puts(:stderr, "这是一个错误信息。")
 
-```Elixir
-IO.write(:stderr, "这是一个错误信息")
+# 使用 IO.warn，更符合警告信息的场合
+IO.warn("这是一个警告。")
 ```
 
-输出结果：
-这是一个错误信息
+运行后的输出（假设没有正常输出）:
+```
+这是一个错误信息。
+这是一个警告。
+```
 
-## 深入了解：
-历史背景：标准错误输出最初是在 Unix 操作系统中使用的，后来被许多其他编程语言和平台所采用。
+## Deep Dive (深入探索)
+早期计算机使用stderr作为终端输出错误信息，便于分离标准输出(stdout)和错误输出，后来成为多种编程语言的标准。
+在Elixir中，`IO.puts/2` 和 `IO.warn/2` 是写标准错误的主要方法。但你也可以用底层功能，比如 :erlang's `:io.format/2`。
+实现上，Elixir通过Erlang的BEAM虚拟机与操作系统交互，管理输出流。
 
-替代方案：除了使用 Elixir 内置的 `IO.write(:stderr, "错误信息")` 方法，程序员也可以使用其他第三方库来实现向标准错误输出写入内容。
-
-实现细节：在 Elixir 中，标准错误输出是通过 `:stderr` 原子值来表示的，程序会将该值传递给 `IO.write` 函数来进行输出。
-
-## 相关资源：
-更多关于 Elixir 标准错误输出的信息，请参阅官方文档：https://hexdocs.pm/elixir/IO.html#write/3
-
-另外，如果您想了解 Elixir 提供的其他代码输出选项，请查看官方文档中的“标准 IO”部分：https://hexdocs.pm/elixir/IO.html#module-stdio
+## See Also (延伸阅读)
+- Elixir `IO` 模块官方文档: [https://hexdocs.pm/elixir/IO.html](https://hexdocs.pm/elixir/IO.html)
+- Erlang `:io` 模块官方文档: [http://erlang.org/doc/man/io.html](http://erlang.org/doc/man/io.html)
+- 了解Unix标准流的历史：[https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

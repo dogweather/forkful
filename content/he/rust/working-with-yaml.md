@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם YAML"
-html_title:           "Rust: עובדים עם YAML"
-simple_title:         "עובדים עם YAML"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? / מה ולמה?
+YAML הוא פורמט תכנות שמשמש להגדרת הגדרות ותצורה. מתכנתים מטפלים ב-YAML כי הוא קריא לאנוש ומאוד נפוץ בתצורת פרויקטים ותשתיות.
 
-עבודה עם פורמט YAML היא דרך של בניית קבצי טקסט בשפה פשוטה וקריאה. פורמט זה נהג לשמש בתכנות כדי לייצג נתונים מבונים כך שהם יהיו ידידותיים יותר לקריאה וניהול על ידי מפתחים. עם פורמט זה, ניתן ליצור קבצי טקסט באופן פשוט ולחלוטין אנונימיים.
-
-## איך לעבוד עם פורמט YAML באמצעות Rust:
-
-הנה דוגמא של קוד Rust אשר מציג יצירת קובץ YAML:
+## How to: / איך ל:
+יש להתקין את החבילה `serde_yaml` לטיפול ב-YAML. הנה דוגמה של קוד פשוט לקריאה וכתיבת קובץ YAML:
 
 ```Rust
-use yaml_rust::{YamlLoader, YamlEmitter};
+use serde::{Serialize, Deserialize};
+use serde_yaml;
+use std::fs;
 
-// יצירת משתנה מסוג String עם נתונים
-
-let data = "\
-title: YAML כמו אלכימיה
-categories:
- - תכנות
-author: יוסי כהן";
-
-// יצירת יוצא לקובץ YAML
-
-let mut out_str = String::new();
-{
-    let mut emitter = YamlEmitter::new(&mut out_str);
-    // כתיבת נתונים לקובץ YAML
-    emitter.dump_str(&data).unwrap();
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    version: String,
+    features: Vec<String>,
 }
-// הדפסת הנתונים שנשמרו לקובץ YAML
-println!("{}", out_str);
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let config_yaml = fs::read_to_string("config.yaml")?;
+    let config: Config = serde_yaml::from_str(&config_yaml)?;
+    
+    println!("Read YAML: {:?}", config);
+    
+    let new_config = Config {
+        version: "2.0".to_string(),
+        features: vec!["feature1".to_string(), "feature2".to_string()],
+    };
+    let new_yaml = serde_yaml::to_string(&new_config)?;
+    
+    fs::write("new_config.yaml", new_yaml)?;
+    
+    Ok(())
+}
 ```
 
-## חקירה מעמיקה:
+כאשר הקובץ `config.yaml` ייראה כך:
+```yaml
+version: "1.0"
+features:
+  - "featureA"
+  - "featureB"
+```
 
-תוכנית yaml נמצאת כבר שנים רבות והיא פותחה בהם כפתרון נגד פורמטי YAML שברובם משתמשים ב-nesting ובשימוש במספר חלקי נתוני מחרוזות בטיפוסיות שונות. בפרט, YAML מאפשר להגיש הפניות לכוונה גלאית לחלקי ה-strings, מה שמאפשר לנו לשמור על דומיה בין הנתונים שאנחנו יוצרים.  פורמט YAML גם מספק הנקות של הדין לחדירות בנתונים השונים כתוצאה מפספוסי האימות של הפורמט בעתיד.
+## Deep Dive / נסיקה עמוקה:
+YAML (YAML Ain't Markup Language) נולד ב-2001. מתחרה עיקרי הוא JSON, שנועד למכונה ולא לאדם. ל-YAML יתרון בקריאות אך עלול להתגלות פחות יעיל בזמן ריצה. כאשר עובדים עם YAML ב-Rust יש להיות מודעים לסכנות של הזרמת תוכן לא בטוח (unsafe content).
 
-על ידי משך פורמט זה ניתן לקרוא לספריות אחרות (eruby) וליצר הישות כמו חוכמה מלוכלכת להפנינים. ההורדת YAML תושבע לקבלה של פורמט הקפילות. פורמט תוכניות מאפשר לבחירות שיקול מעל קרים Sha-Lan (שחדשכו) תוך בלאגן בדיקה של רשימה נתוני שיד (אם כי לא יותר ממנו).
-
-## ראה גם:
-
-למידע נוסף על פורמט YAML ועל השתמשותו ב-Rust ניתן לקרוא את המדריך המפורט באתר הרשמי עבור yaml-rust: https://github.com/chyh1990/yaml-rust. כמו כן, ניתן למצוא מספר ספריות נוספות לעבודה עם YAML בסביבת Rust ברשת. השתמשו במקום הזה כדי למצוא ספריות אופציונליות שיעזורו לכם בעבודה עם פרמט YAML באמצעות Rust.
+## See Also / גם כדאי לראות:
+1. מדריך רשמי ל-YAML: https://yaml.org/spec/1.2/spec.html
+2. דף הגיטהאב של Serde YAML: https://github.com/dtolnay/serde-yaml
+3. מדריך לתכנות ב-Rust: https://doc.rust-lang.org/book/
+4. פורום לתכנתים בעברית על Rust: https://rust-il.github.io/

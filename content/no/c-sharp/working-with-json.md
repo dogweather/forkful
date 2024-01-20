@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "C#: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## What & Why?
+JSON står for JavaScript Object Notation, og er en lettvekts datautvekslingsformat. Programmerere bruker JSON fordi det er enkelt å lese og skrive, og det er lett å parse og generere i de fleste programmeringsspråk, inkludert C#.
 
-Å jobbe med JSON er å håndtere data i et bestemt format som brukes til å utveksle og lagre informasjon. Dette er viktig for programmerere fordi det tillater effektiv lagring og utveksling av data mellom ulike programmer og plattformer.
-
-Slik gjør du det:
-
-Å jobbe med JSON i C# er ganske enkelt. Følg disse trinnene:
-
-1. Importer Newtonsoft.Json biblioteket.
-2. Definer et JSON-objekt.
-3. Foreta konverteringer mellom JSON og .NET-objekter ved hjelp av JsonConvert-klassen.
-
-Et eksempel på hvordan dette kan gjøres ser slik ut:
+## How to:
+La oss se på litt C#-kode for å jobbe med JSON. Vi bruker `System.Text.Json` som er en del av .NET:
 
 ```C#
-// Importer biblioteket
-using Newtonsoft.Json;
+using System;
+using System.Text.Json;
 
-// Definer JSON-objekt
-string json = "{'Navn': 'Lars', 'Alder': 28}";
-
-// Konverter fra JSON til .NET-objekt
-Person p = JsonConvert.DeserializeObject<Person>(json);
-
-// Konverter fra .NET-objekt til JSON
-string nyttJson = JsonConvert.SerializeObject(p);
-
+public class Program
+{
+    public static void Main()
+    {
+        // Seriellere et objekt til JSON-string
+        var product = new { Name = "Pult", Price = 399.99 };
+        string jsonString = JsonSerializer.Serialize(product);
+        Console.WriteLine(jsonString);
+        
+        // Parse JSON-string til et dynamisk objekt
+        var parsedProduct = JsonSerializer.Deserialize<dynamic>(jsonString);
+        Console.WriteLine($"Produkt: {parsedProduct.Name}, Pris: {parsedProduct.Price}");
+    }
+}
 ```
 
-Du kan også bruke LINQ til å utforske og manipulere JSON-data på en enkel måte.
+Sample output:
+```
+{"Name":"Pult","Price":399.99}
+Produkt: Pult, Pris: 399.99
+```
 
-Dypdykk:
+## Deep Dive
+JSON ble introdusert i 2001 og har siden blitt standarden for APIer og webtjenester. Alternativer som XML er mer verbose og mindre populære i dag. Når du jobber med JSON i C#, kan du velge forskjellige biblioteker som `System.Text.Json` eller `Newtonsoft.Json`; sistnevnte gir flere funksjoner, men `System.Text.Json` har bedre ytelse.
 
-JSON ble opprinnelig utviklet av Douglas Crockford i 2001 og har siden blitt et populært format for utveksling og lagring av data. Selv om XML også brukes til dette formålet, er JSON mer lettlest, kompakt og effektivt.
+## See Also
+Her er noen nyttige lenker for videre lesning:
 
-Som et alternativ til å jobbe med JSON i C#, kan du også bruke JavaScriptSerializer-klassen som er innebygd i .NET-rammeverket. Denne klassen tilbyr lignende funksjonalitet, men har ikke like mange muligheter som JsonConvert-klassen fra Newtonsoft.Json.
-
-Se også:
-
-- [Newtonsoft.Json Documentation](https://www.newtonsoft.com/json/help/html/SerializingJSON.htm)
+- .NET's offisielle guide til JSON: [Microsoft Docs - JSON in .NET](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview)
+- Newtonsoft.Json (Json.NET): [Newtonsoft.Json Documentation](https://www.newtonsoft.com/json)
+- JSON standarden: [Introducing JSON](https://www.json.org/json-en.html)

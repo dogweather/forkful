@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Swift: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué es y por qué?
 
-Trabajar con JSON es una parte importante del desarrollo de aplicaciones, ya que es un formato de intercambio de datos muy utilizado en la web. Los programadores lo usan para convertir datos estructurados en objetos de programación y viceversa.
+Trabajar con JSON significa manipular el formato de intercambio de datos JavaScript Object Notation. Los programadores lo hacen porque es ligero, fácil de leer para humanos y esencial para la comunicación en aplicaciones web y móviles.
 
-## ¡A por ello!
-
-Para trabajar con JSON en Swift, primero debemos importar la librería `Foundation` en nuestro código. Luego, podemos usar el método `JSONSerialization` para convertir datos JSON en objetos de Swift. Por ejemplo:
+## Cómo hacerlo:
 
 ```Swift
 import Foundation
 
-let jsonString = "{\"name\": \"María\", \"age\": 25}"
-let jsonData = jsonString.data(using: .utf8)!
-
-do {
-    if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] {
-        let name = jsonObject["name"] as! String
-        let age = jsonObject["age"] as! Int
-        print("\(name) tiene \(age) años.")
-    }
-} catch {
-    print(error)
+// Definir un struct para mapear los datos JSON
+struct Usuario: Codable {
+    var nombre: String
+    var edad: Int
 }
 
-// Output: María tiene 25 años.
+// Simular un JSON desde un string para el ejemplo
+let jsonString = "{\"nombre\": \"Juan\", \"edad\": 30}"
+
+// Convertir el string JSON a datos
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        // Decodificar el JSON a nuestro struct
+        let usuario = try JSONDecoder().decode(Usuario.self, from: jsonData)
+        print("Nombre: \(usuario.nombre), Edad: \(usuario.edad)")
+    } catch {
+        print("Error al decodificar: \(error)")
+    }
+}
 ```
 
-## Detalles en profundidad
+Salida de ejemplo:
+```
+Nombre: Juan, Edad: 30
+```
 
-JSON fue desarrollado en los años 90 como una alternativa a XML y se ha convertido en un formato muy popular debido a su simplicidad y a su facilidad de lectura para humanos y máquinas. Además de `JSONSerialization`, también existen otras librerías, como `SwiftyJSON` y `ObjectMapper`, que hacen que trabajar con JSON en Swift sea aún más fácil.
+## Profundización:
 
-## Vea también
+1. **Contexto histórico**: JSON se originó en los primeros años 2000 como una manera más sencilla de usar alternativa a XML en AJAX.
+2. **Alternativas**: XML es una alternativa más antigua, pero más compleja. Protobuf de Google y BSON son consideradas para sistemas que necesitan serialización binaria.
+3. **Detalles de implementación**: Swift utiliza el protocolo `Codable` para codificar y decodificar. La key strategy de `JSONDecoder` y `JSONEncoder` puede ser usada para trabajar con diferentes estilos de claves JSON.
 
-- [Documentación oficial de JSON en Swift](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Librería SwiftyJSON para trabajar con JSON en Swift](https://github.com/SwiftyJSON/SwiftyJSON)
-- [Librería ObjectMapper para mapear objetos Swift a JSON y viceversa](https://github.com/tristanhimmelman/ObjectMapper)
+## Ver También:
+
+- Documentación oficial de Swift sobre JSON: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/jsonencoder)
+- RFC 7159 - The JavaScript Object Notation (JSON) Data Interchange Format: [RFC 7159](https://tools.ietf.org/html/rfc7159)
+- Tutorial de Ray Wenderlich sobre JSON y Swift: [Ray Wenderlich](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)

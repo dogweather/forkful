@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Ruby recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,37 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file in Ruby means creating a file on your computer that contains text. Programmers do this to store data in a more permanent and accessible way, or to save the results of a program for later use.
+Writing to a text file in Ruby means saving data to a file on your system. Programmers do it for data persistence, logging, and data sharing between different programs or program runs.
 
 ## How to:
 
-To write a text file in Ruby, you can use the File class and its corresponding methods. First, you'll need to open or create the file using the `File.open()` method, and specify the file name and the writing mode (`w`). Then, you can use the `puts` method to add the desired text to your file. Finally, use the `close` method to save your changes and close the file.
+To write to a text file in Ruby, use the `File` class. Here's a quick example:
 
 ```Ruby
-# Create a new text file and write text to it
-File.open("my_file.txt", "w") do |file|
-  file.puts "This is some text written to a file!"
-end
-
-# Open an existing text file and append text to it
-File.open("my_file.txt", "a") do |file|
-  file.puts "This text will be added to the end of the file."
+File.open("output.txt", "w") do |file|
+  file.puts "Hello, Ruby!"
 end
 ```
 
-This will result in a `my_file.txt` file that contains the following text:
-
+Sample output (contents of `output.txt`):
 ```
-This is some text written to a file!
-This text will be added to the end of the file.
+Hello, Ruby!
 ```
 
-## Deep Dive:
+To append to an existing file, use the "a" mode:
 
-Writing text files has been a fundamental task in programming for a long time. Text files can contain different types of data, making them versatile for storing information in a readable format. Alternatives to writing text files in Ruby include using other languages like Python or even using a database. However, text files offer a simple and accessible way to save data without needing any external tools or software.
+```Ruby
+File.open("output.txt", "a") do |file|
+  file.puts "Appending this line."
+end
+```
 
-When writing a text file in Ruby, it's essential to pay attention to the writing mode used. There are three main modes: `w` (write mode), `a` (append mode), and `r` (read mode). Using `puts` in `w` mode will overwrite the entire existing file, while `puts` in `a` mode will add the text to the end of the file without deleting its content. Also, don't forget to close the file after making changes to save your changes and release the resources used to access the file.
+Output (additional contents of `output.txt`):
+```
+Appending this line.
+```
 
-## See Also:
+## Deep Dive
 
-- [Ruby File Class Documentation](https://ruby-doc.org/core-3.0.0/File.html)
+Ruby's file handling has its roots in UNIX file I/O operations. The `open` method can take a block, automatically closing the file afterward, which is unique and convenient compared to some other languages. Alternatives to `File.open` include `IO.write` for quick writes and different libraries like `CSV` or `FileUtils` for specialized tasks.
+
+When you're writing to a file, be mindful of character encoding and line endings especially when your file needs to be read by different systems or languages.
+
+## See Also
+
+- Ruby's IO class: https://ruby-doc.org/core/IO.html
+- Ruby's FileUtils: https://ruby-doc.org/stdlib/libdoc/fileutils/rdoc/FileUtils.html
+- Ruby-Doc File class: https://ruby-doc.org/core/File.html

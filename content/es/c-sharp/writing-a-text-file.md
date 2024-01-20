@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "C#: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,25 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Escribir un archivo de texto en C# es simplemente guardar información en un archivo de texto plano. Los programadores lo hacen principalmente para almacenar datos de forma estructurada y accesible para su uso en futuras operaciones.
+## What & Why?
+Escribir un archivo de texto significa guardar datos en un archivo en forma de texto. Los programadores lo hacen para almacenar información de manera simple, como configuraciones, logs o intercambiar datos entre programas.
 
-## Cómo hacerlo:
-Para escribir un archivo de texto en C#, primero necesitamos crear una instancia de la clase `StreamWriter` y especificar el nombre del archivo y la ruta donde queremos guardarlo. Luego, podemos utilizar el método `WriteLine()` para escribir diferentes líneas de información en el archivo. Finalmente, debemos cerrar el archivo utilizando el método `Close()` para asegurarnos de que todos los datos se guarden correctamente. Por ejemplo:
+## How to:
+Escribir archivos es sencillo con C#. Aquí dos ejemplos usando `File.WriteAllText` y `StreamWriter`.
 
 ```C#
-using (StreamWriter archivo = new StreamWriter("ruta/del/archivo.txt")) 
-{
-    archivo.WriteLine("Hola mundo!");
-    archivo.WriteLine("Este es un ejemplo de cómo escribir un archivo de texto en C#.");
-} 
+// Ejemplo con File.WriteAllText
+string path1 = "ejemplo1.txt";
+string contenido1 = "¡Hola, archivo!";
+File.WriteAllText(path1, contenido1);
 ```
 
-Este código creará un archivo llamado "archivo.txt" en la ruta especificada y guardará las líneas "Hola mundo!" y "Este es un ejemplo de cómo escribir un archivo de texto en C#".
+```C#
+// Ejemplo con StreamWriter
+string path2 = "ejemplo2.txt";
+using (StreamWriter writer = new StreamWriter(path2))
+{
+    writer.WriteLine("Primera línea");
+    writer.WriteLine("Segunda línea");
+}
+```
 
-## Profundizando:
-Antes de la invención de la tecnología de almacenamiento digital, los programadores solían escribir en cintas perforadas para guardar datos estructurados. Con el avance de la tecnología, se desarrollaron diferentes formas de almacenar datos, como los archivos de texto. En C#, también podemos utilizar la clase `File` para escribir un archivo de texto, pero la clase `StreamWriter` nos permite un mayor control sobre el formato de los datos.
+Salida (ejemplo1.txt and ejemplo2.txt):
+```
+¡Hola, archivo!
+```
+```
+Primera línea
+Segunda línea
+```
 
-## Ver también:
-- Documentación oficial de Microsoft sobre la clase `StreamWriter` en C#: https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netcore-3.1 
-- Tutorial de C# para principiantes que cubre cómo escribir y leer archivos de texto: https://www.completecsharp.co.uk/writing-textfiles/
+## Deep Dive
+Antes, escribir archivos era más complicado; requería manejar buffers y entender el bajo nivel de I/O del sistema. Hoy, `System.IO` simplifica todo. Las alternativas incluyen `File.AppendAllText` para añadir texto, o `File.Create` para mayor control. Es importante manejar excepciones y recursos de forma apropiada con `try-catch` y `using`, especialmente con archivos grandes o operaciones críticas.
+
+## See Also
+Para más detalles y métodos de lectura/escritura, consulta la documentación oficial de Microsoft:
+
+- Documentación de `StreamWriter`: [https://docs.microsoft.com/dotnet/api/system.io.streamwriter](https://docs.microsoft.com/dotnet/api/system.io.streamwriter)
+- Documentación de `File`: [https://docs.microsoft.com/dotnet/api/system.io.file](https://docs.microsoft.com/dotnet/api/system.io.file)
+- Conceptos de manejo de archivos en general: [https://docs.microsoft.com/dotnet/standard/io](https://docs.microsoft.com/dotnet/standard/io)

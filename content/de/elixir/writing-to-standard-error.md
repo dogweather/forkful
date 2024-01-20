@@ -1,7 +1,7 @@
 ---
-title:                "Das Schreiben in den Standardfehler"
-html_title:           "Elixir: Das Schreiben in den Standardfehler"
-simple_title:         "Das Schreiben in den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## What & Why?
+Standardfehler (stderr) ist der Datenstrom für Fehlermeldungen und Logs. Programmierer nutzen ihn, um Fehlfunktionen von normalen Outputs zu trennen, was Problemdiagnosen vereinfacht.
 
-Schreiben auf den Standardfehler (standard error) ist ein Weg für Programmierer, um Fehler- und Warnungsmeldungen auszugeben. Standardfehler ist ein Kanal, der speziell für das Senden von Ausgaben reserviert ist, die Fehler oder Warnungen enthalten. Dadurch kann der Benutzer unterscheiden, ob die Ausgabe normale Programmausgaben oder tatsächliche Fehlermeldungen sind.
+## How to:
+Elixir benutzt den `IO`-Modul, um in stderr zu schreiben. Hier ist ein einfaches Beispiel:
 
-## So geht's:
+```elixir
+# Nachricht direkt nach stderr schreiben
+IO.puts(:stderr, "Das ist ein Fehler!")
 
-```Elixir
-IO.puts("Normale Ausgabe") # Gibt "Normale Ausgabe" auf den Standardausgang (standard output) aus
-IO.puts(:stderr, "Fehlermeldung") # Gibt "Fehlermeldung" auf den Standardfehler (standard error) aus
-```
-Ausgabe:
-```
-Normale Ausgabe
-Fehlermeldung (in rot oder farbig markiert, je nach Konsole oder Umgebung)
+# Formatierter Text nach stderr ausgeben
+IO.write(:stderr, "Fehler: #{:badarg} aufgetreten!\n")
 ```
 
-## Tiefere Einblicke:
+Beispielausgabe im Terminal:
 
-Das Schreiben auf den Standardfehler hat seinen Ursprung im Unix-Betriebssystem und wurde später in anderen Systemen übernommen. Alternativ können Programmierer auch auf den Standardausgang schreiben und die Ausgabe manuell formatieren, um Fehlermeldungen hervorzuheben. In Elixir gibt es auch die Funktion `Logger.error/1`, die zur Ausgabe von Fehlern verwendet werden kann.
+```
+Das ist ein Fehler!
+Fehler: badarg aufgetreten!
+```
 
-## Siehe auch:
+## Deep Dive
+In UNIX-Systemen ist stderr der voreingestellte Datenstrom für Fehler seit den 1970ern. Diese Konvention ermöglicht es, stdout (Standardausgabe) und stderr in verschiedene Dateien oder Prozesse umzuleiten. In Elixir ist die Arbeit mit stderr bequem durch die `IO`-Module abstrahiert. Alternativen zu `IO.puts/2` und `IO.write/2` könnten das niedrigere-level `:erlang.format_error/1` oder das Schreiben in eine Log-Datei via einem Logging-Framework sein.
 
-- Offizielle Elixir-Dokumentation zu IO
-- Stack Overflow-Eintrag zu Standardfehler auf Unix-Systemen
+## See Also
+- Elixir Documentation: [IO module](https://hexdocs.pm/elixir/IO.html)
+- Erlang's :erlang module: [format_error function](http://erlang.org/doc/man/erlang.html#format_error-1)
+- Elixir Logging: [Logger module](https://hexdocs.pm/logger/Logger.html)

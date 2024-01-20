@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Javascript: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
 
-Ecrire un fichier texte en programmation signifie simplement créer un document contenant du texte qui peut être lu et modifié par un ordinateur. Les développeurs utilisent cette fonctionnalité pour stocker et manipuler des données importantes dans leurs programmes.
+Écrire un fichier texte en JavaScript, c'est sauvegarder des données en format lisible par l'homme. C'est utile pour créer des logs, exporter des données, et pour configurer des apps avec des fichiers comme `.env`.
 
-## Comment faire:
+## Comment faire :
 
-```Javascript
-// Créer une variable contenant le texte à écrire
-const texte = "Bonjour à tous!";
-
-// Importer le module fs pour écrire un fichier texte
+```javascript
 const fs = require('fs');
 
-// Appeler la méthode writeFile pour écrire le fichier
-fs.writeFile('message.txt', texte, (err) => {
+// Écrire du texte dans un nouveau fichier 
+fs.writeFile('message.txt', 'Bonjour le monde!', (err) => {
   if (err) throw err;
-  console.log('Le fichier a été créé avec succès!');
+  console.log('Le fichier a été sauvegardé!');
+});
+
+// Ajouter du texte à un fichier existant
+fs.appendFile('message.txt', '\nAu revoir!', (err) => {
+  if (err) throw err;
+  console.log('Le texte a été ajouté!');
 });
 ```
+Sortie :
+```
+Le fichier a été sauvegardé!
+Le texte a été ajouté!
+```
 
-## Plongée en profondeur:
+## Plongée Profonde
 
-L'écriture de fichiers texte est une fonctionnalité fondamentale de la programmation qui a été introduite dès les premiers langages de programmation. Il existe également des alternatives telles que l'écriture dans une base de données ou l'utilisation d'API pour stocker des données.
+Historiquement, l'interaction avec le système de fichiers était effectuée côté serveur. Avec Node.js, on manipule ces fichiers avec le module `fs`. Il y a des alternatives comme les file systems promisified (`fs.promises`) pour écrire avec des Promises/async-await. Concernant les navigateurs, l'API File et FileReader interagissent avec les fichiers locaux mais avec des restrictions de sécurité.
 
-Pour écrire un fichier texte, il est important de comprendre le système de fichiers de votre ordinateur et comment spécifier le chemin et le nom du fichier à créer. Il est également bon de prendre en compte les permissions et les droits d'accès lors de l'écriture de fichiers texte.
+## Voir Également
 
-## Voir aussi:
-
-- [Documentation officielle de Node.js sur l'écriture de fichiers](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Un tutoriel détaillé sur l'écriture de fichiers textes en JavaScript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- Documentation Node.js sur `fs`: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- MDN Web Docs sur l'API File: [https://developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- MDN Web Docs sur FileReader: [https://developer.mozilla.org/en-US/docs/Web/API/FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)

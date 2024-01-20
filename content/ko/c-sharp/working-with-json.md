@@ -1,7 +1,7 @@
 ---
-title:                "JSON 처리하기"
-html_title:           "C#: JSON 처리하기"
-simple_title:         "JSON 처리하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇인가요? 왜 쓰나요?)
+JSON은 데이터 교환 포맷입니다. 간결하고, 읽기 쉬우며, 대부분의 프로그래밍 언어에 구현이 있습니다. 개발자는 구조화된 데이터를 서버와 클라이언트 간에 주고받기 위해 JSON을 사용합니다.
 
-JSON 처리는 데이터 교환과 저장에 널리 사용되는 간단한 형식입니다. 프로그래머들은 JSON을 사용하여 데이터를 쉽게 읽고 쓸 수 있고, 다른 시스템과 데이터를 공유하기에도 편리합니다.
-
-## 방법:
-
-JSON을 처리하는 가장 간단한 방법은 Newtonsoft의 JSON.NET 라이브러리를 사용하는 것입니다. 다음과 같이 간단한 예제를 통해 어떻게 사용하는지 살펴보겠습니다:
+## How to: (어떻게 하죠?)
+C#에서 JSON 다루는 방법을 간단히 보여드리겠습니다.
 
 ```C#
-// Serialize to JSON
-var person = new Person
+using System;
+using System.Text.Json;
+
+public class Program
 {
-    Name = "John",
-    Age = 30
-};
-var json = JsonConvert.SerializeObject(person);
+    public static void Main()
+    {
+        // JSON 문자열을 C# 객체로 변환
+        string jsonString = "{\"firstName\":\"Jihun\",\"lastName\":\"Kim\"}";
+        Person person = JsonSerializer.Deserialize<Person>(jsonString);
+        Console.WriteLine($"이름: {person.FirstName}, 성: {person.LastName}");
 
-// Output: {"Name":"John","Age":30}
+        // C# 객체를 JSON 문자열로 변환
+        Person newPerson = new Person { FirstName = "Soyeon", LastName = "Lee" };
+        string newJsonString = JsonSerializer.Serialize(newPerson);
+        Console.WriteLine(newJsonString);
+    }
+}
 
-// Deserialize from JSON
-var json = @"{'Name':'Jane','Age':25}";
-var person = JsonConvert.DeserializeObject<Person>(json);
-
-// Output:
-// Name: Jane
-// Age: 25
+public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
 ```
 
-## 깊이 파보기:
+출력값:
 
-JSON은 1999년 더그 커락(Douglas Crockford)에 의해 만들어졌으며, 현재는 데이터 교환과 웹 애플리케이션에서 매우 널리 사용되고 있습니다. 다른 대안으로는 XML, YAML, CSV 등이 있지만, JSON은 구조가 간단하고 가벼워서 널리 사용됩니다.
+```
+이름: Jihun, 성: Kim
+{"firstName":"Soyeon","lastName":"Lee"}
+```
 
-JSON 데이터를 처리하는 데에는 많은 라이브러리가 있지만, JSON.NET은 가장 널리 사용되는 라이브러리입니다. 이 라이브러리는 높은 성능과 다양한 기능으로 인기를 끌고 있습니다.
+## Deep Dive (더 알아보기)
+JSON은 JavaScript Object Notation의 약자로 2001년에 Douglas Crockford에 의해 고안되었습니다. XML이나 YAML 같은 다른 데이터 포맷들도 있지만, JSON은 가벼움과 간결함 때문에 선호됩니다. C#에서 System.Text.Json 라이브러리는 높은 성능과 저 메모리 사용량으로 유명합니다. .NET Core 3.0 이상부터 기본 제공되며, Newtonsoft.Json 같은 타 라이브러리와 비교할 때 확장성과 속도면에서 강점을 보입니다.
 
-## 참고 자료:
-
-- [JSON.NET 공식 사이트](https://www.newtonsoft.com/json)
-- [JSON 표준 문서](https://www.json.org/json-ko.html)
+## See Also (참고할 링크)
+- [JSON 공식 웹사이트](https://www.json.org/json-en.html)
+- [.NET의 System.Text.Json 도움말](https://docs.microsoft.com/en-us/dotnet/api/system.text.json)
+- [Newtownsoft.Json 라이브러리](https://www.newtonsoft.com/json)

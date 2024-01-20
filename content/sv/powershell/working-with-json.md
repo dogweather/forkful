@@ -1,7 +1,7 @@
 ---
-title:                "'Arbeta med json'"
-html_title:           "PowerShell: 'Arbeta med json'"
-simple_title:         "'Arbeta med json'"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -11,21 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att arbeta med JSON kan beskrivas som att läsa, skriva och behandla data i ett lättförståeligt format. Det är användbart för programmerare eftersom det tillåter dem att strukturera och dela data på ett enkelt sätt, vilket i sin tur underlättar vidare bearbetning och utbyte av information.
+JSON (JavaScript Object Notation) är ett lättviktigt datautbytesformat. Programmerare använder det för att lagra och överföra data, på grund av dess läsbarhet och enkla integration med webbteknologier.
 
-## Så här gör du:
-För att arbeta med JSON i PowerShell kan du använda dig av cmdleten `ConvertTo-Json` för att konvertera data till JSON-format, eller `ConvertFrom-Json` för att konvertera tillbaka till PowerShell-objekt. Här är ett exempel:
-
+## How to:
 ```PowerShell
-$person = @{ name = "Johan"; age = 25 }
+# Skapa ett objekt och konvertera till JSON
+$person = @{
+    Namn = 'Anna'
+    Ålder = 30
+    Stad = 'Stockholm'
+}
+
+# Konvertera till JSON
 $json = $person | ConvertTo-Json
-$json | ConvertFrom-Json
+Write-Output $json
+
+# Output:
+#{
+#    "Namn":  "Anna",
+#    "Ålder":  30,
+#    "Stad":  "Stockholm"
+#}
+
+# Läs in JSON från en fil
+$jsonString = Get-Content -Path 'person.json' -Raw
+
+# Konvertera JSON-sträng till PowerShell-objekt
+$personObject = $jsonString | ConvertFrom-Json
+Write-Output $personObject
+
+# Output:
+#Namn    Ålder Stad     
+#----    ----- ----     
+#Anna    30    Stockholm
 ```
 
-Resultatet från detta exempel blir ett PowerShell-objekt med namnet "Johan" och åldern 25. Notera att `@{}` används för att skapa ett hashtabell-objekt i PowerShell.
+## Deep Dive
+JSON lanserades tidigt 2000-tal och designades för att vara ett enkelt format för att serialisera komplexa datastrukturer. XML var tidigare det dominant val men JSON tog över p.g.a sin mindre verbositet. Alternativ för att hantera JSON i PowerShell är bland annat `ConvertTo-Json` och `ConvertFrom-Json`. Mer detaljerade anpassningar inkluderar `-Depth`-parameter för att hantera djupa objekt och `-Compress` för minifierad JSON.
 
-## Djupdykning:
-JSON (JavaScript Object Notation) har sitt ursprung inom webbutveckling och är ett populärt sätt att strukturera data för att skicka mellan klient och server. Andra alternativ för att arbeta med data är till exempel XML och YAML. Det finns även möjlighet att använda externa moduler för mer avancerade operations.
-
-## Se även:
-För mer information om att arbeta med JSON i PowerShell, kan du läsa dokumentationen för `ConvertTo-Json` och `ConvertFrom-Json` cmdletar här: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7. Inkludera även referenser till andra relevanta källor som JSON-specifikationen och populära externa moduler för arbete med JSON i PowerShell.
+## See Also
+- [JSON.org – JSON introduction](https://www.json.org/json-en.html)
+- [Wikipedia – JSON](https://sv.wikipedia.org/wiki/JSON)

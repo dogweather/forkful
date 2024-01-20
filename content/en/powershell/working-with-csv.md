@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "PowerShell recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,46 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-CSV (Comma Separated Values) is a file format used to store data in a tabular form, with each row representing a record and columns representing the fields or attributes. This format is widely used in spreadsheets and databases due to its simplicity and compatibility with multiple applications. Programmers often work with CSV files to import, export, and manipulate data efficiently.
+
+Working with CSV (Comma-Separated Values) involves handling text data split by commas into rows and columns. Programmers work with CSV for data exchange between programs and systems due to its simplicity and widespread support.
 
 ## How to:
-To work with CSV files in PowerShell, we can use the `Import-Csv` and `Export-Csv` cmdlets. Here's an example of exporting data from a PowerShell object into a CSV file:
 
+### Import a CSV File
 ```PowerShell
-# Create a PowerShell object
-$users = @( 
-    @{Name="John"; Age=25},
-    @{Name="Jane"; Age=30}
-)
-# Export the object to a CSV file
-$users | Export-Csv -Path "C:\Users.csv"
+$data = Import-Csv -Path "path\to\yourfile.csv"
+$data
+```
+**Sample Output:**
+```
+Name        Occupation    Location
+----        ----------    --------
+John Doe    Developer     New York
+Jane Smith  Analyst       San Francisco
 ```
 
-This will create a CSV file with two columns, "Name" and "Age", and two rows with the respective values.
-
-To import data from a CSV file into a PowerShell object, we can use the `Import-Csv` cmdlet. Here's an example:
-
+### Export to a CSV File
 ```PowerShell
-# Import the CSV file into a PowerShell object
-$users = Import-Csv -Path "C:\Users.csv"
-# Display the values from the object
-$users | ForEach-Object {
-    "Name: $($_.Name), Age: $($_.Age)"
+$data | Export-Csv -Path "path\to\newfile.csv" -NoTypeInformation
+```
+**Creates "newfile.csv" with the data from `$data`.**
+
+### Add a Row to CSV Data
+```PowerShell
+$newRow = [PSCustomObject]@{
+    Name       = 'Emily Clark'
+    Occupation = 'Designer'
+    Location   = 'Austin'
 }
+$data += $newRow
+$data | Export-Csv -Path "path\to\yourfile.csv" -NoTypeInformation
 ```
 
-The output will be:
-
+### Select Specific Columns
+```PowerShell
+$data | Select-Object Name, Location
 ```
-Name: John, Age: 25
-Name: Jane, Age: 30
+**Sample Output:**
+```
+Name        Location
+----        --------
+John Doe    New York
+Jane Smith  San Francisco
+Emily Clark Austin
 ```
 
-## Deep Dive:
-CSV was first introduced in the early 1970s as a way to transfer data between mainframe computers and was later adopted as a standard file format for spreadsheet applications. Apart from PowerShell, CSV files can also be worked on with other programming languages like Python, Java, and C#.
+## Deep Dive
 
-While working with CSV files, it is essential to consider data types as they can be converted unintentionally. For example, if a field in a CSV file contains a number, but it is enclosed in quotes (e.g., "25"), PowerShell will treat it as a string, not an integer. This can cause issues while performing calculations or comparisons.
+Historically, CSV files have roots in early computing as a straightforward way to organize table data without needing complex file formats. Alternatives, like XML and JSON, offer richer data structures, but CSV shines for tabular data due to its readability, low overhead, and ease of editing with simple text editors. In PowerShell, `Import-Csv` and `Export-Csv` cmdlets encapsulate the implementation details, handling file IO and data conversion to and from .NET objects.
 
-## See Also:
-- [PowerShell CSV documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
-- [CSV file format  history](https://en.wikipedia.org/wiki/Comma-separated_values#History)
+## See Also
+
+- [PowerShell Documentation on Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
+- [PowerShell Documentation on Export-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv)

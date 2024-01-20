@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Haskell: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Escribir en un archivo de texto permite guardar datos para usar en el futuro. Programadores lo hacen para mantener registros, guardar estados de un programa, o facilitar la interacción con otros sistemas.
 
-Escribir un archivo de texto simplemente significa guardar información en un formato que pueda ser leído por una computadora. Los programadores a menudo lo hacen para almacenar datos o configuraciones de sus programas de manera conveniente.
-
-## Cómo:
-
-### Ejemplo 1: Escribiendo un archivo de texto
+## Cómo Hacerlo:
+En Haskell, usamos la función `writeFile` del módulo `System.IO` para escribir en archivos.
 
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-    let fileName = "mi_archivo.txt"
-    let fileContent = "Hola a todos!"
-    writeFile fileName fileContent
+    let str = "Hola, este es un archivo de texto!" -- Texto para escribir
+    writeFile "ejemplo.txt" str -- Crea o sobrescribe el archivo "ejemplo.txt" con el texto
+    putStrLn "Archivo escrito con éxito!"
 ```
 
-### Ejemplo 2: Añadiendo texto a un archivo existente
+La ejecución del programa creará o sobrescribirá el archivo `ejemplo.txt` con el texto indicado.
 
-```Haskell
-import System.IO
+## Inmersión Profunda
+Historicamente, la lectura y escritura de archivos en Haskell necesitaba manejar explícitamente los manejar de archivos (`Handle`), pero `writeFile` simplifica el proceso. Alternativamente, `appendFile` añade texto al final de un archivo existente. Detrás de escenas, `writeFile` abre el archivo, escribe el contenido y lo cierra automáticamente.
 
-main = do
-    let fileName = "mi_archivo.txt"
-    let additionalContent = "\n¡Hola de nuevo!"
-    appendFile fileName additionalContent
-```
-
-## Profundizando:
-
-Escribir archivos de texto es una tarea común en la programación, ya que proporciona una forma sencilla de almacenar información de manera persistente. También es posible leer datos de archivos de texto utilizando funciones como `readFile` o `openFile`.
-
-Otra alternativa para almacenar información es utilizar una base de datos, pero a veces un simple archivo de texto puede ser suficiente para nuestras necesidades.
-
-Además de los ejemplos mostrados anteriormente, también es importante tener en cuenta que es necesario asegurar que el archivo se cierre correctamente después de usarlo.
-
-## Ver también:
-
-- Documentación de System.IO: https://hackage.haskell.org/package/base/docs/System-IO.html
-- Tutorial básico de Haskell: https://www.haskell.org/tutorial/
+## Ver También
+- [Haskell `System.IO` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
+- [LYAHFGG: Input and Output](http://learnyouahaskell.com/input-and-output)

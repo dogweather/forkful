@@ -1,7 +1,7 @@
 ---
-title:                "「csvとの作業」"
-html_title:           "Arduino: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+CSVは"Comma-Separated Values"の略で、値がコンマで区切られているファイル形式です。プログラマはデータを簡単に交換・保存するためにCSVを使います。
 
-CSVは "Comma-Separated Values" の略で、テキストベースのデータ共有形式の一つです。プログラマは、効率的かつ簡単にデータを保存・取得するためにこれを使用します。
-
-## 実践：  
-
-ArduinoでCSVファイルを扱うサンプルコードを以下に示します。
+## How to: (方法)
+ArduinoでCSVデータを扱う例を示します。
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
 
-// SDカードのピン設定
-const int chipSelect = 4;
+File myFile;
 
 void setup() {
-  // シリアル通信の開始
   Serial.begin(9600);
-
-  // SDカードの初期化
-  if (!SD.begin(chipSelect)) {
-    Serial.println("SDカードの初期化に失敗しました");
+  if (!SD.begin(4)) {
+    Serial.println("SD card initialization failed!");
     return;
   }
-  Serial.println("SDカードの初期化に成功しました");
-
-  // CSV fileの読み込み
-  File dataFile = SD.open("data.csv");
-
-  if (dataFile) {
-    while (dataFile.available()) {
-      Serial.write(dataFile.read());
+  myFile = SD.open("test.csv");
+  if (myFile) {
+    while (myFile.available()) {
+      String data = myFile.readStringUntil('\n');
+      Serial.println(data);
     }
-    dataFile.close();
+    myFile.close();
+  } else {
+    Serial.println("Error opening file");
   }
 }
 
 void loop() {
-  // nothing happens after setup
+  // メインコードはここに書きます。
 }
 ```
-このコードは以下の出力を生成します：
-
-```Arduino
-123, "Tokyo", 36.5
-456, "Osaka", 35.4
-789, "Fukuoka", 33.6
+サンプル出力：
 ```
-## ディープダイブ
+sensor1,30,sensor2,60
+sensor1,31,sensor2,61
+sensor1,32,sensor2,62
+```
 
-CSVは、IBMのFORTRAN（FORmula TRANslation）プログラミング言語にその歴史を遡ります。多くの場合、行はレコードを、各列はフィールドを表現します。しかし、タブ、セミコロン、スペースなどが区切り文字として用いられる場合もあり、"TSV"（Tab-Separated Values）、 "DSV"（Delimiter-Separated Values）と呼ばれる形式も存在します。
+## Deep Dive (掘り下げ)
+CSV形式の歴史は1970年代にさかのぼります。JSONやXMLのような代替手段がありますが、CSVはそのシンプルさから広く採用されています。実装時にはCSVの構造に注意が必要で、例えばデータにコンマが含まれている場合にはデータをダブルクォーテーションで囲む等の対策が必要です。
 
-ArduinoのCSVライブラリには、CSVデータの読み書きに特化した関数が提供されています。
-
-## 参照
-
-1. Arduino CSVライブラリ：
-https://www.arduino.cc/en/Reference/SD
-
-2. SDカードのハンドリングについて：
-https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite
-
-3. CSVデータ形式について：
-https://ja.wikipedia.org/wiki/Comma-Separated_Values
-
-4. 拡張できる代替ライブラリ：
-https://www.arduino.cc/en/Reference/Libraries
-
-これらのリンクは、ArduinoプログラミングにおけるCSVファイルの操作に深く関与しています。詳細を理解することで、さらに応用的なプログラミングが可能となります。
+## See Also (関連情報)
+- ArduinoのSDライブラリ: https://www.arduino.cc/en/Reference/SD
+- CSVに関するRFC 4180: https://tools.ietf.org/html/rfc4180
+- オープンソースのCSVパーサライブラリ: https://github.com/bblanchon/ArduinoJson

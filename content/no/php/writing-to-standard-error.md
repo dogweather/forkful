@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standard feil"
-html_title:           "PHP: Skriving til standard feil"
-simple_title:         "Skriving til standard feil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
+"Standard error" (stderr) er en output-kanal hvor PHP kan sende feil- eller statusmeldinger. Programmerere bruker den til å skille vanlig output fra feilmeldinger, noe som gjør feilsøking enklere.
 
-Å skrive til standard error er en vanlig praksis blant programmerere for å rapportere feil og annen relevant informasjon til terminalen eller loggfiler. Dette gir en mer pålitelig og strukturert måte å feilsøke og analysere programmet på.
+## Hvordan:
+For å skrive til stderr i PHP, bruk `fwrite()` til å sende en melding til STDERR-strømmen:
 
-# Hvordan:
-
-Kodings eksempler og utgangsresultat 
 ```PHP
 <?php
-fwrite(STDERR, "Dette er en feilmelding.");
+fwrite(STDERR, "Dette er en feilmelding.\n");
+?>
 ```
-Utgang:
+
+Eksempelutdata når du kjører i terminal:
+
 ```
 Dette er en feilmelding.
 ```
 
-# Dypdykk:
+En annen måte er å bruke `file_put_contents()` med `php://stderr`:
 
-Å skrive til standard error er en del av det å bruke stderr-funksjonen i PHP, som returnerer en åpen håndtak til standard error-strømmen. Denne praksisen er en del av standardisert Unix-programmering, der stderr brukes til å skrive ut feilmeldinger. Alternativer til å skrive til standard error inkluderer bruk av loggfiler eller å sende feilmeldinger til standard output (stdout). Implementeringen av denne funksjonen kan variere avhengig av programmeringsspråk og operativsystem.
+```PHP
+<?php
+file_put_contents('php://stderr', "Dette er en annen feilmelding.\n");
+?>
+```
 
-# Se også:
+## Dypdykk:
+Historisk sett er stderr et konsept hentet fra Unix og C programmering, der det samme prinsippet brukes til å differensiere mellom standard output og error streams. I PHP kan du enten skrive direkte til stderr-streamen eller bruke funksjoner som `error_log()` for å logge feilmeldinger. `error_log()` kan konfigureres til å sende feilmeldinger til forskjellige destinasjoner, som logger, e-post eller andre systemer. Dette gir fleksibilitet i håndtering av feil under forskjellige runtime-miljøer.
 
-- [PHP Manualens sider om Writing to Standard Error](https://www.php.net/manual/en/function.fwrite.php)
-- [Unix Documentation om Standard Output and Standard Error](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdout.html)
+## Se Også:
+- PHP Manual on Standard Predefined Constants: https://www.php.net/manual/en/reserved.constants.php
+- PHP Manual on `error_log()`: https://www.php.net/manual/en/function.error-log.php
+- PHP Manual on `fwrite()`: https://www.php.net/manual/en/function.fwrite.php
+- PHP Manual on Output Control Functions: https://www.php.net/manual/en/ref.outcontrol.php

@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "C++: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,21 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Kirjoittaminen testejä on tärkeä osa ohjelmointia. Tarkoituksena on varmistaa, että koodi toimii odotetulla tavalla ja havaita mahdolliset virheet ennen kuin ohjelma julkaistaan. Tämä auttaa parantamaan ohjelman laatua ja vähentää mahdollisia bugeja, mikä säästää aikaa ja vaivaa pitkällä aikavälillä.
+## What & Why?
+Testit ovat koodeja jotka tarkistavat ohjelmasi käyttäytymisen automaattisesti. Testauksesta on tullut ohjelmoinnin peruskivi koska se vahvistaa koodin oikeellisuutta, havaitsee virheet ajoissa ja helpottaa kunnossapitoa.
 
-## Kuinka:
-Käytä testikirjastoja, kuten Catch2 tai Google Test, kirjoittaaksesi testejä ohjelmallesi. Tämän avulla voit kirjoittaa pieniä yksikkötestejä, jotka testaavat yksittäisiä osia koodistasi. Seuraava esimerkki käyttää Catch2-kirjastoa testataksesi funktiota, joka laskee kahden kokonaisluvun summan.
+## How to:
 ```C++
-TEST_CASE("Lasketaan kahden kokonaisluvun summa", "[laskeminen]") {
-   REQUIRE(laskeSumma(2, 3) == 5);
+#include <cassert>
+
+// Funktion esittely
+int summa(int a, int b) {
+    return a + b;
+}
+
+// Testifunktio
+void testaa_summa() {
+    assert(summa(1, 2) == 3);
+    assert(summa(-1, -2) == -3);
+    assert(summa(0, 0) == 0);
+
+    // Tulostetaan "Testit ok!", jos edelliset assert-lauseet eivät aiheuta virhettä
+    std::cout << "Testit ok!" << std::endl;
+}
+
+int main() {
+    testaa_summa(); // Testien ajaminen
+    return 0;
 }
 ```
-Tämä testi varmistaa, että funktio palauttaa oikean summan laskiessaan kahden kokonaisluvun summan. Jos testi epäonnistuu, se osoittaa ongelman koodissa, ja voit korjata sen ennen kuin julkaiset ohjelmasi.
+Output:
+```
+Testit ok!
+```
 
-## Syväsukellus:
-Kirjoittaminen testeihin tuli suosituksi lähestymistavaksi ohjelmistokehityksessä 1980-luvulla, kun yhä enemmän ohjelmia alkoi olla suuria ja monimutkaisia. Testien lisääminen auttoi kehittäjiä tunnistamaan ja korjaamaan virheitä nopeammin, mikä paransi ohjelmien laatua ja stabiilisuutta. Vaikka testien kirjoittaminen saattaa tuntua aikaa vievältä alkuvaiheessa, se säästää aikaa ja vaivaa myöhemmin. On myös muita tapoja testata ohjelmaa, kuten manuaalinen testaus, mutta niitä ei voida automatisoida ja ne ovat alttiimpia inhimillisille virheille.
+## Deep Dive
+Alun perin ohjelmoinnin alkuaikoina testaus oli manuaalista ja aikaa vievää. Nykyään on olemassa monia testaustyökaluja kuten Google Test C++:lle. Vaihtoehtoisesti voit käyttää TDD (Test-Driven Development) periaatetta, missä luot testit ennen itse koodia. Käytännön toteutus testeissä vaihtelee unit-testeistä integraatio- ja hyväksymistesteihin, jotka kaikki tähtäävät ohjelman laadun varmistamiseen eri tasoilla.
 
-## Katso myös:
-- [Catch2-kirjasto](https://github.com/catchorg/Catch2)
-- [Google Test -kirjasto](https://github.com/google/googletest)
+## See Also
+- [Google Test GitHub](https://github.com/google/googletest) - Google Test, C++ testaustyökalu
+- [C++ Reference Testing](http://www.cplusplus.com/reference/cassert/) - C++ `cassert` kirjaston dokumentaatio
+- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) - Lisätietoa TDD:stä

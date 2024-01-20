@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Python: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Por Que?
 
-CSV (Comma-Separated Values) eh um tipo de arquivo que armazena dados em texto, onde os valores sao separados por virgulas. Programadores frequentemente trabalham com arquivos CSV porque eles sao faceis de ler e manipular.
+Trabalhar com CSV significa mexer com arquivos de Valores Separados por Vírgulas, úteis para armazenar dados de forma simples. Programadores usam CSV para importar e exportar dados de/para diversos sistemas, pela facilidade de uso e interoperabilidade.
 
-## Como fazer:
-
-Para ler um arquivo CSV em Python, precisamos importar o modulo `csv`. Em seguida, utilizamos a funcao `reader` para ler o arquivo e iterar sobre ele usando um loop for. Aqui esta um exemplo simples:
+## Como Fazer:
 
 ```Python
 import csv
 
-with open('arquivo.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row in csv_reader:
-        print(row)
+# Escrita de CSV
+with open('exemplo.csv', mode='w', newline='') as arquivo:
+    escritor = csv.writer(arquivo)
+    escritor.writerow(['nome', 'cidade', 'idade'])
+    escritor.writerow(['Ana', 'Porto', 28])
+    escritor.writerow(['Luís', 'Lisboa', 34])
+
+# Leitura de CSV
+with open('exemplo.csv', mode='r') as arquivo:
+    leitor = csv.reader(arquivo)
+    for linha in leitor:
+        print(linha)
+
+# Saída esperada
+# ['nome', 'cidade', 'idade']
+# ['Ana', 'Porto', 28']
+# ['Luís', 'Lisboa', 34']
 ```
 
-Isso ira imprimir cada linha do arquivo CSV como uma lista com os valores separados por virgula. 
+## Mergulho Profundo
 
-Para escrever em um arquivo CSV, usamos a funcao `writer` do modulo `csv`. Aqui esta um exemplo:
+CSV foi criado nos anos 70 e suportado inicialmente por programas como o Excel. Alternativas incluem JSON e XML, mais complexos, mas com mais funcionalidades. Detalhes importantes de implementação incluem o uso correto de delimitadores e a manipulação de caracteres especiais, como aspas e quebras de linha, dentro dos campos.
 
-```Python
-import csv
+## Veja Também:
 
-with open('novo_arquivo.csv', 'w') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',')
-    csv_writer.writerow(['valor1', 'valor2', 'valor3'])
-```
-
-Isso ira criar um arquivo CSV com uma linha contendo os valores fornecidos, separados por virgulas.
-
-## Profundando:
-
-Arquivos CSV sao frequentemente usados em aplicacoes que requerem grandes quantidades de dados, como bancos de dados e planilhas. Eles se tornaram populares no final da decada de 1980, como um formato padrao para compartilhamento de dados entre aplicacoes diferentes.
-
-Uma alternativa aos arquivos CSV sao os arquivos JSON, que sao mais versateis e podem armazenar valores em um formato hierarquico. No entanto, arquivos CSV ainda sao amplamente usados devido a sua simplicidade e legibilidade.
-
-Ao trabalhar com arquivos CSV, e importante ter em mente que ele e apenas um formato de armazenamento de dados, e nao oferece qualquer nivel de seguranca. Portanto, arquivos CSV nao devem ser usados para armazenar informacoes sensiveis.
-
-## Veja tambem:
-
-- [Documentacao oficial do modulo CSV do Python](https://docs.python.org/3/library/csv.html)
-- [Introducao ao analise de dados com arquivos CSV em Python](https://realpython.com/python-csv/)
+- Documentação Python sobre o módulo CSV: [https://docs.python.org/3/library/csv.html](https://docs.python.org/3/library/csv.html)
+- Tutorial de CSV em Python na Real Python: [https://realpython.com/python-csv/](https://realpython.com/python-csv/)

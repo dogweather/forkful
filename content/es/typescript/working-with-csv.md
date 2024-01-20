@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "TypeScript: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,73 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué y Por Qué?
+## Qué es y por qué?
+Trabajar con CSV implica manipular archivos del formato “Valores Separados por Comas”, que es común para datos tabulares. Los programadores lo hacen porque es un formato simple, ampliamente soportado y fácil de integrar con hojas de cálculo y bases de datos.
 
-Trabajar con CSV (Comma Separated Values) se refiere a la manipulación de datos guardados en un formato de texto plano tabular, donde cada línea representa una "fila" de datos y cada valor está separado por una coma. Los programadores utilizan CSV porque es una forma simple y eficiente de almacenar grandes cantidades de datos en un formato legible por máquina.
-
-## Cómo:
-
-### Parsear un archivo CSV:
-
+## Cómo hacerlo:
 ```TypeScript
-import { readFileSync } from 'fs';
+import fs from 'fs';
+import parse from 'csv-parse/lib/sync';
 
-// Lee el archivo CSV como una cadena de texto
-const csvData = readFileSync('ejemplo.csv', 'utf8');
+// Leer archivo CSV
+const input = fs.readFileSync('./datos.csv', 'utf-8');
 
-// Separa el texto por filas
-const filas = csvData.split('\n');
+// Convertir CSV a JSON
+const records = parse(input, {
+  columns: true,
+  skip_empty_lines: true
+});
 
-// Separa cada fila por comas y crea una matriz de valores
-const matriz = filas.map(fila => fila.split(','));
-
-// Imprime la matriz resultante
-console.log(matriz);
+// Uso de los datos
+records.forEach((record) => {
+  console.log(`Nombre: ${record.Nombre}, Edad: ${record.Edad}`);
+});
+```
+Salida de ejemplo:
+```
+Nombre: Juan, Edad: 30
+Nombre: Ana, Edad: 25
+...
 ```
 
-Output: `[['Nombre', 'Edad', 'Ciudad'], ['Juan', '25', 'Madrid'], ['María', '30', 'Barcelona'], ['Luis', '33', 'Valencia']]`
-
-### Escribir un archivo CSV:
-
-```TypeScript
-import { createWriteStream } from 'fs';
-
-// Crea un stream de escritura para el nuevo archivo CSV
-const csvStream = createWriteStream('nuevo.csv');
-
-// Escribe la primera fila con los encabezados
-csvStream.write('Nombre,Edad,Ciudad\n');
-
-// Crear filas con datos
-const persona = ['Ana', '28', 'Sevilla'];
-
-// Convierte la fila en cadena, separando los valores por comas
-const fila = persona.join(',');
-
-//Escribe la fila en el stream
-csvStream.write(fila);
-
-// Cierra el stream
-csvStream.end();
-```
-
-Output del archivo "nuevo.csv": `Nombre,Edad,Ciudad\nAna,28,Sevilla`
-
-## Profundizando:
-
-### Contexto Histórico:
-
-El formato CSV se originó en los años 70 como una forma de intercambiar datos entre diferentes programas. A lo largo de los años, se ha convertido en un formato popular para la importación y exportación de datos, especialmente en aplicaciones de hojas de cálculo.
-
-### Alternativas:
-
-Existen varias alternativas al formato CSV, como JSON y XML, que también se utilizan para almacenar y manipular datos. Sin embargo, CSV sigue siendo una opción popular debido a su simplicidad y facilidad de lectura.
-
-### Detalles de Implementación:
-
-Al trabajar con CSV en TypeScript, es importante tener en cuenta que se trata de un formato de texto sin formato. Esto significa que los datos deben ser parseados y formateados de manera adecuada antes de ser utilizados por el programa. Además, se deben tener en cuenta posibles errores y caracteres especiales en los datos.
+## Análisis profundo:
+El formato CSV existe desde los primeros días de las computadoras personales. Alternativas como XML y JSON ofrecen estructuras más complejas, pero el CSV sigue siendo popular por su simplicidad. En TypeScript, puedes implementar la manipulación de CSV con librerías como `csv-parse` para lectura o `csv-stringify` para escritura, lo cual facilita trabajar con archivos CSV de una manera más tipada y segura.
 
 ## Ver también:
-
-- [Documentación de CSV en TypeScript](https://csv.js.org/parse/)
-- [Especificaciones del formato CSV](https://tools.ietf.org/html/rfc4180)
+- Documentación sobre `csv-parse`: https://csv.js.org/parse/
+- Guía de Node.js para trabajar con archivos del sistema: https://nodejs.dev/learn/reading-files-with-nodejs
+- Convertir CSV a JSON en línea: https://csvjson.com/csv2json

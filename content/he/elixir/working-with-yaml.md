@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "Elixir: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-YML בעולם התכנות, ישנם מספר תפריטים וכלים המטרתם לסייע לנו לעשות את הקוד שלנו יותר נקי ומסודר. אחד מהם הוא בעזרת YAML. כולנו יודעים שעבודה עם עץ קושר ותבניות היא משימה מסובכת, אבל עם YAML זה הרבה יותר פשוט וידידותי למשתמש. מצד שני, ציון קוד יכול להתבונן בקלות ולהיותנקי עם ביטויים שונים ומבני נתונים. זהו גרסה נוספתיופית אליקסיר הניתנת לשימוש ב YAML ויכולתו לסייע לנו בניודע במה פרומטים כמו JSON אוXML.
- אם אתם בעלי ניסיון תכנות כבר יש לכם מידע על פורמטי נתונים כמו JSON או XML, YML יכול להיות עוזר יעיל בכדי לעזור לנו לייצג את הנתונים שלנו ולתכנן את הקוד שלנועדו אל המתנת קוד לא מסודר.
+## מה ולמה? (What & Why?)
+YAML הוא פורמט קל לקריאה למידע והגדרות. מתכנתים משתמשים בו להגדרת תצורה, שיתוף נתונים בין שפות תכנות, ועוד, בזכות פשטותו ונוחות בשימוש.
 
-בואו נראה דוגמאות קוד כדי להדגים כיצד אפשר לעבוד עם YML באליקסיר:
+## איך לעשות זאת (How to):
+באליקסיר, אין תמיכה טבעית ב-YAML, אך ניתן להשתמש בחבילות כמו `yamerl`. התקנה דרך mix.exs:
 
-```Elixir
-# קוד זה מייצג את הנתונים שלנו בפורמט YML
-data = %YAML.load("key1: value1\nkey2: value2\nkey3: value3")
-
-# הדפסת הנתונים בהצגה נקייה
-IO.puts data
-
-# הוספת נתון חדש לעץ הקושר
-Map.put(data, :key4, "value4")
-
-# עדכון נתונים קיימים
-Map.update(data, :key3, &(&1 * 2))
-
-# מציאת נתונים על פי מפתח
-Map.get(data, :key2)
-# => "value2"
+```elixir
+def deps do
+  [
+    {:yamerl, "~> 0.8.0"}
+  ]
+end
 ```
 
-כולנו יודעים של YML יש פורמט קריא ופשוט שמאפשר לנו לעבוד בקלות עם נתונים מורכבים. ועם זאת, לא תמיד היינו יכולים להשתמש ב YML כמספר אפשרויות מכיוון שעם כל שיצור בעץ קושר היה צורך להוריד אותו חזרה כדי לעדכן אותו. עם YAML הייתה צורך לעבוד ב YML בזמנו, ותצטרכו להשתמש בקצת קוד נוסף כדי להעביר דוגמאות כמו זו:
+קריאה ופרסור של YAML:
 
-```Elixir
-# בעץ הקושר הנ"ל, הוסף נתון חדש
-# ניצור נתון חדש בעזרת :flat_map
-new_map = %{key: "value", other_key: "other_value"}
-# הוספת נתון חדש לעץ הקושר
-flat_map = Map.from_keys(&new_map, [:key, :other_key])
-updated_data = Map.put(data, :key4, flat_map)
+```elixir
+yaml_content = """
+---
+name: John Doe
+age: 30
+languages:
+  - Elixir
+  - Ruby
+"""
+
+{:ok, yamerl_constr} = :yamerl_constr.string(yaml_content)
+parsed_content = yamerl_constr.documents
+IO.inspect(parsed_content)
 ```
 
-בסך הכל, אנחנו מבינים שציון קוד ניתן לקליטה מאוד מהירה ויכול לשמור על גישה נקייה ומסודרת לנתונים שלנו. זהו מאפיין עיקרי של YML.
+פלט לדוגמא:
 
-לעתים, ייתכן שתרצו להשתמש בכלים אחרים כדי לעבוד עם נתונים מורכבים. כמפתחים אלה, מעבר לפתרונות המוכרים ייתכן שתרצה להשת
+```elixir
+[
+  %{
+    "age" => 30,
+    "languages" => ["Elixir", "Ruby"],
+    "name" => "John Doe"
+  }
+]
+```
+
+## צלילה עמוקה (Deep Dive):
+YAML, שזהו ראשי תיבות של "YAML Ain't Markup Language", נוצר ב-2001 כאלטרנטיבה אנושית-קריאה ל-XML. התמיכה ב-YAML באליקסיר לא מובנית בשל הצורך בפשטות ותמציתיות. אולם, עם חבילות כמו `yamerl`, אפשר לטעון ולפרסר נתונים בקלות. חשוב לזכור ש-YAML יכול להיות רגיש לשגיאות כתיב (כמו רווחים עודפים), לכן תמיד יש לבדוק אותו.
+
+## ראו גם (See Also):
+- תיקונים: [YAML Lint](http://www.yamllint.com/) לבדיקת תקינות של קוד YAML.
+- הסבר מעמיק על YAML ב- [Learn X in Y minutes](https://learnxinyminutes.com/docs/yaml/).
+- מדריך רשמי לחבילת `yamerl`: [yamerl documentation](https://hexdocs.pm/yamerl).
+- נושאים נוספים ב-Elixir: [Elixir School](https://elixirschool.com/en/).

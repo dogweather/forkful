@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen."
-html_title:           "Fish Shell: Tekstitiedoston kirjoittaminen."
-simple_title:         "Tekstitiedoston kirjoittaminen."
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Teksti tiedoston kirjoittaminen on oleellinen osa ohjelmointia. Koodausprojekteissa saattaa olla tarvetta tallentaa ja lukea erilaisia tietoja, kuten käyttäjän syöttämiä arvoja tai ohjelman tuottamia tuloksia. Tämä onnistuu helposti teksti tiedostojen avulla ja siksi ohjelmoijat käyttävät niitä usein.
+## What & Why?
+Tekstitiedoston kirjoittaminen tarkoittaa tiedon tallentamista tekstimuodossa tiedostoon. Ohjelmoijat tekevät tätä datan säilömiseksi, asetusten hallinnoimiseksi ja skriptien luomiseksi.
 
-## Kuinka tehdä:
-Fish Shellilla teksti tiedostojen kirjoittaminen on helppoa käyttäen `echo` komentoa ja `>` operaattoria. Alla on esimerkki kirjoittamisesta uuteen tiedostoon nimeltä "teksti.txt":
+## How to:
+```Fish Shell
+# Tiedoston luominen ja kirjoittaminen
+echo "Hello, Fish!" > tervehdys.txt
 
+# Tiedoston sisällön tarkistaminen
+cat tervehdys.txt
 ```
-Fish Shell: echo "Tämä on uusi teksti tiedosto!" > teksti.txt
+Output:
 ```
-
-Voit myös käyttää `>>` operaattoria, joka lisää tekstiä jo olemassa olevaan tiedostoon sen sijaan että kirjoittaisi uuden tiedoston. Alla on esimerkki:
-
-```
-Fish Shell: echo "Tämä on lisättya tekstiä!" >> teksti.txt
-```
-
-Voit tarkistaa tiedoston sisällön käyttämällä `cat` komentoa:
-
-```
-Fish Shell: cat teksti.txt
-Tämä on uusi teksti tiedosto!
-Tämä on lisättyä tekstiä!
+Hello, Fish!
 ```
 
-## Syvempi sukellus:
-Teksti tiedostojen kirjoittaminen on ollut mahdollista ohjelmoinnin alusta asti. Alun perin tietokoneet käyttivät teksti tiedostoja ohjeiden tallentamiseen ja kommunikointiin käyttäjän kanssa. Nykyään on olemassa monia muita tapoja tallentaa ja lukea tietoja, kuten tietokannoilla ja JSON tiedostoilla. Jotkut käyttävät myös tehokkaampia pyöreitä -> koodaus virheitä välttääkseen.
+```Fish Shell
+# Tiedoston jatkuvaan kirjoittaminen
+echo "Toinen rivi" >> tervehdys.txt
 
-## Katso myös:
-[Teksti tiedostojen lukeminen Fish Shellilla](https://github.com/fish-shell/fish-shell/blob/master/doc_src/faq.md#How-do-I-access-the-contents-of-a-file)
-[Teksti tiedostojen käsittely ohjelmoinnissa](https://www.codecademy.com/articles/txt-extensions)
-[Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/)
+# Tarkistetaan jälleen
+cat tervehdys.txt
+```
+Output:
+```
+Hello, Fish!
+Toinen rivi
+```
+
+## Deep Dive
+Alun perin tekstieditorit olivat ohjelmointiympäristön perustyökaluja. Nykyisin komentorivityökalut, kuten `echo` Fish Shellissä, tarjoavat nopean tavan hallita tiedostoja. Vaihtoehtoina on erilaisia ohjelmointikieliä ja skriptejä. Implementaation yksityiskohdat vaihtelevat alustan ja käytetyn kuoren mukaan, mutta idean ydin pysyy: tiedon ohjaaminen ja liittäminen tiedostoihin.
+
+## See Also
+- Fish Shell dokumentaatio: https://fishshell.com/docs/current/index.html
+- Linux-komentojen opas: https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+- Unix-kuoriskriptausopas: https://tldp.org/LDP/abs/html/

@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Bash: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -11,23 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Arbeid med CSV (Comma-Separated Values) innebærer å håndtere tekstfiler organisert ved at verdier skilles med komma. Programmerere gjør dette fordi CSV er et enkelt og utbredt format for utveksling av data mellom ulike systemer.
 
-Arbeid med CSV er en måte for programmerere å organisere og manipulere data som er lagret i CSV (comma-separated values) format. Dette kan være nyttig når du jobber med store datasett eller når du må konvertere data mellom forskjellige programmer eller systemer.
-
-## Slik gjør du det:
-
-For å jobbe med CSV-filer i Bash, kan du bruke kommandolinjeverktøyet "csvtool" som finnes i de fleste Linux-distribusjoner. Her er et eksempel på hvordan du kan konvertere en CSV-fil til et HTML-dokument:
-
+## Hvordan:
 ```Bash
-csvtool readable input.csv > output.html 
+# Leser en CSV-fil linje for linje
+while IFS=, read -r kolonne1 kolonne2
+do
+  echo "Kolonne 1: $kolonne1 - Kolonne 2: $kolonne2"
+done < input.csv
+
+# Skriver til en CSV-fil
+echo "verdi1,verdi2" > output.csv
+
+# Sorterer en CSV-fil etter den andre kolonnen
+sort -t, -k2,2 input.csv
 ```
-Dette vil lage en HTML-fil med tabellformattet data fra CSV-filen.
+Output eksempel:
+```
+Kolonne 1: eple - Kolonne 2: 5
+Kolonne 1: banan - Kolonne 2: 7
+```
 
-## Dykk dypere:
+## Dykk Dypt
+CSV-formatet har ingen standardisering, men det er i praksis fra det tidlige 1970-tallet. Alternativer inkluderer JSON, XML og SQLite. Når du arbeider med CSV i Bash, bruk kommandoer som `cut`, `awk`, `sort`, og `grep` for å bearbeide dataene.
 
-CSV-formatet ble opprinnelig utviklet i 1972 og har vært et populært format for å lagre tabellbaserte data. Alternativer til CSV inkluderer XML og JSON. Når du jobber med CSV i Bash, kan du bruke kommandolinjetrafikk for å manipulere filene, som å legge til eller fjerne kolonner eller rader, og filtrere data basert på bestemte kriterier.
-
-## Se også:
-
-- [Official Bash documentation on csvtool](http://tldp.org/LDP/abs/html/csvtool.html)
-- [Comparison of CSV, XML, and JSON formats](https://medium.com/better-programming/csv-vs-json-vs-xml-which-is-the-best-response-format-833082bbd8d5)
+## Se Også
+- [GNU Coreutils Manual](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+- [CSV på Wikipedia](https://no.wikipedia.org/wiki/CSV)
+- [Bash Programming Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)

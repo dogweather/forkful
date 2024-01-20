@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf standard error"
-html_title:           "Ruby: Schreiben auf standard error"
-simple_title:         "Schreiben auf standard error"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,29 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben von Standardfehlermeldungen bedeutet, dass Programmierer ihre Fehlermeldungen auf einem unverzichtbaren Ausgabekanal festlegen. Dies ist hilfreich, um Fehlermeldungen von normalen Ausgaben zu unterscheiden und um sicherzustellen, dass wichtige Fehler nicht übersehen werden.
 
-## Wie geht das?
-Die Syntax zum Schreiben von Standardfehlern in Ruby ist einfach - einfach ```$stderr.puts "Fehlermeldung" ``` verwenden. Dies wird den Fehler in der Kommandozeile ausgeben, unabhängig davon, wo die normale Ausgabe erfolgt.
+Schreiben auf Standard Error (stderr) bedeutet, Fehlermeldungen und Diagnostik separat zur Standardausgabe zu senden. Dies hilft dabei, normale Programmausgaben von Fehlermeldungen zu unterscheiden, was vor allem bei der Weiterverarbeitung von Programmausgaben nützlich ist.
 
-Beispiel:
+## How to:
+
 ```Ruby
-$stderr.puts "Es ist ein Fehler aufgetreten."
+# Schreiben auf Standard Output (stdout)
+puts "Das ist eine normale Ausgabe."
+
+# Schreiben auf Standard Error (stderr)
+$stderr.puts "Das ist eine Fehlermeldung."
+
+# Kurzform für Schreiben auf stderr
+STDERR.puts "Das ist auch eine Fehlermeldung."
 ```
 
-Ausgabe:
+Beispiel-Ausgabe (im Terminal):
+
 ```
-Es ist ein Fehler aufgetreten.
+Das ist eine normale Ausgabe.
+Das ist eine Fehlermeldung.
+Das ist auch eine Fehlermeldung.
 ```
 
-## Tief einsteigen
-Das Schreiben von Standardfehlern hat seinen Ursprung in den frühen Tagen der Programmierung, als die Ausgabe normalerweise in die Kommandozeile geschrieben wurde. Alternativen zum Schreiben von Standardfehlern sind das Schreiben in eine Datei oder das Senden per E-Mail. Es ist jedoch immer noch eine gängige Praxis, da es einfach und effektiv ist.
+Nutze Umleitung im Terminal, um die Ausgaben zu trennen:
 
-Eine wichtige Sache zu beachten ist, dass das Schreiben von Standardfehlern auch die Leistung beeinflussen kann. Zu viele Fehlermeldungen auf dem Standardfehlerkanal können die gesamte Programmleistung verlangsamen.
+```
+ruby script.rb > ausgabe.txt 2> errorlog.txt
+```
 
-## Siehe auch
-Hier sind einige hilfreiche Quellen, um mehr über das Schreiben von Standardfehlern in Ruby zu erfahren:
+Dies schreibt normale Ausgaben in `ausgabe.txt` und Fehlermeldungen in `errorlog.txt`.
 
-- Offizielle Ruby-Dokumentation: https://ruby-doc.org/core-2.7.0/IO.html#method-i-puts
-- Medium Artikel von Michal Lipski: https://medium.com/@mlipski87/standard-output-vs-standard-error-a2298a6a23ba
-- Ruby Guides: https://www.rubyguides.com/2015/03/ruby-standard-error/
+## Deep Dive
+
+Schreiben auf stderr ist eine Konvention, die von Unix übernommen wurde, wo `stdout` und `stderr` verschiedene Streams sind. Alternativen zu `$stderr.puts` könnten die Verwendung von `warn` oder das Logging mit einem Bibliotheks-Logger sein. Die Implementierungsdetails sind wichtig: `STDOUT` und `STDERR` sind globale Konstanten in Ruby, die Objekte der Klasse `IO` darstellen und für gewöhnliche bzw. Fehlerausgaben dienen.
+
+## See Also
+
+- Ruby-Dokumentation zu IO: [https://ruby-doc.org/core-3.1.0/IO.html](https://ruby-doc.org/core-3.1.0/IO.html)
+- POSIX-Standard für stderr: [https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html)
+- Erläuterung von stdout und stderr in Unix: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

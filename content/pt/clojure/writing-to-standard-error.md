@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo no erro padrão"
-html_title:           "Clojure: Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Escrever para a saída padrão de erro, também conhecida como "standard error", é uma prática comum entre os programadores. Isso permite que eles vejam mensagens de erro e outras informações relevantes durante a execução de um programa.
+## What & Why?
+Escrever no erro padrão (stderr) é direcionar saída de erros do programa para um canal específico, permitindo separá-la da saída normal (stdout). Programadores fazem isso para melhorar a depuração e o monitoramento, separando mensagens de erro de outros tipos de output.
 
-Os programadores utilizam a saída padrão de erro para identificar e corrigir erros em seus códigos. Isso permite uma depuração mais eficiente e rápida do programa em comparação com apenas usar a saída padrão.
+## How to:
+Em Clojure, você pode escrever para o stderr utilizando `binding` e o `*err*` stream. Veja:
 
-## Como fazer:
-```
-Clojure (prn "Mensagem de erro")  ;; escreve uma mensagem de erro para a saída padrão de erro
-```
-
-Exemplo de saída:
-```
-Mensagem de erro
+```clojure
+(binding [*out* *err*]
+  (println "Este é um erro!"))
 ```
 
-## Aprofundando:
-A prática de escrever para a saída padrão de erro tem suas raízes nas primeiras linguagens de programação, como o C. Naquela época, os programadores viam a saída padrão de erro como uma forma simples e rápida de identificar problemas em seus códigos.
+Saída esperada no stderr: `Este é um erro!`
 
-Uma alternativa ao uso da saída padrão de erro é o uso de um sistema de log mais avançado, que registra e armazena informações de erros em um arquivo. No entanto, para pequenos programas ou scripts, escrever para a saída padrão de erro ainda é uma prática útil e eficiente.
+Um exemplo mais prático seria usando função para log de erros:
 
-Em Clojure, tanto a função `pr` quanto a função `prn` podem ser usadas para escrever na saída padrão de erro. A diferença é que a `prn` adiciona uma linha em branco após a mensagem e a `pr` não.
+```clojure
+(defn log-erro [mensagem]
+  (binding [*out* *err*]
+    (println mensagem)))
 
-## Veja também:
-- [Artigo sobre erros e saídas em Clojure](https://www.newbedev.com/clojure/what-is-the-difference-between-print-and-println-in-clojure/)
+(log-erro "Algo deu errado!")
+```
+
+Essa função direcionará a mensagem "Algo deu errado!" para o stderr.
+
+## Deep Dive
+Historicamente, a separação de stderr e stdout vem da era dos terminais Unix, onde era útil separar saídas de erros da saída regular para tratamentos distintos. Em Clojure, isso é feito por meio da variável `*err*`, que é um java.io.Writer especializado em stderr. Alternativas incluem o uso de bibliotecas de logging, como `clojure.tools.logging` ou `log4j`, que oferecem mais flexibilidade e funcionalidades do que simplesmente imprimir no stderr. A implementação direta no Clojure abstrai consideravelmente a complexidade comparada a usar funções de baixo nível em outras linguagens.
+
+## See Also
+- Documentação oficial de Clojure sobre `*out*` e `*err*`: [Clojure - difference between *out* and *err*](https://clojure.org/reference/vars#_out_err)
+- Clojure para Java devs: [Clojure from the ground up: debugging](https://aphyr.com/posts/319-clojure-from-the-ground-up-debugging)
+- Biblioteca de logging clojure.tools.logging: [clojure.tools.logging](https://github.com/clojure/tools.logging)

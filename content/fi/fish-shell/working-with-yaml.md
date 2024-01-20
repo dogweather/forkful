@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa."
-html_title:           "Fish Shell: Työskentely yaml:n kanssa."
-simple_title:         "Työskentely yaml:n kanssa."
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Mitä & Miksi?
-YAML eli "Yet Another Markup Language" on ohjelmointikieli, jota käytetään tiedostojen rakenteiden kuvaukseen. Koodaajat käyttävät sitä esimerkiksi konfiguraatiotiedostojen luomiseen.
+## What & Why?
+"Mikä & Miksi?"
 
-### Miten:
-Fish Shell -ohjelmointikielellä voit helposti työskennellä YAML-tiedostojen kanssa. Katso esimerkit alla olevista koodilohkoista ja niiden tuottamaa tulostetta.
+YAML on datan esittämiseen käytetty formaatti, selkeästi luettava ja ymmärrettävä. Käytämme YAMLia, koska se on ihmisystävällinen, ja soveltuu hyvin asetusten, konfiguraatioiden sekä tiedon tallentamiseen ja siirtämiseen.
 
-```Fish Shell
-# Esimerkki tekstin lisäämisestä YAML-tiedostoon
-yq e '.foo.bar = "hello"' example.yml
-#Tulostaa:
-foo:
-  bar: hello
-```
+## How to:
+"Miten tehdään:"
+
+YAML-tiedostojen käsittely Fish Shell:ssä vaatii ulkoisen työkalun, kuten 'yq'. Asenna ensin 'yq' käyttäen esim. 'brew':
 
 ```Fish Shell
-# Esimerkki muuttujan lisäämisestä YAML-tiedostoon
-yq e '.foo.bar = 123' example.yml
-#Tulostaa:
-foo:
-  bar: 123
+brew install yq
 ```
+
+Lue YAML-tiedosto ja muuta sisältöä:
 
 ```Fish Shell
-# Esimerkki tietojen hakuun YAML-tiedostosta
-yq e '.foo.bar' example.yml
-#Tulostaa:
-hello
+# Lue arvo
+yq e '.someKey' config.yaml
+
+# Muuta arvoa ja tallenna
+yq e '.someKey = "new value"' -i config.yaml
 ```
 
-### Syvällinen sukellus:
-YAML-kieli kehitettiin vuonna 2001 painostuksesta, joka kohdistui XML:n vaikeaan käyttöönottoon. Joitakin vaihtoehtoja YAML:lle ovat esimerkiksi JSON ja TOML. Fish Shell käyttää [yq](https://github.com/kislyuk/yq) -työkalua YAML-tiedostojen käsittelyyn.
+Lisää uusi avain-arvopari:
 
-### Katso myös:
-- [Fish Shell ohjeet](https://fishshell.com/docs/current)
-- [YAML dokumentaatio](https://yaml.org/spec/)
-- [yq työkalun dokumentaatio](https://github.com/kislyuk/yq)
+```Fish Shell
+yq e '.newKey = "new value"' -i config.yaml
+```
+
+Tulostus tulee olemaan YAML-muodossa, eli esimerkiksi:
+
+```
+someKey: new value
+newKey: new value
+```
+
+## Deep Dive
+"Sukellus syvemmälle"
+
+YAML (YAML Ain't Markup Language) on luotu alun perin 2001, ja on kehittynyt yleisesti käytetyksi konfiguraatiokielenä. 'yq' on suosittu komentorivityökalu, joka käyttää 'jq':n (JSON-tiedostoille) tapaan laajaa kysely- ja muokkausominaisuutta YAML-tiedostoille. Vaihtoehtoja 'yq':lle ovat esimerkiksi 'Pyyaml' Pythonille tai 'RbYAML' Rubylle. Tehokkuus syntyy 'yq':n kyvystä lukea ja kirjoittaa YAML-dataa suoraviivaisesti komentoriviltä.
+
+## See Also
+"Katso myös"
+
+- YAML:n kotisivu: [https://yaml.org/](https://yaml.org/)
+- 'yq' GitHub-sivu: [https://github.com/mikefarah/yq](https://github.com/mikefarah/yq)
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- YAML validatori (Verkko-työkalu YAML-tiedostojen validoimiseksi): [http://www.yamllint.com/](http://www.yamllint.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit yaml"
-html_title:           "Kotlin: Arbeiten mit yaml"
-simple_title:         "Arbeiten mit yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,29 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-YAML ist eine einfache, menschenlesbare Datenformatierungssprache, die häufig von Programmierern verwendet wird, um Konfigurationsdateien zu erstellen. Es ist eine großartige Alternative zu anderen Formaten wie JSON, da es weniger zeitaufwändig und weniger fehleranfällig ist.
+YAML ist ein Format für Daten, das auf Menschen ausgerichtet ist. Programmierer nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut für Konfigurationsdateien oder Datenmodellierung eignet.
 
-## So geht's:
+## How to:
+In Kotlin kannst du YAML mit der SnakeYAML-Bibliothek verarbeiten. Hier ein Beispiel, um eine YAML-Datei zu lesen:
+
 ```Kotlin
-// Erstellen einer YAML-Konfigurationsdatei
-val config = """
-    name: John
-    age: 25
-    hobbies:
-        - hiking
-        - reading
-    """.trimIndent()
+import org.yaml.snakeyaml.Yaml
+import java.io.FileReader
 
-// Lesen einer YAML-Konfigurationsdatei
-val name = yaml["name"] // John
-val age = yaml["age"] // 25
-val hobbies = yaml["hobbies"] // [hiking, reading]
+fun main() {
+    val yaml = Yaml()
+    val reader = FileReader("config.yaml")
+
+    // YAML-Inhalt als Map lesen
+    val data: Map<String, Any> = yaml.load(reader)
+    println(data)
+}
 ```
 
-## Tiefere Einblicke:
-YAML wurde ursprünglich 2001 von Clark Evans für das Ruby-on-Rails-Projekt entwickelt. Es ist eine Alternative zu XML und anderen Formaten, die es ermöglicht, Daten in einer lesbareren und leichter zu schreibenden Art und Weise zu strukturieren. YAML ist auch bekannt für seine einfache Syntax und die Möglichkeit, Kommentare hinzuzufügen. Es ist in vielen Programmiersprachen verfügbar, einschließlich Java, Python und natürlich Kotlin.
+Nimm an, `config.yaml` sieht so aus:
 
-## Siehe auch:
-- [YAML.org](https://yaml.org/)
-- [Kotlin Dokumentation](https://kotlinlang.org/docs/)
-- [YamlBeans Bibliothek für Kotlin](https://github.com/EsotericSoftware/yamlbeans)
+```YAML
+name: Max Mustermann
+age: 30
+```
+
+Die Ausgabe wäre dann:
+
+```Kotlin
+{name=Max Mustermann, age=30}
+```
+
+## Deep Dive:
+YAML entstand Anfang der 2000er Jahre als einfachere Alternative zu XML. Im Vergleich zu JSON erlaubt YAML Kommentare und ist durch Einrückungen menschenfreundlicher lesbar. Intern wird YAML in der Regel in JSON oder in eine Map konvertiert, was die Verarbeitung erleichtert. Alternativen zu YAML könnten JSON oder TOML sein, je nachdem, welche Anforderungen zu erfüllen sind.
+
+## See Also:
+- SnakeYAML GitHub Repository: https://github.com/asomov/snakeyaml
+- YAML offizielle Seite: https://yaml.org/
+- Kotlin Dokumentation: https://kotlinlang.org/docs/home.html

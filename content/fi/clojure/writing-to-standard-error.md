@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheelle"
-html_title:           "Clojure: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## What & Why?
+Mikä & Miksi?
+Kirjoittaminen standardivirheeseen tarkoittaa virheviestien lähettämistä erilliseen virhevojaan. Ohjelmoijat tekevät sen erottaakseen ohjelman normaalin tulosteen ja virhetiedot selkeästi toisistaan.
 
-Kirjoittaminen standardivirheeseen (standard error) tarkoittaa viestin lähettämistä virheriville, jota ohjelmointikieli käyttää ohjelman virheilmoitusten tulostamiseen käyttäjälle. Tämä on yleinen tapa ohjelmoijille ilmoittaa virheistä, jotka voivat auttaa korjaamaan ja vianetsimään koodia.
-
-# Miten:
-
+## How to:
+Koodiesimerkkejä:
 ```Clojure
-;; Koodiesimerkki
-(println "Tämä viesti lähetetään standardivirheelle.")
+;; Kirjoittaminen standardivirheeseen
+(.println System/err "Tässä on virheviesti.")
+
+;; Sample Output
+;; Standard error: Tässä on virheviesti.
 ```
 
+Jos haluat ohjata virheviestit tiedostoon:
+```Clojure
+(with-open [wrtr (java.io.FileWriter. "virheloki.txt")]
+  (.write wrtr "Tiedostoon kirjoitettu virheviesti.\n"))
 ```
-Tämä viesti lähetetään standardivirheelle.
-```
 
-# Syventyvä sukellus:
+## Deep Dive
+Syväsukellus
+Historiassa tulosteet ja virheet menivät usein samaan kohteeseen. UNIX-järjestelmissä erotettiin standardituloste (stdout) ja standardivirhe (stderr) paremman hallinnan takia. Clojuressa käytetään Javan `System/err` oliota virheiden kirjoittamiseen. Vaihtoehtoja on muitakin, kuten kirjastot, jotka tarjoavat lisäominaisuuksia, kuten loggausta. 
 
-Standardivirheellä on historiallisia juuria Unix-käyttöjärjestelmästä, jossa se oli tapa ilmoittaa käyttäjälle virheet ja muut tärkeät viestit. Nykyään se on yleisessä käytössä myös muissa ohjelmointikielissä, eikä ole ainoa tapa ilmoittaa virheistä. Esimerkiksi voi myös käyttää standarditulostetta (standard output) tai tallentaa virheet lokitiedostoon.
-
-# Katso myös:
-
-- [Clojure - Virheiden hallinta](https://clojuredocs.org/clojure.core/throw)
+## See Also
+Lisätietoa:
+- [Clojure Documentation](https://clojure.org/guides/getting_started)
+- [Clojure's error handling](https://clojure.org/guides/faq#error_handling)
+- [Java's System class](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html)

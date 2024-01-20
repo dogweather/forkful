@@ -1,7 +1,7 @@
 ---
-title:                "標準エラーへの書き込み - Writing to standard error"
-html_title:           "Fish Shell: 標準エラーへの書き込み - Writing to standard error"
-simple_title:         "標準エラーへの書き込み - Writing to standard error"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## やること & なぜやるの？
+## What & Why? (何となぜ？)
+標準エラー出力は、エラーメッセージやプログラムの診断情報を表示するのに使います。プログラマーは、出力内容を整理して正常な出力とエラーを区別するためにこれを行います。
 
-標準エラーへの書き込みとは、プログラマーがコード実行中に発生したエラーメッセージを出力する仕組みです。これにより、コードの実行中に発生した問題をすばやく特定し、修正することができます。プログラマーたちは、標準エラーへの書き込みを行うことで、より効率的にコードをデバッグすることができます。
+## How to: (方法)
+Fish Shellでは、「`stderr`」を使って標準エラーに書き込みます。以下は簡単な例です。
 
-## 方法：
-
-```Fish Shell ... ```コードブロック内に、コーディングの例とサンプルの出力を記載しています。
-
-```
-# 例1: Hello Worldを標準エラーへ出力する
-echo "Hello World" >&2
-
-# 例2: 変数を使ってメッセージを標準エラーへ出力する
-set error_msg "Something went wrong."
-echo $error_msg >&2
+```Fish Shell
+echo "これは標準出力です。"
+echo "これは標準エラーです。" >&2
 ```
 
-出力：
+実行すると、次のように表示されます：
+
 ```
-Hello World # 標準エラーへの出力
-Something went wrong. # 標準エラーへの出力
+これは標準出力です。
+これは標準エラーです。
 ```
 
-## 詳細を掘り下げる：
+ただし、実際には、「これは標準エラーです。」は標準エラーを通じて出力されます。
 
-標準エラーへの書き込みは、通常、コード内で``` >&2 ```を使用することで実現されます。これは、Unixシステムで広く使用されている標準的な方法です。また、エラーメッセージをファイルに書き込む方法や、ログファイルへの書き込みなど、標準エラーへの書き込み以外の方法もあります。しかし、標準エラーへの書き込みは、コードのデバッグにおいて直感的で簡単な方法です。
+## Deep Dive (深堀り)
+元々、Unix系システムは標準出力(`stdout`)と標準エラー(`stderr`)の2つの異なる出力チャネルを提供しました。これは、出力をファイルへリダイレクトしつつエラーメッセージをユーザーに見せることができるようにするためです。Fish Shellでの実装は、これらの伝統に従い、`>`ではなく`>&`を使ってエラーをリダイレクトします。他のシェルと比べて、Fishではシンプルさと直感性を重視しています。
+
+## See Also (関連情報)
+- Fish Shellの公式ドキュメント： https://fishshell.com/docs/current/
+- Unixの標準ストリームについての詳細： https://ja.wikipedia.org/wiki/標準ストリーム

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Fish Shell: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est et pourquoi le faire? 
-Travailler avec des fichiers CSV peut sembler intimidant pour les programmeurs débutants, mais c'est en fait un moyen pratique de stocker et d'organiser de grandes quantités de données, telles que des feuilles de calcul ou des bases de données. Cela peut être utile lors de la manipulation de données dans un programme ou lors de l'exportation de données vers d'autres applications.
+## Quoi & Pourquoi ?
+Manipuler des CSV (valeurs séparées par des virgules), c'est gérer des données tabulaires comme un tableau Excel, directement dans nos scripts. Les programmeurs font ça pour automatiser et scripter le traitement de données massives et structurées.
 
-Comment faire:
-Pour lire un fichier CSV dans Fish Shell, utilisez la fonction `csv`. Par exemple, si vous avez un fichier appelé `donnees.csv`, voici comment vous pouvez afficher le contenu:
+## Comment faire :
+Voici comment lire, écrire et parser des CSV en Fish :
 
-```fish
-csv -d ";" foreach line in donnees.csv
-echo $line
-end
+Lire un fichier CSV :
+```Fish Shell
+awk -F ',' '{print $1, $2}' fichier.csv
 ```
-Ce code utilise la fonction `foreach` pour parcourir chaque ligne du fichier en utilisant le délimiteur `;`. Vous pouvez également spécifier un autre délimiteur en utilisant l'option `-d`. Pour en savoir plus sur les options disponibles, consultez la documentation de `csv` en utilisant la commande `man csv`.
 
-Plongée en profondeur:
-Les fichiers CSV sont couramment utilisés dans les applications de traitement de données, en particulier dans le domaine de la science des données. Ils ont été introduits dans les années 70 en tant que moyen de stocker des données sous forme de tableaux. Bien qu'ils soient pratiques, ils peuvent également présenter certains inconvénients, tels que la perte de précision lors de la manipulation de nombres à virgule flottante.
+Écrire dans un fichier CSV :
+```Fish Shell
+echo 'colonne1,colonne2' > nouveau_fichier.csv
+echo 'donnée1,donnée2' >> nouveau_fichier.csv
+```
 
-Voir aussi:
-Si vous souhaitez en savoir plus sur les fichiers CSV et leur utilisation en programmation, consultez ces ressources:
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Un tutoriel sur la manipulation de fichiers CSV en Python](https://realpython.com/python-csv/)
+Parser avec `cut` :
+```Fish Shell
+cut -d ',' -f 1 fichier.csv
+```
+
+Résultat d'un `cut` :
+```
+Nom
+Alice
+Bob
+```
+
+## Analyse détaillée
+Les CSV existent depuis les premiers jours de l'informatique personnelle, une manière simple de stocker des infos structurées. Des alternatives comme JSON ou XML proposent plus de structure, mais requièrent des parsers plus complexes. En Fish, on exploite des outils Unix comme `awk`, `cut`, et `sed` pour gérer les CSV, car Fish n'a pas de built-in dédié pour cela.
+
+## Voir Aussi
+- La page de manuel `man csvkit` pour un outil dédié CSV en ligne de commande.
+- Documentation Fish [sur son site web officiel](https://fishshell.com/docs/current/index.html) pour des scripts plus avancés.
+- Le guide pragmatique de `awk`: [AWK Guides](https://awk.js.org) pour les manipulations complexes de texte.

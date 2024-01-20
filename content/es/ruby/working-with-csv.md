@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Ruby: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué hacemos esto?
+## What & Why?
+Trabajar con CSV significa manipular datos almacenados en un formato de texto sencillo, conocido como 'Valores Separados por Comas' (CSV). Los programadores lo usan por su simplicidad y amplia aceptación como medio de intercambio de datos entre sistemas y aplicaciones.
 
-Trabajar con CSV (Comma Separated Values) en Ruby es una forma de manejar datos tabulares utilizando un formato simple de texto plano que separa los valores con comas. Los programadores a menudo utilizan esto para importar y exportar datos de manera eficiente, especialmente cuando se trata de grandes cantidades de datos.
-
-## ¡Cómo hacerlo!
+## How to:
+Ruby facilita el trabajo con archivos CSV con su biblioteca estándar. Aquí hay ejemplos básicos:
 
 ```Ruby
 require 'csv'
-# Crear un archivo CSV
-CSV.open("archivo.csv", "w") do |csv|
-  csv << ["Nombre", "Edad", "Género"]
-  csv << ["María", 25, "Femenino"]
-  csv << ["Juan", 30, "Masculino"]
+
+# Leer CSV desde un archivo
+CSV.foreach("datos.csv") do |fila|
+  puts fila.inspect
 end
 
-# Leer un archivo CSV existente
-CSV.foreach("archivo.csv") do |row|
-  puts row # cada fila es un array de valores separados por comas
+# Crear un nuevo archivo CSV
+CSV.open("nuevo_datos.csv", "wb") do |csv|
+  csv << ["nombre", "edad", "ciudad"]
+  csv << ["Alejandro", 25, "Madrid"]
+  csv << ["Carmen", 30, "Barcelona"]
 end
 ```
 
-Salida:
+Salida al leer `datos.csv`:
 ```
-Nombre, Edad, Género
-María, 25, Femenino
-Juan, 30, Masculino
+["nombre", "edad", "ciudad"]
+["Alejandro", "25", "Madrid"]
+["Carmen", "30", "Barcelona"]
 ```
 
-## Profundizando
+## Deep Dive
+CSV es un formato que ha existido desde antes que las hojas de cálculo fueran populares. Alternativas modernas incluyen JSON y XML, pero CSV sigue siendo relevante por su simplicidad y la baja sobrecarga en la transmisión de datos. Ruby implementa manejo de CSV en su biblioteca estándar (`csv`), permitiendo conversión fácil entre CSV y arrays/objetos.
 
-El formato CSV fue creado en los años 70 como una forma de compartir datos entre diferentes aplicaciones. Aunque es ampliamente utilizado en la actualidad, también existen alternativas como JSON y XML para estructurar datos. En Ruby, el módulo CSV viene incluido en la biblioteca estándar, lo que significa que no es necesario instalar ninguna gema adicional para trabajar con este formato.
-
-## Vea también
-
-- [Documentación de Ruby sobre CSV](https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html)
+## See Also
+- [Ruby CSV Library Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/csv/rdoc/CSV.html)
+- [RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
+- [Tutorial de Ruby](https://www.ruby-lang.org/es/documentation/quickstart/)

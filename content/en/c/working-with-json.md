@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "C recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "C"
 category:             "C"
@@ -10,50 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### What & Why?
-JSON, or JavaScript Object Notation, is a lightweight data interchange format that is commonly used in web development. It allows programmers to easily transfer and manipulate data between applications and systems, making it a popular choice among developers. Simply put, working with JSON is a way to organize, store, and transmit data in a readable and efficient format.
+## What & Why?
 
-### How to:
-To work with JSON in C, you'll need to use a library called "json-c" which provides functions for parsing, creating, and manipulating JSON objects. Here's a simple example of how to use it:
+JSON, short for JavaScript Object Notation, is a lightweight format for data interchange. Programmers use it because it's easy for humans to read and write, and machines to parse and generate, making it a go-to for APIs and config files.
+
+## How to:
+
+In C, you'll often use a library like cJSON or Jansson to handle JSON. Here's how you'd parse and generate JSON with cJSON:
 
 ```C
-// First, include the necessary headers
 #include <stdio.h>
-#include <string.h>
-#include <json-c/json.h>
+#include "cJSON.h"
 
-// Then, create a JSON object and add data to it
-struct json_object *person = json_object_new_object();
-json_object_object_add(person, "name", json_object_new_string("John Smith"));
-json_object_object_add(person, "age", json_object_new_int(30));
+int main() {
+    // JSON we're parsing
+    char text[] = "{\"name\": \"John\", \"age\": 30}";
 
-// To retrieve data from the JSON object, use the appropriate functions
-char *name;
-int age;
-json_object_object_get_ex(person, "name", &name);
-json_object_object_get_ex(person, "age", &age);
+    // Parse JSON
+    cJSON *json = cJSON_Parse(text);
+    if (json == NULL) {
+        const char *error_ptr = cJSON_GetErrorPtr();
+        if (error_ptr != NULL) {
+            fprintf(stderr, "Error before: %s\n", error_ptr);
+        }
+        return 1;
+    }
 
-// Finally, print the data
-printf("Name: %s\nAge: %d\n", name, age);
+    // Get values
+    const cJSON *name = cJSON_GetObjectItemCaseSensitive(json, "name");
+    const cJSON *age = cJSON_GetObjectItemCaseSensitive(json, "age");
+
+    // Check if the items are valid and of the right type
+    if (cJSON_IsString(name) && (name->valuestring != NULL)) {
+        printf("Name: %s\n", name->valuestring);
+    }
+    if (cJSON_IsNumber(age)) {
+        printf("Age: %d\n", age->valueint);
+    }
+
+    // Clean up
+    cJSON_Delete(json);
+    return 0;
+}
 ```
 
-The output of this code would be:
+Sample Output:
 ```
-Name: John Smith
+Name: John
 Age: 30
 ```
-Now you can see how easy it is to work with JSON in C!
 
-### Deep Dive
-JSON was first introduced in 1999 by Douglas Crockford and has since become a widely adopted data format. It was created as an alternative to XML, which was considered too verbose and complex for many applications.
+## Deep Dive
 
-There are a few alternatives to JSON, such as YAML and XML, but JSON is preferred for its simple and flexible structure. It is also a more lightweight option, making it ideal for use in web development where efficiency is important.
+JSON was born from JavaScript, but its simplicity made it a standard across many languages. Before JSON, XML was the heavy hitter for data interchange but lacked the minimalism that JSON brought. Lua, YAML, and TOML are alternatives, each with their own use cases and syntax styles. Implementing JSON in C from scratch involves understanding tokens, parsers, and serializers. It's non-trivial, hence the preference for robust libraries.
 
-The json-c library is an implementation of the JSON data format in C. It provides functions for creating, parsing, and manipulating JSON objects, as well as converting them to and from strings. The library is actively maintained and can be easily installed through package managers or downloaded from the official website.
+## See Also
 
-### See Also
-For more information and examples of using json-c, check out the following resources:
-
-- [json-c official website](https://github.com/json-c/json-c)
-- [JSON tutorial on W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [C programming language on GeeksforGeeks](https://www.geeksforgeeks.org/c-programming-language/)
+- cJSON Library: https://github.com/DaveGamble/cJSON
+- Jansson Library: https://digip.org/jansson/
+- JSON Spec: https://www.json.org/json-en.html
+- Comparison of data serialization formats: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Go: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
+JSON - це популярний формат обміну даними. Використовуємо його в Go для спрощення серіалізації та десеріалізації структур даних, особливо при спілкуванні з веб-сервісами.
 
-Робота з JSON - це процес обміну даними між різними програмами та системами з використанням формату JSON. Це дуже популярний спосіб передачі даних, оскільки JSON є простим у використанні та зрозумінні форматом. Програмісти використовують JSON для обміну даними з різними сервісами та веб-додатками.
-
-## Як це зробити:
-
+## How to:
 ```Go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+)
+
+// Структура для прикладу
 type User struct {
-  Name string `json:"name"`
-  Age  int    `json:"age"`
+	Name   string `json:"name"`
+	Age    int    `json:"age"`
+	Active bool   `json:"active"`
 }
 
-// Створення JSON об'єкта
 func main() {
-  user := User{Name: "John Doe", Age: 24}
-  jsonString, _ := json.Marshal(user)
-  fmt.Println(string(jsonString)) // {"name":"John Doe","age":24}
-}
+	// Серіалізація даних у JSON
+	user := User{"Олекса", 25, true}
+	userJSON, err := json.Marshal(user)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(userJSON))
 
-// Отримання даних з JSON об'єкта
-func main() {
-  jsonString := `{"name":"Jane Doe","age":28}`
-  var user User
-  json.Unmarshal([]byte(jsonString), &user)
-  fmt.Println(user.Name, user.Age) // Jane Doe 28
+	// Десеріалізація JSON у дані
+	jsonStr := `{"name":"Марія","age":30,"active":false}`
+	var user2 User
+	err = json.Unmarshal([]byte(jsonStr), &user2)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%+v\n", user2)
 }
 ```
+**Вивід:**
+```
+{"name":"Олекса","age":25,"active":true}
+{Name:Марія Age:30 Active:false}
+```
 
-## Глибоке занурення:
+## Deep Dive
+JSON запровадили на початку 2000-х як більш просту альтернативу XML. JSON та YAML – популярні альтернативи, але JSON легше інтегрувати через ширшу підтримку та ефективність у веб-застосунках. Go має вбудований пакет `encoding/json` для роботи з JSON, що використовує рефлексію для надання гнучкості при серіалізації та десеріалізації.
 
-JSON був створений як спосіб поєднати дві популярні технології - JavaScript та обмін даними. Це обрало велику популярність завдяки своїй простоті та універсальності. Існують також альтернативні формати, такі як XML та YAML, але JSON залишається простішим та ширше використовується. У програмуванні з Go, робота з JSON є необхідною для забезпечення взаємодії з різними сервісами та додатками.
-
-## Дивись також:
-
-- [Офіційна документація Go для роботи з JSON] (https://golang.org/pkg/encoding/json/)
-- [Стаття "Розуміння JSON: Що це таке та як з ним працювати" (англ.)] (https://blog.golang.org/json-and-go)
-- [Стаття "Робота з JSON в Go" (рос.)] (https://habr.com/en/post/317266/)
+## See Also
+- Документація Go by Example про JSON: [https://gobyexample.com/json](https://gobyexample.com/json)
+- Специфікація JSON: [https://www.json.org/json-uk.html](https://www.json.org/json-uk.html)
+- Лекція про пакет `encoding/json` Go: [https://blog.golang.org/json](https://blog.golang.org/json)

@@ -1,6 +1,6 @@
 ---
 title:                "כתיבת בדיקות"
-html_title:           "Lua: כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,62 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה? 
-לכתוב בדיקות זה פשוט לכתוב קטעי קוד שמוודאים שהתוכנה שכתבנו עובדת כפי שצריך. פרוגרמים עושים את זה כדי לוודא שהתוכנה שכתבנו תעבוד כמו שציפינו שתעבוד, תוך כדי איתור ותיקון כל בעיות שיכולות להיות קיימות בקוד שלנו. 
+## מה ולמה?
+כתיבת בדיקות זה התהליך שבו מבצעים סקריפטים כדי לוודא שהקוד שלנו עובד כשורה. מתכנתים עושים זאת כדי למנוע באגים, לשפר את האיכות, ולהקל על תחזוקה בעתיד.
 
-# איך לעשות את זה:
+## איך לעשות:
+בלואה, בדיקות ניתן לכתוב עם ספריות כמו LuaUnit. הנה דוגמה:
 
-```lua
--- הגדרת פונקציה לבדיקה של טבלאות נתונים
-function table_test()
-  -- יצירת טבלה עם ערכים לבדיקה
-  local test_table = {"apple", "banana", "orange"} 
-  
-  -- הדפסת כמות הערכים בטבלה
-  print(#test_table) -- ציפוי לקבלת תוצאה - 3
-  
-  -- הפיכת אחד הערכים לאות גדולה
-  test_table[2] = string.upper(test_table[2])
-  
-  -- הדפסת טבלה מעודכנת
-  print(table.concat(test_table, ", ")) -- ציפוי לקבלת תוצאה - apple, BANANA, orange
-  
-  -- בדיקה אם הטבלה מכילה את הערך "kiwi"
-  if table.contains(test_table, "kiwi") then
-    print("Kiwi is in the table!")
-  else
-    print("Kiwi is not in the table")
-  end
+```Lua
+local luaunit = require('luaunit')
+
+function add(a, b)
+    return a + b
 end
 
--- הגדרת פונקציה כדי להריץ את הבדיקה שלנו
-function run_test()
-  -- קריאה לפונקציה המבצעת את הבדיקות
-  table_test()
-  -- הדפסת הודעת הצלחה כאשר הבדיקות הושלמו בהצלחה
-  print("All tests passed!")
+function testAdd()
+    luaunit.assertEquals(add(1, 1), 2)
 end
 
--- הרצת הבדיקות
-run_test()
+os.exit( luaunit.LuaUnit.run() )
 ```
-
-Output:
+תוצאות הדוגמה:
 ```
-3
-apple, BANANA, orange
-Kiwi is not in the table
-All tests passed!
+..
+Ran 1 test in 0.001 seconds, 1 success, 0 failures
 ```
+## הצקה עמוקה
+כתיבת בדיקות פיתחה בשנים האחרונות כחלק ממתודולוגיות פיתוח כמו TDD (Test-Driven Development). חלופות ל-LuaUnit הן Busted ו-Telescope. חשוב לזכור שתהליך הבדיקה צריך להיות אוטומטי ככל האפשר ולכלול בדיקות יחידה, כמו גם בדיקות אינטגרציה וקבלה.
 
-# חקירה מעמיקה:
-- תוכניות בדיקות נמצאות בשימוש כבר מזמן רב, אף לפני פיתוח דרכי אגודל של תוכנה. הן נכתונות כדי לוודא שהתוכנה עובדת כפי שצריך, כך שאפשר למנוע בעיות ותקלות בפיתוח התוכנה.
+## גם ראה
+- LuaUnit: https://github.com/bluebird75/luaunit
+- Busted: http://olivinelabs.com/busted/
+- Telescope: https://github.com/norman/telescope
 
-- ישנן כמה דרכים שונות לכתוב בדיקות, כגון בדיקות ידניות ובדיקות אוטומטיות. בדיקות ידניות נעשות על ידי הפרוגרמר עצמו, במידה והוא עשה שינויים בקוד. בדיקות אוטומטיות מתבצעות באמצעות כלי תוכנה שאוטומטית מבצעים בדיקות על הקוד.
-
-- בכדי לכתוב בדיקות אוטומטיות בלואה, ניתן להשתמש בכלי תוכנה כמו LuaUnit או busted. חשוב להיות יציבים בכתיבת הקוד ולכתוב בדיקות הרמוניות כמו שאפשר, כדי לעזור לכם לזהות ולתקן בעיות במהלך הפיתוח של התוכנה שלכם.
-
-# ראו גם:
-
-
-- [LuaUnit - כלי תוכנה לבדיקות אוטומטיות בלואה](https://github.com/bluebird75/luaunit)
+קיראו גם על TDD: https://en.wikipedia.org/wiki/Test-driven_development

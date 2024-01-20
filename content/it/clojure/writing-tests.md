@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Clojure: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Cosa & Perché?
+Scrivere test significa creare piccole porzioni di codice che verificano il corretto funzionamento del proprio software. I programmatori li usano per assicurarsi che ogni parte del programma funzioni correttamente e per prevenire regressioni dopo modifiche o aggiornamenti.
 
-Scrivere test è un modo per verificare che il nostro codice funzioni correttamente. I programmatori lo fanno per garantire che il loro codice sia affidabile e che funzioni correttamente, prima di inviarlo in produzione.
-
-## Come fare:
-
-Scrivere test in Clojure è facile! Basta usare la libreria di test incorporata nel linguaggio, chiamata ```clojure.test```. Di seguito un esempio di un test semplice che verifica che la funzione ```add``` sommi correttamente due numeri:
+## Come Fare:
+Ecco un esempio semplice usando `clojure.test`, il framework di testing integrato in Clojure.
 
 ```Clojure
-(ns test-example
-  (:require [clojure.test :refer :all]
-            [example.core :refer :all]))
+(require '[clojure.test :refer :all])
 
-(deftest add-test
-  (testing "Addition Test"
-    (is (= (add 1 2) 3))
-    (is (= (add -1 5) 4))))
+(deftest test-somma
+  (testing "Verifica la funzione di somma"
+    (is (= 10 (somma 3 7)))))
+
+(run-tests)
 ```
 
-Esaminiamo questo codice da vicino:
+Output:
+```
+Risultati dei test per namespace senza nome
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
-- La prima riga definisce il namespace per il nostro file di test, ```test-example```. Ogni file di test dovrebbe avere un namespace unico.
+## Approfondimento
+Clojure nasce intorno al 2007 e fin da subito integra `clojure.test` per promuovere Test-Driven Development (TDD). Esistono alternative come `Midje` e `Speclj` che offrono più funzionalità rispetto allo standard. Dettagli importanti da ricordare sono: scrivere test frequentemente, eseguirli dopo ogni cambiamento significativo e mantenere i test leggibili e manutenibili.
 
-- La seconda riga importa la libreria di test e il namespace della nostra applicazione, ```example.core```, che contiene la funzione ```add```.
-
-- La terza riga definisce il test stesso, chiamato ```add-test```.
-
-- La quarta riga utilizza la funzione ```testing``` per raggruppare tutti i test per la funzione ```add```.
-
-- Le ultime due righe utilizzano la funzione ```is```, che verifica se il risultato dell'espressione fornita è uguale a quello atteso.
-
-Per eseguire questo test, basta invocare ```lein test``` sulla riga di comando.
-
-## Approfondimento:
-
-Scrivere test è un'attività fondamentale nella pratica della programmazione test-driven development (TDD). Ci sono anche altre librerie di test disponibili per Clojure, come ```midje``` e ```speclj```. In generale, è importante scrivere test che siano facili da mantenere e che coprano tutti i casi possibili del nostro codice.
-
-## Vedi anche:
-
-
-
-- [Documentazione di Leiningen](https://leiningen.org/), il gestore di progetto consigliato per sviluppare applicazioni in Clojure.
+## Vedi Anche
+- [Clojure Testing](https://clojure.org/guides/deps_and_cli#_testing) - una guida ufficiale.
+- [Leiningen](https://leiningen.org/) - per gestire progetti e dipendenze in Clojure, incluso il testing.
+- [Midje](https://github.com/marick/Midje) - un framework che facilita la scrittura di test.
+- [Speclj](https://github.com/slagyr/speclj) - framework per BDD (Behavior-Driven Development) per Clojure.

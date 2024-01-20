@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "C: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "YAML के साथ काम करना"
+html_title:           "C: YAML के साथ काम करना"
+simple_title:         "YAML के साथ काम करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-यैमल (YAML) क्या होता है? यह एक संरचित पाठ स्वरूप है जो प्रोग्रामरों को अपने डेटा को संगठित और स्पष्ट रूप से प्रबंधित करने की अनुमति देता है। प्रोग्रामर्स आमतौर पर यामल का उपयोग अपने कोड में स्ट्रक्चर्स और कॉन्फ़िगरेशन डेटा को लोड और लिखने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
+YAML का इस्तेमाल डाटा का सीरियलाइजेशन के लिए होता है, ज्यादातर कॉन्फिग फाइलों में। प्रोग्रामर्स इसे इस्तेमाल करते हैं क्योंकि यह समझने में आसान होता है और ह्यूमन-रीडेबल होता है।
 
-## कैसे करें:
-यामल का उपयोग करने के लिए, आपको पहले यामल ग्रंथिका के साथ एक यामल पार्सर पुस्तकालय का उपयोग करना होगा। एक बार पार्सर प्राप्त करने के बाद, आप अपने कोड में यामल फ़ाइल खोल सकते हैं और सभी डेटा संरचित कर सकते हैं। नीचे दिए गए उदाहरण में, हम एक यामल फ़ाइल से अधिक जानकारी प्राप्त करने के लिए एक कैसे-तो कोड देखेंगे। 
+## How to: (कैसे करें:)
+आप C प्रोग्रामिंग भाषा में YAML फाइलों को पढ़ने और लिखने के लिए `libyaml` जैसे लाइब्रेरीज का इस्तेमाल कर सकते हैं।
 
-``` C 
-// यामल फ़ाइल से डेटा प्राप्त करने के लिए यामल पर्सर को परिभाषित करें 
-YAML_PARSER* parser = YAML_parser_new();
+```C
+#include <stdio.h>
+#include <yaml.h>
 
-// यामल फ़ाइल खोलें 
-FILE* file = fopen("data.yml", "r"); 
+int main() {
+    FILE *file = fopen("example.yaml", "r");
+    yaml_parser_t parser;
+    yaml_event_t event;
 
-// यामल फ़ाइल से डेटा पार्स करें 
-YAML_parser_load(parser, file); 
+    // YAML पार्सर शुरू करें
+    if(!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize parser!\n", stderr);
+    if(file == NULL)
+        fputs("Failed to open file!\n", stderr);
 
-// डेटा पार्स करें 
-YAML_NODE* node = YAML_parser_parse(parser); 
+    yaml_parser_set_input_file(&parser, file);
 
-// डेटा के लिए कुंजियां और मान प्राप्त करें 
-YAML_KEY_VALUE_PAIR* kvp = YAML_node_get_key_value_pairs(node); 
+    // YAML इवेंट्स को पढ़ें
+    while(1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
 
-// डेटा कुंजियां की प्रतिलिपि स्ट्रक प्राप्त करें 
-char* key = YAML_key_value_pair_get_key(kvp);
-// डेटा कुंजियां के मान की प्रतिलिपि स्ट्रक प्राप्त करें 
-char* value = YAML_key_value_pair_get_value(kvp);
+        // यहाँ आप इवेंट के हिसाब से लॉजिक लिख सकते हैं
 
-// डेटा मान प्रिंट करें 
-printf("%s: %s\n", key, value);
+        if(event.type == YAML_STREAM_END_EVENT)
+            break;
 
-// पार्सर मेमोरी साफ़ करें 
-YAML_parser_destroy(parser); 
+        yaml_event_delete(&event);
+    }
 
+    // पार्सर और फाइल क्लोज करें
+    yaml_parser_delete(&parser);
+    fclose(file);
+    return 0;
+}
 ```
 
-उदाहरण आउटपुट: 
-first_name: John 
-last_name: Doe 
-age: 27 
+यह साधारण कोड YAML फाइल से इवेंट्स रीड करता है।
 
-## गहराई में जाएं:
-यामल को जन्म दिसंबर 2001 में दर्ज हुआ, और वह तब से एक लोकप्रिय संरचना भाषा बन गई है। प्रोग्रामर लोग यामल का उपयोग अक्सर एक स्ट्रक्चर्ड डेटा स्टोरेज के रूप में करते हैं जो पाठ फ़ाइलों में शामिल होता है। यामल के अलावा, कुछ अल्टर्नेटिव भाषाएं जैसे XML और JSON भी हैं। यामल से आसानी से पार्स किया जा सकता है और यह यूटिलिटी के रूप में भी जाना जाता है। अगर आपको अपने पाठ और स्ट्रक्चर्ड डेटा को प्रबंधित करने की आवश्यकता है, तो यामल आपके लिए बहुत ही उपयोगी हो सकता है।
+## Deep Dive (गहराई से जानकारी)
+YAML ("YAML Ain't Markup Language" या शुरुआती समय में "Yet Another Markup Language") डेटा सीरियलाइजेशन के लिए एक ह्यूमन-रीडेबल भाषा है। इसे 2001 में पेश किया गया था। JSON और XML इसके विकल्प हो सकते हैं, लेकिन YAML को ज्यादा पढ़ने में आसान माना जाता है। C में YAML को पार्स करने के लिए `libyaml` एक पोपुलर लाइब्रेरी है, जो इवेंट-आधारित पार्सिंग प्रदान करती है।
+
+## See Also (इसे भी देखें)
+- The Official YAML Website: [YAML](https://yaml.org)
+- libyaml GitHub Repository: [libyaml](https://github.com/yaml/libyaml)
+- YAML Syntax Overview: [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/)

@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 작성하기"
-html_title:           "Javascript: 텍스트 파일 작성하기"
+html_title:           "Arduino: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇인가요? & 왜 해요?
+## What & Why? (무엇과 왜?)
+텍스트 파일 쓰기란 문자 데이터를 파일 포맷으로 저장하는 것입니다. 자동화, 데이터 보관, 설정 관리 등을 위해 프로그래머는 이 기능을 사용합니다.
 
-텍스트 파일을 쓰는 것은 프로그래머들이 코드를 저장하고 공유하기 위해 사용하는 일반적인 방법입니다. 이는 사용자가 읽기 쉽고 이해하기 쉬운 형식으로 정보를 저장할 수 있도록 도와줍니다. 또한 텍스트 파일은 다양한 운영 체제에서 호환성이 높으며, 텍스트 파일을 이용하면 간단하게 백업하고 파일을 전송할 수 있습니다.
-
-# 어떻게 하나요?
+## How to: (방법)
+Node.js 환경에서 `fs` 모듈을 이용해 텍스트 파일을 생성하거나 수정할 수 있습니다. 아래는 예제 코드와 출력 결과입니다.
 
 ```Javascript
 const fs = require('fs');
 
-// 새로운 텍스트 파일 생성
-fs.writeFile('example.txt', '안녕하세요!', (err) => {
-  if (err) throw err;
-  console.log('새로운 텍스트 파일이 생성되었습니다.');
+// 파일에 쓰기
+fs.writeFile('example.txt', 'Hello, World!', err => {
+  if(err) throw err;
+  console.log('파일이 성공적으로 저장되었습니다.');
 });
 
-// 기존 파일에 내용 추가
-fs.appendFile('example.txt', ' 잘 지내시죠?', (err) => {
-  if (err) throw err;
-  console.log('파일에 내용이 추가되었습니다.');
-});
-
-// 파일 내용 읽어오기
-fs.readFile('example.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
+// 파일에 추가하기
+fs.appendFile('example.txt', '\n안녕하세요!', err => {
+  if(err) throw err;
+  console.log('내용이 추가되었습니다.');
 });
 ```
-
 출력:
-
 ```
-새로운 텍스트 파일이 생성되었습니다.
-파일에 내용이 추가되었습니다.
-안녕하세요! 잘 지내시죠?
+파일이 성공적으로 저장되었습니다.
+내용이 추가되었습니다.
 ```
 
-# 깊이 들여다보기
+## Deep Dive (심도있는 탐구)
+초기 컴퓨팅 시대부터 데이터 저장은 중요했습니다. 초기에는 펀치 카드, 자기 테이프가 사용됐지만 현재는 파일 시스템과 데이터베이스에 정보를 저장합니다. `fs.writeFile`와 `fs.appendFile`는 Node.js에서 제공하는 기본적인 파일 시스템 쓰기 함수입니다. `writeFile`은 존재하는 파일을 덮어쓰고, `appendFile`은 파일의 끝에 내용을 추가합니다. 웹 브라우저에서는 보안상의 이유로 파일 쓰기 기능에 제한이 있지만, HTML5의 `File API`와 `Blob` 객체를 이용해 클라이언트 사이드에서 일부 작업을 할 수 있습니다.
 
-1. 역사적 배경: 텍스트 파일은 오래된 형식으로서, 컴퓨터의 데이터 저장 방식 중 하나입니다. 현재에도 여전히 사용되는 이유 중 하나는 단순함과 호환성 때문입니다.
-
-2. 대안: 텍스트 파일 외에도 프로그래머들은 다양한 형식의 파일을 사용할 수 있습니다. 예를 들어, JSON, CSV, XML 등의 파일 형식이 있습니다. 이러한 형식은 데이터를 더 구조화하여 저장할 수 있지만, 일반 사용자에게는 읽기와 이해가 더 어려울 수 있습니다.
-
-3. 구현 세부 사항: 위의 예제에서 사용한 `fs` 모듈은 Node.js의 내장 모듈로 파일 시스템에 접근할 수 있는 기능을 제공합니다. 다른 프로그래밍 언어에서도 파일을 읽고 쓰는 기능을 지원하는 여러 라이브러리나 모듈이 있습니다.
-
-# 참고 자료
-
-- [Node.js 파일 시스템 모듈 공식 문서](https://nodejs.org/api/fs.html)
-- [W3Schools - JavaScript Files 모듈](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+## See Also (참고 자료)
+- Node.js File System Documentation: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- MDN의 File API 안내: [https://developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- MDN의 Blob 레퍼런스: [https://developer.mozilla.org/en-US/docs/Web/API/Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)

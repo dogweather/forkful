@@ -1,7 +1,7 @@
 ---
-title:                "csvを扱う"
-html_title:           "Haskell: csvを扱う"
-simple_title:         "csvを扱う"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?
+## What & Why?
+## 何となぜ？
+CSVは「Comma-Separated Values」の略。テキストデータを保存・交換する簡単な形式。プログラマーはデータを編集、分析、保存のために使う。
 
-CSVとは、コンマで区切られたデータを表すファイル形式です。プログラマーは、データセットを読み込んだり、処理したりするために、CSVファイルを扱うことがあります。
+## How to:
+## 実践方法：
+```Haskell
+import qualified Data.Csv as Csv
+import Data.ByteString.Lazy as BL
+import Data.Vector as V
 
-## 方法:
+-- CSVファイルの読み込みとパーシング
+main :: IO ()
+main = do
+    csvData <- BL.readFile "data.csv"
+    case Csv.decode Csv.HasHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \ (name, age) ->
+                   putStrLn $ name ++ " is " ++ show age ++ " years old."
 
-### CSVファイルを読み込む
-
-まず、`haskell-csv`ライブラリをインストールします。次に、ファイルからデータを読み込みます。
-
-```haskell
-import Text.CSV
-
--- CSVファイルを読み込む関数
-readCSV :: FilePath -> IO CSV
-readCSV path = do
-  csv <- parseCSVFromFile path
-  case csv of
-    Left err -> error $ "エラー: " ++ show err
-    Right res -> return res
+-- CSVデータ
+-- name,age
+-- Alice,30
+-- Bob,25
 ```
- 
-### CSVファイルを書き込む
-
-新しいCSVファイルを作成し、データを書き込むこともできます。
-
-```haskell
--- CSVファイルを書き込む関数
-writeCSV :: FilePath -> CSV -> IO ()
-writeCSV path csv = writeFile path $ printCSV csv
+サンプル出力：
 ```
-
-### CSVデータを処理する
-
-読み込んだCSVデータを処理することもできます。例えば、2列目のデータを合計する関数を作成すると、次のようになります。
-
-```haskell
--- 2列目のデータを合計する関数
-sumCol2 :: CSV -> Int
-sumCol2 csv = sum $ map (\row -> read (row!!1) :: Int) $ tail csv
+Alice is 30 years old.
+Bob is 25 years old.
 ```
 
-## 詳細を調べる
+## Deep Dive
+## 徹底解説：
+CSVは1972年にIBMによって導入された。Excelやデータベースとの互換性のために今でも使われる。Haskellでは、`cassava`ライブラリが標準的。他に`pandoc`, `csv-conduit`などの代替品も。`cassava`は型安全かつ効率的にCSVデータを処理。
 
-### CSVの歴史的背景
-
-CSVは、1970年代にプログラマーの間で普及し始めました。当時は、生データを構造化するのに便利なフォーマットとして認識されていました。
-
-### 代替手段
-
-CSV以外にも、データを表現するファイル形式はあります。例えば、TSV（タブ区切り）やJSONなどがあります。各フォーマットにはメリット・デメリットがありますので、プロジェクトの要件に合わせて選択することが重要です。
-
-### 実装の詳細
-
-`haskell-csv`ライブラリは、HaskellでCSVファイルを扱う際に便利な関数を提供します。詳細なドキュメントは、[Hackage](https://hackage.haskell.org/package/csv)で確認できます。
-
-## 関連情報を見る
-
-- [Haskell Wiki](https://wiki.haskell.org/CSV)：HaskellでCSVを扱うための解説やリンクがまとめられています。
+## See Also
+## 参考情報：
+- Cassava ライブラリのドキュメント: [https://hackage.haskell.org/package/cassava](https://hackage.haskell.org/package/cassava)
+- HaskellのCSV処理に関するブログポスト: [https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/](https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/)
+- CSVデータのより高度な処理のためのconduitライブラリ: [https://hackage.haskell.org/package/csv-conduit](https://hackage.haskell.org/package/csv-conduit)

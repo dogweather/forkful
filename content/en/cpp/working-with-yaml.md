@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "C++ recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "C++"
 category:             "C++"
@@ -11,68 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with YAML is a common practice among programmers, especially those dealing with configuration files and data serialization. YAML, or "YAML Ain't Markup Language", is a lightweight data format that is human-readable and easy to use. Programmers use YAML because it offers a simple and intuitive way to store and share structured data, making it useful for various applications such as web development, data interchange, and configuration management.
+
+Working with YAML involves parsing and generating data in the human-friendly YAML Ain't Markup Language. Programmers use it for config files, data serialization, and application settings due to its readability and simplicity.
 
 ## How to:
-To work with YAML in your C++ code, you will need a YAML library. One popular option is the "yaml-cpp" library, which can be easily installed and included in your project. Here's a simple example of reading data from a YAML file and printing it out:
+
+YAML support isn't built-in C++. You'll need a library like `yaml-cpp`. Here's how to parse a simple YAML file:
 
 ```C++
 #include <yaml-cpp/yaml.h>
 #include <iostream>
+#include <fstream>
+#include <string>
 
 int main() {
-    YAML::Node config = YAML::LoadFile("config.yml"); //loads data from "config.yml" into a YAML::Node
-    std::cout << "Username: " << config["username"] << std::endl;
-    std::cout << "Password: " << config["password"] << std::endl;
+    std::ifstream file("config.yaml");
+    YAML::Node config = YAML::Load(file);
+    
+    std::string username = config["user"]["name"].as<std::string>();
+    int age = config["user"]["age"].as<int>();
+    
+    std::cout << "Name: " << username << ", Age: " << age << std::endl;
+    return 0;
 }
 ```
 
-Sample output:
-
+Assuming `config.yaml` is:
 ```
-Username: johndoe
-Password: ********
-```
-
-Working with more complex data types, such as lists and nested structures, is also straightforward. Here's an example of defining a list of names in a YAML file and printing them out in reverse order:
-
-```
-#names.yml
-- John
-- Jane
-- Bob
+user:
+  name: John Doe
+  age: 30
 ```
 
-```C++
-#include <yaml-cpp/yaml.h>
-#include <iostream>
-
-int main() {
-    YAML::Node names = YAML::LoadFile("names.yml");
-    std::cout << "Names in reverse order: " << std::endl;
-    for(int i = names.size(); i > 0; i--) {
-        std::cout << names[i-1].as<std::string>() << std::endl;
-    }
-}
+Output:
+```
+Name: John Doe, Age: 30
 ```
 
-Sample output:
+## Deep Dive
 
-```
-Names in reverse order:
-Bob
-Jane
-John
-```
+YAML was first introduced in 2001 as a human-readable data serialization standard. While JSON and XML are common alternatives, YAML's minimal syntax has made it popular for configuration files. Libraries like `yaml-cpp` handle parsing and emitting YAML data, representing it in structures like maps and sequences, similar to JSON objects and arrays.
 
-## Deep Dive:
-YAML was first introduced in 2001 and was initially intended as a better alternative to XML for data serialization. Its simple and human-readable syntax quickly gained popularity and it is now commonly used in various programming languages, including C++. YAML's structure is based on key-value pairs, making it easy for developers to understand and work with.
+## See Also
 
-While YAML has gained widespread usage, there are alternatives such as JSON and TOML which offer similar advantages. JSON is a popular data format in web development, while TOML is gaining popularity for its simplicity and support for hierarchical data structures.
-
-In terms of implementation, the "yaml-cpp" library for C++ is open-source and actively maintained. It supports the full YAML 1.2 specification and provides a comprehensive API for working with YAML data. There are also other libraries and tools available for working with YAML in C++, such as "YAMLcpp", "LibYAML", and "YAML-cpp-parser".
-
-## See Also:
-- [YAML 1.2 Specification](https://yaml.org/spec/1.2/spec.html)
-- [yaml-cpp Library](https://github.com/jbeder/yaml-cpp)
-- [YAML examples](https://learnxinyminutes.com/docs/yaml/)
+- YAML 1.2 Specification: https://yaml.org/spec/1.2/spec.html
+- yaml-cpp GitHub Repository: https://github.com/jbeder/yaml-cpp
+- An Introduction to YAML: https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started

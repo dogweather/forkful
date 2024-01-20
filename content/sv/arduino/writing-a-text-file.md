@@ -11,32 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Skriva en textfil innebär att lagra information i en läsbar form på ett lagringsmedium. Programmerare gör detta för att spara data, konfigurationer eller logga information från sensorer och processer.
 
-Att skriva en textfil är en vanlig uppgift för programutvecklare. Det innebär helt enkelt att skriva en serie av text eller data till en fil som kan sparas på en dator eller en annan lagringsenhet. Programmörer använder detta för att spara information eller resultat från sina program för senare referens eller användning.
-
-## Så här gör du:
-
-För att skriva en textfil i Arduino, behöver du först öppna en fil med ett specifikt filnamn och välja vilket läge du vill skriva i. Sedan kan du använda funktionen ```print()``` eller ```println()``` för att skriva text eller data till filen. Se nedan för ett exempel:
-
+## Hur gör man:
 ```Arduino
-File textfil = SD.open("min_textfil.txt", FILE_WRITE);
-if (textfil) {
-  textfil.println("Hej, det här är en textfil som skrivs från Arduino!");
-  textfil.close();
-} else {
-  Serial.println("Fel vid öppning av filen!");
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("SD-korts fel.");
+    return;
+  }
+  myFile = SD.open("test.txt", FILE_WRITE); // Skapa en ny fil eller öppna befintlig
+  if (myFile) {
+    myFile.println("Hej Arduino!");
+    myFile.close(); // Stäng filen efter användning
+  } else {
+    Serial.println("Fel vid öppning av filen.");
+  }
+}
+
+void loop() {
+  // Tom då vi bara skriver vid uppstart
 }
 ```
+Output i `test.txt`: "Hej Arduino!"
 
-Detta kommer att skriva "Hej, det här är en textfil som skrivs från Arduino!" till filen "min_textfil.txt". Om filen inte finns, kommer den att skapas automatiskt.
-
-## Djupdykning:
-
-Att skriva en textfil är en enkel men viktig uppgift för programmerare. Det har funnits sedan de tidiga dagarna av datorer och används fortfarande flitigt idag. Alternativ till att skriva en textfil är att använda en databas eller andra filformat, men textfiler är fortfarande populära på grund av deras enkla och lättlästa format.
-
-För att kunna skriva en textfil måste du ha en enhet som kan lagra filer, som till exempel ett SD-kort eller en USB-enhet. I Arduino finns det ett inbyggt SD-kortsfack som du kan använda för att lagra textfiler. 
+## Fördjupning:
+I tidigt 2000-tal, med Arduino's framfart, blev det enklare för hobbyister och ingenjörer att spara data lokalt. Alternativ inkluderar EEPROM eller externa databaser men SD-kort är lättanvända och rymliga. Detaljer att notera är filsystemsformat (FAT16/FAT32), maxfilstorlek, och behov av `SD.h`-biblioteket.
 
 ## Se även:
-
-- Mer information om SD-kortshantering i Arduino: https://www.arduino.cc/en/Reference/SD
-- Tutorial om hur man skriver en textfil med Arduino: https://www.instructables.com/id/Simple-Arduino-SD-Card-Text-Reader/
+- Arduino's SD biblioteksdokumentation: https://www.arduino.cc/en/Reference/SD
+- FAT-filsystem: https://en.wikipedia.org/wiki/File_Allocation_Table
+- EEPROM vs SD-kort för Arduino: https://www.arduino.cc/en/Tutorial/EEPROMReadWrite

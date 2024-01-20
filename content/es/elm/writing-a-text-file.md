@@ -1,7 +1,7 @@
 ---
-title:                "Creando un archivo de texto"
-html_title:           "Elm: Creando un archivo de texto"
-simple_title:         "Creando un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,29 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Escribir un archivo de texto es simplemente crear un documento de texto en un ordenador. Los programadores a menudo tienen que hacer esto para guardar y organizar información importante relacionada con su código, como comentarios, instrucciones y datos.
+## Qué & Por Qué?
+Escribir un archivo de texto consiste en guardar datos en un documento que puedas leer y editar. Los programadores lo hacen para mantener la configuración, guardar datos de aplicación o para registrar eventos del sistema.
 
-## Cómo:
+## Cómo Hacerlo:
+Elm es un lenguaje funcional que se centra en el frontend y, actualmente, no tiene capacidades de escritura de archivos directamente en el sistema de archivos. Sin embargo, puedes manejar la creación y descarga de archivos de texto en el navegador. Aquí te muestro cómo:
+
 ```Elm
-Elm.file "nombre_archivo.txt" (Just "¡Hola, mundo!")
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Attributes exposing (style)
+import Html.Events exposing (onClick)
+import File.Download
+
+main =
+  Browser.sandbox { init = init, update = update, view = view }
+
+type alias Model =
+  String
+
+init : Model
+init =
+  "Hello, Elm!"
+
+type Msg
+  = Download
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Download ->
+      model
+
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick Download ] [ text "Download Text File" ]
+    , if model /= "" then
+        Html.node "a"
+          [ Html.Attributes.href (File.Download.string "text/plain" "hello.txt" model)
+          , Html.Attributes.download "hello.txt"
+          , Html.Attributes.style "display" "none"
+          ]
+          []
+      else
+        text ""
+    ]
+
+subscribe : Model -> Sub Msg
+subscribe model =
+  Sub.batch
+    [ File.Download.messages (\_ -> Download)
+    ]
 ```
-Este ejemplo utiliza la función `file` de Elm para crear un archivo de texto llamado "nombre_archivo.txt" con el contenido "¡Hola, mundo!". Puedes reemplazar el texto con cualquier información que desees incluir en el archivo.
 
-La función `file` toma dos argumentos: el nombre del archivo y el contenido. El contenido debe estar envuelto en un `Just`, que es una estructura de datos de Elm que significa "algo está aquí". De esta manera, Elm asegura que estás consciente de que estás guardando algo en el archivo.
+## Profundización
+Históricamente, Elm ha evolucionado con el enfoque de mejorar la experiencia del desarrollo frontend, dejando de lado la manipulación de archivos del sistema, que generalmente se maneja a través del backend o lenguajes que tienen acceso al sistema de archivos, como Node.js. Alternativas para la escritura de archivos desde una aplicación Elm incluirían usar JavaScript a través de puertos (una función para comunicarse entre Elm y JavaScript). Los detalles de implementación varían dependiendo del destino: en el navegador, se simula la descarga de archivos; en el servidor, se usarían funciones de backend para escribir en el sistema de archivos.
 
-Elm también proporciona una función `appendFile` para agregar contenido adicional a un archivo existente. Aquí hay un ejemplo de cómo usarlo:
-```Elm
-Elm.appendFile "nombre_archivo.txt" "¡Adiós, mundo!"
-```
-Esto agregará "¡Adiós, mundo!" al final del archivo "nombre_archivo.txt".
-
-## Deep Dive:
-Escribir archivos de texto ha sido una tarea básica para los programadores desde los inicios de la informática. En algunas lenguas de programación, esto se hace utilizando comandos de sistema operativo. Sin embargo, en Elm, se hace a través de funciones de la biblioteca `File` integrada.
-
-Si prefieres no utilizar la biblioteca `File`, también puedes escribir archivos de texto utilizando la función `Http.send` y enviando una solicitud HTTP al servidor en el que se encuentra tu archivo.
-
-## Ver también:
-- [Documentación de la función file de Elm](https://package.elm-lang.org/packages/elm/file/latest/File#file)
-- [Documentación de la función appendFile de Elm](https://package.elm-lang.org/packages/elm/file/latest/File#appendFile)
-- [Documentación de la función Http.send de Elm](https://package.elm-lang.org/packages/elm/http/latest/Http#send)
+## Ver También
+- Documentación oficial de Elm: https://guide.elm-lang.org/
+- Elm File (para manejo de archivos): https://package.elm-lang.org/packages/elm/file/latest/
+- Uso de puertos en Elm: https://guide.elm-lang.org/interop/ports.html

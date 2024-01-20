@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Kotlin recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,37 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with CSV (Comma Separated Values) involves manipulating data in a tabular form, with each line representing a record and each value separated by a comma. Programmers use CSV to store and analyze large amounts of data efficiently.
+Working with CSV (Comma-Separated Values) involves reading and writing data in a text format where each line has fields separated by commas. Programmers use it because it's a simple, widely-supported way to exchange structured data between systems and applications.
 
 ## How to:
 
-Working with CSV files in Kotlin is made easy with the help of external libraries such as OpenCSV and Kotlin-CSV. These libraries provide convenient methods and classes to handle CSV files.
+To work with CSV in Kotlin, you can use the core library or third-party libs like Kotlinx.serialization or Apache Commons CSV. Here, I'll show you the basic I/O without external libs.
 
-To read a CSV file, we can use the `Reader` class from the OpenCSV library. First, we need to create a `Reader` object, passing in the path of the CSV file as a parameter. We can then use the `readAll()` method to read all the records from the file and store them in a list.
+```kotlin
+import java.io.File
 
-```Kotlin
-val reader = CSVReader(FileReader("path/to/file.csv"))
-val records = reader.readAll()
+fun main() {
+    // Writing to CSV
+    val outputFile = File("data.csv")
+    outputFile.printWriter().use { out ->
+        out.println("id,name,age")
+        out.println("1,John Doe,30")
+        out.println("2,Jane Smith,25")
+    }
+
+    // Reading from CSV
+    File("data.csv").forEachLine { line ->
+        val (id, name, age) = line.split(',')
+        println("ID: $id, Name: $name, Age: $age")
+    }
+}
 ```
 
-To write data to a CSV file, we can use the `CsvWriter` class from the Kotlin-CSV library. First, we need to create a `CsvWriter` object, passing in the path of the CSV file and the header names as parameters. We can then write each record using the `writeRow()` method.
-
-```Kotlin
-val writer = CsvWriter("path/to/file.csv", *arrayOf("Name", "Age", "Email"))
-writer.writeRow("John", "25", "john@example.com")
-writer.writeRow("Jane", "30", "jane@example.com")
+Output:
+```text
+ID: 1, Name: John Doe, Age: 30
+ID: 2, Name: Jane Smith, Age: 25
 ```
 
-## Deep Dive:
+## Deep Dive
 
-CSV has been in use since the 1970s and is still widely used for data exchange between different applications. It is a simple and lightweight format, making it easy to work with large datasets. However, manipulating data in CSV format can be tricky, especially when dealing with special characters or empty values.
+CSV's roots go back to the early days of computing when memory was limited and data interchange formats needed to be simple. While alternatives like JSON and XML have emerged, CSV remains popular for its ease of use, compatibility, and because it's human-readable.
 
-As an alternative to CSV, some programmers prefer using JSON or XML for storing and exchanging data. These formats provide more structured data and have built-in support in Kotlin, making them easier to work with.
+Proper CSV handling can be more complex due to edge cases (like commas in data, multi-line fields, etc.). Libraries like Apache Commons CSV and Kotlinx.serialization handle these cases and provide additional functionality.
 
-When working with CSV files, it's essential to consider the encoding of the file, as it can affect the accuracy of the data. By default, most CSV libraries use UTF-8 encoding, which may not be suitable for all datasets.
+## See Also
 
-## See Also:
-
-- OpenCSV library: https://opencsv.sourceforge.net/
-- Kotlin-CSV library: https://github.com/doyaaaaaken/kotlin-csv
-- Kotlin for Data Science: https://kotlinlang.org/docs/tutorials/data-science-overview.html
+- [RFC 4180](https://tools.ietf.org/html/rfc4180): The common format and MIME type for CSV files.
+- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/): A Java library for handling CSV files which can be used in Kotlin.
+- [Kotlinx.serialization CSV](https://github.com/Kotlin/kotlinx.serialization): A Kotlin library that makes serialization to and from CSV format simpler.

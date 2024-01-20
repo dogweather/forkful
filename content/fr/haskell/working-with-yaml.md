@@ -1,6 +1,6 @@
 ---
 title:                "Travailler avec YAML"
-html_title:           "Haskell: Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
 simple_title:         "Travailler avec YAML"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
-Travailler avec YAML, c'est manipuler des données structurées dans un format facilement lisible par les humains et les machines. Les programmeurs l'utilisent souvent pour stocker des configurations de logiciel ou des données de configuration pour des applications web.
+## What & Why?
+YAML, ou "YAML Ain't Markup Language", est un format de données lisible par l'homme pour la configuration des applications. Les programmeurs l'utilisent souvent pour gérer les paramètres, stocker des informations de manière structurée et faciliter l'intégration avec divers outils et langages, dont Haskell.
 
-## Comment faire :
-Voici quelques exemples de code pour lire et écrire des fichiers YAML en Haskell :
+## How to:
+Pour travailler avec YAML en Haskell, on utilise la bibliothèque 'yaml'. Voici comment la parser et générer :
 
 ```Haskell
+-- N'oubliez pas d'ajouter yaml à votre fichier .cabal ou package.yaml
 import Data.Yaml
-import qualified Data.ByteString.Char8 as C
 
--- Lecture :
-yamlData <- C.readFile "config.yaml"
-let parsedData = decode yamlData :: Maybe Data.Yaml.Value
+-- Un exemple simple de parsing de YAML
+main :: IO ()
+main = do
+    yamlData <- decodeFileEither "config.yaml"
+    case yamlData of
+        Left e -> print e
+        Right config -> print (config :: Value)
 
--- Écriture :
-let data = "key: value"
-C.writeFile "output.yaml" $ encode data
+-- Générer du YAML
+myData :: Value
+myData = object ["name" .= "John Doe", "age" .= 30]
+
+main :: IO ()
+main = print (encode myData)
 ```
 
-La librairie `Data.Yaml` fournit des fonctions pratiques pour manipuler les données YAML dans Haskell. Il est également possible d'utiliser des librairies de parsing de JSON pour travailler avec YAML, car ces formats sont étroitement liés.
+## Deep Dive
+YAML est né en 2001, pensé comme un langage plus lisible que le XML. En Haskell, outre 'yaml', on trouve des alternatives comme 'aeson-yaml' pour ceux habitués à aeson pour le JSON. Le parsing en Haskell est facilité par une conversion interne aux types du langage, permettant des vérifications de type et une manipulation aisée.
 
-## Plongée en profondeur :
-YAML est un format de données qui a été créé en 2001 pour offrir une alternative plus humaine aux formats de données existants tels que XML et JSON. Elle est similaire à ces derniers en termes de performance, mais elle est conçue pour être plus facile à lire et à écrire pour les humains. Les alternatives à YAML incluent des formats tels que TOML et INI.
-
-## À voir :
-Consultez la documentation officielle de la librairie `Data.Yaml` pour en savoir plus sur son utilisation en Haskell : https://hackage.haskell.org/package/yaml.
-
-Pour comparer YAML avec d'autres formats de données, consultez cette présentation sur TOML : https://hackage.haskell.org/package/toml.
+## See Also
+- Documentation de la bibliothèque 'yaml': https://hackage.haskell.org/package/yaml
+- Tutoriel YAML par exemple : https://learnxinyminutes.com/docs/yaml/
+- Comparaison YAML et JSON: https://phoenixnap.com/kb/yaml-vs-json

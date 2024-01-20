@@ -1,7 +1,7 @@
 ---
-title:                "向标准错误写入"
-html_title:           "Lua: 向标准错误写入"
-simple_title:         "向标准错误写入"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-
-写入标准错误是将错误消息发送到另一个地方，而不是默认的输出流，这样程序员可以更容易地查找和解决问题。程序员通常会将错误消息写入标准错误，这样可以避免混淆错误消息和正常输出。
+## 什么 & 为什么？
+标准错误（stderr）是特殊的输出流，用于记录错误信息而非常规数据。程序员这样做可以分离错误日志，便于调试和日志分析。
 
 ## 如何：
-
 ```Lua
--- 示例1：写入错误消息
-io.stderr:write("这是一个错误消息")
+-- 打印到标准错误
+io.stderr:write("发生错误!\n")
 
--- 示例2：将错误消息保存到变量中
-local err = "这是一个错误消息"
-io.stderr:write(err)
+-- assert 函数在遇到错误时也会写入到标准错误
+assert(nil, "这是一个错误信息\n")
 
--- 示例3：将错误消息和变量结合在一起
-local num = 10
-io.stderr:write("发生了一个错误：" .. num)
-
--- 输出：
--- 这是一个错误消息
--- 这是一个错误消息
--- 发生了一个错误：10
+-- 使用 os.execute 在错误时捕获程序返回
+os.execute("ls /nonexistent-directory 2>/dev/null")
+```
+输出：
+```
+发生错误!
+lua: main.lua:4: 这是一个错误信息
+stack traceback:
+	main.lua:4: in main chunk
+	[C]: in ?
 ```
 
-## 深入了解：
+## 深入：
+1. 历史背景：Unix 系统设计时引入了标准错误概念，旨在与标准输出（stdout）分离。
+2. 替代方案：可以将错误信息写入文件或使用日志库进行管理。
+3. 实现细节：Lua 使用 io 库直接操作 stderr。在底层，stderr 通常对应文件描述符2。
 
-1. 历史背景：早期的编程语言没有标准错误的概念，错误消息会直接打印到控制台。随着开发需求的增加，使用标准错误来管理错误消息变得更加方便和可靠。
-2. 其他实现方式：除了使用Lua标准库中的io.stderr来写入标准错误外，也可以使用第三方库来实现类似的功能。
-3. 实现细节：写入标准错误的具体实现方式取决于操作系统和编程语言的不同。在Lua中，可以使用io.stderr:write函数来将错误消息写入标准错误。
-
-## 参考链接：
-
-- Lua官方文档: https://www.lua.org/manual/5.4/manual.html#6.9
-- Lua社区: https://www.lu-community.com
-- io.stderr文档: https://www.lua.org/manual/5.4/manual.html#pdf-io.stderr
+## 参考资料：
+- [Lua 5.4 参考手册](https://www.lua.org/manual/5.4/)
+- [Programming in Lua](https://www.lua.org/pil/)
+- [Unix 标准流](https://en.wikipedia.org/wiki/Standard_streams)

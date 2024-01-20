@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen vakiovirheelle"
-html_title:           "Kotlin: Kirjoittaminen vakiovirheelle"
-simple_title:         "Kirjoittaminen vakiovirheelle"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Standard error (stderr) on kirjoitusväylä virhetietojen raportointiin. Käytetään erottamaan ohjelman tuloste virhetiedostoista ja diagnosoimaan ongelmia. 
 
-Kirjoittaminen standardivirheeseen on tapa ilmoittaa ohjelman suorituksen aikana havaituista virheistä ja poikkeustilanteista. Usein kirjoitamme virheilmoituksia standardilähtöön, mutta joskus on tarpeen käyttää erillistä virheenkorjaustilaa, jotta ohjelma voi jatkaa suoritustaan mahdollisimman sujuvasti.
+## How to:
+Kotlinissa stderriin kirjoittaminen hoituu `System.err`-olion avulla.
 
-## Miten:
-
-```Kotlin
+```kotlin
 fun main() {
-    val age = -5
-    if (age < 0) {
-        System.err.println("Ikä ei voi olla negatiivinen.")
-    }
-    /*
-    Tämä tulostaa "Ikä ei voi olla negatiivinen." standardivirheeseen,
-    koska käytämme System.err.println() -metodia.
-    */
+    System.err.println("Tämä on virheviesti")
 }
 ```
 
-```Kotlin
-try {
-    //Koodi, jossa saattaa olla poikkeustilanteita
-} catch (e: Exception) {
-    System.err.println("Tapahtui poikkeustilanne: " + e.message)
-}
-/*
-Tämä tulostaa virheilmoituksen standardivirheeseen,
-jossa kerrotaan tapahtuneesta poikkeustilanteesta ja sen viestin sisältö.
-*/
+Ohjelma tulostaa:
+```
+Tämä on virheviesti
 ```
 
-## Syventävä tieto:
+## Deep Dive
+Alussa käyttöjärjestelmissä oli tapana erottaa normaali tuloste (stdout) ja virhetuloste (stderr) toisistaan joustavuuden vuoksi. Tiedostojärjestelmäoperaatioissa voit johtaa stderrin esim. tiedostoon tai muille prosesseille. Standardiin virheeseen kirjoittamisen toteuttaminen on kielen ja alustan sisäänrakennettu, ja sitä voidaan käsitellä kuten muitakin tulostevirtoja.
 
-Historiallisesti standardivirheen käyttö on ollut yleistä ohjelmoinnissa. Toisaalta modernimmat ohjelmointikielet tarjoavat myös muita tapoja käsitellä ja raportoida virheitä, kuten poikkeusten heittämisen ja käsittelyn. Käyttötapauksista riippuen standardivirheen käyttö voi olla edelleen hyödyllistä ja kätevää.
-
-## Katso myös:
-
-- [Exception Handling in Kotlin](https://kotlinlang.org/docs/exceptions.html)
+## See Also
+- Järjestelmävirtojen käsittelyn perusteet: [geeksforgeeks.org](https://www.geeksforgeeks.org/system-out-println-in-java/)
+- Virran ohjaaminen Unix-pohjaisissa järjestelmissä: [tldp.org](https://tldp.org/LDP/abs/html/io-redirection.html)

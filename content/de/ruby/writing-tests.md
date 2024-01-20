@@ -1,7 +1,7 @@
 ---
-title:                "Programmieren von Tests"
-html_title:           "Ruby: Programmieren von Tests"
-simple_title:         "Programmieren von Tests"
+title:                "Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## What & Why?
+Tests sind Skripte, die deinen Code automatisch überprüfen. Sie helfen dabei, Fehler schnell zu entdecken und sorgen für stabilen Code während der Entwicklung und danach.
 
-Tests schreiben ist ein wichtiger Teil des Programmierens, bei dem man Code auf seine Funktionalität und Korrektheit überprüft. Durch das Schreiben von Tests können Programmierfehler frühzeitig erkannt und behoben werden, was zu einer besseren Codequalität und Robustheit führt.
-
-# Wie geht's:
-
-Hier sind zwei Beispiele, wie man Tests in Ruby schreiben kann:
+## How to:
+Ruby verwendet oft die `RSpec`-Bibliothek für Tests. Hier ist ein einfaches Beispiel für einen Test einer Methode `add`, die zwei Zahlen addiert:
 
 ```Ruby
-require 'minitest/autorun'
-class Calculator
-  def add(x, y)
-    return x + y
-  end
+require 'rspec'
+
+def add(a, b)
+  a + b
 end
-class TestCalculator < Minitest::Test
-  def test_add
-    calc = Calculator.new
-    assert_equal 5, calc.add(2, 3)
+
+describe "Addition" do
+  it "adds two numbers correctly" do
+    expect(add(2, 3)).to eq(5)
   end
 end
 ```
 
-Die Ausgabe des Tests sollte "  " lauten.
-
+Ausführen der Tests:
 ```Ruby
-require 'minitest/autorun'
-class User
-  attr_accessor :name
-  def initialize(name)
-    @name = name
-  end
-end
-class TestUser < Minitest::Test
-  def test_initialize
-    user = User.new("John")
-    assert_equal "John", user.name
-  end
-end
+$ rspec example_spec.rb
 ```
 
-Die Ausgabe dieses Tests sollte "true" lauten.
+Erwartete Ausgabe:
+```
+.
 
-# Tiefere Einblicke:
+Finished in 0.002 seconds (files took 0.08 seconds to load)
+1 example, 0 failures
+```
 
-Tests zu schreiben ist nicht nur eine moderne Praxis, sondern hat auch eine interessante historische Bedeutung. Das Testen von Code war bereits in den frühen Tagen der Softwareentwicklung wichtig, um die Qualität des Codes zu gewährleisten und Probleme frühzeitig zu identifizieren. Alternativen zu Ruby's Minitest sind beispielsweise RSpec oder Cucumber. Auch die Verwendung von Test-Driven Development ist eine beliebte Methode im Ruby-Ökosystem. Die Implementierung von Tests in Ruby erfolgt mithilfe von Assertions und Mocking-Bibliotheken wie MiniTest::Assertions und MiniTest::Mock.
+## Deep Dive
+Tests in Ruby begannen mit dem Unit-Test-Framework `Test::Unit`, wurden aber durch `RSpec` populär, das eine BDD (Behavior-Driven Development) Syntax bietet. Alternativen zu `RSpec` sind unter anderem `Minitest` und `Cucumber`. Integrationstests mit Ruby on Rails werden oft mit `Capybara` durchgeführt. `RSpec` arbeitet durch Vergleich des tatsächlichen Ergebnisses (z.B. das Resultat einer Methode) mit dem erwarteten Ergebnis; bei Übereinstimmung ist der Test erfolgreich.
 
-# Sieh dir auch an:
-
-- [Minitest Dokumentation](https://github.com/seattlerb/minitest)
-- [RSpec](https://rspec.info/)
-- [Cucumber](https://cucumber.io/)
+## See Also
+- RSpec Dokumentation: https://rspec.info/documentation/
+- Minitest: https://rubygems.org/gems/minitest
+- Ruby Testing Best Practices: https://www.rubyguides.com/2019/03/ruby-testing/
+- Capybara: https://github.com/teamcapybara/capybara

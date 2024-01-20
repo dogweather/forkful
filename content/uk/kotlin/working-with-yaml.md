@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Kotlin: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що та Чому?
+YAML - це людино-читабельний формат для серіалізації даних, що часто застосовується для конфігураційних файлів. Програмісти використовують його через лаконічність та зручність зливання з системами контролю версій.
 
-Робота з YAML - це одна з найбільш популярних форматів для представлення даних. Цей формат використовується в багатьох програмах та мовах програмування, і має на меті створення читабельних та зручних для редагування файлів конфігурації та обміну інформацією між різними програмними продуктами. Програмісти працюють з YAML, щоб спростити процес роботи з даними та забезпечити легку читабельність.
-
-Як це зробити:
+## Як це зробити:
+Для роботи з YAML у Kotlin, використовуємо бібліотеку `snakeyaml`. Давайте парсити YAML:
 
 ```Kotlin
-val yamlString = """
-  recipe: 
-    - name: Pizza
-      ingredients:
-        - dough
-        - cheese
-        - tomatoes
-        - pepperoni
-    - name: Tacos
-      ingredients:
-        - tortillas
-        - chicken
-        - avocado
-"""
-val yamlObject = Yaml().load(yamlString)
-// Вивід:
-// {recipe=[{name=Pizza, ingredients=[dough, cheese, tomatoes, pepperoni]}, {name=Tacos, ingredients=[tortillas, chicken, avocado]}]}
+import org.yaml.snakeyaml.Yaml
+import java.io.InputStream
+
+fun main() {
+    val yaml = Yaml()
+    val inputStream: InputStream = this.javaClass
+       .classLoader
+       .getResourceAsStream("config.yaml")!!
+    val data: Map<String, Any> = yaml.load(inputStream)
+    
+    println(data["name"]) // Виводить: Ваш проект
+}
+
+```
+Вміст `config.yaml`:
+```yaml
+name: Ваш проект
+version: 1.0.0
 ```
 
-Залишаючись на поверхні:
+При запуску програми отримаємо вивід: Ваш проект.
 
-Історичний контекст:
-YAML був вперше створений у 2001 році і був прийнятий програмістами як альтернатива формату XML. Він швидко набув популярності завдяки своїй простоті та здатності до зберігання структурованих даних.
+## Більше інформації:
+YAML виник у 2001 році. Популярні альтернативи - JSON і XML. Використання YAML у Kotlin потребує зовнішньої бібліотеки; основні варіанти - `snakeyaml` і `kotlinx.serialization`. `Snakeyaml` повністю реалізує специфікацію YAML 1.1, тоді як `kotlinx.serialization` пропонує більшу інтеграцію з Kotlin.
 
-Альтернативи:
-Основною альтернативою YAML є формат JSON, який також використовується для представлення даних. Однак, YAML має більш дружелюбний синтаксис та може зберігати більш складні структури даних.
-
-Деталі реалізації:
-Кодування та декодування YAML в Kotlin можна виконувати за допомогою бібліотеки jackson-yaml, яка надає зручний інтерфейс для роботи з YAML.
-
-Див. також:
-- Офіційна документація YAML (https://yaml.org/spec/1.2/spec.html)
-- Офіційна документація Kotlin (https://kotlinlang.org/docs/home.html)
+## Дивіться також:
+- Офіційний сайт YAML: [yaml.org](https://yaml.org/)
+- Документація бібліотеки Snakeyaml: [Snakeyaml wiki](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+- Kotlin Serialization Guide: [Kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)

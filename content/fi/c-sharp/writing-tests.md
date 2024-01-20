@@ -1,7 +1,7 @@
 ---
-title:                "Ohjelmointitestien kirjoittaminen"
-html_title:           "C#: Ohjelmointitestien kirjoittaminen"
-simple_title:         "Ohjelmointitestien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## What & Why?
+Testaus tarkoittaa ohjelmakoodin toimivuuden varmistamista automaattisilla testitapauksilla. Koodin testaaminen auttaa löytämään bugeja aikaisessa vaiheessa ja ylläpitämään koodin laatua pitkällä aikavälillä.
 
-Testien kirjoittaminen on yksi tärkeimmistä osista ohjelmistonkehitysprosessia. Se on prosessi, jossa kirjoitetaan koodia ja suoritetaan se automaattisesti varmistaakseen, että ohjelmisto toimii odotetusti. Testien avulla voidaan havaita mahdollisia virheitä ja välittömästi korjata ne, mikä säästää aikaa ja vaivaa myöhemmin.
+## How to:
+Käytetään NUnit-testikehystä.
 
-# Kuinka?
+```C#
+using NUnit.Framework;
 
-C# -ohjelmointikielessä testien kirjoittaminen on suhteellisen yksinkertaista. Alla on esimerkki yksikkötestin kirjoittamisesta ja sen tulostuksesta:
-
-```
-C# // Määritellään yksikkötesti luokka
-public class CalculatorTests
+namespace ExampleTests
 {
-    // Määritellään testi, joka tarkistaa yhteenlaskun toimivuuden
-    [Test]
-    public void TestAddition()
+    public class CalculatorTests
     {
-        // Luodaan olio laskimelle
-        Calculator calc = new Calculator();
-        
-        // Suoritetaan laskutoimitus ja tallennetaan tulos
-        int result = calc.Add(2, 3);
-
-        // Verrataan tulosta odotettuun arvoon
-        Assert.AreEqual(5, result);
+        [Test]
+        public void Add_TwoNumbers_ReturnsSum()
+        {
+            // Setup
+            var calculator = new Calculator();
+            
+            // Act
+            var result = calculator.Add(5, 7);
+            
+            // Assert
+            Assert.AreEqual(12, result);
+        }
+    }
+    
+    public class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
     }
 }
-
 ```
 
-Tämän testin ajamisen jälkeen näemme, että laskimen Add-metodi toimii odotetusti tulostaessaan 5 kahden luvun summana.
+Ajettu testi tuottaa seuraavan tulosteen:
 
-# Syvempi sukellus
+```plaintext
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.235 seconds
+```
 
-Testien kirjoittamisella on juuret testauslajissa nimeltä testiautomaatio, joka alkoi kasvaa suosituksi 1980-luvulla. Nykyään testien kirjoittamisella on tärkeä rooli ketterässä ohjelmistokehityksessä ja se on olennainen osa jatkuvaa integrointia ja toimitusketjua. Lisäksi C# -ohjelmointikielessä on muitakin testauskehyksiä, kuten NUnit ja xUnit, jotka tarjoavat erilaisia ominaisuuksia ja toiminnallisuuksia testien kirjoittamiseen.
+## Deep Dive
+Automatisoidut testit ovat olleet ohjelmistokehityksessä vakiintunut käytäntö jo vuosikymmeniä. Vaihtoehtoja NUnitille ovat esim. MSTest ja xUnit.net. Nämä työkalut seuraavat usein xUnit-arkkitehtuurimallia, missä testit määritellään menetelminä ja ajetaan erillisellä testaustyökalulla.
 
-# Katso myös
-
-Jos haluat lisätietoja testien kirjoittamisesta C# -ohjelmointikielessä, tutustu seuraaviin lähteisiin:
-
-- [Microsoftin virallinen dokumentaatio C# -kielen testauksesta](https://docs.microsoft.com/en-us/dotnet/core/testing/)
-- [NUnit -testauskehys](https://nunit.org/)
-- [xUnit -testauskehys](https://xunit.net/)
+## See Also
+- NUnit: [https://nunit.org/](https://nunit.org/)
+- Microsoft's Unit Testing documentation: [https://docs.microsoft.com/en-us/dotnet/core/testing/](https://docs.microsoft.com/en-us/dotnet/core/testing/)
+- xUnit.net: [https://xunit.net/](https://xunit.net/)

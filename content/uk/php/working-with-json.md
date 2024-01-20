@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "PHP: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і чому?
+## What & Why?
+Що таке робота з JSON і чому це роблять програмісти? JSON це текстовий формат даних, оптимізований для людського читання та обміну даних між системами. Програмісти використовують JSON через його легкість, стислість та широку підтримку в різних мовах програмування.
 
-Робота з JSON - це процес обробки даних в форматі JSON (JavaScript Object Notation) за допомогою PHP. Програмісти використовують JSON для збереження та передачі даних, оскільки цей формат є легким, читабельним для людей та машин, а також підтримується багатьма мовами програмування.
-
-# Як:
-
-```php
-// Створення масиву даних
-$users = array(
-  array("name" => "John", "age" => 25, "location" => "Kyiv"),
-  array("name" => "Maria", "age" => 30, "location" => "Lviv"),
-  array("name" => "Alex", "age" => 28, "location" => "Odessa")
-);
-
-// Конвертація у формат JSON
-$json = json_encode($users);
-
-// Виведення даних у форматі JSON
-echo $json;
-
-// Виведення даних, отриманих з формату JSON
-$data = '{"name":"Kate","age":35,"location":"Kharkiv"}';
-$user = json_decode($data);
-echo $user->name . " is " . $user->age . " years old and lives in " . $user->location;
+## How to:
+### Читання JSON
+```PHP
+$json = '{"name": "Олексій", "age": 30}';
+$data = json_decode($json);
+echo $data->name; // Виводить: Олексій
 ```
 
-## Deep Dive:
+### Запис JSON
+```PHP
+$data = ['name' => 'Марія', 'age' => 25];
+echo json_encode($data); // Виводить: {"name":"Марія","age":25}
+```
 
-Спочатку JSON був розроблений для JavaScript для зручного обміну даними між браузерами та серверами. Проте згодом став популярним і серед інших мов програмування. Існують такі альтернативи як XML та CSV, але JSON більш поширений та має більш простий синтаксис. У PHP для роботи з JSON використовується функція json_encode() для перетворення даних у формат JSON та json_decode() для отримання даних з формату JSON.
+### Обробка помилок
+```PHP
+$json = '{"name": "Андрій", "age": "невідомий"}';
+$data = json_decode($json);
 
-## Дивись також:
+if (json_last_error() !== JSON_ERROR_NONE) {
+    echo 'Помилка декодування JSON: ' . json_last_error_msg();
+} else {
+    echo $data->name; // Андрій, якщо немає помилок
+}
+```
 
-Документація про роботу з JSON в PHP: https://www.php.net/manual/en/book.json.php
+## Deep Dive
+JSON (JavaScript Object Notation) з'явився у 2000 році як альтернатива XML. Важливі особливості JSON включають пари ключ-значення і масиви. JSON використовується у RESTful API та багатьох веб-додатках. В PHP, `json_encode()` і `json_decode()` — основні функції для роботи з JSON. Після PHP 5.2.0, JSON став частиною стандартного дистрибутива, а у PHP 7 з'явились значні поліпшення ефективності.
 
-Офіційний сайт JSON: https://www.json.org/
+## See Also
+- Офіційна документація PHP для роботи з JSON: https://www.php.net/manual/uk/book.json.php
+- JSON стандарт: https://www.json.org/json-uk.html
+- Уроки з обробки JSON в PHP: https://www.w3schools.com/php/php_ref_json.asp

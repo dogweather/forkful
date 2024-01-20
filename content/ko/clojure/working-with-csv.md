@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 사용하기"
-html_title:           "Clojure: CSV 파일 사용하기"
-simple_title:         "CSV 파일 사용하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
+## What & Why?
+CSV(Comma-Separated Values)는 데이터를 저장하고 공유할 때 쓰는 표준 형식이에요. 간단하고 범용적인 포맷 덕분에 프로그래머는 시스템 간 호환성을 높이고 데이터 처리를 용이하게 할 수 있죠.
 
-CSV 작업이란 무엇일까요? 이것은 데이터를 스프레드시트나 데이터베이스에 저장할 수 있는 표 형식의 파일 형식입니다. 프로그래머가 CSV를 다루는 이유는 데이터를 쉽고 효율적으로 구성하고 관리하기 위해서입니다.
-
-## 방법:
-
+## How to:
 ```Clojure
-;; CSV 파일 로드하기
+;; 데이터 파싱하기
 (require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-;; 파일의 내용 읽어오기
-(with-open [reader (clojure.java.io/reader "file.csv")]
-  (csv/read-csv reader))
+(with-open [reader (io/reader "example.csv")]
+  (doall (csv/read-csv reader)))
 
-;; 데이터베이스에 저장하기
-(with-open [writer (clojure.java.io/writer "file.csv")]
-  (csv/write-csv writer data))
+;; 데이터 쓰기
+(with-open [writer (io/writer "example_out.csv")]
+  (csv/write-csv writer [["name" "age" "city"] ["Jane" "25" "New York"] ["Joe" "35" "Los Angeles"]]))
+```
+샘플 출력:
+```Clojure
+;; 파싱된 데이터
+(["name" "age" "city"] ["Jane" "25" "New York"] ["Joe" "35" "Los Angeles"])
+;; example_out.csv 파일 확인
+name,age,city
+Jane,25,New York
+Joe,35,Los Angeles
 ```
 
-## 심층 분석
+## Deep Dive
+CSV 포맷은 1970년대부터 쓰이고 있어요. 간단한 텍스트 포맷으로, 엑셀이나 데이터베이스 시스템과 호환이 쉬워요. JSON이나 XML 같은 데이터 포맷이 대안이 될 수 있지만, CSV는 구조가 단순하고 읽고 쓰기 쉬운 장점이 있죠. Clojure에서는 `clojure.data.csv` 라이브러리를 주로 사용하며, 이는 내부적으로 Java의 기능을 활용해서 CSV 파일을 쉽게 다룰 수 있게 해줍니다.
 
-CSV 작업은 전통적인 데이터 저장과 교환 방식으로 문서 형식이 아닌 데이터를 메모리에서 처리하는 방식입니다. 이를 다루는 대안에는 XML, JSON 등이 있으며 이들은 구조화된 데이터를 다룰 때 더 나은 선택이 될 수 있습니다. CSV 작업은 `clojure.data.csv` 라이브러리를 사용하여 구현할 수 있으며, 표준적인 형식과 커스텀 형식 모두 지원합니다.
-
-## 관련 자료
-
-[clojure.data.csv 라이브러리 문서](https://clojure.github.io/data.csv/)
+## See Also
+- 공식 Clojure CSV 라이브러리 문서: [clojure.data.csv](https://github.com/clojure/data.csv)
+- ClojureDocs, CSV 예제: [ClojureDocs CSV](https://clojuredocs.org/clojure.data.csv)

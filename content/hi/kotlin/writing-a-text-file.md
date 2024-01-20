@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग पर एक लेख को “टेक्स्ट फ़ाइल लिखना” अनुवादित करें।"
-html_title:           "Kotlin: कंप्यूटर प्रोग्रामिंग पर एक लेख को “टेक्स्ट फ़ाइल लिखना” अनुवादित करें।"
-simple_title:         "कंप्यूटर प्रोग्रामिंग पर एक लेख को “टेक्स्ट फ़ाइल लिखना” अनुवादित करें।"
+title:                "टेक्स्ट फाइल लिखना"
+html_title:           "Bash: टेक्स्ट फाइल लिखना"
+simple_title:         "टेक्स्ट फाइल लिखना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## यह क्या है और क्यों?
-Writing a text file क्या होता है के बारे में दो तीन सेंटेंसेस और यह करने का उद्देश्य क्या है, प्रोग्रामर्स इसे क्यों करते हैं।
+## क्या और क्यों?
 
-Text file के लिए लिखना Programming में एक आम काम है, जो डेटा और सूचनाओं को संरचित और सामान्य रूप से दृश्यमान बनाता है। प्रोग्रामर्स इसका उपयोग डेटा एक्सेस करने, लेखन अथवा रीड करने और अन्य ऐसे कामों के लिए करते हैं।
+टेक्स्ट फाइल लिखना यानी डेटा या जानकारी को टेक्स्ट रूप में फाइल में सेव करना है। प्रोग्रामर्स यह इसलिए करते हैं ताकि डेटा को बाद में पढ़ा जा सके, शेयर किया जा सके या डेटा बैकअप बनाया जा सके।
 
-## कैसे करें?
+## कैसे करें:
+
 ```kotlin
-// एक नया text file create करना
-val file = File("myFile.txt")
+import java.io.File
 
-// text file में data write करना
-file.writeText("This is some text.")
+fun main() {
+    val data = "यह एक उदाहरण पाठ है।"
+    val fileName = "example.txt"
 
-// text file से data read करना
-val data = file.readText() // data = "This is some text."
-
-// text file में अतिरिक्त data append करना
-file.appendText("And this is some more text.")
+    File(fileName).writeText(data)
+    println("$fileName को सेव कर दिया गया है।")
+}
 ```
 
-## गहराई में जाएं
+सैंपल आउटपुट:
 
-Text file को write करना  बहुत काम सिंग क्‍‍यूरेशिन और संभावना का विकल्प है। एक उल्लेखनीय लाभ है कि text files platform-independent होते हैं, जोकि किसी भी ऑपरेटिंग सिस्टम पर काम करते हैं। अन्य विकल्प में XML, CSV फाइल और डेटाबेस भी शामिल हैं।
+```
+example.txt को सेव कर दिया गया है।
+```
 
-Text file के लिए कोडिंग करते समय, कुछ बातों का ध्यान रखना जरूरी होता है: सबसे पहले, एक text file variable बनाना जरूरी है जो file handling में इस्तेमाल होगा। दूसरा, कोडिंग करते समय यह जानना जरूरी है कि कैसे data write, read, append करें। इसके लिए File class के functions का इस्तेमाल कर सकते हैं। इन सब के अलावा, फाइल और data की security भी बहुत महत्वपूर्ण है। उन अनुरोधों को पूरा करने के लिए, आपको यह सुनिश्चित करना होगा कि आप data को सुरक्षित स्थान पर स्टोर करते हैं।
+## गहराई से जानकारी:
 
-## संबंधित स्रोत
-- [JavaTpoint Tutorial on Writing to a File in Kotlin](https://www.javatpoint.com/kotlin-write-to-a-file)
+टेक्स्ट फाइल लिखने की विधि कंप्यूटर प्रोग्रामिंग के शुरुआती दिनों से ही अपनाई जा रही है। कोटलिन इसे आसान बनाता है जैसे `writeText` फंक्शन का उपयोग करके। इसके अल्टरनेटिव में `FileWriter`, `BufferedWriter` जैसी क्लासेज भी होती हैं, जिनके साथ आप अधिक कस्टमाइजेशन कर सकते हैं। `writeText` एक हायर-लेवल फंक्शन है जो इंटर्नली `OutputStreamWriter` का इस्तेमाल करता है।
+
+## और भी सूत्र:
+
+- कोटलिन डॉक्यूमेंटेशन: https://kotlinlang.org/docs/reference/
+- फाइल आई/ओ गाइड: https://kotlinlang.org/docs/working-with-io.html
+- Stack Overflow कोटलिन टैग: https://stackoverflow.com/questions/tagged/kotlin
+
+इन लिंक्स पर जाकर आप कोटलिन में फाइल्स से जुड़ी अधिक जानकारी प्राप्त कर सकते हैं।

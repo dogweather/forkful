@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json."
-html_title:           "Go: Att arbeta med json."
-simple_title:         "Att arbeta med json."
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -11,53 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+JSON hanteras för att utbyta data mellan system på ett enkelt och läsbart sätt. Programmerare gör det för att smidigt integrera olika delar av ett system, oavsett språk eller plattform.
 
-Att arbeta med JSON innebär att behandla data i ett format som är lättläst och lättbearbetat av både människor och datorer. Det är ett sätt för programmerare att strukturera och utbyta data på ett effektivt sätt.
-
-## Så här:
-
+## Så Gör Du:
 ```Go
-import "encoding/json"
+package main
 
-type Person struct {
-    Name string `json:"name"`
-    Age int `json:"age"`
-    Address string `json:"address"`
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+)
+
+// Definiera en struct för att representera din data
+type User struct {
+    Name  string `json:"name"`
+    Email string `json:"email"`
 }
 
 func main() {
-    person := Person{Name: "Anna", Age: 30, Address: "Stockholm"}
+    // Skapa en användare
+    user := User{"Alice", "alice@example.com"}
 
-    // Skapa JSON från en struct
-    jsonBytes, _ := json.Marshal(person)
+    // Konvertera till JSON
+    userJSON, err := json.Marshal(user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%s\n", userJSON) // Output: {"name":"Alice","email":"alice@example.com"}
 
-    // Skriv ut JSON
-    fmt.Println(string(jsonBytes))
-
-    // Skapa en struct från JSON
-    var newPerson Person
-    newJson := `{"name":"Lisa","age":25,"address":"Malmö"}`
-    json.Unmarshal([]byte(newJson), &newPerson)
-
-    // Skriv ut den nya personen
-    fmt.Println(newPerson.Name)
+    // Läs JSON tillbaka till en struct
+    jsonStr := `{"name":"Bob","email":"bob@example.com"}`
+    var user2 User
+    err = json.Unmarshal([]byte(jsonStr), &user2)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%+v\n", user2) // Output: {Name:Bob Email:bob@example.com}
 }
 ```
 
-Output:
+## Djupdykning
+JSON, eller JavaScript Object Notation, skapades tidigt 2000-tal och har blivit webbens de facto standard för datautbyte. Alternativen inkluderar XML och YAML, men JSON vinner i popularitet för sin enkelhet. Implementationen i Go sker genom `encoding/json`-paketet, som hanterar både omvandling från och till Go-strukturer och gör det lätt att jobba med JSON.
 
-```
-{"name":"Anna","age":30,"address":"Stockholm"}
-Lisa
-```
-
-## Djupdykning:
-
-JSON (JavaScript Object Notation) utvecklades på 2000-talet som ett lättläst och lättbearbetat alternativ till XML. Det används främst för datautbyte mellan program, webbtjänster och databaser. I Go är hanteringen av JSON inbyggd, men det finns även tredjepartsbibliotek tillgängliga.
-
-För att strukturera data används vanligtvis JavaScript objekt och arrayer. Det finns också möjlighet att använda JSON Schema för att definiera en datamodell och validera JSON-data mot denna.
-
-## Se även:
-
-- https://golang.org/pkg/encoding/json/
-- https://www.json.org/json-en.html
+## Se Också
+- Go dokumnetation om [JSON-paketet](https://pkg.go.dev/encoding/json)
+- [JSON](https://www.json.org/json-en.html) officiell hemsida
+- [Go By Example: JSON](https://gobyexample.com/json) för fler kodexempel

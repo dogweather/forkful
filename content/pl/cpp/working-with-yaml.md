@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikiem yaml"
-html_title:           "C++: Praca z plikiem yaml"
-simple_title:         "Praca z plikiem yaml"
+title:                "Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i po co?
-Praca z YAML-em to popularna metoda w świecie programowania, polegająca na tworzeniu plików konfiguracyjnych w formacie YAML. Służą one do przechowywania ustawień i danych, wykorzystywanych przez programy w czasie pracy. Programiści wybierają pracę z YAML-em ze względu na czytelność i prostotę tego języka, co ułatwia zarządzanie ustawieniami i ich edycję.
+## Co i dlaczego?
 
-# Jak to zrobić?
-Aby pracować z YAML-em w języku C++, należy najpierw zainstalować odpowiednią bibliotekę. Najpopularniejszą jest biblioteka YAML-CPP, która jest dostępna na wielu platformach i jest prostsza w użyciu niż inne rozwiązania. Poniżej znajdują się przykładowe kody wraz z wyjściami, które ilustrują podstawowe operacje na plikach YAML.
+Praca z YAML polega na obsłudze danych w formacie, który jest czytelny dla człowieka i maszyny. Programiści używają YAML, bo jest prosty w zapisie i idealny do konfiguracji czy serializacji danych.
 
-## Przykładowe plik YAML
+## Jak to zrobić:
+
 ```C++
+#include <iostream>
 #include <yaml-cpp/yaml.h>
 
 int main() {
-  // Tworzenie pliku YAML
-  YAML::Emitter out;
-  out << YAML::BeginMap;
-  out << YAML::Key << "imie";
-  out << YAML::Value << "Jan";
-  out << YAML::Key << "nazwisko";
-  out << YAML::Value << "Kowalski";
-  out << YAML::Key << "wiek";
-  out << YAML::Value << 35;
-  out << YAML::EndMap;
+    // Load YAML content from string
+    YAML::Node config = YAML::Load("name: Jan\nage: 30\n");
 
-  // Zapis do pliku
-  std::ofstream fout("dane.yaml");
-  fout << out.c_str();
-  fout.close();
+    std::cout << "Name: " << config["name"].as<std::string>() << "\n";
+    std::cout << "Age: " << config["age"].as<int>() << std::endl;
 
-  // Odczyt i wyświetlenie danych z pliku
-  YAML::Node dane = YAML::LoadFile("dane.yaml");
-  std::cout << "Imię: " << dane["imie"].as<std::string>() << std::endl;
-  std::cout << "Nazwisko: " << dane["nazwisko"].as<std::string>() << std::endl;
-  std::cout << "Wiek: " << dane["wiek"].as<int>() << std::endl;
-  
-  return 0;
+    // Create new YAML node and output to string
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "language" << YAML::Value << "C++";
+    out << YAML::Key << "version" << YAML::Value << "20";
+    out << YAML::EndMap;
+
+    std::cout << "Generated YAML:\n" << out.c_str() << std::endl;
+
+    return 0;
 }
 ```
 
-## Wyjście
+Sample output:
 ```
-Imię: Jan
-Nazwisko: Kowalski
-Wiek: 35
+Name: Jan
+Age: 30
+Generated YAML:
+language: C++
+version: 20
 ```
 
-# Głębsze zanurzenie
-YAML został opracowany w 2001 roku przez Clarka Evansa i Ingy'ego döt Net jako alternatywa dla języków XML i JSON. W odróżnieniu od tych dwóch, YAML jest znacznie prostszy i czytelniejszy dzięki zastosowaniu wyraźnej struktury opartej na wcięciach. Istnieją również inne biblioteki do pracy z YAML-em w C++, takie jak: yaml-cpp, libyaml czy QtYaml.
+## Wnikliwa analiza:
 
-# Zobacz także
-Jeśli chcesz poznać więcej o YAML-u, polecamy następujące źródła:
-- Oficjalna dokumentacja YAML-a: https://yaml.org/
-- Biblioteka YAML-CPP: https://github.com/jbeder/yaml-cpp
-- Porównanie YAML-a z innymi formatami: https://yaml.com/
+YAML, czyli "YAML Ain’t Markup Language" (YAML to nie jest język znaczników), to format danych używany od początku lat 2000. Alternatywą dla YAML jest JSON czy XML, jednak YAML często wygrywa czytelnością. Do pracy z YAML w C++ użyjemy biblioteki `yaml-cpp`, która tłumaczy YAML na struktury zrozumiałe w C++. Implementacja YAML w projekcie wymaga zrozumienia struktur, takich jak mapy czy sekwencje, a także aspektów serializacji i deserializacji danych.
+
+## Zobacz również:
+
+- Dokumentacja `yaml-cpp`: [https://github.com/jbeder/yaml-cpp](https://github.com/jbeder/yaml-cpp)
+- Specyfikacja YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- Porównanie formatów danych (JSON vs. YAML): [https://www.json2yaml.com/](https://www.json2yaml.com/)

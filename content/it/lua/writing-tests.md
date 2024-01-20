@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Lua: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Scrivere test è un'attività fondamentale per i programmatori. Consiste nell'eseguire una serie di verifiche automatiche su parti di codice per verificare la correttezza del loro funzionamento. I programmatori lo fanno per garantire la qualità del loro codice e per ridurre il rischio di errori in produzione.
+## What & Why?
+Scrivere test significa creare script che automaticamente verificano se parti del tuo codice funzionano come previsto. I programmatori li usano per assicurarsi che il codice sia affidabile e per prevenire regressioni durante l'aggiornamento del software.
 
-## Come fare:
-Una delle librerie più popolari per scrivere test in Lua è [busted](https://olivinelabs.com/busted/). Con questa libreria, si possono scrivere test per ogni funzione o modulo del proprio codice. Ecco un esempio di test con busted per una semplice funzione che calcola il quadrato di un numero:
+## How to:
+In Lua, puoi scrivere test usando delle asserzioni. Un'asserzione verifica che una condizione sia vera. Se non lo è, solleva un errore. Qui sotto un esempio semplice con output.
 
 ```Lua
--- Codice da testare
-function square(x)
-  return x * x
+-- file: simple_test.lua
+function add(a, b)
+  return a + b
 end
 
--- Test con busted
-busted.describe("Square function", function()
-  busted.it("Calculates the square of a number", function()
-    busted.assert.equals(square(3), 9)
-    busted.assert.equals(square(5), 25)
-  end)
-end)
+local test_result = add(5, 3)
+assert(test_result == 8, "Expected 8, got " .. test_result)
+print("Test passed! Risultato di add(5, 3) e' " .. test_result)
 ```
 
-L'output del test risulterà positivo se la funzione square calcolerà correttamente il quadrato dei numeri passati come argomento.
+Esegui questo test e vedrai:
 
-## Approfondimento:
-Scrivere test è una pratica comune in tutti i linguaggi di programmazione ed è diventato particolarmente importante nell'ambito dello sviluppo agile e del test-driven development (TDD). Grazie ai test, possiamo avere la sicurezza che il nostro codice funzioni correttamente e ci permette di fare cambiamenti con maggiore facilità.
+```
+Test passed! Risultato di add(5, 3) e' 8
+```
 
-Un'alternativa a busted è [luaunit](https://github.com/bluefoot/luaunit), che si basa sulle asserzioni di [JUnit](https://junit.org/). Inoltre, si possono anche utilizzare le asserzioni fornite dalla libreria di base di Lua.
+## Deep Dive
+I test automatici in Lua possono essere implementati con diversi framework, come LuaUnit o busted, che seguono il concetto di xUnit presente in altri linguaggi. Sono in uso da anni come parte delle pratiche di sviluppo del software e aiutano a mantenere la qualità del codice nel tempo. In alternativa ai framework, puoi usare semplici script con asserzioni per piccoli progetti.
 
-Per implementare i test nel proprio codice, è importante seguire alcune best practice come scrivere test atomici, il più possibile indipendenti tra loro, e utilizzare dati di test di input diversi per coprire tutti i casi possibili.
-
-## Vedi anche:
-- [JUnit](https://junit.org/): Libreria per scrivere test in Java
+## See Also
+- LuaUnit (https://github.com/bluebird75/luaunit)
+- busted (http://olivinelabs.com/busted/)
+- Articolo su Test-Driven Development (https://it.wikipedia.org/wiki/Test_driven_development)

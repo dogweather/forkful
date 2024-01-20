@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "C: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C"
 category:             "C"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?:
+## What & Why? (Co i dlaczego?)
+W C piszemy do standardowego błędu (stderr) by rozdzielić normalne dane wyjściowe od komunikatów o błędach. Daje to możliwość łapania i przekierowania ich do logów lub narzędzi do debugowania.
 
-W programowaniu, "wypisywanie do standardowego błędu" lub po prostu "wypisywanie na stderr" odnosi się do wysyłania komunikatów błędów lub innych informacji o błędach do standardowego strumienia błędów. Programiści wykorzystują to do informowania użytkowników o wystąpieniu błędów w programie i pomagają w ich zlokalizowaniu.
-
-## Jak to zrobić:
-
-```c
+## How to: (Jak to zrobić:)
+```C
 #include <stdio.h>
 
 int main() {
-
-    // Przykładowy kod, który wywołuje błąd
-    int number = 0;
-    int divisor = 0;
-
-    int result = number / divisor;
-
+    fprintf(stderr, "Coś poszło nie tak!\n");
     return 0;
 }
 ```
-
-W powyższym przykładzie, wywołanie błędu spowoduje wypisanie informacji o błędzie na stderr:
-
+Wyjście (przykładowe):
 ```
-Błąd dzielenia przez zero
+Coś poszło nie tak!
 ```
 
-## Głębokie zanurzenie:
+## Deep Dive (Głębsze zanurzenie)
+Histerycznie, `stderr` został wprowadzony, by oddzielić komunikaty o błędach od normalnego wyjścia programu (`stdout`). To umożliwia przekierowanie tylko tych dwóch rodzajów danych do różnych miejsc. Alternatywnie, można użyć biblioteki `syslog` na Unixach do logowania systemowego. `stderr` jest buforowanym niezależnie od `stdout`, co oznacza, że komunikaty o błędach pojawiają się od razu, a nie czekają na opróżnienie bufora.
 
-Istnieją różne sposoby wypisywania informacji o błędach w C, ale wypisywanie na stderr jest popularnym i ustandaryzowanym sposobem. Alternatywnie, programiści mogą wypisywać na standardowe wyjście (`printf()`), ale będzie to powodować mieszanie wiadomości o błędach z innymi danymi programu. Implementacja polega na wysłaniu ciągu znaków zawierającego informacje o błędzie do standardowego strumienia błędów.
-
-## Zobacz także:
-
-- [Dokumentacja funkcji `fprintf()`](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+## See Also (Zobacz też)
+- GNU C Library documentation on I/O streams: https://www.gnu.org/software/libc/manual/html_node/Streams.html
+- Advanced Programming in the UNIX Environment (APUE): Rozdziały o zarządzaniu I/O.
+- Stack Overflow - understanding stdout vs stderr: https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr

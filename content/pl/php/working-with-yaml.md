@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "PHP: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,67 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Praca z YAML w PHP: Informalne podejście do programowania
+## Co i dlaczego?
+YAML to ludzki język danych, popularny w konfiguracjach i plikach projektów. Programiści używają go ze względu na jego czytelność i prostotę obsługi przez różne języki programowania, w tym PHP.
 
-## Co i Dlaczego?
+## Jak to zrobić:
+Poniżej znajdziesz przykłady, jak obsłużyć YAML w PHP. Najpierw musisz zainstalować rozszerzenie yaml dla PHP, używając `pecl install yaml` lub `composer require symfony/yaml`.
 
-Praca z YAML w PHP polega na analizie i przetwarzaniu strukturalnych danych zapisanych w formacie YAML. Ten format jest popularny wśród programistów ze względu na czytelność i łatwość w analizie przez komputery. Wykorzystuje się go głównie do przechowywania konfiguracji, ustawień czy danych przechowywanych w plikach.
-
-## Jak to zrobić?
-
-Przykładowy kod w PHP do pracy z YAML może wyglądać następująco:
-
+**Odczyt YAML:**
 ```PHP
-// Wgranie biblioteki
-require_once 'symfony/yaml';
+<?php
+require 'vendor/autoload.php';
 
-// Odczytanie pliku YAML
-$data = Symfony\Component\Yaml\Yaml::parse(file_get_contents('example.yaml'));
+use Symfony\Component\Yaml\Yaml;
 
-// Wyświetlenie danych
-var_dump($data);
+$yamlContent = <<<YAML
+- just: another YAML
+- example:
+    - with: multiple
+      values
+YAML;
+
+$data = Yaml::parse($yamlContent);
+print_r($data);
 ```
 
-Przykładowy plik YAML, z którego zostaną odczytane dane w powyższym kodzie, może wyglądać następująco:
-
-```YAML
-# Example YAML file
-title: "Working with YAML in PHP"
-author: "John Smith"
-categories:
-  - PHP
-  - YAML
-  - Programming
+**Output:**
+```
+Array
+(
+    [0] => Array
+        (
+            [just] => another YAML
+        )
+    [1] => Array
+        (
+            [example] => Array
+                (
+                    [0] => Array
+                        (
+                            [with] => multiple
+                            [values] => 
+                        )
+                )
+        )
+)
 ```
 
-Wyjście po przetworzeniu takiego pliku będzie następujące:
-
+**Zapis do YAML:**
 ```PHP
-array(3) {
-  ["title"]=>
-  string(25) "Working with YAML in PHP"
-  ["author"]=>
-  string(10) "John Smith"
-  ["categories"]=>
-  array(3) {
-    [0]=>
-    string(3) "PHP"
-    [1]=>
-    string(4) "YAML"
-    [2]=>
-    string(11) "Programming"
-  }
-}
+<?php
+require 'vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+$array = [
+    'foo' => 'bar',
+    'bar' => ['baz', 'qux']
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
 ```
 
-## Wnikliwe podejście
+**Output:**
+```
+foo: bar
+bar: [baz, qux]
+```
 
-YAML został wprowadzony w 2001 roku i jest skrótem od "YAML Ain't Markup Language". Jego celem było stworzenie formatu, który byłby łatwiejszy w zapisie i odczycie przez człowieka, ale także maszyny. Alternatywą dla formatu YAML są między innymi XML i JSON, jednak YAML wyróżnia się swoją prostotą i czytelnością. W implementacji PHP można wykorzystać bibliotekę symfony/yaml, która oferuje funkcje do analizy i przetwarzania plików YAML.
+## Deep Dive
+YAML, który oznacza "YAML Ain't Markup Language", pojawił się w 2001 roku jako alternatywa dla XML. Pomimo wolniejszej wydajności niż JSON oraz ograniczonej obsługi binarnych danych, jego przejrzystość ułatwia zarządzanie konfiguracją. W PHP YAML można obsługiwać zarówno przez native PECL extension, jak i biblioteki, takie jak Symfony YAML. Zawsze warto sprawdzać kompatybilność wersji bibliotek z PHP i być świadomym potencjalnych problemów z bezpieczeństwem podczas ładowania niezaufanego YAML.
 
-## Zobacz również
-
-Dla więcej informacji o formacie YAML i sposobach jego wykorzystania, zapoznaj się z dokumentacją:
-
-- [Oficjalna strona YAML](https://yaml.org/)
-- [Biblioteka symfony/yaml](https://symfony.com/doc/current/components/yaml.html)
-- [Tutorial: Praca z YAML w PHP](https://www.php.net/manual/en/function.yaml-parse.php)
+## Zobacz też:
+- [Symfony YAML Component Documentation](https://symfony.com/doc/current/components/yaml.html)
+- [The Official YAML Website](https://yaml.org)

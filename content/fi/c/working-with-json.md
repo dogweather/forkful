@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "C: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+JSON, eli JavaScript Object Notation, on kevyt dataformaatti tiedon vaihtoon. Ohjelmoijat käyttävät JSONia, koska se on yksinkertainen, ihmisen luettava ja se integroituu saumattomasti useimpiin ohjelmointikieliin, kuten C:hen.
 
-JSON (JavaScript Object Notation) on yksinkertainen ja kevyt tapa tallentaa ja jakaa tietoa eri sovellusten välillä. Se on tekstimuotoinen, mikä tekee siitä helpon lukea ja kirjoittaa. JSONia käytetään usein verkkosovelluksissa tiedon siirtämiseen, kuten API-kutsuissa.
-
-## Miten:
-
-Hyödyllinen tapa käsitellä JSONia C-ohjelmoinnissa on käyttää JSON-C -kirjastoa. Kirjasto tarjoaa joukon toimintoja, joilla voit muuntaa JSON-muotoista dataa C:n sisäiseen tietorakenteeseen ja takaisin. Alla on yksinkertainen esimerkki JSON-tiedoston lukemisesta ja tulostamisesta C-koodilla.
+## How to: (Miten tehdään:)
+C-kielisessä ohjelmoinnissa JSON-dataa käsitellään kirjastoilla. Yleinen kirjasto on `cJSON`. Aloitetaan cJSON:n asennus ja JSONin luonti.
 
 ```C
 #include <stdio.h>
-#include <json-c/json.h>
+#include "cJSON.h"
 
-int main()
-{
-    struct json_object *myobj;
-    struct json_object *field;
-    myobj = json_object_from_file("data.json"); // avaa JSON-tiedosto
-    field = json_object_object_get(myobj, "name"); // muuta "nimi" -kenttä C:n tietotyyppiin
-    printf("Tervetuloa %s!\n", json_object_get_string(field)); // tulosta "nimi" -kentän arvo
-    json_object_put(myobj); // vapauta muisti
+int main() {
+    // Luo uusi JSON-objekti
+    cJSON *user = cJSON_CreateObject();
+    
+    if(user == NULL) {
+        goto end;
+    }
+    
+    // Lisää data JSON-objektiin
+    cJSON_AddNumberToObject(user, "id", 1234);
+    cJSON_AddStringToObject(user, "name", "Mikko");
+
+    // Tulosta JSON merkkijonona
+    char *user_string = cJSON_Print(user);
+    if(user_string == NULL) {
+        goto end;
+    }
+    
+    printf("%s\n", user_string);
+    
+    // Vapauta muisti
+    end:
+    cJSON_Delete(user);
+    free(user_string);
+    
     return 0;
 }
 ```
 
-Tulos tulostetaan seuraavasti, kun tiedoston JSON-tiedosto sisältää kentän "name" arvon "Matti":
+Kun ajat ohjelmaa, tuloste näyttää tältä:
 
+```plaintext
+{
+    "id":1234,
+    "name":"Mikko"
+}
 ```
-Tervetuloa Matti!
-```
 
-## Syvemmälle:
+## Deep Dive (Syväluotaus)
+JSON syntyi 2000-luvun alussa, ja siitä tuli nopeasti suosittu XML:n hankaluuden rinnalla. C-kielen kirjastoja, kuten cJSON ja Jansson, käytetään JSON-tiedon käsittelyyn C-ohjelmissa. Kirjastojen sisäiset toiminnot käyttävät usein mallia, missä muistinhallinta on ohjelmoijan vastuulla. Käytettäessä näitä kirjastoja, varmista, että vapautat kaiken varatun muistin.
 
-JSON kehitettiin alunperin käytettäväksi JavaScript-sovelluksissa, mutta nykyään sitä käytetään monissa muissakin ohjelmointikielissä, kuten C:ssä. On myös olemassa muita vaihtoehtoisia kirjastoja, kuten yleisesti käytetty cJSON.
-
-JSON-muoto on helposti luettavissa ja muokattavissa ihmisille, ja se mahdollistaa monimutkaisenkin datan tallentamisen yksinkertaisella rakenteella. JSON-tiedosto sisältää objekteja, joilla on avain-arvo -pareja. Esimerkiksi "name": "Matti" tarkoittaa, että objektilla on avain "name" ja sen arvo on "Matti".
-
-## Katso myös:
-
-- [JSON-C](https://github.com/json-c/json-c) - Kirjasto JSONin käsittelyyn C-ohjelmoinnissa.
-- [cJSON](https://github.com/DaveGamble/cJSON) - Yleinen JSON-kirjasto C-ohjelmointiin.
-- [JSON.org](https://www.json.org) - JSON:in virallinen verkkosivusto.
+## See Also (Katso Myös)
+- cJSON GitHub-repo: https://github.com/DaveGamble/cJSON
+- Jansson-kirjaston dokumentaatio: http://www.digip.org/jansson/
+- JSON-standardin virallinen verkkosivusto: https://www.json.org/json-en.html

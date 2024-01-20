@@ -1,6 +1,6 @@
 ---
 title:                "עבודה עם YAML"
-html_title:           "PowerShell: עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
 simple_title:         "עבודה עם YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+YAML הוא פורמט נתונים מבוסס טקסט שמתאפיין בקריאות לעין האנושית. תכניתנים עובדים עם YAML כדי להגדיר תצורה, יצירת תבניות ונתונים סטטיים באופן נוח ויעיל.
 
-לעבוד עם YAML היא פעולה שחשובה מאוד למתכנתים. יחד עם זאת היא בסיסית ופשוטה לשימוש. YAML היא אקרונים ל"רשימות בסיסיות מסודרות", היא מסייעת לנו לפתור בעיות קשות כגון כתיבת קוד מחדש ושינויים בהגדרות הנדרשות לפרויקטים מסוימים. מתכנתים משתמשים ב YAML לשם כתיבה של מידע מורכב בצורה קריאה וברורה, זה מאפשר להם להיות זמינים למעקב אחר המידע ולשמור על סדר בפרויקטים.
+## איך לעשות:
+```PowerShell
+# טעינת נתוני YAML מקובץ
+$yamlContent = Get-Content -Path 'config.yaml' -Raw
+$yamlObject = ConvertFrom-Yaml $yamlContent
 
-## איך לעבוד עם זה?
+# עריכת אובייקט
+$yamlObject.database.port = 3307
 
-קוד ודוגמאות שמציגים איך לעבוד עם YAML בפווורשל בתוך בלוקי קוד ```PowerShell ... ``` 
-
-קישורי קידוף:
-- לשלוח נתונים לקובץ YAML צריך להשתמש בפקודת ```Out-Yaml```: 
-```
-Get-Process | Select-Object Name, ID, CPU | Out-Yaml C:\Users\Admin\Desktop\processes.yaml
-```
-
-- לקריאת נתונים מקובץ YAML ניתן להשתמש בפקודת ```ConvertFrom-Yaml```:
-```
-Get-Content -Path C:\Users\Admin\Desktop\processes.yaml | ConvertFrom-Yaml
+# ייצוא נתונים לקובץ YAML
+$yamlObject | ConvertTo-Yaml | Set-Content -Path 'updated_config.yaml'
 ```
 
-## מסורת עמוקה
+הפלט:
+```yaml
+# updated_config.yaml
+database:
+  host: localhost
+  port: 3307
+  name: my_database
+```
 
- YAML פותחה כדי להיות פורמט לנתונים מבוסס מסנן. היום היא מיושמת כרכיב סטנדרטי ברוב תכניות הקוד של בינתיים שונות כדי לאחסן מידע מורכב ההותאם בצורה קלילה.
+## עיון נוסף
+בעבר, תכניתנים ניזונו בעיקר מ-XML לתצורה. YAML, שהומצא בתחילת שנות ה-2000, הפך לאלטרנטיבה פופולרית בזכות פשטותו. היום, ישנן ספריות רבות ב-PowerShell לעבודה עם YAML, כמו `powershell-yaml` שמייצגת את המימוש הנפוץ ביותר. בחלופה ל-YAML ישנם פורמטים כמו JSON או TOML.
 
-אפשר למצוא מספר אלטרנטיבות ל ימל בתוכניות שונות תכניות שונות, בינהם נפוץ שלהם הוא XML למעשה.
-
-YAML מאפשר למתכנת לעבד נתונים בפורמט אנושי וקריא, וזה ניתן לפתור בעיות המתמשרמות לעבודה כדי ליצור יותר נוח של נתונים ׏מורכבים.
-
-## ראה גם
-
-למידע נוסף על YAML בפואוורשל, ניתן להציץ באתר המפתחים של Microsoft בנושא - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-yaml?view=powershell-6
+## ראו גם:
+- [תיעוד ה-PowerShell-Yaml Module](https://github.com/cloudbase/powershell-yaml)
+- [מבוא ל-YAML](https://learnxinyminutes.com/docs/yaml/)

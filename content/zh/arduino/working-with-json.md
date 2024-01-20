@@ -1,7 +1,7 @@
 ---
-title:                "使用json进行编程"
-html_title:           "Arduino: 使用json进行编程"
-simple_title:         "使用json进行编程"
+title:                "处理JSON数据"
+html_title:           "Arduino: 处理JSON数据"
+simple_title:         "处理JSON数据"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是JSON & 为什么需要它？
+## What & Why? (是什么 & 为什么？)
+处理JSON是指在Arduino中解析和生成JSON格式的数据。程序员这么做是为了方便数据交换，特别是在与APIs交互、物联网(IoT)项目中。
 
-JSON是一种实用的数据格式，通常由程序员用于存储和传输数据。它是一种轻量级的数据格式，可以轻松地被解析和操作。程序员选择使用JSON是因为它可以帮助他们更有效地存储和处理数据。
+## How to: (如何操作)
+首先，你需要安装一个叫做ArduinoJson的库。使用Arduino IDE的库管理器或直接下载然后添加到你的项目中。
 
-## 如何使用JSON：
+```arduino
+#include <ArduinoJson.h>
 
-下面是一个简单的示例，演示如何在Arduino中使用JSON。首先，我们需要创建一个JSON对象并填充一些数据，然后使用Arduino的JSON库将其格式化为JSON字符串。
+void setup() {
+  Serial.begin(9600);
+  // JSON对象
+  const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
 
+  // 分配内存池
+  StaticJsonDocument<200> doc;
+  
+  // 解析JSON
+  DeserializationError error = deserializeJson(doc, json);
+
+  // 解析检查
+  if (error) {
+    Serial.print("deserializeJson() failed with code ");
+    Serial.println(error.c_str());
+    return;
+  }
+
+  // 提取值
+  const char* sensor = doc["sensor"];
+  long time = doc["time"];
+  float latitude = doc["data"][0];
+  float longitude = doc["data"][1];
+
+  // 打印值到串行监视器
+  Serial.print("Sensor: ");
+  Serial.println(sensor);
+  Serial.print("Time: ");
+  Serial.println(time);
+  Serial.print("Latitude: ");
+  Serial.println(latitude, 6);
+  Serial.print("Longitude: ");
+  Serial.println(longitude, 6);
+}
+
+void loop() {
+  // 这里不做循环处理
+}
 ```
-ArduinoJson::JsonObject json; // 创建一个JSON对象
 
-json["name"] = "John"; // 向JSON中添加键值对
-json["age"] = 30;
-
-String jsonStr; // 定义一个字符串变量来存储JSON数据
-json.printTo(jsonStr); // 将JSON对象格式化为字符串
-
-Serial.println(jsonStr); // 输出JSON字符串到串口
-
+代码将输出：
+```
+Sensor: gps
+Time: 1351824120
+Latitude: 48.756080
+Longitude: 2.302038
 ```
 
-上面的代码将输出以下内容：```{"name":"John","age":30}```
+## Deep Dive (深入了解)
+JSON，即JavaScript Object Notation，是一种轻量级数据交换格式。在2001年被发明出来，很快成为了Web API的标准格式。尽管Arduino不运行JavaScript，但ArduinoJson库让处理JSON成为可能。对比XML等其他数据格式，JSON更紧凑、解析更快。ArduinoJson是Arduino生态里常用的JSON库，但还有其他的选择比如JsonStreamingParser。
 
-## 深入了解：
-
-JSON最初由Douglas Crockford在2001年提出，它现在已成为前端开发中最常用的数据格式之一。在使用JSON之前，程序员常常使用XML来存储和传输数据。但是，XML需要更多的代码和处理时间，而JSON则更加轻量级和易于使用。
-
-除了Arduino自带的JSON库，还有许多其他的JSON库可供选择，比如ArduinoJson和ArduinoJsonLite。每个库都有各自的优势和特点，程序员可以根据自己的需求来选择最适合的库。
-
-## 相关资源：
-
-- [ArduinoJson库官方文档](https://arduinojson.org/)
+## See Also (另请参阅)
+- ArduinoJson官方文档（超详细）: https://arduinojson.org/
+- ArduinoJson GitHub仓库（获取代码）: https://github.com/bblanchon/ArduinoJson
+- JSON官方网站（学习JSON）: https://www.json.org/json-en.html
+- Arduino官方网站（探索更多）: https://www.arduino.cc/

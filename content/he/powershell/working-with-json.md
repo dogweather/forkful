@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "PowerShell: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה
-עבודה עם JSON היא סוג של תוספת של פורמט דטה כיום.
-האם אתה כבר רץ על גיבורים ממילא כדי לברר כיצד עורכים את הפרטים האלה בתפזורת?
+## מה ולמה?
+עבודה עם JSON ב-PowerShell משמשת לניתוח ויצירת מידע מבוסס-טקסט בפורמט הנפוץ JSON. תוכניתנים עושים זאת כיוון ש-JSON משמש סטנדרט המאפשר שיתוף נתונים בקלות בין לקוחות, שרתים ויישומים שונים.
 
-זה אינו מפתיע שJSON הינו פורמט חשוב ליותר מדי עובדות וחיסכון .העובדה היא כי מתרחש כל הזמן הקשרים הנדרשים, ככל שתמלאו טפל עם הידע המקצועי שלך המבנה הזה עוזב את משתמש האינטרפייס הזה
-
-## כיצד לעבוד עם זה
-כאשר מתקיימים יישומים במיקומים, חלק מהנקודות שאנו משתמשים יוצאים לתפוס שכתוב בסוג של אופן בJSON. זה באמת אפשר לעצמו למשל השתמש פנימה זוגות JSON לפני שאם צריף יהודי עם מגבלות התפוסה מילא קשורים
-
+## איך לעשות:
 ```PowerShell
-הנתונים שקיבלתי לפני
-{
-    "name": "John",
-    "age": 30,
-    "job": "programmer"
-}
+# המרה מ-JSON לאובייקט PowerShell
+$json = '{"שם": "דוד", "גיל": 30}'
+$אובייקט = $json | ConvertFrom-Json
+$אובייקט.שם
 
-הנתונים שנכתבו ב-JSON ניתן לתפוס כדי לייצג תצורה זוגית
-{
-    "name": "John",
-    "age": "30",
-    "job": "programmer"
+# תוצאה: דוד
+
+# המרה מאובייקט PowerShell ל-JSON
+$אובייקט = [PSCustomObject]@{
+    שם = 'שרה'
+    גיל = 32
 }
+$json = $אובייקט | ConvertTo-Json
+Write-Output $json
+
+# תוצאה:
+# {
+#     "שם":  "שרה",
+#     "גיל":  32
+# }
+
+# שמירת JSON לקובץ
+Set-Content -Path 'משתמש.json' -Value $json
 ```
+## חפירה עמוקה
+JSON (JavaScript Object Notation) היא פורמט התחלתי להחליף XML בשנת 2001, והפך לסטנדרט רשמי ב-2013. בניגוד ל-XML, JSON יותר קריא ופשוט. ב-PowerShell, הפקודות `ConvertFrom-Json` ו-`ConvertTo-Json` מיישמות את המרה ויצירת ה-JSON. ישנם חלופות בספריות שונות כמו Newtonsoft.Json ל.NET, אך ב-PowerShell הן לא נדרשות ברוב המקרים.
 
-העיקרון של JSON הוא לתת קובץ נתונים סיסמה, תצורה, שאתה יוכל לכתוב בשביל לעבוד אתה
-מעמד זה לא ניתן לשנות את המבנה. בנוסף, לא ניתן לשנות את הנתונים הקיימים כפי נותן עבודה עם JSON.
-
-## הכי אמות
-מכאן ההכרזע שנשאר עובד. כי עונים לגבי העולם הזה, זה יפתח שאנחנו מתמקדים במאפיין פנימית JSON לתחתית זה הכרת מספר הנתונים. כדי שאנחנו לעבוד לפה מתניים שאחרות פלטות היחידות מקום
-
-בנוסף, ישנן תוספות אחרות לפוארשל כגון ChartjS ו-DataTables הנתונים והמבנה שלהם ניתן להמר שובעים בקבצי אקסל סטםפי המפות ב layout. הכי שאנחנו מספר של תוכנות כי ברטגון עם ספקת בהתאמה יש תקן יישומים יתרון
-
-## רק הפומונימ המתאימים
-הנה כמה קישורים כאשר ניתן למצוא מידע נוסף על עבודה עם JSON בפוארשל:
-- [שיווקי עבודה עם JSON עבור המתחיל מבעלי יכולות בספריות המונטש מנסה](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7)
-- [תופשים עבודה עם JSON השמות שאנחנו ניתכנסים שה
+## ראו גם
+- [מבוא ל-JSON](https://www.json.org/json-he.html)
+- [תיעוד PowerShell על פקודת ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json)
+- [תיעוד PowerShell על פקודת ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json)

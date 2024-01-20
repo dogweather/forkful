@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "PowerShell: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Zapisywanie pliku tekstowego to po prostu zapisywanie danych w formie czytelnej dla człowieka na dysku. Programiści robią to dla przechowywania konfiguracji, logowania zdarzeń lub wymiany danych z innymi programami.
 
-Pisanie plików tekstowych to podstawowa umiejętność każdego programisty. Jest to prosta forma zapisu informacji, która może być wykorzystana w wielu różnych celach. Programiści często używają plików tekstowych do przechowywania danych, konfiguracji czy wyświetlania wyników swoich programów.
-
-## Jak to zrobić:
-
+## How to:
+Zapisz tekst do pliku:
 ```PowerShell
-# Tworzenie nowego pliku tekstowego o nazwie "hello.txt" z wprowadzonym tekstem
-New-Item "hello.txt" -ItemType File -Value "Witaj świecie!"
-
-# Dodawanie tekstu do istniejącego pliku tekstowego
-Add-Content "hello.txt" "Dodatkowy tekst"
-
-# Odczytywanie zawartości pliku tekstowego
-Get-Content "hello.txt"
+$text = "Cześć, to jest test!"
+Set-Content -Path "C:\temp\mojPlik.txt" -Value $text
 ```
 
-Wynik:
+Dodaj tekst do istniejącego pliku:
 ```PowerShell
-Witaj świecie!
-Dodatkowy tekst
+Add-Content -Path "C:\temp\mojPlik.txt" -Value "Dodajemy nową linię tekstu."
 ```
 
-## Deep Dive:
+Zapisz tablicę jako wiersze w pliku:
+```PowerShell
+$linie = "Pierwsza linia", "Druga linia", "Trzecia linia"
+$linie | Out-File -FilePath "C:\temp\mojPlik.txt"
+```
 
-Pisanie plików tekstowych jest jednym z najprostszych sposobów na przechowywanie informacji w formie tekstu. Jest to też najczęściej wykorzystywany format do zapisu danych. Pliki tekstowe są łatwe w odczytywaniu przez człowieka i nie wymagają specjalistycznych narzędzi do ich przetworzenia.
+Oto jak tekst pojawi się w pliku `C:\temp\mojPlik.txt`:
+```
+Cześć, to jest test!
+Dodajemy nową linię tekstu.
+Pierwsza linia
+Druga linia
+Trzecia linia
+```
 
-Alternatywnym sposobem na przechowywanie informacji jest używanie baz danych, które oferują bardziej zaawansowane funkcje. Jednak pisanie plików tekstowych jest szybsze i prostsze w implementacji.
+## Deep Dive
+Historia: PowerShell wprowadził uproszczenie automatyzacji zadań w Windows, w tym zapisywanie plików tekstowych, co było możliwe wcześniej za pomocą notatnika i skryptów bat.
+Alternatywy: Oprócz `Set-Content` i `Add-Content`, można używać `[System.IO.File]::WriteAllText()` lub `[System.IO.File]::AppendAllText()`, które są metodami .NET Framework.
+Szczegóły: `Set-Content` nadpisuje zawartość, a `Add-Content` dodaje do istniejącego pliku. `Out-File` ma dodatkowe opcje, jak `-Encoding` do wyboru kodowania pliku.
 
-## Zobacz także:
-
-[PowerShell - Skrypty w praktyce](https://docs.microsoft.com/pl-pl/powershell/scripting/overview?view=powershell-7.1)
-
-[Podstawowe operacje na plikach w PowerShell](https://www.jitbit.com/alexblog/249-how-to-read-and-write-to-files-in-powershell/)
-
-[Pisanie plików tekstowych w Pythonie](https://realpython.com/read-write-files-python/)
+## See Also
+- Oficjalna dokumentacja PowerShell od Microsoft: https://docs.microsoft.com/powershell/
+- Praca z plikami i folderami w PowerShell: https://docs.microsoft.com/powershell/scripting/samples/working-with-files-and-folders?view=powershell-7.1
+- Poradnik Microsoft do obsługi ciągów tekstowych: https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-strings?view=powershell-7.1

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers CSV"
-html_title:           "C++: Travailler avec les fichiers CSV"
-simple_title:         "Travailler avec les fichiers CSV"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-
-CSV (Comma-Separated Values) est un format de fichier couramment utilisé pour stocker et échanger des données tabulaires. En tant que programmeurs, nous travaillons souvent avec des fichiers CSV car ils sont faciles à lire et à écrire, et qu'ils peuvent être ouverts dans de nombreux programmes tels que Microsoft Excel.
+## Quoi & Pourquoi?
+Manipuler des CSV, c'est jouer avec du texte structuré: valeurs séparées par des virgules, souvent pour des datas. Les dev s'en servent pour importer/exporter des données facilement entre des apps, des bases de données, et pour le traitement de données.
 
 ## Comment faire:
-
-Voici un exemple simple de lecture et d'impression d'un fichier CSV en utilisant C++:
-
-```
+```C++
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <sstream>
+
+// Lecture d'un fichier CSV
+void lireCSV(const std::string& fichier) {
+    std::ifstream file(fichier);
+    std::string ligne;
+    while (getline(file, ligne)) {
+        std::stringstream ss(ligne);
+        std::string donnee;
+        while (getline(ss, donnee, ',')) {
+            std::cout << donnee << "\t";
+        }
+        std::cout << std::endl;
+    }
+}
+
+// Écriture dans un fichier CSV
+void ecrireCSV(const std::string& fichier, const std::vector<std::vector<std::string>>& data) {
+    std::ofstream file(fichier);
+    for(const auto& ligne : data) {
+        for(size_t i = 0; i < ligne.size(); ++i) {
+            file << ligne[i];
+            if (i < ligne.size() - 1) file << ',';
+        }
+        file << std::endl;
+    }
+}
 
 int main() {
-  std::ifstream fichier("exemple.csv");
-  std::string ligne;
+    // À remplacer par votre chemin de fichier
+    const std::string fichierLecture = "data.csv";
+    const std::string fichierEcriture = "output.csv";
 
-  while (getline(fichier, ligne)) { 
-    std::cout << ligne << std::endl;
-  }
-  fichier.close(); 
-  return 0; 
+    lireCSV(fichierLecture);
+
+    std::vector<std::vector<std::string>> data = {
+        {"nom", "age", "ville"},
+        {"Alice", "24", "Paris"},
+        {"Bob", "30", "Lyon"}
+    };
+
+    ecrireCSV(fichierEcriture, data);
+    return 0;
 }
 ```
-
-Output:
-
+Sortie (pour la lecture de "data.csv"):
 ```
-nom,prenom,age
-Doe,John,25
-Smith,Jane,30
-Brown,Mike,40
+nom   age   ville   
+Alice 24    Paris   
+Bob   30    Lyon   
 ```
 
-## Plongée en profondeur:
-
-Le format CSV a été créé dans les années 1970 pour faciliter l'échange de données entre programmes. Il est souvent utilisé pour stocker de grandes quantités de données, telles que des bases de données ou des listes de contacts.
-
-Bien qu'il soit largement utilisé et pris en charge par de nombreux programmes et langages de programmation, il existe des alternatives telles que JSON ou XML pour stocker et échanger des données tabulaires. Cependant, CSV reste populaire en raison de sa simplicité et de sa compatibilité.
-
-Pour travailler avec des fichiers CSV en C++, vous pouvez utiliser des bibliothèques tierces telles que [csv-parser] (https://github.com/victronenergy/csv-parser), qui offrent des fonctionnalités supplémentaires telles que la conversion de données en structures C++ ou la manipulation de colonnes spécifiques.
+## Pour aller plus loin:
+Le CSV est vieux (années 70), mais tient bon grâce à sa simplicité. Des alternatives modernes existent, comme JSON ou XML, mais CSV reste top pour de gros volumes de données ou l'interopérabilité avec des tableurs. En C++, manipuler des CSV est souvent manuel, mais on peut utiliser des bibliothèques comme `csv-parser` pour plus de fonctionnalités.
 
 ## Voir aussi:
-
-- [Tutorialspoint: Working with CSV files in C++](https://www.tutorialspoint.com/working-with-c-plus-plus-csv-files)
+- [cppreference.com](https://en.cppreference.com/w/): Documentation C++ standard.
+- [GitHub - csv-parser](https://github.com/vincentlaucsb/csv-parser): Une bibliothèque moderne pour lire et écrire des CSV en C++.
+- [Stack Overflow](http://stackoverflow.com/): Pour des questions/réponses sur des problèmes précis de codage CSV en C++.

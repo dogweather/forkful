@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "C#: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-
-Ao escrever um programa, é comum que os desenvolvedores queiram imprimir mensagens para informar o usuário sobre o que está acontecendo no código. No entanto, nem todas essas mensagens são importantes o suficiente para serem mostradas na saída padrão (standard output). É aqui que entra a escrita para o erro padrão (standard error). Esse método de impressão é usado para mostrar mensagens de erro e outros tipos de informação que podem ajudar os desenvolvedores a entenderem melhor o funcionamento do programa.
+## O Que & Porquê?
+Escrever no erro padrão significa mandar mensagens de erro pro fluxo de saída específico pra erros, diferente do fluxo de saída padrão. Programadores fazem isso para separar erros dos dados normais de saída, facilitando diagnósticos e logging.
 
 ## Como fazer:
-
-A maneira mais comum de escrever para o erro padrão em C# é usando o objeto "Console" e o método "Error". O seguinte trecho de código mostra como fazer isso:
+Vamos escrever uma mensagem simples para o erro padrão e uma para a saída padrão, pra ver a diferença.
 
 ```C#
-Console.Error.WriteLine("Esta é uma mensagem de erro!");
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Olá, mundo!"); // Saída padrão
+        Console.Error.WriteLine("Ops, ocorreu um erro!"); // Erro padrão
+    }
+}
 ```
 
-O código acima irá imprimir a mensagem entre as aspas na saída de erro. Aqui está um exemplo de como o resultado pode aparecer:
+Quando executar isso, "Olá, mundo!" vai para a saída padrão e "Ops, ocorreu um erro!" para o erro padrão. Se tu redirecionar esses fluxos para arquivos, vais ver claramente a separação:
 
-```bash
-Esta é uma mensagem de erro!
+```shell
+dotnet run > saida.txt 2> erro.txt
 ```
 
-## Mergulho Profundo:
+## Aprofundando
+Historicamente, fluxos de saída e erro padrão vêm do UNIX, permitindo que mensagens de erro sejam separadas dos dados de saída. Alternativas incluem logging frameworks como log4net e NLog, que oferecem mais controle e opções. Na implementação, `Console.Error` é um `TextWriter` - o mesmo tipo de `Console.Out`, mas aponta para o fluxo de erro padrão.
 
-A escrita para o erro padrão é uma técnica amplamente utilizada em programação. Ela foi introduzida para ajudar os desenvolvedores a lidar com erros e outras questões do programa de forma mais eficaz. No entanto, é importante observar que existem alternativas para a escrita para o erro padrão. Uma opção é usar o log de eventos do sistema operacional, que pode ser útil para questões de monitoramento e depuração.
-
-Falando em implementação, a escrita para o erro padrão é feita usando a interface de programação "Console". Este objeto é definido na biblioteca padrão de C# e fornece métodos para a entrada e saída de dados. O método "Error" é usado especificamente para escrever mensagens de erro na saída de erro.
-
-## Veja também:
-
-- [Documentação oficial do Console.Error](https://docs.microsoft.com/pt-br/dotnet/api/system.console.error?view=net-5.0)
-- [Vídeo tutorial sobre como usar a saída de erro em C#](https://www.youtube.com/watch?v=c-wpWzmIOGo)
+## Veja também
+- Documentação do .NET sobre a classe Console: [Console Class (System)](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-6.0)
+- Um artigo sobre a diferença entre saída padrão e erro padrão: [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
+- Documentação sobre o log4net: [Apache log4net - Apache Logging Services](https://logging.apache.org/log4net/)
+- Documentação do NLog: [NLog - Advanced and Structured Logging for Various .NET Platforms](https://nlog-project.org/documentation)

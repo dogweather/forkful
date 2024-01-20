@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Bash: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Les fichiers CSV (valeurs séparées par des virgules) stockent des données tabulaires sous une forme texte simple, ce qui en fait un format commun pour échanger des données entre applications. Les programmeurs utilisent souvent des scripts Bash pour manipuler ces fichiers car c'est rapide et efficace pour des tâches de manipulation de texte.
 
-Travailler avec des fichiers CSV est souvent une tâche courante pour les programmeurs. CSV (Comma-Separated Values) est un format de fichier largement utilisé pour stocker des données tabulaires, telles que des listes de produits ou des données de vente. Les programmeurs utilisent des outils comme Bash pour manipuler ces fichiers et extraire des informations utiles.
-
-## Comment faire:
-
-Pour démarrer, vous aurez besoin d'un fichier CSV à manipuler. Voici un exemple de fichier CSV avec des données sur les ventes de produits:
-
+## How to: (Comment faire :) 
 ```Bash
-Produit, Prix, Quantité vendue
-Chemise, $20, 50
-Pantalon, $35, 30
-Chaussures, $50, 20
+# Lire un fichier CSV
+while IFS=, read -r col1 col2 col3; do
+  echo "Colonne 1: $col1 - Colonne 2: $col2 - Colonne 3: $col3"
+done < fichier.csv
+
+# Exemple de sortie:
+# Colonne 1: valeur1 - Colonne 2: valeur2 - Colonne 3: valeur3
+
+# Ajouter une ligne à un fichier CSV
+echo "nouvelle_valeur1,nouvelle_valeur2,nouvelle_valeur3" >> fichier.csv
+
+# Trier un fichier CSV par la deuxième colonne
+sort -t, -k2 fichier.csv
 ```
 
-Pour extraire des informations spécifiques de ce fichier, vous pouvez utiliser des commandes Bash comme `cut` et `grep`. Par exemple, si vous voulez connaître le prix total des ventes de chaussures, vous pouvez utiliser la commande suivante:
+## Deep Dive (Plongée Profonde)
+Les fichiers CSV ont été largement adoptés dans les années 1970 comme moyen facile de transférer des tables de données entre différents programmes. Des alternatives, comme le format JSON ou XML, permettent de représenter des données plus complexes, mais le CSV reste populaire en raison de sa simplicité. La manipulation de CSV en Bash est généralement facilitée par les commandes UNIX comme `cut`, `sort`, `awk`, qui offrent une grande flexibilité.
 
-```Bash
-cut -d, -f2,3 produits.csv | grep "Chaussures" | awk '{total+=$1*$2} END {print total}'
-```
-
-Cette commande utilise `cut` pour sélectionner la deuxième et la troisième colonne (prix et quantité) et `grep` pour ne sélectionner que les lignes qui ont "Chaussures" dans la première colonne (produit). Ensuite, la commande `awk` est utilisée pour calculer le prix total des ventes de chaussures en multipliant le prix par la quantité et en ajoutant le résultat pour toutes les lignes sélectionnées.
-
-La sortie devrait ressembler à ceci:
-
-```
-$1000
-```
-
-## Plongée en profondeur:
-
-Le format CSV a été introduit pour la première fois en 1972 et est devenu populaire en tant que moyen simple et universel pour stocker et échanger des données tabulaires. Bien qu'il soit largement utilisé, il n'est pas le seul format de fichier pour les données tabulaires. Des alternatives telles que JSON et XML sont également couramment utilisées.
-
-Pour travailler avec des fichiers CSV en Bash, vous pouvez également utiliser des outils tels que `awk` et `sed`, qui offrent une grande flexibilité pour manipuler des données. De plus, il existe des librairies de traitement de CSV disponibles pour des langages de programmation tels que Python et R.
-
-## Voir aussi:
-
-- [Documentation sur les outils Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Guide de référence des commandes Bash](https://www.tldp.org/LDP/abs/html/abs-guide.html)
+## See Also (Voir Aussi)
+- [GNU Coreutils](https://www.gnu.org/software/coreutils/coreutils.html): Utilitaires de base pour la manipulation de texte.
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/): Manuel de référence pour Bash.
+- [AWK Manual](https://www.gnu.org/software/gawk/manual/): Manuel pour AWK, un langage de traitement de texte.

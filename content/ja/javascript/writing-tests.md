@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラムの「テスト作成」"
-html_title:           "Javascript: コンピュータプログラムの「テスト作成」"
-simple_title:         "コンピュータプログラムの「テスト作成」"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ?
-テストというのは、単純に言えばプログラムの動作を確認する作業です。プログラマーたちは、バグを防ぎ、安定したソフトウェアを作るために、テストを行います。
+## What & Why? (テストを書くとは？ & なぜ？)
+JavaScriptでテストを書くとは、コードが期待通りに動くか検証する過程です。これにより、バグの発見、リファクタリングの容易さ、そして将来的な機能追加に対する信頼性が高まります。
 
-## 作り方:
-以下のように、```Javascript ... ``` のコードブロック内にコーディングの例と出力を示します。
-```
-// テストする関数
-function calculate(x, y) {
-  return x + y;
+## How to: (方法)
+以下はJestを使ったテストの例です。このライブラリはシンプルで人気があるため、紹介します。
+
+```javascript
+// sum.js
+function sum(a, b) {
+  return a + b;
 }
-// テストケースと期待結果
-let input1 = 3;
-let input2 = 5;
-let expectedResult = 8;
+module.exports = sum;
 
-// テスト実行
-let result = calculate(input1, input2);
+// sum.test.js
+const sum = require('./sum');
 
-// 結果の比較
-if(result === expectedResult) {
-  console.log("テスト成功！");
-} else {
-  console.log("テスト失敗...");
-}
+test('1 + 2 は 3 になる', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+// コマンドラインでテストを実行
+// $ jest
 ```
 
-## 深掘り:
-テストは、プログラミングの歴史の中でも重要な役割を果たしてきました。代替手段として、デバッガーやロギングもありますが、テストは信頼性と保守性の面で優れています。また、テスト駆動開発という手法を用いることで、より品質の高いコードを作ることができます。
+出力例：
+```
+PASS  ./sum.test.js
+✓ 1 + 2 は 3 になる (5ms)
+```
+
+## Deep Dive (深掘り)
+テストはソフトウェア開発の古典的な部分であり、TDD（テスト駆動開発）のようなアプローチがあります。Jestは多くの代替品の中から選ばれることが多く、そのインターフェースの単純さと設定のしやすさからはじまり、リアクティブなウォッチモードやスナップショットテストなどの機能が魅力です。他にも、Mocha、Jasmine、QUnit等が知られています。
+
+## See Also (関連情報)
+- Jest公式ドキュメント: https://jestjs.io/ja/
+- Jasmine: https://jasmine.github.io/
+- Mocha: https://mochajs.org/
+- QUnit: https://qunitjs.com/
+
+Jest以外にもいくつかのテストフレームワークが存在するので、プロジェクトの要件に応じて最適なものを選択しましょう。

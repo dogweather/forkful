@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Clojure: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym i dlaczego? 
-Pisanie testów to proces, w którym programiści tworzą specjalny kod, aby sprawdzić, czy ich program działa poprawnie. Jest to ważny element procesu tworzenia oprogramowania, ponieważ daje pewność, że nasz kod jest odporny na błędy i zmiany.
+## Co i dlaczego?
+Testowanie to proces weryfikowania, czy nasz kod robi to, co powinien. Robimy to, by zapobiec błędom, oszczędzić czas na debugowaniu i ulepszyć jakość kodu.
 
-## Jak to zrobić: 
-```Clojure 
-(ns test (:require [clojure.test :refer [is]]))
+## Jak to zrobić:
+Clojure używa biblioteki `clojure.test` do pisania i uruchamiania testów. Przykład:
 
-(defn add [x y]
-  (+ x y))
+```Clojure
+(require '[clojure.test :refer :all])
 
-(deftest test-add
-  (is (= 3 (add 1 2))))
-
-(test-all) 
+(deftest test-dodawania
+  (testing "Czy 1 + 1 = 2?"
+    (is (= 2 (+ 1 1)))))
+    
+(run-tests)
 ```
 
-W powyższym przykładzie użyliśmy biblioteki Clojure Test, aby napisać prosty test funkcji dodającej, a następnie uruchomiliśmy wszystkie nasze testy. Jeśli nasz kod byłby niepoprawny, test zakończyłby się niepowodzeniem i dał nam informacje o błędzie.
+Output:
 
-## Głębszy zanurzenie: 
-Pisanie testów jest istotne, ponieważ pozwala na szybsze wykrywanie i naprawianie błędów w naszym oprogramowaniu. Jest to również kluczowy element w praktykach programowania takich jak Test Driven Development (TDD) i Behavior Driven Development (BDD). Alternatywami dla Clojure Test są inne biblioteki, takie jak Speclj czy Midje. Testy w Clojure mogą być także tworzone przez programistów używając dostępnych funkcji assert i is, jednak biblioteki takie jak Clojure Test oferują bogatsze i bardziej wygodne metody testowania.
+```
+Testing user
 
-## Zobacz także: 
-- Poradnik Clojure Test: https://clojure.org/guides/test
-- Inne biblioteki testowania w języku Clojure: https://clojure.org/community/testing_tools
-- Wprowadzenie do TDD w Clojure: https://code.tutsplus.com/tutorials/an-introduction-to-test-driven-development-in-clojure--cms-20307
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
+
+## Wnikliwe informacje
+Testowanie w Clojure to nie tylko `clojure.test`. Istnieje wiele opcji, jak `Midje` czy `Speclj`. Historia testowania w Clojure jest dość krótka, ale intensywna, odzwierciedla rosnący wymóg na wydajne, niezawodne systemy. Testy można uruchamiać ręcznie, przez REPL, lub automatycznie, co jest częstą praktyką Continuous Integration.
+
+## Zobacz także
+- [The Clojure Cheatsheet](https://clojure.org/api/cheatsheet) – kompendium funkcji Clojure, w tym testowych.
+- [Clojure for the Brave and True](https://www.braveclojure.com/) - darmowy online podręcznik do Clojure, w tym rozdział o testowaniu.
+- [Clojure Testing with Midje](https://github.com/marick/Midje/) - informacje o alternatywnej bibliotece do testowania Midje.

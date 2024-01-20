@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Arduino: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何＆どうして？
-テストとは何かを説明するために、テストを作成する理由を説明します。プログラマーは、コードの品質や信頼性を確認するためにテストを行います。
+## What & Why? (何となぜ?)
+プログラムテストとは、エラーを見つけて修正するためのコードを書くことです。品質を保つため、また、将来的な不具合を未然に防ぐためにプログラマーが行います。
 
-## 方法：
-以下に、Arduinoでテストを作成する方法を示します。下のコードブロックに示すように、Arduinoプログラム内にテストケースを追加するだけです。
+## How to: (方法)
+Arduinoコードにおけるテストは、通常、シリアルモニタで結果を確認する形で行います。以下はLEDの点滅をテストするサンプルコードです。
 
-```
-// 例：LEDが点灯するかをテストする
-void testLED() {
-  pinMode(LED_PIN, OUTPUT); // テスト対象のピンを出力モードに設定
-  digitalWrite(LED_PIN, HIGH); // ピンから電流を流し、LEDを点灯
-  delay(500); // 0.5秒待機
-  digitalWrite(LED_PIN, LOW); // ピンから電流を止め、LEDを消灯
+```Arduino
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
-// テストを実行するためのメインループ
 void loop() {
-  testLED(); // テストを実行
+  digitalWrite(LED_BUILTIN, HIGH);   // LEDを点灯
+  delay(1000);                       // 1秒待つ
+  digitalWrite(LED_BUILTIN, LOW);    // LEDを消灯
+  delay(1000);                       // 1秒待つ
 }
+
 ```
 
-## もっと詳しく：
-テストの歴史的背景や、他の代替手段など、テストに関するさまざまな情報があります。また、テストを実装する方法についても検討することができます。詳細な情報はオンラインのリソースを参照してください。
+サンプル出力:
+```
+LEDが1秒ごとに点滅します。
+```
 
-## 関連リンク：
-テストに関する詳細な情報やチュートリアル、サンプルコードなどを含む、他のリソースを紹介します。
+## Deep Dive (深掘り)
+Arduinoのテストは、通常、物理的なハードウェアの動作を手動で確認することが多いですが、ソフトウェアのみのテストも可能です。過去には、シミュレーション環境や特定のライブラリを使ってソフトウェアの挙動をテストする方法が取られていました。代替手段としてMockオブジェクトを用いる方法や、連続的インテグレーション（CI）ツールを使用する手法などがあります。実装の詳細として、セットアップ関数やループ関数に特定のテストコードを書いて、シリアルモニタで結果を観察します。
 
-- [Arduino公式ページ](https://www.arduino.cc/)：Arduinoに関する情報やコミュニティを見つけることができます。
+## See Also (関連情報)
+- Arduinoの公式ドキュメント: https://www.arduino.cc/reference/en/
+- オンラインArduinoシミュレータ: https://www.tinkercad.com/circuits
+- テストを学ぶためのArduinoプロジェクト: https://create.arduino.cc/projecthub/projects/tags/test
+- ArduinoでのCIツールの利用: https://learn.adafruit.com/continuous-integration-arduino-and-you/overview

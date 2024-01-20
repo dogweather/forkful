@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Bash: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att arbeta med CSV är en vanlig uppgift för programmerare. CSV står för "Comma Separated Values" och är ett sätt att lagra och strukturera stora mängder data i en enkel och textbaserad format. Det används ofta för att läsa och skriva data mellan olika program och verktyg.
+Att jobba med CSV (Comma-Separated Values) handlar om att hantera data separerade med kommatecken. Programmerare gör det för att enkelt läsa, skapa och manipulera data i en strukturerad och lättöverskådlig textformat.
 
-## Hur man gör:
-Så här kan man arbeta med CSV i Bash:
-
+## How to:
 ```Bash
-#Läs in data från en CSV-fil och skriv ut den på skärmen
-while read -r line; do
-    echo $line
-done < file.csv
+# Läs innehåll från en CSV-fil
+while IFS=, read -r col1 col2 col3; do
+  echo "Kolumn 1: $col1 - Kolumn 2: $col2 - Kolumn 3: $col3"
+done < fil.csv
 
-#Lägg till en ny rad i en befintlig CSV-fil
-echo "John,Smith,30" >> file.csv
+# Sortera CSV efter en kolumn
+sort -t, -k2,2 fil.csv
 
-#Spara resultatet av ett kommando till en CSV-fil 
-ls -l > file.csv
-
-#Sök efter en specifik rad i en CSV-fil
-grep "Sweden" file.csv
+# Omvandla CSV till JSON
+awk -F, '{ printf "{\"kolumn1\":\"%s\",\"kolumn2\":\"%s\",\"kolumn3\":\"%s\"}\n", $1, $2, $3 }' fil.csv
+```
+```Terminal
+Kolumn 1: data1 - Kolumn 2: data2 - Kolumn 3: data3
+Kolumn 1: annan_data1 - Kolumn 2: annan_data2 - Kolumn 3: annan_data3
 ```
 
-## Djupdykning:
-CSV-formatet uppfanns på 1970-talet som ett sätt att enkelt överföra data mellan olika databaser. Idag är det ett vanligt format för att dela och föra över data mellan olika program, speciellt inom områden som datavetenskap och statistik. Det finns flera alternativ för att arbeta med CSV i Bash, till exempel "csvtool" och "awk". 
+## Deep Dive:
+CSV-formatet har använts sedan 1970-talet för att byta data mellan program och system. Alternativ till CSV inkluderar JSON, XML och olika binära format. När man jobbar med CSV-filer i Bash är det viktigt att hantera olika typer av delimiter, escape-tecken och specialfall där data innehåller kommatecken.
 
-## Se även:
-För mer information och tips på hur man kan arbeta med CSV i Bash, besök följande länkar:
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/)
-- [awk tutorial](https://www.gnu.org/software/gawk/manual/gawk.html)
+## See Also:
+- [GNU Coreutils: sort](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
+- [AWK User's Guide - GAWK](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)

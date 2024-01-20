@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva en textfil"
-html_title:           "C#: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Skriva en textfil i programmering betyder att man skapar en fil som innehåller text som kan läsas och bearbetas av datorn. Detta är en vanlig praxis bland programmerare eftersom det möjliggör för program att lagra och hämta data som används i programmet, som till exempel användarinställningar eller produktinformation.
+## What & Why? 
+Att skriva en textfil innebär att skapa och lagra data i en läsbar format. Programmerare gör detta för att spara användardata, loggar, konfigurationer eller för att underlätta dataöverföring mellan system.
 
-## Hur man:
+## How to:
+I C# använder vi klassen `StreamWriter` för att enkelt skriva text till en fil. Här är ett exempel:
+
 ```C#
-// Exempel på hur man skapar en textfil och skriver in texten "Hej världen!"
+using System;
 using System.IO;
 
-// Skapa en ny textfil
-FileStream file = new FileStream("minTextfil.txt", FileMode.Create);
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"test.txt";
 
-// Skriv in texten i textfilen
-StreamWriter writer = new StreamWriter(file);
-writer.WriteLine("Hej världen!");
+        // Använd 'using' för att säkerställa att resurserna frigörs korrekt efter användning
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            writer.WriteLine("Hej Sverige!");
+        }
 
-// Stäng textfilen
-writer.Close();
-file.Close();
-
-// Resultatet blir en textfil med namnet "minTextfil.txt" som innehåller texten "Hej världen!"
+        Console.WriteLine(File.ReadAllText(filePath));
+    }
+}
 ```
+Kör du koden skapas `test.txt` med texten "Hej Sverige!" och output i konsolen blir textens innehåll.
 
-## Djupdykning:
-Att skapa textfiler har funnits sedan början av programmering och är en viktig del av datahantering. En annan vanlig metod för att lagra data är genom att använda en databas istället för en textfil. Detta gör det möjligt att lägga till fler funktioner som sökning och sortering av data. I C# finns också metoder för att hantera stora mängder data mer effektivt genom att använda "buffering" (hålla data i minnet för snabbare åtkomst).
+## Deep Dive
+Historiskt sett har textfiler varit ett av de huvudsakliga sätten att lagra data på grund av deras enkelhet. Alternativ innefattar XML, JSON, eller databaser, men textfiler är oftast lättast att använda för enkel datalagring och -hantering. När det gäller implementering, aktar man sig för teckenkodning och filåtkomstkonflikter, vilket `StreamWriter` hanterar smidigt.
 
-## Se även:
-- Microsoft C# dokumentation om filhantering: https://docs.microsoft.com/en-us/dotnet/standard/io/
-- Så här skriver man en textfil i C#: https://www.c-sharpcorner.com/uploadfile/mahesh/how-to-write-to-file-in-C-Sharp/
-- Skillnaden mellan textfiler och databaser: https://www.programmerinterview.com/data-structures/difference-between-a-text-file-and-a-database/
+## See Also
+- Microsoft's dokumentation om `StreamWriter`: https://docs.microsoft.com/dotnet/api/system.io.streamwriter
+- Mer om filåtkomst och säkerhet i .NET: https://docs.microsoft.com/dotnet/standard/io/file-access-permissions
+- Introduktion till andra lagringsformat som JSON i C#: https://www.newtonsoft.com/json

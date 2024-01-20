@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "C#: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,22 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Skriva till standardfel (stderr) används för att separera felmeddelanden från vanlig utdata. Detta gör det lättare för användare och andra program att skilja på resultatdata och felloggning.
 
-Skrivning till standardfel är en programmeringspraxis som innebär att skriva ut fel och andra meddelanden till standardfelströmmen istället för standardutströmmen. Detta gör det möjligt för oss att enkelt separera felmeddelanden från normal utdata. Programmerare använder denna teknik för att underlätta felsökning och förbättra programkvaliteten.
-
-# Hur man gör:
-
-För att skriva till standardfel i C# använder vi Console.Error.WriteLine() metoden. Här är ett exempel på hur det skulle se ut:
-
+## Steg för steg
 ```C#
-Console.Error.WriteLine("Ett fel har uppstått.");
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Error.WriteLine("Ett fel inträffade!");
+        Console.WriteLine("Detta är vanlig utdata.");
+    }
+}
+```
+Kör du koden ovan kommer "Ett fel inträffade!" att skrivas till stderr och "Detta är vanlig utdata." till stdout. Prova att omdirigera dem i ett kommandofönster för att se skillnaden:
+
+```shell
+dotnet run 1> out.txt 2> err.txt
 ```
 
-Detta kommer att skriva ut meddelandet "Ett fel har uppstått." till standardfelströmmen. Om du vill skriva ut mer detaljerad information om felet kan du använda Console.Error.Write() metoden istället.
+## Fördjupning
+Stderr dök först upp i Unix och används för att separera olika typer av utdata. Alternativ till att skriva till stderr inkluderar att logga till filer eller använda loggföring bibliotek som log4net. Implementationsmässigt hanterar `Console.Error` i C# det som ett `TextWriter`-objekt vilket gör det lätt att skriva till.
 
-# Djupdykning:
-
-Skrivning till standardfelströmmen är en standardfunktion inom C# sedan version 2.0. Det ger en enkel och effektiv metod för att skriva ut fel och andra meddelanden utan att behöva använda externa bibliotek eller verktyg. Alternativet till att skriva till standardfel är att använda en extern loggningsramverk, men detta kan medföra en ökad komplexitet och prestandaförlust.
-
-Implementeringen av skrivning till standardfel görs genom att ändra standardfelströmmen till standardutströmmen. Detta kan då skrivas ut som vanligt med Console.Write() eller Console.WriteLine() metoden. Det finns även möjlighet att återställa standardfelströmmen till standardutströmmen, vilket skulle låta programmet skriva till båda strömmarna.
+## Se även
+- Microsofts docs om `Console.Error`: [Console.Error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
+- Förstå stdout och stderr: [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- log4net, ett loggföringsbibliotek: [log4net in Apache Logging Services](https://logging.apache.org/log4net/)

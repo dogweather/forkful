@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
-html_title:           "Swift: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
-simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Kirjoittaminen standardivirheeseen on kätevä tapa ohjelman suoritusvirheiden hallintaan. Kun ohjelmassa tapahtuu virhe, se kirjoitetaan standardivirheeseen, jolloin se näkyy suoraan ohjelman suorituksen seurannassa. Tämä helpottaa virheen havaitsemista ja korjaamista.
+## What & Why?
+Standard error (stderr) on erillinen tiedonvirta tavallisesta tulostusvirrasta (stdout). Virheiden, varoitusten ja diagnostisten viestien kirjoittaminen stderr:iin auttaa erottamaan ne normaalista ohjelman tulosteesta.
 
-# Miten?
-### Swift:ssä standardivirheeseen kirjoittaminen tapahtuu käyttämällä print-funktiota ja säädetään parametriksi .standardError.
+## How to:
+Kirjoita stderr:iin käyttämällä `FileHandle.standardError`.
+
 ```Swift
-print("Tämä on virheviesti.", to: .standardError)
-```
-Tämän jälkeen viesti näkyy ohjelman suorituksen seurannassa punaisella värillä, jolloin se erottuu muusta tekstistä.
+import Foundation
 
-### Esimerkki:
-```Swift
-let luku1 = 10
-let luku2 = 0
+// Viesti, joka kirjoitetaan stderr:iin
+let errorMessage = "Tapahtui odottamaton virhe.\n"
 
-if luku2 == 0 {
-    print("Toinen luvuista ei voi olla nolla.", to: .standardError)
-} else {
-    let tulos = luku1 / luku2
-    print("Jakolaskun tulos on \(tulos).")
+// Muunnetaan viesti dataksi
+if let data = errorMessage.data(using: .utf8) {
+    // Kirjoitetaan data stderr:iin
+    FileHandle.standardError.write(data)
 }
 ```
-Tässä esimerkissä tulee virhe, jos luku2 on nolla. Ohjelma tulostaa tällöin virheviestin standardivirheeseen ja pysähtyy. Muussa tapauksessa ohjelma tulostaa normaalisti jakolaskun tuloksen.
 
-# Syvempi sukellus
-### Historiallinen konteksti:
-Standardivirheeseen kirjoittaminen on ollut käytössä Unix-käyttöjärjestelmissä jo vuosikymmeniä. Sen avulla on mahdollista kontrolloida ja ohjata ohjelmien virhetilanteita.
+Kun ajat tämän koodin, näet virheilmoituksen terminaalissa.
 
-### Vaihtoehtoja:
-Pythonissa ja C:ssä käytetään vastaavia toimintoja, kuten sys.stderr ja perror().
+## Deep Dive
+Ennen Swift 3:n vaikutusta, stderr:iin kirjoittaminen edellytti C:n standardikirjaston `fprintf` funktiota. Nyt Swift tarjoaa paremman abstraktion `FileHandle`-olion muodossa. Vaihtoehtoisesti voit ohjata `stderr` virtaa ohjelmasi ulkopuolelle käyttämällä komentorivityökaluja, kuten `2>`. Implementation details include how `FileHandle` works with file descriptors provided by the operating system.
 
-### Toteutus:
-Swift:ssä standardivirheen tulostaminen onnistuu käyttämällä Foundation-frameworkia, joka tarjoaa print-funktiolle .standardError-parametrin.
+## See Also
+Lue lisää aiheista, kuten virranhallinta ja `FileHandle`, Swiftin virallisesta dokumentaatiosta:
 
-# Katso myös:
-- [Foundation - Apple Developer Documentation](https://developer.apple.com/documentation/foundation)
-- [Swift Standard Library - Apple Developer Documentation](https://developer.apple.com/documentation/swift)
+- Apple's Standard Library: https://developer.apple.com/documentation/swift/filehandle
+- Error Handling Guide: https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
+- Advanced UNIX Programming: https://www.bell-labs.com/usr/dmr/www/apbook.pdf (Unix-virtojen syvämmälle ymmärtämiselle)

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Elixir: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é YAML e porquê usá-lo?
+## O Que é & Por Que?
 
-YAML é uma linguagem de marcação criada para estruturar dados em um formato legível por humanos. Programadores usam YAML para armazenar e transferir informações em seus projetos, visto que é fácil de entender e modificar.
+YAML é um formato de serialização de dados legível por humanos, frequentemente usado para configurações de aplicativos e troca de dados entre linguagens. Programadores usam YAML pela sua simplicidade e legibilidade.
 
-## Como fazer:
+## Como Fazer:
 
-```Elixir
-# Carregar a biblioteca YAML
-require EYAML
+```elixir
+# Para trabalhar com YAML em Elixir, adicionaremos a biblioteca "yaml_elixir" no mix.exs
+defp deps do
+  [
+    {:yaml_elixir, "~> 2.5"}
+  ]
+end
 
-# Criar um objeto com dados
-data = %{ nome: "Maria", idade: 25, profissao: "Programadora" }
+# Carregar e ler um arquivo YAML
+yaml_content =
+  """
+  config:
+    language: "Elixir"
+    features:
+      - "Pattern Matching"
+      - "First-Class Functions"
+  """
 
-# Converter os dados para YAML
-YAML.dump(data)
-
-# Resultado
-%{ idade: "25", nome: "Maria", profissao: "Programadora" }
+# Uso da biblioteca YamlElixir para ler o conteúdo YAML
+parsed_content = YamlElixir.read_from_string!(yaml_content)
+IO.inspect(parsed_content)
+```
+Saída:
+```elixir
+%{
+  "config" => %{
+    "language" => "Elixir",
+    "features" => ["Pattern Matching", "First-Class Functions"]
+  }
+}
 ```
 
-## Detalhando mais:
+## Aprofundamento
 
-YAML foi criado em 2001 por Clark Evans como uma alternativa ao XML para representação de dados. Hoje, é amplamente usado em projetos de desenvolvimento de software. Além disso, existem outras opções, como JSON e TOML, mas YAML é a escolha popular devido à sua sintaxe simplificada e flexibilidade.
+O YAML foi introduzido em 2001 como uma alternativa ao XML e ao JSON, com ênfase na legibilidade. Alternativas incluem JSON, XML e TOML, mas YAML é geralmente escolhido para configuração devido à facilidade de leitura e escrita. Internamente, as bibliotecas de Elixir que trabalham com YAML convertem os dados para estruturas Elixir nativas, como mapas e listas.
 
-Além de gerar dados, também é possível carregar e manipular arquivos YAML em Elixir, usando a função `YAML.load()`.
+## Veja Também
 
-## Veja também:
-
- - Documentação oficial do Elixir sobre YAML: https://hexdocs.pm/elixir/1.12/YAML.html
- - Artigo do blog de José Valim sobre o uso de YAML em Elixir: https://blog.plataformatec.com.br/2018/01/working-with-yaml-in-elixir/
- - Projeto no GitHub de YAML em Elixir: https://github.com/KronicDeth/yaml-elixir
+- [YamlElixir (Hex package)](https://hex.pm/packages/yaml_elixir): A página do pacote YamlElixir no Hex.
+- [Documentação Oficial do YAML](https://yaml.org): Para entender completamente o padrão YAML.
+- [Elixir School](https://elixirschool.com/pt/): Tutoriais sobre Elixir, incluindo trabalhar com formatos de dados externos.

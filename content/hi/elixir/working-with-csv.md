@@ -1,7 +1,7 @@
 ---
-title:                "CSV से काम करना"
-html_title:           "Elixir: CSV से काम करना"
-simple_title:         "CSV से काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## आखिर CSV होता क्या है और प्रोग्रामर्स इसे क्यों करते हैं?
-CSV (Comma Separated Values) एक plain text format है जो डेटा स्टोर और एक्सचेंज के लिए उपयोग किया जाता है। यह डेटा को rows और columns में सादा व्यवस्थित करके तैयार करता है। प्रोग्रामर्स इसे डेटा को स्टोर और व्यवस्थित करने के लिए उपयोग करते हैं क्योंकि यह एक आसान और अनुकूलित तरीके से एक्सेस और प्रसंस्करण करने की अनुमति देता है।
+## What & Why? (क्या और क्यों?)
+CSV (Comma-Separated Values) एक साधारण फ़ाइल प्रारूप है जो तालिका जैसे डेटा को संग्रहित करता है। यह डेटा को आसानी से स्थानांतरित, पढ़ने और लिखने के लिए प्रोग्रामर्स द्वारा प्रयोग किया जाता है।
 
-## कैसे करें:
-```Elixir
-# CSV फ़ाइल से डेटा पढें
-File.stream!("data.csv")
-|> CSV.decode()
-|> Enum.map(fn row ->
-  IO.puts("#{row[0]} has score of #{row[1]}!")
-  end)
+## How to: (कैसे करें:)
+Elixir में CSV पढ़ने और लिखने के लिए, हम `CSV` लाइब्रेरी का उपयोग कर सकते हैं।
 
-# CSV फ़ाइल में डेटा राइट करें
-[["John Doe", "95"], ["Jane Smith", "85"]]
-|> CSV.encode()
-|> File.write("data.csv")
+```elixir
+# CSV डाटा पढ़ना
+defmodule CSVExample do
+  alias NimbleCSV.RFC4180, as: CSV
 
-# CSV फ़ाइल को डेटा से व्यवस्थित करें
-File.read!("data.csv")
-|> CSV.decode()
-|> Stream.take(10)
-|> Enum.map(& &1[1])
-|> Enum.sum()
-|> IO.puts()
+  def read_csv(file_path) do
+    file_path
+    |> File.stream!()
+    |> CSV.parse_stream()
+    |> Enum.to_list()
+  end
 
-# Output: 530
+  # CSV फ़ाइल लिखना
+  def write_csv(file_path, data) do
+    # डेटा को CSV स्ट्रिंग में बदलें और फ़ाइल में लिखें
+    CSV.dump_to_stream(data)
+    |> Stream.into(File.stream!(file_path, [:write]))
+    |> Stream.run()
+  end
+end
+
+# उदाहरण के डाटा से CSV फाइल बनाना और पढ़ना
+data = [["name", "age"], ["Alice", 30], ["Bob", 28]]
+
+# CSV फाइल लिखें
+CSVExample.write_csv("people.csv", data)
+
+# CSV फाइल पढ़ें
+IO.inspect CSVExample.read_csv("people.csv")
 ```
 
-## गहराई में जायें:
-CSV फ़ाइलें 1972 में जन्मीं और लंबे समय तक spreadsheet software में डेटा एक्सपोर्ट और इम्पोर्ट के लिए उपयोग की गईं। अन्य विकल्पों में TSV (Tab Separated Values) और JSON (JavaScript Object Notation) शामिल हैं। Elixir में CSV पार्सिंग और जाने का सबसे सरल तरीका CSV लाइब्रेरी का उपयोग करना है। यह Erlang पर निर्भर है और स्थानीय और दूरस्थ फ़ाइलों से CSV पढने और लिखने के लिए वर्तमान में उपलब्ध है।
+ऊपर कोड चलाने पर, `people.csv` फ़ाइल बनेगी और उसका आउटपुट दिखाई देगा जिसमें नाम और उम्र के साथ एक तालिका होगी।
 
-## देखें भी:
-- [CSV लाइब्रेरी डॉक्यूमेंटेशन](https://hexdocs.pm/csv/)
-- [Learn Elixir in Y Minutes](https://learnxinyminutes.com/docs/elixir/)
+## Deep Dive (गहराई में जानकारी)
+CSV लंबे समय से डेटा इंटरचेंज के लिए एक मानक प्रारूप रहा है। इसे विभिन्न भाषाओं और प्रोग्रामिंग टूल्स द्वारा बिना किसी अतिरिक्त डिपेंडेंसी के समर्थन किया गया है। Elixir में `NimbleCSV` एक बहुत ही प्रभावी लाइब्रेरी है जो CSV में संग्रहित डेटा के पढ़ने-लिखने को संभालती है। वैकल्पिक रूप से, कई अन्य फार्मेट्स जैसे कि JSON, XML, या यहाँ तक कि डाटाबेस सिस्टम्स भी डेटा स्टोरेज और ट्रांसफर के लिए उपयोग होते हैं, पर CSV इसकी सहजता के कारण अभी भी बहुत पसंद किया जाता है। 
+
+## See Also (अन्य संसाधन)
+- Elixir के लिए `NimbleCSV` लाइब्रेरी का डाक्यूमेंटेशन: [https://hexdocs.pm/nimble_csv](https://hexdocs.pm/nimble_csv)
+- Elixir प्रोग्रामिंग के बारे में अधिक जानकारी: [https://elixir-lang.org/](https://elixir-lang.org/)
+- CSV RFC4180 स्टैंडर्ड: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

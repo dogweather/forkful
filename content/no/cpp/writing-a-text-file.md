@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "C++: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Hvis du er en programmerer, er det en god sjanse for at du vil skrive en tekstfil på et tidspunkt. En tekstfil er en fil som inneholder tekst og kan leses og endres av mennesker og datamaskiner. Programmere skriver tekstfiler for å lagre data eller utdatere informasjon på et varig lagringssted.
 
-## Hvordan å:
-I C++, kan du lage og skrive til en tekstfil ved å følge disse enkle trinnene:
+Skrive en tekstfil i C++ betyr å lagre data som tekst på en fil i filsystemet. Programmerere gjør det for å lagre resultater, konfigurasjonsdata eller til og med logge hva programmet gjør.
 
-```
-// include nødvendige biblioteker
+## Hvordan:
+
+For å skrive en tekstfil i C++, bruker vi I/O-biblioteket '<fstream>'. Her er en enkel kodebit som skaper og skriver til en tekstfil:
+
+```C++
 #include <iostream>
 #include <fstream>
 
 int main() {
-  // åpne en tekstfil for å skrive til
-  std::ofstream file("mitt_filnavn.txt");
+    std::ofstream file("eksempel.txt");
 
-  // skrive tekst til filen
-  file << "Dette er min første tekstfil i C++!" << std::endl;
+    if(file.is_open()) {
+        file << "Hei, dette er en tekstfil!\n";
+        file << "Her er noe mer tekst.\n";
+        file.close();
+    } else {
+        std::cerr << "Kunne ikke åpne filen." << std::endl;
+    }
 
-  // lukke filen
-  file.close();
-  
-  return 0;
+    return 0;
 }
 ```
+Når du kjører koden over, vil den lage 'eksempel.txt' og den inneholder:
 
-##### Output:
 ```
-Dette er min første tekstfil i C++!
+Hei, dette er en tekstfil!
+Her er noe mer tekst.
 ```
 
-## Dykke dypere:
-Å skrive tekstfiler har vært en viktig del av programmering siden de tidlige dagene. Før det var grafiske grensesnitt, var tekstfiler det eneste formatet for å lagre og utveksle data. Alternativene til å skrive tekstfiler er å bruke en database eller en binær fil, men tekstfiler er ofte foretrukket på grunn av deres enkelhet og lesbarhet. Når du skriver en tekstfil, må du være oppmerksom på formatering og encoding for å sikre at filen kan leses på ulike enheter og systemer.
+## Dypdykk
 
-## Se også:
-- [C++ ofstream dokumentasjon](http://www.cplusplus.com/reference/fstream/ofstream/)
-- [Wikipedia siden om Tekstfiler](https://en.wikipedia.org/wiki/Text_file)
-  []
+Historisk sett har filskriving vært grunnleggende for langtidsdataoppbevaring. Alternativt kan programmerere bruke databaser for strukturert data, eller nyere løsninger som skytjenester. I C++ sikrer klassen 'ofstream' effektiv skriving til filer, og dette har vært standarden siden introduksjonen av STL (Standard Template Library). Husk å håndtere mulige feil som f.eks. manglende skrivetilganger eller fulle lagringsenheter.
+
+## Se Også
+
+- C++ Referanse for `<fstream>`: http://www.cplusplus.com/reference/fstream/
+- C++ File I/O i CPP Reference: https://en.cppreference.com/w/cpp/io
+- C++ Tutorials om filhåndtering: https://www.learncpp.com/cpp-tutorial/186-basic-file-io/

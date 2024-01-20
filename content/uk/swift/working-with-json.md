@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Swift: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Робота з JSON - це процес, який дозволяє програмі отримувати та обробляти дані у форматі JSON (JavaScript Object Notation). Програмісти використовують цей формат для передачі та отримання даних з веб-серверів або для збереження даних на своєму пристрої.
+## Що це таке та навіщо?
 
-## Як те робити:
-Давайте розглянемо невеликий приклад, як ми можемо використовувати JSON у нашому коді Swift:
+JSON (JavaScript Object Notation) — це формат обміну даними. Програмісти використовують його через його простоту та широку підтримку у різних мовах програмування, включаючи Swift, для зберігання даних та взаємодії з серверами.
+
+## Як це зробити:
 
 ```Swift
-let jsonData = """
+import Foundation
+
+// Дані JSON в форматі строки
+let jsonString = """
 {
-    "name": "John",
-    "age": 32,
-    "city": "Kyiv"
+    "name": "Володимир",
+    "age": 30,
+    "isDeveloper": true
 }
-""".data(using: .utf8)
+"""
 
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let city: String
+// Структура для відображення даних JSON
+struct User: Codable {
+    var name: String
+    var age: Int
+    var isDeveloper: Bool
 }
 
-do {
-    let person = try JSONDecoder().decode(Person.self, from: jsonData!)
-    print(person) // Виведе: Person(name: "John", age: 32, city: "Kyiv")
-} catch {
-    print(error.localizedDescription) // Обробка помилки, якщо дані JSON неможливо розкодувати
+// Парсинг JSON
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print("Ім'я: \(user.name), Вік: \(user.age), Розробник: \(user.isDeveloper)")
+    } catch {
+        print("Помилка при парсингу: \(error)")
+    }
 }
 ```
 
-## Занурення:
-JSON був створений у 2001 році як легкий та ефективний формат для обміну даними. Його популярність зросла з розвитком сучасних веб-технологій та мобільного програмування. Існують інші альтернативи JSON, такі як XML та CSV, але JSON залишається найбільш популярним сьогодні.
+Вивід:
+```
+Ім'я: Володимир, Вік: 30, Розробник: true
+```
 
-Розбір та створення JSON-даних у Swift здійснюється з використанням протоколу `Codable`, який дозволяє миттєво перетворювати структури даних у формат JSON та навпаки. Також у Swift є багато сторонніх бібліотек, які роблять роботу з JSON ще простішою та зручнішою.
+## Глибинне занурення:
 
-## Дивіться також:
-- [Apple's documentation on Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
-- [SwiftyJSON - a popular third-party library for working with JSON in Swift](https://github.com/SwiftyJSON/SwiftyJSON)
-- [Hacking with Swift's tutorial on working with JSON in Swift](https://www.hackingwithswift.com/read/7/2/working-with-json-in-swift)
+JSON вперше був представлений Дугласом Крокфордом у 2001 році. Його легкість та зрозумілість зробили його популярним варіантом для взаємодії між клієнтом та сервером, а також для зберігання даних. Альтернативами JSON є XML та YAML, але вони помітно важчі для читання та написання. В Swift з використанням `Codable` протоколу реалізовано зручну серіалізацію та десеріалізацію JSON, що робить його обробку ефективною та інтуїтивною.
+
+## Ще трохи інформації:
+
+- [raywenderlich.com - повне керівництво по Codable у Swift](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
+- [Apple Developer - Foundation's JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [JSON.org - специфікація JSON](http://json.org/json-uk.html)

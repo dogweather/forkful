@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "C#: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C#"
 category:             "C#"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Writing to standard error jest procesem, w którym programista wysyła błędy, ostrzeżenia lub inne komunikaty do standardowego strumienia błędów, zamiast do standardowego strumienia wyjścia. Programiści często używają standardowego strumienia błędów do informowania użytkowników o błędach w swoim kodzie lub do debugowania programów.
+## Co i dlaczego?
+Zapis do standardowego błędu (stderr) pozwala oddzielić komunikaty o błędach od normalnego wyjścia programu (stdout). Programiści to robią, by łatwiej zarządzać błędami i umożliwić ich przekierowanie lub niezależne logowanie.
 
 ## Jak to zrobić:
 ```C#
-Console.Error.WriteLine("To jest komunikat wysłany do standardowego strumienia błędów.");
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Error.WriteLine("To jest komunikat błędu."); // zapis do stderr
+        Console.WriteLine("To jest normalne wyjście programu."); // zapis do stdout
+    }
+}
+```
+Przykładowe wyjście:
+```
+> dotnet run 2>err.log
+To jest normalne wyjście programu.
+> cat err.log
+To jest komunikat błędu.
 ```
 
-```
-Output: To jest komunikat wysłany do standardowego strumienia błędów.
-```
-
-## Głębsze zanurzenie:
-Wysyłanie komunikatów do standardowego strumienia błędów jest ważnym aspektem programowania, ponieważ pozwala na poprawne zarządzanie komunikacją między programem a użytkownikiem. Alternatywą dla standardowego strumienia błędów jest standardowy strumień wyjścia, który służy do wyświetlania oczekiwanych wyników działania programu. 
-
-Implementacja standardowego strumienia błędów w języku C# jest prostym procesem, ponieważ wystarczy użyć metody Error z klasy Console. Standardowy strumień błędów jest również używany w celu zapisywania logów lub informacji diagnostycznych w trakcie działania programu.
+## Głębsze zrozumienie:
+Początkowo, w systemach uniksowych, stderr służył do informowania użytkownika o błędach bez przerywania wyjścia procesu. Alternatywami dla stderr są logi, wyjątki czy zdarzenia. W C# stderr jest zaimplementowany jako `Console.Error`, strumień który możesz użyć podobnie jak standardowe wyjście (`Console.WriteLine`), ale jest domyślnie przekierowany do ekranu błędów w terminalu.
 
 ## Zobacz również:
-- Dokumentacja C# dotycząca standardowego strumienia błędów: [https://docs.microsoft.com/en-us/dotnet/api/system.console.error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- Video tutorial na temat standardowego strumienia błędów w języku C#: [https://www.youtube.com/watch?v=PT7qH5PTCb0](https://www.youtube.com/watch?v=PT7qH5PTCb0)
+- [Dokumentacja Microsoft o .NET Core Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
+- [Wikipedia o standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- [Stack Overflow: When to use Console.WriteLine vs Console.Error.WriteLine?](https://stackoverflow.com/questions/178456/when-to-use-console-writeline-vs-console-error-writeline)

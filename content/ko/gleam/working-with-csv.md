@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업"
-html_title:           "Gleam: CSV 작업"
-simple_title:         "CSV 작업"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-[신규 버전의 Gleam 프로그래밍] 
+## What & Why? (무엇이며, 왜?)
+CSV(쉼표로 구분된 값)는 데이터 저장과 전송에 유용합니다. 프로그래머들은 데이터 교환 및 가볍고 호환성 높은 파일 형식이 필요할 때 CSV를 사용합니다.
 
-# Gleam에서 CSV 작업하기
+## How to:
+Gleam에서 CSV 작업을 시작하는 기본적인 예시입니다.
 
-## 무엇과 왜?
-CSV란 무엇일까요? CSV는 Comma Separated Values의 약자로, 각각의 값이 쉼표로 구분되어 있는 데이터 형식을 말합니다. 프로그래머들은 이러한 CSV 형식의 데이터를 다룰 때 자주 사용하는데, 이는 데이터의 읽기와 쓰기, 그리고 분석 등 다양한 작업을 쉽게 할 수 있기 때문입니다.
+```gleam
+import gleam/csv
 
-## 작업 방법:
-아래의 코드 블록을 사용하여 Gleam에서 CSV 파일을 다루는 방법을 알아보세요.
+// CSV 문자열을 파싱하는 예제
+pub fn parse_csv(data: String) -> Result(list(list(String)), Nil) {
+  let rows = csv.parse_string(data)
+  case rows {
+    Ok(rows) -> Ok(rows)
+    Error(_) -> Error(Nil)
+  }
+}
 
-Gleam 코드 예제:
-
-```Gleam
-// CSV 파일 읽기
-let csv = import("my_data.csv")
-let data = csv |> io.read_csv
-// data는 CSV 파일의 각각의 행을 구성하는 리스트를 포함합니다. 
-
-// CSV 파일 쓰기
-let my_data = ["apple", "banana", "orange"]
-let data = my_data |> io.to_csv()
-// data는 쉼표로 구분된 apple, banana, orange로 이루어진 문자열을 포함합니다.
+// 예제 CSV 데이터로 파싱해보기
+pub fn example() {
+  let csv_data = "name,age\nJohn,30\nJane,25"
+  parse_csv(csv_data)
+}
 ```
 
-## 깊이 들어가기:
-CSV 파일 형식은 1980년대에 최초로 개발되었습니다. 당시에는 컴퓨터 간에 데이터를 공유하기 위해 만들어졌는데, 지금도 여러 가지 형태의 데이터를 교환하는 데 많이 사용됩니다. Gleam 외에도 다양한 프로그래밍 언어에서 CSV를 다루는 다양한 라이브러리가 제공되고 있습니다. Gleam에서는 io 라이브러리를 사용하여 CSV를 손쉽게 다룰 수 있습니다.
+실행 결과:
+```gleam
+Ok([["name", "age"], ["John", "30"], ["Jane", "25"]])
+```
 
-## 관련 자료:
-- [CSV 형식 소개](https://en.wikipedia.org/wiki/Comma-separated_values)
+## Deep Dive (심화 탐구)
+CSV 형식은 1972년 IBM에 의해 처음으로 소개됐습니다. XML, JSON과 같은 다른 데이터 형식도 있지만, CSV는 간결함과 가독성에 있어 장점이 있습니다. Gleam에서는 `gleam/csv` 라이브러리를 통해 CSV 데이터를 쉽게 파싱하고 조작할 수 있습니다. 
+
+## See Also (더보기)
+- Gleam 공식 문서: [Gleam Documentation](https://gleam.run/)
+- CSV에 대한 자세한 정보: [RFC 4180](https://tools.ietf.org/html/rfc4180)

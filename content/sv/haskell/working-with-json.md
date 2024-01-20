@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json"
-html_title:           "Haskell: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,41 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-JSON (JavaScript Object Notation) är ett enkelt och lättläst sätt att strukturera och dela data. Det har blivit ett populärt format för att utbyta data mellan program och webbapplikationer på grund av sin enkelhet och kompatibilitet med de flesta programmeringsspråk.
+Jobbar med JSON innebär att hantera data i JavaScript Object Notation - ett lättviktigt datautbytesformat. Programmerare gör detta för att enkelt skicka och ta emot data över nätet samt att lagra och arbeta med data i en struktuerad form.
 
-## Hur gör man:
-För att arbeta med JSON i Haskell kan du använda biblioteket "aeson". Detta gör det möjligt för dig att koda och avkoda JSON-data till Haskell-datastrukturer och vice versa. Här är ett exempel på hur du kan använda det:
+## Hur man gör:
+Haskell hanterar JSON med bibliotek som `aeson`. Här är ett enkelt exempel:
 
-```Haskell
+```haskell
 import Data.Aeson
+import Data.ByteString.Lazy as B
 import Data.Text
+import Control.Monad (mzero)
 
--- Deklarera datatyper för JSON-struktur
-data Person = Person { name :: Text, age :: Int }
+-- För att representera en enkel JSON-struktur skapar vi en data-typ.
+data User = User
+  { userId :: Int
+  , userName :: Text
+  } deriving Show
 
--- Definiera hur Person-objektet ska avkodas från JSON
-instance FromJSON Person where
-    parseJSON (Object v) =
-        Person <$> v .: "name"
-               <*> v .: "age"
+-- Lägger till instanser för att göra det till JSON:
+instance FromJSON User where
+  parseJSON (Object v) = User <$>
+                         v .: "userId" <*>
+                         v .: "userName"
+  parseJSON _          = mzero
 
--- Skapa ett JSON-objekt
-let json = "{\"name\": \"Anna\", \"age\": 25}"
+instance ToJSON User where
+  toJSON (User userId userName) =
+    object ["userId" .= userId, "userName" .= userName]
 
--- Avkoda JSON till en Person
-let maybePerson = decode json :: Maybe Person
-
--- Skriv ut namnet på Person om den blev avkodad framgångsrikt
-case maybePerson of
-    Nothing -> putStrLn "Kunde inte avkoda JSON"
-    Just person -> putStrLn $ "Namn: " ++ (unpack $ name person)
+-- Exempel för att tolka (parse) JSON:
+main :: IO ()
+main = do
+  -- Anta att vi har JSON-data som en ByteString
+  let jsonBytes = "{\"userId\": 123, \"userName\": \"Ada\"}" :: ByteString
+  let maybeUser = decode jsonBytes :: Maybe User
+  case maybeUser of
+    Just user -> print user
+    Nothing -> putStrLn "Couldn't decode JSON"
 ```
 
-Detta kommer att skriva ut "Namn: Anna" på skärmen, eftersom Person-objektet "Anna" är 25 år.
+Exempel output:
 
-## Djupdykning:
-JSON utvecklades ursprungligen av Douglas Crockford och blev först populärt tack vare sin användning i JavaScript. Det finns flera alternativ till "aeson" för att arbeta med JSON i Haskell, t.ex. "json" och "yaml". Det finns också möjlighet att handskas med JSON-data direkt med hjälp av funktioner som "encode" och "decode" från "Data.Aeson".
+```
+User {userId = 123, userName = "Ada"}
+```
 
-## Se även:
-- [aeson dokumentation](https://hackage.haskell.org/package/aeson)
-- [JSON på json.org](https://www.json.org/json-sv.html)
+## Djupdykning
+JSON introducerades 2001, motiverat av JavaScripts växande popularitet för webbutveckling. Alternativ till JSON inkluderar XML och YAML. `aeson`, ett Haskell-paket, är optimerat för prestanda och minnesanvändning. Dess användning av `ByteString` minimerar overhead vid in-/utläsning av JSON-data.
+
+## Se även
+- The `aeson` hemsida: http://hackage.haskell.org/package/aeson
+- Mer om JSON: https://www.json.org/json-sv.html
+- Om `ByteString`: https://hackage.haskell.org/package/bytestring

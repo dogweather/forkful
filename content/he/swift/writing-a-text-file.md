@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Swift: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא פעולה שמאפשרת למתכנתים ליצור ולשמור מידע בקובץ טקסט פשוט. כתיבה זו מאפשרת שמירת מידע מבוקר ושינוי מידע לכל תוכנית בצורה תמידית ומרוכזת. תהליך זה מאפשר למתכנתים לנהל ולעבוד עם נתונים בצורה יעילה ומסודרת.
+כתיבת קובץ טקסט היא תהליך שמאפשר לשמור נתונים כטקסט במערכת הקבצים. מתכנתים עושים את זה כדי לשמור הגדרות, לוגים, וכל נתון שצריך לאחסן לטווח ארוך או לשיתוף עם תהליכים/אנשים.
 
-## איך לעשות זאת?
-```swift
-// כל המתכנתים אוהבים מחרוזות
-let myString = "שלום עולם!"
+## איך לעשות:
+```Swift
+import Foundation
 
-// כדי לכתוב קובץ טקסט, נשתמש בפונקציה המובנית לכתיבת קבצים
+// כאן מגדירים נתיב לקובץ
 if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-    let fileURL = dir.appendingPathComponent("myFile.txt")
-
-    // נשתמש במחרוזת שיצרנו לפני כדי לכתוב את המידע לקובץ
+    let fileURL = dir.appendingPathComponent("example.txt")
+    
+    // כאן אנו כותבים את הטקסט לקובץ
+    let text = "שלום, זה הטקסט שלנו"
     do {
-        try myString.write(to: fileURL, atomically: false, encoding: .utf8)
-        print("קובץ טקסט נוצר בהצלחה!")
+        try text.write(to: fileURL, atomically: false, encoding: .utf8)
+        print("טקסט נכתב בהצלחה")
     } catch {
-        print(error.localizedDescription)
+        print("התרחשה שגיאה בכתיבה לקובץ: \(error)")
     }
 }
 ```
-כאן, אנו משתמשים במחרוזת פשוטה כדי ליצור מידע ולכתוב אותה לקובץ טקסט באמצעות פונקצית ```write(to:atomically:encoding:)```. ניתן לשנות את המידע שנכתוב לקובץ תוך שימוש במחרוזת אחרת או על ידי הוספת קוד לכתיבת מידע ממקורות אחרים.
 
-## הכנסה לתהומות
-לכתיבת קובץ טקסט יש יישומים רבים בתחום התכנות. היא מאפשרת למתכנתים לשמור ולנהל מידע בצורה יעילה ומאורגנת, והיא משמשת כבנסיבית כאשר נדרש לעבוד עם מספר נתונים גדול לאורך זמן.
+## עומק של ידיעה
+בעבר, שפות תכנות כמו C השתמשו ב-FILE pointers ובפונקציות כמו `fopen`, `fwrite`, ו-`fclose` לניהול קבצים. ב-Swift, עם פריימוורק Foundation של Apple, יש API מודרני שמחביא את רוב הפרטים הנמוכים ומאפשר כתיבה וקריאה בצורה נוחה יותר. חלופות נפוצות הן שימוש במסדי נתונים או בענן לאחסון נתונים.
 
-## ראו גם
-למידע נוסף על קריאת וכתיבת קבצי טקסט בשפת סוויפט, הסתכלו על המקורות הבאים:
-
-- [ספריית ה-FileManager של אפל](https://developer.apple.com/documentation/foundation/filemanager)
-- [רפרנס לשפת סוויפט](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## ראו גם:
+- [תיעוד Swift הרשמי](https://docs.swift.org/swift-book/)

@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire un fichier texte"
-html_title:           "Rust: Ecrire un fichier texte"
-simple_title:         "Ecrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi faire?
+## What & Why?
 
-Écrire un fichier texte en programmation est une tâche courante de stocker des données dans un format facile à lire et à manipuler. Les programmeurs le font souvent lorsque les données sont trop nombreuses ou complexes pour être stockées dans des variables ou des tableaux réguliers.
+Écrire un fichier texte est l'action d'enregistrer des données sous forme de texte dans un fichier. Les programmeurs le font pour sauvegarder des configurations, des logs, ou pour générer des données exploitables par l'utilisateur ou d'autres programmes.
 
-## Comment faire:
+## How to:
 
 ```Rust
-use std::fs::File;  //pour ouvrir / créer un fichier
-use std::io::prelude::*;  //pour écrire dans le fichier
+use std::fs::File;
+use std::io::{Write, Result};
 
-fn main() { 
-    let mut f = File::create("exemple.txt").unwrap();  //crée un nouveau fichier appelé "exemple txt"
-
-    f.write_all(b"Bonjour le monde!").unwrap();  //écrit "Bonjour le monde!" dans le fichier
-
-    //affiche une confirmation de la réussite de l'écriture
-    println!("Fichier exemple.txt créé avec succès!"); 
+fn main() -> Result<()> {
+    let mut file = File::create("exemple.txt")?;
+    file.write_all(b"Ceci est un test d'écriture de fichier en Rust.")?;
+    Ok(())
 }
 ```
+Ce code crée un fichier `exemple.txt` et y écrit la phrase "Ceci est un test d'écriture de fichier en Rust.".
 
-## Plongée en profondeur:
+## Deep Dive
 
-Écrire des fichiers textes remonte aux débuts de la programmation, lorsque les données étaient stockées sur des rubans ou des cartes perforées. De nos jours, il existe des alternatives telles que des bases de données, mais les fichiers textes restent utiles pour leur simplicité et leur compatibilité avec de nombreux langages de programmation. L'implémentation peut varier selon les systèmes d'exploitation, mais la logique reste la même: ouvrir un fichier, écrire dedans et le fermer.
+Historiquement, l'accès aux fichiers en programmation est une opération de base essentielle. Rust offre une sécurité accrue pendant ces opérations grâce à son système de gestion des erreurs. Les alternatives incluent les bibliothèques comme `std::fs::write` qui simplifie le code en écrivant en une ligne ou `std::io::BufWriter` pour une écriture tamponnée efficace. La bonne mise en œuvre dépend des besoins spécifiques en performance et en traitement des erreurs.
 
-## Voir aussi:
+## See Also
 
-- [Documentation officielle de Rust](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Article sur les avantages et les inconvénients des fichiers textes](https://www.bitdegree.org/learn/database-file)
-- [Comparaison des différentes méthodes d'écriture de fichiers en Rust](https://users.rust-lang.org/t/efficiently-writing-a-large-text-file/12061/2)
+- [std::fs](https://doc.rust-lang.org/std/fs/index.html)
+- [std::io](https://doc.rust-lang.org/std/io/index.html)

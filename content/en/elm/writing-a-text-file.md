@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Elm recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,37 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file means creating or modifying a file with textual information. Programmers often write text files as a convenient way to store and organize data in a human-readable format. This allows for easier maintenance and sharing of data across different programming languages and systems.
+Writing a text file means saving data in a file on disk in text format. Programmers do it for data storage, configuration, logging, or exporting human-readable reports.
 
-## How To:
+## How to:
 
-To write a text file in Elm, we can use the `Text` library. The `Text` library provides functions to create and modify text files.
-
-```Elm
-import Text exposing (writeFile, concat)
-
-writeFile "newfile.txt" (concat ["Hello,", " world!"])
-```
-
-Running this code will create a new file called `newfile.txt` in the same directory as our Elm file, with the text "Hello, world!" written in it.
-
-We can also append text to an existing file using the `appendFile` function.
+Elm is a front-end web language, so it can't directly write files to a disk. But it can trigger a download with the desired content. To simulate file writing, we'll create a text and use a link to download it as a file.
 
 ```Elm
-import Text exposing (appendFile)
+module Main exposing (main)
 
-appendFile "existingfile.txt" "This is an example sentence."
+import Browser
+import Html exposing (Html, a, text, attribute)
+import Html.Attributes exposing (href)
+
+createTextFileContent : String
+createTextFileContent =
+    "Hello, World! This is some content."
+
+createDownloadHref : String -> String
+createDownloadHref content =
+    "data:text/plain;charset=utf-8," ++ encodeURIComponent(content)
+
+main : Html msg
+main =
+    a [ href (createDownloadHref createTextFileContent), attribute "download" "myTextFile.txt" ]
+        [ text "Download Text File" ]
 ```
 
-## Deep Dive:
+Sample output is a clickable link that downloads 'myTextFile.txt' containing "Hello, World! This is some content."
 
-Text files have been around for a long time, and they are one of the simplest and most common ways to store data. They are also versatile, as they can be opened and modified with different programs and programming languages.
+## Deep Dive
 
-There are other ways to store data, such as using databases or binary files, but text files remain a popular choice due to their simplicity and compatibility.
+Elm runs in the browser, so functions needed to write directly to the file system aren't available. Historically, JavaScript has similar limitations due to browser security constraints. However, newer web APIs and Elm's interop feature (`Ports`) allow triggering downloads or handling file system access in web applications. Alternatives are using server-side programming languages for direct file manipulation or relying on web APIs like the File System Access API for extended abilities in modern browsers.
 
-When writing a text file in Elm, we can also provide options such as encoding and file permissions as needed. For more advanced text file operations, we can use the `File` module in Elm.
+## See Also
 
-## See Also:
-
-- Elm's official documentation for the `Text` and `File` modules: https://package.elm-lang.org/packages/elm/core/latest/
-- A tutorial on working with text files in Elm: https://www.elm-tutorial.org/en/05-foundations/03-strings.html
+- Elm Official Guide on JavaScript Interop (Ports): [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
+- The `File` Web API for advanced file handling in browsers: [MDN Web Docs - File API](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- A broader look into the Elm architecture: [Official Elm Architecture](https://guide.elm-lang.org/architecture/)

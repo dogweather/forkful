@@ -57,5 +57,3 @@ echo $date_str
 1. Bash手册中的[`date`命令](https://www.gnu.org/software/bash/manual/bash.html#Shell-Builtin-Commands)的详细说明。
 
 2. Linux命令行的[日期与时间处理](https://ryanstutorials.net/linuxtutorial/scripting.php#dates)
-
-3. [POSIX](https://pubs.opengroup.org/onlinepubs/009695399/utilities/date.html)规范定义的日期命令。

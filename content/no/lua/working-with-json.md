@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Lua: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Arbeidet med JSON handler om å håndtere data i et spesifikt format som kalles JSON (JavaScript Object Notation). JSON er et populært format blant programmerere på grunn av sin enkelhet og lesbarhet. Ved å konvertere data til JSON-format, kan programmerere enkelt lagre, organisere og utveksle informasjon mellom forskjellige programmer og systemer.
+## Hva & Hvorfor?
+JSON (JavaScript Object Notation) er et datadelingsformat brukt for å lagre og utveksle data. Programmerere bruker JSON fordi det er lettleselig for mennesker og lett å tolke for maskiner.
 
-# Hvordan:
-Kodingseksempler og eksempelutgang innen ```Lua...``` kodeblokker:
-
-1. Kode for å konvertere en Lua-table til JSON-format:
+## Hvordan gjøre:
+For å jobbe med JSON i Lua, trenger du et bibliotek som `dkjson` eller `cjson`. Her er hvordan du håndterer JSON:
 
 ```Lua
-local json = require("json")  -- importerer JSON-biblioteket
-local data = {              -- opprett en Lua-table
-    navn = "Per",
-    alder = 30,
-    yrke = "programmerer"
-}
-local jsonData = json.encode(data)   -- konverterer tabellen til JSON-format
-print(jsonData)   -- skriver ut JSON-dataene til konsollen
+-- Inkluderer et JSON-bibliotek
+local json = require "dkjson"
+
+-- Konverterer et Lua-tabell til JSON
+local tabell = { navn = "Ola", alder = 28, programmerer = true }
+local json_str = json.encode(tabell)
+print(json_str) -- Output: {"navn":"Ola","alder":28,"programmerer":true}
+
+-- Tolker en JSON-streng til et Lua-tabell
+local json_data = '{"navn":"Kari","alder":25,"programmerer":false}'
+local tabell_data = json.decode(json_data)
+print(tabell_data.navn) -- Output: Kari
 ```
-Eksempelutgang: ```{"navn":"Per","alder":30,"yrke":"programmerer"}```
 
-2. Kode for å parse en JSON-streng til en Lua-table:
+## Dypdykk
+JSON ble opprettet av Douglas Crockford på tidlig 2000-tallet. Alternativer til JSON inkluderer XML og YAML, men JSON er populært fordi det passer godt med web applikasjoner. Det er også generelt raskere og mer kompakt. I Lua, implementeres JSON tolking og generering vanligvis gjennom eksterne biblioteker fordi standardbiblioteket ikke inneholder støtte for JSON.
 
-```Lua
-local json = require("json")  -- importerer JSON-biblioteket
-local jsonData = [[{"farge":"blå","type":"bil","merke":"Tesla"}]]  -- en JSON-streng
-local data = json.decode(jsonData)  -- konverterer strengen til en Lua-table
-print(data.type)   -- skriver ut verdien som er lagret under "type" i tabellen
-```
-Eksempelutgang: ```bil```
+## Se Også
+- `dkjson` bibliotek: http://dkolf.de/src/dkjson-lua.fsl/home
+- `cjson` bibliotek: https://www.kyne.com.au/~mark/software/lua-cjson.php
+- Offisiell JSON-nettside: https://www.json.org/json-no.html
+- Lua brukerveiledning: https://www.lua.org/manual/5.4/
 
-# Dypdykk:
-1. Historisk kontekst: JSON ble utviklet på begynnelsen av 2000-tallet som en enkel måte å representere data på weben. Det ble raskt populært og er nå et standardisert format for å utveksle data mellom programmer og systemer.
-
-2. Alternativer: JSON er ikke det eneste formatet som brukes til å representere data. Andre populære formater inkluderer CSV, XML og YAML. Hver har sine egne fordeler og ulemper, men det som gjør JSON unikt er dens enkelhet og lette lesbarhet.
-
-3. Implementeringsdetaljer: Lua tilbyr et innebygd JSON-bibliotek som gjør det enkelt å konvertere data til og fra JSON-format. Dette biblioteket er også kompatibelt med andre Lua-rammeverk og biblioteker.
-
-# Se også:
-- [Offisiell JSON-nettside](https://www.json.org/)
-- [Hva er JSON og hvorfor er det så populært?](https://medium.com/swlh/what-is-json-and-why-is-it-so-popular-9aa7d37ce06a) (engelsk)
+Husk å sjekke dokumentasjonen for det biblioteket du velger for avanserte funksjoner og ytterligere brukseksempler.

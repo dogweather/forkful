@@ -1,7 +1,7 @@
 ---
-title:                "Redacción de pruebas"
-html_title:           "Bash: Redacción de pruebas"
-simple_title:         "Redacción de pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola, programadores de Bash!
+## Qué y Por Qué?
+Escribir pruebas es verificar que tu código funciona como esperas. Los programadores las realizan para asegurar calidad y evitar fallos futuro.
 
-## ¿Qué & Por qué?
+## Cómo Hacerlo:
+Escribimos un script simple `test.sh` que prueba un ejemplo `sumar.sh`.
 
-Escribir pruebas (o tests) es una parte importante de la programación. Se trata de crear pequeños scripts que evalúan si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código se comporte de la manera esperada y para evitar errores en el futuro.
-
-## Cómo hacerlo:
-
-En Bash, podemos escribir pruebas utilizando el comando `assert`. Por ejemplo, si queremos asegurarnos de que un archivo exista, podemos escribir:
-
+`sumar.sh`:
 ```Bash
-assert -e mi_archivo.txt
+#!/bin/bash
+resultado=$(($1 + $2))
+echo $resultado
 ```
 
-El comando `assert` verificará si el archivo especificado existe y en caso contrario, mostrará un error. También podemos utilizar `assert` para verificar si una variable tiene el valor esperado:
-
+`test.sh`:
 ```Bash
-nombre="Maria"
-assert $nombre == "Maria"
+#!/bin/bash
+test_sumar() {
+    resultado=$(./sumar.sh 3 4)
+    if [ "$resultado" -eq 7 ]; then
+        echo "Prueba pasada: Suma correcta"
+    else
+        echo "Prueba fallida: Suma incorrecta"
+    fi
+}
+
+test_sumar
 ```
 
-Si la variable `nombre` no tiene el valor "Maria", `assert` mostrará un error.
+Ejecución y salida:
+```Bash
+$ chmod +x sumar.sh test.sh
+$ ./test.sh
+Prueba pasada: Suma correcta
+```
 
-## Profundizando:
+## Profundización
+Las pruebas comenzaron como cheques manuales pero han evolucionado a frameworks automatizados como `Bash Automated Testing System` (BATS). Alternativas a pruebas en Bash incluyen `shUnit2` o integrar Bash con herramientas como `Jenkins`. Detalles de implementación varían desde simples condiciones `if` hasta pruebas de regresión y pruebas de integración.
 
-Las pruebas en el mundo de la programación no son nada nuevo. De hecho, su uso se remonta a la década de 1950 cuando los programadores necesitaban una manera de verificar su código sin tener que ejecutarlo todo manualmente. En ese entonces, se utilizaban pruebas manuales, lo cual era muy tedioso y propenso a errores.
-
-Hoy en día, existen otras herramientas para escribir pruebas en Bash, como `shunit2` o `bats`. Estas herramientas proporcionan una sintaxis más sencilla y una mejor organización de las pruebas. Sin embargo, el uso de `assert` sigue siendo una forma simple y efectiva de escribir pruebas en Bash.
-
-## Ver también:
-
-Si quieres aprender más sobre el uso de `assert` y otras herramientas de pruebas en Bash, te recomendamos revisar estas fuentes:
-
-- [Tutorial de pruebas en Bash de Tutorialspoint](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+## Ver También
+- Bash Automated Testing System (BATS): https://github.com/bats-core/bats-core
+- shUnit2: https://github.com/kward/shunit2
+- Jenkins: https://www.jenkins.io/

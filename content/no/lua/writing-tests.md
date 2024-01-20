@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "Lua: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Tester er koder som sjekker at programmet gjør det det skal. Programmerere skriver tester for å fange feil tidlig, spare tid og sikre kvalitet.
 
-Skriving av tester er en viktig del av å være en programmerer. Det referer til prosessen med å lage små biter av kode som sjekker om koden du allerede har skrevet fungerer riktig. Dette er viktig for å sikre at din kode er pålitelig og fungere som den skal.
-
-## Hvordan skal du:
-
-Å skrive tester i Lua er ganske enkelt. La oss se på et eksempel:
-
+## How to:
 ```Lua
--- Definere en funksjon
-function add(x, y)
-  return x + y
+local Calculator = {}
+
+function Calculator.add(a, b)
+    return a + b
 end
 
--- Skrive en test
-assert(add(3, 4) == 7, "Addisjons test feilet!")
+-- Enkel test for å sjekke addisjonsfunksjonen
+local function testAdd()
+    local result = Calculator.add(2, 2)
+    assert(result == 4, "Forventet 4, fikk " .. result)
+end
 
--- Viser melding når testen er bestått
-print("Alle tester gikk bra!")
+testAdd()
+print("testAdd passert!")
 ```
-Output:
-```txt 
-Alle tester gikk bra!
+Kjører du koden, får du følgende output:
+```
+testAdd passert!
 ```
 
-I dette eksempelet har vi opprettet en funksjon som tar to tall og legger dem sammen. Vi har da skrevet en test som sjekker om funksjonen fungerer som den skal ved å legge sammen tallene 3 og 4. Hvis testen feiler, vil en feilmelding bli vist. Hvis den går gjennom uten å feile, vil vi få beskjed om at alle tester gikk bra.
+## Deep Dive
+Tester i Lua kan skrives med innebygde funksjoner som `assert`. Historisk har Lua-miljøet utviklet testrammeverk som Busted og LuaUnit. Disse tilbyr mer funksjonalitet som testoppsett/avvikling og resultatformat. Ved å isolere kode og bruke "mocks" kan man teste individuelle deler uten avhengigheter.
 
-Du kan også skrive mer avanserte tester ved å bruke Lua's unit-testing bibliotek, som tillater deg å organisere flere tester og sjekke flere forhold.
-
-## Dypdykk
-
-Konseptet med å skrive tester har eksistert lenge og har blitt ansett som en god praksis innen programmering. Det hjelper programmører med å identifisere og fikse feil tidlig i utviklingsprosessen og sikrer at koden fungerer som den skal.
-
-Alternativt kan noen programmører bruke "print"-setninger for å sjekke for feil istedenfor å skrive tester. Dette er ikke en god praksis og kan være tidkrevende å finne feil og fikse dem senere.
-
-Når du skriver tester i Lua, er det viktig å vite at testkoden ikke skal være en del av den endelige koden din. Tester er kun for å sjekke eksisterende kode, og bør ikke påvirke den.
-
-## Se også:
-
-- Lua's offisielle dokumentasjon for testing: https://www.lua.org/pil/15.html
-- En guide til enhetstesting i Lua: https://cloudcraft.info/unit-testing-in-lua/
-- En diskusjon om fordeler med å skrive tester i programmering: https://medium.freecodecamp.org/the-importance-of-writing-tests-for-programmers-38e4ba6be548
+## See Also
+- [LuaUnit on GitHub](https://github.com/bluebird75/luaunit)
+- [Programming in Lua (book)](https://www.lua.org/pil/)

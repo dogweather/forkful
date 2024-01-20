@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Go: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Go"
 category:             "Go"
@@ -10,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola programadores! ¿Quieres asegurar la calidad de tus programas en Go? ¡Entonces es hora de hablar sobre cómo escribir pruebas!
+## Qué y Por Qué?
 
-## ¿Qué y por qué?
+Escribir pruebas es realizar código que verifica la correctitud de otros códigos. Los programadores lo hacen para asegurarse de que sus programas funcionen como se espera y para prevenir errores futuros.
 
-Escribir pruebas es simplemente crear piezas de código que verifican si otra parte del código funciona correctamente. Los programadores hacen esto para asegurarse de que su código se comporte como se espera y para prevenir errores en el futuro.
+## Cómo:
 
-## ¿Cómo?
-
-Escribir pruebas en Go es muy sencillo. Primero, debes importar el paquete "testing". Luego, puedes escribir funciones de prueba que comienzan con "Test". Dentro de estas funciones, puedes utilizar la función "t.Fail()" para indicar si la prueba falló o no. A continuación, puedes ejecutar las pruebas con el comando "go test" en la terminal y verás los resultados de tus pruebas.
+Para comenzar a escribir pruebas en Go usaremos el paquete `testing`. Observa este código sencillo de prueba para una función que suma dos números:
 
 ```Go
-// Importar el paquete "testing"
-import "testing"
+package suma
 
-// Función de prueba
-func TestSum(t *testing.T) {
-    // Lógica de prueba
-    result := sum(5, 7)
-    // Verificar si el resultado es correcto
-    if result != 12 {
-        t.Fail() // Prueba fallida
+// Suma dos enteros y devuelve el resultado.
+func Suma(x, y int) int {
+    return x + y
+}
+```
+La prueba para la función `Suma` podría verse así:
+
+```Go
+package suma
+
+import (
+    "testing"
+    "fmt"
+)
+
+func TestSuma(t *testing.T) {
+    resultado := Suma(5, 5)
+    if resultado != 10 {
+        t.Errorf("Suma(5, 5) = %d; want 10", resultado)
+    } else {
+      fmt.Printf("TestSuma: éxito\n")
     }
 }
 ```
+Para ejecutar la prueba, ejecuta `go test` en la terminal. Si todo está correcto, verás algo así:
 
-## Profundizando
+```
+ok      suma    0.001s
+```
+Si hay un fallo, se mostrará un mensaje detallando el error.
 
-La idea de escribir pruebas no es nueva y ha existido en la programación desde hace mucho tiempo. En Go, la herramienta "go test" fue introducida en la versión 1.7 y ha sido ampliamente adoptada por los programadores para garantizar la calidad de sus programas.
+## Exploración Profunda
 
-Si bien escribir pruebas puede ser una tarea tediosa, es una práctica muy útil en el desarrollo de software. También existen otras herramientas en Go, como "Testify", que pueden ayudarte a escribir pruebas de manera más eficiente.
+Existen frameworks más avanzados y completos además del paquete `testing`, como `GoConvey` o `Testify`. En términos históricos, las pruebas de software se convirtieron en una mejor práctica conforme los sistemas se volvieron más complejos. A nivel implementación, Go ejecuta las pruebas en paralelo por defecto, lo cual hace que el proceso sea eficiente pero obliga a las pruebas a ser seguras para su ejecución concurrente.
 
-## Ver también
+## Ver También
 
-Si deseas obtener más información sobre cómo escribir pruebas en Go, te recomendamos estos recursos:
-
-- [Documentación oficial de pruebas en Go](https://golang.org/pkg/testing/)
-- [Paquete "Testify" para mejorar tus pruebas](https://github.com/stretchr/testify)
+- Documentación oficial de Go para pruebas: [Go Testing](https://golang.org/pkg/testing/)
+- GoConvey framework: [GoConvey on GitHub](https://github.com/smartystreets/goconvey)
+- Testify para aserciones más expresivas: [Testify on GitHub](https://github.com/stretchr/testify)

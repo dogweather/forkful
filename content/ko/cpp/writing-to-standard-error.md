@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰는 방법"
-html_title:           "C++: 표준 에러에 쓰는 방법"
-simple_title:         "표준 에러에 쓰는 방법"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-표준 오류에 쓰는 것은 프로그래머들이 오류를 고치고 디버깅하기 위한 중요한 방법입니다. 특히 디버깅 중에 코드에서 오류가 발생하는지 쉽게 알 수 있도록 표준 오류를 사용하는 것이 중요합니다.
+## What & Why? (무엇이며 왜 사용할까?)
+표준 에러는 프로그램 실행 도중 발생하는 오류 메시지를 출력하기 위해 사용되는 출력 스트림입니다. 프로그래머들은 오류를 다른 출력과 분리하여 더 쉽게 문제를 진단하고 로깅하기 위해 이를 사용합니다.
 
-## 방법:
-```C++ 
-// 오류 메세지를 표준 오류로 출력하는 간단한 예제
-#include <iostream> // 입출력 헤더 파일을 불러옴 
-using namespace std;
-
-int main() {
-    cerr << "이것은 표준 오류입니다." << endl; // 오류 메세지를 표준 오류로 출력
-    return 0;
-}
-```
-- 콘솔에서 ```이것이 표준 오류입니다.``` 메세지가 출력됩니다.
-
-```C++
-// 오류 발생 시도하는 예제
+## How to: (어떻게 사용할까?)
+```cpp
 #include <iostream>
-using namespace std;
 
 int main() {
-    int num;
-    cin >> num; // 사용자로부터 입력받는다.
-    if (num < 0) {
-        cerr << "오류: 음수를 입력하셨습니다." << endl;
-        return 1;
-    }
+    // 정상 출력
+    std::cout << "Hello, World!" << std::endl;
+
+    // 에러 출력
+    std::cerr << "An error has occurred!" << std::endl;
+
     return 0;
 }
 ```
-- 사용자가 음수를 입력할 경우 다음과 같이 오류 메세지가 출력됩니다.
+**샘플 출력**
 ```
-오류: 음수를 입력하셨습니다.
+Hello, World!
+An error has occurred!
 ```
 
-## 자세히 들여다보기:
-표준 오류를 쓰는 것의 역사적 배경은 프로그래머들이 디버깅을 더 쉽고 효율적으로 할 수 있도록 한 것입니다. 이전에는 파일이나 콘솔에서 오류 메세지를 확인해야 했지만, 표준 오류를 사용하면 디버깅 도중에 바로 확인할 수 있습니다. 또한 ```cerr```을 사용하면 오류가 발생해도 프로그램이 중단되지 않기 때문에, 오류가 발생한 부분을 쉽게 파악할 수 있습니다. 프로그래머에게 매우 유용한 도구입니다.
+## Deep Dive (심층 분석)
+표준 에러(`stderr`)는 UNIX 시스템의 초기부터 사용되어오고 있습니다. `stdout`과 구분하여 사용함으로써 오류 메시지와 일반 출력을 분리할 수 있어 유용합니다. 대안으로는 파일로 로깅을 하거나 시스템 로그를 사용하는 방법이 있습니다. C++에서 `std::cerr` 는 내부적으로 `std::ostream` 클래스의 인스턴스로 구현되어 있으며 버퍼링되지 않아 즉시 출력됩니다.
 
-다른 대안으로는 ```clog```이나 사용자 정의 오류 메세지 출력 함수를 사용하는 것도 있지만, 표준 오류가 디버깅 과정에서 가장 신뢰할 수 있는 방법입니다.
-
-표준 오류를 구현하는 방법은 간단합니다. 표준 오류는 기본적으로 화면에 출력되는 것이기 때문에 따로 설정할 필요가 없습니다. 다만 ```cerr```을 사용할 때는 ```<iostream>``` 헤더 파일을 불러오면 됩니다.
-
-## 관련 자료:
-- [표준 입출력 라이브러리 개요](https://modoocode.com/222)
-- [파일 입출력에 대한 자세한 설명](https://modoocode.com/241)
+## See Also (관련 자료)
+- [cppreference.com: std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
+- [cppreference.com: I/O Stream Library](https://en.cppreference.com/w/cpp/io)
+- [GNU C Library: Standard Streams](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)

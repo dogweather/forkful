@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Skriving til standardfeil er en måte for en programmerer å sende feilmeldinger til konsollen i stedet for seriell kommunikasjon. Dette kan være nyttig når man har mer komplekse programmer hvor man ønsker å logge viktig informasjon eller feilmeldinger.
+## Hva & Hvorfor?
+Skrive til standard error (stderr) er å sende feilmeldinger separat fra vanlig utskriftsdata (stdout). Programmerere gjør dette for å logge feil uten å blande det med hoveddataflyten.
 
-# Slik gjør du:
+## Hvordan:
+I Arduino-miljøet kan man ikke direkte skrive til stderr som på vanlige datamaskiner. Men vi kan bruke `Serial.print` til feilsøking:
+
+```Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Skriv ut feilmelding hvis knappetrykk oppdages (antatt på pin 2)
+  int buttonState = digitalRead(2);
+  if (buttonState == HIGH) {
+    Serial.print("Feil: Knappen skal ikke være trykket nå!");
+  }
+  
+  // Vanlig kode her ...
+
+  delay(1000);
+}
 ```
-// Kodingseksempler 
+Seriemotoren vil vise feilmeldingen hvis tilstanden oppdages. Husk å åpne Serial Monitor for å se utskriftene.
 
-// Skrive melding til standardfeil:
-Serial.write("Dette er en feilmelding");
+## Dypdykk:
+I tradisjonell programmering kan stderr brukes for å skille ut feil fra normal utskrift. På Arduino har vi ikke separasjon på samme måte, men Serial-kommunikasjonen hjelper til med feilsøking. Historisk sett har forskjellen på stdout og stderr vært viktig i Unix-baserte systemer. Uten støtte for stderr på Arduino, blir Serial Monitor og Serial Plotter vårt beste verktøy for diagnostisering.
 
-// Les av standardfeil:
-char buffer[64];
-Serial.println(Serial.readBytes(buffer, 64));
-```
-
-# Dykke dypere:
-Det å skrive til standardfeil ble først introdusert i Unix operativsystemet på 1970-tallet, og har siden blitt en vanlig praksis for å håndtere feilmeldinger i programmer. Alternativene til å skrive til standardfeil inkluderer å bruke et eget feilloggingsbibliotek eller å sende feilmeldinger til en egen skjerm.
-
-Det å implementere skriving til standardfeil i Arduino er en enkel prosess, da det er innebygd støtte for dette i språket. Ved å bruke `Serial.write()` og `Serial.readBytes()` funksjonene, kan du enkelt sende og lese av meldinger fra standardfeil.
-
-# Se også:
-* Mer informasjon om skriving til standardfeil i Arduino: https://www.arduino.cc/reference/en/language/functions/communication/serial/write/
-* Eksempler på bruk av skriving til standardfeil i Arduino: https://www.arduino.cc/en/Tutorial/SerialCallResponseASCII
+## Se Også:
+- Arduino Serial Library: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Feilsøking med Arduino: https://www.arduino.cc/en/Guide/Troubleshooting
+- Innsikt i stderr og stdout: https://en.wikipedia.org/wiki/Standard_streams

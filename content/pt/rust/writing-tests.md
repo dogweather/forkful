@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Rust: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Porquê?
 
-Escrever testes em programação é um processo de criar pequenos programas que verificam a funcionalidade do seu código principal. Os programadores fazem isso para garantir que seu código esteja funcionando corretamente e para evitar erros futuros em seu desenvolvimento.
+Escrever testes é criar códigos específicos que verificam se outras partes do programa operam corretamente. Programadores realizam testes para garantir que o código funcione como esperado, para prevenir bugs e para facilitar a manutenção e evolução do software.
 
 ## Como fazer:
 
-O Rust possui sua própria biblioteca de testes integrada, permitindo a escrita de testes diretamente no código fonte. Para criar um novo teste, basta adicionar o atributo `test` acima da função do teste e executá-lo usando o comando `cargo test`.
-
 ```Rust
-#[test]
-fn test_soma() {
-    assert_eq!(2 + 2, 4);
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    fn outra_funcao() {
+        assert!(1 == 1);
+    }
+
+    #[test]
+    #[should_panic(expected = "divisão por zero")]
+    fn falha_na_divisao() {
+        // Isto deve causar uma falha!
+        let _resultado = 1 / 0;
+    }
 }
 ```
 
-Se todos os testes passarem com sucesso, você verá uma mensagem indicando que todos os testes foram aprovados.
+Saída esperada no terminal ao executar `cargo test`:
 
 ```
-Compiling projeto v0.1.0 (file:///C:/projetos/rust/projeto)
-Finished in 0.063s
-Running target\debug\projeto-9bb9194203a976bb.exe
+running 2 tests
+test tests::outra_funcao ... ok
+test tests::it_works ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out
 
 running 1 test
-test test_soma ... ok
+test tests::falha_na_divisao ... FAILED
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-
-   Running `target\debug\projeto-9bb9194203a976bb.exe`
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## Profundidade:
+## Mergulho Profundo
 
-Os testes em programação têm sido cada vez mais importantes à medida que os projetos se tornam maiores e mais complexos. Eles também são uma prática recomendada em metodologias ágeis de desenvolvimento, pois ajudam a detectar problemas no início e a manter o código mais limpo e organizado.
+Testes automáticos em Rust são a norma desde a primeira versão da linguagem. Alternativas incluem teste de integração e testes de documentação com cargas mais pesadas de contexto. Para testes unitários, Rust utiliza anotações para identificar testes e macros `assert!`, `assert_eq!`, e `assert_ne!` para fazer afirmações. Rust permite a execução de testes em paralelo e testes condicionais com a flag `#[cfg(test)]`.
 
-Além da biblioteca de testes do Rust, existem outras alternativas, como a biblioteca de testes `assert`, que oferece funcionalidades adicionais e personalização. É importante escolher a biblioteca de testes mais adequada para o seu projeto, levando em consideração suas necessidades e preferências.
+## Veja Também
 
-No que diz respeito à implementação, os testes são compilados em uma seção separada do executável final e podem ser facilmente ignorados se você não quiser executá-los. Além disso, o Rust possui uma sintaxe clara e concisa para a criação de testes, tornando o processo mais fácil e rápido.
-
-## Veja também:
-
-Para saber mais sobre testes em Rust, confira a documentação oficial em https://doc.rust-lang.org/book/testing.html e o repositório de exemplos da comunidade em https://github.com/rust-unofficial/awesome-rust#testing.
+- Rust Book sobre testes: https://doc.rust-lang.org/book/ch11-00-testing.html
+- Cargo Book sobre testes: https://doc.rust-lang.org/cargo/guide/tests.html
+- Rust por exemplo (Rust by Example) sobre testes: https://doc.rust-lang.org/rust-by-example/testing.html

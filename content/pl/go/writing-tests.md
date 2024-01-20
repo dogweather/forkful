@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Go: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Go"
 category:             "Go"
@@ -10,57 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Pisanie testów jest często nieodłączną częścią procesu programowania. Polega to na tworzeniu małych fragmentów kodu, które sprawdzają, czy pozostałe elementy programu funkcjonują zgodnie z oczekiwaniami. Programiści piszą testy, aby upewnić się, że ich kod jest poprawny i wykona się bez problemów.
+Pisanie testów to proces tworzenia skryptów, które automatycznie sprawdzają, czy kod działa prawidłowo. Programiści robią to, aby zapewnić jakość kodu i unikać błędów.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić?)
+
+Testy w Go piszemy przy pomocy pakietu `testing`. Oto przykład prostej funkcji i testów do niej:
 
 ```Go
-// Zdefiniuj funkcję, dla której chcemy napisać testy
-func reverse(str string) string {
-    runes := []rune(str)
-    for i, j := 0, len(runes)-1; i < len(runes)/2; i, j = i+1, j-1 {
-        runes[i], runes[j] = runes[j], runes[i]
-    }
-    return string(runes)
+package main
+
+import (
+    "testing"
+    "fmt"
+)
+
+func Add(a, b int) int {
+    return a + b
 }
 
-// Importujemy pakiet "testing" do naszego kodu
-import "testing"
-
-// Definiujemy test funkcji reverse(), nadając mu nazwę TestReverse
-func TestReverse(t *testing.T) {
-    actual := reverse("Hello World")
-    expected := "dlroW olleH"
-    // Jeśli wynik jest niezgodny z oczekiwaniami, zgłaszamy błąd
-    if actual != expected {
-        t.Errorf("Got %v, want %v", actual, expected)
+func TestAdd(t *testing.T) {
+    result := Add(2, 3)
+    if result != 5 {
+        t.Errorf("Add(2, 3) = %d; want 5", result)
     }
 }
 
-// Uruchamiamy testy
-go test
+func main() {
+    fmt.Println("Suma: ", Add(2, 3))
+}
 ```
 
-Wyjście powinno wyglądać następująco:
+Wynik uruchomienia `go test`:
 
-```Go
---- FAIL: TestReverse (0.00s)
-	testing.go:173: Got dlroW olleH, want Hello World
-FAIL
-exit status 1
-FAIL    /path/to/your/code/package 0.012s
+```
+PASS
+ok  	path/to/your/package	0.002s
 ```
 
-## Zagłębienie:
+## Deep Dive (Dogłębna analiza)
 
-Pisanie testów jest ważną częścią tzw. "test-driven development", czyli programowania wyznaczanego przez testy. Praktyka ta promuje tworzenie testów przed faktycznym pisaniem kodu. Istnieją również inne metodyki, takie jak "behaviour-driven development", w których testy są bardziej opisowe niż techniczne.
+Testy w Go sięgają korzeniami początków języka. Alternatywnymi metodami są Behavior-Driven Development (BDD) z narzędziami jak GoConvey czy testing frameworks jak Testify. Implementacja testów w Go jest prosta, testy są kompilowane do pliku wykonywalnego i uruchamiane jako osobny proces, zapewniając izolację i bezpieczeństwo.
 
-Główną alternatywą dla pakietu "testing" jest narzędzie "ginkgo", które oferuje lepszą czytelność i więcej funkcjonalności. Jednak pakiet "testing" jest częścią standardowej biblioteki języka Go i jest łatwo dostępny do użycia.
+## See Also (Zobacz również)
 
-## Zobacz również:
-
-- [Testing in Go] (https://golang.org/pkg/testing/)
-- [Ginkgo] (https://github.com/onsi/ginkgo)
-- [Test-Driven Development] (https://pl.wikipedia.org/wiki/Test-driven_development)
+- Oficjalna dokumentacja Go: [Testy](https://golang.org/pkg/testing/)
+- Artykuł o testach w Go: [Just for func: Writing testable Go code](https://youtu.be/hVFEV-ieeew)
+- GoConvey, BDD framework dla Go: [GoConvey on GitHub](https://github.com/smartystreets/goconvey)
+- Testify, narzędzie do asercji i mockowania: [Testify on GitHub](https://github.com/stretchr/testify)

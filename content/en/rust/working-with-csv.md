@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Rust recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,48 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-CSV stands for Comma Separated Values, which is a simple text format used to store tabular data. It consists of rows and columns, with each row representing a record and each column representing a field. Programmers work with CSV files to easily manipulate and analyze large data sets, as it allows for easy import and export of data between various applications and programming languages.
+
+CSV, short for Comma-Separated Values, is a file format used to store tabular data. Programmers love CSV for its simplicity and widespread support across tools and programming languages for data manipulation, import, and export.
 
 ## How to:
-To work with CSV files in Rust, you can use the rust-csv crate. Here's a simple example of how to read and print the data from a CSV file:
+
+First, include the necessary crate in `Cargo.toml`:
+
+```toml
+[dependencies]
+csv = "1.1"
+```
+
+Then, handle reading a CSV:
 
 ```rust
-extern crate csv;
-
+use csv::Reader;
 use std::error::Error;
-use std::path::Path;
-use csv::{ReaderBuilder, ErrorKind};
 
-fn main() {
-    let path = Path::new("data.csv");
-    let file = match File::open(path) {
-        Ok(file) => file,
-        Err(e) => panic!("Error opening file: {}", e.description()),
-    };
-
-    let mut reader = ReaderBuilder::new()
-        .has_records_impl(false)
-        .from_reader(file);
-
-    for result in reader.records() {
-        match result {
-            Err(err) => { println!("Error: {:?}", err.kind()); },
-            Ok(record) => { println!("Record: {:?}", record); },
-        }
+fn main() -> Result<(), Box<dyn Error>> {
+    let mut rdr = Reader::from_path("data.csv")?;
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
     }
+    Ok(())
 }
 ```
 
-Running this code will print each record in the CSV file.
+Write to a CSV:
 
-## Deep Dive:
-CSV is a popular format for storing and exchanging data due to its simplicity and compatibility across different platforms and systems. It was first introduced in the 1970s and has since become a standard for data exchange in various industries such as finance, healthcare, and research.
+```rust
+use csv::Writer;
+use std::error::Error;
 
-There are also alternative formats for storing tabular data, such as JSON and XML. However, CSV remains a preferred choice for many programmers due to its ease of use and efficiency.
+fn main() -> Result<(), Box<dyn Error>> {
+    let mut wtr = Writer::from_path("output.csv")?;
+    wtr.write_record(&["name", "city", "age"])?;
+    wtr.write_record(&["Jane", "New York", "30"])?;
+    wtr.flush()?;
+    Ok(())
+}
+```
 
-The rust-csv crate uses rust's built-in error handling library, which allows for easy and efficient handling of errors. It also supports various custom options for reading and writing CSV data, giving programmers more control over their data manipulation.
+Sample output for reading:
 
-## See Also:
-- Official rust-csv crate documentation: https://docs.rs/csv/
-- Tutorial on working with CSV files in Rust: https://docs.rs/csv/1.0.0-beta.2/csv/tutorial/index.html
-- Other popular CSV parsers in Rust: https://lib.rs/crates/csv
+```
+StringRecord(["Jane", "New York", "30"])
+```
+
+## Deep Dive
+
+CSV has been around since the early days of personal computing, used for exchanging data between programs and systems. While JSON and XML provide more structure, CSV remains popular for its light weight and ease of use.
+
+Alternatives to csv crate in Rust include `serde_csv`, offering convenient serialization and deserialization, and `papercut`, focusing on safe and ergonomic CSV parsing.
+
+CSV parsing in Rust is I/O bound. Efficient handling involves using iterators and Rust's robust error handling to manage malformed data.
+
+## See Also
+
+- Rust CSV crate documentation: https://docs.rs/csv/
+- The Rust Programming Language book: https://doc.rust-lang.org/book/
+- Serde: https://serde.rs/ - a framework for serializing and deserializing Rust data structures.
+- Rust by Example CSV: https://rustbyexample.com/std_misc/file/csv.html

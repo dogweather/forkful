@@ -35,4 +35,3 @@ Linuxin `date`-komennot käyttävät GNU coreutils -pakettia, joka on moniulotte
 ## Katso myös:
 
 - GNU coreutils: [www.gnu.org/software/coreutils/coreutils.html](https://www.gnu.org/software/coreutils/coreutils.html)
-- `date` man sivu: [man7.org/linux/man-pages/man1/date.1.html](http://man7.org/linux/man-pages/man1/date.1.html)

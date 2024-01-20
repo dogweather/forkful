@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Elixir: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Uusi vuosi, uudet Elixir-taidot – tämä artikkeli auttaa sinut alkuun YAML:n kanssa. Tämä ahkeraan käytetty tiedostomuoto on suosittu ohjelmoijilla, ja tutustumalla siihen voit monipuolistaa ohjelmointikokemustasi.
+## What & Why?
+"Mikä & Miksi?"
+YAML on datan sarjoituskieli, jota käytetään konfiguraatiotiedostoissa ja datan siirrossa. Ohjelmoijat käyttävät YAMLia, koska se on luettavissa ihmiselle ja helppo muokata, mutta silti koneystävällinen.
 
-## Mitä & Miksi?
+## How to:
+"Kuinka:"
+Elixirissä käytetään YAML:ia `yamerl` -kirjaston avulla. Esimerkiksi voimme purkaa YAML-tiedoston ja muuttaa sen Elixirin kartaksi (map):
 
-YAML on tapa tallentaa dataa luettavassa muodossa. Se auttaa ohjelmoijia jakamaan ja tallentamaan tietoja helposti. YAML on myös helpompi lukea ja ymmärtää kuin perinteinen JSON-tiedosto.
-
-## Kuinka:
-
-Elixirissä YAML:n käyttö on helppoa ja yksinkertaista. Voit ladata YAML-paketin koodiisi käyttämällä ```mix.exs```-tiedostoa seuraavasti:
-
-```
+```Elixir
+# Lisää ensin yamerl riippuvuutena mix.exs-tiedostossa
 defp deps do
-  [{:yaml, "~> 0.2.0"}]
+  [{:yamerl, "~> 0.8.0"}]
 end
+
+# Sitten pura YAML-tiedosto
+:ok = Application.ensure_all_started(:yamerl)
+yaml_content = """
+---
+foo: bar
+number: 1
+"""
+
+{:ok, [parsed_yaml]} = :yamerl_constr.string(yaml_content)
+parsed_yaml |> Enum.into(%{})
 ```
 
-Tämän jälkeen voit käyttää YAML-pakettia koodissasi seuraavasti:
-
+Tuloksena on Elixir-kartta:
 ```
-YAML.decode("""
-- name: John
-  age: 27
-- name: Sarah
-  age: 33
-""")
+%{"foo" => "bar", "number" => 1}
 ```
 
-Tämä koodi palauttaa listan karttoja, joissa on "name" ja "age" -avaimet. Tuloste näyttää tältä:
+## Deep Dive
+"Syvä sukellus":
+YAML kehitettiin vuonna 2001 ja on lyhenne sanoista "YAML Ain't Markup Language", mikä korostaa, että se ei ole merkkauskieli. Vaihtoehtoja YAML:lle ovat JSON ja XML. Elixirissä työskentely YAML-tiedostojen kanssa nojaa Erlangin kirjastoihin, kuten `yamerl`, joka on natiivi YAML-parseri Erlangille.
 
-```
-[%{"age" => 27, "name" => "John"}, %{"age" => 33, "name" => "Sarah"}]
-```
-
-Käyttämällä YAML.encode-funktiota voit muuttaa tietorakenteen YAML-muotoon:
-
-```
-YAML.encode(%{name: "Elixir", version: "1.10"})
-```
-
-Tämä koodi palauttaa seuraavan YAML-muotoisen tulosteen:
-
-```
-"name": "Elixir"
-"version": "1.10"
-```
-
-## Syväsukellus:
-
-YAML kehitettiin ensimmäisen kerran vuonna 2001, ja sen tarkoituksena oli korvata monimutkaisten XSLT- tiedostojen käyttö XML:n kanssa. Nykyään YAML on yleisempi kuin XML monissa sovelluksissa, koska sen avulla tiedostojen lukeminen ja kirjoittaminen on nopeampaa ja helpompaa.
-
-On myös muita vaihtoehtoja YAML:lle, kuten CSV- ja INI-tiedostomuodot. CSV on hyvä vaihtoehto jos haluat tallentaa yksinkertaisia listoja, mutta jos haluat tallentaa monimutkaisempia dataa, or INI-tiedostot eivät ole paras valinta.
-
-YAML-paketti Elixirissä perustuu libyaml-kirjastoon, ja se käyttää C-koodia parantaakseen suorituskykyä. Tästä syystä YAML on yksi nopeimmista tiedostomuodoista Elixirissä.
-
-## Lue lisää:
-
-Jos haluat oppia lisää YAML:stä, voit tutustua paketin viralliseen dokumentaatioon: https://hexdocs.pm/yaml/readme.html. Voit myös tarkastella libyaml-kirjaston dokumentaatiota täällä: http://pyyaml.org/wiki/LibYAML.
-
-Onnea matkaan YAML:n kanssa – toivon, että tästä artikkelista on sinulle hyötyä Elixir-taitojesi kehittämisessäsi!
+## See Also
+"Katso myös":
+YAML-spesifikaatio: https://yaml.org/spec/
+`yamerl` GitHub-sivu: https://github.com/yakaz/yamerl
+Elixir School YAML-oppitunti: https://elixirschool.com/en/lessons/advanced/yaml/

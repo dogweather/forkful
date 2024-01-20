@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "Rust: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,31 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester är en vanlig praxis inom programmering för att säkerställa att koden fungerar som den ska. Tester är små bitar av kod som kontrollerar att olika delar av programmet uppfyller förväntade krav och ger ökad kvalitet och säkerhet i koden.
 
-## Hur man:
-Det är enkelt att skriva tester i Rust med hjälp av det inbyggda ramverket för enhetstester. Man börjar med att importera ```std::test``` biblioteket och sedan definiera en testfunktion som använder makrot ```assert``` för att kontrollera att uttryck eller funktioner ger förväntat resultat. Nedan finns ett exempel på en testfunktion för en enkel funktion som summerar två tal:
+Att skriva tester innebär att kodas scener för att automatiskt kontrollera att programmet beter sig som förväntat. Programmerare gör detta för att snabbt upptäcka buggar, säkerställa kodkvalitet och förenkla underhållet.
 
-```Rust
-use std::test;
+## Hur man gör:
 
-fn summera(tal1: i32, tal2: i32) -> i32 {
-  return tal1 + tal2;
+För att skapa ett test i Rust, lägg till en `#[test]` annotering ovanför en funktion. Kör testerna med `cargo test`.
+
+```rust
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn det_funkar() {
+        assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    #[should_panic]
+    fn det_failar() {
+        assert!(false);
+    }
 }
 
-#[test]
-fn test_summera() {
-  assert_eq!(summera(2, 3), 5);
-}
 ```
 
-När man kör testerna med kommandot ```cargo test``` kommer programmet att gå igenom alla testfunktioner och rapportera om några av dem misslyckats.
+Kör dina tester:
 
-## Djupdykning:
-Att skriva tester har blivit allt mer populärt inom programmering de senaste åren och anses vara ett viktigt steg i att skapa pålitlig och robust kod. Innan enhetstester blev populära, användes manuella tester där en person skulle köra igenom programmet och kontrollera att allt fungerade som det skulle. Detta var en tidskrävande och ineffektiv process jämfört med automatiserade tester. Alternativet till enhetstester är integrationstester som kontrollerar att flera delar av programmet fungerar bra tillsammans men är mer komplexa och tar längre tid att skriva.
+```bash
+$ cargo test
+```
 
-Det är också möjligt att testa privata funktioner och metoder genom att använda makrot ```#[test]``` tillsammans med ```#[allow(private)]``` för att tillåta åtkomst till dessa privata delar av koden. Detta gör det möjligt att testa mer komplexa och interna delar av programmet utan att behöva skriva om koden för att göra dem tillgängliga för externa tester.
+Förväntad output:
+
+```
+running 2 tests
+test tests::det_failar ... FAILED
+test tests::det_funkar ... ok
+
+failures:
+
+failures:
+    tests::det_failar
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Djupdykning
+
+Testning i Rust började prioriteras under 2015. Alternativ till Rusts inbyggda ramverk inkluderar integrationstester, dokumentationstester och externa verktyg som `quickcheck`. Implementeringsdetaljer: Använd `cfg(test)` för att indikera att koden bara ska kompileras vid testning och attribut som `#[should_panic]` för att ange förväntade panikfall.
 
 ## Se även:
-För mer information om hur man skriver tester i Rust, se följande länkar:
-- [Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+
+- Rusts officiella bok om testning: https://doc.rust-lang.org/book/ch11-00-testing.html
+- Rust `assert` makron: https://doc.rust-lang.org/std/macro.assert.html
+- `quickcheck` biblioteket: https://docs.rs/quickcheck/*/quickcheck/

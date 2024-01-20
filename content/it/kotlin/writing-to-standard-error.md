@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Kotlin: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è & perché?
+## What & Why?
+Scrivere su standard error (stderr) permette di separare i log degli errori dall'output principale. I programmatori lo usano per diagnosticare problemi senza intaccare i dati di output normali.
 
-Scrivere su standard error è una pratica comune tra i programmatori che permette di inviare messaggi di errore al terminale. Questo aiuta a identificare e risolvere problemi durante l'esecuzione del programma.
+## How to:
+In Kotlin, usa `System.err` per stampare su stderr. Semplice:
 
-## Come fare:
-
-```
-Kotlin System.err.println("Messaggio di errore")
-```
-
-Output:
-```
-Messaggio di errore
+```Kotlin
+fun main() {
+    println("Output normale")
+    System.err.println("Questo è un errore")
+}
 ```
 
-## Approfondimento:
+Output previsto:
+```
+Output normale
+Questo è un errore
+```
 
-Scrivere su standard error è una tecnica che risale all'epoca dei primi sistemi operativi. In alcuni casi, viene utilizzato invece di standard output per stampare messaggi di errore, poiché permette di visualizzarli come testo rosso nel terminale, facilitando la loro individuazione.
+L'ordine dell'output può variare perché `System.out` e `System.err` usano buffer differenti.
 
-Un'alternativa alla scrittura di standard error è l'utilizzo di logger, che permettono di gestire i messaggi di errore in modo più dettagliato e personalizzato. Tuttavia, in alcune situazioni la scrittura su standard error è ancora preferita, soprattutto quando si sta lavorando su piccoli script o programmi semplici.
+## Deep Dive
+Storicamente, la distinzione tra standard error e standard output risale ai tempi dei terminali Unix, aiutando nella reindirizzazione dei messaggi. Alcune alternative includono l'uso di logging frameworks come Logback o Log4j, i quali forniscono maggiore controllo e configurabilità. Nell'implementazione, `System.err` è un `PrintStream` e può essere reindirizzato o sostituito con uno custom se necessario.
 
-Per scrivere su standard error in Kotlin, è possibile utilizzare il metodo ```println``` della classe ```System.err```. In questo modo, il messaggio verrà stampato correttamente sul terminale.
+## See Also
+- [Documentazione ufficiale Kotlin](https://kotlinlang.org/docs/reference/)
+- [Tutorial per il logging in Kotlin con Logback](https://www.baeldung.com/kotlin/logging)

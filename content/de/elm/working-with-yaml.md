@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Elm: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,62 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Arbeiten mit YAML ist eine gängige Aufgabe für Programmierer. YAML (Yet Another Markup Language) ist eine einfache, menschenlesbare Datenstruktur, die häufig in der Softwareentwicklung verwendet wird. Es ist vorteilhaft, da es leicht zu verarbeiten und zu verstehen ist, was es zu einer beliebten Wahl unter Entwicklern macht.
+YAML ist ein datenorientiertes Format zum Speichern und Übertragen von Informationen, ähnlich wie JSON, aber menschenlesbarer. Programmierer verwenden es für Konfigurationen, Datenimport/-export und weil es einfach zu lesen und zu schreiben ist.
 
-## So geht's:
-Ein einfaches Beispiel, um eine YAML-Datei in Elm zu lesen, wäre:
+## Anleitung:
+Elm hat standardmäßig keine eingebaute Bibliothek zur YAML-Analyse. Du musst eine externe JavaScript-Bibliothek verwenden und Elm's Ports nutzen, um YAML-String zu konvertieren.
 
-```elm
-import Http
-import Json.Decode as Decode
-import Yaml.Decode as Yaml
+```Elm
+port module Main exposing (..)
 
-type alias Person =
-  { name : String
-  , age : Int 
-  }
+-- Definiere Ports zum Senden und Empfangen von YAML
+port yamlToElm : (String -> msg) -> Sub msg
+port elmToYaml : String -> Cmd msg
 
---- Laden der YAML-Datei "person.yml"
-loadFile =
-  let
-    url = "person.yml"
-    request = Http.get url Decode.string
-  in
-    Decode.andThen
-      ( Yaml.decodeString Yaml.value
-          |> Decode.map (\person -> ({ name = Yaml.field "Name" Yaml.string person
-                                     , age = Yaml.field "Alter" Yaml.int person }) )
-  )
-    request
+type alias Model = 
+    { content : String }
 
---- Verwendung der Funktion
-getPerson =
-  case loadFile of
-    Ok person -> person
-    Err err -> Debug.log "Fehler beim Laden der Datei:" err
+type Msg
+    = ReceiveYaml String
+    | SendYaml
 
+-- Initialisiere dein Model
+init : Model
+init =
+    { content = "" }
+
+-- Update-Funktion verarbeitet empfangene YAML-Daten
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        ReceiveYaml yamlString ->
+            ({ model | content = yamlString }, Cmd.none)
+
+        SendYaml ->
+            (model, elmToYaml model.content)
+
+-- Abonniere die Ports
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    yamlToElm ReceiveYaml
+
+-- Main Funktion mit init, update und subscriptions
+main : Program () Model Msg
+main =
+    Platform.program
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        }
 ```
 
-Die Inhalte der YAML-Datei "person.yml" könnten wie folgt aussehen:
+Im zugehörigen JavaScript:
 
-```yaml
-Name: Max Mustermann
-Alter: 30
+```javascript
+// Abonniere den Port aus Elm
+app.ports.elmToYaml.subscribe(function(yamlString) {
+  // Verwende eine YAML-JS-Bibliothek zum Parsen
+  var data = YAML.parse(yamlString);
+  app.ports.yamlToElm.send(data);
+});
 ```
 
-Die Funktion `getPerson` würde dann ein `Ok` Resultat mit dem entsprechenden Person-Objekt zurückgeben.
-
-## Tiefere Einblicke:
-
-### Historischer Kontext:
-YAML wurde erstmals im Jahr 2001 von Clark Evans entwickelt und sollte als ein benutzerfreundliches Alternativformat zu XML dienen. Es ist eine vereinfachte Version von XML und wird häufig als Datenstruktur für Konfigurationsdateien, Datenübertragungen zwischen Systemen oder für die Speicherung von Anwendungsdaten verwendet.
-
-### Alternativen:
-Obwohl YAML eine beliebte Wahl unter Programmierern ist, gibt es einige alternative Formate wie beispielsweise JSON oder XML, die ebenfalls für ähnliche Zwecke verwendet werden können. Die Wahl des geeigneten Formats hängt oft von den Bedürfnissen und Präferenzen des Teams oder Projekts ab.
-
-### Implementierungsdetails:
-In Elm wird das `Yaml.Decode` Paket verwendet, um eine YAML-Datei zu verarbeiten. Dabei werden die Daten in eine Json-Wertstruktur übersetzt, die dann wiederum in das Elm-Datenmodell konvertiert werden kann. Dieser Prozess ermöglicht eine einfache Verwendung von YAML-Daten in Elm.
+## Tiefgang:
+YAML (YAML Ain't Markup Language) wurde in den frühen 2000ern entwickelt. Die Lesbarkeit und die Einfachkeit stehen im Vordergrund. Alternative Formate wie JSON oder XML sind automatisierter zu parsen, bieten jedoch weniger Mensch-Freundlichkeit. Um YAML in Elm zu verarbeiten, benötigst du JavaScript-Interoperabilität, da Elm eine reine Sprache bleibt und keine arbiträren Seiteneffekte ermöglicht.
 
 ## Siehe auch:
-- [Offizielle Dokumentation von Elm](https://elm-lang.org/)
-- [YAML-Spezifikation](https://yaml.org/spec/)
+* YAML-Webseite: [https://yaml.org](https://yaml.org)
+* JavaScript-YAML-Parser: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+* Elm Guide zu Ports: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Reply with ONLYテストの書き方"
-html_title:           "C: Reply with ONLYテストの書き方"
-simple_title:         "Reply with ONLYテストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#今何か
-テストを書くことは、コードの品質を確保するための重要なプロセスです。プログラマーは、コードをテストすることで、バグを見つけて修正したり、コードの動作を確認したりすることができます。
+## What & Why? (テストコードの「何」と「理由」)
+テストコードはプログラムが意図した動作をするかを確認するコードです。バグの早期発見、機能の正確性を保証し、安心してリファクタリングできるようにするために書きます。
 
-#やり方：
-テストを書く方法はいろいろありますが、ここではC言語を例に説明します。下のコードブロックを参考に、テストがどのように記述されるかを見てみましょう。
+## How to: (やり方)
+以下の例では、単純な関数のテストコードを示します:
 
-```C 
-#include <stdio.h> 
-#include <stdbool.h> 
+```C
+#include <assert.h>
 
-bool isEven(int num) { 
-   if (num % 2 == 0) { 
-      return true; 
-   } else { 
-      return false; 
-   } 
-} 
+// 関数の宣言
+int add(int a, int b) {
+    return a + b;
+}
 
-//テストケース 
-int main() { 
-   printf("%d",isEven(2)); 
-   printf("%d",isEven(3)); 
-   return 0; 
+// テスト関数
+void test_add() {
+    assert(add(2, 3) == 5);
+    assert(add(-1, 1) == 0);
+    assert(add(0, 0) == 0);
+}
+
+// main関数でテストを実行
+int main() {
+    test_add();
+    return 0; // すべてのテストが成功すると、プログラムは0を返す
 }
 ```
 
-このコードを実行すると、2と3が出力されます。これは、2が偶数であることがtrue、3が偶数でないことがfalseとして正しくテストされたことを示しています。
+期待される出力はなし（アサーションに失敗するとプログラムは停止します）。
 
-#深い掘り下げ
-テストを書くことは、ソフトウェア開発の歴史の中で重要な役割を果たしてきました。古いプログラミング言語では、テストを書く必要はありませんでしたが、コードベースが複雑になるにつれて、テストを書くことがより一般的になりました。
+## Deep Dive (深掘り)
+テストコードは1970年代に「ボックステスト」として発展しました。代替手段には手動テスト、統合テスト、受け入れテストがあります。C言語では`assert.h`ライブラリを使用する単体テストが一般的ですが、複雑なテストには`CUnit`や`Check`などのテストフレームワークを使用します。
 
-代替手段として、デバッガーを使用してプログラムの動作をテストすることができます。しかし、テストを書くことはより確実にミスを見つけることができ、将来の変更にもより強いコードを書くことができます。
-
-テストを書く際には、様々なツールやフレームワークを使用することもできます。例えば、CUnitやGoogle Testなどのフレームワークがあります。これらは、テストをより効率的に管理するためのツールです。
-
-#関連リソース
-- [CUnit - C言語用のテストフレームワーク]（https://cunit.sourceforge.io/）
-- [Google Test - Googleによるテストフレームワーク]（https://github.com/google/googletest）
+## See Also (関連情報)
+- CUnit: http://cunit.sourceforge.net/
+- Check: https://libcheck.github.io/check/
+- Cプログラムのテストについての詳細な解説: "Cプログラムのテスト戦略" by Brian Kernighan and Rob Pike

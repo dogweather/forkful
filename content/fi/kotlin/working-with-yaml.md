@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Kotlin: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-YAML on yleisesti käytetty tiedostomuoto, jota ohjelmoijat käyttävät tallentaakseen ja siirtääkseen tietoja. Se on erityisen hyödyllinen, kun kyseessä on monimutkaisten tietorakenteiden tallentaminen ja jakaminen, sillä se on helppolukuinen ja helppo muokata. Koodaajat käyttävät YAMLia parantaakseen tietojenhallinnan tehokkuutta ja ylläpidettävyyttä.
+## What & Why? (Mikä & Miksi?)
+YAML on ihmisen luettava dataseriaaliformaatti, jota käytetään konfiguraatiotiedostoihin. Ohjelmoijat suosivat sitä sen selkeyden ja helpon parsinnan vuoksi.
 
-## Kuinka:
-Kotlin-ohjelmoijat voivat käyttää sisäänrakennettua yaml-kirjastoa käsitelläkseen YAML-muotoisia tiedostoja. Alla on esimerkki siitä, kuinka voit lukea YAML-tiedoston ja tulostaa sen sisällön:
+## How to: (Kuinka tehdä:)
+Kotlinin avulla voit käsitellä YAML-tiedostoja käyttämällä kirjastoja kuten 'snakeyaml'. Tässä yksinkertainen esimerkki:
 
 ```Kotlin
-import org.yaml.snakeyml.Yaml
+import org.yaml.snakeyaml.Yaml
+import java.io.File
 
 fun main() {
     val yaml = Yaml()
-    val file = File("file.yaml")
-    val data = yaml.load(file)
-    println(data)
+    val inputStream = File("config.yaml").inputStream()
+    val data = yaml.load<Map<String, Any>>(inputStream)
+    
+    println(data["key"]) // Olettaen, että 'config.yaml' sisältää 'key: value' -parin
 }
 ```
-**Tulos:**
+
+Tuloste:
+
 ```
-{ name: John, age: 30, job: Developer }
+value
 ```
 
-## Syvemmälle:
-YAML-kieli julkaistiin vuonna 2001 ja sen tavoitteena oli korvata XML-tiedostot. Se on kuitenkin erilainen kuin XML, sillä se on suunniteltu ihmisen luettavaksi ja muokattavaksi. Muita vaihtoehtoja YAML:lle ovat esimerkiksi JSON ja TOML. Yhteensopivuus YAML-kääntöluokkien ja json.org:n kanssa antaa mahdollisuuden helposti muuntaa YAML-tiedosto JSON-muotoon ja päinvastoin.
+## Deep Dive (Syväsukellus)
+YAML (YAML Ain't Markup Language) kehitettiin 2000-luvun alussa, ja se on ottanut vaikutteita kielistä kuten C, Python ja XML. Vaihtoehtoja YAML:lle ovat JSON ja XML. JSON on yksinkertaisempi, mutta ei niin luettava, kun taas XML on monipuolinen mutta monimutkainen. YAML käyttää sisennystä datarakenteiden esittämiseen ja se on altis välilyöntivirheille, joten kirjastojen käyttäminen on suositeltavaa.
 
-## Katso myös:
-- [YAML virallinen sivusto](https://yaml.org/)
+## See Also (Katso Myös)
+- YAML virallinen sivusto: [https://yaml.org](https://yaml.org)
+- JSON ja XML vertailu: [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

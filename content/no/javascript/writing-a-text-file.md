@@ -1,7 +1,7 @@
 ---
-title:                "Skrive en tekstfil"
-html_title:           "Javascript: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Å skrive til en tekstfil er en vanlig oppgave for programmerere. Dette refererer til å lagre data til en fil på en datamaskin eller server. Det kan være nyttig for å lagre og organisere informasjon eller for å samhandle med andre programmer ved å utveksle data. 
+## Hva & Hvorfor?
+Writing a text file in JavaScript means creating and saving data to a file, typically on your computer. Programmers do this for data persistence, configuration, or sharing between systems and users.
 
-## Hvordan:
-For å skrive til en tekstfil i Javascript, kan vi bruke FileSystem biblioteket ved å kalle den innebygde "fs" modulen. Deretter kan vi bruke metoden "writeFile" for å skrive til filen med følgende syntaks: 
+## Slik gjør du:
+For å skrive til en tekstfil i Node.js, bruker vi `fs`-modulen. Her er et raskt eksempel:
 
-```Javascript
-fs.writeFile('nyFil.txt', 'Dette er innholdet i filen.', function(err) {
-  if (err) throw err;
-  console.log('Filen er opprettet!');
+```javascript
+const fs = require('fs');
+
+let data = 'Dette er en test tekstfil.';
+
+fs.writeFile('eksempel.txt', data, (err) => {
+  if(err) throw err;
+  console.log('Filen har blitt lagret!');
 });
 ```
 
-Dette eksempelet lager en ny fil med navnet "nyFil.txt" og skriver innholdet "Dette er innholdet i filen." til filen. Denne metoden aksepterer en rekke forskjellige filtyper som kan spesifiseres som en del av filnavnet, for eksempel ".txt" for tekstfiler eller ".json" for JSON-filer.
+Kjører du koden, opprettes 'eksempel.txt' med teksten vi ga den. Om filen allerede eksisterer, blir den overskrevet.
 
-## Dypdykk:
-Måten å skrive til en tekstfil på har endret seg gjennom årene, og det er flere måter å gjøre det på avhengig av språk og plattform. I tillegg til å bruke FileSystem biblioteket i Javascript, kan man også bruke andre moduler som "stream" eller "write". Noen utviklere foretrekker også å bruke databaser som MySQL eller MongoDB for å lagre og hente data i stedet for å skrive til filer direkte.
+## Deep Dive
+Opprinnelig, i tidligere versjoner av JavaScript, var det ikke mulig å skrive filer direkte fra nettleser-konteksten av sikkerhetsårsaker. I Node.js kan dette gjøres med innebygde moduler som `fs`. Alternativer for filskriving i en nettleser inkluderer bruk av lokale lagrings-APIer som `localStorage` eller `IndexedDB`. Det å skrive til en fil involverer typisk å bruke metoder som `writeFile` for å lagre tekst eller `writeFileSync` for en synkron versjon som blokkerer tråden til filen blir skrevet.
 
-## Se også:
-Her er noen nyttige ressurser for å lære mer om å skrive til en tekstfil i Javascript: 
-- [Node.js FileSystem dokumentasjon](https://nodejs.org/api/fs.html)
-- [Tutorialspoint sin artikkel om skriving til filer i Node.js](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
+## Se også
+- [`fs`-modulens dokumentasjon hos Node.js](https://nodejs.org/api/fs.html)
+- MDN's guide til [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- MDN's guide til [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)

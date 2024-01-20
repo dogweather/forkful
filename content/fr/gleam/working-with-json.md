@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Gleam: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-JSON: Une Introduction pour les Programmateurs
+## Quoi et Pourquoi ?
+JSON, c'est du texte pour stocker et échanger des données. Les devs l'utilisent pour parler avec des APIs, sauvegarder des configs, etc.
 
-## Qu'est-ce que c'est et pourquoi?
+## Comment faire :
+```gleam
+import gleam/should
+import gleam/json
 
-JSON, ou JavaScript Object Notation, est un format de données largement utilisé pour échanger des informations entre différentes applications. En tant que programmeur, vous utiliserez probablement JSON pour transmettre et stocker des données dans un format standardisé. JSON est également un choix populaire pour les API en raison de sa simplicité et de sa légèreté.
+// Définir une structure
+pub type Chat {
+  Chat(nom: String, age: Int)
+}
 
-## Comment faire:
+// Encoder en JSON
+pub fn chat_en_json() {
+  let chat = Chat(name: "Felix", age: 3)
+  json.encode(chat)
+  // Résultat: "{\"nom\":\"Felix\",\"age\":3}"
+}
 
-Voici quelques exemples simples de création et de manipulation de JSON en utilisant Gleam:
-
-```Gleam
-// Création d'un objet JSON avec une clé et une valeur
-let data = %{"nom": "Marie"} 
-
-// Accédez à la valeur de la clé
-let nom = data["nom"]
-
-// Ajoutez une nouvelle clé et valeur à l'objet JSON existant
-data = data |> Map.put("âge", 28)
-
-// Convertissez un object Gleam en JSON
-let json_data = Json.Encode.encode(data)
-```
-
-Voici un exemple de sortie JSON:
-
-```json
-{
-  "nom": "Marie",
-  "âge": 28
+// Décoder du JSON
+pub fn json_en_chat() {
+  let json_text = "{\"nom\":\"Felix\",\"age\":3}"
+  let chat = json.decode(json_text).expect("Décodage valide")
+  should.equal(chat, Chat(nom: "Felix", age: 3))
 }
 ```
 
-## Plongée en profondeur:
+## Plongeon Profond
+Historiquement, XML dominait pour échanger des data; JSON est devenu populaire pour sa simplicité. Alternatives: YAML, TOML. En Gleam, `gleam/json` fournit le nécessaire; c'est efficace, typé.
 
-Les origines de JSON remontent à JavaScript, où il a été conçu comme un format de données simple pour les applications web. Actuellement, JSON est pris en charge par de nombreuses langues de programmation et est devenu un standard pour le partage de données.
-
-Bien que JSON soit populaire, il existe des alternatives telles que XML et YAML. L'avantage de JSON est sa clarté, sa simplicité et sa lisibilité pour les humains. Il est également facilement analysé par les ordinateurs.
-
-En utilisant Gleam, vous pouvez facilement créer des objets JSON à l'aide de la bibliothèque standard Json.Encode. Vous pouvez également utiliser Json.Decode pour analyser des données JSON et les convertir en objets Gleam pour une manipulation facile.
+## Voir Aussi
+- JSON.org pour comprendre JSON: [www.json.org/json-fr.html](http://www.json.org/json-fr.html)
+- Guide JSON en Gleam: [hexdocs.pm/gleam_json](https://hexdocs.pm/gleam_json)

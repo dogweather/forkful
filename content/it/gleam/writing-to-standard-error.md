@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere sull'errore standard"
-html_title:           "Gleam: Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
 simple_title:         "Scrivere sull'errore standard"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perchè?
+## Cosa & Perché?
+Scrivere su standard error (stderr) separa gli errori dai normali output del programma. I programmatori lo utilizzano per facilitare la diagnosi e il debug, mantenendo il flusso di lavoro coerente.
 
-Scrivere su standard error è un'attività comune tra i programmatori. Si tratta di inviare messaggi di errore e di debug al terminale invece di stamparli nel normale flusso di output. Questo permette ai programmatori di identificare e risolvere gli errori più facilmente.
-
-## Come fare:
-
-Per scrivere su standard error in Gleam, utilizza la funzione ```error!``` seguita dal messaggio di errore o di debug desiderato all'interno di un blocco di codice ```Gleam```. Ad esempio:
-
+## Come si fa:
 ```Gleam
-let error_message = "Errore: valore non valido"
-error!(error_message)
+import gleam/io
+
+pub fn main() {
+  io.print("Questo va in standard output (stdout)\n")
+  io.eprint("Questo è un errore e va in standard error (stderr)\n")
+}
 ```
 
-Questo esempio scriverà il messaggio di errore "Errore: valore non valido" su standard error. 
+Output in stdout:
+```
+Questo va in standard output (stdout)
+```
+
+Output in stderr:
+```
+Questo è un errore e va in standard error (stderr)
+```
 
 ## Approfondimento
+Storicamente, separare stdout da stderr aiuta a maneggiare i flussi di output in modi diversi, per esempio, inviando gli errori a un file di log. Alcune alternative includono il reindirizzamento dell'output in file o il trattamento degli errori in modi personalizzati attraverso logging frameworks. In Gleam, `io.eprint` stampa specificatamente su stderr, il che è particolarmente utile quando i risultati del programma vengono incanalati o utilizzati da altri programmi.
 
-Scrivere su standard error è una pratica comune che si è sviluppata negli anni per consentire ai programmatori di identificare facilmente gli errori nel codice. Alcune alternative a questa pratica includono la stampa degli errori sul normale flusso di output o l'utilizzo di un debugger. Tuttavia, scrivere su standard error rimane uno strumento utile e semplice per la gestione degli errori.
-
-In Gleam, la funzione ```error!``` è implementata attraverso il modulo ```std/io``` che, a sua volta, utilizza librerie di basso livello per gestire la comunicazione con standard error.
-
-## Vedi anche
-
-Per ulteriori informazioni su ```error!``` e sulle funzioni di gestione degli errori in Gleam, consulta la documentazione ufficiale del linguaggio: [https://gleam.run/documentation/](https://gleam.run/documentation/).
+## Altre Risorse
+- [Understanding streams: stdout, stderr, and stdin](https://en.wikipedia.org/wiki/Standard_streams)
+- [Guida alle redirection in shell UNIX/Linux](https://www.guru99.com/linux-redirection.html)

@@ -1,7 +1,7 @@
 ---
-title:                "yaml 사용하기"
-html_title:           "C#: yaml 사용하기"
-simple_title:         "yaml 사용하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-YAML을 다루는 것은 사실 간단하지만 많은 혼란을 줄 수 있는 작업입니다. YAML은 데이터를 사람이 쉽게 읽고 작성할 수 있는 형식으로 나타내기 위해 만들어졌습니다. 프로그래머들은 YAML을 사용하여 복잡한 데이터 구조를 정의하고 관리하기 쉽게 만들 수 있습니다.
+## What & Why?
 
-## 하우 투:
+YAML은 데이터 직렬화 포맷 중 하나로, 설정 파일이나 데이터 교환에 쓰입니다. 프로그래머는 가독성이 높고 휴먼 에러에 강하기 때문에 YAML을 많이 사용합니다.
+
+## How to:
+
+C# 프로그래머들은 YAML 다루기 위해 `YamlDotNet` 라이브러리를 자주 사용합니다. NuGet 패키지 매니저로 설치하고 예제 코드로 배워보세요.
+
 ```C#
-// YAML 파일 읽기
-using System.IO;
+using System;
 using YamlDotNet.Serialization;
-using YamlDotNet.RepresentationModel;
+using YamlDotNet.Serialization.NamingConventions;
 
-var deserializer = new DeserializerBuilder().Build();
-using (var reader = new StreamReader("file.yaml"))
+public class Program
 {
-    var yamlStream = new YamlStream();
-    yamlStream.Load(reader);
+    public static void Main()
+    {
+        var yaml = @"
+name: Kim
+age: 30
+language: C#
+";
 
-    // 데이터 읽기
-    var mapping = (YamlMappingNode)yamlStream.Documents[0].RootNode;
-    var data = deserializer.Deserialize<Object>(mapping.Children);
-
-    // 데이터 쓰기
-    var serializer = new SerializerBuilder().Build();
-    var writer = new StringWriter();
-    serializer.Serialize(writer, data);
-    Console.WriteLine(writer.ToString());
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .Build();
+        
+        var person = deserializer.Deserialize<Person>(yaml);
+        
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}, Language: {person.Language}");
+    }
 }
 
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Language { get; set; }
+}
 ```
 
-## 딥 다이브:
-- YAML은 2001년에 개발되어 현재까지 많은 인기를 얻고 있습니다.
-- YAML 외에도 XML, JSON 등 다양한 데이터 형식이 있지만, YAML은 구조적인 데이터를 다루는데 있어서는 가장 쉽고 명확한 형식입니다.
-- YAML은 들여쓰기를 통해 데이터 구조를 정의하기 때문에 가독성이 매우 뛰어납니다. 이는 곧 다른 개발자들이 데이터를 이해하고 수정하기 쉽게 만들어 줍니다.
+출력:
+```
+Name: Kim, Age: 30, Language: C#
+```
 
-## 더 알아보기:
-- [YAML 공식 사이트](https://yaml.org/)
-- [YAML 와 JSON 비교](https://json2yaml.com/)
+## Deep Dive
+
+YAML은 "YAML Ain't Markup Language"(원래 "Yet Another Markup Language")의 준말이며 2001년에 개발되었습니다. JSON과 같은 다른 데이터 포맷을 대체할 수 있지만, 주석 사용 가능과 계층 구조 표현이 더 선명하다는 장점이 있습니다. `YamlDotNet` 라이브러리는 .NET 환경에서 YAML 직렬화 및 역직렬화를 수행하는 구현체입니다.
+
+## See Also
+
+- YamlDotNet GitHub 리포지토리: [https://github.com/aaubry/YamlDotNet](https://github.com/aaubry/YamlDotNet)
+- YAML 공식 웹사이트: [https://yaml.org/](https://yaml.org/)

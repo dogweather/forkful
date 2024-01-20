@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "C: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué es y por qué?
 
-Escribir un archivo de texto es una forma de almacenar información en un formato legible para los humanos. Los programadores suelen hacerlo porque es útil para guardar datos o configuraciones que pueden ser leídas y modificadas fácilmente.
+Escribir un archivo de texto en C es guardar datos en un formato legible por humanos. Los programadores lo hacen para almacenar configuraciones, registros o compartir información entre programas.
 
-## Cómo:
+## Cómo hacerlo:
 
-Para escribir un archivo de texto en C, primero necesitas abrirlo con la función `fopen()`, especificando el nombre del archivo y el modo en el que deseas abrirlo. Por ejemplo, para escribir en un archivo llamado "datos.txt", puedes usar el modo "w" que significa "write" o escritura.
+```c
+#include <stdio.h>
 
-```C
-// Abrir el archivo "datos.txt" en modo escritura
-FILE *archivo = fopen("datos.txt", "w");
+int main() {
+    FILE *file;
+    
+    // Abriendo el archivo para escritura. "w" para modo escritura.
+    file = fopen("ejemplo.txt", "w");
+    
+    if(file == NULL) {
+        printf("Error al abrir el archivo.\n");
+        return 1;
+    }
+    
+    // Escribiendo texto en el archivo.
+    fprintf(file, "Hola, Mundo!\n");
+    
+    // Cerrando el archivo.
+    fclose(file);
+    
+    return 0;
+}
 ```
 
-Luego, puedes utilizar la función `fprintf()` para escribir en el archivo. En el siguiente ejemplo, se escribe una línea con el texto "¡Hola mundo!" y un número entero, seguido de un salto de línea.
-
-```C
-// Escribe en el archivo utilizando fprintf
-fprintf(archivo, "¡Hola mundo! %d\n", 7);
+Salida en `ejemplo.txt`:
+```
+Hola, Mundo!
 ```
 
-Finalmente, debes cerrar el archivo con la función `fclose()`.
+## Análisis Profundo:
 
-```C
-// Cerrar el archivo
-fclose(archivo);
-```
-
-El resultado de este código será que se creará un archivo llamado "datos.txt" en la misma carpeta que contiene el programa. Si ya existe un archivo con ese nombre, el contenido anterior será reemplazado.
-
-## Profundizando:
-
-La escritura de archivos de texto es una técnica ampliamente utilizada en la programación, ya que permite guardar y leer información de manera sencilla y estructurada. Otros lenguajes de programación también tienen funciones similares para escribir en archivos de texto, como `print()` en Python o `write()` en Java.
-
-Para escribir en archivos binarios (que no son legibles para los humanos), se pueden utilizar otras funciones como `fwrite()` en C. Además, existen bibliotecas que facilitan la escritura de archivos más complejos, como la biblioteca `csv` para manipular archivos CSV (valores separados por comas).
+Históricamente, la escritura de archivos en C se ha manejado con las funciones estándar del I/O provistas en `stdio.h`. Alternativas modernas incluyen I/O de bajo nivel con `sys/stat.h` o I/O de bibliotecas externas como POSIX. Detalles de implementación incluyen gestión correcta de errores y cerrar siempre los archivos para evitar fugas de memoria.
 
 ## Ver también:
 
-- [Funciones de manejo de archivos en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Biblioteca estándar de C](https://es.wikipedia.org/wiki/Biblioteca_est%C3%A1ndar_de_C)
+- Documentación oficial de GNU C `stdio`: https://www.gnu.org/software/libc/manual/html_node/Output-Streams.html
+- Tutorial de manejo de archivos en C: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
+- Referencia de I/O POSIX: https://pubs.opengroup.org/onlinepubs/9699919799/functions/write.html

@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Gleam: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & miksi?
+## What & Why? (Mitä & Miksi?)
+YAML on helppolukuinen datan serialisointiformaatti konfiguraatioihin ja viestintään. Ohjelmoijat käyttävät sitä, koska se on selkeä ja ihmiselle luettavissa, ja sopii hyvin asetustiedostoihin ja datan tallentamiseen.
 
-Gleam on ohjelmointikieli, joka mahdollistaa YAML-tiedostojen käsittelyn. YAML on eräänlainen tiedostomuoto, joka on suunniteltu ihmisluettavaksi ja helposti käsiteltäväksi myös ohjelmointikielillä. Monet ohjelmoijat käyttävät YAML-tiedostoja, koska ne ovat selkeitä ja helppoja ymmärtää.
+## How to:
+Gleam vielä ei tarjoa vakiona YAML-tukea, mutta voit käyttää ulkopuolisia kirjastoja tai käsitellä YAML:ää merkkijonoina. Esimerkiksi:
 
-Kuinka tehdä:
+```gleam
+external fn parse_yaml(String) -> Result(Map(String, String), Nil) =
+  "yaml_parser" "parse"
 
-Gleamilla on helppo lukea ja kirjoittaa YAML-tiedostoja. Voit esimerkiksi luoda uuden YAML-tiedoston ja lisätä siihen haluamasi tiedot käyttämällä ```Gleam.from_yml("tiedoston_nimi.yml")``` komentoa. Voit myös muuntaa YAML-tiedoston Gleam-taulukoksi käyttämällä ```Gleam.to_map(tiedoston_nimi.yml)``` komentoa. Alla on esimerkkejä koodista ja tulostatuloksista:
+pub fn main() {
+  let config_data = "
+  port: 8080
+  env: production
+  "
 
+  let config = parse_yaml(config_data)
+  case config {
+    Ok(settings) -> settings
+    Error(_) -> Map.empty()
+  }
+}
 ```
-Gleam.from_yml("kayttaja.yml")
 
-käyttäjä: "Matti"
-ikä: 30
-sähköposti: "matti@example.com"
+Otetaan oletus, että `yaml_parser` on kuvitteellinen Gleam-kirjasto ja `parse_yaml` palauttaa joko mappauksen tai tyhjän tietorakenteen.
 
-```
+## Deep Dive (Syväsukellus)
+YAML syntyi vuonna 2001, ja se on JSONin sukulainen, mutta ihmisläheisempi. Vaihtoehtoja ovat esimerkiksi JSON ja XML. Gleamissa YAML-käsittely riippuu ulkopuolisista kirjastoista – virallista tukea ei toistaiseksi ole. Oleellista on tiedostaa, ettei kaikki kirjastot tue kaikkia YAML-ominaisuuksia, kuten monimutkaisia ankkureita tai laajennuksia.
 
-Tulostettu tulos olisi taulukko, jossa käyttäjän nimi on "Matti", ikä 30 ja sähköpostiosoite "matti@example.com".
-
-Syvemmälle:
-
-YAML on alunperin luotu yhdistämään eri ohjelmointikielten siirtymä- ja tallennusformaattia. YAML-tiedostot ovat yleistymässä, sillä ne ovat ihmisen luettavissa ja helposti ymmärrettävissä. Muiden ohjelmointikielien lisäksi, on olemassa myös muita vaihtoehtoja YAML:lle, kuten XML ja JSON. Gleamin ansiosta voit kuitenkin käsitellä YAML-tiedostoja monimutkaisemmin ja tehokkaammin.
-
-Lisätietoja:
-
-Voit lukea lisää Gleamista ja YAML-tiedostoista täältä: [Gleamin käsikirja](docs.gleamlang.org), [YAML.org](yaml.org), [XML vs JSON vs YAML](https://www.educba.com/xml-vs-json-vs-yaml/) ja [Osaohjelmointikielten vertailu](https://www.xml.com/pub/a/2004/07/21/json.html).
-
-Tämän artikkelin tarkoituksena ei ole olla kattava opas Gleamin UART-kehitykselle, mutta toivomme sen antavan sinulle hyvän lähtökohdan aloittamiseen YAML-tiedostojen käsittelyssä Gleamilla. Onnea matkaan!
+## See Also (Katso Myös)
+- YAML-spesifikaatio: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)

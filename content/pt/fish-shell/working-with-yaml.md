@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Fish Shell: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que é & Por Que?
+YAML é um formato de serialização de dados amigável para humanos, comumente usado para arquivos de configuração. Programadores utilizam YAML pela sua legibilidade e simplicidade, facilitando a definição e compartilhamento de estruturas de dados.
 
-Trabalhar com YAML é algo que muitos programadores fazem em seus projetos. Esse formato de dados é bastante utilizado para armazenar e organizar informações em um formato legível para humanos e máquinas. YAML é especialmente útil em projetos de configuração e implantação de software, pois permite que os desenvolvedores definam variáveis e propriedades de forma clara e concisa. 
+## Como Fazer:
+Trabalhar com YAML no Fish Shell geralmente envolve ler e modificar esses arquivo. Vamos usar `yq`, uma ferramenta de linha de comando para processar YAML.
 
-## Como fazer:
+Instale o `yq`:
 
-Para trabalhar com YAML no Fish Shell, é necessário primeiro instalar a extensão `fish-yaml`. Você pode fazer isso usando o gerenciador de pacotes `fisher`. Depois, basta importar o módulo `yaml` em seus scripts e aplicar as funções disponíveis. Aqui está um exemplo básico de como ler um arquivo YAML e imprimir seu conteúdo:
-
-```fish
-fisher install jorgebucaran/fish-yaml # instalar a extensão fish-yaml
-source ~/.config/fish/functions/yaml.fish # importar o módulo yaml
-set doc (yaml -l ./config.yaml) # ler o arquivo yaml e armazenar na variável doc
-echo $doc # imprimir o conteúdo do arquivo
+```Fish Shell
+fisher install jorgebucaran/fisher
+fisher install PatrickF1/fundle
+fundle plugin add mikefarah/yq
 ```
 
-A saída será o conteúdo do arquivo YAML, que pode ser usado para definir variáveis ou executar outras ações em seus scripts.
+Exemplo de como ler um valor:
 
-## Profundidade do Mergulho:
+Arquivo `exemplo.yaml`:
+```yaml
+usuário:
+  nome: João
+  idade: 30
+```
 
-O YAML foi lançado em 2001 como uma maneira simples de representar dados em formato de grafo. Ele foi criado em resposta ao perda de popularidade do formato XML, que era mais verboso e difícil de ler. Além disso, YAML é compatível com várias linguagens de programação, tornando-o uma escolha popular para projetos em equipe. 
+Lendo o nome do usuário:
 
-Embora o Fish Shell tenha suporte nativo para leitura e escrita de arquivos YAML, também existem outras opções, como os módulos `yaml2l`, `yamlexport`, e `darjeeling`. Cada um tem suas próprias vantagens e desvantagens, então é importante experimentá-los e escolher o que melhor se adapta às suas necessidades.
+```Fish Shell
+yq e '.usuário.nome' exemplo.yaml
+```
 
-Ao trabalhar com YAML no Fish Shell, é importante lembrar que nem todas as funcionalidades disponíveis em outras linguagens de programação serão suportadas. É sempre uma boa prática testar seus scripts e verificar a documentação oficial para garantir que você está usando a sintaxe correta e aproveitando ao máximo as funcionalidades disponíveis.
+Saída esperada:
+```
+João
+```
 
-## Veja também:
+Mudando a idade do usuário:
 
-- [Site oficial do YAML](https://yaml.org/)
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+```Fish Shell
+yq e '.usuário.idade = 31' -i exemplo.yaml
+```
+
+Confirmando a alteração:
+
+```Fish Shell
+cat exemplo.yaml
+```
+Saída esperada:
+```yaml
+usuário:
+  nome: João
+  idade: 31
+```
+
+## Mergulho Profundo
+YAML, que significa "YAML Ain't Markup Language", foi introduzido em 2001. Alternativas incluem JSON e XML, mas YAML é preferido por sua ênfase na simplicidade de leitura. A principal implementação de YAML no Fish Shell é feita via `yq`, que é baseado na biblioteca `libyaml`, escrita em C para máxima eficiência.
+
+## Veja Também
+- Documentação oficial do `yq`: https://mikefarah.gitbook.io/yq/
+- Especificação YAML: https://yaml.org/spec/
+- Tutorial interativo de YAML: https://www.learn-yaml.org/

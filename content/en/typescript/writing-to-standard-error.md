@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "TypeScript recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,28 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing to standard error is a way for developers to display error messages or debug information in their code. This is useful for troubleshooting and identifying problems in a program.
+Writing to standard error (`stderr`) sends error messages and diagnostics separate from standard output (`stdout`). Programmers do this to debug and log errors without cluttering regular program output.
 
 ## How to:
-To write to standard error in TypeScript, you can use the built-in `console.error()` method. This method takes in an error message or any other string as its argument.
+
+In TypeScript, you can write to `stderr` using `console.error` or `process.stderr.write`. Here's both in action:
 
 ```TypeScript
-console.error("This is an error message"); // Output: This is an error message
+console.error("This is an error message to stderr");
+
+process.stderr.write("This is another error message to stderr\n");
 ```
 
-You can also use string interpolation to include variables or other dynamic information in your error message.
+Sample output for both lines:
 
-```TypeScript
-let num = 5;
-console.error(`The value of num is ${num}`); // Output: The value of num is 5
+```
+This is an error message to stderr
+This is another error message to stderr
 ```
 
-## Deep Dive:
-Writing to standard error has been a common practice in programming for many years. Before the introduction of standardized error handling methods, developers would often write error messages to a specific output stream, such as standard error, to differentiate them from regular program output.
+## Deep Dive
 
-In addition to `console.error()`, TypeScript also offers other console methods for writing to standard output. These include `console.log()` for general logging, `console.warn()` for warning messages, and `console.debug()` for debugging messages.
+Historically, separating `stdout` and `stderr` let Unix users direct output and errors to different destinations. You could log errors for analysis while having clean output data. Alternatives to writing directly to `stderr` include logging libraries or frameworks that offer more control and features. Implementation-wise, `console.error` wraps around `process.stderr.write` with additional formatting capabilities, so using `console.error` is generally more convenient for simple messages.
 
-Another alternative to using `console.error()` is throwing an error using the `throw` keyword. This allows for more specific and customized error messages. However, this should only be used for critical errors that require the program to stop.
+## See Also
 
-## See Also:
-- [Official TypeScript Documentation on console methods](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#prioritized-overloads)
+- Node.js documentation on console: https://nodejs.org/api/console.html
+- Node.js process standard streams: https://nodejs.org/api/process.html#process_process_stderr
+- Discussion on `console.error` vs `process.stderr.write`: https://stackoverflow.com/questions/4976466/difference-between-process-stdout-write-and-console-log-in-node-js

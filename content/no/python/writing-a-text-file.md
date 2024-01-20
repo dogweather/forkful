@@ -1,7 +1,7 @@
 ---
-title:                "Skriver en tekstfil"
-html_title:           "Python: Skriver en tekstfil"
-simple_title:         "Skriver en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å skrive en tekstfil betyr å lagre informasjon på en enkel og strukturert måte på datamaskinen din. Programmerere bruker dette for å lagre data som kan brukes senere, for eksempel resultater fra et program eller konfigurasjonsinnstillinger.
+## What & Why?
+Skriving av tekstfiler gjør at programmer lagrer data. Dette er nyttig til logging, brukerdata eller konfigurasjonsfiler.
 
-## Slik gjør du det:
-```Python
-#Åpne en tekstfil for skriving
-file = open("filnavn.txt", "w")
-
-#Skriv informasjon
-file.write("Hei, dette er en tekstfil som inneholder informasjon.")
-
-#Lukk filen
-file.close()
+## How to:
+### Skriv til en fil:
+```python
+with open('eksempel.txt', 'w') as fil:
+    fil.write('Hei Norge!\n')
 ```
 
-## Dypdykk:
-Skriftlig informasjon har vært en del av menneskeheten i århundrer, og det er ikke annerledes i programmering. Noen alternativer til å skrive tekstfiler inkluderer å bruke en database eller en annen form for datalagring. Når du skriver en tekstfil, må du være oppmerksom på filnavnet, modusen (som "w" for å skrive) og språket du bruker for å skrive filen.
+### Legg til tekst i en eksisterende fil:
+```python
+with open('eksempel.txt', 'a') as fil:
+    fil.write('Legger til en linje.\n')
+```
 
-## Se også:
-- [Tutorialspoint - Writing Files in Python](https://www.tutorialspoint.com/python/file_write.htm)
+### Les den skrevne filen:
+```python
+with open('eksempel.txt', 'r') as fil:
+    innhold = fil.read()
+    print(innhold)
+```
+```shell
+Hei Norge!
+Legger til en linje.
+```
+
+## Deep Dive
+Før var `open` og `close` behandlet separat, noe som kunne lede til ressurslekkasjer. Nå bruker vi `with` for automatisk lukking. Alternativer som `pickle` for objektskriving eller databaser som SQLite for strukturerte data finnes. Encoding (standard utf-8) og buffering er viktige implementasjonsdetaljer.
+
+## See Also
+- Python dokumentasjon: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- W3Schools filhåndtering: https://www.w3schools.com/python/python_file_handling.asp
+- Real Python tutorial om filskriving: https://realpython.com/read-write-files-python/

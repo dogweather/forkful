@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "Elixir: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-
-Praca z JSON jest niezbędnym elementem dla współczesnych programistów. JSON (JavaScript Object Notation) to popularny format danych, który jest wykorzystywany w wielu aplikacjach internetowych i mobilnych. Jest bardzo prosty w użyciu i ma wydajną strukturę, dlatego jest często wybierany jako typ danych do przechowywania i przekazywania informacji.
+## Co i dlaczego?
+Praca z JSON polega na przetwarzaniu struktur danych w formacie JSON, czyli lekkim formacie wymiany danych. Programiści robią to, żeby łatwiej komunikować się z API i wymieniać dane między różnymi systemami oraz językami programowania.
 
 ## Jak to zrobić:
+Do obsługi JSON w Elixir używamy bibliotek, takich jak Jason. Poniżej przykład instalacji i użycia Jason:
 
-Aby pracować z JSON w Elixir, wystarczy użyć wbudowanej biblioteki :jason. Przykładowo, jeśli chcemy przetworzyć JSON w pliku, możemy użyć funkcji File.read i Jason.decode:
+```elixir
+# Dodaj Jason do twojego mix.exs
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
 
-```Elixir
-json = File.read("dane.json")
-{:ok, parsed_json} = Jason.decode(json)
+# Użycie Jason do kodowania i dekodowania JSON
+defmodule JSONExample do
+  def encode_to_json do
+    data = %{name: "Alicja", age: 30}
+    Jason.encode!(data)
+  end
+
+  def decode_from_json do
+    json = ~S({"name": "Alicja", "age": 30})
+    Jason.decode!(json)
+  end
+end
+
+# Wypróbuj w iex:
+iex> JSONExample.encode_to_json()
+"{\"name\":\"Alicja\",\"age\":30}"
+iex> JSONExample.decode_from_json()
+%{"age" => 30, "name" => "Alicja"}
 ```
 
-Aby przetworzyć JSON z zewnętrznego źródła, na przykład za pomocą API, możemy użyć modułu Httpoison, który umożliwia przekazanie odpowiedzi jako JSON do funkcji Jason.decode.
+## Deep Dive:
+Praca z JSON w Elixirze sięga czasów, gdy pierwsze wersje języka oferowały proste mechanizmy przetwarzania tekstów. Biblioteki takie jak Poison były powszechnie używane przed pojawieniem się Jason, który stał się standardem ze względu na swoją wydajność. Alternatywy dla Jason to m.in. Poison i JSX, ale Jason jest zalecany przez twórców Phoenix, popularnego frameworka Elixir. Implementacja Jason jest oparta na szybkim dekodowaniu i kodowaniu, minimalizując narzut pamięci.
 
-```Elixir
-response = Httpoison.get("https://api.example.com")
-{:ok, parsed_json} = Jason.decode(response.body)
-```
-
-Aby utworzyć własny JSON, można użyć funkcji Jason.encode:
-
-```Elixir
-my_data = %{"name" => "John", "age" => 25, "city" => "New York"}
-encoded_json = Jason.encode(my_data)
-```
-
-## Głębsze zanurzenie:
-
-Format JSON został stworzony w 2001 roku przez Douglasa Crockforda i jest bardzo popularny wśród programistów JavaScript. W związku z tym, że jest platformowo- i języko-niezależny, jest szeroko stosowany w różnych projektach. Alternatywnie, można użyć innych formatów, takich jak XML lub CSV, jednak JSON oferuje prostszą i bardziej czytelną strukturę.
-
-Biblioteka :jason opiera się na wydajnej bibliotece C, więc jest szybka i niezawodna w przetwarzaniu dużej ilości danych. 
-
-## Zobacz także:
-
-- [Oficjalna dokumentacja biblioteki :jason](https://hexdocs.pm/jason/Jason.html)
+## Zobacz również:
+- Oficjalna dokumentacja Jason: https://hexdocs.pm/jason/readme.html
+- Elixir School - Lekcje o JSON z Elixir: https://elixirschool.com/pl/lessons/serializations/json
+- Poison - alternatywna biblioteka JSON dla Elixir: https://hexdocs.pm/poison/Poison.html
+- Phoenix Framework - Użycie JSON w Phoenix: https://www.phoenixframework.org

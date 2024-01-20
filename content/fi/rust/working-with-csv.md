@@ -1,7 +1,7 @@
 ---
-title:                "Csv:n käsittely"
-html_title:           "Rust: Csv:n käsittely"
-simple_title:         "Csv:n käsittely"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-CSV (Comma-Separated Values) eli pilkulla erotetut arvot on yleinen tapa tallentaa ja jakaa taulukkomuotoisia tiedostoja. Tämä on hyödyllistä ohjelmoijille, sillä se mahdollistaa tiedon siirtämisen eri ohjelmistojen välillä helposti ja kätevästi, ilman että tarvitsee huolehtia tiedostojen yhteensopivuudesta.
+## What & Why?
+CSV (Comma-Separated Values) on datan tallennusmuoto, jossa data on eritelty pilkuilla erotettuina arvoina. Ohjelmoijat käyttävät CSV:tä, koska se on yksinkertainen ja yleisesti yhteensopiva eri ohjelmien ja kielten kanssa.
 
-# Miten:
-```Rust
-// Avataan CSV-tiedosto ja luodaan uusi lukija
-let file = std::fs::File::open("tiedosto.csv").unwrap();
-let mut reader = csv::ReaderBuilder::new().from_reader(file);
+## How to:
+Rustilla voi lukea ja kirjoittaa CSV-tiedostoja `csv`-kirjaston avulla. Asenna ensin kirjasto lisäämällä `Cargo.toml`-tiedostoosi:
+```toml
+[dependencies]
+csv = "1.1"
+```
 
-// Käydään läpi jokainen rivi tiedostossa ja tulostetaan kentät
-for result in reader.records() {
-    let record = result.unwrap();
-    for field in record.iter() {
-        println!("{}", field);
+Lue CSV:
+```rust
+use csv::Reader;
+use std::error::Error;
+
+fn lue_csv() -> Result<(), Box<dyn Error>> {
+    let mut rdr = Reader::from_path("data.csv")?;
+    for tulos in rdr.records() {
+        let record = tulos?;
+        println!("{:?}", record);
+    }
+    Ok(())
+}
+
+fn main() {
+    if let Err(err) = lue_csv() {
+        println!("Virhe: {}", err);
     }
 }
 ```
-Esimerkkitulostus:
-```bash
-Rusting, on, hauskaa
-Terve, maailma!
-```
 
-# Syvemmälle:
-CSV muoto kehitettiin ensimmäisen kerran 1972 IBM:n toimesta ja siitä tuli nopeasti yleinen taulukkomuodon tallennusformaatti. Vaikka se on helppokäyttöinen ja tunnettu, on myös muita vaihtoehtoja kuten JSON ja XML. Rustin csv-kirjasto tarjoaa tehokkaan ja nopean tavan käsitellä CSV-tiedostoja, mutta on myös muita kirjastoja, kuten Serde, jotka tarjoavat samanlaisen toiminnallisuuden.
+Kirjoita CSV:
+```rust
+use csv::Writer;
+use std::error::Error;
+
+fn kirjoita_csv() -> Result<(), Box<dyn Error>> {
+    let mut wtr = Writer::from_path("tulos.csv")?;
+    wtr.write_record(&["sarake1", "sarake2"])?;
+    wtr.write_record(&["arvo1", "arvo2"])?;
+    wtr.flush()?;
+    Ok(())
+}
+
+fn main() {
+    if let Err(err) = kirjoita_csv() {
+        println!("Virhe: {}", err);
+    }
+}
+```
+## Deep Dive
+CSV-formaatti syntyi varhain tietokoneiden historiassa helpottamaan taulukkomuotoisen datan siirtämistä ohjelmien välillä. Se ei ole yhtä joustava kuin JSON tai XML, mutta sen yksinkertaisuus tekee siitä sopivan raa'an datan käsittelyyn ja siirtoon. Rustissa `csv`-kirjasto tarjoaa monipuoliset työkalut CSV-tiedostojen hallintaan, kuten iteratorit ja ser/deserialisaatio mukautettujen tietueiden kanssa.
+
+## See Also
+- Rust `csv`-kirjasto: https://docs.rs/csv/
+- CSV-formaatin RFC 4180: https://tools.ietf.org/html/rfc4180
+- Rust-ohjelmointikielen virallinen sivusto: https://www.rust-lang.org/

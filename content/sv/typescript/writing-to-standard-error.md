@@ -1,7 +1,7 @@
 ---
-title:                "Skriver till standardfel"
-html_title:           "TypeScript: Skriver till standardfel"
-simple_title:         "Skriver till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -12,24 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skriva till standard error är en process där en programmerare kan direkt skriva ut felmeddelanden och error-messages till en särskild utgångskanal. Detta är en användbar teknik eftersom det separerar ut felmeddelanden från vanlig utdata och gör det enklare att identifiera och hantera fel i koden.
+Att skriva till standardfel (`stderr`) involve att skicka felmeddelanden och andra diagnoser separat från huvudprogrammets utdata. Programmerare gör detta för att hantera fel och loggning så att dessa inte blandas ihop med den normala utdatan (`stdout`).
 
-## Hur man gör:
+## Hur gör man:
 
-```TypeScript
-// Ett enkelt exempel på att skriva till standard error
-process.stderr.write("Det här är ett error-meddelande!");
+```typescript
+// Skriv till standardfel i Node.js
+process.stderr.write('Error: Ett fel inträffade!\n');
+
+// Använda console.error för att skriva till standardfel
+console.error('Error: Ett annat fel inträffade!');
 ```
 
-Detta kodblock kommer att skriva ut "Det här är ett error-meddelande!" till standard error-kanalen när koden körs. Det kan vara användbart när man vill markera ett specifikt fel eller varning i en logg.
+Exempel utskrift:
+
+```
+Error: Ett fel inträffade!
+Error: Ett annat fel inträffade!
+```
 
 ## Djupdykning:
 
-Historiskt sett har standard error använts tillsammans med standard output för att hantera fel och kommunikation med användaren. Alternativ till att skriva till standard error inkluderar att helt enkelt skriva ut till konsolen eller att använda ett specifikt fel- eller debug-meddelandesystem. 
-
-I TypeScript är den vanligaste användningen av skrivning till standard error genom att använda "process.stderr.write()" funktionen. Denna funktion finns som standard i Node.js och behöver inte importeras.
+Standardfel (`stderr`) är en av de tre standardströmmar som introducerades i Unix och har sedan blivit standard i andra operativsystem. Alternativ till `stderr` inkluderar att skriva till en loggfil eller att använda externa loggningstjänster. I Node.js implementeras `stderr` som en skrivbar ström, vilket betyder att du kan använda alla metoder för skrivbara strömmar, som `write()` eller piping (`pipe()`).
 
 ## Se även:
 
-- Node.js dokumentation för "process.stderr"
-- "Writing to standard error" på Stack Overflow
+- Node.js documentation on process.stderr: https://nodejs.org/api/process.html#process_process_stderr
+- Console.error() documentation at MDN: https://developer.mozilla.org/docs/Web/API/Console/error
+- Understanding standard streams (stdin, stdout, stderr): https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html

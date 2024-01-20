@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Ruby: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,25 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Scrivere test è una pratica comune tra i programmatori per verificare che il codice funzioni correttamente e per identificare eventuali errori. I test consentono di risparmiare tempo nella fase di debugging e di garantire la qualità del codice.
+## What & Why?
+Scrivere test significa creare codice specifico per verificare che altri codici funzionino come previsto. I programmatori testano per prevenire bug, assicurare qualità, e facilitare aggiornamenti futuri.
 
-## Come fare:
-Ecco un esempio di come scrivere un test in Ruby utilizzando la libreria standard `Test::Unit`:
+## How to:
+Ruby usa MiniTest e RSpec come framework di test. Ecco un esempio con MiniTest:
 
 ```Ruby
-  require 'test/unit'
-  
-  class TestString < Test::Unit::TestCase
-    def test_length
-      assert_equal(5, 'Hello'.length)
-    end
+require 'minitest/autorun'
+
+class CalcolatriceTest < Minitest::Test
+  def setup
+    @calc = Calcolatrice.new
   end
+
+  def test_somma
+    assert_equal 5, @calc.somma(2, 3)
+  end
+end
+
+class Calcolatrice
+  def somma(a, b)
+    a + b
+  end
+end
 ```
 
-L'output dovrebbe essere `1 runs, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 notifications`.
+Output atteso:
 
-## Approfondimento:
-La pratica di scrivere test è diventata sempre più popolare negli ultimi anni grazie all'approccio di sviluppo noto come "test-driven development" (TDD). Alcune alternative a `Test::Unit` includono `RSpec` e `minitest`.
+```
+Run options: --seed 12345
 
-Per implementare i test, è importante comprendere i concetti di "assertions" e "fixtures". Le assertions sono dichiarazioni che descrivono i risultati attesi del test, mentre le fixtures sono dati di prova utilizzati per eseguire i test.
+# Running:
+
+.
+
+Finished in 0.001025s, 976.5625 runs/s, 976.5625 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```
+
+## Deep Dive
+Il TDD (Test-Driven Development) guida lo sviluppo con test scritti prima del codice vero e proprio. MiniTest è integrato in Ruby, mentre RSpec è una gemma BDD (Behavior-Driven Development) che offre un DSL più leggibile. L'implementazione di test nei progetti Ruby è diventata norma per molti sviluppatori per la sua efficacia nel ridurre errori e fornire documentazione.
+
+## See Also
+- RSpec: [Guida ufficiale](https://rspec.info/)
+- TDD/BDD: [Approfondimenti su TDD/BDD](https://martinfowler.com/bliki/TestDrivenDevelopment.html)

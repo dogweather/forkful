@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com arquivos csv"
-html_title:           "Gleam: Trabalhando com arquivos csv"
-simple_title:         "Trabalhando com arquivos csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que é & Por Quê?
+Trabalhar com CSV significa lidar com "Comma-Separated Values", um formato de arquivo usado para armazenar dados tabulares. Programadores o utilizam por ser simples de ler e escrever, além de ser amplamente suportado por diversas linguagens e ferramentas.
 
-CSV é a abreviação de "Comma Separated Values" (Valores Separados por Vírgula) e é um formato de arquivo de texto que armazena dados em formato tabular, onde cada linha representa uma entrada de dados e cada coluna representa um campo. Programadores costumam trabalhar com CSV porque é uma maneira simples e eficiente de armazenar e manipular dados estruturados.
+## Como Fazer:
+```Gleam
+import gleam/csv.{parser, Decoder}
+import gleam/io.{File, Result}
 
-## Como fazer:
+fn main() -> Result(Nil) {
+  let data = "nome,idade\nJoão,30\nAna,25"
+  let decoder = Decoder(
+    parser: parser.simple(),
+    fields: #("nome", "idade")
+  )
 
-Para trabalhar com CSV em Gleam, precisamos importar o módulo `csv` utilizando a diretiva `use`:
+  case csv.decode(decoder, data) {
+    Ok(rows) ->
+      rows
+      |> List.map(fn(row) {
+        case row {
+          Ok(record) -> record
+          Error(_) -> "Erro na leitura do CSV"
+        }
+      })
+      |> Result(Ok)
 
+    Error(_) ->
+      Error(Nil)
+  }
+}
 ```
-use csv
+Saída da amostra:
+```
+["João", "30"]
+["Ana", "25"]
 ```
 
-Em seguida, podemos usar a função `read_file` para ler um arquivo CSV:
+## Mergulho Profundo
+CSV é um formato que data dos primeiros dias da computação pessoal; foi desenvolvido para facilitar a transferência de tabelas entre programas. Alternativas como JSON e XML oferecem mais complexidade e capacidade de representar estruturas aninhadas. Em Gleam, tratar CSV é mais manual comparado com outras linguagens: a biblioteca `gleam/csv` ajuda, mas você precisa definir decoders e lidar com erros linha a linha.
 
-```
-let result = csv.read_file("./dados.csv")
-```
-
-Podemos então iterar sobre o resultado utilizando `Enum.each` e imprimir os dados na tela:
-
-```
-Enum.each(result, fn(row) ->
-  io.println(row)
-end)
-```
-
-O resultado da execução será uma lista de listas, onde cada lista interna representa uma linha do arquivo CSV.
-
-## Profundando:
-
-CSV é um formato de arquivo muito popular, amplamente utilizado para trocar dados entre diferentes programas. Ele foi criado no início dos anos 1970 e se tornou um padrão para dados tabulares sem formatação fixa.
-
-Além de Gleam, existem outras opções para trabalhar com CSV, como o módulo `csv` da linguagem de programação Elixir, ou a biblioteca `papaparse` para JavaScript.
-
-No implementation details or historical context Brasil está cada vez mais inserido no mercado global de tecnologia, e saber como trabalhar com CSV é uma habilidade importante para qualquer programador. Com Gleam, temos uma opção poderosa e de fácil uso para lidar com esse formato de arquivo.
-
-## Veja também:
-
-- Documentação do módulo `csv` em Gleam: https://gleam.run/modules/csv.html
-- Site oficial do formato CSV: https://tools.ietf.org/html/rfc4180
-- Biblioteca `papaparse` para JavaScript: https://www.papaparse.com/
+## Veja Também
+- Documentação oficial do Gleam: [https://gleam.run/](https://gleam.run/)

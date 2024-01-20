@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルを作成する"
-html_title:           "Java: テキストファイルを作成する"
-simple_title:         "テキストファイルを作成する"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？何のために？
-テキストファイルを書くことは、プログラマーがデータを保存したり共有したりするための方法です。プログラマーがテキストファイルを使用する最も一般的な目的は、データを永続化することです。つまり、プログラムが実行されていないときでもデータを保存することです。
+## What & Why? (何となぜ?)
+テキストファイルの書き込みとは、文字データをファイルに保存することだ。プログラマはデータの永続化やデータの共有、ログ作成のために行う。
 
-## 方法：
-```Java
-import java.io.FileWriter; 
+## How to: (方法)
+```java
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public class WriteTextFile {
-
+public class WriteTextFileExample {
     public static void main(String[] args) {
-    
-        // ファイルの作成と開く
-        try {
-            FileWriter myWriter = new FileWriter("myFile.txt");
-            
-            // データを書き込む
-            myWriter.write("Hello World!");
-            
-            // ファイルを閉じる
-            myWriter.close();
-            
-            // 完了メッセージを表示
-            System.out.println("ファイルに書き込みました。");
-            
-        // エラー処理
+        String text = "こんにちは、Java!";
+        String fileName = "example.txt";
+
+        // FileWriter と BufferedWriter を使う古い方法
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            writer.write(text);
         } catch (IOException e) {
-            System.out.println("エラーが発生しました。");
+            e.printStackTrace();
+        }
+
+        // Java NIO を使う新しい方法
+        try {
+            Files.writeString(Path.of(fileName), text);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
 ```
-```
-// ファイルに書き込みました。
-```
-このサンプルコードでは、最初に`FileWriter`クラスをインポートして、`myFile.txt`というテキストファイルを作成して開きます。`myWriter.write`を使用して、"Hello World!"という文字列をファイルに書き込みます。最後に、`myWriter.close`を使用してファイルを閉じます。エラーが発生した場合は、エラーメッセージが表示されます。
+サンプルの出力：`example.txt` に "こんにちは、Java!" が書き込まれる。
 
-## 深堀り：
-テキストファイルの書き込みは、プログラミングの初期から使用されている古い方法です。今では、データベースやクラウドストレージなどの他のオプションがあるため、テキストファイルを使用する必要はありません。しかし、小規模なプログラムやデータを永続化する場合は、テキストファイルが最も単純で便利な方法です。
+## Deep Dive (掘り下げ)
+テキストファイルの書き込みは、初期のプログラミング時代からある基本的な機能だ。`FileWriter`と`BufferedWriter`の組み合わせは歴史的によく使用されていたが、より最近では`java.nio.file.Files`の`writeString`メソッドのような新しい手法が推奨される。これはコードをシンプルにし、より読みやすくするためだ。また、文字エンコーディングの問題や、ファイルのロッキングといった実装の詳細も考慮する必要がある。
 
-## 参考：
-- [Java FileWriter Class](https://www.w3schools.com/java/java_files_create.asp)
-- [Java BufferedReader Class](https://www.w3schools.com/java/java_files_read.asp)
-これらのリンクでは、`FileWriter`と`BufferedReader`クラスを使用してテキストファイルを作成し、読み取る方法が詳しく解説されています。また、オープンソースのコードレポジトリ「GitHub」でもテキストファイルを扱う多くのサンプルコードが閲覧できます。
+## See Also (関連情報)
+- Java Documentation on Files.writeString: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#writeString(java.nio.file.Path,java.lang.CharSequence,java.nio.file.OpenOption...)
+- Java I/O Guide by Oracle: https://docs.oracle.com/javase/tutorial/essential/io/
+- BufferedWriter Documentation: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html
+- Java NIO Path Tutorial: https://www.baeldung.com/java-nio-2-file-api

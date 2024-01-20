@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive tester"
-html_title:           "Go: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -11,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å skrive tester i programmering betyr å lage kode som kjører applikasjonen din for å sjekke at alt fungerer som forventet. Vi tester for å forutsi og fikse feil, forbedre kvaliteten, og sikre at nye endringer ikke ødelegger eksisterende funksjonalitet.
 
-Tests er en viktig del av programmering som hjelper utviklere å sikre at koden deres fungerer som den skal. Det er en måte å bekrefte at endringene vi gjør ikke ødelegger det som allerede fungerer, og det hjelper oss å finne og løse feil eller bugs.
-
-## Slik gjør du det:
-
-For å skrive tester i Go, må du inkludere "testing" pakken og skrive testfunksjoner som starter med "Test". Disse funksjonene tar et "testing.T" parameter og bruker "testing" pakken sine metoder som "Error" eller "Fail" for å indikere testresultater. Her er et eksempel for en test av en enkel funksjon som legger sammen to tall:
-
+## Hvordan:
 ```Go
-func TestAddition(t *testing.T) {
-	result := Add(2, 3)
-	
-	if result != 5 {
-		t.Errorf("Expected 5, got %d", result)
+package main
+
+import (
+	"testing"
+)
+
+// Enkle funksjon som legger sammen to tall
+func Add(a, b int) int {
+	return a + b
+}
+
+// Testfunksjon for Add
+func TestAdd(t *testing.T) {
+	result := Add(1, 2)
+	if result != 3 {
+		t.Errorf("Add(1, 2) feilet, forventet %d, fikk %d", 3, result)
 	}
 }
 ```
-Resultatet av denne testen vil være "PASS" hvis "Add(2, 3)" returnerer 5, ellers vil den være "FAIL" og vise feilmeldingen du har definert.
+Kjør testen med `go test` i terminalen. Forventet output:
+```
+PASS
+ok  	path/to/your/package	0.001s
+```
 
-## I dybden:
+## Dypdykk
+Testing i Go har blitt en integrert del av språket siden det første ble lansert. Go's innebygde testingpakke `testing` forenkler skriving av unit- og benchmark-tester. Alternativer som GoConvey gir BDD-stil testing, mens Ginkgo tilbyr et mer uttrykksfullt rammeverk. Det anbefales å følge "table-driven tests" mønsteret for å dekke flere tilfeller samtidig.
 
-Å skrive tester har blitt en vanlig praksis i moderne programmering, og det finnes også andre verktøy og rammer for å skrive tester i Go, for eksempel "go test" kommandolinjeverktøyet og "gomock" for mocking. Det er også vanlig å følge "Test Driven Development" (TDD) metoden, hvor du først skriver en test som feiler, så implementerer du koden som får testen til å passere.
-
-## Se også:
-
-Du kan lære mer om å skrive tester i Go ved å utforske offisiell dokumentasjon for "testing" pakken og bruke ressurser som "Go by Example" for å se flere eksempler. Å lære mer om TDD og andre testingsteknikker kan også hjelpe deg å bli en bedre utvikler. Lykke til!
+## Se Også
+- Go's offisielle blogg om testing: https://blog.golang.org/testing
+- Go test dokumentasjon: https://pkg.go.dev/testing
+- GoConvey på GitHub: https://github.com/smartystreets/goconvey
+- Ginkgo rammeverket: https://github.com/onsi/ginkgo

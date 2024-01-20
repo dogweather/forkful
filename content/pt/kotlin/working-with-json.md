@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json"
-html_title:           "Kotlin: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Trabalhando com JSON"
+html_title:           "Arduino: Trabalhando com JSON"
+simple_title:         "Trabalhando com JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O Que & Por Que?
+JSON (JavaScript Object Notation) é um formato leve para troca de dados. Programadores usam JSON porque ele é fácil de ler e escrever para humanos e é analisado (parsed) e gerado facilmente por máquinas.
 
-Trabalhar com JSON é manipular dados em um formato muito popular e fácil de ler e escrever. Programadores usam JSON para armazenar e transmitir informações entre aplicações, especialmente em aplicações web que se conectam a APIs. 
-
-## Como fazer:
-
+## Como Fazer:
 ```Kotlin
-// Ler um arquivo JSON e converter para um objeto Kotlin
-val jsonString = File("exemplo.json").readText()
-val objeto = Klaxon().parse<MeuObjeto>(jsonString)
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
-// Converter um objeto Kotlin para JSON
-val meuObjeto = MeuObjeto("exemplo", 123)
-val jsonString = Klaxon().toJsonString(meuObjeto)
+// Definindo uma data class
+@Serializable
+data class Usuario(val nome: String, val idade: Int)
+
+fun main() {
+    // Serializando para JSON
+    val usuario = Usuario("Carlos", 29)
+    val json = Json.encodeToString(usuario)
+    println(json) // Saída: {"nome":"Carlos","idade":29}
+
+    // Deserializando do JSON
+    val jsonString = """{"nome":"Ana","idade":34}"""
+    val usuarioObj = Json.decodeFromString<Usuario>(jsonString)
+    println(usuarioObj) // Saída: Usuario(nome=Ana, idade=34)
+}
 ```
 
-## Profundidade:
+## Mergulho Profundo
+O uso de JSON cresceu com a popularidade de APIs RESTful desde meados dos anos 2000, desbancando XML. Alternativas incluem YAML e Protocol Buffers, mas JSON mantém a liderança em uso por ser nativo em JavaScript e de fácil interação. Na implementação, Kotlin usa a biblioteca kotlinx.serialization para facilitar a conversão entre objetos Kotlin e JSON.
 
-JSON, ou JavaScript Object Notation, foi criado em 1999 como uma alternativa leve e fácil de ler para XML. Atualmente, é amplamente utilizado na web e em APIs por sua simplicidade e compatibilidade com múltiplas linguagens de programação. Além do Kotlin, existem outras bibliotecas que podem ser utilizadas para manipulação de JSON, como o Gson e o Jackson.
-
-## Veja também:
-
-https://www.json.org/json-pt.html
-https://kotlinlang.org/api/latest/jvm/stdlib/kotlinx.coroutines/-json-string/index.html
-https://github.com/cbeust/klaxon
+## Veja Também
+- Documentação oficial de Kotlin Serialization: [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+- Especificação JSON: [json.org](https://www.json.org/json-pt.html)

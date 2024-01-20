@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Fish Shell: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,19 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Pisanie plików tekstowych to podstawowa umiejętność programistów. Polega to na tworzeniu czytelnego tekstu w formacie, który może być przeczytany i zrozumiany przez komputer. Pisanie plików tekstowych jest kluczowe dla tworzenia i przechowywania kodu oraz konfiguracji dla różnych programów i systemów.
+## What & Why? (Co i dlaczego?)
+Zapisywanie pliku tekstowego to proces tworzenia lub modyfikacji plików zawierających tekst. Programiści robią to, aby przechowywać dane, konfiguracje, skrypty czy dokumentować kod.
 
-## Jak to zrobić:
-W Fish Shell możemy napisać plik tekstowy za pomocą komendy `echo`. Na przykład, jeśli chcemy utworzyć plik o nazwie `hello.txt` zawierający tekst "Witaj świecie!", możemy użyć następującej komendy: 
+## How to: (Jak to zrobić:)
+```Fish Shell
+# Utworzenie nowego pliku tekstowego
+echo "To jest przykładowy tekst" > plik.txt
+
+# Dodanie tekstu do istniejącego pliku
+echo "Kolejna linia tekstu" >> plik.txt
+
+# Wyświetlenie zawartości pliku
+cat plik.txt
+
+# Sample output:
+# To jest przykładowy tekst
+# Kolejna linia tekstu
 ```
-fish shell 
-echo "Witaj świecie!" > hello.txt
-```
-Każdy tekst, który zostanie wprowadzony po `echo` zostanie zapisany w pliku `hello.txt`.
 
-## Głęboki zanurzenie:
-Pisanie plików tekstowych jest jedną z podstawowych czynności w programowaniu. Pliki tekstowe są wykorzystywane do przechowywania kodu, konfiguracji i danych w różnych programach. Alternatywami dla pisania plików tekstowych są na przykład bazy danych lub pliki binarne, ale są one zazwyczaj używane w bardziej zaawansowanych i złożonych projektach.
+## Deep Dive (Dogłębna analiza)
+W przeszłości, takie zadania często realizowane były za pomocą narzędzi takich jak `ed` czy `sed`. Fish Shell upraszcza działania za pomocą wbudowanych komend jak `echo` i przekierowań `>` oraz `>>`. Zapisywanie pliku tekstowego w Fish korzysta z Unixowych konwencji i może być używany do współpracy z narzędziami jak `grep`, `awk`, spoza powłoki.
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej na temat pisania plików tekstowych w Fish Shell, polecamy zapoznać się z oficjalną dokumentacją: https://fishshell.com/docs/current/index.html.
+## See Also (Zobacz także)
+- Oficjalna dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Przewodnik po przekierowaniach w Fish Shell: [https://fishshell.com/docs/current/tutorial.html#redirects](https://fishshell.com/docs/current/tutorial.html#redirects)
+- Unix Shell Scripting Tutorial: [http://www.freeos.com/guides/lsst/](http://www.freeos.com/guides/lsst/)

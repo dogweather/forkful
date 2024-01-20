@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Fish Shell: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,30 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Tests schreiben ist eine gängige Praxis in der Programmierung, um sicherzustellen, dass der Code richtig funktioniert und keine unerwünschten Fehler enthält. Programmierer tun dies, um die Qualität des Codes zu gewährleisten und sicherzustellen, dass er den Anforderungen entspricht.
+Tests schreiben bedeutet, Code zu erstellen, der prüft, ob andere Codeabschnitte wie erwartet funktionieren. Programmierer machen das, um Fehler früh zu erkennen, Codequalität zu sichern und spätere Wartung zu vereinfachen.
 
-## Wie geht's?
+## How to:
 
-Das Schreiben von Tests in Fish Shell ist äußerst einfach und erfordert nur ein paar Zeilen Code. Im Folgenden sehen Sie ein Beispiel, wie Sie einen einfachen Test für eine Funktion schreiben, die zwei Zahlen addiert:
+### Einfacher Test
 
 ```Fish Shell
-start_test "Teste addiere Funktion"
-set -q result (math add 2 3)
-if [ $result -eq 5 ]
-    echo "Test erfolgreich"
-else
-    echo "Test fehlgeschlagen"
+function test_greeting
+    echo "Hallo Welt" | grep -q "Hallo"
+    and echo "Test bestanden"
+    or echo "Test fehlgeschlagen"
 end
+
+test_greeting
 ```
 
-Wenn dieser Code ausgeführt wird, wird die Nachricht "Test erfolgreich" ausgegeben, da die Funktion tatsächlich 2 und 3 zu 5 addiert. Dies ist eine einfache Möglichkeit, um sicherzustellen, dass die Funktion korrekt arbeitet.
+#### Ausgabe:
 
-## Tiefere Einblicke
+```Shell
+Test bestanden
+```
 
-Das Konzept des Testens ist nicht neu und wird schon seit vielen Jahren von Programmierern verwendet. Es gibt auch alternative Methoden, um Tests in Fish Shell zu schreiben, wie zum Beispiel die Verwendung von speziellen Test-Frameworks. Diese können jedoch komplexer sein und zusätzliche Kenntnisse erfordern.
+### Test mit erwartetem Fehler
 
-In Fish Shell gibt es auch die Möglichkeit, unterschiedliche Arten von Tests auszuführen, wie zum Beispiel Unit-Tests und Integrationstests. Dies hängt von den spezifischen Anforderungen des Projekts und der Komplexität des Codes ab.
+```Fish Shell
+function test_fail_example
+    false # Dieser Befehl wird immer mit einem Fehler beenden
+    and echo "Sollte nicht passieren"
+    or echo "Erwartetes Versagen"
+end
 
-## Siehe auch
+test_fail_example
+```
 
-Wenn Sie mehr über das Schreiben von Tests in Fish Shell erfahren möchten, empfehlen wir die offizielle Dokumentation und die zahlreichen Tutorials, die im Internet verfügbar sind. Das Schreiben von Tests ist eine wichtige Fähigkeit für jeden Programmierer und kann dazu beitragen, zuverlässige und fehlerfreie Anwendungen zu entwickeln. Also zögern Sie nicht, sich einzulesen und Ihre Test-Fähigkeiten zu verbessern!
+#### Ausgabe:
+
+```Shell
+Erwartetes Versagen
+```
+
+## Deep Dive
+
+Fish Shell umfasst nicht direkt eingebaute Testing-Frameworks wie andere Programmiersprachen. Historisch gesehen nutzen Entwickler externe Tools wie `fishtape` oder bash-basierte Frameworks. Das bietet weniger Integration aber erlaubt Anpassung und Nutzung bewährter Methoden. Tests in Fish sind normalerweise einfacher Natur und setzen auf die Shell's Fähigkeit, Kommandos und Scripts zu bewerten.
+
+## See Also
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fishtape, ein Test-Framework für Fish Scripts](https://github.com/jorgebucaran/fishtape)
+- [Fish Shell Tutorial für Anfänger](https://fishshell.com/docs/current/tutorial.html)

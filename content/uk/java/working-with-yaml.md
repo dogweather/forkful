@@ -1,7 +1,7 @@
 ---
-title:                "Робота з Yaml"
-html_title:           "Java: Робота з Yaml"
-simple_title:         "Робота з Yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Робота з YAML - це процес створення, збереження та зчитування даних у форматі YAML за допомогою програмування на мові Java. Програмісти використовують YAML для зручної організації та легкого доступу до даних у своїх програмах.
+## What & Why?
+Що таке робота з YAML і навіщо це роблять програмісти? YAML – це формат, що зручний для людини для серіалізації даних, який часто використовують для конфігурації. Програмісти використовують YAML, тому що він читабельний і інтуїтивно зрозумілий.
 
-## Як?
-Нижче наведені приклади коду та вихідного результату, які покажуть вам, як працювати з файлами YAML у мові Java.
-
+## How to:
 ```Java
-// Імпортуємо необхідну бібліотеку для роботи з YAML
-import org.yaml.snakeyaml.Yaml;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import java.io.File;
+import java.util.Map;
 
-// Створюємо об'єкт для зчитування даних з файлу
-Yaml yaml = new Yaml();
-
-// Зчитуємо дані з файлу та зберігаємо їх у змінну
-Map<String, Object> data = yaml.load("file.yaml");
-
-// Вибираємо конкретне значення за ключем "name"
-String name = data.get("name");
-System.out.println("Ім'я: " + name);
-
-// Змінюємо значення ключа "age" та зберігаємо зміни у файлі
-data.put("age", 20);
-yaml.dump(data, new File("file.yaml"));
+public class YamlExample {
+    public static void main(String[] args) {
+        try {
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            Map<String, Object> data = mapper.readValue(new File("config.yaml"), Map.class);
+            
+            System.out.println(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-Припустимо, у файлі з назвою "file.yaml" знаходилися такі дані:
+Після запуску коду, якщо у файлі `config.yaml` є такий вміст:
 
 ```yaml
-name: Іван
-age: 22
-country: Україна
+database:
+  host: localhost
+  port: 3306
 ```
 
-В такому випадку, вихідним результатом буде:
+Виведення буде таким:
 
 ```
-Ім'я: Іван
+{database={host=localhost, port=3306}}
 ```
 
-## Глибший аналіз
-Як і багато інших форматів, YAML був створений для зручного представлення даних. Також, він може бути використаний як альтернатива форматам, таким як XML та JSON, які часто використовуються для збереження та передачі даних. Робота з YAML дозволяє програмістам зберігати та організовувати дані у більш зрозумілому та зручному форматі.
+## Deep Dive
+YAML започатковано у 2001 році як більш читабельна альтернатива XML і JSON. Існують бібліотеки для роботи з YAML в більшості мов програмування. В Java, бібліотека Jackson з її YAML модулем – популярний вибір. Важливо пам'ятати про відступи в YAML, оскільки вони визначають структуру документа. 
 
-Якщо ви бажаєте отримати більше інформації про роботу з YAML у мові Java, ви можете ознайомитися з документацією на офіційному сайті бібліотеки SnakeYAML.
-
-## Подивитися також
-- [Офіційний сайт SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Home)
-- [Офіційна документація Java для роботи з YAML](https://yaml.org/spec/1.2/spec.html)
-
-Будь ласка, пам'ятайте, що робота з YAML може бути дуже корисною у ваших програмах, оскільки дозволяє швидко та зручно працювати зі структурованими даними. Спробуйте використовувати YAML у своїх проектах та поступово ви освоїте його.
+## See Also
+- YAML офіційний сайт: https://yaml.org/
+- Jackson домашня сторінка: https://github.com/FasterXML/jackson
+- YAML Wikipedia сторінка: https://uk.wikipedia.org/wiki/YAML
+- Стандарт YAML 1.2: https://yaml.org/spec/1.2/spec.html

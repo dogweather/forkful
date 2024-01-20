@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "C#: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що це і чому?
-В програмуванні, тести - це шматки коду, які перевіряють, чи працює програма так, як очікувалось. Програмісти пишуть тести, щоб переконатися, що їх код працює коректно та відповідає вимогам.
+## Що це таке & Навіщо?
 
-Як це зробити:
+Тести - це перевірки правильності роботи коду. Програмісти пишуть тести, щоб забезпечити надійність програм і полегшити зміни без боязні "поламати" щось.
+
+## Як це робити:
+
 ```C#
-// Приклад тесту для додавання двох чисел
-public int Додати(int число1, int число2)
+using NUnit.Framework;
+
+namespace UkrainianApp.Tests
 {
-    return число1 + число2;
-}
+    [TestFixture]
+    public class CalculatorTests
+    {
+        [Test]
+        public void Add_WhenCalled_ReturnsSumOfArguments()
+        {
+            var calculator = new Calculator();
 
-[Test]
-public void ПеревіркаДодавання()
-{
-    // створення екземпляру класу
-    Калькулятор калькулятор = новий Калькулятор();
+            var result = calculator.Add(5, 3);
 
-    // виклик методу Додати зі значеннями 5 та 10
-    int результат = калькулятор.Додати(5, 10);
+            Assert.That(result, Is.EqualTo(8)); 
+        }
+        // Додаємо тест для функції 'Subtract'
+        [Test]
+        public void Subtract_WhenCalled_ReturnsDifferenceOfArguments()
+        {
+            var calculator = new Calculator();
 
-    // перевірка, чи повернуто правильне значення
-    ОчікуванийРезультат = 15;
-    Assert.AreEqual(очікуванийРезультат, результат);
+            var result = calculator.Subtract(5, 3);
+
+            Assert.That(result, Is.EqualTo(2)); 
+        }
+    }
+
+    public class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public int Subtract(int a, int b)
+        {
+            return a - b;
+        }
+    }
 }
 ```
+Виконайте тести, результат повинен виглядати так:
+```
+Test Name:  Add_WhenCalled_ReturnsSumOfArguments
+   Status: Passed
 
-Дивовижне занурення:
-Історичний контекст:
-Тестування коду було вперше запропоновано в 1980-х роках як метод покращення якості програмного забезпечення. З тих пір, тестування стало необхідною частиною процесу розробки програм.
+Test Name:  Subtract_WhenCalled_ReturnsDifferenceOfArguments
+   Status: Passed
+```
 
-Альтернативи:
-Існують різні підходи до тестування коду, такі як ручне тестування та автоматичне тестування.
+## Поглиблено:
 
-Подробиці виконання:
-Для написання тестів використовуються спеціальні бібліотеки, такі як NUnit, які дозволяють писати тести у зрозумілій для мови програмування формі.
+Історично, тести розробляли для підвищення довіри до коду. Використання TDD (Test-Driven Development) почало набирати популярність у 2000-х. Альтернативи NUnit включають MSTest і xUnit. Головне — розділити бізнес-логіку від інтерфейсу, щоб тести були простішими та швидшими.
 
-Подивіться також:
-Додаткові ресурси та матеріали про тестування коду можна знайти на офіційних веб-сайтах бібліотек для тестування та на сторінках відповідних технологій програмування.
+## Джерела для ознайомлення:
+
+- [NUnit Documentation](https://docs.nunit.org/)
+- [Microsoft Docs on Testing in .NET](https://docs.microsoft.com/en-us/dotnet/core/testing/)
+- [Test-Driven Development by Example (book by Kent Beck)](https://www.goodreads.com/book/show/387190.Test_Driven_Development)

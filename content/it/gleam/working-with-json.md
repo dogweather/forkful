@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Gleam: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+JSON è apparso come stenografia per JavaScript Object Notation. È un formato di dati leggibile per l'interoperabilità dei dati. I programmatori lo usano per lo scambio dati tra server e applicazioni web, essendo facile da comprendere e veloce da analizzare.
 
-Lavorare con JSON è una parte importante dello sviluppo di applicazioni web, poiché è il formato più utilizzato per lo scambio di dati tra il server e il client. JSON, acronimo di JavaScript Object Notation, è un formato leggero e semplice da utilizzare per rappresentare dati strutturati, come oggetti e array, utilizzando una sintassi simile a quella di JavaScript. I programmatori utilizzano JSON per gestire dati dinamici, come dati da un database o informazioni provenienti da una richiesta API.
-
-## Come fare:
-
-Utilizzando Gleam, è possibile gestire dati JSON in modo efficiente e intuitivo. Di seguito sono riportati alcuni esempi di codice per comprenderne il funzionamento.
-
-#### Parsing di un file JSON
+## How to:
+Con Gleam, utilizzare JSON è diretto. Mettiamo che vogliamo serializzare un record in JSON e deserializzarlo.
 
 ```Gleam
 import gleam/json
-import gleam/nodjson
 
-let json = """
-{
-  "nome": "Mario",
-  "cognome": "Rossi",
-  "età": 30,
-  "interessi": ["musica", "cinema", "sport"]
+type Persona {
+  Persona(name: String, age: Int)
 }
-"""
 
-let result = nodjson.parse(json)
+// Serializzazione
+pub fn persona_to_json(persona: Persona) -> json.Value {
+  case persona {
+    Persona(name, age) -> json.object([
+      "name", json.string(name),
+      "age", json.int(age)
+    ])
+  }
+}
+
+// Deserializzazione
+pub fn json_to_persona(json: json.Value) -> Result(Persona, String) {
+  json
+  |> json.map(field: {
+    "name", json.string,
+    "age", json.int,
+  })
+  |> result.map(fn(fields) {
+    Persona(fields.name, fields.age)
+  })
+}
+
+// Esempio di utilizzo
+fn main() {
+  let mia_persona = Persona("Mario", 30)
+  mia_persona
+  |> persona_to_json
+  |> json.encode  // "{\"name\":\"Mario\",\"age\":30}"
+  
+  // Ritorno alla struttura Persona
+  let json_persona = "{\"name\":\"Mario\",\"age\":30}"
+  json_persona
+  |> json.decode
+  |> result.then(json_to_persona)
+}
 ```
 
-Il risultato della funzione `parse` è un tipo specializzato di struct Gleam, `DecodeResult`, che contiene i dati json correttamente parsati o un errore.
+## Deep Dive
+JSON è nato nei primi anni 2000, pensato come una parte di JavaScript ma poi adottato oltre. Alternativa famosa è XML, ma JSON è più leggero e di facile lettura. La libreria `gleam/json` facilita la serializzazione e deserializzazione con funzioni dedicate. JSON non ha tipi specifici per data o ora, quindi è necessario gestirli come stringhe.
 
-#### Creazione di un oggetto JSON
-
-```Gleam
-import gleam/json
-import gleam/write
-
-let mario = json.object([
-  "nome" => json.string("Mario"),
-  "cognome" => json.string("Rossi"),
-  "età" => json.int(30),
-  "interessi" => json.array([
-    json.string("musica"),
-    json.string("cinema"),
-    json.string("sport"),
-  ])
-])
-
-write!(mario)
-```
-
-L'output di questo codice è il seguente:
-
-``` 
-{
-  "nome": "Mario",
-  "cognome": "Rossi",
-  "età": 30,
-  "interessi": ["musica", "cinema", "sport"]
-} 
-```
-
-## Deep Dive:
-
-JSON è diventato sempre più popolare negli ultimi anni grazie alla sua semplicità ed efficacia, ma non è l'unico formato utilizzato per scambiare dati. Altri formati includono XML e YAML. JSON è stato sviluppato inizialmente per essere utilizzato con JavaScript, ma grazie alla sua sintassi semplice e leggibile, è diventato uno standard per lo scambio di dati anche in altre linguaggi di programmazione.
-
-Gleam utilizza una libreria esterna, `nodjson`, per gestire dati JSON. Questa libreria è basata su [jsone](https://github.com/sile/jsone), scritta in OCaml. Ciò garantisce una rapida e sicura manipolazione dei dati JSON.
-
-## Vedi anche:
-
-- [Gleam repository su GitHub](https://github.com/gleam-lang/gleam)
-- [The JSON data format](https://www.json.org/json-it.html)
+## See Also
+- Documentazione ufficiale di Gleam: [Gleam](https://gleam.run)
+- JSON homepage: [JSON.org](https://json.org)
+- Comparazione tra JSON e XML: [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

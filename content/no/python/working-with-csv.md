@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Python: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-CSV står for Comma Separated Values og er en filformat brukt til å lagre og organisere data i tabulær form. Det er spesielt nyttig for programmerere som trenger å behandle store mengder data på en strukturert måte, for eksempel å importere eller eksportere data til og fra en database.
+## Hva & Hvorfor?
+CSV-formatet brukes for å lagre og utveksle data. Programmerere jobber med det fordi det er enkelt, universelt og støttes av de fleste programmer og språk.
 
-# Slik gjør du det:
-Å jobbe med CSV-filer er enkelt i Python ved hjelp av det innebygde biblioteket 'csv'. Først må du importere dette biblioteket og åpne filen du vil jobbe med. Deretter kan du lese inn dataene og behandle dem ved hjelp av de ulike funksjonene som tilbys i biblioteket. Til slutt må du ikke glem å lukke filen når du er ferdig med å jobbe med den.
+## Slik gjør du:
+Her er enkle eksempler på hvordan lese og skrive CSV-filer i Python.
 
-```python
+### Lese CSV:
+```Python
 import csv
 
-with open('filnavn.csv', 'r') as fil:
-    data = csv.reader(fil)
-    for rad in data:
-        # Gjør nødvendige operasjoner med data her
-        print(rad)
+# Åpne filen og lese innholdet med csv.reader
+with open('eksempel.csv', mode='r', encoding='utf-8') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
 ```
 
-Dette eksempelet åpner en CSV-fil med lesertilgang og skriver ut hver rad i filen til skjermen. Det er ulike måter å behandle dataene på, for eksempel kan du velge å lagre dem i en liste for videre bruk.
+### Skrive til CSV:
+```Python
+import csv
 
-# Dypdykk:
-CSV-formatet ble utviklet på 1970-tallet og har siden blitt standard for utveksling av data mellom ulike applikasjoner. Det finnes også alternative filformater, som f.eks. TSV (tab separated values) og JSON (JavaScript Object Notation), men CSV er fortsatt mye brukt på grunn av sin enkelhet.
+# Data som skal skrives til CSV
+data = [['Navn', 'Alder', 'By'], ['Ola', 29, 'Oslo'], ['Kari', 35, 'Bergen']]
 
-Når du jobber med CSV i Python, er det viktig å være oppmerksom på formateringen av dataene. Hvis cellene inneholder komma eller andre spesielle tegn, må disse håndteres riktig for å unngå feil i lesingen av filen. Det finnes også flere alternative måter å lese og skrive til CSV-filer på, avhengig av behovene til ditt spesifikke prosjekt.
+# Åpne filen og skrive data med csv.writer
+with open('eksempel_output.csv', mode='w', encoding='utf-8', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+```
 
-# Se også:
-Offisiell dokumentasjon for 'csv' biblioteket i Python: https://docs.python.org/3/library/csv.html
+## Dypdykk
+CSV står for Comma-Separated Values og har vært i bruk siden 1970-tallet. Alternativer til CSV inkluderer JSON og XML som også er populære dataformat. I Python håndterer `csv`-modulen parsing og skriving, men det finnes også tredjepartsbiblioteker som `pandas` som tilbyr mer avanserte funksjoner.
 
-En oversikt over ulike filformater og hvordan de kan behandles i Python: https://realpython.com/python-csv/
-
-Et eksempelprosjekt som viser hvordan man kan bruke CSV i et praktisk scenario: https://github.com/insafiodigital/CSV-to-JSON-converter
+## Se Også
+- Python's offisielle dokumentasjon for CSV-modulen: https://docs.python.org/3/library/csv.html
+- Pandas-dokumentasjon for å jobbe med CSV: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+- W3Schools Python CSV Reader Tutorial: https://www.w3schools.com/python/python_csv.asp

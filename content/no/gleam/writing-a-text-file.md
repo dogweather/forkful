@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Gleam: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Skriving av tekstfiler er en vanlig oppgave for programvareutviklere. Dette innebærer å opprette et dokument som inneholder ren tekst, som kan leses og endres av både mennesker og datamaskiner. Å skrive tekstfiler er en viktig del av utviklingsprosessen, ettersom det tillater utviklere å lagre og organisere data som trengs for å kjøre et program.
+## Hva & Hvorfor?
+Skriving til tekstfiler lar oss lagre data på en varig måte. Programmerere gjør dette for å logge hendelser, lagre konfigurasjoner, eller for å kommunisere med andre programmer eller systemkomponenter.
 
-# Hvordan:
-Å skrive en tekstfil i Gleam er enkelt og intuitivt. Først må du deklarere en variabel som vil holde informasjonen du ønsker å skrive til filen. Deretter bruker du funksjonen `io.write_file` og angir variabelen som argument. Til slutt, for å sikre at endringene lagres, bør du bruke funksjonen `io.sync` for å synkronisere filsystemet.
+## Hvordan:
+Gleam har ikke innebygde biblioteker for filoperasjoner ennå, men du kan integrere med Erlang-biblioteker ved å bruke `gleam_erlang` bindingene. Eksempel:
 
+```gleam
+import gleam/io
+import gleam_erlang.{File}
+import gleam/ok.{Ok, Error}
+
+fn write_to_file(content: String) {
+  case File.open("my_file.txt", [:write]) {
+    Ok(file) ->
+      File.write(file, content)
+      io.println("File written successfully")
+      File.close(file)
+    Error(error) ->
+      io.println("Failed to write file: " ++ error)
+  }
+}
 ```
-let message = "Hei verden!"
 
-Gleam.Console.log("Skriver til fil...")
-io.write_file("minfil.txt", message)
-io.sync()
+Kjører du funksjonen vil outputten i terminalen være enten "File written successfully" eller "Failed to write file: ...med feilmelding...".
 
-Gleam.Console.log("Ferdig!")
-```
+## Deep Dive:
+Før i tiden brukte vi biblioteket `:file` fra Erlang direkte, men `gleam_erlang` gir en bedre, typestøttet integrasjon med Erlang's funksjonalitet. Alternativer til `gleam_erlang` kunne være direkte systemkall eller bruk av andre språkmoduler. Når du skriver til filer skal du passe på å håndtere feil som kan oppstå og lukke filresursen for å unngå ressurslekkasje.
 
-Når du kjører denne koden, vil programmet lage en fil med navnet "minfil.txt" og legge teksten "Hei verden!" i den.
-
-# Dypdykk:
-Skriving av tekstfiler har vært en standardoppgave i programmering siden de tidlige dagene av datamaskiner. Før i tiden ble programmer skrevet for å kjøre i kommandolinjen, og å skrive til en tekstfil var den eneste måten å lagre og organisere data på. I dag finnes det flere alternativer, som å bruke en database, men tekstfiler er fortsatt nyttige for enkle oppgaver.
-
-Når du skriver til en tekstfil, kan du bruke forskjellige formateringsmetoder, som å legge til linjeskift eller bruke forskjellige skrifttyper og størrelser. Dette gjøres vanligvis ved hjelp av spesifikke formateringsfunksjoner eller spesielle koder som følger en bestemt standard. Men det grunnleggende konseptet med å bare legge til ren tekst forblir det samme.
-
-# Se også:
-For mer informasjon om å skrive tekstfiler i Gleam, sjekk ut dokumentasjonen: https://gleam.run/documentation/standard_library/index.htmlio#write_file
-
-Du kan også lære mer om filsystemet i Gleam her: https://gleam.run/documentation/standard_library/index.htmlio#filesystem
+## See Also:
+- Gleam's offisielle dokumentasjon: https://gleam.run/
+- Erlang's `:file` moduldokumentasjon: http://erlang.org/doc/man/file.html
+- Gleam's `gleam_erlang` bibliotek: https://hex.pm/packages/gleam_erlang

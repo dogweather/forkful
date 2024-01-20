@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Ruby: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+Le CSV, "Comma-separated values", c’est simple: des données séparées par des virgules. Les devs l'adorent pour sa simplicité, son universalité avec les tableurs et sa facilité d’import/export dans des bases de données.
 
-Travailler avec les fichiers de valeurs séparées par des virgules, ou CSV, est un moyen courant pour les programmeurs de gérer et manipuler des données tabulaires. Les fichiers CSV sont faciles à créer, lire et écrire avec du code et peuvent être utilisés pour stocker des informations comme des feuilles de calcul ou des bases de données.
+## How to:
 
-## Comment faire:
-
-Voici quelques exemples de code en Ruby pour vous montrer comment utiliser les fichiers CSV:
+Installation de la gem CSV:
 
 ```Ruby
-require 'CSV'
+gem install csv
+```
 
-# Lecture d'un fichier CSV
-csv = CSV.read("mon_fichier.csv", headers: true, col_sep: ';')
+Lire un fichier CSV:
 
-# Écriture dans un fichier CSV
-CSV.open("ma_nouvelle_feuille.csv", "wb") do |csv|
-  csv << ["en-tête1", "en-tête2", "en-tête3"]
-  csv << ["donnée1.1", "donnée1.2", "donnée1.3"]
-  csv << ["donnée2.1", "donnée2.2", "donnée2.3"]
+```Ruby
+require 'csv'
+
+CSV.foreach("chemin/vers/fichier.csv", headers: true) do |row|
+  puts row["Nom de la Colonne"]
 end
 ```
 
-Voici ce à quoi pourrait ressembler votre sortie CSV:
+Écrire dans un fichier CSV:
 
-| en-tête1 | en-tête2 | en-tête3 |
-|----------|----------|----------|
-| donnée1.1 | donnée1.2 | donnée1.3 |
-| donnée2.1 | donnée2.2 | donnée2.3 |
+```Ruby
+require 'csv'
 
-## Plongée en profondeur:
+CSV.open("chemin/vers/nouveau_fichier.csv", "w", write_headers: true, headers: ["Colonne 1", "Colonne 2"]) do |csv|
+  csv << ["Valeur 1", "Valeur 2"]
+end
+```
 
-Les fichiers CSV ont été créés dans les années 1970 pour faciliter l'échange de données entre différents systèmes informatiques. Ils sont largement utilisés aujourd'hui pour les importations et exportations de données, les migrations de base de données et les rapports.
+## Deep Dive
 
-Bien que les fichiers CSV soient un moyen populaire de stocker des données tabulaires, il existe d'autres formats tels que JSON, XML et YAML qui peuvent également être utilisés. Cependant, CSV reste le format préféré pour les données largement structurées et il est facile à manipuler avec du code.
+Le format CSV date des années 70. Bon, il n’est pas parfait pour des données complexes, mais il reste un choix solide pour l'échange de données simples.
 
-Dans Ruby, la méthode ```CSV.read``` renvoie un tableau avec toutes les lignes du fichier CSV, tandis que la méthode ```CSV.open``` permet d'écrire dans un fichier CSV en lui passant un bloc.
+Il existe d’autres formats comme JSON ou XML. Ils sont mieux pour des structures compliquées, mais le CSV gagne en légèreté et facilité.
 
-## Voir aussi:
+Ruby utilise sa librairie CSV standard. Elle est bien intégrée et efficace, mais si vous voulez plus de performance, Smarter_CSV est une alternative populaire.
 
-- [La documentation officielle de Ruby sur la gestion des fichiers CSV](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
-- [Un tutoriel vidéo sur la manipulation de fichiers CSV en Ruby](https://www.youtube.com/watch?v=dX4Hease1W8)
+## See Also
+
+Documentation officielle de Ruby sur CSV: [Ruby CSV](https://ruby-doc.org/stdlib-2.6/libdoc/csv/rdoc/CSV.html)
+
+Gem Smarter_CSV pour un CSV handling plus rapide: [Smarter_CSV](https://github.com/tilo/smarter_csv)
+
+Tutoriel pour apprendre à manipuler le CSV avec Ruby: [Ruby CSV Tutorial](https://www.callicoder.com/ruby-csv-read-write/)

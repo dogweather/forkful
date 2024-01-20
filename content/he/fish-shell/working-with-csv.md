@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ CSV"
-html_title:           "Fish Shell: עבודה עם קובץ CSV"
-simple_title:         "עבודה עם קובץ CSV"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -11,31 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+עבודה עם קבצי CSV משמשת לטיפול בנתונים טבולריים - שמורים כטקסט עם פירודי פסיקים. תוכניתנים משתמשים בזה כי זה פורמט פשוט ונפוץ לייבא ולייצא נתונים בין מערכות ותוכנות שונות.
 
-עבודה עם קבצי CSV היא תהליך נפוץ בקרב מתכנתים. זהו פורמט נתונים נפוץ שמאפשר לנו לשמור ולטעון מידע מורכב כמו טבלאות ונתוני רשומות בצורה ברורה ומאוחרת. מתכנתים משתמשים בקבצי CSV כדי לסדר ולטעון נתונים בפרויקטים שונים, כמו אפליקציות ואתרים.
+## איך לעשות:
+```Fish Shell
+# קריאת CSV והדפסת השורה הראשונה
+begin; set -l IFS ,; cat example.csv | read -la column_headers; echo $column_headers; end
 
-## איך לעבוד עם קבצי CSV במכסת של Fish?
+# חיתוך עמודה מסוימת מכל השורות
+cut -d ',' -f 2 example.csv
 
-
+# סינון והדפסת שורות שמכילות "מילת מפתח"
+grep 'מילת מפתח' example.csv
 ```
-set -g IFS ','
-
-set rows (cat test.csv | sed 's/"//g')
-
-for row in $rows
-    set values (echo $row | sed 's/ /,/g')
-    echo "First column: $values[1]"
-    echo "Second column: $values[2]"
-end
+תוצאות דוגמא:
+```
+שדה1,שדה2,שדה3
+ערך1,ערך2,ערך3
 ```
 
-כאן, אנו משתמשים בסקריפט קל כדי לקרוא ולעבוד עם קובץ CSV במכסת של Fish. נריץ פקודות שמסייעות לנו לטעון ולקרוא נתוני CSV.
+## צלילה עמוקה
+CSV נוצר בשנות ה-70 ומייצג פשטות וסטנדרטיזציה בייצוג נתונים. ישנם פורמטים חלופיים כמו JSON או XML אבל הם לעיתים יותר מורכבים לקריאה וכתיבה ידנית. Fish Shell תומך ביביאת נתונים מCSV באמצעות פקודות Unix קלאסיות ואופרטורים כמו pipe (`|`).
 
-## מידה עמוק
-
-קבצי CSV היו קיימים כבר מזמן רב, והם נחשבים לפורמט נתונים יעיל ונכון עבור נתוני גיבוב כמו נתונים סטטיסטיים ומידע גרפי. ישנן מספר אלטרנטיבות גיבוב שונות, אך קבצי CSV נחשבים לתקן שהידע נפוץ ותומך בהם. כפי שניתן לראות בדוגמאות, עבודה עם קבצי CSV במכסת של Fish היא פשוטה וידידותית.
-
-## ראו גם
-
-- [דף התיעוד הרשמי של פקודת Fish shell לעבוד עם CSV](https://fishshell.com/docs/current/cmds/set.html)
-- [פקודת set של Linux](https://man7.org/linux/man-pages/man1/set.1p.html)
+## ראה גם
+- מדריך ל- Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- תרגול עם נתוני CSV ב- Fish: [https://github.com/fish-shell/fish-shell/wiki/Tutorial#using-commands](https://github.com/fish-shell/fish-shell/wiki/Tutorial#using-commands)
+- הסבר על פורמט CSV: [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/Comma-separated_values)

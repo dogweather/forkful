@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med YAML"
-html_title:           "Java: Arbeta med YAML"
-simple_title:         "Arbeta med YAML"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+## Vad & Varför?
+YAML handlar om att hantera dataformat som används för konfigurationsfiler och dataserier. Programmerare använder det för dess läsbarhet och enkelhet, vilket underlättar konfiguration och datautbyte.
 
-Att arbeta med YAML är ett sätt för programmerare att strukturera och lagra information på ett enkelt och läsbart sätt. Det används ofta för konfigurationsfiler och dataöverföring. Genom att använda YAML kan du organisera din kod på ett mer intuitivt sätt och göra den mer lättillgänglig för andra utvecklare.
+## Hur gör man:
+För att jobba med YAML i Java, använd biblioteket `SnakeYAML`. Så här ser en grundläggande användning ut:
 
-## Hur gör man?
-
-För att arbeta med YAML i Java behöver du använda en YAML-parser. Det finns flera olika alternativ, men ett av de mest populära är SnakeYAML. Här är ett exempel på hur du kan använda SnakeYAML för att läsa och skriva YAML-filer i din kod:
-
-```Java
-// Importera SnakeYAML-biblioteket
+```java
 import org.yaml.snakeyaml.Yaml;
+import java.util.Map;
 
-// Skapa en ny instans av Yaml-klassen
-Yaml yaml = new Yaml();
+public class YamlExample {
+    public static void main(String[] args) {
+        String yamlStr = "name: Ylva\nage: 35\nlanguage: Java";
+        Yaml yaml = new Yaml();
+        Map<String, Object> data = yaml.load(yamlStr);
 
-// Läs från en YAML-fil och spara datan i en HashMap
-HashMap<String, Object> data = yaml.load(new FileInputStream("data.yaml"));
-
-// Skriv till en YAML-fil från data i en HashMap
-yaml.dump(data, new FileWriter("ny_data.yaml"));
+        System.out.println(data);
+    }
+}
 ```
 
-## Djupdykning
+Kör koden, och du får:
+```
+{name=Ylva, age=35, language=Java}
+```
 
-YAML (YAML Ain't Markup Language) är ett mänskligt läsbart dataformat som ursprungligen skapades för Perl-programmering. Det är inspirerat av andra språk som Python och Tcl. YAML är ett alternativ till XML och JSON, men skiljer sig genom att ha en mer naturlig och intuitiv syntax.
+## Djupdykning:
+YAML började användas i början av 2000-talet som ett enklare alternativ till XML. YAML står för "YAML Ain't Markup Language" och är utformat för att vara mänskligt läsligt. När XML kan vara för krångligt och JSON saknar kommentarsmöjlighet, är YAML ett bra mellanalternativ. Snabbhet och minnestillgång kan vara sämre jämfört med JSON, så använd fallet styr valet.
 
-Det finns flera olika sätt att arbeta med YAML i Java, inklusive SnakeYAML, Jackson och JavaBeans. Det bästa valet beror på dina specifika behov och preferenser.
-
-För mer information om hur du arbetar med YAML och utveckling i Java, se gärna följande källor:
-
-## Se även
-
-- [Jackson](https://github.com/FasterXML/jackson-dataformat-yaml)
-- [JavaBeans](https://docs.oracle.com/javase/8/docs/api/java/beans/package-summary.html)
-- [YAML.org](https://yaml.org)
+## Se även:
+- YAML officiell hemsida: https://yaml.org
+- SnakeYAML GitHub-sida: https://github.com/asomov/snakeyaml
+- En jämförelse mellan JSON och YAML: https://json2yaml.com/

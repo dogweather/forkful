@@ -1,7 +1,7 @@
 ---
-title:                "yaml से काम करना"
-html_title:           "Python: yaml से काम करना"
-simple_title:         "yaml से काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+YAML, 'YAML Ain't Markup Language' का छोटा रूप है, जो डेटा सीरियलाइजेशन के लिए एक मानक है। प्रोग्रामर्स इसका उपयोग कॉन्फ़िग फाइलों, डेटा स्टोरेज और कई प्रकार के एप्लिकेशन्स में करते हैं, क्योंकि यह पढ़ने में आसान और लिखने में सरल होता है।
 
-यामल लेख से काम करना क्या है और क्यों प्रोग्रामर्स इसको करते हैं? यामल एक फाइल प्रारूप है जो कुछ प्रोग्रामों के साथ डेटा का उपयोग करती है, जिससे डेटा को संगठित लेकिन उपयोगकर्ता द्वारा संशोधित किया जा सकता है। यह एक आसान और स्वचालित तरीका है डेटा को प्रोग्रामिंग में उपयोग करने के लिए।
+## How to: (कैसे करें:)
+YAML को पायथन में पढ़ने और लिखने के लिए, `pyyaml` लाइब्रेरी का उपयोग किया जाता है:
 
-## कैसे करें:
+```Python
+# pyyaml लाइब्रेरी इंस्टॉल करें
+!pip install pyyaml
 
-यामल लेख को एक पाइथन स्ट्रिंग में पार्स और उसे डिक्शनरी में रूपांतरित करने के लिए निम्न संगणक को उपयोग करें:
-
-```python
 import yaml
-data = yaml.safe_load("""name: John
-age: 25""")
-print(data)
-```
-आउटपुट: {'name': 'John', 'age': 25}
 
-यामल लेख बनाएं और बंद करने के लिए निम्न पाइथन कोड भी लिखा जा सकता है:
+# YAML स्ट्रिंग को पायथन डिक्शनरी में बदलें
+yaml_data = """
+name: अजय
+age: 30
+skills:
+  - पायथन
+  - जावास्क्रिप्ट
+"""
+python_dict = yaml.safe_load(yaml_data)
+print(python_dict)
 
-```python
-import yaml
-data = {'name': 'John', 'age': 25}
-yaml.safe_dump(data, open("output.yaml", "w"))
-```
-यह एक output.yaml फाइल बनाएगा जिसमें निम्न डेटा होगा:
-
-```
-name: John
-age: 25
+# पायथन डिक्शनरी को YAML में बदलें
+dict_to_yaml = yaml.dump(python_dict, allow_unicode=True)
+print(dict_to_yaml)
 ```
 
-## गहराई में जाएं:
+सैंपल आउटपुट:
+```Python
+{'name': 'अजय', 'age': 30, 'skills': ['पायथन', 'जावास्क्रिप्ट']}
+name: अजय
+age: 30
+skills:
+- पायथन
+- जावास्क्रिप्ट
+```
 
-यामल १९९० के दशक में लोगों को डेटा फाइल बनाने की एक नई तकनीक के रूप में पेश किया गया था। प्रोग्रामर्स आसानी से अपने डेटा को संगठित कर सकते थे और उसे अपनी पसंद के हिसाब से संशोधित कर सकते थे। यामल के अलावा, अन्य पोपुलर डेटा फाइल प्रारूप हैं जैसे XML और JSON लेकिन यामल को प्रोग्रामिंग लिखने के लिए सबसे आसान बनाता है।
+## Deep Dive (गहन जानकारी)
+YAML की शुरुआत 2001 में हुई थी और धीरे-धीरे यह कॉन्फ़िगरेशन फाइलों के लिए लोकप्रिय हो गया। XML और JSON इसके विकल्प हैं, पर YAML अधिक मानव-पठनीय होने के कारण पसंद किया जाता है। YAML परिपत्र संदर्भ (circular references) को सहायता नहीं करता है और indentation से स्ट्रक्चर को define करता है।
 
-## और भी देखें:
-
-अगर आप और अधिक जानना चाहते हैं तो निम्न स्रोतों को देख सकते हैं:
-
-- [PyYAML डॉक्यूमेंटेशन](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [यामल पाइथन लाइब्रेरी की आधिकारिक वेबसाइट](https://yaml.org/)
+## See Also (और देखें)
+- YAML ऑफिशियल साइट: [https://yaml.org](https://yaml.org)
+- PyYAML डॉक्यूमेंटेशन: [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- YAML और JSON के बीच तुलना: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)

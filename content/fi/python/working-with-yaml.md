@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Python: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-YAML on tietojen muotoilukieli, joka on suunniteltu helpottamaan tietojen tallentamista ja jakamista ohjelmien välillä. Se on suosittu valinta ohjelmoijille, koska se on helppo lukea ja kirjoittaa, mikä auttaa parantamaan koodin luettavuutta ja ylläpidettävyyttä.
+## What & Why? | Mitä & Miksi?
+YAML on dataformaatti, joka on helppo lukea ja kirjoittaa. Ohjelmoijat käyttävät YAMLia konfiguraatiotiedostoihin ja datan välittämiseen, koska se on selkeä ja yhteensopiva monien ohjelmointikielien kanssa.
 
-## Miten:
-YAML-tietoja käsitellään käyttämällä sarjaa avaimia ja arvoja, joita erotetaan kaksoispisteillä ja sisennettyä merkkijonoa. Koodin lukeminen ja kirjoittaminen tapahtuu käyttämällä YAML-kirjastoa, joka tarjoaa hyödyllisiä toimintoja tiedon lukemiseen ja kirjoittamiseen. Katso alla olevat esimerkit, jotka näyttävät, miten YAMLia käytetään Pythonissa.
+## How to: | Miten:
+Python-koodilla YAML-tiedoston käsittely onnistuu näin. Tarvitaan `pyyaml`-kirjasto, joka asennetaan komennolla `pip install pyyaml`.
 
 ```Python
 import yaml
 
 # Luetaan YAML-tiedosto
-with open("data.yml") as file:
-  data = yaml.load(file, Loader=yaml.FullLoader)
+with open('esimerkki.yaml', 'r') as file:
+    data = yaml.load(file, Loader=yaml.FullLoader)
+    print(data)
 
-# Tulostetaan tiedon arvo
-print(data["avain"])
-
-# Tallennetaan data uuteen YAML-tiedostoon
-data["uusi_avain"] = "uusi arvo"
-
-with open("uusi_data.yml", "w") as file:
-  yaml.dump(data, file)
+# Kirjoitetaan YAML-tiedostoon
+uusi_data = {'Osa': 'Ohjelmointi', 'Kieli': 'Python'}
+with open('uusi_esimerkki.yaml', 'w') as file:
+    yaml.dump(uusi_data, file)
 ```
 
-## Syvempi sukellus:
-YAML kehitettiin vuonna 2001, ja se oli alun perin suunniteltu helpottamaan tietojen konfigurointia ja tallentamista. Se on korvannut aiemmin suositun XML-muotoilukielen monissa ohjelmissa. Vaikka jotkut ohjelmoijat edelleen käyttävät XML:ää, YAML on tullut suosittu vaihtoehto sen helppokäyttöisyyden vuoksi. Vaikka se on pääasiassa suunniteltu Pythonia varten, sitä tukevat myös monet muut ohjelmointikielet, kuten Java ja Ruby.
+## Deep Dive | Syväsukellus:
+YAML (YAML Ain't Markup Language) julkaistiin 2001 ja on suunniteltu olemaan ihmisluettava ja yksinkertainen. Sen rakenne on JSON:in ja XML:n vaihtoehto. YAMLin käyttö Pythonissa perustuu `pyyaml`-kirjastoon, joka puolestaan käyttää LibYAML:ää, C-kirjastoa YAMLin parsi- ja luontitoimintoihin.
 
-## Katso myös:
-- [YAML.org](https://yaml.org/) - YAML-kielen virallinen verkkosivusto
-- [Python YAML Library Documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) - ohjeet YAML-kirjaston käytöstä Pythonissa
+## See Also | Katso Myös:
+- YAML-formaatin virallinen sivusto: https://yaml.org
+- `pyyaml`-kirjaston dokumentaatio: https://pyyaml.org/wiki/PyYAMLDocumentation
+- Pythonin viralliset ohjeet tehty helposti ymmärrettäviksi: https://docs.python.org/3/

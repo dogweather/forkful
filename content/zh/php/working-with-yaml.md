@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml进行编程"
-html_title:           "PHP: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是YAML以及为什么程序员需要使用它?
-YAML是一种轻量级的数据交换格式，它使用可读性较高的键值对结构，易于人类阅读和手动编辑。程序员常常使用YAML来存储和传输配置信息和其他结构化数据。
+## What & Why? (什么以及为什么？)
+YAML 是 "YAML Ain't Markup Language" 的缩写，一种易于阅读的数据序列化标准。PHP程序员使用YAML是因为它清晰、直观，适合配置文件、数据交换。
 
-## 如何使用YAML:
+## How to: (怎么做：)
+PHP 使用 `yaml` 扩展来解析和生成 YAML。要操作 YAML，你需要安装这个扩展。
+
 ```PHP
-// 通过YAML扩展加载
-extension_loaded( 'yaml' );
+<?php
+// 安装扩展：pecl install yaml
 
-// 将PHP数组转换为YAML格式
-$data = [
-  'name' => 'John',
-  'age' => 25,
-  'hobbies' => [
-    'reading',
-    'hiking',
-    'cooking'
-  ]
+// 解析 YAML 字符串
+$yamlString = "
+shop:
+  book:
+    - title: 'Learning PHP'
+      price: 10
+    - title: 'Mastering YAML'
+      price: 15
+";
+
+$array = yaml_parse($yamlString);
+
+// 输出数组
+print_r($array);
+
+// 生成 YAML 字符串
+$arrayToYaml = [
+    'store' => [
+        'fruit' => [
+            ['name' => 'apple', 'color' => 'red'],
+            ['name' => 'banana', 'color' => 'yellow'],
+        ],
+    ],
 ];
-$yaml = yaml_emit( $data );
 
-// 输出样例:
-name: John
-age: 25
-hobbies:
-  - reading
-  - hiking
-  - cooking
+$yamlOutput = yaml_emit($arrayToYaml);
+echo $yamlOutput;
 ```
 
-## 深入了解:
-YAML最初由Perl编程语言的作者开发，在2001年发布第一个版本。它的设计目标是比其他数据交换格式更轻量且易于阅读。除了PHP，YAML也被其他编程语言如Python、Ruby等广泛使用。除了使用YAML扩展，也可以使用第三方库如symfony/yaml来处理YAML数据。
+样例输出：
+```
+Array
+(
+    [shop] => Array
+        (
+            [book] => Array
+                (
+                    [0] => Array
+                        (
+                            [title] => Learning PHP
+                            [price] => 10
+                        )
 
-## 参考资源:
-- [YAML官方网站](https://yaml.org/)
-- [symfony/yaml GitHub页面](https://github.com/symfony/yaml)
-- [YAML扩展文档](https://www.php.net/manual/zh/book.yaml.php)
+                    [1] => Array
+                        (
+                            [title] => Mastering YAML
+                            [price] => 15
+                        )
+                )
+        )
+)
+
+store:
+  fruit:
+    - name: apple
+      color: red
+    - name: banana
+      color: yellow
+```
+
+## Deep Dive (深入探索)
+YAML 从 2001 年起就有了，用于取代复杂的 XML。相比 JSON，YAML 更注重人类可读性，但JSON更紧凑、解析更快。在PHP中，`yaml_parse()` 和 `yaml_emit()`是主要函数，内部解析细节依赖LibYAML库，这保证了速度和兼容性。
+
+## See Also (另请参阅)
+- PHP 官方文档关于 YAML 扩展: [https://www.php.net/manual/en/book.yaml.php](https://www.php.net/manual/en/book.yaml.php)
+- YAML 官方网站，了解YAML标准: [https://yaml.org/](https://yaml.org/)
+- LibYAML 项目页面，了解底层库: [http://pyyaml.org/wiki/LibYAML](http://pyyaml.org/wiki/LibYAML)

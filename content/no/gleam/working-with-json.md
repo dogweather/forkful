@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Gleam: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
+JSON (JavaScript Object Notation) er et datautvekslingsformat. Programmerere bruker det fordi det er lettleselig for mennesker og lett å tolke for maskiner.
 
-Å jobbe med JSON er en vanlig praksis blant programmører for å lagre og overføre data på en strukturert måte. JSON står for JavaScript Object Notation og er et format som tillater enkelt lesbarhet og behandling av data. Det er et populært valg på grunn av dets universalitet og effektiviteten for å kommunisere med applikasjoner og web-tjenester.
+## Slik gjør du:
+Gleam mangler innebygd JSON-støtte, så du må bruke et bibliotek. Her er et eksempel med `gleam/json`:
 
-Hvordan:
+```gleam
+import gleam/json
 
-For å arbeide med JSON i Gleam kan du bruke biblioteket gleam/json. Det inkluderer funksjoner for å lese, skrive og manipulere JSON-data. Her er et eksempel på hvordan du kan bruke det til å lese og skrive JSON-data:
+// Definer en Rust type som matcher JSON strukturen
+pub type Cat {
+  Cat(name: String, age: Int)
+}
 
-```Gleam
-let data = "{ "name": "Gleam", "version": "0.9.0" }"
-let result = Json.deserialize(data)
-// result = Record { name: "Gleam", version: "0.9.0" }
+// Parse JSON string til en Cat
+pub fn decode_cat(json: String) -> Result(Cat, json.Error) {
+  case json.decode(json) {
+    Ok(cat) -> cat
+    Error(err) -> Error(err)
+  }
+}
 
-let new_data = Json.serialize(result)
-// new_data = "{ "name": "Gleam", "version": "0.9.0" }"
+// Eksempel på JSON data som en streng
+let json_cat = """
+{
+  "name": "Whiskers",
+  "age": 3
+}
+"""
+
+// Kall til decode_cat funksjonen og print resultat
+let result = decode_cat(json_cat)
+case result {
+  Ok(cat) -> io.println(cat)
+  Error(err) -> io.println(flat(err))
+}
 ```
 
-Dypere dykk:
+Forventet output vil være en `Cat` instanse eller en feilmelding om parsingen mislykkes.
 
-JSON har blitt en vanlig måte å lagre og overføre data på siden det ble introdusert i 2001. Den er utledet av JavaScript, men kan brukes med de fleste programmeringsspråk. Det finnes også alternative formater som XML som utfører samme oppgave, men JSON har blitt foretrukket for sin enkelhet og allsidighet. Implementasjonen av JSON i Gleam er basert på Gleam Records, en struktur som er optimal for å representere JSON-data.
+## Dypdykk
+JSON ble popularisert av webutvikling. Alternativer som XML og YAML finns, men JSON er ofte foretrukket for dets enkelhet. I Gleam må JSON-kode manuelt mappes til type-definerte strukturer, i motsetning til språk med automatisk serialisering og deserialisering.
 
-Se også:
-
-- Les mer om Gleam Records: https://gleam.run/documentation/standard_library/#record
-- Utforsk biblioteket gleam/json: https://github.com/gleam-lang/json
-- Finn mer informasjon om JSON på https://www.json.org/
+## Se Også
+- Gleam JSON bibliotek: [https://hex.pm/packages/gleam_json](https://hex.pm/packages/gleam_json)
+- JSON offisiell webside: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- Gleam programmeringsspråk hjemmeside: [https://gleam.run](https://gleam.run)

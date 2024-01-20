@@ -1,7 +1,7 @@
 ---
-title:                "「yamlとの作業」"
-html_title:           "PHP: 「yamlとの作業」"
-simple_title:         "「yamlとの作業」"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？ なぜ？
-YAMLとは、プログラマーがデータを表現するためのフォーマットです。プログラマーはYAMLを使用することで、よりシンプルに、かつ読みやすい形式でデータを保存・転送できます。
+## What & Why?
+何となぜ？
 
-## 使い方：
+YAMLは設定ファイルやデータの保存に使われる形式。PHPでYAMLを扱う理由は、その明瞭さと人間に優しい構造のため。設定やデータの読み書きを容易にする。
+
+## How to:
+やり方：
+
+PHPでは`yaml_parse`と`yaml_emit`関数を使用してYAMLデータの読み込みと書き込みを行えます。次の例では、YAML文字列をPHPの配列に変換し、逆の操作も示します。
+
 ```PHP
-$data = [
-    'name' => 'John',
-    'age' => 25,
-    'favorite_foods' => ['pizza', 'sushi', 'tacos'] 
-];
+<?php
+// YAML文字列をPHP配列に変換
+$yamlString = "
+user: john_doe
+email: john@example.com
+enabled: true
+roles:
+  - admin
+  - user
+";
+$array = yaml_parse($yamlString);
+print_r($array);
 
-// YAMLフォーマットに変換する
-$yaml = yaml_emit($data);
+// PHP配列をYAML文字列に変換
+$arrayToYaml = [
+    'user' => 'john_doe',
+    'email' => 'john@example.com',
+    'enabled' => true,
+    'roles' => ['admin', 'user'],
+];
+$yaml = yaml_emit($arrayToYaml);
 echo $yaml;
-// 出力結果：
-// name: John
-// age: 25
-// favorite_foods:
-//   - pizza
-//   - sushi
-//   - tacos
+?>
 ```
 
-## 詳細:
-YAMLは、2001年にPerl開発者のIngy döt Netによって開発されました。XMLやJSONなどの他のデータフォーマットに比べて、より人間にとって読みやすい形式でデータを表現できます。また、拡張性も高く、他のプログラムや言語でも利用することができるため、広く使われています。
+出力例（配列変換）:
+```
+Array
+(
+    [user] => john_doe
+    [email] => john@example.com
+    [enabled] => 1
+    [roles] => Array
+        (
+            [0] => admin
+            [1] => user
+        )
+)
+```
 
-YAMLの代替としては、JSONやXMLなどがありますが、YAMLはよりコンパクトかつ視覚的に理解しやすいのが特徴です。また、PHPでは内部でYAMLライブラリが使用されているため、追加の設定なしで使用することができます。
+出力例（YAML変換）:
+```
+user: john_doe
+email: john@example.com
+enabled: true
+roles:
+  - admin
+  - user
+```
 
-## 関連情報：
-- [公式YAMLドキュメント](https://yaml.org/)
-- [PHPのYAMLライブラリドキュメント](https://www.php.net/manual/en/book.yaml.php)
-- [YAML vs. JSON](https://www.educba.com/yaml-vs-json/)
+## Deep Dive
+深掘り：
+
+YAML（YAML Ain't Markup Language）は2001年に開始され、データを直感的に理解しやすい形で表現することを目的としています。JSONやXMLといった形式と比較されるが、YAMLは可読性を重視。PHPでは`yaml`拡張モジュールをインストールすることで機能を利用可能。インストールはPECLを通じて行われ、`pecl install yaml`コマンドで完了。
+
+## See Also
+関連情報：
+
+- PHP公式ドキュメント内のYAML関数: [https://www.php.net/manual/en/ref.yaml.php](https://www.php.net/manual/en/ref.yaml.php)
+- YAML公式サイト: [https://yaml.org](https://yaml.org)
+- YAML仕様: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- PECL yamlパッケージ: [https://pecl.php.net/package/yaml](https://pecl.php.net/package/yaml)

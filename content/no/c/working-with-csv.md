@@ -1,6 +1,6 @@
 ---
 title:                "Arbeid med CSV"
-html_title:           "C: Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
 simple_title:         "Arbeid med CSV"
 programming_language: "C"
 category:             "C"
@@ -10,66 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
+Arbeid med CSV (Comma-Separated Values) handler om å lese, skrive, og manipulere data i tekstfiler hvor hver linje er en dataoppføring, og hver verdi er adskilt med komma. Programmerere bruker CSV fordi det er en enkel, lettleselig filformat som er kompatibel med de fleste tabellprogrammer og databaser.
 
-CSV, eller Comma-Separated Values, er en filformat som brukes til å lagre enkle tabellstrukturer i tekstformat. Mange programmerere jobber med CSV-filer fordi de er en praktisk og vanligvis lett måte å lagre og behandle data på. Dette er spesielt nyttig når man trenger å overføre data mellom forskjellige programmer og systemer.
+## Hvordan gjøre det:
+Her er hvordan du kan lese og skrive CSV-filer i C.
 
-# Hvordan?
-
-CSV-filer består av tekstlinjer som er delt inn i kolonner ved hjelp av komma, og vanligvis bruker de filendelsen .csv. Her er et eksempel på hvordan CSV-data kan se ut:
-
+### Lesing av en CSV-fil:
 ```C
-Navn, Alder, Jobb
-Johan, 25, Programmerer
-Maria, 32, Webdesigner
-Erik, 45, Markedsfører
-```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-For å lese og behandle data fra en CSV-fil i C trenger man et bibliotek, for eksempel libcsv. Ved å bruke dette biblioteket kan man åpne og lese en CSV-fil, og behandle dataene som er lagret i filen. Her er et eksempel på hvordan man kan lese en CSV-fil med libcsv:
-
-```C
-#include <csv.h>
+#define MAX_LEN 1024
 
 int main() {
-    // Åpner en CSV-fil for lesing
-    FILE* fil = fopen("data.csv", "r");
-    
-    // Lager en CSV-parser for å lese dataene fra filen
-    csv_parser_t* parser = csv_parser_new();
-    
-    // Leser CSV-dataene fra filen og lagrer dem i variabler
-    char* navn;
-    int alder;
-    char* jobb;
-    while (csv_parse_next_row(parser)) {
-        csv_parse_string(parser, 0, &navn, NULL);
-        csv_parse_int(parser, 1, &alder, NULL);
-        csv_parse_string(parser, 2, &jobb, NULL);
-        
-        // Gjør noe med dataene, f.eks. skriv til konsollen
-        printf("%s er %d år og jobber som %s\n", navn, alder, jobb);
+    char buf[MAX_LEN];
+    FILE *fp = fopen("data.csv", "r");
+
+    if (!fp) {
+        printf("Kan ikke åpne filen.\n");
+        return 1;
     }
-    
-    // Frigjør ressurser
-    fclose(fil);
-    csv_parser_destroy(parser);
+
+    while (fgets(buf, MAX_LEN, fp)) {
+        char* val = strtok(buf, ",");
+        while (val) {
+            printf("%s\n", val);
+            val = strtok(NULL, ",");
+        }
+    }
+
+    fclose(fp);
+    return 0;
 }
 ```
 
-Eksempelutdata:
+### Skriving til en CSV-fil:
+```C
+#include <stdio.h>
 
+int main() {
+    FILE *fp = fopen("utdata.csv", "w");
+
+    if (!fp) {
+        printf("Kan ikke åpne filen.\n");
+        return 1;
+    }
+
+    fprintf(fp, "%s,%s,%s\n", "Navn", "Alder", "By");
+    fprintf(fp, "%s,%d,%s\n", "Olav", 25, "Oslo");
+    fprintf(fp, "%s,%d,%s\n", "Kari", 30, "Bergen");
+
+    fclose(fp);
+    return 0;
+}
 ```
-Johan er 25 år og jobber som Programmerer
-Maria er 32 år og jobber som Webdesigner
-Erik er 45 år og jobber som Markedsfører
-```
 
-# Dypdykk
+Utdata for lesing vil være verdier fra `data.csv` filen listet i konsollen, og skriving vil skape `utdata.csv` med gitt informasjon.
 
-CSV ble opprinnelig utviklet for å gjøre det enklere å importere og eksportere data mellom regnearkprogrammer og databasesystemer på 80-tallet. Det har etter hvert blitt et populært format for å lagre og behandle data på grunn av sin enkelhet og kompatibilitet med forskjellige programmer og systemer.
+## Dypdykk
+CSV ble populært på 1970-tallet og er fortsatt i bruk for sin enkelhet. Alternativer til CSV inkluderer JSON, XML, og databaser som SQLite. Nøkkelen til effektiv håndtering av CSV i C er riktig bruk av `stdio.h` funksjoner og bufferhåndtering for å unngå overflow og minnelekkasjer. For større filer eller mer kompleks data, bør man vurdere en CSV parser bibliotek.
 
-Det finnes ulike måter å håndtere CSV-data på i C, som for eksempel å bruke standardbiblioteket `<stdio.h>` eller spesifikke CSV-biblioteker som libcsv. Det er viktig å være oppmerksom på at data fra CSV-filer ofte trenger en viss form for validering før de kan behandles, særlig hvis de skal brukes i kritiske systemer.
-
-# Se også
-
-- [RFC 4180: Common format and MIME type for CSV files](https://tools.ietf.org/html/rfc4180)
+## Se også:
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), som gir grunnlaget for CSV-formatet.
+- [libcsv](http://libcsv.sourceforge.net/), et bibliotek for å lese og skrive CSV-filer i C.
+- [SQLite](https://www.sqlite.org/index.html), et enkelt databasesystem som kan brukes for lagring og spørringer av mer kompleks data.

@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Elixir: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que É & Por Que Usar?
+Escrever no erro padrão (stderr) é uma forma de enviar mensagens de erro e diagnósticos que não fazem parte da saída principal de um programa. Programadores fazem isso para separar a saída normal de mensagens de erro, facilitando a depuração e o log de erros.
 
-Escrever para o erro padrão é uma técnica comum usada por programadores para direcionar mensagens de erro e depuração em seus programas. Ao invés de imprimir essas mensagens na saída padrão, elas são enviadas para o erro padrão, que é normalmente redirecionado para o console ou registrado em um arquivo de log. Isso permite que os programadores vejam essas mensagens de forma separada da saída do programa, facilitando a identificação e correção de erros.
-
-## Como fazer:
-
+## Como Fazer:
 ```elixir
-IO.puts("Olá, mundo!") # Saída padrão
-IO.puts("Algo deu errado.") # Saída de erro
+# Enviar uma mensagem para o stderr
+:io.format(:standard_error, "Erro: algo deu errado!~n", [])
 
-# Saída:
-Olá, mundo!
-Algo deu errado.
+# Verificar no terminal a mensagem enviada para o stderr
+# Saída esperada: "Erro: algo deu errado!"
 ```
 
-## Mergulho profundo:
+## Mergulho Profundo
+Historicamente, o conceito de separar streams de saída normal e erro vem do Unix. Elixir, rodando na Erlang VM, adere a essa convenção. Alternativamente, poderia-se usar `IO.warn/1` para warnings, que também usa stderr. Do ponto de vista da implementação, a Erlang VM gerencia a saída para stderr por baixo dos panos, que pode ser redirecionada ou manipulada por sistemas operacionais conforme necessário.
 
-Escrever para o erro padrão é uma prática comum que remonta aos primórdios da programação. Antes dos consoles e arquivos de log, os programadores costumavam exibir mensagens de erro diretamente no terminal, mesmo que não fossem lançadas como exceções. Existem diversas formas de se escrever para o erro padrão em Elixir, sendo a mais comum através do uso da função `IO.puts/1`. Outra opção é utilizar o módulo `Logger` para registrar mensagens de erro de forma mais estruturada em arquivos de log.
+## Veja Também
+- [IO — Elixir](https://hexdocs.pm/elixir/IO.html)
+- [Erlang :io module](http://erlang.org/doc/man/io.html)
 
-## Veja também:
-
-- Documentação do Elixir: http://elixir-lang.org/docs.html
-- Comunidade brasileira de Elixir: https://elixir-brasil.org/
-- Blog oficial do Elixir: https://elixir-lang.org/blog/
+Note que links são para documentações em inglês, já que podem não estar disponíveis em português.

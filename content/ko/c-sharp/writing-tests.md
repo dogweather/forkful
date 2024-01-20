@@ -1,6 +1,6 @@
 ---
 title:                "테스트 작성하기"
-html_title:           "C#: 테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "C#"
 category:             "C#"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
+## What & Why? (무엇인가요 & 왜죠?)
+테스트 작성은 코드가 요구사항을 만족하는지 확인하는 일련의 절차입니다. 이를 통해 버그를 사전에 발견하고, 코드의 품질을 높이며, 나중의 기능 변경이 쉬워집니다.
 
-테스트 작성이란 무엇인지, 그리고 프로그래머들이 이를 왜 하는지에 대해 간단히 설명하겠습니다. 테스트 작성은 코드를 작동하기 전에 실제로 코드를 시험해보는 것을 말합니다. 이로써 버그를 찾고 수정하며 더 품질 좋은 코드를 만들 수 있습니다.
-
-## 하는 법:
-
-아래에 코드 블록 안에 코딩 예제와 샘플 출력을 함께 제시하겠습니다.
+## How to: (어떻게 하나요?)
+C#에서 테스트 코드를 작성하려면 대개 xUnit, NUnit, MSTest 같은 테스트 프레임워크를 사용합니다. 아래는 간단한 xUnit 사용 예입니다.
 
 ```C#
-public class Calculator 
+using Xunit;
+
+public class CalculatorTests
 {
-  public int Add(int num1, int num2) 
-  {
-    return num1 + num2;
-  }
+    [Fact]
+    public void CanAddNumbers()
+    {
+        // Arrange
+        var calculator = new Calculator();
+        
+        // Act
+        var result = calculator.Add(2, 2);
+        
+        // Assert
+        Assert.Equal(4, result);
+    }
+}
+
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
 }
 ```
-```C#
-// Calculator 클래스의 인스턴스 생성
-Calculator calc = new Calculator();
 
-// Add 메서드 사용
-int result = calc.Add(5, 7);
-Console.WriteLine(result); // 출력: 12
-```
+실행 결과, `CanAddNumbers`테스트가 통과한다면 콘솔에는 성공 메시지가 출력됩니다.
 
-## 깊이 들어가기:
+## Deep Dive (심층 분석)
+테스트 코드는 소프트웨어 개발의 초기부터 함께 발전해왔습니다. TDD(Test-Driven Development)는 빠른 피드백, 개선된 설계, 높아진 신뢰성 때문에 널리 쓰입니다. xUnit은 JUnit에서 시작해 다양한 언어로 확장된 프레임워크입니다. MSTest는 Visual Studio와 밀접한 통합을 제공하지만, NUnit과 xUnit은 더 나은 커뮤니티 지원과 플러그인을 제공합니다. 성능이나 기능 면에서 각 테스트 프레임워크의 차이가 있으니 취향과 요건에 맞게 선택해야 합니다.
 
-테스트 작성에 대한 깊은 정보를 다루겠습니다. 테스트 작성은 오랜 역사를 가지고 있으며, 이를 위해 다양한 방법이 제시되어 왔습니다. 하지만 현재는 자동화된 테스트 프레임워크를 사용하여 코드의 품질을 검증하는 것이 일반적입니다.
-
-## 참고 자료:
-
-- [테스트 작성에 대한 참고 자료](https://en.wikipedia.org/wiki/Test-driven_development)
-- [C#과 테스트 작성](https://docs.microsoft.com/en-us/dotnet/core/testing)
-- [테스트 작성에 대한 더 깊은 이해](https://medium.com/@everis_tech/things-you-should-know-about-test-driven-development-tdd-53a2fcca4266)
+## See Also (참고 자료)
+- [Microsoft Docs on Unit Testing in C#](https://docs.microsoft.com/ko-kr/dotnet/core/testing/)
+- [xUnit](https://xunit.net/)
+- [NUnit](https://nunit.org/)
+- [MSTest](https://docs.microsoft.com/ko-kr/dotnet/core/testing/unit-testing-with-mstest)

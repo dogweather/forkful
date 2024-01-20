@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo en error estándar"
-html_title:           "Elm: Escribiendo en error estándar"
-simple_title:         "Escribiendo en error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué & Por qué?
+Escribir en el error estándar significa mostrar mensajes aparte del flujo normal de datos. Los programadores lo hacen para reportar errores sin interferir con la salida regular del programa.
 
-Escribir a la salida de errores estándar en Elm es una forma de mostrar mensajes de error o información de depuración en la consola del navegador. Los programadores lo hacen para obtener un mejor entendimiento de cómo funciona su código y para encontrar y solucionar problemas más fácilmente.
+## Cómo hacerlo:
+Elm corre en el navegador y no tiene acceso directo a STDERR como un lenguaje de servidor o de scripting, así que este código es conceptual y puedes ejecutar similar en JavaScript incorporado en Elm.
 
-## Cómo:
+```Elm
+port module Main exposing (..)
 
+-- Define un puerto para reportar errores
+port reportError : String -> Cmd msg
+
+-- Manda un error usando el puerto
+reportError "Este es un error estándar de ejemplo."
 ```
-Elm.debug "Mensaje de error o información de depuración"
+
+La implementación en JavaScript podría ser:
+
+```JavaScript
+app.ports.reportError.subscribe(function(errorMessage) {
+  console.error(errorMessage);
+});
 ```
 
-El código anterior mostrará el mensaje proporcionado en la consola del navegador. Dependiendo de la ubicación y el contexto en el que se utilice, puede ser de gran ayuda para el proceso de depuración de un programa.
+Salida de ejemplo en la consola del navegador:
 
-## Profundizando
+```plaintext
+Este es un error estándar de ejemplo.
+```
 
-Esta técnica de escribir a la salida de errores estándar se remonta a los primeros días de la programación de computadoras. En un principio, se utilizaba principalmente para imprimir mensajes de error y trazas en la consola de la terminal. Sin embargo, hoy en día, también se utiliza para mostrar información útil para los desarrolladores, como valores de variables y resultados de operaciones.
+## Análisis Profundo
+Históricamente, los programas de línea de comandos usan STDERR para permitir que se separen los errores de la salida estándar. En Elm, como en otros lenguajes que se ejecutan en el navegador como JavaScript, no hay un concepto directo de STDERR pero se puede simular con `console.error` para propósitos de depuración o para informar de errores. La idea detrás es comunicar fallas sin afectar el flujo principal del programa.
 
-Otra forma de lograr un resultado similar en Elm es a través de la función `Debug.log`, que también es ampliamente utilizada por los programadores.
-
-Además, al escribir a la salida de errores estándar, es importante tener en cuenta que esta información no será visible para los usuarios finales de la aplicación, ya que se mostrará solo en la consola del navegador de los desarrolladores.
+## Ver También
+- Documentación de Elm sobre puertos: https://guide.elm-lang.org/interop/ports.html
+- Console API en MDN para `console.error`: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- Guía de Elm: https://guide.elm-lang.org/

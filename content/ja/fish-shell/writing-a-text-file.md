@@ -1,7 +1,7 @@
 ---
-title:                "「テキストファイルの書き方」"
-html_title:           "Fish Shell: 「テキストファイルの書き方」"
-simple_title:         "「テキストファイルの書き方」"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,21 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-テキストファイルを書くとは何かというと、単純に言えばテキストを保存するためのファイルです。プログラマーは、コードを保存したり、データを保存したりするために、テキストファイルを使用します。
+## What & Why?
+テキストファイルの書き込みとは、文字データをファイルに保存することです。プログラマーはデータの永続化、ログ記録、設定の保存などのためにこれを行います。
 
-## 方法：
-```Fish Shell```コードブロック内に、コーディングの例と出力サンプルを示します。
- 
-```fish
-echo "こんにちは、世界" > hello.txt
+## How to:
+```Fish Shell
+# テキストファイル "sample.txt" に "Hello, World!" を書き込む
+echo "Hello, World!" > sample.txt
+
+# 内容確認
+cat sample.txt
 ```
-このコードは、```"こんにちは、世界"```というテキストを含む```hello.txt```という名前のテキストファイルを作成するものです。
+出力:
+```
+Hello, World!
+```
+```Fish Shell
+# ファイルに複数行を追加
+for line in "First line" "Second line" "Third line"
+    echo $line >> sample.txt
+end
 
-## 深堀り：
-1. 歴史的背景：テキストファイルは、情報を記録するために古くから使用されてきました。
-2. 他の方法：テキストファイルの代わりに、データベースやスプレッドシートを使用することもできます。
-3. 実装の詳細：テキストファイルを作成する際、使用されるコマンドは環境によって異なります。
+# 内容確認
+cat sample.txt
+```
+出力:
+```
+Hello, World!
+First line
+Second line
+Third line
+```
 
-## 関連情報：
-この記事のリンクや、テキストファイルに関する他の情報を提供する記事へのリンクを参照してください。
+## Deep Dive
+テキストファイルの書き込みはUNIX系OSでは古くから使われています。Fish Shellの書き込みもUNIXの流れを汲んでおり、シンプルで強力です。`>`は新規/上書き、`>>`は追記モードです。代替として`tee`コマンドやスクリプト言語内のファイル操作関数が存在します。ファイルIOの実装はシステムコールに依存しており、OSのファイルシステムと密接に関わっています。
+
+## See Also
+- [Fish Documentation on Input/Output Redirection](https://fishshell.com/docs/current/index.html#syntax-redirection)
+- [GNU Coreutils Documentation](https://www.gnu.org/software/coreutils/)

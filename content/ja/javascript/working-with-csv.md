@@ -1,7 +1,7 @@
 ---
-title:                "「CSVで働く」"
-html_title:           "Javascript: 「CSVで働く」"
-simple_title:         "「CSVで働く」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSVとは？
+## What & Why? (何となぜ？)
+CSVとはComma-Separated Valuesの略です。テキストデータを簡単な形式で扱う手法です。CSVを使う理由は、Excelやデータベースとの相互運用性が高く、操作が直感的であるためです。
 
-CSVとは、「Comma-Separated Values」の略で、データをコンマで区切って表現するファイル形式のことを指します。プログラマーがCSVを扱うのは、データを扱う上でよく使われる形式であるためです。
+## How to: (実装方法)
+JavaScriptでCSVを扱う基本的な例を示します。
 
-## 使い方：
+```javascript
+// CSV文字列の解析
+const csv = `ID,Name,Age
+1,Taro,20
+2,Hanako,25`;
 
-CSVファイルを読み込むためには、まずモジュールをインストールする必要があります。例えば、 [csv-parser](https://www.npmjs.com/package/csv-parser) はNode.jsでよく使われるモジュールの一つです。
+// CSVを行に分ける
+const rows = csv.split("\n");
 
-```Javascript
-const csv = require('csv-parser');
-const fs = require('fs');
+// 各行をカンマで分割してオブジェクトに変換
+const data = rows.slice(1).map(row => {
+  const [id, name, age] = row.split(',');
+  return { id, name, age };
+});
 
-fs.createReadStream('data.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('CSVファイルの読み込みが完了しました！');
-  });
+console.log(data);
 ```
 
-出力は次のようになります：
-
-```Javascript
-{ name: 'John', age: '25', country: 'USA' }
-{ name: 'Emily', age: '30', country: 'Canada' }
-{ name: 'David', age: '28', country: 'Australia' }
+出力例:
+```javascript
+[
+  { id: '1', name: 'Taro', age: '20' },
+  { id: '2', name: 'Hanako', age: '25' }
+]
 ```
 
-## 深堀り：
+## Deep Dive (深掘り)
+CSVは1972年にIBMが開発。テキストベースでありながら、表のようなデータ構造を持つことができるシンプルなフォーマットです。代替手段にはJSONやXMLがありますが、CSVはそのシンプルさから広く使われています。JavaScriptでは`split()`メソッドや正規表現、ライブラリ(PapaParseなど)を使ってCSVを扱います。
 
-CSVは1970年代に誕生し、当時は英字テキストファイルの形式で使用されていました。現在では、Excelなどの表計算ソフトでもCSV形式でのデータのエクスポートができるため、データの共有や移動に便利です。
-
-CSVの代替としては、JSONやXMLなどがありますが、特に大量のテキストデータを扱う場合はCSVの方が処理が早くなることが多いです。
-
-CSVの実装には、他にも [Papa Parse](https://www.papaparse.com/) や [D3.js](https://d3js.org/) などのライブラリがあります。
+## See Also (関連情報)
+- MDN Web Docs（CSVの扱い方の基礎）: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+- PapaParse（JavaScript用CSVパーサー）: https://www.papaparse.com/
+- RFC 4180（CSVの仕様）: https://tools.ietf.org/html/rfc4180

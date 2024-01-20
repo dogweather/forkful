@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱う」"
-html_title:           "TypeScript: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？ & なぜするのか？
-JSON とは、JavaScript Object Notation の略で、データのフォーマット方法のことを指します。プログラマーが JSON と一緒に作業する理由は、データを簡単に読み書きできるようにするためです。
+## What & Why? / 何となぜ？
+JSONはデータフォーマットです。プログラマーはデータ交換のため、そして設定やAPI応答を扱うためにJSONを使います。
 
-## 作業方法：
+## How to: / どうやって：
 ```TypeScript
-// JSONを使用するための準備
-import * as jsonData from './sample.json';
+// JSON文字列をパースする
+const jsonString: string = '{"name": "Taro", "age": 30}';
+const userData: { name: string; age: number } = JSON.parse(jsonString);
+console.log(userData.name); // Taro
 
-// JSONファイルの作成
-const data = {
-  name: 'John',
-  age: 25,
-  interests: ['sports', 'music', 'reading']
-};
-
-// JSONファイルの読み込み
-console.log(jsonData.name); // John
-
-// JSONファイルの書き込み
-import fs from 'fs';
-fs.writeFileSync('./sample.json', JSON.stringify(data, null, 2));
-
-// 出力例
-{
-  "name": "John",
-  "age": 25,
-  "interests": [
-    "sports",
-    "music",
-    "reading"
-  ]
-}
+// オブジェクトをJSON文字列に変換する
+const userObject: { name: string; age: number } = { name: "Hanako", age: 25 };
+const jsonOutput: string = JSON.stringify(userObject);
+console.log(jsonOutput); // {"name":"Hanako","age":25}
 ```
 
-## 深堀り：
-JSON は、1990年代後半に JavaScript の一部として開発されました。他のデータフォーマットである XML や CSV と比べて、可読性が高く、扱いやすいという特徴があります。また、XML や CSV に比べてコード量が少なくて済むため、プログラマーにとっても便利です。JSON に似た形式である YAML もありますが、JSON の方が広く使用されています。
+## Deep Dive / 探求:
+JSON（JavaScript Object Notation）は軽量なデータ交換フォーマット。1999年にJavaScript内で生まれましたが、言語非依存で広く使われています。XMLはもう一つの代替手段ですが、より煩雑です。TypeScriptで扱うとき、型定義により安全なコーディングが可能です。
 
-## 関連情報を見る：
-- JSON 公式サイト: https://www.json.org/json-ja.html
-- TypeScript 公式サイト: https://www.typescriptlang.org/
-- YAML 公式サイト: https://yaml.org/
+## See Also / 関連する情報:
+- MDN Web Docs JSON: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- JSON vs XML: https://www.w3schools.com/js/js_json_xml.asp

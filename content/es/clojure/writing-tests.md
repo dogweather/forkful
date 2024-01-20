@@ -1,7 +1,7 @@
 ---
-title:                "Redactar pruebas"
-html_title:           "Clojure: Redactar pruebas"
-simple_title:         "Redactar pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por Qué?
+Escribir pruebas es crear casos automáticos para validar que tu código hace lo que esperas. Los programadores prueban para evitar errores, garantizar calidad y facilitar mantenimiento.
 
-Escribir pruebas en la programación es crear código para verificar si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código está libre de errores y funcione como se espera.
+## Cómo hacerlo:
+Clojure usa la biblioteca `clojure.test` para pruebas. Un ejemplo sencillo:
 
-## ¿Cómo hacerlo?
+```clojure
+(ns mi-proyecto.core-test
+  (:require [clojure.test :refer :all]
+            [mi-proyecto.core :refer :all]))
 
-### Ejemplo básico de prueba
+(deftest prueba-suma
+  (testing "Probar suma de dos números"
+    (is (= 4 (sumar 2 2)))))
 
-```Clojure
-(defn suma [a b]
-  (+ a b))
+(run-tests)
 
-(assert (= (suma 2 3) 5)) ;; Esto es una prueba que verificará si la función suma devuelve el resultado esperado, en este caso, 5.
 ```
 
-### Ejemplo usando la biblioteca `clojure.test`
+La salida de la prueba sería algo así:
 
-```Clojure
-(use 'clojure.test)
+```clojure
+Testing mi-proyecto.core-test
 
-(defn es-positivo? [num]
-  (if (< num 0)
-    false
-    true))
-
-(deftest test-es-positivo?
-  (is (= (es-positivo? 5) true))
-  (is (= (es-positivo? -10) false))
-  (is (= (es-positivo? 0) true)))
-
-(run-tests) ;; Esto ejecutará todas las pruebas definidas y mostrará un informe con los resultados.
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
 ```
 
-## Profundizando
+## Profundización
+Las pruebas en Clojure vienen de la tradición de TDD (Test-Driven Development) en Smalltalk y han sido populares desde los años 90. Alternativas a `clojure.test` incluyen `Midje` y `Speclj`, ofreciendo una experiencia más rica y DSL (Domain-Specific Languages). Para implementar pruebas, se sigue el ciclo rojo-verde-refactor: escribes una prueba que falla, escribes código que hace que la prueba pase, y luego refinas el código manteniendo las pruebas pasando.
 
-Escribir pruebas se originó en la metodología de programación llamada "Desarrollo Guiado por Pruebas" (TDD). Este enfoque consiste en escribir pruebas primero y luego escribir el código correspondiente para que pase las pruebas. También se puede utilizar "Desarrollo impulsado por Pruebas" (BDD), que se centra en las características y comportamientos del código en lugar de su funcionalidad.
+## Ver Además
+Para más recursos de pruebas en Clojure, puedes visitar:
 
-Como alternativa a escribir pruebas manualmente, también existen herramientas de generación automática de pruebas, como `clojure.test.generative`, que utiliza generación aleatoria de datos para probar el código.
-
-La implementación de pruebas en Clojure se realiza utilizando la biblioteca `clojure.test` o cualquier otra biblioteca de pruebas externa. Se pueden crear pruebas en cualquier archivo de Clojure y ejecutarlas desde la línea de comandos utilizando `clojure` junto con el archivo.
-
-## Ver también
-
-- [Documentación de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Desarrollo impulsado por Pruebas (BDD)](https://vimeo.com/105770914)
+- La [Página oficial de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- Un [tutorial de `Midje`](https://github.com/marick/Midje/)
+- Documentación de [`Speclj`](http://speclj.com/)
+- [Blog de Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html) sobre TDD.

@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Fish Shell: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-CSV står för Comma Separated Values och är ett vanligt filformat som används för att lagra tabelldata. Det används ofta av programmerare för att hantera och manipulera stora mängder data på ett enkelt sätt. Det är också ett vanligt format för att exportera och importera data mellan olika program.
+## Vad & Varför?
 
-# Hur?
-Fish Shell innehåller inbyggda funktioner som gör det enkelt att arbeta med CSV-filer. Här är några exempel på hur du kan använda Fish Shell för att hantera CSV-data:
+Arbeta med CSV (Comma-Separated Values) innebär att hantera data i textformat där varje rad representerar en post och varje post är uppdelad med kommatecken. Programmerare använder CSV för att enkelt överföra och manipulera data mellan olika system.
 
-### Skriv ut en CSV-fil
+## How to:
+
+### Läsa en CSV-fil
 ```Fish Shell
-cat file.csv
+for row in (cat example.csv)
+    echo $row
+end
 ```
-Detta kommer att skriva ut innehållet i filen "file.csv" i konsolen.
+### Exempelutdata
+```
+namn,ålder,stad
+Alice,30,Stockholm
+Bob,25,Göteborg
+```
 
-### Sortera en CSV-fil
+### Skriva till en CSV-fil
 ```Fish Shell
-sort -k 2 file.csv
+set -l users 'namn,ålder,stad' 'Alice,30,Stockholm' 'Bob,25,Göteborg'
+for user in $users
+    echo $user >> users.csv
+end
 ```
-Detta kommer att sortera filen "file.csv" baserat på andra kolumnen och skriva ut den nya ordningen i konsolen.
 
-### Välj specifika kolumner
+### Filtrera data
 ```Fish Shell
-cut -d "," -f 1,3 file.csv
+cat example.csv | string match -r '.*Göteborg.*'
 ```
-I detta exempel väljer vi bara första och tredje kolumnen i filen "file.csv" och skriver ut dem i konsolen.
+### Exempelutdata
+```
+Bob,25,Göteborg
+```
 
-# Djupdykning
-CSV-formatet har funnits sedan 1972 och är ett av de vedertagna formaten för tabelldata. Tidigare användes det främst för att överföra data mellan olika databaser, men det har nu blivit allt vanligare även för andra typer av data.
+## Deep Dive
 
-Det finns flera andra filformat som också används för att lagra tabelldata, som t.ex. JSON och XML. Dessa format har vissa fördelar jämfört med CSV, som t.ex. att de kan hantera mer komplex data. Men för enkla tabeller är CSV fortfarande ett mycket användbart och effektivt format.
+Historiskt sett har CSV-formatet varit ett enkelt och utbrett sätt att lagra strukturerad data sedan de första versionerna av persondatorer. Alternativ till CSV inkluderar JSON, XML och YAML, men CSV förblir populärt för dess enkelhet och breda stöd i mjukvaror. I Fish Shell hanterar man CSV-data primärt genom textbearbetningskommandon som `cat`, `echo`, och `string`, istället för dedikerade CSV-parserverktyg.
 
-Fish Shell använder ett externt kommando kallat "csvkit" för att hantera CSV-filer. Detta kommando tillhandahåller olika verktyg för att hantera och manipulera CSV-data, som t.ex. "csvsort", "csvcut" och "csvgrep". Du kan läsa mer om dessa kommandon och deras användning genom att köra "man csvkit" i terminalen.
+## See Also
 
-# Se även
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Csvkit dokumentation](https://csvkit.readthedocs.io/en/latest/)
-- [Wikipedia - CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
+- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- CSV-specifikationen: https://tools.ietf.org/html/rfc4180
+- Support for working with tabular data in Fish: https://github.com/jorgebucaran/fish-tabular

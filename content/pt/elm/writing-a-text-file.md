@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "Elm: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,27 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Escrever um arquivo de texto é uma tarefa comum para programadores, pois é uma forma de armazenar informações importantes em um formato legível por humanos. Além disso, arquivos de texto são frequentemente utilizados para armazenar dados e configurações para serem acessados e manipulados por programas.
+## What & Why?
+Escrever um arquivo de texto permite salvar dados de forma persistente. Programadores fazem isso para manter registros, configurações ou compartilhar informações entre sistemas.
 
-## Como fazer:
-Para escrever um arquivo de texto em Elm, podemos usar a função `File.WriteString` que nos permite especificar o nome do arquivo e o conteúdo que queremos escrever. Veja o exemplo abaixo:
+## How to:
+Elm é uma linguagem para criar aplicativos web e, por si só, não tem capacidade para escrever arquivos diretamente devido a restrições do navegador. No entanto, podemos gerar arquivos pra download. Veja como criar um arquivo de texto e disponibilizar pra download:
 
 ```Elm
-import File
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Attributes exposing (href, download)
+import Html.Events exposing (onClick)
+import Json.Encode exposing (string)
 
 main =
-    File.WriteString "arquivo.txt" "Olá mundo!"
+  Browser.sandbox { init = init, update = update, view = view }
+
+type alias Model =
+  { content : String
+  , uri : String
+  }
+
+init : Model
+init =
+  { content = "Texto de exemplo pra salvar no arquivo."
+  , uri = ""
+  }
+
+type Msg
+  = GenerateFile
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    GenerateFile ->
+      let
+        encoded = string model.content
+        uri = "data:text/plain;charset=utf-8," ++ encoded
+      in
+      { model | uri = uri }
+
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick GenerateFile ] [ text "Gerar arquivo de texto" ]
+    , if model.uri == "" then
+        text ""
+      else
+        a [ href model.uri, download "arquivo.txt" ] [ text "Baixar arquivo" ]
+    ]
 ```
+Após clicar no botão "Gerar arquivo de texto", um link de download é criado, permitindo que o usuário baixe o arquivo "arquivo.txt" com o conteúdo especificado.
 
-Após executar este código, um novo arquivo de texto chamado "arquivo.txt" será criado com o conteúdo "Olá mundo!". Bem simples, não é?
+## Deep Dive
+Historicamente, Elm foca na criação de aplicativos seguros do lado do cliente, onde as operações de sistema de arquivos são limitadas por questões de segurança. Alternativas para trabalhar com arquivos envolvem o uso de Elm com JavaScript através de Ports, que pode ser usado para lidar com funcionalidades do sistema de arquivos do lado do servidor em Node.js, por exemplo. Detalhes de implementação levam em conta a codificação de URI e manipulação de dados para simular o processo de escrita de arquivo num ambiente de navegador.
 
-## Mergulho profundo:
-O conceito de escrever arquivos de texto tem sido utilizado pelos programadores por décadas. Nas linguagens de programação mais antigas, o processo era mais complicado e envolvia a utilização de bibliotecas externas. No entanto, com o surgimento de novas linguagens como Elm, esse processo se tornou mais simples e acessível.
-
-Embora a escrita de arquivos de texto seja uma forma muito comum de armazenar informações, existem outras opções disponíveis, como bancos de dados e arquivos binários. No entanto, a escrita de arquivos de texto continua sendo uma das maneiras mais simples e práticas de armazenar dados simples.
-
-## Veja também:
-- Documentação oficial do Elm: https://elm-lang.org/docs
-- Repositório do Elm no GitHub: https://github.com/elm-lang
-- Tutorial sobre leitura e escrita de arquivos em Elm: https://guide.elm-lang.org/io/files.html
+## See Also
+- [Elm Official Guide](https://guide.elm-lang.org/)
+- [Elm File Saver Example](https://ellie-app.com/new)
+- [Working with JavaScript in Elm using Ports](https://guide.elm-lang.org/interop/ports.html)

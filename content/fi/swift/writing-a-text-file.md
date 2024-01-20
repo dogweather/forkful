@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "Swift: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mistä & Miksi?
+## Mikä & Miksi?
+Tiedoston kirjoittaminen koostuu datan tallentamisesta tekstin muodossa levylle. Koodarit käyttävät tätä toimintoa datan pysyvään tallennukseen ja myöhempään käsittelyyn.
 
-Kirjoittaminen tekstitiedostoon on yksi tapa tallentaa tietoa tietokoneella. Ohjelmoijat käyttävät sitä esimerkiksi tallentaakseen käyttäjien syöttämiä tietoja tai luodakseen lokitiedostoja ohjelmiston toiminnasta.
-
-# Miten toimia:
-
-Luo uusi tiedosto nimettynä "tiedosto.txt" ja kirjoita siihen "Hei maailma!" seuraavasti:
+## How to:
+Swiftissä tekstitiedostoon kirjoittaminen on suoraviivaista.
 
 ```Swift
-let teksti = "Hei maailma!"
+import Foundation
+
+let fileManager = FileManager.default
+let path = fileManager.currentDirectoryPath.appending("/example.txt")
+let content = "Moi Swift-maailma!"
+
 do {
-    try teksti.write(toFile: "tiedosto.txt", atomically: true, encoding: String.Encoding.utf8)
+    try content.write(toFile: path, atomically: true, encoding: .utf8)
+    print("Tiedosto kirjoitettu.")
 } catch {
-    print("Tiedoston kirjoittaminen epäonnistui")
+    print("Virhe tiedoston kirjoittamisessa: \(error)")
 }
 ```
-Tämän jälkeen voit tarkastella, että teksti on tallentunut tiedostoon avaamalla sen tekstieditorilla.
 
-# Syväsukellus:
+Kun tämä koodi ajetaan, se luo `example.txt` tiedoston ja kirjoittaa siihen "Moi Swift-maailma!".
 
-Kirjoittaminen tekstitiedostoon on ollut tapana jo pitkään tietokoneiden historiassa. Nykyään on olemassa myös muita tapoja tallentaa tietoa, kuten tietokannat ja pilvipalvelut. Swift-ohjelmointikielen lisäksi myös muut kielet, kuten Python ja C++, tarjoavat mahdollisuuden kirjoittaa tiedostoihin.
+## Deep Dive
+Tiedostoja on kirjoitettu ohjelmoinnissa aikojen alusta. Swift tarjoaa `Foundation` -kirjaston kautta helppokäyttöiset työkalut tiedostonhallintaan. Vaihtoehtoisesti voit käyttää alhaisemman tason C-kirjastoja, kuten `fwrite` POSIX API:sta, mutta Swiftin omat kirjoitusmetodit ovat yleensä riittäviä ja turvallisia. Atomisesti kirjoittaminen varmistaa, että tiedosto tallennetaan kunnolla virhetilanteissakin.
 
-# Katso myös:
-
-Lisätietoja tekstitiedostojen kirjoittamisesta löytyy Swiftin dokumentaatiosta osoitteesta https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID339. Voit myös tutustua muihin tapoihin tallentaa tietoa, kuten tietokantoihin ja pilvipalveluihin.
+## See Also
+- Swiftin virallinen dokumentaatio tiedostojenkäsittelystä: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- Swiftin virallisen foorumin keskusteluja tiedostojen käsittelystä: [Swift Forums](https://forums.swift.org/c/related-projects/foundation)

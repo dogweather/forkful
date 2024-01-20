@@ -1,7 +1,7 @@
 ---
-title:                "写一个文本文件"
-html_title:           "Arduino: 写一个文本文件"
-simple_title:         "写一个文本文件"
+title:                "编写文本文件"
+html_title:           "Arduino: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件？为什么程序员要用它？
+## 什么&为什么？
+写文本文件就是在SD卡或其他存储器中保存文本信息。程序员这么做是因为需要记录数据（如传感器读数）或保存程序设置。
 
-写入文本文件是将文本内容保存在计算机内存中的一种方式。程序员通常会使用文本文件来保存重要的数据或者与程序相关的信息，以便在需要时能够轻松地访问和修改。
-
-## 如何做？
-
-下面是一个简单的示例，展示了如何使用Arduino来创建一个文本文件，并将文本内容写入其中：
-
+## 怎么做：
 ```Arduino
-// 创建并打开一个名为“myFile.txt”的文本文件
-File myFile = SD.open("myFile.txt", FILE_WRITE);
+#include <SPI.h>
+#include <SD.h>
 
-// 如果成功打开，则将文本内容写入文件中
-if(myFile) {
-    // 将文本内容写入文件
-    myFile.println("这是一个文本文件！");
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  while(!Serial) {
+    ; // 等待串行端口连上。
+  }
+  
+  if (!SD.begin(4)) { // CS Pin 4
+    Serial.println("初始化SD卡失败");
+    return;
+  }
+  Serial.println("初始化SD卡成功");
+  
+  myFile = SD.open("test.txt", FILE_WRITE);
+  if (myFile) {
+    myFile.println("Hello, world!");
     myFile.close(); // 关闭文件
-} else {
-    // 如果打开失败，打印错误信息
-    Serial.println("无法打开文件！");
+    Serial.println("写入成功");
+  } else {
+    Serial.println("打开文件失败");
+  }
+}
+
+void loop() {
+  // 不需要循环操作
 }
 ```
+样本输出：
+```
+初始化SD卡成功
+写入成功
+```
 
-如果一切顺利，你应该能够在SD卡中找到一个名为“myFile.txt”的文本文件，并在其中找到刚刚写入的内容。
+## 深入探索：
+写文本文件在早期采用磁带和磁盘时就已经存在。在微控制器（如Arduino）中，通常使用SD卡。备选方案包括EEPROM或云服务。实现这个功能时需考虑文件系统（如FAT16/FAT32）和最大文件大小限制。
 
-## 深入挖掘
-
-文本文件是一种广泛使用的数据存储方式，既简单又方便。它的历史可以追溯到计算机诞生的早期，并在当今的编程世界中仍然发挥着重要作用。除此之外，有一些其他的文件格式也可以用来存储文本数据，例如CSV文件和JSON文件。
-
-在使用Arduino创建文本文件时，你可能还需要了解一个名为“SD卡库”的开源软件包。这个软件包包含了用于在Arduino上操作SD卡的必要函数和方法。你可以在Arduino的官方网站上找到有关如何使用这个软件包的详细说明。此外，也有一些第三方资源可以帮助你更好地了解如何在Arduino上创建和操作文本文件。
-
-## 参考资料
-
-- [可编程文件库（SD）参考指南（英文）](https://www.arduino.cc/en/Reference/SD) - Arduino官方文档中关于SD卡库的说明。
-- [更多Arduino资源](https://www.arduino.cc/) - 访问Arduino官方网站，查阅更多有关Arduino的信息和资源。
+## 参见：
+- Arduino SD 库：https://www.arduino.cc/en/Reference/SD
+- SD 卡文件系统和格式化工具：https://www.sdcard.org/downloads/formatter/
+- SPI 协议原理：https://en.wikipedia.org/wiki/Serial_Peripheral_Interface

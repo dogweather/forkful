@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Arduino: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+JSON-tietueet ovat kevyitä datanvaihtoformaatteja. Ohjelmoijat käyttävät JSONia datan tallentamiseen ja verkon yli siirtämiseen, koska se on helposti luettavaa ja ymmärrettävää ihmisille sekä koneille.
 
-JSON eli Javascript Object Notation on yleinen formaatti tietojen tallentamiseen ja vaihtamiseen ohjelmoinnissa. JSONilla voidaan tallentaa ja lähettää tietoa eri ohjelmien ja laitteiden välillä, kuten esimerkiksi web-palvelimien ja Arduino-mikrokontrollerien välillä. Tämä helpottaa tietojen käsittelyä ja antaa mahdollisuuden luoda monimutkaisempia ohjelmia.
-
-## Kuinka:
-
-Esimerkiksi, jos haluat lähettää datan web-palvelimelle JSON-muodossa ja vastaanottaa sitä Arduino-mikrokontrollerillesi, voit käyttää seuraavaa koodia:
+## How to:
+Arduino-kirjasto `ArduinoJson` helpottaa JSONin käsittelyä. Asenna kirjasto ensin Library Managerin kautta. Seuraavassa koodissa luodaan ja tulostetaan yksinkertainen JSON-objekti:
 
 ```Arduino
-// Kirjasto JSON-käsittelyyn
 #include <ArduinoJson.h>
 
-// Alustetaan JSON-objekti
-StaticJsonDocument<200> doc;
+void setup() {
+  Serial.begin(9600);
+  StaticJsonDocument<200> doc;
 
-// Lisätään data objektiin
-doc["nimi"] = "Matti";
-doc["ikä"] = 35;
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
 
-// Muutetaan objekti JSON-muotoon
-String json = "";
-serializeJson(doc, json);
+  JsonObject location = doc.createNestedObject("location");
+  location["lat"] = 48.756080;
+  location["lon"] = 2.302038;
 
-// Lähetetään data web-palvelimelle (esimerkiksi POST-pyynnöllä)
-// ja vastaanotetaan vastaus
-// ...koodi jätetty pois selkeyden vuoksi...
+  serializeJson(doc, Serial);
+}
 
-// Parsitaan vastaanotettu JSON-data 
-const size_t capacity = JSON_OBJECT_SIZE(2);
-StaticJsonDocument<capacity> doc2;
-deserializeJson(doc2, json);
-
-// Haetaan data JSON-objektista
-String nimi = doc2["nimi"];
-int ikä = doc2["ikä"];
-
-// Tulostetaan data sarjaporttiin
-Serial.println(nimi);
-Serial.println(ikä);
-
+void loop() {
+  // Ei mitään.
+}
 ```
 
-Esimerkissä käytetään ArduinoJson-kirjastoa, joka helpottaa JSON-muodon käsittelyä ja parsimista. Kirjasto täytyy asentaa ennen sen käyttöä. Esimerkissä käytetään myös POST-pyyntöä, joka tarvitsee omat lisäkoodinsa lähettämiseen ja vastaanottamiseen. 
+Tulostus:
+```
+{"sensor":"gps","time":1351824120,"location":{"lat":48.75608,"lon":2.302038}}
+```
 
 ## Deep Dive:
+JSON (JavaScript Object Notation) syntyi 2000-luvun alussa. Se on noussut XML:n rinnalle, ja monessa tapauksessa syrjäyttänytkin sen, pääasiassa keveytensä ja yksinkertaisuutensa ansiosta. `ArduinoJson` käsittelee JSON-dataa tehokkaasti, mutta on tärkeää valita oikean kokoisen `JsonDocument`:n muistin käytön optimoimiseksi.
 
-JSON on kevyt ja yksinkertainen formaatti, joka syntyi tarpeesta korvata hankalammin käytettävä XML-tiedostoformaatti. JSON-muotoa voi verrata esimerkiksi YAML:iin ja CSV:hen, mutta JSON on yleisempi ja helpommin luettavissa ohjelmoijan näkökulmasta.
-
-JSONia voi käyttää myös vaihtoehtona relaatiotietokannoille ja XML-tiedostoille. Se on nopeampi ja vaatii vähemmän tilaa kuin XML, mutta ei kuitenkaan ole yhtä rakenteellinen tietokannan kanssa kuin relaatiotietokannat. 
-
-## Katso myös:
-
-- [ArduinoJSON-kirjaston dokumentaatio](https://arduinojson.org/)
-- [JSON-opetusvideo](https://www.youtube.com/watch?v=iiADhChRriM)
+## See Also:
+- ArduinoJson-kirjaston kotisivu: https://arduinojson.org/
+- JSON-standardin spesifikaatio: https://www.json.org/json-fi.html
+- Oppaita ja tutoriaaleja JSONin kanssa työskentelystä: https://www.w3schools.com/js/js_json_intro.asp

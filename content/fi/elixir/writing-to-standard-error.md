@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardi virheille"
-html_title:           "Elixir: Kirjoittaminen standardi virheille"
-simple_title:         "Kirjoittaminen standardi virheille"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,21 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Kirjoittaminen virheilmoitukset standarditulostusvirheeseen on tapa, jolla ohjelmoijat voivat ilmoittaa tärkeitä virheitä tai poikkeuksia suorituksessaan. Tämä mahdollistaa näiden virheiden erottamisen tavallisista tulostuksista ja helpottaa niiden jäljittämistä ja korjaamista.
+## What & Why?
+Standard error (stderr) on kirjoituskanava virheille ja logiviesteille. Tiedot stderr:iin jos ne eivät kuulu normaaliin ohjelman tulosteeseen.
 
-## Miten:
-Voit kirjoittaa standarditulostusvirheeseen Elixirillä käyttämällä `:error_logger` -moduulia ja `Logger` -pakettia. Alla on yksinkertainen koodiesimerkki:
+## How to:
+Elixirissä stderr:iin kirjoittaminen onnistuu `IO` moduulin kautta.
 
-Elixir
 ```elixir
-:ok = Logger.error("Tämä on virheellinen viesti")
+# Lähetä viesti stderr:iin
+IO.puts(:stderr, "Tämä on virheilmoitus")
+
+# Tai käytä Erlangin :io moduulia suoraan
+:io.format(:standard_error, "Erlangin kautta virhe: ~s~n", ["Varoitus!"])
 ```
 
-Tämä komento kirjoittaa virheviestin standarditulostusvirheeseen ja palauttaa `:ok` -arvon, jos kaikki menee hyvin. Tästä voit siirtyä etsimään ja korjaamaan virheen.
+Sample output virheilmoitukselle näyttäisi tältä komentorivillä:
+```
+Tämä on virheilmoitus
+Erlangin kautta virhe: Varoitus!
+```
 
-## Syvempää tietoa:
-Kirjoittaminen standarditulostusvirheeseen on yleisesti hyväksytty tapa ilmoittaa virheitä ohjelman suorituksessa. Tämä käytäntö on myös osa Elixirin käyttämää Erlang-viestien käsittelytapaa. Vaikka tämä tapa on yleisesti hyväksytty, on myös muita tapoja käsitellä poikkeuksia, kuten `<ex> raise` ja `Process.link`-toiminnot.
+## Deep Dive
+Stderr on osa UNIX-perinnettä, ja se on suunniteltu erottelemaan normaalit ohjelman tulosteet virhetulosteista. Elixiriä käytettäessä `IO.puts/2` ja `:io.format/3` ovat suosituimmat tavat stdout:n ja stderr:n hallintaan. Stderr soveltuu erinomaisesti, kun et halua, että virheviestit ja logit sekoittuvat ohjelman varsinaiseen outputtiin.
 
-## Katso myös:
-- [Erlangin virallinen dokumentaatio virheiden käsittelystä](https://erlang.org/doc/man/error_logger.html)
+## See Also
+- Elixirin virallisesta dokumentaatiosta löydät tarkempaa tietoa `IO`:sta [täältä](https://hexdocs.pm/elixir/IO.html).
+- UNIX-standardin ja filosofian historia löytyy [GNU:n sivuilta](https://www.gnu.org/gnu/gnu-history.html).
+- Lisää tietoa virheenkäsittelystä ja stderr:stä löydät [tästä artikkelista](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)).

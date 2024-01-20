@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Swift: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,59 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? 
-Pisanie testów to nieodłączna część programowania. Jest to proces tworzenia specjalnych kawałków kodu, których zadaniem jest sprawdzenie poprawności działania naszego programu. Programiści piszą testy po to, aby upewnić się, że ich program działa jak należy i aby uniknąć nieoczekiwanych błędów.
+## Co i dlaczego?
+Pisanie testów to proces tworzenia skryptów, które automatycznie sprawdzają, czy różne części aplikacji działają poprawnie. Robimy to, aby szybko wykrywać błędy, zwiększać pewność kodu i efektywnie wspierać przyszły rozwój projektu.
 
 ## Jak to zrobić:
-### Testy jednostkowe:
 ```Swift
-func dodajLiczby(a: Int, b: Int) -> Int {
-  return a + b
+import XCTest
+@testable import MyAmazingApp
+
+class MyAmazingAppTests: XCTestCase {
+    
+    func testExample() {
+        // Tutaj wpisujemy kod, który chcemy przetestować
+        let number = 42
+        // Sprawdzamy warunek, czy jest prawdziwy (test powinien się powieść)
+        XCTAssertEqual(number, 42, "Number should be equal to 42")
+    }
 }
 
-func testDodawania() {
-  let wynik = dodajLiczby(a: 2, b: 3)
-  assert(wynik == 5, "Coś poszło nie tak. Wynik powinien być 5, a jest \(wynik)")
-}
-
-testDodawania()
+// Przykładowe wyjście
+// Test Suite 'All tests' started at 2023-03-15 18:23:11.649
+// Test Suite 'MyAmazingAppTests' started at 2023-03-15 18:23:11.650
+// Test Case '-[MyAmazingAppTests.MyAmazingAppTests testExample]' started.
+// Test Case '-[MyAmazingAppTests.MyAmazingAppTests testExample]' passed (0.001 seconds).
 ```
 
-Output:
-```
-Test passed!
-```
+## Deep Dive
+Historia: Pisanie testów jest częścią programowania od początku. Testy manualne były normą, dopóki testy automatyczne nie stały się popularne wraz z rozwojem technologii. Alternatywy: Oprócz XCTest, istnieją inne frameworki, jak Quick/Nimble czy KIF, które służą do testowania aplikacji iOS. Szczegóły implementacyjne: W implementacji testów kluczowe jest ustalanie oczekiwań (`XCTestExpectation`) i asercji, czyli sprawdzeń warunków (`XCTAssert...`).
 
-### Testy interfejsu użytkownika:
-```Swift
-func wlaczTrybNocy() {
-  // Kod odpowiadający za włączenie trybu nocnego
-}
-
-func testTrybuNocy() {
-  // Skopiuj zawartość ekranu przed włączeniem trybu nocnego
-  let ekranPrzed = zapiszZawartoscEkranu()
-  
-  // Włącz tryb nocny
-  wlaczTrybNocy()
-  
-  // Skopiuj zawartość ekranu po włączeniu trybu nocnego
-  let ekranPo = zapiszZawartoscEkranu()
-  
-  // Porównaj zawartość obu ekranów
-  assert(ekranPrzed != ekranPo, "Coś poszło nie tak. Ekran powinien się zmienić po włączeniu trybu nocnego.")
-}
-
-testTrybuNocy()
-```
-
-Output:
-```
-Test passed!
-```
-
-## Pogłębiona analiza:
-Pisanie testów jest praktykowane od wielu lat i jest częścią metodyki programowania zwanej Test Driven Development (TDD). Istnieją również inne metody testowania, takie jak Behavior Driven Development (BDD) czy Acceptance Test Driven Development (ATDD). Istotne jest to, aby pisać testy na różnych poziomach, od testów jednostkowych po testy integracyjne.
-
-## Zobacz też:
-- [Jak pisać testy - przewodnik dla początkujących](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html)
+## Zobacz także
+- [Dokumentacja XCTest od Apple](https://developer.apple.com/documentation/xctest)
+- [Przewodnik po testach jednostkowych w Swift przez Ray Wenderlich](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)

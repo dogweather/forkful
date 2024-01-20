@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "C++: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "C++"
 category:             "C++"
@@ -10,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是文本文件? 为什么程序员要写文本文件?
+## What & Why? (是什么 & 为什么？)
 
-文本文件是一种纯文本格式的文件，可以包含文本、数字和符号。程序员通常会使用文本文件来存储数据或保存程序的设置信息。这种文件具有可读性，使其易于编辑和共享，因此它们是编程中很常见的一种形式。
+在C++中写入文本文件是存储数据的一种方式。程序员这么做是为了保存信息，以便将来使用或记录日志。
 
-# 如何:
+## How to: (怎么做：)
 
-```c++
-// 创建并打开一个文本文件
-#include <fstream> // 包含文件系统库
+写入文本文件用到`<fstream>`库。一个简单的C++示例是这样的：
+
+```C++
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 int main() {
-  // 创建一个名为 "data.txt" 的文件并打开它
-  // "ofstream" 表示我们要写入文件
-  std::ofstream file("data.txt");
-
-  // 将文本写入文件
-  file << "Hello World!"; // 在现有文件末尾写入 "Hello World!" 字符串
-  file << 2021; // 再次写入文本，这次是数字
-
-  // 关闭文件
-  file.close();
-
-  return 0;
+    ofstream myfile("example.txt");
+    if (myfile.is_open()) {
+        myfile << "Hello, World!\n";
+        myfile.close();
+        cout << "File written successfully";
+    } else cout << "Unable to open file";
+    return 0;
 }
 ```
+运行这段代码，你会得到一个名为`example.txt`的文本文件，内容是`Hello, World!`。
 
-文件"**data.txt**"将包含以下内容：
-```
-Hello World!
-2021
-```
+## Deep Dive (深入探索)
 
-# 深入了解:
+写入文本文件这个概念早在C语言中就有了，而C++则引入了流类来提高这一过程的抽象性和安全性。除了使用`<fstream>`，也可以用C风格的`FILE*`和`fprintf`，但这样做风险更高，因为需要手动管理文件的打开和关闭。现代C++鼓励使用RAII（资源获取即初始化）原则，使用`<fstream>`则自动帮助你处理这些问题。
 
-在计算机发展的早期阶段，文本文件是主要的数据存储格式。它们只包含文本，在未来会受到更复杂的二进制格式的取代。现在，文本文件仍然非常普遍，而且可以轻松地使用编程语言来读写它们。
+## See Also (另请参阅)
 
-除了文本文件外，还有许多其他存储数据的格式，例如数据库和二进制文件。这些格式具有不同的优缺点，具体取决于具体的使用场景。
-
-在C++中，我们可以使用标准库函数来读写文本文件。使用`ofstream`可以创建一个文件来写入文本，使用`ifstream`则可以打开一个已有文件来读取文本。
-
-# 查看也:
-
-- 关于文件系统库的更多信息可以在这里找到: https://en.cppreference.com/w/cpp/filesystem
-- 想要了解更多有关文本文件的背景知识，可以阅读这篇文章：https://en.wikipedia.org/wiki/Text_file
-- 为什么要使用数据库而不是文本文件？您可以在这里找到答案：https://stackify.com/a-beginners-guide-to-database-file-format/
+- C++ 文件和流: [https://www.cplusplus.com/doc/tutorial/files/](https://www.cplusplus.com/doc/tutorial/files/)
+- 经典C++教程《C++ Primer》相关章节
+- C++ RAII原则解释: [https://en.cppreference.com/w/cpp/language/raii](https://en.cppreference.com/w/cpp/language/raii)

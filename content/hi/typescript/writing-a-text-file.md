@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फ़ाइल लिखना"
-html_title:           "TypeScript: एक टेक्स्ट फ़ाइल लिखना"
-simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
+title:                "टेक्स्ट फाइल लिखना"
+html_title:           "Bash: टेक्स्ट फाइल लिखना"
+simple_title:         "टेक्स्ट फाइल लिखना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,54 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-What & Why?
+## What & Why? (क्या और क्यों?)
+लिखना एक टेक्स्ट फाइल में डेटा स्टोर करने का तरीका है. प्रोग्रामर्स लॉग्स, कॉन्फ़िगरेशन्स, डेटा एक्सपोर्ट करने के लिए इसका उपयोग करते हैं.
 
-लेखकों जब भी अपने कोड में डेटा को स्थायित्वपूर्ण रूप से संग्रहीत रखना चाहते हैं, तो वे टेक्स्ट फाइलों का उपयोग करते हैं। टेक्स्ट फाइलों में निर्दिष्ट फॉर्मेट में डेटा रखा जाता है, जो कि प्रोग्रामरों को अपने कोड में सहेजने, संशोधन और पुनर्प्रयोग करने के लिए सहायता करता है। 
-
-How to:
-
-टेक्स्ट फाइल लिखने के लिए, हम सबसे पहले फ़ाइल सिस्टम को अपने कोड में लौटाते हैं: 
-
+## How to: (कैसे करें:)
 ```TypeScript
-var fs = require('fs');
-```
+import { writeFile } from 'fs';
 
-फिर हम ```fs.writeFile()``` फ़ंक्शन का उपयोग करके नया फाइल बनाते हैं और उसमें डेटा लिखते हैं: 
+// टेक्स्ट फाइल में लिखें
+const data: string = 'Hello, this is a test';
 
-```TypeScript
-fs.writeFile('output.txt', 'Hello World!', function (err) {
+writeFile('example.txt', data, (err) => {
   if (err) throw err;
-  console.log('File created!');
+  console.log('File written successfully!');
 });
 ```
 
-इसके बाद, हम फाइल को सहेजते हैं और स्थानांतरित करते हैं: 
-
-```TypeScript
-fs.writeFile('output.txt', './output_files/output.txt', function (err) {
-  if (err) throw err;
-  console.log('File saved and moved!');
-});
+आउटपुट:
+```
+File written successfully!
 ```
 
-अंत में, हम इसे पढ़ते हैं और कन्सोल में प्रिंट करते हैं: 
+## Deep Dive (गहराई में जानकारी)
+टेक्स्ट फाइल्स को स्टोर करने का तरीका DOS और UNIX सिस्टम्स से है. बदलाव के लिए `appendFile`, या लाइब्रेरीज जैसे की `fs-extra` या `axios` का उपयोग कर सकते हैं. `fs` प्रॉमिस-बेस्ड वर्जन `fs.promises.writeFile` के साथ भी आता है जो async/await के साथ उपयोग किया जा सकता है.
 
-```TypeScript
-fs.readFile('./output_files/output.txt', function (err, data) {
-  if (err) throw err;
-  console.log(data.toString());
-});
-```
-
-चाहे आप फ़ाइल सिस्टम का उपयोग करके नई फाइल बना सकते हैं, या पहले से मौजूदा फाइल में डेटा लिख सकते हैं, आपके पास बेहतरीन तरीके हैं अपने कोड को अपने आवश्यकताओं के अनुसार प्रबंधित करने के लिए। 
-
-Deep Dive: 
-
-टेक्स्ट फाइलों का मूल उद्देश्य उपयोगकर्ताओं को बाहर से संग्रहीत डेटा तक पहुँचने की सुविधा देना होता है। जब प्रोग्रामर दूसरे कोड में निर्दिष्ट फाइलों से डेटा लोड करते हैं, तो यह उन्हें अपने कोड को दोहराने या उद्देश्य निर्धारित करने की आवश्यकता नहीं होती है। अलग तरह की फाइल तक पहुँच मिलने से डेटा को संरक्षित करने और उपयोग करने में आसानी होती है। 
-
-See Also: 
-
-आप अतिरिक्त जानकारी के लिए इन स्रोतों को देख सकते हैं: 
-
-- [Node.js File System Module](https://nodejs.org/api/fs.html)
-- [Node.js Docs](https://nodejs.org/docs/latest-v12.x/api/fs.html)
+## See Also (और भी देखें)
+- Node.js `fs` मॉड्यूल डॉक्यूमेंटेशन: https://nodejs.org/api/fs.html
+- `fs-extra` मॉड्यूल: https://www.npmjs.com/package/fs-extra
+- `axios`: https://axios-http.com/docs/intro

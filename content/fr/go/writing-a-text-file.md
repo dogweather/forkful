@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Go: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,40 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
-Écrire un fichier texte en programmation consiste simplement à enregistrer des données sous forme de texte brut dans un fichier. Les programmeurs le font pour stocker des informations de manière structurée et facilement accessible pour leur programme.
+## Quoi et Pourquoi ?
 
-# Comment:
-```
-Go package main
+Écrire un fichier texte, c'est simplement sauver des données sous forme lisible. Les programmeurs le font pour la persistance des données, les logs, ou pour échanger des informations avec d'autres systèmes.
+
+## Comment :
+
+```go
+package main
 
 import (
-    "fmt"
+    "bufio"
+    "log"
     "os"
 )
 
 func main() {
-    file, err := os.Create("text_file.txt") // crée un nouveau fichier texte
+    // Ouvrir ou créer le fichier
+    fichier, err := os.Create("exemple.txt")
     if err != nil {
-        fmt.Println(err)
-        return
+        log.Fatalf("Impossible de créer le fichier : %s", err)
     }
-    defer file.Close() // ferme le fichier une fois le programme terminé
+    defer fichier.Close()
 
-    file.WriteString("Ceci est un exemple de données à enregistrer dans notre fichier texte") // écrit des données dans le fichier
+    // Écrire dans le fichier avec bufio pour plus d'efficacité
+    writer := bufio.NewWriter(fichier)
+    _, err = writer.WriteString("Salut, comment ça va ?\n")
+    if err != nil {
+        log.Fatalf("Erreur lors de l'écriture dans le fichier : %s", err)
+    }
 
-    fmt.Println("Le fichier texte a été créé et les données ont été enregistrées avec succès")
+    // S'assurer que toutes les opérations d'écriture sont bien effectuées
+    writer.Flush()
 }
 ```
-
-Sortie:
+Sortie attendue dans `exemple.txt` :
 ```
-Le fichier texte a été créé et les données ont été enregistrées avec succès
+Salut, comment ça va ?
 ```
 
-# Exploration Approfondie:
-La création de fichiers texte est une pratique courante en programmation car elle offre un moyen simple de stocker et d'organiser des données. Cela peut être utile pour stocker des informations de configuration, des journaux, des données de base de données ou tout autre type de données. Il existe également des alternatives à l'écriture de fichiers texte, telles que l'utilisation de bases de données, mais c'est souvent une solution plus complexe. En termes d'implémentation, des langages de programmation tels que Go offrent des fonctions et des méthodes pour faciliter la création et l'écriture de fichiers texte.
+## Deep Dive
 
-# Voir aussi:
-- Documentation officielle de Go sur l'écriture de fichiers: https://golang.org/pkg/os/#Create
-- Tutoriel sur l'écriture et la lecture de fichiers en Go: https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go
+Avant Go, on écrivait des fichiers en C ou en Bash, moins sécurisé. Go offre `io/ioutil` et `os` pour simplifier le processus. L’utilisation de `bufio` est conseillée pour l'efficience. S'assurer d'appeler `defer Close()` pour éviter les fuites de mémoire.
+
+## See Also
+
+- Documentation officielle: [Package os](https://golang.org/pkg/os/)
+- Article sur la manipulation des fichiers: [Using Go for File Handling](https://golangbot.com/read-files/)
+- Tutoriel vidéo: [Writing Files in Go](https://www.youtube.com/watch?v=R0jVqeJ4FE0)

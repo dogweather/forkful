@@ -1,6 +1,6 @@
 ---
 title:                "Lavorare con JSON"
-html_title:           "Elixir: Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
 simple_title:         "Lavorare con JSON"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché?
+## What & Why?
 
-Lavorare con JSON è un'attività comune per i programmatori Elixir. JSON (JavaScript Object Notation) è un formato di dati leggibile sia per gli umani che per le macchine, utilizzato per la memorizzazione e lo scambio di dati. Questo è utile per creare applicazioni web dinamiche e interattive.
+Lavorare con JSON significa manipolare il formato di scambio dati più popolare per applicazioni web. I programmatori lo fanno per la sua leggibilità e per facilitare l'interoperabilità tra sistemi differenti.
 
-## Come fare:
+## How to:
 
-Per lavorare con JSON in Elixir, è necessario utilizzare il modulo "Poison". Ecco un esempio di come convertire un oggetto Elixir in formato JSON e viceversa:
+Per lavorare con JSON in Elixir, puoi usare la libreria `Jason`. Assicurati di aggiungerla come dipendenza nel tuo `mix.exs`:
 
-```Elixir
-# Converte un oggetto Elixir in formato JSON
-Poison.encode!(%{nome: "Maria", età: 28})
-# Output: "{\"nome\": \"Maria\", \"età\": 28}"
-
-# Converte un oggetto JSON in formato Elixir
-Poison.decode!(~s({"nome": "Luca", "età": 32}))
-# Output: %{"nome" => "Luca", "età" => 32} 
+```elixir
+defp deps do
+  [
+    {:jason, "~> 1.3"}
+  ]
+end
 ```
 
-## Approfondimento:
+Ecco come decodificare una stringa JSON in una mappa di Elixir:
 
-JSON è stato introdotto nel 2005 e da allora è diventato il formato dati più popolare per il web. In alternativa, i programmatori possono utilizzare anche altri formati come YAML o XML, ma JSON è preferito per la sua semplicità e leggibilità.
+```elixir
+iex> json = "{\"chiave\": \"valore\"}"
+iex> {:ok, data} = Jason.decode(json)
+iex> data
+%{"chiave" => "valore"}
+```
 
-Il modulo "Poison" utilizza il parser JSON di C e lo integra con Elixir. Se si desidera una soluzione puramente Elixir, si può utilizzare il modulo "Jason", che utilizza un parser scritto in Elixir.
+Ora, codifichiamo una mappa Elixir in una stringa JSON:
 
-## Vedi anche:
+```elixir
+iex> mapa = %{"chiave" => "valore"}
+iex> {:ok, json} = Jason.encode(mapa)
+iex> json
+"{\"chiave\":\"valore\"}"
+```
 
-- [Documentazione ufficiale di Poison](https://hexdocs.pm/poison/readme.html)
-- [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+## Deep Dive
+
+JSON, acronimo di JavaScript Object Notation, nato nel 2001, è un sottoinsieme di JavaScript. Nonostante le sue origini, è indipendente dal linguaggio e molti linguaggi di programmazione, incluso Elixir, hanno librerie per manipolarlo. `Poison` è un'alternativa a `Jason` in Elixir, ma `Jason` è generalmente preferito per prestazioni migliori. Entrambi convertiscono dati JSON in strutture native di Elixir e viceversa, ma bisogna conoscere bene la specifica JSON e monitorare il comportamento con dati non validi o inaspettati.
+
+## See Also
+
+- Documentazione Elixir `Jason`: https://hexdocs.pm/jason/readme.html
+- Specifica JSON: https://www.json.org/json-it.html
+- Confronto tra `Jason` e `Poison`: https://elixirforum.com/t/jason-vs-poison/15307
+- Guida introduttiva a JSON in JavaScript: https://developer.mozilla.org/it/docs/Learn/JavaScript/Objects/JSON

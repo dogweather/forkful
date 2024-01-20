@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 작업"
-html_title:           "Java: CSV 파일 작업"
-simple_title:         "CSV 파일 작업"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+CSV 파일은 데이터를 쉽게 저장하고 교환하는 텍스트 형식입니다. 프로그래머들은 데이터 분석, 데이터 이동, 또는 대규모 정보를 처리할 때 CSV를 자주 사용합니다.
 
-CSV란 무엇일까요? CSV는 Comma Separated Values의 약자로, 콤마(,)로 구분된 데이터의 집합입니다. 프로그래머들은 CSV를 사용하는 이유는 데이터를 효율적으로 저장하고 검색하기 위해서입니다.
+## How to: (어떻게 하나요?)
+Java에서 CSV 파일을 읽고 쓰는 예제입니다.
 
-## 방법:
+```java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
-자바에서 CSV를 다루는 방법을 살펴보겠습니다. 먼저 CSV 파일을 읽고 쓰기 위해서는 File, FileReader, FileWriter 등의 클래스를 사용해야 합니다. 아래 예시 코드를 참고해보세요.
-
-```Java
-import java.io.*;
 public class CSVExample {
-  public static void main(String[] args) {
-    try {
-        File file = new File("data.csv");
-        // CSV 파일 읽기
-        String line = "";
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        while ((line = br.readLine()) != null) {
-          // 쉼표를 기준으로 분리
-          String[] data = line.split(",");
-          // 데이터 출력
-          System.out.println("Name: " + data[0] + ", Age: " + data[1] + ", City: " + data[2]);
+    public static void main(String[] args) {
+        String filePath = "example.csv";
+
+        // CSV 읽기
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                // 값을 활용하세요.
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        br.close();
-        // CSV 파일 쓰기
-        FileWriter writer = new FileWriter("data.csv");
-        // 데이터 추가
-        writer.append("John,25,New York\n");
-        writer.append("Maria,30,Seoul\n");
-        writer.close();
-    } catch (Exception e) {
-      e.printStackTrace();
+
+        // CSV 쓰기
+        try (FileWriter writer = new FileWriter(filePath)) {
+            String[] data = {"Java", "CSV", "Example"};
+            writer.append(String.join(",", data));
+            writer.append("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
-**출력:**
-```
-Name: John, Age: 25, City: New York
-Name: Maria, Age: 30, City: Seoul
-```
+## Deep Dive (깊이 있는 정보)
+CSV(Comma-Separated Values) 형식은 1970년대부터 사용되었습니다. XML이나 JSON과 같은 대체 형식이 있지만, CSV는 단순함과 가독성 때문에 여전히 인기가 있습니다. Java에서는 `java.io` 패키지로 기본적인 CSV 처리를 할 수 있고, Apache Commons CSV나 OpenCSV와 같은 라이브러리로 더 복잡한 기능을 구현할 수 있습니다.
 
-## 깊이 파고들기:
-
-CSV의 역사적 관점, 대안, 그리고 구현 세부사항에 대해 알아보겠습니다. CSV는 1972년 개발된 데이텀 방식의 데이터 포맷입니다. 텍스트 파일로 인식되기 때문에 다양한 프로그래밍 언어에서 이용할 수 있습니다. CSV 대안으로는 JSON, XML 등이 있으며, 다양한 라이브러리를 통해 좀 더 편리하게 CSV를 다룰 수 있습니다. 자바에서도 OpenCSV, Apache Commons CSV 등의 라이브러리를 사용할 수 있습니다.
-
-## 관련 자료:
-
-- Wikipedia: [CSV 파일](https://ko.wikipedia.org/wiki/CSV_%ED%8C%8C%EC%9D%BC)
-- Oracle Java Tutorials: [Reading, Writing, and Creating Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- OpenCSV: [Home Page](http://opencsv.sourceforge.net/)
-- Apache Commons CSV: [User Guide](https://commons.apache.org/proper/commons-csv/user-guide.html)
+## See Also (더 참고할 정보)
+- Java의 `java.io` 패키지 문서: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/package-summary.html
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- OpenCSV: http://opencsv.sourceforge.net/

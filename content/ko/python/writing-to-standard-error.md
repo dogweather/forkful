@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰는 방법"
-html_title:           "Python: 표준 에러에 쓰는 방법"
-simple_title:         "표준 에러에 쓰는 방법"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-표준 에러 채널로 쓰기는 프로그래머들이 디버그 시에 필요한 정보를 화면에 출력하는 대신, 에러 메시지를 콘솔에 출력하는 것을 말합니다. 프로그래머들은 이를 통해 런타임 에러를 빠르게 찾고, 수정하기 쉽게 할 수 있습니다.
+## What & Why?
+(무엇이며 왜 사용하는가?)
+프로그램은 표준 출력(stdout)과 표준 오류(stderr)를 사용해 메시지를 보낸다. stderr는 오류 메시지나 경고를 보낼 때 사용되며, 이는 로그를 정리하거나 문제 해결할 때 유용하다.
 
-## 어떻게 하는가:
+## How to:
+(어떻게 사용하는가?)
+Python에서 sys 모듈은 stderr를 활용할 수 있는 기능을 제공한다. 예제를 보자.
+
 ```Python
 import sys
 
-# 에러 메시지를 표준 에러 채널에 쓰는 예제
+# 표준 오류로 메시지 보내기
+sys.stderr.write("이것은 오류 메시지입니다.\n")
+
+# 예외를 발생시키고 표준 오류로 출력하기
 try:
-    num = int(input("숫자를 입력하세요: "))
-    print(num, "는 짝수입니다.")
-except ValueError:
-    sys.stderr.write("숫자를 입력하세요!")
+    raise ValueError("계산 오류 발생")
+except ValueError as e:
+    sys.stderr.write(f"예외가 발생했습니다: {e}\n")
 ```
+
+실행 결과:
+```
+이것은 오류 메시지입니다.
+예외가 발생했습니다: 계산 오류 발생
+```
+
+## Deep Dive:
+(심층 분석)
+stderr는 유닉스 시스템에서 1970년대부터 사용되었다. 만약 sys 모듈의 stderr 대신 print 함수를 사용하고 싶으면, `file` 파라미터를 사용하면 된다.
 
 ```Python
-# 터미널에서 해당 스크립트를 실행하면 STDERR 채널로 에러 메시지가 출력됩니다.
-$ python STDERR_example.py
-숫자를 입력하세요!
+print("이것은 표준 오류 출력입니다.", file=sys.stderr)
 ```
 
-## 깊게 파고들기:
-1. 표준 에러 채널에 대한 아이디어는 1975년에 UNIX 운영체제를 개발한 아이폰 레비와 켄 톰슨에 의해 처음 소개되었습니다.
-2. 다른 대안으로는 로그 파일에 에러 메시지를 기록하는 것이 있습니다.
-3. 표준 에러 채널에 쓰는 방법은 다음과 같이 두 가지 방식으로 구현할 수 있습니다:
-   - ```sys.stderr.write()``` 함수를 사용하여 문자열을 직접 쓰는 방식
-   - ```sys.excepthook()``` 함수를 재정의하여 예외가 발생했을 때 쓰는 방식
+`logging` 모듈을 사용하여 로그 레벨에 맞는 메시지를 stderr로 보낼 수도 있다. stderr를 사용하는 것은 프로그램의 정상적인 출력과 오류 메시지를 분리하는 표준 방식이다.
 
-## 관련 자료:
-- [Python 공식 문서](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [Real Python - Writing to Standard Error Channels](https://realpython.com/python-logging/#writing-to-standard-error-channels)
+## See Also:
+(참고 자료)
+- Python 공식 문서의 sys 모듈 설명: https://docs.python.org/3/library/sys.html
+- Python 공식 문서의 logging 모듈 사용법: https://docs.python.org/3/howto/logging.html
+- Unix 표준 스트림에 대한 설명: https://en.wikipedia.org/wiki/Standard_streams

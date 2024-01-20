@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Haskell: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,18 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Scrivere un file di testo è essenziale per qualsiasi programma Haskell. Consente di memorizzare e accedere ai dati in modo semplice e organizzato. I programmatori lo fanno perché è una soluzione efficace per gestire dati di grandi dimensioni e per rendere il codice più modulare e facile da leggere.
+## What & Why?
+Scrivere un file di testo significa salvare dati in un formato leggibile. Programmatori lo fanno per persistenza dei dati, configurazioni, o per la generazione di report.
 
-## Come:
-Per scrivere un file di testo in Haskell, è possibile utilizzare la funzione "writeFile" che accetta due argomenti: il percorso del file e il contenuto da scrivere. Esempio:
+## How to:
+Per scrivere un file usiamo `writeFile` o `appendFile`:
+
 ```Haskell
-writeFile "output.txt" "Ciao, mondo!"
+import System.IO
+
+-- Scrivi un nuovo file o sovrascrivi uno esistente
+main :: IO ()
+main = do
+    let contenuto = "Ciao, questo è un testo in un file!"
+    writeFile "esempio.txt" contenuto
 ```
-Questo codice creerà un file di testo chiamato "output.txt" e scriverà al suo interno la stringa "Ciao, mondo!".
 
-## Deep Dive:
-Scrive un file di testo è un'operazione molto comune in programmazione. Nel passato, era necessario utilizzare librerie esterne per farlo, ma grazie alla funzione "writeFile" è ora incorporata in Haskell. Ci sono anche altre funzioni come "appendFile" che consente di aggiungere contenuto a un file esistente. Inoltre, è possibile utilizzare la sintassi "do" per scrivere più righe di testo in un file, rendendo il codice più strutturato. 
+Se esegui e guardi `esempio.txt`, troverai il testo. Per aggiungere al file, senza sovrascrivere:
 
-## Vedi anche:
-Per maggiori informazioni su come scrivere file di testo in Haskell, si consiglia di consultare la documentazione ufficiale su [Hackage](https://hackage.haskell.org/package/base/docs/System-IO.html#v:writeFile). Inoltre, puoi trovare esempi pratici di codice su [GitHub](https://github.com/search?q=haskell+write+text+file).
+```Haskell
+-- Aggiunge contenuto al file esistente
+main :: IO ()
+main = do
+    let nuovoContenuto = "\nAggiungi questa nuova linea al file."
+    appendFile "esempio.txt" nuovoContenuto
+```
+
+## Deep Dive
+Haskell ha introdotto `writeFile` e `appendFile` negli anni '90. Alternativamente, puoi usare `hPutStr` con il file aperto in modalità scrittura. Per performance, considera `hPutStr` con `Handle` quando hai scritture ripetute.
+
+Esempio con `hPutStr`:
+
+```Haskell
+main :: IO ()
+main = do
+    handle <- openFile "esempio.txt" WriteMode
+    hPutStr handle "Usando hPutStr per scrivere nel file."
+    hClose handle
+```
+
+## See Also
+- [Haskell Documentation for IO](https://hackage.haskell.org/package/base/docs/Prelude.html#g:25)
+- [Real World Haskell, Chapter 7: I/O](http://book.realworldhaskell.org/read/io.html)
+- [Learn You a Haskell for Great Good! - Chapter 9: Input and Output](http://learnyouahaskell.com/input-and-output)

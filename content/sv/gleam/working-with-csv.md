@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Gleam: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV står för "comma-separated values" och är ett format för att lagra och hantera tabellinformation i textform. Det är vanligtvis användbart när man behöver bearbeta stora mängder data, särskilt när det gäller att importera eller exportera tabellinformation från olika program och verktyg. CSV är också lättläst för både människor och datorer, vilket gör det till ett populärt val för datalagring.
+Arbeta med CSV (Comma-Separated Values) handlar om att hantera enkla textfiler för att lagra och utbyta data. Programmerare använder ofta CSV eftersom det är lättläst, enhetligt och enkelt att importera i olika program.
 
-## Hur man gör:
-Gleam har inbyggda funktioner för att läsa och skriva CSV-filer, vilket gör det enkelt att arbeta med detta format. Här är ett exempel på hur man läser en CSV-fil och skriver ut den till konsolen:
+## Så här gör du:
+Gleam har inget standardbibliotek för CSV än, så du får parsera manuellt. Här är ett exempel:
+
+```gleam
+pub fn parse_csv_line(line: String) -> List(String) {
+  line
+  |> string.split(by: ",")
+  |> list.map(string.trim)
+}
+
+pub fn main() {
+  let csv_data = "namn,ålder,stad\nKalle,23,Göteborg\nLisa,37,Stockholm"
+  let lines = csv_data |> string.split(by: "\n")
+  case list.drop(lines, 1) {
+    Ok(data_lines) -> {
+      data_lines
+      |> list.map(parse_csv_line)
+      |> io.debug
+    }
+    Error(_) -> io.debug("Inga data")
+  }
+}
+```
+
+Kör programmet ger:
 
 ```
-let rows = file::csv::read("data.csv")
-
-do
-  rows
-  |> List.iter(fn(row) -> 
-    row
-    |> List.map(fn(cell) -> 
-      cell
-      |> String.join(", ")
-    )
-    |> String.join(" | ")
-    |> io::println
-  )
+[[namn, ålder, stad], [Kalle, 23, Göteborg], [Lisa, 37, Stockholm]]
 ```
 
-Detta kodexempel använder funktionen `file::csv::read` för att läsa in en CSV-fil och lagrar resultaten i en lista. Sedan använder den sedan den inbyggda höjnivåfunktionen `List.iter` för att iterera över varje rad i filen och skriva ut den till konsolen i ett läsbart format.
-
-## Djupdykning:
-CSV-formatet uppfanns på 1970-talet och har sedan dess blivit en standard för datahantering, särskilt inom affärsvärlden. Det finns också alternativ till CSV, som till exempel JSON och XML, men CSV behåller sin popularitet på grund av dess enkelhet och kompatibilitet med olika program.
-
-När man arbetar med CSV i Gleam, är det viktigt att se till att både din kod och CSV-filen är korrekt formaterade. Om kolumnerna i din CSV-fil inte stämmer överens med de datatyper du förväntar dig, kan din kod ge oväntade resultat eller felmeddelanden. Se till att du också kontrollerar om filer har några speciella tecken som kan förstöra parsningen.
+## Djupdykning
+CSV-formatet dök upp runt 1970-talet och är fortfarande populärt för datautbyte. Alternativ till CSV inkluderar JSON, XML och YAML. Effektiviteten av din Gleam CSV-hantering kan skifta beroende på filstorlek och komplexitet. För stora data, överväg streaming.
 
 ## Se även:
-- Officiell dokumentation för CSV-funktioner i Gleam: https://gleam.run/lib/file.csv.html
-- En introduktion till CSV-formatet: https://en.wikipedia.org/wiki/Comma-separated_values
+- Gleam’s stdlib documentation: [https://hexdocs.pm/gleam_stdlib/](https://hexdocs.pm/gleam_stdlib/)
+- CSV on Wikipedia for a historical overview: [https://sv.wikipedia.org/wiki/CSV](https://sv.wikipedia.org/wiki/CSV)
+- Alternatives to CSV: [https://json.org/](https://json.org/), [https://yaml.org/](https://yaml.org/), [https://www.w3.org/XML/](https://www.w3.org/XML/)

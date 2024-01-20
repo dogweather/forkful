@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "PowerShell: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,25 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Att skriva tester är processen att kontrollera att din kod fungerar som förväntat. Programmerare gör det för att hitta buggar tidigt, förbättra kodkvaliteten och säkerställa att programvaran är stabil över tid.
 
-Skrivning av tester är en viktig del av programmeringsprocessen. Det innebär att skriva kod som kollar att vår huvudkod fungerar som den ska. Detta gör att vi kan vara säkra på att vårt program fungerar som förväntat och undvika oväntade fel när vi släpper det till användarna.
-
-# Hur man:
+## How to:
+Du kan skriva PowerShell-tester med hjälp av modulen Pester. Här är ett enkelt exempel:
 
 ```PowerShell
-Describe "Addition" {
-  it "adds two numbers" {
-    $sum = 1 + 1
-    $sum | Should Be 2
-  }
+# Installera Pester om det inte redan är installerat
+Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# Importera Pester-modulen
+Import-Module Pester
+
+# Skriv ett enkelt test
+Describe "Min Testgrupp" {
+    It "Kollar om siffrorna är lika" {
+        $expected = 2
+        $actual = 1 + 1
+        $actual | Should -Be $expected
+    }
 }
+
+# Kör testet
+Invoke-Pester
 ```
-```PowerShell
-$Results = Invoke-Pester -Script .\MyScript.ps1
-$Results.FailedCount # outputs the number of failed tests
+Sample output:
+```
+Describing Min Testgrupp
+  [+] Kollar om siffrorna är lika 82ms
+Tests completed in 82ms
+Tests Passed: 1, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0 
 ```
 
-# Fördjupning:
+## Deep Dive:
+Pester är den ledande testramverket för PowerShell, skapat 2010 av Scott Muc och andra medarbetare. Alternativ till Pester inkluderar PSUnit och PowerShell xUnit men Pester är mest integrerad med PowerShell och är den de-facto standarden. För att skriva effektiva tester, tänk på att hålla dem isolerade, fokuserade och snabba. Lär dig om 'mocking' för att simulera och isolera funktioner.
 
-(1) Tester har funnits i programmering sedan tidigaste dagar och hjälper oss att identifiera och förhindra buggar i vår kod. (2) Ett alternativ till Pester (det vanligaste testramverket för PowerShell) är platshållare som TestScript och RunspaceFactory. (3) I implementationsdetaljer använder vi vanligtvis Verify-Something funktioner för att jämföra resultatet av vår kod med det förväntade resultatet.
+## See Also:
+- Pester’s GitHub repository: https://github.com/pester/Pester
+- Pester documentation: https://pester.dev
+- Microsoft's guide to testing med Pester: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/pester?view=powershell-7.1

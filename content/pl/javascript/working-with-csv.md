@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Javascript: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest CSV & Dlaczego?
+## Co i dlaczego?
+CSV, czyli wartości oddzielone przecinkami, to prosty format wymiany danych. Programiści używają go ze względu na prostotę i uniwersalność – praktycznie każdy język programowania i baza danych rozumie CSV.
 
-Praca z CSV to jedna z częstych zadań programistycznych. CSV to format pliku przechowującego dane w postaci tabelarycznej. Jest to popularny sposób przechowywania i udostępniania danych w wielu dziedzinach, takich jak finanse, nauka, biznes, itp. Programiści często pracują z plikami CSV, aby przetwarzać i manipulować danymi w swoich projektach.
-
-## Jak to zrobić:
-
-Aby pracować z plikami CSV w Javascript, potrzebujesz odpowiednich narzędzi oraz znajomości niektórych funkcji języka. Możesz użyć wbudowanej funkcji ```require()``` do wczytania biblioteki ```csv-parser```. Następnie użyj funkcji ```createReadStream()``` aby utworzyć strumień z pliku CSV, a następnie przekazuj dane do funkcji ```csv-parser()```, która przetwarza plik i zwraca dane w postaci tablicy obiektów. Poniżej znajduje się przykładowy kod i jego wynik:
-
+## Jak to zrobić?
 ```Javascript
-const csv = require('csv-parser');
-const fs = require('fs'); // wbudowana biblioteka w Node.js do pracy z plikami
-const results = [];
+// Parsowanie CSV:
+const parseCSV = (csvString) => {
+  const lines = csvString.split("\n");
+  return lines.map(line => line.split(","));
+};
 
-fs.createReadStream('plik.csv')
-  .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    console.log(results); // [ { kolumna1: 'wartość1', kolumna2: 'wartość2' }, ... ]
-  });
+const csvData = "name,age\nJohn,30\nJane,25";
+console.log(parseCSV(csvData));
+```
+Wynik parsowania:
+```
+[
+  ["name", "age"],
+  ["John", "30"],
+  ["Jane", "25"]
+]
 ```
 
-## Deep Dive:
+```Javascript
+// Konwersja do CSV:
+const jsonToCSV = (json) => {
+  const rows = json.map(entry => Object.values(entry).join(","));
+  return rows.join("\n");
+};
 
-Format CSV został opracowany w 1972 roku przez Petera Naur-a, aby ułatwić przechowywanie i przetwarzanie danych w systemach telekomunikacyjnych. Obecnie jest szeroko stosowany dla przechowywania danych tabelarycznych w elektronicznej postaci. Istnieją również inne sposoby przechowywania danych tabelarycznych, takie jak XML, JSON czy Excel, jednak CSV jest wygodnym formatem dla prostych i dużych zbiorów danych.
+const jsonData = [{ name: "John", age: "30" }, { name: "Jane", age: "25" }];
+console.log(jsonToCSV(jsonData));
+```
+Wynik konwersji:
+```
+John,30
+Jane,25
+```
 
-Pracując z CSV, należy zwrócić uwagę na ustawienie odpowiednich parametrów, takich jak separator, nagłówki kolumn czy kodowanie pliku. W celu bardziej zaawansowanego przetwarzania danych można również używać bibliotek, takich jak ```csv-writer``` lub ```csvtojson```.
+## Głębsze spojrzenie
+CSV powstało w latach 70. Alternatywą jest JSON, który jest bardziej elastyczny. Jednak CSV jest prostsze w obsłudze i możliwe do odczytania bez specjalnych parserów. W implementacjach trzeba uwzględnić różnice w kodowaniach znaków i konwencje dotyczące separatorów, np. przecinek czy średnik.
 
-## Zobacz też:
-
-- [Przykład użycia biblioteki ```csv-parser```](https://www.npmjs.com/package/csv-parser)
-- [Inne popularne biblioteki do pracy z CSV](https://www.npmjs.com/search?q=CSV)
-- [Oficjalna dokumentacja formatu CSV](https://tools.ietf.org/html/rfc4180)
+## Zobacz również
+- MDN Web Docs - praca z tekstem: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+- Specyfikacja formatu CSV: https://tools.ietf.org/html/rfc4180
+- Papa Parse - potężny parser CSV dla JavaScript: https://www.papaparse.com/

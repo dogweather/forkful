@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Javascript: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Escribir tests significa crear pruebas automáticas que verifican si los diferentes partes de tu código funcionan como esperas. Los programadores escriben tests para ahorrar tiempo, evitar errores futuros y garantizar que los cambios no rompan funcionalidades existentes.
 
-Escribir pruebas (tests) en Javascript es un proceso de verificar que el código que escribimos funciona como se espera. Los programadores hacen esto para asegurarse de que su código sea confiable y libre de errores.
+## Cómo Hacerlo:
+Para escribir tests en JavaScript, puedes utilizar librerías como Jest. Aquí tienes un ejemplo sencillo de cómo se vería un test para una función que suma dos números:
 
-## Cómo:
+```Javascript
+// sum.js
+function sum(a, b) {
+    return a + b;
+}
 
-Para escribir pruebas en Javascript, utilizamos un marco de pruebas (testing framework) como Jest o Mocha, que nos permite crear y ejecutar pruebas de manera eficiente. Podemos escribir nuestras pruebas utilizando assertion libraries como Chai o expect, que nos ayudan a verificar si los resultados esperados coinciden con los obtenidos.
+module.exports = sum;
+```
 
-```javascript
-// Ejemplo de prueba con Jest
-const sum = (a, b) => a + b;
-test('La suma de 2 + 2 debería ser igual a 4', () => {
-  expect(sum(2, 2)).toBe(4);
+```Javascript
+// sum.test.js
+const sum = require('./sum');
+
+test('suma 1 + 2 para dar como resultado 3', () => {
+    expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Este código comprueba que la función sum devuelve el resultado correcto para los argumentos dados. Podemos tener múltiples pruebas para una sola función y asegurarnos de que nuestro código siempre funcione correctamente.
+Línea de comando para correr Jest:
+```bash
+$ npm run test
+```
 
-## Profundizando:
+Resultado esperado:
+```
+PASS ./sum.test.js
+✓ suma 1 + 2 para dar como resultado 3 (5ms)
+```
 
-Las pruebas automatizadas han sido una práctica común en la programación desde la década de 1970. Sin embargo, con el aumento de la complejidad de los sistemas de software, se ha vuelto aún más importante tener una suite de pruebas confiable y bien mantenida. Aparte de los marcos de pruebas mencionados anteriormente, también existen otras herramientas de pruebas como Selenium para pruebas de interfaz de usuario y Cypress para pruebas de extremo a extremo.
+## Análisis Profundo:
+Historialmente, se ha hecho testing manualmente, pero esto resulta ser ineficiente y propenso a omitir errores. Ahora, la automatización es la clave. Alternativas a Jest incluyen Mocha, Jasmine y QUnit, entre otros. Vale la pena explorar la documentación oficial de Jest para aprender sobre mocks, spies y el ciclo de vida de los tests. Asegúrate de entender conceptos de testing como "unit tests", "integration tests" y "end-to-end tests" y cuándo aplicar cada uno.
 
-## Ver también:
+## Ver También:
+Puedes ampliar tu conocimiento sobre testing en JavaScript con las siguientes fuentes:
 
-Si quieres profundizar más en el proceso de escribir pruebas en Javascript, aquí hay algunos recursos útiles:
-
-- [Jest](https://jestjs.io/): Un marco de pruebas popular para Javascript.
-- [Chai](https://www.chaijs.com/): Una biblioteca de aserciones que puede ser utilizada con diferentes marcos de pruebas.
-- [Eloquent JavaScript](https://eloquentjavascript.net/): Un libro en línea gratuito que incluye un capítulo sobre pruebas en Javascript.
+- Documentación oficial de Jest: [jestjs.io](https://jestjs.io/)
+- Comparación de frameworks de testing en JavaScript: [https://stateofjs.com/](https://stateofjs.com/)
+- Artículos y guías sobre testing de JavaScript en [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Introduction)
+- Series de videos y tutoriales didácticos en [YouTube](https://www.youtube.com/results?search_query=javascript+testing)

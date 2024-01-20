@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Gleam: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Kirjoitamme tekstitiedostoja tallentaaksemme dataa. Ohjelmoijat tekevät tämän pysyvän säilytyksen, lokitietojen kirjaamisen tai konfiguraatioiden jakamisen vuoksi.
 
-Tekstitiedoston kirjoittaminen on yksinkertainen ja tärkeä osa ohjelmointia. Se tarkoittaa tekstin tallentamista tiedostoon tietokoneella, jota voidaan sitten käyttää myöhemmin. Ohjelmoijat tekevät sitä esimerkiksi tallentaakseen käyttäjän tietoja tai tallentaakseen tietoja ohjelman toiminnan aikana.
+## How to - Kuinka toimia:
+Gleamilla tiedoston kirjoittaminen:
 
-## Miten:
+```
+import gleam/io
+import gleam/erlang
+import gleam/erlang/try
+import gleam/bit_builder.{BitBuilder}
 
-Gleamilla tekstitiedoston kirjoittaminen on helppoa. Käytä funktiota ```File.write``` ja anna tiedoston nimi ja teksti, jonka haluat tallentaa.
+fn write_to_file(data: String, filename: String) -> Result(BitBuilder, String) {
+  try result = io.open_for_writing(filename)
+  try _ = io.write(result, data)
+  io.close(result)
+}
 
-```Gleam
-let texti = "Hei maailma!"
-File.write("tekstitiedosto.txt", texti)
+pub fn main() {
+  try _ = write_to_file("Hello, Gleam!", "example.txt")
+  "File written successfully"
+}
 ```
 
-Tämä koodi luo ```tekstitiedosto.txt``` nimisen tiedoston ja tallentaa siihen tekstin "Hei maailma!".
+Esimerkkituloste:
 
-## Syvällisempi sukellus:
+```
+File written successfully
+```
 
-Tekstitiedoston kirjoittaminen on ollut osa ohjelmointia jo pitkään. Ennen Gleamia, jotkut ohjelmoijat käyttivät C-kielen tiedostokirjastoa, mutta Gleamilla tämä on paljon helpompaa. On myös muita vaihtoehtoisia tapoja tallentaa tietoa, kuten tietokantoihin tai pilvipalveluihin. Tämä voi olla kätevämpiä tietyissä tilanteissa, mutta tekstitiedostoilla on edelleen tärkeä rooli ohjelmoinnissa.
+## Deep Dive - Syväsukellus:
+Gleam on moderni, turvallinen kieli, joka kääntyy Erlangiin. Historiallisesti tiedoston kirjoittaminen on tehty Erlangissa `file`-moduulin avulla. Vaihtoehtoja ovat käyttää suoraan Erlangin funktioita tai ulkopuolisia kirjastoja. Gleamissa tiedoston kirjoitus on yksinkertaistettu ja se tarjoaa parempaa virheenkäsittelyä käyttämällä `Result` tyypin.
 
-## Katso myös:
-
-Lisää tietoa Gleamin tiedostokirjoituksesta löydät Gleamin virallisesta dokumentaatiosta: https://gleam.run/stdlib/file.html#write
-
-Toinen hyödyllinen artikkeli Gleamin perusteista löytyy täältä: https://gleam.run/articles/basic/
+## See Also - Katso Myös:
+- Gleam dokumentaatio: [https://gleam.run](https://gleam.run)
+- Erlang `file`-moduuli: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+- Officiell Gleam GitHub: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Gleam how-to guides: [https://gleam.run/book/tour](https://gleam.run/book/tour)

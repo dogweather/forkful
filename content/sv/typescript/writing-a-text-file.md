@@ -1,6 +1,6 @@
 ---
 title:                "Skriva en textfil"
-html_title:           "TypeScript: Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Skriva en textfil: En guide för TypeScript-programmerare
+
 ## Vad & Varför?
+Att skriva en textfil innebär att du sparar textdata till en fil på disken. Programmerare gör det för att spara resultat, konfigurationer eller för att dela data med andra program.
 
-Att skriva en textfil innebär att skapa en fil som innehåller textbaserad information. Detta är en viktig del av programmering eftersom det ger en enkel och effektiv väg att lagra och läsa data. Programmerare använder sig av textfiler för att spara till exempel användarinformation, konfigurationsinställningar och loggar.
-
-## Hur man gör:
+## Så här gör du:
+För att skriva till en fil i TypeScript, använd `fs`-modulen från Node.js. Nedan är exempel på hur du skapar och skriver till en textfil.
 
 ```TypeScript
-// Öppna och skriv till en textfil
-const fs = require('fs');
-fs.writeFile("minTextfil.txt", "Detta är en textfil skapad med TypeScript", function(err) {
-    if (err) throw err;
-    console.log("Textfilen har skrivits till!");
-});
+import { writeFile } from 'fs';
 
-// Läsa från en textfil
-fs.readFile('minTextfil.txt', 'utf-8', function(err, data) {
+const data: string = 'Hej! Det här är text sparad i en fil.';
+
+writeFile('example.txt', data, (err) => {
     if (err) throw err;
-    console.log(data);
+    console.log('Filen har sparats!');
 });
 ```
 
-Exempel på utmatning:
-
-Textfilen har skrivits till!
-Detta är en textfil skapad med TypeScript
+### Exempelutskrift:
+```
+Filen har sparats!
+```
 
 ## Djupdykning:
+Att skriva textfiler är en grundläggande operation som funnits sedan tidiga datortider. Utöver grundläggande skrivoperationer erbjuder Node.js alternativ som `writeFileSync` för synkron skrivning och `createWriteStream` för mer effektiva, strömmade skrivoperationer.
 
-Att spara textbaserad information i filer har varit en viktig del av datatekniken sedan tidigt 1970-tal. Innan textfiler användes, var det vanligt att programmerare använde sig av hålkort och magnetband för att lagra data.
+Stream-metoden är användbar för att hantera stora datamängder - istället för att skriva allt på en gång, hanteras datan i mindre bitar.
 
-Alternativ till att skriva textfiler är att använda en databas eller en JSON-fil. Dessa kan dock vara mer komplexa att arbeta med och är inte alltid det bästa valet beroende på behov.
-
-För att skriva en textfil i TypeScript, används Node.js-funktionalitet för att kommunicera med filsystemet. Detta möjliggör lättare manipulation och åtkomst till filer.
+Alternativ till `fs`-modulen inkluderar högnivåbibliotek som `fs-extra` som förenklar vissa uppgifter, och för frontend-scenarier kan Web API:er som `File` och `Blob` användas inom webbläsaren.
 
 ## Se även:
-
-- [Node.js dokumentation för filsystemet](https://nodejs.org/api/fs.html)
-- [TypeScript-handboken för arbetande med filsystemet](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html)
+- Node.js `fs` dokumentation: [nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- Artikel om `fs-extra` modulen: [www.npmjs.com/package/fs-extra](https://www.npmjs.com/package/fs-extra)
+- MDN-dokumentation om webbläsar-API:er för filhantering: [developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)

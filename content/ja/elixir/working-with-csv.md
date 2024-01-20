@@ -1,7 +1,7 @@
 ---
-title:                "「csv との作業」"
-html_title:           "Elixir: 「csv との作業」"
-simple_title:         "「csv との作業」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## What & Why? (何となぜ？)
+CSV（カンマ区切り値）は、表形式のデータをテキストとして保存します。プログラマーは、データ交換やシステム間のインタフェースとして活用します。
 
-CSVファイルとは、コンマで区切られたデータを格納するためのテキストファイルです。プログラマーたちは、データベースにアクセスせずにデータを処理したい場合や、データを簡単に共有する必要がある場合に、CSVを使用します。
+## How to: (どうやって？)
+ElixirでCSVを扱うには、`CSV`ライブラリが便利です。
 
-## 方法：
-
-```Elixir
-# CSVファイルを読み込む
-{:ok, data} = File.read("file.csv")
-
-# CSVをリストに変換する
-data
-|> String.split("\n") 
-|> Enum.map(&String.split(&1, ","))
+```elixir
+# CSVライブラリの依存関係を追加
+defp deps do
+  [{:csv, "~> 2.4"}]
+end
 ```
 
-上記のコードでは、まずファイルを読み込み、改行で文を分割し、さらにコンマで列を分割してリストに変換します。これにより、データを簡単に処理することができます。
+データを読み込んでみましょう。
 
-## 詳細説明：
+```elixir
+# CSVデータの読み込み
+def read_csv_data(file_path) do
+  File.stream!(file_path)
+  |> CSV.decode()
+  |> Enum.each(fn row ->
+    IO.inspect(row)
+  end)
+end
+```
 
-- CSVファイルは、1972年にデータを簡単に共有するために開発されました。
-- また、データベースに代わるリレーショナルデータベースの一種としても使用されています。
-- 上記のコードは、Elixirの標準ライブラリであるEnumモジュールを使用しています。
+CSVデータの書き込みはこんな感じです。
 
-## 関連リンク：
+```elixir
+# CSVデータの書き込み
+def write_to_csv(file_path, data) do
+  CSV.encode(data)
+  |> Enum.into(File.stream!(file_path, [:write]))
+end
+```
 
-- [ElixirのCSVライブラリドキュメント](https://hexdocs.pm/csv/CSV.html)
-- [CSVファイルの歴史についての記事](https://en.wikipedia.org/wiki/Comma-separated_values)
+サンプル出力:
+
+```elixir
+read_csv_data("data.csv")
+# 出力:
+# ["id", "name", "age"]
+# ["1", "Alice", "30"]
+# ["2", "Bob", "34"]
+
+write_to_csv("new_data.csv", [["id", "name", "age"], ["3", "Carol", "29"]])
+# new_data.csvが作成され、内容が書き込まれる
+```
+
+## Deep Dive (深堀り)
+CSVは1972年にIBMが開発。JSONやXMLなどの代替フォーマットがあるけれども、シンプルで多くのツールが対応しているため、広く使用されています。Elixirでは、`CSV.decode`でデータを解析し、`CSV.encode`でデータをエンコードします。パフォーマンスを高めるためにストリーム処理を使うことも一般的です。
+
+## See Also (参考情報)
+- Elixirの公式ドキュメント: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+- CSVライブラリのGitHubページ: [https://github.com/beatrichartz/csv](https://github.com/beatrichartz/csv)
+- Elixirのフォーラム: [https://elixirforum.com](https://elixirforum.com)

@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "Ruby: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,14 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att skriva tester handlar om att skriva kod som kontrollerar att din övriga kod fungerar som den ska. Det är en viktig del av programmering eftersom det hjälper dig hitta och förhindra buggar innan de når produktionen.
+## Vad & Varför?
+Skriva tester handlar om att verifiera att kod gör det den ska. Programmerare testar för att säkerställa kvalitet, undvika buggar och göra framtida underhåll enklare.
 
-# Hur gör man:
-I Ruby finns det en populär testsvit som heter MiniTest. För att använda den, lägg bara till ```require 'minitest/autorun'``` längst upp i din testfil och skriv dina tester inuti ```class TestNågonting < Minitest::Test ... end```. För att köra testerna, skriv bara ```ruby testfilnamn.rb``` i terminalen.
+## Hur man gör:
+I Ruby används ofta ramverket RSpec för att skriva tester. Här är ett enkelt exempel:
 
-# Djupdykning:
-Det är viktigt att skriva tester eftersom det hjälper dig hitta och förhindra buggar tidigt. Dessutom hjälper det dig att förstå din kod bättre och ger dig mer självförtroende när du programmerar. En annan metod för att skriva tester är Behavior-Driven Development (BDD) där man fokuserar på hur koden beter sig istället för hur den är skriven.
+```Ruby
+require 'rspec'
 
-# Se även:
-- [Artikel om BDD](https://medium.com/@KerrySheldon/behaviour-driven-development-and-rspec-ruby-on-rails-1c55601388c9)
+describe 'An example of a simple test' do
+  it 'checks that 2 + 2 equals 4' do
+    expect(2 + 2).to eq(4)
+  end
+end
+```
+
+För att köra testet, skriv följande i terminalen:
+
+```Shell
+$ rspec example_spec.rb
+```
+
+Förväntad utdata ska visa att testet passerar:
+
+```
+.
+
+Finished in 0.00276 seconds (files took 0.15725 seconds to load)
+1 example, 0 failures
+```
+
+## Djupdykning
+Ruby började stödja automatiserade tester tidigt vilket skapade en stark testkultur. Utöver RSpec, finns alternativ som Minitest och Test::Unit, vilka också är populära. RSpec använder ett DSL (Domain-Specific Language) för att göra testkoden mer läsbar, medan Minitest förlitar sig på standard Ruby-syntax vilket kan kännas mer bekant för nya användare.

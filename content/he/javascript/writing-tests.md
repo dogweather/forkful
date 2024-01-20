@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "Javascript: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## מה ולמה?
+כתיבת בדיקות (Tests) בקוד מאפשרת לגלות מוקדם באגים ולשמור על איכות התוכנה. מתכנתים כותבים בדיקות כדי לאמת שהקוד עובד כצפוי לפני שיוצאים לאוויר.
 
-כתיבת בדיקות היא תהליך שבו מתכנתים בוחנים את הקוד שלהם על מנת לוודא שהוא עובד כמצופה. תהליך זה מאפשר למתכנתים לזהות בעיות ולתקן אותן בטרם יימצאו בשייכות מציגת הקוד למשתמשים. מתכנתים מתחשקים לעשות זאת כי הם רוצים שהמוצר שלהם יהיה באיכות הגבוהה ביותר ולא מעולם לעמוד בפני תקלות בעת המציגה.
+## איך לעשות:
+דוגמא לקוד עם Jest, ספריית בדיקות פופולארית ב-JavaScript:
 
-איך לעשות את זה:
-
-```Javascript
-// דוגמא
-function add(a, b) {
+```javascript
+// sum.js
+function sum(a, b) {
   return a + b;
 }
+module.exports = sum;
 
-console.log(add(3, 5));
-// פלט: 8
+// sum.test.js
+const sum = require('./sum');
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+// הרצה בקונסולה:
+// $ jest
+// PASS  ./sum.test.js
+// ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-לעמוד לעומק:
+זה דוגמה פשוטה של פונקציה שמחזירה סכום של שני מספרים ובדיקה שמאמתת שהתוצאה נכונה.
 
-לפני השנות ה-90, כתיבת בדיקות הייתה תהליך מפרכס שממשיך עד היום. כיום ישנן כלים רבים שעוזרים למתכנתים לכתוב בדיקות בצורה יעילה יותר ולהחזיק אותן מתוכנתות. אחת מהכלים הפופולריים ביותר כיום היא Jest, המאפשר פעולות ובדיקות מאוחרות ביחד באופן מלאות.
+## טבילה עמוקה
+כתיבת בדיקות החלה עוד בשנות ה-50 ודרך השנים פותחו שיטות וכלים רבים. Jest, Mocha ו-Jasmine הם עכשיו האלטרנטיבות הפופולאריות בעולם ה-JavaScript. כל ספרייה מציעה חומרה ואפשרויות שונות, אבל הקונספט דומה: הגדרת בדיקות (tests) שמתבצעות על הקוד שלך להבטחת איכות.
 
-ראה גם:
-
-- [הדרכה על Jest](https://jestjs.io/docs/getting-started)
+## ראו גם
+- [Jest](https://jestjs.io/) - התיעוד הרשמי של Jest, הכלי לכתיבת בדיקות.
+- [Mocha](https://mochajs.org/) - תיעוד Mocha, עוד פריימוורק לבדיקות.
+- [Jasmine](https://jasmine.github.io/) - עמוד הבית של Jasmine, ספריית בדיקות התנהגותית.
+- [JavaScript Testing Best Practices](https://github.com/goldbergyoni/javascript-testing-best-practices) - אוסף של שיטות מומלצות לבדיקות JavaScript.

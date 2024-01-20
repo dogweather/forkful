@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Lua: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Escribir pruebas es una parte esencial del proceso de programación en Lua. Las pruebas son pequeños fragmentos de código que verifican si una determinada parte de nuestro programa funciona correctamente. Los programadores escriben pruebas para garantizar que su código es robusto y funciona como se espera.
+Escribir pruebas es crear escenarios para verificar que tu código hace lo que debe. Los programadores prueban para encontrar errores antes de que el código llegue a producción, asegurando calidad y evitando dolores de cabeza.
 
-## Cómo:
+## Cómo hacerlo:
+
+Imagina que tienes una función para sumar números. Así es como podrías escribir una prueba simple:
 
 ```Lua
--- Ejemplo 1: Prueba de una función de sumar
-function sumar(a, b)
-  return a + b
+function sum(a, b)
+    return a + b
 end
 
--- Prueba de la función sumar en caso de que la suma sea correcta
--- Se espera que el resultado sea 5
-local resultado = sumar(2, 3)
-assert(resultado == 5, "La suma está funcionando correctamente")
-
--- Ejemplo 2: Prueba de una función de división
-function dividir(a, b)
-  return a / b
-end
-
--- Prueba de la función dividir en caso de que la división sea correcta
--- Se espera que el resultado sea 2
-local resultado = dividir(10, 5)
-assert(resultado == 2, "La división está funcionando correctamente")
+-- Prueba
+local result = sum(2, 3)
+assert(result == 5, "La suma de 2 y 3 debería ser 5")
 ```
 
-## Profundizando:
+Si la prueba falla, verás un mensaje de error. Si pasa, no tendrás ningún output, lo cual indica éxito.
 
-Las pruebas no siempre han sido una práctica común en la programación, pero con el aumento de la complejidad de los programas y la necesidad de asegurar la calidad del código, se han convertido en una parte fundamental del proceso de desarrollo.
+## Profundizando
 
-Existen diferentes tipos de pruebas que los programadores pueden realizar, como pruebas unitarias, de integración y de aceptación. También existen herramientas y frameworks específicos para escribir y ejecutar pruebas en Lua, como LuaUnit y busted.
+Históricamente, las pruebas se hacían manualmente, pero hoy en día existen herramientas como Busted o LuaUnit para automatizarlas. Estas herramientas permiten organizarte mejor y ofrecen opciones más avanzadas para casos de prueba. Con Lua, puedes integrar pruebas en tu flujo de trabajo para asegurar que los cambios no rompan funcionalidades existentes.
 
-Las pruebas también pueden ser una forma útil de documentación del código, ya que proporcionan ejemplos de cómo se espera que el código funcione. Esto puede ser especialmente útil para facilitar la colaboración entre diferentes programadores.
+## Ver También:
 
-## Ver también:
-
-- [LuaUnit](https://github.com/bluebird75/luaunit)
-- [busted](https://github.com/Olivine-Labs/busted)
+- Documentación de LuaUnit: [https://luaunit.readthedocs.io/en/latest/](https://luaunit.readthedocs.io/en/latest/)
+- Guía para pruebas unitarias en Lua: [https://www.lua.org/pil/contents.html#part4](https://www.lua.org/pil/contents.html#part4)

@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "C: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "C"
 category:             "C"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Kirjoittaminen teksti-tiedostoon on tiedon tallentamista tietokoneelle tekstimuodossa. Koodaajat käyttävät teksti-tiedostoja tallentaakseen koodin ja sen tulokset.
+## What & Why? - Mitä ja Miksi?
+Kirjoitamme tekstifileihin tallentaaksemme dataa pysyvästi. Koodarit tekevät tämän tiedon lokiin kirjaamiseksi, konfiguraatioiden tallentamiseksi tai käyttäjän tuoton säilyttämiseksi.
 
-## Miten:
-```
+## How to: - Kuinka tehdä:
+```C
 #include <stdio.h>
+
 int main() {
-    char text[] = "Tämä on esimerkki teksti-tiedostoon kirjoituksesta.";
-    // Luodaan osoitin tiedostoon ja avataan se kirjoittamista varten
-    FILE *fptr;
-    fptr = fopen("tekstiedosto.txt", "w");
+    FILE *file;
+    file = fopen("esimerkki.txt", "w"); // Avaa tiedoston kirjoitusta varten
 
-    // Kirjoitetaan teksti teksti-tiedostoon
-    fprintf(fptr, "%s", text);
+    if (file == NULL) {
+        perror("fopen");
+        return -1;
+    }
 
-    // Suljetaan tiedosto
-    fclose(fptr);
+    fprintf(file, "Hei Suomi!\n"); // Kirjoittaa tiedostoon
 
-    // Tulostetaan onnistumisviesti
-    printf("Teksti on kirjoitettu tiedostoon.");
-
+    fclose(file); // Sulkee tiedoston
     return 0;
 }
 ```
+Tuloste: Tiedostoon `esimerkki.txt` tallentuu teksti "Hei Suomi!".
 
-```
-Tulostus tiedostoon "tekstiedosto.txt":
-Tämä on esimerkki teksti-tiedostoon kirjoituksesta.
-```
+## Deep Dive - Syväsukellus:
+### Historiallinen konteksti:
+Tekstitiedostojen kirjoittaminen on ollut osa C-kielen standardikirjastoa alusta alkaen. UNIX-ympäristöissä tämä on yleinen tapa kommunikoida prosessien välillä ja tallentaa asetuksia.
 
-## Syvällinen sukellus:
-Kirjoittaminen teksti-tiedostoon on ollut yksi olennaisimmista tiedon tallentamisen tavoista ohjelmoinnin alkuaikoina. Nykyään on olemassa monia muita tapoja tallentaa tietoa, kuten tietokantoihin tai verkkopalveluihin. Kirjoittaminen teksti-tiedostoon on kuitenkin edelleen tärkeää monissa tilanteissa, esimerkiksi yksinkertaisissa ohjelmissa tai tulosten tallentamisessa koodauksen aikana. Kirjoittamalla teksti-tiedostoon voit myös helposti muokata tiedostoa manuaalisesti.
+### Vaihtoehdot:
+Voit myös käyttää funktioita `write`, `fwrite` tai moderneja lähestymistapoja kuten stream-objekteja C++:ssa.
 
-## Katso myös:
-- [Tiedoston avaaminen kirjoittamista varten C-kielessä](https://www.programiz.com/c-programming/c-file-input-output)
-- [Fopen-funktion dokumentaatio](https://www.cplusplus.com/reference/cstdio/fopen/)
+### Toteutuksen yksityiskohdat:
+C99-standardista alkaen "r+", "w+", ja "a+" moodit mahdollistavat lukemisen ja kirjoittamisen samassa avauksessa. Muista varmistaa tiedoston sulku `fclose`-funktiolla välttääksesi muistivuotoja.
+
+## See Also - Katso Myös:
+- C Standard Library, Input/Output: http://en.cppreference.com/w/c/io
+- Linux Manual page for `fopen(3)`: https://man7.org/linux/man-pages/man3/fopen.3.html
+- C File I/O Guide: https://www.tutorialspoint.com/cprogramming/c_file_io.htm

@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Gleam: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-עבודה עם JSON היא פעולה נפוצה בתכנות, שבה נפעל על נתונים בפורמט טקסטואלי פשוט וקריא. תוכניות וסקריפטים נעיצים לא מתאימים לעבודה עם מידע מסוג זה, ולכן תוכניות המטרה שלהן הינן על נתוני JSON נעיצים לא תואמים שהם נמשכים ממקורות רבים ושונים.
+## What & Why?
+JSON, פורמט להעברת נתונים, פופולרי ביותר. מתכנתים משתמשים בו מכיוון שהוא פשוט, קל לקריאה, ומתממשק בקלות עם שפות תכנות רבות.
 
-## איך לבצע:
-איות וכאלה לפני הסקריפט שלנו תוכנית דמה. הנה כמה דוגמאות עם דגש על הפלט מצוטט כדווח Gleam פקודת:
+## How to:
+כדי לעבוד עם JSON ב-Gleam, קודם תצטרכו להתקין את החבילה `gleam_json`. הנה דוגמא לקוד:
 
-```Gleam
+```gleam
 import gleam/json
+import gleam/map
 
-let json = """
-{
-    "name": "John",
-    "age": 30,
-    "hobbies": ["hiking", "reading"],
-    "address": {
-        "city": "Tel Aviv",
-        "country": "Israel"
-    }
+pub fn main() {
+  let data = map.from_list([
+    ("name", "Dana"),
+    ("age", 32),
+  ])
+  let json = json.from(map.to_dynamic(data))
+  json.encode() // מפורמט ל-JSON
 }
-"""
-
-let parsed_json = json
-    |> json.parse
-expect(parsed_json) |> to_equal(Ok({
-    "name" => "John",
-    "age" => 30,
-    "hobbies" => ["hiking", "reading"],
-    "address" => {
-        "city" => "Tel Aviv",
-        "country" => "Israel"
-    }
-}))
-
-let encoded_json = parsed_json
-    |> json.encode
-expect(encoded_json) |> to_equal(Ok(json))
+```
+פלט דוגמה:
+```json
+{"name": "Dana", "age": 32}
 ```
 
-## Deep Dive:
-על CSV ואלטרנטיבות JSON נמשכים מטורים, כמו גם היסטוריה מוצגת יותר מורכבות עסקיות. פתוח JSON בנוחות! מיש הרבה נתונים של נתונים משתמשים לדעת הנתונים. תוכניות ומערכות המספקות כולם CSV בגרושים ושנעת מחולון בנות כפלט בנוחו JSON.
+## Deep Dive
+JSON (JavaScript Object Notation) נוצר בשנת 2001. האלטרנטיבות כוללות XML ו-YAML, אבל JSON נשאר האופציה המועדפת בזכות פשטותו. כשעובדים עם Gleam, הספריה `gleam_json` מתרגמת מבנים של Gleam ל-JSON ולהפך באופן אוטומטי.
 
-## ראו גם:
-למידע נוסף על Gleam ועבודה עם JSON, מומלץ להסתכל על המקורות הבאים:
-
-- מדריך של Gleam לעבודה עם קבצי JSON: https://gleam.run/book/core-modules-json.html
-- תיעוד רשמי של המודול gleam/json: https://hexdocs.pm/gleam_json/
+## See Also
+- מדריך Gleam: https://gleam.run/book/
+- מסמכים של `gleam_json`: https://hexdocs.pm/gleam_json/
+- הכירו JSON: https://www.json.org/json-en.html

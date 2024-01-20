@@ -1,7 +1,7 @@
 ---
-title:                "撰写测试"
-html_title:           "TypeScript: 撰写测试"
-simple_title:         "撰写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是写测试？为什么程序员要这么做？
+## What & Why? (是什么以及为什么？)
+编写测试是创建测试案例以检查代码正确性的过程。程序员这么做是为了提前发现bug，确保程序行为符合预期，提升代码质量。
 
-写测试是一种软件开发中的关键步骤，它可以帮助程序员检查他们的代码是否正确地实现了所需的功能。写测试是一种保证代码质量的方法，它可以在开发过程中及早发现和修复错误，从而节省开发时间和提高代码可靠性。
+## How to: (如何操作：)
+以下是TypeScript中使用Jest进行单元测试的一个例子：
 
-如何操作：
-
-```
-TypeScript test(name:string){
-  if(name === 'John'){
-    console.log('Hello John!');
-  } else if(name === 'Mary'){
-    console.log('Hello Mary!');
-  } else {
-    console.log('Hello Guest!');
-  }
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
 }
 
-test('John');
-test('Mary');
-test('Tom')
+// sum.test.ts
+import { sum } from './sum';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+运行测试，输出如下：
+```
+PASS ./sum.test.ts
+  ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-输出：
+## Deep Dive (深入探究)
+写测试的历史可以追溯到软件发展的早期阶段。TypeScript出现后，测试框架如Mocha, Jasmine和Jest等逐渐支持TypeScript语法。选择哪个框架，取决于个人喜好与项目需求，但Jest因其易用性和功能性而备受欢迎。编写测试时，应注意遵循AAA（Arrange-Act-Assert）原则，确保测试逻辑清晰。
 
-```
-Hello John!
-Hello Mary!
-Hello Guest!
-```
-
-深入研究：
-
-写测试已经成为现代软件开发过程中的标准步骤。它起源于传统的软件测试方法，在这些方法中，测试是由专门的测试人员在开发完成后进行的。但是，随着软件开发的快速发展，写测试已经成为开发人员的责任，因为他们可以更好地了解自己的代码并更容易地检查和修复错误。
-
-除了手动编写测试用例，还有许多自动化测试工具可用于帮助程序员更快地编写测试。例如，Jest和Mocha是流行的JavaScript测试框架，它们可以帮助程序员编写测试用例并运行它们。此外，许多集成开发环境（IDE）和集成构建工具也提供了写测试的功能，大大简化了测试的工作。
-
-另外，写测试也有助于实现“测试驱动开发”（TDD）的方法。TDD要求程序员先编写测试用例，然后再编写实现代码来满足测试。这种方法可以帮助程序员更好地设计和构建可靠的代码。
-
-相关阅读：
-
-了解更多有关写测试的资料，请参阅以下网站：
-
-- https://jestjs.io/ - Jest测试框架官方网站
-- https://jasmine.github.io/ - Jasmine测试框架官方网站
-- https://www.tutorialspoint.com/typescript/typescript_testing.htm - TypeScript测试教程
+## See Also (另请参阅)
+- Jest官方文档: [Jest](https://jestjs.io/docs/getting-started)
+- 测试实践指南: [Test-Driven Development](https://www.martinfowler.com/bliki/TestDrivenDevelopment.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Ruby: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con YAML è un modo per organizzare e gestire dati in un formato leggibile sia per gli esseri umani che per i computer. I programmatori spesso usano YAML per salvare configurazioni o dati strutturati, e per importare e esportare informazioni da e verso un'applicazione.
+## What & Why?
+YAML è un formato per salvare oggetti dati che sacrifica la verbosità per la leggibilità. I programmatori lo usano per configurazioni, dumping di dati e scambio di messaggi, in quanto è facile da leggere e scrivere umanamente.
 
-## Come fare:
-I codici seguenti mostrano come lavorare con YAML in Ruby utilizzando la gemma "yaml". Assicurati di avere la gemma installata nel tuo progetto Ruby.
+## How to:
+Per lavorare con YAML in Ruby, avrai bisogno della gemma 'yaml'. Ecco un esempio di come convertire un hash Ruby in una stringa YAML e viceversa.
 
 ```Ruby
 require 'yaml'
 
-# Creare un file YAML
-yaml_file = {
-  nome: 'Giulia',
-  cognome: 'Rossi',
-  età: 25
-}
+# Convertiamo un Ruby Hash in una stringa YAML
+data = {name: "Mario Rossi", profession: "Sviluppatore"}
+yaml_string = data.to_yaml
+puts yaml_string
 
-# Salvare il file YAML
-File.open('dati.yaml', 'w') { |file| file.write(yaml_file.to_yaml) }
-
-# Leggere il file YAML
-leggi_file = YAML.load(File.read('dati.yaml'))
-
-puts leggi_file[:nome] # Output: Giulia
-puts leggi_file[:cognome] # Output: Rossi
-puts leggi_file[:età] # Output: 25
+# Convertire una stringa YAML in un Ruby object (Hash)
+yaml_loaded = YAML.load(yaml_string)
+puts yaml_loaded
 ```
 
-## Approfondimento:
-YAML (YAML Ain't Markup Language) è un formato di serializzazione di dati creato nel 2001 da Clark Evans e Ingy döt Net. È stato pensato per essere più semplice e leggibile rispetto ad altri formati come XML e JSON. Alcune alternative a YAML sono JSON, CSV e XML. La gemma "yaml" è inclusa nella libreria standard di Ruby, quindi non è necessario installarla separatamente.
+Output:
+```YAML
+---
+:name: Mario Rossi
+:profession: Sviluppatore
+```
 
-## Vedi anche:
-- [Documentazione YAML](https://yaml.org/) per ulteriori informazioni sul formato YAML.
+```Ruby
+{"name"=>"Mario Rossi", "profession"=>"Sviluppatore"}
+```
+
+## Deep Dive
+YAML, acronimo di "YAML Ain't Markup Language", è stato proposto nel 2001 come alternativa a XML. Leggibile dall'uomo ma anche facilmente parsabile dai computer, YAML trova un equilibrio tra i due. Altre opzioni includono JSON e TOML, ma YAML è spesso preferito in ambienti di sviluppo per la sua semplicità, benché TOML stia guadagnando popolarità in strumenti come Cargo per Rust. Implementare YAML in Ruby è diretto grazie alla gemma 'yaml' che sfrutta 'Psych', il processor YAML incluso di default con Ruby.
+
+## See Also
+- Documentazione YAML ufficiale: [https://yaml.org/](https://yaml.org/)
+- YAML su Wikipedia: [https://it.wikipedia.org/wiki/YAML](https://it.wikipedia.org/wiki/YAML)
+- TOML su GitHub: [https://github.com/toml-lang/toml](https://github.com/toml-lang/toml)

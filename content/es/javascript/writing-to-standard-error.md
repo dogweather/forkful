@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo a la salida de error estándar"
-html_title:           "Javascript: Escribiendo a la salida de error estándar"
-simple_title:         "Escribiendo a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
+Escribir en el error estándar (`stderr`) permite separar los mensajes de error de la salida principal del programa (`stdout`). Los programadores lo utilizan para depurar y reportar errores sin interferir con la salida de datos que se podría estar usando en otro lugar.
 
-Hola a todos los programadores, hoy hablaremos sobre cómo escribir en la "salida de error" en Javascript. Esto se refiere a una forma de imprimir mensajes o información en la consola del navegador de una manera diferenciada de la salida estándar. Los programadores suelen escribir en la salida de error para mostrar mensajes de error o información de depuración que no desea aparecer para el usuario promedio.
+## Cómo hacerlo:
+```javascript
+// Escribir un mensaje de error en stderr
+console.error('Esto es un mensaje de error');
 
-## ¿Cómo hacerlo?
+// Ejemplo con una función para manejar errores
+function funcionQuePuedeFallar() {
+    throw new Error('Algo salió mal');
+}
 
-Veamos un ejemplo rápido de cómo escribir en la salida de error en Javascript:
-
-```Javascript
-console.error("¡Ups! Algo salió mal."); // imprimirá el mensaje de error en la consola del navegador
+try {
+    funcionQuePuedeFallar();
+} catch (error) {
+    console.error('Error capturado:', error);
+}
+```
+Salida de muestra en la consola:
+```
+Esto es un mensaje de error
+Error capturado: Error: Algo salió mal
 ```
 
-En este ejemplo, estamos utilizando el método `.error()` de la consola para imprimir nuestro mensaje en la salida de error. También puedes utilizar otros métodos como `.warn()` para imprimir advertencias o `.info()` para imprimir información de depuración.
+## Análisis Profundo
+Históricamente, `stderr` se utilizó en sistemas Unix para que los errores se imprimieran de manera diferente a la salida estándar. Se puede redirigir en la consola para separar la información. Node.js implementa `process.stderr` como un stream en donde `console.error()` lo utiliza bajo el capó. Una alternativa es escribir directamente al stream usando `process.stderr.write('Mensaje de error\n')`.
 
-```Javascript
-console.warn("¡Cuidado!"); // imprimirá una advertencia en la consola
-console.info("La variable i tiene el valor de " + i); // imprimirá información de depuración en la consola
-```
-
-Ahora, puedes preguntarte por qué deberías usar la salida de error en lugar de simplemente imprimir en la consola de manera regular. La razón principal es que, en algunos escenarios, es importante diferenciar entre los diferentes tipos de mensajes. Por ejemplo, si estás desarrollando una aplicación para usuarios finales, es posible que no quieras que vean los mensajes de error. Pero si sucede algo inesperado, quieres asegurarte de que los mensajes importantes de error se impriman en la salida de error para que puedas detectar y solucionarlos rápidamente.
-
-## Profundizando
-
-La idea de escribir en la salida de error no es algo nuevo en el mundo de la programación. De hecho, proviene de los sistemas operativos Unix y es una práctica común en varios lenguajes de programación. En lugar de imprimir los mensajes en la consola, en Unix, los mensajes se envían a distintos dispositivos, como la salida estándar o la salida de error.
-
-Además de usar el método `.error()` de la consola, también puedes utilizar el objeto `console` para escribir en la salida de error utilizando `process.stderr` en su lugar. Sin embargo, es importante tener en cuenta que esto puede no funcionar en todos los navegadores.
-
-## Ver también
-
-Si te interesa aprender más sobre la salida de error y cómo escribir en ella en otros lenguajes de programación, puedes consultar estos recursos:
-
-- Documentación oficial sobre la consola en MDN: https://developer.mozilla.org/en-US/docs/Web/API/console
-- Artículo sobre la salida de error en Node.js: https://nodejs.org/dist/latest-v10.x/docs/api/console.html#console_console_error_data_args
-- Guía de errores básicos en Javascript: https://www.digitalocean.com/community/tutorials/an-introduction-to-error-handling-in-javascript
+## Ver También
+- Documentación oficial de Node.js para `console.error()`: https://nodejs.org/api/console.html#consoleerror
+- Una guía completa sobre los streams en Node.js, incluyendo `stderr`: https://nodejs.org/api/stream.html
+- Explicación detallada de `stdout` vs. `stderr`: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout

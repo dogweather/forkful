@@ -1,7 +1,7 @@
 ---
-title:                "כתיבה לתקליט התקשרות תקניים"
-html_title:           "Java: כתיבה לתקליט התקשרות תקניים"
-simple_title:         "כתיבה לתקליט התקשרות תקניים"
+title:                "כתיבה לפלט השגיאה הסטנדרטי"
+html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
+simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
+## מה ולמה?
+כתיבה ל-standard error היא אמצעי להפצת הודעות שגיאה או לוגים קריטיים. תכניתנים עושים זאת כדי להפריד בין הפלט הרגיל לבין הודעות שגיאה, ולאפשר ניהול וגישה נוחה יותר.
 
-כתיבה לפלט שגיאה נורמלי היא כתיבה של מידע מהקוד לצד שגיאה כאשר התוכנית מריצה בסביבת Java. כתיבה לפלט שגיאה מאפשרת למתכנת לזהות את המקומות בקוד שעלולים לגרום לשגיאות ולתקן אותם באופן מהיר ויעיל.
-
-# איך לבצע:
-
-כתיבה לפלט שגיאה ב-Java נעשית על ידי השתמשות בפקודת System.err.println() והעברת הנתונים הרצויים לפרמטר כפלט. הנה דוגמא פשוטה:
-
-```Java
-double x = 10.5;
-System.err.println("An error has occurred! The value of x is: " + x);
+## איך לעשות:
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("זוהי הודעה לפלט רגיל (stdout).");
+        System.err.println("זוהי הודעת שגיאה (stderr).");
+    }
+}
 ```
-
 פלט:
-
 ```
-An error has occurred! The value of x is: 10.5
+זוהי הודעה לפלט רגיל (stdout).
+זוהי הודעת שגיאה (stderr).
 ```
 
-ניתן גם להשתמש בפונקציות מתקדמות יותר כגון System.err.print() שמאפשרת להדפיס כל סוג של נתון כפלט.
+## עיון נוסף:
+בעבר, stdout וstderr היו מאוד חשובים בתכנות Unix, שם הפלט הייתה נפרד במפורש משגיאות. אלטרנטיבות יכולות להיות כתיבה לקובץ לוג משלך או שימוש בספריות לוגינג כמו Log4j. ב-Java, `System.err` היא ערוץ פלט סטנדרטי שמייצג את stderr, והיא מופעלת דרך פעולת זרימת פלט (`PrintStream`).
 
-# מעמקים נמוכים:
-
-תהליך זה של כתיבה לפלט שגיאה נוצר בשנות ה-70 כאשר הותקנו מכשירי ניתוח תקינה שיעזרו למתכנתים לזהות ולתקן שגיאות בשורה אחת. בימים אלה, ישנם כלים נוספים שעוזרים למתכנתים ללכת מעבר לפשטות של כתיבה לפלט שגיאה, כגון מעקב כימותרי שמסייע באיתור שגיאות בקוד מורכב.
-
-# ראה גם:
-
-מאמר זה מסכם את השימוש של כתיבה לפלט שגיאה בתוכניות בשפת Java. לקריאה נוספת על הנושא, ניתן להתחיל בלינקים הבאים:
-
-- כתיבה לפלט שגיאה ב-Java: https://www.javatpoint.com/how-to-print-message-to-error-stream-in-java
-- כתיבת פלט שגיאה לסטרים נפרד: https://www.codingame.com/blog/java-stream-to-stderr
-- הבדלים בין כתיבה לפלט שגיאה לפלט רגיל: https://stackoverflow.com/questions/4192173/what-is-the-difference-between-system-out-println-and-system-err-println-in-jav
+## ראה גם:
+- [Java API Documentation for System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Oracle tutorial on I/O streams in Java](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [Log4j – Logging Framework](https://logging.apache.org/log4j/2.x/)

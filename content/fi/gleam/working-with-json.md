@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Gleam: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-JSON on datan tallennus- ja siirtomuoto, jota käytetään usein ohjelmistokehityksessä. Ohjelmoijat käyttävät JSONia helposti luettavan ja muokattavan datan tallentamiseen ja jakamiseen.
+## Mikä & Miksi?
+JSON on dataformaatti tiedon tallennukseen ja vaihtoon. Käytämme sitä koska se on kevyt, lukee ihmisen silmälle ja koneille, ja se on yhteensopiva lähes kaikkien ohjelmointikielten kanssa.
 
-## Kuinka:
-Gleamin avulla voit luoda ja lukea JSON-muotoista dataa käyttämällä ```Gleam.Json``` -moduulia. Voit luoda JSON-merkkijonoja käyttämällä ```Gleam.Json.encode``` -funktiota ja lukea JSON-tietoja käyttämällä ```Gleam.Json.decode``` -funktiota. Esimerkiksi:
-```Gleam
-let data = {name: "Tommi", age: 25}
-let json_string = Gleam.Json.encode(data)
-// Tulostaa: {"name":"Tommi","age":25}
-io.println(json_string)
-let decoded_data = Gleam.Json.decode(json_string)
-// Tulostaa: {Ok,{"name":"Tommi","age":25}}
-io.println(show(decoded_data))
+## Miten:
+```gleam
+import gleam/should
+import gleam/json
+
+pub fn example_json_usage() {
+  // Luodaan JSON-olio
+  let data = json.object([
+    tuple("nimi", json.string("Matti")),
+    tuple("ikä", json.int(30)),
+    tuple("on_koodaaja", json.bool(true)),
+  ])
+
+  // Muunnetaan JSON-olio merkkijonoksi
+  let json_string = json.encode(data)
+
+  // Tulosta JSON-merkkijonon
+  should.equal(json_string, Ok("{\"nimi\":\"Matti\",\"ikä\":30,\"on_koodaaja\":true}"))
+  
+  // Parsi JSON-merkkijono takaisin JSON-olioksi
+  let parsed_data = json.decode(json_string)
+  should.equal(parsed_data, Ok(data))
+}
 ```
 
-## Syvällinen sukellus:
-JSON, lyhenne sanoista JavaScript Object Notation, kehitettiin alunperin JavaScript-kielen yhteyteen, mutta siitä on tullut suosittu dataformaatti myös muiden ohjelmointikielten keskuudessa. JSON koostuu avain-arvo pareista, jotka ovat järjestyksessä oleva lista avaimia ja niihin liittyviä arvoja. Vaikka JSON on suosittu, on olemassa myös muita vaihtoehtoja datan tallentamiseen ja siirtämiseen, kuten XML tai CSV. Gleam tukee myös näiden formaattien käsittelyä useiden moduulien avulla, kuten ```Gleam.Xml``` ja ```Gleam.Csv```.
+## Syväkatsaus
+JSON on kehitetty alun perin JavaScript-ohjelmointikielen osana, mutta se on irrotettu ja standardoitu itsenäisenä datamuotona. Vaihtoehtoisia formaatteja ovat mm. XML ja YAML. Gleamissa JSONin käsittely perustuu `gleam/json`-kirjastoon, joka tarjoaa tyypitetyn käyttöliittymän JSONin enkoodaamiseen ja dekoodaamiseen.
 
-## Katso myös:
-- Gleamin virallinen dokumentaatio: https://gleam.run
-- JSON-esittely W3 Schools-sivustolla: https://www.w3schools.com/js/js_json_intro.asp
-- Vertailu JSONin ja muiden formaattien välillä: https://www.json.org/json-fi.html
+## Katso Myös
+- JSONin virallinen määrittely: [JSON.org](http://json.org/)
+- Gleam kielen kotisivu: [Gleam-lang](https://gleam.run/)

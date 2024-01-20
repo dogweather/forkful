@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "C++ recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "C++"
 category:             "C++"
@@ -11,47 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Text files are used for storing and retrieving data in a plain text format. Unlike other file formats, they can be easily read and edited by both humans and computers. Programmers often use text files to store configurations, data for their applications, and other important information.
+Writing a text file in C++ means creating or modifying a file to store textual data. Programmers do it to persist data like configurations, logs, or user-generated content.
 
 ## How to:
+Below is a simple C++ program that creates a text file and writes "Hello, World!" to it.
 
-To write a text file in C++, you will need to use the standard library function `ofstream`, which stands for output file stream. Here is a simple code example:
-
-```C++
-#include <iostream>
+```c++
 #include <fstream>
+#include <iostream>
 
 int main() {
-    // Open a text file named "example.txt" to write to
-    std::ofstream file("example.txt");
+    std::ofstream outfile("hello.txt");
 
-    // Write a line of text to the file
-    file << "This is an example text file.";
+    if (outfile.is_open()) {
+        outfile << "Hello, World!";
+        outfile.close();
+        std::cout << "File written successfully\n";
+    } else {
+        std::cout << "Error opening file\n";
+    }
 
-    // Close the file
-    file.close();
-    
     return 0;
 }
 ```
-
-And here is the output in the "example.txt" file:
-
+Sample output:
 ```
-This is an example text file.
+File written successfully
 ```
 
-## Deep Dive:
+## Deep Dive
+In C++, files are handled by the `<fstream>` header, which provides `std::ofstream` for writing, `std::ifstream` for reading, and `std::fstream` for both. Historically, file I/O in C++ evolved from the C `FILE` structure and related functions. Alternatives to `fstream` include platform-specific APIs, third-party libraries, or modern C++ proposals like filesystem library enhancements. When writing files, handle errors and ensure resources are released properly, typically using RAII patterns available in modern C++.
 
-Historically, text files have been a common way of storing and sharing data since the early days of computing. Before the introduction of fancy database systems and complex file formats, a plain text file was often the go-to choice. It also played a significant role in the development of the internet as it allowed for easy sharing of information across different systems.
-
-While there are other ways to store and organize data, using text files has its benefits. They are lightweight, easy to read and write, and do not require any special software to open. In fact, you can even use a simple text editor to view and modify a text file.
-
-However, as with everything else in programming, there are alternatives to writing a text file. You can also use binary files, which have a more specific format and are optimized for storage and retrieval of data. Additionally, there are libraries and frameworks available that can make the process of writing and reading text files easier for the programmer.
-
-The implementation details of writing a text file may vary depending on the operating system and the specific programming language being used. However, the basic principles remain the same. You open a file, write or read from it, and then close it. It is essential to always close the file after you are finished with it to prevent any data loss or corruption.
-
-## See Also:
-
-- [C++ ofstream documentation](https://www.cplusplus.com/reference/fstream/ofstream/)
+## See Also
+- C++ File I/O: http://www.cplusplus.com/doc/tutorial/files/
+- C++ Reference (ofstream): https://en.cppreference.com/w/cpp/io/basic_ofstream
+- C++ Filesystem Library: https://en.cppreference.com/w/cpp/filesystem

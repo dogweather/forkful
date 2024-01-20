@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Java: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Kirjoittaminen standardierroriin on tapa tulostaa virheitä ja antaa tärkeitä tietoja koodin suorituksen aikana. Tämä auttaa ohjelmoijaa korjaamaan ja muokkaamaan koodiaan tehokkaasti.
+## What & Why?
+"Heitä ja miksi?"
 
-## Kuinka tehdä se:
-```Java
-System.err.println("Virheilmoitus tulee tähän"); 
-```
+Java-sovelluksissa virheenkirjoitus (`System.err`) on tapa ohjata virheviestit oikeaan kanavaan. Ohjelmoijat käyttävät sitä erottaakseen tavallisen tulosteen odottamattomista virheistä ja debug-viesteistä.
 
-Esimerkiksi, jos haluat tulostaa virheilmoituksen, että luku ei voi olla negatiivinen, voit käyttää seuraavaa koodia:
+## How to:
+"Kuinka tehdä:"
 
-```Java
-if (luku < 0) {
-    System.err.println("Luku ei voi olla negatiivinen!");
+Koodissa käytetään `System.err.println()` virheilmoitusten näyttämiseen:
+
+```java
+public class ErrorLogging {
+
+    public static void main(String[] args) {
+        System.out.println("Tavallinen viesti"); // Normaali tulostus
+        System.err.println("Virheilmoitus");     // Virhetulostus
+    }
 }
 ```
 
-Tämä tulostaisi virheilmoituksen konsoliin ja auttaisi sinua tunnistamaan ja korjaamaan ongelman.
+Tulostuu konsoliin näin:
 
-## Syvällinen sukellus:
-Kirjoittaminen standardierroriin on osa ohjelman suoritusympäristöä, joka on vastuussa virheiden ilmoittamisesta. Tämä tapa eroaa standarditulostuksesta, joka näytetään konsolissa. On myös muita tapoja ilmoittaa virheitä, kuten käyttämällä loggausta tai poikkeuksia.
+```
+Tavallinen viesti
+Virheilmoitus
+```
 
-## Katso myös:
-- [Java System-luokka] (https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Java Development Kit (JDK)] (https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)
+## Deep Dive
+"Sukellus syvyyksiin"
+
+Historiallisesti `System.err` on ollut osa Javan standardikirjastoa versiosta 1.0 lähtien. Vaihtoehtoina voi käyttää lokituskehyksiä (esim. SLF4J tai Log4j), jotka tarjoavat lisäominaisuuksia kuten lokitiedostot ja eri tasoilla lokittamisen. `System.err` toteutetaan `PrintStream`-objektina, jota voi vaihtaa omiin tarkoituksiin `System.setErr()`-metodilla.
+
+## See Also
+"Katso myös"
+
+- Oracle Java dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
+- SLF4J-kehys: http://www.slf4j.org/
+- Log4j: https://logging.apache.org/log4j/2.x/

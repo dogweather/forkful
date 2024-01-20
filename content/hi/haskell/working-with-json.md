@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
-html_title:           "Haskell: कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,29 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-JSON का साथ देना शब्दांतरित करने के लायक है, यह इस्पेल्रश्यन्स के रूप में लोगों के डेटा बदलने की आसान प्रक्रिया है। कई प्रोग्रामर अपनी एप्लिकेशनों में डेटा को संस्करण और समझने के लिए इसका उपयोग करते हैं।
+
+JSON यानी JavaScript Object Notation, एक आम डेटा-फॉर्मेट है, जिसका इस्तेमाल सर्वर और वेब एप्लीकेशंस के बीच डेटा एक्सचेंज के लिए होता है. प्रोग्रामर JSON का इस्तेमाल इसलिए करते हैं क्योंकि यह हल्का, समझने में आसान, और भाषा-निरपेक्ष है.
 
 ## कैसे करें:
+
 ```Haskell
-data Person = Person String Int       -- data type of Person with fields Name (String) and Age (Int)
+{-# LANGUAGE OverloadedStrings #-}
 
-instance FromJSON Person where        -- implementation FromJSON type class
-  parseJSON (Object v) = Person <$>   -- get Person value
-                         v .: "name" <*>
-                         v .: "age"   -- parse name and age fields
-  parseJSON _ = empty                 -- error if not a JSON object
+import Data.Aeson
+import qualified Data.ByteString.Lazy as B
 
-decodePerson :: ByteString -> Person  -- decode function for Person type
-decodePerson = fromMaybe (Person "" 0) . decode  -- performs actual decoding
+-- JSON डेटा का एक उदाहरण
+jsonInput = "{\"name\": \"Ajay\", \"age\": 30}"
 
--- sample input and output
-sampleInput :: ByteString  -- {"name": "John", "age": 25}
-sampleOutput :: Person     -- Person "John" 25
-sampleOutput = decodePerson sampleInput
+-- हमारे Haskell ऑब्जेक्ट के लिए एक डेटा टाइप
+data Person = Person { name :: String, age :: Int } deriving Show
+
+-- JSON से Haskell टाइप में कन्वर्ट करने के लिए instance बना रहे हैं
+instance FromJSON Person where
+  parseJSON = withObject "Person" $ \v -> Person
+      <$> v .: "name"
+      <*> v .: "age"
+
+-- JSON को पार्स करने का फंक्शन
+parseJson :: B.ByteString -> Maybe Person
+parseJson jsonData = decode jsonData
+
+-- मेन फंक्शन
+main :: IO ()
+main = do
+  let decoded = parseJson (B.pack jsonInput)
+  print decoded
 ```
 
-## गहराई में जाएँ:
-JSON का विकास दो शब्दों से होता है - "JavaScript" और "Object Notation"। यह अमेरिकी कम्पनी ने व्हाइटस्पेस के द्वारा नौ शब्दों को उत्पादित किया था। JSON को एक आसान बनाने के लिए, यह उन्हें समान विधि में दिखाता है जो XML इस्तेमाल करते हैं। उन्नियोजित खाली स्थान और खाली स्थान घर्षण के कारण, XML के अनुप्रयोग कई अजमा से अधिक हो सकते हैं। इस स्थिति में, JSON समीना बहुत अधिक कुशलता और कमपीक्षय फाइल आकार में सबसे अधिक उपयोग में आता है।
+सैंपल आउटपुट:
+```
+Just (Person {name = "Ajay", age = 30})
+```
 
-## इसके अलावा देखें:
-[एमएस डॉस](https://msdn.microsoft.com/en-us/library/system.json.jsonobject.aspx), [जावा डॉस](https://docs.oracle.com/javaee/7/api/javax/json/JsonObject.html), [पायथन डॉस](https://docs.python.org/3/library/json.html)। और भी अनेक उदाहरण डॉसियज वाले हैं।
+## गहराई में जानकारी:
+
+JSON, 2001 से डेटा फॉर्मेट के रूप में इस्तेमाल हो रहा है और Douglas Crockford द्वारा पॉपुलर बनाया गया. इसके विकल्प के रूप में XML और YAML जैसे फॉर्मेट्स भी हैं, पर JSON इनसे अधिक संक्षिप्त और तेज है. Haskell में JSON पर काम के लिए `aeson` पैकेज का इस्तेमाल किया जाता है, जो अन्न्य प्रोग्रामिंग भाषाओं के JSON लाइब्रेरीज़ की तरह ही काम करता है.
+
+## इसे भी देखें:
+
+- JSON के अधिक जानकारी के लिए: [JSON.org](http://json.org/)
+- `aeson` पैकेज डॉक्युमेंटेशन: [Aeson Hackage](https://hackage.haskell.org/package/aeson)
+- Haskell `aeson` ट्यूटोरियल: [Aeson Tutorial](https://artyom.me/aeson)

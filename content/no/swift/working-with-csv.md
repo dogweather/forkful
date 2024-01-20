@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med csv"
-html_title:           "Swift: Arbeide med csv"
-simple_title:         "Arbeide med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-CSV gjør det enklere for programmerere å lagre og håndtere store mengder data, spesielt i tabellariske formater. Dette gjøres ved å lagre dataene i tekstfiler med komma-separerte verdier. CSV bruker lite plass og er enkelt å lese og manipulere. Det er derfor et populært format blant programmerere for lagring og utveksling av data.
+## What & Why?
+CSV står for "comma-separated values". Det brukes for å lagre og dele tabelldata fordi det er enkelt og universelt kompatibelt.
 
-## Hva & Hvorfor?
-
-CSV er et akronym for "Comma-Separated Values", som på norsk betyr "komma-separerte verdier". Det er et standardisert filformat som brukes til å lagre og organisere data. Programmerere bruker CSV fordi det er enkelt å lese og skrive dataene, og det tar lite plass sammenlignet med andre formater.
-
-## Slik gjør du det:
+## How to:
+Hvordan lese en CSV-fil i Swift:
 
 ```Swift
-let data = "Navn, Alder, Jobb\nPer, 25, Utvikler\nKari, 30, Designer"
-let lines = data.split(separator: "\n")
-// Deler opp dataen i hver linje basert på linjeskift.
-for line in lines {
-    let items = line.split(separator: ", ")
-    // Deler opp linjen basert på komma og plasserer hver verdi i en egen array.
-    print("Navn: \(items[0]) | Alder: \(items[1]) | Jobb: \(items[2])")
-    // Printer ut hver verdi med riktig format og separator.
+import Foundation
+
+// Anta at du har en streng som representerer en CSV-fils innhold
+let csvData = """
+name,age,city
+Alice,30,New York
+Bob,25,Los Angeles
+"""
+
+// Splitt hver linje og parse innholdet
+let rows = csvData.components(separatedBy: "\n")
+var header: [String]?
+var users = [[String: String]]()
+
+for (index, row) in rows.enumerated() {
+    let columns = row.components(separatedBy: ",")
+    if index == 0 {
+        header = columns
+    } else {
+        var userData = [String: String]()
+        for (hIndex, column) in columns.enumerated() {
+            if let title = header?[hIndex] {
+                userData[title] = column
+            }
+        }
+        users.append(userData)
+    }
 }
+
+print(users)
+```
+Sample output:
+```
+[["name": "Alice", "age": "30", "city": "New York"], ["name": "Bob", "age": "25", "city": "Los Angeles"]]
 ```
 
-Output:
-```
-Navn: Per | Alder: 25 | Jobb: Utvikler
-Navn: Kari | Alder: 30 | Jobb: Designer
-```
+## Deep Dive
+CSV-formatet har vært i bruk siden 1970-tallet og er fremdeles populært på grunn av dets enkelhet. Alternativer til CSV inkluderer JSON og XML, men disse kan være overkill for enkle, tabulære data. Implementasjonen i Swift er rett fram, men vær obs på potensielle komplikasjoner som felt med komma, nye linjer eller tilpassede tegnsett.
 
-## Dypdykk:
-
-CSV-formatet ble opprinnelig utviklet for regnearkprogrammer som Excel, og har blitt brukt siden 1970-tallet. Det finnes også alternative formater som XML og JSON, men CSV er fortsatt det foretrukne valget for mange programmerere på grunn av dets enkelhet og effektivitet. Implementasjonen av CSV varierer mellom forskjellige programmeringsspråk, men de fleste har standardfunksjoner for å lese og skrive CSV-data.
-
-## Se også:
-
-- [Swift Guide: Lesing og skriving av CSV](https://medium.com/@khushwanttanwar/read-write-csv-file-in-swift-3f150072c0ed)
-- [CSV i Nettleseren](https://www.npmjs.com/package/csv)
+## See Also
+- Swift Programmeringsspråk Dokumentasjon: [swift.org/documentation](https://swift.org/documentation/)
+- CSV Parsing bibliotek for Swift – SwiftCSV: [github.com/swiftcsv/SwiftCSV](https://github.com/swiftcsv/SwiftCSV)

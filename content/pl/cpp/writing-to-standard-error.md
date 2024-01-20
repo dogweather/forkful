@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "C++: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C++"
 category:             "C++"
@@ -10,18 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wypisywanie do standardowego błędu jest techniką używaną przez programistów, kiedy chcą wysłać komunikat o błędzie lub ostrzeżenie do strumienia wyjściowego, takiego jak konsola. Jest to przydatne w celu informowania użytkownika o problemach w programie i ułatwia ich analizę.
+## What & Why? (Co i Dlaczego?)
+Pisanie do standardowego błędu (stderr) umożliwia separację normalnych danych wyjściowych od komunikatów o błędach. Programiści robią to, by łatwiej zarządzać wynikami programów i diagnozować problemy.
 
-## Jak to zrobić:
-Aby wypisać do standardowego błędu w C++, należy użyć funkcji `std::cerr` i przekazać do niej wiadomość lub zmienną, którą chcemy wypisać. Na przykład:
+## How to (Jak to zrobić):
 ```C++
-std::cerr << "Błąd - brak dostępu do pliku!" << std::endl;
+#include <iostream>
+
+int main() {
+    // Writing to standard output
+    std::cout << "Hello, World!
+
+    // Writing to standard error
+    std::cerr << "Warning: Something went wrong!
+
+    return 0;
+}
 ```
-To wypisze komunikat `"Błąd - brak dostępu do pliku!"` do standardowego błędu.
 
-## Wnikliwy Przegląd:
-Wypisywanie do standardowego błędu jest częstą praktyką w programowaniu, ponieważ jest jednym z prostszych sposobów informowania użytkownika o błędach w programie. Alternatywnie, można także użyć funkcji `std::cout`, ale wtedy wiadomość zostanie wypisana do standardowego wyjścia, co może być niepożądane. Implementacja wypisywania do standardowego błędu jest uzależniona od systemu operacyjnego, ale w większości przypadków jest to zwykłe przekazywanie informacji do odpowiedniego strumienia wyjściowego.
+Sample output:
+```
+Hello, World!
+Warning: Something went wrong!
+```
 
-## Zobacz także:
-- [Dokumentacja C++ na temat strumieni wyjściowych](https://en.cppreference.com/w/cpp/io)
+## Deep Dive (Wgłębiając się):
+- Historically, stderr was created to allow error messages to be handled separately, especially when stdout is redirected to a file or another output stream.
+- Alternatives to writing to stderr include logging frameworks or custom error handling mechanisms that offer more control and options.
+- In C++, `std::cerr` is an instance of `std::ostream` and is connected to the standard error stream by default. Unlike `std::cout`, `std::cerr` is unbuffered, meaning it flushes the output immediately.
+
+## See Also (Zobacz także):
+- C++ Reference for I/O library: https://en.cppreference.com/w/cpp/io
+- Effective logging practices: https://www.fluentd.org/guides/recipes/structured-logging
+- Understanding Unix/Linux I/O streams: https://www.tldp.org/LDP/lpg/node11.html

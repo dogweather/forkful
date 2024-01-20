@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Elm recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,34 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing to standard error in Elm allows programmers to display error messages or debug information to a designated console instead of the regular output. This helps developers to easily identify and troubleshoot issues while their code is running.
+Writing to standard error (stderr) is outputting error messages and diagnostics separate from regular output. Programmers do it to debug and monitor applications without mixing error messages with standard output (stdout).
 
 ## How to:
-
-To write to standard error in Elm, you can use the `Debug.crash` function. Here's an example:
+Elm runs on the web, and browsers don't differentiate between stdout and stderr like command-line interfaces do. However, you can simulate stderr using JavaScript interop through ports. Here's how to set it up:
 
 ```Elm
-import Debug exposing (crash)
+port module Main exposing (..)
 
-sayHello : String -> String
-sayHello name =
-    if String.isEmpty name then
-        crash "Name cannot be empty!"
-    else
-        "Hello, " ++ name ++ "!"
+import Html
 
-sayHello ""
+-- Define a port to send error messages to JavaScript
+port stderr : String -> Cmd msg
+
+-- Function to simulate writing to stderr
+writeToStdErr : String -> Cmd msg
+writeToStdErr message =
+    stderr message
+
+main =
+    writeToStdErr "Error: Something went wrong"
+    |> Html.programWithFlags { init = \_ -> ((), Cmd.none), update = \_ _ -> ((), Cmd.none), view = \_ -> Html.text "", subscriptions = \_ -> Sub.none }
 ```
 
-The above code will write the error message "Name cannot be empty!" to the console instead of producing a regular output.
+And the corresponding JavaScript:
 
-## Deep Dive:
+```JavaScript
+var app = Elm.Main.init();
 
-In the early days of programming, developers used to print error messages and debug information directly to the output stream, which made it difficult to distinguish them from the regular output. Writing to standard error was introduced as a way to separate these messages and make debugging easier.
+// Listen for errors on the 'stderr' port and log them to the console as errors
+app.ports.stderr.subscribe(function(message) {
+    console.error(message);
+});
+```
 
-In Elm, the `Debug.crash` function is the only way to write to standard error. Other programming languages may have multiple options for writing to this stream, such as `System.err` in Java or `Console.error` in JavaScript.
+Sample output in the browser console:
 
-## See Also:
+```
+Error: Something went wrong
+```
 
-- [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+## Deep Dive
+Historically, stderr is a Unix concept where output streams are categorized for better process control and automation. Elm, being primarily a frontend language, doesn't have built-in support for this concept since web applications typically handle errors within the UI or via network operations, not through a terminal. Alternatives for debugging in Elm include using the Elm Debugger, which visually presents the state of your application. Behind the ports, Elm's JavaScript interop constructs messages that JavaScript subscribes to, essentially bridging the gap between Elm and traditional stderr.
+
+## See Also
+- Elm's official guide on ports: https://guide.elm-lang.org/interop/ports.html
+- Elm Debugger: https://guide.elm-lang.org/effects/debugging.html
+- Writing cross-platform stdout and stderr in Node.js: https://nodejs.org/api/console.html

@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml进行编程"
-html_title:           "C: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是YAML以及为什么程序员会使用它？
-YAML是一种人类可读的数据序列化格式，常用于程序员之间交流数据信息。它的语法简洁易读，使得程序员能够轻松解析和创建数据结构。很多程序员选择使用YAML是因为它的可读性和可维护性。
+## What & Why? (是什么？为什么？)
+YAML是一种常用于配置文件的数据序列化格式。程序员使用它因为它易于阅读和理解，同时也可以轻松地被计算机解析。
 
-如何使用YAML：
+## How to: (怎么做？)
+C语言处理YAML需要借助第三方库，比如`libyaml`。下面是简单的示例，展示如何使用它来读取YAML文件。
+
 ```C
-#include <stdio.h>
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(void) {
-    yaml_document_t document;
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "r");
     yaml_parser_t parser;
+    yaml_event_t event;
+
+    if (!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize YAML parser!", stderr);
+    if (fh == NULL)
+        fputs("Failed to open file!", stderr);
     
-    yaml_parser_initialize(&parser);
-    yaml_parser_set_input_file(&parser, "example.yaml");
-    
-    if (!yaml_parser_load(&parser, &document)) {
-        fprintf(stderr, "Failed to parse YAML file.");
-        return EXIT_FAILURE;
+    yaml_parser_set_input_file(&parser, fh);
+
+    // 读取事件直到文件末尾
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
+
+        // 处理事件类型
+        switch (event.type) {
+        case YAML_STREAM_START_EVENT:
+            puts("Start of YAML Stream");
+            break;
+        case YAML_STREAM_END_EVENT:
+            puts("End of YAML Stream");
+            break;
+        // 实现更多事件处理...
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
     }
     
-    // 从document中获取数据结构
-    
-    yaml_document_delete(&document);
     yaml_parser_delete(&parser);
-    return EXIT_SUCCESS;    
+    fclose(fh);
+}
+
+int main() {
+    const char *filename = "example.yaml";
+    process_yaml_file(filename);
+    return EXIT_SUCCESS;
 }
 ```
 
-深入了解：
-YAML最初是由Clark Evans开发的，作为Tom Preston-Werner的特殊发行版的一部分。它在面向对象的世界中受欢迎，因为它的易读性和可维护性使得数据结构更容易创建和修改。在程序员社区中，YAML常被用于存储配置信息和交换数据。其他类似的格式包括JSON和XML。
+运行这段代码，假设`example.yaml`格式正确，你会看到输出：
+```
+Start of YAML Stream
+End of YAML Stream
+```
 
-其他推荐阅读：
-- [YAML官方网站](https://yaml.org/)
-- [YAML规范说明](https://yaml.org/spec/)
-- [YAML实践指南](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+## Deep Dive (深入探究)
+YAML诞生于2001年，目标是比XML更简洁。除了`libyaml`，还有其他库如`yaml-cpp`。处理YAML时，需要考虑内存管理和误差处理。此外，YAML十分灵活，能表示复杂的数据结构。
 
-没有结论：
-如此见闻，你现在已经初步了解了YAML，并可以慢慢尝试在你的项目中使用它。更多信息和资源可以在以上链接中找到。祝编程愉快！
+## See Also (另见)
+- YAML官方网站: [https://yaml.org](https://yaml.org)
+- libyaml库: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)
+- yaml-cpp库: [https://github.com/jbeder/yaml-cpp](https://github.com/jbeder/yaml-cpp)

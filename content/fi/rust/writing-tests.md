@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Rust: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## What & Why?
+Testaus on koodin automaattista tarkastelua varmistamaan sen toimivuus odotetulla tavalla. Testit tunnistavat virheet aikaisin ja auttavat ylläpitämään koodin laatua projektin kasvaessa.
 
-Testien kirjoittaminen on yksinkertaisesti prosessi, jossa testataan ohjelmiston toimivuutta ja havaitaan mahdollisia virheitä. Ohjelmoijat tekevät sitä varmistaakseen, että heidän koodinsa toimii oikein ja estääkseen virheitä ja bugeja, jotka voivat aiheuttaa ongelmia käyttäjille.
-
-# Miten:
+## How to:
+Rustissa moduulitestiä kirjoitetaan `#[cfg(test)]` -attribuutilla ja `#[test]`-annotaatiolla. Alla on esimerkki yksinkertaisesta testistä.
 
 ```Rust
-fn sum(x: i32, y: i32) -> i32 {
-    x + y
-}
-
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
-    fn test_sum() {
-        assert_eq!(sum(2, 2), 4);
+    fn se_toimii() {
+        assert_eq!(2 + 2, 4);
     }
 }
 ```
 
-## Syväsukellus
+Aja testit käskyllä: `cargo test`
 
-### Historiallinen konteksti
-Testaaminen on ollut osa ohjelmistokehitystä jo pitkään. Aikaisemmin testejä tehtiin manuaalisesti, mutta nykyään testaamiseen käytetään erilaisia ​​automaattisia työkaluja, kuten Rustin sisäänrakennettua testikehystä.
+Esimerkkituloste:
 
-### Vaihtoehtoinen lähestymistapa
-Vaikka on olemassa muita testausmenetelmiä, kuten integraatio- ja hyväksyntätestaus, yksikkötestaus on edelleen tärkeä osa ohjelmistokehitystä. Se auttaa ohjelmoijia tarkistamaan funktionaalisen logiikan pienissä yksiköissä ja vähentää mahdollisten virheiden määrää.
+```
+running 1 test
+test tests::se_toimii ... ok
 
-### Implementaation yksityiskohdat
-Rustin testikehys käyttää assert-makroja tarkistamaan, että odotetut tulokset vastaavat todellisia tuloksia. Testit voidaan myös suorittaa useissa ympäristöissä, kuten debug- ja release-tilassa, mikä auttaa havaitsemaan mahdollisia ongelmia.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
 
-# Katso myös:
+## Deep Dive
+Testaus on tärkeä osa ohjelmistokehitystä. Rust alkoi tukea moduulitestejä varhaisessa vaiheessa, inspiroituneena muista kielistä, kuten Ruby'n RSpec:stä. Vaihtoehtoina ovat integraatiotestit ja ulkopuolisten testiframeworkejen, kuten Criterion, käyttö suorituskykytestaukseen. Rust testaa oletuksena rinnakkaistetusti, mutta rinnakkaistusta voi säätää tai kytkeä pois päälle.
 
-- Rustin testausdokumentaatio: [https://doc.rust-lang.org/book/ch11-00-testing.html](https://doc.rust-lang.org/book/ch11-00-testing.html)
+## See Also
+Rustin virallinen testausdokumentaatio: [The Rust Programming Language - Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+Crates.io testausframeworkit: [Crates.io - Testing](https://crates.io/categories/development-tools::testing)

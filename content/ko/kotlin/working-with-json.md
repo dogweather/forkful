@@ -1,7 +1,7 @@
 ---
-title:                "Json으로 작업하기"
-html_title:           "Kotlin: Json으로 작업하기"
-simple_title:         "Json으로 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JSON 작업하기와 그 이유
-JSON(JavaScript Object Notation)은 자바스크립트에서 데이터를 교환하기 위해 널리 사용되는 형식입니다. 프로그래머들은 JSON을 사용하여 서로 다른 시스템 간에 데이터를 전송하고, 저장하고, 읽을 수 있습니다.
+## What & Why?
+JSON은 데이터 교환 포맷입니다. 프로그래머들이 데이터 저장, 구조화, 서버와 클라이언트 간 통신을 쉽게 하기 위해 JSON을 사용합니다.
 
-# 사용 방법:
-- JSON 파일 작성하기:
-```
-Kotlin val json = """{ 
-    "name": "John", 
-    "age": 30, 
-    "city": "Seoul"
-}"""
-```
-- JSON 파싱하기:
-```
-Kotlin val name = json.getString("name") 
-val age = Jason.getInt("age") 
-val city = Jason.getString("city")
-```
-- 코드에서 JSON 사용하기:
-```
-Kotlin val obj = JsonObject() 
-obj.addProperty("name", "Jane") 
-obj.addProperty("age", 25) 
-val jsonStr = obj.toString()
-```
-- 샘플 출력:
-```
-{
-    "name": "Jane", 
-    "age": 25
+## How to:
+Kotlin에서 JSON 다루기 위해 `kotlinx.serialization` 라이브러리를 사용합니다. 아래 예제에서는 JSON 객체를 파싱하는 방법을 보여줍니다.
+
+```Kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun parseJson(jsonString: String): User {
+    val json = Json { ignoreUnknownKeys = true }
+    return json.decodeFromString(User.serializer(), jsonString)
+}
+
+fun main() {
+    val jsonString = """{"name":"John", "age":30}"""
+    val user = parseJson(jsonString)
+    println(user)
 }
 ```
+출력:
+```
+User(name=John, age=30)
+```
 
-# 딥 다이브:
-- 역사적 맥락: JSON은 2002년 도우온 크록포드에 의해 최초로 개발되었습니다. 원래는 자바스크립트에서 사용하기 위해 만들어졌지만, 이제는 많은 언어에서 지원되고 있습니다.
-- 대안: XML과 같은 다른 데이터 형식도 있지만, JSON은 구문이 간단하고 더 가벼우며, 널리 사용되기 때문에 더 인기가 있습니다.
-- 구현 세부사항: Kotlin에서는 내장된 JSONObject 및 JSONArray 클래스를 사용하여 JSON 데이터를 생성하고 해석할 수 있습니다.
+## Deep Dive
+JSON, JavaScript Object Notation의 줄임말로, 경량 데이터 교환 포맷입니다. 2001년에 더글라스 크록포드(Douglas Crockford)가 제안했습니다. XML, YAML 같은 대안이 있지만, JSON은 읽기 쉽고 모든 주요 프로그래밍 언어에서 널리 지원됩니다. Kotlin에서는 `kotlinx.serialization`를 포함한 여러 라이브러리가 JSON 파싱 및 직렬화를 지원합니다.
 
-# 관련 자료:
-- [JSON 공식 사이트](https://www.json.org/)
-- [Kotlin에서 JSON 다루기](https://www.raywenderlich.com/367-kotlin-json-tutorial-getting-started)
+## See Also
+- Kotlin Serialization 공식 문서: [https://kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
+- JSON 공식 사이트: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- `kotlinx.serialization` GitHub 페이지: [https://github.com/Kotlin/kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "C: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao programmatori! Oggi parleremo di YAML, un formato di dati strutturato che molti di voi potrebbero aver incontrato durante il loro lavoro quotidiano. Ma cosa è YAML esattamente e perché i programmatori lo utilizzano? Continua a leggere per scoprirlo!
+## Che cosa & Perché?
+YAML è un formato per strutturare dati, facile da scrivere e leggere per gli umani. I programmatori lo usano per configurazioni, file di dati e in applicazioni che richiedono serializzazione/deserializzazione di dati complessi.
 
-## Che cos'è e perché usarlo?
+## Come Fare:
+C non ha supporto nativo per YAML, quindi utilizzeremo la libreria `libyaml` per esempi di parsing/scrivitura yaml. 
 
-YAML, acronimo di "YAML Ain't Markup Language" (YAML non è un linguaggio di markup), è un formato di dati strutturato utilizzato per rappresentare informazioni in modo leggibile sia per l'uomo che per la macchina. È utilizzato principalmente per la configurazione di applicazioni e servizi, poiché è più facile da leggere rispetto ad altri formati come XML o JSON.
+Esempio di Parsing YAML in C:
 
-I programmatori usano YAML perché è semplice e intuitivo da utilizzare, garantendo una maggiore produttività e facilitando la manutenzione del codice. Inoltre, grazie alla sua natura basata su testo, è interoperabile con diversi linguaggi di programmazione.
-
-## Come usarlo:
-
-Per illustrare come funziona YAML, ecco un esempio di codice C:
-
-```
+```c
 #include <stdio.h>
 #include <yaml.h>
 
 int main() {
-    // creare un nodo YAML
-    yaml_document_t document;
-    yaml_node_t *node = yaml_document_add_scalar(&document, NULL, "hello world!");
+    FILE *fh = fopen("config.yaml", "r");
+    yaml_parser_t parser;
+    yaml_event_t event;
 
-    // stampare il contenuto del nodo
-    yaml_emitter_t emitter;
-    yaml_emitter_initialize(&emitter);
-    yaml_emitter_set_output_file(&emitter, stdout);
-    yaml_emitter_dump(&emitter, &document);
-    yaml_emitter_delete(&emitter);
+    yaml_parser_initialize(&parser);
+    yaml_parser_set_input_file(&parser, fh);
 
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event)) {
+            printf("Errore nel parsing del file YAML.\n");
+            exit(EXIT_FAILURE);
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT) break;
+
+        // Gestire gli eventi qui...
+
+        yaml_event_delete(&event);
+    }
+
+    yaml_parser_delete(&parser);
+    fclose(fh);
     return 0;
 }
 ```
 
-Questo codice crea un documento YAML contenente una stringa "hello world!" e la stampa a schermo. Come puoi vedere, utilizzare YAML in un programma C è semplice e non richiede codice elaborato.
+Supponendo `config.yaml` sia:
 
-## Approfondimento:
+```yaml
+version: 1
+path: "/usr/local/bin"
+enabled: true
+```
 
-YAML è nato nel 2001 e dai suoi inizi è stato adottato da una vasta gamma di linguaggi di programmazione, rendendolo uno standard de facto nella rappresentazione dei dati. Una delle sue principali alternative è JSON, ma a differenza di YAML questo è più utilizzato per il trasferimento dei dati tramite la rete.
+Questo esempio legge il yaml ma non fa nulla con i dati. Puoi espandere la gestione degli eventi per costruire strutture dati.
 
-Per utilizzare YAML in un programma C, è necessario utilizzare una library libyaml, disponibile per la maggior parte dei sistemi operativi. Inoltre, ci sono diverse librerie di terze parti disponibili per facilitare la lavorazione di documenti YAML in altre lingue, come Java o Python.
+## Approfondimento
+YAML nasce agli inizi del 2000 come alternativa più leggibile a XML e JSON. Le alternative includono appunto JSON, XML o INI per configurazioni più semplici. L'implementazione di YAML in C richiede la gestione manuale della memoria e la comprensione degli eventi di parsing per tradurre YAML in strutture dati C.
 
-## Vedi anche:
+## Vedi Anche
 
-Per saperne di più su YAML e come utilizzarlo in C, puoi consultare questi link:
-
-- [Sito ufficiale di YAML](https://yaml.org/)
-- [Libreria libyaml](https://pyyaml.org/wiki/LibYAML)
-- [Tutorial di esempio su YAML in C](https://www.informit.com/articles/article.aspx?p=399725)
+- [libyaml GitHub](https://github.com/yaml/libyaml) - Per il codice sorgente e documentazione.
+- [La specifica YAML](https://yaml.org/spec/1.2/spec.html) - Per imparare a fondo il formato YAML.
+- [Tutorial di libyaml](https://github.com/yaml/libyaml/wiki/Tutorial) - Per approfondimenti su come usare la libyaml.
+- [Documentazione YAML per sviluppatori C](https://pyyaml.org/wiki/LibYAML) - Per guide su libyaml in C.

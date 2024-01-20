@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Gleam: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-क्या आपने कभी जीएसओएन (JSON) का उपयोग किया है? अगर हाँ, तो आपको पता होगा कि यह क्या है। फिर भी, यदि आप वह व्यापारी हैं जो जीएसओएन (JSON) के साथ काम करते हैं, तो आपको यह समझना जरूरी है कि यह क्यों किया जाता है। जीएसओएन (JSON) एक प्रोग्रामिंग के लिए सरल और सुव्यवस्थित माध्यम है जो डेटा को संग्रहीत करने और एक ही फॉर्मेट से एक दूसरे में परिवर्तित करने की अनुमति देता है।
+## What & Why? (क्या और क्यों?)
+JSON का मतलब होता है JavaScript Object Notation, जो डेटा को स्टोर और ट्रांसमिट करने का एक स्टैंडर्ड फॉर्मेट है। प्रोग्रामर्स JSON का इस्तेमाल इसलिए करते हैं क्योंकि यह ह्यूमन और मशीन-रीडेबल दोनों है और अलग-अलग प्रोग्रामिंग भाषाओं के बीच डेटा शेयर करने में आसान है।
 
-## कैसे करें:
-जीएसओएन के साथ काम करने की सबसे सरल तरीके में से एक उदाहरण है। जो सबसे अधिक प्रभाव वाला है। इससे पहले आप प्रोग्राम करने के लिए उपयोग किया जाने वाला है। इस उदाहरण में ```Gleam ... ``` कोड ब्लॉक्स के साथ उपयोग किया गया है जो तेरहवीं पारंपरिक में कर्णाजाल के साथ होता है। जो जीएसओएन (JSON) के कोडिंग के लिए दो उदाहरण नीचे दिए गए है।
+## How to: (कैसे करें:)
+Gleam में JSON के साथ काम करने के लिए, आपको `gleam/serde` लाइब्रेरी की जरूरत होगी। आइए कुछ सिंपल कोड उदाहरण देखें:
 
-मामला १: 
+```gleam
+import gleam/serde
+import gleam/serde/json
 
-```Gleam
-Decoding.decode_string('{"name": "John", "age": 30}')
-``` 
-आउटपुट: 
-```Gleam 
-Ok({"name": "John", "age": 30})
+pub struct Person {
+  name: String,
+  age: Int,
+}
+
+// JSON एनकोडिंग
+pub fn encode_person(person: Person) -> String {
+  let encoded = json.encode(person)
+  case encoded {
+    Ok(json) -> json
+    Error(_) -> "Error in encoding".to_string()
+  }
+}
+
+// JSON डिकोडिंग
+pub fn decode_person(json_string: String) -> Result(Person, String) {
+  json.decode(json_string)
+}
+
+// सैंपल आउटपुट
+fn main() {
+  let person = Person(name: "सोनम", age: 30)
+  let encoded_person = encode_person(person)
+  io.println(encoded_person) // '{"name":"सोनम","age":30}'
+
+  let decoded_person = decode_person(encoded_person)
+  io.println(decoded_person) // Ok(Person(name: "सोनम", age: 30))
+}
 ```
 
-मामला २: 
+## Deep Dive (गहराई से जानकारी)
+JSON का इस्तेमाल 2000s की शुरुआत से हो रहा है जब डग क्रोकफोर्ड ने इसे सबके लिए पोपुलर बनाया। XML और YAML जैसे अल्टरनेटिव्स भी हैं, लेकिन JSON का सिंपल सिंटैक्स और रीडेबिलिटी ने इसे पसंदीदा बना दिया। Gleam में, `gleam/serde` लाइब्रेरी JSON को सीरियलाइज़ और डिसीरियलाइज़ करने की एक आसान और टाइप-सेफ तरीका प्रोवाइड करती है।
 
-```Gleam
-Encoding.encode_string({"name": "John", "age": 30})
-```
-
-आउटपुट: 
-```Gleam
-Ok('{"name": "John", "age": 30}')
-```
-
-## गहराई में जाएं:
-जीएसओएन (JSON) का इतिहासिक संबंध बहुत पुराना है। इसकी शुरुआत वर्धमान मामलों (XML) के सामान आधार पर हुई थी। यह मॉर्चिम सफलता के साथ स्टैंडार्ड डेटा फॉरमेट में विकसित हुआ। अन्य विकल्पों में जीएसओएन (JSON) दूसरे साधारण डेटा फॉरमेट हैं। और अंत में, इस माध्यम की सबसे महत्त्वपूर्ण चीज़ों में से एक है हो।
-
-## इससे जुड़े भाग:
-जीएसओएन (JSON) पर काम करते समग्र जानकारी देते हुए। यदि आपको और अधिक जानकारी चाहिए तो आप इन रिसोर्स से जुड़ सकते हैं: 
-
-[जीएसओएन (JSON) डॉक्स](https://www.json.org/json-en.html)
-
-[हमारा प्रोग्रामिंग कीटाबहार](https://gleam.run)
-
-[जीएसओएन (JSON) उदाहरण](https://www.w3schools.com/js/js_json_intro.asp)
+## See Also (और जानकारी के लिए)
+- Official Gleam Documentation: [Gleam Language](https://gleam.run)
+- Introduction to JSON: [JSON.org](https://www.json.org/json-en.html)
+- Comparison of JSON and XML: [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

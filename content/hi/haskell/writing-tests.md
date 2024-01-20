@@ -1,7 +1,7 @@
 ---
-title:                "टेस्ट लिखना"
-html_title:           "Haskell: टेस्ट लिखना"
-simple_title:         "टेस्ट लिखना"
+title:                "परीक्षण लिखना"
+html_title:           "Arduino: परीक्षण लिखना"
+simple_title:         "परीक्षण लिखना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-नए और अनुभवी प्रोग्रामर्स दोनों ही टेस्टिंग में मुख्य रूप से विश्वसनीय होना और कोड की गुणवत्ता में विश्वसनीयता को बनाए रखने के लिए टेस्टिंग करते हैं। हास्केल में टेस्टिंग मुख्य रूप से यूनिट टेस्टिंग और कंपोनेंट टेस्टिंग के दो भागों में होता है।
+टेस्ट लिखना मतलब आपके कोड का जाँच के लिए छोटे प्रोग्राम्स लिखना। यह काम इसलिए किया जाता है ताकि बग्स को पकड़ा जा सके और सुनिश्चित किया जा सके कि कोड में बदलावों के बाद भी सब कुछ सही काम करता रहे।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-```Haskell
--- उदाहरण १: पास केस
-
-factorial 0 = 1
-factorial n = n * factorial (n-1)
-
-main = do
-    print(factorial 5)
-
-```
-आउटपुट:
-```
-120
-```
+Haskell में टेस्ट लिखने के लिए `Hspec` एक पॉपुलर लाइब्रेरी है। यहाँ एक सिम्पल उदाहरण है:
 
 ```Haskell
--- उदाहरण २: फेल केस
+import Test.Hspec
+import Data.List (sort)
 
-factorial n = if (n < 0) then error "गलत नंबर" else n * factorial (n-1)
+main :: IO ()
+main = hspec $ do
 
-main = do
-    print(factorial (-5))
+  describe "sort" $ do
+    it "sorts an empty list" $
+      sort ([] :: [Int]) `shouldBe` ([] :: [Int])
+
+    it "sorts a list of integers" $
+      sort [3, 2, 1] `shouldBe` [1, 2, 3]
 ```
-आउटपुट:
+
+सैम्पल आउटपुट:
+
 ```
-कॉलरर: गलत नंबर
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
 ```
 
-## गहराई खोजें:
+## Deep Dive (गहराई में जानकारी:)
 
-हास्केल में टेस्टिंग एक भूमिका निभाता है जो हमें कोड के गलती या बग को पता करने में मदद करता है। टेस्टिंग करने के कई अल्टरनेटिव हैं, जैसे यूनिट टेस्टिंग के लिए HUnit और QuickCheck और कंपोनेंट टेस्टिंग के लिए Selenium या Hspec। हास्केल में टेस्टिंग के लिए कई लाइब्रेरी भी हैं जैसे tasty और test-framework।
+Hspec की शुरूवात Haskell में टेस्टिंग को सरल बनाने के लिए की गयी थी। यह Behaviour Driven Development (BDD) पर आधारित है। QuickCheck और HUnit कुछ अन्य अल्टरनेटिव्स हैं जो कि प्रोपर्टी और यूनिट टेस्टिंग को कवर करते हैं। Hspec एक ह्यूमन-रीडेबल फॉर्मेट में टेस्ट केसेज लिखने की क्षमता देता है और इसे गुड प्रैक्टिस माना जाता है।
 
-## अन्य जानकारी:
+## See Also (और जानें:)
 
-यदि आप हास्केल में टेस्टिंग करना चाहते हैं तो निम्नलिखित स्रोतों को देखें:
-
-- [QuickCheck विकि पेज](https://wiki.haskell.org/Introduction_to_QuickCheck1)
-- [Selenium विकि पेज](https://hackage.haskell.org/package/selenium)
-- [Hspec विकि पेज](https://hspec.github.io/)
+- [Hspec User's Manual](https://hspec.github.io/)
+- [QuickCheck on Hackage](https://hackage.haskell.org/package/QuickCheck)
+- [HUnit on Hackage](https://hackage.haskell.org/package/HUnit)

@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo en el error estándar"
-html_title:           "Bash: Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué lo hacemos?
+## Qué es y Por Qué?
 
-Escribir en el flujo de error estándar es una forma en la que los programadores pueden comunicar información de error mientras se ejecuta un script en Bash. Esto es útil para saber qué partes del código están causando problemas y depurarlos más fácilmente.
+Escribir en el error estándar permite mostrar mensajes de error y diagnóstico sin mezclarlos con la salida de datos del programa. Es útil para depurar y para que otros programas o usuarios perciban problemas sin confusión.
 
 ## Cómo hacerlo:
 
-Para escribir en el flujo de error estándar, se utiliza el comando `echo` seguido por el símbolo `>&2` para indicar que se debe escribir en el flujo de error estándar en lugar del flujo de salida estándar. Por ejemplo:
-
 ```Bash
-echo "Este es un mensaje de error" >&2
+# Escribir un mensaje simple en error estándar
+echo "Error: archivo no encontrado" >&2
+
+# Ejemplo de uso con un condicional
+if [[ ! -f "archivo.txt" ]]; then
+   echo "Error: 'archivo.txt' no existe" >&2
+else
+   echo "Archivo encontrado: procediendo..."
+fi
+
+# Redirigir la salida de error estándar a un archivo
+comando_que_falla 2> errores.log
+
+# Ejemplo de salida
+# En la consola solo veremos "Archivo encontrado: procediendo..."
+# Si 'archivo.txt' no existe, "Error: 'archivo.txt' no existe" se escribirá en errores.log
 ```
 
-Esto imprimirá "Este es un mensaje de error" en la consola de error en lugar de la consola de salida. También se puede utilizar el comando `printf` para escribir en el flujo de error estándar:
+## Deep Dive
 
-```Bash
-printf "Este es otro mensaje de error\n" >&2
-```
+Históricamente, la separación entre salida estándar y error estándar viene de las convenciones de Unix y ayuda a manejar ambos flujos independientemente. Alternativas incluyen el uso de herramientas como `logger` para el manejo de registros o el uso de sistemas como `systemd` para manejar servicios y sus salidas de error. Detalles de implementación incluyen redirecciones en Bash (`2>` para STDERR).
 
-El resultado será el mismo que antes, ya que se está utilizando el símbolo `>&2` para redirigir el mensaje al flujo de error estándar.
+## Ver También
 
-## Profundizando:
-
-La escritura en el flujo de error estándar se ha utilizado durante mucho tiempo en la programación de Bash para informar sobre errores y depurar scripts. Sin embargo, existen alternativas como el uso de comandos `exit` con códigos de retorno personalizados o el uso de la función `stderr` en Bash.
-
-En términos de implementación, escribir en el flujo de error estándar se realiza mediante la redirección de salida utilizando el símbolo `>&2` como se mencionó anteriormente. Esto se puede hacer en un solo comando o se puede establecer una redirección global para toda la secuencia de comandos.
-
-## Ver también:
-
-- [Documentación oficial de redirección en Bash](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Explicación detallada de redirección en Bash](https://www.tldp.org/LDP/abs/html/io-redirection.html)
+- Bash Redirections: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
+- Bash Manual: https://www.gnu.org/software/bash/manual/

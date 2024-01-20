@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "Arduino: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
+## What & Why?
+エラーメッセージを標準エラー出力（stderr）に書き込むのは、ログやユーザーへのフィードバックと分けて、プログラムの問題を報告するためです。
 
-エラーを標準エラーに書き込むことは、Arduinoプログラマーにとって非常に重要です。この機能を使用することで、ユーザーがデバイスやコードの問題を早期に検出できるようになります。プログラマーが何かおかしいことが起こっていると気づいたときは、すぐに標準エラーをチェックしてください。
-
-## 使い方：
+## How to:
+Arduinoでは標準エラーに直接書き込む機能はありません。シリアル出力を使うのが一般的です。
 
 ```Arduino
-Serial.println("エラーが見つかりました。");
+void setup() {
+  Serial.begin(9600); // シリアル通信の初期化
+}
+
+void loop() {
+  // エラーをシリアルに出力
+  Serial.println("ERROR: Something went wrong!");
+  delay(1000); // 1秒間隔で繰り返す
+}
 ```
 
-実行結果：
-
+シリアルモニター出力:
 ```
-エラーが見つかりました。
+ERROR: Something went wrong!
+ERROR: Something went wrong!
+...
 ```
 
-## 詳しく見てみよう：
+## Deep Dive
+Arduinoには標準エラーストリーム`stderr`がないため、`Serial.print()`や`Serial.println()`で代用します。歴史的には環境が限られていたため、単一のシリアルチャンネルを使っていました。デバッグライブラリや外部ツールを使う方法もあります。
 
-ジョージ・D・ガイルズが1975年に発表した論文「The Error of Not Using Error Bars」によると、標準エラーはデバイスの安定性を確保するための重要な手段です。代替手段としては、エラーコードやログファイルなどが挙げられます。Arduinoでは、Serial.print()、Serial.println()、Serial.printf()などの標準的な方法でエラーを標準エラーに書き込むことができます。
+## See Also
+- [Arduino 公式サイト](https://www.arduino.cc/)
+- [Arduino Serial リファレンス](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [デバッグ技術についてのAdafruitのガイド](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems)
 
-## 関連リンク：
-
-- Arduinoドキュメンテーション：https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
-- ジョージ・D・ガイルズ：http://journals.sagepub.com/doi/10.2466/pr0.1986.59.2.262
-- 標準エラーについてのブログ記事：https://www.thegeekstuff.com/2014/05/linux-stderr-stdout/
+この記事ではArduinoプラットフォームでの標準エラー出力の基本を解説しました。興味があれば上記リンクも調べてみてください。

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com arquivos csv"
-html_title:           "Lua: Trabalhando com arquivos csv"
-simple_title:         "Trabalhando com arquivos csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
-Programar com CSV (Comma-Separated Values) significa lidar com dados em formato de tabela separados por vírgulas. Programadores usam isso para armazenar, manipular e analisar grandes conjuntos de dados de forma organizada e eficiente.
+## What & Why?
+CSV, ou "valores separados por vírgula", é um formato de arquivo usado para armazenar dados tabulares. Programadores utilizam CSV pela facilidade de importação e exportação de dados em várias linguagens e plataformas.
 
-## Como fazer:
-Como exemplo, vamos supor que temos um arquivo CSV com informações sobre clientes de uma empresa. Podemos ler e imprimir esses dados da seguinte forma:
+## How to:
+Para manipular arquivos CSV em Lua, você pode ler linha por linha e usar a função `string.gmatch` para iterar pelos valores separados por vírgula.
 
 ```Lua
--- Abrindo o arquivo e lendo os dados
-file = io.open("clientes.csv", "r")
-data = file:read("*all")
+-- Lendo um arquivo CSV em Lua
+local arquivo = io.open("dados.csv", "r")
 
--- Separando os campos por vírgula e imprimindo cada cliente
-for name, email in data:gmatch("(%a+,%a+@%a+.%a+)") do
-  print(name, email)
+for linha in arquivo:lines() do
+    for valor in string.gmatch(linha, '([^,]+)') do
+        print(valor)
+    end
 end
+
+arquivo:close()
 ```
 
-A saída seria algo como:
+Saída de exemplo:
 ```
-Maria,maria@example.com
-João,joao@example.com
-Ana,ana@example.com
+Nome
+Idade
+Cidade
+Alice
+30
+São Paulo
+Bob
+25
+Rio de Janeiro
 ```
 
-## Mergulho Profundo:
-CSV foi criado nos anos 1970 como uma forma simples de armazenar grandes quantidades de dados tabulares sem a necessidade de um banco de dados. Hoje em dia, existem alternativas mais avançadas, como JSON e XML, mas CSV ainda é amplamente utilizado por sua facilidade de uso e compatibilidade com diferentes softwares.
+## Deep Dive
+Arquivos CSV têm sido utilizados desde o início dos anos 70, proporcionando uma forma simples de representar tabelas de dados antes do advento de sistemas de banco de dados modernos. Alternativas incluem JSON e XML, que oferecem estruturas mais complexas e metadados. A implementação de leitura de CSV em Lua é facilitada devido às poderosas funções de manipulação de strings do idioma; no entanto, casos com formatos mais complexos de CSV podem exigir bibliotecas especializadas.
 
-Para lidar com arquivos CSV no Lua, é importante importar uma biblioteca como a `lunajson` ou `lua-csv` para auxiliar na manipulação dos dados. Além disso, é importante lembrar de sempre tratar possíveis erros de formatação ou dados ausentes.
+## See Also
+Para mais informações sobre manipulação de CSV em Lua e bibliotecas disponíveis, confira:
 
-## Veja também:
-- [Documentação oficial do Lua](https://www.lua.org/docs.html)
-- [Biblioteca lua-csv](https://github.com/geoffleyland/lua-csv)
+- The Lua Users Wiki CSV: http://lua-users.org/wiki/CommaSeparatedValues
+- A biblioteca `LuaCSV`: https://github.com/geoffleyland/lua-csv
+- Documentação de Lua `string.gmatch`: https://www.lua.org/manual/5.4/manual.html#pdf-string.gmatch
+
+Ao explorar esses recursos, você poderá trabalhar com CSVs de forma mais eficiente e expandir suas habilidades em Lua.

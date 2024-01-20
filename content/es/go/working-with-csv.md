@@ -1,6 +1,6 @@
 ---
 title:                "Trabajando con archivos CSV"
-html_title:           "Go: Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
 simple_title:         "Trabajando con archivos CSV"
 programming_language: "Go"
 category:             "Go"
@@ -10,61 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Trabajar con CSV implica leer y escribir en un formato de texto simple que representa datos en tablas. Lo usamos porque es universal, fácil de entender y compatible con la mayoría de las herramientas de hoja de cálculo.
 
-Trabajar con CSV es una tarea común para programadores en Go. CSV, que significa "valores separados por comas" en inglés, es un formato de archivo utilizado para almacenar y manipular datos tabulares. Los programadores utilizan este formato para importar y exportar datos entre diferentes sistemas y aplicaciones.
-
-## ¿Cómo hacerlo?
-
-Empezar a trabajar con CSV en Go es muy sencillo. Solo necesitas importar el paquete "encoding/csv" y luego puedes utilizar las funciones proporcionadas por este paquete para leer y escribir en archivos CSV.
-
+## Cómo hacerlo:
 ```Go
-import "encoding/csv"
+package main
 
-// Ejemplo de lectura de un archivo CSV
-f, err := os.Open("datos.csv")
-if err != nil {
-    panic(err)
-}
+import (
+    "encoding/csv"
+    "fmt"
+    "os"
+    "strings"
+)
 
-// Utilizar csv.NewReader para leer el archivo
-r := csv.NewReader(f)
-// El método ReadAll devuelve una matriz con todos los registros del CSV
-records, err := r.ReadAll()
-if err != nil {
-    panic(err)
-}
-fmt.Println(records)
+func main() {
+    // Escribir CSV
+    records := [][]string{
+        {"nombre", "edad", "ciudad"},
+        {"Alice", "25", "Madrid"},
+        {"Bob", "30", "Barcelona"},
+    }
 
-// Ejemplo de escritura en un archivo CSV
-f, err := os.Create("nuevos_datos.csv")
-if err != nil {
-    panic(err)
+    file, err := os.Create("personas.csv")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+
+    writer := csv.NewWriter(file)
+    defer writer.Flush()
+
+    for _, record := range records {
+        if err := writer.Write(record); err != nil {
+            panic(err)
+        }
+    }
+
+    // Leer CSV
+    csvData := `
+nombre,edad,ciudad
+Alice,25,Madrid
+Bob,30,Barcelona
+`
+    reader := csv.NewReader(strings.NewReader(csvData))
+
+    for {
+        record, err := reader.Read()
+        if err != nil {
+            break
+        }
+        fmt.Println(record)
+    }
 }
-// Utilizar csv.NewWriter para escribir en un archivo
-w := csv.NewWriter(f)
-// Escribir un registro en el archivo
-w.Write([]string{"Nombre", "Edad", "País"})
-// Escribir múltiples registros en el archivo
-w.WriteAll([][]string{
-    []string{"Juan", "25", "España"},
-    []string{"María", "30", "México"},
-    []string{"Pedro", "20", "Argentina"},
-})
-// Importante: llamar al método Flush al final para escribir los cambios en el archivo
-w.Flush()
 ```
 
-## En profundidad
+Salida de muestra al leer:
+```
+[nombre edad ciudad]
+[Alice 25 Madrid]
+[Bob 30 Barcelona]
+```
 
-CSV ha sido utilizado en informática desde la década de 1970 y ha evolucionado a lo largo del tiempo. Actualmente, existen varios formatos relacionados con CSV, como TSV (valores separados por tabulaciones) y CSV con encabezados, que incluyen el nombre de cada columna.
+## Profundización:
+Históricamente, CSV (valores separados por comas) se utiliza desde hace décadas para importar y exportar datos de una aplicación a otra. Los alternativos incluyen JSON, XML y bases de datos, pero CSV permanece por su simplicidad. Técnicamente, usar CSV en Go es directo gracias al paquete `encoding/csv` que maneja comillas, saltos de línea y otros casos complicados.
 
-Otras alternativas a trabajar con CSV en Go incluyen paquetes como "google.golang.org/csv" y "gonum.org/v1/csv", que ofrecen diferentes funcionalidades y características.
-
-En cuanto a la implementación, el paquete "encoding/csv" utiliza la interfaz "io.Reader" para leer datos y la interfaz "io.Writer" para escribir datos. También proporciona opciones para personalizar el delimitador y el carácter de cita utilizado en los archivos CSV.
-
-## Ver también
-
-- [Documentación oficial de Go sobre el paquete csv](https://golang.org/pkg/encoding/csv/)
-- [Especificación oficial del formato CSV](https://tools.ietf.org/html/rfc4180)
-- [Opciones de personalización en el paquete "encoding/csv"](https://golang.org/pkg/encoding/csv/#Reader.Comma)
+## Ver También:
+- Documentación oficial de Go para el paquete `csv`: https://pkg.go.dev/encoding/csv
+- Tutorial de Go sobre leer archivos CSV: https://golangbot.com/read-csv/
+- Comparación de formatos de serialización de datos (incluyendo CSV, JSON, XML): https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats

@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Rust: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
-Å skrive en tekstfil er å lage en fil som inneholder tekst, som kan leses av en datamaskin. Programmere gjør dette for å lagre informasjon som kan brukes senere, enten for å lagre data eller for å lese og manipulere informasjonen.
+## Hva & Hvorfor?
 
-## Hvordan:
-I Rust, kan du enkelt skrive en tekstfil ved å bruke standard biblioteket "std::fs". Først, importer biblioteket ved å legge til linjen "use std::fs;" øverst i filen. Deretter kan du bruke funksjonen "write" for å skrive tekst til en fil, som vist i følgende eksempel:
+Skrive til en tekstfil betyr å lagre data i en fil på disk. Vi gjør dette for å bevare informasjon mellom økter og dele data mellom forskjellige programmer eller brukere.
 
-```Rust
-use std::fs;
+## Slik gjør du:
 
-fn main() {
-    let mut file = fs::File::create("tekstfil.txt") // lager en ny fil
-        .expect("Kunne ikke lage fil"); // håndterer feil
-    file.write(b"Tekst som skal skrives til filen") // skriver tekst ved å konvertere det til bytes
-        .expect("Kunne ikke skrive til fil"); // håndterer feil
+Rust bruker `std::fs` modulen til å håndtere filer. Her er et enkelt eksempel:
+
+```rust
+use std::fs::File;
+use std::io::Write;
+
+fn main() -> std::io::Result<()> {
+    let mut fil = File::create("eksempel.txt")?;
+    fil.write_all(b"Hei, verden!")?;
+    Ok(())
 }
 ```
 
-Dette vil lage en ny fil med navnet "tekstfil.txt" og skrive teksten "Tekst som skal skrives til filen" til den. Du kan også legge til forskjellige tekstformateringsfunksjoner hvis du ønsker det.
+Når du kjører dette, lager du en fil med navn `eksempel.txt` med innholdet "Hei, verden!".
 
-## Dypdykk:
-Skriving av tekstfiler har vært en viktig del av programmering siden starten av databehandling. Det finnes også alternative metoder for å lagre informasjon, som for eksempel å lagre data i en database. I Rust, er skriving av tekstfiler implementert ved hjelp av standard biblioteket "std::fs", som gjør det enkelt og effektivt.
+## Deep Dive
 
-## Se også:
-For mer informasjon om å skrive tekstfiler i Rust, kan du sjekke ut Rusts offisielle dokumentasjon på det standard biblioteket "std::fs":
-https://doc.rust-lang.org/std/fs/
+Å skrive til tekstfiler er grunnleggende og så gammelt som datamaskiner selv. I Rust, er `std::fs::File` og `std::io::Write` høy-nivå abstraksjoner som gjør filoperasjoner enklere. Alternativer inkluderer lav-nivå systemkall via `libc` eller asynkrone biblioteker som `tokio`. Når du skriver til en fil, må du passe på feilhåndtering, tilgangskontroll og datakonkurranser.
+
+## Se Også
+
+- Rust sin offisielle dokumentasjon for `std::fs`: https://doc.rust-lang.org/std/fs/index.html
+- Rust by Example - Fil I/O: https://doc.rust-lang.org/rust-by-example/std_misc/file.html
+- Rust boken: https://doc.rust-lang.org/book/

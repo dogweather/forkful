@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Elm: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Arbeiten mit CSV (Comma-Separated Values) bedeutet, Daten in Textform zu handhaben, die durch Kommas getrennt sind. Programmierer nutzen CSV für einfaches Importieren und Exportieren von Daten in und aus Tabellenformaten.
 
-Arbeiten mit CSV, auch bekannt als "Comma Separated Values", bezieht sich auf das Lesen und Schreiben von tabellarischen Daten in einem einfachen Textformat. Programmierer nutzen oft CSV, um Daten aus externen Quellen zu importieren oder um Daten in einem Format zu speichern, das leicht von anderen Programmen gelesen werden kann. 
-
-## Wie geht's?
-
-Hier sind einige Beispiele, um CSV-Dateien in Elm zu lesen und zu schreiben:
+## How to:
+Elm hat keine eingebaute CSV-Behandlung, daher nutzen wir `elm-csv`, ein Third-Party-Package, für das Parsen und Schreiben. Installiere es mit `elm install ericgj/elm-csv`.
 
 ```Elm
--- Lesen einer CSV-Datei
-import Csv.Decode as Decode
+import Csv
 
--- Daten dekodieren und ausgeben
-Decode.decodeString Decode.int """
-Name, Alter
-John, 25
-Jane, 30
-""" -- Ergebnis: Ok [ {name = "John", age = 25}, {name = "Jane", age = 30} ]
+exampleCsv : String
+exampleCsv = 
+    "Name,Age,City\nJohn Doe,34,New York\nJane Smith,28,Los Angeles"
 
--- Schreiben von CSV-Daten
-import Csv.Encode as Encode
+parseCsv : Csv.Decode.Decoder (List String)
+parseCsv =
+    Csv.Decode.row Csv.Decode.string
 
--- Daten kodieren und in eine Zeichenfolge umwandeln
-Encode.encode (Encode.list [ {name = "John", age = 25}, {name = "Jane", age = 30} ])
-  |> Encode.string -- Ergebnis: "Name, Alter\nJohn, 25\nJane, 30\n"
+main =
+    case Csv.Decode.fromString parseCsv exampleCsv of
+        Ok result ->
+            -- Behandle die Daten hier
+            String.fromString (List.toString result)
+
+        Err message ->
+            -- Fehlerbehandlung
+            String.fromString message
 ```
+Ausgabe dieses Beispiels wäre eine Liste von Listen: `["Name","Age","City"],["John Doe","34","New York"],["Jane Smith","28","Los Angeles"]`.
 
-## Tiefentauchen
+## Deep Dive
+CSV ist seit den 1970er Jahren im Einsatz und ist ein verbreitetes Format für Dateninteroperabilität. Alternativen wie JSON oder XML bieten mehr Struktur, sind aber schwerwiegender. In Elm kannst du mit `elm/parser` auch eigene Parsers schreiben, was mehr Kontrolle bietet, aber komplexer ist.
 
-CSV wurde in den 1970er Jahren als einfaches Datenformat entwickelt, um den Austausch von tabellarischen Daten zwischen verschiedenen Programmen zu ermöglichen. Heutzutage gibt es viele Alternativen wie JSON oder XML, aber CSV bleibt aufgrund seiner Einfachheit und Lesbarkeit beliebt. Die Implementierung von CSV in Elm basiert auf dem Paket "Csv.Encode" und "Csv.Decode", die es ermöglichen, Daten in das entsprechende Format zu konvertieren und zu verarbeiten.
-
-## Siehe auch
-
-- Die offizielle [Elm-Dokumentation](https://guide.elm-lang.org/effects/json.html), die weitere Informationen und Beispiele zu CSV in Elm bietet.
+## See Also
+- Elm-lang offizielle Seite: [https://elm-lang.org/](https://elm-lang.org/)
+- `elm/parser` für eigene Parser: [https://package.elm-lang.org/packages/elm/parser/latest/](https://package.elm-lang.org/packages/elm/parser/latest/)

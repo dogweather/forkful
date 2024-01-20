@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Swift recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,55 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+YAML, short for "YAML Ain't Markup Language", is a human-readable data serialization standard that we can use to configure files or data exchange. Programmers love YAML for its simplicity and readability, especially in configuration settings, CI/CD scripts, and container orchestration systems.
 
-# What & Why?
+## How to:
+Swift doesn't natively handle YAML, so we need to use a third-party library like Yams. First, add Yams to your `Package.swift`:
 
-Working with YAML is all about organizing data in a human-readable format. It is a type of data serialization that allows programmers to store and transmit data in a format that is both easy to read and machine-readable. Many developers use YAML in their projects because it is a versatile and efficient way to manage complex data structures.
-
-# How to:
-
-Implementing YAML in Swift is relatively straightforward. Here are a few examples to get you started:
-
-### 1. Create a YAML string:
-
-```Swift
-let yamlString = """
-    name: John Doe
-    age: 35
-    occupation: Programmer
-"""
+```swift
+dependencies: [
+    .package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
+]
 ```
 
-### 2. Convert a YAML string to a dictionary:
+Then, import Yams and use it to parse YAML into a Swift dictionary:
 
-```Swift
+```swift
+import Yams
+
 let yamlString = """
-    name: John Doe
-    age: 35
-    occupation: Programmer
+name: John Doe
+age: 34
+languages:
+  - Swift
+  - Python
 """
 
-let yamlDict = try! YAMLSerialization.object(withYAML: yamlString) as! [String: Any]
+do {
+    if let data = try Yams.load(yaml: yamlString) as? [String: Any] {
+        print(data)
+    }
+} catch {
+    print("Failed to parse YAML string.")
+}
+
+// Output:
+// ["name": "John Doe", "age": 34, "languages": ["Swift", "Python"]]
 ```
 
-### 3. Convert a dictionary to YAML string:
+If you want to generate YAML from Swift objects:
 
-```Swift
-let person = ["name": "John Doe", "age": 35, "occupation": "Programmer"]
+```swift
+import Yams
 
-let yamlString = try! YAMLSerialization.yamlString(withObject: person)
+let dictionary: [String: Any] = [
+    "name": "Jane Smith",
+    "age": 28,
+    "languages": ["Java", "Kotlin"]
+]
+
+do {
+    let yaml = try Yams.dump(object: dictionary)
+    print(yaml)
+} catch {
+    print("Failed to convert dictionary to YAML.")
+}
+
+// Output:
+// age: 28
+// languages:
+//   - Java
+//   - Kotlin
+// name: Jane Smith
 ```
 
-# Deep Dive:
+## Deep Dive
+YAML originated in 2001 as a human-friendly alternative to XML. It resembles JSON with less use of braces and better human readability. While JSON is a go-to for web APIs, YAML is preferred for configuration files. Alternatives include TOML and JSON5, but YAML's use of whitespace and the ability to comment lines make it desirable. With Yams, Swift approaches YAML processing with class mapping, offering a balance between script-like simplicity and type safety.
 
-YAML was first created in 2001 as a more user-friendly alternative to XML, and has since become a popular choice for managing data in web applications. YAML stands for "YAML Ain't Markup Language" and is designed to be easy to read and write for both humans and machines.
-
-An alternative to YAML is JSON, which is also a popular data serialization format. However, many developers prefer YAML because it allows for more human-friendly formatting, such as indentation, which can make complex data structures easier to manage.
-
-Internally, the SwiftYAML library uses the LibYAML C library, making it fast and efficient at parsing YAML data. It also supports the ability to customize the way it handles data through the use of Codable protocols.
-
-# See Also:
-
-- [SwiftYAML GitHub page](https://github.com/behrang/YamlSwift)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+## See Also
+- YAML official site for spec details: [https://yaml.org](https://yaml.org)
+- Yams GitHub Repository: [https://github.com/jpsim/Yams](https://github.com/jpsim/Yams)
+- Swift Package Manager Documentation: [https://swift.org/package-manager/](https://swift.org/package-manager/)

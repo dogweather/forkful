@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Arduino: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,49 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
+Escribir un archivo de texto en Arduino significa almacenar datos en una tarjeta SD o memoria. Los programadores lo hacen para registrar información, como datos de sensores o eventos del sistema.
 
-Escribir un archivo de texto simplemente significa guardar información en un archivo de texto que se puede leer y editar fácilmente. Los programadores a menudo escriben archivos de texto como una forma de almacenar y organizar datos importantes o configuraciones para sus programas.
-
-## Cómo hacerlo:
-
-Para escribir un archivo de texto en Arduino, podemos usar la función "FileWrite" de la librería SD. Primero, debemos asegurarnos de tener una tarjeta SD conectada y montada en nuestro Arduino. Luego, podemos usar el siguiente código como ejemplo:
+## Cómo Hacerlo:
+Para escribir en un archivo de texto necesitas un módulo SD y la librería `SD.h`.
 
 ```Arduino
-#include <SD.h>   // incluir la librería SD
+#include <SPI.h>
+#include <SD.h>
 
-File myFile;   // crear un objeto de tipo "File"
-
+File miArchivo;
 void setup() {
-  SD.begin(4);  // montar la tarjeta en el pin 4
+  Serial.begin(9600);
+  // Comprueba si la tarjeta está presente y se puede inicializar:
+  if (!SD.begin(10)) {
+    Serial.println("Fallo al iniciar la SD");
+    return;
+  }
+
+  // Abre el archivo, si no existe lo crea:
+  miArchivo = SD.open("prueba.txt", FILE_WRITE);
+  // Si el archivo se abrió correctamente, escribe en él:
+  if (miArchivo) {
+    miArchivo.println("Hola Mundo!");
+    miArchivo.close(); // Cierra el archivo
+  } else {
+    // si el archivo no se abre, imprime un error:
+    Serial.println("Error al abrir el archivo");
+  }
 }
 
 void loop() {
-  myFile = SD.open("datos.txt", FILE_WRITE);  // abrir el archivo "datos.txt" en modo escritura
-  if (myFile) {   // si el archivo se abrió correctamente
-    for (int i = 0; i < 10; i++) {   // escribir 10 números en el archivo
-      myFile.println(i);
-    }
-    myFile.close();   // cerrar el archivo
-  }
-  else {   // si el archivo no se pudo abrir correctamente
-    Serial.println("Error al abrir el archivo");   // imprimir mensaje de error
-  }
-  delay(10000);   // esperar 10 segundos antes de volver a escribir en el archivo
+  // Nada que hacer aquí
 }
 ```
 
-El código anterior abre el archivo "datos.txt" en modo escritura y escribe los números del 0 al 9 en él. Luego, cierra el archivo y espera 10 segundos antes de volver a escribir en él. Si queremos agregar texto al final del archivo en lugar de sobrescribirlo, podemos usar la opción "FILE_APPEND" en lugar de "FILE_WRITE" al abrir el archivo.
+Salida esperada al abrir `prueba.txt`:
 
-La salida de este programa se puede ver en la ventana Serial del Arduino IDE o leyendo el archivo "datos.txt" desde la tarjeta SD.
+```
+Hola Mundo!
+```
 
-## Profundizando:
+## Inmersión Profunda:
+La librería `SD.h` viene desde Arduino 1.0, permitiendo escritura/lectura de tarjetas SD utilizando el SPI. Alternativas incluyen EEPROM para guardar pequeñas cantidades de datos sin necesidad de hardware externo. Los detalles de implementación involucran gestionar correctamente la apertura y cierre de archivos para evitar corrupción de datos.
 
-Los archivos de texto han existido desde el inicio de la informática y también son muy utilizados en la programación. Sin embargo, existen otras formas de almacenar y organizar datos, como las bases de datos o los archivos binarios. Estos últimos son más eficientes en el uso del espacio y ofrecen una mayor seguridad y privacidad de los datos.
-
-Para implementar la escritura de archivos de texto, Arduino usa la librería SD, que comunica la tarjeta SD con el microcontrolador a través del protocolo SPI. Esto permite una lectura y escritura rápida de datos.
-
-## Véase también:
-
-- Documentación oficial de Arduino sobre la librería SD: https://www.arduino.cc/en/Reference/SD
-- Tutorial sobre cómo guardar datos en una tarjeta SD con Arduino: https://www.instructables.com/id/Arduino-Projects-Saving-several-sensor-values-to-a-/
+## Ver También:
+- Documentación oficial de la librería SD: https://www.arduino.cc/en/Reference/SD
+- Guía para el módulo de tarjeta SD: https://www.arduino.cc/en/Guide/MKRSD
+- Tutorial sobre EEPROM en Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMReadWrite

@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "TypeScript recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,29 +11,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with CSV (Comma Separated Values) involves writing and reading data from a plain text file with values separated by a comma. Programmers use CSV as it is a simple and efficient way to store and transfer structured data.
+
+Working with CSV (Comma-Separated Values) means reading and writing data in a text format where each line is a data record, and commas separate each field. Programmers use CSV for its simplicity and wide support across tools for data exchange.
 
 ## How to:
-```TypeScript
-//Reading CSV data into an array
-import * as fs from 'fs';
 
-const csvData = fs.readFileSync('data.csv', 'utf-8').split('\n').map(row => row.split(','))
+Reading CSV in TypeScript is straightforward with libraries like `papaparse`. To handle CSV files, install it first:
 
-//Writing data to a CSV file
-csvData.forEach(row => fs.appendFileSync('newData.csv', row.join(',') + '\n'))
-
-//Sample CSV data
-Name, Age, Occupation
-John, 25, Developer
-Jane, 30, Designer
+```bash
+npm install papaparse
 ```
 
-## Deep Dive:
-CSV was first introduced in the 1970s and gained popularity as a way to store large amounts of data in a simple and readable format. It is widely used in data analysis, database management, and data transfer between different systems. Alternatives to CSV include XML and JSON, but CSV is more human-readable and lightweight.
+Here's how you read a CSV file:
 
-Although CSV is a simple format, programmers should consider edge cases such as handling quotes and special characters, determining the correct encoding, and dealing with uneven columns in the data.
+```typescript
+import * as fs from 'fs';
+import * as Papa from 'papaparse';
 
-## See Also:
-- [Simple CSV node package](https://www.npmjs.com/package/simple-csv)
-- [CSV vs XML vs JSON](https://softwareengineering.stackexchange.com/questions/123947/comparison-of-data-interchange-formats)
+const csvFilePath = 'path/to/your/file.csv';
+const fileContent = fs.readFileSync(csvFilePath, 'utf8');
+
+Papa.parse(fileContent, {
+  complete: (result) => {
+    console.log(result.data);
+  }
+});
+```
+
+To write CSV, you might use `csv-writer`. Install it with:
+
+```bash
+npm install csv-writer
+```
+
+And then write to a CSV file like so:
+
+```typescript
+import * as createCsvWriter from 'csv-writer';
+
+const csvWriter = createCsvWriter.createObjectCsvWriter({
+  path: 'path/to/your/output.csv',
+  header: [
+    {id: 'name', title: 'NAME'},
+    {id: 'age', title: 'AGE'}
+  ]
+});
+
+const data = [
+  { name: 'John', age: 28 },
+  { name: 'Jane', age: 32 }
+];
+
+csvWriter.writeRecords(data)
+  .then(() => console.log('Data written to CSV file successfully.'));
+```
+
+The output in 'output.csv' will be:
+
+```
+NAME,AGE
+John,28
+Jane,32
+```
+
+## Deep Dive
+
+CSV has been a staple in data exchange since the early computer era due to its readability and simplicity. It's not without issues; for instance, lack of standardization can lead to parsing errors. Alternatives like JSON and XML offer more complex structures and data types. When implementing CSV parsers/writers, consider character encoding and correct handling of special characters to avoid bugs.
+
+## See Also
+
+- The `papaparse` documentation: [Papa Parse - Powerful CSV Parser](https://www.papaparse.com/)
+- The `csv-writer` documentation: [CSV Writer - CSV File Writer for Node](https://csv.js.org/)
+- For deeper technical understanding, the RFC 4180 document provides the de facto standard for CSV formats: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+- For a comparison of file formats, see: [JSON vs XML vs CSV](https://www.geeksforgeeks.org/difference-between-json-and-xml/)

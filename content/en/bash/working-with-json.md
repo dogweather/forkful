@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Bash recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,42 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with JSON (JavaScript Object Notation) is a common task for programmers, as it is a widely used data format for exchanging information between applications and systems. JSON is lightweight, easily readable by both humans and machines, and supported by many programming languages. It is especially popular in web development for handling API responses.
+Working with JSON in Bash involves parsing and generating JSON-formatted data directly from the command line. Programmers do this for configuration management, API interaction, and data interchange between services due to JSON's ubiquity across platforms and languages.
 
 ## How to:
-To work with JSON in Bash, we can use the built-in tool `jq`. `jq` is a powerful command-line JSON processor that allows us to parse, filter, and manipulate JSON data.
 
-To get started, we first need to install `jq` on our system. Depending on your operating system, this can be done through a package manager or by downloading and installing the binary directly.
-
-Once `jq` is installed, we can start using it in our Bash scripts. Here are some examples of how to use `jq`:
-
-- To extract a specific value from a JSON file:
 ```Bash
-jq '.key' file.json
+# Parsing JSON using 'jq':
+echo '{"name": "John", "age": 31, "city": "New York"}' | jq '.name'
+# Output: "John"
+
+# Generating JSON using 'jq':
+echo '{}' | jq --arg name "John" --arg city "New York" '. | .name=$name | .city=$city'
+# Output: {"name":"John","city":"New York"}
+
+# Reading JSON file and extracting data:
+jq '.users[] | select(.id == "123")' users.json
+# Assuming users.json contains the relevant data structure.
 ```
-This will return the value of the key "key" in the JSON file.
 
-- To filter JSON data based on a condition:
-```Bash
-jq '.[] | select(.age > 25)' file.json
-```
-This will return all entries in the file where the "age" value is greater than 25.
+## Deep Dive
 
-- To modify JSON data:
-```Bash
-jq '.key = "new value"' file.json
-```
-This will update the value of "key" in the JSON file to "new value".
+JSON (JavaScript Object Notation) was formalized in the early 2000s and quickly became a standard for data interchange. In a Bash context, `jq` emerged as a robust tool for JSON processing which provides a DSL (domain-specific language) for querying and manipulating JSON data. Alternatives include `jshon` and `jo`. Working with JSON in Bash typically involves using external tools like these because Bash does not have built-in JSON parsing capabilities.
 
-For more advanced usage, such as handling arrays and objects, check out the [official documentation](https://stedolan.github.io/jq/manual/).
+## See Also
 
-## Deep Dive:
-JSON was first introduced in 2001 and has since become a popular data format due to its simplicity and flexibility. Before JSON, XML was the dominant format for data exchange, but its complex syntax and large file size made it less desirable.
-
-Although `jq` is the most commonly used tool for working with JSON in Bash, there are alternative solutions such as `json.sh` and `jsonv`. These tools may have different features and syntax, so it's important to choose the one that fits your needs best.
-
-Under the hood, `jq` uses an internal DSL (Domain-Specific Language) for working with JSON, making it more efficient and flexible than using regular shell commands. It also supports various output formats, making it easier to integrate with other tools and APIs.
-
-## See Also:
-- [Official `jq` documentation](https://stedolan.github.io/jq/)
-- [Online JSON validator and formatter](https://jsonformatter.curiousconcept.com/)
+- `jq` Manual: https://stedolan.github.io/jq/manual/
+- Wikipedia article on JSON: https://en.wikipedia.org/wiki/JSON
+- Bash Scripting Guide: https://www.gnu.org/software/bash/manual/

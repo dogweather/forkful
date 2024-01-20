@@ -1,7 +1,7 @@
 ---
-title:                "JSON 작업하기"
-html_title:           "Python: JSON 작업하기"
-simple_title:         "JSON 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JSON 작업이란 무엇이며 왜 그것을 하는가?
+## What & Why?
+JSON(JavaScript Object Notation)은 데이터를 저장하고 전송할 때 쓰는 경량 텍스트 데이터 포맷입니다. 프로그래머는 이 포맷을 사용하여 다양한 언어와 플랫폼 간에 데이터를 쉽게 교환하고 저장할 수 있습니다.
 
-JSON(Javascript Object Notation)은 데이터 교환을 위해 사용되는 경량의 형식입니다. 이는 사람과 컴퓨터 모두가 이해하기 쉽고, 다양한 프로그래밍 언어에서 지원됩니다. 따라서 프로그래머들은 데이터를 효율적으로 교환하기 위해 JSON을 사용합니다.
+## How to:
 
-## 어떻게?
-
-Python에서는 JSON 라이브러리를 사용하여 쉽게 데이터를 읽고 쓸 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
-
+### JSON 데이터 읽기
 ```Python
 import json
 
-# JSON 데이터 읽기
-with open('data.json', 'r') as file:
-    data = json.load(file)
+# JSON 문자열
+json_data = '{"name": "Kim", "age": 30, "city": "Seoul"}'
 
-# 데이터 추가
-data['name'] = 'John'
-data['age'] = 25
+# 파이썬 객체로 변환
+python_dict = json.loads(json_data)
 
-# JSON 데이터 쓰기
-with open('data.json', 'w') as file:
-    json.dump(data, file)
-
-# 출력 결과
-{
-    "name": "John",
-    "age": 25,
-    "country": "Korea"
-}
+print(python_dict)
+```
+출력:
+```Python
+{'name': 'Kim', 'age': 30, 'city': 'Seoul'}
 ```
 
-## 깊게 파고들기
+### JSON 파일 읽고 쓰기
+```Python
+import json
 
-JSON은 웹 프로그래밍에서 널리 사용되었으며, Javascript와 밀접한 관련이 있습니다. 하지만 현재는 다양한 프로그래밍 언어에서 지원되고 있으며, XML과 같은 다른 데이터 형식보다 가볍고 효율적입니다. 또한, Python뿐만 아니라 자바, C++, PHP 등 다양한 프로그래밍 언어에서도 JSON을 사용할 수 있습니다.
+# 파일로 부터 JSON 데이터 읽기
+with open('data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
 
-## 관련 자료
+# data 처리...
 
-- [JSON 공식 문서](https://www.json.org/json-en.html)
-- [Python JSON 라이브러리](https://docs.python.org/3/library/json.html)
+# 파이썬 객체를 JSON 파일로 쓰기
+with open('output.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
+```
+
+## Deep Dive
+
+JSON은 2000년대 초반 Douglas Crockford에 의해 개발되었으며, XML의 대안으로 빠르게 자리 잡았습니다. XML보다 가볍고, 구문이 간단하기 때문에 많은 프로그래머들이 선호하는 데이터 교환 포맷입니다. 파이썬의 `json` 모듈은 RFC 7159에 기반하여 구현되었으며, `load()`와 `dump()` 메소드는 각각 파일에서 데이터를 읽고 쓰기 위해 사용됩니다. 유사한 라이브러리로는 `simplejson`, `ujson`, `orjson` 등이 있습니다.
+
+## See Also
+
+- 파이썬 공식 json 모듈 문서: https://docs.python.org/3/library/json.html
+- JSON 공식 웹사이트: https://www.json.org/json-en.html
+- Douglas Crockford의 JSON에 대한 개요: https://www.crockford.com/json.html

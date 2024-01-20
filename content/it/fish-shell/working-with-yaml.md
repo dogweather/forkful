@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Fish Shell: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## What & Why?
+YAML è un formato di dati facilmente leggibile utilizzato per la configurazione di file. I programmatori lo usano per la sua semplicità e leggibilità, rispetto ad altri formati come XML o JSON.
 
-Lavorare con YAML è una pratica comune tra i programmatori, poiché è un formato di dati strutturato che permette di memorizzare informazioni in modo facilmente leggibile dalle macchine e dagli esseri umani. È comunemente utilizzato per la configurazione dei programmi e per lo scambio di dati tra sistemi.
+## How to:
+Per lavorare con YAML in Fish, ti servono strumenti come 'yq'. Ecco un esempio di come leggere e modificare un file YAML.
 
-## Come si fa:
+```Fish Shell
+# Leggi un valore da YAML
+yq e '.database.host' config.yaml
 
-Il modo più semplice per lavorare con YAML nel Fish Shell è utilizzando il comando `yaml`. Ad esempio, per leggere un file YAML e stamparne il contenuto, si può utilizzare il seguente comando:
-
-```
-fish-shell> yaml cat file.yaml
-```
-
-Per creare un nuovo file YAML, si può utilizzare il comando `edit` combinato con il comando `yaml`. Ad esempio:
-
-```
-fish-shell> yaml edit nuovo_file.yaml
+# Modifica un valore e salva il file
+yq e '.database.host = "localhost"' -i config.yaml
 ```
 
-Per aggiungere nuove informazioni al file YAML, si può utilizzare il comando `yaml set`. Ad esempio:
-
+```Sample Output
+server.example.com # Output dal leggere il valore
+# Nessun output visibile per la modifica; il file config.yaml è aggiornato
 ```
-fish-shell> yaml set nuovo_file.yaml nome "Mario"
-```
 
-## Approfondimento
+## Deep Dive
+YAML viene da "YAML Ain't Markup Language", sottolineando il suo focus sulla leggibilità. Alternativi includono JSON e TOML. In Fish, 'yq' gira sui binari di 'libyaml', il quale implementa YAML 1.1 e 1.2.
 
-YAML è stato introdotto nel 2001 come una alternativa più facile da leggere e scrivere rispetto a formati simili come XML. È stato adottato in molti progetti open source e ha guadagnato popolarità grazie alla sua struttura intuitiva basata su liste e mappature.
-
-Se non si utilizza Fish Shell, è comunque possibile lavorare con YAML utilizzando strumenti come Python o Ruby. In alternativa, è possibile utilizzare l'editor di testo preferito per modificare manualmente il file YAML.
-
-Per quanto riguarda l'implementazione di YAML nel Fish Shell, il comando `yaml` fa uso della libreria di parsing PyYAML. Alcune alternative per lavorare con YAML in Fish Shell includono lo script `yed` e il plugin `fancy_yaml`.
-
-## Vedi anche
-
-Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
-
-Pagina di informazioni su YAML: https://yaml.org/
+## See Also
+- Documentazione di 'yq': https://mikefarah.gitbook.io/yq/
+- YAML Specification: https://yaml.org/spec/1.2/spec.html
+- Confronto tra formati di configurazione: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats

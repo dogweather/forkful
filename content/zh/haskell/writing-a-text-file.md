@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "Haskell: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件？为什么程序员需要它？
+## 什么 & 为什么？
+写文本文件就是在电脑上创建含有文字内容的文件。程序员通常这么做来保存数据，比如配置、日志、或用户生成内容。
 
-文本文件是由程序员编写的纯文本文件，其中包含文本信息和命令。它们是一种简单的文件格式，可以用来存储和交换数据。程序员通常需要写文本文件来存储程序的配置信息、日志、或者其他文本数据。
-
-## 如何写文本文件：
-
+## 如何做：
 ```Haskell
-import System.IO
+-- 引入必要的模块
+import System.IO  
 
-main = do
-    -- 创建或打开文本文件
-    writeFile "sample.txt" "这是一个示例文本文件。"
+-- 主函数，调用 writeFileExample
+main :: IO ()
+main = writeFileExample
 
-    -- 读取文件
-    fileData <- readFile "sample.txt"
-    putStrLn fileData
+-- 使用writeFile函数写文件
+writeFileExample :: IO ()
+writeFileExample = do
+    let content = "Hello, Haskell!"  -- 文件内容
+    writeFile "example.txt" content -- 写入内容到example.txt
+    putStrLn "文件已保存！" -- 输出确认信息
 ```
+运行后将在当前目录创建一个包含 "Hello, Haskell!" 文字的 "example.txt" 文件，并在控制台显示 "文件已保存！"。
 
-输出：
+## 深入了解
+写文本文件的能力自编程语言发明以来就存在。`writeFile`是Haskell提供的简洁函数，但底层还有其他方法，比如用`openFile`和`hPutStr`函数打开指定模式的文件并写入。Haskell还允许程序员控制字符编码、换行符处理等；`Data.ByteString`库提供了对二进制文件的支持。
 
-```
-这是一个示例文本文件。
-```
-
-## 深入探讨：
-
-(1) 文本文件的历史背景：在计算机科学的早期，文本文件是存储数据的最常用格式。它们也被用于编写程序和存储源代码。
-(2) 其他选择：除了文本文件，程序员还可以使用数据库或其他数据格式来存储数据。然而，文本文件仍然是最简单、最常用的格式之一。
-(3) 实现细节：在Haskell中，可以使用`System.IO`模块来写入和读取文本文件。`writeFile`和`readFile`函数分别用于写入和读取文件。在文件操作完成后，一定要记得关闭文件。
-
-## 参考资料：
-
-- [Haskell官方文档](https://www.haskell.org/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Hoogle：Haskell函数搜索引擎](https://hoogle.haskell.org/)
+## 另见
+- [Haskell官方文档](https://www.haskell.org/documentation/)
+- [Learn You a Haskell for Great Good!文件和流](http://learnyouahaskell.com/input-and-output#files-and-streams)

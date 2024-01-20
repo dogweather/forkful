@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "Haskell: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,21 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が？なんで？
-標準エラーへの書き込みとは、プログラマーがコードの実行中にエラーメッセージや警告を表示するための仕組みです。このような情報をプログラムを実行する際に見ることができることで、問題を特定して修正することができます。
+## What & Why?
+標準エラー (stderr) への書き込みは、エラーメッセージや警告をログに出力する手法です。これにより、正常な出力と診断メッセージを分離し、デバッグやログ監視を効率的に行えます。
 
-## 方法：
-以下のように、`haskell`コードブロック内にコードの例と出力を示します。 
+## How to:
 
-```Haskell 
+```Haskell
+import System.IO (hPutStrLn, stderr)
+
 main :: IO ()
 main = do
-  hPutStrLn stderr "エラーが発生しました！" -- 標準エラーにメッセージを書き込む
-  hFlush stderr -- バッファされたエラーメッセージを表示する
+  hPutStrLn stderr "エラー: 不明なコマンド"
 ```
 
-## 深く見てみよう：
-プログラミングの歴史的背景では、標準エラーへの書き込みはデバッグの際に非常に重要な役割を果たしました。代替手段として、ファイルやログにエラーメッセージを書き込む方法もありますが、標準エラーへの書き込みはコード内で直接行うことができるので簡単です。また、Haskellでは`System.IO`モジュールを使用して標準エラーへの書き込みが行われます。
+実行結果: 標準エラーへ「エラー: 不明なコマンド」と表示されます。
 
-## 関連リンク：
-- [HaskellのSystem.IOモジュールのドキュメント](https://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/io-channels.html)
+## Deep Dive
+Haskellの`Stdlib`では、`System.IO` モジュールが標準出力(stdout)と標準エラー(stderr)の両方を扱います。初期のUnixシステムで採用されて以来、stderrはエラーメッセージの標準的な出力先です。代替手段として日誌ファイセルへ直接記録することもありますが、標準エラーへの書き込みはデバッグ時の標準プラクティスです。実装上、`hPutStrLn` 関数を使用し、第一引数に `stderr`ハンドルを指定することで標準エラーに情報を出力できます。
+
+## See Also
+- [Hackage Haskell Library documentation for System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Haskell Wiki on IO](https://wiki.haskell.org/IO_inside)
+- [Real World Haskell: Chapter 7 - I/O](http://book.realworldhaskell.org/read/io.html)

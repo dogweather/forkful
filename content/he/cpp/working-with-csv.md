@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם CSV"
-html_title:           "C++: עובדים עם CSV"
-simple_title:         "עובדים עם CSV"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,103 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שימוש בפורמט הקובץ CSV הוא דרך נפוצה לאחסון והעברת נתונים בין יישומים שונים. תוכנתנים משתמשים בו כדי לקרוא ולכתוב לקבצים CSV בכדי לטפל במידע מאורגן בפשטות.
+## What & Why? (מה ולמה?)
+עבודה עם קבצי CSV כוללת קריאה וכתיבה של נתונים בפורמט טקסט שבו הערכים מופרדים בפסיקים. תכניתנים עובדים עם CSV כיוון שמדובר בפורמט פשוט, אוניברסלי וקל לתחזוקה לשיתוף נתונים בין יישומים.
 
-## איך לעשות:
-הנה דוגמה פשוטה של כיצד לכתוב נתונים לקובץ CSV בשפת C++:
-
+## How to (איך לעשות זאת)
+קוד לקריאת CSV:
 ```C++
-// כותבים את כל ההכרזות שנדרשות לפני תחילת התכנית
-#include <fstream> // ספריה שמאפשרת את העבודה עם קבצים
-#include <iostream> // ספריה שאחראית על הקלט והפלט של הנתונים
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
 
-using namespace std;
-
-int main() {
-    // נפתח קובץ חדש לכתיבה
-    ofstream outfile;
+std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
+    std::vector<std::vector<std::string>> data;
+    std::ifstream file(filename);
     
-    // נפתח את הקובץ ונכתוב את הנתונים
-    outfile.open("data.csv");
-    outfile << "מספר פריט, שם, מחיר" << endl;
-    outfile << "1, מנעול, 50.00" << endl;
-    outfile << "2, מפתח, 10.00" << endl;
-    outfile.close(); // סגירת הקובץ
+    std::string line;
+    while(std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> row;
+        
+        while(std::getline(lineStream, cell, ',')) {
+            row.push_back(cell);
+        }
+        
+        data.push_back(row);
+    }
     
-    // הדפסת הפלט למסך
-    cout << "נתונים נכתבו בהצלחה לקובץ CSV!" << endl;
-    return 0;
+    return data;
 }
 
+int main() {
+    auto data = readCSV("example.csv");
+    
+    for (const auto& row : data) {
+        for (const auto& cell : row) {
+            std::cout << cell << " ";
+        }
+        std::cout << std::endl;
+    }
+    
+    return 0;
+}
 ```
 
-הנה נתוני הפלט שיופיעו בקובץ:
-
+פלט דוגמה:
 ```
-מספר פריט, שם, מחיר
-1, מנעול, 50.00
-2, מפתח, 10.00
+name age
+Alice 30
+Bob 25
 ```
 
-## להעמיק:
-פורמט הקובץ CSV (Comma Separated Values) נוצר במגזר התעשייתי כדי לאפשר חלוקת נתונים בקלות בין יישומים שונים. אחת היתרונות שלו הוא שהוא קל מאוד לנתח ולעבד את המידע המכיל.
+קוד לכתיבת CSV:
+```C++
+#include <iostream>
+#include <fstream>
+#include <vector>
 
-אם אתם עובדים עם נתונים מורכבים יותר, כמו טבלאות, אפשר להשתמש בפרמטים כמו JSON או XML.
+void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
+    std::ofstream file(filename);
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << std::endl;
+    }
+}
 
-## ראה גם:
-למידע נוסף על פורמט הקובץ CSV ואיך לקרוא ולכתוב לקובץ בשפת C++, ניתן לעיין במדריך המפורט של Microsoft כאן: https://docs.microsoft.com/en-us/cpp/standard-library/formatting-parsing.reading-and-writing-files.
+int main() {
+    std::vector<std::vector<std::string>> data = {
+        {"name", "age"},
+        {"Alice", "30"},
+        {"Bob", "25"}
+    };
+    
+    writeCSV("example.csv", data);
+    
+    std::cout << "CSV file written successfully." << std::endl;
+    
+    return 0;
+}
+```
 
-בנוסף, אתר זה מכיל מידע נוסף על פורמטי קבצים נפוצים נוספים וכיצד לעבד אותם בקלות: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON.
+פלט דוגמה:
+```
+CSV file written successfully.
+```
+
+## Deep Dive (לעומק)
+פורמט CSV נעשה בשימוש רחב כבר משנות ה-70. חלופות נפוצות כוללות JSON ו-XML. בעת עבודה עם CSV חשוב לטפל באתגרים כמו שדות עם פסיקים, ציטוטים או שורות חדשות כחלק מהנתונים.
+
+## See Also (ראו גם)
+- מדריך לסיסמא C++ CSV Parser: https://github.com/ben-strasser/fast-cpp-csv-parser
+- הגדרה ותקנים של CSV מ-MIME: https://tools.ietf.org/html/rfc4180
+- תיעוד לספרייה הסטנדרטית של C++: http://www.cplusplus.com/reference/
+
+זכרו, הקוד הנ"ל הוא מודל בסיסי. למיזמים רציניים, שקלו שימוש בספריות מתקדמות שטופלו בהם גם מקרי קצה.

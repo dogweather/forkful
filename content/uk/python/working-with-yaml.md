@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Python: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Робота з YAML - це процес створення і редагування структурованих даних, який використовують програмісти для збереження та обміну конфігураційною інформацією. YAML - це простий формат для зберігання даних у вигляді тексту, який може бути легко зрозумілим і змінюваним людиною.
+## What & Why?
+## Що і Чому?
 
-## Як?
-Використання YAML у Python - це просто. Спочатку потрібно імпортувати модуль PyYAML, після чого можна створювати та редагувати файли YAML з допомогою вбудованих функцій. Наприклад:
+YAML stands for "YAML Ain't Markup Language". It's a human-readable data serialization format. Programmers use it for config files, data storage, or sharing data between different languages because it's simple and readable.
 
-```Python
-import yaml 
+## How to:
+## Як це зробити:
 
-# Створення нового YAML файлу
-data = {'key': 'value'}
-with open('file.yaml', 'w') as file:
-    yaml.dump(data, file)
+To work with YAML in Python, you'll need the `pyyaml` library. Install it using `pip`:
 
-# Читання інформації з YAML файлу
-with open('file.yaml') as file:
-    data = yaml.load(file, Loader=yaml.FullLoader)
-    print(data) # {'key': 'value'}
+```bash
+pip install pyyaml
 ```
 
-## Глибоке занурення
-YAML було створено у 2001 році як заміна для складного формату XML. Він став широко використовуваним для збереження конфігураційних файлів у програмуванні, оскільки він більш зрозумілий та зручний для редагування людиною. YAML також має альтернативи, такі як JSON та Toml, але YAML вже зарекомендував себе як потужний та зручний для використання формат даних.
+Read a YAML file:
 
-## Також дивіться
-- [Документація PyYAML](https://pyyaml.org/)
-- [Офіційна сторінка YAML](https://yaml.org/)
-- [Репозиторій YAML на GitHub](https://github.com/yaml/yaml)
+```Python
+import yaml
+
+with open('config.yaml', 'r') as stream:
+    try:
+        config = yaml.safe_load(stream)
+        print(config)
+    except yaml.YAMLError as exc:
+        print(exc)
+```
+
+Write to a YAML file:
+
+```Python
+import yaml
+
+data = {'database': {'user': 'root', 'password': 's3cr3t'}}
+
+with open('config.yaml', 'w') as outfile:
+    yaml.dump(data, outfile, default_flow_style=False)
+```
+
+Sample `config.yaml` contents:
+
+```yaml
+database:
+  user: root
+  password: s3cr3t
+```
+
+## Deep Dive:
+## Поглиблене вивчення:
+
+YAML came to life in the early 2000s as a human-friendly data format alternative to XML or JSON. While JSON is often used in web services, YAML is preferred for config files due to its clear syntax. In Python, YAML is typically parsed with `pyyaml`, but alternatives like `ruamel.yaml` offer extended functionality like preserving comments.
+
+## See Also:
+## Дивись також:
+
+- Official YAML website for spec details: [YAML](https://yaml.org)
+- PyYAML Documentation: [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- Alternative Python library `ruamel.yaml`: [ruamel.yaml](https://sourceforge.net/projects/ruamel-yaml/)
+- Comparison of data serialization formats: [Data Formats](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats)

@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰는 것"
-html_title:           "Java: 표준 에러에 쓰는 것"
-simple_title:         "표준 에러에 쓰는 것"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?: 
-표준 에러로 쓰는 것은 프로그래머가 프로그램 실행 중에 오류와 디버그 메시지를 출력할 수 있도록 하는 것입니다. 이는 프로그래머가 코드를 디버그하고 문제를 해결하는데 도움이 됩니다. 
+## What & Why? (무엇 그리고 왜?)
+표준 오류에 기록하기는 프로그램 실행 중 오류 메시지를 별도로 출력하는 것입니다. 개발자는 일반 출력과 구분해서 문제를 빠르게 발견하고, 로깅과 디버깅을 용이하게 하기 위해 이 방법을 사용합니다.
 
-## 하는 방법: 
+## How to: (어떻게 하나?)
 ```java
-System.err.println("이것은 표준 에러로 출력됩니다.");
+public class StdErrExample {
+    public static void main(String[] args) {
+        // 정상 출력
+        System.out.println("이것은 표준 출력입니다.");
+
+        // 오류 출력
+        System.err.println("이것은 에러 메시지입니다.");
+    }
+}
 ```
-위의 코드는 "이것은 표준 에러로 출력됩니다."라는 메시지를 표준 에러로 출력하는 예제입니다.
-
-**출력:**
-
+실행 결과:
 ```
-이것은 표준 에러로 출력됩니다.
+이것은 표준 출력입니다.
+이것은 에러 메시지입니다.
 ```
+참고: 오류 메시지는 종종 붉은색으로 표시되지만, 이는 콘솔 설정에 따라 달라집니다.
 
-## 깊게 파고들기:
-표준 에러를 사용하는 것은 프로그래밍에서 오랜 역사를 가지고 있습니다. 과거에는 프린터나 터미널과 같은 장치를 통해 오류 메시지를 출력했지만, 이제는 오류를 표준 에러로 출력하는 것이 일반적입니다. 또한 표준 출력과 표준 에러를 분리하여 보는 것이 좋습니다. 그렇지 않으면 프로그램 실행 결과와 오류 메시지가 서로 섞이게 될 수 있습니다.
+## Deep Dive: (심층 분석)
+표준 오류(stream)는 UNIX 시스템의 초기 설계에서 유래되었으며, 일반적으로 파일 디스크립터 2번에 해당합니다. 표준 출력(`System.out`)과는 대비되는 개념입니다. 대체 방법으로는 로깅 프레임워크를 사용하는 것이 있으며, 이는 더 정교하고 유연한 오류 관리를 가능하게 합니다. `System.err`의 내부 구현은 `PrintStream` 클래스에 기반하여, 자동으로 `flush`가 됩니다.
 
-대안으로는 표준 에러 대신 로깅 라이브러리를 사용하는 것이 있습니다. 로깅 라이브러리는 오류 메시지를 기록하고 저장하여 추후에 분석하는데 도움을 줍니다. 
-
-표준 에러에 데이터를 출력하려면 System.err 객체를 사용하면 됩니다. 이 객체는 표준 에러 스트림에 접근할 수 있는 메서드를 제공합니다.
-
-## 관련 자료: 
-- [Java 표준 에러 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Java 로깅 라이브러리](https://logging.apache.org/log4j/2.x/)
+## See Also: (추가 자료)
+- [System (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [PrintStream (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [Logging in Java with SLF4J](https://www.slf4j.org/manual.html)

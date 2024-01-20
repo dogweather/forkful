@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "Gleam: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -11,26 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Trabajar con archivos CSV es una tarea común para los programadores. Estos archivos son utilizados para almacenar y manipular datos tabulares, como listas de clientes o registros de ventas. Al ser un formato sencillo y ampliamente compatible, CSV se ha convertido en la opción preferida para compartir datos entre diferentes sistemas y aplicaciones.
+Trabajar con archivos CSV implica gestionar datos en un formato de texto simple, organizado por filas y comas. Los programadores lo hacen para manipular grandes cantidades de datos fácilmente, intercambiar información entre sistemas o importar/exportar desde hojas de cálculo y bases de datos.
 
 ## Cómo hacerlo:
-Para trabajar con archivos CSV en Gleam, podemos hacer uso del módulo ```gleam/csv```. Este módulo nos ofrece funciones para leer y escribir archivos CSV, así como para manipular y procesar los datos en ellos. A continuación, un ejemplo de cómo leer un archivo CSV y mostrar su contenido:
+```Gleam
+import gleam/csv
+import gleam/io
 
+pub fn main() -> Result(Nil, String) {
+  let data = "nombre,edad,ciudad\nJuan,34,Madrid\nLucia,28,Barcelona"
+  let rows = csv.decode(data)
+  
+  case rows {
+    Ok(records) ->
+      io.println("Lectura exitosa!")
+      records
+      |> List.map(fn(row) { row.fields })
+      |> io.debug
+      Err(_error) ->
+        io.println("Error al leer CSV")
+  }
+}
 ```
-let archivo = csv.from_file("datos.csv")
-let filas = archivo
-|> csv.rows
-|> List.map(fn (fila) -> fila.(0) end)
-
-println(filas)
+Salida de ejemplo:
+```
+Lectura exitosa!
+[[nombre, edad, ciudad], [Juan, 34, Madrid], [Lucia, 28, Barcelona]]
 ```
 
-En este ejemplo, utilizamos la función ```from_file``` para cargar en la variable "archivo" un archivo CSV llamado "datos.csv". Luego, utilizamos la función ```rows``` para obtener una lista de filas del archivo y, finalmente, mediante la función ```map``` convertimos cada fila en un string y lo mostramos en la consola con la función ```println```.
+## Estudio detallado
+El formato CSV se remonta a principios de los años 70 y se ha convertido en un estándar de facto para el intercambio de datos tabulares. Alternativas como JSON o XML ofrecen estructuras más complejas y meta-datos, pero CSV destaca por su simplicidad y amplia aceptación. En Gleam, trabajar con CSV es directo gracias al módulo `gleam/csv`, el cual ofrece funciones para decodificar y codificar datos CSV.
 
-## Profundizando:
-Los archivos CSV han existido desde hace décadas y han sido utilizados ampliamente en diferentes áreas, como la informática y las finanzas. Aunque son una opción popular, no son la única forma de almacenar datos tabulares. Otros formatos, como JSON y XML, también pueden cumplir la misma función, pero cada uno con sus ventajas y desventajas.
-
-En cuanto a la implementación en Gleam, el módulo ```gleam/csv``` se ha desarrollado para ser simple y fácil de usar, pero también cuenta con opciones avanzadas para personalizar su funcionamiento según nuestras necesidades. Esto lo hace una herramienta versátil y eficaz para trabajar con archivos CSV en nuestro código.
-
-## Ver también:
-Si estás interesado en aprender más sobre el trabajo con archivos CSV en Gleam, puedes revisar la documentación oficial del módulo ```gleam/csv``` en el sitio web de Gleam. También puedes consultar otros recursos en línea que ofrecen ejemplos y explicaciones detalladas sobre cómo utilizar este formato de datos en diferentes situaciones. ¡Anímate a probar y explorar todo lo que Gleam tiene para ofrecer en el manejo de archivos CSV!
+## Ver También
+- [RFC 4180, el estándar que define CSV](https://tools.ietf.org/html/rfc4180)
+- [Comunidad Gleam](https://gleam.run/community/)

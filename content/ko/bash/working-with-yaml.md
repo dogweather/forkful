@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Bash: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+YAML은 "YAML Ain't Markup Language"의 약어로, 설정 파일, 데이터 교환 등에 쓰는 데이터 직렬화 포맷입니다. YAML은 JSON이나 XML보다 읽고 쓰기 쉬워 프로그래머들이 선호합니다.
 
-YAML 작업이란 무엇인지 알아보고, 프로그래머들이 그것을 하는 이유를 알아보자. YAML은 더 쉽고 가독성이 높은 데이터 포맷이다. 이는 데이터를 더 효율적으로 저장하고 전달하기 위해 사용된다.
-
-## 어떻게:
-
-YAML은 Bash 환경에서도 사용할 수 있으며, 다음과 같은 방법으로 작업할 수 있다.
-
+## How to: (어떻게 하나요?)
 ```Bash
-# 파일 생성
-cat << EOF > test.yml
-name: John
-age: 25
-favorite_food: pizza
-EOF
-
-# 파일 내용 출력
-yaml2json test.yml
+# YAML 파일 읽기 예제
+yaml_file="config.yaml"
+echo "name: John Doe" > $yaml_file
+echo "occupation: Developer" >> $yaml_file
+echo "Reading YAML file:"
+yq e '.name' $yaml_file # yq를 사용해서 name 값 추출
+yq e '.occupation' $yaml_file # occupation 값 추출
 ```
 
-이렇게 하면 YAML 파일이 생성되고, ```yaml2json``` 명령어를 사용하면 YAML 파일을 JSON 형식으로 변환하여 출력할 수 있다.
+```Bash
+# 출력 결과:
+Reading YAML file:
+John Doe
+Developer
+```
 
-## 더 깊이 알아보기:
+```Bash
+# YAML 파일 만들기 예제
+create_yaml.sh
+#!/bin/bash
+name="Jane Doe"
+occupation="Data Analyst"
+cat << EOF > user.yaml
+name: $name
+occupation: $occupation
+EOF
+echo "YAML file 'user.yaml' created with content:"
+cat user.yaml
+```
 
-YAML은 2001년에 처음 등장하였고, 인간이 쉽게 읽고 쓸 수 있는 형식으로 데이터를 저장하기 위해 만들어졌다. YAML은 다른 형식으로 데이터를 표현하는 JSON과 비슷하지만, 좀 더 가독성이 좋고 작성하기 쉽다는 장점이 있다.
+## Deep Dive (깊은 탐색)
+YAML은 2001년 Clark Evans, Ingy döt Net, Oren Ben-Kiki에 의해 개발되었습니다. JSON, XML과 비교하면 YAML은 가독성이 높고, 다양한 프로그래밍 언어에서 지원합니다. yq나 PyYAML 같은 도구로 커맨드라인에서 YAML을 다룹니다. 또한, 대규모 시스템에서는 Ansible이나 Kubernetes 같은 오토메이션 툴에서 YAML을 설정 파일로 사용합니다.
 
-YAML 대신에 JSON을 사용할 수도 있지만, YAML은 좀 더 인간 친화적이라는 이유로 널리 사용되고 있다. YAML은 Python, Ruby 등 다양한 프로그래밍 언어에서도 사용할 수 있으며, 다양한 라이브러리와 툴도 지원하고 있다.
-
-## 관련 자료:
-
-https://yaml.org/
-
-https://json.org/
-
-https://python.org/doc/
-
-https://ruby-doc.org/
+## See Also (함께 보기)
+- YAML 공식 웹사이트: https://yaml.org
+- yq GitHub 페이지: https://github.com/mikefarah/yq
+- PyYAML 문서: https://pyyaml.org/wiki/PyYAMLDocumentation
+- YAML 관련 온라인 해석기: http://yaml-online-parser.appspot.com/

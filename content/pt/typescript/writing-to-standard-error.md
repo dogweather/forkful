@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo no erro padrão"
-html_title:           "TypeScript: Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-
-Escrever para o erro padrão é uma técnica utilizada pelos programadores para informar mensagens de erro ou outras informações relevantes durante a execução de um programa. Essas mensagens podem ser úteis para ajudar os programadores a identificar e corrigir problemas em seu código. Além disso, escrever para o erro padrão também pode ser útil durante a fase de depuração de um programa.
+## O Que é & Porquê?
+Escrever para o erro padrão (stderr) é o processo de envio de mensagens de erro e diagnóstico para um canal de saída especial, separado da saída normal (stdout). Programadores usam isso para reportar erros e para debugar, deixando a saída do programa limpa para resultados válidos.
 
 ## Como fazer:
 
-```TypeScript
-console.error("Mensagem de erro");
+```typescript
+// Simple message to stderr
+console.error("Oops! Algo deu errado.");
+
+// Formatted error message
+const code = 404;
+console.error(`Erro: ${code} - Página não encontrada.`);
+
+// Error object
+const errorObj = new Error("Erro de Sistema");
+console.error(errorObj);
 ```
 
-Este é um exemplo simples de como escrever para o erro padrão em TypeScript. A mensagem "Mensagem de erro" será exibida no console como um erro. Você também pode adicionar variáveis ou outros dados à mensagem entre os parênteses, para fornecer informações mais específicas sobre o erro.
+Saída de exemplo:
+```
+Oops! Algo deu errado.
+Erro: 404 - Página não encontrada.
+Error: Erro de Sistema
+```
 
-## Profundando:
+## Mergulho Profundo
+Historicamente, o conceito de separar stderr de stdout vem do Unix, permitindo aos utilizadores direcionar estas saídas de forma independente. Alternativas ao `console.error` em TypeScript incluem escrever diretamente para `process.stderr.write`, o que pode ser mais adequado para customização baixo-nível. A implementação real de `console.error` apenas envia a mensagem de erro para `process.stderr`.
 
-Na história da programação, escrever para o erro padrão foi uma técnica usada para lidar com erros e depurar programas antes do uso de ferramentas de depuração modernas. Alternativamente, os programadores podem optar por escrever para o erro padrão como uma maneira de registrar informações importantes durante a execução de um programa sem interrompê-lo.
+```typescript
+// Escrevendo diretamente no stderr
+process.stderr.write("Erro crítico!\n");
+```
 
-Os programadores também podem escrever para um arquivo de log em vez do erro padrão, o que pode ser útil para registrar informações de depuração em aplicativos de produção.
-
-Na implementação detalhada de escrever para o erro padrão em TypeScript, é importante notar que a diferença entre `console.log()` e `console.error()` é a formatação e a aparência das mensagens no console. Enquanto `console.log()` é usado para fins de registro e depuração geral, o `console.error()` sinaliza um erro mais grave ou crítico.
-
-## Veja também:
-
-- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/)
-- [Artigo sobre como usar o console em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
-- [Guia de depuração para iniciantes em TypeScript](https://blog.bitsrc.io/a-beginners-guide-to-debugging-typescript-6379ede98c1)
+## Veja Também
+- [Node.js documentation for console.error](https://nodejs.org/api/console.html#consoleerrordata-args)
+- [Node.js process.stderr documentation](https://nodejs.org/api/process.html#processstderr)
+- [Understanding Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)

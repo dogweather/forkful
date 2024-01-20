@@ -1,7 +1,7 @@
 ---
-title:                "Записування до стандартного помилкового потоку"
-html_title:           "Gleam: Записування до стандартного помилкового потоку"
-simple_title:         "Записування до стандартного помилкового потоку"
+title:                "Запис в стандартний потік помилок"
+html_title:           "Arduino: Запис в стандартний потік помилок"
+simple_title:         "Запис в стандартний потік помилок"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,15 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Писання до стандартного помилкового потоку - це коли програмісти вказують на помилки, проблеми або зміни, щоб вони могли бути виведені в консоль. Це важливий інструмент для відлагодження програм та полегшення пошуку помилок і відтворення їх у випадку потреби.
+## What & Why? (Що та Чому?)
+Writing to standard error (`stderr`) is for error messages and diagnostics. We use it to separate regular program output from error information. It helps in debugging and log analysis.
 
-Як робити:
-Використовуючи команду `log!(level, message)` в бібліотеці Gleam, ми можемо виводити різні рівні повідомлень до стандартного помилкового потоку. Наприклад, `log!(Level.Error, "Це повідомлення про помилку")` виведе повідомлення про помилку у форматі `[Error] Це повідомлення про помилку`.
+## How to: (Як це зробити:)
+Gleam's `io` module lets us write to `stderr`. Here's a simple usage example and what you'll see on your screen:
+```gleam
+import gleam/io
 
-Глибше вивчення:
-Писання до стандартного помилкового потоку було створено для полегшення пошуку та виправлення помилок у програмах. Іншими альтернативами є використання команди `panic!` або створення звичайних повідомлень за допомогою команди `log!`. У реалізації писання до стандартного помилкового потоку використовується стандартна бібліотека язика Erlang.
+pub fn main() {
+  io.println("This is standard output")
+  io.eprintln("This is standard error")
+}
+```
+Output:
+```
+This is standard output
+```
+Error:
+```
+This is standard error
+```
 
-Дивіться також:
-- [Документація Gleam](https://gleam.run/documentation/)
-- [Стандартні бібліотеки Erlang](https://erlang.org/doc/)
+## Deep Dive (Поглиблений Розгляд)
+Historically, separating output and errors helps in UNIX, where you can redirect them individually. Alternatives include writing to a file or network service for logging. Implementation-wise, Gleam relies on Erlang's capabilities for `stderr`, as it compiles to Erlang bytecode.
+
+## See Also (Дивіться також)
+- Gleam's `io` module documentation: https://hexdocs.pm/gleam_stdlib/gleam/io/
+- Erlang's error logging: http://erlang.org/doc/apps/error_logger/
+- Unix Philosophy on Standard Streams: https://en.wikipedia.org/wiki/Unix_philosophy#Pipelines

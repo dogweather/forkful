@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "C++: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que usar a saída de erro padrão no programa?
+## O Que é & Por Que?
 
-A saída de erro padrão é uma maneira pela qual os programadores podem exibir mensagens de erro ou informações importantes em seus programas. Diferente da saída normal que é exibida ao usuário, a saída de erro é impressa na tela de erros do sistema. Isso é útil para que os usuários e os desenvolvedores possam identificar e corrigir erros em seus programas.
+Escrever no erro padrão (stderr) permite que mensagens de erro e diagnósticos sejam separados da saída padrão (stdout). Programadores usam isso para facilitar a depuração e permitir que usuários roteiem mensagens de erro de forma diferente da saída regular.
 
-## Como fazer:
+## Como Fazer:
 
-Para imprimir mensagens na saída de erro padrão em C++, você pode usar a função `std::cerr` e o operador `<<`, como mostrado no exemplo a seguir:
+Você pode escrever no stderr em C++ usando o objeto `cerr` da biblioteca iostream. Veja como:
 
 ```C++
 #include <iostream>
 
 int main() {
-  std::cerr << "Este é um erro de exemplo." << std::endl;
-  return 0;
+    std::cout << "Esta é a saída padrão." << std::endl;
+    std::cerr << "Isto é uma mensagem de erro." << std::endl;
+    return 0;
 }
 ```
 
-A saída deste programa seria:
-
+Saída esperada:
 ```
-Este é um erro de exemplo.
+Esta é a saída padrão.
+Isto é uma mensagem de erro.
 ```
 
-## Mergulho profundo:
+## Mergulho Profundo:
 
-A ideia de utilizar a saída de erro padrão é antiga e vem desde os primeiros dias da programação. O objetivo principal é fornecer uma maneira de informar os usuários sobre erros e problemas que ocorrem durante a execução do programa. No entanto, com o avanço da tecnologia, surgiram novas maneiras de lidar com erros, como o uso de exceções em C++.
+Historicamente, a distinção entre stdout e stderr vem dos tempos dos primeiros terminais Unix, onde era útil separar as saídas. Alternativas incluem escrever em arquivos de log ou usar bibliotecas de log customizadas. Internamente, stderr é um stream desbufferizado, isso significa que as mensagens são enviadas imediatamente r para o destino de saída.
 
-No entanto, a saída de erro padrão continua sendo uma ferramenta importante para os programadores. Além de exibir mensagens de erro, também pode ser usada para imprimir informações de diagnóstico durante o desenvolvimento de um programa, como valores de variáveis e fluxo de execução.
+## Veja Também:
 
-A implementação desta funcionalidade pode variar de acordo com o sistema operacional e a linguagem de programação utilizada. Em geral, a saída de erro padrão é redirecionada para um dispositivo específico, como o console ou arquivo de log.
-
-## Veja também:
-
-Para mais informações sobre a saída de erro padrão e como utilizá-la em seus programas em C++, você pode consultar as seguintes fontes:
-
-- Documentação oficial do C++ sobre a função `std::cerr`: https://en.cppreference.com/w/cpp/io/cerr
-- Tutorial sobre a saída de erro padrão em C++: https://www.learncpp.com/cpp-tutorial/186-basic-use-of-cerr/
-- Como depurar programas em C++ utilizando a saída de erro padrão: https://www.geeksforgeeks.org/c-debugging-practise-using-stderr/
+- Documentação do C++ para `<iostream>`: http://www.cplusplus.com/reference/iostream/
+- Tutorial do C++ sobre manipulação de arquivos e streams: http://www.cplusplus.com/doc/tutorial/files/
+- A especificação do C++ atualizada: https://isocpp.org/std/the-standard

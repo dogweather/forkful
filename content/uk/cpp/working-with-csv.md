@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv файлами"
-html_title:           "C++: Робота з csv файлами"
-simple_title:         "Робота з csv файлами"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+## Що і чому?
+Робота з CSV полягає в читанні, записі, і маніпуляції даними у форматі, що їх легко читати як людині, так і машині. Програмісти використовують CSV через його простоту та сумісність з таблицями електронних таблиць.
 
-Робота з CSV у програмуванні означає роботу з файлами, що містять дані у вигляді таблиці з комами як роздільниками. Це часто використовується для обробки великих обсягів даних, наприклад, у веб-додатках або для збереження даних у зручному форматі.
-
-Як:
-
+## Як це робити:
 ```C++
-// створення змінної для збереження даних CSV
-std::fstream file("data.csv", std::ios::in);
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <sstream>
 
-if (file.is_open()) {
-
-    // читання даних рядок за рядком і розділення їх за допомогою ком
+// Функція для читання CSV-файлу
+std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
+    std::vector<std::vector<std::string>> data;
+    std::ifstream file(filename);
     std::string line;
-    while (getline(file, line, ',')) {
-        // обробка даних
-        std::cout << line << std::endl;
+    while (getline(file, line)) {
+        std::stringstream linestream(line);
+        std::string cell;
+        std::vector<std::string> rowData;
+        while (getline(linestream, cell, ',')) {
+            rowData.push_back(cell);
+        }
+        data.push_back(rowData);
+    }
+    return data;
+}
+
+// Функція для запису даних у CSV-файл
+void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
+    std::ofstream file(filename);
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            file << row[i];
+            if (i < row.size() - 1) {
+                file << ",";
+            }
+        }
+        file << "\n";
+    }
+}
+
+int main() {
+    // Запис даних у CSV
+    std::vector<std::vector<std::string>> myData = {
+        {"Name", "Age", "City"},
+        {"Alex", "31", "Kyiv"},
+        {"Danylo", "29", "Lviv"}
+    };
+    
+    writeCSV("example.csv", myData);
+    
+    // Читання даних з CSV
+    auto readData = readCSV("example.csv");
+    for (const auto& row : readData) {
+        for (const auto& cell : row) {
+            std::cout << cell << " ";
+        }
+        std::cout << std::endl;
     }
 
-    file.close();
+    return 0;
 }
 ```
 
-Вихід:
-
+**Вивід:**
 ```
-1, 2, 3, 4
-5, 6, 7, 8
-9, 10, 11, 12
+Name Age City
+Alex 31 Kyiv
+Danylo 29 Lviv
 ```
 
-Глибоке занурення:
+## Глибоке занурення
+CSV (Comma-Separated Values) — це простий формат обміну даними, який був створений у ранні 70-ті. Є альтернативи, такі як XML та JSON, що надають більше можливостей для серіалізації складних даних. Працювати з CSV у C++ можна без зовнішніх бібліотек, але для великих чи складних файлів є бібліотеки, такі як 'csv-parser' і 'Boost CSV'.
 
-Робота з CSV стала популярною у зв'язку зі зростанням потреб в обробці великих обсягів даних. CSV є простим форматом, який може бути розпізнаним багатьма різними програмами, що робить його зручним для обміну даними між різними додатками.
-
-Альтернативою до роботи з CSV може бути робота з базами даних, що надають більше можливостей для збереження та обробки даних. Однак, це також може бути більш складним варіантом для роботи.
-
-Щоб працювати з CSV у C++, можна використовувати стандартну бібліотеку ```<fstream>```, але існують також інші сторонні бібліотеки, які полегшують цей процес, наприклад, ```csv-parser```.
-
-Дивіться також:
-
-- [Стандартна бібліотека ```<fstream>```](https://www.cplusplus.com/reference/fstream/)
-- [Бібліотека ```csv-parser```](https://github.com/ben-strasser/fast-cpp-csv-parser)
+## Див. також
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), стандарт CSV.
+- [libcsv](http://sourceforge.net/projects/libcsv/), бібліотека C для читання і запису CSV файлів.
+- [Boost Library](https://www.boost.org/), збірка бібліотек для C++, які містять компонент для роботи з CSV.

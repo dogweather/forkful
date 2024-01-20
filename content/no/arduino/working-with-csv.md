@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Arduino: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## What & Why?
+CSV står for "Comma-Separated Values". Det brukes for enkel lagring og utveksling av data, vanligvis fordi det er lett å forstå både av mennesker og maskiner.
 
-Arbeid med CSV står for Comma Separated Values og refererer til en måte å lagre og organisere data på ved hjelp av kommaer mellom verdier. Programmere bruker ofte CSV for å enkelt strukturere og lese data som er lagret i en tabellform.
+## How to:
+Arbeid med CSV-filer på Arduino kan involvere å lese eller skrive data. Her er et eksempel for å skrive til CSV:
 
-# Hvordan:
+```Arduino
+#include <SD.h>
 
-En enkel måte å arbeide med CSV i Arduino er å bruke en CSV library som "ArduinoCSV". Først må du importere biblioteket ved å inkludere følgende linje i koden din:
+File myFile;
 
-```
-#include <ArduinoCSV.h>
-```
+void setup() {
+  Serial.begin(9600);
+  SD.begin(10); 
+  myFile = SD.open("data.csv", FILE_WRITE);
 
-Deretter kan du definere et CSV objekt og åpne en fil for å lese data:
+  // Hvis filen er åpen, skriv til den.
+  if (myFile) {
+    myFile.println("Temperatur,Humidity");
+    myFile.println("22.5,45");
+    myFile.println("23.0,47");
+    myFile.close(); // Lukker filen etter bruk
+  } else {
+    // hvis filen ikke åpner, vis en feilmelding:
+    Serial.println("Feil ved åpning av data.csv");
+  }
+}
 
-```
-CSV csv;
-csv.open("data.csv");
-```
-
-For å lese data fra filen rad for rad, kan du bruke en while-løkke og "readRow" kommandoen:
-
-```
-while (csv.readRow()) {
-  int value1 = csv.getInt(0);
-  float value2 = csv.getFloat(1);
-  String value3 = csv.getString(2);
-  // gjør noe med dataen her
+void loop() {
+  // Ikke noe loop-innhold for filskrivingseksemplet
 }
 ```
 
-CSV objektet vil automatisk lese hvert komma separert felt og lagre det som en int, float eller string, avhengig av verdien. Du kan også bruke kommandoer som "writeRow" for å skrive data til filen.
+## Deep Dive
+CSV-formatet ble poppulært på grunn av sin enkelhet og har røtter tilbake til tidlig dataark-programvare på 1970-tallet. Alternativene til CSV inkluderer JSON og XML, som bærer mer datastruktur, men de kan kreve mer kompleks håndtering. På Arduino, må du huske på lagringsgrenser og velge riktig bibliotek (som `SD.h` for arbeid med SD-kort) for å lese/skrive CSV-filer.
 
-# Dypdykk:
-
-CSV formatet ble opprinnelig utviklet på 1970-tallet som en standard for å overføre data fra en database til en annen. Det har blitt svært populært og brukes ofte i applikasjoner som håndterer store mengder data.
-
-Det finnes også andre måter å lagre data på, som for eksempel XML og JSON formatene. Disse kan være mer komplekse å arbeide med, men tilbyr mer struktur og fleksibilitet.
-
-Implementasjonen av CSV i Arduino er avhengig av biblioteker, da det ikke finnes en innebygd funksjonalitet for dette. Det er viktig å være oppmerksom på eventuelle begrensninger eller utfordringer med de valgte bibliotekene.
-
-# Se også:
-
-- ArduinoCSV bibliotek: https://github.com/arduino-libraries/ArduinoCSV
-- Wikipedia: https://en.wikipedia.org/wiki/Comma-separated_values
-- How to CSV in Arduino: https://www.youtube.com/watch?v=VPrUeIH4rxI
+## See Also
+- Arduino SD Bibliotek Dokumentasjon: https://www.arduino.cc/en/Reference/SD
+- CSV-standarden: https://tools.ietf.org/html/rfc4180
+- "Serial Input Basics" forumstråden på Arduino: https://forum.arduino.cc/index.php?topic=396450

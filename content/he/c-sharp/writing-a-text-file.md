@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "C#: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,18 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא תהליך שבו משתמשים בתוכנת קוד ליצירת קובץ שמכיל טקסט פשוט, כגון מסמכי טקסט וקבצי תרגום. תהליך זה נחשב לחלק חשוב מאוד בתכנות ומשמש לשמירת מידע ונתונים שונים.
+כתיבת קובץ טקסט היא תהליך שבו תוכנה שומרת נתונים בקובץ הניתן לקריאה בטקסט רגיל. תוכניתאים עושים זאת כדי לשמור הגדרות, לוגים, נתונים להעברה בין מערכות ועוד.
 
 ## איך לעשות:
-```
+```C#
+using System;
 using System.IO;
-File.WriteAllText("myfile.txt", "This is a sample text file.");
+
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"C:\example\myfile.txt";
+        string content = "שלום, זה קובץ טקסט נכתב בעברית.";
+
+        File.WriteAllText(filePath, content);
+        
+        // בדוק שהקובץ נכתב
+        if(File.Exists(filePath))
+        {
+            Console.WriteLine("קובץ נכתב בהצלחה.");
+        }
+    }
+}
+```
+פלט לדוגמה:
+```
+קובץ נכתב בהצלחה.
 ```
 
-הקוד לעיל מייצר קובץ טקסט חדש בשם "myfile.txt" ומכיל את המשפט "This is a sample text file." ישנן גם אפשרויות אחרות לכתיבת קבצים טקסט, כגון כתיבה שורה אחרי שורה, או כותב נתונים לתוך קובץ קיים.
+## עיון נוסף
+ניקוד לסטורי של כתיבת קבצים ב-C# מתחיל בגרסאות הראשונות של השפה ונתמך על ידי ספריית .NET Framework. ישנן אלטרנטיבות ל-`File.WriteAllText`, כולל `StreamWriter`, שמספק יותר גמישות בכתיבה לקובץ. בחינת הדרכים שונות לכתיבת קבצים יכולה להיות שימושית לבחירת הגישה הנכונה לפי צורכי התוכנית.
 
-## עומק הטלה:
-כתיבת קבצים נעשה כבר שנים רבות, ולמרבה המזל מתברר כי קבצים טקסט הם כלי נוח ויעיל לשמירת מידע ונתונים. יתר על כן, קיימות גם אפשרויות חדשות כגון שימוש בבסיסי הנתונים כדי לשמור נתונים מבוקשים.
-
-## לצפות גם:
-למידע נוסף על כתיבת קבצים ב-C# ניתן לבקר באתר המתכנתים הרשמי של מייקרוסופט: https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writelines?view=net-5.0
+## לראות גם
+- Microsoft Docs - `File.WriteAllText`: https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writealltext
+- מדריך ל-`StreamWriter`: https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter
+- .NET API Browser: https://docs.microsoft.com/en-us/dotnet/api/

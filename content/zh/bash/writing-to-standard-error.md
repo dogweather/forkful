@@ -1,6 +1,6 @@
 ---
 title:                "写入标准错误"
-html_title:           "Bash: 写入标准错误"
+html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-###
+## 什么 & 为什么？
+写入标准错误即将错误信息发往特定的输出流（stderr），而不是常规的标准输出（stdout）。程序员这么做是为了便于诊断错误，并将日志信息与正常输出区分开来。
 
-什么&为什么？
-
-写入标准错误是指将程序中产生的错误信息输出到终端窗口中。程序员这样做是为了让用户能够看到程序的错误，从而帮助调试和改进程序。
-
-如何：
-
-有几种方法可以将错误信息写入标准错误。下面是一个例子：
-
+## 怎么做：
 ```Bash
-if [ $x -lt 0 ]; then
-  echo "x不能为负数" >&2
-  exit 1
-fi
+#!/bin/bash
+
+# 正确信息输出到 stdout
+echo "这是一条正常信息"
+
+# 错误信息输出到 stderr
+echo "这是一条错误信息" >&2
 ```
 
-输出：
+输出样例：
+```
+这是一条正常信息
+这是一条错误信息
+```
 
-x不能为负数
+## 深入探索：
+`stderr`起源于早期的 Unix 系统，是程序设计的标准部分，旨在处理错误输出。除了直接写入stderr之外，还可以重定向错误日志到文件、其他程序或远端服务中。在 Bash 中，`2>` 能够将标准错误重定向到文件中。例如，`command 2> error.log`会将错误信息输出到`error.log`文件。实现时，`stderr`通常用文件描述符 2 表达，而`stdout`是文件描述符 1。
 
-深入探讨：
-
-写入标准错误的概念并不是新鲜的。早期的Unix系统已经使用这种方法来显示程序的错误信息。除了将错误信息写入标准错误，程序员也可以选择将它们写入日志文件。
-
-另一种方法是使用标准错误重定向符号"2>"来指定将错误信息写入哪个文件。这种方法需要更复杂的代码来处理错误信息，因为程序不直接将它们输出到终端窗口。
-
-建议阅读：
-
-如果想了解更多关于标准错误的内容，可以参考以下资源：
-
-2. [GNU Bash文档](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-
-请注意，这些资源是英文的，需要有一定的英文阅读能力。同时，也可以参考其他中文的博客和教程来学习标准错误的应用。
+## 参见链接：
+- Bash 手册关于重定向的部分: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Redirections
+- Advanced Bash-Scripting Guide的错误处理部分: https://tldp.org/LDP/abs/html/io-redirection.html

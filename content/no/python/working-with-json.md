@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "Python: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Nøkkelord: Python, JSON, programmering, data
+## What & Why?
+JSON er dataformatet for webben. Programmerere bruker det for å lagre og overføre kompakt og leselig data mellom server og klient.
 
-## Hva er JSON og hvorfor bruker programmere det?
+## How to:
 
-JSON (JavaScript Object Notation) er et tekstbasert dataformat som brukes til å lagre og utveksle strukturert informasjon mellom applikasjoner. Det er spesielt nyttig for å lagre og håndtere store mengder data, og er mye brukt i web-applikasjoner og databaser. Programmere bruker JSON for å enkelt kunne organisere og hente ut data på en standardisert måte.
-
-## Slik bruker du JSON i Python:
-
-```
+```python
 import json
 
-# Konvertere JSON til Python dictionary
-data = '{"navn": "Ole", "alder": 20, "hobbyer": ["fotball", "musikk", "film"]}'
-python_dict = json.loads(data)
+# Lage JSON fra en Python dict
+data = {'navn': 'Ola', 'age': 30}
+json_data = json.dumps(data)
+print(json_data)
 
-# Skrive ut en spesifikk verdi fra dictionary
-print(python_dict["alder"])
-
-# Konvertere Python dictionary til JSON
-nytt_data = json.dumps(python_dict)
-print(nytt_data)
+# Parse JSON tilbake til Python dict
+parsed_data = json.loads(json_data)
+print(parsed_data)
 ```
 
-Output:
+Sample output:
 ```
-20
-{"navn": "Ole", "alder": 20, "hobbyer": ["fotball", "musikk", "film"]}
+{"navn": "Ola", "age": 30}
+{'navn': 'Ola', 'age': 30}
 ```
 
-## Dypdykk i JSON:
+```python
+# Les JSON fra fil
+with open('data.json', 'r', encoding='utf-8') as f:
+    data_fra_fil = json.load(f)
+    print(data_fra_fil)
+```
 
-JSON ble utviklet som et lettere og enklere alternativ til XML for å lagre og sende data mellom applikasjoner på weben. Det er et åpent format og støttes av de fleste programmeringsspråk. JSON brukes også mye i sammenheng med REST APIer for å strukturere data og gjøre det enkelt å hente ut spesifikke data.
+## Deep Dive
+JSON står for JavaScript Object Notation og ble introdusert tidlig på 2000-tallet. Alternativer inkluderer XML og YAML, men JSON er populært for enkeltheten og hastigheten. Når du jobber med Python, skjer serialisering og deserialisering av JSON via `json` modulen, som følger RFC7159 standarden.
 
-Å jobbe med JSON i Python er enkelt og effektivt med hjelp av "json" biblioteket. Det finnes også alternativer som SimpleJSON og uJSON som tilbyr raskere ytelse for større og mer komplekse JSON-data.
-
-## Se også:
-
-- [Python offisiell dokumentasjon for JSON](https://docs.python.org/3/library/json.html)
-- [Real Python: Intro til JSON i Python](https://realpython.com/python-json/)
+## See Also
+- [JSON i Python dokumentasjon](https://docs.python.org/3/library/json.html)
+- [RFC 7159 – The JavaScript Object Notation (JSON) Data Interchange Format](https://tools.ietf.org/html/rfc7159)
+- [W3Schools JSON tutorial](https://www.w3schools.com/js/js_json_intro.asp)

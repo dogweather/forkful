@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Lua: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?:
-Scrivere su standard error è una tecnica utilizzata dai programmatori per visualizzare messaggi di errore o avvisi durante l'esecuzione di un programma. Invece di mostrare questi messaggi sulla console (cioè la funzione print), vengono inviati al canale di errore standard (standard error) che di solito è reindirizzato su una shell o un file di log. Questo rende più facile individuare e risolvere eventuali problemi o errori durante lo sviluppo di un software.
+## What & Why?
+Scrivere su standard error permette di separare l'output normale da quello degli errori. I programmatori lo fanno per facilitare il debugging e la gestione degli errori.
 
-## Come fare:
-### Esempio 1:
+## How to:
+In Lua, `io.stderr:write()` scrive su standard error.
+
+```Lua
+-- Invio di un messaggio di errore a stderr
+io.stderr:write("Errore: non è possibile elaborare il file.\n")
+
+-- Visualizzando l'output usando os.execute() per simulare il redirezionamento
+os.execute("echo 'Messaggio normale'")  -- Output su stdout
+os.execute("lua script.lua 1>&2")  -- Redirezione di stdout a stderr
 ```
-Lua print("Questo è un messaggio di errore")
+Output di esempio:
+```
+Messaggio normale
+Errore: non è possibile elaborare il file.
 ```
 
-Output: ```Questo è un messaggio di errore```
+## Deep Dive
+Lua non fa distinzioni tra stdout e stderr nativamente come altri linguaggi; `io.stderr` è uno stream separato fornito per convenzione. Alternativamente, puoi usare `print` o `io.write` per stdout e redirigere da terminale. Da un punto di vista storico, la distinzione tra stdout e stderr risale ai primi sistemi Unix, permettendo agli utenti di differenziare tra output ordinario e messaggi di errore.
 
-### Esempio 2:
-```
-Lua io.stderr:write("Questo è un messaggio di errore")
-```
-
-Output: ```Questo è un messaggio di errore```
-
-Entrambi gli esempi utilizzano la funzione print per scrivere su standard error utilizzando la sintassi di Lua. Possiamo anche utilizzare l'oggetto io.stderr e il metodo write per ottenere lo stesso risultato. 
-
-## Approfondimento:
-Scrivere su standard error è diventato una pratica comune nella programmazione moderna. In passato, i programmatori spesso stampavano i messaggi di errore su standard output (console) ma questo poteva causare confusione e difficoltà nella lettura degli output del programma su console. Invece, scrivendo su standard error, i messaggi di errore sono facilmente distinguibili dagli output regolari, semplificando il processo di debugging.
-
-Esistono anche altre alternative per gestire i messaggi di errore, come l'utilizzo di logger o librerie di gestione degli errori. Tuttavia, scrivere su standard error rimane un metodo semplice ed efficace per gestire i messaggi di errore durante lo sviluppo di un software.
-
-Per quanto riguarda l'implementazione, l'uso di standard error è gestito dai sistemi operativi e dalle librerie C utilizzate da Lua. Quindi non è necessario preoccuparsi di configurarlo all'interno del codice Lua.
-
-## Vedi anche:
-- [Lua official documentation](https://www.lua.org/manual/5.3/manual.html)
-- [An in-depth explanation of standard error and standard out](https://www.linuxjournal.com/article/2156)
-- [An introduction to Lua programming language](https://www.lua.org/about.html)
+## See Also
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
+- Programming in Lua (4th edition): https://www.lua.org/pil/contents.html
+- Unix Standard Streams - Wikipedia: https://en.wikipedia.org/wiki/Standard_streams

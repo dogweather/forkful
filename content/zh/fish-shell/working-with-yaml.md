@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml进行编程"
-html_title:           "Fish Shell: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是YAML & 为什么程序员需要它？
-YAML是一种使用简单易读的语法结构来表示数据的格式。它可以作为配置文件或者存储数据的方式。程序员会使用YAML来组织和存储数据，使其易于阅读和修改。
+## What & Why? (是什么以及为什么？)
+YAML是一种数据序列化格式，用于配置文件和数据交换。程序员使用它因为它易于阅读，结构清晰，且跨语言兼容。
 
-## 如何操作？
-```fish shell
-# 创建一个YAML文件
-touch mydata.yaml
+## How to (如何操作)
+YAML 文件在 Fish Shell 中的处理通常需要外部工具，如 `yq`。以下是使用 `yq` 在 Fish Shell 里读取和修改 YAML 文件的示例。
 
-# 使用Fish Shell的微型文本编辑器来编辑数据
-fish_config
+读取 YAML:
 
-# 在YAML文件中定义数据，例如：
-name: Alice
-age: 25
-hobbies:
-- reading
-- hiking
+```Fish Shell
+echo 'name: Tom\nage: 30' | yq e '.name' -
+# 输出: Tom
 ```
 
-## 深入了解
-YAML是"YAML Ain't Markup Language"的递归缩写，是一种由Clark Evans和Ingy döt Net共同开发的数据序列化格式。它的设计目的是要比其他格式更易于使用和阅读。除了YAML，还有其他类似的格式，例如JSON和XML，但它们并不像YAML那样易于阅读和修改。
+写入 YAML:
 
-## 查看更多
-- [YAML官方网站](https://yaml.org/)
-- [YAML语法指南](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/)
+```Fish Shell
+echo '{name: "Tom", age: 30}' | yq e '.age = 31' -
+# 输出更新后的YAML:
+# name: Tom
+# age: 31
+```
+
+## Deep Dive (深入探索)
+YAML诞生于2001年，致力于数据可读性和易用性。相比JSON和XML，YAML更适合配置文件。使用外部工具如`yq`是处理 YAML 的常见方法，`yq` 是基于强大的 `jq` 工具。Fish Shell 自身不内置处理 YAML 的功能，因此你需要借助工具或者在其他支持 YAML 的语言中进行处理。
+
+## See Also (另请参阅)
+- YAML 官网: https://yaml.org/
+- `yq` GitHub 页面: https://github.com/mikefarah/yq 
+- Learn X in Y minutes — YAML: https://learnxinyminutes.com/docs/yaml/

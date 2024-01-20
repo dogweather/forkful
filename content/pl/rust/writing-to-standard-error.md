@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Rust: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,24 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robimy? 
+## What & Why?
+"Co i dlaczego?"
+Pisanie do standardowego błędu (stderr) to wyświetlanie informacji o błędach i diagnostyce. Programiści robią to, aby oddzielić zwykłe dane wyjściowe od komunikatów o błędach, co ułatwia debugging i logowanie.
 
-Pisanie do standardowego błędu (standard error) to proces, w którym programista wysyła błędy lub ostrzeżenia ze swojego programu do standardowego strumienia błędów. Najczęściej robi się to w celu uproszczenia debugowania i znalezienia problemów w kodzie.
-
-## Jak to zrobić? 
-
-Możesz użyć metody standardowej biblioteki Rust, która nazywa się "eprintln!". Poniżej znajduje się przykład z wykorzystaniem tej metody:
-
+## How to:
+"Jak to zrobić:"
 ```Rust
-eprintln!("To jest przykładowy błąd.");
+use std::io::{self, Write};
+
+fn main() {
+    writeln!(io::stderr(), "Błąd: nie można otworzyć pliku").unwrap();
+}
 ```
- 
-W efekcie w standardowym strumieniu błędów zostanie wyświetlony tekst "To jest przykładowy błąd."
+Powoduje wyświetlenie w stderr:
+```
+Błąd: nie można otworzyć pliku
+```
+```Rust
+// Użycie eprintln! makra dla prostszych komunikatów
+fn main() {
+    eprintln!("To idzie do stderr!");
+}
+```
+W konsoli zobaczysz:
+```
+To idzie do stderr!
+```
 
-## Głębsze zagadnienia
+## Deep Dive
+"Głębsze spojrzenie":
+Histerycznie `stderr` było używane zarówno w Unixie, jak i innych systemach operacyjnych do diagnostyki i raportowania błędów. Dwa główne strumienie to `stdout` (standardowe wyjście) i `stderr` (standardowy błąd). Użycie `stderr` pozwala na przekierowanie błędów i danych wyjściowych do różnych miejsc. W Rust możemy używać makr jak `eprintln!` lub moduł `std::io` dla większej kontroli.
 
-Pisanie do standardowego błędu jest często używane podczas debugowania, ponieważ separuje ono błędy od normalnego wyjścia programu, co ułatwia ich znajdowanie. Alternatywną metodą może być wysyłanie błędów do pliku dziennika lub wyświetlanie ich na ekranie. W Rust istnieje również metoda "println!" do wysyłania informacji do standardowego wyjścia.
-
-## Zobacz też 
-
-Dla więcej informacji na temat pisania do standardowego błędu, zobacz dokumentację Rust. Możesz też poczytać o różnicach między standardowym wyjściem a standardowym strumieniem błędów.
+## See Also
+"Zobacz również":
+- [Rust By Example - Stderr](https://doc.rust-lang.org/rust-by-example/std_misc/fs.html)
+- [Rust std::io module](https://doc.rust-lang.org/std/io/index.html)
+- [Unix Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)

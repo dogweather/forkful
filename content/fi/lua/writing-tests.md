@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Lua: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Testaus tarkoittaa koodin laadun varmistamista automatisoiduilla testeillä. Ohjelmoijat testaavat löytääkseen ja korjatakseen virheitä, sekä varmistaakseen, että koodi tekee mitä pitääkin uusien ominaisuuksien tai muutosten jälkeen.
 
-Testien kirjoittaminen on prosessi, jossa ohjelmiston osat testataan varmistaakseen niiden toimivuuden ja virheettömyyden. Tätä tekevät ohjelmoijat varmistaakseen, että heidän koodinsa toimii suunnitellulla tavalla ja estääkseen mahdollisia virheitä tulevaisuudessa.
-
-## Miten:
-
+## How to: (Kuinka tehdään:)
 ```Lua
--- Alustetaan testikirjasto
-local test = require("test")
+-- Yksinkertainen testifunktio
+function summa(a, b)
+    return a + b
+end
 
--- Testi #1: Yksinkertainen laskutoimitus
-test.equal(2+2, 4)
+-- Testataan 'summa' funktiota
+local testitulos = summa(5, 3)
+assert(testitulos == 8, "Odottamaton tulos: " .. testitulos)
 
--- Testi #2: Taulukon pituus
-local taulukko = {1, 2, 3, 4}
-test.length(taulukko, 4)
-
--- Tulostetaan testiraportti
-test.report()
+print("Summafunctio toimii oikein!")
 ```
 
-Tuloste:
+Esimerkin tulostus:
 
 ```
-Running 2 tests...
- Test #1: Passed
- Test #2: Failed
-Errors:
-  - Expected length: 4
-  - Actual length: 3
+Summafunctio toimii oikein!
 ```
 
-## Syvemmälle:
+## Deep Dive (Syvä sukellus)
+Lua ei sisällä sisäänrakennettua testaustyökalua, mutta yhteisö on luonut useita. Esimerkiksi *LuaUnit* on suosittu testikirjasto. Historiallisesti, ohjelmoijat kirjoittivat testejä manuaalisesti, mutta nyt automatisointi on standardi. Vaihtoehtoja on monia, kuten *Busted* tai *luassert* -kirjastot. Testit kannattaa kirjoittaa niin, että ne ovat eristettyjä, nopeita ja helposti ymmärrettäviä.
 
-Testien kirjoittamisella on pitkä historia ohjelmistokehityksessä, ja se on vakiintunut käytäntö monissa ohjelmointikielissä, kuten C ja Java. Vaihtoehtona testien kirjoittamiselle on manuaalinen koodin tarkastelu, mutta tämä voi olla epäluotettavaa ja aikaa vievää. 
-
-Lua:ssa on useita testikirjastoja, kuten "LuaUnit" ja "busted", jotka tarjoavat erilaisia testausominaisuuksia ja -ratkaisuja. Testien kirjoittaminen vaatii tarkkuutta ja huolellisuutta, jotta ne ovat tehokkaita ja luotettavia.
+## See Also (Katso myös)
+- LuaUnit: https://github.com/bluebird75/luaunit
+- Busted, erillinen Lua testauskehyk (test framework): http://olivinelabs.com/busted/
+- Luassert, vakuuttelu/assertion kirjasto: https://github.com/Olivine-Labs/luassert

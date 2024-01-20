@@ -11,40 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV, eller comma-separated values, är ett enkelt filformat för att lagra och dela data i tabellform. Det används ofta av programmerare eftersom det är ett universellt format som är lätt att läsa och skriva för både människor och datorer.
+CSV står för "Comma-Separated Values" och används för att lagra tabulär data i enkla textfiler. Programutvecklare använder CSV för enkelhet, kompatibilitet med kalkylprogram och för att enkelt importera/exportera data från olika program.
 
-## Så här gör du:
-För att läsa och skriva CSV-filer med Arduino, behöver du använda dig av ett bibliotek som heter "ArduinoCSV". För att installera detta bibliotek, gå till Arduinos "Sketch" -> "Include Library" -> "Library Manager" och sök efter "ArduinoCSV". När det är installerat, kan du använda kommandon som "read_CSV()" och "write_CSV()" för att läsa och skriva CSV-filer från en SD-kortmodul eller från serieporten.
+## Hur man gör:
+```arduino
+#include <SPI.h>
+#include <SD.h>
 
-```Arduino
-#include <ArduinoCSV.h> // Inkluderar biblioteket
+File myFile;
 
 void setup() {
   Serial.begin(9600);
-}
-
-void loop() {
-  CSV data; // Skapar en variabel för att lagra CSV-data
-  if (data.read_CSV("data.csv")){ // Läser CSV-filen "data.csv"
-    for (int i = 0; i < data.rows; i++) {
-      Serial.print(data[i][0]); // Skriver ut första kolumnen
-      Serial.print(" : ");
-      Serial.print(data[i][1]); // Skriver ut andra kolumnen
-      Serial.println(); // Radbrytning
-    }
+  if (!SD.begin(4)) {
+    Serial.println("SD card initialization failed!");
+    return;
+  }
+  if (SD.exists("data.csv")) {
+    Serial.println("data.csv exists.");
+  } else {
+    Serial.println("data.csv doesn't exist, creating file...");
+    myFile = SD.open("data.csv", FILE_WRITE);
+    myFile.println("SensorID,Temperature,Humidity"); // Header
+    myFile.close();
   }
 }
 
-//Output:
-/*
-1 : John
-2 : Jane
-3 : Bob
-*/
+void loop() {
+  myFile = SD.open("data.csv", FILE_WRITE);
+  if (myFile) {
+    myFile.print("1,");
+    myFile.print("22.5,");
+    myFile.println("45.0");
+    Serial.println("Data written to data.csv");
+    myFile.close();
+  } else {
+    Serial.println("Error opening data.csv");
+  }
+  delay(2000); // Wait for 2 seconds
+}
+```
+Sample output till serial monitor:
+```
+data.csv exists.
+Data written to data.csv
 ```
 
-## Djupdykning:
-CSV-filer har funnits sedan 1972 och är ett av de mest använda filformaten i världen. Alternativ till CSV inkluderar JSON och XML, men CSV är mer lättläst och behöver mindre lagringsutrymme. Implementeringsdetaljer inkluderar att man måste ange tecknet som separerar kolumnerna (default är kommatecken) och att man måste hantera tecken som kan störa som citattecken eller radbrytningar.
+## Fördjupning:
+CSV-formatet har sitt ursprung från 1970-talet där det användes i tidiga program för datainmatning och -bearbetning. Alternativ till CSV inkluderar JSON, XML, och databaser som SQL, men CSV används fortfarande på grund av sin enkelhet och breda stöd. När du implementerar CSV med Arduino bör du vara medveten om konsekvenser med filstorleken och strukturen då Arduinos minne är begränsat.
 
 ## Se även:
-- [CSV-filer](https://en.wikipedia.org/wiki/Comma-separated_values)
+- Arduino SD-bibliotekets dokumentation: https://www.arduino.cc/en/Reference/SD
+- CSV på Wikipedia: https://sv.wikipedia.org/wiki/CSV_(filformat)
+- Guide till JSON med Arduino: https://arduinojson.org/

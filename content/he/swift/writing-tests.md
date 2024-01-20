@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "Swift: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-למה נכתוב בדיקות?
+## מה ולמה?
+כתיבת בדיקות היא תהליך של יצירת מבחנים אוטומטיים לקוד שתוכנן לבדוק את התנהגותו כנדרש. תוכניתנים עושים זאת כדי לוודא שהתוכנה עובדת נכון, למזער באגים ולקל על תהליכי שינוי ושדרוג בעתיד.
 
-בדיקות הם חלק חשוב מתהליך הפיתוח התוכנה שלנו. הן מאפשרות לנו לבדוק את תיקוני הבעיות ואת פעולת התוכנה שלנו לפני שהיא נכנסת לשוק. כמו כן, הן מסייעות לנו למצוא באופן מוקדם את השגיאות ולמנוע מהן להווכח תוך כדי שימוש בתוכנה.
-
-## איך לבצע:
-
-לפניכם כמה דוגמאות קוד ותצוגת פלט עם שימוש בבדיקות בשפת Swift:
-
+## איך לעשות:
 ```Swift
-// דוגמה 1:
-func calculateArea(length: Int, width: Int) -> Int {
-    return length * width
+import XCTest
+
+class MyTests: XCTestCase {
+
+    func testExample() {
+        // זהו הקוד שאת/ה בודק/ת
+        let result = "Hello, World!"
+        // זו הטענה של הבדיקה -> מה צריך להיות התוצאה
+        XCTAssertEqual(result, "Hello, World!", "התוצאה צריכה להיות Hello, World!")
+    }
+
+    func testAnotherThing() {
+        // בדיקה נוספת
+        let value = 5
+        XCTAssertTrue(value > 0, "הערך צריך להיות גדול מ-0")
+    }
 }
 
-let length = 10
-let width = 5
-let expectedArea = 50
-
-let area = calculateArea(length: length, width: width)
-
-assert(area == expectedArea, "השטח צריך להיות 50")
-
-// תצוגת פלט: אין דייקנות
-
-// דוגמה 2:
-func checkPalindrome(string: String) -> Bool {
-    return string.lowercased() == String(string.lowercased().reversed())
-}
-
-let inputString = "קאבאק"
-let expectedOutput = true
-
-let output = checkPalindrome(string: inputString)
-
-assert(output == expectedOutput, "המחרוזת אמורה להיות פלינדרום")
-
-// תצוגת פלט: אין דייקנות
+MyTests.defaultTestSuite.run()
 ```
 
-## כידוע:
+פלט לדוגמה:
+```
+Test Suite 'MyTests' started at 2023-01-01 00:00:00.000
+Test Case '-[MyTests testExample]' passed (0.001 seconds).
+Test Case '-[MyTests testAnotherThing]' passed (0.001 seconds).
+Test Suite 'MyTests' finished at 2023-01-01 00:00:00.002.
+```
 
-בעבר, בדיקות נכתבו בידניות על ידי המתכנתים. אך עם התפתחות הטכנולוגיות, נוצרו כלים פתוחים ומסגרות נגזרות שמאפשרים כתיבת בדיקות אוטומטיות. כמו כן, ישנן אפליקציות שמתאפשרות בדיקת קוד על ידי עורך הקוד עצמו.
+## צלילה לעומק
+כתיבת בדיקות אוטומטיות החלה בשנים הראשונות של תוכנה, אבל רק בשנים האחרונות הפכה לחלק מרכזי בפיתוח תוכנה מודרני, באמצעות שיטות כמו TDD (Test-Driven Development). אלטרנטיבות ל-XCTest כוללות מסגרות כמו Quick/Nimble. פרטים טכניים כוללים הבנה עמוקה יותר של Assertions וmocking לסימולציה של פעולות ואינטראקציות.
 
-## לצפייה נוספת:
-
-למידע נוסף על בדיקות בשפת Swift, ראו רשימת המקורות המצורפת.
-
-## ערוך את הקוד שלך עם ביטחון:
-
-כעת, שאתם מכירים את הטכניקות לכתיבת בדיקות בשפת Swift, כדאי להשתמש בהן כדי להבטיח שהתוכנה שלכם עובדת כראוי. בדיקות מעוניינות את התוכנה שלכם מבחינת עבודתה ותוכניות תומכות במגוון רחב של אופני מבחן, מה שמאפשר לכם להיות בטוחים שהקוד שלכם עובד כמצופה. אז אל תתעצלו ותכינו בדיקות עבור הקוד שלכם. זה ייכנס לשימוש מספר פעמים ויחסוך לכם זמן וכאבי ראש בעתיד!
+## ראה גם
+- [מדריך ל-XCTest של Apple](https://developer.apple.com/documentation/xctest)
+- [TDD למתחילים](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
+- [Quick – מסגרת בדיקות BDD](https://github.com/Quick/Quick)

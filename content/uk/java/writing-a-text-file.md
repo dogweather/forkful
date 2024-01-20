@@ -1,6 +1,6 @@
 ---
 title:                "Створення текстового файлу"
-html_title:           "Java: Створення текстового файлу"
+html_title:           "Arduino: Створення текстового файлу"
 simple_title:         "Створення текстового файлу"
 programming_language: "Java"
 category:             "Java"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?:
-Написання текстового файлу - це процес створення і записування вмісту у файл. Програмісти роблять це для зберігання даних або виведення результатів своєї програми.
+## Що та чому?
+Запис текстового файлу – це процес зберігання текстових даних на диск за допомогою програмування. Програмісти роблять це для постійного зберігання даних, обміну інформацією або логування подій системи.
 
-Як це зробити:
-Програмування на Java має вбудований спосіб для написання текстового файлу - клас FileWriter. Для створення файлу ми використовуємо конструктор FileWriter, передаючи йому шлях до файлу та параметр, що вказує, чи необхідно додавати нові дані до вже існуючого файлу. Після цього ми можемо записати наші дані в файл за допомогою методу write () і закрити файл методом close ().
+## Як це зробити:
+```Java
+import java.io.FileWriter;
+import java.io.IOException;
 
-```java
-FileWriter file = new FileWriter("file.txt", false);  
-// Встановлюємо значення false, щоб перезаписати вміст файлу
-file.write("Привіт, світ!");  
-file.close();
+public class TextFileWriter {
+    public static void main(String[] args) {
+        String data = "Вітаю, це тестовий текст!";
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write(data);
+            writer.close();
+            System.out.println("Файл успішно записано!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-Глибше вивчення:
-Написання текстового файлу не є новим поняттям - раніше використовувалися більш старі методи, такі як FileOutputStream або PrintWriter. Однак, клас FileWriter є більш зручним і має більше можливостей для роботи з файлами тексту. Також, існують альтернативні методи для запису даних в файл, такі як використання буферизації з більш високою продуктивністю.
+## Поглиблений огляд
+У минулому програмісти використовували `FileOutputStream`, але з Java 1.1 з’явився `FileWriter`, що спростив запис текстових файлів. Як альтернатива, `Files` API (з Java 7 NIO) пропонує метод `Files.write()`, який дозволяє зробити це одним рядком коду. Важливо розуміти кодування файлу (наприклад, UTF-8) та правильне закриття файла після запису через `try-with-resources`.
 
-Посилання:
-- [Документація Java для класу FileWriter] (https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html)
-- [Стаття на Medium про роботу з файлами в Java] (https://medium.com/@javinpaul/java-8-stream-api-example-tutorial-from-developer-3d23f97e197a)
-- [Стаття на Habr про роботу з файлами в Java] (https://habr.com/ru/post/438582/)
+## Дивіться також
+- [JavaDoc FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html)
+- [Oracle Tutorial on I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
+- [Baeldung Guide to Java FileWriter](https://www.baeldung.com/java-write-to-file)

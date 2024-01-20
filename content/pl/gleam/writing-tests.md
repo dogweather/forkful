@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Gleam: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Po co?
-
-Testowanie kodu to proces sprawdzania, czy nasz program działa zgodnie z oczekiwaniami i nie zawiera błędów. Jest to nieodłączna część pracy każdego programisty, ponieważ pozwala nam uniknąć nieprzewidzianych sytuacji i ułatwia odnajdywanie i naprawianie błędów w kodzie.
+## Co i dlaczego?
+Pisanie testów to sprawdzanie, czy kod robi to, co powinien. Robimy to, żeby szybko znajdować błędy i mieć pewność, że nic się nie zepsuło przy dodawaniu nowych funkcji.
 
 ## Jak to zrobić:
+Jeśli nie wiesz jak pisać testy w Gleamie, oto przykład. Załóżmy, że mamy funkcję `dodaj` i chcemy przetestować jej działanie.
 
-```Gleam
-// Przykładowa funkcja przyjmująca listę liczb i zwracająca ich sumę
-pub fn suma(lista: List(Int)) -> Int {
-  let gdy_lista_pusta = ctor -> 0
-  let gdy_liczba :: reszta = lista -> liczba + suma(reszta)
-  wynik
+```gleam
+// plik: src/your_module.gleam
+pub fn dodaj(a: Int, b: Int) -> Int {
+  a + b
 }
-
-// Przykładowe dane wejściowe i spodziewany wynik
-let dane_wejsciowe = [3, 5, 2]
-let oczekiwany_wynik = 10
-
-// Wywołanie funkcji i porównanie wyników
-assert suma(dane_wejsciowe) = oczekiwany_wynik
 ```
 
-## Głębsze zagadnienia:
+Testy piszemy w folderze `test`. Oto jak może wyglądać test:
 
-Testowanie kodu stało się nieodłączną częścią programowania wraz z rozwojem metodyk agile i test-driven development. W Gleam istnieje wiele narzędzi i bibliotek do pisania testów, na przykład ```gleam_testing``` oraz wbudowane makra takie jak ```assert``` i ```expect```. Alternatywnymi metodami testowania są na przykład manualne testy czy analiza statyczna kodu. W Gleam możliwe jest również pisanie testów jednostkowych, integracyjnych oraz akceptacyjnych.
+```gleam
+// plik: test/your_module_test.gleam
+import gleam/should
+import your_module
+
+pub fn dodaj_test() {
+  should.equal(your_module.dodaj(1, 2), 3)
+}
+```
+
+Uruchom testy komendą `rebar3 eunit`.
+
+## Deep Dive
+Pierwsze frameworki do testowania pojawiły się lata temu, ułatwiając życie programistom. W Gleamie, podobnie jak w wielu językach Erlanga VM, popularne jest używanie EUnit. Alternatywą jest często Common Test dla bardziej złożonych przypadków. Detale implementacyjne? Gleam korzysta z asercji z modułu `gleam/should`, łatwo weryfikując poprawność kodu.
+
+## Zobacz też
+- [Erlang EUnit](http://erlang.org/doc/apps/eunit/chapter.html)
+- [Common Test for Erlang](http://erlang.org/doc/apps/common_test/basics_chapter.html)

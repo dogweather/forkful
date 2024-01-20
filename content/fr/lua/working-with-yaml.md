@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Lua: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que YAML et pourquoi les programmeurs l'utilisent-ils?
+## What & Why?
+YAML, c'est quoi? Du texte lisible qui structure des données, comme le JSON mais plus simple. Pourquoi? Faciliter la configuration, l'échange de données et le debug. YAML, c'est cool, c'est clair.
 
-YAML est un format de données basé sur le texte conçu pour être facile à lire et à écrire pour les humains, ainsi que facile à analyser et à générer pour les machines. Les programmeurs l'utilisent souvent pour stocker et échanger des données structurées telles que des configurations de programmes ou des données de jeu.
-
-# Comment faire:
-
-Voici un exemple de code en Lua pour écrire et lire des données YAML:
+## How to:
+Pas de bibliothèque YAML intégrée en Lua, mais on peut utiliser `lyaml` pour faire le job. Installation avec `luarocks install lyaml`. Voici un petit exemple:
 
 ```Lua
-local yaml = require("yaml")
+local lyaml = require('lyaml')
 
--- Définir des données
-local data = {
-  fruits = {"pomme", "banane", "orange"},
-  nombre = 5,
-  est_vrai = true
-}
-
--- Convertir en format YAML
-local yaml_data = yaml.dump(data)
-print(yaml_data)
-
---[[
- fruits:
-  - pomme
-  - banane
-  - orange
- nombre: 5
- est_vrai: true
+-- Charger du YAML
+local yaml_text = [[
+- Poutine
+- Baguette
+- Fromage
 ]]
 
--- Charger des données YAML et les convertir en table Lua
-local loaded_data = yaml.load(yaml_data)
-for key, value in pairs(loaded_data) do
-  print(key, value)
-end
+local data = lyaml.load(yaml_text)
+print(data[1])  -- Affiche "Poutine"
 
---[[
- fruits	table: 0x7f98480062e0
- nombre	5
- est_vrai	true
-]]
+-- Convertir en YAML
+local lua_table = { "Pomme", "Orange", "Banane" }
+local yaml_converted = lyaml.dump(lua_table)
+print(yaml_converted)
 ```
 
-# Plongée en profondeur:
+Sortie:
+```
+Poutine
+- Pomme
+- Orange
+- Banane
+```
 
-YAML a été créé en 2001 par Clark Evans et Ingy döt Net, et son nom signifie "YAML Ain't Markup Language". Il offre une alternative plus lisible et plus légère aux formats de données tels que JSON. En plus de Lua, de nombreux autres langages de programmation prennent en charge le traitement de YAML, comme Python ou JavaScript.
+## Deep Dive
+YAML est né en 2001, pour fusionner les points forts de plusieurs langages (XML, etc.). Alternatives? JSON pour la data, TOML pour les configs. Détaillé : YAML fait la map avec les tables Lua. Attention : complexité des types, respectez les bonnes pratiques.
 
-Pour utiliser YAML en Lua, vous pouvez installer une bibliothèque comme "lua-yaml" ou "lua-resty-yaml" en utilisant un gestionnaire de paquets tel que LuaRocks. Vous pouvez également utiliser la bibliothèque standard "yaml" dans Lua 5.3 et versions ultérieures.
-
-# Voir aussi:
-
-- [Site officiel de YAML](https://yaml.org/)
+## See Also
+- YAML officiel : https://yaml.org
+- lyaml sur GitHub : https://github.com/gvvaughan/lyaml
+- LuaRocks lyaml : https://luarocks.org/modules/gvvaughan/lyaml
+- JSON en Lua : https://www.json.org/json-fr.html
+- TOML : https://toml.io/fr/

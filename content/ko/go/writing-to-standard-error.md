@@ -1,6 +1,6 @@
 ---
 title:                "표준 오류로 쓰기"
-html_title:           "Go: 표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
 simple_title:         "표준 오류로 쓰기"
 programming_language: "Go"
 category:             "Go"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
-버그가 발생할 때, 프로그래머들은 보통 프로그램의 오류 메시지를 보고합니다. 이 오류 메시지 중에는 중요한 정보를 포함하는 것들이 있습니다. ‘표준 오류’는 오류 메시지를 출력하기 위한 콘솔 디스플레이입니다. 이것은 프로그래머들이 프로그램 실행 중에 오류를 매우 빠르게 식별하고 추적할 수 있도록 해줍니다.
+## What & Why? (무엇과 왜?)
+표준 오류는 프로그램이 실행 도중에 발생하는 오류 메시지를 보여주는 출력 통로입니다. 프로그래머는 이를 사용하여 사용자에게 오류 알림을 제공하고, 로그 파일과 오류 메시지를 분리하기 위해 사용합니다.
 
-## 방법:
-Go는 standard 라이브러리에서 os 패키지를 제공하여, 표준 오류에 메시지를 출력할 수 있도록 해줍니다. 아래의 예시 코드에서는 os.Stderr 변수를 사용하여 standard error에 메시지를 출력하고, 이를 위해 fmt 패키지의 Fprint 함수를 사용합니다.
-
+## How to: (하는 방법)
 ```Go
+package main
+
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-
-    fmt.Fprint(os.Stderr, "표준 오류에 메시지 출력하기")
+	// 에러 메시지를 표준 오류로 출력
+	if _, err := os.Stderr.WriteString("에러 발생!\n"); err != nil {
+		fmt.Println("표준 오류로 쓰기 실패:", err)
+	}
+	
+	// fmt.Fprint를 이용해서도 표준 오류 출력 가능
+	err := fmt.Fprint(os.Stderr, "또 다른 에러!\n")
+	if err != nil {
+		fmt.Println("표준 오류로 쓰기 실패:", err)
+	}
 }
 ```
 
-위의 코드를 실행하면, 표준 오류에 “표준 오류에 메시지 출력하기”라는 메시지가 표시됩니다.
+Sample Output:
+```
+에러 발생!
+또 다른 에러!
+```
 
-## 딥다이브:
-표준 오류를 작성하는 방법은 매우 간단하지만, 오류 메시지의 중요한 부분을 이해하는 것이 중요합니다. 이 기술은 오래된 컴퓨터 시스템에서도 널리 사용되어 왔습니다. 현재의 표준 오류 채널은 제어 콘솔의 디스플레이를 위한 영역이며, 오류 메시지를 적절하게 처리할 수 있도록 합니다.
+## Deep Dive (심층 분석)
+표준 오류는 UNIX 시스템에서 시작된 개념으로, 표준 출력(메시지)과 표준 오류(에러)를 분리합니다. Go 언어에서는 `os` 패키지를 통해 `Stderr`을 이용하며, 이는 `*os.File` 타입입니다. 이를 통해 `WriteString`, `Write` 메서드로 쉽게 사용할 수 있습니다. 이외에도 `log` 패키지를 사용하여 오류 로깅을 할 수 있으며, 이는 바로 표준 오류로 출력됩니다.
 
-다른 언어에서는 standard output을 사용하여 간단하게 오류 메시지를 출력합니다. 하지만 Go의 경우 따로 표준 오류 채널을 제공하여, 오류 메시지의 중요성을 강조하고 더 빠르게 작업을 진행할 수 있도록 도와줍니다.
-
-## 관련 자료:
-- [Go os 패키지](https://golang.org/pkg/os/)
-- [GopherCon 2017: Understanding the OS Package by Bryan Liles](https://www.youtube.com/watch?v=Ut_KKyaVniQ)
+## See Also (참고 자료)
+- [Go by Example: Errors](https://gobyexample.com/errors)
+- [Go official documentation on package os](https://golang.org/pkg/os/)
+- [Go blog on error handling](https://blog.golang.org/error-handling-and-go)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Swift: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -11,30 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Arbetar du som programmerare och har hört talas om YAML men är osäker på vad det är och varför man använder det? YAML är ett enkelt sätt att strukturera data med hjälp av indentering och punktnotation. Programmörer använder det vanligtvis för konfigurationsfiler och dataöverföring mellan applikationer.
 
-## Hur man:
-Det första steget är att installera YAML-paketet i ditt Swift-projekt. Sedan kan du enkelt skriva YAML-kod inuti en ```Swift ...``` kodblock. Här är ett exempel på hur en YAML-fil kan se ut:
-```
-Swift func createYAML() { let myYAML = """ 
-name: John Doe 
-age: 25 
-occupation: Programmer
-""" print(myYAML) } createYAML() 
-```
-Och här är den resulterande utmatningen:
-```
-"name: John Doe
-age: 25
-occupation: Programmer"
-```
-Med hjälp av YAML-paketet kan du också enkelt konvertera YAML-format till JSON och vice versa.
+YAML står för "YAML Ain't Markup Language" och används ofta för att konfigurera programvara och tjänster. Programutvecklare väljer YAML på grund av dess läsbarhet och enkelhet att mappa mot datatyper som finns i många programmeringsspråk.
 
-## Djupdykning:
-YAML (YAML Ain't Markup Language) är ett programmeringsmönster som utvecklades 2001 av Ingy döt Net och Ingy döt Törrö. Det är ett ytterligare alternativ för JSON och XML för att kunna strukturera data. YAML är enklare att läsa och skriva för människor eftersom det inte behöver några XML-tagg eller kommatecken. Det finns också YAML-implementeringar för många andra programmeringsspråk, inklusive Swift.
+## How to:
 
-## Se även:
-För mer information om YAML och hur du kan implementera det i ditt Swift-projekt, se följande länkar:
+För att jobba med YAML i Swift behöver du ett bibliotek som `Yams`. Se till att du har bundit det i din `Package.swift`-fil.
 
-- [YAML.org](http://www.yaml.org/)
-- [Yaml Swift GitHub Repository](https://github.com/behrang/YamlSwift)
+```Swift
+// I filen Package.swift, lägg till 
+dependencies: [
+    .package(url: "https://github.com/jpsim/Yams.git", .upToNextMajor(from: "4.0.0"))
+],
+targets: [
+    .target(
+        name: "DittProjekt",
+        dependencies: ["Yams"]),
+]
+```
+
+Använd sedan Yams för att tolka YAML-strängar.
+
+```Swift
+import Yams
+
+let yamlStr = """
+- name: Marvin
+  job: Paranoid Android
+- name: Zaphod
+  job: Ex-Galactic President
+"""
+
+do {
+    let people = try Yams.load(yaml: yamlStr)
+    print(people)
+} catch {
+    print("Failed to parse YAML: \(error)")
+}
+```
+
+Förväntad utskrift skulle vara en lista av dictionary-medlemmar som representerar data som YAML-strängen innehåller.
+
+## Deep Dive:
+
+YAML skapades 2001 och är en superset till JSON, vilket innebär att all JSON är giltig YAML. Alternativ till YAML inkluderar JSON och XML, men YAML är ofta föredraget för dess human-läsbarhet. I Swift, åstadkoms YAML-parsing implementeras genom att använda en `Decoder` som omvandlar text till Swift datatyper.
+
+## See Also:
+
+- YAML-specifikationen: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- Yams GitHub-repositorium: [https://github.com/jpsim/Yams](https://github.com/jpsim/Yams)
+- Swift Package Manager dokumentation: [https://swift.org/package-manager/](https://swift.org/package-manager/)

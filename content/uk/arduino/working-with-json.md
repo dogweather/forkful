@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Arduino: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке та чому це потрібно?
+## Що це таке і чому?
 
-Робота з JSON - це метод передачі інформації між різними програмами та пристроями. Програмісти користуються цим для обміну даними, такими як малюнки, текст або структурована інформація.
+JSON (JavaScript Object Notation) - простий формат обміну даними. Програмісти використовують його для зручного зберігання і передачі складних даних між сервісами та пристроями.
 
-## Як це зробити:
+## Як це робити:
 
-### Створення об'єкту JSON
 ```Arduino
+#include <ArduinoJson.h>  // Підключення бібліотеки для роботи з JSON
 
-// Приклад створення об'єкту JSON
-#include <ArduinoJson.h>
+void setup() {
+  Serial.begin(9600);
 
-// Створення об'єкту JSON
-// Ключеве слово "char" вказує на тип даних - рядок
-char json[] = "{\"name\":\"John\", \"age\":30}";
+  // Створення об'єкта JSON
+  DynamicJsonDocument doc(1024);
+  doc["temp"] = 23.5;
+  doc["humidity"] = 48.12;
+  doc["status"] = "ok";
+  
+  // Серіалізація JSON та вивід у Серіальний порт
+  serializeJson(doc, Serial);
+}
 
-// Додавання значення до об'єкту
-StaticJsonDocument<200> doc;
-doc["surname"] = "Smith";
-doc["occupation"] = "Programmer";
-serializeJson(doc, json);
+void loop() {
+  // тут нічого не потрібно робити
+}
 ```
+Вивід: ```{"temp":23.5,"humidity":48.12,"status":"ok"}```
 
-### Парсинг JSON
-```Arduino
+## Поглиблене занурення:
 
-// Приклад парсингу JSON
-#include <ArduinoJson.h>
+JSON з'явився у 2001 році як спрощений підхід до XML. Альтернативи JSON включають XML, YAML і ProtoBuf. Для роботи з JSON на Arduino, використовується бібліотека ArduinoJson, яка дозволяє серіалізувати і десеріалізувати JSON-дані. Вибір версії бібліотеки ґрунтується на розмірі доступної пам'яті та необхідних функцій.
 
-// Використання об'єкту JSON для отримання значень
-StaticJsonDocument<200> doc;
-deserializeJson(doc, json);
+## Дивись також:
 
-// Отримання значень з об'єкту
-const char* name = doc["name"];
-int age = doc["age"];
-```
-
-## Глибинне вивчення:
-
-### Історичний контекст
-JSON був створений у 2001 році Дугласом Крокфордом та широко використовується веб-розробниками для передачі даних між сервером та клієнтом.
-
-### Альтернативи
-Хоча JSON є популярним методом, існують й інші формати для передачі даних, такі як XML або YAML.
-
-### Деталі реалізації
-У бібліотеці ArduinoJson є декілька методів для роботи з JSON, включаючи створення та парсинг об'єктів, додавання і отримання значень, а також перевірка на наявність та валідацію об'єкту.
-
-## Додаткові джерела:
-- [Офіційна документація ArduinoJson](https://arduinojson.org)
-- [Вступ до роботи з JSON на Arduino](https://create.arduino.cc/projecthub/SuryaPuranik/introduction-to-json-using-arduino-955fa1)
+- Офіційний сайт ArduinoJson: https://arduinojson.org/
+- ArduinoJson на GitHub: https://github.com/bblanchon/ArduinoJson
+- Інтерактивний JSON серіалізатор/десеріалізатор: https://arduinojson.org/v6/assistant/

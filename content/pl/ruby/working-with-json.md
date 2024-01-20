@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "Ruby: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi? 
-Praca z JSON-em jest nieodłączną częścią programowania w Ruby. W skrócie, JSON (JavaScript Object Notation) to format przechowywania i przesyłania danych, popularny wśród programistów ze względu na swoją prostotę, czytelność i zgodność z językiem JavaScript. Jest szeroko stosowany w aplikacjach internetowych, API oraz bazach danych.
+## What & Why? (Co i Dlaczego?)
+Praca z JSON (JavaScript Object Notation) to manipulowanie danymi w formacie używanym do wymiany informacji między systemami. Programiści wykorzystują JSON, bo to lekki, czytelny i elastyczny sposób na przechowywanie i przesyłanie strukturyzowanych danych.
 
-Dlaczego stosujemy JSON-a? Otóż jest to bardzo wydajny sposób na przechowywanie i przesyłanie danych, ponieważ jest on oparty na lekkim i szybkim parserze. W porównaniu do innych formatów, takich jak XML, JSON jest znacznie bardziej przejrzysty i zwięzły, co ułatwia jego przetwarzanie przez programy.
-
-## Jak to robić?
-Przykłady kodów i ich wyników w Ruby zostały przedstawione poniżej. W Ruby istnieje wiele bibliotek umożliwiających pracę z JSON-em, jednak najpopularniejszą jest biblioteka `json`.
-
+## How to: (Jak to zrobić:)
 ```Ruby
-# Tworzenie obiektu JSON
-json_object = {"imie":"Jan", "nazwisko":"Kowalski", age: 35}
+require 'json'
 
-# Konwersja na format JSON
-json_string = json_object.to_json
-puts json_string
-# {"imie":"Jan", "nazwisko":"Kowalski", "age":35}
+# Przykład konwersji hasha na JSON
+ruby_hash = { name: "Jan", age: 25, city: "Kraków" }
+json_data = ruby_hash.to_json
+puts json_data
+# Output: {"name":"Jan","age":25,"city":"Kraków"}
 
-# Konwertowanie z formatu JSON do obiektu Ruby
-ruby_object = JSON.parse(json_string)
-puts ruby_object["nazwisko"]
-# Kowalski
+# Przykład parsowania JSON na hash
+json_string = '{"name":"Anna","age":28,"city":"Wrocław"}'
+parsed_data = JSON.parse(json_string)
+puts parsed_data
+# Output: {"name"=>"Anna", "age"=>28, "city"=>"Wrocław"}
 ```
 
-Możemy także wyświetlić ładnie sformatowany JSON, dodając parametr `pretty_generate`.
+## Deep Dive (Dogłębna analiza)
+JSON pojawił się w 2001 roku, wymyślony przez Douglasa Crockforda. Szybko stał się standardem we frontendzie (JavaScript) i backendzie (serwery, API). Alternatywą dla JSON jest XML, który jest bardziej rozbudowany i mniej przejrzysty. W Ruby operacje na JSON wykonywane są przy pomocy modułu `json`, który jest częścią standardowej biblioteki od wersji 1.9. Trzeba pamiętać, że Ruby używa symboli (np. `:name`), których JSON nie obsługuje, więc są one konwertowane na stringi.
 
-```Ruby
-# Sformatowane wyświetlanie JSON
-puts JSON.pretty_generate(ruby_object)
-# {
-#   "imie": "Jan",
-#   "nazwisko": "Kowalski",
-#   "age": 35
-# }
-```
-
-## Głęboki zanurzenie
-JSON powstał jako alternatywa dla formatu XML i szybko zyskał popularność w aplikacjach internetowych. Jego struktura jest bardzo podobna do tablic i obiektów w języku JavaScript, co sprawia, że jest ono łatwo przyswajalne dla programistów. Ponadto, JSON jest niewrażliwy na błędy, co oznacza, że nawet jeśli format jest niepoprawny, program nadal będzie w stanie odczytać i przetworzyć dane.
-
-W Ruby, alternatywą dla biblioteki `json` jest gem `oj`, który jest znacznie szybszy od `json`, ale mniej czytelny dla ludzi.
-
-W implementacji JSON-a ważną rolę odgrywa model danych `hash`, który pozwala na przechowywanie danych w formacie klucz-wartość.
-
-## Zobacz także
-Jeśli chcesz dowiedzieć się więcej o pracy z JSON-em w Ruby, zobacz poniższe źródła:
-- [Dokumentacja Ruby o bibliotece json](https://ruby-doc.org/stdlib-2.6.6/libdoc/json/rdoc/JSON.html)
-- [JSON w Ruby na przykładzie Railstutorial](https://www.railstutorial.org/book/filling_in_the_layout#sec-the_json_field_and_validation_errors)
+## See Also (Zobacz również)
+- JSON Schema: Jak definiować i walidować format JSON - [JSON Schema](https://json-schema.org/)
+- JSON vs XML: Porównanie dwóch formatów - [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

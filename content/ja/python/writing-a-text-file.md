@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "Python: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-テキストファイルを書くことは、テキストをファイルに保存することです。プログラマーがこれを行う理由は、データを永続的に保存したり、エクスポートしたり、他のプログラムと共有したりするためです。
+## What & Why? (何となぜ？)
+テキストファイルへの書き込みは、データを永続的に保存するプロセスです。プログラマーは設定、データの出力、ログ作成のためにこれを行います。
 
-## 方法：
+## How to: (方法)
 ```Python
-# テキストファイルを作成して書き込む
-with open('new_file.txt', 'w') as file:
-    file.write('これはテキストファイルに書かれたテキストです。')
+# ファイルを開いて書き込む
+with open('sample.txt', 'w', encoding='utf-8') as f:
+    f.write("Pythonは楽しい！")
 
-# テキストファイルを読み取る
-with open('existing_file.txt', 'r') as file:
-    text = file.read()
-    print(text)
-
-# テキストファイルを追記する
-with open('existing_file.txt', 'a') as file:
-    file.write('これは追加されたテキストです。')
+# ファイルを読んで確認する
+with open('sample.txt', 'r', encoding='utf-8') as f:
+    print(f.read())
+```
+出力:
+```
+Pythonは楽しい！
 ```
 
-## 詳細：
-テキストファイルを書くことは、情報を古くからの方法で保存する一般的な方法です。他の方法としては、データベースやプログラミング言語固有の形式を使用する方法があります。テキストファイルを書くには、「open」関数を使用し、モードを指定してファイルを開きます。また、ファイルを読み取る際には、ファイルを閉じるまでメモリ上にデータが保持されることに注意してください。
+## Deep Dive (詳細情報)
+初期のコンピューターシステムでは、テープやパンチカードを使いデータを保存していましたが、テキストファイルは情報の柔軟な取扱いを可能にしました。`open()`関数には`'w'`モード以外に`'a'`（追記）や`'x'`（存在しない場合にのみ作成）などがあります。`'w'`はファイルが既に存在する場合、内容を上書きしますので注意が必要です。ファイルI/Oの性能は、書き込むデータの量やディスクの種類に大きく依存します。
 
-## 関連リンク：
-- [Pythonのopen関数について（公式ドキュメント）](https://docs.python.org/ja/3/library/functions.html#open)
+## See Also (関連情報)
+- Python公式ドキュメント: https://docs.python.org/ja/3/tutorial/inputoutput.html#reading-and-writing-files
+- W3Schools Python File Handling: https://www.w3schools.com/python/python_file_handling.asp
+- Real Python記事（ファイルI/Oガイド）: https://realpython.com/read-write-files-python/

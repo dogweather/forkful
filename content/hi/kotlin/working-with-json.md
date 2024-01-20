@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Kotlin: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक लाइटवेट डेटा-इंटरचेंज फॉर्मेट है। प्रोग्रामर्स इसे वेब APIs के जरिए डेटा शेयर और स्टोर करने के लिए करते हैं क्योंकि यह बहुत ही आसान, पढ़ने योग्य, और मशीन के जरिए प्रोसेस करने में भी सहज है।
 
-JSON काफी सरल और प्रभावी ढंग से डेटा को संसाधित करने और संचित करने के लिए इस्तेमाल किया जाता है। प्रोग्रामरों के लिए, JSON डेटा को पढ़ने और लिखने के लिए सुविधाजनक समाधान प्रदान करता है।
+## How to: (कैसे करें:)
+Kotlin में JSON को हैंडल करना बहुत ही सीधा है। `kotlinx.serialization` एक आम लाइब्रेरी है इसके लिए। पहले आप इसे अपने `build.gradle` में डिपेंडेंसी के रूप में जोड़ें:
 
-## कैसे?
-
-JSON का उपयोग Kotlin में खासकर ```JSONObject``` और ```JSONArray``` कक्षाओं का उपयोग करके किया जा सकता है। यहां हम दो कदमों में आपको समझाएंगे कि कैसे एक JSON अभिलेख को पढ़कर उसके लिए आवश्यक डेटा को निकाला जाता है।
-
-#### कदम 1: एक नया JSON अभिलेख बनाएं
-
-```Kotlin
-val jsonObject = JSONObject()
-jsonObject.put("name", "John")
-jsonObject.put("age", 25)
+```gradle
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
+}
 ```
 
-#### कदम 2: डेटा पढ़ें और उसका उपयोग करें
+फिर JSON से काम करने के लिए:
 
-```Kotlin
-val name = jsonObject.getString("name")
-val age = jsonObject.getInt("age")
-println("Name: $name, Age: $age")
+```kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val jsonString = """
+    {
+        "name": "Amit",
+        "age": 30
+    }
+    """.trimIndent()
+
+    // JSON स्ट्रिंग को कोटलिन ऑब्जेक्ट में पार्स करना
+    val user = Json.decodeFromString<User>(jsonString)
+    println(user) // User(name=Amit, age=30)
+
+    // कोटलिन ऑब्जेक्ट को JSON स्ट्रिंग में कन्वर्ट करना
+    val jsonOutput = Json.encodeToString(user)
+    println(jsonOutput) // {"name":"Amit","age":30}
+}
 ```
 
-आउटपुट:
-```
-Name: John, Age: 25
-```
+## Deep Dive (गहराई से जानकारी)
+JSON फॉर्मेट 2000 के दशक की शुरुआत में पॉपुलर हुआ था। यह XML का एक विकल्प है और अक्सर इसे अधिक संक्षिप्त और तेज़ माना जाता है। Kotlin में `kotlinx.serialization` के अलावा, और भी लाइब्रेरीज हैं जैसे कि Gson और Moshi जो JSON सीरियलाइजेशन/डिसीरियलाइजेशन प्रदान करते हैं। हालांकि, `kotlinx.serialization` Kotlin की ऑफिशिअल लाइब्रेरी है और नेटिव कोरुटिन सपोर्ट के साथ बेहतरीन इंटीग्रेशन प्रदान करती है।
 
-## गहराई में जाएं
-
-### ऐतिहासिक संदर्भ
-
-JavaScript Object Notation (JSON) को माइक्रोसॉफ्ट के Doug Crockford ने 1999 में बनाया था। यह XML के समान रूप से डेटा को संरचित करने के लिए बनाया गया था, लेकिन यह कम अंतरिक्ष ले तो, मजबूत, सरल और शीघ्र पारित होने के लिए जाना जाता है। आजकल, JSON को कई भाषाओं में समर्थित किया जाता है, सहित Kotlin।
-
-### विकल्प
-
-XML, CSV और YAML ये सभी एकसाथ जुड़े-समझे डेटा को संसाधित करने के लिए अलग-अलग फॉर्मेट हैं। हालांकि, JSON एक उत्तम विकल्प है क्योंकि यह सरल, पारदर्शी और स्थापित होने के कारण पसंद किया जाता है।
-
-### अंतर्दृष्टि की विविधता
-
-Kotlin में JSON डेटा का प्रबंधन करने के लिए दो विकल्प हैं - ```JSONObject``` और ```JSONArray```। ```JSONObject``` किसी कुंजी (key) और मान (value) के का एक समूह है, जबकि ```JSONArray``` कुंजी विशिष्ट नहीं है। इन दोनों में से आप अपनी आवश्यकतानुसार चुन सकते हैं।
-
-## और देखें
-
-- Kotlin के लिए JSON से संबंधित अधिक जानकारी के लिए [यह](https://kotlinlang.org/docs/reference/js-interop.html#working-with-json) देखें।
-- JSON को पढ़ने और लिखने के लिए सुविधाजनक Kotlin लाइब्रेरी के लिए [यह](https://github.com/Kotlin/ktor) देखें।
+## See Also (और भी जानकारी के लिए)
+- Kotlin Serialization डॉक्यूमेंटेशन: [https://kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
+- JSON क्या है और कैसे काम करता है: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- kotlinx.serialization GitHub: [https://github.com/Kotlin/kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+- Gson GitHub: [https://github.com/google/gson](https://github.com/google/gson)
+- Moshi GitHub: [https://github.com/square/moshi](https://github.com/square/moshi)

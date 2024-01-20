@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Clojure recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,33 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Writing tests means crafting code that checks if other code works as expected. Programmers do it to catch bugs, ensure reliability, and save headaches later.
 
-Writing tests is the process of creating code that checks the functionality of other code, also known as "test code". Programmers write tests to ensure that their code functions as intended, catches potential bugs, and maintains its functionality over time.
-
-## How to: 
-
-Writing tests in Clojure is easy using the built-in test framework called `clojure.test`. Here's an example of a test for a function that adds two numbers:
+## How to:
+Clojure uses a library called `clojure.test` to write and run tests. Here's how to use it:
 
 ```Clojure
-(require '[clojure.test :refer [deftest is]])
-(deftest test-addition
-  (is (= 5 (+ 3 2))))
+(require '[clojure.test :refer :all])
+
+(deftest addition-test
+  (testing "Basic addition"
+    (is (= 4 (+ 2 2)))))
+    
+(run-tests)
 ```
 
-The above code creates a test called `test-addition` using the `deftest` macro. Within the test, we use the `is` macro to compare the expected result of adding 3 and 2 to the actual result. If the two values don't match, the test will fail. Here's the output when we run the test:
+Sample output after running the test:
 
 ```
-FAIL in (test-addition) (form-init7499349873952303573.clj:3)
-expected: (= 5 (+ 3 2))
-  actual: (not (= 5 6))
-```
+lein test user
+Testing user
 
-As you can see, the test failed because 5 does not equal 6. This indicates that there is an error in our code. Writing tests can help us catch these errors and ensure that our code is functioning correctly.
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
 
 ## Deep Dive
-
-Writing tests has become an essential practice in modern software development due to its many benefits. It not only helps catch bugs, but it also serves as documentation for how the code is meant to function. Writing tests also allows for more efficient debugging and makes it easier to refactor code without breaking its functionality. While there are other testing frameworks available for Clojure, `clojure.test` is the official one and is widely used.
+Clojure's testing approach stems from the REPL-driven development environment. Generative testing with `test.check` and property-based testing are alternative strategies. They auto-generate test cases instead of writing all by hand. Implementation relies heavily on macros, providing a dynamic testing environment. 
 
 ## See Also
-
-- [Official Clojure documentation for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Clojure Testing](https://clojure.org/guides/deps_and_cli#_testing)
+- [clojure.test documentation on GitHub](https://github.com/clojure/clojure/blob/master/src/clj/clojure/test.clj)
+- [Introduction to property-based testing with `test.check`](https://github.com/clojure/test.check)

@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם ימל"
-html_title:           "Swift: עבודה עם ימל"
-simple_title:         "עבודה עם ימל"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
- עבודה עם YAML היא דרך נוחה לאסוף נתונים ולארגן אותם בקובץ טקסט מבודד. בשימוש בפורמט זה, תוכלו לקרוא ולכתוב נתונים פשוטים תוך שימוש במבנה הקריא והמובן. למה תתכנתו ב YAML? קלות השימוש והקריאה של הפורמט יעזורו לכם לשמור על מעניינים מעניינים ביותר ולשלב אותם בפרויקטים שלכם.
+## What & Why?
+מה זה ולמה? עבודה עם YAML בשפת Swift מאפשרת לקרוא ולכתוב קבצי YAML, תסדיר נפוץ להגדרות תצורה. תכניתנים עושים זאת משום שזה פשוט לקריאה ונוח לשיתוף קונפיגורציות.
 
-## איך ל:
- כדי להתחיל בעבודה עם YAML בשפת Swift, תצטרכו להתקין את הספרייה Yams המספקת ממשק API לקריאה וכתיבה של נתונים בפורמט זה. להלן דוגמא לשימוש ב Yams כדי לכתוב את הנתונים של התוכנית האהובה עלינו, "Hello, world!":
-
-```Swift
-let yaml = try Yams.dump(["מילת-המפתח": "Hello, world!"])
-print(yaml)
-```
-
-והנה הפלט המתקבל:
+## How to:
+איך לעשות:
+קודם, ידרש מודול חיצוני כי Swift לא מספק פונקציונליות קריאת YAML ישירות. נוכל להשתמש ב-Yams, למשל. תקינו דרך Swift Package Manager (SPM). אחרי הגדרת התלות, ניתן לקרוא ולכתוב YAML כך:
 
 ```Swift
-מילת-המפתח: Hello, world!
+import Yams
+
+// קריאת YAML
+let yamlString = """
+name: Yosef
+job: Developer
+skills:
+  - Swift
+  - SwiftUI
+"""
+
+if let person = try? Yams.load(yaml: yamlString) {
+    print(person)
+}
+
+// כתיבת YAML
+let personDict: [String: Any] = [
+  "name": "Yosef",
+  "job": "Developer",
+  "skills": ["Swift", "SwiftUI"]
+]
+
+if let yamlOutput = try? Yams.dump(object: personDict) {
+    print(yamlOutput)
+}
 ```
 
-כעת, ניתן גם לקרוא את הנתונים שהכתבנו, כדי להדפיס את המילה המפתח "Hello, world!":
+פלט לדוגמא:
+```
+// פלט קריאת YAML
+["name": Yosef, "job": Developer, "skills": [Swift, SwiftUI]]
 
-```Swift
-let yaml = "מילת-המפתח: Hello, world!"
-let data = yaml.data(using: .utf8)!
-let dict = try Yams.load(yaml: yaml) as! [String: String]
-print(dict["מילת-המפתח"]!)
+// פלט כתיבת YAML
+name: Yosef
+job: Developer
+skills:
+  - Swift
+  - SwiftUI
 ```
 
-והנה הפלט המתקבל:
+## Deep Dive
+טבילה עמוקה:
+YAML ("YAML Ain't Markup Language") מקורו משנת 2001, כאלטרנטיבה ל-XML ול-TOML. תכונותיו של שפת הסימונים הזו כוללות אנושיות ונוחות עיבוד על ידי מחשב. ב-Swift, חוסר היכולת לקרוא ישירות YAML דורש שימוש בספריות כמו Yams. Yams מספקת API שמאפשר לנו לעבוד עם YAML באופן ידידותי ל-Swift.
 
-```Swift
-Hello, world!
-```
-
-## חפירה עמוקה:
-הפורמט YAML נוצר כדי לשמש כקובץ תואם ל ezmlm, המערכת הפופולרית לניהול רשימות דיוור. כיום הוא נמצא בשימוש נרחב כקובץ תואם אחרון, והוא משמש כמנגנון לשמירת נתונים בין אפליקציות שונות. את כל המעין הפרטים שרצינו לכתוב על ידי כתיבת התוכנית המסמלת של "שלום, עולם!" תיתכן nשהשתמשנו בצורת הפורמט הראשוני במטרה להרחיב על הנושא.
-
-כאלטרנטיבה ל YAML, אפשר גם להשתמש בפורמטים נוספים כגון JSON או XML, אבל ה YML מבונה כדי להיות מאוד קל לקריאה ע"י אנשים, ולכן רבים מעדיפים אותו.
-
-לפיכך, אנו ממליצים לדלג על XML ולהתחיל ללמוד את YAML כעת!
-
-## ראו גם:
-למידע נוסף על שימוש בספריית Yams כדי ליצור ולקרוא נתונים בפורמט YAML, אנו ממליצים לבקר בדוקומנטציה הרשמית של Swift. תוכלו למצוא גם מידע נוסף על לימוד YAML במדריך המקוון של YAML. להוראות איך לכתוב את התוכניות המסמלות של המשלוחים המעולים שלנו, יש לנו מדריכי Swift להתחלה שיכללו מידע בנושא שלנו.
+## See Also
+ראה גם:
+- דוקומנטציה של Yams בגיטהאב: [Yams GitHub](https://github.com/jpsim/Yams)
+- מורה ל-YAML: [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)
+- דוקומנטציה של YAML: [The Official YAML Website](https://yaml.org)

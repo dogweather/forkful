@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmoinnissa standardivirheen kirjoittaminen"
-html_title:           "TypeScript: Tietokoneohjelmoinnissa standardivirheen kirjoittaminen"
-simple_title:         "Tietokoneohjelmoinnissa standardivirheen kirjoittaminen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Kirjoittaminen standardivirheeseen on tapa tulostaa virheilmoituksia ja muita tärkeitä viestejä ohjelman suorituksen aikana. Tämä auttaa ohjelmoijia tunnistamaan ja korjaamaan virheitä, jolloin ohjelma toimii mahdollisimman sujuvasti.
+## What & Why?
+Mitä ja miksi? Standard error (stderr) on stream, johon ohjelmat kirjoittavat virheviestit. Ohjelmoijat käyttävät sitä, koska virheet on hyvä erottaa normaalista tulosteesta (stdout), jolloin logit ja debuggaus helpottuvat.
 
-## Miten:
-Esimerkki TypeScript-koodilla:
-```
-console.error("Tämä on virheviesti!");
-```
-Tulostus:
-```
-"Tämä on virheviesti!"
+## How to:
+Koodiesimerkit ja näytetulostukset.
+
+```TypeScript
+// Kirjoitus standard erroriin
+process.stderr.write('Tämä on virheviesti.\n');
+
+// Konsolilogitus standard erroriin
+console.error('Tämä on toinen virheviesti.');
 ```
 
-## Syvällisempi katsaus:
-Kirjoittaminen standardivirheeseen on osa virheen käsittelyä ja virheilmoitusten hallintaa. Tämä käytäntö on ollut käytössä jo pitkään ohjelmoinnissa ja on edelleen tärkeä osa moderneja ohjelmointikieliä. Toisin kuin konsolin tulostukset, standardivirheen tulostukset tulevat punaisella värillä, mikä auttaa korostamaan virheitä ohjelman suorituksen aikana. On myös olemassa vaihtoehtoisia tapoja käsitellä virheitä, kuten kirjoittaminen standardilokiin, mutta standardivirheeseen kirjoittaminen on yleisesti suositeltavaa.
+Sample output:
 
-## Katso myös:
-Lisätietoja TypeScriptista ja virheiden käsittelystä löytyy alla olevista lähteistä:
-- [TypeScriptin viralliselta verkkosivustolta](https://www.typescriptlang.org/)
-- [MDN:n opas virheiden käsittelyyn JavaScriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+```
+Tämä on virheviesti.
+Tämä on toinen virheviesti.
+```
+
+## Deep Dive:
+Syväsukellus. Alun perin Unix-järjestelmissä oli käytössä kolme standardivirtaa: input (stdin), output (stdout) ja error (stderr). Ne mahdollistivat tiedon suuntaamisen ja käsittelyn ohjelmien välillä. Vaihtoehtoisia tapoja kirjoittaa virheviestejä ovat esim. lokeihin kirjoittaminen tiedostoihin tai kaukokirjautumispalveluihin. TypeScriptissä stderr-käsittelyn yksityiskohdat pohjautuvat Node.js:n `process`-objektin toimintoihin.
+
+## See Also:
+Katso myös.
+
+- Node.js documentation on `process.stderr`: https://nodejs.org/api/process.html#process_process_stderr
+- Understanding streams in Node.js: https://nodejs.dev/learn/nodejs-streams
+- Effective logging in TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html#logging

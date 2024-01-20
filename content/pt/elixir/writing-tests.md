@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Elixir: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Por Que?
 
-Escrever testes na programação é um processo de verificação e validação do código para garantir que o mesmo esteja funcionando corretamente. Os programadores utilizam testes para detectar bugs e garantir a qualidade do código.
+Escrever testes é criar código para verificar se outro código funciona como esperado. Programadores testam para evitar bugs, garantir qualidade e facilitar manutenção.
 
-## Como fazer:
+## Como Fazer:
 
-Elixir tem uma estrutura de testes embutida chamada ExUnit, que torna o processo de escrever testes fácil e eficiente. Abaixo está um exemplo de como escrever testes em Elixir:
+```elixir
+# Dependência no mix.exs
+{:ex_unit, "~> 1.11", only: :test}
 
-```Elixir
-defmodule CalculatorTest do
+# Definição do teste em test/some_module_test.exs
+defmodule SomeModuleTest do
   use ExUnit.Case
+  doctest SomeModule
 
-  test "addition" do
-    assert Calculator.add(2, 3) == 5
-  end
-
-  test "multiplication" do
-    assert Calculator.multiply(2, 3) == 6
+  test "soma de dois números" do
+    assert SomeModule.soma(2, 3) == 5
   end
 end
 ```
 
-Neste exemplo, estamos testando as funções de adição e multiplicação de uma calculadora simples. A estrutura de testes começa com `defmodule` e `use ExUnit.Case`, seguido de `test` e uma descrição do teste. Dentro de cada teste, usamos a função `assert` para verificar se o resultado esperado é igual ao resultado real.
+Saída esperada após rodar `mix test`:
+```
+...
 
-## Mergulho profundo:
+Finished in 0.05 seconds
+1 test, 0 failures
 
-A prática de escrever testes é conhecida como desenvolvimento guiado por testes (TDD), e foi introduzida pelo programador Kent Beck no início dos anos 2000. O objetivo do TDD é criar testes primeiro e, em seguida, escrever o código necessário para passar nesses testes. Isso ajuda a garantir que o código funcione como esperado e evita possíveis falhas futuras.
+Randomized with seed 54321
+...
+```
 
-Além do ExUnit, existem outras ferramentas de teste disponíveis em Elixir, como Hound para testes de aplicativos web e Mox para simular módulos em ambiente de teste. É importante encontrar a ferramenta que melhor se adapte às necessidades de cada projeto.
+## Aprofundando:
 
-## Veja também:
+No mundo Elixir, o ExUnit é o framework mais comum para testes, surgindo com a linguagem. Há alternativas como o ESpec, inspirado no RSpec do Ruby. Testes podem ser unitários, de integração ou de aceitação, variando no escopo e detalhe. O Elixir incentiva testes por ser uma linguagem funcional onde funções puras são facilmente testáveis.
 
-- [Documentação do ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Vídeo sobre TDD com Elixir](https://www.youtube.com/watch?v=3QvOVol7mLE)
-- [Artigo sobre TDD com Elixir](https://medium.com/@sachinbhate/test-driven-development-with-elixir-a-simple-guide-952c6ce03b32)
+## Veja Também:
+
+- Documentação oficial do ExUnit: https://hexdocs.pm/ex_unit/ExUnit.html
+- ESpec, para uma abordagem estilo RSpec: https://github.com/antonmi/espec
+- Blog sobre TDD em Elixir: https://elixir-lang.org/blog/2020/12/21/the-joy-of-test-driven-development/

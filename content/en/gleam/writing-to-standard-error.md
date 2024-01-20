@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Gleam recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,40 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing to standard error is the practice of outputting error information from a program. Programmers use it to help debug or track issues without interrupting the normal output of the program.
+Writing to standard error (stderr) is like leaving a trail of digital breadcrumbs—errors and warnings that shouldn't be in the regular output mix. Programmers use stderr to report issues without messing with the standard output (stdout), keeping logs clean and making errors easier to spot.
 
 ## How to:
 
-In Gleam, you can write to standard error using `stdout` and `stderr` from the `gleam/io` module. Here's a simple example:
+In Gleam, we can write to stderr using the `io` module. Let's jump right in:
 
-```Gleam
-import gleam/io.{stdout, stderr}
+```gleam
+import gleam/io
 
-pub fn main(args: List(String)) -> Nil {
-  case args {
-    [] ->
-      stderr("No arguments provided!")
-      Ok(Nil)
-
-    _ ->
-      stdout("Program executed successfully.")
-      Ok(Nil)
-  }
+pub fn main() {
+  io.stderr("Oops! Something went wrong.\n") // Send a string to stderr
 }
 ```
 
-In this example, if no arguments are passed to the function, it will write "No arguments provided!" to the standard error. If there are any arguments, it will write "Program executed successfully." to the standard output.
+Sample output when things go south:
+```
+Oops! Something went wrong.
+```
 
 ## Deep Dive
 
-Historically, the concept of separating error messages from regular output comes from Unix-like operating systems where there are different file descriptors for each.
-
-As an alternative, some choose to write errors directly to the standard output. This merges all output into a single stream, but can make it harder to distinguish between the normal and error outputs.
-
-In Gleam, writing to standard error is done using the Erlang's `:io.format(:standard_error, format_string, args)` function under the hood, providing consistent behaviour with the Erlang/OTP ecosystem.
+- Historically, categorizing output into stdout and stderr has helped separate regular program results from error messages.
+- Alternatives include writing errors to a file or using a logging library, but stderr is direct and already at your fingertips.
+- Gleam's `io` module handles stderr, directly addressing the Erlang VM's capabilities.
 
 ## See Also
 
-- Gleam IO Module Documentation: https://hexdocs.pm/gleam_stdlib/gleam/io/
-- Quick introduction to file descriptors: https://www.gnu.org/software/libc/manual/html_node/File-Descriptors.html
-- Erlang 'io' Module Documentation: http://erlang.org/doc/man/io.html
+- The Gleam Book for more on error handling: [https://gleam.run/book](https://gleam.run/book)
+- "The Unix Programming Environment" for historical background on Unix's stdout and stderr concepts.

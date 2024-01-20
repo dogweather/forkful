@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Kotlin: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer em YAML?
+## What & Why?
+YAML é um formato de serialização de dados legível por humanos, usado para configuração de aplicativos, integração entre serviços e armazenamento de dados. Programadores utilizam YAML pela simplicidade e facilidade de ler e escrever comparado a XML ou JSON.
 
-YAML é uma linguagem de marcação que é frequentemente usada por desenvolvedores para armazenar e transmitir dados estruturados. É uma alternativa leve e fácil de ler em comparação com outras linguagens de marcação, como XML e JSON.
-Os programadores optam por trabalhar com YAML por sua simplicidade e flexibilidade, tornando mais fácil lidar com grandes quantidades de dados.
+## How to:
+Em Kotlin, podemos usar a biblioteca `snakeyaml` para trabalhar com YAML. Primeiro, adicione a dependência no seu `build.gradle`:
 
-## Como fazer:
-
-Para começar a trabalhar com YAML em Kotlin, é necessário importar a biblioteca SnakeYAML através do gerenciador de dependências Gradle. Depois disso, basta seguir os seguintes passos:
-
-**1. Criando um arquivo YAML:** Para criar um arquivo YAML, basta criar uma variável do tipo `Map` com os dados desejados e usar o método `dump()` da biblioteca SnakeYAML para convertê-lo em YAML.
-
-```
-val dados = mapOf("nome" to "Maria", "idade" to 25, "cidade" to "São Paulo")
-val yaml = Yaml().dump(dados)
-println(yaml)
-```
-**Output:**
-```
-nome: Maria
-idade: 25
-cidade: São Paulo
+```kotlin
+dependencies {
+    implementation("org.yaml:snakeyaml:1.29")
+}
 ```
 
-**2. Lendo um arquivo YAML:** Para ler um arquivo YAML, basta usar o método `load()` da biblioteca SnakeYAML e especificar o caminho para o arquivo YAML.
+Agora, vamos ler e escrever YAML:
 
+```kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.FileInputStream
+import java.io.FileWriter
+
+fun main() {
+    // Ler YAML
+    val yaml = Yaml()
+    val inputStream = FileInputStream("config.yaml")
+    val data = yaml.load<Map<String, Any>>(inputStream)
+    println(data)
+
+    // Escrever YAML
+    val outputData = mapOf("name" to "João", "idade" to 30)
+    val writer = FileWriter("output.yaml")
+    yaml.dump(outputData, writer)
+}
 ```
-val yaml = File("arquivo.yaml").readText()
-val dados = Yaml().load<Map<String, Any>>(yaml)
-println(dados)
-```
-**Output:**
-```
-{nome=Maria, idade=25, cidade=São Paulo}
+
+Output `config.yaml` lido:
+```yaml
+nome: João
+idade: 30
 ```
 
-## Mergulho Profundo:
+Output `output.yaml` escrito:
+```yaml
+idade: 30
+nome: João
+```
 
-YAML foi criado em 2001 por Clark Evans como uma alternativa mais fácil de usar para XML. Atualmente, é amplamente utilizado em projetos de desenvolvimento, especialmente em aplicações web. Algumas alternativas para YAML incluem TOML e JSON, mas YAML ainda é considerado o mais adequado para dados complexos e bem estruturados.
+## Deep Dive
+YAML, que significa "YAML Ain't Markup Language" (ou recursivamente "YAML Ain't Markup Language"), foi introduzido em 2001 como uma alternativa ao XML. Opções como JSON e TOML também são usadas, mas YAML é preferido quando legibilidade e comentários são importantes. Internamente, bibliotecas como `snakeyaml` convertem dados YAML para estruturas de dados nativas, como Mapas e Listas no Kotlin.
 
-A biblioteca SnakeYAML é a principal opção para trabalhar com YAML em Kotlin. Ela fornece métodos para converter dados Java em YAML e vice-versa, além de oferecer suporte para recursos avançados, como referências e tipos personalizados.
+## See Also
+- Documentação Oficial YAML: https://yaml.org/spec/1.2/spec.html
+- SnakeYAML Engine GitHub: https://bitbucket.org/asomov/snakeyaml/src/master/
+- Tutorial JSON em Kotlin para comparação: https://www.baeldung.com/kotlin/json
 
-## Saiba Mais:
-
-- [Site oficial do YAML](https://yaml.org/)
-- [Biblioteca SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
-- [Tutorial de YAML em Kotlin](https://blog.kotlin-academy.com/working-with-yaml-in-kotlin-a-practical-tutorial-8f332fa88de4)
+Lembre que ao trabalhar com YAML, atenção especial a indentação é crucial, pois a estrutura do arquivo depende disso. Boa codificação!

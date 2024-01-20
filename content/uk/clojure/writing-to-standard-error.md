@@ -1,7 +1,7 @@
 ---
-title:                "Письмо до стандартної помилки"
-html_title:           "Clojure: Письмо до стандартної помилки"
-simple_title:         "Письмо до стандартної помилки"
+title:                "Запис в стандартний потік помилок"
+html_title:           "Arduino: Запис в стандартний потік помилок"
+simple_title:         "Запис в стандартний потік помилок"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,20 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і навіщо?: Написання до стандартної помилки - це спосіб виводу повідомлень про помилки під час виконання програми. Часто це використовується програмістами для швидкого та простого виявлення та виправлення помилок у програмі.
+## Що це таке та навіщо?
+Стандартна помилка (stderr) — це окремий потік виводу, призначений для логування помилок та діагностичних повідомлень, щоб не змішувати їх із основним виводом (stdout). Програмісти використовують stderr, щоб зробити обробку помилок більш гнучкою, особливо при перенаправленні виводу в файл чи інші програми.
 
-Як: Нижче наведено приклад коду Clojure, який виводить повідомлення про помилки до стандартної помилки. Виведений текст буде виділено червоною кольором у консолі.
-
+## Як це робити:
 ```Clojure
-(System/err println "Помилка: не існує файлу з таким іменем.")
+;; Приклад запису в stderr у Clojure
+(let [err-writer (java.io.OutputStreamWriter. *err*)]
+  (.write err-writer "Це повідомлення помилки\n")
+  (.flush err-writer))
+
+;; Або використовуючи println для stderr
+(clojure.core/binding [*out* *err*]
+  (println "Це також повідомлення помилки"))
+
+;; Припустимі виводи:
+;; Це повідомлення помилки
+;; Це також повідомлення помилки
 ```
 
-Вивід:
+## Поглиблений огляд
+Historically, stderr was established to keep error messages separate from stdout, allowing users or other programs to handle only the necessary output. One alternative is logging to a file, but stderr remains useful for real-time monitoring and debugging. In Clojure, which runs on the JVM, stderr is exposed by the `*err*` writer, just like stdout is exposed by `*out*`. Both are bound to Java's `System/err` and `System/out`, respectively.
 
-```
-Помилка: не існує файлу з таким іменем.
-```
-
-Глибоке занурення: Написання до стандартної помилки стало стандартом для багатьох мов програмування, таких як Java та C++. Альтернативою може бути написання до стандартного виводу (standard output) або використання спеціальних функцій для обробки помилок. Реалізація написання до стандартної помилки в Clojure заснована на використанні функції "err" з простору імен "clojure.lang.System". Додаткову інформацію про можливості та обмеження написання до стандартної помилки ви можете знайти в документації Clojure.
-
-Дивіться також: Документація з функції "err" у просторі імен "clojure.lang.System": https://clojuredocs.org/clojure.lang.System/err
+## Додатково
+- [Clojure Docs](https://clojuredocs.org/) – офіційна документація з прикладами.
+- [Про потоки виводу в Unix](http://www.tldp.org/LDP/abs/html/io-redirection.html) – більше про stdout і stderr в контексті Unix систем.
+- [Java OutputStreamWriter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStreamWriter.html) – для глибшого розуміння низькорівневої роботи з потоками у Java, на якій базується Clojure.

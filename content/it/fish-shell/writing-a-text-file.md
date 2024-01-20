@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Fish Shell: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## What & Why?
+Scrivere un file di testo consiste nel salvare testo su disco. Programmatori lo fanno per persistenza dati, configurazioni o logging.
 
-Scrivere un file di testo è un'attività comune per i programmatori. Consiste nel creare un documento di testo contenente codice o informazioni importanti per il funzionamento di un programma. È importante imparare come creare e modificare file di testo per poter lavorare in modo efficiente come programmatore.
-
-## Come fare:
-
-La Fish Shell è uno strumento potente per lavorare con file di testo, in quanto offre una varietà di comandi e funzioni per gestire i file. Ecco alcuni esempi:
+## How to:
+Creare un file `esempio.txt` e scrivere "Ciao, mondo!":
 
 ```Fish Shell
-# Creare un nuovo file di testo
-touch nuovo_file.txt
-
-# Aggiungere del testo al file
-echo "Questo è un esempio di testo" > nuovo_file.txt
-
-# Visualizzare il contenuto del file
-cat nuovo_file.txt
-
-# Modificare il file con un editor di testo
-nano nuovo_file.txt
-
-# Rinominare il file
-mv nuovo_file.txt file_modificato.txt
-
-# Eliminare il file
-rm file_modificato.txt
+echo "Ciao, mondo!" > esempio.txt
 ```
 
-## Approfondimento:
+Aggiungere una riga allo stesso file:
 
-Scrivere file di testo ha un'importante storia nella programmazione. In passato, i programmatori utilizzavano termini come "programmazione di parole" per descrivere l'attività di scrivere codice in file di testo. Oggi, ci sono diverse alternative alla Fish Shell per la gestione dei file di testo, come ad esempio la Bash Shell. Nel caso in cui si desideri approfondire come funziona la scrittura di file di testo nella Fish Shell, è possibile consultare la documentazione ufficiale sulla [creazione e gestione dei file](https://fishshell.com/docs/current/cmds.html#redirects).
+```Fish Shell
+echo "Aggiungo una nuova riga." >> esempio.txt
+```
 
-## Vedi anche:
+Contenuto di `esempio.txt`:
 
-- [Documentazione ufficiale Fish Shell](https://fishshell.com/docs/current/index.html)
+```
+Ciao, mondo!
+Aggiungo una nuova riga.
+```
+
+## Deep Dive
+Fish Shell, introdotto nel 2005, è noto per la sua semplicità. Confronto a Bash, Fish ha una sintassi più pulita e funzioni moderne come autosuggestion. Scrivere file è standard, ma attenzione al overwrite (>) e append (>>). 
+
+## See Also
+- Documentazione ufficiale Fish: https://fishshell.com/docs/current/index.html
+- Tutorial Fish Scripting: https://fishshell.com/docs/current/tutorial.html
+- Bash vs. Fish: https://www.baeldung.com/linux/bash-vs-fish

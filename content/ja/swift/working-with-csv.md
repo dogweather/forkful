@@ -1,7 +1,7 @@
 ---
-title:                "CSVを使用したプログラミング"
-html_title:           "Swift: CSVを使用したプログラミング"
-simple_title:         "CSVを使用したプログラミング"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なんで？
-CSVを使うことは、表形式のデータを扱うことです。プログラマーがこれをする理由は、データを整理しやすくするためです。
+## What & Why?
+"## なぜCSV？"
+CSVとは、コンマで区切られた値のデータ形式です。データの移行や分析に使われ、シンプルで理解しやすい構造が特徴です。
 
-## 方法：
-```Swift
-let str = "1,2,3"
-let csvArray = str.split(separator: ",") // ["1", "2", "3"]
-```
+## How to:
+"## 実装方法"
+SwiftでCSVを扱う一例です。以下のコードは、CSVデータを読み込んでパースします。
 
 ```Swift
-let csvData = "name,age,gender\nJohn,25,Male\nJane,30,Female"
-let rows = csvData.components(separatedBy: .newlines)
-let headers = rows[0].components(separatedBy: ",") // ["name", "age", "gender"]
-for row in rows[1...] {
-    let columns = row.components(separatedBy: ",")
-    let name = columns[0] // John
-    let age = Int(columns[1]) // 25
-    let gender = columns[2] // Male
+import Foundation
+
+let csvString = """
+Name,Age,Location
+John Doe,29,New York
+Jane Smith,34,San Francisco
+"""
+
+var rows: [[String]] = []
+csvString.enumerateLines { line, _ in
+    let columns = line.components(separatedBy: ",")
+    rows.append(columns)
+}
+
+for row in rows {
+    print(row)
 }
 ```
 
-## もっと詳しく：
-CSVは、Comma-Separated Valuesの略で、1972年に開発されました。代わりにExcelやJSONなどのフォーマットがありますが、CSVは簡単で使いやすいことが多くのプログラマーに好まれています。Swiftでは、`String`や`NSArray`の便利なメソッドを使って、CSVのデータを処理することができます。
+実行すると、このような出力が得られます。
 
-## 他にも：
-CSVKitやPapaParseなどのライブラリがありますが、Swiftの標準ライブラリを使えば簡単にCSVを扱うことができます。また、CSVはWebサイトのスクレイピングやデータのエクスポートなどでもよく使われます。
+```
+["Name", "Age", "Location"]
+["John Doe", "29", "New York"]
+["Jane Smith", "34", "San Francisco"]
+```
 
-## 関連リンク：
-- [SwiftのStringのメソッド](https://developer.apple.com/documentation/swift/string)
-- [CSVの詳しい説明](https://en.wikipedia.org/wiki/Comma-separated_values)
+## Deep Dive:
+"## 掘り下げ情報"
+CSVは、初期のコンピュータ時代からデータ交換の手段として使われています。JSONやXMLなどの代替手段もありますが、CSVはシンプルさと人間の可読性において優れています。Swiftでは、`String`クラスを使って簡単にパース可能ですが、大規模データや複雑な処理の場合は、専用のライブラリを使用するのが適切です。
+
+## See Also:
+"## 参考リンク"
+- Swift公式ドキュメント: https://swift.org/documentation/
+- CSVデータに関するRFC 4180: https://tools.ietf.org/html/rfc4180
+- Swiftで使えるCSVパーサライブラリ: https://github.com/yaslab/CSV.swift
+
+以上で、SwiftでCSVを扱う方法について紹介しました。もっと深く知りたい場合は、上記リンクを参照してください。

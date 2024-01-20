@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Ruby recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,56 +11,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests is a way for programmers to verify that their code works as intended. It involves creating a series of automated tests that simulate different use cases and check for expected outcomes. By writing tests, programmers can catch and fix bugs early on in the development process, ensuring that their code is reliable and functional.
+
+Writing tests checks if code works as expected. Programmers do it to catch bugs early, ensure reliability, and ease future code changes.
 
 ## How to:
-To write tests in Ruby, you'll need to use a testing framework such as MiniTest or RSpec. These frameworks provide methods and structure for writing tests in a clear and organized way. Here's an example of a simple test using MiniTest:
 
-```Ruby
-require 'minitest/autorun'
+Ruby uses Minitest and RSpec for testing—let's use RSpec. First, install it:
 
-class TestCalculator < MiniTest::Test
-  def setup
-    @calculator = Calculator.new
-  end
+```ruby
+gem install rspec
+```
 
-  def test_addition
-    result = @calculator.add(2, 3)
-    assert_equal(5, result)
+Create a test file, `calculator_spec.rb`:
+
+```ruby
+RSpec.describe Calculator do
+  describe "#add" do
+    it "sums two numbers" do
+      expect(Calculator.new.add(3, 7)).to eql(10)
+    end
   end
 end
+```
 
+Run the test with:
+
+```shell
+rspec calculator_spec.rb
+```
+
+Output:
+
+```
+F
+
+Failures:
+
+  1) Calculator#add sums two numbers
+     Failure/Error: expect(Calculator.new.add(3, 7)).to eql(10)
+     
+     NameError:
+       uninitialized constant Calculator
+```
+
+Create `calculator.rb`:
+
+```ruby
 class Calculator
-  def add(num1, num2)
-    num1 + num2
+  def add(a, b)
+    a + b
   end
 end
 ```
 
-The test class is named `TestCalculator` and inherits from `MiniTest::Test`. The `setup` method creates an instance of our `Calculator` class to use in our test. The `test_addition` method defines our test case and uses the `assert_equal` method to check that the result of adding 2 and 3 is equal to 5.
+Run tests again.
 
-Running this test would give us an output similar to this:
+Output:
 
 ```
-Run options: --seed 10568
-
-# Running:
-
 .
 
-Finished in 0.000999s, 1001.0010 runs/s, 0.0000 assertions/s.
-
-1 runs, 0 assertions, 0 failures, 1 errors, 0 skips
+Finished in 0.002 seconds (files took 0.08 seconds to load)
+1 example, 0 failures
 ```
 
-We can see that the test passed (indicated by the `.`) and we had 0 failures and 0 errors.
+## Deep Dive
 
-## Deep Dive:
-The concept of writing tests is not unique to Ruby; it has been around for a long time and is a key aspect of the software development process. There are alternatives to testing frameworks such as using a debugger or manually testing code, but these methods are not as efficient or effective as automated testing.
+Testing in Ruby goes back to Test::Unit, but RSpec, introduced in 2005, revolutionized Ruby testing with "behavior-driven development". Alternatives to RSpec include Minitest and Test::Unit. RSpec focuses on readability and the business side; Minitest is more minimalist and faster. Typically, tests mimic software use, checking functions, data, and edge cases. For existing projects, start by testing the most critical parts.
 
-In Ruby, there are two main types of testing frameworks: unit testing and integration testing. Unit testing focuses on testing individual pieces of code, while integration testing tests how multiple pieces of code work together. Writing tests in Ruby is made even easier with the use of tools like `minitest-rails` which integrates testing with the Rails framework.
+## See Also
 
-## See Also:
-- [MiniTest Docs](https://github.com/seattlerb/minitest)
-- [RSpec](https://rspec.info/)
-- [Rails Testing Guide](https://guides.rubyonrails.org/testing.html)
+- RSpec GitHub: [github.com/rspec/rspec](https://github.com/rspec/rspec)
+- Minitest: [rubygems.org/gems/minitest](https://rubygems.org/gems/minitest)
+- "Effective Testing with RSpec 3": Read for more on RSpec principles and patterns.

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Javascript: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso & Por que fazer isso?
+## What & Why?
+CSV, ou "Valores Separados por Vírgula", são arquivos simples usados para armazenar dados tabulares. Programadores lidam com CSV por sua simplicidade e ampla compatibilidade com sistemas de planilhas e bancos de dados.
 
-CSV (comma-separated values) é um formato de arquivo comumente usado para armazenar dados tabulares, onde cada linha representa uma entidade e cada coluna representa um atributo. Programadores geralmente lidam com arquivos CSV para ler, processar e manipular esses dados de forma eficiente.
+## How to:
+Para ler e escrever CSV em JavaScript, frequentemente usamos a biblioteca `PapaParse`. Aqui está um exemplo básico:
 
-## Como fazer:
+```Javascript
+// Incluindo PapaParse
+const Papa = require('papaparse');
+const fs = require('fs');
 
-Para ler um arquivo CSV em JavaScript, podemos usar a biblioteca nativa *fetch* para recuperar o arquivo e a biblioteca *csv-parser* para processar o conteúdo. O código abaixo mostra um exemplo de como ler e imprimir os dados de um arquivo CSV:
+// Lendo CSV do arquivo
+const csvFile = fs.readFileSync('dados.csv', 'utf8');
+Papa.parse(csvFile, {
+  complete: function(results) {
+    console.log('Dados do CSV:', results.data);
+  }
+});
 
-```JavaScript
-fetch("exemplo.csv")
-  .then(response => response.text())
-  .then(data => {
-    const csv = require('csv-parser');
-    csv(data)
-      .on('data', (row) => {
-        console.log(row);
-      })
-      .on('end', () => {
-        console.log("Fim da leitura.");
-      });
-  })
-  .catch(err => {
-    console.error(err);
-  });
+// Escrevendo CSV para arquivo
+const dados = [
+  ['nome', 'idade', 'email'],
+  ['Ana', '28', 'ana@example.com'],
+  ['João', '34', 'joao@example.com']
+];
+
+const csv = Papa.unparse(dados);
+fs.writeFileSync('saida.csv', csv);
 ```
 
-O resultado deste código será um conjunto de objetos contendo os valores das colunas do arquivo CSV, como o exemplo mostrado abaixo:
-
+Output ao ler:
 ```
-[
-  { nome: "João", sobrenome: "Silva", idade: 30 },
-  { nome: "Maria", sobrenome: "Souza", idade: 25 }
-]
+Dados do CSV: [[ 'nome', 'idade', 'email'], ['Ana', '28', 'ana@example.com'], ['João', '34', 'joao@example.com']]
 ```
 
-## Mergulho Profundo:
+Output ao escrever: Um arquivo `saida.csv` será criado com o conteúdo correspondente.
 
-CSV foi inventado na década de 1970 como um formato simples e eficiente para armazenar dados tabulares. Desde então, tornou-se amplamente utilizado em diversas áreas, como finanças, análise de dados e processamento de dados relacionais.
+## Deep Dive
+CSV existe desde o início dos anos 70 e era usado em programas de mainframe. Alternativas modernas incluem JSON e XML, mas CSV continua popular pelo seu formato legível e leve. Na prática, devemos lidar com a complexidade de codificação (como UTF-8), delimitadores e qualificadores de texto ao implementar a leitura/escrita de CSV.
 
-Existem várias bibliotecas em JavaScript para lidar com arquivos CSV, como o já mencionado *csv-parser*, o *csvtojson* e o *papaparse*. Cada uma dessas bibliotecas tem suas próprias características e vantagens, portanto, é importante escolher a que melhor atende às suas necessidades.
-
-Ao trabalhar com arquivos CSV, é importante estar ciente de alguns desafios, como tratamento de aspas, delimitadores diferentes de vírgulas e caracteres especiais. Também é recomendado usar bibliotecas ao invés de implementar sua própria solução, pois elas já têm várias melhorias e correções de bugs implementadas.
-
-## Veja Também:
-
-- [Documentação oficial do JavaScript sobre a API *fetch*](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+## See Also
+- Documentação do PapaParse: https://www.papaparse.com/docs
+- MDN Web Docs sobre trabalhar com texto: https://developer.mozilla.org/en-US/docs/Web/API/Text
+- CSV na Wikipedia: https://pt.wikipedia.org/wiki/Comma-separated_values

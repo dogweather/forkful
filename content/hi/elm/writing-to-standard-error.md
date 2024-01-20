@@ -1,7 +1,7 @@
 ---
-title:                "कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
-html_title:           "Elm: कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
-simple_title:         "कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
+title:                "मानक त्रुटि में लिखना"
+html_title:           "Arduino: मानक त्रुटि में लिखना"
+simple_title:         "मानक त्रुटि में लिखना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-वैसे तो कोई भी प्रोग्रामर हो सकता है कि वह अपनी दुर्भावनाएं स्टैण्डर्ड एरर में लिखने को ज़रूरी न समझे। लेकिन कभी-कभी, किसी गंभीर त्रुटि के कारण, हमें errors को प्रिंट करने के लिए उन्हें अपने standard error में लिखने की आवश्यकता होती है। इससे हम प्रोग्राम में त्रुटि की स्थिति को समझते हैं और समस्या का समाधान करने में मदद मिलती है।
+## What & Why? (क्या और क्यों?)
+Standard error (stderr) एक स्ट्रीम है जहाँ एरर मेसेज जाते हैं। प्रोग्रामर्स इसे डिबगिंग में मदद के लिए और नॉर्मल आउटपुट से एरर्स को अलग करने के लिए इस्तेमाल करते हैं।
 
-## कैसे:
-जब हम अपनी गंभीर त्रुटि को समझ लेते हैं, तो हमें इसको स्टैण्डर्ड एरर में लिखने के लिए उपलब्ध एक फ़ंक्शन है, `stderr`। इसका उपयोग करते हुए, हम अपनी त्रुटि को स्टैण्डर्ड एरर में लिख सकते हैं। इसका उदाहरण निम्न है:
+## How to: (कैसे करें:)
+Elm में सीधे stderr में लिखना संभव नहीं है, क्योंकि यह फ्रंटएंड लैंग्वेज है। हालाँकि, आप Elm में Ports के साथ JavaScript इंटरऑप्स का इस्तेमाल करके ऐसा कर सकते हैं:
 
-```elm
-import IO
+```Elm
+port module Main exposing (..)
 
-main = 
-    case 10 of
-        1 ->
-            IO.print "Case 1"
-        
-        2 ->
-            IO.print "Case 2"
-        
-        _ ->
-            IO.stderr "Invalid case"
+-- Ports to send errors to JavaScript
+port error : String -> Cmd msg
+
+-- Example function that sends an error message
+reportError : String -> Cmd msg
+reportError errorMsg =
+    error errorMsg
 ```
 
-इस उदाहरण में, अगर हम अंतर्विरोधी मान घोषित करते हैं तो हम `Invalid case` को अपने standard error में प्रिंट करते हैं। यह अपनी प्रिंट करने का हमारा output है:
+JavaScript कोड जो Elm से error port को सुने:
 
+```javascript
+app.ports.error.subscribe(function(errorMessage) {
+  console.error(errorMessage);
+});
 ```
-Invalid case
-```
 
-## गहराई से:
-पहले, प्रोग्रामिंग में, हम `print` फ़ंक्शन का इस्तेमाल करते थे जिससे कि हम messages को console में प्रिंट कर सकें। `stderr` फ़ंक्शन इसी तरह काम करता है, लेकिन इसको console के बजाय स्टैण्डर्ड एरर में प्रिंट करता है। इससे हमारे प्रोग्राम में त्रुटि को समझने में मदद मिलती है और इससे हम समस्या का समाधान कर सकते हैं।
+इससे आपका Elm कोड `console.error` का इस्तेमाल करके ब्राउजर कि console में एरर दिखा सकता है।
 
-यदि हम `stderr` की बजाय सीधे `print` का इस्तेमाल करते हैं तो हमारा output console में दिखेगा। लेकिन इससे हमारी ख़ुद की प्रोग्रामिंग भाषा के बाहर कोई समस्या होने पर यह समझना मुश्किल हो सकता है। इसलिए बेहतर है कि हम अपनी त्रुटि को स्टैण्डर्ड एरर में ही लिखें।
+## Deep Dive (गहराई में जानकारी):
+Elm में stderr में लिखना सीधे संभव नहीं क्योंकि यह वेब ब्राउजर पर चलता है, और वेब APIs इस तरह के एक्सेस को प्रोवाइड नहीं करते। पारंपरिक प्रोग्रामिंग भाषाओं (जैसे C या Python) में, stderr का इस्तेमाल एक लॉन्ग-स्टैंडिंग कन्वेंशन है जो कि यूनिक्स के समय से है। एल्म डेवलपर्स Ports का इस्तेमाल करके JavaScript कोड से इंटरेक्ट कर सकते हैं जिससे वे ब्राउजर की सीमाओं को पार कर सकें।
 
-## देखें भी:
-जाने कैसे हम `stderr` का उपयोग करके अपनी गंभीर त्रुटियों को सामने ला सकते हैं [Elm documentation](https://package.elm-lang.org/packages/elm/core/1.0.0/IO#stderr) के माध्यम से।
+## See Also (देखें भी):
+- Elm के ports और interop फीचर्स के बारे में अधिक जानने के लिए: https://guide.elm-lang.org/interop/ports.html
+- JavaScript console.error फंक्शन की और जानकारी के लिए: https://developer.mozilla.org/en-US/docs/Web/API/console/error
+- सीधे stderr में लिखने का पारंपरिक तरीका: https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)

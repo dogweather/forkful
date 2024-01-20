@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 작업"
-html_title:           "Elm: CSV 파일 작업"
-simple_title:         "CSV 파일 작업"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why?
+CSV(Comma-Separated Values)는 데이터를 저장하고 전송하는 포맷입니다. 프로그래머들은 테이블 형태의 데이터를 쉽게 교환하고 분석하기 위해 사용합니다.
 
-CSV를 처리하는 것은 데이터를 정리하고 분석하는 일상적인 프로그래밍 작업입니다. 프로그래머들은 CSV를 사용하여 텍스트 파일 형식으로 정형화된 데이터를 다룹니다. 데이터베이스를 사용하지 않는 간단한 데이터 저장 방식으로써, CSV는 효율적이고 다양한 프로그램에서 사용할 수 있어 매우 유용합니다.
-
-## 방법:
+## How to:
+CSV 파일을 읽고 쓰는 기본적인 예제입니다.
 
 ```Elm
 import Csv
 
-csvData = """
-이름, 나이, 성별
-제이슨, 34, 남성
-테일러, 28, 여성
-"""
+type alias User =
+    { name : String
+    , age : Int
+    }
 
-parsed = Csv.parse csvData
--- 결과: Result.Ok [["이름", "나이", "성별"], ["제이슨", "34", "남성"], ["테일러", "28", "여성"]]
+userDecoder : Decode.Decoder User
+userDecoder =
+    Decode.map2 User
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
 
+decodeCsvString : String -> Result String (List User)
+decodeCsvString csvString =
+    csvString
+        |> Csv.decode { delimiter = ',', quoteChar = '\"' }
+        |> Result.mapError String.fromList
+        |> Result.andThen (Csv.Decode.decode Csv.Decode.list userDecoder)
+
+sampleCsv : String
+sampleCsv =
+    "name,age\nAlice,30\nBob,25"
+
+-- 사용 예:
+case decodeCsvString sampleCsv of
+    Ok users ->
+        -- 데이터 사용하기
+        ...
+
+    Err errorMessage ->
+        -- 에러 처리하기
+        ...
 ```
 
-## 깊이 파헤치기:
+## Deep Dive
+CSV는 1972년 IBM의 Fortran 버전에서 최초로 사용되었습니다. JSON이나 XML 같은 다른 데이터 포맷들이 있지만, CSV는 여전히 간단하고 대부분의 프로그래밍 언어와 소프트웨어에서 지원됩니다. Elm에서는 `Csv`와 `Csv.Decode` 모듈을 이용해 CSV 데이터를 작업할 수 있으며, 사용자 정의 타입으로의 변환을 위해 `Decoder`를 사용합니다.
 
-CSV는 1972년 미국의 데이터베이스 전문가 존 존슨에 의해 개발되었습니다. 그 후로도 널리 사용되는 데이터 저장 방식으로 알려졌지만, 현재는 더 효율적인 데이터베이스 시스템으로 대체되어 많은 프로그래머들이 더 효율적인 방식을 찾고 있습니다. 하지만 간단한 데이터를 정리하거나 텍스트 파일로 저장할 때에는 여전히 유용한 방법입니다. Elm에서는 표준 라이브러리인 Csv 모듈을 통해 쉽게 CSV를 처리할 수 있습니다.
-
-## 관련 정보:
-
-- [Elm 공식 문서 - Csv 모듈](https://package.elm-lang.org/packages/elm/core/latest/Csv)
+## See Also
+- Elm Decoder: [guide.elm-lang.org/interop/json.html](https://guide.elm-lang.org/interop/json.html)

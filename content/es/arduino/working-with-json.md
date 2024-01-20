@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Arduino: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es JSON y por qué lo usamos?
+## ¿Qué y Por Qué?
 
-JSON es un formato de intercambio de datos que permite a los programadores almacenar y transmitir información estructurada. Lo utilizamos para representar datos en un formato fácilmente legible por humanos y también por máquinas. Con JSON, podemos organizar y compartir datos de manera eficiente entre diferentes sistemas y aplicaciones.
+JSON, que significa JavaScript Object Notation, es un formato ligero de intercambio de datos. Los programadores lo usan porque es fácil de leer para humanos y sencillo de analizar para máquinas, facilitando la comunicación entre sistemas.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-Usar JSON en Arduino es muy sencillo gracias a la librería "ArduinoJson". Primero, debemos descargar e instalar esta librería en nuestro IDE de Arduino. Luego, podemos seguir estos pasos:
+Primero, asegúrate de tener la librería `ArduinoJson`, la cual puedes instalar desde el Gestor de Librerías en el IDE de Arduino.
 
-1. Incluir la librería en nuestro código con `#include <ArduinoJson.h>`.
+```c++
+#include <ArduinoJson.h>
 
-2. Crear un objeto "json" usando el constructor de la librería: `DynamicJsonDocument json(512);` (El 512 es el tamaño máximo en bytes para nuestro JSON. Puede cambiar según sus necesidades).
+void setup() {
+  Serial.begin(9600);
+  // Creando un objeto JSON
+  StaticJsonDocument<200> doc;
 
-3. Agregar datos al objeto usando el método `json["nombre"] = valor;`. Por ejemplo: `json["nombre"] = "Juan";`.
+  doc["temperatura"] = 23.5;
+  doc["humedad"] = 80;
 
-4. Convertir el objeto JSON en un string utilizando el método `serializeJson(json, buffer, size);` donde "buffer" es una variable de tipo "char" donde se almacenará el JSON y "size" es el tamaño máximo en bytes del buffer.
+  // Serializando JSON para enviar o guardar
+  serializeJson(doc, Serial);
+}
 
-5. ¡Listo! Ahora podemos usar el string "buffer" para transmitir nuestros datos en formato JSON.
+void loop() {
+  // Este código es solo para ilustrar la configuración
+}
+```
+Salida de ejemplo:
+```
+{"temperatura":23.5,"humedad":80}
+```
 
-## Inmersión profunda:
+Para leer JSON:
+```c++
+#include <ArduinoJson.h>
 
-JSON fue creado en 2001 por Douglas Crockford como una alternativa al formato de intercambio de datos XML. Aunque XML sigue siendo ampliamente utilizado, JSON es más ligero y rápido debido a su estructura basada en pares de clave-valor. Además, la librería "ArduinoJson" implementa una técnica llamada "parsing incremental" que reduce significativamente el tiempo y memoria necesarios para trabajar con JSON en dispositivos como Arduino.
+const char* json = "{\"temperatura\":23.5,\"humedad\":80}";
 
-## Vea también:
+void setup() {
+  Serial.begin(9600);
+  
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, json);
 
-- [Documentación oficial de ArduinoJson](https://arduinojson.org/)
-- [Introducción a JSON de W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
+  float temperatura = doc["temperatura"];
+  int humedad = doc["humedad"];
+
+  Serial.println(temperatura);
+  Serial.println(humedad);
+}
+
+void loop() {
+  // Este código es solo para ilustrar la configuración
+}
+```
+Salida de ejemplo:
+```
+23.50
+80
+```
+
+## Profundización:
+
+JSON se originó a partir de la notación de objetos en JavaScript, introducido en los primeros años del 2000. Alternativas incluyen XML y YAML, aunque JSON prevalece por su simplicidad y eficiencia en el procesamiento. Para implementarlo en Arduino, utilizamos la biblioteca `ArduinoJson`, que es eficiente y fácil de usar, incluso en dispositivos con memoria limitada.
+
+## Ver También:
+
+- [Página oficial de ArduinoJson](https://arduinojson.org/)
+- [Referencia JSON de Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [Tutorial JSON en w3schools](https://www.w3schools.com/js/js_json_intro.asp)

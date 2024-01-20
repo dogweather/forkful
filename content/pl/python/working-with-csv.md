@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem csv"
-html_title:           "Python: Praca z formatem csv"
-simple_title:         "Praca z formatem csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Working with CSV (Comma Separated Values) is a common task for programmers, especially when dealing with large amounts of data. CSV is a simple file format that stores tabular data in plain text, with each row representing a line and each column separated by a comma. Programmers often work with CSV files to analyze and manipulate data in a more efficient way.
+## Co i Dlaczego?
+Praca z plikami CSV (ang. Comma-Separated Values) to obsługa danych tabelarycznych w plikach tekstowych, gdzie wartości są rozdzielane przecinkami. Programiści używają tego formatu ze względu na jego prostotę i uniwersalność – łatwość wymiany danych między różnymi programami i językami programowania.
 
 ## Jak to zrobić:
 ```python
 import csv
 
-# Reading a CSV file
-with open('data.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-    
-    # Print each row
-    for row in csv_reader:
-        print(row)
-        
-# Writing to a CSV file
-with open('output.csv', 'w') as csv_file:
-    csv_writer = csv.writer(csv_file)
-    data = [['Name', 'Age', 'Gender'], ['John', 25, 'Male'], ['Lisa', 30, 'Female']]
-    
-    # Write each row
-    for row in data:
-        csv_writer.writerow(row)
+# Odczyt danych z pliku CSV
+with open('dane.csv', newline='', encoding='utf-8') as plik:
+    czytacz = csv.reader(plik)
+    for wiersz in czytacz:
+        print(wiersz)
+
+# Zapis danych do pliku CSV
+dane = [['imię', 'nazwisko'], ['Jan', 'Kowalski'], ['Anna', 'Nowak']]
+with open('wyniki.csv', mode='w', newline='', encoding='utf-8') as plik:
+    pisarz = csv.writer(plik)
+    for rekord in dane:
+        pisarz.writerow(rekord)
 ```
 
-Output:
-```
-['Name', 'Age', 'Gender']
-['John', '25', 'Male']
-['Lisa', '30', 'Female']
-```
+## Głębsze spojrzenie:
+CSV to format znany od lat 70., gdy po raz pierwszy został użyty w ramach systemu operacyjnego Unix. Alternatywą dla CSV są formaty jak JSON czy XML, które pozwalają na bardziej skomplikowaną strukturę danych. Implementacja obsługi CSV w Pythonie jest prosta dzięki wbudowanemu modułowi `csv`. Warto jednak pamiętać o odpowiednim kodowaniu pliku tekstowego (np. UTF-8), aby uniknąć problemów z polskimi znakami.
 
-## Głębsza analiza:
-CSV formatę has been around since the early 1970s and was created as a way to easily transfer data between different computer systems. While CSV is a popular choice for storing and exchanging data, it is not the only option. Other file formats such as JSON and XML also offer similar capabilities. Working with CSV also has its drawbacks, such as lack of data type enforcement and difficulty handling large files.
-
-## Zobacz także:
-- [Python CSV module](https://docs.python.org/3/library/csv.html)
-- [History of CSV Format](https://en.wikipedia.org/wiki/Comma-separated_values#History)
+## Zobacz również:
+- Dokumentacja Pythona dla modułu csv: https://docs.python.org/3/library/csv.html
+- Porównanie formatów danych CSV, JSON, XML: https://www.datacamp.com/community/tutorials/csv-json-xml-difference
+- Porady dotyczące kodowania UTF-8 w Pythonie: https://docs.python.org/3/howto/unicode.html

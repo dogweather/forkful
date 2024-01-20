@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Ruby recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,56 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Working with YAML in Ruby 
-
 ## What & Why?
-YAML (YAML Ain't Markup Language) is a simple data serialization language, widely used in programming for storing and exchanging data in a human-readable format. It is often used to easily store configuration settings or structured data for applications. Programmers use YAML for its simplicity, readability, and flexibility, making it a popular choice for storing data in Ruby projects.
+YAML stands for "YAML Ain't Markup Language." It's a human-readable data serialization format. Programmers use it for config files, data exchange between languages, and because it's more readable than JSON or XML for complex data structures.
 
 ## How to:
-To use YAML in Ruby, first, we need to require the `yaml` library in our code. Then, we can use the `load` and `dump` methods to convert data to and from YAML format. Let's take a look at an example:
 
-```Ruby
+To work with YAML in Ruby you need the `yaml` library. It's part of Ruby's standard library, so just require it:
+
+```ruby
+require 'yaml'
+```
+
+To dump a Ruby hash to a YAML string:
+
+```ruby
 require 'yaml'
 
-# Create a hash object
-person = { name: "John", age: 30, hobbies: ["coding", "reading", "playing guitar"] }
+my_hash = { name: 'Sam', occupation: 'Developer', hobbies: ['coding', 'chess'] }
 
-# Convert to YAML format
-yaml_person = person.to_yaml
-
-# Print YAML output
-puts yaml_person
-
-# Convert YAML back to hash
-hash_person = YAML.load(yaml_person)
-
-# Print hash output
-puts hash_person
+yaml_string = my_hash.to_yaml
+puts yaml_string
 ```
 
-Output:
-```yaml
+Output will be a YAML-formatted string:
+
+```
 ---
-:name: John
-:age: 30
+:name: Sam
+:occupation: Developer
 :hobbies:
-  - coding
-  - reading
-  - playing guitar
+- coding
+- chess
 ```
+
+To load a YAML string into Ruby:
+
 ```ruby
-{:name=>"John", :age=>30, :hobbies=>["coding", "reading", "playing guitar"]}
+require 'yaml'
+
+yaml_string = "
+name: Sam
+occupation: Developer
+hobbies:
+  - coding
+  - chess
+"
+
+ruby_hash = YAML.load(yaml_string)
+puts ruby_hash
 ```
 
-As you can see, the `to_yaml` method converts the hash object into a string in valid YAML format, while the `load` method converts the YAML string back into a Ruby hash.
+Output is a Ruby hash:
 
-## Deep Dive:
-YAML was first designed in 2001 and is a human-friendly, cross-platform, programming language independent format. It is widely used in various applications and can also be used for configuration files, providing a more readable alternative to traditional formats like XML or JSON. Alternatively, other options for storing data in Ruby include using built-in data structures like arrays or hashes.
+```
+{name: 'Sam', occupation: 'Developer', hobbies: ['coding', 'chess']}
+```
 
-One key feature of YAML is that it supports comments, making it easier for developers to add notes or explanations for each data entry. This makes the format more user-friendly and organized compared to others.
+## Deep Dive
 
-The implementation of YAML in Ruby is done through the `Psych` library, which is part of the standard library since Ruby 1.9.3. This library can be extended to support custom objects, making it even more versatile for data serialization.
+YAML emerged in the early 2000s as a human-friendly alternative to XML for config files and data serialization. Its design allows easy mapping to native data structures in many languages, having implementations in Python, Ruby, Java, PHP, and others.
 
-## See Also:
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [Psych Library Documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/psych/rdoc/Psych.html)
+Alternatives to YAML include JSON and TOML. JSON is more common for web APIs due to its direct compatibility with JavaScript. TOML aims to be more readable as a config file while offering a similar feature set as YAML.
+
+In Ruby, YAML is implemented by the Psych library, which has been the default YAML parser since Ruby 1.9.3. Psych interacts with libyaml, a C library for YAML parsing and emitting.
+
+## See Also
+
+- [The Official YAML Website](https://yaml.org/)
+- [Psych Library Documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/psych/rdoc/Psych.html)
+- [Ruby YAML Module Documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)
+- [JSON (JavaScript Object Notation) Official Site](https://www.json.org/)
+- [TOML (Tom's Obvious, Minimal Language) GitHub Repository](https://github.com/toml-lang/toml)

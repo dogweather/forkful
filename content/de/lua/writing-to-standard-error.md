@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben in den Standardfehler"
-html_title:           "Lua: Schreiben in den Standardfehler"
-simple_title:         "Schreiben in den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,26 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben auf Standardfehler ist ein Weg für Programmierer, Fehler und andere wichtige Informationen anzuzeigen, die während der Ausführung ihres Codes auftreten können. Es ist nützlich für die Fehlersuche und Erstellung von Protokollen, um zu verstehen, was Ihr Code tut und wo mögliche Probleme auftreten können.
+Standardfehler (stderr) ist ein Ausgabekanal, der für Fehlermeldungen und Diagnostik genutzt wird, um sie von regulären Ausgaben (stdout) zu trennen. Programmierer verwenden stderr, um Probleme und wichtige Warnungen sichtbar zu machen, ohne den normalen Outputflow zu stören.
 
-## Wie geht es?
-Das Schreiben auf Standardfehler in Lua ist einfach. Sie müssen nur die Standardfehlerfunktion (engl. Standard Error Function) verwenden, die als "io.stderr" in Lua bekannt ist. Wir können ihr eine Zeichenkette übergeben, die wir ausgeben möchten, um sie auf dem Bildschirm auszudrucken.
+## So geht's:
+In Lua schreiben wir mit `io.stderr:write()` auf stderr.
 
-```Lua
-io.stderr:write("Dies ist eine wichtige Fehlermeldung.")
+```lua
+-- Schreibt eine Warnmeldung auf stderr
+io.stderr:write("Warnung: Etwas lief schief!\n")
+
+-- Normale Ausgabe auf stdout
+print("Das ist eine normale Ausgabe.")
 ```
 
-Die Ausgabe dieser Zeile würde im Terminal folgendermaßen aussehen:
-
+Ausgabe im Terminal könnte so aussehen:
 ```
-Dies ist eine wichtige Fehlermeldung.
+Warnung: Etwas lief schief!
+Das ist eine normale Ausgabe.
 ```
 
-## Tief einsteigen
-Das Schreiben auf Standardfehler ist eine weit verbreitete Praxis in der Programmierung, um die Fehlerbehebung und das Verständnis des Codes zu verbessern. Auf diese Weise können Programmierer wichtige Informationen anzeigen, ohne den normalen Ablauf des Programms zu stören. Es ist auch eine Alternative zum Schreiben auf Standardausgabe (engl. Standard Output), die möglicherweise für die Anzeige von Benutzerinformationen verwendet wird.
-
-In Lua gibt es auch die Funktion "io.stdout", die standardmäßig für die Standardausgabe verwendet wird. Programmierer können jedoch auch die Funktion "print()" verwenden, um an die Standardausgabe zu schreiben. Im Vergleich dazu ist das Schreiben auf Standardfehler mit "io.stderr:write()" expliziter und bietet mehr Kontrolle über die Ausgabe.
+## Deep Dive
+Stderr hat seine Wurzeln in UNIX-Systemen und ist ein Standarddateistream, der für Fehlermeldungen vorgesehen ist. Alternativen wie Logging in Dateien oder die Verwendung dedizierter Logging-Frameworks sind gebräuchlich, können aber die direkte und schnelle Natur von stderr beeinträchtigen. In Lua geht die Implementierung von stderr über die standardisierte `io`-Bibliothek, wobei `io.stderr` eine Datei repräsentiert, die für Fehlerausgaben reserviert ist. Da stderr unabhängig von stdout ist, können Ausgaben umgeleitet oder separat behandelt werden.
 
 ## Siehe auch
-- Offizielle Lua-Dokumentation zu io.stderr: https://www.lua.org/manual/5.4/manual.html#6.8.2
-- Vergleich von Standardfehler und Standardausgabe in Lua: https://stackoverflow.com/questions/3448147/lua-print-vs-stdout-vs-stderr
+- Lua 5.4 Referenzhandbuch: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- `io`-Bibliothek in Lua: [https://www.lua.org/pil/21.html](https://www.lua.org/pil/21.html)
+- Mehr zu stdout und stderr: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

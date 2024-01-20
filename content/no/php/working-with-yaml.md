@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med yaml"
-html_title:           "PHP: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML står for "YAML Ain't Markup Language" og er et tekstbasert språk som brukes til å skrive leselige datastrukturer. Det er spesielt nyttig for å representere konfigurasjonsdata og er ofte brukt i webutvikling.
+## What & Why?
+YAML, "YAML Ain't Markup Language", er et dataformat som ligner på JSON, men er enklere å lese for mennesker. Programmerere bruker det fordi det er optimalt for konfigurasjonsfiler og datautveksling mellom språk.
 
-## Slik gjør du det:
-Det er enkelt å arbeide med YAML i PHP ved hjelp av noen innebygde funksjoner og klasser. Først må du inkludere yaml modulen ved å bruke funksjonen `yaml_parse()` og angi filen du vil lese. Deretter kan du bruke funksjonen `yaml_emit()` for å konvertere et PHP-array til YAML-format og skrive det til en fil.
+## How to:
+Med PHP kan du lett jobbe med YAML filer gjennom Symfony-komponenten `Yaml`. Her er hvordan du leser og skriver YAML.
 
 ```PHP
-// Leser YAML-fil
-$yaml_data = yaml_parse(file_get_contents("min_fil.yaml"));
+<?php
+require_once 'vendor/autoload.php';
 
-// Skriver et PHP-array til YAML-fil
-$my_array = array(
-    "navn" => "Ole",
-    "alder" => 25,
-    "interesser" => array("programmering", "fotball", "reise")
-);
-$yaml_string = yaml_emit($my_array);
-file_put_contents("ny_fil.yaml", $yaml_string);
+use Symfony\Component\Yaml\Yaml;
+
+// Lese inn en YAML-fil
+$yaml = Yaml::parse(file_get_contents('eksempel.yaml'));
+
+// Skrive ut array
+print_r($yaml);
+
+// Konvertere et array til en YAML-streng
+$array = ['name' => 'Ola', 'age' => 34, 'city' => 'Oslo'];
+$yaml = Yaml::dump($array);
+
+// Skriv YAML-strengen til fil
+file_put_contents('ny_eksempel.yaml', $yaml);
 ```
 
-## Dykk dypere:
-YAML ble først introdusert i 2001 som et alternativ til XML og JSON for å skrive datastrukturer. Det er et populært valg blant utviklere på grunn av sin lesbarhet og fleksibilitet. Alternativene til å arbeide med YAML i PHP inkluderer å bruke biblioteker som Symfony YAML eller Spyc. Det er også verdt å merke seg at YAML har støtte for å inkludere andre YAML-filer og referere til variabler, noe som gjør det mulig å organisere store mengder data på en effektiv måte.
+Output etter å lese vil være et PHP-array. Etter å skrive, en YAML-formattert tekstfil.
 
-## Se også:
-- [Dokumentasjon for yaml_parse()](https://www.php.net/manual/en/function.yaml-parse.php)
-- [Dokumentasjon for yaml_emit()](https://www.php.net/manual/en/function.yaml-emit.php)
-- [Symfony YAML bibliotek](https://symfony.com/doc/current/components/yaml.html)
-- [Spyc bibliotek](https://github.com/mustangostang/spyc)
+## Deep Dive
+YAML kom først i 2001 og ville forenkle datautveksling og lesbarhet. Alternativer inkluderer XML og JSON. Symfony YAML bruker `libyaml` under hetta hvis tilgjengelig, for fart. Pass på tab vs space-feil; YAML bruker spaces.
+
+## See Also
+- Symfony YAML-komponent dokumentasjon: [https://symfony.com/doc/current/components/yaml.html](https://symfony.com/doc/current/components/yaml.html)
+- YAML offisielle nettside: [https://yaml.org/](https://yaml.org/)
+- PHP.net sin YAML-funksjoner: [https://www.php.net/manual/en/book.yaml.php](https://www.php.net/manual/en/book.yaml.php)

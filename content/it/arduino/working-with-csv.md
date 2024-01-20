@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Arduino: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-
-Il lavorare con CSV (Comma Separated Values) significa manipolare dati in formato tabella, dove ogni campo è separato da una virgola. I programmatori lo fanno per gestire e organizzare grandi quantità di informazioni in modo semplice e versatile.
+## Che Cosa & Perché?
+Lavorare con i file CSV significa manipolare dati in formato "Comma-Separated Values" (Valori Separati da Virgola), strumento semplice per gestire dati tabellari. I programmatori li usano per la loro leggibilità e la facilità di importazione/esportazione da database e fogli di calcolo.
 
 ## Come Fare:
-
-Per lavorare con CSV su Arduino, è necessario utilizzare una libreria specifica come la [ArduinoCSV](https://github.com/rodan/ArduinoCSV). Una volta importata la libreria, è possibile leggere e scrivere dati da e verso un file CSV.
-
-Per esempio, per creare un nuovo file CSV:
-
 ```Arduino
-#include <ArduinoCSV.h>
-CSV file = CSV(F("nuovo_file.csv"));
+#include <SD.h>
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  SD.begin(10); // Assicurati che il pin chip select sia corretto per il tuo modulo
+
+  myFile = SD.open("datalog.csv", FILE_WRITE);
+
+  // Se il file è aperto correttamente, scrivi su di esso
+  if (myFile) {
+    myFile.println("id,temperature,humidity");
+    myFile.println("1,22.5,45");
+    myFile.println("2,23.1,47");
+    // Chiudi il file
+    myFile.close();
+  } else {
+    // se il file non si apre, avvisa su seriale
+    Serial.println("Errore nell'apertura del file");
+  }
+}
+
+void loop() {
+  // Vuoto. La logica di scrittura è tutta in setup.
+}
 ```
+Nell'esempio, un Arduino crea un file CSV con dati fittizi.
 
-Per aggiungere una riga di dati al file:
+## Approfondimento
+Il formato CSV fu sviluppato nei primi anni dell'informatica per scambiare dati tra programmi incompatibili. Mentre ci sono alternative come JSON o XML, CSV resta un pilastro per la sua semplicità ed efficienza in contesti dove la struttura complessa non è necessaria. Nell'implementazione, prestare attenzione alla formattazione corretta e all'escape di caratteri speciali (es., virgole nei dati).
 
-```Arduino
-file.println("Dato1, Dato2, Dato3");
-```
-
-Per leggere una riga dal file:
-
-```Arduino
-String line = file.readLine();
-```
-
-## Approfondimento:
-
-Il formato CSV è stato sviluppato negli anni '70 quando la prima versione di Microsoft Excel è stata distribuita. Oggi è uno dei formati più utilizzati per salvare dati tabellari. Una alternativa per lavorare con dati tabellari su Arduino è utilizzare un modulo SD per memorizzare e leggere un file CSV dal e verso la sua memoria.
-
-## Vedi Anche:
-
-- [Pagina Wikipedia sul formato CSV](https://it.wikipedia.org/wiki/Comma-separated_values)
+## Vedi Anche
+- La [documentazione ufficiale della libreria SD di Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Tutorial sull'utilizzo di file CSV con Python](https://realpython.com/python-csv/)
+- [Specifiche formali del formato CSV da RFC 4180](https://tools.ietf.org/html/rfc4180)

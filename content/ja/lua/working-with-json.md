@@ -1,7 +1,7 @@
 ---
-title:                "「Jsonの取り扱い」"
-html_title:           "Lua: 「Jsonの取り扱い」"
-simple_title:         "「Jsonの取り扱い」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-タイトル: LuaでJSONデータを処理する方法
+## What & Why? (何となぜ？)
+JSONはデータのやり取りフォーマット。簡単で、多くの言語に対応しているから、プログラマはよく使う。
 
-## 何をするのか？ ##
-JSONとは、JavaScript Object Notationの略で、データを扱うためのフォーマットの一つです。プログラマーは主に、データをサーバーやクライアント間で簡単に交換するためにJSONを使用します。
-
-## 使い方 ##
-Luaでは、JSONのデータを扱うための専用ライブラリがあります。まずはこのライブラリをプログラムに読み込む必要があります。
-
+## How to: (やり方)
 ```Lua
+-- JSON ライブラリの読み込み
 local json = require("json")
+
+-- JSON 文字列
+local jsonString = '{"name": "Taro", "age": 30}'
+
+-- JSON のパース
+local person = json.decode(jsonString)
+
+-- データの使用
+print(person.name)  -- 出力: Taro
+
+-- Lua テーブルから JSON 文字列へ
+local table = {name = "Hanako", age = 25}
+local toJson = json.encode(table)
+
+print(toJson)  -- 出力: {"name":"Hanako","age":25}
 ```
 
-次に、JSONデータをパースしてLuaのテーブル型に変換する必要があります。これには`json.parse()`メソッドを使用します。
+## Deep Dive (深掘り)
+JSONはJavaScript Object Notationの略。JavaScriptに由来しているが、独立したデータフォーマットとして成立。XMLは別の代替手段だが、JSONの方が軽量。Luaでは、dkjsonやcjsonなどのライブラリを使って実装されることが多い。
 
-```Lua
-local data = json.parse('{"name":"John","age":30,"city":"New York"}')
-print(data.name) -- John
-print(data.age) -- 30
-print(data.city) -- New York
-```
-
-そして、Luaのテーブル型をJSONデータに変換するには`json.stringify()`メソッドが使えます。
-
-```Lua
-local table = {name = "John", age = 30, city = "New York"}
-print(json.stringify(table)) -- {"name":"John","age":30,"city":"New York"}
-```
-
-## 詳しく見ていく ##
-JSONは、もともとJavaScriptで使われるために作られたフォーマットですが、現在では多くのプログラミング言語でサポートされています。代表的なものとしては、XMLやYAMLがありますが、JSONはいずれよりもシンプルで扱いやすく、Web開発やAPI開発に特に適しています。
-
-Luaでは、JSONデータを扱うためには上記の方法以外にも、``yaml``や``dkjson``といったライブラリを使用することもできます。また、JSONの実装方法として、「object-style」（オブジェクト形式）と「array-style」（配列形式）の二つがあります。詳しくは公式ドキュメントを参照してください。
-
-## 関連リンク ##
-- [Lua公式ドキュメント](http://www.lua.org/pil/16.html)
-- [JSONの公式サイト](https://www.json.org/json-ja.html)
+## See Also (関連情報)
+- Luaの公式サイト: [http://www.lua.org/](http://www.lua.org/)
+- JSONについてのより詳しい情報: [https://www.json.org/json-ja.html](https://www.json.org/json-ja.html)
+- dkjsonライブラリ: [https://luarocks.org/modules/luarocks/dkjson](https://luarocks.org/modules/luarocks/dkjson)
+- cjsonライブラリ: [https://luarocks.org/modules/openresty/lua-cjson](https://luarocks.org/modules/openresty/lua-cjson)

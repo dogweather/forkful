@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 작업"
-html_title:           "Rust: CSV 파일 작업"
-simple_title:         "CSV 파일 작업"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+CSV (Comma-Separated Values) 파일은 데이터를 저장하고 전송하는 가장 간단한 형식 중 하나입니다. 프로그래머들은 이를 사용하여 데이터를 쉽게 읽고, 쓰고, 공유하기 위해 사용합니다.
 
-CSV란 무엇인가요? 이것은 Comma-Separated Values의 약자로, 엑셀과 같은 표 형식의 데이터를 저장할 수 있는 형식입니다. 프로그래머들은 CSV를 사용하는 이유는 데이터를 쉽게 저장하고 공유할 수 있기 때문입니다.
+## How to: (어떻게 하나요?)
+Rust에서 CSV 작업은 `csv` 크레이트를 사용해서 간단하게 할 수 있습니다. 먼저, `Cargo.toml`에 `csv` 크레이트를 추가해야 합니다.
 
-## 사용 방법:
-
-아래는 Rust를 사용하여 CSV 파일을 읽고 쓰는 예제 코드입니다.
-
-```Rust
-// CSV 파일 읽기
-let mut rdr = csv::ReaderBuilder::new()
-    .has_headers(false)
-    .from_path("filename.csv")?;
-
-for result in rdr.records() {
-    let record = result?;
-    println!("ID: {}, Name: {}, Age: {}", &record[0], &record[1], &record[2]);
-}
-
-// CSV 파일 쓰기
-let mut wtr = csv::WriterBuilder::new()
-    .from_path("output.csv")?;
-
-wtr.write_record(&["1", "John", "25"])?;
-wtr.write_record(&["2", "Mary", "30"])?;
-wtr.flush()?;
+```toml
+[dependencies]
+csv = "1.1.6"
 ```
 
-## 심층 분석:
+다음은 표준 라이브러리에서 `std::io`를 사용한 예시 코드입니다.
 
-CSV는 1970년대부터 사용되어온 오래된 형식이며, 데이터를 읽고 쓰기에는 간단하지만 구조를 잘 이해해야 합니다. 그러나 이 형식은 다른 대체 형식들보다 범용성이 뛰어나며, 대부분의 데이터베이스 소프트웨어에서도 지원합니다. Rust에서는 `csv` 라이브러리를 사용하여 쉽게 CSV 파일을 처리할 수 있습니다.
+```rust
+use csv;
+use std::error::Error;
+use std::io;
+use std::process;
 
-## 관련 정보:
+fn main() {
+    if let Err(err) = read_from_csv(io::stdin()) {
+        println!("error running example: {}", err);
+        process::exit(1);
+    }
+}
 
-- [csv-rust 라이브러리 문서](https://docs.rs/csv/1.0.0/csv/)
-- [CSV 파일 형식 정보](https://en.wikipedia.org/wiki/Comma-separated_values)
+fn read_from_csv<R: io::Read>(rdr: R) -> Result<(), Box<dyn Error>> {
+    let mut rdr = csv::Reader::from_reader(rdr);
+    
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+    
+    Ok(())
+}
+```
+
+실행 결과는 CSV 파일의 각 레코드를 라인별로 출력합니다.
+
+## Deep Dive (깊이 있게 다루기)
+CSV의 역사는 1970년대로 거슬러 올라가며, 텍스트를 처리하는 데 있어 가장 기본적인 수단 중 하나입니다. JSON이나 XML 같은 현대적인 포맷들이 등장했지만, CSV는 여전히 사람이 읽기 쉽고 소프트웨어 간 호환성이 높은 형식으로 널리 쓰입니다. Rust에서는 `csv` 크레이트를 통해 CSV 파일을 간단히 다룰 수 있으며, 성능도 뛰어납니다. 열 탐색, 열별 타입 주석, 헤더 기반의 직렬화 및 역직렬화 지원 등 고급 기능도 제공합니다.
+
+## See Also (더 알아보기)
+- Rust `csv` 크레이트 문서: [https://docs.rs/csv/latest/csv/](https://docs.rs/csv/latest/csv/)
+- CSV 형식에 대한 자세한 설명: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

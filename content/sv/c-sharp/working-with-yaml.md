@@ -1,7 +1,7 @@
 ---
-title:                "Att jobba med yaml"
-html_title:           "C#: Att jobba med yaml"
-simple_title:         "Att jobba med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -11,33 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+YAML hantering i C# innebär att tolka eller generera YAML, ett enkelt format för dataseriering. Programmerare använder det för konfigfiler och datautbyte då det är både människo- och maskinläsbart.
 
-YAML är en strukturerad dataformat som ofta används av programmerare för att läsa, skriva och lagra data. Det är ett enkelt sätt att organisera och strukturera information på ett läs- och förståeligt sätt. Många föredrar att använda YAML istället för XML eller JSON eftersom det är mer läsbar och lättare att lära sig.
+## How to:
+För att jobba med YAML i C# behöver du ett bibliotek som YamlDotNet. Här är grundläggande exempel för att läsa och skriva YAML.
 
-## Hur man:
-
-För att använda YAML i C# behöver du först installera ett YAML-bibliotek, som exempelvis YamlDotNet. Sedan kan du använda olika metoder beroende på vilken typ av data du vill läsa eller skriva.
-
-```C#
-// Läs en YAML-fil
-string yamlString = File.ReadAllText("exempel.yml"); // Läs filen som en sträng
-var deserializer = new DeserializerBuilder().Build(); // Skapa en Deserializer
-var yamlObject = deserializer.Deserialize(yamlString); // Skapa ett C# objekt från YAML-strängen
-
-// Skriv till en YAML-fil
-var serializer = new SerializerBuilder().Build(); // Skapa en Serializer
-string yamlOutput = serializer.Serialize(c#Object); // Skapa en YAML-sträng från C# objektet
-File.WriteAllText("exempel.yml", yamlOutput); // Skriv YAML-strängen till en fil
+Först, installera YamlDotNet via NuGet:
+```csharp
+PM> Install-Package YamlDotNet
 ```
 
-## Djupdykning:
+Läs YAML:
+```csharp
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+using System.IO;
 
-YAML lanserades 2001 och är en förkortning för "YAML Ain't Markup Language". Det är ett human-readable dataformat som används för att representera strukturerad data. I C# finns flera olika bibliotek som stödjer YAML, som exempelvis SharpYAML och YamlDotNet.
+var yamlInput = @"
+name: C# Programmer
+age: 30
+languages:
+  - Swedish
+  - English
+";
 
-Jämfört med andra dataformat som XML och JSON, är YAML mer lättläst för människor men inte lika effektivt för datorer. YAML är också mindre strikt i sin syntax, vilket kan leda till öppna dörrar för felaktig formatering.
+var deserializer = new DeserializerBuilder()
+  .WithNamingConvention(CamelCaseNamingConvention.Instance)  // Använder camelCase
+  .Build();
 
-## Se också:
+var programmer = deserializer.Deserialize<Programmer>(new StringReader(yamlInput));
 
-- Officiell YAML hemsida: https://yaml.org/
-- YamlDotNet dokumentation: https://dotnetyaml.readthedocs.io
-- SharpYAML på GitHub: https://github.com/xoofx/SharpYaml
+Console.WriteLine(programmer.Name); // Output: C# Programmer
+```
+
+Skriva YAML:
+```csharp
+var serializer = new SerializerBuilder()
+  .WithNamingConvention(CamelCaseNamingConvention.Instance)  // Använder camelCase
+  .Build();
+
+var programmer = new Programmer
+{
+    Name = "C# Programmer",
+    Age = 30,
+    Languages = new List<string> { "Swedish", "English" }
+};
+
+string yamlOutput = serializer.Serialize(programmer);
+Console.WriteLine(yamlOutput);
+```
+
+## Deep Dive
+YAML, "YAML Ain't Markup Language", skapades 2001 och är ett alternativ till XML och JSON. I .NET-världen är [YamlDotNet](https://github.com/aaubry/YamlDotNet) det mest populära biblioteket. YamlDotNet använder deserialisering och serialisering liknande JSON.NET, det gör det lätt för C#-utvecklare att hoppar in.
+
+Andra alternativ inkluderar `System.Text.Json` och `Newtonsoft.Json` för JSON, eller `System.Xml` för XML. YAML är populär i DevOps för dess läsbarhet, speciellt i Docker och Kubernetes konfigurationer.
+
+## See Also
+- YamlDotNet GitHub Repo: https://github.com/aaubry/YamlDotNet
+- Officiell YAML-webbsida: https://yaml.org
+- Microsofts guide till JSON i .NET: https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview

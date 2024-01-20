@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "Go: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å jobbe med JSON innebærer å kunne behandle data gjennom programmeringsspråket Go ved å konvertere informasjon til et enkelt og lettleselig format. Dette gjøres for å effektivt håndtere utveksling av data mellom forskjellige programmeringsspåk eller plattformer.
+## Hva & Hvorfor?
+JSON (JavaScript Object Notation) er et datautvekslingsformat. Det er populært fordi det er lettleselig for både mennesker og maskiner, og det er språkuavhengig, så det fungerer godt for web APIs og konfigureringsfiler.
 
-Hvordan:
-Go tilbyr en enkel og effektiv måte å håndtere JSON på gjennom sitt innebygde "encoding/json" pakke. Ved å bruke funksjoner som "Marshal" og "Unmarshal" kan vi enkelt konvertere data til eller fra JSON-formatet. Se eksempler nedenfor for å få en bedre forståelse:
-
+## Hvordan gjøres det:
 ```Go
-// Marshal data til JSON
-data := map[string]string{
-  "name": "John",
-  "age": "30",
-}
-json, err := json.Marshal(data)
-if err != nil {
-  panic(err)
-}
-fmt.Println(string(json))
+package main
 
-// Unmarshal JSON til data
-jsonString := `{"name":"John","age":"30"}`
-var data map[string]string
-err := json.Unmarshal([]byte(jsonString), &data)
-if err != nil {
-  panic(err)
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type User struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
 }
-fmt.Println(data["name"])
+
+func main() {
+	// JSON encoding
+	user := User{"Ola Nordmann", 30}
+	jsonData, err := json.Marshal(user)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(jsonData))
+
+	// JSON decoding
+	var decodedUser User
+	err = json.Unmarshal(jsonData, &decodedUser)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%+v\n", decodedUser)
+}
+```
+Output:
+```
+{"name":"Ola Nordmann","age":30}
+{Name:Ola Nordmann Age:30}
 ```
 
-Eksempel utoutput: {"name":"John","age":"30"}
-John
+## Dypdykk
+JSON ble populær rundt 2000 som et alternativ til XML, fordi det er mindre verbose og enklere å parse. Alternativer til JSON inkluderer YAML, XML og ProtoBuf. I Go blir JSON bearbeidet ved hjelp av “encoding/json”-pakken. Pakken reflekterer over strukturene for å serialisere Go-verdier til JSON og omvendt, noe som noen ganger krever structs-tags for å styre oppførselen.
 
-Dypdykk:
-JSON (JavaScript Object Notation) ble utviklet på 1990-tallet som en måte å kontekstfritt representere strukturerte data på. Siden da har det blitt en av de mest populære formater for datautveksling på nettet, spesielt i webapplikasjoner. Alternativer til å bruke Go for å jobbe med JSON inkluderer å bruke andre programmeringsspråk som allerede har integrert støtte for det, eller å bruke biblioteker som ikke følger Go's standarder. Å følge Go's standarder kan gjøre det enklere å vedlikeholde og utvide koden på lang sikt.
-
-Se også:
-- Offisiell Go dokumentasjon for JSON: https://golang.org/pkg/encoding/json/
-- Eksempler på å bruke "encoding/json" pakken i Go: https://gobyexample.com/json
-- Sammenligning mellom Go og andre programmeringsspråk for å jobbe med JSON: https://medium.com/always-be-coding/abc-go-programming-using-json-36a869eb13e2
+## Se også
+- Go’s dokumentasjon om JSON: https://golang.org/pkg/encoding/json/
+- JSON hjemmeside for generell forståelse: https://www.json.org/json-en.html
+- Wikipedia-side om JSON for historisk kontekst: https://no.wikipedia.org/wiki/JSON

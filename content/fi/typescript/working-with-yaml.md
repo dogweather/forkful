@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "TypeScript: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-YAML on tiedostomuoto, jota ohjelmoijat käyttävät konfiguraatiotiedostojen luomiseen ja tallentamiseen. Se on suosittu erityisesti DevOps- ja pilvialustojen maailmassa. YAML on helppo lukea ja kirjoittaa, joten se on kätevä vaihtoehto monimutkaisille JSON-tiedostoille.
+## What & Why?
+"## Mikä & Miksi?"
+YAML on datan serialisointikieli, jota käytetään konfiguraatiotiedostoihin ja datan tallennukseen. Käytämme YAMLia sen selkeyden ja ihmislukuisuuden vuoksi.
 
-## Miten:
+## How to:
+"## Kuinka:"
 ```TypeScript
-// Esimerkki YAML-tiedoston lukemisesta ja muuntamisesta JavaScript-objektiksi
-import * as YAML from 'yaml';
+// Asenna yaml-kirjasto: npm install js-yaml
+import * as yaml from 'js-yaml';
+import * as fs from 'fs';
 
-const yamlData = `
-name: John
-age: 30
-hobbies:
-- hiking
-- cooking
-`;
+// Lukee YAML-tiedoston ja muuntaa sen JavaScript-objektiksi
+const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
+console.log(doc);
 
-const dataObject = YAML.parse(yamlData);
-console.log(dataObject.age); // tulostaa "30"
+// Muuntaa JavaScript-objektin YAML-muotoon ja tallentaa tiedostoon
+const data = { title: 'Esimerkki', status: 'toimii' };
+fs.writeFileSync('output.yaml', yaml.dump(data));
 ```
+*Tuloste*:
+Konsoli näyttää `config.yaml` sisällön JS-objektina.
+`output.yaml` sisältää muunnetun datan YAML-muodossa.
 
-## Syväsukellus:
-YAML kehitettiin alun perin XML: n korvaajaksi helpottamaan tiedoston käsittelyä käyttöliittymäkirjastoille. Siitä on tullut suosittu vaihtoehto JSON-tiedostoille sen yksinkertaisuuden ja luettavuuden vuoksi. TypeScript-pohjaiset projektit voivat hyödyntää YAML-tukea esimerkiksi npm-paketin ```yaml``` avulla.
+## Deep Dive
+"## Syväsukellus"
+YAML (YAML Ain't Markup Language) on helppolukuinen datan kuvauskieli, joka ilmestyi 2001. JSON ja XML ovat vaihtoehtoisia kieliä, mutta YAML on suosittu ihmislukuisuuden ja kirjoittamisen helppouden vuoksi. YAMLin käyttö TypeScriptissa vaatii yleensä ulkopuolisen kirjaston, kuten `js-yaml`, jolla voi lukea ja kirjoittaa YAML-tietoa.
 
-## Katso myös:
-- [YAML-spesifikaatio](https://yaml.org/spec/)
+## See Also
+"## Katso Myös"
+- YAML:n virallinen sivusto: [https://yaml.org](https://yaml.org)
+- `js-yaml` GitHub-repositorio: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+- TypeScriptin dokumentaatio: [https://www.typescriptlang.org](https://www.typescriptlang.org)

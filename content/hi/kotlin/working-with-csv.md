@@ -1,7 +1,7 @@
 ---
-title:                "csv के साथ काम करना"
-html_title:           "Kotlin: csv के साथ काम करना"
-simple_title:         "csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+CSV, यानी Comma-separated values, एक ऐसी फाइल है जो डेटा को कॉमा द्वारा अलग करके रखती है। प्रोग्रामर्स इसे तब इस्तेमाल करते हैं जब उन्हें डेटा का आदान-प्रदान, संग्रहित करना, या विश्लेषण करना होता है क्योंकि यह ह्यूमन और मशीन दोनों के लिए समझने में आसान होता है।
 
-CSV के साथ काम करना क्या है, और प्रोग्रामर्स इसे क्यों करते हैं। CSV स्प्रेडशीट डेटा को कॉमा separated values के रूप में संग्रहीत करता है, जिसे प्रोग्रामर्स डेटा को संसाधित और व्यवस्थित करने के लिए उपयोग कर सकते हैं।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```Kotlin
-import java.io.FileReader
-import com.opencsv.CSVReader
+// Kotlin में CSV फाइल पढ़ना
+fun readCSV(filename: String) {
+    val lines = File(filename).readLines()
+    lines.forEach { line ->
+        val columns = line.split(",")
+        println(columns)
+    }
+}
 
-val csvReader = CSVReader(FileReader("data.csv"))
-val data = csvReader.readAll()
-val header = data[0]
-val rows = data.drop(1)
+// CSV फाइल में डेटा लिखना
+fun writeCSV(filename: String, data: List<List<String>>) {
+    File(filename).bufferedWriter().use { out ->
+        data.forEach { row ->
+            out.write(row.joinToString(","))
+            out.newLine()
+        }
+    }
+}
 
-for (row in rows) {
-    val name = row[0]
-    val email = row[1]
-    val age = row[2].toInt()
-    println("नाम: $name, ईमेल: $email, आयु: $age")
+// सैम्पल उपयोग
+fun main() {
+    val dataToWrite = listOf(
+        listOf("आइडी", "नाम", "उम्र"),
+        listOf("1", "राम", "25"),
+        listOf("2", "सीता", "23")
+    )
+    val filename = "example.csv"
+
+    writeCSV(filename, dataToWrite)
+    readCSV(filename)
 }
 ```
+इससे सैम्पल आउटपुट होगा:
+```
+[आइडी, नाम, उम्र]
+[1, राम, 25]
+[2, सीता, 23]
+```
 
-इस मिसाल में, हम एक CSV फाइल से डेटा पढ़ते हैं और उसे संस्कारित सूची में बदलते हैं। फाइल से पहले पंक्ति अक्षरमाला हमारे डेटा कॉलम को संदर्भित करने के लिए उपयोग की जाती है। हम उस पंक्ति को छोड़कर सभी अन्य पंक्तियों को शामिल करते हैं जो हामारे डेटा को प्रतिनिधित करती हैं।
+## Deep Dive (गहराई से जानकारी)
+CSV की शुरूआत 1970s में कंप्यूटर साइंस के विकास के दौर में हुई थी। अब भी यह JSON, XML जैसे मॉडर्न फॉर्मेट्स का विकल्प है क्योंकि यह सरल और विभिन्न प्रोग्राम्स में सुगमतापूर्वक उपयोग हो सकता है। Kotlin में CSV डेटा को कार्यान्वित करते समय आपको स्ट्रगल होने पर third-party लाइब्रेरीज़ जैसे कि `Apache Commons CSV` या `kotlin-csv` का इस्तेमाल कर सकते हैं।
 
-## डीप डाइव:
-
-CSV फाइलें १९७० के दशक से प्रयुक्त हो रही हैं और ये लोकप्रिय रूप से सामान्य फाइल स्वरूप हैं। यदि आपको CSV के साथ काम करना नहीं होता है, तो आपको मुख्य डेटा संग्रहीत स्वरूप TXT, JSON या XML का उपयोग कर सकते हैं।
-
-और यदि आप एक CSV पार्सर उपलब्ध नहीं है, तो आप स्वयं कोड लिख सकते हैं। एक सामान्य त्रुटि है कि हमारे डेटा में फार्मेटिंग गलत हो सकती है, जो मूल डेटा को संसाधित करने में दिक्कत पैदा कर सकती है। संबंधित लेखों के लिंक नीचे दिए गए हैं।
-
-## देखें भी:
-
-- [Comparison of CSV, JSON, and XML](https://medium.com/gocodee/csv-vs-json-vs-xml-443b3a9e6f27)
-- [Handling CSV Formatting Errors](https://stackoverflow.com/questions/19206418/how-do-i-handle-csv-files-when-some-fields-are-quoted-and-some-aren-t-in-kotlin)
+## See Also (और भी देखें)
+- Kotlin documentation: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- kotlin-csv library: [https://github.com/doyaaaaaken/kotlin-csv](https://github.com/doyaaaaaken/kotlin-csv)
+- Apache Commons CSV: [https://commons.apache.org/proper/commons-csv/](https://commons.apache.org/proper/commons-csv/)

@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Clojure: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Porquê?
-
-Escrever testes é uma prática comum entre programadores para garantir que o código funciona conforme o esperado. Isso envolve criar códigos que verificam o comportamento de determinadas funções ou módulos, garantindo que não haja erros ou bugs no código.
+## O que é e por quê?
+Escrever testes é criar um conjunto de verificações automatizadas para garantir que seu código funcione como esperado. Programadores fazem isso para reduzir bugs, validar comportamentos e economizar tempo a longo prazo.
 
 ## Como fazer:
+```Clojure
+;; Adicionando a biblioteca de testes
+(require '[clojure.test :refer :all])
 
-Para escrever testes em Clojure, usamos a biblioteca integrada "clojure.test". Primeiramente, definimos uma função de teste com a palavra-chave "deftest" e um nome descritivo. Dentro dessa função, usamos a macro "is" para testar uma expressão e o valor esperado dela. Por exemplo:
+;; Exemplo de um teste simples
+(deftest teste-soma
+  (testing "Adição de números"
+    (is (= 4 (+ 2 2)))))
+    
+;; Rodando os testes
+(run-tests)
 
+;; Saída esperada: 
+;; Testing user
+;; Ran 1 tests containing 1 assertions.
+;; 0 failures, 0 errors.
 ```
-(clojure.test/deftest test-soma
-  (clojure.test/is (= 10 (+ 6 4)))
-)
-```
 
-Em seguida, executamos todos os nossos testes usando a função "run-tests" e esperamos que nenhum deles falhe. Se algum teste falhar, receberemos uma mensagem de erro indicando qual teste e qual resultado esperado. 
+## Mergulho profundo
+Os testes têm suas raízes no desenvolvimento de software dos anos 50, mas só ficaram populares com a chegada de métodos ágeis. Alternativas ao `clojure.test` incluem `Midje` e `Expectations`, que oferecem sintaxes e funcionalidades diferentes. A implementação de testes em Clojure é simples: use `deftest` para definir um teste e `is` para afirmar comportamentos esperados.
 
-## Aprofundando:
-
-A escrita de testes é uma prática comum em linguagens de programação funcional, como Clojure, porque é uma forma de garantir que o código esteja livre de bugs e seja fácil de manter. Além disso, testes bem escritos também atuam como documentação para o código, tornando mais fácil para outros programadores entenderem sua funcionalidade.
-
-Existem outras bibliotecas populares para escrever testes em Clojure, como "speclj" e "midje". Cada uma tem suas próprias vantagens e desvantagens, mas todas seguem o mesmo princípio básico de testar o código em níveis granulares.
-
-Outra prática comum em Clojure é usar a técnica de "test-driven development" (TDD), onde os testes são escritos antes mesmo do código de implementação, guiando o processo de desenvolvimento.
-
-## Veja também:
-
-- [Documentação oficial do clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Biblioteca "speclj"](https://github.com/slagyr/speclj)
-- [Biblioteca "midje"](https://github.com/marick/Midje)
+## Veja também
+- Documentação oficial `clojure.test`: https://clojure.github.io/clojure/clojure.test-api.html
+- Guia para testes em Clojure com `Midje`: https://github.com/marick/Midje
+- Uma olhada mais aprofundada em testes com `Expectations`: https://github.com/clojure-expectations/clojure-test

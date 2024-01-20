@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "C++: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何&なぜ？
+## What & Why? (何となぜ？)
+テストコードとは、プログラムが期待通りに動くことを保証するためのコードです。バグを早期に発見し、品質を確保するためにプログラマーはテストを書きます。
 
-テストを書くこととは、プログラマーがコードの正しさを確認するために行う作業です。テストを書くことで、プログラムのバグやエラーを発見し、品質の高いソフトウェアを作ることができます。
-
-## 方法：
+## How to: (やり方)
+C++では、Google Testフレームワークを使ったテストが一般的です。以下に例を示します。
 
 ```C++
-// テストを書く基本的な構文
-#include <iostream>
+#include <gtest/gtest.h>
 
-int main() {
-
-  // テストを書くための関数
-  void testFunc();
-
-  // テストの実行
-  testFunc();
-
-  return 0;
+int Add(int a, int b) {
+    return a + b;
 }
 
-// テストを書く関数の定義
-void testFunc() {
-
-  // テストしたいコードを記述する
-  int num1 = 5;
-  int num2 = 10;
-  int result = num1 + num2;
-
-  // 結果の出力
-  std::cout << result << std::endl;
+TEST(MathTest, PositiveNumbers) {
+    EXPECT_EQ(7, Add(3, 4));
 }
 
+TEST(MathTest, NegativeNumbers) {
+    EXPECT_EQ(-5, Add(-2, -3));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
 ```
 
-実行結果：
-15
+実行結果:
+```
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from MathTest
+[ RUN      ] MathTest.PositiveNumbers
+[       OK ] MathTest.PositiveNumbers (0 ms)
+[ RUN      ] MathTest.NegativeNumbers
+[       OK ] MathTest.NegativeNumbers (0 ms)
+[----------] 2 tests from MathTest (0 ms total)
 
-## 深く掘り下げる：
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 2 tests.
+```
 
-テストの歴史的な背景については、最初のプログラミング言語であるFORTRANからその重要性が認識されてきました。テストの代替手段として、デバッグやデプロイメントの際の手動テストやユニットテストがあります。また、テストの実装方法には、手書きのテストコードや自動化されたテストプログラムの使用があります。
+## Deep Dive (深掘り)
+テストコードの歴史は1990年代まで遡ります。Kent Beckらがテスト駆動開発(TDD)を提唱しました。代替としては、Boost.TestやCatch2などがあります。Google Testはテストケースや検証を簡単に書くためのマクロやユーティリティを提供します。
 
-## 関連リンク：
+## See Also (関連情報)
+Google Test公式ドキュメント:
+https://github.com/google/googletest/blob/master/googletest/docs/primer.md
 
-- [Google テスト](https://github.com/google/googletest)
+テスト駆動開発についてのさらなる情報:
+http://agiledata.org/essays/tdd.html
+
+Boost.Testドキュメント:
+https://www.boost.org/doc/libs/release/libs/test/
+
+Catch2 GitHubレポジトリ:
+https://github.com/catchorg/Catch2

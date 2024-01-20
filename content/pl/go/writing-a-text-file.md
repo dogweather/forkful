@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie pliku tekstowego"
-html_title:           "Go: Pisanie pliku tekstowego"
-simple_title:         "Pisanie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i po co? 
-Pisanie pliku tekstowego to proces, dzięki któremu programista może zapisywać i przechowywać dane w czytelnej formie. Jest to przydatne w przypadku, gdy nie chcemy lub nie możemy przechowywać danych w bazie danych lub innym systemie. 
+## Co i dlaczego?
+Pisanie pliku tekstowego to zapisywanie danych w formie czytelnej dla człowieka. Programiści robią to, by przechowywać konfigurację, logi czy komunikować się z innymi programami.
 
+## Jak to zrobić:
+```Go
+package main
 
-## Jak to zrobić: 
-```Go 
-func main() { 
-  file, err := os.Create("plik.txt") 
-  if err != nil { 
-    fmt.Println(err) 
-  } 
-  defer file.Close() 
-  fmt.Fprintln(file, "To jest przykładowy tekst do zapisania w pliku") 
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
+
+func main() {
+    file, err := os.Create("przykład.txt")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    defer file.Close()
+
+    writer := bufio.NewWriter(file)
+    _, err = writer.WriteString("Witaj w pliku tekstowym!\n")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    writer.Flush() // Pamiętaj, by opróżnić bufor!
 }
 ```
 
-**Wyjście**: Plik tekstowy "plik.txt" został utworzony, a w nim znajduje się napis "To jest przykładowy tekst do zapisania w pliku".
+Uruchomienie programu stworzy plik `przykład.txt` z zawartością:
+```
+Witaj w pliku tekstowym!
+```
 
+## Więcej informacji:
+Pisanie plików tekstowych sięga wczesnych lat informatyki – to jedna z podstawowych umiejętności. Alternatywą może być `ioutil.WriteFile` w Go (deprecated w wersji 1.16), ale `bufio` i `os` to standard. `defer` i `Close` zapobiegają wyciekom zasobów, `Flush` opróżnia bufor, zapewniając, że wszystko jest zapisane.
 
-## Głębsza analiza: 
-Pisanie plików tekstowych nie jest niczym nowym w programowaniu. Jednakże technologie i narzędzia wykorzystywane do tego celu ulegają ciągłej zmianie i ulepszaniu. W przeszłości popularną alternatywą dla tworzenia plików tekstowych było korzystanie z baz danych czy arkuszy kalkulacyjnych. Jednak z upowszechnieniem kontenerów i mikroserwisów, pisanie plików stało się prostym i niezawodnym sposobem na przechowywanie danych.
-
-Jeśli chodzi o implementację w języku Go, jest ona bardzo prosta i wykorzystuje funkcję `os.Create()`, która tworzy nowy plik i zwraca wskaźnik do tego pliku. Następnie, korzystając ze standardowej funkcji `fmt`, możemy zapisać wybrany tekst do pliku za pomocą funkcji `Fprintln()`.
-
-
-## Zobacz także: 
-- [Dokumentacja języka Go dotycząca tworzenia plików](https://golang.org/pkg/os/#Create)
-- [Zalety i wady pisania plików tekstowych w porównaniu do innych sposobów przechowywania danych](https://www.javatpoint.com/os-create-function-in-golang)
+## Zobacz również:
+- Oficjalna dokumentacja Go: https://golang.org/pkg/os/ i https://golang.org/pkg/bufio/
+- Go by Example: https://gobyexample.com/writing-files
+- Tutorial o czytaniu i pisaniu plików w Go: https://www.devdungeon.com/content/working-files-go

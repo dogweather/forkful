@@ -1,7 +1,7 @@
 ---
-title:                "编写测试。"
-html_title:           "C#: 编写测试。"
-simple_title:         "编写测试。"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
-什么是写测试？
-写测试是编写代码的一部分，并且旨在验证代码的正确性。它是一种良好的实践，可以帮助程序员发现并修复他们代码中的错误。
+## What & Why? (是什么 & 为什么？)
 
-为什么程序员要写测试？
-写测试可以帮助程序员在开发过程中发现代码中的错误，从而提高代码质量和可靠性。它也可以帮助开发团队更有效地协作和沟通。
+编写测试是创建检查代码正确性的程序。程序员进行测试以避免bug，保证代码质量，和简化维护。
 
-如何进行写测试？
-以下是一个使用C#语言的简单示例来演示如何写测试：
-```
-using System;
+## How to (如何操作)
 
-namespace Calculator
+在C#中，我们使用 `NUnit` 或 `xUnit` 等测试框架。以下是一个简单的 `NUnit` 测试示例。
+
+```C#
+using NUnit.Framework;
+
+namespace MyApplication.Tests
 {
-    class Calculator
+    [TestFixture]
+    public class CalculatorTests
     {
-        public int Add(int num1, int num2)
+        [Test]
+        public void Add_TwoNumbers_ReturnsSum()
         {
-            return num1 + num2;
+            // Arrange
+            var calculator = new Calculator();
+
+            // Act
+            var result = calculator.Add(5, 7);
+
+            // Assert
+            Assert.AreEqual(12, result);
         }
+    }
 
-        static void Main(string[] args)
+    public class Calculator
+    {
+        public int Add(int a, int b)
         {
-            Calculator calc = new Calculator();
-
-            int result = calc.Add(2, 3);
-            Console.WriteLine(result);
+            return a + b;
         }
     }
 }
 ```
-输出：5
 
-深入了解
-写测试是一种测试驱动开发（TDD）的实践方法中的一部分。它的目的是通过编写测试来指导代码的开发，从而提高代码的质量和可靠性。除了编写测试，还有一些其他的测试方法，例如集成测试和验收测试。
+运行以上测试，如果代码正确，测试应该通过无输出错误。
 
-相关链接
-更多关于TDD的信息，请查看以下链接：
-- [Exploring TDD in C#](https://www.pluralsight.com/guides/exploring-test-driven-development-c-sharp)
+## Deep Dive (深入了解)
+
+C#测试编写的历史可以追溯到NUnit的推出。NUnit是一个自xUnit开始，广泛使用的测试框架。替代品包括MSTest和xUnit，每个都有其独特功能。在实现上，测试应该遵循Arrange-Act-Assert模式，这有助于保持代码清晰和有组织。
+
+## See Also (另请参阅)
+
+- NUnit 官方网站: [https://nunit.org/](https://nunit.org/)
+- xUnit 官方网站: [https://xunit.net/](https://xunit.net/)
+- MSTest 文档: [https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)

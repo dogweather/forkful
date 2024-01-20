@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Elm: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä ja Miksi?
+Standardivirheeseen kirjoittaminen tarkoittaa virheviestien lähettämistä erilliseen virhevirtsaan, joka on erillään päävirrasta. Ohjelmoijat käyttävät tätä erottelemaan normaalin tulosteen ja virheet, jotta virheitä voi käsitellä ja lokittaa tehokkaammin.
 
-Kirjoittaminen vakioerolle on tapa, jolla ohjelmoijat voivat ilmoittaa ohjelman suorituksessa tapahtuneista virheistä tai häiriöistä. Tämä auttaa kehittäjiä tunnistamaan ja korjaamaan ongelmia, mikä parantaa ohjelman toimintaa ja luotettavuutta.
-
-## Miten:
+## How to:
+Elmissä ei voi suoraan kirjoittaa standardivirheeseen, mutta voit logata virheitä `Debug.log` avulla. Esimerkiksi:
 
 ```Elm
-import Debug
+import Html
 
-Debug.crash "Tapahtui virhe"
+main =
+    let
+        _ = Debug.log "Error" "Jotain meni pieleen"
+    in
+    Html.text "Katso konsolia virheen tiimoilta!"
 ```
 
-Tämä koodiesimerkki käyttää `Debug`-moduulia kirjoittamaan vakioerolle viestin "Tapahtui virhe". Tämä viesti näkyy ohjelman suorittamisen yhteydessä henkilökohtaisessa konsolissasi tai kehittäjän välineissä, kuten Chrome DevToolsissa.
+Luo yllä oleva funktio ja avaa ohjelmasi konsoli nähdäksesi tulosteen.
 
-Vakioerolle kirjoittaminen on erityisen hyödyllistä, kun haluat ilmoittaa poikkeuksellisista tapahtumista tai virheistä, jotka eivät ehkä näy tavallisessa käyttäjälle näkyvässä käyttöliittymässä.
+## Deep Dive
+Elm on suunniteltu niin, että sivuvaikutukset, kuten tiedoston käsittely tai konsoliin kirjoittaminen, hoidetaan erillisten komentojen kautta. Tavallisesti, kielet kuten C tai Python tukevat standardivirheeseen kirjoittamista suoraan, mutta Elmissä sivuvaikutuksia hallitaan tarkemmin. Tästä johtuen, suora standardivirheeseen kirjoittaminen ei ole idiomaattista Elm-koodia, ja kehittäjät käyttävät `Debug.log` virheiden loggaamiseen kehitysvaiheessa. Tuotantokoodiin tätä ei yleensä jätetä.
 
-## Syvemmälle:
-
-Vakioerolle kirjoittaminen on yleinen tapa käsitellä virheitä ja merkityksellinen myös muissa ohjelmointikielissä. Joissakin kielissä, kuten Java, vakioerolle kirjoittaminen tapahtuu automaattisesti, ja kehittäjän ei tarvitse erikseen kirjoittaa koodia virheiden ilmoittamiseksi.
-
-On myös muita tapoja käsitellä virheitä, kuten `Result` ja `Maybe` tyyppitietojen käyttäminen Elm-kielessä. Nämä vaihtoehdot voivat olla parempia tietyissä tilanteissa, joten kannattaa tutustua niihin ennen kuin käytät vakioerolle kirjoittamista.
-
-Vakioerolle kirjoittamisessa käytetään standardipuskurialuetta, joka on osa tietokoneen muistia, johon ohjelma voi kirjoittaa tietoja suorituksen aikana. Kun ohjelma kaatuu, tämä puskurialue näytetään kehittäjälle viestinä, joka auttaa tunnistamaan virheen syyn.
-
-## Katso myös:
-
-- [Elm Debug moduuli dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm Result ja Maybe tyyppitiedot](https://guide.elm-lang.org/error_handling/)
+## See Also
+- Elm virallinen dokumentaatio: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
+- `Debug.log` käyttö: [https://package.elm-lang.org/packages/elm/core/latest/Debug#log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
+- Hyvät käytännöt Elm-koodaukseen: [https://elm-lang.org/docs/style-guide](https://elm-lang.org/docs/style-guide)

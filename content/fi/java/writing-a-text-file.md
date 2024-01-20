@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostotiedon kirjoittaminen"
-html_title:           "Java: Tiedostotiedon kirjoittaminen"
-simple_title:         "Tiedostotiedon kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tekstitiedoston kirjoittaminen on yksinkertainen tapa tallentaa tietoja tietokoneelle. Ohjelmoijat käyttävät sitä usein tallentaakseen muuttuvia tietoja esimerkiksi käyttäjän asetuksista tai tuloksista.
+## What & Why?
+Tekstitiedoston kirjoittaminen tarkoittaa tiedon tallentamista tekstimuodossa tiedostoon. Ohjelmoijat kirjoittavat tiedostoja, koska se on helppo tapa tallentaa ja jakaa tietoa pysyvästi.
 
-## Kuinka:
-Java:lla voit kirjoittaa tekstitiedoston helposti käyttämällä FileWriter-luokkaa. Katso alla oleva koodiesimerkki ja tulosteet.
+## How to:
+Tässä on yksinkertainen esimerkki tekstitiedoston kirjoittamisesta Javalla:
 
-```java
-// Luodaan FileWriter-olio ja tiedoston nimi
-FileWriter tiedosto = new FileWriter("tiedostonimi.txt");
+```Java
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
-// Kirjoitetaan tiedostoon tekstiä
-tiedosto.write("Tämä on esimerkki tekstistä!");
+public class TextFileWriter {
+    public static void main(String[] args) {
+        String text = "Hei! Tämä on tekstiviesti tiedostoon.";
+        String filePath = "tervehdys.txt";
 
-// Suljetaan tiedosto
-tiedosto.close();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(text);
+            System.out.println("Tiedosto kirjoitettu: " + filePath);
+        } catch (IOException e) {
+            System.out.println("Virhe tiedostoa kirjoittaessa: " + e.getMessage());
+        }
+    }
+}
 ```
+Tämä koodi luo "tervehdys.txt" nimisen tiedoston ja kirjoittaa siihen "Hei! Tämä on tekstiviesti tiedostoon.".
 
-Tämän jälkeen voit tarkistaa tekstitiedostosi ja nähdä, että se sisältää haluamasi tekstin.
+## Deep Dive
+Tekstitiedoston kirjoittamisen historia ulottuu tietokoneiden alkuaikoihin, jolloin tiedot tallennettiin magneettinauhalle. Nykyään on monia tapoja kirjoittaa tekstitiedostoja Javassa, kuten `FileWriter`, `BufferedWriter`, `PrintWriter` ja `Files` luokat. `BufferedWriter` on suosittu, koska se tarjoaa puskuroinnin, mikä parantaa suorituskykyä suurten tiedostojen kirjoittamisessa. Tiedostojen käsittelyyn liittyy kuitenkin aina virheiden käsittely – siksi virheenkäsittely (esim. try-with-resources) on olennainen osa tiedostojen kirjoittamista.
 
-## Syväsukellus:
-Tekstitiedoston kirjoittaminen on ollut käytössä ohjelmoinnissa jo pitkään, ja se on edelleen erittäin hyödyllinen tapa tallentaa tietoja. Joissakin tapauksissa voit myös käyttää muita tiedostomuotoja, kuten CSV tai XML, jos haluat tallentaa monimutkaisempia tietoja. On myös tärkeää pitää mielessä, että tekstitiedostot ovat yleensä hyvin pienikokoisia ja niitä on helppo jakaa ja siirrellä.
-
-## Katso myös:
-- https://docs.oracle.com/javase/tutorial/essential/io/file.html (Java:n virallinen dokumentaatio tiedostojen kirjoittamisesta)
-- https://www.tutorialspoint.com/java/java_files_io.htm (opastus tietojen tallentamisesta Java:lla)
+## See Also
+- [Oracle's Official Java Documentation for FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html)
+- [BufferedWriter documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
+- [Java Practices for Reading and Writing Files](http://www.javapractices.com/topic/TopicAction.do?Id=42)
+- [Stack Overflow: Writing a file in Java](https://stackoverflow.com/questions/2885173/how-do-i-create-a-file-and-write-to-it-in-java)

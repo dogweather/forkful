@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Gleam: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
-Travailler avec des fichiers CSV est une pratique courante en programmation, car les fichiers CSV (Comma-Separated Values) sont des formats de données tabulaires permettant de stocker et d'organiser facilement des informations dans un fichier texte. Les programmeurs utilisent souvent des fichiers CSV pour gérer des données telles que des listes d'utilisateurs, des données financières ou des données de vente.
+## What & Why?
+Travailler avec des CSV, c’est manipuler des "Comma-Separated Values", des données tabulaires sous forme de texte. Les programmeurs l'utilisent pour facilement échanger des données entre des logiciels et des systèmes différents.
 
-## Comment faire :
+## How to:
+```gleam
+// Importez le module CSV si disponible
+import gleam/csv
+
+// Fonction de base pour lire un CSV
+fn read_csv(data: String) -> Result(List(List(String)), String) {
+  csv.parse(data)
+}
+
+// Exemple: lecture d'une chaîne CSV
+fn main() {
+  let data = "nom,âge\nAlice,30\nBob,25"
+  case read_csv(data) {
+    Ok(lines) -> lines
+    Error(err) -> err
+  }
+}
 ```
-Gleam.import("csv")
+Sortie attendue: `[["nom", "âge"], ["Alice", "30"], ["Bob", "25"]]`
 
-let csv_data = """
-Name, Age, Country
-John, 25, France
-Maria, 30, Spain
-Peter, 35, Germany
-"""
+## Deep Dive
+Les CSV existent depuis les premiers jours de l’informatique personnelle, servant d’intermédiaire universel entre des systèmes hétérogènes. Alternativement, on utilise JSON ou XML pour plus de complexité structurelle. Dans Gleam, le parsing CSV demande de gérer les erreurs et la structure des données proprement, vu que le langage valorise la sûreté de type.
 
-let results = Gleam.csv.parse(csv_data)
-```
-Dans cet exemple, nous important d'abord le module CSV de Gleam, puis nous définissons une variable contenant nos données CSV. Enfin, nous utilisons la fonction ```parse``` du module CSV pour convertir nos données en une structure utilisable dans notre code. A partir de cela, nous pouvons procéder à la manipulation de nos données comme nous le souhaitons.
-
-## Plongée en profondeur :
-Le format CSV est largement utilisé depuis des années et est supporté par de nombreux logiciels. Il permet aux données d'être facilement éditées et échangées entre différentes applications. En alternative, il est possible d'utiliser d'autres formats de données tels que JSON ou XML. Cependant, ces formats peuvent être plus verbeux et moins adaptés pour les données tabulaires. En termes d'implémentation, le module CSV de Gleam utilise l'algorithme RFC 4180 pour vérifier la validité du fichier CSV.
-
-## Voir aussi :
-Pour en savoir plus sur le module CSV de Gleam, vous pouvez consulter la documentation officielle sur le site de Gleam. Vous pouvez également consulter des articles et des tutoriels sur l'utilisation de CSV en programmation pour approfondir vos connaissances.
+## See Also
+- Documentation officielle de Gleam: [Gleam Lang](https://gleam.run/)
+- Spécification de CSV: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+- Bibliothèque pour travailler avec CSV en Gleam (si disponible): [hex.pm](https://hex.pm/)

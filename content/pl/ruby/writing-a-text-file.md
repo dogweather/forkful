@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Ruby: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -12,35 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i Dlaczego?
 
-Zapisywanie plików tekstowych jest podstawową umiejętnością każdego programisty. Polega to na zapisaniu tekstu lub danych w pliku, który można później odczytać i używać w swoim programie. Jest to szczególnie przydatne, gdy chcemy zapisać informacje na stałe, aby móc je wykorzystać w późniejszym czasie. 
+Zapisywanie do pliku tekstowego to proces przechowywania danych w standardowym formacie tekstowym. Programiści robią to dla trwałego zapisu informacji, wymiany danych między aplikacjami lub do logowania.
 
 ## Jak to zrobić:
 
-```ruby
-# Tworzenie pliku i zapisanie tekstu do niego
-File.open("plik_tekstowy.txt", "w") do |file|
-  file.puts "Witaj w świecie programowania!"
+```Ruby
+# Tworzenie i zapisywanie do pliku
+File.open('przyklad.txt', 'w') do |plik|
+  plik.puts "Witaj, Świecie!"
 end
 
-# Odczytanie tekstu z pliku
-File.open("plik_tekstowy.txt", "r") do |file|
-  puts file.read
+# Dodawanie do istniejącego pliku
+File.open('przyklad.txt', 'a') do |plik|
+  plik.puts "Do zobaczenia."
 end
+
+# Wczytywanie i wyświetlanie zawartości pliku
+puts File.read('przyklad.txt')
 ```
 
-Output:
+Przykładowe wyjście po uruchomieniu kodu:
 ```
-Witaj w świecie programowania!
+Witaj, Świecie!
+Do zobaczenia.
 ```
 
-## Głębszy Zanurzenie:
+## Deep Dive
 
-Zapisywanie plików tekstowych jest jedną z podstawowych operacji w programowaniu. W przeszłości, zanim istniały bazy danych, pliki tekstowe były jedynym sposobem na przechowywanie danych. Dziś wciąż są one szeroko wykorzystywane, szczególnie w prostych aplikacjach. Istnieją również inne metody zapisu danych, takie jak bazy danych czy cloud storage, jednak pliki tekstowe pozostają popularnym wyborem programistów.
+Pisanie do pliku tekstowego jest jednym z podstawowych mechanizmów I/O dostępnych w Rubym. Istnieją także inne metody, takie jak `IO.write` czy `File.write`, które pozwalają na zapis bez bloku. Istotne, by pamiętać o trybach dostępu - `'w'` nadpisze plik, `'a'` doda zawartość na końcu. 
 
-Implementacja zapisu plików tekstowych jest bardzo podobna w każdym języku programowania, a Ruby oferuje łatwe i przyjazne API do zarządzania plikami. Ważne jest również, aby pamiętać o poprawnym zamykaniu plików po zapisie lub odczycie danych, aby uniknąć problemów z dostępem do nich w przyszłości.
+## Zobacz również
 
-## Zobacz też:
-
-[Oficjalna dokumentacja Ruby o zarządzaniu plikami](https://ruby-doc.org/core-2.7.0/File.html)
-
-[Przewodnik o zapisywaniu plików tekstowych w Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- Dokumentacja Ruby IO: https://ruby-doc.org/core-3.1.0/IO.html
+- Dokumentacja Ruby File: https://ruby-doc.org/core-3.1.0/File.html
+- Tutorial do obsługi plików w Ruby: https://www.rubyguides.com/2015/05/working-with-files-ruby/

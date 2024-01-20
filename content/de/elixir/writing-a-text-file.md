@@ -1,6 +1,6 @@
 ---
 title:                "Eine Textdatei schreiben"
-html_title:           "Elixir: Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,18 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben einer Textdatei ist ein Weg für Programmierer*innen, um Daten in einer organisierten und lesbaren Form zu speichern. Es ist nützlich, um Informationen oder Ergebnisse aus einer Anwendung oder einem Skript zu sichern und später darauf zugreifen zu können.
+Das Schreiben einer Textdatei ist das Speichern von Daten in einem lesbaren Format auf einem Speichermedium. Programmierer tun dies, um Daten für eine spätere Verwendung zu persistieren, Konfigurationen zu speichern, oder Logs zu protokollieren.
 
-## Wie geht's?
-Das Schreiben einer Textdatei in Elixir ist einfach. Verwenden Sie die Funktion `File.write/2`, um eine Datei mit den angegebenen Daten zu erstellen oder zu überschreiben. Hier ist ein Beispiel:
+## How to:
+Schreiben einer simplen Textdatei mit Elixir:
 
-```Elixir
-File.write("mein_text.txt", "Hallo Welt!")
+```elixir
+File.write("hello.txt", "Hallo Welt!")
 ```
-Dieser Code erstellt eine neue Textdatei mit dem Namen "mein_text.txt" und schreibt "Hallo Welt!" in die Datei.
 
-## Tief eintauchen
-Das Schreiben von Textdateien hat eine lange Geschichte und wurde zuerst von Programmierern verwendet, um Daten in einer organisierten Form zu speichern. Alternativ kann auch die Funktion `IO.write/2` verwendet werden, die jedoch keine Datei erstellt oder überschreibt, sondern direkt auf die Konsole schreibt. Beim Schreiben von Textdateien müssen auch eventuelle Fehler beim Öffnen oder Schreiben der Datei beachtet werden.
+Ausgabe prüfen:
+```elixir
+File.read("hello.txt")
+```
 
-## Siehe auch
-Weitere Informationen und Beispiele zum Schreiben von Textdateien in Elixir finden Sie in der offiziellen Dokumentation unter: https://hexdocs.pm/elixir/File.html#write/2
+Erwartete Ausgabe:
+```elixir
+{:ok, "Hallo Welt!"}
+```
+
+Stream zum Schreiben von größeren Dateien:
+
+```elixir
+{:ok, file} = File.open("große_datei.txt", [:write])
+IO.binwrite(file, "Erste Zeile\n")
+IO.binwrite(file, "Zweite Zeile\n")
+File.close(file)
+```
+
+## Deep Dive
+Historisch stammt das Konzept des Schreibens von Daten in Dateien vom Bedarf der dauerhaften Datenspeicherung ab. Alternativen zu `File.write/2` sind Streams für größere Daten und Datenbanken für strukturierte Daten. Implementation in Elixir verwendet Erlang's :file Modul, wodurch es effizient und zuverlässig ist.
+
+## See Also
+- Elixir's offizielle Dokumentation: [File Module](https://hexdocs.pm/elixir/File.html)
+- Erlang's :file Modul: [Erlang File Module](http://erlang.org/doc/man/file.html)
+- Elixir Forum für Diskussionen und Fragen: [Elixir Forum](https://elixirforum.com)

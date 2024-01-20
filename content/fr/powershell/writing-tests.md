@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "PowerShell: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu’est-ce que c’est et pourquoi?
+## Quoi & Pourquoi ?
+Écrire des tests, c'est créer des mini-programmes pour vérifier que chaque partie de ton code fonctionne comme prévu. Les programmeurs en écrivent pour s'assurer que leur code est fiable et éviter les bugs.
 
-Le writing test est un processus utilisé par les programmeurs pour s’assurer de la qualité de leur code. Il consiste à écrire une série de tests automatisés qui vont vérifier le bon fonctionnement des différentes parties d’un programme.
-
-Les programmeurs font cela pour s’assurer que leur code est exempt de bugs et fonctionne comme prévu. Cela leur permet de détecter et de corriger les erreurs avant qu’elles ne causent des problèmes plus importants dans leur application.
-
-## Comment faire:
-
-Voici un exemple de code en PowerShell pour créer un test automatisé qui vérifie si la fonction "Add" ajoute correctement deux nombres :
+## Comment faire :
+Voici un script de test simple avec `Pester`, un framework de test en PowerShell. Installe Pester si ce n'est pas déjà fait :
 
 ```PowerShell
-# Définit une fonction "Add" pour l'ajout de deux nombres
-Function Add-Numbers {
-    param(
-        [int]$num1,
-        [int]$num2
-    )
-    $result = $num1 + $num2
-    return $result
-}
+Install-Module -Name Pester -Force -SkipPublisherCheck
+```
 
-# Teste la fonction "Add" avec deux nombres
-Describe "Add function" {
-    It "adds two numbers correctly" {
-        $result = Add-Numbers 5 7
-        $result | Should -Be 12
+Ensuite, crée un fichier de test `MonScript.Tests.ps1` avec ce contenu :
+
+```PowerShell
+Describe "Test de ma fonction" {
+    It "additionne deux nombres correctement" {
+        # Supposons que tu as une fonction appelée Ajouter
+        Ajouter 2 3 | Should -Be 5
     }
 }
 ```
 
-Lorsque vous exécutez ce test, vous devriez obtenir un résultat positif qui confirme que la fonction "Add" a bien fonctionné.
+Exécute le test :
 
-## Plongée en profondeur:
+```PowerShell
+Invoke-Pester .\MonScript.Tests.ps1
+```
 
-Le writing test est une pratique courante dans le développement logiciel depuis de nombreuses années, mais son importance a considérablement augmenté avec l'adoption des méthodologies de développement agiles.
+Tu verras un résultat comme cela :
 
-Il existe également d'autres méthodes pour tester le code, comme la revue de code par les pairs ou l'utilisation de boîtes à outils de test spécifiques. Cependant, le writing test reste l'une des méthodes les plus efficaces pour garantir la qualité du code.
+```
+Starting discovery in 1 files.
+Discovery finished in xxx seconds.
+Running tests from 'MonScript.Tests.ps1'
+Describing Test de ma fonction
+  [+] additionne deux nombres correctement xxx ms (xxx ms|xxx ms)
+Tests completed in xxx seconds
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```
 
-En termes d'implémentation, certains outils de test populaires en PowerShell sont Pester et PSTest. Ils fournissent des fonctionnalités supplémentaires pour faciliter l'écriture et l'exécution de tests automatisés.
+## Exploration approfondie
+Pester existe depuis PowerShell v3 et s'est imposé comme le standard pour tests. Il propose une syntaxe claire et des commandes comme `Describe`, `Context`, `It`, facilitant l'organisation des tests. Alternativement, tu peux utiliser PSUnit ou d'autres, mais Pester reste le plus populaire. L'implémentation repose sur les assertions pour évaluer le comportement du code. Pense à 'Should' pour vérifier le résultat attendu.
 
-## Voir aussi:
-
-- [Documentation officielle de Pester](https://pester.dev/)
+## Voir aussi
+Pour approfondir, visite [la documentation officielle de Pester](https://pester.dev/docs/quick-start) et pour des concepts plus généraux sur les tests, [Tester est doux (eh oui, c’est vrai)](https://testing.googleblog.com/2012/01/testing-on-toilet-testing-is-doc.html).

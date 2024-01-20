@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura di test"
-html_title:           "Arduino: Scrittura di test"
-simple_title:         "Scrittura di test"
+title:                "Scrivere test"
+html_title:           "Arduino: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cosa e Perché?
+Scrivere test significa creare scenari automatizzati per verificare che il codice faccia esattamente quello che dovrebbe. I programmatori scrivono test per rilevare bug prima del rilascio e per mantenere il codice affidabile nel tempo.
 
-Scrivere test è il processo di creazione di codice che verifica il corretto funzionamento di altre parti del codice. I programmatori scrivono test per garantire che il loro codice sia affidabile e senza errori, consentendo loro di individuare e risolvere eventuali bug in modo più rapido ed efficiente.
+## How to:
+Esempio di un semplice test per un Arduino UNO che verifica il corretto lampeggio di un LED:
 
-## Come fare:
+```arduino
+#include <Arduino.h>
+#include <unity.h>
 
-Per scrivere test su Arduino, è possibile utilizzare la libreria integrata "Arduino Unit Testing", che consente di eseguire test sul codice del progetto. Di seguito è riportato un esempio di codice che esegue un semplice test su una funzione:
+void test_led_builtin_pin_number(void) {
+    TEST_ASSERT_EQUAL(13, LED_BUILTIN);
+}
 
+void test_led_state_high(void) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    TEST_ASSERT_EQUAL(digitalRead(LED_BUILTIN), HIGH);
+}
+
+void test_led_state_low(void) {
+    digitalWrite(LED_BUILTIN, LOW);
+    TEST_ASSERT_EQUAL(digitalRead(LED_BUILTIN), LOW);
+}
+
+void setup() {
+    UNITY_BEGIN();
+    pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+    RUN_TEST(test_led_builtin_pin_number);
+    RUN_TEST(test_led_state_high);
+    delay(1000);
+    RUN_TEST(test_led_state_low);
+    delay(1000);
+    UNITY_END();
+}
 ```
-ArduinoUnitTesting myTest;
-int input = 5;
-int expectedOutput = 10;
 
-int actualOutput = myFunction(input);
+Il risultato sarà una serie di passaggi e fallimenti dei test sul monitor seriale.
 
-myTest.assertEquals(expectedOutput, actualOutput);
-```
+## Deep Dive
+Storicamente, nel mondo Arduino, i test non erano diffusi come nello sviluppo software classico a causa della natura fisica dell'hardware e delle complicazioni nel simulare l'ambiente. Oggi, con strumenti come la libreria Unity, possiamo implementare test unitari anche per i progetti Arduino. Alternative includono framework come Google Test per test più avanzati.
 
-Se il test fallisce, verrà visualizzato un messaggio di errore indicando quale è il valore atteso e quale è il valore effettivamente ottenuto.
-
-## Approfondimento:
-
-Per eseguire test su Arduino, è possibile utilizzare anche altre librerie come "Unity" e "CppUTest", che offrono maggiori funzionalità e opzioni di personalizzazione. Inoltre, alcune schede di sviluppo di Arduino, come la Arduino Mega, offrono la possibilità di eseguire test di unità hardware tramite pin specifici.
-
-## Vedi anche:
-
-- Arduino Unit Testing: https://www.arduino.cc/reference/en/libraries/arduinounittesting/
-- Unity: https://github.com/ThrowTheSwitch/Unity
-- CppUTest: https://cpputest.github.io/
-- Schede di sviluppo Arduino: https://store.arduino.cc/
+## See Also
+Per approfondire l'argomento, visita:
+- [Arduino Continuous Integration](https://github.com/ifreecarve/arduino_ci)
+- [Unity Test Framework](http://www.throwtheswitch.org/unity)

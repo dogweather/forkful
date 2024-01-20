@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Java: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-JSON (або JavaScript Object Notation) - це формат для збереження та передачі даних. Його можна легко читати та розуміти як люди, так і комп'ютери. Програмісти використовують JSON, щоб обмінюватися даними між різними системами.
+## What & Why? (Що і чому?)
+JSON обмінює дані. Простий, швидкий, легко читається людьми та машинами. Прогери люблять: гнучкість і стандартизація.
 
-## Як це зробити:
-JSON надто простий для програмістів Java, щоб пропустити. Щоб створити JSON, ви можете використовувати об'єкти ```JSONObject``` та ```JSONArray```, або ж скористатися бібліотекою ```org.json```. Нижче наведено приклади коду та відповідні результати:
+## How to: (Як це зробити:)
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+public class JsonExample {
+    public static void main(String[] args) {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInput = "{\"name\":\"Yaroslav\",\"age\":30}";
+
+        try {
+            // Deserialize JSON to Java object
+            Person person = mapper.readValue(jsonInput, Person.class);
+            System.out.println("Name: " + person.getName() + ", Age: " + person.getAge());
+
+            // Serialize Java object to JSON
+            String jsonOutput = mapper.writeValueAsString(person);
+            System.out.println(jsonOutput);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static class Person {
+        private String name;
+        private int age;
+
+        // Getters and setters...
+    }
+}
 ```
-JSONObject student = new JSONObject();
-student.put("name", "John Doe");
-student.put("age", 25);
-student.put("major", "Computer Science");
-student.put("grades", new double[]{4.0, 3.9, 3.8});
-
-System.out.println(student.toString());
-
-// Виведе: {"name":"John Doe","age":25,"major":"Computer Science","grades":[4.0,3.9,3.8]}
-
-JSONArray countries = new JSONArray();
-countries.put("Ukraine");
-countries.put("France");
-countries.put("Japan");
-countries.put("USA");
-
-System.out.println(countries.toString());
-
-// Виведе: ["Ukraine","France","Japan","USA"]
+Sample Output:
+```
+Name: Yaroslav, Age: 30
+{"name":"Yaroslav","age":30}
 ```
 
-## Основні моменти:
-JSON був створений Дугласом Крокфордом у 2001 році та з тих пір став популярним форматом обміну даними. Існують також інші формати, такі як XML та CSV, але JSON має більш просту структуру та займає менше місця. Це робить його ідеальним для використання в мережевих додатках та між системами.
+## Deep Dive (Поглиблене занурення)
+JSON виник у 2000-х, швидко замінив XML. Альтернативи: YAML, BSON. Імплементація: бібліотеки Jackson, Gson, org.json. Серіалізація: від об'єкта до рядка JSON. Десеріалізація: навпаки.
 
-## Дивіться також:
-Для отримання додаткової інформації та прикладів використання JSON у Java, перегляньте документацію [Oracle](https://www.oracle.com/technetwork/articles/java/json-1973242.html) та [бібліотеку org.json](https://github.com/stleary/JSON-java).
+## See Also (Дивись також)
+- [JSON в Java з Jackson](https://www.baeldung.com/jackson)
+- [Офіційний сайт JSON](https://www.json.org/json-en.html)
+- [Сравнение JSON бібліотек для Java](https://www.baeldung.com/java-json)

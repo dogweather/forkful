@@ -1,7 +1,7 @@
 ---
-title:                "「csvファイルの操作」"
-html_title:           "C++: 「csvファイルの操作」"
-simple_title:         "「csvファイルの操作」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,100 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSVって何？
-CSVとはコンマで区切られたデータ形式のことです。プログラマーがCSVを使う理由は、簡単にデータを保存し、読み込み、処理できるからです。
+## What & Why? (何となぜ？)
+CSVファイルはデータをカンマで分割したテキストファイル。シンプルで互換性が高いため、プログラマはデータのインポート・エクスポートによく使います。
 
-## 方法：
-### データをCSVファイルとして保存する
-```C++
-#include <fstream>
-using namespace std;
-
-int main() {
-    ofstream csv_file; // CSVファイルを保存するためのファイルオブジェクトを作成
-    csv_file.open("data.csv"); // 新しいCSVファイルを作成
-
-    // データをコンマで区切り、ファイルに書き込む
-    csv_file << "hoge, foo, bar" << endl;
-    csv_file << "123, 456, 789" << endl;
-
-    csv_file.close(); // ファイルを閉じる
-    return 0; 
-}
-```
-
-### CSVファイルからデータを読み込む
-```C++
+## How to: (方法)
+```cpp
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <string>
-using namespace std;
+#include <sstream>
 
 int main() {
-    ifstream csv_file; // CSVファイルを読み込むためのファイルオブジェクトを作成
-    string line;
-    csv_file.open("data.csv"); // 既存のCSVファイルを開く
+    std::ifstream file("data.csv");
+    std::string line;
+    std::vector<std::vector<std::string>> data;
 
-    // 1行ずつデータを読み込み、コンマで区切って表示する
-    while (getline(csv_file, line)) {
-        cout << "データ: " << line << endl;
-        // コンマで区切られた各要素を取り出す
-        string data[3]; // 3つの要素があるCSVファイルを想定
-        int i = 0;
-        for (char& c: line) {
-            if (c == ',') {
-                i++;  
-            } else {
-                data[i] += c;
-            }
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string cell;
+        std::vector<std::string> row;
+        
+        while (std::getline(ss, cell, ',')) {
+            row.push_back(cell);
         }
-
-        // 取り出したデータを表示
-        cout << "hoge: " << data[0] << endl;
-        cout << "foo: " << data[1] << endl;
-        cout << "bar: " << data[2] << endl;
+        
+        data.push_back(row);
     }
 
-    csv_file.close(); // ファイルを閉じる
+    for (const auto& row : data) {
+        for (const auto& cell : row) {
+            std::cout << cell << " ";
+        }
+        std::cout << '\n';
+    }
+
     return 0;
 }
 ```
-
-### データをCSV形式で出力する
-```C++
-#include <iostream>
-#include <fstream>
-using namespace std;
-
-int main() {
-    int hoge = 123;
-    string foo = "abc";
-    char bar = 'x';
-
-    // 出力ファイルの準備
-    ofstream csv_file;
-    csv_file.open("output.csv");
-
-    // データをコンマで区切り、ファイルに書き込む
-    csv_file << hoge << "," << foo << "," << bar << endl;
-
-    csv_file.close(); // ファイルを閉じる
-    return 0;
-}
+```
+Name Age City
+John 23 New York
+Ana 34 Los Angeles
 ```
 
-## 深堀り：
-### 歴史的背景
-CSVは1972年にプログラマーのハル・バクステッドが発案し、汎用データ形式として広く使われるようになりました。当初は「Comma Separated Value」という略語で呼ばれていましたが、後に「Character Separated Values」や「Comma Delimited」とも呼ばれるようになりました。
+## Deep Dive (深い潜入)
+CSVは1972年に登場。JSONやXMLといったフォーマットもあるが、シンプルさがウリ。C++では`<fstream>`を使って容易に読み書き可能。例に示したストリーム処理やパース方法は基本的なテクニック。
 
-### 代替手段
-CSVの代替として、ExcelやMySQLなどのデータベースを使用する方法もあります。しかし、小規模なデータ処理ではまだまだCSVが有用です。
-
-### 実装詳細
-ファイルの入出力機能を実現するために、C++では```fstream```という標準ライブラリが用意されています。これを使用することで、ファイルを開いたり、読み書きすることができます。また、文字列の操作やデータの変換には、```string```や```stringstream```を使用することができます。
-
-## 関連リンク：
-- [CSVの歴史](https://en.wikipedia.org/wiki/Comma-separated_values#History)
-- [ファイル入出力の詳細](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)
-
-[ファイル入力と出力に関する参考記事](https://cpprefjp.github.io/reference/fstream.html)
+## See Also (関連情報)
+- [C++ Reference - ifstream](http://www.cplusplus.com/reference/fstream/ifstream/)
+- [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
+- [Stack Overflow - Reading and writing CSV files with C++](https://stackoverflow.com/questions/tagged/csv+c%2b%2b)

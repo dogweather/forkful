@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Elixir recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,54 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests is a coding practice that involves creating specific scenarios to check if your code behaves as expected. As programmers, we do this to verify our code's functionality, prevent bugs, and streamline debugging.
+Writing tests in programming is crafting code to check if other code works properly. Programmers do it to catch bugs early, confirm new features don't break old ones, and sleep better knowing their code is solid.
 
 ## How to:
 
-In Elixir, we write tests using a tool named ExUnit. Let's create a small Elixir application for demonstrations. We'll write tests to confirm that a function correctly adds two numbers.
+In Elixir, you'll use ExUnit to write tests. It's a built-in framework that's friendly and easy to get started with. Here's a quick example:
 
-1. Let's begin by initiating a new Mix project named `addition`:
 ```elixir
-mix new addition
-```
-2. Now, in the `lib/addition.ex` file, define the `Addition.add` function:
-```Elixir
-defmodule Addition do
-  def add(x, y) do
-    x + y
+# test/example_test.exs
+defmodule ExampleTest do
+  use ExUnit.Case
+
+  test "the truth" do
+    assert 1 + 1 == 2
   end
 end
 ```
-3. Now, let's write our tests in the `test/addition_test.exs`:
-```elixir
-defmodule AdditionTest do
-  use ExUnit.Case, async: true
 
-  test "adding positive numbers" do
-    assert Addition.add(2, 2) == 4
-  end 
+Run it with `mix test`:
 
-  test "adding negative numbers" do
-    assert Addition.add(-2, -3) == -5
-  end
-end
-```
-4. Finally, run your tests with:
-```elixir
-mix test
-```
-Your tests have passed if your terminal returns:
-```elixir
+```shell
+$ mix test
 ..
-Finished in 0.05 seconds
-2 tests, 0 failures
+
+Finished in 0.03 seconds
+1 test, 0 failures
 ```
+
+Nice! You wrote a test that confirms math hasn't changed.
 
 ## Deep Dive
 
-This testing approach took root during the TDD (Test-Driven Development) wave in the late '90s. The concept argues for writing tests before actual code. In Elixir, alternative testing libraries like `Espec`, `ExCheck`, and `ShouldI` exist, though `ExUnit` remains the most commonly used due to its simplicity and powerful assertion capabilities. The `async: true` in the `use ExUnit.Case, async: true` line allows Elixir to run tests concurrently, significantly speeding up the testing process.
+Testing's been a big deal in Elixir since José Valim gave life to the language, inspired by Ruby's testing culture. Alternatives? Not many within Elixir's world – ExUnit is the go-to. However, you might explore property-based testing with StreamData or dive into mocking with Mox for more complex scenarios. Tests are all about asserting expected outcomes—which you've seen with `assert`—but there's also `refute` for specifying what shouldn't happen.
 
 ## See Also
 
-- Elixir's official ExUnit documentation: [https://hexdocs.pm/ex_unit/ExUnit.html](https://hexdocs.pm/ex_unit/ExUnit.html)
-- Tutorial on Test-Driven Development (TDD) with Elixir: [https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234](https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234)
+To grow your test-writing skills, check these out:
+
+- Elixir's testing guides: https://hexdocs.pm/ex_unit/ExUnit.html
+- StreamData for property-based testing: https://hexdocs.pm/stream_data/StreamData.html
+- Mocking with Mox: https://hexdocs.pm/mox/Mox.html
+
+Now go test-drive some code!

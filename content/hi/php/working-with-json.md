@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "PHP: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक डेटा एक्सचेंज फॉर्मेट है। प्रोग्रामर्स इसे वेब एप्लिकेशन में डेटा भेजने और पाने के लिए करते हैं क्योंकि यह हल्का, पढ़ने में आसान और भाषा-निरपेक्ष है।
 
-JSON के साथ काम करना वह विशेष कौशल है जो कोड को डेटा को संपादित करने और प्रसंस्करण करने की अनुमति देता है। प्रोग्रामर्स इसलिए JSON को उपयोग करते हैं आजकल कि यह सुपर संवेदनशील, अत्यंत ही उपयोगी, और स्क्रिप्टिंग भाषाओं के साथ प्रभावी तरीके से इंटीग्रेट होता है।
-
-## कैसे:
-
-```PHP
-// JSON डेटा बनाएं
-$data = array(
-  "पहला" => "खुद",
-  "दूसरा" => "समझने",
-  "तीसरा" => "जगह",
-  "चौथा" => "Json"
-);
-
-// PHP के साथ JSON बनाएं
-$jsondata = json_encode($data);
-
-// JSON डेटा को पढ़ें
-$jsonobj = json_decode($jsondata);
-
-// डेटा के रूप में प्रिंट करें
-echo $jsonobj->पहला . ", " . $jsonobj->दूसरा . ", " . $jsonobj->तीसरा . ", " . $jsonobj->चौथा . "!";
-
-// Output: खुद, समझने, जगह, Json!
+## How to: (कैसे करें?)
+### PHP में JSON Encode करना:
+```php
+<?php
+$data = array('name' => 'रोहित', 'age' => 25, 'city' => 'दिल्ली');
+$json_data = json_encode($data, JSON_UNESCAPED_UNICODE);
+echo $json_data;
+?>
+```
+सैंपल आउटपुट:
+```json
+{"name":"रोहित","age":25,"city":"दिल्ली"}
 ```
 
-## गहराई में जाएं:
+### PHP में JSON Decode करना:
+```php
+<?php
+$json_data = '{"name":"रोहित","age":25,"city":"दिल्ली"}';
+$array_data = json_decode($json_data, true);
+print_r($array_data);
+?>
+```
+सैंपल आउटपुट:
+```php
+Array
+(
+    [name] => रोहित
+    [age] => 25
+    [city] => दिल्ली
+)
+```
 
-JSON का विस्तृत समर्थन 1990 के दशक में के उदगम का हिस्सा था। इसके अलावा, कुछ अन्य विकल्पों के रूप में XML और YAML भी प्रचलित हैं। PHP में, ```json_encode``` और ```json_decode``` फंक्शन को उपयोग करके JSON डेटा को प्रोसेस करना सुनिश्चित होता है।
+## Deep Dive (गहराई में जानकारी)
+JSON का आविष्कार 2001 में Douglas Crockford ने किया था। XML के विपरीत, JSON तेज़ी से पार्स होता है और इसका उपयोग JavaScript के साथ स्वाभाविक रूप से होता है। PHP में `json_encode()` और `json_decode()` फ़ंक्शंस का इस्तेमाल कर JSON को आसानी से हैंडल किया जा सकता है। ये फ़ंक्शन्स PHP के `json` एक्सटेंशन का हिस्सा हैं जो PHP 5.2.0 से स्टैंडर्ड हैं। 
 
-## इससे जुड़े देखें:
-
-- [PHP Manual: JSON फंक्शन](https://www.php.net/manual/en/book.json.php)
-- [What is JSON? एक सरल गाइड](https://www.digitalocean.com/community/tutorials/an-introduction-to-json)
+## See Also (और जानकारी)
+- PHP के अधिकृत मैन्युअल में JSON (https://www.php.net/manual/en/book.json.php)
+- json_encode() के ऑफिशियल डॉक्यूमेंटेशन (https://www.php.net/manual/en/function.json-encode.php)
+- json_decode() के ऑफिशियल डॉक्यूमेंटेशन (https://www.php.net/manual/en/function.json-decode.php)
+- W3Schools पर JSON ट्यूटोरियल (https://www.w3schools.com/js/js_json_intro.asp)
+- MDN Web Docs पर JSON गाइड (https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)

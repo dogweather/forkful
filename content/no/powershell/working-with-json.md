@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "PowerShell: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor? 
+## What & Why?
+JSON står for JavaScript Object Notation og lar oss lagre og utveksle data kompakt og strukturert. Programmerere bruker JSON fordi det er lettleselig for mennesker og lett å tolke for maskiner, noe som gjør det til et ideelt format for datautveksling mellom servere og webapplikasjoner.
 
-Arbeidet med JSON innebærer å behandle data i et filformat som er bygget på åpen standard. Dette formatet er ofte brukt for å lagre og utveksle data mellom applikasjoner og systemer. Programmerere bruker JSON for å lagre og behandle data på en effektiv måte.
+## How to:
+```PowerShell
+# Leser en JSON-fil
+$json = Get-Content -Path 'C:\data\example.json' | ConvertFrom-Json
 
-## Hvordan: 
+# Viser JSON-dataene
+$json
+
+# Endrer en verdi og lagrer tilbake til filen
+$json.name = 'Ola Nordmann'
+$json | ConvertTo-Json | Set-Content -Path 'C:\data\example_modified.json'
+```
+Output:
+```
+name          age
+----          ---
+Ola Nordmann  30
+```
 
 ```PowerShell
-# Konvertere JSON til PowerShell-objekt
-$jsonObject = ConvertFrom-Json -InputObject $json
+# Oppretter et PSObject og konverterer det til JSON
+$person = [PSCustomObject]@{
+    name = 'Kari Nordmann'
+    age = 28
+}
 
-# Opprette en ny JSON-fil 
-$jsonObject | ConvertTo-Json | Out-File -FilePath "C:\bruker\data.json"
-
-# Hente data fra en JSON-fil og behandle den 
-$jsonData = Get-Content -Path "C:\bruker\data.json" | ConvertFrom-Json 
-foreach ($item in $jsonData) {
-    # Gjøre noe med hvert element
-    $item.Name 
+# Konverterer til JSON og skriver til konsollen
+$person | ConvertTo-Json
+```
+Output:
+```
+{
+    "name":  "Kari Nordmann",
+    "age":  28
 }
 ```
 
-## Dypdykk: 
+## Deep Dive
+JSON ble introdusert i 2001 og er basert på JavaScripts objektlitteraler, men er språkuavhengig og brukes i mange programmeringsspråk. Alternativer til JSON inkluderer XML og YAML, men JSON er ofte foretrukket for dens enkelhet. Når du arbeider med JSON i PowerShell, håndterer cmdlet'er som `ConvertTo-Json` og `ConvertFrom-Json` konverteringer og sikrer at datastrukturer blir bibeholdt.
 
-JSON ble utviklet i 2001 som et alternativ til XML for å lagre og utveksle data. Mange programmeringsspråk har innebygd støtte for JSON, inkludert PowerShell. Alternativer til JSON inkluderer XML og CSV-filer, men JSON anses ofte som en mer effektiv og fleksibel løsning for å håndtere større mengder data. JSON står for "JavaScript Object Notation" og brukes ofte i webutvikling for å sende og motta data mellom klient og server.
-
-## Se også: 
-
-Offisiell Microsoft-dokumentasjon for [ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7) og [ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7) cmdletene.
-
-En grundig forklaring av JSON og hvordan du arbeider med det i PowerShell finner du på [PowerShellMagazine.com](https://www.powershellmagazine.com/2021/01/21/working-with-json-in-powershell/).
+## See Also
+- [Understanding JSON](https://www.json.org/json-en.html)
+- [PowerShell's ConvertFrom-Json documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7)

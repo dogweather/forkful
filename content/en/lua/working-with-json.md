@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Lua recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,36 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with JSON in Lua involves using a library to handle data in the JSON format, which is a popular way of storing and exchanging data in web applications. Programmers do this to easily parse and manipulate data from APIs and databases, as well as to create and send data in a format that can be easily understood by other programs.
+
+JSON (JavaScript Object Notation) is used to store and transport data. Programmers use JSON because it's lightweight, easy for humans to read and write, and easy for machines to parse and generate.
 
 ## How to:
-To work with JSON in Lua, you first need to install a library. One of the most commonly used is "lua-cjson", which can be installed using the LuaRocks package manager with the command `luarocks install lua-cjson`. Then, you can use the library in your code by requiring it at the top with `local cjson = require("cjson")`.
 
-To convert a Lua table into a JSON string, you can use the `encode()` function:
-```Lua
-local data = {name = "John", age = 25, hobbies = {"coding", "reading"}}
-local json_str = cjson.encode(data)
-print(json_str)
--- Output: {"name": "John", "age": 25, "hobbies": ["coding", "reading"]}
+Let's parse some JSON.
+
+```lua
+-- Ensure you have the 'dkjson' module or another JSON library.
+local dkjson = require 'dkjson'
+
+local jsonString = '{"name":"John", "age":30, "city":"New York"}'
+
+-- Parse JSON string into a Lua table.
+local person, pos, err = dkjson.decode(jsonString, 1, nil)
+if err then
+    print("Error:", err)
+else
+    print(person.name)  -- Output: John
+end
+
+-- Convert Lua table to JSON string.
+local personTable = { name = "Jane", age = 25, city = "Los Angeles" }
+local jsonOutput = dkjson.encode(personTable)
+print(jsonOutput)  -- Output: {"age":25,"city":"Los Angeles","name":"Jane"}
 ```
 
-Similarly, you can convert a JSON string into a Lua table with the `decode()` function:
-```Lua
-local json_str = '{"name": "Jane", "age": 30, "hobbies": ["cooking", "hiking"]}'
-local data = cjson.decode(json_str)
-print(data.name)
--- Output: Jane
+Now let's handle arrays.
+
+```lua
+local jsonArrayString = '[{"name":"John"}, {"name":"Jane"}]'
+
+-- Parse JSON string with an array into Lua table.
+local peopleArray, _, err = dkjson.decode(jsonArrayString)
+if err then
+    print("Error:", err)
+else
+    for i, person in ipairs(peopleArray) do
+        print(person.name)  -- Output: John\nJane
+    end
+end
 ```
 
-## Deep Dive:
-JSON, short for JavaScript Object Notation, was created in the early 2000s as a lightweight data interchange format. It is based on a subset of the JavaScript programming language and is human-readable, making it easy for both humans and machines to understand.
+## Deep Dive
 
-In Lua, there are multiple libraries available for working with JSON, including "lua-cjson", "lua-json", and "rxi-json". Each has its own advantages and disadvantages, so it is important to choose the one that best fits your needs.
+JSON became the de facto standard for APIs, outgrowing XML because it's less verbose. There are alternatives like YAML, which is even more readable but not as widely used in APIs. In Lua, there's no native JSON support, so you need a library like 'dkjson' or 'cjson'. Lua implementation details include handling type differences, like arrays and objects, and converting between Lua's `nil` and JSON's `null`.
 
-Implementations of JSON libraries can vary in terms of performance, memory usage, and error handling. It's important to consider these factors when selecting a library for your project.
+## See Also
 
-## See Also:
-- [Official Lua Documentation](https://www.lua.org/docs.html)
-- [JSON Official Website](https://www.json.org/)
-- [LuaRocks](https://luarocks.org/) package manager
-- [rxi-json GitHub Repository](https://github.com/rxi/json.lua)
+- [dkjson library on GitHub](https://github.com/LuaDist/dkjson)
+- [Lua Users JSON Modules comparison](http://lua-users.org/wiki/JsonModules)
+- [JSON official website](https://www.json.org/json-en.html)
+- [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html) for learning Lua basics.

@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "C#: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
+## מה ולמה?
 
-בתכנות, כתיבת בדיקות היא תהליך בדיקת קוד שמאפשר לתכנות אתרים ואפליקציות תוכנה לפעול בצורה נכונה ומנועת באגים. כתיבת בדיקות הופכת את הקוד ליציב ובטוח יותר, ומאפשרת למפתחים לעבוד בצורה יעילה ומהירה יותר.
+כתיבת טסטים היא בדיקת הקוד שלך באמצעות סט נסיונות שונים כדי לוודא שהוא עובד כראוי. מתכנתים עושים זאת כדי לזהות באגים, למנוע קריסות ולשפר את איכות הקוד לפני השחרור לייצור.
 
-## איך לעשות זאת:
+## איך לעשות:
 
-השתמשו [ב-```C#...```] כדי ליצור דוגמאות של קוד ותוצאות מתאימות להדגמת כתיבת בדיקות. תוכלו להשתמש ב- ```Assert```כדי לוודא שתוצאות הקוד תואמות את הצפויות. לדוגמה:
+```C#
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-```c#
-[Test]
-public void TestCalculatorAddition()
+namespace MyApp.Tests
 {
-    // Arrange
-    int num1 = 10;
-    int num2 = 20;
-    int expectedResult = 30;
+    [TestClass]
+    public class CalculatorTests
+    {
+        [TestMethod]
+        public void Add_Values_ReturnsSum()
+        {
+            // כאן אנו יוצרים אינסטנס של המחלקה שאנחנו רוצים לבדוק
+            Calculator calc = new Calculator();
+
+            // כעת בודקים את פעולת החיבור
+            int result = calc.Add(5, 7);
+            
+            // כאן אנחנו צופים שהתוצאה תהיה 12
+            Assert.AreEqual(12, result);
+        }
+    }
     
-    // Act
-    int result = Calculator.Add(num1, num2);
-    
-    // Assert
-    Assert.AreEqual(expectedResult, result);
+    public class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
 }
 ```
+הפלט במקרה הנ"ל יהיה הודעת עבור טסט שעבר בהצלחה או נכשל.
 
-## לחקור עמוק:
+## צלילה עמוקה:
 
-כתיבת בדיקות התחילה כתהליך ליצירת תוכנה באמצעות בסיס נתונים בשנות ה -50 של המאה המזרחית. במהלך השנים התהליך התפתח והתכנות בעבודת צוות נהפך לנפוץ יותר, וכתיבת בדיקות הפכה לכלי עיקרי לומדים אתרים ואפליקציות.
+בתחילה, טסטים היו פשוט בדיקות ידניות. לאחר מכן, תוכניות כמו NUnit ו- JUnit שינו את המשחק על ידי אוטומציה של טסטים ליחידות קוד. C# השתמש ב-MSTest, ועכשיו אנו יכולים למצוא אלטרנטיבות כמו xUnit, NUnit, או MSTest V2. פרטי היישום כרוכים ביצירת מחלקות ומתודות טסט, הכוללות אנוטציות לציון טסטים ואסרציות להגדרת התנהגות מצופה.
 
-אחת האלטרנטיבות לכתיבת בדיקות היא שיטת הבדיקות האוטומטיות, שמאפשרת למפתחים להריץ בדיקות באופן אוטומטי ולקבל דוח על התוצאות. ככל שהמתכנתים משתמשים יותר בכלים כמו ספריי טסטים, הם יכולים להיות יותר יצירתיים במהלך תהליך הפיתוח.
+## ראה גם:
 
-בכותרתי האחרונים, כתיבת בדיקות התפתחה ל"דיבוג כתובות" שצריך לכתוב כאחד מהעבודות האילוסטרטיביות של מתכנתים, כמו ניהול דין, כמו מאזין לכתיבת קוד הנובעת מ Ornaments of Code. ככל שהבדיקות יותר מתוזמנות עבור מתכנתים, זה תכנן עד הסוף. 
-
-# See Also:
-
-- [מדריך לבדיקות יחידה ב- C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
+- דוקומנטציה של MSTest: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest
+- דוקומנטציה של xUnit: https://xunit.net/docs/getting-started/netcore/cmdline
+- דוקומנטציה של NUnit: https://nunit.org/docs/2.6.4/index.html

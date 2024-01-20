@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json"
-html_title:           "C: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Trabalhando com JSON"
+html_title:           "Arduino: Trabalhando com JSON"
+simple_title:         "Trabalhando com JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é JSON e por que os programadores o usam?
+## O Que é e Por Que?
 
-JSON é uma linguagem de marcação de dados amplamente utilizada por programadores para armazenar e transmitir informações estruturadas. Eles usam essa linguagem por sua simplicidade, portabilidade e capacidade de trabalhar bem com outras linguagens.
+Trabalhar com JSON envolve manipular dados em um formato leve, de fácil leitura para humanos e análise por máquinas. Programadores usam JSON para transferir dados entre aplicações e serviços na web de forma padronizada.
 
-Como fazer:
+## Como Fazer:
 
-Existem duas maneiras principais de trabalhar com JSON em C: usando uma biblioteca ou escrevendo seu próprio analisador/gerador. Aqui está um exemplo de como usar a biblioteca Json-c para analisar e imprimir um arquivo JSON:
+### Lendo JSON:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <json-c/json.h>
+
+int main() {
+    const char * jsonString = "{\"nome\":\"João\",\"idade\":30}";
+    struct json_object *parsed_json;
+    struct json_object *nome;
+    struct json_object *idade;
+
+    parsed_json = json_tokener_parse(jsonString);
+
+    json_object_object_get_ex(parsed_json, "nome", &nome);
+    json_object_object_get_ex(parsed_json, "idade", &idade);
+
+    printf("Nome: %s\n", json_object_get_string(nome));
+    printf("Idade: %d\n", json_object_get_int(idade));
+
+    json_object_put(parsed_json);
+    
+    return 0;
+}
+```
+
+Saída:
+```
+Nome: João
+Idade: 30
+```
+
+### Escrevendo JSON:
 
 ```C
 #include <stdio.h>
 #include <json-c/json.h>
 
 int main() {
+    struct json_object *pessoa = json_object_new_object();
+    struct json_object *nome = json_object_new_string("Maria");
+    struct json_object *idade = json_object_new_int(25);
 
-    //Ler o arquivo JSON
-    FILE *fp = fopen("dados.json", "r");
+    json_object_object_add(pessoa, "nome", nome);
+    json_object_object_add(pessoa, "idade", idade);
 
-    char buffer[1024];
-    struct json_object *parsed_json;
-    struct json_object *nome;
-    struct json_object *idade;
-
-    // Analisar o arquivo JSON e armazená-lo em um objeto
-    fgets(buffer, 1024, fp);
-    parsed_json = json_tokener_parse(buffer);
-
-    // Obter os valores específicos do arquivo JSON e imprimi-los
-    json_object_object_get_ex(parsed_json, "nome", &nome);
-    printf("Nome: %s\n", json_object_get_string(nome));
-    json_object_object_get_ex(parsed_json, "idade", &idade);
-    printf("Idade: %d", json_object_get_int(idade));
-
+    printf("%s\n", json_object_to_json_string(pessoa));
+  
+    json_object_put(pessoa);
+  
     return 0;
 }
 ```
 
 Saída:
-
 ```
-Nome: João
-Idade: 25
+{"nome": "Maria", "idade": 25}
 ```
 
-Mergulho profundo:
+## Aprofundando:
 
-JSON foi desenvolvido em 2001 por Douglas Crockford e é uma alternativa ao formato de dados XML mais complexo. Existem outras bibliotecas disponíveis para trabalhar com JSON em C, como a Jansson. Além disso, é possível criar seu próprio analisador/gerador de JSON para obter um controle mais preciso sobre o processo.
+JSON, sigla de JavaScript Object Notation, surgiu nos anos 2000 como alternativa ao XML para a troca de dados. Enquanto o JSON é mais leve e de leitura mais fácil, o XML é mais extenso com suporte a namespaces e atributos. Em C, lidar com JSON envolve bibliotecas como `json-c` ou `Jansson`. Seus parsers convertem strings para estruturas de dados acessíveis, enquanto os serializadores fazem o inverso.
+ 
+## Veja Também:
 
-Veja também:
-
-[Aprenda JSON em 10 minutos](https://www.json.org/json-pt.html)
-
-[Json-c documentação](https://json-c.github.io/json-c/json-c-0.12.1/doc/html/index.html)
-
-[Jansson documentação](https://jansson.readthedocs.io/en/2.12/)
+- Documentação da `json-c`: https://json-c.github.io/json-c/
+- Tutorial sobre JSON com `Jansson`: http://www.digip.org/jansson/doc/2.7/tutorial.html
+- Comparação entre JSON e XML: https://www.json.org/xml.html

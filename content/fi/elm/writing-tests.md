@@ -1,7 +1,7 @@
 ---
-title:                "Ohjelmointitestien kirjoittaminen"
-html_title:           "Elm: Ohjelmointitestien kirjoittaminen"
-simple_title:         "Ohjelmointitestien kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää virheiden mahdollisuutta. Ohjelmoijat kirjoittavat testejä varmistaakseen, että heidän koodinsa toimii oikein ja pysyy toimivana myös tulevaisuudessa.
+## Mikä & Miksi?
+Testikoodaus tarkoittaa koodin automaattista testaamista virheiden varalta. Koodarin on helppo tarkistaa, toimiiko kaikki oikein eri tilanteissa, ja se säästää aikaa jatkokehityksessä.
 
-## Miten:
-Elm-kielellä testien kirjoittaminen on helppoa ja tehokasta. Alla on muutamia esimerkkejä, miten voit kirjoittaa testejä Elm:llä ja mitä tulee tulos näyttämään.
+## How to:
+Elm-test on työkalu koodin testaamiseen Elm-ohjelmissa. Asenna elm-test ja luo testit näin:
 
-```
-Elm-testi
-
+```Elm
+import Expect
 import Test exposing (..)
-import Expect exposing (expect)
+import YourModule exposing (..)
 
-testit : Test
-testit =
-    describe "Testaa kaksi lukua"
-        [ test "Lukujen summa on oikein" <|
-            \() ->
-                expect (1 + 2) toBe 3
-        , test "Lukujen erotus on oikein" <|
-            \() ->
-                expect (5 - 2) toBe 3
-        , test "Lukujen kertolasku on oikein" <|
-            \() ->
-                expect (4 * 3) toBe 12
-        ]
+suite : Test
+suite =
+  describe "YourModule"
+    [ test "2 + 2 equals 4" <|
+        \_ -> 2 + 2 |> Expect.equal 4
+    , test "reverseString 'moi' equals 'iom'" <|
+        \_ -> reverseString "moi" |> Expect.equal "iom"
+    ]
 
+-- To run this test use the elm-test command from your terminal.
 ```
 
-Tulos:
+Tulokset näyttävät tältä, kun ajat testit komentoriviltä:
 ```
-Testata kaksi lukua
-    ✓ Lukujen summa on oikein
-    ✓ Lukujen erotus on oikein
-    ✓ Lukujen kertolasku on oikein
+TEST RUN PASSED
 
-Passed: 3, Failed: 0
+Duration: 42 ms
+Passed:   2
+Failed:   0
 ```
 
-## Syvemmälle:
-Testaaminen on tärkeä osa ohjelmointia jo pitkään ollut käytäntö. Se auttaa ohjelmoijia löytämään ja korjaamaan virheitä nopeasti ja välttämään mahdollisia ongelmia tulevaisuudessa. Elm-kielellä on monia muitakin testaamistyökaluja, kuten elm-test-rs, joka tarjoaa helpon tavan suorittaa testejä projektissasi. Lisäksi voi myös olla hyödyllistä lukea lisää testaamisesta yleisesti ja löytää parhaita käytäntöjä testaamiseen.
+## Deep Dive
+Testaus Elmissä pohjautuu puhtaasti funktionaaliseen näkemykseen ohjelmoinnista. Elm-test perustuu fuzz-testaukseen, mikä tarkoittaa satunnaisten, mutta relevanteilla tavoin syötettyjen, datojen testaamista. Tämä eroaa monista imperatiivisista tai OOP-kieleistä, joissa yksikkötestaus on yleisempää. Elm-testin käyttöä tukee vahva tyypitysjärjestelmä, mikä vähentää tarvetta tietyntyyppisille testeille.
 
-## Katso myös:
-- [Testaaminen yleisesti](https://en.wikipedia.org/wiki/Software_testing)
+## See Also
+- Elm-test paketti: [https://package.elm-lang.org/packages/elm-explorations/test/latest](https://package.elm-lang.org/packages/elm-explorations/test/latest)
+- Elm-testin käyttöönotto: [https://medium.com/@_rchaves_/writing-tests-in-elm-2c714ffe5c52](https://medium.com/@_rchaves_/writing-tests-in-elm-2c714ffe5c52)

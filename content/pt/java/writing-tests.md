@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Java: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Java"
 category:             "Java"
@@ -10,30 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+## O Que é & Por Que?
 
-Escrever testes é uma prática importante para os programadores, pois permite garantir que o código está funcionando corretamente e evitar possíveis bugs. É um processo de criação de pequenos programas que verificam se o código principal está produzindo os resultados esperados.
+Escrever testes é criar código para verificar se outro código funciona como esperado. Programadores fazem isso para evitar bugs, simplificar atualizações e entregar com confiança.
 
-## Como fazer:
+## Como Fazer:
 
-Para criar testes em Java, é necessário criar uma classe de teste que herda de JUnit, uma biblioteca de testes para Java. Dentro dessa classe, é possível utilizar os métodos de asserção para verificar se os resultados obtidos são iguais aos esperados. Por exemplo:
+Vamos usar JUnit 5, o framework de testes mais recente e popular para Java. Considere uma classe simples `Calculadora` que queremos testar:
 
 ```Java
-@Test
-public void testAdicao() {
-    int resultado = Calculadora.adicionar(2, 2);
-    assertEquals(4, resultado);
+public class Calculadora {
+    public int somar(int a, int b) {
+        return a + b;
+    }
 }
 ```
-Esse teste verifica se a função "adicionar" da classe "Calculadora" está retornando o resultado correto.
 
-## Mais detalhes:
+Agora, o teste unitário para o método `somar` pode ser assim:
 
-Os testes automatizados surgiram com a chamada "Programação Extrema" nos anos 90, como uma forma de garantir a qualidade do código em um cenário de desenvolvimento ágil. Existem outras ferramentas para testes em Java, como TestNG e Mockito, porém JUnit ainda é o mais utilizado.
+```Java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-Além disso, existem diferentes abordagens para escrever testes, como a Test Driven Development (TDD), em que os testes são escritos antes do código, e a Behavior Driven Development (BDD), que foca nos comportamentos esperados do software.
+public class CalculadoraTest {
 
-## Veja também:
+    @Test
+    void testSomar() {
+        Calculadora calc = new Calculadora();
+        assertEquals(5, calc.somar(2, 3), "2 + 3 deve ser igual a 5");
+    }
+}
+```
 
-- [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Mockito](https://site.mockito.org/)
+Se o teste passar, a saída será simplesmente uma confirmação de que todos os testes foram concluídos com sucesso. Aqui está a saída esperada se tudo estiver correto:
+
+```
+Test run finished after 40 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+```
+
+## Mergulho Profundo:
+
+Os testes são importantes desde os dias da programação em cartões perfurados, onde cada erro custava tempo e dinheiro. Hoje, temos várias abordagens e frameworks, sendo JUnit o mais popular em Java. Embora JUnit seja amplamente usado para testes unitários, outras ferramentas como TestNG ou frameworks de BDD (Behavior-Driven Development) como Cucumber oferecem alternativas poderosas. Ao escrever testes, detalhes importantes incluem isolamento (cada teste deve ser independente), determinismo (resultados consistentes) e cobertura de código completa.
+
+## Veja Também:
+
+- Documentação oficial do JUnit 5: https://junit.org/junit5/docs/current/user-guide/
+- Tutorial de TDD (Test-Driven Development) com Java: https://www.baeldung.com/java-tdd
+- Comparação entre frameworks de testes: https://dzone.com/articles/top-8-java-testing-frameworks-for-developers

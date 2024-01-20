@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Javascript: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,28 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-Scrivere dei test è un processo importante per i programmatori che consiste nel verificare il corretto funzionamento del codice che hanno scritto. Questo significa creare dei veri e propri "test" per testare le diverse funzionalità del proprio codice e individuare eventuali errori o bug. I programmatori lo fanno per garantire che il loro codice sia affidabile e possa essere utilizzato senza problemi.
+Scrivere test nel codice significa creare piccoli programmi che verificano se le parti del tuo software funzionano come previsto. I programmatori scrivono test per assicurarsi che il codice sia affidabile e per prevenire regressioni durante l'aggiunta di nuove funzionalità.
 
-## Come fare:
-Ecco un esempio di codice in JavaScript per creare un semplice test che verifica se una stringa è vuota o meno: 
-```
-function testString(str) {
-  if (str === "") {
-    console.log("La stringa è vuota!");
-  } else {
-    console.log("La stringa non è vuota!");
-  }
+## Come Fare:
+Ecco un esempio semplice usando Jest, un framework di test JavaScript:
+
+```Javascript
+// somma.js
+function somma(a, b) {
+    return a + b;
 }
 
-testString(""); // output: "La stringa è vuota!"
-testString("Ciao!"); // output: "La stringa non è vuota!"
+module.exports = somma;
+```
+
+```Javascript
+// somma.test.js
+const somma = require('./somma');
+
+test('somma 1 + 2 to equal 3', () => {
+    expect(somma(1, 2)).toBe(3);
+});
+```
+
+Esegui il test con:
+
+```bash
+$ npm run test
+```
+
+Output atteso:
+
+```bash
+PASS  ./somma.test.js
+✓ somma 1 + 2 to equal 3 (5ms)
 ```
 
 ## Approfondimento:
-Scrivere test è diventata una pratica comune tra i programmatori per garantire la qualità del proprio codice. In passato, questo processo era fatto manualmente, testando ogni singola funzione, ma ora esistono strumenti e framework che semplificano questa attività. Alcune alternative ai test automatizzati includono la lettura del codice da parte di colleghi o l'utilizzo di pair programming. I test possono essere scritti utilizzando diversi framework, come ad esempio Jest, Mocha o Jasmine.
+La pratica di scrivere test si sviluppò negli anni '90 con l'affermarsi dell'Extreme Programming (XP), ponendo le basi per metodi come il Test-Driven Development (TDD). Alternative a Jest includono Mocha, Jasmine e QUnit. Quando scrivi test, considera aspetti come il mocking delle dipendenze, il controllo dell'ambiente di test e la copertura del codice.
 
-## Vedi anche:
-- [Introduzione ai test automatizzati (in italiano)](https://softvision-adriatic.medium.com/introduzione-ai-test-automatizzati-9f6d2bdd1fc9)
-- [Tutorial su Jest (in italiano)](https://blog.usejournal.com/il-mio-primo-test-unitario-con-jest-6004b896b352)
-- [Documentazione di Mocha](https://mochajs.org/)
-- [Documentazione di Jasmine](https://jasmine.github.io/index.html)
+## Vedi Anche:
+- Documentazione di Jest: https://jestjs.io/it/
+- Guida al Test-Driven Development: https://www.agilealliance.org/glossary/tdd/
+- Confronto tra framework di test JavaScript: https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870

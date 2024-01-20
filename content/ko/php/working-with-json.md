@@ -1,7 +1,7 @@
 ---
-title:                "JSON 작업하기"
-html_title:           "PHP: JSON 작업하기"
-simple_title:         "JSON 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+JSON은 데이터 교환 포맷입니다. 프로그래머가 JSON을 사용하여 데이터를 간결하며 이해하기 쉽게 주고받습니다.
 
-JSON은 JavaScript Object Notation의 약자로, 데이터를 저장하고 전송하기 위해 사용하는 형식입니다. 프로그래머들은 이것을 사용하여 다른 시스템과 데이터를 주고 받을 수 있습니다.
-
-## 방법:
-
-### JSON에서 데이터를 읽기
+## How to: (방법)
+PHP에서 JSON을 다루는 기본은 `json_encode()`와 `json_decode()` 함수입니다.
 
 ```PHP
 <?php
-// JSON 형식으로 변환된 데이터
-$json_data = '{"name": "John", "age": "30"}';
-
-// JSON 형식의 데이터를 PHP에서 읽기
-$data = json_decode($json_data);
-
-// 데이터 출력
-echo $data->name; // John
-echo $data->age; // 30
-?>
+// 배열을 JSON으로 변환
+$array = ['name' => '홍길동', 'age' => 30, 'city' => '서울'];
+$json = json_encode($array, JSON_UNESCAPED_UNICODE);
+echo $json;
 ```
 
-### 데이터를 JSON 형식으로 변환하기
+Sample Output:
+```
+{"name":"홍길동","age":30,"city":"서울"}
+```
 
 ```PHP
 <?php
-// PHP 배열 생성
-$student = array("name" => "Jane", "age" => "25");
-
-// JSON 형식으로 변환
-$json_data = json_encode($student);
-
-// 변환된 데이터 출력
-echo $json_data; // {"name": "Jane", "age": "25"}
-?>
+// JSON을 PHP 배열로 변환
+$json = '{"name":"홍길동","age":30,"city":"서울"}';
+$array = json_decode($json, true);
+print_r($array);
 ```
 
-## 자세히 살펴보기:
+Sample Output:
+```
+Array
+(
+    [name] => 홍길동
+    [age] => 30
+    [city] => 서울
+)
+```
 
-### 역사적 맥락
+## Deep Dive (심층 분석)
+JSON(JavaScript Object Notation)은 2001년에 등장했습니다. XML이나 YAML 같은 다른 데이터 포맷도 있지만, JSON이 가벼움과 읽기 쉬움 때문에 널리 쓰입니다. PHP에서 `json_encode()` 사용 시 옵션을 줄 수 있어 세밀한 제어가 가능합니다. 예를 들어 `JSON_PRETTY_PRINT`, `JSON_UNESCAPED_SLASHES` 등이 있습니다. PHP 7.3부터는 JSON 에러 처리가 향상되었습니다.
 
-JSON 형식은 2001년에 더글러스 크록퍼드(Douglas Crockford)에 의해 발명되었습니다. 그 이후로 많은 프로그래밍 언어에 채택되고 있습니다.
-
-### 대안
-
-JSON의 대안으로는 XML이 있습니다. 하지만 JSON은 보다 가볍고 간결하며, JavaScript에서 바로 사용할 수 있다는 점에서 XML보다 많은 인기를 얻고 있습니다.
-
-### 구현 세부사항
-
-PHP에서는 ```json_decode()``` 함수를 사용하여 JSON 형식의 데이터를 PHP 배열로 변환하고, ```json_encode()``` 함수를 사용하여 PHP 배열을 JSON 형식으로 변환할 수 있습니다.
-
-## 관련 자료:
-
-- [JSON in 5 Minutes](https://json.org/json-ko.html)
+## See Also (관련 링크)
+- PHP Manual on JSON: [https://www.php.net/manual/en/book.json.php](https://www.php.net/manual/en/book.json.php)
+- JSON 공식 웹사이트: [https://www.json.org/json-ko.html](https://www.json.org/json-ko.html)
+- PHP Manual on `json_encode`: [https://www.php.net/manual/en/function.json-encode.php](https://www.php.net/manual/en/function.json-encode.php)
+- PHP Manual on `json_decode`: [https://www.php.net/manual/en/function.json-decode.php](https://www.php.net/manual/en/function.json-decode.php)

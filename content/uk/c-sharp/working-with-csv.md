@@ -1,7 +1,7 @@
 ---
-title:                "Робота з CSV"
-html_title:           "C#: Робота з CSV"
-simple_title:         "Робота з CSV"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо? 
-Робота з CSV - це зберігання та обробка даних у вигляді таблиці, де рядки представляють записи, а стовпці - поля цих записів. Це популярний формат, що використовується для обміну даними між програмами. Програмісти користуються CSV для зручної та легкої обробки та збереження структурованих даних.
+## What & Why?
+"Що таке та Навіщо?"
+Робота з CSV (Comma-Separated Values) полягає у читанні та записі даних у текстовому форматі, де значення розділені комами. Програмісти використовують CSV через його простоту та широку підтримку у різних додатках.
 
-## Як? 
-Нижче наведені кодові приклади та вихідні дані для роботи з CSV у C#. 
-
+## How to:
+"Як це зробити:"
 ```C#
-// Читання CSV файлу та виведення даних
 using System;
+using System.Collections.Generic;
 using System.IO;
 
-var csvString = File.ReadAllText("file.csv");
-Console.WriteLine(csvString);
-
-// Запис даних у CSV файл
-using System;
-using System.IO;
-
-var data = "Name, Age, City\nAnna, 25, Kyiv\nIvan, 30, Lviv";
-
-File.WriteAllText("newFile.csv", data);
-
-// Виведення певного стовпця з CSV файла
-using System;
-using System.IO;
-using System.Linq;
-
-var csvString = File.ReadAllLines("file.csv");
-var cityColumn = csvString.Select(line => line.Split(',')[2]);
-
-foreach (var city in cityColumn)
+class Program
 {
-    Console.WriteLine(city);
-}
-
-// Повернення CSV таблиці у вигляді двовимірного масиву
-using System;
-using System.IO;
-
-var csvString = File.ReadAllLines("file.csv");
-var table = new string[csvString.Length, csvString[0].Split(',').Length];
-
-for (int i = 0; i < csvString.Length; i++)
-{
-    for (int j = 0; j < csvString[i].Split(',').Length; j++)
+    static void Main()
     {
-        table[i, j] = csvString[i].Split(',')[j];
+        // Читання CSV файлу
+        var csvLines = File.ReadAllLines("data.csv");
+        foreach (var line in csvLines)
+        {
+            var values = line.Split(',');
+            Console.WriteLine($"Name: {values[0]}, Age: {values[1]}");
+        }
+
+        // Запис у CSV файл
+        var people = new List<(string Name, int Age)>
+        {
+            ("Olena", 28),
+            ("Andriy", 35)
+        };
+
+        using (var writer = new StreamWriter("output.csv"))
+        {
+            foreach (var person in people)
+            {
+                var newLine = $"{person.Name},{person.Age}";
+                writer.WriteLine(newLine);
+            }
+        }
     }
 }
-
-Console.WriteLine(table[1, 2]); // Виведе дані з другого рядка та третього стовпця
+```
+Sample output:
+```
+Name: Olena, Age: 28
+Name: Andriy, Age: 35
 ```
 
-## Глибокий погляд
-Формат CSV був вперше запропонований у 1972 році та з тих пір став стандартом для обміну даними. Незважаючи на це, існують інші формати, такі як JSON та XML, які також широко використовуються для роботи з даними. Використання кожного з цих форматів залежить від потреб та вимог проекту. Робота з CSV у C# досить проста за допомогою вбудованих методів для роботи з файлами та рядками.
+## Deep Dive
+"Занурення у Деталі:"
+CSV стандарту не існує, але формат став популярним у 1970-х. Альтернативи — JSON і XML, які легше парсятись програмами, але CSV часто використовують через простоту. Програмісти повинні обережно обробляти дані у CSV, особливо якщо вони містять коми або переводи рядків у значеннях.
 
-## Дивись також 
-Для детальнішої інформації про формат CSV та роботу з ним у C#, рекомендуємо переглянути наступні ресурси: 
-- [Стаття на CodeProject про роботу з CSV у C#](https://www.codeproject.com/Articles/30705/C-CSV-Reader)
+## See Also
+"Дивіться також:"
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), опис стандарту CSV.
+- [CsvHelper](https://joshclose.github.io/CsvHelper/), популярна бібліотека для роботи з CSV у C#.
+- [FileHelpers](http://www.filehelpers.net/), ще одна бібліотека сильно спрощує читання та запис у CSV файли.

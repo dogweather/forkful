@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Clojure: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,22 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est que ça & pourquoi le faire?
-Ecrire des tests est simplement le fait de créer du code qui vérifie que votre code fonctionne correctement. Les programmeurs le font pour s'assurer que leurs programmes fonctionnent comme prévu et pour éviter les bugs et les erreurs.
+## Quoi & Pourquoi ?
+Écrire des tests, c'est vérifier que notre code fait ce qu'il doit. Les développeurs font cela pour éviter les bugs, gagner du temps au long terme, et pour que le refactoring ne devienne pas un cauchemar.
 
-## Comment faire:
-```Clojure 
-(deftest test-addition
-  (is (= (+ 2 3) 5))
-  (is (= (+ 10 15) 25))
+## Comment ?
+
+Pour faire un test en Clojure, on utilise souvent la librairie `clojure.test`. Voici un exemple :
+
+```Clojure
+(require '[clojure.test :refer :all])
+
+(deftest addition-test
+  (testing "Testons l'addition simple"
+    (is (= 4 (+ 2 2)))))
+    
+(run-tests)
+
 ```
 
-Dans cet exemple, nous déclarons un test appelé "test-addition" qui utilise la fonction "is" pour vérifier si l'addition de deux nombres est correcte. Ensuite, nous utilisons deux assertions pour s'assurer que le résultat de l'addition est égal à ce que nous attendons.
+La sortie ressemblera à quelque chose comme ça :
 
-## Plongée dans les détails:
-L'écriture de tests est une pratique courante dans la programmation depuis de nombreuses années. Avant l'avènement des frameworks de tests comme JUnit et NUnit, les programmeurs écrivaient leurs propres tests. Certains alternatives aux tests unitaires incluent les tests d'intégration et les tests fonctionnels. En ce qui concerne l'implémentation, Clojure fournit une librairie appelée "clojure.test" qui offre des fonctions utiles pour écrire des tests.
+```
+Testing user
 
-## Voir aussi:
-- [Clojure.test library](https://clojure.github.io/clojure/clojure.test-api.html)
-- [JUnit](https://junit.org/junit5/)
-- [NUnit](https://nunit.org/)
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
+
+## Exploration profonde
+Historiquement, les tests en programmation ont pris de l'ampleur avec l'arrivée des méthodologies agiles. Alternativement, des frameworks comme `Midje` et `expectations.clojure.test` existent pour ceux qui cherchent autre chose. Concernant l'implantation, Clojure, étant fonctionnelle, favorise les tests unitaires et l'approche TDD, où les fonctions pures sont plus faciles à tester du fait de leur absence d'effets de bord.
+
+## Voir aussi
+- [clojure.test](https://clojure.github.io/clojure/clojure.test-api.html) pour la documentation officielle.
+- [Clojure for the Brave and True](https://www.braveclojure.com/) pour un guide sur Clojure, incluant des parties sur le test.
+- [Midje sur GitHub](https://github.com/marick/Midje) pour une alternative de clojure.test.

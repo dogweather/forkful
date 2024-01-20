@@ -1,7 +1,7 @@
 ---
-title:                "Redação de testes"
-html_title:           "TypeScript: Redação de testes"
-simple_title:         "Redação de testes"
+title:                "Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que é & Por Que?
 
-Escrever testes é o processo de criar pequenos códigos que verificam se o seu código principal está funcionando como esperado. Os programadores fazem isso para garantir que as suas aplicações estão corretas e que o código está apto para ser implantado em produção.
+Escrever testes é criar verificações automatizadas para seu código. Programadores os utilizam para garantir que suas funções façam exatamente o que são supostas a fazer e nunca menos, nunca mais.
 
-## Como fazer:
+## Como Fazer:
 
-Um exemplo simples de como escrever um teste em TypeScript:
+Vamos usar Jest, uma biblioteca de testes para JavaScript e TypeScript. Instale-a com `npm install --save-dev jest @types/jest ts-jest`, e configure o Jest para TypeScript adicionando uma configuração `jest.config.js`.
 
-```TypeScript 
-// Código de exemplo em TypeScript
-
-function add(x: number, y: number): number {
-  return x + y;
+```TypeScript
+// soma.ts
+export function soma(a: number, b: number): number {
+  return a + b;
 }
 
-test("Soma 2 + 3 e espera como resultado 5", () => {
-  const expected = 5;
-  const result = add(2, 3);
-  expect(result).toBe(expected);
+// soma.test.ts
+import { soma } from './soma';
+
+test('soma 1 + 2 igual a 3', () => {
+  expect(soma(1, 2)).toBe(3);
 });
 ```
 
-Saída esperada:
+Execute os testes com `npm test` ou `npx jest`. Você deverá ver algo como:
 
 ```
-Test Soma 2 + 3 e espera como resultado 5 bem sucedido.
+PASS  ./soma.test.ts
+✓ soma 1 + 2 igual a 3 (5ms)
 ```
 
-## Profundidade:
+## Aprofundamento
 
-O processo de escrever testes é um processo importante para garantir que o código que você escreve está correto e livre de erros. Ele também pode ajudar a identificar problemas de lógica e a aumentar a manutenibilidade do seu código. Existem algumas alternativas ao uso de testes, como a revisão manual de código ou a execução de testes manualmente, mas esses métodos podem ser demorados e propensos a erros humanos.
+Testes automatizados começaram na década de 1950 com programas que autotestavam suas próprias funções. Alternativas ao Jest incluem Mocha, Jasmine, e Ava. A decisão entre eles depende do gosto pessoal e necessidades específicas do projeto, como melhor integração CI/CD ou preferência de sintaxe.
 
-## Veja também:
+Quanto aos detalhes, escrever bons testes envolve entender de mocks e spies para isolar componentes, e o conceito de test coverage para saber quanta do seu código está sendo testada.
 
-Para mais informações sobre testes com TypeScript, consulte:
+## Veja Também
 
-- [Artigo sobre testes unitários com Jasmine e TypeScript](https://medium.com/@bryanmanuele/type-safe-jasmine-unit-testing-with-typescript-ebd8da1df0f2)
+- Jest: https://jestjs.io/pt-BR/
+- TypeScript com Jest: https://kulshekhar.github.io/ts-jest/
+- Documentação de Testing Library: https://testing-library.com/docs/
+- Jasmine: https://jasmine.github.io/
+- Mocha: https://mochajs.org/

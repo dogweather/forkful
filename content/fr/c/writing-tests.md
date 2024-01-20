@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire des tests"
-html_title:           "C: Ecrire des tests"
-simple_title:         "Ecrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why? (Quoi & Pourquoi ?)
+Écrire des tests consiste à créer un ensemble de cas pour vérifier que le code fonctionne comme prévu. Les développeurs écrivent des tests pour détecter les bugs tôt, simplifier les modifications et assurer une base de code de qualité.
 
-Écrire des tests est une pratique courante pour les programmeurs. Cela consiste à écrire du code supplémentaire pour vérifier que le code existant fonctionne correctement. Les programmeurs le font pour s'assurer que leur code n'a pas de bugs et qu'il fonctionne comme prévu.
-
-## Comment faire :
-
-Pour écrire des tests en C, il y a plusieurs étapes à suivre :
+## How to (Comment faire : )
+Voici un exemple simple de test unitaire en C en utilisant MinUnit, un micro-framework de test unitaire minimaliste :
 
 ```C
 #include <stdio.h>
-#include <assert.h>
+
+// MinUnit test framework
+#define mu_assert(message, test) do { if (!(test)) return message; } while (0)
+#define mu_run_test(test) do { char *message = test(); tests_run++; \
+                                if (message) return message; } while (0)
+int tests_run = 0;
 
 // Fonction à tester
 int additionner(int a, int b) {
     return a + b;
 }
 
-int main() {
-    // Tests avec assert
-    assert(additionner(2, 2) == 4); // Le test réussit, rien ne s'affiche
-    assert(additionner(5, 10) == 15); // Le test réussit, rien ne s'affiche
-    assert(additionner(3, 6) == 9); // Le test échoue, un message d'erreur s'affiche
+// Test
+static char * test_addition() {
+    mu_assert("Erreur, additionner(1,1) != 2", additionner(1,1) == 2);
     return 0;
+}
+
+// Routine principale des tests
+static char * tous_les_tests() {
+    mu_run_test(test_addition);
+    return 0;
+}
+
+int main(int argc, char **argv) {
+    char *resultat = tous_les_tests();
+    if (resultat != 0) {
+        printf("%s\n", resultat);
+    } else {
+        printf("Tous les tests passent.\n");
+    }
+    printf("Tests effectués: %d\n", tests_run);
+
+    return resultat != 0;
 }
 ```
 
-## Plongée en profondeur :
+Sortie attendue si le test réussit :
 
-Les tests sont devenus une pratique courante dans le développement logiciel pour améliorer la qualité et la fiabilité du code. Avant l'avènement des tests automatisés, les programmeurs devaient tester manuellement leur code, ce qui était fastidieux et sujet à des erreurs. Les tests automatisés permettent d'économiser du temps et de détecter plus facilement les bugs.
+```
+Tous les tests passent.
+Tests effectués: 1
+```
 
-Il existe différentes façons d'écrire des tests en C, telles que l'utilisation de bibliothèques de tests comme CUnit ou la mise en place de macros personnalisées pour faciliter l'écriture des tests.
+## Deep Dive (Plongée en profondeur)
+Le test de logiciel existe depuis les années 1950. Avec l'évolution de la programmation, les tests ont aussi progressé. Des alternatives comme CUnit, Check, et cmocka offrent plus de fonctionnalités que MinUnit. L'écriture de tests unitaires en C s’appuie souvent sur des macros et des fonctions d'assertion pour valider les résultats.
 
-## Voir aussi :
-
-- [Tutoriel sur CUnit](https://triia.fr/articles/][https://triia.fr/articles/tutoriel-csqa-cunit/]
+## See Also (Voir aussi)
+- [CUnit](http://cunit.sourceforge.net/)
+- [Check](https://libcheck.github.io/check/)
+- [cmocka](https://cmocka.org/)
+- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)

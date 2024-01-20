@@ -1,7 +1,7 @@
 ---
-title:                "「CSVの扱い方」"
-html_title:           "Kotlin: 「CSVの扱い方」"
-simple_title:         "「CSVの扱い方」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何しよう？& どうして？
+## What & Why?
+CSVはデータのシンプルな形式で、プログラマはデータ交換や簡単な保存に使います。
 
-CSVとは何かを説明すると、CSVはデータを表形式で保存するためのファイル形式です。プログラマーがCSVを使用するのは、データを処理しやすくするためです。
+## How to:
+```kotlin
+import java.io.File
 
-## やり方：
+// CSVファイルを読む
+fun readCsv(fileName: String) {
+    val data = mutableListOf<List<String>>()
+    File(fileName).forEachLine { line ->
+        val row = line.split(",")
+        data.add(row)
+    }
+    println(data)
+}
 
-あなたがCSVファイルを扱いたい場合、Kotlin言語を使用するのがおすすめです。Kotlin言語を使用すると、簡単にCSVファイルを読み取ることができます。以下は、Kotlin言語でCSVファイルを読み取るサンプルコードと出力の例です。
+// CSVファイルに書く
+fun writeCsv(fileName: String, data: List<List<String>>) {
+    File(fileName).bufferedWriter().use { writer ->
+        data.forEach { row ->
+            writer.write(row.joinToString(",") + "\n")
+        }
+    }
+}
 
-```Kotlin
-val csvFile = File("sample.csv")
-val csvData = csvFile.readText()
-println(csvData)
+val csvData = listOf(
+    listOf("id", "名前", "年"),
+    listOf("1", "山田太郎", "25"),
+    listOf("2", "鈴木一郎", "30")
+)
 
-// 出力:
-// 名前,国,年齢
-// 愛子,日本,25
-// John,アメリカ,30
+val fileName = "example.csv"
+writeCsv(fileName, csvData)
+readCsv(fileName)
+```
+実行結果:
+```
+[[id, 名前, 年], [1, 山田太郎, 25], [2, 鈴木一郎, 30]]
 ```
 
-## 詳しく調べる：
+## Deep Dive
+CSV（Comma-Separated Values）は1970年代からある。より軽量で人が読める代わりにJSONやXMLがある。Kotlinでは標準ライブラリだけでなく、kotlinx.serializationやApache Commons CSVなどのライブラリで扱える。
 
-CSVファイルは、1972年にIBMによって開発されました。他のデータ形式と比較して、CSVファイルは構造がシンプルで簡単に処理することができるため、広く使用されています。また、CSVファイルではデータをテキスト形式で保存するため、プログラマーにとっても扱いやすい形式です。
-
-CSVファイルを扱う他のアルゴリズムとしては、XMLやJSONなどのフォーマットがあります。しかし、これらのフォーマットはデータ量が多い場合に扱いにくく、CSVに比べてデータの構造が複雑です。そのため、CSVファイルは依然としてデータ処理において重要な役割を果たしています。
-
-Kotlin言語では、```kotlin.csv```というライブラリを使用することで、さらに高度なCSVファイルの操作が可能です。また、Java言語でも同様のライブラリを使用することができます。
-
-## 関連リンク：
-
-- [Kotlin公式サイト](https://kotlinlang.org/)
-- [IBMのCSVファイル開発記事](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_73/rtref/csv.htm)
-- [kotlin.csvライブラリのGitHubリポジトリ](https://github.com/doyaaaaaken/kotlin-csv)
+## See Also
+- Kotlin 公式ドキュメンテーション: https://kotlinlang.org/docs/home.html
+- kotlinx.serialization: https://github.com/Kotlin/kotlinx.serialization
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/

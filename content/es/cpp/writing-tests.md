@@ -1,7 +1,7 @@
 ---
-title:                "Creando pruebas"
-html_title:           "C++: Creando pruebas"
-simple_title:         "Creando pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Escribir pruebas en programación se trata de crear pequeños programas que comprueban si tu código funciona como debería. Los programadores lo hacen para asegurarse de que su código es robusto y libre de errores, lo que a su vez garantiza una mejor experiencia para los usuarios.
+Escribir pruebas es validar que nuestro código hace lo que esperamos; evita sorpresas en el futuro. Los programadores las escriben para asegurar calidad, ahorrar tiempo de depuración y facilitar mantenimiento.
 
-## Cómo:
+## Cómo hacerlo:
+
+Usaremos `Google Test`, un framework popular para pruebas en C++. Primero, instalalo y configuralo en tu entorno. Aquí un test simple para una función que suma dos números.
 
 ```C++
-#include <iostream>
+// suma.h
+int suma(int a, int b);
 
-int main() {
-  int num1 = 5;
-  int num2 = 10;
-  
-  // Prueba de que la suma de dos números es correcta
-  if (num1 + num2 == 15) {
-    // Si la prueba es exitosa, la consola imprimirá "La suma es correcta"
-    std::cout << "La suma es correcta" << std::endl;
-  } else {
-    // Si la prueba falla, la consola imprimirá "La suma es incorrecta"
-    std::cout << "La suma es incorrecta" << std::endl;
-  }
-  
-  return 0;
+// suma.cpp
+#include "suma.h"
+int suma(int a, int b) {
+    return a + b;
+}
+
+// test_suma.cpp
+#include "suma.h"
+#include <gtest/gtest.h>
+
+TEST(TestSuma, CalculoBasico) {
+    EXPECT_EQ(3, suma(1, 2));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
-**Output: "La suma es correcta"**
+Compila con `g++ -std=c++17 test_suma.cpp suma.cpp -lgtest -lgtest_main -pthread -o test_suma` y luego ejecuta `./test_suma`. Deberías ver algo así:
 
-## Profundizando:
+```
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from TestSuma
+[ RUN      ] TestSuma.CalculoBasico
+[       OK ] TestSuma.CalculoBasico (0 ms)
+[----------] 1 test from TestSuma (0 ms total)
 
-Escribir pruebas es una práctica común en el desarrollo de software moderno. Aunque puede parecer un proceso tedioso, las pruebas automatizadas son una forma eficiente de detectar errores y garantizar que el código sea estable y funcional. Alternativas a la escritura de pruebas incluyen pruebas manuales, pero estas pueden ser mucho más lentas y propensas a errores humanos. Además, existen herramientas y marcos de prueba que pueden facilitar y agilizar el proceso de escritura de pruebas en C++. 
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 2 tests.
+```
 
-## Ver también:
+## Profundizando
 
-- [Documentación oficial de Google sobre cómo escribir pruebas en C++](https://google.github.io/googletest/)
-- [Introducción a las pruebas unitarias en C++](https://guides.github.com/features/mastering-markdown/)
+La prueba de software no es nueva; ha evolucionado desde los 70. Frameworks como `Google Test` (C++), `JUnit` (Java) o `pytest` (Python), permiten estructurar pruebas de manera sencilla y eficaz. Algunos prefieren TDD (Test-Driven Development), donde las pruebas guían el diseño del código. Otras alternativas son Catch2 y Boost.Test para C++. Poco a poco cambia la implementación, pero el objetivo persiste: código confiable y mantenible.
+
+## Ver También
+
+Aquí algunos enlaces para aprender más:
+
+- Google Test: https://github.com/google/googletest
+- Catch2: https://github.com/catchorg/Catch2
+- Boost.Test: https://www.boost.org/doc/libs/release/libs/test/
+- Guía de Google Test: https://google.github.io/googletest/quickstart-cmake.html
+
+Estos recursos te darán un gran punto de partida y profundidad en la materia de pruebas de software en C++.

@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Ruby: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ruby-ohjelmoinnin testien kirjoittaminen
+## What & Why?
+Testaus on koodin varmistusmetodi: se tarkistaa, että koodi toimii odotetusti. Testit nopeuttavat kehitystä, vähentävät bugeja ja helpottavat ylläpitoa.
 
-## Mitä ja miksi?
+## How to:
 
-Testien kirjoittaminen on prosessi, jossa ohjelmoija varmistaa koodin toimivuuden ja virheettömyyden. Testauksen avulla voidaan simuloida erilaisia skenaarioita ja tarkistaa, että ohjelma toimii halutulla tavalla. Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin laadun ja vähentämään virheiden määrää.
-
-## Kuinka tehdä?
-
-Testien kirjoittamiseen on useita eri menetelmiä, mutta yksi suosituimmista tavoista on käyttää RSpec-kirjastoa. RSpec on testauskirjasto, joka on suunniteltu erityisesti Ruby-ohjelmointikielelle. Se tarjoaa helpon ja selkeän tavan kirjoittaa testejä koodille.
-
-Esimerkiksi, jos haluamme testata yksinkertaisen laskufunktion, voimme käyttää seuraavaa koodia RSpec-testissä:
+Rubyssa testien kirjoittaminen on suoraviivaista, erityisesti kun käytetään RSpec-kirjastoa. Asenna RSpec komennolla `gem install rspec` ja seuraa alla olevia esimerkkejä.
 
 ```Ruby
-def sum(num1, num2)
-  return num1 + num2
-end
-
-RSpec.describe "sum" do
- it "returns the sum of two numbers" do
-  expect(sum(3,4)).to eq(7)
- end
+# spec/calculator_spec.rb
+RSpec.describe 'Calculator' do
+  it 'summaa kaksi numeroa oikein' do
+    expect(2 + 2).to eq(4)
+  end
+  
+  it 'vähentää oikein' do
+    expect(5 - 3).to eq(2)
+  end
 end
 ```
+Ajetaan testit komennolla `rspec spec/calculator_spec.rb`.
+Tuloste:
+```
+...
 
-Tämän testin avulla varmistamme, että `sum`-funktio palauttaa oikean tuloksen, kun sille annetaan kaksi lukua.
+Finished in 0.00276 seconds (files took 0.15708 seconds to load)
+2 examples, 0 failures
+```
 
-## Tarkempi tarkastelu
+## Deep Dive
 
-Testien kirjoittamisen taustalla on ajatus testausvetoisesta kehityksestä (test-driven development), jossa testit kirjoitetaan ennen varsinaisen koodin luontia. Tällä tavalla ohjelmoija voi varmistaa, että koodi tekee halutun asian ja että mahdolliset muutokset eivät aiheuta ei-toivottuja sivuvaikutuksia.
+Testaus on kehittynyt vuosien varrella osaksi ohjelmistokehityksen perusta. Testivetoisen kehityksen (Test-Driven Development, TDD) metodit ja käyttäytyminen määrittävä kehitys (Behavior-Driven Development, BDD) ovat esimerkkejä lähestymistavoista. Vaihtoehtoisia työkaluja Ruby-testaukseen ovat MiniTest ja Test::Unit. Tärkeää on tietää, milloin käyttää stubbia, mockia tai faketta.
 
-Varsinaisen koodin testaamisen lisäksi on myös olemassa muita testauksen vaihtoehtoja, kuten manuaalinen tai automaattinen testaus. Manuaalinen testaus tarkoittaa, että joku testaa koodin käsin ja tarkistaa sen toimivuuden. Automaattisessa testauksessa taas käytetään ohjelmia tai skriptejä, joiden avulla testit suoritetaan automaattisesti.
+## See Also
 
-## Katso myös
-
-Jos haluat oppia lisää testien kirjoittamisesta Rubyssa, voit tutustua seuraaviin lähteisiin:
-
-- [RSpec - Ruby-ohjelmistojen testauskirjasto](https://rspec.info/)
+- RSpec ohjekirja: https://relishapp.com/rspec
+- Ruby testausframeworkien vertailu: https://www.ruby-toolbox.com/categories/testing_frameworks
+- TDD:n opas: http://www.tddfellow.com/blog/2016/05/31/what-is-tdd-and-why-should-you-use-it/

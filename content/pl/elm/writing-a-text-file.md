@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie pliku tekstu"
-html_title:           "Elm: Pisanie pliku tekstu"
-simple_title:         "Pisanie pliku tekstu"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,36 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+(Po co i dlaczego?)
 
-Pisanie pliku tekstowego to jedna z podstawowych czynności programistycznych. Pozwala na przechowywanie i organizowanie danych w prosty i czytelny sposób. Programiści często używają plików tekstowych do przechowywania konfiguracji, komentarzy i innych informacji.
+Zapisywanie pliku tekstowego to proces tworzenia albo modyfikowania danych tekstowych w pliku na dysku. Programiści robią to, aby zachować dane, które mogą być później odczytane przez ludzi lub inne programy.
 
-## Jak to zrobić:
+## How to:
+(Jak to zrobić?)
+
+Elm nie zapewnia bezpośredniego API do zapisywania plików ze względu na jego ograniczenia w interakcji z systemem plików. Jednakże, możesz użyć JavaScript interop, znane jako porty, aby zapisywać pliki tekstowe w aplikacji webowej. Poniżej znajdziesz przykładowy kod.
 
 ```Elm
-import File
-import Task
+port module Main exposing (..)
 
-main : Program Never Model
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+-- Definicja portu do zapisywania tekstowego pliku
+port saveFile : String -> Cmd msg
+
+-- Widok, przycisk zapisujący określony tekst do pliku
+view : Html msg
+view =
+    div []
+        [ button [ onClick (saveFile "Tekst do zapisu") ] [ text "Zapisz plik" ] ]
+
+-- Podstawowa inicjalizacja aplikacji Elm
 main =
-  File.write "plik.txt" "Cześć Polsko!"
-    |> Task.perform (\result ->
-      case result of
-        Err error -> 
-          -- obsłuż błąd
-        Ok (File path) ->
-          -- sukces!
-    )
+    Browser.sandbox { init = (), view = view, update = \_ _ -> () }
 ```
 
-W powyższym przykładzie używamy funkcji `write` z modułu `File`. Przekazujemy jej dwa argumenty: ścieżkę do pliku, który chcemy stworzyć lub nadpisać, oraz dane, które chcemy zapisać w tym pliku. Następnie używamy funkcji `perform` z modułu `Task` do obsługi wyników operacji. W przypadku sukcesu funkcja `write` zwraca obiekt `File`, który możemy wykorzystać do dalszych działań.
+JavaScript po drugiej stronie portu może wyglądać następująco:
 
-## Wnikliwsza analiza:
+```JavaScript
+// Subskrybcja portu Elm w JavaScript
+app.ports.saveFile.subscribe(function(text) {
+    // Implementacja zapisywania pliku tekstowego
+    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "example.txt"); // Używając biblioteki FileSaver.js
+});
+```
 
-Pisanie pliku tekstowego ma długą historię, sięgającą początków informatyki. Wcześniej programiści używali plików tekstowych do przechowywania kodu źródłowego swoich programów. Obecnie istnieją wiele różnych sposobów na zapisywanie danych w programowaniu, takich jak bazy danych czy pliki binarne. Jednak pisanie pliku tekstowego jest wciąż często stosowaną i prostą metodą przechowywania danych.
+## Deep Dive:
+(Więcej informacji)
 
-## Zobacz także:
+Historia: Elm został stworzony dla bezpieczeństwa i niezawodności aplikacji front-endowych, więc dostęp do systemu plików jest ograniczony.
 
-- Oficjalna dokumentacja Elm: https://guide.elm-lang.org/
-- Wprowadzenie do programowania w Elm po polsku: https://ubublog.github.io/uma/tag/Elm/
-- Kurs tworzenia aplikacji webowych w Elm: https://egghead.io/lessons/elm-4-more-elm-intro-create-a-task-to-write-a-file
+Alternatywy: Oprócz portów Elm i JavaScript, można użyć Web API, takich jak FileSaver.js lub natywne HTML5 `<a>` z atrybutem `download`, aby zainicjować pobieranie pliku.
+
+Szczegóły implementacji: Port w Elm to bezpieczny sposób na komunikację z JavaScript. Porty wysyłają komunikaty między Elm a JS, umożliwiając wykonanie operacji związanych z systemem plików.
+
+## See Also:
+(Zobacz też)
+
+- Oficjalna dokumentacja Elm o portach: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
+- Repozytorium FileSaver.js na GitHub: [FileSaver.js](https://github.com/eligrey/FileSaver.js)
+- Dokumentacja o atrybucie `download`: [HTML <a> download Attribute](https://www.w3schools.com/tags/att_a_download.asp)

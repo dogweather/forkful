@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Go: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,71 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il lavoro con YAML è un modo per organizzare dati o configurazioni in modo leggibile e strutturato. I programmatori lo usano per semplificare la loro gestione dei dati e facilitare l'interscambio di informazioni tra le applicazioni.
+## What & Why?
+Lavorare con YAML significa manipolare dati in "YAML Ain't Markup Language", un formato di serializzazione umanamente leggibile. I programmatori lo usano perché è intuitivo, compatibile con diversi linguaggi di programmazione e adatto per configurazioni, file di dati e lo scambio di messaggi tra servizi.
 
-## Come fare:
-Ecco un esempio di come leggere e scrivere file YAML in Go:
+## How to:
+Per gestire YAML in Go, puoi utilizzare il pacchetto `go-yaml`. Installalo con `go get gopkg.in/yaml.v3`. Ecco un esempio di codice per leggere e scrivere YAML:
+
 ```Go
-// Import biblioteca YAML
-import "gopkg.in/yaml.v2"
+package main
 
-// Definizione di una struttura dati
-type Person struct {
-    Name string `yaml:"nome"`
-    Age int `yaml:"eta"`
-    Hobbies []string `yaml:"hobbies"`
+import (
+    "fmt"
+    "log"
+    "gopkg.in/yaml.v3"
+)
+
+// Struttura di esempio per i nostri dati YAML
+type Config struct {
+    Version string `yaml:"version"`
+    Services map[string]Service `yaml:"services"`
+}
+
+type Service struct {
+    Image string `yaml:"image"`
+    Ports []string `yaml:"ports"`
 }
 
 func main() {
-    // Lettura da un file YAML
-    yamlFile, err := ioutil.ReadFile("persona.yml")
-    if err != nil {
-        panic(err)
-    }
+    // YAML di esempio
+    data := `
+version: "3"
+services:
+  webapp:
+    image: "example/webapp"
+    ports:
+      - "5000:5000"
+`
+    // Inizializza una nuova istanza di Config
+    var config Config
 
-    // Parsing del file in una struttura dati
-    var p Person
-    err = yaml.Unmarshal(yamlFile, &p)
+    // Unmarshal analizza il YAML in input e lo riempie nella struttura di Config
+    err := yaml.Unmarshal([]byte(data), &config)
     if err != nil {
-        panic(err)
+        log.Fatalf("Errore durante l'unmarshal: %v", err)
     }
+    
+    fmt.Println(config.Version) // Stampa la versione
+    fmt.Println(config.Services["webapp"].Image) // Stampa l'immagine del servizio webapp
 
-    // Stampa dei dati
-    fmt.Println(p.Name)
-    fmt.Println(p.Age)
-    fmt.Println(p.Hobbies)
+    // Modifica i valori 
+    config.Services["webapp"].Image = "example/newwebapp"
 
-    // Scrittura in un file YAML
-    newData := Person{
-        Name: "Maria",
-        Age: 28,
-        Hobbies: []string{"musica", "lettura", "viaggi"},
-    }
-    yamlData, err := yaml.Marshal(newData)
-    err = ioutil.WriteFile("nuova_persona.yml", yamlData, 0644)
+    // Marshal ritorna la nuova configurazione YAML
+    newData, err := yaml.Marshal(&config)
     if err != nil {
-        panic(err)
+        log.Fatalf("Errore durante il marshal: %v", err)
     }
+    
+    fmt.Println(string(newData)) // Stampa il nuovo YAML
 }
 ```
 Output:
 ```
-John
-35
-[programming hiking cooking]
+"3"
+"example/webapp"
+version: "3"
+services:
+  webapp:
+    image: example/newwebapp
+    ports:
+    - 5000:5000
 ```
 
-## Approfondimento:
-### Contesto storico:
-YAML è stato creato da Clark Evans nel 2001 come formato data serialization leggibile dall'uomo. Da allora, è diventato uno standard nella comunità dello sviluppo software per la sua semplicità e flessibilità.
+## Deep Dive:
+YAML è stato creato nel 2001 ed è un superset di JSON, fornendo una maggiore leggibilità. Alternativamente, potresti lavorare con JSON o XML, ma YAML è favorito per la sua chiarezza. A livello di implementazione, Go gestisce YAML usando la reflection per mappare i valori dai dati YAML alle strutture Go. Attenzione all'indentazione: è essenziale in YAML e richiede precisione.
 
-### Alternative:
-Ci sono diversi formati alternativi per la serializzazione dei dati, inclusi JSON, XML e CSV. YAML è preferito in quanto è più leggibile e facilmente modificabile dall'uomo rispetto ad altri formati.
-
-### Dettagli di implementazione:
-La libreria "gopkg.in/yaml.v2" offre funzionalità complete di analisi e formattazione dei dati YAML. È importante notare che la sintassi di YAML può essere sensibile agli spazi e agli indentazioni, quindi è necessario prestare attenzione alla struttura del file YAML per evitare errori di parsing.
-
-## Vedi anche:
-- Documentazione ufficiale di Go per YAML: https://pkg.go.dev/gopkg.in/yaml.v2
-- Tutorial interattivo sulla manipolazione dei dati YAML in Go: https://gobyexample.com/yaml
+## See Also:
+- Documentazione ufficiale YAML: https://yaml.org
+- Go package `go-yaml`: https://pkg.go.dev/gopkg.in/yaml.v3
+- Tutorial YAML per Go: https://www.sohamkamani.com/golang/yaml/

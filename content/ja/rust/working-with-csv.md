@@ -1,7 +1,7 @@
 ---
-title:                "「csvとの作業」"
-html_title:           "Rust: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かと何故か？
-CSVとは何でしょうか？それは、プログラマーがデータを効率的に取り扱うための方式です。CSVは、コンマで区切られた値を含むテキストファイルのことで、よく使用されるデータフォーマットです。プログラマーは、このフォーマットを使用することで、大量のデータを簡単に処理し、必要な情報を抽出することができます。
+## What & Why?
+CSV（Comma-Separated Values）はデータを保存するのによく使われるシンプルなフォーマットです。開発者はCSVを用いて、データのインポート、エクスポート、解析が簡単で、さまざまなプログラム間で互換性を持たせるために使います。
 
-## 方法：
-以下のコードブロックでは、Rustを使用してCSVファイルを読み込み、データを出力する方法を示します。
+## How to:
+RustでCSVファイルを扱う基本的な方法を示します。
 
 ```Rust
+use std::error::Error;
 use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::{Read, Write};
+use csv::ReaderBuilder;
+use csv::Writer;
 
-fn main() {
-    let file = File::open("example.csv").expect("Error opening file");
-    let reader = BufReader::new(file);
-    for line in reader.lines() {
-        let line = line.expect("Error reading line");
-        let values: Vec<&str> = line.split(",").collect();
-        println!("{:?}", values);
+fn main() -> Result<(), Box<dyn Error>> {
+    // CSV読み込み
+    let mut rdr = ReaderBuilder::new()
+        .from_path("data.csv")?;
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
     }
+
+    // CSV書き込み
+    let mut wtr = Writer::from_writer(vec![]);
+    wtr.write_record(&["year", "make", "model"])?;
+    wtr.write_record(&["2023", "Toyota", "Tundra"])?;
+    wtr.flush()?;
+    let data = String::from_utf8(wtr.into_inner()?)?;
+    println!("{}", data);
+
+    Ok(())
 }
 ```
+実行結果：
+```
+StringRecord(["year", "make", "model"])
+StringRecord(["2023", "Toyota", "Tundra"])
+year,make,model
+2023,Toyota,Tundra
+```
 
-上記のコードでは、Rustの標準ライブラリを使用してファイルを開き、`BufReader`を使用してファイルを読み込んでいます。次に、`split`メソッドを使用してコンマで区切られた値をベクターに格納し、`values`変数に割り当てています。最後に、`values`を出力することでデータを表示します。
+## Deep Dive
+CSVは1972年にIBMで使われ始めました。JSONやXMLなどCSVの代替フォーマットがありますが、CSVはその単純さから依然として広く使われています。RustでCSVを扱う際、`csv`クレートが広く利用されています。高速でメモリ安全なCSVの読み書きが可能で、Serdeライブラリとの統合もサポートしています。
 
-## 深堀り：
-CSVは、1972年にMicrosoft社によって開発されたものであり、現在でも広く使用されています。ただし、最近では、JSONやXMLなどのフォーマットがCSVの代替として人気を集めています。CSVは、データがコンマで区切られているため、データ内にコンマが含まれる場合に正しく処理されないという課題があります。このため、より複雑なデータを扱う際には、代替フォーマットを使用することが推奨されています。
-
-## 参考文献：
-- [Rustの公式ドキュメント：ファイルとI/O](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [CSVとは - IT用語辞典集](https://www.sophia-it.com/content/CSV)
+## See Also
+- Rust `csv`クレートドキュメント: https://docs.rs/csv/latest/csv/
+- CSVフォーマット: https://tools.ietf.org/html/rfc4180
+- Serde: https://serde.rs/

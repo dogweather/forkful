@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Python: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Python"
 category:             "Python"
@@ -10,46 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que & Porquê?
 
-Escrever testes é uma prática comum entre programadores, pois ajuda a garantir que o código que eles escreveram funcione corretamente. Ao escrever testes, os programadores podem garantir que seu código está cumprindo todas as especificações e que não há erros em seu funcionamento. Isso economiza tempo e esforço no longo prazo, tornando o processo de desenvolvimento mais eficiente.
+Testes são scripts que automaticamente verificam se um código faz o que deve. Programadores testam para prevenir bugs, economizar tempo e manter a qualidade.
 
-## Como fazer:
+## Como Fazer:
 
-Escrever testes em Python é simples e pode ser feito com a ajuda de algumas bibliotecas úteis, como o Unittest e o Pytest. Um exemplo básico seria criar uma classe de teste que herda da classe TestCase do Unittest e, em seguida, definir alguns métodos para testar funções específicas. Em seguida, executar o teste garantirá que todas as funções estão funcionando como deveriam. Aqui está um exemplo de código:
+Vamos usar o `unittest` – um módulo de testes padrão do Python.
 
-```Python
+```python
 import unittest
 
-def add_two_numbers(x, y):
-    return x + y
+def soma(a, b):
+    return a + b
 
-class TestFunctions(unittest.TestCase):
-    def test_add_two_numbers(self):
-        self.assertEqual(add_two_numbers(2, 3), 5)
-        self.assertEqual(add_two_numbers(5, -2), 3)
+class TesteDaSoma(unittest.TestCase):
+    def test_soma_numeros_positivos(self):
+        self.assertEqual(soma(2, 3), 5)
+    
+    def test_soma_numeros_negativos(self):
+        self.assertEqual(soma(-1, -1), -2)
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-A saída desse teste seria:
+Rode o teste e veja:
 
 ```
-.
+..
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 2 tests in 0.001s
 
 OK
 ```
 
-O ponto no topo significa que o teste passou com sucesso.
+## Aprofundando:
 
-## Aprofundamento:
+O `unittest` foi inspirado no JUnit e tem uma abordagem similar. Alternativas incluem o PyTest, com menos cerimônia, e o Nose, que é extensível. Os testes devem cobrir casos típicos e exceções, automatizando a verificação de que tudo funciona após mudanças.
 
-A prática de escrever testes tem suas raízes na metodologia ágil e no desenvolvimento orientado a testes. Isso significa que os testes são escritos antes do código e são usados para orientar o processo de desenvolvimento. Além disso, existem outras bibliotecas de teste disponíveis para uso em Python, como o Robot Framework e o Behave. Essas bibliotecas fornecem recursos adicionais para testes de interface do usuário e testes de aceitação.
+## Veja Também:
 
-## Veja também:
-
-- [Documentação oficial do Unittest](https://docs.python.org/3/library/unittest.html)
-- [Documentação oficial do Pytest](https://docs.pytest.org/en/latest/)
+- Documentação oficial do `unittest`: https://docs.python.org/3/library/unittest.html
+- PyTest para um estilo mais simplificado: https://docs.pytest.org/en/stable/
+- Nose para um framework de teste mais extensível: https://nose.readthedocs.io/en/latest/

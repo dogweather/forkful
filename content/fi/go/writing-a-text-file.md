@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Go: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
 
-Kirjoittaminen tekstitiedostoon tarkoittaa sitä, että tallennat tekstiä tietokoneen muistissa olevaan tiedostoon. Ohjelmoijat tekevät tätä, jotta voivat tallentaa ja jakaa tietoa eri ohjelmien ja järjestelmien välillä.
+Tekstitiedoston kirjoittaminen tarkoittaa datan tallentamista tekstiformaatissa tiedostoon. Ohjelmoijat tekevät sitä tiedon säilyttämiseen, logien kirjoittamiseen tai käyttäjien konfiguraatioiden tallentamiseen.
 
-# Kuinka:
+## How to: - Kuinka tehdä:
 
-Go-kielellä voit helposti avata, kirjoittaa ja tallentaa tiedostoja käyttäen "os" pakettia. Esimerkiksi:
-
-```
+```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    text := "Tämä on esimerkki tekstistä"
-    file, err := os.Create("tekstitiedosto.txt")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer file.Close()
-    fmt.Fprintf(file, text)
+	message := "Moi maailma! Tervetuloa Go:n pariin.\n"
+	file, err := os.Create("tervetuloa.txt")
+	if err != nil {
+		fmt.Println("Virhe tiedoston luonnissa:", err)
+		return
+	}
+	defer file.Close()
+
+	_, err = file.WriteString(message)
+	if err != nil {
+		fmt.Println("Virhe kirjoitettaessa tiedostoon:", err)
+		return
+	}
+	fmt.Println("Tiedosto 'tervetuloa.txt' kirjoitettu onnistuneesti.")
 }
 ```
 
-Tämä koodi avaa "tekstitiedosto.txt" tiedoston ja tallentaa siihen "Tämä on esimerkki tekstistä" tekstin. Voit myös avata, lukea ja muokata jo olemassa olevia tiedostoja käyttäen "os.Open" ja "bufio" paketteja.
+Tulostus:
+```
+Tiedosto 'tervetuloa.txt' kirjoitettu onnistuneesti.
+```
 
-# Syvemmälle:
+## Deep Dive - Syväsukellus:
 
-Tekstin tallentamisen tarve syntyi jo varhaisissa tietokonejärjestelmissä, joissa tiedon jakaminen ja säilyttäminen eri laitteiden välillä oli haasteellista. Nykyään on olemassa myös muita tapoja tallentaa ja jakaa tietoa, kuten tietokantoja ja pilvipalveluita.
+Tekstitiedoston kirjoittaminen on peruskonsepti, joka juontaa juurensa tietokoneiden alkuaikoihin, kun tiedot tallennettiin magneettinauhoille. Nykyään voimme käyttää `os` ja `ioutil` paketteja Go:ssa, mutta `ioutil` on vanhentunut Go 1.16 jälkeen. Vaihtoehtoisesti tiedostoja voi kirjoittaa käyttäen `bufio` pakettia, mikä mahdollistaa puskuroimalla kirjoittamisen ja suorituskyvyn optimoinnin, tai käänteisesti `io` ja `bytes` pakkauksia binääridatan käsittelyyn.
 
-# Katso myös:
+## See Also - Katso Myös:
 
-Voit lukea lisää tekstien käsittelystä Golla Go:n virallisesta dokumentaatiosta: https://golang.org/pkg/os/.
+- Go:n dokumentaatio `os` paketista: https://pkg.go.dev/os
+- Go:n viralliset blogipostaukset tiedoston käsittelystä: https://blog.golang.org/io2011
+- Go tehokas ohjelmointi -kirja: https://www.gopl.io/

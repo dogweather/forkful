@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "C++: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "C++"
 category:             "C++"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Scrivere un file di testo significa registrare dati sul disco in modo leggibile. I programmatori lo fanno per salvare configurazioni, risultati di esecuzione o per condividere dati fra software.
 
-Scrivere un file di testo in linguaggio C++ significa creare un documento di testo che può essere letto e modificato da un programma. I programmatori utilizzano questa tecnica per salvare dati ottenuti dall'esecuzione del programma, in modo da poterli riutilizzare in futuro.
-
-## Come fare:
-
-```
+## How to:
+```C++
+#include <iostream>
 #include <fstream>
-using namespace std;
+#include <string>
 
-int main()
-{
-    // Creiamo un nuovo file di testo
-    ofstream file("output.txt");
+int main() {
+    std::string filename = "esempio.txt";
+    std::string text = "Ciao, questo è un testo di esempio.";
 
-    // Scriviamo alcuni dati nel file
-    file << "Questo è un esempio di file di testo creato con C++. \n";
-    file << "I file di testo possono contenere dati di qualsiasi tipo, come numeri, stringhe o caratteri speciali. \n";
-
-    // Chiudiamo il file
-    file.close();
+    std::ofstream myfile(filename);
+    if (myfile.is_open()) {
+        myfile << text;
+        myfile.close();
+        std::cout << "File scritto con successo.";
+    } else {
+        std::cout << "Impossibile aprire il file.";
+    }
 
     return 0;
 }
 ```
+*Output:*
+`File scritto con successo.`
 
-Output: Il file output.txt verrà creato e conterrà le due righe di testo indicate nel codice.
+## Deep Dive
+La scrittura su file in C++ risale agli anni '70 con la libreria standard C. Alternativamente, si possono usare librerie C++ moderne come Boost.Iostreams per funzionalità avanzate. Implementare la scrittura su file richiede attenzione alla gestione delle risorse e all'encoding dei dati.
 
-## Approfondimento:
-
-Scrivere un file di testo è un'operazione molto comune nella programmazione. Ciò è dovuto alla sua semplicità e alla sua compatibilità con molti linguaggi di programmazione diversi. Alcune alternative a questa tecnica includono l'utilizzo di database o di altri formati di file, come XML o JSON. Per scrivere un file di testo in C++, è necessario utilizzare il filestream ```ofstream```, che è una classe appartenente alla libreria standard <fstream>.
-
-## Vedi anche:
-
-- [Documento ufficiale di <fstream>](https://en.cppreference.com/w/cpp/header/fstream)
-- [Tutorial su come usare <fstream>](https://www.geeksforgeeks.org/file-handling-c-classes/)
+## See Also
+- Tutorial C++ sulla gestione dei file: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/files/)
+- Documentazione ufficiale di std::ofstream: [cppreference.com](https://en.cppreference.com/w/cpp/io/basic_ofstream)
+- Introduzione a Boost.Iostreams: [boost.org](https://www.boost.org/doc/libs/release/libs/iostreams/doc/index.html)

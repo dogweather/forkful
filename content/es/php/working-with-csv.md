@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "PHP: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Trabajar con CSV en PHP es una forma de manejar datos tabulares de forma eficiente y sencilla. Programadores utilizan la extensión "csv" en PHP para leer, escribir y manipular archivos CSV, lo que permite el procesamiento de datos en formato tabla de manera más efectiva.
+Trabajar con CSV implica manejar datos en un formato de texto plano delimitado por comas, muy común por su simplicidad y universalidad. Los programadores lo utilizan para intercambiar datos entre sistemas, importar/exportar información y manipular grandes volúmenes de datos de manera eficiente.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-Para leer un archivo CSV en PHP, se utiliza la función `fgetcsv()` que toma como argumento el nombre del archivo y devuelve un array. Por ejemplo:
-
+Leer un archivo CSV:
 ```PHP
-$archivo = fopen("datos.csv", "r");
-while(! feof($archivo)) {
-  print_r(fgetcsv($archivo));
+<?php
+$fila = 1;
+if (($handle = fopen("datos.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $num = count($data);
+        echo "Fila $fila: \n";
+        for ($c=0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
+        $fila++;
+    }
+    fclose($handle);
 }
-fclose($archivo);
+?>
 ```
 
-Este código abrirá el archivo "datos.csv", lo leerá línea por línea y convertirá cada línea en un array que será impreso en pantalla. Aquí el resultado que podríamos obtener:
-
-```
-Array
-(
-    [0] => Juan
-    [1] => Pérez
-    [2] => 25
-)
-Array
-(
-    [0] => Ana
-    [1] => Gómez
-    [2] => 30
-)
-```
-
-Para escribir un nuevo archivo CSV, se puede utilizar la función `fputcsv()` pasando como argumento el nombre del archivo y un array con los valores que se quieren escribir. Por ejemplo:
-
+Escribir en un archivo CSV:
 ```PHP
-$archivo = fopen("nuevos_datos.csv", "w");
-$array = array("Juan", "Pérez", "25");
-fputcsv($archivo, $array);
-fclose($archivo);
-```
+<?php
+$list = array (
+    array('primero', 'segundo', 'tercero'),
+    array('uno', 'dos', 'tres'),
+);
 
-Este código creará un archivo "nuevos_datos.csv" con el siguiente contenido:
+$fp = fopen('file.csv', 'w');
 
-```
-Juan,Pérez,25
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
+
+fclose($fp);
+?>
 ```
 
 ## Profundizando
 
-El formato CSV (Comma Separated Values) fue creado en los años 70 para ser utilizado en hojas de cálculo. Hoy en día, sigue siendo ampliamente utilizado en la industria de la programación para el manejo de bases de datos y datos tabulares.
+El formato CSV se originó en los primeros días de las computadoras personales. Más que un estándar rígido, CSV es un convenio práctico y su simplicidad ha permitido que sea ampliamente adoptado. Aunque existen alternativas como XML y JSON, CSV se sigue usando por ser menos verboso y más fácil de leer por humanos y máquinas. Al implementarlo en PHP, es importante considerar el manejo de caracteres especiales, como comillas o saltos de línea dentro de los campos, y la configuración regional que afecta cómo se interpretan las comas y puntos.
 
-Existen otras opciones para trabajar con datos tabulares en PHP, como por ejemplo utilizar PDO (PHP Data Objects) para conectarse a una base de datos y manejar los datos directamente desde ahí. Sin embargo, utilizar archivos CSV puede ser una opción más sencilla y rápida en ciertos casos.
+## Ver También
 
-Para implementar la lectura y escritura de archivos CSV en PHP, también se pueden utilizar funciones como `readfile()`, `fopen()` y `fputcsv()` en conjunto para facilitar el proceso.
-
-## Ver también
-
-- Documentación oficial de PHP sobre la extensión "csv": https://www.php.net/manual/es/book.csv.php
-- Tutorial de W3Schools sobre cómo trabajar con archivos CSV en PHP: https://www.w3schools.com/php/func_filesystem_fputcsv.asp
+- Documentación oficial de PHP para la función `fgetcsv`: https://www.php.net/manual/es/function.fgetcsv.php
+- Documentación oficial de PHP para la función `fputcsv`: https://www.php.net/manual/es/function.fputcsv.php
+- Tutorial de W3Schools sobre cómo manejar archivos CSV en PHP: https://www.w3schools.com/php/php_file_create.asp

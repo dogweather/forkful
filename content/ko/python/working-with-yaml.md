@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Python: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜?
+## What & Why? (무엇과 왜?)
+YAML은 설정 파일, 메시지 전달 등에 쓰이는 데이터 직렬화 포맷입니다. 가독성이 좋고 이해하기 쉬워서 프로그래머들이 많이 사용합니다.
 
-YAML은 데이터를 저장하고 전송하기 위해 사용되는 파일 형식입니다. 프로그래머들은 YAML을 사용하여 파일을 더 읽기 쉽고 구조화할 수 있으며 다양한 언어에서 호환성을 보장할 수 있기 때문에 많이 사용합니다.
-
-## 어떻게 하나요?
-
-YAML 파일을 만들기 위해서는 먼저 `yaml` 모듈을 임포트해야 합니다. 다음으로 파일을 연 후, `yaml.dump()` 함수를 사용하여 데이터를 YAML 형식으로 저장할 수 있습니다. 예시 코드는 다음과 같습니다.
-
-```python
+## How to: (어떻게 하나요?)
+```Python
 import yaml
 
-data = {
-    'name': 'John',
-    'age': 30
-}
+# YAML 스트링을 파이썬 데이터 구조로 로드하기
+yaml_data = """
+language: Python
+version: 3.10
+dependencies:
+  - numpy
+  - pandas
+"""
 
-with open('data.yaml', 'w') as f:
-    yaml.dump(data, f)
+# YAML 파싱
+data = yaml.safe_load(yaml_data)
+
+# 파싱된 데이터 출력
+print(data)
+```
+출력:
+```
+{'language': 'Python', 'version': '3.10', 'dependencies': ['numpy', 'pandas']}
 ```
 
-이 코드를 실행하면 `data.yaml` 파일에 다음과 같은 내용이 저장됩니다.
+## Deep Dive (깊이 알아보기)
+YAML("YAML Ain't Markup Language")은 의도적으로 보기 좋게 디자인된 데이터 직렬화 언어로 JSON, XML 같은 경쟁 포맷이 있습니다. 파이썬에서는 `PyYAML` 라이브러리를 주로 사용합니다. `safe_load` 함수는 안전하게 데이터를 로드합니다. 보안 문제로 `load` 함수 사용은 권장하지 않습니다.
 
-```yaml
-name: John
-age: 30
-```
-
-## 깊게 파헤쳐보기
-
-YAML은 2001년에 Java 개발자인 Clark Evans가 개발한 형식입니다. YAML과 비슷한 다른 형식으로는 JSON이 있지만, YAML은 더 많은 기능과 유연성을 제공합니다. 또한, YAML은 다양한 언어에서 호환성을 보장하기 때문에 많은 프로그래머들에게 사랑받고 있습니다.
-
-## 관련 자료
-
-더 많은 정보를 원하시면 YAML 공식 문서나 유용한 YAML 자료를 참고하시기 바랍니다.
-
+## See Also (더 보기)
+- PyYAML 공식 문서: https://pyyaml.org/
 - YAML 공식 사이트: https://yaml.org/
-- YAML 설명서: https://docs.python.org/ko/3/library/yaml.html
+- Python 공식 문서: https://docs.python.org/3/

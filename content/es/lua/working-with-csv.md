@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "Lua: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Trabajar con archivos CSV (Comma-Separated Values) en Lua se refiere a manipular datos tabulados en formato CSV y es una tarea común en la programación. Los programadores utilizan CSV para almacenar y exportar grandes cantidades de información estructurada, como resultados de bases de datos o registros de usuarios.
+## Qué y Por Qué?
+Los archivos CSV contienen datos separados por comas, comunes en la importación y exportación de información, como contactos o estadísticas. Los programadores trabajan con CSV por ser un formato simple y ampliamente compatible para intercambiar datos entre diferentes sistemas y aplicaciones.
 
 ## Cómo hacerlo:
-Aquí hay un ejemplo simple para leer un archivo CSV y mostrar su contenido:
+Para manejar un archivo CSV en Lua, primero lee el archivo y luego parsea los datos. Aquí un ejemplo rápido:
 
 ```Lua
--- Primero, se carga la biblioteca CSV
-local csv = require("csv")
+local archivo = "datos.csv"
+local datos_csv = {}
 
--- Luego, se hace una llamada a la función read()
--- para leer el archivo especificado y almacenar su contenido en una variable
-local data = csv.read("datos.csv")
+-- Lee el archivo CSV
+local file = io.open(archivo, "r")
+for linea in file:lines() do
+    local valores = {}
+    for valor in linea:gmatch("[^,]+") do
+        table.insert(valores, valor)
+    end
+    table.insert(datos_csv, valores)
+end
+file:close()
 
--- Finalmente, se recorre y se imprime cada fila del archivo
-for i, row in ipairs(data) do
-  print("Fila " .. i .. ": " .. table.concat(row, ", "))
+-- Muestra los datos
+for i, registro in ipairs(datos_csv) do
+    for j, valor in ipairs(registro) do
+        print("Registro "..i..", Valor "..j..": "..valor)
+    end
 end
 ```
 
-La salida debería ser una lista de filas del archivo, separadas por comas.
+Al correr este código con un archivo `datos.csv`, se mostraran los valores parseados en la consola.
 
-## Profundizando:
-El formato CSV se remonta a los años 70 y fue inventado para facilitar el intercambio de datos entre hojas de cálculo. Aunque es ampliamente utilizado, tiene limitaciones como la falta de un estándar oficial y problemas con caracteres especiales.
+## Inmersión Profunda:
+Trabajar con CSV en Lua es directo, ya que no requiere bibliotecas externas. Originalmente diseñado en los años 70, el formato CSV es todavía relevante hoy. Hay alternativas, como JSON o XML, pero CSV sigue siendo el preferido para datos tabulares. Cuando se trata de archivos grandes o con datos complejos, se puede considerar usar el módulo `csvigo` o `LuaCSV` para funcionalidades adicionales.
 
-Existen alternativas como JSON o XML para el almacenamiento de datos estructurados, pero CSV sigue siendo popular debido a su simplicidad y compatibilidad con muchos programas y lenguajes de programación.
-
-En Lua, la biblioteca estándar incluye una función para leer archivos CSV, pero también hay bibliotecas externas más completas y personalizables disponibles.
-
-## Ver también:
-- [Biblioteca tercerizada con soporte para escribir archivos CSV](https://github.com/geoffleyland/lua-csv)
+## Ver También:
+- Documentación de Lua sobre manejo de archivos: https://www.lua.org/pil/21.1.html
+- LuaCSV GitHub: https://github.com/geoffleyland/lua-csv
+- csvigo GitHub (desde Torch): https://github.com/clementfarabet/lua---csv

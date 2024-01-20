@@ -1,7 +1,7 @@
 ---
-title:                "Yaml 작업하기"
-html_title:           "Lua: Yaml 작업하기"
-simple_title:         "Yaml 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## 무엇 & 왜?"
-YAML을 다루는 것은 프로그래머에게 있어 중요한 일입니다. 쉽게 말해, YAML은 데이터를 모델링하고 저장하기 위한 형식이에요. 프로그래머들은 이 형식을 사용하여 복잡한 데이터를 쉽게 다룰 수 있기 때문에 YAML을 사용합니다.
+## What & Why?
+YAML은 데이터를 표현하는 언어입니다. 프로그래머들은 설정 파일, 데이터 저장, 메시지 교환이나 서버와 클라이언트 간의 통신을 위해 YAML을 많이 사용합니다.
 
-"## 방법:"
+## How to:
+Lua에서 YAML을 다루려면 `lyaml` 라이브러리를 사용할 수 있습니다. 아래는 간단한 예시 코드와 결과입니다.
+
 ```Lua
--- YAML 라이브러리 불러오기
-local yaml = require "yaml"
+-- lyaml 라이브러리 설치 필요
+local lyaml = require('lyaml')
 
--- 텍스트 형식의 YAML 데이터 선언하기
-local data = [[
-- name: John
-  age: 27
-  occupation: Programmer
+-- YAML 문자열을 Lua 테이블로 파싱
+local yaml_data = [[
+- name: Kim
+  age: 25
+- name: Lee
+  age: 28
 ]]
+local people = lyaml.load(yaml_data)
+print(people[1].name)  -- 결과: Kim
 
--- 데이터 로드하기
-local loadedData = yaml.load(data)
-
--- 데이터 출력하기
-print(loadedData[1].name) -- 결과: "John"
-print(loadedData[1].age) -- 결과: 27
-print(loadedData[1].occupation) -- 결과: "Programmer"
+-- Lua 테이블을 YAML 문자열로 변환
+local people_table = {
+  { name = "Park", age = 33 },
+  { name = "Choi", age = 41 }
+}
+local yaml_string = lyaml.dump(people_table)
+print(yaml_string)
 ```
 
-"## 깊은 곳 탐방:"
-YAML은 2001년에 개발된 데이터 직렬화 형식입니다. XML이나 JSON과 비슷한 목적으로 사용되지만, YAML은 인간이 읽고 쓰기 쉽도록 설계되었습니다. 다른 대안으로는 TOML과 YAML의 조합인 YML이 있습니다. Lua에서는 yaml 라이브러리를 이용하여 YAML 데이터를 다룰 수 있습니다.
+## Deep Dive
+YAML은 "YAML Ain't Markup Language"의 약어이며 데이터 직렬화 포맷으로 사용됩니다. 2001년에 등장했고, JSON, XML과 같은 다른 데이터 표현 언어들에 비해 읽기 쉽고 쓰기 쉬운 것이 특징입니다. YAML은 구성 관리, 문서 교환 등에서 널리 채택되고 있으며 Lua에서는 lyaml 이나 다른 서드 파티 라이브러리를 통해 YAML 데이터를 처리할 수 있습니다.
 
-"## 관련 자료:"
-- 공식 YAML 사이트: https://yaml.org/
-- YAML 소개: https://www.datacamp.com/community/tutorials/yaml-python
-- Lua에서 YAML 사용 예제: https://github.com/Neopallium/lua-yaml
+## See Also
+- `lyaml` 라이브러리: http://github.com/gvvaughan/lyaml
+- YAML 공식 사이트: https://yaml.org
+- YAML 문법 가이드: https://learnxinyminutes.com/docs/yaml/

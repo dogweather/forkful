@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Swift: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con JSON è fondamentale per gli sviluppatori che hanno a che fare con il trasferimento di dati tra diversi sistemi o piattaforme. JSON, acronimo di JavaScript Object Notation, è un formato di scrittura e lettura dei dati strutturato e leggibile dalle macchine. Per questa ragione, è ampiamente utilizzato nella comunicazione tra applicazioni web e mobile.
+## What & Why?
+Lavorare con JSON significa gestire dati strutturati come testo leggibile. Programmatori lo fanno per scambiare dati tra server e app, e per salvare configurazioni.
 
-## Come fare:
-Per lavorare con JSON in Swift, è necessario utilizzare la classe codable. In questo modo è possibile convertire automaticamente i dati tra il formato JSON e i tipi di dati Swift. Di seguito un esempio di codice per decodificare un oggetto JSON in un oggetto di tipo Person:
-
+## How to:
 ```Swift
-struct Person: Codable {
-    var name: String
-    var age: Int
+import Foundation
+
+// Definiamo una struct che si conforma al protocollo Codable
+struct Utente: Codable {
+    var nome: String
+    var età: Int
 }
 
-let json = """
-{
-    "name": "John",
-    "age": 30
-}
-""".data(using: .utf8)!
+// Creiamo un'istanza di Utente
+let utente = Utente(nome: "Mario", età: 30)
 
-let decodedPerson = try JSONDecoder().decode(Person.self, from: json)
+// Convertiamo l'istanza in JSON con JSONEncoder
+if let jsonData = try? JSONEncoder().encode(utente),
+   let jsonString = String(data: jsonData, encoding: .utf8) {
+    print(jsonString)
+}
+
+// Output: {"nome":"Mario","età":30}
+
+// Convertiamo JSON in un'istanza di Utente con JSONDecoder
+let jsonData = "{\"nome\":\"Mario\",\"età\":30}".data(using: .utf8)!
+if let decodedUtente = try? JSONDecoder().decode(Utente.self, from: jsonData) {
+    print(decodedUtente)
+}
+
+// Output: Utente(nome: "Mario", età: 30)
 ```
 
-L'output sarà un oggetto di tipo Person con il nome "John" e l'età 30.
+## Deep Dive
+JSON, acronimo di JavaScript Object Notation, è un formato nato nei primi anni 2000. Alternative includono XML e YAML, ma JSON spicca per la sua semplicità. Swift gestisce JSON attraverso `Codable`, un protocollo introdotto in Swift 4 che rende semplice codificare/decodificare i dati.
 
-## Approfondimento:
-JSON è stato sviluppato nei primi anni 2000 come una semplice alternativa al formato XML per la trasmissione dei dati. Grazie alla sua semplicità e leggibilità, è diventato presto uno standard ampiamente utilizzato. Alcune alternative a JSON includono YAML e XML, ma JSON rimane uno dei formati più comuni per il trasferimento dei dati.
-
-Un altro concetto importante da comprendere quando si lavora con JSON è la serializzazione, cioè il processo di trasformare una struttura dati in una rappresentazione serializzata, spesso in formato JSON, per consentirne la trasmissione su una rete o il salvataggio su disco.
-
-## Vedi anche:
-Ulteriori informazioni su Codable in Swift: https://developer.apple.com/documentation/swift/codable
-
-Introduzione a JSON: https://www.json.org/
+## See Also
+- La documentazione ufficiale di Swift su `Codable`: [Swift.org - Codable](https://swift.org/documentation/api-design-guidelines/#codable)
+- Una guida alla gestione degli errori con JSON in Swift: [raywenderlich.com - Swift JSON](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)

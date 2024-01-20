@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit CSV-Dateien"
-html_title:           "Ruby: Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
 simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist CSV und warum ist es wichtig?
+## Was & Warum?
+CSV steht für "Comma-Separated Values". Es ist ein einfaches Format, um Tabellendaten zu speichern und zu transportieren, besonders wenn man es mit Datenbanken oder Tabellenkalkulationen zu tun hat. Programmierer nutzen CSV, weil es universell lesbar ist und leicht zu bearbeitende Struktur hat.
 
-CSV (Comma Separated Values) ist ein Dateiformat, das häufig verwendet wird, um Daten in Tabellenform zu speichern. Es besteht aus einer Auflistung von Zeilen und Spalten, wobei die Werte durch Kommas getrennt sind. Programmierer nutzen CSV, um große Datenmengen zu verwalten und zu analysieren, da es ein einfaches Format ist, das von vielen Programmen und Tools unterstützt wird.
-
-## Wie geht's?
-
-Ein Beispiel, um eine CSV-Datei zu lesen und Daten auszugeben: 
+## So geht's:
+Ruby macht das Arbeiten mit CSV-Dateien zum Kinderspiel. Du brauchst die eingebaute CSV-Bibliothek nicht mal extra zu installieren. Hier ein kurzes Beispiel:
 
 ```Ruby
 require 'csv'
 
-CSV.foreach('data.csv') do |row|
-  puts "Name: #{row[0]}, Alter: #{row[1]}, Stadt: #{row[2]}"
+# CSV-Datei lesen
+CSV.foreach("beispiel.csv") do |row|
+  puts row.inspect
+end
+
+# CSV-Datei schreiben
+CSV.open("ausgabe.csv", "w") do |csv|
+  csv << ["Name", "Stadt", "Alter"]
+  csv << ["Max", "Berlin", 29]
+  csv << ["Zoe", "Hamburg", 22]
 end
 ```
-Ausgabe:
-```
-Name: Max, Alter: 25, Stadt: Berlin
-Name: Lisa, Alter: 28, Stadt: Hamburg
-Name: Tom, Alter: 30, Stadt: München
-```
+Diese beiden Code-Snippets lesen eine CSV-Datei namens `beispiel.csv` und schreiben eine neue CSV-Datei namens `ausgabe.csv` mit ein paar Daten.
 
-## Eintauchen
+## Deep Dive
+Die CSV-Unterstützung in Ruby ist tief verwurzelt - bereits seit 1.8 ist sie dabei. Alternativen wie FasterCSV sind
 
-CSV wurde in den 1960er Jahren entwickelt, um den Austausch von Daten zwischen verschiedenen Computern zu vereinfachen. Heutzutage werden oft alternative Dateiformate wie JSON oder XML verwendet, aber CSV ist immer noch sehr verbreitet, da es einfach zu erstellen und zu lesen ist. In Ruby gibt es auch andere Methoden, um mit CSV-Daten zu arbeiten, wie beispielsweise die Klasse CSV::Table.
+von Ruby 1.9 an eigentlich unnötig, da FasterCSV die Basis für die eingebaute CSV-Bibliothek wurde. Details zur Implementierung: Ruby's CSV-Bibliothek handhabt auch komplexere CSV-Features wie unterschiedliche Zeichenkodierungen, benutzerdefinierte Trennzeichen und Zeilenumbrüche, so dass sie sehr flexibel ist.
 
-## Siehe auch
-
-- [Ruby-Dokumentation zu CSV](https://ruby-doc.org/stdlib-2.7.0/libdoc/csv/rdoc/CSV.html)
+## See Also
+- Ruby-Dokumentation zur CSV-Bibliothek: https://ruby-doc.org/stdlib-2.6.1/libdoc/csv/rdoc/CSV.html
+- Schneller Einstieg in CSV mit Ruby: https://www.rubyguides.com/2018/10/parse-csv-ruby/
+- Komplexere CSV-Aufgaben mit Ruby: https://thoughtbot.com/blog/faster-csv-processing-with-ruby

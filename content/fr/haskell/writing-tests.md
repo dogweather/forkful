@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "Haskell: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Ecrire des tests est essentiel pour les programmeurs. Les tests sont des instructions écrites en code qui permettent de vérifier si le code fonctionne correctement. Cela peut aider à détecter et corriger les erreurs avant qu'elles n'affectent les utilisateurs finaux.
+## What & Why?
+Écrire des tests consiste à préparer des scénarios pour vérifier que notre code fonctionne bien. Les programmeurs écrivent des tests pour prévenir des erreurs, garantir la qualité et faciliter les mises à jour de code sans casser des fonctionnalités existantes.
 
-## Comment faire:
-Il existe plusieurs façons d'écrire des tests en Haskell, mais voici une méthode simple utilisant le framework de test `HUnit`. Tout d'abord, importez le module `Test.HUnit` dans votre fichier : 
-```Haskell
-import Test.HUnit
-```
-Ensuite, définissez une fonction de test et définissez ses entrées et sa sortie attendue :
-```Haskell
-myTest :: Test
-myTest = TestCase (assertEqual "2 + 2 devrait être égal à 4" 4 (2+2))
-```
-Enfin, exécutez le test en utilisant la fonction `runTestTT` et visualisez le résultat en utilisant la fonction `print` : 
-```Haskell
+## How to:
+Haskell utilise Hspec pour des tests. C'est simple et intuitif :
+
+```haskell
+import Test.Hspec
+
+-- Une fonction simple pour l'exemple
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- Les tests
 main :: IO ()
-main = do
-    runTestTT myTest
-    print "Tests terminés"
-```
-Lorsque vous exécutez ce code, vous devriez voir l'output suivant :
-```markdown
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-"Tests terminés"
+main = hspec $ do
+  describe "add" $ do
+    it "additionne deux nombres positifs" $
+      add 2 3 `shouldBe` 5
+
+    it "additionne un positif et un négatif" $
+      add (-1) 1 `shouldBe` 0
 ```
 
-## Plongée en profondeur:
-Les tests ont toujours été une partie importante du développement logiciel. Cela est particulièrement vrai pour les langages fonctionnels tels que Haskell, où la vérification statique des types ne suffit pas toujours à garantir la fiabilité du code. Il existe également d'autres frameworks de test en Haskell tels que `QuickCheck` et `HSpec` qui offrent une syntaxe plus expressive pour écrire des tests.
+Résultat après exécution :
+```
+add
+  additionne deux nombres positifs
+  additionne un positif et un négatif
 
-## Voir aussi:
-- [Documentation officielle de HUnit](https://hackage.haskell.org/package/HUnit/docs/Test-HUnit.html)
+Finished in 0.0003 seconds
+2 examples, 0 failures
+```
+
+## Deep Dive
+Historiquement, QuickCheck était l'outil dominant pour les tests en Haskell, introduisant l'approche de tests basée sur les propriétés. Hspec est une alternative qui propose une syntaxe plus lisible basée sur des exemples. La spécificité de ces tests en Haskell, c'est qu'on peut combiner les tests basés sur des exemples (Hspec) avec des tests basés sur les propriétés (QuickCheck).
+
+## See Also
+Pour aller plus loin :
+
+- [Hspec documentation](http://hspec.github.io/)
+- [QuickCheck sur Hackage](https://hackage.haskell.org/package/QuickCheck)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Elixir: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,88 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Che cos'è e perché utilizzare CSV in Elixir
+## What & Why?
+Lavorare con CSV significa manipolare dati in formato "Comma-Separated Values", ovvero valori separati da virgole. Programmatori lo fanno per importare, analizzare, e manipolare grandi volumi di dati con struttura tabellare in modo facile e veloce.
 
-## Che cos'è e perché utilizzare CSV?
+## How to:
+Elixir rende semplice lavorare con i CSV attraverso la libreria `CSV`. Ecco come leggere e scrivere CSV:
 
-CSV (Comma-Separated Values) è un formato di file comunemente utilizzato per archiviare e trasferire dati in modo strutturato. In sostanza, è un elenco di valori separati da virgole, dove ogni riga rappresenta un record e le colonne sono i diversi campi dei dati.
+```elixir
+# Aggiungi nel tuo mix.exs: {:csv, "~> 2.4"}
+defmodule CSVExample do
+  require CSV
 
-I programmatori spesso lavorano con CSV perché è uno dei formati più semplici per lo scambio di dati tra diverse applicazioni o sistemi. Inoltre, è supportato da molti strumenti e librerie di programmazione.
+  # Leggere CSV da una stringa o file
+  def read_csv(content) do
+    content
+    |> CSV.decode(separator: ?;)
+    |> Enum.to_list()
+  end
 
-## Come fare:
-
-```
-Elixir CSV è una libreria nativa di Elixir, quindi non è necessario installarla separatamente. Per utilizzarla, è sufficiente aggiungerla al file di progetto mix.exs:
-
-defp deps do
-  [
-    {:csv, "~> 2.3"}
-  ]
+  # Scrivere dati in CSV
+  def write_csv(data) do
+    data
+    |> CSV.encode(separator: ?;)
+    |> Enum.join()
+  end
 end
-```
-Per leggere un file CSV, puoi utilizzare la funzione `CSV.read/1` passando il percorso del file come argomento. Ad esempio:
 
-```
-# File CSV di esempio: "books.csv"
-author,title,genre
-J.K. Rowling,Harry Potter and the Philosopher's Stone,Fantasy
-Jane Austen,Pride and Prejudice,Romance
-J.R.R. Tolkien,The Lord of the Rings,Fantasy
-```
+# Uso:
+content = "nome;cognome;eta\nMario;Rossi;30\nLuca;Bianchi;25"
+data = CSVExample.read_csv(content)
+IO.inspect(data)
 
-```
-Elixir iex> require CSV
-Elixir iex> data = CSV.read("books.csv")
-[
-  [
-    "author",
-    "title",
-    "genre"
-  ],
-  [
-    "J.K. Rowling",
-    "Harry Potter and the Philosopher's Stone",
-    "Fantasy"
-  ],
-  [
-    "Jane Austen",
-    "Pride and Prejudice",
-    "Romance"
-  ],
-  [
-    "J.R.R. Tolkien",
-    "The Lord of the Rings",
-    "Fantasy"
-  ]
-]
+csv_output = CSVExample.write_csv(data)
+IO.puts(csv_output)
 ```
 
-Per scrivere un file CSV, è possibile utilizzare la funzione `CSV.encode/1` passando una lista di liste contenente i dati da scrivere. Ad esempio:
-
-```
-Elixir iex> data = [
-  ["name", "age", "profession"],
-  ["John", "30", "Software Developer"],
-  ["Jane", "28", "Graphic Designer"]
-]
-
-Elixir iex> CSV.encode(data, quote: "\"")
-"name","age","profession"
-"John","30","Software Developer"
-"Jane","28","Graphic Designer"
+Output di lettura:
+```elixir
+[["nome", "cognome", "eta"], ["Mario", "Rossi", "30"], ["Luca", "Bianchi", "25"]]
 ```
 
-È anche possibile specificare diverse opzioni come delimitatore, citazione, encoding e altro ancora nella funzione `CSV.encode/2`. Per maggiori informazioni, si consiglia di consultare la documentazione ufficiale della libreria CSV di Elixir.
+Output di scrittura:
+```plaintext
+nome;cognome;eta
+Mario;Rossi;30
+Luca;Bianchi;25
+```
 
-## Approfondimento:
+## Deep Dive
+Il CSV è nato negli anni '70 ed è diventato uno standard de facto per il trasferimento di dati tabellari. Rispetto a JSON o XML, il CSV è più leggero e semplice da leggere per l'uomo, ma meno versatile. Alternativa comune in Elixir è la libreria `nimble_csv` che offre più personalizzazioni. Internamente, lavorare con CSV implica parsing sequenziale e gestione di escaping e quoting corretto.
 
-CSV è stato sviluppato negli anni '70 ed è stato ampiamente utilizzato da allora per la sua semplicità e compatibilità. Tuttavia, con l'aumentare della complessità dei dati, sono stati sviluppati altri formati di file più avanzati, come JSON e XML.
-
-Elixir offre anche altre librerie per lavorare con dati strutturati, come ExJSON per la gestione di file JSON e Xmerl per la manipolazione di file XML.
-
-La libreria CSV di Elixir è basata sulla libreria di parsing di CSV di Erlang, che a sua volta è basata sulla libreria del linguaggio di programmazione C di RFC 4180, un documento ufficiale che definisce il formato CSV.
-
-## Vedi anche:
-
-- [Documentazione ufficiale della libreria CSV di Elixir](https://hexdocs.pm/csv/CSV.html)
-- [RFC 4180 che definisce il formato CSV](https://tools.ietf.org/html/rfc4180)
+## See Also
+- [CSV Hex Package](https://hex.pm/packages/csv): Documentazione ufficiale del pacchetto CSV per Elixir.
+- [Elixir School](https://elixirschool.com/en/): Lezioni su Elixir, inclusi esempi con CSV.
+- [RFC 4180](https://tools.ietf.org/html/rfc4180): Standard formale del formato CSV.

@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "C++: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "C++"
 category:             "C++"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que é e Por Que?
 
-Escrever testes é simplesmente o ato de verificar se o seu código funciona como esperado. Os programadores fazem isso para garantir que o código seja confiável e está de acordo com as expectativas dos usuários.
+Escrever testes é criar um conjunto de códigos que executa seu programa para conferir se tudo funciona como deveria. Programadores testam para evitar bugs, garantir a qualidade, e facilitar manutenções futuras.
 
-## Como fazer:
+## How To:
 
-Para escrever testes em C++, é necessário usar a biblioteca de testes padrão do C++. Aqui está um exemplo básico de um teste de unidade:
+```c++
+#include <iostream>
+#include <cassert>
 
-```
-#include <cassert> // Inclui a biblioteca de testes do C++
+void somaTeste() {
+    assert(2 + 2 == 4);
+    std::cout << "Teste de soma PASSOU!" << std::endl;
+}
 
-int soma(int a, int b) {
-  return a + b;
+void subtracaoTeste() {
+    assert(2 - 2 == 0);
+    std::cout << "Teste de subtracao PASSOU!" << std::endl;
 }
 
 int main() {
-  assert(soma(2, 2) == 4); // Verifica se a soma de 2 e 2 é igual a 4
-  return 0;
+    somaTeste();
+    subtracaoTeste();
+    return 0;
 }
 ```
+Output:
+```
+Teste de soma PASSOU!
+Teste de subtracao PASSOU!
+```
 
-A saída esperada seria "OK", indicando que o teste foi aprovado.
+## Aprofundamento
 
-## Profundidade:
+Testes automáticos são a prática padrão desde os anos 2000 com o advento de metodologias ágeis. Alternativas aos `asserts` incluem frameworks mais robustos como Google Test ou Boost.Test, que oferecem mais controle e funcionalidades. A implementação de testes varia: pode ser de unidade, integração, sistema, etc., dependendo do que você precisa avaliar.
 
-Escrever testes não é uma prática nova. Na verdade, ela vem sendo utilizada há décadas no desenvolvimento de software. Existem outras bibliotecas de teste disponíveis além da biblioteca padrão do C++, como o Google Test e o Catch2, que oferecem recursos adicionais.
+## Consulte Também
 
-Além disso, é possível implementar testes automatizados, que podem ser executados sempre que o código for alterado, garantindo que os testes sejam executados frequentemente e de forma consistente.
-
-## Veja também:
-
-- [Documentação da biblioteca de testes do C++](https://en.cppreference.com/w/cpp/header/cassert)
-- [Google Test](https://github.com/google/googletest)
-- [Catch2](https://github.com/catchorg/Catch2)
+- Documentação C++ assert: [http://www.cplusplus.com/reference/cassert/assert/](http://www.cplusplus.com/reference/cassert/assert/)
+- Google Test GitHub: [https://github.com/google/googletest](https://github.com/google/googletest)
+- Boost.Test Documentation: [https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/index.html](https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/index.html)

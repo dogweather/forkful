@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Gleam: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 写测试是什么 & 为什么要这么做？
+## What & Why? (是什么？为什么？)
+写测试是创建用来验证代码功能正确性的小段程序。程序员通过测试确保代码可靠，减少BUG。
 
-写测试是指针对程序进行一系列的测试，来验证代码的正确性。它是程序员们常用的一种手段，可以确保程序的质量，并且减少未来出现的错误。
+## How to: (怎么做：)
+```gleam
+import gleam/should
+import my_module
 
-# 如何进行测试：
-
-```Gleam
-fn my_function(x) {
-  x + 5
-}
-
-describe "My Function" {
-  it "returns the input plus 5" {
-    expect(my_function(3)) == 8
-  }
+pub fn my_test() {
+  my_module.my_function(1) 
+  |> should.equal(Ok(2))
 }
 ```
 
-在这个例子中，我们定义了一个函数 `my_function` 来对输入进行计算操作，并使用 `describe` 和 `it` 来定义我们的测试。当测试运行时，我们会得到一个输出，来验证函数是否按照预期进行计算。
+输出结果：
+```
+test my_test ... ok
+```
 
-# 深入探讨：
+## Deep Dive (深入探索)
+测试起源于软件工程的早期阶段。Gleam中，常用`gleam/should`库进行断言测试；此外还有`gleam/expect`。Gleam的测试遵循Erlang的标准，并与其豊富的测试生态系统兼容。
 
-写测试已经成为现代软件开发中不可或缺的一部分。它可以帮助我们更早地发现错误，并且在修改代码时提供一个安全的保障。与其他语言相比，Gleam 的测试特别容易理解和管理。
-
-# 参考资料：
-
-- [Gleam语言官方网站](https://gleam.run/)
+## See Also (另请参阅)
+- Gleam 官方文档: [https://gleam.run/book](https://gleam.run/book)

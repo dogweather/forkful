@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Elixir: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que les tests et pourquoi les programmeurs les font-ils?
+## What & Why? (Quoi et Pourquoi ?)
+Écrire des tests, c'est vérifier que notre code fait bien ce qu'on attend de lui. Les programmeurs testent pour prévenir les bugs, économiser du temps et dormir sur leurs deux oreilles.
 
-Les tests en programmation sont des morceaux de code destinés à vérifier que notre code fonctionne correctement et qu'il produit les résultats escomptés. Ils peuvent également aider à détecter et résoudre des bugs ou des erreurs de manière proactive. Les programmeurs les écrivent également pour s'assurer que les modifications apportées à un code existant ne causent pas de régressions.
+## How to (Comment faire ?)
+Elixir utilise ExUnit pour les tests. Voici un exemple simple :
 
-Comment procéder:
-
-Elixir est un langage qui encourage fortement la programmation basée sur les tests, ce qui signifie qu'il met à disposition des outils pour faciliter la création et l'exécution de tests automatisés.
-
-Voici un exemple de test en Elixir:
-
-```Elixir
-defmodule CalculatriceTest do
+```elixir
+defmodule MathTest do
   use ExUnit.Case
+  doctest Math
 
-  test "additionne deux nombres" do
-    assert Calculatrice.ajouter(2, 3) == 5
+  test "add/2 function" do
+    assert Math.add(1, 2) == 3
   end
 end
 ```
 
-L'exemple ci-dessus montre un cas de test basique, utilisant le module ExUnit qui est inclus dans la standard library d'Elixir. Nous procédons en définissant un module pour nos tests, en utilisant le `use` pour inclure le module `ExUnit.Case` et enfin, nous écrivons un test spécifique à l'aide du mot-clé `test`.
+Lancer les tests avec `mix test` et voilà :
 
-Nous pouvons exécuter ces tests en exécutant la commande `mix test` dans notre terminal, ce qui nous donnera un retour sur le succès ou l'échec de notre test.
+```
+...
 
-Plongée en profondeur:
+Finished in 0.05 seconds
+3 tests, 0 failures
 
-La pratique des tests en programmation remonte aux premiers jours de l'informatique. Avec l'avènement des méthodologies agiles et de l'importance croissante de la qualité logicielle, les tests sont devenus une partie essentielle du processus de développement. Il existe également d'autres outils pour tester du code en Elixir, tels que le framework de test intégré à Phoenix, le framework de web development en Elixir.
+Randomized with seed 54321
+```
 
-Voir aussi:
+## Deep Dive (Plongée en profondeur)
+Historiquement, Elixir, conçu par José Valim en 2011, a emprunté des bonnes pratiques de Ruby, notamment dans le test avec ExUnit est une proche parente de Ruby's MiniTest. Alternativement, on peut utiliser des frameworks comme ESpec, inspiré de RSpec, pour ceux qui préfèrent une syntaxe plus proche du langage naturel. Les tests sont généralement écrits dans un dossier `test` et suivent la convention `nom_du_module_test.exs`.
 
-- La documentation officielle d'ExUnit: https://hexdocs.pm/ex_unit/
-- Article sur les tests automatisés en Elixir: https://dockyard.com/blog/2016/01/28/writing-tests-and-defining-test-data-in-elixir
+## See Also (Voir aussi)
+- [Elixir School's Testing Guide](https://elixirschool.com/en/lessons/basics/testing/)
+- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir's Official Getting Started Guide (Testing)](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)

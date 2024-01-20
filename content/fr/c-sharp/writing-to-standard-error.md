@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers l'erreur standard"
-html_title:           "C#: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,31 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi & Comment?
+## Quoi & Pourquoi ?
 
-Si vous êtes programmeur, vous avez probablement déjà rencontré la notion d'écrire dans l'erreur standard. En bref, c'est le moyen pour un programme de communiquer des messages d'erreur ou de débogage à l'utilisateur ou aux développeurs. C'est une pratique courante dans la programmation, car cela permet de repérer et de résoudre rapidement les problèmes dans le code.
+Écrire sur l'erreur standard, c'est envoyer des messages d'erreur ou des diagnostics à un flux spécifique, distinct de la sortie standard. Les programmeurs le font pour séparer les erreurs des données de sortie normales, ce qui simplifie le débogage et la gestion des erreurs par les utilisateurs ou d'autres programmes.
 
-# Comment faire:
+## Comment faire :
 
-Voici un exemple de code en C# pour écrire dans l'erreur standard:
+```C#
+using System;
 
+class ErrorLoggingExample 
+{
+    static void Main() 
+    {
+        Console.WriteLine("C'est un message standard.");
+        Console.Error.WriteLine("Oops, une erreur est survenue!");
+
+        // Utilisez Try-Catch pour capturer les exceptions et les écrire sur stderr.
+        try
+        {
+            // Simulez une opération pouvant échouer...
+            throw new Exception("Un problème spécifique est apparu.");
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Erreur : {ex.Message}");
+        }
+    }
+}
 ```
-Console.Error.WriteLine("Erreur: impossible d'ouvrir le fichier");
+Sortie :
+```
+C'est un message standard.
+Oops, une erreur est survenue!
+Erreur : Un problème spécifique est apparu.
 ```
 
-La sortie de ce code sera affichée dans la console en tant que message d'erreur. Vous pouvez également utiliser la méthode Console.SetError() pour définir une autre sortie pour l'erreur standard, telle qu'un fichier de journal.
+## Plongée profonde :
 
-```
-Console.SetError(new StreamWriter("error_log.txt"));
-```
+Historiquement, l'erreur standard et la sortie standard étaient des concepts utilisés par Unix comme canaux de communication. En C#, `Console.Error` est une instance de `TextWriter`, et on l'utilise pour écrire des erreurs sans interférer avec la sortie standard `Console.Out`. Dans certains cas, on pourrait préférer des solutions de journalisation plus avancées comme `log4net` ou `NLog`. Leurs avantages incluent la configuration de la sévérité des messages et une facilité de maintenance. Côté implémentation, écrire sur `Console.Error` est aussi simple que sur `Console.Out`, mais il est important de gérer cela correctement, surtout pour les applications qui se composent avec d'autres outils via les pipelines de shell.
 
-# Exploration approfondie:
+## Voir aussi :
 
-La pratique d'écrire dans l'erreur standard trouve ses racines dans le langage C, où un programmeur pouvait rediriger la sortie d'erreur pour la traiter séparément de la sortie standard. Dans d'autres langages, on peut utiliser des commandes telles que 'syslog' en C++ ou 'logging' en Python pour enregistrer ces messages d'erreur. Il est important de noter que l'écriture dans l'erreur standard ne doit pas être confondue avec les erreurs lancées par le code lui-même. Les messages d'erreur personnalisés doivent toujours être rédigés de manière appropriée.
-
-# Voir aussi:
-
-Voici quelques sources utiles pour en savoir plus sur l'écriture dans l'erreur standard:
-
-- Microsoft: https://docs.microsoft.com/fr-fr/dotnet/api/system.console.seterror
-- Stack Overflow: https://stackoverflow.com/questions/8877127/print-messages-to-the-console-not-stderror-in-c-sharp-console-applications
+- Documentation Microsoft sur `Console.Error`: https://docs.microsoft.com/fr-fr/dotnet/api/system.console.error
+- Introduction aux flux standard (en anglais): https://en.wikipedia.org/wiki/Standard_streams
+- Guide sur la gestion des erreurs en C# : https://docs.microsoft.com/fr-fr/dotnet/csharp/fundamentals/exceptions/exception-handling
+- Pour aller plus loin dans la journalisation : https://nlog-project.org/ et https://logging.apache.org/log4net/

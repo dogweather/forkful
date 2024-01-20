@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Rust: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Es hora de escribir pruebas en Rust!
+## Qué y Por Qué?
 
-## ¿Qué y por qué?
+Escribir pruebas es crear código para verificar que otro código funcione correctamente. Los programadores las usan para atrapar errores, evitar regresiones y garantizar que el comportamiento del código se mantenga tras cambios y adiciones futuras.
 
-Escribir pruebas en Rust significa escribir código que verifica si nuestro programa funciona como debe. Los programadores hacen esto para asegurarse de que su código sea eficiente y libre de errores. De esta manera, podemos confiar en nuestro código y tener la tranquilidad de que funcionará correctamente.
+## Cómo hacerlo:
 
-## Cómo:
-
-Para escribir pruebas en Rust, necesitamos utilizar la macro `assert!` que nos ayuda a comparar un valor esperado con el valor real. Si los dos valores son iguales, la prueba pasará; si son diferentes, la prueba fallará. Aquí hay un ejemplo:
+En Rust, escribirás pruebas unitarias en el mismo archivo de tu código usando el atributo `#[test]`. Aquí tienes un ejemplo simple de una función y su prueba:
 
 ```Rust
-fn sum(x: i32, y: i32) -> i32 {
-    x + y
+fn suma(a: i32, b: i32) -> i32 {
+    a + b
 }
 
-#[test]
-fn test_sum() {
-    assert!(sum(2, 3) == 5);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn prueba_suma() {
+        assert_eq!(suma(2, 2), 4);
+    }
 }
 ```
 
-## Profundizando
+Si corres las pruebas con `cargo test`, deberías ver algo así:
 
-Escribir pruebas es una práctica común en la programación. Nos permite detectar errores en el código antes de que lleguen a producción y sean más costosos de arreglar. En Rust, también podemos usar la macro `assert_eq!` para verificar si dos valores son iguales y `assert_ne!` para verificar si son diferentes.
+```
+   Compiling mi_caja v0.1.0 (/path/to/mi_caja)
+    Finished test [unoptimized + debuginfo] target(s) in 0.31s
+     Running unittests src/lib.rs (target/debug/deps/mi_caja-abc123)
 
-Hay otras herramientas disponibles para escribir pruebas en Rust, como `cargo test`, que nos permite ejecutar todas las pruebas de nuestro proyecto con un solo comando. También existen bibliotecas de pruebas como `rustfix` y `quickcheck` que pueden facilitar la escritura de pruebas más exhaustivas.
+running 1 test
+test tests::prueba_suma ... ok
 
-Además, escribir pruebas nos ayuda a documentar nuestro código y a comprender mejor su funcionalidad. Al indicar lo que se espera de nuestro programa en cada prueba, podemos tener una mejor comprensión de cómo debe funcionar y cómo interactúan sus diferentes partes.
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
 
-## Ver también:
+## Análisis Profundo:
 
-- [Documentación oficial de Rust sobre pruebas](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+Las pruebas en Rust tienen sus raíces en prácticas de desarrollo de software como TDD (Test-Driven Development). Aunque hay alternativas como las pruebas de integración, que se guardan en la carpeta `/tests`, las pruebas unitarias son esenciales y están integradas en la herramienta de construcción Cargo de Rust. Utilizan aserciones (`assert!`, `assert_eq!`, `assert_ne!`) para verificar condiciones y resultados esperados.
 
-¡Ahora que conoces la importancia de escribir pruebas en Rust, asegúrate de integrar esta práctica en tu flujo de trabajo de programación! Con pruebas robustas, podrás confiar en tu código y reducir el tiempo de depuración en el futuro.
+## Ver También:
+
+- La guía oficial de Rust sobre pruebas: [Rust Book - Testing](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- Documentación de Cargo con respecto a las pruebas: [Cargo Guide - Tests](https://doc.rust-lang.org/cargo/guide/tests.html)

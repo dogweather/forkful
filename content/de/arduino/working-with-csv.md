@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Arduino: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,70 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist CSV & Warum nutzen Programmierer es?
-CSV steht für "Comma Separated Values" und ist ein Dateiformat, das verwendet wird, um Daten in Tabellenform darzustellen. Programmierer nutzen CSV, um Daten zwischen verschiedenen Systemen auszutauschen oder um sie in Datenbanken zu importieren und exportieren.
+## Was & Warum?
+CSV steht für "Comma-Separated Values", ein Dateiformat, das Daten in tabellarischer Form speichert. Programmierer nutzen CSV häufig für Datenspeicherung und -austausch, weil es einfach, menschenlesbar und weit verbreitet ist.
 
-## Wie funktioniert es:
-Mit Arduino kannst du Daten in CSV-Format lesen und schreiben. Hier ist ein Beispiel, wie du eine CSV-Datei auf einer SD-Karte erstellen und auslesen kannst:
+## How to:
+Mit dem Arduino kannst du CSV-Dateien lesen und schreiben. Hier ein Beispiel zum Schreiben von Daten in eine CSV-Datei auf einer SD-Karte:
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
-#include <String.h>
+File dataFile;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) {
-    ;
-  }
-
+  // Stelle sicher, dass deine SD-Karte initialisiert ist
   if (!SD.begin(4)) {
-    Serial.println("Karte konnte nicht initialisiert werden.");
+    Serial.println("SD-Kartenfehler");
     return;
   }
-
-  File dataFile = SD.open("daten.csv", FILE_WRITE);
-
-  if (dataFile) {
-    dataFile.println("Temperatur, Feuchtigkeit"); //Kopfzeile
-    dataFile.println("25, 50"); //Datenzeile
-    dataFile.println("26, 55"); //Datenzeile
-    dataFile.close();
-    Serial.println("Daten erfolgreich geschrieben.");
-  }
-  else {
-    Serial.println("Fehler beim Schreiben der Daten.");
-  }
   
-  dataFile = SD.open("daten.csv");
-
+  dataFile = SD.open("datalog.csv", FILE_WRITE);
+  
+  // Wenn die Datei geöffnet ist, schreibe Daten:
   if (dataFile) {
-    while (dataFile.available()) {
-      Serial.read();
-    }
+    dataFile.println("Temperatur,Luftfeuchtigkeit");
+    dataFile.println("23,45");
+    dataFile.println("25,50");
     dataFile.close();
-  }
-  else {
-    Serial.println("Fehler beim Lesen der Daten.");
+    Serial.println("Daten geschrieben");
+  } else {
+    Serial.println("Fehler beim Öffnen der Datei");
   }
 }
 
 void loop() {
+  // Nichts zu tun hier
 }
 ```
 
-Die Ausgabe auf dem seriellen Monitor sieht so aus:
-
+Sample output:
 ```
-Daten erfolgreich geschrieben.
-Temperatur, Feuchtigkeit
-25, 50
-26, 55
+Daten geschrieben
 ```
 
-## Tiefere Einblicke:
-CSV wurde in den 1970er Jahren entwickelt und ist immer noch ein beliebtes Format für den Datenaustausch. Alternativen wie JSON oder XML werden häufig in modernen Programmiersprachen verwendet, aber CSV hat den Vorteil, dass es einfach zu lesen und zu schreiben ist. Um mit CSV zu arbeiten, musst du die Daten in Zeilen und Spalten aufteilen und trennen.
+## Deep Dive
+CSV wurde bereits in den frühen Tagen der Computerei eingeführt, um Daten zwischen unterschiedlichen Anwendungen auszutauschen. Alternativen zu CSV können Formate wie JSON oder XML sein, die strukturiertere Daten ermöglichen, aber auch komplexer sind. Beim Umgang mit CSV auf Arduino muss auf Speicherplatz geachtet werden, da die Board-Ressourcen begrenzt sind. Verarbeiten kannst du CSV-Daten mit String-Splitting oder speziellen Bibliotheken.
 
-## Weitere Informationen:
-- [Offizielle Arduino Dokumentation zu SD-Karten](https://www.arduino.cc/en/Reference/SD)
-- [YouTube Tutorial zu CSV mit Arduino](https://www.youtube.com/watch?v=Sx_kUzXpM18&ab_channel=GreatScoots)
+## See Also
+- Arduino SD-Library Dokumentation: https://www.arduino.cc/en/Reference/SD
+- CSV Parsing Bibliothek für Arduino: https://github.com/szymonh/arduino-csv-lib
+- Überblick über das Dateiformat CSV: https://tools.ietf.org/html/rfc4180

@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers l'erreur standard"
-html_title:           "Fish Shell: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Quoi et Pourquoi ?
 
-Ecrire sur la sortie d'erreur standard (standard error) est une pratique courante dans la programmation. Il s'agit d'écrire des messages d'erreur ou de débogage directement dans la console plutôt que dans la sortie standard (standard output). Les programmeurs le font pour rendre leur code plus clair, notamment lorsqu'ils essaient de localiser et de résoudre des erreurs.
+Écrire sur l'erreur standard permet d'envoyer des messages d'erreur séparément des résultats normaux. Les programmeurs le font pour faciliter le débogage et la gestion des erreurs.
 
-## Comment faire:
+## Comment faire :
 
-```
-Fish Shell propose la commande "echo" pour écrire sur la sortie d'erreur standard. Voici un exemple de l'utiliser pour afficher un message d'erreur:
+Voici comment rediriger la sortie d'erreur standard (`stderr`) dans Fish Shell.
 
 ```Fish Shell
-echo "Erreur : nom de fichier invalide"
+# Envoyer un message d'erreur simple vers stderr
+echo "Erreur: quelque chose s'est mal passé" >&2
 
-``` 
-Le résultat dans la console serait :
-
+# Exemple avec une commande qui échoue et la redirection de l'erreur
+false 2> erreur.log
+cat erreur.log
 ```
-Erreur : nom de fichier invalide
+
+Sortie attendue pour `cat erreur.log` (si la commande précédente a échoué) :
+```
+false: command not found
 ```
 
-## Plongée en profondeur:
+## Plongée en profondeur
 
-Ecrire sur la sortie d'erreur standard a été rendu populaire par la pratique de la programmation en shell, qui utilise souvent la console comme principale interface utilisateur. Cependant, d'autres langages de programmation offrent également cette fonctionnalité, comme le C et le Java. 
+Avant, les scripts étaient limités à une seule sortie, ce qui compliquait la distinction entre les résultats et les erreurs. `stderr` fut créé pour cette séparation. D'autres shells comme Bash ou Zsh utilisent '2>', mais Fish utilise `>&2` pour simplifier la syntaxe. En interne, `stderr` est un canal avec le descripteur de fichier 2.
 
-Une alternative à l'écriture sur la sortie d'erreur standard est l'utilisation de journaux de débogage, qui stockent les messages dans un fichier pour une consultation ultérieure. Cependant, cela peut être moins pratique pour un débogage en temps réel.
+## Voir aussi
 
-Techniquement, écrire sur la sortie d'erreur standard est réalisé en dirigeant les messages vers le descripteur de fichier approprié (standard error est généralement le descripteur 2). Cette pratique est souvent combinée avec la redirection de la sortie standard vers un fichier à l'aide de l'opérateur ">>".
-
-## Voir aussi:
-
-- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel sur l'utilisation des erreurs standard en C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
+- [Fish Documentation on Redirection](https://fishshell.com/docs/current/tutorial.html#redirection)
+- [POSIX Standard on Standard Streams](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206)

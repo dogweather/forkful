@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "Kotlin: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,21 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם YAML היא פשוט תהליך שבו נוצר קובץ טקסט שמכיל נתונים מסוג מפתח עץ ותווי קו. תכונתה המשותפת היא קריאות, כך שמנמך את כמות הזמן שנדרש כדי לקרוא את הקובץ. הסיבה שמובילה מתכנתים לעבוד עם YAML היא כי היא מאפשרת ליצור קבצים קלים לקריאה ולעיבוד.
+YAML הוא פורמט קובץ המשמש לתיעוד הגדרות ונתונים. תוכניתנים עובדים עם YAML כי הוא אינטואיטיבי, קריא ומתאים לקונפיגורציות ונתונים היררכיים.
 
-## איך לבצע:
-```Kotlin
-val yaml = """ 
-    name: John Smith 
-    age: 30 
-    isMarried: true 
-""".trimIndent() 
+## איך לעשות:
+כדי לעבוד עם YAML ב-Kotlin, אנו נשתמש בספריית  `snakeyaml`. כאן דוגמא לקריאת קובץ YAML:
+
+```kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.InputStream
+
+fun main() {
+    val yaml = Yaml()
+    val inputStream: InputStream = this::class.java.classLoader.getResourceAsStream("config.yaml")
+    val data = yaml.load<Map<String, Any>>(inputStream)
+    println(data)
+}
 ```
-כדי ליצור קובץ YAML, מתחילים עם תווים כפולים ומגדירים את השדות והערכים בצורה של מיפתח עץ בין התווים. ניתן להכניס נתונים כמו סטרינגים, מספרים, בוליאניים, ועוד. לאחר התקנת הסיבובים המתאימים, התוכן של הקובץ YAML יופיע במופע המשוייך.
 
-## מעמקים:
-YAML נוצרה בשנת 2001 ונחשבת לשפת מממודרגת. ישנן אלטרנטיבות משנה כמו XML ו-JSON, אך YAML נחשבת לפשוטה יותר משתי האפשרויות האחרות. הפימור הראשון לקובץ YAML היה של קצת טיפש, כך שכדאי להשתמש בעצמך כאשר אתה מוכן לעבוד על קובץ חדש.
+פלט דוגמא עבור קובץ `config.yaml`:
 
-## ראה גם:
-למידע נוסף על YAML, ניתן לבחון את הקישורים הבאים:
-- [הגדרת YAML](https://yaml.org/spec/1.2/spec.html)
+```yaml
+database:
+  host: localhost
+  port: 3306
+```
+
+היה יוצא בקונסול:
+
+```kotlin
+{database={host=localhost, port=3306}}
+```
+
+## עיון מעמיק
+YAML, שמתעתיק ל-"YAML Ain't Markup Language", הוא אלטרנטיבה ל-JSON ו-XML. הוא נוצר ב-2001 ונועד להיות אנושי-קריא יותר. קיימות ספריות חלופיות כמו Jackson או kotlinx.serialization שמאפשרות עבודה עם YAML ב-Kotlin.
+
+## ראה גם
+- [הדוקומנטציה הרשמית של YAML](https://yaml.org)
+- [Jackson library](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)
+- [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)

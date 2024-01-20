@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Bash: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-JSON (JavaScript Object Notation) on tiedostomuoto, joka mahdollistaa tietojen tallentamisen ja jakamisen jäsennellyssä muodossa. JSONia käytetään usein ohjelmoijien kesken esimerkiksi web-sovelluksien kehityksessä. Se on suosittu, sillä se on helppo lukea ja muokata, sekä helposti yhteensopiva muiden ohjelmistojen kanssa.
+## Mikä ja Miksi?
+JSON on kevyt dataformaatti, jota käytetään tietojen tallentamiseen ja verkon yli siirtämiseen. Ohjelmoijat käsittelevät JSON-tiedostoja, koska ne ovat helppolukuisia ihmisille ja helppo jäsentää koneille.
 
-## Kuinka tehdään:
-JSON-tiedosto koostuu avaimista ja niitä vastaavista arvoista. Avaimet ovat merkkijonoja ja arvot voivat olla esimerkiksi lukuja, merkkijonoja tai taulukoita. Tämän lisäksi JSON-tiedostoon kuuluu alku- ja loppumerkit "{ }". Koodiesimerkki näyttää, kuinka luodaan JSON-tiedosto Bashilla ja tulostetaan sen sisältö komentoriville.
-
+## Kuinka:
 ```Bash
-# Luodaan JSON-tiedosto
-echo '{"nimi": "Maija Meikäläinen", "ikä": 30, "harrastukset": ["lukeminen", "lenkkeily"]}' > tiedosto.json
+# JSON-tiedoston purkaminen jq:lla
+cat data.json | jq '.'
 
-# Tulostetaan JSON-tiedoston sisältö
-cat tiedosto.json
-```
-Tulostus näyttää seuraavalta:
+# Tietyn avaimen arvon hakeminen
+jq '.key' data.json
 
-```Bash
-{"nimi": "Maija Meikäläinen", "ikä": 30, "harrastukset": ["lukeminen", "lenkkeily"]}
+# Uuden JSON-tiedoston luominen komennolla
+echo '{"name": "Linux", "type": "Operating System"}' > os.json
 ```
 
-## Syväluotaus:
-JSON luotiin alunperin Javascript-kielen yhteyteen, mutta siitä on tullut yleisesti käytetty tiedostomuoto myös muiden kielien, kuten Bashin, keskuudessa. Alternatiivisesti voit tallentaa tietoja myös esimerkiksi CSV- tai XML-tiedostoiksi, mutta JSON on usein selkeämpi ja helpompi käsitellä. Bashilla JSON-tietojen käsittelyyn on olemassa myös erilaisia työkaluja ja kirjastoja, jotka tarjoavat lisäominaisuuksia ja helpottavat työtä.
+Esimerkkituloste JSON-tiedoston purkamisesta jq:lla:
+```Bash
+{
+  "name": "Linux",
+  "type": "Operating System"
+}
+```
 
-## Katso myös:
-- [JSON:n virallinen sivusto](https://www.json.org/)
-- [Bashin JSON-kirjasto jq](https://stedolan.github.io/jq/)
+## Syväsukellus:
+JSON, lyhenne sanoista JavaScript Object Notation, on syntynyt 2000-luvun alussa web-kehityksen tarpeisiin. Vaihtoehtoina käytetään esimerkiksi XML:tä, mutta JSON voittaa usein selkeydellään ja lyhyemmillä viesteillään. JSONin käsittelyssä käytetään yleensä valmiita kirjastoja, kuten `jq` komentorivillä tai vastaavia työkaluja eri ohjelmointikielissä.
+
+## Näin Lisäksi:
+- `jq`-työkalun ohjeet ja dokumentaatio: [stedolan.github.io/jq](https://stedolan.github.io/jq/)
+- Bash-skriptaaminen: [gnu.org](https://www.gnu.org/software/bash/manual/bash.html)

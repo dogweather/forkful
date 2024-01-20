@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Clojure: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que le traitement JSON et pourquoi les programmeurs l'utilisent?
+## What & Why?
+JSON c'est le format d'échange de données. Les devs l'utilisent pour sa simplicité et interopérabilité entre systèmes.
 
-JSON, ou JavaScript Object Notation, est un format de données populaire utilisé pour stocker et échanger des informations structurées. Il est principalement utilisé dans le développement web pour transférer des données entre un serveur et un navigateur. Les programmeurs l'utilisent car il est facile à lire et à écrire, et est pris en charge par de nombreux langages de programmation.
+## How to:
+**Lire un JSON:**
+```Clojure
+(require '[clojure.data.json :as json])
 
-Comment faire:
+(defn lire-json [json-str]
+  (json/read-str json-str :key-fn keyword))
 
-```Clojure 
-;; pour convertir un objet Clojure en JSON
-(clojure.data.json/write-str {:nom "John" :age 25})
-
-// {"nom": "John", "age": 25}
-
-;; pour convertir une chaîne JSON en objet Clojure
-(clojure.data.json/read-str "{\"nom\": \"Jane\", \"age\": 30}")
-
-// {:nom "Jane", :age 30}
+(lire-json "{\"name\":\"Dupont\",\"age\":42}")
+;; => {:name "Dupont", :age 42}
 ```
 
-Plongée en profondeur:
+**Écrire en JSON:**
+```Clojure
+(require '[clojure.data.json :as json])
 
-JSON a été créé en 2001 pour résoudre les problèmes liés au traitement des données dans les applications web. Avant JSON, XML était principalement utilisé, mais il était plus compliqué à lire et écrire. D'autres alternatives à JSON incluent YAML et EDN. En interne, Clojure utilise la bibliothèque Jackson pour convertir des données entre Clojure et JSON.
+(defn ecrire-json [data]
+  (json/write-str data))
 
-À voir:
+(ecrire-json {:name "Dupont" :age 42})
+;; => "{\"name\":\"Dupont\",\"age\":42}"
+```
 
-- Bibliothèque de traitement JSON Jackson: https://github.com/FasterXML/jackson
-- Documentation Clojure pour la bibliothèque de données JSON: https://clojure.github.io/data.json/
+## Deep Dive
+JSON ou JavaScript Object Notation a été introduit en 2001. YAML et XML sont des alternatives, mais JSON domine pour sa facilité de lecture et de mapping à des structures de données. En Clojure, `clojure.data.json` permet de sérialiser et désérialiser efficacement grâce à son intégration avec la plateforme JVM.
+
+## See Also
+- ClojureDocs pour `clojure.data.json`: https://clojuredocs.org/clojure.data.json
+- Tutoriel JSON en Clojure: https://www.learn-clojure.com/working_with_json/
+- Spécification JSON: https://www.json.org/json-fr.html

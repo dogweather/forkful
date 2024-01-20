@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med yaml"
-html_title:           "Kotlin: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-YAML står for "YAML Ain't Markup Language" og er en enkel måte for programmerere å lagre og dele strukturert data. Det er mye brukt for konfigurasjonsfiler, da det er enkelt å lese og skrive for både mennesker og maskiner.
+## Hva & Hvorfor?
+YAML er et menneskelesbart dataformat for konfigurasjonsfiler og datautveksling. Programmerere bruker YAML fordi det er lett å skrive og lese, og det passer bra for konfigurering av applikasjoner og tjenester.
 
-# Hvordan:
-Kotlin har innebygd støtte for YAML ved hjelp av biblioteket SnakeYAML. For å bruke dette biblioteket, må du først importere det i prosjektet ditt:
+## Hvordan gjøre det:
+For å jobbe med YAML i Kotlin, kan vi bruke et bibliotek som `snakeyaml`. Først, legg til avhengigheten i `build.gradle`:
 
-```Kotlin
-implementation 'org.yaml:snakeyaml:1.27'
+```kotlin
+dependencies {
+    implementation("org.yaml:snakeyaml:1.29")
+}
 ```
 
-Deretter kan du enkelt lese og skrive YAML-filer ved hjelp av følgende kode:
+Deretter, kod et eksempel som leser en enkel YAML-fil:
 
-```Kotlin
-// Les en YAML-fil
-val input = FileInputStream("min_fil.yaml")
-val yaml = Yaml()
-val data = yaml.load(input)
+```kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.File
 
-// Skriv til en YAML-fil
-val output = FileWriter("min_ut_fil.yaml")
-yaml.dump(data, output)
+fun main() {
+    val yaml = Yaml()
+    val inputFile = File("config.yaml")
+    val data = yaml.load<Map<String, Any>>(inputFile.inputStream())
+
+    println(data["key"]) // Ersätt "key" med faktisk nøkkel fra YAML.
+}
 ```
 
-# Dypdykk:
-YAML ble utviklet i 2001 som en enklere alternativ til XML og JSON for å representere datastrukturer. Det brukes i stor grad i konfigurasjonsfiler for programmer og har også fått støtte i populære programmeringsspråk som Java, Python og selvfølgelig Kotlin.
+`config.yaml` kan se slik ut:
+```yaml
+key: Verdi
+```
 
-Andre alternativer til YAML inkluderer XML og JSON, men YAML skiller seg ut på grunn av sin enkle og menneskelesbare syntaks. En ulempe med YAML er at det ikke er like strukturert som XML, noe som kan føre til problemer med validering.
+Og output blir:
+```
+Verdi
+```
 
-Den grunnleggende syntaksen til YAML er basert på innrykk og bruk av ulike spesialtegn som kolon og streker. Det er viktig å være nøye med innrykk og bruke riktige spesialtegn for å unngå feil i YAML-filen.
+## Dypdykk:
+YAML, som står for "YAML Ain't Markup Language", ble introdusert tidlig på 2000-tallet og er et alternativ til XML og JSON for data serialisering. Det er spesielt populært i DevOps-praksis, med verktøy som Docker og Kubernetes. YAMLs designprinsipper inkluderer leselighet og støtte for datatyper som lister og ordbøker (maps), noe som ikke naturlig støttes av properties-filer. SnakeYAML-biblioteket er en populær Java-implementasjon for å jobbe med YAML, og fungerer fint med Kotlin.
 
-# Se Også:
-- [SnakeYAML dokumentasjon] (https://bitbucket.org/asomov/snakeyaml/src/default/)
-- [Introduksjon til YAML] (https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
-- [JSON vs XML vs YAML] (https://stackoverflow.com/questions/3536898/json-vs-xml-vs-yaml)
+## Se Også:
+- [SnakeYAML Engine dokumentasjon](https://bitbucket.org/asomov/snakeyaml-engine)
+- [Offisiell YAML nettside](https://yaml.org/)
+- [Kotlin dokumentasjon](https://kotlinlang.org/docs/reference/)
+- [Eksempel på YAML filer i Kubernetes](https://kubernetes.io/docs/concepts/configuration/overview/)

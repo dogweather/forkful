@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json"
-html_title:           "Clojure: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Trabalhando com JSON"
+html_title:           "Arduino: Trabalhando com JSON"
+simple_title:         "Trabalhando com JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que & Porquê?
+Trabalhar com JSON (JavaScript Object Notation) significa manipular dados estruturados, simples e leves. Programadores fazem isso para intercambiar dados de forma eficaz entre diferentes sistemas ou componentes de software, especialmente em APIs e aplicações web.
 
-Trabalhar com JSON significa manipular dados no formato de JavaScript Object Notation. Programadores o fazem para compartilhar e armazenar informações de forma estruturada e legível por máquina.
+## Como Fazer:
+Para manusear JSON em Clojure, pode-se usar a biblioteca `cheshire`, que é bem direta. Primeiro, inclua a dependência no seu projeto, depois siga os exemplos abaixo.
 
-## Como fazer:
+```clojure
+;; Adicione a dependência no seu arquivo project.clj ou deps.edn
+;; [cheshire "5.10.1"] ; Verifique a última versão antes de adicionar
 
-Usando a biblioteca nativa `clojure.data.json`, é possível converter dados entre formatos de string e tipos de dados do Clojure facilmente:
+;; Importe a biblioteca
+(require '[cheshire.core :as json])
 
-```Clojure
-(require '[clojure.data.json :refer [read-str write-str]])
+;; Parse de JSON para map do Clojure
+(json/parse-string "{\"nome\": \"Clojure\", \"legal\": true}")
+;; => {"nome" "Clojure", "legal" true}
 
-;; Convertendo uma string JSON em um mapa:
-(def json "{:nome \"João\", :idade 25}")
-(read-str json)
-;; => {:nome "João", :idade 25}
-
-;; Convertendo um mapa em uma string JSON:
-(def map {:nome "Maria", :idade 30})
-(write-str map)
-;; => "{\"nome\":\"Maria\",\"idade\":30}"
+;; Gerar uma string JSON a partir de um map do Clojure
+(json/generate-string {"nome" "Clojure" "legal" true})
+;; => "{\"nome\":\"Clojure\",\"legal\":true}"
 ```
 
-Também é possível gerar e manipular dados JSON com a biblioteca `cheshire`:
+## Mergulho Profundo:
+JSON foi proposto por Douglas Crockford em meados dos anos 2000 e rapidamente se tornou o padrão de facto para intercâmbio de dados. Alternativas incluem XML e YAML, mas JSON predomina devido à sua simplicidade. Em Clojure, a conversão entre JSON e estruturas de dados nativas é eficiente graças ao uso da JVM e bibliotecas otimizadas como cheshire, que faz uso da Jackson sob o capô para parse e geração.
 
-```Clojure
-(require '[cheshire.core :refer [generate-string parse-string]])
-
-;; Gerando uma string JSON a partir de um mapa:
-(generate-string {:linguagem ["Clojure" "Python" "Java"]})
-;; => "{\"linguagem\":[\"Clojure\",\"Python\",\"Java\"]}"
-
-;; Convertendo uma string JSON em uma sequência:
-(parse-string "[1, 2, 3]")
-;; => [1 2 3]
-```
-
-## Profundidade:
-
-JSON foi criado por Douglas Crockford em 2001 e se tornou um formato popular para troca de dados devido à sua simplicidade e legibilidade. Existem outras formas de representar e manipular dados estruturados, como o XML, mas o JSON é amplamente utilizado por sua fácil implementação e interpretação em diversas linguagens de programação.
-
-## Veja também:
-
-- [Documentação da biblioteca clojure.data.json](https://clojure.github.io/data.json/)
-- [Documentação da biblioteca cheshire](https://github.com/dakrone/cheshire)
-- [Especificação do formato JSON](https://www.json.org/json-pt.html)
+## Veja Também:
+- Cheshire: [https://github.com/dakrone/cheshire](https://github.com/dakrone/cheshire)
+- Documentação oficial do JSON: [https://www.json.org/json-pt.html](https://www.json.org/json-pt.html)
+- Comparativo entre JSON e XML: [https://www.w3schools.com/js/js_json_xml.asp](https://www.w3schools.com/js/js_json_xml.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "Python: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Python"
 category:             "Python"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
+Skriving av tester handler om å lage automatiserte kontroller som sikrer at koden fungerer som forventet. Programmerere gjør dette for å avdekke feil tidlig, forbedre kodekvaliteten og unngå fremtidige problemer.
 
-Å skrive tester er en viktig del av programmeringsprosessen. Det er en prosess der vi skriver kode for å teste koden vi allerede har skrevet og sikre at den fungerer som den skal. Dette hjelper programvareutviklere med å identifisere og fikse feil i koden sin, og sikrer at den fungerer som forventet.
+## Hvordan:
+Python har et innebygd modul kalt `unittest` for å skrive og kjøre tester. Her er et eksempel på en enkel test:
 
-# Hvordan:
+```python
+import unittest
 
-Her er et enkelt eksempel på hvordan man kan skrive tester i Python bruker "assert" uttalelser:
+def add(a, b):
+    return a + b
 
-```Python
-# Opprett en funksjon som legger sammen to tall
-def add(x, y):
-    return x + y
+class TestMathFunctions(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(-1, -1), -2)
 
-# Definer tester for funksjonen vår
-assert add(2, 3) == 5  # forventet resultat er 5
-assert add(5, -2) == 3 # forventet resultat er 3
-
-print("Alle tester kjørte uten feil, funksjonen fungerer som den skal!")
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Her har vi skrevet en test for vår "add" funksjon ved hjelp av "assert" uttalelser. Hvis noe ikke fungerer som det skal, vil disse uttalelsene gi en feilmelding og hjelpe oss med å finne feilen.
+Kjør testen, og du får en output som bekrefter om testene er vellykkede eller ikke.
 
-# Dykk dypere:
+## Dypdykk:
+Før `unittest` var det vanligere å skrive tester uten et standard rammeverk, eller å bruke tredjepartsbiblioteker som `nose` eller `pytest`. Disse bibliotekene gir flere funksjoner og enklere syntax, men `unittest` er fortsatt populært fordi det er en del av Python's standardbibliotek. Testene blir skrevet i klasser som arver fra `unittest.TestCase`, og hver testmetode starter med ordet `test`.
 
-I en stadig mer kompleks IT-verden er det viktig å skrive tester for å sikre at koden vår fungerer som den skal. Å ha gode tester i stedet for å debugge koden etter at den allerede er skrevet, sparer oss for mye tid og frustasjon.
-
-Et alternativ til å skrive tester er å bruke en teknikk som kalles "Test Driven Development" (TDD). Dette er en metode der tester skrives før selve koden, og dermed sikrer at koden som blir skrevet oppfyller de ønskede funksjonene.
-
-Du kan også bruke spesielle programmer som "unittest" eller "pytest" for å skrive og kjøre tester i Python. Disse verktøyene tillater deg å skrive mer komplekse tester og kjøre dem automatisk.
-
-# Se også:
-
-- [Test Driven Development - en oversikt](https://agilemanifesto.org/principles.html)
-- [Hvordan bruke unittest og pytest i Python](https://realpython.com/python-testing/)
+## Se Også:
+- Pythons offisielle dokumentasjon om testing: https://docs.python.org/3/library/unittest.html
+- Pytest, et populært testing rammeverk: https://pytest.org
+- Artikkel om fordelene med testdrevet utvikling (TDD): https://realpython.com/test-driven-development-of-a-django-restful-api/

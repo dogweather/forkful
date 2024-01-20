@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "Go: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Skrive til standard feil (`stderr`) flytter feilmeldinger og diagnostikk bort fra vanlig utdata (`stdout`). Vi gjør det for å skille normalt resultat fra feil, slik at det blir lettere å oppdage og håndtere feil.
 
-Å skrive til standard feil er en måte for utviklere å fange og håndtere feil i sitt Go-programmeringsspråk. Dette lar programmerere få en detaljert rapport om feil og hjelper med å feilsøke og forbedre koden sin.
+## Hvordan gjøre det:
+```Go
+package main
 
-## Hvordan:
+import (
+	"fmt"
+	"os"
+)
 
-For å skrive til standard feil i Go, bruker du fmt.Fprintf() -funksjonen og angir standard feil som det første argumentet, etterfulgt av en formatstreng og eventuelle verdier du vil skrive ut. Se eksempelet nedenfor:
-
+func main() {
+	_, err := os.Open("ikke-eksisterende-fil.txt")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Feil ved åpning av fil:", err)
+	}
+}
 ```
-fmt.Fprintf(os.Stderr, "Feil oppstod: %s", err)
+
+Eksempel utdata:
+```
+Feil ved åpning av fil: open ikke-eksisterende-fil.txt: no such file or directory
 ```
 
-Dette vil skrive ut feilmeldingen til standard feil, som vanligvis er konsollen når du kjører programmet fra terminalen. Her er et annet eksempel som skriver ut til standard feil på en enklere måte:
+## Dypdykk
+Historisk sett, skiller man mellom `stdout` og `stderr` for å tillate omdirigering i kommandolinje-interfaces. Alternativer for skriving til `stderr` inkluderer logger-biblioteker, som kan gi mer funksjonalitet. `os.Stderr` er en global variabel i Go’s os-pakke, implementert som en `*os.File`, og kan brukes akkurat som vanlige filer til I/O-operasjoner.
 
-```
-fmt.Fprintln(os.Stderr, "Oisann, en feil skjedde!")
-```
-
-Begge eksemplene ovenfor vil skrive ut teksten til standard feil og legge til en linjeskift etterpå.
-
-## Dypdykk:
-
-Skrive til standard feil har eksistert siden de første dager av programmering og er en vanlig måte å håndtere feil på. Alternativer til dette er for eksempel å logge feil i en fil eller sende en e-post med feilmeldingen. Selv om dette kan være mer pålitelig, er det også mer komplekst og krever ekstra kode og ressurser.
-
-Go sitt innebygde fmt-pakke gjør det enkelt å skrive til standard feil, og det er derfor valgt av mange utviklere som en effektiv og enkel måte å håndtere feil på.
-
-## Se også:
-
-- [Official Go documentation for fmt package](https://golang.org/pkg/fmt/)
-- [Error handling in Go: Best Practices](https://blog.golang.org/error-handling-and-go)
+## Se også
+- Go dokumentasjon for `os` pakken: https://golang.org/pkg/os/
+- Go blogg om feilhåndtering: https://blog.golang.org/error-handling-and-go
+- Unix filsystem og strømninger: http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/stdout.html

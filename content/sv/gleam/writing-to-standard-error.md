@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "Gleam: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Skriva till standard error (stderr) innebär att skicka error-meddelanden till en separat utström, vilket gör det lättare att skilja dem från vanlig output. Programmers gör detta för att förenkla felsökning och hantering av loggdata.
 
-Skriver du ibland till standard error när du programmerar? Om ja, då är du inte ensam! Att skriva till standard error är ett sätt att skicka ut felmeddelanden och annan information som kan vara användbar under utvecklingsprocessen. Det kan vara särskilt användbart när man vill felsöka och identifiera problem i koden.
+## Så här gör du:
+I Gleam kan du skriva till stderr genom att använda Erlang-bibliotekets funktioner. Här är ett exempel:
 
-# Hur gör man:
+```gleam
+import gleam/io
+import gleam/erlang
 
-Att skriva till standard error i Gleam är enkelt. Du behöver bara använda funktionen `std.error` och skicka med ditt meddelande som en sträng. Här är ett exempel på hur du skulle kunna använda detta i din kod:
-
-```Gleam
-std.error("Ett fel har uppstått!")
+pub fn main() {
+  io.println("Detta är standard output.")
+  erlang.error("Detta är standard error.")
+}
 ```
+Kör koden ovan och du kommer att se:
 
-Detta kommer att skriva ut meddelandet "Ett fel har uppstått!" i din terminal.
+```
+Detta är standard output.
+Detta är standard error.
+```
+Notera att "Detta är standard error." kommer att visas i stderr-strömmen.
 
-# Djupdykning:
+## Djupdykning:
+Historiskt har separationen av standard output och standard error gjorts för att tillåta användare och andra program att skilja normala meddelanden från fel och varningar. Alternativ till att skriva direkt till stderr inkluderar loggbibliotek som kan hantera och dirigera loggar mer sofistikerat. En viktig implementationdetalj i Unix-liknande system är att stderr har filbeskrivare 2.
 
-Att skicka ut felmeddelanden är ett vanligt förfarande som används i de flesta programmeringsspråk, inklusive Gleam. Det är ett sätt att kommunicera med användaren eller utvecklaren om eventuella fel som uppstår under körningen av programmet. Alternativen till att skriva till standard error inkluderar att logga felmeddelanden i en loggfil eller att skicka dem via e-post.
-
-När det kommer till implementationen av att skriva till standard error i Gleam, använder man sig av standardbiblioteket `std.error`. Detta bibliotek innehåller funktioner som är specifikt utformade för att hantera felmeddelanden och skriva ut dem till standard error.
-
-# Se även:
-
-För mer information om att skriva till standard error och hur man kan använda det i Gleam, se följande resurser:
-
-- Officiell Gleam dokumentation: https://gleam.run/learn/stdlib#std-error
-- Gleam on Github: https://github.com/gleam-lang/gleam
-- En guide till Gleam för nybörjare: https://bageleerium.com/2020/05/21/a-gleam-tutorial-for-absolute-beginners/
+## Se även:
+- Gleam's officiella dokumentation: [https://gleam.run/](https://gleam.run/)
+- Bakgrundsinformation om standardströmmar: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

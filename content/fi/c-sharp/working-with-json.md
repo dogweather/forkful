@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "C#: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-JSON on lyhenne sanoista JavaScript Object Notation ja se on yksi yleisimmistä tavoista tallentaa ja siirtää tietoa ohjelmoinnissa. Monet ohjelmoijat käyttävät JSONia, koska se on helppo ymmärtää ja käyttää, ja se on myös yhteensopiva monien ohjelmointikielten kanssa.
+## What & Why?
+JSON eli JavaScript Object Notation on tiedonvaihtoformaatti. Helpolla luettavuudella ja keveydellä se on ideaali webb-palvelinten ja -sovellusten väliseen dataan, siksi koodarit käyttävät sitä paljon.
 
-## Näin teet sen:
-Ohjelmointiesimerkit ja esimerkkilähtö ```C# ...``` koodipalikoissa.
-
+## How to:
 ```C#
-// Luodaan JSON-objekti
-var json = "{ "name": "Maija", "age": 25, "hobby": "programming" }";
+using System;
+using System.Text.Json;
 
-// Muunnamme JSON-objektin C#-objektiksi
-var csharpObj = JsonConvert.DeserializeObject(json);
+class Program
+{
+    static void Main()
+    {
+        // JSON-olion luominen
+        string json = "{\"nimi\": \"Matti\", \"ika\": 30}";
+        
+        // Deserialisointi
+        Henkilo henkilo = JsonSerializer.Deserialize<Henkilo>(json);
+        Console.WriteLine($"{henkilo.Nimi} on {henkilo.Ika} vuotta vanha.");
+        
+        // Muuttujan muokkaus
+        henkilo.Ika = 31;
+        
+        // Serialisointi
+        string uusiJson = JsonSerializer.Serialize(henkilo);
+        Console.WriteLine(uusiJson);
+    }
+}
 
-// Haetaan haluttu tieto C#-objektista
-var name = csharpObj.name;
-
-// Tulostetaan tieto konsoliin
-Console.WriteLine($"Nimeni on {name}.");
-
+public class Henkilo
+{
+    public string Nimi { get; set; }
+    public int Ika { get; set; }
+}
+```
+Output:
+```
+Matti on 30 vuotta vanha.
+{"nimi":"Matti","ika":31}
 ```
 
-Tulostus: Nimeni on Maija.
+## Deep Dive
+JSON lanseerattiin 2000-luvun alussa ja se on XML:n kevyempi vaihtoehto. C#:ssa `System.Text.Json` ja `Newtonsoft.Json` ovat suosittuja kirjastoja JSONin käsittelyyn. `System.Text.Json` on .NET Core 3.0:sta lähtien vakio, sen suorituskyky on hyvä ja se tukee uusinta C#-standardia, kun taas `Newtonsoft.Json` tarjoaa lisäominaisuuksia ja laajempaa yhteensopivuutta.
 
-## Syväsukellus:
-JSON kehitettiin alun perin JavaScriptin yhteyteen, mutta siitä on tullut hyvin suosittu tietojen tallennusmuoto myös muiden ohjelmointikielten, kuten C#, kanssa. JSONia käytetään usein web-sovellusten tiedonsiirrossa ja se on myös yhteensopiva monien tietokantojen kanssa. Joitakin vaihtoehtoisia tapoja tallentaa ja siirtää tietoa ovat esimerkiksi XML ja CSV. JSON on yleensä näistä vaihtoehdoista kevyempi ja helppokäyttöisempi.
-
-## Katso myös:
-- Newtonsoft.Json-kirjasto: https://www.newtonsoft.com/json
-- JSON-opas: https://www.json.org/json-fi.html
-- CSV vs. JSON: https://www.sitepoint.com/comparing-javascript-object-notation-json-real-children-comma-delimited-csv-format/
+## See Also
+- Microsoftin JSON-dokumentaatio: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview)
+- Newtonsoft.Json-dokumentaatio: [www.newtonsoft.com](https://www.newtonsoft.com/json)
+- JSON-standardin kotisivu: [www.json.org](http://json.org/)

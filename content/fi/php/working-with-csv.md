@@ -1,7 +1,7 @@
 ---
-title:                "Töitä csv:n kanssa"
-html_title:           "PHP: Töitä csv:n kanssa"
-simple_title:         "Töitä csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
-CSV (comma-separated values) on tietomuoto, jota käytetään tallentamaan taulukkomuotoista dataa, kuten tietokantojen sisältöjä tai Excel-tiedostoja. PHP-ohjelmoijat käyttävät CSV-tiedostoja lataamaan, lukemaan ja käsittelemään tietoja, jotka on tallennettu tähän muotoon.
+## What & Why?
+Työskentely CSV:n kanssa - "mikä ja miksi?" CSV on Comma-Separated Values tiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät sitä helpon siirrettävyyden ja ihmisen lukuisten ominaisuuksien vuoksi.
 
-# Kuinka:
-Tässä esimerkkejä, kuinka käyttää PHP:ta CSV-tiedostojen kanssa.
-
-**Lue CSV-tiedosto ja tulosta sen sisältö:**
-```PHP
-$file = fopen('tiedosto.csv', 'r');
-while (($line = fgetcsv($file)) !== FALSE) {
-  print_r($line);
+## How to:
+Lue CSV-tiedosto:
+```php
+<?php
+$filename = 'data.csv';
+if (($handle = fopen($filename, "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        print_r($data);
+    }
+    fclose($handle);
 }
-fclose($file);
+?>
 ```
-Tämä koodi avaa CSV-tiedoston, lukee sen sisällön rivi riviltä ja tulostaa jokaisen rivin taulukkona.
-
-**Luo uusi CSV-tiedosto ja tallenna siihen tietoja:**
-```PHP
-$file = fopen('tiedosto.csv', 'w');
-$data = array(
-  array('Otsikko1', 'Otsikko2', 'Otsikko3'),
-  array('Data1', 'Data2', 'Data3')
+Luo CSV-tiedosto:
+```php
+<?php
+$list = array(
+    array('otsikko1', 'otsikko2', 'otsikko3'),
+    array('data1', 'data2', 'data3'),
+    array('data4', 'data5', 'data6')
 );
-foreach ($data as $line) {
-  fputcsv($file, $line);
+
+$fp = fopen('file.csv', 'w');
+
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
 }
-fclose($file);
+
+fclose($fp);
+?>
 ```
-Tämä koodi luo uuden CSV-tiedoston ja tallentaa siihen taulukkona annetut tiedot. Jokainen taulukon rivi vastaa yhtä riviä CSV-tiedostossa.
+## Deep Dive
+CSV on vanhaa teknologiaa, mutta edelleen laajasti käytössä joustavuutensa vuoksi. Vaihtoehtoina ovat esimerkiksi JSON ja XML, mutta ne eivät välttämättä ole yhtä yksinkertaisia ​​parannetun informaation hierarkian vuoksi. PHP:n `fgetcsv` ja `fputcsv` funktiot helpottavat CSV-tiedostojen käsittelyä ja ovat olleet kiinteä osa kieltä version 4.x asti.
 
-# Syvemmälle:
-CSV-tiedostoja käytetään laajasti erilaisten tietojen tallentamiseen ja siirtämiseen, ja ne ovat erityisen hyödyllisiä web-kehityksessä. CSV korvaa vanhemmat muodot, kuten DBF ja DIF, ja sen suosio johtuu sen yksinkertaisuudesta ja yhteensopivuudesta useiden ohjelmistojen kanssa.
-
-On myös muita tapoja käsitellä taulukkomuotoista dataa PHP:ssa, kuten käyttämällä tietokantakyselyitä tai XML-tiedostoja. Mutta CSV-tiedostojen käyttö on edelleen suosittua erityisesti, kun tietoja halutaan jakaa muiden ohjelmien kanssa.
-
-PHP:n avulla CSV-tiedostojen käsittely on helppoa ja nopeaa, mutta on tärkeää varmistaa tiedostojen oikea formaatti ja tietojen oikea muotoilu, jotta koodi toimii oikein.
-
-# Katso myös:
-- PHP:n virallinen dokumentaatio CSV-tiedostojen käsittelemisestä: https://www.php.net/manual/en/function.fgetcsv.php
-- Mahdollisuus tallentaa tietoja tietokantoihin: https://www.php.net/manual/en/book.pdo.php
-- XML-tiedostojen käsittely PHP:ssa: https://www.php.net/manual/en/book.xml.php
+## See Also
+- CSV-tiedoston muotoilun standardi: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+- Vaihtoehdot CSV:lle: [JSON](https://www.json.org/json-en.html) ja [XML](https://www.w3.org/XML/)

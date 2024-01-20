@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड त्रुटि पर लिखना"
-html_title:           "Java: स्टैंडर्ड त्रुटि पर लिखना"
-simple_title:         "स्टैंडर्ड त्रुटि पर लिखना"
+title:                "मानक त्रुटि में लिखना"
+html_title:           "Arduino: मानक त्रुटि में लिखना"
+simple_title:         "मानक त्रुटि में लिखना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+जावा में, स्टैंडर्ड एरर (System.err) का इस्तेमाल एरर मैसेजेज दिखाने के लिए होता है। यह डेवलपर्स को कंसोल पर सिस्टम आउटपुट से एरर्स को अलग करके आसानी से डीबग करने में मदद करता है। 
 
-जावा में, standard error से लिखना यह है कि हम किसी भी त्रुटि या अनुमति को प्रोग्राम को सुधारने के लिए पूरक रूप से और काफी उपयोगी रूप से सुचना देते हैं। यह पूरी तरह से त्रुटि-सुधार आधारित है और प्रोग्रामिंग को स्पष्टता से बनाने में मदद करता है। प्रोग्रामर्स standard error का उपयोग करते हैं क्योंकि यह खास त्रुटि सूचनाएं देता है जो प्रोग्राम में अमान्य या दोषपूर्ण कोड को पकड़ने में सहायता करती है।
+## How to: (कैसे करें:)
+यहां जावा में स्टैंडर्ड एरर में लिखने का उदाहरण है:
 
-## कैसे करें:
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        // मानक आउटपुट पर मैसेज लिखना
+        System.out.println("सब ठीक है");
 
-```
-// एक standard error से लिखनेवाली एक कलम
-System.err.println("यह एक त्रुटि है।");
-
-// यहां एक उदाहरण है जहां हम कोई पेशेवर नंबर (professional number) नहीं प्राप्त कर पाए
-try {
-  int professionalNumber = Integer.parseInt(input); // उपयोगकर्ता द्वारा हुई इनपुट
-} catch (NumberFormatException e) {
-  System.err.println("एक अवैध पेशेवर नंबर है।");
+        // मानक एरर पर एरर मैसेज लिखना
+        System.err.println("यह एक एरर है");
+    }
 }
 ```
 
+सैंपल आउटपुट:
 ```
-यह उदाहरण प्रोग्राम के output है:
-अगर उपयोगकर्ता 1999999 को प्रविष्ट करता है तो यह उत्पाद आउटपुट होगा:
-यह एक अवैध पेशेवर नंबर है।
+सब ठीक है
+यह एक एरर है
 ```
 
-## गहराई में जाएं:
+## Deep Dive (आधिक जानकारी)
+पारंपरिक रूप से, स्टैंडर्ड एरर और स्टैंडर्ड आउटपुट दो अलग-अलग आउटपुट स्ट्रीम होते हैं। यह अलगाव आपको लॉगिंग और एरर मैसेजेस के लिए उन्हें अलग से हैंडल करने का मौका देता है। विकल्प के रूप में, लॉगिंग फ्रेमवर्क्स जैसे कि Log4j या SLF4J भी होते हैं जो लॉगिंग की ज्यादा सुविधाएं और नियंत्रण उपलब्ध कराते हैं। स्टैंडर्ड एरर सीधे ऑपरेटिंग सिस्टम के एरर हैंडलिंग मैकेनिज्म से जुड़ा हुआ है, जिससे इसे कंसोल, फाइल, या अन्य डेस्टिनेशंस पर पाइप किया जा सकता है।
 
-पहले से ही, standard error Unix सिस्टम्स का हिस्सा है। इसका प्रयोग करें और अपने प्रोग्राम में अपनी त्रुटियों को पकड़ें। लेकिन, आप सीख सकते हैं कि कैसे standard output (कांसोल) और standard error का उपयोग करके अपने प्रोग्रामों में स्पष्टता जोड़ सकते हैं। इसके अलावा, आप alternative methods की भी बात कर सकते हैं जो errors को कैसे handle करते हैं, जैसे try-catch ब्लॉक या exception handling के साथ।
-
-## और देखें:
-
-- [Java Docs: Standard Error](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+## See Also (और देखें)
+- Java's `System` class documentation: [Oracle Java Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- Effective Java Logging with Log4j: [Log4j Tutorial](https://logging.apache.org/log4j/2.x/manual/)

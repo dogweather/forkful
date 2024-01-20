@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "C recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "C"
 category:             "C"
@@ -11,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing a text file means creating a file that contains readable text. Programmers often do this as a way to store data or code that can be easily accessed and manipulated.
+Writing a text file involves saving data in a readable format on the filesystem. Programmers do it to persist information, like settings, logs, or user-generated content, for later retrieval and processing.
 
 ## How to:
-
-To write a text file in C, you can use the `fprintf()` function. This function takes in a file pointer, a format string, and any necessary arguments. Here's an example:
+Writing to a text file in C is straightforward with the `stdio.h` library functions: `fopen()`, `fprintf()`, and `fclose()`. Check out this simple example:
 
 ```C
-// Opening the file with write mode
-FILE *file = fopen("sample.txt", "w");
+#include <stdio.h>
 
-// Writing `Hello, world!` to the file
-fprintf(file, "Hello, world!");
-
-// Closing the file
-fclose(file);
+int main() {
+    FILE *filePointer = fopen("example.txt", "w"); // Open file in write mode
+    if (filePointer == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+    
+    fprintf(filePointer, "Hello, world!\n"); // Write to file
+    fprintf(filePointer, "Writing to files in C is simple.\n");
+    
+    fclose(filePointer); // Close file
+    return 0;
+}
+```
+Sample output in `example.txt`:
+```
+Hello, world!
+Writing to files in C is simple.
 ```
 
-This will create a file named `sample.txt` with the text `Hello, world!` written in it.
+## Deep Dive
+Since its inception with C's ancestor languages, file I/O has been crucial for programs. Alternatives to `stdio.h` include system-level calls like `open()`, `write()`, and `close()` from `sys/file.h`, which offer more control but are more complex. When using `stdio.h`, buffering can affect performance, so for large files or frequent writes, function `fflush()` might be needed.
 
-## Deep Dive:
-
-Writing text files has been a common practice in programming for many years. Before the rise of databases and other data storage methods, text files were one of the main ways to store and access data. They also have the advantage of being human-readable, making them useful for storing code or configurations.
-
-There are several alternatives to writing text files, such as using databases, JSON files, or CSV files. Each method has its own advantages and use cases, but writing text files remains a simple and efficient way to store and retrieve data.
-
-When writing a text file, it's important to pay attention to the file format and encoding. Different operating systems and programs may use different standards, so it's crucial to ensure compatibility when sharing or accessing the file.
-
-## See Also:
-
-- [fopen() function reference](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Working with files in C](https://www.programiz.com/c-programming/c-file-input-output)
+## See Also
+For more on file operations in C:
+- C Standard Library Documentation: https://en.cppreference.com/w/c/io
+- C File I/O Tutorial: http://www.cplusplus.com/doc/tutorial/files/
+- Managing File I/O: https://www.gnu.org/software/libc/manual/html_node/File-System-Interface.html

@@ -1,7 +1,7 @@
 ---
-title:                "सीएसवी के साथ काम करना"
-html_title:           "Clojure: सीएसवी के साथ काम करना"
-simple_title:         "सीएसवी के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+CSV यानि "Comma-separated values" फाइलें होती हैं, जिनमें डेटा अल्पविराम से अलग होता है। कार्यक्रमकार इनका इस्तेमाल डेटा को आसानी से निर्यात और आयात करने के लिए करते हैं क्योंकि ये सादारण स्वरूप में होते हैं और विभिन्न भाषाओं एवं अनुप्रयोगों में इस्तेमाल में आसान होते हैं।
 
-कोई भी प्रोग्रामर CSV (Comma-Separated Values) फ़ाइल के साथ काम करता है प्रत्येक दिन। आप इन फ़ाइलों में संख्याओं, मान, या अन्य डेटा को संग्रहीत कर सकते हैं और उन्हें अपने प्रोग्रामों में उपयोग कर सकते हैं।
-
-कैसे करें:
+## How to: (कैसे करें:)
+Clojure में CSV डेटा के साथ काम करने के लिए, `clojure.data.csv` लाइब्रेरी का इस्तेमाल करते हैं:
 
 ```Clojure
 (require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-;; डेटा फ़ाइल से डेटा लोड करें
-(def fruits (csv/read-csv "fruits.csv"))
+; CSV फाइल पढ़ने के लिए:
+(with-open [reader (io/reader "data.csv")]
+  (doall (csv/read-csv reader)))
 
-;; दूसरे नाम से फ़ाइल से डेटा लोड करें
-(def vegetables (csv/read-csv "vegetables.csv" :key "vegetable"))
-
-;; डेटा पंक्तियों को युग्मित करें
-(def combined (concat fruits vegetables))
-
-;; डेटा पंक्तियों में फ़ील्ड जोड़ें
-(def combined (csv/write-csv combined :headers ["name" "color" "type"]))
+; CSV फाइल लिखने के लिए:
+(with-open [writer (io/writer "output.csv")]
+  (csv/write-csv writer [["name", "age", "city"]
+                         ["Amit", "30", "Delhi"]
+                         ["Sara", "45", "Mumbai"]]))
 ```
 
-कहाँ उग रही है?
+उदाहरण का उत्पादन:
+data.csv में पढ़ी गई लाइन्स की एक सूची होगी, और output.csv में लिखा डेटा इस प्रकार होगा -
 
-जब CSV फ़ाइलें पहली बार वर्ज़न 1.0 में उपलब्ध थीं, तो वे भारी प्रोग्राम या स्प्रेडशीट क्षुधा व्यवस्थाओं के साथ उपयोग करने के लिए एक साधारण जाल सुविधा थीं। अब भी, यह सरल स्ट्रक्टर थी, और यह व्यवस्थाओं के बीच प्रत्यारोपण के साथ डेटा प्रत्यावृत्ति का एक काफी आकर्षक जरिया है।
+```
+name,age,city
+Amit,30,Delhi
+Sara,45,Mumbai
+```
 
-उदाहरण के बजाय और क्या है?
+## Deep Dive (गहन जानकारी)
+CSV फॉर्मेट 1970 के दशक से इस्तेमाल में है। यह बहुत फ्लेक्सिबल है, पर कभी-कभी यह दुविधा का कारण भी बन सकता है, जैसे कि डेटा में अल्पविराम की मौजूदगी। Clojure जैसे फंक्शनल भाषाएँ CSV डेटा की हैंडलिंग में उत्तम होती हैं क्योंकि ये इम्म्यूटेबिलिटी और सिक्वेंशियल प्रोसेसिंग पर जोर देते हैं। विकल्प में JSON, XML जैसी डेटा फार्मेट हैं जो अधिक संरचनात्मक जानकारी प्रदान करते हैं। CSV की सरलता उसे डेटा विश्लेषण और मशीन लर्निंग में लोकप्रिय बनाती है।
 
-कुछ अन्य आकर्षक विकल्प हैं जो CSV फ़ाइलों के साथ काम करने के लिए सुविधा प्रदान करते हैं, जैसे आप जावा में apache commons CSV, लोग या SCV Destructure जैसे विभिन्न पुस्तकालय का उपयोग कर सकते हैं।
-
-दीप डाइव:
-
-CSV फ़ाइलें ठीक रूप से प्रसंस्करण और डेटा प्रसंस्करण में एक अच्छा विकल्प हैं, लेकिन अगर आप बड़े अभिनव डेटाबेस संग्रहण समस्याओं का सामना कर रहे हैं तो फिर आप JDBC ड्राइवर का उपयोग करके डेटाबेस में सीधा डेटा आयात करने के लिए ज्यादा स्थायित्व और गति प्राप्त कर सकते हैं।
-
-देखिये भी:
-
-और विवरण के लिए clojure.data.csv फ़ाइल का दस्तावेज़ीकरण देखें। आप भी क्लोजुर कम्यूनिटी फोरम में जाकर सहायता और सलाह प्राप्त कर सकते हैं।
+## See Also (अन्य स्रोत)
+- Clojure की अधिकृत CSV लाइब्रेरी डाक्युमेन्टेशन: [https://github.com/clojure/data.csv](https://github.com/clojure/data.csv)
+- Clojure डेटा प्रोसेसिंग ट्यूटोरियल: [https://www.braveclojure.com](https://www.braveclojure.com)
+- CSV पर W3C मानक: [https://www.w3.org/TR/tabular-data-primer/](https://www.w3.org/TR/tabular-data-primer/)

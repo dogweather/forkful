@@ -1,7 +1,7 @@
 ---
-title:                "text 파일 쓰기"
-html_title:           "PHP: text 파일 쓰기"
-simple_title:         "text 파일 쓰기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Arduino: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인지 & 왜 하는가?
+## What & Why? (무엇이며 왜?)
+텍스트 파일 쓰기는 문자 데이터를 파일 형태로 저장하는 것입니다. 프로그래머는 로그 저장, 설정 관리, 데이터 교환 등을 위해 이를 사용합니다.
 
-텍스트 파일을 작성하는 것은 프로그래머가 파일에 텍스트 정보를 저장하기 위해 사용하는 것입니다. 예를 들어, 사용자 데이터나 로그 파일 등을 저장할 수 있습니다. 이것은 프로그래머가 읽고 쓸 수 있도록 데이터를 영구적으로 저장하는 방법입니다.
-
-## 방법:
-
+## How to: (방법)
 ```php
-$myfile = fopen("newfile.txt", "w"); // 새 파일 생성
-$txt = "Hello world!"; // 텍스트 지정
-fwrite($myfile, $txt); // 파일에 텍스트 쓰기
-fclose($myfile); // 파일 닫기
+<?php
+// 파일 쓰기 준비
+$filename = "example.txt";
+$content = "안녕하세요, PHP 파일 쓰기 예제입니다.";
+
+// 파일 쓰기 - 파일이 없으면 생성
+file_put_contents($filename, $content);
+
+// 파일 추가 쓰기 - 기존 내용을 유지하고 뒤에 추가 
+$additionalContent = "\n새로운 내용 추가!";
+file_put_contents($filename, $additionalContent, FILE_APPEND);
+
+// 결과 확인: 파일 내용을 읽어 출력
+echo file_get_contents($filename);
+?>
 ```
-위 코드를 실행하면 "newfile.txt"라는 텍스트 파일이 생성되고, 파일 안에 "Hello world!"가 쓰여집니다.
+Sample Output:
+```
+안녕하세요, PHP 파일 쓰기 예제입니다.
+새로운 내용 추가!
+```
 
-## 더 깊이 들어가보기:
+## Deep Dive (심층 분석)
+과거에는 `fopen()`, `fwrite()`, 그리고 `fclose()` 함수를 사용하여 파일을 썼습니다. `file_put_contents()`는 이러한 과정을 단축시켜 줍니다. 또한, 파일 쓰기에 사용되는 함수들은 파일 시스템 권한과 충돌할 수 있으니 유의해야 합니다. 텍스트 파일 대신 데이터베이스를 사용할 수도 있으나, 단순성과 접근성 때문에 여전히 파일 쓰기는 유용합니다.
 
-1. 텍스트 파일은 컴퓨터에서 가장 오래된 형태의 데이터 저장 방식입니다. 따라서 프로그래머들이 텍스트 파일을 사용하는 것은 역사적으로 자연스러운 일입니다.
-
-2. 텍스트 파일 외에도 데이터를 저장하는 다른 방식으로는 데이터베이스가 있습니다. 데이터베이스는 데이터를 더 구조화해서 관리할 수 있지만, 텍스트 파일은 간단하고 빠르게 사용할 수 있습니다.
-
-3. fopen 함수에 대한 자세한 정보나 파일 모드에 대한 다른 옵션들을 알고 싶다면 [공식 PHP 문서](https://www.php.net/manual/en/function.fopen.php)를 참고해주세요.
-
-## 참고 자료:
-
-
-2. PHP가 아닌 다른 언어로 파일을 읽고 쓰는 방법을 배우기 위해 [w3schools - 파일 처리](https://www.w3schools.com/php/php_file_open.asp)를 참고해보세요.
-
-3. [PHP 파일 처리 부분](https://www.php.net/manual/en/ref.filesystem.php)에서 PHP의 파일 처리 관련 함수들을 자세히 알아볼 수 있습니다.
+## See Also (더 보기)
+- [PHP 공식 문서: file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- [PHP 공식 문서: fopen()](https://www.php.net/manual/en/function.fopen.php)
+- [PHP 파일 시스템 권한](http://php.net/manual/en/features.file-upload.errors.php)
+- [PHP 스트림 문서](https://www.php.net/manual/en/book.stream.php)

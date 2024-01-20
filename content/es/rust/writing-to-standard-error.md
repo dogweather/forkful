@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo al error estándar"
-html_title:           "Rust: Escribiendo al error estándar"
-simple_title:         "Escribiendo al error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Escribir al estándar de error (standard error en inglés) en Rust es una forma de mostrar mensajes de error o diagnósticos a los usuarios del programa. Los desarrolladores lo hacen para ayudar a entender y depurar el código más fácilmente.
+## Qué y por qué?
+Escribir en el error estándar significa mandar mensajes de error a un canal específico, distinto al de la salida estándar. Los programadores hacen esto para separar los errores normales de la salida de programas y facilitar la depuración.
 
-## Cómo:
-La sintaxis básica para escribir al estándar de error en Rust es la siguiente:
+## Cómo hacerlo:
 ```Rust
-eprintln!("Mensaje de error");
-```
-Esto imprimirá el mensaje de error en la consola, aunque también se puede redirigir a un archivo o a cualquier otro destino de salida. Ejemplo de salida:
-```Rust
-#![deny(warnings)]
-use std::io::Error;
+use std::io::{self, Write};
 
-fn main() -> Result<(), Error> {
-    eprintln!("¡El archivo no pudo ser abierto!");
-
-    Ok(())
+fn main() {
+    writeln!(io::stderr(), "¡Error! Algo salió mal.").expect("Error al escribir en stderr");
 }
 ```
-Salida:
+
+Salida de muestra (en consola):
 ```
-¡El archivo no pudo ser abierto!
+¡Error! Algo salió mal.
 ```
 
-## Profundizando:
-Escribir al estándar de error no es algo específico de Rust, sino que es una práctica común en otros lenguajes de programación. También se puede hacer con la macro `println!`, pero esto imprimirá el mensaje en la salida estándar (standard output en inglés). Además, se puede combinar con la función `std::io::Write` para especificar exactamente dónde se desea imprimir el mensaje de error.
+## Profundización
+Históricamente, separar la salida estándar (`stdout`) del error estándar (`stderr`) permitió a los usuarios redireccionarlos independientemente, lo cual es crucial para la automatización y el registro en sistemas Unix. Alternativamente, podrías usar librerías como `log` para más funciones de registro. Internamente, `stderr` es un canal no almacenado en búfer, asegurando que los mensajes de error se muestren de inmediato.
 
-## Véase también:
-- [Documentación de Rust sobre imprimir al estándar de error](https://doc.rust-lang.org/std/io/fn.stderr.html)
-- [Artículo sobre escribir al estándar de error en C++](https://www.educative.io/edpresso/how-to-output-to-standard-error-in-cpp)
+## Ver también
+- Documentación oficial de std::io en Rust: https://doc.rust-lang.org/std/io/
+- Tutorial de Rust sobre manejo de errores: https://doc.rust-lang.org/book/ch09-00-error-handling.html
+- Guía de la librería `log`: https://docs.rs/log/latest/log/

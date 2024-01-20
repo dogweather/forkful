@@ -1,7 +1,7 @@
 ---
-title:                "जेसन के साथ काम करना"
-html_title:           "PowerShell: जेसन के साथ काम करना"
-simple_title:         "जेसन के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-JSON, जो कि जेसन का पाइपलाइन सिक्योरिटी केभ्योलासन कम्पैनी के रूप में संचालनालय थी, एक प्रसिद्द डेटा प्रवाह फॉर्मेट है। प्रोग्रामर्स जब अपने डेटा को संरचित रूप में संग्रहीत करने की जरूरत होती है तब वे JSON का उपयोग करते हैं। यह उन्हें अपने डेटा को अधिक स्पष्ट और सुसंगत बनाने में मदद करता है।
+## What & Why?
+JSON kaam kya hai, aur programmers iska istemal kyun karte hain? JSON yani JavaScript Object Notation, ek data format hai jo settings, configuration, aur data exchange ke liye istemal hota hai. Programmers isko isliye pasand karte hain kyunki ye padhne mein aasaan aur machine ke liye interpret karne mein efficient hota hai.
 
 ## How to:
-जब आप PowerShell का उपयोग करके JSON के साथ काम कर रहे हों, आपको यह ध्यान देने की जरूरत होती है कि यह डेटा प्रवाह फॉर्मेट समर्थित है। ```ConvertTo-Json``` और ```ConvertFrom-Json``` आपको डेटा को फॉर्मेट में संग्रहीत करने में मदद करते हैं।
+PowerShell mein JSON se kaam karne ke kuch basic examples yeh hain:
 
-अगर आप अपने संग्रहीत डेटा को फ़ाइल में सहेजना चाहते हैं, तो ```Out-File``` का उपयोग करके आप इसका निर्यात कर सकते हैं। और अगर आप डेटा को अन्य प्रोग्राम में संग्रहीत करना चाहते हैं, तो आप ```ConvertTo-Json``` का उपयोग करके सीधे प्रोग्राम के जैसा फॉर्मेट बना सकते हैं।
-
-आप निम्न उदाहरण देख सकते हैं:
-
+Convert from JSON:
+```PowerShell
+$jsonData = '{"name": "Amit", "age": 30, "city": "Delhi"}'
+$person = $jsonData | ConvertFrom-Json
+$person.name
+$person.age
+$person.city
 ```
-$users = Get-Service | ConvertTo-Json
+Output: Amit, 30, Delhi
+
+Convert to JSON:
+```PowerShell
+$personObject = [PSCustomObject][Ordered]@{
+    name = "Amit"
+    age = 30
+    city = "Delhi"
+}
+$json = $personObject | ConvertTo-Json
+Write-Output $json
 ```
-इस उदाहरण में, हमने सिस्टम के सभी सेवाओं को प्राप्त किया और उन्हें JSON के साथ संग्रहीत किया है।
+Output: 
+```json
+{
+    "name": "Amit",
+    "age": 30,
+    "city": "Delhi"
+}
+```
 
 ## Deep Dive:
-JSON को बनाने के पीछे एक विशेष कारण है। पश्चिमी दिशा के 1980 के दशक में, मैक्सिको के पाइपलाइन सिक्योरिटी कम्पैनी द्वारा बनाया गया था। इसे एक लोकप्रिय डाटा प्रवाह फॉर्मेट बनाने के लिए स्टैन्डर्डकॉम स्टैन्डर्ड मिशन एक अध्ययन।
-
-यदि आप PowerShell के स्थापना कनेक्शन के लिए इतनी भाषाओं की उपयोग करना चाहते हैं, तो आप XML का उपयोग कर सकते हैं। हालांकि, JSON प्रोग्रामिंग के बारे में सीखने में बहुत अधिक समय आसान हो सकता है और साथ ही यह डेटा प्रवाहों को संरचित करने के लिए स्वतंत्रता प्रदान करता है।
-
-जब आप JSON का उपयोग करके डेटा को संरचित रूप में संग्रहीत करते हैं, तो आपको अपने डेटा में हर पदावनत के बीच कोमा जोड़ने की जरूरत होती है। यह सही प्रकार से संरचित करने के लिए महत्वपूर्ण है।
+JSON ki shuruaat Douglas Crockford ne ki thi, jo JavaScript ke syntax par based hai. Alternatives mein XML aur YAML aate hain, lekin JSON unse zyada compact aur fast hota hai. PowerShell mein JSON ko handle karne ke liye mainly `ConvertFrom-Json` aur `ConvertTo-Json` cmdlets ka istemal hota hai. Complex objects ko handle karte time, JSON ko sahi se format karne aur nested objects se deal karne ke liye aapko PowerShell mein thodi aur advanced coding karna pad sakta hai.
 
 ## See Also:
-- [Microsoft: ConvertTo-Json cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto
+JSON ke baare mein aur jaankari ke liye, yeh resources helpful honge:
+
+- [JSON schema store](https://www.schemastore.org/json/)

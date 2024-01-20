@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Clojure: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,20 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriver du noen ganger til standard error i Clojure? Det er når vi ønsker å skrive feilmeldinger eller annen utdata til en annen strøm enn standard output. Dette kan være nyttig for å skille feilmeldinger fra vanlig utdata eller for å vise mer detaljert informasjon om feil.
+Å skrive til standard feil (`stderr`) er hvordan programmer melder fra om feil og advarsler. Det holder disse meldingene separate fra hoveddataflyten, og gjør det lettere å debugge og overvåke applikasjoner.
 
-## Slik gjør du det:
+## How to:
+Clojure bruker Java sin `System/err` for å skrive til `stderr`. Her er hvordan du gjør det:
+
 ```Clojure
-(System/err "Dette er en feilmelding")
+(.println System/err "Dette er en feilmelding til stderr.")
 ```
-Dette vil skrive ut "Dette er en feilmelding" til standard error strømmen. Du kan også bruke andre funksjoner, som prn eller prerrn, for å skrive ut data til standard error. For eksempel:
+
+Kjører du dette, får du:
+
+```
+Dette er en feilmelding til stderr.
+```
+
+En mer idiomatic måte å håndtere dette i Clojure:
+
 ```Clojure
-(prerrn "Dette er en annen feilmelding")
+(defn log-to-stderr [message]
+  (.println System/err message))
+
+(log-to-stderr "Oops, noe gikk galt!")
 ```
-Dette vil skrive ut "Dette er en annen feilmelding" til standard error strømmen.
 
-## Dypdykk:
-Å skrive til standard error har vært en vanlig praksis i programmering siden tidlig på 1970-tallet. Det er en del av Unix filosofien om å skille mellom feil og vanlig utdata. Alternativet til å skrive til standard error er å bruke standard output, men det kan føre til forvirring når feilmeldinger blandes inn med vanlig utdata. Det er viktig å merke seg at i Clojure er standard error bare tilgjengelig når programmet kjører i en terminal, og ikke hvis det f.eks. kjøres i et webgrensesnitt.
+Dette vil også skrive til stderr:
 
-## Se også:
-- [Stack Overflow diskusjon om bruk av standard error i Clojure](https://stackoverflow.com/questions/27475266/how-to-log-to-clojure-stderr)
+```
+Oops, noe gikk galt!
+```
+
+## Deep Dive
+Før operativsystemene skilte standard utdata (`stdout`) og `stderr`, gikk all tekstutdata fra programmer til samme sted. Separasjonen tillater oss å omdirigere disse uavhengig av hverandre, for eksempel for å filtrere ut feilmeldinger til en loggfil.
+
+I Clojure er det vanligere å bruke logging-biblioteker som `timbre` eller `log4j` istedenfor direkte kall til `System/err`, fordi bibliotekene gir mer fleksibilitet og formattering.
+
+I bunnlinjen er skriving til `stderr` implementert av underliggende operativsystem- og språkinfrastruktur (i dette tilfellet Java), og Clojure-koden kaller bare disse funksjonene gjennom Java interoperabilitet.
+
+## See Also
+- Clojure's `timbre` logging bibliotek: [https://github.com/ptaoussanis/timbre](https://github.com/ptaoussanis/timbre)
+- Oracle's Java dokumentasjon om `System/err`: [https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- Clojure's officielle guide til Java interoperabilitet: [https://clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)

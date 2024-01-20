@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely JSON:n kanssa"
-html_title:           "Haskell: Työskentely JSON:n kanssa"
-simple_title:         "Työskentely JSON:n kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti. Haskell-ohjelmoijat käyttävät sitä yleensä API-kutsujen datan sekä konfiguraatioiden käsittelyyn.
 
-JSON eli JavaScript Object Notation on kevyt ja yleisesti käytössä oleva muoto serialisointiin, eli tiedon tallentamiseen tai välittämiseen. JSONin yksinkertainen syntaksi ja yhteensopivuus monien ohjelmointikielten kanssa tekee siitä suositun vaihtoehdon tietojen tallentamiseen ja välittämiseen ohjelmistoissa.
-
-## Miten:
-
-Haskellissa JSON-muotoista dataa voidaan käsitellä helposti käyttämällä Aeson-kirjastoa. Se sisältää valmiit funktiot JSON-muotoisen datan parsimiseen ja luomiseen, sekä työkalut sen käsittelemiseen.
-
-Esimerkiksi, jos haluamme lukea JSON-tiedostosta tiedon ja tallentaa sen muuttujaan `data`, voimme tehdä seuraavaa:
+## How to:
 ```Haskell
-import qualified Data.ByteString.Lazy as B
-import Data.Aeson
+{-# LANGUAGE OverloadedStrings #-}
 
+import Data.Aeson
+import Data.ByteString.Lazy as B
+import Control.Monad (mzero)
+
+-- Oletetaan, että meillä on seuraavanlainen JSON-data:
+jsonInput :: ByteString
+jsonInput = "{\"name\":\"Ada Lovelace\",\"age\":28}"
+
+-- Luodaan tyyppi, joka vastaa JSON-rakennetta:
+data User = User
+  { name :: String
+  , age  :: Int
+  } deriving (Show)
+
+-- Teemme User-tyypistä JSON-lukukelpoisen
+instance FromJSON User where
+  parseJSON (Object v) = User <$>
+                         v .: "name" <*>
+                         v .: "age"
+  parseJSON _          = mzero
+
+-- JSON-stringin jäsentäminen ja tulostus
 main :: IO ()
-main = do
-  file <- B.readFile "tiedosto.json"
-  let jsonData = decode file :: Maybe Value
-  case jsonData of
-    Nothing -> putStrLn "Tiedoston lukeminen epäonnistui!"
-    Just data -> putStrLn "Tiedoston lukeminen onnistui!"
+main = case decode jsonInput :: Maybe User of
+  Just user -> print user
+  Nothing   -> putStrLn "Virhe jäsentämisessä."
 ```
 
-## Syvemmälle:
+Jos käännetään ja ajetaan, saadaan seuraava tulos:
+```
+User {name = "Ada Lovelace", age = 28}
+```
 
-JSON-kielen kehitteli Douglas Crockford 2000-luvun alussa. Mistään uudesta ideasta ei ole kyse, sillä JSON on oikeastaan vain Crockfordin esittämä tapa merkitä JavaScript-olioita. Ennen JSON-muotoa käytettiin usein XML-tiedostoja, mutta XML:n raskas syntaksi tekee siitä hankalan käyttää tarkoituksiin, jotka eivät vaadi kompleksista rakennetta.
+## Deep Dive
+JSON kehitettiin 2000-luvun alussa verevöittämään tehokkaampaa datanvaihtoa verkossa. Haskellissa JSONin käsittely ei ole yhtä intuitiivista kuin JavaScriptissä. Kuitenkin kirjastot kuten Aeson tekevät työstä sujuvaa. Aesonin vaihtoehtoihin kuuluu mm. `json` ja `yaml`, jotka pohjautuvat eri käyttötarpeisiin. Aeson käyttää `lazyeval`-tekniikkaa suorituskyvyn parantamiseksi, mikä mahdollistaa suurtenkin tietomäärien käsittelyn ilman muistiongelmaa.
 
-Haskelliin on myös olemassa muita vaihtoehtoja JSONin käsittelyyn, kuten Attoparsec- ja Parsec-kirjastot, jotka mahdollistavat JSONin käsittelyn parserin avulla. Aeson-kirjasto on kuitenkin suositeltu vaihtoehto, sillä se on käyttöönotoltaan helppokäyttöinen ja tehokas.
-
-JSONin kyky käsitellä monenlaisia tietotyyppejä, kuten numeroita, merkkijonoja, olioita ja listoja, sekä sen yhteensopivuus monien ohjelmointikielten kanssa tekee siitä kätevän tiedon tallentamiseen ja välittämiseen. JSONia käytetään usein web-palveluissa, sekä selain-pohjaisissa sovelluksissa.
-
-## Katso myös:
-
-- [Aeson kirjaston virallinen dokumentaatio](https://hackage.haskell.org/package/aeson)
-- [JSON käsittelemisestä Haskelliin ja muista kielistä](https://www.json.org/)
+## See Also
+- Aeson GitHub-repositorio: [https://github.com/haskell/aeson](https://github.com/haskell/aeson)
+- JSON-spesifikaatio: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

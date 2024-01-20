@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Bash: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक डेटा प्रारूप है जिसे संभालने के लिए Bash में काम करते हैं। यह वेब APIs और सर्वर के बीच डेटा शेयर करने के लिए मानक बन गया है, इसलिए प्रोग्रामर्स इसे समझते और इस्तेमाल करते हैं।
 
-JSON काम करने का एक तरीका है जो की डेटा को बेहतर ढंग से ओरगनाइज़ करे। बहुत से प्रोग्रामर्स अपने काम को एकदम सरल और आसान बनाने के लिए JSON का इस्तेमाल करते हैं।
+## How to: (कैसे करें:)
+आपको JSON से डेटा संभालने के लिए `jq` टूल की जरूरत पड़ेगी।
 
-## कैसे करें?
-
+JSON फाइल पढ़ना:
 ```Bash
-# साधारण JSON फ़ाइल
-{
-  "नाम": "अजय",
-  "उम्र": 30,
-  "शहर": "दिल्ली"
-}
-
-# JSON को पढ़ने के लिए
-cat file.json
-
-# स्ट्रिंग तरीके से डेटा को ओरगनाइज़ करने के लिए
-NAME="अजय"
-AGE=30
-CITY="दिल्ली"
-```
-```Bash
-# अन्य कमांड्स जो फ़ाइल में JSON डेटा वापस करते हैं
-cat file.json | grep "नाम"
-cat file.json | jq .उम्र
+echo '{"name": "राहुल", "age": 30}' | jq '.'
 ```
 
+किसी खास कुंजी (key) का मान प्राप्त करना:
 ```Bash
-# डेटा डालना
-echo '{"नाम": "अजय", "उम्र": 30, "शहर": "दिल्ली"}' >> file.json
+echo '{"name": "राहुल", "age": 30}' | jq '.name'
 ```
+आउटपुट: `"राहुल"`
 
-## गहराई में जाएं
+एरे में नया आइटम जोड़ना:
+```Bash
+echo '["आम", "जामुन"]' | jq '. + ["केला"]'
+```
+आउटपुट: `["आम", "जामुन", "केला"]`
 
-JSON स्थापित होने से पहले, XML से डेटा ओरगनाइज़ करने के लिए उपयोग किया जाता था। अपने सरल स्ट्रक्चर का कारण, बहुत से सोशल मीडिया साईट और API अब भी JSON का इस्तेमाल करते हैं। अगर आप अपने काम को और भी आसान बनाना चाहते हैं, तो आप JSON के बारे में अधिक सीख सकते हैं।
+## Deep Dive (गहन जानकारी):
+JSON, 2000 के दशक के शुरू में AJAX के साथ लोकप्रिय हुआ था। यह XML जैसे मोटे डेटा प्रारूपों का एक हल्का विकल्प है। Bash में JSON के साथ काम करने के लिए `jq` सबसे प्रचलित टूल है, पर Python की `json` लाइब्रेरी या JavaScript की नेटिव `JSON.parse()` और `JSON.stringify()` जैसे अन्य विकल्प भी हैं। बात करें `jq` की, तो इसका अपना टक्सट प्रोसेसिंग और फंक्शन के साथ एक मजबूत सिंटैक्स है।
 
-## सहायता मिलेगी
-
-- [JSON Wikipedia पेज](https://en.wikipedia.org/wiki/JSON)
-- [Bash JSON मैन्युअल](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
+## See Also (और देखें):
+- jq आधिकारिक दस्तावेज़: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
+- JSON प्रारूप के बारे में गहराई से सीखने के लिए: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- विकिपीडिया पर JSON: [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)

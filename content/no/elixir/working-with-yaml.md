@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med yaml"
-html_title:           "Elixir: Jobbe med yaml"
-simple_title:         "Jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,33 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
- YAML er et format for serialisering av data, som brukes av mange programmerere for å lagre og transportere datastrukturer i en lesbar form. Den er spesielt nyttig for webapplikasjoner og konfigurasjonsfiler.
+YAML er et dataformat for serialisering av data, lik JSON og XML. Programmerere bruker YAML fordi det er lett å lese for mennesker, det spiller godt med komplekse datastrukturer og passer ypperlig for konfigurasjonsfiler.
 
-## Hvordan:
-Hvis du vil jobbe med YAML i Elixir, kan du bruke biblioteket YamlElixir. Først må du installere biblioteket ved å legge til `{:yaml_elixir, "~> 4.0"}` i `mix.exs` filen din. Deretter kan du konvertere data fra YAML til Elixir ved å bruke `YamlElixir.load/1` funksjonen. For eksempel:
+## Slik gjør du:
+For å jobbe med YAML i Elixir, trenger vi en YAML-bibliotek. `yamerl` er en populær ett. Først, legg til `yamerl` i `mix.exs`:
 
-```Elixir
-yaml = "- name: Elixir
-  version: 1.12"
-  
-ElixirYaml.load(yaml)
-# => %{name: "Elixir", version: 1.12}
-```
-Du kan også konvertere Elixir-data til YAML ved å bruke `YamlElixir.dump/1` funksjonen. For eksempel:
-
-```Elixir
-data = %{name: "Elixir", version: 1.12}
-
-YamlElixir.dump(data)
-# => "- name: Elixir\n  version: 1.12\n"
+```elixir
+defp deps do
+  [
+    {:yamerl, "~> 0.8.0"}
+  ]
+end
 ```
 
-## Dypdykk:
-YAML ble utviklet av Ingy döt Net som et alternativ til JSON og XML for å skape et mer leselig format for mennesker. Det er også inspirert av programmeringsspråket Perl. Selv om YAML er populært i mange programmeringsspråk, har det også blitt utsatt for noen sikkerhetsproblemer, så det er viktig å være forsiktig når du bruker det i nettapplikasjoner.
+Kjør deretter `mix deps.get` for å hente den nye avhengigheten.
 
-Alternativt kan du også bruke Elixirs innebygde funksjoner, `:yaml.encode/1` og `:yaml.decode/1`, for å jobbe med YAML-data. Disse funksjonene bruker biblioteket libyaml som standard, som er raskere og mer sikker enn den forrige implementeringen.
+Når vi har `yamerl`, kan vi serialisere Elixir-strukturer til YAML og parse YAML til Elixir-strukturer. 
 
-## Se også:
-- YamlElixir dokumentasjon: https://hexdocs.pm/yaml_elixir/4.0.0/readme.html
-- Elixir YAML-API: https://hexdocs.pm/elixir/YAML.html
-- Libyaml dokumentasjon: https://pyyaml.org/wiki/LibYAML
+Slik parser du YAML-tekst:
+```elixir
+yaml_to_parse = """
+name: John Doe
+age: 30
+list_of_hobbies:
+  - programming
+  - cycling
+"""
+
+{:ok, parsed_yaml} = :yamerl_constr.string(yaml_to_parse)
+IO.inspect(parsed_yaml)
+```
+
+For å konvertere Elixir-struktur til YAML-string:
+```elixir
+data_to_convert = %{
+  name: "Jane Smith",
+  age: 25,
+  list_of_hobbies: ["reading", "hiking"]
+}
+
+yaml_string = :yamerl_encode.encode(data_to_convert)
+IO.puts(yaml_string)
+```
+
+Eksempeloutput:
+```elixir
+%{
+  "age" => 30,
+  "list_of_hobbies" => ["programming", "cycling"],
+  "name" => "John Doe"
+}
+name: Jane Smith
+age: 25
+list_of_hobbies:
+  - reading
+  - hiking
+```
+
+## Dypdykk
+YAML startet i 2001, inspirert av XML og JSON. YAML står for "YAML Ain't Markup Language" og er laget for å være enkel å forstå. Alternativer som JSON og TOML finnes, men YAML er fortsatt foretrukket i mange tilfeller, spesielt for konfigurasjonsfiler. I Elixir, håndterer YAML-biblioteker parsing gjennom Erlang-biblioteker som `yamerl`. Disse bibliotekene gjør Erlang/Elixir-kompatibel manipulasjon av YAML-data mulig.
+
+## Se Også
+- YAML offisielle side: https://yaml.org
+- `yamerl` biblioteket på Hex: https://hex.pm/packages/yamerl 
+- Elixir's offisielle dokumentasjon: https://elixir-lang.org/docs.html 
+- JSON i Elixir: https://hexdocs.pm/poison/readme.html
+- TOML i Elixir: https://hex.pm/packages/toml

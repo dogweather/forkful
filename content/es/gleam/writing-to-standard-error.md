@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo a la salida de error estándar"
-html_title:           "Gleam: Escribiendo a la salida de error estándar"
-simple_title:         "Escribiendo a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-
-Escribir en la salida de error estándar es una forma de imprimir mensajes de error en la consola durante la ejecución de un programa. Es útil para que los programadores puedan identificar y solucionar errores en su código de manera rápida y eficiente.
+## Qué es y por qué?
+Escribir en el error estándar (stderr) permite separar la salida de errores de la salida normal (stdout). Los programadores lo hacen para diagnosticar problemas y depurar su código más fácilmente, manteniendo los errores visibles y aparte de la salida principal.
 
 ## Cómo hacerlo:
+En Gleam, puedes usar la función `io.println` de la biblioteca estándar para escribir en stderr. Aquí un ejemplo:
 
-A continuación se presentan algunos ejemplos de cómo imprimir en la salida de error estándar en Gleam:
+```gleam
+import gleam/io
 
-```
-Gleam.debug("Este es un mensaje de error")
-```
-
-```
-Gleam.fatal("¡Oh no! Algo salió mal.")
-```
-
-La salida de estos ejemplos sería:
-
-```
-[E] Este es un mensaje de error
+pub fn main() {
+  let _ = io.println("Esto es un mensaje de error", to: .standard_error)
+}
 ```
 
+Salida de muestra:
+
 ```
-[F] ¡Oh no! Algo salió mal.
+Esto es un mensaje de error
 ```
 
-## Profundizando
-
-Escribir en la salida de error estándar ha sido una práctica común entre los programadores desde los primeros días de la programación. Alternativas a esta técnica incluyen el uso de archivos de registro o depuradores, pero escribir en la salida de error es una forma más simple y directa de identificar y solucionar errores.
-
-En Gleam, escribir en la salida de error estándar está integrado en el lenguaje, lo que significa que no se requiere ninguna biblioteca externa para utilizarlo.
+## Profundización
+Históricamente, la separación de stdout y stderr proviene de Unix. Alternativas incluyen escribir en archivos de registro o utilizar herramientas de monitoreo. En Gleam, el manejo de stderr es similar a otros lenguajes de Erlang VM, aprovechando las capacidades de concurrencia y tolerancia a fallos del sistema.
 
 ## Ver también
-
-- Documentación de Gleam sobre imprimir en la salida de error estándar: https://gleam.run/articles/guides/error.html#printing-to-standard-error
-- Otra forma de imprimir mensajes de error en Gleam utilizando el módulo "io": https://gleam.run/articles/guides/io.html#standard-error-output
+- Una explicación sobre stdout y stderr en Unix: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
+- Documentación de Erlang sobre errores y manejo de errores: [https://erlang.org/doc/apps/stdlib/io_protocol.html](https://erlang.org/doc/apps/stdlib/io_protocol.html)

@@ -1,7 +1,7 @@
 ---
-title:                "json으로 작업하기"
-html_title:           "Swift: json으로 작업하기"
-simple_title:         "json으로 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 🤔 무엇이고 왜? 
+## What & Why?
+(무엇이며, 왜 사용하는가?)
+JSON은 데이터를 교환하는 표준 포맷입니다. 간단하고, 가볍고, 인간이 읽기에도, 기계가 파싱하기에도 쉬워서 프로그래머들이 널리 사용합니다.
 
-JSON 작업이란 무엇일까요? 간단하게 말해, JSON은 데이터 교환을 위한 텍스트 형식입니다. 프로그래머들은 이를 사용하여 서로 다른 시스템 간에 데이터를 교환하고 공유할 수 있습니다. 스위프트 프로그래밍에서는 JSON을 사용하여 웹 서비스에서 데이터를 로드하거나 전송하는 등 다양한 용도로 활용할 수 있습니다.
+## How to:
+(어떻게 할까?)
+Swift에서 JSON 다루기는 `Codable` 프로토콜과 함께 쉽습니다. 아래 예제를 참고하세요.
 
-## 💻 어떻게 하나요?
+```Swift
+import Foundation
 
-아래 코드 블록에서는 JSON 데이터를 가져와서 특정 구조체를 생성하는 간단한 예제를 보여드리겠습니다.
-
-```swift
-let data = """
-{
-    "name": "John",
-    "age": 30,
-    "occupation": "Developer"
-}
-""".data(using: .utf8)!
-
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let occupation: String
+// JSON으로 변환할 구조체 정의
+struct User: Codable {
+    var name: String
+    var age: Int
 }
 
-let decoder = JSONDecoder()
-let person = try decoder.decode(Person.self, from: data)
-print(person.name)
-// Output: John
+// JSON 문자열
+let jsonString = "{\"name\": \"홍길동\", \"age\": 25}"
+
+// JSON 파싱
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print("\(user.name) 의 나이는 \(user.age)살입니다.")
+        // 출력: 홍길동 의 나이는 25살입니다.
+    } catch {
+        print("오류 발생: \(error)")
+    }
+}
+
+// 객체를 JSON으로 변환
+let user = User(name: "이순신", age: 45)
+do {
+    let jsonData = try JSONEncoder().encode(user)
+    if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString)
+        // 출력: {"name":"이순신","age":45}
+    }
+} catch {
+    print("오류 발생: \(error)")
+}
 ```
 
-## 📚 Deep Dive
+## Deep Dive:
+(심층 분석)
+초기 웹 개발에서는 XML이 데이터 교환의 주요 포맷이었습니다. 하지만 JSON이 등장하면서, 그 편리성 때문에 빠르게 대체되었습니다. Codable은 Swift 4부터 도입되어 JSON의 인코딩과 디코딩을 단순화했습니다. 대안으로는 `JSONSerialization`이 있지만, Codable이 타입 안전성과 사용 편의성에서 뛰어납니다.
 
-JSON은 현재 가장 일반적으로 사용되는 데이터 형식 중 하나입니다. 하지만 이전에는 XML과 같은 다른 형식이 사용되던 시대도 있었습니다. 스위프트에서 JSON을 다루는 방법은 `Codable` 프로토콜을 구현하는 것으로 매우 간단해졌습니다. 그 외에도 `SwiftyJSON`과 같은 라이브러리를 사용하여 더욱 편리하고 효율적으로 JSON을 다룰 수 있습니다.
-
-## 🔍 참고 자료
-
-- [Swift.org - JSON](https://swift.org/documentation/api-design-guidelines/#casing)
-- [SwiftyJSON on GitHub](https://github.com/SwiftyJSON/SwiftyJSON)
-- [Codable Protocols on Ray Wenderlich](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift-with-codable)
+## See Also:
+(참고 자료)
+- Swift 공식 문서 Codable: https://swift.org/documentation/api-design-guidelines/#codable
+- JSON 공식 웹사이트: https://www.json.org/json-en.html
+- Wikipedia JSON 문서: https://en.wikipedia.org/wiki/JSON
+- Apple의 JSON과 작업하는 법: https://developer.apple.com/swift/blog/?id=37

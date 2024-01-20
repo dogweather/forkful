@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Rust: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué!
-Trabajar con archivos CSV (comma-separated values) se refiere a la manipulación de datos estructurados en forma de tabla, donde cada fila representa un registro y cada columna contiene un valor específico. Los programadores suelen trabajar con CSV como una forma de almacenar y procesar grandes cantidades de información, ya que este formato es fácil de entender y se puede utilizar en una variedad de aplicaciones.
+## Qué y Por Qué?
+
+Trabajar con CSV (valores separados por comas) significa lidiar con datos estructurados como texto plano, donde cada línea es un registro y cada registro contiene campos separados por comas. Los programadores usan CSV por su simplicidad y amplia compatibilidad con sistemas de bases de datos, hojas de cálculo y herramientas de análisis.
 
 ## Cómo hacerlo:
-````Rust
-// Importamos la biblioteca para trabajar con CSV
-use csv;
 
-// Creamos un nuevo archivo CSV
-csv::Writer::from_path("datos.csv")
-    .unwrap();
+Para trabajar con CSV en Rust, usaremos la crate `csv`. Primero, añadelo a tu `Cargo.toml`:
 
-// Añadimos una fila al archivo
-records.push(vec!["Nombre", "Edad", "Ciudad"]);
+```toml
+[dependencies]
+csv = "1.1"
+```
 
-// Guardamos el archivo
-writer.write(records)
-    .unwrap();
-````
+Ahora, puedes leer un archivo CSV así:
 
-El resultado de este código sería un archivo CSV llamado "datos.csv" con una fila que contiene los datos "Nombre", "Edad" y "Ciudad".
+```Rust
+use csv::Reader;
+use std::error::Error;
 
-## Profundizando:
-Los archivos CSV surgieron en la década de 1970 como una forma de facilitar la transferencia de datos entre programas diferentes. El formato ha evolucionado a lo largo de los años y se ha convertido en una herramienta popular entre los programadores.
+fn main() -> Result<(), Box<dyn Error>> {
+    let mut rdr = Reader::from_path("datos.csv")?;
 
-Una alternativa al formato CSV es el formato TSV (tab-separated values), que utiliza tabulaciones en lugar de comas para separar los datos. Esto puede ser útil en casos donde se necesitan comas en los datos mismos.
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
+}
+```
 
-Para trabajar con CSV en Rust, se puede utilizar la biblioteca oficial de Rust llamada "csv". Esta biblioteca tiene una documentación detallada y ofrece una variedad de funciones útiles para trabajar con archivos CSV.
+Si `datos.csv` contiene:
 
-## Ver también:
-- [Documentación de la biblioteca CSV de Rust](https://docs.rs/csv)
+```
+nombre,edad,ciudad
+Juan,28,Madrid
+Lucia,35,Barcelona
+```
+
+La salida será:
+
+```
+StringRecord(["Juan", "28", "Madrid"])
+StringRecord(["Lucia", "35", "Barcelona"])
+```
+
+## Análisis Detallado:
+
+El formato CSV se originó en los años 70 y se ha establecido como un estándar de facto para el intercambio de datos tabulares. Rust ofrece varias alternativas como `serde_csv` para la deserialización con `serde`. A nivel de implementación, es clave manejar correctamente codificación, fin de líneas, y campos que contienen comas, usando comillas, para evitar errores de parsing.
+
+## Ver También:
+
+- Documentación oficial de la crate `csv`: https://docs.rs/csv/latest/csv/
+- `serde` y `serde_csv` para deserialización en Rust: https://docs.serde.rs/serde/
+- Una guía práctica para manejar CSV desde Rust: https://blog.burntsushi.net/csv/

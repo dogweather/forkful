@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Lua: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+CSV (Comma-separated Values) on yksinkertainen tiedostoformaatti datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on helppolukuinen ja yhteensopiva useiden työkalujen kanssa.
 
-CSV on tiedostotyyppi, jota käytetään usein tietojen tallentamiseen taulukkomuodossa. Tämä tekee siitä erittäin hyödyllisen ohjelmoinnissa, sillä se mahdollistaa helposti muokattavien ja jaoteltavien tietojen tallentamisen. Siksi useimmat ohjelmoijat joutuvat käsittelemään CSV-tiedostoja.
-
-## Miten?
-
-Lua-ohjelmointikielellä on monia eri tapoja käsitellä CSV-tiedostoja. Tässä on muutamia esimerkkejä:
-
-```Lua 
-local csv = require("csv")
-                   .new()
-                   .delimiter(";")
-                   .parse("tiedostonimi.csv")
-
---Tulostaa ensimmäisen rivin ensimmäisen sarakkeen arvon
-print(csv[1][1]) 
-```
+## How to:
+CSV-tiedoston lukeminen ja kirjoittaminen on suoraviivaista. Käytetään io-kirjastoa tiedoston käsittelyyn.
 
 ```Lua
-local csv = require("csv")
-
---Luo uuden CSV-tiedoston
-csv
-  .new()
-  .headers({"Nimi", "Ikä", "Sukupuoli"})
-  .append({"Pekka", 30, "Mies"})
-  .append({"Maija", 25, "Nainen"})
-  .write("uusi_tiedosto.csv")
-```
-
-``Lua
-local csv = require("csv")
-
---Tulostaa kaikki CSV-tiedoston arvot
-for _, row in ipairs(csv.parse("tiedostonimi.csv")) do
-  for _, col in ipairs(row) do
-    print(col)
+-- CSV-tiedoston lukeminen
+function lueCSV(tiedosto)
+  local taulukko = {}
+  for rivi in io.lines(tiedosto) do
+    local arvot = {}
+    for arvo in rivi:gmatch("[^,]+") do
+      table.insert(arvot, arvo)
+    end
+    table.insert(taulukko, arvot)
   end
+  return taulukko
+end
+
+-- CSV-tiedoston kirjoittaminen
+function kirjoitaCSV(tiedosto, data)
+  local tiedosto = io.open(tiedosto, 'w')
+  for _, rivi in ipairs(data) do
+    tiedosto:write(table.concat(rivi, ','), '\n')
+  end
+  tiedosto:close()
+end
+
+-- Käyttöesimerkki
+local data = {
+  {"nimi", "ikä", "ammatti"},
+  {"Matti", "30", "Insinööri"},
+  {"Liisa", "25", "Suunnittelija"}
+}
+
+-- Kirjoitetaan CSV
+kirjoitaCSV('henkilosto.csv', data)
+
+-- Luetaan CSV
+local luettuData = lueCSV('henkilosto.csv')
+for _, rivi in ipairs(luettuData) do
+  print(table.concat(rivi, ', '))
 end
 ```
 
-## Syventävää tietoa
+## Deep Dive
+CSV-formaatti ilmestyi 1970-luvulla. Json ja XML ovat vaihtoehtoisia tiedostoformaattien, joilla on enemmän ominaisuuksia mutta ovat monimutkaisempia. Käyttämällä Lua-kirjastoja kuten Penlight tai CSV, saat lisäominaisuuksia kuten automaattisen tietotyypin tunnistuksen.
 
-CSV-tiedostot ovat olleet käytössä jo vuodesta 1972 ja ne ovat edelleen yksi yleisimmin käytetyistä tiedostomuodoista. Vaikka Lua tarjoaa sisäänrakennetun "io" -moduulin, monet ohjelmoijat valitsevat käyttää CSV-paketteja, kuten "lua-csv", joka tarjoaa monipuolisia ominaisuuksia CSV-tiedostojen käsittelyyn.
-
-## Katso myös
-
-- [Lua-csv dokumentaatio] (https://keplerproject.github.io/lua-cjson/)
-- [io-moduuli dokumentaatio] (https://www.lua.org/manual/5.4/manual.html#pdf-io)
+## See Also
+- Lua Users Wiki CSV-moduulit: http://lua-users.org/wiki/CsvUtils
+- Penlight-kirjasto: https://github.com/lunarmodules/Penlight
+- RFC 4180, CSV-standardi: https://tools.ietf.org/html/rfc4180

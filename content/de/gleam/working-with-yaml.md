@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Gleam: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# YAML in Gleam nutzen: Ein praktischer Guide
+
 ## Was & Warum?
+YAML ist ein Datenformat für Konfigurationsdateien und Datenaustausch. Programmierer nutzen es wegen seiner Lesbarkeit und Einfachheit für Einstellungen, Daten speichern und teilen.
 
-YAML ist eine Dateiendung, die hauptsächlich in der Programmierung verwendet wird. Sie steht für "Yet Another Markup Language" und dient zur Strukturierung von Daten in einem menschenlesbaren Format. Programmierer nutzen YAML, um ihre Daten zu organisieren und zu speichern.
+## Anleitung:
+Leider gibt es in Gleam noch keine eingebaute Bibliothek für YAML. Wir können jedoch eine externe Library nutzen. Hier ein Beispiel, wie man YAML in Gleam liest und schreibt:
 
-## Wie geht's?
+```gleam
+// externes YAML-Paket importieren, vorher hinzufügen und installieren
+import yaml/gleam_yaml
 
-Hier ist ein Beispiel, wie man in Gleam eine YAML-Datei schreibt:
+// YAML String in Gleam-Datenstruktur umwandeln
+let data = yaml.from_str("
+person:
+  name: Kai
+  age: 32
+")
 
-```Gleam
-import gleam/encode/yaml as yaml
-
-let person = {name: "Anna", age: 25}
-let yaml_string = yaml.encode(person)
-
-{
-    assert yaml_string == "---\name: "Anna"\nage: 25"
-    yaml_string
+// Entsprechendes Gleam-Modell prüfen
+case data {
+  Ok(value) -> value
+  Error(_) -> panic("Invalid YAML data")
 }
+
+// Gleam-Struktur in YAML String umwandeln
+let output = yaml.to_string(person)
 ```
 
-Das resultierende Format sieht so aus:
+## Tiefgang:
+YAML tritt als JSON-Alternative auf, debütierte 2001. JSON und XML sind Alternativen. YAMLs Design setzt auf Einrückungen für Struktur, vermeidet Klammer-Syntax. Aufmerksamkeit bei der Implementierung gilt der richtigen Einrückung und Typkonvertierung.
 
-```
----
-name: "Anna"
-age: 25
-```
-
-## Tiefer Eintauchen
-
-YAML ist seit 2001 ein offener Standard und wurde entwickelt, um eine einfachere Alternative zu JSON zu bieten. Es wird häufig in Anwendungen verwendet, die viele Konfigurationsdateien haben, wie zum Beispiel Anwendungen auf der Basis von Microservices. Eine Alternative zu YAML ist TOML, das sich jedoch noch nicht so weit verbreitet hat.
-
-Die Implementierung von YAML in Gleam basiert auf der Bibliothek "js-yaml". Sie bietet eine schnelle und zuverlässige Möglichkeit, YAML in Gleam zu nutzen.
-
-## Siehe auch
-
-- [Gleam Dokumentation](https://gleam.run/documentation/)
-- [The Basics of YAML](https://www.codeproject.com/Articles/1214409/The-Basics-of-YAML)
+## Siehe Auch:
+- YAML official website: [yaml.org](https://yaml.org)
+- YAML Wikipedia-Artikel: [de.wikipedia.org](https://de.wikipedia.org/wiki/YAML)

@@ -1,7 +1,7 @@
 ---
-title:                "स्टैन्डर्ड त्रुटि पर लेखन"
-html_title:           "Kotlin: स्टैन्डर्ड त्रुटि पर लेखन"
-simple_title:         "स्टैन्डर्ड त्रुटि पर लेखन"
+title:                "मानक त्रुटि में लिखना"
+html_title:           "Arduino: मानक त्रुटि में लिखना"
+simple_title:         "मानक त्रुटि में लिखना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Writing to standard error (stderr) में हम एरर मैसेजेज को कंसोल पर प्रिंट करते हैं। Programmers इसे इसलिए इस्तेमाल करते हैं ताकि वे एरर्स को रेगुलर आउटपुट से अलग कर सकें और लॉगिंग तथा डिबगिंग में आसानी हो।
 
-कोटलिन में, हम प्रोग्राम को संचार करने के लिए तीन मुख्य स्ट्रीम्स का उपयोग करते हैं: स्टैंडर्ड इनपुट (standard input), स्टैंडर्ड आउटपुट (standard output) और आम तौर पर इस्तेमाल किया जाने वाला स्टैंडर्ड एरर (standard error)। स्टैंडर्ड एरर में, हम लोगों को त्रुटियों के बारे में सूचित करने के लिए इस्तेमाल करते हैं। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि यह उन्हें प्रोग्राम में मौजूद त्रुटियों को ढूँढने और सुधारने में मदद करता है।
-
-## कैसे करें:
-
-```Kotlin
+## How to: (कैसे करें:)
+```kotlin
 fun main() {
-  println("This will be printed to standard output")
-  System.err.println("This will be printed to standard error")
+    // नॉर्मल मैसेज
+    println("Hello, Standard Output!")
+    
+    // एरर मैसेज
+    System.err.println("Warning: This is a standard error message!")
 }
 ```
-
-आउटपुट:
+Sample Output:
 ```
-This will be printed to standard output
-This will be printed to standard error
+Hello, Standard Output!
+Warning: This is a standard error message!
 ```
 
-## गहराई में जाएं:
+## Deep Dive (गहराई में जानकारी):
+ऐतिहासिक रूप से, stderr UNIX सिस्टम्स पर output streams का एक हिस्सा है जो terminal पर डायरेक्ट होता है। इसके alternatives हैं जैसे फाइल में लोग करना, या logging frameworks का उपयोग करना। Kotlin में `System.err` Java के `System.err` से ही derived है, जो `PrintStream` ऑब्जेक्ट होता है।
 
-(1) ऐतिहासिक संदर्भ: स्टैंडर्ड औरर के साथ संचार करना प्रोग्रामिंग की दुनिया में एक लंबे समय से अमूल्य तकनीक हो गया है। हालांकि, आधुनिक भाषाओं जैसे कि कोटलिन में, इसे अधिक सुविधाजनक बनाया गया है। (2) वैकल्पिक तरीके: प्रोग्रामर्स त्रुटियों को दिखाने के लिए स्टैंडर्ड एरर के बजाय अन्य तरीके भी इस्तेमाल कर सकते हैं, जैसे कि लॉगिंग फ्रेमवर्क। (3) अंतरण विवरण: स्टैंडर्ड एरर बारे में संदेश भेजने के लिए में उपयोग किए जाने वाले मेथड के बारे में अधिक जानकारी के लिए, हमेशा JVM की आपरेशनलक्लास की स्थापना की जाँच कर सकते हैं।
-
-## हमसे जुड़ें:
-
-आप देख सकते हैं कि हमारे कोटलिन कोर्स में कैसे स्टैंडर्ड एरर का उपयोग किया जाता है। [हमारे और कोटलिन ट्यूटोरियल](https://kotlinlang.org/docs/tutorials/) में अधिक जानिए। और कोटलिन के साथ समय बिताने के लिए, [हमारे कोटलिन रिपोजिटरी](https://github.com/JetBrains/kotlin) को खोजें।
+## See Also (संबंधित जानकारी):
+- [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/)
+- [Java PrintStream Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [Unix Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "C: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Czym jest i dlaczego programiści tego używają? 
+## What & Why? (Co i dlaczego?)
+JSON, czyli JavaScript Object Notation, to format wymiany danych. Programiści używają go, bo jest lekki, czytelny dla ludzi i maszyn, świetnie nadaje się do komunikacji między serwerem a aplikacjami webowymi lub mobilnymi.
 
-JSON (JavaScript Object Notation) jest formatem danych, który jest powszechnie używany przez programistów do przesyłania informacji między aplikacjami internetowymi. Jest to format przypominający język JavaScript, więc jest bardzo czytelny dla programistów. Programiści korzystają z JSON, ponieważ jest to prosty i wygodny sposób przesyłania danych.
-
-##Jak to zrobić:
-
-Aby pracować z JSON w C, musimy korzystać z biblioteki json-c, która dostarcza narzędzia dla programistów do przetwarzania danych JSON. Oto przykładowy kod:
+## How to: (Jak to zrobić?)
+W C korzystamy z bibliotek, jak `cJSON` lub `Jansson`, do pracy z JSON. Poniżej znajdziesz przykład z wykorzystaniem `cJSON`.
 
 ```C
 #include <stdio.h>
-#include "json-c/json.h"
+#include "cJSON.h"
 
 int main() {
-  // tworzenie obiektu JSON
-  json_object *obj = json_object_new_object();
-  
-  // dodawanie kluczy i wartości do obiektu
-  json_object_object_add(obj, "name", json_object_new_string("Jan Kowalski"));
-  json_object_object_add(obj, "age", json_object_new_int(30));
-  
-  // konwertowanie obiektu do formatu tekstowego
-  const char *json_string = json_object_to_json_string(obj);
-  
-  // wypisanie na ekranie
-  printf("Obiekt JSON: %s\n", json_string);
-  
-  // zwalnianie pamięci
-  json_object_put(obj);
-  
-  return 0;
+    // Tworzenie obiektu JSON
+    cJSON *json = cJSON_CreateObject();
+    cJSON_AddStringToObject(json, "name", "Jan Kowalski");
+    cJSON_AddNumberToObject(json, "age", 30);
+    
+    // Drukowanie JSONa
+    char *my_json_string = cJSON_Print(json);
+    printf("%s\n", my_json_string);
+    
+    // Czyszczenie
+    cJSON_Delete(json);
+    free(my_json_string);
+
+    return 0;
 }
 ```
 
-Przykładowy wynik:
+Wyjście:
 
 ```
-Obiekt JSON: {"name": "Jan Kowalski", "age": 30}
+{
+        "name": "Jan Kowalski",
+        "age": 30
+}
 ```
 
-##Głębsze wgląd:
+## Deep Dive (Dogłębna analiza)
+JSON pojawił się w 2001 roku. Jego twórcą jest Douglas Crockford. Alternatywą dla JSON jest XML, ale JSON często wygrywa dzięki prostocie i mniejszej objętości danych.
 
-JSON został stworzony w 2001 roku i od tego czasu stał się jednym z najczęściej używanych formatów danych w świecie programowania. Alternatywami dla JSON są między innymi XML i CSV, jednak JSON jest bardziej czytelny i prostszy do przetwarzania.
+Przy pracy z JSON w C musimy zatroszczyć się o rzeczy jak zarządzanie pamięcią, przewidziane przez bibliotekę, z której korzystamy. Warto też zaznaczyć, że format JSON nie wspiera komentarzy, co jest jego ograniczeniem.
 
-W bibliotece json-c można znaleźć również funkcje pozwalające na parsowanie i odczytywanie plików JSON z dysku. W celu uzyskania dokładnej dokumentacji, można odwiedzić stronę projektu na GitHubie.
-
-##Zobacz też:
-
-- Strona projektu json-c na GitHubie: https://github.com/json-c/json-c
-- Oficjalna strona formatu JSON: https://www.json.org/
+## See Also (Zobacz też)
+- cJSON GitHub Page: https://github.com/DaveGamble/cJSON
+- Jansson documentation: http://www.digip.org/jansson/
+- JSON official website: https://www.json.org/json-en.html
+- Porównanie JSON i XML: https://www.json.com/json-vs-xml

@@ -1,7 +1,7 @@
 ---
-title:                "YAMLでの作業"
-html_title:           "Go: YAMLでの作業"
-simple_title:         "YAMLでの作業"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & どうして?
+## What & Why?
+## 何となぜ？
 
-YAMLとは、プログラミング言語でデータを表現するための構造化されたフォーマットです。プログラマーはYAMLを使用することで、データを簡単に扱いやすくすることができます。
+YAMLはデータ表現のフォーマット。設定ファイルやデータ転送で使われる。読みやすさと使い勝手で広く採用されている。
 
-## 使い方:
+## How to:
+## どうやって：
+
+まず、`go-yaml`ライブラリを使う。これでYAMLを扱える。下記は読み込みと書き出しの例。
 
 ```Go
-import "gopkg.in/yaml.v2"
-```
-を使用することで、Goプログラミング言語でYAMLを取り扱うことが可能です。以下は、YAMLを読み込んでデコードし、JSON形式に変換するコードの例です。
+package main
 
-```Go
-yamlData := `name: John
-age: 25`
-var data map[string]interface{}
-err := yaml.Unmarshal([]byte(yamlData), &data)
+import (
+	"fmt"
+	"log"
 
-if err != nil {
-  fmt.Println(err)
+	"gopkg.in/yaml.v2"
+)
+
+// Config 構造体にYAMLのデータをマッピング
+type Config struct {
+	Database struct {
+		User     string `yaml:"user"`
+		Password string `yaml:"password"`
+	} `yaml:"database"`
 }
-json, err := json.Marshal(data)
 
-if err != nil {
-  fmt.Println(err)
+func main() {
+	// YAMLデータ
+	data := `
+database:
+  user: dbuser
+  password: dbpass
+`
+
+	// Configオブジェクトを定義
+	var config Config
+
+	// YAMLデータをデコード
+	err := yaml.Unmarshal([]byte(data), &config)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("--- config:\n%v\n\n", config)
+
+	// ConfigオブジェクトをYAMLにエンコード
+	d, err := yaml.Marshal(&config)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("--- yaml:\n%s\n\n", string(d))
 }
-fmt.Println(string(json))
- ```
-
-実行結果:
-
-```Go
-{"name":"John","age":25}
 ```
 
-## 深堀り:
+出力：
 
-YAMLは、XMLやJSONなどのデータフォーマットの一つです。その最大の特徴は、人間にとって読みやすく扱いやすいことです。しかし、他のフォーマットと比べるとパフォーマンスが低く、複雑なデータを扱う際には向いていません。
+```
+--- config:
+{Database:{User:dbuser Password:dbpass}}
 
-代替としては、JSONやXMLなどがあります。これらのフォーマットは、パフォーマンスが高く、より複雑なデータを扱うことができます。しかし、人間にとって読みやすくないという欠点があります。
+--- yaml:
+database:
+  password: dbpass
+  user: dbuser
+```
 
-YAMLの実装には、多くのオプションがありますが、私たちが使用したのはgopkg.in/yaml.v2でした。これは、Go言語で最もよく使用されるYAMLライブラリの一つです。
+
+## Deep Dive:
+## ディープダイブ：
+
+YAMLは"YAML Ain't Markup Language"の略。設定ファイルの簡単な作成を目指して2001年に開発された。JSONやXMLと比べ、人間に優しく、書きやすい。Goでは、`go-yaml`の他にも`ghodss/yaml`などのライブラリがある。パフォーマンスやAPIの違いを考慮して選ぶ。
+
+## See Also:
+## 関連情報：
+
+- YAML公式サイト：https://yaml.org
+- go-yamlライブラリ：https://github.com/go-yaml/yaml
+- YAMLとJSONの比較：https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON

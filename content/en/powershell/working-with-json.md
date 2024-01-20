@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "PowerShell recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,59 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+JSON (JavaScript Object Notation) is a lightweight data format easy for humans to read and write, easy for machines to parse and generate. Programmers work with JSON to exchange data between web clients and servers or to store data because it's simple and has become a web standard.
 
-Dealing with JSON is a common task for programmers, as JSON (JavaScript Object Notation) is a lightweight data interchange format that is widely used in web development. JSON simplifies data sharing and serialization with a human-readable syntax that is easy to parse, making it a popular choice for data storage, transfer, and communication.
-
-## How to:
-
-To start working with JSON in PowerShell, we first need to import the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets from the `Microsoft.PowerShell.Utility` module. These cmdlets allow us to convert PowerShell objects to and from JSON format.
-
-```
-# Convert a PowerShell object to JSON
-$object = @{
-    Name = "John Doe"
-    Age = 30
-    Occupation = "Software Engineer"
-}
-
-$object | ConvertTo-Json
+## How to: 
+### Reading JSON
+```PowerShell
+# Assume 'data.json' contains {"name": "John", "age": 30}
+$json = Get-Content -Path 'data.json' | ConvertFrom-Json
+# Output the name
+$json.name  # Outputs: John
 ```
 
-Output:
-```
-{
-    "Name": "John Doe",
-    "Age": 30,
-    "Occupation": "Software Engineer"
-}
-```
-
-```
-# Convert JSON to a PowerShell object
-$jsonString = '{
-    "Name": "Jane Smith",
-    "Age": 25,
-    "Occupation": "Web Developer"
-}'
-
-$jsonString | ConvertFrom-Json
+### Writing JSON
+```PowerShell
+$person = @{name='Jane'; age=25}
+$person | ConvertTo-Json | Set-Content -Path 'person.json'
+# person.json now contains: 
+# {
+#     "age":  25,
+#     "name":  "Jane"
+# }
 ```
 
-Output:
+### Modifying JSON
+```PowerShell
+$json = Get-Content -Path 'person.json' | ConvertFrom-Json
+$json.age = 26
+$json | ConvertTo-Json | Set-Content -Path 'person.json'
+# person.json now updates Jane's age to 26
 ```
-Name          : Jane Smith
-Age           : 25
-Occupation    : Web Developer
 
-```
+## Deep Dive
+JSON's been the go-to for web data since the early 2000s, taking the throne from XML because of its simplicity. Alternatives to JSON include YAML and the newer TOML, but JSON reigns due to its widespread support and alignment with JavaScript's object syntax. When working with JSON in PowerShell, the built-in `ConvertFrom-Json` and `ConvertTo-Json` cmdlets are powerful, but keep an eye on their depth limits and the `[PSCustomObject]` PowerShell type used when converting from JSON.
 
-## Deep Dive:
-
-JSON was first introduced in 2001 as an alternative to XML with a simpler syntax and better performance. Since then, it has become the preferred format for data exchange in many web applications, especially those built with JavaScript. The popularity of JSON can also be attributed to its lightweight structure, making it easier for humans to read and write compared to XML.
-
-Other alternatives to JSON include YAML and CSV, but these formats have their own limitations and are not as widely used as JSON. When working with JSON in PowerShell, it is important to note that not all PowerShell objects can be converted to JSON. Objects that have methods or circular references cannot be converted and will result in an error.
-
-## See Also:
-
-- [Microsoft Docs: Working with JSON data in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.1)
-- [JSON.org: Introducing JSON](https://www.json.org/json-en.html)
+## See Also
+- [JSON.org](https://www.json.org/json-en.html) for JSON's syntax and basics
+- [MDN Web Docs on JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) for the JavaScript side

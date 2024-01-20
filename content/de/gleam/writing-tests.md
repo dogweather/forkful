@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Gleam: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,19 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist es und warum?
-Tests schreiben ist ein wichtiger Teil des Programmierens. Es ermöglicht Programmierern, die Funktionen ihres Codes zu überprüfen und sicherzustellen, dass er wie erwartet funktioniert.
+## Was & Warum?
+Tests schreiben ist das Komponieren von Code, der anderen Code überprüft. Programmierer machen das, um Fehler zu vermeiden, Sicherheit zu erhöhen und den Code leichter wartbar zu machen.
 
-## Wie geht es?
-Es gibt verschiedene Ansätze zum Schreiben von Tests in Gleam. Das grundlegende ist die Verwendung der `assert`-Funktion, um Behauptungen über das erwartete Verhalten des Codes zu machen. Zum Beispiel:
+## How to:
+```Gleam
+import gleam/should
+import your_module
+
+pub fn your_test_function() {
+  your_module.your_function_to_test()
+  |> should.equal("Erwartetes Ergebnis")
+}
 ```
-🍎 true_case =
-    assert.true 2 * 2 == 4
 
-🍏 false_case =
-    assert.true 2 * 2 == 5
+Ausgabe nach Testlauf:
 ```
-Die `assert`-Funktion erwartet eine boolesche Aussage und gibt eine Fehlermeldung aus, wenn sie falsch ist. Im `true_case`-Beispiel ist die Behauptung wahr, also gibt es keine Fehlermeldung. Im `false_case`-Beispiel ist die Behauptung falsch, also würde eine Fehlermeldung ausgegeben werden, die angibt, dass 4 nicht gleich 5 ist.
+test your_test_function ... ok
+```
 
-## Tief eintauchen
-Das Schreiben von Tests ist ein wichtiger Bestandteil von Test-getriebener Entwicklung (TDD). Dabei schreiben Programmierer Tests, bevor sie den eigentlichen Code schreiben, um sicherzustellen, dass er wie erwartet funktioniert. Neben `assert` gibt es auch weitere Möglichkeiten zum Schreiben von Tests in Gleam, wie beispielsweise die Verwendung von Modulen oder die Verwendung von Test-Frameworks wie `gleam_pest`.
+## Deep Dive
+Gleam baut auf der Erlang VM auf, einer Plattform bekannt für Robustheit und Langlebigkeit in systemkritischen Anwendungen. Traditionelle Alternativen wären Eunit oder Common Test in Erlang, doch Gleam bietet eine moderne, typsichere Option. Die Integration des `should`-Moduls vereinfacht die Syntax und sorgt für lesbare Assertions. Im Kern läuft alles über das 'gleam_otp' Framework, das Parallelität und Fehlermanagement von Erlang nutzt.
+
+## See Also
+- Eine Sammlung an Gleam-Modulen: [Awesome Gleam](https://github.com/gleam-lang/awesome-gleam)
+- Das 'gleam_otp' Framework: [gleam_otp](https://hex.pm/packages/gleam_otp)

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Rust: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і Чому?
+## What & Why?
+Що таке робота з YAML і чому програмісти це роблять?
+YAML - це формат даних, легкий для людського ока і машини. Програмісти використовують його для конфігурацій, зберігання даних та обміну між мовами програмування, завдяки його простоті та гнучкості.
 
-YAML - це формат даних, що використовується для зберігання інформації у структурованому вигляді. Програмісти використовують YAML для зручного представлення даних та легшого взаємодії з ними.
-
-## Як це зробити:
-
+## How to:
 ```Rust
-use yaml_rust::YamlLoader;
+// Додайте в Cargo.toml залежність
+serde = "1.0"
+serde_yaml = "0.8"
+serde_derive = "1.0"
 
-let data = "
-name: Іван
-age: 25";
+// Приклад структури для серіалізації/десеріалізації
+use serde::{Serialize, Deserialize};
 
-let docs = YamlLoader::load_from_str(data).unwrap();
-let ivan = &docs[0];
-println!("Ім'я: {}", ivan["name"]);
-println!("Вік: {}", ivan["age"]);
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    version: String,
+    debug: bool,
+}
+
+// Серіалізація конфігурації в YAML
+fn serialize_config() -> Result<String, serde_yaml::Error> {
+    let config = Config {
+        version: "1.0.0".to_string(),
+        debug: true,
+    };
+    serde_yaml::to_string(&config)
+}
+
+// Десеріалізація YAML в конфігурацію
+fn deserialize_config(yaml: &str) -> Result<Config, serde_yaml::Error> {
+    serde_yaml::from_str(yaml)
+}
+
+fn main() {
+    // Серіалізація
+    match serialize_config() {
+        Ok(yaml) => println!("Serialized YAML:\n{}", yaml),
+        Err(e) => println!("Serialization failed: {}", e),
+    }
+
+    // Якщо вам подобається YAML...
+    let yaml_str = "
+version: '2.0.0'
+debug: false
+";
+    // Десеріалізація
+    match deserialize_config(yaml_str) {
+        Ok(config) => println!("Deserialized config: {:?}", config),
+        Err(e) => println!("Deserialization failed: {}", e),
+    }
+}
 ```
 
-Вище наведений код демонструє, як можна прочитати дані у форматі YAML та отримати до них доступ за допомогою мови програмування Rust.
+## Deep Dive
+YAML виник у 2001 році як більш читабельна альтернатива XML та JSON. В Rust робота з YAML зазвичай через бібліотеку `serde_yaml`, що використовує `serde` для (де)серіалізації. Хоча JSON залишається популярнішим для API, YAML частіше використовують для складних конфігурацій через більшу читабельність.
 
-## Глибше погляньмо:
-
-YAML був створений у 2001 році як альтернатива формату XML. У порівнянні з XML, YAML є більш зручним та простим у використанні, оскільки не вимагає тегів та зворотних слешів. Окрім того, YAML дозволяє створювати читабельні структури даних у вигляді списків та ключ-значення.
-
-Існують інші альтернативні формати даних, такі як JSON та TOML. Однак, YAML використовується, коли потрібно зберегти дані у більш інтуїтивно зрозумілому форматі для людей.
-
-Реалізація роботи з YAML у Rust здійснюється за допомогою бібліотеки ```yaml_rust```, яка надає зручний API для роботи зі структурами даних у форматі YAML.
-
-## Дивись також:
-
-- [YAML формат даних](https://yaml.org/)
-- [JSON, TOML та інші формати даних](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats)
+## See Also
+- [The YAML Specification](https://yaml.org/spec/)
+- [serde_yaml crate documentation](https://docs.rs/serde_yaml/0.8.17/serde_yaml/)
+- [Serde guide](https://serde.rs/)

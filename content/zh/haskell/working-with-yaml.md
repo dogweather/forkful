@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml进行编程"
-html_title:           "Haskell: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 要做什麼 & 為什麼？
+## What & Why?
+## 什么是YAML编程，为什么要用？
 
-YAML是一種格式化文件的語言，用於存儲和傳輸數據。它相比其他格式如JSON和XML更加人性化，易於閱讀和編寫。許多程序員使用YAML來處理配置文件、數據序列化、和Web應用程式的通訊。
+Haskell中使用YAML常见于配置文件解析和数据交换。它易于阅读，支持复杂结构，能让程序更灵活。
 
-## 怎麼做：
+## How to:
+## 如何实现:
 
-```Haskell
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Data.Yaml
 
+-- 假设我们有一个YAML文件：config.yaml
+-- 内容如下：
+-- name: "Zhang San"
+-- age: 30
+-- skills:
+--   - Haskell
+--   - Java
+
+-- 定义对应YAML结构的Haskell类型
+data Person = Person 
+  { name :: String
+  , age :: Int
+  , skills :: [String]
+  } deriving (Show)
+
+instance FromJSON Person where
+  parseJSON (Object v) =
+    Person <$> v .: "name"
+           <*> v .: "age"
+           <*> v .: "skills"
+  parseJSON _ = fail "Expected an Object for Person"
+
+-- 解析YAML文件
+main :: IO ()
 main = do
-    -- 讀取文件
-    yamlFile <- readFile "config.yaml"
-    -- 將文件轉換為YAML數據結構
-    let parsedYAML = decode yamlFile :: Maybe Value
-    case parsedYAML of
-        Just value -> putStrLn $ "讀取的數據：" ++ show value
-        Nothing -> putStrLn "解析失敗"
+  eitherPerson <- decodeFileEither "config.yaml" :: IO (Either ParseException Person)
+  case eitherPerson of
+    Left err -> putStrLn $ "Error parsing YAML file: " ++ show err
+    Right person -> print person
 ```
 
-結果：
+输出样例：
+
 ```
-讀取的數據：Object (fromList [("name",String "John"),("age",Number 25),("hobbies",Array [String "reading",String "coding",String "hiking"])])
+Person {name = "Zhang San", age = 30, skills = ["Haskell","Java"]}
 ```
 
-## 深入了解：
+## Deep Dive:
+## 深入探索:
 
-YAML最早於2001年由Clark Evans創造，他希望能夠使用一種更加簡潔和人性化的語言來編寫配置文件。與JSON相比，YAML具有更加簡潔的語法，但也因此有時難以閱讀和編寫。其他可選的格式包括JSON和XML。
+YAML诞生于2001年，它比JSON更适合复杂环境。Haskell社区使用`yaml`包处理YAML格式。其他格式，如JSON和XML, 在某些场景更受欢迎。YAML在Haskell中和`aeson`包类似，利用了类型类（Typeclasses）来实现解析和生成YAML数据。
 
-在Haskell中，我們可以使用`yaml`庫來處理YAML數據，該庫提供了許多方便的功能和類型，如`Value`和`decode`函數。
+## See Also:
+## 更多信息:
 
-## 參考資料：
-
-[官方Haskell YAML庫的文檔](https://hackage.haskell.org/package/yaml)
-
-[YAML的歷史](https://yaml.org/)
-
-[JSON和XML格式比較](https://www.w3schools.com/js/js_json_xml.asp)
+- Haskell `yaml` package: https://hackage.haskell.org/package/yaml
+- YAML 官方网站: https://yaml.org
+- Aeson: 对比YAML在Haskell中的JSON实现: https://hackage.haskell.org/package/aeson

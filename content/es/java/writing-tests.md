@@ -1,7 +1,7 @@
 ---
-title:                "Pruebas de escritura"
-html_title:           "Java: Pruebas de escritura"
-simple_title:         "Pruebas de escritura"
+title:                "Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué y por qué?
+## Qué y Por Qué?
+Escribir tests es crear código para probar otro código. Programadores lo hacen para asegurarse de que su código funciona como debe y para prevenir fallos en el futuro.
 
-Escribir pruebas (o tests) en Java es una forma de verificar si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código hace lo que se supone que debe hacer y para evitar posibles errores.
+## Cómo Hacerlo:
+Imagina que tienes una función simple para sumar dos números. Vamos a escribir un test para ella usando JUnit, que es un framework popular para tests en Java.
 
-## Cómo:
+```java
+import org.junit.jupiter.api.*;
 
-Podemos escribir pruebas utilizando la clase `JUnit` en Java. Primero, debemos agregar la dependencia de `JUnit` en nuestro proyecto. Luego, creamos una clase de prueba para cada clase que queremos probar y usamos anotaciones para declarar los métodos de prueba. Finalmente, podemos verificar si el resultado esperado es igual al resultado real utilizando aserciones.
+public class CalculadoraTest {
 
-```Java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+    @Test
+    public void testSuma() {
+        assertEquals(5, Calculadora.suma(2, 3));
+    }
+}
 
-public class TestClass {
-
-  @Test
-  public void testMethod() {
-    int result = 10 + 20;
-    assertEquals(30, result);
-  }
+public class Calculadora {
+    public static int suma(int a, int b) {
+        return a + b;
+    }
 }
 ```
 
-## Profundizando:
+Output esperado al pasar el test:
 
-Escribir pruebas automatizadas es una práctica común en el desarrollo de software. Fue popularizado por Kent Beck en su libro "Extreme Programming Explained". Además de `JUnit`, existen otras herramientas de pruebas para Java, como `TestNG` y `Mockito`. También podemos escribir pruebas unitarias, de integración y de sistema, dependiendo del nivel en el que queremos probar nuestro código.
+```
+Test passed.
+```
 
-## Vea también:
+Si hay un fallo, veríamos algo como:
 
-- [Tutorial de JUnit](https://www.baeldung.com/junit)
+```
+org.opentest4j.AssertionFailedError: expected: <5> but was: <4>
+```
+
+## Profundización:
+Históricamente, los tests han estado menospreciados, pero enfoques como TDD (Test-Driven Development) los han hecho esenciales. Alternativas a JUnit incluyen TestNG y Spock. El detalle clave al escribir tests es que deben ser independientes y repetibles, sin efectos secundarios que alteren resultados futuros.
+
+## Ver También:
+- JUnit 5 User Guide: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
+- Spock Framework: [http://spockframework.org](http://spockframework.org)
+- Artículo sobre TDD: [https://martinfowler.com/bliki/TestDrivenDevelopment.html](https://martinfowler.com/bliki/TestDrivenDevelopment.html)

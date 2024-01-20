@@ -1,7 +1,7 @@
 ---
-title:                "Standard errorin kirjoittaminen"
-html_title:           "C: Standard errorin kirjoittaminen"
-simple_title:         "Standard errorin kirjoittaminen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,52 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Kirjoittaminen standardivirheeseen (stderr) tarkoittaa viestienvälitystä ohjelman virheilmoituksia varten. Ohjelmoijat käyttävät tätä virheiden ja diagnostiikkatietojen esittämiseen, jolloin normaali tuloste (stdout) pysyy puhtaana tulostiedosta varten.
 
-Kirjoittaminen standardivirheeseen on tapa ilmoittaa ohjelmassa tapahtuneesta virheestä tai epäonnistuneesta toiminnasta. Tätä käytetään usein ohjelmoinnissa, jotta voidaan helposti tunnistaa ja korjata virheitä.
-
-## Ohjeet:
-
-### Esimerkki 1:
+## How to: (Kuinka Tehdä:)
 ```C
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Tämä on esimerkki kirjoittamisesta standardivirheeseen.");
+    fprintf(stderr, "Tapahtui virhe.\n");
     return 0;
 }
-
-```
-### Tulostus:
-```
-Tämä on esimerkki kirjoittamisesta standardivirheeseen.
 ```
 
-### Esimerkki 2:
-```C
-#include <stdio.h>
+Esimerkiksi yläpuolella stderriin kirjoitetaan viesti "Tapahtui virhe.". Tavallista tulostetta ei häiritä.
 
-void function() {
-    fprintf(stderr, "Toinen esimerkki.");
-}
+## Deep Dive (Syväluotaus)
+Stderr on puskuroimaton, mikä tarkoittaa ettei viiveitä tapahdu viestien näyttämisessä. Historiallisesti stderr antoi keinoälyn välitöntä palautetta komentoriviltä juoksevalle ohjelmalle. Vaihtoehtona on lokitiedostoihin kirjoittaminen tai käyttäjän määrittämien virheilmoituskanavien hyödyntäminen. Stderr-kirjoittaminen on toteutettu C-kirjaston fprintf-funktiolla, jossa ensimmäinen argumentti on tiedostomuuttuja, joka viittaa stderr:iin.
 
-int main() {
-    function();
-    return 0;
-}
-
-```
-### Tulostus:
-```
-Toinen esimerkki.
-```
-
-## Syväsukellus:
-
-Kirjoittaminen standardivirheeseen on ollut osa C-ohjelmointia jo pitkään. Sitä käytetään usein yhdessä ```fprintf```-funktion kanssa, joka mahdollistaa tarkemman virheen ilmoittamisen. On myös olemassa muita tapoja käsitellä virheitä, kuten käyttämällä ```errno```-muuttujaa, mutta kirjoittaminen standardivirheeseen on yksi helpoimmista tavoista ilmoittaa virhe ohjelmassa.
-
-## Katso myös:
-
-- [fprintf-funktio](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [errno-muuttuja](https://www.tutorialspoint.com/c_standard_library/c_macro_errno.htm)
-- [virheenkäsittely C:ssä](https://www.geeksforgeeks.org/error-handling-c-programs/)
+## See Also (Katso Myös)
+- C Standard Library Documentation: https://en.cppreference.com/w/c/io
+- GNU C Library Reference Manual – Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- Effective C: https://nostarch.com/Effective_C

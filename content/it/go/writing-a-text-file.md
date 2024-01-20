@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Go: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Go"
 category:             "Go"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## What & Why?
+Scrivere un file di testo vuol dire memorizzare dati in modo leggibile. È fondamentale per salvare configurazioni, log, e per scambiare informazioni tra programmi e utenti.
 
-Scrivere un file di testo è un'attività comune per i programmatori di Go. Consiste nel creare un file di dati di testo semplice, che può essere letto da un computer o da un essere umano. I programmatori fanno ciò per memorizzare informazioni importanti, come le impostazioni del programma o i dati da elaborare più tardi.
-
-## Come fare:
-
-Ecco un esempio di codice in Go per scrivere un file di testo:
-
+## How to:
 ```Go
-// Importiamo il pacchetto di input/output
-import "io/ioutil"
+package main
 
-// Creiamo una variabile con il contenuto che vogliamo scrivere nel file
-var content = []byte("Questo è il contenuto del nostro file di testo")
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
 
-// Utilizziamo la funzione WriteFile del pacchetto ioutil per scrivere il file
-err := ioutil.WriteFile("file.txt", content, 0644)
+func main() {
+    file, err := os.Create("esempio.txt")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
 
-// Controlliamo se ci sono errori
-if err != nil {
-    panic(err)
+    writer := bufio.NewWriter(file)
+    _, err = writer.WriteString("Ciao, mondo!\n")
+    if err != nil {
+        panic(err)
+    }
+
+    // Assicurati che tutto sia scritto sul disco
+    writer.Flush()
 }
+
+// Output nel file 'esempio.txt'
+// Ciao, mondo!
 ```
 
-Una volta eseguito, il codice crea un nuovo file di testo chiamato "file.txt" con il contenuto specificato all'interno. 
+## Deep Dive:
+La scrittura su file è pratica antica quanto la programmazione. Prima, avveniva su nastri magnetici o cartelloni perforati. Oggi abbiamo alternative come database e archiviazione nel cloud, ma i file di testo restano utili per la loro semplicità e portabilità. Go usa internamente buffer per ottimizzare la scrittura su disco.
 
-## Approfondimento:
-
-Scrivere un file di testo è una pratica comune nella programmazione, utilizzata sin dagli albori dei computer. Prima dell'avvento dei database, i file di testo venivano utilizzati per memorizzare e gestire grandi quantità di dati. Oggi, ci sono alternative più avanzate, come i database relazionali, ma per alcune applicazioni i file di testo sono ancora un'ottima scelta. 
-
-## Vedi anche:
-
-- Documentazione ufficiale di Go sull'input/output: https://golang.org/pkg/io/
-- Tutorial su come scrivere un file di testo in Go: https://www.calhoun.io/reading-and-writing-files-in-go/
-- Codice di esempio su Github: https://github.com/asdine/storm/tree/master/examples/fileIO
+## See Also:
+- Documentazione ufficiale su come scrivere su file in Go: https://golang.org/pkg/os/ e https://golang.org/pkg/bufio/
+- Esempi di scrittura di file nei linguaggi di programmazione storici per confronto: https://en.wikipedia.org/wiki/Hello_world_program_examples
+- Approfondimenti sul file system di Go e gestione errori: https://blog.golang.org/go1.13-errors

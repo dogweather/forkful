@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Lua: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robić?
+## Co i dlaczego?
+Zapisywanie pliku tekstowego to proces tworzenia nowego pliku lub modyfikacji istniejącego, aby zawierał określony tekst. Programiści to robią, gdy chcą zachować dane, skonfigurować oprogramowanie lub przechować wyniki działania programu.
 
-Pisanie pliku tekstowego jest jedną z podstawowych czynności programistycznych. Polega ono na zapisaniu informacji w postaci tekstu do pliku, który może być odczytany przez inne programy. Programiści często korzystają z tej metody, aby magazynować dane, przetwarzać je lub udostępniać innym użytkownikom.
-
-## Jak to zrobić?
-
-Pisanie pliku tekstowego w Lua jest bardzo proste i wymaga użycia kilku prostych poleceń. Najpierw musimy otworzyć plik, do którego będziemy zapisywać tekst. W tym celu wykorzystujemy funkcję `io.open()` i podajemy jako argument nazwę pliku oraz tryb, w jakim ma zostać otwarty, np. "w" oznacza tryb zapisu. Następnie, wykorzystując funkcję `file:write()`, możemy wpisać dowolny tekst do pliku, a na koniec musimy go zamknąć za pomocą funkcji `file:close()`. Poniżej znajduje się przykładowy kod:
-
+## Jak to zrobić:
 ```Lua
-local file = io.open("plik.txt", "w")
-file:write("Przykładowy tekst do zapisania w pliku.")
-file:close()
+-- Otwieranie pliku do zapisu
+local plik = io.open("przyklad.txt", "w")
+
+-- Sprawdź, czy plik został pomyślnie otwarty
+if plik then
+    -- Zapisz tekst do pliku
+    plik:write("Witaj, świecie!\nTo jest kolejna linia tekstu.")
+    -- Zamknij plik
+    plik:close()
+else
+    print("Nie można otworzyć pliku do zapisu.")
+end
 ```
 
-Po uruchomieniu tego kodu, w folderze, w którym znajduje się nasz program, powinien pojawić się plik o nazwie "plik.txt" zawierający wpisany przez nas tekst.
+Output w pliku `przyklad.txt`:
+```
+Witaj, świecie!
+To jest kolejna linia tekstu.
+```
 
-## Deep Dive
+## W głębi tematu:
+W przeszłości do zapisywania tekstów używano bardziej prymitywnych metod, np. punch cards. W Lua, oprócz standardowego `io.open`, możliwe jest także wykorzystanie innych bibliotek, takich jak `lfs` (LuaFileSystem) dla zaawansowanych operacji na plikach. Implementacja zapisu wykonuje się przez posłużenie się buforowanym wyjściem, co zwiększa wydajność poprzez minimalizację operacji I/O.
 
-Pisanie pliku tekstowego jest jedną z najprostszych metod zapisu danych w Lua. Alternatywne metody to m.in. korzystanie z biblioteki `io` lub funkcji `print()` i przekierowywanie wyjścia do pliku za pomocą operatora ">".
-
-Podczas pisania pliku tekstowego, warto pamiętać o trybie, w jakim go otwieramy. Otwarcie pliku w trybie "w" spowoduje nadpisanie istniejącego pliku lub, jeśli plik nie istnieje, utworzenie nowego. Jeśli natomiast chcemy dopisać tekst do istniejącego pliku, możemy otworzyć go w trybie "a".
-
-## Zobacz też
-
-- [Oficjalna dokumentacja Lua](https://www.lua.org/docs.html)
-- [Pisanie plików tekstowych w języku Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)
+## Zobacz również:
+- Oficjalny tutorial Lua do obsługi wejścia/wyjścia: https://www.lua.org/pil/21.2.html
+- Dokumentacja LuaFileSystem (lfs): https://keplerproject.github.io/luafilesystem/manual.html

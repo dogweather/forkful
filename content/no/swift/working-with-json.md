@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Swift: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Arbeid med JSON er en vanlig oppgave for Swift-programmerere. JSON står for JavaScript Object Notation, og er et format for lagring og overføring av data. Programmerere bruker JSON for å enkelt kunne lagre og utveksle data mellom ulike applikasjoner og systemer.
+## What & Why?
+Arbeid med JSON handler om å parse og generere strukturerte data. Programmerere trenger dette for å enkelt kommunisere med netttjenester og lagre kompleks data enkelt.
 
-## Slik gjør du det:
-Her er et enkelt eksempel på hvordan du kan arbeide med JSON i Swift:
-
+## How to:
 ```Swift
-// Opprett en dictionary med informasjon om en person
-let person = ["navn": "Anna", "alder": 30, "hobbyer": ["sykling", "løping"]]
+import Foundation
 
-// Konverter dictionaryen til JSON-data
-let jsonData = try JSONSerialization.data(withJSONObject: person)
+// JSON String
+let jsonString = """
+{
+    "name": "Ola Nordmann",
+    "age": 30,
+    "isDeveloper": true
+}
+"""
 
-// Skriv ut JSON-data som en lesbar tekststreng
-if let jsonString = String(data: jsonData, encoding: .utf8) {
-  print(jsonString)
+// Konvertere JSON String til Dictionary
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        if let person = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] {
+            print(person)
+        }
+    } catch {
+        print("JSON parsing feil: \(error)")
+    }
 }
 
-// Output:
-// {"navn":"Anna", "alder":30, "hobbyer":["sykling","løping"]}
+// Opprette og konvertere Dictionary til JSON String
+let personDict: [String: Any] = [
+    "name": "Kari Nordmann",
+    "age": 28,
+    "isDeveloper": false
+]
+
+if let jsonData = try? JSONSerialization.data(withJSONObject: personDict, options: []) {
+    if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString)
+    }
+}
 ```
 
-## Dypdykk:
-Historisk sett har JSON blitt brukt som et alternativ til XML, et annet format for lagring og overføring av data. JSON er mye lettere å lese og skrive for mennesker, og tar også mindre plass i datalagringen. 
+Sample output:
+```
+["name": "Ola Nordmann", "age": 30, "isDeveloper": true]
+{"name":"Kari Nordmann","isDeveloper":false,"age":28}
+```
 
-I Swift er JSON-støtte innebygd i språket, ved hjelp av `JSONSerialization`-klassen. Denne klassen gjør det enkelt å konvertere data til og fra JSON-format.
+## Deep Dive
+JSON, JavaScript Object Notation, ble skapt tidlig på 2000-tallet og har blitt standard for dataformat på nettet. Alternativer inkluderer XML og YAML, men JSON er foretrukket for sin enkelhet. I Swift brukes `JSONSerialization` klassen for å parse og generere JSON, men Swift 4 introduserte `Codable`, en mer deklarativ måte å håndtere JSON.
 
-For mer informasjon om arbeid med JSON i Swift, kan du sjekke ut Apple's offisielle dokumentasjon: https://developer.apple.com/documentation/foundation/jsonserialization
-
-## Se også:
-- En grundig guide til JSON i Swift: https://www.raywenderlich.com/8274-json-tutorial-for-ios-getting-started
-- En sammenligning mellom JSON og XML: https://medium.com/@waqas_malik/json-vs-xml-which-one-is-better-based-on-technical-strengths-8587a834aeb0
-- Informasjon om Swift's `JSONEncoder` og `JSONDecoder`-klasser for enda enklere håndtering av JSON-data.
+## See Also
+- Swift's `Codable` documentation: https://developer.apple.com/documentation/swift/codable
+- JSON standard official site: https://www.json.org/json-en.html
+- Apple's Networking with URLSession: https://developer.apple.com/documentation/foundation/urlsession

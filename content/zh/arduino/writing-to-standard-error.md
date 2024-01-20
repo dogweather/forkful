@@ -1,7 +1,7 @@
 ---
-title:                "“写入标准错误”"
-html_title:           "Arduino: “写入标准错误”"
-simple_title:         "“写入标准错误”"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是标准错误？为什么程序员需要它？
+## 什么 & 为什么？
+在Arduino中编写到标准错误意味着将错误信息或调试信息发送到串行监视器，而非常规输出。程序员这样做是为了调试程序和分离正常数据与错误信息，方便问题追踪。
 
-标准错误是程序员用来调试程序并显示错误消息的一种方法。它允许开发者在程序运行时向终端输出错误消息，而不是程序崩溃或输出无用信息。这样可以帮助程序员快速定位和解决问题，提高程序稳定性和可靠性。
-
-# 如何使用标准错误：
-
-在 Arduino 中，我们可以使用 `Serial` 对象来输出错误消息到终端。下面是一个示例代码：
-
+## 如何：
 ```Arduino
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // 初始化串行通信
+  while (!Serial) {
+    ; // 等待串行端口连接
+  }
 }
 
 void loop() {
-  int num = 10 / 0; // 这里故意写了一个错误的表达式，会导致程序崩溃
-  String errorMessage = "Error: Cannot divide by zero."; // 错误消息
-  Serial.println(errorMessage); // 输出错误消息到终端
+  Serial.println("普通信息。"); // 标准输出
+  Serial.println("错误信息！", STDERR); // 标准错误输出，在Arduino里没有定义STDERR，仅为展示
 }
 ```
+样本输出：
+```
+普通信息。
+错误信息！
+```
+Arduino IDE没有直接支持标准错误流，上面"STDERR"的用法仅为示例，并非真实代码。
 
-运行上面的代码，你会在终端看到错误消息 `Error: Cannot divide by zero.`。
+## 深入探究
+Arduino没有内置处理标准错误流的方式，因为它主要用于嵌入式系统，这些系统通常不需要复杂的错误处理。过去，程序员只能利用LED状态或简单的串行输出来调试。现在，最常见的替代方法是使用串行输出分辨错误。实际上，我们通过特定标记（如在消息前添加"ERROR: "）来区分错误信息。
 
-# 深入了解：
-
-在编程领域，标准错误是一种常见的调试技术。它可以追溯到 1960 年代的 UNIX 系统，当时它被用来处理程序崩溃时的错误消息。现在，许多编程语言都支持标准错误，例如 C、C++、Java等。
-
-作为标准错误的替代品，程序员也可以使用 `Serial.println()` 函数来输出消息。不过，这种方法只能用于调试，而不能输出系统错误消息。因此，使用标准错误可以提供更强大的调试功能。
-
-关于标准错误的实现细节，它实际上是一个单独的输出流，通常是 stderr。程序通过向这个流写入数据来输出错误消息，使用标准错误可以引入一些性能开销，但是这是值得的，因为它可以帮助程序员更好地调试程序。
-
-# 相关阅读：
-
-了解更多关于标准错误的背景和用法，可以参考下面的链接：
-
-- [Serial.println() - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+## 参考
+- Arduino官方文档: https://www.arduino.cc/reference/en/
+- 教程：“如何使用Arduino进行调试”: https://www.arduino.cc/en/Tutorial/BuiltInExamples
+- 论坛: https://forum.arduino.cc/

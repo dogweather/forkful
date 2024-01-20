@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Java: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Java"
 category:             "Java"
@@ -11,27 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Arbetar du med programmering, kanske du har stött på CSV. CSV (Comma Separated Values) är ett enkelt filformat som används för att lagra och utbyta data. Det är vanligt att programmerare använder CSV för att hantera stora mängder data på ett effektivt sätt.
+CSV, eller Comma-Separated Values, är ett enkelt filformat för att lagra tabelldata. Programmerare använder CSV för att enkelt utbyta data mellan olika program, system och språk.
 
-## Så här:
-För att arbeta med CSV i Java finns det flera olika bibliotek och API:er att använda sig av. Ett populärt alternativ är OpenCSV, som är ett open-source bibliotek för att läsa och skriva CSV-filer. Här är ett exempel på hur du kan använda OpenCSV för att skriva ut en CSV-fil:
+## Hur gör man:
+Java har inget inbyggt stöd för CSV, så vi använder ofta bibliotek som Apache Commons CSV eller OpenCSV. Här är ett exempel med Apache Commons CSV för att läsa och skriva CSV:
 
-```Java
-CSVWriter writer = new CSVWriter(new FileWriter("output.csv"));
-String[] row = {"Hej", "på", "dig"};
-writer.writeNext(row);
-writer.close();
+```java
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.Reader;
+import java.io.Writer;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
+public class CSVExempel {
+
+    public static void lasaCSV() throws IOException {
+        Reader in = new FileReader("exempel.csv");
+        Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(in);
+        for (CSVRecord record : records) {
+            String kolumnEtt = record.get(0);
+            String kolumnTva = record.get(1);
+            // Gör något med data
+        }
+    }
+
+    public static void skrivaCSV(List<String[]> data) throws IOException {
+        Writer out = new FileWriter("nyExempel.csv");
+        CSVPrinter printer = new CSVPrinter(out, CSVFormat.DEFAULT);
+        for (String[] record : data) {
+            printer.printRecord((Object[]) record);
+        }
+        printer.flush();
+        printer.close();
+    }
+    
+    public static void main(String[] args) throws IOException {
+        lasaCSV();
+        skrivaCSV(List.of(new String[]{"A1", "B1"}, new String[]{"A2", "B2"}));
+    }
+}
 ```
-Detta kodexempel skapar en CSVWriter som tar en FileWriter som argument för att skriva till en fil med namnet "output.csv". Sedan skapar vi en en-dimensionell array (row) med tre värden och skriver ut den i filen. Du kan också läsa från en CSV-fil på ett liknande sätt med CSVReader. 
+## Deep Dive
+CSV-formatet har använts sedan 1970-talet och är ett smidigt sätt att lagra stora mängder data kompakt. Det saknar dock en standardiserad schema-definition, vilket kan leda till tolkningsproblem. Alternativ till CSV inkluderar JSON, XML och databaser. I Java kan bibliotek som Jackson eller Gson hantera JSON, medan JAX-B används för XML.
 
-## Djupdykning:
-CSV-formatet har funnits sedan 1972 och har varit en viktig del av datalagring och datautbyte sedan dess. Det är ett mycket flexibelt format som stöds av de flesta program och applikationer som hanterar data. Det finns också alternativ till OpenCSV som exempelvis Super CSV och Apache Commons CSV.
-
-När du arbetar med CSV i Java är det också viktigt att tänka på hur du hanterar specialtecken och skiljetecken, eftersom detta kan variera beroende på vilket land eller språk användaren är från. Det finns också möjlighet att använda annotationer för att enklare mappa CSV-data till Java-objekt.
-
-## Se även:
-Om du vill läsa mer om att arbeta med CSV i Java kan du kolla in dessa länkar:
-
-- [OpenCSV](http://opencsv.sourceforge.net/)
-- [Super CSV](https://super-csv.github.io/super-csv/)
-- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/)
+## Se Också
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- OpenCSV: http://opencsv.sourceforge.net/
+- Jackson: https://github.com/FasterXML/jackson
+- Gson: https://github.com/google/gson
+- JAX-B: https://javaee.github.io/jaxb-v2/

@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard di errore"
-html_title:           "Elm: Scrivere su standard di errore"
-simple_title:         "Scrivere su standard di errore"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?:
+## What & Why?
+Scrivere su standard error significa registrare errori e messaggi diagnostici. I programmatori lo fanno per separare i log d'errore dall'output standard, facilitando così il debugging e il monitoraggio.
 
-Scrivere su standard error è un modo per stampare messaggi di errore o di debug nel tuo programma Elm. Questo ti permette di visualizzare informazioni importanti durante l'esecuzione del codice, senza dover interrompere il processo. I programmatori usano spesso questa tecnica per identificare e risolvere eventuali errori nel loro codice.
-
-## Come fare:
-
-Puoi utilizzare la funzione `Debug.log` per scrivere su standard error. Ad esempio:
+## How to:
+Elm è principalmente focalizzato sullo sviluppo front-end e attualmente non fornisce funzioni di I/O come scrivere su stderr direttamente. Tuttavia, puoi inviare messaggi di errore alla console del browser tramite `Debug.log`. Qui sotto un esempio:
 
 ```Elm
-Debug.log "Messaggio" "Questo è un messaggio di errore"
+import Html
+
+main =
+    Html.text (Debug.log "ErrorLogged" "Questo messaggio si trova nella console del browser")
 ```
 
-Questo mostrerà il messaggio `Questo è un messaggio di errore` sulla console degli sviluppatori di Elm.
+Output console del browser:
+```
+ErrorLogged: Questo messaggio si trova nella console del browser
+```
 
-## Approfondimento:
+## Deep Dive
+Elm è un linguaggio funzionale che gira nel browser, dove la scrittura su stderr non è nativamente supportata. Storicamente, Elm si concentra sulla robustezza e sulla gestione degli errori a tempo di compilazione invece che a runtime. Alternativamente, se devi lavorare con stderr in ambito server-side, dovrai usare un linguaggio come Node.js e poi interagire con Elm tramite ports. In questo contesto, l'output su stderr sarebbe gestito dal codice JavaScript lato server.
 
-La scrittura su standard error è stata introdotta per la prima volta nei linguaggi di programmazione C e Unix negli anni '70. È diventato uno strumento fondamentale per i programmatori per identificare e risolvere i bug nel loro codice.
-
-Un'alternativa alla scrittura su standard error è utilizzare la funzione `Debug.todo`, che ti permette di indicare una funzione da implementare in futuro.
-
-## Vedi anche:
-
-Per ulteriori informazioni su come utilizzare la funzione `Debug.log`, puoi consultare la documentazione ufficiale di Elm [qui](https://elm-lang.org/docs/debug). Ti consigliamo anche di leggere la documentazione su come gestire gli errori in Elm [qui](https://elm-lang.org/docs/error-handling).
+## See Also
+- [Elm Debug.log documentation](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Debug#log)
+- Elm Architecture Tutorial per la gestione degli errori: https://guide.elm-lang.org/error_handling/
+- Node.js `console.error` per il logging su stderr: https://nodejs.dev/learn/the-nodejs-console-module

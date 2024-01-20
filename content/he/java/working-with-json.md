@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם json"
-html_title:           "Java: עובדים עם json"
-simple_title:         "עובדים עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-עבודה עם JSON היא תהליך תכנותי שמאפשר למפתחים לקרוא, להעביר ולהצטרף לנתונים בפורמט מסודר ויעיל. זה נמצא בשימוש נרחב על ידי מפתחי תוכנה, במיוחד כאשר מדובר בפיתוח אפליקציות ואתרים מרובי-קטעים.
+## מה ולמה?
+JSON זה תסדיר להתכתבויות מידע, קל לקריאה וכתיבה גם על ידי מחשבים וגם על ידי בני אדם. מתכנתים משתמשים ב-Java כדי לנהל נתונים בפורמט JSON כי זה נפוץ, גמיש, וקל לשילוב ברשת.
 
-## איך לעשות זאת:
-תחת הקוד של ```Java ... ```, תוכלו למצוא דוגמאות איך לעבוד עם JSON כדי לקרוא, לכתוב ולהוסיף נתונים. להמשיך קריאת הדוגמאות כדי לראות את הפלט המתאים.
+## איך לעשות:
+```java
+import org.json.JSONObject;
 
-```Java
-// קוראים מידע מקובץ JSON
-JSONObject json = new JSONObject(readFile("user.json"));
-// מדפיסים את המאפיינים של המשתמש
-System.out.println("שם: " + json.get("שם"));
-System.out.println("מין: " + json.get("מין"));
-System.out.println("גיל: " + json.get("גיל"));
-```
+public class JsonExample {
+    public static void main(String[] args) {
+        // יצירת JSON אובייקט
+        JSONObject obj = new JSONObject();
+        obj.put("name", "Yossi");
+        obj.put("age", 30);
+        obj.put("isProgrammer", true);
 
-```Java
-// כותבים נתונים לקובץ JSON חדש
-JSONObject json = new JSONObject();
-json.put("כינוי", "משתמש1");
-json.put("גיל", 30);
-json.put("מין", "זכר");
+        // הדפסת ה-JSON לקונסול
+        System.out.println(obj.toString());
 
-try (FileWriter file = new FileWriter("user.json")) {
-    file.write(json.toJSONString());
+        // קריאה מ-JSON אובייקט
+        String name = obj.getString("name");
+        int age = obj.getInt("age");
+        boolean isProgrammer = obj.getBoolean("isProgrammer");
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Is Programmer: " + isProgrammer);
+    }
 }
 ```
+פלט לדוגמה:
+```
+{"isProgrammer":true,"name":"Yossi","age":30}
+Name: Yossi
+Age: 30
+Is Programmer: true
+```
 
-## טפסים נעוצים:
-JSON נוצר בשנת 2001 כפתרון לבעיות קריאה וכתיבה של נתונים מורכבים בפורמט פשוט ובמהירות. פופולריות שלו עלתה עם התפתחות רחבה של טכנולוגיות האינטרנט ושימוש בו כפורמט אחד תקני עבור REST API. כיום, ישנם יישויות רבות אחרות המתכתבות עם JSON כמו XML ו-YAML.
+## צלילה לעומק
+JSON התפתח בשנות ה-2000 כתסדיר נגיש לעבודה עם נתוני AJAX. ארנטיונות: XML, BSON, YAML. JSON קל לשימוש בזכות ספריות כמו `org.json` או `Jackson` ו`Gson` שמקלות על פענוח והרכבת JSON. הפרטים טכניים הם קידוד UTF-8 ותמיכה במילון (אובייקטים) ומערכים.
 
-## ראו גם:
-- [JSON official website](https://www.json.org/json-en.html)
-- [Baeldung article about JSON in Java](https://www.baeldung.com/java-org-json)
+## לקרוא גם
+- [מדריך לספריית org.json](https://stleary.github.io/JSON-java/)
+- [הדרכת Jackson JSON](https://www.baeldung.com/jackson)
+- [מבוא ל-Gson](https://www.javatpoint.com/gson-tutorial)
+- מפרט התקן הרשמי ל-JSON: [RFC 7159](https://tools.ietf.org/html/rfc7159)

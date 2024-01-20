@@ -1,6 +1,6 @@
 ---
 title:                "Skriva en textfil"
-html_title:           "Go: Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "Go"
 category:             "Go"
@@ -11,55 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skriva en textfil i programmering innebär att skapa och spara data till en fil som är läsbar som text. Programmörer gör detta för att lagra information, såsom konfigurationer, loggar eller användardata.
 
-Att skapa en textfil är en vanlig uppgift för programmerare. En textfil är en fil som kan innehålla text och ibland även andra typer av data. Att skriva en textfil innebär att man lägger till eller ändrar textinnehåll i en befintlig fil.
-
-Programmerare använder textfiler för att lagra data och kommunicera med andra program eller användare. Det är ett enkelt och effektivt sätt att dela information och samarbeta i programmeringsprojekt.
-
-## Hur gör man:
-
+## Hur man gör:
 ```Go
 package main
 
 import (
+    "bufio"
     "fmt"
     "os"
 )
 
 func main() {
-    // Öppna en fil för skrivning
-    file, err := os.Create("mittDokument.txt")
+    // Skapar en ny fil eller öppnar den om den redan finns
+    file, err := os.Create("exempel.txt")
     if err != nil {
         fmt.Println(err)
         return
     }
     defer file.Close()
 
-    // Skriv text till filen
-    _, err = file.WriteString("Hej världen!")
+    // Skapar en bufio.Writer
+    writer := bufio.NewWriter(file)
+
+    // Skriver text till bufferten
+    _, err = writer.WriteString("Hej, det här är en textfil!\n")
     if err != nil {
         fmt.Println(err)
         return
     }
 
-    fmt.Println("Texten har sparats till filen!")
+    // Sköljer bufferten för att säkerställa att all data skrivs till filen
+    writer.Flush()
 }
+
 ```
 
-Output:
+Exempeloutput i "exempel.txt":
 ```
-Texten har sparats till filen!
+Hej, det här är en textfil!
 ```
 
-## Djupdykning:
+## Fördjupning
+Historiskt sett har textfiler använts för att enkelt utbyta information mellan olika program och system, och det är ett format som är lätt läsbart för både människor och datorer. Alternativ till att skriva textfiler inkluderar databaser och binära filer. Beroende på implementationen kan Go använda olika paket som `io/ioutil`, `os`, och `bufio` för att effektivisera skrivandet och hantering av filer.
 
-Historiskt sett har textfiler använts som ett sätt för datorer att lagra och hantera data. Idag är textfiler fortfarande en viktig del av programmering och används för att lagra programmeringskod, konfigurationsfiler och andra typer av data.
-
-Det finns alternativa sätt att skriva till filer i Go, som t.ex. ```ioutil```-paketet, men att använda ```os```-paketets ```Create()```-funktion är en vanligare metod.
-
-När man skriver till en textfil måste man se till att den har rätt filändelse baserat på vilken typ av text som den kommer att innehålla. Detta är viktigt för att filen ska kunna läsas och hanteras korrekt av andra program eller användare.
-
-## Se även:
-
-- [Introduction to Go Programming](https://golang.org/doc/)
-- [Creating and Writing Files in Go](https://gobyexample.com/writing-files)
+## Se även
+- Go By Example: [Writing Files](https://gobyexample.com/writing-files) för basexempel på filhantering i Go.
+- Go-dokumentationen för `os` paketet: [os](https://pkg.go.dev/os) som innehåller funktioner för filoperationer.
+- Go-dokumentationen för `bufio` paketet: [bufio](https://pkg.go.dev/bufio) för effektiv läsning och skrivning.

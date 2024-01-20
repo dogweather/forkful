@@ -11,74 +11,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-JSON (JavaScript Object Notation) is a lightweight data interchange format that is commonly used for transmitting data between a server and a client, making it popular in web development and data storage applications. It is a human-readable text format that is easy to understand and parse, making it a convenient choice for programmers.
+
+Working with JSON (JavaScript Object Notation) involves manipulating data structured in a lightweight, text-based format that's easy for humans to read and write, and easy for machines to parse and generate. Programmers use JSON in Arduino projects to communicate with web services, exchange data, and configure devices seamlessly.
 
 ## How to:
-To use JSON in an Arduino project, you can take advantage of the built-in library called ArduinoJson. Here's an example of how to create a JSON object and print it to the serial monitor:
 
-```
-#include <ArduinoJson.h>		// include the library
+To work with JSON in Arduino, you'll need the ArduinoJson library. Install it via Library Manager: Sketch > Include Library > Manage Libraries... then search for "ArduinoJson" and install.
+
+Here's a simple example to parse JSON:
+
+```cpp
+#include <ArduinoJson.h>
+
+const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
 
 void setup() {
-	Serial.begin(9600);		// initialize serial communication
+  Serial.begin(9600);
+
+  DynamicJsonDocument doc(1024);
+  deserializeJson(doc, json);
+
+  const char* sensor = doc["sensor"];
+  long time = doc["time"];
+  double latitude = doc["data"][0];
+  double longitude = doc["data"][1];
+  
+  Serial.print("Sensor: ");
+  Serial.println(sensor);
+  Serial.print("Time: ");
+  Serial.println(time);
+  Serial.print("Latitude: ");
+  Serial.println(latitude, 6);
+  Serial.print("Longitude: ");
+  Serial.println(longitude, 6);
 }
 
 void loop() {
-	StaticJsonDocument<200> jsonDoc;	// create a JSON document with a capacity of 200 bytes
-	jsonDoc["temperature"] = 25;		// add a key-value pair to the JSON object
-	jsonDoc["humidity"] = 50;
-	serializeJson(jsonDoc, Serial);		// serialize the JSON object
-	delay(1000);
+  // Not used in this example.
 }
 ```
 
-The output on the serial monitor will look like this:
+Sample output:
 
 ```
-{"temperature":25,"humidity":50}
+Sensor: gps
+Time: 1351824120
+Latitude: 48.756080
+Longitude: 2.302038
 ```
 
-You can also parse a JSON string and access its values by using the ```parseObject()``` and ```["key"]``` methods respectively. This is useful when receiving JSON data from an external source.
+Creating JSON:
 
-```
-#include <ArduinoJson.h>		// include the library
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
-	Serial.begin(9600);		// initialize serial communication
+  Serial.begin(9600);
+
+  DynamicJsonDocument doc(1024);
+
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
+  doc["data"][0] = 48.756080;
+  doc["data"][1] = 2.302038;
+
+  serializeJson(doc, Serial);
 }
 
 void loop() {
-	String jsonString = "{\"name\":\"John\",\"age\":30}";	// example JSON string
-	StaticJsonDocument<200> jsonDoc;						// create a JSON document with a capacity of 200 bytes
-	auto error = deserializeJson(jsonDoc, jsonString);	// parse the JSON string
-	if (error) {											// check for parsing errors
-		Serial.println("Parsing failed");
-	} else {
-		String name = jsonDoc["name"];	// access the value of "name"
-		int age = jsonDoc["age"];		// access the value of "age"
-		Serial.print("Name: ");
-		Serial.println(name);
-		Serial.print("Age: ");
-		Serial.println(age);
-	}
-	delay(1000);
+  // Not used in this example.
 }
 ```
 
-The output on the serial monitor will look like this:
+Sample output:
 
 ```
-Name: John
-Age: 30
+{"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
 ```
 
-## Deep Dive:
-JSON was created in 2001 by Douglas Crockford as an alternative to XML for data exchange between web services. It is based on the JavaScript programming language, making it easy to use in web development. As mentioned earlier, JSON is a lightweight format compared to XML which makes it more efficient for transmitting data over the internet.
+## Deep Dive
 
-However, there are other alternatives to JSON for data interchange such as XML, YAML, and CSV. Each has its own advantages and disadvantages, but JSON remains a popular choice for its simplicity and compatibility with web technologies.
+The ArduinoJson library, by Benoit Blanchon, became the de facto standard for JSON manipulation in Arduino. JSON gained popularity for its simplicity over XML, which was widely used before. Alternatives like MsgPack exist but JSON remains favorite for its text readability and widespread use. Implementation-wise, ensure you allocate enough memory for the `DynamicJsonDocument` to avoid overflows and use `StaticJsonDocument` for static or known-sized JSON objects.
 
-The ArduinoJson library supports both the JSON standard (RFC 8259) and the JSON-like format used by MongoDB, making it flexible for different use cases. It also offers additional features like JSON web tokens and JSON pointers.
+## See Also
 
-## See Also:
-- [ArduinoJson Library Documentation](https://arduinojson.org/)
-- [JSON Official Website](https://www.json.org/)
+- ArduinoJson Library Documentation: https://arduinojson.org/
+- JSON Official Website: https://www.json.org/json-en.html
+- Arduino Forum for Discussions: https://forum.arduino.cc/
+- Guide to Choosing Between StaticJsonDocument and DynamicJsonDocument: https://arduinojson.org/documentation/memory-model/

@@ -1,7 +1,7 @@
 ---
-title:                "写标准错误"
-html_title:           "Ruby: 写标准错误"
-simple_title:         "写标准错误"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,25 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是标准错误输出？为什么程序员要使用它？
+## What & Why? (是什么 & 为什么?)
+输出错误信息到标准错误流(stderr)是一种打印日志、调试或报告错误的手段。程序员这么做是为了区分正常输出（stdout）和错误消息，方便调试和日志记录。
 
-标准错误输出是一种编程概念，它允许程序员在代码中指定错误消息的目的地，而不是默认的标准输出。这对于调试和错误处理非常有用，因为它可以将错误消息与其他打印信息区分开来。程序员使用标准错误输出来向他们提供有用的信息，以便更轻松地解决错误。
-
-## 如何使用标准错误输出：
+## How to: (如何操作)
+在Ruby中，使用`$stderr.puts`或`STDERR.print`输出信息到标准错误。下面是例子：
 
 ```Ruby
-puts "This is standard output" # 正常输出语句
-$stderr.puts "This is standard error output" # 标准错误输出语句
+# 使用puts方法输出到标准错误
+$stderr.puts "发生错误！"
+
+# 使用print方法输出到标准错误
+STDERR.print "警告：操作无效！"
 ```
 
-这里我们在标准输出和标准错误输出中都打印了一条消息，但是输出结果会有所不同。标准输出的消息会显示在控制台中，而标准错误输出的消息会以红色显示，并且有一个前缀为"error"的提示符。
+输出示例：
 
-## 深入探讨：
+```
+发生错误！
+警告：操作无效！
+```
 
-标准错误输出最常见的使用情况是在调试代码时。通过将错误消息输出到标准错误，程序员可以将它与标准输出区分开来，以便更容易发现问题所在。此外，还有一些替代方法来记录错误信息，比如日志记录系统。然而，使用标准错误输出仍然是一种简单有效的方式来处理错误。
+## Deep Dive (深入探索)
+标准错误（stderr）和标准输出（stdout）是UNIX和类UNIX系统的传统概念。它们将输出分为两个不同的渠道，使得用户能够独立地处理正常日志和错误日志。在Ruby中，你可以使用全局变量`$stderr`或常量`STDERR`写入错误信息。两者实质上是同一个对象的两个不同名称。除了直接写入stderr，Ruby还提供了`warn`方法作为向stderr输出警告信息的简便方式。
 
-## 参考资料：
-
-了解更多关于标准错误输出的用法，请参考以下链接：
-
-- [标准错误输出 - Ruby官方文档](https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts)
+## See Also (另请参阅)
+- [Ruby官方的IO文档](https://ruby-doc.org/core/IO.html)
+- [关于标准流的讨论](https://en.wikipedia.org/wiki/Standard_streams)
+- [`warn` 方法的使用](https://ruby-doc.org/core/Kernel.html#method-i-warn)

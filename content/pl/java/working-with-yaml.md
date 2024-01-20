@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Java: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Java"
 category:             "Java"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czym jest YAML i dlaczego programiści go używają?
+## What & Why? | Co i Dlaczego?
+YAML to format danych używany do konfiguracji aplikacji. Programiści lubią YAML, bo jest czytelny dla człowieka i elastyczny w użytkowaniu.
 
-YAML jest to język do przetwarzania strukturalnych danych, często wykorzystywany przez programistów w projektach programistycznych. Jest to wygodne narzędzie do przechowywania i przesyłania danych w prosty i czytelny sposób.
-
-Jednym z powodów używania YAML przez programistów jest jego prostota i czytelność. Dzięki zastosowaniu struktury w postaci "klucz-wartość", pliki YAML są łatwe do zrozumienia i edycji przez ludzi, a także przez programy komputerowe.
-
-# Jak to zrobić:
-
-Aby pracować z YAML w Javie, potrzebujesz biblioteki YAMLBeans, która umożliwia łatwe wczytywanie i zapisywanie plików YAML. Następnie możesz wykorzystać różne metody biblioteki, aby przetwarzać dane w plikach YAML.
-
-Przykładowy kod:
-
+## How to: | Jak to zrobić:
 ```Java
-import org.yamlbeans.YamlException;
-import org.yamlbeans.YamlReader;
-import org.yamlbeans.YamlWriter;
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.util.Map;
 
-// wczytanie pliku YAML
-YamlReader reader = new YamlReader(new FileReader("dane.yaml"));
-Object obj = reader.read();
-
-// zapisanie danych do pliku YAML
-YamlWriter writer = new YamlWriter(new FileWriter("dane.yaml"));
-writer.write(obj);
-writer.close();
+public class YamlExample {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        InputStream inputStream = YamlExample.class
+          .getClassLoader()
+          .getResourceAsStream("config.yaml");
+        Map<String, Object> data = yaml.load(inputStream);
+        System.out.println(data);
+    }
+}
 ```
+Powyższy kod wczytuje plik `config.yaml` i wypisuje jego zawartość. Nie zapomnij dodać zależności SnakeYAML do swojego projektu.
 
-Przykładowe dane w pliku YAML:
+## Deep Dive | Dogłębna analiza
+YAML, czyli "YAML Ain't Markup Language", powstał w 2001 roku. Alternatywami dla YAML są JSON i XML, które są bardziej surowe w strukturze. YAML pozwala na reprezentowanie hierarchicznych danych w bardziej naturalny sposób i jest używany w projektach takich jak Docker czy Kubernetes. Podczas pracy z YAML stosuje się biblioteki takie jak SnakeYAML w Javie, umożliwiające parsowanie i generowanie danych w formacie YAML.
 
-```yaml
-- autor: John Smith
-  tytul: Java dla początkujących
-- autor: Anna Kowalska
-  tytul: Programowanie w Javie na zaawansowanym poziomie
-```
-
-# Głębsze wgląd:
-
-YAML został stworzony przez Clarka Evansa w 2001 roku i początkowo był wykorzystywany w języku programowania Perl. Obecnie jest stosowany w wielu językach programowania, w tym w Javie.
-
-Alternatywą dla YAML w świecie Javy jest format XML, jednak YAML jest uważany za bardziej czytelny i łatwiejszy w użyciu. Inne języki programowania wykorzystujące YAML to między innymi Python, Ruby czy PHP.
-
-Główną zaletą YAML jest jego elastyczność - może być używany do przechowywania różnych typów danych, w tym napisów, liczb, list i słowników.
-
-# Zobacz także:
-
-- [Oficjalna strona YAML](https://yaml.org/)
-- [Dokumentacja YAMLBeans](https://yamlbeans.sourceforge.io/)
+## See Also | Zobacz także
+- Oficjalna strona YAML: https://yaml.org
+- Dokumentacja SnakeYAML: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+- Tutorial YAML w Javie: https://www.baeldung.com/java-snake-yaml

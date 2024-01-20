@@ -1,7 +1,7 @@
 ---
-title:                "Das Schreiben einer Textdatei"
-html_title:           "Swift: Das Schreiben einer Textdatei"
-simple_title:         "Das Schreiben einer Textdatei"
+title:                "Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Textdateien werden von Programmierern oft genutzt, um strukturierte Daten und Informationen in einfacher Textform zu speichern. Dadurch können sie leichter verarbeitet und verwendet werden. Außerdem sind Textdateien plattformübergreifend kompatibel und können in verschiedensten Programmen geöffnet werden.
 
-## Wie geht's?
-Das Erstellen einer Textdatei ist in Swift ziemlich einfach. Zunächst müssen wir eine Instanz einer Dateimanager-Klasse erstellen, die für die Verwaltung von Dateien zuständig ist. Dann können wir mit der Funktion `createFile` eine neue Datei erstellen und den Dateipfad sowie den Inhalt angeben. Anschließend müssen wir noch sicherstellen, dass die Datei erfolgreich erstellt wurde.
+Das Schreiben in eine Textdatei bedeutet, dass Daten dauerhaft gespeichert werden. Programmierer nutzen dies, um Daten zu loggen, Einstellungen zu speichern oder Informationen zwischen Sessions zu übertragen.
 
- ```Swift
- let fileManager = FileManager()
- let filePath = "path/to/file.txt"
- let content = "Dies ist der Inhalt unserer Textdatei."
- 
- fileManager.createFile(atPath: filePath, contents: content.data(using: .utf8), attributes: nil)
- 
- // Überprüfen, ob die Datei erfolgreich erstellt wurde
- if fileManager.fileExists(atPath: filePath) {
-     print("Textdatei erfolgreich erstellt!")
- } else {
-     print("Fehler beim Erstellen der Datei.")
- }
- ```
+## How to:
 
-Die Funktion `createFile` nimmt als Parameter den Dateipfad, den Inhalt und optionale Attribute entgegen. Mit dem `.data(using: .utf8)` Teil wird der Textinhalt in ein Byte-Array umgewandelt, das vom `createFile`-Parameter erwartet wird.
+Swift bietet `String` die Methode `write(to:atomically:encoding:)`, um Daten einfach in Dateien zu schreiben.
 
-## Tief eintauchen
-Das Schreiben von Textdateien ist seit vielen Jahren ein grundlegendes Konzept in der Programmierung. Vor der Verwendung von Datenbanken waren Textdateien die gängigste Methode, um Daten zu speichern. Heutzutage gibt es jedoch Alternativen wie Datenbanken oder andere Dateiformate wie JSON oder XML, die für bestimmte Anwendungsfälle möglicherweise besser geeignet sind.
+```Swift
+import Foundation
 
-Bei der Erstellung von Textdateien in Swift ist es wichtig, den Code sorgfältig zu handhaben, da es keine integrierte Fehlerbehandlung gibt. Es ist also ratsam, den Code in einem `do-catch`-Block auszuführen und Fehler entsprechend zu behandeln.
+let text = "Hallo, Welt!"
+if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = dir.appendingPathComponent("meineDatei.txt")
+    
+    do {
+        try text.write(to: fileURL, atomically: false, encoding: .utf8)
+        print("Datei erfolgreich gespeichert.")
+    } catch {
+        print("Fehler beim Schreiben der Datei: \(error)")
+    }
+}
+```
 
-## Siehe auch
-- [Ein Tutorial zu Textdateien in Swift mit tiefergehender Erklärung](https://www.hackingwithswift.com/read/14/2/reading-from-and-writing-to-a-file)
+Beim Ausführen schreibt das Programm "Hallo, Welt!" in die Datei `meineDatei.txt` im Dokumentenverzeichnis des Nutzers.
+
+## Deep Dive
+
+Historisch gesehen wurde in Swift `NSFileManager` genutzt, das Teil von Foundation ist. Mittlerweile bietet `FileManager` modernere und sicherere Schnittstellen. Als Alternative kannst du Streams oder niedrigere APIs wie `fwrite` in POSIX verwenden, falls nötig. Beim Schreiben von Textdateien sollte man auf korrekte Kodierung achten (meistens UTF-8), um Zeichensatzprobleme zu vermeiden.
+
+## See Also
+
+- Swift Documentation zum `FileManager`: [FileManager | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- Swift Standard Library zum String Handling: [String | Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
+- Apple Guide zu Dateisystem-Interaktionen: [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Go: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
+## What & Why? (Що та Чому?)
+YAML - це формат зберігання даних, легкий для читання людиною. Програмісти використовують для конфігурації додатків, серіалізації даних.
 
-Робота з YAML - це процес роботи зі структурованим форматом даних, який часто використовується при програмуванні. Програмісти використовують YAML для збереження та передачі даних у зручному для обробки форматі.
-
-## Як:
-
+## How to: (Як це зробити:)
 ```Go
-package main 
+package main
 
-import "fmt"
-import "gopkg.in/yaml.v2"
+import (
+	"fmt"
+	"gopkg.in/yaml.v2"
+)
 
-type User struct {
-    Name  string `yaml:"name"`
-    Email string `yaml:"email"`
+// Структура для даних
+type Config struct {
+	Host string `yaml:"host"`
+	Port int    `yaml:"port"`
 }
 
 func main() {
-    user := User{Name: "John Doe", Email: "johndoe@example.com"}
+	// YAML приклад
+	data := `
+host: "localhost"
+port: 8080
+`
+	// Ініціалізація структури Config
+	var config Config
 
-    // Encoding
-    data, err := yaml.Marshal(user)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Printf(string(data))
+	// Вилучення YAML в структуру
+	err := yaml.Unmarshal([]byte(data), &config)
+	if err != nil {
+		panic(err)
+	}
 
-    // Decoding
-    var decodedUser User
-    err = yaml.Unmarshal([]byte(data), &decodedUser)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(decodedUser.Name, decodedUser.Email)
+	// Виведення результату
+	fmt.Printf("Host: %s\nPort: %d\n", config.Host, config.Port)
 }
 ```
-
-Вихідний код:
-```text
-name: John Doe
-email: johndoe@example.com
+Sample output:
 ```
-Вивід:
-```
-John Doe johndoe@example.com
+Host: localhost
+Port: 8080
 ```
 
-## Глибинний Заплив:
+## Deep Dive (Поглиблений огляд)
+YAML (YAML Ain't Markup Language) з'явився у 2001 році. Це альтернатива XML і JSON, простіший для людського сприйняття. Працюючи з YAML у Go потребує зовнішньої бібліотеки, наприклад `gopkg.in/yaml.v2`.
 
-YAML був створений у 2001 році з метою створення простого та зручного для читання формату даних, який був би підходящим для використання у скриптах та інструментах. Існують альтернативи, такі як JSON та XML, але деякі програмісти віддають перевагу YAML через його зручну інтуїтивно зрозумілу структуру. У Go існує бібліотека gopkg.in/yaml.v2, яка підтримує кодування та декодування даних в форматі YAML.
-
-## Дивіться також:
-
-- [Офіційна документація YAML](https://yaml.org/)
-- [Документація для бібліотеки gopkg.in/yaml.v2](https://pkg.go.dev/gopkg.in/yaml.v2)
+## See Also (Дивіться також)
+- YAML офіційний сайт: https://yaml.org
+- Go документація на gopkg.in/yaml.v2: https://pkg.go.dev/gopkg.in/yaml.v2
+- YAML Wikipedia стаття: https://uk.wikipedia.org/wiki/YAML
+- JSON та XML для порівняння: https://www.json.org/json-uk.html, https://www.w3.org/XML/

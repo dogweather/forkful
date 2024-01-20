@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Python recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Working with CSV in Python
-
 ## What & Why?
-Comma Separated Values (CSV) files are a universal data format used to store tabular data, like a spreadsheet. Programmers often need to read and write CSV files in Python for data processing tasks.
+Working with CSV (Comma-Separated Values) files means reading from and writing data to plain-text files where each row is a data record. Programmers dig CSVs because they're light, human-readable, and jig with nearly any data-processing tool.
 
 ## How to:
-Python's CSV module makes it easy to read and write CSV files. Here's how you do it:
-
-Read csv:
-
 ```python
+# Import the CSV module
 import csv
 
-with open('file.csv', 'r') as file:
+# Reading a CSV file
+with open('data.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
         print(row)
-```
-This code reads `file.csv` and prints its content line by line.
 
-Write to csv:
+# Output:
+# ['Name', 'Age', 'City']
+# ['Alice', '30', 'New York']
+# ...
 
-```python
-import csv
-
-with open('file.csv', 'w', newline='') as file:
+# Writing to a CSV file
+with open('output.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(["SN", "Name", "Contribution"])
-    writer.writerow([1, "Linus Torvalds", "Linux Kernel"])
+    writer.writerow(['Name', 'Age', 'City'])
+    writer.writerow(['Bob', '22', 'Los Angeles'])
+
+# Check output.csv to see results
 ```
-This code writes rows to `file.csv`.
 
 ## Deep Dive
-CSV date back to the '70s. Its simplicity and human-readability are why it's still widely used. Alternatives include JSON and XML, but CSV is great when handling 2D numerical and text data. Python's CSV module implementation uses a `Dialect` class to hold together many CSV-specific format traits that let you customize your data handling process.
+Back when data transmission was slower and storage costlier, CSV gained fans for its simplicity and low overhead. Alternatives like JSON and XML provide structure but at the cost of verbosity. For CSV, parsing speed is a win, but it may struggle with complex hierarchies or data types. 
+
+Libraries like `pandas` can also handle CSVs, offering more power but requiring more resources. Under the hood, csv.reader() is a generator, yielding rows one by one—smart for memory management.
 
 ## See Also
-[Python's CSV library documentation](https://docs.python.org/3/library/csv.html), [Real Python's article on handling CSV data](https://realpython.com/python-csv/).
+- Python's CSV reading/writing documentation: https://docs.python.org/3/library/csv.html
+- `pandas` library for complex data handling: https://pandas.pydata.org/
+- CSV vs. JSON vs. XML: A comparison of data formats: https://www.datacamp.com/community/tutorials/json-xml-csv

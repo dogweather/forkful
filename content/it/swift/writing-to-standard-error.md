@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura su errori standard"
-html_title:           "Swift: Scrittura su errori standard"
-simple_title:         "Scrittura su errori standard"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché? 
-Scrivere su standard error non è altro che l'atto di inviare un messaggio di errore ad un canale specifico, invece di stamparlo sullo standard output. I programmatori lo fanno per tenere traccia degli errori in modo più efficiente e per separare i messaggi di errore da quelli di output regolari.
+## What & Why?
+Scrivere su standard error (stderr) permette di separare i normali output di un programma dagli errori. Questo è utile per diagnosticare problemi e per registrare gli errori senza interferire con l'output standard.
 
-## Come fare:
-Per scrivere su standard error in Swift, è necessario utilizzare il metodo `fputs()` insieme alla costante `stderr` che rappresenta lo standard error. Il tuo codice dovrebbe apparire come segue:
+## How to:
+In Swift, usi `FileHandle.standardError` per scrivere su stderr. Ecco come:
 
-```
+```Swift
 import Foundation
-fputs("Messaggio di errore", stderr)
+
+if let errorMessage = "Errore critico.\n".data(using: .utf8) {
+    FileHandle.standardError.write(errorMessage)
+}
 ```
 
-Questo codice invierà il messaggio di errore specificato al canale dello standard error. Puoi anche utilizzare l'operatore `<<` per inviare un messaggio di errore direttamente all'interno di un'istruzione print:
+Se esegui questo codice, vedi sul terminal:
 
 ```
-import Foundation
-print("Messaggio di errore" << stderr)
+Errore critico.
 ```
 
-L'output di entrambi i codici sarà simile a questo: 
-`Messaggio di errore`
+Nota: l'output di errore potrebbe non essere visibile nell'ambiente di sviluppo e potrebbe essere necessario eseguire il programma nel terminal per vederlo.
 
-## Approfondimenti:
-Lo standard error è stato introdotto nei primi sistemi operativi UNIX nel 1969 e da allora è diventato uno standard nell'industria informatica. Un altro modo per gestire gli errori è utilizzare il meccanismo di eccezioni, ma ciò richiede una maggiore complessità nella gestione e può rallentare l'esecuzione del codice.
+## Deep Dive
+Swift non aveva un modo diretto per scrivere su stderr fino alla release di Foundation su macOS e sui sistemi Unix-like. In alternativa, potevi usare `fprintf(stderr, "messaggio")` da C. L'implementazione di Swift gestisce gli I/O come stream, e `FileHandle.standardError` è un'astrazione su `stderr` che facilita la scrittura in Swift.
 
-## Altre risorse: 
-- Documentazione Apple su `Foundation` e `stderr`: https://developer.apple.com/documentation/foundation/1395125-fputs
-- Tutorial su come gestire gli errori in Swift: https://www.swiftbysundell.com/posts/throwing-errors-in-swift
+## See Also
+Per approfondire, consulta i seguenti link:
+- Documentazione ufficiale Apple su [FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- Tutorial su [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams) da Wikipedia per capire come funzionano stdin, stdout e stderr.

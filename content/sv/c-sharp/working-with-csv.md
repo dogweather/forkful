@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "C#: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "C#"
 category:             "C#"
@@ -11,77 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV står för "Comma Separated Values" och det är ett vanligt format för att lagra och överföra tabellformaterade data. Det är ett strukturerat sätt att organisera data i rader och kolumner, med varje cell separerad av ett komma. Programmers väljer att arbeta med CSV eftersom det är lätt att förstå och ett vanligt sätt att utbyta data.
+CSV står för "Comma-Separated Values". Det är en enkel filformat där data separeras med kommatecken, vilket är smidigt för att lagra och utbyta enkla datatabeller mellan program.
 
-## Hur man: 
-Att arbeta med CSV i C# är enkelt med hjälp av .NET's built-in CSV parser. Här är en enkel kod som visar hur man kan läsa och skriva CSV filer:
-
-```
+## How to:
+```C#
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualBasic.FileIO;
 
-namespace CSVExample
+public class CsvReader
 {
-  class Program
-  {
-    static void Main(string[] args)
+    public static void Main()
     {
-      // Läs CSV fil
-      using (var reader = new TextFieldParser("example.csv"))
-      {
-        // Ange kommatecken som separator
-        reader.TextFieldType = FieldType.Delimited;
-        reader.SetDelimiters(",");
+        string filePath = "exempel.csv";
+        var data = ReadCsvFile(filePath);
 
-        // Loopa igenom varje rad i filen
-        while (!reader.EndOfData)
+        foreach (var row in data)
         {
-          // Hämta alla celler i den aktuella raden som en lista
-          var cells = reader.ReadFields();
-          foreach (var cell in cells)
-          {
-            // Skriv ut värdet av varje cell
-            Console.WriteLine(cell);
-          }
+            Console.WriteLine(string.Join(", ", row));
         }
-      }
-
-      // Skapa en ny CSV fil
-      using (var writer = new StreamWriter("new_example.csv"))
-      {
-        // Skriv data till filen
-        writer.WriteLine("1, red, apple");
-        writer.WriteLine("2, blue,berry");
-        writer.WriteLine("3, green, lime");
-      }
     }
-  }
+
+    public static List<List<string>> ReadCsvFile(string path)
+    {
+        var lines = File.ReadAllLines(path);
+        var data = lines.Select(l => l.Split(',').ToList()).ToList();
+        return data;
+    }
 }
 ```
-
-Exempel på utskrift:
-
-```
-1
-red
-apple
-2
-blue
-berry
-3
-green
-lime
+Output:
+```plaintext
+Namn, Ålder, Stad
+Alice, 29, Stockholm
+Bob, 34, Göteborg
 ```
 
-## Djupdykning: 
-CSV har funnits sedan 1970-talet och användes ursprungligen som en enkel och lättåtkomlig sätt att lagra och utbyta data mellan olika program. Men det finns också andra format som kan användas för tabellformaterade data, som JSON eller XML. När du arbetar med CSV data måste du också vara medveten om eventuella problem med data kodning och tolkning av kolonner med specialtecken.
+## Deep Dive
+CSV-filer har använts sedan 1970-talet, ett enkelt format som kan skapas och läsas av kalkylprogram samt programmeringsspråk. Alternativ till CSV inkluderar JSON och XML, som båda kan hantera mer komplext data. När du arbetar med CSV i C#, se till att hantera olika kantfall som t.ex. kommatecken inuti ett värde eller radbyten inuti fält.
 
-En alternativ metod för att läsa och skriva CSV filer i C# är att använda en tredjeparts bibliotek, som CsvHelper eller FileHelpers. Dessa bibliotek erbjuder mer avancerade funktioner och möjligheten att automatiskt mappa CSV data till objekt i C#.
-
-Om du behöver behandla stora CSV filer kan du också tänka på att använda strömning istället för att läsa hela filen på en gång. Detta kan förbättra prestandan i ditt program.
-
-## Se även: 
-- [CsvHelper](https://joshclose.github.io/CsvHelper/)
-- [FileHelpers](https://www.filehelpers.net/)
+## See Also
+- Microsofts dokumentation om `File` klassen: [File Class (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1)
+- Detaljer om CSV-formatet: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+- För en mer avancerad CSV-läsning, se `CsvHelper` biblioteket: [CsvHelper (Github)](https://github.com/JoshClose/CsvHelper)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Elixir: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-JSON (JavaScript Object Notation) er en lettvekts og menneskelesbar måte å lagre og utveksle data på. Det er spesielt nyttig for webapplikasjoner som trenger å kommunisere med servere og utveksle data. Det er også et populært format for å lagre data for senere bruk.
+## Hva & Hvorfor?
 
-# Slik gjør du det:
-For å jobbe med JSON i Elixir, kan du bruke modulen `Jason`. Her er et eksempel på hvordan du kan konvertere data til JSON-format:
+Jobber med JSON innebærer å parse (gjøre om) og generere JSON (JavaScript Object Notation) data, et lett-å-bruke dataformat. Programmerere bruker JSON fordi det er enkelt å lese og skrive for mennesker, og lett å parse og generere for maskiner, noe som gjør det ideelt for datautveksling.
 
-```
-Elixir iex> data = %{name: "Jane", age: 30}
-%Elixir.Map{age: 30, name: "Jane"}
-Elixir iex> json = Jason.encode(data)
-"{\"name\":\"Jane\",\"age\":30}"
-```
+## Hvordan:
 
-Du kan også dekode JSON-data ved å bruke `Jason.decode` modulen:
+Elixir bruker ofte `Jason`, et pakke for JSON manipulasjon. Her er rask guide:
 
-```
-Elixir iex> json = "{\"name\":\"Jane\",\"age\":30}"
-"{\"name\":\"Jane\",\"age\":30}"
-Elixir iex> data = Jason.decode(json)
-%{age: 30, name: "Jane"}
+For å starte, legg `jason` til din `mix.exs`:
+
+```elixir
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
 ```
 
-# Dykk ned i det:
-JSON ble utviklet på 1990-tallet som en enklere måte å utveksle data på. Det er et alternativ til XML-formatet som er mer komplisert og mindre lesbart. For å jobbe med JSON i Elixir, er `Jason` modulen den mest populære og anbefalte løsningen.
+Kjør `mix deps.get` for å installere.
 
-Andre muligheter for å jobbe med JSON i Elixir inkluderer `Poison` og `JSEX`, men disse modulene er vanligvis mindre stabile og mindre utfyllende enn `Jason`.
+Parse en JSON-streng:
 
-For å implementere `Jason`, bruker man en parser som er skrevet i Erlang, kalt `jsx`. Dette gir en rask og effektiv måte å håndtere store mengder JSON-data på.
+```elixir
+{:ok, data} = Jason.decode("{\"key\": \"value\"}")
+IO.inspect(data) # => %{"key" => "value"}
+```
 
-# Se også:
-Hvis du ønsker å lære mer om JSON i Elixir, kan du sjekke ut disse ressursene:
+Lage en JSON-streng fra Elixir data:
 
-- Offisiell Elixir `Jason` dokumentasjon: https://hexdocs.pm/jason/readme.html
-- Elixir Forum tråd om å arbeide med JSON: https://elixirforum.com/t/how-to-work-with-json-in-elixir/6208
+```elixir
+json_string = Jason.encode!(%{"key" => "value"})
+IO.puts(json_string) # => {"key":"value"}
+```
+
+## Dypdykk:
+
+Historisk sett, overtok JSON popularitet fra XML på grunn av sin enkelhet. Noen alternativer inkluderer `Poison` og `Oj` for Elixir, men `Jason` er kjent for sin hastighet og enkelhet.
+
+Implementeringsdetaljer: `Jason` konverterer data mellom Elixir-strukturer og JSON-strenger. Det er nøkkelfokusert på ytelse og sikkerhet, så det kan trygt brukes selv med uventet input.
+
+## Se Også:
+
+- Elixir's offisielle dokumentasjon for `Jason`: https://hexdocs.pm/jason/Jason.html
+- JSON spesifikasjon: https://www.json.org/json-en.html
+- Introduksjon til Elixir: https://elixir-lang.org/getting-started/introduction.html
+- Elixir Forum for diskusjoner relateret til `Jason`: https://elixirforum.com

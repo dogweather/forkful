@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "Swift: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
- CSV står för Comma Separated Values och är ett vanligt format för att lagra och utbyta tabell-data. Programerare kan behöva arbeta med CSV-filer för att importera eller exportera data till eller från en databas eller för att hantera data som är läsbar för mänskliga. 
+## Vad & Varför?
+CSV, "Comma-Separated Values", är textfiler där data separeras med kommatecken. Programmerare använder CSV för enkelheten att lagra och utbyta data mellan olika system.
 
-# Hur man:
+## How to:
+För att jobba med CSV-filer i Swift kan man använda `String`-metoder för att dela upp innehållet. Nedan ser du hur man kan läsa och skriva CSV-data.
 
 ```Swift
 import Foundation
-import SwiftCSV
 
-// Skapa en CSV-fil
-let csvFilePath = "example.csv"
-let csvFile = try! CSV(string: "Name,Age,Country\nJohn,25,Sweden\nLisa,30,USA")
+// Exempel på CSV-sträng
+let csvString = """
+Name,Age,Job
+Alice,35,Developer
+Bob,30,Designer
+"""
 
-// Exportera till en CSV-fil
-try! csvFile.write(to: csvFilePath)
+// Läsa CSV
+func readCSV(contents: String) -> [[String]] {
+    let rows = contents.components(separatedBy: "\n").filter { !$0.isEmpty }
+    return rows.map { $0.components(separatedBy: ",") }
+}
 
-// Läsa från en CSV-fil
-let csvFile = try! CSV(name: csvFilePath)
-let rows = csvFile.rows
-let firstRow = rows[0]
-let name = firstRow["Name"]
-let age = firstRow["Age"]
-let country = firstRow["Country"]
+let data = readCSV(contents: csvString)
+print(data)
 
-// Modifera en CSV-fil
-let csvFile = try! CSV(name: csvFilePath)
-var rows = csvFile.rows
+// Skriva till CSV
+func writeCSV(data: [[String]]) -> String {
+    var contents = ""
+    for row in data {
+        contents += row.joined(separator: ",") + "\n"
+    }
+    return contents
+}
 
-// Lägg till en ny rad
-rows.append(["Peter", "45", "Denmark"])
-
-// Uppdatera en befintlig rad
-rows[0]["Age"] = "26"
-
-// Spara ändringar till en CSV-fil
-try! csvFile.write(to: csvFilePath)
+let newCSVString = writeCSV(data: data)
+print(newCSVString)
 ```
 
-# Djupdykning:
-CSV-filer har funnits sedan 1970-talet och har varit en viktig del av datautbyte mellan system och applikationer. Idag finns det olika format och varianter av CSV och det är viktigt att ha en korrekt parser för att kunna hantera filerna korrekt. Alternativ till att jobba med CSV inkluderar XML, JSON och databasformat som SQL.
+Sample output:
+```
+[["Name", "Age", "Job"], ["Alice", "35", "Developer"], ["Bob", "30", "Designer"]]
+Name,Age,Job
+Alice,35,Developer
+Bob,30,Designer
+```
 
-# Se även:
-- SwiftCSV GitHub Repository: https://github.com/naithar/SwiftCSV
-- Dokumentation för Foundation's CSV framework: https://developer.apple.com/documentation/foundation/csv
+## Deep Dive
+CSV-formatet har historiskt sett varit ett enkelt sätt att överföra tabellformad data sedan 1970-talet. Alternativ till CSV inkluderar JSON och XML som också hanterar hierarkisk data. Swifts `Codable`-protokoll kan användas för att mappa CSV-innehåll till anpassade datamodeller vilket ger starkare typsäkerhet och bättre hantering av komplex data.
+
+## See Also
+- [Apple Developer Documentation: Codable](https://developer.apple.com/documentation/swift/codable)
+- [SwiftCSV – ett annat CSV-bibliotek](https://github.com/swiftcsv/SwiftCSV)

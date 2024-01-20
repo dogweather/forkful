@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeilen"
-html_title:           "Rust: Skriving til standardfeilen"
-simple_title:         "Skriving til standardfeilen"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,23 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriver til standardfeil er et begrep som brukes av programmerere for å beskrive handlingen med å skrive ut feilmeldinger og andre viktige meldinger til standard error-strømmen. Dette er en måte å synliggjøre feil og annen kritisk informasjon i koden din mens programmet kjører.
+Standard error (stderr) brukes for å skrive ut feilmeldinger. Programmerere bruker det for å skille vanlig output fra feil, slik at feil kan logges eller behandles separat.
 
-## Slik går du frem:
-For å skrive en melding til standardfeil i Rust, bruker du ```eprintln!()``` makroen. Dette vil skrive ut meldingen du angir etterfulgt av en ny linje. Her er et eksempel:
-
+## How to:
 ```Rust
-eprintln!("Noe gikk galt!");
+use std::io::{self, Write};
+
+fn main() {
+    writeln!(io::stderr(), "Feil! Noe gikk galt.").unwrap();
+}
 ```
-Dette vil skrive ut "Noe gikk galt!" til standardfeil-strømmen.
+Output:
+```
+Feil! Noe gikk galt.
+```
 
-## Dypdykk:
-Historisk sett var standardfeil bare brukt til å håndtere feilmeldinger, mens standardutdata ble brukt til å skrive ut vanlig informasjon. Men i dag brukes det vanligvis til å skrive ut all slags informasjon som ikke skal vises for brukeren.
+## Deep Dive
+Historisk sett kommer standard error fra UNIX der tre hovedstrømmer ble definert: standard input (stdin), standard output (stdout), og standard error (stderr). Alternativer til `writeln!` inkluderer lavnivåfunksjoner som `write!` eller å bruke biblioteker som `log`. `stderr` er globalt og låst, derfor thread-sikkert.
 
-En alternativ måte å skrive til standardfeil i Rust er å bruke ```write!()``` makroen. Dette vil skrive ut en melding til et spesifikt sted, som standardfeil. 
-
-Implementeringen av standardfeil-funksjonen i Rust er basert på standard feilhåndtering i Unix og C, som bruker en numerisk kode for å indikere forskjellige typer feil.
-
-## Se også:
-- [Rust Dokumentasjon](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Rust Standard Library](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+## See Also
+- Rust dokumentasjon på std::io: https://doc.rust-lang.org/std/io/
+- Rust by Example på standard I/O: https://doc.rust-lang.org/rust-by-example/std_misc/file/stdio.html
+- Bloggpost om logging i Rust: https://www.rust-lang.org/blog/2020/12/18/logging-in-rust.html

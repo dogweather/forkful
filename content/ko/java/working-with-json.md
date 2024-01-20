@@ -1,7 +1,7 @@
 ---
-title:                "JSON으로 작업하기"
-html_title:           "Java: JSON으로 작업하기"
-simple_title:         "JSON으로 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-JSON 작업이란 무엇이며, 프로그래머들이 왜 이것을 수행하는지 알려드리겠습니다. JSON(JavaScript Object Notation)은 데이터를 교환하기 위한 가벼운 형식으로, 자바스크립트와 비슷한 기능을 가지고 있습니다. 이것은 데이터를 보다 간단하게 관리하고 요청하기 위해 사용됩니다.
+## What & Why? (무엇인가요? 왜 사용하나요?)
+JSON은 데이터 교환 포맷입니다. 쉽고, 가볍기 때문에 많은 프로그래머들이 API 통신이나 설정 파일 등에 사용합니다.
 
-## 하는 방법:
-아래 코드 블록에서 코딩 예제와 샘플 출력을 확인해보세요. JSON을 사용하여 데이터를 생성하고 처리하는 간단한 예제를 보여드리겠습니다.
+## How to: (어떻게 사용하나요?)
+Java에서 JSON 다루려면 외부 라이브러리 필요. 여기서는 `Gson` 사용법을 보여줌.
 
-```Java
-// JSON 데이터 생성
-JSONObject json = new JSONObject();
+```java
+import com.google.gson.Gson;
 
-// 데이터 추가
-json.put("name", "John");
-json.put("age", 28);
-json.put("major", "Computer Science");
+public class JsonExample {
+    public static void main(String[] args) {
+        // JSON 문자열로부터 객체 생성
+        String json = "{\"name\":\"James\", \"age\":25}";
+        Gson gson = new Gson();
+        Person person = gson.fromJson(json, Person.class);
+        System.out.println(person.getName() + "는 " + person.getAge() + "살입니다.");
 
-// JSON 데이터 출력
-System.out.println(json.toString());
+        // 객체로부터 JSON 문자열 생성
+        person.setAge(26);
+        String newJson = gson.toJson(person);
+        System.out.println(newJson);
+    }
+}
 
-// 출력 결과: {"name":"John","age":28,"major":"Computer Science"}
+class Person {
+    private String name;
+    private int age;
+    
+    // getter와 setter 생략
+}
+```
+출력:
+```
+James는 25살입니다.
+{"name":"James","age":26}
 ```
 
-## 심층 탐구:
-JSON이 무엇인지 이해하기 위해선, 이것의 역사적 배경과 대안에 대해 조금 더 알아볼 필요가 있습니다. JSON은 처음에는 XML이 대중적이었던 시기에 개발된 것으로, 간결하고 보다 가벼운 데이터 형식으로 인기를 끌게 되었습니다. 이제는 웹 서비스에서 빠르고 쉽게 데이터를 교환하기 위해 주로 사용되며, 다양한 프로그래밍 언어에서 지원하고 있습니다.
+## Deep Dive (심층 분석)
+JSON(JavaScript Object Notation)은 데이터 형식을 나타내는 표준, 2001년에 douglas Crockford가 소개함. XML 대안으로 많이 사용. Java에서는 Gson, Jackson, JSON-B 등 여러 라이브러리로 JSON 처리 가능. 성능, 사용 편의성, 기능면에서 차이가 있음.
 
-## 더 알아보기:
-관련 정보를 확인하고 싶다면 아래 링크를 참고해보세요.
-- [JSON 공식 사이트](https://www.json.org/json-ko.html)
-- [JSON vs XML: 무엇이 더 좋을까?](https://www.ibm.com/developerworks/library/ws-xmljava/)
+## See Also (추가 자료)
+- Google Gson 공식 문서: https://github.com/google/gson
+- Jackson 공식 사이트: https://github.com/FasterXML/jackson
+- JSON-B 사양: https://javaee.github.io/jsonb-spec/

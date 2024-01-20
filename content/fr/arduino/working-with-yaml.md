@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Arduino: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Manipulation des fichiers YAML"
+html_title:           "Arduino: Manipulation des fichiers YAML"
+simple_title:         "Manipulation des fichiers YAML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-YAML (YAML Ain't Markup Language) est un langage de sérialisation de données qui permet aux programmeurs de structurer et de stocker des informations sous forme de texte. Les programmeurs utilisent YAML pour rendre les données lisibles et faciles à modifier, ce qui est particulièrement utile lors de la configuration de périphériques ou de la création de fichiers de configuration.
+## Quoi et Pourquoi ?
 
-## Comment faire:
-```arduino
-#include <YAML.h>
+Le YAML, format de sérialisation de données, est simple et lisible par l'humain. Les programmeurs utilisent YAML pour configurer des applications ou des dispositifs, notamment avec Arduino pour définir des paramètres de manière claire.
+
+## Comment faire :
+
+```Arduino
+#include <ArduinoYAML.h>
 
 void setup() {
-  // initialise la communication avec le port série
   Serial.begin(9600);
-  // crée un objet YAML
-  YAMLClass yaml;
-  // stocke un tableau de valeurs dans un bloc YAML
-  const char *yamlData = "mesures:\n  - temperature: 25\n  - pression: 1013";
-  // charge les données YAML
-  yaml.begin(yamlData);
-  // imprime la température dans le bloc YAML
-  Serial.print("Température: ");
-  Serial.println(yaml["mesures"][0]["temperature"].as<int>());
-  // imprime la pression dans le bloc YAML
-  Serial.print("Pression: ");
-  Serial.println(yaml["mesures"][1]["pression"].as<int>());
+  const char* yaml = 
+  "title: Exemple YAML\n"
+  "version: 1.0\n"
+  "logging: true\n";
+  
+  YAML::Node config = YAML::Load(yaml);
+  Serial.println(config["title"].as<String>());
+  Serial.println(config["version"].as<float>());
+  Serial.println(config["logging"].as<bool>());
 }
 
 void loop() {
-  // programme principal
+  // Pas de contenu ici pour l'exemple
 }
 ```
 
-## Plongée profonde:
-YAML a été créé en 2001 et est basé sur la syntaxe des listes dans le langage de programmation Python. Il est souvent utilisé pour remplacer d'autres formats de données tels que JSON ou XML en raison de sa simplicité et de sa facilité de lecture. Les bibliothèques de YAML sont disponibles pour la plupart des langages de programmation, y compris pour l'Arduino.
+Résultat sur le moniteur série :
+```
+Exemple YAML
+1.0
+1
+```
 
-## Voir aussi:
-- [Documentation officielle YAML](https://yaml.org)
-- [Format de données YAML sur Wikipédia](https://fr.wikipedia.org/wiki/YAML)
+## Exploration :
+
+Le YAML (YAML Ain't Markup Language) a été créé au début des années 2000 comme alternative à XML. Pour Arduino, on peut opter pour le JSON, mais YAML gagne pour sa facilité de lecture. L'implémentation YAML avec Arduino requiert des bibliothèques tierces comme `ArduinoYAML`, disponible via le gestionnaire de bibliothèques de l'IDE Arduino. Attention à la mémoire : les fichiers YAML complexes peuvent être gourmands en ressources.
+
+## Voir aussi :
+
+- Documentation officielle YAML : https://yaml.org
+- ArduinoYAML sur GitHub : https://github.com/jimmiebergmann/ArduinoYAML
+- Comparaison YAML vs JSON : https://json2yaml.com/

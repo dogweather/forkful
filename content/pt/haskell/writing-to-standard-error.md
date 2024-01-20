@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo no erro padrão"
-html_title:           "Haskell: Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Quê & Porquê?
+Escrever no erro padrão (*standard error*) é a prática de enviar mensagens de erro para um stream específico, separado da saída padrão (*standard output*). Isso permite aos programadores diferenciar saída normal de mensagens de erro, e é essencial para diagnóstico e depuração.
 
-Escrever para o erro padrão (standard error) é uma prática comum entre programadores para relatar possíveis erros ou problemas durante a execução do código. Ao enviar mensagens de erro para o erro padrão, é possível identificar e corrigir falhas no código de maneira mais eficiente.
-
-## Como fazer:
-
-Existem várias maneiras de escrever para o erro padrão em Haskell. Aqui estão dois exemplos simples utilizando o comando "putStrLn" e a função "hPutStrLn":
-
+## Como Fazer:
 ```Haskell
 import System.IO
 
-putStrLn "Mensagem de erro"
-hPutStrLn stderr "Outra mensagem de erro"
-```
-Saída:
-```
-Mensagem de erro
-Outra mensagem de erro
+main :: IO ()
+main = do
+    hPutStrLn stderr "Isto é uma mensagem de erro."
+    putStrLn "Isto é uma saída normal."
+
+-- Saída esperada:
+-- No console (stderr):
+-- Isto é uma mensagem de erro.
+-- No console (stdout):
+-- Isto é uma saída normal.
 ```
 
-## Mergulho Profundo:
-
-A prática de escrever para o erro padrão tem suas raízes na programação de sistemas operacionais Unix, onde havia diferentes canais de saída para relatar erros e mensagens de sistema. Além do uso do comando "putStrLn" e da função "hPutStrLn", existem outras funções disponíveis para escrever no erro padrão, como "hPutStr" e "hPutChar". Também é possível redirecionar o erro padrão para um arquivo ou outro dispositivo de saída.
+## Aprofundamento
+O erro padrão é um canal de output que existe desde os primórdios dos sistemas Unix, criado para que programas possam comunicar problemas sem interferir na saída de dados. Alternativas incluem a escrita em arquivos de log ou o uso de bibliotecas para lidar com mensagens de erro. Este último pode dar mais controle e opções de formatação, mas escrever diretamente no erro padrão é prático para scripts rápidos ou programas menores. Ao implementar essa funcionalidade em Haskell, usamos a biblioteca `System.IO` que provê a abstração necessária para trabalhar com vários streams de input/output, de forma a manter o código claro e conciso.
 
 ## Veja Também:
-
-- [Documentação do Haskell](https://www.haskell.org/documentation/)
-- [Artigo sobre o comando putStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:putStrLn)
-- [Artigo sobre a função hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Haskell Documentation on System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
+- [Learn You a Haskell for Great Good! on Input and Output](http://learnyouahaskell.com/input-and-output)
+- [Real World Haskell – Chapter 7: I/O](http://book.realworldhaskell.org/read/io.html)

@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "TypeScript: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么 & 为什么？
+## What & Why?
+写文本文件是创建和保存字符数据到可读文件的过程。程序员这么做为了保存配置、导出报告或持久化数据。
 
-编写文本文件是指将数据以文本形式保存到电脑文件中。程序员经常会这样做是因为文本文件易于读取和编辑，并且可以被其他程序轻松处理。
-
-# 如何：
-
-下面是一个简单的例子，展示如何使用TypeScript编写文本文件：
-
+## How to:
 ```TypeScript
-// 导入fs模块
 import * as fs from 'fs';
 
-// 定义要写入的数据
-let data = '这是一个文本文件的内容。';
+let data = '学习TypeScript真有趣！';
 
-// 写入文件
-fs.writeFileSync('text.txt', data, 'utf8');
+// 异步写文件
+fs.writeFile('example.txt', data, (err) => {
+  if (err) throw err;
+  console.log('文件已保存！');
+});
 
-// 读取文件
-let content = fs.readFileSync('text.txt', 'utf8');
-
-// 打印输出
-console.log(content);
+// 同步写文件
+try {
+  fs.writeFileSync('exampleSync.txt', data);
+  console.log('同步文件已保存！');
+} catch (err) {
+  console.error(err);
+}
 ```
 
-这段代码会将字符串数据写入名为text.txt的文件中，并读取文件内容并打印到控制台。
+Sample Output:
+```
+文件已保存！
+同步文件已保存！
+```
 
-# 深入探讨：
+## Deep Dive
+TypeScript是JavaScript的超集，加入了类型系统和对ES6+的新特性支持。Node.js环境中，`fs`模块常用于文件操作，包括读写。使用TypeScript写文本文件时，通常用到`fs.writeFile`（异步）或`fs.writeFileSync`（同步）。可选用库如`fs-extra`或框架特有的方法，如`fs`模块的`fs.promises` API和ESM语法支持。
 
-历史背景：在计算机发展早期，文本文件是最流行的数据存储格式。它们比二进制文件更易于阅读和编辑，并且可以被多种操作系统和程序处理。在当今的现代编程中，文本文件仍然扮演着重要的角色。
-
-替代方案：除了文本文件，还有其他数据存储格式，如XML、JSON和数据库。这些格式具有不同的优势和用途，根据具体需求进行选择。
-
-实现细节：在TypeScript中，可以使用fs模块来处理文件操作。这个模块提供了各种方法来读取、写入和编辑文本文件。
-
-# 参考链接：
-
-- TypeScript文档：https://www.typescriptlang.org/docs/home.html
-- fs模块文档：https://nodejs.org/dist/latest-v14.x/docs/api/fs.html
+## See Also
+- Node.js `fs`模块文档：[Node.js File System](https://nodejs.org/api/fs.html)
+- TypeScript 官方手册：[TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- `fs-extra`库：[fs-extra GitHub](https://github.com/jprichardson/node-fs-extra)

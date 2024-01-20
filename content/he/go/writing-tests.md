@@ -1,6 +1,6 @@
 ---
 title:                "כתיבת בדיקות"
-html_title:           "Go: כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "Go"
 category:             "Go"
@@ -11,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא תהליך שבו מתבצעים בדיקות על קטעי קוד כדי לוודא שהם עובדים כפי שצופו. תהליך זה חיוני לתוכניות תוכנה כדי להבטיח פעולה תקינה ולמנוע באגים ובעיות בפרסום או בהרצת התוכנית.
 
-## איך לבצע:
+כתיבת בדיקות (Tests) בתכנות זה עיצוב של תרחישים כדי לוודא שהקוד שלך עובד כשורה. פרוגרמרים עושים את זה כדי למנוע באגים, לשפר איכות ולהקל על תחזוקת הקוד בעתיד.
+
+## איך לעשות:
+
 ```Go
-func Add(x, y int) int {
-	return x + y
+package main
+
+import (
+    "testing"
+    "reflect"
+)
+
+// Add מחברת שני מספרים
+func Add(a, b int) int {
+    return a + b
 }
 
+// TestAdd טסט לפונקציה Add
 func TestAdd(t *testing.T) {
-	sum := Add(3, 5)
-	if sum != 8 {
-		t.Errorf("expected 8, got %d", sum)
-	}
+    got := Add(3, 4)
+    want := 7
+    
+    if got != want {
+        t.Errorf("התקבל %d, רוצים %d", got, want)
+    }
 }
 ```
+תוצאת הדוגמא: אם הבדיקה תעבור, לא יהיו הדפסות. אם יש כישלון, תראה הודעת שגיאה.
 
-## טביעת רגל:
-כתיבת בדיקות בתוכניות תוכנה לא היתה מקובלת לפני התקווה. אך עם התפתחות התוכניות והצורך באיכות, בדיקות נהפכו לחלק חיוני מתהליך הפיתוח. ישנן כמה כלים נפוצים אחרים לביצוע בדיקות כמו Pytest ו- JUnit.
+## צלילה עמוקה
 
-## ראו גם:
-- [כתיבת בדיקות ב- Go ספר המדריך הרשמי](https://golang.org/doc/code.html#Testing)
-- [בדיקות יחידה עם Pytest](https://docs.pytest.org/en/latest/)
-- [מדריך למתכנתים על JUnit](https://www.vogella.com/tutorials/JUnit/article.html)
+בדיקת קוד היא חלק ממתודולוגיות פיתוח מודרניות כמו TDD (Test-Driven Development). יש אלטרנטיבות לבדיקות יחידה כמו בדיקות אינטגרציה או בקרה ידנית, אבל הן לא מחליפות אותן. ב-Golang, המחלקה "testing" מספקת את הפריימוורק לכתיבת טסטים.
+
+## ראה גם:
+
+- מידע נוסף על כתיבת טסטים ב-Golang בתיעוד הרשמי: [https://golang.org/pkg/testing/](https://golang.org/pkg/testing/)
+- המדריך ל-TDD ב-Golang מבית היוצר של "Learn Go with Tests": [https://github.com/quii/learn-go-with-tests](https://github.com/quii/learn-go-with-tests)
+- הפלאגין של GoConvey לבדיקות מתקדמות ב-Golang: [http://goconvey.co/](http://goconvey.co/)

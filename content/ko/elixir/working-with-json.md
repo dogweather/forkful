@@ -1,7 +1,7 @@
 ---
-title:                "Json 작업하기"
-html_title:           "Elixir: Json 작업하기"
-simple_title:         "Json 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#  뭐고 왜?
-JSON 작업이란 무엇인가? 프로그래머들이 왜 그런 작업을 할까?
+## What & Why?
+JSON은 JavaScript Object Notation의 약자로, 데이터 교환 포맷입니다. 프로그래머는 서로 다른 시스템 사이에서 데이터를 주고 받을 때 이 포맷을 사용합니다.
 
-JSON(JavaScript Object Notation) 작업은 주로 데이터를 저장하고 전송하기 위해 사용되는 특정 형식의 데이터 표현 방식입니다. 이러한 작업은 웹 애플리케이션에서는 물론 모바일과 같은 여러 플랫폼에서도 일반적으로 사용됩니다. 이 형식은 간결하고 읽기 쉽기 때문에 매우 인기가 있습니다.
+## How to:
+Elixir에서 JSON을 다루려면 `Jason` 라이브러리를 사용하는 것이 일반적입니다.
 
-# 방법
-이제 우리가 그것의 중요성을 이해했다면, Elixir에서 JSON 작업을 어떻게 할 수 있는지 알아보겠습니다. 아래의 코드 블록을 참조하세요.
+```elixir
+# 의존성에 Jason 추가
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
 
-```Elixir
-# JSON 모듈 가져오기
-import Jason
+# JSON 문자열을 Elixir 맵으로 파싱
+json_string = "{\"key\": \"value\"}"
+{:ok, result} = Jason.decode(json_string)
+IO.inspect(result) # 출력: %{"key" => "value"}
 
-# 예시 데이터
-data = %{name: "John", age: 30, hobbies: ["programming", "hiking"]}
-
-# 데이터를 JSON 형식으로 변환
-json_data = Jason.encode!(data)
-
-# JSON을 다시 Elixir 데이터로 변환
-elixir_data = Jason.decode!(json_data)
-
-# 변환된 데이터 확인
-IO.inspect(elixir_data)
-
-# 출력 결과
-%{age: 30, hobbies: ["programming", "hiking"], name: "John"}
+# Elixir 맵을 JSON 문자열로 인코딩
+map = %{key: "value"}
+json_output = Jason.encode!(map)
+IO.puts(json_output) # 출력: {"key":"value"}
 ```
 
-# 깊게 들어가기
-JSON은 현재 매우 널리 사용되는 형식입니다. 그러나 실제로 이전에는 XML이 주로 사용되었으며, 많은 개발자들은 JSON을 더 선호합니다. JSON이 간결하고 읽기 쉽고 데이터 전송 및 저장에 유용하기 때문입니다.
+## Deep Dive
+JSON 처리에 관해 Elixir는 다양한 라이브러리를 가지고 있지만, `Jason`은 성능과 유연성 때문에 많은 Elixir 프로젝트에서 선호됩니다. 2001년에 JSON은 Douglas Crockford에 의해 고안되었으며, 웹 API 통신에 가장 널리 사용되는 포맷이 되었습니다. `Poison`이나 `jsx`는 `Jason`의 대안으로 사용될 수 있지만, 최근의 벤치마크에 따르면 `Jason`이 더 빠릅니다. Elixir에서는 라이브러리를 사용하여 JSON의 인코딩(맵을 JSON으로 변환)과 디코딩(JSON을 맵으로 변환)을 수행할 수 있습니다.
 
-혹은 Elixir의 내장 모듈인 Poison을 사용하여 JSON 작업을 수행할 수도 있습니다.
-
-JSON과 같은 구조화된 데이터 작업을 하고자 한다면, Elixir에서는 key-value pair를 사용하는 이 일반적인 방법을 선호합니다. 데이터 업데이트는 매우 빠르게 처리할 수 있으며 필요한 경우 해시 테이블을 사용하여 데이터를 더욱 효율적으로 관리할 수 있습니다.
-
-# 더 알아보기
-더 많은 정보를 원하신다면 다음 링크를 확인해보세요:
-
-- https://elixir-lang.org/docs.html : Elixir 공식 문서
-- https://www.json.org/ : JSON 정보 및 규격
-- https://github.com/michalmuskala/poison : Elixir의 내장 모듈인 Poison에 대한 정보
+## See Also
+- [Jason GitHub](https://github.com/michalmuskala/jason)
+- [JSON 공식 사이트](https://www.json.org/json-ko.html)

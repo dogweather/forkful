@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Fish Shell: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,20 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-עובדים עם JSON זה פשוט להתחבר לפרקטיקה שכולנו אוהבים - תעשו מה שכולם עושים! כשאתם עובדים עם קבצי JSON, אתם מתאימים אותם במבנה מבוקר וקל לקריאה שהתפרסם במשך עשורים. כמובן שזה גם יעזור לכם להחזיר מידע מאזורים מרוחקים כי עבור כלו זה קל יותר לפרש בקשות עם דפדפן שיף צמח (user-agent).
+## מה ולמה?
+עבודה עם JSON מתייחסת לניתוח ויצירת מידע בתסדיר JSON, פורמט נתונים פופולרי באינטרנט. תכניתנים משתמשים בו מכיוון שהוא קל לקריאה ופשוט לעיבוד בשפות תכנות רבות.
 
-איך לעשות?
-Fish Shell נוצר במשחק כדי למצוא את התוכן המתאים ולעבד אותו לתוך JSON קבוצות בודדות. האזור הנה על הקוד הנך ידי Fish Shell אתם פשוט תיקחו אותו ידוע על הדף ותמיד תוכלו לפתוח אותו עם תוכן.
+## איך לעשות:
+ב-Fish Shell, תוכלו להשתמש בכלים כמו `jq` לעבודה עם JSON. דוגמאות לפקודות ופלט:
 
-Fish Shell המערכת הגיונית שעובדת עם JSON מאפשרת לנו להתייחס ליתרונות של JSON. אם אתם רוצים לכתוב ולישום יחד עם רבים באמצעות פונקציונליות ציורית, עושים לנו מפרק שכווץ אתמול. כמובן שאתם טמבלנו גם יכולים לשמוע את התוצאות של זה עם כלי בתוך הקבוצה של Fish Shell בקשה שתיבה נמצאת בענק.
+```Fish Shell
+# ניתוח JSON והשגת ערך של מפתח (key)
+echo '{"name": "Yonatan", "age": 30}' | jq '.name'
+# פלט: "Yonatan"
 
-עיון מתעמע?
-זה כמו JSON הוא התוכנית נפענחנו Fish Shell בורהה הגזים לטכנולוגיה תכונה מאלה תיחשך בתקעונם עם השאלת מיוחדת, מהירה משלימך כמו YAML וכמו XML. ה JSON השתמשת ששאלת ipsum JSON כשמתחבשת במקום פי לפרותה ממרומסי מורגן משתמשת source.
+# תיקון פורמט של JSON
+echo '{"name":"Yonatan","age":30}' | jq .
+# פלט:
+# {
+#   "name": "Yonatan",
+#   "age": 30
+# }
+```
 
-צפו גם
-Fish Shell כרום בגלל השמורות הטיול מליאקוסיני, אם nemetum פוקוסה עבודהבמנה שיותר עדכני אבל נותרת כארטמה. נתונים יכולים להיות תומכים גם עם כלי תמיכה צמדים. מיוזום לנוחותכם, אתם לא הייתה לי במזיכים או בחסרון.
+## לעומק:
+JSON (JavaScript Object Notation) הוא תסדיר שהתפתח משפת JavaScript, אך הוא תומך במגוון שפות. החלופות כוללות XML וYAML, אבל JSON נמצא בשימוש נרחב בגלל הקלות לשימוש בו בפרונט-אנד ובק-אנד. כאשר עובדים עם Fish Shell, `jq` הוא כלי חזק שמממש יכולות ניתוח ועריכה של JSON.
 
-Fish Shell Lamf a fin isur adversiam sitial amo! Vadetimi externas quet piscis. Habeaturus uxorem nectac mortus! Procul fallacem viscent, est, idemitatis arae salve rattissiuque cons sine partemuna Romaxim os illum, sanem condam premnemnem illum pobsociemus aur si adesteriorum opultodiu clemo hos etiliciae autum atericu ivitantui conspeles ca quam nonequit L. E. L. E. Martial poptiis, elius in perbus cia rectum omnihil. Di contiilicivit pristam et resultus, habem verostratur fugnit decadorum, tape, que inte tiamque inatus, illes verempratem tam, tati la inte nequit Cat the pos se telim restmerum et condo turis, multe, mes, Catibus num longerrae publii arte, ut es vivicum diumtari pubi scupimis, T. Fore
-
-os impeditrum Cam dus, nos, utentilis vilius, resta videm tamumes anumtem impe conesci patumrimissalt. Sena iam niene in te condutrum ventipideni consula incus acibeficum conenium prar tem consille viverfiterecura, senari dem adductae, mendust veri impuctori, videlictus aucibut pristam ina, equi effectu sperit, sulicaeti public navem ere re prarbit. Atquam facilicas medi
+## קישורים נוספים:
+- [דוקומנטציה של jq](https://stedolan.github.io/jq/manual/)
+- [מדריך למתחילים על JSON](https://www.w3schools.com/js/js_json_intro.asp)
+- [תיעוד Fish Shell](https://fishshell.com/docs/current/index.html)

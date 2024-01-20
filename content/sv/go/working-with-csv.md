@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Go: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Go"
 category:             "Go"
@@ -11,50 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV står för Comma-Separated Values och är en vanligt förekommande filformat för att lagra och överföra strukturerad data, vanligtvis i form av en tabell med rader och kolumner. Programmare arbetar med CSV för att enkelt kunna hantera och manipulera data i ett enkelt och läsbart format.
+CSV står för "Comma-Separated Values". Programmerare jobbar med CSV för att enkelt utbyta data mellan olika system. Det är ett simpelt, textbaserat format som används överallt.
 
-## Hur du gör:
-Att arbeta med CSV i Go är enkelt och smidigt, tack vare det inbyggda paketet "encoding/csv". Nedan följer ett exempel på hur man kan läsa in data från en CSV-fil och skriva ut det till konsolen:
+## How to:
+Låt oss dyka rätt in. Först, läsa från en CSV-fil:
 
-```Go
+```go
 package main
 
 import (
     "encoding/csv"
     "fmt"
-    "log"
     "os"
 )
 
 func main() {
-    // Öppna filen för läsning
     file, err := os.Open("data.csv")
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
     defer file.Close()
 
-    // Skapa en ny CSV-läsare från filen
     reader := csv.NewReader(file)
-
-    // Läs in alla rader i filen
     records, err := reader.ReadAll()
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 
-    // Loopa igenom alla rader och skriv ut dem till konsolen
     for _, record := range records {
         fmt.Println(record)
     }
 }
 ```
 
-## Djupdykning:
-CSV-filformatet har funnits sedan 1972 och har sedan dess blivit ett populärt sätt att dela och lagra data. Det finns också alternativ till att arbeta med CSV, som till exempel JSON och XML. För att arbeta mer effektivt med CSV-filer kan man använda externa paket som till exempel "github.com/gocarina/gocsv". 
+Exempel output:
+```
+["förnamn", "efternamn", "ålder"]
+["Anna", "Andersson", "28"]
+["Lars", "Larsson", "34"]
+```
 
-Inuti CSV-filen använder sig Go av det charset "UTF-8" för att hantera speciella tecken och unicode. Det är också möjligt att ange andra teckenuppsättningar genom att ändra inställningarna för teckenkodning.
+Och så, skriva till en CSV-fil:
 
-## Se även:
-- [Go-paketet "encoding/csv" dokumentation](https://golang.org/pkg/encoding/csv/)
-- [Alternativ för att arbeta med CSV-filer i Go](https://medium.com/@ankitagarg30/top-2-libraries-to-read-and-write-csv-files-in-go-golang-28b3600260c7)
+```go
+package main
+
+import (
+    "encoding/csv"
+    "os"
+)
+
+func main() {
+    records := [][]string{
+        {"förnamn", "efternamn", "ålder"},
+        {"Anna", "Andersson", "28"},
+        {"Lars", "Larsson", "34"},
+    }
+
+    file, err := os.Create("ny_data.csv")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+
+    writer := csv.NewWriter(file)
+    defer writer.Flush()
+
+    for _, record := range records {
+        if err := writer.Write(record); err != nil {
+            panic(err)
+        }
+    }
+}
+```
+
+Efter att koden körs finns filen `ny_data.csv` med datan vi skrev.
+
+## Deep Dive
+CSV har använts sedan tidigt 1970-tal. Alternativ inkluderar JSON och XML, men CSV prioriteras ofta för dess enkelhet och låg overhead. Go's standardbibliotek `encoding/csv` hanterar RFC 4180-standardiserade CSV-filer, vilket inkluderar subtiliteter som att hantera nya rader och citattecken inom fält.
+
+## See Also
+- Go-dokumentation om `encoding/csv`: https://pkg.go.dev/encoding/csv
+- RFC 4180, standarden för CSV-filer: https://tools.ietf.org/html/rfc4180
+- CSV vs JSON vs XML: https://www.dataedo.com/kb/data-glossary/what-is-csv-json-xml

@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Elixir recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,46 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Comma-Separated Values (CSV) is a file format that stores tabular data. Developers often work with CSV files to handle and analyze large data sets due to its simplicity and wide support.
+
+CSV (Comma-Separated Values) is a plain text format for tabular data. Programmers use CSV to exchange large datasets easily between different programs, services, or databases where complexity isn't a requirement.
 
 ## How to:
 
-Here is how you can read and write CSV files using Elixir:
+Elixir doesn't include CSV parsing in its standard library, but you can use the `CSV` hex package. Here's a quick example to get you started:
 
-First, add the following to your `mix.exs` dependencies:
+```elixir
+# First, add `{:csv, "~> 2.4"}` to your mix.exs and run `mix deps.get`
+# Then, use the CSV module like so:
 
-```Elixir
-defp deps do
-  [
-    {:csv, "~> 2.0"}
-  ]
-end
+CSV.decode("name,age\nJohn Doe,27\nJane Smith,32", headers: true)
+|> Enum.map(fn(row) -> 
+  "Hello, #{row["name"]} who is #{row["age"]} years old!"
+end)
 ```
 
-Then, install dependencies with `mix deps.get`.
+Sample output:
 
-To read a CSV file:
-
-```Elixir
-{:ok, data} = File.stream!("example.csv") |> CSV.decode
 ```
-For writing a CSV file:
-
-```Elixir
-data = [ ["name", "age"], ["Alice", "25"], ["Bob", "30"] ]
-
-{:ok, file} = File.open("new.csv", [:write])
-
-CSV.encode(data) |> Enum.into(file)
+["Hello, John Doe who is 27 years old!", "Hello, Jane Smith who is 32 years old!"]
 ```
+
 ## Deep Dive
 
-CSV was first formalized in 2005 by the Internet Engineering Task Force (IETF). It's a de facto standard more than it is an official one. In Elixir, dealing with CSV files is straightforward using the CSV library, but there are caveats. Due to its implementation, it doesn't support complex CSV features like multi-line fields.
-
-There are alternatives to CSV such as JSON, XML, etc., but the choice of format depends heavily on the use case. CSV is popular for its simplicity, widespread use, and compatibility with spreadsheet programs like MS Excel.
+CSV isn't new; it's been around since the early 1970s, making it one of the most enduring file formats. Its simplicity is its greatest strength and weakness. Alternatives include JSON, XML, or binary formats like Protocol Buffers, each with their trade-offs in complexity, size, and readability. Regarding Elixir, when you decode CSV data using the `CSV` package, underneath the hood, it seamlessly handles common issues like data type conversion, escapes, and character encoding.
 
 ## See Also
 
-- Elixir CSV library documentation: https://hexdocs.pm/csv/readme.html
-- Internet Engineering Task Force (IETF): https://www.ietf.org/
-- JSON vs XML vs CSV: https://www.geeksforgeeks.org/difference-between-xml-and-csv/
+- The `CSV` hex package documentation: <https://hexdocs.pm/csv>
+- An introduction to Elixir's Stream module for large CSVs: <https://elixir-lang.org/getting-started/enumerables-and-streams.html>
+- A comparison of file formats (CSV, JSON, XML, etc.): <https://www.ibm.com/docs/en/iis/11.5?topic=formats-comparing-file-reactivity>

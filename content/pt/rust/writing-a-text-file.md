@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "Rust: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porquê?
+## O Que é & Porquê?
 
-Escrever um arquivo de texto é simplesmente criar um arquivo que contém informações em formato de texto, como palavras, números ou símbolos. Os programadores geralmente escrevem arquivos de texto para armazenar dados ou informações importantes que são usadas em seus programas.
+Escrever um arquivo de texto em Rust envolve salvar dados em formato legível num arquivo no sistema de arquivos. Programadores fazem isso para persistir informação como configurações, logs ou intercâmbio de dados entre sistemas.
 
 ## Como Fazer:
 
-Em Rust, escrever um arquivo de texto é bem fácil e pode ser feito usando a função ```std::fs::write()```. Primeiro, importe o módulo de sistema de arquivos usando a macro ```use std::fs;```. Em seguida, crie seu arquivo de texto usando a função ```write()``` e passe o nome do arquivo, seguido pelos dados que deseja gravar no arquivo. Veja o exemplo abaixo:
+```Rust
+use std::fs::File;
+use std::io::Write;
 
-```
-use std::fs;
-
-fn main() {
-    let dados = r#"Meu primeiro arquivo de texto!"#;
-    
-    fs::write("arquivo.txt", dados).expect("Falha ao escrever no arquivo!");
-    
-    println!("Arquivo criado com sucesso!");
+fn main() -> std::io::Result<()> {
+    let mut arquivo = File::create("saida.txt")?;
+    arquivo.write_all(b"Olá, Rustaceans!")?;
+    Ok(())
 }
 ```
 
-Se tudo ocorrer corretamente, você verá a mensagem "Arquivo criado com sucesso!" impressa no terminal. E se você abrir o arquivo "arquivo.txt", verá que seu texto foi gravado no arquivo.
+_Ao executar, cria um arquivo chamado `saida.txt` com o conteúdo "Olá, Rustaceans!"._
 
 ## Mergulho Profundo
 
-Escrever arquivos de texto é uma técnica comum usada em muitas linguagens de programação, incluindo Rust. Antes da introdução do sistema de arquivos padrão em Rust, os programadores usavam bibliotecas externas para escrever arquivos de texto. No entanto, o sistema de arquivos padrão se tornou a maneira mais simples e confiável de fazer isso.
-
-Existem também outras formas de escrever arquivos de texto em Rust, como usar a macro ```print!()``` para escrever diretamente no arquivo, ou até mesmo criar uma estrutura para facilitar a escrita em arquivos. No entanto, o método usando a função ```write()``` é o mais comum e recomendado.
+Antigamente, manipular arquivos em linguagens de baixo nível exigia conhecimento detalhado do sistema operacional. Em Rust, a biblioteca padrão abstrai esses detalhes com o módulo `std::fs`. Alternativas incluem usar bibliotecas de terceiros como `tokio` para I/O assíncrono. A efetividade vem da segurança de tipos e gestão de erros, que previne corrupção de dados e vazamentos de memória.
 
 ## Veja Também
 
-Para saber mais sobre escrever arquivos de texto em Rust, confira a documentação oficial do Rust [documento] (https://doc.rust-lang.org/std/fs/fn.write.html). Você também pode explorar outras maneiras de escrever arquivos de texto em Rust e descobrir qual funciona melhor para você.
+- [Documentação oficial std::fs](https://doc.rust-lang.org/std/fs/)
+- [Guia de programação de Rust](https://doc.rust-lang.org/book/)
+- [Tutorial sobre I/O assíncrono com tokio](https://tokio.rs/tokio/tutorial)

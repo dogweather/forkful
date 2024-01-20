@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "C#: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O czym & Dlaczego?
-Praca z plikami CSV (Comma Separated Value) polega na odczytywaniu i zapisywaniu danych w formacie tabelarycznym, gdzie każda komórka jest oddzielona znakiem przecinka. Programiści często pracują z CSV, ponieważ jest to szybki i prosty sposób na przechowywanie i przesyłanie danych, szczególnie w przypadku dużych ilości danych.
+## Co i dlaczego?
+Praca z CSV polega na manipulowaniu danymi w formacie Comma Separated Values – tekstowych plikach, gdzie wartości oddzielone są przecinkami. Programiści używają CSV, bo to prosty format do wymiany danych, wygodny w integracji z różnymi aplikacjami, często stosowany do eksportu i importu danych.
 
-## Jak to zrobić?
-Najpierw musisz dodać przestrzeń nazw "System.IO" do swojego kodu C#. Następnie użyj klasy "StreamReader" do odczytania danych z pliku CSV za pomocą metody "ReadLine()". Ponadto, klasa "StreamWriter" może być wykorzystana do zapisania danych do pliku CSV za pomocą metody "WriteLine()". W przykładzie poniżej pokazano jak odczytać dane z pliku CSV i wyświetlić je w konsoli:
-
+## Jak to zrobić:
+Ładowanie danych z CSV do programu:
 ```C#
+using System;
+using System.Collections.Generic;
 using System.IO;
 
-string line;
-StreamReader csvFile = new StreamReader("nazwa_pliku.csv");
-
-while ((line = csvFile.ReadLine()) != null)
+class Program
 {
-    Console.WriteLine(line);
+    static void Main()
+    {
+        var csvData = File.ReadAllLines("dane.csv");
+        foreach (var line in csvData)
+        {
+            var values = line.Split(',');
+            Console.WriteLine($"Imię: {values[0]}, Wiek: {values[1]}");
+        }
+    }
 }
+```
+Zapis danych do pliku CSV:
+```C#
+using System.Collections.Generic;
+using System.IO;
 
-csvFile.Close();
+class Program
+{
+    static void Main()
+    {
+        var users = new List<(string Name, int Age)>
+        {
+            ("Jan", 30),
+            ("Anna", 25)
+        };
 
-// Output:
-// Kolumna1, Kolumna2, Kolumna3
-// Wartość1, Wartość2, Wartość3
-// Wartość4, Wartość5, Wartość6
+        using var writer = new StreamWriter("eksport.csv");
+        foreach (var user in users)
+        {
+            writer.WriteLine($"{user.Name},{user.Age}");
+        }
+    }
+}
+```
+Przykładowe wyjście:
+```
+Imię: Jan, Wiek: 30
+Imię: Anna, Wiek: 25
 ```
 
-## Głębszy zanurzenie
-Pliki CSV zostały wprowadzone w latach 70. i są powszechnie używane do przechowywania danych w formacie tabelarycznym. Alternatywą dla CSV są bazy danych, ale pliki CSV są szybsze i łatwiejsze do przetwarzania. Możesz również odczytywać i zapisywać dane w formacie CSV za pomocą biblioteki "CSVHelper", która oferuje dodatkowe funkcje, takie jak automatyczne mapowanie danych do modeli obiektów.
+## Deep Dive
+Format CSV nie jest jednoznacznie standardyzowany – różni się detalami w zależności od źródła. Historia jego powstania sięga wczesnych lat 70., kiedy zaczęto używać komputerów do przechowywania danych. Alternatywami dla CSV są m.in. XML i JSON, które są bardziej elastyczne, ale i bardziej złożone. Przy pracy z CSV ważne jest uwzględnienie obsługi cytatów, nowych linii w wartościach czy różnych separatorów.
 
-## Zobacz również
-- Dokumentacja Microsoft C# o klasie StreamReader: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader?view=net-5.0
-- Dokumentacja Microsoft C# o klasie StreamWriter: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter?view=net-5.0
-- Biblioteka CSVHelper: https://joshclose.github.io/CsvHelper/
+## Zobacz także
+- Dokumentacja Microsoftu o klasie [StreamWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
+- Dokumentacja Microsoftu o klasie [File](https://docs.microsoft.com/en-us/dotnet/api/system.io.file)
+- Tutorial dotyczący biblioteki [CsvHelper](https://joshclose.github.io/CsvHelper/), jeśli potrzebujesz rozbudowanych możliwości pracy z CSV
+- Oficjalna strona specyfikacji formatu [CSV](https://tools.ietf.org/html/rfc4180), choć nie jest to "pełny" standard.

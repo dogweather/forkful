@@ -10,28 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-तो दोस्तों, हमारे आज की आवाजाही में हम यम्ल के साथ काम करना सीखेंगे। अगर आप एक प्रोग्रामर हो तो आपने शायद सुना होगा कि लोग यम्ल के साथ काम करते हैं। तो आईए देखते हैं कि यह हमारे लिए क्यों महत्वपूर्ण है।
+## What & Why? (क्या और क्यों?)
+YAML (YAML Ain't Markup Language) एक ह्यूमन-रीडेबल डेटा सीरियलाइजेशन फॉर्मेट है। प्रोग्रामर्स कॉन्फ़िग फ़ाइलें, डेटा स्टोरेज, और मैसेज ट्रांसमिशन में YAML का उपयोग करते हैं क्योंकि यह साफ, सिंपल और लैंग्वेज-न्यूट्रल है।
 
-## कैसे करें?
-लोगों वक़्त की कमी के कारण यम्ल के साथ काम करना पसंद करते हैं। यम्ल कोड को अवश्य ही सादा और सरल बनाया गया है। हम यम्ल कोड में डेटा को स्टोर करते हैं और उसे आसानी से प्रोसेस कर सकते हैं। निम्नलिखित उदाहरण देखें:
+## How to: (कैसे?)
+C# में YAML को हैंडल करने के लिए `YamlDotNet` लाइब्रेरी का इस्तेमाल किया जाता है। नीचे कोड सैंपल है:
 
 ```C#
-// YAML में डेटा स्टोर करना
-string data = @"
-  - name: John Doe
-    age: 25
-  - name: Jane Smith
-    age: 30
-";
-// डेटा को प्रोसेस करना
-var deserializedData = YAML.Deserialize<List<Person>>(data);
-Console.WriteLine(deserializedData[0].Name); // John Doe
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yamlStr = @"
+name: John Doe
+age: 30
+isProgrammer: true";
+
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)  // use camel case
+            .Build();
+
+        var person = deserializer.Deserialize<Person>(yamlStr);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}, IsProgrammer: {person.IsProgrammer}");
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public bool IsProgrammer { get; set; }
+}
 ```
 
-## डीप डाइव:
-इतिहास में देखने के लिए, यम्ल 2001 में आये हुए थे और उस समय से लोग इसे पसंद करते आ रहे हैं। यम्ल की एक बेहतरीन बात यह है कि यह एक सादा और लोजिकल सिन्टैक्स है। अल्टर्नेटिव की बात करें तो, JSON या XML भी डेटा को स्टोर करने के लिए उपयोग किया जा सकता है। लेकिन यम्ल कोड इन से बेहतर है क्योंकि यह सीधा, स्वचालित रूप से प्रोसेस होता है। यम्ल कोड को इम्प्लीमेंट करना बहुत आसान है, आप बस YAML लाइब्रेरी को अपने प्रोजेक्ट में इनस्टॉल कर सकते हैं और शुरू हो सकते हैं।
+आउटपुट होगा:
+```
+Name: John Doe, Age: 30, IsProgrammer: True
+```
 
-## और देखें:
-- [YAML.org](https://yaml.org/)
-- [C# YAML लाइब्रेरी](https://github.com/aaubry/YamlDotNet)
+## Deep Dive (विस्तृत जानकारी)
+YAML सन 2001 में डेवलप किया गया था। यह JSON और XML जैसे अन्य फॉर्मेट्स की तुलना में अधिक पठनीय है। इसे .NET में इम्प्लीमेंट करने के लिए `YamlDotNet` लाइब्रेरी सबसे ज्यादा पॉपुलर है, जो डीसीरियलाइजेशन और सीरियलाइजेशन दोनों को सपोर्ट करती है। YAML में डेटा को हायरार्किकल तरीके से डेफाइन किया जाता है, जिसमें इंडेंटेशन का बहुत महत्व होता है।
+
+## See Also (और देखें)
+- YAML स्पेसिफिकेशन: https://yaml.org/spec/1.2/spec.html
+- YamlDotNet गिटहब पेज: https://github.com/aaubry/YamlDotNet
+- YAML और JSON की तुलना: https://en.wikipedia.org/wiki/YAML#JSON
+
+इन लिंक्स पर जाकर आप YAML और इसके .NET इम्प्लीमेंटेशन के बारे में और अधिक जान सकते हैं।

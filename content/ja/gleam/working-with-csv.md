@@ -1,7 +1,7 @@
 ---
-title:                "CSVファイルを扱う"
-html_title:           "Gleam: CSVファイルを扱う"
-simple_title:         "CSVファイルを扱う"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSVとは？
-CSVとは、プログラマーがデータをテキスト形式で保存・交換するためのファイル形式です。各行が列（カラム）に分かれ、データがコンマで区切られています。プログラムでCSVを使う理由は、データを簡単に扱うことができる上に、様々なアプリケーション間でのデータ共有が容易になるからです。
+## What & Why?
+## 何とは？& なぜ？
 
-## 試してみる：
-CSVファイルをGleamで処理する方法を説明します。まずは、Gleamの標準ライブラリである```csv```モジュールをインポートします。次に、```csv.from_string()```関数を使ってCSV形式のデータを文字列として読み込みます。最後に、文字列に対して必要な処理を行い、データを取り出します。
+CSVは「Comma-Separated Values」の略で、カンマで区切られたデータを表します。プログラマーは簡単にデータを交換・保存するため、CSVを使用します。
+
+## How to:
+## どうやって：
 
 ```gleam
-import csv
+import gleam/csv
+import gleam/io
 
-fn main() {
-  let csv_string = "name,age,city\nJohn,30,Tokyo\nEmily,25,New York\n"
+// CSVデータをパースする関数
+pub fn parse_csv(data: String) -> Result(list(list(String)), csv.Error) {
+  csv.decode(data)
+}
 
-  let csv_data = csv.from_string(csv_string)
+// メイン関数で使用
+pub fn main() {
+  let data = "name,age\nAlice,30\nBob,25"
+  let result = parse_csv(data)
 
-  for row in csv_data do
-    let name = row.get(0)
-    let age = row.get(1)
-    let city = row.get(2)
-    io.println("Name: {}, Age: {}, City: {}", [name, age, city])  // 出力：Name: John, Age: 30, City: Tokyo
-                                                                  // 出力：Name: Emily, Age: 25, City: New York
+  case result {
+    Ok(rows) -> io.print(rows)
+    Error(err) -> io.print(err)
+  }
 }
 ```
 
-## 詳しく見てみる：
-CSVが登場したのは1970年代で、表計算ソフトでのデータ取り扱いのために開発されました。その後、インターネットの爆発的な普及に伴い、データのやりとりにおいても重要なフォーマットとなりました。CSV以外にも、ExcelやJSONなどのデータ形式がありますが、CSVはどのアプリケーションでも簡単に扱えるため、非常に人気があります。
+サンプル出力:
+```
+Ok([["name","age"],["Alice","30"],["Bob","25"]])
+```
+
+## Deep Dive
+## 探検：
+
+CSVは1972年にIBMで初めて使われました。JSONやXMLのような代替フォーマットも存在しますが、CSVはそのシンプルさで多くの場面で活躍しています。GleamでのCSV操作は、`gleam/csv`ライブラリを使い、パースやエンコーディングを行います。エラーハンドリングもしっかりと行うことが大切です。
+
+## See Also
+## 関連情報：
+
+- Gleamの公式ドキュメント：https://gleam.run
+- `gleam/csv`ライブラリのドキュメント：https://hexdocs.pm/gleam_csv
+- CSV規格に関する情報：https://tools.ietf.org/html/rfc4180

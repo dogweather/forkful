@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "Elm: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å arbeide med JSON er å håndtere data i et lett og leselig format. Programmerere bruker det for å effektivt utveksle og lagre data på tvers av ulike språk og plattformer.
+## Hva & Hvorfor?
+JSON håndtering er essensielt for å utveksle data på webben. Utviklere bruker det for letthet ved å sende og motta strukturert informasjon mellom klient og server. 
 
-Hvordan:
-Elm spiller godt sammen med JSON og gjør det enkelt å både konvertere data til og fra JSON-formatet, samt å pakke den inn i type-sikre Elm-strukturer.
-```elm
--- Pakk data inn i en Json-struktur
-type alias User =
-    { firstName : String
-    , lastName : String
-    }
+## How to:
+For å jobbe med JSON i Elm, bruk modulene `Json.Decode` og `Json.Encode`. La oss se på grunnleggende eksempler:
 
-userToJson : User -> Json.Encode.Value
-userToJson user =
-    Json.Encode.object
-        [ ( "firstName", Json.Encode.string user.firstName )
-        , ( "lastName", Json.Encode.string user.lastName )
-        ]
+Decoder for enkel streng:
+```Elm
+import Json.Decode as Decode
 
--- Konverter data fra Json til en Elm-struktur
-jsonToUser : Json.Decoder User
-jsonToUser =
-    Json.Decode.map2 User
-        (Json.Decode.field "firstName" Json.Decode.string)
-        (Json.Decode.field "lastName" Json.Decode.string)
+simpleStringDecoder : Decode.Decoder String
+simpleStringDecoder =
+    Decode.string
+
+-- Eksempel på Output:
+-- Result.Ok "Hei verden!"
 ```
 
-Dypdykk:
-JSON ble først utviklet av Douglas Crockford på slutten av 90-tallet og har siden blitt et av de mest brukte formatene for å lagre og utveksle data. Alternativer til JSON inkluderer XML og YAML, men JSON er foretrukket på grunn av sitt enkle og kompakte format. I Elm bruker man kirreringer og avkoding for å arbeide med JSON.
+Encoder for enkel streng:
+```Elm
+import Json.Encode as Encode
 
-Se også:
-Offisiell Elm dokumentasjon for JSON: https://package.elm-lang.org/packages/elm/json/latest/
+simpleStringEncoder : String -> Encode.Value
+simpleStringEncoder string =
+    Encode.string string
+
+-- Eksempel på Output:
+-- "Hei verden!"
+```
+
+## Deep Dive
+Elm gir en trygg måte å jobbe med JSON på. Historisk sett har språk som JavaScript vært mer uforutsigbare med JSON, noe som Elm unngår med sitt sterke typesystem. Alternativer inkluderer dynamisk håndtering via flags eller server-side-decoding. Detaljer som type inference og error handling i Elm gir robuste JSON implementasjoner.
+
+## See Also
+- Elm's officielle JSON guide: https://guide.elm-lang.org/interop/json.html
+- `Json.Decode` dokumentasjon: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode
+- `Json.Encode` dokumentasjon: https://package.elm-lang.org/packages/elm/json/latest/Json-Encode

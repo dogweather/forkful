@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "Rust: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why?
+W Polsce JSON to standard wymiany danych między aplikacjami. Programiści używają JSON, bo jest lekki, elastyczny i szeroko wspierany.
 
-JSON (JavaScript Object Notation) jest powszechnym formatem do przechowywania i przesyłania danych w postaci tekstu. Programiści używają JSON w celu łatwiejszego przechowywania i przetwarzania danych, szczególnie w przypadku komunikacji między różnymi systemami lub językami programowania.
+## How to:
+Zainstaluj crate `serde_json` dla parsowania i serializacji:
 
-## Jak:
-
-Przykładowy kod w języku Rust do konwersji danych z JSON na obiekty:
-
+```toml
+[dependencies]
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
 ```
-use serde_json::{Result, Value};
-use std::fs;
- 
-fn main() -> Result<()> {
-    // Wczytanie danych z pliku JSON
-    let data = fs::read_to_string("data.json").expect("Nie udało się odczytać pliku.");
- 
-    // Parsowanie danych do obiektu Value
-    let json_data: Value = serde_json::from_str(&data)?;
- 
-    // Przykładowe wykorzystanie danych
-    println!("Imię: {}", json_data["name"]);
-    println!("Wiek: {}", json_data["age"]);
- 
-    Ok(())
+
+Struktura i konwersja do/from JSON:
+
+```Rust
+use serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize, Debug)]
+struct Użytkownik {
+    id: u64,
+    nazwa: String,
+    wiek: u8,
+    aktywny: bool,
+}
+
+fn main() {
+    let json_data = r#"
+    {
+        "id": 1,
+        "nazwa": "Jan Kowalski",
+        "wiek": 30,
+        "aktywny": true
+    }"#;
+
+    // Deserializacja
+    let u: Użytkownik = serde_json::from_str(json_data).unwrap();
+
+    // Serializacja
+    let json = serde_json::to_string(&u).unwrap();
+    println!("Serializacja JSON: {}", json);
 }
 ```
-Wynik:
+
+Sample output:
 
 ```
-Imię: Anna
-Wiek: 25
+Serializacja JSON: {"id":1,"nazwa":"Jan Kowalski","wiek":30,"aktywny":true}
 ```
 
-## Głębsza analiza:
+## Deep Dive
+JSON, czyli JavaScript Object Notation, powstał w latach 2000. Alternatywą jest XML, ale JSON wygrał popularnością. Implementacja w Rust z `serde_json` używa prostych adnotacji do zarządzania serializacją/deserializacją i jest efektywna.
 
-1. JSON został stworzony w 2001 roku przez Douglasa Crockforda jako prosty format wymiany danych w JavaScript. Obecnie jest powszechnie używany przez wiele języków programowania.
-
-2. Istnieją inne formaty do przechowywania i przetwarzania danych, takie jak XML czy CSV, jednak JSON jest uważany za bardziej czytelny i łatwiejszy w użyciu.
-
-3. Implementacja biblioteki serde_json w języku Rust zapewnia szybkie i wydajne przetwarzanie danych JSON.
-
-## Zobacz też:
-
-- [Dokumentacja serde_json](https://docs.rs/serde_json/latest/serde_json/)
-- [Wprowadzenie do JSON](https://www.json.org/json-pl.html)
+## See Also
+- [Serde Official Documentation](https://serde.rs)
+- [Rust Programming Language Official Website](https://www.rust-lang.org/learn)

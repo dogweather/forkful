@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive tester"
-html_title:           "Swift: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å skrive tester er en praksis innenfor programmering der man lager kode som tester at annen kode fungerer som den skal. Dette gjør at programmerere kan identifisere og løse problemer i koden sin før den tas i bruk.
+## What & Why?
+Tester er rutiner som sjekker om kode fungerer som forventet. De reduserer feil og forbedrer kodekvalitet ved å sikre at endringer ikke knekker funksjonalitet.
 
-# Hvordan:
+## How to:
+Swift bruker XCTest-rammeverket for testing. Her er et enkelt eksempel som tester en funksjon `leggTil(a:b:)`.
+
 ```Swift
-// Eksempel på en funksjon som skal teste om et tall er et partall
-func erPartall(_ tall: Int) -> Bool {
-    return tall % 2 == 0
+import XCTest
+
+class MinMatteTests: XCTestCase {
+    
+    func testLeggTil() {
+        let resultat = leggTil(a: 2, b: 3)
+        XCTAssertEqual(resultat, 5, "Feil: Forventet 5, fikk \(resultat)")
+    }
+
+    func leggTil(a: Int, b: Int) -> Int {
+        return a + b
+    }
 }
 
-// Testkoden som sjekker funksjonen over
-let tall = 6
-if erPartall(tall) {
-    print("\(tall) er et partall")
-} else {
-    print("\(tall) er ikke et partall")
-}
-
-/* Output:
-6 er et partall
-*/
+// Sample Output:
+// Test Case '-[MinMatteTests testLeggTil]' passed (0.001 seconds).
 ```
 
-# Dypdykk:
-Testdrevet utvikling (TDD) er en tilnærming som fokuserer på å skrive tester før koden, noe som kan føre til mer pålitelige og godt strukturerte programmer. Alternativer til å skrive tester inkluderer manuelt testing og kontinuerlig integrering. Implementasjonsdetaljer for tester inkluderer å bruke rammeverk som XCTest og legge til tester som en del av kontinuerlig integreringsprosessen.
+## Deep Dive
+Før XCTest kom Objective-C sin SenTestingKit. Alternativer inkluderer Quick og Nimble som gir mer beskrivende syntaks. Effektiv testing krever forståelse av begreper som `mocks`, `stubs` og `fake` objekter for å isolere testkoden.
 
-# Se også:
-- [Test-Driven Development in Swift](https://www.raywenderlich.com/7109-test-driven-development-in-swift)
-- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
-- [Introduction to Unit Testing in Swift](https://medium.com/@gauravkumber/unit-testing-in-swift-36ee26b8df8b)
+## See Also
+- [Apple Developer Documentation](https://developer.apple.com/documentation/xctest)
+- [Ray Wenderlich - iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial)
+- [Quick GitHub](https://github.com/Quick/Quick)
+- [Nimble GitHub](https://github.com/Quick/Nimble)

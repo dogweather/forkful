@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Javascript: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att arbeta med YAML i Javascript innebär att du använder ett textformat för att strukturera och organisera data. Det är ett populärt sätt för programmerare att hålla ordning på data som används i sina program och applikationer.
+## Vad och Varför?
+YAML är ett dataformat som används för konfigurationsfiler och datautbyte. Programmerare använder det för dess läslighet och enkelhet, särskilt för att hantera hierarkiska data eller konfigurationer.
 
-## Hur man:
-För att arbeta med YAML i Javascript, behöver du först installera en parser som kan läsa och omvandla YAML till Javascript. Några vanliga alternativ är js-yaml och yamljs. Låt oss titta på ett exempel på hur du kan använda yamljs:
+## Hur gör man:
+Använd npm-paketet `js-yaml` för att enkelt hantera YAML i Javascript.
 
-```Javascript
-const yaml = require('yamljs');
-const data = yaml.load('name: John Doe\nage: 30');
-console.log(data.name); // Output: John Doe
-console.log(data.age); // Output: 30
+```javascript
+const yaml = require('js-yaml');
+const fs = require('fs');
+
+// Läs YAML från en fil
+const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+console.log(doc);
+
+// Konvertera Javascript-objekt till YAML och skriv till fil
+const data = { title: 'Hej', numbers: [1, 2, 3] };
+const yamlStr = yaml.dump(data);
+fs.writeFileSync('./config.yaml', yamlStr);
 ```
 
-## Djupdykning:
-YAML (YAML Ain't Markup Language) har funnits sedan år 2001 och är ett enkelt sätt att strukturera data på ett läsbart sätt. Det är ett bra alternativ till JSON och XML eftersom det är mer mänskligt läsbart och stöder kommentarer. YAML används främst för konfigurationsfiler och dataöverföring mellan olika system.
+Om `config.yaml` ser ut så här:
 
-Det finns flera alternativ för att arbeta med YAML i Javascript, inklusive js-yaml, yamljs och yamlparser. Välj det som passar dina specifika behov och projekts krav.
+```yaml
+title: Hej
+numbers:
+  - 1
+  - 2
+  - 3
+```
 
-Det finns också några häftiga funktioner i YAML som du kan använda, som inkluderar referenser, anpassade datatyper och mer. Se referenserna nedan för mer information om hur du utnyttjar YAML på ett effektivt sätt i ditt Javascript-projekt.
+Kommer output att vara:
 
-## Se också:
-- [js-yaml](https://github.com/nodeca/js-yaml)
-- [yamljs](https://github.com/jeremyfa/yaml.js)
-- [YAML officiell hemsida](https://yaml.org/)
+```
+{ title: 'Hej', numbers: [ 1, 2, 3 ] }
+```
+
+## Deep Dive
+YAML, som står för "YAML Ain't Markup Language", introducerades i början av 2000-talet som ett alternativ till XML. Fördelen är dess enkelhet och tillgänglighet för människor. JSON är ett vanligt alternativ, men YAML tillåter kommentarer och kan bättre hantera komplexa strukturer. När det gäller implementering kan YAML användas på servern eller i front-end, men det är viktigt att bearbeta de inhämtade datorna för att förhindra säkerhetsrisker som kan uppstå med skadlig YAML.
+
+## See Also
+- YAML officiell webbplats: [https://yaml.org](https://yaml.org)
+- js-yaml GitHub repo: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+- YAML vs JSON: [https://json2yaml.com/](https://json2yaml.com/)
+- YAML-syntaxguide: [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)

@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם yaml"
-html_title:           "Haskell: עובדים עם yaml"
-simple_title:         "עובדים עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,21 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם YAML היא כלי שימושי למתכנתים המשמש לליכוד, קריאה וכתיבה של מידע בפורמט נוח ונקרא אנושית. מתכנתים משתמשים ב-YAML כדי לארגן קבצים שונים ולהעביר מידע בין מערכות שונות.
+YAML הוא פורמט נתונים קל לקריאה המשמש לתצורה ולהעברת מידע. תכנתים משתמשים בו בכדי לשפר את האינטראקטיביות עם משתמשים, להגדיר תצורה וכן לסדר ולנהל נתונים בקוד.
 
-## איך לעבוד עם YAML?
+## איך לעשות:
+לעבודה עם YAML ב-Haskell, נפוץ להשתמש בחבילת `yaml`. ראשית, התקין את החבילה על ידי הוספת `yaml` ל-`build-depends` בקובץ `your_project.cabal`, או על ידי הרצת `cabal install yaml`.
+
 ```Haskell
--- בקוד זה אנו יוצרים מילון עבור נתוני YAML
-המילון <- פעולות.YAML.קרא ימל.מילון "דוגמה.פקד
-־"
--- ייצוא ל- YAML עם פקד הפתיחה "פקד ברירת":
-['נתונים': ['מאה', 'מאה', 'שלושת']]
+import Data.Yaml
+import qualified Data.ByteString.Char8 as BS
 
--- קבלת נתוני YAML מקובץ עם הפקודה כאן
-קובץ <- זמינות.קובץ "דוגמה.פקד"
-תוכן <- פעולות.YAML.קרד קובץ
-פקד ברירת := פעולות.YAML.מאפיין תוכן
+-- דוגמה: קריאה של YAML מתוך מחרוזת
+main :: IO ()
+main = do
+    let yamlData = BS.pack "name: Yossi\nage: 30\n"
+    let parsedData = decodeThrow yamlData :: IO (Maybe Object)
+
+    -- הדפס את התוצאות
+    parsedData >>= print
 ```
 
-## צליל עמוק
-YAML הוא פורמט נתונים דבר ־ מילה המופיע פעם ראשונה ב־2001 ונבו
+תוצאה צפויה:
+```
+Just (Object (fromList [("name",String "Yossi"),("age",Number 30.0)]))
+```
+
+## עמק השווה:
+YAML (יש לקרוא “יאמל”), שפירושו "YAML Ain't Markup Language", הוא פורמט נתונים שהומצא בתחילת שנות ה-2000 כאלטרנטיבה הנגישה יותר ל-XML. חלופות נפוצות כוללות JSON וXML, אבל YAML מתבלט בקריאות הטבעית שלו. בהקשר של המימוש ב-Haskell, קיימות חבילות נוספות כמו `HsYaml` שכדאי לבחון.
+
+## לראות גם:
+- [The official YAML website](https://yaml.org)
+- [YAML package on Hackage](https://hackage.haskell.org/package/yaml)
+- [Aeson package for JSON in Haskell](https://hackage.haskell.org/package/aeson)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

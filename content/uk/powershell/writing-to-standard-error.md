@@ -1,7 +1,7 @@
 ---
-title:                "Запис до стандартного виводу помилок"
-html_title:           "PowerShell: Запис до стандартного виводу помилок"
-simple_title:         "Запис до стандартного виводу помилок"
+title:                "Запис в стандартний потік помилок"
+html_title:           "Arduino: Запис в стандартний потік помилок"
+simple_title:         "Запис в стандартний потік помилок"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Запис до потоку стандартної помилки є важливою частиною програмування, оскільки дає можливість розробникам бачити повідомлення про помилки та відлагоджувати свій код. Це допоможе вдосконалити якість програми та забезпечити більш коректну роботу.
+## What & Why?
+Стандартна помилка (stderr) – це окремий потік, де програми записують повідомлення про помилки. Використовують її, аби виділяти помилки зі стандартного виводу (stdout) для зручнішої обробки та діагностики.
 
-## Як зробити?
-Запис до потоку стандартної помилки виконується за допомогою функції Write-Error у PowerShell. Нижче наведено приклад коду та вихідної інформації. 
+## How to:
+Вивести повідомлення в stderr:
 
 ```PowerShell
-Write-Error "Це приклад повідомлення про помилку."
+Write-Error "Це повідомлення про помилку"
 ```
 
-Вихідний результат:
+Перехоплення stderr у файл:
 
+```PowerShell
+Some-Command 2> errors.txt
 ```
-Це приклад повідомлення про помилку.
+
+Вивід об’єкта у stderr:
+
+```PowerShell
+$ErrorObj = [System.Management.Automation.ErrorRecord]::new(
+    [Exception]::new("Помилка"),
+    "ErrorId",
+    [System.Management.Automation.ErrorCategory]::NotSpecified,
+    $null
+)
+$PSCmdlet.WriteError($ErrorObj)
 ```
 
-## Глибше вдаваймося
-Незважаючи на те, що запис до потоку стандартної помилки вважається корисним інструментом, існують інші альтернативи, які можуть бути використані для відлагодження. Наприклад, функція Write-Host дозволяє виводити повідомлення на екран, а функція Write-Verbose використовується для відображення додаткової інформації під час виконання програми.
+## Deep Dive
+`Write-Error` в PowerShell існує з самого початку. Це один із способів взаємодії з stderr. Існують інші, наприклад, `[Console]::Error.WriteLine()`. Запис у stderr не зупинить виконання скрипта, на відміну від `throw`.
 
-Щоб використовувати функцію Write-Error у більш складних сценаріях, можна детальніше дізнатися про її реалізацію та властивості в офіційній документації PowerShell.
-
-## Дивіться також
-- Офіційна документація PowerShell: https://docs.microsoft.com/powershell/
-- Write-Error на Microsoft Docs: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error
+## See Also
+1. [about_Redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Redirection)
+2. [about_Throw](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Throw)
+3. [Console.Error](https://docs.microsoft.com/dotnet/api/system.console.error)

@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "C++: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "C++"
 category:             "C++"
@@ -11,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva till standard error är en vanlig praxis bland programmerare för att skicka felmeddelanden och annan viktig information till standard error-strömmen, istället för att skriva till standard output som kan vara upptagen med annan användardata.
+Skriva till standard error (`stderr`) används för att rapportera fel och varningar. Programmerare gör detta för att separera vanlig output från felmeddelanden, vilket underlättar debuggning och loggning.
 
-## Så här gör du:
-Du kan skriva till standard error i C++ genom att använda funktionen ```std::cerr```, som finns tillgänglig i standardbiblioteket ```<iostream>```. Här är ett exempel på hur man skriver en felmeddelande till standard error:
+## How to:
+Använd `cerr` för att skriva felmeddelanden. Här är ett exempel:
 
-```
+```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-  cerr << "Detta är ett felmeddelande!" << endl;
-  return 0;
+    std::cerr << "Ett fel inträffade!" << std::endl;
+    return 0;
 }
 ```
 
-Kör detta program kommer att skriva ut "Detta är ett felmeddelande!" till standard error-strömmen.
+Output: `Ett fel inträffade!`
 
-## Djupdykning:
-Att skriva till standard error har varit en standardpraxis sedan tidigt skede av programmering, då det var det enda sättet att skicka felmeddelanden. Men numera finns det flera alternativ som ger mer kontroll och flexibilitet, som till exempel loggning med hjälp av bibliotek som Boost Log och spdlog. 
+## Deep Dive:
+`stderr` är separerad från `stdout` (standard output) så att de kan hanteras olika. Historiskt sett tillät detta avledning av output till filer eller andra enheter. Alternativ till `std::cerr` inkluderar loggbibliotek eller `std::clog`. I Unix-system kan `stderr` och `stdout` avledas oberoende genom filbeskrivare 2 och 1.
 
-För att optimera prestanda och undvika onödig påverkan på standard output-strömmen, implementeras standard error ibland som en separat ström som är kopplad till en annan fil eller enhet.
-
-## Se även:
-- https://en.cppreference.com/w/cpp/io/cerr
-- https://www.boost.org/doc/libs/1_58_0/libs/log/doc/html/index.html
-- https://github.com/gabime/spdlog
+## See Also:
+- C++ Standard Library documentation: https://en.cppreference.com/w/cpp/io/cerr
+- GNU C Library - Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- Effective use of C++ I/O: https://isocpp.org/wiki/faq/input-output

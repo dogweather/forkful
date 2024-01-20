@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur la sortie d'erreur standard"
-html_title:           "Clojure: Écrire sur la sortie d'erreur standard"
-simple_title:         "Écrire sur la sortie d'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi ?
-
-Ecrire sur la sortie standard d'erreur est une façon pour les programmeurs de communiquer des messages d'erreurs ou de débogage directement à l'utilisateur du programme. Cela peut être utile pour signaler des problèmes lors de l'exécution du code, tels que des erreurs de syntaxe ou des valeurs incorrectes.
+## Quoi et Pourquoi ?
+Écrire sur l'erreur standard (`stderr`) permet de séparer les messages d'erreur des sorties normales du programme (`stdout`). Les programmeurs font cela pour diagnostiquer les problèmes sans perturber le flux de données principal du programme.
 
 ## Comment faire :
+```Clojure
+; Afficher du texte sur stdout
+(println "Ceci est un message sur le flux de sortie standard (stdout).")
 
-Voici un exemple de code en Clojure montrant comment écrire sur la sortie standard d'erreur :
-
+; Afficher du texte sur stderr
+(binding [*err* *out*]
+  (println "Ceci est un message sur le flux d'erreur standard (stderr)."))
 ```
-(defn print-error [message]
-  (println "Erreur :" message))
-
-(print-error "Valeur incorrecte")
+Sortie attendue sur `stderr` :
 ```
-
-Cela donnera en sortie :
-
-```
-Erreur : Valeur incorrecte
+Ceci est un message sur le flux d'erreur standard (stderr).
 ```
 
-## Profonde plongée :
+## Plongée en profondeur
+Historiquement, la distinction entre `stdout` et `stderr` provient des premiers terminaux Unix. `stdout` est utilisé pour les données de sortie "normales" tandis que `stderr` est réservé aux messages d’erreur ou de diagnostic. Alternativement, on peut écrire sur `stderr` avec Java interop, mais en Clojure, `binding` est plus idiomatique. La redirection de `*err*` vers `*out*`, comme indiqué dans l'exemple, change la destination de la sortie d'erreur pour le corps du `binding` seulement.
 
-L'écriture sur la sortie standard d'erreur est une pratique courante dans la programmation depuis des décennies. Avant l'apparition des systèmes de gestion d'erreurs plus sophistiqués, c'était l'un des seuls moyens pour les programmeurs de signaler des erreurs à l'utilisateur. De nos jours, il existe des alternatives telles que les exceptions, mais écrire sur la sortie standard d'erreur reste une méthode simple et efficace.
-
-## A voir également :
-
-Vous pouvez en apprendre plus sur l'écriture sur la sortie standard d'erreur en consultant la documentation de Clojure : https://clojure.org/reference/exceptions
-
-Si vous cherchez d'autres méthodes de débogage, vous pouvez également consulter cet article sur les outils de débogage en Clojure : https://lambdaisland.com/guides/clojure-debugging-tools
+## Voir également
+- [Documentation officielle Clojure sur le flux d'erreur standard](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*err*)
+- [Comparaison des flux stdout et stderr](https://unix.stackexchange.com/questions/331611/do-stdout-and-stderr-need-to-be-explicitly-closed)

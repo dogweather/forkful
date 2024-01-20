@@ -1,7 +1,7 @@
 ---
-title:                "yamlを使用すること"
-html_title:           "Javascript: yamlを使用すること"
-simple_title:         "yamlを使用すること"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か？そしてなぜ？
-YAMLを使うこととは、プログラマーがどのようなことをすることでしょうか？プログラマーは、YAMLを使用してデータを構造化し、JSONやXMLなどの他の形式とやり取りすることができます。
+## What & Why? (何となぜ？)
+YAMLはデータのシリアライゼーション形式。設定ファイルやデータ交換で使われる。読みやすく、JSONより簡潔。
 
-## 使い方：
-```Javascript
-// YAMLデータの定義
-let yamlData = `
-    name: John
-    age: 25
-    location: USA`;
-
-// YAMLデータをオブジェクトに変換
-let obj = jsyaml.load(yamlData);
-
-// オブジェクトのプロパティにアクセス
-console.log(obj.name); // 結果：John
-```
+## How to: (どうやって？)
+JavascriptでYAMLを扱うには`js-yaml`ライブラリを使う。`npm install js-yaml`でインストール。
 
 ```Javascript
-// オブジェクトをYAMLに変換
-let json = {
-    name: "John",
-    age: 25,
-    location: "USA"
-};
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-let yaml = jsyaml.dump(json);
-console.log(yaml);
-// 結果：
-// name: John
-// age: 25
-// location: USA
+// YAMLファイルの読み込み
+const data = yaml.load(fs.readFileSync('example.yml', 'utf8'));
+
+console.log(data);
+
+// JavaScriptオブジェクトをYAMLに変換
+const newYAML = yaml.dump({ title: 'New Item', value: 123 });
+fs.writeFileSync('newExample.yml', newYAML, 'utf8');
 ```
 
-## ディープダイブ：
-YAMLは、データを人間が読みやすい形式で表現することができる軽量なデータフォーマットです。もともとはPerlユーザーのBrian Ingersonが作成しましたが、今ではさまざまなプログラミング言語でサポートされています。代替手段としては、JSONやXMLなどの他のデータフォーマットがあります。YAMLはインデントによってデータの階層を表現することができ、読みやすくフォーマットされたテキストファイルに保存することができます。
+YAMLデータを読み込んでJavaScriptオブジェクトにし、逆も可能。
 
-## さらに参考：
-- [YAML公式サイト](https://yaml.org/)
-- [YAMLチュートリアル](https://www.tutorialspoint.com/yaml/index.htm)
-- [JavaScriptでYAMLを扱う](https://github.com/nodeca/js-yaml)
+## Deep Dive (深堀り)
+YAMLは「YAML Ain't Markup Language」(再帰的頭字語)。2001年に登場。JSON, XMLの代わりに使えるが、可読性が特徴。大規模データではパフォーマンスに注意。
+
+## See Also (関連する情報)
+- YAML公式サイト: https://yaml.org
+- `js-yaml`ライブラリ: https://github.com/nodeca/js-yaml
+- JSONとYAMLの比較: https://www.atatus.com/blog/yaml-vs-json/

@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "TypeScript: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,52 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skriva tester är som en kvalitetskontroll för koden, där man systematiskt verifierar att varje del fungerar som den ska. Programmerare gör det för att tidigt upptäcka fel, förenkla framtida underhåll och säkerställa att koden står pall över tid.
 
-Skrivande av tester är en metod som används av programmerare för att kontrollera och validera funktionerna i koden. Det hjälper till att upptäcka eventuella fel eller buggar i koden innan den implementeras och bidrar till att säkerställa att koden uppfyller de förväntade kraven.
-
-## Hur man gör:
-
-För att skriva tester i TypeScript, börja med att importera nödvändiga moduler för tester i din kod. Sedan kan du definiera dina testfall och använda sig av olika assert-funktioner för att kontrollera att resultatet matchar förväntningarna. Nedan finns ett exempel på hur man kan skriva enkla tester för en funktion som beräknar summan av två tal:
-
-```TypeScript
-import { assert } from 'chai';
-
-function add(x: number, y: number): number {
-  return x + y;
-}
-
-describe('add function', () => {
-  it('should return the sum of two numbers', () => {
-    const result = add(3, 2);
-    assert.equal(result, 5);
-  });
-})
-```
-
-När testerna körs kommer följande resultat att visas:
+## Hur gör man:
+Här är ett enkelt exempel med Jest, ett populärt testramverk för JavaScript och TypeScript. Först installerar du Jest:
 
 ```bash
-TAP version 13
-1..1
-ok 1 add function should return the sum of two numbers
-# pass 1
-# skip 0
-# todo 0
-# fail 0
+npm install --save-dev jest @types/jest ts-jest
 ```
 
-## Djupdykning:
+Ange inställningar i din `jest.config.js` för TypeScript:
 
-Att skriva tester har blivit en alltmer populär metod för att förbättra kvaliteten och stabiliteten i kod. Det hjälper till att upptäcka och åtgärda eventuella fel eller buggar i ett tidigt skede av utvecklingsprocessen, vilket minskar risken för problem i produktionsmiljön.
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
 
-Det finns olika alternativ för att skriva tester, inklusive enhetstester, integreringstester och systemtester. Dessa kan användas tillsammans eller separat beroende på den specifika situationen.
+Nu skriver vi ett simpelt test för en funktion som adderar två tal:
 
-För att implementera tester i TypeScript kan använda sig av populära ramverk som Jasmine, Mocha eller Jest. Dessa ramverk har inbyggda funktioner och verktyg som underlättar skrivandet av tester och ger användaren möjlighet att utföra specifika uppgifter, såsom smidig assertion och simulering av olika scenarier.
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
 
-## Se även:
+// sum.test.ts
+import { sum } from './sum';
 
-Här är några användbara resurser för att lära dig mer om att skriva tester i TypeScript:
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
 
-- https://www.typescriptlang.org/docs/handbook/testing.html
-- https://www.sitepoint.com/javascript-testing-beginners-guide-part-1/
-- https://medium.com/@nsisodiya/typescript-testing-f0546ec3993a
+Kör testet med:
+
+```bash
+npx jest
+```
+
+Exempel på utskrift:
+
+```
+PASS  ./sum.test.ts
+✓ adds 1 + 2 to equal 3 (5ms)
+```
+
+## Fördjupning
+Tester har alltid varit centrala i mjukvaruutveckling. På 70-talet pratade man om "debugging", men idag är "test-driven development" och "behavior-driven development" standard. Alternativ till Jest inkluderar Mocha, Jasmine och QUnit. Jest sköter båda enhetstester och integrationstester bra, och dess "snapshot" funktion är perfekt för att testa stora datamängder.
+
+## Se även
+- Jest officiell hemsida: [https://jestjs.io](https://jestjs.io)
+- Artikel om testdriven utveckling (TDD): [https://en.wikipedia.org/wiki/Test-driven_development](https://en.wikipedia.org/wiki/Test-driven_development)

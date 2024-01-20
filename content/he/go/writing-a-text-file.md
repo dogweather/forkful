@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט."
-html_title:           "Go: כתיבת קובץ טקסט."
-simple_title:         "כתיבת קובץ טקסט."
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,54 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא פעולה נפוצה בתחום התכנות, שמאפשרת למשתמש ליצור קובץ טקסט פשוט וקריא בפורמט טקסט פשוט מבלי להשתמש בתוכנות נוספות. תוכניות מתכנתים כותבות קבצים טקסט על מנת לאחסן מידע וליצור קשר עם משתמשים.
+כתיבה לקובץ טקסט היא שמירת נתונים טקסטואליים בקובץ במחשב. תכניתנים עושים זאת כדי לשמור היסטוריה, הגדרות, נתונים לעיבוד מאוחר יותר ועוד.
 
 ## איך לעשות:
-הכי פשוט ומהיר ליצור קובץ טקסט בשפת Go היא להשתמש בפונקציה `WriteString` עם אובייקט הקובץ הנמצא בתיקיית `os`. ניתן לראות בקוד המתואר מטה דוגמאות לכתיבת קובץ טקסט ולקריאתו בשפת Go.
-
 ```Go
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
 func main() {
-	// יצירת קובץ טקסט חדש
-	file, err := os.Create("new_file.txt")
+	file, err := os.Create("example.txt") // יצירת קובץ
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Cannot create file:", err)
 		return
 	}
-	defer file.Close()
-	
-	// כתיבת טקסט לקובץ
-	text := "זהו טקסט חדש שנכתב בשפת Go"
-	_, err = file.WriteString(text)
+	defer file.Close() // סגירת הקובץ בסוף התכנית
+
+	writer := bufio.NewWriter(file)
+	_, err = writer.WriteString("שלום עולם!") // כתיבה לקובץ
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Cannot write to file:", err)
 		return
 	}
-	
-	// קריאת קובץ טקסט 
-	byteArray, err := ioutil.ReadFile("new_file.txt")
+
+	err = writer.Flush() // שמירת השינויים
 	if err != nil {
-		fmt.Println(err)
-		return
+		fmt.Println("Cannot flush to file:", err)
 	}
-	// המרת המערך של בתי המחרוזת למחרוזת
-	fmt.Println(string(byteArray))
 }
 ```
+פלט דוגמא: יצירת קובץ example.txt המכיל את המחרוזת "שלום עולם!".
 
-פונקציות נוספות כמו `Write`, `WriteString`, ו-`WriteByte` זמינות על מנת להתאים את כתיבת הטקסט לצרכים המיוחדים שלך.
+## עיון מעמיק:
+בעבר, קבצי טקסט נכתבו תוך שימוש ב-APIs מורכבים או צורות מורכבות של I/O. כיום, בשפת Go, מודולים כמו `os` ו`bufio` מקלים על תהליך זה. ישנן אלטרנטיבות נוספות כגון חבילת `io/ioutil` (המיושנת בגרסאות החדשות של Go), או כתיבה ישירה לקובץ עם `os.Write`. כל אחת מהשיטות כוללת פרטי יישום שונים שיכולים להשפיע על ביצועים ונוחות.
 
-## חפירה עמוקה:
-שיטת יצירת קובץ טקסט בשפת Go שימושית ויעילה כיום, אך לפני כן אופן הייצור השגוי היה להשתמש בספרייה `io` לצרכי יצירת וכתיבת קבצי טקסט. רק בגרסת Go המעבר לגרסת 1.12 ספריית ה-`io/ioutil` כלולה בשפת Go. ספרייה זו מאפשרת יצירת קבצים טקסט וכתיבתם עם מתודות קצרות ופשוטות יותר.
-
-אם אתה מעוניין לכתוב קבצי טקסט בשפת Go, ישנן אפשרויות אחרות לשימוש כמו `os.OpenFile` ו-`File.WriteString` או `ioutil.WriteFile`.
-
-## ראה גם:
-כדי ללמוד עוד פרטים על כתיבת קובץ טקסט בשפת Go ניתן לבדוק את המפרטים המלאים במדריכים כמו https://gobyexample.com/writing-files ו- https://www.dotnetperls.com/create-file-go.
+## ראו גם:
+- דוקומנטציה של החבילה `os`: https://pkg.go.dev/os
+- דוקומנטציה של החבילה `bufio`: https://pkg.go.dev/bufio
+- מדריך טוב לעבודה עם קבצים ב-Golang: https://www.golangprograms.com/golang-read-write-file.html

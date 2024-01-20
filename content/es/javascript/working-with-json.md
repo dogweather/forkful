@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Javascript: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+JSON significa JavaScript Object Notation. Es un formato ligero para intercambiar datos. Programadores lo usan porque es fácil de leer y escribir para humanos, al mismo tiempo que es sencillo para las máquinas parsear y generar.
 
-Trabajar con JSON es una práctica común en la programación moderna. JSON, o Notación de Objetos de JavaScript, es un formato de intercambio de datos ligero y fácil de leer que se utiliza para almacenar y transmitir información estructurada. Los programadores utilizan JSON para comunicarse con diferentes sistemas y aplicaciones, ya que es un formato estándar y altamente compatible.
+## Cómo Hacerlo:
+Trabajando con JSON en JavaScript es sencillo. Ejemplos abajo:
 
-## Cómo:
-
-```Javascript
-// Creación de un objeto JSON
-const persona = {
-  nombre: 'María',
-  edad: 25,
-  ciudad: 'Madrid'
-};
-
-// Codificación de un objeto JSON en una cadena
-const jsonString = JSON.stringify(persona);
-console.log(jsonString); //{"nombre": "María", "edad": 25, "ciudad": "Madrid"}
-
-// Decodificación de una cadena JSON en un objeto
-const json = '{"nombre": "Juan", "edad": 30, "ciudad": "Barcelona"}';
-const personaDecodificada = JSON.parse(json);
-
-// Acceder a los valores de un objeto JSON
-console.log(personaDecodificada.nombre); //Juan
-console.log(personaDecodificada.edad); //30
+### Convertir un objeto a JSON:
+```javascript
+const objeto = {nombre: "Juan", edad: 30, ciudad: "Madrid"};
+const json = JSON.stringify(objeto);
+console.log(json);
+// Salida: '{"nombre":"Juan","edad":30,"ciudad":"Madrid"}'
 ```
 
-## Profundizando:
+### Convertir JSON a objeto:
+```javascript
+const json = '{"nombre":"Juan","edad":30,"ciudad":"Madrid"}';
+const objeto = JSON.parse(json);
+console.log(objeto);
+// Salida: {nombre: "Juan", edad: 30, ciudad: "Madrid"}
+```
 
-JSON fue diseñado originalmente por Douglas Crockford en 2002 y es ampliamente utilizado en aplicaciones web y móviles. Aunque es muy popular, hay alternativas como XML o CSV que también se utilizan para intercambiar datos. La implementación de JSON en JavaScript se realiza a través de los métodos `JSON.stringify()` y `JSON.parse()`, los cuales convierten objetos JavaScript en cadena JSON y viceversa.
+### Manejo de errores al parsear:
+```javascript
+const jsonErroneo = '{"nombre":"Juan",edad:"30"}'; // Falta comillas en "edad"
+try {
+  const objeto = JSON.parse(jsonErroneo);
+} catch(err) {
+  console.error('Error al parsear JSON:', err.message);
+}
+// Salida: Error al parsear JSON: Unexpected token e in JSON at position 20
+```
 
-## Ver también:
+## Mirada en Profundidad:
+JSON fue propuesto por Douglas Crockford a principios de los 2000, simplificando la manera de intercambiar datos. XML fue una alternativa pero JSON ganó terreno por su simplicidad y eficiencia en cuanto a la rapidez y el tamaño del dato.
 
-- [Documentación oficial de JSON](https://www.json.org/)
-- [Tutorial de JSON en W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
+Es vital entender que JSON es un formato de texto y puede ser utilizado con cualquier lenguaje de programación, no sólo JavaScript. Aunque casi todos los navegadores y servidores lo manejan perfectamente, siempre es bueno realizar validaciones para asegurarnos de que el JSON es correcto antes de usarlo en nuestras aplicaciones.
+
+## Ver También:
+Aquí tienes algunos recursos útiles para profundizar tu entendimiento y habilidades trabajando con JSON:
+
+- [JSON.org](https://www.json.org/json-es.html): Documentación oficial de JSON.
+- [MDN Web Docs - JSON](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON): Guía y referencia de JSON en MDN Web Docs.
+- [w3schools – JSON Tutorial](https://www.w3schools.com/js/js_json_intro.asp): Tutorial de JSON para principiantes.
+
+Estos links pueden llevarte de entender lo básico a manejar JSON como un experto. ¡Buena suerte codificando!

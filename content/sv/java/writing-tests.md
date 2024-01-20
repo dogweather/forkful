@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "Java: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Java"
 category:             "Java"
@@ -11,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi pratar om att skriva tester i programmering så menar vi att skapa en uppsättning instruktioner som testar koden för vårt program och kontrollerar att det fungerar som det ska. Detta är viktigt eftersom det hjälper oss att hitta och fixa buggar och fel i koden innan vi släpper den till användare.
+Att skriva tester innebär att du skapar kod som kör din applikation och verifierar att allt fungerar som det ska. Programmerare gör detta för att hitta buggar tidigt, förbättra kodkvaliteten och säkerställa att framtida förändringar inte bryter befintlig funktionalitet.
 
-## Så här:
-För att skriva tester i Java behöver vi använda ett ramverk som heter JUnit. Detta låter oss skapa olika tester för olika delar av koden och köra dem automatiskt för att kontrollera att allt fungerar som det ska.
+## Hur man gör:
+JUnit är ett populärt verktyg för att skriva tester i Java. Här är ett enkelt exempel:
 
-```Java
+```java
+import static org.junit.Assert.*;
+import org.junit.Test;
+
 public class CalculatorTest {
 
-  @Test
-  public void testSum() {
-    int result = Calculator.sum(3, 7);
-    assertEquals(10, result);
-  }
-  
-  @Test
-  public void testDivision() {
-    double result = Calculator.divide(10, 2);
-    assertEquals(5.0, result);
-  }
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3));
+    }
+}
 
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
 
-Testerna lägger vi sedan i en egen testmapp inuti vårt projekt och kör dem med hjälp av en IDE eller genom att skriva "mvn test" i terminalen. Om något test inte lyckas betyder det att vi behöver gå tillbaka till vår kod och fixa det som inte fungerar.
+Kör testet och se följande output:
 
-## Deep Dive:
-Historiskt sett har skrivande av tester ofta sett som en tidskrävande process, men med JUnit och andra ramverk har processen blivit automatiserad och mycket snabbare. Det finns även andra alternativ för att skriva tester, såsom TestNG och Mockito, men JUnit är det mest populära valet inom Java-världen.
+```
+Test passed.
+```
 
-Det finns många olika metoder för att skriva tester, men ett vanligt sätt är att använda en teknik som kallas "test-driven development" (TDD). Detta innebär att vi skriver våra tester innan vi skriver själva kod, vilket hjälper oss att fokusera på vad vår kod faktiskt ska göra och hur vi ska testa det.
+## Djupdykning:
+Testning i Java har funnits sedan de tidiga dagarna av språket. JUnit, introducerat av Erich Gamma och Kent Beck, revolutionerade enhetstestning med dess klara och enkla API. Alternativ till JUnit inkluderar TestNG och Spock. Implementationen av tester innebär ofta att man använder "assertions" för att kontrollera att koden uppfyller förväntade beteenden.
 
 ## Se även:
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Mockito](https://site.mockito.org/)
-- [Test-driven development (Wikipedia)](https://en.wikipedia.org/wiki/Test-driven_development)
+- [JUnit användarhandbok](https://junit.org/junit5/docs/current/user-guide/)
+- [Oracle's guide till JUnit](https://docs.oracle.com/javase/8/docs/technotes/guides/test/junit.html)
+- [Martin Fowler's artikel om testpyramiden](https://martinfowler.com/articles/practical-test-pyramid.html)

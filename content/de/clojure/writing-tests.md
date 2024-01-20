@@ -1,7 +1,7 @@
 ---
-title:                "Tests schreiben."
-html_title:           "Clojure: Tests schreiben."
-simple_title:         "Tests schreiben."
+title:                "Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -11,24 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Schreiben von Tests ist ein wichtiger Bestandteil des Programmierens. Es ist ein Prozess, bei dem Programmierer ihre Code-Funktionen auf korrekte Funktionalität überprüfen. Durch den Testen ihrer Code-Implementierung können Programmierer sicherstellen, dass ihr Code richtig funktioniert und potenzielle Fehler aufdecken.
 
-## Wie:
-Um Tests in Clojure zu schreiben, müssen Sie die Standardbibliothek "clojure.test" importieren. Dann können Sie "deftest" verwenden, um eine Test-Funktion zu erstellen. In dieser Funktion können Sie Ihre Code-Funktion aufrufen und prüfen, ob das Ergebnis den erwarteten Ausgabewert liefert, indem Sie "is" verwenden. Zum Beispiel:
+Tests schreiben bedeutet, Code-Ausschnitte zu erstellen, die überprüfen, ob einzelne Funktionen oder Module deiner Anwendung korrekt arbeiten. Programmierer*innen machen das, um Fehler schnell zu finden, die Qualität des Codes zu sichern und das Vertrauen in die Software zu stärken.
 
-```Clojure
-(require '[clojure.test :refer :all])
+## Anleitung:
 
-(deftest add-test
-  (is (= 5 (+ 2 3))))
+In Clojure nutzt man häufig die `clojure.test`-Bibliothek für Tests. Hier ist ein einfaches Beispiel:
+
+```clojure
+(ns mein-projekt.core-test
+  (:require [clojure.test :refer :all]
+            [mein-projekt.core :refer :all]))
+
+(deftest addition-test
+  (testing "Addition funktioniert"
+    (is (= 4 (addiere 2 2)))))
+
+; Test ausführen
+(run-tests)
 ```
 
-Sie können auch "testing" verwenden, um mehrere Tests innerhalb einer Funktion zu schreiben und "testing-vars" verwenden, um mehrere Funktionen zu testen. Um Ihre Tests auszuführen, können Sie "run-tests" aufrufen. Das Ergebnis wird in der Konsole ausgegeben.
+Wenn du dieses Skript in deiner REPL ausführst, solltest du so etwas wie das folgende sehen:
 
-## Tiefentauchen:
-Testen hat in der Softwareentwicklung eine lange Geschichte. Früher waren manuelle Tests die einzige Möglichkeit, um Code zu überprüfen, aber mit zunehmendem Komplexitätsgrad der Code wurde die Notwendigkeit von Automatisierung immer wichtiger. Neben der Standardbibliothek "clojure.test" gibt es auch alternative Frameworks wie "expectations" und "speclj" für das Schreiben von Tests in Clojure.
+```
+lein test mein-projekt.core-test
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+```
+
+## Tiefergehende Infos:
+
+Tests in Clojure haben ihre Wurzeln in der LISP-Tradition, die Interaktivität und schnelles Feedback betont. Alternativen zu `clojure.test` sind etwa Midje oder Expectations, die andere Herangehensweisen und Syntax bieten. Beim Schreiben von Tests geht es oft um die Balance zwischen Unit-Tests, die einzelne Komponenten prüfen, und Integrationstests, die das Zusammenspiel zwischen Komponenten testen.
 
 ## Siehe auch:
-- Offizielle Clojure-Test-Dokumentation: https://clojure.github.io/clojure/clojure.test-api.html
-- "expectations" Test-Framework: https://github.com/jaycfields/expectations
-- "speclj" Test-Framework: https://github.com/slagyr/speclj
+
+- [Clojure Testing Framework](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Midje on GitHub](https://github.com/marick/Midje)
+- [Expectations on GitHub](https://github.com/clojure-expectations/expectations)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Ruby recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with JSON in Ruby involves parsing and generating data in JSON format using the `json` library. This is a common practice among programmers as JSON is a lightweight and flexible data interchange format, making it ideal for transferring data between different systems and languages.
+JSON, or JavaScript Object Notation, is a lightweight data interchange format. Programmers use JSON to store and exchange data because it's easy to read and write for humans and simple to parse for machines.
 
 ## How to:
+In Ruby, you can work with JSON using the built-in 'json' library. To use it, just require 'json' at the top of your code.
 
-To work with JSON in Ruby, we first need to require the `json` library. Then, we can use the `parse` and `generate` methods to convert data to and from JSON format.
-
-```ruby
+```Ruby
 require 'json'
 
-# Parse JSON to Ruby object
-json_string = '{"name": "John", "age": 25}'
-ruby_object = JSON.parse(json_string)
-puts ruby_object["name"] # Output: John
+# Convert a Ruby hash to a JSON string
+user = { name: "John Doe", email: "john.doe@example.com" }
+json_string = user.to_json
+puts json_string
+# Output: {"name":"John Doe","email":"john.doe@example.com"}
 
-# Generate JSON from Ruby object
-ruby_object = {name: "Jane", age: 30}
-json_string = JSON.generate(ruby_object)
-puts json_string # Output: {"name":"Jane","age":30}
+# Parse a JSON string to a Ruby hash
+json_string = '{"name":"Jane Doe","email":"jane.doe@example.com"}'
+parsed_data = JSON.parse(json_string)
+puts parsed_data["name"]
+# Output: Jane Doe
 ```
 
-## Deep Dive:
+## Deep Dive
+JSON originated in the early 2000s. Douglas Crockford, its promoter, sought to make data sharing between server and client in web applications simpler compared to XML.
 
-JSON (JavaScript Object Notation) was first introduced in 2001 as a lightweight alternative to XML. It quickly gained popularity in web development due to its simplicity and human-readable syntax. Ruby's `json` library is part of its standard library since version 1.9, making it accessible to all Ruby programmers without the need for external dependencies.
+Alternatives to JSON include XML and YAML, though JSON's ease of use and widespread support make it a go-to format. JSON parsing in Ruby is efficient because the 'json' library is built on native extensions written in C, which speeds up the parsing significantly.
 
-An alternative to `json` library is the `oj` gem which targets improving performance and memory consumption. It also provides additional features such as optimizing JSON generation for Ruby objects.
-
-When working with JSON in Ruby, it's important to keep in mind that JSON supports the following data types: null, boolean, number, string, array, and object. The `json` library automatically converts these data types between Ruby and JSON, making it easy to work with.
-
-## See Also:
-
-- [Official Ruby JSON Library Docs](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html)
-- [oj gem Docs](https://www.rubydoc.info/gems/oj)
-- [JSON Spec](https://www.json.org/json-en.html)
+## See Also
+- JSON specification and info site: [JSON.org](https://www.json.org/json-en.html)
+- Comparison of JSON and XML: [XML vs JSON](https://www.w3schools.com/js/js_json_xml.asp)

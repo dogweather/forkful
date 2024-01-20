@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Haskell: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest CSV i dlaczego programiści z tym pracują?
-
-CSV to format pliku, w którym dane są przechowywane w postaci tabeli, z kolumnami i wierszami. W programowaniu często pracujemy z CSV, ponieważ jest to wygodny sposób na przechowywanie i przetwarzanie danych w programach.
+## Co i Dlaczego?
+Praca z plikami CSV (Comma-Separated Values) to częste zadanie — zarządzamy danymi. W Haskellu robimy to, by łatwo przetwarzać i analizować duże zbiory danych w formacie, który jest czytelny dla człowieka i maszyny.
 
 ## Jak to zrobić:
+W Haskellu do obsługi CSV używamy biblioteki `cassava`. Oto prosty przykład:
 
 ```Haskell
-import Text.CSV
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 
--- Wczytanie pliku CSV
-inputFile :: String
-inputFile = "dane.csv"
-
-main :: IO ()
-main = do
-    file <- readFile inputFile
-    let data = lines file
-        parsedCsv = parseCSV inputFile data
-    case parsedCsv of
-        Left err -> putStrLn "Wystąpił błąd podczas parsowania pliku CSV"
-        Right result -> mapM_ print result -- Wyświetlanie zawartości pliku CSV
-
--- Dodanie wiersza do istniejącego pliku CSV
-outputFile :: String
-outputFile = "wynik.csv"
+-- Zakładamy, że mamy plik `przykladowe_dane.csv' z danymi:
+-- imie,nazwisko,wiek
+-- Jan,Kowalski,34
+-- Anna,Nowak,28
 
 main :: IO ()
 main = do
-    appendFile outputFile "Nowy wiersz,nowa,kolumna"
+    csvData <- BL.readFile "przykladowe_dane.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \(name, surname, age) -> 
+            putStrLn $ name ++ " " ++ surname ++ ", wiek: " ++ show age
 ```
 
-## Głębsza analiza:
+Przykładowe wyjście:
+```
+Jan Kowalski, wiek: 34
+Anna Nowak, wiek: 28
+```
 
-Format CSV został stworzony w celu przechowywania danych tabelarycznych w plikach tekstowych, aby ułatwić współpracę między różnymi systemami komputerowymi. Alternatywami dla CSV są między innymi formanty XML i JSON, ale CSV jest nadal często używany, ponieważ jest prostszy i zajmuje mniej miejsca.
+## Głębsze spojrzenie:
+Historia formatu CSV sięga wczesnych lat informatyki — prostota i elastyczność to powody jego popularności. Alternatywy, jak JSON czy XML, oferują więcej funkcji, ale są mniej praktyczne dla prostych danych tabelarycznych. W Haskellu `Data.Csv` przetwarza CSV do i z wektorów; można też użyć strumieniowania dla dużej wydajności.
 
-W bibliotece `text.CSV` w języku Haskell znajdują się funkcje, które pozwalają na łatwe wczytywanie i przetwarzanie plików CSV. Używając funkcji `parseCSV`, możemy sparsować plik CSV i wyświetlić jego zawartość. Aby dodawać wiersze do istniejącego pliku CSV, możemy użyć funkcji `appendFile`.
-
-## Zobacz także:
-
-- [Dokumentacja biblioteki `text.CSV` w Hackage](https://hackage.haskell.org/package/csv)
+## Zobacz też:
+- [Hackage `cassava` package](https://hackage.haskell.org/package/cassava)
+- [HaskellWiki on CSV](https://wiki.haskell.org/CSV)

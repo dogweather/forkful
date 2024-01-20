@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "TypeScript: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego warto?
+## Co i dlaczego?
+Praca z CSV (Comma-Separated Values) polega na manipulowaniu danymi zapisanymi w formacie tekstowym oddzielonym przecinkami. Programiści robią to, aby łatwo wymieniać i przetwarzać dane pomiędzy różnymi aplikacjami oraz systemami.
 
-Praca z plikami CSV jest nieodłączną częścią życia dewelopera. CSV (z ang. Comma-Separated Values) to format pliku, który służy do przechowywania danych w sposób oddzielony przecinkami. Jest to powszechnie używany format do przechowywania i przetwarzania danych, dlatego programiści często muszą umieć pracować z plikami CSV.
-
-## Jak to zrobić?
-
-Poniżej przedstawiamy kilka przykładów kodu w języku TypeScript oraz odpowiadające im wyniki.
-
+## Jak to zrobić:
 ```TypeScript
-// Tworzenie obiektu CSV z tablicy danych
-const csv = require('csvtojson');
-const data = [['John', 25, 'Male'], ['Jane', 30, 'Female']];
-const csvString = csv.fromArray(data).then(str => console.log(str));
+import * as fs from 'fs';
+import * as path from 'path';
+import csvParse from 'csv-parse/lib/sync';
 
-// Wynik: "John,25,Male\nJane,30,Female"
+// Czytanie CSV
+const csvFilePath = path.resolve(__dirname, 'dane.csv');
+const csvData = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
 
-// Parsowanie pliku CSV na tablicę obiektów
-const csv = require('csvtojson');
-const fs = require('fs');
-const csvFilePath = 'dane.csv';
-csv().fromFile(csvFilePath)
-    .then((jsonObj) => {
-        console.log(jsonObj);
-    });
+// Parsowanie CSV
+const records = csvParse(csvData, {
+  columns: true,
+  skip_empty_lines: true
+});
 
-// W pliku CSV: "Imię,Wiek,Płeć\nJohn,25,Male\nJane,30,Female"
-// Wynik: [{ 'Imię': 'John', Wiek: 25, Płeć: 'Male' },{ 'Imię': 'Jane', Wiek: 30, Płeć: 'Female' }]
+// Wyświetlanie danych
+console.log(records);
+
+// Zapisywanie danych do nowego CSV
+import { stringify } from 'csv-stringify/sync';
+
+const output = stringify(records, { header: true });
+fs.writeFileSync(path.resolve(__dirname, 'wyniki.csv'), output);
+
+// Sample output: wypisuje tablicę obiektów z danych CSV
 ```
 
-## Głębsze zagadnienia
+## Deep Dive
+Format CSV pojawił się w latach 70 i szybko stał się standardem wymiany danych między systemami. Alternatywami CSV są JSON, XML czy bazy danych SQL i NoSQL. Praca z CSV w TypeScript wymaga często dodatkowych bibliotek, takich jak `csv-parse` czy `csv-stringify`, ponieważ TypeScript nie ma wbudowanego wsparcia dla CSV.
 
-Pliki CSV mają swoje korzenie w archaicznym formacie Standard Generalized Markup Language (SGML) z lat 60., jednak w 70. stały się bardziej popularne dzięki programowi Microsoft Excel. Alternatywą dla plików CSV jest format pliku Excel (.xls lub .xlsx), jednak pliki CSV są uniwersalniejsze, ponieważ są wspierane przez większość programów. Przy pracy z plikami CSV należy pamiętać o encodingu, ponieważ pliki w różnych językach mogą mieć różne encodowanie.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o pracy z plikami CSV w TypeScript, polecamy dokumentację [csvtojson library](https://www.npmjs.com/package/csvtojson) oraz [oficjalny tutorial](https://codeforgeek.com/read-write-csv-file-node-js/). Alternatywą dla biblioteki csvtojson jest [fast-csv](https://github.com/C2FO/fast-csv), która również jest łatwa w użyciu i ma dużą wydajność.
+## See Also
+- Specyfikacja CSV: https://tools.ietf.org/html/rfc4180
+- Pakiet `csv-parse`: https://csv.js.org/parse/
+- Pakiet `csv-stringify`: https://csv.js.org/stringify/
+- Przewodnik po TypeScript: https://www.typescriptlang.org/docs/

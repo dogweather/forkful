@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류에 쓰는 방법"
-html_title:           "PHP: 표준 오류에 쓰는 방법"
-simple_title:         "표준 오류에 쓰는 방법"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-표준 오류에 쓰기란 무엇이며, 왜 프로그래머들이 이를 사용하는지에 대해 두 세 문장으로 설명하겠습니다.
+## What & Why? (무엇과 왜?)
+표준 에러 쓰기(standard error writing)는 오류 메시지나 경고를 출력하는 방법입니다. 프로그래머들은 프로그램의 표준 출력과 에러 메시지를 분리하여 더 나은 로깅과 사용자 피드백을 제공하기 위해 이 방법을 사용합니다.
 
-## 방법:
-아래의 ```PHP ... ``` 코드 블록 안에 코딩 예시와 샘플 출력을 포함하였습니다.
-
-```
+## How to: (어떻게 하나요?)
+```php
 <?php
-$name = "John";
-fwrite(STDERR, "Hello, $name");
+// 표준 에러에 메시지 쓰기
+fwrite(STDERR, "이건 에러 메시지입니다.\n");
+
+// 혹은 error_log를 이용하여 표준 에러에 쓰기
+error_log("이건 에러 로그를 통한 메시지입니다.", 4);
+?>
 ```
+위 코드 실행 결과, 표준 에러 스트림에 메시지가 출력됩니다.
 
-출력:
-```
-Hello, John
-```
+## Deep Dive (심화 탐구)
+예전에는 `fopen('php://stderr', 'w')` 를 사용하여 표준 에러 파일 핸들을 수동으로 열었습니다. 이제는 `STDERR` 상수로 직접 작성할 수 있으며, `error_log` 함수에 4번째 옵션을 주어 표준 에러로 로깅합니다. 이 상수와 함수는 내부적으로 시스템의 에러 핸들링과 연동되어 작동합니다.
 
-## 자세히 알아보기:
-표준 오류에 쓰기에 대한 역사적 배경, 대안들, 그리고 구현 세부 사항 등에 대해 알아보겠습니다.
-
-### 역사적 배경:
-표준 오류에 쓰기는 초기 컴퓨터 시스템에서부터 사용되어온 기능입니다. 보통은 디버깅을 위해 사용되었으며, 프로그램의 오류를 신속하게 발견하고 수정하는 데 도움이 되기도 했습니다.
-
-### 대안:
-표준 오류에 쓰기 대신 사용할 수 있는 다른 방법으로는 로그 파일 작성이 있습니다. 로그 파일은 실행 중인 프로그램의 모든 정보를 기록하며, 오류가 발생했을 때 해당 내용을 추적하는 데 유용합니다.
-
-### 구현 세부 사항:
-표준 오류에 쓰기는 간단한 함수인 fwrite()를 사용하여 구현할 수 있습니다. 이 함수는 첫 번째 인자로 파일 포인터를, 두 번째 인자로 출력할 내용을 받습니다.
-
-## 참고:
-관련 자료를 참고할 수 있는 링크입니다.
-
-- [PHP fwrite() 함수 문서](https://www.php.net/manual/en/function.fwrite.php)
+## See Also (참고자료)
+- PHP 공식 문서: [fwrite](https://www.php.net/manual/function.fwrite)
+- PHP 공식 문서: [error_log](https://www.php.net/manual/function.error-log)
+- PHP 에러 핸들링에 대한 추가 정보: [set_error_handler](https://www.php.net/manual/function.set-error-handler)
+- 표준 출력과 에러 스트림에 대한 차이점 설명: [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)

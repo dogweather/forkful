@@ -1,7 +1,7 @@
 ---
-title:                "csv के साथ काम करना"
-html_title:           "Rust: csv के साथ काम करना"
-simple_title:         "csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-CSV काम करना क्या है और क्यों प्रोग्रामर्स इसका इस्तेमाल करते हैं, यह जानना महत्वपूर्ण है। CSV एक साधारण फ़ाइल फ़ॉर्मेट है जो अलग-अलग डेटा प्रकारों को एक साथ शामिल करता है। इससे प्रोग्रामर्स को जटिल डेटा को संगठित और प्रक्रियात्मक दोनों बनाने में मदद मिलती है।
+## What & Why? (क्या और क्यों?)
+CSV, यानी Comma-Separated Values, एक सरल फॉर्मेट है जो डेटा को टेबल फॉर्म में स्टोर करता है। प्रोग्रामर्स इसका उपयोग डेटा को आसानी से इम्पोर्ट और एक्सपोर्ट करने के लिए करते हैं, खासकर जब डेटाबेस और स्प्रेडशीट्स के साथ काम करते हैं।
 
-## कैसे:
+## How to: (कैसे करें:)
+Rust में CSV पढ़ना और लिखना बहुत सीधा है। यहाँ `csv` क्रेट का उपयोग करके एक साधारण उदाहरण दिया गया है:
+
 ```Rust
-use std::fs::File;
 use std::error::Error;
-use csv::Reader;
+use std::fs::File;
+use std::process;
 
-fn main() -> Result<(), Box<dyn Error>> {
-  // CSV फ़ाइल लोड करें
-  let file = File::open("data.csv")?;
-  let mut reader = Reader::from_reader(file);
+use csv::ReaderBuilder;
+use csv::Writer;
 
-  // प्रत्येक पंक्ति के लिए डेटा प्रिंट करें
-  for result in reader.records() {
-    let record = result?;
-    println!("{:?}", record);
-  }
+fn read_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
+    let mut rdr = ReaderBuilder::new().from_path(file_path)?;
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
+}
 
-  Ok(())
+fn write_csv(file_path: &str, records: Vec<Vec<String>>) -> Result<(), Box<dyn Error>> {
+    let file = File::create(file_path)?;
+    let mut wtr = Writer::from_writer(file);
+    
+    for record in records {
+        wtr.write_record(&record)?;
+    }
+    wtr.flush()?;
+    Ok(())
+}
+
+fn main() {
+    if let Err(err) = read_csv("data.csv") {
+        println!("Error reading CSV: {}", err);
+        process::exit(1);
+    }
+
+    let records = vec![
+        vec!["Name".to_string(), "Place".to_string(), "ID".to_string()],
+        vec!["Ramesh".to_string(), "Delhi".to_string(), "1".to_string()]
+    ];
+
+    if let Err(err) = write_csv("output.csv", records) {
+        println!("Error writing CSV: {}", err);
+        process::exit(1);
+    }
 }
 ```
 
-सामान्यतया, CSV लाइब्रेरी प्रोग्रामर्स को CSV फ़ाइल के माध्यम से डेटा को पढ़ने, लिखने और अन्य कार्रवाई करने की सुविधा प्रदान करती है। इस उदाहरण में, हमने फ़ाइल से डेटा पढ़ा और प्रत्येक पंक्ति को प्रिंट किया है। 
+इस कोड के चलने पर, यह `data.csv` से रिकॉर्ड्स को पढ़ेगा और `output.csv` में नए रिकॉर्ड्स को लिखेगा।
 
-## गहराई में जाएँ:
-CSV 1987 में पेश किया गया था और इसे कॉमा से अलग करने के लिए बनाया गया था। यह उपलब्धता के साथ बहुत ही प्रचलित बन गया है और अन्य फ़ॉर्मेट के मुकाबले सरल है। अन्य विकल्प में XML और JSON शामिल हैं, लेकिन वे अधिक जटिल हैं। CSV फ़ाइलें साधारण फ़ाइल फ़ॉर्मेट होने के कारण, यह विभिन्न भाषाओं में आसानी से समर्थित होती हैं।
+## Deep Dive (गहराई में जानकारी):
+CSV हैंडलिंग की जरूरत जब से नुमाया हुई, तब से कई लाइब्रेरीज़ और टूल्स डेवलप हो चुके हैं। Rust में `csv` क्रेट इस काम के लिए सबसे लोकप्रिय है, जिसमें सहज पार्सिंग और बेहतर एरर हैंडलिंग शामिल है। विकल्पों में `serde` का इस्तेमाल करके स्ट्रक्चर्ड डेटा में सीरिअलाइज़ और डीसीरिअलाइज़ करना शामिल है। इम्प्लीमेंटेशन डिटेल्स में, स्ट्रीमिंग रीड/राइट ऑपरेशंस और लार्ज डेटा सेट्स के लिए बफ़रिंग पर ध्यान दिया गया है।
 
-CSV फ़ाइलों को रीड करने के लिए कई अलग-अलग लाइब्रेरी हैं, जैसे कि `csv`, `csv_crate` और `rscsv`। इन में से ध्यान देने योग्य है कि कुछ लाइब्रेरी स्ट्रिंग या विशिष्ट डेटा टाइप को समर्थित करती हैं, जबकि कुछ `serde` जैसी लाइब्रेरी को एक्स्पोर्ट करती हैं। आपको अपने आवश्यकतानुसार लाइब्रेरी का चयन करना होगा।
-
-## इसके साथ देखें:
-- [Rust CSV दस्तावेज़](https://docs.rs/csv)
-- [Rust के साथ CSV कैसे काम करें](https://www.youtube.com/watch?v=hgdRKQfz8f8&ab_channel=TheRustProgrammingLanguage)
+## See Also (इसे भी देखें):
+- [The Rust Programming Language](https://doc.rust-lang.org/book/)
+- [CSV Crate Documentation](https://docs.rs/csv/latest/csv/)
+- [Serde Crate Documentation](https://serde.rs/)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)

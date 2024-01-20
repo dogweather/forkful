@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Lua: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+Travailler avec CSV, c'est manipuler des données textuelles structurées comme une feuille de calcul, où chaque ligne est un enregistrement et chaque enregistrement est divisé par des virgules. Les programmeurs le font car c'est un format léger et universel pour l'échange de données.
 
-Travailler avec des fichiers CSV peut sembler intimidant pour les programmeurs débutants, mais c'est en fait une compétence pratique et utile à avoir. CSV signifie "Comma Separated Values" ou valeurs séparées par des virgules en français. Il s'agit simplement d'un moyen de stocker des données tabulaires dans un fichier texte en utilisant des virgules pour séparer les colonnes.
-
-Les programmeurs utilisent souvent des fichiers CSV pour stocker des données qui doivent être traitées et analysées en utilisant du code. Cela permet une meilleure organisation et manipulation des données, rendant ainsi le processus de programmation plus efficace et efficace.
-
-## Comment faire:
-
-C'est très simple de travailler avec des fichiers CSV en utilisant Lua. Tout d'abord, vous devez utiliser la bibliothèque standard 'io' pour ouvrir le fichier CSV et le lire ligne par ligne à l'aide de la fonction 'lines'. Ensuite, vous pouvez utiliser la fonction 'split' pour séparer les valeurs de chaque ligne en une table. Enfin, vous pouvez utiliser ces données comme bon vous semble, en utilisant des boucles et des conditions pour les traiter et les utiliser dans votre code.
-
+## How to:
 ```Lua
--- Example of reading and processing a CSV file
+-- Lire un fichier CSV
+local function lire_csv(fichier)
+    local resultat = {}
+    local file = io.open(fichier, "r")
 
--- Import the 'io' library
-local io = require("io")
+    for ligne in file:lines() do
+        table.insert(resultat, ligne:split(','))
+    end
 
--- Open the CSV file
-local file = io.open("data.csv", "r")
-
--- Loop through each line in the file
-for line in file:lines() do
-  -- Split the values and store them in a table
-  local values = split(line, ",")
-  -- Do something with the values
-  print(values[1] .. " is " .. values[2] .. " years old.")
+    file:close()
+    return resultat
 end
 
--- Close the file
-file:close()
+-- Écrire dans un fichier CSV
+local function ecrire_csv(donnees, fichier)
+    local file = io.open(fichier, "w+")
+
+    for _, enreg in pairs(donnees) do
+        file:write(table.concat(enreg, ',') .. '\n')
+    end
+
+    file:close()
+end
+
+-- Utilisation
+local donnees = lire_csv("donnees.csv")
+ecrire_csv(donnees, "nouveau.csv")
+
+-- Affichage des données
+for _, enreg in ipairs(donnees) do
+    print(table.concat(enreg, ', '))
+end
 ```
 
-Sample output:
-```
-John is 25 years old.
-Sarah is 33 years old.
-```
+## Deep Dive
 
-## Plongée en profondeur:
+Le format CSV existe depuis les premiers jours de l'informatique personnelle, servant de pont entre les tableurs et les bases de données. Des alternatives comme JSON et XML proposent plus d'expressivité, mais avec plus de lourdeur. En Lua, travailler avec CSV est direct grâce a `io` pour la lecture et écriture, et la manipulation de tables pour stocker des données.
 
-L'utilisation de fichiers CSV dans la programmation remonte aux premiers jours de l'informatique lorsque les ordinateurs étaient principalement utilisés pour gérer des données. Bien que les formats de données modernes tels que JSON soient maintenant plus populaires, CSV reste une méthode simple et largement utilisée pour stocker des données.
-
-En utilisant Lua, il est également possible de créer des fichiers CSV à partir de zéro en construisant une chaîne de caractères contenant toutes les données et en l'écrivant dans un fichier à l'aide de la fonction 'write'. Il existe également des bibliothèques tierces qui facilitent encore plus la manipulation de fichiers CSV en fournissant des fonctions spécifiques pour extraire et manipuler les données.
-
-Il est important de noter que les fichiers CSV peuvent être sujets à des erreurs en raison de la nature flexible et non structurée du format. Il est donc essentiel d'utiliser des bibliothèques ou d'écrire du code très rigoureux pour gérer correctement les données.
-
-## Voir aussi:
-
-Si vous souhaitez en savoir plus sur la manipulation de fichiers CSV en Lua, voici quelques ressources utiles à consulter:
-
-- [Documentation Lua pour la bibliothèque io](https://www.lua.org/pil/21.2.html)
-- [Tutoriel vidéo sur la manipulation de fichiers CSV en Lua](https://www.youtube.com/watch?v=-r6fQY2efEs)
-
-Avec ces informations, vous devriez être en mesure de facilement travailler avec des fichiers CSV dans vos projets Lua. Bonne programmation!
+## See Also
+- Documentation Lua `io`: https://www.lua.org/manual/5.4/manual.html#6.8
+- RFC 4180, la norme CSV: https://tools.ietf.org/html/rfc4180
+- Site Lua-users CSV pour des bibliothèques plus avancées : http://lua-users.org/wiki/CsvUtils

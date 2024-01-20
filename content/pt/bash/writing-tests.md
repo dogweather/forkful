@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Bash: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,30 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e para que serve?
-
-Escrever testes em programação é uma técnica utilizada pelos programadores para garantir que o código que estão desenvolvendo está funcionando corretamente. Esses testes são pequenos programas criados para verificar se o código produz os resultados esperados e identificar possíveis erros.
-
-Muitas vezes, os programadores escrevem testes antes mesmo de iniciar a escrita do código em si, pois isso ajuda a definir melhor o propósito do código e quais resultados ele deve produzir.
+## O quê & Por quê?
+Escrever testes é definir um conjunto de procedimentos para verificar se o código se comporta como esperado. Programadores testam para evitar bugs, garantir qualidade e facilitar manutenção.
 
 ## Como fazer:
-
-Para escrever testes em Bash, você pode utilizar o comando `assert` seguido de um comando ou expressão ao qual você quer testar. Por exemplo:
-
 ```Bash
-assert 5 -gt 3
+# Teste simples para verificar se um arquivo existe
+if [ -f "meu_arquivo.txt" ]; then
+  echo "Teste PASSOU: Arquivo existe."
+else
+  echo "Teste FALHOU: Arquivo não encontrado."
+fi
+
+# Exemplo de saída para um teste que passou
+Teste PASSOU: Arquivo existe.
+
+# Exemplo de saída para um teste que falhou
+Teste FALHOU: Arquivo não encontrado.
 ```
 
-Este comando verifica se o número 5 é maior que 3 e retorna um código de saída `0` caso o teste seja bem sucedido. Caso contrário, o código de saída será diferente de `0`, indicando que o teste falhou.
+## Mergulho Profundo
+Nos primórdios, testes eram realizados manualmente por desenvolvedores. Alternativas modernas incluem frameworks de testes unitários como o Bash Automated Testing System (BATS). Esses frameworks permitem a implementação de testes mais complexos, validando funções individuais e integrando testes no processo de integração contínua.
 
-## Mergulho profundo:
-
-A prática de escrever testes não é exclusiva do Bash, mas sim uma técnica adotada por programadores em diversas linguagens de programação. Ela se originou no movimento de desenvolvimento de software chamado "Programação Extrema" (XP), que preza por agilidade e qualidade no processo de desenvolvimento.
-
-Existem outras ferramentas que também podem ser utilizadas para escrever testes em Bash, como o `shUnit2` e o `bats`. Além disso, você pode implementar testes automatizados em diferentes áreas, como testes unitários, de integração e de aceitação.
-
-## Veja também:
-
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Documentação oficial do shUnit2](https://github.com/kward/shunit2)
-- [Documentação oficial do bats](https://github.com/bats-core/bats-core)
+## Veja Também
+- Para aprender mais sobre testes em shell scripts, confira o Bash Automated Testing System (BATS) aqui: https://github.com/bats-core/bats-core
+- A documentação oficial do Bash fornece detalhes sobre condicionais, úteis para scripts de teste: https://www.gnu.org/software/bash/manual/
+- Artigos sobre melhores práticas de testes de software em geral, disponíveis em: https://martinfowler.com/articles/practical-test-pyramid.html

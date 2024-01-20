@@ -1,6 +1,6 @@
 ---
 title:                "標準エラーへの書き込み"
-html_title:           "TypeScript: 標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
 simple_title:         "標準エラーへの書き込み"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Waiatto & Naze?
+## What & Why? (何となぜ？)
 
-Writing to standard error, or stderr for short, is the act of sending error messages to a specific output stream separate from the regular output stream. This is commonly used by programmers as it allows for clear distinction between regular output and error messages, making debugging and troubleshooting easier. 
+標準エラーへの書き込みは、プログラムのエラーメッセージや診断を出力する方式です。これを行う理由は、エラー情報を標準出力（ログやユーザーへの通常の出力）から分離して、問題の解析やデバッグを容易にするためです。
 
-## Hou to:
+## How to: (方法)
 
-```TypeScript
-console.error("This is an error message."); 
-```
-**Output:**
-```
-This is an error message.
-```
+```typescript
+// 標準エラーにメッセージを書き込むシンプルな方法
+console.error('エラーが発生しました。');
 
-```TypeScript
-console.log("This is a regular message."); 
-```
-**Output:**
-```
-This is a regular message.
+// 標準エラーを直接使うより洗練された方法
+process.stderr.write('詳細なエラー情報。\n');
 ```
 
-## Jushin:
+サンプル出力（コンソール）：
 
-In the past, programmers would print all messages, including errors, to the regular output stream, making it difficult to spot errors. The adoption of stderr as a separate stream has greatly improved the debugging process. Alternatives to using stderr include using a designated log file for errors or using a logging library that allows for customizable output streams. In TypeScript, errors can be logged using the built-in `console.error()` function.
+```
+エラーが発生しました。
+詳細なエラー情報。
+```
 
-## Sono hokanikikin:
+## Deep Dive (深い潜水)
 
-- [TypeScript Official Documentation on `console.error()`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#error-outputs-in-console)
-- [Explanation of stderr vs stdout](https://stackoverflow.com/questions/32059191/stderr-and-stdout-explained)
+標準エラーはUNIX時代から存在し、プログラムとユーザ間でエラーメッセージを分ける伝統的な方法です。`console.error`は簡単で直感的な方法ですが、`process.stderr.write`はNode.jsに特有な、より直接的な書き込み方法です。また、ストリームを使って非同期に書き込みを行うこともできます。標準出力とは異なり、バッファリングされないためエラー情報が即座にユーザーに届けられます。
+
+## See Also (関連情報)
+
+- [Node.js公式ドキュメント](https://nodejs.org/api/process.html#process_process_stderr)
+- [Console API リファレンス](https://developer.mozilla.org/ja/docs/Web/API/console)

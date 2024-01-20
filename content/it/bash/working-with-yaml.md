@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Bash: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Cos'è ed perché utilizzarlo?
+## What & Why?
+YAML è un formato per codificare dati leggibili dall'uomo. Programmatori lo usano per configurazioni, perché è semplice e chiaro.
 
-Il formato YAML è un linguaggio di markup leggibile dall'uomo utilizzato per strutturare i dati in modo gerarchico e leggibile. I programmatori lo utilizzano soprattutto per l'organizzazione e la configurazione dei file di configurazione dei loro progetti.
-
-#Come utilizzarlo:
+## How to:
+Ecco come leggere e scrivere YAML in Bash:
 
 ```Bash
-# Creazione di un file YAML
-touch config.yaml
+# Install yq (Un tool per YAML basato su jq)
+wget https://github.com/mikefarah/yq/releases/download/v4.6.1/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
 
-# Aggiunta di valori all'interno del file
-echo "nome: Bash" >> config.yaml
-echo "versione: 5.0" >> config.yaml
-echo "linguaggio: scripting" >> config.yaml
+# Scrivi YAML
+cat <<EOT > config.yaml
+hostname: example.com
+port: 8080
+EOT
 
-# Lettura dei valori dal file
-Bash config.yaml
-
-# Output: nome: Bash
-          versione: 5.0
-          linguaggio: scripting
+# Leggi YAML
+value=$(yq e '.hostname' config.yaml)
+echo $value  # Output: example.com
 ```
 
-#Approfondimento:
+## Deep Dive
+YAML, acronimo di "YAML Ain't Markup Language", è stato introdotto nel 2001. Alternative includono JSON e XML. In Bash, comuni tool per lavorare con YAML sono `yq` e `jq` (per JSON). Dettagli di implementazione di `yq` si basano su libyaml per l'elaborazione efficiente e standardizzata.
 
-##Contesto storico:
-
-Il formato YAML è stato creato da Clark Evans nel 2001 come alternativa al formato XML per la strutturazione dei dati. Ha guadagnato popolarità tra i programmatori a partire dal 2006 ed è stato adottato come formato standard per la configurazione dei file di progetto da molte piattaforme di sviluppo.
-
-##Alternative:
-
-Alcune alternative al formato YAML includono JSON, XML e INI. Tuttavia, YAML è spesso preferito per la sua maggiore leggibilità e flessibilità nella strutturazione dei dati.
-
-##Dettagli di implementazione:
-
-Per utilizzare il formato YAML in Bash, è necessario installare il pacchetto python-yaml. È anche possibile utilizzare lo strumento di parsing bash YAML per leggere ed estrarre i dati da un file YAML.
-
-#Vedi anche:
-
-- [Documentazione ufficiale di YAML](https://yaml.org/spec/)
-- [Strumento di parsing bash YAML](https://github.com/jasperes/bash-yaml)
+## See Also
+- Documentazione YAML: https://yaml.org/spec/1.2/spec.html
+- GitHub `yq`: https://github.com/mikefarah/yq
+- `jq` tutorial: https://stedolan.github.io/jq/tutorial/

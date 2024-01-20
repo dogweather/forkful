@@ -1,7 +1,7 @@
 ---
-title:                "Computer Programming में csv के साथ काम करना"
-html_title:           "Javascript: Computer Programming में csv के साथ काम करना"
-simple_title:         "Computer Programming में csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# CSV क्या होता है और यह क्यों किया जाता है?
+## What & Why? (क्या और क्यों?)
+JavaScript में CSV का मतलब है 'Comma-Separated Values' - एक सरल फ़ाइल फॉर्मेट, जिसमें डाटा अल्पविराम से अलग होते हैं। प्रोग्रामर्स इसे इसलिए इस्तेमाल करते हैं क्योंकि यह स्प्रेडशीट और डेटाबेस की जानकारी को आसानी से स्टोर और शेयर करने का एक साधारण तरीका है।
 
-CSV से क्या समझा जाता है, यह हमें डेटा को अलग अलग टेक्स्ट के स्तर पर संगठित करने में मदद करता है। प्रोग्रामर्स CSV का प्रयोग अक्सर डेटा को इम्पोर्ट या एक्सपोर्ट करने के लिए करते हैं।
+## How to: (कैसे करें:)
+```Javascript
+// इस कोड के जरिए हम CSV स्ट्रिंग को पार्स करके जावास्क्रिप्ट ऑब्जेक्ट्स में बदलेंगे।
 
-## कैसे करें:
+const csv = 'name,age\nAlice,23\nBob,34';
 
-```
-const data = [
-  ['उपयोगकर्ता नाम', 'ईमेल', 'आयु'],
-  ['जॉन डो', 'johndoe@gmail.com', '25'],
-  ['जेन डो', 'jendo@gmail.com', '21']
-]
-
-// डेटा को CSV फाइल में लिखें
-const csv = data.map(row => row.join(',')).join('\n');
-console.log(csv);
-
-// एक CSV फ़ाइल से डेटा पढ़ें
-const fs = require('fs').promises;
-fs.readFile('data.csv', 'utf-8').then((data) => {
-  data.split('\n').map(row => {
-    console.log(row.split(','))
+function csvToJSON(csv) {
+  const lines = csv.split('\n');
+  const headers = lines[0].split(',');
+  return lines.slice(1).map(line => {
+    const data = line.split(',');
+    return headers.reduce((obj, nextKey, index) => {
+      obj[nextKey] = data[index];
+      return obj;
+    }, {});
   });
-});
+};
+
+console.log(csvToJSON(csv));
 ```
 
-उपरोक्त कोड से, हम डेटा सेट बनाते हैं और फिर उसे CSV फाइल में लिखते हैं। और उसी तरह से, हम CSV फाइल से डेटा पढ़ते हैं।
+Sample Output:
+```
+[
+  { name: 'Alice', age: '23' },
+  { name: 'Bob', age: '34' }
+]
+```
 
-## गहराई में जाएं:
+## Deep Dive (गहराई से जानकारी):
+CSV फॉर्मेट की खोज सन 1970s में हुई थी। ये JSON जैसे नए फॉर्मेट्स का विकल्प है लेकिन इसका सरल होना आज भी इसे फायदेमंद बनाता है। हालांकि, CSV में कॉम्प्लेक्स डाटा स्ट्रक्चर्स को स्टोर करना मुश्किल है। JavaScript में CSV का इस्तेमाल प्राय: फाइल्स को पार्स करने, API से डाटा फेच करने, या फाइल सिस्टम के ऑपरेशन्स के लिए होता है। 
 
-CSV या Comma Separated Values, एक विशेष तरह की फाइल है जहां डेटा अलग अलग कोटेशन से अलग होता है और कोटेशन से अलग अलग फ़ील्डों में अलग होता है। आजकल, CSV कोडिंग में व्यापक रूप से उपयोग किया जाता है और प्रोग्रामिंग के क्षेत्र में यह ज्यादातर डेटा को शेयर करने के लिए एक प्रमुख तरीका है।
-
-## देखें:
-
-- [CSV फ़ॉर्मेट का सारांश](https://tools.ietf.org/html/rfc4180)
+## See Also (और भी जानकारी):
+- [Papaparse](https://www.papaparse.com/): एक शक्तिशाली जावास्क्रिप्ट पार्सर के लिए वेबसाइट, जिससे बड़े CSV फाइल्स को पार्स करना आसान होता है।

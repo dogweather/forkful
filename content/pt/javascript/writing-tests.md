@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Javascript: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que É & Porquê?
 
-Escrever testes é uma prática comum entre os programadores para garantir a qualidade e funcionamento correto de seu código. Isso envolve a criação de pequenos trechos de código que testam diferentes partes da aplicação e verificam se os resultados esperados são obtidos. Os testes são importantes para detectar falhas e bugs em um estágio inicial e garantir que a aplicação funcionará corretamente quando utilizada pelo usuário final.
+Escrever testes consiste em criar códigos que checam se outros códigos funcionam como esperado. Programadores testam para garantir qualidade e evitar bugs futuros.
 
-## Como fazer:
+## Como Fazer:
 
-```Javascript
-// Exemplo de teste simples
-const square = (x) => {
-  return x * x;
-}
+```javascript
+// Exemplo com Jest
+const soma = (a, b) => a + b;
 
-// Teste usando o framework Jest
-test('Deve retornar 25 quando o número 5 for inserido', () => {
-    expect(square(5)).toBe(25);
+test('soma 1 + 2 igual a 3', () => {
+  expect(soma(1, 2)).toBe(3);
 });
 ```
 
-Neste exemplo, um teste simples é feito para uma função que calcula o quadrado de um número. Primeiro, definimos a função `square` que recebe um parâmetro `x` e retorna o quadrado desse número. Em seguida, usamos o framework de testes Jest para criar um teste que verifica se ao passar o número 5 como argumento para a função, o resultado é 25. Ao executar este teste, se o resultado for diferente de 25, ele irá falhar.
+Saída:
+```
+PASS  ./soma.test.js
+✓ soma 1 + 2 igual a 3 (5ms)
+```
 
-## Aprofundando:
+## Aprofundando o Conhecimento
 
-Escrever testes não é uma prática nova, mas com o aumento da popularidade do desenvolvimento ágil e do TDD (Test Driven Development), sua importância tem sido amplamente reconhecida pela comunidade de programação. Existem também outras formas de testar o código, como o BDD (Behavior Driven Development) e o ATDD (Acceptance Test Driven Development). Cada abordagem tem suas próprias vantagens e desvantagens, mas todas têm o mesmo objetivo de garantir a qualidade do código.
+Testes automatizados começaram nos anos 90 com o boom do desenvolvimento de software. Hoje, entre as alternativas, temos Jest, Mocha, Jasmine e QUnit para JavaScript. Testes podem ser unitários (pequenas partes do código), de integração (combinação de partes) ou end-to-end (fluxo completo do app). A implementação varia: para UI, pode-se usar algo como Cypress ou Selenium.
 
-## Veja também:
+## Veja Também
 
-- [Documentação do framework Jest](https://jestjs.io/docs/getting-started)
+- Jest: https://jestjs.io/
+- Mocha: https://mochajs.org/
+- Jasmine: https://jasmine.github.io/
+- Cypress: https://www.cypress.io/
+- Artigo sobre os diferentes tipos de testes: [Understanding different test types - Unit vs Integration vs E2E](https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests)

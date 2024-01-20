@@ -1,6 +1,6 @@
 ---
 title:                "כתיבת בדיקות"
-html_title:           "Python: כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "Python"
 category:             "Python"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כתיבת בדיקות ב־Python – מדריך קצר ופשוט
-
 ## מה ולמה?
-כתיבת בדיקות (טסטים) היא חלק חשוב מהתהליך של פיתוח תוכנה. זהו תהליך שבו מתבצעת בדיקה של קטעי קוד כדי לוודא שהם עובדים כפי שצריך. התוצאה הסופית היא קוד שפועל באופן נכון ומקפיד על יכולות גבוהות של אמינות ויעילות.
+כתיבת בדיקות היא תהליך שבו מתכנתים יוצרים קוד שמוודא שתוכנתם עובדת כשורה. הם עושים זאת כדי להבטיח יציבות, למצוא תקלות לפני לקוחות ולשפר את איכות הקוד.
 
-## איך לבצע:
-כדי לכתוב בדיקות ב־Python, ניתן להשתמש בפייתון ליבות ה־unittest ו־pytest. ניתן גם להשתמש בספריות נוספות כמו nose ו-doctest. נהלים בדרך כלל פועלים על ידי יצירת קבצי בדיקות והכנת תנאים של ערכים מצופים ובדיקת התוצאה. להלן דוגמאות פשוטות להפעלת כלי בדיקות:
+## איך לעשות:
+הנה דוגמא פשוטה ליצירת בדיקה ב-Python באמצעות המודול `unittest`.
 
-```
-# כתיבת מילונים
+```Python
+import unittest
 
-# מציאת המפתח המקסימלי ב־dict
-Python
-def test_max_key():
-    dictionary = {'a': 1, 'b': 2, 'c': 3}
-    assert max(dictionary) == 'c'
-```
+def sum(a, b):
+    return a + b
 
-```
-# כתיבת איזורים
+class TestSum(unittest.TestCase):
+    def test_sum(self):
+        self.assertEqual(sum(1, 2), 3)
 
-# בדיקת שטח איזור
-def test_area_calculation():
-    height = 5
-    base = 10
-    expected_result = 25
-    assert calculate_area(height, base) == expected_result
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-## בירור מעמיק:
-בתחילת זמנו, כתיבת בדיקות הייתה חלק חשוב מהתהליך של פיתוח תוכנה. אין צורך לבצע בדיקות ידניות על כל חלק קטן בפרויקט, מה שהוריד את זמן הפיתוח והעלה את אמינות הקוד. בשנים האחרונות, תורת התכנות הכמעט מכולה קידמה את הקידוד טסטים של הקוד, כדי להיות מבטיחים עם בטוחות נמנו וזוהי ניסויית.
+הפלט של ריצת הקוד הזה יהיה:
 
-יש גם שיטות אחרות לתחום הבדיקות בפייתון, כגון בדיקות הפעלת Edwin Brady's QuickCheck, המיועדות למציאת בעיות באופן כזה שמאגעות בכיסוי של מטרה עמוקה יותר בצורה ממוחזרת פותחת. שתף פעולה עם בדיקות BDD עם שימוש בפרויקט - תוכניות ה־Gherkin וברירית עם ~־פרסומת־פוססטית־פוססטית־פוססטית־פוסטטטטת־פוססטתת־פוסטתת פרסומות גדולה חסה על קוד כדי לוודא שהוא יכול לבצע עבודה בינונית.
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
+
+## עיון מעמיק:
+### היסטוריה
+פיתוח בדיקות החל כשתוכניתים הבינו שבדיקת תוכנה יכולה לפחות חלקית להתאוטמט. זה הוביל לפיתוח של TDD (Test-Driven Development) ו-BDD (Behavior-Driven Development).
+
+### חלופות
+`unittest` הוא רק אחד ממספר תשתיות לפיתוח בדיקות ב-Python. חלופות פופולריות כוללות `pytest` ו-`nose2`.
+
+### פרטי יישום
+בעת כתיבת בדיקות, מתכנתים צריכים לוודא שהם לא רק מכסים את כל הקוד אלא גם כוללים מקרי קצה ותרחישים לא טריוויאליים.
 
 ## ראה גם:
-* [unittest מסמכי Python](https://docs.python.org/3/library/unittest.html)
-* [pytest המדריך הרשמי](http://doc.pytest.org/en/latest/)
-* [pytests הדוקומנטציה הרשמית] (http://doc.pytest.org/en/latest/getting-started.html)
-* [nose המדריך המצליח ביותר] (https://nose.readthedocs.io/en/latest/)
-* [מדריך doctest הרשמי] (https://docs.python.org/3/library/doctest.html)
+1. התיעוד הרשמי של Python למודול `unittest`: https://docs.python.org/3/library/unittest.html
+2. הדרכת Pytest רשמית: https://docs.pytest.org/en/stable/
+3. מדריך מעמיק על TDD למתכנתי Python: https://realpython.com/tdd-start-to-finish/

@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "C#: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "C#"
 category:             "C#"
@@ -11,31 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester är en viktig del av utvecklingsprocessen för programvaror. Det innebär att skriva kod som testar den befintliga koden för att upptäcka eventuella fel eller buggar. Detta är viktigt eftersom det hjälper programmerare att identifiera och åtgärda problem innan koden implementeras i en produktionsmiljö.
+Att skriva tester innebär att du skapar kod som kontrollerar att annan kod fungerar som den ska. Programmerare gör detta för att snabbt kunna upptäcka buggar, garantera kvalitet och förenkla framtida underhåll.
 
-## Hur man gör:
-För att skriva tester i C# måste du först inkludera ett testramverk som NUnit, MS Test eller xUnit i ditt projekt. Sedan kan du skriva tester i form av metoder som kallas "testmetoder". Dessa metoder börjar vanligtvis med "test" och kan ha olika parametrar beroende på vad som ska testas. Nedan följer ett exempel på en testmetod som kontrollerar om en funktion returnerar det förväntade resultatet:
+## Hur gör man:
+För att skriva tester i C#, kan du använda testramverket NUnit. Kolla koden nedan för ett enkelt test.
 
 ```C#
-[Test]
-public void TestAddition()
+using NUnit.Framework;
+
+namespace MyApplication.Tests
 {
-    // Arrange
-    int num1 = 5;
-    int num2 = 10;
-
-    // Act
-    int result = Calculator.Add(num1, num2);
-
-    // Assert
-    Assert.AreEqual(15, result);
+    [TestFixture]
+    public class ExampleTests
+    {
+        [Test]
+        public void AdditionTest()
+        {
+            Assert.AreEqual(4, 2 + 2);
+        }
+    }
 }
 ```
 
-## Djupdykning:
-Att skriva tester har funnits i många år men har blivit allt viktigare i den moderna utvecklingsmiljön. Förutom att hjälpa till att upptäcka fel och buggar, kan tester också fungera som dokumentation för koden och underlätta refaktorering. Exempel på andra populära testramverk för C# inkluderar NUnit, MSTest och xUnit. Det finns också alternativ till testning av kod, som t.ex. användartester och kontinuerlig integration.
+Kör testet och så bör det lyckas. Testresultatet ser ut ungefär så här:
 
-## Se även:
-- [NUnit](https://nunit.org/)
-- [MS Test](https://docs.microsoft.com/en-us/visualstudio/test/writing-unit-tests-for-c-cpp?view=vs-2019)
-- [xUnit](https://xunit.net/)
+```
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.234s
+```
+
+## Fördjupning
+Tester i programvaruutveckling har funnits sedan 1950-talet. Alternativ till NUnit inkluderar xUnit och MSTest i C#-ekosystemet. Detaljerna vid testskrivning inkluderar att isolera testfall, mocka beroenden och organisera test i logiska samlingar.
+
+## Se även
+- NUnit: https://nunit.org/
+- xUnit: https://xunit.net/
+- MSTest documentation: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest

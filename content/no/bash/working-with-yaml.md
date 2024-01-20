@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med yaml"
-html_title:           "Bash: Jobbe med yaml"
-simple_title:         "Jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-YAML er et tekstbasert format som brukes til å strukturere og lagre data på en leselig og lett-forståelig måte for maskiner og mennesker. Det er et populært verktøy blant programmerere fordi det gjør det enkelt å organisere og arbeide med data i programmeringsprosjekter.
+## What & Why?
+YAML er et format for data serialisering. Programmere bruker det fordi det er lettleselig og enkelt å forstå, noe som gjør deling av data mellom mennesker og programmer grei sak.
 
-# Slik gjør du det:
-Her er et eksempel på hvordan du kan bruke YAML for å lage en liste over favorittfilmer:
-
+## How to:
+Lag en enkel YAML-fil `example.yml`:
 ```Bash
-Min favorittfilmer:
-  - Tatt av vinden
-  - Ringenes herre
-  - The Shawshank Redemption
+echo 'navn: Ola Nordmann
+alder: 30
+interesser:
+  - kode
+  - ski
+  - musikk' > example.yml
+```
+Les YAML-fil i Bash med `yq` (YAML prosesseringsverktøy):
+```Bash
+sudo apt-get install yq
+yq e '.navn' example.yml
+```
+Output:
+```Bash
+Ola Nordmann
 ```
 
-Dette vil skape en liste med tre filmer under overskriften "Min favorittfilmer".
+## Deep Dive
+YAML, som står for "YAML Ain't Markup Language", lansert i 2001, er ofte brukt i konfigurasjonsfiler og datautveksling. Alternativer som JSON eller XML finnes, men YAML vektlegger lesbarhet. Innlesning skjer vanligvis via biblioteker som `pyyaml` for Python eller `yq` for Bash.
 
-# Dypdykk:
-YAML ble utviklet i 2001 som en enklere og mer menneskevennlig måte å representere datastrukturer på enn XML-formatet. Det brukes ofte til å konfigurere og bygge applikasjoner, og det finnes mange alternative formater som JSON og TOML. YAML er spesielt nyttig for konfigurasjonsfiler og bruker også innrykk for å definere hierarkiet i en datastruktur.
-
-# Se også:
-- YAML-dokumentasjonen: https://yaml.org/
-- YAML på GitHub: https://github.com/yaml/yaml
-- Alternativer til YAML: https://www.educative.io/blog/json-vs-xml-vs-yaml-decision-guide
+## See Also
+- YAML offisiell side: https://yaml.org
+- `yq` GitHub repo: https://github.com/mikefarah/yq
+- YAML tutorial: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/

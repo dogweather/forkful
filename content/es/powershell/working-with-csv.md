@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "PowerShell: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Trabajar con CSV (Comma Separated Values) es una tarea común para los programadores que necesitan manipular datos en formato tabular. Los archivos CSV son fáciles de crear y leer, lo que los hace populares para almacenar y compartir datos entre diferentes aplicaciones.
+## Qué y Por Qué?
+Trabajar con CSV (Valores Separados por Comas) es manejar datos estructurados como texto plano, ideal para importar y exportar información de aplicaciones. Programadores lo usan por su simplicidad y compatibilidad universal.
 
-## ¿Cómo hacerlo?
-En PowerShell, podemos utilizar los cmdlets Import-Csv y Export-Csv para trabajar con archivos CSV.
-
+## Cómo hacerlo:
 ```PowerShell
-# Importar un archivo CSV en una variable 
-$datos = Import-Csv "C:\ruta\archivo.csv"
+# Importar CSV
+$datos = Import-Csv -Path "datos.csv"
 
-# Exportar una variable a un archivo CSV
-$datos | Export-Csv "C:\ruta\nuevo_archivo.csv"
+# Mostrar los datos importados
+$datos
+
+# Añadir una nueva fila
+$nuevaFila = [PSCustomObject]@{
+    Nombre = "Ana"
+    Edad = 28
+    Ciudad = "Sevilla"
+}
+$datos += $nuevaFila
+
+# Exportar a CSV
+$datos | Export-Csv -Path "datos_actualizados.csv" -NoTypeInformation
+
+# Verificar el contenido del nuevo CSV
+Get-Content "datos_actualizados.csv"
 ```
 
-Podemos agregar opciones adicionales al cmdlet Export-Csv para controlar el formato de los datos, como por ejemplo, el delimitador y la codificación del archivo de salida.
-
-```PowerShell
-# Exportar una variable a un archivo CSV con delimitador punto y coma
-$datos | Export-Csv "C:\ruta\nuevo_archivo.csv" -Delimiter ";"
-
-# Exportar una variable a un archivo CSV con formato UTF-8
-$datos | Export-Csv "C:\ruta\nuevo_archivo.csv" -Encoding "UTF8"
+**Salida de ejemplo:**
+```
+"Nombre","Edad","Ciudad"
+"Juan","30","Madrid"
+"Lucia","25","Barcelona"
+"Ana","28","Sevilla"
 ```
 
-## Inmersión profunda
-La historia detrás de los archivos CSV se remonta a la época de las primeras hojas de cálculo, cuando se utilizaban comas como separadores de datos. A medida que las tecnologías avanzaron, los archivos CSV se volvieron obsoletos, pero aún se mantienen en uso debido a su simplicidad y compatibilidad con una amplia gama de aplicaciones.
+## Inmersión Profunda
+Históricamente, CSV se popularizó por su facilidad de edición con programas de hoja de cálculo. Las alternativas incluyen JSON y XML, que ofrecen estructuras más complejas para datos anidados. En PowerShell, trabajar con CSV es directo gracias a `Import-Csv` y `Export-Csv`, que convierten entre objetos de PowerShell y texto CSV.
 
-En cuanto a las alternativas, PowerShell también ofrece cmdlets para trabajar con otros formatos de datos tabulares, como XML y JSON. Sin embargo, los archivos CSV siguen siendo una opción popular debido a su facilidad de uso.
-
-Para aquellos interesados en conocer más detalles sobre el formato CSV, se recomienda revisar la especificación RFC 4180, que describe los estándares para crear archivos CSV correctamente.
-
-## Ver también
-- [Documentación oficial de Microsoft para Import-Csv](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/import-csv)
-- [Documentación oficial de Microsoft para Export-Csv](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/export-csv)
-- [RFC 4180 - Formato de archivo CSV](https://tools.ietf.org/html/rfc4180)
+## Ver También
+- La documentación oficial de PowerShell para `Import-Csv`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv
+- La documentación oficial de PowerShell para `Export-Csv`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv
+- Tutorial sobre cómo manipular CSV con PowerShell: https://ss64.com/ps/syntax-csv.html

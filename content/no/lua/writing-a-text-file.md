@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Lua: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-
-Å skrive en tekstdokument er en viktig del av programmering. Det betyr rett og slett å lagre tekst og data i en ekstern fil, som kan leses, redigeres og brukes av programmet ditt. Programmerere gjør dette for å organisere og lagre data på en måte som er enkel å håndtere, i stedet for å hardkode det inn i programmet.
+## Hva & Hvorfor?
+Å skrive til en tekstfil betyr å lagre data, som tekststrenger, inn i en fil. Programmerere gjør det for å lagre konfigurasjoner, brukerdata eller logger.
 
 ## Hvordan:
+```Lua
+-- Åpne fil i skrivemodus
+local file = io.open("minfil.txt", "w")
 
-Her er et eksempel på hvordan du kan skrive en tekstdokument i Lua:
-
+-- Sjekk at filen ble åpnet
+if file then
+    -- Skriv tekst til filen
+    file:write("Hei, dette er min tekst i Lua!\n")
+    file:write("Lagrer en ny linje tekst.")
+    -- Lukk filen
+    file:close()
+else
+    print("Kunne ikke åpne filen.")
+end
 ```
--- Åpner en fil i skrive-modus
-local fil = io.open("nytt_dokument.txt", "w")
-
--- Skriver tekst til filen
-fil:write("Hei verden!")
-
--- Lukker filen
-fil:close()
+Etter kjøring, `minfil.txt` inneholder:
+```
+Hei, dette er min tekst i Lua!
+Lagrer en ny linje tekst.
 ```
 
-Når dette skriptet kjøres, vil det opprette en ny fil med navnet "nytt_dokument.txt" og skrive teksten "Hei verden!" til den. Du kan også legge til flere linjer eller variabler ved å bruke funksjonen `fil:write()` flere ganger.
+## Dypdykk
+Historisk sett var filhåndtering en fundamental operasjon for mange programmeringsspråk. Lua tilbyr en minimalistisk, men kraftig I/O-bibliotek. `io.open` funksjonen leverer alternativer, inkludert "r" for lesing, "w" for skriving, "a" for vedlegg (append) og "r+" for å lese/skrive. God praksis inkluderer håndtering av feil, som å sjekke om en fil er tilgjengelig, og alltid lukke en fil for å frigjøre ressurser.
 
-## Nærmere titt:
-
-Skriving til tekstfiler har vært en grunnleggende del av programmering i lang tid. Det gir programmerere muligheten til å lagre data på en strukturert måte og behandle det som en egen fil. Alternativet til å skrive til en fil er å hardkode data direkte inn i koden, noe som kan gjøre det vanskeligere å organisere og endre senere.
-
-I Lua kan du også bruke `io.open()`-funksjonen i les-modus for å lese data fra en fil. Det finnes også flere tredjeparts biblioteker som tilbyr mer komplekse funksjoner for å skrive til og lese fra tekstdokumenter.
-
-Et viktig aspekt ved å skrive til tekstfiler er å sørge for at filen lukkes ordentlig etter at du er ferdig med å bruke den. Dette gjøres vanligvis med funksjonen `fil:close()`.
-
-## Se også:
-
-- Lua dokumentasjon - https://www.lua.org/docs.html 
-- Filbehandling i Lua - https://www.lua.org/pil/21.1.html 
-- Lignende funksjonalitet i andre programmeringsspråk: Python, Java, JavaScript
+## Se Også
+- Lua File I/O-dokumentasjon: [http://www.lua.org/manual/5.4/manual.html#6.8](http://www.lua.org/manual/5.4/manual.html#6.8)
+- Tutorial på filbehandling i Lua: [https://www.tutorialspoint.com/lua/lua_file_io.htm](https://www.tutorialspoint.com/lua/lua_file_io.htm)

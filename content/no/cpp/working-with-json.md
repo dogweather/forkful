@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med json"
-html_title:           "C++: Arbeid med json"
-simple_title:         "Arbeid med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## What & Why?
+JSON, JavaScript Object Notation, er et dataformat for strukturert info. Programmerere bruker JSON for å lagre og utveksle data enkelt mellom servere og apps.
 
-JSON står for JavaScript Object Notation, og er et lettvekts format for å lagre og utveksle datastrukturer. Det er spesielt populært blant webutviklere på grunn av dets enkle syntaks og støtte på tvers av ulike programmeringsspråk.
-
-Hvordan:
-
-Å jobbe med JSON i C++ er enkelt og effektivt. Først må vi inkludere "json.hpp" biblioteket i vår kode. Deretter kan vi bruke funksjoner som "parse()" og "serialize()" for å lese og skrive JSON-data fra en fil eller et nettverk. Et eksempel på hvordan dette kan se ut er:
+## How to:
+For å jobbe med JSON i C++, trenger du et bibliotek som `nlohmann/json`. Her er en enkel kode:
 
 ```C++
 #include <iostream>
-#include "json.hpp"
-
-using json = nlohmann::json; // Definerer et alias for "json.hpp" biblioteket.
+#include <nlohmann/json.hpp>
 
 int main() {
-    // Oppretter et JSON-objekt og legger til noen verdier.
-    json myObj = {
-        {"navn", "Per"},
-        {"alder", 25},
-        {"favoritt_farger", {"blå", "grønn", "gul"}}
-    };
+    // Parse JSON string
+    std::string jsonString = R"({"name":"Ola","age":30,"city":"Oslo"})";
+    nlohmann::json jsonObj = nlohmann::json::parse(jsonString);
 
-    // Skriver ut JSON-dataen på konsollen.
-    std::cout << myObj.dump() << std::endl;
+    // Endre verdier
+    jsonObj["city"] = "Bergen";
 
-    // Leser JSON-data fra en fil og skriver ut verdien til et bestemt element.
-    json myFile = json::parse(std::ifstream("minfil.json"));
-    std::cout << "Alderen til Per er: " << myFile["alder"] << std::endl;
-
+    // Skriv ut endret JSON
+    std::cout << jsonObj.dump(2) << std::endl;
     return 0;
 }
 ```
 
-Utfordringen med JSON i C++ er at det ikke finnes noen standardbiblioteker eller innebygde funksjoner for å jobbe med det. Men heldigvis finnes det flere populære tredjepartsbiblioteker som "json.hpp" og "rapidjson" som gjør det enklere å håndtere JSON-data.
+Sample output:
+```
+{
+  "age": 30,
+  "city": "Bergen",
+  "name": "Ola"
+}
+```
 
-Dypdykk:
+## Deep Dive:
+JSON dukket opp tidlig på 2000-tallet, raskt adoptert som et enklere alternativ til XML. Andre alternativer inkluderer YAML og TOML. I C++, bruker mange `nlohmann/json` fordi det er enkelt og effektivt, men det er også andre biblioteker som `jsoncpp` og `rapidjson`. Biblioteker innfører overhead, men de gjør JSON-håndtering enkel og feilsikker.
 
-JSON ble først utviklet av Douglas Crockford på 1990-tallet som en del av JavaScript-programmeringsspråket. I dag er det et utbredt format som brukes over hele verden, spesielt i webutvikling. Alternativer til JSON inkluderer XML og YAML, men disse har ofte mer komplekse syntakser og er derfor ikke like populære.
-
-For å implementere JSON i C++, må man enten lage en parser og serializer for JSON-dataen selv, eller bruke et tredjepartsbibliotek. Som nevnt tidligere finnes det flere populære alternativer, og valget avhenger ofte av personlige preferanser og prosjektets behov.
-
-Se også:
-
-- "json.hpp" biblioteket: https://github.com/nlohmann/json
-- "rapidjson" biblioteket: https://rapidjson.org/
+## See Also:
+- Offisiell `nlohmann/json` GitHub-side: https://github.com/nlohmann/json
+- JSON standard spesifikasjon: https://www.json.org/json-en.html
+- `jsoncpp` GitHub-side: https://github.com/open-source-parsers/jsoncpp
+- `rapidjson` GitHub-side: https://github.com/Tencent/rapidjson
+- TutorialsPoint JSON tutorial: https://www.tutorialspoint.com/json/index.htm

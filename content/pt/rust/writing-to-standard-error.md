@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Rust: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,27 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e por que escrever para o erro padrão:
-Ao programar em Rust, às vezes você vai querer escrever mensagens de erro para o console. Isso é feito escrevendo para o erro padrão, que é uma saída diferente da saída padrão do programa. Os programadores fazem isso para permitir que os usuários vejam mensagens de erro específicas e compreensíveis, em vez de erros genéricos.
+## O Que É & Por Quê?
+Escrever no erro padrão (stderr) é a forma de enviar mensagens de erro e diagnósticos em um programa. Programadores fazem isso para separar a saída normal (stdout) da saída de erro, facilitando a identificação e manipulação de problemas.
 
-Como fazer:
-```
-// Exemplo de código para escrever em erro padrão
-use std::io::Write;
+## Como Fazer:
+```Rust
+use std::io::{self, Write};
 
 fn main() {
-    let mut stderr = std::io::stderr();
-    writeln!(stderr, "Este é um erro de exemplo.").unwrap();
+    writeln!(io::stderr(), "Erro encontrado!").expect("Falha ao escrever no stderr");
 }
 ```
-
-Saída de exemplo:
+Saída esperada na stderr:
 ```
-Este é um erro de exemplo.
+Erro encontrado!
 ```
 
-Mergulho profundo:
-Para entender melhor por que escrever para o erro padrão é útil, é importante saber que esse recurso existe desde os primeiros sistemas Unix. Na verdade, foi introduzido por Ken Thompson, um dos pioneiros do Unix. Alternativas ao erro padrão incluem escrever para um arquivo de log ou para a saída padrão e redirecioná-la para o console. A implementação do erro padrão em Rust é baseada em um trait chamado "std::io::Write" e é acessível por meio do módulo "std:io".
+## Mergulho Profundo
+Historicamente, a separação entre stdout e stderr permite que erros sejam redirecionados ou tratados de forma diferente da saída padrão de um programa. Alternativas incluem o uso de bibliotecas de logging para maior controle. A implementação em Rust é facilitada pelo módulo `std::io`, que oferece funções diretas para escrever no stderr.
 
-Veja também:
-Para mais informações sobre escrever para o erro padrão em Rust, veja a seção sobre "std::io::Write" na documentação oficial do Rust: https://doc.rust-lang.org/std/io/trait.Write.html
+## Veja Também
+- A documentação oficial do Rust sobre `std::io`: https://doc.rust-lang.org/std/io/
+- Um tutorial sobre manipulação de erros em Rust: https://doc.rust-lang.org/book/ch09-00-error-handling.html
+- Um guia sobre o uso de stderr em diferentes linguagens de programação: https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)

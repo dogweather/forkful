@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Gleam recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleam Programming: Writing Tests - A Quickstart Guide
-
 ## What & Why?
 
-Tests help ensure the code behaves as expected. They enable continuity of functionality even with drastic changes, making programmers feel safe and confident while refactoring the code.
+Writing tests is about crafting code that checks other code's correctness. Programmers do it to catch bugs early, ensure quality, and safeguard against future changes breaking things.
 
 ## How to:
 
-Writing tests in Gleam is straightforward. Let's start with a simple arithmetic function and its associated test.
-
-```Gleam
-pub fn add(a: Int, b: Int) -> Int {
-  a + b
-}
-```
-
-Now, let's write the test for the add function:
-
 ```Gleam
 import gleam/should
-import gleam/int
-import my_application/practice
+import my_module
 
-pub fn add_test() {
-  practice.add(1, 2)
-  |> should.equal(int.success(3))  
+pub fn my_test() {
+  // Checking if the function return the expected value
+  should.equal(my_module.my_function(), "expected result")
+}
+
+pub fn addition_test() {
+  // Testing the addition function for correctness
+  should.equal(my_module.add(1, 2), 3)
 }
 ```
-If the test passes, you should see an output like this:
 
-```Gleam
-Ok: Passed 1 tests. 
+Sample output from a successful test suite run:
+
 ```
+Testing my_module...
+  ✓ my_test passes
+  ✓ addition_test passes
 
-If the test fails, you'll get an error message pointing out where the test went wrong.
+All tests passed!
+```
 
 ## Deep Dive
 
-Gleam, created in 2018, built a hobby project by Louis Pilfold, borrows its pattern from React, Elm, and Ruby testing. The core idea is to ensure code correctness.
-
-While Gleam makes unit testing simpler, alternatives like QuickCheck bring generative testing to the table. With QuickCheck, programmers can generate extensive sets of random tests to explore the application's behavior.
-
-Taking a closer look at our test, we use Gleam's imported libraries - `gleam/should` to format the test, `gleam/int` to handle integer operations, and our own module under test - `my_application/practice`. Then, run the function under test, add(1, 2), pipe the result to `should.equal` and check it against what we expect `int.success(3)`.
+Gleam's testing culture is inspired by its Erlang roots, where robustness is key. Alternatives like property-based testing are also popular in the Erlang ecosystem. Implementation-wise, tests in Gleam are just regular functions with assertions. They're run by a test runner, and results are reported in a human-readable format.
 
 ## See Also
 
-While this is a quick introduction to writing tests in Gleam, each aspect discussed has depth. Dive into these resources for detailed knowledge:
-
-- Dive deeper into Gleam Programming at [Gleam Language](https://gleam.run/)
-- Explore generative testing with [QuickCheck](http://www.quviq.com/products/erlang-quickcheck/).
+- Erlang's common test for context: [http://erlang.org/doc/apps/common_test/basics_chapter.html](http://erlang.org/doc/apps/common_test/basics_chapter.html)

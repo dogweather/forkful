@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "Java: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-עבודה עם YAML היא תהליך קל ונוח לתיאור והעברת מידע, שמשמשת כדרך נפוצה לשמירת תצורה והגדרות של יישומים מבוססי טקסט. תיקון בעיות ושיתוף קובצי YAML הוא חלק חשוב מקוד פיתוח וכדאי להיות יכול לעבוד עם פורמט זה.
+## מה ולמה?
+YAML הוא פורמט נתונים קל לקריאה, משמש להגדרת תצורה. תוכניות רבות משתמשות ב-YAML כיוון שהוא אינטואיטיבי וקל לעריכה על ידי בני אדם.
 
-# איך לעבוד עם YAML:
-לדוגמה, הנה קטע קוד שמראה כיצד ליצור קובץ YAML בתוך קוד Java:
+## איך לעשות:
+כדי לעבוד עם YAML ב-Java צריך להשתמש בספריה כמו `snakeyaml`. הדוגמה הבאה מראה כיצד לקרוא ולכתוב קובצי YAML.
 
-```Java
-Yaml yaml = new Yaml(); // ייבוא מודול 'Yaml'
-Map<String, Object> data = new HashMap<>(); // יצירת מפתח ערכים ריקה
-data.put("name", "John"); // הוספת שם למפתח
-data.put("age", 30); // הוספת גיל למפתח
-String yamlOutput = yaml.dump(data); // ייצוא המידע לקובץ YAML
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.io.FileWriter;
+import java.util.Map;
+
+public class YamlExample {
+
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+
+        // קריאה מ-YAML
+        InputStream inputStream = YamlExample.class
+            .getClassLoader()
+            .getResourceAsStream("config.yaml");
+        Map<String, Object> data = yaml.load(inputStream);
+        System.out.println(data);
+        
+        // כתיבה ל-YAML
+        String outputYaml = yaml.dump(data);
+        try (FileWriter writer = new FileWriter("output.yaml")) {
+            writer.write(outputYaml);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-וכאן תוכלו לראות את הפלט של הקוד הקודם:
+פלט דוגמה (מהדפסת המפה):
 
-```yaml
-name: John
-age: 30
+```
+{server=apache, database=mysql, version=1.0}
 ```
 
-ישנם גם אפשרויות נוספות לעבוד עם קבצי YAML בעזרת מרכיבי תוכנה נוספים, כמו ייבוא וייצוא של קבצי תצורה, וניתוח נתונים של YAML לצורך הצגתם בפורמט מבונה.
+## צלילה לעומק:
+YAML נוסד ב-2001 ומכוון להיות ידידותי לקודר. ישנן חלופות כמו JSON וXML, אך YAML נותר פופולרי בזכות הקריאות והפשטות שלו. בשפת Java, ניתן להתממשק ל-YAML באמצעות ספריות כמו `snakeyaml` שפותחה על ידי אסף הידיד.
 
-# חצי גלים:
-פרוטוקול פיתוח תווים נקיים (YAML) נוצר בשנת 2001 כפתרון פשוט וברור יותר מתחביר ה-XML ותכנון התצורה של LDAP. בעזרת הפוקוס החדש על שימוש בטקסט פשוט ופחות מורכב, YAML עכשיו הפך לפופולרי מאוד בקוד פיתוח.
-
-האלטרנטיבות לעבוד עם YAML כוללות JSON ו-XML, אך כשמדובר בפתרונות תצורה והתאמה, YAML הוא בדרך כלל הכי ברור ונוח לשימוש.
-
-כדי לרוץ על קובץ YAML בתוך קוד Java, יש להשתמש במודול חיצוני כמו SnakeYAML או Jackson, אשר מאפשרים תיבת כלים עם פונקציות נוספות לטיפול בקבצי YAML ופעולות נוספות.
-
-# ראו גם:
-למידע נוסף על שימוש ב-YAML בקוד פיתוח, ניתן לעיין בקוד פתוח של מודולים כמו SnakeYAML ו-Jackson, ולהתעמק בטכניקות שונות שניתן להשתמש בהן עם קבצי YAML בקוד Java.
+## ראה גם:
+- המדריך הרשמי של `snakeyaml`: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+- YAML 1.2 מפרט רשמי: https://yaml.org/spec/1.2/spec.html
+- השוואת YAML ל-JSON ו-XML: https://www.json2yaml.com/

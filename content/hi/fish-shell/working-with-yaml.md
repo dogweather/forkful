@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "Fish Shell: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-यमल (YAML) काफी सरल और आसान सार्वजनिक भाषा है जो डेटा को स्ट्रक्चर्ड तरीके से स्टोर करने के लिए उपयोग किया जाता है। प्रोग्रामर्स इसका इस्तेमाल उनके प्रोजेक्ट्स में कॉन्फिगरेशन फ़ाइल्स बनाने और संचालन के लिए करते हैं, जैसे कि सर्वर सेटिंग्स, डेटाबेस कनेक्शन डिटेल्स, युआरएल्स आदि।
+YAML एक डेटा सीरियलाइज़ेशन फॉर्मेट है, जिसे कॉन्फ़िगरेशन फ़ाइलों और डेटा संचार के लिए आसानी से पढ़ा जा सकता है। प्रोग्रामर्स YAML का उपयोग कॉन्फ़िगरेशन और डेटा संरचनाओं को समझने और उन्हें मैनेज करने के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-यमल के संरचना के साथ काम करने के लिए फिश शेल में कुछ सरल कमांड्स हैं। नीचे दिए गए कोड ब्लॉक में आप उदाहरण देख सकते हैं। 
+```Fish Shell
+# Install a YAML parser, for example 'yq'
+fisher install jorgebucaran/fisher
+fisher install gazorby/fish-yq
 
-`fish_config` - फिश शेल फ़ाइल्स के लिए यमल प्रोफाइलों को खोलता है।
+# Read a YAML file
+set config (cat config.yaml | yq .)
 
+# Extract a specific value
+set user_name (echo $config | yq .user.name)
+
+# Print the extracted value
+echo $user_name
 ```
 
-Fish Shell में YAML संरचनाओं को खोलने के लिए आप `fish_config` कमांड का उपयोग कर सकते हैं। इससे आयातित यमल फ़ाइलों को आसानी से संपादित कर सकते हैं।
+इस उदाहरण में, पहले `yq` को इनस्टॉल किया जा रहा है, फिर `config.yaml` से `user.name` का मान निकाला जा रहा है और अंत में प्रिंट किया जा रहा है।
 
-`yaml2json` - यमल को जेसन (JSON) में रूपांतरित करता है।
-```
-Fish Shell का `yaml2json` कमांड यमल डाटा को जेसन फ़ॉर्मेट में बदलता है, जो डेटा को अधिक वर्गीकृत करने की अवधारणा से सरल होता है। आप इसका उपयोग करके अपने डेटा को अधिक अभिनेतुरूप स्टोर कर सकते हैं।
+## Deep Dive (गहराई में जानकारी)
 
-## गहराई में जाएं:
+YAML, "YAML Ain't Markup Language" के लिए है और इसका डेवेलपमेंट 2001 में शुरू हुआ था। इसका मुख्य उद्देश्य ह्यूमन-रीडेबल डेटा सीरियलाइज़ेशन फॉर्मेट प्रदान करना था। JSON और XML इसके विकल्प हैं, पर YAML ज्यादा सीधा और पठनीय होता है। `yq` एक लोकप्रिय कमांड-लाइन टूल है जिसे `jq` से प्रेरित होकर बनाया गया था जो JSON के साथ काम करता है।
 
-यमल की शुरुआत 2001 में Working Group द्वारा एक नए फॉर्मेट के रूप में की गई थी जो संरचनाओं को संबंधित डेटा के साथ एक ही फ़ाइल में संग्रहित करने के लिए डिज़ाइन किया गया था। यह JSON के साथ संबंधित है, लेकिन यमल वर्षों से काफी लोकप्रिय हुआ है। अन्य विकल्पों में एक्सम्ल और जेसन शामिल हैं। 
+## See Also (यह भी देखें)
 
-## देखें भी:
-
-- यमल के लिए Fish Shell डॉक्युमेंटेशन: https://fishshell.com/docs/current/index.html#YAML-Files
-- यमल ट्यूटोरियल: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
-- YAMLLint: http://www.yamllint.com/
+- [Official YAML website](https://yaml.org)
+- [The `yq` GitHub repository](https://github.com/mikefarah/yq)
+- [Fish Shell scripting documentation](https://fishshell.com/docs/current/index.html)
+- [Fisher plugin manager for Fish Shell](https://github.com/jorgebucaran/fisher)

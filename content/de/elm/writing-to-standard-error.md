@@ -1,6 +1,6 @@
 ---
 title:                "Schreiben auf Standardfehler"
-html_title:           "Elm: Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,20 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben auf den Standardfehler ist ein Weg für Programmierer, um Informationen oder Fehlermeldungen auf der Konsole auszugeben, anstatt auf die Standardausgabe. Dies ist nützlich, um Fehler und Probleme zu identifizieren, insbesondere während der Entwicklung oder beim Debuggen von Code.
+Das Schreiben auf Standard Error (stderr) ist der Prozess, Fehlermeldungen und Diagnoseinformationen in einem separaten Stream auszugeben. Programmierer nutzen dies, um Fehlernachrichten vom regulären Output zu trennen, wodurch die Anwendungslogik klar von der Fehlerbehandlung getrennt bleibt.
 
-## Wie geht's?
-Um auf den Standardfehler zu schreiben, können wir die `Debug.log` Funktion verwenden. Diese Funktion akzeptiert zwei Argumente: einen String mit der gewünschten Meldung und einen Wert zum Ausgeben. Hier ist ein Beispiel, wie man sie benutzt:
+## How to:
+Elm ist eine rein funktionale Sprache, die für Web-Frontend-Entwicklung ausgelegt ist. Da Elm-Code im Browser läuft, gibt es keine native Möglichkeit, direkt auf stderr zu schreiben wie in serverseitigen Sprachen. Für Debugging-Zwecke kann man jedoch die `Debug`-Module verwenden oder JavaScript-Interoperabilität durch Ports, um Nachrichten an `console.error` zu senden.
 
 ```Elm
-Debug.log "Benutzername:" "John Smith"
+port module Main exposing (..)
+
+-- Definiere einen Port, um Nachrichten an JavaScript zu senden
+port error : String -> Cmd msg
+
+-- Funktion, die einen Fehler sendet
+reportError : String -> Cmd msg
+reportError errorMessage =
+    error errorMessage
+
+-- Beispiel einer Main-Funktion, die einen Fehler meldet
+main =
+    reportError "Etwas ist schiefgelaufen!"
 ```
-Das würde `Benutzername: John Smith` auf der Konsole ausgeben.
 
-## Tief tauchen
-Das Schreiben auf den Standardfehler ist nicht neu und wird schon seit langer Zeit von Programmiersprachen wie C und Java verwendet. Es ist eine schnelle und einfache Methode, um Informationen auszugeben und Fehler zu beheben. Eine Alternative zur Verwendung von `Debug.log` wäre das Verwenden von `Console.error`, das von der Elm-Bibliothek bereitgestellt wird. Dieses Modul bietet mehrere Funktionen, um auf die Konsole zu schreiben, einschließlich des Schreibens auf den Standardfehler.
+JavaScript-Teil zum Empfangen der Nachricht:
 
-## Siehe auch
-- [Die Elm-Website](https://elm-lang.org/) für mehr Informationen zur Sprache und ihrer Verwendung.
-- [Die offizielle Elm-Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/) für weitere Details zur `Debug`- und `Console`-Module.
-- [Ein Tutorial zur Elm-Programmierung](https://guide.elm-lang.org/) für Anfänger.
+```javascript
+app.ports.error.subscribe(function(errorMessage) {
+    console.error(errorMessage);
+});
+```
+
+Absichtlich hat Elm keine direkte stderr-Unterstützung, um die Funktionen einfach und auf Frontend-Use-Cases fokussiert zu halten.
+
+## Deep Dive
+In traditionellen Programmiersprachen wie C oder Python wird stderr verwendet, um Fehlermeldungen unabhängig von stdout zu halten. Da man oft stdout umleitet oder in Dateien schreibt, hilft stderr dabei, Fehlermeldungen sichtbar und konsistent zu halten. In Elm gibt es aufgrund des Browser-Kontexts keine konzeptionelle Unterscheidung zwischen stdout und stderr. Dennoch kann man über JavaScript-Ports und die Browserkonsole ähnliche Funktionalitäten bereitstellen, wenn nötig.
+
+Alternativen zur Fehlerbehandlung in Elm könnten das Wrapper-Type-Pattern sein, wo man Ergebnistypen (`Result`) verwendet, um Erfolge und Fehler in der Anwendungslogik darzustellen. Dies hält die Fehlerbehandlung funktional und eng integriert in den Elm-Code.
+
+## See Also
+- Elm's offizielle `Debug` Dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- Elm's offizielle Guide zu Ports für JavaScript-Interoperabilität: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
+- Elm's `Result` Typ, ein alternativer Fehlerbehandlungsansatz: [https://package.elm-lang.org/packages/elm/core/latest/Result](https://package.elm-lang.org/packages/elm/core/latest/Result)

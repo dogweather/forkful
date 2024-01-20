@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Ruby: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,24 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i Po co?
+## What & Why? (Co i Dlaczego?)
+Pisanie do standardowego błędu (stderr) pozwala segregować normalny output od komunikatów o błędach. Programiści robią to, by łatwo rozróżniać standardowe dane wyjściowe od informacji o wyjątkach i innych błędach.
 
-Pisanie na standardowe wyjście błędu jest jednym ze sposobów wyświetlania informacji o błędach lub ostrzeżeń dla użytkownika. Programiści zwykle używają tej metody, aby wyświetlić ważne informacje o swoim kodzie lub aby naprawić błędy w szybki i efektywny sposób.
-
-Jak to zrobić:
+## How to: (Jak to zrobić:)
 ```Ruby
-puts "Hello World!" # wyświetla na standardowym wyjściu
-$stderr.puts "Oops, something went wrong!" # wyświetla na standardowym wyjściu błędu
-```
-Output:
-```
-Hello World!
-Oops, something went wrong!
+# Wypisanie komunikatu na standardowe wyjście
+puts "Hello, this is standard output."
+
+# Wypisanie komunikatu na standardowe wyjście błędów
+$stderr.puts "Warning, this is an error message!"
+
+# Użycie STDERR jest równoznaczne z $stderr
+STDERR.puts "ERROR: Something bad happened!"
 ```
 
-Głębszy zanurzenie:
-Pisanie na standardowe wyjście błędu jest praktykowane od dawna, gdyż jest to prosta i szybka metoda komunikacji z użytkownikiem. Alternatywnymi metodami są wykorzystanie specjalnego loggera lub zapisywanie błędów do pliku. Pisanie na standardowe wyjście błędu może być jednak bardziej wygodne dla programisty podczas szybkiej diagnostyki lub testowania kodu. W Ruby, STDERR (czyli standardowe wyjście błędu) jest globalną zmienną, więc nie wymaga ona dodatkowych importów lub konfiguracji.
+Przykładowy output:
+```
+Hello, this is standard output.
+```
+Przykładowy standard error (stderr):
+```
+Warning, this is an error message!
+ERROR: Something bad happened!
+```
 
-Zobacz także:
-- [Ruby Dokumentacja](https://ruby-doc.org/core-2.6.6/IO.html#class-IO-label-Standard+Streams)
-- [Video o standardowych wyjściach w Ruby](https://www.youtube.com/watch?v=IqcbS0A9ORQ)
+## Deep Dive (Wnikliwa analiza)
+Historia: STDERR zostało stworzone jako jedno z trzech głównych strumieni danych w Unix, ułatwiających zarządzanie wyjściem procesów.
+Alternatywy: Możesz przekierować stderr do pliku lub innego strumienia za pomocą IO, jak `$stderr.reopen('errors.log', 'w')`.
+Implementacja: W Rubym, `STDERR` i `$stderr` to globalne zmienne reprezentujące standardowy strumień błędów. Z reguły `STDERR` jest to samo co `$stderr`, ale `$stderr` może zostać przekierowany.
+
+## See Also (Zobacz też)
+- Ruby Docs on I/O: [https://ruby-doc.org/core-2.7.0/IO.html](https://ruby-doc.org/core-2.7.0/IO.html)
+- StackOverflow: ["How to redirect stdout and stderr to a file in Ruby?"](https://stackoverflow.com/questions/1154846/how-to-redirect-stdout-and-stderr-to-a-file-in-ruby)
+- UNIX Stdout and Stderr: [https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Fish Shell: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭔데 왜 필요해?  
+## What & Why? (무엇과 왜?)
+YAML은 구성 파일, 메시지 교환, 데이터 저장 등을 위한 데이터 직렬화 양식입니다. 간결성과 가독성 때문에, 프로그래머들은 복잡한 설정이나 프로젝트의 메타데이터를 표현하기 위해 YAML을 사용합니다.
 
-YAML 작업이 뭐고 프로그래머들이 왜 그렇게 하는지 알아보자.  
+## How to: (어떻게 하나요?)
+Fish Shell에서 YAML을 다루기 위한 기본적인 예시를 보여줍니다.
 
-YAML은 "YAML Ain't Markup Language"의 약자로, 인간이 읽고 쓰기 쉬운 데이터 직렬화 언어다. 프로그래밍에서 많이 사용되는 데이터 저장 방식 중 하나로, 설정 파일이나 API 요청 파라미터를 정의할 때 자주 사용된다. YAML의 주요 장점은 가독성이 좋고, 다른 언어나 플랫폼 간 호환성이 높다는 것이다.
+```Fish Shell
+# YAML 파일 읽기 예제
+# input.yaml 파일 내용: name: Fish Shell
+set file_content (cat input.yaml)
+echo $file_content
+# name: Fish Shell
 
-## 어떻게 할까?
-
-```Fish Shell (최신 버전)```을 사용하면 YAML 형식의 데이터를 빠르고 효율적으로 작업할 수 있다. 아래는 YAML 파일을 읽어오는 예시 코드이다.
-
-```
-# YAML 파일 읽어오기
-set yaml_file (cat sample.yaml)
-
-# YAML 데이터 출력하기
-echo $yaml_file
-```
-
-출력 결과:
-
-```
-pets:
-  - dog
-  - cat
-  - fish
+# YAML 파일 작성 예제
+echo "language: Fish" > output.yaml
+cat output.yaml
+# language: Fish
 ```
 
-## 깊게 파헤치기
+## Deep Dive (심층 분석)
+YAML(YAML Ain't Markup Language)은 XML이나 JSON과 비교했을 때, 인간이 읽고 쓰기 쉽도록 설계되었습니다. 특히, 공백을 사용하여 데이터 구조를 표현하는 부분은 코드를 더욱 깨끗하게 만들어줍니다. 하지만 Fish Shell에는 내장된 YAML 파서가 없어, 대체로 `yq` 같은 외부 도구를 사용합니다. `yq`는 `jq`의 YAML 버전으로 JSON처럼 YAML을 다루게 해 줍니다.
 
-### 역사적 배경
-
-YAML은 2001년에 처음 발표된 인기 있는 데이터 직렬화 언어다. JSON과 비슷한 형식을 가지고 있지만, 인간이 읽고 쓰기에 더 쉬운 형태로 디자인되었다.
-
-### 대안들
-
-YAML은 주로 데이터 직렬화 작업을 위해 많이 사용되지만, 다른 언어나 플랫폼에서는 다른 대안들을 사용하기도 한다. 예를 들어, JavaScript에서는 JSON을, Java에서는 XML을 주로 사용한다.
-
-### 구현 세부사항
-
-Fish Shell에서 YAML을 처리하기 위해서는 ```yq``` 라이브러리를 설치해야 한다. 이 라이브러리는 YAML 파일을 파싱하고 필요한 정보를 추출할 수 있는 도구다.
-
-## 참고 자료
-
-* [YAML 공식 문서](https://yaml.org/)
-* [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
-* [yq 라이브러리 GitHub 페이지](https://github.com/kislyuk/yq)
+## See Also (참고자료)
+- YAML 공식 사이트: https://yaml.org
+- `yq` GitHub 저장소: https://github.com/kislyuk/yq
+- YAML과 JSON 비교: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats

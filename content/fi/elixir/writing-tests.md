@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Elixir: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Testaus varmistaa koodin toiminnan. Se vähentää bugeja ja parantaa ohjelmiston laatua.
 
-Testien kirjoittaminen on tärkeä osa ohjelmointia, joka auttaa varmistamaan koodin toimivuuden ja vähentää virheiden määrää. Testit ovat koodinpätkiä, jotka tarkistavat, toimiiko ohjelma kuten pitäisi ja palauttavat virheilmoituksia jos jotain menee pieleen. Ohjelmoijat kirjoittavat testejä varmistaakseen, että heidän koodinsa on luotettavaa ja toimii odotetulla tavalla.
+## How to:
+Elixirissä testit kirjoitetaan ExUnitilla, oletustestikehyksellä.
 
-## Miten:
+```elixir
+# test/example_test.exs
+defmodule ExampleTest do
+  use ExUnit.Case
+  doctest Example
 
-```Elixir
-defmodule Calculator do
-  # Sum function
-  def sum(x, y) do
-    x + y
+  test "summa funktio" do
+    assert Example.sum(1, 2) == 3
   end
-
-  # Test for sum function
-  test "sum" do
-    assert Calculator.sum(1, 2) == 3
-  end
+end
 ```
 
-Koodiesimerkissä näkyy, miten testit voidaan kirjoittaa ja liittää osaksi ohjelmakoodia. Testit kirjoitetaan käyttämällä ```test```-avainsanaa ja antamalla testille selkeä nimi. Testi suorittaa halutun toiminnon, tässä tapauksessa testataan, että sum-funktio palauttaa oikean tuloksen. Jos testi ei onnistu, se palauttaa virheilmoituksen.
+Aja testit komennolla:
 
-## Syvemmälle:
+```shell
+mix test
+```
 
-Testien kirjoittaminen on saanut alkunsa jo vuosisatoja sitten, kun matemaatikot alkoivat käyttää todistusmenetelmiä varmistaakseen, että laskutoimitukset olivat oikein. Nykyään testaamisella on tärkeä rooli ohjelmistokehityksessä, ja ohjelmoijat käyttävät erilaisia kirjastoja ja työkaluja apunaan.
+Testien tuloksen pitäisi olla:
 
-Yksi vaihtoehto on käyttää Behavior Driven Development (BDD) -menetelmää, joka keskittyy ohjelmakoodin kirjoittamiseen ensin testien avulla. Elixirissä BDD-menetelmään voi käyttää esimerkiksi kirjastoa nimeltä ExUnit. Testien kirjoittaminen on myös hyödyllistä sovellusten ylläpidossa, sillä se auttaa nopeasti havaitsemaan mahdolliset ongelmat ja varmistamaan, että muutokset eivät aiheuta uusia virheitä.
+```
+..
 
-## Katso myös:
+Finished in 0.03 seconds
+1 test, 0 failures
+```
 
-Lisätietoa testien kirjoittamisesta Elixirissä ja sen käytöstä löytyy seuraavista lähteistä:
+## Deep Dive:
+ExUnit on Elixiriin sisältyvä testimoduuli, esitelty kielen ensimmäisissä versioissa. Vaihtoehtoisia testityökaluja on harvassa, mutta jotkut devaajat käyttävät property-based testingiä kirjaston `StreamData` kanssa. ExUnit toiminta perustuu makroihin, jotka luovat moduuleita ja funktioita kulissien takana.
 
-- [Elixir ExUnit -virallinen dokumentaatio](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Codecademy: Intro to Testing in Elixir](https://www.codecademy.com/learn/learn-elixir/modules/elixir-testing-u)
-
-Pidä huolta koodisi laadusta ja kirjoita testejä!
+## See Also:
+- Elixirin virallinen dokumentaatio: [https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#exunit](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#exunit)
+- Elixir School, testaus: [https://elixirschool.com/en/lessons/basics/testing/](https://elixirschool.com/en/lessons/basics/testing/)
+- Elixiristä kiinnostuneille: "Programming Elixir" kirja.

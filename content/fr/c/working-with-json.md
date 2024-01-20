@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "C: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi on le fait?
+## What & Why? (Quoi et pourquoi ?)
+JSON, c'est du texte pour stocker et échanger des données. Les programmeurs s'en servent car c'est simple à lire et à écrire, compact et compatible avec le Web.
 
-JSON, ou JavaScript Object Notation, est un format de données très utilisé par les programmeurs pour échanger des données entre différentes applications. Il est léger, facile à lire et à écrire, et est basé sur la syntaxe de JavaScript. Les programmeurs utilisent JSON pour structurer et organiser les données de manière à ce qu'elles puissent être facilement traitées par d'autres programmes.
+## How to (Comment faire)
+En C, on utilise souvent la bibliothèque 'cJSON'. Un exemple :
 
-## Comment faire:
-
-Voici un exemple de code en C pour afficher et parser des données JSON:
-
-```
+```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "json.h"
+#include "cJSON.h"
 
-int main() {
-    // Déclaration d'une chaîne de caractères représentant le JSON
-    char* json_string = "{\"nom\": \"Jean\", \"age\": 30}";
+int main(){
+    // Créer un objet JSON
+    cJSON *mon_json = cJSON_CreateObject();
+    cJSON_AddItemToObject(mon_json, "nom", cJSON_CreateString("Dupont"));
+    cJSON_AddItemToObject(mon_json, "age", cJSON_CreateNumber(30));
 
-    // Déclaration d'une structure pour stocker les données JSON
-    json_value* json;
+    // Imprimer l'objet JSON
+    char *json_string = cJSON_Print(mon_json);
+    printf("%s\n", json_string);
 
-    // Parse de la chaîne de caractères en données JSON
-    json = json_parse(json_string, strlen(json_string));
-
-    // Utilisation des données pour afficher le nom et l'âge
-    printf("Nom: %s\n", json->u.object.values[0].value->u.string.ptr);
-    printf("Age: %d\n", json->u.object.values[1].value->u.integer);
-
-    // Libération de la mémoire allouée pour les données JSON
-    json_value_free(json);
+    // Libérer la mémoire
+    cJSON_Delete(mon_json);
+    free(json_string);
 
     return 0;
 }
 ```
 
-La sortie de ce code sera:
-
+Output:
 ```
-Nom: Jean
-Age: 30
+{
+	"nom": "Dupont",
+	"age": 30
+}
 ```
 
-## Plongée en profondeur:
+## Deep Dive (Plongée en profondeur)
+Créé en 2001, JSON (JavaScript Object Notation) s'est imposé comme un standard de fait grâce à sa simplicité. Des alternatives, comme XML, existent mais sont moins pratiques pour le web moderne. En C, intégrer JSON c'est gérer manuellement la mémoire et respecter des conventions de la bibliothèque utilisée, ici 'cJSON'.
 
-JSON a été développé par Douglas Crockford en 2001 en tant que format de données léger et facile à utiliser pour les applications web. Il est largement utilisé dans le monde de la programmation pour échanger des données entre différents systèmes. Alternatives à JSON incluent XML, CSV et YAML. JSON est souvent utilisé avec les frameworks de développement web tels que JavaScript et PHP. Pour travailler avec JSON en C, vous pouvez utiliser des bibliothèques open-source comme [cJSON](https://github.com/DaveGamble/cJSON) ou [Jansson](https://github.com/akheron/jansson).
-
-## Voir aussi:
-
-- [Documentation officielle de JSON](https://www.json.org/)
-- [Tutoriel sur le traitement de JSON en C](https://www.section.io/engineering-education/json-in-c/)
+## See Also (Voir aussi)
+- Doc de cJSON: https://github.com/DaveGamble/cJSON
+- Specs JSON: https://www.json.org/json-fr.html
+- Comparaison JSON vs XML: https://www.w3schools.com/js/js_json_xml.asp

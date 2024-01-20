@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "Kotlin: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å skrive tester er en vanlig praksis blant programmerere for å teste sin egen kode og sikre at den fungerer som den skal. Tester er en viktig del av utviklingsprosessen, da de bidrar til å identifisere feil og forbedre kvaliteten på koden.
+Skriving av tester betyr å lage kode for å sjekke at annen kode virker som forventet. Programmerere gjør dette for å oppdage feil tidlig, forbedre kvaliteten og gjøre koden lettere å vedlikeholde.
 
-## Slik gjør du det:
-For å skrive tester i Kotlin må du først importere "junit-jupiter-engine" biblioteket. Deretter kan du markere testerfunksjonen med @Test og bruke assert metoden for å sjekke om forventede resultater samsvarer med faktiske resultater. Se eksempelet nedenfor:
-
+## How to:
 ```Kotlin
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
-@Test
-fun addNumbersTest() {
-    val result = addNumbers(2, 3)
-    assertEquals(5, result)
+class CalculatorTest {
+
+    @Test
+    fun `add two numbers`() {
+        val calculator = Calculator()
+        assertEquals(4, calculator.add(2, 2))
+    }
+}
+
+class Calculator {
+    fun add(a: Int, b: Int) = a + b
 }
 ```
 
-Output:
+Sample Output:
 ```
-org.opentest4j.AssertionFailedError: expected: <5> but was: <6>
-...
+Test passed: add two numbers
 ```
 
-## Dypdykk:
-Skriving av tester er en praksis som har eksistert i mange år, spesielt innenfor TDD (Test Driven Development) metoden. Det finnes også alternative testrammeverk som "Mockito" og "Kotest". I Kotlin er det også mulig å bruke den innebygde "assert" metoden for å sammenligne verdier. Det er viktig å huske på at tester bør være enkle og dekke alle mulige scenarioer for å sikre at koden fungerer som forventet.
+## Deep Dive
+Testing i Kotlin startet med JUnit, en av de første rammeverkene for enhetstesting i Java. Alternativer inkluderer Spek og Kotest. Viktig i implementeringen er isolasjon av tester, reproduserbarhet og automatisering gjennom CI/CD-pipelines.
 
-## Se også:
-Her er noen nyttige ressurser for å lære mer om å skrive tester i Kotlin:
-- [Offisiell dokumentasjon for Kotlin testing](https://kotlinlang.org/docs/tutorials/jvm-get-started.html)
-- [En introduksjonsvideo til Kotlin testing](https://www.youtube.com/watch?v=FRVm2eEBY0s)
-- [Dokumentasjon for JUnit testing i Kotlin](https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations)
+## See Also
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Kotest Framework](https://github.com/kotest/kotest)

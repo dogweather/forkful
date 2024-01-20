@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Elm: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"Czym jest i po co są testy?"
+## What & Why?
+Testy pozwalają sprawdzić, czy nasz kod robi to, co powinien. Programiści piszą je, żeby zapobiegać błędom i ułatwić późniejsze zmiany w kodzie.
 
-Testy pisane przez programistów są kodem, który sprawdza, czy dany program działa poprawnie. Jest to ważny krok w procesie tworzenia oprogramowania, ponieważ pomaga programistom upewnić się, że wszystko działa zgodnie z założeniami.
-
-"Jak to zrobić?"
-
-Kod testów w Elm jest napisany w taki sam sposób jak kod programu. Poniżej przedstawiam przykłady testów wraz z ich wynikami.
+## How to:
+Elm używa `elm-test` do pisania i uruchamiania testów. Oto przykład prostego testu:
 
 ```Elm
-test "Dodawanie liczb całkowitych" 
-    (assert (1 + 1 == 2))
+import Expect
+import Test exposing (..)
+
+suite : Test
+suite =
+  describe "Prosty test"
+    [ test "Czy 2 + 2 to 4?" <| \_ ->
+        2 + 2 |> Expect.equal 4
+    ]
+
+-- Uruchomienie testów
+-- elm-test
 ```
 
-```Elm
-test "Dodawanie liczb zmiennoprzecinkowych" 
-    (assert (1.5 + 2.5 == 4.0))
+Wynik testu:
+
+```
+TEST RUN PASSED
+
+Prosty test
+    Czy 2 + 2 to 4?: passed.
 ```
 
-```Elm
-Dodawanie liczb całkowitych: PASS
-Dodawanie liczb zmiennoprzecinkowych: PASS
-```
+## Deep Dive
+Elm wprowadził `elm-test` na początku swojej historii, uczynił ten pakiet standardem do testowania. Istnieją alternatywy jak `node-test-runner`, ale `elm-test` pozostaje najczęściej wybieranym rozwiązaniem. Testy w Elm są typowo pisane w deklaratywnym stylu, a `elm-test` umożliwia tworzenie zarówno prostych, jak i złożonych asercji oraz izolowanie efektów ubocznych.
 
-"Dogłębna analiza"
-
-Pisanie testów nie jest niczym nowym w świecie programowania. Już w latach 50. XX wieku programiści stosowali testy jednostkowe, czyli krótkie programy, które sprawdzały poprawność poszczególnych kawałków kodu. W Elm testy nazywają się "asercjami", a wykonują się podczas kompilacji programu.
-
-Alternatywą dla pisania testów jest ręczne sprawdzanie poprawności kodu. Jednak taka metoda jest czasochłonna i podatna na błędy. Dzięki testom można szybko znaleźć i poprawić ewentualne problemy w programie.
-
-Pisanie testów w Elm jest proste i nie wymaga specjalnej wiedzy ani narzędzi. Testy są zintegrowane z samym kodem programu i wykonują się automatycznie podczas jego kompilacji.
-
-"Zobacz również"
-
-- Dokumentacja Elm: https://elm-lang.org/docs
-- Poradnik o pisaniu testów w Elm: https://medium.com/@thebucknellian/testing-in-elm-...690e3c3aebf
-- Książka "Elm in Action" omawiająca testowanie kodu w Elm: https://www.manning.com/books/elm-in-action
+## See Also
+- Dokumentacja `elm-test`: https://package.elm-lang.org/packages/elm-explorations/test/latest/
+- Przewodnik po Elm: https://guide.elm-lang.org/tests/
+- Elm pakiet `Expect`: https://package.elm-lang.org/packages/elm-explorations/test/1.2.2/Expect

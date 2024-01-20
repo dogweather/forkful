@@ -1,7 +1,7 @@
 ---
-title:                "जेसन के साथ काम करना"
-html_title:           "Go: जेसन के साथ काम करना"
-simple_title:         "जेसन के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,84 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+JSON का काम डाटा को संरचित करना है जिससे मशीनें और इंसान दोनों ही आसानी से समझ सकें। प्रोग्रामर्स इसे वेब APIs के डाटा को पढ़ने या भेजने के लिए इस्तेमाल करते हैं।
 
-JSON का उपयोग करना क्या है और प्रोग्रामर इसे क्यों करते हैं? JSON, जो जवास्क्रिप्ट ऑब्जेक्ट नोटेशन के शब्दों का एक शॉर्ट रूप है, एक प्रसिद्ध डेटा फॉर्मेट है जो कंप्यूटर हार्डवेयर और सॉफ्टवेयर के साथ काम करता है। अधिकांश संगठनों के डेटा को संग्रहीत करने और साझा करने के लिए JSON का उपयोग किया जाता है।
+## How to: (कैसे करें:)
+```Go
+package main
 
-## कैसे करें:
+import (
+	"encoding/json"
+	"fmt"
+)
 
-JSON के साथ काम करने के लिए, Go प्रोग्रामिंग भाषा में कुछ सरल कोड के माध्यम से डेटा संचार और पार्सिंग किया जाता है। नीचे कुछ उदाहरण दिए गए हैं जो कि Go वायुमान में कोड की एक छोटी समझ का भाग हैं:
-
-```
-Go कोड नमूना:
-
-// JSON डेटा को संशोधित करने के लिए डेटा संचार करें
-func updateJSONData(data map[string]interface{}) error {
-    
-    // डेटा को JSON रूप में लोड करें
-    jsonData, err := json.Marshal(data)
-    if err != nil {
-        return err
-    }
-    
-    // कनवर्ट करें JSOON रूप से डेटा
-    err = json.Unmarshal(jsonData, &data)
-    if err != nil {
-        return err
-    }
-    
-    return nil
+type User struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
 }
 
-// डेटा को आउटपुट करने के लिए JSON फाइल तैयार करें
-func writeToJSONFile(data map[string]interface{}) error {
-    
-    // JSON फाइल तैयार करें
-    file, err := os.Create("output.json")
-    if err != nil {
-        return err
-    }
-    
-    // डेटा को JSON रूप में लोड करें
-    jsonData, err := json.Marshal(data)
-    if err != nil {
-        return err
-    }
-    
-    // फाइल में डेटा लिखें
-    _, err = file.Write(jsonData)
-    if err != nil {
-        return err
-    }
-    file.Close()
-    
-    return nil
-}
-
-// कार्यक्रम को चलाने के लिए इन कार्यों को बुलाएं
 func main() {
-    data := map[string]interface{}{"name": "John", "age": 25}
-    updateJSONData(data)
-    writeToJSONFile(data)
+	// JSON Encoding (जेसन एनकोडिंग)
+	user := User{Name: "अंकित", Age: 25}
+	jsonData, err := json.Marshal(user)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(jsonData))
+
+	// JSON Decoding (जेसन डिकोडिंग)
+	var decodedUser User
+	err = json.Unmarshal(jsonData, &decodedUser)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%+v\n", decodedUser)
 }
 ```
-
-उपरोक्त कोड का आउटपुट output.json नाम के एक JSON फाइल में डेटा समायोजित करेगा:
-
+आउटपुट:
 ```
-output.json:
-
-{
-    "name": "John",
-    "age": 25
-}
+{"name":"अंकित","age":25}
+{Name:अंकित Age:25}
 ```
 
-## गहराई-छोटी:
+## Deep Dive (गहराई से जानकारी)
+JSON, जो JavaScript Object Notation के लिए खड़ा है, डेटा इंटरचेंज का एक मानक फॉर्मेट है। पहली बार यह 2001 में देखने को मिला था। XML और YAML जैसे विकल्प भी हैं लेकिन JSON अपनी सादगी और पढ़ने में आसानी के कारण ज्यादा लोकप्रिय है। Go में `encoding/json` पैकेज JSON को एनकोड और डिकोड करने के लिए बहुत सहायक है और reflection का इस्तेमाल कर किसी भी Go टाइप में JSON डाटा को बदल देता है।
 
-JSON का अर्थ जवास्क्रिप्ट ऑब्जेक्ट नोटेशन के शब्दों का एक छोटा सा रूप है जो कंप्यूटर डेटा को संरचित और संग्रहीत करने के लिए डिज़ाइन किया गया है। यह विकसित होने के लिए १९९५ में और लेखिका डॉ. Douglas Crockford द्वारा जारी किया गया था। अल्टरनेटिव के रूप में, अन्य डेटा फॉर्मेट JSON जैसे CSV और XML है। Go में JSON को लोड और पार्स करने के लिए encoding/json पैकेज का उपयोग किया जाता है।
-
-## साथ ही देख:
-
-- [Go में जावास्क्रिप्ट ऑब्जेक्ट नोटेशन (JSON) का उपयोग कैसे करें](https://golang.org/pkg/encoding/json/)
-- [JSON और XML के बीच अंतर](https://www
+## See Also (और भी जानकारी)
+- Go by Example: JSON: https://gobyexample.com/json
+- Go `encoding/json` package documentation: https://pkg.go.dev/encoding/json
+- JSON.org, JSON की विस्तृत जानकारी: https://www.json.org/json-en.html

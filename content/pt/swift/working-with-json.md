@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json"
-html_title:           "Swift: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Trabalhando com JSON"
+html_title:           "Arduino: Trabalhando com JSON"
+simple_title:         "Trabalhando com JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que se trabalha com JSON
+## O Que é & Porquê?
+Trabalhar com JSON (JavaScript Object Notation) significa manipular dados no formato leve de intercâmbio que é fácil de ler para humanos e simples para máquinas processarem. Programadores usam JSON para transmitir dados entre um servidor e um cliente na web, além de salvar configurações e preferências dentro das aplicações.
 
-JSON (JavaScript Object Notation) é um formato de dados comumente usado para transmitir e armazenar informações na programação. Os programadores trabalham com JSON porque ele é simples, leve e amplamente suportado em diferentes plataformas e linguagens de programação.
+## Como Fazer:
+Em Swift, você usa `JSONDecoder` para converter JSON em modelos Swift e `JSONEncoder` para fazer o contrário. Suponhamos que você tem um JSON representando um usuário:
 
-## Como fazer:
-
-1. Importe o módulo JSON no seu projeto em Swift:
 ```Swift
-import Foundation
-```
-
-2. Converta um objeto Swift para JSON:
-```Swift
-// Criando um objeto Swift
-let pessoa = [
+let jsonString = """
+{
     "nome": "João",
     "idade": 28,
-    "profissao": "Desenvolvedor"
-]
-
-// Convertendo o objeto para JSON
-let json = try? JSONSerialization.data(withJSONObject: pessoa, options: [])
-
-// Imprimindo o resultado
-print(String(data: json, encoding: .utf8)!) // {"nome":"João","idade":28,"profissao":"Desenvolvedor"}
-```
-
-3. Converta um JSON para objeto Swift:
-```Swift
-// Definindo uma string com um JSON
-let jsonStr = """
-{
-    "nome": "Maria",
-    "idade": 30,
-    "profissao": "Designer"
+    "email": "joao@example.com"
 }
 """
 
-// Convertendo o JSON para objeto Swift
-if let data = jsonStr.data(using: .utf8), let pessoa = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-    print(pessoa) // ["nome": "Maria", "idade": 30, "profissao": "Designer"]
+struct Usuario: Codable {
+    var nome: String
+    var idade: Int
+    var email: String
+}
+
+let jsonData = jsonString.data(using: .utf8)!
+let decoder = JSONDecoder()
+
+do {
+    let usuario = try decoder.decode(Usuario.self, from: jsonData)
+    print(usuario)
+} catch {
+    print(error.localizedDescription)
 }
 ```
 
-## Mergulho profundo:
+Se tudo der certo, verás algo assim no console:
 
-1. Contexto histórico: JSON foi criado por Douglas Crockford em 2001 e se tornou popular devido a sua simplicidade e eficiência em comparação com outros formatos de dados.
+```Swift
+Usuario(nome: "João", idade: 28, email: "joao@example.com")
+```
 
-2. Alternativas: existem outros formatos de dados que podem ser usados em vez de JSON, como XML, YAML e CSV. Cada um tem suas próprias características e é usado para diferentes propósitos.
+Para converter um modelo Swift em JSON, use `JSONEncoder`:
 
-3. Detalhes de implementação: em Swift, é possível trabalhar com JSON a partir do módulo Foundation ou usando bibliotecas externas como SwiftyJSON e Codable.
+```Swift
+let encoder = JSONEncoder()
+if let data = try? encoder.encode(usuario), 
+   let jsonString = String(data: data, encoding: .utf8) {
+    print(jsonString)
+}
+```
 
+E no console:
 
-## Veja também:
+```Swift
+{"nome":"João","idade":28,"email":"joao@example.com"}
+```
 
-- [Documentação oficial do JSON em Swift](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Tutorial em vídeo sobre como trabalhar com JSON em Swift](https://www.youtube.com/watch?v=rMgFoakcBr0)
-- [Biblioteca SwiftyJSON para facilitar o trabalho com JSON em Swift](https://github.com/SwiftyJSON/SwiftyJSON)
+## Mergulho Profundo:
+JSON é baseado em JavaScript, mas é independente de linguagem, usável em muitas plataformas. Surgiu na década de 2000 como uma alternativa ao XML, sendo mais enxuto e fácil de utilizar. Alternativas modernas ao JSON incluem BSON e Protocol Buffers, cada um com suas vantagens em performance e recursos. Ao trabalhar com Swift, o protocolo `Codable` facilita a serialização de modelos, mas não esqueça de lidar com os erros que podem surgir ao decodificar JSON que não corresponde aos modelos Swift esperados.
+
+## Veja Também:
+- Documentação oficial do Swift sobre `Codable`: https://developer.apple.com/documentation/swift/codable
+- JSON.org, com a especificação e exemplos de JSON: https://www.json.org/json-pt.html
+- Um artigo sobre os benefícios e limitações do JSON em comparação com XML: https://www.smashingmagazine.com/2020/11/advantages-json-xml/

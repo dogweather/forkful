@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "C++: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Pisanie plików tekstowych jest procesem tworzenia plików z tekstem (zwykle z rozszerzeniem .txt), który może być przeczytany i zinterpretowany przez komputer. Programiści korzystają z tego narzędzia, aby przechowywać dane w postaci tekstowej, która jest łatwa do odczytania przez ludzi i komputery.
+## What & Why?
+("## Co i dlaczego?")
+Pisanie do pliku tekstowego to zapisywanie danych w czytelnej formie. Programiści robią to, żeby przechowywać wyniki, konfigurować programy lub logować działania systemu.
 
-## Jak to zrobić:
-```
-// Przykład 1: Tworzenie i zapisanie pliku tekstowego
-#include <iostream>
+## How to:
+("## Jak to zrobić:")
+```C++
 #include <fstream>
-
-using namespace std;
+#include <iostream>
 
 int main() {
-    ofstream plik("moj_plik.txt"); // Tworzy nowy plik o nazwie "moj_plik.txt"
-    if(!plik) {
-        cout << "Nie mozna utworzyc pliku.";
-        return 0;
+    std::ofstream plik("przyklad.txt");
+    if (plik.is_open()) {
+        plik << "Cześć, to jest tekst w pliku!\n";
+        plik.close();
+    } else {
+        std::cout << "Nie udało się otworzyć pliku!" << std::endl;
     }
-    plik << "To jest zawartosc pliku tekstowego."; // Zapisuje tekst do pliku
-    plik.close(); // Zamyka plik
-    return 0;
-}
-
-// Przykład 2: Dopisywanie tekstu do istniejącego pliku tekstowego
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
-int main() {
-    ofstream plik("moj_plik.txt", ios::app); // Otwiera plik w trybie dopisywania
-    if(!plik) {
-        cout << "Nie mozna otworzyc pliku.";
-        return 0;
-    }
-    plik << "Kolejna linia tekstu."; // Dopisuje tekst do istniejącego pliku
-    plik.close(); // Zamyka plik
     return 0;
 }
 ```
-Przykłady wykorzystują bibliotekę ```<fstream>``` do manipulacji plikami.
+Wyjście (zawartość `przyklad.txt`):
+```
+Cześć, to jest tekst w pliku!
+```
 
-## Wnikliwiej:
-Początki pisania plików tekstowych sięgają początków programowania komputerów. Obecnie istnieją również inne formaty zapisu danych, takie jak bazy danych czy pliki binarne, jednak pliki tekstowe są wciąż powszechnie wykorzystywane przez programistów ze względu na swoją prostotę i czytelność. W celu zapisania tekstu w pliku, programista może użyć różnych funkcji dostępnych w bibliotece ```<fstream>```.
+## Deep Dive
+("## W głąb tematu")
+Sposoby zapisywania danych do plików tekstowych areną się z czasem. O ile kiedyś używano funkcji z języka C, jak `fprintf`, o tyle C++ wprowadził strumienie, które są bezpieczniejsze i łatwiejsze w użyciu. Poza `ofstream` (output file stream) istnieją inne typy, jak `fstream` (do odczytu i zapisu) czy `stringstream` (do operowania na stringach jako strumieniach). Nie zapominajmy o trybach – `ios::app` (do dopisywania), `ios::trunc` (do czyszczenia pliku przy otwieraniu). Trzeba pamiętać, że operacje na plikach mogą zakończyć się niepowodzeniem, dlatego `is_open()` jest kluczowe.
 
-## Zobacz także:
-- [Dokumentacja biblioteki <fstream>](https://en.cppreference.com/w/cpp/header/fstream)
-- [Podstawy tworzenia plików w C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
+## See Also
+("## Zobacz również")
+- Dokumentacja C++ `fstream`: https://en.cppreference.com/w/cpp/io/basic_fstream
+- Przewodnik po strumieniach C++: https://www.cplusplus.com/reference/iostream/
+- Artykuł o różnicach między C a C++ w kontekście obsługi plików: https://www.geeksforgeeks.org/file-handling-c-classes-vs-c-functions/

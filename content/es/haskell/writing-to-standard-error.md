@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo en el error estándar"
-html_title:           "Haskell: Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Escribir en la salida de error estándar es una forma de mostrar mensajes o información de depuración en una aplicación Haskell. Los programadores pueden utilizar esto para identificar y solucionar errores en su código de manera más eficiente.
+## Qué es y por qué?
+Escribir en el error estándar (stderr) es dirigir tus mensajes de error a un stream específico, diferente del output normal (stdout). Los programadores hacen esto para separar los logs normales de los errores, facilitando la depuración y el manejo de errores.
 
-## ¿Cómo hacerlo?
-En Haskell, podemos escribir en la salida de error estándar utilizando la función `hPutStrLn` del módulo `System.IO`. Por ejemplo:
+## Cómo hacerlo:
+Haskell maneja el output estándar y el error estándar a través de módulos de la librería `System.IO`. La función `hPutStrLn` permite escribir en stderr:
 
 ```Haskell
-import System.IO
+import System.IO (stderr, hPutStrLn)
 
+main :: IO ()
 main = do
-  hPutStrLn stderr "¡Hola mundo!"
+   hPutStrLn stderr "Este es un mensaje de error"
+```
+Salida en terminal cuando hay un error:
+```
+Este es un mensaje de error
 ```
 
-Esto imprimirá "¡Hola mundo!" en la salida de error estándar.
+## Profundización:
+Históricamente, la separación de stdout y stderr proviene de Unix: stdout para datos resultantes y stderr para mensajes de error. En Haskell, `System.IO` permite trabajar con estos streams; puedes usar `hPrint` para datos más complejos. `stderr` es parte de un conjunto más grande de manejadores de archivo predefinidos que incluye también `stdin` y `stdout`.
 
-## Inmersión profunda
-La práctica de escribir en la salida de error estándar se remonta a los primeros días de la programación en lenguaje C, donde se utilizaba la función `fprintf` para imprimir en la salida de error. Otros lenguajes de programación también tienen formas de escribir en la salida de error estándar, como `Console.Error.WriteLine` en C# y `System.err.println` en Java.
-
-Alternativamente, en Haskell también es posible escribir en la salida de error utilizando la función `trace` del módulo `Debug.Trace`. Sin embargo, esta función solo se recomienda para uso temporal durante el proceso de depuración.
-
-## Ver también
-- [Documentación de `System.IO`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Documentación de `Debug.Trace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+## Ver También:
+- [Haskell System.IO library](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
+- [A detailed guide to streams in Unix](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))
+- [Haskell Wiki entry on IO](https://wiki.haskell.org/IO_inside)

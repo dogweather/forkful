@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Kotlin recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,39 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-JSON is a widely used data format in programming. It stands for JavaScript Object Notation and is used to store and exchange data between different applications or systems. Programmers use JSON because it is easy to read, write and understand for both humans and machines. It also allows for data to be structured in a hierarchical manner, making it suitable for storing large amounts of complex data.
+
+JSON (JavaScript Object Notation) is a format for structuring data, used for storage and transmission. Programmers use it because it’s lightweight, readable, and easily parsed by many languages, including Kotlin.
 
 ## How to:
-Coding with JSON in Kotlin is straightforward. First, we need to add the JSON dependency to our project. In Kotlin, we can do this by adding the following code to our `build.gradle` file:
 
-```
-dependencies {
-  implementation 'org.json:json:20210307'
+To work with JSON in Kotlin, you can use the `kotlinx.serialization` library. Here’s a simple example of serializing and deserializing a data class.
+
+```Kotlin
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = Json { prettyPrint = true }
+    val userData = User("John Doe", 30)
+    
+    // Serialize to JSON
+    val jsonString = json.encodeToString(userData)
+    println(jsonString)
+    
+    // Deserialize from JSON
+    val userObj = json.decodeFromString<User>(jsonString)
+    println(userObj)
 }
 ```
 
-Next, we can create a JSON object using the `JSONObject` class and add key-value pairs to it using the `put` method. For example:
+Sample output:
 
 ```
-val jsonObj = JSONObject()
-jsonObj.put("name", "John")
+{
+    "name": "John Doe",
+    "age": 30
+}
+User(name=John Doe, age=30)
 ```
 
-We can then convert this JSON object to a string using the `toString()` method:
+## Deep Dive
 
-```
-val jsonStr = jsonObj.toString()
-println(jsonStr)
-```
+JSON’s simple syntax has roots in JavaScript, but it’s now language-independent. Alternatives like XML are more verbose. When working with JSON in Kotlin, the `kotlinx.serialization` library handles the heavy lifting, automatically converting Kotlin objects to and from JSON with annotations. It supports complex data types and handles corner cases, but manually parsing JSON is also an option if you need tighter control.
 
-This will output: `{"name": "John"}`, which is a valid JSON string.
+## See Also
 
-## Deep Dive:
-JSON was first introduced in 2001 as an alternative to XML for data storage and exchange. It gained popularity due to its simplicity and lightweight nature. Other formats, such as CSV and YAML, can also be used for similar purposes, but JSON's hierarchical structure makes it easier to represent complex data.
-
-Kotlin provides built-in support for working with JSON through the `kotlinx.serialization` library. This library allows us to easily serialize and deserialize Kotlin objects to and from JSON. However, we still need to use a third-party library, like the one mentioned in the **How to** section, to create and manipulate JSON objects.
-
-## See Also:
-- [JSON official website](https://www.json.org/)
-- [Kotlinx.serialization library](https://kotlinlang.org/docs/serialization.html)
-- [Comparison of JSON with other data formats](https://www.json.org/xml.html)
+- Kotlin Serialization Guide: [https://kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
+- JSON Introduction: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

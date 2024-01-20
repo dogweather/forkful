@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "C++ recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "C++"
 category:             "C++"
@@ -11,57 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-In C++, writing to standard error is a way to send error messages or debugging information to the standard error stream, also known as stderr. This allows for a clear separation between regular program output and any errors or warnings that may occur during runtime.
-
-Programmers do this because it helps with troubleshooting and identifying issues in their code. By printing error messages directly to the standard error stream, they can easily distinguish between normal program output and any potential errors.
+Writing to standard error (`stderr`) means sending error messages and diagnostics to a dedicated stream, separate from regular output (`stdout`). Programmers do this for clean separation of normal output from errors, making program output easier to handle and debug.
 
 ## How to:
-To write to standard error in C++, you can use the `std::cerr` stream. This is a predefined object that represents the standard error stream. To use it, you simply insert the message you want to print into the stream, just like you would with the `std::cout` stream for regular output.
+C++ uses `cerr` for writing to `stderr`. Here's the usage:
 
-```
+```cpp
 #include <iostream>
 
 int main() {
-  // write to standard error using std::cerr
-  std::cerr << "This is an error message" << std::endl;
-  
-  // other code
-  
-  return 0;
+    std::cout << "This is regular output" << std::endl;
+    std::cerr << "This is an error message" << std::endl;
+    return 0;
 }
 ```
 
-Output:
+Sample output might look like this:
+
 ```
+This is regular output
 This is an error message
 ```
 
-You can also use `std::fprintf` to write to standard error, which allows for more control over the formatting of the message.
+Even if you redirect `stdout`, `stderr` keeps showing in the terminal:
 
-```
-#include <cstdio>
-
+```cpp
+// Redirect stdout to a file, but stderr still shows up in the terminal
 int main() {
-  // write to standard error using std::fprintf
-  std::fprintf(stderr, "This is an error message: %d\n", 42);
-  
-  // other code
-  
-  return 0;
+    freopen("output.txt", "w", stdout);
+    std::cout << "This wont show on terminal" << std::endl;
+    std::cerr << "This will show in terminal" << std::endl;
+    fclose(stdout);
+    return 0;
 }
 ```
 
-Output:
-```
-This is an error message: 42
-```
-
 ## Deep Dive:
-Writing to standard error is a feature that has been around since the early days of C and UNIX. It allows for a clear separation between normal program output and any errors or warnings that may occur. This can be especially helpful when running a program in a command-line environment, where regular output and error messages may be displayed on different streams.
-
-An alternative to writing to standard error is using a log file. This can be useful for keeping a record of all program output, including error messages. However, writing to standard error is generally preferred for troubleshooting and debugging purposes, as it provides real-time feedback during program execution.
-
-In terms of implementation, writing to standard error is typically done by redirecting the standard error stream to the desired output destination, such as a console or log file. This can be done using the command-line `2>` syntax, or within the code using `std::freopen`.
+In UNIX-like systems, `stderr` was introduced to separate program output (`stdout`) from error messages, with each having its own file descriptor (1 for `stdout`, 2 for `stderr`). Alternatives to `cerr` are using `fprintf(stderr, ...)` in C or writing directly to file descriptor 2. Internally, `cerr` is an instance of `ostream` and is unbuffered to ensure immediate error output without waiting for the buffer to fill up.
 
 ## See Also:
-- [Redirecting standard error in C++](https://stackoverflow.com/questions/1374804/redirecting-standard-error-in-c-c)
+- [cppreference std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
+- [GNU C Library: Standard Streams](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+- [Redirecting stdout and stderr](http://www.cplusplus.com/reference/cstdio/freopen/)

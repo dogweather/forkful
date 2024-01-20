@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo em erro padrão."
-html_title:           "Bash: Escrevendo em erro padrão."
-simple_title:         "Escrevendo em erro padrão."
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que é & Por Que?
+Escrever no standard error (stderr) é mandar mensagens de erro para um canal de saída específico, separado da saída normal (stdout). Programadores fazem isso para diferenciar a saída comum dos erros e para poder redirecionar e manipular essas mensagens de forma independente.
 
-A escrita para o erro padrão, também conhecida como stderr, é uma forma de direcionar mensagens de erro ou saída de um programa para o usuário. Isso é especialmente útil quando se trabalha com scripts de Bash, pois permite uma melhor depuração de erros e torna o processo de desenvolvimento mais eficiente.
+## Como Fazer:
+```Bash
+# Escrevendo mensagem de erro para stderr
+echo "Erro: Algo deu errado." >&2
 
-## Como fazer:
+# Exemplo de redirecionamento de stderr para um arquivo
+echo "Erro: Falha na operação." >&2 2>erro.log
 
-Para escrever para o stderr em Bash, basta usar o número 2 antes do sinal de maior (>). Por exemplo:
-
+# Exemplo de redirecionamento de stdout e stderr para diferentes arquivos
+echo "Informação normal." >saida.log
+echo "Erro grave." >&2 2>erro.log
 ```
-echo "Mensagem de erro" >&2
-```
 
-Isso enviará a mensagem de erro para o stderr em vez do stdout (saída padrão). Como resultado, a mensagem será exibida na tela, permitindo que você veja e lide com o erro de forma adequada.
+Nos exemplos acima, as mensagens de erro serão exibidas na tela ou salvas no arquivo `erro.log`, dependendo do redirecionamento.
 
-## Profundidade
+## Deep Dive
+Historicamente, a distinção entre stdout e stderr surgiu em sistemas Unix para ajudar na depuração de programas, permitindo que as mensagens de erro fossem tratadas separadamente. Alternativas para escrever em stderr incluem usar comandos e linguagens de programação que ofereçam manipulação embutida de erro, como `stderr.write()` em Python. No Bash, stderr é representado pelo descritor de arquivo 2, enquanto stdout é o descritor 1, daí o uso de `2>` para redirecionar erros. 
 
-A prática de escrever para o stderr remonta aos primórdios da programação de computadores, quando os desenvolvedores precisavam encontrar uma maneira de lidar com erros e avisos em seus programas. Alguns programadores optam por escrever para o stderr em vez de imprimir mensagens de erro formatadas, pois isso pode fornecer informações mais precisas e detalhadas sobre o erro.
-
-No entanto, existem alternativas para escrever para o stderr, como usar o comando "exit" com um código de erro específico ou tratamento de erros em linguagens de programação mais avançadas, como Python ou Java.
-
-Em termos de implementação, a escrita para o stderr em Bash é relativamente simples e pode ser facilmente implementada em scripts e programas. É importante lembrar que, ao usar essa técnica, é necessário gerenciar corretamente as mensagens de erro para fornecer informações úteis ao usuário e melhorar a experiência do usuário.
-
-## Veja também:
-
-Para obter mais informações sobre como escrever para o stderr em Bash, confira a documentação oficial do Bash ou outros guias online sobre a prática. Além disso, você também pode explorar as diferentes alternativas e técnicas para lidar com erros em programas.
+## Veja Também:
+- Guia sobre redirecionamentos no Bash: https://www.gnu.org/software/bash/manual/bash.html#Redirections
+- Explicações detalhadas sobre stdout e stderr: https://www.tldp.org/LDP/abs/html/io-redirection.html
+- Práticas recomendadas para manipulação de erros em scripts: https://google.github.io/styleguide/shellguide.html#s7.7-separate-stdout-from-stderr

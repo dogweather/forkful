@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Lua: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Arduino: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att skriva tester är en viktig del av programmering. Det är ett sätt för utvecklare att säkerställa att deras kod fungerar som den ska och undvika potentiella buggar och fel.
+## What & Why?
+Skriva tester handlar om att verifiera koden. Programmerare gör detta för att undvika buggar och säkerställa att koden uppför sig som förväntat.
 
-## Hur?
-För att skriva tester i Lua behöver du ett testramverk som till exempel [Luaunit](https://github.com/bluebird75/luaunit). Här är ett exempel på hur man skriver ett enkelt test:
+## How to:
+I Lua använder vi ofta moduler som `busted` eller `luaunit` för att skriva tester. Här är ett exempel:
 
 ```Lua
-require("luaunit")
-function test_addition()
-  assertEquals(4, 2+2)
+-- Först installera busted via luarocks: luarocks install busted
+-- fil: addition_spec.lua
+describe("addition function", function()
+  local addition = require "addition"
+
+  it("sums up two numbers", function()
+    assert.are.equal(5, addition(2, 3))
+  end)
+end)
+```
+
+Koden i `addition.lua`:
+
+```Lua
+-- fil: addition.lua
+local function addition(a, b)
+  return a + b
 end
 
-os.exit( LuaUnit.run() )
-```
-Output:
-```
-LuaUnit: OK.
-Ran 1 test in 0.000 seconds
+return addition
 ```
 
-## Djupdykning
-Att skriva tester är en vanlig praxis inom både agil och testdriven utveckling. Det hjälper till att upprätthålla kvaliteten på koden och möjliggör en enklare och säkrare uppdateringsprocess. Andra alternativ till Luaunit inkluderar [Busted](https://olivinelabs.com/busted/) och [Test.More](https://github.com/dcurrie/testmore).
+Kör dina tester med `busted addition_spec.lua`. Förväntad utdata är att testet passerar.
 
-För att implementera tester i din Lua-kod måste du först skriva funktioner som utför olika tester. Dessa funktioner kan sedan köras genom testramverket och ge utdata som visar om testerna har lyckats eller misslyckats.
+## Deep Dive
+Testning i Lua har historiskt sett inte varit lika framträdande som i språk som Java eller Ruby, men dess vikt växer. `busted` och `luaunit` är populära testerådgiv kan inbyggda funktioner i Lua för enklare fall, men dessa bibliotek erbjuder mer omfattande funktionalitet. De hanterar allt från grundläggande assertions till mock-objekt och test fixtures.
 
-## Se även
-[Lua Test Patterns](http://lua-users.org/files/wiki_insecure/users/KennethLavrsen/lua_test_patterns.pdf) - En detaljerad guide för testning i Lua.
+## See Also
+Djupare dykning och resurser:
 
-[Lua Testing Tools](https://lua-users.org/wiki/LuaTestingTools) - En lista över olika verktyg och ramverk för testning i Lua.
-
-[Lua Official Website](https://www.lua.org/) - Den officiella websidan för Lua-programmeringsspråket.
+- LuaUnit GitHub: [https://github.com/bluebird75/luaunit](https://github.com/bluebird75/luaunit)
+- Allmän guide till testning i programmering: [https://en.wikipedia.org/wiki/Software_testing](https://en.wikipedia.org/wiki/Software_testing)

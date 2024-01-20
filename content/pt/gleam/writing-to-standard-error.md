@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo no erro padrão"
-html_title:           "Gleam: Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O Que é e Por Que?
+Escrever no erro padrão (stderr) permite separar mensagens de erro e logs do fluxo normal de saída de dados (stdout). Programadores fazem isso para diagnosticar problemas sem interferir na saída esperada de um programa.
 
-Escrever para o erro padrão é uma técnica comum usada por programadores para imprimir mensagens de erro ou depuração durante a execução de um código. Isso permite que os desenvolvedores identifiquem e resolvam problemas em seu código de forma mais eficiente.
-
-## Como fazer:
-
-Para escrever para o erro padrão em Gleam, utilize a função "error!" seguida de uma string contendo a mensagem que deseja imprimir. Veja um exemplo:
-
-```Gleam
+## Como Fazer:
+```gleam
 import gleam/io
 
-let mensagem = "Essa é uma mensagem de erro!"
-
-error!(mensagem)
+pub fn main() {
+  io.print("Aqui está a saída normal.")
+  io.eprint("Ops! Algo deu errado.")
+}
 ```
 
-A saída desse código seria:
+Saída esperada:
 
 ```
-Essa é uma mensagem de erro!
+Aqui está a saída normal.
+Ops! Algo deu errado.
 ```
-## Deep Dive:
 
-Escrever para o erro padrão é uma prática antiga, presente em diversas linguagens de programação. Ela surgiu como uma forma de fornecer informações úteis aos programadores durante a execução de um código, ajudando-os a encontrar e corrigir erros.
+Note que a linha com "Ops! Algo deu errado." é enviada para o erro padrão, e pode ser redirecionada separadamente em um terminal.
 
-Uma alternativa ao uso do erro padrão é o uso de registros de log, que servem para armazenar informações sobre a execução do código. No entanto, escrever para o erro padrão é mais simples e rápido, e pode ser usado em conjunto com registros de log para uma melhor detecção de problemas.
+## Mergulhando Mais Fundo:
+Historicamente, o conceito de stderr remonta aos primeiros dias dos sistemas Unix, onde foi introduzido para ajudar a separar o fluxo de saída normal do output de erro. Alternativas incluem o registro em arquivos e o uso de sistemas de log estruturados; no entanto, escrever para stderr ainda é um método rápido e universal. Na implementação, stderr é um fluxo de saída não-buffered, o que significa que as mensagens são exibidas imediatamente, sem esperar que o buffer fique cheio.
 
-Em Gleam, a função "error!" é implementada utilizando a função "sys::printf" da biblioteca padrão, que permite imprimir uma string formatada para o erro padrão.
-
-## Veja também:
-
-- [Função "error!" na documentação oficial de Gleam](https://gleam.run/documentation/#error!)
+## Ver Também:
+- Discussão sobre stdout vs stderr no Unix: [https://unix.stackexchange.com/questions/331611/do-not-understand-what-stdout-stderr-stdin-is](https://unix.stackexchange.com/questions/331611/do-not-understand-what-stdout-stderr-stdin-is)
+- Práticas recomendadas de registro de erros para aplicativos de software: [https://12factor.net/logs](https://12factor.net/logs)

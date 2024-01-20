@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "TypeScript: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi on le fait?
-Travailler avec YAML est une façon de gérer des données de configuration ou de structure de manière facilement lisible. Les programmeurs l'utilisent parce qu'il est plus simple à lire et à écrire que le JSON ou le XML.
+## What & Why?
+Le YAML, c'est un format de sérialisation de données lisible par les humains. Les programmeurs l'utilisent pour configurer des projets, stocker des informations et faciliter la communication entre différentes parties d'un système.
 
-## Comment faire:
-Voici un exemple de code TypeScript utilisant la librairie YAML pour parser un fichier YAML et afficher le contenu dans la console:
+## How to:
+Installe `js-yaml`, une lib populaire pour YAML :
 
-```TypeScript
-import * as yaml from "yaml";
-
-const data = `
-  nom: Jean
-  age: 25
-  ville: Paris
-`;
-
-const parsedData = yaml.parse(data); // convertit le fichier YAML en objet JavaScript
-console.log(parsedData); // affiche {nom: "Jean", age: 25, ville: "Paris"}
+```bash
+npm install js-yaml
 ```
 
-## Plongée en profondeur:
-YAML a été créé en 2001 dans le but de fournir un moyen simple et lisible de stocker des données structurées. D'autres alternatives telles que JSON et XML sont également couramment utilisées, mais YAML se distingue par sa facilité de lecture pour les humains. En termes d'implémentation, YAML utilise une syntaxe indentée pour définir la structure des données.
+Importe le module et lis un fichier YAML :
 
-## Voir aussi:
-- [Documentation officielle de YAML](https://yaml.org/)
-- [Guide de démarrage de TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+```TypeScript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+
+try {
+  const config = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
+  console.log(config);
+} catch (e) {
+  console.log(e);
+}
+```
+
+Prenons `config.yaml` :
+
+```yaml
+version: 1
+services:
+  web:
+    image: "my-web-app:latest"
+    deploy:
+      replicas: 2
+```
+
+Si tout va bien, ça va afficher :
+
+```json
+{ version: 1, services: { web: { image: 'my-web-app:latest', deploy: { replicas: 2 } } } }
+```
+
+## Deep Dive
+YAML, acronyme de "YAML Ain't Markup Language", est né en 2001. Conçu pour surpasser les limitations de l'ancien JSON, le YAML est plus lisible et peut représenter des structures de données plus complexes. Alternatives? Le JSON et le XML sont connus, mais YAML reste le chouchou pour les fichiers de config. Niveau implémentation, YAML permet des références, l'héritage et d'autres fonctionnalités avancées grâce à son schéma flexible.
+
+## See Also
+- La spécification YAML officielle : https://yaml.org/spec/
+- `js-yaml` GitHub repository: https://github.com/nodeca/js-yaml
+- Tutoriel YAML approfondi : https://www.tutorialspoint.com/yaml/index.htm

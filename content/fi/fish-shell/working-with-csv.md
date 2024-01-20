@@ -1,7 +1,7 @@
 ---
-title:                "Csv:n kanssa työskentely"
-html_title:           "Fish Shell: Csv:n kanssa työskentely"
-simple_title:         "Csv:n kanssa työskentely"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - "Mikä & Miksi?"
+Työskenteleminen CSV-tiedostojen kanssa tarkoittaa niiden lukemista, kirjoittamista ja manipulointia. Ohjelmoijat tekevät tätä datan helpon siirtämisen ja analysoinnin vuoksi.
 
-CSV-tiedostot ovat yleisiä formaatteja, joita käytetään tietojen tallentamiseen ja jakamiseen. Trippeli pilkulla erotetut arvot (Comma-Separated Values) tekevät tiedostojen käsittelystä helppoa ja tehokasta. Tämän vuoksi monilla ohjelmoijilla on tarve työskennellä CSV-tiedostojen kanssa.
+## How to: - "Kuinka tehdä:"
+```Fish Shell
+# CSV-tiedoston lukeminen
+cat data.csv
 
-## Miten:
+# Sarakkeiden leikkaaminen ja niihin perustuva järjestäminen
+cat data.csv | cut -d ',' -f 2,5 | sort
 
-Fish Shell mahdollistaa CSV-tiedostojen käsittelemisen vähäisellä vaivalla. Alla on pari esimerkkiä:
-
-```
-# Lukee CSV-tiedoston rivi kerrallaan ja tulostaa sen
-set csv_data (csvread -d ';' "example.csv")
-for row in $csv_data
-    echo $row
-end
-
-# Muokkaa CSV-tiedoston sisältöä ja tallentaa muutokset
-set csv_data (csvread -d ';' "example.csv")
-set new_row "John;Doe;john@doe.com"
-set new_data (string join "\n" $csv_data $new_row)
-echo $new_data > "example.csv"
+# CSV-tiedoston läpikäyminen ja tietyllä ehdolla filtteröiminen
+awk -F, '$1 ~ /hakusana/ {print $0}' data.csv
 ```
 
-## Syväsukellus:
+Output esimerkki:
+```
+Juha, Meikäläinen, juha@example.com
+Kaisa, Virtanen, kaisa@example.com
+```
 
-CSV-tiedostot ovat olleet käytössä jo vuodesta 1972 lähtien ja ne ovat edelleen suosittuja tietojen tallentamiseen. Vaikka Fish Shell tarjoaa kätevän tavan käsitellä CSV-tiedostoja, on olemassa myös muita vaihtoehtoja, kuten awk ja sed. Fish Shellin sisäinen csvread-toiminto hyödyntää csvkit-kirjastoa, joka taas perustuu Pythonin csv-mooduliin.
+## Deep Dive - "Syväsukellus"
+CSV-formaatti syntyi 1970-luvulla ja on yksinkertainen tekstitiedosto, jossa arvot on eroteltu pilkuilla. Vaihtoehtoja CSV:lle ovat esimerkiksi JSON ja XML. CSV-tiedostojen käsittely riippuu ohjelmointikielistä ja käytetyistä kirjastoista. Fish Shellissä yleisiä työkaluja ovat `cut`, `awk`, `sort` ja `grep`.
 
-## Katso myös:
-
-Lisää tietoa Fish Shellin käyttämisestä CSV-tiedostojen kanssa löydät täältä: https://fishshell.com/docs/current/cmds/csvread.html
+## See Also - "Katso Myös"
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Awk Manual](https://www.gnu.org/software/gawk/manual/gawk.html)

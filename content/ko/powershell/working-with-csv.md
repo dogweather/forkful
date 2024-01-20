@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일을 다루는 방법"
-html_title:           "PowerShell: CSV 파일을 다루는 방법"
-simple_title:         "CSV 파일을 다루는 방법"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
-CSV 파일을 다루는 것이란 무엇일까요? 이것은 일반 텍스트 형식으로 이루어진 데이터 파일입니다. 프로그래머들은 일반적으로 CSV 파일을 데이터를 읽고 쓰는데 사용합니다.
+## What & Why?
+CSV(Comma-Separated Values)는 데이터를 저장하고 공유하기 위한 간단한 형식입니다. 프로그래머들은 효율적인 데이터 교환과 Excel 같은 테이블형 프로그램과의 호환성을 위해 CSV를 자주 사용합니다.
 
-## 방법:
+## How to:
+### CSV 파일 읽기
 ```PowerShell
-# CSV 파일 읽기
-Import-Csv -Path C:\Data.csv
-
-# CSV 파일 쓰기
-Export-Csv -Path C:\Data.csv -Encoding UTF8
-
-# CSV 파일을 쓸 때 필드 구분자 지정하기
-Export-Csv -Path C:\Data.csv -Delimiter ";"
-
-# CSV 파일을 쓸 때 헤더 추가하기
-$data = @( 
-    [PSCustomObject]@{ Title = "파일"; Date = "2020/05/15" },
-    [PSCustomObject]@{ Title = "문서"; Date = "2020/05/16" }
-)
-$data | Export-Csv -Path C:\Data.csv -Encoding UTF8 -Append -NoTypeInformation
-
-# CSV 파일을 읽을 때 필요한 필드만 선택하기
-Import-Csv -Path C:\Data.csv | Select-Object Title, Date
+$csvData = Import-Csv -Path "C:\example.csv"
+$csvData
 ```
 
-## 심화 살펴보기:
-CSV 파일은 1972년에 처음 개발되었으며, 전산 연구실을 위한 데이터 포맷으로 사용되었습니다. 오늘날에도 여전히 유용하게 사용되며, 비슷한 포맷으로는 JSON이 있습니다. CSV 파일을 다룰 때 주의해야 할 점은 필드 구분자나 헤더에 따옴표를 쓰는 규칙이 다를 수 있다는 것입니다.
+### CSV 파일 쓰기
+```PowerShell
+$people = @(
+    [PSCustomObject]@{Name="김철수"; Age=30; City="서울"},
+    [PSCustomObject]@{Name="이영희"; Age=25; City="부산"}
+)
+$people | Export-Csv -Path "C:\people.csv" -NoTypeInformation
+```
 
-## 참고 자료:
-- [CSV 파일 생성 및 내보내기](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/export-csv)
+### 결과 출력
+```PowerShell
+Name    Age    City
+----    ---    ----
+김철수   30     서울
+이영희   25     부산
+```
+
+## Deep Dive
+CSV는 1970년대 초부터 사용되었으며, 다양한 프로그램들 간의 간단한 데이터 교환 포맷으로 확립되었습니다. XML이나 JSON 같은 형식들도 있지만, 인간이 읽기에는 CSV가 가장 단순하죠. PowerShell에서는 `Import-Csv`와 `Export-Csv` cmdlet을 이용하여 CSV 파일을 쉽게 다룰 수 있으며, 필요에 따라 데이터를 가공하거나, 필터링하는 등의 작업도 가능합니다.
+
+## See Also
+- PowerShell Import-Csv documentation: [docs.microsoft.com/Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
+- PowerShell Export-Csv documentation: [docs.microsoft.com/Export-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv)
+- CSV 상세 정보: [wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/Comma-separated_values)

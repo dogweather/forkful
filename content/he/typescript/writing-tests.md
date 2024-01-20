@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "TypeScript: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-
-כתיבת בדיקות היא תהליך שבו מתכנתים כותבים קוד נוסף כדי לבדוק את תקינות הקוד שלהם. מתכנתים עושים זאת כדי לוודא שהקוד שלהם עובד כצפוי ושלא קיימים בעיות בקוד שייתכן לגרום לתקלות ולבאגים בתוכנה.
+## מה ולמה?
+כתיבת בדיקות זה לבחון את הקוד שלנו באופן אוטומטי. אנחנו עושים את זה כדי לוודא שהתוכנה שלנו עובדת כמצופה ולזהות תקלות מוקדם.
 
 ## איך לעשות:
-
-באמצעות TypeScript, ניתן לכתוב בדיקות עבור כל מחלקה או פונקציה בקוד. לדוגמה, ניתן להשתמש בהגדרת `describe` כדי לכתוב מחלקות של בדיקות. בנוסף, ניתן להשתמש בהגדרת `it` כדי לכתוב בדיקות ספציפיות.
-
 ```TypeScript
-describe('Calculator', () => {
-  it('should add two numbers correctly', () => {
-    const calculator = new Calculator();
-    const result = calculator.add(2, 2);
-    expect(result).toEqual(4);
-  });
+import { expect, test } from '@jest/globals';
+
+test('חיבור שני מספרים', () => {
+  expect(1 + 2).toBe(3);
+});
+
+test('מערך מכיל איבר', () => {
+  expect(['תפוח', 'בננה']).toContain('בננה');
 });
 ```
-
-כאשר הבדיקות נכתבות בצורה נכונה, אז תיתכן פלט מוצלח שכזה:
-
+פלט לדוגמא:
 ```
-Calculator
-  ✓ should add two numbers correctly
+PASS  ./math.test.ts
+✓ חיבור שני מספרים (3ms)
+✓ מערך מכיל איבר
 ```
 
-## עומק נכנס:
+## עיון נוסף
+בתחילה, בדיקות כתבו בצורה ידנית והשקיעו זמן רב. כיום יש ספריות כמו Jest, Mocha, ו Jasmine שמקלות על התהליך. הן מציעות דרכים שונות להגדיר בדיקות, לבדוק הנחות ולרכז את התוצאות.
 
-כתיבת בדיקות נמצאת כבר זמן רב בתחום התכנות והינה כלי חשוב במיוחד כאשר מדובר בפיתוח תוכנה מורכבת. ישנם כמה אלטרנטיבות כמו כן לכתיבת בדיקות כדי לוודא את תקינות הקוד. כמו כן, קיימים טכניקות נוספות כדי לשפר את מהירות הבדיקות כמו בתוכנה Jest.
-
-## ראה גם:
-
-למידע נוסף על אופן כתיבת בדיקות ב-TypeScript, ניתן לקרוא את המדריך המפורט באתר הרשמי של TypeScript: https://www.typescriptlang.org/docs/handbook/testing.html  כמו כן, ניתן לעיין בתיעוד הרשמי של Jest על אופן שימוש בטכניקות נוספות כדי לשפר את הבדיקות: https://jestjs.io/docs/en/getting-started
+## ראו גם
+- [התיעוד הרשמי של Jest](https://jestjs.io/docs/getting-started)

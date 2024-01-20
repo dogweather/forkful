@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Python: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Python"
 category:             "Python"
@@ -11,28 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Pisanie do standardowego błędu jest popularną techniką, którą programiści wykorzystują do przekazywania informacji o błędach i ostrzeżeniach. Polega to na przesłaniu komunikatu do specjalnego strumienia wyjściowego o nazwie standardowy błąd, zamiast do standardowego strumienia wyjściowego. Programiści wykorzystują tę technikę, aby w łatwy sposób monitorować błędy i w razie potrzeby szybko zareagować.
+Pisanie do standardowego wyjścia błędów (stderr) umożliwia odseparowanie komunikatów o błędach od regularnego wyniku programu. Robimy to, aby ułatwić debugowanie i logowanie, umożliwiając monitorowanie błędów niezależnie od normalnego wyjścia.
 
 ## Jak to zrobić:
-
-```Python
+```python
 import sys
-sys.stderr.write("Przykładowy błąd")
-```
 
+print("To jest zwykła wiadomość.")
+sys.stderr.write("To jest wiadomość błędu.\n")
+
+# Alternatywa
+print("Inny błąd", file=sys.stderr)
+```
 Output:
 ```
-Przykładowy błąd
+To jest zwykła wiadomość.
+To jest wiadomość błędu.
+Inny błąd
 ```
 
-## Schodki w Dół:
+## Głębsza wiedza
+Pisanie do stderr istnieje od początków UNIKSa i jest standardem w wielu językach programowania. Alternatywy to użycie logging frameworków, które mogą kierować błędy do różnych miejsc, np. plików czy systemów monitorowania. W Pythonie, `print` można przekierować do `sys.stderr` używając argumentu `file`, co pozwala na bardziej zwięzłą składnię porównując do `sys.stderr.write()`.
 
-- Pisanie do standardowego błędu było popularną techniką w C i C++, ale w Pythonie jest również bardzo użyteczne.
-- Alternatywą dla pisania do standardowego błędu jest drukowanie komunikatów do konsoli lub zapisywanie ich do pliku.
-- W Pythonie dostępne są dwa strumienie wyjściowe: standardowe wyjście (sys.stdout) i standardowy błąd (sys.stderr).
-
-## Zobacz również:
-
-- [Dokumentacja Pythona o sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [Przewodnik po błędach w Pythonie](https://realpython.com/python-exceptions/)
+## Zobacz także
+- Dokumentacja Pythona na `sys.stderr`: https://docs.python.org/3/library/sys.html#sys.stderr
+- Moduł `logging` Pythona dla zaawansowanego logowania: https://docs.python.org/3/library/logging.html
+- Artykuł o obsłudze błędów w Pythonie: https://realpython.com/python-exceptions/

@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Elm: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,56 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Tests schreiben bedeutet, Code zu erstellen, der überprüft, ob andere Codeteile wie erwartet funktionieren. Programmierer machen das, um Fehler zu vermeiden, die Codequalität zu sichern und Refactorings zu erleichtern.
 
-Tests sind Code-Stücke, die speziell dafür geschrieben werden, um zu überprüfen, ob andere Code-Stücke richtig funktionieren. Programmierer schreiben Tests, um sicherzustellen, dass ihr Code fehlerfrei ist und wie erwartet funktioniert. Dies kann Zeit und Mühe sparen, indem potenzielle Fehler frühzeitig erkannt und behoben werden können.
+## How to:
+Elm benutzt [elm-test](https://package.elm-lang.org/packages/elm-explorations/test/latest/) für Tests. Installiere es und schreibe klare, verständliche Tests. Beispiele:
 
-## Wie?
+```Elm
+import Expect
+import Test exposing (..)
+import ExampleProgram exposing (..)
 
-Elm bietet eine integrierte Test-Bibliothek namens "elm-test", die es Programmierern ermöglicht, leicht verständliche und gut strukturierte Tests zu schreiben. Hier ist ein Beispiel für einen einfachen Test:
+suite : Test
+suite =
+  describe "Beispiel Tests"
+    [ test "2 plus 2 ist 4" <|
+        \_ -> Expect.equal 4 (2 + 2)
+    , test "Leere Liste hat Länge 0" <|
+        \_ -> Expect.equal 0 (List.length [])
+    ]
 
-```
-import Expect exposing (equal)
-
-onePlusOneEqualsTwo : Test 
-onePlusOneEqualsTwo =
-  Test.test "1 + 1 sollte 2 ergeben" 
-    (\_ -> 
-        Expect.equal 2 (1 + 1))
-
-```
-
-Dieser Test prüft, ob die Berechnung "1 + 1" tatsächlich den Wert 2 ergibt. Die Funktion "expect" wird verwendet, um zu überprüfen, ob das Ergebnis der Berechnung tatsächlich dem erwarteten Wert entspricht.
-
-Ein weiteres Beispiel für einen Test mit einer Fehlermeldung:
-
-```
-import Expect exposing (equal)
-
-panel = { width = 100, height = 200 }
-
-widthShouldBe100 : Test
-widthShouldBe100 =
-  Test.test "Die Breite sollte 100 betragen"
-    (\_ ->
-        Expect.equal 100 (panel.width))
-
-heightShouldBe200 : Test 
-heightShouldBe200 =
-  Test.test "Die Höhe sollte 200 betragen"
-    (\_ ->
-        Expect.equal 200 (panel.height))
+-- Führe Tests mit `elm-test` aus.
+-- Ergebnis sollte sein:
+-- TEST RUN PASSED
+-- 
+-- Duration: 42 ms
+-- Passed:   2
+-- Failed:   0
 ```
 
-Hier wird überprüft, ob das Panel die erwarteten Werte für Breite und Höhe enthält. Wenn das Panel jedoch versehentlich falsch initialisiert wurde und die Werte nicht den Erwartungen entsprechen, wird eine Fehlermeldung ausgegeben, die dem Programmierer hilft, den Fehler zu finden und zu beheben.
+## Deep Dive:
+Tests in Elm haben eine kurze Geschichte, sind aber professionell geworden. `elm-test` bietet eine reine Elm Erfahrung, ähnlich wie Jest in JavaScript. Im Vergleich: andere Sprachen nutzen oft externe Tools, während Elm im Ökosystem bleibt. Die Implementierung setzt pure Funktionen und auf immutability basierende Strukturen ein, wodurch die Tests vorhersehbar und zuverlässig sind.
 
-## Tiefer Einblick
-
-Tests haben in der Programmierung eine lange Geschichte. Sie wurden ursprünglich entwickelt, um sicherzustellen, dass der Code richtig und zuverlässig funktioniert. Alternativen zu Tests sind manuelle Überprüfungen oder Debugger, aber diese können zeitaufwendig und fehleranfällig sein. Mit Tests können Programmierer effizient und effektiv sicherstellen, dass ihr Code fehlerfrei ist.
-
-In Elm werden Tests durch die Funktion "test" innerhalb der Test-Module definiert. Diese Funktion akzeptiert zwei Argumente: einen String als Beschreibung des Tests und eine Funktion, die den tatsächlichen Test ausführt. Die Funktion "expect" wird verwendet, um das erwartete Ergebnis zu überprüfen.
-
-## Siehe auch
-
-- Die offizielle Dokumentation zu Tests in Elm: https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- Eine Einführung in Test-driven Development (TDD) mit Elm: https://medium.com/@thejameskyle/tdd-in-elm-4c859bde8a3b
-- Eine Vergleich von Tests in Elm und in anderen Programmiersprachen: https://www.lambdacurry.dev/blog/testing-in-elm/
+## See Also:
+- Elm Test Dokumentation: [https://package.elm-lang.org/packages/elm-explorations/test/latest/](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- Beispielprojekte auf GitHub: Suche nach `elm-test` in Repositories für echte Anwendungsbeispiele.

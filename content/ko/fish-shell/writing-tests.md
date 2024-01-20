@@ -1,6 +1,6 @@
 ---
 title:                "테스트 작성하기"
-html_title:           "Fish Shell: 테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### 무엇이고 왜?
-테스트 작성이란 무엇인가요? 프로그래머들이 왜 이것을 하는 것일까요? 먼저, 테스트 작성은 코드의 동작을 확인하기 위해 작성되는 코드입니다. 즉, 작성한 코드가 원하는 대로 동작하는지 확인하는 것이죠. 프로그래머들은 이것을 하는 이유는 안정적이고 예측 가능한 코드를 작성하기 위해서입니다. 테스트 작성은 코드의 버그를 찾는 일종의 안전장치라고도 할 수 있습니다.
+## What & Why? (무엇과 왜?)
+코드 테스트란 프로그램이 제대로 동작하는지 확인하기 위해 작성하는 자동화된 스크립트입니다. 프로그래머는 버그를 미리 잡고, 코드가 예상한 대로 동작함을 보증하기 위해 테스트를 합니다.
 
-### 어떻게?
-그럼 이제 실제로 어떻게 테스트를 작성하는지 살펴보겠습니다. 먼저, Fish Shell의 `assert` function을 사용하여 테스트를 작성할 수 있습니다. `assert`는 주어진 조건이 참인지 확인하는 함수로, 만약 조건이 거짓이면 에러를 발생시킵니다. 아래는 `assert`를 사용한 예시 코드입니다.
+## How to:
+Fish Shell에서 테스트를 작성하는 예제입니다.
 
 ```Fish Shell
-function add(a, b)
-    return $a + $b
+function test_example_function
+    # 테스트할 함수를 호출
+    set output (example_function)
+
+    # 예상 결과와 비교
+    if test "$output" = "expected result"
+        echo "Test passed."
+    else
+        echo "Test failed. Expected 'expected result', got '$output'"
+    end
 end
 
-assert (add 2 3) -eq 5
+# 함수 실행 및 결과 출력
+test_example_function
 ```
 
-위 코드에서 `assert` 함수는 `add` 함수에 2와 3을 넣은 결과가 5인지 확인합니다. 만약 결과가 5가 아니라면 에러가 발생할 것입니다. 이렇게 하면 코드의 동작을 확인하면서 버그를 미리 방지할 수 있습니다. 
+실행 예시:
+```
+Test passed.
+```
 
-### 깊이 들어가기
-위에서 살펴본 `assert` 함수 이외에도 Fish Shell에서는 `test` 함수와 `and` 키워드를 사용하여 좀 더 복잡한 테스트를 작성할 수 있습니다. 또한 다른 Shell에서도 테스트를 작성하는 방법이 있지만 Fish Shell의 경우 가독성과 유연성 측면에서 좀 더 우수합니다.
+## Deep Dive (깊이 탐구)
+Fish Shell로 테스트를 작성하는 것은 비교적 새로운 관행입니다. 단일 언어 내부에서 테스트하는 대신, 일반적으로 Bash나 Python 같은 디테일한 테스팅 프레임워크가 선호됩니다. 그러나 Fish는 풍부한 문자열 처리 기능과 사용자 친화적인 구문으로 거듭나며 테스트 작성에도 유용합니다. 특히, Fish는 함수와 스크립트에서 반환값 및 예상치 못한 동작을 쉽게 핸들링할 수 있게 해주는 `test` 내장 명령어를 제공합니다.
 
-### 참고 자료
+## See Also (참조)
 - [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [Shell scripting tutorial](https://www.shellscript.sh/)
+- [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
+- [fishtape: Fish용 테스트 러너](https://github.com/jorgebucaran/fishtape)

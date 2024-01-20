@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Bash: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mikä ja miksi?
+Kirjoittaminen standard erroriin (stderr) ohjaa virheilmoitukset tai varoitukset erilliseen virtaan. Ohjelmoijat käyttävät tätä erotellakseen normaalin tulosteen (stdout) ja virhetilanteiden raportoinnin, mikä helpottaa debuggausta ja lokien käsittelyä.
 
-Kirjoittaminen standardi virhevirtaan (STDERR) on tapa ilmoittaa käyttäjälle skriptin suorituksen aikaisista ongelmista tai virheistä. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tulostaa vianmääritystietoja tai varoituksia erillään tavallisesta tulosteesta, joka menee standardi tulostevirtaan (STDOUT). Näin käyttäjä näkee selkeästi mitkä tulosteet ovat normaaleja ja mitkä ovat mahdollisia ongelmia.
+## How to: - Näin teet:
+```Bash
+# Kirjoittaminen stderr-virtaan
+echo "Tämä on virheilmoitus" >&2
 
-## Miten tehdä?
-
-Käytä komentoa `echo` tulostamaan haluamasi viesti STDERR:iin seuraavasti:
+# Esimerkki ohjelmasta, joka tulostaa viestin stderriin ja stdoutiin
+#!/bin/bash
+echo "Tämä menee tavalliseen tulosteeseen"
+echo "Tämä on virheilmoitus" >&2
 ```
-echo "Virhe on tapahtunut" >&2
+Esimerkkitulostus:
 ```
-Tämä ohjaa tulosteen STDOUT:sta STDERR:iin lisäämällä merkintä `>&2` komennon perään. Jos haluat tulostaa vain varoituksen, voit ohjata sen STDERR:iin komennolla `echo "Varoitus!" >&2`.
+Tämä menee tavalliseen tulosteeseen
+Tämä on virheilmoitus
+```
 
-## Syväsukellus
+## Deep Dive - Syväsukellus:
+Stderr luotiin Unix-järjestelmissä erottamaan virhetulostus ohjelman muusta tulosteesta. Vaihtoehtona stderrille voisi käyttää lokitiedostoja, mutta stderr on standardisoitu ja välitön tapa raportoida ongelmat. Stderriin kirjoittaminen käyttää tiedostopiirrettä 2 (`2>`), kun taas stdout käyttää tiedostopiirrettä 1.
 
-Kirjoittaminen STDERR:iin on yksi tapa hallita ja havaita virheitä ohjelmoinnissa. Toinen tapa on käyttää `exit`-komentoa lopettamaan skriptin suoritus kokonaan ja antamaan sille virhekoodi. Tämä on hyödyllistä esimerkiksi automatisoiduissa tehtävissä, joissa haluat pysäyttää suorituksen jos jokin menee pieleen.
-
-STDERR:iin kirjoittamisella on myös historiallinen merkitys UNIX-järjestelmissä, joissa se on ollut käytössä jo vuodesta 1971 lähtien. Toinen vaihtoehto virheiden hallintaan on käyttää logitiedostoja, joihin kirjoitetaan tietoa skriptin suorituksen aikaisista tapahtumista.
-
-## Katso myös
-
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html#redirections)
-- [UNIX-historia](https://www.tutorialspoint.com/unix/unix-what-is-shell.htm)
+## See Also - Katso myös:
+- Bashin virallinen dokumentaatio: https://www.gnu.org/software/bash/manual/bash.html
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+- Unix & Linux Stack Exchange: https://unix.stackexchange.com/

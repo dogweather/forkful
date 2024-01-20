@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Clojure: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
+CSV står for komma-separerte verdier, en filformat brukt for å lagre tabell-data. Programmerere bruker det fordi det er universelt, lett å lese og skrive, og det kan brukes av mange forskjellige programmer.
 
-Arbeid med CSV, eller Comma Separated Values, er en vanlig oppgave for utviklere å håndtere store datasett. CSV er en enkel og vanlig filformat for lagring og deling av tabellariske data, og er mye brukt i forretningsapplikasjoner og databehandling.
-
-Hvordan:
-
-En av de enkleste måtene å håndtere CSV-filer i Clojure er å bruke biblioteket clojure.data.csv. Dette gir enkle funksjoner for å lese og skrive til CSV-filer, som vist i følgende eksempel:
+## How to:
+Å jobbe med CSV i Clojure er enkelt med `clojure.data.csv` biblioteket. Her er hvordan du leser og skriver CSV-data:
 
 ```Clojure
+;; Legg til nødvendig bibliotek
 (require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-;; Leser en CSV-fil og lagrer dataene i et vektor
-(def data (csv/read-csv "eksempel.csv"))
+;; Lese CSV-fil
+(with-open [reader (io/reader "data.csv")]
+  (let [data (csv/read-csv reader)]
+    (println data)))  ; Skriver ut CSV-data som en liste av rader
 
-;; Skriver data til en CSV-fil
-(csv/write-csv "ny_csv_fil.csv" data)
+;; Skrive til CSV-fil
+(with-open [writer (io/writer "data.csv")]
+  (csv/write-csv writer [["ID", "Navn", "Alder"] ["1", "Ola", "42"] ["2", "Kari", "36"]]))
+```
+Eksempeloutput:
+```
+(["ID" "Navn" "Alder"] ["1" "Ola" "42"] ["2" "Kari" "36"])
 ```
 
-Dette biblioteket har også funksjoner for å konvertere data fra CSV til mer komplekse datastrukturer, som kart og sett, og vice versa.
+## Deep Dive
+CSV-formatet har vært brukt siden 1970-tallet og er fortsatt populært på grunn av dets enkelhet. Alternativer inkluderer JSON og XML, men de er mer komplekse. I Clojure kan `clojure.data.csv` håndtere de fleste CSV-relaterte oppgaver. Det er viktig å håndtere felter som inneholder komma eller nye linjer riktig, ved å omslutte dem med anførselstegn.
 
-Dypdykk:
-
-CSV-formatet ble utviklet i 1972 og har vært en viktig del av datautveksling mellom ulike programmer og systemer siden da. Alternativer til å jobbe med CSV inkluderer SQL-databaser og NoSQL-databaser, men CSV er fortsatt mye brukt på grunn av sin enkelhet og kompatibilitet.
-
-Implementasjonsdetaljer kan variere avhengig av hvilket bibliotek eller verktøy du bruker, men det viktigste å huske på når du arbeider med CSV er å håndtere potensielle feil, som manglende verdier eller ugyldig formatering av data.
-
-Se også:
-
-- Offisiell dokumentasjon for biblioteket clojure.data.csv: https://clojure.github.io/data.csv/
-- En guide til å arbeide med CSV i Clojure: https://mrinalbhattacharya.github.io/clojure/csv/data-science/big-data/open-data/2018/08/31/csv-file-in-clojure.html
+## See Also
+- Clojure.data.csv dokumentasjon: https://clojure.github.io/data.csv/
+- Clojure for the Brave and True (bok): https://www.braveclojure.com/
+- Clojure.org: https://clojure.org/

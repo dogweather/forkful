@@ -1,7 +1,7 @@
 ---
-title:                "Yamlin kanssa työskentely"
-html_title:           "Ruby: Yamlin kanssa työskentely"
-simple_title:         "Yamlin kanssa työskentely"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-YAML on ihmisen luettava tietoformaatti, joka on suosittu ohjelmoijien keskuudessa. Sitä käytetään tallentamaan ja siirtämään tietoja, kuten asetuksia ja rakenteita, käyttäen helppolukuista syntaksia. Tämä tekee siitä suositun vaihtoehdon esimerkiksi XML:lle.
+## Mitä & Miksi?
+YAML on ihmisen luettavissa oleva tiedostoformaatti datan esittämiseen. Ruby-ohjelmoijat käyttävät sitä konfiguraatioiden, asetusten ja muiden rakenteellisten tietojen tallennukseen, koska sen puhtaan ja yksinkertaisen syntaksin ansiosta tiedoston muokkaaminen ja ymmärtäminen on vaivatonta.
 
-## Kuinka:
-Tässä on muutamia esimerkkejä siitä, kuinka voit käyttää Rubya YAML:in kanssa.
+## How to:
+Rubyssa YAML-tiedostojen käsittely on helppoa `yaml`-kirjaston avulla. Esimerkiksi näin:
 
-```ruby
+```Ruby
 require 'yaml'
 
-# Tallennetaan hash tekstitiedostoon
-settings = { 
-  color: "red", 
-  font_size: 12 
-}
+# YAML-tiedoston lukeminen
+config = YAML.load_file('config.yml')
 
-File.open("asetukset.yaml", "w") do |f| 
-  YAML.dump(settings, f) 
-end 
+# Hash-tietueena olevan datan tulostus
+puts config.inspect
 
-# Luetaan tekstitiedosto takaisin hash muotoon
-asetukset = YAML.load(File.read("asetukset.yaml"))
-puts asetukset["color"] # "red"
-puts asetukset["font_size"] # 12
+# YAML-tiedoston luominen
+user_data = { name: 'Matti', language: 'Ruby', level: 'beginner' }
+File.open('user.yml', 'w') { |file| file.write(user_data.to_yaml) }
 ```
 
-## Syvällinen sukellus:
-YAML kehitettiin alun perin vuonna 2001, ja se on lyhenne sanoista "YAML Ain't Markup Language". Sittemmin siitä on tullut suosittu vaihtoehto muille tietoformaateille, kuten JSON ja XML. YAML on myös käytössä mm. Ruby on Rails -kehyksessä ja Githubin konfiguraatiotiedostoissa.
+Output:
+```Ruby
+{ "name" => "Matti", "language" => "Ruby", "level" => "beginner" }
+```
 
-## Katso myös:
-- [YAML.org](https://yaml.org/)
-- [Ruby dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html) 
-- [Rails dokumentaatio](https://guides.rubyonrails.org/configuring.html#configuration-and-customization)
+## Deep Dive:
+YAML, lyhennys sanoista "YAML Ain't Markup Language", on vuonna 2001 ilmestynyt ja W3C:n standardoima. Se on suunniteltu olemaan selkeämpi ja yksinkertaisempi kuin sen vaihtoehdot, kuten XML ja JSON. YAML-perusteita koodatessa tarvittaa `yaml`-kirjasto, joka on usein jo sisäänrakennettu Ruby-version mukana. Tiedostot tyypillisesti päättyvät `.yml` tai `.yaml` ja noudattavat avain-arvo -periaatetta.
+
+## See Also:
+- YAML:n virallinen sivusto: [yaml.org](https://yaml.org/)
+- Ruby-dokumentaatio YAML-moduulille: [ruby-doc.org](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)

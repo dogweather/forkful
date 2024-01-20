@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "PHP: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,23 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva till standard error är en programmeringsteknik som används för att skicka felmeddelanden till terminalen istället för till standard utmatningskanalen. Detta kan vara användbart för att hålla terminalen ren och för att få en tydligare feedback från programmet.
+Skrivning till standardfel (stderr) separerar felmeddelanden från vanlig utdata. Programmers gör det för att hantera fel effektivt och underlätta felsökning.
 
-## Hur man gör:
-För att skriva till standard error i PHP använder man funktionen `fwrite()` tillsammans med `$stderr` som en parameter. Detta gör det möjligt att skicka ett felmeddelande till terminalen, till exempel:
+## Hur Gör Man:
+För att skriva till stderr i PHP används `fwrite()` mot `php://stderr`.
 
 ```PHP
 <?php
-    fwrite($stderr, "Ett fel har inträffat!");
+// Skicka ett felmeddelande till standardfel.
+fwrite(STDERR, "Ett fel har uppstått!\n");
 ?>
 ```
 
-Detta kommer att skriva ut "Ett fel har inträffat!" i terminalen istället för i standard utmatningskanalen.
+Exempelutdata i terminalen skulle kunna se ut så här efter att ha körts:
+
+```
+Ett fel har uppstått!
+```
 
 ## Djupdykning:
-Skrivning till standard error har funnits sedan början av Unix-system, men används fortfarande som en vanlig programmeringsteknik för att skicka felmeddelanden till terminalen. En alternativ metod är att skriva till en loggfil istället, men detta kan vara mindre praktiskt och kräver mer arbete vid debugging.
-
-I PHP finns också funktionen `error_log()` som en alternativ metod för att skicka felmeddelanden till en loggfil. Detta kan vara mer användbart vid långsiktiga projekt eller för att samla alla felmeddelanden på en central plats.
+`STDERR` är en inbyggd filbeskrivare i PHP som är tillgänglig utan att öppna en ström manuellt. Historiskt sett kommer konceptet med standardfel från Unix-operativsystemen, där stderr används för att skilja vanlig utdata från errorutdata. Alternativt kan man använda `error_log()` för att skicka felmeddelanden direkt till den förkonfigurerade loggen. Implementationen av stderr i PHP följer principer etablerade i C's stdio-bibliotek.
 
 ## Se även:
-Läs mer om `fwrite()` funktionen i PHP:s officiella dokumentation: https://www.php.net/manual/en/function.fwrite.php
+- PHP:s officiella dokumentation om felhantering: https://www.php.net/manual/en/book.errorfunc.php
+- PHP:s officiella dokumentation om de olika I/O-strömmarna: https://www.php.net/manual/en/wrappers.php.php
+- Mer om standardströmmar i Unix: https://en.wikipedia.org/wiki/Standard_streams

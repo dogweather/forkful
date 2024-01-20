@@ -1,7 +1,7 @@
 ---
-title:                "jsonとの作業"
-html_title:           "Elm: jsonとの作業"
-simple_title:         "jsonとの作業"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が、なぜ？
+## What & Why?
+## なぜ & どうして？
+JSONとはJavascript Object Notationの略で、データ交換のフォーマットです。プログラマは異なるシステム間でデータをやり取りするためにこれを使います。Elmでは、型の安全性を確保しながらJSONを扱うことができます。
 
-JSONを使ってプログラミングするとは、プログラマーがデータを受け取ったり送ったりする方法です。プログラムは、コンピューター間やネットワークを介してデータをやり取りする必要があり、その際にはJSONが役立ちます。
+## How to:
+## 実践方法
 
-## 使い方：
+```elm
+-- JSONデコーダの定義
+import Json.Decode exposing (Decoder, string, int, field)
 
-```Elm
-import Json.Decode exposing (decodeString, int, list, string)
+type alias User =
+    { name : String
+    , age : Int
+    }
 
--- 整数、文字列、リストという3つの要素を含むJSONデータ
-jsonData = """{\"age\": 25, \"name\": \"Taro\", \"hobbies\": [\"reading\", \"coding\"]}"""
+userDecoder : Decoder User
+userDecoder =
+    Json.Decode.map2 User
+        (field "name" string)
+        (field "age" int)
 
--- 与えられたJSONデータをデコードする
-decodeString int ("age") jsonData
---> Ok 25
+-- JSONデータをElmの型に変換
+jsonString : String
+jsonString =
+    "{\"name\":\"Yamada\",\"age\":30}"
 
-decodeString string ("name") jsonData
---> Ok "Taro"
+decodedUser : Result String User
+decodedUser =
+    Json.Decode.decodeString userDecoder jsonString
 
-decodeString (list string) ("hobbies") jsonData
---> Ok ["reading", "coding"]
+-- 結果の出力
+toString decodedUser
+-- "Ok { name = \"Yamada\", age = 30 }"
 ```
 
-## 深く掘り下げる：
+## Deep Dive
+## 掘り下げ
 
-JSONは1990年代初めに開発されたデータ記述形式で、その名前は"JavaScript Object Notation"の略です。他のデータフォーマットと比べて、JSONは人間にとっても機械にとっても読みやすく、広く利用されています。Elmプログラミング言語では、JSONをデコードするために内部的にはJSONファイルをJavaScriptオブジェクトに変換してから使います。
+Elm での JSON 扱いは安全です。バージョン0.18からデコーダは強化され、より厳密な型チェックが可能になりました。`elm/json`ライブラリはJavaScriptのオブジェクトをElmの値に変換するために使います。Alternativesとして、HTTPライブラリを使ったAPIレスポンスの処理や、単純なデータ型ではないケースでのカスタムデコーダの実装があります。
 
-## その他の情報：
+## See Also
+## 参考リンク
 
-- [Elmの公式ドキュメント](https://guide.elm-lang.org/interop/json.html)にJSONを扱う方法が詳しく書かれています。
-- [JSONフォーマットの歴史](https://www.json.org/json-ja.html)の詳細はJSONの公式サイトで見ることができます。
+- Elm公式ガイド: [JSONデコード](https://guide.elm-lang.org/effects/json.html)
+- `elm/json`パッケージ: [package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)
+- JSONデコードの追加例: [ElmでのJSONデコードの技術](https://thoughtbot.com/blog/decoding-json-structures-with-elm)

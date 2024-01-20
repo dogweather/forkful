@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "Ruby: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Working med CSV står för "Comma Separated Values" och det är ett vanligt filformat för att lagra tabulära data, som ofta används för att överföra data mellan olika program och system. Programmers arbetar med CSV för att enkelt kunna läsa, manipulera och analysera data från olika källor.
+CSV (Comma-Separated Values) är en enkel textfilformat som används för att lagra tabelliknande data. Programmerare använder CSV för att enkelt utbyta data mellan olika program och system.
 
-## Hur man gör:
-Här är ett enkelt exempel på hur man kan använda Ruby för att läsa och skriva till en CSV-fil:
-
+## Så här gör du:
 ```Ruby
 require 'csv'
 
-# Läsa in en CSV-fil
+# Läsning av CSV-fil
 CSV.foreach("exempel.csv") do |row|
-  puts row
+  puts row.inspect
 end
 
-# Skriva till en CSV-fil
-CSV.open("ny_film.csv", "w") do |csv|
-  csv << ["Titel", "Regissör", "År"]
-  csv << ["The Dark Knight", "Christopher Nolan", 2008]
+# Skrivning till CSV-fil
+CSV.open("exempel_output.csv", "wb") do |csv|
+  csv << ["Namn", "Ålder", "Stad"]
+  csv << ["Alice", 29, "Stockholm"]
+  csv << ["Bob", 42, "Göteborg"]
 end
 ```
+Sample output för läsningskoden kan vara `[["Alice", "29", "Stockholm"], ["Bob", "42", "Göteborg"]]`, medan skrivningskoden skapar en fil med angiven data.
 
-Output för ovanstående kod skulle vara:
-```Ruby
-["Titel", "Regissör", "År"]
-["The Dark Knight", "Christopher Nolan", 2008]
-```
+## På djupet
+CSV-formatet har använts sedan årtionden för att hantera data i textform; det är lätt att förstå och bearbeta både för människor och maskiner. Alternativ till CSV inkluderar JSON och XML, som båda stöder mer komplex datastrukturering. Med Ruby's standard CSV-bibliotek kan detaljer som anpassning av fältseparatörer och hantering av textkodningar enkelt konfigureras.
 
-## Djupdykning:
-~Historisk kontext: CSV-filer har funnits sedan 1972 och utvecklades från ett enkelt kommaavgränsat dataformat. De användes initialt främst för datautbyte mellan olika databassystem men har senare blivit ett vanligt sätt att lagra och överföra data mellan olika program.
-
-~Alternativ: Det finns många andra filformat för tabulära data, som t.ex. JSON och XML, men CSV är fortfarande populärt på grund av dess enkelhet och läsbarhet.
-
-~Implementering: Ruby har en inbyggd CSV-modul som gör det enkelt att läsa och skriva till CSV-filer. Det finns också många tredjepartsbibliotek som erbjuder mer avancerade funktioner för hantering av CSV-data.
-
-## Se även:
-- [Ruby's CSV-dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
-- [Ruby CSV-gem](https://rubygems.org/gems/csv)
-- [En tutorial om att arbeta med CSV i Ruby](https://www.rubyguides.com/2018/10/parse-csv-ruby/)
+## Se också
+- Ruby's officiella dokumentation om CSV: [Ruby CSV Documentation](https://ruby-doc.org/stdlib-2.6/libdoc/csv/rdoc/CSV.html)
+- RFC 4180 om CSV-standard: [Common Format and MIME Type for CSV Files](https://tools.ietf.org/html/rfc4180)
+- CSV på Wikipedia: [Comma-Separated Values on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)

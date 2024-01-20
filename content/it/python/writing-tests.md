@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Python: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Python"
 category:             "Python"
@@ -10,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa e perchè?
-Scrivere test è un'attività fondamentale per tutti i programmatori. Si tratta di scrivere codice aggiuntivo per verificare che il codice già scritto funziona come previsto. Questo aiuta a garantire che il programma continui a funzionare correttamente anche dopo eventuali modifiche.
+## Che cosa & Perché?
+Scrivere test significa creare script per verificare che il codice funzioni come previsto. I programmatori scrivono test per garantire che il codice sia affidabile e per prevenire bug quando si aggiorna o si modifica il codice.
 
 ## Come fare:
-In Python, esistono diversi modi per scrivere test. Uno dei più comuni è utilizzare il modulo `unittest`, che fornisce un framework per scrivere e gestire test automatizzati. Di seguito un esempio di come utilizzarlo:
+Ecco un esempio di test unitario con `unittest`, il framework di testing integrato in Python:
 
 ```Python
 import unittest
 
-# Creiamo una semplice funzione per verificare se un numero è pari o dispari
-def is_even(num):
-    if num % 2 == 0:
-        return True
-    else:
-        return False
-        
-# Definiamo una classe di test che eredita dalla classe TestCase del modulo unittest
-class TestIsEven(unittest.TestCase):
-    # Definiamo un metodo per testare la nostra funzione
-    def test_even_numbers(self):
-        self.assertTrue(is_even(2)) # Verifica che il test sia True
-        self.assertFalse(is_even(3)) # Verifica che il test sia False
-        
-# Eseguiamo i nostri test utilizzando il metodo main del modulo unittest
+def somma(x, y):
+    return x + y
+
+class TestSomma(unittest.TestCase):
+    def test_somma_positivi(self):
+        self.assertEqual(somma(1, 2), 3)
+    
+    def test_somma_negativi(self):
+        self.assertEqual(somma(-1, -1), -2)
+    
+    def test_somma_misti(self):
+        self.assertEqual(somma(-1, 2), 1)
+
 if __name__ == '__main__':
     unittest.main()
 ```
-
-Il risultato in questo caso sarà:
-
+Output presunto:
 ```
-..
+...
 ----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+Ran 3 tests in 0.001s
 
 OK
 ```
 
-## Approfondimento:
-La pratica di scrivere test ha origini antiche nella storia della programmazione. In passato, i test erano spesso eseguiti manualmente da "testers" umani, ma con l'avvento della programmazione orientata agli oggetti e del concetto di test unitari, è diventato sempre più importante scrivere codice di test. Altre alternative a `unittest` includono i moduli `doctest` e `pytest`. 
+## Approfondimenti:
+I test automatici hanno origine negli anni '60 ma hanno guadagnato popolarità con lo sviluppo delle metodologie Agile e TDD (Test-Driven Development). Oltre a `unittest`, esistono altre librerie di test come `pytest` e `nose`, che offrono funzionalità aggiuntive. Un dettaglio chiave nella scrittura di test è il concetto di "mocking", ovvero simulare parti del sistema che non si vuole testare direttamente o che sono esterne al contesto del test.
 
 ## Vedi anche:
-Per ulteriori informazioni sui test in Python, qui ci sono alcuni link utili:
+Per approfondire, visita i seguenti link:
 
-- Documentazione ufficiale dei test in Python: https://docs.python.org/3/library/unittest.html
-- Tutorial su unittest: https://realpython.com/python-testing/
-- Tutorial su doctest: https://realpython.com/doctest-python/
-- Tutorial su pytest: https://realpython.com/pytest-python-testing/
+- La documentazione ufficiale di Python su unittest: https://docs.python.org/3/library/unittest.html
+- Una guida a `pytest`, un framework di testing più potente e flessibile: https://docs.pytest.org/en/stable/
+- TDD (Test Driven Development) su Wikipedia: https://it.wikipedia.org/wiki/Test_driven_development

@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
-html_title:           "Fish Shell: कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-CSV काम करने का एक फॉर्मेट है जो डेटा को rows और columns में स्टोर करता है। प्रोग्रामर्स एक से ज्यादा स्रोतों से जुड़े डेटा को एक साथ सम्मिलित करने के लिए CSV का प्रयोग करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
-```Fish Shell ``` इस्तेमाल करके आप आसानी से CSV फॉर्मेट में डेटा का प्रबंधन कर सकते हैं। निम्नलिखित उदाहरण आपको एक समझाने में मदद करेंगे:
+CSV, यानी Comma-Separated Values, एक साधारण फॉर्मेट है जो टेबल डाटा को टेक्स्ट फाइल में स्टोर करती है। प्रोग्रामर्स इसका इस्तेमाल डाटा को आसानी से एक्सचेंज, स्टोर और प्रोसेस करने के लिए करते हैं। 
 
-### CSV फ़ाइल से डेटा पढ़ना:
+## How to: (कैसे करें:)
+
+Fish Shell में CSV फाइल को पढ़ने, लिखने और प्रोसेस करने के उदाहरण:
+
+```Fish Shell
+# CSV फ़ाइल के हर लाइन को पढ़ें
+cat data.csv | while read line
+    echo $line
+end
+
+# CSV से पहला कॉलम निकालना
+cut -d ',' -f1 data.csv
+
+# CSV को sort करना दूसरे कॉलम के आधार पर
+sort -t ',' -k2,2 data.csv
 ```
-set -x data (curl "https://example.com/data.csv" | string split -r --delimiter "\n" )
+
+सैंपल आउटपुट:
+
+```Fish Shell
+नाम,उम्र,शहर
+रोहन,25,दिल्ली
+आयुषी,22,मुंबई
 ```
-यह उदाहरण आपको CSV फाइल से डेटा पढ़ने की जाँच करने में मदद करेगा।
 
-### CSV फ़ाइल में नया डेटा लिखना:
-```
-echo "India, Delhi, 11.1" >| data.csv
-```
-यह उदाहरण आपको CSV फाइल में नया डेटा लिखने की जाँच करने में मदद करेगा।
+## Deep Dive (गहराई में जानकारी):
 
-## डीप डाइव:
-CSV का विकास 1972 में IBM ने शुरू किया था। वर्तमान में यह बहुत प्रचलित है क्योंकि यह खुला सॉफ्टवेयर है जिसके कई प्रोग्रामिंग भाषाओं में पोर्ट हुआ है। CSV का एक प्रमुख विकल्प XML है। CSV फ़ाइलें मानक पाठ फ़ाइलें होती हैं जो पाठ की श्रृंखलाओं को कोई नियम नहीं बताती हैं।
+CSV फॉर्मेट 1972 में IBM Fortran (level G) कंपाइलर में पेश की गई थी। एक्सेल और Google Sheets जैसे टूल्स ने CSV को और बढ़ावा दिया। इसके विकल्प के रूप में JSON, XML, और YAML हैं, जो अधिक स्ट्रक्चर्ड डाटा को हैंडल करते हैं। Fish Shell में CSV की प्रोसेसिंग `awk`, `grep`, `cut` जैसे कमांड-लाइन टूल्स का उपयोग कर सिंपल हो जाती है।
 
-## अन्य स्रोत:
-यदि आपको CSV फ़ाइलों के साथ और विस्तार से काम करना है, तो आप आसानी से पायथन बिल्ट-इन CSV मॉड्यूल का इस्तेमाल कर सकते हैं। आप CSV मोड्यूल के विशेष लाइब्रेरी को भी जा सकते हैं।
+## See Also (और भी जानें):
 
-## और भी देखें:
-- [फिश शैल दस्तावेज़ीकरण](https://fishshell.com/docs/current/index.html)
-- [IBM पर CSV का ब्लॉग पोस्ट](https://www.ibm.com/blogs/labs-in-india/primer-hadoop-csv-format/)
+- CSV प्रोसेसिंग के लिए अधिक Fish Shell उदाहरण: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- CSV फाइल फॉर्मेट की जानकारी: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- awk, grep, और cut कमांड्स के ट्यूटोरियल्स: [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)

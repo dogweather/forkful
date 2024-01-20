@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Clojure recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error, also known as stderr, is a way for programmers to output error messages or log information separate from regular program output, which is usually sent to standard output or stdout. By writing to stderr, programmers can differentiate between normal output and error messages, making it easier to identify and troubleshoot issues in their code.
+Writing to standard error (`stderr`) is a way to output error messages and diagnostics. Programmers do it to separate these from regular output (`stdout`), which makes debugging and logging easier.
 
 ## How to:
+To write to standard error in Clojure, you'd use `binding` with `*err*`. Here's a quick example:
+
 ```Clojure
-;; To write to stderr, you can use the `pr` function.
-(pr "This is an error message") ;; Outputs "This is an error message" to stderr
-
-(prn "This is another error message") ;; Outputs "This is another error message" to stderr with a newline
-
-;; You can also specify the output stream explicitly by using the `pst` function.
-(pst err "Error message with explicit output stream") ;; Outputs "Error message with explicit output stream" to stderr
-
-;; To redirect stdout to stderr, you can use `set!` on the `*out*` global variable.
-(set! *out* *err*) ;; From this point on, all output sent to stdout will be redirected to stderr
-
-;; To revert back to the original stdout, simply set *out* to the original value.
-(set! *out* (io/writer System/out)) ;; Sets *out* to the original value of System/out
-
-;; Finally, you can also use the `eprintln` function to write error messages directly to stderr.
-(eprintln "Another error message") ;; Outputs "Another error message" to stderr
-
+(binding [*err* *out*]
+  (println "This will go to standard error"))
 ```
 
-## Deep Dive:
-Writing to stderr has been a standard practice in programming for a long time, with its origins dating back to the early Unix systems. Before the introduction of standard streams, error messages and regular output were all mixed together, making it difficult to distinguish between the two. By separating them, programmers could easily identify and troubleshoot errors.
+Sample output (in your shell):
 
-An alternative to writing to stderr is using logging frameworks or libraries, which provide more advanced functionality such as formatting and filtering of log messages. However, writing to stderr is still a useful practice, especially in scenarios where setting up a logging framework may not be feasible, such as in small scripts or command-line tools.
+```
+$ clj your_script.clj 2> error.log
+$ cat error.log
+This will go to standard error
+```
 
-In Clojure, writing to stderr is achieved by using the `pr` and `prn` functions, which are part of the Clojure's core library. By default, `pr` outputs to *out*, while `prn` outputs to *out* followed by a newline character. To output to stderr explicitly, you can use the `pst` function.
+This snippet binds `*err*` to `*out*`, which is standard output, so you can see what would typically go to `stderr`.
 
-## See Also:
-- [https://clojure.org/reference/io] for more information on Clojure's IO functions
-- [https://en.wikipedia.org/wiki/Standard_streams] for a deeper dive into standard streams in programming
-- [https://stackoverflow.com/questions/5828872/why-do-we-output-error-to-stderr] for a discussion on why programmers output errors to stderr.
+## Deep Dive
+Historically, Unix systems featured two separate output streams, `stdout` and `stderr`, for different data types. In Clojure, `*out*` refers to `stdout` and `*err*` to `stderr`. Alternatives to `binding` include using Java interop directly (e.g., `(.println System/err "message")`). Implementation-wise, `*err*` is a dynamic var, allowing for thread-local bindings — a nuance that can affect how errors are logged in concurrent applications.
+
+## See Also
+- Clojure Docs on `*err*`: https://clojuredocs.org/clojure.core/*err*
+- Clojure Docs on `binding`: https://clojuredocs.org/clojure.core/binding
+- Java API for `PrintStream` (which `System/err` is): https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html
+
+For a broader understanding of standard streams, the following can also be useful:
+- Wikipedia on Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
+- The Unix standard streams documentation: `man stdio`

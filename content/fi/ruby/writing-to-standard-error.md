@@ -1,7 +1,7 @@
 ---
-title:                "Tallentaminen standardivirheeseen"
-html_title:           "Ruby: Tallentaminen standardivirheeseen"
-simple_title:         "Tallentaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Mikä & Miksi?**
+## What & Why?
+Standard error (stderr) on Rubyssa tapa raportoida virheet ja varoitukset. Ohjelmoijat kirjoittavat stderr:ään, koska se auttaa erottamaan normaalit logiviestit todellisista ongelmista.
 
-Kirjoittaminen standardivirheeseen on yksinkertainen tapa näyttää ohjelman virhetilanteet. Monet ohjelmoijat käyttävät tätä tapaa tunnistaakseen ja korjatakseen koodissa olevia virheitä. 
+## How to:
+Kirjoittaminen stderr:ään on yksinkertaista. Käytä `$stderr.puts` tai `warn`-metodia.
 
-**Kuinka:**
-
-```ruby
-puts "Tämä tulostetaan standardilähtöön"
-
-$stderr.puts "Tämä tulostetaan standardivirheeseen"
+```Ruby
+# Esimerkki stderr-kirjoittamisesta
+$stderr.puts "Tämä on virheilmoitus"
+warn "Tämä on toinen tapa kirjoittaa virheilmoituksiin"
 ```
 
-**Syvä Syvennys:**
+Tulostuu:
+```
+Tämä on virheilmoitus
+Tämä on toinen tapa kirjoittaa virheilmoituksiin
+```
 
-Kirjoittaminen standardivirheeseen on yleinen tapa käsitellä virheitä Ruby-ohjelmoinnissa. Ennen standardilähtön käyttöönottoa, standardivirhe oli ainoa keino tunnistaa ja korjata virheitä ohjelmassa. Nykyään on olemassa myös muita tapoja käsitellä virheitä, kuten exception-käsittely. Standardivirheellä on kuitenkin edelleen tärkeä rooli koodin virheitä korjattaessa.
+## Deep Dive
+`stderr` on UNIX-järjestelmistä peräisin oleva perinne, erottaa standarditulosteen (stdout) virheilmoituksista. Rubyssa voit myös ohjata `stderr`-virtaa tiedostoon tai toiseen kohteeseen. `warn` on metodi, joka oletusarvoisesti kirjoittaa stderr:iin ja on käytännöllinen, koska se voidaan konfiguroida ohittavaksi viestit asettamalla `$VERBOSE = nil`.
 
-**Katso myös:**
+```Ruby
+# Ohjaa stderr tiedostoon
+File.open('virheet.log', 'w') do |file|
+  $stderr.reopen(file)
+  $stderr.puts "Tämä virhe menee tiedostoon."
+end
+```
 
-[RubyDocs: https://ruby-doc.org/core-3.0.0/IO.html#method-c-e](https://ruby-doc.org/core-3.0.0/IO.html#method-c-e)
-
-[RubyGuides: https://www.rubyguides.com/2019/05/working-with-standard-errors/](https://www.rubyguides.com/2019/05/working-with-standard-errors/)
+## See Also
+- Ruby-dokumentaatio virheiden käsittelystä: [https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode](https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode)
+- Stack Overflow -keskusteluja Ruby `stderr`: [https://stackoverflow.com/search?q=ruby+stderr](https://stackoverflow.com/search?q=ruby+stderr)
+- UNIX-ohjeet ohjaukseen: [https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

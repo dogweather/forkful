@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "PHP: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -11,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+YAML är ett format för datautbyte, enkelt för människor att läsa och skriva. Programmerare använder YAML för konfigurationsfiler, datautbyte mellan språk och eftersom det är mer lättläst än XML eller JSON för komplex data.
 
-YAML är ett utvidgbart dataformat som används för att representera data i en läsbar textform. Programmerare använder det ofta för att strukturera, lagra och överföra data mellan olika system och programmeringsspråk på ett enkelt och standardiserat sätt.
-
-## Så här:
-
-Ett grundläggande exempel på hur man arbetar med YAML i PHP:
+## Så här gör du:
+För att jobba med YAML-i PHP behöver du `yaml`-tillägget. Här är ett exempel på hur du läser och skriver YAML:
 
 ```PHP
 <?php
-// Skapa ett YAML-dokument
-$myYaml = "namn: John Smith\nålder: 35\nfavoritfärg: blå";
+// Förutsätter att yaml-tillägget är installerat
+$yamlStr = "
+en: Hello World
+sv: Hej Världen
+";
 
-// Konvertera till ett PHP-objekt
-$myObj = yaml_parse($myYaml);
+// Läsa YAML till en array
+$data = yaml_parse($yamlStr);
+print_r($data);
 
-// Hämta och skriv ut data från objektet
-$namn = $myObj['namn'];
-echo "Mitt namn är $namn. ";
-
-$ålder = $myObj['ålder'];
-echo "Jag är $ålder år gammal. ";
-
-$färg = $myObj['favoritfärg'];
-echo "Min favoritfärg är $färg.";
+// Skapa en YAML-sträng
+$array = ['en' => 'Goodbye World', 'sv' => 'Hej då Världen'];
+$yaml = yaml_emit($array);
+echo $yaml;
 ?>
 ```
 
-Detta kommer att ge följande utmatning:
+Du bör se något liknande:
+
+```PHP
+Array
+(
+    [en] => Hello World
+    [sv] => Hej Världen
+)
+en: Goodbye World
+sv: Hej då Världen
 ```
-Mitt namn är John Smith. Jag är 35 år gammal. Min favoritfärg är blå.
-```
 
-## Djupdykning:
+## Fördjupning
+YAML (YAML Ain't Markup Language) började användas tidigt på 2000-talet. Det står i kontrast till XML och JSON men behåller interoperabilitet. Tillägget `yaml` för PHP är inte standard, så det måste installeras manuellt. Alternativ för att jobba med YAML i PHP inkluderar också bibliotek som Symfony's Yaml-komponent.
 
-YAML utvecklades först 2001 av Clark Evans och Ingy döt Net, men populariteten har vuxit i takt med ökningen av webbapplikationer och API-erfarenheter. Andra liknande format som används för att representera data är XML och JSON, men YAML har som mål att vara enklare och lättare att läsa och skriva än dessa. I PHP finns det också många alternativ för att arbeta med YAML som till exempel symfony/yaml och pecl /yaml, men den inbyggda funktionen yaml_parse är det enklaste sättet att komma igång.
-
-## Se även:
-
-Mer information om YAML och hur man arbetar med det i PHP finns tillgängligt på följande länkar:
-- [Officiell YAML-webbplats] (https://yaml.org)
-- [PHP dokumentation för yaml_parse] (https://www.php.net/manual/en/function.yaml-parse.php)
-- [Symfony Yaml-komponent] (https://symfony.com/doc/current/components/yaml.html)
-- [PECL YAML] (https://pecl.php.net/package/yaml)
+## Se även
+- Officiella YAML-webbplatsen: https://yaml.org
+- PHP:s yaml-tillägg: https://pecl.php.net/package/yaml
+- Symfony's Yaml-komponent: https://symfony.com/doc/current/components/yaml.html

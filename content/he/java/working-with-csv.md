@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ csv."
-html_title:           "Java: עבודה עם קובץ csv."
-simple_title:         "עבודה עם קובץ csv."
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -11,53 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+עבודה עם CSV מובילה לקריאה וכתיבה של נתונים בפורמט פשוט, תוך כדי שמירה על סדר שורות ועמודות. מתכנתים עושים זאת כדי להחליף נתונים בין שירותים שונים ולעבד אותם בקלות.
 
-עבודה עם קבצי CSV היא חלק חשוב מתהליך התכנות. CSV היא פירמוט פשוט לקובץ המכיל נתונים מפורסמים ביותר, ויוצא דופן לצורך עבודה ושמירת נתונים. תוכניות מכילות כמות עצומה של מידע, לכן עבודה עם פירמוט פשוט כזה הוא חובה עבור תכניות רבות.
-
-## איך לעבוד?
-
-קבצי CSV ניתנים לקריאה וכתיבה בעזרת קוד Java באמצעות מספר ספריות. הנה דוגמה של קוד הקורא קובץ CSV ומדפיס את הנתונים שבתוכו:
-
-```Java
-// הצהרה על הספריות הנדרשות
+## איך לעשות:
+```java
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 
-import au.com.bytecode.opencsv.CSVReader;
-
-public class CSVExample {
-  public static void main(String[] args) throws IOException {
-    // הגדרת קורא CSV וקריאת הקובץ
-    CSVReader reader = new CSVReader(new FileReader("example.csv"));
-    // הצגת הנתונים בכל שורה המכילה מערך של תאים
-    List<String[]> rows = reader.readAll();
-    for (String[] row : rows) {
-      for (String cell : row) {
-        System.out.print(cell + " ");
-      }
-      System.out.println();
+public class ReadCSVExample {
+    public static void main(String[] args) {
+        String path = "data.csv";
+        String line = "";
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                // כאן ניתן לעבד כל שורה מהCSV
+                System.out.println("שם: " + values[0] + ", גיל: " + values[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
-
-כאשר נריץ תוכנית זו נקבל את הפלט הבא:
-
+תוצאה:
 ```
-First name Last name Email Address
-John Smith john@example.com
-Jane Doe jane@example.com
-Bob Johnson bob@example.com
+שם: טל, גיל: 30
+שם: אביב, גיל: 22
 ```
 
-## חיפוש עמוק
+## טבילה עמוקה
+CSV, או ערכים מופרדים בפסיקים, החל כפורמט בשנות ה-70. פורמטים חלופיים כוללים JSON וXML, אך CSV נשאר נפוץ בזכות פשטותו. בתיקון טעויות או פירוק נתונים, חשוב לשים לב למקרים שבהם ישנם פסיקים, מרכאות או שורות חדשות בתוך ערך. עלולים להיות צורך בספרייה לעיבוד מיוחד כמו Apache Commons CSV או opencsv.
 
-פירמוט ה-CSV נוצר בשנות ה-70 כחלק מהסטנדרט של חברת IBM ואינו מסובך במיוחד. יחד עם זאת, ישנן אלטרנטיבות לפירמוט זה הניתנות לשימוש בתכנות, כגון JSON ו-XML. בכל זאת, קבצי CSV נהנים מפופולאריות רבה ושימושם נמצא בתכניות רבות.
+## ראו גם
 
-טיפול בקבצי CSV מבוסס על תקנים ספציפיים וקיימים מספיק כדי להתאים לצרכי התכנות. בנוסף, ישנן ספריות רבות המתאימות לצרכי יצירת, קריאה ושמירה של קבצי CSV בקוד Java. ניתן גם לכתוב קוד יעיל יותר עבור ספריות אלה בעצמנו, את המרבעת המבואות של אובייקטים כמו Table או Record.
-
-## ראה גם
-
-- [תיעוד רשמי לספריית opencsv](http://opencsv.sourceforge.net/)
-- [תיעוד רשמי לספריית Apache Commons CSV](https://commons.apache.org/proper/commons-csv/)
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- OpenCSV: http://opencsv.sourceforge.net/
+- מדריך לCSV בJava: https://www.baeldung.com/java-csv

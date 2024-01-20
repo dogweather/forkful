@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Elixir: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Skriving av tekstfiler er en grunnleggende måte for programmere å lagre og organisere data på. Tekstfiler er en enkel og leselig måte å lagre tekstbaserte data, noe som gjør det enkelt for utviklere å lagre og behandle informasjon.
+## Hva & Hvorfor?
+Å skrive en tekstfil er å lagre data til en fil som leses som tekst. Programmerere gjør dette for å lagre konfigurasjoner, resultater eller for å dele data mellom programmer.
 
 ## Hvordan:
+```Elixir
+# Skrive til en fil
+File.write!("hello.txt", "Hei, verden!")
+
+# Append til en fil
+File.write!("hello.txt", "\nLegg til denne linjen.", mode: :append)
 ```
-Elixir:
-# Å skrive til en tekstfil:
-File.write("minFil.txt", "Dette er teksten som blir skrevet til filen.")
-
-# Sjekke om skrivingen var vellykket:
-{resultat, feil} = File.write("minFil.txt", "Nye data")
-if resultat == :ok do
-  IO.puts "Skrivingen var vellykket!"
-else
-  IO.puts "Det oppstod en feil: #{feil}"
-end
+Resultat:
+```
+Hei, verden!
+Legg til denne linjen.
 ```
 
-## Dykk dypere:
-Tekstfiler har vært brukt i programmering siden tidlig på 60-tallet, og er fortsatt en grunnleggende og nyttig måte å lagre data på. Alternativene til å skrive til tekstfiler inkluderer databasehåndtering og å bruke APIer for å lagre data i skyen. Implementeringsdetaljene avhenger av operativsystemet, men de fleste moderne programmeringsspråk har innebygde funksjoner for å skrive til tekstfiler.
+## Dybdesynk:
+Historisk sett brukte programmerere lavnivåsystemoperasjoner for filskriving. Alternativer inkluderer databasebruk eller nettverksbaserte løsninger. Implementasjonsdetaljer for filskriving i Elixir håndterer binær og UTF-8 koding, og sikrer kompatibilitet med forskjellige operativsystemer.
 
-## Se også:
-- [Elixir Dokumentasjon for tekstfilhåndtering] (https://hexdocs.pm/elixir/File.html)
-- [Sammenligning av filbehandling i ulike programmeringsspråk] (https://en.wikipedia.org/wiki/Comparison_of_file_systems)
+## Se Også:
+- [Elixir's File module documentation](https://hexdocs.pm/elixir/File.html)
+- [Intro to Elixir for new programmers](https://elixir-lang.org/getting-started/introduction.html)
+- [IO and the file system in Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

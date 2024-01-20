@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Java: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Java"
 category:             "Java"
@@ -10,34 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pisanie testów to tworzenie kodu sprawdzającego poprawność innego kodu. Programiści to robią, by zapewnić jakość aplikacji, wyłapać błędy i uniknąć przyszłych problemów.
 
-Pisanie testów polega na tworzeniu kodu, który sprawdza, czy nasz program działa poprawnie. Programiści robią to w celu upewnienia się, że ich kod działa prawidłowo i zapobieganiu błędom w przyszłości.
+## How to: (Jak to zrobić?)
+Testowanie w Javie często wykonujemy z użyciem JUnit. Poniżej znajdziesz prosty test jednostkowy oraz wynik jego działania:
 
-## Jak to zrobić:
+```Java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-Aby napisać test w Javie, musimy użyć klas z pakietu ```org.junit```. Najpierw musimy zainicjować klasę testową używając adnotacji ```@Test```, a następnie napisać kod, który sprawdza czy nasza metoda zwraca oczekiwany wynik. Na przykład:
+public class CalculatorTest {
 
-```
-@Test
-public void testAddition() {
-  Calculator calc = new Calculator();
-  int result = calc.add(2, 3);
-  assertEquals(5, result);
+    @Test
+    public void shouldAddTwoNumbers() {
+        Calculator calculator = new Calculator();
+        Assertions.assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
+    }
+}
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
 
-Output będzie wyglądał następująco:
+Po uruchomieniu testu, jeśli wszystko jest OK, output będzie wyglądał tak:
 
+```plaintext
+Test run finished after 40 ms
+[         1 containers found      ]
+[         0 containers skipped    ]
+[         1 containers started    ]
+[         1 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
 ```
-OK (1 test)
-```
 
-## Głębsze zanurzenie:
+## Deep Dive (Dogłębna analiza)
+Testy jednostkowe (ang. *unit tests*) pojawiły się jako część ekstremalnego programowania (XP) w latach 90. Alternatywą jest TDD (ang. *Test-Driven Development*), gdzie najpierw pisze się testy a dopiero potem kod. Ważne jest, by test był niezależny i powtarzalny. Utrudnia to zastosowanie testów do metod z efektami ubocznymi, jak np. zapis do bazy danych.
 
-Pisanie testów ma swoje korzenie w metodyce programowania zwanej Test Driven Development (TDD), w której najpierw piszemy testy, a potem dopiero kod. Alternatywą dla testów jednostkowych jest testowanie funkcjonalne, gdzie sprawdzamy zachowanie całego systemu jako całości. W implementacji testów, warto zwrócić uwagę na dostępne narzędzia, takie jak JUnit czy TestNG.
-
-## Zobacz też:
-
-- Oficjalna dokumentacja JUnit: https://junit.org/junit5/docs/current/user-guide/
-- Przykładowe testy w Javie: https://github.com/junit-team/junit5-samples
+## See Also (Zobacz również)
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Martin Fowler on Unit Testing](https://martinfowler.com/bliki/UnitTest.html)

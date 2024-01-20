@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Elixir: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-JSON काम करना क्या है और और एलिक्सियर प्रोग्रामर इसे क्यों करते हैं, इसका एक विशिष्ट तरीके से वर्णन है। 
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक हल्का फॉर्मेट है जिससे डेटा आदान-प्रदान में आसानी होती है। Elixir प्रोग्रामर्स JSON का उपयोग करते हैं क्योंकि यह ह्यूमन और मशीन दोनों के लिए पढ़ने में सरल होता है, और वेब APIs के साथ इंटरैक्शन में बहुत मदद करता है।
 
-JSON (जेसन) एक सामान्य डेटा फॉर्मेट है जो व्यावसायिक उपयोग के लिए पॉपुलर है। यह एक स्ट्रक्चर्ड टेक्स्ट फॉर्मेट है जो अलग-अलग प्रोग्रामिंग भाषाओं में उपयोग किया जा सकता है। एलिक्सियर के साथ काम करने के लिए, आपको हमेशा JSON को डेफिन करना होगा। 
-
-## कैसे करें?
-एलिक्सियर में JSON को काम करने के लिए आप कुछ स्टेप्स को फॉलो कर सकते हैं। 
+## How to: (कैसे करें:)
+Elixir में JSON से काम करने के लिए, `jason` हेक्स पैकेज आमतौर पर उपयोग किया जाता है। नीचे कुछ उदाहरण हैं:
 
 ```elixir
-# JSON फॉर्मेट में पार्स करें 
-json = "{\"name\": \"John\", \"age\": 30}"
-parsed_json = Jason.decode!(json)
-# प्रिंट करें 
-IO.puts(parsed_json["name"])
-# "John"
+# Jason पैकेज को अपने mix.exs फाइल में जोड़ें
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
+
+# JSON स्ट्रिंग को Elixir मैप में परिवर्तित करना
+json_string = "{\"name\": \"Ajay\", \"age\": 30}"
+{:ok, data} = Jason.decode(json_string)
+IO.inspect(data)
+
+# Elixir मैप को JSON स्ट्रिंग में परिवर्तित करना
+data_to_encode = %{"name" => "Vijay", "age" => 25}
+{:ok, json_output} = Jason.encode(data_to_encode)
+IO.puts(json_output)
 ```
 
-```elixir
-# मान बदलें 
-new_json = %{parsed_json | "age": 35}
-# परिणाम में प्रिंट करें 
-IO.inspect(new_json)
-# %{"name": "John", "age": 35}
+Sample Output:
+```
+%{"age" => 30, "name" => "Ajay"}
+{"age":25,"name":"Vijay"}
 ```
 
-```elixir
-# JSON को स्ट्रिंग में कन्वर्ट करें 
-json_string = Jason.encode!(new_json)
-IO.puts(json_string)
-# {"name": "John", "age": 35}
-```
+## Deep Dive (गहराई से समझिए):
+ऐतिहासिक रूप से, JSON को डग क्रॉकफोर्ड ने प्रोमोट किया, और यह XML का एक लाइटवेट अल्टरनेटिव बन गया। इलिक्सिर में, `poison` और `jsx` जैसे अन्य लाइब्रेरीज भी हैं जो JSON पार्सिंग सपोर्ट करते हैं। लेकिन `jason` तेज़ और मेंटेन करने में आसान होने के कारण पसंद की जाती है। इम्प्लीमेंटेशन में कोई Elixir डेटा स्ट्रक्चर को JSON में ट्रांसफॉर्म करता है और उल्टा भी।
 
-## गहराई में जाएँ 
-JSON की गहराई में जाने के लिए, आपको इसके इतिहास, अल्टरनेटिव और एलिक्सियर में इसके इम्प्लीमेंटेशन डिटेल्स को समझने की आवश्यकता होगी। 
-
-### इतिहास
-JSON २००१ में डब्ल्यूएचओ ने डेवलप किया था। यह अपनी सरलता और ओपन स्टैंडर्ड के कारण पॉपुलर हो गया है। आजकल, सभी बड़े वेब एप्लीकेशन और सर्विसेज JSON को सपोर्ट करते हैं। 
-
-### अल्टरनेटिव
-अल्टरनेटिव डेटा फॉर्मेट में XML, CSV और YAML शामिल है। हालांकि, JSON की सरलता और ओपन स्टैंडर्ड के कारण, लोगों को इसका उपयोग पसंद है। 
-
-### इम्प्लीमेंटेशन डिटेल्स
-JSON को एएसओएफ क्योडिंग स्टैंडर्ड के अनुसार स्पेसिफाइड एक्स्पिनेंशन फॉर्मेट में परिवर्तित किया जाता है। एलिक्सियर में, Jason लाइब्रेरी इसके प्रसंस्करण को करती है और PieJSON पैकेज इसे अधिक संभावित बनाता है। 
-
-## अन्य स्रोत देखें 
-- Jason की ऑफिशियल डॉक्यूमेंटेशन (https://hexdocs.pm/jason/) 
-- PieJSON का विकास कोड (https://github.com/chrismccord/poison/)
+## See Also (और देखें):
+- Elixir के `jason` पैकेज का डॉक्युमेंटेशन: [https://hexdocs.pm/jason/](https://hexdocs.pm/jason/)
+- JSON स्पेसिफिकेशन: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

@@ -1,7 +1,7 @@
 ---
-title:                "「JSONで作業する」"
-html_title:           "PHP: 「JSONで作業する」"
-simple_title:         "「JSONで作業する」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## What & Why? (何となぜ？)
 
-JSONを扱うこととは、データのやりとりをする際に使用する形式の1つです。プログラマーたちはJSONを使用する理由として、データを効率的に取り扱い、他の形式よりも簡単に使えることが挙げられます。
+JSONはデータ交換のフォーマット。読みやすく、機械が解析しやすい。PHPプログラマーはAPI連携や設定ファイルなどでJSONを使う。
 
-## 方法：
+## How to: (方法)
 
-PHPでJSONを扱う方法は簡単です。まず、JSONをパースするために利用できる「json_decode」関数を使います。例えば、以下のようにコードを書くことができます。
-
+### JSONをエンコードする：
 ```PHP
 <?php
-$json = '{"name":"John", "age":30, "city":"New York"}';
-$decoded = json_decode($json);
-echo $decoded->name; // John
-echo $decoded->age; // 30
-echo $decoded->city; // New York
+$data = ['name' => 'Taro', 'age' => 25];
+$json = json_encode($data);
+echo $json;
 ?>
 ```
 
-```json_decode```関数はJSONデータをオブジェクト型に変換し、指定したプロパティを取得することができます。
+出力：
+```JSON
+{"name":"Taro","age":25}
+```
 
-もしJSONデータを配列型で取得したい場合は、```json_decode($json, true)```というように引数に```true```を指定します。
-
-例えば、以下のようにコードを書くことができます。
-
+### JSONをデコードする：
 ```PHP
 <?php
-$json = '{"name":"John", "age":30, "city":"New York"}';
-$decoded = json_decode($json, true);
-echo $decoded["name"]; // John
-echo $decoded["age"]; // 30
-echo $decoded["city"]; // New York
+$json = '{"name":"Taro","age":25}';
+$data = json_decode($json);
+print_r($data);
 ?>
 ```
 
-## 深堀り：
+出力：
+```
+stdClass Object
+(
+    [name] => Taro
+    [age] => 25
+)
+```
 
-JSONはJavaScript Object Notationの略であり、JavaScriptでデータを格納するための軽量なデータフォーマットです。1999年にJavaScriptの開発者によって作成されましたが、現在では広く使われるようになっています。
+### JSONデコード結果を連想配列にする：
+```PHP
+<?php
+$json = '{"name":"Taro","age":25}';
+$data = json_decode($json, true);
+print_r($data);
+?>
+```
 
-JSONの代替としては、XMLやYAMLなどのデータフォーマットがありますが、JSONのシンプルさと扱いやすさから、プログラマーたちの間で幅広く使用されています。
+出力：
+```
+Array
+(
+    [name] => Taro
+    [age] => 25
+)
+```
 
-また、PHPに限らず、HTMLやJavaScriptなど他のプログラミング言語でも同様にJSONを扱うことができます。
+## Deep Dive (掘り下げ)
 
-## 関連情報：
+JSON（JavaScript Object Notation）は2001年に登場。軽量であるため、XMLの代わりとして使われることが多い。PHPでは`json_encode()`と`json_decode()`を使い、エンコードやデコードを行う。PHP 5.2.0から標準でJSON機能が追加された。連想配列としてデコードするかオブジェクトとしてデコードするかは、`json_decode()`の第二引数で制御する。
 
-- [PHP公式ドキュメント：json_decode](https://www.php.net/manual/ja/function.json-decode.php)
-- [JSONの歴史について知る](https://ja.wikipedia.org/wiki/JavaScript_Object_Notation)
+## See Also (関連情報)
+
+- PHPの公式ドキュメントのJSON関数: [PHP: JSON Functions](https://www.php.net/manual/en/ref.json.php)
+- JSONについてのより詳細な情報: [JSON.org](https://www.json.org/json-en.html)

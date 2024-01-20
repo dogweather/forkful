@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive til standardfeil"
-html_title:           "TypeScript: Å skrive til standardfeil"
-simple_title:         "Å skrive til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Hva & Hvorfor?"
-Skriving til standard error er en måte for programmerere å kommunisere med brukeren på når noe uventet eller feil skjer i programmet. Dette gjøres ved å sende en feilmelding til standard error-strømmen i stedet for standard output-strømmen. Dette tillater brukeren å se nøyaktig hvor og hvorfor feilen oppsto.
+## What & Why?
+Standard error (stderr) er en output-strøm for å skrive feilmeldinger og logge. Det gjør at vi kan skille vanlig output fra feil og diagnostisk informasjon.
 
-"## Hvordan:"
-```TypeScript
-console.error("Feil oppsto ved linje 12: Ugyldig input"); 
-// Output: Feil oppsto ved linje 12: Ugyldig input 
-```
-Ved å bruke console.error() i TypeScript, kan vi sende en spesifikk feilmelding til standard error-strømmen. Dette vil bli logget og synlig for brukeren, i tillegg til eventuelle andre handlinger som er satt opp for å håndtere feilen.
+## How to:
+For å skrive til stderr i TypeScript, bruk `process.stderr.write` for strenger eller `console.error` for mer komplekse meldinger.
 
 ```TypeScript
-let tall: number = "tre"; 
-// Output: error TS2322: Type '"tre"' is not assignable to type 'number'.
+// Skriver en enkel feilmelding til stderr
+process.stderr.write('En feil har oppstått!\n');
+
+// Bruker console.error for å skrive en feilmelding med variabler
+const errorObj = { id: 7, message: 'Ugyldig operasjon' };
+console.error('Detaljert feil:', errorObj);
+
+// Eksempel output til terminalen
+// En feil har oppstått!
+// Detaljert feil: { id: 7, message: 'Ugyldig operasjon' }
 ```
-I denne koden prøver vi å tildele en streng til en variabel som er definert som et tall. TypeScript vil da automatisk logge en feilmelding til standard error-strømmen og informere oss om hvilken linje og hvilken typefeil som har oppstått.
 
-"## Dypdykk:"
-Skriving til standard error har vært en vanlig praksis i programmering i mange år. Det tillater programvaren å fortsette å kjøre selv om feil oppstår, samtidig som den gir nødvendig informasjon til brukeren for å finne og rette opp feilen. Alternativet til å skrive til standard error er å bruke standard output, som i tillegg til å bli logget også kan bli brent til en fil for senere bruk.
+## Deep Dive
+Standard output (stdout) og standard error (stderr) stammer fra Unix og historiske operativsystemer, hvor de skapte skille mellom normal data og feildata. Når du skriver feilmeldinger til stderr, kan brukere omdirigere disse separat fra standard output. I node.js, som TypeScript ofte kjører på, er `process.stderr` en skrivbar strøm, mens `console.error` også skriver til stderr, men håndterer flere datatyper og gir formattering.
 
-Implementeringen av å skrive til standard error kan variere avhengig av programmeringsspråk, men i TypeScript kan dette gjøres ved hjelp av console.error() -funksjonen som nevnt ovenfor.
-
-"## Se også:"
-- ["Console object documentation in TypeScript"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#object-spread-and-rest-for-javascript-types)
+## See Also
+- Node.js dokumentasjon på `console.error`: [Node.js console.error](https://nodejs.org/api/console.html#consoleerrordata-args)
+- Node.js dokumentasjon på `process.stderr`: [Node.js process.stderr](https://nodejs.org/api/process.html#processstderr)
+- Guide til strømmer (streams) i node.js: [Stream Handbook](https://nodesource.com/blog/understanding-streams-in-nodejs/)

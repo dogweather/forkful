@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Python: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,30 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Escribir un archivo de texto en Python significa almacenar datos en un formato legible. Los programadores lo hacen para guardar configuraciones, resultados de programas, o compartir información entre distintos procesos.
 
-Escribir un archivo de texto es simplemente guardar información en un archivo legible por el programa. Es una forma práctica de almacenar datos para que puedan ser utilizados por programas de computadora. Los programadores utilizan textos para crear bases de datos, generar informes y automatizar tareas.
+## Cómo hacerlo:
+Crear y escribir en un archivo es sencillo:
 
-## ¿Cómo hacerlo?
+```python
+# Abrir un archivo para escritura
+with open('ejemplo.txt', 'w') as archivo:
+    archivo.write("Hola, mundo!")
 
-Para escribir un archivo de texto en Python, primero necesitamos abrir el archivo utilizando la función open() y especificar la ubicación y el nombre del archivo. Luego, utilizamos el método write() para agregar contenido al archivo. Finalmente, cerramos el archivo con la función close() para asegurarnos de que todos los cambios se guarden correctamente.
-
-```Python
-archivo = open("mi_archivo.txt", "w") # Abrir un archivo en modo escritura
-archivo.write("¡Hola, mundo!") # Agregar contenido al archivo
-archivo.close() # Cerrar el archivo
+# Verificar el contenido
+with open('ejemplo.txt', 'r') as archivo:
+    print(archivo.read())
 ```
 
-Si deseamos escribir en un archivo existente sin sobrescribir su contenido, podemos abrirlo en modo de agregado ("a") en lugar de modo escritura ("w").
+Salida:
 
-## Profundizando
+```
+Hola, mundo!
+```
 
-Escribir archivos de texto ha sido una tarea común en la programación de computadoras desde los inicios de la informática. Antes, los lenguajes de programación requerían que se escribieran códigos específicos para manejar archivos de texto, pero con el tiempo, se han desarrollado librerías y módulos que facilitan esta tarea. Algunas alternativas para escribir archivos de texto en Python son los módulos csv y shutil, que ofrecen funciones específicas para la manipulación de archivos de texto.
+Para añadir texto al final de un archivo existente, utiliza el modo 'a':
 
-También es importante mencionar que existen diferentes modos de apertura de archivos, como leer ("r"), añadir ("a") y binario ("b"). Es importante seleccionar el modo adecuado para la tarea que estamos realizando.
+```python
+# Añadir más contenido al archivo existente
+with open('ejemplo.txt', 'a') as archivo:
+    archivo.write("\nAdiós, mundo!")
 
-## Véase también
+# Verificar el contenido actualizado
+with open('ejemplo.txt', 'r') as archivo:
+    print(archivo.read())
+```
 
-Documentación oficial de Python sobre escritura de archivos: https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files
+Salida:
 
-Tutorial en español sobre escritura de archivos en Python: https://recursospython.com/guias-y-manuales/escribir-archivos-con-python/
+```
+Hola, mundo!
+Adiós, mundo!
+```
+
+## Profundizando:
+Históricamente, escribir en archivos de texto ha sido una de las primeras formas de persistencia de datos en computación. Alternativas modernas incluyen bases de datos o almacenamiento en la nube, pero los archivos de texto permanecen populares por su simplicidad. A nivel de implementación, Python maneja la escritura de archivos utilizando las funciones incorporadas `open()`, `write()` y `close()`, manejados automáticamente con el contexto `with` para garantizar el cierre del archivo.
+
+## Véase También:
+Para más información sobre manejo de archivos en Python, visita:
+- Documentación oficial de Python sobre E/S de archivos: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Tutorial en Real Python: https://realpython.com/read-write-files-python/
+- W3Schools - Python File Handling: https://www.w3schools.com/python/python_file_handling.asp

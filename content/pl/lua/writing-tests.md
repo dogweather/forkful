@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Lua: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,46 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego?
+## What & Why?
+Testy w programowaniu to skrypty sprawdzające poprawność działania kodu. Programiści je piszą, aby zapewnić jakość, wykryć błędy i uniknąć kłopotów w przyszłości.
 
-Pisanie testów jest procesem weryfikującym poprawność działania kodu. Programiści to wykonują, aby upewnić się, że zmiany w kodzie nie powodują błędów i spełniają oczekiwania. Jest to również częścią praktyki programistycznej, która pomaga utrzymać dobrą jakość kodu.
-
-## Jak to zrobić:
+## How to:
+Lua nie ma biblioteki standardowej dla testów, ale można używać zewnętrznych. Oto prosty przykład użycia `busted`:
 
 ```Lua
--- Przykładowa funkcja, którą będziemy testować. 
-function dodaj(x, y)
-    return x + y
-end
-
--- Importowanie biblioteki do wykonywania testów. 
-local test = require("luaunit")
-
--- Przykład prostego testu jednostkowego. 
-function test_dodaj()
-  assertEqual(5, dodaj(2, 3)) -- Sprawdza, czy wynik funkcji jest równy 5. 
-end
-
--- Uruchamianie testów. 
-test.run()
+describe("addition", function()
+    it("adds two numbers", function()
+        assert.are.equal(4, 2+2)
+    end)
+end)
 ```
 
-Output: 
+Uruchomienie `busted` powinno dać taki wynik:
 ```
-.PLG
-OK  	1 testDzienniczek Test: dodaj
-OK  	Testsuite: test
-Tests	: 1
-Failures: 0
-Errors	: 0
+●●
+2 successes / 0 failures / 0 errors / 0 pending : 0.0 seconds
 ```
 
-## Głębszy wgląd:
+## Deep Dive:
+Lua nie zawsze miała narzędzia do testowania. Wcześniej programiści używali prostych asercji lub pisali własny kod testujący. Dostępne alternatywy to `busted`, `luassert`, czy `TestMore`. Implementacja testów zależy od potrzeb projektu i preferowanego stylu testowania (TDD, BDD).
 
-Pisanie testów zyskało na popularności wraz z rozwojem metodyki Agile. Pozwala ono na szybkie wykrywanie błędów i poprawianie ich na bieżąco, co wpływa na szybszy rozwój oprogramowania. Alternatywą dla pisania testów jest manualne testowanie kodu, jednak jest to czasochłonne i mniej skuteczne. W Lua dostępnych jest kilka bibliotek do testowania, ale najpopularniejszą jest LuaUnit.
-
-## Zobacz również:
-
-- Dokumentacja LuaUnit: https://github.com/luaunit/luaunit 
-- Praktyka TDD w Lua: https://www.youtube.com/watch?v=hTfcUNlIVa0 
-- Artykuł o testowaniu w języku Lua: https://medium.com/learning-the-go-programming-language/introduction-to-testing-in-go-151a70b2ddb1
+## See Also:
+- [Luassert - Assertion library for Lua](https://github.com/Olivine-Labs/luassert)
+- [LuaUnit - xUnit for Lua](https://luaunit.readthedocs.io/en/latest/)
+- [TestMore Lua - Inspired by Perl's Test::More module](https://fperrad.frama.io/lua-TestMore/)

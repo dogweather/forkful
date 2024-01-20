@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers l'erreur standard"
-html_title:           "PHP: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+Écrire sur l'erreur standard (stderr) permet de séparer les messages d'erreur du flux de sortie principal. Les programmeurs le font pour faciliter le débogage et la gestion des logs.
 
-L'écriture sur la sortie d'erreur standard est une méthode utilisée par les programmeurs pour afficher des messages d'erreur ou de débogage lors de l'exécution de leur code. Elle est principalement utilisée pour diagnostiquer et résoudre les erreurs dans le code, afin de faciliter le processus de développement.
-
-Les programmeurs utilisent l'écriture sur la sortie d'erreur standard pour être en mesure d'identifier rapidement les erreurs et les bugs dans leur code sans avoir à passer par des processus de débogage plus complexes. Cela leur permet de gagner du temps et d'améliorer l'efficacité de leur travail.
-
-## Comment:
-
-Voici un exemple simple de code PHP utilisant l'écriture sur la sortie d'erreur standard:
-
+## Comment faire :
 ```PHP
 <?php
-// code qui génère une erreur
-echo "Bonjour";
-// écriture sur la sortie d'erreur standard
-stderr("Une erreur s'est produite");
+// Écrire un message simple sur stderr
+file_put_contents('php://stderr', "Il y a eu une erreur!\n");
+
+// Utiliser les flux pour un message plus complexe
+$stderr = fopen('php://stderr', 'w');
+fwrite($stderr, "Attention : erreur critique!\n");
+fclose($stderr);
 ?>
 ```
-
-Voici le résultat de l'exécution de ce code:
-
+Sortie à attendre dans la console/sur stderr :
 ```
-Bonjour
-Une erreur s'est produite
+Il y a eu une erreur!
+Attention : erreur critique!
 ```
 
-## Plongée en profondeur:
+## Plongée profonde
+Historiquement, la séparation entre sortie standard et erreur standard vient de Unix. En PHP, les alternatives incluent les fonctions comme `error_log()` pour envoyer des erreurs aux différents gestionnaires de journaux, ou des extensions comme Monolog pour une gestion d'erreur plus avancée. Pour écriture sur stderr, PHP utilise des flux qui sont implémentés à un niveau plus bas dans le langage.
 
-L'écriture sur la sortie d'erreur standard a été initialement développée pour les systèmes UNIX, où les messages d'erreur étaient envoyés à stderr au lieu de stdout (la sortie standard). Cela permettait d'identifier plus facilement les erreurs dans les processus en cours d'exécution.
-
-Il existe d'autres méthodes pour afficher des messages d'erreur, telles que la journalisation ou l'utilisation de la fonction PHP `error_log()`. Cependant, l'écriture sur la sortie d'erreur standard reste une méthode populaire pour les programmeurs en raison de sa simplicité et de sa rapidité.
-
-Pour implémenter l'écriture sur la sortie d'erreur standard en PHP, il suffit d'utiliser la fonction `stderr()` et de lui passer le message d'erreur en tant que paramètre.
-
-## Voir aussi:
-
-- [Article sur l'écriture sur la sortie d'erreur standard en PHP](https://www.php.net/manual/fr/wrappers.php)
-- [Documentation officielle sur la fonction `error_log()` en PHP](https://www.php.net/manual/fr/function.error-log.php)
-- [Article sur le débogage en PHP](https://www.phptherightway.com/#debugging)
+## Voir Aussi
+- Documentation PHP sur les flux: https://www.php.net/manual/fr/book.stream.php
+- Comment utiliser Monolog pour la gestion des logs: https://github.com/Seldaek/monolog
+- Documentation PHP sur la fonction error_log: https://www.php.net/manual/fr/function.error-log.php

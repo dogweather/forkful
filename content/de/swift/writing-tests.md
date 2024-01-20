@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Swift: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Beim Programmieren geht es nicht nur darum, Code zu schreiben, sondern auch sicherzustellen, dass dieser Code auch funktioniert. Das Schreiben von Tests ermöglicht es Programmierern, Fehler in ihrem Code frühzeitig zu erkennen und somit die Qualität der Software zu verbessern.
+## Was & Warum?
+Das Schreiben von Tests überprüft, ob dein Code wie gewünscht funktioniert. Programmierer testen, um Fehler zu minimieren und die Software-Qualität zu sichern.
 
-# Wie man das macht:
+## Anleitung:
+Das Swift-Framework `XCTest` eignet sich zum Schreiben und Ausführen von Tests. Hier ist ein einfacher Test für eine `add` Funktion in Swift:
+
 ```Swift
-// Beispiel eines einfachen Tests
-func testAddition() {
-    let result = add(a: 2, b: 3)
-    assert(result == 5)
+import XCTest
+
+class MathTests: XCTestCase {
+    func testAdd() {
+        let result = add(2, 3)
+        XCTAssertEqual(result, 5, "Das Ergebnis von 2 + 3 sollte 5 sein.")
+    }
+    
+    func add(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
 }
 
-// Beispiel einer fehlschlagenden Test
-func testDivision() {
-    let result = divide(a: 10, b: 0)
-    assert(result == 5)
-}
-
-// Beispiel einer erfolgreichen Testausgabe
-Test Suite 'All tests'
-     Test SubSuite 'addition'
-         Test Case '-[MyTests.MyTests testAddition]' passed
-
-// Beispiel einer fehlgeschlagenen Testausgabe
-Test Suite 'All tests'
-     Test SubSuite 'division'
-         Test Case '-[MyTests.MyTests testDivision]' failed (0.000 seconds)
-
+MathTests.defaultTestSuite.run()
 ```
 
-# Tiefere Einblicke:
-Das Konzept des Testens von Code ist nicht neu und wurde bereits in den 1950er Jahren eingeführt. Mittlerweile gibt es verschiedene Testarten, wie z.B. Unittests, Integrationstests und Akzeptanztests. Alternativen zum Schreiben von Tests sind beispielsweise die Verwendung von Debugging-Tools oder das manuelle Durchführen von Tests.
+Wenn du das ausführst, kriegst du etwa folgendes als Ausgabe:
 
-Bei der Implementation von Tests ist es wichtig, klar definierte Anforderungen an den Code zu haben und diese in den Tests zu berücksichtigen. Auch die Verwendung von Mock-Objekten kann hilfreich sein, um Abhängigkeiten zu anderen Teilen des Codes zu minimieren.
+```
+Test Suite 'MathTests' started at 2023-04-01
+Test Case '-[YourProject.MathTests testAdd]' started.
+Test Case '-[YourProject.MathTests testAdd]' passed (0.001 seconds).
+Test Suite 'MathTests' finished at 2023-04-01.
+```
 
-# Siehe auch:
-Weitere Informationen und Beispiele zum Schreiben von Tests in Swift finden Sie in der offiziellen Dokumentation von Apple (https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html).
+## Tiefere Einblicke:
+Tests in Swift gab es schon in Objective-C; da hieß das Framework `SenTestingKit`. `XCTest` ist moderner, schneller, und einfacher zu benutzen. Neben Unit-Tests gibt es auch UI-Tests, bei denen Benutzerinteraktionen simuliert werden. Als Alternative zu `XCTest` kamen Drittanbieter-Tools wie `Quick` und `Nimble` auf, die BDD (Behaviour-Driven Development) unterstützen.
+
+## Weiterführende Infos:
+- [Apple XCTest Dokumentation](https://developer.apple.com/documentation/xctest)
+- [Artikel zu Behaviour-Driven Development in Swift](https://www.raywenderlich.com/21020457-behavior-driven-development-tutorial-for-ios-with-quick-nimble)

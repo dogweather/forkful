@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Ruby: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Робота з YAML - це набір інструментів для роботи з текстовими даними у структурованому форматі. Це корисно для програмістів, оскільки дозволяє легко зберігати та обмінюватися даними між різними програмами та мовами програмування.
+## Що це та навіщо?
+YAML — це формат серіалізації даних, легкий для людського сприйняття. Програмісти використовують YAML, щоб з легкістю записувати конфігурації, обмінюватись даними між мовами програмування та управляти інфраструктурою.
 
-Як зробити:
-Щоб почати роботу з YAML, вам знадобиться встановити бібліотеку `yaml` за допомогою `gem install yaml` команди. Після цього, ви можете використовувати методи `parse` та `load` для зчитування YAML файлів та приведення їх до рубішних об'єктів. Нижче наведено приклади коду та вихідних даних:
+## Як це робити:
+В Ruby працювати з YAML просто. Потрібна бібліотека `yaml`. Ось як ви можете серіалізувати і десеріалізувати YAML:
 
-```ruby
+```Ruby
 require 'yaml'
 
-# зчитування YAML файлу
-data = YAML.load(File.read('data.yaml'))
+# Серіалізація Ruby об'єкта в YAML строку
+my_data = { name: 'Ivan', occupation: 'Developer', location: 'Kyiv' }
+yaml_string = my_data.to_yaml
+puts yaml_string
 
-# виведення даних
-puts data
-
-# збереження об'єкту у YAML форматі
-new_data = { name: 'John', age: 25 }
-puts new_data.to_yaml
+# Десеріалізація YAML строки назад в Ruby об'єкт
+parsed_data = YAML.load(yaml_string)
+puts parsed_data
 ```
 
-Нижче можна побачити приклади вихідних даних у двох випадках:
-
-```ruby
-# дані у вигляді рубішних об'єктів
-data = { name: 'John', age: 25 }
-puts data
-
-# дані у форматі YAML
+Це дасе вам наступний вивід:
+```
 ---
-:age: 25
-:name: John
+:name: Ivan
+:occupation: Developer
+:location: Kyiv
+
+{:name=>"Ivan", :occupation=>"Developer", :location=>"Kyiv"}
 ```
 
-Глибша Інформація:
-YAML був розроблений як простий та зручний формат для обміну даними, який був відсутній у форматах XML та JSON. Його написано на мові програмування Python та базується на ідей простоти та читабельності. Існують також інші бібліотеки, які дозволяють працювати з YAML файлами у різних мовах програмування, таких як JavaScript та Java.
+## Поглиблений розбір:
+YAML (вимовляється як "ям-л" або "я-м-л") означає "YAML Ain't Markup Language" (YAML не є мовою розмітки). Попри це, спочатку це значило "Yet Another Markup Language". YAML виник на початку 2000-х. Він простіший і зручніший для людей, ніж XML або JSON для невеликих файлів. Альтернативи YAML — це JSON та TOML. Проте, YAML часто використовують у таких інструментах як Ansible, Docker та Kubernetes через його читабельність.
 
-Подивися також:
-- Офіційна документація: https://ruby-doc.org/stdlib-1.9.3/libdoc/yaml/rdoc/YAML.html
-- Огляд YAML: https://yaml.com/
+## Дивіться також:
+- Офіційний сайт YAML: [https://yaml.org](https://yaml.org)
+- Ruby YAML модуль документація: [https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)
+- YAML на GitHub, щоб побачити його специфікації: [https://github.com/yaml/yaml](https://github.com/yaml/yaml)
+- YAML в Ruby on Rails: [https://guides.rubyonrails.org/configuring.html#using-the-config-for-yaml-configuration-files](https://guides.rubyonrails.org/configuring.html#using-the-config-for-yaml-configuration-files)

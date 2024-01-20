@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Elixir recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,57 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-JSON (JavaScript Object Notation) is a lightweight, text-based data interchange format that's easily human-readable and writeable. It's a linchpin in web development, used for transmitting data in web applications as something easily digestible by the server.
+JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate. Programmers work with JSON to exchange data between servers and web applications, store configuration, or serialize data for network communication.
 
 ## How to:
 
-Implementing JSON in Elixir is cinch with the Poison library. Suppose we have a simple JSON object.
+To handle JSON in Elixir, we use libraries like `Jason` or `Poison`. Here's a quick how-to with `Jason`:
 
-```Elixir
-json_data = ~S({"name": "John Doe", "age": 30})
+```elixir
+# Add Jason to your mix.exs as a dependency
+{:jason, "~> 1.3"}
+
+# in a .ex file, to encode Elixir to JSON
+json_string = Jason.encode!(%{foo: "bar"})
+
+# Now decoding JSON to Elixir
+elixir_map = Jason.decode!(json_string)
 ```
 
-With Poison, we can easily decode this JSON data into a map that Elixir can work with.
+Output:
 
-```Elixir
-{:ok, decoded_data} = Poison.decode(json_data)
-
-IO.inspect(decoded_data)
+```elixir
+json_string #=> "{\"foo\":\"bar\"}"
+elixir_map  #=> %{"foo" => "bar"}
 ```
 
-The output would look like:
+Encode with `opts` for pretty printing:
 
-```Elixir
-%{"name" => "John Doe", "age" => 30}
+```elixir
+Jason.encode!(%{foo: "bar"}, pretty: true)
 ```
 
-Similarly, we can encode Elixir data into JSON like this:
+Output:
 
-```Elixir
-data = %{"name" => "Jane Doe", "age" => 25}
-{:ok, encoded_data} = Poison.encode(data)
-
-IO.inspect(encoded_data)
-```
-
-The output would be:
-
-```Elixir
-"{\"age\":25,\"name\":\"Jane Doe\"}"
+```json
+{
+  "foo": "bar"
+}
 ```
 
 ## Deep Dive
 
-Historically, JSON has trumped XML in terms of popularity due to its simplicity and its seamless integration with JavaScript. It was popularized in the early 2000s as web application development was booming.
+JSON was proposed by Douglas Crockford in the early 2000s. It quickly gained adoption due to its simplicity over XML.
 
-There are alternatives to JSON, like XML, YAML, or even plain text, but each comes with its own pros and cons. XML is verbose and complex, YAML is human-friendly but less common, and plain text doesn't offer the structure necessary for complex data.
+Alternatives? Sure—XML, YAML, or Protocol Buffers, yet JSON reigns due to simplicity and JavaScript native support.
 
-When it comes to decoding and encoding JSON in Elixir, libraries like Poison work by parsing the JSON and converting it into elixir-native map structures. Taking advantage of Elixir's pattern matching, they also provide methods for encoding Elixir data structures back into JSON.
+Under the hood, JSON libraries convert Elixir data types into JSON strings and vice versa. Elixir's pattern matching and robust standard library make the encoding and decoding process smooth.
 
 ## See Also
 
-- Poison Library: https://github.com/devinus/poison
-- JSON Specifications: https://www.json.org/json-en.html
-- Elixir Docs: https://hexdocs.pm/elixir/Kernel.html
-- Alternatives to JSON: https://www.drdobbs.com/web-development/alternatives-to-json-are-they-any-goo/240168719
+- Jason GitHub: https://github.com/michalmuskala/jason
+- Poison GitHub: https://github.com/devinus/poison
+- Elixir School JSON lessons: https://elixirschool.com/en/lessons/specifics/jason/

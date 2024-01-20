@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Kotlin: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Erstellung von Tests ist ein wesentlicher Bestandteil der Softwareentwicklung. Programmierer nutzen Tests, um sicherzustellen, dass ihr Code richtig funktioniert und um mögliche Fehler aufzudecken. Dadurch wird die Qualität der Software verbessert und die Wahrscheinlichkeit von Bugs und Problemen verringert.
 
-## Wie geht's:
-Um Tests in Kotlin zu schreiben, können wir die integrierte Test-Unterstützung von Kotlin verwenden. Wir erstellen eine Testklasse und fügen unsere Testmethoden hinzu. Anschließend können wir unsere Logik testen und durch definieren von erwarteten Ausgaben sicherstellen, dass unser Code wie gewünscht funktioniert.
+Tests schreiben dient dazu, Code auf seine Korrektheit zu überprüfen. Entwickler nutzen Tests, um Fehler früh zu erkennen, die Softwarequalität zu sichern und zukünftige Änderungen abzusichern.
 
-```Kotlin
-class MyTest {
-    @Test fun testAddition() {
-        assertEquals(4, 2 + 2)
+## How to:
+
+Kotlin bietet eine gute Integration mit JUnit, einer beliebten Java-Testbibliothek. Hier ein einfaches Beispiel, wie ein Test in Kotlin aussieht:
+
+```kotlin
+import org.junit.Assert.assertEquals
+import org.junit.Test
+
+class MathUtilsTest {
+
+    @Test
+    fun testAddition() {
+        assertEquals(4, MathUtils.add(2, 2))
     }
+}
+
+object MathUtils {
+    fun add(a: Int, b: Int): Int = a + b
 }
 ```
 
-Dieses Beispiel testet eine einfache Addition und vergleicht das Ergebnis mit dem erwarteten Wert von 4. Wenn die Testmethode fehlschlägt, wird dies als Fehler im Testbericht angezeigt.
+Dieser Test überprüft die `add` Funktion der `MathUtils` Klasse. Der erwartete Output bei Ausführung des Tests ist:
 
-## Tiefgehender Einblick:
-Tests spielen eine wichtige Rolle in der Geschichte der Softwareentwicklung und sind ein integraler Bestandteil von agilen Methoden wie Test-driven Development (TDD). Alternativen zu Test-Unterstützung in Kotlin sind beispielsweise JUnit und MockK.
+```
+Test passed.
+```
 
-Die Implementierung von Tests in Kotlin erfolgt durch Annotationen wie "@Test" und Assertions wie "assertEquals". Diese helfen dabei, Tests übersichtlich und leicht verständlich zu gestalten.
+## Deep Dive
 
-## Siehe auch:
-- [JUnit](https://junit.org/junit5/)
-- [MockK](https://mockk.io/)
+Tests in Kotlin nutzen oft JUnit oder spezifische Kotlin-Test-Frameworks wie Spek und Kotest. Historisch kommt Testing aus der Entwicklergemeinschaft um besseren Code zu fördern. Andere Testarten umfassen Integrationstests, Systemtests und Akzeptanztests. Beim Testen geht es nicht nur darum, dass etwas aktuell funktioniert, sondern dass es unter allen erwarteten Bedingungen funktioniert.
+
+## See Also
+
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Spek Framework](https://www.spekframework.org/)
+- [Kotest: Powerful, elegant Kotlin test framework](https://kotest.io/)

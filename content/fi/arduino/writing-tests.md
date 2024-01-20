@@ -10,63 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
 
-Testien kirjoittaminen on prosessi, jossa ohjelmoijat tarkistavat ja varmistavat, että heidän koodinsa toimii odotetulla tavalla. Se auttaa vähentämään virheitä ja parantaa koodin luotettavuutta ja laatua.
+Testaus on koodin varmistamista suorittamalla pieniä testiohjelmia, jotka tarkistavat koodin toiminnan. Ohjelmoijat käyttävät testejä löytääkseen virheitä ja varmistuakseen, että koodi toimii suunnitellusti.
 
-## Miten:
+## How to:
 
-Esimerkki testin kirjoittamisesta:
-
-```Arduino
-//määritellään testattava funktio
-int laskeSumma(int a, int b) {
-  return a + b;
-}
-
-//huom. tässä ei ole määritelty mitään testejä, tätä koodia ei tule suorittaa!
-
-```
-
-Esimerkki testin kirjoittamisesta käyttäen Arduino testikirjastoa:
+Arduino ei tue testausta suoraan, mutta voit simuloida testausprosessia kirjoittamalla testifunktion ja kutsumalla sitä `setup()`-funktion sisällä. Tarkasta tulokset sarjaportista.
 
 ```Arduino
-#include <ArduinoUnit.h>  //lisätään testikirjasto
-
-//testaa laskeSumma-funktion palauttamaa arvoa
-test(summatTesti) {
-  assertEqual(laskeSumma(2,3), 5);
-  assertNotEqual(laskeSumma(2,3), 6);
+void setup() {
+  Serial.begin(9600);
+  testLedBlink();
 }
 
-//testaa laskeSumma-funktion käsittelyä negatiivisilla luvuilla
-test(negatiivisetLuvut) {
-  assertEqual(laskeSumma(-2,3), 1);
-  assertNotEqual(laskeSumma(-2,3), -1);
+void loop() {
+  // Tee mitä normaalisti teet loopissa.
 }
 
-// "print"-komento tulostaa testin tulokset sarjalähtöporttiin
-unittest_main();
+void testLedBlink() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+  
+  // Tarkista, että LED vilkkuu.
+  if(digitalRead(LED_BUILTIN) == LOW) {
+    Serial.println("Testi onnistui!");
+  } else {
+    Serial.println("Testi epäonnistui.");
+  }
+}
 ```
 
-Sample output:
+Näet tuloksen sarjaportissa: "Testi onnistui!" tai "Testi epäonnistui."
 
-```
-TEST: summatTesti
-PASS
+## Deep Dive
 
-TEST: negatiivisetLuvut
-PASS
+Arduino-yhteisössä ei ole vakiintunutta testauskäytäntöä, toisin kuin ohjelmistokehityksessä yleensä. Muissa ohjelmointiympäristöissä, kuten Rubyssa ja Javascriptissä, testaus on yleistä ja hyvin tukema ominaisuus. Arduinoon voit tuoda testausominaisuuksia käyttäen esimerkiksi `aunit`-kirjastoa tai simuloimalla testikäyttäytymistä muilla kirjastoilla.
 
-Suoritetut testit: 2
-Testit onnistuneesti läpäisty: 2
-Testit epäonnistuneesti: 0
-```
+## See Also
 
-## Syvällisemmin:
-
-Testien kirjoittamisella on pitkä historia ohjelmistokehityksessä ja se on vakiintunut käytäntö monissa ohjelmointikielissä. On myös olemassa muita testikirjastoja kuten googletest, jotka tarjoavat samanlaisia toimintoja kuin Arduino testikirjasto. Testien kirjoittaminen auttaa myös dokumentoimaan ja ymmärtämään koodia paremmin sekä helpottaa tulevia muutoksia ja lisäyksiä.
-
-## Katso myös:
-
-- [Arduino Unit Test Library] (https://github.com/mmurdoch/arduinounit)
+- AUnit, Arduino unit testing library: [https://github.com/bxparks/AUnit](https://github.com/bxparks/AUnit)

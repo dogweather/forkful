@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Gleam: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Praca z plikami CSV (Comma-Separated Values) to zarządzanie danymi w formacie tabelarycznym - prostym i powszechnym. Programiści używają go do importu, eksportu, i przetwarzania danych między różnymi systemami i aplikacjami.
 
-Pracowanie z plikami CSV jest nieodłączną częścią pracy programisty. CSV (Comma Separated Values) to prosty format plików, w którym dane są przechowywane w postaci tabelarycznej, z wartościami oddzielonymi przecinkami. Programiści korzystają z tego formatu, ponieważ jest łatwy do czytania i przechowywania danych w formie zrozumiałej dla komputera.
+## Jak to zrobić:
+W Gleam, operowanie na CSV jest proste. Oto przykład:
 
-## Jak to zrobić?
-
-Gleam to język programowania, który umożliwia nam łatwe wykonywanie operacji na plikach CSV. W poniższych przykładach przedstawimy prosty kod, który pomoże Ci w tym zadaniu. Pamiętaj, że w ramach przykładu mogą pojawić się błędy, które należy samodzielnie naprawić, aby kod zadziałał poprawnie.
-
-```Gleam
-// Importowanie biblioteki CSV
+```gleam
 import gleam/csv
+import gleam/io
 
-// Otworzenie pliku CSV
-let file = csv.open("data.csv")
-
-// Odczytanie danych z pliku
-let data = csv.read(file)
-
-// Wypisanie zawartości w konsoli
-csv.print(data)
+fn main() {
+  let data = "name,age,city\nJohn,30,New York\nAnna,25,Berlin"
+  let rows = csv.decode(data)
+  
+  case rows {
+    Ok(values) -> io.print(values)
+    Error(err) -> io.print(err)
+  }
+}
 ```
+Wejście jest ciągiem znaków w formacie CSV, wyjście będzie listą wartości lub błędem.
 
-W rezultacie otrzymamy dane w tabelarycznej formie, gotowe do dalszej obróbki.
-
-## Głębszy wgląd
-
-Praca z plikami CSV jest bardzo popularna w programowaniu, ponieważ ten format był używany już od bardzo dawna i jest szeroko rozpoznawalny. Istnieją również alternatywne formaty takie jak JSON czy XML, jednak CSV jest często preferowany ze względu na prostotę i czytelność dla człowieka.
-
-Jeśli chcesz dowiedzieć się więcej o tym, jak działają pliki CSV oraz jakie są ich możliwości i ograniczenia, koniecznie sprawdź linki w sekcji "Zobacz również".
+## Deep Dive
+Historia formatu CSV sięga wczesnych lat komputerowych, gdzie prostota formatu pomogła w wymianie danych między różnymi systemami. Alternatywy jak JSON czy XML są bardziej elastyczne, ale też bardziej złożone. Implementacja w Gleam korzysta z podstawowych funkcji języka, by przekształcić tekst w strukturę danych i vice versa.
 
 ## Zobacz również
-
-- [CSV na Wikipedii](https://pl.wikipedia.org/wiki/CSV)
+- Oficjalna dokumentacja Gleam na temat CSV: https://hexdocs.pm/gleam_csv/
+- Tutorial CSV w Gleam na blogu: [Link do bloga z tutorialem]
+- RFC 4180 - formalna specyfikacja CSV: https://tools.ietf.org/html/rfc4180

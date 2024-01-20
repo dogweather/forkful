@@ -1,7 +1,7 @@
 ---
-title:                "Yhteistyössä yaml:n kanssa."
-html_title:           "Elm: Yhteistyössä yaml:n kanssa."
-simple_title:         "Yhteistyössä yaml:n kanssa."
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Mikä & Miksi? YAML (YAML Ain't Markup Language) on data-sarjojen kuvaamiseen käytetty kieli, suosittu konfiguraatioissa ja datan tallennuksessa. Ohjelmoijat käyttävät YAMLia, koska se on helppolukuinen ja -muokattava.
 
-Kuulutko sinäkin niihin ohjelmoijiin, jotka ovat kuulleet puhuttavan YAMLista ja ihmettelevät, mistä oikein on kyse? Ei hätää, kerromme lyhyesti mistä on kyse ja miksi ohjelmoijat työskentelevät sen parissa.
-
-YAML on tiedoston muoto, jolla tietoa voidaan tallentaa ja jakaa helposti luettavassa ja yksinkertaisessa muodossa. Se on erityisen kätevä esimerkiksi sovellusten ja tietokantojen asetuksien tallentamiseen. Ohjelmoijat käyttävät YAMLia helpottamaan datan käsittelyä ja tietojen siirtämistä eri ohjelmien välillä.
-
-## Kuinka tehdä?
-
-Elm-koodilohkoihin sisällytetyillä esimerkeillä näytämme, kuinka YAMLia käytetään Elm-ohjelmoinnissa.
-
+## How to:
+Koodiesimerkit:
 ```Elm
--- Tuodaan YAML-paketti käyttöön
-import YAML exposing (..)
+-- Elm:ssä ei ole sisäänrakennettua tukea YAML:lle, mutta voit muuntaa YAML JSON:ksi ja käyttää sitä siten.
 
--- Luodaan esimerkki YAML-tiedostosta
-example =
-  """
-  Otsikko: Tervetuloa!
-  Viesti: Tässä on esimerkki YAML-tiedostosta.
-  Lista:
-    - Yksi
-    - Kaksi
-    - Kolme
-  """
+-- Otaksutaan että sinulla on YAML-string, joka on muunnettuna JSON:ksi:
+-- yamlString on YAML-muotoisen konfiguraation JSON-stringi
 
--- Parsitaan YAML-tiedosto muuttujaksi
-result = parse example
+import Json.Decode as Decode
 
--- Tulostetaan tietoja konsoliin
-case result of
-  Ok yaml ->
-    -- Tulostaa otsikon
-    log (yaml["Otsikko"])
-    -- Tulostaa viestin
-    log (yaml["Viesti"])
-    -- Tulostaa listan ensimmäisen arvon
-    log (yaml["Lista"][0])
-  Err error ->
-    log error
+type alias Config =
+    { name : String
+    , age : Int
+    }
+
+-- Oletetaan että sinulla on JSON-dekooderi Config-tyyppiä varten
+configDecoder : Decode.Decoder Config
+configDecoder =
+    Decode.map2 Config
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
+
+-- Funktion parseYAML, joka käsittelee YAML-jsonStringin
+parseYAML : String -> Result String Config
+parseYAML jsonString =
+    Decode.decodeString configDecoder jsonString
+
+-- Esimerkin käyttö:
+-- yamlJsonString vastaa muunnettua YAML:ia
+
+yamlJsonString : String
+yamlJsonString = 
+    """
+    {
+        "name": "Esa",
+        "age": 35
+    }
+    """
+
+-- Kutsutaan parseYAML-funktiota ja tulostetaan tulos
+case parseYAML yamlJsonString of
+    Ok config ->
+        -- Käsittele Config objekti
+        String.fromInt config.age
+
+    Err error ->
+        -- Virheenkäsittely
+        "Parse error"
 ```
 
-Tulostus konsoliin:
-
+Esimerkituloste:
 ```
-Tervetuloa!
-Tässä on esimerkki YAML-tiedostosta.
-Yksi
+35
 ```
 
-## Syväsukellus
+## Deep Dive
+Syväsukellus: YAML luotiin 2001, helpottamaan datan käsittelyä joustavammalla ja helpommin luettavammalla tavalla kuin JSON. Vaihtoehtoina YAML:lle ovat mm. JSON ja XML. Elm:ssä YAMLia käytetään harvoin suoraan, ja tyypillisesti se muunnetaan ensin JSON-muotoon.
 
-YAML kehitettiin vuonna 2001 tavoitteena olla yksinkertainen ja helppokäyttöinen formaatti eri ohjelmointikielten välillä. Sen vaihtoehtoina voidaan käyttää esimerkiksi XML- ja JSON-formaatteja, mutta YAML eroaa niistä siinä, että se ei vaadi sulkuja ja pisteitä merkkijonojen ympärille.
-
-YAML-ohjelmointikieliliittymä on saatavilla useimpiin ohjelmointikieliin ja sen toteutus perustuu tiedostopohjaiseen lähestymistapaan. Elm-kielellä YAMLia käytetään helposti sisällyttämällä YAML-paketti projektiin.
-
-## Katso myös
-
-- YAML-virallinen dokumentaatio: https://yaml.org/
-- Elm YAML-paketti: https://package.elm-lang.org/packages/janiczek/elm-yaml/latest/
+## See Also
+Katso Myös:
+- YAML: [YAML viralliset sivut](https://yaml.org)
+- JSON: [Elm JSON-dekoodausdokumentaatio](https://package.elm-lang.org/packages/elm/json/latest/)
+- YAMLin ja JSONin muunnos työkalut: [Convert YAML to JSON](https://www.convertjson.com/yaml-to-json.htm)

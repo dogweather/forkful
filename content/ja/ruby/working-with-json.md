@@ -1,7 +1,7 @@
 ---
-title:                "「Jsonを使う」"
-html_title:           "Ruby: 「Jsonを使う」"
-simple_title:         "「Jsonを使う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## What & Why? (なにを、なぜする？)
+JSON （JavaScript Object Notation）はデータ形式。プログラマは情報交換にJSONを使う。読みやすく、構造化されたデータをWebサーバやAPI間でやり取りするため。
 
-JSONとは、データのやり取りに使われるフォーマットの一つです。プログラマーがJSONを使う理由は、データをより簡単かつ効率的に処理できるからです。
+## How to: (使い方)
+RubyでJSONを使うには `json` ライブラリが必要。以下は基本例。
 
-## 方法：
-
-```ruby
+```Ruby
 require 'json'
 
-# JSONデータをパースする
-data = JSON.parse('{"name": "John", "age": 30}')
+# JSON文字列をRubyのハッシュに変換
+json_string = '{"name": "Taro", "age": 30, "city": "Tokyo"}'
+person = JSON.parse(json_string)
+puts person["name"]  # 出力: Taro
 
-# ハッシュとしてデータを取得する
-puts data["name"]
-# => "John"
-
-# ハッシュからJSONデータを生成する
-json_data = data.to_json
-puts json_data
-# => '{"name": "John", "age": 30}'
+# RubyのハッシュをJSON文字列に変換
+person = { name: "Hanako", age: 25, city: "Kyoto" }
+json_output = person.to_json
+puts json_output  # 出力: {"name":"Hanako","age":25,"city":"Kyoto"}
 ```
 
-## 深堀り：
+## Deep Dive (掘り下げ)
+初めてJSONが使われたのは2000年代初頭。JavaScriptのサブセットだが、多くの言語で使われている。YAMLやXMLと比べてシンプルで軽量。Rubyでは`json` ライブラリの他に高速な `oj` などの選択肢もある。内部では、文字列はUTF-8でエンコードされる。
 
-1. JSONはJavaScript Object Notationの略称であり、JavaScriptでデータを扱うために作られました。
-2. JSONにはXMLやCSVなどの他のフォーマットと比べて、よりシンプルで扱いやすい特徴があります。
-3. JSONを使う際は、正しいフォーマットに従うことが重要です。
-
-## 関連情報：
-
-- [RubyのJSONライブラリ公式ドキュメント](https://docs.ruby-lang.org/en/master/JSON.html)
-- [RubyGemsで利用可能なJSONパースライブラリ一覧](https://rubygems.org/search?utf8=%E2%9C%93&query=json)
-- [JSONフォーマットの詳細について](https://www.json.org/json-ja.html)
+## See Also (関連情報)
+- [JSON in Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html) - Rubyの標準ライブラリドキュメント。
+- [JSON Homepage](http://json.org/) - JSON公式ホームページ, 仕様と歴史的背景。
+- [Oj gem](https://github.com/ohler55/oj) - Rubyで高速なJSONパーサー。
+- [Choosing the best way to serialize JSON for Ruby and Rails](https://medium.com/@adamhooper/in-search-of-the-best-json-parser-for-ruby-cdda610929be) - Ruby で JSON を扱う方法の比較。

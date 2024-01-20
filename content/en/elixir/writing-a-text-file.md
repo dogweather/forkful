@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Elixir recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,50 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file is the process of creating and filling a .txt file using code. We do it to store data persistently, automate document generation, or output the results of operations.
+Writing a text file involves saving data to a file in a human-readable format. Programmers do this to persist info like logs, settings, and data output.
 
 ## How to:
 
-In Elixir, we use `File.write/2`. It needs a file path and content.
+Elixir makes writing text files straightforward. Here's a simple example of writing to a file named "hello.txt".
 
-```Elixir
-{:ok, _} = File.write("your_file.txt", "Some text")
+```elixir
+File.write("hello.txt", "Hello, World!\n")
+```
+After running this, check "hello.txt" and it'll read:
+
+```
+Hello, World!
+```
+For appending text instead of overwriting:
+
+```elixir
+File.write("hello.txt", "Another line!\n", [:append])
 ```
 
-Done! Now you've got "your_file.txt". It says, "Some text".
+Now "hello.txt" will show:
 
-Another way, write lines as a list:
-
-```Elixir
-{:ok, _} = File.write("your_file.txt", ["A line", "Another line"])
 ```
-
-The lines will be simply concatenated, no line breaks added.
-
-If you need to append text instead of totally rewriting it, use `File.write/3`:
-
-```Elixir
-{:ok, _} = File.write("your_file.txt", "Some appended text", [:append])
+Hello, World!
+Another line!
 ```
-
-Here, `:append` means, "Don't delete what was there."
 
 ## Deep Dive
 
-Elixir's `File.write/*` is straightforward due to Erlang's powerful 'file' module, borrowing its simple design.
-
-If Elixir isn't your only language, Python's `open` with `'w'` flag, and Java's `FileWriter` work like `File.write/2`, and their 'append' versions like `File.write/3`.
-
-Elixir writes text files in binary by default. "Binary" here doesn't mean unreadable non-text; it means the OS won't translate line endings. Thus, on Windows, you may want to write lines with `\r\n` endings, and on Unix-style systems, just `\n`. To insert such line endings when writing lines, you'll need to join them with the appropriate line ending:
-
-```Elixir
-{:ok, _} = File.write("your_file.txt", ["A line", "Another line"] |> Enum.join("\n"))
-```
+Elixir's approach to file writing reflects its Erlang heritage, focusing on reliability and concurrency. Alternatives include using streams for larger data. Internally, Elixir uses Erlang's :file module which interacts with the underlying OS.
 
 ## See Also
 
-Check out Erlang's 'file' documentation for everything Elixir's `File` can do: http://erlang.org/doc/man/file.html
-
-Also, Elixir's `File` has even more handy functions hidden in its own doc: https://hexdocs.pm/elixir/File.html
-
-A good text file can be just a part of good logging. Read 'Logger' next: https://hexdocs.pm/elixir/Logger.html
+- Elixir `File` module docs: https://hexdocs.pm/elixir/File.html
+- Erlang `:file` module docs: https://erlang.org/doc/man/file.html 
+- Learn about Elixir's Stream module for handling large data: https://hexdocs.pm/elixir/Stream.html

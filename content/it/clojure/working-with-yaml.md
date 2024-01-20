@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Clojure: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
-Lavorare con YAML significa gestire dati strutturati in formato testo, utilizzato principalmente per configurazioni e scambi di dati. I programmatori lo utilizzano per rendere le informazioni leggibili e facilmente manipolabili.
+## What & Why?
+YAML, "YAML Ain't Markup Language", è un formato di serializzazione leggibile. I programmatori lo usano per configurazione, data dumping e come punto di contatto tra diversi linguaggi.
 
-# Come:
-I codici di esempio di seguito mostrano l'utilizzo di YAML in Clojure.
+## How to:
+Per lavorare con YAML in Clojure, servono `clj-yaml` e `clojure.java.io`. Installa `clj-yaml` con Leiningen o deps.edn.
 
 ```Clojure
-(require '[clojure.data.yaml :as yaml])
+;; deps.edn
+{:deps {clj-yaml {:mvn/version "0.7.0"}}}
+```
+
+Leggi YAML:
+
+```Clojure
+(require '[clj-yaml.core :as yaml])
 (require '[clojure.java.io :as io])
-(yaml/write-str {:nome "Mario" :età 30})
+
+;; Legge il file YAML e lo trasforma in una mappa Clojure.
+(def config-map (yaml/parse-string (slurp (io/resource "config.yaml"))))
 ```
+
+Scrivi YAML:
 
 ```Clojure
-(require '[clojure.data.yaml :as yaml])
-(require '[clojure.java.io :as io])
-(binding [*default-data-writer-fn* nil] (yaml/read-str (slurp "esempio.yml")))
+(defn save-yaml [data filepath]
+  (spit filepath (yaml/generate-string data)))
+
+;; Uso
+(save-yaml config-map "output.yaml")
 ```
 
-Ecco l'output del primo codice:
+## Deep Dive
+YAML nasce nel 2001 per essere leggibile e utile per tutte le programmazioni. Alternativa: JSON, meno leggibile ma più veloce. Per performance, Clojure usa la libreria SnakeYAML, scritta in Java, per parsing e rendering YAML.
 
-```Clojure
-"eta: 30\ nome: Mario\n"
-```
-
-# Approfondimento:
-YAML è stato sviluppato da Clark Evans nel 2001, con l'obiettivo di creare un formato di dati più leggibile per le persone e più facile da scrivere per i programmi. Alcune alternative a YAML includono JSON e XML. 
-L'implementazione di YAML in Clojure è basata sul pacchetto "snakeyaml", che offre funzionalità complete per la lettura e scrittura di file YAML.
-
-# Vedi anche:
-Per ulteriori informazioni su YAML in Clojure, puoi consultare la documentazione ufficiale su https://github.com/clj-commons/data.yaml. Inoltre, puoi esplorare altre librerie di terze parti, come "clj-yaml" e "data-reader-yaml", per sfruttare al massimo l'utilizzo di YAML nella tua programmazione.
+## See Also
+- Documentazione `clj-yaml`: https://github.com/clj-commons/clj-yaml
+- Guida YAML ufficiale: https://yaml.org/
+- Comparazione YAML e JSON: https://phoenixnap.com/kb/yaml-vs-json

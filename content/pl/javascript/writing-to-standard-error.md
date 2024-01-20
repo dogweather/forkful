@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Javascript: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,22 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Wypisywanie do standardowego błędu jest często wykorzystywaną praktyką w programowaniu. Polega ona na wypisywaniu komunikatów o błędach lub ostrzeżeniach w kodzie, które są później wyświetlane w oknie konsoli. Programiści stosują to, aby ułatwić sobie debugowanie i odnajdywanie problemów w swoim kodzie.
+## What & Why? (Co i dlaczego?)
+W JavaScript, pisanie do standardowego błędu (stderr) pozwala wyświetlać komunikaty o błędach. Programiści używają tego, by oddzielić zwyczajne dane wyjściowe od informacji o błędach, co ułatwia debugowanie i logowanie.
 
-## Jak to zrobić:
-Przykładowy kod wypisania do standardowego błędu wygląda następująco:
-```Javascript
-console.error("To jest przykładowy komunikat o błędzie.");
-```
-Po uruchomieniu kodu powyżej, w oknie konsoli zostanie wyświetlona taka informacja:
-```
-To jest przykładowy komunikat o błędzie.
-```
-W ten sposób programista może szybko zauważyć, że w kodzie znajduje się pewien błąd i przystąpić do jego naprawy.
+## How to: (Jak to zrobić:)
+```javascript
+// Prosty przykład:
+console.error('To jest błąd!');
 
-## Zagłębienie:
-Wypisywanie do standardowego błędu jest częścią standardu języka Javascript. Jest to alternatywa dla wypisywania do standardowego wyjścia (console.log), które jest częściej wykorzystywane do wyświetlania informacji o działaniu programu. Wypisywanie do standardowego błędu można też wykorzystać do monitorowania wydajności aplikacji lub raportowania szczegółowych informacji o błędach.
+// Przykład z wykorzystaniem obiektu Error:
+const err = new Error('Coś poszło nie tak');
+console.error(err);
+```
 
-## Zobacz też:
-[Dokumentacja Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/console#error)
+Sample output:
+```
+To jest błąd!
+Error: Coś poszło nie tak
+```
+
+## Deep Dive (Dogłębna analiza)
+Stderr w JavaScript pochodzi z konwencji systemów Unix, gdzie strumień błędów oddzielono od standardowego wyjścia. Alternatywą jest zapisywanie błędów do pliku lub innego medium, ale pisanie do stderr jest standardem w przypadku błędów aplikacji. Implementacja w Node.js i przeglądarkach korzysta z globalnego obiektu `console`, oferując metodę `console.error` do wypisywania na stderr.
+
+## See Also (Zobacz też)
+- [Node.js Documentation on Console](https://nodejs.org/api/console.html#console Console.error)
+- [MDN Web Docs on Console.error()](https://developer.mozilla.org/en-US/docs/Web/API/console/error)
+- [The Console API](https://console.spec.whatwg.org/#loggingapis)
+  
+Notka: Linki są do angielskich wersji dokumentacji, gdyż mogą zapewniać najświeższe informacje.

@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "C++: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なんで？
+## What & Why? (何となぜ？)
+テキストファイルの書き込みとは、文字情報をファイルに保存すること。データ永続性、設定ファイル、ログ出力等のために行われる。
 
-テキストファイルを書くことは、プログラマーがコンピューターに情報を格納する方法の1つです。プログラマーは、データをテキストファイルに書き込んで、後で読み取ることで、プログラムの実行中や実行後にデータを保存したり処理したりすることができます。
-
-## 方法：
-
-### 書き込みの基本
-
-テキストファイルを書き込むには、まずファイルストリームを開きます。次に、ファイルストリームに書き込みを行うための書き込み関数を使用します。最後に、ファイルストリームを閉じれば書き込みは完了です。以下のコードは、"hello.txt"という名前のファイルに "Hello, world!"というテキストを書き込む例です。
+## How to: (やり方)
+次のコードは、`std::ofstream` を使って "example.txt" に "Hello, C++!" を書き込みます。
 
 ```C++
-
 #include <fstream>
-
-using namespace std;
+#include <iostream>
 
 int main() {
-    ofstream file;
-    file.open("hello.txt");
-    file << "Hello, world!";
-    file.close();
+    std::ofstream outfile("example.txt");
+
+    if (outfile.is_open()) {
+        outfile << "Hello, C++!" << std::endl;
+        outfile.close();
+    } else {
+        std::cerr << "ファイルを開けませんでした。" << std::endl;
+    }
+
     return 0;
 }
 ```
 
-### 書き込みの注意点
+`example.txt` の出力:
 
-テキストファイルに書き込む際には、注意点がいくつかあります。まず、ファイルストリームを開く際には、既に存在するファイルを開く場合でも、ファイルが存在しない場合でも開いた後で書き込みモードに切り替えなければなりません。また、ファイルストリームを閉じる際には、必ず閉じる前に書き込みが完了していることを確認することが重要です。
+```
+Hello, C++!
+```
 
-## ディープダイブ：
+## Deep Dive (深堀り)
+最初に、テキストファイル書き込みの基本。`std::ofstream` は、C++でのファイル操作に使われる標準ライブラリの一部です。C言語時代からあった `FILE*` と `fprintf` よりも、タイプセーフかつ例外を扱えるのが特徴。`std::ofstream` は RAII 原則に従い、ファイルリソースを初期化と解放を自動で行います。これ以外にも、`std::filesystem` でのファイル書き込みなど、他の方法も存在しますが、通常は `std::ofstream` が使われます。
 
-### 歴史的背景
-
-テキストファイルを書き込む方法は、コンピューターが普及した初期から存在しています。当時は、データの保存や処理に使われた紙テープなどの紙媒体から、ディスクやフラッシュドライブなどの電子メディアへの移行が進んだことで、テキストファイルの重要性が増しました。
-
-### 代替手段
-
-テキストファイルを書き込む代替手段としては、バイナリファイルやデータベースなどがあります。バイナリファイルは、テキストファイルよりも高速に情報を処理できますが、可読性が低く、情報を編集や閲覧する際には専用のツールが必要です。データベースは、大量のデータを管理するのに便利ですが、使い方によっては複雑になることもあります。
-
-### 実装の詳細
-
-テキストファイルを書く際には、ファイルの種類ごとにデータを読み込む方法が異なります。例えば、CSVファイルのデータを読み込む方法は、TXTファイルのデータを読み込む方法とは異なります。プログラマーは、書き込みの前にどのようなデータが必要なのかを把握し、適切な方法を選択しなければなりません。
-
-## 関連リンク：
-
-- [テキストファイルの読み込みの例](https://www.youtube.com/watch?v=qotxawN6EhA)
+## See Also (関連情報)
+- [cppreference.com の std::ofstream](https://en.cppreference.com/w/cpp/io/basic_ofstream)
+- [C++ File I/O in C++ Standard Library](https://www.cplusplus.com/doc/tutorial/files/)
+- [std::filesystem を使ったファイル処理ガイド](https://en.cppreference.com/w/cpp/filesystem)

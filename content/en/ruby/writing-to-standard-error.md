@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Ruby recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,36 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing to standard error in Ruby is a way for programmers to display error messages or debugging information to the user. Unlike standard output (usually displayed on the terminal), standard error is meant for displaying important information that the user should be aware of, such as unexpected errors or warnings. By using standard error, programmers can ensure that these messages are not overlooked and can be easily identified by the user.
+Standard error (`stderr`) is a stream separate from standard output (`stdout`) used mainly for outputting error messages or diagnostics. Programmers use it to keep error messages from mixing with regular program output, which helps in both debugging and output processing.
 
 ## How to:
+In Ruby, you can write to standard error using `$stderr.puts` or its shorthand `STDERR.puts`. Here's a quick example:
 
-To write to standard error in Ruby, you can use the `STDERR.puts` method, followed by the message you want to display. For example:
+```ruby
+puts "This will go to standard output."
+$stderr.puts "This will go to standard error."
 
-```Ruby
-STDERR.puts "Something went wrong"
+# Shorthand version:
+STDERR.puts "This will also go to standard error."
 ```
 
-This will print "Something went wrong" to the standard error stream.
+Open your terminal, run the script, and notice how everything still appears together by default. Redirecting is needed to separate the streams. Here's how you can do that:
 
-You can also use string interpolation to provide more specific information in your error message. For instance:
-
-```Ruby
-username = "John"
-STDERR.puts "#{username} is not a valid username"
+```shell
+ruby your_script.rb >output.txt 2>error.txt
 ```
 
-This will output "John is not a valid username" to the standard error stream.
+This command redirects standard output to `output.txt` and standard error to `error.txt`.
 
-## Deep Dive:
+## Deep Dive
+The concept of `stderr` goes back to Unix's earliest days. It's designed for error messages, ensuring they are visible even when `stdout` is redirected. While `$stderr.puts` and `STDERR.puts` are common in Ruby, there are other ways to write to `stderr`, like using `warn` for writing warnings or lower-level APIs like `$stderr.write`. Implementation-wise, `stderr` is unbuffered by default, ensuring immediate output, whereas `stdout` is typically buffered.
 
-The concept of standard error in programming dates back to the early days of computer programming. It was initially implemented as a way to differentiate between regular output and error messages, as both were printed on the same screen. Nowadays, standard error also serves as a way for programmers to redirect specific types of information to a different location, such as a log file.
-
-In Ruby, an alternative method to writing to standard error is using the `Kernel#warn` method. This method also outputs the given message to the standard error stream, but it includes additional information such as the location of the code where the message was called.
-
-Standard error is implemented in Ruby using the `IO` class, which represents input/output streams. The standard error stream, specifically, is represented by the `STDERR` constant.
-
-## See Also:
-
-To learn more about standard error and its implementation in Ruby, you can refer to the [Ruby documentation for STDERR](https://ruby-doc.org/core-2.7.0/STDERR.html). Additionally, to understand more about the `Kernel#warn` method, you can check out its documentation [here](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-warn).
+## See Also
+- Ruby documentation on I/O: [https://ruby-doc.org/core-3.1.2/IO.html](https://ruby-doc.org/core-3.1.2/IO.html)
+- The Open Group Base Specifications (UNIX standard streams): [https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html)
+- Understanding Shell script redirection: [https://www.gnu.org/software/bash/manual/html_node/Redirections.html](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)

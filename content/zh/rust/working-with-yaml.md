@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml进行编程"
-html_title:           "Rust: 使用yaml进行编程"
-simple_title:         "使用yaml进行编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是YAML以及为什么程序员要用它？
+## 什么 & 为什么?
+YAML 是一种数据序列化格式，常用于配置文件和数据交换。程序员使用 YAML 的原因是它易读易写，同时也便于人类和计算机的解析。
 
-YAML是一种轻量级的数据序列化格式，它使用简单的键值对结构来表示数据。它具有易读易写的特性，因此它被广泛地用作配置文件和数据交换的格式。程序员使用YAML来存储和传输数据，使得他们可以更轻松地将数据传递给其他应用程序。
+## 如何操作：
+让我们来看看如何在 Rust 中处理 YAML。首先，需要在 `Cargo.toml` 文件中添加 `serde` 和 `serde_yaml` 库：
 
-## 如何使用YAML：
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+```
 
-使用YAML非常简单。首先，我们需要导入yaml-crate，然后使用Yaml::load_from_str()函数来加载YAML文件中的数据。下面是一个简单的示例代码：
+现在，可以写代码解析 YAML 了：
 
-```Rust
-extern crate yaml;
+```rust
+use serde::{Deserialize, Serialize};
+use serde_yaml;
 
-use yaml::{Yaml, YamlLoader};
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Config {
+    title: String,
+    owner: Owner,
+}
 
-fn main() {
-    let yaml_str = "
-    name: John
-    age: 25
-    occupation: Developer
-    ";
-    let yaml = YamlLoader::load_from_str(yaml_str).unwrap();
-    let doc = &yaml[0];
-    println!("Name: {}", doc["name"]);
-    println!("Age: {}", doc["age"]);
-    println!("Occupation: {}", doc["occupation"]);
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Owner {
+    name: String,
+    dob: String,
+}
+
+fn main() -> Result<(), serde_yaml::Error> {
+    let yaml = r#"
+        title: Example YAML
+        owner:
+          name: Z Lin
+          dob: 1998-09-04
+    "#;
+
+    let deserialized_config: Config = serde_yaml::from_str(yaml)?;
+    println!("{:?}", deserialized_config);
+
+    Ok(())
 }
 ```
-输出：
+
+代码中 `Config` 和 `Owner` 结构体定义了将要解析的 YAML 数据格式。程序运行后会输出：
+
 ```
-Name: John
-Age: 25
-Occupation: Developer
+Config { title: "Example YAML", owner: Owner { name: "Z Lin", dob: "1998-09-04" } }
 ```
 
 ## 深入了解：
-
-YAML最初由Clark Evans于2001年开发，旨在解决XML格式复杂和冗长的问题。它类似于JSON，但比JSON更易读。其他可选的数据交换格式包括XML、JSON和INI。与其他格式相比，YAML具有更简单的语法，并且允许注释和多行文本。yaml-crate是一个Rust库，提供了用于解析和序列化YAML格式的工具。
+YAML（YAML Ain't Markup Language）诞生于2001年，设计目标是易于人类阅读和编辑，同时也容易被机器解析。相比于JSON和XML，YAML更加强调可读性。在 Rust 中，通过 `serde` 库，我们可以轻松地序列化和反序列化数据。虽然 `serde` 支持多种格式，但处理 YAML 时要使用 `serde_yaml`。选择 YAML 而非 JSON 或 XML，常因为其更简洁明了的层次结构。
 
 ## 参考链接：
-
-- [yaml-crate官方网站](https://docs.rs/yaml/)
-- [YAML官方网站](https://yaml.org/)
-- [YAML在Rust中的使用](https://docs.rs/crate/yaml/)
-- [Rust编程语言官网](https://www.rust-lang.org/zh-CN/)
+- Serde 官方文档：https://serde.rs
+- Serde YAML 库文档：https://docs.rs/serde_yaml
+- YAML 官方网站：https://yaml.org

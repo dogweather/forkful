@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータープログラミングにおける「テストの書き方」"
-html_title:           "Go: コンピュータープログラミングにおける「テストの書き方」"
-simple_title:         "コンピュータープログラミングにおける「テストの書き方」"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# テストを書くとは？
+## What & Why? (テストとは？そしてなぜ？)
+テストコードはプログラムが正しく動作することを保証する手段です。不具合を発見しやすくし、新しい機能を安心して追加できます。
 
-プログラマーがコードを書く際に、テストを書いて実行することは重要です。テストは、バグを発見しやすくするために、実際のプログラムの機能や挙動を確認するものです。つまり、プログラムが想定通りに動作するかどうかを検証するためにテストを書きます。
+## How to: (やり方)
+```Go
+package calculator
 
-## 方法：
-
-Go言語を使って、テストを書く方法を見てみましょう。下のコードブロック内に、サンプルのコードとその実行結果を示します。
-
-```
-// コード例：
-
-// テストする関数
-func add(x, y int) int {
-	return x + y
+// Add two integers and return the result
+func Add(a, b int) int {
+    return a + b
 }
+```
 
-// テストコード
+テストコードを以下のように書きます：
+
+```Go
+package calculator
+
+import "testing"
+
+// TestAdd 関数はAdd関数をテストする
 func TestAdd(t *testing.T) {
-	result := add(2, 3)
-	if result != 5 {
-		t.Errorf("2 + 3 = %d; want 5", result)
-	}
-}
+    got := Add(1, 2)
+    want := 3
 
-// 実行結果：
-$ go test 
-ok      _/home/test  0.006s
+    if got != want {
+        t.Errorf("Add(1, 2) = %d; want %d", got, want)
+    }
+}
 ```
 
-## ディープダイブ：
+テストを実行する：
 
-テストを書くことで、プログラムの品質をより高く保つことができます。以前は、手動でテストを行うことが一般的でしたが、現在では自動化されたテストが主流です。代表的なテストフレームワークとして、JUnitやSelenium等がありますが、Go言語にはネイティブなテストフレームワークであるtestingパッケージが用意されています。
+```
+$ go test
+```
 
-## 参考：
+サンプル出力：
 
-関連する情報源は、以下のリンクから参照することができます。
+```
+PASS
+ok      calculator 0.002s
+```
 
-- [Go言語 公式ドキュメント](https://golang.org/doc/)
-- [Tests in Go](https://medium.com/@teivah/tests-in-go-8d0709a4eea6)
+## Deep Dive (詳細解説)
+Go言語でのテスト実践は、2009年の初版リリース当初からサポートされています。`testing` パッケージが標準で提供され、`go test` コマンドでテスト実行が可能です。代替として、ベンチマークやカスタムテストフレームワークを利用することもできますが、単純かつ高速なテストには `testing`パッケージが適しています。
+
+## See Also (関連情報)
+- [Go Testing](https://golang.org/pkg/testing/): 公式テストパッケージドキュメント
+- [Learn Go with Tests](https://github.com/quii/learn-go-with-tests): テスト駆動開発でGoを学ぶリソース
+- [Go Test Tutorial](https://blog.alexellis.io/golang-writing-unit-tests/): Go言語における単体テストの書き方チュートリアル

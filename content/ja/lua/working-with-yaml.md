@@ -1,7 +1,7 @@
 ---
-title:                "Yamlを使う。"
-html_title:           "Lua: Yamlを使う。"
-simple_title:         "Yamlを使う。"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-YAMLを使用すること
+## What & Why? (何となぜ？)
+YAMLはデータの形式です。設定ファイルやデータ交換に使われる。読みやすくて、簡単に扱えるため人気があります。
 
-## なにそれ
-YAMLはデータの表現を容易にするために作られた、人間にとって読みやすいデータ形式です。プログラマーはYAMLを使用することで、より簡単にデータを作成、保存、共有することができます。
+## How to: (やり方)
+Luaでは、`lyaml` モジュールで YAML を扱う。以下の例では、YAMLを解析して、Luaテーブルに変換する方法を示す。
 
-## 使い方
 ```Lua
--- YAMLファイルを読み込み、変数に保存する
-local yaml = require("yaml")
-file = io.open("input.yaml", "r")
-data = yaml.load(file)
-file:close()
+local lyaml = require('lyaml')
 
--- データをYAML形式で書き出す
-output = yaml.dump(data)
+-- YAML string
+local yaml_str = [[
+name: Taro
+occupation: Programmer
+languages:
+  - Lua
+  - Python
+]]
+
+-- 解析してLuaテーブルにする
+local data = lyaml.load(yaml_str)
+
+-- dataテーブルを使った出力
+print(data.name) -- 出力: Taro
+for _, language in ipairs(data.languages) do
+    print(language)
+end
 ```
 
-## 詳細を知る
-YAMLは2001年に作られ、Pythonのデータ形式である「YAML Ain't Markup Language」の略称から名付けられました。代表的な代替形式としてJSONがありますが、YAMLはより読みやすく、より複雑なデータ構造にも対応できるという特徴があります。YAMLの実装には、Luaで使用できるlua-yamlモジュールがあります。
+Sample Output:
+```
+Taro
+Lua
+Python
+```
 
-## 関連情報
-- 詳しい使用方法や仕様については、公式ドキュメントを参照してください。 https://yaml.org/spec/
-- YAMLをPythonで使用する方法については、Python公式ドキュメントを参照してください。 https://docs.python.org/3/library/yaml.html
+## Deep Dive (深い潜入)
+YAMLは "YAML Ain't Markup Language" の略で、2001年に導入された。JSONやXMLと比べて、YAMLは人間にとって読みやすい。`lyaml`はLuaでYAMLを扱う代表的なライブラリだ。C言語で書かれた `libyaml` に基づいているため、速度も速い。
+
+## See Also (関連情報)
+- YAML公式サイト: https://yaml.org
+- `lyaml` ライブラリ: https://github.com/gvvaughan/lyaml
+- LuaRocksでの `lyaml` インストール: https://luarocks.org/modules/gvvaughan/lyaml
+- `libyaml` GitHub リポジトリ: https://github.com/yaml/libyaml

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "Arduino: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest JSON i dlaczego jest ważne?
-JSON (JavaScript Object Notation) to popularny format danych, który jest stosowany w programowaniu. Służy on do przedstawiania informacji w postaci obiektów i tablic, które są czytelne dla ludzi. Programiści korzystają z JSON, ponieważ jest on łatwy do zrozumienia i przetwarzania przez komputery.
+## Co i dlaczego?
+JSON to format wymiany danych, łatwy do odczytu dla ludzi i maszyn. Używamy go, bo świetnie współgra z wieloma językami programowania, w tym z Arduino, do przechowywania konfiguracji czy komunikacji z serwerami.
 
 ## Jak to zrobić:
-Arduino ma wbudowaną bibliotekę do obsługi danych w formacie JSON. Aby zacząć, musisz zaimportować bibliotekę za pomocą polecenia ```#include <ArduinoJson.h>```. Następnie możesz użyć funkcji ```parseJson```, aby przetworzyć dane zapisane w formacie JSON. Poniżej znajduje się przykład kodu z wykorzystaniem tej biblioteki:
+Do obsługi JSON w Arduino użyjemy biblioteki `ArduinoJson`, którą najpierw trzeba zainstalować przez Menadżer Bibliotek w IDE.
 
-```
+```Arduino
 #include <ArduinoJson.h>
 
 void setup() {
-  // Tworzenie przykładowego obiektu JSON
-  const char* json = "{\"name\":\"John\", \"age\":30, \"town\":\"New York\"}";
-
-  // Parsowanie danych JSON
-  DynamicJsonDocument doc(1024);
-  deserializeJson(doc, json);
-
-  // Pobranie wartości z obiektu JSON
-  const char* name = doc["name"];
-  int age = doc["age"];
-  const char* town = doc["town"];
-
-  // Wyświetlenie danych na Serial Monitorze
   Serial.begin(9600);
-  Serial.println(name);
-  Serial.println(age);
-  Serial.println(town);
+
+  // Przykładowy JSON
+  const char* json = "{\"temperature\": 23.5}";
+
+  DynamicJsonBuffer jsonBuffer;
+  JsonObject& root = jsonBuffer.parseObject(json);
+
+  if (!root.success()) {
+    Serial.println("Błąd: nie udało się sparować JSONa");
+    return;
+  }
+
+  float temperature = root["temperature"];
+  Serial.print("Temperatura: ");
+  Serial.println(temperature);
 }
 
 void loop() {
-
+  // tu nic nie robimy
 }
 ```
 
-Po przesłaniu tego kodu do płytki Arduino, powinieneś zobaczyć w Serial Monitorze dane o imieniu, wieku i miejscu zamieszkania zapisane w obiekcie JSON.
+Spodziewane wyjście:
+```
+Temperatura: 23.5
+```
 
-## Głębsze zanurzenie:
-JSON został stworzony w 2001 roku i szybko zyskał popularność jako sposób na wymianę danych między aplikacjami internetowymi. Alternatywami dla formatu JSON są m.in. XML i CSV, ale JSON jest często preferowany ze względu na swoją prostotę i czytelność. W przypadku programowania w Arduino, obsługa danych w formacie JSON jest bardzo przydatna w komunikacji z innymi urządzeniami lub serwerami internetowymi.
+## Głębsze spojrzenie:
+JSON, JavaScript Object Notation, zyskał popularność w latach 2000. jako alternatywa dla XML. ArduinoJson to nie jedyna opcja – inne biblioteki to na przykład `json-streaming-parser`. Ważne jest rozróżnienie między `DynamicJsonBuffer` a `StaticJsonBuffer` – pierwszy dynamicznie alokuje pamięć, drugi wymaga zadeklarowania rozmiaru z góry.
 
-## Zobacz również:
-- Oficjalna dokumentacja biblioteki ArduinoJson: https://arduinojson.org/
-- Przykładowy projekt wykorzystujący dane w formacie JSON: https://create.arduino.cc/projecthub/arduino-projects/arduino-json-example-734671
+## Zobacz też:
+- Dokumentacja ArduinoJson: https://arduinojson.org/
+- Tutorial JSON w Arduino: https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/
+- JSON w praktyce: https://www.json.org/json-pl.html

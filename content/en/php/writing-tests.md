@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "PHP recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,54 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests in programming is the process of creating small pieces of code that verify the functionality of the main code. These tests are important for ensuring that the code is working properly and to catch any errors or bugs before they become bigger issues. Programmers write tests to ensure the quality and stability of their code, improve their code's reliability, and save time in the long run.
+Testing checks if your code does what it's supposed to. It saves time by catching bugs early and ensures code changes don't break stuff.
 
 ## How to:
+We're diving into PHPUnit, a popular PHP testing framework. First, install it with Composer:
 
-To start writing tests in PHP, we first need to include the PHPunit testing framework in our code. We can do this by using the `require` function and specifying the path to the PHPunit file. Next, we can create a basic test class with a `testExample` method. Within this method, we can use some assertions provided by PHPunit to verify the output of our code. For example:
-
+```bash
+composer require --dev phpunit/phpunit
 ```
-<?php
 
-require './vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
+Now, let's write a simple test. Imagine you’ve got a class `Calculator` with an `add` method.
 
-class MyTestClass extends PHPUnit_Framework_TestCase
-{
-
-    public function testExample()
-    {
-        $result = 1 + 1;
-        $expected = 2;
-        $this->assertEquals($expected, $result);
+```php
+// Calculator.php
+class Calculator {
+    public function add($a, $b) {
+        return $a + $b;
     }
-
 }
-
 ```
 
-This code checks if the result of adding 1 and 1 is equal to 2, and if not, it will throw an error. Running this test with PHPunit will give us the following output:
+Here’s how you test it:
 
+```php
+// CalculatorTest.php
+use PHPUnit\Framework\TestCase;
+
+class CalculatorTest extends TestCase {
+    public function testAddition() {
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
+    }
+}
 ```
-PHPUnit 8.4.3 by Sebastian Bergmann and contributors.
 
-.                                                                   1 / 1 (100%)
+Run the test with:
 
-Time: 72 ms, Memory: 4.00 MB
-
-OK (1 test, 1 assertion)
+```bash
+./vendor/bin/phpunit CalculatorTest
 ```
 
-This means our test was successful and our code is functioning as expected.
+Output shows if tests pass or fail.
 
-## Deep Dive:
+## Deep Dive
+Testing wasn't always a big deal in PHP. Originally, many slapped code together and manually checked if it worked. Now, testing is king. PHPUnit started gaining traction in the 2000s and now it's nearly standard. Alternatives? Sure, there’s PHPSpec and Behat, for starters. Under the hood, PHPUnit uses assertions to compare expected and actual results, and test doubles (mocks, stubs, spies) to mimic external dependencies.
 
-The concept of writing tests has been around for a long time, with the first automated testing framework for PHP being introduced in 2004. Despite its long history, many developers still overlook the importance of writing tests in their code. However, as software development becomes more complex and time-sensitive, the need for reliable and stable code is greater than ever.
-
-There are different types of testing, such as unit testing, integration testing, and acceptance testing, which serve different purposes. Writing tests also allows for easier refactoring and code maintenance, as tests can quickly identify any issues that arise from changes made to the code. Alternatives to writing tests in PHP include using other testing frameworks like Behat or Codeception, which offer different testing approaches and features.
-
-Implementing tests in PHP can also be done through more complex methods, such as using dependency injection, mocking, and stubbing. These advanced techniques help to isolate and test different parts of the code, making the testing process more efficient and effective.
-
-## See Also:
-
-To learn more about writing tests in PHP, check out the official PHPunit documentation at https://phpunit.de/manual/current/en/index.html. You can also explore other testing frameworks like Behat at https://behat.org/ and Codeception at https://codeception.com/. Keep in mind that the best approach for writing tests may vary depending on the project and its specific requirements.
+## See Also
+- PHPUnit Manual: https://phpunit.de/manual/current/en/index.html
+- PHP The Right Way (Testing): http://www.phptherightway.com/#testing
+- Mockery (mocking framework for PHPUnit): http://docs.mockery.io/en/latest/

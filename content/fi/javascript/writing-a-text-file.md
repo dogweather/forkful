@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostotiedoston kirjoittaminen"
-html_title:           "Javascript: Tiedostotiedoston kirjoittaminen"
-simple_title:         "Tiedostotiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Kirjoittaminen tekstitiedostoon on tapa tallentaa tietoja ohjelmassa käytettäväksi myöhemmin. Ohjelmoijat voivat käyttää tätä tietoa esimerkiksi tallentaakseen käyttäjän antamia arvoja tai tulostaa tekstiä käyttäjän nähtäväksi myöhemmin.
+## What & Why?
+Kirjoittaa tekstitiedosto tarkoittaa tiedon tallentamista tekstimuodossa tiedostoon. Koodarit tekevät tätä datan pysyvään säilytykseen, asetusten tallennukseen tai lokitiedostojen luomiseen.
 
-# Kuinka tehdä?
-Tässä on esimerkki siitä, kuinka voit kirjoittaa tiedon tekstitiedostoon käyttäen Javascriptia:
+## How to:
+
+Node.js:lla tallennetaan tiedosto `fs`-moduulin avulla:
 
 ```Javascript
-const fs = require('fs'); // Importataan tiedostojärjestelmä-moduuli
+const fs = require('fs');
 
-// Tiedon tallentaminen
-const data = 'Tervetuloa tekstitiedostoon!';
-fs.writeFile('teksti.txt', data, (err) => {
-  if (err) throw err;
-  console.log('Tiedot tallennettu onnistuneesti.');
-});
+let data = "Terve maailma!";
 
-// Tiedon lisääminen jo olemassa olevaan tiedostoon
-const newData = '\nTämä on uusi rivi.';
-fs.appendFile('teksti.txt', newData, (err) => {
-  if (err) throw err;
-  console.log('Tiedot lisätty onnistuneesti.');
-});
-
-// Tiedon lukeminen tiedostosta
-fs.readFile('teksti.txt', (err, data) => {
-  if (err) throw err;
-  console.log(data.toString());
+fs.writeFile('tervetuloa.txt', data, (err) => {
+    if (err) throw err;
+    console.log('Tiedosto tallennettu!');
 });
 ```
 
-Tämän koodin tuloksena syntyy tiedosto nimeltä "teksti.txt", joka sisältää seuraavan tekstin:
+Selaimessa käytä `Blob`-objektia ja tallenna tiedosto `a`-elementin `href`-ominaisuuden kautta:
 
+```Javascript
+let data = "Terve selainmaailma!";
+let blob = new Blob([data], { type: 'text/plain' });
+
+let a = document.createElement('a');
+a.download = 'terveiset.txt';
+a.href = window.URL.createObjectURL(blob);
+a.style.display = 'none';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
 ```
-Tervetuloa tekstitiedostoon!
-Tämä on uusi rivi.
-```
 
-# Syväsukellus
-Kirjoittaminen tekstitiedostoon on ollut tärkeä osa ohjelmointia jo pitkään. Aiemmin tätä toimintoa käytettiin enemmän, kun tiedot tallennettiin tietokoneen muistiin eikä pilvipalveluihin ollut vielä mahdollista tallentaa tietoja.
+## Deep Dive
 
-Javascriptissa on muitakin tapoja tallentaa tietoa, kuten esimerkiksi käyttäen JSON-tiedostoja tai verkkopalveluiden kautta. Kuitenkin tiedoston lukeminen ja kirjoittaminen suoraan tekstitiedostoon on edelleen hyödyllistä esimerkiksi yksinkertaisemmissa ohjelmissa.
+Kirjoittaminen tekstitiedostoon on ollut tärkeä osa ohjelmointia alusta alkaen. Erityisesti palvelimella Node.js:n `fs`-moduuli on standardityökalu tähän, kun taas selaimessa tiedoston kirjoitusominaisuudet ovat rajatumpia turvallisuussyistä. Vaihtoehtoisesti voit käyttää tietokantoja tai pilvipalveluita pysyvään datan tallennukseen. Implementaatiotiedot vaihtelevat alustoittain, kuten tiedostonkäsittelyssä käytettävät käyttöoikeudet tai prosessit.
 
-Tiedon kirjoittaminen tapahtuu käyttäen Node.js:n fs-moduulia, joka tarjoaa erilaisia metodeja tiedon lukemiseen, kirjoittamiseen ja muokkaamiseen tiedostossa.
+## See Also
 
-# Katso myös
-Noden viralliset dokumentaatiot tiedoston lukemiseen, kirjoittamiseen ja muokkaamiseen: https://nodejs.org/dist/latest-v14.x/docs/api/fs.html
+- Node.js FileSystem Documentation: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- MDN Web Docs Blob-käyttö: [https://developer.mozilla.org/en-US/docs/Web/API/Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
+- HTML Living Standard for a.download: [https://html.spec.whatwg.org/#the-a-element](https://html.spec.whatwg.org/#the-a-element)

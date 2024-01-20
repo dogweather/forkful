@@ -1,7 +1,7 @@
 ---
-title:                "「JSONとの作業」"
-html_title:           "Javascript: 「JSONとの作業」"
-simple_title:         "「JSONとの作業」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JSONとは？
-JSONはJavaScript Object Notationの略で、データを表現するためのフォーマットの一つです。JSONを使用することで、データを簡単に処理や転送ができます。JSONはJavaScriptと完全に互換性があり、Web開発で広く使用されています。
+## What & Why?
+JSONはJavaScript Object Notationの略です。データ交換によく使われます。簡潔で読みやすく、多くの言語で解析・生成が可能なためです。
 
-# なぜJSONを使用するのか？
-JSONは軽量かつ扱いやすいため、プログラマーにとって非常に便利なフォーマットです。また、Web開発やAPIとの連携においても広く使用されており、データの受け渡しをスムーズに行うことができます。
+## How to:
+### JSON文字列のパース
+```Javascript
+let jsonString = '{"name": "Yamada", "age": 30}';
+let jsonObj = JSON.parse(jsonString);
 
-# JSONの使い方
-```javascript
-// JSONデータの作成
-let json = {
-    "name": "John",
-    "age": 25,
-    "hobbies": ["reading", "coding", "playing"]
-};
-
-// オブジェクトをJSONデータに変換
-let jsonData = JSON.stringify(json);
-
-// JSONデータをオブジェクトに変換
-let obj = JSON.parse(jsonData);
-
-// console.logを使ってオブジェクトのプロパティを出力
-console.log(obj.name); // John
+console.log(jsonObj.name); // 出力: Yamada
+console.log(jsonObj.age);  // 出力: 30
 ```
 
-# 詳細を知る
-## 歴史的な背景
-JSONは2001年にダグラス・クロックフォードによって作成されました。当初はJavaScriptでのデータ交換を簡単にするために設計されましたが、現在では主にデータ転送に使用されています。
+### JSON形式の文字列の生成
+```Javascript
+let person = { name: "Suzuki", age: 25 };
+let jsonString = JSON.stringify(person);
 
-## 他の代替フォーマット
-JSONの代表的な代替フォーマットにはXMLやYAMLがあります。しかし、JSONはシンプルで読み書きが容易なことから、多くのプログラマーに支持されています。
+console.log(jsonString); // 出力: {"name":"Suzuki","age":25}
+```
 
-## JSONの実装の詳細
-JSONはJavaScriptの構文をベースにしており、キーバリューのペアとして表現されます。また、配列やオブジェクトの形でデータを格納することができます。
+## Deep Dive
+JSONはDouglas Crockfordによって発明されました。XMLがよく使われていた時代の後継として登場。XMLは複雑で重いのに対し、JSONは軽量でスピーディです。JavaScriptのみならず多言語でサポートされています。例えば、Pythonでは`json`モジュール、Javaでは`org.json`ライブラリなどが存在します。
 
-# 関連情報を参照する
-- [JSON公式サイト](https://www.json.org/json-ja.html)
-- [MDN JSON](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [JSONを見やすくするツール](https://jsonformatter.curiousconcept.com/)
+## See Also
+- JSON公式サイト：[https://www.json.org/json-ja.html](https://www.json.org/json-ja.html)
+- MDNのJSON案内：[https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON)
+- W3SchoolsのJSONチュートリアル：[https://www.w3schools.com/js/js_json_intro.asp](https://www.w3schools.com/js/js_json_intro.asp)

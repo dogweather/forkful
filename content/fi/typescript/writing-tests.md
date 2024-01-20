@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "TypeScript: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Testien kirjoittaminen on ohjelmistokehittäjien tärkeä tehtävä, jossa luodaan automatisoituja testejä ohjelmien toiminnan ja toimintakyvyn varmistamiseksi. Tämä helpottaa virheiden löytämistä ja korjaamista kehitysprosessin aikana ja varmistaa, että ohjelmisto toimii odotetulla tavalla.
+## What & Why?
+Testaus tarkoittaa koodin toiminnallisuuden varmistamista automatisoiduilla tarkistuksilla. Ohjelmoijat tekevät sitä, koska se auttaa bugien löytämistä, parantaa koodin laatua ja tuo mielenrauhaa.
 
-## Kuinka: 
-Esimerkki testin kirjoittamisesta käyttäen TypeScript-kieltä:
-```TypeScript
-function sum(a: number, b: number): number {
+## How to:
+Testataan `add`-funktiota, joka summaa numeroita. Käytetään TypeScriptissä suosittua testauskirjastoa, Jest.
+
+```typescript
+// sum.ts
+export function add(a: number, b: number): number {
   return a + b;
 }
+```
 
-test("Sum of 1 and 2 should equal 3", () => {
-  expect(sum(1, 2)).toBe(3);
+Tehdään testi `add`-funktiolle:
+
+```typescript
+// sum.test.ts
+import { add } from './sum';
+
+test('summaa kaksi numeroa', () => {
+  expect(add(1, 2)).toBe(3);
 });
 ```
-Output:
-```
-PASS Sum of 1 and 2 should equal 3
+
+Suoritetaan testit:
+
+```shell
+$ jest
+PASS  ./sum.test.ts
+✓ summaa kaksi numeroa (3ms)
 ```
 
-## Syvempää tutkiskelua:
-Testien kirjoittaminen on osa ketterää ohjelmistokehitystä ja sen tavoitteena on varmistaa ohjelmiston laadukas toiminta. Historiallisesti testaaminen on ollut manuaalista ja aikaa vievää, mutta automaattisten testien avulla testien kirjoittaminen on nopeutunut ja helpottunut. TypeScript tarjoaa kattavan testauksen kirjaston, johon kuuluu mm. expect- ja toBe-funktiot, jotka helpottavat testien kirjoittamista sekä parantavat koodin luettavuutta.
+## Deep Dive
+Testien kirjoittaminen on kehittynyt massiivisesti vuosien saatossa. Aluksi testaus oli yksinkertaista assertti-koodia, kunnes kehitettiin erikoistuneempia työkaluja, kuten JUnit Javaan ja sen sisarprojekti Jest JavaScript-ympäristöön. Vaihtoehtoja on monia: Mocha, Jasmine, ja QUnit ovat vain joitakin suosittuja. TypeScriptissä kannattaa huomioida tyypitetyt testikehykset ja mahdolliset integraatio-ongelmat.
 
-## Katso myös:
-Lisätietoa testien kirjoittamisesta TypeScript-kielellä löytyy esimerkiksi seuraavista lähteistä:
-- https://www.typescriptlang.org/docs/handbook/testing.html
-- https://jestjs.io/docs/en/expect
-- https://jestjs.io/docs/en/using-matchers
+## See Also
+- Jest dokumentaatio: [https://jestjs.io/](https://jestjs.io/)
+- TypeScript: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- Mocha: [https://mochajs.org/](https://mochajs.org/)
+- Jasmine: [https://jasmine.github.io/](https://jasmine.github.io/)

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Clojure: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
-Praca z plikami CSV jest często wykonywana przez programistów, ponieważ są one powszechnie używane do przechowywania i przetwarzania dużych zbiorów danych w formacie tabelarycznym. CSV (ang. Comma-Separated Values) to prosty format przechowywania danych, w którym wartości są oddzielane przecinkami. Umożliwia to łatwy odczyt i zapis danych przez komputery.
+## Co i Dlaczego?
+Obróbka plików CSV (Comma-Separated Values) polega na manipulowaniu danymi zapisanymi w postaci tabelarycznej, gdzie każdy wiersz to rekord, a kolumny oddzielone są przecinkami. Programiści robią to, by łatwo importować, eksportować oraz przetwarzać dane z i do systemów bazodanowych, arkuszy kalkulacyjnych i aplikacji.
 
 ## Jak to zrobić:
 ```Clojure
-(require '[clojure-csv.core :as csv])
+(require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-;; Odczytywanie pliku CSV
-(with-open [csv-file (clojure.java.io/reader "dane.csv")]
-  (doall (csv/read-csv csv-file)))
+; Czytanie pliku CSV
+(with-open [reader (io/reader "dane.csv")]
+  (let [parsed-csv (csv/read-csv reader)]
+    (println parsed-csv)))
 
-;; Zapisywanie danych do pliku CSV
-(with-open [csv-file (clojure.java.io/writer "dane.csv")]
-  (csv/write-csv csv-file [["Imię" "Nazwisko" "Wiek"]
-                           ["Anna" "Kowalska" "26"]
-                           ["Jan" "Nowak" "32"]]))
+; Zapis do pliku CSV
+(let [data [["id" "name" "age"]
+            ["1" "Jan Kowalski" "28"]
+            ["2" "Ewa Nowak" "35"]]]
+  (with-open [writer (io/writer "wyjście.csv")]
+    (csv/write-csv writer data)))
+
+; Wynik:
+; [["id" "name" "age"]
+;  ["1" "Jan Kowalski" "28"]
+;  ["2" "Ewa Nowak" "35"]]
 ```
-Powyższe przykłady wykorzystują bibliotekę `clojure-csv` do odczytu i zapisu plików CSV. Funkcja `read-csv` odczytuje dane z pliku w formacie tabelarycznym, a `write-csv` zapisuje dane w odpowiednim formacie. Należy zwrócić uwagę na użycie funkcji `doall` w celu wymuszenia wykonania operacji odczytu pliku.
 
-## Głębsza analiza:
-1. CSV został stworzony w latach 70. jako prosty format do przechowywania danych w arkuszach kalkulacyjnych. Obecnie jest szeroko wykorzystywany w wielu dziedzinach, w tym w programowaniu.
-2. Alternatywne sposoby przechowywania danych tabelarycznych to m.in. XML i JSON.
-3. Przy pracy z większymi zbiorami danych, należy uważać na wydajność operacji odczytu i zapisu plików CSV. Można to osiągnąć poprzez wykorzystanie bibliotek zoptymalizowanych pod kątem tego formatu, takich jak `clojure-csv`.
+## Dogłębniejsze informacje:
+CSV to prosty format wymiany danych, który istnieje od wczesnych lat informatyki. Alternatywy dla CSV obejmują JSON, XML oraz formaty bazodanowe jak SQL. Implementacja obsługi CSV w Clojure polega głównie na wykorzystaniu biblioteki `clojure.data.csv`, która umożliwia efektywne czytanie i pisanie tych plików. O ile samo czytanie i pisanie jest proste, to trzeba pamiętać o poprawnym kodowaniu znaków czy obsłudze cudzysłowów i przecinków w danych.
 
 ## Zobacz także:
-1. Oficjalna dokumentacja Clojure dotycząca pracy z CSV: https://clojuredocs.org/clojure-csv.
-2. Poradnik na temat przetwarzania plików CSV w Clojure: https://www.braveclojure.com/reading-and-writing-csv/.
-3. Biblioteka `clojure.data.csv` w standardowej bibliotece Clojure: https://clojure.github.io/clojure/clojure.data.csv-api.html.
+- Dokumentacja `clojure.data.csv`: https://clojure.github.io/data.csv/
+- Przykłady i tutoriale CSV w Clojure: https://www.clojure-toolbox.com/
+- Specyfikacja formatu CSV: https://tools.ietf.org/html/rfc4180

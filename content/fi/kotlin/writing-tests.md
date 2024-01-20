@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Kotlin: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Testaus on koodin automatisoitu tarkistus virheiden löytämiseksi. Ohjelmoijat testaavat koodia varmistaakseen, että ohjelmat toimivat suunnitellusti ja tehostavat koodin ylläpidettävyyttä.
 
-Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, jossa koodin toiminnallisuutta tarkastellaan ja varmistetaan sen oikeellisuus. Testien avulla ohjelmoijat voivat välttää virheitä ja varmistua siitä, että heidän koodinsa toimii odotetusti erilaisissa tilanteissa.
+## How to:
+Kotlinissa yksikkötestit kirjoitetaan usein käyttäen JUnit-kehyksellä. Esimerkki:
 
-## Miten:
+```kotlin
+import org.junit.Test
+import org.junit.Assert.*
 
-```Kotlin
-fun sum(x: Int, y: Int): Int { 
-  return x + y 
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
 }
 
-fun testSum() {
-  val result = sum(2, 3) // kutsutaan funktiota
-  assert(result == 5) // tarkistetaan, että tulos on odotettu
-}
-
-// Suoritetaan testi
-testSum()
+// Suorita testi komennolla:
+// ./gradlew test --tests ExampleUnitTest
 ```
 
-Tässä esimerkissä on määritelty funktio, joka summaa kaksi kokonaislukua. Sen jälkeen on määritelty testi, joka kutsuu tätä funktiota ja tarkistaa, että saatu tulos on odotettu. Testin suorittaminen antaa meille varmuuden siitä, että funktio toimii oikein ja tekee halutunlaisen laskutoimituksen.
+Tuloste:
 
-## Syväluotaus:
+```
+Test passed: addition_isCorrect
+```
 
-Testien kirjoittaminen on keino varmistaa ohjelman toiminnallisuus ja löytää mahdolliset virheet jo ennen kuin ohjelma julkaistaan. Testien lisäksi on olemassa myös muita tapoja varmistaa koodin laatu, kuten koodin tarkastaminen ja käsin tehtävä debuggaus. On tärkeää löytää oma tapa testata ja varmistaa oman koodin toimivuus.
+## Deep Dive
+JUnit käyttöön tuli Java-maailmassa, ja se on saatavilla myös Kotlinille. Vaihtoehtoina on muitakin testauskehyksiä kuten Spek ja MockK. Yksikkötestauksessa keskitytään pieniin koodinpätkiin, kuten funktioihin, kun taas integraatiotestit varmistavat että eri osat toimivat yhteen.
+
+## See Also
+- [JUnit 5 -käyttöohje](https://junit.org/junit5/docs/current/user-guide/)
+- [MockK-kehyksen kotisivu](https://mockk.io/)
+- [Spek framework kotisivu](https://www.spekframework.org/)

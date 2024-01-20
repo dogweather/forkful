@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "Kotlin: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
+## What & Why? (क्या और क्यों?)
 
-YAML एक आसान से समझने और लिखने के लिए आपके डेटा को अभिव्यक्त करने का एक तरीका है। यह एक संख्या या टेक्स्ट देंगे जोते हुए फ़ॉरमैटिंग संरचना है, किस प्रकार आप एक फ़ाइल या डेटाबेस में सुरक्षित रूप से अपने डेटा को संग्रहीत और संरक्षित कर सकते हैं। यह एक कठिन उपकरण नहीं है और अधिकांश विकासकर्ताओं को इसे शामिल करना चाहिए।
+YAML एक डाटा सीरियलाइज़ेशन फॉर्मेट है जो डेटा को मनुष्य द्वारा पढ़े जाने योग्य फॉर्म में लिखने की सुविधा देता है। प्रोग्रामर्स कॉन्फ़िगरेशन फाइलों, सेटिंग्स, और डेटा को स्टोर व मैनेज करने के लिए YAML का उपयोग करते हैं।
 
-## कैसे करें:
+## How to (कैसे करें):
 
-कॉट्लिन में YAML की प्रैक्टिस बहुत आसान है। साधारण गणना यह है कि संरचित डेटा एक कठिन संरचना है। उदाहरण के लिए, आइसी हऔंगरी यू एम एल द्वारा एक अनूठी उपकरण है।
+कोटलिन में YAML को हैंडल करने के लिए आपको एक लाइब्रेरी की आवश्यकता होती है, जैसे 'snakeyaml'. पहले आप `build.gradle` में डिपेंडेंसी जोड़ें:
 
 ```kotlin
-val employee = """
-    name: John Smith
-    age: 35
-    position: Manager
-    salary: 50000
-""".trimIndent()
+dependencies {
+    implementation("org.yaml:snakeyaml:1.29")
+}
 ```
 
-इस उदाहरण में, हमने एक वाक्य डेटा स्ट्रिंग का उपयोग किया है और इसे वर्णन की उदाहरण के रूप में प्रयोग किया है। मानदंड वाक्य नाम, आयु, पद और वेतन शामिल हैं।
+फिर YAML को पढ़ने और लिखने के लिए साधारण कोड:
 
-## गहरी खोज:
+```kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.FileInputStream
+import java.io.FileWriter
 
-YAML का पहला संस्करण 2001 में आया था और इसे PyYAML (Python बिंदिंग) द्वारा लिखा गया था। आज, यह अनुवाद का मूल लक्ष्य सबसे अधिक प्रयुक्त की गई है। योग्य विकल्प जैसे कहाँ, कहाँ कॉट्लिन, और आइसी हौंगरनम जैसे कशिश्ट उपकरण प्रदान कर सकें।
+fun main() {
+    // YAML फाइल से डेटा पढ़ें
+    val yaml = Yaml()
+    val inputStream = FileInputStream("config.yaml")
+    val data = yaml.load<Map<String, Any>>(inputStream)
+    println(data)
 
-## भी देखो:
+    // YAML फाइल में डेटा लिखें
+    val output = mapOf("name" to "मुकेश", "age" to 30)
+    val writer = FileWriter("output.yaml")
+    yaml.dump(output, writer)
+}
+```
 
-- [Kotlin documentation](https://kotlinlang.org/docs/reference/basic-types.html)
-- [YAML official website](https://yaml.org/)
-- [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
+यदि `config.yaml` इस प्रकार है:
+
+```yaml
+name: मुकेश
+age: 30
+```
+
+उपरोक्त कोड का आउटपुट होगा:
+
+```plain
+{name=मुकेश, age=30}
+```
+
+## Deep Dive (गहराई में):
+
+YAML ("YAML Ain't Markup Language" का संक्षिप्त रूप) 2001 में आया था, और यह JSON का एक अधिक पढ़ने योग्य विकल्प है। इसके अलावा, TOML और XML भी कॉन्फ़िगरेशन के लिए विकल्प हैं, पर YAML का प्रयोग इसकी सिंप्लिसिटी और रीडेबिलिटी के कारण अधिक होता है। कोटलिन में `snakeyaml` लाइब्रेरी का कार्य काफी अच्छे से देखा जा सकता है और YAML के साथ डेटा को सीरियलाइज़ और डीसीरियलाइज़ करना आसान बनाता है।
+
+## See Also (इसे भी देखें):
+
+- YAML स्पेसिफिकेशन के लिए इस लिंक पर जाएं: [YAML Official Specification](https://yaml.org/spec/1.2.2/)
+- `snakeyaml` लाइब्रेरी के डॉक्यूमेंटेशन के लिए इस लिंक पर जाएं: [SnakeYAML Documentation](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+- Kotlin की औपचारिक वेबसाइट: [Kotlin](https://kotlinlang.org/)

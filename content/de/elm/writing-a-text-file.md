@@ -1,7 +1,7 @@
 ---
-title:                "Das Schreiben einer Textdatei"
-html_title:           "Elm: Das Schreiben einer Textdatei"
-simple_title:         "Das Schreiben einer Textdatei"
+title:                "Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Schreiben einer Textdatei in Elm
-
 ## Was & Warum?
+Schreiben einer Textdatei bedeutet, Daten in eine lesbare Datei auf dem Datenträger zu speichern. Programmierer tun dies, um Daten dauerhaft zu archivieren, zu teilen oder Konfigurationen zu speichern.
 
-Das Schreiben einer Textdatei ist ein wichtiger Bestandteil der Programmierung in Elm. Es ermöglicht das Speichern von Daten auf dauerhafte Weise, um sie später wieder verwenden oder teilen zu können. Programmiererinnen und Programmierer verwenden das Schreiben von Textdateien, um beispielsweise Benutzerinformationen, Konfigurationsdateien oder Protokolle zu speichern.
-
-## Wie geht's?
-
-Die Funktion `writeFile` ermöglicht das Schreiben von Textdateien in Elm. Sie akzeptiert zwei Argumente: den Dateipfad und den zu schreibenden Inhalt. Zum Beispiel:
+## How to:
+Elm selbst hat keinen direkten Weg, auf das Dateisystem zuzugreifen - das wird über JavaScript und Ports erledigt. 
 
 ```Elm
-writeFile "nutzerinformationen.txt" "Max Mustermann"
+port module Main exposing (..)
+
+-- Definiere einen Port zum Senden von Daten an JavaScript
+port saveFile : String -> Cmd msg
+
+-- Verwende den Port in einer Elm-Funktion
+saveTextToFile : String -> Cmd msg
+saveTextToFile text =
+    saveFile text
+
+-- Beispiel für Text, der geschrieben werden soll
+exampleText : String
+exampleText =
+    "Hallo, das ist ein Beispieltext!"
+
+-- Befiehlt Elm, den Text zu speichern
+main : Cmd msg
+main =
+    saveTextToFile exampleText
 ```
-Der obige Code erstellt eine Datei mit dem Namen "nutzerinformationen.txt" und schreibt den Text "Max Mustermann" in die Datei. Falls die Datei bereits existiert, wird ihr Inhalt überschrieben.
 
-Um Text zu einer bereits bestehenden Datei hinzuzufügen, kann die Funktion `appendFile` verwendet werden. Sie funktioniert ähnlich wie `writeFile`, akzeptiert jedoch drei Argumente: den Dateipfad, den zu schreibenden Inhalt und eine Option, ob bereits bestehender Inhalt überschrieben werden soll. Zum Beispiel:
+In JavaScript würdest du den Port so abhören und die Datei speichern:
 
-```Elm
-appendFile "protokoll.txt" "Benutzer angemeldet" { overwrite = False }
+```JavaScript
+app.ports.saveFile.subscribe(function(text) {
+    // Benutze die FileSystem API oder ähnliches, um die Datei zu speichern
+    console.log("Speichere Datei mit Text: ", text);
+});
 ```
-Dieser Code fügt den Text "Benutzer angemeldet" der Datei "protokoll.txt" hinzu, ohne ihren vorhandenen Inhalt zu überschreiben.
 
-## Tiefergehende Infos
+## Deep Dive
+Elm ist eine funktionale Sprache für Frontend-Web-Entwicklung. Die fehlende Dateisystem-Unterstützung schränkt direkte File-Operationen ein, was aber Sicherheit und Einfachheit bietet. Alternativen wären die Nutzung von Web APIs wie `FileWriter` (im Browser) oder Serverseitige Elm-Ports mit Node.js für Back-End-Funktionalitäten. Implementierungsdetails variieren je nach Einsatzgebiet: Browsersicherheit oder serverseitige Logik bestimmen, wie man die Dateizugriffe handhabt.
 
-Das Schreiben von Textdateien hat in der Programmierung eine lange Geschichte. Früher war es üblich, dass Programme Daten in Dateien speichern, anstatt sie in Datenbanken abzulegen. Heutzutage gibt es auch Alternativen wie das Schreiben von Daten in eine Datenbank oder das Verwenden von Cloud-Speicherlösungen.
-
-Bei der Implementierung von `writeFile` und `appendFile` nutzt Elm die Standardbibliotheken von JavaScript, um Dateien zu erstellen und zu schreiben. Dies ist möglich, da Elm in JavaScript kompiliert wird.
-
-## Siehe auch
-
-- Offizielle Elm-Dokumentation zu `writeFile` und `appendFile`: https://package.elm-lang.org/packages/elm/file/latest/
-- Ein Tutorial zum Schreiben von Dateien in Elm: https://dev.to/kristianpedersen/how-to-write-files-in-elm-6j7
+## See Also
+- Elm Ports Dokumentation: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
+- FileSystem API MDN: [https://developer.mozilla.org/en-US/docs/Web/API/FileSystem](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem)

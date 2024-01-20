@@ -1,7 +1,7 @@
 ---
-title:                "使用json进行编程"
-html_title:           "Gleam: 使用json进行编程"
-simple_title:         "使用json进行编程"
+title:                "处理JSON数据"
+html_title:           "Arduino: 处理JSON数据"
+simple_title:         "处理JSON数据"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是JSON，为什么程序员需要它？
+## What & Why?
+什么 & 为什么?
 
-JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，通常用于在网络应用程序中传输和存储数据。它是一种易于阅读和编写的格式，也易于计算机解析和生成。程序员经常使用JSON来存储和传输数据，特别是在Web开发中。
+JSON是一种轻量级数据交换格式。编程时，我们使用JSON来存储和传送结构化数据。好处是易于人阅读，而且被大多数编程语言支持。
 
-## 如何使用JSON?
-
-Gleam提供了一个内置的JSON模块，可以方便地解析和生成JSON数据。下面是一个使用JSON模块的示例代码：
-
-```Gleam
-import gleam/json
-
-let user = {
-  "name": "John",
-  "age": 30,
-  "hobbies": ["coding", "reading", "hiking"]
-}
-
-let json = user
-|> json.encode
-
-// Output
-{
-  "name": "John",
-  "age": 30,
-  "hobbies": ["coding", "reading", "hiking"]
-}
-```
-
-可以看到，我们首先导入了Gleam的JSON模块，然后定义了一个名为`user`的变量，它包含了一个名字、年龄和爱好的列表。接着，我们使用`json.encode`函数将该变量编码成JSON格式，并将结果赋值给`json`变量。最后，我们输出`json`变量的值，可以看到它包含了与`user`相同的数据，但格式为JSON。
-
-如果我们想从JSON数据中读取信息，可以使用`json.decode`函数。下面是一个示例代码：
+## How to:
+怎么做:
 
 ```Gleam
 import gleam/json
 
-let json = "{\"name\": \"John\", \"age\": 30, \"hobbies\": [\"coding\", \"reading\", \"hiking\"]}"
+// 定义一个Person类型
+pub type Person {
+  Person(name: String, age: Int)
+}
 
-let user = json
-|> json.decode
+// JSON解析成Gleam类型
+pub fn decode_person(json_string: String) -> Result(Person, json.DecodeError) {
+  json_string
+  |> json.decode(.object(from_pairs))
+  |> result.map(fn(pair) {
+    match pair {
+      {"name", name}, {"age", age} => Ok(Person(name, age))
+      _ => Error(json.DecodeError)
+    }
+  })
+}
 
-// Output
-{
-  "name": "John",
-  "age": 30,
-  "hobbies": ["coding", "reading", "hiking"]
+// 转换Gleam类型成JSON
+pub fn encode_person(person: Person) -> String {
+  match person {
+    Person(name, age) =>
+      json.encode(.object([ 
+        "name", json.string(name), 
+        "age", json.int(age)
+      ]))
+  }
 }
 ```
+示例输出:
+```json
+{"name":"张三","age":30}
+```
 
-同样的，我们导入JSON模块，然后定义了一个名为`json`的变量，它包含了一个JSON格式的字符串。然后，我们使用`json.decode`函数将该字符串解析成Gleam对象，并将结果赋值给`user`变量。最后，我们输出`user`变量的值，可以看到它与之前的`user`变量相同。
+## Deep Dive
+深入了解
 
-## 深入了解
+JSON, 或 JavaScript Object Notation，起源于JavaScript。现在，它很独立，大部分语言都能处理。替代品有XML和YAML，但JSON结构更加简洁。Gleam中处理JSON需要显式定义数据结构，并处理可能出现的错误。
 
-JSON最初是由Douglas Crockford在2001年创建的，它是一种基于JavaScript语法的轻量级数据交换格式。JSON旨在替代XML和JavaScript中使用的对象字面量作为数据传输的方式。它已经成为了Web应用程序中最常用的数据交换格式之一。
+## See Also
+另请参阅
 
-除了Gleam的JSON模块之外，程序员还可以使用其他语言和框架来处理JSON数据。比如，JavaScript的`JSON.parse()`和`JSON.stringify()`方法可以用来解析和生成JSON数据。在Web开发中，也有许多其他框架和库可以处理JSON，如React和Vue。
-
-## 查看更多
-
-- [JSON官方网站](https://www.json.org/json-en.html)
-- [JavaScript的JSON对象文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [The official JSON website](https://www.json.org/json-en.html)
+- [Mozilla JSON guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)

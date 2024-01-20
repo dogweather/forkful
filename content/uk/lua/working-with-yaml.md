@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Lua: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Робота з YAML - це процес створення, редагування та читання даних у структурованому форматі, який називається "YAML" (або "YAML Ain't Markup Language"). Програмісти використовують YAML для збереження та передачі даних у зручному для читання форматі. Це допомагає спростити процес розробки програм та спільної роботи над проектами.
+## What & Why? / Що таке & Чому?
+YAML - це формат серіалізації даних, легкий для людського ока. Програмісти використовують YAML через його зрозумілість та простоту інтеграції з різними мовами програмування.
 
-## Як це зробити:
-```Lua 
--- Створення даних у форматі YAML
-local data = {
-  ["ім'я"] = "Олексій",
-  ["вік"] = 25,
-  ["хобі"] = {"подорожі", "програмування", "спорт"}
-}
+## How to: / Як це зробити:
+Lua не має вбудованої підтримки YAML, але ви можете використовувати зовнішні бібліотеки. Приклад з `lyaml`:
 
--- Запис даних у файл
-local yaml = require("yaml")
-local output = yaml.dump(data)
-file = io.open("my_data.yaml", "w")
-file:write(output)
-file:close()
+```Lua
+local lyaml = require 'lyaml'
+-- Читання YAML
+local yaml_data = [[
+- Вітаємо
+- у
+- YAML
+]]
+local table_from_yaml = lyaml.load(yaml_data)
+print(table_from_yaml[1])  -- Виведе: Вітаємо
 
--- Читання даних з файлу
-local input = io.open("my_data.yaml"):read("*all")
-local decoded = yaml.load(input)
-
--- Виведення даних на екран
-print("Привіт, мене звати " .. decoded["ім'я"] .. " і мені " .. decoded["вік"] .. " років.")
-print("Одне з моїх улюблених хобі - " .. decoded["хобі"][1] .. ".")
-
--- Вихід:
--- Привіт, мене звати Олексій і мені 25 років.
--- Одне з моїх улюблених хобі - подорожі.
+-- Запис у YAML
+local table_to_yaml = { "Рік", "Місяць", "День" }
+local yaml_output = lyaml.dump({table_to_yaml})
+print(yaml_output)
 ```
 
-## Глибокий занурення:
-YAML був створений у 2001 році як альтернатива XML та JSON форматам для збереження та передачі даних. Він має читабельний синтаксис, який допомагає виконувати зміни у файлах за допомогою простих текстових редакторів або засобів контролю версій, таких як Git. У Lua існує кілька бібліотек для роботи з YAML, таких як lua-yaml та lyaml.
+Sample output / Приклад виводу:
+```
+Вітаємо
+- Рік
+- Місяць
+- День
+```
 
-## Дивись також:
-- [YAML.org](https://yaml.org/) - офіційний сайт YAML
-- [LYAML](https://github.com/gvvaughan/lyaml) - ще одна бібліотека для роботи з YAML у Lua
+## Deep Dive / Занурення у деталі:
+YAML (YAML Ain't Markup Language) з'явився у 2001 році як зручний формат для конфігураційних файлів. Альтернативами є JSON та XML. YAML визначається із простоти читання та відсутності зайвих символів, на відміну від XML. При роботі з YAML у Lua, важливо вибрати потрібну бібліотеку та зважати на можливі питання перетворення типів даних.
+
+## See Also / Дивіться також:
+- Офіційний сайт YAML: [YAML](https://yaml.org)
+- lyaml бібліотека: [GitHub lyaml](https://github.com/gvvaughan/lyaml)
+- YAML для більшої глибини специфікацій: [YAML Spec](https://yaml.org/spec/1.2/spec.html)

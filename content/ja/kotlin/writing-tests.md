@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Kotlin: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かとなんでやるの？
-テストコードを書くことは、コードが正しく機能するかどうかを確認するプログラマーの作業です。プログラマーがテストコードを書くのは、自分の書いたコードに自信を持つためです。
+## What & Why? (テストコードの「何」と「なぜ」)
 
-## どうやるの？
-```Kotlin
-// 例: テストする関数
-fun add(a: Int, b: Int): Int {
-    return a + b
+テストコードとは、プログラムが意図した通りに動いているか確認するためのコードです。これはバグの早期発見、将来のコード変更時の信頼保持、さらに品質を担保するために不可欠です。
+
+## How to: (やり方)
+
+KotlinではJUnitを使ってテストを書きます。基本的なテストの例を以下に示します。
+
+```kotlin
+import org.junit.Assert.*
+import org.junit.Test
+
+class CalculatorTest {
+
+    @Test
+    fun `足し算が正しく行われるかテスト`() {
+        val expected = 4
+        val actual = Calculator.add(2, 2)
+        assertEquals(expected, actual)
+    }
 }
 
-// テストコードの書き方
-val result = add(3, 5)
-val expected = 8
-
-// テストコードの実行
-assert(result == expected) // テストが通れば成功！
+object Calculator {
+    fun add(a: Int, b: Int) = a + b
+}
 ```
 
-## 詳しく調べてみると
-テストコードを書くことの歴史は古く、今でも主流の開発手法です。他の方法としては、手動でコードをテストしたり、別の人にテストをしてもらったりすることがあります。テストコードを実行する方法には、ユニットテストや結合テストなどがあります。Kotlinでは、JUnitやMockitoといったライブラリがテストコードの書き方をサポートしています。
+このコードは、2 + 2 が 4 と等しいことをテストします。
 
-## こちらも参考に
-- [Kotlinの公式ドキュメント](https://kotlinlang.org/docs/home.html)
-- [JUnit公式サイト](https://junit.org/junit5/)
-- [Mockito公式サイト](https://site.mockito.org/)
+出力 (サンプル):
+```
+テスト成功 (緑色のチェックマーク)
+```
+
+## Deep Dive (深掘り)
+
+JUnitはJavaの単体テストフレームワークですが、Kotlinでも幅広く使用されています。KotlinでのテストコードはJavaと非常によく似ていて、大きな変更を要しません。 他のテストフレームワークにはSpekやMockKなどがあります。JUnit 5では@DisplayNameアノテーションを使ってテストの説明をより読みやすくすることが可能です。
+
+## See Also (関連リンク)
+
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Spek Framework](https://www.spekframework.org/)
+- [MockK Library](https://mockk.io/)

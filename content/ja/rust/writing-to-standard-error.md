@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーへの書き込み」"
-html_title:           "Rust: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ナニ & ナゼ？
+## What & Why? （何となぜ？）
+標準エラー出力（stderr）はエラーメッセージや警告を出すためにある。プログラムの正常な出力を分けて、問題が起きた時にすぐ察知するために使う。
 
-標準エラーへの書き込みとは、プログラマーがエラー情報を出力するための方法です。エラーが発生した場合、プログラムは通常、標準エラーにメッセージを書き込みます。これにより、ユーザーはエラーが発生したことを知ることができ、必要な措置を講じることができます。
-
-## 方法：
-
-標準エラーに書き込むには、Rustの標準ライブラリにある`eprint!`または`eprintln!`マクロを使用します。これらのマクロは、コンソールにメッセージを出力します。以下は、その使用例です。
-
+## How to: （方法）
 ```Rust
+use std::io::{self, Write};
+
 fn main() {
-    eprintln!("エラーが発生しました。");
+    writeln!(io::stderr(), "エラーが発生しました").unwrap();
 }
 ```
 
-出力は以下のようになります。
-
+出力:
 ```
-エラーが発生しました。
+エラーが発生しました
 ```
 
-## 詳しく見る：
+## Deep Dive （深堀り）
+標準エラー（stderr）はUnix由来で、標準出力(stdout)と分けられている。`println!`はstdoutに書き込むが、`writeln!`に`io::stderr()`を使ってエラーをstderrに出力する。ファイルやネットワークにも同じように書けるが、stderrはコンソールアプリケーションにおいてデバッグやログに便利。
 
-標準エラーへの書き込みは、プログラミングの世界で一般的な方法です。この仕組みは、コンピューターの初期の日々に遡ることができます。また、`eprint!`と`eprintln!`以外にも、標準エラーへの書き込みを行うための他の方法があります。しかし、Rustの場合は、これらのマクロが最も一般的な方法です。
-
-## 関連情報：
-
-- Rustの公式ドキュメント: https://doc.rust-lang.org/std/macro.eprintln.html
-- 標準エラーの仕組みについての詳細: https://en.wikipedia.org/wiki/Standard_error_(computing)
+## See Also （関連情報）
+- Rustの公式ドキュメント: [std::io](https://doc.rust-lang.org/std/io/)
+- Unixにおける標準ストリームの解説: [Standard streams (Wikipedia)](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "TypeScript: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-
-Робота з форматом CSV - це один з важливих етапів в програмуванні, який дозволяє отримати та обробити дані з файлів у форматі CSV (Comma Separated Values - значення, розділені комами). Це особливо корисно для роботи з великими об'ємами даних, такими як бази даних або таблиці. Програмісти використовують CSV, щоб швидко та ефективно обробляти дані та працювати з ними на зручних для себе платформах.
+## Що таке & Чому?
+Робота з CSV (Comma-Separated Values) полягає в організації та обробці даних, які зберігаються у текстовому форматі з комами як роздільниками. Програмісти використовують CSV через його простоту та широку підтримку різними інструментами й платформами.
 
 ## Як це зробити:
-
 ```TypeScript
-import fs from 'fs';
-import csv from 'csv-parser';
+import * as fs from 'fs';
+import * as csv from 'fast-csv';
 
-// Читаємо CSV файл та перетворюємо його дані в масив об'єктів
-fs.createReadStream('дані.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('Робота з CSV завершена.');
-  });
+// Читання CSV файлу
+fs.createReadStream('data.csv')
+  .pipe(csv.parse({ headers: true }))
+  .on('data', (row) => console.log(row))
+  .on('end', () => console.log('CSV файл успішно оброблений.'));
+
+// Запис у CSV файл
+const data = [
+  { name: 'Іван', age: 34 },
+  { name: 'Олена', age: 28 }
+];
+
+fs.createWriteStream('output.csv')
+  .pipe(csv.format({ headers: true }))
+  .write(data)
+  .end();
 ```
-Вищеприведений приклад показує, як можна за допомогою модулів fs та csv-parser прочитати CSV файл та перетворити його дані в масив об'єктів, щоб легше з ними працювати. Результатом буде виведення серії об'єктів у консолі. Також можна використовувати інші модулі, наприклад papaparse, для роботи з CSV у TypeScript.
+**Вивід:**
+```
+CSV файл успішно оброблений.
+```
 
-## Занурення у тему:
+## Поглиблений аналіз
+CSV дебютував у 1970-х, як спосіб обміну даними між різними комп'ютерними системами. Є альтернативи як JSON або XML, але CSV залишається популярним через свою простоту. Розбір і запис CSV у TypeScript часто потребують сторонніх бібліотек, як-от ‘fast-csv’ для ефективного управління даними.
 
-Формат CSV був створений в кінці 20-го століття і вирішував проблему обміну багаторівневими даними між різними системами. Існують інші альтернативи для роботи з даними, такі як JSON або XML, проте CSV є більш простим та ефективним для обробки великих об'ємів даних. Для реалізації зчитування та запису даних у CSV форматі, можна використовувати різні методи та інструменти, такі як парсери або модулі в рамках TypeScript.
-
-## Дивіться також:
-
-1. [Модуль fs в Node.js](https://nodejs.org/api/fs.html)
-3. [papaparse на GitHub](https://github.com/mholt/PapaParse)
+## Дивіться також
+- [fast-csv documentation](https://c2fo.io/fast-csv/docs/introduction/getting-started)
+- [Node.js fs module documentation](https://nodejs.org/api/fs.html)
+- [RFC 4180](https://tools.ietf.org/html/rfc4180): CSV формат стандарт
+- [Papaparse](https://www.papaparse.com/): Ще одна популярна бібліотека для парсингу CSV у веб-застосунках

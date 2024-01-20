@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "PowerShell: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Escribir pruebas es una parte esencial del proceso de desarrollo de software. Es el proceso de verificar que el código que has escrito funciona como se espera. Los programadores lo hacen para asegurarse de que su código cumpla con los requisitos y funcione correctamente antes de ponerlo en producción.
+Escribir pruebas es crear scripts que verifican si tu código se comporta como esperas. Los programadores lo hacen para asegurarse de que los cambios no rompan funcionalidades y para facilitar la detección de errores.
 
-## Cómo:
+## Cómo hacerlo:
 
-Para escribir pruebas en PowerShell, utilizamos el módulo Pester. Esta herramienta nos permite escribir y ejecutar pruebas fácilmente. A continuación, se muestra un ejemplo de prueba que verifica si una función devuelve el resultado correcto:
+PowerShell utiliza Pester, un framework de pruebas. Aquí tienes un ejemplo simple.
 
- ```PowerShell
- Function Sum-Numbers {
-     Param(
-         [Parameter(Mandatory=$true)]
-         [int]$a,
-         [Parameter(Mandatory=$true)]
-         [int]$b
-     )
-     $a + $b
- }
+```PowerShell
+# Install Pester if it's not already installed
+Install-Module -Name Pester -Scope CurrentUser -Force -SkipPublisherCheck
 
-Describe "Suma de números" {
-     It "devuelve el resultado correcto" {
-         $result = Sum-Numbers -a 5 -b 7
-         $result | Should -Be 12
-     }
- }
+# Import Pester module
+Import-Module Pester -Passthru
+
+# Create a simple function to test
+Function Get-Multiplication ($a, $b) {
+    return $a * $b
+}
+
+# Write a test case for the function
+Describe "Get-Multiplication Tests" {
+    It "multiplies 5 by 2 correctly" {
+        Get-Multiplication -a 5 -b 2 | Should -Be 10
+    }
+}
+
+# Run the test
+Invoke-Pester
 ```
 
-La salida de esta prueba debería ser "Passed" si la función devuelve el resultado correcto.
+La salida esperada muestra si la prueba pasó o falló.
 
-## Inmersión profunda:
+## Profundizando:
 
-Las pruebas en PowerShell se han vuelto extremadamente populares en los últimos años debido a su simplicidad y facilidad de uso. Sin embargo, antes de la llegada de Pester, las pruebas en PowerShell se hacían manualmente, lo que llevaba más tiempo y era propenso a errores.
+Pester es el marco de pruebas unitarias más popular para PowerShell, introducido en la versión v3.0 y completamente incluido desde PowerShell v5.0. Alternativas incluyen PSUnit y PowerShell TDD, aunque Pester es el estándar de facto. Pester permite testear scripts y funciones, mockear comandos y realizar pruebas de integración.
 
-Existen alternativas a Pester, como BcUnit y PoshUnit, pero Pester se ha convertido en la herramienta estándar para escribir pruebas en PowerShell debido a su amplia comunidad y su integración con otras herramientas de desarrollo.
+## Véase también:
 
-La implementación de pruebas en PowerShell es sencilla, pero requiere práctica y experiencia para escribirlas de manera efectiva. Se recomienda seguir las mejores prácticas de baterías de pruebas para obtener resultados óptimos.
+Para más recursos sobre pruebas con Pester:
 
-## Ver también:
-
-- Documentación oficial de Pester: https://pester.dev/
-- Blog de PowerShell de Microsoft: https://devblogs.microsoft.com/powershell/
+- Documentación oficial de Pester: [https://pester.dev/docs/quick-start](https://pester.dev/docs/quick-start)
+- GitHub de Pester para ejemplos y actualizaciones: [https://github.com/pester/Pester](https://github.com/pester/Pester)
+- Artículos y tutoriales en la comunidad de PowerShell: [https://powershell.org/articles/](https://powershell.org/articles/)

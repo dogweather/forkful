@@ -1,7 +1,7 @@
 ---
-title:                "yaml과 작업하기"
-html_title:           "Ruby: yaml과 작업하기"
-simple_title:         "yaml과 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜? 
-YAML을 사용하는 것은 코드를 저장하고 전달하는 방식을 간소화하기 위해 프로그래머들이 사용하는 방법입니다. 이는 구조화된 데이터를 쉽게 읽거나 작성할 수 있도록 해주며, 인간이 쉽게 이해할 수 있는 형식으로 정보를 저장합니다.
+## What & Why? (무엇인가 & 왜 사용하는가?)
+YAML은 "YAML Ain't Markup Language"의 약자로, 간결하고 사람이 읽기 쉬운 데이터 직렬화 포맷입니다. 설정 파일, 데이터 저장, 메타데이터 등의 경우 Ruby 프로그래머들이 YAML을 사용하여 복잡하지 않게 데이터를 주고받습니다.
 
-## 방법: 
-Ruby에서 YAML을 다루는 것은 매우 간단합니다. 다음 예제를 따라해보세요!
-
+## How to: (어떻게 사용하는가?)
 ```Ruby
-# YAML 파일을 읽어서 해시로 변환
-hash = YAML.load_file("file.yml")
+require 'yaml'
 
-# 해시를 YAML 파일로 저장
-File.open("file.yml", "w") do |f|
-  f.write(hash.to_yaml)
-end
+# YAML 데이터를 Ruby 객체로 로드하기 
+yaml_content = "
+user:
+  name: John Doe
+  age: 34
+  languages:
+    - Ruby
+    - Python
+    - JavaScript
+"
 
-# YAML 문자열을 해시로 변환
-hash = YAML.load("---\n key: value \n other_key: other_value")
+parsed_data = YAML.load(yaml_content)
+puts parsed_data['user']['name']  # 출력: John Doe
 
-# 해시를 YAML 문자열로 변환
-yaml_string = hash.to_yaml
+# Ruby 객체를 YAML로 덤프(변환)하기
+user_data = {
+  user: {
+    name: 'John Doe',
+    age: 34,
+    languages: ['Ruby', 'Python', 'JavaScript']
+  }
+}
+
+yaml_data = user_data.to_yaml
+puts yaml_data
 ```
+## Deep Dive (심층 탐구)
+처음에 YAML은 XML이 너무 복잡하다는 생각에서 태어났습니다. 2001년에 등장한 이후 데이터 표현을 위한 간단한 텍스트 기반의 포맷으로 널리 퍼졌어요. 대안으로는 JSON이나 XML이 있지만, YAML은 개행과 들여쓰기를 사용하여 가독성이 높다는 장점이 있죠. Ruby에서 YAML 처리는 'Psych' 라이브러리가 처리하며, 이는 Ruby의 표준 라이브러리에 포함되어 있습니다.
 
-## 더 깊게: 
-YAML은 2001년 더그첸코(Danese Cooper)와 클락 에반스(Clark Evans)에 의해 처음으로 소개되었습니다. 이는 XML을 대체하기 위한 경량 마크업 언어로 개발되었으며, 간단하고 가독성이 좋은 문법을 가지고 있습니다. YAML에 대안으로는 JSON이 있지만, YAML이 더 자유로운 문법과 더 넓은 데이터 표현 범위를 가지고 있습니다. Ruby에서는 Psych 모듈을 통해 YAML을 지원합니다.
-
-## 더 많은 정보를 알고 싶다면: 
-- YAML 공식 문서: https://yaml.org/
-- YAML 튜토리얼: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
-- Psych 모듈 공식 문서: https://ruby-doc.org/stdlib-2.7.1/libdoc/psych/rdoc/Psych.html
+## See Also (더 보기)
+- Official YAML Website: [https://yaml.org](https://yaml.org)
+- YAML Syntax Quick Reference: [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)

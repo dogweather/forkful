@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão."
-html_title:           "Swift: Escrevendo para o erro padrão."
-simple_title:         "Escrevendo para o erro padrão."
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Porquê?
+Escrever no erro padrão é enviar mensagens de erro ou logs para um canal específico, isolando-as da saída padrão do programa. Programadores fazem isso para diagnosticar problemas sem misturar com a saída normal do programa.
 
-Escrever para o erro padrão é uma técnica usada por programadores para relatar erros ou mensagens importantes durante a execução de um programa. Isso permite que o programador tenha mais controle sobre quais informações são exibidas para o usuário. 
-
-## Como fazer:
-
-Para escrever para o erro padrão em Swift, basta usar o comando ```Swift print() ``` e especificar ```Swift stderr ``` como o parâmetro para o fluxo de saída. Por exemplo: 
-
+## Como Fazer:
 ```Swift
-print("Erro:", to: &stderr)
+import Foundation
+
+// Escrevendo uma mensagem no erro padrão
+func writeToStandardError(_ message: String) {
+    if let messageData = "\(message)\n".data(using: .utf8) {
+        FileHandle.standardError.write(messageData)
+    }
+}
+
+// Uso da função
+writeToStandardError("Erro encontrado!")
+
+// Saída esperada no erro padrão:
+// Erro encontrado!
 ```
 
-Isso irá imprimir a mensagem "Erro" no console de erro. Você também pode passar variáveis como argumento para exibir informações específicas:
+## Aprofundamento
+Antigamente, em sistemas Unix, a saída de erro padrão foi projetada para que mensagens de erro fossem separadas da saída de dados principal. Isso permite a redireção da saída de erros para arquivos de log ou outros destinos para análise. Alternativamente, `stderr` pode ser redirecionado para `stdout` para simplificar a manipulação de saídas. No Swift, `FileHandle.standardError` é a implementação que nos permite escrever diretamente no erro padrão.
 
-```Swift
-let idade = 18
-print("Você tem \(idade) anos.", to: &stderr)
-```
-
-Isso irá imprimir "Você tem 18 anos." no console de erro. 
-
-## Profundidade:
-
-Escrever para o erro padrão é uma prática comum em programação, comumente usada em linguagens como Swift, C++ e Python. Foi introduzida como uma alternativa à exibição de mensagens no console principal, permitindo que o programador organize melhor as informações para o usuário. Além disso, escrever para o erro padrão também pode ser útil ao escrever scripts de linha de comando ou aplicativos que precisam ter um controle mais detalhado sobre as mensagens exibidas. 
-
-## Veja também:
-
-- [Documentação oficial do Swift](https://docs.swift.org/swift-book/LanguageGuide/AdvancedOperators.html)
-- [Artigo sobre escrita para o erro padrão em Python](https://realpython.com/python-logging/)
+## Veja Também
+- Documentação oficial da Swift sobre `FileHandle`: [Swift Foundation FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- Tutorial de manipulação de saídas em Unix: [Unix Redirection](https://www.guru99.com/linux-redirection.html)

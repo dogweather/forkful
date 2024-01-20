@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "TypeScript: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# TypeScript: Travailler avec les fichiers CSV
-
 ## What & Why?
-
-Travailler avec des fichiers CSV signifie manipuler des données de format Comma-Separated Values (valeurs séparées par des virgules). Les programmeurs utilisent souvent des fichiers CSV pour stocker et échanger des données tabulaires en utilisant un format simple et facilement lisible par l'ordinateur.
+Le CSV, ou "Comma-Separated Values", est un format de fichier pour stocker des données tabulaires. Les programmeurs l'utilisent pour la simplicité d'échange de données entre des systèmes et des applications.
 
 ## How to:
-
-Le code TypeScript suivant illustre comment lire et écrire des données à partir d'un fichier CSV en utilisant la bibliothèque "csv-parser". Assurez-vous d'installer cette bibliothèque en utilisant la commande `npm install csv-parser`.
+Pour gérer les fichiers CSV en TypeScript, on peut utiliser la bibliothèque `papaparse`. Voici comment lire et écrire des CSV.
 
 ```TypeScript
-import fs from 'fs';
-import csv from 'csv-parser';
+import Papa from 'papaparse';
 
-//Lecture d'un fichier CSV
-fs.createReadStream('mon_fichier.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('Lecture terminée');
-  });
+// Lire un CSV
+const csvFile = `prenom,nom,age
+Thomas,Durand,28
+Julie,Moreau,33`;
 
-//Ecriture dans un fichier CSV
+Papa.parse(csvFile, {
+  header: true,
+  complete: (results) => {
+    console.log('Résultats:', results.data);
+  }
+});
+
+// Écrire un CSV
 const data = [
-  {
-    nom: 'Jean',
-    age: 32,
-  },
-  {
-    nom: 'Marie',
-    age: 28,
-  },
+  { prenom: 'Marc', nom: 'Lavoine', age: 22 },
+  { prenom: 'Sophie', nom: 'Ferrand', age: 45 }
 ];
 
-fs.writeFileSync('nouveau_fichier.csv', csv(data));
+const csv = Papa.unparse(data);
+console.log('CSV Généré:', csv);
 ```
 
-La fonction `csv()` convertit automatiquement les objets JSON en un format CSV, tandis que `csv()` analyse les données CSV et les transforme en objets JSON.
+Output pour la lecture:
+```
+Résultats: [
+  { prenom: 'Thomas', nom: 'Durand', age: '28' },
+  { prenom: 'Julie', nom: 'Moreau', age: '33' }
+]
+```
+
+Output pour l'écriture:
+```
+CSV Généré: prenom,nom,age
+Marc,Lavoine,22
+Sophie,Ferrand,45
+```
 
 ## Deep Dive
-
-Les fichiers CSV ont été créés dans les années 1970 pour faciliter l'échange de données entre les programmes informatiques. Aujourd'hui, les fichiers CSV restent très populaires en raison de leur simplicité et de leur compatibilité avec de nombreuses applications.
-
-Il existe également d'autres types de fichiers tabulaires, tels que les fichiers Excel, mais ceux-ci peuvent être plus difficiles à manipuler en tant que développeur. Les fichiers CSV sont également largement utilisés pour l'importation et l'exportation de données dans des bases de données.
-
-La bibliothèque "csv-parser" utilisée dans l'exemple ci-dessus est basée sur un lecteur de flux, ce qui signifie que les données CSV sont lues de manière asynchrone et en continu, ce qui peut être plus efficace pour les gros fichiers.
+Le format CSV existe depuis les premières années de l'informatique personnelle. Des alternatives incluent JSON ou XML, mais le CSV reste populaire pour sa lisibilité et sa facilité d'import/export dans des tableurs. La plupart des langages de programmation ont des bibliothèques pour gérer les CSV, en TypeScript, `papaparse` offre un bon équilibre entre simplicité et fonctionnalités.
 
 ## See Also
-
-- [Documentation de la bibliothèque "csv-parser"](https://csv.js.org/parse/)
+- La documentation de 'papaparse': https://www.papaparse.com/docs
+- Spécifications RFC 4180 pour CSV: https://tools.ietf.org/html/rfc4180
+- Manipulation de CSV avec Node.js: https://nodejs.org/api/fs.html

@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "PHP: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-テキストファイルを書くとは何か？プログラマーがそれをする理由は何か？
+## What & Why? (何となぜ?)
+テキストファイルの書き込みとは、データをテキスト形式でファイルに保存するプロセスです。データを永続化し、後で再利用可能にするためにプログラマーはこれを行います。
 
-テキストファイルとは、テキスト形式で情報を保存することができるファイルのことです。プログラマーは、プログラミング言語でテキストファイルを作成することで、プログラムに必要なデータを保存および読み込むことができます。
-
-# How to:
-テキストファイルを作成するには、PHPの```fopen()```関数を使用します。 以下の例は、"text.txt"という名前のテキストファイルを作成し、その中に"Hello World!"というテキストを書き込んでいます。
-
+## How to: (方法)
 ```PHP
-$file = fopen("text.txt", "w");
-fwrite($file, "Hello World!");
-fclose($file);
+<?php
+$text = "こんにちは世界\n"; // 書き込む内容
+$file = fopen("example.txt", "w"); // ファイルを開く
+
+if ($file) {
+    fwrite($file, $text); // ファイルにテキストを書き込む
+    fclose($file); // ファイルを閉じる
+} else {
+    echo "ファイルを開けませんでした。";
+}
+?>
 ```
+出力: `example.txt` に "こんにちは世界" というテキストが保存されます。
 
-実行すると、"text.txt"ファイルが作成され、その中に"Hello World!"というテキストが書き込まれます。
+## Deep Dive (深い情報)
+PHPでは、`fopen()`, `fwrite()`, `fclose()` 関数を使用してファイル操作を行います。これはPHP 4から利用可能で、基本的なファイル操作のための標準的な手法です。代替として、`file_put_contents()` 関数もあり、一行でファイル書き込みを実行できます。実装においては、ファイルのオープンモードを適切に選ぶ（読み取り、書き込み、追加など）のが重要です。
 
-# Deep Dive:
-歴史的な文脈や代替手段、テキストファイルを作成する方法についてのさらなる情報。
-
-テキストファイルは、コンピューターの登場以前から存在していました。 しかし、今でもテキストファイルは、さまざまな言語やプログラムでデータを保存するために一般的に使用されています。代替手段としては、データベースやスプレッドシートなどのデータベース管理システムがありますが、小さなデータセットを扱う場合や、実行速度が重要な場合は、テキストファイルの使用が推奨されます。
-
-テキストファイルを作成する方法には、他にも```file_put_contents()```や```fwrite()```以外の方法がありますが、基本的には同じような手順でテキストファイルを作成することができます。
-
-# See Also:
-関連する情報源へのリンク。
-
-- PHP公式ドキュメント - fopen関数：https://www.php.net/manual/en/function.fopen.php
-- PHP公式ドキュメント - fwrite関数：https://www.php.net/manual/en/function.fwrite.php
+## See Also (関連情報)
+- [PHP Manual - Filesystem Functions](https://www.php.net/manual/ja/ref.filesystem.php)
+- [W3Schools - PHP File Handling](https://www.w3schools.com/php/php_file.asp)

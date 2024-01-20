@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "C++: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,64 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mitä & Miksi?
 
-CSV (Comma-Separated Values) on tiedostomuoto, jota usein käytetään tallentamaan ja jakamaan taulukkomuotoista dataa. Se koostuu riveistä ja sarakkeista, joiden välillä on pilkkuja. Ohjelmoijat käyttävät CSV-tiedostoja, koska se on yksinkertainen tapa jakaa tietoa ja sen lukeminen ja kirjoittaminen on helppoa.
+CSV on yksinkertainen tiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on helppo lukea ja kirjoittaa sekä ihmisille että ohjelmille.
 
-## Miten:
-
-Seuraavassa on esimerkki kuinka lukea CSV-tiedosto ja tulostaa sen sisältö näytölle:
+## How to:
+Miten:
 
 ```C++
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <vector>
+#include <string>
 #include <sstream>
 
-using namespace std;
+// CSV:n lukufunktio
+std::vector<std::vector<std::string>> lueCSV(const std::string& tiedosto) {
+    std::vector<std::vector<std::string>> data;
+    std::ifstream file(tiedosto);
+    std::string rivi;
 
-int main() {
-    ifstream file("tiedosto.csv");
-    string rivi;
+    while (std::getline(file, rivi)) {
+        std::stringstream rivi_stream(rivi);
+        std::string solu;
+        std::vector<std::string> rivi_data;
 
-    while (getline(file, rivi)) {
-        vector<string> sarakkeet;
-        stringstream ss(rivi);
-        string s;
-
-        while (getline(ss, s, ',')) {
-            sarakkeet.push_back(s);
+        while (std::getline(rivi_stream, solu, ',')) {
+            rivi_data.push_back(solu);
         }
 
-        for (int i = 0; i < sarakkeet.size(); i++) {
-            cout << sarakkeet[i] << " ";
-        }
-
-        cout << endl;
+        data.push_back(rivi_data);
     }
 
-    file.close();
+    return data;
+}
+
+// CSV:n kirjoitusfunktio
+void kirjoitaCSV(const std::string& tiedosto, const std::vector<std::vector<std::string>>& data) {
+    std::ofstream file(tiedosto);
+    
+    for (const auto& rivi : data) {
+        for (size_t i = 0; i < rivi.size(); ++i) {
+            file << rivi[i];
+            if (i < rivi.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+}
+
+int main() {
+    // CSV:n lukeminen
+    auto data = lueCSV("esimerkki.csv");
+    
+    // Tulosta luettu data
+    for (const auto& rivi : data) {
+        for (const auto& solu : rivi) {
+            std::cout << solu << " ";
+        }
+        std::cout << std::endl;
+    }
+    
+    // CSV:n kirjoittaminen
+    kirjoitaCSV("uusi.csv", data);
+    
     return 0;
 }
 ```
 
-Esimerkkitiedoston sisältö:
+## Deep Dive
+Syvä Sukellus
 
-```
-nimi, ikä, kaupunki
-Matti, 25, Helsinki
-Emma, 30, Tampere
-```
+CSV (Comma-Separated Values) syntyi jo 1970-luvulla, ja sen formaatti on pysyt melko muuttumattomana. Vaihtoehtoja CSV:lle ovat esimerkiksi JSON ja XML, jotka tukevat monimutkaisempia rakenteita. CSV:n käsittelyssä tärkeää on tietää, että standardoitu formaatti puuttuu, mikä voi johtaa yhteensopivuusongelmiin.
 
-Ohjelman tulostama tulos:
+## See Also
+Lisätietoja
 
-```
-nimi ikä kaupunki
-Matti 25 Helsinki
-Emma 30 Tampere
-```
-
-## Syvällinen Dykkaus:
-
-CSV-tiedoston alkujuuret juontavat 70-luvun lopulle, jolloin tilastotieteilijät alkoivat käyttää sitä tallentaakseen dataa. Nykyään on olemassa muita vaihtoehtoisia tiedostomuotoja, kuten JSON ja XML, mutta CSV on edelleen suosittu sen yksinkertaisuuden vuoksi. CSV-tiedostoja voi lukea ja kirjoittaa monilla ohjelmointikielillä, eikä erillisiä kirjastoja tarvita.
+- [RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
+- [C++-kirjaston dokumentaatio](http://www.cplusplus.com/reference/)
+- [Boost Library for C++](https://www.boost.org/)

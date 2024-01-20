@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit csv"
-html_title:           "C: Arbeiten mit csv"
-simple_title:         "Arbeiten mit csv"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,34 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-CSV ist eine Textdatei-Format, das verwendet wird, um tabellarische Daten zu speichern. Programmierer nutzen es, um Daten zu organisieren und auszutauschen, da es einfach zu lesen und zu schreiben ist.
+CSV steht für "Comma-separated values", also durch Kommas getrennte Werte. Es ist ein Format, das hauptsächlich für den Import und Export von großen Datenmengen verwendet wird. Programmierer arbeiten mit CSV, weil es universell, leicht zu lesen und zu bearbeiten ist.
 
-## Wie geht's?
-Um mit CSV in C zu arbeiten, müssen Sie zuerst die Funktionen `fopen()` und `fclose()` verwenden, um die Datei zu öffnen und zu schließen. Dann können Sie die Daten mithilfe von `fscanf()` aus der Datei lesen.
+## How to:
+Hier ist ein einfaches Beispiel, wie man eine CSV-Datei in C liest.
 
 ```C
-FILE *fp;
-fp = fopen("beispiel.csv", "r"); // Öffnen der CSV-Datei
-if (fp == NULL) {
-  printf("Fehler beim Öffnen der Datei!");
-  return -1;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    FILE *fp = fopen("beispiel.csv", "r");
+    if (!fp) {
+        printf("Datei konnte nicht geöffnet werden.\n");
+        return 1;
+    }
+
+    char buf[1024];
+    while (fgets(buf, 1024, fp)) {
+        char *field = strtok(buf, ",");
+        while (field) {
+            printf("%s\n", field);
+            field = strtok(NULL, ",");
+        }
+    }
+
+    fclose(fp);
+    return 0;
 }
-
-char name[20];
-int alter;
-double gehalt;
-
-while (fscanf(fp, "%s,%d,%lf", name, &alter, &gehalt) != EOF) { // Lesen der Daten aus der CSV-Datei
-  printf("Name: %s\nAlter: %d\nGehalt: %.2lf\n", name, alter, gehalt);
-}
-
-fclose(fp); // Schließen der CSV-Datei
+```
+Ausgabe:
+```
+Spalte1
+Spalte2
+Spalte3
+...
 ```
 
-### Tiefer tauchen
-CSV steht für "Comma-Separated Values" und wurde in den 1970er Jahren entwickelt. Es gibt auch alternative Formate wie TSV (Tab-Separated Values) und DSV (Delimiter-Separated Values). Die Implementierung von CSV in C kann durch Verwendung von Bibliotheken wie `libcsv` oder `libc-csv` erleichtert werden.
+## Deep Dive
+CSV ist seit den frühen Computerzeiten in Gebrauch. Es ist einfach, doch nicht standardisiert, was zu unterschiedlichen Implementierungen führt. Alternativen wie JSON oder XML gibt es, aber sie sind komplexer. Im Kern geht es bei CSV um das Einlesen und Zerlegen von Zeilen und Spalten, was oft mit Funktionen wie `strtok` in C umgesetzt wird.
 
-## Siehe auch
-- Informationen über CSV: https://de.wikipedia.org/wiki/CSV_(Dateiformat)
-- Verwendung von CSV in C mit `libcsv`: https://github.com/ashenm/libcsv
-- Beispielprogramm mit `libc-csv`: https://android.googlesource.com/platform/bionic/+/5c51612/libc/csv/csv_read.c
+## See Also
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), das nächste, was ein Standard für CSV ist.
+- [C Standard Library](http://www.cplusplus.com/reference/clibrary/), für weitere Details zu den verwendeten Funktionen.
+- [SQLite](https://www.sqlite.org/index.html), um CSV in eine Datenbank zu importieren und zu bearbeiten.

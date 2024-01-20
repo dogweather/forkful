@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv-tiedostojen kanssa"
-html_title:           "Go: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä? & Miksi?
-CSV (Comma-Separated Values) on tiedostomuoto, joka tallentaa taulukkomuotoisia tietoja pilkuilla eroteltuina arvoina. Ohjelmoijat käyttävät CSV:tä usein tiedonsiirtoon tietokantojen ja erilaisten ohjelmistojen välillä.
+## What & Why?
+CSV (Comma Separated Values) on tiedostoformaatti, jota käytetään taulukollisen datan tallennukseen. Ohjelmoijat käyttävät CSV:tä sen yksinkertaisuuden ja yhteensopivuuden takia eri ohjelmistojen välillä.
 
-## Miten:
-Go-kielellä CSV:n käsittely on helppoa ja tehokasta. Alla on kaksi esimerkkiä CSV-tiedoston lukemisesta ja siitä saatavan datan käsittelemisestä.
-
+## How to:
 ```Go
-// Esimerkki 1: Lukeminen ja tulostaminen
+package main
 
-file, err := os.Open("data.csv") // avataan CSV-tiedosto
-if err != nil {
-    // virheenkäsittely
+import (
+	"encoding/csv"
+	"fmt"
+	"os"
+	"strings"
+)
+
+func main() {
+	// Luodaan CSV-tiedosto ja kirjoitetaan sinne rivejä
+	data := [][]string{
+		{"nimi", "ikä", "kaupunki"},
+		{"Mikko", "30", "Helsinki"},
+		{"Liisa", "25", "Espoo"},
+	}
+
+	file, err := os.Create("esimerkki.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	for _, record := range data {
+		if err := writer.Write(record); err != nil {
+			panic(err)
+		}
+	}
+
+	// Ladataan CSV-tiedosto ja tulostetaan sen sisältö
+	content, err := os.ReadFile("esimerkki.csv")
+	if err != nil {
+		panic(err)
+	}
+
+	reader := csv.NewReader(strings.NewReader(string(content)))
+	records, err := reader.ReadAll()
+	if err != nil {
+		panic(err)
+	}
+
+	for _, record := range records {
+		fmt.Println(record)
+	}
 }
-defer file.Close() // tiedosto sulkeutuu automaattisesti
-
-reader := csv.NewReader(file)
-records, err := reader.ReadAll() // luetaan tiedoston kaikki rivit
-if err != nil {
-    // virheenkäsittely
-}
-
-fmt.Println(records) // tulostetaan taulukko
-
-/*
-Tuloste:
-[
-  [nimi ikä kaupunki]
-  [Matti 30 Helsinki]
-  [Anna 25 Tampere]
-  [Teemu 35 Oulu]
-  ...
-]
-*/
 ```
 
-```Go
-// Esimerkki 2: Etsiminen ja muokkaaminen
+## Deep Dive
+CSV on ollut käytössä jo vuosikymmeniä, ja se toimii yksinkertaisena mekanismina tietojen siirtämiseen eri järjestelmien välillä. JSON ja XML ovat nykyaikaisia vaihtoehtoja tiedon tallennukseen, mutta ne ovat monimutkaisempia. Go:n `encoding/csv`-kirjastossa hyödynnetään Reader- ja Writer-tyyppejä tiedon lukemiseen ja kirjoittamiseen CSV-muodossa, ja se käsittää myös lainausmerkkien ja välimerkkien käsittelyn.
 
-records := [][]string{
-  {"nimi", "ikä", "kaupunki"},
-  {"Matti", "30", "Helsinki"},
-  {"Anna", "25", "Tampere"},
-  {"Teemu", "35", "Oulu"},
-  ...
-}
-
-var result string
-for _, record := range records {
-  if record[0] == "Anna" { // etsitään riviltä nimi "Anna"
-    result = record[2] // tallennetaan riviltä kaupunki "Tampere"
-    break // lopetetaan silmukka
-  }
-}
-
-fmt.Println(result) // tulostetaan "Tampere"
-```
-
-## Syvemmälle:
-CSV oli alunperin käytössä pääasiassa laskentataulukoissa, mutta nykyään sitä käytetään monissa muissakin järjestelmissä. Vaihtoehtoina CSV:lle ovat esimerkiksi JSON ja XML, mutta CSV on edelleen suosittu erityisesti yksinkertaisissa ja selkeissä datarakenteissa. Go:n sisäänrakennettu "encoding/csv" -kirjasto tarjoaa helpon ja tehokkaan tavan käsitellä CSV-tiedostoja.
-
-## Katso myös:
-- [Go:n virallinen dokumentaatio CSV-käsittelyyn](https://golang.org/pkg/encoding/csv/)
-- [CSV-tiedostomuodon yleiskatsaus](https://en.wikipedia.org/wiki/Comma-separated_values)
+## See Also
+- Go:n virallinen dokumentaatio `encoding/csv`-paketille: https://pkg.go.dev/encoding/csv
+- Go by Example - CSV tiedostojen käsittelystä: https://gobyexample.com/csv
+- TutorialEdge - CSV-tiedostojen lukeminen ja kirjoittaminen Golla: https://tutorialedge.net/golang/reading-writing-csv-files-in-go/

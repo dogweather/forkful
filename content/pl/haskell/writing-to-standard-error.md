@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Haskell: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,22 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pisanie do standardowego wyjścia błędów to proces polegający na wyświetleniu wiadomości o błędzie lub ostrzeżenia w czasie wykonywania programu. Programiści często stosują to do debugowania i sprawdzania, czy ich program działa poprawnie.
+Wypisywanie na standardowy błąd (stderr) pozwala oddzielać normalny output programu od komunikatów o błędach. Programiści robią to, żeby łatwo przeanalizować i przekierować błędy bez mieszania ich z właściwym wynikiem działania programu.
 
-## Jak to zrobić:
-Kodowanie do standardowego wyjścia błędów w Haskellu jest proste, wystarczy użyć funkcji `hPutStrLn` z modułu `System.IO`. Przykładowy kod wygląda następująco:
+## Jak zrobić:
 ```Haskell
-import System.IO
+import System.IO (hPutStrLn, stderr)
 
 main :: IO ()
-main = do hPutStrLn stderr "Błąd: nieprawidłowy argument."
-          putStrLn "Podaj argument: "
+main = do
+    hPutStrLn stderr "To jest komunikat błędu."
 ```
-Powyższy kod wyświetli wiadomość o błędzie w konsoli, a następnie poprosi użytkownika o podanie argumentu.
+Po uruchomieniu, zobaczymy na standardowym błędzie:
+```
+To jest komunikat błędu.
+```
 
-## Wnikliwa analiza:
-Pisanie do standardowego wyjścia błędów może być pomocne podczas debugowania programów, ponieważ dzięki temu możemy w łatwy sposób zlokalizować miejsca, w których występują błędy. Wcześniej, w starszych wersjach Haskell, pisano do standardowego wyjścia błędów za pomocą funkcji `fail`, jednak obecnie jest ona rzadko wykorzystywana. Alternatywą dla pisania do standardowego wyjścia błędów jest wykorzystanie biblioteki `Debug.Trace`, która pozwala na wypisanie informacji o przepływie programu w czasie wykonania. Implementacja pisania do standardowego wyjścia błędów jest zależna od systemu operacyjnego, więc może nie działać na niektórych platformach.
+## Zagłębiamy się
+Standardowy błąd, czyli stderr, jest jednym z trzech głównych strumieni danych używanych w systemach POSIX, obok stdin i stdout. Historia jego powstania wiąże się z potrzebą efektywnego raportowania błędów. Alternatywą jest zapis do logu lub wykorzystanie bibliotek do logowania. W Haskellu, `hPutStrLn stderr` to niskopoziomowa funkcja, która bezpośrednio zapisuje ciąg znaków do stderr, pomijając buforowanie, które odbywa się w przypadku stdout.
 
-## Zobacz też:
-1. [Dokumentacja funkcji `hPutStrLn` w Haskellu](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html#v:hPutStrLn)
-2. [Biblioteka `Debug.Trace` w Haskellu](https://hackage.haskell.org/package/base-4.14.0.0/docs/Debug-Trace.html)
+## Zobacz także
+- [Haskell Documentation for System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
+- [Haskell Wiki on IO](https://wiki.haskell.org/IO_inside)

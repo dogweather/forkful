@@ -1,7 +1,7 @@
 ---
-title:                "使用csv的计算机编程"
-html_title:           "Clojure: 使用csv的计算机编程"
-simple_title:         "使用csv的计算机编程"
+title:                "处理 CSV 文件"
+html_title:           "Bash: 处理 CSV 文件"
+simple_title:         "处理 CSV 文件"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是CSV, 为什么程序员需要它?
+## What & Why? (是什么？为什么？)
+处理CSV就是读写逗号分隔值 (CSV) 文件。程序员这么做是因为CSV格式普遍用于数据交换，简单且易于人类阅读和机器解析。
 
-CSV是一种常用的数据格式，用于存储和传输表格数据。程序员通常使用CSV来处理和分析大量的数据，例如从数据库导出的数据，或者来自其他应用程序的数据。
-
-如何操作CSV文件:
-
-Clojure提供了内置的函数和库来处理CSV文件。下面是一个简单的示例，展示如何读取CSV文件中的数据并打印输出。
+## How to: (怎么做：)
+在Clojure中，我们使用`clojure.data.csv`库来处理CSV文件。
 
 ```Clojure
-(use 'clojure-csv.core)
+;; 导入库
+(require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-(def csv-data (parse-csv (slurp "data.csv")))
+;; 读取CSV文件
+(with-open [reader (io/reader "data.csv")]
+  (doall (csv/read-csv reader)))
 
-(dorun (map println csv-data))
+;; 写入CSV文件
+(with-open [writer (io/writer "out.csv")]
+  (csv/write-csv writer [["name" "age"] ["Alice" "30"] ["Bob" "25"]]))
 ```
 
-这将从名为"data.csv"的文件中读取数据，并将其存储在一个变量中。然后，使用"map"函数遍历每一行的数据，并使用"println"函数打印输出到控制台。
+输出 `data.csv` 的内容和`out.csv`被成功写入。
 
-深入了解CSV:
+## Deep Dive (深入探索)
+历史上，CSV文件因其文本形式和多功能性在数据库和电子表格程序间交换数据中很受欢迎。而现在JSON和XML格式常作为替代方案。在Clojure中，处理CSV文件通常更简单且性能良好，但可能需要处理引号、换行等复杂性。
 
-CSV最初是由一家技术出版商发明的，用于在电子表格软件和数据库之间传输数据。它是一种轻量级的格式，容易读取和解析，因此被广泛使用。
-
-除了Clojure，还有许多其他的编程语言也支持CSV文件的操作。例如，Python的"Pandas"库可以帮助程序员更容易地处理CSV文件。
-
-Clojure中的CSV处理是通过第三方库实现的，例如"clojure-csv"，它提供了一组函数来轻松地读取、写入和操作CSV文件。
-
-相关链接:
-
-- clojure-csv库: https://github.com/clojure-csv/clojure-csv
-- Panda库: https://pandas.pydata.org/
-- CSV规范: https://tools.ietf.org/html/rfc4180
+## See Also (另请参阅)
+- Clojure官方文档: [Clojure Docs](https://clojure.org/)
+- `clojure.data.csv`库: [clojure.data.csv](https://github.com/clojure/data.csv)

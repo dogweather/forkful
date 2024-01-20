@@ -1,7 +1,7 @@
 ---
-title:                "כתיבה לשגרת השגיאה התקנית"
-html_title:           "Elm: כתיבה לשגרת השגיאה התקנית"
-simple_title:         "כתיבה לשגרת השגיאה התקנית"
+title:                "כתיבה לפלט השגיאה הסטנדרטי"
+html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
+simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+כתיבה ל-stderr (פלט שגיאה סטנדרטי) מאפשרת הפרדה בין הודעות שגיאה לבין פלט רגיל. תוכנית צריכה להשתמש בזה כדי להקל על דיבאגינג ותעדוף המידע.
 
-כתיבה לפלט Standard Error היא תהליך שבו משתמשים בתכנות כדי להדפיס מידע על שגיאות והתראות בזמן הרצת התוכנית. זה נחשב לדרך נוחה יותר למצוא שגיאות ולתקן אותם, מאשר להסתמך רק על הטקסט המוצג ברצת התוכנית.
-
-## איך לעשות?
-
-כדי לכתוב לפלט Standard Error ב-Elm, יש להשתמש בפונקציית `Debug.log` ולהעביר כפרמטרים את ההודעה שברצונך להדפיס. נהפך את זה לפעולה תכנותית עם השורה הזו: `Log.error "Oops! Something went wrong!"`. הנה דוגמא של שגיאה שתופיע בפלט Standard Error:
+## איך לעשות:
+ב-Elm, כל פלט הוא דרך עצמי ה-DOM או תוך כדי שימוש ב-JavaScript Interop. יש לחבר את Elm ל-JS לכתיבה ל-stderr. אין פונקציה ישירה לזה.
 
 ```Elm
-Debug.log "Error" (Result.toMaybe (String.toFloat "oops")) // Just 0.0'
+port module Main exposing (..)
+
+-- define a port to send error messages
+port stderr : String -> Cmd msg
+
+-- use the port in your Elm code
+submit : String -> Cmd msg
+submit message =
+  stderr "This is an error message sent to stderr"
+
+main =
+  Html.beginnerProgram { model = model, view = view, update = update }
+
+-- JavaScript side to actually write to stderr
+var app = Elm.Main.fullscreen();
+app.ports.stderr.subscribe(function(message) {
+  console.error(message);
+});
 ```
 
-## נכנס מעומק
+שים לב: אין output ישיר ב-Elm.
 
-התחום של כתיבה לפלט Standard Error התחיל במערכות הפעלה בשנות ה-70 ובמקור נעשה בשימוש בפקודת `stderr` על מנת להדפיס שגיאות והתראות בזמן הרצת התוכנית. אופיו של כתיבה לפלט Standard Error הוא להיות נטולת פייתון על מנת לתת את התחם למידע נכון יותר על השגיאות וההתראות של התוכנית.
-
-לעיתים, יש תחליפים אחרים לכתיבה לפלט Standard Error, כגון התפתחות שגיאות והתראות מרובות, או הדפסה לתצורה גלובלית. בכל מקרה, כתיבה לפלט Standard Error נחשבת לפעולה בסיסית ונמצאת בשימוש מכיוון שיש פתרון נוח ופשוט למציאת שגיאות.
+## Deep Dive
+בשונה משפות תכנות אחרות, כמו Python או C, Elm עובד בדפדפן ואין לו גישה ישירה ל-stderr. אבן דרך היסטורית הייתה כש-Elm פיתח פיצ'ר של ports לצורך תקשורת עם JS. אלטרנטיבות כוללות שימוש ב-web workers או רשומי console.log אחרים בתוך JS.
 
 ## ראה גם
-
-למידע נוסף על השימוש בפונקציית `Debug.log` ניתן לקרוא כאן: [https://guide.elm-lang.org/debugging/debug.html](https://guide.elm-lang.org/debugging/debug.html)
-
-למידע נוסף על תחומי התכנות והבדיקה, ניתן לבקר באתר הזה: [https://programmersforum.co.il/](https://programmersforum.co.il/)
+- [Elm Ports Documentation](https://guide.elm-lang.org/interop/ports.html)
+- [MDN Web Docs on stderr](https://developer.mozilla.org/en-US/docs/Web/API/console/error)

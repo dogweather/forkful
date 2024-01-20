@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "C++: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,99 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
+## מה זה ולמה?
+JSON זוהי תצורת נתונים בפורמט טקסטואלי, פשוטה ונפוצה לשימוש. תכנתים משתמשים בה כדי לחלוק נתונים בין שרתים ולקוחות, ולשמור תצורות קומפלקסיות בצורה קריאה וגמישה.
 
-עבודה עם JSON היא תהליך שבו מתנהגים עם נתונים בפורמט טקסטואלי. זהו סגנון פופולרי בין מתכנתים עקב יתרוניו ביחס לפורמטים אחרים כמו XML או CSV. מתכנתים עוברים לעבוד עם JSON בגלל נוחיות הפורמט, אפשרות לעבוד עם נתונים מורכבים וזמינות במגוון שפות תכנות.
-
-# איך ל:
-
-### דוגמאות קידוד ופלט
+## איך לעשות:
+השתמש בנתוני JSON ב-C++ דורש ספרייה נוספת. נפוץ להשתמש ב-`nlohmann/json`.
 
 ```C++
+#include <nlohmann/json.hpp>
 #include <iostream>
-#include <json/json.h>
 
 int main() {
+    // יצירת אובייקט JSON פשוט
+    nlohmann::json my_json;
+    my_json["שם"] = "יונתן";
+    my_json["גיל"] = 30;
+    my_json["תחביבים"] = {"קריאה", "הליכה", "משחקי מחשב"};
 
-    // יצירת אובייקט עם נתונים
-    Json::Value Person;
-    Person["name"] = "John";
-    Person["age"] = 30;
-    Person["married"] = false;
+    // הדפסת ה-JSON לפלט
+    std::cout << my_json.dump(4) << std::endl;
 
-    // קידוד לפורמט JSON
-    std::string jsonOutput = Person.toStyledString();
+    // Parsing JSON ממחרוזת
+    std::string json_str = R"({"עיר": "תל אביב", "אוכלוסיה": 451523})";
+    nlohmann::json parsed_json = nlohmann::json::parse(json_str);
 
-    // הדפסת פלט
-    std::cout << jsonOutput << std::endl;
+    // הדפסת ערכים מה-JSON המפוענח
+    std::cout << "עיר: " << parsed_json["עיר"] << ", אוכלוסיה: " << parsed_json["אוכלוסיה"] << std::endl;
 
     return 0;
 }
-
 ```
-**Output:**
 
-```json
+תוצאת הדוגמה:
+```plaintext
 {
-   "name": "John",
-   "age": 30,
-   "married": false
+    "גיל": 30,
+    "שם": "יונתן",
+    "תחביבים": [
+        "קריאה",
+        "הליכה",
+        "משחקי מחשב"
+    ]
 }
+עיר: תל אביב, אוכלוסיה: 451523
 ```
 
-### קריאת נתונים מפורמט JSON
+## צלילה עמוקה
+JSON (JavaScript Object Notation) הוא פורמט התקני שהתפתח מתוך שפת התכנות JavaScript אבל הוא נתמך היום על ידי רוב השפות. תחליפים כמו XML קיימים, אבל JSON נחשב יותר קל לשימוש. על מנת לעבוד עם JSON ב-C++, יש להשתמש בספריות חיצוניות מכיוון שהשפה לא מציעה תמיכה טבעית בפורמט זה. `nlohmann/json` היא אחת הספריות הפופולאריות לטיפול ב-JSON ב-C++, המאופיינת בממשק קל ונוח לשימוש.
 
-ניתן לקרוא נתונים מפורמט JSON באמצעות ספריית `Jsoncpp`. הדוגמה הבאה מדגימה כיצד ניתן לקרוא את הנתונים מהפורמט:
-
-```C++
-#include <iostream>
-#include <json/json.h>
-
-int main() {
-
-    // קריאת הנתונים מפורמט JSON
-    const std::string jsonInput = "{ \"name\": \"John\", \"age\": 30, \"married\": false }";
-    Json::Value Person;
-    Json::Reader reader;
-
-    bool parsingSuccessful = reader.parse(jsonInput, Person); // קריאה של הנתונים לאובייקט
-
-    // בדיקת המצב
-    if (!parsingSuccessful) {
-        // טיפול בשגיאות
-        std::cout << "Failed to parse the input." << std::endl;
-        return 1;
-    }
-
-    // הדפסת הנתונים
-    std::cout << "Name: " << Person["name"].asString() << std::endl;
-    std::cout << "Age: " << Person["age"].asInt() << std::endl;
-    std::cout << "Married: " << Person["married"].asBool() << std::endl;
-
-    return 0;
-}
-```
-**Output:**
-```
-Name: John
-Age: 30
-Married: false
-```
-
-# חקירה מעמיקה:
-
-### היסטוריה
-
-פורמט JSON נוצר בשנת 2001 על ידי דואגלס קרוקפורד, טעם מתכנת מארגן ומפתח סופטוור וכיום נתמך על ידי רוב השפות התכנותיות המודרניות כמו C++, Java ו-Python.
-
-### אלטרנטיבות
-
-פורמט JSON לא נתמך על ידי כל התכנות, וכך מתאים למתכנתים שנהנים מהחזקות שלו. אם מתכנת יותר מעוניין באפשרויות נתונים שלא קיימות בפורמט JSON, פורמט כמו XML יכול להיות אלטרנטיבה נוחה יותר.
-
-### פירוט המימוש
-
-ספריית `Jsoncpp` מממשת את בניית העץ של הנתונים הקיימים בפורמט JSON ואת פונקציונליות קריאת וכתיבת הנתונים. הספרייה כוללת גם אפשרויות נוספות כמו אפשרות לצרוך ולייצא נתונים מהפורמט לפורמטים אחרים כמו CSV או XML.
-
-# ראו גם:
-
-ספריית Jsoncpp: https://github.com/open-source-parsers/jsoncpp
+## ראו גם
+- מסמכי התיעוד הרשמיים של ספריית `nlohmann/json`: https://github.com/nlohmann/json
+- מדריך ל-JSON על MDN: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+- סקירה עמוקה יותר של פורמט ה-JSON: https://www.json.org/json-en.html

@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "C: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "C"
 category:             "C"
@@ -11,49 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Arbeiten mit JSON (JavaScript Object Notation) bedeutet, Daten im platzsparenden und menschenlesbaren Format auszutauschen. Programmierer verwenden JSON, um Daten zwischen verschiedenen Anwendungen oder Systemen zu übertragen, da es einfach zu verarbeiten und zu verstehen ist.
+JSON ist ein Format zum Speichern und Übertragen von Daten. Entwickler nutzen es, weil es einfach zu lesen ist und von vielen Programmiersprachen unterstützt wird.
 
-## Anleitung:
-Der folgende Code zeigt, wie man mit JSON in C arbeitet:
+## How to:
+Du kannst in C die `json-c` Bibliothek benutzen. Hier ist ein einfaches Beispiel:
 
-```
-#include <stdio.h>
+```C
 #include <json-c/json.h>
+#include <stdio.h>
 
 int main() {
-  // Erstellt einen JSON-Objekt-Builder
-  json_object *jobj = json_object_new_object();
-  
-  // Fügt einen Schlüssel-Wert-Paar hinzu
-  json_object *jstring = json_object_new_string("Hallo Welt!");
-  json_object_object_add(jobj, "Begrüßung", jstring);
-  
-  // Konvertiert das Objekt in einen String
-  printf("%s\n", json_object_to_json_string(jobj));
-  
-  // Gibt den Wert des Schlüssels "Begrüßung" aus
-  json_object *jvalue;
-  json_object_object_get_ex(jobj, "Begrüßung", &jvalue);
-  printf("Der gespeicherte Wert ist: %s\n", json_object_get_string(jvalue));
-  
-  // Löscht das JSON-Objekt, um Speicher zu sparen
-  json_object_put(jobj);
-  
-  return 0;
+    // JSON Objekt erzeugen
+    json_object *jobj = json_object_new_object();
+    
+    // JSON Daten hinzufügen
+    json_object_object_add(jobj, "name", json_object_new_string("John Doe"));
+    json_object_object_add(jobj, "age", json_object_new_int(29));
+
+    // JSON als String ausgeben
+    printf("JSON string: %s\n", json_object_to_json_string(jobj));
+
+    // Speicher freigeben
+    json_object_put(jobj);
+    
+    return 0;
 }
 ```
 
-Die Ausgabe des obigen Codes ist:
+Ausgabe:
+
 ```
-{"Begrüßung": "Hallo Welt!"}
-Der gespeicherte Wert ist: Hallo Welt!
+JSON string: {"name": "John Doe", "age": 29}
 ```
 
-## Tiefere Einblicke:
-JSON wurde erstmals im Jahr 2001 von Douglas Crockford vorgestellt, um die Übertragung von Daten in JavaScript zu vereinfachen. Heutzutage wird es jedoch nicht nur in JavaScript, sondern in vielen anderen Programmiersprachen verwendet. Es gibt auch alternative Formate wie XML oder YAML, aber JSON ist wegen seiner Einfachheit und Lesbarkeit weiterhin sehr beliebt.
+## Deep Dive
+JSON (JavaScript Object Notation) wurde Anfang der 2000er Jahre populär. Es ist einfacher als XML und braucht keine DTD oder Schemata. Alternativen wie YAML sind für komplexe Hierarchien besser, aber JSON ist für Web APIs Standard. Was die Implementierung in C angeht, setzt man auf Bibliotheken wie `json-c` oder `Jansson`, die das Parsen und Erstellen von JSON erleichtern.
 
-Die Implementierung von JSON in C erfolgt über die externe Bibliothek json-c. Diese muss daher zuerst installiert und dann in das Codeprojekt eingebunden werden. Weitere Informationen zur Verwendung von json-c finden Sie in der offiziellen Dokumentation.
-
-## Siehe auch:
-- [Offizielle json-c Dokumentation](https://github.com/json-c/json-c/wiki/Tutorial)
-- [JSON-Spezifikation](https://www.json.org/json-de.html)
+## See Also
+- JSON-C GitHub: https://github.com/json-c/json-c
+- Jansson Bibliothek: http://www.digip.org/jansson/
+- Offizielle JSON Webseite: https://www.json.org/json-de.html

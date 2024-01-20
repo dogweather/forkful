@@ -1,6 +1,6 @@
 ---
 title:                "Lavorare con YAML"
-html_title:           "Python: Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
 simple_title:         "Lavorare con YAML"
 programming_language: "Python"
 category:             "Python"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+## What & Why?
+YAML è un linguaggio per serializzare dati leggibile dall'uomo. I programmatori lo usano per configurazioni di progetti, file di Docker, e per facilitare lo scambio dati tra linguaggi diversi.
 
-YAML è un formato per dati strutturati basato su una sintassi in stile indentazione. I programmatori lo usano per facilitare la lettura e la scrittura di file di configurazione e dati complessi in modo leggibile sia per gli umani che per le macchine.
-
-## Come:
-
+## How to:
+Installiamo `PyYAML`, una libreria Python per lavorare con file YAML:
+```bash
+pip install PyYAML
 ```
+
+Leggere un file YAML:
+```Python
 import yaml
 
-# Creazione di un dizionario
-config = {"database": {"host": "localhost",
-                        "user": "root",
-                        "password": "secret123",
-                        "database_name": "mydatabase"}}
+# Supponendo che 'config.yaml' sia il nostro file
+with open('config.yaml', 'r') as file_stream:
+    data = yaml.safe_load(file_stream)
 
-# Scrittura del dizionario in formato YAML
-with open("config.yml", "w") as f:
-    yaml.dump(config, f)
-
-# Lettura del file YAML
-with open("config.yml") as f:
-    config = yaml.load(f, Loader=yaml.FullLoader)
-
-# Accesso ai valori 
-print("Host del database:", config["database"]["host"])
+print(data)
 ```
 
-Output:
+Scrivere un file YAML:
+```Python
+import yaml
 
+data = {'key': 'value', 'numbers': [1, 2, 3]}
+
+with open('output.yaml', 'w') as file_stream:
+    yaml.dump(data, file_stream)
 ```
-Host del database: localhost
-```
 
-## Approfondimento:
+## Deep Dive:
+YAML (YAML Ain't Markup Language) è nato all'inizio degli anni 2000 come alternativa a XML. Formati alternativi includono JSON e TOML. YAML si distingue per la priorità alla leggibilità umana e supporta tipi di dati complessi. In Python, si fa affidamento a `PyYAML` per operazioni standard di parsing e scrittura. Tieni presente che è importante usare `safe_load()` invece di `load()` per evitare l'esecuzione di codice malevolo.
 
-YAML è stato sviluppato da Clark Evans nel 2001 come alternativa a formati come XML e JSON. Una delle sue caratteristiche più apprezzate è la possibilità di includere commenti all'interno dei file, rendendolo particolarmente adatto per la scrittura di documentazione. Esistono altri formati simili a YAML, come ad esempio TOML e HCL, ma YAML rimane uno dei più diffusi.
-
-## Vedi anche:
-
-- [Documentazione ufficiale di YAML](https://yaml.org/)
-- [Tutorial su YAML in Python](https://realpython.com/python-yaml/)
+## See Also:
+Approfondisci su YAML e `PyYAML` qui:
+- Documentazione di YAML: https://yaml.org/spec/1.2/spec.html
+- Repository GitHub di PyYAML: https://github.com/yaml/pyyaml
+- Guida su YAML in Python: https://realpython.com/python-yaml/

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Fish Shell: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché: 
-Lavorare con i file CSV può sembrare noioso, ma in realtà è un'attività molto comune per i programmatori. Le CSV (Comma Separated Values) vengono utilizzate per archiviare e organizzare grandi quantità di dati in formato tabellare.
+## What & Why? (Cosa e Perché?)
+Lavorare con i CSV significa manipolare file di testo strutturati come "valori separati da virgola" (CSV); è essenziale per gestire dati tabellari. I programmatori lo fanno per importare, analizzare, e manipolare grandi volumi di dati in modo semplice ed efficace.
 
-## Come fare: 
-Per lavorare con i file CSV in Fish Shell, è possibile utilizzare il comando `fgetcsv`. Questo comando legge un file CSV e restituisce un array di righe, ogni riga è a sua volta un array di valori.
+## How to: (Come fare:)
+Ecco qualche comando base in Fish Shell per manipolare file CSV:
 
+```Fish Shell
+# Contare le righe di un file CSV
+wc -l file.csv
+
+# Stampare le prime 10 righe di un file CSV
+head -n 10 file.csv
+
+# Estrarre la prima colonna di un file CSV
+awk -F"," '{print $1}' file.csv
+
+# Ordinare un file CSV basandosi sulla seconda colonna
+sort -t, -k2 file.csv
+
+# Convertire un file CSV in formato tabella
+column -s, -t < file.csv
 ```
-set rows (fgetcsv file.csv)
-echo $rows[1][2]
+
+Esempio di output:
 ```
-Questo esempio mostra come accedere al valore della riga 1 nella colonna 2 del file CSV.
+10 file.csv
+id,name,age
+1,Marco,21
+2,Giulia,25
+...
+```
 
-## Approfondimento: 
-L'uso dei file CSV è diventato molto popolare negli ultimi anni perché sono facili da gestire e possono essere letti da molti tipi di software. In passato, i file CSV venivano utilizzati principalmente per il trasferimento dei dati tra diversi programmi o per l'importazione dei dati da tabelle Excel.
+## Deep Dive (Approfondimento)
+Il formato CSV risale ai primi computer e si è affermato per la sua semplicità. È meno verboso di formati come XML o JSON e quindi più leggero e veloce da processare. Tuttavia, non ha uno standard rigoroso, quindi la struttura può variare. Strumenti alternativi includono librerie specifiche per il linguaggio di programmazione, come pandas in Python o CSV in Ruby. In Fish Shell, lavorare con CSV prevede principalmente l'uso di strumenti Unix standard come awk, sed, grep, sort e column.
 
-Esistono diversi tipi di file CSV, come ad esempio quelli delimitati da tabulazioni o da altri simboli anziché da virgole. Inoltre, ci sono molti altri formati di file che possono essere utilizzati per organizzare dati tabellari, come ad esempio XML o JSON.
-
-L'implementazione di Fish Shell per lavorare con i file CSV si basa su una libreria esterna chiamata `libcsv`. Questa libreria fornisce funzioni di lettura e scrittura per i file CSV e viene utilizzata anche da altri programmi come Excel o LibreOffice.
+## See Also (Vedi Anche)
+- Manuale di Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Tutorial AWK: [https://www.gnu.org/software/gawk/manual/gawk.html](https://www.gnu.org/software/gawk/manual/gawk.html)
+- Guida agli strumenti di testo UNIX: [https://www.gnu.org/software/coreutils/manual/html_node/index.html](https://www.gnu.org/software/coreutils/manual/html_node/index.html)

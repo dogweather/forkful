@@ -1,7 +1,7 @@
 ---
-title:                "「テストの作成」"
-html_title:           "Python: 「テストの作成」"
-simple_title:         "「テストの作成」"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何もの？:
-テストコードを書くことは、自分のプログラムが正しく動作しているかどうかを判断するためのプロセスです。プログラマーがテストコードを書く理由は、バグやエラーを見つけて修正するためだけでなく、プログラムをより効率的に開発するためでもあります。
+## What & Why? (何となぜ？)
+テストコードを書くことで、プログラムが期待通りに動くことを確認します。バグを早期に発見し、品質を保つためにプログラマーはテストをします。
 
-## 方法:
+## How to: (方法)
 ```Python
-# 例1: 数字の合計を計算する関数のテスト
-def calculate_sum(numbers):
-    sum = 0
-    for num in numbers:
-        sum += num
-    return sum
+# sample.py
+def add(a, b):
+    return a + b
 
-# テストコード
-def test_calculate_sum():
-    assert calculate_sum([1,2,3]) == 6
-    assert calculate_sum([-1,100,5]) == 104
+# test_sample.py
+import unittest
+from sample import add
 
-# テストを実行
-test_calculate_sum()
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+サンプル出力:
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
 ```
 
-```Python
-# 例2: 文字列を逆順にする関数のテスト
-def reverse_string(string):
-    return string[::-1]
+## Deep Dive (深掘り)
+テストは1970年代に始まり、Extreme Programmingへと進化しました。代替手法にはTDD（テスト駆動開発）があります。Pythonでは`unittest`が標準のテストフレームワークですが、`pytest`や`nose`などのサードパーティ製のツールもあります。また、モックオブジェクトを使用して外部システムとの連携をテスト擬似的に行うこともできます。
 
-# テストコード
-def test_reverse_string():
-    assert reverse_string("Hello") == "olleH"
-    assert reverse_string("Python") == "nohtyP"
-
-# テストを実行
-test_reverse_string()
-```
-
-## 深く掘り下げる:
-テストコードの起源は、ソフトウェア開発の初期の段階に遡ることができます。紙と鉛筆を使って、プログラムの入力と出力を手で計算することで、プログラムの機能を確認していました。その後、自動化されたテストツールやフレームワークが登場し、プログラマーがより効率的にテストコードを作成できるようになりました。テストには、手動で実行する「単体テスト」や自動化された「統合テスト」などの種類があります。
-
-## 関連リンク:
-- [Python公式ドキュメント：テストコードの書き方](https://docs.python.org/ja/3/library/unittest.html)
-- [unittestフレームワークのチュートリアル](https://realpython.com/python-testing/)
-- [pytestを使ったテストコードの書き方](https://docs.pytest.org/en/latest/contents.html)
+## See Also (関連情報)
+- Pythonの公式ドキュメント: [unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html)
+- pytest: [https://docs.pytest.org/en/stable/](https://docs.pytest.org/en/stable/)
+- TDDについて: [テスト駆動開発](https://ja.wikipedia.org/wiki/テスト駆動開発)

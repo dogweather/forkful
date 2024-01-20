@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Elm: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,50 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+JSON, JavaScript Object Notation, är ett dataformat används för att lagra och transportera data. Programmerare använder det för att enkelt utbyta data mellan server och webbapplikationer.
 
-Arbetet med JSON handlar om att hantera data i form av textformat. Det är ett vanligt sätt för programmerare att utbyta information och används ofta för att hämta data från en webbserver. Det är ett effektivt sätt att strukturera och organisera data på.
-
-## Hur man gör:
-
-För att kunna jobba med JSON i Elm behöver vi importera biblioteket "Json.Decode". Detta låter oss läsa in JSON-data och omvandla den till Elm-värden. Vi använder sedan funktioner som "decodeString" och "field" för att hämta ut specifikt data från vår JSON-sträng. Nedan följer ett enkelt exempel på hur vi kan läsa in och använda JSON-data:
+## Hur gör man:
+I Elm använder man `Json.Decode` och `Json.Encode` för att hantera JSON. Här är ett exempel på dekodning från JSON till Elm och kodning från Elm till JSON.
 
 ```Elm
-import Json.Decode exposing (..)
+import Json.Decode exposing (field, int, string, decodeValue)
+import Json.Encode exposing (object, string, int)
 
--- Enkelt exempel på JSON-data
-jsonStrang = """
-  {
-    "namn": "Maria",
-    "ålder": 25,
-    "intressen": ["musik", "film", "resor"]
-  }
-"""
+-- JSON till Elm
+type alias User =
+    { id : Int
+    , name : String
+    }
 
--- Hämta ut namn från JSON-strängen
-namn =
-  decodeString (field "namn" string) jsonStrang
+userDecoder : Json.Decode.Decoder User
+userDecoder =
+    Json.Decode.map2 User
+        (field "id" int)
+        (field "name" string)
 
--- Hämta ut en lista över intressen från JSON-strängen
-intressen =
-  decodeString (field "intressen" (list string)) jsonStrang
+jsonString : String
+jsonString =
+    "{\"id\": 123, \"name\": \"Anna\"}"
 
--- Skriv ut resultatet
-main =
-  Html.text (toString intressen)
+decodedUserResult : Result String User
+decodedUserResult =
+    decodeValue userDecoder (Json.Decode.string jsonString)
+
+-- Elm till JSON
+userEncoder : User -> Json.Encode.Value
+userEncoder user =
+    object
+        [ ("id", int user.id)
+        , ("name", string user.name)
+        ]
+
+encodedUser : Json.Encode.Value
+encodedUser = 
+    userEncoder { id = 123, name = "Anna" }
 ```
 
-Resultatet blir då en lista med Marias intressen: `["musik", "film", "resor"]`.
+Sample output från dekodningen skulle vara:
 
-## Djupdykning:
+```Elm
+Ok { id = 123, name = "Anna" }
+```
 
-JSON, som står för "JavaScript Object Notation", är en standard för att strukturera och överföra data mellan olika applikationer och system. Det är ett lättläst och kompakt sätt att representera data och har blivit väldigt populärt bland utvecklare eftersom det fungerar i olika programmeringsspråk. Innan JSON användes ofta XML för att strukturera data, men detta var mer komplext och resurskrävande.
+## Fördjupning
+JSON introducerades 2001 och är baserat på JavaScript-syntaxen. Det har blivit det primära formatet för API-kommunikation. Alternativ till JSON inkluderar XML och YAML, men JSON vinner på grund av sin enkelhet. I Elm, hanterar decoders och encoders konverteringen och ser till att datatypen matchar, vilket minimerar runtime-fel. 
 
-Alternativ till JSON är bland annat XML, YAML och CSV. XML är fortfarande ett vanligt sätt att strukturera data, men jämfört med JSON är det mer tungrott och svårläst. YAML är mer lättläst än XML, men mindre välstöd och inte lika standardiserat. CSV är ett vanligt sätt att strukturera tabellformat data, men det har begränsningar när det kommer till mer komplex data.
-
-När vi arbetar med JSON i Elm, så omvandlas den till Elm-värden som sedan kan användas i vårt program. Detta innebär att vi behöver en sträng med giltig JSON-syntax för att kunna behandla datan korrekt. Om vår sträng inte följer rätt syntax kommer det att orsaka fel i vårt program.
-
-## Se också:
-
-- [Json.Decode bibliotekets dokumentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
-- [JSON.org](https://www.json.org/json-sv.html) för mer information om JSON-syntax och standarden
-- [Elm-guiden](https://guide.elm-lang.org/) för att lära dig mer om Elm och dess funktioner
+## Se även
+- Elm JSON guide: https://guide.elm-lang.org/effects/json.html
+- JSON.org för att lära dig mer om JSON-formatet: http://json.org/
+- `elm/json` paketet på Elm package website: https://package.elm-lang.org/packages/elm/json/latest/

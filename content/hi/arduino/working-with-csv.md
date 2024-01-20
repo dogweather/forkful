@@ -1,6 +1,6 @@
 ---
 title:                "CSV के साथ काम करना"
-html_title:           "Arduino: CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
 simple_title:         "CSV के साथ काम करना"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-CSV का उपयोग डेटा को स्प्रेडशीट जैसे स्ट्रक्चर में संग्रहीत करने के लिए गर्हित होता है। प्रोग्रामर्स इसका उपयोग करके बड़े उपायोगिताओं के साथ डेटा को एकल फॉर्मेट में संगठित कर सकते हैं।
+## What & Why? (क्या और क्यों?)
+CSV, यानी 'Comma-separated Values', टेक्स्ट फाइल फॉर्मेट है जिसमें डेटा को अल्पविराम से अलग किया जाता है। Arduino प्रोग्रामर्स इसे डेटा लॉग, सेंसर रीडिंग्स, या कॉन्फ़िगरेशन फाइल्स के आयात-निर्यात के लिए उपयोग करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-File dataFile; // फ़ाइल ऑब्जेक्ट बनाएं
-
+// एक सरल CSV पढ़ने और लिखने का उदाहरण
 void setup() {
-  Serial.begin(9600); // सीरियल सतरंगी प्रिंट करने के लिए सेट अप करें
-  if (!SD.begin(4)) { // अगर एसडी कार्ड नहीं मिला, तो सतरंगी मूल्य छोड़ें
-    Serial.println("एसडी कार्ड से कनेक्ट नहीं किया गया");
-    return;
-  }
-  dataFile = SD.open("data.csv"); // फ़ाइल को सच्ची करें और CSV फ़ॉर्मेट से डेटा पढ़ें
-  if (dataFile) {
-    while (dataFile.available()) { // सभी डेटा प्रिंट करने के लिए जब तक डेटा उपलब्ध हो
-      Serial.print(dataFile.read());
-    }
-  dataFile.close(); // खोले गए फ़ाइल को बंद करें
-  }
-  else {
-    Serial.println("फ़ाइल खोलने में असफल");
-  }
+  Serial.begin(9600);
+  // डेटा प्रिंट करना
+  Serial.println("id,name,value");
+  Serial.println("1,Raju,20");
+  Serial.println("2,Amit,30");
 }
 
-void loop() {}
-
+void loop() {
+  // कोई loop कार्यक्रम इस उदाहरण के लिए नहीं
+}
 ```
+सैंपल आउटपुट:
+```
+id,name,value
+1,Raju,20
+2,Amit,30
+```
+## Deep Dive (गहन जानकारी)
+CSV का प्रयोग सन् 1972 से हो रहा है, और यह डेटा के सरल स्वरूपण के लिए प्रसिद्ध है। XML और JSON जैसे विकल्प भी मौजूद हैं, लेकिन CSV की सादगी और कम स्टोरेज जरुरत इसे अनेक स्थानों पर पसंदीदा बनाती है। Arduino में, SD कार्ड पर CSV फाइल बनाने और पढ़ने के लिए SD.h लाइब्रेरी के फंक्शन्स का प्रयोग होता है।
 
-## टिप्पणी:
-दूरस्थ सूचना प्रपात करने के लिए CSV का उपयोग 1972 में फ़ॉर्मेटिंग प्रारूप के रूप में पहली बार गर्हित हुआ। वैकल्पिक उपायोगिताओं में JSON, XML, और डेटाबेस आदि शामिल हैं।
-
-## अध्ययन भी:
-- [CSV से कैसे फ़ाइल खोलें और पढ़ें](https://www.arduino.cc/en/Reference/SDopen)
+## See Also (अधिक जानकारी के लिए)
+- Arduino के लिए SD.h लाइब्रेरी का दस्तावेज: https://www.arduino.cc/en/Reference/SD
+- CSV पर और विस्तार से जानकारी: https://tools.ietf.org/html/rfc4180
+- JSON और XML के साथ CSV की तुलना: https://www.diffen.com/difference/CSV_vs_JSON vs_XML

@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러로 쓰기"
-html_title:           "PowerShell: 표준 에러로 쓰기"
-simple_title:         "표준 에러로 쓰기"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-표준 오류에 쓰는 것이 무엇인지와 프로그래머들이 그렇게 하는 이유는 무엇인지에 대해 1~2문장으로 설명합니다.
+## What & Why? (무엇이며, 왜 사용하는가?)
+표준 오류란, 스크립트나 프로그램이 오류 메시지를 출력하는 데 사용하는 출력 스트림이다. 프로그래머는 오류를 기록하고, 일반 출력과 구분하여 문제 해결에 도움이 되게 하기 위해 이것을 사용한다.
 
-표준 오류(standard error)는 실행 중에 발생하는 오류 메시지와 같은 프로그램 출력물을 말합니다. 프로그래머들은 이 출력물을 디버깅(debugging)하거나 문제를 파악하는 데 사용합니다.
-
-## 하는 법:
+## How to: (사용 방법)
+PowerShell에서 표준 오류에 쓰기:
 ```PowerShell
-Write-Error "이것은 표준 오류 메시지입니다."
-``` 
+# 오류 메시지를 표준 오류로 직접 보내기
+Write-Error "This is a sample error message." 2>&1
 
-위의 코드는 표준 오류에 메시지를 쓰는 간단한 예제입니다.
-실행시키면 다음과 같은 출력이 나타납니다:
-```PowerShell
-이것은 표준 오류 메시지입니다.
+# 예외 발생시키기
+throw "This will go to standard error."
+
+# try/catch 블록을 사용하여 오류를 잡고 표준 오류에 쓰기
+try {
+    Get-Item "nonexistentfile.txt"
+} catch {
+    Write-Error $_.Exception.Message
+}
 ```
-더 자세한 예제를 보려면 다음 명령어를 사용할 수 있습니다:
-```PowerShell
-Get-Help Write-Error -Examples
+샘플 출력:
+```
+Write-Error: This is a sample error message.
+This will go to standard error.
+Get-Item: Cannot find path 'C:\nonexistentfile.txt' because it does not exist.
 ```
 
-## 더 자세히 살펴보기:
-표준 오류를 기록하는 것은 프로그램 실행 중 문제가 발생했을 때 유용합니다. 디버깅을 할 때, 어떤 오류가 발생했는지를 알 수 있고, 오류 메시지를 적절하게 처리할 수 있습니다.
+## Deep Dive (심층 분석)
+과거에는 표준 오류를 다루는 것이 오늘날처럼 직관적이지 않았다. PowerShell 2.0 이전 버전에서는 `2>&1`을 사용하여 표준 오류를 표준 출력으로 리다이렉션해야만 했다. 이제는 `Write-Error`나 `throw` 명령어를 활용해 오류 메시지를 쉽게 작성할 수 있다. 이러한 방법 이외에도, `Write-Host`를 사용하여 특정 색상의 텍스트로 오류 메시지를 표시할 수도 있다(사용하지 않는 것이 좋지만). 표준 오류에 문자열을 작성하면, 이 스트림을 모니터링하는 모니터링 소프트웨어나 로그 파일로 쉽게 리다이렉트할 수 있다.
 
-표준 오류를 기록하는 기능은 다른 프로그래밍 언어들에서도 비슷하게 사용됩니다. 예를 들어, JavaScript에서는 `console.error()` 함수를 사용하고, C++에서는 `cerr` 객체를 사용합니다.
-
-PowerShell에서 표준 오류를 기록할 때, `Write-Error` 명령어를 사용하며, `-ErrorAction` 파라미터를 사용하여 출력을 다르게 할 수 있습니다. `-ErrorAction` 파라미터에 `Stop` 값을 입력하면, 오류 메시지를 콘솔 화면에 출력하고 스크립트를 중지합니다.
-
-## 관련 자료:
-- [PowerShell Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7.1)
+## See Also (참고 자료)
+- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1)
+- [About Try, Catch, and Finally](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.1)
+- [About_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1)

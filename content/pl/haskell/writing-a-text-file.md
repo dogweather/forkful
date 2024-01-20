@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie pliku tekstowego"
-html_title:           "Haskell: Pisanie pliku tekstowego"
-simple_title:         "Pisanie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why?
+("Co i Dlaczego?")
 
-Pisanie pliku tekstowego to proces zapisywania danych na dysku twardym komputera w postaci tekstu. Programiści często wykorzystują to narzędzie, aby zapisywać wyniki działania swoich programów lub przechowywać ważne informacje.
+Zapisywanie pliku tekstowego to sposób trwałego przechowywania danych. Programiści robią to, by zapisywać ustawienia, dane użytkownika, logi czy po prostu wyniki pracy programów.
 
-## Jak to zrobić:
+## How to:
+("Jak to zrobić:")
 
 ```Haskell
+-- Używamy funkcji 'writeFile', by zapisać tekst do pliku
 import System.IO
 
-main = do 
-  writeFile "plik.txt" "To jest tekst, który zostanie zapisany do pliku."
+main :: IO ()
+main = do
+    let str = "Witaj, Świecie! To jest tekst w pliku."
+    writeFile "przyklad.txt" str
 ```
 
-W powyższym przykładzie wykorzystaliśmy funkcję `writeFile` z modułu `System.IO`, aby zapisać tekst do pliku o nazwie "plik.txt". Możemy także wczytać już istniejący plik używając funkcji `readFile`.
+Sprawdzenie wyniku:
 
-## Wgląd w temat:
+```bash
+$ cat przyklad.txt
+Witaj, Świecie! To jest tekst w pliku.
+```
 
-Pisanie plików tekstowych jest jednym z podstawowych narzędzi, które programiści wykorzystują w swojej pracy. Od czasów mainstreamowego rozwoju informatyki, pisanie plików tekstowych było jedynym sposobem na zapisywanie danych na dysku. Obecnie istnieją również inne sposoby, takie jak bazy danych czy chmury, ale pisanie plików tekstowych nadal jest niezwykle ważnym elementem programowania.
+## Deep Dive:
+("Wnikliwe Rozważania:")
 
-## Zobacz też:
+Historia: 'writeFile' pochodzi z modułu System.IO, który jest częścią Haskell od wczesnych wersji.
 
-Dokumentacja modułu [System.IO](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html) z funkcjami do operacji na plikach.
+Alternatywy: Można użyć 'appendFile' do dopisania tekstu, 'openFile' z trybami 'ReadMode', 'WriteMode', 'AppendMode', 'ReadWriteMode' dla bardziej szczegółowej kontroli.
 
-Więcej o historii rozwoju programowania i wykorzystywaniu plików tekstowych można przeczytać w artykule na [Wikipedii](https://pl.wikipedia.org/wiki/Plik_tekstowy).
+Szczegóły implementacji: 'writeFile' używa 'lazy I/O', zapisując dane częściowo, co jest wydajne, ale może prowadzić do niespodzianek, jeśli nie rozumiemy tego modelu.
+
+## See Also:
+("Zobacz Także:")
+
+- [Haskell.org dokumentacja System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Learn You a Haskell for Great Good! - Input and Output](http://learnyouahaskell.com/input-and-output)
+- [Real World Haskell - Working with Files](http://book.realworldhaskell.org/read/io.html)

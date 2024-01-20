@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Javascript: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,43 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Working with CSV står för Comma Separated Values och är ett vanligt filformat för att lagra och utbyta tabellformatad data. Det är användbart för programmerare eftersom det gör det möjligt att enkelt importera och exportera data mellan olika program och system.
+## Vad & Varför?
+Vi jobbar med CSV-filer (Comma-Separated Values) för att enkelt hantera tabulär data. Programmerare använder CSV för dess enkelhet och kompatibilitet med kalkylprogram och databaser.
 
-## Så här gör man: 
-För att arbeta med CSV i Javascript, kan man använda sig av ett externt bibliotek som heter "fast-csv". Detta bibliotek gör det enkelt att läsa och skriva CSV-filer i Javascript. Ett exempel på hur man kan läsa och logga en CSV-fil med hjälp av "fast-csv" ser ut såhär:
-```Javascript
-const csv = require('fast-csv');
+## How to:
+Du kan läsa och skriva CSV med JavaScript. Här använder vi 'PapaParse', ett populärt bibliotek.
 
-csv.parseFile('example.csv', { headers: true })
-    .on('data', data => {
-        console.log(data);
-    })
-    .on('error', error => {
-        console.log(error);
-    });
+Installera med npm:
+```bash
+npm install papaparse
 ```
 
-Detta kodexempel läser in en CSV-fil som heter "example.csv" och loggar varje rad i konsolen som ett objekt med hjälp av filens kolumnrubriker som egenskaper.
+Läs en CSV:
+```javascript
+const Papa = require('papaparse');
+const fs = require('fs');
 
-För att skriva en CSV-fil med hjälp av "fast-csv" kan man använda sig av följande kod:
-```Javascript
-const csv = require('fast-csv');
+const csvFile = fs.readFileSync('dinFil.csv', 'utf8');
 
-csv.writeToPath('example.csv', [
-    ["Name", "Age"],
-    ["John", 30],
-    ["Sarah", 25]
-]);
+Papa.parse(csvFile, {
+  complete: function(results) {
+    console.log(results.data);
+  }
+});
 ```
-Detta kodexempel skapar en CSV-fil med namnet "example.csv" och lägger till två rader med data: Namn och ålder för John och Sarah.
 
-## Djupdykning:
-CSV-filer har funnits sedan 1972 och har sedan dess blivit ett standardformat för att utbyta tabellformatad data. Det är ett enkelt och lättläst format som kan läsas och användas av de flesta program och språk. Dessutom finns det många alternativ till "fast-csv" för att arbeta med CSV-filer i Javascript, såsom "csv-parse" och "csv-writer".
+Skriv en CSV:
+```javascript
+const { Parser } = require('papaparse');
+const fs = require('fs');
 
-Det finns även möjlighet att implementera en egen funktion för att läsa och skriva CSV-filer utan att använda sig av ett externt bibliotek. Det kan vara en bra övning för att förbättra sina programmeringskunskaper och förstå hur CSV-filer fungerar.
+const data = [
+  { name: "Anna", age: 28 },
+  { name: "Lars", age: 35 }
+];
 
-## Se också:
-- [CSV-writer](https://www.npmjs.com/package/csv-writer)
-- [csv-parse](https://www.npmjs.com/package/csv-parse)
-- [Wikipedia: CSV](https://sv.wikipedia.org/wiki/CSV)
+const csv = new Parser({fields: ["name", "age"]}).parse(data);
+
+fs.writeFileSync('utFil.csv', csv);
+```
+
+Resultat:
+```
+name,age
+Anna,28
+Lars,35
+```
+
+## Deep Dive
+CSV-formatet har använts sedan tidigt 1970-tal. Alternativ inkluderar JSON och XML, men CSV är fortfarande populärt för sin enkelhet. Implementationen i JavaScript kan kräva tredjepartsbibliotek som 'PapaParse' för parsing och serialization då JS inte har inbyggt stöd för CSV-format.
+
+## See Also
+- PapaParse dokumentation: [PapaParse Documentation](https://www.papaparse.com/docs)
+- Mozilla Developer Network, Arbeta med textfiler: [MDN Working with Text Files](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Reading_a_text_file)

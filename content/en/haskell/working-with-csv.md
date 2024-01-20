@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Haskell recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,79 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with CSV (Comma Separated Values) files is a common task for many programmers. CSV files are a popular format for storing data in a structured way, and therefore, it is often necessary to read and write information from these files in a program. CSV files can hold large amounts of data while remaining human-readable, making them a versatile choice for data storage and manipulation.
+Working with CSV (Comma-Separated Values) means reading and writing data in a tabular form. Programmers use CSV due to its simplicity and widespread support across systems for data exchange.
 
 ## How to:
-Reading and writing CSV files in Haskell is made simple with the help of the "csv" library. First, you will need to import it into your program:
+To handle CSV in Haskell, you can use the `cassava` library. Install it by adding `cassava` to your `.cabal` file or using Stack. Here's how to decode and encode CSV data:
 
-```Haskell
-import Text.CSV
-```
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-Next, let's look at an example of reading data from a CSV file, assuming it has three columns: "Name", "Age", and "Occupation".
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 
-```Haskell
+-- Assume we're working with this type
+type Person = (String, Int, Bool)
+
+-- Sample CSV data
+csvData :: BL.ByteString
+csvData = "John Doe,30,true\nJane Smith,25,false"
+
+-- Decoding CSV data
+decodePeople :: BL.ByteString -> Either String (V.Vector Person)
+decodePeople = fmap snd . decode NoHeader
+
+-- Encoding data to CSV
+encodePeople :: V.Vector Person -> BL.ByteString
+encodePeople = encode
+
+-- Usage example
+main :: IO ()
 main = do
-    -- Load the CSV file using the provided "parseCSVFromFile" function
-    file <- parseCSVFromFile "data.csv"
-
-    case file of
-        -- If the file was successfully loaded, process the data
-        Right csv -> do
-            -- Remove the header (first row) from the CSV file
-            let csv' = tail csv
-            -- Extract a list of rows, where each row is represented as a list of strings
-            let rows = map snd csv'
-            -- Convert the string rows to lists of strings, representing each value
-            let values = map (\x -> [head x, head $ tail x, head $ tail $ tail x]) rows
-            -- Print the values to the console
-            print values
-        -- If there was an error loading the file, print the error message
-        Left error -> putStrLn $ "Error: " ++ error
+  -- Decoding
+  case decodePeople csvData of
+    Left err -> putStrLn err
+    Right v -> print v
+  
+  -- Encoding
+  let people = V.fromList [("Alice", 23, True), ("Bob", 35, False)]
+  BL.putStrLn $ encodePeople people
 ```
 
-Given the following data in "data.csv":
-
-```
-Name,Age,Occupation
-John,25,Software Engineer
-Jane,30,Data Scientist
-```
-
-The output of the code above would be:
-
-```
-[["John", "25", "Software Engineer"], ["Jane", "30", "Data Scientist"]]
+Sample output:
+```plaintext
+[("John Doe",30,True),("Jane Smith",25,False)]
+"Alice",23,True
+"Bob",35,False
 ```
 
-Writing data to a CSV file follows a similar process. Here is an example of writing the same data back to a new CSV file:
+## Deep Dive
+CSV handling in Haskell has evolved. Earliest methods involved manual string parsing, which was error-prone. `cassava` provides type-safe parsing, leaning on Haskell's strong type system. Alternatives include the `csv` package, but `cassava` is more efficient and flexible. Implementation-wise, `cassava` uses streams for memory efficiency and speed, which is important when dealing with large datasets.
 
-```Haskell
-import Text.CSV
-
-main = do
-    -- Create the data to write to the CSV file
-    let dataToWrite = [["Name", "Age", "Occupation"], ["John", "25", "Software Engineer"], ["Jane", "30", "Data Scientist"]]
-    -- Write the data to a new CSV file, with the given filename
-    writeCSV "new_data.csv" dataToWrite
-```
-
-The result is a new CSV file with the following contents:
-
-```
-Name,Age,Occupation
-John,25,Software Engineer
-Jane,30,Data Scientist
-```
-
-## Deep Dive:
-CSV files have been around since the early days of computers, dating back to the 1970s. They were originally used as a way to transfer data between mainframe computers and personal computers. Over the years, they have become a popular format for storing and sharing data due to their simplicity and compatibility with different programming languages and applications.
-
-While the "csv" library is the standard way for working with CSV files in Haskell, there are other alternatives such as the "cassava" library which provides more advanced features such as type-safe parsing and encoding.
-
-The "Text.CSV" module of the "csv" library provides functions for parsing and writing CSV files, but it also includes features for manipulating CSV data, such as merging and sorting rows, and handling different separator characters (not just commas).
-
-## See Also:
-- [The csv package on Hackage](https://hackage.haskell.org/package/csv)
-- [The cassava package on Hackage](https://hackage.haskell.org/package/cassava)
-- [The CSV file format on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+## See Also
+- The `cassava` library on Hackage: https://hackage.haskell.org/package/cassava
+- Haskell's ByteString library for handling binary data: https://hackage.haskell.org/package/bytestring
+- A guide to the Vector library, for efficient lists: https://hackage.haskell.org/package/vector

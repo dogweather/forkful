@@ -1,7 +1,7 @@
 ---
-title:                "Написання текстового файлу"
-html_title:           "Ruby: Написання текстового файлу"
-simple_title:         "Написання текстового файлу"
+title:                "Створення текстового файлу"
+html_title:           "Arduino: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Записування текстового файлу - це процес створення нового файлу, який містить текстову інформацію. Програмісти використовують цю техніку для збереження та обробки даних, щоб зробити свою роботу більш ефективною та організованою.
+## What & Why? / Що і чому?
+Writing a text file in Ruby means saving data to a file on your disk. Programmers do this to store info, like logs or user data.
 
-## Як:
+## How to: / Як це зробити:
 ```Ruby
-# Створення нового текстового файлу та запис до нього
-File.open("new_file.txt", "w") do |file|
-  file.puts "Це приклад запису даних до текстового файлу."
+# Open and write to a file
+File.open('example.txt', 'w') do |file|
+  file.puts "Привіт, світ!"
+end
+
+# Append to existing file
+File.open('example.txt', 'a') do |file|
+  file.puts "Ще один рядок."
 end
 ```
 
-```Ruby
-# Додавання даних до вже існуючого файлу
-File.open("existing_file.txt", "a") do |file|
-  file.puts "Це нові дані, які будуть додані до існуючого файлу."
-end
+Sample output в 'example.txt':
+```
+Привіт, світ!
+Ще один рядок.
 ```
 
-## Глибока нерибквь:
-1. Історичний контекст: Записування текстових файлів було стандартною практикою вже з часів появи перших комп'ютерів. І сьогодні це залишається важливим елементом програмування та обробки даних.
+## Deep Dive / Поглиблений аналіз:
+Writing to text files has been basic to programming since early days. Alternatives include databases or cloud storage. In Ruby, `File.open` with a block auto-closes the file. Beware of file permissions and encodings.
 
-2. Альтернативи: У програмуванні є різні способи обробки та збереження даних. Для записування більш складної або структурованої інформації, можна використовувати формати як JSON або YAML.
-
-3. Деталі реалізації: У Ruby є багато різних методів для записування до файлів, таких як `puts`, `print` та `write`. Кожен з них має свої особливості та застосування, тому важливо вивчити їх в деталях, щоб використовувати їх належним чином.
-
-## Дивіться також:
-- [Офіційна документація Ruby про роботу з файлами](https://ruby-doc.org/core-2.7.2/File.html)
+## See Also / Дивись також:
+- Ruby API for File: https://ruby-doc.org/core/File.html
+- Ruby IO class: https://ruby-doc.org/core/IO.html
+- Guide to File I/O: https://www.tutorialspoint.com/ruby/ruby_input_output.htm

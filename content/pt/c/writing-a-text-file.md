@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "C: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Quê & Porquê?
+Escrever um arquivo de texto envolve a gravação de dados em um arquivo legível por humanos. Programadores fazem isso para salvar configurações, logs ou dados de saída para análises futuras.
 
-Escrever um arquivo de texto é simplesmente salvar informações em um arquivo de texto que pode ser lido por humanos, usando palavras e caracteres. Os programadores geralmente fazem isso para armazenar informações importantes ou resultados de suas aplicações.
-
-## Como fazer:
-
-Para escrever um arquivo de texto em C, você pode usar a função `fprintf()` do cabeçalho `stdio.h`. Veja um exemplo abaixo:
-
+## Como Fazer:
 ```C
 #include <stdio.h>
 
-int main()
-{
-    // Criando um ponteiro de arquivo
-    FILE *arquivo;
+int main() {
+    FILE *arquivo = fopen("exemplo.txt", "w");
 
-    // Abrindo o arquivo com permissão de escrita
-    arquivo = fopen("meu_arquivo.txt", "w");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir arquivo!\n");
+        return 1;
+    }
 
-    // Escrevendo no arquivo usando fprintf
-    fprintf(arquivo, "Olá, este é um arquivo de texto criado pelo programa!\n");
+    fprintf(arquivo, "Olá, arquivo!\n");
+    fprintf(arquivo, "Adeus, arquivo!\n");
 
-    // Fechando o arquivo
     fclose(arquivo);
 
     return 0;
 }
 ```
-
-Isso criará um arquivo chamado "meu_arquivo.txt" no mesmo diretório do seu programa, e escreverá a mensagem "Olá, este é um arquivo de texto criado pelo programa!" nele.
+Saída esperada no arquivo `exemplo.txt`:
+```
+Olá, arquivo!
+Adeus, arquivo!
+```
 
 ## Mergulho Profundo:
+Historicamente, a manipulação de arquivos em C é realizada através da biblioteca stdio.h, introduzida no início dos anos 70. Alternativas modernas incluem o uso de funções específicas do sistema operacional ou bibliotecas de terceiros para maior controle ou simplicidade. Detalhes de implementação incluem o uso de modos de abertura de arquivo, como `w` para escrita, e a necessidade de fechar o arquivo com `fclose()` para liberar recursos.
 
-Antes do padrão ANSI C, os programadores usavam a função `putc()` para escrever caracteres em um arquivo de texto. No entanto, com o surgimento da função `fprintf()`, tornou-se mais fácil escrever strings e variáveis formatadas em um arquivo. Além disso, outras linguagens de programação, como Python e Java, também possuem funções semelhantes para escrever em arquivos de texto.
-
-## Veja também:
-
-- [Manipulação de Arquivos em C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Tutorial C: Escrevendo em Arquivos de Texto](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Documentação da função fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+## Veja Também:
+- Documentação oficial da GNU sobre biblioteca C: https://www.gnu.org/software/libc/manual/html_node/Output-Streams.html
+- Tutorial detalhado sobre manipulação de arquivos em C: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
+- Referência sobre o `fprintf`: http://www.cplusplus.com/reference/cstdio/fprintf/

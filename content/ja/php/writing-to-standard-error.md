@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "PHP: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & なんで？
+## What & Why? (なぜかとは？)
+標準エラーに書き込むことは、プログラムがエラーや診断メッセージを出力する方法です。これは出力（STDOUT）と分けることで、エラーログを保守しやすく、システムやファイルに不要なエラーメッセージを記録させないために行われます。
 
-標準エラー出力への書き込みとは何か、そしてなぜプログラマーがこれを行うのかを簡潔に説明します。
-
-標準エラー出力とは、プログラム実行中にエラーや警告などの情報を出力するための仕組みです。プログラマーはこの出力を読み取り、問題を解決するために役立てることができます。
-
-## 方法：
-
-以下の```PHP ... ```コードブロック内に、コーディング例とサンプル出力を示します。
-
-```
+## How to: (やり方)
+```PHP
 <?php
-fwrite(STDERR, "エラーメッセージを標準エラー出力に書き込みます。");
+// 標準出力への書き込み
+fwrite(STDOUT, "正常な出力。\n");
+
+// 標準エラーへの書き込み
+fwrite(STDERR, "エラーメッセージ。\n");
+?>
+```
+**実行結果**
+```
+正常な出力。
+エラーメッセージ。
 ```
 
-上記のコードを実行すると、エラーメッセージが標準エラー出力に書き込まれることがわかります。
+## Deep Dive (詳細情報)
+PHPは初期からストリームラッパーとして`stdout`と`stderr`を持っています。組み込み定数`STDOUT`と`STDERR`はそれぞれ標準出力、標準エラーを指し、`fopen()`や`file_get_contents()`などの関数では使えません。書き込みは`fwrite()`や`file_put_contents()`などを使います。`error_log()`関数を使うこともできますが、これは設定に依存します。
 
-## 深堀り：
-
-標準エラー出力に書き込むという方法は、多くのプログラム言語で利用可能ですが、特にUNIXシステムで広く使用されてきました。これは、標準エラー出力が標準出力とは異なるストリームであるため、プログラマーがエラー情報とプログラムの出力を区別することができるからです。また、エラー情報がテキストファイルとして保存されるため、後で確認や分析がしやすくなります。
-
-標準エラー出力に書き込む代わりの方法として、ログファイルに書き込む方法もあります。しかし、ログファイルに書き込む場合、ファイルの管理や分析が必要になります。一方、標準エラー出力に書き込む方法は簡単で、プログラマーが直接エラー情報を確認できるため、より迅速な対応が可能になります。
-
-標準エラー出力への書き込みは、プログラマーにとって重要なツールであり、プログラムの安定性を確保するために活用することができます。
-
-## 関連リンク：
-
-- PHP 公式ドキュメント：https://www.php.net/manual/ja/function.fwrite.php
-- UNIX マニュアル：https://man7.org/linux/man-pages/man3/stderr.3.html
+## See Also (関連情報)
+- PHP Manual on Standard I/O streams: [https://www.php.net/manual/en/features.commandline.io-streams.php](https://www.php.net/manual/en/features.commandline.io-streams.php)
+- PHP Manual on `error_log()`: [https://www.php.net/manual/en/function.error-log.php](https://www.php.net/manual/en/function.error-log.php)
+- More about POSIX standard streams: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ CSV"
-html_title:           "PHP: עבודה עם קובץ CSV"
-simple_title:         "עבודה עם קובץ CSV"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# איך לעבוד עם CSV ב-PHP: מדריך תכנות לקוראי עברית
+## מה ולמה?
+עבודה עם קבצי CSV ב-PHP מאפשרת לך ליצור, לקרוא, ולערוך נתונים בפורמט פשוט. תכניתנים שומרים ומעבדים נתונים בפורמט CSV כי הוא מוכר, נגיש והמרה לטבלאות ב-Excel זה טריוויאלי.
 
-## מה זה CSV ולמה מתכנתים עושים את זה?
-CSV הוא פורמט קובץ פשוט המאפשר לך לאחסן נתונים בטקסט פשוט, ללא כל סוג של עיצוב או תגיות מיוחדות. הוא נהוג בעיקר בעבודה עם נתונים גדולים, כגון רשימות של פרמטרים או נתונים מובנים. מתכנתים משתמשים ב-CSV כדי לקרוא ולכתוב נתונים בקלות, מבלי להתעסק עם תפריטי משתמש מורכבים או תצוגה מעניינת.
+## איך לעשות:
+קוד PHP שמדגים יצירה, קריאה ועריכה של קובץ CSV.
 
-## איך לעבוד עם CSV?
-קוד בסיסי עם PHP מאפשר לנו לקרוא ולכתוב לקובץ CSV. להלן דוגמאות של קוד פשוט ופלט המתקבל:
-
-קובץ CSV עם נתונים:
-
-`first_name,last_name,age
-John,Smith,25
-Jane,Doe,30`
-
-קוד PHP לקריאת הנתונים והדפסתם בטבלה:
-
-```
+יצירת קובץ CSV:
+```PHP
 <?php
+$list = array (
+    array('היי', 'זה', 'קובץ', 'CSV'),
+    array('שורה', 'שניה', 'עם', 'נתונים'),
+);
 
-// קריאת הקובץ
-$file = fopen('file.csv', 'r');
+$fp = fopen('file.csv', 'w');
 
-// פעולה על כל שורה בקובץ
-while (($data = fgetcsv($file)) !== false) {
-  
-  // קבלת ערכי השורה והדפסתם בטבלה
-  echo '<tr>';
-  for ($i = 0; $i < count($data); $i++) {
-    echo '<td>' . $data[$i] . '</td>';
-  }
-  echo '</tr>';
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
 }
 
-// סגירת הקובץ
-fclose($file);
+fclose($fp);
+?>
 ```
 
-פלט המתקבל:
-
-```
-<table>
-  <tr>
-    <td>first_name</td>
-    <td>last_name</td>
-    <td>age</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Smith</td>
-    <td>25</td>
-  </tr>
-  <tr>
-    <td>Jane</td>
-    <td>Doe</td>
-    <td>30</td>
-  </tr>
-</table>
+קריאת קובץ CSV:
+```PHP
+<?php
+if (($handle = fopen("file.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        var_dump($data);
+    }
+    fclose($handle);
+}
+?>
 ```
 
-## עומק אית CSV
-CSV הינו פורמט קובץ ישן מאוד, ונשמר עד היום כאחד הפורמטים הנפוצים ביותר לעבודה עם נתונים. יתר האפשרויות לעבודה עם נתונים הן להשתמש בבסיסי נתונים או ליצור ממשק משתמש מתאים, אך שימוש ב-CSV יכול לספק פתרון קל ופשוט עבור פרוייקטים קטנים יותר.
+עריכת קובץ CSV (הוספת שורה):
+```PHP
+<?php
+$list = array (
+    array('שורה', 'חדשה', 'לדוגמא', 'CSV'),
+);
 
-כדי לכתוב או לקרוא לקובץ CSV בצורה יעילה יותר, ניתן להשתמש בספריות נוספות כגון "fgetcsv" ו-"fputcsv" המאפשרות לנו לעמוד על ידי פרמטרים נוספים ופעולות עם הנתונים.
+$fp = fopen('file.csv', 'a'); // 'a' להוספה
 
-למידע נוסף על פעולות נוספות עם CSV ב-PHP ניתן לעיין במקורות המוצעים בסעיף "ראה גם"
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
 
-## ראה גם
-- מדריך תיעוד רשמי לפעולת fgetcsv של PHP: https://www.php.net/manual/en/function.fgetcsv.php
-- פרוייקט "league/csv" שמאפשר קריאה וכתיבה לקבצי CSV בעזרת PHP: https://csv.thephpleague.com/
+fclose($fp);
+?>
+```
+
+## עיון נוסף:
+CSV, ראשי תיבות של Comma-Separated Values, הוא פורמט נתונים מתחילת שנות ה-70. אלטרנטיבות כוללות JSON ו-XML שמציעים גמישות רבה יותר, אך לעיתים הם יכולים להיות יותר מסובכים וקשים לקריאה אנושית. ב-PHP, הפונקציות fgetcsv ו-fputcsv מקלות פעולות עם קבצי CSV.
+
+## ראו גם:
+- [PHP: fgetcsv - Manual](https://www.php.net/manual/en/function.fgetcsv.php)
+- [PHP: fputcsv - Manual](https://www.php.net/manual/en/function.fputcsv.php)
+- [Wikipedia: CSV](https://en.wikipedia.org/wiki/Comma-separated_values)

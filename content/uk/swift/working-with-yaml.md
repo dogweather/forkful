@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Swift: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого? 
-Робота з YAML - це процес створення, читання та змінення даних у вигляді текстового формату. Програмісти використовують YAML для організації та збереження даних у структурованому форматі, доступному для машинного читання.
+## What & Why? (Що і Чому?)
+YAML — це мова розмітки для конфігурації даних. Програмісти використовують його через легкість читання та інтеграцію з різноманітними мовами програмування.
 
-## Як працювати з YAML:
+## How to: (Як це зробити:)
+Swift не має вбудованої підтримки YAML, але бібліотека Yams може допомогти.
+
 ```Swift
-import YAML
+// Підключення Yams
+import Yams
 
-let myData = [
-    "name": "John",
-    "age": 30,
-    "job": "Developer"
-]
+let yamlString = """
+- name: Oleksiy
+  job: Developer
+- name: Iryna
+  job: Designer
+"""
 
-let yamlString = YAMLEncoder.encode(myData)
-print(yamlString)
-
-// Вивід:
-// name: John
-// age: 30
-// job: Developer
+// Десеріалізація YAML строки в Swift масив
+if let people = try? Yams.load(yaml: yamlString) as? [[String: String]] {
+    for person in people {
+        print("\(person["name"] ?? "") is a \(person["job"] ?? "").")
+    }
+}
 ```
 
-## Глибоке дослідження:
-Історичний контекст: YAML був розроблений у 2001 році як спрощений формат обміну даними, що змінив старіші формати як JSON та XML. Альтернативи: поширеним альтернативою для YAML є JSON, але YAML зазвичай має більш зрозумілу структуру та дозволяє коментувати дані. Деталі реалізації: YAML базується на простому структурному синтаксисі та застосовується у багатьох різних мов програмування.
+Друкує:
+```
+Oleksiy is a Developer.
+Iryna is a Designer.
+```
 
-## Див. також:
-документація YAML {https://yaml.org/}
+## Deep Dive (Поглиблений Розгляд):
+YAML, випущений у 2001 році, побудований на основі XML і JSON. Альтернативи, такі як JSON і plist в Swift, також популярні для конфігурації. Yams реалізує що дозволяє здійснювати десеріалізацію та серіалізацію YAML даних.
+
+## See Also (Дивіться також):
+- [Yams GitHub репозиторій](https://github.com/jpsim/Yams)
+- [Офіційна YAML специфікація](https://yaml.org/spec/1.2/spec.html)
+- [Swift документація по plist (Property List файлам)](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html)

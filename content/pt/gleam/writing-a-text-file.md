@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "Gleam: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,18 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e porquê escrever um arquivo de texto?
+## O Que & Porquê?
+Escrever um arquivo de texto é salvar informações em um arquivo no seu disco. Programadores fazem isso para registrar dados, configurar sistemas, ou salvar resultados para uso posterior.
 
-Escrever um arquivo de texto é o processo de criar e salvar informações em um formato legível por humanos. Programadores geralmente o fazem para armazenar dados estruturados, como configurações ou registros de eventos.
+## Como Fazer:
+```gleam
+import gleam/io
+import gleam/erlang
 
-Como fazer:
+pub fn write_to_file() {
+  let data: String = "Olá, Gleam!"
+  try result = io.write_file("saudacao.txt", data)
+  case result {
+    Ok(_) -> io.print("Arquivo escrito com sucesso!")
+    Error(error) -> io.print("Erro ao escrever o arquivo: " <> error)
+  }
+}
+```
+Saída após execução:
+```
+Arquivo escrito com sucesso!
+```
 
-Um arquivo de texto pode ser criado usando o comando ```Gleam.file.write()```, seguido pelo nome do arquivo e uma string de texto como conteúdo a ser salvo. Por exemplo:
+## Mergulho Profundo:
+Historicamente, a escrita de arquivos é essencial para armazenamento de dados persistentes. Em Gleam, que compila para Erlang, a escrita de arquivos é manipulada por módulos que abstraem as funções do sistema operacional. Alternativas de implementação podem incluir uso de bancos de dados ou serviços de armazenamento na nuvem, mas a escrita local em arquivos permanece uma operação fundamental na programação.
 
-```Gleam.file.write("meu_arquivo.txt", "Olá, mundo!")```
-
-Isso criaria um arquivo chamado "meu_arquivo.txt" com o conteúdo "Olá, mundo!" dentro dele.
-
-Mergulho profundo:
-
-Escrever arquivos de texto é uma tarefa comum na programação, e é útil para armazenar e compartilhar informações. Antes dos computadores modernos, os arquivos de texto era
+## Veja Também:
+- Documentação oficial de Gleam: [https://gleam.run](https://gleam.run)
+- Tutorial sobre manipulação de arquivos em Erlang (em inglês): [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+- Guia introdutório de Sistemas de Arquivos (em inglês): [https://en.wikipedia.org/wiki/File_system](https://en.wikipedia.org/wiki/File_system)

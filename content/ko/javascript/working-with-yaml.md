@@ -1,7 +1,7 @@
 ---
-title:                "yaml 사용하기"
-html_title:           "Javascript: yaml 사용하기"
-simple_title:         "yaml 사용하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
-YAML 작업이란 무엇인가요? 그리고 왜 프로그래머들은 이 작업을 하나요?
-YAML은 'YAML Ain't Markup Language'의 약자로, 데이터의 구조화된 양식을 다루는 데 사용되는 포맷입니다. 프로그래머들이 YAML을 사용하는 이유는 간단한 구조와 읽기 쉬운 문법으로 텍스트 파일을 다루는 데 매우 유용하기 때문입니다.
+## What & Why? (무엇인가 & 왜 쓰나?)
+YAML은 데이터를 인간이 읽을 수 있는 형태로 표현하는데 사용합니다. 설정 파일, 데이터 교환 등의 경우에 JSON이나 XML보다 간결하고 읽기 쉬워서 많은 프로그래머들이 사용합니다.
 
-## 방법:
+## How to: (방법:)
 ```Javascript
-// YAML 파일을 다룰 때 사용하는 예제 코드
-var fs = require('fs');
-var yaml = require('js-yaml');
+// js-yaml 라이브러리 설치 필요
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-// YAML 파일을 열어서 데이터를 로드하는 함수
-function loadYAML(filename) {
-  var data = fs.readFileSync(filename, 'utf8');
-  return yaml.safeLoad(data);
+// YAML 파일 읽기
+let config;
+try {
+  config = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(config);
+} catch (e) {
+  console.error(e);
 }
 
-// 새로운 YAML 파일을 생성하는 함수
-function createYAML(filename, data) {
-  var yamlData = yaml.safeDump(data);
-  fs.writeFileSync(filename, yamlData, 'utf8');
-}
-
+// 자바스크립트 객체를 YAML로 변환
+const data = { name: '홍길동', age: 30 };
+const yamlData = yaml.dump(data);
+console.log(yamlData);
 ```
-예제 코드를 실행하면, YAML 파일이 생성되고 데이터가 로드되게 됩니다.
+출력 예시:
+```plaintext
+{ name: '홍길동', age: 30 }
+name: 홍길동
+age: 30
+```
 
-## 심층 분석:
-### 역사적 배경:
-YAML은 2001년 최초로 만들어질 당시 데이터 포맷의 표준이었던 XML보다 간단하고 가독성이 뛰어나기 때문에 빠르게 인기를 얻었습니다. 하지만 XML의 복잡한 스키마를 대체할 수는 없었기 때문에 아직까지도 많은 서비스에서 사용되고 있습니다.
+## Deep Dive (심층 분석)
+- **역사적 맥락**: YAML은 "YAML Ain't Markup Language"의 재귀적 약어로, 2001년에 개발되었습니다. 
+- **대안들**: JSON, XML과 같은 형식이 있지만, YAML은 가독성과 편집의 용이성에서 더 나은 선택이 될 수 있습니다.
+- **구현 세부사항**: YAML에서 탭 대신 공백을 사용하는 것은 중요한 규칙이며, 객체와 리스트를 나타내는 방법에 있어서 매우 직관적입니다.
 
-### 대안:
-YAML의 대안으로는 JSON이 있습니다. YAML보다 구조가 단순하고 문법도 간단하지만, 읽기 쉬운 YAML과는 다르게 JSON은 작은 따옴표를 사용해야 하기 때문에 코드가 더 복잡해질 수 있습니다.
-
-### 구현 세부사항:
-YAML은 Ruby, Python 등의 다양한 언어에서 사용할 수 있도록 라이브러리가 제공되고 있습니다. JavaScript에서 YAML을 다루기 위해서는 'yaml' 라이브러리를 설치하고, 'js-yaml' 패키지를 이용해야 합니다.
-
-## 관련 자료:
-- YAML 공식 사이트: https://yaml.org/
-- YAML 백서: https://yaml.org/spec/1.2/spec.html
-- yaml 라이브러리: https://www.npmjs.com/package/yaml
+## See Also (참고자료)
+- YAML 공식 문서: https://yaml.org/spec/
+- js-yaml GitHub 페이지: https://github.com/nodeca/js-yaml
+- JSON과 YAML의 비교: https://www.json2yaml.com/

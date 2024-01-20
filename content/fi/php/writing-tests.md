@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "PHP: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä & Miksi?
+Testaaminen tarkoittaa koodin toiminnan varmistamista automaattisesti. Koodaajat kirjoittavat testejä paikantaakseen bugeja, varmistuakseen ohjelman oikeasta toiminnasta päivitysten yhteydessä ja parantaakseen koodin laatua.
 
-Testaaminen on prosessi, jossa koodia tarkistetaan sen toiminnallisuuden ja virheettömyyden varmistamiseksi. Koodin testaaminen on tärkeä osa ohjelmointia, joka auttaa varmistamaan, että sovellus toimii oikein ja vähentää mahdollisten virheiden riskiä.
-
-## Miten:
-
+## How to: - Kuinka tehdään:
 ```PHP
 <?php
-//Luodaan testi-luokka
-class Testi extends PHPUnit_Framework_TestCase
-{
-  //Testataan yhteenlaskua
-  public function testYhteenlasku()
-  {
-    $luku1 = 5;
-    $luku2 = 10;
-    $tulos = $luku1 + $luku2;
-    //Asserttestilla varmistetaan, että tulos on oikein
-    $this->assertEquals(15, $tulos);
-  }
+// Yksinkertainen PHP-testi PHPUnitilla
+use PHPUnit\Framework\TestCase;
+
+// Testattava luokka
+class Calculator {
+    public function add($a, $b) {
+        return $a + $b;
+    }
 }
+
+// Testiluokka
+class CalculatorTest extends TestCase {
+    public function testAdd() {
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
+    }
+}
+
+?>
+```
+Tulostus:
+```
+OK (1 test, 1 assertion)
 ```
 
-Testin suorittamisen jälkeen saat odotetun tulosteen ilman virheitä:
+## Deep Dive - Syväsukellus:
+Alun perin testaus oli manuaalinen prosessi, mutta automatisoidut testit vakiintuivat 2000-luvulla. Vaihtoehtoja PHP:lle ovat esimerkiksi PHPUnit, Codeception ja PHPSpec. Hyvät testit ovat itsenäisiä, toistettavia ja kattavia. Ne testaavat sovelluksen odotettua käyttäytymistä ja paljastavat rikkinäisen koodin.
 
-```
-OK (1 testi, 1 testattu)
-```
-
-## Syväsukellus:
-
-Testien kirjoittamisessa on kaksi yleistä lähestymistapaa: yksikkötestaus ja integraatiotestaus. Yksikkötestauksessa testataan yksittäisiä toiminnallisuuksia ja niiden algoritmeja, kun taas integraatiotestauksessa testataan komponenttien yhteistoimivuutta.
-
-Muita ohjelmistotestauksen muotoja ovat esimerkiksi manuaaliset testit tai automatisointityökalujen käyttö. PHP:n lisäksi on mahdollista kirjoittaa testejä myös muilla ohjelmointikielillä, kuten JavaScriptillä tai Pythonilla.
-
-Testien kirjoittaminen voi myös auttaa tunnistamaan ja korjaamaan virheitä koodissa. Kannattaa myös muistaa, että testit eivät korvaa huolellista suunnittelua ja koodauksen tarkistamista.
-
-## Katso myös:
-
-- [PHPUnit dokumentaatio](https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html)
-- [PHP:n sisäänrakennettu testaus](https://www.php.net/manual/en/intro.pdo.php)
+## See Also - Katso Myös:
+- [PHPUnit](https://phpunit.de/)

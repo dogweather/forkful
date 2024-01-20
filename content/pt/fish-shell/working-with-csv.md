@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv."
-html_title:           "Fish Shell: Trabalhando com csv."
-simple_title:         "Trabalhando com csv."
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Por Quê?
+Trabalhar com CSV (Valores Separados por Vírgula) envolve ler, escrever e manipular dados em um formato amplamente utilizado para troca de dados estruturados. Programadores recorrem a CSV pela simplicidade e interoperabilidade entre sistemas e linguagens de programação.
 
-Trabalhar com arquivos CSV (Comma Separated Values) é uma tarefa muito comum para programadores. Isso ocorre porque os CSVs são uma forma simples e eficiente de armazenar dados tabulares, ou seja, dados organizados em colunas e linhas, como uma planilha. É comum encontrar arquivos CSV sendo usados para armazenar dados de tabelas de banco de dados, resultados de pesquisas ou até mesmo informações de contatos.
-
-## Como fazer:
-
-Usar o Fish Shell para trabalhar com arquivos CSV é simples e prático. Primeiro, você precisará ler o arquivo CSV usando o comando `read` e especificando o separador desejado. Você pode usar o separador padrão "," ou especificar um diferente com a opção `-d`. Em seguida, você pode usar os comandos do Fish Shell, como o `for` loop, para manipular os dados do CSV da maneira que desejar.
-
-- Leitura de um arquivo CSV:
-
+## Como Fazer:
 ```Fish Shell
-read -d "," arquivo.csv
-```
+# Lendo um arquivo CSV linha por linha
+for line in (cat dados.csv)
+    echo $line
+end
 
-- Usando o `for` loop para percorrer as linhas do CSV:
+# Dividindo os campos e acessando o segundo valor de cada linha
+for line in (cat dados.csv)
+    set -l campos (string split "," $line)
+    echo $campos[2]
+end
 
-```Fish Shell
-for linha in $arquivo
-    echo $linha
+# Convertendo um arquivo CSV em um array de arrays (linhas e campos)
+set -l linhas_e_campos
+for line in (cat dados.csv)
+    set -l campos (string split "," $line)
+    set linhas_e_campos $linhas_e_campos $campos
 end
 ```
 
-- Adicionando novas informações a um CSV existente:
+## Mergulho Profundo:
+O CSV é um formato de arquivo que data dos primeiros dias da computação, servindo como uma forma simples de importar e exportar dados de tabelas. Alternativas modernas incluem JSON e XML, que oferecem mais complexidade e estrutura. Em Fish Shell, diferentemente de outras shell scripts como Bash, não se usa ferramentas externas como `awk`, portanto a manipulação de CSV é feita através dos comandos internos `string split` e `for`.
 
-```Fish Shell
-echo "João, Silva" >> arquivo.csv
-```
-
-## Profundidade:
-
-Arquivos CSV são originários dos primeiros dias da computação e foram criados para serem usados em programas que processavam dados em linhas de texto. Hoje em dia, existem opções mais avançadas para trabalhar com dados tabulares, como JSON e XML. No entanto, os CSVs ainda são amplamente usados devido à sua simplicidade e compatibilidade com muitas ferramentas e linguagens de programação.
-
-Além de usar o Fish Shell, existem outras opções para trabalhar com arquivos CSV, como usar bibliotecas específicas em outras linguagens de programação, como Python ou R, ou utilizar ferramentas de visualização de dados, como o Microsoft Excel ou o Google Sheets.
-
-O Fish Shell possui excelentes recursos para processar e manipular dados CSV, como a possibilidade de usar filtros e operações matemáticas diretamente no shell. Além disso, o Fish Shell possui uma documentação detalhada e uma comunidade ativa, o que facilita a resolução de problemas e o aprendizado.
-
-## Veja também:
-
+## Veja Também:
 - Documentação oficial do Fish Shell: https://fishshell.com/docs/current/index.html
-- Comandos do Fish Shell para trabalhar com CSV: https://fishshell.com/docs/current/commands.html#read
-- Tutorial em vídeo sobre como trabalhar com CSV no Fish Shell: https://www.youtube.com/watch?v=5OX2qxpeWMk
+- Guia para manipulação de texto no Fish Shell: https://fishshell.com/docs/current/cmds/string.html
+- W3C sobre CSV: https://www.w3.org/TR/tabular-data-primer/

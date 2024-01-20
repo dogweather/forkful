@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "PHP: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+CSV sta per "Comma-Separated Values". Programatori usano formati CSV per trasportare dati: è semplice, universale, e leggibile da umani e macchine.
 
-Lavorare con CSV, o file di valore separati da virgole, è un modo comune per gestire grandi quantità di dati tabulari in PHP e altri linguaggi di programmazione. I programmatori spesso utilizzano il formato CSV per importare o esportare i dati tra diverse applicazioni e sistemi.
-
-## Come fare:
-
-Per iniziare, è possibile utilizzare la funzione PHP integrata ```fgetcsv()``` per leggere i dati da un file CSV e memorizzarli in una matrice. Di seguito è riportato un esempio di codice che mostra come ottenere i dati da un file CSV e stampare il contenuto in una tabella HTML:
-
+## How to:
+Leggi CSV:
 ```PHP
 <?php
-$csv_filename = "dati.csv";
-$handle = fopen($csv_filename, "r");
-$colonne = fgetcsv($handle, 1000, ",");
-echo "<table>";
-while(($righe = fgetcsv($handle, 1000, ",")) !== false){
-    echo "<tr>";
-    foreach ($righe as $dato) {
-        echo "<td>" . htmlspecialchars($dato) . "</td>";
+if (($handle = fopen("esempio.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        print_r($data);
     }
-    echo "</tr>";
+    fclose($handle);
 }
-echo "</table>";
-fclose($handle);
 ?>
 ```
+Salva CSV:
+```PHP
+<?php
+$list = array (
+    array('ciao', 'mondo', '2023'),
+    array('php', 'csv', 'esempio')
+);
 
-L'esempio sopra utilizza la funzione ```fgetcsv()``` per leggere il contenuto di un file CSV, indicando che il file è stato aperto con il codice ```fopen()```. Ciò assicura che il file sia chiuso correttamente dopo l'uso.
+$fp = fopen('file.csv', 'w');
 
-## Approfondimenti:
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
 
-Il formato CSV è stato sviluppato negli anni '70 come metodo standard per l'importazione e l'esportazione di dati da fogli di calcolo e database. Nel tempo, sono stati sviluppati altri formati di file per la gestione dei dati tabulari, come il formato JSON. Tuttavia, CSV rimane ancora popolare e funziona bene con molti tipi di dati.
+fclose($fp);
+?>
+```
+Output di lettura potrebbe essere:
+```
+Array
+(
+    [0] => ciao
+    [1] => mondo
+    [2] => 2023
+)
+Array
+(
+    [0] => php
+    [1] => csv
+    [2] => esempio
+)
+```
 
-Alcuni sviluppatori preferiscono utilizzare le librerie di terze parti per lavorare con CSV in PHP, come ad esempio la popolare libreria "league/csv". Queste librerie offrono funzionalità aggiuntive e una maggiore flessibilità rispetto alle funzioni integrate di PHP.
+## Deep Dive
+CSV nasce nei primi anni '70. Alternative includono JSON e XML, ma CSV brilla per la sua semplicità. Quando lavori con CSV in PHP, controlla il locale (funzione `setlocale()`) perché influisce sulla separazione dei decimali.
 
-Per implementare in modo efficiente un'elaborazione di grandi quantità di dati CSV, è consigliabile utilizzare un parser CSV, come ad esempio "fgetcsv()", che legge una sola riga di dati alla volta, invece di caricare l'intero file in memoria.
-
-## Vedi anche:
-
-- Documentazione PHP: [Funzione fgetcsv()](https://www.php.net/manual/en/function.fgetcsv.php)
-- Libreria "league/csv": [https://csv.thephpleague.com/](https://csv.thephpleague.com/)
+## See Also
+- Documentazione PHP su fgetcsv: https://www.php.net/manual/it/function.fgetcsv.php
+- Documentazione PHP su fputcsv: https://www.php.net/manual/it/function.fputcsv.php
+- RFC 4180, il standard del formato CSV: https://tools.ietf.org/html/rfc4180

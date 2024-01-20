@@ -1,7 +1,7 @@
 ---
-title:                "Yaml से काम करना"
-html_title:           "PowerShell: Yaml से काम करना"
-simple_title:         "Yaml से काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-YAML का उपयोग करना क्या है और आखिरकार प्रोग्रामर्स इसे क्यों करते हैं? YAML (YAML Ain't Markup Language) एक आसान और इंटरैक्टिव स्ट्रक्चर डेटा स्टोर करने के लिए है जो कि मेमोरी में होती है और प्रोग्रामर्स को कंप्यूटर या सर्वर के भीतर डेटा को ऑपरेट करने की अनुमति देती है।
+## What & Why? (क्या और क्यों?)
+YAML ("YAML Ain't Markup Language") एक data serialization format है जो आसानी से पढ़े जाने वाले data representation के लिए इस्तेमाल होता है। Programmers इसे configurations, data exchange और storage settings में इस्तेमाल करते हैं क्योंकि यह human-readable होता है और JSON, XML की तुलना में सरल होता है।
 
-## कैसे :
-
+## How to: (कैसे करें:)
 ```PowerShell
-# डेटा को फाइल में स्टोर करें
-@'
-Powershell:
- एक:
-    स्ट्रिंगों का एक ग्रुप।
- दो:
-    पूर्वावलोकन हेतु बूलीयन
- तीन:
-    सूचीकरण हेतु एक
-'@ | Out-File sample.yml
+# YAML file को पढ़ना
+$yamlContent = Get-Content -Path 'example.yml' -Raw
+$parsedYaml = ConvertFrom-Yaml $yamlContent
+Write-Host "YAML content as a PS Object:"
+$parsedYaml
 
-# डेटा को खोलें
-$ymlFile = Get-Content sample.yml
-$ymlData = $ymlFile | ConvertFrom-Yaml
-
-# डेटा को मूल्यों के साथ अपडेट करें
-$ymlData.Powershell.एक = "एक मेथड या फंक्शन"
-$ymlData.Powershell.तीन = @("हिंदी", "अंग्रेज़ी", "स्पेनिश")
-
-# अपडेटेड डेटा को फाइल में लिखें
-$ymlData | ConvertTo-Yaml | Out-File sample.yml
-
-# डेटा प्रिंट करें
-$ymlData
+# PowerShell object को YAML में बदलना
+$psObject = @{
+  name = 'PowerShell'
+  version = 'current'
+}
+$yamlFormat = ConvertTo-Yaml $psObject
+$yamlFormat | Out-File -FilePath 'output.yml'
 ```
 
-आउटपुट:
-```PowerShell
-Powershell
------------
-@{एक=एक मेथड या फंक्शन; दो=पूर्वावलोकन हेतु बूलीयन; तीन=System.Collections.Generic.List
+Sample Output:
+```
+YAML content as a PS Object:
+name: PowerShell
+version: current
+```
 
-## गहराई:
-YAML का इतिहास भी बेहद रोचक है। इसे 2001 में बनाया गया था और इसे पहले प्रोग्रामर्स आमतौर पर ऑप्शन या प्रोपर्टी की तरह उपयोग करते थे। लेकिन वर्तमान में YAML फाइलों और डेटा प्रोसेसिंग के लिए यूटिलिटी के रूप में त्योहार बन गया है। YAML की तुलना में इसके अन्य विकल्प जैसे XML और JSON में जादूगर हैं। YAML का एक और बड़ा लाभ यह है कि यह सामान्य टेक्स्ट के साथ आसानी से रखा जा सकता है और हमेशा से सुव्यवस्थित उत्पादन डेटा को ले कर जाता है।
+## Deep Dive (गहराई से जानकारी):
+YAML 2001 में आया और इसे तब से configurations और data storage के लिए बहुत ज्यादा अपनाया गया है। JSON और XML इसके alternatives हैं, लेकिन YAML है human-readable और less verbose, इसलिए उपयोग में आरामदायक है। PowerShell में yaml पढ़ने या लिखने के लिए `yaml` मॉड्यूल का इस्तेमाल होता है, जिसे अलग से install करना पड़ सकता है।
 
-## देखें भी:
-- [ऑफिशियल YAML दस्तावेज़ीकरण](https://yaml.org/spec/1.2/spec.html)
+## See Also (और भी जानकारी के लिए):
+- YAML Syntax: https://yaml.org/spec/1.2/spec.html
+- PowerShell Gallery YAML module: https://www.powershellgallery.com/packages/YamlDotNet
+- JSON vs YAML: https://blog.yaml.io/understanding-json-vs-yaml/

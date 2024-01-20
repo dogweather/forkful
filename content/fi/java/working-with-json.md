@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Java: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## What & Why? (Mitä & Miksi?)
+JSON on dataformaatti tiedon vaihtoon. Käyttävät JSONia koska se on helppo lukea ja kirjoittaa; yhteensopiva useimpien ohjelmointikielten kanssa.
 
-JSON eli JavaScript Object Notation on yleisesti käytetty formaatti, joka mahdollistaa tietojen tallentamisen ja jakamisen ohjelmien välillä. Se on erityisen suosittu web-kehityksessä ja RESTful web-palveluissa. JSON:ia käytetään, koska se on helposti luettava ja kirjoitettava sekä helposti muunnettavissa eri ohjelmointikielille.
+## How to: (Kuinka tehdä:)
+Java käsittelee JSONia `org.json` kirjaston tai `Jackson` ja `Gson` kautta. Tässä esimerkki `org.json`:lla.
 
-# Kuinka?
+```java
+import org.json.JSONObject;
 
-Java tarjoaa mukavan tavan käsitellä JSON-tietoja käyttämällä org.json kirjastoa. Kirjaston avulla voit helposti luoda, lukea ja muokata JSON-objekteja. Alla on esimerkki JSON-objektin luomisesta ja sen konvertoimisesta merkkijonoksi:
+public class JsonExample {
+    public static void main(String[] args) {
+        // Luodaan JSON-objekti
+        JSONObject obj = new JSONObject();
+        obj.put("nimi", "Matti Meikäläinen");
+        obj.put("ikä", 30);
+        obj.put("onkoOhjelmoija", true);
 
-```Java
-JSONObject obj = new JSONObject();
-obj.put("nimi", "Matti Meikäläinen");
-obj.put("ikä", 30);
-obj.put("harrastukset", new JSONArray(Arrays.asList("luistelu", "tennis")));
-String json = obj.toString();
-System.out.println(json);
-
-// Output: {"nimi":"Matti Meikäläinen", "ikä":30, "harrastukset":["luistelu", "tennis"]}
+        // Tulostetaan JSON-merkkijono
+        System.out.println(obj.toString());
+    }
+}
 ```
 
-# Syventyminen
+Esimerkin tulostus:
+```
+{"nimi":"Matti Meikäläinen","ikä":30,"onkoOhjelmoija":true}
+```
 
-JSON syntyi vuonna 2001 ja on lähtenyt hallitsemaan tiedonsiirtoa webissä. Sitä käytetään laajalti mm. RESTful web-palveluissa ja siitä on tullut de facto-standardi antaa tietojen liikkua eri ohjelmointikielien välillä.
+## Deep Dive (Syväsukellus):
+JSON (JavaScript Object Notation) kehitettiin 2000-luvun alussa ja yleistyi nopeasti AJAX-sovellusten kanssa. XML oli ennen JSONia, mutta JSON voitti suosiotaan keveytensä ja selkeytensä ansiosta. `org.json` on vanhin Java-kirjasto JSONille. `Jackson` ja `Gson` ovat nopeampia ja tarjoavat lisää toiminnallisuutta, kuten datan sidonta Java-olioiden ja JSONin välillä.
 
-Java ei ole ainoa kieli, joka pystyy työskentelemään JSON:n kanssa. On olemassa monia muita vaihtoehtoja kuten GSON, Jackson ja JSON.simple. On tärkeää valita itsellesi sopiva kirjasto projektin tarpeiden mukaan.
-
-JSON oli alunperin inspiroitunut JavaScriptistä, mutta on nyt laajalti tuettu useimmissa ohjelmointikielissä. Kirjastoja löytyy myös muille kielille, joten JSON-objektien käsittely on helppoa käytännössä kaikilla ohjelmointikielillä.
-
-# Katso myös
-
-Lue lisää JSON:sta ja sen käytöstä Java-sovelluksissa täältä:
-- [Oracle:n virallinen dokumentaatio](https://www.oracle.com/technetwork/articles/java/json-1973242.html)
-- [Tutoriaali JSON-kirjaston käytöstä](https://www.tutorialspoint.com/json/json_java_example.htm)
-- [JSON.org](https://www.json.org/) - JSON:n virallinen verkkosivusto
+## See Also (Katso Myös):
+- [Gson-kirjaston GitHub-sivu](https://github.com/google/gson)
+- [Jackson-kirjaston GitHub-sivu](https://github.com/FasterXML/jackson)
+- [Java JSON API (JSON-P)](https://javaee.github.io/jsonp/)

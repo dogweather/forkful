@@ -1,6 +1,6 @@
 ---
 title:                "テストの作成"
-html_title:           "Elm: テストの作成"
+html_title:           "Bash: テストの作成"
 simple_title:         "テストの作成"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をしているの？ ＆ なぜするの？
-テストを書くとは、簡単に言えば自分が書いたコードが正しく動作するかどうかを確認することです。プログラマーはテストを書くことで、自分のコードが意図したとおりに動くことを確実にすることができます。
+## What & Why?（なに？どうして？）
+テストコードとは、プログラムが正しい動作をするかチェックするためのコードです。バグを見つけ、機能が予期される通りに動くことを保証するためにプログラマーはテストを書きます。
 
-## 方法：
+## How to:（やり方）
+Elmでのテストコード例を示します。
+
 ```Elm
-import Test
-import Expect
+import Expect exposing (Expectation)
+import Test exposing (..)
+import String
 
-add : Int -> Int -> Int
-add x y =
-  x + y
+suite : Test
+suite =
+    describe "String tests"
+        [ test "Length of 'Elm'" <| \_ ->
+            "Elm" |> String.length |> Expect.equal 3
+        , test "Replace character 'e' with 'a'" <| \_ ->
+            "Hello Elm" |> String.replace "e" "a" |> Expect.equal "Hallo Elm"
+        ]
 
-test : Test
-test =
-  Test.test "Testing addition" [
-    Expect.equal (add 2 3) 5
-  ]
-
-main : Test.Runner.Config -> Html.Html
-main testConfig =
-  Html.div [] [
-    Test.Runner.runTest test testConfig
-  ]
+-- テストを実行すると以下のような出力になります。
+-- TEST RUN PASSED
+--
+-- String tests
+--     ✓ Length of 'Elm'
+--     ✓ Replace character 'e' with 'a'
+--
+-- 2 tests run, passed: 2, failed: 0
 ```
 
-上記のコードは、`add` 関数をテストするための簡単なテストコードの例です。テストを書くためには、`Test` モジュールと `Expect` モジュールをインポートしなければなりません。`add` 関数をテストするために、`Expect.equal` 関数を使用します。最後に、`main` 関数でテストを実行し、結果を表示します。
+## Deep Dive（掘り下げ）
+Elmでテストを書く歴史はまだ浅いですが、Elm-testパッケージは Elm のためのデ・ファクト標準テストフレームワークとなっています。他言語のテストフレームワークと比較して、Elm-testは型安全性と読みやすさに重点を置いています。内部的には、ランダムなテストケースの生成とテストの組み合わせを行うことができる「fuzz testing」をサポートしています。
 
-## 詳細について：
-テストを書くことは、品質保証のために非常に重要です。過去には、テストを書くための別の方法として、デバッガーやログを使用してコードをテストするという方法がありましたが、これらの方法では手動の確認が必要であり、時間もかかります。そのため、テストフレームワークが開発され、現在ではテストを書くことがより簡単かつ効率的になりました。Elmでは、そのようなテストフレームワークの一つとして `elm-test` が提供されています。
-
-## 関連情報：
-- 公式ドキュメント： https://guide.elm-lang.jp/test/ 
-- テストの書き方の例：https://github.com/elm-examples/elm-test-examples
+## See Also（関連する情報源）
+- Elm-testの公式ドキュメント: [https://package.elm-lang.org/packages/elm-explorations/test/latest/](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- Fuzz testingに関する解説記事: [https://elmprogramming.com/fuzz-testing.html](https://elmprogramming.com/fuzz-testing.html)

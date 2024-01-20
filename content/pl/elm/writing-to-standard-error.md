@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Elm: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Pisanie do standardowego wyjścia błędu to jedna z technik używanych przez programistów do obsługi błędów w programach. Jest to odrębne od standardowego wyjścia, gdzie wyświetlane są informacje dla użytkownika. Pisanie do standardowego wyjścia błędu jest ważne, ponieważ pozwala na wyświetlanie szczegółowych informacji o błędach, co ułatwia debugowanie i poprawę programów.
+## Co i dlaczego?
+W Elm nie jest tak prosto pisać do standard error, jak w niektórych językach. Kiedy chcesz, żeby Twoje błędy były widoczne, używasz `Debug.log` albo flag przy kompilacji do debugowania. To pomaga oddzielić błędy od normalnych danych wyjściowych.
 
-## Jak to Zrobić:
+## Jak to zrobić:
+Elm nie pozwala bezpośrednio pisać do stderr, ale możesz logować błędy używając `Debug.log`. Pamiętaj, żeby to usunąć przed wdrożeniem na produkcję.
+
 ```Elm
-writeToStderr : String -> Cmd msg
-writeToStderr str =
-  Task.perform identity identity (Task.succeed (Process.interrupt str))
+import Html
+import Debug
+
+main =
+  let
+    _ = Debug.log "Error Message" "Coś poszło nie tak"
+  in
+  Html.text "Sprawdź konsolę dla błędów"
 ```
-Kod powyżej pokazuje przykładową funkcję w Elm, która służy do pisania do standardowego wyjścia błędu. Funkcja przyjmuje jako argument string, który jest wiadomością o błędzie, a następnie wywołuje odpowiednie zadanie. Przykładowy output dla tej funkcji może wyglądać tak: ```Elm writeToStderr "Błąd: Nie można otworzyć pliku!" ```
 
-## Głębszy Wgląd:
-Pisanie do standardowego wyjścia błędu jest często wykorzystywane w programowaniu do obsługi wyjątków i nieoczekiwanych sytuacji. Przede wszystkim, pozwala to na szybkie zlokalizowanie i naprawienie błędów w kodzie. Alternatywą dla pisania do standardowego wyjścia błędu jest używanie logowania, który jest bardziej rozbudowanym narzędziem, ale może być bardziej przydatne w niektórych sytuacjach. Implementacja pisania do standardowego wyjścia błędu jest zazwyczaj dostępna w większości języków programowania.
+Przykładowe wyjście w konsoli:
+```
+"Error Message: Coś poszło nie tak"
+```
 
-## Zobacz także:
-- https://guide.elm-lang.org/error_handling/
-- https://elmprogramming.com/error-handling.html
-- https://www.geeksforgeeks.org/error-handling-in-elm-programming-language/
+## Pogłębienie wiedzy
+Elm skupia się na poprawności aplikacji, stąd brak bezpośredniego pisania do stderr. W przeszłości, bez takich mechanizmów jak `Debug.log`, błędy były trudniejsze do wyśledzenia. Alternatywą jest używanie JavaScript interop (Ports) do wysyłania wiadomości do JS, gdzie możesz użyć `console.error`. Elm zachęca do pisania kodu, który jest wolny od runtime errors, wiec mechanizmy debugowania bywają ograniczone.
+
+## Zobacz także
+- Elm Guide na temat debugowania: https://guide.elm-lang.org/debugging/
+- Elm package documentation `Debug`: https://package.elm-lang.org/packages/elm/core/latest/Debug
+- Elm discourse na temat praktyk debugowania: https://discourse.elm-lang.org/

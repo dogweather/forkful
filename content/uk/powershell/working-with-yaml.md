@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "PowerShell: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Чому?
-Робота з YAML - це спосіб створювати і керувати даними в проектах. Використання YAML у програмуванні дозволяє зручно зберігати та передавати дані у структурованому форматі. Це дозволяє зробити наш код більш читабельним та легко зрозумілим.
+## Що і Чому?
+YAML — це формат для зберігання та передачі даних, який легко читається людьми. Програмісти використовують YAML для конфігурацій файлів, інфраструктури як коду (IaC), та серіалізації даних.
 
-## Як:
-Приклади коду та виведення результатів можна побачити у наступних блоках коду PowerShell:
-
+## Як це зробити:
 ```PowerShell
-# Створення файлу YAML
-$yaml = @"
-greeting: Привіт
-name: Олексій
-language: PowerShell
-"@ 
+# Інсталяція модуля для роботи з YAML
+Install-Module -Name powershell-yaml
 
-# Вивід значень з файлу YAML
-$yaml | Out-File "greetings.yaml" -Encoding UTF8
+# Читання YAML файла
+$yamlContent = Get-Content -Path 'config.yaml' -Raw
+$config = ConvertFrom-Yaml -Yaml $yamlContent
+Write-Host "Config name: " $config.name
 
-# Читання та використання даних з файлу YAML
-$greetings = Get-Content "greetings.yaml" | ConvertFrom-Yaml
-$greetings.greeting
-$greetings.name
-$greetings.language
+# Створення YAML файла
+$object = @{
+    path = 'C:\example'
+    timeout = 30
+    featureFlags = @('FEATURE_A', 'FEATURE_B')
+}
+$yaml = ConvertTo-Yaml -Data $object
+$yaml | Out-File -FilePath 'new-config.yaml'
+Write-Host "YAML file created."
 ```
 
-В результаті виконання цього коду ви отримаєте наступне виведення:
+## Занурення в тему:
+YAML (YAML Ain't Markup Language) започаткований уранніх2000-х ізпять буворієнтованими на зручність читання та підтримку комплексних датасетів. Альтернативи як JSON чи XML існують, але YAML виграє завдяки своїй читабельності. У Powershell робота з YAML потребує зовнішніх модулів, як `powershell-yaml`.
 
-```
-Привіт
-Олексій
-PowerShell
-```
-
-## Глибоке занурення:
-### Історичний контекст:
-YAML з'явився у 2001 році як спроба створити простий формат для передачі та збереження даних. Він був створений для заміни XML, який був занадто складним та складночитаним. Лише в 2006 році був опублікований стандарт YAML 1.0.
-
-### Альтернативи:
-Найбільш популярними альтернативами до YAML є JSON та XML. JSON - це простий та легкий формат для зберігання та обміну даними, але він обмежений у структурах та можливостях. XML, навпаки, дозволяє створювати складні структури даних, але вимагає більше коду для обробки даних.
-
-### Деталі виконання:
-Як і більшість інших форматів, YAML має свої правила та синтаксис, які потрібно дотримувати для коректної роботи з даними. Для роботи з YAML в PowerShell є спеціальні командлети Get-Content та ConvertFrom-Yaml, які дозволяють читати та обробляти дані в цьому форматі.
-
-## Дивись також:
-Для більш детальної інформації щодо роботи з YAML та його синтаксисом, рекомендуємо ознайомитись зі стандартом YAML 1.2, а також з офіційною документацією та прикладами використання на офіційному сайті: https://yaml.org/. Крім того, багато ресурсів та форумів присвячено роботі з цим форматом, де можна знайти корисну інформацію та поради від інших програмістів.
+## Дивіться також:
+- [Official YAML website](https://yaml.org)
+- [PowerShell Gallery powershell-yaml Module](https://www.powershellgallery.com/packages/powershell-yaml)
+- [GitHub Repository for powershell-yaml](https://github.com/cloudbase/powershell-yaml)

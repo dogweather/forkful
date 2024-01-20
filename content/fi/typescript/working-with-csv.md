@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "TypeScript: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-CSV on lyhenne sanoista "comma-separated values" eli pilkuin erotetut arvot. Se on yksi tapa tallentaa ja järjestää taulukkodataa tekstitiedostoon. Ohjelmoijat käyttävät CSV-tiedostoja usein datan tallentamiseen ja jakamiseen eri ohjelmien välillä.
+## What & Why?
+CSV (Comma-Separated Values) on yksinkertainen tiedostomuoto, jolla tallennetaan taulukollista dataa. Ohjelmoijat käyttävät sitä helposti luettavan ja kirjoitettavan rakenteen sekä yleisen tietojen vaihdon soveltuvuuden vuoksi.
 
-## Miten:
+## How to:
+Työskentele CSV:n kanssa TypeScriptillä `csv-parse` ja `csv-stringify` kirjastojen avulla. Lue, muokkaa ja kirjoita tiedostoja.
+
 ```TypeScript
-// Tuodaan CSV-tiedosto käyttäen npm-pakettia "csvtojson"
-import { csv } from 'csvtojson';
+import { parse } from 'csv-parse';
+import { stringify } from 'csv-stringify';
 
-// Luodaan muuttuja, johon tallennetaan tuodun tiedoston sisältö
-const data = await csv().fromFile('data.csv');
+// CSV:n lukeminen ja parsiminen
+const inputCSV = 'nimi,ikä\nJari,30\nLeena,25';
+parse(inputCSV, {
+  columns: true,
+  delimiter: ','
+}, function(err, output) {
+  console.log(output);
+});
 
-// Tulostetaan tiedoston sisältö konsoliin
-console.log(data);
-
-// Esimerkki CSV-tiedoston sisällöstä:
-/*
-nimi, ikä, suosikki_väri
-Matti, 25, sininen
-Anna, 30, punainen
-*/
-
-// Tuloste:
-/*
-[
-  { nimi: 'Matti', ikä: 25, suosikki_väri: 'sininen' },
-  { nimi: 'Anna', ikä: 30, suosikki_väri: 'punainen' }
-]
-*/
+// CSV:n luominen ja muotoilu
+const records = [{ nimi: 'Jari', ikä: 30 }, { nimi: 'Leena', ikä: 25 }];
+stringify(records, {
+  header: true,
+  columns: ['nimi', 'ikä']
+}, function(err, output) {
+  console.log(output);
+});
 ```
 
-## Syvällinen sukellus:
-CSV-muoto kehitettiin 1970-luvulla IBM:n käyttöön, mutta se on sittemmin yleistynyt myös muilla alustoilla. CSV ei ole ainoa tapa tallentaa taulukkodataa tekstitiedostoon, mutta se on yksi yleisimmin käytetyistä. Muita vaihtoehtoja ovat esimerkiksi XML, JSON ja YAML. CSV-tiedoston käsittelyyn on olemassa useita erilaisia npm-paketteja ja TypeScript tarjoaa myös omia sisäänrakennettuja työkaluja kuten ```fs```-moduulin.
+Tulosteet:
+1. `[ { nimi: 'Jari', ikä: '30' }, { nimi: 'Leena', ikä: '25' } ]`
+2. `nimi,ikä\nJari,30\nLeena,25\n`
 
-## Katso myös:
-- [csvtojson npm-paketti](https://npmjs.com/package/csvtojson)
-- [TypeScriptin ```fs```-moduuli](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+## Deep Dive
+CSV:n juuret ovat varhaisessa tietokoneiden käytössä, jolloin yksinkertaiset tekstitiedostot olivat pääasiallinen tapa tallentaa ja vaihtaa tietoa. JSON ja XML ovat moderneja vaihtoehtoja CSV:lle, mutta ne eivät ole yhtä kevyitä eivätkä niitä käsitellä yhtä tehokkaasti suurilla datamäärillä. TypeScript toteuttaminen perustuu Node.js-pohjaiseen lukijaan ja kirjoittajaan, joita voi optimoida muuntamaan suuria tietomassoja asynkronisella koodilla.
+
+## See Also
+CSV:tä käsitteleviä TypeScript resursseja:
+- `csv-parse` dokumentaatio: [https://csv.js.org/parse/](https://csv.js.org/parse/)
+- `csv-stringify` dokumentaatio: [https://csv.js.org/stringify/](https://csv.js.org/stringify/)
+- Node.js virallinen dokumentaatio virran käsittelyyn: [https://nodejs.org/api/stream.html](https://nodejs.org/api/stream.html)
+- MDN Web Docs CSV:stä ja sen käytöstä JavaScriptillä: [https://developer.mozilla.org/docs/Web/JavaScript/Data_structures#csv](https://developer.mozilla.org/docs/Web/JavaScript/Data_structures#csv)

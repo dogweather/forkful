@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Rust: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Työskentely JSON:n kanssa tarkoittaa tietojen muuttamista binäärimuodosta tekstipohjaiselle formaatille, jota kutsutaan JSON-muodoksi. JSON on erittäin suosittu monissa ohjelmoinnin sovelluksissa, koska siinä on yksinkertainen syntaksi ja se mahdollistaa tiedon siirtämisen eri alustojen välillä.
+## What & Why?
+JSON (JavaScript Object Notation) on kevyt dataformaatti tiedonvaihtoon. Rust-koodaajat käyttävät sitä datan helppoon serialisointiin ja deserialisointiin, mikä tekee palvelinten ja selainten välisestä kommunikaatiosta vaivatonta.
 
-## Miten:
-Koodin kirjoittaminen Rustissa JSON-muotoon tapahtuu käyttäen serde-kirjastoa. Esimerkiksi, kun haluat muuntaa JSON-muotoisen tekstin rakenteelliseksi datatyypiksi, voit käyttää serde-json kirjastoa.
-
+## How to:
 ```Rust
-use serde_json::{Result,Value};
+use serde::{Serialize, Deserialize};
+use serde_json;
 
-fn main() -> Result<()> {
-    // JSON-muotoinen teksti
-    let data = r#"
-        {
-            "name": "John Snow",
-            "age": 28,
-            "hobbies": ["fighting", "exploring"]
-        }
-    "#;
+#[derive(Serialize, Deserialize, Debug)]
+struct User {
+    username: String,
+    email: String,
+}
 
-    // Muunnetaan teksti natiiviksi JSON-rakenteeksi
-    let v: Value = serde_json::from_str(data)?;
+fn main() {
+    let json_str = r#"{"username":"taikuri","email":"[email protected]"}"#;
 
-    // Printataan JSON-rakenne konsoliin
-    println!("{} is {} years old and likes {}.",
-        v["name"], 
-        v["age"], 
-        v["hobbies"].as_array().unwrap().join(", ")
-    );
-    Ok(())
+    // Deserialisoi JSON-string Rust-structiin
+    let user: User = serde_json::from_str(json_str).unwrap();
+    println!("Deserialisoitu: {:?}", user);
+
+    // Serialisoi Rust-struct takaisin JSON-stringiin
+    let serialized = serde_json::to_string(&user).unwrap();
+    println!("Serialisoitu: {}", serialized);
 }
 ```
-
-Tulostus:
-
-```bash
-John Snow is 28 years old and likes fighting, exploring.
+Sample output:
+```
+Deserialisoitu: User { username: "taikuri", email: "[email protected]" }
+Serialisoitu: {"username":"taikuri","email":"[email protected]"}
 ```
 
-## Syväsukellus:
-JSON-muoto otettiin käyttöön jo vuonna 2001 ja siitä tuli nopeasti suosittu vaihtoehto XML:lle tiedon muodostamiseen ja siirtämiseen verkon yli. Sen yksinkertaisempi syntaksi ja pienempi tiedostokoko tekivät siitä houkuttelevan monissa sovelluksissa, erityisesti web-sovelluksissa. Vaikka JSON on yleisesti käytetty, on olemassa myös muita vaihtoehtoja, kuten YAML ja CSV.
+## Deep Dive
+JSON on syntynyt 2000-luvun alussa ja on noussut XML:n rinnalle ja ohi suosiossa datan esittämiseksi. Rust tarjoaa serde-kirjastoa, joka on tehokas työkalu JSON:n käsittelyyn. Erilaisia formaatteja, kuten Toml ja YAML, käytetään myös, mutta JSON pysyy suosituimpana verkkopalveluissa datan ansiosta sen yksinkertaisuuden ja laajan tuen takia. Rustissa serde-koodin generointi hoituu derive-makron avulla automaattisesti, mikä säästää aikaa.
 
-Rustin serde-kirjasto tarjoaa monipuolisen ja tehokkaan tavan koodata ja dekoodata JSON-muotoa. Kirjasto pystyy käsittelemään monenlaisia JSON-tietorakenteita ja tukee myös tiettyjä lisäominaisuuksia, kuten järjestettyä JSON:ia ja dataa merkkijonoina.
-
-## Katso myös:
-- [JSON-esimerkki: API-pyyntö Rustilla](https://github.com/serde-rs/json#example-making-an-api-request-from-rust)
+## See Also
+- Serde-ohjekirja: https://serde.rs/
+- Rustin viralliset dokumentit serde_json: https://docs.serde.rs/serde_json/
+- JSONin viralliset sivut: https://www.json.org/json-en.html

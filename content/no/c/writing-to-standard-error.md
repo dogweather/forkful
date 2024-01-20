@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standard feil"
-html_title:           "C: Skriving til standard feil"
-simple_title:         "Skriving til standard feil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,26 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å skrive til standard error handler er en måte for programmerere å gi ut feilmeldinger eller annen viktig informasjon til brukeren. Dette gjøres vanligvis i tilfeller der programmet må avsluttes på grunn av en feil.
+Standardfeil (`stderr`) lar deg skrive feilmeldinger og diagnostikk uavhengig av vanlig utdata (`stdout`). Programmerere bruker det for å rapportere feil uten å forstyrre programmets vanlige utdatastrøm.
 
-## Hvordan:
-```
+## Hvordan gjøre det:
+```C
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Oops! Det har oppstått en feil.");
-    return 1;
+    fprintf(stderr, "Feil oppstått: Ugyldig brukerinndata.\n");
+    return 0;
 }
 ```
-**Output:**
+Sample output:
 ```
-Oops! Det har oppstått en feil.
+Feil oppstått: Ugyldig brukerinndata.
 ```
 
-## Dykk dypere:
-Å skrive til standard error er en metode som har vært i bruk siden den første versjonen av C. Det finnes også en annen måte å skrive ut feilmeldinger på, ved å bruke funksjonen ```printf```. Men ved å skrive til standard error kan man gi ut separate meldinger til standard output og standard error, noe som kan være nyttig i feilhåndtering.
+## Dyptdykk
+I Unix-lignende systemer er `stderr` filstrøm nummer to (med `stdin` som 0 og `stdout` som 1). I motsetning til `stdout`, er `stderr` ikke bufret, noe som betyr at feilmeldinger vises umiddelbart. Alternativer til standardfeil inkluderer logging til en fil eller bruk av dedikerte logging-rammeverk. Implementasjonsdetaljer er plattformspesifikke, men konvensjonen for standardfeil er konsekvent over de fleste systemer.
 
-Implementeringen av standard error handler kan variere avhengig av operativsystem og kompiler. Noen operativsystemer tillater til og med å omdirigere standard error til en annen enhet, som for eksempel en loggfil.
-
-## Se også:
-- [fprintf documentation](https://www.cplusplus.com/reference/cstdio/fprintf/)
+## Se Også
+- GNU C Library dokumentasjon på Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- C Standard Library `<stdio.h>`: https://en.cppreference.com/w/c/io
+- Lær om Unix filstrømmenes filbeskrivelsesnummer: https://en.wikipedia.org/wiki/File_descriptor

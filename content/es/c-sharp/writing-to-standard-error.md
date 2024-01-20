@@ -1,7 +1,7 @@
 ---
-title:                "Escribir al error estándar"
-html_title:           "C#: Escribir al error estándar"
-simple_title:         "Escribir al error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Escribir en la salida de error estándar, o stderr, es una técnica utilizada por los programadores para mostrar mensajes de error en el flujo de datos de un programa. Esto es especialmente útil durante el proceso de depuración del código, ya que permite identificar y resolver errores de manera más eficiente.
+## ¿Qué y Por Qué?
 
-## Cómo:
-Escribir en stderr en C# es fácil y se puede lograr utilizando la clase `Console`. A continuación se muestra un ejemplo de cómo imprimir un mensaje de error en stderr:
+Escribir en el error estándar permite que tus programas comuniquen problemas y diagnósticos separando estos mensajes del contenido principal de salida. Los programadores hacen esto para facilitar el monitoreo y manejo de errores.
 
-```
-Console.Error.WriteLine("¡Error! No se puede procesar el archivo.");
-```
+## ¿Cómo Hacerlo?
 
-La salida de este código sería algo como:
+```C#
+using System;
 
-```
-¡Error! No se puede procesar el archivo.
-```
-
-También puedes utilizar el método `Console.SetError()` para cambiar el destino de la salida de error. Por ejemplo, si deseas redirigir los mensajes de error a un archivo en lugar de la consola, puedes hacer lo siguiente:
-
-```
-FileStream fileStream = new FileStream("log.txt", FileMode.OpenOrCreate, FileAccess.Write);
-StreamWriter streamWriter = new StreamWriter(fileStream);
-Console.SetError(streamWriter);
+class ErrorStd
+{
+    static void Main()
+    {
+        Console.Error.WriteLine("Ha ocurrido un error.");
+        
+        // Código regular aquí
+        Console.WriteLine("Esta es una salida estándar.");
+    }
+}
 ```
 
-## Profundizando:
-La práctica de escribir en stderr proviene del sistema operativo Unix, donde se utilizan diferentes salidas estándar para el flujo de datos y los mensajes de error. En C#, también se puede utilizar la clase `Trace` para escribir en el flujo de error.
+Salida de muestra:
 
-Si prefieres utilizar una biblioteca externa, existen varias disponibles en línea que te permiten escribir en stderr en diferentes lenguajes de programación. Algunas de estas bibliotecas también proporcionan funcionalidades adicionales como formateo de texto y registro de errores en un archivo.
+```
+Esta es una salida estándar.
+Ha ocurrido un error.
+```
 
-En cuanto a la implementación, se recomienda utilizar try-catch-finally para capturar y manejar excepciones en lugar de imprimir directamente en stderr. También es importante tener en cuenta el rendimiento, ya que escribir en stderr en cada iteración de un bucle puede disminuir la velocidad del programa.
+Nota que el mensaje de error puede aparecer después en la salida de la consola debido a diferencias en el buffering, pero estarán claramente en flujos separados al redirigirlos en un entorno de producción.
 
-## Ver también:
-- [Documentación de la clase Console (en inglés)](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+## Profundización
+
+Históricamente, separar la salida estándar de la salida de error ha sido clave en Unix y sistemas similares para el procesamiento y análisis de datos de programas (pipelines). C# y .NET permiten esta tarea a través de `Console.Error`, que escribe en el flujo de error estándar, diferenciándose de `Console.Out` que escribe en la salida estándar. Alternativas incluyen el uso de logging frameworks que proporcionan más control y flexibilidad, como NLog o log4net. Internamente, `Console.Error` usa un `StreamWriter` que escribe en el flujo de error estándar del proceso.
+
+## Ver También
+
+- Documentación de Microsoft sobre `Console.Error`: [https://docs.microsoft.com/en-us/dotnet/api/system.console.error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
+- Tutorial de Microsoft sobre cómo depurar aplicaciones de C#: [https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-absolute-beginners](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-absolute-beginners)
+- Una introducción a NLog: [https://nlog-project.org](https://nlog-project.org)
+- Información sobre log4net: [https://logging.apache.org/log4net/](https://logging.apache.org/log4net/)

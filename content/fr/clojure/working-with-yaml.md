@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Clojure: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Travailler avec YAML est une pratique courante chez les programmeurs pour stocker des données structurées de manière lisible par l'homme. YAML, ou Yet Another Markup Language, est un format de sérialisation de données qui permet de spécifier des objets et des valeurs de manière simple et intuitive. Cela facilite la manipulation et la communication des données entre les applications.
+## Quoi & Pourquoi ?
 
-## Comment Faire:
-Pour travailler avec YAML en Clojure, il existe plusieurs bibliothèques disponibles telles que "yaml-clojure" et "snakeyaml-clj". Voici un exemple de code montrant comment utiliser la bibliothèque "yaml-clojure" pour lire et écrire des données YAML:
+YAML (YAML Ain't Markup Language) est un format de sérialisation de données lisible par l'homme utilisé pour la config, des fichiers de données, etc. Les développeurs l'emploient pour sa simplicité et sa facilité de compréhension par rapport à XML ou JSON.
+
+## Comment ça marche ?
+
+Pour travailler avec YAML en Clojure, on peut utiliser une librairie comme `clj-yaml`. Installez-le avec Leiningen : `[clj-yaml "0.7.0"]` ou avec Clojure CLI en ajoutant `clj-yaml {:mvn/version "0.7.0"}`.
+
+Chargeons un fichier YAML :
 
 ```Clojure
 (require '[clj-yaml.core :as yaml])
 
-;; Écrire des données
-(yaml/spit-string {"fruit" "pomme" "légumes" ["carotte" "laitue"]})
+(defn lire-yaml [chemin]
+  (with-open [r (io/reader chemin)]
+    (yaml/parse-string (slurp r))))
 
-;; Lire des données
-(yaml/parse-string "- banane
-                    - fraise
-                    - orange")
+(println (lire-yaml "config.yaml"))
 ```
 
-La sortie de ces exemples serait les données en format YAML, respectivement:
+Pour écrire des données en YAML :
 
-```YAML
-fruit: pomme
-légumes:
-  - carotte
-  - laitue
+```Clojure
+(defn ecrire-yaml [donnees chemin]
+  (spit chemin (yaml/generate-string donnees)))
 
----
-- banane
-- fraise
-- orange
+(ecrire-yaml {:nom "Dupont"} "sortie.yaml")
 ```
 
-## Deep Dive:
-YAML a été créé en 2001 par Clark Evans et Ingy döt Net. Il est conçu pour ressembler à du texte natif et est souvent utilisé pour configurer des applications ou stocker des données de configuration. Il peut être utilisé pour remplacer des formats de données tels que le JSON ou le XML. YAML est également pris en charge par de nombreux langages de programmation, ce qui en fait un choix populaire pour les développeurs.
+Vérifiez le fichier `sortie.yaml` pour voir les résultats.
 
-Une autre bibliothèque couramment utilisée pour travailler avec YAML en Clojure est "snakeyaml-clj". Elle offre des performances plus élevées que "yaml-clojure" mais peut nécessiter une configuration supplémentaire. Il est recommandé de comparer les performances des deux bibliothèques pour déterminer quelle serait la plus adaptée pour votre projet.
+## Exploration approfondie
 
-## Voir Aussi:
-- Documentation de "yaml-clojure": https://github.com/yogthos/clj-yaml
-- Documentation de "snakeyaml-clj": https://github.com/clj-commons/snakeyaml-clj
-- Tutoriel sur YAML en Clojure: https://yogthos.net/posts/2018-07-07-Working-with-YAML-in-Clojure.html
+YAML a commencé en 2001, visant une facilité de lecture. JSON et XML étaient les alternatives, mais YAML offre une syntaxe moins verbeuse. En Clojure, `clj-yaml` s'appuie sur la librairie Java SnakeYAML pour le parsing et la génération. C’est crucial de gérer les nuances de YAML, y compris les types de données supportés et la représentation de structures complexes.
+
+## Voir aussi
+
+- Documentation officielle YAML : https://yaml.org/
+- Repo GitHub `clj-yaml` : https://github.com/clj-commons/clj-yaml
+- Une comparaison entre JSON, YAML et XML : https://phauer.com/2017/json-vs-xml-vs-toml-vs-cson-vs-yaml/

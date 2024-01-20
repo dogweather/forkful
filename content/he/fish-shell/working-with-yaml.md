@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם ימל"
-html_title:           "Fish Shell: עבודה עם ימל"
-simple_title:         "עבודה עם ימל"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-קודם כל, עבודה עם YAML היא דרך נוחה ופשוטה לארגון וניהול מידע מבני נתונים. תכנתנים משתמשים בזה כדי לנהל תצורות ותצורות עבור יישומים שונים בכדי לספק תצוגה נוחה ומובנת של המידע.
+## מה ולמה?
+YAML הוא פורמט שמשמש לייצוג נתונים בצורה נגישה לקריאה על ידי בני אדם. תכניתנים משתמשים בו להגדרת קונפיגורציות, מבנים ותיעוד כי הוא פשוט, גמיש ונפוץ.
 
-# איך לעבוד עם YAML בשל פרום פיש
-כאשר אתם משתמשים בפרומ פיש, אתם יכולים לעבוד עם YAML בצורה פשוטה ונוחה. להלן כמה דוגמאות של קוד יישום המציגים כיצד ניתן להשתמש בזה:
+## איך לעשות:
+כדי לעבוד עם קבצי YAML ב-Fish, ניתן להשתמש בפקודות ואבזרים חיצוניים כמו `yq`. זה דוגמא לתסריט פשוט:
 
-```fish
-set my_var (yaml get file.yaml my-key) 
-# לקבלת ערך מנתוני YAML והמצביע על מפתח ספציפי בקובץ
-```
-```fish
-for key in (yaml keys file.yaml)
-echo $key
-end
-# להדפיס את כל המפתחות שנמצאים בקובץ YAML
+```Fish Shell
+# התקן את yq
+sudo apt-get install yq
+
+# פרס קובץ YAML והצג את הערך מתחת למפתח 'user'
+yq e '.user' config.yaml
 ```
 
-# צלול אין עומק 
-למרבה המזל, YAML נוצר כדי להיות תחליף קשיח של XML, שהיה מסובך וקושר לעבודה. אם אתה עדיין בספק כיצד לעבוד עם YAML או אם אתה מעדיף בחלוף כמה אלטרנטיבות, ישנם שני אפשרויות פופולריות אחרות - JSON ו- INI. גם אם YAML מבוסס על מפתחות וערכים כמו INI, יש לו גם את היכולת לייצג מבני נתונים מורכבים יותר כמו JSON. בנוסף, YAML מסוגל לנתח בין נתוני טבלה תאים ולפתח קבצים יותר מורכבים כפי שברוב קבצי התצורה.
+נניח שיש לנו `config.yaml` עם התוכן הבא:
+```yaml
+user:
+  name: "dvora"
+  role: "developer"
+```
 
-# ראה גם
-- [דף רשמי של פרומ פיש](https://fishshell.com)
-- [תיעוד YAML הרשמי](https://yaml.org/)
-- [קו מנחה עבור YAML בשל פרום פיש](https://fishshell.com/docs/current/commands.html#yaml)
-- [דוגמאות של קבצי YAML עבור תחמולנים](https://segmentfault.com/a/1190000000651054)
+הפלט יהיה:
+```
+name: "dvora"
+role: "developer"
+```
+
+## עיון עמוק
+YAML (YAML Ain't Markup Language) הוא קרוי "אנטי מארקאפ" בשעשוע. הוא נוצר ב-2001 לסייע במשימות תכנות בהן XML היה כבד ומסובך. תחליפים כוללים JSON ו-TOML. כאשר עובדים עם YAML ב-Fish, זכור להסתמך על כלים חיצוניים כי Fish אינו מספק תמיכה ישירה ב-YAML כמו שפות אחרות.
+
+## ר' גם
+- [YAML ויקיפדיה](https://he.wikipedia.org/wiki/YAML)
+- [מדריך ל-Fish Shell](https://fishshell.com/docs/current/index.html)
+- [עמוד הגיטהאב של yq](https://github.com/mikefarah/yq)

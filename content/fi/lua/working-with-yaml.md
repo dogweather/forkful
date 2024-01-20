@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Lua: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+"Mikä ja Miksi?"
 
-Lua on skriptauskieli, jota käytetään usein ohjelmoinnissa. Yksi sen ominaisuuksista on kyky käsitellä erilaisia tiedostomuotoja, kuten YAML. YAML on tekstipohjainen formaatti, jonka avulla voidaan esittää tietoa hierarkkisessa muodossa, mikä tekee siitä erittäin hyödyllisen ohjelmoijille.
+YAML on datan serialisointikieli, joka on ihmisen luettavissa ja helposti ymmärrettävä. Ohjelmoijat käyttävät sitä konfiguraatiotiedostoihin ja datan vaihtoon, koska se on selkeä ja laajasti yhteensopiva eri teknologioiden kanssa.
 
-## Kuinka?
-
-YAML-tiedostojen käsittely Lua-kielellä on hyvin yksinkertaista. Se vaatii vain muutaman rivin koodia, ja sen jälkeen voit helposti lukea tai kirjoittaa YAML-tiedostoja.
-
-**Lue YAML-tiedosto:**
+## How to:
+"Kuinka tehdä:"
 
 ```Lua
-local yaml = require 'yaml'
--- lataa YAML-kirjasto
-local myData = yaml.load_file('tiedosto.yaml')
--- lue tiedostosta data ja tallenna muuttujaan
+-- Install yaml module using luarocks or your package manager of choice
+-- luarocks install lyaml
+
+local yaml = require('lyaml')
+local example_yaml = [[
+- name: Yoda
+  age: 900
+- name: Luke Skywalker
+  age: 53
+]]
+
+-- Parse YAML string
+local people = yaml.load(example_yaml)
+
+-- Iterate and print
+for _, person in ipairs(people) do
+  print(person.name .. " on " .. person.age .. " vuotta vanha.")
+end
 ```
 
-**Kirjoita YAML-tiedosto:**
-
-```Lua
-local yaml = require 'yaml'
--- lataa YAML-kirjasto
-local data = {name = "Matti", age = 25, city = "Helsinki"}
--- määritä data taulukkoon
-local myData = yaml.dump(data)
--- tallenna tiedosto myData-muuttujaan
-yaml.save("tiedosto.yaml", myData)
--- tallenna tiedosto levylle
+Sample Output:
+```
+Yoda on 900 vuotta vanha.
+Luke Skywalker on 53 vuotta vanha.
 ```
 
-## Syvenny asiaan
+## Deep Dive
+"Sukellus syvälle:"
 
-YAML on lyhenne sanoista "YAML Ain't Markup Language" ja se on kehitetty vuonna 2001. Se on helppolukuinen ja ihmisystävällinen formaatti, jota käytetään usein konfiguraatio-tiedostoissa ja tietojen tallentamisessa. Vaihtoehtoina YAML:lle ovat esimerkiksi XML ja JSON, mutta YAML on yleensä helpompi lukea ja kirjoittaa.
+YAML (YAML Ain’t Markup Language) on kehitetty alun perin 2001. Se muistuttaa JSONia kerätessään tietoja avain-arvopareina, mutta on luettavuudeltaan parempi. Vaihtoehtoina ovat JSON ja XML, joista molemmat ovat yhtä koneellisesti käsiteltävissä mutta vähemmän ihmiskäytössä ystävällisiä. Työskennellessäsi YAML:n kanssa Luassa, `lyaml` on suosittu kirjasto, mutta muista asentaa se ensin esimerkiksi luarocks-paketinhallinnalla.
 
-Lua tarjoaa kirjaston nimeltä luayaml, joka mahdollistaa YAML-tiedostojen käsittelyn. Tämä kirjasto on kehitetty C-kielellä, ja se on nopea ja tehokas. Se sisältää myös monia hyödyllisiä apufunktioita, kuten tiedostojen lukemisen ja tallentamisen, sekä mahdollisuuden muuntaa JSON-formaattiin.
+## See Also
+"Katso myös:"
 
-## Katso myös
-
-- [YAML-dokumentaatio](https://yaml.org/)
-- [Lua-opas: Perusteet](https://lua.org/docs.html)
+- YAML-virallinen sivusto: [https://yaml.org/](https://yaml.org/)
+- LuaRocks lyaml-paketti: [https://luarocks.org/modules/gvvaughan/lyaml](https://luarocks.org/modules/gvvaughan/lyaml)
+- YAML ja JSON vertailu: [https://json2yaml.com/](https://json2yaml.com/)

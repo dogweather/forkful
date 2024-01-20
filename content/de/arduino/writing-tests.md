@@ -11,26 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Testen ist ein wichtiger Bestandteil der Programmierung, bei dem der Code auf mögliche Fehler und Fehlerquellen überprüft wird. Es hilft Programmierern, sicherzustellen, dass ihr Code zuverlässig funktioniert und die erwarteten Ergebnisse liefert.
 
-## So geht's:
-Um Tests für Arduino-Code zu schreiben, können wir die ```ArduinoUnit.h``` Bibliothek nutzen. Hier ein einfaches Beispiel, das eine Testklasse für eine einfache Funktion erstellt:
+Tests schreiben bedeutet, Code zu erstellen, der deinen eigenen Code prüft. Das machen Programmierer, um Fehler früh zu erkennen, die Stabilität des Programms zu garantieren und spätere Änderungen sicherer durchzuführen.
 
-```
-#include <ArduinoUnit.h>
+## How to:
 
-test(function_test) {
-  assertEqual(2, addNumbers(1,1));
+Tests auf Arduino-Plattformen sind nicht so gängig wie in anderen Entwicklungsökosystemen, vor allem wegen des begrenzten Speichers und der Hardware-Fokus. Trotzdem kannst du ein einfaches Beispiel für eine Testfunktion nutzen, die eine LED blinken lässt, um eine „Hello World“-Funktionalität zu testen.
+
+```Arduino
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void addNumbers(int a, int b) {
-  return a+b;
+void loop() {
+  testBlinkLED();
+  delay(1000); // Warte eine Sekunde zwischen den Tests
+}
+
+void testBlinkLED() {
+  digitalWrite(LED_BUILTIN, HIGH);   // LED an
+  delay(1000);                       // Warte einen Moment
+  digitalWrite(LED_BUILTIN, LOW);    // LED aus
+  delay(1000);                       // Warte einen Moment
+}
+
+void assertLEDState(int expectedState) {
+  int actualState = digitalRead(LED_BUILTIN);
+  if (actualState != expectedState) {
+    Serial.print("Test fehlgeschlagen: Erwarteter Status: ");
+    Serial.print(expectedState);
+    Serial.print(", Tatsächlicher Status: ");
+    Serial.println(actualState);
+  } else {
+    Serial.println("Test erfolgreich!");
+  }
 }
 ```
+Dieses einfache Testskript lässt eine eingebaute LED blinken und überprüft den Zustand.
 
-Nachdem wir die Bibliothek eingebunden haben, können wir eine Testklasse mit dem Namen "function_test" erstellen, in der wir unsere Funktion testen wollen. Mit dem ```assertEqual()``` Befehl prüfen wir, ob die erwarteten Werte übereinstimmen. Anschließend definieren wir unsere Funktion und können mit ```return``` den Rückgabewert überprüfen.
+## Deep Dive:
 
-Die Ausgabe sollte nun "1 test, 1 passed, 0 failed" sein, was bedeutet, dass unser Test erfolgreich war.
+Arduino selbst bietet keine eingebauten Testframeworks wie andere Entwicklungsumgebungen. Historisch gesehen konzentriert sich die Arduino-Entwicklung eher auf direktes Ausprobieren (Trial-and-Error) und weniger auf automatisierte Tests. Alternativen wie das Unit-Test-Framework „AUnit“ sind verfügbar und bieten strukturierte Möglichkeiten, das Verhalten von Code zu überprüfen. Die Implementierung von Tests auf Arduino-Boards sollte berücksichtigen, dass Ressourcen sehr begrenzt sind – es geht darum, Minimaltests zu schreiben, die die Key-Funktionalitäten absichern.
 
-## Tiefentauchen:
-Die ArduinoUnit.h Bibliothek wurde von M. F. Mc Laughlin erstellt und ist eine Alternative zu anderen Test-Frameworks wie beispielsweise Unity oder CppUnit. Mit ihr können sowohl Unit-Tests als auch Integrationstests geschrieben werden. Eine ausführlichere Dokumentation und weitere Beispiele findest du auf der offiziellen GitHub-Seite.
+## See Also:
+
+- AUnit, ein Unit-Test-Framework für Arduino: https://github.com/bxparks/AUnit
+- Arduinos offizielles Getting Started Guide: https://www.arduino.cc/en/Guide
+- Eine Einführung in das Testen von Software allgemein: http://softwaretestingfundamentals.com/

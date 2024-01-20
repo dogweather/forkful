@@ -1,6 +1,6 @@
 ---
 title:                "CSV के साथ काम करना"
-html_title:           "PHP: CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
 simple_title:         "CSV के साथ काम करना"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
-CSV का उपयोग किया जाना क्या है और क्यों प्रोग्रामर इसे करते हैं? CSV फाइलें डेटा को comma-separated values के साथ स्टोर करती हैं जो डेटा को बेहतर ढंग से संग्रहीत करने और उन डेटा को एक डेटाबेस या स्प्रेडशीट में उपयोग करने में मदद करता है।
+## What & Why? (क्या और क्यों?)
+CSV (Comma-Separated Values) एक साधारण फाइल फॉर्मेट है जिसमे डेटा अल्पविराम से अलग किया जाता है। प्रोग्रामर्स CSV का उपयोग इसलिए करते हैं क्योंकि यह हल्का (lightweight), सहज पठनीय (human-readable) और आसानी से निर्यात (export) और आयात (import) करने योग्य फॉर्मेट है।
 
-कैसे करें?
-इसका उपयोग करने के लिए, हमें PHP की ```fgetcsv()``` फंक्शन का उपयोग करना होगा। यह फंक्शन एक CSV फ़ाइल को पढ़ने और उस डेटा को मैसेज के रूप में वापस देता है। नीचे दिए गए उदाहरण के माध्यम से हम इसे समझ सकते हैं:
+## How to: (कैसे करें:)
+### CSV फाइल पढ़ना:
+```php
+<?php
+$filename = 'data.csv';
 
-```PHP
-$csvFile = fopen("data.csv", "r");
-while (($data = fgetcsv($csvFile)) !== FALSE) {
-    echo implode("|", $data) . "<br/>";
+if (($h = fopen("{$filename}", "r")) !== FALSE) {
+  while (($data = fgetcsv($h, 1000, ",")) !== FALSE) {
+    print_r($data);
+  }
+  fclose($h);
 }
-fclose($csvFile);
+?>
 ```
+### CSV फाइल लिखना:
+```php
+<?php
+$list = array (
+    array('नाम', 'उम्र', 'शहर'),
+    array('राहुल', '25', 'मुंबई'),
+    array('प्रिया', '22', 'बैंगलोर')
+);
 
-इस उदाहरण में, हमने ```fopen()``` फंक्शन का उपयोग करके CSV फ़ाइल को खोला है और ```fgetcsv()``` फंक्शन का उपयोग करके डेटा को पढ़ा है। हम फाइल को बंद भी कर देते हैं जो हमारे सिस्टम को बाद में उपयोग शुरू करने से बचाता है। इस उदाहरण का आउटपुट नीचे दिया गया है:
+$fp = fopen('file.csv', 'w');
 
-```PHP
-John Doe|john@doe.com|27
-Jane Smith|jane@smith.com|34
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
+
+fclose($fp);
+?>
 ```
+सैंपल आउटपुट नहीं होता; पर CSV फाइल में ये डेटा सेव हो जाएगा।
 
-गहराई में जाएं
-CSV फाइलें 1972 में आरंभ की गईं और अपने पॉपुलर होने के बाद से एक प्रमुख डेटा संरचना बन गई हैं। यह एक अनुक्रमिक डेटा संरचना होती है और वे स्वतंत्र रूप से सार्वजनिक चयन के लिए उपलब्ध होते हैं। CSV का उपयोग डेटा एक्सपोर्ट और इंपोर्ट करने के लिए भी किया जाता है। इसके अलावा, TXT और XLSX फ़ाइलें अन्य विकल्प हैं जो डेटा को संग्रहीत करने के लिए उपयोग किए जाते हैं।
+## Deep Dive (गहराई से जानकारी):
+CSV फाइल फॉर्मेट 1970 के दशक से उपयोग में आ रहे हैं। इसके विकल्प के रूप में XML और JSON जैसे फॉर्मेट हैं, जो अधिक जटिल डेटा संरचनाओं का समर्थन करते हैं। PHP में, fgetcsv() और fputcsv() फंक्शन्स का उपयोग करके CSV फाइल से डेटा पढ़ने और लिखने में मदद मिलती है। इन फंक्शन्स को हैंडल करना आसान है और ये डेटा विश्लेषण और आदान-प्रदान में काफी कारगर हैं।
 
-देखें भी
-इस आर्टिकल के साथ, हमने CSV फाइलों को PHP में पढ़ने के लिए उपयोगी प्रयोग प्रस्तुत किए हैं। यदि आप अपनी अन्य भाषाओं के लिए CSV फ़ाइलों को कैसे पढ़ें, तो आप इस लिंक पर जा सकते हैं: https://www.php.net/manual/en/function.fgetcsv.php
+## See Also (और जानकारी के लिए):
+- PHP Manual on fgetcsv: [PHP: fgetcsv - Manual](https://www.php.net/manual/en/function.fgetcsv.php)
+- PHP Manual on fputcsv: [PHP: fputcsv - Manual](https://www.php.net/manual/en/function.fputcsv.php)
+- CSV संरचना की विस्तृत जानकारी: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+- CSV और XML/JSON के बीच तुलनात्मक अध्ययन: [Comparing CSV and XML/JSON](https://www.csvjson.com/csv-vs-json)

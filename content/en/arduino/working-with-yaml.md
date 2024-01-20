@@ -11,53 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with YAML is a way for programmers to organize and store data in a human-readable format. It is often used for configuring settings or storing data in applications. Programmers use YAML because it allows them to easily edit and update data without the need for complex coding.
+YAML ain't markup language. It's a human-friendly data serialization standard for all programming languages. Programmers use it for config files, data exchange between languages, and it's easy to understand compared to XML or JSON.
 
 ## How to:
+Arduino doesn’t handle YAML out-the-box. To work with it, you use an external library. For example:
 
-To use YAML in your Arduino program, you will first need to download the Arduino YAML library. Once you have the library, you can include it in your code by adding the following line at the top:
-
-```Arduino
-#include <YAML.h>
-```
-
-Next, you can create a YAML document by declaring a YAML object:
+Install the "ArduinoJson" library via Library Manager. Use `DynamicJsonDocument` for parsing:
 
 ```Arduino
-YAML::Node document;
+#include <ArduinoJson.h>
+
+const char* yaml = 
+  "- title: The Catcher in the Rye\n"
+  "  author: J.D. Salinger\n"
+  "- title: Nineteen Eighty-Four\n"
+  "  author: George Orwell\n";
+
+void setup() {
+  Serial.begin(9600);
+  DynamicJsonDocument doc(1024);
+  deserializeJson(doc, yaml);
+  for (JsonObject elem : doc.as<JsonArray>()) {
+    Serial.println(elem["title"].as<String>());
+    Serial.println(elem["author"].as<String>());
+  }
+}
+
+void loop() {
+  // not used in this example
+}
 ```
 
-You can then add data to your YAML document using the appropriate data type:
+Sample output:
 
-```Arduino
-document["name"] = "John Doe";
-document["age"] = 30;
-document["city"] = "New York";
+```
+The Catcher in the Rye
+J.D. Salinger
+Nineteen Eighty-Four
+George Orwell
 ```
 
-To print out the YAML document, you can use the YAML::Node::print() method:
+## Deep Dive
+YAML emerged in the early 2000s, built for human readability. As a JSON superset, any JSON file is also a valid YAML. Common alternatives include JSON or XML, but YAML’s minimal syntax aims for better human management without extra flaunt. Parsing YAML on Arduino means converting YAML to JSON using external tools and then using the JSON in your sketches.
 
-```Arduino
-document.print(Serial);
-```
-
-This will print out the following YAML document:
-
-```Arduino
-name: John Doe
-age: 30
-city: New York
-```
-
-## Deep Dive:
-
-YAML, which stands for "YAML Ain't Markup Language", was first released in 2001. It was designed to be a human-readable, cross-platform language for data storage and configuration. YAML is often compared to other markup languages such as XML and JSON, but it has the advantage of being simpler and easier to edit by hand.
-
-There are a few alternatives to using YAML in Arduino programming, such as storing data in arrays or in text files. However, YAML offers a more structured and organized approach to data storage and is especially useful for complex data sets.
-
-Implementing YAML in Arduino is made possible by the Arduino YAML library. This library provides functions for parsing, creating, and manipulating YAML documents. It is based on the popular LibYAML library and is regularly updated.
-
-## See Also:
-
-To learn more about using YAML in your Arduino projects, check out the official YAML website at https://yaml.org/. You can also visit the Arduino YAML library's GitHub page at https://github.com/greiman/YAML for more information and updates. Additionally, the Arduino forums and community are great resources for exchanging tips and ideas on implementing YAML in your projects.
+## See Also
+- Official YAML website: https://yaml.org
+- ArduinoJson GitHub repository: https://github.com/bblanchon/ArduinoJson
+- YAML to JSON online converter: https://www.json2yaml.com/

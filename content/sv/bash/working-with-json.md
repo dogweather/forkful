@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Bash: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-JSON (JavaScript Object Notation) är en lättläst, humanvänlig strukturerad dataformat som är vanligt används för att skicka och lagra data i webbapplikationer. Genom att använda JSON kan programmerare lätt konvertera data från en form till en annan, och dela information mellan olika plattformar. 
+## What & Why?
+Jobbar med JSON för att utbyta data. Det är lättläst och populärt för webbåpplikationer.
 
-## Så här gör du:
-Bash stöder inte inbyggt behandling av JSON-data, men det finns verktyg som underlättar denna uppgift. Det enklaste sättet att arbeta med JSON i Bash är att använda kommandolinjeverktyget `jq`. Detta verktyg tillåter programmerare att lätt more player data. 
+## How to:
+För att hantera JSON i Bash behöver vi ett verktyg som `jq`. Här är exempel:
 
 ```Bash
-# Först ladda ner och installera jq
-sudo apt-get install jq
-
-# Skapa ett exempel-JSON-fil
-{
-    "namn": "Anna",
-    "ålder": 25,
-    "favoritfärg": "blå"
-}
-
-# Läs data från JSON-filen
-cat filnamn.json
-
-# Använd jq för att hämta ett specifikt värde
-jq '.ålder' filnamn.json
+echo '{"name": "Erik", "age": 30}' | jq '.name'
 ```
-
 Output:
-
-```Bash
-25
+```
+"Erik"
 ```
 
-## Djupdykning:
-JSON uppfanns 2001 som en alternativ till XML för att lagra och distribuera data på webben. Sedan dess har det blivit en av de mest använda filformaten för att utbyta data mellan applikationer. Det finns också andra alternativ som XML och YAML, men JSON är vanligtvis enklare och mer lättläst.
+Ändra åldern:
+```Bash
+echo '{"name": "Erik", "age": 30}' | jq '.age = 31'
+```
+Output:
+```
+{
+  "name": "Erik",
+  "age": 31
+}
+```
 
-Förutom jq, finns det andra Bash-verktyg som kan hjälpa till att bearbeta och manipulera JSON-data, till exempel `jshon` och `yq`. Men ibland kan det vara mer gynnsamt att använda ett annat programmeringsspråk som har inbyggda funktioner för att hantera JSON, som t.ex. Python eller Node.js.
+## Deep Dive
+JSON, eller JavaScript Object Notation, skapades tidigt 2000-tal. Alternativ inkluderar XML och YAML. `jq` är kraftfullt, använder streams och är skrivet i C.
 
-## Se även:
-- [jq dokumentation](https://stedolan.github.io/jq/)
+## See Also
+- jq Manual: https://stedolan.github.io/jq/manual/
+- JSON specifikation: https://www.json.org/json-sv.html
+- Bash scripting guide: https://www.gnu.org/software/bash/manual/

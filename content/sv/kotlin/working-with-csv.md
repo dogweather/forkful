@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med CSV"
-html_title:           "Kotlin: Arbeta med CSV"
-simple_title:         "Arbeta med CSV"
+title:                "Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,54 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att arbeta med CSV är ett sätt för programmerare att läsa och skriva data i ett tabellformat. Det är ett vanligt sätt att hantera stora datamängder och gör det enkelt att importera och exportera data från olika program. 
+CSV, eller Comma-Separated Values, är ett enkelt filformat för att lagra tabelldata. Programmerare använder det för att enkelt utbyta data mellan olika system och för att bearbeta stora mängder information med minimala filstorlekar.
 
-## Hur Man:
-
-För att läsa data från en CSV-fil i Kotlin, använd följande kod:
-
-```Kotlin
-import java.io.FileReader
-import com.opencsv.CSVReader
-
-fun main(args: Array<String>) {
-    val reader = CSVReader(FileReader("data.csv"))
-    val data = reader.readAll()
-
-    for (row in data) {
-        for (item in row) {
-            println(item)
-        }
-    }
+## How to:
+Att hantera CSV-filer i Kotlin kan ske enkelt med hjälp av bibliotek som `kotlin-csv`. Först, lägg till beroendet i `build.gradle`:
+```kotlin
+dependencies {
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:0.15.2")
 }
 ```
 
-För att skriva data till en CSV-fil i Kotlin, använd följande kod:
+Läs en CSV-fil:
+```kotlin
+import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 
-```Kotlin
-import java.io.FileWriter
-import com.opencsv.CSVWriter
-
-fun main(args: Array<String>) {
-    val writer = CSVWriter(FileWriter("data.csv"))
-    val data = arrayOf(arrayOf("Name", "Age", "Location"), arrayOf("John", "25", "Stockholm"), arrayOf("Lisa", "30", "Gothenburg"))
-
-    for (row in data) {
-        writer.writeNext(row)
-    }
-
-    writer.close()
+val rows = csvReader().readAll(File("data.csv"))
+rows.forEach { row ->
+    println(row)
 }
 ```
 
-## Djupdykning:
-CSV står för "Comma Separated Values" och har funnits i många år som ett enkelt format för att lagra data. Innan CSV användes ofta tab-separerade filer, men problem uppstod när texten som skulle sparas innehöll kommatecken. CSV introducerade då kommatecken för att separera värden och har varit ett populärt format sedan dess.
+Skriva till en CSV-fil:
+```kotlin
+import com.github.doyaaaaaken.kotlincsv.dsl.csvWriter
 
-Alternativ till CSV inkluderar JSON och XML, men CSV är fortfarande det enklaste alternativet när det kommer till att hantera och läsa stora datamängder.
+val data = listOf(
+    listOf("id", "namn", "ålder"),
+    listOf("1", "Eva", "34"),
+    listOf("2", "Oskar", "42")
+)
 
-I Kotlin kan man också använda biblioteket Apache Commons CSV för att hantera CSV-filer.
+csvWriter().writeAll(data, File("output.csv"))
+```
 
-## Se Även:
-- [Kotlin Dokumentation](https://kotlinlang.org/docs/home.html)
-- [Apache Commons CSV](http://commons.apache.org/proper/commons-csv/)
-- [Comma Separated Values på Wikipedia](https://sv.wikipedia.org/wiki/Comma-separated_values)
+## Deep Dive
+Historiskt sett härstammar CSV från tidiga datordagar, ibland använd som mellanhand mellan olika applikationer. Alternativ till CSV inkluderar JSON och XML, som båda kan hantera mer komplex data men till högre kostnad vad gäller filstorlek och komplexitet. Kotlin-bibliotek som `kotlin-csv` förenklar CSV-hantering genom att erbjuda enkel läsning och skrivning av filer utan att behöva hantera filströmmar direkt.
+
+## See Also
+- Kotlin CSV library dokumentation: [kotlin-csv](https://github.com/doyaaaaaken/kotlin-csv)
+- Officiell Kotlin-dokumentation: [Kotlin Programming Language](https://kotlinlang.org/docs/home.html)
+- Lär dig mer om olika dataformat: [JSON](https://www.json.org/json-en.html), [XML](https://www.w3.org/XML/)

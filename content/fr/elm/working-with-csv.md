@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec des fichiers csv"
-html_title:           "Elm: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Travailler avec des fichiers CSV, ou Comma-Separated Values, est un moyen courant pour stocker et organiser des données tabulaires. Les programmeurs utilisent CSV car il est largement pris en charge par de nombreuses applications, ce qui en fait un format de données pratique et polyvalent.
+## What & Why?
+On jongle souvent avec des fichiers CSV - c'est du texte avec des valeurs séparées par des virgules. En Elm, on s'en sert pour échanger des données facilement entre systèmes et pour le reporting.
 
-## Comment:
+## How to:
+En Elm, il n'y a pas de bibliothèque CSV intégrée, donc on peut utiliser `elm-csv` ou gérer les strings manuellement.
+
 ```Elm
 import Csv
 
--- Charger un fichier CSV
-Csv.load "fichier.csv" 
-    |> Result.map
-        (\result ->
-            case result of
-                Ok csv -> 
-                    Debug.log "Données CSV chargées:" csv
-
-                Err error ->
-                    Debug.log "Erreur lors du chargement du CSV:" error
-        )
-
--- Convertir des données en CSV
-List.map Csv.toRow ["valeur1", "valeur2", "valeur3"]
-    |> Csv.encode
-    |> Maybe.map Debug.log
-
--- Écrire un fichier CSV
-Csv.write "nouveau_fichier.csv" [["colonne1", "colonne2", "colonne3"], ["donnée1", "donnée2", "donnée3"]]
+-- Parsing CSV text into a list of records
+let
+    csvText = "name,age\nAlice,30\nBob,25"
+in
+Csv.parse csvText
+-- Résultat: Ok [["name","age"], ["Alice","30"], ["Bob","25"]]
 ```
 
-## Profonde plongée:
-Le format CSV a été développé dans les années 1970 et a gagné en popularité avec le développement des tables de chiffres dans les logiciels de feuilles de calcul. Bien que le format soit simple et couramment utilisé, il peut poser des problèmes lorsqu'il s'agit de données contenant des caractères spéciaux.
+On convertit les lignes en records avec un peu de logique supplémentaire:
 
-Il existe plusieurs alternatives au format CSV, comme le JSON (JavaScript Object Notation) ou le XML (Extensible Markup Language), qui ont des structures de données plus complexes et offrent une meilleure prise en charge des caractères spéciaux.
+```Elm
+import Csv
 
-L'implémentation de la bibliothèque de formatage de CSV pour Elm a été inspirée par le package CSV de Mario Belinatti pour Haskell.
+type alias User =
+    { name : String
+    , age : Int
+    }
 
-## À noter:
-- Bibliothèque CSV d'Elm: https://package.elm-lang.org/packages/elm/csv/latest/
-- Haskell CSV package: https://hackage.haskell.org/package/csv
+parseUser : List String -> Result String User
+parseUser [name, ageString] =
+    case String.toInt ageString of
+        Just age ->
+            Ok { name = name, age = age }
+
+        Nothing ->
+            Err "Cannot convert the age to an integer"
+
+parseUser _ =
+    Err "Invalid user data"
+
+parseCsv : String -> Result String (List User)
+parseCsv csvText =
+    let
+        parsedCsv = Csv.parse csvText
+    in
+    parsedCsv
+        |> Result.map (List.map parseUser)
+        |> Result.map (List.filterMap identity)
+        |> Result.mapError (\_ -> "Failed to parse CSV")
+
+```
+
+## Deep Dive
+CSV, créé dans les années 70, était initialement destiné à simplifier les transferts de données entre programmes. Aujourd'hui, il existe des bibliothèques CSV dans la plupart des langages de programmation, mais en Elm, on fait plus souvent appel à un module externe (comme `elm-csv`) pour traiter ces données. Bien que JSON soit devenu le format de choix pour les API web, CSV reste populaire pour les imports/exports et l'analyse de données.
+
+## See Also
+- [Elm Guide pour JSON](https://guide.elm-lang.org/interop/json.html)
+- [RFC4180 pour les spécifications CSV standards](https://tools.ietf.org/html/rfc4180)

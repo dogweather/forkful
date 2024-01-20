@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "Gleam: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何がそうさこんに準備ですか？
+## What & Why?
+テキストファイルの書き出しとは、文字データを永続的に保存する方法です。プログラマはデータの保存、設定情報の記録、またはログの出力のためにしばしばこれを行います。
 
-テキストファイルを作成することは、プログラマーがコンピューターにデータを保存するための方法です。通常、プログラマーは、ファイルにデータを書き込んだり読み取ったりする必要があるため、この作業を行います。
-
-## 作り方：
-
-```Gleam
+## How to:
+```gleam
+import gleam/io
 import gleam/file
 
-// ファイルを作成する
-let file = file.create("my_file.txt");
-
-// ファイルにテキストを書き込む
-file.write("Hello, world!");
-
-// ファイルが正しく書き込まれたことを確認する
-file.write("Hello, world!")
-|> assert.equal("Hello, world!\n");
-
-// ファイルを閉じる
-file.close();
+pub fn main() {
+  let content = "こんにちは、Gleamの世界へ！"
+  case file.open("greeting.txt", file.Write) {
+    Ok(file) -> io.write(file, content)
+    Error(error) -> io.print(error)
+  }
+}
+```
+サンプル出力:
+```
+ファイルに書き出しました: greeting.txt
 ```
 
-## 詳細を調べる
-
-テキストファイルを作成することは、プログラマーにとって重要な作業です。これにより、データを永続的に保存し、将来的に利用することができます。他のアプローチとしては、データベースを使用することもできますが、テキストファイルを作成することでより柔軟にデータを操作することができます。
-
-ファイルを作成する際には、ファイル名、ファイルパス、ファイルの種類など、様々な情報を指定する必要があります。また、ファイルに書き込むデータは、文字列やバイト列の形式で指定することができます。
+## Deep Dive
+歴史的に、テキストファイルはプログラミングの初期からデータ保存の主要な手段でした。Gleamのファイルモジュールはこの伝統的なアプローチを採用しています。別の方法としてデータベースやクラウドストレージがありますが、シンプルな設定や小規模なデータ保存にはテキストファイルが適しています。Gleamは、型安全性とモダンな機能性を重視しており、エラーハンドリングを用いた堅牢なファイル操作が可能です。

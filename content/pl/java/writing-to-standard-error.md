@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Java: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Java"
 category:             "Java"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co & Dlaczego?
-Zapisywanie do standardowego wyjścia błędów to sposób na wyświetlanie komunikatów o błędach lub ostrzeżeń dla użytkownika podczas działania programu. Programiści używają go, aby pomóc w debugowaniu i poprawie działania aplikacji.
+## Co i dlaczego?
 
-# Jak to zrobić:
-Java dostarcza nam mechanizm ```System.err.println()```, który pozwala na wypisywanie tekstu do standardowego wyjścia błędów. Przykład użycia:
+Pisanie do standardowego błędu (stderr) to sposób na wysyłanie komunikatów o błędach i innych ważnych informacji, które nie są częścią głównego wyniku programu. Programiści robią to, aby oddzielić normalne dane wyjściowe od informacji o błędach, co ułatwia debugowanie i logowanie.
 
-```Java
-System.err.println("Błąd: Nie można odnaleźć pliku!");
-```
-
-To spowoduje wyświetlenie komunikatu "Błąd: Nie można odnaleźć pliku!" na konsoli programu. Możemy również przekazać do tej metody wyjątek, który zostanie wyświetlony wraz z odpowiednim komunikatem:
+## Jak to zrobić:
 
 ```Java
-catch (FileNotFoundException e) {
-    System.err.println("Błąd: Nie można odnaleźć pliku!");
-    e.printStackTrace();
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("To jest normalne wyjście.");
+        System.err.println("To jest wyjście błędu.");
+    }
 }
 ```
 
-# Głęboka Zanurzona:
-Standardowe wyjście błędów zostało zaprojektowane w celu ułatwienia programistom w znajdowaniu i rozwiązywaniu błędów w aplikacji. Dzięki temu mechanizmowi możliwe jest wyświetlanie i przekazywanie informacji o błędach do użytkownika, co ułatwia w ich zrozumieniu i naprawieniu. Alternatywą dla tego mechanizmu jest standardowe wyjście, które jest wykorzystywane do wyświetlania informacji do użytkownika, ale nie zawiera informacji o błędach.
+Przykładowe wyjście:
+```
+To jest normalne wyjście.
+To jest wyjście błędu.
+```
 
-W Javie standardowe wyjście błędów jest domyślnie przekierowywane na konsolę, ale istnieje możliwość zmiany tej konfiguracji. Można to zrobić za pomocą klasy ```System.setErr()```, która pozwala na ustawienie innego strumienia wyjścia niż konsola. 
+## Dogłębna analiza:
 
-# Zobacz również:
-- Dokumentacja Java: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
-- Wideo tutorial: https://www.youtube.com/watch?v=6777R1L6x9s
-- Inne artykuły o programowaniu w Javie: https://sutherland-hdc.github.io/articles.html
+Pisanie do stderr sięga czasów Unixowych terminali, gdzie standardowo wyjście i błąd były przekierowywane do tych samych lub różnych miejsc. Alternatywą może być użycie własnych mechanizmów logowania, takich jak log4j. Podczas implementacji, `System.err` wiąże się z natywnym strumieniem wyjściowym języka operacyjnego, który jest specjalnie przeznaczony do obsługi błędów i ważnych ostrzeżeń.
+
+## Zobacz również:
+
+- Oficjalna dokumentacja Oracle na temat klas `System` i `PrintStream`: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
+- Tutorial na temat logowania w Java z wykorzystaniem log4j: https://logging.apache.org/log4j/2.x/manual/index.html
+- Artykuł na Stack Overflow na temat różnic pomiędzy `System.out` a `System.err`: https://stackoverflow.com/questions/31394569/what-is-the-difference-between-system-out-and-system-err

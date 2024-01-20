@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standard feil"
-html_title:           "Javascript: Skriver til standard feil"
-simple_title:         "Skriver til standard feil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,25 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
+## What & Why?
+Skriving til standard error (stderr) lar deg rapportere feil og logger uten å forstyrre vanlig output. Programmerere bruker det for å skille vanlige data fra feilmeldinger og for å lettere feilsøke.
 
-Skriver du noen ganger til standardfeil når du koder? Det betyr rett og slett at man sender feilmeldinger eller annen informasjon til strømmen for standardfeil i stedet for standardutgang. Programmerere gjør dette fordi det er et viktig verktøy for å feilsøke og forbedre koden sin.
+## How to:
+```javascript
+// Skriv til stderr i Node.js
+process.stderr.write('Dette er en feilmelding.\n');
 
-# Hvordan:
+// Eller med console.error
+console.error('Noe gikk galt!');
 
-```Javascript
-console.error("Dette er en feilmelding til standardfeil!");
+// Sample output når du kjører koden:
+// Dette er en feilmelding.
+// Noe gikk galt!
 ```
 
-Resultat:
-Dette er en feilmelding til standardfeil!
+## Deep Dive:
+Historisk sett har kommandolinjeverktøy brukt standard output (stdout) og stderr for å henholdsvis skrive ut resultater og feil. I JavaScript kan du skrive til stderr i Node.js, ikke direkte i nettlesere. Implementasjonsdetaljer inkluderer `process`-objektet i Node.js hvor `stderr` er en skrivbar stream. Som et alternativ kan logger som Bunyan eller Winston lede loggdata til forskjellige utløp, inkludert stderr.
 
-# Dypdykk:
-
-Det å skrive til standardfeil er en praksis som går helt tilbake til Unix-operativsystemet på 1970-tallet. Det ble utviklet som en måte å håndtere feil og uventede situasjoner på. Det finnes også alternative måter å håndtere feilmeldinger på, som for eksempel å kaste unntak eller bruke loggfiler. Når man skriver til standardfeil, kan man også inkludere informasjon som hjelper til med feilsøking, som for eksempel variabler og stakkspor.
-
-# Se også:
-
-For å lære mer om å skrive til standardfeil i Javascript, kan du sjekke ut disse kildene:
-
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+## See Also:
+- [Node.js `process` documentation](https://nodejs.org/api/process.html)
+- [Console API reference on MDN](https://developer.mozilla.org/en-US/docs/Web/API/console/error)
+- [Stream API in Node.js](https://nodejs.org/api/stream.html)
+- [Winston logger](https://github.com/winstonjs/winston)
+- [Bunyan logger](https://github.com/trentm/node-bunyan)

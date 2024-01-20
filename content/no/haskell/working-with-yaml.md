@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med yaml"
-html_title:           "Haskell: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+YAML håndtering i Haskell lar deg lese og skrive data i et klart og menneskelesbart format. Programmerere bruker YAML for konfigurasjonsfiler og datautveksling fordi det er enkelt og fleksibelt.
 
-Å jobbe med YAML handler om å organisere og lagre informasjon på en enkel og lesbar måte. Det brukes ofte av programmerere for å lagre konfigurasjonsdata og strukturere komplekse datastrukturer. 
-
-## Slik gjør du det:
-
-Her er et eksempel på hvordan du kan lage en YAML-fil og lese den i Haskell:
+## How to:
+For å jobbe med YAML i Haskell trenger du `yaml` pakken. Installer den med `cabal install yaml` eller `stack add yaml`. Her er et eksempel på hvordan du leser og skriver YAML:
 
 ```Haskell
--- For å jobbe med YAML, må vi importere biblioteket
+{-# LANGUAGE OverloadedStrings #-}
+
 import Data.Yaml
+import qualified Data.ByteString.Char8 as BS
+import Control.Exception (catch)
 
--- Definer en datastruktur, i dette tilfellet en liste av tall
-data Numbers = Numbers [Int] deriving (Show, Generic) 
+-- Definer en enkel datastruktur
+data Person = Person
+  { name :: String
+  , age  :: Int
+  } deriving (Show, Eq)
 
--- Lagre dataen som YAML i en fil
-let data = Numbers [1, 2, 3]
-encodeFile "numbers.yml" data
+instance ToJSON Person where
+  toJSON (Person name age) =
+    object ["name" .= name, "age" .= age]
 
--- Les dataen fra YAML-filen og skriv ut
-numbers <- decodeFileThrow "numbers.yml" :: IO Numbers
-print numbers
+instance FromJSON Person where
+  parseJSON (Object v) =
+    Person <$> v .: "name"
+           <*> v .: "age"
+  parseJSON _ = fail "Forventet et objekt for Person"
 
--- Output: Numbers [1, 2, 3]
+main :: IO ()
+main = do
+  -- Skriv til en YAML-fil
+  BS.writeFile "person.yaml" (encode (Person "Ola Nordmann" 30))
+
+  -- Les fra en YAML-fil
+  yamlData <- BS.readFile "person.yaml"
+  let maybePerson = decode yamlData :: Maybe Person
+  
+  case maybePerson of
+    Just person -> print person
+    Nothing -> putStrLn "Kunne ikke dekode YAML."
 ```
 
-## Dypdykk:
+Kjøring av `main` vil skrive `Person` til `person.yaml`, lese filen, og utskrift blir `Person {name = "Ola Nordmann", age = 30}`.
 
-YAML (Yet Another Markup Language) dukket opp i 2001 og er inspirert av programmeringsspråket Python. Det brukes ofte som et alternativ til JSON for å representere kompleks data, og er spesielt nyttig for å konfigurere komplekse systemer. I Haskell, brukes biblioteket "Data.Yaml" for å enkelt arbeide med YAML-data. 
+## Deep Dive
+YAML startet omkring 2001 som et mer leselig alternativ til XML. I Haskell håndterer biblioteket `yaml` parsing og generering av YAML-data. Som alternativ kan du bruke `aeson-yaml` for å jobbe direkte med JSON-til-YAML-konvertering. Implementasjonen bygger på `libyaml`, en C-bibliotek for YAML-operationer. For effektivitet parses YAML direkte til Haskell-datastrukturer.
 
-## Se også:
-
-- [Offisiell YAML-nettside] (https://yaml.org/)
-- [Haskell Yaml bibliotek] (https://hackage.haskell.org/package/yaml)
+## See Also
+- YAML spesifikasjon: https://yaml.org/spec/1.2/spec.html
+- `yaml` pakken på Hackage: https://hackage.haskell.org/package/yaml
+- `aeson-yaml` for JSON-YAML-konverteringer: https://hackage.haskell.org/package/aeson-yaml
+- Offisiell YAML hjemmeside med ekstra ressurser: https://yaml.org/

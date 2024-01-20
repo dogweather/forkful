@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv-tiedostojen kanssa"
-html_title:           "Bash: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why - Mitä ja Miksi?
+CSV on yksinkertainen tiedostomuoto tallentaa taulukollista tietoa, kuten Excel-tiedostoissa. Ohjelmoijat käyttävät sitä sen helpon muokattavuuden ja yhteensopivuuden eri järjestelmien välillä takia.
 
-CSV-tiedostot ovat yleinen tapa tallentaa taulukkomuotoista dataa, kuten tietokantojen tiedot tai Excelin taulukot. Koodarin näkökulmasta CSV:t ovat käteviä, koska ne ovat helppo luoda ja lukea. Useimmat koodauskielit tukevat CSV-tiedostoja, joten niitä voidaan hyödyntää monenlaisissa sovelluksissa.
-
-## Miten:
-
-Bashin toiminnot CSV-tiedostojen käsittelyyn perustuvat erityisesti komentoriviin ja sen eri työkaluihin. Esimerkiksi `echo`-komennolla voit kirjoittaa CSV-tiedoston sisällön komentoriville ja `cut`-komennolla voit leikata haluamasi sarakkeet tiedostosta. Alla on nähtävillä esimerkki CSV-tiedoston sisällöstä ja sen käsittelystä käytännössä.
-
+## How to - Miten?
 ```Bash
-# CSV-tiedoston sisältö (tiedoston nimi: tiedosto.csv)
+# Lue CSV-tiedosto ja tulosta sen sisältö
+while IFS=, read -r kentta1 kentta2 kentta3
+do
+  echo "Kenttä1: $kentta1 - Kenttä2: $kentta2 - Kenttä3: $kentta3"
+done < tiedosto.csv
 
-Nimi, Ikä, Ammatti
-Juha, 25, Koodari
-Maija, 30, Insinööri
-Matti, 40, Kirjailija
+# Lisää rivi CSV-tiedostoon
+echo "arvo1,arvo2,arvo3" >> tiedosto.csv
+
+# Suodata ja tulosta vain tietyt sarakkeet käyttäen cut-komentoa
+cut -d',' -f2 tiedosto.csv
 ```
 
-```Bash
-# Haetaan tietty sarakkeet tiedostosta ja tulostetaan ne komentoriville
-
-cut -d, -f 1,3 tiedosto.csv
+Esimerkki tuloste:
+```
+Kenttä1: arvo1 - Kenttä2: arvo2 - Kenttä3: arvo3
 ```
 
-```
-Nimi, Ammatti
-Juha, Koodari
-Maija, Insinööri
-Matti, Kirjailija
-```
+## Deep Dive - Syväsukellus
+CSV:ää on käytetty jo ennen tietokoneiden aikakautta. Se on yksinkertainen mutta joustava, ja monet ohjelmat tukevat sitä. Vaihtoehtoisia tiedostomuotoja ovat esimerkiksi JSON ja XML, mutta niitä on monimutkaisempi käsitellä. Bash-käsittelyssä tärkeää on ymmärtää symbolien, kuten IFS:n (Internal Field Separator), merkitys ja toiminta.
 
-## Syväsukellus:
-
-CSV-tiedostojen historia juontaa juurensa 1970-luvulle, jolloin ne kehitettiin vastauksena kasvavaan tarpeeseen datan tallentamiseen taulukkomuodossa. Nykyään on olemassa myös muita vaihtoehtoja CSV:lle, kuten XML tai JSON, mutta CSV:t ovat edelleen suosittuja niiden yksinkertaisuuden ja helppokäyttöisyyden vuoksi. Bashissa CSV-tiedostojen käsittelyyn on banyakirjo kirjastoja ja työkaluja, kuten `awk` ja `sed`. Näitä kannattaa tutkia lisää, mikäli CSV:t ovat olennainen osa koodin työstöä.
-
-## Katso myös:
-
-- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [CSV Wikipedia](https://fi.wikipedia.org/wiki/CSV)
+## See Also - Katso Myös
+- [GNU Coreutils](https://www.gnu.org/software/coreutils/)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)

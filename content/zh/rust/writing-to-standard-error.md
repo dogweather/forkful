@@ -1,7 +1,7 @@
 ---
-title:                "使用标准错误写入"
-html_title:           "Rust: 使用标准错误写入"
-simple_title:         "使用标准错误写入"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ 什麼和為什麼？
-寫到標準錯誤是指將程式執行中遇到的錯誤消息輸出到終端或日誌文件中，而不是直接輸出到終端使用者看到的標準輸出流中。這樣做的原因是為了讓程序員能夠更容易地追蹤和調試程序中的錯誤。
+## What & Why? 什么以及为什么？
+向标准错误写入信息（简称 stderr）用于报告程序错误。程序员这样做是为了将错误信息与正常输出分开，便于调试和日志记录。
 
-＃＃ 如何：
+## How to: 如何操作
+Rust 中写入 stderr 通常使用 `eprintln!` 宏或 `std::io::stderr`。
+
 ```Rust
 fn main() {
-    eprintln!("這是一個錯誤訊息。");
+    // 使用 eprintln! 宏简单打印错误信息
+    eprintln!("发生错误！");
+
+    // 更复杂的写法
+    use std::io::{self, Write};
+    let stderr = &mut io::stderr();
+    let _ = writeln!(stderr, "发生了另一个错误！");
 }
 ```
-在這個例子中，我們使用```eprintln!``` 宏將一個錯誤訊息輸出到標準錯誤流中。使用 ```eprintln!``` 而不是 ```println!``` 的原因是，後者會將輸出信息輸出到標準輸出流中，而不是我們想要的標準錯誤流。
 
+输出样例：
 ```
-這是一個錯誤訊息。
+发生错误！
+发生了另一个错误！
 ```
-這是程序執行時輸出的錯誤訊息，並且會顯示在終端上。
 
-＃＃ 深入探討：
-寫入標準錯誤流的概念起源於 Unix 系統，它是一種標準化的機制，用於將不同程序的錯誤信息報告給使用者。除了在終端上顯示錯誤信息外，程序員還可以將這些信息輸出到日誌文件中，以便稍後查看。
+## Deep Dive 深入探索
+标准错误（stderr）是UNIX哲学的产物，目的是让正常输出和错误信息隔离。其他写入 stderr 的方法包括使用日志框架或作为 `std::io::Write` 特质的实现。在不同的操作系统和具体应用中，标准错误的处理可能有差异。
 
-除了使用 ```eprintln!``` 宏之外，程序員也可以使用 ```std::io::stderr()``` 函數將信息寫入標準錯誤流。雖然可以直接通過標準錯誤流寫入錯誤信息，但使用 Rust 的高級標準庫函數可以讓代碼更加健壯和易於維護。
-
-＃＃ 參考資料：
-- [std::io::stderr()](https://doc.rust-lang.org/std/io/fn.stderr.html)
-- [Unix file descriptor](https://en.wikipedia.org/wiki/File_descriptor)
+## See Also 更多资源
+- Rust 官方文档关于 [`std::io`](https://doc.rust-lang.org/std/io/) 的说明
+- [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) 宏的详细资料
+- [`Write`](https://doc.rust-lang.org/std/io/trait.Write.html) trait reference

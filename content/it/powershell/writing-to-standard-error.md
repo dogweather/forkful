@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "PowerShell: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## What & Why? (Cosa & Perché?)
+Scrivere su standard error (stderr) significa inviare messaggi di errore o diagnostici separati dall'output standard. I programmatori lo fanno per isolare gli errori dall'output utile, semplificando il debugging e la gestione degli errori.
 
-Scrivere su standard error è un modo per mostrare messaggi di errore o di debug in modo diverso rispetto agli standard output. Questa pratica è molto utile per i programmatori poiché consente di separare chiaramente i messaggi di errore dai risultati del programma.
-
-## Come fare:
-
-Ecco un esempio di codice in PowerShell che mostra come scrivere su standard error:
+## How to: (Come fare:)
+Usa `Write-Host` con il parametro `-ForegroundColor`. Aggiungi `>&2` per reindirizzare a stderr.
 
 ```PowerShell
-# Codice di esempio per scrivere su standard error
-Write-Host "Messaggio di output"
-Write-Error "Messaggio di errore"
+# Scrivi un messaggio di errore in rosso
+Write-Host "Errore: File non trovato!" -ForegroundColor Red >&2
+
+# Reindirizza un errore da cmdlet a stderr
+Get-Item "non_esiste.txt" 2>&1
 ```
 
-L'output del programma sarà il seguente:
-
+Output d'esempio:
 ```
-Messaggio di output
-Messaggio di errore
+Errore: File non trovato!
+Get-Item: Impossibile trovare il percorso 'C:\...\non_esiste.txt' perché non esiste.
 ```
 
-## Approfondimento:
+## Deep Dive (Approfondimento)
+Historically, i sistemi operativi differenziano fra stdout e stderr per permettere un'elaborazione separata. PowerShell supporta questo standard UNIX. Alternativamente, puoi usare `Write-Error` o `[Console]::Error.WriteLine()` per stderr. L'implementazione si basa sulla redirection interna dei flussi del sistema operativo.
 
-Lo standard error è un concetto che proviene dai primi sistemi operativi Unix/Linux. In quei sistemi, il terminale seguiva il principio "In caso di successo, non c'è output" e quindi gli errori venivano inviati al canale di output alternativo (standard error). Un'alternativa comune a scrivere su standard error è l'utilizzo di un file di log.
-
-## Vedi anche:
-
-[Documentazione sulle funzioni Write-Host e Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.1)
-
-[Introduzione ai canali di output in PowerShell](https://www.tutorialspoint.com/powershell/powershell_output.htm)
-
-[Risolvere i problemi di script in PowerShell utilizzando standard error](https://vladflore.com/2019/10/handling-script-failures-with-powershell-standard-error-stream/)
+## See Also (Vedi Anche)
+- Microsoft Docs su Write-Host: [https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host)
+- Redirection in PowerShell: [https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection)
+- StackOverflow discussions on stderr: [https://stackoverflow.com/questions/tagged/powershell+stderr](https://stackoverflow.com/questions/tagged/powershell+stderr)

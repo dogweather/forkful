@@ -1,7 +1,7 @@
 ---
-title:                "「yamlの操作方法」"
-html_title:           "C#: 「yamlの操作方法」"
-simple_title:         "「yamlの操作方法」"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これはなに？
+## What & Why? (何となぜ？)
 
-YAMLとは、プログラマーがデータをよりクリーンに、より読みやすく表現するために使用するフォーマットです。プログラマーはYAMLを使うことで、コードを簡単に管理できるようになり、可読性を向上させることができます。
+YAMLは設定ファイルやデータ交換に使うフォーマット。C#でYAMLを扱うと、設定が簡単でわかりやすくなります。
 
-## 使い方：
+## How to: (やり方)
 
-```C#
-var person = new Person
+```csharp
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+public class Program
 {
-    Name: "John",
-    Age: 27
-};
+    public static void Main()
+    {
+        var yml = @"
+name: John Doe
+age: 30
+isProgrammer: true
+";
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .Build();
+        var person = deserializer.Deserialize<Person>(yml);
 
-string yaml = person.ToYaml();
-Console.WriteLine(yaml)
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}, IsProgrammer: {person.IsProgrammer}");
+    }
+}
 
-// Output:
-//
-// Name: John
-// Age: 27
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public bool IsProgrammer { get; set; }
+}
+```
+出力:
+```
+Name: John Doe, Age: 30, IsProgrammer: True
 ```
 
-## ディープダイブ：
+## Deep Dive (詳細な解説)
 
-YAMLが作られたのは、2001年にRubyの開発者であるIngy döt Netによってです。YAMLはXMLやJSONなどの代替手段として使用されることがありますが、YAMLはシンプルで読みやすい表現方法を提供します。
+YAMLが使われ始めたのは2001年。JSONやXMLと比較して人間が読み書きしやすい。C#ではYamlDotNetのようなライブラリで処理。オブジェクトへのシリアライズとデシリアライズがメイン。
 
-### 実装の詳細：
+## See Also (参考情報)
 
-YAMLは、データの構造をインデントによって表現します。また、キーと値をコロンで分けて表記します。このような特徴により、YAMLは人間にとってもプログラムにとっても扱いやすくなります。
-
-## 関連リンク：
-
-- [YAML公式サイト](https://yaml.org/)
-- [YAMLの仕様書](https://yaml.org/spec/1.2/spec.html)
+- YamlDotNet GitHub Repository: [https://github.com/aaubry/YamlDotNet](https://github.com/aaubry/YamlDotNet)
+- YAML公式サイト: [https://yaml.org](https://yaml.org)
+- .NETのシリアライズ: [https://docs.microsoft.com/dotnet/standard/serialization/](https://docs.microsoft.com/dotnet/standard/serialization/)

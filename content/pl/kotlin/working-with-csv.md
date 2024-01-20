@@ -1,6 +1,6 @@
 ---
 title:                "Praca z plikami CSV"
-html_title:           "Kotlin: Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
 simple_title:         "Praca z plikami CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Praca z CSV (Comma-Separated Values) to sposób na łatwy import i eksport danych. Programiści używają go, by sprawnie wymieniać dane między różnymi systemami i aplikacjami.
 
-Dokąd idą programiści, gdy potrzebują przechowywać i przetwarzać duże ilości danych? Do CSV! CSV, czyli Comma Separated Values, jest formatem plików, który pozwala na przechowywanie danych w postaci tabeli, w której wartości są oddzielane przecinkami. Programiści wybierają CSV ze względu na jego prostotę i łatwość przetwarzania w programach.
-
-## Jak to zrobić:
+## How to:
+CSV w Kotlinie? Łatwizna! Załadujemy plik, dzielimy dane, voilà!
 
 ```Kotlin
-val csvData = "Imię,Nazwisko,Wiek\n
-               Anna,Kowalska,35\n
-               Jan,Nowak,42\n
-               Marta,Wójcik,27"
-               
-val lines = csvData.lines()
-val headers = lines.first().split(",")
-val people = lines.drop(1).map { it.split(",") }
-    .map { Person(it[0], it[1], it[2].toInt()) }
+import java.io.File
 
-data class Person(val firstName: String, val lastName: String, val age: Int)
-
-// Przykładowe użycie:
-for (person in people) {
-    println("${person.firstName} ${person.lastName} ma ${person.age} lat.")
+fun main() {
+    val fileName = "data.csv"
+    val lines = File(fileName).readLines()
+    lines.forEach { line ->
+        val cols = line.split(",")
+        println("Pole 1: ${cols[0]}, Pole 2: ${cols[1]}")
+    }
 }
-
-// Wyjście:
-Anna Kowalska ma 35 lat.
-Jan Nowak ma 42 lat.
-Marta Wójcik ma 27 lat.
 ```
 
-## Głębsze nurkowanie:
+Wynik:
+```
+Pole 1: Jan, Pole 2: Kowalski
+Pole 1: Anna, Pole 2: Nowak
+```
 
-CSV jest formatem plików używanym od lat 70., a jego popularność ciągle rośnie ze względu na jego prostotę i powszechne wykorzystanie w różnych programach. Alternatywami dla CSV są między innymi JSON i XML, jednak CSV wciąż pozostaje jednym z najczęściej wybieranych formatów do przechowywania i przesyłania danych. Implementacja CSV w języku Kotlin jest prosta i wygodna dzięki wielu narzędziom dostępnym w języku, takim jak biblioteka oparta o standardową Java API lub biblioteki oparte o narzędzie Apache Commons CSV.
+Zapis? Prosto i szybko:
 
-## Zobacz także:
+```Kotlin
+import java.io.File
 
-- Dokumentacja biblioteki Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
-- Dokumentacja Java API dotycząca obsługi CSV: https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html#lines--
-- Reszta jest up to you – tak właśnie działa HTML!
+fun main() {
+    val data = listOf(
+        arrayOf("Jan", "Kowalski"),
+        arrayOf("Anna", "Nowak")
+    )
+    
+    File("output.csv").printWriter().use { out ->
+        data.forEach { 
+            out.println(it.joinToString(","))
+        }
+    }
+}
+```
+
+Stworzy plik `output.csv` z danymi.
+
+## Deep Dive
+CSV to retro – prosty format z lat 70. Nie ma standardu, ale jest prostota. Alternatywie? JSON dla struktur, XML dla komplikacji. Kotlin używa bibliotek jak opencsv lub Apache Commons CSV dla zaawansowanej roboty z CSV.
+
+## See Also
+- [RFC 4180](https://tools.ietf.org/html/rfc4180) – o CSV, najbliższa rzecz standardu.
+- [opencsv](http://opencsv.sourceforge.net/) – biblioteka w Javie do pracy z CSV.
+- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/) – kolejna biblioteka do CSV.
+- [Kotlin Documentation](https://kotlinlang.org/docs/reference/) – oficjalna dokumentacja Kotlina.

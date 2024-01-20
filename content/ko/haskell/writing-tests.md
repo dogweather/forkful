@@ -1,6 +1,6 @@
 ---
 title:                "테스트 작성하기"
-html_title:           "Haskell: 테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+테스트 작성은 코드가 예상대로 작동하는지 확인하기 위한 과정입니다. 프로그래머들은 버그를 미리 찾아내고, 나중에 코드 변경 시 안정성을 보장하기 위해 테스트를 합니다.
 
-테스트를 작성하는 것은 프로그래머들이 코드의 작동을 확인하고 버그를 발견하기 위해 하는 작업입니다. 테스트를 작성하면 코드의 동작을 검증하기 쉽고 안정적으로 유지할 수 있습니다.
-
-## 진행 방법:
-
-아래의 코드 블록들을 따라하며 테스트 작성 방법을 살펴보세요.
+## How to: (어떻게 하나?)
+Haskell에서 테스트는 주로 Hspec과 QuickCheck 라이브러리를 사용해 작성합니다. 간단한 예시로 함수의 올바른 실행을 확인해봅시다.
 
 ```Haskell
-import Test.HUnit
+-- simpleFunction.hs
+module SimpleFunction where
 
--- 테스트하고자 하는 함수 작성
-subtractTwo :: Int -> Int
-subtractTwo x = x - 2
-
--- 테스트 케이스 작성
-test1 = TestCase (assertEqual "substractTwo 5" 3 (subtractTwo 5))
-
--- 모든 테스트 케이스를 한 곳에 모은 후 실행
-tests = TestList [TestLabel "test1" test1]
-
--- 실행
-main = runTestTT tests
+add :: Int -> Int -> Int
+add x y = x + y
 ```
 
-위의 코드를 실행하면 아래와 같은 결과를 볼 수 있습니다.
+테스트를 위해 Hspec을 사용할 예제 코드입니다:
 
 ```Haskell
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
+-- simpleFunctionTest.hs
+import Test.Hspec
+import SimpleFunction
 
-Counts {cases = 1, tried = 1, errors = 0, failures = 0}
+main :: IO ()
+main = hspec $ do
+  describe "add function" $ do
+    it "correctly adds two numbers" $ do
+      add 2 3 `shouldBe` 5
 ```
 
-## 더 깊게 살펴보기:
+실행 결과는 다음과 같습니다:
 
-테스트 작성은 코드를 작성한 후에 이루어지는 중요한 단계입니다. 이전에는 테스트를 작성하기 위해 수작업으로 코드를 실행하고 결과를 확인하는 번거로운 작업이 필요했지만, 이제는 자동화된 테스트를 작성하여 더 효율적으로 코드를 검증할 수 있습니다. 또한 테스트 작성을 위해 사용할 수 있는 다양한 도구들이 존재하기 때문에 프로그래머들은 사용하기 편리한 도구를 선택하여 유니티하고 안정적인 코드 작성 환경을 구축할 수 있습니다.
+```
+add function
+  - correctly adds two numbers
 
-## 관련 정보:
+Finished in 0.0001 seconds
+1 example, 0 failures
+```
 
-- [QuickCheck 개요](https://github.com/nick8325/quickcheck)
-- [Tasty 개요](https://github.com/feuerbach/tasty)
+## Deep Dive (깊이 파기)
+Haskell의 테스트는 주로 두 가지 라이브러리로 구성됩니다: Hspec과 QuickCheck. Hspec은 BDD(Behavior-Driven Development) 스타일의 테스트를 가능하게 하며, QuickCheck은 프로퍼티 기반 테스팅을 제공하여 무작위 데이터로 테스트를 수행합니다. 이 두 라이브러리는 2000년대 초반에 개발되었으며, 타입 안정성과 함수의 순수성을 강조하는 Haskell의 철학을 반영합니다. 테스트 작성 시, 모나드의 사용이나 순수 함수의 특성에 주의를 기울여야 합니다.
+
+## See Also (추가 자료)
+- [Hspec User Manual](http://hspec.github.io/)
+- [Real World Haskell - Testing and quality assurance](http://book.realworldhaskell.org/read/testing-and-quality-assurance.html)
+- [Stackage: A Haskell Package Repository](https://www.stackage.org/)
+- [Haskell Wiki on Testing](https://wiki.haskell.org/Testing)

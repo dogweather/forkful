@@ -1,7 +1,7 @@
 ---
-title:                "लिखने के परीक्षण"
-html_title:           "Arduino: लिखने के परीक्षण"
-simple_title:         "लिखने के परीक्षण"
+title:                "परीक्षण लिखना"
+html_title:           "Arduino: परीक्षण लिखना"
+simple_title:         "परीक्षण लिखना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tests likhne ka matlab hai ki hum apne code ko test karte hain. Programmers isliye ye tests likhte hain taaki unhe apne code mein kisi bhi prakar ki bug ya error ki jaach ho sake. Ye hamein apne code ki quality ko improve karne mein madad karte hain.
+## क्या और क्यों?
 
-## How to:
-Arduino mein tests likhna kaafi aasaan hai. Bas hume apne code ke sahi tarike se tests ki zaroorat hoti hai. Ye tests hum ```Arduino ... ``` code blocks mein likhte hain. Neeche kuch examples diye gaye hain, jo aapko samajhne mein madad karenge.
+कोड लेखन में टेस्टिंग का मतलब है अपनी प्रोग्रामिंग का परीक्षण करना ताकि सुनिश्चित हो कि सब कुछ सही से काम कर रहा है। प्रोग्रामर इसे बग्स को ढूंढकर और फिक्स करके अपने कोड की गुणवत्ता को बढ़ाने के लिए करते हैं।
 
-### Example 1:
-```
+## कैसे करें:
+
+अर्डुइनो में टेस्टिंग उपलब्ध नहीं है जैसे दूसरी हाई-लेवल प्रोग्रामिंग लैंग्वेजेस में होता है, लेकिन आप मैन्युअल तरीके से कुछ जांचें कर सकते हैं:
+
+```Arduino
 void setup() {
-  pinMode(13, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13, LOW);
-  delay(1000);
+  int sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+  
+  // सेंसर की जांच करें
+  if(sensorValue < 10) {
+    Serial.println("Sensor value is too low!");
+  }
+  delay(1000); // 1 सेकंड का अंतर
 }
 ```
+इस कोड में, हम A0 पिन से आने वाले एनालॉग मान को पढ़ रहे हैं और उसे सीरियल मॉनिटर पर प्रिंट कर रहे हैं। अगर मान 10 से कम है, तो हम एक चेतावनी संदेश प्रिंट करते हैं।
 
-Is code mein humne LED ko blink karne ke liye test likha hai. ```digitalWrite``` function ke madad se hum LED ki state ko HIGH ya LOW kar sakte hain. Is code mein humne 1 second ke intervals mein LED ko ON-OFF kiya hai.
+## गहराई से जानकारी:
 
-### Example 2:
-```
-int num1 = 10;
-int num2 = 20;
+अर्डुइनो में सीधे तरीके से टेस्ट फ्रेमवर्क्स का अभाव है, परंतु हार्डवेयर और फंक्शन्स की मैन्युअल जांच करने का रिवाज पुराना है। ऑल्टर्नेटिव के तौर पर, मॉकिंग और सिमुलेशन उपकरण जैसे कि SimulIDE या MATLAB का उपयोग करके हार्डवेयर और सिस्टम को वर्चुअली टेस्ट किया जा सकता है। इंप्लीमेंटेशन ​की बात करें तो, टेस्ट केसेस और असर्ट्स लिखने से हार्डवेयर की स्थिरता में सुधार किया जा सकता है।
 
-int result = num1 + num2;
+## इसे भी देखें:
 
-Serial.println(result);
-```
-
-Is code mein humne do integers ko add karne ka test likha hai. Fir us result ko ```Serial.println``` function se print kiya hai. Is tarah se hum apne code ko test kar sakte hain.
-
-## Deep Dive:
-Tests likhna ek behad zaroori practice hai. Isse hum apne code mein bugs ko identify kar sakte hain aur unhe fix kar sakte hain. Isse humari code ki quality improve hoti hai aur final product bhi reliable banta hai.
-
-Tests likhne ke kuch alternatives hote hain, jaise ki manual testing ya automated testing. Manual testing mein hum khud hi apne code ko run karke check karte hain. Jabki automated testing mein humne pehle se hi code likha hota hai jo humare code ko test karta hai aur hume error ya bugs ki report deta hai.
-
-Arduino mein code ko test karne ke liye hum ```assertEquals()``` function ka bhi istemaal kar sakte hain. Isse hume expected aur actual results ko compare karne mein madad milti hai.
-
-## See Also:
-- [Arduino Testing Library](https://github.com/mmurdoch/arduinounit)
+- [Arduino Reference](https://www.arduino.cc/reference/en/): अर्डुइनो के लिए आधिकारिक संदर्भ मार्गदर्शिका।
+- [SimulIDE](https://www.simulide.com/): रियल-टाइम इलेक्ट्रॉनिक्स सिमुलेटर।
+- [Arduino Testing GitHub](https://github.com/Arduino-CI/arduino_ci): एक CI प्लेटफॉर्म जो अर्डुइनो कोड के लिए टेस्टिंग सपोर्ट प्रदान करता है।

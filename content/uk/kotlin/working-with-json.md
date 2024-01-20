@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Kotlin: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке й чому це потрібно?
-Робота з JSON - це процес взаємодії з форматом обміну даних, який має просту структуру та використовується для обміну даними між різними програмними продуктами. Програмісти використовують JSON для збереження та передачі даних без зайвих зусиль.
+## What & Why?
+JSON – це формат обміну даними. Програмісти використовують його для легкого та зручного обміну даними між мережею і програмами. Він простий, легкочитаний для людей та генерується та парситься багатьма мовами програмування.
 
-## Як це зробити:
-Використання JSON в Котлін дуже просте. Спочатку необхідно створити об'єкт JSON за допомогою класу JSONObject. Потім можна додавати дані до об'єкта за допомогою методу put(), наприклад:
-
-```Kotlin 
-val json = JSONObject()
-json.put("name", "John")
-json.put("age", 25)
-```
-
-Для отримання даних з об'єкта JSON можна використати метод get(), наприклад:
+## How to:
+Kotlin працює з JSON легко, користуючись бібліотекою `kotlinx.serialization`. Ось приклад коду:
 
 ```Kotlin
-val name = json.get("name")
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = Json.encodeToString(User("Іван", 30))
+    println(json) // Виводить: {"name":"Іван","age":30}
+
+    val user = Json.decodeFromString<User>(json)
+    println(user) // Виводить: User(name=Іван, age=30)
+}
 ```
 
-Результат виконання цих прикладів коду буде наступним: ```{"name": "John", "age": 25}```
+## Deep Dive:
+JSON з'явився в 2001 році як альтернатива XML, пропонуючи менш громіздкий формат. В Kotlin, `kotlinx.serialization` є сучасним вибором, але існують інші бібліотеки, як Gson та Moshi. `kotlinx.serialization` використовує анотації для визначення серіалізованих класів, що забезпечує типобезпечне і ефективне перетворення об'єктів у JSON і назад.
 
-## Глибоке погруження:
-JSON був розроблений японським програмістом в 2001 році і з того часу став дуже популярним у веб-розробці. Можливі альтернативи для роботи з JSON включають XML та CSV формати. Завдяки простому синтаксису та широкій підтримці, JSON зараз є одним з найбільш поширених форматів для обміну даними.
-
-## Дивіться також:
-- Офіційна документація Котлін для роботи з JSON: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-json-/
-- Приклади коду для роботи з JSON у Котлін: https://www.programiz.com/kotlin-programming/json
-- Курс “Робота з JSON у Котлін” на платформі Udemy: https://www.udemy.com/course/json-kotlin/
+## See Also:
+- Керівництво по `kotlinx.serialization`: https://kotlinlang.org/docs/serialization.html
+- Документація JSON: https://www.json.org/json-uk.html
+- Gson бібліотека: https://github.com/google/gson
+- Moshi бібліотека: https://github.com/square/moshi

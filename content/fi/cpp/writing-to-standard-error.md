@@ -1,7 +1,7 @@
 ---
-title:                "Standard errorin kirjoittaminen"
-html_title:           "C++: Standard errorin kirjoittaminen"
-simple_title:         "Standard errorin kirjoittaminen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Kirjoittaminen ns. standardivirhe-kanavaan (engl. standard error) on tapa ilmoittaa ohjelman suorituksessa tapahtuvista virheistä. Ohjelmoijat hyödyntävät tätä tekniikkaa jotta virhetilanteet voidaan havaita ja korjata nopeammin.
+## What & Why? – Mikä & Miksi?
+Standardivirhe on toinen tekstivirta ohjelmalle. Kirjoitamme siihen virheviestit, koska erottaa ne tavallisesta tulosteesta, jolloin ongelmat on helpompi bongata.
 
-## Kuinka:
+## How to: – Miten:
 ```C++
 #include <iostream>
 
 int main() {
-  std::cerr << "Tämä on esimerkki virheilmoituksesta.\n";
-  return 0;
+    std::cerr << "Error: File not found" << std::endl;
+    // Normaali tulostus pysyy erillään.
+    std::cout << "Ohjelma jatkuu..." << std::endl;
+    return 0;
 }
 ```
-Esimerkki tulosteesta:
+
+### Esimerkkituloste:
 ```
-Tämä on esimerkki virheilmoituksesta.
+Error: File not found
+Ohjelma jatkuu...
 ```
 
-## Syvempi sukellus:
-Kirjoittaminen standardivirhe-kanavaan perustuu Unix-käyttöjärjestelmässä kehitettyyn tekniikkaan, jossa tulostuksessa käytetään kolmea eri kanavaa: tavallinen tulostus (stdout), virheilmoitukset (stderr) ja käyttöohjeet (stdvin). Tämä tekniikka on myöhemmin implementoitu myös moniin muihin käyttöjärjestelmiin, kuten Windowsiin.
+## Deep Dive – Syväsukellus:
+Historiallisesti standardivirhe erotettiin, jotta virheviestit voidaan käsitellä eri tavalla. Vaihtoehtoja kuten tiedostoon kirjoitus löytyy, mutta `std::cerr` on yleinen tapa virheiden käsittelyyn C++:ssa. `std::cerr` käyttää puskuroimatonta tulostusta, joka tarkoittaa, että viestit ilmestyvät heti eikä odota puskurin täyttymistä.
 
-Yksi vaihtoehto kirjoittamiselle standardivirhe-kanavaan on käyttää virheilmoituksia käsitteleviä funktioita, kuten `perror` tai `strerror`. Näitä voidaan hyödyntää esimerkiksi tulostamaan lisätietoja virhetilanteista.
-
-Näin voidaan kirjoittaa virheilmoitus käyttäen `perror`-funktiota:
-```C++
-#include <stdio.h>
-#include <errno.h>
-
-int main () {
-  FILE *fp;
-  fp = fopen("tiedosto.txt", "r");
-  if (fp == NULL) {
-    perror("Virhe avattaessa tiedostoa: ");
-    return 1;
-  }
-  return 0;
-}
-```
-Tämä tulostaa virheilmoituksen, johon liitetään automaattisesti selitys virheen syystä ja sijainnista.
-
-## Katso myös:
-- [Unix-kanavien perusteet](https://en.wikipedia.org/wiki/Standard_streams)
-- [C++ virheiden käsittely](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+## See Also – Katso Myös:
+- C++ Standard Library reference: https://en.cppreference.com/w/cpp/io/cerr
+- C++ error handling techniques: https://www.cplusplus.com/doc/tutorial/exceptions/
+- Understanding C++ streams: https://www.learncpp.com/cpp-tutorial/input-and-output-io-streams/

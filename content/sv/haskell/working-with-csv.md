@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Haskell: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,53 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-CSV är en vanlig filformat som används för att lagra och hantera tabulära data. Det är ett praktiskt sätt för program att kommunicera och utbyta data, särskilt när dessa program är skrivna i olika språk eller använder olika plattformar. Program som hanterar stora mängder data, som till exempel databaser eller statistikverktyg, använder ofta CSV för att enkelt kunna importera och exportera data.
+## What & Why?
+CSV, Comma Separated Values, är en enkel textbaserad filstandard för att lagra tabulär data. Programmerare använder CSV för dess enkelhet och kompatibilitet med kalkylprogram och databaser.
 
-## Så här gör du:
-Att arbeta med CSV-filer i Haskell är relativt enkelt, tack vare biblioteket "Data.Csv". Först behöver du importera biblioteket genom att skriva ```Haskell
-import Data.Csv
-```
-
-För att läsa in en CSV-fil, kan du använda funktionen ```Haskell
-parseCsvFromFile :: FilePath -> CSVSettings -> IO (Either String (Vector (Vector ByteString)))
-```
-Denna funktion tar två argument: sökvägen till din CSV-fil och en inställningsparameter för hur filen ska tolkas. Om tolkningen lyckas, returneras en vektor av vektorer som innehåller data från filen.
-
-För att skriva data till en CSV-fil, använder du funktionen ```Haskell
-writeFileUtf8 :: FilePath -> [ByteString] -> IO ()
-```
-Första argumentet är sökvägen till din fil och andra argumentet är en lista av ByteString som innehåller data att skriva till filen.
-
-Ett exempel på hur du kan läsa in och skriva till en CSV-fil i Haskell:
+## How to:
+Du kan hantera CSV-filer i Haskell med pacakget `cassava`. Här är exempel:
 
 ```Haskell
+{-# LANGUAGE OverloadedStrings #-}
 import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
+
+-- Om vi har följande CSV:
+-- namn,ålder
+-- Alice,42
+-- Bob,29
 
 main :: IO ()
 main = do
-  csvData <- parseCsvFromFile "exempelfil.csv" defaultEncodeOptions -- Läs in filen
-  case csvData of
-    Left err -> putStrLn $ "Det gick inte att läsa in filen: " ++ err
-    Right vec -> do
-      let newData = map (map toUpper) vec -- Konvertera datan till versaler
-      writeFileUtf8 "nyaexempelfil.csv" $ encode newData -- Skriv data till ny fil
+    csvData <- BL.readFile "exempel.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \ (name, age) ->
+            putStrLn $ name ++ " är " ++ show age ++ " år gammal"
 ```
 
-Output i "nyaexempelfil.csv" kommer se ut så här:
-
-```csv
-RAD1,RAD2,RAD3
-DATA1,DATA2,DATA3
+Resultat:
+```
+Alice är 42 år gammal
+Bob är 29 år gammal
 ```
 
-## Djupdykning:
-CSV står för "Comma-Separated Values" och används oftast för att representera en tabell där data är separerad med kommatecken. Det finns dock inga strikta regler för hur CSV-filer ska formateras, vilket kan leda till problem med att tolka filer som skrivits av olika program.
+## Deep Dive
+CSV är etablerat på 70-talet och är fortfarande populärt för sin enkelhet. Alternativ som JSON eller XML erbjuder mer komplexitet och struktur. Haskell's CSV behandling kan bli djupare med `cassava`'s `decode` och typanpassning, som hanterar läsning och parning.
 
-Det finns även alternativ till CSV, som till exempel JSON och XML, som också används för att hantera tabulära data. Användningen av dessa beror ofta på vilket språk och plattform som används och vilka behov som finns för datautbyte.
+## See Also
+Mer om CSV i Haskell:
 
-Även om CSV-filer är relativt enkla att läsa och skriva, finns det en del detaljer som är värda att känna till vid implementering. Till exempel bör du vara uppmärksam på att värden med specialtecken behöver escapade så att de inte tolkas som separerare och att filer kan ha olika teckenkodningar.
+- `cassava` dokumentation: [http://hackage.haskell.org/package/cassava](http://hackage.haskell.org/package/cassava)
 
-## Se även:
-- [Data.Csv dokumentation](https://hackage.haskell.org/package/cassava/docs/Data-Csv.html)
-- [Comma-Separated Values på Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+Andra relevanta källor:
+
+- CSV på Wikipedia: [https://sv.wikipedia.org/wiki/CSV](https://sv.wikipedia.org/wiki/CSV)
+- Haskell's hemsida: [https://www.haskell.org/](https://www.haskell.org/)

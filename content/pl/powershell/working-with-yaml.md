@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "PowerShell: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest YAML & Dlaczego Programiści tego Używają?
-YAML to format pliku używany do przechowywania danych w czytelnej dla człowieka postaci. Programiści często używają YAML jako alternatywy dla innych formatów, takich jak JSON czy XML, ponieważ jest on łatwiejszy do przyswojenia i pisanie.
+## What & Why? (Co i dlaczego?)
+Praca z YAML to zarządzanie danymi w formacie, który jest prosty dla człowieka i maszyny. Programiści używają go, gdy potrzebują konfiguracji, serializacji danych lub komunikacji między usługami.
 
-## Jak to zrobić:
-W PowerShell możemy łatwo pracować z plikami YAML za pomocą modułu `PowerYaml`. Aby go zainstalować, użyj poniższego polecenia:
-```PowerShell
-Install-Module PowerYaml
-```
+## How to: (Jak to zrobić:)
+PowerShell umożliwia pracę z YAML za pomocą modułów, takich jak 'powershell-yaml'. Oto przykład wczytania i zapisu danych YAML.
 
-Aby otworzyć plik YAML w PowerShell, możesz użyć polecenia `Get-Yaml`:
 ```PowerShell
-Get-Yaml -Path C:\Users\user1\example.yaml
-```
+# Instalacja modułu PowerShell-Yaml
+Install-Module -Name powershell-yaml
 
-Możesz także zapisywać zmiany w pliku YAML za pomocą polecenia `Set-Yaml`:
-```PowerShell
-Set-Yaml -Path C:\Users\user1\example.yaml -Property "key" -Value "new value"
-```
+# Wczytanie zawartości YAML z pliku
+$yamlContent = Get-Content -Path 'example.yaml' | Out-String
+$yamlObject = ConvertFrom-Yaml -InputObject $yamlContent
+$yamlObject
 
-Możesz również tworzyć nowe pliki YAML za pomocą polecenia `New-Yaml`:
-```PowerShell
-New-Yaml -Path C:\Users\user1\new_example.yaml -Property @{"key1" = "value1"; "key2" = "value2"}
-```
-
-Możliwe jest także wykorzystanie pętli `Foreach-Object` do iteracji po danych z pliku YAML:
-```PowerShell
-Get-Yaml -Path C:\Users\user1\example.yaml | Foreach-Object {
-    # Przetwórz dane tutaj
-    $_.property
+# Tworzenie nowego obiektu YAML
+$newYamlObject = @{
+    "hello" = "world"
+    "count" = 42
+    "items" = @("item1", "item2")
 }
+
+# Zapis obiektu do pliku YAML
+$newYamlObject | ConvertTo-Yaml | Set-Content -Path 'newExample.yaml'
 ```
 
-## Głębsza Analiza:
-YAML został stworzony w 2001 roku jako alternatywa dla XML-u i szybko stał się popularny wśród programistów ze względu na swoją prostotę. Podobnie jak JSON, jest on formatem tekstowym, ale jego składnia jest bardziej przyjazna dla oka i łatwiejsza do zrozumienia dla ludzi.
+## Deep Dive (Głębsze spojrzenie)
+YAML, czyli "YAML Ain't Markup Language", powstał w 2001 roku jako alternatywa dla XML i JSON. Charakteryzuje się czytelnością i składnią opartą o wcięcia. W PowerShellu trzeba użyć zewnętrznych modułów, bo nie ma wbudowanego wsparcia dla YAML. PowerShell-yaml to popularny wybór, ale są też inne jak PYYaml czy YamlDotNet.
 
-Alternatywnie, jeśli nie chcesz używać modułu `PowerYaml`, istnieje możliwość konwertowania plików z YAML do JSON przy użyciu polecenia `ConvertFrom-Json` lub do XML przy użyciu polecenia `ConvertTo-Xml`.
-
-## Zobacz także:
-- [Dokumentacja formatu YAML](https://yaml.org/)
+## See Also (Zobacz także)
+- Oficjalna strona YAML: [https://yaml.org](https://yaml.org)
+- Repozytorium modułu PowerShell-Yaml na GitHubie: [https://github.com/cloudbase/powershell-yaml](https://github.com/cloudbase/powershell-yaml)
+- Dokumentacja PowerShell: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)

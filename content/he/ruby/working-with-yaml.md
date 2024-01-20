@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם פורמט ימל"
-html_title:           "Ruby: עובדים עם פורמט ימל"
-simple_title:         "עובדים עם פורמט ימל"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ימל, למה לעשות את זה?
+## מה ולמה?
+YAML הוא פורמט קל לקריאה לעיבוד נתונים, תומך במבנים כמו מפות, רשימות וסקלרים. תוכניתנים משתמשים ב-YAML בגלל קריאות ופשטות הפורמט, ואפשרות להטמעה קלה בתוכניות Ruby.
 
- YAML היא שפת תיעוד קוצרת לפי תבנית שמיועדת לתיאור נתונים מורכבים. ימל משמשת ככלי שיטית בעולם התכנות בכדי לאחסן נתונים בצורה מואצת וקל לקריאה. תוכלו להשתמש בימל כדי לאחסן כל מיני פרמטרים, תצוגות מורכבות ואפילו קבצים.
-
-## איך לעשות את זה?
-
-כדי להתחיל לעבוד עם ימל בשפת רובי, צריך להתקין את התוסף המתאים לסביבתכם. לאחר מכן תוכלו ליצור קבצי YAML ולגשת אליהם בעזרת הפונקציות המיועדות לשפת רובי. להלן דוגמא של שימוש בימל על מנת לאחסן פרמטרים:
-
-``` ruby
+## איך לעשות:
+```Ruby
 require 'yaml'
 
-config = {
-  name: 'John Doe',
-  age: 27,
-  profession: 'Software Engineer'
+# יצירת מבנה נתונים ברובי (Ruby Data Structure)
+data = {
+  "name" => "Yossi",
+  "role" => "Developer",
+  "skills" => ["Ruby", "Rails", "Docker"]
 }
 
-File.open('config.yaml', 'w') do |file|
-  file.write(config.to_yaml)
-end
+# שמירת הנתונים לקובץ YAML
+File.open("employee.yaml", "w") { |file| file.write(data.to_yaml) }
+
+# קריאת נתונים מקובץ YAML
+yaml_content = YAML.load(File.read("employee.yaml"))
+puts yaml_content
+```
+פלט (Output):
+```
+{"name"=>"Yossi", "role"=>"Developer", "skills"=>["Ruby", "Rails", "Docker"]}
 ```
 
-הפלט:
+## טבילה עמוקה
+YAML (YAML Ain't Markup Language) נוצר ב-2001 כתחליף קל ל-XML. הפשטות של YAML מאפשרת עריכה ושיתוף נוח של קובצי הגדרות וקונפיגורציות. חלופות ל-YAML כוללות JSON ו-TOML. YAML משתלב טוב עם Ruby באמצעות הספרייה 'yaml', המבוססת על libyaml, ספרייה נפוצה לניתוח YAML.
 
-``` 
---- 
-:name: John Doe 
-:age: 27 
-:profession: Software Engineer
-```
-
-## חפירה עמוקה
-
-ימל פותחה בשנת 2001 על ידי קבוצת התכנות המתקדמת (Advanced Programming Group) ומטרתה המקורית הייתה להיות גשר בין פלטפורמות שונות לכדי שיתוף נתונים ותיאור. ישנן עדיין אלטרנטיבות אחרות לימל, כגון JSON ו-XML, אך ימל נחשבת לבחירה פופולרית בקרב מתכנתי רובי כיוון שהיא נותנת קריאות ומאפשרת זיכרון מינימלי לידעת.
-
-ימל מורכב מתצורה פשוטה המכילה מפתחות וערכים מתאימים. ניתן להשתמש בימל לתיאור קבצים, כדוגמת yaml.tmpl המכילה הגדרות מכוללות עבור תצוגות שונות של המידע הזה.
-
-## ראו גם
-
-למידע נוסף על ימל ושימושים נוספים, ניתן לקרוא את המדריך המפורט באתר הרשמי של רובי ולעיין בדוגמאות שם.
-
-רצוי גם ללמוד על YAML::Engine ואיך מכניסים אותו לתוכניות שלכם כדי שיהיו להם ימל קבצים.
+## ראו גם:
+- YAML רשמי: [https://yaml.org](https://yaml.org)
+- מסמך המתאר את הספרייה 'yaml' ב-Ruby: [https://ruby-doc.org/stdlib-3.1.0/libdoc/yaml/rdoc/YAML.html](https://ruby-doc.org/stdlib-3.1.0/libdoc/yaml/rdoc/YAML.html)
+- ג'יטהאב של libyaml: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)

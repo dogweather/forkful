@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Elixir: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,23 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
-Å skrive til standard error er en måte for utviklere å kommunisere feil, advarsler eller annen informasjon fra et program til brukeren. Dette lar oss skille mellom vanlig program output og feilmeldinger, som kan være nyttig for å feilsøke og forbedre programmet vårt.
+## What & Why?
+Skrive til standardfeil (stderr) er å sende feilmeldinger og diagnostikk separat fra hoveddatautstrømmen. Programmerere gjør dette for å spore og håndtere feil effektivt uten å blande det med vanlig output.
 
-Hvordan å:
-For å skrive til standard error i Elixir, kan vi bruke funksjonen `IO.puts/2` sammen med `:stderr` som det første argumentet. Se eksemplet nedenfor:
+## How to:
+Elixir gir en enkel måte å skrive til stderr på. Bruk `IO.warn/1` for advarsler eller `IO.puts/2` for å spesifisere stderr direkte.
 
-```Elixir
-IO.puts(:stderr, "Dette er en feilmelding.")
+```elixir
+# Skriver en advarsel til stderr
+IO.warn("Advarsel: Noe gikk ikke som forventet!")
+
+# Skriver en spesifikk melding til stderr
+IO.puts(:stderr, "Feil: Ugyldig inndata.")
 ```
 
-Dette vil gi følgende utgang i terminalen:
+Forventet output til stderr:
 ```
-Dette er en feilmelding.
+Advarsel: Noe gikk ikke som forventet!
+Feil: Ugyldig inndata.
 ```
 
-Dypdykk:
-Skriving til standard error har vært en vanlig praksis blant utviklere siden 1970-tallet. I Elixir, er dette forvandlet til et modul som lar oss skrive til både standard output og standard error. Alternativt, kan vi også bruke `IO.puts/2` med `:stderr` og `:stdio` for å skrive til begge utgangene. Implementeringsmessig, blir standard error som regel sendt til standard output på grunn av samme logiske konsoll som brukes for begge.
+## Deep Dive
+Historisk sett har separate strømmer for output (stdout) og errors (stderr) latt programmer skille mellom data og feil. Alternative metoder inkludere logging-biblioteker som kan tilby mer fleksibilitet. Elixir implementerer stderr gjennom Erlang sin :io-modul, og fungerer på alle systemer som støtter Erlang VM.
 
-Se også:
-Mer informasjon om skriving til standard error i Elixir kan bli funnet på dokumentasjonen her: https://hexdocs.pm/elixir/IO.html#puts/2
+## See Also
+- Elixir's offisielle dokumentasjon på `IO`: https://hexdocs.pm/elixir/IO.html
+- Erlang's :io modul for dypere systeminteraksjoner: http://erlang.org/doc/man/io.html
+- Innføring i Logger, Elixir's logging-bibliotek: https://hexdocs.pm/logger/Logger.html

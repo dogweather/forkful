@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med json"
-html_title:           "Fish Shell: Å arbeide med json"
-simple_title:         "Å arbeide med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
+## What & Why? 
+JSON, eller JavaScript Object Notation, er et lettvekts datautvekslingsformat. Programmerere bruker det fordi det er lett å lese og skrive for mennesker og enkelt å tolke og generere for maskiner.
 
-Arbeider du med programmering og lurer på hva JSON er og hvorfor du bør kunne det? JSON står for JavaScript Object Notation og er et populært format for å lagre og overføre data. Det er spesielt nyttig for å overføre data mellom ulike programmeringsspråk og plattformer.
+## How to:
+Fish Shell støtter ikke direkte JSON-manipulering, men med `jq`-verktøyet blir det en lek. Installer `jq` med pakkesystemet ditt (for eksempel `apt-get install jq` på Ubuntu).
 
-Slik gjør du det:
-
-Fish Shell har innebygde funksjoner for å håndtere JSON-data. Du kan enkelt lese en JSON-fil ved å bruke `jq` kommandoen: 
-
+```Fish Shell
+# Parse en JSON-streng og hent en verdi
+echo '{"name": "Ola", "age": 28}' | jq '.name'
 ```
-jq '.key' file.json
+Output:
 ```
-
-Dette vil gi deg verdien til den gitte nøkkelen i filen. Du kan også velge hvilke nøkler du vil hente ut ved å bruke kommandoen: 
-
-```
-jq '.key1, .key2' file.json
+"Ola"
 ```
 
-Hvis du ønsker å endre en nøkkelverdi i en JSON-fil, kan du bruke `set` funksjonen: 
-
+```Fish Shell
+# Oppdater en verdi i en JSON-fil
+echo '{"name": "Ola", "age": 28}' | jq '.age = 29' > updated.json
+cat updated.json
 ```
-jq '.key |= "ny_verdi"' file.json
+Output:
 ```
-
-Dette vil endre verdien til den gitte nøkkelen til å være den ønskede verdien. For å lagre endringene til filen, kan du bruke `write` kommandoen: 
-
-```
-jq '.' file.json | write file.json
+{"name":"Ola","age":29}
 ```
 
-Deep Dive
+## Deep Dive
+JSON ble introdusert i 2001, og har siden blitt web-utviklingens språk for datautveksling. Alternativer som XML er mer verbose og tungvinte. `jq` er kraftig og kan håndtere komplekse spørringer og transformasjoner i JSON, mens lignende verktøy som `Python`-biblioteket `json` også kan være et alternativ for større applikasjoner eller skripting.
 
-JSON ble opprinnelig utviklet i 1999 og har blitt mer og mer populært de siste årene på grunn av sin enkle og fleksible struktur. Det finnes også flere alternative formater for å lagre og overføre data, for eksempel XML og YAML, men JSON er generelt sett mer leselig og enklere å jobbe med.
-
-Fish Shell bruker et bibliotek kalt `libjq` for å håndtere JSON-data. Dette biblioteket gjør det mulig å manipulere og filtrere data basert på ulike kriterier.
-
-Se også
-
-For mer informasjon om JSON og hvordan du kan bruke det i din programmering, kan du se på disse kildene:
-
-- [JSON offisiell nettside](https://json.org)
-- [Tutorial om JSON i Fish Shell](https://fishshell.com/docs/current/tutorial.html#json)
-
-Lykke til med å jobbe med JSON i Fish Shell!
+## See Also
+- `jq` Manual: https://stedolan.github.io/jq/manual/
+- Fish Shell Documentation: https://fishshell.com/docs/current/
+- JSON Specifikasjon: https://www.json.org/json-no.html

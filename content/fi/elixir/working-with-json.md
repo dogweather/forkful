@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Elixir: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+JSON (JavaScript Object Notation) on dataformaatti tiedon tallentamiseen ja siirtämiseen. Elixir-koodarit käsittelevät JSONia API-kommunikoinnissa ja config-tiedostoissa, koska se on kevyt ja helposti luettavissa ihmisille sekä koneille.
 
-JSON (JavaScript Object Notation) on yleisesti käytetty tiedon tallennusmuoto ja sitä käytetään usein tiedonsiirrossa verkon yli. Monet ohjelmoijat käyttävät JSONia helppona ja tehokkaana tapana tallentaa ja lukea tietoja sovelluksissaan.
+## How to:
+Elixirissä JSONin käsittely onnistuu `Jason`-kirjaston avulla. Asenna kirjasto lisäämällä `{:jason, "~> 1.0"}` mix.exs-tiedoston dependency-listaan ja aio sitä.
 
-## Miten:
+```elixir
+# Lisää Rosdep Jason
+defp deps do
+  [{:jason, "~> 1.0"}]
+end
+```
+Koodissa deserialisoidaan JSON-stringi Elixir-mapseiksi ja serialisoidaan mappeja JSON-stringiksi.
 
-```Elixir
-#Tiedon tallentaminen JSON-muodossa
+```elixir
+# JSONin purkaminen
+json_string = "{\"key\":\"value\"}"
+{:ok, result} = Jason.decode(json_string)
+IO.inspect(result) # Tulostaa: %{"key" => "value"}
 
-data = %{nimi: "Jone", ikä: 25}
-JSON.encode(data)
-
-# Tulostaa: "{\"nimi\":\"Jone\",\"ikä\":25}"
-
-# Tietojen avaaminen JSON-muodosta
-
-encoded_data = "{\"nimi\":\"Jone\",\"ikä\":25}"
-JSON.decode(encoded_data)
-
-# Tulostaa: %{nimi: "Jone", ikä: 25}
+# JSONin luominen
+map_data = %{"another_key" => "another_value"}
+{:ok, json_output} = Jason.encode(map_data)
+IO.puts(json_output) # Tulostaa: {"another_key":"another_value"}
 ```
 
-## Syväsukellus:
+## Deep Dive
+JSON on syntynyt JavaScriptista, mutta nykyään sitä käytetään laajalti kieliriippumattomana tiedonsiirtomuotona. Jotkut vaihtoehdot JSONille ovat XML, YAML ja Protobuf, joilla jokaisella on omat etunsa ja käyttötilanteensa. Elixirissa `Jason` on yksi suosituimmista JSON-kirjastoista, mutta muitakin, kuten `Poison` ja `jsx`, on olemassa.
 
-JSON kehitettiin alunperin vaihtoehdoksi XML:lle tiedon hallinnassa, ja se tuli suositummaksi sen yksinkertaisuuden ja tehokkuuden takia. Elixirin sisäänrakennettu JSON-moduuli helpottaa JSONin käsittelyä sovelluksissa ja tarjoaa paljon hyödyllisiä toimintoja, kuten tiedon koodaamisen ja dekoodaamisen.
-
-## Katso myös:
-
-- [JSON Home Page](https://www.json.org/)
+## See Also
+- Elixirin virallinen sivu: [https://elixir-lang.org/](https://elixir-lang.org/)
+- Jason GitHubissa: [https://github.com/michalmuskala/jason](https://github.com/michalmuskala/jason)

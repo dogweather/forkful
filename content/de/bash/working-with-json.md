@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "Bash: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+JSON steht für JavaScript Object Notation. Programmeure nutzen es, um Daten zwischen Servern und Webapplikationen auszutauschen. Es ist leicht lesbar für Menschen und einfach zu parsen für Maschinen.
 
-JSON steht für JavaScript Object Notation und ist ein gängiges Format zum Speichern und Austauschen von Daten zwischen verschiedenen Programmiersprachen. Programmierer benutzen JSON, um strukturierte Daten zu speichern und zu übertragen, da es leicht lesbar und kompakt ist.
-
-## Wie geht's?
-
-Um mit JSON in Bash zu arbeiten, können wir das integrierte Tool "jq" verwenden. Hier ein Beispiel, wie wir Daten aus einer JSON-Datei filtern und anzeigen können:
-
-```Bash 
-json='{"name": "Max", "age": 25, "hobby": "programming"}'
-echo $json | jq '.name'
-```
-Dies würde uns den Wert des "name" Schlüssels ausgeben: Max
-
-Um eine JSON-Datei zu erstellen, können wir in Bash auch Arrays benutzen, wie in diesem Beispiel:
+## How to:
+Du kannst `jq` nutzen, ein Befehlszeilentool zum Verarbeiten von JSON. Hier einige Beispiele:
 
 ```Bash
-array=($(echo '{"name": "Anna", "age": 30, "hobby": "reading"}' | jq -r '.'))
-echo "Name: ${array[1]}"
+# JSON-Datei einlesen und schön ausgeben:
+cat datei.json | jq '.'
+
+# Wert eines Schlüssels ausgeben:
+echo '{"name": "Tom", "age": 31}' | jq '.name'
+
+# Filter für mehrere Werte:
+echo '{"name": "Tom", "age": 31}' | jq '. | {name: .name, age: .age}'
 ```
-Dies würde uns den Wert des "name" Schlüssels ausgeben: Anna
 
-## Tiefer Einblick
+Ausgaben:
 
-JSON wurde ursprünglich von Douglas Crockford erstellt und ist seit 2001 ein offener Standard. Es ist eine Alternative zu XML und hat sich aufgrund seiner Einfachheit und Lesbarkeit schnell als beliebtes Datenformat etabliert.
+```Bash
+{
+  "name": "Tom",
+  "age": 31
+}
+"Tom"
+{
+  "name": "Tom",
+  "age": 31
+}
+```
 
-Obwohl "jq" das bekannteste Tool zur Bearbeitung von JSON in Bash ist, gibt es auch andere Möglichkeiten, wie z.B. die Verwendung von regulären Ausdrücken oder der "jsawk" Bibliothek.
+## Deep Dive:
+Bereits seit den frühen 2000er Jahren ist JSON als Datenformat bekannt. Es ist das Hauptalternativformat zu XML, da es leichter und schneller zu parsen ist. `jq` kann mit Bash-Scripts kombiniert werden, um komplexe Aufgaben beim Umgang mit JSON zu bewältigen.
 
-Bei der Arbeit mit JSON in Bash ist es wichtig, darauf zu achten, dass es sich um eine Textverarbeitung handelt und nicht um eine Datenbank. Es kann hilfreich sein, eine Validierung der Daten durchzuführen, bevor sie verarbeitet werden, um unerwartete Fehler zu vermeiden.
-
-## Siehe auch
-
-Weitere Informationen und Beispiele zur Verwendung von JSON in Bash können auf der offiziellen "jq" Website (https://stedolan.github.io/jq/) gefunden werden. Auch auf der Learning-Plattform "Codecademy" (https://www.codecademy.com/learn/learn-json) gibt es interaktive Übungen zum Thema JSON.
+## See Also:
+- JSON-Spezifikation: https://www.json.org/json-de.html
+- `jq` Tutorial: https://stedolan.github.io/jq/tutorial/
+- Bash-Scripting-Lernressourcen: https://www.shellscript.sh/

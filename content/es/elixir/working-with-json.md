@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Elixir: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Trabajar con JSON es una forma común en la que los programadores almacenan y transfieren datos en sus aplicaciones. JSON, o Javascript Object Notation, es un formato de intercambio de datos basado en texto que es fácil de leer y escribir para los humanos y fácil de interpretar para las computadoras. Los programadores usan JSON para representar datos estructurados como objetos y arrays, lo que hace que sea más fácil compartir información entre aplicaciones.
+## Qué es y por qué?
+Trabajar con JSON significa lidiar con un formato estándar de intercambio de datos. Los programadores lo usan por su simplicidad y porque es ampliamente aceptado en aplicaciones web y APIs.
 
-## Cómo:
-Para trabajar con JSON en Elixir, necesitamos utilizar el módulo `Jason`, que viene incluido en la biblioteca estándar de Elixir. Para convertir un término en una cadena JSON, podemos usar la función `encode!/1` del módulo `Jason`.
+## Cómo hacerlo:
+Elixir maneja JSON con paquetes externos. El más común es `Jason`. Primero, añádelo a tu `mix.exs`:
 
-```Elixir
-iex> data = %{name: "Juan", age: 25}
-%{age: 25, name: "Juan"}
-iex> Jason.encode!(data)
-"{\"name\":\"Juan\",\"age\":25}"
+```elixir
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
 ```
 
-Para convertir una cadena JSON en términos de Elixir, podemos usar la función `decode!/1`. Si queremos acceder a un valor específico en el JSON, podemos utilizar los operadores de acceso como lo haríamos con cualquier otro término de Elixir.
+Luego, en tu código:
 
-```Elixir
-iex> json = "{\"name\":\"Juan\",\"age\":25}"
-"{\"name\":\"Juan\",\"age\":25}"
-iex> Jason.decode!(json)
-%{age: 25, name: "Juan"}
-iex> Jason.decode!(json)["name"]
-"Juan"
+```elixir
+# Para codificar un mapa a JSON:
+map = %{foo: "bar", num: 3}
+json = Jason.encode!(map) # "{\"foo\":\"bar\",\"num\":3}"
+
+# Para decodificar JSON a un mapa:
+json_string = "{\"foo\":\"bar\",\"num\":3}"
+map = Jason.decode!(json_string) # %{foo: "bar", num: 3}
 ```
 
-## Inmersión profunda:
-JSON fue creado originalmente por Douglas Crockford en 2001 y se ha convertido en un formato de intercambio de datos muy popular. Otras alternativas para el intercambio de datos incluyen XML y YAML. Elixir hace que trabajar con JSON sea muy sencillo gracias a la inclusión del módulo `Jason` en su biblioteca estándar. Internamente, `Jason` utiliza el módulo `Poison` para realizar la codificación y decodificación. También tiene funciones de validación y opciones de configuración para personalizar el proceso de codificación y decodificación de JSON.
+## Inmersión Profunda:
+JSON, o JavaScript Object Notation, nace en los 2000 para facilitar la comunicación entre cliente y servidor. Alternativas como XML existen, pero JSON prevalece por su legibilidad y eficiencia. Elixir no tiene soporte incorporado para JSON, por lo que depende de librerías como `Jason` o `Poison`. Estas librerías convierten datos entre mapas y listas de Elixir y cadenas JSON.
 
-## Ver también:
-- Documentación oficial de Jason: https://hexdocs.pm/jason/index.html
-- Tutorial para trabajar con JSON en Elixir: https://www.culttt.com/2016/04/04/json-elixir/
+## Ver También:
+- Documentación oficial de `Jason`: https://hexdocs.pm/jason/
+- Tutorial de `Poison` para JSON en Elixir: https://hexdocs.pm/poison/readme.html
+- Guía de Elixir para trabajar con mapas: https://elixir-lang.org/getting-started/maps-and-dicts.html

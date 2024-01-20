@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Java recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Java"
 category:             "Java"
@@ -11,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with JSON (JavaScript Object Notation) is a common task for Java programmers. JSON is a lightweight data interchange format that is used to transmit data between a server and a web application. Programmers use JSON because it is easy to read and write, and it is supported by a wide range of programming languages and platforms.
+JSON (JavaScript Object Notation) is a text format to transfer and store data. Programmers dig it 'cause it's human-readable, lightweight, and the bread and butter for web APIs and configs. 
 
 ## How to:
+```java
+import com.fasterxml.jackson.databind.ObjectMapper; // Jackson library
+import java.util.Map;
 
-To work with JSON in Java, you will need to import the JSON library. Here's an example of how to import the library and read a JSON file:
-
-```Java
-import org.json.*;
-import java.io.*;
-
-// read JSON file
-FileReader file = new FileReader("data.json");
-
-// create JSON object
-JSONObject obj = new JSONObject(file);
-
-// get value of a key
-String name = obj.getString("name");
+public class JsonExample {
+    public static void main(String[] args) throws Exception {
+        // Convert JSON string to Map
+        String jsonString = "{\"name\":\"Coder Duck\",\"age\":5}";
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> data = mapper.readValue(jsonString, Map.class);
+        System.out.println(data); // Prints: {name=Coder Duck, age=5}
+        
+        // Convert Map to JSON string
+        String jsonOutput = mapper.writeValueAsString(data);
+        System.out.println(jsonOutput); // Prints: {"name":"Coder Duck","age":5}
+    }
+}
 ```
 
-The output of this code block will be the value of the "name" key in the JSON file.
-
 ## Deep Dive
-
-JSON was first introduced in 2001 by Douglas Crockford as a more lightweight alternative to XML. It quickly gained popularity due to its simplicity and flexibility. Today, it is widely used in web development, mobile apps, and APIs.
-
-There are several alternatives to JSON, such as XML, YAML, and CSV. However, JSON has become the go-to choice for many developers due to its human-readable format and ease of use. 
-
-Working with JSON in Java involves using the JSON library, which provides a set of classes and methods for parsing, manipulating, and creating JSON objects. The library is constantly updated and maintained, making JSON a reliable and efficient choice for data interchange.
+JSON was born in the early 2000s, answering the need for an easy data interchange format. XML was a contender but JSON's lack of verbosity won the crowd. Jackson and Gson are hot Java libs for JSON. While Jackson's the heavy lifter, Gson is the nimble counterpart. Under the hood, they convert between Strings and Java objects with reflection and type tokens.
 
 ## See Also
-
-- [Official JSON website](https://www.json.org/)
-- [Comparison between JSON and XML](https://medium.com/@cstegel/comparing-json-and-xml-understanding-the-physical-differences-9ed3d1c222bc)
+- [Jackson Core](https://github.com/FasterXML/jackson-core): Get the latest on the Jackson library.
+- [Gson GitHub repo](https://github.com/google/gson): Dive into Gson.
+- [JSON.org](https://www.json.org/json-en.html): JSON's official crib.
+- [Baeldung on JSON in Java](https://www.baeldung.com/java-json): More examples and tutorials.

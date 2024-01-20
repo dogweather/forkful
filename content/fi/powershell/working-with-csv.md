@@ -1,7 +1,7 @@
 ---
-title:                "Ohjelmointi csv-tiedostojen kanssa"
-html_title:           "PowerShell: Ohjelmointi csv-tiedostojen kanssa"
-simple_title:         "Ohjelmointi csv-tiedostojen kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-CSV (Comma-Separated Values) on taulukkodataformaatti, jota voidaan käyttää tietojen tallentamiseen ja jakamiseen. CSV-tiedostot ovat suosittuja ohjelmoijien keskuudessa, koska ne ovat helppoja luoda ja käsitellä. Ohjelmoijat käyttävät CSV-tiedostoja tavallisesti tietokantojen, taulukoiden tai muiden rakenteiden tuomiseen ja viemiseen.
+## What & Why? - Mitä ja miksi?
+CSV on yksinkertainen tiedostomuoto, joka sisältää taulukkomaisia tietoja tekstimuodossa. Ohjelmoijat käyttävät CSV:tä, koska se on helppolukuinen ja sitä tukevat monet ohjelmistot ja kielet, mikä tekee tietojen siirrosta vaivatonta.
 
-## Kuinka tehdä:
-PowerShell tarjoaa useita tapoja käsitellä CSV-tiedostoja. Yksinkertaisin tapa on käyttää ```Import-Csv``` komentoa, joka lataa CSV-tiedoston muistiin ja muuttaa sen PowerShell-objekteiksi.
+## How to - Kuinka tehdä:
+```PowerShell
+# CSV-tiedoston lukeminen:
+$csvData = Import-Csv -Path "C:\data\esimerkki.csv"
 
+# CSV-tiedoston kirjoittaminen:
+$people = @(
+    [PSCustomObject]@{Nimi='Maija'; Ikä=30; Kaupunki='Helsinki'},
+    [PSCustomObject]@{Nimi='Kalle'; Ikä=42; Kaupunki='Espoo'}
+)
+$people | Export-Csv -Path "C:\data\uusi_esimerkki.csv" -NoTypeInformation
+
+# Tulostetaan `$csvData`
+$csvData
 ```
-PowerShell> $csvData = Import-Csv -Path C:\Users\kayttaja\Documents\data.csv
+Sample output:
 ```
-Nyt voit käyttää `$csvData` muuttujaa ja sen sisältämiä tietoja kuten mitä tahansa muuta PowerShell-objektia.
-
-Toinen tapa on käyttää ```Export-Csv``` komentoa, joka muuttaa PowerShell-objektit takaisin CSV-tiedostoksi.
-
+Nimi  Ikä Kaupunki
+----  --- --------
+Maija 30  Helsinki
+Kalle 42  Espoo
 ```
-PowerShell> $data = Get-Process
-PowerShell> $data | Export-Csv -Path C:\Users\kayttaja\Documents\processes.csv
-```
-Tämä esimerkki tallentaa tietokoneesi käynnissä olevien prosessien tiedot CSV-tiedostoksi.
 
-## Syvällinen sukellus:
-CSV-muoto luotiin alun perin tietokoneohjelmistoissa käytettäväksi, joten se on erittäin yhteensopiva tietokantajärjestelmien ja verkkosovellusten kanssa. Verrattuna muihin tiedostomuotoihin, CSV-tiedostot ovat myös suhteellisen pienikokoisia, mikä tekee niistä ihanteellisia datan jakamiseen.
+## Deep Dive - Syvempi katsaus:
+CSV (Comma-Separated Values) on peräisin 1970-luvulta ja oli alun perin tarkoitettu yksinkertaiseen, sarakepohjaiseen datan tallentamiseen. Nykyään on olemassa XML ja JSON, jotka ovat monimutkaisempia mutta myös tehokkaampia vaihtoehtoja. PowerShell käyttää .NET-luokkia kuten `TextFieldParser` tai `OleDb` CSV:n käsittelyyn, mutta `Import-Csv` ja `Export-Csv` ovat yksinkertaisia ja tehokkaita cmdlet-komentoja näihin tarpeisiin.
 
-Vaikka PowerShellin sisäänrakennetut komennot ovat hyödyllisiä CSV-tiedostojen käsittelyssä, on myös muita vaihtoehtoja, kuten käyttää erityisiä CSV-moduuleja tai työkaluja.
-
-CSV-tiedostojen tyypillinen rakenne koostuu sarakkeista ja riveistä, joissa jokainen rivi vastaa yhtä tietuetta ja sarakkeet ovat tietojen ominaisuuksia. On tärkeää ottaa huomioon, että CSV-tiedostot eivät tue monimutkaisia tietotyyppejä, kuten taulukoita tai objekteja.
-
-## Katso myös:
-- [PowerShell CSV-dokumentaatio](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
-- [PowerShell CSV-tutoriaali](https://www.youtube.com/watch?v=2lNx33fH_pM)
+## See Also - Katso myös:
+- PowerShell-dokumentaatio `Import-Csv`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv
+- PowerShell-dokumentaatio `Export-Csv`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv
+- CSV-tiedostot Wiki: https://fi.wikipedia.org/wiki/CSV-tiedosto
+- Microsoft Excel -tuki CSV-tiedostoille: https://support.microsoft.com/fi-fi/office/csv-tiedostomuodon-tuominen-ja-viennin-ohjeet-3e1d9630-8cc4-4cd2-af6b-5c725ee173c8

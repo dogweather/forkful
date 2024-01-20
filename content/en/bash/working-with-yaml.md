@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Bash recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with YAML is a way for programmers to manage and organize data in a human-readable format. It is often used for configuring applications and systems, and is especially popular in the DevOps and automation world. YAML files use a simple indentation format, making it easy for anyone to read.
+YAML ain't Markup Language (YAML) is a human-readable data serialization standard. Programmers use it for config files, data storage, and inter-process messaging because of its simplicity and readability.
 
 ## How to:
+Here's a simple example of reading a YAML file using Bash. 
 
-To work with YAML in Bash, you will need to have the "yq" tool installed. You can do this by using the package manager for your operating system. Once installed, you can start working with YAML files by using the "yq" command.
-
-```
-# Example command to get a value from a YAML file using "yq"
-yq eval '.key' file.yaml
-```
-
-```
-# Example output from above command
-value
+Given `config.yaml`:
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass123
 ```
 
-To modify a YAML file, you can use the "yq" command with the "-i" flag. This will edit the file in place instead of just displaying the output.
+Use this script to read the YAML and print the database host:
 
+```Bash
+#!/bin/bash
+value=$(grep 'host:' config.yaml | awk '{ print $2 }')
+echo "Database Host: ${value}"
 ```
-# Example command to modify a key in a YAML file using "yq"
-yq eval -i '.key = "new value"' file.yaml
+
+Sample output:
+```
+Database Host: localhost
 ```
 
-## Deep Dive:
+## Deep Dive
+YAML, created in 2001, is a more human-friendly alternative to XML or JSON. It's widely used in cloud services, app deployment, and devops tools. Though Bash lacks native YAML parsing, tools like `yq` and parsing via `awk` or `grep` can get the job done. However, complex parsing may need proper YAML tooling.
 
-YAML was first introduced in 2001 and stands for "YAML Ain't Markup Language." It was designed to be easy for humans to read and write, while still being easily parsed by machines. YAML is often seen as an alternative to XML or JSON for configuration files.
-
-An alternative tool for working with YAML in Bash is "shyaml." It offers similar functionality to "yq" but with slightly different syntax. It is worth exploring both options to see which one works best for your needs.
-
-Behind the scenes, "yq" uses the "jq" library to parse and manipulate the YAML data. This means that "yq" is essentially a wrapper for "jq" commands specifically designed for YAML files. For those familiar with "jq," this can be a useful insight.
-
-## See Also:
-
-- [yq GitHub repo](https://github.com/mikefarah/yq)
-- [YAML official website](https://yaml.org/)
+## See Also
+- YAML official website: https://yaml.org
+- `yq`, a command-line YAML processor: https://github.com/kislyuk/yq
+- Bash YAML parsing discussion: https://stackoverflow.com/questions/5014632/how-can-i-parse-a-yaml-file-from-a-linux-shell-script

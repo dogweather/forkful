@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con il formato csv"
-html_title:           "Elm: Lavorare con il formato csv"
-simple_title:         "Lavorare con il formato csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## What & Why (Cosa e Perché)
+Il CSV (Comma-Separated Values) è un formato per immagazzinare dati in modo semplice e standard. I programmatori lo usano per importare o esportare grandi quantità di dati dai/ai sistemi, facile da leggere sia per le persone che per le macchine.
 
-Lavorare con i file CSV (Comma Separated Values) è un'attività comune per i programmatori che hanno a che fare con la manipolazione dei dati. I file CSV sono un formato di file molto diffuso, utilizzato per archiviare e trasferire dati tabellari in modo semplice e compatto.
+## How to (Come fare)
+```Elm
+-- Supponiamo di avere un CSV come stringa
+csvData : String
+csvData =
+    "name,age\nAlice,30\nBob,25"
 
-## Come fare:
+-- Trasformare questi dati in una lista di record
+type alias Person =
+    { name : String
+    , age : Int
+    }
 
-``` Elm
-import CSV.Decode exposing (decodeString, field, int, float, string)
+parseCsv : String -> List Person
+parseCsv rawCsv =
+    rawCsv
+        |> String.split "\n"
+        |> List.drop 1
+        |> List.map (String.split ",")
+        |> List.map (\personList -> Person (List.head personList |> Maybe.withDefault "") (String.toInt (List.head (List.drop 1 personList) |> Maybe.withDefault "0") |> Result.withDefault 0))
 
--- Decodifica un file CSV con int come primo campo e float come secondo campo
-csvDecoder : Decoder (List (Int, Float))
-csvDecoder =
-    decodeString (row (field int) (field float))
-
--- Esempio di CSV
-exampleCSV : String
-exampleCSV =
-    "1, 2.5
-     2, 4.3
-     3, 6.8"
-
--- Utilizzo del decoder per ottenere una lista di tuple
-decodedValues : Result String (List (Int, Float))
-decodedValues =
-    csvDecoder exampleCSV
-
--- Output: Ok [(1, 2.5), (2, 4.3), (3, 6.8)]
+-- Usare parseCsv per ottenere una lista di Person
+parsedPeople : List Person
+parsedPeople =
+    parseCsv csvData
+```
+**Output campione:**
+```
+[ Person { name = "Alice", age = 30 }, Person { name = "Bob", age = 25 } ]
 ```
 
-## Approfondimento:
+## Deep Dive (Approfondimento)
+Il CSV esiste dagli anni '70, semplice ma efficace. In Elm, non c'è una libreria standard per il parsing dei CSV, quindi lo facciamo manualmente o si può usare un pacchetto di terze parti. L'alternativa moderna al CSV è JSON, che gestisce dati strutturati più complessi. Tuttavia, CSV è ancora popolare per la sua leggibilità e facilità d'uso in fogli di calcolo.
 
-I file CSV sono diventati popolari negli anni '70 come formato standard per lo scambio di dati tra programmi di fogli elettronici. Oggi sono ancora ampiamente utilizzati per l'importazione e l'esportazione di dati in molti applicazioni e strumenti di sviluppo.
-
-Esistono alternative ai file CSV, come ad esempio i file JSON (JavaScript Object Notation) o XML (eXtensible Markup Language), che hanno una struttura più complessa ma offrono maggior flessibilità nella rappresentazione dei dati.
-
-Per lavorare con i file CSV, è importante comprendere come il formato funziona e come i dati vengono strutturati al loro interno. Inoltre, è necessario essere in grado di utilizzare librerie o strumenti di decodifica per convertire il file CSV in un formato leggibile e manipolabile per il linguaggio di programmazione scelto.
-
-## Vedi anche:
-
-- Documentazione ufficiale di Elm su CSV: https://package.elm-lang.org/packages/elm-community/csv/latest/
-- Un articolo su quando scegliere i file CSV rispetto ad altri formati: https://www.digitalocean.com/company/blog/the-correct-way-to-import-csv-files-in-elm/
-- Una guida dettagliata su come manipolare i file CSV in Elm: https://cultureamp.engineering/building-a-csv-parser-for-elm/
+## See Also (Vedi Anche)
+- Documentazione Elm per `String`: https://package.elm-lang.org/packages/elm/core/latest/String
+- Un pacchetto Elm CSV parser: https://package.elm-lang.org/packages/lovasoa/elm-csv/latest/
+- Approfondimento sulle differenze tra CSV e JSON: https://www.datacamp.com/community/tutorials/csv-json
+- Best practices per lavorare con CSV in Elm: (inserisci risorsa della community)

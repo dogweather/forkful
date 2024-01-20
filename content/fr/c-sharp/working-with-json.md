@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "C#: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+**Quoi et Pourquoi ?**
 
+Manipuler JSON, c'est jongler avec des données textuelles formatées pour échanger des infos entre système. Les devs le font car c'est léger, lisible par l’humain et adoré des API et configs.
 
-Travailler avec JSON (JavaScript Object Notation) est une tâche courante pour les programmeurs en C#. C'est une façon de stocker et d'échanger des données dans un format léger et facile à utiliser. Les programmeurs utilisent JSON car il est universellement pris en charge et convient bien aux échanges de données entre différentes applications et systèmes.
+## How to:
+**Comment faire :**
 
-## Comment faire:
+Installez `System.Text.Json` via NuGet. Voici comment parser du JSON :
 
-Voici comment manipuler des données JSON en utilisant C#:
+```C#
+using System;
+using System.Text.Json;
 
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"name\":\"Jean\",\"age\":30}";
+        var person = JsonSerializer.Deserialize<Person>(jsonString);
+        Console.WriteLine($"Nom: {person.Name}, Âge: {person.Age}");
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
 ```
-// Créer un objet JSON vide
-
-var jsonObject = new JObject();
-
-// Ajouter des propriétés à l'objet JSON
-
-jsonObject.Add("nom", "Jean");
-jsonObject.Add("âge", 25);
-jsonObject.Add("ville", "Paris");
-
-// Convertir l'objet JSON en chaîne de caractères
-
-string jsonString = jsonObject.ToString();
-
-// Afficher la chaîne de caractères JSON
-
+Sortie:
+```
+Nom: Jean, Âge: 30
+```
+Pour créer du JSON :
+```C#
+Person person = new Person { Name = "Jean", Age = 30 };
+string jsonString = JsonSerializer.Serialize(person);
 Console.WriteLine(jsonString);
-
-// Résultat: {"nom": "Jean", "âge": 25, "ville": "Paris"}
+```
+Sortie :
+```
+{"Name":"Jean","Age":30}
 ```
 
-## Plongée en profondeur:
+## Deep Dive:
+**Plongée Profonde :**
 
-JSON a été développé dans les années 2000 pour remplacer XML dans les échanges de données en JavaScript. Depuis lors, il est devenu un format populaire pour le stockage et l'échange de données dans de nombreux langages de programmation, y compris C#. Les alternatives à JSON incluent XML, CSV et YAML. Les développeurs peuvent utiliser des bibliothèques tierces pour travailler avec JSON en C#, telles que Newtonsoft.Json ou System.Text.Json.
+JSON, pour JavaScript Object Notation, a été introduit par Douglas Crockford. Alternatives incluent XML, mais JSON prime en web pour sa simplicité. En C#, `System.Text.Json` est rapide et efficace contre `Newtonsoft.Json` qui offre plus de fonctionnalités mais peut être plus lourd.
 
-## Voir aussi:
+## See Also:
+**Voir Aussi :**
 
-- Site officiel de JSON: https://www.json.org/json-en.html
-- Documentation de Microsoft sur la manipulation de JSON en C#: https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0
-- Bibliothèque Newtonsoft.Json: https://www.newtonsoft.com/json
-- Bibliothèque System.Text.Json de Microsoft: https://docs.microsoft.com/en-us/dotnet/api/system.text.json?view=net-5.0
+- [Documentation officielle de `System.Text.Json`](https://docs.microsoft.com/fr-fr/dotnet/standard/serialization/system-text-json-overview)

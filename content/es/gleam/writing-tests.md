@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Gleam: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué se hace la escritura de pruebas?
-Escribir pruebas es un proceso en el que los programadores escriben código adicional para verificar si sus programas funcionan correctamente. Este proceso se realiza para garantizar que los cambios o modificaciones en el código no rompan la funcionalidad existente. Los programadores hacen esto para asegurarse de que sus programas son confiables y funcionan correctamente.
+## Qué & Por qué?
+Escribir pruebas es crear código que verifica si otro código funciona como debe. Los programadores hacen esto para evitar errores, garantizar calidad y facilitar mantenimientos futuros.
 
-Cómo hacerlo:
+## Cómo hacerlo:
 ```Gleam
-//Escribiendo una prueba básica
-test "Suma de dos números" {
-  assert.equal(2 + 2, 4)
+import gleam/should
+import my_module
+
+pub fn add_test() {
+  should.equal(my_module.add(1, 1), 2)
+}
+
+pub fn subtract_test() {
+  should.equal(my_module.subtract(5, 3), 2)
 }
 ```
 
-```Gleam
-//Ejemplo de una prueba que falla
-test "División por cero" {
-  assert.equal(10 / 0, 5)
-}
-//Salida: La prueba falló debido a una división por cero.
+Salida de ejemplo con éxito:
+```
+1 test passed.
 ```
 
-```Gleam
-//Uso de "assert.not_equal" para probar si dos valores no son iguales
-test "Valores no iguales" {
-  assert.not_equal(3, 4)
-}
+Salida de ejemplo con fallo:
+```
+1 test failed.
+
+    The value
+      4
+    should equal
+      2
 ```
 
-Más información:
-La escritura de pruebas se ha vuelto cada vez más importante en la programación moderna debido al aumento de la complejidad del código. Otro enfoque para garantizar la calidad del código es la revisión manual por parte de otros programadores, pero esto puede ser muy lento y propenso a errores. La escritura de pruebas automatizadas ayuda a detectar cualquier problema en el código de manera rápida y eficiente.
+## Análisis Profundo
+Gleam llegó con la idea de llevar la seguridad en tipos a sistemas distribuidos. A diferencia de otros lenguajes como Elixir, ofrece un sistema de tipo estático que ayuda a escribir pruebas más concisas y evitar errores en tiempo de ejecución. Con herramientas como `gleam/should`, escribir pruebas es sencillo. Otras alternativas son EUnit y ExUnit de Erlang y Elixir respectivamente, pero Gleam tiene la ventaja de verificar tipos en tiempo de compilación.
 
-Véase también:
-- Documentación oficial de Gleam sobre escritura de pruebas: https://gleam.run/book/testing.html
-- Pruebas unitarias vs pruebas de integración: https://blog.testlodge.com/unit-testing-vs-integration-testing/
-- Principales marcos de prueba para programadores de Gleam: https://medium.com/@taylorwrogers/7-testing-frameworks-for-gleam-programmers-6099f5b10542
+## Ver También
+- Comunidad de Gleam en Reddit: [r/gleamlang](https://www.reddit.com/r/gleamlang/)

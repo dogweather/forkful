@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Gleam recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,46 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing a text file is a process of creating and saving data in a file with a .txt extension. Programmers do it for various purposes including log generation, data recording, or for providing input data to programs and scripts.
+Writing a text file means saving data as text that humans can read. Programmers do it to store output, configure apps, or log events.
 
 ## How to:
+Gleam offers file I/O through its standard library. Here's how to write to a file:
+```gleam
+import gleam/io
+import gleam/result
 
-Now, let's check out how to write a text file in Gleam. Note that Gleam doesn't yet have a native file I/O, so we have to interface with Erlang functions.
-
-Ensure to have the latest Gleam version. Now, let's create a Gleam file "file_io.gleam":
-
-```Gleam
-import erlang
-
-fn main(args: List(String)) {
-  write_file(args)
+pub fn write_to_file(contents: String) -> Result(Nil, IOError) {
+  result.then(
+    io.open("output.txt", [io.Write]),
+    fn(file) { io.write(file, contents) }
+  )
 }
 
-fn write_file(args) {
-  case args {
-    [.. _, content, filename] -> erlang:display(erlang:file:write_file(filename, content))
-    _ -> erlang:display("Incorrect Arguments")
+pub fn main() {
+  case write_to_file("Hello, Gleam!") {
+    Ok(_) -> io.print("Successfully wrote to the file")
+    Error(err) -> io.print(err)
   }
 }
 ```
-In the shell, compile and generate a binary:
-
-```shell
-rebar3 eunit
-_build/default/bin/file_io "Hello, world!" output.txt
-```
+If successful, your `output.txt` will contain "Hello, Gleam!".
 
 ## Deep Dive
-
-Gleam, an ambitious statically-typed language built for BEAM, the Erlang virtual machine, presently doesn't have in-built support for file I/O. Instead, it employs Erlang's comprehensive I/O library.
-
-In the above example, we used functions `file:write_file/2` from the Erlang module. It takes a filename and the content that you want to write, creating the file if it doesn't exist, and writes the content in it.
-
-An alternative to write file could be employing Elixir functions from within Gleam as they share the same BEAM.
+Historically, file handling is critical for long-term data storage. Gleam's approach is similar to Erlang's, upon which it's built. Alternatives include database systems or in-memory storage for temporary data. Gleam's standard library keeps a lean API, preferring explicit error handling with the `Result` type.
 
 ## See Also
-
-2. [Erlang/OTP documentation](http://erlang.org/doc/apps/stdlib/index.html)
-3. [Elixir official documentation](https://elixir-lang.org/docs.html)
-5. [Erlang File Module documentation](https://erlang.org/doc/man/file.html)
+- [Erlang's File module](http://erlang.org/doc/man/file.html) for understanding the lower-level operations Gleam abstracts over.
+- [Writing files in Rust](https://doc.rust-lang.org/std/fs/struct.File.html#method.create), for a comparison with another systems language.

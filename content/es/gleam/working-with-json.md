@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Gleam: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola programadores! ¿Alguna vez te has preguntado cómo procesar y almacenar datos de manera eficiente en tus aplicaciones? Bueno, ¡te tenemos cubierto! En este artículo, vamos a hablar sobre cómo trabajar con JSON en Gleam y por qué los programadores lo hacen. Así que ¡presta atención y prepárate para mejorar tus habilidades de programación!
+## ¿Qué es y por qué?
 
-## ¿Qué y por qué?
+Trabajar con JSON significa manipular un formato de texto para representar datos estructurados, común en la web. Programadores lo usan por su facilidad de intercambio entre distintas tecnologías.
 
-Trabajar con JSON (JavaScript Object Notation) implica utilizar un formato de texto sencillo para almacenar y transmitir datos. Es ampliamente utilizado en aplicaciones web y móviles para intercambiar información entre sistemas diferentes. Los programadores a menudo optan por usar JSON debido a su simplicidad y su capacidad para trabajar con diferentes lenguajes de programación.
+## Cómo hacerlo:
 
-## Cómo hacerlo
-
-Ahora, veamos algunos ejemplos de cómo trabajar con JSON en Gleam. ¡Presta atención porque esto es realmente emocionante!
-
-Primero, importamos el módulo de JSON en nuestra aplicación:
-
-```
+```gleam
 import gleam/json
-```
+import gleam/should
 
-Luego, podemos convertir un objeto de Gleam en una cadena JSON utilizando la función `encode`:
+pub fn main() {
+  let json_string = """{"nombre": "Juan", "edad": 30}"""
+  let resultado = json.decode(json_string)
 
-```
-let my_object = {
-  usuario: "Juan",
-  edad: 25
+  case resultado {
+    Ok(value) -> 
+      should.equal(value, json.Object(from_list([ 
+        tuple("nombre", json.String("Juan")), 
+        tuple("edad", json.Number(30.0))
+      ])))
+  
+    Error(error) -> 
+      io.println(error)
+  }
 }
-
-let json_string = gleam/json.encode(my_object)
+```
+Salida esperada:
+```
+Ok(Object(from_list([("nombre", String("Juan")), ("edad", Number(30.0))])))
 ```
 
-Esto producirá una cadena JSON similar a esta:
+## Profundización
 
-```
-{"user":"Juan","age":25}
-```
+Historia: JSON (JavaScript Object Notation) surgió en los 2000s como alternativa a XML.
+Alternativas: XML, YAML y protocol buffers son otras opciones para datos estructurados.
+Implementación: En Gleam, `gleam/json` maneja JSON usando decodificación/ codificación tipo-segura.
 
-También podemos decodificar una cadena JSON en un objeto de Gleam utilizando la función `decode`:
+## Véase también
 
-```
-let json_string = "{\"usuario\":\"Juan\",\"edad\":25}"
-let object = gleam/json.decode(json_string)
-```
-
-Esto nos devolverá un objeto de Gleam con las mismas propiedades que nuestro objeto inicial.
-
-## Profundizando
-
-JSON fue originalmente desarrollado en la década de 1990 por Douglas Crockford. Desde entonces, ha sido ampliamente adoptado en la industria y se ha convertido en un estándar para el intercambio de datos en la web. Alternativamente, XML (Extensible Markup Language) es otro formato popular para el almacenamiento y transmisión de datos, pero se considera más complejo que JSON.
-
-En términos de implementación, Gleam utiliza la biblioteca Rust `serde` para trabajar con JSON, lo que permite un rendimiento rápido y una alta compatibilidad con otros lenguajes de programación.
-
-## Consulta también
-
-Si estás interesado en aprender más sobre JSON en Gleam, aquí tienes algunos recursos útiles:
-
-- [Sitio web oficial de JSON](https://www.json.org/json-es.html)
+- Documentación oficial de Gleam `json` módulo: https://hexdocs.pm/gleam_stdlib/gleam/json/
+- Guía JSON: https://www.json.org/json-es.html
+- Comparación entre JSON y XML: https://www.w3schools.com/js/js_json_xml.asp

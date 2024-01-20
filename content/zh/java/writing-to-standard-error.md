@@ -1,7 +1,7 @@
 ---
-title:                "标准错误写入"
-html_title:           "Java: 标准错误写入"
-simple_title:         "标准错误写入"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是Standard Error：Standard Error是一个编程概念，用于在代码中记录和输出错误信息。程序员通常将错误信息输出到Standard Error，以便在程序运行过程中及时发现和处理错误。
+## What & Why? (是什么与为什么？)
+写到标准错误 (stderr) 让你区分常规输出和错误消息。程序员这么做以确保错误处理不影响程序的正常输出。
 
-为什么要使用Standard Error：Standard Error有助于程序员轻松地调试代码，因为它可以显示详细的错误信息，从而更容易地定位和解决问题。
-
-如何使用Standard Error：在Java中，我们可以通过System类的`err`对象来输出错误信息到Standard Error。下面是一个简单的示例代码：
-
-```Java
-System.err.println("This is an error message.");
+## How to: (怎么做：)
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("正常输出到stdout");
+        System.err.println("错误信息到stderr");
+    }
+}
 ```
-
-输出结果如下所示：
-
+输出样本:
 ```
-This is an error message.
+正常输出到stdout
+错误信息到stderr
 ```
+两行输出可能会按不同顺序出现，因为stdout和stderr是独立的。
 
-深入了解：Standard Error最早是在Unix操作系统中引入的，作为一种标准的错误输出机制。在Java中，除了使用`err`对象，我们也可以通过`e.printStackTrace()`方法来输出错误信息，它会打印出完整的错误堆栈信息，包括代码中所有相关的错误信息和函数调用。
+## Deep Dive (深入探讨)
+最初，UNIX提供了stdout和stderr来区别输出类型。写到stderr的好处是可以将错误重定向到日志或其他地方，而不打扰正常输出。替代方案如日志框架（如log4j）提供更复杂的错误管理。在Java中，`System.err`是`PrintStream`的一个实例，它默认链接到主机系统的标准错误输出渠道。
 
-相关资源：如果想要深入了解Standard Error的更多信息，可以查阅以下资源：
-
-- [Java文档 - System类](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Stack Overflow问答 - What is System.err in Java?](https://stackoverflow.com/questions/1589046/what-is-system-err-in-java)
+## See Also (另请参阅)
+- [Java System Class Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html)
+- [Oracle Java Tutorials – I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [UNIX Standard Streams Wikipedia](https://en.wikipedia.org/wiki/Standard_streams)

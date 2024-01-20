@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Clojure: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"Mikä & Miksi?":
-Tekstitiedoston kirjoittaminen on periaatteessa vain tekstin tallentamista tietokoneesi muistiin. Ohjelmoijat käyttävät tekstitiedostoja tallentaakseen tietoa tai koodia, jota he haluavat käyttää myöhemmin.
+## What & Why?
+Tekstitiedoston kirjoittaminen tarkoittaa dataa sisältävän tiedoston luomista tallennusvälineelle. Ohjelmoijat tekevät sitä tiedon säilyttämiseksi, analysointia varten tai kommunikaatioon muiden ohjelmien kanssa.
 
-"Kuinka tehdä?":
-```Clojure
-;; Luo uusi tekstitiedosto nimeltä "tietoa.txt"
-(with-open [f (io/writer "tietoa.txt")]
-  (.write f "Tervetuloa Ohjelmointi 101 kurssille!"))
+## How to:
+Käytä `spit` funktiota tekstin kirjoittamiseen tiedostoon:
 
-;; Avaa ja lue tekstitiedosto
-(with-open [f (io/reader "tietoa.txt")]
-  (println (.readLine f)))
-=> Tulostaa: "Tervetuloa Ohjelmointi 101 kurssille!"
+```clojure
+(spit "tervehdys.txt" "Moi Clojure-maailma!")
 ```
 
-"Syväsukellus":
-Kirjoittaminen tekstitiedostoihin on ollut osa ohjelmointia jo pitkään. Tekstitiedostoja käytetään usein tallentamaan tietokantakyselyjä tai tulostamaan tietoa käyttäjälle. On myös muita tapoja tallentaa tietoa, kuten tietokantoihin tai verkkopalveluihin, mutta tekstitiedostot ovat yksinkertaisin ja helpoin tapa tallentaa ja lukea tietoa ohjelmassa.
+Tarkista kirjoitus luomalla ja lukemalla tiedosto:
 
-"Katso myös":
-Lisätietoa tekstitiedostojen lukemisesta ja kirjoittamisesta Clojurella löytyy esim. täältä: https://clojuredocs.org/clojure.java.io/writer. Voit myös kokeilla erilaisia tapoja kirjoittaa ja lukea tekstitiedostoja ja tutkia niiden toimintaa Clojure REPL:ssä.
+```clojure
+(slurp "tervehdys.txt")
+; => "Moi Clojure-maailma!"
+```
+
+Kirjoita useita rivejä lisäämällä:
+
+```clojure
+(spit "tervehdys.txt" "Toinen rivi." :append true)
+```
+
+## Deep Dive
+Clojuressa tekstitiedostoihin kirjoittaminen pohjautuu Javan I/O-kirjastoon. Ennen `spit`:iä tiedostoja kirjoitettiin avaten `FileWriter` ja käsikirjoittamalla bufferointi. Vaihtoehtoja `spit`:lle ovat esim. `java.io.PrintWriter`, joka voi formatoida dataa, ja `with-open` rakenne resurssien hallintaan.
+
+## See Also
+- ClojureDocs `spit`: https://clojuredocs.org/clojure.core/spit
+- Java I/O Tutorial: https://docs.oracle.com/javase/tutorial/essential/io/
+- Clojure `with-open`: https://clojuredocs.org/clojure.core/with-open

@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーへの書き込み」"
-html_title:           "Ruby: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,30 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で & なぜ？ 
-標準エラー出力とは何か？プログラマーはなぜそれをするのか？
+## What & Why? / 何となぜ？
 
-標準エラー出力とは、プログラムの実行中にエラーメッセージを表示するための手段です。これにより、プログラマーは実行中に発生したエラーをすばやく把握することができます。プログラマーは、エラーが発生した原因を追跡し修正するために、重要な情報を提供するために、このアウトプットを使用します。
+標準エラーへの書き込みは、プログラムが遭遇する問題や警告を報告するためです。これによりログファイルや標準出力とエラーメッセージを区別でき、デバッグがしやすくなります。
 
-## 使い方：
+## How to: / 方法
+
+Rubyで標準エラーに書き込むには、`$stderr`や`STDERR`を使います。
+
 ```Ruby
-# 標準エラー出力のために、$stderrを使用します
-$stderr.puts "エラーメッセージ"
+# 標準出力への書き込み
+puts "これは標準出力です。"
 
-# 標準エラー出力を無視するために、/dev/nullを使用します
-$stderr.reopen(File::NULL)
+# 標準エラーへの書き込み
+$stderr.puts "これは標準エラーです。"
+# または
+STDERR.puts "これは標準エラーです。"
 ```
 
+実行すると、以下の出力が得られます。
+
+```
+これは標準出力です。
+これは標準エラーです。
+```
+
+標準出力と標準エラーの出力先はデフォルトでは同じですが、リダイレクトして分けることができます。
+
+## Deep Dive / 詳細情報
+
+標準エラーはUNIX系システムで長い歴史を持ちます。プログラムは標準出力(stdout)と標準エラー(stderr)を使用して、それぞれ異なる情報を出力できます。
+
+もし`puts`や`print`メソッドを使う代わりに低レベルの操作が必要な場合は、`write`メソッドを使います。
 ```Ruby
-# 標準入力から値を受け取り、標準エラー出力にエラーメッセージを表示します
-input = gets.chomp
-if input.empty?
-  $stderr.puts "入力が空です"
+STDERR.write("エラーメッセージ\n")
+```
+
+レスキューブロック内で例外情報を標準エラーに書き込む例:
+```Ruby
+begin
+  # 危険な操作
+rescue => e
+  STDERR.puts "エラーが発生しました: #{e.message}"
 end
 ```
 
-## 深堀り：
-標準エラー出力は、1970年代のUNIXオペレーティングシステムで作成された標準的な機能です。プログラマーは、デバッグやエラーの追跡が容易になるように、この機能を使用します。標準出力と比較して、標準エラー出力はカラフルなテキストが出力されます。代替手段として、プログラマーはログファイルやメールアラートを使用することもできます。`puts`や`print`などのメソッドは、標準エラー出力ではなく、標準出力にテキストを出力します。
+標準エラーに書き込むのは、主にデバッグやエラーログを記録する場合に利用されます。しかし、実行時に重要な通知や警告をユーザーに伝達する場面でも使用されます。
 
-## さらに見る：
-詳細は、[Rubyドキュメント](https://docs.ruby-lang.org/ja/latest/doc/index.html)や[スタックオーバーフロー](https://stackoverflow.com/questions/232956/what-is-the-difference-between-stderr-and-stdout)を参照してください。
+## See Also / 関連情報
+
+- Rubyの公式ドキュメント: [IO - Ruby-Doc.org](https://ruby-doc.org/core-3.1.0/IO.html)
+- さらに詳しいUNIXの標準ストリーム: [Standard Streams - Wikipedia](https://en.wikipedia.org/wiki/Standard_streams)

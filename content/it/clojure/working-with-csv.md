@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Clojure: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Lavorare con CSV significa manipolare dati "Comma-Separated Values" - utile per import/export. I programmatori lo fanno per scambiare dati con altre app, database o sistemi che supportano questo formato universale.
 
-Lavorare con i file CSV è un'attività comune per i programmatori poiché i dati sono spesso memorizzati in questo formato. CSV, o Comma-Separated Values, è un formato di file di testo che utilizza una virgola come separatore per organizzare i dati in colonne e righe.
-
-## Come fare:
-
-```Clojure
+## How to:
+```clojure
+(require '[clojure.java.io :as io])
 (require '[clojure.data.csv :as csv])
 
-;; Caricare un file CSV in una collezione
-(csv/read-csv "mio_file.csv")
+; Leggere un file CSV
+(with-open [reader (io/reader "dati.csv")]
+  (doall (csv/read-csv reader)))
 
-;; Scrivere una collezione in un file CSV
-(csv/write-csv "nuovo_file.csv" [["Gianni" "Rossi" 25]
-                                ["Maria" "Bianchi" 33]
-                                ["Luca" "Verdi" 42]])
-
-;; Con questo codice, convertiamo la collezione in una struttura di dati tabellare che può essere facilmente manipolata dal programma.
-
+; Scrivere in un file CSV
+(let [dati [["nome" "età"] ["Giulia" "30"] ["Marco" "25"]]]
+  (with-open [writer (io/writer "nuovi_dati.csv")]
+    (csv/write-csv writer dati)))
 ```
 
-## Approfondimento:
+Output di esempio dopo lettura di "dati.csv":
+```clojure
+(["nome" "età"] ["Giulia" "30"] ["Marco" "25"])
+```
 
-Il formato CSV è stato introdotto negli anni '70 per semplificare lo scambio di dati tra le applicazioni. Oggi, nonostante l'uso di diverse alternative più avanzate, il CSV è ancora ampiamente utilizzato per la sua semplicità e praticità. Nel mondo Clojure, esistono diverse librerie per lavorare con i file CSV, tra cui la libreria standard `clojure.data.csv` e la popolare libreria `incanter.io`.
+## Deep Dive
+CSV, esistente dagli anni '70, è semplice e compatibile con fogli di calcolo. Alternativa a JSON/XML per dati tabellari. Clojure, funzionale, tratta CSV come collezioni, offre librerie per manipolazione.
 
-## Vedi anche:
-
-- [Documentazione ufficiale della libreria clojure.data.csv](https://clojure.github.io/data.csv/)
+## See Also
+- [Clojure Data CSV](https://github.com/clojure/data.csv) - Libreria per lavorare con i CSV.
+- [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) - Ricette per programmazione Clojure, incluso CSV.

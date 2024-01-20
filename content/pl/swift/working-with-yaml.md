@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem YAML"
-html_title:           "Swift: Praca z formatem YAML"
-simple_title:         "Praca z formatem YAML"
+title:                "Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest YAML i po co to robią programiści?
+## Co i dlaczego?
+YAML to format danych popularny w konfiguracji i serializacji. Programiści używają go dla łatwości czytania i pisania, zwłaszcza w środowiskach DevOps i w projektach używających Docker oraz Kubernetes.
 
-YAML to format pliku używany do przechowywania i przesyłania danych. Programiści stosują go, ponieważ jest to sposób, w jaki mogą łatwo i czytelnie przechowywać różnego rodzaju informacje. Jest to szczególnie użyteczne, jeśli potrzebują one przechowywać dane w formacie tekstowym, a nie binarnym.
+## Jak to zrobić:
+Swift nie ma natywnej obsługi YAML, więc trzeba użyć zewnętrznej biblioteki, jak Yams. Aby zainstalować Yams, dodaj do `Package.swift`:
 
-## Jak to zrobić?
+```swift
+dependencies: [
+    .package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
+]
+```
 
-```Swift
-let yamlData = """
-animal: cat
-age: 6
-favorite_food: tuna
+Kod do parsowania YAML:
+
+```swift
+import Yams
+
+let yamlStr = """
+name: Jan Kowalski
+age: 30
+languages:
+  - Swift
+  - Python
 """
 
 do {
-    let object = try YAMLEncoder().encode(yamlData)
-    print(object)
+    if let person = try Yams.load(yaml: yamlStr) as? [String: Any] {
+        print(person)
+    }
 } catch {
-    print("Błąd: \(error)")
+    print("Error parsing YAML: \(error)")
 }
-
-// Output: ["age": 6, "favorite_food": "tuna", "animal": "cat"]
 ```
 
-## Wnikliwe spojrzenie
+Sample output:
 
-Historia formatu YAML sięga 2002 roku, a jego nazwa jest akronimem od angielskich słów "YAML Ain't Markup Language". Alternatywą dla YAML jest JSON, który jest bardziej popularny, ale YAML ma bardziej czytelny i łatwiejszy do edycji format. W implementacji, YAML jest oparty na języku programowania Perl, ale jest dostępny także w innych językach, takich jak Swift.
+```
+["name": "Jan Kowalski", "age": 30, "languages": ["Swift", "Python"]]
+```
 
-## Zobacz także
+## Głębsze spojrzenie:
+YAML, czyli "YAML Ain't Markup Language", jest bardziej zrozumiałym zamiennikiem dla XML i JSON. Jest używany od 2001 r. i dobrze współpracuje z różnymi językami programowania. Alternatywy dla YAML to JSON, TOML czy XML. Niektóre implementacje są ścieżką do ataków przez złożone struktury danych, dlatego jest ważne stosowanie zaufanych bibliotek.
 
-- Oficjalna strona YAML: https://yaml.org/
-- Więcej informacji o pracy z YAML w Swift: https://github.com/behrang/YamlSwift
-- Przydatny przewodnik po składni YAML: https://www.tutorialspoint.com/yaml/
+## Zobacz też:
+- Specyfikacja YAML: https://yaml.org/spec/
+- Repozytorium GitHub Yams (Swift): https://github.com/jpsim/Yams
+- Porównanie formatów konfiguracyjnych: https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started

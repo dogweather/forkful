@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo en el error estándar"
-html_title:           "PHP: Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-La escritura al error estándar es una técnica utilizada por los programadores para enviar mensajes de error a la consola durante la ejecución de un programa. Esto permite a los desarrolladores identificar y solucionar problemas mientras están trabajando en su código. También ayuda a mejorar la experiencia del usuario al proporcionar información detallada sobre cualquier error que pueda ocurrir.
+## ¿Qué y por qué?
+
+Escribir en "standard error" (stderr) permite a los programas comunicar errores. Los programadores lo utilizan para separar la salida normal de la información de errores, facilitando el diagnóstico y el manejo de excepciones.
 
 ## Cómo hacerlo:
-Para escribir al error estándar en PHP, se puede utilizar la función "fwrite()" con el argumento "STDERR" para enviar un mensaje a la consola. A continuación, se presenta un ejemplo de código y su salida correspondiente:
-```
+
+En PHP, puedes escribir en stderr usando `fwrite` y `STDERR` o con funciones como `error_log`. Aquí unos ejemplos:
+
+```php
 <?php
-fwrite(STDERR, "¡Este es un mensaje de error!");
+// Escribir en stderr usando fwrite.
+fwrite(STDERR, "Este es un mensaje de error.\n");
+
+// Usando error_log con el parámetro 4 para enviar el mensaje a stderr.
+error_log("Otro mensaje de error.", 4);
 ?>
 ```
-Salida:
-```
-¡Este es un mensaje de error!
-```
 
-## Inmersión Profunda:
-La escritura al error estándar es una técnica ampliamente utilizada en la programación, y su origen se remonta a los inicios de UNIX en los años 70. Sin embargo, con el avance de la tecnología, han surgido nuevas alternativas, como el registro de errores en archivos o el uso de herramientas de depuración.
+Si ejecutas esto, no verás los mensajes en el navegador, pero aparecerán en la consola o en los logs de error.
 
-La implementación de la escritura al error estándar puede variar según el lenguaje de programación utilizado. En PHP, por ejemplo, también se puede utilizar la función "error_log()" para enviar mensajes de error a un archivo en lugar de la consola.
+## Profundizando:
 
-## Ver también:
-- Documentación de PHP sobre fwrite(): https://www.php.net/manual/es/function.fwrite.php
-- Artículo sobre la importancia de manejar errores de manera adecuada: https://www.php.net/manual/es/language.exceptions.php
+Historicamente, stderr es uno de los tres flujos de datos originales en los sistemas Unix, junto con stdin y stdout. En PHP, `STDERR` es una constante predefinida que solo está disponible cuando PHP se ejecuta en un modo que no es CGI o servidor web. Como alternativas, podrías escribir en un archivo de log personalizado o utilizar librerías para manejar errores. La implementación de stderr en PHP es parte de las I/O streams, que manejan la entrada y salida de datos.
+
+## Véase también:
+
+- Documentación oficial de PHP sobre manejo de errores: https://www.php.net/manual/es/book.errorfunc.php
+- I/O streams en PHP: https://www.php.net/manual/es/wrappers.php.php
+- Flujos de datos en Unix: https://es.wikipedia.org/wiki/Unix_stream

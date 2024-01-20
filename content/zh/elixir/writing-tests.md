@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Elixir: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#写测试是什么&为什么？
-写测试是编写用于检测代码功能的小型程序的过程。程序员会这样做是为了确保代码在修改后仍然能够正常工作，并且可以帮助追踪和修复错误。
+## What & Why? 什么 & 为什么？
+编写测试是创建用于自动验证代码功能的脚本。程序员这样做是为了确保程序按预期运行，并在未来的开发中防止回归错误。
 
-#如何：
-下面的代码块展示了如何在Elixir中编写测试的示例。代码块下方是运行该测试的示例输出。
-
-```elixir
-defmodule MyMath do
-  def sum(a, b) do
-    a + b
-  end
-end
-```
+## How to: 怎么做
+以 Elixir 中的 ExUnit 为例，这是它的主要测试框架。你可以创建一个测试文件，并使用 `test` 宏来编写测试用例。
 
 ```elixir
-defmodule MyMathTest do
+# test/my_app_test.exs
+
+ExUnit.start()
+
+defmodule MyAppTest do
   use ExUnit.Case
-  test "sum/2 returns correct result" do
-    assert MyMath.sum(2, 3) == 5
+
+  test "the truth" do
+    assert 1 + 1 == 2
   end
 end
 ```
 
-```
-$ mix test
-.Compiling 1 file (.ex)
-.
-Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-1 tests, 0 failures
+运行测试后的输出：
+
+```shell
+..
+
+Finished in 0.04 seconds
+1 test, 0 failures
 ```
 
-#深入了解：
-写测试的历史可追溯到早期的软件工程实践中，它已被证明是一种有效的工具。除了Elixir的测试框架ExUnit外，还有其他的框架可以用来编写测试，如ESpec、PropEr等。测试通常包括单元测试、集成测试和端到端测试，每种测试都有不同的用途和优缺点。写测试时，还需要考虑测试覆盖率、测试驱动开发等因素。
+## Deep Dive 深入探索
+ExUnit 是 Elixir 语言自带的测试库，由 José Valim 和其他贡献者开发，以确保 Elixir 程序的可靠性和健壮性。在 Elixir 圈里，还有如 `Espec` 的替代框架，它受 RSpec 启发。ExUnit 采用了一个模块化的设计，让开发人员可以灵活地添加自定义功能。
 
-#相关资源：
-- Elixir官方文档：https://hexdocs.pm/elixir/1.11/ExUnit.html
-- ExUnit源码：https://github.com/elixir-lang/elixir/blob/master/lib/ex_unit/
-- ESpec：https://github.com/lucasmazza/espec
-- PropEr：https://github.com/manopapad/proper
+## See Also 另请参阅
+- Elixir 官网的测试指南: [Elixir Testing Introduction](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#testing)
+- ExUnit 文档: [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- Espec GitHub: [Espec on GitHub](https://github.com/antonmi/espec)

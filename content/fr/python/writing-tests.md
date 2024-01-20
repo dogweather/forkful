@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Python: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que les tests de code et pourquoi en faire?
+## What & Why? (Quoi et Pourquoi ?)
+Écrire des tests, c'est vérifier que chaque pièce de ton code fonctionne comme prévu. Les développeurs font ça pour éviter les bugs, faciliter les mises à jour et dormir tranquilles.
 
-Les tests de code sont des morceaux de code écrits spécifiquement pour vérifier si une autre partie de code fait ce qu'elle est censée faire. Les programmeurs font des tests pour s'assurer que leur code fonctionne correctement et pour éviter les erreurs et les bugs.
-
-# Comment faire:
-
-```python
-def sum(a, b):
-  return a + b
-# Exemple de test pour la fonction de somme
-# On s'attend à ce que 2+2 soit égal à 4
-assert sum(2, 2) == 4
-```
-
-Les tests peuvent également être organisés en modules ou classes pour tester différentes parties de code. Voici un autre exemple:
+## How to: (Comment faire :)
+Python utilise `unittest` pour les tests. Voici un exemple simple. Imagine un fichier `maths.py` avec la fonction `addition(x, y)`:
 
 ```python
-# Une classe pour tester une calculatrice
-class TestCalculator:
-
-  def test_addition(self):
-    assert sum(5, 10) == 15
-
-  def test_subtraction(self):
-    assert subtract(10, 5) == 5
-
-  def test_multiplication(self):
-    assert multiply(2, 3) == 6
+# maths.py
+def addition(x, y):
+    return x + y
 ```
-# Plongée en profondeur:
 
-Les tests de code ont été utilisés depuis les premiers jours de la programmation, car ils permettent de détecter les erreurs dès leur apparition et de les corriger avant qu'elles ne se propagent. Les alternatives aux tests incluent la revue de code par des pairs et l'utilisation de l'intégration continue pour détecter les erreurs à mesure qu'elles sont ajoutées au code.
+Crée un test dans `test_maths.py`:
 
-Les tests de code peuvent également être écrits à l'aide de différentes bibliothèques et frameworks, tels que unittest, pytest ou nose. Chacun a ses propres avantages et il est important de choisir celui qui convient le mieux à votre projet.
+```python
+# test_maths.py
+import unittest
+from maths import addition
 
-# Voir aussi:
+class TestMaths(unittest.TestCase):
+    def test_addition(self):
+        self.assertEqual(addition(3, 4), 7)
 
-Vous pouvez en apprendre plus sur les tests de code en consultant ces sources:
-- [Python Testing 101](https://realpython.com/python-testing/)
-- [Writing Tests in Python](https://docs.python.org/3/library/unittest.html)
-- [Pytest Documentation](https://docs.pytest.org/en/stable/)
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Exécute le test:
+
+```
+python -m unittest test_maths
+```
+
+Si tout va bien, tu verras:
+
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+```
+
+## Deep Dive (Plongée en profondeur)
+Avant `unittest`, les gens imprimaient des valeurs, les comparant manuellement - c'était le chaos. D'autres options incluent `pytest` - très populaire, et `nose`. En interne, `unittest` crée une instance de la classe `TestCase` pour chaque test, exécute la méthode et compare le résultat.
+
+## See Also (Voir aussi)
+Pour plus d'info, consulte:
+- La documentation Python sur `unittest`: https://docs.python.org/3/library/unittest.html
+- Un guide pour `pytest`: https://docs.pytest.org/
+- Plus sur l'histoire des tests: https://en.wikipedia.org/wiki/Test-driven_development

@@ -1,7 +1,7 @@
 ---
-title:                "Skriver tester"
-html_title:           "Haskell: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å skrive tester er en viktig del av utviklingsprosessen for programmerere. Dette involverer å lage små kodebiter som sjekker om visse deler av koden fungerer som de skal. Tester bidrar til å sikre at koden fungerer riktig og gjør det lettere å finne og rette feil.
+## Hva & Hvorfor?
+Skriving av tester er å lage kode for å sjekke at annen kode virker som den skal. Programmerere gjør dette for å finne feil, forhindre fremtidige feil, og sikre at programmet oppfører seg riktig under forskjellige forhold.
 
-## Hvordan:
-For å skrive tester i Haskell, kan du bruke et rammeverk som Hspec eller QuickCheck. La oss se på et eksempel med Hspec:
+## How to:
+Haskell bruker `Hspec` som et populært testrammeverk. Installere det med `cabal install hspec`. Her er et enkelt eksempel:
 
 ```Haskell
 import Test.Hspec
+import Test.QuickCheck
 
 main :: IO ()
 main = hspec $ do
-  describe "add" $ do
-    it "adds two numbers" $ do
-      add 2 4 `shouldBe` 6
+  describe "length" $ do
+    it "returns the number of elements in a list" $ do
+      length [1, 2, 3] `shouldBe` 3
+
+  describe "reverse" $ do
+    it "reverses a list" $ do
+      reverse [1, 2, 3] `shouldBe` [3, 2, 1]
+
+    it "gives an empty list when reversing an empty list" $ do
+      reverse [] `shouldBe` ([] :: [Int])
 ```
 
-Dette eksempelet sjekker om funksjonen "add" legger sammen to tall på riktig måte. Output vil være:
+Kjør testene med `runhaskell test.hs`. Output burde se slik ut:
 
-```Haskell
-add
-  - adds two numbers
+```
+length
+  returns the number of elements in a list
+reverse
+  reverses a list
+  gives an empty list when reversing an empty list
+
+Finished in 0.0004 seconds
+3 examples, 0 failures
 ```
 
-Her får vi bekreftet at testen ble kjørt og at resultatet stemmer overens med forventningene våre.
+## Dykk Ned:
+Testing i Haskell startet med `QuickCheck`, en pioner for property-baserte tester. `Hspec` er mer BDD-orientert (Behavior-Driven Development). Alternativer inkluderer `HUnit` for unit-testing. Når du skriver tester, tenk på grenseverdier, typen null-tilfeller, og hvordan koden skal håndtere uventet input.
 
-## Dypdykk:
-Å skrive tester har eksistert siden begynnelsen av programmering som en måte å sikre kvaliteten på kode. I Haskell er det vanlig å bruke rammeverk som Hspec eller QuickCheck for å skrive tester. Det finnes også alternative metoder som Property-based Testing som bruker matematisk logikk for å generere og sjekke tester.
-
-Når det gjelder implementasjonen av tester, bruker Haskell funksjonell programmering og type-systemet sitt for å gjøre det enklere å skrive og vedlikeholde tester. Dette bidrar til å øke robustheten og kvaliteten på koden.
-
-## Se også:
-- [Hspec](https://hspec.github.io/)
-- [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+## Se Også:
+- Hspec dokumentasjon: [http://hspec.github.io/](http://hspec.github.io/)
+- Learn You a Haskell for Great Good! (testing chapter): [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
+- Stackage Server, for å finne biblioteker: [https://www.stackage.org/](https://www.stackage.org/)

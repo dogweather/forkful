@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standard feil"
-html_title:           "Haskell: Skriver til standard feil"
-simple_title:         "Skriver til standard feil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## What & Why?
+Standard error er en separat utdatastrøm for å melde feil og logge. Programmerere bruker den slik at feil og standard utdata kan håndteres separat.
 
-Skriving til standard error er en måte å sende feilmeldinger og annen informasjon til programmerere under kjøring av et program. Dette er nyttig når du vil finne og fikse feil i koden din. Programmere bruker dette for å få mer informasjon om hva som skjer når et program kjører, slik at de kan forbedre det.
+## How to:
+```Haskell
+import System.IO
 
-# Hvordan gjøre det:
-
-Kodingseksempler nedenfor viser hvordan du skriver til standard error i Haskell:
-
-```Haskell 
+main :: IO ()
 main = do
-  putStrLn "Dette er en vanlig utskrift"
-  hPutStrLn stderr "Dette er en feilmelding"
+  hPutStrLn stderr "Dette vises i standard error."
+  putStrLn "Dette vises i standard output."
+```
+Forventet utdata på terminalen hvis du omadresserer standard output til en fil:
+```
+$ runhaskell example.hs > output.txt
+Dette vises i standard error.
+```
+Innholdet av `output.txt` vil være:
+```
+Dette vises i standard output.
 ```
 
-Eksempelet ovenfor vil skrive ut "Dette er en vanlig utskrift" til standard output, men "Dette er en feilmelding" vil bli skrevet til standard error. Denne metoden kan også brukes til å printe ut variabler eller feilmeldinger.
+## Deep Dive
+Standard error, ofte referert til som `stderr`, er en av de tre hoveddatastrømmene brukt siden Unix-tiden. De andre er standard input (`stdin`) og standard output (`stdout`). I Haskell håndterer vi `stderr` med `System.IO` biblioteket. 
 
-# Dykk dypere:
+En alternativ måte å håndtere feil på er å bruke unntak, men ved å skrive direkte til `stderr` kan man lettere sende feilsøkingsmeldinger til konsollen mens vanlig output går til filer eller andre strømmer.
 
-I tidligere versjoner av Haskell, måtte man bruke en annen funksjon kalt "hGetErrorStream" for å skrive til standard error. Dette ble forbedret i nyere versjoner, som nå tillater bruk av "hPutStrLn". Det finnes også andre måter å sende feilmeldinger til programmerere, som for eksempel å skrive dem til en fil eller sende dem som e-post.
+`hPutStrLn` funksjonen skriver en streng til den angitte `Handle`, som i dette tilfellet er `stderr` istedenfor standard `stdout`.
 
-I tillegg, hvis du vil skrive til både standard output og standard error samtidig, kan du bruke "hPutStr" istedenfor "hPutStrLn", slik at det ikke blir en linjeskift mellom utskriftene.
-
-# Se også:
-
-For mer informasjon og eksempler, se følgende ressurser:
-
-- [Haskell dokumentasjon om I/O](https://www.haskell.org/documentation/)
+## See Also
+- Haskell `System.IO`-dokumentasjon: https://hackage.haskell.org/package/base/docs/System-IO.html 
+- Haskell Wiki om IO: https://wiki.haskell.org/IO_inside
+- Omstrukturering av utdatastrømmer i Unix: https://en.wikipedia.org/wiki/Standard_streams

@@ -1,7 +1,7 @@
 ---
-title:                "सीएसवी के साथ काम करना"
-html_title:           "Go: सीएसवी के साथ काम करना"
-simple_title:         "सीएसवी के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-GO में CSV फाइलों के साथ काम करना: एक आसान और महत्वपूर्ण काम
-अगर आप गो (Go) भाषा के प्रोग्रामर हैं तो आपने CSV फाइलों के साथ काम करने का अनुभव ज़रूर होगा। CSV फाइलें आमतौर पर डेटा को संग्रहीत करने और साझा करने के लिए उपयोग की जाती हैं। किसी भी प्रकार के स्प्रेडशीट या डेटा बेस्ड अनुप्रयोगों में, CSV फाइलें भी काफी प्रचलित हैं।
+## What & Why? (क्या और क्यों?)
+CSV (Comma Separated Values) एक साधारण फाइल फॉर्मेट है जिसमें डेटा अल्पविराम से अलग होता है। प्रोग्रामर्स को डेटा आयात करने, संग्रहित करने और विश्लेषण करने के लिए CSV से काम लेना पड़ता है क्योंकि यह संरचना सरल और व्यापक रूप से स्वीकृत है।
 
-## कैसे करें?
-यदि आपने अभी तक CSV फाइलों के साथ काम नहीं किया है, तो चिंता न करें। गो (Go) भाषा में CSV फाइलों के साथ काम करना काफी आसान है। निम्नलिखित कोड ब्लॉक के माध्यम से आप एक CSV फाइल से डेटा पढ़ सकते हैं और उसे कॉन्सोल पर प्रिंट कर सकते हैं:
+## How to: (कैसे करें:)
+यहाँ एक साधारन Go कोड है जो CSV फाइल से डेटा पढ़ता है:
 
 ```Go
-// CSV पैकेज इम्पोर्ट करें
-import "encoding/csv"
+package main
 
-// डेटा संग्रहित करने के लिए स्लाइस का बनाव  करें
-data := [][]string{{"आईडी", "नाम", "उंचाई"}, {"1", "आकाश", "5.5"}, {"2", "अयुष", "5.8"}}
+import (
+    "encoding/csv"
+    "fmt"
+    "os"
+)
 
-// CSV फाइल खोलें
-file, err := os.Create("data.csv")
-if err != nil {
-  log.Fatal("CSV फाइल खोलने में त्रुटि:", err)
+func main() {
+    file, err := os.Open("example.csv")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+
+    reader := csv.NewReader(file)
+    records, err := reader.ReadAll()
+    if err != nil {
+        panic(err)
+    }
+
+    for _, record := range records {
+        fmt.Println(record)
+    }
 }
-defer file.Close()
-
-// CSV फाइल लिखने के लिए FileWriter का बनाव करें
-writer := csv.NewWriter(file)
-
-// डेटा लिखें
-for _, value := range data {
-  err := writer.Write(value)
-  if err != nil {
-    log.Fatal("CSV फाइल में डेटा लिखने में त्रुटि:", err)
-  }
-}
-writer.Flush()
 ```
-आपका कोड सफलतापूर्वक एक CSV फाइल पर डेटा लिखेगा। उसके बाद, आप नेटवर्क के माध्यम से इसे अन्य प्रोग्रामों या ऐप्स के साथ साझा कर सकते हैं।
 
-## गहराई में जाएं
-CSV, या Comma Separated Values, फाइलें प्रिंट स्क्रीन के लिए डेटा प्रिंट करने के लिए संग्रहीत करने के लिए बनाई गईं। इससे पहले, प्रिंट स्क्रीन का उपयोग अधिकांश कंप्यूटर प्रोग्रामों में डेटा प्रसंस्करण के लिए अधिक सामान्य था। लेकिन आज भी कई अन्य फॉर्मेट, जैसे XML और JSON, डेटा संग्रहीत करने और साझा करने के लिए उपयोग होते हैं।
+अगर `example.csv` में डेटा यह हो:
+```
+name,age,city
+John,30,New York
+Alice,25,Sydney
+```
 
-कुछ अन्य तरीकों से CSV फाइलों के साथ काम करना भी संभव है, जैसे Excel या Google Sheets के साथ इंटरेक्टिव और उपयोगकर्ता अनुकूल फार्मेटों के रूप में। आप इसका अध्ययन कर सकते हैं और अपने आवश्यकताओं के हिसाब से सबसे उपयुक्त तरीका चुन सकते हैं।
+तो आउटपुट होगा:
+```
+[name age city]
+[John 30 New York]
+[Alice 25 Sydney]
+```
 
-CSV पैकेज Go भाषा में ब
+## Deep Dive (गहराई में जानकारी)
+CSV फॉर्मेट का इतिहास 1970 के दशक में शुरू हुआ था और इसने तब से डेटा इंटरचेंज के एक मानक रूप के तौर पर अपनी जगह बनाई है। इसके विकल्पों में JSON, XML, और YAML शामिल हैं - लेकिन CSV इसकी सादगी के कारण लगातार लोकप्रिय है। Go में CSV फाइलों को संभालने के लिए `encoding/csv` पैकेज मौजूद है, जो विभिन्न प्रकार के ऑपरेशन्स जैसे कि पढ़ना और लिखना आसान बनाता है।
+
+## See Also (अन्य सूत्रों)
+- Go के अधिकृत CSV पैकेज का डॉक्यूमेंटेशन: https://pkg.go.dev/encoding/csv
+- CSV फाइल फॉर्मेट के बारे में विकिपीडिया पेज: https://en.wikipedia.org/wiki/Comma-separated_values
+- JSON और XML की तुलना में CSV के उपयोग: https://www.data.gov/developers/blog/comparison-of-csv-json-and-xml-formats

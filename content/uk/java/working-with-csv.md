@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv."
-html_title:           "Java: Робота з csv."
-simple_title:         "Робота з csv."
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## What & Why? (Що та Чому?)
+Робота з CSV – це читання та запис даних у форматі з розділенням комами. Програмісти використовують CSV через його простоту і універсальність для обміну даними.
 
-Робота з CSV - це процес обробки табличних даних, які зберігаються у форматі Comma-Separated Values (значення, розділені комами). Цей формат дозволяє легко зберігати та передавати великі обсяги даних. Програмісти часто працюють з CSV, оскільки він є одним з найбільш поширених форматів для обміну даними.
-
-## Як це робити?
-
-```Java
+## How to: (Як це зробити:)
+Читання з CSV файлу:
+```java
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import com.opencsv.CSVReader;
 
-public class CSVReaderExample {
-
-    public static void main(String[] args) throws IOException {
-
-        // створюємо об'єкт CSVReader для читання файлу
-        CSVReader reader = new CSVReader(new FileReader("file.csv"));
-
-        // зберігаємо всі рядки файла у список
-        List<String[]> rows = reader.readAll();
-
-        // виводимо дані з кожного рядка
-        for (String[] row : rows) {
-            for (String cell : row) {
-                System.out.print(cell + " ");
-            }
-            System.out.println();
-        }
+public class CSVReader {
+    public static void main(String[] args) {
+        String path = "data.csv";
+        String line;
         
-        // закриваємо об'єкт CSVReader
-        reader.close();
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                // Щось робимо з даними
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
 
-Виведення:
+Запис у CSV файл:
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+import java.util.Arrays;
 
+public class CSVWriter {
+    public static void main(String[] args) {
+        List<List<String>> data = Arrays.asList(
+                Arrays.asList("Ім'я", "Ел. пошта", "Телефон"),
+                Arrays.asList("Андрій", "andriy@example.com", "123-456-7890"),
+                Arrays.asList("Юлія", "yulia@example.com", "098-765-4321")
+        );
+        String path = "output.csv";
+        
+        try (FileWriter csvWriter = new FileWriter(path)) {
+            for (List<String> rowData : data) {
+                csvWriter.append(String.join(",", rowData));
+                csvWriter.append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
-Name Age Gender
-John 25 Male
-Mary 30 Female
-```
 
-## Поглиблене дослідження
+## Deep Dive (Занурення глибше)
+CSV (Comma-Separated Values) з’явилося у 1970-х і досі популярне для табличних даних. Є альтернативи, як-от JSON чи XML, але CSV виграє простотою. При роботі з CSV треба пам’ятати про екранування ком, нових рядків та лапок, щоб уникнути помилок у файлах.
 
-CSV є стандартом для обміну структурованими даними з 1970-х років. Існують інші альтернативи, такі як JSON і XML, але вони не є такими простими у використанні, як CSV. При роботі з CSV потрібно враховувати різні варіації формату, такі як відмінності у символах розділювачів та визначення рядків, які містять коми.
+## See Also (Додатково)
+- [RFC 4180](https://tools.ietf.org/html/rfc4180) - формальний стандарт CSV.
+- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/) - бібліотека для роботи з CSV в Java.
+- [OpenCSV](http://opencsv.sourceforge.net/) - ще одна бібліотека Java для CSV.
 
-## Дивіться також
-
-- [Офіційна документація Java для роботи з CSV](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Бібліотека OpenCSV для роботи з CSV у Java](http://opencsv.sourceforge.net/)
-- [Стаття на Habr про роботу з CSV у Java](https://habr.com/ru/post/486890/)
+*Примітка: Це скорочена стаття, без зайвих деталей і припущень. Озирніться за теорією та практикою для повного розуміння.*

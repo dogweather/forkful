@@ -1,7 +1,7 @@
 ---
-title:                "Programmazione con yaml"
-html_title:           "TypeScript: Programmazione con yaml"
-simple_title:         "Programmazione con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con YAML significa utilizzare un formato di dati leggibile dall'uomo che viene utilizzato principalmente per la configurazione dei file. I programmatori spesso lavorano con YAML per la sua semplice sintassi e per la sua flessibilità.
+## What & Why?
+YAML è un formato per dati leggibili da umani, usato per configurazioni o dati da serializzare. Programmatori lo usano per la sua leggibilità e semplicità, ideale per file di configurazione o integrazione con sistemi di deployment e orchestrazione.
 
-## Come fare:
-Si può facilmente lavorare con YAML in TypeScript utilizzando la libreria ```yamljs```. Ecco un esempio di codice che mostra come leggere un file YAML e accedere ai suoi dati:
+## How to:
+Per lavorare con YAML in TypeScript, occorre prima un parser, come `js-yaml`. Installalo via npm:
 
-```TypeScript
-const yaml = require('yamljs');
-const config = yaml.load('./config.yml');
-console.log(config.name); // output: "John Doe"
+```bash
+npm install js-yaml
 ```
 
-## Approfondimento:
-Questa libreria è stata creata da Jason Diamond nel 2007 ed è disponibile per molti linguaggi di programmazione diversi. Alcune alternative familiarità sono JSON (che è il formato parente di YAML) e XML (che è stato molto utilizzato in passato). La libreria ```yamljs``` è basata su una libreria di parsing in JavaScript chiamata ```yamlparser``` e supporta anche la scrittura di file YAML.
+Ecco come leggere YAML da file e trasformarlo in un oggetto JavaScript:
 
-## Guarda anche:
-- Documentazione ufficiale di YAML: https://yaml.org/
-- Libreria di parsing JS: https://github.com/jeremyfa/yamlparser
-- Alternativa a JSON: https://www.json.org/
-- Alternativa a XML: https://www.w3.org/XML/
+```typescript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+
+const fileContents = fs.readFileSync('config.yaml', 'utf8');
+const data = yaml.load(fileContents);
+console.log(data);
+```
+
+Assumendo che `config.yaml` sia:
+
+```yaml
+version: 1
+services:
+  web:
+    image: 'node:14'
+    ports:
+      - '80:80'
+```
+
+L'output sarà:
+
+```typescript
+{ version: 1, services: { web: { image: 'node:14', ports: ['80:80'] } } }
+```
+
+## Deep Dive
+YAML, abbreviazione di "YAML Ain't Markup Language", è emerso nei primi anni 2000 come alternativa a XML. Alternativi a YAML includono JSON e TOML, ma YAML è spesso preferito per la sua leggibilità. Implementando il parsing di YAML in TypeScript, bisogna considerare le potenziali vulnerabilità come il YAML bombing, quindi è essenziale utilizzare librerie aggiornate e ben mantenute.
+
+## See Also
+- Documentazione ufficiale YAML: https://yaml.org
+- Libreria `js-yaml` GitHub Repository: https://github.com/nodeca/js-yaml
+- Guide di YAML per il suo utilizzo con Kubernetes: https://kubernetes.io/docs/home/
+- Confronto tra YAML e JSON: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json

@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "Java: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "Java"
 category:             "Java"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
-写入文本文件是指将数据或文本内容存储到计算机的永久性存储设备中。程序员经常写入文本文件是为了保存应用程序的数据，以便在需要时可以读取和处理。
+## What & Why? (是什么 & 为什么？)
+写文本文件就是在电脑上创建并保存文字数据。程序员这么做，是为了记录日志、保存设置或导出数据。
 
-# 如何：
+## How to: (如何操作：)
 ```Java
-// 用Java写入文本文件
-try {
-    // 创建文件对象并指定文件路径
-    File file = new File("file.txt");
-    // 创建一个写入文件的对象
-    FileWriter writer = new FileWriter(file);
-    // 要写入的文本内容
-    String text = "这是要写入的文本";
-    // 使用write()方法写入文本内容
-    writer.write(text);
-    // 关闭文件写入流
-    writer.close();
-} catch (IOException e) {
-    e.printStackTrace();
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteTextFile {
+    public static void main(String[] args) {
+        String textToWrite = "Hello, this is a sample text.";
+        String filePath = "sample.txt";
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(textToWrite);
+            System.out.println("File written successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing the file: " + e.getMessage());
+        }
+    }
 }
 ```
+运行以上代码后，会创建一个名为 `sample.txt` 的文本文件，内容是 "Hello, this is a sample text." 并输出 "File written successfully."
 
-# 深入了解：
-1. 在过去，程序员使用磁带或磁盘来保存数据，但现在写入文本文件已经成为一种更方便和更常用的方法。
-2. 除了使用Java写入文本文件，还可以使用其他编程语言如Python、C++等。
-3. 写入文本文件的实现原理通常是将文本内容转换为二进制数据，并使用操作系统提供的文件系统来存储。
+## Deep Dive (深入了解：)
+早期，Java 的 I/O 操作比较复杂，但是随着 `java.nio` 包的出现和更新，文件操作变得更简单。不过，老式 `java.io` 和新式 `java.nio` 都能写文件。另外，可以通过缓冲写入 (BufferedWriter) 提高性能，或者使用 `PrintWriter` 进行格式化输出。
 
-# 参考链接：
-- [Java文件操作文档](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [如何使用Java写入文件](https://www.w3schools.com/java/java_files_create.asp)
+## See Also (另请参阅：)
+- [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)
+- [Oracle Java NIO File API](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Java Tutorials – Writing I/O](https://docs.oracle.com/javase/tutorial/essential/io/)

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Bash: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso e por que os programadores o usam?
-CSV (Comma Separated Values) é um formato de arquivo usado para armazenar dados tabulares, como planilhas. Ele é composto por colunas e linhas, com cada coluna sendo separada por vírgulas. Os programadores trabalham com arquivos CSV para importar e exportar dados de diferentes fontes, como bancos de dados e planilhas, facilitando o compartilhamento e análise de informações.
+## O que é & Por quê?
+Trabalhar com CSV (Valores Separados por Vírgula) é lidar com dados em um formato de texto simples muito usado para troca de informações entre diferentes sistemas. Programadores o utilizam pela simplicidade, interoperabilidade e por ser amplamente suportado.
 
 ## Como fazer:
-Exemplo de código:
+```Bash
+# Lendo um arquivo CSV linha por linha
+while IFS=, read -r col1 col2 col3
+do
+  echo "Coluna1: $col1 - Coluna2: $col2 - Coluna3: $col3"
+done < exemplo.csv
 ```
-Bash
-# Importando dados de um arquivo CSV para uma variável
-dados=$(cat arquivo.csv)
-
-# Separando os dados em colunas e extraindo informações específicas
-echo "$dados" | cut -d ',' -f 2,3 # seleciona colunas 2 e 3
-echo "$dados" | grep "nome" # procura pela palavra "nome" nos dados
+Saída esperada:
+```
+Coluna1: Valor1 - Coluna2: Valor2 - Coluna3: Valor3
+...
+```
+```Bash
+# Extraindo dados com 'cut'
+cut -d ',' -f 2 exemplo.csv # Retorna a segunda coluna de cada linha
 ```
 
-Exemplo de saída:
-```
-exemplo1, exemplo2
-nome: exemplo
-```
+## Mergulho Profundo
+O formato CSV surgiu na década de 1970 e se tornou um padrão informal ao longo do tempo devido à sua simplicidade. Alternativas, como o formato JSON ou XML, oferecem estruturas mais ricas, mas são mais complexas. Detalhes de implementação no Bash incluem a manipulação do delimitador de campo (IFS) e o uso de loops para processar cada linha.
 
-## Aprofundando:
-CSV foi criado na década de 1970 para facilitar a troca de dados entre programas diferentes. Alguns formatos de arquivos alternativos incluem XML e JSON, mas o CSV é mais simples e amplamente utilizado devido à sua estrutura básica. Para trabalhar com arquivos CSV em Bash, é necessário estar familiarizado com os comandos de manipulação de texto, como cut e grep.
-
-## Veja também:
-- [CSV no Wikipedia](https://pt.wikipedia.org/wiki/Comma-separated_values)
+## Veja Também
+- Manual do Bash: https://www.gnu.org/software/bash/manual/
+- Tutorial AWK para processamento de CSV: https://www.gnu.org/software/gawk/manual/gawk.html
+- Guia avançado de scripts de shell: https://tldp.org/LDP/abs/html/

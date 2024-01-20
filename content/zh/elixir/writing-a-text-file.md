@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "Elixir: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件？为什么要写它？
+## What & Why? (什么以及为什么？)
 
-文本文件是一个存储纯文本数据的文件，它可以被计算机读取和处理。程序员通常会使用文本文件来存储和传输数据，比如配置文件、日志文件和代码文件。这样可以确保数据的可读性和一致性，方便进行后续的处理和编辑。
+写入文本文件就是将字符串数据保存到文件系统中的标凑操作。程序员这么做是为了数据持久化，日志记录，或给其他程序传递信息。
 
-## 如何编写文本文件？
-
-```Elixir
-# 创建一个名为 "data.txt" 的文本文件，并写入 "Hello World!" 字符串
-File.write("data.txt", "Hello World!")
-```
+## How to: (如何操作：)
 
 ```Elixir
-# 追加数据到已存在的文本文件中
-File.append("data.txt", "\nThis is a new line.")
+# 写入字符串到文件
+File.write!("hello.txt", "你好，世界！")
+
+# 检查文件内容
+IO.puts(File.read!("hello.txt"))
+```
+输出:
+```
+你好，世界！
 ```
 
-```Elixir
-# 读取文本文件中的内容
-File.read("data.txt")
-# => "Hello World!\nThis is a new line."
-```
+## Deep Dive (深入探讨)
 
-## 深入了解
+写入文本文件是自编程诞生以来就存在的需求。Elixir中用`File`模块和Erlang虚拟机的能力提供这一功能。与文件流操作——如`IO.stream`——相比，`File.write!`简单明了，适用于一次写入场景。写入大文件时，考虑使用流式写入，这对内存更友好。
 
-文本文件的历史可以追溯到计算机诞生之初。它是人类交流的一种重要方式，也是计算机编程不可或缺的一部分。除了文本文件，还有其他类型的文件，比如二进制文件。文本文件的主要优点是易于编辑和维护，但是对于存储大量数据来说不够高效。在Elixir中，也可以使用其他库，比如CSV和JSON，来处理特定格式的文本文件。
+## See Also (另请参阅)
 
-## 参考资料
-
-[Elixir文档](https://elixir-lang.org/getting-started/file-i-o.html)
-
-[Unicode和文本文件的关系](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- Elixir 文件操作官方文档: [File Module](https://hexdocs.pm/elixir/File.html)
+- Erlang 文件I/O: [Erlang :file](http://erlang.org/doc/man/file.html)
+- Elixir学习资源: [Elixir School](https://elixirschool.com/en/)

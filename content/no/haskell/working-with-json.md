@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Haskell: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Arbeidet med JSON handler om å håndtere data i et format som er lett for datamaskiner å tolke og for mennesker å lese. Dette er viktig for å kunne utveksle og manipulere data på en effektiv måte. Programmere bruker JSON for å lagre og transportere data mellom forskjellige programmer og systemer.
+## Hva & Hvorfor?
+Jobbing med JSON handler om å parse og generere data i JavaScript Object Notation-formatet, et lettvekts datautvekslingsformat. Programmerere gjør det fordi det er enkelt å lese for mennesker og lett å parse for maskiner.
 
-## Slik gjør du det:
-Haskell har innebygd støtte for å håndtere JSON gjennom et bibliotek kalt "aeson". Du kan starte ved å importere biblioteket og definere typene du ønsker å arbeide med.
+## Hvordan:
+For å jobbe med JSON i Haskell, bruker du ofte biblioteket `aeson`. Her er et raskt eksempel:
 
-```Haskell
+```haskell
+{-# LANGUAGE DeriveGeneric #-}
+
 import Data.Aeson
+import GHC.Generics (Generic)
+import qualified Data.ByteString.Lazy as B
 
-data Person = Person { name :: String, age :: Int } deriving (Show)
+data Person = Person
+  { navn :: String
+  , alder :: Int
+  } deriving (Show, Generic)
 
-instance FromJSON Person where 
-    parseJSON (Object v) = Person <$> v .: "name" <*> v .: "age"
-```
+instance ToJSON Person
+instance FromJSON Person
 
-Deretter kan du bruke funksjonen `decode` for å konvertere en JSON-streng til en Haskell-verdi.
-
-```Haskell
+main :: IO ()
 main = do
-    let jsonStr = "{\"name\":\"Bob\", \"age\": 25}"
-    case decode jsonStr :: Maybe Person of
-        Just person -> putStrLn $ "Personens navn er " ++ name person ++ " og han er " ++ show (age person) ++ " år gammel."
-        Nothing -> putStrLn "Klarte ikke å konvertere JSON til en Person-verdi."
+  let person = Person "Ola" 25
+  B.writeFile "person.json" (encode person)
+  
+  innlestPerson <- B.readFile "person.json"
+  let decodedPerson = decode innlestPerson :: Maybe Person
+  print decodedPerson
 ```
 
-Output:
-```
-Personens navn er Bob og han er 25 år gammel.
-```
+Kjører du dette, vil filen `person.json` inneholde JSON-representasjonen av `Person`, og programmet vil skrive ut: `Just (Person {navn = "Ola", alder = 25})`.
 
 ## Dypdykk:
-JSON står for JavaScript Object Notation og ble utviklet som et enklere og mer lettvektig alternativ til XML. Det finnes mange alternative biblioteker for å arbeide med JSON i Haskell, for eksempel `JSON`, `HJSON` og `JSONStream`. I tillegg kan du også bruke enkodere og dekodere for JSON gjennom Haskell sine generiske programmeringsegenskaper.
+JSON ble popularisert på 2000-tallet som et alternativ til XML. Haskell's `aeson`-biblioteket, inspirert av JavaScripts JSON-funksjoner, er nå standard for å håndtere JSON. Det bruker `DeriveGeneric` for automatisk instansgenerering, og `ByteString` for effektivitet. Alternativer inkluderer `json`- og `jsonb`-bibliotekene, men `aeson` anbefales for dets ytelse og fleksibilitet.
 
-## Se også:
-- [Haskell Aeson dokumentasjon](https://hackage.haskell.org/package/aeson)
+## Se Også:
+- `aeson` biblioteket på Hackage: https://hackage.haskell.org/package/aeson
+- Introduksjon til JSON: https://www.json.org/json-no.html
+- En mer grundig guide til `aeson`: https://artyom.me/aeson

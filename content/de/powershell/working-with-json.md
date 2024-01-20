@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "PowerShell: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Arbeiten mit JSON ist eine gängige Praxis in der Programmierung. Es bezieht sich auf den Austausch von Daten in einem bestimmten Format, das für Computer leicht lesbar ist. Programmierer verwenden JSON, um Informationen zwischen verschiedenen Anwendungen auszutauschen oder Daten zu speichern.
+JSON (JavaScript Object Notation) ist ein leichtes Austauschformat, das menschenlesbar und für Maschinen einfach zu parsen ist. Programmierer nutzen JSON, weil es Webstandards unterstützt und das Teilen von Daten zwischen verschiedenen Programmiersprachen vereinfacht.
 
-## Wie geht's?
-Um mit JSON in PowerShell zu arbeiten, können wir das integrierte `ConvertTo-Json` und `ConvertFrom-Json` cmdlets verwenden. Hier sind ein paar Beispiele, wie wir damit umgehen können:
-
+## How to:
 ```PowerShell
-# JSON-Objekt aus einer Datei erstellen
-$jsonObject = Get-Content -Path .\meinedaten.json | ConvertFrom-Json
+# JSON-String in PS-Objekt umwandeln
+$jsonString = '{"name": "Max", "age": 28}'
+$person = $jsonString | ConvertFrom-Json
+$person.name  # Ausgabe: Max
 
-# JSON-Objekt aus einer Variable erstellen
-$string = '{"Name": "Max", "Alter": 25}'
-$jsonObject = $string | ConvertFrom-Json
-
-# JSON-Objekt in eine Datei speichern
-$jsonObject | ConvertTo-Json | Out-File -Path .\meinedaten.json
-
-# JSON-Objekt durchsuchen und Eigenschaften abrufen
-$jsonObject | Where-Object {$_.Name -eq "Max"} | Select-Object Alter
+# PS-Objekt in JSON-String umwandeln
+$personObj = [PSCustomObject]@{
+    name = 'Lisa'
+    age = 25
+}
+$json = $personObj | ConvertTo-Json
+$json  # Ausgabe: {"name":"Lisa","age":25}
 ```
 
-Die Ausgabe würde folgendermaßen aussehen:
-```PowerShell 
-Alter: 25
-```
+## Deep Dive
+JSON wurde Anfang der 2000er Jahre populär, als Webdienste und AJAX Anrufe mehr verbreitet waren. Alternativen zu JSON sind XML oder YAML, aber JSON ist wegen seiner Einfachheit und Geschwindigkeit bevorzugt. Beim Umgang mit JSON in PowerShell verwendet ConvertFrom-Json .NET-Methoden zum Parsen des Strings und ConvertTo-Json zum Konvertieren des Objekts zurück in einen String.
 
-## Tiefsee-Tauchen
-JSON wurde ursprünglich als Alternative zu XML entwickelt, um das Austauschen von Daten zwischen Anwendungen zu vereinfachen. Es ist leichtgewichtig, einfach zu verstehen und in verschiedenen Programmiersprachen unterstützt. Es gibt auch andere Methoden, um mit JSON in PowerShell zu arbeiten, wie z.B. der `ConvertFrom-Json` cmdlet. Außerdem können Entwickler JSON-Serialisierungsschemata verwenden, um strukturierte Daten zu speichern und abzurufen.
-
-## Siehe auch
-- JSON-Serialisierung mit [Newtonsoft.Json](https://www.newtonsoft.com/json)
-- [Die offizielle JSON-Website](https://www.json.org/json-de.html)
+## Siehe Auch
+- Offizielle PowerShell-Dokumentation zu JSON: [link]
+- JSON-Standard-Spezifikation von ECMA: [link]
+- Vergleich von JSON-Alternativen (XML, YAML): [link]

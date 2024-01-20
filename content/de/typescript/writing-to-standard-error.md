@@ -1,6 +1,6 @@
 ---
 title:                "Schreiben auf Standardfehler"
-html_title:           "TypeScript: Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben an den Standardfehler ist eine Methode, die von Programmierern verwendet wird, um Fehler und Warnungen in der Konsole anzuzeigen. Dies ist eine gute Möglichkeit, um den Entwickler auf Probleme aufmerksam zu machen und das Debugging zu erleichtern.
+Standard Error (stderr) ist ein Ausgabekanal für Fehlermeldungen und Diagnosen. Programmierer nutzen stderr, um Fehler von normalen Ausgaben zu trennen, was bei der Fehlersuche und dem Logging hilft.
 
-## So geht's:
-Um an den Standardfehler zu schreiben, verwenden wir die Funktion "console.error()". Hier ist ein Beispielcode in TypeScript:
-
+## Anleitung:
 ```TypeScript
-console.error("Ein Fehler ist aufgetreten!");
+// Ein einfaches Beispiel für das Schreiben auf stderr in TypeScript
+console.error('Dies ist ein Fehler');
+
+// Beispiel für die Verwendung von stderr mit einer bedingten Aussage
+if (!process.env.SOME_ENV_VARIABLE) {
+    console.error('Umweltvariable SOME_ENV_VARIABLE nicht gesetzt!');
+}
+
+// Du kannst auch Fehlerobjekte auf stderr ausgeben
+const error = new Error('Ein ernstes Problem ist aufgetreten');
+console.error(error);
 ```
-Die Ausgabe dieses Codes wäre:
-`Ein Fehler ist aufgetreten!`
-
-Um eine Variable als Fehlermeldung auszugeben, nutzen wir die Zeichenkette-Variante der Funktion:
-
-```TypeScript
-let num: number = 42;
-console.error("Die Zahl " + num + " ist falsch!");
+Ausgabe:
 ```
-Die Ausgabe wäre dann:
-`Die Zahl 42 ist falsch!`
+Dies ist ein Fehler
+Umweltvariable SOME_ENV_VARIABLE nicht gesetzt!
+Error: Ein ernstes Problem ist aufgetreten
+```
 
-## Tiefere Einblicke:
-Das Schreiben an den Standardfehler ist eine häufig verwendete Technik, um auf Probleme hinzuweisen. Es hat seinen Ursprung in der UNIX-Welt, in der Fehlermeldungen häufig an die Konsole geleitet wurden. Eine Alternative zu dieser Methode ist das Schreiben an den Standardausgang (console.log()), aber dies wird meist für normale Ausgaben und nicht für Fehler verwendet.
+## Deep Dive:
+Stderr ist ein Standard-Dateistrom, getrennt von Standard Output (stdout), und existiert seit den frühsten Tagen von Unix. Es ermöglicht, dass Fehlermeldungen auch dann sichtbar bleiben oder umgeleitet werden, wenn der gewöhnliche Output umgeleitet oder in eine Datei geschrieben wird. In Node.js wird `console.error()` genutzt, um auf stderr zu schreiben, und bietet eine einfache API, die sowohl Strings als auch komplexe Fehlerobjekte unterstützt. Diese Trennung ist besonders nützlich, wenn Skripte automatisiert und deren Ergebnisse analysiert werden.
 
-Die Implementierung des Schreibens an den Standardfehler ist sehr einfach und kann in jedem zugrunde liegenden Betriebssystem oder Laufzeitumgebung anders sein.
-
-## Siehe auch:
-- https://developer.mozilla.org/de/docs/Web/API/console/error
-- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#-type-checked-calls-to-console-error-warn-and-info
-- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#-new-never-type
+## Siehe Auch:
+- Node.js Dokumentation zu `console.error()`: https://nodejs.org/api/console.html#consoleerror
+- Ein tieferer Einblick in Unix-Standard-Streams: https://en.wikipedia.org/wiki/Standard_streams
+- Artikel über effektives Logging in TypeScript: https://www.tslang.cn/docs/handbook/decorators.html

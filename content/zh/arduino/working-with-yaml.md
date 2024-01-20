@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml的计算机编程"
-html_title:           "Arduino: 使用yaml的计算机编程"
-simple_title:         "使用yaml的计算机编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 关于Arduino中使用YAML的简介
+## 什么 & 为什么？
+YAML是一种数据序列化格式，易于人类阅读与写作，同时也易于计算机解析。编程时使用YAML可简化配置文件、数据交换和存储等复杂任务。
 
-YAML是一种用来存储数据的格式，它可以被程序员用来读取和写入数据。程序员使用YAML来存储和共享配置文件、数据库设置和其他任何需要存储的结构化数据。
+## 如何：
+```Arduino
+// 导入Arduino YAML库
+#include <ArduinoYAML.h>
 
-## 如何使用YAML
+void setup() {
+  Serial.begin(9600);
+  // 简单YAML例子
+  const char *yaml = "title: Arduino编程\nversion: 1.0\nfeatures:\n  - 易于学习\n  - 灵活性高";
+  
+  // 解析YAML
+  YamlParser<100> parser(yaml, strlen(yaml)); // 将字符串和长度传给解析器
+  YamlNode root = parser.parse();
 
-使用YAML的第一步是导入相关的库。Arduino IDE已经预装了YAML库，您只需要选择“库管理器”并在搜索栏中输入“YAML”就可以找到它。导入YAML库后，您就可以开始编写代码来读取和写入YAML文件了。
+  // 输出YAML内容
+  if (root.success()) {
+    Serial.println(root["title"].as<char *>());  // 输出标题
+    Serial.println(root["version"].as<float>()); // 输出版本
+    YamlNode features = root["features"];
+    
+    for (int i = 0; i < features.size(); i++) {
+      Serial.println(features[i].as<char *>());  // 输出特性列表
+    }
+  }
+}
 
-### 如何读取YAML文件：
-
+void loop() {
+  // 无需循环逻辑
+}
 ```
-Arduino ...
-#include <YAML.h>
-...
-YAML.load("config.yaml");
+样例输出：
 ```
-
-### 如何写入YAML文件：
-
-```
-Arduino ...
-#include <YAML.h>
-...
-YAML.begin();
-YAML.addValue("name", "Arduino");
-YAML.addValue("version", "1.8.12");
-YAML.end("config.yaml");
+Arduino编程
+1.0
+易于学习
+灵活性高
 ```
 
 ## 深入了解
+YAML，"YAML Ain't Markup Language"（递归缩写，意为YAML不是标记语言），起源于2001年，用来取代复杂的XML。JSON是YAML的替代选项，更侧重于数据交换但不如YAML人类友好。Arduino对YAML的支持通常通过第三方库实现，例如ArduinoYAML库，它解析YAML格式，主要用于配置及数据表示。
 
-YAML是一种轻量级的数据格式，在2001年被开发出来。与JSON和XML相比，YAML更易读，因为它使用缩进来表示层级关系。与XML相比，YAML也更容易编辑和修改，因为它不需要闭合标签。在Arduino中，除了YAML，您也可以使用JSON或XML来存储数据。
-
-## 参考资料
-
-如果您想了解更多关于YAML的内容，可以参考以下链接：
-
-1. YAML官方网站：https://yaml.org/
-2. YAML库文档：https://arduinojson.org/doc/api/classes/yaml-document/
+## 参阅资料
+- YAML官方网站：https://yaml.org
+- ArduinoYAML库文档：https://github.com/arduino-libraries/ArduinoYAML
+- YAML 1.2 规范：https://yaml.org/spec/1.2/spec.html
+- Arduino官方论坛：https://forum.arduino.cc

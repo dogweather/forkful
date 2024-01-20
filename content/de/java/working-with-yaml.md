@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Java: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Java"
 category:             "Java"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & Warum?
+## Was & Warum?
+YAML steht für "YAML Ain't Markup Language" und ist ein Format zum Speichern und Übertragen von Daten, das für Menschen einfach zu lesen ist. Java-Programmierer nutzen YAML häufig für Konfigurationsdateien, weil es übersichtlicher als XML oder JSON ist.
 
-Bei der Arbeit mit Java müssen wir oft mit Konfigurationsdateien arbeiten, um unsere Anwendungen zu verwalten. Eine sehr beliebte Art, Konfigurationsdateien zu erstellen, ist die Verwendung von YAML, einer einfachen und menschenlesbaren Datenformatierungssprache. YAML ist besonders hilfreich, da es flexibel, benutzerfreundlich und plattformunabhängig ist. Es ist auch bekannt für seine einfache Syntax und Flexibilität bei der Integration mit anderen Programmiersprachen.
+## How to:
+Um YAML in Java zu nutzen, brauchst du eine Bibliothek wie `snakeyaml`. Hier ein Beispiel, wie du eine YAML-Datei einliest:
 
-## Wie geht das?
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.util.Map;
 
-Um mit YAML in Java zu arbeiten, müssen wir zuerst die YAML-Library in unserem Projekt importieren. Anschließend können wir ganz einfach YAML-Dateien in unserem Code verarbeiten.
-
-### Beispiel:
-
-```Java
-Yaml yaml = new Yaml();
-
-// Lese eine YAML-Datei und speichere die Daten in einem Map-Objekt
-Map<String, Object> configData = yaml.load(new FileInputStream("config.yml"));
-``` 
-Dieser Code liest eine YAML-Datei mit dem Namen "config.yml" und speichert die Daten in einem Map-Objekt, das wir dann in unserem Code verwenden können.
-
-### Beispiele zur Verarbeitung von Daten:
-
-Um auf einzelne Werte in unserem Map-Objekt zuzugreifen, können wir einfach den Schlüssel des entsprechenden Werts verwenden:
-
-```Java
-// Zugriff auf Wert "port" in unserem Map-Objekt
-Integer port = (Integer) configData.get("port");
+public class YamlBeispiel {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        try (InputStream inputStream = YamlBeispiel.class
+                .getClassLoader()
+                .getResourceAsStream("config.yaml")) {
+            Map<String, Object> data = yaml.load(inputStream);
+            System.out.println(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-Wir können auch komplexe Datenstrukturen wie Listen und verschachtelte Maps verarbeiten:
+Stelle sicher, dass `config.yaml` im classpath liegt. Die Ausgabe könnte so aussehen:
 
-```Java
-// Zugriff auf Titel des ersten Videos in unserer Liste
-String videoTitle = (String) ((Map<String, Object>) configData.get("videos")).get("1").get("title");
+```java
+{database=localhost, port=3306, username=admin, password=secret}
 ```
 
-## Tiefere Einblicke
+## Deep Dive:
+YAML trat Anfang der 2000er Jahre auf. Es wurde als eine einfachere Alternative zu XML entworfen und wird bevorzugt, wenn die Lesbarkeit entscheidend ist. Neben `snakeyaml` gibt es Alternativen wie `jackson-dataformat-yaml`. Während `snakeyaml` hauptsächlich für das Lesen und Schreiben von YAML-Strukturen steht, bietet `jackson` umfangreiche Möglichkeiten wie Datenbindung und Schema-Validierung.
 
-YAML wurde ursprünglich als Teil der Programmiersprache Perl entwickelt, um die Lesbarkeit von Konfigurationsdateien zu verbessern. Mittlerweile wird es jedoch von vielen anderen Programmiersprachen unterstützt. Als Alternative zu YAML gibt es auch andere Formate wie JSON oder XML, die jedoch in der Regel weniger benutzerfreundlich sind.
-
-Um YAML in Java zu verwenden, können wir auch die SnakeYAML-Library verwenden, die zusätzliche Funktionen bietet, um die Arbeit mit YAML noch einfacher zu gestalten.
-
-## Siehe auch
-
-- [YAML-Website](https://yaml.org/)
-- [Offizielle Dokumentation für SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+## See Also:
+- Offizielle YAML-Website: [yaml.org](https://yaml.org)
+- SnakeYAML Engine: [bitbucket.org/asomov/snakeyaml-engine](https://bitbucket.org/asomov/snakeyaml-engine)
+- Jackson YAML-Modul: [github.com/FasterXML/jackson-dataformat-yaml](https://github.com/FasterXML/jackson-dataformat-yaml)

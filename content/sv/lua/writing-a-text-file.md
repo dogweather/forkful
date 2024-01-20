@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva en textfil"
-html_title:           "Lua: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,29 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva en textfil innebär att man skapar en fil som innehåller text, ofta med hjälp av ett programmeringsspråk. Programmar kan göra detta för att spara data eller för att skapa rapporter eller dokument.
+Att skriva till en textfil innebär att programmet sparar data i en fil på disken. Programmerare gör detta för datahållbarhet och för att dela information mellan olika program eller sessioner.
 
-## Hur man gör:
+## How to:
 ```Lua
--- Öppna en fil för skrivning
-file = io.open("mitt_dokument.txt", "w")
+-- Öppna en fil i skrivläge
+local fil = io.open("exempel.txt", "w")
 
--- Skriv text till filen
-file:write("Det här är ett exempel på en textfil.")
-
--- Stäng filen
-file:close()
-
--- Läsa innehållet från textfilen
-file = io.open("mitt_dokument.txt", "r")
-content = file:read("*a")
-print(content) -- Output: Det här är ett exempel på en textfil.
-file:close()
+-- Kontrollera att filen öppnades korrekt
+if fil then
+    -- Skriv till filen
+    fil:write("Hej, detta är lite text.\n")
+    fil:write("Och här är lite mer text.")
+    
+    -- Stäng filen
+    fil:close()
+else
+    print("Kunde inte öppna filen.")
+end
 ```
 
-## Deep Dive:
-Att kunna skriva en textfil är en viktig del av programmering eftersom det ger möjligheten att spara data permanent och enkelt dela information. En annan vanlig metod är att använda en databas för att spara data, men detta kan vara mer komplicerat och resurskrävande. Det finns också andra filformat för att spara data, som CSV eller JSON, men dessa är oftast mer specialiserade för specifika användningsområden.
+Output i `exempel.txt`:
+```
+Hej, detta är lite text.
+Och här är lite mer text.
+```
 
-## Se även:
-- [Läsning och skrivning av filer i Lua](https://www.lua.org/manual/5.3/manual.html#6.8)
-- [Skillnaden mellan textfiler och binära filer](https://www.lifewire.com/text-files-binary-files-2483332)
+## Deep Dive
+Historiskt har textfiler använts för att lagra data eftersom de är lätta att läsa för både människor och maskiner. Alternativ till att skriva i textfiler inkluderar databaser, binära filer och molntjänster. När du skriver till en fil i Lua hanterar `io.open` filåtkomst och filbufferten, vilket garanterar att datan korrekt skrivs till disken.
+
+## See Also
+- [Lua 5.4 Reference Manual: The I/O Library](https://www.lua.org/manual/5.4/manual.html#6.8)
+- [Programming in Lua (Fourth Edition) - File I/O](https://www.lua.org/pil/21.2.html)
+- [Learn Lua in Y Minutes](https://learnxinyminutes.com/docs/lua/)

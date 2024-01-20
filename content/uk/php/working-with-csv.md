@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "PHP: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що та чому?
 
-Робота з CSV - це один з способів обробки даних в програмуванні. CSV означає "Comma Separated Values" - це формат збереження даних у вигляді таблиці, де значення розділяються комами. Програмісти використовують CSV для зчитування та запису даних, зокрема для обробки великих обсягів інформації.
+Робота з CSV (Comma-Separated Values) - обробка текстових файлів, що містять дані, розділені комами. Програмісти використовують CSV через його простоту і універсальність для обміну даними між різними програмами і системами.
 
-## Як?
+## Как це зробити:
 
-У PHP є вбудована функція [fgetcsv()](https://www.php.net/manual/en/function.fgetcsv.php), яка дозволяє зчитати дані з CSV файлу у вигляді масиву. Наприклад, якщо у файлі є наступний рядок даних: `John,Smith,25`, то виклик функції `fgetcsv()` поверне масив `['John', 'Smith', '25']`. 
+Обробка CSV в PHP проста. Щоб читати CSV-файл використовуємо `fgetcsv`, для створення - `fputcsv`.
 
+Читання CSV файлу:
+```php
+<?php
+$filename = 'data.csv';
+if (($h = fopen("{$filename}", "r")) !== FALSE) {
+    while (($data = fgetcsv($h, 1000, ",")) !== FALSE) {
+        print_r($data);
+    }
+    fclose($h);
+}
+?>
+```
 
+Створення CSV файлу:
+```php
+<?php
+$list = array (
+  array('Name', 'Email', 'Phone'),
+  array('John Doe', 'john@example.com', '1234567890')
+);
 
-Записувати дані в CSV файл можна за допомогою функції [fputcsv()](https://www.php.net/manual/en/function.fputcsv.php). Наприклад, для запису рядка `['Jane', 'Doe', '30']` у файл потрібно викликати функцію з аргументом файлу і масиву даних: `fputcsv($file, ['Jane', 'Doe', '30'])`.
+$fp = fopen('file.csv', 'w');
 
-## Глибше дослідження
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
 
-Формат CSV був створений для зручності обміну даними між комп'ютерними програмами ще в 1972 році. Хоча зараз є багато альтернативних форматів для зберігання даних, CSV залишається популярним серед програмістів через його простоту та загальну підтримку.
+fclose($fp);
+?>
+```
 
-Окрім стандартних функцій PHP, існують також інші бібліотеки, наприклад [league/csv](https://csv.thephpleague.com/), які надають більший функціонал для роботи з CSV файлами. Також можна знайти багато онлайн ресурсів та документації для допомоги з роботою з CSV в PHP.
+## Поглиблений аналіз:
 
-## Дивіться також
+CSV стандарт не регламентований, що веде до різниці в обробці файлів. Альтернативами є JSON або XML, які мають чіткісінтаксис, але CSV залишається популярним через свою простоту. При реалізації важливо враховувати можливість виникнення розбіжностей у кодуванні символів (наприклад, UTF-8 vs Windows-1251).
 
-- Документація PHP щодо роботи з CSV: [https://www.php.net/manual/en/ref.filesystem.php](https://www.php.net/manual/en/ref.filesystem.php)
-- Офіційна документація формату CSV: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
-- Бібліотека league/csv: [https://csv.thephpleague.com/](https://csv.thephpleague.com/)
+## Додатково:
+
+Для більш детального ознайомлення з CSV в PHP:
+- PHP Manual по роботі з файлами: https://www.php.net/manual/en/book.filesystem.php
+- PHP Manual по функціям `fgetcsv` і `fputcsv`: https://www.php.net/manual/en/function.fgetcsv.php, https://www.php.net/manual/en/function.fputcsv.php
+- Розгляд популярних бібліотек для роботи з CSV: https://github.com/thephpleague/csv

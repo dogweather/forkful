@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Java: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,25 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é CSV e por que os programadores o utilizam?
-Trabalhar com CSV (Valores Separados por Vírgulas) é uma maneira de manipular dados em formato de tabela utilizando texto simples. Isso permite que os programadores possam facilmente importar e exportar dados de planilhas e bancos de dados. Além disso, o formato CSV é amplamente suportado por diferentes linguagens de programação e aplicações, tornando-o uma escolha popular entre os programadores.
+## O Que & Por Quê?
+Trabalhar com CSV significa lidar com "Comma-Separated Values", um formato prático para armazenar tabelas de dados. Programadores usam isso pela simplicidade e ampla adoção em ferramentas de planilhas, bancos de dados e importação/exportação de dados.
 
-## Como fazer:
-Uma das maneiras mais simples de trabalhar com CSV em Java é utilizando a biblioteca OpenCSV. Aqui está um exemplo básico de como ler e imprimir dados de um arquivo CSV:
+## Como Fazer:
+Primeiro, para ler um arquivo CSV:
 
-```
-import com.opencsv.CSVReader;
+```java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
 
-public class LeitorCSV {
+public class CSVReader {
     public static void main(String[] args) {
-        try {
-            CSVReader reader = new CSVReader(new FileReader("dados.csv"));
-            String[] linha;
-            while ((linha = reader.readNext()) != null) {
-                for (String coluna : linha) {
-                    System.out.print(coluna + " ");
-                }
-                System.out.print("\n");
+        String path = "seu-arquivo.csv";
+        String line = "";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                System.out.println(Arrays.toString(values));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,16 +40,43 @@ public class LeitorCSV {
 ```
 Saída:
 ```
-Nome Sobrenome Idade
-João Silva 25
-Maria Santos 30
-Carlos Silva 20
+[valor1, valor2, valor3]
+[valor4, valor5, valor6]
+...
 ```
 
-## Profundidade:
-O formato CSV foi criado na década de 1970 como uma maneira simples de armazenar dados em planilhas eletrônicas. Atualmente, existem outras alternativas de formato de arquivo para armazenamento de dados estruturados, como JSON e XML. No entanto, o CSV ainda é amplamente utilizado por sua simplicidade e facilidade de uso. Além disso, existem outras bibliotecas Java disponíveis, além do OpenCSV, que permitem trabalhar com CSV.
+Agora, para escrever um arquivo CSV:
 
-## Veja também:
-- [OpenCSV docs] (http://opencsv.sourceforge.net/)
-- [Tutorial: Lendo e escrevendo arquivos CSV em Java] (https://www.baeldung.com/java-csv)
-- [Diferentes opções de bibliotecas para trabalhar com CSV em Java] (https://stackoverflow.com/questions/101100/csv-api-for-java)
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CSVWriter {
+    public static void main(String[] args) {
+        String path = "saida.csv";
+        String[] linhas = {
+            "valor1,valor2,valor3",
+            "valor4,valor5,valor6"
+            // mais dados aqui...
+        };
+
+        try (FileWriter csvWriter = new FileWriter(path)) {
+            for (String linha : linhas) {
+                csvWriter.append(linha).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+Isso gera um arquivo `saida.csv` com os dados fornecidos.
+
+## Deep Dive:
+CSV surgiu nos primeiros dias da computação pessoal. É mais leve que formatos como JSON ou XML, mas menos estruturado. Alternativas incluem Apache Commons CSV ou bibliotecas como OpenCSV para manipulação mais robusta e complexa de CSV em Java, com melhores práticas de análise e escrita.
+
+## Ver Também:
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- OpenCSV: http://opencsv.sourceforge.net/
+- Tutorial Java sobre FileReader: https://docs.oracle.com/javase/9/docs/api/java/io/FileReader.html
+- Tutorial Java sobre FileWriter: https://docs.oracle.com/javase/9/docs/api/java/io/FileWriter.html

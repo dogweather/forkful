@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "C++: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##何で・その目的？
+## What & Why? (何となぜ？)
+標準エラー出力（stderr）は、エラーメッセージや診断情報を表示します。これは、正常な出力（stdout）とエラーを分け、ログやユーザーに直接伝えるために使用します。
 
-**標準エラー出力 **とは、プログラマーがエラーメッセージを表示するための方法の一つです。これは、コンピューターが動作しないときにデバッグを手助けするために使用されます。プログラマーが問題を解決するために必要な情報を提供することができるため、重要なツールの一つとなっています。
-
-##やり方：
-
-```c++
+## How to: (方法)
+```C++
 #include <iostream>
-using namespace std;
 
-cerr << "エラーが発生しました" << endl;
+int main() {
+    std::cerr << "エラーが発生しました" << std::endl;
+    // 通常の出力
+    std::cout << "通常の出力" << std::endl;
+    return 0;
+}
 ```
-
-```c++
+サンプル出力:
+```
 エラーが発生しました
+通常の出力
 ```
 
-この例では、```cerr```というコマンドを使用し、エラーメッセージを出力しています。まず、```iostream```をインクルードし、```using namespace std;```を使用して、標準名前空間を指定します。次に、標準エラー出力を行うために```cerr```を使用し、メッセージを出力しています。最後に、```endl```を使用して改行を行います。
+## Deep Dive (深掘り)
+標準エラー出力はUNIXシステムの初期から存在します。`std::cerr`はバッファリングされていないので、`std::clog`や`std::cout`に比べて即時性があります。プログラムがクラッシュした場合でも、エラーメッセージは失われにくいです。実装において、`std::cerr`は`std::ostream`クラスを継承しており、標準出力と同じ操作を行うことができますが、目的が異なります。
 
-##深く掘り下げる：
-
-**標準エラー出力**は、C言語から継承された概念です。以前は、プログラムの実行中にエラーが発生した場合、エラーメッセージは標準出力に表示されていました。しかし、標準出力には通常のプログラム出力も含まれており、エラーメッセージが混ざってしまうことが多々ありました。そのため、標準エラー出力が導入され、エラーメッセージ専用の出力先として使用されるようになりました。
-
-代替方法としては、コンソールに直接エラーメッセージを出力することもできますが、プログラムがファイルなどの出力先を持っている場合、エラーメッセージが見にくくなる可能性があります。
-
-また、標準エラー出力はプログラムの実行中にエラーメッセージを表示できるため、例外処理などの重要な機能を実装する際にも使用されます。
-
-##関連リンク：
-
-- [C言語の標準エラー出力](https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rtref/ccerr.htm)
-- [C++での例外処理](https://ja.cppreference.com/w/cpp/error/exception)
+## See Also (関連情報)
+- [cppreference.com - std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
+- [C++ Standard Library Reference](http://www.cplusplus.com/reference/)
+- [GNU C++ Library Documentation](https://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/a01576.html)

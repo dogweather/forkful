@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Go: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
-Praca z YAML to nic innego jak obsługa pewnego rodzaju formatu danych w programowaniu. Programiści używają go do przechowywania ustrukturyzowanych informacji w plikach, które mogą być łatwo odczytywane przez ludzi i komputery.
+## What & Why? (Co i dlaczego?)
+Praca z YAML wiąże się z manipulowaniem danymi w lekkostrawnym dla człowieka formacie. Programiści używają YAML do konfiguracji, serializacji danych i komunikacji między różnymi elementami systemu.
 
-# Jak to zrobić:
-    ```Go
-    // Zaimportuj pakiet yaml
-    import "gopkg.in/yaml.v2"
+## How to: (Jak to zrobić?)
+Najpierw zainstalujmy pakiet `go-yaml` za pomocą `go get`:
 
-    func main() {
-        // Tworzenie mapy zawierającej przykładowe dane
-        data := map[string]interface{}{
-            "imie": "Anna",
-            "wiek": "27",
-            "hobby": "programowanie",
-        }
+```Go
+go get gopkg.in/yaml.v2
+```
 
-        // Kodowanie mapy w formacie YAML
-        output, err := yaml.Marshal(data)
-        if err != nil {
-            panic(err)
-        }
+Przykład kodu Go pokazujący jak odczytać YAML:
 
-        // Wyświetlanie wygenerowanego tekstu YAML
-        fmt.Println(string(output))
+```Go
+package main
+
+import (
+    "fmt"
+    "log"
+    "gopkg.in/yaml.v2"
+)
+
+type Config struct {
+    Hostname string `yaml:"hostname"`
+    Port     int    `yaml:"port"`
+}
+
+func main() {
+    data := []byte(`
+hostname: example.com
+port: 1234
+`)
+
+    var config Config
+    err := yaml.Unmarshal(data, &config)
+    if err != nil {
+        log.Fatalf("error: %v", err)
     }
-    ```
-    Wynik:
-    ```yaml
-    imie: Anna
-    wiek: 27
-    hobby: programowanie
-    ```
-    
-# Zagłębienie się:
-- YAML (YAML Ain't Markup Language) został stworzony w 2001 roku przez Clarka Evansa, Ingy'ego döt Net i Oren Ben-Kikiego. Jest to bezpieczny, łatwy w czytaniu format danych, który jest często używany w konfiguracji aplikacji i komunikacji między aplikacjami.
-- Alternatywami dla YAML są JSON i XML, jednak YAML jest bardziej czytelny dla człowieka i może łatwiej przetwarzać puste wartości i tablice wielowymiarowe.
-- Biblioteka yaml.v2 jest wbudowana w język Go i udostępnia funkcje do kodowania i dekodowania danych w formacie YAML.
+    fmt.Printf("Hostname: %s, Port: %d\n", config.Hostname, config.Port)
+}
+```
 
-# Zobacz również:
-- [Dokumentacja pakietu yaml.v2](https://pkg.go.dev/gopkg.in/yaml.v2)
-- [Oficjalna strona YAML](https://yaml.org/)
+Przykładowe wyniki:
+
+```Go
+Hostname: example.com, Port: 1234
+```
+
+## Deep Dive (W głąb tematu)
+YAML, czyli YAML Ain't Markup Language, pojawił się w 2001 roku. Jest alternatywą dla XML i JSON, często używaną ze względu na czytelność i prostszą syntaktykę. Podczas pracy z YAML, ważne jest zrozumienie, że tabulatory nie są dozwolone; należy używać spacji. Go korzysta z pakietu `yaml` do parsowania i generowania YAML.
+
+## See Also (Zobacz także)
+- Oficjalna strona YAML: https://yaml.org
+- Repozytorium `go-yaml`: https://github.com/go-yaml/yaml
+- YAML w Go Tutorial: https://www.sohamkamani.com/blog/golang/2018-07-19-golang-omitempty/

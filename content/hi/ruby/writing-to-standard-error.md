@@ -1,7 +1,7 @@
 ---
-title:                "मानक त्रुटि पर लिखना"
-html_title:           "Ruby: मानक त्रुटि पर लिखना"
-simple_title:         "मानक त्रुटि पर लिखना"
+title:                "मानक त्रुटि में लिखना"
+html_title:           "Arduino: मानक त्रुटि में लिखना"
+simple_title:         "मानक त्रुटि में लिखना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,19 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-प्रोग्रामर्स अपनी आईएस कोड के दौरान, अक्सर एरर्स या वर्निंग्स को दूसरी स्थिति में लिखते हैं। यह कोड को एकांतर और आसानी से समझने और दोष खोजने में मदद करता है।
+## What & Why? (क्या और क्यों?)
+स्टैंडर्ड एरर पर लिखना यानी आपके प्रोग्राम की ग़लतियों को एक विशेष जगह पर दिखाना. यह प्रोग्रामर्स इसलिए करते हैं क्योंकि यह आउटपुट और एरर मैसेजेज को अलग रखता है, जिससे डिबगिंग आसान हो जाती है.
 
-## कैसे करें?
+## How to: (कैसे करें:)
 ```Ruby
-$stderr.puts "यहां आपका एरर या वार्निंग दिखाएंगे।"
+# सिंपल मेसेज को स्टैंडर्ड एरर में लिखना
+$stderr.puts 'यह एक त्रुटि संदेश है'
+
+# स्टैंडर्ड एरर में डायरेक्टली लिखना
+$stderr.print 'और एक एरर!'
+
+# अगर आपको अपने प्रोग्राम में STDERR का इस्तेमाल करना है
+STDERR.puts 'STDERR का इस्तेमाल करते हुए एरर मेसेज'
+```
+सैंपल आउटपुट:
+```
+यह एक त्रुटि संदेश है
+और एक एरर!
+STDERR का इस्तेमाल करते हुए एरर मेसेज
 ```
 
-आप ```puts``` की जगह ```$stderr.puts``` या ```p``` की जगह ```$stderr.print``` का उपयोग करके अपने कोड को स्टैण्डर्ड एरर में लिख सकते हैं।
+## Deep Dive (गहराई में जानकारी):
+स्टैंडर्ड एरर (stderr) एक स्ट्रीम है जो UNIX में शुरू हुई थी. यह अक्सर स्टैंडर्ड आउटपुट (stdout) से अलग होती है. Ruby में `$stderr` और `STDERR` इसकी पहचान हैं. वैकल्पिक रूप से, प्रोग्रामर `IO#write` और `IO#puts` जैसे मेथड का उपयोग कर सकते हैं या लॉगिंग लाइब्रेरीज का उपयोग कर सकते हैं.
 
-## गहराई में जाएं
-पहले वक्त पर, प्रोग्रामर्स अपने कोड के डीबगिंग के लिए ```puts``` का उपयोग करते थे। लेकिन, जब अपना कोड बहुत बड़ा होता था, तो यह असुविधाजनक हो जाता था। इसलिए, हम अपने कोड के आकार को छोटा रखने के लिए स्टैण्डर्ड एरर में लिखने की प्रक्रिया को अपनाया है। अन्य विकल्पों में इंतेज़ार करने के बजाय, स्टैण्डर्ड एरर में लिखना स्पष्ट और साफ़ होता है।
-
-## और देखें
-- [The Ruby Standard Error Class](https://ruby-doc.org/core-3.0.0/StandardError.html)
-- [Difference between puts and $stdout.puts](https://stackoverflow.com/questions/16572825/what-is-the-difference-between-puts-and-stdout-puts)
+## See Also (संबंधित स्रोत):
+- Ruby Docs on I/O: [https://ruby-doc.org/core-3.1.0/IO.html](https://ruby-doc.org/core-3.1.0/IO.html)
+- Wikipedia page on Standard streams: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "「csvとの作業」"
-html_title:           "Elm: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-ElmでCSVを扱う: なぜして、どうする？
-
 ## What & Why?
-
-CSVとは、データを表形式で表現するためのフォーマットです。プログラマーはこれを使用する理由として、データの整形や処理を容易にするために利用します。
+CSV（コンマ区切り値）は、データを簡単なテキスト形式で表す方法です。プログラマーは、CSVを使用して、様々なプログラムやシステム間でデータを簡単に交換、保存するために使います。
 
 ## How to:
-
-Elmでは、CSVを簡単に扱うことができます。以下のコードを使用して、CSVファイルを読み込み、データをテーブル形式で表示することができます。
+ElmでCSVを扱うには、パッケージが必要です。ここでは、サンプルのCSVデータを解析する単純な例を見てみましょう。
 
 ```Elm
 import Csv
 import Html
 
-type alias Row = List String
-
-type alias Table = List Row
-
-data : Csv.Decode.Result (Table) 
-data =
-    Csv.Decode.decodeString "id,name,age\n1,John,30\n2,Amy,25"
-
-viewRow : Row -> Html.Html msg
-viewRow row =
-    Html.tr []
-        (List.map (\ col -> Html.td [] [Html.text col]) row)
-
-viewTable : Table -> Html.Html msg
-viewTable table =
-    Html.table []
-        (Html.tr []
-            [ Html.th [] [Html.text "ID"], Html.th [] [Html.text "Name"], Html.th [] [Html.text "Age"] ]
-            :: List.map viewRow table
-        )
-
-main : Html.Html Msg
 main =
-    case data of
-        Ok table ->
-            viewTable table
-        Err err ->
-            Html.text "Error: " ++ (Csv.Decode.errorToString err)
+  let
+    csvData = "name,age\nAlice,30\nBob,25"
+    parsed = Csv.decode csvData
+  in
+  Html.text (toString parsed)
 
+-- 出力: Ok (Just [["name","age"],["Alice","30"],["Bob","25"]])
 ```
 
-このコードを実行すると、以下のようなテーブルが表示されます。
-
-| ID | Name | Age |
-|----|------|-----|
-| 1  | John | 30  |
-| 2  | Amy  | 25  |
-
 ## Deep Dive
-
-CSVは、Comma-Separated Valuesの略称で、テキストファイルとして保存されます。パラメーターをコンマで区切り、改行文字で行を区切ってデータを表現します。
-
-CSVは、テキストエディターで作成することもできますが、プログラムで処理することもできます。代替手段として、JSONやXMLなどのデータフォーマットもありますが、CSVはシンプルで取り扱いやすいため、よく利用されます。
-
-Elmでは、[Csvパッケージ](https://package.elm-lang.org/packages/elm-community/csv/latest/Csv)を使用してCSVデータを扱うことができます。また、[elm-parser](https://package.elm-lang.org/packages/elm/parser/latest/)を使うと、独自のCSVパーサーを作成することもできます。
+CSVは、Excelやデータベースなど、多くのアプリケーションで普及しているデータ形式です。他の代替品としては、JSONやXMLがありますが、CSVはそのシンプルさから特にデータの編集やデバッグが容易です。ElmでのCSV扱いには、通常、外部のパッケージを利用し、`Csv.decode` のような関数でデータを解析します。パフォーマンスやエラーハンドリングに配慮することが重要です。
 
 ## See Also
-
-- [elm-parser](https://package.elm-lang.org/packages/elm/parser/latest/)
+- Elm ドキュメント: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- CSV フォーマットについて: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Kotlin recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,30 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing a text file is the act of creating and saving a file that contains text-based data, using a computer program. Programmers often write text files to store persistent data or to generate reports.
+
+Writing a text file in programming involves creating and saving data to a readable file format, like .txt. Programmers do this to persist data, configure systems, log information, or export human-readable content.
 
 ## How to:
-To write a text file in Kotlin, follow these three simple steps:
-```
-// 1. Import the necessary packages
+
+Let's write "Hello, file!" to a "greeting.txt" file.
+
+```Kotlin
 import java.io.File
-import java.io.FileWriter
 
-// 2. Create a new file object, specifying the file name and location
-val file = File("data.txt")
-
-// 3. Write to the file using a FileWriter object
-val writer = FileWriter(file)
-writer.write("Hello World!")
-writer.close()
+fun main() {
+    val textToWrite = "Hello, file!"
+    File("greeting.txt").writeText(textToWrite)
+}
 ```
-The above code will create a file named "data.txt" in the same directory as your Kotlin file, and write the text "Hello World!" to it. You can also specify a different file path to save the file in a specific location.
 
-## Deep Dive:
-Text files have been used since the early days of computing to store data or communicate with other programs. They are simple and easily machine-readable, making them a popular choice among programmers. Alternatives to writing text files include using databases or creating binary files, but those options may be more complex or restrictive.
+After running:
+```
+Hello, file! (in greeting.txt)
+```
 
-When writing a text file, it is important to consider character encoding to ensure compatibility with different operating systems and devices. In Kotlin, you can specify the encoding when creating a FileWriter object, such as "UTF-8" or "UTF-16".
+What if we need to append text instead of overwriting?
 
-## See Also:
-- [Java File API documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Kotlin File API documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+```Kotlin
+fun appendTextToFile(filename: String, text: String) {
+    File(filename).appendText("\n$text")
+}
+
+fun main() {
+    appendTextToFile("greeting.txt", "Another line!")
+}
+```
+
+Result in `greeting.txt`:
+```
+Hello, file!
+Another line!
+```
+
+## Deep Dive
+
+Historically, text files have been a cornerstone in configuring and logging within software systems. While tools and formats (like XML, JSON) have evolved, text files remain a simple, universally accessible method to interact with data.
+
+Alternatives to `java.io.File` include `java.nio.file.Files` and `java.io.FileWriter`, offering more control and efficiency for larger files or more complex operations.
+
+Key implementation details:
+- **Encoding**: By default, `writeText` uses UTF-8 encoding. For different encoding, use `writeText(textToWrite, Charsets.ISO_8859_1)` or similar.
+- **Buffering**: When working with larger files, remember to buffer. Wrap your writer in a `BufferedWriter` for better performance.
+- **Exception Handling**: Be aware of potential `IOExceptions` and handle them accordingly.
+
+## See Also
+
+- Official Kotlin Documentation on File IO: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- `java.nio.file` package for modern file I/O: [Java Docs](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
+- Learn about `BufferedWriter` for efficient writing: [Java BufferedWriter](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)

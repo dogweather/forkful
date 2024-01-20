@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Fish Shell: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-CSV er et universelt format for å lagre og vise data, spesielt i tabeller med rader og kolonner. Det er mye brukt av programmerere for å behandle store mengder data.
+## Hva & Hvorfor?
+Å jobbe med CSV, eller "Comma-Separated Values", innebærer å manipulere og analysere data i tekstformat delt med komma. Programmerere gjør dette fordi CSV er enkelt, universelt og støttes av de fleste databehandling verktøy.
 
-# Hvordan:
-```fish shell
-# Lesing av CSV-fil
-set rows (csv_reader rows.csv)
+## Slik gjør du:
+Å lese en CSV-fil i Fish og skrive ut noen data kan gjøres slik:
 
-# Skrive ut kolonner av data fra CSV-fil
-echo $rows[column1]
+```Fish Shell
+set -l filename 'data.csv'
+awk -F ',' '{print $1 " " $2}' $filename
 ```
 
-# Dykk ned:
-CSV har vært i bruk siden 1970-tallet og er utviklet som en enkel og effektiv måte å lagre data på. Det finnes også andre formater som JSON og XML, men CSV er fortsatt populært på grunn av sin enkelhet og lesbarhet. Fish Shell tilbyr et innebygd kommandolinjeverktøy for å håndtere CSV-data, noe som gjør prosessen enklere for programmerere.
+__Eksempel på utdata:__
+```
+Navn Alder
+Ola 30
+Kari 25
+```
 
-# Se også:
-- For mer informasjon om å arbeide med CSV i Fish Shell, sjekk ut dokumentasjonen her: https://fishshell.com/docs/current/cmds/parse.html#csv
-- Hvis du ønsker å utforske alternative måter å arbeide med CSV-filer på, kan du sjekke ut programmeringsspråk som Python og R som tilbyr spesifikke biblioteker for å håndtere CSV-data.
+For å skrive til en CSV-fil:
+
+```Fish Shell
+set -l data "Per,35\nLise,28"
+echo $data > nydata.csv
+```
+
+## Dypdykk
+CSV-formatet ble opprettet for enkel datadeling på tvers av programmer. Det finnes alternativer som JSON og XML, men CSV er ofte foretrukket for sin enkelhet. Når man jobber med CSV i Fish, kan man bruke native Unix-verktøy som `awk`, `sed`, `cut` og `sort`. Det er viktig å håndtere forskjellige skilletegn og encodings riktig.
+
+## Se Også
+- GNU `awk` manualen: https://www.gnu.org/software/gawk/manual/gawk.html
+- `sed` & `awk` 101 hacks: https://www.thegeekstuff.com/2009/12/unix-sed-tutorial-awk-101-hacks-ebook
+- Fish shell dokumentasjon: https://fishshell.com/docs/current/index.html

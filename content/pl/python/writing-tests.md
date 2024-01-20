@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Python: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Python"
 category:             "Python"
@@ -10,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-
-Pisanie testów jest nieodłączną częścią procesu programowania. Jest to proces weryfikacji czy kod programu działa poprawnie oraz spełnia oczekiwane wymagania. Programiści piszą testy, aby uniknąć błędów i zapewnić niezawodność swoich programów.
+## Co i dlaczego?
+Pisanie testów to proces weryfikacji, czy nasz kod robi to, co mamy na celu. Programiści piszą testy, żeby unikać błędów, upraszczać wprowadzanie zmian i zwiększać jakość kodu.
 
 ## Jak to zrobić:
-
 ```Python
-# Importujemy moduł unittest, który pomaga nam w pisanie testów.
 import unittest
 
-# Tworzymy klasę Test, zawierającą funkcje testowe.
-class Test(unittest.TestCase):
-    # Funkcja sprawdzająca czy dwa wyrażenia są równe.
-    def test_equal(self):
-        self.assertEqual(1+2, 3)
-        
-    # Funkcja sprawdzająca czy wyrażenie jest prawdziwe.
-    def test_true(self):
-        self.assertTrue(5 > 3)
-        
-    # Funkcja sprawdzająca czy lista zawiera określony element.
-    def test_in(self):
-        my_list = [1, 2, 3]
-        self.assertIn(2, my_list)
-        
-# Uruchamiamy testy.
+class SimpleTest(unittest.TestCase):
+    def test_addition(self):
+        result = 1 + 1
+        self.assertEqual(result, 2)
+
 if __name__ == '__main__':
     unittest.main()
 ```
-
-**Wynik wykonania testów:**
+Sample Output:
 ```
-..
+.
 ----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+Ran 1 test in 0.000s
 
 OK
 ```
 
-## Deep Dive:
+## Dogłębna analiza
+Pisanie testów zaczęto rozważać z konieczności zachowania jakości w czasie ewolucji oprogramowania. Alternatywami są TDD (Test-Driven Development) czy BDD (Behavior-Driven Development), które zmieniają perspektywę pisania testów. Python używa `unittest`, `pytest`, `nose`, ale `pytest` jest najpopularniejszy ze względu na prostotę i wszechstronność.
 
-Pierwsze testy pojawiły się w latach 50. XX wieku. Nazywali się "programistycznymi testami jednostkowymi" i były używane w programowaniu w języku Fortran. Obecnie, istnieje wiele różnych bibliotek, narzędzi i frameworków do pisania testów w języku Python, takich jak unittest, pytest czy doctest.
-
-Alternatywnym podejściem do pisania testów jest "tdd" (test-driven development). Polega on na tym, aby najpierw napisać testy dla kodu, a dopiero potem napisać kod, który je przejdzie. Jest to popularna metoda wśród programistów zwłaszcza w metodyce Agile.
-
-Podczas pisania testów ważne jest, aby tworzyć testy możliwie najbardziej dokładne i obejmujące wiele różnych przypadków, aby zapewnić kompleksowe testowanie kodu.
-
-## Zobacz też:
-
-- Dokumentacja unittest: https://docs.python.org/3/library/unittest.html
-- Porównanie unittest i pytest: https://realpython.com/python-testing/
-- Tutorial tdd w Pythonie: https://www.obeythetestinggoat.com/pages/book.html#toc
+## Zobacz również
+- Dokumentacja `unittest`: https://docs.python.org/3/library/unittest.html
+- `pytest`: https://docs.pytest.org/en/latest/
+- Artykuł "Test-Driven Development" na Wiki: https://en.wikipedia.org/wiki/Test-driven_development

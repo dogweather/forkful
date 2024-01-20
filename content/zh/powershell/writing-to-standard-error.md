@@ -1,6 +1,6 @@
 ---
 title:                "写入标准错误"
-html_title:           "PowerShell: 写入标准错误"
+html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,17 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是标准错误及其用途？
-写入标准错误是指将程序执行中的错误信息输出到屏幕的特定位置，它与标准输出不同，后者主要用于输出程序处理结果。程序员通常会使用写入标准错误的方式来帮助排查程序中的错误。
+## 什么 & 为什么？
+标准错误流（Standard Error）是用来输出错误信息和诊断信息的特殊输出流。程序员使用它来将错误信息与常规输出分离，以方便调试和错误日志记录。
 
-## 如何实现：
+## 如何做：
 ```PowerShell
-Write-Error "这是一个标准错误信息" 
-```
-输出：
-```
-这是一个标准错误信息
+# 向标准错误输出写入信息
+Write-Error "这是一个错误消息"
+
+# 使用流重定向操作符将错误信息重定向到文件
+Write-Error "这是另一个错误消息" 2> errorlog.txt
+
+# 示例输出（显示于控制台）
+Write-Error : 这是一个错误消息
++ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
++ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
 
-## 深入了解：
-写入标准错误的概念最早出现在Unix操作系统中，随后被多种编程语言所采用，包括PowerShell。除了使用Write-Error命令之外，程序员也可以使用Write-Host命令将信息输出到屏幕。不过，Write-Host输出的信息不会被记录到日志文件中，而Write-Error则可以被记录下来，方便程序员查看错误信息并进行调试。
+## 深入探讨
+PowerShell最初是作为Windows环境的自动化和配置工具。它从经典的命令行和Unix shell获得灵感，实现了标准输入输出流的概念。与输出到控制台（Standard Output）不同，输出到标准错误（Standard Error）的实践允许开发者分离错误信息，有利于日志管理和自动化处理。在 PowerShell 里，使用 `Write-Error` 命令是最直观的方式，但还可以使用 `.NET` 类库或 `2>` 流重定向来实现高级功能和错误处理。
+
+## 相关资源
+- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
+- [about_Throw](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_throw)
+- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally)

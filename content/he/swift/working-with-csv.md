@@ -1,6 +1,6 @@
 ---
 title:                "עבודה עם קבצי CSV"
-html_title:           "Swift: עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום וברוכים הבאים למדריך מהיר לתכנות בשפת Swift! הפעם אנחנו נדבר על עבודה עם קבצי CSV ואיך לעזור לכם כמתכנתים בפעולה זו. בואו נתחיל!
+## מה ולמה?
+עבודה עם קובצי CSV מתייחסת לעיבוד ואינטראקציה עם נתונים המאורגנים בתצורת "ערכים מופרדים בפסיקים" – פורמט פופולרי לייצוא ויבוא של נתונים. תכניתנים עובדים עם קובצי CSV מכיוון שהם פשוטים לקריאה ולעיבוד גם על ידי מחשבים וגם על ידי בני אדם.
 
-## מה ומדוע?
-
-CSV היא ראשי תיבות של Comma Separated Values, שמשמעותו היא ערך שמופרד בפסיק. זהו פורמט נפוץ לאחסון ולשיתוף נתונים בקבצים טקסט. מתכנתים משתמשים בקבצי CSV כדי לשמור נתונים כגון ספרות, מחרוזות ותאריכים בצורה קלה ונוחה.
-
-## איך לעשות זאת?
-
-דוגמאות קוד ופלט מופשט:
+## איך לעשות:
 ```Swift
-// ייבוא הספרייה Foundation
 import Foundation
 
-// שימוש בפונקציה "components(separatedBy:)" כדי לספק את הנתונים מהנתיב של הקובץ
-if let csvFile = Bundle.main.url(forResource: "file", withExtension: "csv"),
-    let csvString = try? String(contentsOf: csvFile) {
-        let csvDataString = csvString.components(separatedBy: ",") // הפרדת נתונים כפי שמוגדר בספרייה
-        print(csvDataString) // פלט: ["שלום", "היי", "אני", "כותב", "מדריך"]
+// קריאת CSV מקובץ
+func readCSV(from filePath: String) -> String? {
+    do {
+        let contents = try String(contentsOfFile: filePath, encoding: .utf8)
+        return contents
+    } catch {
+        print("Error reading the file.")
+        return nil
+    }
 }
+
+// פירוק לשורות ועמודות
+func parseCSV(_ contents: String) -> [[String]] {
+    let rows = contents.components(separatedBy: "\n")
+    return rows.map { $0.components(separatedBy: ",") }
+}
+
+// דוגמא לשימוש
+if let filePath = Bundle.main.path(forResource: "example", ofType: "csv"),
+   let csvContent = readCSV(from: filePath) {
+    let parsedData = parseCSV(csvContent)
+    print(parsedData)
+}
+
+// פלט דוגמא
+// [["שם", "תז", "אימייל"], ["דני", "123", "danny@example.com"], ...]
 ```
 
-## מעמקים נמוכים
-
-הפורמט CSV נוצר כבר בשנות ה־70 כדי לקלוט נתונים רבים בצורה קלה ובפשטות. במקור, ניתן היה לשמור נתונים רק שפריצות תרומת, אך בשנים האחרונות הפורמט התפתח וכיום ניתן לשמור בו גם מידע רב יותר תובנתי כמו תאריכים ותוויות.
-
-למרבה המזל, ישנם אלטרנטיבות לפורמט CSV כמו JSON ו־XML שמציעות יכולות מתקדמות יותר ויישומים רבים יותר. אך CSV נשאר פופולרי מכיוון שהוא נוח ופשוט לשימוש.
-
-ב־Swift, ניתן להשתמש במספר ספריות כגון Foundation ו־CSVParser כדי לעבוד עם קבצי CSV. המימוש תלוי בכיצד בוחרים לעבוד עם הנתונים ואם ישנם ספריות נוספות שמציעות תכונות לעיבוד נתוני CSV בצורה מתקדמת יותר.
+## עיון מעמיק
+CSV, שהוחדר בשנות ה-70, הוא פורמט פשוט לייצג טבלאות נתונים כטקסט רגיל. ישנם פורמטים אלטרנטיביים כגון JSON ו-XML אשר מאפשרים מורכבות רבה יותר אך גם דורשים עיבוד מורכב יותר. ב-Swift, קריאה וניתוח של קבצי CSV מתבצעת לרוב באמצעות המרת הקובץ למחרוזת ולאחר מכן שימוש במתודות פירוק המחרוזת לשורות ועמודות.
 
 ## ראו גם
-
-למידע נוסף ודוגמאות קוד נוספות, אתם מוזמנים לצפות בפרויקט "CSV Parser" בפורום המסומך של שפת Swift.
-
-כמו כן, ניתן למצוא מידע נוסף על פורמט CSV ואת ההסטוריה שלו באמצעות חיפוש באינטרנט או נתוני לקוחות חיצוניים.
+- תיעוד Swift רשמי: [https://swift.org/documentation/](https://swift.org/documentation/)
+- מדריך לקריאה וכתיבה של קבצי CSV ב-Swift: [https://www.hackingwithswift.com/example-code/system/how-to-parse-a-csv-file-into-an-array](https://www.hackingwithswift.com/example-code/system/how-to-parse-a-csv-file-into-an-array)
+- דיון בפורומים על ניתוח נתוני CSV ב-Swift: [https://forums.swift.org/](https://forums.swift.org/)

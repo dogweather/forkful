@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Gleam: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,54 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest YAML i dlaczego jest ważny dla programistów?
-YAML to format pliku używany do przechowywania danych w formie czytelnej dla człowieka. Jest on szczególnie popularny w świecie programowania, ponieważ ułatwia przechowywanie i udostępnianie konfiguracji oraz danych w aplikacjach.
+## What & Why? (Co i Dlaczego?)
 
-## Jak tego używać?
-Poniżej znajdują się przykładowe kody oraz wynikowe wyjście, pokazujące, jak używać YAML w języku Gleam.
+YAML to format tekstowy do przechowywania danych, podobny do JSON, ale bardziej czytelne dla człowieka. Programiści używają go do konfiguracji projektów i danych, dzięki łatwościom w czytaniu i edycji.
 
-```
-Gleam.program(
-  "greetings_example",
-  optional_extra_inputs_to_this_code@Gleam.input_optional_names(()),
-  fn(_) {
-    let people_mappings = Gleam.Yaml.from_string("
-      -
-        name: John
-        age: 25
-      -
-        name: Sarah
-        age: 30
-    ")
+## How to: (Jak to zrobić:)
 
-    let people = people_mappings
-      |> Gleam.Dict.get("people")
-      |> Gleam.List.map(
-        fn
-          { name, age } ->
-            let greet = fn(person) { "Hello" ++ person.name }
-            greet({ name: person.name, age: person.age })
-        end
-      )
+Gleam obecnie nie posiada wbudowanego wsparcia dla YAML, więc trzeba używać zewnętrznych bibliotek. Poniżej znajduje się przykład, jak to zrobić z fikcyjną biblioteką `gleam_yaml`.
 
-    Gleam.io.print(people)
+```gleam
+import gleam_yaml
 
-    Gleam.unit
-  },
-)
-
+fn main() {
+  let data = """
+  name: Jan Kowalski
+  age: 30
+  languages:
+    - Polski
+    - Angielski
+  """
+  
+  let parsed_data = gleam_yaml.parse(data)
+  case parsed_data {
+    Ok(value) -> value
+    Error(err) -> err
+  }
+}
 ```
 
+**Wynik:**
 ```
-Hello John
-Hello Sarah
-
-()
+Ok(#{
+  "name": "Jan Kowalski",
+  "age": 30,
+  "languages": ["Polski", "Angielski"]
+})
 ```
 
-## Wgląd w zagadnienie YAML
-YAML został po raz pierwszy zaprojektowany przez Clarka Evansa w 2001 roku. Alternatywami dla YAML są między innymi formaty JSON i XML. W języku Gleam korzystamy z modułu `Gleam.Yaml` do pracy z plikami YAML.
+## Deep Dive (Głębsze spojrzenie)
 
-## Zobacz również
-- Dokumentacja modułu Gleam.Yaml: https://gleam.run/modules/gleam_yaml.html
-- Oficjalna strona YAML: https://yaml.org/
+YAML (YAML Ain't Markup Language) powstał w 2001 roku jako język łatwy do zrozumienia przez człowieka i maszyny. Alternatywą jest JSON, szybszy w przetwarzaniu, ale mniej czytelny. Implementacja obsługi YAML w Gleam zależy od zewnętrznych bibliotek. Przy obsłudze YAML ważne jest bezpieczne zarządzanie złożonością danych oraz unikanie podatności związanych z deserializacją.
+
+## See Also (Zobacz również)
+
+- Oficjalna strona YAML: [https://yaml.org](https://yaml.org)
+- Dokumentacja Gleam: [https://gleam.run](https://gleam.run)
+- Porównanie JSON i YAML: [https://json2yaml.com/](https://json2yaml.com/)

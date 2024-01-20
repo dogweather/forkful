@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Arduino: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-CSV (Comma Separated Values) to format pliku, który umożliwia przechowywanie danych w formie tabeli z rozdzielonymi przecinkami. Programiści często używają CSV do przechowywania danych o dużych objętościach, takich jak arkusze kalkulacyjne, ponieważ jest to prosty i wygodny sposób na organizację danych.
+## Co i Dlaczego?
+CSV to format pliku służący do przechowywania danych w formie tabelarycznej. Programiści używają go, by ułatwić wymianę danych między różnymi programami lub urządzeniami, dzięki jego prostocie i wszechstronności.
 
 ## Jak to zrobić:
-Możesz łatwo pracować z plikami CSV w Arduino za pomocą biblioteki SoftwareSerial. Najpierw musisz zaimportować bibliotekę, a następnie skonfigurować port szeregowy i prędkość transmisji. Następnie możesz otworzyć plik CSV, odczytać lub zapisać dane, a na koniec zamknąć plik. Poniżej znajduje się przykładowy kod, który pokazuje, jak odczytać dane z pliku CSV i wyświetlić je w monitorze szeregowym.
+Praca z CSV na Arduino zwykle obejmuje odczyt lub zapis danych przy użyciu karty SD. Oto przykład odczytu:
 
 ```Arduino
-#include <SoftwareSerial.h> //zaimportuj bibliotekę
-#define RX 10 //ustaw RX jako pin 10
-#define TX 11 //ustaw TX jako pin 11
-SoftwareSerial csv(RX,TX); //utwórz obiekt SoftwareSerial
-void setup(){  //konfiguracja portu szeregowego i prędkości transmisji
-    Serial.begin(9600);
-    csv.begin(9600);
-}
-void loop(){ 
-    if(csv.available()){ //jeśli jest dostępny plik CSV
-        String data = csv.readStringUntil(','); //odczytaj dane do pierwszego przecinka
-        Serial.println(data); //wyświetl dane w monitorze szeregowym
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(10)) {
+    Serial.println("Inicjalizacja karty SD nieudana!");
+    return;
+  }
+  myFile = SD.open("dane.csv");
+
+  if (myFile) {
+    while (myFile.available()) {
+      String data = myFile.readStringUntil('\n');
+      Serial.println(data);
     }
+    myFile.close();
+  } else {
+    Serial.println("Otwarcie pliku nieudane.");
+  }
+}
+
+void loop() {
+  // Nie potrzebujemy nic w pętli.
 }
 ```
 
-Przykładowy wynik:
-```
-Temperatura: 25C, Wilgotność: 50%, Czas: 10:00
-Temperatura: 28C, Wilgotność: 60%, Czas: 12:00
-Temperatura: 30C, Wilgotność: 55%, Czas: 14:00
+Przykład zapisu danych do pliku CSV:
+
+```Arduino
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(10)) {
+    Serial.println("Inicjalizacja karty SD nieudana!");
+    return;
+  }
+
+  myFile = SD.open("dane.csv", FILE_WRITE);
+  if (myFile) {
+    myFile.println("temperatura, wilgotnosc");
+    myFile.println("23.5, 60");
+    myFile.println("24.0, 58");
+    myFile.close();
+    Serial.println("Dane zapisane.");
+  } else {
+    Serial.println("Otwarcie pliku nieudane.");
+  }
+}
+
+void loop() {
+  // Nie potrzebujemy nic w pętli.
+}
 ```
 
-## Głęboka Płycizna:
-Format CSV został stworzony w 1972 roku jako sposób na przechowywanie danych w arkuszach kalkulacyjnych. Alternatywnym sposobem na przechowywanie danych tabelarycznych jest format JSON. Aby pracować z plikami CSV w Arduino, musisz mieć dostęp do portu szeregowego i odpowiedniej prędkości transmisji. Możesz również użyć gotowej biblioteki do obsługi plików CSV, która ułatwi pracę z danymi.
+## Dogłębniej:
+CSV pojawił się w latach 70-tych XX wieku. Jest proste: wartości oddzielone są przecinkami, a każdy wiersz to rekord danych. Alternatywą może być JSON czy XML, szczególnie gdy struktura danych jest bardziej złożona. Na poziomie implementacji pamiętaj, że Arduino ma ograniczone zasoby, więc trzymaj pliki małe i skoncentruj się na efektywnej manipulacji łańcuchami znaków.
 
 ## Zobacz również:
-- Dokumentacja biblioteki SoftwareSerial: https://www.arduino.cc/en/Reference/SoftwareSerial
-- Przykładowe projekty z wykorzystaniem plików CSV w Arduino: https://create.arduino.cc/projecthub/search?q=csv
-- Poradnik o pracowaniu z plikami CSV w Arduino: https://www.electronicshub.org/working-with-csv-files-in-arduino/
+- Dokumentacja Arduino SD: https://www.arduino.cc/en/reference/SD
+- Tutorial dotyczący pracy z CSV i Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite
+- Porównanie formatów danych (CSV, JSON, XML): https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite

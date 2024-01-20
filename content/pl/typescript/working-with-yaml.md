@@ -1,7 +1,7 @@
 ---
-title:                "Praca z YAML-em"
-html_title:           "TypeScript: Praca z YAML-em"
-simple_title:         "Praca z YAML-em"
+title:                "Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i po co?
+## What & Why? (Co i Dlaczego?)
+YAML to format służący do reprezentacji danych, ceniony za czytelność. Programiści używają YAML-a głównie do konfiguracji aplikacji, bo to łatwiejsze w utrzymaniu niż tradycyjne pliki konfiguracyjne.
 
-Praca z YAML to nic innego jak korzystanie z języka znaczników do obsługi strukturalnych danych. Jest to szczególnie przydatne dla programistów szybko tworzących i przetwarzających większe ilości informacji. Dzięki formatowi YAML możemy łatwo przechowywać i przesyłać dane oraz struktury danych między różnymi aplikacjami.
+## How to: (Jak to zrobić?)
+```typescript
+import * as yaml from 'js-yaml';
+import fs from 'fs';
 
-## Jak to zrobić?
+// Odczytanie YAML z pliku
+const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+console.log(doc);
 
-```TypeScript
-const yaml = require('js-yaml');
+// Zapisanie obiektu jako YAML do pliku
+const data = { name: "Jan Kowalski", age: 30 };
+fs.writeFileSync('./user.yaml', yaml.dump(data));
 
-// Przykładowy plik YAML
-const file = `
-- employee:
-    name: John
-    age: 28
-- employee:
-    name: Jane
-    age: 24
-`;
+// Output po odczycie (załóżmy, że config.yaml zawiera `name: "Jan Kowalski"`)
+// { name: 'Jan Kowalski' }
 
-// Parsowanie pliku YAML
-const data = yaml.safeLoad(file);
-
-// Wyświetlanie danych
-console.log(data);
-
-// Wynik:
-// [
-//     { employee: { name: 'John', age: 28 } },
-//     { employee: { name: 'Jane', age: 24 } }
-// ]
+// Sprawdzanie wyników zapisu w user.yaml
+// name: Jan Kowalski
+// age: 30
 ```
 
-## W szerszy kontekście
+## Deep Dive (Dogłębna Analiza)
+YAML wypłynął w 2001 roku, szybko stając się popularnym wyborem. Alternatywą jest JSON - szybszy w przetwarzaniu, ale mniej czytelny dla ludzi. Przy pracy z YAML-em istotne są wcięcia, które definiują strukturę, a także typy danych, jak listy i mapy. W TypeScript używamy biblioteki `js-yaml` do manipulacji YAML-em, która zapewnia nam bezpieczeństwo typów i łatwość użycia.
 
-YAML został stworzony w 2001 roku i pierwotnie miał służyć jako bardziej czytelna alternatywa dla formatu XML. Dzięki swojej prostocie i elastyczności, zyskał jednak popularność wśród programistów jako format przechowywania i przesyłania danych. Alternatywami dla YAML są między innymi JSON, CSV czy XML. Implementacja obsługi YAML w TypeScript jest możliwa dzięki modułowi `js-yaml`.
-
-## Zobacz też
-
-- Strona YAML: https://yaml.org/
-- Moduł `js-yaml` na stronie npm: https://www.npmjs.com/package/js-yaml
+## See Also (Zobacz Również)
+- Specyfikacja YAML: https://yaml.org/spec/1.2/spec.html
+- Repozytorium `js-yaml` na GitHub: https://github.com/nodeca/js-yaml
+- Dokumentacja TypeScript: https://www.typescriptlang.org/docs/
+- Porównanie JSON i YAML: https://phoenixnap.com/kb/yaml-vs-json

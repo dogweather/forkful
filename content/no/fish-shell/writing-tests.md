@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "Fish Shell: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,27 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å skrive tester er en viktig del av programmering. Det er en måte å sørge for at koden vår fungerer som den skal og å fange eventuelle feil eller bugs før de når produksjonsstadiet. Dette sparer oss for tid og unødvendige problemer.
+Skrivetesting er en prosess for å sjekke at kode gjør det den skal. Programmerere tester for å unngå feil og sikre kvalitet.
 
-## Hvordan:
-Å skrive tester i Fish Shell er enkelt og effektivt. Først må vi definere en funksjon med navnet "test". Dette kan gjøres ved å bruke nøkkelordet "function" etterfulgt av funksjonsnavnet og "test". Inne i denne funksjonen kan vi bruke kommandoer og sammenligne forventet og faktisk utgang ved hjelp av enkle sammenligningsoperatører. 
+## Hvordan gjøre det:
+For å kjøre tester i Fish Shell, bruk funksjoner og `test`-kommandoen. Legg tester i filer og kjør dem manuelt eller automatisert.
 
-```Fish Shell 
-function test_example
-    some_command
-    if test $status -eq 0
-        echo "Test vellykket!"
-    else 
-        echo "Test feilet!"
+```Fish Shell
+function test_addition
+    set result (math 2+2)
+    if test $result -eq 4
+        echo "Test passed: 2+2 is $result"
+    else
+        echo "Test failed: 2+2 is not 4"
     end
 end
+
+test_addition
 ```
 
-## Dypdykk:
-Å skrive tester er ikke noe nytt i programmeringsverdenen. Det har vært en del av "Test Driven Development" (TDD) prinsippet siden begynnelsen av 2000-tallet. Det finnes også andre programmeringsspråk og rammeverk som tilbyr innebygde tester, som for eksempel Python og RSpec for Ruby. For å implementere tester i større prosjekter, kan man bruke et testrammeverk som for eksempel "Bats" eller "shelltestrunner" som er spesifikt laget for shell-skripting.
+Output:
+```
+Test passed: 2+2 is 4
+```
 
-## Se også:
-- [Fish Shell dokumentasjon om testing.](https://fishshell.com/docs/current/index.html#testing)
-- [Test Driven Development på Wikipedia.](https://en.wikipedia.org/wiki/Test-driven_development)
-- [Bats testrammeverk.](https://github.com/bats-core/bats-core)
-- [ShellTestRunner testrammeverk.](https://github.com/bats-core/bats-core)
+## Dypdykk
+Tester i Fish Shell er mindre vanlig enn i andre språk. Men, med enkle funksjoner og `test`-kommandoen er det mulig. Noen bruker rammeverk som Fishtape for struktur. Historisk sett har shell-scripting vært mindre fokusert på testing, men praksisen vinner terreng for å sikre stabil kode i automatiserte miljøer.
+
+## Se Også
+- [Fishtape](https://github.com/jorgebucaran/fishtape): Et testrammeverk spesielt laget for Fish Shell.
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html): Offisiell dokumentasjon for Fish Shell.
+- [Math i Fish](https://fishshell.com/docs/current/cmds/math.html): Dokumentasjon for `math`-kommandoen.
+- [Test i Fish](https://fishshell.com/docs/current/cmds/test.html): Dokumentasjon for `test`-kommandoen.

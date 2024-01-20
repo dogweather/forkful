@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "Go: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "Go"
 category:             "Go"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 这是什么 & 为什么要做？
-写文本文件是指使用编程语言向计算机中保存文本数据。程序员常常这样做，是为了保存程序运行过程中产生的信息，以及作为日志记录和数据存储的方式。
+## What & Why? 什么和为什么？
+写文本文件让数据持久化。程序员这么做可存配置、日志或其他数据，方便读写和共享。
 
-## 如何：
+## How to: 怎么做
 ```Go
-// 导入标准库中的 "os" 模块
-import "os"
+package main
 
-// 创建一个新的文本文件
-file, err := os.Create("example.txt")
-if err != nil {
-    panic(err)
-}
+import (
+	"fmt"
+	"os"
+)
 
-// 写入文本数据
-file.WriteString("这是一个例子文本文件。")
+func main() {
+	file, err := os.Create("example.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
 
-// 关闭文件
-err = file.Close()
-if err != nil {
-    panic(err)
+	_, err = file.WriteString("Hello, Go!\n")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println("文件写入成功")
 }
 ```
-输出结果：创建名为 "example.txt" 的文本文件，并将 "这是一个例子文本文件。" 写入到文件中。
+输出：
+```
+文件写入成功
+```
 
-## 深入了解：
-写文本文件的历史可以追溯到计算机发展的早期，它的一个替代方法是使用数据库存储数据。写文本文件的过程可以通过使用不同的方法来实现，例如在 Go 中使用 "fmt" 模块将数据写入文件，但是这种方法通常会消耗更多的处理器时间。
+## Deep Dive: 深入了解
+写文件在计算机历史上很古老，像UNIX早期就有。Go的 `os` 包提供了这功能，有多种方式，`io.WriteString` 或 `fmt.Fprintln` 。若关注性能，可考虑缓冲写入(`bufio`)。
 
-## 参考链接：
-- https://golang.org/pkg/os/#Create
-- https://golang.org/pkg/fmt/#Fprintf
+## See Also: 参考链接
+- Go文档: [os package](https://golang.org/pkg/os/)
+- Go博客: [Defer, Panic and Recover](https://blog.golang.org/defer-panic-and-recover)

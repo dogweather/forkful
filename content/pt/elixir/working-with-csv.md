@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Elixir: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O que é & Porquê?
 
-A leitura e escrita de arquivos CSV é uma tarefa comum para programadores em muitos cenários, como a importação de dados em um banco de dados, a geração de relatórios ou a manipulação de dados em planilhas. CSV (Comma-Separated Values) é um formato de arquivo que armazena dados em uma tabela, onde cada linha contém registros separados por vírgulas. Isso o torna um formato popular para armazenar e trocar dados tabulares de forma simples e legível.
+Trabalhar com CSV (Valores Separados por Vírgula) é manipular arquivos de texto que guardam dados tabelados. Programadores fazem isso para importar, exportar e manipular dados de forma simples e compatível com diferentes sistemas.
 
-## Como fazer:
+## Como Fazer:
 
-Para trabalhar com arquivos CSV em Elixir, podemos usar a biblioteca padrão ```File``` e sua função ```stream!```. Primeiro, precisamos abrir o arquivo CSV e transformá-lo em um stream de linhas:
+```elixir
+defmodule CSVExample do
+  # Usando a biblioteca CSV
+  def parse_and_save(file_path) do
+    file_path
+    |> File.stream!()
+    |> CSV.decode(separator: ?;)
+    |> Enum.each(&process_row/1)
+  end
 
+  defp process_row(row) do
+    # Manipula cada linha aqui
+    IO.inspect(row)
+  end
+end
+
+# Exemplo de uso:
+# CSVExample.parse_and_save("dados.csv")
 ```
-file = File.stream!("dados.csv")
+Saída de exemplo:
+```
+["cabeçalho1", "cabeçalho2", "cabeçalho3"]
+["valor1", "valor2", "valor3"]
+["valor4", "valor5", "valor6"]
 ```
 
-Em seguida, podemos usar a função ```CSV.decode/2``` para decodificar cada linha do stream em uma lista de dados, usando como separador a vírgula:
+## Mergulho Profundo
 
-```
-CSV.decode(file, headers: true, trim: true, separator: ",")
-```
+CSV não é um formato padronizado, o que pode levar a diferenças como delimitadores e codificações de caracteres. Existem alternativas como JSON e XML, mas CSV permanece popular pela sua simplicidade e legibilidade. Em Elixir, manipular CSV geralmente exige uma biblioteca, como o pacote `CSV`, que cuida do parsing e escrita dos dados.
 
-Isso criará uma lista de mapas contendo cada linha do arquivo CSV com seus respectivos campos, onde os nomes dos campos serão definidos pelos cabeçalhos do arquivo. Podemos então manipular esses dados conforme necessário.
+## Veja Também:
 
-## Deep Dive:
-
-O formato CSV foi criado na década de 1970 como uma forma mais simples de troca de dados entre sistemas. Atualmente, existem muitas variações do padrão CSV, que podem causar problemas ao trabalhar com dados de diferentes fontes. Para lidar com essas variações, a biblioteca ```CSV``` do Elixir oferece opções de configuração, como o separador de campos e as aspas de caracteres.
-
-Além disso, existem alternativas para trabalhar com dados CSV, como as bibliotecas "rcsv" e "floki". A biblioteca "rcsv" é baseada em leitura de arquivos e pode ser mais lenta no processamento de grandes conjuntos de dados. Já a biblioteca "floki" é baseada em parsing de XML e HTML e pode ser útil para fazer scrapers Web.
-
-## Veja também:
-
-- [Documentação oficial da biblioteca CSV do Elixir.](https://hexdocs.pm/csv/)
-- [Tutorial sobre como trabalhar com CSV em Elixir.](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#working-with-csv-files)
+- [CSV package documentation](https://hexdocs.pm/csv/readme.html) para uma referência completa de como trabalhar com CSV em Elixir.
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), Common Format and MIME Type for Comma-Separated Values (CSV) Files, para entender as convenções formalizadas de CSV.

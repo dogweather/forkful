@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit Json"
-html_title:           "Swift: Arbeiten mit Json"
-simple_title:         "Arbeiten mit Json"
+title:                "Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -11,48 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Wenn du als Programmierer auf JSON (JavaScript Object Notation) stößt, bedeutet das, dass du dich mit strukturierten Daten auseinandersetzt. Das kann nützlich sein, wenn du Daten zwischen verschiedenen Programmiersprachen oder Plattformen austauschen möchtest. JSON ist eine sehr beliebte Wahl bei der Datenformatierung, da es leicht zu lesen und zu verstehen ist. 
+JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert, lesbar und einfach zu verarbeiten ist.
 
-## Wie geht's?
-Das Arbeiten mit JSON in Swift ist einfach und unkompliziert. Beginne damit, eine Instanz von ```JSONDecoder``` zu erstellen und weise sie einer Variablen zu. Dann verwende die Methode ```decode()```, um JSON-Daten zu dekodieren. Zum Beispiel:
+## How to:
+Swift macht das Arbeiten mit JSON mit der `Codable`-Schnittstelle einfach. Hier ist ein Grundbeispiel: 
 
-```
-let jsonDecoder = JSONDecoder()
-let jsonData = """
-    {
-        "name": "Max Mustermann",
-        "age": 25,
-        "hobbies": ["coding", "gaming", "hiking"]
-    }
-""".data(using: .utf8)
-let person = try jsonDecoder.decode(Person.self, from: jsonData)
-print(person.name) // Ausgabe: Max Mustermann
-print(person.age) // Ausgabe: 25
-print(person.hobbies) // Ausgabe: ["coding", "gaming", "hiking"]
-```
+```Swift
+import Foundation
 
-Du kannst auch benutzerdefinierte Objekte erstellen und sie in JSON umwandeln. Verwende dazu die Methode ```encode()``` und weise das Ergebnis einer Variablen zu. Zum Beispiel:
-
-```
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let hobbies: [String]
+// Definiere ein Codable Model
+struct User: Codable {
+    var name: String
+    var age: Int
 }
 
-let person = Person(name: "Max Mustermann", age: 25, hobbies: ["coding", "gaming", "hiking"])
-let jsonEncoder = JSONEncoder()
-jsonEncoder.outputFormatting = .prettyPrinted
-let jsonData = try jsonEncoder.encode(person)
-print(String(data: jsonData, encoding: .utf8)!) // Ausgabe: {"name" : "Max Mustermann",
-                                               //          "age" : 25,
-                                               //          "hobbies" : ["coding", "gaming", "hiking"]
-                                               //         }
+// JSON-String
+let jsonString = "{\"name\": \"Anna\", \"age\": 28}"
+
+// JSON in ein User-Objekt umwandeln
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print(user) // Output: User(name: "Anna", age: 28)
+    } catch {
+        print("Fehler beim Parsen: \(error)")
+    }
+}
+
+// Ein User-Objekt in JSON umwandeln
+let user = User(name: "Max", age: 35)
+do {
+    let jsonData = try JSONEncoder().encode(user)
+    if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString) // Output: {"name":"Max","age":35}
+    }
+} catch {
+    print("Fehler beim Konvertieren: \(error)")
+}
 ```
 
-## Tiefgehende Einblicke
-JSON wurde als Alternative zu XML entwickelt, da es weniger komplex und leichter zu verarbeiten ist. Es wurde als Teil von JavaScript eingeführt, ist aber mittlerweile eine unabhängige Datenformatierung. JSON wird häufig verwendet, um Daten zwischen Webanwendungen und Servern auszutauschen. Es gibt auch alternative Datenformatierungen wie XML, CSV und YAML, aber JSON ist aufgrund seiner Einfachheit und weit verbreiteten Unterstützung die beliebteste Wahl.
+## Deep Dive
+JSON wurde Anfang der 2000er Jahre als Alternative zu XML beliebt. Es ist einfacher zu lesen und zu schreiben. Alternativen wie YAML oder BSON existieren, aber JSON dominiert wegen seiner Einfachheit und Allgegenwart. Swifts `Codable`-Schnittstelle, eingeführt in Swift 4, hat das Codieren und Decodieren von JSON erheblich vereinfacht, da es Auto-Synthese von `CodingKeys` ermöglicht und viel Boilerplate-Code unnötig macht.
 
-## Siehe auch
-- [Apple Dokumentation zu JSON](https://developer.apple.com/documentation/foundation/archives_and_serialization/using_json_with_custom_types)
-- [Liste von alternativen Datenformatierungen](https://developers.squarespace.com/what-is-json/)
+## See Also
+- [Swift.org: Encoding and Decoding Custom Types](https://swift.org/documentation/#encoding-and-decoding-custom-types)
+- [JSON on Wikipedia](https://de.wikipedia.org/wiki/JavaScript_Object_Notation)
+- [Apple Documentation on JSONEncoder](https://developer.apple.com/documentation/foundation/jsonencoder)
+- [Apple Documentation on JSONDecoder](https://developer.apple.com/documentation/foundation/jsondecoder)

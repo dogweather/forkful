@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Go: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Scrivere sullo standard error (stderr) separa gli errori e le informazioni di log dal normale output di un programma. Si fa per diagnosticare i problemi senza interferire con gli output (stdout) che altri programmi potrebbero usare.
 
-Scrivere su standard error è un concetto fondamentale nella programmazione professionale. Si tratta di un'operazione che consente ai programmatori di mostrare messaggi di errore e informazioni di debug durante l'esecuzione del codice. È una pratica importante per risolvere eventuali errori e migliorare l'affidabilità e l'efficienza del proprio codice.
+## How to:
+Usa `os.Stderr` e `fmt.Fprintln` per scrivere su stderr:
 
-## Come fare:
+```Go
+package main
 
-Ecco un semplice esempio di codice in Go che mostra come scrivere su standard error utilizzando la funzione `Fprintln`:
-
-```
-// importa il pacchetto "fmt" per utilizzare la funzione Fprintln
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-
-    // scrivi "Ciao Mondo" su standard error
-    fmt.Fprintln(os.Stderr, "Ciao Mondo")
+	errMsg := "Questo è un errore!"
+	if _, err := fmt.Fprintln(os.Stderr, errMsg); err != nil {
+		fmt.Println("Errore nello scrivere su stderr:", err)
+	}
 }
 ```
 
-Ogni volta che questo codice viene eseguito, verrà stampato il messaggio "Ciao Mondo" su standard error, che di solito è il terminale del sistema.
+Output se eseguito da terminale:
+```
+Questo è un errore!
+```
 
-## Approfondimento:
+## Deep Dive
+La separazione di stdout e stderr risale a sistemi Unix. Alternativamente, si può usare il pacchetto `log` di Go, impostando il logger su `os.Stderr`. Dal punto di vista dell'implementazione, `os.Stderr` è un `*os.File`, trattato come file speciale che corrisponde all'output di errore della shell.
 
-Scrivere su standard error è una pratica comune nella programmazione moderna. In passato, i programmatori utilizzavano spesso la funzione `printf` per scrivere messaggi di debug e di errore. Tuttavia, l'utilizzo di questa funzione può causare problemi in determinate situazioni, come ad esempio durante il debugging di un programma che utilizza la funzione `printf` per la sua normale esecuzione.
-
-Un'alternativa all'utilizzo della funzione `Fprintln` è l'utilizzo della funzione `Fatal`, che stampa un messaggio di errore e termina immediatamente l'esecuzione del programma. Questa funzione è particolarmente utile quando si desidera interrompere l'esecuzione di un programma in caso di un errore critico.
-
-Per quanto riguarda l'implementazione di scrivere su standard error, ci sono diversi aspetti da considerare, come il modo in cui il sistema operativo gestisce l'output su standard error e le possibili differenze tra i diversi linguaggi di programmazione.
-
-## Vedi anche:
-
-- [Documentazione ufficiale di Go: fmt](https://golang.org/pkg/fmt/)
-- [Stack Overflow: Difference between Fmt.Fprintln(os.Stderr) and Fmt.Println()?](https://stackoverflow.com/questions/38036438/difference-between-fmt-fprintlnos-stderr-and-fmt-println)
+## See Also
+- La documentazione ufficiale di Go per os.Stderr: https://pkg.go.dev/os#Stderr
+- Una guida sul pacchetto `log` in Go: https://pkg.go.dev/log
+- Informazioni su stdout e stderr su Unix: https://en.wikipedia.org/wiki/Standard_streams

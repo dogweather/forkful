@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Lua: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que trabalhar com YAML?
-
-YAML (Yet Another Markup Language) é uma linguagem de marcação utilizada por programadores para realizar a leitura e escrita de dados de forma estruturada e legível por humanos. É especialmente útil para configurações de sistemas e transferência de dados entre diferentes programas.
+## O que & Por quê?
+YAML é uma linguagem de serialização de dados legível por humanos, frequentemente usada em configurações de projetos e transmissão de dados entre diferentes linguagens de programação. Programadores usam YAML por sua facilidade de leitura e compatibilidade com várias tecnologias.
 
 ## Como fazer:
+Para manipular YAML em Lua, você vai precisar de uma biblioteca como o `lyaml`. Aqui está um exemplo de como carregar e imprimir dados de um arquivo YAML:
 
 ```Lua
--- Exemplo de como ler um arquivo YAML
-local yaml = require("yaml")
-local arquivo = io.open("dados.yaml", "r") -- abre o arquivo para leitura
+local lyaml = require 'lyaml'
+local file = io.open('config.yaml', 'r')
+local data = lyaml.load(file:read('*a'))
+file:close()
 
--- lê o conteúdo do arquivo e converte para uma tabela em Lua
-local dados = yaml.load(arquivo:read("*all"))
-
--- acessa os dados específicos da tabela
-print(dados.nome) -- imprime "João"
-print(dados.idade) -- imprime 25
-print(dados.profissao) -- imprime "programador"
-
-arquivo:close() -- fecha o arquivo
-
--- Exemplo de como escrever um arquivo YAML
-local lista = { "banana", "maçã", "laranja" } -- cria uma tabela
-local novo_arquivo = io.open("frutas.yaml", "w") -- abre o arquivo para escrita
-
--- converte a tabela para um formato YAML e escreve no arquivo
-novo_arquivo:write(yaml.dump(lista))
-
-novo_arquivo:close() -- fecha o arquivo
+for key, value in pairs(data) do
+  print(key .. ": " .. tostring(value))
+end
+```
+Se `config.yaml` for:
+```yaml
+versao: 1.0
+nome: MeuProjeto
+```
+A saída será:
+```
+versao: 1.0
+nome: MeuProjeto
 ```
 
-## Profundando:
+## Mergulho Profundo:
+O YAML, criado em 2001, surgiu como uma alternativa ao XML para configurações e dados. Enquanto o JSON é uma alternativa popular devido à sua aderência ao JavaScript, o YAML é mais legível e pode representar mais complexidades, como comentários e referências. Em Lua, trabalhar com YAML geralmente envolve uma biblioteca de terceiros porque o núcleo da linguagem não tem suporte interno para YAML. 
 
-YAML foi criado em 2001 por Clark Evans com o objetivo de ser uma alternativa mais simplificada e legível que o formato de dados JSON, e se tornou popular entre os programadores por sua facilidade de leitura e escrita. Além disso, existe uma grande variedade de bibliotecas em diversas linguagens de programação que oferecem suporte ao YAML, tornando sua utilização ainda mais versátil.
-
-## Veja também:
-
-- Documentação oficial do YAML: https://yaml.org/
-- Biblioteca Lua-yaml: https://github.com/lubyk/lua-yaml
+## Veja Também:
+- Documentação da biblioteca `lyaml`: [http://github.com/gvvaughan/lyaml](http://github.com/gvvaughan/lyaml)
+- Especificação YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)

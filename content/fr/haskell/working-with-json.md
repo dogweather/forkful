@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Haskell: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi et Pourquoi?
+JSON, c'est de l'info formatée clair pour machines et humains. Les développeurs l'utilisent pour échanger des données entre serveurs et apps, prônant simplicité, légèreté et accessibilité.
 
-JSON (JavaScript Object Notation) est un format de données utilisé pour stocker et échanger des informations structurées entre différents systèmes informatiques. En tant que programmeurs, nous travaillons souvent avec JSON car il est largement utilisé dans les applications Web et mobiles pour stocker et transmettre des données.
-
-## Comment faire:
+## Comment faire :
+Haskell propose `aeson` pour jouer avec JSON. On installe avec `cabal install aeson`. Voilà comment on s'y prend:
 
 ```Haskell
+{-# LANGUAGE DeriveGeneric #-}
+
 import Data.Aeson
+import GHC.Generics
+import qualified Data.ByteString.Lazy as B
 
--- Conversion de données en JSON:
-let data = ["apple", "banana", "orange"]
-let json = encode data
+-- On définit un type de données custom
+data Utilisateur = Utilisateur
+  { nom :: String
+  , age :: Int
+  } deriving (Generic, Show)
 
--- Conversion de JSON en données:
-let json = "[1, 2, 3, 4]"
-let decoded = decode json :: Maybe [Int]
+-- Ça permet d'encoder/décoder facilement.
+instance ToJSON Utilisateur
+instance FromJSON Utilisateur
 
--- Traitement de données JSON:
-case decoded of
-    Just numbers -> putStrLn (show (sum numbers))
-    Nothing -> putStrLn "Impossible de décoder le JSON."
+-- Convertir depuis et vers JSON:
+main :: IO ()
+main = do
+  let jean = Utilisateur "Jean" 30
+  let jsonJean = encode jean
+  B.putStrLn jsonJean -- Affiche: {"nom":"Jean","age":30}
+
+  let decodedJean = decode jsonJean :: Maybe Utilisateur
+  print decodedJean -- Affiche: Just (Utilisateur {nom = "Jean", age = 30})
 ```
 
-## Profondeur de plongée:
+## Exploration Approfondie
+`aeson` est inspiré par JSON.hs (un ancien package). Modernisé, `aeson` est plus performant. Si `aeson` ne convient pas, il y a `json` ou `yaml`, ce dernier gère aussi YAML, proche cousin de JSON. `aeson` use de `attoparsec` pour l'analyse syntaxique, gérant les données massives efficacement.
 
-- JSON a été développé par Douglas Crockford dans les années 1990 en réponse à des formats de données tels que XML qui étaient difficiles à lire et à utiliser.
-- Les alternatives à JSON incluent XML, YAML et TOML, mais JSON reste populaire en raison de sa simplicité et de sa compatibilité avec JavaScript.
-- En Haskell, le module `Data.Aeson` fournit des fonctions pour convertir des données en JSON et vice versa. Il utilise un type de données personnalisé `Value` pour représenter des valeurs JSON et utilise des lenses pour faciliter l'accès et la manipulation des données.
-
-## À voir:
-
-- [Documentation officielle de Data.Aeson](https://hackage.haskell.org/package/aeson-2.0.1.0/docs/Data-Aeson.html)
+## Voir Aussi
+Enrichissez vos connaissances:
+- [aeson sur Hackage](https://hackage.haskell.org/package/aeson)
+- [Le parsing JSON avec aeson](https://artyom.me/aeson)
+- [Un guide pour attoparsec, utilisé par aeson](https://www.stackage.org/lts/package/attoparsec)

@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "C#: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å skrive en tekstfil i programmering innebærer å lagre data i en tekstbasert fil som kan leses og redigeres av både mennesker og datamaskiner. Dette er nyttig for å lagre og organisere store mengder data på en strukturert måte.
+## What & Why?
+Skriving til tekstfiler lar oss lagre data. Programmører gjør dette for dataoppbevaring, logging, eller datautveksling.
 
-Programmerere bruker tekstfiler for å lagre konfigurasjonsinnstillinger, loggdata eller annen informasjon som trengs til å kjøre et program. Det gir også en enkel måte å dele informasjon mellom forskjellige programmer og systemer.
-
-## Hvordan:
-For å skrive en tekstfil i C#, kan du bruke StreamWriter-klassen. Først må du opprette en ny instans av denne klassen og angi filbanen der filen skal lagres. Deretter kan du bruke Write-metoden for å skrive ønsket data til filen. Husk å lukke filen etter bruk ved å bruke Close-metoden.
-
-```
+## How to:
+```C#
+using System;
 using System.IO;
 
-class Program
+class WriteTextFile
 {
     static void Main()
     {
-        // Opprett filbane og tekst
-        string filbane = @"C:\testfil.txt";
-        string tekst = "Dette er en testfil.";
+        string path = "eksempel.txt";
+        string text = "Hei! Dette er tekst i en fil.";
 
-        // Opprett StreamWriter-instans og skriv data
-        using (StreamWriter fil = new StreamWriter(filbane))
-        {
-            fil.WriteLine(tekst);
-        }
+        // Skriv til filen
+        File.WriteAllText(path, text);
+
+        // Legge til tekst i eksisterende fil
+        string additionalText = "\nHer legger vi til mer tekst.";
+        File.AppendAllText(path, additionalText);
+
+        // Lese og vise innholdet
+        string readText = File.ReadAllText(path);
+        Console.WriteLine(readText);
     }
 }
 ```
+Output:
+```
+Hei! Dette er tekst i en fil.
+Her legger vi til mer tekst.
+```
 
-Dette vil opprette en ny tekstfil på den angitte filbanen og lagre teksten i filen.
+## Deep Dive
+Tidligere brukte vi FileStream og StreamWriter for filskriving i .NET. `File.WriteAllText` og `File.AppendAllText` er høyere abstraksjoner som er enklere å bruke. `System.IO` namespace i C# inkluderer klasser for filhåndtering, noe som bidrar til sikker og effektiv datahåndtering.
 
-## Dypdykk:
-Konseptet med å skrive tekstfiler har eksistert siden de tidligste dager av programmering. I dag finnes det også alternative måter å lagre data på, som for eksempel å bruke en database eller å lagre data i minnet.
-
-Implementasjonen av å skrive en tekstfil kan variere avhengig av programmeringsspråket du bruker. I C# brukes StreamWriter-klassen, men andre språk kan ha forskjellige metoder og klasser for å utføre samme oppgave.
-
-## Se også:
-- [The Evolution of File Processing in Programming](https://hackernoon.com/the-evolution-of-file-processing-in-programming-2051319e8c23)
+## See Also
+- [File.WriteAllText Method - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writealltext)
+- [File and Stream I/O - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/io/)
+- [File.AppendAllText Method - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.appendalltext)

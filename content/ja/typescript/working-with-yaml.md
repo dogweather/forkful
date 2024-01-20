@@ -1,7 +1,7 @@
 ---
-title:                "YAMLでの作業"
-html_title:           "TypeScript: YAMLでの作業"
-simple_title:         "YAMLでの作業"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## YAMLとは？
+## What & Why? (なぜ？とは？)
+YAMLは人間にも機械にも読みやすいデータ表現フォーマットです。設定ファイルやデータ交換によく使われ、JSONよりも読みやすく、編集しやすいからです。
 
-YAMLとは、プログラマーが使用するデータ表現言語の一つです。主に設定ファイルや構成ファイルをシンプルに書くことができます。プログラマーがYAMLを使う理由は、コードを見やすく保守性を高めるためです。
+## How to: (使い方)
+TypeScriptでYAMLを扱うには`js-yaml`ライブラリが便利です。
 
-## やり方：
+```typescript
+// 必要なパッケージをインストール
+// npm i js-yaml @types/js-yaml
 
-以下のように、TypeScriptでYAMLを使う方法を説明します。
+import * as yaml from 'js-yaml';
+import * as fs from 'fs';
 
-```TypeScript
-import * as yaml from "js-yaml";
-import * as fs from "fs";
+// YAMLファイルの読み込みと解析
+const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
+console.log(doc);
 
-// YAMLファイルを読み込みます
-const yamlFile = fs.readFileSync("./sample.yaml", "utf8");
-
-// YAMLをオブジェクトに変換します
-const yamlObject = yaml.safeLoad(yamlFile);
-
-// オブジェクトをYAMLに変換し、新しいファイルに書き込みます
-const newYaml = yaml.safeDump(yamlObject);
-fs.writeFileSync("./newSample.yaml", newYaml, "utf8");
+// JavaScriptオブジェクトをYAMLファイルに変換して書き込み
+const data = { title: 'YAML Example', count: 3 };
+fs.writeFileSync('output.yaml', yaml.dump(data), 'utf8');
 ```
 
-## 深堀り：
+サンプル出力：
+```yaml
+title: YAML Example
+count: 3
+```
 
-YAMLは、XMLやJSONに比べてシンプルで読みやすい表現ができるため、主に設定ファイルや構成ファイルとして使用されてきました。しかし、最近ではJSONやGraphQLがより人気になってきています。それでも、YAMLは依然として多くのプロジェクトで使われています。
+## Deep Dive (詳細解説)
+YAMLは"YAML Ain't Markup Language"の略で、データが構造化された形式を持つことができます。JSONやXMLと違い、インデントを用いて階層構造を表現します。`js-yaml`ライブラリ以外にも`yaml`や`node-yaml`などの代替ライブラリが存在します。しかし、`js-yaml`はその安定性、速度、柔軟性から多くのプロジェクトで採用されています。
 
-## 参考：
-
-- [YAML 公式サイト](https://yaml.org/)
-- [js-yaml Library](https://github.com/nodeca/js-yaml)
+## See Also (参照)
+- YAML公式サイト: [https://yaml.org](https://yaml.org)
+- `js-yaml` GitHubレポジトリ: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+- TypeScript公式サイト: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)

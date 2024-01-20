@@ -1,7 +1,7 @@
 ---
-title:                "「JSONでの作業」"
-html_title:           "C++: 「JSONでの作業」"
-simple_title:         "「JSONでの作業」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするの？  &  なぜするの？
-JSONとは、JavaScript Object Notationの略称で、データを表現するためのフォーマットです。プログラマーはJSONを使用することで、データを簡潔な形式で扱うことができ、さまざまなプログラミング言語やプラットフォームで互換性のあるデータ形式を作成することができます。
+## What & Why? (なぜ？とは？)
+JSON (JavaScript Object Notation)はデータ交換用のテキストフォーマットです。シンプルで軽量なため、APIからデータを受け取ったり、設定情報を保存する際によく使われます。
 
-## 方法：
+## How to: (方法)
+C++では、nlohmann/json ライブラリが使いやすいです。以下は基本的な使い方です。
+
 ```C++
-
 #include <iostream>
-#include <json.hpp>
-
-using namespace std;
-using json = nlohmann::json;
+#include <nlohmann/json.hpp>
 
 int main() {
-
-// JSONデータを作成する
-json data = {
-    {"name", "山田太郎"},
-    {"age", 25},
-    {"city", "東京"}
-};
-
-// JSONデータを画面に表示する
-cout << data << endl;
-
-// nameの値を取得する
-cout << "名前：" << data["name"] << endl;
-
-// JSONをファイルに保存する
-ofstream file("data.json");
-file << data;
-file.close();
-
-return 0;
+    // JSON 文字列を作る
+    nlohmann::json j = {
+        {"name", "Tanaka"},
+        {"age", 30},
+        {"is_programmer", true}
+    };
+    
+    // JSON を文字列に変換する
+    std::string j_string = j.dump();
+    std::cout << j_string << std::endl;
+    
+    // 文字列から JSON オブジェクトを作る
+    auto j_parsed = nlohmann::json::parse(j_string);
+    std::cout << "Name: " << j_parsed["name"] << ", Age: " << j_parsed["age"] << std::endl;
+    
+    return 0;
 }
 ```
-### 出力：
-```
-{
-  "name": "山田太郎",
-  "age": 25,
-  "city": "東京"
-}
 
-名前：山田太郎
+出力:
+```
+{"age":30,"is_programmer":true,"name":"Tanaka"}
+Name: Tanaka, Age: 30
 ```
 
-## 詳しく見る：
-JSONは、1999年にDouglas Crockfordによって開発された軽量でシンプルなデータ形式です。XMLなどの他のフォーマットと比べると、より読みやすく、扱いやすいため、Webアプリケーションやモバイルアプリなどのデータ交換形式として広く使われています。
+## Deep Dive (深掘り)
+JSONは2001年にDouglas Crockfordによって考案されました。XMLより軽量で読み書きが簡単なことから、Webアプリケーションで好まれています。代替としてYAMLやTOMLがありますが、JSONは実装が楽で汎用性が高いです。C++でJSONを扱う際は、nlohmann/jsonやRapidJSONなどのライブラリがあります。nlohmann/jsonは扱いやすさで人気があり、RapidJSONはパフォーマンスに優れています。
 
-JSONには、規格や構文が定められているわけではありません。そのため、自由度の高いデータ形式と言えます。また、JSONを扱うライブラリは多く存在し、JavaScriptだけではなく、C++やPythonなどの言語でも使用することができます。
-
-## 関連リンク：
-- [JSON公式サイト](https://www.json.org/json-ja.html)
-- [JSON入門](https://techacademy.jp/magazine/14242)
+## See Also (関連項目)
+- nlohmann/json GitHubページ: https://github.com/nlohmann/json
+- JSONの仕様: https://www.json.org/json-ja.html
+- RapidJSON GitHubページ: https://github.com/Tencent/rapidjson
+- JSONとXMLの比較: https://www.w3schools.com/js/js_json_xml.asp

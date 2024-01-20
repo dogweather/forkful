@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फाइल लिखना"
-html_title:           "Java: एक टेक्स्ट फाइल लिखना"
-simple_title:         "एक टेक्स्ट फाइल लिखना"
+title:                "टेक्स्ट फाइल लिखना"
+html_title:           "Bash: टेक्स्ट फाइल लिखना"
+simple_title:         "टेक्स्ट फाइल लिखना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-टेक्स्ट फाइल लिखना क्या है, और प्रोग्रामर इसे क्यों करते हैं? टेक्स्ट फाइल लिखना यह एक सबसे साधारण तरीका है जिससे हम अपने कोड को सेव कर सकते हैं और बाद में फिर से उसे उसी रूप में खोल सकते हैं। प्रोग्रामर अपने कोड को अपने सिस्टम पर सहेजना चाहते हैं ताकि वे उनके साथ काम कर सकें और अपनी प्रोग्राम दूसरों को भी दे सकें।
+टेक्स्ट फाइल लिखना मतलब जानकारी को फाइल में सेव करना। प्रोग्रामर्स ये करते हैं डेटा बैकअप, लॉगिंग, और कॉन्फ़िगरेशन सेटिंग्स के लिए।
 
-## कैसे करें?
+## How to: (कैसे करें:)
 
 ```Java
-try {
-    FileWriter fileWriter = new FileWriter("myfile.txt");
-    fileWriter.write("Hello World!");
-    fileWriter.close();
-    System.out.println("File written successfully!");
-} catch (IOException e) {
-    e.printStackTrace();
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TextFileWriter {
+    public static void main(String[] args) {
+        String path = "example.txt";
+        String content = "हेलो, यह एक परिचय है!";
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+            bw.write(content);
+            System.out.println("फ़ाइल सफलतापूर्वक लिखी गई।");
+        } catch (IOException e) {
+            System.err.println("एक त्रुटि हुई: " + e.getMessage());
+        }
+    }
 }
 ```
+सैंपल आउटपुट:
+```
+फ़ाइल सफलतापूर्वक लिखी गई।
+```
 
-इस उदाहरण में हमने FileWriter क्लास का उपयोग करके "myfile.txt" नाम की टेक्स्ट फाइल बनाई है। फिर हमने उसमें "Hello World!" लिखा है और फाइल में लिखने के बाद हमने उसे बन्द कर दिया है। अंत में हमने स्क्रीन पर "File written successfully!" प्रिंट किया है। इस तरह से हम एक टेक्स्ट फाइल सफलतापूर्वक बना सकते हैं।
+## Deep Dive (गहराई में जानकारी):
 
-## गहराई में जाएं
+पहले, `java.io` पैकेज इस्तेमाल होता था फाइल ऑपरेशन्स के लिए। अब, `java.nio` पैकेज बेहतर विकल्प है क्योंकि यह ज्यादा फ्लेक्सिबल और इफ़िशिएंट है। डेटा एन्कोडिंग, बफ़र साइज़, और एरर हैंडलिंग जैसी चीज़ों पर विचार करना जरूरी है टेक्स्ट फाइल लिखते समय।
 
-टेक्स्ट फाइल लिखना तीन अंतरिक्ष पर काम करता है: कंप्यूटर को डाटा स्टोर करने का एक सबसे साधारण तरीका, प्रोग्रामर को कोड स्टोर करने का एक सस्ता और सरल तरीका, और इससे उन्हें अपने कोड को अगले सेशन में भी उपयोग करने की अनुमति मिलती है। अल्टरनेटिव तरीकों में फाइल्सिस्टम और डेटाबेस वाले मॉडल शामिल हैं, जिनमें डाटा स्टोर और रिट्रीव करने के लिए अलग-अलग कोडिंग की जाती है। टेक्स्ट फाइल लिखने के लिए, हमने FileWriter क्लास का उपयोग किया है जो java.io पैकेज में स्थित है। यह क्लास इंटरफेस दे देती है जिससे हमें बाइट या कैरेक्टर स्ट्रीम को लिखने की अनुमति मिलती है।
+## See Also (और भी देखें):
 
-## इससे संबंधित लेख देखें
-
-[FileWriter Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
+- [Oracle Java Docs for java.io.BufferedWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
+- [Oracle Java Docs for java.nio.file.Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
+- [Stack Overflow: When to use java.io vs java.nio](https://stackoverflow.com/questions/866830/when-to-use-java-io-vs-java-nio)

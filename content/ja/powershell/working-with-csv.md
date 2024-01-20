@@ -1,7 +1,7 @@
 ---
-title:                "csvファイルの操作"
-html_title:           "PowerShell: csvファイルの操作"
-simple_title:         "csvファイルの操作"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,24 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ
-CSVとは、Comma-Separated Valuesの略で、コンマで区切られたデータを表すファイル形式です。プログラマーがCSVを使う理由の一つは、データの整形や処理を容易にするためです。
+## What & Why? (CSVの取り扱いとその理由)
+CSVはデータを保存する一般的なフォーマットです。プログラマーはデータ交換やテーブルデータの単純処理のために使います。
 
-## 方法：
+## How to: (方法)
+### CSVを読む
 ```PowerShell
-# CSVファイルの読み込み
-$csv = Import-Csv -Path C:\data.csv
-
-# CSVファイルにデータを書き込む
-$data = "Name, Email, Phone
-John, john@example.com, 123456789
-Jane, jane@example.com, 987654321"
-$data | Out-File -FilePath C:\new_data.csv
+$data = Import-Csv -Path "data.csv"
+$data
+```
+```
+Name    Age
+----    ---
+Alice   23
+Bob     34
 ```
 
-## 深堀り：
-CSVは、データの交換や共有に幅広く利用されてきた古典的なフォーマットです。代わりにJSONやXMLといったフォーマットがあるものの、今でも多くのシステムでCSVが用いられています。PowerShell以外にも、PythonやJavaなどの言語でもCSVを処理することができます。
+### CSVを書く
+```PowerShell
+$data = @(
+    [PSCustomObject]@{Name='Alice'; Age=23},
+    [PSCustomObject]@{Name='Bob'; Age=34}
+)
+$data | Export-Csv -Path "output.csv" -NoTypeInformation
+Get-Content "output.csv"
+```
+```
+"Name","Age"
+"Alice","23"
+"Bob","34"
+```
 
-## 関連情報：
-- [CSVとは？その基本を学ぼう](https://techacademy.jp/magazine/16620)
-- [CSVのメリットとデメリット](https://www.sejuku.net/blog/10836)
+## Deep Dive (詳細な情報)
+CSVはComma-Separated Valuesの略で、1972年にIBMが初めて使用しました。代わりにJSONやXMLが使えますが、CSVはそのシンプルさで広く使われます。PowerShellでは、`Import-Csv`と`Export-Csv`コマンドで簡単にCSVの読み書きができます。また、エンコードやデリミターなど、細かい設定も可能です。
+
+## See Also (参照)
+- [About Import-Csv - Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
+- [About Export-Csv - Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv)

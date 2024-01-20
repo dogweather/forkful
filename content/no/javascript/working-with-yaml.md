@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "Javascript: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+YAML er et enkelt format for data serialisering, ofte brukt i konfigurasjonsfiler og datautveksling. Utviklere bruker YAML fordi det er lettleselig for mennesker og enkelt å integrere med moderne programmeringsspråk som JavaScript.
 
-YAML står for "YAML Ain't Markup Language" og er et format for å representere data i en lesbar og strukturert form. Det er ofte brukt av programmerere for å konfigurere og lagre data som blir brukt i deres applikasjoner.
-
-## Hvordan å:
+## Hvordan:
+For å jobbe med YAML i JavaScript, starter vi med å parse en YAML-streng til et JavaScript-objekt. Vi ser på et eksempel med `js-yaml`-biblioteket.
 
 ```Javascript
-// Opprette et YAML-dokument
 const yaml = require('js-yaml');
+const fs = require('fs');
 
-var employee = {
-  name: 'John Doe',
-  age: 30,
-  role: 'developer'
-};
+// Les en YAML-fil og konverter til et JavaScript-objekt.
+let config = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
 
-var yamlDoc = yaml.safeDump(employee);
-console.log(yamlDoc);
+console.log(config);
+```
+Anta at `config.yaml` inneholder:
+```yaml
+versjon: 1
+tjenester: 
+  webapp:
+    image: 'node:14'
+    ports: 
+      - '80:80'
+```
+Sample output vil være:
+```Javascript
+{ versjon: 1, tjenester: { webapp: { image: 'node:14', ports: ['80:80'] } } }
 ```
 
-```
-Output:
-name: John Doe
-age: 30
-role: developer
-```
+## Deep Dive
+YAML koden "YAML Ain't Markup Language" (tidligere "Yet Another Markup Language") formidler essensen: enkelhet og fokus på data fremfor markup. YAML ble foreslått tidlig på 2000-tallet som et brukervennlig alternativ til XML. Mens JSON også er et alternativ for konfigurasjon og serialisering, foretrekker mange YAML for dets lesbarhet og muligheten til å kommentere koden. Når YAML konverteres til et JavaScript-objekt, behandles dataene akkurat som om de ble definert direkte i JavaScript.
 
-## Dypdykk:
-
-YAML er inspirert av programmeringsspråket Python sin stil og er designet for å være menneskeleselig og enkelt å forstå. Det er ofte brukt i webapplikasjoner for å konfigurere og lagre innstillinger, og har blitt et populært valg for å erstatte XML som et format for strukturert data.
-
-Et alternativ til YAML er JSON, som også er et populært valg for å representere data. Imidlertid er YAML mer menneskeleselig og kan være mer brukervennlig for ikke-tekniske personer.
-
-Implementeringen av YAML i Javascript er enkelt med bibliotek som JS-YAML og yaml.js, som lar deg lese og skrive YAML-formatert data i dine programmer.
-
-## Se også:
-
-- [JS-YAML Bibliotek](https://www.npmjs.com/package/js-yaml)
-- [yaml.js Bibliotek](https://www.npmjs.com/package/yamljs)
-- [YAML offisiell nettside](https://yaml.org/)
+## Se Også
+- YAML offisiell nettside for spesifikasjoner: https://yaml.org/
+- `js-yaml` GitHub-side: https://github.com/nodeca/js-yaml
+- YAML vs. JSON sammenligning: https://json2yaml.com/compare-yaml-json

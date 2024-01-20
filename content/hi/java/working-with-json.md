@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Java: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-आपने कभी सोचा है कि प्रोग्रामिंग के दौरान जेसन का उपयोग क्यों किया जाता है? अगर हाँ, तो यह लेख आपके लिए है! इस लेख में हम जेवा करने के बारे में बात करेंगे जो कि हाल ही में हाल ही में जावा का एक नया संस्करण है। हम आपको इसके मदद से करने का तरीका सिखाएंगे और यह आपको क्यों करना चाहिए।
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक डेटा फॉर्मेट है जो डेटा को संग्रहित और ट्रांसफर करने के लिए इस्तेमाल होता है। यह प्रोग्रामर्स को सरल, पठनीय और हल्के तरीके से डेटा का आदान-प्रदान करने में मदद करता है। 
 
-## क्या और क्यों ?
+## How to: (कैसे करें:)
+हम Java में JSON से काम करने के लिए `org.json` library का इस्तेमाल कर सकते हैं।
 
-जेसन कार्य करने का सबसे अच्छा तरीका है जेक्सन डेटा को स्टोर और ट्रान्सफर करना। प्रोग्रामर्स के लिए, जेसन बहुत सरल और सुविधाजनक है। इसके साथ, यह पॉपुलर प्रोग्रामिंग भाषाओं में से एक है, जो इसे और भी आसान बनाता है।
+पहले, आपको `org.json` library को अपने project में जोड़ना होगा। यह Maven या Gradle के माध्यम से आसानी से किया जा सकता है।
 
-## कैसे करे :
-
-कैसे करने के लिए, हमारे पास दो विकल्प हैं - जैसों पार हो रहा है:
- `Java ...` कोड ब्लॉक के भीतर कोडिंग उदाहरण और सैंपल आउटपुट दिए गए हैं.
-अपनी बातचीत सीखने के लिए निम्न कोड ब्लॉक का उपयोग करें:
-
-`Map<String, String> myMap = new HashMap<>();
-myMap.put("key1", "value1");
-myMap.put("key2", "value2");`
-
-जेवा का उपयोग करने के बारे में जानने के लिए, आगे बढ़ते हुए, हम `JSONObject` का उपयोग करेंगे जो हमारे स्ट्रिंग को प्रोसेस करने के लिए बनाया गया है। नीचे दिए गए उदाहरण में, हम जस्टन रूप से संरचित कर सकते हैं और `print` लूप के उपयोग से उन्हें देख सकते हैं।
-
-```
-import org.json.JSONArray;
+### JSON Object Create and Read करना:
+```java
 import org.json.JSONObject;
 
-JSONArray jsonArray = new JSONArray();
-jsonArray.put("Apple");
-jsonArray.put("Orange");
+public class JSONExample {
+    public static void main(String[] args) {
+        // JSON Object create करना
+        JSONObject obj = new JSONObject();
+        obj.put("name", "Raj");
+        obj.put("age", 30);
+        obj.put("isMarried", false);
 
-JSONObject jsonObject = new JSONObject();
-jsonObject.put("fruits", jsonArray);
-
-System.out.println(jsonObject.toString());
+        // JSON Object से data read करना
+        System.out.println("Name: " + obj.getString("name"));
+        System.out.println("Age: " + obj.getInt("age"));
+        System.out.println("Is Married: " + obj.getBoolean("isMarried"));
+    }
+}
 ```
 
-उपरोक्त कोड का आउटपुट निम्न होगा:
+### Sample Output:
+```plaintext
+Name: Raj
+Age: 30
+Is Married: false
+```
 
-`{"fruits":["Apple","Orange"]}`
+## Deep Dive (गहराई से विचार):
+JSON 2001 में डगलस क्रॉकफोर्ड द्वारा परिचय किया गया। XML के विकल्प के रूप में इसे डेटा फॉर्मेट के लिए सराहा गया क्योंकि यह अधिक संक्षेप और त्वरित था। Java में JSON पार्स करने के लिए कई लायब्रेरीज हैं जैसे कि `Gson`, `Jackson`, और `org.json`. चुनाव किसी भी प्रोजेक्ट के आवश्यकताओं और प्रोग्रामर की पसंद पर निर्भर करता है।
 
-## डीप डाइव:
+`org.json` library में `JSONObject`, `JSONArray` जैसे क्लासेज हैं जो प्रोग्रामर को JSON ऑब्जेक्ट्स और ऐरेज से काम करने में सुविधाजनक बनाते हैं। जावा के Object-oriented features के साथ मिलकर JSON handling बहुत ही सरल और प्रभावी बन जाता है।
 
-जेसन से काम करने का इतिहास इसे जादुई तरीके से स्टोरिंग और डेटा को इंटरफेस करने के लिए बनाया गया है। अन्य विकल्पों में से कुछ पॉपुलर भाषाएं, XML और CSV है। इनमें `JAXB` और `JAX-WS` भी शामिल हैं जो डेटा को सीख्यू कंप्यूटेशन और वेब सर्वसेज होटे है। जेसन की तुलना में, ये भाषाएं कंटेनिंग सेमांटिक डेटा के लिए समझने इत्यादि को बचें।
-
-## देखिए:
-
- - [जेसन विकि में अधिक जानें](https://en.wikipedia.org/wiki/JSON)
- - [जेवा में जेसन अधिक जाने](https://www.javatpoint.com/java-json-tutorial)
- - [JAXB के बारे में जानें](https://www.oracle.com/java/technologies/java-architecture-for-xml-binding.html)
+## See Also (और भी देखें):
+- JSON परिचय और गाइड्स: [W3Schools JSON Tutorial](https://www.w3schools.com/js/js_json_intro.asp)
+- `org.json` library documentation: [GitHub org.json](https://github.com/stleary/JSON-java)
+- JSON के साथ अन्य प्रसिद्ध लायब्रेरीज: [Gson GitHub](https://github.com/google/gson), [Jackson GitHub](https://github.com/FasterXML/jackson)

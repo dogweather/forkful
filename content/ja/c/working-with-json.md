@@ -1,7 +1,7 @@
 ---
-title:                "JSONを使ったプログラミング"
-html_title:           "C: JSONを使ったプログラミング"
-simple_title:         "JSONを使ったプログラミング"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSONは、データを簡潔かつ柔軟に表現するためのフォーマットです。プログラマーがこのフォーマットを使用する主な理由は、データの受け渡しや保存をより効率的に行うことができるからです。
+## What & Why? (なにを？どうして？)
 
-## How to:
-まず、JSONを使用するには、JSONデータを格納するための構造体を作成する必要があります。次に、JSONライブラリを使用してデータを読み書きします。以下のコード例を参考にしてください。
+JSONはデータ交換のフォーマット。軽量で読み書きが簡単。プログラマはウェブAPIと通信したり設定を保存したりするために使う。
 
-```
-// 構造体を定義する
-struct json_data {
-  char *name;
-  int age;
-  float weight;
-};
+## How to: (やり方)
 
-// データをJSONに変換する
-struct json_data person = {"John", 25, 70.5};
-char *json = cJSON_Print(&person);
+C言語でのJSON処理にはライブラリが必要。`jansson`など。次は`jansson`を使った例。
 
-// JSONデータを出力する
-printf("%s", json);
+```C
+#include <jansson.h>
+#include <stdio.h>
 
-// 出力結果: {"name":"John","age":25,"weight":70.5}
-
-// JSONデータを解析する
-cJSON *root = cJSON_Parse(json);
-cJSON *name = cJSON_GetObjectItem(root, "name");
-cJSON *age = cJSON_GetObjectItem(root, "age");
-cJSON *weight = cJSON_GetObjectItem(root, "weight");
-
-// データを使用する
-printf("%s is %d years old and weighs %f kilograms.", name->valuestring, age->valueint, weight->valuedouble);
-
-// 出力結果: John is 25 years old and weighs 70.5 kilograms.
+int main() {
+    // JSONオブジェクトを作成
+    json_t *object = json_object();
+    json_object_set_new(object, "name", json_string("Taro"));
+    json_object_set_new(object, "age", json_integer(25));
+    
+    // JSON文字列に変換
+    char *json_string = json_dumps(object, JSON_INDENT(2));
+    printf("%s\n", json_string);
+    
+    // メモリ解放
+    free(json_string);
+    json_decref(object);
+    
+    return 0;
+}
 ```
 
-## Deep Dive:
-JSONは、Web開発やモバイルアプリ開発など、さまざまな分野で広く使用されています。また、CSVやXMLなどの他のデータフォーマットに比べて読みやすく、より軽量なため、人気が高いです。
+出力:
+```
+{
+  "name": "Taro",
+  "age": 25
+}
+```
 
-JSONの代替としては、XMLやYAMLなどがありますが、JSONはよりシンプルで扱いやすい形式と言えます。JSONの実装にはいくつかのパターンがありますが、C言語では主にライブラリを使用することが一般的です。代表的なライブラリとしては、cJSONやjanssonなどがあります。
+## Deep Dive (掘り下げ)
 
-また、JSONではデータをネストすることで、より複雑な構造を作ることができます。さらに、配列やオブジェクトを組み合わせることで、より多様なデータを表現することができます。
+JSONはJavaScriptのサブセットとして1999年に生まれた。バイナリ形式のBSONやXMLと比べて軽量。C言語での実装は標準ライブラリにはないため、`cJSON`や`Jansson`, `json-c`などのサードパーティライブラリを使う。
 
-## See Also:
-- [cJSON ライブラリ](https://github.com/DaveGamble/cJSON)
-- [jansson ライブラリ](https://github.com/akheron/jansson)
-- [JSON入門](https://www.json.org/json-ja.html)
+## See Also (関連情報)
+
+- Janssonライブラリ: http://www.digip.org/jansson/
+- cJSONライブラリ: https://github.com/DaveGamble/cJSON
+- JSON公式ウェブサイト: https://www.json.org/json-en.html

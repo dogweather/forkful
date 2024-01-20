@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv-tiedostojen kanssa"
-html_title:           "Kotlin: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
+## What & Why?
+CSV, eli pilkulla erotettujen arvojen tiedostot ovat helppo tapa tallentaa taulukkomuotoista tietoa. Niitä käytetään datan siirtämiseen, analysointiin ja tallentamiseen, koska niiden rakenne on yksinkertainen ja ne ovat inhimillisesti luettavissa.
 
-CSV, eli Comma Separated Values, on tiedostomuoto, jota käytetään datan tallentamiseen ja jakamiseen taulukkomuodossa. CSV-tiedosto koostuu eri sarakkeista, jotka ovat erotettu toisistaan pilkulla. Ohjelmoijat käyttävät CSV-tiedostoja usein, koska ne ovat helposti luettavissa ja muokattavissa.
-
-Kuinka tehdä:
-
-Esimerkiksi, jos haluat luoda CSV-tiedoston, jossa on kolme saraketta, nimeltään "nimi", "ikä" ja "kaupunki", voit käyttää seuraavaa koodia:
+## How to:
+Kotlinilla voit lukea ja kirjoittaa CSV-tiedostoja peruskirjastoilla. Tässä yksinkertainen esimerkki:
 
 ```Kotlin
-val data = listOf(
-    listOf("Matti", "25", "Helsinki"),
-    listOf("Anna", "30", "Tampere"),
-    listOf("Tuomas", "20", "Turku")
-)
+import java.io.File
 
-val csv = data.joinToString("\n") { it.joinToString() }
+fun main() {
+    val csvData = "id,name,age\n1,John,23\n2,Jane,28"
+    val fileName = "example.csv"
 
-println(csv)
+    // Kirjoittaminen tiedostoon
+    File(fileName).writeText(csvData)
 
+    // Lukeminen tiedostosta
+    val lines = File(fileName).readLines()
+    lines.drop(1).forEach { line ->
+        val (id, name, age) = line.split(",")
+        println("ID: $id, Name: $name, Age: $age")
+    }
+}
 ```
 
-Tämä koodi tulostaa seuraavanlaisen CSV-tiedoston:
-
+Tulostus:
 ```
-nimi,ikä,kaupunki
-Matti,25,Helsinki
-Anna,30,Tampere
-Tuomas,20,Turku
+ID: 1, Name: John, Age: 23
+ID: 2, Name: Jane, Age: 28
 ```
 
-Syvemmälle upottautuminen:
+## Deep Dive
+CSV on ollut käytössä jo vuosikymmeniä, ja se on standardi tapa jakaa ja säilöä rajoitettu määrä yksinkertaista, lomakepohjaista tietoa. Vaihtoehtoja ovat mm. JSON ja XML, jotka mahdollistavat monimutkaisempien tietorakenteiden tallennuksen. Kotlinin tapauksessa CSV-tiedostoja käsitellessä voimme hyödyntää myös ulkopuolisia kirjastoja, kuten `kotlin-csv`, jos tarvitsemme lisäominaisuuksia.
 
-CSV-tiedostomuoto on ollut olemassa jo vuosikymmeniä ja se on edelleen suosittu tiedostomuoto, koska se on yhteensopiva monien eri ohjelmistojen kanssa. Alternatiivina CSV:lle on esimerkiksi XML-tiedostomuoto, jossa data tallennetaan hierarkkisessa muodossa. CSV-tiedostojen käsittelyyn on myös olemassa erilaisia kirjastoja, kuten esimerkiksi Apache Commons CSV ja OpenCSV.
-
-Katso myös:
-
-Jos haluat lisätietoja CSV-tiedostoista ja niiden käsittelystä Kotlinilla, löydät hyödyllistä tietoa seuraavista lähteistä:
-
-- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-input-stream/buffered-reader.html)
-- [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/)
-- [OpenCSV](http://opencsv.sourceforge.net/)
+## See Also
+- Kotlinin virallinen oppaat: https://kotlinlang.org/docs/home.html
+- kotlin-csv-kirjasto GitHubissa: https://github.com/doyaaaaaken/kotlin-csv
+- CSV-määrittely RFC4180: https://tools.ietf.org/html/rfc4180

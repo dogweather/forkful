@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "C: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "C"
 category:             "C"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer testes?
-
-Escrever testes em programação significa criar pequenos programas que testam cada parte do seu código para garantir que tudo funcione corretamente. Os programadores fazem isso para se certificar de que suas alterações ou novos recursos não quebram o código existente e para evitar erros antes de entregá-lo aos usuários.
+## O que é & Por quê?
+Escrever testes é o processo de checar se o seu código faz exatamente aquilo que você espera que ele faça. Programadores testam para evitar bugs, garantir a qualidade do software e facilitar manutenções futuras.
 
 ## Como fazer:
+```C
+#include <assert.h>
 
-```
-C
-#include <stdio.h>
-
-// função que retorna a soma de dois números
-int somar(int a, int b) {
-  return a + b;
+// Função para testar
+int soma(int a, int b) {
+    return a + b;
 }
 
-// função de teste para a função somar
-void testar_somar() {
-  int resultado = somar(2, 3);
-  if (resultado == 5) {
-    printf("TESTE PASSOU: 2 + 3 = 5");
-  } else {
-    printf("TESTE FALHOU: 2 + 3 = %d", resultado);
-  }
+// Teste da função
+void testeSoma() {
+    assert(soma(2, 2) == 4);
+    assert(soma(-1, 1) == 0);
 }
 
 int main() {
-  // chamando a função de teste
-  testar_somar();
-  return 0;
+    testeSoma();
+    printf("Todos os testes passaram!\n");
+    return 0;
 }
 ```
-
-Output:
+Saída esperada:
 ```
-TESTE PASSOU: 2 + 3 = 5
+Todos os testes passaram!
 ```
 
-## Aprofundando:
+## Aprofundando
+Historicamente, o teste de software começou como um processo manual, mas evoluiu para incluir testes automáticos e frameworks especializados. Alternativas modernas em C incluem frameworks como CUnit, Check e Unity. Ao escrever testes, é crucial considerar casos de borda, verificar tanto a correção quanto o desempenho e manter os testes atualizados conforme o código evolui.
 
-Testes de unidade, também conhecidos como testes de caixa branca, se tornaram populares com o desenvolvimento de metodologias ágeis de desenvolvimento de software. Eles ajudam a garantir que o código seja confiável e de alta qualidade. Existem outras formas de testes, como testes de integração e testes de aceitação, mas o foco dos testes de unidade é em partes individuais do código.
-
-## Veja também:
-
-- [Artigo sobre testes de unidade na Wikipedia](https://pt.wikipedia.org/wiki/Teste_de_unidade)
-- [Ferramenta de testes em C: CUnit](http://cunit.sourceforge.net/)
+## Veja também
+- Documentação do CUnit: https://cunit.sourceforge.io/doc/index.html
+- Check: https://libcheck.github.io/check/
+- Unity Test API: http://www.throwtheswitch.org/unity
+- Artigo sobre Test-Driven Development (TDD): https://en.wikipedia.org/wiki/Test-driven_development

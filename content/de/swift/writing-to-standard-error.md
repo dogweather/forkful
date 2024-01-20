@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "Swift: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Beim Programmieren gibt es oft die Notwendigkeit, Fehlermeldungen oder wichtige Informationen auszugeben, jedoch ohne den normalen Ausgabe-Stream zu stören. Das ist genau der Zweck des Schreibens auf den Standardfehler. Es ist eine Möglichkeit, Nachrichten direkt an die Konsole zu senden, um dem Entwickler wichtige Informationen mitzuteilen, ohne die eigentliche Ausgabe des Programms zu beeinflussen.
+## Was & Warum?
+Das Schreiben in den Standardfehler (stderr) ermöglicht es, Fehlermeldungen getrennt von regulären Ausgabedaten (stdout) zu behandeln. Dies ist nützlich, um die Logik von Programmfluss und Fehlern zu trennen, was die Analyse und das Debuggen erleichtert.
 
-# Wie geht's?
-Um etwas auf den Standarderror zu schreiben, verwendet man die Funktion `write(_:)` und übergibt ihr eine String-Nachricht. Hier ist ein Beispielcode:
-
+## So geht's:
 ```Swift
-write("Dies ist eine wichtige Fehlermeldung.", to: &standardError)
+import Foundation
+
+// Schreibe in Standardausgabe
+print("Hello, stdout!")
+
+// Schreibe in Standardfehler
+let stderr = FileHandle.standardError
+if let data = "Error: Something went wrong!\n".data(using: .utf8) {
+    stderr.write(data)
+}
+
+// Beispiel für kombinierte Ausgabe in der Konsole:
+// Hello, stdout!
+// Error: Something went wrong!
 ```
 
-Das Ergebnis wird dann in der Konsole, unabhängig von der normalen Ausgabe des Programms, angezeigt:
+## Tiefgang:
+Historisch kommt die Trennung von `stdout` und `stderr` aus der Unix-Welt, wo sie die flexible Weiterleitung von Logs und Benutzerdaten ermöglichte. Alternativ kann man auch `NSLog()` nutzen, wobei dies eher für Logging als für Fehlermeldungen gedacht ist. Unter der Haube leitet Swift `stderr` an den File Descriptor 2, der konventionsgemäß für Fehlermeldungen reserviert ist.
 
-```Swift
-Dies ist eine wichtige Fehlermeldung.
-```
-
-Man kann auch den Standardfehlerstream direkt mit dem `standardError` Konstante referenzieren und somit die `write(_:)` Funktion weglassen:
-
-```Swift
-standardError.write("Noch eine wichtige Nachricht.")
-```
-
-# Tiefergehender Einblick
-Das Schreiben auf den Standarderror wird hauptsächlich für die Fehlerbehandlung und Debugging-Zwecke verwendet. Anstatt die Nachricht auf dem normalen Ausgabestream zu drucken, bleibt sie auf dem Standardfehler und kann somit besser von anderen Programmausgaben unterschieden werden.
-
-Eine Alternative zum Schreiben auf den Standarderror ist das Verwenden von benutzerdefinierten Log-Dateien oder dem Debugging-Tool des jeweiligen IDEs. Jedoch ist das Schreiben auf den Standarderror eine schnelle und unkomplizierte Möglichkeit, wichtige Informationen direkt an die Konsole zu senden.
-
-Zur Umsetzung des Schreibens auf den Standarderror verwendet Swift eine Konstante namens `standardError`, welche einen Pointer auf den Standardfehlerstream darstellt. Durch die Verwendung von Referenzen, ist es möglich, direkt auf diesen Stream zu schreiben, ohne die normale Ausgabe des Programms zu beeinflussen.
-
-# Sieh dir auch an
-- [Stack Overflow Diskussion über das Schreiben auf den Standarderror in Swift](https://stackoverflow.com/questions/24008958/writing-to-standard-error-in-swift)
+## Siehe auch:
+- Apple's Swift-Dokumentation: [Swift.org](https://www.swift.org/documentation/)
+- Stack Overflow Diskussionen zum Umgang mit `stderr` in Swift
+- Unix Standard-Streams in "Advanced Programming in the UNIX Environment" von W. Richard Stevens

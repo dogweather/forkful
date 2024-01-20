@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "PHP: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## What & Why? (テストの書き方とその理由)
+テストとは、プログラムが期待通りに動作することを保証するためのコードです。品質を保ち、将来の変更で不具合が起きないようにするため、プログラマはテストを書きます。
 
-プログラマーの皆さんこんにちは！テストを書くことは何なのでしょうか？なぜプログラマーはそれを行うのでしょうか？
-
-テストを書くことは、アプリケーションやソフトウェアの信頼性を向上させるための重要な作業です。プログラマーはコードの機能を保証するためにテストを書き、バグを発見して修正することで、より高品質で安定したプログラムを作ることができます。
-
-## How to:
-
-テストを書くという作業はそれほど難しくありません。以下のように、簡単なPHPコードの例を用意しました。各コードブロックは、テストを実行し結果を表示する機能を示しています。
+## How to: (やり方)
+PHPでテストを書くには、PHPUnitというツールを使うのが一般的です。以下は簡単なテストの例です。
 
 ```PHP
 <?php
-// 演算子をテストする例
-echo "===演算子のテスト===";
-echo "<br>";
+use PHPUnit\Framework\TestCase;
 
-// 文字列の連結
-echo "Hello"." "."World";
-echo "<br>";
-
-// 算術演算
-echo 1 + 2;
-echo "<br>";
-
-// 論理演算
-echo (5 > 3 && 2 < 4);
-?>
+class SampleTest extends TestCase
+{
+    public function testAddition()
+    {
+        $this->assertEquals(4, 2 + 2);
+    }
+}
 ```
 
-上記のコードを実行すると、以下のような出力結果が得られます。
+実行結果:
 
-```===演算子のテスト===<br>Hello World<br>3<br>1```
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
-## Deep Dive:
+.                                                                   1 / 1 (100%)
 
-テストを書くことは、プログラミングの歴史を通して重要な役割を果たしてきました。プログラマーは以前から手動でテストを行っていましたが、最近では自動化されたテストが主流になってきています。PHPには、PHPUnitというテストフレームワークがあり、プログラムの各部分を自動的にテストすることができます。
+Time: 00:00.020, Memory: 6.00 MB
 
-また、手動でテストを行う代わりに、静的解析ツールを使用することもあります。これらのツールは、コードを実際に実行しなくても静的にチェックすることができ、エラーの早期発見に役立ちます。
+OK (1 test, 1 assertion)
+```
 
-テストを書く際には、テストコードを書くためのテクニックを学ぶことも重要です。これにより、より効果的で効率的なテストを行うことができます。
+## Deep Dive (詳細情報)
+PHPUnitは2001年にSebastian Bergmannによって作成されました。代替手段には、BehatやPHPSpecなどが存在します。PHPUnitでは、アサーションを使用して期待値と実際の値を比較し、テストの結果を決定します。テスト駆動開発(TDD)やビヘイビア駆動開発(BDD)などのテスト方法論を利用する場合もあります。
 
-## See Also:
-
-テストに関するさらに詳しい情報を知りたい方は、以下のリンクをご参照ください。
-
-- PHP公式ドキュメント: https://www.php.net/manual/en/testing.php
-- PHPUnitドキュメント: https://phpunit.de/documentation.html
-- 静的解析ツールの紹介: https://phppackages.org/search?q=Php+static+analysis
+## See Also (関連情報)
+- [PHPUnit公式サイト](https://phpunit.de/)
+- [テスト駆動開発(TDD)](https://en.wikipedia.org/wiki/Test-driven_development)
+- [ビヘイビア駆動開発(BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)

@@ -1,6 +1,6 @@
 ---
 title:                "Eine Textdatei schreiben"
-html_title:           "Go: Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 programming_language: "Go"
 category:             "Go"
@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+Das Schreiben einer Textdatei bedeutet, Textinformationen in einer Datei auf einem Speichermedium wie einer Festplatte zu speichern. Programmierer tun dies, um Daten dauerhaft zu sichern, Einstellungen zu speichern oder Informationen zwischen verschiedenen Teilen einer Anwendung oder verschiedenen Anwendungen auszutauschen.
 
-Das Schreiben einer Textdatei ist für Programmierer eine übliche Aufgabe, vor allem wenn es darum geht, Daten zu speichern oder zu exportieren. Textdateien enthalten einfachen, lesbaren Text, der in jedem Texteditor geöffnet und bearbeitet werden kann. Programmierer nutzen Textdateien, um zum Beispiel Konfigurationen zu speichern oder Ergebnisse von Programmen zu exportieren.
-
-# Wie geht's?
-
-Um eine Textdatei in Go zu schreiben, nutzen wir die Package `io/ioutil` und die Funktion `WriteFile()`. Hier ist ein Beispielcode für das Schreiben einer einfachen Textdatei mit dem Inhalt "Hello, World!":
-
-```
+## Wie geht das:
+```Go
 package main
 
 import (
-    "fmt"
-    "io/ioutil"
+	"bufio"
+	"fmt"
+	"os"
 )
 
 func main() {
-    content := []byte("Hello, World!")
-    err := ioutil.WriteFile("hello.txt", content, 0644)
+    dateiname := "beispiel.txt"
+    text := "Hallo, das ist ein Textbeispiel!"
+
+    datei, err := os.Create(dateiname)
     if err != nil {
-        fmt.Println(err)
+        fmt.Println("Fehler:", err)
+        return
+    }
+    defer datei.Close()
+
+    writer := bufio.NewWriter(datei)
+    _, err = writer.WriteString(text + "\n")
+    if err != nil {
+        fmt.Println("Fehler:", err)
+        return
+    }
+    err = writer.Flush()
+    if err != nil {
+        fmt.Println("Fehler:", err)
     }
 }
 ```
+Ausgabe: Der Text "Hallo, das ist ein Textbeispiel!" wird in die Datei `beispiel.txt` geschrieben.
 
-Die Funktion `WriteFile()` nimmt drei Parameter: den Namen der Datei, den Inhalt der Datei als `[]byte` und die Berechtigungen für die Datei. In diesem Beispiel haben wir die Berechtigungen `0644` gewählt, was bedeutet, dass die Datei für den Besitzer lesbar und schreibbar ist, aber für alle anderen nur lesbar.
+## Vertiefung
+Das Schreiben von Dateien ist so alt wie die Programmierung selbst. Ursprünglich wurden Textdateien für die Konfiguration von Software oder das Logging verwendet. Heutzutage gibt es Alternativen wie Datenbanken oder Cloud-Speicher, jedoch sind Textdateien wegen ihrer Einfachheit und Portabilität immer noch weit verbreitet. Bei der Implementierung in Go ist es wichtig, `defer` zu nutzen, um Dateien ordnungsgemäß zu schließen und Ressourcen freizugeben und `bufio` für effizientes Schreiben großer Mengen von Text zu verwenden.
 
-Nach Ausführung des Codes wird eine Datei mit dem Namen "hello.txt" erstellt und der Inhalt "Hello, World!" in die Datei geschrieben.
+## Siehe auch
 
-# Tiefer Einblick
-
-Schreiben von Textdateien ist eine gängige Aufgabe in der Programmierung und kann auf verschiedene Arten erledigt werden. In Go gibt es mehrere Libraries, die das Schreiben von Textdateien ermöglichen, wie zum Beispiel `bufio` und `os`. Allerdings bietet `io/ioutil` eine einfache und effiziente Möglichkeit, Textdateien zu schreiben.
-
-Zusätzlich zur Funktion `WriteFile()` gibt es in `io/ioutil` auch die Funktionen `ReadFile()` und `AppendFile()`, die das Lesen und Anhängen von Textdateien ermöglichen.
-
-# Siehe Auch
-
-Für weitere Informationen zum Schreiben von Textdateien in Go, schau dir die offizielle Dokumentation an: https://golang.org/pkg/io/ioutil/
-
-Wenn du mehr über die Go Packages `os` und `bufio` erfahren möchtest, findest du hier weitere Infos: https://gobyexample.com/reading-files und https://gobyexample.com/writing-files.
+- Go by Example: Dateioperationen: https://gobyexample.com/writing-files
+- Go Dokumentation zum `os`-Paket: https://pkg.go.dev/os
+- Go Dokumentation zum `bufio`-Paket: https://pkg.go.dev/bufio

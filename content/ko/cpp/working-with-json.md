@@ -1,7 +1,7 @@
 ---
-title:                "json 작업하기"
-html_title:           "C++: json 작업하기"
-simple_title:         "json 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?: 
-JSON을 다루는 것은 데이터를 교환하는 데 사용되는 형식 중 하나입니다. 대부분의 웹사이트 및 웹 어플리케이션에서 데이터를 교환하고 저장하는 데 사용됩니다. 프로그래머는 서로 다른 애플리케이션 간에 데이터를 쉽게 공유할 수 있도록 JSON을 사용합니다. 
+## What & Why? (무엇과 왜?)
+JSON은 데이터 교환 형식이다. 쉽고, 읽기 좋은 구조로 데이터를 전송하고 저장할 때 사용한다. 프로그래머는 빠른 데이터 교환과 플랫폼 간 호환성을 위해 JSON을 쓴다.
 
-## 방법: 
-JSON을 다루는 간단한 예시를 살펴보겠습니다. 다음 예시에서는 JSON 형식의 데이터를 읽고 출력하는 간단한 코드를 살펴볼 수 있습니다. 
+## How to: (어떻게 하나요?)
+C++로 JSON을 다뤄보자. `nlohmann/json` 라이브러리를 사용한다. 설치 후 코드 예제를 테스트하자.
 
+설치:
+```sh
+pip install nlohmann-json
+```
+
+기본 JSON 생성:
 ```C++
-#include <iostream>
 #include <nlohmann/json.hpp>
+#include <iostream>
 
 using json = nlohmann::json;
 
 int main() {
-    // 예시로 사용할 JSON 데이터
-    std::string json_data = R"(
-        {
-            "name": "John",
-            "age": 25,
-            "country": "USA"
-        }
-    )";
+    // JSON 객체 생성
+    json j;
+    j["name"] = "Kim";
+    j["age"] = 25;
+    j["is_programmer"] = true;
+    
+    // JSON을 문자열로 변환
+    std::string s = j.dump();
+    
+    // 결과 출력
+    std::cout << s << std::endl;
+}
+```
+출력:
+```plaintext
+{"age":25,"is_programmer":true,"name":"Kim"}
+```
 
-    // JSON을 파싱하여 객체로 변환
-    json parsed_data = json::parse(json_data);
+JSON 파일 읽기 및 쓰기:
+```C++
+#include <nlohmann/json.hpp>
+#include <iostream>
+#include <fstream>
 
-    // name 필드 출력
-    std::cout << "Name: " << parsed_data["name"] << std::endl;
+using json = nlohmann::json;
 
-    // age 필드 출력
-    std::cout << "Age: " << parsed_data["age"] << std::endl;
-
-    // country 필드 출력
-    std::cout << "Country: " << parsed_data["country"] << std::endl;
-
-    return 0;
+int main() {
+    // 파일에서 JSON 읽기
+    std::ifstream i("example.json");
+    json j;
+    i >> j;
+    
+    // JSON 사용
+    std::cout << "Name: " << j["name"] << std::endl;
+    
+    // JSON 파일로 쓰기
+    std::ofstream o("new_example.json");
+    o << j.dump(4); // 예쁜 출력을 위한 들여쓰기
 }
 ```
 
-#### 출력:
-```
-Name: John
-Age: 25
-Country: USA
-```
+## Deep Dive (심층 탐구)
+JSON(JavaScript Object Notation)은 2001년에 Douglas Crockford가 소개했다. XML과 달리 더 적은 코드로 데이터를 나타낼 수 있다. C++에서 `nlohmann/json` 말고도 `RapidJSON`, `JsonCpp` 같은 라이브러리들도 있다. `nlohmann/json`은 쉬운 사용법과 표준 C++ 기능 때문에 인기가 있다. 표준 라이브러리에는 JSON 지원이 내장되어 있지 않다.
 
-## 깊이 들어가기: 
-JSON은 원래 JavaScript에서 사용하기 위해 개발되었습니다. 하지만 현재는 다양한 프로그래밍 언어에서 사용되고 있습니다. 또한 JSON 대신 XML이나 CSV와 같은 다른 형식을 사용하여 데이터를 교환할 수도 있지만, JSON은 더 간결하고 쉽게 이해할 수 있는 형식으로 많이 사용됩니다. C++에서 JSON을 사용하기 위해서는 nlohmann의 json 라이브러리를 사용할 수 있습니다. 
-
-## 관련 정보 보기: 
-- nlohmann/json 공식 홈페이지: https://github.com/nlohmann/json 
-- JSON의 동작 방식에 대한 상세한 설명: https://www.json.org/json-ko.html
-- JSON 대신 사용할 수 있는 다른 데이터 교환 형식: XML과 CSV
+## See Also (더 보기)
+- nlohmann/json GitHub 페이지: https://github.com/nlohmann/json
+- JSON 표준 사양: https://www.json.org/json-en.html
+- RapidJSON 라이브러리: http://rapidjson.org/
+- JsonCpp 라이브러리: https://github.com/open-source-parsers/jsoncpp

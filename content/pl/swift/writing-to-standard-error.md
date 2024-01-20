@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Swift: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym i dlaczego?
-
-Pisanie do standardowego błędu jest jednym ze sposobów na obsługę błędów w programowaniu. Jest to proces, w którym programista przekazuje informacje o błędach lub ostrzeżeniach do standardowego strumienia błędu, a nie do standardowego strumienia wyjścia. Jest to szczególnie ważne, ponieważ pozwala to na oddzielenie informacji o błędach od normalnego wyjścia programu i ułatwia debugowanie.
+## Co i dlaczego?
+Pisanie do standardowego błędu (stderr) pozwala separować normalne wyjście programu od komunikatów o błędach. Programiści robią to, aby ułatwić obsługę błędów i logowanie, szczególnie przy przetwarzaniu potokowym i przekierowaniach.
 
 ## Jak to zrobić:
-
-Aby wypisać dane do standardowego błędu w języku Swift, możemy użyć funkcji "write(to:)", przekazując odpowiedni obiekt do zapisu, w tym przypadku wykorzystujemy stałą "stderr", która reprezentuje standardowy strumień błędów. Przykładowy kod wyglądałby następująco:
-
 ```Swift
-write("Błąd! Wprowadzony parametr jest nieprawidłowy!", to: FileHandle.standardError)
+import Foundation
+
+// Przykład zapisu do standardowego błędu (stderr)
+func logError(message: String) {
+    if let data = "\(message)\n".data(using: .utf8) {
+        FileHandle.standardError.write(data)
+    }
+}
+
+// Użycie funkcji
+logError(message: "Wystąpił błąd!")
+```
+Przykładowe wyjście w konsoli (wyświetlenie błędu):
+```
+Wystąpił błąd!
 ```
 
-Kod ten spowoduje wypisanie podanej informacji do standardowego strumienia błędów, a nie wyjścia, co może być pomocne w przypadku wystąpienia błędu w programie.
+## Zanurkujmy głębiej
+Pisząc do `stderr`, oddzielamy normalne dane wyjściowe programu od komunikatów o błędach, co ma swoje korzenie w systemach uniksowych, gdzie podzielono te strumienie, aby umożliwić ich niezależne przetwarzanie. Alternatywą dla `stderr` jest `stdout`, ale używamy go do przekazywania wyników działania programu, nie błędów. Szczegół realizacji opiera się na zarządzaniu deskryptorami plików – `stderr` ma zazwyczaj deskryptor 2.
 
-## Głębsza analiza:
-
-Pisanie do standardowego błędu jest częścią standardowego interfejsu komunikacyjnego w językach programowania. Jest to też jedna z metod obsługi błędów w języku Swift, a jej stosowanie jest zalecane przez Apple. Alternatywą dla pisania do standardowego błędu jest użycie funkcji "print()", która domyślnie wypisuje informacje do standardowego strumienia wyjścia, ale można ją skonfigurować do wypisywania do standardowego strumienia błędów poprzez zmianę parametru "to:" na "stderr". Implementacja pisania do standardowego błędu w języku Swift jest bardzo podobna do innych języków programowania, więc jest łatwa do zrozumienia dla programistów przesiadających się z innych języków.
-
-## Zobacz również:
-
-Dla szczegółowej dokumentacji na temat pisania do standardowego błędu w języku Swift, zapraszamy do odwiedzenia oficjalnej strony dokumentacji Apple: <https://developer.apple.com/documentation/foundation/foundationexception/1409973-write>.
+## Zobacz również
+- [Dokumentacja Swift na temat FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [POSIX Standard: Standard Error - opis standardu](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Elm: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## What & Why?
+Mitä tekstintiedoston kirjoittaminen on? Se on tallennusprosessi, jossa data muutetaan tekstimuotoon ja kirjoitetaan tiedostoon. Koodaajat kirjoittavat tekstitiedostoja datan tallentamiseksi, siirtämiseksi tai varmuuskopioimiseksi.
 
-Tekstitiedoston kirjoittaminen on yksinkertaista - vain avaat tekstitiedostosi selaimesta ja kirjoitat siihen haluamasi tekstiä. Ohjelmoijat tekevät tätä siksi, että tekstitiedostoja voidaan käyttää tallentamaan tietoa ja muokkaamaan sitä myöhemmin.
+## How to:
+Elmillä ei voi suoraan kirjoittaa tiedostoja, koska se suunniteltu turvalliseksi kielenä, joka toimii selaimissa. Sen sijaan käytetään JavaScriptiä Elm:n kanssa viestintään. 
 
-# Miten:
+Tässä kuinka voit esimerkiksi luoda "Tallenna tiedosto" -toiminnon käyttäen Elm:n `Ports`-ominaisuutta:
 
-Elmilla tekstitiedoston kirjoittaminen on helppoa:
+```Elm
+port module Main exposing (..)
+
+-- Määrittele portti tiedoston lataamiseen
+port download : String -> Cmd msg
+
+-- Käynnistä lataus painikkeesta
+saveToFile : String -> Cmd msg
+saveToFile data =
+    download data
 ```
-import File
-import Html exposing (text)
 
-writeToFile : String -> Cmd msg
-writeToFile content =
-    File.write "tekstitiedosto.txt" content
-        |> Task.perform (err -> text "Error writing to file")
-        (\_ -> text "Text file successfully written!")
+Ja JavaScriptissä:
+
+```javascript
+app.ports.download.subscribe(function(data) {
+    var blob = new Blob([data], {type: 'text/plain'});
+    var fileUrl = URL.createObjectURL(blob);
+    var tempLink = document.createElement('a');
+    tempLink.href = fileUrl;
+    tempLink.setAttribute('download', 'filename.txt');
+    tempLink.click();
+});
 ```
 
-Suorittaessasi tätä koodia tekstitiedosto "tekstitiedosto.txt" luodaan samaan kansioon kuin koodisi, ja siihen tallennetaan haluamasi sisältö.
+## Deep Dive
+Elm on julkaistu vuonna 2012, ja sen suunnittelun ytimessä on turvallisuus ja yksinkertaisuus. Suoraa tiedostojen käsittelyä ei ole, koska se voisi lisätä tietoturvariskejä. Vaihtoehtoina tiedon tallennukseen ovat Local Storage tai ulkoiset palvelut/apit, joita voi kutsua käyttäen `Http`-moduuleita. `Ports` tarjoaa joustavan tavan integroida Elm ja JavaScript tarvittaessa.
 
-# Syväsukellus:
-
-Tekstitiedoston kirjoittaminen on tärkeä osa ohjelmointia, sillä tiedostot voivat tallentaa pysyvästi tietoa, jota voidaan käyttää myöhemmin. Jotkut ohjelmoijat käyttävät myös erilaisia ​​tietokantoja tallentaakseen tietoa, mutta tekstitiedosto on edelleen yleinen ja helppo tapa tallentaa ja käsitellä tietoa.
-
-# Katso myös:
-
-Lisätietoa tekstitiedoston kirjoittamisesta Elmilla löydät viralliselta sivulta: 
-https://package.elm-lang.org/packages/elm/file/latest/
-
-Tutustu myös muihin tapoihin tallentaa tietoa Elmilla: 
-https://guide.elm-lang.org/effects/file.html
+## See Also
+- Elm Official Documentation: Ports - https://guide.elm-lang.org/interop/ports.html
+- MDN Web Docs: Blob - https://developer.mozilla.org/en-US/docs/Web/API/Blob
+- Elm Discourse: Sharing Experiences and Patterns - https://discourse.elm-lang.org/

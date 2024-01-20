@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Swift: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і для чого?
+## Що та Чому?
+Тестування коду — це перевірка частин програми на коректність. Програмісти пишуть тести, щоб забезпечити надійність та якість коду, а також щоб уникнути помилок у майбутньому.
 
-Написання тестів - це процес, що дозволяє програмістам перевірити, чи працює їх код правильно. Вони роблять це, щоб бути впевненими, що їх програма працюватиме без помилок як при значних, так і при невеликих змінах.
-
-Як?
-
+## Як?
 ```Swift
-func addTwoNumbers(_ a: Int, _ b: Int) -> Int {
-  return a + b
+import XCTest
+@testable import MyAwesomeApp
+
+class MyTests: XCTestCase {
+
+    func testExample() {
+        let result = MyClass().multiplyNumbers(3, 5)
+        XCTAssertEqual(result, 15, "Multiplication should be 15")
+    }
 }
 
-// Приклад виклику функції
-addTwoNumbers(3, 5)
-
-// Очікуваний результат - 8
+class MyClass {
+    func multiplyNumbers(_ a: Int, _ b: Int) -> Int {
+        return a * b
+    }
+}
+```
+Вихідні дані:
+```
+Test Suite 'MyTests' passed at 2023-03-21 18:36:24.824.
+        Executed 1 test, with 0 failures (0 unexpected) in 0.004 (0.006) seconds
 ```
 
-Глибокий занурення
+## Поглиблений Розділ
+Тестування коду має довгу історію і пройшло еволюцію від простих перевірок до комплексних автоматизованих систем. Альтернативами до XCTest у Swift можуть бути Quick/Nimble, або зовнішні фреймворки, як Appium чи Calabash. Глибина і складність тестів може варіюватись від простих unit tests до комплексних UI та integration tests.
 
-Написання тестів не є новшим явищем у світі програмування. Вони були запроваджені на початку розвитку комп'ютерних науок, але лише у новіших мовах, таких як Swift, вони стали стандартною практикою. Є кілька альтернатив, наприклад, використання живих тестів або ручного тестування коду, але написання тестів дозволяє ефективніше перевірити велику кількість варіантів та забезпечити надійність програми. Щоб побачити приклади найпопулярніших фреймворків для написання тестів у Swift, перегляньте наш покроковий посібник [тут](https://github.com/Quick/Quick) та [тут](https://github.com/Quick/Nimble).
-
-Дивіться також
-
-Ви можете знайти додаткову інформацію щодо написання тестів у Swift у [документації](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html) Apple та на [сайті](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial) RayWenderlich.
+## Додатково
+- [Swift Testing](https://swift.org/documentation/#the-swift-programming-language)
+- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
+- [Про тестування від Apple](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)
+- [Quick/Nimble GitHub](https://github.com/Quick/Nimble)

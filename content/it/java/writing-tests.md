@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Java: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Java"
 category:             "Java"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché si fanno i test?
-Scrivere i test è un'attività importante per i programmatori. Consiste nel creare una serie di test per verificare che il codice scritto funzioni correttamente. I programmatori lo fanno per assicurarsi che il loro codice sia privo di errori e per facilitare la manutenzione e il debugging in futuro.
+## What & Why?
+Scrivere test ci permette di verificare che il codice funzioni come previsto. Farlo risparmia tempo, evita errori ed è essenziale per mantenere la qualità del software durante lo sviluppo.
 
-## Come fare:
-Ecco un esempio pratico di come scrivere un test in Java:
+## How to:
+Java utilizza JUnit per i test. Ecco un esempio semplice:
 
-```Java
-import org.junit.Test;
-import static org.junit.Assert.*;
+```java
+import org.junit.jupiter.api.*;
 
-public class CalcolatriceTest {
-    
+class CalcolatriceTest {
+
+    private Calcolatrice calcolatrice;
+
+    @BeforeEach
+    void setUp() {
+        calcolatrice = new Calcolatrice();
+    }
+
     @Test
-    public void testSomma() {
-        Calcolatrice calcolatrice = new Calcolatrice();
-        int risultato = calcolatrice.somma(5, 10);
-        assertEquals(15, risultato);
+    void testAddizione() {
+        Assertions.assertEquals(5, calcolatrice.addizione(2, 3));
+    }
+
+    // Metodo da testare
+    static class Calcolatrice {
+        int addizione(int a, int b) {
+            return a + b;
+        }
     }
 }
 ```
+Output dopo l'esecuzione del test:
 
-In questo esempio, stiamo testando il metodo "somma" della nostra classe "Calcolatrice". Utilizziamo l'annotazione "@Test" per indicare a Java che questo metodo è un test e ci aspettiamo che restituisca il risultato corretto, ovvero 15. Utilizziamo anche il metodo "assertEquals" per confrontare il risultato effettivo con quello atteso.
+```
+Test passed.
+```
 
-## Approfondimento:
-L'idea di scrivere i test è nata con lo sviluppo dei primi linguaggi di programmazione orientati agli oggetti, come Java. Prima di allora, i programmatori dovevano verificare manualmente il corretto funzionamento del loro codice tramite esecuzioni e debug. Oltre alla libreria di unit testing "JUnit", esistono anche altre alternative come "TestNG", "Mockito" e "PowerMock" per testare codice più complesso e che dipende da altri componenti.
+## Deep Dive
+Il testing automatico esiste da quando il software è diventato complesso. JUnit, creato da Kent Beck e Erich Gamma, è uno standard de facto in Java dal 2000. Alternative includono TestNG o framework specifici per domini come Mockito per i mock objects. Dettagli d'implementazione da considerare includono l'isolamento dei test, la copertura del codice e l'integrazione con sistemi di build automatizzati come Maven o Gradle.
 
-Se siamo alla ricerca di un approfondimento sulla scrittura dei test in Java, vi consigliamo di consultare la documentazione ufficiale di JUnit, disponibile qui: https://junit.org/junit5/ o di ricorrere ad altri tutorial e risorse online.
-
-## Vedi anche:
-Per ulteriori informazioni sulla scrittura dei test in Java, vi consigliamo di dare un'occhiata a questi siti:
-- https://www.baeldung.com/java-junit
-- https://www.tutorialspoint.com/java_xml/java_xml_xunit_testing.htm
-- https://www.vogella.com/tutorials/JUnit/article.html
+## See Also
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Maven: Surefire Plugin](http://maven.apache.org/surefire/maven-surefire-plugin/)
+- [Gradle Testing](https://docs.gradle.org/current/userguide/java_testing.html)

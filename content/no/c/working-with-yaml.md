@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "C: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-YAML står for "YAML Ain't Markup Language" og er et format for å lagre og strukturere data. Det brukes ofte av programmerere til å konfigurere og lagre data på en lesbar og organisert måte.
+
+YAML er et dataformat brukt for konfigurasjonsfiler og datautveksling. Programmere bruker det fordi det er lett å lese og skrive, og det fungerer godt med mange programmeringsspråk.
 
 ## Hvordan:
-For å jobbe med YAML i C programmeringsspråk, må du inkludere biblioteket "yaml.h". Her er et eksempel på hvordan du kan skrive ut en enkel YAML-fil:
-
-```
+```C
+#include <stdio.h>
 #include <yaml.h>
 
-void main() {
-    YAML::Emitter emitter;
-    emitter << YAML::BeginMap        // starter en "map"
-            << YAML::Key << "navn"   // skriver ut "navn:"
-            << YAML::Value << "Peter"// skriver ut "Peter"
-            << YAML::EndMap;          // avslutter "map"
-    std::cout << emitter.c_str();     // skriver ut YAML-filen
+int main(void) {
+    yaml_parser_t parser;
+    yaml_token_t token;
+
+    FILE *file = fopen("config.yaml", "r");
+    yaml_parser_initialize(&parser);
+    yaml_parser_set_input_file(&parser, file);
+
+    do {
+        yaml_parser_scan(&parser, &token);
+        switch(token.type) {
+        case YAML_KEY_TOKEN: printf("Key: "); break;
+        case YAML_VALUE_TOKEN: printf("Value: "); break;
+        case YAML_SCALAR_TOKEN: printf("%s\n", token.data.scalar.value); break;
+        default: /* Ignorer andre tokens */
+            ;
+        }
+        if(token.type != YAML_STREAM_END_TOKEN)
+            yaml_token_delete(&token);
+    } while(token.type != YAML_STREAM_END_TOKEN);
+    yaml_token_delete(&token);
+
+    yaml_parser_delete(&parser);
+    fclose(file);
+
+    return 0;
 }
-
 ```
-Output:
+_**Output:**_
 ```
-navn: Peter
+Key: version
+Value: 1.0
+Key: services
+Key: web
+Key: image
+Value: nginx:latest
 ```
-## Dypdykk:
-YAML ble opprinnelig utviklet i 2001 av Ingy döt Net, men ble standardisert i 2005 av YAML.org. Det er en enkel og fleksibel måte å lagre og transportere data mellom forskjellige programmer og programmeringsspråk.
 
-En alternativ måte å konfigurere og lagre data på er ved bruk av XML, men YAML er ofte foretrukket fordi det er mer leselig og mindre "klumpete". 
+## Dypdykk
 
-Implementeringen av YAML i C er mulig ved hjelp av biblioteket "yaml.h", som er åpen kildekode og lett å integrere i dine eksisterende prosjekter.
+YAML, som betyr "YAML Ain't Markup Language" (opprinnelig "Yet Another Markup Language"), ble introdusert i 2001. Alternativer som JSON og XML eksisterer, men YAML er ofte foretrukket for menneskelig lesbarhet. Det brukes typisk med biblioteker som `libyaml` (C/C++) for parsing/generering.
 
-## Se også:
-- [YAML.org](https://yaml.org/) for offisiell dokumentasjon og nyheter om YAML
-- [C YAML](https://github.com/yaml/libyaml) for mer informasjon om å jobbe med YAML i C
+## Se Også
+
+- YAML offisiell side: https://yaml.org
+- LibYAML GitHub-repositorium: https://github.com/yaml/libyaml
+- YAML Wikipedia-side: https://no.wikipedia.org/wiki/YAML

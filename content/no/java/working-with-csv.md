@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med CSV"
-html_title:           "Java: Å jobbe med CSV"
-simple_title:         "Å jobbe med CSV"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-CSV står for "Comma-Separated Values", og er en vanlig måte å lagre og håndtere data på. Det er et tekstbasert format hvor data er organisert som tabell med kolonner og rader, og verdiene er separert med komma. Programmere bruker CSV fordi det er enkelt å håndtere og kan leses og skrives av de fleste programmer.
+## What & Why?
 
-# Hvordan:
+Arbeid med CSV handler om å lese og skrive data i kommaseparerte filer. Programmerere gjør dette fordi CSV er enkel å forstå, lett å lese, og universelt støttet over mange programmer og plattformer.
+
+## How to:
+
+For å jobbe med CSV i Java, kan vi bruke `java.util.Scanner` for enkel innlesing eller biblioteker som Apache Commons CSV for mer avanserte behov. Her er et grunnleggende eksempel:
+
 ```java
-// Leser en CSV-fil og skriver ut dataene
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-public class LesCSV {
-
-  public static void main(String[] args) {
-    // Oppretter en fil og en filleser
-    File fil = new File("data.csv");
-    FileReader filleser = null;
-
-    try {
-      // Åpner filen og oppretter en filleser
-      filleser = new FileReader(fil);
-
-      // Leser filen linje for linje og skriver ut dataene
-      int c;
-      while ((c = filleser.read()) != -1) {
-        System.out.print((char) c);
-      }
-
-      // Lukker filleser
-      filleser.close();
-    } catch (IOException e) {
-      System.out.println("Feil ved lesing av fil: " + e.getMessage());
-      e.printStackTrace();
+public class SimpleCsvReader {
+    public static void main(String[] args) throws FileNotFoundException {
+        File csvFile = new File("data.csv");
+        Scanner scanner = new Scanner(csvFile);
+        
+        while (scanner.hasNext()) {
+            String[] data = scanner.nextLine().split(",");
+            // Prosesser data her
+            System.out.println("Første kolonne verdi: " + data[0]);
+        }
+        
+        scanner.close();
     }
-  }
 }
 ```
-Eksempel på input-fil (data.csv):
+
+Forventet output:
 ```
-Fornavn,Etternavn,Alder
-Maria,Garcia,24
-Juan,Hernandez,32
-Emilia,Rodriguez,29
-Pablo,Chavez,27
-```
-Eksempel på output:
-```
-Fornavn,Etternavn,Alder
-Maria,Garcia,24
-Juan,Hernandez,32
-Emilia,Rodriguez,29
-Pablo,Chavez,27
+Første kolonne verdi: Verdi1
+Første kolonne verdi: Verdi2
 ```
 
-# Dykk dypere:
-CSV ble opprinnelig utviklet for å lagre data på en enkel måte på maskiner med begrenset kapasitet på 1970-tallet. Alternativer til å håndtere data inkluderer XML og JSON, men CSV er fortsatt et populært valg på grunn av sin enkelhet og lesbarhet. Implementering av CSV kan variere avhengig av programmeringsspråk, men prinsippene er de samme.
+## Deep Dive
 
-# Se også:
-- [Wikipedia: Comma-separated values](https://no.wikipedia.org/wiki/Comma-separated_values)
-- [Oracle dokumentasjon: Working with CSV Files in Java](https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html)
+CSV har vært et populært datautvekslingsformat siden 1970-tallet grunnet sin enkelhet. Alternativer som JSON eller XML tilbyr mer struktur og funksjoner, men CSV opprettholdes for kompatibilitet og brukervennlighet. Når det kommer til implementering, er det avgjørende å håndtere ulike skilletegn og tekstinnpakning, spesielt i internasjonale kontekster.
+
+## See Also
+
+- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- OpenCSV: http://opencsv.sourceforge.net/
+- Java API for JSON Processing: https://javaee.github.io/jsonp/

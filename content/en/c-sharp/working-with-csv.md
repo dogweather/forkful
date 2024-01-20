@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "C# recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "C#"
 category:             "C#"
@@ -12,59 +12,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-CSV (Comma Separated Values) is a popular file format used for storing and organizing tabular data. In essence, it is a convenient way of representing data that can be easily read and manipulated by both humans and computers. Programmers often work with CSV files because they are lightweight, easy to understand, and compatible with a wide range of programming languages and applications.
+Working with CSV (Comma-Separated Values) means reading and writing data in a simple, text-based format — one that's universal and spreadsheet-friendly. Programmers use CSV for its simplicity and interoperability when exchanging tabular data between systems.
 
-## How to:
+## How to
 
-To work with CSV files in C#, you can use the built-in `System.IO.File` class or the `TextFieldParser` class from `Microsoft.VisualBasic.FileIO` namespace. The following code snippet shows how to read data from a CSV file and display it on the console:
-
+### Reading CSV Files
 ```C#
+using System;
 using System.IO;
 
-string filePath = "data.csv"; 
-using (var reader = new StreamReader(filePath))
+class ReadCSVExample
 {
-    while (!reader.EndOfStream)
+    static void Main()
     {
-        var line = reader.ReadLine();
-        var data = line.Split(',');
-        foreach (var column in data)
+        string path = "data.csv";
+        using (var reader = new StreamReader(path))
         {
-            Console.Write(column + " ");
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                // Now do something with the values, e.g., print them
+                Console.WriteLine(String.Join(" | ", values));
+            }
         }
-        Console.WriteLine();
     }
 }
 ```
+**Sample Output:**
+```
+John | Doe | johndoe@example.com
+Jane | Smith | janesmith@example.com
+```
 
-The output will be each row of the CSV file displayed on a new line, with the values separated by spaces. 
-
-To write data to a CSV file, you can use the `StreamWriter` class from the `System.IO` namespace. The following code snippet shows how to create a CSV file and write data to it:
-
+### Writing CSV Files
 ```C#
+using System;
 using System.IO;
 
-string filePath = "new_data.csv";
-using (var writer = new StreamWriter(filePath))
+class WriteCSVExample
 {
-    string[] data = { "1, John, Doe", "2, Jane, Smith", "3, Bob, Johnson" };
-    foreach (var row in data)
+    static void Main()
     {
-        writer.WriteLine(row);
+        string path = "output.csv";
+        var records = new[]
+        {
+            new[] {"Name", "Age", "Email"},
+            new[] {"Alice", "23", "alice@example.com"},
+            new[] {"Bob", "30", "bob@example.com"}
+        };
+
+        using (var writer = new StreamWriter(path))
+        {
+            foreach (var record in records)
+            {
+                var line = String.Join(",", record);
+                writer.WriteLine(line);
+            }
+        }
+        Console.WriteLine($"Data written to {path}");
     }
 }
 ```
+**Sample Output:**
+```
+Data written to output.csv
+```
 
-The above code will create a new CSV file named "new_data.csv" and write the data to it. 
+## Deep Dive
 
-## Deep Dive:
+CSV's been around since the early days of computing, bridging the gap between diverse systems. It's not perfect — lacks standard encoding for characters and doesn't support multi-line fields well without a robust parser. That's where formats like JSON and XML stride in, offering more complexity but better structure for hierarchical data.
 
-CSV files have been in use since the 1980s and were initially developed for use with spreadsheets, hence the term "comma separated values". While commas are the most commonly used delimiter, other delimiters such as tabs, semicolons, and pipes can also be used.
+Under the hood, you're usually manipulating strings, either built-in `string` methods or libraries like `CsvHelper` can add extra muscle to your CSV handling, providing more features and handling edge cases gracefully. Remember, there's no native CSV handling in .NET, so you're on your own with string manipulation or you can opt for a third-party library.
 
-An alternative to working with CSV files is using a database management system. However, CSV files are often preferred for smaller datasets as they require less overhead and can be easily shared between different systems. 
+## See Also
 
-In terms of implementation, working with CSV files involves parsing and formatting the data according to the specified delimiters. The `TextFieldParser` class from the `Microsoft.VisualBasic.FileIO` namespace is specifically designed to handle the parsing of CSV files and offers a variety of methods and properties for reading and writing data.
+For more in-depth CSV manipulation in C#:
+- [CsvHelper Library](https://joshclose.github.io/CsvHelper/)
+- [Microsoft’s documentation on `StreamReader`](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
 
-## See Also:
-
-- [CSV File Format Overview](https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba) from Microsoft Office Support
+Learn more about alternatives to CSV:
+- [Understanding JSON](https://www.json.org/json-en.html)
+- [XML in a Nutshell](https://www.w3schools.com/xml/xml_whatis.asp)

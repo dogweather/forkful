@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standard error"
-html_title:           "Fish Shell: Skriving til standard error"
-simple_title:         "Skriving til standard error"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,29 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Hvis du noen gang har programmert eller jobbet med terminalen, har du sannsynligvis sett kommandoer som bruker ">&2" eller "2>" til å skrive til standard error. Dette er måter for programmerere å sende feilmeldinger eller annen informasjon til terminalen.
-
-Å skrive til standard error kan hjelpe med feilsøking og debugging i programmer. Det lar utviklere sende spesifikk informasjon til terminalen som kan hjelpe dem med å finne og løse feil.
+Skriving til standardfeil (`stderr`) handler om å sende feilmeldinger og diagnostikk separat fra hoveddatautstrømmen (`stdout`). Dette gjøres for å gjøre det enklere å skille mellom vanlig output og feil, noe som er nyttig for feilsøkning og logging.
 
 ## Hvordan:
-
-For å skrive til standard error i Fish Shell, bruker du kommandoen "echo" med flagget "-e" og spesifiserer at du vil skrive til standard error ved å bruke ">&2". Se eksempelet nedenfor for å se hvordan dette ser ut i praksis.
-
 ```Fish Shell
-echo -e "Dette er en feilmelding" >&2
+echo "Dette er en melding til standard output"  # Normal output
+echo "Dette er en feilmelding" >&2  # Melding til standard error
+
+# Eksempel på bruk der standard output og error skilles:
+echo "Vanlig output" > output.txt
+echo "Feilmelding" >&2 > error.txt
+
+# Forventet output til terminal:
+# Feilmelding
+# Innholdet i 'output.txt' vil være "Vanlig output"
+# 'error.txt' vil ha ingen data siden den ble omdirigert fra stderr som er skrevet direkte til terminalen
 ```
 
-Dette vil skrive ut teksten "Dette er en feilmelding" til standard error, som vanligvis vil bli vist i rødt i terminalen.
+## Dypdykk
+Historisk sett kommer skille mellom `stdout` og `stderr` fra Unix-tiden, slik at programmer kunne sende data og feil til forskjellige strømmer. I Fish kan du omdirigere `stderr` med `>&2`. Alternativt, kan du omdirigere både standard output og error til samme sted med `&> filnavn`.
 
-## Dypdykk:
+Skille dem er viktig når du rørlegger kommandoer. For eksempel, `kommando1 | kommando2` vil sende `kommando1` sin `stdout` til `kommando2`, men ikke `stderr`. For å inkludere feil i røret, bruk `kommando1 ^| kommando2`. Details om implementasjon kan avhenge av operasjonssystemet og skallets versjon.
 
-Skriving til standard error har vært en del av programmering i mange år, og er en del av standarden POSIX som beskriver hvordan Unix-baserte systemer skal fungere. Noen programmerere bruker også kommandoen "error" i stedet for "echo" for å skrive til standard error.
-
-Selv om å skrive til standard error kan være nyttig, kan det også føre til rot og kaos hvis det misbrukes. Det kan være lurt å begrense bruken av det til kun feil- og debuggingsmeldinger for å unngå å forvirre brukeren.
-
-## Se også:
-
-- Fish Shell dokumentasjon: https://fishshell.com/docs/current/
-- Forskjellen mellom standard output og standard error: https://stackoverflow.com/questions/983779/difference-between-stderr-and-stdout
-- Alt om POSIX-standardene: https://en.wikipedia.org/wiki/POSIX
+## Se Også
+- Fish dokumentasjon om omdirigering: https://fishshell.com/docs/current/index.html#redirection
+- Unix programmeringsveiledning: http://www.tldp.org/LDP/abs/html/io-redirection.html
+- Feilsøking i Fish Shell: https://fishshell.com/docs/current/index.html#debugging

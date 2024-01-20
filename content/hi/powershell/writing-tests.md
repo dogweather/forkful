@@ -1,7 +1,7 @@
 ---
-title:                "टेस्ट लिखना"
-html_title:           "PowerShell: टेस्ट लिखना"
-simple_title:         "टेस्ट लिखना"
+title:                "परीक्षण लिखना"
+html_title:           "Arduino: परीक्षण लिखना"
+simple_title:         "परीक्षण लिखना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+टेस्ट लिखना सॉफ्टवेयर के विशेष भागों की जांच और पुष्टि करने की प्रक्रिया है। प्रोग्रामर्स इसलिए टेस्ट लिखते हैं ताकि वे आत्मविश्वास से कोड में बदलाव कर सकें और सुनिश्चित कर सकें कि कोड सही तरीके से काम करता रहे।
 
-प्रोग्रामर्स गुणवत्तापूर्ण कोड लिखें कि उनके उपयोगकर्ताओं को कुशलता के साथ आवश्यकताओं को पूरा कर सकें। एक तरफ, यह आपको आपके कोड की गुणवत्ता को सुनिश्चित करने में सहायता करता है, जबकि दूसरी ओर यह सुनिश्चित करता है कि आपके कोड में कोई भी सहायक या संरचनात्मक विकल्पों का संबंध नहीं है।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```PowerShell
-Describe "प्रारूपी कार्य" {
-    $string = "Hello World"
-    It "ढांचा का उपयोग करना" {
-        $string | Should Be "Hello World"
+# मान लेते हैं कि आपके पास एक सिंपल फ़ंक्शन हैं जो संख्याओं का योग करता है
+function Add-Numbers($num1, $num2) {
+    return $num1 + $num2
+}
+
+# अब हम इस फंक्शन के लिए एक टेस्ट लिखेंगे
+Describe "Add-Numbers Tests" {
+    It "adds two numbers correctly" {
+        Add-Numbers 5 10 | Should -Be 15
     }
 }
+
+# टेस्ट चलाने के लिए Pester module की ज़रूरत होती है, इसे इस प्रकार इनस्टॉल करें
+Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# अब टेस्ट को चलाएं
+Invoke-Pester
 ```
 
-एक कोड सूची के भीतर, आप इस रामबाण सूची को किसी भी तरह के सोचने या समस्याओं को हल करने के लिए उपयोग कर सकते हैं। आप अपनी सूची में विभिन्न अनुसरण और सामग्री को मिलाकर बना सकते हैं, जो परिणाम के मुकाबले दूर्भाव डिजाइन करने के लिए कोशिश करते हैं। आप केवल अपने कोड का गुणवत्ता जांचने के लिए ही नहीं, बल्कि यह आपको अपने कोड में बदलाव करने या बेहतर बनाने की जरूरत वाले हिस्से को अपनी तलबों के मुताबिक साफ़ करने का भी मौका देता है।
-
-```PowerShell
-Describe "संयोजित स्ट्रिंग" {
-    $string1 = "Hello "
-    $string2 = "World"
-    It "जोड़ना" {
-        $string3 = $string1 + $string2
-        $string3 | Should Be "Hello World"
-    }
-}
+परिणाम (Sample Output):
+```
+Starting discovery in 1 files.
+Discovery finished in 58ms.
+[+] /path/to/your/tests/Add-Numbers.Tests.ps1 101ms (96ms|5ms)
+Tests completed in 101ms
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
 ```
 
-## गहराई जाँच:
+## Deep Dive (गहराई से समझिए)
+टेस्टिंग का इतिहास 1950 के दशक से है जब पहली बार बग्स और गलतियां ढूँढने के लिए सिस्टमेटिक तरीकों का उपयोग हुआ।
 
-आरंभ से प्रमाणात्मक लिखने का इतिहास कुछ ही साल पुराना है, लेकिन यह एक उन्नत और सुरक्षित कोड के लिए अत्यधिक सरल उपाय है। अन्य प्रारूपों में समस्याओं का पता लगाने और उन्हें सुलझाने के लिए उपयोगकर्ताओं को बहुत समय और प्रयास लगाना पड़ता है। इसके लिए कई अनुवाद और पुनर्गृहीत में विशेषताएं, जो कि आपको संभवतः ठीक से माप नहीं सकता है। यह सोचने में भी मुश्किल लागता है कि आपको स्क्रिप्ट के उस हिस्से को किस तरह संशोधित करना चाहिए जिसमें आपको समस्या का सबसे बड़ा भाग होता है।
+PowerShell में `Pester` एक पॉपुलर टेस्टिंग फ्रेमवर्क है। विकल्प के रूप में `NUnit` और `xUnit` जैसे अन्य फ्रेमवर्क भी हैं, हालांकि वे ज्यादातर C# जैसी अन्य भाषाओं के लिए हैं।
 
-## और भी देखें:
+Pester में `Describe` ब्लॉक कोड की एक "सुट" के रूप में काम करता है, और `It` ब्लॉक का इस्तेमाल तब होता है जब कोई विशेष टेस्ट केस बताना हो।
 
-आप अधिक जानने के लिए [इस लेख को](https://aboutsohaib.com/powershell-test-methods/#Why_Write_Test_scripts) कैसे और क्यों तैयार किया गया है। दूसरों के लिए, यह [PowerShell Gallery tutorial](https://www.jeffwouters.nl/en/powershell-gallery-tutorial/) आपको PowerShell Gallery कई चीजों को कैसे अनुसन्धान
+## See Also (इसे भी देखें:)
+- [Pester](https://pester.dev/docs/quick-start) - Pester का ऑफिसियल डॉक्यूमेंटेशन।
+- [PowerShell Testing](https://github.com/pester/Pester/wiki/PowerShell-Testing) - GitHub पर Pester से जुड़ी संसाधन सूची।

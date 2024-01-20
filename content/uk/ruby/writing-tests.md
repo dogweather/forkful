@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Ruby: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,37 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-
-Роблення тестів - це процес написання коду, який перевіряє правильність роботи програми. Це важливий етап у розробці програмного забезпечення, оскільки допомагає виявляти та виправляти помилки. Програмісти пишуть тести, щоб бути впевненими, що їх код працює як задумано та не викликає непередбачуваних проблем у майбутньому.
+## Що це таке & Навіщо?
+Тестування коду - це перевірка, щоб програма працювала правильно. Програмісти пишуть тести для виявлення помилок, гарантування якості та уникнення проблем у майбутньому.
 
 ## Як це зробити:
+```Ruby
+# Приклад простого тесту використовуючи RSpec
 
-```ruby
-require 'minitest/autorun'
+# Встановити RSpec (у командному рядку):
+gem install rspec
 
-class CalculatorTest < Minitest::Test
-  def test_add
-    calc = Calculator.new
-    result = calc.add(2, 3)
-    assert_equal 5, result
-  end 
-end 
+# Spec файл
+# game_spec.rb
+require_relative 'game'
 
-class Calculator
-  def add(a, b)
-    a + b
+describe Game do
+  it "scores a gutter game" do
+    game = Game.new
+    20.times { game.roll(0) }
+    expect(game.score).to eq(0)
   end
 end
+
+# Код програми
+# game.rb
+class Game
+  def initialize
+    @score = 0
+  end
+
+  def roll(pins)
+    @score += pins
+  end
+
+  def score
+    @score
+  end
+end
+
+# Виконання тесту
+# В командному рядку:
+rspec game_spec.rb
+
+# Вивід
+# .
+#
+# Finished in 0.00276 seconds (files took 0.114 seconds to load)
+# 1 example, 0 failures
 ```
 
-В даному прикладі ми використовуємо фреймворк Minitest для написання тестів для нашого калькулятора. Ми перевіряємо правильність роботи методу `add` та очікуємо отримати результат 5. Запускаючи цей тест, ми можемо переконатися, що наш код працює правильно.
+## Поглиблений аналіз:
+Тестування коду - не новий тренд, воно стало частиною програмування з часів ранніх мов, таких як SUnit для Smalltalk. Альтернативами RSpec в Ruby можуть бути MiniTest, Test::Unit, або Cucumber для BDD. Деталі реалізації включають написання тестових сценаріїв, що імітують потенційні паттерни користувача та перевірка відповідності очікувань.
 
-## Глибоке занурення:
-
-Написання тестів є важливою частиною методології розробки програмного забезпечення, відомої як тестування управління якістю. Це дозволяє розробникам швидко перевіряти, чи все працює як слід, зменшуючи кількість помилок та полегшуючи процес розробки. Існують також інші фреймворки для написання тестів, такі як RSpec та Cucumber.
-
-## Дивись також:
-
-- [RSpec документація](https://rspec.info/documentation/)
-- [Cucumber](https://cucumber.io/docs/)
+## Дивіться також:
+- [RubyTapas: Free Screencasts about Ruby Testing](https://www.rubytapas.com/)
+- [RSpec GitHub repository](https://github.com/rspec/rspec)

@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Lua: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「## テストを書く理由とやり方」
+## What & Why? (何となぜ？)
+テストとは、コードが期待通りに動くことを保証する手法です。品質を保ち、将来のバグやエラーを防ぐためにプログラマーが行います。
 
-テストを書くとは、自分が書いたプログラムが正しく動くかどうかを確かめる作業です。プログラマーたちは、バグを発見し修正するためにテストを行います。
-
-「## やり方：」
-
-```Lua
--- 「こんにちは」をプリントする関数
-function say_hello()
-  print("こんにちは")
-end
-
-say_hello()
-```
-
-実行結果：「こんにちは」
+## How to: (やり方)
+Luaには標準のテストフレームワークがないため、`busted`や`luaunit`などの外部ライブラリを使う。以下は`luaunit`を使った簡単なテスト例です。
 
 ```Lua
-a = 5
-b = 10
+local luaunit = require('luaunit')
+local mymodule = require('mymodule')
 
--- aとbの和を計算する関数
-function sum()
-  return a + b
+function testAdd()
+    luaunit.assertEquals(mymodule.add(1, 1), 2)
 end
 
-print(sum())
+os.exit(luaunit.LuaUnit.run())
 ```
 
-実行結果：15
+実行結果は以下の通りです。
 
-「## 深堀り」
+```
+..
+Ran 1 test in 0.001 seconds
+OK
+```
 
-プログラミングの歴史的文脈では、テストはソフトウェア開発の重要な段階です。また、テストを行う代わりに、プログラマーたちは「デバッグ」や「リファクタリング」を行うこともできます。テストを書く際は、テストデータやエラー処理にも注意しましょう。
+## Deep Dive (詳細情報)
+テストの記述は、1990年代にソフトウェア開発の一部となりました。Lua言語は比較的新しい言語なので、テストエコシステムも進化し続けています。`busted`はBDDスタイルのテストを、`luaunit`はxUnitスタイルのテストをサポートします。Luaにおけるテストは、主に独立したライブラリを使用して行うのが一般的ですが、`TAP`や`TestMore`のようなプロトコルを支持するものもあります。
 
-「## 関連リンク」
-
-- Lua公式ドキュメント：https://www.lua.org/docs.html
-- Luaのテストフレームワーク：https://github.com/bluebird75/luaunit
+## See Also (参照)
+- [`luaunit`](https://github.com/bluebird75/luaunit) – luaunitのGitHubリポジトリ。
+- [Lua-users Wiki: UnitTesting](http://lua-users.org/wiki/UnitTesting) – Luaのユニットテストに関するリソースのコレクション。

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "PowerShell: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+JSON (JavaScript Object Notation) - це текстовий формат для зберігання та передачі даних. Програмісти використовують його через його легку читаність для людей і машин.
 
-Робота з JSON - це процес перетворення даних у форматі тексту в структурований формат, зрозумілий для програм. Це корисний інструмент для програмістів, оскільки дозволяє зберігати та обробляти дані у зрозумілій формі.
+## How to: (Як робити:)
+```PowerShell
+# Читаємо JSON з файла
+$json = Get-Content -Path 'example.json' | ConvertFrom-Json 
 
-## Як:
+# Відображаємо об’єкт
+$json
 
-```PowerShell 
-# Створення JSON об’єкту за допомогою хеш-таблиці
-$jsonObject = [ordered] @{
-	name = 'John'
-	age = 25
-	city = 'Kyiv'
+# Додавання нового ключа
+$json.newKey = "newValue"
+
+# Зберігаємо зміни у файл
+$json | ConvertTo-Json | Set-Content -Path 'example.json'
+
+# Вивід вмісту файла після змін
+Get-Content -Path 'example.json'
+```
+```json
+{
+  "existingKey": "existingValue",
+  "newKey": "newValue"
 }
-
-# Перетворення JSON об’єкту у рядок
-$jsonString = ConvertTo-Json $jsonObject
-Write-Output $jsonString
-# Результат: {"name":"John","age":25,"city":"Kyiv"}
-
-# Перетворення рядка JSON у об’єкт
-$jsonObject = ConvertFrom-Json $jsonString
-# Звернення до властивостей об’єкту
-Write-Output $jsonObject.name
-Write-Output $jsonObject.age
-Write-Output $jsonObject.city
-# Результат:
-# John
-# 25
-# Kyiv
 ```
 
-## Глибоке дослідження:
+## Deep Dive (Поглиблено)
+JSON започаткований з JavaScript, але зараз є мовно-незалежним форматом. Alternatives включають XML та YAML. Реалізація в PowerShell - надзвичайно проста з `ConvertFrom-Json` та `ConvertTo-Json`.
 
-(1) JSON було створено в 2001 році як простий формат обміну даними. (2) Існують інші альтернативи для роботи з даними, такі як CSV або XML, проте JSON переваги завдяки своїй простоті та функціональності. (3) У PowerShell існує багато вбудованих функцій для роботи з JSON, що дозволяє легко і ефективно перетворювати дані.
-
-## Дивіться також:
-
-- [JSON офіційне руководство](https://www.json.org/json-en.html)
-- [Робота з JSON в PowerShell](https://blog.netspi.com/working-with-json-in-powershell/)
+## See Also (Дивіться також)
+- [JSON стандарт](https://www.json.org/json-en.html)
+- [PowerShell Gallery модулі для JSON](https://www.powershellgallery.com/)

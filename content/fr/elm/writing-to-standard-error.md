@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers l'erreur standard"
-html_title:           "Elm: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+En programmation, écrire sur l'erreur standard (stderr) permet de séparer les messages d'erreurs du flux de sortie normal. On le fait pour diagnostiquer les problèmes sans perturber la sortie attendue du programme.
 
-Ecrire vers le standard error (erreur standard) en programmation Elm signifie écrire des messages d'erreur qui peuvent être affichés lors de l'exécution de votre code. Les programmeurs le font pour débugger leurs applications et pour obtenir des informations précises sur les erreurs qui se produisent. 
-
-## Comment faire:
-
-Il existe une manière simple de rédiger vers le standard error en Elm en utilisant la fonction `Debug.log`. Voici un exemple de code:
+## How to:
+Elm tourne dans le navigateur et n'a pas d'accès direct à stderr comme les langages côté serveur. Mais, on peut simuler un comportement semblable en utilisant `Console.error` avec JavaScript interop via ports.
 
 ```Elm
-main = Debug.log "Message d'erreur" (toString 10)
+port module Main exposing (..)
+
+-- Port pour envoyer des messages d'erreur à JavaScript
+port error : String -> Cmd msg
+
+-- Utiliser le port dans votre application Elm
+reportError : String -> Cmd msg
+reportError message =
+    error message
+
+-- Exemple d'utilisation
+main =
+    reportError "Une erreur est survenue"
 ```
 
-Ce code va écrire "Message d'erreur : 10" dans le standard error lorsque le programme s'exécute. Notez que la fonction `toString` sert à convertir le nombre 10 en une chaîne de caractères pour pouvoir l'afficher dans le message. Vous pouvez aussi utiliser `String.fromInt` pour convertir un entier en chaîne de caractères.
+Sur le côté JavaScript, vous devrez souscrire au port et l’utiliser pour écrire sur stderr.
 
-## Plongée plus profonde:
+```javascript
+app.ports.error.subscribe(function (message) {
+  console.error(message);
+});
+```
 
-L'écriture vers le standard error a été introduite pour la première fois dans le langage Elm dans sa version 0.18. Avant cela, les programmeurs utilisaient `Debug.log` pour écrire vers la console, ce qui pouvait être confus car les messages étaient affichés dans le navigateur plutôt que dans l'éditeur de code.
+## Deep Dive
+Historiquement, Elm est conçu pour la sécurité et la facilité, sans accès direct à stderr ou stdout vu qu'il est exécuté dans un contexte de navigateur. Si vous avez besoin d'une gestion des erreurs côté serveur avec stdout et stderr, envisagez de combiner Elm avec Node.js. Alternativement, utilisez des outils comme `elm-debug-transformer`, qui enrichit les messages de débogage.
 
-Une alternative à l'utilisation de `Debug.log` est l'utilisation du débogage à l'aide d'un débogueur. Cela peut être utile pour les applications plus complexes où l'utilisation de `Debug.log` peut rapidement devenir fastidieuse. Cependant, cela nécessite des connaissances supplémentaires et peut être plus complexe à mettre en place.
-
-## A voir aussi:
-
-Pour en savoir plus sur l'écriture vers le standard error en Elm, vous pouvez consulter la documentation officielle sur `Debug.log` ainsi que sur le débogage en général. Vous pouvez également explorer les différentes méthodes de débogage en Elm et décider quelle méthode convient le mieux à vos besoins.
+## See Also
+- Elm Ports Documentation: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
+- `elm-debug-transformer` pour une expérience améliorée du débogage dans le navigateur: [https://github.com/kraklin/elm-debug-transformer](https://github.com/kraklin/elm-debug-transformer)

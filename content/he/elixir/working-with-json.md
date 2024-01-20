@@ -1,7 +1,7 @@
 ---
-title:                "פעילות עם json"
-html_title:           "Elixir: פעילות עם json"
-simple_title:         "פעילות עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,20 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## What & Why?
+JSON, זה פורמט נתונים פשוט. תוכניתנים משתמשים בזה להחלפת מידע ושמירת תצורה.
 
-עבודה עם JSON היא תהליך שבו מתייחסים לנתוני טקסט מובנים בקוד מחשב כמו מחרוזות, ומפענחים אותם לתצורת אובייקטים כדי שיוכלו להיות שימושיים. תהליך זה נכלל תמיד באחד משלבי פיתוח אתרים, מאפליקציות ניידות וגם בפיתוח תוכנה כללי. תהליך זה נחשב לסטנדרטי בתעשייה הפיתוח.
+## How to:
+כדי לעבד JSON ב-Elixir, אפשר להשתמש בחבילה כמו Jason.
 
-איך לעשות?
+התקנה:
+```elixir
+defp deps do
+  [{:jason, "~> 1.2"}]
+end
+```
 
-כדי להתחיל לעבוד עם JSON באליקסיר, ניתן להשתמש בפונקציונליות פשוטה כמו JSON.parse ו- JSON.encode. כך ניתן ליצור אובייקטים JSON ולהמיר מחרוזות לתצורת אובייקטים תומכת בפורמט JSON.
+קריאה:
+```elixir
+json_string = "{\"key\": \"value\"}"
+{:ok, data} = Jason.decode(json_string)
+IO.inspect(data) # מדפיס {"key" => "value"}
+```
 
-פניה לAPI של JSON נצטרך לעתים תכופות בהתהוות מקוד ואנו יכולים להשתמש בספריית httpoison כדי לבצע פניה GET תמיכה שבודקת מול אתר שפנית אליו.
+כתיבה:
+```elixir
+data = %{"key" => "value"}
+json_string = Jason.encode!(data)
+IO.puts(json_string) # מדפיס {"key":"value"}
+```
 
-עמוק יותר בתהליך:
+## Deep Dive
+JSON (JavaScript Object Notation) נבנה על אוטונומיות ג'אווהסקריפט ב-2001. חלופות כוללות XML, YAML. Jason מיימש הכלת נתוני JSON ב-Elixir, יעיל ומאוד קל.
 
-המפענחים של JSON נקראים שנתוני תיקיות כולם נמשכים מהר האירועים המקושר והמשמר עיקרי של JSON. בנוסף לאירועים שנקראים שלוחו לתיקיות קודם, רחביים המתרחשים עליו באירוע, נכנה מתוך סימולציות אחרות כגון Identifier מכונו מאפיין Reprisal. האירועים הממופים יאפשרו פונקציונליות נשלטת על התצוגה הזו אך ורק על התצוגה ופתונים נספרת כיוון ונפתן גם אל תשובת נתוני כתובת יכולתנים למקום מאושרים.
-
-ראו גם:
-
-לפרטים נוספים על עבודה עם JSON ואליקסיר ניתן לקרוא על זה באתר הרשמי של אליקסיר: https://elixir-lang.org/docs/v1.11.3/elixir/JSON.html. ניתן גם למצוא דוגמאות ומידע נוסף בקוד המקור של אליקסיר.
+## See Also
+- [Jason GitHub Repo](https://github.com/michalmuskala/jason)
+- [JSON Specification (RFC 7159)](https://tools.ietf.org/html/rfc7159)
+- [Hex.pm (Jason)](https://hex.pm/packages/jason)

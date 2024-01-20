@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "C++: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Å skrive tester er en viktig del av programmeringsprosessen. Det betyr å skrive små deler av kode som sjekker om den større delen av koden fungerer som den skal. Testene hjelper til med å identifisere feil tidlig, slik at de kan bli fikset før de blir et større problem.
+## Hva & Hvorfor?
+Skrive tester er å lage kode som sjekker at annen kode fungerer som forventet. Programmerere gjør dette for å fange feil tidlig, sikre kvalitet, og forenkle vedlikehold.
 
-# Hvordan:
+## How to:
 ```C++
-#include <iostream>
+#define CATCH_CONFIG_MAIN  // La Catch ta seg av main-funksjonen.
+#include "catch.hpp"       // Inkluder Catch2 testing framework header.
 
-// En funksjon som tar inn to tall og returnerer summen av dem
-int add(int a, int b){
-  return a+b;
+// Enkel funksjon vi vil teste.
+int add(int a, int b) {
+    return a + b;
 }
 
-// En test for å sjekke om add() funksjonen returnerer riktig resultat
-void test_add(){
-  int result = add(3, 5); 
-  if(result == 8){
-    std::cout << "Test passed!" << std::endl;
-  } else {
-    std::cout << "Test failed!" << std::endl;
-  }
-}
-
-int main(){
-  test_add(); // Kaller på testen for å sjekke om funksjonen virker som den skal
+// Vår test case.
+TEST_CASE("Addition fungerer", "[matematikk]") {
+    REQUIRE(add(2, 2) == 4);
+    REQUIRE(add(-1, 1) == 0);
 }
 ```
+Kjør testene og sjekk output:
+```plaintext
+All tests passed (2 assertions in 1 test case)
+```
 
-Output: Test passed!
+## Deep Dive:
+Tester i C++ spores tilbake til før årtusenskiftet med rammeverk som CppUnit. Alternativer til Catch2 inkluderer Google Test og Boost.Test. Effektiv testing krever en god forståelse av programkoden som testes og hva som er kritisk å teste. Unit tests isolerer og tester små kodebiter, mens integration tests sjekker hvordan disse bitene fungerer sammen.
 
-# Dypdykk:
-Å skrive tester har blitt en standard praksis i moderne programmering, spesielt med introduksjonen av testdrevet utvikling (TDD). TDD betyr å skrive testene før du skriver selve koden, og deretter skrive kode som består testene. Dette bidrar til å produsere mer pålitelig og feilfri kode.
-
-Noen programmerere foretrekker å skrive tester etter at koden allerede er skrevet. Dette kalles for retroaktiv testdrevet utvikling (RetroTDD). Begge tilnærminger kan hjelpe til med å identifisere og fikse feil tidlig i prosessen.
-
-Det finnes også verktøy som kan automatisk generere tester basert på koden din, som for eksempel Google Test og CppUnit. Disse kan være nyttige for mer komplekse prosjekter.
-
-# Se også:
-- https://www.guru99.com/test-driven-development.html
-- https://www.jetbrains.com/help/clion/unit-testing-tutorial.html
-- https://github.com/google/googletest
+## See Also:
+- Catch2 dokumentasjon: https://github.com/catchorg/Catch2
+- Google Test GitHub-side: https://github.com/google/googletest
+- Boost.Test dokumentasjon: https://www.boost.org/doc/libs/release/libs/test/

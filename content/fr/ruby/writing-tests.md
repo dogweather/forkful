@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire des tests"
-html_title:           "Ruby: Ecrire des tests"
-simple_title:         "Ecrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi & Pourquoi ?)
+Écrire des tests, c'est comme préparer des mini-challenges pour son code: on vérifie que tout fonctionne. Les devs font ça pour dormir sur leurs deux oreilles, éviter les bugs, et simplifier les mises à jour.
 
-Les tests de code sont des morceaux de code écrits pour vérifier si d'autres morceaux de code fonctionnent comme ils le devraient. Les programmeurs effectuent des tests pour s'assurer que leur code est sans erreur et fonctionne correctement. Cela peut aider à prévenir les bugs et à garantir que le code est de qualité.
+## How to: (Comment faire : )
+En Ruby, on utilise souvent RSpec pour les tests. Voilà le genre de code qu'on écrit :
 
-## Comment faire:
+```Ruby
+# installation de RSpec
+# gem install rspec
 
-```ruby 
-require 'test/unit' 
+# Exemple de test
+require 'rspec'
 
-def additionner(x, y)
-    x + y
-end
+describe 'Calculatrice' do
+  it 'additionne deux nombres' do
+    expect(2 + 2).to eq(4)
+  end
 
-class TestAddition < Test::Unit::TestCase 
-    def test_additionner 
-        assert_equal(4, additionner(2, 2)) 
-    end 
+  it 'soustrait deux nombres' do
+    expect(5 - 3).to eq(2)
+  end
 end
 ```
 
-```ruby
-Costumes = ["Batman", "Superman", "Wonder Woman"]
+Exécutez les tests avec `rspec votre_fichier_spec.rb`. Vous devriez voir quelque chose comme ça si tout est au vert :
 
-Test::Unit::TestCase 
-
-def setup 
-    @costumes = Costumes 
-end
-
-def test_heroes 
-    assert_equal("Batman", Costumes[0]) 
-    assert_equal("Wonder Woman", Costumes[2]) 
-end 
+```
+2 examples, 0 failures
 ```
 
-### Résultat de l'exécution:
+## Deep Dive (Plongée profonde)
+Les tests automatisés existent depuis que les devs réalisent qu'ils recyclent plus leur code qu'ils ne recyclent leur verre. Alternatives ? Minitest en est une autre bien connue en Ruby. Ça s'utilise à peu près pareil mais c'est plus minimaliste, moins de fioritures. Pourquoi RSpec alors ? Il est expressif, lisible, et donc plus facile à maintenir.
 
-Exécutez vos tests en utilisant la commande `ruby nom_du_fichier_test.rb`.
-
-![Test results output](link_to_image)
-
-## Deep Dive:
-
-Historiquement, les tests étaient écrits après le code, mais de nos jours, en utilisant des méthodes telles que le développement piloté par les tests (TDD), les tests sont écrits avant le code. Cela peut aider à créer un code plus modulaire et plus facile à maintenir. Il existe également des alternatives aux tests unitaires, telles que les tests d'intégration et les tests fonctionnels.
-
-## See Also:
-
-Pour plus d'informations sur l'écriture de tests en Ruby, consultez le [Guide des tests en Ruby](link_to_guide) et le [Guide TDD en Ruby](link_to_TDD_guide).
+## See Also (Voir aussi)
+- Un bon tuto RSpec : [https://www.betterspecs.org/](https://www.betterspecs.org/)

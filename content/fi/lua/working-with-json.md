@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Lua: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Työskentely JSONin kanssa tarkoittaa tiedon tallentamista ja jakamista tietorakenteena, joka käyttää valmiiksi määriteltyä syntaksia. JSON on lyhenne sanoista "JavaScript Object Notation" ja sitä käytetään usein siirrettävien tietomuotojen välittämiseen verkossa. Ohjelmoijat käyttävät JSONia helpottaakseen tiedon käsittelyä ja siirtoa eri ohjelmistojen välillä, kuten web-sovelluksissa tai tietokannoissa.
+## What & Why?
+JSON (JavaScript Object Notation) on kevyt tiedonvaihtoformaatti. Ohjelmoijat käyttävät JSONia sen yksinkertaisuuden ja ihmisen sekä koneen luettavuuden vuoksi.
 
-## Kuinka?
-Lua-ohjelmoijat voivat käsitellä JSONia käyttämällä erityisiä kirjastoja, kuten "dkjson". Kirjaston avulla voidaan luoda ja lukea JSON-muotoista dataa Lua-koodissa. Esimerkiksi:
-
+## How to:
 ```Lua
-local json = require "dkjson" -- Ladataan dkjson-kirjasto
+-- Ladataan JSON-kirjasto
+local json = require("dkjson")
 
--- Luo taulukko JSON-muodossa
-local taulukko = {"omena", "banaani", "appelsiini"}
+-- JSON-muotoisen merkkijonon käsittely
+local jsonString = '{"nimi": "Matti", "ika": 30}'
+local luaTable = json.decode(jsonString)
 
--- Muutetaan taulukko JSON-muotoon
-local json_taulukko = json.encode(taulukko)
+print(luaTable.nimi)  -- Output: Matti
 
-print(json_taulukko)
+-- Luodaan taulukko ja muunnetaan JSONiksi
+local uusiTable = { nimi = "Liisa", ika = 28 }
+local uusiJsonString = json.encode(uusiTable)
+
+print(uusiJsonString)  -- Output: {"ika":28,"nimi":"Liisa"}
 ```
 
-Tulostaa: ```["omena", "banaani", "appelsiini"]```
+## Deep Dive
+JSON syntyi 2000-luvun alussa, helpottamaan JavaScriptin ja palvelimien välisiä tietojenvaihtoja. XML oli ennen JSONia suosittu, mutta JSONin keveys ja nopeus ovat sen valttikortteja. Lua ei sisällä vakio JSON-tukea, joten ulkopuolisia kirjastoja, kuten 'dkjson', käytetään JSONin käsittelyyn.
 
-## Syvemmälle
-JSON syntyi alunperin JavaScript-kielestä, mutta siitä on tullut suosittu tiedon tallennusmuoto eri ohjelmointikielillä, mukaan lukien Lua. Alternatiiveja JSONille ovat esimerkiksi XML ja YAML, mutta JSON on yleensä helpommin luettavissa ja käsiteltävissä. JSON-tiedon lukeminen ja kirjoittaminen Lua-koodissa voi joskus olla haastavaa, mutta kirjastojen käyttö helpottaa tätä prosessia.
-
-## Katso myös
-- dkjson-kirjaston dokumentaatio: https://dkolf.de/src/dkjson-lua.fsl/home
-- JSON-syntaksia ja käyttöä koskeva opetusohjelma: https://www.json.org/json-fi.html
+## See Also
+- Lua JSON kirjaston kotisivu: http://dkolf.de/src/dkjson-lua.fsl/home
+- JSON viralliset kotisivut: https://www.json.org/json-fi.html
+- Online JSON visualisointi: https://jsoneditoronline.org/

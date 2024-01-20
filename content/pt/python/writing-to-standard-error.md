@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Python: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## What & Why?
+Escrever no erro padrão (stderr) é como mandar mensagens de erro ou diagnóstico sem misturar com a saída normal do seu programa. Programadores fazem isso para separar as streams, facilitando o rastreamento de bugs e o processamento de saídas válidas.
 
-Escrever para o erro padrão (standard error) é uma técnica comum entre os programadores para registrar e comunicar informações importantes durante a execução de um código. Ele permite que os desenvolvedores acompanhem erros e avisos em tempo real, facilitando a identificação e correção de problemas em seus programas.
-
-## Como fazer:
-
-Um exemplo simples de como escrever para o erro padrão em Python seria:
-
-```
+## How to:
+```python
 import sys
-print("Olá, mundo!", file=sys.stderr)
+
+print("Isto é uma saída normal.")
+sys.stderr.write("Isto é uma mensagem de erro.\n")
+
+try:
+    # Simulando uma operação que causa um erro.
+    1 / 0
+except ZeroDivisionError as e:
+    print(f"Erro: {e}", file=sys.stderr)
 ```
 
-Este código imprime a mensagem "Olá, mundo!" no terminal padrão de erro. Observe que estamos usando o módulo `sys` e especificando o parâmetro `file=sys.stderr` ao imprimir a mensagem.
-
-Aqui está o output esperado para este código:
-
+Saída esperada seria algo parecido com:
 ```
-$ python escrever_erro_padrao.py
-Olá, mundo!
+Isto é uma saída normal.
+Isto é uma mensagem de erro.
+Erro: division by zero
 ```
 
-## Aprofundando:
+## Deep Dive
+A separação entre stderr e stdout remonta aos primeiros dias dos sistemas UNIX, permitindo que operações de pipe e redirecionamento tratassem saídas de erro e normais de forma distinta. Alternativas modernas incluem o uso de bibliotecas de log, que oferecem maior controle e opções de filtragem. Quando se escreve em stderr em Python, o sistema não faz buffer da saída, o que significa que as mensagens de erro são exibidas imediatamente.
 
-Esta técnica é baseada em um conceito mais amplo chamado "redirecionamento de fluxo", que permite que o output de um programa seja direcionado para diferentes locais, como a tela ou um arquivo. O erro padrão é apenas um desses locais.
-
-Alternativamente, os programadores também podem escrever para o erro padrão utilizando a função `logging.error()` do módulo `logging`. Isso permite um controle mais granular sobre o tipo e a formatação das mensagens de erro.
-
-Na implementação do Python, o erro padrão é representado pelo objeto `sys.stderr`, que é definido automaticamente ao iniciar o interpretador.
-
-## Veja também:
-
-- [Documentação oficial do Python sobre o módulo `sys`](https://docs.python.org/3/library/sys.html)
-- [Documentação oficial do Python sobre o módulo `logging`](https://docs.python.org/3/library/logging.html)
-- [Tutorial sobre redirecionamento de fluxo em Python](https://realpython.com/python-logging/)
+## See Also
+- Documentação da biblioteca `sys` do Python: https://docs.python.org/3/library/sys.html
+- Guia Python sobre logging: https://docs.python.org/3/howto/logging.html
+- Stack Overflow sobre stderr e stdout: https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr

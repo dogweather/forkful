@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류에 쓰는 방법"
-html_title:           "C#: 표준 오류에 쓰는 방법"
-simple_title:         "표준 오류에 쓰는 방법"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,18 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-표준 에러 메시지를 출력하는 것은 프로그래머가 디버깅을 할 때 유용합니다. 이를 통해 어떤 오류가 발생했는지를 더 자세히 알 수 있고, 문제를 해결하기 위한 방향을 잡을 수 있습니다.
+## What & Why? (무엇과 왜?)
+표준 오류로 쓰기는 프로그램의 오류 메시지나 진단 정보를 출력하는 방법입니다. 개발자들은 사용자에게 유용한 오류 정보를 제공하고 로깅 시스템에서 오류를 분리하기 위해서 이를 사용합니다.
 
-## 방법:
+## How to: (방법)
 ```C#
-Console.Error.WriteLine("표준 에러 메시지를 출력합니다.");
+using System;
+
+class StdErrExample
+{
+    static void Main()
+    {
+        // 오류 메시지를 콘솔의 표준 오류 스트림으로 출력합니다.
+        Console.Error.WriteLine("오류 발생: 잘못된 입력입니다.");
+
+        // 표준 오류를 사용하는 다른 방법
+        var errorWriter = Console.Error;
+        errorWriter.WriteLine("오류 발생: 파일을 찾을 수 없습니다.");
+    }
+}
 ```
 
-출력 예시:
+실행 결과는 커맨드라인에 다음과 같이 표시됩니다:
+
 ```
-표준 에러 메시지를 출력합니다.
+오류 발생: 잘못된 입력입니다.
+오류 발생: 파일을 찾을 수 없습니다.
 ```
 
-## 딥 다이브:
-(1) 표준 에러 메시지를 출력하는 기능은 오래 전부터 존재합니다. 초기에는 터미널에서 오류 메시지를 확인하기 위해 사용되었고, 지금은 프로그래밍 언어에서도 자주 사용됩니다. (2) 표준 에러 메시지 대신에 로그 파일을 생성하는 것도 일반적인 대안입니다. 하지만 더 많은 작업이 필요하며, 프로그램의 성능에도 영향을 줄 수 있습니다. (3) C#에서는 Console.Error.WriteLine 메서드를 사용하여 표준 에러 메시지를 출력할 수 있습니다. 이 메서드는 외부 리소스에 대한 핸들을 선점하지 않기 때문에 프로그램의 성능에 영향을 미치지 않습니다.
+## Deep Dive (심화 학습)
+표준 오류는 유닉스 시스템의 초기부터 존재했습니다. `stderr`는 프로세스가 시작될 때 생기며, 일반적으로 콘솔이나 터미널에 연결됩니다. 표준 출력(`stdout`)과는 다르게, 로깅이나 오류 메시지에 사용됩니다. C#에서는 `Console.Error`를 통해 이 스트림에 접근할 수 있고, 이것은 `TextWriter` 타입입니다. 리디렉션과 파이프라인을 통해 쉽게 오류 메시지를 다른 파일이나 도구로 보낼 수 있습니다.
+
+## See Also (관련 자료)
+- Microsoft Docs – Console.Error 속성: [Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
+- Microsoft Docs – TextWriter 클래스: [TextWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter)
+- Stack Overflow – 표준 오류: 언제 어떻게 사용할까요?: [When to use standard error stream in C#?](https://stackoverflow.com/questions/3811464/when-to-use-standard-error-stream-in-c)

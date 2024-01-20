@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Java: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Trabajar con JSON es una forma común para que los programadores intercambien datos entre aplicaciones. JSON es un formato ligero y fácil de leer que se utiliza para almacenar y transmitir datos estructurados. Los programadores utilizan JSON porque les permite transferir datos de manera eficiente y consistente entre diferentes sistemas.
+Trabajar con JSON (JavaScript Object Notation) significa manipular datos en un formato ligero de intercambio. Programadores lo usan por su facilidad de entendimiento humano y su integración sencilla con la mayoría de lenguajes de programación, incluido Java.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
 ```Java
-// Crear un objeto JSON
-JSONObject persona = new JSONObject();
+import org.json.JSONObject; // Asegúrate de incluir la biblioteca org.json
 
-// Agregar propiedades al objeto
-persona.put("nombre", "Juan");
-persona.put("edad", 25);
-persona.put("ciudad", "Madrid");
-persona.put("aficiones", new JSONArray().put("correr").put("leer").put("pintar"));
+public class EjemploJSON {
+    public static void main(String[] args) {
+        // Crear un objeto JSON
+        JSONObject miObjetoJSON = new JSONObject();
+        miObjetoJSON.put("nombre", "Carlos");
+        miObjetoJSON.put("edad", 25);
+        miObjetoJSON.put("programador", true);
 
-// Convertir a formato String
-String personaJSON = persona.toString();
+        // Convertir y mostrar el objeto JSON como cadena
+        String jsonString = miObjetoJSON.toString();
+        System.out.println(jsonString);
 
-// Imprimir el resultado
-System.out.println(personaJSON);
+        // Leer datos de un objeto JSON
+        String nombre = miObjetoJSON.getString("nombre");
+        System.out.println("Nombre: " + nombre);
+    }
+}
+```
 
-// Resultado: {"nombre":"Juan","edad":25,"ciudad":"Madrid","aficiones":["correr","leer","pintar"]}
+Salida de muestra:
+```
+{"nombre":"Carlos","edad":25,"programador":true}
+Nombre: Carlos
 ```
 
 ## Profundizando
 
-JSON, o JavaScript Object Notation, fue creado en 2001 como una alternativa más ligera a XML para intercambiar datos entre aplicaciones. Sin embargo, a lo largo de los años, JSON se ha vuelto cada vez más popular debido a su facilidad de lectura y su capacidad para ser interpretado por diferentes lenguajes de programación. Además, existen muchas librerías y herramientas que hacen que trabajar con JSON sea aún más sencillo.
+JSON fue introducido en 2001, inspirado en la notación de objetos de JavaScript pero independiente del lenguaje. Alternativas incluyen XML y YAML, pero JSON gana en simplicidad y velocidad. Cuando trabajas con Java, algunas implementaciones populares para manejar JSON son las bibliotecas `org.json`, `Gson` de Google y `Jackson`.
 
-Otras alternativas a JSON son XML, CSV y YAML. Sin embargo, JSON sigue siendo una de las opciones más comunes para el intercambio de datos debido a su simplicidad y compatibilidad con la mayoría de los lenguajes de programación.
+## Ver También
 
-Para trabajar con JSON en Java, es necesario utilizar una librería como Google Gson o Jackson. Estas librerías permiten convertir objetos Java en formato JSON y viceversa, facilitando el manejo de datos estructurados en aplicaciones.
-
-## Ver también
-
-- [Documentación oficial de JSON](https://www.json.org/json-en.html)
-- [Tutorial de Google Gson](https://github.com/google/gson/blob/master/UserGuide.md)
-- [Documentación de Jackson](https://github.com/FasterXML/jackson-docs)
+- Documentación oficial de la biblioteca org.json: https://stleary.github.io/JSON-java/index.html
+- Google Gson: https://github.com/google/gson
+- Jackson JSON processor: https://github.com/FasterXML/jackson
+- Tutorial completo de JSON en Java: https://www.baeldung.com/java-org-json

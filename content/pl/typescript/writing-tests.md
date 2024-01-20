@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "TypeScript: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,27 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Testowanie to pisania kodu, który sprawdza czy inny kod działa jak powinien. Programiści tworzą testy, aby zapewnić jakość i uniknąć błędów w przyszłości.
 
-Pisanie testów to proces, w którym programiści tworzą specjalne fragmenty kodu, które mają na celu sprawdzenie, czy dany program działa poprawnie. Testowanie jest ważnym etapem w procesie tworzenia oprogramowania, ponieważ pomaga w wykrywaniu błędów i zapewnieniu, że aplikacja działa zgodnie z oczekiwaniami.
+## How to:
+Zainstaluj bibliotekę do testowania, np. Jest, używając `npm`:
 
-## Jak to zrobić:
-
-```TypeScript 
-function add(x: number, y: number) { 
-  return x + y; 
-}
- 
-console.log(add(5, 10));
-// Output: 15
+```bash
+npm install --save-dev jest @types/jest ts-jest
 ```
 
-W tym przykładzie tworzymy funkcję "add", która przyjmuje dwa parametry typu "number" i zwraca ich sumę. Następnie wywołujemy tę funkcję z argumentami "5" i "10" i sprawdzamy, czy dostajemy oczekiwany wynik.
+Konfiguruj `jest` dodając w pliku `jest.config.js`:
 
-## Głębsze spojrzenie:
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
 
-Pisanie testów jest częścią procesu TDD (Test Driven Development), który powstał w 2002 roku. Alternatywą dla tworzenia testów jest podejście BDD (Behavior Driven Development), wprowadzone w 2009 roku. Implementacja testów w TypeScript jest podobna do innych języków programowania, co oznacza, że możemy używać narzędzi takich jak Mocha lub Jest do tworzenia i uruchamiania testów.
+Twórz test dla prostego modułu:
 
-## Zobacz także:
+```TypeScript
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+```
 
-- [Wprowadzenie do Test Driven Development](https://www.agilealliance.org/glossary/tdd/)
+```TypeScript
+// sum.test.ts
+import { sum } from './sum';
+
+test('dodaje 1 + 2, żeby otrzymać 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+Uruchom testy:
+
+```bash
+npx jest
+```
+
+Wynik powinien wyglądać mniej więcej tak:
+
+```plaintext
+PASS ./sum.test.ts
+√ dodaje 1 + 2, żeby otrzymać 3 (5ms)
+```
+
+## Deep Dive
+Testowanie w TypeScript zaczęło się nie długo po jego wynalezieniu w 2012 roku – jako naturalna ekstensja podejścia ze świata JavaScript. Oprócz Jest, inne popularne biblioteki to Mocha, Jasmine czy AVA. Detale implementacyjne zależą od wybranej biblioteki, ale idee pozostają podobne – tworzenie asercji, które potwierdzają, że kod zachowuje się oczekiwanie.
+
+## See Also
+- Oficjalna dokumentacja TypeScript: https://www.typescriptlang.org/
+- Dokumentacja Jest: https://jestjs.io/
+- Porównanie narzędzi do testowania w TypeScript: https://raygun.com/blog/javascript-testing-frameworks/

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Clojure: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-CSV (Comma-Separated Values) é um formato de arquivo que armazena dados tabulares como uma lista de valores separados por vírgulas. É comumente usado para importar e exportar dados entre aplicativos, principalmente em planilhas. Programadores trabalham com CSV para processar grandes quantidades de dados de forma rápida e eficiente.
+## O Que & Por Que?
 
-## Como fazer:
+Trabalhar com CSV (valores separados por vírgula) é manejar dados em formato de texto, bastante usado devido à simplicidade e compatibilidade com várias ferramentas, como planilhas e bancos de dados. Programadores usam CSV para importar, exportar, e manipular dados de maneira fácil e rápida entre diferentes sistemas.
+
+## Como Fazer:
+
 ```Clojure
-;; Importando a biblioteca para trabalhar com CSV
-(require '[clojure.data :as csv])
+; Importar a biblioteca clojure.data.csv 
+(require '[clojure.data.csv :as csv])
+(require '[clojure.java.io :as io])
 
-;; Lendo um arquivo CSV e armazenando os dados em uma lista de mapas
-(def dados-csv (csv/read-csv "dados.csv"))
+; Ler dados de um arquivo CSV e transformá-los em vetores
+(with-open [reader (io/reader "dados.csv")]
+  (let [data (csv/read-csv reader)]
+    (println data)))
 
-;; Acessando os dados por meio das chaves dos mapas
-(:nome (first dados-csv))
-(:idade (second dados-csv))
+; Escrever dados em um arquivo CSV
+(let [data [["nome", "idade", "cidade"]
+            ["Ana", "28", "Lisboa"]
+            ["João", "35", "Porto"]]
+      writer (io/writer "saida.csv")]
+  (csv/write-csv writer data))
+```
+Saída exemplo ao ler `"dados.csv"`:
 
-;; Escrevendo um arquivo CSV a partir de uma lista de mapas
-(csv/write-csv "dados.csv" [{:nome "João", :idade 28}, {:nome "Maria", :idade 35}])
+```
+[["nome" "idade" "cidade"] ["Ana" "28" "Lisboa"] ["João" "35" "Porto"]]
 ```
 
-## Profundando:
-CSV é um formato de arquivo com bastante história, tendo sido desenvolvido na década de 1970. Existem várias bibliotecas em diferentes linguagens de programação para trabalhar com ele, mas em Clojure, a biblioteca padrão `clojure.data` é bastante eficiente. Além disso, existem outras opções como `clojure-csv` e `clj-csv` que oferecem diferentes recursos e funcionalidades.
+## Mergulho Profundo
 
-## Veja também:
-- [Página oficial da linguagem Clojure](https://clojure.org/)
-- [Documentação da biblioteca clojure.data](https://clojure.github.io/clojure/clojure.data-api.html)
-- [Mais informações sobre o formato CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
+CSV surgiu da necessidade de transferência de dados entre programas que não compartilhavam a mesma estrutura de armazenamento. É uma alternativa a formatos mais complexos como XML e JSON. Em Clojure, trabalhar com CSV é geralmente feito usando a biblioteca `clojure.data.csv`. Esta biblioteca é poderosa mas minimalista, e pode ser combinada com outras (como `clojure.java.io`) para leitura e escrita de arquivos.
+
+## Veja Também
+
+- Documentação oficial `clojure.data.csv`: [https://github.com/clojure/data.csv](https://github.com/clojure/data.csv)
+- Guia de Clojure para IO: [https://clojure.org/guides/learn/functions#_file_io](https://clojure.org/guides/learn/functions#_file_io)
+- Especificações do formato CSV pelo RFC 4180: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

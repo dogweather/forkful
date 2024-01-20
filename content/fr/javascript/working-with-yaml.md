@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Javascript: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le JavaScript utilise-t-il le YAML? 
-Le YAML (YAML Ain't Markup Language) est un format de données structuré utilisé pour stocker et échanger des informations. Il est souvent utilisé par les programmeurs dans le développement web pour créer des fichiers de configuration et les échanger entre différentes applications. Il est facile à lire et à écrire, ce qui en fait un choix populaire pour les développeurs.
+## What & Why?
+Le YAML, c'est du texte pour structurer des données, genre config ou input pour nos apps. On le kiffe car il est lisible et simple à piger pour les humains.
 
-## Comment faire: 
-Voici un exemple simple de code utilisant le YAML en JavaScript:
+## How to:
+Pour tripatouiller du YAML en JS, on utilise souvent `js-yaml`. Faut d'abord l'installer :
 
-```javascript
-// Déclaration d'un objet YAML
-let user = {
-  name: 'Jean',
-  age: 26,
-  interests: ['programmation', 'jeux vidéo']
-};
-
-// Conversion de l'objet en chaîne YAML
-let yamlString = YAML.stringify(user);
-
-// Résultat: name: Jean | age: 26 | interests: - programmation | - jeux vidéo
+```bash
+npm install js-yaml
 ```
 
-## Plongée en profondeur: 
-Le YAML a été créé en 2001 par Clark Evans et Ingy döt Net pour simplifier la création de fichiers de configuration. Il est basé sur le langage de programmation PERL et se présente sous la forme d'un document texte lisible par l'homme. Il existe également des alternatives telles que JSON (JavaScript Object Notation) et XML (Extensible Markup Language). En JavaScript, vous pouvez utiliser des bibliothèques telles que YAML.js pour travailler avec du code YAML.
+Après, c'est un jeu d'enfant pour l'importer et s'en servir :
 
-## Voir aussi: 
-Pour en savoir plus sur le YAML, vous pouvez consulter le site officiel à l'adresse suivante: https://yaml.org/. Vous pouvez également trouver des tutoriels et des exemples de code en utilisant YAML en JavaScript sur des sites comme Codecademy (https://www.codecademy.com/learn/learn-yaml) et W3schools (https://www.w3schools.com/js/js_yaml.asp).
+```javascript
+const yaml = require('js-yaml');
+const fs = require('fs');
+
+// Pour lire un fichier YAML et le convertir en JS
+try {
+  const doc = yaml.load(fs.readFileSync('/mon/dossier/config.yaml', 'utf8'));
+  console.log(doc);
+} catch (e) {
+console.error(e);
+}
+
+// Pour faire l'inverse, de JS à YAML
+const data = { clé: 'valeur', liste: [1, 2, 3] };
+
+const yamlStr = yaml.dump(data);
+fs.writeFileSync('/mon/dossier/config.yaml', yamlStr, 'utf8');
+```
+
+Ces exemples montrent comment lire un fichier YAML, le convertir en objet JavaScript, puis comment reprendre cet objet et l'écrire en format YAML.
+
+## Deep Dive
+Le YAML, ça date de 2001, conçu pour être plus lisible que le XML. Aujourd'hui, beaucoup l'utilisent pour Docker, Kubernetes, GitLab CI, etc. Si on compare avec JSON, YAML accepte les commentaires, c'est plus "relax" pour le formatage. En JS, faudrait aussi checker `json2yaml` et `yamljs`, mais `js-yaml` est roy pour sa sécurité et performance.
+
+## See Also
+- La doc officielle de YAML pour piger le format : https://yaml.org
+- Repo `js-yaml` pour les détails et docs : https://github.com/nodeca/js-yaml
+- Un petit comparo entre JSON et YAML : https://www.json2yaml.com/

@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av tester"
-html_title:           "Elixir: Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å skrive tester er en viktig del av programmering. Det betyr at man skriver kode som sjekker om koden vi allerede har laget fungerer som den skal. Dette er viktig for å sikre at koden fungerer som forventet og for å fange eventuelle feil før de blir et problem for brukerne.
+## What & Why?
+Tester sikrer koden din fungerer som den skal. Programmerere skriver tester for å fange feil tidlig og gjøre koden lettere å vedlikeholde.
 
-Hvordan:
-Tester skrives ved hjelp av spesielle verktøy og biblioteker som er tilgjengelige for Elixir. Disse lar deg skrive tester på en strukturert og effektiv måte. La oss se på et eksempel:
+## How to:
+Basistester i Elixir med ExUnit:
+```elixir
+defmodule MathTest do
+  use ExUnit.Case
+  doctest Math
 
-```Elixir
-def test_division do
-  assert 10 / 2 == 5
+  test "adds two numbers" do
+    assert Math.add(1, 2) == 3
+  end
 end
 ```
+Kjør testene med `mix test`, og forvent følgende:
+```
+...
 
-I dette eksemplet bruker vi "assert" for å sjekke at 10 delt på 2 gir oss 5 som svar. Hvis dette ikke stemmer, vil testen feile og gi oss beskjed om at noe er galt.
+Finished in 0.03 seconds
+1 test, 0 failures
+```
 
-Dypdykk:
-Selve konseptet med å skrive tester er ikke nytt, men det har blitt mer og mer populært i moderne programmering. Alternativene til å skrive tester inkluderer manuell testing, som er tidkrevende og ikke alltid pålitelig, og andre automatiske testrammeverk som RSpec eller JUnit.
+## Deep Dive
+Elixir's testsystem, ExUnit, er en kjernekomponent fra start. Alternativer som ESpec tilbyr RSpec-lignende syntaks. Testdrevet utvikling (TDD) anbefales, hvor tester skrives før implementering.
 
-Å skrive tester i Elixir kan også bety å ta i bruk test-drevet utvikling (TDD). Dette er en metodikk der man skriver testene før man skriver selve koden, som kan hjelpe til med å produsere bedre og mer feilfri kode.
-
-Tester kan også være nyttige for å dokumentere koden og fungere som en slags bruksanvisning for andre utviklere som skal jobbe med koden senere.
-
-Se også:
-- Offisiell Elixir dokumentasjon: https://hexdocs.pm/exunit/ExUnit.html
-- En enkel introduksjon til TDD med Elixir: https://thoughtbot.com/blog/testing-your-first-elixir-module
+## See Also
+- [Elixir's ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Introduction to Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)

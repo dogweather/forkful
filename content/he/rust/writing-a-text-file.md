@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Rust: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-תכנות בשפת ראסט: כתיבת קובץ טקסט מאת: נעם כהן
-
 ## מה ולמה?
-כתיבת קובץ טקסט היא פעולה שמאפשרת לנו ליצור קובץ שמכיל תוכן טקסטואלי, כגון מסמכי טקסט, קבוצות תווים, וכו'. כתיבת קובץ טקסט היא כלי חשוב לתכנותנים מתוך הצורך ליצור קבצים בתוכניות שלנו או ליבוב תוכן במקום אחר.
+כתיבת קובץ טקסט זה שמירת טקסט בקובץ במערכת הקבצים. תוכניתנים עושים זאת כדי לשמור נתונים, לוגים, ושיתוף מידע עם תוכנות אחרות או משתמשים.
 
-## כיצד לכתוב קובץ טקסט בשפת ראסט?
-כדי לכתוב קובץ טקסט באמצעות ראסט, נוכל להשתמש בפונקציית "write!" כדי ליצור קובץ חדש ולהכניס לו תוכן. נעבוד עם פורמט טקסטואלי פשוט כדי להדפיס את התוכן שנכתב:
-
+## איך לעשות:
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::Write;
 
 fn main() {
-    let mut file = File::create("new_file.txt").expect("Failed to create file");
-    write!(file, "Hello from Rust!"); // יוצר קובץ טקסט חדש ומכניס אליו את הטקסט
-
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Failed to read file");
-    println!("Contents of file: {}", contents); // מדפיס את התוכן שנכתב לקובץ טקסט
+    let mut file = File::create("example.txt").expect("Cannot create file");
+    file.write_all("שלום, עולם!".as_bytes())
+        .expect("Cannot write to file");
 }
 ```
+פלט דוגמה: יצירת קובץ example.txt עם הטקסט "שלום, עולם!".
 
-פלט התוכנית יהיה:
+## נפנוף במים
+בעבר, כתיבה לקובץ דרשה התעסקות עם תכנות נמוך-רמה יותר. ישנה מגוון של חבילות ב-Rust לכתיבת קבצים; פופולרית נוספת היא `serde` לשריאליזציה ודישריאליזציה. Rust משתמש ב-ownerhip ו-borrowing לניהול זיכרון בזמן ריצה כך שלא תהיינה דליפות זיכרון.
 
-```
-Contents of file: Hello from Rust!
-```
-
-## חפירה עמוקה
-כתיבת קובץ טקסט היא פעולה יסודית ונפוצה ביותר בתכנות. היא מאפשרת לנו ליצור קבצים שונים ולכתוב אליהם תוכן בצורה נוחה וקודים להתאמה אישית. ישנן גם אפשרויות נוספות ליצירת קבצים טקסטואליים, כגון יצירת מבני נתונים וכו'.
-
-## ראה גם
-- [קובץ טקסט](https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%91%D7%A5_%D7%98%D7%A7%D7%A1%D7%98)
-- [פונקציית "write!" בשפת ראסט](https://doc.rust-lang.org/std/macro.write.html)
+## ראה גם:
+- [The Rust Programming Language – File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+- [std::fs Module Documentation](https://doc.rust-lang.org/std/fs/index.html)
+- [serde: Serialization/Deserialization Crate](https://serde.rs/)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Clojure recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,42 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with YAML (YAML Ain't Markup Language) is a common practice for programmers, as it allows for easy and human-readable data serialization. YAML is well-suited for writing configuration files, as well as for storing and transferring structured data. It is also a popular choice for creating data-driven applications.
+
+YAML, "YAML Ain't Markup Language," is a human-friendly data serialization standard for all programming languages. Programmers use YAML for config files and data exchange where readability matters.
 
 ## How to:
-To work with YAML in Clojure, you will need to use a library called clj-yaml. First, you will need to add it as a dependency in your project.clj file:
-```Clojure
-[clj-yaml "0.5.1"]
-```
-Next, require the library in your namespace:
-```Clojure
-(ns my-project.core
-  (:require [clj-yaml.core :as yaml]))
-```
-Now, you can use the functions provided by the library to read and write YAML data. Here's an example of reading a YAML file and converting it into a Clojure map:
-```Clojure
-(defn read-yaml [filepath]
-  (yaml/parse-string (slurp filepath)))
-  
-(def data (read-yaml "config.yml"))
-```
-And here's an example of writing a YAML file from a Clojure map:
-```Clojure
-(defn write-yaml [data filepath]
-  (with-open [f (io/writer filepath)]
-    (yaml/emit data f)))
-    
-(write-yaml {"name" "John" "age" 28} "person.yml")
+
+Clojure doesn't include built-in support for YAML. You’ll need to use a library like `clj-yaml`. First, add it to your dependencies:
+
+```clojure
+;; Add to project.clj or deps.edn
+[clj-yaml "0.7.0"]
 ```
 
-## Deep Dive:
-YAML was originally designed by Clark Evans in 2001, with the goal of creating a human-friendly data serialization format that is easy to read and modify. It is based on the syntax of Python, and borrows concepts from other programming languages such as Perl, Lisp, and C. YAML is a text file format, with the extension ".yaml" or ".yml", and uses indentation to define its data structure.
+Now, let's parse a YAML string into a Clojure map and vice versa:
 
-There are other popular data serialization formats, such as JSON and XML, but YAML differs in its emphasis on readability and its ability to handle complex and nested data structures. However, it should be noted that YAML is not suitable for all use cases, and it may not be the best choice for large amounts of data or situations where performance is critical.
+```clojure
+(require '[clj-yaml.core :as yaml])
 
-The clj-yaml library is built on top of the popular Java library SnakeYAML, which provides fast and efficient parsing of YAML data. This ensures that working with YAML in Clojure is both easy and performant.
+;; Parsing YAML string to Clojure map
+(let [yaml-str "foo: bar\nbaz: 42"]
+  (yaml/parse-string yaml-str))
+;; => {"foo" "bar", "baz" 42}
 
-## See Also:
-- Official YAML website: https://yaml.org
-- clj-yaml library documentation: https://clojars.org/clj-yaml
-- SnakeYAML library documentation: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+;; Converting Clojure map to YAML
+(let [clojure-map {"foo" "bar", "baz" 42}]
+  (yaml/generate-string clojure-map))
+;; Outputs YAML string:
+;; foo: bar
+;; baz: 42
+```
+
+## Deep Dive
+
+YAML was first released in 2001, aiming to be more human-readable than XML while providing richer data structures than JSON. `clj-yaml` is built atop SnakeYAML, a Java library, allowing interoperability with JVM languages. Alternatives include directly using `org.yaml.snakeyaml` or `cheshire` for JSON conversion, since JSON is a subset of YAML.
+
+## See Also
+
+Dive deeper with these resources:
+
+- YAML official site: [https://yaml.org](https://yaml.org)
+- Github for clj-yaml: [https://github.com/clj-commons/clj-yaml](https://github.com/clj-commons/clj-yaml)
+- SnakeYAML Engine: [https://bitbucket.org/asomov/snakeyaml-engine](https://bitbucket.org/asomov/snakeyaml-engine)

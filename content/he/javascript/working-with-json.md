@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם פרמטר json"
-html_title:           "Javascript: עבודה עם פרמטר json"
-simple_title:         "עבודה עם פרמטר json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-עבודה עם JSON היא חלק בלתי נפרד מתכנות רשתות ואינה מדורגת כמבולגנת כמו ההדפסים שבשפות אחרות. זהו פורמט נתונים פשוט וקריא המשמש להעברת מידע בין מכשירים שונים, לרבות דפי אינטרנט ואפליקציות סלולריות. התמיכה הרחבה ב-JavaScript והגמישות הגדולה שלו בפרסום וקריאת נתונים, הופכים את JSON לפופולרי מבחינת מתכנתים.
+## מה ולמה?
+JSON, שזה ראשי תיבות של JavaScript Object Notation, הוא פורמט לשיתוף נתונים. תכניתנים משתמשים בו כי הוא פשוט, קריא ותואם רוב השפות ופלטפורמות התכנות.
 
-# איך לעשות זאת:
-מאגר נתונים בפורמט JSON מתחבר לסביבת התכנות של JavaScript כדי ליצור נתונים עם מבנה דומה למערך. נוכל ליצור משתנים משולשים ואפילו מערכים משולשים תוך שימוש בתווים כפולים (" "). לדוגמה: 
+## איך עושים את זה:
+קוד להמרת אובייקט ל-JSON וחזרה:
 ```Javascript
-var person = {
-  name: "רויטל",
-  age: 28,
-  interests: ["תכנות", "טיולים", "ריקוד"]
-};
-```
-נוכל ליצור נתונים מכל סוג שנרצה ולהכניס אותם למאגר באופן פשוט וקריא.
+// להמרת אובייקט ל-JSON
+const object = { name: 'דני', age: 30 };
+const jsonString = JSON.stringify(object);
+console.log(jsonString); // ידפיס {"name":"דני","age":30}
 
-לקרוא נתונים כאלה, נוכל להשתמש בפונקציית JSON.parse על מנת להמיר את הנתונים מפורמט JSON לאובייקט של JS. לדוגמה:
-```Javascript
-var person = '{"name": "רויטל", "age": 28, "interests": ["תכנות", "טיולים", "ריקוד"]}';
-var parsed = JSON.parse(person);
-console.log(parsed.name); // יצג את הערך "רויטל" בסטודנטים. 
+// להמרת JSON לאובייקט
+const jsonObject = JSON.parse(jsonString);
+console.log(jsonObject); // ידפיס { name: 'דני', age: 30 }
 ```
 
-# עיון מעמיק:
-לפני JSON, רשתות היכרו עם מבנה נתונים כגון XML שהידוע מתכנני רשתות. עם זאת, החסרונות של XML כמו פערי מתן וכבדות, הביאו לפיתוח של JSON בשנת 2001. מאז, הוא כיכב בסביבת התכנות כפורמט נתונים מתוכנן, פשוט ואמין.
+## צלילה לעומק
+JSON נוצר בשנת 2001 על ידי דאגלס קרוקפורד. הפורמט מבוסס על תחביר של JavaScript אך תומך גם בשפות אחרות דרך ספריות ייעודיות. רבים בוחרים ב-JSON על פני XML מכיוון שהוא פחות מסורבל ויותר מהיר בפעולה. עם זאת, תמיכה בהערות ו-namespaces מוגבלת, מה שכן נתמך ב-XML.
 
-כאלטרנטיבה לתכנות ב-JavaScript ישנם מספר המחלפים כמו: XML, CSV ו- YAML. עדיין, עם כל שיפור ואחסון נתונים, כינוי המביא הוא תכנון וגם במקרי נתונים תקמה. (ASA) טלפאזת מודרנית ו- JSON מנסהו של והאחת הביצוע של שיפור/
-
-# ראה גם:
-1. עורך טקסט חינם עבור JSON: https://jsoneditoronline.org/
-2. תיעוד מלא על עבודה עם JSON ב-JavaScript: https://www.w3schools.com/js/js_json_intro.asp
-3. כלי חינם ליצירת מערכי JSON: https://json-generator.com/
+## גם כדאי לראות
+- מדריך מעמיק על JSON באתר MDN: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+- ספריית JSON בשפות תכנות שונות: https://www.json.org/json-en.html
+- תקנים ומפרטי JSON: http://www.ecma-international.org/publications/standards/Ecma-404.htm

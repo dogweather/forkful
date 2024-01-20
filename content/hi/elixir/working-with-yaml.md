@@ -1,6 +1,6 @@
 ---
 title:                "यामल के साथ काम करना"
-html_title:           "Elixir: यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
 simple_title:         "यामल के साथ काम करना"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,28 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## क्या और क्यों?"
-लेखकों को अक्सर YAML लेखन और पार्स करने के लिए इस्तेमाल किया जाता है। YAML (YAML Ain't a Markup Language) टेक्स्ट डेटा से संबंधित स्टैंडर्ड फॉर्मैट है जो आसानी से इंन्टरप्रिट होता है और जैसे पठनीय होता है।
+## What & Why? (क्या और क्यों?)
+YAML एक डाटा सीरियलाइजेशन फॉर्मेट है जो क्यूरेटेड डाटा प्रकारों को संग्रहित और साझा करने के लिए इस्तेमाल होता है। Elixir में YAML के साथ काम करने की जरूरत प्रोजेक्ट कॉन्फिगरेशन, डाटा एक्सचेंज और विभिन्न सर्विसेज के साथ इंटीग्रेशन के लिए पड़ती है।
 
-"## कैसे करें?"
-```Elixir
-# YAML को अनामित मान की मदद से रीड करें
-YAML.load("नाम: जॉन, उम्र: 30")
-# %{नाम: "जॉन", उम्र: 30}
+## How to: (कैसे करें:)
+Elixir में YAML के साथ काम करने के लिए `yamerl` लाइब्रेरी का इस्तेमाल करें।
 
-# विशेषताओं के साथ YAML फाइल लिखें
-YAML.dump(%{नाम: "जॉन", उम्र: 30})
-# "---\nनाम: जॉन\nउम्र: 30\n..."
+Elixir में YAML पढ़ने के लिए:
+```elixir
+# Add yamerl as a dependency in mix.exs
 
-# कस्टम विशेषताओं के साथ पार्स करें
-YAML.load(<<"db:\n  username: 'जॉन'\n  password: 'पासवर्ड'">>)
-# %{db: %{username: "जॉन", password: "पासवर्ड"}}
+def deps do
+  [
+    {:yamerl, "~> 0.8.0"}
+  ]
+end
+
+# Use YamlElixir to parse the YAML data
+
+defmodule MyYAML do
+  def parse_yaml do
+    yaml_data = """
+    ---
+    - Elixir
+    - Phoenix
+    - Nerves
+    """
+
+    {:ok, yamerl_conformant} = :yamerl_conform.documents(yaml_data)
+    {:ok, Enum.map(yamerl_conformant, &(&1[:content]))}
+  end
+end
+
+IO.inspect(MyYAML.parse_yaml)
+```
+नमूना आउटपुट होगा:
+```
+{:ok, [["Elixir", "Phoenix", "Nerves"]]}
 ```
 
-"## गहराई में जाओ"
-YAML एक आसान और पठनीय फॉर्मैट है जो डेटा को संरचित करने के लिए बहुत सारे विशेषताओं की अनुमति देता है। यह फॉर्मैट फ़ाइलों में इनसेपरेबल लग सकता है, जो कोड को पढ़ने और लिखने को आसान बनाता है। इसके अलावा, यह अन्य फॉर्मेट्स (XML, JSON) से भी सुपीडी है।
+Elixir में YAML लिखने के लिए:
+Elixir में सीधे YAML लिखने के लिए कोई मूल लाइब्रेरी नहीं है, लेकिन आप JSON में कन्वर्ट कर फिर YAML में लिख सकते हैं।
 
-"## इससे संबंधित जानकारी"
-- [YAML की विस्तृत जानकारी](https://yaml.org/)
-- [यूट्यूब पर YAML के बारे में तुतोरियल](https://www.youtube.com/results?search_query=yaml+tutorial)
-- [Elixir के बारे में अधिक जानकारी के लिए अधिकांश](https://elixir-lang.org/getting-started/introduction.html)
+## Deep Dive (विस्तार से):
+YAML, जिसका पूरा नाम "YAML Ain't Markup Language" है, 2001 में विकसित किया गया था। यह JSON और XML के लिए एक सरल विकल्प के रूप में तैयार किया गया था। Elixir में, जहां देशीय सपोर्ट की कमी होती है, `yamerl` और `YamlElixir` लाइब्रेरीज का इस्तेमाल आमतौर पर YAML संबंधित कामों के लिए किया जाता है। YAML के प्रसार के पीछे इसका रीडेबल सिंटेक्स और डेटा-सेंट्रिक एप्लीकेशन्स के लिए सामर्थ्य है। एल्टनेटिव फॉर्मेट्स के तौर पर TOML और JSON भी लोकप्रिय हैं।
+
+## See Also (और देखें):
+- YAML official website for documentation: [YAML](https://yaml.org/)
+- GitHub repository for `YamlElixir`: [YamlElixir on GitHub](https://github.com/KamilLelonek/yaml-elixir)

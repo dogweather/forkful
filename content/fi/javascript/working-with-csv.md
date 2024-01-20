@@ -1,7 +1,7 @@
 ---
-title:                "Csv:n kanssa työskentely"
-html_title:           "Javascript: Csv:n kanssa työskentely"
-simple_title:         "Csv:n kanssa työskentely"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-CSV (Comma-Separated Values) on tiedostomuoto, jota käytetään yleensä taulukkomuotoisten tietojen tallentamiseen ja jakamiseen. Ohjelmoijat käyttävät sitä usein, koska se on yksinkertainen ja helppo lukea ja kirjoittaa tietoja.
+## What & Why?
+Työstämme CSV-tiedostoja JavaScriptilla, koska ne ovat helppolukuisia ja muokattavia datan tallennusmuotoja. CSV:tä käytetään usein tiedonvaihtoformaatissa, erityisesti silloin kun dataa siirretään eri ohjelmistojen välillä.
 
-## Kuinka tehdä:
-- CSV-tietojen lukeminen:
+## How to:
+JavaScriptilla CSV-tiedostojen käsittelyä varten käytetään usein `FileReader`-liittymää lukemaan tiedostot ja muuntoon `split()`- sekä `map()`-funktioita. Esimerkki CSV-tiedoston sisällön lukemisesta ja tulostamisesta:
+
 ```Javascript
-const csvString = `Nimi, Ikä, Kaupunki
-Maija, 27, Helsinki
-Antti, 35, Turku`;
+// Lataa & lue CSV
+const tiedostonLukija = new FileReader();
 
-const csvData = csvString.split('\n').map(line => line.split(','));
+tiedostonLukija.onload = function(event) {
+  const teksti = event.target.result;
+  const rivit = teksti.split('\n').map(rivi => rivi.split(','));
+  console.log(rivit);
+};
 
-console.log(csvData); // [["Nimi", "Ikä", "Kaupunki"], ["Maija", "27", "Helsinki"], ["Antti", "35", "Turku"]]
-```
-- CSV-tiedoston kirjoittaminen:
-```Javascript
-const csvData = [
-  ['Nimi', 'Ikä', 'Kaupunki'],
-  ['Maija', 27, 'Helsinki'],
-  ['Antti', 35, 'Turku']
-];
-
-const csvString = csvData.map(row => row.join(',')).join('\n');
-
-console.log(csvString); // Nimi, Ikä, Kaupunki
-                         // Maija, 27, Helsinki
-                         // Antti, 35, Turku
+// Tässä esimerkissä oletetaan, että käyttäjä on jo valinnut tiedoston.
+tiedostonLukija.readAsText(valittuTiedosto);
 ```
 
-## Syvällisemmin:
-- Historiallinen konteksti:
-CSV muoto kehitettiin 1970-luvulla ja se oli alun perin tarkoitettu käytettäväksi osana IBM:n pääkirjanpitojärjestelmää. Nykyään se on yleinen ja suosittu tiedostomuoto erityisesti data-analytiikassa ja liiketoimintasovelluksissa.
-- Vaihtoehtoja:
-Vaikka CSV onkin yleinen ja helppokäyttöinen tiedostomuoto, se ei sovellu kaikkiin tietokoneohjelmiin. Esimerkiksi tietokannat ja JSON-muoto voivat olla parempia vaihtoehtoja, jos tietojen rakenteellinen muoto on tärkeä.
-- Toteutusyksityiskohdat:
-CSV-tiedostoja voidaan lukea ja kirjoittaa monilla eri ohjelmointikielillä, kuten esimerkiksi Pythonilla ja Javalla. Nämä kielet tarjoavat myös valmiita kirjastoja CSV-tiedostojen käsittelyyn.
+Sample output:
 
-## Katso myös:
-- [Wikipedia-artikkeli CSV-muodosta](https://fi.wikipedia.org/wiki/CSV)
+```Javascript
+[
+  ["sarakkeen1_otsikko", "sarakkeen2_otsikko"],
+  ["rivi1_sarakkeen1", "rivi1_sarakkeen2"],
+  ["rivi2_sarakkeen1", "rivi2_sarakkeen2"],
+  // ...
+]
+```
+
+## Deep Dive
+CSV-formaatti, joka tunnetaan myös "comma-separated values" -nimellä, on ollut käytössä jo 1970-luvulta lähtien. Se on säilynyt suosittuna, koska se on riittävän yksinkertainen ja tekstipohjainen. Nykyään on olemassa monia vaihtoehtoisia kirjastoja, kuten `PapaParse` ja `csv-parser`, jotka voivat helpottaa CSV-tiedoston käsittelyä. CSV-tiedostojen lukemista hankaloittaa toisinaan eri ohjelmien käyttämät eri rivinvaihtomerkit sekä sarakkeiden erotinmerkit.
+
+## See Also
+- [MDN FileReader Documentation](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+- [PapaParse Library](https://www.papaparse.com/)
+- [CSV-parser for Node.js](https://www.npmjs.com/package/csv-parser)
+- [RFC 4180, CSV standard](https://tools.ietf.org/html/rfc4180)

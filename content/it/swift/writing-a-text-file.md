@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Swift: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Scrivere un file di testo è un'operazione comune per i programmatori. Essenzialmente, significa creare un file che contiene testo o dati che possono essere letti o modificati da un computer. I programmatori spesso scrivono file di testo per salvare informazioni importanti o per creare file di configurazione per il loro codice.
+## What & Why?
+Scrivere un file di testo significa salvare dati in formato leggibile. I programmatori lo fanno per persistenza dei dati, debug, o per esportare dati.
 
-## Come fare:
-Ecco un esempio di codice Swift per scrivere un file di testo:
+## How to:
+Ecco un esempio di come scrivere su un file di testo in Swift:
 
-```
-let testo = "Questo è un testo di esempio"
-let url = URL(fileURLWithPath: "testo.txt")
+```Swift
+import Foundation
 
-// prova a scrivere il testo nel file
+let contenuto = "Ciao, questo è un testo di esempio."
+let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("esempio.txt")
+
 do {
-    try testo.write(to: url, atomically: true, encoding: .utf8)
-    print("File di testo creato con successo!")
+    try contenuto.write(to: url, atomically: true, encoding: .utf8)
+    print("File scritto con successo!")
 } catch {
-    print("Errore durante la scrittura del file di testo:", error)
+    print("Errore nel salvare il file: \(error)")
 }
 ```
 
-# Output:
-Il codice sopra creerà un file di testo chiamato "testo.txt" nella directory corrente del progetto, contenente il testo di esempio. Se tutto va bene, vedrai il messaggio di successo "File di testo creato con successo!" stampato nella console.
+Output nel terminale:
 
-## Approfondimento:
-Scrivere file di testo è una pratica comune nella programmazione, ma ha avuto origini interessanti. Originariamente, era fatto a mano su schede perforate o nastri di nastro. Ora, ci sono alternative per scrivere file di testo come JSON o plist, ma scrivere un file di testo semplice rimane una soluzione semplice e affidabile per molti programmatori.
+```
+File scritto con successo!
+```
 
-## Vedi anche:
-Se vuoi saperne di più su come scrivere file di testo in Swift, puoi consultare questi link:
+## Deep Dive
+Nei primi tempi dell'informatica, scrivere su file era uno dei principali metodi per salvare i dati. Oggi, esistono alternative come i database o il cloud storage, ma scrivere su file è ancora molto usato per la sua semplicità e portabilità. In Swift, le operazioni sui file sono gestite principalmente dalla classe `FileManager` e possono essere eseguite in modo sincrono o asincrono.
+
+## See Also
+- [Documentation FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift Programming Language Guide](https://docs.swift.org/swift-book/)

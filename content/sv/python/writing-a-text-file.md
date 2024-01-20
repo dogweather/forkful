@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva en textfil"
-html_title:           "Python: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att skriva en textfil är en viktig del av programmering då det ger möjlighet att spara data permanent på en dator. Det kan vara användbart för att behålla information som genereras från programmet eller för att skapa en "log"-fil som visar vad som har gjorts under körning.
+## Vad & Varför?
+Att skriva en textfil i Python innebär att man sparar textdata till en fil på datorn. Programmerare gör detta för att spara indata, loggar, konfigurationer eller för att utbyta data mellan olika program.
 
-## Såhär gör du:
-Divertimento
-Det enklaste sättet att skriva en textfil i Python är att använda inbyggda funktionen ```open()``` för att öppna eller skapa en ny fil. Här är ett exempel på kod som lägger till texten "Hej världen!" i en textfil som heter "mitt_program.txt":
+## Gör såhär:
+```Python
+# Öppna en fil för skrivning (skapar filen om den inte finns)
+with open('exempel.txt', 'w') as fil:
+    fil.write('Hej världen!\n')  # Skriver en rad till filen
 
-```python
-f = open("mitt_program.txt", "w") f.write("Hej världen!") f.close() ```
+# Läser filen för att bekräfta innehållet
+with open('exempel.txt', 'r') as fil:
+    innehall = fil.read()
+print(innehall)
+```
+Output:
+```
+Hej världen!
+```
 
-Efter att koden har körts, kan du öppna filen "mitt_program.txt" och se texten "Hej världen!" skriven i den.
+## Deep Dive
+Från den tidiga UNIX-eran har det att spara textfiler varit standard för konfiguration och loggfiler, på grund av enkelhet och transparens. Alternativ inkluderar binära filer eller databaser, vilka kan vara mer effektiva men mindre lättlästa för människor. Vid skrivning av filer sköter Python buffring och teckenkodning, men det går att manipulera dessa inställningar.
 
-## Djupdykning:
-I äldre versioner av Python behövde man använda ```write()``` funktionen för att skriva i en textfil. Denna funktion ersattes senare av ```f.write()``` för att bättre följa programmeringskonventioner. Om du vill lägga till mer text i samma fil kan du öppna den igen med ```f = open("mitt_program.txt", "a")``` innan du använder ```f.write()``` igen.
-
-En annan väg att skapa en textfil är att använda modulen "io" och ```with```-satsen. Denna metod stänger automatiskt filen efter att den har använts.
-
-```python
-import io with io.open("mitt_program.txt", "w") as f: f.write("Hej världen!") ```
-
-## Se även:
-Här är några användbara länkar för att lära dig mer om skrivning av textfiler i Python:
-
-- Dokumentation för inbyggda funktionen ```open()```: https://docs.python.org/sv/latest/library/functions.html#open
-- Hur man läser från och skriver till filer i Python: https://realpython.com/read-write-files-python/
-- "io" modulens dokumentation: https://docs.python.org/sv/latest/library/io.html
+## Se Också
+- Python dokumentation för filhantering: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Python 'io' modulens dokumentation: https://docs.python.org/3/library/io.html

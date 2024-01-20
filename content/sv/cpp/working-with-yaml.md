@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med yaml"
-html_title:           "C++: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -11,54 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+YAML är ett format för datautbyte lätt att läsa för människor. Programmerare använder det för konfigurationer och data serialization eftersom det är enkelt och tydligt.
 
-Arbetar du med YAML i dina C++-projekt men undrar vad det är och varför man använder det? YAML är ett språk för att strukturera data i filer, som till exempel konfigurationsdata eller informationsutbyten. Programerare använder YAML för att göra det enklare och mer läsbart att organisera och dela data inom sina program.
-
-## Hur man:
-
-```C++
+## Hur gör man:
+```cpp
 #include <iostream>
 #include <yaml-cpp/yaml.h>
 
 int main() {
-  // Skapar en YAML-fil
-  YAML::Emitter out;
-  out << YAML::BeginMap;
-  out << YAML::Key << "Person" << YAML::Value << "John Smith";
-  out << YAML::Key << "Age" << YAML::Value << 25;
-  out << YAML::EndMap;
+    // Parse YAML string
+    YAML::Node config = YAML::Load("name: Programmer\nage: 30\nlanguage: C++");
 
-  // Skriver ut filen
-  std::cout << "YAML-fil:" << std::endl;
-  std::cout << out.c_str() << std::endl;
+    // Access elements
+    std::cout << "Name: " << config["name"].as<std::string>() << "\n";
+    std::cout << "Age: " << config["age"].as<int>() << "\n";
+    std::cout << "Language: " << config["language"].as<std::string>() << "\n";
 
-  // Läser av YAML-filen
-  YAML::Node node = YAML::Load(out.c_str());
-  std::cout << "Data:" << std::endl;
-  std::cout << "Namn: " << node["Person"].as<std::string>() << std::endl;
-  std::cout << "Ålder: " << node["Age"].as<int>() << std::endl;
-
-  return 0;
+    // Create YAML and print
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "framework" << YAML::Value << "Qt";
+    out << YAML::Key << "OS" << YAML::Value << "Windows";
+    out << YAML::EndMap;
+    
+    std::cout << out.c_str() << std::endl;
+    
+    return 0;
 }
 ```
-
-Körning: 
-
+Sample output:
 ```
-YAML-fil:
-Person: John Smith
-Age: 25
-
-Data:
-Namn: John Smith
-Ålder: 25
+Name: Programmer
+Age: 30
+Language: C++
+framework: Qt
+OS: Windows
 ```
 
 ## Djupdykning
+YAML (YAML Ain't Markup Language) skapades tidigt 2000-tal som ett enklare alternativ till XML. Andra alternativ som JSON och TOML används också för liknande syften, men YAML är ofta föredraget för dess läsbarhet. I C++ hanteras YAML genom bibliotek som `yaml-cpp`, vilket tillhandahåller funktioner för att både läsa från och skriva till YAML-filer.
 
-YAML står för "YAML Ain't Markup Language" och skapades som ett alternativ till XML för att lösa problem med läsbarhet och komplexitet. YAML är utformat för att enkelt kunna läsas av människor och dess syntax är baserad på indentering istället för taggar, vilket gör det lättare att läsa och uppdatera datafiler. YAML används i många olika programmeringsspråk och det finns många alternativ för att arbeta med YAML i C++, som till exempel biblioteket "yaml-cpp" som användes i exemplet ovan. 
-
-## Se även
-
-- [yaml-cpp](https://github.com/jbeder/yaml-cpp)
-- [YAML:s officiella hemsida](https://yaml.org/)
+## Se också
+- Officiell `yaml-cpp` GitHub-repositorium: https://github.com/jbeder/yaml-cpp
+- YAML officiell webbplats: https://yaml.org
+- YAML specifikation: https://yaml.org/spec/1.2/spec.html
+- Jämförelse mellan YAML och JSON: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json

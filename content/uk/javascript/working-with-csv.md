@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Javascript: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-CSV є одним з найвикористовуваніших форматів для обробки даних в програмуванні. Це текстовий формат, що представляє табличну структуру даних, де кожен рядок відповідає одному рядку таблиці, а значення зберігаються у вигляді коми-роздільних стовпців. Програмісти використовують CSV для ефективної обробки та зберігання даних.
+## What & Why?
+"## Що та Чому?"
 
-## Як:
-Використання CSV в Javascript є досить простим. Нижче представлено приклад коду, який виводить дані з CSV файлу у консоль:
-```Javascript
-const CSV = require('csv-parser');
+Працювати з CSV - це означає читати, писати і маніпулювати даними у форматі Comma-Separated Values. Програмісти це роблять, бо CSV - це простий і широко підтримуваний формат обміну даними, зручний для табличних даних.
+
+## How to:
+"## Як це зробити:"
+
+```javascript
+// Парсинг CSV рядка в масив
+const csv = require('csv-parser');
 const fs = require('fs');
+const results = [];
 
 fs.createReadStream('data.csv')
-  .pipe(CSV())
-  .on('data', (row) => {
-    console.log(row);
-  })
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
   .on('end', () => {
-    console.log('Successfully read data from CSV file.');
+    console.log(results);
+    // Працюємо з отриманими даними
   });
+
+// Генерація CSV з масиву об'єктів
+const { Parser } = require('json2csv');
+const myData = [
+  { name: 'Andriy', age: 30 },
+  { name: 'Yulia', age: 28 }
+];
+
+const json2csvParser = new Parser();
+const csv = json2csvParser.parse(myData);
+
+console.log(csv);
 ```
-Вихідні дані будуть виведені у форматі об'єкта, де назви стовпців будуть використовуватися як ключі, а значення - як значення.
 
-## В глибину:
-CSV формат був створений у 1972 році і є стандартом для імпорту та експорту даних у багатьох програмах для обробки тексту та електронної таблиці. Існують альтернативні формати, такі як JSON та XML, але CSV переваги в простоті та доступності. У Javascript, CSV можна обробляти за допомогою різних бібліотек, таких як Papa Parse та CSV Parser.
+## Deep Dive
+"## Поглиблений Аналіз:"
 
-## Дивись також:
-- [Документація по бібліотеці CSV Parser](https://www.npmjs.com/package/csv-parser)
-- [Документація по бібліотеці Papa Parse](https://www.papaparse.com/)
+CSV з'явився у ранніх роках програмування як метод організації та обміну табличними даними. Хоча JSON і XML пропонують більш структуровані формати, CSV залишається популярним через свою простоту і читабельність.
+
+Окрім `csv-parser` і `json2csv`, існують інші бібліотеки як `PapaParse`, `csv-writer`. Вибір бібліотеки залежить від конкретних потреб проекту, роботи зі складними CSV або простотою API.
+
+Зверніть увагу, що коли ми працюємо з CSV у Node.js, потрібно користуватися модулем потоків (streams), щоб ефективно обробляти великі обсяги даних.
+
+## See Also
+"## Дивіться Також:"
+
+- [RFC 4180, “Common Format and MIME Type for Comma-Separated Values (CSV) Files”](https://tools.ietf.org/html/rfc4180)
+- [PapaParse - Powerful CSV Parser for JavaScript](https://www.papaparse.com/)
+- [csv-writer - CSV Writing for Node.js](https://github.com/ryu1kn/csv-writer)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Fish Shell recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,36 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-JSON (JavaScript Object Notation) is a popular data format used in web development and other programming environments. It is a lightweight, human-readable format for storing and exchanging data between different systems.
-
-Programmers use JSON because it offers a flexible way to represent data in a structured format. It is easy to read and write, making it a popular choice for data interchange between applications.
+JSON (JavaScript Object Notation) is a data format used for representing structured data. Programmers use JSON because it's easy to read and write for humans, and easy to parse and generate for computers.
 
 ## How to:
 
-To work with JSON in Fish Shell, you can use the built-in functions `json` and `fromjson`. These functions allow you to convert data from JSON format into a Fish Shell variable and vice versa.
+```Fish Shell
+# Parse JSON from a string using `jq`
+echo '{"name": "Fish", "type": "Shell"}' | jq '.'
 
-Example:
-```
-# Convert JSON data into a Fish Shell variable
-set data (json '{ "name": "John Smith", "age": 30 }')
+# Get value of a specific key
+echo '{"name": "Fish", "type": "Shell"}' | jq '.name'
 
-# Access the values from the variable
-echo $data[name]    # Output: John Smith
-echo $data[age]     # Output: 30
+# Output:
+# "Fish"
 
-# Convert a Fish Shell variable into JSON data
-set info '{ "name": "Lisa Brown", "age": 25 }'
-fromjson $info     # Output: `{"name": "Lisa Brown", "age": 25}`
+# Update a value and output new JSON string
+echo '{"name": "Fish", "type": "Shell"}' | jq '.type = "Command Line Interface"'
+
+# Pretty-print JSON from a file
+cat config.json | jq '.'
 ```
 
 ## Deep Dive
 
-JSON was first created in 2001 by Douglas Crockford and has since become popular due to its simplicity and ease of use. It is based on the JavaScript language, but can be used with many other programming languages.
-
-An alternative to using JSON is XML (Extensible Markup Language), which was the dominant data format before JSON came along. However, JSON is more compact and easier to read, making it a preferred choice for many developers.
-
-To work with JSON in Fish Shell, the `json` function uses the `eval` command to evaluate the data and convert it into a Fish Shell variable. On the other hand, the `fromjson` function uses the `printf` command to format the data as JSON.
+JSON, standardized in the early 2000s, has its roots in JavaScript's object literals. It quickly replaced XML for many tasks due to its lightweight syntax and direct mapping to data structures. Alternatives like YAML and TOML exist but JSON's ubiquity makes it a default choice in many scenarios. Working with JSON in Fish requires tools like `jq` because Fish itself isn't designed for heavy data manipulation. Historically, Unix shells use external tools for specific tasks, and Fish follows this philosophy.
 
 ## See Also
 
-- [JSON official website](https://www.json.org/)
+- The `jq` Manual: https://stedolan.github.io/jq/manual/
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- JSON Specification: https://www.json.org/json-en.html

@@ -1,7 +1,7 @@
 ---
-title:                "Die Arbeit mit csv"
-html_title:           "Swift: Die Arbeit mit csv"
-simple_title:         "Die Arbeit mit csv"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+CSV, kurz für "Comma-Separated Values", ist ein einfaches Dateiformat zum Speichern tabellarischer Daten. Programmierer nutzen CSV, weil es weit verbreitet, menschenlesbar und einfach zu importieren sowie zu exportieren ist.
 
-CSV steht für "Comma-Separated Values" und ist ein Dateiformat, das verwendet wird, um strukturierte Daten in Textform zu speichern. Programmierer nutzen CSV, um Daten in einer einfach lesbaren Art und Weise zu organisieren und zu speichern.
+## How to:
+Swift macht das Lesen und Schreiben von CSV-Dateien unkompliziert. Hier ein Beispiel, wie man eine CSV-Datei einliest, verarbeitet und wieder schreibt:
 
-## Wie geht's?
+```Swift
+import Foundation
 
-```Swift 
+// Angenommen, wir haben eine String-Variable `csvContent`, die unsere CSV-Daten enthält
+let csvContent = """
+Name,Alter,Beruf
+Max Mustermann,42,Entwickler
+Erika Mustermann,36,Designerin
+"""
 
-// Beispiel einer CSV-Datei
-Name,Alter,Stadt
-Max,30,Berlin
-Anna,25,Hamburg
-Peter,40,München
-
-// Lesen einer CSV-Datei
-let fileURL = URL(fileURLWithPath: "meineDatei.csv")
-let csvString = try String(contentsOf: fileURL)
-
-// Parsen des CSV-Strings
-let lines = csvString.components(separatedBy: "\n")
-for line in lines {
-    let values = line.components(separatedBy: ",")
-    // Werte verarbeiten
+// Parsing der CSV Daten
+func parseCSV(content: String) -> [[String]] {
+    var result: [[String]] = []
+    let rows = content.components(separatedBy: "\n")
+    
+    for row in rows {
+        let columns = row.components(separatedBy: ",")
+        result.append(columns)
+    }
+    
+    // Der erste Eintrag enthält die Spaltennamen, könnte je nach Bedarf entfernt werden
+    return result
 }
 
-// Schreiben in eine CSV-Datei
-let fileURL = URL(fileURLWithPath: "neueDatei.csv")
-var csvString = "Name,Alter,Stadt"
-csvString.append("\nMax,30,Berlin")
-csvString.append("\nAnna,25,Hamburg")
-try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+// CSV-String in ein Array von Arrays konvertieren
+let parsedCSV = parseCSV(content: csvContent)
+print(parsedCSV)
 
+// CSV-Daten schreiben
+func writeCSV(data: [[String]]) -> String {
+    var content = ""
+    
+    for (index, row) in data.enumerated() {
+        let rowString = row.joined(separator: ",")
+        
+        content += rowString
+        // Zeilenumbruch, außer nach der letzten Zeile
+        if index < data.count - 1 {
+            content += "\n"
+        }
+    }
+    
+    return content
+}
+
+// Erzeugten CSV-String für die Ausgabe oder Speicherung
+let csvOutput = writeCSV(data: parsedCSV)
+print(csvOutput)
 ```
 
-## Tief einsteigen
+Ausgabe beim Einlesen und Schreiben der CSV-Daten zeigt identischen Inhalt wie `csvContent`.
 
-CSV-Dateien sind seit den 1970er Jahren beliebt und werden immer noch häufig verwendet, insbesondere in der Software-Entwicklung und im Datenmanagement. Alternativen zu CSV sind zum Beispiel JSON oder XML, die jedoch oft komplexere Datenstrukturen erlauben. Die Verarbeitung von CSV-Dateien kann mithilfe von CSV-Parser-Libraries wie CSwiftV oder SwiftCSV erleichtert werden.
+## Deep Dive
+CSV ist seit den frühen Computerjahren in Verwendung. Es gibt zwar modernere Alternativen wie JSON oder XML, die mehr Datenstruktur und Meta-Informationen bieten, doch CSV bleibt wegen seiner Einfachheit beliebt. Bei der Implementierung in Swift ist zu beachten, dass das Handling von Komplikationen, wie Zitate oder Kommas innerhalb von Zellen, zusätzliche Logik erfordert.
 
-## Sieh dir auch an
+## See Also
+Weitere Infos und Tutorials für Swift-Programmierung und CSV-Handhabung:
 
-- [CSwiftV](https://github.com/Daniel1of1/CSwiftV)
-- [SwiftCSV](https://github.com/naoty/SwiftCSV)
+- Offizielle Swift-Dokumentation: [swift.org/documentation/](https://swift.org/documentation/)
+- CSV-Spezifikation von RFC 4180: [tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- Swift-Standardbibliothek: [developer.apple.com/documentation/swift](https://developer.apple.com/documentation/swift)
+- Tutorial zu Swift und CSV mit Bibliotheken: [raywenderlich.com/567-urlsession-tutorial-getting-started](https://www.raywenderlich.com/567-urlsession-tutorial-getting-started)

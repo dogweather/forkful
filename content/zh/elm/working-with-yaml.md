@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml编程"
-html_title:           "Elm: 使用yaml编程"
-simple_title:         "使用yaml编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Elm 中的YAML：什么 & 为什么要使用
+## What & Why? (是什么？为什么？)
+YAML是一种数据序列化格式，简单明了。程序员用它来配置或存储数据，因为易读易写。
 
-YAML是一种轻量级的数据序列化语言，用于在不同编程环境下存储和传输数据。程序员们使用YAML是为了在不同系统之间共享数据，或者将数据存储为可读性较高的格式，便于维护和管理。
+## How to: (怎么做：)
+假设Elm支持YAML(目前不支持，需用Javascript交互)，代码如下：
 
-# 如何使用
-
-```elm
+```Elm
+import Browser
 import Json.Decode as Decode
-import Yaml.Decode as Yaml
 
-yamlDecoder : Decode.Decoder a -> String -> Decode.Result a
-yamlDecoder decoder string =
-    Yaml.decode string
-        |> Decode.andThen decoder
+-- Elm主函数
+main =
+    Browser.sandbox { init = init, update = update, view = view }
 
-decoder : Decode.Decoder MyData
-decoder =
-    Decode.succeed MyData
-        |> Decode.field "key" Decode.int
-        |> Decode.field "value" Decode.string
+-- 应用状态
+type alias Model =
+    { content : String }
 
-yamlString : String
-yamlString =
-    """
-    key: 123
-    value: "Hello World!"
-    """
+-- 初始状态
+init : Model
+init =
+    { content = "" }
 
-result : Decode.Result MyData
-result =
-    yamlDecoder decoder yamlString
+-- 更新函数
+type Msg
+    = NoOp
+
+update : Msg -> Model -> Model
+update _ model =
+    model
+
+-- 渲染视图
+view : Model -> Html Msg
+view model =
+    -- 这里用文本展示YAML内容
+    text model.content
+
+-- 解码YAML函数(这是假设的，现实中需要Javascript处理)
+decodeYaml : String -> Decode.Decoder (Result Decode.Error Model)
+decodeYaml yamlString =
+    -- 解析YAML伪代码，实际上需要Javascript转换
+    Decode.succeed { content = "解析后的数据" }
+
 ```
 
-输出：`Ok { key = 123, value = "Hello World!" }`
+这个例子没有实际的YAML解析代码，因为Elm本身不直接支持YAML。
 
-# 深入解析
+## Deep Dive (深入了解)
+历史上，YAML起源于2001年，用以取代XML。虽然Elm原生不支持YAML，但可以用JavaScript配合Elm的端口（Ports）来做到。比如用`js-yaml`库来处理YAML。编程语言Go、Python等内置或通过库支持YAML，是Elm的替代方案之一。
 
-- 历史背景：YAML最初于2001年由Clark Evans创建，旨在提供一种易于人类阅读和机器解析的数据格式。
-- 替代方案：除了YAML，JSON也是一种流行的数据序列化语言。YAML相比JSON更易读，并支持注释和锚点功能。
-- 实现细节：Elm中使用YAML需要通过第三方库，如上例所示，需要使用`Json.Decode`和`Yaml.Decode`模块。
+## See Also (另请参阅)
+- YAML官网: https://yaml.org
+- `js-yaml`库: https://github.com/nodeca/js-yaml
+- Elm Ports文档: https://guide.elm-lang.org/interop/ports.html
 
-# 查看更多
-
-- [Official YAML Website](https://yaml.org/)
+记得，要在Elm中处理YAML，需要借助外部JavaScript库。多实践，多交流。

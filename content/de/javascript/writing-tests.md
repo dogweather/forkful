@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Javascript: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,38 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Tests schreiben ist ein wichtiger Teil der Programmierung. Durch das Schreiben von Tests können Programmierer sicherstellen, dass ihr Code korrekt funktioniert und mögliche Fehler frühzeitig erkennen. Dadurch wird die Qualität des Codes verbessert und die Entwicklung von Software wird effizienter.
+Tests schreiben bedeutet, Code-Stücke zu erstellen, die überprüfen, ob andere Code-Stücke wie erwartet funktionieren. Programmierer machen das, um Fehler zu vermeiden, die Zuverlässigkeit der Software zu steigern und die Wartung zu erleichtern.
 
-## Wie geht's?
-Das Schreiben von Tests in Javascript ist einfach und unkompliziert. Mit der Jest Bibliothek, die Teil des Javascript-Frameworks React ist, können Tests in wenigen Schritten geschrieben werden. Hier ist ein Beispiel, wie man eine Funktion testen kann, die zwei Zahlen addiert:
-
+## How to:
 ```Javascript
-function add(a, b) {
-  return a + b;
-}
+// Einfacher Funktionstest mit Jest
+const addieren = (a, b) => a + b;
 
-test('adds two numbers correctly', () => {
-  expect(add(2, 3)).toBe(5);
+test('addieren liefert korrekte Summe', () => {
+  expect(addieren(1, 2)).toBe(3);
 });
 ```
-
-Zunächst muss die Jest Bibliothek installiert werden: 
+Ausgabe:
+```bash
+PASS  ./addieren.test.js
+✓ addieren liefert korrekte Summe (5ms)
 ```
-npm install jest --save-dev
-```
 
-Dann kann die Testfunktion geschrieben werden, die den Namen der Funktion, die getestet werden soll, und eine Funktion mit einer Erwartung als Parameter erhält. In diesem Beispiel wird erwartet, dass die Funktion ```add``` die Zahlen 2 und 3 richtig addiert und das Ergebnis 5 zurückgibt.
+## Deep Dive
+Testen in JavaScript hat sich mit Frameworks wie Jasmine, Mocha und Jest entwickelt. Alternativen zu Jest sind beispielsweise Mocha mit Chai oder Jasmine, die unterschiedliche Syntax und Zusatzfunktionen bieten. Wichtig beim Testen ist die Unterscheidung zwischen Unit-Tests, welche einzelne Funktionen prüfen, und Integrationstests, die das Zusammenspiel mehrerer Komponenten testen.
 
-## Tiefere Einblicke
-Tests werden schon seit langem von Programmierern verwendet, um die Qualität ihres Codes zu verbessern und Fehler frühzeitig zu entdecken. Vor der Einführung von automatischen Testframeworks mussten Tests jedoch manuell durchgeführt werden, was viel Zeit und Aufwand erforderte. Mit der Entwicklung von Javascript und der Einführung von Testframeworks wie Jest können Tests jetzt einfach und schnell automatisiert durchgeführt werden.
-
-Es gibt auch alternative Testframeworks für Javascript, wie zum Beispiel Mocha oder Jasmine. Diese bieten ähnliche Funktionen wie Jest, aber mit unterschiedlichen Syntaxen und Herangehensweisen. Es lohnt sich, verschiedene Frameworks auszuprobieren und das zu finden, was am besten zu einem und seinem Team passt.
-
-Um Tests in einem von Jest unterstützten Framework wie React zu schreiben, müssen die Tests in einer Datei mit der Endung ```.test.js``` gespeichert werden. Jest sucht automatisch nach diesen Dateien und führt die Tests aus.
-
-## Siehe auch
-- [Jest documentation](https://jestjs.io)
-- [Mocha documentation](https://mochajs.org)
-- [Jasmine documentation](https://jasmine.github.io)
-
-Happy testing!
+## See Also
+- [Jest](https://jestjs.io/) - Ein umfangreiches Test-Framework für JavaScript.
+- [Mocha](https://mochajs.org/) - Ein flexibles Test-Framework.
+- [Chai](https://www.chaijs.com/) - Eine Assertion-Bibliothek, die oft mit Mocha verwendet wird.

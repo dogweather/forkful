@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Kotlin: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Arduino: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester är en viktig del av programmering. Genom att skriva tester kan vi kolla så att koden fungerar som vi tänkt och undvika buggar och fel som kan uppstå när vi ändrar eller lägger till ny kod.
+Testning är processen att verifiera att din kod gör vad den ska. Programmerare skriver tester för att säkerställa att programmet fungerar rätt och för att undvika framtida buggar vid uppdateringar.
 
 ## Hur gör man:
-Vi kan skriva tester i Kotlin genom att använda testramverket JUnit. Nedan följer ett enkelt kodexempel som visar hur vi kan skriva ett test som kontrollerar att en funktion returnerar rätt värde.
-
-```Kotlin
+```kotlin
 import org.junit.Test
-import org.junit.Assert
+import org.junit.Assert.*
 
-class TestClass {
-
+class ExampleUnitTest {
     @Test
-    fun testFunction() {
-        // Anropa funktionen som ska testas
-        val result = functionName()
-        
-        // Jämför resultatet med det förväntade värdet
-        Assert.assertEquals(expectedValue, result)
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+
+    @Test(expected = ArithmeticException::class)
+    fun division_byZero() {
+        val result = 2 / 0
     }
 }
 ```
-
-Output:
+Köper du koden ser du något i stil med:
 ```
-Test: TestClass.testFunction passed in 0.005s
+Test passed: addition_isCorrect
+Test failed: division_byZero, expected: ArithmeticException
 ```
 
-## Djupdykning:
-Historiskt sett har det funnits många olika sätt att skriva tester på, men idag är JUnit det mest använda testramverket för Java- och Kotlinbaserade system. Det finns också alternativ som TestNG, Selenium och Mockito som erbjuder lite olika funktionalitet och är mer anpassade för specifika testtyper.
+## Fördjupning
+Testning i Kotlin görs ofta med JUnit, ett ramverk som funnits sedan 90-talet. Alternativ till JUnit inkluderar TestNG eller Kotest. Inom Kotlin använder man ofta Mockk för att mocka beroenden och JetBrains utvecklade Spek för BDD-style testning.
 
-När vi skriver tester är det viktigt att tänka på att det inte bara handlar om att bevisa att koden fungerar, utan också om att kontrollera att koden är läsbar och underhållbar. En väl skriven testkod kan också fungera som dokumentation för koden och gör det lättare för andra utvecklare att förstå hur den fungerar.
-
-## Läs mer:
-- [JUnit](https://junit.org/junit5/) - officiell hemsida
-- [Selenium](https://www.selenium.dev/documentation/en/) - för test av webbapplikationer
-- [Mockito](https://site.mockito.org/) - för att skapa "mock" objekt i tester
+## Se även
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Kotest, a powerful Kotlin testing library](https://kotest.io/)
+- [Mockk, mocking library for Kotlin](https://mockk.io/)
+- [Spek Framework](https://www.spekframework.org/)

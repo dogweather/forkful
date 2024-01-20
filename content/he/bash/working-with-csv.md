@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם csv"
-html_title:           "Bash: עבודה עם csv"
-simple_title:         "עבודה עם csv"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-עבודה עם CSV היא תהליך של עבודה עם קבצי נתונים שנמצאים בתבנית של טבלאות, בהם כל עמודה היא נתון וכל שורה מייצגת רשומה שונה. תהליך זה נפוץ מאוד בעולם התכנות כיוון שמאפשר לנו לארגן ולטפל בנתונים בצורה מהירה ויעילה.
+## מה ולמה?
+עבודה עם קובצי CSV היא קריאה וכתיבה של נתונים בפורמט המופרד בפסיקים. תכנתים עובדים עם CSV כדי לייבא ולייצא נתונים בצורה פשוטה ונגישה.
 
-## איך לעבוד עם CSV:
+## איך לעשות:
+הנה מספר דוגמאות לקריאת וכתיבת נתוני CSV בשורת הפקודה:
+קריאת קובץ CSV:
 ```Bash
-# יצירת קובץ CSV חדש
-echo "שם, מספר טלפון, אימייל" > contacts.csv
-
-# הוספת רשומה חדשה
-echo "גלית, 0501234567, galit@example.com" >> contacts.csv
-
-# הצגת נתונים מהקובץ
-cat contacts.csv 
-
-# סינון לפי עמודה
-cut -d "," -f 1 contacts.csv # יחזיר את עמודת השם
-
-# שינוי ערכים בעמודת מסוימת
-sed -i 's/מספר טלפון/טלפון/g' contacts.csv # יחליף את האותיות "מספר טלפון" במילה "טלפון"
-```
-תוצאה:
-```
-שם,טלפון,אימייל
-גלית,0501234567,galit@example.com
+while IFS=, read -r column1 column2 column3; do
+  echo "תוכן העמודה הראשונה: $column1"
+done < input.csv
 ```
 
-## טיפול מתקדם בנתונים מקובץ CSV:
-בכדי לעבוד ביעילות עם קבצי CSV ניתן להשתמש בכלים נוספים כמו סקריפטים או פקודות אחרות בשפות תכנות אחרות. חלק מהאלטרנטיבות שיכולות לסייע לנו בעבודה עם CSV הן: Excel, R, Python וכו'.
+כתיבה לקובץ CSV:
+```Bash
+echo "עמודה1,עמודה2,עמודה3" > output.csv
+```
 
-כאשר אנחנו עובדים עם קבצי CSV עם Bash נמנעים מהשימוש בכלים נוספים כיוון שעקביות השימוש בכלים מקטינה את סיכויינו לגרועות עם המידע. ניתן להשתמש בשפת Bash כדי להפעיל פקודות ישירות על קבצי CSV, כגון סינון ושינוי ערכים בקלות.
+הדפסת התוצאות בלבד מהעמודה השנייה:
+```Bash
+cut -d, -f2 input.csv
+```
+
+## עיון מעמיק:
+CSV הוא פורמט ותיק, נוצר בשנות ה-70 כדרך פשוטה לייצג נתונים טבלאיים. קיימות אלטרנטיבות כמו JSON וXML אך CSV עדיין נפוץ בשל פשטותו. בעת עבודה עם CSV חשוב לטפל במקרים כמו ערכים המכילים פסיקים, שורות חדשות או ציטוטים. 
 
 ## ראו גם:
-https://www.linuxjournal.com/content/working-csv-files-in-bash
-http://tldp.org/LDP/abs/html/internalvariables.html
-https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php
+- [RFC 4180](https://tools.ietf.org/html/rfc4180) - המפרט הפורמלי לפורמט CSV.
+- [Text CSV](https://perldoc.perl.org/Text/CSV.html) - מודול ב-PERL לעבודה עם קובצי CSV.
+- [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) - ספריה ב-Python המאפשרת עבודה נוחה ומתקדמת עם נתוני CSV.

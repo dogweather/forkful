@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "Elm: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,41 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+YAML הוא פורמט המחליף קבצים עבור תצורה ונתונים. תוכניתנים משתמשים בו כי הוא קריא, נתמך רחב, ונוח להשתלבות עם שפות תכנות.
 
-עבודה עם YAML היא דרך נוחה ויעילה להיכנס לתקשורת בין שפות תכנות שונות. תוכניות מסוימות משתמשות בפורמט זה כדי להתאים בין פלטפורמות שונות או לתכנן תצוגות שונות לאזורים שונים. זה נפוץ במיוחד ב JavaScript והשתתפות ו הפרימטיבים.
+## איך לעשות:
+Elm לא תומך ב-YAML באופן ישיר. נדרש שימוש ב-JS לפענוח ועטיפה ב-`Json.Decode` לטיפול בנתונים.
 
-## איך לעשות?
+```Elm
+port module Main exposing (..)
 
-כדי לעבוד עם YAML ב־ Elm, ניתן להשתמש בחבילת קוד פתוח YAML שנקראת [`urtela/elm-yaml`](https://package.elm-lang.org/packages/urtela/elm-yaml/latest/). כדי להתחיל, נדרוש לייבא את החבילה:
+-- יצוא פורט לקבלת נתונים מקובץ YAML ב-JS
+port getYaml : () -> Cmd msg
 
-```elm
-import YAML exposing (..)
+-- פורט לארוע המבקש לפענח את הנתונים מ-YAML
+port decodeYaml : (String -> msg) -> Sub msg
+
+-- ייבוא דקודרים שלנו
+import Json.Decode as Decode
+
+type alias MyData =
+    { name : String
+    , age : Int
+    }
+
+-- דקודר לנתונים שלנו
+myDataDecoder : Decode.Decoder MyData
+myDataDecoder =
+    Decode.map2 MyData
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
+
+-- פונקציית עזר לפענוח ה-YAML ל-Elm
+decodeYamlString : String -> Result Decode.Error MyData
+decodeYamlString yamlString =
+    Decode.decodeString myDataDecoder yamlString
+
+-- השימוש בפורט כדי לבקש את הנתונים
+requestYaml : Cmd msg
+requestYaml =
+    getYaml ()
 ```
 
-כעת, ניתן להשתמש בפונקציות כמו `decode` לקריאת תצורת YAML שמכילה תבניות שונות והמרתה לפורמט מבנים.
-
-```elm
-decode """
-  language: Elm
-  version: "0.19"
-  date_created: "2020-01-01"
-"""
+פלט לדוגמה (JS):
+```JavaScript
+app.ports.decodeYaml.send('name: "Alice"\nage: 30');
 ```
 
-פלט:
+## עיון מעמיק:
+YAML (YAML Ain't Markup Language) נוצר ב-2001. אף על פי ש-JSON ו-XML שמשימוש נרחב יותר, YAML הוא בחירה מצוינת לקבצי תצורה בזכות הקריאות שלו. ב-Elm, אי-התמיכה ישירה מאלצת שימוש ב-JavaScript לפענוח, דבר שמוסיף סיבוכיות אך מאפשר גמישות באינטראקציה עם טכנולוגיות חיצוניות.
 
-```elm
-Ok (Dict.fromList [("language", "Elm"), ("version", "0.19"), ("date_created", "2020-01-01")])
-```
-
-בנוסף, ניתן להשתמש בפונקציות נוספות כמו `encode` להמרת פורמט מבנים לתצורת YAML, וגם לקרוא ולכתוב קבצי YAML חיצוניים.
-
-## חפירה עמוקה
-
-היסטורית מקור פורמט ה־YAML תחתום בשנת 2001 על ידי Clark Evans. פורמט זה תוכנן כדי להמיר פורמט אחר בשם `YAML Ain't Markup Language`. ישנן אלטרנטיבות אחרות לפורמט זה כמו JSON ו־ XML, אך YAML נחשב לפשוט יותר לקריאה ולכתיבה וכן קל יותר להבין מאשר פורמטים אחרים.
-
-כדי להשתמש בחבילת `elm-yaml`, נדרש להתקין את הגרסה המתאימה ל־ Elm. ניתן למצוא את החבילה וגם דוגמאות נוספות בכתובת [`https://package.elm-lang.org/packages/urtela/elm-yaml/latest/`](https://package.elm-lang.org/packages/urtela/elm-yaml/latest/).
-
-## ראה גם
-
-* [`https://www.yaml.info/`](https://www.yaml.info/) - אתר YAML הרשמי עם מידע נוסף ורשימת כל החבילות הקיימות לשפות תכנות שונות.
+## ראו גם:
+- [YAML חיצוני ל-Elm](https://github.com/terezka/yaml) - ספריה שתעזור לכם להתמודד עם YAML בתוך יישומי Elm.
+- [JSON Decode רשמי של Elm](https://package.elm-lang.org/packages/elm/json/latest/) - מידע נוסף על הדקודרים ב-Elm שתזדקקו להם בפענוח.
+- [מדריך לשימוש ב-Ports ב-Elm](https://guide.elm-lang.org/interop/ports.html) - רכיבי יסוד להבנת איך לשלב קוד JavaScript עם היישום Elm שלכם.

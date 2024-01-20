@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire un fichier texte"
-html_title:           "PHP: Ecrire un fichier texte"
-simple_title:         "Ecrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire un fichier texte en PHP
+## What & Why?
+Écrire un fichier texte, c'est sauvegarder des données dans un format simple et lisible. Les programmeurs le font pour enregistrer des configurations, des logs ou échanger des données entre applications.
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font
-
-Ecrire un fichier texte en PHP est une tâche courante pour les programmeurs. Cela consiste simplement à écrire du contenu dans un fichier texte, que ce soit du texte brut ou des données structurées au format de texte. Les programmeurs font cela pour stocker et manipuler des données à travers un langage de programmation, plutôt que de simplement les taper manuellement dans un fichier.
-
-## Comment faire:
+## How to:
+Pour écrire dans un fichier texte en PHP, on utilise `file_put_contents()` ou un combo `fopen()`, `fwrite()`, et `fclose()`.
 
 ```PHP
 <?php
-// Ouvrir un fichier texte en écriture
-$file = fopen("exemple.txt", "w") or die("Impossible d'ouvrir le fichier!");
-
-// Ecrire du texte dans le fichier
-$txt = "Bonjour le monde!";
-fwrite($file, $txt);
-
-// Fermer le fichier
-fclose($file);
-
-// Lire le contenu du fichier
-echo file_get_contents("exemple.txt");
-// Output: "Bonjour le monde!"
+$texte = "Salut tout le monde!\n";
+file_put_contents('bonjour.txt', $texte);
 ?>
 ```
 
-## Plongeon dans le sujet:
+Résultat: Crée ou remplace `bonjour.txt` avec "Salut tout le monde!".
 
-Ecrire des fichiers texte en PHP remonte aux débuts du langage et est toujours une méthode efficace pour stocker et manipuler des données. Alternativement, les programmeurs peuvent également utiliser d'autres formats de fichiers tels que JSON ou CSV pour stocker et transférer des données. L'implémentation de l'écriture de fichiers texte en PHP est assez simple et ne nécessite pas de bibliothèques supplémentaires.
+Ou, pour plus de contrôle:
 
-## Voir aussi:
+```PHP
+<?php
+$fichier = fopen('hello.txt', 'a'); // 'a' pour append (ajouter)
+if ($fichier) {
+    fwrite($fichier, $texte);
+    fclose($fichier);
+}
+?>
+```
 
-- [PHP fopen() function](https://www.php.net/manual/fr/function.fopen.php)
-- [PHP fwrite() function](https://www.php.net/manual/fr/function.fwrite.php)
-- [PHP file_get_contents() function](https://www.php.net/manual/fr/function.file-get-contents.php)
+Résultat: Ajoute "Salut tout le monde!" à la fin de `hello.txt`.
+
+## Deep Dive
+Historiquement, `fopen()` et ses amis étaient les seules options en PHP pour écrire dans des fichiers. `file_put_contents()` est plus récent et plus simple pour des cas d'usage basiques.
+
+Les alternatives incluent l'usage de bibliothèques comme SPL (Standard PHP Library) pour manipuler des fichiers avec des objets.
+
+Il faut gérer les permissions de fichiers : assurez-vous que votre script a le droit d'écrire dans le dossier cible.
+
+## See Also
+- Documentation PHP sur la gestion de fichiers : [php.net/manual/fr/book.filesystem.php](https://www.php.net/manual/fr/book.filesystem.php)
+- Tuto complet PHP sur `fopen()` : [php.net/manual/fr/function.fopen.php](https://www.php.net/manual/fr/function.fopen.php)
+- Infos sur les flags de `fopen()` : [php.net/manual/fr/function.fopen.php](https://www.php.net/manual/fr/function.fopen.php#refsect1-function.fopen-parameters)

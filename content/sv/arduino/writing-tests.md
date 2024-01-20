@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Arduino: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Arduino: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Skriva tester innebär att koda checks som verifierar att din kod fungerar som förväntat. Programmerare gör detta för att hitta buggar tidigt, förbättra kodkvaliteten och försäkra sig om att framtida ändringar inte bryter funktionalitet.
 
-Att skriva tester är en viktig del av programmering för att säkerställa att koden fungerar som den ska. Det är en metod för att identifiera och åtgärda fel innan koden används i produktion.
+## Steg för steg:
+Arduino saknar ett inbyggt testramverk, men vi kan ändå implementera enkla tester. Här är ett exempellösning:
 
-# Hur man:
+```cpp
+void setup() {
+  Serial.begin(9600);
+  testFunction();
+}
 
-Att skriva tester i Arduino är enkelt med hjälp av inbyggda funktioner och bibliotek. Här är ett exempel på en kod som testar en funktion som lägger till två tal och returnerar resultatet:
+void loop() {
+  // Normala loop-aktiviteter här.
+}
 
-```Arduino
-int add(int x, int y) {
-  return x + y;
+void testFunction() {
+  int resultat = addera(5, 10);
+  if (resultat == 15) {
+    Serial.println("Test passed!");
+  } else {
+    Serial.println("Test failed!");
+  }
+}
+
+int addera(int a, int b) {
+  return a + b;
 }
 ```
 
-För att testa denna funktion kan vi använda "assert" funktionen för att verifiera att det förväntade resultatet returneras:
-
-```Arduino
-assert(add(2, 3) == 5);
+Förväntad utskrift:
+```
+Test passed!
 ```
 
-Om det förväntade resultatet inte returneras kommer testet att misslyckas och indikera att det finns ett problem som behöver åtgärdas.
+## Djupdykning:
+Arduino är mer känt för dess hårdvarunära programmering än för testdriven utveckling. På senare tid har dock intresset för att skriva tester för Arduino-kod ökat, och communityn har skapat egna verktyg och bibliotek som till exempel `ArduinoUnit` för att underlätta detta. Historiskt sett var tester mer manuell kontroll av fysisk hårdvara, men nu kan vi testa logik direkt i mjukvaran. Andra alternativ för inbyggda system inkluderar hårdvarusimulering och modulbaserade tester.
 
-# Djupdyka:
+## Se även:
+- ArduinoUnit på GitHub: https://github.com/mmurdoch/arduinounit
+- Officiell Arduino's början på testning: https://www.arduino.cc/en/Guide/Environment#toc8
+- Testdriven utveckling (TDD) introduktion: https://en.wikipedia.org/wiki/Test-driven_development
 
-Att skriva tester har blivit en allt vanligare praxis inom programmering sedan början av 2000-talet. Det finns flera verktyg och ramverk som hjälper till att automatiskt köra tester och generera rapporter om eventuella fel.
-
-Ett annat alternativ till att skriva tester är att använda statisk kodanalys, vilket granskar koden utan att faktiskt köra den. Detta kan också vara en effektiv metod för att hitta eventuella fel.
-
-Implementering av tester i Arduino-projekt kan vara en tidsbesparande process men har fördelar på lång sikt genom att minska risken för fel och förenkla felsökning.
-
-# Se även:
-
-[Officiell Arduino dokumentation om enhetstestning](https://www.arduino.cc/en/guide/unit_testing)
-
-[ArdunioTest - ett populärt enhetstestbibliotek för Arduino](https://github.com/leethomason/ArduinoTest)
+Observera att länkarna är till engelskspråkiga resurser då mycket av den djupgående informationen om Arduino fortfarande är på engelska.

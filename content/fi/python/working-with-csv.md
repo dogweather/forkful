@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Python: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-CSV (Comma Separated Values) on yksinkertainen tapa tallentaa ja jakaa taulukkomuotoista dataa. CSV-tiedostot ovat yleensä luettavissa tekstieditorilla ja tietokoneohjelmilla, mikä tekee niistä helposti käytettävissä olevan vaihtoehdon moniin datan käsittelytehtäviin. Ohjelmoijat käyttävät CSV-tiedostoja usein, sillä ne tarjoavat helpon tavan siirtää tietoa eri ohjelmien välillä.
+## What & Why?
+CSV (Comma-Separated Values) on yksinkertainen tiedostoformaatti, joka sisältää taulukkomuotoista dataa. Ohjelmoijat käyttävät CSV:tä, koska se on yleisesti tuettu, helppolukuinen ja -kirjoitettavissa oleva datanvaihdon formaatti.
 
-## Näin teet sen:
-Python tarjoaa sisäänrakennetun moduulin, "csv", joka mahdollistaa CSV-tiedostojen käsittelyn. Katso alla oleva esimerkki, jossa tietoja luetaan tiedostosta ja tulostetaan näytölle:
-
+## How to:
+### CSV-tiedoston lukeminen
 ```Python
 import csv
-with open('tiedosto.csv') as csv_tiedosto:
-    lukija = csv.reader(csv_tiedosto)
-    for rivi in lukija:
+
+# Avaan CSV-tiedoston lukemista varten
+with open('esimerkki.csv', mode='r', encoding='utf-8') as tiedosto:
+    csv_lukija = csv.reader(tiedosto)
+    
+    for rivi in csv_lukija:
         print(rivi)
+
+# Output esimerkki:
+# ['sarake1', 'sarake2', 'sarake3']
+# ['data1', 'data2', 'data3']
 ```
 
-Tämä koodi lukee tiedostosta "tiedosto.csv" rivin kerrallaan ja tulostaa sen näytölle.
+### CSV-tiedoston kirjoittaminen
+```Python
+import csv
 
-## Syvemmälle:
-CSV-formaatti on kehitetty 1970-luvulla ja se on pysynyt suosittuna datan tallennusmuotona sen yksinkertaisuuden ja yhteensopivuuden vuoksi. Vaihtoehtoisia tapoja tallentaa taulukkomuotoista dataa ovat esimerkiksi JSON ja XML. CSV:n etuna näihin verrattuna on sen helppokäyttöisyys, mutta sen haittapuolena voi olla, että se ei tue monimutkaisempia tietorakenteita.
+# Määritän datan
+data = [['sarake1', 'sarake2', 'sarake3'], ['data1', 'data2', 'data3']]
 
-CSV-tiedoston käsittely Pythonilla on melko suoraviivaista, mutta on kuitenkin hyvä ottaa huomioon muutamia asioita. Esimerkiksi tiedostoa lukiessa täytyy ottaa huomioon mahdollinen rivinvaihtomerkki ja tekstin koodaustapa. CSV-moduuli tarjoaa vaihtoehtoja näiden käsittelyyn, joten hyvä dokumentaation lukeminen ennen käyttöä on suositeltavaa.
+# Kirjoitan dataa CSV-tiedostoon
+with open('esimerkki_uusi.csv', mode='w', newline='', encoding='utf-8') as tiedosto:
+    csv_kirjoittaja = csv.writer(tiedosto)
+    
+    for rivi in data:
+        csv_kirjoittaja.writerow(rivi)
 
-## Katso myös:
-- [Pythonin virallinen dokumentaatio CSV-moduulista](https://docs.python.org/3/library/csv.html)
-- [CSV-tiedostojen käsittelykurssi Codecademyltä](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-files/cheatsheet)
+# Output tiedostossa:
+# sarake1,sarake2,sarake3
+# data1,data2,data3
+```
+
+## Deep Dive
+CSV:n historialliset juuret ovat 1970-luvulla, jolloin se soveltui yksinkertaisiin datan esitysmuotoihin. Nykyään on olemassa monipuolisempia vaihtoehtoja, kuten JSON tai XML, mutta CSV pysyy suosiossa sen yksinkertaisuuden ja laajan tukensa ansiosta. Kun työstetään CSV-tiedostoja Pythonissa, tärkeää on huomioida oikeanlainen merkistökoodaus (usein utf-8), rivinvaihtojen käsittely ja datan muoto (esimerkiksi desimaalierottimen käsittely).
+
+## See Also
+- Python `csv`-moduuli: [https://docs.python.org/3/library/csv.html](https://docs.python.org/3/library/csv.html)
+- CSV:n Wikipedia-artikkeli: [https://fi.wikipedia.org/wiki/CSV](https://fi.wikipedia.org/wiki/CSV)
+- CSV:n ja muiden formaattien vertailu: [https://realpython.com/python-csv/](https://realpython.com/python-csv/)

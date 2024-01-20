@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo a la salida de error estándar"
-html_title:           "Arduino: Escribiendo a la salida de error estándar"
-simple_title:         "Escribiendo a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y por qué?
+Escribir en el error estándar significa mandar mensajes de error a un flujo específico, para diferenciarlos de la salida regular. Los programadores lo usan para depurar y notificar errores sin mezclarlos con la salida de datos normal.
 
-Escribir en el error estándar es una técnica que usan los programadores para enviar mensajes de error o advertencia al usuario. Esta práctica es útil para ayudar a los desarrolladores a identificar y solucionar problemas en sus programas.
+## Cómo hacerlo:
+Arduino no tiene una función incorporada de error estándar como tal. Las advertencias y errores se pueden enviar al puerto serie para diferenciarlos del flujo principal.
 
-## Cómo:
-
-En Arduino, escribir en el error estándar se realiza utilizando la función "Serial.println()", la cual permite imprimir mensajes en el monitor serial. A continuación se muestra un ejemplo de código y su resultado:
-
-```
-#include <Arduino.h>
-
+```Arduino
 void setup() {
-  Serial.begin(9600); // Iniciar comunicación serial
+  // Iniciar comunicación serie
+  Serial.begin(9600);
 }
 
 void loop() {
-  int x = 5;
-  // Imprimir mensaje de advertencia si el valor de x es menor a 10
-  if (x < 10) {
-    Serial.println("¡Atención! El valor de x es menor a 10.");
+  // Error simulado
+  if (digitalRead(2) == HIGH) {
+    // Enviar mensaje de error al puerto serie
+    Serial.println("ERROR: El pin 2 está en HIGH");
   }
+  // Realizar otras tareas...
 }
 ```
-
+Muestra de la salida:
 ```
-¡Atención! El valor de x es menor a 10.
+ERROR: El pin 2 está en HIGH
 ```
 
-## Profundizando:
+## Detalles Internos:
+Historia: Arduino fue diseñado para ser simple y para la educación, por eso su ambiente de desarrollo no enfatiza sobre conceptos como error estándar.
 
-Escribir en el error estándar se originó en la programación en C, donde se utilizaba la función "fprintf(stderr, ...)" para escribir mensajes en el flujo de error estándar. Alternativamente, los programadores también pueden utilizar la función "Serial.print()" para imprimir mensajes en el monitor serial, sin agregar un salto de línea al final del texto.
+Alternativas: Podrías usar diferentes Serial (como `Serial1`, `Serial2`, etc. en algunos Arduinos) para separar mensajes.
 
-## Ver también:
+Implementación: Puedes definir tu propio manejo de errores utilizando funciones personalizadas que envían mensajes a través del puerto serie o a otros dispositivos de salida.
 
-- [Serial.println() en la documentación de Arduino](https://www.arduino.cc/reference/es/language/functions/communication/serial/println/)
-- [Diferencias entre Serial.println() y Serial.print()](https://arduino.stackexchange.com/questions/1602/whats-the-difference-between-serial-print-and-serial-println)
+## Ver También:
+- Documentación de Arduino sobre puerto serie: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Información detallada sobre el flujo estándar de error en programación general: https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)

@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "PHP: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## PHP中的测试：为什么程序员需要写测试
+## What & Why? (什么及为何？)
+编写测试是开发流程中创建代码来检查软件功能的步骤。程序员这样做是为了确保软件按预期工作，减少未来错误和重构带来的风险。
 
-测试是指为了验证程序的正确性和稳定性，而编写的一系列代码片段。通过测试，程序员可以更加准确地了解自己所编写的程序是否达到了预期的效果。编写测试的一个重要原因是为了避免在程序执行过程中出现意外的错误，从而提高程序的质量和可靠性。
-
-## 如何编写测试
-
-在PHP中，可以使用```PHP ... ```代码块来编写测试。下面是一个示例代码：
+## How to: (操作指南)
+在PHP中，PHPUnit是最常用的测试框架。这里有一个简单的PHPUnit使用示例:
 
 ```PHP
-//假设我们要测试的函数名为add，接收两个参数，并返回它们的和
-function add($num1, $num2) {
-  return $num1 + $num2;
+<?php
+use PHPUnit\Framework\TestCase;
+
+// 一个简单的函数，用于测试
+function add($a, $b) {
+    return $a + $b;
 }
 
-//编写测试
-function testAdd() {
-  $result = add(2, 3); //调用add函数，并传入参数2和3
-  if ($result == 5) {
-    echo "测试通过！";
-  } else {
-    echo "测试失败！";
-  }
+// 测试类
+class AddTest extends TestCase {
+    public function testAdd() {
+        $this->assertEquals(4, add(2, 2));
+    }
 }
-
-//运行测试
-testAdd(); //输出：测试通过！
+?>
 ```
 
-通过编写测试，我们可以验证函数是否按照我们期望的方式运行，并及时发现潜在的bug。这样可以大大提高代码的质量和稳定性。
+运行测试，输出如下:
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
-## 深入了解测试
+.                                                                   1 / 1 (100%)
 
-编写测试的概念并不是PHP独有的，它起源于测试驱动开发（TDD）。TDD是一种开发方法论，通过先编写测试来指导代码的编写。另外，除了编写测试之外，还有一种常用的测试方法是单元测试（Unit Testing）。单元测试是指对代码中的最小单元（通常是函数或方法）进行测试，以确保它们能够正确地运行。
+Time: 00:01.234, Memory: 20.00 MB
+```
 
-除了在PHP代码中直接编写测试，也可以使用像PHPUnit这样的测试框架来帮助编写和运行测试。这些框架提供了更加复杂和全面的功能，可以帮助程序员编写更有效的测试。
+## Deep Dive (深入了解)
+PHPUnit起源于2004年，基于xUnit架构。除了PHPUnit，其他测试框架如PHPSpec, Codeception也受欢迎。正确实现测试需要掌握测试驱动开发(TDD)的原则：先写测试，后写逻辑代码。
 
-## 参考资料
-
-- 测试驱动开发简介：https://www.runoob.com/w3cnote/test-driven-development-intro.html
-- 单元测试简介：https://www.jianshu.com/p/c9c94c3b9c6e
-- PHPUnit官方网站：https://phpunit.de/
+## See Also (另见)
+- PHPUnit官网: [https://phpunit.de/](https://phpunit.de/)
+- 测试驱动开发 (Test-Driven Development): [https://en.wikipedia.org/wiki/Test-driven_development](https://en.wikipedia.org/wiki/Test-driven_development)
+- PHPSpec官网: [http://www.phpspec.net/](http://www.phpspec.net/)
+- Codeception官网: [https://codeception.com/](https://codeception.com/)

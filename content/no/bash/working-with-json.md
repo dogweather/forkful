@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Bash: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,22 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-JSON står for JavaScript Object Notation, og det er en enkel og utbredt måte å lagre og utveksle data på. Som et programmeringsspråk, er det praktisk å arbeide med JSON fordi det er lett å lese og skrive for mennesker, og kan enkelt tolkes av maskiner.
+## Hva & Hvorfor?
+Jobbing med JSON handler om å håndtere data formatert som JavaScript Object Notation, vanlig for konfigurasjon og datautveksling på nettet. Utviklere gjør dette for å enkelt overføre data mellom servere og webapplikasjoner.
 
-# Hvordan:
-For å arbeide med JSON i Bash, trenger du kommandolinjeverktøyet "jq". Du kan installere dette ved å kjøre ```apt-get install jq``` på Ubuntu eller ```brew install jq``` på Mac.
+## Slik gjør du:
+Manipulering av JSON i Bash krever vanligvis `jq` – en lettvektig kommandolinje JSON-prosessor. Først, installér `jq`:
 
-For å konvertere JSON til et format som er mer leselig for mennesker, kan du bruke ```jq . <json-fil>``` kommandoen. For eksempel, hvis du har en fil kalt "data.json", kan du skrive ```jq . data.json``` for å se innholdet på en mer strukturert måte.
+```Bash
+sudo apt-get install jq
+```
 
-For å hente spesifikke deler av JSON-data, kan du bruke pipes i kombinasjon med "jq" kommandoen. For eksempel, hvis du bare vil ha verdien av attributtet "name" fra JSON-dataen, kan du bruke ```jq .name``` på slutten av din "jq" kommando.
+La oss anta at vi har en JSON-fil, `eksempel.json`:
 
-# Dypdykk:
-JSON ble opprinnelig utviklet av Douglas Crockford på slutten av 1990-tallet og ble senere standardisert i ECMA-262 i 2009. Det er nå en utbredt måte å strukturere og utveksle data på nettet.
+```JSON
+{
+  "brukere": [
+    {"navn": "Kari", "alder": 34},
+    {"navn": "Ola", "alder": 28}
+  ]
+}
+```
 
-Alternativer til JSON inkluderer XML og YAML, men JSON er ofte foretrukket på grunn av sin enkelhet og lesbarhet.
+For å hente ut alle navnene:
 
-"jq" er skrevet i programmet "awk" og bruker regulære uttrykk for å tolke og manipulere JSON-data.
+```Bash
+cat eksempel.json | jq '.brukere[].navn'
+```
 
-# Se også:
-For mer informasjon og dokumentasjon om "jq", sjekk ut [jq's GitHub repository](https://github.com/stedolan/jq) og [jq's official website](https://stedolan.github.io/jq/).
+Resultat:
+
+```Bash
+"Kari"
+"Ola"
+```
+
+Oppdater en brukers alder:
+
+```Bash
+jq '.brukere[] | select(.navn=="Kari").alder = 35' eksempel.json
+```
+
+## Dybdeinformasjon:
+`jq` ble introdusert i 2012 for å gjøre JSON-behandling enklere i kommandolinjen. Alternativer inkluderer `jshon` eller programmeringsspråkspesifikk kode (som Python's `json`-modul). Ved implementasjon må man ofte balansere mellom funksjonalitet og ytelse – `jq` er effektivt for små til medium store datasett, men store JSON-data kan kreve mer kraftfulle verktøy eller kode.
+
+## Se også:
+- `jq` manual: https://stedolan.github.io/jq/manual/
+- Bash JSON tutorials: https://shapeshed.com/jq-json/
+- Sammenligning av JSON-prosessorer: https://www.arp242.net/json-shootout.html

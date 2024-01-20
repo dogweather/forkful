@@ -1,7 +1,7 @@
 ---
-title:                "json과 함께 작업하기"
-html_title:           "TypeScript: json과 함께 작업하기"
-simple_title:         "json과 함께 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 이게 뭔가요?
+## What & Why? (무엇인가요? 왜 사용하나요?)
+JSON은 데이터를 저장하고 전송할 때 사용하는 경량의 데이터 형식입니다. 프로그래머들은 간결하고 읽기 쉬운 구조로 웹 API 통신과 설정 파일 생성에 JSON을 자주 사용합니다.
 
-JSON은 Javascript Object Notation의 약자로, 데이터를 저장하고 교환하기 위한 형식 중 하나입니다. JSON의 간단한 구조와 유연함 때문에, 프로그래머들은 주로 쉽게 데이터를 다루기 위해 JSON을 사용합니다.
-
-## 어떻게 하나요?
-
-### JSON 데이터 생성
-
-TypeScript에서 new 키워드를 사용하여 JSON 객체를 생성할 수 있습니다. 아래의 예시를 참고해보세요.
-
+## How to (어떻게 사용하나요?)
 ```TypeScript
-let data = {
-  name: "John",
-  age: 25,
-  city: "Seoul"
+// JSON 객체 생성
+const user = {
+  name: "김철수",
+  age: 30,
+  isAdmin: true
 };
+
+// JSON으로 변환
+const jsonString = JSON.stringify(user);
+console.log(jsonString); // {"name":"김철수","age":30,"isAdmin":true}
+
+// JSON 문자열 파싱
+const userParsed = JSON.parse(jsonString);
+console.log(userParsed); // { name: '김철수', age: 30, isAdmin: true }
 ```
 
-### 데이터 접근하기
+## Deep Dive (깊이 파보기)
+JSON, JavaScript Object Notation의 약자로, 2001년 Douglas Crockford에 의해 고안되었습니다. XML 같은 다른 데이터 형식과 비교했을 때, JSON은 더 가벼우며 자바스크립트와의 호환성이 뛰어납니다. 프로그래머는 `JSON.stringify`로 자바스크립트 객체를 JSON 문자열로 변환하고, `JSON.parse`로 JSON 문자열을 자바스크립트 객체로 파싱할 수 있습니다.
 
-저장된 데이터에 접근하기 위해서는 `.` 또는 `[]`를 사용할 수 있습니다. 예를 들어, `data.age`는 25를 반환합니다.
-
-```TypeScript
-console.log(data.name); // "John"
-console.log(data["city"]); // "Seoul"
-```
-
-### JSON 문자열로 변환하기
-
-JSON 객체는 `JSON.stringify()` 메소드를 사용하여 문자열로 변환할 수 있습니다. 아래 예시를 확인해보세요.
-
-```TypeScript
-let dataString = JSON.stringify(data);
-console.log(dataString); // {"name":"John","age":25,"city":"Seoul"}
-```
-
-### 문자열을 JSON 객체로 변환하기
-
-이번에는 `JSON.parse()` 메소드를 사용하여 문자열을 다시 JSON 객체로 변환하겠습니다. 아래 예시를 참고해보세요.
-
-```TypeScript
-let parsedData = JSON.parse(dataString);
-console.log(parsedData.name); // "John"
-```
-
-## 깊이 파헤쳐보기
-
-### 역사적 배경
-
-JSON은 1999년에 더글라스 크락포드(Douglas Crockford)가 만든 형식으로, 원래는 자바스크립트에서 사용하기 위해 개발되었습니다. 하지만 지금은 다양한 프로그래밍 언어에서 사용되고 있습니다.
-
-### 대안
-
-JSON은 프로그래머들이 데이터를 저장하고 교환하기 위해 주로 사용되는 형식 중 하나지만, XML과 같은 다른 형식도 존재합니다. 이러한 형식들은 각자 장단점이 있기 때문에 문제의 종류와 상황에 맞게 선택하여 사용해야 합니다.
-
-## 참고 자료
-
-- [JSON 공식 사이트](https://www.json.org/)
-- [JSON과 XML 비교](https://stackoverflow.com/questions/4862310/why-json-over-xml)
+## See Also (참고자료)
+- [MDN의 JSON 가이드](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON)
+- [JSON 공식 웹사이트](https://www.json.org/json-en.html)
+- [TypeScript 핸드북](https://www.typescriptlang.org/docs/handbook/intro.html)

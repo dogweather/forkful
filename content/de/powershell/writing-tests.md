@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "PowerShell: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,21 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum & Was?
-Beim Programmieren schreiben Entwickler oft Tests, um die Funktionalität ihrer Programme zu überprüfen. Dadurch können sie sicherstellen, dass das Programm wie erwartet funktioniert und mögliche Fehler frühzeitig erkennen.
+## Was & Warum?
+Tests im Programmierkontext automatisieren den Überprüfungsprozess von Code, um sicherzustellen, dass er wie erwartet funktioniert. Programmierer schreiben Tests, um Fehler frühzeitig zu erkennen, die Qualität des Codes zu verbessern und das Vertrauen in ihre Software zu stärken.
 
-# Wie geht's?
-In PowerShell können Tests mithilfe des `Pester`-Moduls geschrieben werden. Hier ist ein Beispiel, wie man eine Test-Datei mit dem Namen `TestExample.Tests.ps1` erstellt:
+## How to:
+PowerShell nutzt das `Pester`-Framework für Tests. Mit `Describe`, `Context` und `It` baust du strukturierte Tests. Hier ein einfaches Beispiel:
+
 ```PowerShell
-Describe "Addition" {
-    It "adds two numbers correctly" {
-        $result = 2+2
-        $expectedResult = 4
-        $result | Should -Be $expectedResult
+# Installiere Pester, falls noch nicht vorhanden
+# Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# Importiere Pester
+Import-Module Pester
+
+# Schreibe einen Test
+Describe "Testen meiner Funktion" {
+    Context "Wenn meine Funktion mit gültigen Parametern aufgerufen wird" {
+        It "gibt 'Hallo Welt!' zurück" {
+            # Eventuelle Funktion, die getestet wird
+            function SendeBegrüßung() {
+                return "Hallo Welt!"
+            }
+            SendeBegrüßung | Should -Be "Hallo Welt!"
+        }
     }
 }
-```
-In diesem Beispiel wird getestet, ob die Addition von 2 und 2 das erwartete Ergebnis liefert. Wenn der Test erfolgreich ist, wird keine Ausgabe angezeigt. Falls es einen Fehler gibt, wird dieser in der Konsole angezeigt.
 
-# Tiefere Einblicke
-Tests werden bereits seit vielen Jahren in der Softwareentwicklung eingesetzt, um die Qualität von Programmen zu verbessern. Alternativen zu `Pester` sind beispielsweise `NUnit` oder `xUnit`, die auf anderen Programmiersprachen basieren. Bei der Implementierung von Tests ist es wichtig, dass sie einfach zu warten und ausführbar sind.
+# Führe den Test aus
+Invoke-Pester
+```
+
+Ausgabe könnte so aussehen:
+
+```shell
+Executing all tests in '.'
+
+Executing script /Path/To/Test.ps1
+
+  Describing Testen meiner Funktion
+    Context Wenn meine Funktion mit gültigen Parametern aufgerufen wird
+      [+] gibt 'Hallo Welt!' zurück 40ms
+Tests completed in 40ms
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```
+
+## Deep Dive
+Pester wurde 2014 als das führende Test-Framework für PowerShell eingeführt. Alternativ gibt es Tools wie `psake`, `Invoke-Build` für Build-Automatisierung und `PlatyPS` für die Dokumentation, aber für das reine Testing bleibt Pester unangefochten. Effektives Testen erfordert Verständnis vom Test-Scope, Mocking und Code Coverage.
+
+## See Also
+- Pester: https://pester.dev
+- PowerShell Testing: https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/write-pester-tests?view=powershell-7.1
+- PowerShell Gallery Pester-Seite: https://www.powershellgallery.com/packages/Pester

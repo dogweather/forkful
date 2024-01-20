@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Lua: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Praca z YAML to nic innego jak pracowanie z plikami tekstowymi. Programiści używają YAML do przechowywania i przesyłania danych w sposób czytelny dla człowieka. Jest to popularna metoda w branży IT ze względu na łatwą edycję i spójność z językiem programowania Lua.
+## Co i Dlaczego?
+YAML to łatwy w użyciu format służący do reprezentacji danych, często używany w konfiguracji aplikacji. Programiści wybierają go dla jego czytelności i prostoty.
 
 ## Jak to zrobić:
+Aby pracować z YAML w Lua, musisz użyć zewnętrznej biblioteki, np. lyaml. Poniżej znajdziesz przykład użycia:
 
 ```Lua
-local yaml = require("yaml")
-local data = yaml.load([[
-name: John
-age: 28
-hobby:
-- reading
-- painting
-]])
+local lyaml = require('lyaml')
 
-print(data.name, data.age)
-for _, item in ipairs(data.hobby) do
-    print(item)
+-- Załaduj YAML z ciągu znaków
+local yaml_str = [[
+- just: plain
+- YAML: rocks
+- Lua: is cool too
+]]
+
+-- Parsowanie YAML do Lua table
+local data = lyaml.load(yaml_str)
+
+-- Wyświetlanie przetworzonych danych
+for index, value in ipairs(data) do
+  for key, val in pairs(value) do
+    print(key, val)
+  end
 end
 ```
-Output:
+
+Wyjście:
 ```
-John 28
-reading
-painting
+just	plain
+YAML	rocks
+Lua	is cool too
 ```
 
-## Wgląd w głąb:
+## Dogłębnie:
+YAML, czyli "YAML Ain't Markup Language", powstał w 2001 roku jako język łatwy do czytania przez ludzi. Alternatywami są JSON czy XML, ale YAML jest często preferowany ze względu na swoją prostotę w konfiguracjach aplikacji. Integracja z Lua odbywa się poprzez biblioteki takie jak `lyaml`, które implementują funkcje do przetwarzania formatu YAML.
 
-YAML został stworzony w 2001 roku i jest często wykorzystywany wraz z językami skryptowymi, takimi jak Lua. Alternatywami dla YAML są JSON i XML, jednak YAML jest uważany za prostszy i czytelniejszy dla człowieka.
-
-Aby pracować z YAML w Lua, należy zainstalować odpowiedni moduł za pomocą menadżera pakietów, na przykład LuaRocks. W przypadku manualnej instalacji, konieczne będzie ręczne dodanie ścieżki do modułu w konfiguracji Lua.
-
-## Zobacz także:
-
-- Oficjalna dokumentacja YAML: https://yaml.org/spec/
-- Biblioteka LuaYAML: https://github.com/gvvaughan/luayaml
+## Zobacz również:
+- Oficjalna strona YAML: https://yaml.org
+- Repozytorium `lyaml` na GitHub: https://github.com/gvvaughan/lyaml
+- YAML vs JSON: https://json2yaml.com/what-is-yaml/json-vs-yaml

@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "Kotlin: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä ja miksi?
+## Mikä & Miksi?
+Kotlinissa tekstifilun kirjoittaminen tarkoittaa merkkijonon tallentamista tiedostoon. Kehittäjät tekevät tätä tiedon tallentamiseen, logien kirjaamiseen tai asetusten säilömiseen.
 
-Tekstitiedoston kirjoittaminen tarkoittaa yksinkertaisesti tiedon tallentamista tekstimuodossa. Ohjelmoijat tekevät tätä esimerkiksi tallentaakseen käyttäjän syöttämän datan tai tulostamaan tietoja sovelluksesta.
+## How To:
+```kotlin
+import java.io.File
 
-# Miten:
-
-```Kotlin 
-val tiedosto = File("file.txt")
-tiedosto.writeText("Tämä on esimerkki tekstitiedostosta")
+fun main() {
+    val content = "Moi Kotlinin koodarit!"
+    val filePath = "example.txt"
+    
+    File(filePath).writeText(content)
+    
+    println("Tiedostoon kirjoitettu teksti:\n$content")
+}
 ```
+Tämän koodipätkän tuloksena `example.txt`-tiedostoon tallentuu teksti "Moi Kotlinin koodarit!" ja konsoliin tulostuu sama viesti.
 
-Tässä esimerkissä luomme tiedoston nimeltä "file.txt" ja kirjoitamme siihen tekstin. Tämän jälkeen voimme lukea tiedoston sisällön käyttäen File-luokan readText() -metodia.
+## Deep Dive
+Historiallisesti tiedostojen käsittely on ollut tärkeää datan pysyväiseen tallennukseen. Kotlin käyttää Java perustuisia kirjastoja tiedonkirjoitukseen, mikä helpottaa prosessia ja takaa JVM:n kautta alustojen välistä yhteensopivuutta. Vaihtoehtoisia tapoja tekstifilun kirjoittamiseen ovat BufferedWriter, PrintWriter ja FileOutputStream. Tarkemmat toteutuksen yksityiskohdat riippuvat käyttötarpeesta, esimerkiksi tiedostojen koon ja suorituskyvyn vaatimuksista.
 
-```
-Tämä on esimerkki tekstitiedostosta
-```
-
-# Syvemmälle:
-
-Tekstitiedostojen kirjoittamista on käytetty jo vuosikymmenten ajan tietokoneohjelmoinnissa. Nykyään on olemassa myös muita tapoja tallentaa ja käsitellä dataa, kuten tietokannat tai JSON-tiedostot.
-
-Tekstitiedostojen kirjoittaminen toteutetaan yleensä käyttäen tietokoneen tiedostojärjestelmään liittyviä komentoja, joten eri käyttöjärjestelmät saattavat vaatia erilaisia koodinpätkiä.
-
-# Katso myös:
-
-[Java IO-tiedostonkirjoitus](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+## See Also
+- [Kotlin-ohjelmointikielen dokumentaatio](https://kotlinlang.org/docs/home.html)
+- [Java File I/O (NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/file.html) - tausta Java-rajapinnoille, joita Kotlin käytännössä hyödyntää.
+- [GitHub: awesome-kotlin](https://github.com/KotlinBy/awesome-kotlin) - Kokoelma Kotlin-kirjastoja ja resursseja.

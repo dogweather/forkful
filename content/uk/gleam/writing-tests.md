@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Gleam: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що це і чому?
-Запис тестів - це процес написання коду, який перевіряє правильність роботи програми. Програмісти пишуть тести, щоб переконатися в тому, що їхні програми функціонують як очікувалося і не мають помилок.
+## What & Why? (Що та Навіщо?)
+Тести - це код, що перевіряє, чи інший код працює правильно. Програмісти пишуть тести, щоб автоматизувати перевірку свого коду і забезпечити безперебійну роботу програм.
 
-Як це зробити:
-```Gleam
-test "Додавання двох чисел" {
-  assert.equal(2 + 3, 5)
+## How to: (Як це зробити:)
+```gleam
+import gleam/expect
+import my_module
+
+pub fn add_test() {
+  expect.equal(my_module.add(1, 2), 3)
 }
 
-test "Створення довільного рядка" {
-  let hello = "Hello"
-  let world = "world"
-  assert.equal(hello ++ " " ++ world, "Hello world")
+pub fn subtract_test() {
+  expect.equal(my_module.subtract(5, 3), 2)
 }
 ```
 
-Глибоке занурення:
-Історичний контекст: Підхід до написання тестів з'явився разом з розвитком методології Тестування приватних збірок (Unit Testing) у 1950-х роках. Цей підхід швидко став популярним серед програмістів, оскільки дозволяє перевіряти правильність роботи коду в автоматичному режимі.
+Sample output:
+```
+1 test completed, 0 failures.
+```
 
-Альтернативи: Існує безліч інструментів для написання тестів у Gleam, таких як ExUnit або QuickCheck.
+## Deep Dive (Занурення Глибше)
+Tests in Gleam are written using the `gleam/expect` module. Historically, testing approached in Gleam are influenced by Elixir's ExUnit and Erlang's common test. Alternative testing frameworks in other languages include pytest (Python), RSpec (Ruby), and jest (JavaScript). The key in Gleam testing is that tests are type-checked, providing another layer of quality assurance for the code.
 
-Деталі реалізації: Для написання тестів у Gleam, необхідно додати ```#[test]``` анотацію до функції і використовувати ```assert.equal()``` для перевірки очікуваних результатів.
-
-Дивіться також:
-Подивіться детальніше про написання тестів у Gleam у офіційній документації та керівництві з тестування.
+## See Also (Додатково)
+- Helpful Gleam community chat on GitHub Discussions or the #gleam-users on IRC (Libera.Chat) for real-time question-and-answer sessions.

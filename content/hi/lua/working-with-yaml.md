@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "Lua: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
+## What & Why? (क्या और क्यों?)
+YAML एक डेटा सीरियलाइजेशन फॉर्मेट है जो ह्यूमन-रीडेबल है। प्रोग्रामर इसका इस्तेमाल कॉन्फ़िगरेशन फाइल्स, डेटा स्टोरेज, और डेटा एक्सचेंज के लिए करते हैं, क्योंकि इसे पढ़ना और लिखना आसान होता है।
 
-YAML काम क्या है और क्यों होता है? यह प्रोग्रामर्स द्वारा उपयोग किया जाने वाला एक कॉन्फ़िगरेशन डाटा प्रोटोकॉल है जो कंप्यूटर प्रोग्राम्स को इनपुट और आउटपुट डेटा के साथ काम करने की अनुमति देता है।
+## How to: (कैसे करें:)
+Lua में YAML के साथ काम करने के लिए, `lyaml` लाइब्रेरी का इस्तेमाल करें। इसे इंस्टॉल करने के लिए `luarocks install lyaml` कमांड चलाएं।
 
-## कैसे करें:
+YAML को पार्स करने के लिए:
+
 ```Lua
--- YAML फ़ाइल को लोड करें
-local yaml = require("yaml")
+local lyaml = require('lyaml')
 
--- डेटा को YAML में मान दें
-local data = {
-    name = "जॉन डो",
-    उम्र = 30,
-    interests = {"गाना गाना", "क्रिकेट खेलना"}
+local yamlStr = [[
+- name: John Doe
+  age: 30
+- name: Jane Doe
+  age: 25
+]]
+
+local data = lyaml.load(yamlStr)
+print(data[1].name)  -- Output: John Doe
+```
+
+YAML को जेनरेट करने के लिए:
+
+```Lua
+local dataToYaml = {
+  {name = "John Doe", age = 30},
+  {name = "Jane Doe", age = 25}
 }
 
--- डेटा को YAML में कन्वर्ट करें
-local yaml_data = yaml.dump(data)
-
--- YAML डेटा को प्रिंट करें
-print(yaml_data)
+local yamlOutput = lyaml.dump(dataToYaml)
+print(yamlOutput)
 ```
 
-आउटपुट:
-```yaml
-name: जॉन डो
-उम्र: 30
-interests:
-  - गाना गाना
-  - क्रिकेट खेलना
-```
+## Deep Dive (गहराई में जानकारी)
+YAML (YAML Ain't Markup Language) 2001 में डेवलप किया गया था। इसके विकल्प में JSON और XML हैं, जो कि कमैन्यूनिटी में भी पॉपुलर हैं। YAML ह्यूमन-रीडेबल होने के साथ-साथ कंप्यूटरज़ के लिए भी आसानी से प्रोसेसेबल है। 'lyaml' मॉड्यूल Lua के लिए YAML प्रोसेसिंग का एक मजबूत टूल है, जो LibYAML लाइब्रेरी का उपयोग करता है। 
 
-## गहराई में जानें:
-YAML स्थापित और मेंटेनेड द्वारा प्रोग्रामिंग भाषाओं में समर्थित है। यह अन्य कॉन्फ़िगरेशन डाटा प्रोटोकॉल्स के मुकाबले सटीकता और पढ़ने में अधिक सादाता प्रदान करता है। इसका उपयोग प्रोग्रामिंग और वेब डेवलपमेंट में डेटा समूह और कॉन्फ़िगरेशन को सभी में रखने के लिए किया जाता है।
+## See Also (और भी जानकारियां)
+- YAML की अधिक जानकारी के लिए: https://yaml.org
+- `lyaml` लाइब्रेरी डॉक्युमेंटेशन: https://github.com/gvvaughan/lyaml
+- LuaRocks: https://luarocks.org

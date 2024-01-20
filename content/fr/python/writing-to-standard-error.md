@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur la sortie standard"
-html_title:           "Python: Écrire sur la sortie standard"
-simple_title:         "Écrire sur la sortie standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Ecrire dans l'erreur standard (stderr) permet de séparer les messages d'erreurs des résultats normaux (stdout). Les développeurs font ça pour faciliter le débogage et la gestion des logs.
 
-Écrire vers la sortie d'erreur standard (stderr) est une pratique courante en programmation qui consiste à rediriger les messages d'erreur vers un canal spécifique plutôt que de les intégrer aux messages de sortie standards (stdout). Cela permet aux développeurs de mieux distinguer les informations de débogage des résultats attendus, et d'améliorer ainsi la lisibilité du code.
+## How to:
 
-## Comment faire:
+Utilisez `sys.stderr` pour écrire des erreurs :
 
-Utiliser la fonction `sys.stderr.write(message)` pour écrire vers la sortie d'erreur standard (stderr), en donnant en paramètre le message à afficher. Ensuite, n'oubliez pas d'utiliser l'instruction `import sys` pour importer le module `sys` qui contient cette fonction.
-
-```
+```Python
 import sys
 
-sys.stderr.write("Une erreur est survenue.")
+print("Ceci est un message normal", file=sys.stdout)  # sortie standard
+print("Ceci est un message d'erreur", file=sys.stderr)  # erreur standard
 ```
 
-Cela affichera "Une erreur est survenue." dans la sortie d'erreur standard (stderr).
+Sortie :
 
-## Plongée en profondeur:
+```
+Ceci est un message normal
+Ceci est un message d'erreur
+```
 
-Avant l'émergence de la console d'erreur standard (stderr), les messages d'erreurs étaient souvent mélangés avec les messages de sortie standards (stdout), rendant ainsi la tâche de débogage plus difficile pour les programmeurs. C'est pourquoi l'utilisation de la sortie d'erreur standard (stderr) devient de plus en plus courante dans le développement logiciel actuel.
+## Deep Dive
+Traditionnellement, les systèmes Unix-like ont trois canaux de communication principaux : stdin, stdout, et stderr (0, 1, et 2, respectivement). Utiliser stderr pour les erreurs permet de redirecter ou de filtrer ces messages séparément. Il y a des alternatives comme les frameworks de logging en Python, mais stderr reste un mécanisme à bas niveau simple et puissant. Son implémentation en Python est directe, faisant partie du module `sys` de la bibliothèque standard.
 
-Il existe également d'autres façons d'écrire vers la sortie d'erreur, telles que la fonction `logging.error(message)` du module `logging`. Cependant, cette méthode nécessite la configuration d'un logger et peut être plus lourde à mettre en place par rapport à l'utilisation de la fonction `sys.stderr.write`.
+## See Also
+Pour plus d'informations :
 
-En termes d'implémentation, la sortie d'erreur standard (stderr) est généralement gérée par le système d'exploitation plutôt que par le langage de programmation lui-même. Cela signifie que la redirection vers la sortie d'erreur standard (stderr) peut varier selon le système d'exploitation utilisé.
-
-## Voir aussi:
-
-- Documentation officielle de Python sur la sortie d'erreur standard (https://docs.python.org/fr/3/library/sys.html#sys.stderr)
-- Article sur la gestion des erreurs en Python (https://realpython.com/python-logging/)
+- La documentation Python sur le module sys : https://docs.python.org/3/library/sys.html
+- Explication sur l'I/O standard : https://en.wikipedia.org/wiki/Standard_streams
+- Guide sur le logging en Python : https://docs.python.org/3/howto/logging.html

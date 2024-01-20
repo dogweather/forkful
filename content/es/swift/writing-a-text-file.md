@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Swift: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por Qué?
+Escribir archivos de texto en Swift es guardar texto plano en un archivo en tu disco. Los programadores lo hacen para persistencia de datos, como configuraciones, o para compartir información entre procesos o usuarios.
 
-Escribir un archivo de texto significa guardar información en un archivo que puede ser leído y editado por humanos. Los programadores suelen hacer esto para almacenar datos o configuraciones importantes que puedan ser modificados en el futuro.
-
-## Cómo:
+## Cómo hacerlo:
+Para escribir en un archivo de texto, utilizamos la clase `FileManager` y `String` para manejar la escritura. Aquí hay un ejemplo:
 
 ```Swift
-// Creamos una ruta para nuestro archivo de texto
-let filePath = "Users/miNombre/MisDocumentos/archivo.txt"
+import Foundation
 
-// Creamos una variable para almacenar el contenido del archivo
-var contenido = "Este es un ejemplo de texto a guardar en un archivo."
+let texto = "¡Hola, mundo!"
+let ubicacion = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+let archivoUrl = ubicacion.appendingPathComponent("saludo.txt")
 
-// Intentamos escribir en el archivo
 do {
-    // Escribimos el contenido en el archivo usando la ruta y el método write
-    try contenido.write(toFile: filePath, atomically: true, encoding: .utf8)
-    print("¡Archivo de texto creado exitosamente!")
+    try texto.write(to: archivoUrl, atomically: true, encoding: .utf8)
+    print("Archivo guardado en: \(archivoUrl)")
 } catch {
-    // En caso de error, imprimimos el mensaje correspondiente
-    print("Hubo un error al crear el archivo de texto.")
+    print("Ocurrió un error al guardar el archivo: \(error)")
 }
-
-// Si todo sale bien, podremos ver el archivo de texto en nuestra ruta especificada con el contenido guardado en él.
 ```
 
-## Inmersión Profunda
+Ejecuta el código, y crea un archivo `saludo.txt` con el texto "¡Hola, mundo!" en tu directorio de documentos.
 
-Escribir archivos de texto es una técnica común en la programación y se ha utilizado desde los inicios de los sistemas informáticos. Existen también otros métodos para almacenar información, como bases de datos o archivos binarios, pero escribir un archivo de texto permite una fácil lectura y edición por parte de los programadores.
+## Profundizando:
+- Histórico: Antes de Swift, Objective-C era el lenguaje principal para desarrollo en iOS, y el manejo de archivos era más complicado.
+- Alternativas: Puedes usar `FileHandle` o `OutputStream` para más control o para escribir en archivos grandes de manera eficiente.
+- Detalles de Implementación: Usa `atomically` para seguridad, escribe primero en un archivo temporal y luego lo renombra, evitando así corrupción de datos.
 
-## Ver También
-
-https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+## Ver Además:
+- Documentación de Apple sobre FileManager: [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- Tutorial sobre Swift File I/O: [Ray Wenderlich](https://www.raywenderlich.com/1973-file-i-o-tutorial-for-ios-how-to-read-write-files-in-swift)
+- Guía para `FileHandle`: [NSFileHandle](https://developer.apple.com/documentation/foundation/filehandle)

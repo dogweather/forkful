@@ -1,7 +1,7 @@
 ---
-title:                "Skriver tester"
-html_title:           "TypeScript: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -11,26 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skrivetesting er en viktig del av utviklingsprosessen for en programmerer. Det er en praksis som innebærer å skrive kode som tester ulike funksjoner og aspekter av et program for å sikre at alt fungerer som det skal. Dette er viktig for å oppdage eventuelle feil og bugs før programmet blir utgitt.
+Skrive tester betyr å lage kode som sjekker at annen kode fungerer som den skal. Programmerere tester for å forebygge feil, spare tid og forbedre kodekvaliteten.
 
-## Slik gjør du det:
+## Hvordan gjøre det:
+I TypeScript kan du skrive tester med rammeverk som Jest. Her er et eksempel:
+
 ```TypeScript
-describe('Enkel kalkulator funksjon', () => {
-  it('Legger sammen to tall', () => {
-    const sum = add(2, 3);
-    expect(sum).toBe(5);
-  })
-})
+import { add } from './math';
 
-function add(a, b) {
-  return a + b;
-}
+test('adderer to tall', () => {
+  expect(add(1, 2)).toBe(3);
+});
 ```
-I dette eksempelet tester vi en enkel kalkulator funksjon ved å sjekke om den returnerer riktig verdi når vi legger sammen to tall. Ved å bruke testrammeverket Jest og den innebygde funksjonen `expect`, kan vi enkelt sjekke om funksjonen virker som den skal.
 
-## Dypdykk:
-Det å teste kode er en viktig del av utviklingsprosessen fordi det sikrer kvaliteten på programmet og gjør det mindre sårbart for feil. Alternativet til å skrive tester er å manuelt teste programmet hver gang det endres, noe som kan være tidskrevende og lede til oversette feil. Det finnes forskjellige testrammeverk og biblioteker for TypeScript, men Jest er et populært valg på grunn av sin enkelhet og støtte for flere funksjoner som asynkrone tester.
+Installer Jest med `npm install --save-dev jest @types/jest ts-jest` og kjør testen med `npm test`. Output blir:
 
-## Se også:
-- [Jest dokumentasjon](https://jestjs.io/docs/getting-started)
-- [Alternatives to Jest for TypeScript testing](https://medium.com/agoldis-one/alternatives-to-jest-for-typescript-testing-d2f6d419ce3d)
+```
+PASS  ./math.test.ts
+✓ adderer to tall (2 ms)
+```
+
+## Dypdykk
+Testing har røtter tilbake til software-utviklingens spede begynnelse. Alternativer til Jest inkluderer Mocha, Jasmine og Tape. TypeScript krever vanligvis transpilering til JavaScript, men `ts-jest` lar oss kjøre TypeScript direkte. Testing bør inkludere enhetstester, integrasjonstester og end-til-end tester for å sikre kode i ulike miljøer.
+
+## Se også
+- [Jest Dokumentasjon](https://jestjs.io/docs/en/getting-started)
+- [TypeScript Offisielt Nettsted](https://www.typescriptlang.org/)
+- [Mocha.js](https://mochajs.org/)

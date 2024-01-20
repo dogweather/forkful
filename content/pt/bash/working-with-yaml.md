@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Bash: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por Que?
-
-Trabalhar com YAML é uma forma de organizar e armazenar dados de forma estruturada em arquivos de texto. Os programadores o utilizam para armazenar informações como configurações, dados de formulários e outros tipos de dados estruturados de forma fácil e legível.
+## O Que & Porquê?
+YAML significa "YAML Ain't Markup Language" (em um exemplo clássico de recursão em acrônimos), é um formato utilizado para configuração e troca de dados de forma legível. Programadores utilizam YAML devido à sua simplicidade, facilidade de leitura e suporte em diversas linguagens de programação.
 
 ## Como fazer:
+Para trabalhar com YAML no Bash, é comum usar ferramentas como `yq`, que é semelhante ao `jq` para JSON. Instale o `yq` com:
 
-Aqui estão alguns exemplos de como trabalhar com YAML usando Bash:
-
-```
-# Criar um arquivo YAML
-cat <<EOF > my_file.yml
-nome: João
-sobrenome: Silva
-idade: 30
-EOF
-
-# Ler e imprimir um valor de um arquivo YAML
-nome=$(cat my_file.yml | grep "nome" | cut -d ":" -f 2)
-echo "O nome é $nome"
-
-# Alterar um valor em um arquivo YAML
-sed -i 's/José/Maria/g' my_file.yml
+```Bash
+sudo wget https://github.com/mikefarah/yq/releases/download/v4.14.1/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
 ```
 
-### Saída de exemplo:
+Ler um valor específico (supondo que `config.yaml` tenha `chave: valor`):
 
-```
-O nome é João
-
-Arquivo my_file.yml depois da alteração:
-nome: Maria
-sobrenome: Silva
-idade: 30
+```Bash
+yq eval '.chave' config.yaml
 ```
 
-## Profundando:
+Saída:
 
-O YAML (YAML Ain't Markup Language) foi criado em 2001 por Clark Evans e Ingy döt Net como uma alternativa mais simples ao formato de dados XML. Ele é baseado em indentação e espaços em branco, o que o torna fácil de ser lido e escrito por humanos. Além do Bash, o YAML também pode ser usado em outras linguagens como Python e Ruby.
+```
+valor
+```
+
+Escrever um novo valor:
+
+```Bash
+yq eval '.chave = "novoValor"' -i config.yaml
+```
+
+Convertendo YAML para JSON:
+
+```Bash
+yq eval -o=json config.yaml
+```
+
+## Aprofundando:
+YAML foi criado em 2001 e é uma alternativa mais legível ao XML e JSON, embora tenha uma capacidade inferior de mapeamento de estruturas complexas comparado ao XML. Alternativas ao `yq` incluem scripts em linguagens como Python com a biblioteca `PyYAML`, ou Ruby com `yaml`. Ao trabalhar com YAML, é importante ser cuidadoso com indentação, pois é isso que define a estrutura.
 
 ## Veja também:
-
-- [Documentação oficial do YAML](https://yaml.org/)
-- [Tutorial de YAML para iniciantes](https://medium.com/swlh/a-beginners-guide-to-yaml-f9a85999b25d)
+- Documentação oficial YAML: https://yaml.org/spec/1.2/spec.html
+- Repositório GitHub `yq`: https://github.com/mikefarah/yq
+- Tutorial YAML: https://learnxinyminutes.com/docs/yaml/

@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "PHP recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,48 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file in PHP is a way for programmers to save data in a human-readable format. This allows the data to be easily accessed and modified, making it a convenient storage option for various types of information.
+Writing a text file in PHP is about saving data to a file on the server. Programmers often do this for data logging, configuration settings, or exporting data that's meant to be read by humans or other systems.
 
 ## How to:
 
-To write a text file in PHP, we will use the `file_put_contents()` function. This function takes two parameters: the name of the file to be written, and the content to be written.
+Writing to a file in PHP can be as simple as using the `file_put_contents()` function, which takes a filename and a string of data. Here's a quick example:
 
-Example:
-
-```
+```php
 <?php
-$filename = "example.txt";
-$content = "This is an example text file written with PHP.";
-
-file_put_contents($filename, $content);
+$data = "Hello, world!\n";
+file_put_contents("example.txt", $data);
+?>
 ```
 
-This will create a file called "example.txt" in the same directory as the PHP file and write the provided content to it.
+Running this script creates "example.txt" with the content "Hello, world!".
 
-To append to an existing text file, we can use the `FILE_APPEND` flag as the third parameter of the `file_put_contents()` function. This will add the new content to the end of the existing file instead of overwriting it.
+For more control, you can open a file, write to it, then close it:
 
-Example:
-
-```
+```php
 <?php
-$filename = "example.txt";
-$content = "\nThis is additional content added to the file.";
-
-file_put_contents($filename, $content, FILE_APPEND);
+$file = fopen("example.txt", "w") or die("Unable to open file!");
+$txt = "Hello again, world!\n";
+fwrite($file, $txt);
+fclose($file);
+?>
 ```
 
-This will add the new content on a new line after the existing content in the file.
+Both scripts result in the same output in "example.txt".
 
 ## Deep Dive
 
-In the early days of web development, PHP was primarily used for generating dynamic web pages. However, as the language evolved, programmers realized its potential as a scripting language for tasks beyond web development. Writing text files is one such task that PHP can easily handle.
+Historically, PHP's `fopen()`, `fwrite()`, and `fclose()` provided detailed control for file writing operations, like appending or locking. `file_put_contents()` was introduced in PHP 5 for a simplified approach.
 
-An alternative to the `file_put_contents()` function is the `fopen()` and `fwrite()` functions. These functions require a few more lines of code, but they provide more options for handling files, such as setting permissions and reading existing files.
-
-The `file_put_contents()` function uses the underlying `file_get_contents()` function to write the content to a file. This means that it can handle URLs as the filename parameter, making it possible to write data to a remote server.
+Alternatives include using `fputcsv()` for generating CSV files or the `SplFileObject` class for object-oriented file operations. Implementation details include handling file permissions and ensuring exception handling or error checking with `or die()` or `try-catch` blocks.
 
 ## See Also
 
-- [PHP file_put_contents() function](https://www.php.net/manual/en/function.file-put-contents.php)
-- [PHP fopen() function](https://www.php.net/manual/en/function.fopen.php)
-- [PHP fwrite() function](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- [PHP fopen()](https://www.php.net/manual/en/function.fopen.php)
+- [PHP fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP file handling](https://www.php.net/manual/en/book.filesystem.php)
+- [Understanding file permissions](https://www.php.net/manual/en/function.chmod.php)

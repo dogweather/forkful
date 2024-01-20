@@ -1,6 +1,6 @@
 ---
 title:                "עבודה עם קבצי CSV"
-html_title:           "Elixir: עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-טוב, אז CSV זה סוג של קובץ טקסט שמכיל נתונים בפורמט של טבלה, תוכלו לחשוב על זה כמו גליון אלקטרוני שמכיל רשימת נתונים. למה תרצו לעבוד עם CSV? אז כאשר אתם מפעילים תוכניות וצריכים לטפל בנתונים שמכילים מידע ממוקד, כמו רשימת לקוחות או נתוני עסקאות, זה יכול להיות קל יותר לעבוד עם CSV במקום לעבוד ישירות עם קובץ טקסט רגיל.
+עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) נפוצה בתוכנות עבור קריאה וכתיבה של נתונים טבלאיים פשוטים. תוכניתנים משתמשים בזה כי זה תקן תעשייתי, נגיש וקל לעיבוד בכלי גיליונות עבודה כמו Excel.
 
-## איך לעבוד עם זה?
-בלי לדבר הרבה, הנה דוגמאות פשוטות של קוד ב-Elixir שמראות איך לפענח נתונים מקובץ CSV ולעבוד עם התוכן שלו:
+## איך לעשות:
+באליקסיר, עבודה עם CSV יכולה להתבצע בעזרת ספריית חיצונית. דוגמא לקריאה וכתיבה של קובץ CSV:
 
-```Elixir
-require CSV
+```elixir
+# כדי להשתמש בספריית CSV תצטרך להוסיף את :csv בתלותות של הפרויקט שלך
+defmodule CSVExample do
+  require CSV
 
-# קרא קובץ CSV
-csv_file = "כתובת קובץ של CSV"
-file = File.open!(csv_file)
-csv = file |> CSV.decode()
+  def read_csv(file_path) do
+    file_path
+    |> File.stream!()
+    |> CSV.decode(headers: true)
+    |> Enum.to_list()
+  end
 
-# להדפיס את הנוסחא של הכותרות בקובץ
-IO.puts Enum.join(csv.headers, ", ")
+  def write_csv(data, file_path) do
+    CSV.encode_to_iodata(data, headers: true)
+    |> Enum.map(&IO.iodata_to_binary(&1))
+    |> :ok = File.write(file_path)
+  end
+end
 
-# לעבור לכל נתוני השורות ולעבוד איתם
-Enum.each(csv.rows, fn row ->
-  first_name = row["first_name"]
-  last_name = row["last_name"]
-  age = row["age"]
-  IO.puts "#{first_name} #{last_name} is #{age} years old."
-end)
-
+# קריאת CSV
+data = CSVExample.read_csv("data.csv")
+# כתיבת CSV
+CSVExample.write_csv(data, "new_data.csv")
 ```
+הדפסת `data` תראה לנו את הנתונים שנקראו מהקובץ.
 
-הפלט בסיום ייראה כך:
+## ניתוח עמוק
+התקן CSV התפתח לאורך השנים וכלול ברוב שפות התכנות. אלטרנטיבות פופולריות כוללות JSON ו-XML, שהם יותר גמישים אך פחות נגישים לצופים רגילים. בביצוע יש לשים לב לסוגי הנתונים ולבעיות של תאימות (לדוג', שדות עם פסיקים בתוכם).
 
-```Elixir
-first_name, last_name, age
-John, Doe, 30
-Jane, Smith, 25
-Mike, Johnson, 40
-```
-"ג'ון דו הוא 30 שנים." <br>
-"ג'יין סמית' היא 25 שנים." <br>
-"מייק ג'ונסון הוא 40 שנים." <br>
-
-כמו שאתם רואים, עם הקוד הנ"ל תוכלו לפענח את כל הנתונים מהקובץ CSV ולבצע איזו תכונה שתרצו עם התוצאות.
-
-## יעולות
-אם אתם מחפשים תכנית עם יכולות נרחבות יותר, אתם יכולים לנסות לעבוד עם חבילת CSV אחרת כמו CSVelo או Gabi. כמו כן, כאשר אתם עובדים עם קבצים גדולים, ניתן לשקול למצוא פתרון אחר כמו עבודה עם מאגרי נתונים מקומיים.
-
-## המשך לעמוד
-אם אתם מעוניינים ללמוד עוד על עבודה עם CSV ב-Elixir, תוכלו למצוא מידע נוסף ופרטים מעמיקים באתר הרשמי של Elixir או בקבוצת אתרי Github העשירה שמכילה כלים נוספים ודוגמאות תוכניות לעבוד עם קבצי CSV.
+## ראה גם
+- מסמך התקנים לCSV: https://tools.ietf.org/html/rfc4180
+- הספריה `CSV` ב- Hex: https://hex.pm/packages/csv
+- תיעוד Elixir לטיפול בקבצים: https://hexdocs.pm/elixir/File.html

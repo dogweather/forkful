@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo a la salida de error estándar"
-html_title:           "Python: Escribiendo a la salida de error estándar"
-simple_title:         "Escribiendo a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
-Escribir a la salida de error estándar es una forma de mostrar mensajes de error en la consola mientras se ejecuta un programa. Los programadores lo hacen para depurar o encontrar problemas en su código de manera más eficiente.
+## Qué y Por Qué?
+Escribir en el error estándar (stderr) permite mostrar mensajes de error y diagnóstico mientras el flujo normal (stdout) sigue libre para la salida de datos. Los programadores usan stderr para separar la lógica de errores de la salida principal y facilitar la depuración.
 
-## Cómo:
-```
-Python import sys
-sys.stderr.write("¡Hola Mundo!")
+## Cómo hacerlo:
+Python simplifica la escritura en stderr a través del módulo `sys`. A continuación, unos ejemplos:
+
+```Python
+import sys
+
+print("Esto va a stdout")
+sys.stderr.write("Esto va a stderr\n")
+
+# Usando la función print
+print("Otro mensaje de error", file=sys.stderr)
 ```
 
-Salida: ¡Hola Mundo!
+Salida esperada:
+```
+Esto va a stdout
+Esto va a stderr
+Otro mensaje de error
+```
+
+Notarás que "Esto va a stdout" aparecerá en la salida estándar, mientras que los mensajes de error lo harán en el error estándar.
 
 ## Profundizando:
-Escribir a la salida de error estándar se remonta a los primeros días de la programación. Antes, los programadores solo tenían una forma de salida, la salida estándar. Esto dificultaba la depuración de errores. Con el tiempo, se agregó la capacidad de escribir a la salida de error estándar como una forma más específica de mostrar mensajes de error.
+Historia: Originalmente en los sistemas Unix, stderr fue diseñado para que los mensajes de error no se mezclaran con la salida de datos regular.
 
-Una alternativa al uso de ```sys.stderr.write()``` es imprimir los mensajes de error usando la función ```print()``` y especificando el argumento ```file=sys.stderr```. Esta es una forma más conveniente y legible de escribir a la salida de error estándar.
+Alternativas: En vez de usar `sys.stderr`, se puede usar el módulo `logging` para una gestión más avanzada de mensajes de error y diagnóstico.
 
-La implementación de escribir a la salida de error estándar varía según el sistema operativo y el lenguaje de programación utilizado. En Python, se usa la función ```sys.stderr.write()``` y en sistemas operativos UNIX, se puede realizar utilizando la función ```fprintf()```.
+Detalles de implementación: Cuando escribes a stderr usando `sys.stderr.write()`, debes asegurarte de agregar tú mismo el carácter de nueva línea `\n`, mientras que `print()` lo añade automáticamente.
 
-## Ver también:
-- Documentación oficial de Python: https://docs.python.org/es/3/library/sys.html#sys.stderr
-- Tutorial de Python: https://docs.python.org/es/3/tutorial/inputoutput.html#error-handling
-- Conceptos básicos de la salida estándar y de error: https://es.wikipedia.org/wiki/Salida_est.C3.A1ndar
+## Ver También:
+- La documentación oficial de Python sobre E/S: https://docs.python.org/3/tutorial/inputoutput.html
+- Tutorial sobre el módulo `logging`: https://docs.python.org/3/howto/logging.html
+- Explicación de stdout y stderr en sistemas Unix: https://en.wikipedia.org/wiki/Standard_streams

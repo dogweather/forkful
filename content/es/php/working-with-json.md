@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "PHP: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Trabajar con JSON en PHP significa manejar datos en un formato que es fácil de leer y escribir para los humanos, y también fácil de procesar para las computadoras. Los programadores utilizan JSON para intercambiar datos entre diferentes sistemas o para almacenar datos en una base de datos de una manera organizada y eficiente.
+## ¿Qué & Por Qué?
 
-## ¿Cómo hacerlo?
-En PHP, podemos utilizar las funciones `json_encode()` y `json_decode()` para convertir datos de y hacia el formato JSON. Por ejemplo, si tenemos un array en PHP, podemos convertirlo a JSON utilizando `json_encode()`, y si tenemos una cadena JSON, podemos convertirla a un array utilizando `json_decode()`.
+Trabajar con JSON (JavaScript Object Notation) significa manejar datos estructurados en un formato ligero y fácil de entender. Los programadores lo usan porque es ampliamente aceptado en web APIs y servicios, facilitando el intercambio de datos entre distintos lenguajes de programación.
 
+## Cómo hacerlo:
+
+### Codificar un array a JSON:
+```PHP
+$array = ['nombre' => 'Juan', 'edad' => 30, 'ciudad' => 'Madrid'];
+$json = json_encode($array);
+echo $json;
 ```
-$arr = ['nombre' => 'Juan', 'edad' => 25];
-$json = json_encode($arr);
-echo $json; // Salida: {"nombre":"Juan","edad":25}
-
-$newArr = json_decode($json);
-echo $newArr['nombre']; // Salida: Juan
-echo $newArr['edad']; // Salida: 25 
+Salida:
+```
+{"nombre":"Juan","edad":30,"ciudad":"Madrid"}
 ```
 
-## Profundizando
-JSON, que significa JavaScript Object Notation, es un formato de texto sencillo que fue desarrollado originalmente por Douglas Crockford en la década de 1990. Se basa en la sintaxis de los objetos de JavaScript y se ha vuelto muy popular en la transferencia de datos en la web debido a su simplicidad y facilidad de uso. Alternativas a JSON incluyen formatos como XML y CSV, pero JSON es más ligero y más fácil de leer y escribir para los humanos.
+### Decodificar JSON a PHP:
+```PHP
+$json = '{"nombre":"Juan","edad":30,"ciudad":"Madrid"}';
+$array = json_decode($json, true);
+print_r($array);
+```
+Salida:
+```
+Array ( [nombre] => Juan [edad] => 30 [ciudad] => Madrid )
+```
 
-Además de las funciones `json_encode()` y `json_decode()`, PHP también proporciona la función `json_last_error()` para manejar errores al convertir datos a o desde JSON. También podemos utilizar la opción `JSON_PRETTY_PRINT` en `json_encode()` para obtener una cadena JSON con formato y más fácil de leer para los humanos.
+## Profundizar:
 
-## Ver también
-- Documentación oficial de PHP - [Funciones JSON](https://www.php.net/manual/es/ref.json.php)
-- Introducción a JSON en W3Schools - [Introducción a JSON](https://www.w3schools.com/js/js_json_intro.asp)
-- Tutorial de JSON en Codecademy - [Manipulación de objetos JSON en PHP](https://www.codecademy.com/learn/learn-php/modules/learn-php-arrays/cheatsheet)
+JSON, que significa Notación de Objeto de JavaScript, ha existido desde principios de los años 2000 y se ha vuelto casi indispensable en el desarrollo moderno de aplicaciones web, desplazando formatos como XML por su simplicidad. Alternativas como YAML o BSON existen, pero JSON prevalece por su capacidad de ser interpretado fácilmente en muchos lenguajes y su soporte nativo en JavaScript. En PHP, `json_encode()` y `json_decode()` son las funciones principales para trabajar con JSON, manejando conversiones entre arrays/objetos PHP y cadenas JSON.
+
+## Ver También:
+
+- Documentación oficial de PHP para JSON: [php.net/manual/es/book.json.php](https://www.php.net/manual/es/book.json.php)
+- JSON.org, con recursos y especificaciones: [json.org](https://json.org/)
+- Consejos sobre buenas prácticas con JSON: [jsonapi.org](https://jsonapi.org/)

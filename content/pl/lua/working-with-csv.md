@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Lua: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-W programowaniu, często spotykasz się z plikami CSV, zwane także plikami tekstowymi przechowującymi tabularne dane. CSV oznacza "Comma Separated Values", co oznacza, że dane są oddzielone przecinkami. Programiści często pracują z CSV, ponieważ jest to łatwy sposób na przechowywanie i dostęp do danych w formie tabelarycznej.
+## Co i dlaczego?
+CSV, czyli "Comma-Separated Values", to format przechowywania danych w formie tekstowej, gdzie poszczególne wartości oddzielone są przecinkami. Programiści używają CSV ze względu na prostotę i uniwersalność - łatwo jest importować i eksportować dane między różnymi programami i językami programowania.
 
 ## Jak to zrobić:
+Praca z plikami CSV w Lua jest prosta. Użyjemy standardowego otwierania i czytania plików.
 
 ```Lua
-local csv = require("csv")
+-- Otwieranie pliku CSV do odczytu
+local plik = io.open('przyklad.csv', 'r')
 
--- Ładowanie danych z pliku CSV
-local data = csv.read("przykladowy_plik.csv")
+-- Przechodzenie przez każdą linię pliku
+for linia in plik:lines() do
+    -- Dzielenie linii na wartości
+    local wartosci = {}
+    for wartosc in string.gmatch(linia, '([^,]+)') do
+        table.insert(wartosci, wartosc)
+    end
 
--- Dostęp do danych (wiersze i kolumny używając indeksów)
-local pierwszy_wiersz = data[1]
-local pierwsza_kolumna = data[1][1]
-
--- Pętla przez wszystkie wiersze i wypisywanie wartości kolumn
-for i, wiersz in ipairs(data) do
-  print("Wiersz " .. i)
-  for j, kolumna in ipairs(wiersz) do
-    print("Kolumna " .. j .. ": " .. kolumna)
-  end
+    -- Tutaj możesz robić coś z wartościami
+    for i, val in ipairs(wartosci) do
+        print(i, val)
+    end
 end
 
--- Zapisywanie danych do nowego pliku CSV
-csv.write("nowy_plik.csv", data)
+-- Nie zapomnij zamknąć pliku
+plik:close()
 ```
 
-Przykładowy plik CSV:
-
-| Imię  | Nazwisko | Wiek |
-|-------|----------|------|
-| Jan   | Kowalski | 30   |
-| Anna  | Nowak    | 25   |
-| Marek | Szymański | 35  |
-
-Wypisane wartości:
-
+Sample output:
 ```
-Wiersz 1
-Kolumna 1: Jan
-Kolumna 2: Kowalski
-Kolumna 3: 30
-
-Wiersz 2
-Kolumna 1: Anna
-Kolumna 2: Nowak
-Kolumna 3: 25
-
-Wiersz 3
-Kolumna 1: Marek
-Kolumna 2: Szymański
-Kolumna 3: 35
+1 Name
+2 Age
+3 Country
+...
 ```
 
-## Głębszy Zanurzenie:
+## Deep Dive
+CSV pochodzi z wczesnych lat 70., gdy organizacje zaczęły używać komputerów do przechowywania dużych ilości danych. Alternatywami dla CSV są formaty jak JSON czy XML, które są bardziej elastyczne, ale również bardziej skomplikowane. Implementując obsługę CSV w Lua, warto zwrócić uwagę na kwestie takie jak obsługa cudzysłowów i nowych linii w wartościach.
 
-Pierwsza wersja pliku CSV została stworzona w roku 1972 i od tego czasu jest szeroko używana jako format przechowywania danych. Jedną z alternatyw dla pracy z CSV jest używanie baz danych, ale CSV jest często preferowane do przechowywania prostej tabelarycznej struktury danych. Implementacja modułu CSV dla języka Lua jest napisana w czystym Lua i nie wymaga dodatkowych zależności.
-
-## Zobacz też:
-
-- [Podstawowe operacje na plikach z formatem CSV w języku Lua](https://medium.com/@luapermutation/basic-csv-file-operations-in-lua-8f079e1fa520)
+## See Also
+- [Programming in Lua (Fourth edition)](https://www.lua.org/pil/contents.html)
+- [Lua 5.4 reference manual](https://www.lua.org/manual/5.4/)
+- [CSV na Wikipedii](https://pl.wikipedia.org/wiki/CSV)

@@ -1,6 +1,6 @@
 ---
 title:                "標準エラーへの書き込み"
-html_title:           "Go: 標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
 simple_title:         "標準エラーへの書き込み"
 programming_language: "Go"
 category:             "Go"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何＆なぜ？
-標準エラーへの書き込みとは何かを説明するために、プログラマーがそれを行う理由を説明します。標準エラーに書き込むことによって、プログラマーはプログラムの正常および異常な出力を区別することができます。
+## What & Why? (何とその理由？)
 
-## 方法：
-標準エラーへの書き込みは、Go言語では ```os.Stderr``` という変数を使用して行われます。次のコードは、"Hello, error!"というメッセージを標準エラーに書き込む例です。
+標準エラーに書き出すって？それはプログラムがエラーメッセージや診断情報を出力する場所です。なぜやるの？通常の出力と異なり、エラー情報をユーザーや他のシステムが識別しやすくするためだ。
+
+## How to: (やり方)
 
 ```Go
-fmt.Fprintln(os.Stderr, "Hello, error!")
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    _, err := os.Open("non-existing-file.txt")
+    if err != nil {
+        fmt.Fprintln(os.Stderr, "エラー発生：", err)
+        os.Exit(1)
+    }
+}
 ```
 
-出力：
+出力例:
 
 ```
-Hello, error!
+エラー発生： open non-existing-file.txt: no such file or directory
 ```
 
-## 深く掘り下げる：
-標準エラーへの書き込みは、プログラムのデバッグやエラー処理において重要です。以前のプログラミング言語では、コンソールログに書き込んでいましたが、Go言語では標準エラーを使用することが推奨されています。
+## Deep Dive (詳細情報)
 
-標準エラーへの書き込み以外の方法としては、標準出力への書き込みやログファイルへの書き込みがあります。また、標準エラーへ書き込むことによって、他のプロセスやデーモンからの入力を取得することもできます。
+歴史的には、UNIXシステムで標準出力（stdout）と標準エラー出力（stderr）は異なるストリームとして使われてきた。標準エラーは、ログやディスプレイへの即時の出力を意図している。Goでは、`os` パッケージにある `os.Stderr` を使ってこれを実装します。他の言語では異なる方法があるかもしれないが、コンセプトは同じだ。
 
-```os.Stderr``` の実装については、Go言語のソースコードを参照してください。
+## See Also (関連情報)
 
-## 関連情報：
-- 標準エラーについてのGo言語ドキュメント：https://golang.org/pkg/os/#Stderr
-- 標準エラーと標準出力の違いについて：https://stackoverflow.com/questions/23392736/what-is-the-difference-between-stdout-and-stderr-in-go
-- 標準エラーへの書き込みの実装方法：https://github.com/golang/go/blob/master/src/os/signal_unix.go#L61
+- Goのドキュメンテーション: [os package](https://pkg.go.dev/os)
+- エラーハンドリングに関するGoブログ記事: [Error handling and Go](https://blog.golang.org/error-handling-and-go)
+- Unix哲学に関する詳細: [The Art of Unix Programming](http://www.catb.org/~esr/writings/taoup/html/)

@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "Arduino: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Quoi et Pourquoi ?
 
-Écrire des tests est une pratique courante pour les programmeurs afin de s'assurer que leur code fonctionne comme prévu. Il s'agit d'écrire un code supplémentaire pour vérifier que le code existant fonctionne correctement et de détecter les erreurs potentielles avant que le programme ne soit utilisé.
+Écrire des tests, c'est vérifier que chaque morceau de code fait bien ce pour quoi il est conçu. Les développeurs le font pour prévenir les bugs, garantir la qualité et simplifier les mises à jour.
 
-# Comment faire :
+## Comment faire :
 
-Pour écrire des tests dans Arduino, utilisez la bibliothèque standard ```UnitTest.h```. Il suffit d'inclure cette bibliothèque dans votre code et d'écrire des instructions pour tester les différentes parties de votre programme. Par exemple, vous pouvez créer un test pour vérifier qu'un capteur fonctionne correctement en comparant sa valeur avec une valeur attendue.
+```Arduino
+#include <ArduinoUnitTests.h>
 
-## Exemple de code :
-
-```
-#include <UnitTest.h>
-int sensorValue = 0;
-int expectedValue = 50; //valeur attendue du capteur
-
-void setup(){
-  //initialisation du capteur et des autres composants
+void setup() {
+  Serial.begin(9600);
 }
 
-void loop(){
-  //lecture de la valeur du capteur
-  sensorValue = analogRead(A0);
-  //vérification avec la valeur attendue
-  TEST_ASSERT_EQUAL(sensorValue, expectedValue);
+void test_led_builtin_pin() {
+  Test::assertEquals(HIGH, digitalRead(LED_BUILTIN), "LED should be HIGH");
+}
+
+void loop() {
+  test_led_builtin_pin();
+  Test::exclude("*");  // Pour éviter de tourner en boucle
 }
 ```
+Sortie échantillon:
+```
+Test led_builtin_pin: LED should be HIGH (1 tests, 1 passed, 0 failed, 0 skipped)
+```
 
-## Résultat :
+## Exploration approfondie
 
-Si le test réussit, vous verrez un message "OK" dans le moniteur série. Sinon, il vous montrera sur quelle ligne le test a échoué et quelles étaient les valeurs réelles et attendues.
+Historiquement, le test n'était pas une priorité dans les projet Arduino vu que c'était souvent des prototypes. Aujourd'hui, on a des frameworks comme ArduinoUnit pour une approche TDD (Test-Driven Development). Il y a aussi AUnit, une alternative. Les détails impliquent des mock-ups et des simulations pour le matériel.
 
-# Plongeons en profondeur :
+## Voir aussi
 
-L'écriture de tests est une pratique courante dans le développement logiciel depuis de nombreuses années. Elle permet de réduire le nombre d'erreurs dans le code et de faciliter la détection et le débogage des problèmes. Il existe également d'autres options pour écrire des tests tels que la bibliothèque CppUnit pour Arduino.
-
-# Voir aussi :
-
-Pour en savoir plus sur l'écriture de tests avec Arduino, vous pouvez consulter les ressources suivantes :
-
-
-Maintenant que vous savez comment écrire des tests dans Arduino, allez-y et commencez à écrire du code robuste et sans bugs !
+- ArduinoUnit sur GitHub : https://github.com/mmurdoch/arduinounit
+- Documentation AUnit : https://www.arduino.cc/reference/en/libraries/aunit/
+- Article sur le TDD en C++ pour Arduino : https://www.arduino.cc/en/Guide/TestArduinoCode

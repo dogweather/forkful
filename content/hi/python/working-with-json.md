@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Python: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-JSON काम किस लिए किया जाता है और क्यों प्रोग्रामर्स इसको करते हैं यह समझाने के लिए होता है। यह एक सरल और प्रभावी तरीका है डेटा को स्टोर और ट्रांसफर करने का, जिसमें अधिकांश प्रोग्रामिंग भाषाओं और एप्लिकेशन्स इसका समर्थन करते हैं।
+
+JSON (JavaScript Object Notation) एक data format है जो data exchange के लिए use होता है, मुख्यतः वेब applications में। Programmers इसका use करते हैं क्योंकि यह समझने में आसान होता है और language-independent होता है।
 
 ## कैसे करें:
-आइए हम आसान उदाहरण के साथ यह देखें कि Python में JSON काम कैसे करता है। उदाहरण के लिए, हम एक JSON फ़ाइल बनाते हैं जिसमें टेक्स्ट और संख्याओं को स्टोर किया जाता है:
 
 ```Python
 import json
 
-# JSON फ़ाइल बनाएँ
-data = {
-    'name': 'John',
-    'age': 25,
-    'hobbies': ['reading', 'coding', 'traveling']
-}
+# JSON डेटा को Python ऑब्जेक्ट में बदलना:
+jsonData = '{"name": "Amit", "age": 30, "city": "Delhi"}'
+pythonObj = json.loads(jsonData)
+print(pythonObj["name"])  # Output: Amit
 
-with open('data.json', 'w') as file:
-    json.dump(data, file)
+# Python ऑब्जेक्ट को JSON डेटा में बदलना:
+pythonDict = {'name': 'Seema', 'age': 25, 'city': 'Mumbai'}
+jsonStr = json.dumps(pythonDict, ensure_ascii=False)
+print(jsonStr)  # Output: {"name": "Seema", "age": 25, "city": "Mumbai"}
 ```
 
-और इस फ़ाइल से डेटा को रीड करते हैं:
+## गहराई से जानकारी:
 
-```Python
-# JSON फ़ाइल से डेटा लोड करें
-with open('data.json') as file:
-    data = json.load(file)
+JSON 2000 के दशक में popular हुआ। यह XML के alternative के रूप में उभरा क्योंकि यह ज्यादा lightweight और readable है। JSON, data को key-value pairs में स्टोर करता है। Python में `json` library JSON को parse करने और generate करने के लिए standard tool है। अन्य alternatives में YAML और BSON हैं, लेकिन JSON का use इसकी simplicity और व्यापक support के कारण प्रधान है।
 
-# हम अब डेटा को प्रिंट कर सकते हैं
-print(data['name']) # John
-print(data['age']) # 25
-print(data['hobbies']) # ['reading', 'coding', 'traveling']
-```
+## देखें भी:
 
-## गहराई तक प्रवेश करें:
-JSON, या "जेसन", 1990s में प्रस्तुतियों को खुश करने के लिए Netscape के इंजीनियर Douglas Crockford द्वारा डेवलप किया गया। यह बाद में ECMA-404 के तहत एक स्टैंडर्ड बन गया जोर दिया गया है। कुछ अल्टरनेटिव जैसे XML भी हैं जिन्हें डेटा स्टोरिंग के लिए इस्तेमाल किया जा सकता है लेकिन वे काफी अधिक complex हैं। Python 2.6+ में डिफॉल्ट रूप से JSON प्रोवाइड किया जाता है और यह बहुत आसानी से इस्तेमाल किया जा सकता है।
-
-## भीड़ को भी देखें:
-और जानने के लिए, आप मदद फ़ाइल और विभिन्न पाठ्यक्रमों का उपयोग कर सकते हैं। यदि आप और गहराई तक जानना चाहते हैं, तो JSON.org पर संपूर्ण स्पेसिफिकेशन उपलब्ध है। आप भी इसके लिए कोड स्निपेट्स और और उपयोगी त्वरित शब्दावली खोज सकते हैं।
+- JSON के बारे में और जानकारी के लिए: [JSON वेबसाइट](https://www.json.org/json-en.html)
+- Python की `json` library का documentation: [Python JSON library](https://docs.python.org/3/library/json.html)
+- JSON online viewer और editor: [JSON Editor Online](https://jsoneditoronline.org/)

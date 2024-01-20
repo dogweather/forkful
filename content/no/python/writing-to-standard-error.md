@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "Python: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## What & Why?
+Skriving til standard error (stderr) er hvordan programmer rapporterer feil og advarsler uten å blande dette med hoveddatautstrømmen (stdout). Programmører gjør dette for å skille normal output fra feilmeldinger, noe som gjør det enklere å logge og diagnostisere problemer.
 
-Når vi skriver Python-kode, er det vanlig å bruke "print" -funksjonen for å vise utdata på skjermen. Men noen ganger ønsker vi å vise en feilmelding eller annen informasjon som ikke er en del av det ordinære utskriftet. For dette formålet bruker vi "sys.stderr" -enheten til å skrive til standard error. Dette er spesielt nyttig når vi feilsøker koden vår og ønsker å kommunisere med brukeren på en mer eksplisitt måte.
-
-# Hvordan:
+## How to:
+For å skrive til stderr i Python, bruk `sys.stderr`. Her er et enkelt eksempel:
 
 ```Python
 import sys
 
-print("Dette blir vist på skjermen")
-print("Dette blir skrevet til standard error", file=sys.stderr)
+print("Dette er en normal melding")
+sys.stderr.write("Dette er en feilmelding\n")
 ```
 
-Output:
-Dette blir vist på skjermen
-Dette blir skrevet til standard error 
+Forventet output:
+```
+Dette er en normal melding
+Dette er en feilmelding
+```
 
-# Dykk dypere:
+Merk at `stderr`-meldingen kan dukke opp et annet sted enn den vanlige output, avhengig av hvordan skriptet ditt kjøres.
 
-Å skrive til standard error er ikke en ny teknikk, det har vært en del av programmering i lang tid. Tidligere var dette en av få måter å gi feilmeldinger til brukere på. I Python kan vi også bruke "sys.stdout" -enheten for å skrive utdata på en liknende måte, men da vil det blandes med annet utskrift. En annen mulighet er å bruke "logging" -modulen som gir mer avanserte muligheter for å håndtere utdata og feilmeldinger.
+## Deep Dive
+Historisk sett er konseptet med standard error en del av Unix filstrømningsmodellen hvor alt er en fil, inkludert outputstrømmer. Alternativer til `sys.stderr` inkluderer logging-biblioteker som lar deg styrke fleksibiliteten og konfigurasjonen av feilloggningen din. Implementationen av stderr i Python er bare en høy-nivå tilnærming til fil-deskriptoren som er tilgjengelig i lav-nivå operativsystemets grensesnitt.
 
-# Se også:
-
-- Python dokumentasjon: https://docs.python.org/3/library/sys.html#sys.stderr
-- Logging modulen: https://docs.python.org/3/library/logging.html
+## See Also
+- Python's official `sys` module documentation: https://docs.python.org/3/library/sys.html
+- Python's logging library guide: https://docs.python.org/3/library/logging.html
+- Unix philosophy on streams: https://en.wikipedia.org/wiki/Unix_philosophy#Everything_is_a_file

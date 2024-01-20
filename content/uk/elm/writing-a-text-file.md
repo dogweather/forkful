@@ -1,7 +1,7 @@
 ---
-title:                "Изготовление текстового файла"
-html_title:           "Elm: Изготовление текстового файла"
-simple_title:         "Изготовление текстового файла"
+title:                "Створення текстового файлу"
+html_title:           "Arduino: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,28 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Що & Чому?
+## Що і чому?
 
-Одним з ключових елементів програмування є здатність створювати файли для зберігання даних. Наприклад, текстові файли можуть містити інструкції для комп'ютера, такі як команди для виконання певних завдань або дані для обробки. Це дозволяє розробникам зберігати та переробляти великі обсяги даних у зручному форматі.
+Запис текстового файлу — це процес збереження даних у файл на диску. Програмісти це роблять для збереження результатів, конфігурацій, або обміну даними.
 
-#Як це зробити:
+## Як це зробити:
 
-Щоб створити текстовий файли в Elm, скористайтеся функцією `File.write`, яка приймає шлях до файлу, який ви хочете створити, і дані, які ви хочете записати у файл. Наприклад, щоб створити файл під назвою "hello.txt" і записати у нього фразу "Привіт, світ!", ваш код міг би виглядати так:
+Elm не має прямого способу запису файлів на диск через браузер. Однак, ви можете генерувати файл та пропонувати завантажити його користувачу. Приклад коду:
 
-```elm
-import File
+```Elm
+module Main exposing (main)
 
-File.write "hello.txt" "Привіт, світ!"
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Attributes exposing (style)
+import Html.Events exposing (onClick)
+import File.Download
+
+main =
+  Browser.sandbox { init = init, update = update, view = view }
+
+type alias Model = String
+
+init : Model
+init =
+  "Текст для запису у файл."
+
+type Msg
+  = Download
+
+update : Msg -> Model -> Model
+update _ model =
+  model
+
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick Download ] [ text "Завантажити файл" ] ]
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Sub.none
+
+port module Ports exposing (..)
+
+port download : String -> Cmd msg
+
+sendTextToFile : String -> Cmd msg
+sendTextToFile textData =
+    port download textData
+
+-- Підключення JS для завантаження файлу
+-- Погляньте на секцію "See Also" для посилання на інструкцію.
+
+update msg model =
+  case msg of
+    Download ->
+      ( model, sendTextToFile model )
 ```
 
-Якщо файл за такою назвою вже існує, він буде перезаписаний із новими даними.
+Ваш JS-файл, який взаємодіє з Elm через порти:
 
-#Глибоке погруження:
+```javascript
+app.ports.download.subscribe(function (data) {
+  var file = new Blob([data], {type: 'text/plain'});
+  var anchor = document.createElement('a');
+  anchor.href = URL.createObjectURL(file);
+  anchor.download = 'data.txt';
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+});
+```
 
-Створення текстових файлів є однією із базових функцій загальнопризначеного мови програмування. Всі повністю функціональні мови, такі як Elm, мають вбудовану підтримку для створення та редагування файлів.
+## Поглиблений огляд
 
-Альтернативами `File.write` можуть бути різні сторонні бібліотеки або інші мови програмування, такі як Java або C++. Однак використання вбудованої функції може допомогти зберегти час та спростити код.
+Elm, з огляду на шахрайські дії, уникає прямого запису на диск. Історично, цю можливість надавали низькорівневі мови. Але сучасні інтерактивні веб-додатки використовують джейсон, бази даних та API для обміну та зберігання даних. Як альтернативу, можна використати серверний код (Node.js, Python, тощо) для запису файлів.
 
-#Дивіться також:
+## Див. також
 
-* [Документація Elm по `File` модулю](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm порти](https://guide.elm-lang.org/interop/ports.html)
+- [File API на MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
+- [Приклад створення і завантаження файлу в JavaScript](https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server)

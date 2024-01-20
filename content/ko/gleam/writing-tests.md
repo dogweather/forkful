@@ -1,7 +1,7 @@
 ---
-title:                "프로그래밍 테스트 작성하기"
-html_title:           "Gleam: 프로그래밍 테스트 작성하기"
-simple_title:         "프로그래밍 테스트 작성하기"
+title:                "테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-제 목: Gleam 프로그래밍에서의 테스트 작성하기
+## What & Why? (무엇과 왜?)
+테스트 코드를 작성한다는 것은 코드가 의도한 대로 작동하는지 확인하는 자동화된 방법입니다. 프로그래머는 버그를 줄이고, 코드 품질을 높이며, 나중에 코드를 변경하거나 업데이트할 때 신뢰성을 확보하기 위해 테스트를 합니다.
 
-## 무엇인가요? 
-테스트 작성이란 무엇일까요? 단순히 말하면, 이것은 소프트웨어의 작동을 확인하는 프로그램입니다. 테스트를 작성하는 이유는 무엇일까요? 테스트를 작성함으로써 우리는 우리가 만든 코드들이 예상대로 작동하는지 확인할 수 있고, 버그를 발견할 수 있습니다. 이러한 테스트를 통해 소프트웨어의 품질을 향상시킬 수 있습니다.
+## How to: (어떻게 하나요?)
+Gleam에서 테스트는 간단합니다. 아래는 기본적인 테스트 케이스를 보여줍니다:
 
-## 어떻게 하나요?
-Gleam에서 테스트를 작성하는 것은 매우 쉽습니다. 아래의 코드블록을 보시죠.
+```gleam
+import gleam/should
 
-```Gleam
-test "더하기 함수는 두 숫자를 더해줍니다" {
-  assert.equal(더하기(1, 2), 3)
+pub fn add(x: Int, y: Int) -> Int {
+  x + y
 }
 
-test "곱하기 함수는 두 숫자를 곱해줍니다" {
-  assert.equal(곱하기(2, 3), 6)
+pub fn add_test() {
+  should.equal(add(1, 2), 3)
 }
 ```
 
-위의 코드는 두 가지 테스트를 작성하는 예시입니다. 첫 번째 테스트는 더하기 함수가 두 숫자를 더한 값을 제대로 반환하는지를 확인하고, 두 번째 테스트는 곱하기 함수가 두 숫자를 곱한 값을 제대로 반환하는지를 확인합니다. assert.equal은 테스트 결과를 비교해주는 함수입니다.
+테스트를 실행하면 다음과 같은 출력이 나옵니다:
 
-## 깊이 알아보기
-테스트 작성에는 여러가지 방법이 있지만, Gleam에서는 기본적으로 assert.equal 함수를 사용합니다. 다른 언어에서는 테스트 프레임워크를 사용하기도 합니다. 하지만 Gleam에서는 이와 같은 간단한 방식으로도 충분합니다.
+```shell
+$ gleam test
+.
+Done: passed 1; failed 0; skipped 0; total 1
+```
 
-## 관련 자료
-- Gleam 공식 홈페이지: https://gleam.run/
-- Gleam 소스 코드 저장소: https://github.com/gleam-lang/gleam
+## Deep Dive (심화학습)
+테스트 작성은 소프트웨어 개발 초기부터 중요했습니다. 역사적으로, 'Test-Driven Development'(TDD) 같은 접근법이 사용되었어요. Gleam에서는 `gleam/should` 모듈을 활용해 단정(assertions)을 사용합니다. Elixir의 ExUnit이나 Erlang의 Common Test와 같은 다른 테스팅 프레임워크를 사용할 수도 있지만, `gleam/should`이 내장 모듈이고 사용하기 간단합니다.
+
+## See Also (추가 정보)
+- [Gleam GitHub 저장소](https://github.com/gleam-lang/gleam)
+- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)

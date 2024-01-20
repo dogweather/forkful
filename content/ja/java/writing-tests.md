@@ -1,7 +1,7 @@
 ---
-title:                "テストを書く"
-html_title:           "Java: テストを書く"
-simple_title:         "テストを書く"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何となんで？
+## What & Why? (テストの書き方とその理由)
+テストコードはプログラムが正しく動作することを保証するためのコードです。バグを早期に発見し、機能の追加やリファクタリング時の安心を得るために開発者が行います。
 
-テストを書くとは、プログラマーが自分のコードが正しく動作しているかどうかを確認するために、コードを実行するプロセスです。プログラマーはテストを書くことで、コードを改善し、バグを見つけることができます。
+## How to: (やり方)
+JUnitを使った基本的なテストの書き方を示します。
 
-# 方法：
+```java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-```Java
-public class TestExample {
-  public static void main(String[] args) {
-    int a = 5;
-    int b = 7;
-    int result = a + b;
-    System.out.println(result);
-  }
+public class CalculatorTest {
+
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        Assertions.assertEquals(5, calculator.add(2, 3));
+    }
+}
+
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
-この例では、変数aと変数bに値を設定し、それらを足し合わせた結果を表示するプログラムを実行します。コンパイルして実行することで、プログラムが正しく動作するかどうかを確かめることができます。
+実行結果: テストがパスすれば出力はありません。失敗すればエラーが表示されます。
 
-# 深堀り：
+## Deep Dive (深掘り)
+JUnitは、1997年にKent Beckによって作られたSUnitをベースにしたJavaのテストフレームワークです。他の代替品としてはTestNGがありますが、JUnitはより普及しています。内部ではリフレクションを使用してテストメソッドを動的に検出し実行します。
 
-## 歴史的な背景
-テストを書くというコンセプトは非常に古いものであり、古代ローマ時代の建造物やエンジニアリングのプロジェクトでも、設計が正しく機能するかを確認するためにテストが行われていました。その後、プログラミングの世界でもテストが重要視されるようになり、現在ではソフトウェア開発プロセスの重要な一部となっています。
-
-## 代替手段
-テストを書く以外にも、デバッガーを使用したり、コードを手動で実行して結果を確認したりすることで、プログラムの正しさを確認することができます。しかし、これらの方法では手間がかかったり、全てのパターンを網羅的にテストすることが難しい場合があります。
-
-## 実装の詳細
-テストを書く際には、JUnitやTestNGなどのテストフレームワークを使用することが一般的です。また、テスト駆動開発（TDD）という手法では、まずテストを書き、それからそのテストをパスするようにコードを書いていくことで、より堅牢なコードを作ることができます。
-
-# 関連情報を見る：
-
-- [JUnit公式サイト](https://junit.org/)
-- [TestNG公式サイト](https://testng.org/)
+## See Also (関連情報)
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Oracle's Java Tutorials – Unit Testing](https://docs.oracle.com/javase/tutorial/java/javaOO/summaryclasses.html)

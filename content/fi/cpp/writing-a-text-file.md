@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "C++: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Tekstitiedostojen kirjoittaminen tarkoittaa datan tallentamista luettavaan muotoon tiedostoon. Ohjelmoijat kirjoittavat tekstitiedostoja, koska se on helppo tapa tallentaa ja jakaa tietoa.
 
-Tekstitiedoston kirjoittaminen tarkoittaa tietojen tallentamista tiedostoon tekstimuodossa, jonka avulla niitä voidaan lukea ja käsitellä myöhemmin ohjelmointikoodissa. Tämä on hyödyllistä esimerkiksi silloin kun halutaan tallentaa käyttäjän antamia tietoja tai tallentaa tuloksia ohjelman suorituksista.
-
-## Miten:
-
+## How to:
 ```C++
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int main() {
-    std::ofstream tiedosto("tiedosto.txt"); // Avataan uusi tekstitiedosto
-    if (tiedosto.is_open()) { // Tarkistetaan, että tiedosto on auki
-        tiedosto << "Tallennettava tieto" << std::endl; // Tallennetaan tiedosto teksti
-        tiedosto.close(); // Suljetaan tiedosto
-        std::cout << "Tiedosto tallennettu!" << std::endl;
+    std::ofstream outFile("esimerkki.txt");
+    if (outFile.is_open()) {
+        outFile << "Hei, tämä on tekstirivi tiedostossa.\n";
+        outFile << "Toinenkin rivi tekstiä.\n";
+        outFile.close();
     } else {
-        std::cout << "Virhe tiedoston avaamisessa!" << std::endl;
+        std::cerr << "Tiedoston avaus epäonnistui.\n";
     }
     return 0;
 }
 ```
-
+Sample output in "esimerkki.txt":
 ```
-Tiedosto tallennettu!
+Hei, tämä on tekstirivi tiedostossa.
+Toinenkin rivi tekstiä.
 ```
 
-## Syventävä sukellus:
+## Deep Dive
+Alun perin C++ käytti C:n FILE* osoittimia tiedoston käsittelyyn. `std::ofstream` tuli myöhemmin C++:n standardikirjastoon parempana työkaluna tiedostojen kirjoittamiseen. `ofstream` on osa "fstream"-kirjastoa (file stream), ja se tukee RAII-periaatetta, joka automatisoi resurssien hallinnan. Vaihtoehtoisesti voitaisiin käyttää moderneja C++17-filesystem-kirjaston toimintoja tai vanhempia C:n "stdio.h"-tyyppisiä funktioita.
 
-Tekstitiedoston kirjoittaminen on ollut olennainen osa ohjelmointia jo pitkään, sillä se mahdollistaa tietojen tallentamisen ja lukemisen helposti ja tehokkaasti. Tekstitiedostoja voivat myös käsitellä eri ohjelmointikielien ohella muutkin ohjelmat, kuten taulukkolaskentaohjelmat.
-
-Kirjoittaessa tekstitiedostoa, on tärkeä tarkastella kirjoittamistilannetta: halutaanko luoda uusi tiedosto vai päivittää jo olemassa olevaa. Varmista myös, että tiedostoon tallennettavat tiedot ovat oikeassa muodossa ja että tiedosto suljetaan oikein, jotta tiedot tallentuvat oikein.
-
-Muita tapoja tallentaa tietoja ovat esimerkiksi käyttämällä tietokantoja tai binääritiedostoja. Nämä tarjoavat usein tehokkaamman ja turvallisemman tavaran tallentaa suuria määriä tietoja, mutta tekstitiedostojen käyttö on silti hyödyllistä esimerkiksi yksinkertaisissa käyttötapauksissa.
-
-## Katso myös:
-
-- [Vuoden 2014 C++-ohjelmointiopas] (http://www.cplusplus.com/doc/tutorial/files/) tarjoaa hyödyllistä tietoa tekstitiedostojen kirjoittamiseen C++:lla.
-- [Cppreference-sivusto] (https://en.cppreference.com/w/cpp/), jossa voi löytää tarkempia tietoja C++:sta ja sen käyttämisestä.
+## See Also
+- C++ Standard Library Documentation: [http://www.cplusplus.com/reference/fstream/ofstream/](http://www.cplusplus.com/reference/fstream/ofstream/)
+- C++ Filesystem Library: [https://en.cppreference.com/w/cpp/filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- C I/O Functions Tutorial: [https://www.tutorialspoint.com/cprogramming/c_input_output.htm](https://www.tutorialspoint.com/cprogramming/c_input_output.htm)

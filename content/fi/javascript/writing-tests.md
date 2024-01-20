@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Javascript: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Ohjelmistokehittäjät käyttävät nykyaikana yhä enemmän testeille omistettua aikaa ja resursseja, jotta varmistetaan koodin laatu ja toimivuus. Testaamisen tarkoituksena on havaita mahdollisia virheitä ja vikoja ohjelmistossa ennen sen julkaisemista, mikä puolestaan säästää aikaa ja vaivaa virheiden korjaamisessa myöhemmin.
+## Mitä & Miksi?
+Javascript-testaus tarkoittaa koodin toimivuuden varmistamista automatisoiduilla testeillä. Testit parantavat sovelluksen laatua ja antavat kehittäjille luottamusta koodimuutosten yhteydessä.
 
-## Miten?
-Testien kirjoittaminen Javascriptillä on suhteellisen helppoa ja nopeaa. Se voidaan tehdä hyödyntämällä erilaisia kirjastoja, kuten esimerkiksi Jestiä tai Mochaa. Kirjastojen avulla voit luoda yksikkö-, integraatio- ja toiminnallisia testejä, jotka tarjoavat kattavan kattavuuden koodillesi.
+## Näin se tehdään:
+```Javascript
+// Asennetaan Jest-kirjasto komennolla: npm install --save-dev jest
 
-```
-function sum(a, b) {
+// funktiot.js
+function summa(a, b) {
   return a + b;
 }
+module.exports = summa;
 
-test('sum funktio laskee summan oikein', () => {
-  expect(sum(2, 3)).toBe(5);
+// funktiot.test.js
+const summa = require('./funktiot');
+
+test('yksinkertainen summaus testi', () => {
+  expect(summa(1, 2)).toBe(3);
 });
+
+// Suoritetaan testit komennolla: npm test
 ```
+Testin suoritus tuottaa tuloksen, jossa näkyy, menikö testi läpi vai ei.
 
-Testikoodi suoritetaan ajamalla testitiedosto erikseen tai käyttämällä automaattista testaamista, joka tarkistaa koodin jokaisen muutoksen jälkeen. Tämä auttaa havaitsemaan mahdollisia virheitä ja varmistaa, että koodi toimii kuten odotetaan.
+## Syväluotaus:
+JavaScript-testaus on kehittynyt vuosien varrella matkallaan yksinkertaisista assert-lauseista monimutkaisiin testauskehyksiin. Jest ja Mocha ovat suosittuja työkaluja JavaScript-testauksessa. Testeillä voi olla useita muotoja, kuten yksikkötesteistä integraatiotesteihin ja E2E-testeihin, ja ne voidaan suorittaa erilaisilla konfiguraatioilla CI/CD-putkissa.
 
-## Syvemmälle
-Testien kirjoittamista on käytetty ohjelmistokehityksessä jo vuosikymmeniä, ja se on vakiintunut käytäntö ketterien menetelmien yhteydessä. Vaikka manuaalinen testaaminen on edelleen tärkeää, automaattisten testien käyttöönotto on lisännyt kehittäjien tuottavuutta ja auttanut parantamaan ohjelmistojen laatua.
-
-Vaihtoehtoisia tapoja testaamiseen ovat esimerkiksi BDD (Behaviour-driven development) ja TDD (Test-driven development), joissa testit kirjoitetaan ennen varsinaista koodia. Nämä lähestymistavat auttavat suunnittelemaan koodia ja varmistavat, että tarvittavat toiminnot ovat testattuja.
-
-## Katso myös
-- Jest: https://jestjs.io/
-- Mocha: https://mochajs.org/
-- BDD: https://en.wikipedia.org/wiki/Behavior-driven_development
-- TDD: https://en.wikipedia.org/wiki/Test-driven_development
+## Katso myös:
+- Jestin dokumentaatio: [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started)
+- Mochan sivusto: [https://mochajs.org/](https://mochajs.org/)
+- Artikkeli testausstrategioista JavaScript-projekteissa: [https://martinfowler.com/articles/microservice-testing/](https://martinfowler.com/articles/microservice-testing/)

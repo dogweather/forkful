@@ -1,6 +1,6 @@
 ---
 title:                "Schreiben auf Standardfehler"
-html_title:           "Clojure: Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,25 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben in den Standardfehler ist eine Methode, um Fehlermeldungen direkt an den Benutzer zu senden. Programmierer nutzen dies, um wichtige Fehlerinformationen ohne Veränderung des regulären Programmausganges anzuzeigen.
 
-## So geht's:
+Schreiben auf Standardfehler (stderr) leitet kritische Nachrichten aus deinem Programm, abgetrennt von der Hauptausgabe (stdout). Es hilft bei der Diagnose von Problemen, indem Fehlermeldungen getrennt bleiben und leichter zu erkennen sind.
+
+## How to:
+
+Clojure verwendet Java's System-Klassen, um auf `stderr` zu schreiben. Hier ist ein einfaches Beispiel:
+
 ```Clojure
-(defn print-stderr [msg]
-  (.println System/err msg))
+(defn schreibe-auf-stderr [nachricht]
+  (.println System/err nachricht))
 
-(print-stderr "Diese Nachricht wird in den Standardfehler geschrieben")
+(schreibe-auf-stderr "Fehler gefunden!")
 ```
 
-Ausgabe:
+Die Ausgabe ist nicht sichtbar im normalen Programmauslauf, aber sie erscheint auf stderr:
+
 ```
-Diese Nachricht wird in den Standardfehler geschrieben
+Fehler gefunden!
 ```
 
-## Tiefergehende Informationen:
-Das Schreiben in den Standardfehler wird oft in der Entwicklung von Kommandozeilenanwendungen verwendet. Es gibt auch die Möglichkeit, in den Standardausgang zu schreiben, jedoch wird hierbei die Ausgabe möglicherweise mit anderen Inhalten vermischt. Eine Alternative zum Schreiben in den Standardfehler ist die Verwendung von Logdateien für Fehlermeldungen. Die Implementierung erfolgt in Clojure mit der Methode ```System/err``` aus der Java-Standardbibliothek.
+## Deep Dive
 
-## Siehe auch:
-Offizielle Dokumentation zur Clojure Methode "System/err": <link>
-Ein Artikel über die Verwendung von Logdateien in Clojure: <link>
-Java Dokumentation zur Klasse "System": <link>
+Clojure, als eine JVM-Sprache, übernimmt Java's Standard-Datenströme `System.out` und `System.err` für die Ausgabe. Historisch gesehen stammt diese Trennung aus der Unix-Welt. Alternativ könntest du Logging-Frameworks verwenden, um Fehler zu protokollieren. Die `System/err`-Implementation ist synchron, was bedeutet, dass die Nachricht sofort geschrieben wird, aber es kann bei hohem Durchsatz zu Leistungsengpässen führen.
+
+## See Also
+
+1. Clojure's offizielle Dokumentation: [Clojure.org](https://clojure.org/)
+2. Java API für `PrintStream`: [PrintStream JavaDocs](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Elm: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-Trabalhar com YAML é uma forma simples e eficiente de gerir e guardar dados na sua aplicação Elm. Programadores utilizam o YAML para armazenar e transmitir informações de maneira legível para humanos, facilitando a comunicação e colaboração em projetos de programação.
+## O Que É & Por Quê?
+Trabalhar com YAML significa lidar com um formato de serialização de dados legível por humanos, comum em configurações de projetos e dados de serialização. Programadores usam YAML pela sua simplicidade e facilidade de leitura em comparação com outros formatos como XML ou JSON.
 
-## Como fazer:
-Usando a biblioteca `elm-community/yaml`, podemos facilmente importar e utilizar a funcionalidade do YAML em nossos projetos Elm. Veja um exemplo básico abaixo:
+## How to:
+Elm não tem suporte incorporado para YAML, mas você pode converter YAML para JSON e usar o pacote `elm/json` para manipular os dados. Veja um exemplo de conversão e uso:
 
-```elm
-import Yaml exposing (..)
+```Elm
+-- Elm não possui um pacote dedicado para YAML,
+-- então converta YAML para JSON antes de usar com Elm.
 
-yamlData : String
-yamlData =
-"""
-name: Elm
-version: 0.19.1
-type: Language
-"""
+import Json.Decode exposing (decodeString)
+import Json.Decode.Pipeline exposing (required)
 
-yamlDecoder : Decode.Decoder (List Yaml.Value)
-yamlDecoder =
-    Yaml.decode Yaml.value
+type alias Project =
+    { name : String
+    , version : String
+    }
 
-decodedValues : Result Decode.Error (List Yaml.Value)
-decodedValues =
-    Decode.decodeString yamlDecoder yamlData
+projectDecoder : Json.Decode.Decoder Project
+projectDecoder =
+    Json.Decode.Pipeline.decode Project
+        |> required "name" Json.Decode.string
+        |> required "version" Json.Decode.string
 
-main : Html msg
-main =
-    case decodedValues of
-        Ok values ->
-            -- fazer algo com os valores decodificados
+-- Suponha que "yamlToJson" é uma função (em JavaScript) que converte YAML para JSON.
+-- Você pode integrar a conversão via ports.
 
-        Err error ->
-            -- lidar com o erro de decodificação
+json : String
+json = "{ \"name\": \"MeuProjeto\", \"version\": \"1.0.0\" }"
+
+result : Result String Project
+result = decodeString projectDecoder json
+
+-- O `result` seria `Ok { name = "MeuProjeto", version = "1.0.0" }` ou `Err` com a mensagem de erro de decodificação.
 ```
 
-Onde `yamlData` é uma string contendo dados no formato YAML, que podem ser decodificados usando a função `decode` da biblioteca `yaml` e uma decodificadora adequada. O resultado será uma `Lista` de `Valor`es, que podem ser usados para alimentar sua aplicação Elm.
+## Deep Dive
+YAML, que significa "YAML Ain't Markup Language" (recursivamente), foi introduzido em 2001 como alternativa ao XML para a maioria das tarefas de configuração. Alternativas ao YAML incluem JSON e TOML, mas YAML continua popular pelos comentários fáceis e por evitar colchetes e chaves. 
 
-## Exploração Detalhada:
-O YAML (acrônimo de "YAML Ain't Markup Language") é um formato de serialização de dados criado por Clark Evans em 2001. É frequentemente utilizado em aplicações web para descrever dados de configuração ou de estado. Alternativas ao YAML incluem JSON e XML, mas muitos programadores preferem o YAML por ser mais legível e fácil de usar.
+A implementação em Elm depende de conversão pois não existe uma biblioteca direta para YAML. A comunidade Elm prioriza segurança e simplicidade, e trabalhar com JSON oferece ambas. Ao passar YAML como JSON para Elm, podemos tirar proveito dos decodificadores robustos de Elm para manejar os dados de forma segura.
 
-A biblioteca `yaml` foi desenvolvida pela comunidade Elm e se baseia na biblioteca JavaScript `js-yaml`, mantida por nodeca. Ela oferece diversas funcionalidades além da função de decodificação, tais como codificação, validação e manipulação de dados YAML. Para mais informações e exemplos, consulte a documentação oficial da biblioteca `yaml`.
-
-## Veja também:
-- [Formato YAML](https://yaml.org/)
+## See Also
+- [elm/json](https://package.elm-lang.org/packages/elm/json/latest/) para decodificação JSON em Elm.
+- [YAML to JSON Online Converter](https://www.json2yaml.com/) para converter YAML em JSON online.
+- [Curso Elm Interativo](https://guide.elm-lang.org/) para aprender mais sobre Elm.

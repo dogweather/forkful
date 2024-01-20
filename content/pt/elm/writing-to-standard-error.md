@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo no erro padrão"
-html_title:           "Elm: Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e Por Que?
+## What & Why?
+Escrever no erro padrão (standard error) é uma forma de enviar mensagens de erro ou diagnóstico separadas da saída principal do programa. Programadores usam isso para comunicar falhas, problemas e informações de debug sem interferir nos dados de saída.
 
-Escrever para o erro padrão é uma técnica usada pelos programadores para exibir mensagens de erro ou informações de depuração durante a execução de um programa. Isso permite que os desenvolvedores vejam o que está acontecendo no código em tempo real e facilite a identificação e correção de erros.
+## How to:
+Elm é uma linguagem funcional que roda no navegador e, não tendo um stderr tradicional, lida com erros de maneira diferente. O conceito mais próximo seria enviar mensagens de erro através do sistema de mensagens para o JavaScript usando `ports`. Eis um exemplo simplista.
 
-Como Fazer:
+```Elm
+port module Main exposing (..)
 
-Para escrever para o erro padrão em Elm, usamos a função "Debug.log" que aceita uma string como primeiro argumento e um valor como segundo argumento. Aqui está um exemplo:
+-- Definindo port para enviar mensagens para o JavaScript
+port error : String -> Cmd msg
 
-Elm ...
+-- Simulando um erro e enviando a mensagem
+simulateError : Cmd msg
+simulateError =
+    error "Algo deu errado!"
 
-[1, 2, 3] 
-    |> Debug.log "Lista inicial" 
-    |> List.map (* 2) 
-    |> Debug.log "Lista multiplicada por 2"
+-- Na parte do JavaScript, você teria algo assim:
+// Suponde que você tem `app` que é sua aplicação Elm iniciada.
+app.ports.error.subscribe(function(message) {
+    console.error(message);
+});
+```
+Saída esperada no console JavaScript seria:
+```
+Algo deu errado!
+```
 
-O resultado seria:
+## Deep Dive
+Elm mantém as coisas no lado seguro e, por isso, não interage diretamente com operações de I/O como a escrita de stderr típica de outras linguagens. No início, Elm focava em evitar efeitos colaterais diretos, levando a padrões alternativos de tratamento de erros, como a utilização de `Maybe` e `Result` types para lidar com erros de maneira mais funcional. Ports permitem que Elm "converse" com JavaScript para operações fora do seu escopo direto.
 
-Lista inicial: [1, 2, 3] 
-Lista multiplicada por 2: [2, 4, 6]
-
-Neste exemplo, usamos o "Debug.log" para exibir a lista inicial e a lista multiplicada por 2 para ajudar a entender como a função "List.map" funciona.
-
-Mergulho Profundo:
-
-A técnica de escrever para o erro padrão tem suas raízes nos primórdios da programação, quando os desenvolvedores tinham que usar dispositivos de saída externos para exibir informações úteis durante a execução do código. Hoje em dia, existem ferramentas mais avançadas para depuração, como depuradores e registradores, mas escrever para o erro padrão ainda é amplamente utilizado por sua simplicidade e facilidade de implementação em várias linguagens de programação.
-
-Veja Também:
-
-Para saber mais sobre como escrever para o erro padrão em Elm, confira a documentação oficial do idioma em seu site oficial. Além disso, você pode explorar outras técnicas de depuração e ferramentas disponíveis para melhorar sua eficiência como desenvolvedor.
+## See Also
+- Documentação oficial sobre Ports em Elm: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
+- Tratamento de erros em Elm utilizando `Result`: [https://package.elm-lang.org/packages/elm/core/latest/Result](https://package.elm-lang.org/packages/elm/core/latest/Result)
+- Discussão sobre estratégias de erro em Elm no Elm Discourse: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

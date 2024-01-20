@@ -1,6 +1,6 @@
 ---
 title:                "Schreiben auf Standardfehler"
-html_title:           "Rust: Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und Warum?
+## Was & Warum?
+Schreiben auf den Standardfehler (stderr) separiert Fehlermeldungen von regulärem Output. Es erleichtert die Log-Analyse und die Weiterleitung von Fehlern zu Diagnosewerkzeugen.
 
-Das Schreiben auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehlermeldungen und andere wichtige Informationen während der Laufzeit ihres Programms anzuzeigen. Es gibt uns die Möglichkeit, kritische Informationen auf eine separate Ausgabe zu senden, anstatt sie zwischen den regulären Programmausgaben zu verlieren.
-
-Wie zu:
-
+## How to:
 ```Rust
-eprintln!("Dies ist eine Fehlermeldung!");
+use std::io::{self, Write};
+
+fn main() {
+    // Schreiben einer einfachen Fehlermeldung auf stderr
+    writeln!(io::stderr(), "Fehler: Eine Datei konnte nicht geöffnet werden.").unwrap();
+
+    // Ausgabe bei Erfolg auf stdout und bei Fehlern auf stderr
+    if let Err(e) = do_something() {
+        writeln!(io::stderr(), "Fehler beim Ausführen der Aktion: {}", e).unwrap();
+    }
+}
+
+fn do_something() -> Result<(), io::Error> {
+    // Code, der eine Aktion ausführt und einen Fehler zurückgeben könnte
+    Err(io::Error::new(io::ErrorKind::Other, "etwas ist schiefgelaufen"))
+}
+```
+Ausgabe:
+```
+Fehler: Eine Datei konnte nicht geöffnet werden.
+Fehler beim Ausführen der Aktion: etwas ist schiefgelaufen
 ```
 
-Standardfehler kann in Rust mit der Funktion `eprintln!` aufgerufen werden. Wir können dem Aufruf auch eine Zeichenkette übergeben, die die Fehlermeldung oder andere relevante Informationen enthält. Diese Zeichenkette wird dann auf den Standardfehler ausgegeben.
+## Deep Dive:
+Stderr wurde konzipiert, um Fehlermeldungen zu trennen, was vor allem in Unix-Systemen nützlich ist. Alternativ könnten Logger-Bibliotheken verwendet werden, aber stderr ist ein einfacher, integrierter Weg. In Rust greift man auf stderr über das `std::io` Modul zu und kann messengerspezifische Writer implementieren, um die Funktionalität zu erweitern.
 
-Wenn wir unser Programm ausführen, sehen wir die Zeichenkette auf der Konsole anders ausgegeben als die regulären Programmausgaben:
-
-```Rust
-Dies ist eine Fehlermeldung!
-```
-
-Tiefe Tauchgänge:
-
-Es hat sich erwiesen, dass das Schreiben auf den Standardfehler eines der nützlichsten Tools für die Fehlerbehandlung in Programmiersprachen ist. Es ermöglicht uns, wichtige Informationen zu erhalten, ohne das Programm zu unterbrechen oder die Ausgaben zu verfälschen.
-
-Es gibt auch Alternativen, um auf den Standardfehler zu schreiben, wie zum Beispiel die Funktion `error!` in der Standardbibliothek von Rust. Diese Funktion ermöglicht es uns, Fehlermeldungen nach Bedarf zu formatieren, anstatt nur eine Zeichenkette auszugeben.
-
-Die Umsetzung des Schreibens auf den Standardfehler erfolgt in Rust auf systemunabhängige Weise, was bedeutet, dass es in verschiedenen Betriebssystemen funktionieren sollte, ohne dass zusätzlicher Code erforderlich ist.
-
-Siehe auch:
-
-- Dokumentation der `eprintln!` Funktion in der Rust-Standardbibliothek: https://doc.rust-lang.org/std/macro.eprintln.html
-- Artikel über das Schreiben auf den Standardfehler in verschiedenen Programmiersprachen: https://www.jstorimer.com/blogs/workingwithcode/7766093-when-to-use-stderr-instead-of-stdout
+## See Also:
+- [Rust Standard Library std::io](https://doc.rust-lang.org/std/io/index.html)
+- [Unix-Philosophie](https://de.wikipedia.org/wiki/Unix-Philosophie)
+- [Rust-Buch über Fehlerbehandlung](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

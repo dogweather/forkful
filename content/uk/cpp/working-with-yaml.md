@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "C++: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?:
-Робота з YAML - це обробка та збереження даних у структурованому форматі, який зручно зчитувати комп'ютерам та людям. Програмісти використовують YAML для збереження конфігурацій та налаштувань програм, а також для обміну даними між різними додатками.
+## Що це таке & Чому?
 
-Як це зробити:
+YAML — це людино-читабельний формат для конфігураційних файлів. Програмісти використовують його, щоб легко серіалізувати дані для зберігання або міжпроцесної комунікації.
+
+## Як це зробити:
+
+У C++ робота з YAML вимагає сторонньої бібліотеки, наприклад, `yaml-cpp`. Ось як ви можете читати та писати YAML файлы:
+
 ```C++
+#include <yaml-cpp/yaml.h>
 #include <iostream>
-#include <yaml-cpp/yaml.h> // підключення бібліотеки для роботи з YAML
+#include <fstream>
+
+// Читаємо YAML
+void ReadYAML(const std::string &filename) {
+    YAML::Node config = YAML::LoadFile(filename);
+    if (config["name"]) {
+        std::cout << "Name: " << config["name"].as<std::string>() << std::endl;
+    }
+}
+
+// Пишемо YAML
+void WriteYAML(const std::string &filename) {
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "name" << YAML::Value << "Viktor";
+    out << YAML::EndMap;
+
+    std::ofstream fout(filename);
+    fout << out.c_str();
+}
 
 int main() {
-    // створення об'єкта для збереження даних
-    YAML::Node myData;
-
-    // додавання даних до об'єкта
-    myData["name"] = "John";
-    myData["age"] = 25;
-
-    // виведення даних у форматі YAML
-    std::cout << myData << std::endl;
-
+    const std::string filename = "example.yaml";
+    
+    WriteYAML(filename);
+    ReadYAML(filename);
+    
     return 0;
 }
 ```
 
-Вивід:
-```
-name: John
-age: 25
-```
+Припустимо, ви отримаєте вивід: `Name: Viktor`.
 
-Глибше копання:
-Історичний контекст: YAML був створений у 2001 році як простий, зручний та читабельний формат для обміну даними. У порівнянні з XML, YAML має більш просту синтаксичну структуру.
+## Поглиблений розбір:
 
-Альтернативи: Існують інші формати для збереження даних, такі як JSON і INI. Вони мають свої переваги та недоліки, тому вибір формату залежить від конкретного завдання.
+YAML виник у 2001 році як більш читабельна альтернатива XML. Він дозволяє вкладеність, займає менше місця і простий у використанні. Альтернативи YAML — це JSON і XML, але YAML часто використовується завдяки його простоті. Бібліотека `yaml-cpp` є найпоширенішою для C++, вона об'єктно-орієнтована і підтримує серіалізацію/десеріалізацію складних даних.
 
-Деталі реалізації: YAML підтримує різні типи даних, включаючи рядки, числа, списки та словники. Крім того, він може бути вкладений, тобто даний об'єкт може містити інші об'єкти.
+## Дивіться також:
 
-Дивись також:
-- Офіційна специфікація YAML: https://yaml.org/spec/
-- Документація бібліотеки YAML-CPP: https://github.com/jbeder/yaml-cpp/wiki/Tutorial
+- Офіційний сайт YAML: https://yaml.org/
+- `yaml-cpp` GitHub: https://github.com/jbeder/yaml-cpp
+- YAML специфікація: https://yaml.org/spec/1.2/spec.html
+- YAML в порівнянні з JSON і XML: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other

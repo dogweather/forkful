@@ -1,7 +1,7 @@
 ---
-title:                "JSON を使ったコンピュータプログラミング"
-html_title:           "Clojure: JSON を使ったコンピュータプログラミング"
-simple_title:         "JSON を使ったコンピュータプログラミング"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜやるのか？
+## What & Why? (何となぜ？)
+JSONはデータ交換のフォーマット。ClojureでJSONを扱うことは、ウェブアプリやAPIとのデータ交換が必要な時に重要。
 
-JSONとは、Java Script Object Notationの略で、データを保持するためのフォーマットです。プログラマーがJSONを使うのは、データを簡単に読み書きできるためです。
-
-## 方法：
-
-ClojureでJSONデータを扱う方法を説明します。まず、ClojureのライブラリであるCheshireを使い、JSONデータを読み込みます。
+## How to: (方法)
+Clojureには`cheshire`というライブラリがよく使われる。JSONのエンコードとデコードが簡単にできる。
 
 ```Clojure
-(def data (cheshire.core/parse-string "{\"name\":\"John\", \"age\":30}"))
+;; 依存関係の追加
+;; [cheshire "5.10.1"] ;project.cljに追加またはdeps.ednに対応する形で
+
+(require '[cheshire.core :as json])
+
+;; JSONエンコード
+(json/encode {:foo "bar" :num 42})
+;; => "{\"foo\":\"bar\",\"num\":42}"
+
+;; JSONデコード
+(json/decode "{\"foo\":\"bar\",\"num\":42}" true)
+;; => {:foo "bar", :num 42}
 ```
-dataという変数に、JSONデータがマップ形式で格納されます。
 
-次に、JSONデータを書き込む方法を説明します。
+## Deep Dive (掘り下げ)
+1999年にJSONが登場。軽量で読みやすく、JavaScriptとの親和性が高い。ClojureでのJSON処理には`cheshire`以外にも`clojure.data.json`があるが、機能面では`cheshire`の方が一般的に優れているとされる。
 
-```Clojure
-(def json-string (cheshire.core/generate-string {:name "John", :age 30}))
-```
-json-stringという変数に、JSONデータが文字列として格納されます。
-
-## 詳細を調べる：
-
-JSONは、複数のプログラミング言語で使用されているデータフォーマットです。JSONは軽量で読み書きがしやすいため、ネットワーク上でデータをやりとりする際によく使われます。
-
-JSONの代替としては、XMLやYAMLなどがありますが、それらよりもJSONの方が読み書きが簡単です。
-
-Clojureでは、Cheshireの他にもClojure.data.jsonやjava.io.StringWriterなどのライブラリを使用してJSONデータを扱うことができます。
-
-## 参考資料：
-
-- [ClojureのCheshireライブラリ](https://github.com/dakrone/cheshire)
-- [JSONの仕様書](https://www.json.org/json-ja.html)
-- [XMLとの比較](https://www.safaribooksonline.com/library/view/head-first-servlets/9780596516680/ch04.html)
+## See Also (関連情報)
+- [Cheshire GitHub](https://github.com/dakrone/cheshire): Cheshireライブラリ
+- [clojure.data.json GitHub](https://github.com/clojure/data.json): clojure.data.jsonライブラリ
+- [Clojure公式サイト](https://clojure.org): Clojureに関するさらなる情報
+- [JSON公式サイト](https://www.json.org/json-en.html): JSONの詳細

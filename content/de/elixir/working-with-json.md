@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "Elixir: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Arbeiten mit JSON ist ein wichtiger Bestandteil der modernen Programmierung. JSON steht für JavaScript Object Notation und ist ein Format zum Austausch von Daten zwischen Servern und Anwendungen. Programmierer nutzen JSON, weil es einfach zu lesen und zu schreiben ist und da es ein beliebtes Format für API-Endpunkte ist.
+## Was & Warum?
+JSON steht für JavaScript Object Notation. Entwickler nutzen es, weil es ein leichtgewichtiges Format für den Austausch von Daten zwischen Servern und Web-Apps ist. Es ist einfach zu lesen und zu schreiben.
 
-# Wie geht das?
-Elixir hat eine integrierte Bibliothek namens `Jason`, die die Verarbeitung von JSON-Daten ermöglicht. Zum Beispiel können wir Daten in ein JSON-Objekt umwandeln:
-```Elixir
-data = %{name: "Max", age: 25}
-json = Jason.encode!(data)
+## How to:
+Arbeiten mit JSON in Elixir erfordert das `Jason` Paket. Füge `{:jason, "~> 1.2"}` zu deiner `mix.exs` hinzu und führe `mix deps.get` aus. Hier sind ein paar Beispiele:
+
+```elixir
+# Dezimal nach JSON konvertieren
+iex> map = %{name: "Elixir", awesome: true}
+iex> Jason.encode!(map)
+"{\"name\":\"Elixir\",\"awesome\":true}"
+
+# JSON parsen
+iex> json = "{\"language\":\"Elixir\",\"rating\":5}"
+iex> Jason.decode!(json)
+%{"language" => "Elixir", "rating" => 5}
 ```
-Dieser Code nimmt ein beliebiges Elixir-Map-Objekt und wandelt es in das äquivalente JSON um.
 
-Und umgekehrt können wir JSON in ein Elixir-Objekt umwandeln:
-```Elixir
-json = "{\"name\": \"Max\", \"age\": 25}"
-data = Jason.decode!(json)
-```
-Dieser Code liest einen JSON-String und wandelt ihn in ein Elixir-Map-Objekt um.
+## Deep Dive
+JSON wurde Anfang der 2000er als einfachere Alternative zu XML entworfen. Neben `Jason` könntest du auch `Poison` als Elixir-Paket nutzen. Elixir nutzt binäre Patter-Matching, was JSON-Parsing besonders effizient macht.
 
-# Tief eintauchen
-JSON wurde in den frühen 2000er Jahren als Alternative zum damals populären XML-Format entwickelt. Es ist leichtgewichtiger und einfacher zu lesen als XML, was es zu einer beliebten Wahl für den Datenaustausch gemacht hat.
-
-Obwohl Elixir die `Jason`-Bibliothek als Standard hat, gibt es auch andere Bibliotheken, wie z.B. `Poison` oder `Jiffy`, die ähnliche Funktionen haben. Es lohnt sich, sie zu vergleichen und diejenige auszuwählen, die am besten zu Ihrem Projekt passt.
-
-Die `Jason`-Bibliothek ist in Elixir eingebaut und erfordert keine zusätzlichen Installationen. Außerdem unterstützt sie sowohl die Verarbeitung von JSON im Speicher als auch direkt von einer URL. Sie kann auch für größere Datenmengen effizient verwendet werden.
-
-# Siehe auch
-- Dokumentation für [Jason](https://hexdocs.pm/jason/readme.html)
-- Elixir-Bibliotheken für JSON: [Poison](https://github.com/devinus/poison), [Jiffy](https://github.com/davisp/jiffy)
+## See Also
+- [Jason GitHub repository](https://github.com/michalmuskala/jason)
+- [Poison - Ein weiteres JSON-Paket für Elixir](https://github.com/devinus/poison)

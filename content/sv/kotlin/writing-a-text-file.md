@@ -1,6 +1,6 @@
 ---
 title:                "Skriva en textfil"
-html_title:           "Kotlin: Skriva en textfil"
+html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,20 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva en textfil innebär i grund och botten att spara information på en dator i form av text istället för binära filer. Programmerare gör det för att kunna lagra och bearbeta data på ett enkelt och läsbart sätt.
+Att skriva till en textfil innebär att spara data som textsträngar i en fil. Programmerare gör det för att bevara data mellan sessioner, dela information eller för loggning.
 
-## Så här gör du:
-För att skriva en textfil i Kotlin behövs det först skapas en fil med hjälp av File() konstruktorn. Därefter används funktionen writeText() för att skriva den önskade informationen till filen. Här nedan följer ett exempel:
-
+## Hur gör man:
 ```Kotlin
-val fil = File("mittDokument.txt")
-fil.writeText("Detta är en textfil.")
+import java.io.File
+
+fun main() {
+    val text = "Hej, det här är text sparad i en fil!"
+    File("exempel.txt").writeText(text)
+    println("Texten har sparats!")
+}
 ```
-Om filen redan finns kommer innehållet att skrivas över, annars kommer en ny fil att skapas.
+Detta skapar en fil `exempel.txt` och skriver texten "Hej, det här är text sparad i en fil!" till den.
 
-## Djupdykning:
-Skrivande av textfiler är en vanlig och nödvändig del av programmering. Det används ofta för att spara användarinformation eller för att exportera data till andra program. I Kotlin finns det flera olika metoder för att skriva textfiler, såsom användning av BufferedWriter eller PrintWriter.
+## Fördjupning
+Att skriva textfiler är ett klassiskt programmeringsbehov som har funnits ända sedan de tidiga datordagarna. Alternativ till `writeText` inkluderar strömmar (som `FileOutputStream` eller `PrintWriter`) för större filer eller mer kontroll. `writeText` använder `UTF-8` som standard och skriver om filen; för att lägga till text, använd `appendText`.
 
-Det finns också alternativ till textfiler, som till exempel att använda databaser för att lagra och manipulera data. Men textfiler är fortfarande en vanlig och enkel metod för att hantera information.
-
-När du skriver en textfil i Kotlin används en teckenkodning som standard för att översätta tecken till binära värden. Det är viktigt att välja rätt teckenkodning för att kunna läsa och tolka filens innehåll korrekt.
+## Se även
+- [Kotlin API Reference for File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Tutorial on file handling in Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-io.html)

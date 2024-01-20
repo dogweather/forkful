@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Bash: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,25 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué? 
-Trabajar con CSV (Comma-Separated Values) significa manejar archivos de texto estructurados en columnas y filas, que pueden ser exportados y leídos por diferentes programas. Los programadores usan CSV porque es una forma sencilla de almacenar y compartir datos de manera eficiente. 
+## Qué es y por qué?
+Trabajar con CSV (valores separados por comas) significa manipular archivos de texto que almacenan tablas de datos, cada línea un registro y cada registro dividido en campos por comas. Los programadores lo usan por su simplicidad y compatibilidad universal para importar, exportar y manipular datos.
 
-## ¡Cómo hacerlo!
-Aquí te mostramos cómo importar un archivo CSV a una tabla de MySQL utilizando la opción LOAD DATA INFILE. Primero, asegúrate de tener habilitada la opción secure_file_priv para que MySQL pueda acceder a los archivos CSV en tu sistema. Luego, ejecuta este comando en tu consola Bash:
+## Cómo hacerlo:
+Vamos directo al grano con algunos ejemplos de manipulación de CSV en Bash.
 
+```Bash
+# Leer y mostrar contenido de un archivo CSV
+cat datos.csv
+
+# Contar el número de filas en un archivo CSV
+wc -l < datos.csv
+
+# Mostrar la primera columna de todos los registros
+cut -d',' -f1 datos.csv
+
+# Añadir una columna al final de cada fila
+awk -F',' '{print $0",nueva_columna"}' datos.csv
+
+# Filtrar filas que contienen 'ejemplo'
+grep 'ejemplo' datos.csv
+
+# Ordenar el contenido de un archivo CSV según la segunda columna
+sort -t',' -k2 datos.csv
 ```
-mysql -e "LOAD DATA INFILE 'ruta/al/archivo.csv' 
-        INTO TABLE nombre_de_tabla 
-        FIELDS TERMINATED BY ',' 
-        ENCLOSED BY '\"' 
-        LINES TERMINATED BY '\n' 
-        IGNORE 1 LINES;"
+Ejemplo de salida para el comando `cut`:
+```
+id_usuario
+123
+456
+789
 ```
 
-El resultado será la importación exitosa de tus datos del archivo CSV a la tabla especificada en MySQL.
+## Más detalles:
+CSV es el formato de intercambio de datos más simple, concebido en los inicios de la informática personal cuando se buscaba una forma eficiente de mover datos en aplicaciones como bases de datos y hojas de cálculo. A pesar de su simplicidad, hay alternativas como JSON o XML, que proporcionan estructuras más complejas y metadatos. Sin embargo, CSV sigue siendo relevante por su facilidad de uso y amplia aceptación. Implementar scripts de Bash para manipular CSV es directo, pero se complica con datos complejos o cuando se requieren acciones más avanzadas, para lo cual se podrían considerar herramientas como `csvkit`.
 
-## Deep Dive
-El formato CSV fue desarrollado en los años 70 como una forma sencilla de almacenar y compartir datos en distintos sistemas. Aunque es ampliamente utilizado para almacenar datos tabulares, existen otros formatos como JSON y XML que también son comunes en el mundo de la programación. En Bash, también es posible trabajar con estos formatos utilizando herramientas como jq y xmllint.
+## Ver también:
+Para ampliación y herramientas adicionales consulta los siguientes enlaces:
 
-## Ver también
-Para obtener más información sobre el formato CSV y cómo trabajar con él en Bash, puedes consultar la documentación oficial de MySQL: [MySQL Documentation](https://dev.mysql.com/doc/refman/8.0/en/load-data.html) y la página de Bash en la Wiki de Ubuntu: [Bash Documentation](https://wiki.ubuntu.com/Documentation/Howto/Manipulating_CSV_files).
+- GNU `coreutils`: https://www.gnu.org/software/coreutils/manual/coreutils.html
+- `awk`: https://www.gnu.org/software/gawk/manual/gawk.html
+- `csvkit`: https://csvkit.readthedocs.io/en/latest/
+- Bash scripting guide: https://tldp.org/LDP/Bash-Beginners-Guide/html/

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Go: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Travailler avec YAML en Go est tout sur la manipulation des données structurées: lire, écrire et modifier. Les programmeurs le font pour configurer des applis et échanger des données facilement.
 
-# Utiliser YAML avec Go
+## How to:
+Installe le package `go-yaml/yaml` avec :
 
-## Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent?
+```bash
+go get gopkg.in/yaml.v2
+```
 
-Travailler avec YAML, ou "YAML Ain't Markup Language", est une façon de stocker et de transférer des données dans un format lisible pour les humains. Les programmeurs utilisent YAML car il est facile à comprendre et à modifier, et il peut être utilisé pour configurer des applications ou des scripts.
+Définis une structure et lis le YAML :
 
-## Comment faire:
+```Go
+package main
 
-Voici un exemple simple de YAML en Go:
-
-```go
 import (
     "fmt"
-
-    "github.com/go-yaml/yaml"
+    "log"
+    "gopkg.in/yaml.v2"
 )
+
+type Config struct {
+    Version string
+    IsEnabled bool
+    Features []string
+}
 
 func main() {
     data := `
-        name: John
-        age: 25
-        occupation: Developer`
+version: "3.0"
+isEnabled: true
+features: ["feature1", "feature2"]
+`
 
-    var m map[string]interface{}
-    err := yaml.Unmarshal([]byte(data), &m)
+    var config Config
+    err := yaml.Unmarshal([]byte(data), &config)
     if err != nil {
-        panic(err)
+        log.Fatalf("error: %v", err)
     }
-    fmt.Println(m["name"]) // Output: John
+
+    fmt.Printf("Version: %s\nIsEnabled: %t\nFeatures: %v\n",
+               config.Version, config.IsEnabled, config.Features)
 }
 ```
 
-## Plongée en profondeur:
+Si t'exécutes, tu verras :
 
-- Contexte historique: YAML a été développé en 2001 pour résoudre les problèmes de formats de données complexes et non lisibles.
-- Alternatives: JSON est un autre format populaire pour stocker et transférer des données, mais YAML offre une syntaxe plus lisible pour les humains.
-- Détails d'implémentation: Go a une bibliothèque standard pour travailler avec YAML, mais il existe également des bibliothèques tierces telles que "github.com/go-yaml/yaml".
+```
+Version: 3.0
+IsEnabled: true
+Features: [feature1 feature2]
+```
 
-## À voir également:
+## Deep Dive:
+YAML date des années 2000, un compromis entre XML verbeux et JSON simple. Alternatives: `json` et `toml`. YAML gère bien les données complexes et configurations lues par des humains. Les détails d'implémentation comprennent la gestion des types, l'indentation stricte et les références croisées.
 
-- Documentation officielle de YAML: https://yaml.org/
-- Documentation officielle de Go pour le package YAML: https://pkg.go.dev/gopkg.in/yaml.v3
+## See Also:
+- Documentation officielle de `yaml` : https://pkg.go.dev/gopkg.in/yaml.v2
+- YAML spécifications : https://yaml.org/spec/1.2/spec.html
+- Comparaisons avec JSON et TOML : https://bitfieldconsulting.com/golang/serialize

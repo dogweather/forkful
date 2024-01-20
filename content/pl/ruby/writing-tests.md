@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "Ruby: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Testy w Ruby: Dlaczego i jak programiści je piszą?
+## Co i dlaczego?
 
-## Co & Dlaczego?
-Testy to po prostu fragmenty kodu, które służą do potwierdzenia poprawności działania naszego programu. Są one niezwykle ważnym narzędziem w pracy programisty, ponieważ pozwalają nam upewnić się, że nasz kod jest tak naprawdę odporny na błędy i działa zgodnie z oczekiwaniami. Poza tym, testy dają nam pewność, że zmiany w kodzie nie wpłynęły negatywnie na działanie już istniejących funkcji.
+Testy pozwalają sprawdzić, czy kod robi to co powinien. Dzięki nim możemy szybko wykryć błędy i zabezpieczyć aplikację przed przyszłymi problemami.
 
-## Jak to zrobić:
-W Ruby, pisząc testy, będziemy korzystać z narzędzia o nazwie RSpec. Poniżej znajdziesz przykładowy test, który sprawdza, czy funkcja dodająca dwie liczby działa poprawnie:
+## Jak to zrobić?
 
 ```Ruby
-# definicja testu
-RSpec.describe "addition" do
-  # przykładowa metoda do testowania
-  it "adds two numbers correctly" do
-    # warunek, który powinien zwrócić true
-    expect(2 + 2).to eq(4)
+# Zainstaluj gem 'rspec'
+# W terminalu: gem install rspec
+
+# test_spec.rb
+require_relative 'twoj_kod'
+
+RSpec.describe "An example of a test" do
+  it "checks if method returns correct value" do
+    expect(metoda_testowa(3)).to eq(9)
   end
 end
+
+# twoj_kod.rb
+def metoda_testowa(x)
+  x * x
+end
+
+# Uruchom test w terminalu:
+# rspec test_spec.rb
+
+# Oczekiwany wynik:
+# .
+
+# Finished in 0.00276 seconds (files took 0.15743 seconds to load)
+# 1 example, 0 failures
 ```
 
-## Głębsza analiza:
-Pisanie testów ma długą historię w programowaniu, a pierwsze metody testowania pojawiły się już w latach 60. XX wieku. W Ruby jesteśmy też w stanie pisać testy jednostkowe, które sprawdzają pojedyncze elementy kodu, oraz testy integracyjne, które testują działanie kilku elementów na raz. Alternatywą dla RSpec jest framework MiniTest, jednak większość programistów uważa, że RSpec jest prostszy w użyciu i bardziej intuicyjny.
+## Głębsze spojrzenie
 
-## Zobacz też:
-- Oficjalna strona RSpec: https://rspec.info/
-- MiniTest: https://rubygems.org/gems/minitest
-- Artykuł na temat testowania w Ruby: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+Testy w Ruby zaczęły być popularne po wydaniu narzędzia RSpec około 2005 roku. Alternatywy to Minitest czy Test::Unit. RSpec wykorzystuje składnię typu DSL (Domain Specific Language), co sprawia, że testy są bardziej czytelne. Implementacja testów wymaga znajomości asercji i metod 'expect', które pozwalają określić oczekiwane zachowania testowanej funkcji.
+
+## Zobacz również
+
+- RSpec documentation: https://rspec.info/documentation/
+- RubyGuides testing tutorial: https://www.rubyguides.com/2018/07/rspec-tutorial/
+- Better Specs {RSpec best practices}: http://www.betterspecs.org/
+
+Pamiętaj, że regularna praktyka i eksploracja możliwości jest najlepszą metodą nauki pisania testów.

@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "Haskell: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,26 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skriva till standardfel (stderr) är att skicka felmeddelanden och diagnostik separat från huvudprogrammets output (stdout). Det är viktigt för att kunna spåra fel smidigt och hantera loggar effektivt.
 
-Att skriva till standard error är ett sätt för programmerare att skicka meddelanden direkt till felutmatningen istället för den vanliga utmatningen. Detta är användbart när man vill separera olika typer av utmatningar, till exempel felmeddelanden från vanlig programoutput. 
-
-## Hur?
+## Hur gör man:
+Haskell kod använder `System.IO`-modulen för att hantera stderr. Använd `hPutStrLn` tillsammans med `stderr`.
 
 ```Haskell
-import System.IO
-hPutStr stderr "Felmeddelande: division med noll"
+import System.IO (stderr, hPutStrLn)
+
+main = do
+  -- Skriv ut ett normalt meddelande till stdout
+  putStrLn "Detta är ett meddelande till standard output."
+
+  -- Skriv ut ett felmeddelande till stderr
+  hPutStrLn stderr "Detta är ett felmeddelande till standard error."
 ```
 
-Output:
+Testa genom att omdirigera output i terminalen:
+
+```bash
+runhaskell dittprogram.hs > output.txt 2> error.log
 ```
-Felmeddelande: division med noll
-```
+
+`output.txt` kommer innehålla "Detta är ett meddelande till standard output." och `error.log` kommer ha "Detta är ett felmeddelande till standard error."
 
 ## Djupdykning
-
-I historisk kontext var standard error en del av Unix-systemet och tillät utskrifter på skärmen samtidigt som programmet kördes. Numera är standard error en standardiserad kommunikationskanal för felmeddelanden mellan program och användare. Det finns också alternativ till att använda standard error, som till exempel att logga felmeddelanden istället. Implementeringen av standard error varierar beroende på programmeringsspråk och operativsystem, men implementeringen i Haskell är standardiserad och stöds av System.IO modulen.
+Historiskt sätt separeras stdout och stderr för att erbjuda en ren output-ström för data och en annan för fel. Alternativ inkluderar att logga till en fil eller använda externa bibliotek för avancerad logghantering. Intern implementation i Haskell använder de lågnivåfunktioner som operativsystemet tillhandahåller för att skriva till dessa strömmar.
 
 ## Se även
-
-- [HDocs för System.IO modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Ett diskussionsforum om Haskell](https://www.reddit.com/r/haskell/)
+- Haskell-dokumentationen för `System.IO`: https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html
+- Bra genomgång av stdout vs stderr: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout
+- Detaljerad guide till loggning i Haskell: https://ocharles.org.uk/posts/2012-12-04-24-days-of-hackage-hslogger.html

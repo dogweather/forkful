@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Python: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Python"
 category:             "Python"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Написання тестів - це процес перевірки правильності програмного коду. Це допомагає розробникам уникати помилок та забезпечує надійність програми.
+## Що це таке & Навіщо?
+Тестування коду - це перевірка, чи правильно працює програма. Програмісти пишуть тести, щоб виявляти помилки, забезпечити якість та спростити подальші зміни у коді.
 
-Як це зробити?
-Нижче наведені приклади коду та вихідного результату користувача для написання тестів у Python.
-
+## Як це робити:
 ```Python
-def multiply(x, y):
-    return x * y
-    
-def test_multiply():
-    assert multiply(2, 3) == 6
-    assert multiply(5, 0) == 0
-    assert multiply(-2, 4) == -8
+import unittest
 
-test_multiply() # Вивід: Немає вихідного результату, тому тести пройшли успішно
+def add(x, y):
+    return x + y
+
+class SimpleTest(unittest.TestCase):
+    def test_add_function(self):
+        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(2, 2), 5)
+
+if __name__ == '__main__':
+    unittest.main()
 ```
+Вивід:
+```
+...
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
 
-Vertigo Studio also provides data...
+OK
+```
+## Поглиблене вивчення:
+Тестування коду присутнє з часів початку програмування. Альтернативи `unittest` в Python включають `pytest` і `nose2`. Ідея полягає в автоматизації перевірок та ізоляції функцій для точного виявлення помилок. Хороший тест покриває типові випадки, крайові умови та помилкові вхідні дані.
 
-Глибинне дослідження
-Написання тестів виникло на початку XX століття під час розвитку індустрії софтуерного програмування. Сьогодні існують різні підходи до написання тестів, включаючи підхід "перед тим як написати код" та підхід "після написання коду". У Python існують такі фреймворки для тестування, як Pytest та Unittest, які допомагають розробникам писати тести з меншими зусиллями.
-
-Дивіться також
-- Офіційна документація Python для написання тестів [https://docs.python.org/3/library/unittest.html]
-- Офіційний сайт Pytest [https://docs.pytest.org/en/stable/]
-- Стаття на Medium про написання тестів для Python [https://medium.com/python-pandemonium/testing-your-code-in-python-3-can-finally-be-fun-92e2121079f5]
+## Додатково:
+- Документація `unittest`: https://docs.python.org/3/library/unittest.html
+- Документація `pytest`: https://docs.pytest.org/en/latest/
+- Як писати ефективні тести: https://realpython.com/python-testing/

@@ -1,7 +1,7 @@
 ---
-title:                "jsonを利用する"
-html_title:           "Python: jsonを利用する"
-simple_title:         "jsonを利用する"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何故？
+## What & Why?
+### なぜJSONを扱うのか?
+JSONはデータ交換のフォーマットです。読みやすく書きやすいため、APIや設定ファイルで広く使われています。
 
-JSONとは、プログラマーがデータを保存、転送、または共有するために使用するフォーマットの一種です。JSONは、さまざまな言語やプログラムによって簡単に読み取ることができるので、広く使用されています。
-
-## 方法：
-
-Pythonを使用してJSONを扱う方法を見てみましょう。
-```
-# JSONモジュールをインポートする
+## How to:
+### やり方:
+```Python
 import json
 
-# JSONデータを文字列として定義する
-json_data = '{"name": "John", "age": 30, "city": "Tokyo"}'
+# JSON文字列をPythonの辞書に変換する
+json_string = '{"name": "Tanaka", "age": 30, "is_student": false}'
+data = json.loads(json_string)
+print(data)
 
-# JSONをPythonの辞書に変換する
-python_data = json.loads(json_data)
-
-# 辞書のキーと値を出力する
-print(python_data["name"])
-print(python_data["age"])
-print(python_data["city"])
-
-```
-出力：
-```
-John
-30
-Tokyo
+# Pythonの辞書をJSON文字列に変換する
+python_dict = {'name': 'Sato', 'age': 25, 'is_student': True}
+json_data = json.dumps(python_dict, ensure_ascii=False, indent=2)
+print(json_data)
 ```
 
-## 深層スクラップ
+出力:
+```
+{'name': 'Tanaka', 'age': 30, 'is_student': False}
+{
+  "name": "Sato",
+  "age": 25,
+  "is_student": true
+}
+```
 
-JSONは、JavaScript Object Notationの頭字語であり、1999年に開発されました。それ以来、JSONはWeb開発やデータの共有に広く使用されてきました。代わりに、XMLを使用することもできますが、JSONの方がよりシンプルであり、データの整形と読み取りも容易です。Python以外にも、JavaScriptやJava、PHPなど、さまざまなプログラム言語でJSONを使用することができます。
+## Deep Dive
+### 深掘り:
+JSONはJavaScript Object Notationの略で、元々はJavaScriptのオブジェクト記法に由来します。しかし、そのシンプルさから非JavaScript環境でも採用されています。XMLはJSONの代替として使われることもありますが、JSONのほうが扱いやすく軽量です。Pythonでは`json`モジュールを用いて簡単にJSONデータを扱うことが可能になっており、`load`と`loads`で読み込み、`dump`と`dumps`で出力できます。
 
-## 関連リンク
-
-- JSON公式サイト: https://www.json.org/json-en.html
-- Python公式ドキュメント: https://docs.python.org/3/library/json.html
+## See Also
+### 参照:
+- 公式ドキュメント: https://docs.python.org/3/library/json.html
+- JSONの仕様: https://www.json.org/json-ja.html
+- W3SchoolsのJSONチュートリアル: https://www.w3schools.com/js/js_json_intro.asp

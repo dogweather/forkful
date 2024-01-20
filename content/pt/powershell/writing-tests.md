@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "PowerShell: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Por Que?
+Escrever testes é o processo de verificar se o código cumpre o que promete. Programadores fazem isso para garantir qualidade, evitar erros e economizar tempo com manutenção futura.
 
-Ao escrever código, os programadores devem garantir que o mesmo seja eficiente, funcional e livre de erros. A escrita de testes é uma técnica utilizada para validar o código e garantir que ele atenda aos requisitos esperados.
-
-## Como fazer:
-
-Para escrever testes em PowerShell, é necessário utilizar o módulo Pester, que é projetado especificamente para esse propósito. O Pester permite criar testes unitários, integração e funcionalidades, bem como relatar resultados detalhados.
-
+## Como Fazer:
+Vamos usar o Pester, um framework de testes para PowerShell. Instala e roda com estes comandos:
 ```PowerShell
-Describe 'Minha função teste' {
-    It 'verifica se a saída é a esperada' {
-        $variavel = 5 + 3
-        $variavel | Should Be 8
+Install-Module -Name Pester -Force -SkipPublisherCheck
+```
+Exemplo de um teste simples verificando se 2+2 é igual a 4:
+```PowerShell
+Describe "Teste de soma simples" {
+    It "2 + 2 é igual a 4" {
+        $sum = 2 + 2
+        $sum | Should -Be 4
     }
 }
+
+Invoke-Pester
+```
+Se passar, mostra:
+```
+Describing Teste de soma simples
+ [+] 2 + 2 é igual a 4 40ms (37ms|3ms)
+Tests completed in 40ms
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
 ```
 
-A saída do teste será exibida no formato de pontos verdes (```.```) se for bem-sucedido ou pontos vermelhos (```F```) se falhar.
+## Aprofundamento:
+Pester surgiu em 2009, virando o padrão de facto para testes no PowerShell. Alternativas incluem psake e NoSQLT, mas Pester destaca-se pela integração profunda com o PowerShell e suporte da comunidade. O framework permite mock objects e tem suporte para TDD (Test-Driven Development).
 
-## Aprofundando:
-
-A prática de escrever testes remonta ao final do século XX, quando programadores começaram a reconhecer a importância de ter um processo de teste rigoroso para garantir a qualidade do código. Além do Pester, existem outras ferramentas disponíveis para testes em PowerShell, como o NUnit e o RSpec.
-
-O Pester também oferece recursos de "mocking", que permitem simular os resultados de funções e comandos para testar diferentes cenários de maneira controlada. Além disso, os testes podem ser executados automaticamente sempre que houver uma nova versão do código ou durante integração contínua.
-
-## Veja também:
-
-- [Documentação do Pester](https://pester.dev/)
-- [Vídeo sobre a importância de testes em PowerShell](https://www.youtube.com/watch?v=HXbZPHXgfYM)
+## Veja Também:
+- [Página oficial do Pester](https://pester.dev)
+- [Repositório do Pester no GitHub](https://github.com/pester/Pester)

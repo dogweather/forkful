@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Ruby: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і чому?
+## Що та Чому?
+JSON - це формат даних для обміну. Програмісти використовують його через його читабельність людиною і простоту інтеграції з більшістю мов програмування, включно з Ruby.
 
-Робота з JSON це процес обробки інформації у форматі JSON в програмі. Розробники зазвичай працюють з JSON, оскільки цей формат є широко використовуваним у веб-розробці та додатках.
-
-# Як?
+## Як це робити:
+В Ruby для роботи з JSON є вбудований модуль. Нижче - приклади:
 
 ```Ruby
 require 'json'
 
-# Створення об'єкта JSON
-json_object = {"name" => "John", "age" => 25}
+# Конвертація рядка JSON в хеш Ruby
+json_string = '{"name":"Olivia","age":30,"city":"Kyiv"}'
+ruby_hash = JSON.parse(json_string)
+puts ruby_hash
+# => {"name"=>"Olivia", "age"=>30, "city"=>"Kyiv"}
 
-# Перетворення у JSON рядок
-json_string = json_object.to_json
-
-# Зчитування та парсинг JSON файлу
-json_data = File.read('file.json')
-parsed_data = JSON.parse(json_data)
-
-# Відображення потрібної інформації з об'єкту JSON
-puts parsed_data[0]["name"]
+# Конвертація хешу Ruby в рядок JSON
+ruby_hash = { name: 'Andriy', age: 25, city: 'Lviv' }
+json_string = ruby_hash.to_json
+puts json_string
+# => {"name":"Andriy","age":25,"city":"Lviv"}
 ```
 
-Вивід:
-```
-John
-```
+## Поглиблений огляд:
+JSON (JavaScript Object Notation) з'явився у 2000 році. Сьогодні є такі альтернативи, як XML та YAML, але JSON залишається популярним через свою легкість використання. В Ruby для роботи з JSON використовують стандартний модуль `json`. Він дозволяє легко парсити JSON-рядки та серіалізувати об'єкти Ruby.
 
-# Глибокий занурення
-
-JSON був створений Дугласом Крокфордом у 1999 році та швидко став популярним завдяки простоті та відкритості. Існують також альтернативні формати, такі як XML та YAML, але JSON використовує менше місця для зберігання даних та є більш читабельним.
-
-Парсинг та створення об'єкта JSON можна також виконати з використанням методів `load` та `dump` замість `File.read` та `to_json`. Також, якщо потрібно обробляти великі об'єкти JSON, можна використовувати потоковий парсер `JSON::Stream`.
-
-# Дивись також
-
-- [Офіційна документація по Ruby та JSON](https://ruby-doc.org/stdlib-2.3.1/libdoc/json/rdoc/JSON.html)
-- [JSON, або що, як та чому?](https://medium.com/nuances-of-programming/json-a1afdf31a5c9)
-- [Переглянути приклади коду JSON на GitHub](https://github.com/search?q=language%3Aruby+json)
+## Дивіться також:
+- [Документація модуля JSON для Ruby](https://ruby-doc.org/stdlib-3.1.1/libdoc/json/rdoc/JSON.html)
+- [JSON офіційний сайт](https://www.json.org/json-uk.html)

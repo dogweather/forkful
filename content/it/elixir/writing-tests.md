@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Elixir: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,51 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa sono i test e perché i programmatori li scrivono?
+## What & Why?
+Scrivere test significa automatizzare il controllo di parti di codice per assicurarsi che funzionino come previsto. I programmatori fanno ciò per prevenire bug, facilitare manutenzione e migliorare la qualità del codice.
 
-Scrivere test è il processo di creare codice che verifica che il nostro software funzioni come ci aspettiamo. I programmatori lo fanno per essere sicuri che il nostro codice sia affidabile e funzioni correttamente, identificando eventuali errori o bug prima che il software venga rilasciato agli utenti.
-
-Come: Esempi di codice e output di esempio
-
-```Elixir
-defmodule Calculator do
-  def add(x, y) do
-  	x + y
-  end
-
-  def subtract(x, y) do
-  	x - y
-  end
+## How to:
+Installazione di ExUnit:
+```elixir
+# Nel mix.exs, assicurati che ExUnit sia nella sezione 'deps'
+defp deps do
+  [
+    {:ex_unit, "~> 1.12", only: :test}
+  ]
 end
+```
 
-defmodule CalculatorTest do
+Creiamo un test semplice:
+```elixir
+# file: test/example_test.exs
+defmodule ExampleTest do
   use ExUnit.Case
 
-  test "addition" do
-    assert Calculator.add(2, 2) == 4
-  end
-
-  test "subtraction" do
-    assert Calculator.subtract(5, 2) == 3
+  test "la somma di 1 e 2 è 3" do
+    assert 1 + 2 == 3
   end
 end
 ```
 
-Output di esempio:
-
-```sh
+Eseguiamo i test:
+```shell
 $ mix test
-Compiling 2 files (.ex)
-...
-
-Finished in 0.03 seconds
-2 tests, 0 failures
 ```
 
-Approfondimento: Contesto storico, alternative e dettagli di implementazione sui test
+Output previsto:
+```
+Compiling 1 file (.ex)
+.
 
-Scrivere test è una pratica comune nel processo di sviluppo del software. Sebbene non sia obbligatoria, è considerata una best practice per garantire la qualità del codice. Alcune alternative al testing unitario sono il testing di integrazione e il testing funzionale, che coprono rispettivamente la gestione delle interfacce tra le diverse parti del software e i casi d'uso completi.
+Finished in 0.03 seconds (0.03s async, 0.00s sync)
+1 test, 0 failures
 
-Un modo comune per scrivere test in Elixir è utilizzare il modulo ```ExUnit.Case```, che fornisce una serie di macro per definire test e assert personalizzati. Inoltre, Elixir offre anche il supporto per i test generativi con il modulo ```StreamData```, che genera dati casuali per testare il nostro codice in modo più approfondito.
+Randomized with seed 54321
+```
 
-Vedi anche: Link correlati
+## Deep Dive
+ExUnit è il framework di test integrato in Elixir sin dalla sua creazione da José Valim; si ispira a Ruby's MiniTest. Alternativamente, si possono usare strumenti come ESpec per un approccio ispirato a RSpec, o Common Test per compatibilità con Erlang. Implementando i test, viene sfruttata la concorrenza fornita dalla macchina virtuale Erlang per accelerare l'esecuzione.
+
+## See Also
+- [Elixir School Testing](https://elixirschool.com/en/lessons/basics/testing/)
+- [Documentation for ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Awesome Elixir - A collection of awesome Elixir libraries](https://github.com/h4cc/awesome-elixir#testing)

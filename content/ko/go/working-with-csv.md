@@ -1,7 +1,7 @@
 ---
-title:                "csv 작업하기"
-html_title:           "Go: csv 작업하기"
-simple_title:         "csv 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-CSV 파일은 쉼표로 구분된 값을 저장하는 파일 형식입니다. 프로그래머들은 이 파일을 사용하며 데이터를 효율적으로 관리할 수 있습니다.
+## What & Why? (무엇과 왜?)
 
-## 방법:
-CSV 파일을 처리하는 방법은 간단합니다. 우선, "encoding/csv" 패키지를 import 해야 합니다. 그 후, 다음과 같은 코드를 사용하여 파일을 열고 처리할 수 있습니다.
+CSV는 Comma-Separated Values를 의미하며 데이터를 표 형식으로 저장합니다. 프로그래머들은 데이터 교환과 처리에 CSV를 사용하며, 간편하고 호환성이 높아 많이 사용됩니다.
+
+## How to: (어떻게 하나요?)
+
+```Go
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"os"
+	"strings"
+)
+
+func main() {
+	// 쓰기 예제
+	csvContent := [][]string{
+		{"name", "age", "city"},
+		{"Alice", "25", "New York"},
+		{"Bob", "30", "San Francisco"},
+	}
+
+	csvFile, err := os.Create("example.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer csvFile.Close()
+
+	writer := csv.NewWriter(csvFile)
+	for _, row := range csvContent {
+		if err := writer.Write(row); err != nil {
+			panic(err) // row 쓰기 실패
+		}
+	}
+	writer.Flush()
+
+	// 읽기 예제
+	csvFile, err = os.Open("example.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer csvFile.Close()
+
+	reader := csv.NewReader(csvFile)
+	records, err := reader.ReadAll()
+	if err != nil {
+		panic(err) // CSV 읽기 실패
+	}
+
+	for _, record := range records {
+		fmt.Println(strings.Join(record, ", "))
+	}
+}
 ```
-file, err := os.Open("data.csv")
-if err != nil {
-    log.Fatal(err)
-}
-defer file.Close()
 
-reader := csv.NewReader(file)
-records, err := reader.ReadAll()
-if err != nil {
-    log.Fatal(err)
-}
+출력 예제:
 
-for _, record := range records {
-    fmt.Println(record)
-}
 ```
-위 코드는 CSV 파일을 읽고 각 라인을 출력합니다.
+name, age, city
+Alice, 25, New York
+Bob, 30, San Francisco
+```
 
-## 깊이 빠져들기:
-CSV 파일은 1970년대 초기 표를 저장하기 위해 만들어졌습니다. 이 후로도 여전히 널리 사용되고 있지만 XML, JSON 등의 대안들이 있습니다. Go의 "encoding/csv" 패키지는 RFC 4180에 따라 제작되었습니다. CSV 파일을 처리할 때 유의해야 할 점으로는 모든 파일이 제목, 라인 수 등의 공통 구문을 가지고 있지는 않다는 것입니다.
+## Deep Dive (심층 분석)
 
-## 관련 자료:
-- [CSV 파일 형식 설명서](https://tools.ietf.org/html/rfc4180)
-- [Go의 encoding/csv 패키지 문서](https://golang.org/pkg/encoding/csv/)
+CSV는 1972년 IBM에서 사용하기 시작했고, 가장 단순한 텍스트 기반 데이터 형식 중 하나입니다. JSON이나 XML 같은 대안들도 있지만, CSV는 가벼움과 호환성 때문에 여전히 인기가 많습니다. Go에서는 `encoding/csv` 패키지를 이용해 CSV 읽기 및 쓰기를 간단히 수행할 수 있으며, 네트워크 데이터 전송, 파일 조작 등 다양한 상황에 사용됩니다.
+
+## See Also (더 보기)
+
+- Go언어 공식 문서 내 CSV 패키지 설명 [encoding/csv](https://golang.org/pkg/encoding/csv/)

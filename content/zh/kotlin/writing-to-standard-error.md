@@ -1,6 +1,6 @@
 ---
 title:                "写入标准错误"
-html_title:           "Kotlin: 写入标准错误"
+html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是标准错误，为什么程序员要这么做？
-标准错误是指程序运行过程中发生错误时输出的信息。程序员通常会写入标准错误来帮助调试代码，以便更轻松地找出程序的错误原因。
+## What & Why? / 什么以及为什么?
+写入标准错误是将错误信息发送至程序的标准错误流（stderr），用于区分常规输出内容。程序员这样做是为了便于调试和记录错误，使它们易于跟踪并可通过错误管理工具进行处理。
 
-## 如何进行标准错误输出
-示例代码：
-
-```Kotlin
+## How to / 如何做：
+```kotlin
 fun main() {
-    println("这是标准输出")
-    System.err.println("这是标准错误输出")
+    // 正常消息写入标准输出
+    println("这是一个标准输出消息")
+
+    // 错误消息写入标准错误
+    System.err.println("这是一个错误消息")
 }
+
+输出:
+这是一个标准输出消息
+这是一个错误消息  // 这行会在标准错误流中显示
 ```
 
-输出结果：
+## Deep Dive / 深入探索
+标准错误（stderr）自Unix诞生以来就存在。与标准输出（stdout）逻辑分离，stderr允许错误信息重定向和独立处理。与 `println` 写入stdout不同，使用 `System.err.println` 可以将信息发送到stderr。虽然在现代系统中，还可以使用日志框架来更精细地控制错误管理，但写入stderr仍是快速和简单的错误反馈方式。
 
-```
-这是标准输出
-这是标准错误输出
-```
-
-## 深入了解
-1. 历史背景：标准错误的概念来源于Unix系统，现在已在大多数编程语言中得到应用。
-2. 备选方案：除了使用标准错误，程序员还可以使用日志记录或调试工具来查找错误。
-3. 实现细节：标准错误是通过System类中的方法来实现，例如System.err.println()。
-
-## 参考资料
-- [Kotlin官方文档](https://kotlinlang.org/docs/tutorials/command-line.html#using-standard-error)
-- [标准输出与标准错误的区别](https://www.liaoxuefeng.com/wiki/1252599548343744/1264738733521088)
+## See Also / 另见
+- Kotlin官方文档: [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- Unix标准流: [Wikipedia: Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- 日志框架介绍: [Logging in Kotlin](https://www.baeldung.com/kotlin/logging)

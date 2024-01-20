@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Ruby: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,53 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva er og hvorfor?
+## Hva & Hvorfor?
+Skriving til tekstfil er lagring av data til en fil på disk. Programmerere gjør dette for å persistere informasjon mellom økter eller for å dele data med andre programmer.
 
-Skriver du ofte programmer? Da vil du sikkert også trenge å skrive tekstdokumenter som kan leses og brukes av andre programmer. Dette kalles å skrive en tekstfil, og det er en måte å lagre og strukturere data på en effektiv og lesbar måte. Det er en viktig del av å være en programmerer, fordi det lar deg dele og utveksle informasjon mellom forskjellige programmer.
-
-## Slik gjør du det:
-
+## Hvordan:
 ```Ruby
-# Åpne en tekstfil for å skrive til den
-file = File.new("tekstfil.txt", "w")
-
-# Skriv innhold til filen
-file.puts "Dette er en tekstfil"
-file.puts "Du kan skrive flere linjer også"
-
-# Lukk filen
-file.close
-```
-
-Når du kjører dette programmet, vil det opprette en ny tekstfil kalt "tekstfil.txt" og skrive innholdet du har angitt i koden. For å lese innholdet fra filen, kan du bruke følgende kode:
-
-```Ruby
-# Åpne en tekstfil for å lese fra den
-file = File.new("tekstfil.txt", "r")
-
-# Skriv ut hver linje fra filen
-file.each do |line|
-  puts line
+# Åpne en fil og skriv til den
+File.open("eksempel.txt", "w") do |fil|
+  fil.puts("Hallo Norge!")
 end
 
-# Lukk filen
-file.close
+# Legge til i en eksisterende fil
+File.open("eksempel.txt", "a") do |fil|
+  fil.puts("Velkommen til Ruby-programmering.")
+end
 ```
 
-Output vil være:
-
+Sample Output:
 ```
-Dette er en tekstfil
-Du kan skrive flere linjer også
+Hallo Norge!
+Velkommen til Ruby-programmering.
 ```
 
-## Dykk dypere:
-
-Å kunne skrive til tekstfiler har vært en viktig del av programmering siden tidlig i bransjens historie. Før datamaskiner hadde grafiske grensesnitt, var tekstfiler den eneste måten å lagre og strukturere data på. Alternativene til å skrive en tekstfil inkluderer å bruke en database eller et regnearkprogram, men tekstfiler er ofte mer fleksible og kan enkelt leses og brukes av alle programmeringsspråk.
-
-For mer informasjon om hvordan du bruker tekstfiler i Ruby, kan du se Ruby sin dokumentasjon på Filklassen: https://ruby-doc.org/core-2.7.0/File.html
+## Dypdykk:
+I tidlige datamaskiner skrev man data til magnetbånd, men med tiden flyttet dette til harddisker og andre lagringsmedier. Alternativer til Ruby sin filskrivningsmetode inkluderer bruk av databasesystemer eller skytjenester for større skalerbarhet. Implementeringsdetaljer i Ruby håndteres maskinent har `IO` klasse som underbygger filoperasjoner, noe som gir abstraksjon og enkel bruk.
 
 ## Se også:
-
-- [Den offisielle Ruby-dokumentasjonen](https://ruby-doc.org/)
-- [En veiledning til å arbeide med tekstfiler i Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- Ruby's IO-dokumentasjon: https://ruby-doc.org/core-3.0.0/IO.html
+- Ruby Quickstart Guide: https://www.ruby-lang.org/en/documentation/quickstart/
+- Filhåndtering og persistens: https://www.rubyguides.com/2015/05/working-with-files-ruby/

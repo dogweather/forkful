@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "TypeScript: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Porquê?
+Escrever um arquivo de texto é o processo de salvar dados em um formato legível no disco. Programadores fazem isso para persistir informações entre sessões, configurar sistemas ou exportar dados.
 
-Escrever um arquivo de texto significa criar e salvar informações em um arquivo de texto simples. Isso é útil para armazenar dados que precisam ser acessados e lidos novamente por um programa de computador. Programadores escrevem arquivos de texto para salvar informações importantes, como configurações do programa, logs e dados que precisam ser acessados dinamicamente pelo programa.
+## Como Fazer:
+Você vai usar o módulo `fs` do Node.js para escrever em arquivos. Primeiro, instale o Node, se ainda não o fez. Assuma que usamos a promessa baseada em `fs.promises`.
 
-## Como fazer:
+```typescript
+import { writeFile } from 'fs/promises';
 
-```TypeScript
-// Importando o módulo fs para manipular arquivos
-import * as fs from "fs";
-
-// Função para escrever uma string em um arquivo de texto
-function writeToFile(text: string) {
-  // Cria o arquivo de texto se ele ainda não existe
-  fs.writeFileSync("meu-arquivo.txt", text);
+async function gravarArquivo() {
+  try {
+    await writeFile('mensagem.txt', 'Olá, mundo!');
+    console.log('Arquivo gravado com sucesso.');
+  } catch (erro) {
+    console.error('Ocorreu um erro ao gravar o arquivo:', erro);
+  }
 }
 
-// Chamando a função para escrever um texto
-writeToFile("Olá programadores de TypeScript!");
+gravarArquivo();
 ```
 
-O código acima importa o módulo "fs", que permite a manipulação de arquivos, e define uma função que escreve uma string em um arquivo de texto. A função é então chamada com um texto como argumento para ser gravado no arquivo de texto "meu-arquivo.txt". Isso criará um arquivo se ele ainda não existir ou sobrescreverá o conteúdo do arquivo atual.
+Saída esperada no console:
+```
+Arquivo gravado com sucesso.
+```
 
-## Mergulho Profundo:
+## Aprofundando:
+Historicamente, a escrita de arquivos em JavaScrit era uma operação apenas no lado do servidor. Com Node.js, isso se tornou padrão para automação e scripts de servidor. Alternativas incluem: APIs de armazenamento do navegador para aplicações web, bibliotecas como `lowdb` para JSON simples ou sistemas de banco de dados para armazenamento mais complexo. Detalhadamente, utilizar o `fs` diretamente é uma escolha de baixo nível. Para projetos maiores, considere ORM ou abstrações de arquivos como parte de um framework.
 
-Escrever arquivos de texto tem sido uma parte importante da programação desde os primeiros dias. Antes do surgimento de bancos de dados e outros sistemas de armazenamento avançados, os programadores confiavam em arquivos de texto para armazenar e gerenciar dados. Hoje, existem outras alternativas, como bancos de dados ou armazenamento na nuvem, mas ainda é necessário para muitos casos de uso, especialmente para arquivos de configuração simples.
-
-Além do módulo "fs" mencionado acima, o TypeScript também possui outras bibliotecas, como o "csv-writer", que permite a escrita de arquivos CSV de forma mais específica. Além disso, outras linguagens de programação também possuem maneiras semelhantes de escrever arquivos de texto, para que você possa adaptar esses conceitos para outras linguagens também.
-
-## Você também pode se interessar em:
-
-- [Documentação oficial do módulo fs](https://nodejs.org/api/fs.html)
+## Veja Também:
+- Node.js `fs` module: https://nodejs.org/api/fs.html
+- Documentação do TypeScript: https://www.typescriptlang.org/docs/
+- Guia sobre promessas e async/await: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises

@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 쓰기"
-html_title:           "TypeScript: 텍스트 파일 쓰기"
-simple_title:         "텍스트 파일 쓰기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Arduino: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 이게 뭐야 & 왜 하나요?
-텍스트 파일을 쓰는 것이란 무엇인가, 그리고 프로그래머들이 왜 이런 작업을 하는지에 대해 2~3문장으로 설명해보자면, 텍스트 파일은 우리가 컴퓨터에 저장하는 단순한 텍스트 정보를 담고 있는 파일입니다. 프로그래머들은 이러한 텍스트 파일을 사용하여 데이터를 저장하고, 읽고, 처리하는 데에 도움이 되는 도구로 활용합니다.
+## What & Why? (무엇과 왜?)
+텍스트 파일 쓰기는 문자열 데이터를 일반 텍스트 형식으로 디스크에 저장하는 과정입니다. 자동화, 로깅, 설정 관리 등을 위해 프로그래머들이 사용합니다.
 
-## 하는 법:
+## How to: (어떻게 하나요?)
+TypeScript에서 파일 시스템 작업을 하려면 Node.js의 'fs' 모듈이 필요합니다. 다음은 간단한 텍스트 파일 작성 예제입니다.
+
 ```TypeScript
-// 파일 모듈 임포트
 import * as fs from 'fs';
 
-// 파일 쓰기
-fs.writeFileSync('example.txt', 'This is an example of writing a text file in TypeScript.');
+const data: string = '안녕하세요, TypeScript!';
 
-// 파일 읽기
-const text = fs.readFileSync('example.txt', 'utf-8');
-console.log(text); // Output: This is an example of writing a text file in TypeScript.
+// 동기적으로 파일 쓰기
+fs.writeFileSync('message.txt', data, 'utf-8');
+console.log('파일이 성공적으로 저장되었습니다!');
 
-// 파일 수정
-fs.appendFileSync('example.txt', ' File edited!');
-const newText = fs.readFileSync('example.txt', 'utf-8');
-console.log(newText); // Output: This is an example of writing a text file in TypeScript. File edited!
+// 비동기적으로 파일 쓰기
+fs.writeFile('message.txt', data, 'utf-8', (err) => {
+    if (err) throw err;
+    console.log('파일이 비동기적으로 저장되었습니다!');
+});
 ```
 
-## 깊이 파헤치기:
-텍스트 파일을 쓰는 것은 우리가 컴퓨터에 데이터를 저장하는 가장 기본적인 형태 중 하나입니다. 이는 예전부터 사용해오던 방식으로, 현재도 필요하고 유용한 방식입니다. 그러나 요즘에는 데이터베이스 등 다른 방식으로 데이터를 저장하는 경우가 늘어나고 있습니다. 그래도 텍스트 파일은 여전히 가벼우면서도 특정한 목적에 잘 맞는 데이터 저장 방식으로 자주 사용됩니다.
+## Deep Dive (심층 분석)
+텍스트 파일 쓰기는 초기 컴퓨팅 시절부터 있었으며, 다양항 저장 매체의 발전과 함께 진화해 왔습니다. 'fs' 외에도 'fs-extra', 'stream', 'async', 'promises' 같은 Node.js 라이브러리를 사용하여 파일을 작성할 수 있습니다. 'fs.writeFile'은 비동기적이며, 'fs.writeFileSync'는 병렬 작업 대신 단일 작업을 위해 동기적입니다.
 
-## 더 알아보기:
-- [Node.js의 파일 시스템 모듈](https://nodejs.org/api/fs.html)
+## See Also (더 보기)
+- Node.js File System Documentation: https://nodejs.org/api/fs.html
+- Understanding Asynchronous JavaScript: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html

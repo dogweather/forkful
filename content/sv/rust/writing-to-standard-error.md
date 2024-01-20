@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "Rust: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att skriva till standardfel är en vanlig praxis inom programmering för att informera om eventuella problem eller fel som kan uppstå under körning av ett program. Detta ger utvecklare en möjlighet att fånga och hantera dessa fel för att förbättra kvaliteten på sin kod.
+## Vad & Varför?
+Skriva till standardfel (`stderr`) är hur program rapporterar fel eller viktiga loggar. Programmerare gör det för att separera normal output från felmeddelanden, vilket gör felsökning och logghantering enklare.
 
-# Hur man gör:
-Kodexempel:
-
+## Hur man gör:
 ```Rust
-use std::io::Write; // Importerar modulen för att möjliggöra skrivning till standardfel
+use std::io::{self, Write};
 
 fn main() {
-    let msg = "Ett fel har inträffat!"; // Ett meddelande som ska skrivas till standardfel
-    let stderr = std::io::stderr(); // Hämtar en referens till standardfel
-    
-    writeln!(&mut stderr.lock(), "{}", msg).unwrap(); // Skriver meddelandet till standardfel
+    writeln!(io::stderr(), "Fel inträffade!").unwrap();
 }
 ```
-
-Exempeloutput (i standardfel):
-
+Sample output i terminalen:
 ```
-Ett fel har inträffat!
+Fel inträffade!
 ```
 
-# Djupdykning:
-Skrivning till standardfel har funnits i många år och är ett standardiserat sätt att hantera fel i många olika programmeringsspråk. I vissa fall kan alternativ som att logga fel till en fil eller konsol användas istället, men skrivning till standardfel är den rekommenderade metoden för att kommunicera fel till utvecklare.
+## Djupdykning
+Historiskt sett kom `stderr` från UNIX där strömmarna `stdout` och `stderr` skapades för att skilja vanlig data från fel och loggar. Alternativ till att skriva direkt till `stderr` inkluderar loggbibliotek som `log` eller `env_logger`. `stderr` är implementerad i Rusts standardbibliotek via `std::io::stderr`, som returnerar en `Stderr` ström där man kan skriva.
 
-För implementationen av att skriva till standardfel, används en modul som kallas "std::io::stderr". Denna modul möjliggör skrivning till standardfel genom att tillhandahålla en referens till standardfel och dess låsning. Genom att använda Rusts makrospråk kan vi sedan formatera ett meddelande och skriva det till standardfel utan att behöva hantera felhantering själva.
-
-# Se även:
-- [Rust dokumentation om standardfel](https://doc.rust-lang.org/std/io/struct.Stderr.html)
+## Se även
+- Rusts dokumentation om error handling: https://doc.rust-lang.org/book/ch09-00-error-handling.html
+- `std::io` modulen i Rust standardbibliotek: https://doc.rust-lang.org/std/io/index.html
+- Blogg inlägg om effektiv loggning: https://blog.rust-lang.org/2020/06/04/Rust-1.44.0.html#easier-logging-with-log-package-metadata

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "TypeScript: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego? 
+## What & Why?
+JSON, czyli JavaScript Object Notation, to format danych, który ułatwia wymianę i przechowywanie informacji. Programiści używają go z powodu jego prostoty, czytelności i wszechobecności w technologiach webowych.
 
-Artykuł ten przedstawia metodę pracy z JSON w języku TypeScript oraz wyjaśnia, dlaczego programiści decydują się na jej użycie. JSON (JavaScript Object Notation) jest to lekki format wymiany danych, który jest wygodny i prosty w użyciu. Programiści często wybierają JSON, ponieważ jest wygodnym sposobem na przechowywanie i przesyłanie danych wewnątrz aplikacji.
-
-## Jak to zrobić?
-
-Aby rozpocząć pracę z JSON w TypeScript, należy zaimportować odpowiedni moduł:
-
+## How to:
 ```TypeScript
-import { JSON } from 'typescript-json';
-```
-
-Następnie można przekonwertować obiekt JavaScript na format JSON, używając metody ```stringify()```:
-
-```TypeScript
-let myObject = {
-    name: "John",
-    age: 30,
-    address: "123 Main Street"
+// Definicja typu dla użytkownika
+type User = {
+  id: number;
+  name: string;
 };
 
-let myJSON = JSON.stringify(myObject);
+// Przykładowy obiekt użytkownika
+const user: User = {
+  id: 1,
+  name: "Jan Kowalski"
+};
 
-console.log(myJSON); // output: {"name":"John","age":30,"address":"123 Main Street"}
+// Konwersja obiektu do JSON
+const userJson = JSON.stringify(user);
+console.log(userJson);  // Output: '{"id":1,"name":"Jan Kowalski"}'
+
+// Konwersja z JSON do obiektu
+const userParsed = JSON.parse(userJson) as User;
+console.log(userParsed); // Output: { id: 1, name: 'Jan Kowalski' }
 ```
 
-Aby przekonwertować dane z formatu JSON na obiekt JavaScript, używa się metody ```parse()```:
+## Deep Dive
+JSON został stworzony na początku lat 2000 jako alternatywa dla XML. Mimo że oba służą do wymiany danych, JSON zyskał popularność ze względu na mniejszy rozmiar i łatwość użycia w JavaScript. Alternatywami dla JSON-a mogą być YAML czy BSON, ale żaden z nich nie zdobył tak dużej popularności. Przy implementacji warto pamiętać o bezpiecznym parsowaniu JSON, aby uniknąć problemów związanych z niepoprawnymi danymi.
 
-```TypeScript
-let myJSON = '{"name":"John","age":30,"address":"123 Main Street"}';
-
-let myObject = JSON.parse(myJSON);
-
-console.log(myObject.name); // output: John
-```
-
-## Głębsza analiza
-
-Historia JSON sięga roku 2001, kiedy to Douglas Crockford wprowadził ten format jako alternatywną metodę przechowywania danych w języku JavaScript. JSON jest teraz powszechnie wykorzystywany w aplikacjach internetowych i mobilnych. Jedną z alternatyw dla JSON jest XML, jednak JSON jest znacznie lżejszy, prostszy w użyciu i szybszy w przetwarzaniu danych.
-
-W języku TypeScript możliwe jest również wykorzystanie interfejsów w celu definiowania struktury danych w formacie JSON. Dzięki temu można uniknąć popełniania błędów w przekonwertowaniu danych z formatu JSON na obiekt JavaScript.
-
-## Zobacz również
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs)
-- [Strona projektu JSON](https://www.json.org/)
+## See Also
+- [TypeScript Handbook - Type Checking JavaScript Files](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html)
+- [ECMA-404 The JSON Data Interchange Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)

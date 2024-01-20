@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con json"
-html_title:           "Ruby: Trabajando con json"
-simple_title:         "Trabajando con json"
+title:                "Trabajando con JSON"
+html_title:           "Bash: Trabajando con JSON"
+simple_title:         "Trabajando con JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
+## ¿Qué & Por qué?
+JSON (JavaScript Object Notation) es un formato estándar para intercambiar datos. Programadores lo usan por su simplicidad y facilidad de integración con distintos lenguajes, incluido Ruby.
 
-Trabajar con JSON en Ruby es una forma de manejar datos estructurados en formato de texto. Los programadores utilizan JSON porque es un formato sencillo y fácil de leer, y es ampliamente utilizado en aplicaciones web y móviles.
-
-## Cómo:
-
+## Cómo hacerlo:
+Para trabajar con JSON en Ruby, primero necesitas tener la gema 'json' instalada. Puedes agregarla a tu `Gemfile` o instalarla ejecutando `gem install json`. Una vez instalada, parsear un JSON o convertir un objeto Ruby a JSON es sencillo:
 ```Ruby
 require 'json'
 
-# Crear un objeto JSON
-json_objeto = '{"nombre": "Juan", "edad": 25}'
+# Convertir un string JSON a un hash de Ruby
+json_string = '{"nombre": "Juan", "edad": 30, "programador": true}'
+ruby_hash = JSON.parse(json_string)
+p ruby_hash # => {"nombre"=>"Juan", "edad"=>30, "programador"=>true}
 
-# Convertir a hash
-hash = JSON.parse(json_objeto)
-
-# Acceder a los datos
-nombre = hash["nombre"]
-edad = hash["edad"]
-
-# Convertir hash a JSON
-json_hash = hash.to_json
-
-# Imprimir resultados
-puts nombre
-puts edad
-puts json_hash
+# Convertir un hash de Ruby a un string JSON
+ruby_hash = { nombre: "Juan", edad: 30, programador: true }
+json_string = ruby_hash.to_json
+puts json_string # => {"nombre":"Juan","edad":30,"programador":true}
 ```
 
-Salida:
+## Análisis Profundo:
+JSON se originó en el 2001, diseñado por Douglas Crockford. Aunque vinculado inicialmente a JavaScript, su sencillez lo convirtió en un formato de intercambio de datos universal. Alternativas a JSON incluyen XML y YAML, pero JSON predomina por su ligereza y rápida interpretación. En Ruby, la gema 'json' viene incluida desde la versión 1.9, permitiendo su implementación sin dependencias externas. Para manejo avanzado de JSON, como métodos de parseo personalizados, se pueden usar gemas como `oj` (Optimized JSON).
 
-Juan
-25
-{"nombre":"Juan", "edad":25}
-
-## Profundizando
-
-JSON (JavaScript Object Notation) es un formato ligero y fácil de leer que originalmente se creó para JavaScript, pero ahora es ampliamente utilizado en la comunicación entre aplicaciones web y servidores web. Alternativas a JSON incluyen XML, YAML y CSV. En Ruby, se puede trabajar con JSON utilizando la librería estándar JSON o la gem 'oj'.
-
-## Ver también
-
-- [Página oficial de JSON](https://www.json.org/)
-- [Documentación de la librería de Ruby JSON](https://ruby-doc.org/stdlib-2.6.5/libdoc/json/rdoc/JSON.html)
-- [Gem 'oj' para trabajar con JSON en Ruby](https://rubygems.org/gems/oj)
+## Ver También:
+- Gem `oj` (Optimized JSON): [github.com/ohler55/oj](https://github.com/ohler55/oj)
+- Tutorial completo de JSON en W3Schools: [w3schools.com/js/js_json_intro.asp](https://www.w3schools.com/js/js_json_intro.asp) (aunque enfocado en JavaScript, los conceptos básicos son aplicables a Ruby)

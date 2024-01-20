@@ -1,7 +1,7 @@
 ---
-title:                "CSV 처리하기"
-html_title:           "Python: CSV 처리하기"
-simple_title:         "CSV 처리하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+CSV는 Comma-Separated Values의 약자로 데이터를 저장하기 위한 단순한 형식입니다. 프로그래머들은 CSV를 사용하여 데이터를 쉽게 읽고 쓸 수 있으며 다양한 프로그램 간에 호환성을 제공하기 때문에 사용합니다.
 
-CSV 파일 작업이란 무엇일까요? 이는 Comma-Separated Values의 약자로, 쉼표로 구분된 텍스트 파일을 의미합니다. 프로그래머들은 이를 사용하는 이유는 데이터를 효율적으로 저장하고 불러오기 위해서입니다.
-
-## 방법:
+## How to: (어떻게 하나요?)
+Python에서 CSV 파일을 다루는 기본적인 방법을 알아봅니다. 아래 코드는 CSV 파일을 읽고 쓰는 예시입니다.
 
 ```Python
+# CSV 파일 쓰기
 import csv
 
-# CSV 파일 쓰기 예제
-with open('data.csv', 'w', newline='') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(['ID', 'Name', 'Age'])
-    writer.writerow(['1', 'John', '25'])
-    writer.writerow(['2', 'Jane', '29'])
+# header 포함 데이터 준비
+header = ["이름", "나이", "도시"]
+data = [
+    ["김철수", 28, "서울"],
+    ["이영희", 34, "부산"]
+]
 
-# CSV 파일 읽기 예제
-with open('data.csv', newline='') as csvfile:
+# 'people.csv' 파일을 쓰기 모드로 열기
+with open('people.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(header)
+    writer.writerows(data)
+    
+# CSV 파일 읽기
+import csv
+
+# 'people.csv' 파일을 읽기 모드로 열기
+with open('people.csv', 'r', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     for row in reader:
         print(row)
-```
-출력:
-```
-['ID', 'Name', 'Age']
-['1', 'John', '25']
-['2', 'Jane', '29']
+
 ```
 
-## 딥 다이브:
+Sample Output:
+```
+['이름', '나이', '도시']
+['김철수', '28', '서울']
+['이영희', '34', '부산']
+```
 
-CSV 파일은 1972년 IBM에서 개발되었습니다. 기존에는 포터블 문서를 위해 많이 사용되었지만, 지금은 데이터 저장 및 전송을 위해 널리 사용됩니다. 그 외에도 XML, JSON 등의 다른 데이터 포맷이 있지만, 간단한 데이터를 다룰 때 CSV 파일이 더 유용합니다. Python에서는 csv 모듈을 통해 쉽게 CSV 파일을 다룰 수 있습니다.
+## Deep Dive (심층 분석)
+CSV 형식은 1970년대부터 사용되어 왔으며 데이터를 표현하는 가장 기본적인 방법 중 하나입니다. JSON, XML과 같은 대안들도 있지만, CSV는 가독성과 단순함 때문에 여전히 많이 사용됩니다. Python의 표준 라이브러리인 `csv` 모듈은 CSV 파일의 생성, 읽기, 쓰기를 도와주며 각 row를 리스트 형태로 처리합니다.
 
-## 참고:
-
-- [Python csv 모듈 - 공식 문서](https://docs.python.org/3/library/csv.html)
+## See Also (더 보기)
+- [Python 공식 문서 - csv 모듈](https://docs.python.org/3/library/csv.html)
+- [Wikipedia - Comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [CSV 읽고 쓰기에 대한 더 심화된 가이드](https://realpython.com/python-csv/)

@@ -1,7 +1,7 @@
 ---
-title:                "json के साथ काम करना"
-html_title:           "Ruby: json के साथ काम करना"
-simple_title:         "json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## यह क्या है और क्यों?
-JSON (JavaScript Object Notation) एक विशेष तरीके से डेटा को स्टोर और ट्रांसफर करने के लिए प्रोग्रामर्स द्वारा उपयोग किया जाता है। प्रोग्रामर्स JSON का उपयोग डेटा को स्टोर करने के लिए, डेटा को अन्य सर्वर्स पर भेजने के लिए या डेटा फिल्टर करने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) एक data format है जो data आदान-प्रदान के लिए उपयोगी है। Ruby में programmers JSON का इस्तेमाल इसलिए करते हैं क्योंकि यह human-readable है और web applications के साथ easily integrate हो जाता है।
 
-## कैसे करें:
-Ruby में JSON से काम करने के लिए, हम जब जावास्क्रिप्ट कोड का उपयोग करते हैं तब अपने कोड में ```json``` सेंटेंस इनपुट पहले और तीसरा डेटा को स्टोर करने के लिए करते हैं।
+## How to: (कैसे करें:)
+Ruby में JSON के साथ काम करने के लिए आपको `json` library का इस्तेमाल करना पड़ता है। नीचे कुछ examples दिए गए हैं:
 
 ```Ruby
 require 'json'
-# JSON से डेटा पहले और तीसरा डेटा को स्टोर करें
-data = '{"name":"John", "age":30, "city":"New York"}'
-parsed_data = JSON.parse(data)
-# पहले डेटा का आउटपुट
-puts "Name: #{parsed_data['name']}"
-# द्वितीय डेटा का आउटपुट
-puts "Age: #{parsed_data['age']}"
-# तीसरा डेटा का आउटपुट
-puts "City: #{parsed_data['city']}"
+
+# JSON String to Ruby Hash
+json_string = '{"name": "Amit", "age": 30, "city": "Delhi"}'
+ruby_hash = JSON.parse(json_string)
+puts ruby_hash['name']  # Output: Amit
+
+# Ruby Hash to JSON String
+ruby_hash = { name: "Priya", age: 25, city: "Mumbai" }
+json_string = ruby_hash.to_json
+puts json_string  # Output: {"name":"Priya","age":25,"city":"Mumbai"}
 ```
 
-आउटपुट:
-```
-Name: John
-Age: 30
-City: New York
-```
+## Deep Dive (गहराई में जानकारी):
+JSON, जो कि 2001 में Douglas Crockford द्वारा popularize किया गया, अब web का standard data interchange format बन गया है। इसे XML, YAML आदि की तुलना में अधिक पसंद किया जाता है क्योंकि यह more compact और तेज़ होता है। Ruby में `json` library core library का हिस्सा है, और native data types के बीच conversion को सरल बनाता है।
 
-## गहराई में जाएँ:
-निरिंतर समय के उस समय से जब सबसे पहले JSON डेटा फॉर्मेट विकसित किया गया था (1999), JSON बहुत अधिक पसंद किया जाता है क्योंकि यह बहुत सरल है, हलका है, और डेटा पारगमन में कोई भी चूक के लिए संभावना बहुत कम है। अन्य विकल्पों में शामिल हैं XML, CSV, और YAML। जबकि JSON का रूपांतरण IL Serialization या थिर्ड पार्टी लाइब्रेरी का उपयोग करके किया जा सकता है।
-
-## और भी देखें:
-- [JSON.org](https://www.json.org/json-en.html)
-- [Official Ruby JSON Documentation](https://ruby-doc.org/stdlib-2.5.0/libdoc/json/rdoc/JSON.html)
+## See Also (और भी देखें):
+- Ruby's official JSON library documentation: [ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
+- JSON specification and more information: [json.org](https://json.org)
+- Ruby gem for parsing JSON: [github.com/flori/json](https://github.com/flori/json)
+- Other serialization formats like YAML in Ruby: [ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html)

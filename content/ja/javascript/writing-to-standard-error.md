@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーへの書き込み」"
-html_title:           "Javascript: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,25 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何がどうして？：
-標準エラーへの書き込みとは何か、またプログラマーがなぜそれを行うのかを説明する文章です。
+## What & Why? (何となぜ？)
+標準エラーへの書き出しは、プログラムのエラーメッセージを出力する方法です。デバックやログとしてエラー情報を分けておくと、問題解析がしやすくなるから使います。
 
-標準エラーへの書き込みとは、プログラムの実行中に発生したエラー情報を書き込むことを意味します。プログラマーは、エラーが発生したことを知ることで、プログラムの問題を確認し、修正することができます。
+## How to: (方法)
+```javascript
+// 標準エラーにメッセージを書き出す例
+console.error('エラー: 不正な操作を検出しました。');
 
-## 方法：
-以下に、標準エラーへの書き込みを行うためのコーディング例と、サンプルの出力を示します。
-
-```Javascript
-console.error("エラーが発生しました。"); // エラーが発生しました。
+// 出力例（コンソールに表示されるエラーメッセージ）
+// エラー: 不正な操作を検出しました。
 ```
 
-標準エラーへの書き込みは、 `console.error()` メソッドを使用して行います。このメソッドは、引数として渡されたメッセージを標準エラーへ出力します。
+## Deep Dive (詳細情報)
+かつて、コンピュータプログラムはコマンドラインから実行されていたため標準出力（stdout）と標準エラー（stderr）が分けられました。デバッグ情報やエラーメッセージはstderrに出力し、プログラムの通常の出力結果はstdoutに出します。JavaScriptでは`console.error()`を使うことが一般的です。ストリームを直接扱う方法もありますが、`process.stderr.write()`はNode.jsの環境で用いられます。
 
-## もっと詳しく：
-標準エラーへの書き込みは、プログラミング言語ごとに異なる実装方法があります。例えば、Javascriptでは `console.error()` メソッドを使用して行いますが、Pythonでは `sys.stderr` オブジェクトを通じて行います。
-
-標準エラーへの書き込みは、デバッグやエラーのトラッキングなどに役立ちます。また、標準出力への書き込みとは異なり、標準エラーへの書き込みは常に表示されるため、メッセージの漏れを防ぐことができます。
-
-## 関連リンク：
-- [Javascript console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Python sys.stderr module](https://docs.python.org/3/library/sys.html#sys.stderr)
+## See Also (関連情報)
+- MDN Web Docs (`console.error`): https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- Node.js Documentation (`process.stderr`): https://nodejs.org/api/process.html#process_process_stderr

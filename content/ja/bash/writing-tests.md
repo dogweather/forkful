@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜそれをするの？ 
-テストを書くとは、プログラマーが自分が書いたコードを自動的にテストすることです。これにより、バグを早期に発見し、品質の高いソフトウェアを作ることができます。
+## What & Why? (何となぜ？)
+プログラムにテストを書くことは、コードが期待通りに動作することを保証するプロセスです。これにより、バグを早期に見つけ、将来的な機能追加やリファクタリング時の安心を得られます。
 
-## やり方： 
+## How to: (やり方)
 ```Bash
-# テストを書く基本的な手順
-# テストを実行するためには、実際のコードの前に「test」というキーワードを使います。
-# テスト関数には、入力値と期待される出力値を指定します。
+# test_example.sh
 
-# テストを書く例
-# この例では、スクリプトをあなたのディレクトリ内のファイルを数えるものだとします。
-# count_files関数を書きますが、実際の仕事をしていて、正しく機能するかどうかを確認するためのテストをしなければなりません。
-
-count_files() {
-    num_files=$(ls | wc -l)
-    echo "Number of files in directory: $num_files"
+# 関数定義
+say_hello() {
+  echo "Hello, $1!"
 }
 
-test_count_files() {
-    echo "Testing count_files function..."
-    if [ "$(count_files)" == "$(ls -1 | wc -l)" ]
-    then
-        echo "PASS!"
-    else
-        echo "FAIL!"
-    fi
+# テストケース
+test_say_hello() {
+  output=$(say_hello "World")
+  if [ "$output" == "Hello, World!" ]; then
+    echo "Test passed!"
+  else
+    echo "Test failed: expected 'Hello, World!', got '$output'"
+    exit 1
+  fi
 }
 
-# テストを実行する
-# test_count_files関数を実行して、出力結果を見ます。
-test_count_files
+# テスト実行
+test_say_hello
 ```
 
-## より詳しく：
-テストを書くことは、品質保証プロセスの重要な部分であり、プログラマーにとって非常に重要です。テストを書くことで、バグを早期に発見することができ、変更を加えた時にも正しく機能するかどうかを確認することができます。代替手段として、手動でテストを実行することもできますが、効率的ではありません。テストを自動化することで、より迅速かつ正確にプログラムの品質を確保することができます。
+実行結果:
+```Bash
+$ bash test_example.sh
+Test passed!
+```
 
-## 参考: 
-- テストの書き方：https://www.tutorialspoint.com/unix/unix-writing-tests.htm
-- テストの実行：https://www.tutorialspoint.com/unix/unix-executing-tests.htm
+## Deep Dive (深掘り情報)
+### 歴史的背景
+Bashでのテストは歴史的には単純なスクリプトから開始しましたが、現在ではBats, shUnit2のようなテストフレームワークが存在します。
+
+### 代替案
+Bashに限らず、PythonのpytestやJavaScriptのJestなど他言語のテストフレームワークも選択肢です。
+
+### 実装詳細
+Bashのテストでは、`[ ]`や`[[ ]]`を使った条件式、`$()`でのコマンド置換が重要です。assertやexpectのような専門のテストコマンドはありませんが、終了ステータスを活用します。
+
+## See Also (参考リンク)
+- テストフレームワーク Bats: https://github.com/bats-core/bats-core
+- Bash testing with shUnit2: https://github.com/kward/shunit2
+- Bashスクリプトのベストプラクティス: https://www.shellcheck.net/ (ShellCheck)

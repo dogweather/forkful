@@ -1,7 +1,7 @@
 ---
-title:                "yamlを使用したプログラミングの仕事"
-html_title:           "Swift: yamlを使用したプログラミングの仕事"
-simple_title:         "yamlを使用したプログラミングの仕事"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-YAMLとは、データの構造を定義するためのファイル形式です。プログラマーがYAMLを使用する理由は様々ですが、主な理由は可読性や柔軟性の向上です。また、様々なプログラミング言語で利用できるため、チーム内でのコラボレーションにも役立ちます。
+## What & Why? (何となぜ？)
+YAMLは設定ファイルやデータ交換で人気。読み書き簡単だから。SwiftでYAMLを扱うことはアプリの設定や外部データの処理で役立つ。
 
-## 方法：
-```Swift 
+## How to: (やり方：)
+SwiftでYAMLをパースするには、`Yams`ライブラリが便利だ。`Yams`のインストールと簡単な使用例を示す。
+
+```Swift
+import Yams
+
 let yamlString = """
-name: John Smith
-age: 35
-height: 175
+name: Yukihiro Matsumoto
+nickname: Matz
+languages:
+  - Ruby
+  - Perl
+  - C
 """
 
-let decoded = try YAMLEncoder().decode(YAML.self, from: yamlString)
-print(decoded.name) // John Smith
-print(decoded.age) // 35
-print(decoded.height) // 175
+do {
+    if let data = try Yams.load(yaml: yamlString) as? [String: Any] {
+        print(data)
+    }
+} catch {
+    print("Error parsing YAML: \(error)")
+}
 ```
 
-## 深堀り：
-YAMLは1990年代に開発され、YAML Ain't Markup Languageの略です。他のファイル形式と比べるとシンプルで読みやすい構文を持ち、Web開発や設定ファイルの管理など様々な用途で利用されています。代替としてはJSONやXMLがありますが、YAMLのヒューマンリーダブルな特徴は人気を集めています。また、SwiftにはYAMLの解析や生成を手軽に行うためのライブラリが多数存在します。
+出力：
+```
+["name": "Yukihiro Matsumoto", "nickname": "Matz", "languages": ["Ruby", "Perl", "C"]]
+```
 
-## 関連リンク：
-- [YAML公式サイト](https://yaml.org/)
-- [YAML言語仕様書](https://yaml.org/spec/1.2/spec.html)
-- [Swift-YAMLライブラリ](https://github.com/behrang/YamlSwift)
+## Deep Dive (詳細解説)
+YAMLは"YAML Ain't Markup Language"の略。データシリアライズフォーマットとして2001年に登場。JSONやXMLの代わりに使うことも可能。Swiftでは`Codable`プロトコルでYAMLサポートを追加可能。
+
+## See Also (関連する情報)
+- Yams GitHub: https://github.com/jpsim/Yams
+- YAML公式サイト: https://yaml.org
+- Swift公式サイト: https://swift.org
+
+読むの忘れずに。もっと詳細知りたかったら、これらのリンクが役に立つはずだ。

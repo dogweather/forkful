@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med yaml"
-html_title:           "Elixir: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-YAML i Elixir
-
 ## Vad & Varför?
+YAML är ett dataformat för att strukturera information, liknande JSON men mer läsbart för människor. Programmerare använder YAML för konfigurationsfiler, datautbyte och att definiera datastrukturer på ett enkelt sätt.
 
-YAML står för "YAML Ain't Markup Language" och är ett enkelt, mänskligt läsbart dataformat. Det används främst för att konfigurera applikationer och utbyta data mellan olika system. Många programmerare föredrar att använda YAML för sin läsbarhet och flexibilitet.
+## Hur gör man:
+För att hantera YAML i Elixir behöver du ett bibliotek som `yamerl`. Lägg till den som beroende i din `mix.exs` och kör `mix deps.get` för att installera.
 
-## Hur man gör:
-
-```Elixir
-# Läsa in en YAML-fil som en Elixir-map
-YAML.load_file("exempel.yaml")
-
-# Skapa en YAML-fil från en Elixir-map
-map = %{namn: "Sara", ålder: 25}
-YAML.dump(map)
+```elixir
+# Lägg till yamerl i mix.exs
+defp deps do
+  [
+    {:yamerl, "~> 0.8"}
+  ]
+end
 ```
 
-Output: 
+Läs en YAML-fil och omvandla till Elixir datastruktur:
+
+```elixir
+# Använda Yamerl för att läsa YAML
+{:ok, yamerl} = Application.ensure_all_started(:yamerl)
+
+yaml_content = """
+- cat
+- dog
+- mouse
+"""
+
+{:ok, data} = :yamerl_constr.string(yaml_content)
+IO.inspect(data) # Skriver ut: [cat, dog, mouse]
 ```
---- 
-namn: Sara
-ålder: 25
+
+Skriva en Elixir datastruktur till en YAML-sträng:
+
+```elixir
+# Skapa en YAML-sträng från Elixir
+list = ["cat", "dog", "mouse"]
+yaml_string = :yamerl.encode(list)
+IO.puts(yaml_string)
+# Output:
+# - cat
+# - dog
+# - mouse
 ```
 
-## Djupdykning:
+## Deep Dive
+YAML (YAML Ain't Markup Language) skapades 2001 för att vara användarvänligt och lätt att förstå. Alternativ som JSON och XML används också för datarepresentation, men YAML är populär bland utvecklare för sin tydlighet och enkelhet. Elixirs YAML-hantering bygger på Erlang-biblioteket `yamerl`, vilket gör det enkelt att infoga YAML-stöd i Elixir-program.
 
-YAML utvecklades år 2001 för att ersätta XML som ett mer human-friendly dataformat. Det är baserat på enkelhet och tydlighet, och kan även användas som ett programmeringsspråk med möjlighet till variabler och loopar. Andra alternativ för konfiguration och datautbyte inkluderar JSON och CSV, men YAML är ofta föredraget för sin läsbarhet och flexibilitet. I Elixir finns en inbyggd modul som erbjuder enkel hantering av YAML-filer, men det finns även tilläggspaket som ger ytterligare funktionalitet.
-
-## Se även:
-
-[Elixir's YAML-modul](https://hexdocs.pm/elixir/YAML.html)
+## Se Också
+- YAML officiell webbplats: [https://yaml.org](https://yaml.org)
+- `yamerl` GitHub sida: [https://github.com/yakaz/yamerl](https://github.com/yakaz/yamerl)
+- Elixir officiell dokumentation: [https://hexdocs.pm/elixir/](https://hexdocs.pm/elixir/)
+- Elixir Forum för diskussioner: [https://elixirforum.com](https://elixirforum.com)

@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Haskell: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,20 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא תהליך המכוון ליצירת קובץ המכיל מלל ונתונים טקסטואליים. פיתוחנים משתמשים בתהליך זה כדי לשמור ולשתף קוד מחשב או ליצור תעבורה של נתונים טקסטואליים מהאפליקציה.
+כתיבה לקובץ טקסט זה פעולה שבה אנו יוצרים או מעדכנים קובץ במערכת הקבצים ומזינים לו טקסט. תכניתנים עושים זאת כדי לשמור נתונים, להעביר מידע בין תהליכים או ליומן (לוג) התרחשויות.
 
 ## איך לעשות:
-הנה דוגמא קצרה של קוד חברתי ברשת בשפת Haskell:
+```Haskell
+-- פונקציה שכותבת טקסט לקובץ
+writeToFile :: FilePath -> String -> IO ()
+writeToFile path content = writeFile path content
 
-``` Haskell
+-- דוגמה לשימוש בפונקציה
+main :: IO ()
 main = do
-    writeFile "file.txt" "כתוב את המלל שלך כאן"
+    let path = "hello.txt"
+    let content = "שלום, עולם!"
+    writeToFile path content
 ```
 
-נכון לעכשיו, אם תרוץ את הקוד הזה, יוצר קובץ טקסט חדש בשם "file.txt" שהמידע שלו הוא המלל שאנחנו כתבנו בפקודה "כתוב את המלל שלך כאן". ניתן לבצע שינויים ולהוסיף נתונים נוספים במקום המחרוזת "כתוב את המלל שלך כאן" על מנת ליצור קובץ טקסט מתאים לצורכים שלך.
+זה יצור או יעדכן את הקובץ `hello.txt` עם הטקסט "שלום, עולם!".
 
-## חפר בעומק:
-כתיבת קובץ טקסט ב-Haskell יחד עם קריאת קבצים טקסט הם חלק משמעותי מתהליך הפיתוח המתקדם. קוד חברתי נוסף נחשב לפיתוח ראשוני בלבד וקיימים כמה אלטרנטיבות אחרות לכתיבת קבצי טקסט. בנוסף, ישנם חומרים מומלצים נוספים ללמידה נוספים על יכולות קוד חברתי נוספים.
+## עיון נוסף:
+הפונקציה `writeFile` בHaskell כותבת טקסט לקובץ במרבית המערכות הפעלה. היא חלק מהסטנדרט של השפה מתקופת ה-90's. ישנם אלטרנטיבות כגון `appendFile` להוספת טקסט לקובץ קיים ו-streaming ספריות כמו `conduit` או `pipes` לעבודה עם קבצים גדולים. פרטי היישום של פונקציות אלו מסתמכים על מנגנון קלט/פלט (I/O) של הסביבה בה הקוד רץ.
 
-## לראות גם:
-- [התיעוד הרשמי של לשונית Control.Monad ב-Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Control-Monad.html)
+## ראה גם:
+- [Haskell IO tutorial](http://learnyouahaskell.com/input-and-output)
+- [Haskell `writeFile` documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html#v:writeFile)
+- [Haskell `pipes` library](https://hackage.haskell.org/package/pipes)
+- [Haskell `conduit` library](https://hackage.haskell.org/package/conduit)

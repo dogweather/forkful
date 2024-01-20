@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "C#: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
---------------------------------------
+## What & Why?
+Lavoriamo con i file CSV per gestire dati in formato testuale semplificato, ottimo per esportazione e importazione. I programmatori li usano per la loro flessibilità e compatibilità universale con sistemi e applicazioni.
 
-## Cosa & Perché?
-Lavorare con CSV (Comma Separated Values) significa manipolare dati in formato tabellare, dove le informazioni sono organizzate in righe e colonne separate da virgole. I programmatori utilizzano spesso il formato CSV perché è molto versatile e compatibile con diversi tipi di software.
+## How to:
+Per leggere un file CSV in C#, utilizziamo `StreamReader`. Per scriverne uno, `StreamWriter`. Vediamo come.
 
-## Come fare:
-Ecco un esempio di codice che mostra come aprire un file CSV utilizzando C# e stamparne il contenuto:
-
-```C#
+```csharp
 using System;
-using System.IO; // Importa lo spazio dei nomi per lavorare con i file
-using System.Text; // Importa lo spazio dei nomi per lavorare con i caratteri speciali
+using System.IO;
 
 class Program
 {
     static void Main()
     {
-        // Percorso del file CSV
-        string filePath = @"C:\Users\Utente\Desktop\dipendenti.csv";
-
-        // Usa il metodo StreamReader per leggere il file
-        using (StreamReader sr = new StreamReader(filePath, Encoding.UTF8))
+        // Leggiamo un CSV
+        var fileDiLettura = "dati.csv";
+        using (var reader = new StreamReader(fileDiLettura))
         {
-            string line;
-            while ((line = sr.ReadLine()) != null)
+            while (!reader.EndOfStream)
             {
-                // Stampa ogni riga del file
-                Console.WriteLine(line);
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                Console.WriteLine($"Nome: {values[0]}, Età: {values[1]}");
             }
+        }
+
+        // Scriviamo in un CSV
+        var fileDiScrittura = "export.csv";
+        using (var writer = new StreamWriter(fileDiScrittura))
+        {
+            writer.WriteLine("Nome,Età");
+            writer.WriteLine("Mario,30");
+            writer.WriteLine("Luigi,28");
         }
     }
 }
 ```
 
-Ecco un esempio di output ottenuto con questo codice:
-
+Output di lettura:
 ```
-Nome,Cognome,Età
-Mario,Rossi,35
-Paolo,Bianchi,40
-Luca,Verdi,25
+Nome: Mario, Età: 30
+Nome: Luigi, Età: 28
 ```
 
-## Approfondimento:
-Il formato CSV è stato sviluppato negli anni '70 per permettere lo scambio di dati tra diversi software. Anche se originariamente era utilizzato principalmente per fogli di calcolo, ora è ampiamente utilizzato nei database e in altri contesti per la sua semplicità e versatilità.
+## Deep Dive
+Nato negli anni '70, il formato CSV diventò popolare con l'introduzione di fogli di calcolo come Excel. Alternativamente, possiamo usare formati come JSON o XML, che si prestano meglio ai dati più complessi. Implementare la gestione dei CSV in C# è semplice, ma prestare attenzione alle virgole nei dati e ai dati multilinea è cruciale per evitare errori di parsing.
 
-Esistono anche altri formati di file per rappresentare dati tabellari, come ad esempio il formato Excel (.xlsx), ma spesso il formato CSV è preferito perché è più leggero e facile da lavorare con i dati. Tuttavia, è importante fare attenzione ad eventuali errori di formattazione nel file CSV, poiché possono causare problemi di importazione o esportazione dei dati.
-
-## Vedi anche:
-- [Esempi di codice per lavorare con file CSV in C#](https://www.codeproject.com/Tips/387327/Handling-CSVs-using-Csharp)
+## See Also
+- Documentazione Microsoft su `StreamReader` e `StreamWriter`: [StreamReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=netcore-3.1), [StreamWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netcore-3.1)
+- [RFC 4180](https://tools.ietf.org/html/rfc4180): Standard del formato CSV.
+- Libreria per la gestione avanzata dei CSV in C#: [CsvHelper](https://joshclose.github.io/CsvHelper/)

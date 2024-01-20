@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "PHP: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Kirjoittaminen standardivirheeseen (standard error) tarkoittaa virheiden tai ilmoitusten tallentamista koodin suorituksen aikana. Tämä auttaa kehittäjiä korjaamaan sovelluksiin liittyviä ongelmia ja kehittämään nämä sovellukset paremmaksi. 
+## What & Why? - Mitä ja Miksi?
+Standard error (stderr) on erikoistiedostovirta virheilmoitusten kirjoittamiseen. Ohjelmoijat käyttävät sitä erottaakseen tavallisen tulosteen (stdout) virheistä, mikä helpottaa tulosten käsittelyä ja debuggausta.
 
-Kehittäjät käyttävät kirjoittamista standardivirheeseen saadakseen lisätietoa sovellustensa toiminnasta, kuten virheitä tai mahdollisia suorituskykyongelmia.
+## How to: - Kuinka tehdä:
 
-## Miten tehdä:
-```
+PHP:ssä `stderr` voi kirjoittaa `fopen('php://stderr', 'w')` avulla tai käyttämällä `STDERR` -vakioa, jos se on määritetty.
+
+```php
 <?php
-error_log("Tarkista tämä virhe!"); // Lisää teksti "Tarkista tämä virhe!" standardivirheeseen
-echo "Jokin teksti"; // Tulostaa "Jokin teksti" konsoliin
+// Käyttämällä fopen funktion kanssa
+$fileDescriptor = fopen('php://stderr', 'w');
+fwrite($fileDescriptor, "Virheilmoitus\n");
+fclose($fileDescriptor);
+
+// Suoraan STDERR:n kautta
+fwrite(STDERR, "Suora stderr-virheilmoitus\n");
 ?>
 ```
-Tulostus:
+
+Näytetuloste komentokehotteessa, kun ajat PHP-skriptin:
 ```
-Tarkista tämä virhe!
-Jokin teksti
+Virheilmoitus
+Suora stderr-virheilmoitus
 ```
 
-## Syvemmälle:
-Kirjoittaminen standardivirheeseen on käytäntö joka on käytössä monissa ohjelmointikielissä, sillä se auttaa kehittäjiä löytämään ja korjaamaan virheitä nopeammin. Tämä auttaa myös kehittäjiä luomaan vakaampia ja luotettavampia sovelluksia. 
+## Deep Dive - Syväsukellus:
 
-Pääasiallinen vaihtoehto kirjoittamiselle standardivirheeseen on tallentaa virheet ja ilmoitukset lokitiedostoihin, mutta tämä voi olla hankalampaa löytää ja tarkastella. Kirjoittaminen standardivirheeseen on nopeampi ja helpompi tapa saada lisätietoa sovelluksen suorituksesta.
+Historiallisesti `stderr` on ollut UNIX-ja C-ohjelmoinnin käsite, jossa se on yksi kolmesta standardista tiedostovirrasta, mukaan lukien `stdin` ja `stdout`. PHP:ssä `STDERR` on määritetty esikäännetyksi tiedostonsisältäjäksi komentorivikäytössä, mutta se ei ole käytettävissä web-pohjaisessa ympäristössä. Vaihtoehtoisia tapoja kirjoittaa `stderr`:iin on harvoin tarpeen PHP:ssä, mutta lokeja ja poikkeustenhallintaa voidaan käyttää virheiden käsittelyyn korkeammalla tasolla.
 
-PHP:ssa, virheitä voi tallentaa käyttämällä funktiona error_log() tai käyttämällä lähteen koodia, kuten esimerkissä nähdään. Virheidentallentaminen voidaan myös kytkeä pois päältä asetuksista, mikäli sitä ei haluta käyttää.
+## See Also - Katso Myös:
 
-## Katso myös:
-- PHP: virheitä käsittelevä dokumentaatio: https://www.php.net/manual/en/book.errorfunc.php
-- PHP: error_log-funktio: https://www.php.net/manual/en/function.error-log.php
+- PHP:n virallinen dokumentaatio `STDERR`: https://www.php.net/manual/en/features.commandline.io-streams.php
+- PHP:n virallinen dokumentaatio virheenkäsittelyyn: https://www.php.net/manual/en/book.errorfunc.php
+- Unix standard streams - Wikipedia: https://en.wikipedia.org/wiki/Standard_streams

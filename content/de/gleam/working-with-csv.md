@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Gleam: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist CSV und warum verwenden Programmierer es?
-CSV steht für "Comma-Separated Values" und ist ein Dateiformat, das verwendet wird, um Daten in tabellarischer Form zu speichern, ähnlich wie eine Tabelle in einer Datenbank. Programmierer verwenden CSV, um Daten zu organisieren, auszutauschen und zu analysieren, da es plattformunabhängig ist und von vielen Programmen, einschließlich Gleam, unterstützt wird.
+## Was & Warum?
+Arbeiten mit CSV-Dateien bedeutet, Daten in einem einfachen, von Kommas getrennten Textformat zu lesen, zu schreiben und zu bearbeiten. Programmierer nutzen CSV wegen der Simplizität und der weit verbreiteten Unterstützung in Daten-Austausch und Datenspeicherung.
 
-## So geht's:
-Um CSV-Dateien in Gleam zu nutzen, müssen Sie zuerst das Paket "csv" Ihrem Projekt hinzufügen, indem Sie `pubmod { csv }` in Ihre `gleam.toml` Datei eingeben. Dann können Sie Funktionen wie `read` und `write` verwenden, um auf CSV-Dateien zuzugreifen und sie zu bearbeiten.
+## Wie geht das:
+```gleam
+// Gleam-Modul für CSV-Möglichkeiten importieren
+import gleam/csv
 
-```Gleam
-// Lesen einer CSV-Datei
-import csv
-
-let file = csv.open("meine_datei.csv") // Datei öffnen
-let daten = file.read() // Datei-Inhalt lesen
-match daten {
-  Ok(daten) -> daten  // Mit den Daten arbeiten
-  Err(e) -> panic(e)  // Fehlerbehandlung
+// CSV-Zeile parsen
+fn parse_csv_line(line: String) -> Result(list(String), csv.ParseError) {
+  csv.parse_line(line)
 }
 
-// Schreiben in eine CSV-Datei
-let daten = [["Name", "Alter"], ["Max", "30"], ["Lisa", "25"]] // Daten vorbereiten
-let file = csv.create("meine_neue_datei.csv") // Neue Datei erstellen
-file.write(daten) // Daten in die Datei schreiben
+// CSV in String umwandeln
+fn to_csv(data: list(list(String))) -> Result(String, Nil) {
+  csv.from_rows(data)
+}
 
-// Ausgabe:
-// Name,Alter
-// Max,30
-// Lisa,25
+pub fn example() {
+  let line = parse_csv_line("Name,Alter,Beruf\nMax,30,Entwickler".to_string())
+  assert Ok(["Name", "Alter", "Beruf"]) = line
+
+  let data = to_csv([["Name", "Alter", "Beruf"], ["Max", "30", "Entwickler"]])
+  assert Ok("Name,Alter,Beruf\nMax,30,Entwickler") = data
+}
+```
+Sample Output:
+```
+OK(["Name", "Alter", "Beruf"], ["Max", "30", "Entwickler"])
 ```
 
-## Tiefere Einblicke:
-CSV wurde ursprünglich in den 1970er Jahren entwickelt und hat seitdem an Bedeutung gewonnen, da es einfach zu lesen und zu schreiben ist und von den meisten Tabellenkalkulationsprogrammen unterstützt wird. Es gibt auch alternative Dateiformate wie XML oder JSON, die ebenfalls von Programmierern genutzt werden können. Die Gleam-Implementierung für CSV basiert auf der Jiffy-CSV-Bibliothek und unterstützt auch das Lesen von CSV-Dateien mit Optionen für benutzerdefinierte CSV-Parser.
+## Vertiefung
+CSV steht für "Comma-Separated Values" und wurde in den frühen 70ern populär. Heutzutage gibt es Alternativen wie JSON oder XML, die komplexere Datenstrukturen abbilden können, doch CSV bleibt relevant für einfache Tabellendaten. Implementation in Gleam erfordert meist das csv-Modul, das Parsing und Serienfunktionen bietet.
 
-## Siehe auch:
-- Dokumentation des Gleam-CSV-Pakets: https://github.com/gleam-lang/csv
-- Jiffy-CSV-Bibliothek: https://jiffyclub.github.io/csv/
-- Ein Vergleich von CSV mit anderen Dateiformaten: https://www.opencsv.org/articles.html
+## Siehe auch
+- Die offizielle Gleam-Dokumentation für CSV: https://hexdocs.pm/gleam_csv/.
+- RFC 4180, der Standard für CSV-Dateiformate: https://tools.ietf.org/html/rfc4180.
+- Ein Gleam CSV-Projekt auf GitHub zum reinschnuppern: https://github.com/gleam-lang/csv.

@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "PowerShell recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests in programming is the process of creating automated scripts that check if the code written by a programmer is functioning as expected. Programmers write tests to ensure the quality and accuracy of their code, identify and fix any errors, and prevent future bugs from occurring. 
+Writing tests in programming means crafting scripts that check if your code runs correctly. Programmers do this to catch bugs early, ensure reliability, and prevent future changes from breaking existing features.
 
 ## How to:
-
-Writing tests in PowerShell is relatively simple and efficient. The code below shows an example of writing a test for a calculator function that adds two numbers and verifies the expected result is returned.
+Here's a quick test for a function that adds numbers using Pester, PowerShell's testing framework. You'd typically save this script as `Add.Tests.ps1`.
 
 ```PowerShell
-Function Add-Calculator {
-    Param (
-        [int]$FirstNumber,
-        [int]$SecondNumber
-    )
-
-    return $FirstNumber + $SecondNumber
+# Sample function to test
+function Add ($a, $b) {
+    return $a + $b
 }
 
-Describe "Add-Calculator" {
-    It "Correctly adds two numbers" {
-        $result = Add-Calculator -FirstNumber 2 -SecondNumber 3
-        $expectedResult = 5
+# Import Pester module
+Import-Module Pester
 
-        $result | Should -Be $expectedResult
+# Define the test
+Describe "Add-Function" {
+    It "adds two numbers" {
+        # Arrange
+        $num1 = 10
+        $num2 = 20
+        $expected = 30
+
+        # Act
+        $result = Add $num1 $num2
+
+        # Assert
+        $result | Should -Be $expected
     }
 }
+
+# Run the test
+Invoke-Pester
 ```
-The output of this script will state that the test passed, indicating that the `Add-Calculator` function is working as expected. 
+
+After running the script, you'd see output like:
+
+```
+Describing Add-Function
+    [+] adds two numbers 75ms
+Tests completed in 75ms
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```
 
 ## Deep Dive:
-
-Writing tests has been around since the early days of software development. In the past, tests were written manually and were often time consuming and prone to human error. However, with the rise of automated testing tools and frameworks, writing tests has become an integral part of the development process. 
-
-There are various alternatives to writing tests in PowerShell. Some popular tools include Pester, PSScriptAnalyzer, and PSRule. These tools offer different features and capabilities, but ultimately serve the same purpose of improving the quality of code.
-
-When writing tests in PowerShell, it's important to follow best practices to ensure effective and efficient testing. This includes writing descriptive and concise test names, organizing tests into descriptive blocks, and using helpful output formats. Additionally, tests should be designed to run independently of one another to avoid failures impacting other tests.
+Historically, testing in PowerShell was much more manual before Pester was introduced. It changed the game by providing a powerful yet simple syntax for automated testing, borrowing concepts from testing frameworks in other languages. Alternatives to Pester include PSUnit and PSTest, but Pester is the most widely used and integrated directly into PowerShell Core for cross-platform support. Detailed implementation of tests involves a cycle typically called "Red, Green, Refactor", where tests are written to fail first (Red), then code is written to pass tests (Green), followed by a cleanup phase without changing behavior (Refactor).
 
 ## See Also:
-
-- [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)
+- Pester's GitHub Repository: [https://github.com/pester/Pester](https://github.com/pester/Pester)

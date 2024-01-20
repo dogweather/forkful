@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Swift: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que YAML et pourquoi les programmeurs l'utilisent-ils?
+## What & Why?
+YAML, "YAML Ain't Markup Language," est un format de sérialisation de données lisible par l'homme. Les développeurs l'utilisent pour configurer des projets, stocker des données et faciliter la communication entre différents services.
 
-YAML, ou "YAML Ain't Markup Language", est un langage de sérialisation de données utilisé par les programmeurs pour stocker et transférer des données structurées de manière lisible pour l'homme. Il est souvent utilisé dans les projets de développement de logiciels pour stocker des configurations, des données de test et d'autres informations structurées.
-
-## Comment faire :
-
-```Swift
-// Créer des données YAML :
-let fruits = ["pomme", "banane", "orange"]
-let yamlFruits = try YAMLEncoder().encode(fruits)
-print(yamlFruits)
-
-// Sortie :
-"- pomme\n- banane\n- orange"
-```
+## How to:
+Pour manipuler du YAML en Swift, on utilise souvent une bibliothèque tierce comme `Yams`. Vous devez ajouter Yams à votre projet via Swift Package Manager ou CocoaPods. Voici comment lire et écrire du YAML :
 
 ```Swift
-// Décoder des données YAML :
-let yamlCars = "- Chevrolet\n- Ford\n- Toyota"
-let cars = try YAMLDecoder().decode([String].self, from: yamlCars)
-print(cars)
+import Yams
 
-// Sortie :
-["Chevrolet", "Ford", "Toyota"]
+let yaml = """
+- name: Harry Potter
+  job: Wizard
+- name: Hermione Granger
+  job: Witch
+"""
+
+do {
+    // Lecture
+    if let people = try Yams.load(yaml: yaml) as? [[String: String]] {
+        for person in people {
+            print("\(person["name"] ?? "") est un(e) \(person["job"] ?? "").")
+        }
+    }
+
+    // Écriture
+    let newPerson = ["name": "Ron Weasley", "job": "Wizard"]
+    let newYaml = try Yams.dump(object: newPerson)
+    print(newYaml)
+} catch {
+    print("Erreur de traitement YAML: \(error)")
+}
 ```
 
-## Plongée en profondeur :
+Résultat :
 
-Le format YAML a été créé en 2001 en réponse à d'autres formats de sérialisation tels que XML et JSON. Sa structure simple et lisible pour l'homme en font un choix populaire pour stocker des paramètres et des configurations dans les projets de développement de logiciels. D'autres formats de sérialisation courants incluent JSON, XML, et plist (pour les projets iOS et macOS).
+```
+Harry Potter est un(e) Wizard.
+Hermione Granger est un(e) Witch.
+- job: Wizard
+  name: Ron Weasley
+```
 
-## Voir aussi :
+## Deep Dive
+YAML a été développé en 2001 par Clark Evans, Ingy döt Net et Oren Ben-Kiki. C'est souvent une alternative à JSON ou XML car c'est plus facile à lire et à écrire pour les êtres humains. Toutefois, attention, YAML peut être sujet aux erreurs dues à sa nature sensible à l'indentation. En Swift, travailler avec YAML n'est pas intégré nativement, donc on utilise des bibliothèques comme `Yams` pour le parsing et la génération.
 
-- La documentation officielle sur YAML : https://yaml.org/
-- Une introduction complète à YAML : https://www.yamsuite.com/fr/blog/yaml-introduction
-- Un outil en ligne pour tester du code YAML : https://yaml-online-parser.appspot.com/
+## See Also
+- Yams GitHub : https://github.com/jpsim/Yams
+- The Official YAML Website : https://yaml.org
+- Swift Package Manager : https://swift.org/package-manager/

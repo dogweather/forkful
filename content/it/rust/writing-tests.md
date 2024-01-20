@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Rust: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,46 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao ragazzi! Se siete programmatori (o aspiranti tali), sicuramente avete già sentito parlare di testing del codice. Ma cosa significa esattamente? E perché è importante per i programmatori?
-
 ## Cosa & Perché?
-
-Scrivere test è il processo di creare codice specifico che verifica se il nostro codice funziona correttamente. Questo ci aiuta a identificare eventuali errori o bug nel nostro codice prima che venga utilizzato dai nostri utenti. Inoltre, i test forniscono una documentazione utile sulle funzionalità del nostro codice e ci aiutano a mantenere la qualità del nostro software nel tempo.
+Scrivere test significa creare codice per controllare se altri codici funzionano correttamente. I programmatori scrivono test per verificare automaticamente che il software si comporti come previsto, riducendo così errori e problemi futuri.
 
 ## Come fare:
-
-Per scrivere test in Rust, utilizziamo il modulo integrato di testing "test". Iniziamo creando una funzione di test utilizzando l'attributo `#[test]`. All'interno di questa funzione, utilizziamo l'assertion `assert_eq!()` per confrontare il risultato della nostra funzione con un risultato predefinito. Vediamo un esempio:
+Rust ha un sistema di testing integrato che permette di scrivere test unitari e d'integrazione semplicemente e velocemente.
 
 ```Rust
-#[test]
-fn test_addition() {
-    let result = add(5, 10);
-    assert_eq!(result, 15);
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    fn it_fails() {
+        assert_eq!(1 + 1, 3); // Questo test fallirà!
+    }
 }
 ```
 
-Possiamo anche testare funzioni che ci aspettiamo che generino un errore utilizzando l'attributo `#[should_panic]`. Ad esempio:
+Eseguendo `cargo test` otterrai qualcosa del genere:
 
-```Rust
-#[test]
-#[should_panic]
-fn test_division_by_zero() {
-    div(10, 0);
-}
+```
+running 2 tests
+test tests::it_works ... ok
+test tests::it_fails ... FAILED
+
+failures:
+
+---- tests::it_fails stdout ----
+thread 'tests::it_fails' panicked at 'assertion failed: `(left == right)`
+  left: `2`,
+ right: `3`', src/lib.rs:10:9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 ```
 
-Una volta scritte le nostre funzioni di test, possiamo eseguirle utilizzando il comando `cargo test` nella nostra cartella del progetto. Vedremo l'output dei test eseguiti e se sono tutti passati o meno.
+## Approfondimenti
+Il sistema di test di Rust si ispira a framework esistenti in altri linguaggi, ma è progettato per integrarsi senza soluzione di continuità con il linguaggio stesso e il suo strumento di gestione dei pacchetti `cargo`. Altre alternative come `proptest` permettono di scrivere test basati su proprietà. I dettagli implementativi si trovano direttamente nel codice sorgente del compilatore di Rust e sono documentati ufficialmente in modo che i programmatori possano imparare ed estendere la funzionalità dei test.
 
-## Approfondimento:
-
-Scrivere test per il nostro codice prima era considerato una pratica non essenziale, ma negli ultimi anni è diventato sempre più importante. Grazie all'adozione di metodologie di sviluppo come il "Test Driven Development" (TDD) e "Continuous Integration" (CI), i test sono diventati un modo fondamentale per assicurare la qualità del nostro codice.
-
-Oltre al modulo di testing integrato di Rust, esistono anche altri framework di testing come "JUnit" e "RSpec". Inoltre, ci sono anche strumenti di testing automatizzati che possono aiutarci a eseguire i nostri test in modo più efficiente.
-
-Per quanto riguarda l'implementazione dei test, è importante ricordare di scrivere test indipendenti e non dipendenti da altri test. Inoltre, è consigliato seguire il principio di "write once, test everywhere" per assicurare che il nostro codice sia testato su più piattaforme.
-
-## Vedi anche:
-
-- [Documentazione sul modulo di testing di Rust](https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html)
-- [Articolo su Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
-- [Continous Integration: cos'è e perché è importante](https://en.wikipedia.org/wiki/Continuous_integration)
+## Vedi Anche
+- [Rust Book - Testing](https://doc.rust-lang.org/book/ch11-00-testing.html) per una guida dettagliata sui test in Rust.
+- [API Documentation for `std::assert!`](https://doc.rust-lang.org/std/macro.assert.html) per capire come utilizzare assert.
+- [rust-lang/rust GitHub repository](https://github.com/rust-lang/rust) per esempi e discussioni sulla implementazione dei test.

@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Swift: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-JSON काम करना क्या है और प्रोग्रामर्स उसे क्यों करते हैं।
+## क्या और क्यों?
 
-(JSON, JavaScript Object Notation का संक्षिप्त रूप है। यह एक स्ट्रिंग के रूप में डेटा जोड़े वाला एक लाइटवेट डेटा एक्सचेंज फॉर्मेट है। प्रोग्रामर्स इसका उपयोग डेटा को अपने ऐप्लिकेशन या वेबसाइट के अन्दर संग्रहीत करने के लिए करते हैं।)
+JSON (JavaScript Object Notation) डेटा को स्टोर और ट्रांसपोर्ट करने का एक तरीका है। प्रोग्रामर इसका इस्तेमाल डेटा को आसानी से पढ़ने और एपीआईस के साथ संवाद स्थापित करने के लिए करते हैं।
 
 ## कैसे करें:
-यहां हम आपको JSON डेटा को संग्रहीत करने और उसे स्वतंत्र अनुभव करने का एक सरल तरीका दिखाएंगे।
 
 ```Swift
-let json = "{\"name\":\"John\", \"age\":25}"
-if let data = json.data(using: .utf8) {
-    let user = try? JSONDecoder().decode(User.self, from: data)
-    print(user?.name) // Output: John
-    print(user?.age) // Output: 25
+import Foundation
+
+// एक JSON स्ट्रिंग
+let jsonString = """
+{
+    "name": "रोहन",
+    "age": 30,
+    "isDeveloper": true
+}
+"""
+
+// JSON को Swift डिक्शनरी में पार्स करना
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let dictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any]
+        print(dictionary?["name"] ?? "नाम नहीं मिला")
+    } catch {
+        print("JSON पार्सिंग में एरर: \(error)")
+    }
 }
 ```
 
-इस कोड में, हमने स्ट्रिंग के एक डिक्शनरी में जोन डेटा संग्रहीत किया है। फिर हमने वह डेटा decode किया और उसे उसे User object में परिवर्तित किया। आप इसी तरह से अपनी JSON डेटा को स्वतंत्रता से पढ़ सकते हैं और अपने ऐप में उसका उपयोग कर सकते हैं।
+सैंपल आउटपुट:
+```
+रोहन
+```
 
-## गहराई से जानें:
-जब आपको बहुत सारी डेटा संग्रहीत करनी हो और आपके पास कुछ प्रतिस्थितिगत डेटा हो तो JSON एक बहुत ही अच्छा चयन हो सकता है। आप अपनी JSON डेटा को विभिन्न तरीकों से संग्रहीत कर सकते हैं जैसे कि XML या CSV।
+## गहराई में जानकारी:
 
-## देखें भी:
-यदि आपको अधिक जानकारी चाहिए तो आप [Swift's documentation on JSON](https://developer.apple.com/documentation/foundation/archives_and_serialization/json) देख सकते हैं। इसके अलावा, आप [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) की मदद से रीखा जा सकता है जो कि JSON संग्रह के लिए बहुत ही उपयोगी है।
+JSON सरल और लाइटवेट है, जो इसे RESTful APIs के लिए पॉप्युलर चॉइस बनाता है। इतिहास में, XML जैसे विकल्प थे लेकिन JSON ने इसकी सरलता के कारण बाज़ी मार ली। Swift में, `JSONSerialization` क्लास के जरिए या `Codable` प्रोटोकोल के इस्तेमाल से JSON का हैंडलिंग किया जाता है।
+
+## सी ऑल्सो:
+
+- स्विफ्ट डॉक्युमेंटेशन - [JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)

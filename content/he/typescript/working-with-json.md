@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "TypeScript: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-עבודה עם JSON היא תהליך שבו מתכנתים מתאימים נתונים בפורמט JSON. פעולה זו מאפשרת לנו לארגן ולשמור מידע בצורה נוחה ומקומית בקוד שלנו.
+## מה ולמה?
+JSON, שמעתם על זה, נכון? זה פורמט התעתיק שלנו למידע בפרויקטים ויישומים. אנחנו משתמשים בו כי זה קריא, קל לניתוח ורווחי בכל הפלטפורמות.
 
-## כיצד לעשות זאת: 
+## איך לעשות:
+קוד מדגים ותוצאות לדוגמא.
+
 ```TypeScript
-// כל עובד עם JSON מתחיל עם הגדרת קובץ JSON בתוך משתנה מסוג String.
-let jsonString: string = '{"name":"John", "age":35, "occupation":"developer"}';
+// המרת אובייקט ל-JSON string.
+const user = { name: 'דוד', age: 30 };
+const jsonUser = JSON.stringify(user);
+console.log(jsonUser); // יחזיר: '{"name":"דוד","age":30}'
 
-// כעת, נשתמש בפעולת JSON.parse כדי לקבל אובייקט מהטקסט שלנו.
-let person = JSON.parse(jsonString);
-
-// לשינוי אובייקט לתוך טקסט, נשתמש בפעולת JSON.stringify.
-let newJsonString: string = JSON.stringify(person);
-
-// כעת, הטקסט שלנו יכיל את השינויים שביצענו באובייקט.
-console.log(newJsonString);
-// Output: {"name":"John", "age":35, "occupation":"developer"}
+// המרת JSON string בחזרה לאובייקט.
+const jsonData = '{"name":"דוד","age":30}';
+const userObject = JSON.parse(jsonData);
+console.log(userObject.name); // יחזיר: דוד
 ```
 
-## חקר עמוק: 
-עבודה עם JSON נפוצה בעיקר ביישומי רשת אשר משתמשים בה כדי לשלוח ולקבל נתונים. בעבר, פורמט XML היה שכיח כמו פתרון לבעיות של פיצול נתונים. אך JSON הוא פתרון פשוט יותר ומתקבל בכל הפלטפורמות. בנוסף, ישנם פתרונות ניתוח נתונים נוספים כמו YAML ו-CSV אך הם פחות נפוצים בעקבות הפשטות של JSON. בפרויקטים גדולים יותר, ניתוח נתונים מומלץ לצד השימוש בביבליות ניתוח נתונים כמו JSON.net.
+## צלילה עמוקה
+JSON (JavaScript Object Notation) הוא שיטה שהומצאה כחלק משפת JavaScript, אבל כיום היא תקן מתוקשר לעבודה עם נתונים בכמעט כל שפת תכנות. ישנם אלטרנטיבות כמו XML, יחסיות ופחות נוחות לשימוש. כשאנחנו עובדים עם JSON ב-TypeScript, אנחנו לעיתים צריכים להגדיר טיפוסים על מנת להבטיח תקינות הנתונים.
 
-## ראה גם: 
-עבודה עם JSON היא חלק חשוב מתכנות בפלטפורמת TypeScript. לכן כדאי לקרוא על פעולות ופנקציות נוספות שניתן להשתמש בהם כדי להפקיד ולעבוד עם נתונים בפורמט JSON:
-
-- תיעוד JSON רשמי של TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html
-- פונקציות נוספות לעבודה עם JSON ב-TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#new-json-apis
-- ספריית JSON.net לניתוח ויצירת נתוני JSON: https://www.newtonsoft.com/json
+## ראו גם
+- [MDN Web Docs on JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [JSON Schema](http://json-schema.org/) - להגדיר סכמות ולוודא תקינות של JSON

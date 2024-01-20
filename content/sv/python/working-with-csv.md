@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Python: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Python"
 category:             "Python"
@@ -11,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV (Comma Separated Values) är ett vanligt filformat som används för att lagra strukturerad data i textform. Det är populärt bland programmerare eftersom det är lätt att läsa och behandla med kod. 
+CSV hantering handlar om att läsa och skriva data i komma-separerade värden, ett enkelt textbaserat format. Programmerare använder CSV för att enkelt utbyta data mellan olika system och program.
 
-Förutom att vara lättläst av människor, är CSV också användbart eftersom det kan lagra olika datatyper, till exempel strängar och numeriska värden, i samma fil.
-
-## Hur man gör:
-Att arbeta med CSV-filer i Python är enkelt och smidigt. Först måste vi importera det inbyggda csv-biblioteket. Sedan öppnar vi vår CSV-fil med hjälp av functionen "open" och anger dess läge. Därefter använder vi "csv.reader" för att läsa filen rad för rad och lägga till datan i en lista.
-
+## How to:
+### Läs in CSV:
 ```Python
 import csv
 
-with open('exempelfil.csv', 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        print(row)
+# Öppna och läs CSV-fil
+with open('exempel.csv', mode='r') as file:
+    reader = csv.reader(file)
+    for rad in reader:
+        print(rad)
 ```
 
-Output:
+### Skriv till CSV:
 ```Python
-['Namn', 'E-post', 'Telefon']
-['Sara', 'sara@mail.com', '0701234567']
-['Anna', 'anna@mail.com', '0734567891']
+import csv
+
+# Data att skriva
+data = [['Namn', 'Ålder'], ['Alice', 30], ['Bob', 25]]
+
+# Öppna och skriv till CSV-fil
+with open('exempel.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
 ```
 
-## Deep Dive:
-CSV-formatet skapades på 1970-talet för att underlätta datautbyte mellan olika system. Det finns dock alternativ till CSV, som till exempel JSON och XML, som är mer utvecklade och kan hantera mer komplex data.
+### Resultat:
+```
+['Namn', 'Ålder']
+['Alice', '30']
+['Bob', '25']
+```
 
-För att skriva till en CSV-fil från Python använder man "csv.writer" istället för "csv.reader" och använder en annan lägeparameter för att skriva till filen. CSV-filer kan också ha kommatecken eller andra separatorer som skiljetecken och inte bara komma.
+## Deep Dive
+CSV (Comma-Separated Values) har använts sedan 1970-talet och är fortfarande populärt på grund av dess enkelhet. Alternativa format inkluderar JSON och XML, men CSV är ofta överlägset när det gäller enkelhet och små filstorlekar. Python´s `csv` modul hanterar kompatibilitet väl, men håll koll på skillnader som kan uppstå med textkodning och radavslutningar beroende på operativsystem.
 
-## Se även:
-- [Python's official documentation on CSV](https://docs.python.org/3/library/csv.html)
-- [A comparison of CSV vs JSON vs XML](https://www.computerhope.com/issues/ch001356.htm)
-- [Using CSV files in Python, a tutorial by Real Python](https://realpython.com/python-csv/)
+## See Also
+- Officiell Python `csv` modul dokumentation: https://docs.python.org/3/library/csv.html
+- Mer om CSV-formatet: https://en.wikipedia.org/wiki/Comma-separated_values
+- Pandas biblioteket för avancerad dataanalys: https://pandas.pydata.org/

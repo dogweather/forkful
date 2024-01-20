@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Bash: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä & Miksi?
+Testaus on ohjelmiston kehitysvaihe, jossa koodi lähetetään läpi sarjan testejä vikojen löytämiseksi ja korjaamiseksi. Koodaajat testaavat, koska se parantaa ohjelmiston laatua ja vakautta, ja varmistaa, että uudet ominaisuudet eivät riko olemassaolevaa toiminnallisuutta.
 
-Kirjoita testejä ohjelmointikieli Bashilla on varmistusprosessi, jolla tarkistetaan koodin toimivuus ja mahdolliset virheet. Testaaminen auttaa varmistamaan ohjelman laadun ja vähentämään mahdollisia bugeja, jotka voivat aiheuttaa ongelmia käytössä. Se säästää aikaa ja vaivaa korjata ongelmia myöhemmin ja auttaa parantamaan ohjelman laatua yleisesti.
-
-## Miten:
-
-Esimerkkejä testien kirjoittamisesta Bashilla ja näytteen tulosteista  ```Bash ... ``` koodilohkoissa.
-
+## How to: - Kuinka:
 ```Bash
-# Testaa, että tiedosto/luokka on olemassa
-if [ -d "$DIRECTORY" ]; then
-  echo "$DIRECTORY löytyy."
-else
-  echo "$DIRECTORY ei löydy."
-fi
-```
-
-```Bash
-# Testaa funktioiden palautusta
-sum() {
-  echo "$(($1+$2))"
+# Tarkista onko tiedosto olemassa
+test_file_existence() {
+    [[ -f $1 ]] && echo "Tiedosto löytyy." || echo "Tiedostoa ei löydy."
 }
-if [ $(sum 4 5) -eq 9 ]; then
-  echo "Testi läpäisty."
-else
-  echo "Testi epäonnistui."
-fi
+
+# Testaa funktiota
+test_file_existence /path/to/your/file.txt
 ```
 
-Tuloste:
+Esimerkkituloste jos tiedosto löytyy:
+```
+Tiedosto löytyy.
+```
 
-"DIREKTORIO löytyy."
-"Testi läpäisty."
+Esimerkkituloste jos tiedostoa ei löydy:
+```
+Tiedostoa ei löydy.
+```
 
-## Syvemmälle:
+## Deep Dive - Syväsukellus:
+Testien kirjoittaminen Unix-ja Linux-ympäristöissä alkaa perinteisesti `test`-komennolla, joka tunnetaan myös `[ ]`-syntaksina. Nykyään on olemassa monia vaihtoehtoja kuten Bats (Bash Automated Testing System), joka tarjoaa edistyneempiä ominaisuuksia kuten testitapausten järjestämisen ja setup/teardown-toiminnallisuuden. Skriptitestauksen tarkkuus ja tehokkuus riippuvat oikeista asseritioista ja hyvästä testitapausten kattavuudesta.
 
-Kirjoittaessasi testejä Bashilla, on hyvä olla tietoinen siitä, että aiemmat Bash-versiot eivät tue testirakenteita. Voit kuitenkin käyttää muita testauskirjastoja, kuten `Bats` tai `shunit2`. Voit myös luoda omia testausfunktioita, jotka auttavat varmistamaan haluamasi toiminnallisuudet.
-
-## Katso myös:
-
-- [Bash testikomennot](https://www.tutorialspoint.com/unix_commands/test.htm)
-- [Bats-testauskehys Bashille](https://github.com/sstephenson/bats)
-- [shunit2-testauskehys Bashille](https://github.com/kward/shunit2)
+## See Also - Katso Myös:
+- Bash-hakemisto [Bash Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- Bash-skriptitestaus [Bash Automated Testing System (Bats)](https://github.com/bats-core/bats-core)

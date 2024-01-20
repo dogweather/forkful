@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Elm: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Salut les programmeurs! Bienvenue dans cet article sur l'écriture de tests en Elm. Si vous vous demandez ce qu'est l'écriture de tests et pourquoi les programmeurs le font, vous êtes au bon endroit. Jetons un coup d'œil rapide sur ces sujets et plongeons dans la façon de le faire en Elm.
+## What & Why?
+Les tests sont des vérifications automatisées de votre code. Ils préviennent les bugs et assurent que tout fonctionne après des modifications. C'est une assurance qualité pour votre projet.
 
-## Quoi & Pourquoi?
+## How to:
 
-Écrire des tests est simplement le processus d'écrire du code pour vérifier si votre code fonctionne correctement. Les programmeurs le font pour s'assurer que leur code fonctionne comme prévu et pour éviter les erreurs qui pourraient causer des problèmes dans leur application. Cela peut sembler fastidieux, mais en fin de compte, cela vous permet d'avoir un code plus fiable et de gagner du temps en identifiant les problèmes avant qu'ils ne deviennent plus graves.
+Pour écrire des tests en Elm, utilisez `elm-test`. Voici un exemple simple :
 
-## Comment faire:
+```Elm
+import Expect
+import Test exposing (..)
 
-Écrire des tests en Elm est assez simple. Vous devez utiliser le module `Test` et les fonctions `test` et `expect` pour définir vos tests. Voici un exemple:
+suiteDeTests : Test
+suiteDeTests =
+    describe "Un exemple de test"
+        [ test "addition simple" <|
+            \_ -> 2 + 2 |> Expect.equal 4
+        ]
+
+-- Pour lancer les tests :
+-- $ elm-test
+```
+
+Sortie attendue :
 
 ```
-Elm Test
+TEST RUN PASSED
 
-test "Vérifie si 2 + 2 est égal à 4" <| \() ->
-  expect <| 2 + 2 == 4
-  ```
+Un exemple de test
+    ✓ addition simple
 
-Vous pouvez également utiliser `shouldBe`, `shouldNotBe` et `shouldSatisfy` pour des assertions plus spécifiques. Et n'oubliez pas d'exécuter vos tests avec `elm-test` dans votre terminal pour voir les résultats.
+1 test run, 0 failures.
+```
 
-## Plongée Profonde:
+## Deep Dive
 
-Historiquement, les tests étaient principalement écrits manuellement par les programmeurs, mais avec l'avènement des frameworks de test automatisés, comme `elm-test`, cela est devenu beaucoup plus facile et plus efficace. Certains programmeurs préfèrent également utiliser des outils de test externes, comme Selenium, pour tester l'interface utilisateur de leur application.
+Les tests en Elm ont été influencés par les pratiques de développement logiciel comme TDD. Les alternatives populaires incluent QuickCheck pour les tests de propriétés. Elm a intégré le système de types pour minimiser les bugs, mais les tests restent essentiels pour valider la logique.
 
-Il existe également d'autres alternatives à l'écriture de tests unitaires, comme les tests d'intégration et les tests fonctionnels, qui peuvent être utilisés en complément des tests unitaires pour garantir une couverture plus complète de votre code.
+## See Also
 
-En ce qui concerne la mise en œuvre, cela peut varier selon les préférences des programmeurs et les besoins du projet. Il est important de trouver le bon équilibre entre la quantité de tests et le temps nécessaire pour les écrire.
-
-## Voir aussi:
-
-Vous pouvez trouver plus d'informations sur l'écriture de tests en Elm sur le site officiel d'Elm et dans les tutoriels en ligne. N'hésitez pas à explorer différents outils et approches pour trouver ce qui fonctionne le mieux pour vous et votre projet.
-
-Merci d'avoir lu cet article sur l'écriture de tests en Elm. J'espère que vous en avez appris davantage sur son utilité et sa mise en œuvre. Bonne chance dans vos futurs projets!
+- [Guide officiel elm-test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm Test Runner pour l'intégration avec CI](https://github.com/rtfeldman/node-test-runner)

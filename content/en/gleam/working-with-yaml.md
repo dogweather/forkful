@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Gleam recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-YAML Ain't Markup Language (YAML) is a human-readable data serialization language. Programmers use it due to its simplicity, readability and compatibility across languages.
+YAML, "YAML Ain't Markup Language", is a human-friendly data serialization standard. Programmers use it for config files, data exchange between languages, and because it's more readable than JSON or XML.
 
 ## How to:
+Gleam currently doesn't have built-in YAML parsers or libraries, as of my last update. You’d typically parse YAML in Gleam by leaning on Erlang functions thanks to Gleam's compatibility with Erlang’s ecosystem. Let’s use an Erlang library and call it from Gleam.
 
-Gleam currently does not support reading or writing YAML directly, but you can work it out using a suitable library or through the JSON parsing functions in the Gleam stdlib. Assuming that you have a JSON representation of your YAML, you can parse it.
+First, add the Erlang YAML library to `rebar.config`:
 
-```Gleam
-import gleam/json.{Json, DecodeError}
-import gleam/map.{Map, empty, update}
+```erlang
+{deps, [yaml]}.
+```
 
-fn parse_json(json: String) -> Result(Map(String, Json), DecodeError) {
-  json
-    |> json.from_string
-    |> result.map(fn(j) {
-        j
-        |> json.to_map
-        |> result.map(append_hello)
-       })
-    |> result.flatten
-}
+Here's how you can call the Erlang library from Gleam:
 
-fn append_hello(m: Map(String, Json)) -> Map(String, Json) {
-  update(m , "hello", json.string("world"))
+```rust
+external fn parse(String) -> Result(Tuple(tuple(atom(), String)), Nil) =
+  "yaml" "decode"
+
+pub fn main() -> Result(Tuple(tuple(atom(), String)), Nil) {
+  let yaml_data = "greeting: hello"
+  parse(yaml_data)
 }
 ```
 
-## Deep Dive
+Sample output might look like this:
 
-YAML finds its roots in languages like HTML, Perl and Python and its development started in 2001. Alternatives to YAML include JSON or XML, although YAML's ability to visibly represent complex data structures can tilt the scales in its favour. When working with YAML in Gleam, due to the lack of native support, one has to perform a workaround such as library implementations, or heavy use of JSON conversion functions in stdlib.
+```elixir
+Ok(#(ok, [{greeting, "hello"}]))
+```
+
+## Deep Dive
+YAML was released in 2001, and it’s often used where human readability is important. It's not always the default for data serialization, JSON and XML are widely used too. However, YAML's simplicity makes it ideal for config files or simple data structures.
+
+Alternatives might be Elixir’s built-in `:yamerl` parser, and in Gleam, you might handle similar tasks using JSON with the `gleam/json` library. As for implementation, you're tapping into the broader BEAM ecosystem when you work with YAML in Gleam—it's this interoperability that makes parsing YAML possible without needing a dedicated Gleam library.
 
 ## See Also
-
-Take a deep dive into Gleam with the [Gleam Guide](https://gleam.run/guides/).
-Know more about YAML from [YAML Official site](http://yaml.org/spec/1.2/spec.html).
-You might find gleam-expect, an assertion library useful during your coding with Gleam [Gleam Expect](https://hexdocs.pm/gleam_expect/readme.html).
+- YAML specification: https://yaml.org/spec/1.2/spec.html
+- Erlang `yaml` library: https://hex.pm/packages/yaml
+- Gleam’s JSON library documentation: https://hexdocs.pm/gleam_stdlib/gleam/json/

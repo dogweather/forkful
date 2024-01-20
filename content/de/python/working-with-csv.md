@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Python: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,24 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & warum?
-Bei CSV handelt es sich um ein Dateiformat, das verwendet wird, um Daten in Tabellenform zu speichern. CSV steht für "Comma Separated Values" und ist in der Programmierung weit verbreitet. Es ermöglicht uns, Daten in einfachen Textdateien zu speichern, die sowohl von Menschen als auch von Maschinen leicht lesbar sind. Programmierer nutzen CSV, um Daten in einer organisierten und strukturierten Weise zu speichern und zu verarbeiten.
+## Was & Warum?
+CSV steht für "Comma-Separated Values" und ist ein Dateiformat, das für den Datenaustausch genutzt wird. Programmierer verwenden es, weil es einfach, menschenlesbar und weit verbreitet ist.
 
-# Wie geht das?
-In Python gibt es verschiedene Möglichkeiten, mit CSV-Dateien zu arbeiten. Zuerst müssen wir die eingebaute `csv` Bibliothek importieren. Dann können wir eine CSV-Datei öffnen und die Daten in eine Liste von Listen oder ein Pandas DataFrame lesen. Zum Beispiel:
-```python
+## How to:
+Um mit CSV in Python zu arbeiten, verwenden wir das `csv` Modul. So liest und schreibst du CSV-Dateien:
+
+```Python
 import csv
-with open('daten.csv', 'r') as csv_datei:
-    csv_reader = csv.reader(csv_datei)
-    for zeile in csv_reader:
-        print(zeile)
+
+# CSV-Datei lesen
+with open('beispiel.csv', mode='r', encoding='utf-8') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+
+# CSV-Datei schreiben
+with open('beispiel_neu.csv', mode='w', encoding='utf-8', newline='') as file:
+    csv_writer = csv.writer(file)
+    csv_writer.writerow(['Spalte1', 'Spalte2', 'Spalte3'])
+    csv_writer.writerow(['Daten1', 'Daten2', 'Daten3'])
 ```
-Die Ausgabe wird jede Zeile der CSV-Datei als Liste von Werten anzeigen.
 
-# Tiefer eintauchen
-CSV wurde in den 1970er Jahren entwickelt, um den Austausch von Daten zwischen verschiedenen Computersystemen zu erleichtern. Es ist ein einfaches und weit verbreitetes Dateiformat, das in vielen Anwendungen wie Tabellenkalkulationen, Datenbanken und Programmiersprachen verwendet wird. Alternativen zu CSV sind zum Beispiel JSON und XML, die jedoch komplexere Strukturen erlauben.
+Ausgabe beim Lesen könnte sein:
+```
+['Spalte1', 'Spalte2', 'Spalte3']
+['Daten1', 'Daten2', 'Daten3']
+```
 
-Beim Lesen oder Schreiben von CSV-Dateien müssen wir uns bewusst sein, dass die Daten nicht typisiert sind, das heißt, sie haben keinen festgelegten Datentyp wie z.B. String oder Integer. Wir müssen daher selbst sicherstellen, dass die Daten richtig formatiert sind, um Fehler bei der Verarbeitung zu vermeiden.
+## Deep Dive
+CSV-Dateien wurden Anfang der 1970er Jahre populär. Alternativen sind etwa JSON oder XML, die beide strukturiertere Daten und komplexe Hierarchien ermöglichen. CSV überzeugt durch Einfachheit und Geschwindigkeit, kann aber bei komplexen Datenstrukturen schnell unübersichtlich werden.
 
-# Siehe auch
-Weitere Informationen und Beispiele für die Arbeit mit CSV in Python finden Sie in der offiziellen [Dokumentation der `csv` Bibliothek](https://docs.python.org/3/library/csv.html). Für die Verarbeitung von größeren oder komplexeren Datenmengen ist es empfehlenswert, die leistungsstärkere `pandas` Bibliothek zu verwenden. Eine Einführung in die Arbeit mit Pandas und CSV gibt es [hier](https://realpython.com/python-csv/#parsing-csv-files-with-pandas).
+## See Also
+- Python `csv` Modul-Dokumentation: https://docs.python.org/3/library/csv.html
+- W3Schools-Anleitung zu CSV in Python: https://www.w3schools.com/python/python_csv.asp
+- CSV vs. JSON: https://www.datacamp.com/community/tutorials/json-vs-csv

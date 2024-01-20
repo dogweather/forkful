@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "PowerShell: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist YAML und warum verwenden Programmierer es?
+## Was & Warum?
+YAML ist ein data-serialization Format, benutzt für Konfig-Dateien und Daten-Austausch. Es ist beliebt wegen seiner Lesbarkeit und Einfachheit. Entwickler nutzen YAML für Konfigurationen in vielen Tools wie Docker, Kubernetes und CI/CD Pipelines.
+  
+## How to:
+PowerShell unterstützt YAML nicht nativ, aber mit dem `powershell-yaml` Modul können wir YAML Daten einfach verarbeiten.
 
-YAML ist eine textbasierte Datenformatierungssprache, die oft von Programmierern verwendet wird, um strukturierte Daten zu speichern. YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine einfache und benutzerfreundliche Alternative zu anderen Datenformatierungssprachen wie XML zu bieten. Programmierer verwenden YAML, um Daten zu speichern, zu übertragen und zu verarbeiten, insbesondere in Anwendungen wie Webentwicklung, Datenbankmanagement und Softwarekonfiguration.
-
-Wie geht's:
-
+### YAML installieren und laden:
 ```PowerShell
-# Hier ein kleines Beispiel, wie YAML in PowerShell verwendet werden kann:
-$yaml = @"
-name: John
-age: 30
-hobbies:
-  - coding
-  - gaming
-  - hiking
-"@
-
-# YAML in PowerShell umwandeln:
-$object = (ConvertFrom-Yaml $yaml)
-# Der Inhalt von $object wird nun als Objekt mit Eigenschaften (name, age, hobbies) gespeichert
-
-# Oder umgekehrt, ein PowerShell-Objekt in YAML umwandeln:
-$object.name = "Sarah"
-$yaml = $obj | ConvertTo-Yaml
-# Der Inhalt von $yaml wird nun als formatiertes YAML-Dokument gespeichert, in dem "Sarah" als Wert für die Eigenschaft "name" angegeben ist.
-
+Install-Module -Name powershell-yaml
+Import-Module powershell-yaml
 ```
 
-In die Tiefe:
+### YAML-Datei lesen:
+```PowerShell
+$content = Get-Content -Path './config.yaml' -Raw
+$yamlObject = ConvertFrom-Yaml $content
+$yamlObject
+```
 
-- Historischer Kontext: YAML wurde 2001 von Clark Evans entwickelt und ist seitdem kontinuierlich weiterentwickelt worden. Es ist Teil der YAML-Sprachfamilie, die auch YAML-Dateien umfasst.
-- Alternativen: Wie bereits erwähnt, gibt es andere Datenformatierungssprachen wie XML und JSON, die ähnliche Zwecke erfüllen können. Die Wahl der richtigen Sprache hängt von den Anforderungen des Projekts und den Vorlieben der Entwickler ab.
-- Implementierungsdetails: YAML in PowerShell wird durch das Modul "YamlDotNet" ermöglicht, das über den PowerShell Gallery heruntergeladen werden kann. Weitere Informationen und Beispiele zum Umgang mit YAML in PowerShell finden Sie in der offiziellen Dokumentation des Moduls.
+### YAML-Struktur erstellen und schreiben:
+```PowerShell
+$person = @{
+    name = 'Max'
+    alter = 30
+    sprachen = @('Deutsch', 'Englisch')
+}
+$yaml = ConvertTo-Yaml $person
+$yaml | Out-File -FilePath './neue-config.yaml'
+```
 
-Siehe auch:
+```PowerShell
+name: Max
+alter: 30
+sprachen:
+  - Deutsch
+  - Englisch
+```
 
-Weitere Informationen zu YAML in PowerShell und detaillierte Beispiele finden Sie in der offiziellen Dokumentation des "YamlDotNet" Moduls:
+## Deep Dive
+YAML, kurz für "YAML Ain't Markup Language" (ursprünglich "Yet Another Markup Language"), entstand Anfang der 2000er Jahre als einfachere Alternative zu XML. Es wird oft verwendet, weil es für Menschen gut lesbar ist. Alternative Formate wie JSON werden zwar manchmal für machine-to-machine Kommunikation bevorzugt, aber YAML bleibt König für Konfig-Dateien. PowerShell mit `powershell-yaml` macht das Lesen und Schreiben von YAML einfach, ist jedoch eine Community-Lösung und nicht offiziell Teil von PowerShell.
 
-https://www.powershellgallery.com/packages/YamlDotNet/
+## See Also
+Weitere Infos und Hilfe zu YAML in PowerShell:
 
-Weitere Ressourcen zur Syntax und Verwendung von YAML:
-
-- Offizielle YAML-Dokumentation: https://yaml.org/
-- YAML-Syntaxüberblick: https://yaml.org/spec/1.2/spec.html#id2760395
-- Ein interaktiver Lernleitfaden für YAML: https://learnxinyminutes.com/docs/yaml/
+- powershell-yaml Modul: [https://github.com/cloudbase/powershell-yaml](https://github.com/cloudbase/powershell-yaml)
+- YAML offizielle Seite: [https://yaml.org/](https://yaml.org/)
+- YAML Syntax: [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)

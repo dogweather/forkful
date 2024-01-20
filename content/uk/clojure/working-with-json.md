@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "Clojure: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## Що це таке & Навіщо?
+JSON (JavaScript Object Notation) - текстовий формат для зберігання і передачі даних. Використовується у програмуванні, бо дозволяє легко обмінюватись даними між сервером та клієнтом або різними системами.
 
-Робота з JSON - це зручний спосіб для обміну даними між програмами. Програмісти використовують його, щоб легко передавати та отримувати дані, такі як рядки, числа та об'єкти, між різними додатками та системами.
-
-## Як:
+## Як це зробити:
+В Clojure для роботи з JSON можна використати бібліотеку `cheshire`. Ось як просто зчитати JSON з рядка і преобразувати його у мапу Clojure:
 
 ```Clojure
-;; Створення JSON об'єкту
-(def my-json {:name "John" :age 25})
+(require '[cheshire.core :as json])
 
-;; Конвертація в рядок
-(clojure.data.json/write-str my-json) ; {"name":"John", "age":25}
+;; Читання JSON з рядка:
+(def json-str "{\"name\":\"Jon\", \"age\":30}")
+(def data (json/parse-string json-str))
 
-;; Зчитування з рядка
-(clojure.data.json/read-str "{\"name\":\"Mary\", \"age\":30}") ; {:name "Mary", :age 30}
+;; Перетворення Clojure мапи в JSON рядок:
+(def clojure-map {:name "Jon" :age 30})
+(def json-output (json/generate-string clojure-map))
+
+;; Вивід:
+(println data)         ; Виводить: {"name" "Jon", "age" 30}
+(println json-output)  ; Виводить: {"name":"Jon","age":30}
 ```
 
-## Глибоке занурення:
+Результатом буде дві мапи: одна зроблена з JSON, інша - з Clojure коду.
 
-JSON був створений для заміни складних форматів обміну даними, таких як XML. Особливістю JSON є його простота та універсальність, що робить його популярним у багатьох мов програмування. Альтернативою для роботи з JSON можуть бути бібліотеки, такі як Cheshire та Jsonista. Для роботи з JSON у Clojure використовується бібліотека clojure.data.json, яка надає зручні функції для роботи з цим форматом даних.
+## Пірнаємо глибше:
+JSON став стандартом у веб-розробці після його згадування Дугласом Крокфордом на початку 2000-х. Альтернативами JSON можуть бути XML або YAML, але JSON частіше вибирають через простоту і швидкість.
+
+Clojure реалізовує роботу з JSON за допомогою бібліотек, як-от `cheshire`, що використовує Java бібліотеку `Jackson` під капотом. Також існує `Clojure.data.json`, яка є більш легковесною але з меншим функціоналом.
+
+## Дивіться також:
+- Clojure Cheatsheet: [https://clojure.org/api/cheatsheet](https://clojure.org/api/cheatsheet)
+- Cheshire GitHub Page: [https://github.com/dakrone/cheshire](https://github.com/dakrone/cheshire)
+- JSON офіційний сайт: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

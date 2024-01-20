@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "Swift: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,43 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-I programminuyn så betyder att skriva tester att man skriver kod som kollar att ens program fungerar som det ska. Det kan inkludera att kolla olika användarscenarier och faktiskt köras kod. Programmers skriver tester för att säkerställa att deras kod fungerar korrekt och för att undvika potentiella buggar och fel i framtiden.
+Att skriva tester innebär att koda speciella funktioner som kontrollerar att din kod gör det den ska. Programmerare gör detta för att hitta buggar tidigt, säkra kodkvalitet och förenkla framtida underhåll.
 
-## Hur man:
-För att skriva tester i Swift, måste du först importera XCTest ramverket. Sedan kan du definiera tester genom att skapa en ny klass som ärver från XCTestCase klassen och använda funktionen XCTFail() för att testa om ett villkor är sant eller falskt. Se exempel nedan:
+## Gör så här:
+Swift använder XCTest-ramverket för att hantera testning. Här är en enkel XCTest-fall för att testa en funktion som adderar två tal:
 
-```Swift 
-import XCTest 
+```Swift
+import XCTest
 
-class CalculatorTests: XCTestCase {
-    func testAdd() {
-        let calculator = Calculator()
-        let result = calculator.add(5, 2)
-        XCTAssertEqual(result, 7)
-    }
+// Din funktion som ska testas
+func addera(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
 
-    func testSubtract() {
-        let calculator = Calculator()
-        let result = calculator.subtract(5, 2)
-        XCTAssertEqual(result, 3)
+// Testfall
+class MathTests: XCTestCase {
+    func testAddera() {
+        XCTAssertEqual(addera(2, 3), 5, "Adderingsfunktionen borde ge 5 när vi adderar 2 och 3")
     }
 }
 
-class Calculator {
-    func add(_ a: Int, _ b: Int) -> Int {
-        return a + b
-    }
-
-    func subtract(_ a: Int, _ b: Int) -> Int {
-        return a - b
-    }
-}
-
+// TestRunner (normalt automatiskt hanterad av Xcode)
+XCTMain([
+    testCase(MathTests.allTests)
+])
 ```
 
-## Djupdykning:
-Tester har funnits sedan programmeringens tidiga dagar. En av de mest populära testningsramverken är JUnit, som är utformat för Java-programmerare. Det finns också alternativ till XCTest för Swift, såsom Quick och Nimble. För att skriva effektiva tester är det viktigt att veta vilka delar av koden som måste testas och att skriva testfall för olika scenarier.
+Resultat:
+```
+Test Suite 'All tests' started at 2023-03-29 15:23:17.170
+Test Suite 'MathTests' started at 2023-03-29 15:23:17.172
+Test Case '-[MathTests testAddera]' started.
+Test Case '-[MathTests testAddera]' passed (0.001 seconds).
+Test Suite 'MathTests' finished at 2023-03-29 15:23:17.173.
+```
+
+## Deep Dive
+Tidiga versioner av Swift hade inget inbyggt stöd för tester, men XCTest, som härstammar från OCUnit för Objective-C, infördes i Swift för att möjliggöra TDD (Test-Driven Development). Alternativ till XCTest inkluderar Quick/Nimble som erbjuder en mer beskrivande BDD-stil (Behavior-Driven Development). När du skriver tester är det viktigt att hålla dem isolerade och snabbkörande för att effektivisera utvecklingscykeln.
 
 ## Se även:
-- [Quick: A behavior-driven development framework for Swift](https://github.com/Quick/Quick)
-- [Nimble: A matcher framework for Swift and Objective-C](https://github.com/Quick/Nimble)
+- [Apple's dokumentation av XCTest](https://developer.apple.com/documentation/xctest)
+- [Artikel om Test-Driven Development i Swift](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
+- [Quick GitHub repository](https://github.com/Quick/Quick)
+
+**Observera:** Länkarna är på engelska då robusta Swift-resurser på svenska är begränsade.

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Kotlin: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
-Робота з CSV - це процес взаємодії з кома-розділеними значеннями (CSV) в програмуванні. Існує багато ситуацій, коли робота з CSV є необхідною, зокрема при обробці даних з баз даних, зчитуванні і записі до файлів, а також при построєнні звітів і таблиць.
+## Що це таке та Навіщо?
+Обробка CSV (Comma-Separated Values) файлів це читання та запис даних у форматі, де значення розділені комами. Програмісти використовують CSV через простоту і універсальність – цей формат легко імпортувати в таблиці, і він підтримується більшістю програм.
 
-# Як це зробити?
-Використовуючи мову програмування Kotlin, робота з CSV може бути дуже легкою та зрозумілою. Ось приклад коду для зчитування даних з CSV файлу і виведення їх до консолі:
-```
-val file = File("data.csv")
-val lines = file.readLines()
-for (line in lines) {
-    val columns = line.split(",")
-    for (column in columns) {
-        println(column)
+## Як це зробити:
+```Kotlin
+import java.io.File
+
+fun readCsv(filePath: String): List<List<String>> {
+    return File(filePath).useLines { lines ->
+        lines.map { it.split(",") }.toList()
     }
 }
+
+fun writeCsv(filePath: String, data: List<List<String>>) {
+    File(filePath).bufferedWriter().use { out ->
+        data.forEach { line ->
+            out.write(line.joinToString(","))
+            out.newLine()
+        }
+    }
+}
+
+// Читання CSV
+val csvData = readCsv("data.csv")
+println(csvData)
+
+// Запис у CSV
+val newData = listOf(listOf("id", "name", "email"), listOf("1", "John Doe", "john@example.com"))
+writeCsv("new_data.csv", newData)
 ```
-Отриманий результат буде виглядати наступним чином:
-```
-John,Doe,30,Male
-Jane,Smith,27,Female
-Bob,Johnson,35,Male
+```output
+[[id, name, email], [1, John Doe, john@example.com]]
 ```
 
-# Глибокий погляд
-CSV формат був створений в 1972 році і став одним з перших стандартів для обміну даними між різними системами. У сучасному світі існує безліч альтернатив до роботи з CSV, таких як JSON та XML формати. Проте, CSV досі широко використовується в багатьох сферах, особливо в обробці даних. Для роботи з CSV в Kotlin можна також використовувати різні бібліотеки, наприклад kotlin-csv чи opencsv.
+## Глибше занурення
+CSV бере свій початок з ранніх версій електронних таблиць. Хоча JSON та XML можуть служити альтернативами для передачі даних, CSV залишається популярним завдяки своєй простоті і легкій інтеграції з таблицями і базами даних. При роботі з CSV важливо врахувати кодування файлу, розміщення рядків, і розмір файлу для ефективної обробки даних.
 
-# Дивись також
-Якщо ви хочете дізнатися більше про роботу з CSV в Kotlin, рекомендуємо ознайомитися з офіційною документацією мови та статтями на Інтернет-ресурсах, такими як Medium чи Kotlinlang.org. Вони допоможуть вам зрозуміти більш глибокі аспекти роботи з CSV і вдосконалити свої навички програмування на Kotlin.
+## Дивись також:
+- Офіційну документацію Kotlin: https://kotlinlang.org/docs/home.html
+- Репозиторій з бібліотекою для роботи з CSV в Kotlin: https://github.com/doyaaaaaken/kotlin-csv
+- Введення у роботу з файлами у Kotlin: https://kotlinlang.org/docs/reading-writing-files.html

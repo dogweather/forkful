@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med csv"
-html_title:           "Kotlin: Arbeide med csv"
-simple_title:         "Arbeide med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Kort sagt, arbeider man med CSV når man trenger å lagre data i tabellform for å kunne dele eller bruke senere. Programmere bruker CSV fordi det er en effektiv måte å organisere og behandle store datamengder på.
+CSV (Comma Separated Values) er et enkelt filformat for tabellinformasjon. Programmerere bruker CSV for å enkelt eksportere og importere data, som kan leses av nesten hvilken som helst programvare, inkludert regneark og databaser.
 
-## Hvordan:
+## Hvordan gjøre det:
+For å jobbe med CSV i Kotlin, kan du bruke standard I/O klasser eller biblioteker som `kotlin-csv`.
+
 ```Kotlin
-// For å lese en CSV-fil, bruker man standard library funksjonen readLines() og deler på komma for å få hver verdi som en egen streng.
-val fil = File("data.csv")
-val innhold = fil.readLines()
-innhold.forEach { rad ->
-    val verdier = rad.split(',')
+import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
+
+fun lesCsvFil(filbane: String) {
+    val rader = csvReader().readAll(File(filbane))
+    for (rad in rader) {
+        println(rad.joinToString(", "))
+    }
+}
+
+fun main() {
+    lesCsvFil("data.csv")
 }
 ```
 
-```Kotlin
-// For å skrive en CSV-fil, bruker man standard library funksjonen appendText() og kombinerer verdier med komma mellom hver verdi.
-val fil = File("data.csv")
-fil.appendText("navn, alder, yrke")
-var navn = "John"
-var alder = 30
-var yrke = "utvikler"
-fil.appendText("$navn, $alder, $yrke")
+Forventet utskrift for en CSV-fil med navn `data.csv`:
+```
+Navn, Alder, By
+Ola, 25, Oslo
+Kari, 30, Bergen
 ```
 
-## Dypdykk:
-CSV, eller "Comma-Separated Values", er et enkelt filformat som har vært brukt siden 1970-tallet for å lagre tabell-lignende data. Alternativene til CSV kan være mer komplekse filformater som JSON eller XML, men disse kan være unødvendige for mindre datamengder. Når man arbeider med CSV i Kotlin, er det viktig å håndtere eventuelle komplikasjoner som mellomrom, linjeskift eller sitat-tegn i dataene.
+## Dypdykk
+CSV-formatet stammer fra tidlig datamaskinbruk (1970-tallet) og har siden vært en enkel måte å utveksle data på. Til tross for mangel på standardisering, er filformatet populært grunnet sin enkelhet. Alternativer inkluderer JSON og XML, som begge tillater mer kompleks datastrukturer. Detaljer rundt implementering i Kotlin kan variere, men mange bruker biblioteker som `kotlin-csv` for å forenkle prosessen.
 
-## Se også:
-- [https://kotlinlang.org/docs/reference/basic-types.html#string-template](https://kotlinlang.org/docs/reference/basic-types.html#string-template) for informasjon om string templates i Kotlin.
-- [https://try.kotlinlang.org/](https://try.kotlinlang.org/) for å prøve ut Kotlin-kode i nettleseren.
-- [https://www.json.org/json-en.html](https://www.json.org/json-en.html) for informasjon om JSON-filformatet.
+## Se også
+- [kotlin-csv GitHub-side](https://github.com/doyaaaaaken/kotlin-csv)
+- [Offisiell Kotlin-dokumentasjon](https://kotlinlang.org/docs/home.html)

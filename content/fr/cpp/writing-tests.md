@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "C++: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Ecrire des tests en programmation, c'est vérifier que le code fonctionne correctement en simulant son exécution. Les programmeurs le font pour garantir la qualité et la fiabilité de leur code, ainsi que pour détecter et corriger les erreurs dès le début du processus de développement.
+## What & Why? (Quoi et Pourquoi ?)
+Écrire des tests, c’est créer du code pour vérifier que d'autres morceaux de code fonctionnent comme prévu. On fait ça pour éviter les bugs, garantir la qualité, et simplifier l'amélioration du code plus tard.
 
-## Comment faire:
-Voici un exemple de code en C++ pour illustrer comment écrire des tests unitaires avec la bibliothèque Catch2:
+## How to: (Comment faire :) 
 
-```C++
-#include <iostream>
-#include "catch.hpp"
+On va utiliser le framework de tests Google Test pour un exemple simple :
 
-int square(int x) { /* Fonction à tester */ }
+```cpp
+#include <gtest/gtest.h>
 
-TEST_CASE("Fonction de test pour le carré", "[square]") {
-    REQUIRE(square(2) == 4);
-    REQUIRE(square(0) == 0);
-    REQUIRE(square(-3) == 9);
+int somme(int a, int b) {
+    return a + b;
+}
+
+TEST(SommeTest, Positifs) {
+    EXPECT_EQ(7, somme(3, 4));
+}
+
+TEST(SommeTest, Negatifs) {
+    EXPECT_EQ(-2, somme(-1, -1));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
-Output:
+Sortie attendue après compilation et exécution :
 ```
-===============================================================================
-All tests passed (3 assertion in 1s)
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from SommeTest
+[ RUN      ] SommeTest.Positifs
+[       OK ] SommeTest.Positifs (0 ms)
+[ RUN      ] SommeTest.Negatifs
+[       OK ] SommeTest.Negatifs (0 ms)
+[----------] 2 tests from SommeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 2 tests.
 ```
 
-## Plongée en profondeur:
-Ecrire des tests n'est pas une pratique nouvelle en programmation, mais elle est devenue de plus en plus populaire avec l'avènement des méthodologies agiles et de la programmation orientée test. D'autres alternatives existent également pour écrire des tests tels que Google Test et Boost.Test. L'implémentation de tests unitaires peut également être réalisée avec des outils de développement tels Visual Studio et Eclipse.
+## Deep Dive (Plongée Profonde)
 
-## Voir aussi:
-- [Catch2 documentation](https://github.com/catchorg/Catch2)
-- [Google Test](https://github.com/google/googletest)
-- [Boost.Test](https://www.boost.org/doc/libs/1_76_0/libs/test/doc/html/)
-- [Introduction aux tests unitaires en C++](https://www.youtube.com/watch?v=ouGmVU7_yAM) (vidéo)
+Le test de logiciels date de la création des premiers programmes. Faire le test manuellement est répétitif et sujet à erreurs, alors on a créé des frameworks de tests. En plus de Google Test pour C++, y'a des alternatives comme Boost.Test et Catch2. Les bonnes pratiques recommandent l’utilisation des tests unitaires, qui vérifient des petites parties du code, et des tests d'intégration, pour les interactions entre composants.
+
+## See Also (Voir Aussi)
+
+- La doc de Google Test : https://github.com/google/googletest
+- Intro à Boost.Test : https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/index.html
+- Catch2 pour débutants : https://github.com/catchorg/Catch2

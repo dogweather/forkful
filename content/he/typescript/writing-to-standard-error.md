@@ -1,7 +1,7 @@
 ---
-title:                "כתיבה לשגיאת התקן"
-html_title:           "TypeScript: כתיבה לשגיאת התקן"
-simple_title:         "כתיבה לשגיאת התקן"
+title:                "כתיבה לפלט השגיאה הסטנדרטי"
+html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
+simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-כתיבה לשגיאות סטנדרטיות היא כלי חשוב בתכנות שמשמש להדפסת הודעות שגיאה ומידע בזמן ריצה. היא מאפשרת למפתחים לאתר בעיות בקוד ולהגיב להן במהירות וביעילות. כתיבה לשגיאות סטנדרטיות היא גם דרך להוסיף מידע נוסף על פעולת התוכנית ולהבהיר את תהליך הריצה עבור מפתחים ומשתמשים חיצוניים.
+## מה ולמה?
+כתיבה ל-Standard Error (stderr) היא דרך להדפיס הודעות שגיאה או דיאגנוסטיקה. תכניתנים עושים זאת כדי להבחין בין פלט רגיל לבין הודעות על תקלות ובעיות בזמן ריצה.
 
-איך לעשות?
-ב TypeScript כתיבה לשגיאות סטנדרטיות מתבצעת על ידי השתמשות בפונקציית 'console.error()'. הערך שנמסר לפונקציה יודפס כהודעת שגיאה בסביבת הריצה. לדוגמה, אם נרצה להדפיס הודעת שגיאה עבור טיפוס לא תקין, נריץ את הפונקציה הבאה:
-
+## איך לעשות:
 ```TypeScript
-function validateAge(age: number) {
-  if (age < 0) {
-    console.error("Invalid age!");
-  }
-}
-```
+// דוגמא לכתיבה ל-standard error ב-TypeScript
+console.error('זוהי הודעת שגיאה.');
 
-כתוצאה מכך, כל עת שיופעלה הפונקציה 'validateAge()', יתווסף הודעת שגיאה לסביבת הריצה עם המידע הרלוונטי.
-
-דגימת פלט
-לפני:
-```TypeScript
-function calculateCircleArea(radius: number) {
-  return 3.14 * radius * radius;
+// ייצוא פונקציה שמדפיסה שגיאה מותאמת אישית ל-standard error
+function reportError(errorMessage: string): void {
+    console.error(`שגיאה: ${errorMessage}`);
 }
 
-let area = calculateCircleArea(-5);
+reportError('משהו השתבש!');  // זה ידפיס "שגיאה: משהו השתבש!"
+```
+פלט הדוגמה:
+```
+זוהי הודעת שגיאה.
+שגיאה: משהו השתבש!
 ```
 
-אחרי:
-```TypeScript
-function calculateCircleArea(radius: number) {
-  if (radius < 0) {
-    console.error("Invalid radius!");
-  }
-  return 3.14 * radius * radius;
-}
+## עיון מעמיק:
+בהיסטוריה, הבחנה בין פלט רגיל ל-stderr הייתה חשובה בסביבות Unix, כדי לאפשר הפניית שגיאות לקבצים או למסופים אחרים. ב-TypeScript, אנחנו משתמשים ב-`console.error` כברירת מחדל, אבל יש גם אלטרנטיבות כמו ייצוא לקבצי לוג דרך ספריות חיצוניות. הכתיבה ל-stderr מתבצעת דרך ה-API של סביבת הריצה, למשל Node.js.
 
-let area = calculateCircleArea(-5);
-```
+## ראה גם:
+- [Console.error() – MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [Node.js process.stderr – Node.js Documentation](https://nodejs.org/api/process.html#processstderr)
 
-עומק נרחב
-בעבר, לפני התקנויות הדפסה סטנדרטיות, מפתחים היו נאלצים להשתמש בדרכים נוספות כדי לאתר ולטפל בשגיאות בזמן ריצה. הדרך הקלאסית הייתה בשימוש בפונקצייה 'console.log()' ולהדפיס את הודעות השגיאה באמצעות קוד מתזה. אך בעזרת כתיבה לשגיאות סטנדרטיות, התהליך הפך להיות יותר קל ונוח עבור מפתחים וקוראים חיצוניים.
-
-למרבה המזל, ישנן אפשרויות נוספות להדפסת שגיאות ב TypeScript, כגון השתמשות בספריית צד שלישי כמו 'node-logger' או בבניית מנגנון מותאם אישית. אך כתיבה לשגיאות סטנדרטיות היא עדיין הדרך המומלצת והנפוצה ביותר עבור מפתחים.
-
-ראו גם
-- [דוקומנטציה של TypeScript על כתיבה לשגיאות סטנדרטיות](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#write-only-data-errors-to-standard-error)
+טיפים ושימושים נוספים ב-stderr ב-TypeScript ניתן למצוא במסמכים ובפורומים המוקדשים לפיתוח תוכנה.

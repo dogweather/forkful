@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Clojure: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,45 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## What & Why?
+Scrivere un file di testo significa salvare dati in formato leggibile. Programmatori lo fanno per persistenza dei dati, configurazioni, o esportazione di risultati.
 
-Scrivere un file di testo significa creare un documento digitale che contiene testo e può essere salvato sul tuo computer o dispositivo. I programmatori spesso scrivono file di testo per memorizzare informazioni o dati, come ad esempio i codici di un programma che stanno sviluppando.
-
-## Come si fa:
-
-**Scrivere un file di testo vuoto:**
+## How to:
 ```Clojure
-(with-open [file (io/writer "test.txt")]
-  (.write file ""))
+; Creare un file di testo e scrivere una stringa
+(spit "example.txt" "Ciao, questo è testo in un file.")
+
+; Aggiungere più testo al file esistente
+(spit "example.txt" " Ecco un'altra riga." :append true)
+```
+Resultato nel file `example.txt`:
+```
+Ciao, questo è testo in un file. Ecco un'altra riga.
 ```
 
-**Scrivere del testo in un file:**
-```Clojure
-(with-open [file (io/writer "test.txt")]
-  (.write file "Questo è un testo di esempio"))
-```
+## Deep Dive
+La funzione `spit` usata qui è concisa e comoda per la scrittura di file, rispetto a metodi più verbosi in altri linguaggi. Storicamente, linguaggi come C richiedono diverse chiamate di sistema per ottenere lo stesso risultato. Clojure, sviluppando su Java, fornisce un alto livello di astrazione. Alternative includono l'uso di `java.io.Writer` per controllo più fine.
 
-**Scrivere una lista di dati in un file:**
-```Clojure
-(with-open [file (io/writer "data.txt")]
-  (doseq [num (range 10)]
-    (.write file (str num "\n"))))
-```
-
-**Output file "data.txt":**
-```
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-```
-
-## Approfondimento:
-
-Scrivere file di testo è un processo fondamentale nella programmazione, che risale ai primi linguaggi di programmazione come il COBOL e il FORTRAN. Oltre a creare e salvare file di testo su un dispositivo, i programmatori spesso utilizzano librerie o moduli specifici per manipolare file di testo, come ad esempio per leggere o modificare il contenuto di un file.
+## See Also
+- [Clojure Documentation on I/O](https://clojure.github.io/clojure/clojure.java.io-api.html)

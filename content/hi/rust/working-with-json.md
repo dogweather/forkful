@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Rust: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JSON क्या है और इसे क्यों काम करते हैं? 
+## What & Why? (क्या और क्यों?)
+Rust में JSON के साथ काम करने का मतलब है स्ट्रक्चर्ड डेटा को पढ़ना, लिखना और संशोधित करना। यह वेब APIs से डेटा साझा करने या कॉन्फ़िगरेशन फाइल्स के रूप में इस्तेमाल करने के लिए किया जाता है।
 
-JSON (Javascript Object Notation) एक पॉपुलर डेटा फॉर्मेट है जो स्ट्रिंग, नंबर्स, बूलियन, विकल्प, एरे और ऑब्जेक्ट्स को संगठन और संचित करने के लिए इस्तेमाल किया जाता है। यह डेटा फॉर्मेट प्रोग्रामर्स को अपने प्रोग्राम से डेटा पढ़ने और उसे संशोधित करने की आसानी प्रदान करता है।
+## How to: (कैसे करें:)
+Rust में `serde` क्रेट इस्तेमाल करके JSON से काम करें:
 
-## कैसे करें: 
+```rust
+// dependencies in Cargo.toml
+// serde = "1.0"
+// serde_json = "1.0"
 
-जब हम अपने रस्ट कोड में JSON डेटा को पार्स करना चाहते हैं, हम पहले serde_json पैकेज को अपनी डिपेंडेंसी में एड करते हैं। फिर हम डेटा को एक स्ट्रिंग में लोड करते हैं, उसे serde_json::from_str() फंक्शन के साथ डेकोड करते हैं और अपने डेकोड किए गए डेटा को उपयोग करते हैं। नीचे दिए गए उदाहरण में, हम एक JSON स्ट्रिंग को डेकोड करके उसमें दिए गए विकल्पों के मान को प्रिंट करते हैं। 
+use serde::{Deserialize, Serialize};
+use serde_json::{Result, Value};
 
-```Rust
-use serde_json;
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    phones: Vec<String>,
+}
 
-fn main() {
-    let data = r#"{"name":"John", "age":30, "is_programmer":true}"#;
-    let decoded: serde_json::Value = serde_json::from_str(data).unwrap();
-    
-    let name = decoded["name"].as_str().unwrap();
-    let age = decoded["age"].as_u64().unwrap();
-    let is_programmer = decoded["is_programmer"].as_bool().unwrap();
-    
-    println!("Name: {}", name);
-    println!("Age: {}", age);
-    if is_programmer {
-        println!("Is a programmer? Yes");
-    } else {
-        println!("Is a programmer? No");
-    }
+fn main() -> Result<()> {
+    // JSON String
+    let data = r#"
+        {
+            "name": "John Doe",
+            "age": 30,
+            "phones": ["+44 1234567", "+44 2345678"]
+        }"#;
+
+    // Deserialize JSON to Rust Struct
+    let p: Person = serde_json::from_str(data)?;
+
+    // Use `p` as a Rust object
+    println!("Please call {} at the number {}", p.name, p.phones[0]);
+
+    // Serialize Rust Struct to JSON
+    let serialized = serde_json::to_string(&p)?;
+
+    // Print out the serialized JSON string
+    println!("Serialized Person : {}", serialized);
+
+    Ok(())
 }
 ```
-
-आउटपुट: 
+आउटपुट:
 ```
-Name: John
-Age: 30
-Is a programmer? Yes
+Please call John Doe at the number +44 1234567
+Serialized Person : {"name":"John Doe","age":30,"phones":["+44 1234567","+44 2345678"]}
 ```
 
-## गहराई में जाएं: 
+## Deep Dive (गहराई से जानकारी)
+JSON (JavaScript Object Notation) पहली बार JavaScript के लिए डेटा फॉर्मेट के रूप में उभरा, पर अब यह भाषा-निरपेक्ष है। Rust में `serde` और `serde_json` क्रेट्स सीरियलाइजेशन और डीसीरियलाइजेशन के लिए मानक माने जाते हैं। XML और YAML जैसे अन्य फॉर्मेट भी हैं, पर JSON इसकी सादगी और पढ़ने में आसानी के कारण ज्यादा लोकप्रिय है। `serde` JSON के साथ काम करते समय custom serialization या complex data types को हैंडल करने के लिए उपयोगी है।
 
-JSON का इतिहास 1999 में डब्ल्यूएसडब्ल्यू कोलेन ने बनाया था। यह डेटा फॉर्मेट आसानी से समझने और लिखने के लिए छोटे से टेक्स्ट फाइलों पर आधारित था। कुछ अल्टरनेटिव्स हाल ही में आए हैं, जगह-जगह जो XML, बीएमपी, और टेक्स्ट फाइलों जैसे दूसरे डेटा फॉर्मेट प्रदान करते हैं। रस्ट में, हम इन डेटा फाइलों को पार्स करने के लिए serde पैकेज का भी इस्तेमाल कर सकते हैं। इसके अलावा, हम अपने अनुप्रयोग के आवश्यकतानुसार अपना सेरिलाइज़न और डिसिरियलाइज़ेशन भी कर सकते हैं। 
-
-## और जानें: 
-
-1. [Rust डॉक्यूमेंटेशन](https://www.rust-lang.org/learn) - रस्ट के ऑफिशियल डॉक्यूमेंटेशन के साथ सुरुवात करने के लिए यहां देखें। 
-2. [json.org](https://www.json.org/json-en.html) - जेसन का क्यों-कैसे और उसके डिज़ाइन पर अधिक जानने के लिए आधिकारिक साइट पर जाएं। 
-3. [serde_json डॉक्यूमेंटेशन](https://docs.rs/serde_json/
+## See Also (और देखें)
+- Serde Official Documentation: [https://serde.rs/](https://serde.rs/)
+- Serde JSON API Documentation: [https://docs.serde.rs/serde_json/](https://docs.serde.rs/serde_json/)
+- Rust Programming Language Book Chapter on Serialization: [https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html#storing-json-in-the-filesystem](https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html#storing-json-in-the-filesystem)

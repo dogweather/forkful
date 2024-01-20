@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを使ったプログラミング」"
-html_title:           "Swift: 「JSONを使ったプログラミング」"
-simple_title:         "「JSONを使ったプログラミング」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かしら？何のために？
-JSONとは、プログラミングにおいてデータを扱う際に使用される一般的な形式の一つです。プログラマーたちは、JSONを使用することでデータを簡単に処理することができます。
+## What & Why?
+JSONとは、JavaScript Object Notationの略で、データをテキスト形式でやり取りするための標準フォーマットです。Swiftプログラマーは、Web APIからデータを取得したり、アプリ間でデータを交換したりする際にJSONを扱います。
 
-## 使い方：
-以下に、JSONを取り扱うためのコード例とその出力を示します。
-
+## How to:
 ```Swift
-// JSONをデコードする
+import Foundation
+
+// JSON文字列
 let jsonString = """
 {
     "name": "Taro",
-    "age": 25,
-    "city": "Tokyo"
+    "age": 30,
+    "isProgrammer": true
 }
-""".data(using: .utf8)!
-
+"""
+// JSONデコード
 struct Person: Codable {
-    let name: String
-    let age: Int
-    let city: String
+    var name: String
+    var age: Int
+    var isProgrammer: Bool
 }
 
-let decoder = JSONDecoder()
-let personData = try decoder.decode(Person.self, from: jsonString)
-print(personData.name) // 出力結果：Taro
-print(personData.age) // 出力結果：25
-print(personData.city) // 出力結果：Tokyo
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let person = try JSONDecoder().decode(Person.self, from: jsonData)
+        print(person) // 出力: Person(name: "Taro", age: 30, isProgrammer: true)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-```Swift
-// JSONをエンコードする
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let city: String
-}
+## Deep Dive
+JSONは軽量で読みやすく、多くの言語で扱えるため、XMLよりも現代的なデータ交換のフォーマットとして好まれています。Swiftでは`Codable`プロトコルが導入されて以降、JSONのシリアライズ・デシリアライズ（エンコード・デコード）は非常にシンプルになりました。代替手段には`PropertyListSerialization`やサードパーティライブラリがありますが、標準ライブラリのサポートは強力です。
 
-let person = Person(name: "Hanako", age: 28, city: "Osaka")
-let encoder = JSONEncoder()
-let encodedPerson = try encoder.encode(person)
-
-print(String(data: encodedPerson, encoding: .utf8)!) // 出力結果：{"name": "Hanako", "age": 28, "city": "Osaka"}
-```
-
-## もっと深く掘り下げる：
-歴史的な文脈としては、JSONは2000年代初頭にJavaScriptオブジェクト記法から派生したものです。代替として使用されたのは、XMLやCSVなどがありますが、JSONは扱いやすさと可読性が高いため、今日では非常に一般的に使用されています。JSONは、iOSやmacOSといったApple製品においても広く使用されています。
-
-## 関連情報：
-- [Swift Documentation - Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
-- [Swift Documentation - Encoding and Decoding](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
-- [The JSON Data Interchange Format](https://tools.ietf.org/html/rfc7159)
+## See Also
+- [Apple Developer Documentation - Encoding and Decoding Custom Types](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)

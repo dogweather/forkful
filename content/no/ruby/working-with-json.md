@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Ruby: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-JSON står for JavaScript Object Notation og er et populært datatransmisjonsformat som brukes av programmører for å lagre og utveksle data mellom forskjellige applikasjoner. JSON er enkelt å lese og skrive, og det er et foretrukket valg for websideutviklere når de jobber med AJAX-forespørsler og API-integrasjoner.
+JSON står for JavaScript Object Notation. Det er et lett format for utveksling av data, og programmerere bruker det fordi det er enkelt å lese og skrive, og det er enkelt for maskiner å parse og generere.
 
-## Slik gjør du det:
-Det er enkelt å jobbe med JSON i Ruby. Vi bruker standardbiblioteket 'JSON' for å konvertere data til og fra JSON-format. Her er et eksempel på hvordan du kan opprette et JSON-objekt og konvertere det til en streng:
+## Hvordan gjøre det:
+For å jobbe med JSON i Ruby, bruker vi `json`-biblioteket som allerede er inkludert i standardbiblioteket.
 
-```ruby
+```Ruby
 require 'json'
-data = {
-  name: 'Ruby',
-  type: 'programming language',
-  year: 1995
-}
-json_string = JSON.generate(data)
+
+# Konvertere en hash til en JSON-streng
+person = { navn: "Ola", alder: 27 }
+person_json = person.to_json
+puts person_json
+# Output: {"navn":"Ola","alder":27}
+
+# Parse en JSON-streng til en Ruby-hash
+json_streng = '{"navn":"Kari","alder":31}'
+ruby_person = JSON.parse(json_streng)
+puts ruby_person["navn"]  # Output: Kari
 ```
 
-For å konvertere en JSON-streng tilbake til et Ruby-objekt, kan du bruke metoden ```JSON.parse```:
+## Dypdykk
+JSON ble oppfunnet av Douglas Crockford tidlig på 2000-tallet. Før JSON ble populært, brukt mange XML for datautveksling. En fordel med JSON sammenlignet med XML er at det er mer konsist og enklere å forstå. 
 
-```ruby
-json_string = '{"name": "Ruby", "type": "programming language", "year": 1995}'
-data = JSON.parse(json_string)
-puts data[:name] # => Ruby
-```
+Ruby-implementasjonen av JSON er rett frem. `#to_json` og `JSON.parse` er de to hovedmetodene vi bruker. `json`-biblioteket som er inkludert i Ruby bruker C-utvidelser for optimal ytelse.
 
-## Dypdykk:
-JSON ble opprinnelig utviklet av Douglas Crockford i 2001 og var et alternativ til XML-formatet. Siden da har det blitt utbredt og er nå et standardformat for å utveksle data.
-Det finnes flere populære alternativer til JSON, blant annet YAML og XML. Imidlertid er JSON et foretrukket valg fordi det er mer lettvektig og enklere å bruke.
+XML, YAML, og BSON er alternativer til JSON. Hvert format har sine styrker og bruksområder. YAML blir ofte brukt for konfigurasjonsfiler, mens BSON er en binær versjon av JSON som ofte brukes sammen med MongoDB.
 
-Når man jobber med JSON i Ruby, vil de fleste operasjoner være basert på hashes og arrays, som er vanlige datatyper i Ruby. Dette gjør det enkelt å integrere JSON-formatet i eksisterende koder.
-
-## Se også:
-Du kan lese mer om JSON i Ruby i Ruby-dokumentasjonen: https://ruby-doc.org/stdlib-2.7.1/libdoc/json/rdoc/JSON.html
-For en mer praktisk tilnærming og eksempler på hvordan du kan bruke JSON i Rails-prosjekter, kan du sjekke ut denne guiden: https://guides.rubyonrails.org/working_with_javascript_in_rails.html#json-for-data-interchange
+## Se også
+Her er noen linker til videre lesing og ressurser:
+- Offisiell Ruby JSON-dokumentasjon: [https://ruby-doc.org/stdlib-2.6.1/libdoc/json/rdoc/JSON.html](https://ruby-doc.org/stdlib-2.6.1/libdoc/json/rdoc/JSON.html)
+- JSON vs. XML: [https://www.w3schools.com/js/js_json_xml.asp](https://www.w3schools.com/js/js_json_xml.asp)
+- YAML offisielle nettsted: [https://yaml.org/](https://yaml.org/)
+- BSON spesifikasjon: [http://bsonspec.org/](http://bsonspec.org/)

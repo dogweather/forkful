@@ -1,7 +1,7 @@
 ---
-title:                "json 작업하기"
-html_title:           "Arduino: json 작업하기"
-simple_title:         "json 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
 
-JSON을 다루는 것은 데이터를 다른 데이터 포맷으로 변환하거나 전송할 때 유용합니다. 이는 데이터를 보다 구조화하고 파싱하기 쉽게 만들어주며, 웹 애플리케이션에서 필수적인 작업입니다.
+JSON은 데이터를 저장하고 구조적으로 표현하는 데 사용되는 경량 포맷입니다. 아두이노에서 JSON을 다루는 이유는 웹 API로부터 데이터를 받거나 보낼 때 통신을 쉽게 하기 위함입니다.
 
-## 방법:
-
-첫 번째로, JSON 라이브러리를 다운로드하고 설치해야 합니다. 아두이노에서는 다양한 라이브러리를 활용하여 JSON 데이터를 다룰 수 있습니다. 다음으로, JSON 코드 블록을 사용하여 원하는 데이터를 가져오고 이를 처리할 수 있습니다.
-
-아래는 간단한 예시 코드입니다.
+## How to: (방법)
 
 ```Arduino
 #include <ArduinoJson.h>
 
-// JSON 데이터를 처리할 버퍼 크기 설정
-const size_t bufferSize = 2 * JSON_OBJECT_SIZE(2) + 30;
+void setup() {
+  Serial.begin(9600);
 
-// JSON 데이터를 저장할 버퍼 생성
-StaticJsonBuffer<bufferSize> jsonBuffer;
+  // JSON 데이터 정의
+  const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
 
-// JSON 문자열 데이터
-char* jsonString = "{\"name\":\"John\", \"age\":30}";
+  // JSON 파싱
+  DynamicJsonDocument doc(1024);
+  deserializeJson(doc, json);
 
-// JSON 오브젝트 생성
-JsonObject& root = jsonBuffer.parseObject(jsonString);
+  // 데이터 추출
+  const char* sensor = doc["sensor"];
+  long time = doc["time"];
+  double latitude = doc["data"][0];
+  double longitude = doc["data"][1];
 
-// 필요한 데이터 가져오기
-const char* name = root["name"];
-int age = root["age"];
+  // 콘솔에 결과 출력
+  Serial.print("Sensor: ");
+  Serial.println(sensor);
+  Serial.print("Time: ");
+  Serial.println(time);
+  Serial.print("Latitude: ");
+  Serial.println(latitude, 6);
+  Serial.print("Longitude: ");
+  Serial.println(longitude, 6);
+}
 
-// 출력
-Serial.print("Name: ");
-Serial.println(name);
-Serial.print("Age: ");
-Serial.println(age);
-
+void loop() {
+  // 반복 동작 없음
+}
 ```
 
-위 코드의 출력은 다음과 같습니다.
-
+샘플 출력:
 ```
-Name: John
-Age: 30
+Sensor: gps
+Time: 1351824120
+Latitude: 48.756080
+Longitude: 2.302038
 ```
 
-## 딥 다이브:
+## Deep Dive (심층 분석)
 
-JSON은 원래 자바스크립트 프로그래밍 언어에서 사용하기 위해 만들어졌으며, 현재 웹 개발에서 널리 사용되고 있습니다. 따라서 JSON은 웹과 관련된 프로그래밍에서 필수적인 요소로 자리 잡고 있습니다. 아두이노에서는 다양한 라이브러리를 활용하여 JSON 데이터를 다룰 수 있으며, 그 외에도 다른 데이터 포맷으로 변환하는 방법이 있지만, JSON은 구조화 및 파싱 측면에서 가장 유리한 포맷 중 하나입니다.
+JSON, JavaScript Object Notation의 약자,는 2000년대 초반 웹에서 JavaScript 객체를 교환하기 위해 개발되었습니다. XML의 보다 간단한 대안으로 널리 채택되었습니다. 아두이노에서는 `ArduinoJson` 라이브러리를 이용하여 JSON을 파싱하고 생성할 수 있습니다. 라이브러리는 효율성과 사용 편의성을 위해 설계되었으며, 메모리 할당을 최소화합니다.
 
-## 관련 자료:
+## See Also (참고 자료)
 
-- [ArduinoJson 라이브러리 다운로드](https://arduinojson.org/)
-- [JSON 공식 문서](https://www.json.org/json-en.html)
+- ArduinoJson 라이브러리 문서: https://arduinojson.org/
+- ArduinoJSON GitHub 레포지토리: https://github.com/bblanchon/ArduinoJson
+- JSON 공식 웹사이트: https://www.json.org/json-en.html

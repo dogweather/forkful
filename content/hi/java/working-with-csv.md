@@ -1,7 +1,7 @@
 ---
-title:                "csv के साथ काम करना"
-html_title:           "Java: csv के साथ काम करना"
-simple_title:         "csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+CSV (Comma-separated values) एक साधारण फाइल प्रारूप है जो तालिका-आकार के डेटा को स्टोर करता है। प्रोग्रामर्स CSV का इस्तेमाल डेटा एक्सचेंज, डेटा विश्लेषण, और डेटाबेस इंटरऑपरेबिलिटी के लिए करते हैं, क्योंकि यह सीधे स्वरूप में होता है और अधिकांश प्रोग्रामिंग लैंग्वेजेस और डेटाबेस सिस्टम्स के साथ सहज संगत होता है।
 
-क्या आपने कभी CSV के साथ काम किया है? CSV स्प्रेडशीट्स के साथ दस्तावेज़ों में आसानी से डेटा संग्रह करने के लिए इस्तेमाल किया जाता है। अधिकांश प्रोग्रामर इसका उपयोग डेटा स्टोरेज और मैनिपुलेशन के लिए करते हैं।
+## How to: (कैसे करें:)
+Java में CSV फाइल पढ़ने के लिए, हम Apache Commons CSV लाइब्रेरी का इस्तेमाल कर सकते हैं। सबसे पहले इस लाइब्रेरी को अपने प्रोजेक्ट में जोड़ें। Maven का इस्तेमाल करके आप निम्न डिपेंडेंसी को `pom.xml` में जोड़ सकते हैं:
 
-कैसे करें:
-
+```java
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.8</version>
+</dependency>
 ```
-Java कोड ब्लॉक में कोडिंग उदाहरण और सैंपल आउटपुट के साथ।
-```
 
-```
-// CSV को लोड करें
-Reader reader = new FileReader("myFile.csv");
-CSVReader csvReader = new CSVReader(reader);
+अब Java कोड की मदद से CSV पढ़ने का एक उदाहरण देखें:
 
-// पंक्तियों को एक्सेस करें
-List<String[]> rows = csvReader.readAll();
+```java
+import java.io.FileReader;
+import java.io.Reader;
+import org.apache.commons.csv.*;
 
-// पंक्ति की छवि
-for (String[] row : rows) {
-    System.out.println(Arrays.toString(row));
+public class CSVReaderExample {
+    public static void main(String[] args) {
+        try (Reader reader = new FileReader("data.csv");
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
+            
+            for (CSVRecord csvRecord : csvParser) {
+                String name = csvRecord.get("Name");
+                String email = csvRecord.get("Email");
+                System.out.println("Name: " + name + ", Email: " + email);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
-
-// नई इनसर्ट करें
-String[] newRow = {"1", "John", "Doe"};
-rows.add(newRow);
-
-// अपडेट करें
-rows.get(0)[1] = "Jane";
-
-// नया CSV फ़ाइल में सहेजें
-Writer writer = new FileWriter("newFile.csv");
-CSVWriter csvWriter = new CSVWriter(writer);
-csvWriter.writeAll(rows);
-writer.close();
 ```
 
-डीप डाइव:
+यदि `data.csv` इस तरह दिखती है:
+```
+Name,Email
+John Doe,johndoe@email.com
+Jane Doe,janedoe@email.com
+```
 
-CSV का इतिहास बहुत पुराना है और यह प्रत्येक प्रोग्रामिंग भाषा में उपलब्ध है। अन्य विकल्पों में शामिल हैं JSON, XML और SQL databases। CSV फ़ाइलें अपने सरल स्ट्रक्चर के कारण डेटा को इंटरनली असाधारण तरीके से प्रभावित कर सकती हैं। CSV कोड को समझने के लिए, आपको Java आर्ग्युमेंट डोपिंगी, वायरलोबिलिटी और जी एस पर विस्तार से जानने की आवश्यकता होती है।
+तब आउटपुट होगा:
+```
+Name: John Doe, Email: johndoe@email.com
+Name: Jane Doe, Email: janedoe@email.com
+```
 
-सी अल्सो:
+## Deep Dive (गहन अध्ययन):
+CSV का इस्तेमाल 1970 के दशक से हो रहा है। मुख्य विकल्प JSON, XML, और YAML हैं, जो अधिक जटिल डेटा संरचनाओं को संभाल सकते हैं, पर CSV अपनी सादगी के लिए पसंदीदा है। Java में CSV को संभालते समय हमें परफॉर्मेंस और मेमोरी उपयोग का विशेष ध्यान रखना पड़ता है, खासकर बड़ी फाइलों के साथ। 
 
-जीएसवी संबंधित स्त्रोतों के लिंक।
-- [Oracle's CSV Implementation](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/Csv.html)
-- [CSV Library for Java](https://www.baeldung.com/java-csv-file-array)
+## See Also (और भी देखें):
+- Apache Commons CSV official documentation: [https://commons.apache.org/proper/commons-csv/](https://commons.apache.org/proper/commons-csv/)
+- OpenCSV library, another popular CSV library for Java: [http://opencsv.sourceforge.net/](http://opencsv.sourceforge.net/)
+- Java documentation for handling I/O: [https://docs.oracle.com/javase/tutorial/essential/io/](https://docs.oracle.com/javase/tutorial/essential/io/).

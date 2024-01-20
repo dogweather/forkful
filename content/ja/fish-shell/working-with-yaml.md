@@ -1,7 +1,7 @@
 ---
-title:                "YAMLの操作方法"
-html_title:           "Fish Shell: YAMLの操作方法"
-simple_title:         "YAMLの操作方法"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なんで？
-YAMLを使ってプログラムを書くのは、データを簡潔に表現したり、設定ファイルを読み込んだりすることができるからです。
+## What & Why? (何となぜ？)
 
-## 使い方：
-```
-Fish Shellを使って、YAMLを読み込んでデータを表示する例を見てみましょう。
-```
+YAMLは設定ファイルなどによく使われるデータ形式です。シンプルで人間にも読みやすく、多くの言語で簡単にパースできるため、プログラマーにとって重宝しています。
+
+## How to: (方法)
+
+YAMLファイルを操作する基本的なコマンドをいくつか紹介します。
+
 ```Fish Shell
-cat file.yaml | yq r -
-```
-```
-出力：ファイルから読み込まれたデータが表示されます。
-```
+# YAMLファイルをパースして変数に入れる
+set config (yaml2json config.yaml | jq .)
 
-## ディープダイブ：
-YAMLは、JSONやXMLのようなデータフォーマットですが、さらに人間が読みやすくするために作られました。他のフォーマットと比べると、スペースや改行など、構文に厳格なルールがありません。Fish Shellでは、バッククオートを使うことでコマンドラインからYAMLをパースすることができます。また、代替として`yq`コマンドを使うこともできます。
+# 特定のキーの値を出力
+yaml2json config.yaml | jq '.database.host'
 
-## さらに見る：
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [Fish ShellでのYAMLの使用例](https://github.com/fish-shell/fish-shell/wiki/YAML-Usage)
+# 出力例: "localhost"
+
+# YAML配列の一覧を出力
+yaml2json config.yaml | jq '.users[]'
+
+# 出力例: 
+# "alice"
+# "bob"
+# "charlie"
+```
+※ `yaml2json`と`jq`コマンドをインストールして使用します。
+
+## Deep Dive (深堀り)
+
+YAMLは"YAML Ain't Markup Language" (元々は"Yet Another Markup Language") の略で、インデントを使ってデータの階層を表現する形式です。JSONやXMLと比べても読みやすいですが、タブ文字を使ってはならず、スペースを使います。`yaml2json`や`jq`はYAMLデータを扱う際の強力なツールで、YAMLをJSONへ変換することで、豊富なJSON操作ツールを利用できるようになります。
+
+## See Also (関連情報)
+
+- YAML公式サイト: [https://yaml.org](https://yaml.org)
+- `jq`コマンドマニュアル: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
+- Fish Shell公式ドキュメンテーション: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- `yaml2json`ソース: [https://github.com/bronze1man/yaml2json](https://github.com/bronze1man/yaml2json)

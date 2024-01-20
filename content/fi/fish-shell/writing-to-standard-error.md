@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Fish Shell: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
+## What & Why?
+Standard error on ihmisen ja ohjelman välinen kommunikaatioreitti virheviesteille. Ohjelmoijat käyttävät sitä raportoimaan ongelmia, jolloin normaali toiminta ja virheviestit ovat helposti eroteltavissa.
 
-Kun ohjelmoijat käyttävät Fish Shell -ohjelmointikieltä, he usein kirjoittavat virheitä standardivirheeseen. Tämä tarkoittaa käytännössä sitä, että virheet ja ilmoitukset näkyvät vain terminaalissa eivätkä sekoita normaaliin tulostukseen. Tämä auttaa ohjelmoijia havaitsemaan ja korjaamaan virheitä nopeammin ja tehokkaammin.
+## How to:
+Kirjoita virhe stderr:iin näin:
 
-## Kuinka:
-
-Fish Shell -ohjelmointikieli tarjoaa helpon ja yksinkertaisen tavan kirjoittaa virheitä standardivirheeseen. Käytä komentoa `echo` ja lisää `-e` -lippu, jotta voit käyttää erikoismerkkejä, kuten uudet rivit ja välilyönnit, kuten esimerkissä alla. Huomaa, että virheellinen rivien järjestys johtaa virheelliseen tulostukseen.
-
-```
-Fish Shell koodi:
-echo -e "Tämä on ensimmäinen rivi. \nTämä on toinen rivi."
-```
-```
-Tulostus:
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
+```Fish Shell
+echo "Tämä on virheilmoitus" >&2
 ```
 
-## Syvempää tietoa:
+Jos haluat ohjata virheet tiedostoon:
 
-Historiallisesti ohjelmoijat ovat kirjoittaneet virheitä standardivirheeseen, jotta ne eivät sekoitu normaaliin tulostukseen. Tämä käytäntö on edelleen suosittu ja käytössä monissa muissa ohjelmointikielissä, kuten Bash ja Python.
+```Fish Shell
+echo "Tallennetaan virhe" >&2 2> error_log.txt
+```
 
-On myös muita tapoja kirjoittaa virheitä standardivirheeseen Fish Shellissä, kuten komennolla `print -e`, mutta `echo` on yleisimmin käytetty tapa.
+Kokeile ja näet:
 
-## Katso myös:
+```Fish Shell
+function oletus
+    echo "Normaali tulostus"
+    echo "Todellinen virhe" >&2
+end
 
-- Fish Shellin viralliset dokumentaatiot: https://fishshell.com/docs/current/
-- Fish Shellin GitHub-sivusto: https://github.com/fish-shell/fish-shell
-- "Kuinka käyttää Fish Shell -täydennysliitännäisiä": https://www.solidsmack.com/cad-design-news/fish-shell-plugins/
+oletus 2> virheet.txt
+```
+
+`virheet.txt` sisältää nyt "Todellinen virhe".
+
+## Deep Dive
+Stderr juontaa juurensa Unix-järjestelmistä ja on peruskomponentti ohjelman ja käyttöjärjestelmän välisessä kommunikaatiossa. Alternatiivit kuten logitiedostot ovat hyviä pitkäaikaista tallennusta varten. Fish käsittää stderrin omana tiedostovirtanaan, jonka numero on 2.
+
+## See Also
+- Fish Shell dokumentaatio: https://fishshell.com/docs/current/index.html
+- Unix standardivirran historia: https://en.wikipedia.org/wiki/Standard_streams
+- Opas virheenkäsittelyyn shell-skripteissä: https://mywiki.wooledge.org/BashFAQ/105

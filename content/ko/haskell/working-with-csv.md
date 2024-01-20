@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 작업하기"
-html_title:           "Haskell: CSV 파일 작업하기"
-simple_title:         "CSV 파일 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+CSV(Comma-Separated Values)는 간단한 파일 형식으로, 테이블 데이터를 저장합니다. 프로그래머들은 CSV를 다루어 대량의 데이터를 쉽게 이동, 복사, 분석하기 위해 사용합니다.
 
-CSV 작업이란 무엇인가요? 이는 일반 텍스트를 통해 표 형식 데이터를 저장하고 전송하기 위한 방법입니다. 프로그래머들은 CSV 파일을 이용하여 데이터를 손쉽게 읽고 쓸 수 있기 때문에 이를 사용합니다.
-
-## 방법:
-
-Haskell에서 CSV 작업을 하는 방법은 간단합니다. 우선, `Data.Csv` 모듈을 `import` 한 다음, `decode` 함수를 사용하여 CSV 파일을 읽을 수 있습니다. 아래는 간단한 예시 코드입니다.
+## How to: (어떻게 할까?)
 ```Haskell
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 import Data.Csv
 
+type Person = (String, Int, String)
+
+decodePeople :: BL.ByteString -> Either String (V.Vector Person)
+decodePeople = fmap snd . decode NoHeader
+
+main :: IO ()
 main = do
-    csvData <- readFile "data.csv" -- CSV 파일을 읽어옴
-    case decode HasHeader csvData of -- CSV 파일을 해석하여 리스트 형태로 저장
-        Left err -> putStrLn err -- 오류 발생시 오류 메시지 출력
-        Right data -> print data -- 성공 시 데이터 출력
+  csvData <- BL.readFile "people.csv"
+  case decodePeople csvData of
+    Left err -> putStrLn err
+    Right v -> V.forM_ v $ \(name, age, address) ->
+      putStrLn $ name ++ " is " ++ show age ++ " years old and lives at " ++ address
 ```
-위 코드는 `data.csv` 파일을 읽어와서 파일에 헤더가 있는 경우 이를 리스트 형태로 저장하고, 오류가 발생할 경우 그 오류 메시지를 출력하며, 성공할 경우 데이터를 출력합니다.
 
-## 깊이 알아보기:
+Sample `people.csv`:
+```
+John Doe,30,123 Elm St
+Jane Smith,25,456 Oak St
+```
 
-CSV 파일 포맷은 1972년에 처음 소개된 이후 온라인으로의 데이터 전송에 매우 유용하게 사용되었습니다. 현재는 보다 더 발전된 형태의 데이터 포맷이 있지만, 여전히 많은 프로그램들이 CSV 파일을 사용합니다. Haskell에서는 `cassava` 라이브러리를 통해 CSV 작업을 할 수 있습니다. 이 라이브러리는 내부적으로 파서 라이브러리인 `attoparsec`를 사용하므로, CSV 파일을 해석하는 과정에서 더 재미있는 일들을 할 수도 있습니다.
+Sample output:
+```
+John Doe is 30 years old and lives at 123 Elm St
+Jane Smith is 25 years old and lives at 456 Oak St
+```
 
-## 관련 링크:
+## Deep Dive (깊이 파보기)
+- CSV 형식은 1972년 IBM에서 처음 사용되었습니다.
+- 표준 라이브러리를 사용하는 것 대신 `cassava`와 같은 패키지를 활용할 수 있습니다.
+- CSV 파싱은 `ByteString`과 `Vector`를 사용함으로써 메모리 효율과 속도를 개선할 수 있습니다.
 
-- Haskell CSV 라이브러리: https://hackage.haskell.org/package/cassava
-- 파서 라이브러리인 attoparsec: https://hackage.haskell.org/package/attoparsec
+## See Also (더 보기)
+- Haskell `cassava` library: [https://hackage.haskell.org/package/cassava](https://hackage.haskell.org/package/cassava)
+- More on CSV format: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- Working with ByteString: [https://hackage.haskell.org/package/bytestring](https://hackage.haskell.org/package/bytestring)

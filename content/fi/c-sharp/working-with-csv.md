@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "C#: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+"Mitä ja Miksi?"
 
-CSV (Comma-Separated Values) on tapa tallentaa taulukkodataa, jossa arvot on eroteltu pilkulla. CSV-tiedostoja käytetään usein datan siirtämiseen ja tallentamiseen, koska niitä on helppo käsitellä ja ne ovat yhteensopivia useiden ohjelmistojen kanssa.
+CSV-formaatti tallentaa tietoa, jossa jokainen kenttä on erotettu toisistaan pilkuilla. Ohjelmoijat käyttävät CSV:tä, koska se on yksinkertainen ja laajasti yhteensopiva eri järjestelmien kanssa.
 
-Ohjelmoijat käyttävät CSV-tiedostoja usein esimerkiksi tietokantojen tai muiden sovellusten kanssa. Ne ovat myös hyödyllisiä, kun halutaan tallentaa tai siirtää suuria määriä dataa, kuten Excel-taulukoita, yksinkertaisessa muodossa.
-
-## Kuinka:
+## How to:
+"Kuinka tehdä:"
 
 ```C#
-using System;
-using System.IO; 
+// CSV-tiedoston luku
+var tiedostonPolku = @"C:\esimerkki.csv";
+var rivit = File.ReadAllLines(tiedostonPolku);
+foreach (var rivi in rivit)
+{
+    var kentat = rivi.Split(',');
+    Console.WriteLine($"Nimi: {kentat[0]}, Ikä: {kentat[1]}");
+}
 
-// Luetaan CSV-tiedosto ja tallennetaan arvot taulukkoon
-string[] data = File.ReadAllLines("tiedostonimi.csv");
-
-// Tulostetaan taulukon sisältö
-foreach (string rivi in data) 
-{ 
-    Console.Write(rivi + "\n"); 
-} 
+// CSV-tiedoston kirjoitus
+var henkilot = new List<string[]>
+{
+    new string[] { "Matti Meikäläinen", "30" },
+    new string[] { "Liisa Virtanen", "25" }
+};
+var uusiTiedosto = @"C:\uusi_esimerkki.csv";
+using (var sw = new StreamWriter(uusiTiedosto))
+{
+    foreach (var henkilo in henkilot)
+    {
+        var rivi = string.Join(",", henkilo);
+        sw.WriteLine(rivi);
+    }
+}
 ```
 
-Esimerkkilähtö CSV-tiedostolle, jossa on kaksi saraketta ja kolme riviä:
-
+Esimerkkitulostus:
 ```
-id,nimi
-1,Anna
-2,Pekka
-3,Matti
+Nimi: Matti Meikäläinen, Ikä: 30
+Nimi: Liisa Virtanen, Ikä: 25
 ```
 
-Tulostus näyttäisi tältä:
+## Deep Dive
+"Syväsukellus"
 
-```
-id,nimi
-1,Anna
-2,Pekka
-3,Matti
-```
+CSV (Comma-Separated Values) on 1970-luvulta peräisin. Yksinkertaisuuden vuoksi CSV on kestänyt, vaikka XML ja JSON jne. ovat tulleet. Sen käyttö riippuu tarpeesta: pieniin, yksinkertaisiin datamäärityksiin se voi olla parempi kuin monimutkaisemmat formaatit. C#:ssa CSV:n käsittelyssä voi käyttää string-metodeja tai kirjastoja kuten CsvHelper, jolloin työ helpottuu.
 
-## Syvenny:
+## See Also
+"Näe Myös"
 
-CSV on ollut käytössä jo vuosikymmeniä ja se on edelleen yksi yleisimmistä tavoista tallentaa ja siirtää dataa. Aiemmin se oli vielä suositumpi, koska monien ohjelmistojen välillä ei ollut yhteensopivuutta, mutta nykyään on olemassa myös muita vaihtoehtoja, kuten XML ja JSON.
-
-CSV-tiedostoja voi luoda ja käsitellä myös muilla ohjelmointikielillä, kuten Pythonilla ja Javalla. C#-kielen StreamReader ja StreamWriter -luokkien avulla CSV-tiedostoja voi lukea ja kirjoittaa monipuolisemmin.
-
-## Katso myös:
-
-- [Microsoftin dokumentaatio CSV-tiedostoista] (https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
-- [CSV-tiedostojen käsittely Python-kielellä] (https://docs.python.org/3/library/csv.html)
+- CsvHelper-kirjaston dokumentaatio: https://joshclose.github.io/CsvHelper/
+- Microsoftin ohjeet tiedoston lukuun ja kirjoittamiseen C#:ssa: https://docs.microsoft.com/en-us/dotnet/standard/io/ 
+- CSV-tiedoston määrittely RFC 4180: https://tools.ietf.org/html/rfc4180

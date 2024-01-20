@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류에 쓰는 방법"
-html_title:           "Haskell: 표준 오류에 쓰는 방법"
-simple_title:         "표준 오류에 쓰는 방법"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-프로그래머들은 프로그램 실행 중 발생하는 오류나 경고 메시지를 처리하기 위해 표준 에러로 쓰기를 사용합니다. 표준 에러는 프로그램 실행 중 발생하는 오류 메시지를 사용자에게 보여줍니다. 이 방법을 사용하는 이유는 사용자에게 오류에 대해 알리고 이를 해결하도록 유도하기 위해서입니다.
+## What & Why? (무엇과 왜?)
 
-## 방법:
+표준 오류는 오류 메시지와 로그를 출력하는 스트림이다. 프로그래머들은 데이터 출력과 오류 메시지를 분리하기 위해 표준 오류를 쓴다.
+
+## How to: (방법)
+
+표준 오류로 쓰려면 `System.IO` 모듈을 사용해야 합니다.
+
 ```Haskell
+import System.IO
+
+main :: IO ()
 main = do
-    putStrLn "Hello World!"
-    hPutStrLn stderr "This is an error message!"
+  hPutStrLn stderr "이 메시지는 표준 오류에 나타납니다."
 ```
 
-출력:
-
+출력 예시:
 ```
-Hello World!
-This is an error message!
+이 메시지는 표준 오류에 나타납니다.
 ```
 
-## 깊이 파고들기:
-이 방식은 예전에는 컴퓨터 화면에 직접 에러 메시지를 출력했지만, 프로그래밍 언어가 발전함에 따라 오류 메시지를 사용자에게 보여주는 방식이 바뀌었습니다. 더 나은 대안으로는 로깅 라이브러리를 사용하는 것이 있으며, 이는 오류 메시지를 파일에 기록하거나 네트워크를 통해 전송할 수 있도록 해줍니다. 표준 에러를 이용해 오류 메시지를 사용자에게 제공하는 방식은 안전하고 간단하기 때문에 여전히 널리 사용되고 있습니다.
+## Deep Dive (심층 분석)
 
-## 참고 자료:
-- [Haskell 표준 라이브러리 문서](https://hackage.haskell.org/package/base-4.11.1.0/docs/GHC-IO-Handle.html#v:hPutStrLn)
+- 역사적 맥락: UNIX 시스템에서 시작, 표준 출력(stdout)과 분리되어 에러 처리를 용이하게 함.
+- 대안: 일부 프로그래머는 로깅 라이브러리를 사용하거나 파일로 직접 기록할 수 있음.
+- 구현 세부사항: `System.IO` 모듈의 `stderr`는 `Handle` 타입으로, `hPutStr`나 `hPutStrLn`과 같은 함수로 쓸 수 있음.
+
+## See Also (참고 자료)
+
+- Haskell의 `System.IO` 문서: [Hackage System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- 표준 스트림에 관한 위키백과 문서: [Wikipedia Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
+- 표준 오류 출력에 대한 더 깊은 토론: [Stack Overflow Discussion](https://stackoverflow.com/questions/tagged/standard-error+haskell)

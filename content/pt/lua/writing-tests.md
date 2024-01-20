@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Lua: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que é & Por Que?
+Escrever testes é o processo de criar scripts que automaticamente testam seu código para checar a integridade e corretude das funcionalidades. Programadores fazem isso para garantir que novas mudanças não quebrem funcionalidades existentes e para facilitar a manutenção do código ao longo do tempo.
 
-Escrever testes é uma prática comum entre os programadores para garantir que seu código está funcionando corretamente. Isso envolve criar código adicional para verificar se o resultado esperado é retornado para uma determinada entrada de dados. É uma forma de melhorar a qualidade do código e evitar erros.
-
-## Como fazer:
-
+## Como Fazer:
 ```Lua
--- Primeiro, precisamos importar a biblioteca de testes:
-local test = require('test')
+-- Instale o Lua com um gerenciador de pacotes como luarocks
+-- luarocks install luaunit
 
--- Em seguida, podemos definir uma função para testar:
-function somar (a, b)
-  return a + b
+local luaunit = require('luaunit')
+local Calculadora = {}
+
+function Calculadora.soma(a, b)
+    return a + b
 end
 
--- Agora, podemos escrever um teste usando o método `assert`:
-test.assert(somar(2, 3) == 5) -- Isso deve retornar verdadeiro
-
--- Podemos também testar diversos casos com uma única função:
-test.assert_all(
-  somar(2, 3) == 5,
-  somar(0, 0) == 0,
-  somar(-5, 10) == 5
-)
-
--- E se quisermos testar se uma função retorna um erro?
-function dividir (a, b)
-  return a / b
+-- Definição de teste
+function testSoma()
+    luaunit.assertEquals(Calculadora.soma(2, 2), 4)
 end
 
-test.assert_error(dividir(4, 0)) -- Isso deve retornar verdadeiro
+-- Rodando os testes
+os.exit(luaunit.LuaUnit.run())
 ```
 
-## Mergulho Profundo:
+Saída do exemplo:
+```
+.
+Ran 1 tests in 0.001 seconds, 1 success, 0 failures
+```
 
-Escrever testes é uma prática recomendada por muitos desenvolvedores como forma de melhorar a confiabilidade do código. Isso ajuda a garantir que o código continue funcionando conforme ele é modificado ao longo do tempo. Existem outras formas de testar o código, como usar depuração ou realizar testes manuais, mas escrever testes automatizados é frequentemente considerado a maneira mais eficiente e precisa de garantir a corretude do código.
+## Mergulho Profundo
+1. **Contexto Histórico**: Testes automatizados têm suas raízes na prática de "debugging" do software, que começou logo após os primeiros programas terem sido escritos.
 
-## Veja também:
+2. **Alternativas**: Existem outras frameworks de teste no Lua, como o Busted e o TestMore, que oferecem diferentes funcionalidades e sintaxes.
 
-- [Tutorial Lua para Iniciantes](https://www.lua.org/pil/contents.html)
-- [Documentação Oficial do Módulo de Testes do Lua](https://www.lua.org/manual/5.3/manual.html#6.7)
+3. **Detalhes da Implementação**: Ao escrever testes, considere práticas como TDD (Test-Driven Development), onde os testes são escritos antes do código ser implementado, conduzindo o processo de desenvolvimento.
+
+## Veja Também
+- [LuaUnit no GitHub](https://github.com/bluebird75/luaunit)
+- [Lua TestMore](https://fperrad.frama.io/lua-TestMore/)

@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "C#: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi ?
+## Quoi & Pourquoi ?
 
-Écrire un fichier texte signifie simplement écrire du texte sur un fichier, plutôt que de l'écrire dans un environnement de développement. Les programmeurs font cela pour stocker des données, des configurations ou des informations spécifiques sur leur programme, de manière à les utiliser ultérieurement.
+Écrire un fichier texte, c'est sauvegarder des données sous forme de texte lisible. Les développeurs font cela pour des logs, des configurations, ou pour échanger des données simples.
 
 ## Comment faire :
 
 ```C#
-// Créer un nouveau fichier texte
-File.Create("nom-du-fichier.txt");
+using System;
+using System.IO;
 
-// Écrire du texte sur un fichier existant
-File.WriteAllText("nom-du-fichier.txt", "Bonjour le monde!");
-
-// Ajouter du texte à un fichier existant
-File.AppendAllText("nom-du-fichier.txt", "Ceci est un exemple de texte ajouté.");
-
-// Lire le contenu d'un fichier texte
-string contenu = File.ReadAllText("nom-du-fichier.txt");
+class Program
+{
+    static void Main()
+    {
+        string path = "exemple.txt";
+        string content = "Bonjour, ceci est un texte en exemple.";
+        
+        File.WriteAllText(path, content);
+        Console.WriteLine("Fichier écrit avec succès !");
+    }
+}
+```
+Sortie : 
+```
+Fichier écrit avec succès !
 ```
 
-## Plongée en profondeur :
+## Plongée Profonde
 
-L'écriture d'un fichier texte peut sembler une tâche banale pour les programmeurs d'aujourd'hui, mais cela a été un énorme sujet de discussion dans les premiers jours de la programmation informatique. Les alternatives telles que l'utilisation d'une base de données pour stocker des données ou l'écriture d'un fichier binaire nécessitant un traitement spécial n'ont pas toujours été disponibles.
+Écrire dans un fichier texte est une pratique depuis les débuts de l'informatique pour stocker information. `System.IO` est un espace de noms en C# contenant des classes pour le traitement de fichiers. Des méthodes alternatives existent, telles que `StreamWriter` ou `File.AppendAllText`, utilisées selon le contexte. L'implémentation dépend de la taille des données et de la fréquence de l'écriture.
 
-Les programmeurs peuvent également trouver utile d'utiliser des flots de données (streams) pour écrire sur un fichier plutôt que d'utiliser la classe File présentée ci-dessus.
+## Voir Également
 
-## Voir aussi :
-
-- [Code Envato Tuts sur l'écriture de fichiers en C#](https://code.tutsplus.com/articles/file-io-in-c-101--cms-32815)
-- [Tutoriel sur les flots de données en C#](https://csharp-station.com/Tutorial/CSharp/Lesson23)
+- Documentation Microsoft sur `File.WriteAllText`: [https://learn.microsoft.com/en-us/dotnet/api/system.io.file.writealltext?view=net-6.0](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.writealltext?view=net-6.0)
+- Tutoriel sur la manipulation de fichiers en C#: [https://www.tutorialspoint.com/csharp/csharp_file_io.htm](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)

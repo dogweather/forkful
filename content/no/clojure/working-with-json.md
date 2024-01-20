@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Clojure: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva er JSON og Hvorfor?
+## What & Why?
+JSON er et dataformat vi bruker for å lagre og utveksle data. Programmerere trenger det for å snakke med webtjenester og lagre konfigurasjoner.
 
-JSON (JavaScript Object Notation) er en vanlig format for datautveksling i programmering. Det er en enkel, tekstbasert måte å representere strukturert data på, som er lett å lese og skrive for både mennesker og maskiner. Programmerere bruker JSON for å sende og motta data mellom forskjellige systemer og programmer, for eksempel å hente informasjon fra en database eller kommunisere med en API.
-
-# Hvordan:
-
-Den enkleste måten å jobbe med JSON i Clojure er å bruke biblioteket "clojure.data.json". Dette biblioteket lar deg konvertere data mellom Clojure-strukturer og JSON-formatet. Her er et eksempel på hvordan man kan konvertere en Clojure-map til JSON og deretter tilbake til en map:
-
+## How to:
+I Clojure bruker vi ofte `cheshire` biblioteket for å håndtere JSON. La oss se hvordan man kan parse og generere JSON.
 ```Clojure
-(require '[clojure.data.json :as json])
+(require '[cheshire.core :as json])
 
-(def map {:navn "Jens", :alder 30})
+;; Parsing JSON streng til Clojure map
+(defn parse-json [json-str]
+  (json/parse-string json-str true))
 
-(json/generate-string map) ;; konverterer map til JSON
-;; output: "{\"navn\":\"Jens\",\"alder\":30}"
-    
-(json/parse-string "{\"navn\":\"Jens\",\"alder\":30}") ;; konverterer JSON til map
-;; output: {:navn "Jens", :alder 30}
+(parse-json "{\"name\": \"Ola\", \"age\": 30}")
+;; => {"name" "Ola", "age" 30}
+
+;; Generer en JSON streng fra en Clojure map
+(defn generate-json [clojure-map]
+  (json/generate-string clojure-map))
+
+(generate-json {"name" "Kari" "age" 28})
+;; => "{\"name\":\"Kari\",\"age\":28}"
 ```
 
-Du kan også jobbe med JSON-dokumenter som filer ved å bruke funksjonene `(json/write-str)` og `(json/read-str)`. Slik kan du enkelt lese og skrive JSON-data til og fra filer.
+## Deep Dive
+JSON står for JavaScript Object Notation og ble opprinnelig brukt i JavaScript. Nå er det språkuavhengig og en webstandard. Alternativer til JSON inkluderer XML og YAML, men JSON er ofte foretrukket for sin letthet og hastighet. Når du jobber med JSON i Clojure, må man huske på konverteringen mellom JSON-typene og Clojure-typene, som strenger, booleans, tall, lister (arrays) og maps (objekter).
 
-# Dypdykk:
-
-JSON ble først utviklet av Douglas Crockford på slutten av 1990-tallet, og har siden blitt en populær standard for datautveksling. I tillegg til å være mye brukt i webutvikling, brukes det også i databaser, automatisering og i mobilapplikasjoner. Alternativer til JSON inkluderer XML, YAML og CSV, men JSON er generelt sett enklere å arbeide med og mer kompatibelt med moderne webteknologi.
-
-I Clojure er det også andre biblioteker for å arbeide med JSON, som "cheshire" og "clj-json". Disse bibliotekene kan tilby forskjellige funksjoner og ytelse, så det kan være lurt å undersøke litt for å finne det som passer best for ditt prosjekt.
-
-# Se også:
-
-- [JSON Official Website](https://www.json.org/) - offisiell dokumentasjon og spesifikasjon for JSON
-- [clojure.data.json](https://github.com/clojure/data.json) - offisiell dokumentasjon for Clojure biblioteket
-- [cheshire](https://github.com/dakrone/cheshire) - et alternativt Clojure bibliotek for JSON
-- [clj-json](https://github.com/mmcgrana/clj-json) - enda et alternativt Clojure bibliotek for JSON
+## See Also
+- Cheshire GitHub: https://github.com/dakrone/cheshire
+- Clojure JSON-doc: https://clojuredocs.org/clojure.data.json
+- JSON officiell webbsida: https://www.json.org/json-no.html

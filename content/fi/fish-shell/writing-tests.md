@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Fish Shell: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-It
+## What & Why? - Mikä ja Miksi?
+Testaus auttaa varmistamaan koodin toimivuuden. Ohjelmoijat tekevät sitä vikoja estääkseen ja luotettavuutta parantaakseen.
 
-## Mitä & Miksi?
-Testien kirjoittaminen on prosessi, jossa testataan koodin toimivuutta ja luotettavuutta ennen sen julkaisemista tai käyttöä. Testien kirjoittaminen on tärkeää ohjelmistokehityksessä, sillä se auttaa varmistamaan, että koodi toimii oikein ja ennaltaehkäisemään mahdollisia virheitä ja bugien esiintymistä.
-
-## Kuinka:
-```Fish Shell ... ``` koodilohkoissa on esimerkkejä testien kirjoittamisesta ja niiden tulostuksista.
-
-### Yksinkertainen testi
+## How to: - Kuinka tehdään:
+Fish Shellissä voit kirjoittaa testitiedostoja `.fish` -päätteellä. Ohjelmoi testit tavallisena skriptinä, oleta toiminta ja tarkista tulokset.
 
 ```Fish Shell
-
-function calculate_sum --description "Laskee kahden numeron summan"
-  echo $math(add $argv[1] $argv[2])
+function test_greeting
+  set actual (echo "Moi $argv")
+  set expected "Moi Fish"
+  if test "$actual" = "$expected"
+    echo "Test passed: greeting is correct"
+  else
+    echo "Test failed: expected $expected, got $actual"
+  end
 end
 
-# Testauspaikkamerkinnät
-@test 'laskee kahden numeron summan'```
-  calculate_sum  5  7
+test_greeting Fish
 ```
 
-Tulostus:
+Tulostaisi:
 
-```Fish Shell
-12
+```
+Test passed: greeting is correct
 ```
 
-## Deep Dive:
-Ohjelmistokehityksen alkuajoista lähtien on ymmärretty testien tärkeys ja niiden käytön merkitys koodin laadun parantamisessa. Testien kirjoittaminen auttaa vähentämään virheiden määrää, nopeuttaa ohjelmiston kehitystä ja parantaa sen ylläpidettävyyttä. Fish Shell tarjoaa runsaasti työkaluja testien kirjoittamiseen, kuten `math`- ja `test`-komennot.
+## Deep Dive - Syväsukellus:
+Testauksen juuret ovat ohjelmistotuotannossa. Fishin omat työkalut ovat rajalliset, mutta ulkoisia työkaluja kuten `fishtape` voi käyttää. Testien toteutus voi olla käsin kirjoitettuja vertailuja tai kehittyneempiä testirunkoja.
 
-On myös olemassa muita vaihtoehtoja testien kirjoittamiseen, kuten Bashin `exit`-komento tai Pythonin `unittest`-kirjasto. Kuitenkin Fish Shellin älykkäät komennot ja prosessiloukkuihin liittyvät ominaisuudet tekevät siitä erinomaisen valinnan testien kirjoittamiseen.
-
-Testien kirjoittamisen taustalta löytyy myös testauslajien teoria, kuten yksikkötestaus, integraatiotestaus ja hyväksymistestaus, jotka kaikki auttavat varmistamaan ohjelmiston toiminnan eri näkökulmista.
-
-## See Also:
-- [Fish Shell Documentation on Tests](https://fishshell.com/docs/current/tutorial.html#tutorial-testing)
-- [Bash exit command](https://ss64.com/bash/exit.html)
-- [Python unittest documentation](https://docs.python.org/3/library/unittest.html)
+## See Also - Katso myös:
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- `fishtape`, Fishin testityökalu: [https://github.com/jorgebucaran/fishtape](https://github.com/jorgebucaran/fishtape)
+- Ohjelmistotestauksen perusteet: [https://martinfowler.com/testing/](https://martinfowler.com/testing/)

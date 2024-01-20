@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "C: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? (是什么？为什么？)
+编写测试是创建用于检验代码正确性的程序过程。程序员这样做是为了确保软件按预期工作，降低未来出错的风险。
 
-编写测试是指在编写程序代码时，我们额外编写一些代码来验证我们的程序是否如预期般正常运行。程序员们这样做的原因是为了确保他们编写的代码能够稳定地运行，并且能够尽可能减少程序中的错误。
-
-## 如何：
-
+## How to: (怎么做：)
+使用C语言的assert函数进行基本测试：
 ```C
-#include <stdio.h>
+#include <assert.h>
+
+void testAddition() {
+    int sum = 2 + 2;
+    assert(sum == 4); // Passes if sum is 4
+}
 
 int main() {
-  int num1 = 5;
-  int num2 = 10;
-  int result = num1 + num2;
-  printf("The sum of %d and %d is %d\n", num1, num2, result);
-  return 0;
+    testAddition();
+    printf("Test passed!\n");
+    return 0;
 }
 ```
+输出为：
+```
+Test passed!
+```
+若`assert`条款失败，程序将终止，并显示错误信息。
 
-输出：
+## Deep Dive (深入探索)
+编写测试的历史可以追溯到软件开发的早期。历史上，使用简单方法检测函数的行为，但现代更偏好采用框架如CUnit等。借助这些框架，可以组织和执行测试套件，提供详细的测试报告。更先进的实践，如TDD（测试驱动开发），首先编写测试，然后才是满足测试需求的代码。
 
-`The sum of 5 and 10 is 15`
-
-## 深入了解：
-
-编写测试在软件开发中扮演着重要的角色。它可以帮助程序员及早发现潜在的错误，并且可以提供一个可靠的方式来验证程序是否按照预期运行。除了编写测试，还有其他一些方法来验证程序的正确性，例如手动测试和静态代码分析。然而，编写测试仍然是一种值得推荐的做法，因为它可以帮助程序员节省时间和精力，并且可以提高程序的质量。
-
-## 参考资料：
-
-- [Introduction to software testing - Wikipedia](https://en.wikipedia.org/wiki/Software_testing)
+## See Also (另请参阅)
+- CUnit官方网站：http://cunit.sourceforge.net/
+- 测试驱动开发（TDD）入门：https://en.wikipedia.org/wiki/Test-driven_development
+- ANSI C标准（最新C语言标准）简介：https://en.wikipedia.org/wiki/ANSI_C

@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "Elm: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों करें? 
-YAML काम करना होता है तथा उसका उपयोग क्यों किया जाता है।
+## What & Why? (क्या और क्यों?)
 
-YAML को दस्तावेज़ या डेटा को संरचित और सामान्य ढंग से प्रकट करने के लिए उपयोग किया जाता है। कारण इससे डेटा को प्रवर्तन करने में आसानी होती है।
+YAML, "YAML Ain't Markup Language" के लिए खड़ा है, जो डेटा सिरिएलाइजेशन फॉरमेट है। प्रोग्रामर इसे कॉन्फ़िगरेशन फाइल्स, डेटा एक्सचेंज और बहुत से अन्य कामों के लिए इस्तेमाल करते हैं क्योंकि यह समझने में आसान और मशीन के लिए पढ़ने योग्य होता है।
 
-## कैसे करें: 
-एल्म में YAML के साथ काम करने के लिए, आप निम्न प्रकार से कोड कर सकते हैं:
+## How to: (कैसे करें:)
+
+Elm में डायरेक्ट YAML पार्सिंग की कोई लाइब्रेरी नहीं है, लेकिन आप JSON लाइब्रेरी के साथ इंटरऑपरेट कर सकते हैं। नीचे हम देखेंगे कि YAML को JSON में कैसे बदलें और Elm में काम करें।
 
 ```Elm
-import Yaml exposing (..)
+-- नोट: Elm में प्रत्यक्ष YAML पार्सिंग सपोर्ट नहीं है।
+-- हम अपेक्षा करते हैं कि सर्वर पर YAML को JSON में कनवर्ट किया जा चूका है।
 
--- पाठ को YAML में संगठित करें
-sampleData =
-  "name: जॉन डो र"
-  "उम्र: २५"
-  "शहर: न्यूयॉर्क"
+import Json.Decode exposing (decodeString, string)
 
--- YAML से पाठ को पढ़ें
-parsedData = Yaml.decode sampleData
+type alias Config =
+    { name : String
+    , version : String
+    }
 
--- प्रदर्शित करें
-case parsedData of
-  Ok data ->
-    Debug.log "पाठ" data
+configDecoder : Json.Decode.Decoder Config
+configDecoder =
+    Json.Decode.map2 Config
+        (Json.Decode.field "name" string)
+        (Json.Decode.field "version" string)
 
-  Err err ->
-    Debug.log "त्रुटि" err
+configJson : String
+configJson = "{\"name\":\"myProject\", \"version\":\"1.0.0\"}"
+
+result : Result String Config
+result =
+    decodeString configDecoder configJson
+
+-- इसका आउटपुट एक Config प्रकार का रिजल्ट होगा।
 ```
 
-आपको निम्न अंकों की सूची मिल सकती है:
+## Deep Dive (गहराई से जानकारी)
 
-- पाठ से YAML को प्रस्तुत किया जा सकता है
-- YAML से प्रविष्ट पाठ को पढ़ा जा सकता है
-- Yaml.decode फ़ंक्शन का उपयोग करने से संरचित पाठ को ट्री में विन्यस्त किया जा सकता है
+इतिहास में, YAML का उद्भव मानव-पठनीयता को महत्व देने वाले डेटा फॉरमेट के रूप में हुआ। JSON और XML जैसे विकल्प हैं, लेकिन YAML अक्सर इसकी सादगी के लिए चुना जाता है। Elm में YAML के साथ काम करने के लिए आमतौर पर सर्वर-साइड पर YAML डेटा को JSON में बदलना पड़ता है, क्योंकि Elm में यह सीधे समर्थित नहीं है।
 
+## See Also (और भी देखें)
 
-## गहराई से:
-YAML का निर्माण काम करना सहमतियों को विकसित XML को स्थानांतरित करने के लिए चित्रित किया गया था। इससे स्पष्ट है कि यह प्रतिस्थापन के लिए संघर्ष दुष्प्रभावों को बढ़ा सकता है, परंतु यह कुछ उचित गुण वैसे न हो तो किसी के कम होंगे।
-
-अधिक जानकारी के लिए निम्नलिखित स्त्रोत की जाँच करें:
-
-- [YAML के मूल विधि नाम --- डेटासहिता](https://yaml.org/spec/history/2001-12-10.html)
+- YAML आधिकारिक वेबसाइट: [YAML](https://yaml.org/)
+- Elm JSON पार्सिंग गाइड: [Elm Guide - JSON](https://guide.elm-lang.org/effects/json.html)
+- YAML to JSON कन्वर्टर टूल: [YAML to JSON Converter](https://www.json2yaml.com/)
+- Elm पैकेज: [Elm Packages](https://package.elm-lang.org/)

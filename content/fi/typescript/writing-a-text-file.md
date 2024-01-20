@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "TypeScript: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Tekstitiedostojen kirjoittamista käytetään tiedon tallentamiseen pysyvästi. Koodaajille se tarjoaa yksinkertaisen tavan säilöä sovelluksen dataa tai lokitietoja.
 
-Tekstin kirjoittaminen on yksi tärkeä osa ohjelmoinnissa, joka mahdollistaa ohjelman tallentaa tai lukea tietoa ulkoisesta tiedostosta. Tämä voi olla esimerkiksi tekstitiedosto, HTML-tiedosto tai CSV-tiedosto. Tekstien kirjoittamista tarvitaan esimerkiksi tietokantojen käsittelyssä tai käyttäjän antaman datan tallentamisessa.
+## How to:
+Asenna ensin tiedostojen käsittelyyn tarvittava Node.js `fs`-moduuli:
 
-## Miten:
+```TypeScript
+import * as fs from 'fs';
 
-Käytä TypeScriptiä kirjoittamaan tekstitiedostoja käyttämällä sisäänrakennettua ```fs```-kirjastoa. Kirjoita tiedoston nimi, mitä haluat sen sisältävän ja antaa tarvittavat käskyt tallentamiseen esimerkiksi käyttäen ```writeFile()```-metodia. Tämän jälkeen voit lukea tiedoston sisällön käyttämällä ```readFile()```-metodia.
-
-```
-import fs from 'fs';
-
-// Kirjoita tiedoston nimi ja sisältö
-fs.writeFile('tekstifile.txt', 'Tervehdys maailma!');
-
-// Lue tiedoston sisältö
-fs.readFile('tekstifile.txt', 'utf8', (err, data) => {
+fs.writeFile('tervehdys.txt', 'Hei vaan TypeScriptin ystävät!', err => {
   if (err) throw err;
-  console.log(data); // Tulostaa tekstifile.tx:n sisällön
+  console.log('Tiedosto on tallennettu!');
 });
 ```
 
-## Syväsukellus:
+Koodi luo tekstitiedoston nimeltä "tervehdys.txt" ja kirjoittaa siihen viestin. Jos onnistuu, konsoliin tulostuu ilmoitus.
 
-Tekstin kirjoittaminen on vanha tekniikka, jota käytetään edelleen monissa ohjelmoinnin osa-alueissa. Lisäksi on olemassa myös muita tapoja tallentaa ja lukea tietoa, kuten käyttämällä tietokantoja. Tekstien kirjoittamisessa on hyvä muistaa myös koodin turvallisuus ja validointi, jotta vältytään mahdollisilta tietoturvariskeiltä.
+## Deep Dive
+Typescript on kehittynyt JavaScriptin supersetiksi, joka mahdollistaa tyypitetyn ohjelmoinnin. Se on saanut vaikutteita aiemmista ohjelmointikielistä, kuten Java ja C#. Aikaisemmin tiedostojen käsittelyyn käytettiin pelkkää JavaScriptia, mutta TypeScript tarjoaa vahvan tyypityksen ja luokkien tuoman selkeyden. Vaihtoehtoina tiedostojen kirjoittamiseen voivat olla erilaiset tietokannat tai pilvipalvelut, mutta perinteinen tiedostojärjestelmän käyttö on edelleen arvokasta nopean kehityksen ja helpon testauksen vuoksi.
 
-## Katso myös:
-
-[Node.js dokumentaatio fs-moduulista](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-
-[TypeScript oppaat ja tiedot](https://www.typescriptlang.org/docs/home.html)
+## See Also
+- [Node.js File System -dokumentaatio](https://nodejs.org/api/fs.html)
+- [TypeScriptin viralliset ohjeet](https://www.typescriptlang.org/docs/)
+- [Modernin JavaScriptin oppiminen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)

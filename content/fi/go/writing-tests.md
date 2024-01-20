@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Go: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## What & Why?
+Testaus tarkoittaa koodin toiminnan varmistamista automatisoiduin testein. Testit parantavat ohjelmiston laatua ja helpottavat kehitystä.
 
-Testien kirjoittaminen on prosessi, jolla ohjelman toiminnallisuutta varmistetaan koodin kirjoittamisen jälkeen. Testien avulla varmistetaan, että ohjelma toimii ja käyttäytyy odotetulla tavalla. Näin ohjelman suorittamista voidaan jatkuvasti testata ja varmistaa sen toimivuus.
+## How to:
+```Go
+package main
 
-# Miten:
+import (
+    "testing"
+)
 
-Esimerkkejä testien kirjoittamisesta ja niiden tulosteista:
-
-Go esimerkki:
-
-```
-func TestSum(t *testing.T) {
-	total := Sum(4, 5)
-	if total != 9 {
-		t.Errorf("Expected result to be 9, but got %d instead", total)
-	}
+func Sum(a, b int) int {
+    return a + b
 }
 
+func TestSum(t *testing.T) {
+    total := Sum(5, 5)
+    if total != 10 {
+        t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
+    }
+}
+```
+Testin ajo:
+```bash
+go test
+```
+Mahdollinen tulostus:
+```
+PASS
+ok  	your/package/name	0.123s
 ```
 
-Tuloste:
+## Deep Dive
+Go-testaamisen juuret ovat TDD:ssä (Test Driven Development). Vaihtoehtoina Go:ssa on käyttää ulkopuolisia kirjastoja, kuten Testify tai Ginkgo. Yksikkötestit kirjoitetaan samassa paketissa suffiksilla `_test.go` ja käytetään `testing`-kirjastoa.
 
-```
---- FAIL: TestSum (0.00s)
-    main_test.go:6: Expected result to be 9, but got 8 instead
-FAIL
-FAIL    example.com/testing    0.014s
-```
-
-# Syvempi sukellus:
-
-Testien kirjoittaminen on tärkeä osa ohjelmointiprosessia, sillä se auttaa varmistamaan ohjelman luotettavuuden ja toimivuuden. Testien kirjoittamisella voi myös säästää aikaa ja vaivaa, sillä ne auttavat havaitsemaan mahdolliset virheet ja ongelmat jo koodaamisen aikana.
-
-Muita vaihtoehtoja testien kirjoittamiseen ovat esimerkiksi manuaalinen testaus ja integraatiotestaus. Go tarjoaa testaamiseen erilaisia toimintoja, kuten testeittäin suorittamisen ja kattavuusraporttien luomisen.
-
-Testien kirjoittamisessa käytetään yleensä yksikkö- ja integraatiotestejä. Yksikkötestit testaavat yksittäisiä koodilohkoja ja integraatiotestit testaavat eri osien välistä yhteistoimintaa.
-
-# Katso myös:
-
-- [Go testauksen viralliselta sivustolta](https://golang.org/pkg/testing/)
-- [Go testauksen aloittelijan opas](https://blog.alexellis.io/golang-writing-unit-tests/)
+## See Also
+- Go:n dokumentaatio testauksesta: https://golang.org/pkg/testing/
+- Testify-kirjaston GitHub-sivu: https://github.com/stretchr/testify
+- Tietoa TDD:stä: https://martinfowler.com/bliki/TestDrivenDevelopment.html

@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "C#: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "C#"
 category:             "C#"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer testes de programação?
+## What & Why? (O Quê & Por Quê?)
+Escrever testes é a prática de criar scripts automático que verificam se seu código se comporta como esperado. Programadores fazem isso para pegar bugs cedo, melhorar a qualidade do código e facilitar manutenções futuras.
 
-Testes de programação são um conjunto de ações que os programadores realizam para verificar se o código que eles escreveram está funcionando corretamente. É uma forma de garantir que o software produzido seja de alta qualidade e atenda às expectativas do cliente. Além disso, os testes de programação ajudam a identificar e corrigir erros antes que o software seja lançado, economizando tempo e recursos no longo prazo.
-
-## Como fazer:
-
+## How to: (Como fazer:)
 ```C#
-// Criando um teste simples de soma
-int resultado = Soma(2, 3);
-int esperado = 5;
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// Verificando se o resultado é igual ao esperado
-if (resultado == esperado) {
-  Console.WriteLine("O teste passou!");
-} else {
-  Console.WriteLine("O teste falhou...");
+namespace MeuAppDeTestes {
+    [TestClass]
+    public class CalculadoraTestes {
+        [TestMethod]
+        public void TestaSoma() {
+            var calculadora = new Calculadora();
+            Assert.AreEqual(5, calculadora.Soma(2, 3));
+        }
+    }
+
+    public class Calculadora {
+        public int Soma(int a, int b) {
+            return a + b;
+        }
+    }
 }
 
-// Função para somar dois números
-int Soma(int a, int b) {
-  return a + b;
-}
+// Saída esperada ao executar o teste:
+// TestaSoma passou
 ```
 
-Saída: O teste passou!
+## Deep Dive (Mergulho Profundo)
+Os testes automáticos na programação começaram na década de 1950, mas só ganharam destaque nos anos 90 com o desenvolvimento de metodologias ágeis. Existem alternativas ao MSTest, como NUnit e xUnit, cada uma com suas especificidades. A escolha de uma depende de fatores como a familiaridade do time e recursos necessários. Implementar testes envolve seguir padrões como Arrange-Act-Assert (AAA) para estruturar o código de teste de forma clara.
 
-## Profundidade:
-
-Escrever testes de programação não é uma prática nova. Na verdade, ela tem suas raízes na metodologia de desenvolvimento de software conhecida como "Test Driven Development" (TDD), que foi introduzida por Kent Beck na década de 1990. Existem outras alternativas, como "Behavior Driven Development" (BDD) e "Acceptance Test Driven Development" (ATDD), que também enfatizam a importância de testes de programação no processo de desenvolvimento de software.
-
-Para implementar testes em C#, é recomendado o uso de frameworks de testes, como NUnit, xUnit ou MSTest. Eles fornecem ferramentas e estruturas que facilitam a criação e execução de testes automatizados. Além disso, a plataforma Visual Studio possui suporte integrado para criação e execução de testes em C#, tornando o processo ainda mais fácil.
-
-## Veja também:
-
-- [Artigo sobre TDD](https://www.devmedia.com.br/test-driven-development-conceitos/30770)
+## See Also (Veja Também)
+- [Documentação do MSTest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
+- [Guia xUnit](https://xunit.net/docs/getting-started/netfx/visual-studio)
+- [Princípios do teste de software ágil](https://www.agilealliance.org/glossary/tdd/)

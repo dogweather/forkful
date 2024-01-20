@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med json"
-html_title:           "Arduino: Jobbe med json"
-simple_title:         "Jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Hvis du jobber med å programmere Arduino, er sjansen stor for at du også kommer til å jobbe med JSON. JSON står for JavaScript Object Notation, og handler om å strukturere data på en enkel og lesbar måte. Dette er viktig fordi det gjør det enklere for programmeringskoden å håndtere og manipulere data.
+## Hva & Hvorfor?
+Jobbing med JSON (JavaScript Object Notation) innebærer å bruke et lettvekt og formatert tekstformat for datautveksling. Programmerere benytter JSON fordi det er enkelt å lese for mennesker, det er lett å parse for maskiner, og det støttes bredt på tvers av programmeringsspråk.
 
-# Hvordan:
+## How to:
+```Arduino
+#include <ArduinoJson.h>
 
-Først må du inkludere JSON-biblioteket i kodeteksten din ved å skrive ```#include <ArduinoJson.h>``` øverst i koden din.
+void setup() {
+  Serial.begin(9600);
 
-For å kunne jobbe med JSON-data, må du først konvertere dine data til en JSON-syntaks. Dette gjøres ved å bruke funksjonen ```serializeJson()```. La oss se et enkelt eksempel:
+  // Anta at vi mottar en JSON streng som inneholder temperaturdata
+  const char* json = "{\"temperature\": 23.5}";
 
+  // Opprett en JSONBuffer for å holde dataen
+  StaticJsonDocument<200> doc;
+
+  // Parse JSON strengen
+  deserializeJson(doc, json);
+
+  // Hent verdien (antar at det er en flyttall)
+  float temperature = doc["temperature"];
+
+  // Skriv ut til seriell monitor
+  Serial.print("Temperatur: ");
+  Serial.println(temperature);
+}
+
+void loop() {
+  // Ingenting å gjøre her
+}
 ```
-// Opprett en variabel med data
-int sensorData = 50;
-
-// Opprett et tomt JSON-objekt
-StaticJsonDocument<20> jsonDocument;
-
-// Legg til data i JSON-objektet
-jsonDocument["data"] = sensorData;
-
-// Konverter JSON-objektet til en streng
-String jsonString;
-serializeJson(jsonDocument, jsonString);
-
-// Skriv ut JSON-strengen til seriell monitor
-Serial.println(jsonString);
+Resultat:
+```
+Temperatur: 23.5
 ```
 
-I dette eksempelet har vi opprettet et JSON-objekt med dataen vår og konvertert det til en streng som vi kan skrive ut. Resultatet vil være ```{"data": 50}```.
+## Deep Dive
+JSON ble introdusert i 2001 og har siden da blitt et av de mest populære formatene for dataoverføring over nettet, mye grunnet sin enkelhet og lesbarhet sammenlignet med XML. I Arduino kan vi håndtere JSON ved hjelp av bibliotek som `ArduinoJson`, som er effektivt og tilgjengelig via Arduino IDE's bibliotekshåndterer. Implemetasjon av JSON i Arduino krever en forståelse av parsing og serialisering for å konvertere mellom tekst og nyttige datastrukturer.
 
-# Fordypning
-
-JSON har blitt en populær måte å strukturere og lagre data på, spesielt innen webutvikling. Det er et fleksibelt format som støttes av mange ulike programmeringsspråk, inkludert Arduino.
-
-Alternativer til å jobbe med JSON på Arduino inkluderer å bruke et annet dataformat, som for eksempel XML, eller å lage dine egne datastrukturer. Imidlertid kan JSON være enklere å jobbe med og mer standardisert.
-
-Det finnes også andre måter å konvertere data til JSON-syntaks på enn å bruke ```serializeJson()```. For eksempel kan du bruke ```JsonArray``` og ```JsonObject```-klassene for å bygge opp komplekse JSON-datastrukturer.
-
-# Se også
-
-Du kan finne mer informasjon om å jobbe med JSON på Arduino i følgende ressurser:
-- [ArduinoJson dokumentasjon](https://arduinojson.org/)
-- [Bruk av JSON-biblioteket på Arduino Playground](https://playground.arduino.cc/Code/Json/)
-- [Video tutorial om å konvertere data til JSON på Arduino](https://www.youtube.com/watch?v=T_BQX5hH_HU)
+## See Also
+- ArduinoJson bibliotekets offisielle side: https://arduinojson.org/
+- JSON standardspesifikasjon: https://www.json.org/json-en.html
+- Arduino sin referanseguide for Serial: https://www.arduino.cc/reference/en/language/functions/communication/serial/

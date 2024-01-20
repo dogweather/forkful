@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "PowerShell recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,38 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-YAML stands for "YAML Ain't Markup Language" and is a human-readable data serialization language. Programmers use YAML to store and share structured data in a simple and readable format. Unlike other markup languages, YAML is designed to be easy to read by both humans and machines, making it a popular choice for configuration files and data exchange.
+YAML is a human-friendly data serialization format. Programmers use it for configuration files, data exchange between languages, and because it’s easy to read and write compared to XML or JSON.
 
 ## How to:
-Coding in YAML with PowerShell is easy and straightforward. You can use the ConvertFrom-Yaml cmdlet to convert a YAML file into a PowerShell object and access its properties. Let's look at a simple example:
+To work with YAML in PowerShell, you'll need to use a module like `powershell-yaml`. Install it first:
 
-```
-# Sample YAML file
----
-name: John Smith
-age: 30
-title: Software Engineer
-```
-```
-# Convert YAML to PowerShell object
-$yamlObject = Get-Content -Path .\sample.yml | ConvertFrom-Yaml
-```
-```
-# Access object properties
-$yamlObject.name
-$yamlObject.age
-$yamlObject.title
-```
-The output will be:
-```
-John Smith
-30
-Software Engineer
+```PowerShell
+Install-Module -Name powershell-yaml
 ```
 
-## Deep Dive:
-YAML was first introduced in 2001 as an alternative to XML. It quickly gained popularity due to its simplified syntax and human-friendly structure. It is now used in various programming languages, including PowerShell, for its ease of use and flexibility. YAML is also an open standard, making it compatible with a wide range of tools and platforms.
+Reading YAML content:
 
-There are other alternatives to YAML, such as JSON and XML. However, YAML stands out due to its simplicity and readability. It allows for easy nested structures and is less verbose compared to other markup languages. Additionally, PowerShell has built-in support for YAML, making it a convenient choice for working with structured data.
+```PowerShell
+# Import the module
+Import-Module powershell-yaml
 
-When working with YAML in PowerShell, it's essential to keep in mind that indentation is significant. Similar to Python, the hierarchy of YAML data is defined by the indentation level. Incorrect indentation can lead to syntax errors or unexpected behavior when converting the YAML file into a PowerShell object.
+# Load a YAML file
+$yamlContent = Get-Content -Path 'config.yaml' -Raw
+
+# Convert YAML to a PowerShell object
+$configObject = ConvertFrom-Yaml -Yaml $yamlContent
+
+# Output the object
+$configObject
+```
+
+Creating and writing YAML:
+
+```PowerShell
+# Create a hashtable
+$person = @{
+  name = 'Jane Doe'
+  age = 30
+  languages = @('English', 'French')
+}
+
+# Convert the hashtable to YAML
+$yamlOutput = ConvertTo-Yaml -Data $person
+
+# Write the YAML to a file
+$yamlOutput | Out-File -FilePath 'person.yaml'
+```
+
+## Deep Dive
+YAML originated in the early 2000s and stands for “YAML Ain't Markup Language,” a recursive acronym highlighting its data-centric approach over markup languages like HTML. While JSON is often the go-to for APIs and web services due to its efficient parsing and compactness, YAML remains popular for its readability and being more human-editable, especially in configuration files (e.g., Docker Compose and Kubernetes).
+
+Alternatives to `powershell-yaml` include `YamlDotNet` with a `.NET` glue code, or manually parsing YAML strings - but why complicate your life?
+
+Under the hood, `powershell-yaml` uses `YamlDotNet`, converting YAML to .NET objects which PowerShell can easily handle. This interoperation allows smooth transitioning of YAML data into the PowerShell ecosystem.
+
+## See Also
+- [`powershell-yaml` on PowerShell Gallery](https://www.powershellgallery.com/packages/powershell-yaml)
+- [YAML Official Website](https://yaml.org/)
+- [YAML Syntax Reference](https://learnxinyminutes.com/docs/yaml/)

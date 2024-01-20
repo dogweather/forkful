@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Python: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,27 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Écrire un fichier texte en informatique signifie enregistrer des données dans un format lisible par les humains. Les programmeurs le font souvent pour stocker des informations ou des paramètres pour leurs programmes.
+## Quoi & Pourquoi ?
+Écrire dans un fichier texte permet de sauvegarder des données. Les programmeurs le font pour enregistrer les résultats, configurer des programmes ou tracer des logs.
 
-## Comment faire:
+## Comment ça marche :
 ```Python
-# Étape 1 : Ouvrir le fichier en mode écriture avec la fonction "open"
-fichier = open("mon_fichier.txt", "w")
+# Écriture simple dans un fichier
+with open('exemple.txt', 'w') as fichier:
+    fichier.write('Salut, amis codeurs !')
 
-# Étape 2 : Écrire les données dans le fichier avec la méthode "write"
-fichier.write("Voici un exemple de données que nous enregistrerons dans notre fichier.")
-
-# Étape 3 : Fermer le fichier pour libérer la mémoire avec la méthode "close"
-fichier.close()
+# Ajout de contenu à un fichier existant
+with open('exemple.txt', 'a') as fichier:
+    fichier.write('\nAjoutons une deuxième ligne.')
 ```
-Voici le contenu qui sera enregistré dans notre fichier texte:
+*Résultat - exemple.txt :*
+
 ```
-Voici un exemple de données que nous enregistrerons dans notre fichier.
+Salut, amis codeurs !
+Ajoutons une deuxième ligne.
 ```
 
-## Plongée en profondeur:
-Écrire un fichier texte peut sembler un concept simple, mais c'est un élément fondamental de la programmation. Avant l'avènement des bases de données, les fichiers texte étaient le moyen le plus courant de stocker des données. Il existe également différentes manières d'écrire dans un fichier texte, comme utiliser des bibliothèques spécifiques ou écrire en utilisant différentes méthodes.
+## Exploration :
+Historiquement, l'écriture de fichiers est l'une des opérations de base en programmation. Contrairement aux bases de données, les fichiers textes sont simples et universels, mais moins performants pour les gros volumes de données. Alternativement, on utilise les formats JSON ou XML pour structurer des données complexes. En Python, on manipule les fichiers avec des context managers (`with`) pour s'assurer qu'ils se ferment correctement.
 
-## À voir également:
-Pour en savoir plus sur l'écriture de fichiers texte en Python, vous pouvez consulter la documentation officielle ici: https://docs.python.org/fr/3/tutorial/inputoutput.html#lire-et-%c3%a9crire-des-fichiers
+## À voir aussi :
+- [Documentation Python sur la gestion des fichiers](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Tutoriel sur le module json pour la sérialisation](https://docs.python.org/3/library/json.html)
+- [Approfondissement sur la gestion des fichiers en Python](https://realpython.com/read-write-files-python/)

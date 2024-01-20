@@ -1,7 +1,7 @@
 ---
-title:                "yaml 작업하기"
-html_title:           "Arduino: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 어떤것과 왜?
+## What & Why? (무엇이며 왜?)
+YAML은 데이터를 표현하는 간단한 형식입니다. 프로그래머들은 설정 파일, 데이터 교환 등을 위해 YAML을 사용합니다.
 
-YAML 프로그래밍은 이제 아두이노에서 사용할 수 있습니다. 그렇게 하기전에, 우리는 YAML에 대해 두 가지만 알고 있으면 됩니다. 첫째, YAML은 데이터 직렬화 양식입니다. 즉, 데이터를 파일에 저장하거나 네트워크를 통해 전송하기위해 사용됩니다. 둘째, 프로그래머는 YAML을 사용하여 데이터를 구조화하고 읽고 쓰기 위해 사용합니다.
+## How to:
+Arduino에서 YAML 직접 처리는 제한적이나, 아래 예제는 YAML 형식의 문자열을 해석하는 방법을 설명합니다.
 
-# 어떻게:
+```Arduino
+#include <ArduinoJson.h>
 
-```
-#include <YAML.h>
+const char* yaml = 
+  "title: 'YAML Example'\n"
+  "value: 10\n";
 
-// YAML 형식으로 데이터를 읽고 쓰는 예제
 void setup() {
-  YAML::Node node;
-  node["name"] = "Arduino";
-  node["version"] = "1.8.13";
-  node["platform"] = "AVR";
-  
-  // YAML 파일로 저장하기
-  node["data"]["sensor1"] = 100;
-  node["data"]["sensor2"] = 200;
-  File file = SD.open("data.yaml", FILE_WRITE);
-  YAML::Emitter emitter(file);
-  emitter << node;
-  
-  // YAML 파일에서 읽어오기
-  YAML::Node readNode;
-  File readFile = SD.open("data.yaml");
-  YAML::Parser parser(readFile);
-  parser >> readNode;
-  
-  // 읽어온 데이터 출력하기
-  int sensor1 = readNode["data"]["sensor1"].as<int>();
-  int sensor2 = readNode["data"]["sensor2"].as<int>();
-  
-  // 시리얼 모니터에 출력하기
   Serial.begin(9600);
-  Serial.print("sensor1: ");
-  Serial.println(sensor1);
-  Serial.print("sensor2: ");
-  Serial.println(sensor2);
+  DynamicJsonDocument doc(1024);
+  deserializeJson(doc, yaml);
+  Serial.println(doc["title"].as<String>());
+  Serial.println(doc["value"].as<int>());
+}
+
+void loop() {
+  // 필요한 코드 추가
 }
 ```
 
-# 딥 다이브:
+출력:
+```
+YAML Example
+10
+```
 
-(1) YAML은 2000년에 개발된 형식이며, 이전에는 XML이 일반적으로 사용되었습니다. XML에 비해 YAML은 구조적으로 더 간단하고 읽기 쉽기 때문에 많은 프로그래머들이 채택하게 되었습니다. (2) 프로그래머들은 JSON이나 CSV와 같은 다른 데이터 형식을 사용할 수도 있지만, YAML은 보다 유연하고 효율적인 데이터 구조를 제공하므로 선호합니다. (3) 아두이노에서 YAML을 사용하기 위해 <YAML.h> 라이브러리를 설치해야 합니다. 이 라이브러리는 ESP32, ESP8266, AVR 등 다양한 아두이노 기반 보드에서 사용 가능합니다.
+## Deep Dive (심층 분석)
+YAML은 JSON 보다 읽고 쓰기 쉬운 대안으로 2001년에 등장했습니다. JSON이나 XML과 비교할 때, YAML은 가독성이 높고 간결합니다. Arduino에선 메모리 제약으로 인해 YAML 라이브러리 지원이 제한적이나, JSON 라이브러리를 사용하여 간단한 YAML 데이터를 처리할 수 있습니다.
 
-# 참고자료:
-
-- <YAML.h> 라이브러리 설치 가이드: https://github.com/arduino-libraries/YAML/blob/master/README.md
-- YAML에 관한 더 자세한 정보: https://yaml.org/
-- YAML 문법 가이드: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+## See Also (참조)
+- ArduinoJson 라이브러리: https://arduinojson.org/
+- YAML 공식 사이트: https://yaml.org/
+- YAML vs. JSON: https://json2yaml.com/

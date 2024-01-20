@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Rust: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,46 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Beim Programmieren mit Rust begegnet man häufig dem Format YAML. YAML (Yet Another Markup Language) ist ein standardisiertes Dateiformat mit leserlicher Syntax, das insbesondere für die Speicherung von Konfigurationsdaten verwendet wird. Viele Programmierer nutzen YAML, da es einfach zu lesen, zu schreiben und zu parsen ist.
+## Was & Warum?
+YAML, "YAML Ain't Markup Language", ist ein benutzerfreundliches Datenformat für Datenstrukturen. Programmierer nutzen YAML wegen seiner Lesbarkeit und Einfachheit für Konfigurationsdateien, Daten-Austausch oder -Speicherung.
 
-## Wie geht's?
-In Rust, kann man das YAML-Format ganz einfach in ein Struct verwandeln. Hier ist ein Beispiel, wie man ein YAML-Dokument mit Hilfe von Serde in ein Struct umwandelt:
+## How to:
+Um mit YAML in Rust zu arbeiten, ist `serde_yaml` die gängige Wahl. Hier ein Beispiel:
 
 ```Rust
-use serde::{Deserialize, Serialize};
-use std::fs::File;
-use std::io::prelude::*;
+use serde::{Serialize, Deserialize};
+use serde_yaml;
 
-#[derive(Deserialize, Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 struct Config {
-    username: String, 
-    password: String,
-    database: String,
+    title: String,
+    owner: Owner,
 }
 
-fn main() {
-    let mut file = File::open("config.yml").expect("Unable to open file");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Unable to read file");
+#[derive(Debug, Serialize, Deserialize)]
+struct Owner {
+    name: String,
+    dob: String,  // im Format YYYY-MM-DD
+}
 
-    let config: Config = serde_yaml::from_str(&contents).expect("Unable to parse YAML");
+fn main() -> Result<(), serde_yaml::Error> {
+    // Ein YAML-String
+    let data = "
+title: Mein Projekt
+owner:
+  name: Max Mustermann
+  dob: 1990-07-15
+";
 
-    println!("Username: {}", config.username);
-    println!("Password: {}", config.password);
-    println!("Database: {}", config.database);
+    // YAML-String in Rust-Struktur umwandeln
+    let deserialized_data: Config = serde_yaml::from_str(data)?;
+
+    // Ausgabe
+    println!("{:?}", deserialized_data);
+
+    Ok(())
 }
 ```
 
-Wir importieren zwei hilfreiche Bibliotheken: Serde, die es uns ermöglicht, YAML-Dateien zu parsen, und std::fs, um eine Datei zu öffnen und zu lesen. Anschließend erstellen wir ein Struct mit den entsprechenden Feldern, die in unserem YAML-Dokument vorhanden sind. Schließlich lesen wir die Datei und wandeln sie in ein Struct um, das wir dann verwenden können.
+Beispiel-Ausgabe:
+```
+Config { title: "Mein Projekt", owner: Owner { name: "Max Mustermann", dob: "1990-07-15" } }
+```
 
-## Tiefes Eintauchen
-YAML wurde im Jahr 2001 von Clark Evans entwickelt und wurde häufig für Konfigurationsdateien verwendet. Es ist eine Textdatei, die für Menschen leicht lesbar und schreibbar ist, aber auch von Maschinen leicht verarbeitet werden kann.
+## Deep Dive
+YAML entstand Anfang der 2000er als einfachere Alternative zu XML. Für Rust gibt's neben `serde_yaml` auch `yaml-rust`, aber `serde_yaml` ist durch seine Integration mit `serde`, dem Serialization-Framework, beliebter. Die Hauptaufgabe beim Arbeiten mit YAML ist Parsing und Serialization, wobei die Typsicherheit von Rust Stärken ausspielt.
 
-Es gibt verschiedene Alternativen zu YAML, wie zum Beispiel JSON oder XML. Diese sind jedoch nicht so menschenleserlich wie YAML. Wenn Sie mit Rust arbeiten, kann YAML eine bequeme Wahl sein, da es gut mit Rusts Typsystem harmoniert.
+## See Also
+- Offizielle Webseite von YAML: https://yaml.org 
+- `serde_yaml` Crate: https://crates.io/crates/serde_yaml 
+- Serde Projekt: https://serde.rs 
 
-Die Implementierung von YAML in Rust erfolgt durch die library serde_yaml, die von der allgemein bekannten Serde library abhängt. Diese library ist sehr stabil und wird ständig aktualisiert, um die beste Leistung zu bieten.
-
-## Siehe auch
-- [YAML dokumentation](https://yaml.org/)
-- [Serde library](https://github.com/serde-rs/serde)
+Für tiefergehende Konzepte und mehr Beispiele, schaut in der offiziellen `serde_yaml`-Dokumentation und dem Serde Guide nach.

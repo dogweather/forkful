@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "C++: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-YAML on tiedoston muoto, jota käytetään tietojen tallentamiseen hierarkkisessa muodossa. Se on suunniteltu helpoksi luettavaksi sekä ihmisille että ohjelmille. Ohjelmoijat käyttävät YAMLia helpottamaan tietojen tallentamista ja käsittelyä, sillä se on yksinkertainen ja tehokas muoto.
+## Mitä & Miksi?
+YAML (YAML Ain't Markup Language) on data serialisointiformaatti, johon tallennetaan ja josta luetaan tietoja C++ ohjelmissa. Ohjelmoijat käyttävät YAMLia, koska se on ihmisen luettavissa ja konfiguraatiota on helppo kirjoittaa ja ylläpitää.
 
-# Kuinka tehdä:
-Käytä YAMLia tallentamaan tietoja Yamlcpp-kirjastolla. Voit aloittaa luomalla YAML-tiedoston käyttämällä ```C++ YAML::Emitter``` -luokkaa ja lisäämällä haluamasi tiedot. Voit myös käyttää ```C++ YAML::Node``` -luokkaa lukemaan ja muokkaamaan olemassa olevaa YAML-tiedostoa.
+## Kuinka:
+YAML-käsittely edellyttää kirjastoa. Esimerkiksi `yaml-cpp` on suosittu valinta. 
+```C++
+#include <yaml-cpp/yaml.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Esimerkiksi, voit tallentaa henkilön tiedot seuraavasti:
+int main() {
+    // YAML-tiedoston luku
+    YAML::Node config = YAML::LoadFile("config.yaml");
+
+    // Tietojen haku
+    std::string username = config["user"]["name"].as<std::string>();
+    int age = config["user"]["age"].as<int>();
+
+    std::cout << "Name: " << username << ", Age: " << age << std::endl;
+
+    // YAML-tiedoston kirjoitus
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "user";
+    out << YAML::Value << YAML::BeginMap;
+    out << YAML::Key << "name" << YAML::Value << "John Doe";
+    out << YAML::Key << "age" << YAML::Value << 30;
+    out << YAML::EndMap;
+    out << YAML::EndMap;
+
+    std::ofstream fout("new_config.yaml");
+    fout << out.c_str();
+    
+    return 0;
+}
 ```
-YAML::Emitter emitter;
-emitter << YAML::BeginMap;
-emitter << YAML::Key << "Nimi";
-emitter << YAML::Value << "Matti";
-emitter << YAML::Key << "Ikä";
-emitter << YAML::Value << 30;
-emitter << YAML::EndMap;
+
+Oletetaan, että `config.yaml` sisältää:
+```yaml
+user:
+  name: Matti
+  age: 25
 ```
 
-Tämä tuottaisi seuraavan YAML-tiedoston:
+Ohjelman tulostus:
 ```
-Nimi: Matti
-Ikä: 30
-```
-
-Voit myös lukea YAML-tiedoston ja tulostaa sen sisällön seuraavasti:
-```
-YAML::Node node = YAML::LoadFile("tiedosto.yaml");
-std::cout << node["Nimi"].as<std::string>() << std::endl;
-std::cout << node["Ikä"].as<int>() << std::endl;
+Name: Matti, Age: 25
 ```
 
-Tämä tulostaisi seuraavan:
+`new_config.yaml` tiedostossa on nyt:
+```yaml
+user:
+  name: John Doe
+  age: 30
 ```
-Matti
-30
-```
 
-# Syvemmällä:
-YAML kehitettiin alun perin korvaamaan XML-tiedostojen monimutkainen syntaksi ja se on nykyään suosittu vaihtoehto tietojen tallentamiseen JSON-tiedostojen rinnalla. Se tukee myös monia ohjelmointikieliä, ei pelkästään C++:aa.
+## Syväsukellus
+YAML kehitettiin 2001 korvaamaan monimutkaisempia valintoja, kuten XML. Sen ihmisen luettavuus ja yksinkertaisuus viehättävät, mutta isojen tietomäärien kanssa YAML ei välttämättä ole tehokkain valinta. Json ja XML ovat suosittuja vaihtoehtoja. `yaml-cpp` kirjaston käyttö C++:ssa tarjoaa luokkia ja funktioita YAML-tiedostojen käsittelyyn. 
 
-Jos tarvitset monimutkaisempia tietorakenteita, kuten taulukoita ja linkitystä, voit tutustua YAML-standardeihin ja käyttää niitä kirjastojesi kanssa. Voit myös käyttää erilaisia ​​YAML-editoria helpottamaan YAML-tiedostojen luomista ja muokkaamista.
-
-Yamlcpp-kirjasto on avoimeen lähdekoodiin perustuva, joten voit löytää virheitä tai parantaa sen suorituskykyä lisäämällä ominaisuuksia. Voit myös tarkastella muita avoimen lähdekoodin YAML-kirjastoja, kuten LibYAML tai YAML-cpp, joilla on erilaisia ​​ominaisuuksia ja käytäntöjä.
-
-# Katso myös:
-- [Yamlcpp dokkari](https://github.com/jbeder/yaml-cpp/wiki)
-- [YAML-standardeja](https://yaml.org/spec/)
+## Katso Myös
+- yaml-cpp GitHub-sivu: https://github.com/jbeder/yaml-cpp
+- YAML virallinen sivusto: https://yaml.org
+- YAML standardi: https://yaml.org/spec/1.2/spec.html
+- Json ja XML vertailu: https://www.json.org/xml.html

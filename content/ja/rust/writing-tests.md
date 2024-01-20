@@ -1,7 +1,7 @@
 ---
-title:                "「テストの書き方」"
-html_title:           "Rust: 「テストの書き方」"
-simple_title:         "「テストの書き方」"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で? 
-テストを書くとは、プログラマーがコードをテストして問題を見つけることを意味します。それは良いコードを書くのに必要な重要なステップです。テストを書くことで、コードが期待通りに動作するかどうかを確認し、品質を向上させることができます。
+## What & Why? (テストの書き方と理由)
+テストとはコードが予期した通りに機能するか検証することです。プログラマーはバグを未然に防ぎ、機能の追加や変更が既存のコードに悪影響を与えないことを確かめるためにテストを書きます。
 
-## 作り方:
-テストを書くには、まず「テストモジュール」を作成してその中にテストを定義します。それから「assert」マクロを使用してコードの特定の部分をテストし、結果を確認することができます。
-
+## How to: (やり方)
 ```Rust
-pub mod tests {
+// 1. この関数が正しい加算結果を返すことをテストする。
+#[cfg(test)]
+mod tests {
     #[test]
-    fn test_function() {
-        let result = function_name(param);
-        assert!(result == expected_result);
+    fn add_two_test() {
+        assert_eq!(4, super::add_two(2));
     }
 }
+
+// 2. 実際の関数
+fn add_two(a: i32) -> i32 {
+    a + 2
+}
+
+// コマンドラインでテストを実行:
+// $ cargo test
 ```
 
-## 深堀り:
-テストの歴史を考えると、古いプログラミング言語ではテストを書くことは珍しくありませんでした。しかし、Rustのような新しい言語では、テストを書くことがより一般的になりました。代替手段としては、デバッガやログファイルを使用する方法があります。テストの実装方法は人によって異なりますが、Rustでは一般的にはテストモジュールを作成し、assertマクロを使用してテストを実行します。
+Sample output:
+```
+running 1 test
+test tests::add_two_test ... ok
 
-## 参考に:
-- [Rust公式ドキュメント: テスト](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Rustテストモジュールのチュートリアル](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [テストによる品質向上のためのベストプラクティス](https://medium.com/@jondot/rust-testing-fr-bbe0334f9e4)
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Deep Dive (詳細情報)
+Rustのテストは、`#[test]`アトリビュートを用いて書かれる。テスト駆動開発(TDD)やユニットテストなどの概念が広まったのは過去数十年のこと。Rustでは、標準で`cargo test`を使ってテストを実行でき、これは言語の安全性と信頼性を担保する哲学に合致している。代替としては、結合テストやドキュメントテストなどが存在する。実装の面では、Rustのテストは並列に実行されるが、`--test-threads`フラグでスレッド数を調整することができる。
+
+## See Also (関連情報)
+- [Rust by Example: Testing](https://doc.rust-lang.org/rust-by-example/testing.html)
+- [The Rust Programming Language: Writing Automated Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rust and WebAssembly: Testing](https://rustwasm.github.io/docs/book/game-of-life/testing.html)

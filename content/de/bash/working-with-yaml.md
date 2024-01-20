@@ -11,31 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+YAML ist ein Datenformat für Konfigurationsdateien, das Lesbarkeit betont. Programmierer nutzen es, weil es menschenfreundlicher als XML oder JSON ist und um Konfigurationen für vielfältige Anwendungen, wie Kubernetes oder Docker, zu definieren.
 
-Bash (Bourne-Again Shell) ist eine beliebte interaktive Shell und Skriptsprache, die in verschiedenen Betriebssystemen wie Linux, macOS und anderen eingesetzt wird. YAML ist eine datenorientierte Dateiformatierungssprache, die häufig in Kombination mit Bash verwendet wird, um intuitiv lesbaren Daten- und Konfigurationsdateien zu erstellen. Programmierer nutzen YAML, um ihre Skripte und Programme effizient und funktional zu gestalten.
+## How to:
+Arbeiten mit YAML in Bash kann mithilfe von `yq` erfolgen, einem kommandozeilenbasierten YAML-Prozessor:
 
-## Wie geht das?
-
-Um mit YAML in Bash zu arbeiten, muss zuerst ein YAML-Parser installiert werden. Ein Beispiel dafür ist das Programm "yaml2json". Hier ist der Code, um YAML in ein JSON-Format umzuwandeln:
-
+Installation von `yq`:
 ```Bash
-$ yaml2json example.yaml
+sudo wget https://github.com/mikefarah/yq/releases/download/v4.6.1/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
 ```
 
-Das Ergebnis sieht dann etwa so aus:
-
+Lesen eines Wertes:
 ```Bash
-{
-   "name": "John Doe",
-   "age": 30,
-   "favorite_foods": ["pizza", "sushi", "chocolate"]
-}
+cat config.yaml | yq e '.server.port'
+# Ausgabe: 8080
 ```
 
-## Tiefere Einblicke
+Ändern eines Wertes:
+```Bash
+yq e '.server.port = "9090"' -i config.yaml
+```
 
-YAML wurde ursprünglich von einem Debian-Entwickler als einfacheres und übersichtlicheres Alternativ zu XML entwickelt. Neben der Verwendung in Bash ist YAML auch in anderen Programmiersprachen wie Python, Ruby und Java weitverbreitet. YAML Syntax ist auf eine einfache und lesbare Darstellung von Daten ausgelegt, wodurch sie für Programmierer und Nicht-Programmierer gleichermaßen zugänglich ist.
+Überprüfen der Änderung:
+```Bash
+yq e '.server.port' config.yaml
+# Ausgabe: 9090
+```
 
-## Siehe auch
+## Deep Dive
+YAML wurde erstmals Anfang der 2000er als eine einfachere Alternative zu XML eingeführt. Alternativen zu YAML sind JSON und TOML – jeweils mit eigenen Stärken. YAML nutzt Einrückungen zur Strukturierung, was Fehler anfällig machen kann. Tools wie `yq` basieren intern auf LibYAML für Parsing und Serialisierung und sorgen für effizientes Arbeiten mit YAML-Dateien.
 
-Wenn du mehr über die Verwendung von YAML in Bash erfahren möchtest, empfehlen wir dir, die offizielle YAML-Website und die Dokumentation von Bash zu besuchen. Du findest auch weitere hilfreiche Ressourcen wie Tutorials und Beispiele auf GitHub.
+## See Also
+- YAML Spezifikation: https://yaml.org/spec/1.2/spec.html
+- `yq` GitHub Repository: https://github.com/mikefarah/yq
+- YAML und JSON vergleich: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json
+- Einführung in YAML und seine Unterschiede zu JSON: https://www.redhat.com/de/topics/automation/what-is-yaml

@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "Gleam recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,61 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Working with JSON in Gleam Programming 
-
 ## What & Why?
 
-JavaScript Object Notation, JSON, often plays key roles in server-to-server communication and storage of complex data. Programmers use it as a language-independent format to pass data across network connections.
+Working with JSON (JavaScript Object Notation) means handling data in a ubiquitous text format that's easy for humans and machines to understand. Programmers do it because JSON is king for storing and transmitting structured data, especially in web applications.
 
 ## How to:
 
-We'll learn to encode and decode JSON in Gleam. For decoding, we'll define our type to map JSON and then "decode" it. 
+Here's how to handle JSON in Gleam by encoding and decoding data. You'll need the `gleam/json` package, so get that first.
 
-```Gleam
-import gleam/decode.{Decoder, int, map2, field}
-import gleam_codecs.json
+```gleam
+import gleam/json
 
-type Person {
+// Define a type
+pub type Person {
   Person(name: String, age: Int)
 }
 
-// Our decoder
-fn decode_person(json: String) -> Result(Person, String) {
-  let decoder: Decoder(Person) =
-    map2(name: field("name", string), age: field("age", int), Person)
-
-  json_codecs.decode(json, decoder)
+// Encode to JSON
+pub fn encode_person(person: Person) -> json.Json {
+  case person {
+    Person(name, age) -> 
+      json.object([
+        "name", json.string(name),
+        "age", json.int(age)
+      ])
+  }
 }
-```
+// Usage and sample output
+let john = Person("John Doe", 30)
+let json_john = encode_person(john)
+json_john // {"name": "John Doe", "age": 30}
 
-This 'decode_person' function takes a JSON string and returns the 'Person'.
-
-Encoding is straightforward, just serialize it using 'encode'
-
-```Gleam
-import gleam_codecs.json
-
-fn encode_person(person: Person) -> String {
-  json_codecs.encode(person)
+// Decode from JSON
+pub fn decode_person(json: json.Json) -> Result(Person, Nil) {
+  let Ok(json) = json.decode_pair() // Decode the JSON object
+  let Ok(name) = json.field("name").map(json.decode_string)
+  let Ok(age) = json.field("age").map(json.decode_int)
+  person.Person(name, age)
 }
-```
-
-The output would be:
-
-```
-{ "name": "Gleam", "age": 2 }
+// Usage and sample output
+let decoded_person = decode_person(json_object("{\"name\": \"John Doe\", \"age\": 30}"))
+decoded_person // Ok(Person("John Doe", 30))
 ```
 
 ## Deep Dive
 
-JSON, derived from JavaScript but language-agnostic, became popular in late 2000s as a payload format for web APIs and config files. It's human-readable and easy to parse, thus a great choice for data interchange.
-
-Alternatives include XML and YAML, though JSON's less verbosity gives it an edge. CSV is used mostly for simpler data.
-
-For JSON in Gleam, we use the 'gleam/decode' lib. Decoding is explicit due to statically typed nature of Gleam. We first define our type, then tell Gleam how to decode it. Encoding, on the other hand, is pretty straightforward.
+JSON's been around since the early 2000s, replacing XML in many scenarios for its simplicity. Alternatives include YAML, XML, and BSON, among others, but JSON's ease-of-use keeps it at the fore. In Gleam, JSON handling leans on pattern matching and the `gleam/json` library's robust functions for a functional approach to encode and decode data structures.
 
 ## See Also
 
-For detailed JSON and Gleam understanding, look at:
-2. Gleam's Github [Repo](https://github.com/gleam-lang/gleam)
-3. JSON Documentation on [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- Gleam's official JSON documentation: [https://hexdocs.pm/gleam_json](https://hexdocs.pm/gleam_json)
+- An introduction to JSON: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- Mozilla Developer Network's guide on JSON: [https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)

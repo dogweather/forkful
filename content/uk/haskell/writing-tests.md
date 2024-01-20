@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Haskell: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що та чому?
+## Що і чому?
 
-Писання тестів - це процес створення коду, який перевіряє працездатність програми, щоб забезпечити її якість та коректність. Програмісти роблять це, щоб переконатися, що їх код працює правильно та відповідає очікуванням.
+Тестування це процес перевірки коду на коректність. Програмісти пишуть тести, щоб забезпечити надійність та якість коду і уникнути помилок.
 
-# Як?
+## Як це робити:
+
+В Haskell тести часто пишуть за допомогою бібліотеки Hspec. Ось приклад простого тесту:
 
 ```Haskell
-import Test.HUnit
+import Test.Hspec
 
--- Приклад тестування додавання
-addTest :: Test
-addTest = TestCase (assertEqual "Додавання 2 + 3" 5 (2 + 3))
-
--- Запуск усіх тестів
-runTests :: IO Counts
-runTests = runTestTT $ TestList [addTest]
-
--- Вивід результату тестів у консолі
 main :: IO ()
-main = do
-  Counts cases tried errors failures <- runTests
-  putStrLn $ "Успішно: " ++ show (cases - (errors + failures))
-  putStrLn $ "Неуспішно: " ++ show (errors + failures)
+main = hspec $ do
+  describe "abs" $ do
+    it "returns the number if given a positive input" $
+      abs 1 `shouldBe` 1
+      
+    it "returns a positive number if given a negative input" $
+      abs (-1) `shouldBe` 1
+      
+    it "returns zero if given zero" $
+      abs 0 `shouldBe` 0
 ```
 
-Вивід:
+Виконання цього тесту дасть вам такий результат:
+
 ```
-Успішно: 1
-Неуспішно: 0
+abs
+  returns the number if given a positive input
+  returns a positive number if given a negative input
+  returns zero if given zero
+
+Finished in 0.0001 seconds
+3 examples, 0 failures
 ```
 
-# Вглиб
+## Поглиблений огляд
 
-Писання тестів є важливою практикою у розробці програмного забезпечення, яка стала поширеною під час розвитку методологій Agile та Test-Driven Development (TDD). Існує багато альтернативних бібліотек для тестування в Haskell, таких як Hspec та QuickCheck. Детальніше про ці бібліотеки можна дізнатися на їх офіційних веб-сайтах.
+Тестування в Haskell має довгу історію, Hspec не є єдиною опцією. QuickCheck - інструмент, що дозволяє автоматично генерувати випадкові дані для тестів. Для тестування продуктивності можна використовувати Criterion. Hspec працює на основі BDD (Behavior Driven Development), тобто фокусується на поведінці коду замість його імплементації.
 
-Також важливо розуміти, що при написанні тестів потрібно враховувати різні сценарії та крайні випадки, щоб переконатися, що програма працює на всіх можливих вхідних даних.
+## Дивись також
 
-# Дивись також
-
-- [Офіційна документація з Test.HUnit](https://hackage.haskell.org/package/HUnit/docs/Test-HUnit.html)
-- [Офіційна документація з Hspec](https://hspec.github.io/)
-- [Офіційна документація з QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+- [Hspec User's Manual](https://hspec.github.io/)
+- [QuickCheck на Hackage](https://hackage.haskell.org/package/QuickCheck)
+- [Criterion на Hackage](https://hackage.haskell.org/package/criterion)

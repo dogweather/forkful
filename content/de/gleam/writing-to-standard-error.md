@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "Gleam: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,24 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist "writing to standard error" und warum machen Programmierer das?
+## Was & Warum?
+Schreiben auf Standard Error (stderr) bedeutet, Fehlermeldungen und Diagnoseinformationen in einem separaten Kanal auszugeben. Programmierer nutzen es, um Fehlernachrichten vom regulären Programmoutput zu trennen.
 
-"Writing to standard error" bedeutet, dass man spezifische Informationen oder Fehlermeldungen ausgibt, die vom Computer auf der Konsole angezeigt werden. Programmierer machen das, um während der Entwicklung und beim Testen ihres Codes schnell und effizient Fehler zu finden und zu beheben.
+## Anleitung:
+```gleam
+import gleam/io
 
-Wie geht das?
-In Gleam kann man standard error mit der Funktion `log_error` aufrufen, die Teil des `gleam/standard_library` Moduls ist. Hier sind einige Beispiele für die Verwendung von `log_error` und die dazugehörigen Output-Nachrichten:
-
-```Gleam
-log_error("Oops! Something went wrong!")
-// Output: Oops! Something went wrong!
-
-let name = "John"
-log_error("Hello, " ++ name)
-// Output: Hello, John
+pub fn main() {
+  io.stderr("Etwas ist schiefgelaufen!\n")
+}
 ```
 
-Tiefergehende Informationen
-Das Schreiben von Meldungen auf standard error ist eine häufige Praxis in der Softwareentwicklung. Es ermöglicht Programmierern, wichtige Informationen zu verfolgen und zu debuggen, während ihr Code ausgeführt wird. Früher war es oft erforderlich, dass Programmierer manuell printf-Anweisungen in ihrem Code hinzufügen, um Informationen auf der Konsole auszugeben. Mit standard error und der `log_error` Funktion ist das jedoch viel einfacher und effizienter. Alternativ können Programmierer auch standard output verwenden, um Informationen auszugeben, wenn sie nicht sofort wichtig sind.
+Ausgabe:
+```
+Etwas ist schiefgelaufen!
+```
 
-Siehe auch
-Weitere Informationen und Beispiele zur Verwendung von standard error und `log_error` finden Sie in der offiziellen Gleam-Dokumentation unter https://gleam.run/books/standard-library#logging sowie in der Gleam Github-Repository unter https://github.com/gleam-lang/gleam.
+## Tiefer Einblick:
+Das Konzept von Standard Error stammt aus der Unix-Welt und ist ein separates Ausgabestream neben Standard Output (stdout). Alternativen wie das Protokollieren in eine Datei sind ebenfalls verbreitet, aber stderr ermöglicht es Tools wie Shell, Fehler leicht zu erkennen und darauf zu reagieren. In Gleam wird stderr über die `io` Bibliothek implementiert, welche die unterliegenden Erlang-Funktionen nutzt.
+
+## Siehe Auch:
+- [Erlang's error_logger für komplexere Logs](http://erlang.org/doc/man/error_logger.html)

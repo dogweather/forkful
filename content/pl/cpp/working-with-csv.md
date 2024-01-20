@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "C++: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Pracowanie z plikami CSV może być częstym zadaniem dla programistów. CSV, czyli plik Wartości Rozdzielane Przecinkami, jest sposobem na przechowywanie danych w formacie tabelarycznym, gdzie każda linijka odpowiada wierszowi, a wartości są rozdzielane przecinkami. Programiści korzystają z CSV, ponieważ jest to prosty i zrozumiały sposób przechowywania danych, co ułatwia późniejszą obróbkę i analizę.
+## What & Why? (Co i dlaczego?)
+Praca z plikami CSV polega na odczycie, analizie i zapisie danych w formacie wartości rozdzielanych przecinkami - jest to uniwersalny format danych. Programiści używają go, bo CSV jest prosty, rozpowszechniony i łatwo się go przetwarza.
 
-## Jak to zrobić:
-Aby pracować z plikami CSV w języku C++, potrzebujemy wczytać odpowiednią bibliotekę. Możemy to zrobić w następujący sposób:
-```
-#include <fstream> 
+## How to: (Jak to zrobić?)
+```C++
 #include <iostream>
-#include <sstream> 
-#include <string> 
-#include <vector> 
+#include <fstream>
+#include <vector>
+#include <string>
+#include <sstream>
+
+int main() {
+    std::string line;
+    std::ifstream file("dane.csv");
+
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            std::stringstream ss(line);
+            std::vector<std::string> row;
+            std::string data;
+
+            while (getline(ss, data, ',')) {
+                row.push_back(data);
+            }
+
+            for (const auto& field : row) {
+                std::cout << field << ' ';
+            }
+            std::cout << '\n';
+        }
+        file.close();
+    } else {
+        std::cout << "Nie można otworzyć pliku." << std::endl;
+    }
+
+    return 0;
+}
 ```
+Wynik działania programu zależy od zawartości `dane.csv`, ale każda linia pliku zostanie rozdzielona na pojedyncze wartości i wyświetlona w konsoli.
 
-Następnie, aby wczytać plik CSV, musimy utworzyć zmienną typu ```ifstream``` i przekazać do niej ścieżkę do pliku, który chcemy wczytać. Następnie, używając pętli, możemy odczytać każdą linijkę i przekonwertować jej zawartość do wektora. Spójrzmy na przykład:
-```
-ifstream plik("dane.csv"); 
+## Deep Dive (Dogłębna analiza)
+CSV (Comma-Separated Values) zyskał na popularności wraz z rozwojem aplikacji biurowych. Alternatywami dla CSV są m.in. JSON i XML, które są bardziej elastyczne, ale też bardziej złożone. Przetwarzanie CSV w C++ jest proste, aczkolwiek nie ma dedykowanej biblioteki standardowej, co często prowadzi do pisania własnych parserów lub korzystania z bibliotek zewnętrznych, takich jak 'libcsv' czy 'Boost Tokenizer'.
 
-string linia; 
-vector<vector<string>> dane; 
-while(getline(plik, linia)) { 
-    stringstream ss(linia); 
-    vector<string> linia_danych; 
-
-    string wartosc; 
-    while(getline(ss, wartosc, ',')) { 
-        linia_danych.push_back(wartosc); 
-    } 
-    dane.push_back(linia_danych); 
-} 
-```
-Teraz możemy wyświetlić dane i przetwarzać je według potrzeb.
-
-## Głębszy zanurzenie:
-Pierwsze implementacje plików CSV pojawiły się w latach 70. w programie VisiCalc, a później zyskały popularność w Excelu. Alternatywą dla CSV są bazy danych, ale pliki te są nadal wykorzystywane przez programistów ze względu na swoją prostotę. W C++ istnieje również wiele bibliotek do pracy z CSV, np. Boost CSV.
-
-##Zobacz też:
-- Dokumentacja biblioteki Boost CSV: https://www.boost.org/doc/libs/1_51_0/libs/serialization/doc/unsupported.html#csv
-- Poradnik dla początkujących o pracy z plikami CSV w C++: https://thispointer.com/basics-of-boost-c-sqlite-tutorial-insert-values-in-employee-table/
-- Przykładowy plik CSV: https://raw.githubusercontent.com/jdolan/quetoo/master/misc/example.csv
+## See Also (Zobacz również)
+- [cppreference.com](https://cppreference.com) - Źródło informacji o funkcjach i bibliotekach C++.
+- [RFC 4180](https://tools.ietf.org/html/rfc4180) - Dokumentacja standardu CSV.
+- [Boost C++ Libraries](https://www.boost.org/doc/libs/?view=categorized) - Zestaw bibliotek C++, w tym Boost Tokenizer, który ułatwia pracę z tekstem.

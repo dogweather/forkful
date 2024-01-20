@@ -1,7 +1,7 @@
 ---
-title:                "Skrive en tekstfil"
-html_title:           "Elm: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,21 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å skrive en tekstfil er en måte for programmerere å lagre informasjon på en strukturert måte. Det lar deg lese og skrive data til en fil som kan hentes senere i koden din.
+## Hva & Hvorfor?
+Å skrive en tekstfil er å lagre tekstdata til en fil på disken. Programmerere gjør dette for å lagre data som app-innstillinger, logger eller å eksportere brukerdata.
 
-Hvordan:
-Elm har en innebygd funksjon kalt "text" som gjør at du kan skrive tekst til en fil. Denne funksjonen tar inn en tekststreng som parameter og lagrer det i en fil med navnet du angir. Her er et eksempel på hvordan du bruker denne funksjonen:
+## Hvordan:
+Elm har ikke direkte filsystem-tilgang, men du kan bruke Elm til å forberede filinnhold som brukeren kan laste ned. Her er et eksempel:
+
+```Elm
+module Main exposing (..)
+import Browser
+import Html exposing (Html, button, text)
+import Html.Attributes exposing (download, href)
+import Html.Events exposing (onClick)
+import Url
+
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
+type alias Model = String
+
+init : Model
+init =
+    "Hei, dette er tekst som skal bli til en fil."
+
+type Msg = Download
+
+update : Msg -> Model -> Model
+update _ model = model
+
+view : Model -> Html Msg
+view model =
+    let
+        encoded = Url.percentEncode model
+        dataUrl = "data:text/plain;charset=utf-8," ++ encoded
+    in
+    button [ onClick Download, download "minfil.txt", href dataUrl ] [ text "Last ned filen" ]
 ```
-Elm.text "Hello World!" "hello.txt"
-```
-Dette vil skrive teksten "Hello World!" til en fil med navnet "hello.txt" i samme mappe som din Elm-fil.
 
-Dypdykk:
-Tekstfilen har eksistert siden begynnelsen av datamaskinens tidsalder og brukes fortsatt mye i dag. Alternativene til å skrive til en tekstfil i Elm inkluderer å bruke porter, som lar deg kommunisere med eksterne programmer, eller å bruke et annet programmeringsspråk som støtter tekstfilmanipulasjon. Implementeringen av å skrive til en tekstfil i Elm er enkel på grunn av "text" funksjonen som håndterer det meste av arbeidet for deg.
+Når du trykker "Last ned filen", blir teksten i `init` nedlastet som `minfil.txt`.
 
-Se også:
-Foreløpig er det ingen offisielle dokumentasjon for "text" funksjonen, men det er mange ressurser på nettet som kan hjelpe deg med å lære mer om hvordan du kan bruke den og håndtere tekstfiler generelt. Her er noen lenker som kan være nyttige:
-- Offisiell Elm-dokumentasjon: https://elm-lang.org/docs
-- Stack Overflow: https://stackoverflow.com/questions/tagged/elm
-- Elm Slack-kanalen: https://elmlang.herokuapp.com/
+## Dypdykk
+Elm er designet for frontend-webutvikling og har ikke innebygget filsystem-tilgang som server-språk. For å lagre filer må man bruke web-API-er, som i eksempelet over. Det er nyttig å bruke `Url.percentEncode` for å sørge for at tekstinnholdet er URL-kompatibelt. Alternativer, som å poste til en server, finnes, men er utenfor Elm sin direkte funksjon.
+
+## Se Også
+- Elm dokumentasjon: https://package.elm-lang.org/packages/elm/browser/latest/
+- MDN Web Docs om "data" URL schema: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs

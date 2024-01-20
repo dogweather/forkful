@@ -1,7 +1,7 @@
 ---
-title:                "Escribir en el error estándar"
-html_title:           "C: Escribir en el error estándar"
-simple_title:         "Escribir en el error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,51 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## What & Why?
+Escribir en el error estándar permite mostrar mensajes de error separados de la salida normal del programa. Los programadores lo hacen para depurar y notificar problemas sin interferir con la salida que usuarios o programas esperan.
 
-Escribir a la salida estándar de error es una técnica común en programación en C. Consiste en imprimir mensajes de error o advertencias en lugar de la salida estándar, lo que permite al programador identificar y corregir errores en su código de manera más eficiente.
-
-## Cómo:
-
-Vamos a ver un ejemplo simple de cómo escribir a la salida estándar de error en C:
-
-```
+## How to:
+```C
 #include <stdio.h>
 
 int main() {
-  fprintf(stderr, "¡Hola, Mundo!\n");
-  return 0;
+    fprintf(stderr, "Error: algo salió mal.\n");
+    return 0;
 }
 ```
-
-Este código imprime "¡Hola, Mundo!" en la salida estándar de error, en lugar de en la salida estándar normal.
-
-Al ejecutar este programa, verás el siguiente resultado:
-
+Salida de muestra en la consola:
 ```
-¡Hola, Mundo!
+Error: algo salió mal.
 ```
 
-## Profundizando:
+## Deep Dive
+En los primeros días de Unix, la idea de tener canales separados para errores y salida regular fue establecida. `stderr`, un stream predefinido en C, es no-buffered, asegurando que los mensajes de error se muestren inmediatamente. Alternativas incluyen escribir a un archivo de log o usar `perror()` para errores estándares del sistema. A nivel de implementación, `stderr` está asociado con el descriptor de archivo 2 en sistemas POSIX.
 
-Escribir a la salida estándar de error tiene una larga historia en la programación en C. Anteriormente, era común que los programadores escribieran mensajes de error a un archivo, lo que requería más código y recursos. Por lo tanto, escribir a la salida estándar de error se convirtió en una alternativa más eficiente y práctica.
-
-En lugar de utilizar `fprintf` como en el ejemplo anterior, también puedes utilizar la función `perror` para imprimir mensajes de error predefinidos, como en el siguiente ejemplo:
-
-```
-#include <stdio.h>
-
-int main() {
-  FILE *fp = fopen("archivo_que_no_existe.txt", "r");
-  if (fp == NULL) {
-    perror("Error al abrir el archivo:");
-  }
-  return 0;
-}
-```
-
-Este código imprime el mensaje de error "Error al abrir el archivo: No such file or directory" en la salida estándar de error.
-
-## Ver también:
-
-- [Escribir a la salida estándar de error en otros lenguajes de programación](https://es.stackoverflow.com/questions/165/por-qu%C3%A9-escribir-en-la-salida-de-error-stderr-rather-than-stdout)
+## See Also
+- Documentación de GNU sobre `stdio.h`: [https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+- Una discusión sobre `stderr` en Stack Overflow: [https://stackoverflow.com/questions/39002052/how-i-can-print-to-stderr-in-c](https://stackoverflow.com/questions/39002052/how-i-can-print-to-stderr-in-c)
+- Tutorial de manejo de errores en C: [https://www.tutorialspoint.com/cprogramming/c_error_handling.htm](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)

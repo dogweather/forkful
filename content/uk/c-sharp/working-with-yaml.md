@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "C#: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і для чого це потрібно?
-Робота з YAML - це один зі способів зберігання та обміну даними в програмуванні. Цей формат дозволяє зберігати структуровану інформацію у зрозумілій для комп'ютера формі, що є важливим для великих та складних проєктів.
+## Що і чому?
+YAML - це мова серіалізації даних, яка важлива для конфігурацій та обміну даними між мовами. Програмісти використовують її, бо вона легка для читання людиною і зручна для конфігурації проектів.
 
-## Як цим користуватися?
-Давайте розглянемо приклади написання коду та виведення результатів використовуючи YAML у C#.
+## Як це зробити:
+Для роботи з YAML у C# використовуємо бібліотеку YamlDotNet. Спершу встановлюємо її через NuGet:
 
 ```C#
-// Завантажуємо бібліотеку десеріалізації даних
-using YamlDotNet.Serialization;
+// Підключення YamlDotNet через NuGet Package Manager console
+Install-Package YamlDotNet
+```
+Тепер читаємо YAML-файл і десеріалізуємо його:
 
-// Оголошуємо клас для зберігання інформації
-public class User
+```C#
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+using System.IO;
+
+class Program
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    static void Main()
+    {
+        var yaml = File.ReadAllText("config.yaml");
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .Build();
+        
+        var config = deserializer.Deserialize<Config>(yaml);
+        
+        Console.WriteLine($"Title: {config.Title}, Version: {config.Version}");
+    }
 }
 
-// Створюємо екземпляр класу та заповнюємо даними
-User user = new User
+public class Config
 {
-    Name = "Іван",
-    Age = 25
-};
-
-// Конвертуємо об'єкт в YAML-рядок
-var serializer = new SerializerBuilder().Build();
-string yaml = serializer.Serialize(user);
-
-// Виводимо результат в консоль
-Console.WriteLine(yaml);
+    public string Title { get; set; }
+    public int Version { get; set; }
+}
+```
+Якщо маємо `config.yaml` з вмістом:
+```yaml
+title: Example Project
+version: 1
+```
+Виведеться:
+```
+Title: Example Project, Version: 1
 ```
 
-Результат:
+## Поглиблення:
+YAML, або "YAML Ain't Markup Language", з'явився у 2001 році. Він став альтернативою XML і JSON, пропонуючи зручніше для людини форматування. У C#, крім YamlDotNet, мало альтернатив для роботи з YAML. Важливо знати, що YAML чутливий до відступів та може представляти дані у вигляді списків, словників та скалярних значень.
 
-```
-name: Іван
-age: 25
-```
-
-## Глибші деталі
-Історично YAML є альтернативою формату JSON, проте він має більш людина-подібний синтаксис, що робить його більш зрозумілим для людей. Крім того, YAML підтримує багато корисних функцій, таких як коментарі та згортки даних, що дозволяє зробити код більш читабельним та компактним.
-
-У програмуванні також є інші формати для зберігання даних, наприклад XML чи CSV. Однак, YAML має переваги, які роблять його більш популярним для більш складних проєктів.
-
-Імплементація YAML в C# використовує бібліотеку YamlDotNet, яка є відкритою та безкоштовною для використання. Також існують інші бібліотеки, але YamlDotNet є найбільш популярною та добре документованою.
-
-## Дивіться також
-- Офіційна документація YamlDotNet: https://github.com/aaubry/YamlDotNet
-- Інші бібліотеки для роботи з YAML в C#: https://github.com/search?q=c%23+yaml
+## Дивись також:
+- Офіційний сайт YAML: https://yaml.org
+- Репозиторій YamlDotNet на GitHub: https://github.com/aaubry/YamlDotNet
+- YAML специфікація: https://yaml.org/spec/1.2/spec.html

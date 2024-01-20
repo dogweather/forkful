@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Elm: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,60 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e por que trabalhar com CSV:
-CSV (Comma-Separated Values) é uma forma de armazenamento de dados em que os valores são separados por vírgulas. Programadores usam o formato CSV para organizar e compartilhar dados em uma estrutura simples e facilmente interpretável. É frequentemente utilizado em aplicativos que envolvem grandes conjuntos de dados como planilhas, bancos de dados e sistemas web.
+## O Que é & Por Que?
+Trabalhar com CSV (Valores Separados por Vírgula) é o ato de ler e escrever em um formato de arquivo amplamente usado para troca de dados tabulares. Programadores usam CSV por sua simplicidade e interoperabilidade com diversas ferramentas, incluindo planilhas e bancos de dados.
 
-Como fazer:
-Para trabalhar com CSV em Elm, você pode usar a biblioteca "elm-csv" que facilita a leitura e escrita de arquivos CSV. Para ler um arquivo CSV, basta importar a biblioteca e usar a função "parse" com o caminho do arquivo como parâmetro. Por exemplo:
-```
-Elm CSV example
+## Como Fazer:
+Elm não tem uma biblioteca padrão para CSV, mas você pode usar a biblioteca `elm-csv` que facilita a leitura e escrita de CSVs. Aqui está um exemplo rápido de como você pode usá-la:
 
-module Main exposing (..)
+```Elm
+import Csv
 
-import Csv exposing (parse)
+csvString : String
+csvString =
+    "nome,idade,profissão\nJoão,34,Engenheiro\nMaria,28,Designer"
 
-main : Program () Model Msg
-main =
-  let
-    file = "./data.csv"
-  in
-    { init = init
-    , update = update
-    , view = view
-    , subscriptions = subscriptions
-    }
+parseCsv : Result String (List (List String))
+parseCsv =
+    Csv.decode csvString
 
-type alias Model =
-  List (List String)
-
-type Msg
-  = LoadCsv (List (List String))
-
-init : ( Model, Cmd Msg )
-init =
-  ( [], Cmd.none )
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    LoadCsv content ->
-      ( content, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
-view : Model -> Html Msg
-view model =
-  let
-    rows = List.map (\row -> tr [] (List.map (\col -> td [] [ text col ]) row)) model
-  in
-    table [] rows
+-- O output será: Ok [["nome","idade","profissão"],["João","34","Engenheiro"],["Maria","28","Designer"]]
 ```
 
-Aprofundando:
-O formato CSV foi criado na década de 1970 para permitir a troca de informações entre diferentes programas. Ele é amplamente utilizado até hoje por sua simplicidade e facilidade de uso. Além disso, existem outras opções para armazenar dados, como JSON e XML, mas o CSV ainda é preferido quando se trata de compartilhar dados tabulares.
+Para escrever em CSV, você pode fazer o seguinte:
 
-Veja também:
-- Documentação oficial da biblioteca "elm-csv": https://package.elm-lang.org/packages/NoRedInk/elm-csv/latest/
-- Exemplos de uso da biblioteca "elm-csv": https://github.com/NoRedInk/elm-csv/tree/master/examples
+```Elm
+import Csv
+
+data : List (List String)
+data =
+    [ ["nome", "idade", "profissão"]
+    , ["João", "34", "Engenheiro"]
+    , ["Maria", "28", "Designer"]
+    ]
+
+csvOutput : String
+csvOutput =
+    Csv.encode data
+
+-- O output será: "nome,idade,profissão\nJoão,34,Engenheiro\nMaria,28,Designer"
+```
+
+## Mergulho Profundo
+CSV existe desde os primeiros dias da computação pessoal e se tornou um padrão de facto para troca de dados tabulares. Embora JSON e XML ofereçam estruturas mais complexas, CSV permanece popular devido à sua simplicidade e legibilidade. Implementar um parser de CSV é relativamente direto, mas pode se complicar com dados que contêm vírgulas, novas linhas ou campos que contêm aspas. A `elm-csv` lida com essas complexidades por você.
+
+## Veja Também
+- Elm CSV package: [package.elm-lang.org/packages/lovasoa/elm-csv/latest/](https://package.elm-lang.org/packages/lovasoa/elm-csv/latest/)
+- Introdução a Elm: [guide.elm-lang.org](https://guide.elm-lang.org/)
+- CSV na Wikipedia (para ter uma visão completa do formato): [pt.wikipedia.org/wiki/Comma-separated_values](https://pt.wikipedia.org/wiki/Comma-separated_values)

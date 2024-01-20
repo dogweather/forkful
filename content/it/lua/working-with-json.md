@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Lua: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché si usa?
-
-Working with JSON (JavaScript Object Notation) significa manipolare dati in formato testo leggibile dai umani e facilmente interpretabile dai computer. I programmatori lo utilizzano per scambiare informazioni tra applicazioni diverse in modo efficiente e affidabile.
+## Cos'è & Perché?
+JSON (JavaScript Object Notation) è un formato per lo scambio di dati. I programmatori lo usano per la sua semplicità e leggibilità tra sistemi diversi.
 
 ## Come fare:
-
-Scopriamo come lavorare con JSON utilizzando il linguaggio di programmazione Lua.
-
-Utilizzando la libreria standard `dkjson`, possiamo facilmente convertire un'oggetto Lua in JSON utilizzando la funzione `encode`. Ad esempio:
+Per lavorare con JSON in Lua, avrai bisogno di un modulo per fare il parsing e serializzare; `dkjson` è un'ottima scelta. Ecco un esempio:
 
 ```Lua
-local dkjson = require("dkjson")
+local dkjson = require "dkjson"
 
-local data = {
-  name = "Mario",
-  age = 35,
-  city = "Roma"
-}
+-- Serializzazione: tabella Lua a stringa JSON
+local tabella = { nome = "Luigi", eta = 30, linguaggi = {"Lua", "C++"} }
+local str_json = dkjson.encode(tabella)
+print(str_json)
 
-local json = dkjson.encode(data)
-
-print(json)
+-- Parsing: stringa JSON a tabella Lua
+local str_json = '{"nome":"Luigi","eta":30,"linguaggi":["Lua","C++"]}'
+local tabella, pos, err = dkjson.decode(str_json, 1, nil)
+if err then
+  error(err)
+else
+  for k,v in pairs(tabella) do
+    print(k,v)
+  end
+end
 ```
 
 Output:
-
-`{"name":"Mario","age":35,"city":"Roma"}`
-
-Possiamo anche utilizzare la funzione `decode` per convertire un JSON in un oggetto Lua. Ad esempio:
-
-```Lua
-local dkjson = require("dkjson")
-
-local json = '{"name":"Luigi","age":28,"city":"Milano"}'
-
-local data = dkjson.decode(json)
-
-print(data.name, data.age, data.city)
+```
+{"nome":"Luigi","eta":30,"linguaggi":["Lua","C++"]}
+nome    Luigi
+eta     30
+linguaggi   table: 0x7f9f50c0a600
 ```
 
-Output:
+## Approfondimenti
+JSON nasce nel 2001 da Douglas Crockford. In Lua, non è integrato nativamente come in JavaScript, quindi si usano moduli esterni. `dkjson` è affidabile ma esistono alternative come `cjson` e `Luajson`. L'implementazione prevede il parsing di stringhe in tabelle Lua e viceversa attraverso l'uso di funzioni come `encode` e `decode`.
 
-`Luigi 28 Milano`
-
-## Approfondimenti:
-
-Il formato JSON è stato creato nel 2001 da Douglas Crockford come un'alternativa ai formati di scambio di dati più complessi come XML. Oggi è diventato uno standard ampiamente utilizzato nelle comunicazioni tra applicazioni web.
-
-Un'alternativa alla libreria `dkjson` è `luajson`, che implementa una specifica Lua di JSON piuttosto che utilizzare una libreria esterna come `cjson`.
-
-Per ulteriori dettagli su come utilizzare JSON in Lua, si consiglia di consultare la documentazione di `dkjson` o di `luajson`.
-
-## Vedi anche:
-
-- Documentazione di dkjson [https://github.com/LuaDist/dkjson/blob/master/doc.md]
-- Documentazione di luajson [https://github.com/harningt/luajson/blob/master/README.md]
+## Vedi Anche
+- La documentazione ufficiale di `dkjson`: http://dkolf.de/src/dkjson-lua.fsl/home
+- JSON.org per capire meglio il formato JSON: https://www.json.org/json-en.html
+- `cjson` modulo Lua per JSON: https://www.kyne.com.au/~mark/software/lua-cjson-manual.html
+- `Luajson` su GitHub: https://github.com/harningt/luajson

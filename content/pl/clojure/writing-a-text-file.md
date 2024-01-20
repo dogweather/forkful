@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Clojure: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why?
+"## Co i dlaczego?"
 
-Pisanie pliku tekstowego w Clojure oznacza utworzenie pliku zawierającego tekst, który może być odczytany przez użytkownika. Programiści często piszą pliki tekstowe, gdy potrzebują przechowywać dane lub wyniki swojego programu w formacie, który łatwo jest przetworzyć i odczytać.
+Zapisywanie pliku tekstowego to proces zapisania danych w formie czytelnej dla człowieka do pliku na dysku. Programiści robią to, aby trwale zapisywać informacje, takie jak konfiguracje, logi czy wyniki pracy programu.
 
-## Jak to zrobić:
+## How to:
+"## Jak to zrobić:"
 
-Poniżej znajdują się przykładowe kody w języku Clojure, które pokażą Ci, jak napisać plik tekstowy i odczytać jego zawartość.
+Do zapisu pliku tekstowego w Clojure używamy funkcji `spit`. Oto przykład:
 
-```Clojure
-(with-open [file (clojure.java.io/writer "plik.txt")]
-  (.write file "To jest tekst, który zostanie zapisany w pliku tekstowym!"))
-
-(with-open [file (clojure.java.io/reader "plik.txt")]
-  (doseq [line (line-seq file)]
-    (println line)))
-
+```clojure
+(spit "przyklad.txt" "Witaj, Clojure!")
 ```
 
-Pierwszy przykład tworzy plik tekstowy o nazwie "plik.txt" i zapisuje w nim zawartość. Drugi przykład odczytuje zawartość pliku i wypisuje ją na ekranie.
+Jeśli otworzysz `przyklad.txt`, zobaczysz:
 
-## Głębszy zanurzenie:
+```
+Witaj, Clojure!
+```
 
-Pisanie plików tekstowych jest istotną częścią wielu programów. Wcześniej, używano do tego celu różnych języków programowania takich jak Basic czy Pascal. Obecnie, większość języków programowania, w tym Clojure, oferują wbudowane funkcje do obsługi plików tekstowych.
-Innymi alternatywami dla zapisywania plików tekstowych są m.in. bazy danych czy formaty danych takie jak CSV czy JSON.
+Do dopisywania treści użyj opcji `:append true`:
 
-## Zobacz także:
+```clojure
+(spit "przyklad.txt" "\nDopiszmy coś więcej." :append true)
+```
 
-- Dokumentacja języka Clojure: https://clojure.org/guides/io
-- Przykładowy kod na GitHubie: https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_files_and_directories/8-6_write-a-text-file.asciidoc
+Teraz `przyklad.txt` wygląda tak:
+
+```
+Witaj, Clojure!
+Dopiszmy coś więcej.
+```
+
+## Deep Dive
+"## Szczegółowe informacje"
+
+`spit` to nowoczesny sposób na zapis plików w Clojure, ale korzeni szukaj w starszej funkcji `with-open` i Java `FileWriter`. Alternatywą jest bezpośrednie użycie Javy przez interop. W implementacji `spit` obiekty są konwertowane na łańcuchy znaków i zapisywane, co pokazuje elastyczność Clojure w integracji z Javą i łatwość obsługi danych w różnych formatach.
+
+## See Also
+"## Zobacz także"
+
+- Oficjalna dokumentacja Clojure: https://clojure.org/
+- Przewodnik po `spit` i `slurp`: https://clojuredocs.org/clojure.core/spit
+- Clojure for the Brave and True - Rozdział o obsłudze plików: https://www.braveclojure.com/IO/

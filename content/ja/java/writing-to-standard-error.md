@@ -1,7 +1,7 @@
 ---
-title:                "標準エラーに書き込む"
-html_title:           "Java: 標準エラーに書き込む"
-simple_title:         "標準エラーに書き込む"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？なぜするのか？
+## What & Why?
+標準エラーへの書き込みは、エラーメッセージやデバッグ情報を出力するために使用されます。これにより、正常な出力とは別にエラー内容を簡単に確認できるようになります。
 
-標準エラーに書き込むとは、プログラマーがコードの実行中に出力するエラーメッセージを指定することです。これは、プログラムが予期しない問題に遭遇した場合に、開発者にコードの修正が必要であることを知らせるために使用されます。
-
-## 方法：
-
-以下のようにJavaのコードブロックに示す例を使用して、標準エラーに書き込む方法を説明します。
-
-```
-// テスト用のエラーメッセージを作成する
-String errorMessage = "エラー：このコードは間違っています。";
-
-// 標準エラーにエラーメッセージを出力する
-System.err.println(errorMessage);
+## How to:
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("これは標準出力です。");
+        System.err.println("これは標準エラーです。");
+    }
+}
 ```
 
-上記のコードを実行すると、次のような出力結果が得られます。
+出力例:
+```
+これは標準出力です。
+これは標準エラーです。
+```
 
-`エラー：このコードは間違っています。`
+## Deep Dive
+標準エラー出力(`System.err`)はUNIXの伝統からきています。`System.out`とは異なり、通常はバッファリングされず、即座に表示されます。代替手段として、ログフレームワーク（例：Log4jやSLF4J）を使うこともできますが、シンプルなスクリプトや小規模なアプリケーションでの迅速なデバッグには`System.err`が便利です。内部的には`PrintStream`クラスが利用されています。
 
-## 詳細情報：
-
-### 歴史的な背景：
-
-標準エラーへの書き込みは、プログラミング言語の歴史とともに発展した機能の一つです。以前のプログラミング言語では、エラーの処理はプログラム内で手動で行われていましたが、近年の言語では標準エラーへの書き込みをサポートするようになっています。
-
-### 代替手段：
-
-標準エラーへの書き込み以外にも、プログラマーはエラーメッセージをファイルや他の出力ストリームに書き込むこともできます。ただし、標準エラーへの書き込みはプログラマーにとって便利であり、メッセージを見つけやすくするために特別なカラーやフォーマットを使用することもできます。
-
-### 実装の詳細：
-
-Javaでは、標準エラーへの書き込みには```System.err.println()```メソッドを使用します。このメソッドは、標準エラーで使用される```PrintStream```クラスのインスタンスに対して動作します。
-
-## 関連情報：
-
-- Javaプログラミング言語ガイド：http://www.oracle.com/technetwork/java/javase/overview/index.html
-- 標準エラーについて：https://docs.oracle.com/javase/tutorial/essential/io/cl.html
+## See Also
+- [System クラスのドキュメント](https://docs.oracle.com/javase/10/docs/api/java/lang/System.html)
+- [PrintStream クラスのドキュメント](https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html)
+- [Log4j - Apache Logging Services](https://logging.apache.org/log4j/2.x/)
+- [The Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org/)

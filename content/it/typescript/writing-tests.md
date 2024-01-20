@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "TypeScript: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa e Perché?
+## Cosa & Perché?
+Scrivere test significa creare codice specifico per verificare altri pezzi di codice. I programmatori lo fanno per assicurarsi che funzioni tutto come previsto e per prevenire bug.
 
-Scrivere test è un processo attraverso il quale i programmatori verificano che il codice funzioni correttamente e che sia privo di errori. I test sono importanti perché aiutano a garantire che il codice sia robusto, affidabile e mantenibile nel lungo periodo.
+## Come si fa:
+```TypeScript
+import { expect } from 'chai';
+import { somma } from './somma';
 
-Come fare:
+describe('Test della funzione somma', () => {
+  it('dovrebbe ritornare 4 quando somma 2 + 2', () => {
+    expect(somma(2, 2)).to.equal(4);
+  });
 
-Utilizzando TypeScript, è possibile scrivere test sulla base delle asserzioni. Ad esempio:
-```
-TypeScript
-let num1 = 2
-let num2 = 3
-let sum = num1 + num2
-console.log(sum) // Output: 5
-```
-Con questa asserzione, stiamo verificando se la somma dei numeri `num1` e `num2` è uguale a 5. In caso contrario, il codice lancerà un errore.
+  it('dovrebbe ritornare 0 quando somma -2 + 2', () => {
+    expect(somma(-2, 2)).to.equal(0);
+  });
+});
 
-Per testare funzioni, possiamo utilizzare `expect` e `toEqual` per verificare se il risultato della funzione sia uguale a quello atteso. Ad esempio:
-```
-TypeScript
-function multiply(num1, num2) {
-  return num1 * num2
+// somma.ts
+export function somma(a: number, b: number): number {
+  return a + b;
 }
-expect(multiply(5, 4)).toEqual(20)
 ```
-In questo caso, stiamo testando la funzione `multiply` e verificando se il risultato per l'input 5 e 4 sia uguale a 20.
+Risultati dei test:
+```
+  Test della funzione somma
+    ✓ dovrebbe ritornare 4 quando somma 2 + 2
+    ✓ dovrebbe ritornare 0 quando somma -2 + 2
+```
 
-Deep Dive:
+## Approfondimento
+La scrittura di test ha radici nella pratica dello sviluppo guidato da test (TDD) degli anni '90. Alternative includono test manuali o "Expo facto testing", ma i test automatici come unit test, integration test e E2E test sono lo standard. Per TypeScript, librerie come Jest, Mocha/Chai, e Jasmine semplificano la scrittura di test, gestendo l'isolamento, la simulazione e l'affermazione dei risultati.
 
-La scrittura dei test è un'importante pratica nata nel contesto dello sviluppo software agile. Alcune alternative popolari ai test sono il debugging manuale e la revisione del codice da parte dei colleghi. Tuttavia, i test automatizzati sono generalmente più efficienti e possono aiutare a individuare gli errori in modo più tempestivo.
-
-Per implementare i test, è possibile utilizzare framework dedicati come Jest o Mocha per TypeScript. Questi framework forniscono uno strumento completo per definire test e gestire asserzioni, facilitando il processo di scrittura dei test.
-
-Vedi anche:
-
-- TypeScript testing frameworks: https://github.com/thorn0/typescript-testing
-- Jest documentation: https://jestjs.io/docs/en/getting-started
-- Mocha documentation: https://mochajs.org/#getting-started
+## Vedi Anche
+- [Jest](https://jestjs.io/) - Una libreria di test JavaScript con un focus sulla semplicità.
+- [Mocha](https://mochajs.org/) - Un framework per test JavaScript che funziona sia su Node.js sia nei browser.
+- [Chai](https://www.chaijs.com/) - Una libreria di asserzione BDD/TDD che può essere accoppiata con qualsiasi framework di test JavaScript.

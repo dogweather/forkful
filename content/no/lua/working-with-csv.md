@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med CSV"
-html_title:           "Lua: Å arbeide med CSV"
-simple_title:         "Å arbeide med CSV"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å jobbe med CSV-filer (Comma Separated Values) innebærer å lese og skrive data fra og til en strukturert tekstfil ved hjelp av komma som skille mellom verdier. Dette er en viktig oppgave for programmere for å kunne håndtere store mengder data på en effektiv måte.
+## What & Why?
+CSV (Comma-Separated Values) brukes for å lagre data i enkel tekstformat. Det er nyttig fordi det enkelt kan leses av mennesker og maskiner og støttes av mange programmeringsspråk og applikasjoner.
 
-## Hvordan:
-For å jobbe med CSV-filer i Lua, kan du bruke biblioteket "csv". Ved hjelp av funksjoner som "csv.open" og "csv.parse", kan du enkelt lese og behandle data fra en CSV-fil.
+## How to:
+Her er enkle steg for å lese og skrive CSV filer i Lua.
 
 ```Lua
-local csv = require("csv")
+-- Skrive til CSV
+local data = {
+    {"navn", "alder", "by"},
+    {"Ola", 28, "Oslo"},
+    {"Kari", 35, "Bergen"}
+}
 
--- Åpne en CSV-fil og lese inn data
-local data = csv.open("eksampel.csv", {headers=true})
+local file = io.open("eksempel.csv", "w")
+for i, row in ipairs(data) do
+    file:write(table.concat(row, ","), "\n")
+end
+file:close()
 
--- Itererer gjennom alle rader og skriver ut verdiene
-for row in data:lines() do
-  print("Navn: " .. row.name .. ", Alder: " .. row.age)
+-- Lese fra CSV
+local function read_csv(file_path)
+    local file = io.open(file_path, "r")
+    local data = {}
+    for line in file:lines() do
+        table.insert(data, line:split(","))
+    end
+    file:close()
+    return data
+end
+
+-- Anta at `string.split` funksjonen er definert
+local data = read_csv("eksempel.csv")
+for i, row in ipairs(data) do
+    print(table.concat(row, ", "))
 end
 ```
-Output:
+Dette ville ha gitt følgende i konsollen for lese-delen:
 ```
-Navn: Ola, Alder: 25
-Navn: Kari, Alder: 30
+navn, alder, by
+Ola, 28, Oslo
+Kari, 35, Bergen
 ```
 
-## Dypdykk:
-CSV ble opprinnelig utviklet på 1970-tallet som en enkel måte å lagre og dele data mellom ulike programmer. Alternativer til CSV inkluderer XML, JSON og SQL-databaser. I Lua er det også mulig å jobbe med CSV-filer ved å bruke standardbiblioteket io og string-funksjoner som "split" og "gsub".
+## Deep Dive
+CSV er ikke nytt, det stammer fra 1972. Mens enkelhet er styrken, mangler det standardisering; forskjeller i escaping, deltegn og tegnsett kan skape hodebry. Alternativer som JSON eller XML gir mer struktur og datakompleksitet håndterbar, men de er ikke alltid like menneskelesbare. Lua håndterer ikke CSV naturlig, så en brukerdefinert funksjon eller et eksternt bibliotek kreves.
 
-## Se også:
-- [Generell informasjon om CSV-filer](https://no.wikipedia.org/wiki/CSV)
+## See Also
+- [Lua.org](https://www.lua.org) – Offisielt nettsted for Lua.
+- [Lua-users wiki](http://lua-users.org/wiki) – Et community-drevet informasjonssenter for Lua.
+- [Programming in Lua](https://www.lua.org/pil/contents.html) – En detaljert bok om hvordan du programmerer i Lua.

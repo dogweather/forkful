@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류 쓰기"
-html_title:           "Kotlin: 표준 오류 쓰기"
-simple_title:         "표준 오류 쓰기"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜? 
-표준 오류에 쓰는 것이 무엇인지에 대한 간단한 설명과 프로그래머들이 그렇게 하는 이유에 대해 두 가지 문장으로 설명합니다. 
+## What & Why? (무엇인가 & 왜 사용하는가?)
+표준 에러로 쓰기는 프로그램의 에러 메시지를 출력하는 것이다. 프로그래머들은 디버깅을 용이하게 하고, 출력과 에러를 분리하기 위해 이를 사용한다.
 
-표준 오류에 쓰기는 프로그램에서 예외를 처리하는 중요한 방법 중 하나입니다. 이를 통해 개발자들은 프로그램에서 발생하는 오류를 쉽게 식별하고 문제를 디버깅할 수 있습니다.
-
-## 하는 방법:
-코딩 예제와 ```Kotlin ... ``` 코드 블록 내에서 샘플 출력을 제공합니다.
-
-#### 코딩 예제:
-```Kotlin
+## How to: (어떻게 사용하는가?)
+```kotlin
 fun main() {
-    println("This is standard output")
-    System.err.println("This is standard error")
+    println("정상적인 출력 메시지")
+    System.err.println("에러 메시지")
 }
-
-// 콘솔 출력:
-This is standard output
-This is standard error
+```
+출력 예시:
+```
+정상적인 출력 메시지
+에러 메시지
 ```
 
-## 깊은 곳:
-표준 오류에 쓴다는 것은 프로그래밍에서 예외 처리를 위한 중요한 기술입니다. 이전에는 프로그램에서 오류가 발생했을 때 해당 오류 메시지를 출력하는 것이 전부였지만, 표준 오류에 쓰기를 통해 개발자들은 오류 내용을 더 자세히 파악하고 디버깅할 수 있게 되었습니다. 또한 표준 오류를 사용하면 표준 출력과 구분하여 오류 메시지를 로그 파일에 기록하는 것도 가능해졌습니다.
+## Deep Dive (심층 분석)
+표준 에러(stdout)와 대조적으로 표준 에러(stderr)는 오류와 로그 작업을 위해 예약되어 있다. 옛날에는 이 두 스트림이 다른 장치(예를 들어, 프린터와 모니터)로 출력될 수 있었다. `System.err`는 `PrintStream` 객체이며, 자바의 `System` 클래스에서 상속된 것이다. 대안으로는 로깅 프레임워크를 사용할 수 있으나, 간단한 스크립트나 테스트 시에는 `System.err` 사용이 편리하다.
 
-대체로 표준 오류에 쓰기는 예외 처리 이외에도 다양한 상황에서 유용하게 사용될 수 있습니다. 예를 들어, 프로그램의 진행 상황을 추적하기 위해 로그 파일에 출력할 때도 표준 오류에 쓰기를 사용합니다.
-
-표준 오류에 쓰는 것 외에도, 개발자들은 로깅 프레임워크를 사용하여 로그 파일에 메시지를 출력할 수 있습니다. 로깅 프레임워크를 사용할 경우에는 표준 오류와 로그 파일에 동시에 출력할 수 있습니다.
-
-## 관련 자료:
-표준 오류에 쓰기와 관련된 자세한 내용은 아래 링크를 참고하세요.
-
-- [Comparison of different logging frameworks in Kotlin](https://logging.apache.org/log4j/log4j-2.1/manual/api.html)
+## See Also (참고자료)
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
+- [표준 출력과 표준 에러에 대한 자세한 정보](https://en.wikipedia.org/wiki/Standard_streams)
+- [자바 PrintStream 클래스](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html)

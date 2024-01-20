@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Go: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja Miksi?
+## What & Why?
+YAML on datan sarjoittamiskieli automatisointiin, konfigurointiin ja muuhun. Ohjelmoijat käyttävät YAML:ia, koska se on ihmisen luettavissa ja sen rakenne on koneellisesti käsiteltävä.
 
-Go on ohjelmointikieli, joka on yhä suositumpi valinta monien ohjelmoijien keskuudessa. Yksi syy tähän on sen kyky työskennellä YAML-muotoisten tiedostojen kanssa. YAML on tietojen tallennusmuoto, joka on helppo lukea ja ymmärtää ihmisen silmin, mutta myös helposti käsiteltävissä ohjelmointikielellä.
+## How to:
+### YAML:n Käsittely Go:lla
+Käytetään `gopkg.in/yaml.v3` kirjastoa YAML:n käsittelyyn Go:ssa. Ensin asennetaan kirjasto:
 
-Miten tehdä:
+```Go
+go get gopkg.in/yaml.v3
+```
+
+Seuraava esimerkki näyttää, miten luetaan ja kirjoitetaan YAML-tiedostoja.
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v3"
 	"io/ioutil"
+	"log"
 )
 
-type Person struct {
-	Name        string
-	Age         int
-	Interests   []string
+// Määritellään konfiguraatiotyyppi
+type Config struct {
+	Palvelin string `yaml:"palvelin"`
+	Portti   int    `yaml:"portti"`
 }
 
 func main() {
-	p := Person{Name: "Matti", Age: 25, Interests: []string{"Ohjelmointi", "Kirjoittaminen", "Ruuanlaitto"}}
-	d, err := yaml.Marshal(&p)
+	// Luetaan YAML-tiedosto
+	data, err := ioutil.ReadFile("config.yaml")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
-	fmt.Println(string(d))
 
-	err = ioutil.WriteFile("person.yaml", d, 0644)
+	// Unmarshal YAML-data Go:n rakenteeseen
+	var conf Config
+	err = yaml.Unmarshal(data, &conf)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
+	}
+	fmt.Printf("Palvelin: %s\nPortti: %d\n", conf.Palvelin, conf.Portti)
+
+	// Muutetaan Go-rakenteen arvoja
+	conf.Portti = 8080
+
+	// Marshal uudet arvot takaisin YAML-muotoon
+	uusiData, err := yaml.Marshal(&conf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(uusiData))
+
+	// Kirjoita muutokset takaisin tiedostoon
+	err = ioutil.WriteFile("config.yaml", uusiData, 0644)
+	if err != nil {
+		log.Fatal(err)
 	}
 }
-```
-Tämä koodi esittelee yksinkertaisen esimerkin Go:n käytöstä YAML-tiedostojen kanssa. Ensimmäisessä vaiheessa luodaan Person-rakenne, joka sisältää henkilön nimen, iän ja kiinnostuksen kohteet. Sitten tämä rakenne muunnetaan YAML-muotoon ja tulostetaan konsoliin sekä tallennetaan tiedostoon nimeltä "person.yaml". 
-Tuloksena saadaan seuraava YAML-tiedosto:
 
 ```
-name: Matti
-age: 25
-interests:
-- Ohjelmointi
-- Kirjoittaminen
-- Ruuanlaitto
-```
+Esimerkissä luetaan konfiguraatiot `config.yaml`-tiedostosta, muutetaan portaali ja kirjoitetaan päivitetyt tiedot takaisin.
 
-Syvällisempi sukeltaminen:
+## Deep Dive
+YAML, lyhenne sanoista YAML Ain't Markup Language, julkaistiin ensin 2001. Sen rakenne yksinkertaistaa JSON:ista. YAML:n kilpailijoita ovat JSON ja XML. Vaihtoehtoisesti voidaan harkita TOML:ia tai INI-tiedostoja yksinkertaisiin asetuksiin. Go:n `yaml`-kirjastot eivät tyypillisesti tarkkaile YAML-luonnoksen viimeisimpiä versioita, mutta ne ovat silti hyvin yhteensopivia useimpien YAML-tiedostojen kanssa.
 
-YAML julkaistiin vuonna 2001 ja sen tarkoituksena on tarjota helppolukuinen vaihtoehto JSON- ja XML-tiedostoille. Vaikka se onkin aloittanut lähinnä Python-yhteisössä, se on nykyään laajalti käytössä monissa muissa ohjelmointikielissä, mukaan lukien Go. 
-Yksi vaihtoehto YAML:lle on TOML (Tom's Obvious, Minimal Language), joka on todella minimalistinen tiedostomuoto, ja sitä käytetään erityisesti konfigurointitiedostojen kanssa. Yhteensopivien kirjastojen avulla Go:n avulla voit helposti työskennellä myös TOML-tiedostojen kanssa. 
-Tämä esimerkki näyttää vain perusteet, jotka auttavat sinua pääsemään alkuun Go:n käytössä YAML-tiedostojen kanssa. Kuitenkin tarkempi tutkimus auttaa sinua löytämään lisää hyödyllisiä toimintoja ja niksejä työskennellessäsi YAML-tiedostojen kanssa.
-
-Linkkejä:
-
-- YAML-dokumentaatio: https://yaml.org/
-- TOML-dokumentaatio: https://toml.io/
-- Gopkg.in/yaml.v2-dokumentaatio: https://pkg.go.dev/gopkg.in/yaml.v2
+## See Also
+- YAML-spesifikaatio: [YAML 1.2](https://yaml.org/spec/1.2/spec.html)
+- `yaml.v3` Go-paketti: [gopkg.in/yaml.v3](https://gopkg.in/yaml.v3)
+- Go-dokumentaatio: [Go](https://golang.org/doc/)
+- Tutki lisää JSON:ista ja XML:stä: [JSON](https://www.json.org/json-en.html), [XML](https://www.w3.org/XML/)

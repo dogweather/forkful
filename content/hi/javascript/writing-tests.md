@@ -1,6 +1,6 @@
 ---
 title:                "परीक्षण लिखना"
-html_title:           "Javascript: परीक्षण लिखना"
+html_title:           "Arduino: परीक्षण लिखना"
 simple_title:         "परीक्षण लिखना"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## কি & কেন?
-প্রোগ্রামাররা যখন তাদের প্রোগ্রাম বানানোর ক্ষেত্রে তাদের প্রোগ্রাম যে ভাবে আচরণ করছে বা কোন গোলাকার আছে তা নির্দেশ করতে চান, তখন ওদের উপর নির্ভর করে বেশ কয়েকটি টেস্ট লেখা এই চর্চার ভিত্তিতে মডিউলগুলি লেখা হয়। এটি উন্নতির মধ্যেও নির্ভরশীল।
+## What & Why? (क्या और क्यों?)
+परीक्षण लिखना यानी कोड के छोटे हिस्सों की जाँच करना होता है ताकि ये सुनिश्चित किया जा सके की सब कुछ सही तरीके से काम कर रहा है। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि इससे बग्स को जल्दी पकड़ा जा सकता है और भविष्य में कोड में परिवर्तन करने के लिए आत्मविश्वास मिलता है।
 
-## কিভাবে:
-একটি উদাহরণ I'm এর জন্য একটি টেস্ট লেখার জন্য আপনি [এখনও](http://codepen.io) বিশেষ কিছু প্রয়োজন? আপনি আপনি এমন একটি মডিউলের এক্সপ্রেশন পরীক্ষা করতে পারেন
-
+## How to: (कैसे करें:)
 ```
-Javascript
-function add(x, y) {
-	return x + y;
+// एक साधारण फ़ंक्शन का परीक्षण कैसे करें
+function add(a, b) {
+    return a + b;
 }
+
+// परीक्षण के लिए कोड
+function testAdd() {
+    const result = add(1, 2);
+    if (result !== 3) {
+        console.error(`Expected 1 + 2 to equal 3, but got ${result}`);
+    } else {
+        console.log('Test passed: add(1, 2) === 3');
+    }
+}
+
+// परीक्षण चलाएं
+testAdd();
+```
+Output:
+```
+Test passed: add(1, 2) === 3
 ```
 
-এই টীম-একক দুটি আবগার দিচ্ছি।
+## Deep Dive (गहन अध्ययन):
+परीक्षण लिखने की परम्परा बहुत पुरानी है। 'TDD' (Test-Driven Development) जैसी प्रक्रियाएं परीक्षण पर जोर देती हैं और पहले परीक्षण लिखने की सलाह देती हैं। जावास्क्रिप्ट में, 'Jest', 'Mocha', और 'Chai' जैसे टूल्स परीक्षण लिखने के लिए लोकप्रिय हैं। इन टूल्स में 'assertions', 'test runners', और 'mocking' जैसी सुविधाएँ होती हैं जो कोड के परीक्षण को सरल और प्रभावी बनाती हैं।
 
-```
-Javascript
-add(2, 3); // Output: 5
-add(5, 10); // Output: 15
-```
- 
-## গভীরভাবে:
-টেস্ট লেখার কারনগুলির সম্পর্কে আবেদন খুব বিষণ্ন হতে পারে। জনপ্রিয় উদাহরণের একটি হল হাতিকর ফুট, যেটি শুধুমাত্র একটি ফাংশন প্রদর্শন দেয়। টেস্ট লেখার পরিণতি হ'ল আপনি যে ফাংশনটি চালিয়ে গিটহাবে যান, তাদের যে কোন একটি একটি ফাংশন এক্সাম্প্লসের সংরক্ষণ থেকেI পরে.
-
-## আপনারা যে আপনি প্রদর্শন করছি
-* [ঝরঝর কিভাবে টেস্ট লেখা শিক্ষা পান](http://www.crockford.com)
-* [কিছু সময় আপনি প্রেক্ষাপকিগত ](http://www.channel9.com/19/ 23/22b-3d0b-41cd-a977-d1tBB-foo-bar-tutorial.html)
+## See Also (देखें भी):
+- Jest: [https://jestjs.io/](https://jestjs.io/)
+- Mocha: [https://mochajs.org/](https://mochajs.org/)
+- Chai: [https://www.chaijs.com/](https://www.chaijs.com/)
+- Test-Driven Development (TDD): [https://en.wikipedia.org/wiki/Test-driven_development](https://en.wikipedia.org/wiki/Test-driven_development)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Python recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Python"
 category:             "Python"
@@ -10,60 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Working with YAML in Python
-
 ## What & Why?
-YAML (short for "YAML Ain't Markup Language") is a data serialization format ideal for configuration files and data exchange between programming languages with similar data types. Programmers use it for its human-readability, simplicity, and compatibility with languages like Python.
+Working with YAML means parsing and generating YAML (Yet Another Markup Language) documents in Python. Programmers do it to manage configuration files, application settings, or data serialization that's easy for humans to read and write.
 
 ## How to:
-We will use the Python module `PyYAML` to work with YAML data. You can comfortably install it with pip:
+To work with YAML in Python, you need `pyyaml`. Install it using:
 
-```python
+```Python
 pip install pyyaml
 ```
 
-Here's how to load YAML data:
+Read a YAML file:
 
-```python
+```Python
 import yaml
 
-yaml_data = """
-name: John Doe
-age: 30
-"""
-
-data = yaml.load(yaml_data, Loader=yaml.FullLoader)
-print(data)
+with open('config.yaml', 'r') as stream:
+    try:
+        config = yaml.safe_load(stream)
+        print(config)
+    except yaml.YAMLError as exc:
+        print(exc)
 ```
 
-Output:
+Write to a YAML file:
 
-```python
-{'name': 'John Doe', 'age': 30}
+```Python
+config = {'database': {'host': 'localhost', 'port': 3306}}
+
+with open('config.yaml', 'w') as file:
+    yaml.dump(config, file, default_flow_style=False)
 ```
 
-And, here's how to write data into a YAML file:
+Here's how `config.yaml` looks:
 
-```python
-import yaml
-
-data = {
-    'name': 'John Doe',
-    'age': 30
-}
-
-with open('data.yaml', 'w') as file:
-    yaml.dump(data, file)
+```yaml
+database:
+  host: localhost
+  port: 3306
 ```
 
 ## Deep Dive
-YAML, first proposed by Clark Evans in 2001, was designed to be easily interfaced with scripting languages. It is often compared to JSON for its readability, though YAML offers a more robust feature set.
-
-JSON is a subset of YAML, making JSON data compatible with a YAML parser. However, YAML offers features like including comments and self-referencing, which JSON does not.
-
-Working with YAML in Python is straightforward due to the native data types in Python being a subset of YAML’s. Beware of Python's libraries' subtle differences when working with YAML files. For example, PyYAML follows the YAML 1.1 specification and supports custom tags and anchors, whereas other libraries like ruamel.yaml follow YAML 1.2, being more suitable for preserving comments and other details in YAML files.
+YAML launched in 2001 as a human-friendly data serialization standard for all programming languages. JSON and XML are alternatives, but YAML’s focus on readability is a standout feature. When parsing, `safe_load` is crucial to prevent arbitrary code execution due to unsafe YAML content. `default_flow_style=False` keeps the output non-JSON-like, preserving YAML’s readability.
 
 ## See Also
-- PyYAML Documentation: http://pyyaml.org/wiki/PyYAMLDocumentation
-- YAML Specifications: http://yaml.org/spec/1.2/spec.html
-- Python & YAML turorial: https://zetcode.com/python/yaml/
+- Official PyYAML Documentation: https://pyyaml.org/wiki/PyYAMLDocumentation
+- YAML Spec: https://yaml.org/spec/1.2/spec.html
+- JSON vs. YAML comparison: https://csrc.nist.gov/csrc/media/projects/cryptographic-standards-and-guidelines/documents/examples/data-serialization.pdf

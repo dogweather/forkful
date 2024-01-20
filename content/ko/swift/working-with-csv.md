@@ -1,7 +1,7 @@
 ---
-title:                "Csv 작업"
-html_title:           "Swift: Csv 작업"
-simple_title:         "Csv 작업"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭘 & 왜?
+## What & Why? (무엇이며 왜?)
+CSV(쉼표로 구분된 값)는 데이터를 저장하기 위한 단순한 형식입니다. 프로그래머들은 다양한 시스템 간에 데이터를 쉽게 전송하고 분석하기 위해 CSV를 사용합니다.
 
-CSV 작업이란 무엇인지, 그리고 프로그래머들이 그것을 왜 하는지에 대해서 설명해보겠습니다.
-
-먼저, CSV란 Comma-Separated Values의 약자로, 쉼표로 구분된 데이터를 의미합니다. 즉, 엑셀 등 스프레드시트 프로그램에서는 각 셀이 쉼표로 구분되어 데이터를 저장하는데, 이러한 데이터를 작업하는 것이 CSV 작업이죠.
-
-그리고 프로그래머들은 CSV 파일을 다루는 것이 유용한 이유가 있습니다. 예를 들어, 다수의 데이터를 다룰 때 많은 시간과 노력을 절약할 수 있고, 데이터베이스를 다룰 때 보다 유용하게 사용될 수 있습니다.
-
-## 사용 방법:
+## How to: (방법)
+CSV 파일을 읽고 쓰는 간단한 예제입니다.
 
 ```Swift
-// CSV 파일에서 데이터 읽어오기
-if let csvURL = Bundle.main.url(forResource: "data", withExtension: "csv") {
-	if let csvData = try? String(contentsOf: csvURL) {
-		// 데이터를 줄 단위로 구분
-		let csvRows = csvData.components(separatedBy: "\n")
-		
-		// 각 줄에서 데이터를 쉼표로 구분
-		for row in csvRows {
-			let rowData = row.components(separatedBy: ",")
-			print(rowData)
-		}
-	}
+import Foundation
+
+// 샘플 CSV 데이터
+let csvData = """
+Name,Age,Occupation
+Alice,29,Engineer
+Bob,35,Designer
+"""
+
+// CSV 데이터를 파싱하는 함수
+func parseCSV(data: String) -> [[String]] {
+    var result: [[String]] = []
+    let rows = data.components(separatedBy: "\n")
+
+    for row in rows {
+        let columns = row.components(separatedBy: ",")
+        result.append(columns)
+    }
+    
+    return result
 }
-```
-위 코드는 CSV 파일에서 데이터를 읽어오는 간단한 예시입니다. 먼저, `Bundle` 클래스를 이용해 파일의 경로를 가져오고, `String` 클래스의 `components(separatedBy:)` 메서드를 사용하여 줄과 데이터를 구분한 뒤, `print` 함수를 이용해 데이터를 출력합니다.
 
-```Swift
-// CSV 파일에 데이터 저장
-var csvData = "Name, Age, Score\n"
-csvData += "John, 24, 85\n"
-csvData += "Jane, 28, 92\n"
-csvData += "Tom, 22, 79"
-
-if let csvURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("data.csv") {
-	try? csvData.write(to: csvURL, atomically: true, encoding: .utf8)
+// CSV 데이터 쓰기 함수
+func writeCSV(data: [[String]]) -> String {
+    var result = ""
+    
+    for (index, row) in data.enumerated() {
+        let rowString = row.joined(separator: ",")
+        result += rowString
+        if index < data.count - 1 {
+            result += "\n"
+        }
+    }
+    
+    return result
 }
+
+// CSV 데이터 파싱
+let parsedData = parseCSV(data: csvData)
+print(parsedData)
+
+// 파싱된 데이터를 다시 CSV 형태로 저장
+let csvContent = writeCSV(data: parsedData)
+print(csvContent)
 ```
-위 코드는 CSV 파일에 데이터를 저장하는 예제입니다. 가장 먼저, 문자열 변수 `csvData`에 데이터를 쉼표로 구분하여 저장하고, `FileManager` 클래스를 이용해 파일 경로를 가져온 뒤, `String` 클래스의 `write(to:atomically:encoding:)` 메서드를 이용해 파일을 생성하고 데이터를 저장합니다.
 
-## 깊이 들어가기:
+샘플 출력:
+```
+[["Name", "Age", "Occupation"], ["Alice", "29", "Engineer"], ["Bob", "35", "Designer"]]
+Name,Age,Occupation
+Alice,29,Engineer
+Bob,35,Designer
+```
 
-CSV는 1970년대에 발명된 데이터 관리 방법 중 하나로, 현재 많은 기업에서 사용되고 있습니다. 또한, CSV 파일은 다른 파일 형식보다 더 작은 크기로 저장되기 때문에, 많은 데이터를 저장할 때 유용합니다.
+## Deep Dive (심도 있는 탐구)
+CSV는 1970년대부터 사용되고 있습니다. 액셀이나 데이터베이스에서 자주 쓰이는 형식입니다. JSON이나 XML 같은 대안들이 있지만, CSV는 이보다 읽기 쉽고 작성하기 쉬운 장점이 있습니다. Swift에서 CSV 작업 구현은 보통 문자열 분리와 함께 배열 사용에 의존합니다.
 
-하지만, CSV 파일은 데이터 무결성을 보장하지 않기 때문에, 데이터 저장에 사용되는 다른 형식들과 비교할 때 장단점이 있습니다. 따라서, 데이터를 다룰 때 CSV 파일에 대한 이해가 필요합니다.
-
-## 관련 자료:
-
-- [Swift CSV Parser](https://github.com/yaslab/CSV.swift)
-- [How to Read and Write CSV Files](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-csv-files)
+## See Also (참고 자료)
+- [Apple's Swift Documentation](https://developer.apple.com/documentation/swift)
+- [Swift의 오픈소스 CSV 파서, CSV.swift](https://github.com/yaslab/CSV.swift)

@@ -1,7 +1,7 @@
 ---
-title:                "כתיבה לשגיאת תקן"
-html_title:           "Clojure: כתיבה לשגיאת תקן"
-simple_title:         "כתיבה לשגיאת תקן"
+title:                "כתיבה לפלט השגיאה הסטנדרטי"
+html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
+simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-כתיבה לפלט שגיאות סטנדרטי (standard error) היא כתיבה של הודעות שגיאה ואזהרות לסיוע למתכנתים בזמן הרצת קוד. מתכנתים משתמשים בכתיבה לפלט שגיאות סטנדרטי כדי לקבל חזרה מיידית על טעויות בקוד ולתקן אותם במהירות.
+## מה ולמה?
+כתיבה ל-stderr היא שליחת הודעות שגיאה או אזהרות לפלט סטנדרטי מיוחד שאינו הזרם הרגיל לפלט. פרוגרמים עושים זאת כדי להבדיל בין הודעות שגיאה לבין פלט רגיל של התוכנית, מה שמאפשר ניהול וניטור יעיל של בעיות.
 
-# איך לעשות?
-כתיבת הודעות לפלט שגיאות סטנדרטי ב-Clojure נעשית באמצעות הפונקציה (ef unerror דרך (System.err.println "הודעת שגיאה"). הנה דוגמא לקוד והפלט של הודעת שגיאה סטנדרטית:
-
+## איך לעשות:
 ```Clojure
-(defn divide [x y]
-  (if (zero? y)
-    (System.err.println "אפס אינו תקף עבור מחלק")
-    (println (/ x y))))
+;; שליחת מחרוזת ל-stderr
+(.write *err* "שגיאה: קרתה בעיה\n")
 
-(divide 10 0)
+;; דוגמא לשליחת הודעת שגיאה עם פרטי חריגה
+(try
+  (throw (Exception. "משהו השתבש"))
+  (catch Exception e
+    (.write *err* (str "שגיאה: " (.getMessage e) "\n"))))
+```
+תוצאה:
+```
+שגיאה: קרתה בעיה
+שגיאה: משהו השתבש
 ```
 
-הפלט של הודעת שגיאה יהיה:
+## הצלילה לעומק
+stderr היא מושג שמקורו בסביבות עבודה יוניקס ולינוקס, שימשה כאמצעי להפריד שגיאות מהודעות רגילות. ב-Clojure, אנחנו יכולים לכתוב ל-stderr דרך הגלובל `*err*`. חלופות כוללות כתיבה לקובץ לוג, שליחת הודעות ל-service ניטור חיצוני, או קולטים לוגים כמו log4j. ברמת המימוש, כתיבה ל-stderr אינה חלק מהפלט הרגיל של התוכנית ויכולה להינתב באופן נפרד בסביבת הביצוע, לדוגמא על ידי הפניית זרמים של מערכת ההפעלה.
 
-```Clojure
-אפס אינו תקף עבור מחלק
-```
-
-# עיון מעמיק
-כתיבה לפלט שגיאות סטנדרטי התחילה כקונספט בשפת תכנות C ומאז התפתחה לעוד שפות תכנות רבות כולל Clojure. פונקציות נוספות שמשמשות לכתיבה לפלט סטנדרטי הן (ef unanger ו-ef errtrace וכן System.err/println. אופציה אחרת לכתיבה לפלט סטנדרטי היא שימוש בתוכניות טיפוסים כמו Log4j.
-
-# ראה גם
-למידה נוספת על כתיבה לפלט שגיאות סטנדרטי בעזרת Clojure: https://clojuredocs.org/clojure.core/ef-unerror.
+## ראו גם:
+- [ClojureDocs on *out* and *err*](https://clojuredocs.org/clojure.core/*err*)
+- [Using Java's System.err in Clojure](https://clojure.org/reference/java_interop#_system_out_and_system_err)
+- [Unix Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "Написання текстового файлу"
-html_title:           "Swift: Написання текстового файлу"
-simple_title:         "Написання текстового файлу"
+title:                "Створення текстового файлу"
+html_title:           "Arduino: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо це потрібно?
-Записування текстового файлу - це процес зберігання даних в структурованому форматі з метою подальшого використання. Програмісти використовують цей метод для зберігання та обробки великих обсягів даних, таких як текстові документи, таблиці та інші.
+## Що та чому?
+
+Запис текстового файлу - це процес збереження даних у форматі, що може бути прочитаним людиною. Програмісти роблять це для логування, зберігання налаштувань, експорту даних.
 
 ## Як це зробити:
-```Swift 
-// Створення текстового файлу з допомогою Swift
-let text = "Привіт, світ!"
 
+Запис файлу в Swift:
+
+```Swift
+import Foundation
+
+let filename = "example.txt"
+let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+let fileURL = directoryURL.appendingPathComponent(filename)
+
+let content = "Привіт, це приклад тексту."
 do {
-  try text.write(toFile: "file.txt", atomically: true, encoding: String.Encoding.utf8)
+    try content.write(to: fileURL, atomically: true, encoding: .utf8)
+    print("Файл успішно записано!")
 } catch {
-  print("Помилка при створенні файлу: \(error)")
+    print("Помилка при записі файлу: \(error)")
 }
-
-// Зчитування текстового файлу
-var readText = ""
-
-do {
-  readText = try String(contentsOfFile: "file.txt", encoding: String.Encoding.utf8)
-} catch {
-  print("Помилка при зчитуванні файлу: \(error)")
-}
-
-print(readText) // Виведе "Привіт, світ!"
 ```
 
-## Детальний огляд:
-Історичний контекст використання текстових файлів має давні коріння, і цей метод є одним з основних способів зберігання даних. У програмуванні існують інші альтернативи, такі як використання баз даних, але текстові файли залишаються одним з найпростіших і надійних методів. Вибір між різними способами залежить від конкретних потреб та вимог проекту.
+Результат у консолі:
 
-Імплементація записування текстових файлів може варіюватися залежно від обраної мови програмування та платформи. У Swift існує кілька вбудованих функцій для роботи з файлами, які дозволяють більш зручно та ефективно зберігати та обробляти дані.
+```
+Файл успішно записано!
+```
 
-## Додаткові ресурси:
-Для детальнішої інформації про запис та зчитування текстових файлів в Swift ви можете ознайомитися з цією [статтею на офіційному сайті Apple](https://developer.apple.com/documentation/foundation/file_management/basic_file_operations). Також в цьому [уроці на YouTube](https://www.youtube.com/watch?v=v6R14m2gzPs) детально розглядається робота з файлами в Swift.
+## Глибше занурення:
+
+Запис файлу у Swift користується вбудованим функціоналом `FileManager` та `String` для роботи з файловою системою. Історично, запис файлів був складнішим з більш низькорівневими API як `fwrite` у C. Зміни в Swift, зокрема простота `String.write()`, спрощують процес. Альтернативами є використання `OutputStream`, CoreData або Realm для складніших даних.
+
+## Дивись також:
+
+- Офіційна документація Apple по роботі з файлами: [Working with Files in Swift](https://developer.apple.com/documentation/foundation/filemanager)
+- Туторіал по запису текстових файлів в Swift: [Writing text to files in Swift](https://www.hackingwithswift.com/example-code/system/how-to-write-text-to-a-file-using-writeto)
+- Додаткові опції файлового вводу-виводу у Swift: [File Handling in Swift](https://www.raywenderlich.com/2292-file-manager-class-tutorial-for-macos-getting-started-with-the-file-system-nsfilemanager)

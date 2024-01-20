@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Clojure: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos programadores! ¿Alguna vez te has preguntado cómo guardar tus datos en un archivo de texto usando Clojure? Bueno, hoy te mostraré cómo hacerlo en un estilo directo y conciso.
+## What & Why?
+Escribir un archivo de texto permite almacenar información de manera permanente. Los programadores lo hacen para guardar configuraciones, resultados de programas, o cualquier tipo de datos seriales.
 
-## ¿Qué y por qué?
+## How to:
+En Clojure, escribimos archivos de texto usando `spit`. Ejemplo:
 
-Escribir un archivo de texto simplemente significa guardar tus datos en un archivo legible por humanos en lugar de en una base de datos. Los programadores a menudo hacen esto para almacenar y compartir información con otros desarrolladores o usuarios.
-
-## ¿Cómo?
-
-Usando la función `spit` en Clojure, podemos escribir un archivo de texto en cuestión de segundos. Por ejemplo:
-
-```
-(spit "mi_archivo.txt" "Este es mi texto")
+```clojure
+(spit "example.txt" "¡Hola, Clojure!")
 ```
 
-¡Fácil, verdad? Ahora, si quieres escribir múltiples líneas de texto, puedes usar la función `slurp` para pasar una cadena de texto o una lista de líneas como argumento. Por ejemplo:
+Revisamos el contenido del archivo `example.txt`:
+
+```clojure
+(slurp "example.txt")
+; => "¡Hola, Clojure!"
+```
+
+Para añadir más texto sin sobrescribir:
+
+```clojure
+(spit "example.txt" "Adiós, Clojure!" :append true)
+```
+
+El contenido de `example.txt` será:
 
 ```
-(spit "mi_archivo.txt" (slurp "otro_archivo.txt"))
+¡Hola, Clojure!
+Adiós, Clojure!
 ```
 
-¡Y eso es todo lo que necesitas para escribir un archivo de texto en Clojure!
+## Deep Dive
+Clojure es un dialecto de Lisp; su función `spit` simplifica el proceso de escritura de archivos, que en otros lenguajes puede ser más verboso. Alternativas a `spit` incluyen usar Java interop (p. ej. `FileWriter`), esto puede ofrecer más control. `spit` es ideal para tareas directas y scripts rápidos, mientras que Java interop es preferido para requerimientos complejos.
 
-## Inmersión profunda
-
-Antes de que existiera Clojure, los programadores solían escribir archivos de texto en otros lenguajes como Java y Python. Sin embargo, la simplicidad de Clojure hace que sea mucho más fácil y rápido realizar esta tarea.
-
-Alternativamente, también se puede usar la función `with-open` para abrir, escribir y cerrar un archivo en una sola línea de código. Esto ayuda a prevenir errores de escritura y ahorra espacio en el código.
-
-## Ver también
-
-Si quieres aprender más sobre cómo manipular archivos en Clojure, puedes echar un vistazo a la documentación oficial o a algunos tutoriales en línea. ¡Buena suerte y sigue codificando!
+## See Also
+- Documentación oficial de Clojure: https://clojure.org/api/api
+- Clojure for the Brave and True, una guía gratuita y completa para aprender Clojure: https://www.braveclojure.com/clojure-for-the-brave-and-true/
+- Ejemplos y buenas prácticas para trabajar con archivos en Clojure: https://clojuredocs.org/clojure.core/spit

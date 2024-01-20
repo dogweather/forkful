@@ -1,7 +1,7 @@
 ---
-title:                "标准错误写入"
-html_title:           "C++: 标准错误写入"
-simple_title:         "标准错误写入"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是标准错误，为什么程序员要用它？
-标准错误是指C++中的一个输出流（ostream），专门用来显示程序运行过程中的错误信息。由于在程序中可能会发生各种问题，程序员需要通过标准错误来定位和解决错误，使得程序更加稳定可靠。
+# 写入标准错误：何为何用？
+在C++编程中，写入标准错误(`stderr`)让你可以将错误信息与常规程序输出分开。这样能够方便地监控和记录程序运行时的问题。
 
-## 如何使用标准错误：
-使用标准错误非常简单，只需要调用标准库中的std::cerr，然后将需要输出的错误信息传递给它即可。以下是一个示例代码和输出结果：
+# 操作指南：
+下面的代码展示了如何写入标准错误：
 
 ```C++
 #include <iostream>
 
 int main() {
-    std::cerr << "错误信息：无法打开文件！" << std::endl;
-    return 1;
+    std::cerr << "发生了一个错误！" << std::endl;
+    return 0;
 }
 ```
 
-输出结果：
-
+输出样例：
 ```
-错误信息：无法打开文件！
+发生了一个错误！
 ```
 
-## 深入了解：
-标准错误作为C++中的一个标准流，与标准输出（std::cout）和标准输入（std::cin）一样，都是由C++标准库提供的。在早期的C语言中，程序员通常使用printf函数来输出错误信息，但它并不提供任何错误检查功能。而标准错误能够提供更多的帮助，如定位错误发生的位置。除了标准错误，程序员还可以使用其他一些外部库来处理错误信息，如Boost中的Boost.Exception库。
+# 深入探讨：
+标准错误流(`stderr`)的概念来源于早期Unix哲学，目的是让错误信息可以被重定向或独立处理。作为标准输出(`stdout`)的一个重要补充，其允许错误信息即使在输出被重定向时也能被看到或存储。作为替代，你可以使用日志库写入日志文件。在C++中，标准库提供了`std::cerr`对象，它默认连接到标准错误流，并且是非缓冲的，这意味着信息会立即输出。
 
-## 参考资料：
-- [C++标准库参考手册](https://cppreference.com/)
+# 延伸阅读：
+- C++标准库参考资料：http://www.cplusplus.com/reference/iostream/cerr/
+- Unix编程艺术，讨论标准流：https://en.wikipedia.org/wiki/Unix_philosophy
+- C++日志库Boost.Log：https://www.boost.org/doc/libs/1_75_0/libs/log/doc/html/index.html

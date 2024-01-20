@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Java recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Java"
 category:             "Java"
@@ -11,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests is the process of creating code that validates the functionality of your program. This involves writing small snippets of code that test specific pieces of your program's functionality. Programmers write tests to ensure that their code is working as expected and to catch any potential bugs before they become bigger issues.
+
+Writing tests is crafting code that checks if other code functions correctly. Programmers do it to catch bugs early, ensure software works as expected, and maintain code quality over time.
 
 ## How to:
-Writing tests in Java is a relatively simple process. First, you need to create a new class that will contain your tests. Within this class, you can use the JUnit framework to create test methods. These methods will use a special annotation (@Test) that marks them as tests. Within the test method, you can use the JUnit assertion methods to check if your code is producing the expected output.
 
-```Java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+Let's write a simple test using JUnit, a popular testing framework in Java. We’ll test a method that adds two integers.
+
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 
     @Test
     public void testAddition() {
-        // Given
-        int x = 5;
-        int y = 10;
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
+    }
+}
 
-        // When
-        int result = Calculator.add(x, y);
-
-        // Then
-        assertEquals(15, result);
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
     }
 }
 ```
 
-The above example shows a test method for a simple calculator program. We use the JUnit assertion method `assertEquals()` to check if our `add()` method is correctly adding two numbers.
+If the method works, the test passes silently. If it fails, JUnit prints an error:
 
-## Deep Dive:
-The practice of writing tests in software development has been around for a long time and has evolved over the years. In the past, developers used manual testing methods, which were time-consuming and prone to human error. With the advent of automated testing frameworks like JUnit, writing tests has become more efficient and reliable.
+```
+org.opentest4j.AssertionFailedError: 2 + 3 should equal 5 ==> expected: <5> but was: <4>
+```
 
-There are also alternative testing frameworks available for Java, such as TestNG and Mockito. These frameworks provide different features and might be a better fit for different project requirements.
+## Deep Dive
 
-When writing tests, it's essential to have a good understanding of the code you're testing and the edge cases that need to be covered. It's also crucial to regularly run tests and update them as your code changes.
+Testing wasn’t always a programmer’s priority—it gained traction with Agile development and practices like Test-Driven Development (TDD). Alternatives to JUnit include TestNG and Spock, each with its own perks. Implementing good tests is an art; it usually involves mocking dependencies, adhering to testing patterns, and continuously integrating tests into the build process.
 
-## See Also:
-To learn more about writing tests in Java, check out the following resources:
+## See Also
 
-- [JUnit Tutorial](https://www.tutorialspoint.com/junit/index.htm)
-- [Mockito Tutorial](https://www.baeldung.com/mockito-series)
+- JUnit 5 User Guide: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
+- Article on Test-Driven Development: [https://www.agilealliance.org/glossary/tdd/](https://www.agilealliance.org/glossary/tdd/)
+- Mocking frameworks: Mockito [https://site.mockito.org/](https://site.mockito.org/)

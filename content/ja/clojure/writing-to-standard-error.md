@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "Clojure: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み"
+html_title:           "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,24 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これは何？ 
-標準エラーへの書き込みとは、プログラマーがプログラムの実行中に重要なエラーを検出した場合に、それをコンソールに表示することを意味します。プログラマーたちがこの方法を使用する理由は、エラーをすばやく発見し、デバッグするためです。
+## What & Why?
+標準エラーとは、プログラムがエラーメッセージや診断情報を出力するストリームのことです。プログラマはこれを使って、エラー情報を標準出力（通常の出力）とは別に扱い、ログ収集やデバッグが容易になるようにします。
 
-## 方法：
+## How to:
+Clojureで標準エラーに書き込むには、`*err*`を使います。例を見てみましょう。
+
 ```Clojure
-(defn write-to-stderr [error-msg]
-  (io/println (System/err) error-msg))
-
-(write-to-stderr "An error has occurred")
+(spit *err* "エラーが発生しました！\n")
 ```
 
-このコードを実行すると、エラーメッセージが標準エラーに表示されます。
-```
-An error has occurred
-```
+出力は標準エラーに直接表示されます。このコードをREPLやスクリプトで実行すると、コンソールにエラーメッセージが出力されます。
 
-## 深堀り：
-標準エラーへの書き込みは、プログラミングの世界で古くから使用されてきたテクニックです。これは、通常の標準出力とは異なり、エラー出力だけに使用されることに注意してください。代替手段としては、ログファイルへの書き込みや、GUIを使用したエラーダイアログの表示があります。標準エラーへの書き込みは、プログラムの実行中に必要な情報を表示するためにも使用されます。
+## Deep Dive
+標準出力と標準エラーはUNIX系のシステムで伝統的に使われてきました。標準出力はファイルディスクリプタ1に、標準エラーは2に割り当てられています。標準エラーへの書き込みは、標準出力とは異なるチャネルを使用するため、出力のリダイレクションやパイプ処理を行っても混ざることがありません。Clojureでは、Javaの`System/err`に対応する`*err*`を通して簡単にアクセスできます。
 
-## 参考：
-- [JavaのSystem.errを使用したエラーメッセージの表示](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/System.html#err)
+## See Also
+- [Clojureの公式ドキュメンテーション](https://clojure.org/)
+- [JavaのPrintStreamクラス](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html)

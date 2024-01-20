@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Gleam: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why? (Mitä & Miksi?)
+Testaus tarkoittaa koodillesi haasteiden asettamista: toimiiko se odotetusti? Ohjelmoijat testaavat välttääkseen bugeja ja säästääkseen aikaa tulevaisuudessa. Turvallinen ja luotettava koodi syntyy testien avulla.
 
-Testien kirjoittaminen on tärkeä osa ohjelmistojen kehittämistä. Se tarkoittaa, että kirjoitamme pieniä ohjelmia, joilla varmistamme pääohjelmamme toimivuuden. Testien kirjoittaminen auttaa meitä havaitsemaan mahdolliset virheet ja parantamaan koodimme laatua.
+## How to: (Kuinka tehdä:)
+Gleamissa testien kirjoittaminen on mutkatonta. Esimerkkikoodi alla:
 
-Toisin sanoen, testien kirjoittaminen on tapa varmistaa, että ohjelmamme tekee mitä sen pitäisi tehdä ja toimii halutulla tavalla. Se auttaa myös estämään varsinaisten ohjelmien virheitä ja parantamaan niiden suorituskykyä.
+```gleam
+import gleam/should
+import my_module
 
-## Miten teet sen:
+pub fn add_test() {
+  should.equal(my_module.add(1, 2), 3)
+}
 
-Gleamissa testien kirjoittaminen tapahtuu käyttäen kirjastoa nimeltä `gleam/test`. Tässä esimerkissä testaamme yksinkertaista funktiota, joka palauttaa annetun parametrin.
-
-```
-Gleam test "Testing my function" {
-  assert.equal "Hello!" my_module.my_function("Hello!")
+pub fn subtract_test() {
+  should.equal(my_module.subtract(5, 3), 2)
 }
 ```
 
-Tämä koodi testaa, että funktion `my_function` kutsuttaessa parametrina annettu merkkijono on sama kuin palautettu arvo. Jos testi epäonnistuu, saamme virheilmoituksen. Muutoin testi menee läpi ja voimme olla varmoja, että funktio toimii kuten pitäisi.
+Suorita testit komennolla `gleam test`. Jos kaikki toimii, näet jotain tällaista:
 
-Testeissä voidaan myös käyttää `assert`-lauseita, joiden tarkoituksena on tarkistaa, että tietyt ehdot toteutuvat. Esimerkiksi `assert.true my_module.my_condition()` tarkistaa, että funktio `my_condition` palauttaa totuusarvon `true`.
+```
+running 2 tests
+test my_module.add_test ... ok
+test my_module.subtract_test ... ok
 
-## Syvemmälle:
+test result: ok. 2 passed; 0 failed; 0 ignored
+```
 
-Testien kirjoittaminen on ollut osa ohjelmistokehittämistä jo pitkään, ja siihen on kehitetty erilaisia menetelmiä ja työkaluja. Usein testeillä pyritään myös kattamaan mahdollisimman monta mahdollista skenaariota, joten kirjoittaminen ja ylläpitäminen vaatii aikaa ja resursseja.
+## Deep Dive (Syväsukellus)
+Gleam on nuori kieli, joka alkoi vuonna 2018. Testien kirjoittamiselle on muitakin tapoja, kuten ETest tai Proper, mutta Gleam suosii omia yksikkötestaustyökalujaan. Suorituskyky ja helppous tekevät Gleam-testeistä ihanteellisen vaihtoehdon.
 
-Vaihtoehtoisia tapoja testata ohjelmia ovat muun muassa manuaalinen testaus ja hyväksymistestaus. Näissä testeissä ohjelmaa ajetaan ja tarkastetaan manuaalisesti eri skenaarioissa. Saatavilla on myös muita testaustyökaluja, kuten JUnit ja Selenium, jotka tarjoavat erilaisia testaustoiminnallisuuksia.
-
-Gleamissa testien kirjoittaminen on helppoa ja selkeää, ja `gleam/test`-kirjasto tarjoaa monipuolisia työkaluja testien tekemiseen. Kannattaa kuitenkin muistaa, että pelkästään testien kirjoittaminen ei takaa virheetöntä koodia, vaan se on yksi osa laadukkaan ohjelmiston kehittämistä.
-
-## Katso myös:
-
-- [Junit.org](https://junit.org/)
-- [Selenium.dev](https://www.selenium.dev/)
+## See Also (Katso myös)
+- Gleamin viralliset dokumentaatiot testauksesta: https://gleam.run/book/tour/testing.html
+- Esimerkkirepo täynnä Gleam-koodia: https://github.com/gleam-lang/example
+- Keskustelua Gleamin testauskehyksistä: https://github.com/gleam-lang/suggestions/discussions

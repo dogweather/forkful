@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "TypeScript: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści! Dzisiaj zanurzymy się w świecie pisania plików tekstowych w języku TypeScript. Dowiesz się, czym jest pisanie plików tekstowych i dlaczego programiści to robią, a także zobaczysz przykładowy kod i dowiesz się nieco więcej o tym temacie. Gotowi?
+## What & Why? (Co i dlaczego?)
+Zapisywanie do pliku tekstowego to sposób na trwałe umieszczenie danych, które można potem odczytać lub przetworzyć. Programiści robią to, by zapisywać logi, eksportować dane albo przechowywać konfiguracje.
 
-## Co to jest i dlaczego?
-
-Pisanie plików tekstowych jest procesem tworzenia i zapisywania zawartości w pliku, który może być czytany jako zwykły tekst przez programy komputerowe. Programiści często piszą pliki tekstowe, aby przechowywać dane lub instrukcje, które mogą być łatwo odczytane i przetworzone przez inne programy.
-
-## Jak to zrobić:
+## How to (Jak to zrobić):
+Aby zapisać tekst do pliku w TypeScript, używamy wbudowanego modułu `fs`. Oto przykład:
 
 ```TypeScript
-import fs from 'fs';
+import * as fs from 'fs';
 
-// Tworzenie nowego pliku tekstowego
-fs.writeFileSync('mojplik.txt', 'To jest zawartość mojego pliku.');
+const data: string = 'To jest testowy tekst.';
 
-// Odczytywanie pliku tekstowego
-const zawartoscPliku = fs.readFileSync('mojplik.txt', 'utf-8');
-console.log(zawartoscPliku); // To jest zawartość mojego pliku.
-
-// Dodawanie nowych danych do pliku tekstowego
-fs.appendFileSync('mojplik.txt', '\nTo jest nowa linia tekstu.');
+fs.writeFile('plik.txt', data, (err) => {
+    if (err) throw err;
+    console.log('Plik został zapisany!');
+});
 ```
 
-W powyższym przykładzie używamy modułu `fs` (od ang. file system) do operacji związanych z plikami. `writeFileSync()` tworzy nowy plik o podanej nazwie i zawartej w drugim argumencie zawartości. `readFileSync()` czyta zawartość istniejącego pliku i zwraca go jako ciąg znaków, który możemy przypisać do zmiennej i wykorzystać w programie. Aby dodać nowe dane do pliku, używamy `appendFileSync()`, który dodaje podaną zawartość na końcu pliku.
+Wykonanie powyższego kodu zapisze "To jest testowy tekst." do pliku `plik.txt`.
 
-## Głębszy zanurzenie:
+## Deep Dive (Dogłębna analiza):
+Historia: TypeScript, stworzony przez Microsoft w 2012 r., rozwija standardy JavaScript, dodając typowanie statyczne. Zapisywanie plików tekstowych w JavaScript i TypeScript jest realizowane za pomocą API Node.js, nie różni się między tymi językami.
 
-### Kontekst historyczny
-Pisanie plików tekstowych jest jednym z podstawowych sposobów komunikacji między programami od wielu lat. Pliki tekstowe są nadal powszechnie używane w dzisiejszych czasach, ale istnieje wiele innych sposobów przesyłania i przechowywania danych.
+Alternatywy: Oprócz `fs.writeFile`, istnieje `fs.writeFileSync` dla operacji synchronicznych oraz biblioteki trzecie jak `fs-extra`, które dodają dodatkowe funkcje.
 
-### Alternatywy
-Istnieje wiele alternatywnych sposobów zapisywania danych w języku TypeScript, w szczególności z użyciem baz danych lub plików JSON. Jednak pisanie plików tekstowych jest nadal popularną opcją, ponieważ jest to prosty i czytelny sposób przechowywania danych.
+Szczegóły implementacji: Asynchroniczna funkcja `writeFile` używa callbacków do obsługi zakończenia operacji lub błędów, co jest typowe dla Node.js. Nowsze podejścia obejmują użycie `Promises` lub `async/await`.
 
-### Szczegóły implementacji
-Podstawowym sposobem pisania danych do pliku tekstowego jest użycie funkcji `writeFileSync()` lub `appendFileSync()`, ale istnieją także inne metody, takie jak strumienie lub wykorzystanie bibliotek zewnętrznych.
-
-## Zobacz również:
-- [Dokumentacja Node.js o module fs](https://nodejs.org/api/fs.html)
-- [Inne sposoby przechowywania danych w TypeScript](https://www.telesurtv.net/english/analysis/4-Types-of-Data-Storage-in-TSCHS-20180519-0023.html)
+## See Also (Zobacz także):
+- Dokumentacja Node.js dla modułu `fs`: https://nodejs.org/api/fs.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- O użyciu `Promises` i `async/await` w TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html

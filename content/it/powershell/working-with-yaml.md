@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "PowerShell: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,98 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con YAML significa gestire dati strutturati in un formato leggibile sia per gli esseri umani che per le macchine. I programmatori utilizzano spesso YAML per definire configurazioni, come ad esempio nel caso di configurazioni per server o applicazioni.
+## What & Why?
+YAML è un formato per dati leggibili dall'essere umano, spesso usato per configurare software. I programmatori lo usano per la semplicità e la chiarezza della sua sintassi.
 
-## Come:
-Il seguente è un semplice esempio di come creare e leggere un file YAML utilizzando PowerShell:
+## How to:
+Installiamo il modulo PowerShell `powershell-yaml` con:
 
 ```PowerShell
-# Creazione di un file YAML
-$data = @{
-    nome = "Mario"
-    cognome = "Rossi"
-    eta = 35
-}
-
-$data | ConvertTo-Yaml | Out-File C:\Users\mario.yaml
-
-# Lettura di un file YAML
-$data = Get-Content C:\Users\mario.yaml | ConvertFrom-Yaml
+Install-Module -Name powershell-yaml
 ```
 
-L'output del file YAML creato sarà il seguente:
+Leggiamo un file YAML con:
+
+```PowerShell
+Import-Module powershell-yaml
+$yamlContent = Get-Content -Path 'config.yml' | ConvertFrom-Yaml
+$yamlContent
+```
+
+Questo è un esempio di output:
 
 ```yaml
-nome: Mario
-cognome: Rossi
-eta: 35
+name: Giovanni
+age: 30
+languages:
+  - Italiano
+  - Inglese
 ```
 
-Per scrivere dati più complessi, è possibile utilizzare la sintassi di elenco di voci per creare una struttura ad albero:
+Per creare un nuovo file YAML usiamo:
 
 ```PowerShell
-$data = @{
-    studenti = @(
-        @{
-            nome = "Maria"
-            voti = @(
-                @{
-                    corso = "Matematica"
-                    voto = 9
-                },
-                @{
-                    corso = "Italiano"
-                    voto = 8
-                }
-            )
-        },
-        @{
-            nome = "Luca"
-            voti = @(
-                @{
-                    corso = "Matematica"
-                    voto = 7
-                },
-                @{
-                    corso = "Italiano"
-                    voto = 9
-                }
-            )
-        }
-    )
+$person = @{
+  name = 'Giovanni'
+  age = 30
+  languages = @('Italiano', 'Inglese')
 }
 
-$data | ConvertTo-Yaml | Out-File C:\Users\studenti.yaml
+$person | ConvertTo-Yaml | Out-File -FilePath 'newConfig.yml'
 ```
 
-Il seguente è l'output del file YAML:
+## Deep Dive
+YAML è nato nel 2001 con l'obiettivo di essere più semplice dell'XML. Ci sono alternative come JSON, ma YAML è preferito per la sua leggibilità. YAML si basa sull'indentazione per definire la struttura, il che lo rende sensibile agli spazi, ma anche intuitivo nell'uso.
 
-```yaml
-studenti:
-- nome: Maria
-  voti:
-    - corso: Matematica
-      voto: 9
-    - corso: Italiano
-      voto: 8
-- nome: Luca
-  voti:
-    - corso: Matematica
-      voto: 7
-    - corso: Italiano
-      voto: 9
-```
-
-## Approfondimento:
-La storia di YAML risale al 2001, quando è stata proposta come un modo più semplice di scrivere file di configurazione rispetto a XML. Anche se YAML è diventato ampiamente utilizzato nella comunità dei programmatori, esistono anche alternative come JSON e TOML.
-
-Per implementare il supporto YAML in PowerShell, viene utilizzato un modulo chiamato YamlDotNet. Per utilizzarlo, è necessario prima installare il modulo utilizzando il gestore pacchetti NuGet di PowerShell:
-
-```PowerShell
-Install-Package YamlDotNet
-```
-
-## Vedi anche:
-- [Sito ufficiale di YAML](https://yaml.org/)
-- [YamlDotNet su GitHub](https://github.com/aaubry/YamlDotNet)
+## See Also
+- Documentazione ufficiale di YAML: https://yaml.org/spec/1.2/spec.html
+- PowerShell Gallery per il modulo `powershell-yaml`: https://www.powershellgallery.com/packages/powershell-yaml
+- YAML Lint per validare il tuo YAML: http://www.yamllint.com/

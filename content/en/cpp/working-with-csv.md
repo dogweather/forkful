@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "C++ recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "C++"
 category:             "C++"
@@ -11,43 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with CSV (comma-separated values) in C++ involves reading and writing data in a specific format where each field is separated by a comma. Programmers often work with CSV files because they are a convenient and efficient way to store and manipulate large amounts of data, such as spreadsheets or databases.
+
+Working with CSV (Comma-Separated Values) means dealing with plain text files that store tabular data. Programmers use CSV because it's simple and compatible across various systems, perfect for exchanging data between different software.
 
 ## How to:
-To work with CSV files in C++, you can use the built-in library function ```getline``` to read each line of the file and ```stringstream``` to split the line by commas into separate strings. Here's an example of reading data from a CSV file and printing it out:
-```C++
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
-using namespace std;
+Here’s a chunk of code that reads a CSV file and prints its content.
+
+```C++
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
 
 int main() {
-    ifstream file("data.csv"); // open file
-    string line;
-    while (getline(file, line)) { // read each line
-        stringstream ss(line); // split the line into chunks
-        string field;
-        while (getline(ss, field, ',')) { // read each field
-            cout << field << " ";
+    std::string line, cell;
+    std::vector<std::vector<std::string>> csvData;
+    std::ifstream file("example.csv");
+
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::vector<std::string> rowData;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            rowData.push_back(cell);
         }
-        cout << endl;
+        csvData.push_back(rowData);
+    }
+    
+    for (const auto& row : csvData) {
+        for (const auto& col : row) {
+            std::cout << col << " ";  // Depending on your CSV structure, adjust the delimiter.
+        }
+        std::cout << std::endl;
     }
     return 0;
 }
 ```
-**Sample output:**
+
+Sample output for a CSV containing names and ages:
 ```
-John Doe 30
-Jane Smith 25
-Bob Johnson 40
+John 25
+Jane 28
 ```
 
-## Deep Dive:
-CSV was first introduced in the 1970s as a way to transfer data between different computer programs. It remains popular today due to its simple and universal format. Alternatives to CSV include other text-based formats such as TSV (tab-separated values) or XML. These may have specific advantages for certain use cases, but CSV is widely used due to its simplicity.
+## Deep Dive
 
-When working with CSV files, it's important to handle special characters and escaping properly, as well as dealing with different line endings on different operating systems. The C++ standard library provides functions such as ```getline``` and ```getchar``` to handle these issues.
+CSV has been around since the early 1970s. It's the go-to format for simple data export and import but isn't great for complex hierarchical data, which XML and JSON handle better. C++ doesn't have built-in CSV support, but handling files and strings is straightforward. You deal with standard I/O and string manipulation, while looking out for corner cases like quotes and commas within cells. Libraries like `libcsv` and `Boost.Tokenizer` can simplify tasks if you're dealing with more complex CSV files.
 
-## See Also:
-- [C++ reference for getline function](https://www.cplusplus.com/reference/string/string/getline/)
-- [Comparison of different file formats](https://www.computerhope.com/issues/ch001356.htm)
+## See Also
+
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), the common format and MIME type for CSV files.
+- [C++ reference for I/O](http://www.cplusplus.com/reference/fstream/)
+- [The Boost C++ Libraries](https://www.boost.org/)
+- [10 minutes to pandas - CSV handling with Python for comparison](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Swift recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,32 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-CSV (Comma Separated Values) is a type of tabular data format commonly used for storing and exchanging structured data. It consists of rows and columns, where each row represents an entry and each column represents a data field. Programmers use CSV because it is a lightweight and easy-to-read format that can be easily manipulated and analyzed, making it an efficient and popular choice for handling large datasets.
+
+CSV (Comma-Separated Values) files are simple text files for storing tabular data. Programmers use them because they're easy to read and write, and widely supported across systems and languages.
 
 ## How to:
-To work with CSV in Swift, you will need to import the `Foundation` framework. Then, you can use the `Data(contentsOf:options:)` initializer to read the contents of a CSV file and convert it into a `String` object. From there, you can use the `components(separatedBy:)` method to break the string into separate rows and columns.
 
-```Swift
-import Foundation
+Let's read a CSV file and parse its content in Swift.
 
-let csvString = try String(contentsOf: URL(fileURLWithPath: "data.csv"), encoding: .utf8)
-let rows = csvString.components(separatedBy: "\n")
-for row in rows {
-  let columns = row.components(separatedBy: ",")
-  for column in columns {
-    print(column)
-  }
-}
+First, let's assume we have a `data.csv` file with this content:
+
+```plaintext
+name,age,city
+Alice,30,New York
+Bob,25,Los Angeles
 ```
 
-The code above reads the contents of a CSV file called "data.csv" and splits it into rows and columns, printing each value on a separate line.
+Here's a basic Swift script to read and parse it:
 
-## Deep Dive:
-CSV was first introduced in the 1970s as a way to store and exchange data between different computer systems. It gained popularity in the 1990s with the rise of the Internet and the need to transfer large amounts of data. Today, it remains one of the most widely used data formats, especially in industries such as finance, marketing, and sales.
+```swift
+import Foundation
 
-There are other file formats that can be used for storing and manipulating tabular data, such as JSON and XML. However, CSV has the advantage of being human-readable and easily editable, making it a popular choice among programmers.
+let csvContent = """
+name,age,city
+Alice,30,New York
+Bob,25,Los Angeles
+"""
 
-In terms of implementation, CSV files can vary in terms of their delimiter (comma, semicolon, tab, etc.) and data enclosures (quotes, double quotes, etc.). Therefore, it's important to carefully examine the structure of the CSV file before attempting to parse it.
+var rows = csvContent.components(separatedBy: "\n")
+let headers = rows.removeFirst().components(separatedBy: ",")
 
-## See Also:
-- [Hacking with Swift: Reading CSV data](https://www.hackingwithswift.com/example-code/strings/how-to-load-a-string-from-a-website-url)
+var data = [[String: String]]()
+
+for row in rows {
+    let columns = row.components(separatedBy: ",")
+    var rowData = [String: String]()
+    for (header, column) in zip(headers, columns) {
+        rowData[header] = column
+    }
+    data.append(rowData)
+}
+
+print(data)
+```
+
+Sample output:
+
+```plaintext
+[["name": "Alice", "age": "30", "city": "New York"], ["name": "Bob", "age": "25", "city": "Los Angeles"]]
+```
+
+## Deep Dive
+
+CSV has been around since the early computer days—used for moving data between programs, databases, and systems. Alternatives like JSON and XML exist, but CSV remains popular for its simplicity. Efficiency-wise, Swift's `String` methods handle CSVs well for small datasets, but large-scale data might need a specialized library like SwiftCSV or CodableCSV for performance and convenience.
+
+## See Also
+
+- Apple’s Swift documentation for String manipulation: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
+- SwiftCSV, a dedicated CSV library for Swift: [https://github.com/swiftcsv/SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
+- CodableCSV, a CSV encoder/decoder for Swift: [https://github.com/dehesa/CodableCSV](https://github.com/dehesa/CodableCSV)

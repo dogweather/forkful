@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Lua recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,74 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with YAML is a way to organize and store data in a more human-readable format compared to other data formats like JSON or XML. Programmers often use YAML as a configuration file for their applications or as a way to store data that needs to be easily readable and modifiable.
+YAML is a data serialization format easy for humans to read and write. Programmers use it for config files, data exchange between languages, and structured data storage.
 
 ## How to:
 
-Using YAML in Lua is simple and straightforward. First, we need to require the `yaml` module:
+Lua doesn't have built-in support for YAML, but you can use a library like `lyaml`. Install it using `luarocks install lyaml`. Here’s how to parse YAML:
 
 ```Lua
-local yaml = require "yaml"
-```
+local lyaml = require('lyaml')
 
-To encode a Lua table into YAML, we can use the `yaml.dump` function:
-
-```Lua
-local data = {
-    name = "John Doe",
-    age = 25,
-    hobbies = {"coding", "reading", "hiking"}
-}
-
-print(yaml.dump(data))
-```
-
-Output:
-
-```Lua
----
-name: John Doe
-age: 25
-hobbies:
-  - coding
-  - reading
-  - hiking
-```
-
-To decode a YAML string into a Lua table, we can use the `yaml.load` function:
-
-```Lua
-local yaml_string = [[
-    ---
-    name: Jane Smith
-    age: 30
-    hobbies:
-      - painting
-      - travelling
+-- Sample YAML data as a string
+local yaml_data = [[
+- name: John Doe
+  age: 29
+- name: Jane Smith
+  age: 42
 ]]
 
-local data = yaml.load(yaml_string)
+-- Parsing YAML string to Lua table
+local parsed_data = lyaml.load(yaml_data)
 
-print(data.name)
-print(data.age)
-print(data.hobbies[1])
+-- Accessing data
+for i, person in ipairs(parsed_data) do
+  print(person.name, person.age)
+end
 ```
 
-Output:
+Sample output:
+```
+John Doe 29
+Jane Smith 42
+```
+
+Now let’s generate some YAML from a Lua table:
 
 ```Lua
-Jane Smith
-30
-painting
+local lyaml = require('lyaml')
+
+-- Sample Lua table
+local people = {
+  { name = "John Doe", age = 29 },
+  { name = "Jane Smith", age = 42 }
+}
+
+-- Generating YAML from Lua table
+local yaml_output = lyaml.dump(people)
+
+print(yaml_output)
 ```
 
-## Deep Dive:
+Sample YAML output:
+```
+- age: 29
+  name: John Doe
+- age: 42
+  name: Jane Smith
+```
 
-YAML stands for "YAML Ain't Markup Language" and was created as a human-friendly data serialization language. It was first released in 2001 and has since gained popularity due to its simplicity and readability. Alternative formats such as JSON and XML have their own strengths and use cases, but YAML offers a balance between being easy to read and write for humans, and easily parsable by computers.
+## Deep Dive
 
-Implementations of YAML in Lua, such as the `yaml` module, use the libyaml library for encoding and decoding. This ensures fast and efficient processing of YAML data.
+YAML, which stands for "YAML Ain't Markup Language", emerged in early 2000s as a user-friendly data serialization standard. It's less verbose than XML and JSON which makes it popular for configuration files. Alternatives include JSON, XML, and TOML. Lua implementation mostly relies on external libraries like `lyaml` which uses libYAML under the hood for parsing and emitting YAML. When using YAML with Lua, remember that tables don't have an inherent order, so lists in YAML become arrays, but dictionaries (key-value pairs) may not preserve order.
 
-## See Also:
+## See Also
 
-- [YAML website](https://yaml.org/)
+- YAML official website: https://yaml.org
+- `lyaml` library on GitHub: https://github.com/gvvaughan/lyaml
+- LuaRocks package for `lyaml`: https://luarocks.org/modules/gvvaughan/lyaml

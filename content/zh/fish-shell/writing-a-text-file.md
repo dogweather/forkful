@@ -1,7 +1,7 @@
 ---
-title:                "撰写文本文件"
-html_title:           "Fish Shell: 撰写文本文件"
-simple_title:         "撰写文本文件"
+title:                "编写文本文件"
+html_title:           "Arduino: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是写文本文件？为什么程序员要这么做？
+## What & Why? (是什么 & 为什么？)
+写文本文件就是在计算机上创建包含文本的文件。程序员这么做为了保存数据、配置程序或记录日志。
 
-写文本文件指的是将数据以文本的形式保存在计算机的硬盘上。程序员经常这么做是因为文本文件是一种方便的数据存储格式，可以被多种编程语言和操作系统理解和使用。
-
-## 如何进行？
-
-Fish Shell提供了方便的命令来创建和编辑文本文件。下面是一个简单的例子：
-
+## How to (如何操作：)
 ```Fish Shell
-echo "Hello World" > hello.txt
-```
+# 写入文本到文件
+echo "你好, Fish Shell!" > hello.txt
 
-这条命令会将"Hello World"保存在一个名为hello.txt的文本文件中。你也可以使用cat命令来查看文件的内容：
+# 追加文本到已有文件
+echo "再见!" >> hello.txt
 
-```Fish Shell
+# 查看文件内容
 cat hello.txt
+
+# 输出示例：
+你好, Fish Shell!
+再见!
 ```
 
-输出应该是 "Hello World"。
+## Deep Dive (深入了解)
+历史上，文本文件是最早被计算机使用的数据存储方式之一。除了Fish Shell，其他脚本或编程语言（如 Bash, Python, Ruby）也提供类似功能。Fish Shell实现文本写入通常使用内建命令 `echo` 加重定向操作符 `>` 和 `>>`。
 
-## 深入探讨
-
-写文本文件的历史可以追溯到计算机发展的早期阶段，当时磁带和打孔纸带被用来保存程序的代码和数据。现在，文本文件仍然是程序员最常用的数据存储格式之一。除了Fish Shell，还有许多其他的命令行工具可以创建和编辑文本文件，比如nano、vim和emacs。另外，有些编程语言还提供了内建的函数来操作文本文件，如Python的open()函数。
-
-## 参考资料
-
-- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
-- [文本文件 - 维基百科](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6)
-- [Python文档 - 读写文件](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+## See Also (请参阅)
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- Tutorial on I/O Redirection: https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+- Learning the Shell - Writing Shell Scripts: https://linuxcommand.org/lc3_writing_shell_scripts.php

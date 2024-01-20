@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Javascript: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-CSV står for "Comma Separated Values", og er en vanlig måte å lagre og organisere data på. CSV-filer består av rader og kolonner, der hver kolonne tilsvarer en attributt og hver rad tilsvarer en entry. Programmere jobber med CSV-filer fordi de ofte blir brukt til å importere eller eksportere data fra et program eller å analysere store mengder data.
+CSV står for "Comma Separated Values" og er en drøss med data skilt med komma. Det er populært fordi det er lett å lese og skrive, og det funker med mange ulike programmer, inkludert regneark og databaser.
 
 ## Hvordan:
-
-For å kunne jobbe med CSV-filer i Javascript, trenger du et bibliotek som heter "csv-parser". Dette kan enkelt installeres ved å kjøre "npm install csv-parser" i terminalen din. Etter installasjonen kan du bruke dette biblioteket i koden din ved å skrive følgende:
-
 ```Javascript
-const csv = require('csv-parser');
+const csv = `Navn,Alder,By
+Ola,30,Oslo
+Kari,25,Bergen`;
 
-fs.createReadStream('myCsvFile.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    // gjør noe med hver rad i CSV-filen
-  })
-  .on('end', () => {
-    // ferdig med å lese gjennom alle radene i filen
-  })
+function parseCSV(csvData) {
+  const lines = csvData.split("\n");
+  const headers = lines[0].split(",");
+  const rows = lines.slice(1);
+  
+  return rows.map(row => {
+    const values = row.split(",");
+    let obj = {};
+    values.forEach((value, index) => {
+      obj[headers[index]] = value.trim();
+    });
+    return obj;
+  });
+}
+
+const jsonData = parseCSV(csv);
+console.log(jsonData);
+```
+Output:
+```Javascript
+[
+  { Navn: 'Ola', Alder: '30', By: 'Oslo' },
+  { Navn: 'Kari', Alder: '25', By: 'Bergen' }
+]
 ```
 
-Dette eksempelet viser hvordan man kan lese data fra en CSV-fil og gjøre noe med hver rad ved å bruke "on('data')" metoden. Det er også mulig å skrive data til en CSV-fil ved å bruke "csv-writer" biblioteket. Du kan utforske flere muligheter ved å lese dokumentasjonen til disse bibliotekene.
+## Dykk Dypt:
+CSV er gammelt, tatt i bruk rundt 1970-tallet med IBM Fortran (en programmeringsspråk). Alternativer til CSV inkluderer JSON og XML, som begge bærer data på en mer strukturert måte. CSV sliter med å representere komplekse datastrukturen og støtter ikke data typer direkte - alt er tekst.
 
-## Dypdykk:
-
-CSV-formatet ble først introdusert på 1970-tallet og har blitt en standard for å lagre og utveksle data mellom ulike systemer. Det finnes også flere alternative formater som JSON og XML, men CSV er fortsatt en populær og enkel måte å håndtere data på.
-
-Å jobbe med CSV-filer i Javascript kan være nyttig når man trenger å importere eller eksportere data fra en database eller applikasjon. Det kan også være nyttig når man ønsker å analysere store mengder data, siden CSV-filer er lett å lese og manipulere.
-
-## Se også:
-
-- CSV-parser dokumentasjon: https://csv.js.org/parse/
-- CSV-writer dokumentasjon: https://csv.js.org/stringify/
+## Se Også:
+- MDN Web Docs om `fetch`: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+- Node.js File System modul, for å lese fra og skrive til filer: https://nodejs.org/api/fs.html
+- CSV-specen: https://tools.ietf.org/html/rfc4180

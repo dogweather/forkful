@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "Fish Shell: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,27 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
+Skriva till standardfel (stderr) är att dirigera felmeddelanden och diagnostisk information till en separat kanal från vanlig utdata (stdout). Programmerare gör detta för att separera normala programresultat från felsökning och felrapportering, vilket underlättar systemadministration och loggning.
 
-Att skriva till standarderror, även kallad stderr, är en vanlig praxis inom programmering. Det är ett sätt att skicka felmeddelanden och varningar till användaren istället för att bara skriva ut dem i terminalen. Detta gör det enklare att identifiera och åtgärda eventuella fel i koden.
-
-## Hur man gör:
-
-```Fish Shell``` har ett inbyggt kommando, "echo", som används för att skriva text till standardoutput. För att skriva till standarderror, behöver vi bara lägga till flaggan "-e" och riktningen "&2" efter kommandot, som i exemplet nedan:
-
+## Så här gör du:
 ```Fish Shell
-echo -e "Det här är ett felmeddelande" >&2
+echo "Det här är ett vanligt meddelande"  # Skriver till standardutdata
+echo "Det här är ett felmeddelande" >&2  # Skriver till standardfel
+```
+Exempelutdata:
+```
+Det här är ett vanligt meddelande
+Det här är ett felmeddelande
 ```
 
-Output: Det här är ett felmeddelande
+## Fördjupning
+Historiskt sett utvecklades konceptet med att separera standardutdata och standardfel inom Unix för att ge ett flexibelt utdatahantering. Alternativ till att skriva direkt till stderr inkluderar loggfiler och diagnostiska verktyg. I Fish Shell hanterar man detta genom att omdirigera utdata via `>&` följt av filbeskrivaren för standardfel, som är `2`.
 
-## Djupdykning:
-
-Att skriva till standarderror används ofta tillsammans med felhantering i programmeringsspråk. Istället för att bara skriva ut felmeddelanden i terminalen, kan programmet skriva dem till standarderror för att separera dem från vanliga utskrifter.
-
-Det finns också andra sätt att skriva till standarderror, som att använda "printf" istället för "echo". Det är viktigt att lägga märke till att standarderror inte alltid visas i terminalen, utan kan skickas till en annan output, som en loggfil.
-
-## Se även:
-
-- https://fishshell.com/docs/current/tutorial.html#tut_error
-- https://linux.die.net/man/1/fish
+## Se även
+- Fish Shell dokumentation för omdirigeringar: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- Unix filsystemets struktur och filbeskrivare: [https://en.wikipedia.org/wiki/Unix_filesystem](https://en.wikipedia.org/wiki/Unix_filesystem)
+- Guide om loggning och felsökning i Unix-baserade system: [https://tldp.org/LDP/sag/html/](https://tldp.org/LDP/sag/html/)

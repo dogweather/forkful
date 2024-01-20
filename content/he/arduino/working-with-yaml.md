@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם yaml"
-html_title:           "Arduino: עובדים עם yaml"
-simple_title:         "עובדים עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -11,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-לעבוד עם YAML היא תהליך בו מתכנתים עובדים עם מבני נתונים מבוזרים בקוד פתוח. הם עושים זאת כדי לפשט את התהליך של כתיבת קוד ולהבטיח שהקוד יהיה נקי ומבוטל.
+YAML הוא תסדיר קל לקריאה להצגת נתונים אשר משמש בתכנות לקובצי תצורה ותוכן. תכנתים משתמשים בו בגלל הקריאות הגבוהה והקלות לכתיבה ופענוח, בניגוד ל-JSON או XML.
 
-## איך לעשות?
-בארדוין ישנם מספר דרכים לעבוד עם YAML, והנה כמה דוגמאות:
+## איך לעשות:
+תקשורת עם YAML ב-Arduino אינה אפשרית בצורה ישירה, מכיוון שמדובר במיקרו-קונטרולרים עם משאבים מוגבלים ו-YAML מיועד יותר לשרתים ולמחשבים אישיים. במקום זאת, אפשר להשתמש בפורמטים יותר חסכוניים כמו JSON.
 
-  ```Arduino
-  #include <YAML.h>
+```Arduino
+// לדוג' אין קוד ספציפי ל-YAML ב-Arduino
+```
 
-  // יצירת מבנה נתונים בפורמט YAML
-  YAML::Node data = YAML::LoadFile("data.yaml");
+אבל, קוד לשימוש ב-JSON:
 
-  // כתיבת מבנה נתונים לקובץ YAML חדש
-  YAML::Emitter out;
-  out << YAML::BeginMap;
-  out << YAML::Key << "name" << YAML::Value << "John";
-  out << YAML::Key << "age" << YAML::Value << 30;
-  out << YAML::EndMap;
+```Arduino
+#include <ArduinoJson.h>
 
-  // קריאת ערכים מהמבנה הנתונים
-  int age = data["age"].as<int>();
+void setup() {
+    Serial.begin(9600);
 
-  // שינוי ערך במבנה הנתונים
-  data["name"] = "Sarah";
+    const char* json = "{\"sensor\":\"gps\",\"time\":1351824120}";
 
-  // הדפסת תוכן המבנה נתונים למסך
-  Serial.println(data); 
-  ```
+    DynamicJsonDocument doc(1024);
+    deserializeJson(doc, json);
 
-## מעומק
-YAML פותח בשנת 2001 על ידי קבוצת מתכנתים כדי להוסיף נוחות לתהליך כיום של כתיבת קוד. יתר על כן, ישנן אלטרנטיבות נוספות לעבוד עם YAML כמו למשל JSON וXML. בארדוין, פריסת YAML נעשית על ידי ספריית YAML המאפשרת למתכנתים לעבוד בקלות עם מבני נתונים מבוזרים בקוד פתוח. בנוסף, פורמט YAML מאפשר למתכנתים לטפל במבני נתונים מבוזרים בקוד פתוח בדרך קלה יותר ממה שהוא עושה – ובכך מקל על ההסקת תקינות הקוד.
+    const char* sensor = doc["sensor"];
+    long time = doc["time"];
 
-## ראה גם
-למידע נוסף ניתן למצוא בקישורים הבאים:
-- אתר הרשמי של פרויקט Arduino: [https://www.arduino.cc/](https://www.arduino.cc/)
+    Serial.println(sensor);
+    Serial.println(time);
+}
+
+void loop() {
+    // פונקציית ה-loop אינה מבצעת פעולות בדוגמה זו
+}
+```
+
+תוצאה:
+```
+gps
+1351824120
+```
+
+## עומק הצלילה
+YAML, שמעמיד ישראל יתיר בקצה ימינו Yet Another Markup Language, הופך לתקן פופולרי לכתיבת קבצי תצורה מאז שנות ה-2000 בזכות קלות השימוש והקיבולת הרחבה של סוגי נתונים. גרסאות קודמות של קבצי תצורה כללו INI ו-XML, אך הם נחשבים כבדים ופחות קריאים. YAML מאפשר ייצוג של מבנה נתונים מורכב בצורה פשוטה וברורה, כך שקל להבינו גם ללא רקע טכני.
+
+בעולם אינטרנט הדברים ומעגלי המיקרו-קונטרולר, כמו Arduino, יש צורך בתקשורת יעילה וקומפקטית. לכן, פורמטים כמו JSON או תקשורת בינארית נעשים שימוש בהם בעיקר בהתבסס על המגבלות ההאדרוואריות והנפח התעבורתי הנמוך של המכשירים.
+
+## לראות גם
+- המסמך המקיף ל-YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- ArduinoJson, ספריית JSON ל-Arduino: [https://arduinojson.org/](https://arduinojson.org/)
+- מידע על סוגי נתונים בארדואינו: [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)

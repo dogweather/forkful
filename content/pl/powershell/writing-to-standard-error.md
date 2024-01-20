@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "PowerShell: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego?
 
-Pisanie do standardowego błędu jest techniką, w której programiści zapisują informacje o błędach i ostrzeżeniach w programie. Jest to przydatne w diagnostyce i debugowaniu, a także w zarządzaniu programem.
+W PowerShellu zapis do strumienia błędów (standard error) pozwala odseparować normalne wyniki działania skryptu od komunikatów o błędach. Programiści używają tego, aby łatwiej zarządzać i identyfikować problemy podczas wykonywania kodu.
 
-# Jak to zrobić:
-
-Pisanie do standardowego błędu w PowerShell jest proste i może pomóc w szybkim rozwiązywaniu ewentualnych problemów w kodzie. Oto przykłady kodu:
+## Jak to zrobić?
 
 ```PowerShell
-Write-Error "Ta wiadomość zostanie zapisana do standardowego błędu"
+# Zapis do strumienia błędów za pomocą Write-Error
+Write-Error "To jest komunikat błędu"
+
+# Zapis do strumienia błędów przez przekierowanie
+"Coś poszło nie tak" 1>&2
+
+# Własna funkcja pisząca do strumienia błędów
+function Write-StdErr($message) {
+    $message | Out-File -FilePath 'php://stderr'
+}
+Write-StdErr "To jest błąd z własnej funkcji"
 ```
+W przykładach powyżej każdy fragment kodu zapisuje informacje do strumienia błędów. `Write-Error` jest wbudowanym poleceniem. Przekierowanie z `1>&2` to klasyczne przekierowanie standardowego wyjścia (1) do standardowego błędu (2). Natomiast funkcja `Write-StdErr` pokazuje inny sposób zapisu do tego strumienia.
 
-Wynik:
+## Deep Dive
 
-```PowerShell
-Write-Error "Ta wiadomość zostanie zapisana do standardowego błędu"
-```
+Historia: PowerShell, tak jak wiele shelle'ów, dziedziczy ideę przekierowania i strumieni z modelu Unixowego. Standardowe strumienie (stdout, stderr, stdin) pochodzą z lat 70-tych.
 
-```PowerShell
-Write-Warning "To jest ostrzeżenie, które będzie widoczne w standardowym błędzie"
-```
+Alternatywy: Można także używać `Throw` w celu wygenerowania wyjątku, co również trafia do standard error, ale zatrzymuje wykonanie skryptu.
 
-Wynik:
+Szczegóły implementacji: Strumień błędów w PowerShellu to jeden z pięciu podstawowych strumieni: Output, Error, Warning, Verbose i Debug. Każdy strumień można przekierować lub ukryć niezależnie.
 
-```PowerShell
-Write-Warning "To jest ostrzeżenie, które będzie widoczne w standardowym błędzie"
-```
+## Zobacz również
 
-# W pogłębionej analizie:
-
-Pisanie do standardowego błędu jest praktykowane od dawna przez programistów, ponieważ jest to szybki sposób na informowanie o błędach i problemach w programie. Alternatywą dla pisania do standardowego błędu może być zapisywanie informacji o błędach w plikach dziennika lub wykorzystanie zewnętrznych narzędzi do zarządzania błędami. Implementacja pisania do standardowego błędu odbywa się przy użyciu funkcji Write-Error i Write-Warning w PowerShell.
-
-# Zobacz także:
-
-- [Dokumentacja o pisaniu do standardowego błędu w PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
+- [about_Redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection)
+- [Write-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error)
+- [about_Throw](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw)

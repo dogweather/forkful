@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "Haskell: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tekstitiedoston kirjoittaminen tarkoittaa käytännössä sitä, että tallennamme tekstiä tiedostoon. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluamme tallentaa tiettyjä tietoja ohjelmamme käytön aikana tai lukea tietoja myöhemmin ohjelmaamme.
-Ohjelmoijat tekevät tekstintiedostojen kirjoittamista useista eri syistä. Se voi olla osa ohjelman toiminnallisuutta, esimerkiksi tietojen tallentaminen tiettyyn muotoon. Se voi myös olla tapa kommunikoida muiden ohjelmien kanssa tai tallentaa tärkeitä tietoja, kuten ohjelman asetuksia.
+## What & Why?
+"Mitä & Miksi?"
 
-## Näin teet sen:
-Koodiesimerkit ja tulostukset seuraavat ```Haskell... ``` koodilohkoissa.
+Tekstitiedoston kirjoittaminen tarkoittaa merkkijonojen tallentamista tiedostoon. Ohjelmoijat tekevät tätä tiedon pysyvää säilytystä, lokitietojen kirjaamista tai käyttöliittymän ulostulojen tallentamista varten.
 
-```Haskell
-import System.IO
+## How to:
+"Näin teet:"
 
-main = do
-  writeFile "tekstitiedosto.txt" "Tässä on esimerkki tekstistä!"
-```
-
-Tämä koodi luo uuden tekstitiedoston nimeltä "tekstitiedosto.txt" ja tallentaa siihen tekstin "Tässä on esimerkki tekstistä!".
+Käytä `writeFile`-funktiota tiedoston kirjoittamiseen. Se korvaa tiedoston sisällön.
 
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-  appendFile "tekstitiedosto.txt" "\nTämä on toinen rivi."
+  let tiedosto = "tervehdys.txt"
+  let sisalto = "Hei, Haskell!"
+  writeFile tiedosto sisalto
 ```
 
-Tämä koodi lisää tekstitiedostoon jo olevan tekstin jatkoksi toisen rivin, jonka sisältönä on "Tämä on toinen rivi."
+Kun haluat liittää tekstiä tiedoston loppuun, käytä `appendFile`-funktiota.
 
-## Syvemmälle:
-Tekstin tallentaminen tiedostoon on ollut aina tärkeä osa ohjelmointia. Se on yksi tapa tallentaa pysyvästi tietoja ja kommunikoida muiden ohjelmien kanssa. On myös muita tapoja tallentaa tietoja, kuten tietokantoihin tai muistiin, mutta tekstitiedostot ovat yleensä yksinkertaisin ja helpoin tapa tallentaa tietoja.
+```Haskell
+main :: IO ()
+main = do
+  let tiedosto = "tervehdys.txt"
+  let lisays = "\nLisää tekstiä."
+  appendFile tiedosto lisays
+```
 
-Haskellin ```System.IO``` -kirjasto tarjoaa erilaisia ​​funktioita tekstien kirjoittamiseen ja lukemiseen tiedostoista. Voit myös käyttää muita kirjastoja, kuten ```Data.Text```, tekstin manipulointiin ja tallentamiseen tiedostoihin. Voit myös käyttää erilaisia ​​työkaluja, kuten Tiukasti-kirjastoa, hallitsemaan tekstiä ja varmistamaan, että se tallennetaan tiedostoon oikeassa muodossa.
+## Deep Dive
+"Sukellus syvemmälle"
 
-## Katso myös:
-Voit lukea lisätietoja tekstitiedoston kirjoittamisesta Haskellilla täältä: https://wiki.haskell.org/How_to_read_and_write_a_file
+Historia: Tekstitiedostojen käsittely on ollut ohjelmointikielten perustoiminnallisuuksia alusta asti. Haskellissa `System.IO`-moduuli tarjoaa funktioita tiedostojen käsittelyyn.
 
-Täällä on myös loistava opas Haskellin lukemiseen ja kirjoittamiseen tekstitiedostoihin: https://stackabuse.com/reading-and-writing-files-in-haskell/
+Vaihtoehdot: `writeFile` ja `appendFile` ovat suoraviivaisia, mutta monimutkaisempiin tarpeisiin `openFile`, `hPutStr`, ja `hClose` antavat enemmän kontrollia.
+
+Toteutus: `writeFile` käyttää laiska evaluointia, eli tiedostoon kirjoitus tapahtuu vain, kun tiedostovirtaan kirjoitetaan tarpeeksi dataa tai virta suljetaan.
+
+## See Also
+"Lisää aiheesta"
+
+- Learn You a Haskell for Great Good!: http://learnyouahaskell.com/
+- Real World Haskell: http://book.realworldhaskell.org/
+- Haskell dokumentaatio, `System.IO`: https://hackage.haskell.org/package/base/docs/System-IO.html

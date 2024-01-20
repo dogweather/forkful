@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성"
-html_title:           "PHP: 테스트 작성"
-simple_title:         "테스트 작성"
+title:                "테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+테스트 작성은 코드가 예상대로 작동하는지 확인하기 위한 과정입니다. 이를 통해 버그를 예방하고, 소프트웨어 품질을 향상시키며, 나중에 코드 변경에 자신감을 가질 수 있습니다.
 
-코드를 작성하는 프로그래머들은 코드를 작성하기 전에 테스트 케이스를 작성하는 것이 좋습니다. 이를 통해 코드의 오류를 미리 발견하고 수정할 수 있기 때문입니다.
-
-## 방법:
+## How to: (방법)
+PHP에서는 PHPUnit 같은 테스트 프레임워크를 사용해 유닛 테스트를 작성합니다. 아래는 간단한 PHP 유닛 테스트의 예시입니다.
 
 ```PHP
 <?php
-// 예시 함수
-function add($num1, $num2) {
-  return $num1 + $num2;
-}
+use PHPUnit\Framework\TestCase;
 
-echo add(5, 10); // 출력 결과: 15
+class SampleTest extends TestCase
+{
+    public function testAddingTwoPlusTwoResultsInFour()
+    {
+        $this->assertEquals(4, 2 + 2);
+    }
+}
+```
+샘플 출력:
+
+```
+OK (1 test, 1 assertion)
 ```
 
-위 예제에서 볼 수 있듯이, 함수를 작성할 때에도 테스트 케이스를 작성하는 것이 좋습니다. 이를 통해 함수가 제대로 작동하는지 확인할 수 있고, 수정할 때에도 이전에 작성한 테스트 케이스를 바탕으로 오류를 최소화할 수 있습니다.
+## Deep Dive (심층 분석)
+테스트 작성은 TDD(Test-Driven Development) 같은 소프트웨어 개발 방법론에서 중요한 역할을 합니다. PHPUnit은 2000년대 초반에 만들어졌고 PHP에서 가장 인기 있는 테스팅 도구입니다. 대안으로는 PHPSpec, Behat 등이 있으며, 프로젝트의 요구에 따라 선택합니다. PHPUnit는 다양한 assertion 메소드를 제공하여 다양한 조건의 테스트가 가능합니다.
 
-## 더 깊이 들어가기:
-
-테스트 케이스를 작성하는 것은 프로그래머들 사이에서 오래 전부터 추천되어온 방법입니다. 하지만 요즘에는 자동화된 테스트 도구들이 많이 개발되어 사용되고 있습니다. 이 도구들을 사용하면 훨씬 더 쉽게 테스트 케이스를 작성하고 실행할 수 있습니다. 또한 테스트 주도 개발(TDD) 방법론이 등장하면서, 테스트 케이스를 먼저 작성하고 그에 맞는 코드를 작성하는 방식이 널리 사용되고 있습니다.
-
-## 더 알아보기:
-
-- [PHP의 테스트 케이스 작성 방법 가이드](https://www.phpunit.de/doc/phpunit-book.html)
-- [자동화된 PHP 테스트 도구인 PHPUnit 공식 사이트](https://phpunit.de/)
+## See Also (함께 보기)
+- [PHPUnit 공식 문서](https://phpunit.de/documentation.html)
+- [PHP The Right Way의 테스팅](https://phptherightway.com/#testing)
+- [TDD란 무엇인가?](https://en.wikipedia.org/wiki/Test-driven_development)

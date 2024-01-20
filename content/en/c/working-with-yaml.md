@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "C recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "C"
 category:             "C"
@@ -12,41 +12,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with YAML is a way for programmers to store and share structured data in a clear and human-readable format. It is especially useful for configuration files and data serialization, making it easier for non-technical team members to understand and modify. Many popular applications, such as Ansible and Kubernetes, use YAML as their configuration language.
+YAML is a human-readable data serialization format used for config files, data exchange between languages, and data storage. Programmers choose YAML for its simplicity and readability, making it a breeze to use for quick configuration and development tasks.
 
 ## How to:
 
-To start working with YAML in your C program, you'll need to include the libyaml library in your project. Then, you can use functions like `yaml_parser_parse()` and `yaml_emitter_emit()` to parse and emit YAML data.
+C doesn't have built-in YAML parsing, so we use a library like `libyaml` to handle YAML files. Here's a simple example of parsing a YAML file in C.
 
+First, include the library:
 ```C
 #include <yaml.h>
+```
 
-// Create a YAML emitter and emit a basic YAML document
-yaml_emitter_t emitter;
-yaml_emitter_initialize(&emitter);
-yaml_stream_start_event_initialize(&event, YAML_UTF8_ENCODING);
-yaml_emitter_emit(&emitter, &event);
-
-// Parse a YAML document and access its data
+Next, initialize a parser, open a file, and start parsing:
+```C
+FILE *fh = fopen("config.yaml", "r");
 yaml_parser_t parser;
 yaml_parser_initialize(&parser);
-yaml_parser_set_input_file(&parser, "config.yaml");
-while (!done) {
-    yaml_event_t event;
-    if (!yaml_parser_parse(&parser, &event)) break;
-    // handle different event types: YAML_SCALAR_EVENT, YAML_SEQUENCE_START_EVENT, etc.
+yaml_parser_set_input_file(&parser, fh);
+
+yaml_event_t event;
+/* Read the event sequence */
+while (true) {
+    if (!yaml_parser_parse(&parser, &event)) {
+        printf("Parser error %d\n", parser.error);
+        exit(EXIT_FAILURE);
+    }
+
+    if (event.type == YAML_SCALAR_EVENT) {
+        printf("Got scalar (value): %s\n", event.data.scalar.value);
+    }
+
+    if (event.type == YAML_STREAM_END_EVENT) {
+        break;
+    }
+
+    yaml_event_delete(&event);
 }
+
+/* Cleanup */
+yaml_parser_delete(&parser);
+fclose(fh);
+```
+
+Sample `config.yaml` content:
+```yaml
+name: John Doe
+age: 30
+```
+
+Sample output:
+```
+Got scalar (value): name
+Got scalar (value): John Doe
+Got scalar (value): age
+Got scalar (value): 30
 ```
 
 ## Deep Dive
 
-YAML, which stands for "YAML Ain't Markup Language," was created by Ingy döt Net and Clark Evans in 2001 in response to the complexity of XML and the limitations of JSON. It is a human-readable data serialization language and was designed to be easily readable and editable by humans without specialized software.
+YAML stands for "YAML Ain't Markup Language." It emerged in the early 2000s as an alternative to XML for configuration files, aiming for human readability. YAML is used in many tools (like Docker, Kubernetes, etc.) and is often favored over JSON for configs due to its support for comments and cleaner syntax.
 
-There are alternative data serialization formats, such as JSON and XML, but YAML sets itself apart with its readability and flexibility. YAML allows for multiple data types, including strings, numbers, and booleans, whereas JSON is limited to only strings, numbers, and arrays. Additionally, YAML allows for comments and anchors/aliases, making it ideal for complex and hierarchical data structures.
+Common C alternatives for working with YAML are `libyaml` and `yaml-cpp` (though the latter is for C++). These libraries allow C/C++ programs to serialize and deserialize YAML data.
 
-Implementation-wise, YAML is a straightforward language to work with. The libyaml library, written in C, is the official parser and emitter for YAML and is actively maintained by a community of developers. It is also lightweight and does not require any external dependencies.
+When parsing YAML, your program builds a tree in memory. Nodes in this tree can be mappings (like dictionaries or hash tables), sequences (like arrays), or scalars (strings, numbers, etc.). libyaml's parser is event-driven, meaning it reads the YAML stream and emits events for each YAML structure encountered. Handling these events lets you construct or operate on the corresponding data structure.
 
 ## See Also
-- [libyaml official docs](https://pyyaml.org/wiki/LibYAML)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [YAML Ain't Markup Language (YAML™) Version 1.2](https://yaml.org/spec/1.2/spec.html)
+
+- `libyaml` GitHub: https://github.com/yaml/libyaml
+- YAML official specs: https://yaml.org/spec/1.2/spec.html
+- "Programming with libyaml" tutorial: https://libyaml.docsforge.com/master/programming-with-libyaml/
+- Comparison of data serialization formats: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "PHP: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest format JSON i dlaczego programiści go używają?
+## Co i dlaczego?
+JSON to format danych, wygodny do wymiany między językami programowania. Programiści używają go, bo jest lekki, czytelny dla człowieka i łatwy w parsowaniu.
 
-JSON (JavaScript Object Notation) jest to format danych, który często jest używany przez programistów w celu przesyłania i odbierania informacji. Jest on wygodniejszy niż format XML ze względu na swoją prostotę i czytelność. Jest on szczególnie przydatny w aplikacjach, które wymieniają dużą ilość danych między serwerem a klientem.
+## Jak to zrobić?
+```php
+<?php
+// Przygotujmy tablicę do konwersji.
+$dane = [
+    'imie' => 'Jan',
+    'nazwisko' => 'Kowalski',
+    'wiek' => 30
+];
 
-Jak używać JSON w PHP?
+// Konwertujemy tablicę do JSON.
+$json = json_encode($dane);
+echo $json;
+// Wyjście: {"imie":"Jan","nazwisko":"Kowalski","wiek":30}
 
-Aby pracować z JSON w PHP, najpierw należy zaimportować funkcję json_encode() i json_decode(). Funkcja json_encode() konwertuje dane z formatu PHP na JSON, a funkcja json_decode() przetwarza dane JSON na obiekty lub tablice w języku PHP.
-
-```PHP
-// Przykład 1: Konwertowanie tablicy PHP na JSON
-$tablica = array("pierwszy" => 1, "drugi" => 2, "trzeci" => 3);
-$json = json_encode($tablica);
-echo $json; // wynik: {"pierwszy":1,"drugi":2,"trzeci":3}
-
-// Przykład 2: Konwertowanie danych JSON na tablicę PHP
-$json = '{"pierwszy":1,"drugi":2,"trzeci":3}';
-$tablica = json_decode($json, true);
-print_r($tablica); // wynik: [pierwszy] => 1, [drugi] => 2, [trzeci] => 3
+// Teraz zamienimy JSON z powrotem na tablicę PHP.
+$daneZJson = json_decode($json, true);
+print_r($daneZJson);
+// Wyjście:
+// Array
+// (
+//    [imie] => Jan
+//    [nazwisko] => Kowalski
+//    [wiek] => 30
+// )
+?>
 ```
 
-Głębsza informacja o JSON
+## W głębi tematu
+JSON, czyli JavaScript Object Notation, narodził się jako alternatywa dla XML. Jego format jest prostszy od XML i szybszy w przetwarzaniu. W PHP mamy wbudowaną obsługę JSON od wersji 5.2.0. Alternatywami dla JSON mogą być XML, YAML czy BSON, ale żaden nie dorównuje mu prostotą. 
 
-JSON został stworzony w 2001 roku przez Douglas Crockford, jako alternatywny, lżejszy format dla XML. Jednym z jego głównych zastosowań jest przesyłanie danych w aplikacjach internetowych i mobilnych. Jest on również używany jako format danych w serwerowych aplikacjach REST API.
+Podczas pracy z JSON, należy pamiętać o obsłudze błędów. Funkcje `json_encode()` i `json_decode()` mogą zwrócić `null` przy napotkaniu błędu, co może być mylące, ponieważ `null` jest też poprawną wartością JSON. Użycie `json_last_error()` pomoże ustalić przyczynę błędu.
 
-Alternatywy dla JSON to między innymi XML, YAML oraz CSV. Z uwagi na swoją prostotę i intuicyjność, JSON jest jednak często wybieranym formatem przez programistów.
-
-Aby maksymalnie wykorzystać możliwości JSON w PHP, należy pamiętać o kilku rzeczach. Należy upewnić się, że dane wejściowe są poprawnie sformatowane jako JSON, a także przetwarzać je w odpowiedni sposób, korzystając z funkcji json_encode() i json_decode(). Ważne jest również dbanie o bezpieczeństwo, w szczególności przy przetwarzaniu danych pochodzących od użytkownika.
-
-Pozostałe źródła
-
-Jeśli chcesz dowiedzieć się więcej o pracowaniu z JSON w PHP, warto zajrzeć do dokumentacji PHP lub poszukać tutoriali i poradników online. Poniżej przedstawiam kilka przydatnych linków:
-
-- Dokumentacja PHP: https://www.php.net/manual/en/book.json.php
-- Tutorial W3Schools: https://www.w3schools.com/js/js_json_php.asp
-- Poradnik na stronie Codecademy: https://www.codecademy.com/learn/pricing/json-php
+## Zobacz również
+- Oficjalna specyfikacja JSON: http://json.org/
+- Dokumentacja PHP na temat JSON: https://www.php.net/manual/pl/book.json.php
+- Porównanie formatów danych JSON vs. XML: https://www.w3schools.com/js/js_json_xml.asp

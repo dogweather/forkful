@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Bash: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-YAML on ihmislukuisen tietojen esittämistä varten. Se on myös helposti luettava, mikä tekee siitä suositun monien ohjelmoijien keskuudessa.
+## What & Why? (Mikä ja Miksi?)
+YAML on datankuvauskieli konfiguraatioihin ja viestintään, joka on helppo lukea sekä koneille että ihmisille. Ohjelmoijat käyttävät YAMLia, koska se on yksinkertainen, laajalti tuettu ja tiiviisti integroitavissa erilaisiin sovelluksiin ja automaatioprosesseihin.
 
-## Miten:
-Esimerkkejä koodista ja näytetyistä tuloksista ``Bash ...`` koodilohkojen sisällä.
+## How to: (Kuinka tehdä:)
+```Bash
+# YAML-tiedoston lukeminen komentosarjassa
+apt update
+apt install -y python3-pip
+pip3 install pyyaml
 
-Esimerkki 1: YAML-tiedoston lukeminen ja tietojen esittäminen Bashilla:
-``Bash
-read -r tiedosto < text.yml
-echo $tiedosto
-``
-Tulostus: 
-``Bash
-nimi: Jani
-ikä: 28
-työ: ohjelmoija
-``
+# Luo yksinkertainen esimerkki YAML-tiedosto
+echo 'tervehdys: hei maailma' > esimerkki.yaml
 
-Esimerkki 2: Tietojen tallentaminen YAML-tiedostoon Bashilla:
-``Bash
-eisa järjestelmä: Linux
-ohjelmisto: Bash
-versio: nykyinen
-``
+# Lue ja tulosta YAML-tiedoton sisältö
+python3 -c 'import yaml; print(yaml.safe_load(open("esimerkki.yaml")))'
 
-Tulostus tiedostoon:
-``Bash
-järjestelmä: Linux
-ohjelmisto: Bash
-versio: nykyinen
-``
+# Tulosteen pitäisi näyttää jotakin tältä:
+# {'tervehdys': 'hei maailma'}
+```
 
-## Syväsukellus
-YAML (Yet Another Markup Language) luotiin vuonna 2001 ja se on muodostunut suosituksi tietojen esittämistä varten ohjelmoijien keskuudessa sen helppokäyttöisyyden ja luettavuuden vuoksi. Muita vaihtoehtoja YAML:lle ovat esimerkiksi XML ja JSON, mutta YAML on usein helpompi käyttää.
+## Deep Dive (Syväsukellus)
+YAML, lyhenne sanoista "YAML Ain't Markup Language" (aiemmin "Yet Another Markup Language"), on luotu vuonna 2001 helpottamaan konfiguraatioiden hallintaa ja tiedonjakoa eri ohjelmointikielissä ja -ympäristöissä. Vaihtoehtoja YAMLille ovat JSON ja XML, jotka ovat myös suosittuja datankuvauskieliä. YAML erottuu legibiliteetinsä ja pyrkimyksen vähämerkkiseen syntaksiin. Ohjelmakirjastot eri ohjelmointikielissä tarjoavat YAML-tiedostojen käsittelyn, ja se toimii usein konfiguraatioissa, kuten Dockerissa ja Kubernetesissa.
 
-YAML koostuu avain-arvo pareista, jotka on erotettu kaksoispisteillä ja välilyönneillä. Tiedostot päättyvät .yml-päätteellä. Bashilla, YAML-tiedostoja voi käsittellä helposti ja niitä voi käyttää tietojen tallentamiseen tai lukemiseen monissa ohjelmissa ja skripteissä.
-
-## Katso myös
-- [Bash-ohjelmointi](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [YAML-spesifikaatiot](https://yaml.org/spec/)
+## See Also (Katso Myös)
+- YAML: [https://yaml.org](https://yaml.org)
+- YAML-syntaksi: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- YAML ja Python: [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- Bash-skriptausopas: [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)

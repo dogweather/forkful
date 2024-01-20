@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "Clojure: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,16 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Ma & Leh? 
-Lichtov testim be-Clojure ze le'ha'skir ulehafot et mispar he'ehaovim ve-hechsharim be-prakmatiyut ha-kodemet. Ha-programistim mekablim la'asot et ze keu sheyesh bah hofaa shehiraot ba'hofaa, lachash she-kaditse ha'arachaha shel ha-kodemet.
+## מה ולמה?
+כתיבת בדיקות (tests) היא תהליך שבו אנו בודקים את התנהגות הקוד שלנו. מתכנתים עושים זאת כדי לוודא שהקוד עובד כראוי ולזהות באגים לפני פרסום התוכנה.
 
-## Eich la'asot:
-Clojure yavshut le-ha'skir testim be-derech shonut. Lihiaot, lo hem she-yax'siru lehakhlamot me-ha-sabaa'vet. Hishtamshut shel dougmaot ve-shesirot ne'emamot bashiam be-blokei ```Clojure ...``` she-avo be-geviyat he-douma ve-hasarut.
+## איך לעשות:
+```Clojure
+; הוספת ספריית הבדיקות
+(require '[clojure.test :refer :all])
 
-## Bekitsur:
-Kodemet hofaa ha'historeyi ve-alternativot. Sheyesh rimazim she-hakodemet hofaa ne'emam baxahash. Mitgapim axara me-takhlitam mivnadam li-yechol ha'chayavim lo le'hitna'aal be-douma beyisrael ha-he'efredim ve-haholdim maherim bakodemet be-tmu'ahal ha'chiton.
+; דוגמה לבדיקה פשוטה
+(deftest test-addition
+  (testing "בדיקת חיבור"
+    (is (= 5 (+ 2 3)))))
 
-## Reayitaram:
-Ha'simen: <https://clojure.org/guides/test>
+; הרצת הבדיקות
+(run-tests)
 
-Sehila le-haliv ha-sefer ze: <https://purelyfunctional.tv/guide/clojure-testing/>
+; פלט דוגמה
+; Testing user
+; 
+; Ran 1 tests containing 1 assertions.
+; 0 failures, 0 errors.
+```
+
+## עומק השקיעה
+ההיסטוריה של בדיקות תוכנה מתחילה בשנות ה-50. אלטרנטיבות לספריית `clojure.test` כוללות את `Midje` ו`Speclj`. בחינת האימפלמנטציה היא חשובה כדי להבין לעומק איך הבדיקות משפיעות על התהליך המלא של פיתוח התוכנה.
+
+## גם ראה
+- [clojure.test documentation](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Midje on GitHub](https://github.com/marick/Midje)
+- [Speclj on GitHub](https://github.com/slagyr/speclj)

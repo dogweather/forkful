@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Bash recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,35 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file is the process of creating a file that contains plain text. It is a common practice among programmers to write text files as they can be easily read and edited by humans, and can also be executed by a computer program.
+Writing a text file is the process of saving data into a file in text format. Programmers do it to store configurations, logs, code, or any data that need to be referenced or preserved over time.
 
 ## How to:
 
-To write a text file using Bash, follow these simple steps:
+```Bash
+# Creating a new text file with the 'echo' command
+echo "Hello, World!" > hello.txt
 
-1. Open the terminal on your computer.
-2. Type `nano [filename].txt` and hit Enter. This will create a new text file with the name you have provided.
-3. Use the nano text editor to write the contents of your text file.
-4. Once you are done writing, press `Ctrl + O` to save the file. You can then exit the editor by pressing `Ctrl + X`.
+# Appending more text to an existing file with the '>>' operator
+echo "Another line of text." >> hello.txt
 
-Sample output:
-
+# Writing multiple lines using a heredoc
+cat << EOF > hello_multiline.txt
+Hello, this is the first line.
+And this is the second line.
+EOF
 ```
-$ nano mytextfile.txt
-This is a text file.
-It can be easily written using Bash.
-Ctrl + O to save and Ctrl + X to exit.
+
+Output for `cat hello.txt`:
+```
+Hello, World!
+Another line of text.
+```
+
+Output for `cat hello_multiline.txt`:
+```
+Hello, this is the first line.
+And this is the second line.
 ```
 
 ## Deep Dive
 
-Writing text files has been a fundamental task for software developers since the early days of computing. In the early 1960s, punch cards were used to write plain text files, while in the 1970s, teletype machines were used.
-
-Today, there are many alternatives to Bash for writing text files, such as using a text editor like Vim or Emacs, or using a scripting language like Python or Ruby. However, Bash remains a popular choice due to its simplicity and built-in functionalities.
-
-Writing a text file using Bash involves using a command-line text editor, such as nano, which allows for efficient and quick editing of text files. The use of special keyboard shortcuts, such as `Ctrl + O` and `Ctrl + X`, makes it a convenient tool for writing and editing text files.
+Shell scripting has been a core part of Unix-like systems since the 1970s, with the `sh` (Bourne shell) being the original. Today, `bash` (Bourne Again SHell) is a widely available and used shell. While `echo` and output redirection (`>`, `>>`) are common methods to write files, alternatives like `printf` offer formatting capabilities. File writing in bash scripts use file descriptors; `1` for `stdout`, and appending (`>>`) avoids file overwriting by leveraging file descriptor `2`.
 
 ## See Also
 
-- [nano - The GNU Nano homepage](https://www.nano-editor.org/)
-- [Bash scripting basics](https://www.shellscript.sh/)
+- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
+- [Shell Scripting Tutorial](https://www.shellscript.sh/)

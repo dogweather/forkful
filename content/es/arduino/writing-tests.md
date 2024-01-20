@@ -10,48 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y por qué?
+Escribir pruebas en programación significa crear pequeñas verificaciones para tu código. Los programadores las usan para asegurarse de que su código funciona correctamente y para evitar futuros errores tras cambios o actualizaciones.
 
-Escribir pruebas es una forma de garantizar que nuestro código funcione correctamente y se comporte según lo esperado. Además, nos permite detectar posibles errores y solucionarlos antes de que nuestro programa se ponga en funcionamiento.
+## Cómo hacerlo:
+No hay un framework de pruebas unitarias incluido en el entorno de desarrollo de Arduino, pero puedes hacer pruebas manuales con código simple. Por ejemplo, para probar una función que suma dos números:
 
-## Cómo:
-
-Para escribir pruebas en Arduino, podemos utilizar algunas librerías disponibles como "ArduinoUnit" o "UnitTest". También podemos crear nuestras propias pruebas siguiendo los siguientes pasos:
-
-1. Crear una función de prueba utilizando la palabra clave "void" seguida del nombre de la prueba.
-```Arduino
-void miPrueba(){
-  //código de la prueba
+```arduino
+void setup() {
+  Serial.begin(9600);
+  int resultado = sumar(5, 3);
+  Serial.print("Resultado: ");
+  Serial.println(resultado);
 }
-```
-2. Utilizar la función "assert" para comprobar si nuestra prueba ha sido exitosa.
-```Arduino
-void miPrueba(){
-  assert(3 + 2 == 5);  //si la suma es igual a 5, la prueba es exitosa
+
+void loop() {
+  // Aquí va el código que queremos ejecutar continuamente.
 }
-```
-3. Ejecutar la prueba utilizando la función "run" en el "setup" de nuestro código.
-```Arduino
-void setup(){
-  run(miPrueba);  //ejecutamos nuestra prueba
-}
-```
-4. Verificar el resultado en el monitor serie.
-```Arduino
-void setup(){
-  run(miPrueba);  //ejecutamos nuestra prueba
-  Serial.println("Prueba exitosa");  //si pasó la prueba, se mostrará en el monitor
+
+int sumar(int a, int b) {
+  return a + b;
 }
 ```
 
-## Deep Dive:
+Salida esperada en el Serial Monitor:
+```
+Resultado: 8
+```
 
-El uso de pruebas en programación es una técnica muy común que permite asegurar la calidad del código y prevenir errores en el futuro. Entre las alternativas a las librerías mencionadas anteriormente, podemos mencionar "CppUTest" o "Google Test", que ofrecen una amplia gama de funcionalidades adicionales para escribir y ejecutar pruebas.
+## Profundizando
+En el contexto histórico, Arduino no se diseñó con un enfoque en pruebas unitarias debido a la limitación de recursos en microcontroladores. Alternativas para pruebas más complejas incluyen simular el Arduino en un PC o usar librerías como `ArduinoUnit`. La implementación de pruebas requiere una mezcla de seguimiento manual y automatización cuidadosamente planificada para ser efectiva en sistemas embebidos.
 
-En cuanto a la implementación, es importante tener en cuenta que las pruebas deben ser independientes y no afectar al funcionamiento del código principal. Además, se recomienda escribir pruebas para diferentes partes del código, cubriendo la mayor cantidad de casos posibles.
-
-## See Also:
-
-- [Documentación de ArduinoUnit](https://github.com/mmurdoch/arduinounit)
-- [Documentación de CppUTest](https://cpputest.github.io/)
-- [Documentación de Google Test](https://github.com/google/googletest)
+## Ver también
+- ArduinoUnit library: https://github.com/Arduino-CI/ArduinoUnit
+- Información sobre cómo simular Arduino en tu computador: https://www.sites.google.com/site/unoardusim/home
+- Fundamentos de pruebas de software para no iniciados: https://www.pluralsight.com/courses/software-testing-fundamentals

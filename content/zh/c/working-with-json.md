@@ -1,7 +1,7 @@
 ---
-title:                "使用json进行编程"
-html_title:           "C: 使用json进行编程"
-simple_title:         "使用json进行编程"
+title:                "处理JSON数据"
+html_title:           "Arduino: 处理JSON数据"
+simple_title:         "处理JSON数据"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? (是什么 & 为什么?)
+JSON（JavaScript Object Notation）是存储和交换信息的轻量级格式。程序员用它是因为它易于阅读，且被多种编程语言广泛支持。
 
-JSON是一种用于存储和交换数据的格式。程序员经常使用JSON来访问和处理数据，因为它简单、易于阅读和编写，并且被许多编程语言支持。
+## How to: (如何操作：)
+在C中处理JSON的常用库是`cJSON`。下面展示如何使用：
 
-## 如何：
-
-```C
+```c
 #include <stdio.h>
-#include <json-c/json.h>
+#include "cJSON.h"
+
+// 解析JSON字符串
+void parse_json(const char *json_string) {
+    cJSON *json = cJSON_Parse(json_string);
+    if (json == NULL) {
+        fprintf(stderr, "Error before: [%s]\n", cJSON_GetErrorPtr());
+        return;
+    }
+
+    // 获取字段
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(json, "name");
+    if (cJSON_IsString(name) && (name->valuestring != NULL)) {
+        printf("Name: %s\n", name->valuestring);
+    }
+
+    cJSON_Delete(json);
+}
+
+// 生成JSON字符串
+void create_json() {
+    cJSON *json = cJSON_CreateObject();
+
+    cJSON_AddStringToObject(json, "language", "C");
+    cJSON_AddNumberToObject(json, "year", 1972);
+
+    char *json_string = cJSON_Print(json);
+    printf("%s\n", json_string);
+
+    cJSON_Delete(json);
+    free(json_string);
+}
 
 int main() {
-  // 创建一个JSON对象
-  struct json_object *jobj = json_object_new_object();
-  // 添加一个键值对
-  json_object_object_add(jobj, "name", json_object_new_string("John"));
-  // 将JSON对象转换为字符串并打印
-  printf("JSON对象：%s\n", json_object_to_json_string(jobj));
+    // JSON字符串
+    const char *json_data = "{\"name\":\"John\", \"age\":30}";
 
-  return 0;
+    // 解析JSON
+    parse_json(json_data);
+
+    // 生成JSON
+    create_json();
+
+    return 0;
 }
 ```
 
 输出：
-```C
-JSON对象：{"name": "John"}
+
+```plaintext
+Name: John
+{"language":"C","year":1972}
 ```
 
-## 深入探讨：
+## Deep Dive (深入探索)
+JSON自2002年起成为主流，现在是Web APIs间通信的标准。虽然XML是另一种选择，JSON的轻量级和简洁性使其更受青睐。C程序员通常需要引入第三方库例如`cJSON`或`Jansson`来处理JSON，因为标准库中没有内置JSON支持。`cJSON`简单易用，用于解析和生成JSON结构。
 
-JSON最初是由JavaScript程序员创建的，用于取代XML作为数据交换的标准。除了C以外，许多编程语言都有针对JSON的官方或第三方库，例如Python中的json模块和Java中的GSON。程序员也可以使用纯C语言来解析和构建JSON，但使用json-c库可以更方便地处理。一些替代格式如XML和YAML也可以用来存储和交换数据，但它们通常比JSON更复杂和冗长。
-
-## 参考资料：
-
-- [JSON官方网站](https://www.json.org/)
-- [json-c库的GitHub页面](https://github.com/json-c/json-c)
+## See Also (另请参阅)
+- [cJSON GitHub repository](https://github.com/DaveGamble/cJSON)
+- [JSON 官方网站](https://www.json.org/json-zh.html)
+- [Jansson: C 的 JSON 库](https://digip.org/jansson/)

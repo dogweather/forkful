@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "Haskell: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## What & Why?
+In der Programmierung ist das Schreiben auf den Standard Error (stderr) wichtig zum Melden von Fehlern und Diagnostik, ohne die Standardausgabe (stdout) zu stören. Das hilft dabei, Fehlermeldungen von normalen Ausgaben in Logs oder Dateien zu trennen.
 
-Wenn du als Programmierer:in eine Fehlermeldung siehst, stammt sie in der Regel aus dem Standardfehler-Ausgabekanal (engl. "Standard Error") deiner Anwendung. Das Schreiben von Nachrichten an diesen Kanal ist ein wichtiger Teil der Fehlerbehandlung und hilft dir dabei, Fehler zu verstehen und zu beheben.
-
-# Wie funktioniert's?
-
-Um eine Nachricht an den Standardfehler-Ausgabekanal zu senden, musst du die Funktion `hPutStrLn` aus dem Modul `System.IO` verwenden. Ein Beispielcode sieht folgendermaßen aus:
+## How to:
+In Haskell, du benutzt `hPutStrLn` von `System.IO`, um auf stderr zu schreiben:
 
 ```Haskell
-import System.IO (hPutStrLn, stderr)
+import System.IO
+
+main :: IO ()
+main = hPutStrLn stderr "Das ist ein Fehler!"
+```
+
+Ausgabe im stderr-Stream:
+
+```
+Das ist ein Fehler!
+```
+
+Schreiben von regularer Ausgabe und Fehler in unterschiedliche Streams:
+
+```Haskell
+import System.IO
 
 main :: IO ()
 main = do
-  hPutStrLn stderr "Ups, hier ist ein Fehler passiert."
+  hPutStrLn stdout "Normale Ausgabe"
+  hPutStrLn stderr "Dies wurde auf stderr ausgegeben"
 ```
 
-Die `hPutStrLn` Funktion erwartet als erstes Argument eine Handle-Referenz auf den Kanal, an den die Nachricht geschrieben werden soll. Hier verwenden wir `stderr` als Handle-Referenz für den Standardfehler-Ausgabekanal. Als zweites Argument wird die eigentliche Nachricht übergeben.
+Sample output:
 
-Beim Ausführen des obigen Codes wird die Nachricht "Ups, hier ist ein Fehler passiert." direkt auf deiner Konsole ausgegeben. Je nach System wird die Nachricht dabei anders formatiert, aber in der Regel wird sie in roter Farbe und/oder in einem abweichenden Schriftstil dargestellt.
+```
+Normale Ausgabe
+Dies wurde auf stderr ausgegeben
+```
 
-# Tiefer ins Detail
+## Deep Dive
+Stderr wurde mit Unix eingeführt und ist heutzutage Standard. Alternativ zu `hPutStrLn` gibt's `io.stderr:write` und `System.Log.Logger`, um Fehlern zu loggen. Haskell's Typsystem und reine Funktionen reduzieren die Notwendigkeit von stderr-Einsatz, aber es ist immer noch nützlich bei IO-Operationen und für Command-Line Tools.
 
-Das Konzept des Standardfehler-Ausgabekanals stammt aus den Anfängen des Unix-Betriebssystems und ist ein wichtiger Teil der Unix-Philosophie, Fehler explizit zu behandeln und detaillierte Informationen zur Fehlerursache bereitzustellen.
+In Haskell ist die Implementierung bequem, da `stderr` bereits ein Handle in der `System.IO` Bibliothek ist. Kein manuelles Erstellen von Handles nötig – du schreibst direkt auf das vorhandene Handle.
 
-Alternativ zur Verwendung des Standardfehler-Ausgabekanals kannst du auch Nachrichten über den Standardausgabekanal (engl. "Standard Output") schreiben. Jedoch sollten Fehlermeldungen immer über den Standardfehler-Ausgabekanal ausgegeben werden, um sicherzustellen, dass sie nicht mit anderen Nachrichten vermischt werden und gut sichtbar sind.
+## See Also
+Für mehr Details sieh dir die offizielle Dokumentation an:
+- Haskell's `System.IO` Modul: [https://hackage.haskell.org/package/base/docs/System-IO.html](https://hackage.haskell.org/package/base/docs/System-IO.html)
 
-Die Implementierung des Standardfehler-Ausgabekanals kann je nach System und Programmiersprache variieren. In Haskell wird der Standardfehler-Ausgabekanal durch das Handle `stderr` dargestellt, das Teil des Standard-Prozesses ist und somit immer verfügbar ist.
-
-# Weitere Informationen
-
-Weitere Informationen zur Funktion `hPutStrLn` und zum Umgang mit Fehlern in Haskell findest du in der offiziellen Dokumentation des Moduls `System.IO` und des Pakets `base`.
-
-[Dokumentation zu System.IO](https://www.haskell.org/ghc/docs/latest/html/libraries/base-4.15.0.0/System-IO.html)
-[Dokumentation zu base](https://www.haskell.org/ghc/docs/latest/html/libraries/base-4.15.0.0/)
+Entdecke weitere Funktionen von `System.IO` für erweiterte IO-Operationen.

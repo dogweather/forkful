@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Python: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Trabajar con CSV es una forma de manejar y almacenar datos tabulares en formato de texto plano. Los programadores utilizan esta técnica porque es fácil de leer y escribir, y puede ser utilizado en una amplia variedad de aplicaciones.
+Trabajar con archivos CSV implica manejar archivos de texto que contienen datos separados por comas. Los programadores los usan por su simplicidad y compatibilidad universal para el intercambio de datos.
 
-## Cómo:
+## Cómo hacerlo:
+
+Para leer un CSV en Python:
 
 ```Python
-# Importar el módulo csv
 import csv
 
-# Crear un archivo CSV
-with open('datos.csv', 'w') as archivo:
-    # Crear un escritor de CSV
-    escritor = csv.writer(archivo)
-    # Escribir una fila de datos
-    escritor.writerow(['Nombre', 'Edad', 'País'])
-    # Escribir otra fila de datos
-    escritor.writerow(['Ana', '27', 'España'])
+nombre_archivo = 'ejemplo.csv'
 
-# Leer un archivo CSV
-with open('datos.csv') as archivo:
-    # Crear un lector de CSV
-    lector = csv.reader(archivo)
-    # Recorrer todas las filas del archivo
-    for fila in lector:
-        # Imprimir la fila
+with open(nombre_archivo, mode='r', encoding='utf-8') as archivo:
+    lector_csv = csv.reader(archivo)
+    for fila in lector_csv:
         print(fila)
-
-# Salida:
-# ['Nombre', 'Edad', 'País']
-# ['Ana', '27', 'España']
 ```
 
-## Profundizando:
+Para escribir en un CSV en Python:
 
-### Contexto Histórico:
+```Python
+import csv
 
-CSV significa Comma Separated Values y fue creado originalmente en los años 70 para almacenar datos en hojas de cálculo. Con el tiempo, se convirtió en un formato de archivo ampliamente utilizado para intercambiar datos tabulares entre diferentes sistemas.
+nombre_archivo = 'ejemplo.csv'
+datos = [['nombre', 'pais', 'email'], ['Juan', 'España', 'juan@example.com']]
 
-### Alternativas:
+with open(nombre_archivo, mode='w', newline='', encoding='utf-8') as archivo:
+    escritor_csv = csv.writer(archivo)
+    escritor_csv.writerows(datos)
+```
 
-Algunas alternativas a CSV incluyen formatos tabulares más avanzados como JSON o XML. Sin embargo, CSV sigue siendo popular debido a su simplicidad y capacidad de ser abierto en cualquier editor de texto.
+Salida de ejemplo al leer `ejemplo.csv`:
 
-### Detalles de Implementación:
+```Python
+['nombre', 'pais', 'email']
+['Juan', 'España', 'juan@example.com']
+```
 
-El módulo csv de Python proporciona funciones para leer y escribir archivos CSV. Asegúrate de especificar el modo adecuado (w para escritura, r para lectura) y el delimitador (coma por defecto) al abrir un archivo CSV.
+## Análisis Profundo
 
-## Ver también:
+El formato CSV (Valores Separados por Comas) tiene su origen en los primeros días de la informática personal. A pesar de su antigüedad, sigue siendo relevante por su simplicidad y facilidad de uso con hojas de cálculo. Alternativas modernas incluyen JSON y XML, pero estos son más complejos. Cuando se trabaja con CSV en Python, es importante considerar el manejo de caracteres especiales, como comas en los datos y problemas de codificación, lo que puede requerir un procesamiento más cuidadoso.
 
-- [Página oficial del módulo csv de Python](https://docs.python.org/3/library/csv.html)
-- [Guía completa de trabajo con CSV en Python](https://realpython.com/python-csv/)
+## Ver También
+
+- Documentación oficial Python CSV: https://docs.python.org/3/library/csv.html
+- Guía de pandas para manejo de CSV: https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#csv-text-files
+- Tutorial de w3schools para leer/escribir archivos CSV en Python: https://www.w3schools.com/python/python_csv.asp

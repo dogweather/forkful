@@ -1,7 +1,7 @@
 ---
-title:                "标准错误的编写"
-html_title:           "TypeScript: 标准错误的编写"
-simple_title:         "标准错误的编写"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,20 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 是什么 & 为什么？
-写入标准错误是一种编程技术，用于在程序运行时输出错误信息。程序员使用它来调试和修复错误，以便程序可以更准确地运行。
+## What & Why? (是什么？为什么？)
+写入标准错误（stderr）是输出错误信息或日志到一个专用的错误流。程序员这样做以区分正常输出和错误，有助于调试和日志记录。
 
-# 如何：
-```TypeScript
-console.error("ERROR!"); //输出错误信息到标准错误
+## How to: (如何操作：)
+```typescript
+console.error('错误信息：操作失败');
+
+process.stderr.write('警告：内存不足\n');
+
+// 输出示例：
+// 错误信息：操作失败
+// 警告：内存不足
 ```
 
-在控制台中，你会看到类似于以下的输出：
-```
-ERROR!
-```
+## Deep Dive (深入探究)
+在UNIX哲学中，标准错误流（stderr）是个重要概念，允许程序员将错误信息独立于标准输出（stdout）。除了`console.error`和`process.stderr.write`，Node.js提供事件和流API进行更精细的控制。标准输出可用于命令行工具的管道操作，而标准错误则用来输出错误而不中断管道流。
 
-# 深入探讨：
-1. **历史背景：** 写入标准错误的概念首先由Unix操作系统引入，它可以帮助开发者识别和解决程序运行时的错误。
-2. **替代方法：** 除了使用console.error()函数，程序员也可以使用console.log()来输出错误信息。但是，console.error()输出的内容会被区分为错误级别，使其更易于识别。
-3. **实现细节：** 在TypeScript中，console.error()函数由控制台对象提供，该对象提供了各种用于输出信息的函数。
+## See Also (另请参阅)
+- 深入了解Node.js控制台: [Node.js Console Class](https://nodejs.org/api/console.html#console_class_console)

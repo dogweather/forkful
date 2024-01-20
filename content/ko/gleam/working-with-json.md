@@ -1,7 +1,7 @@
 ---
-title:                "json 작업"
-html_title:           "Gleam: json 작업"
-simple_title:         "json 작업"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON(JavaScript Object Notation)을 다루는 것은 데이터를 교환하고 저장하는 데에 매우 유용합니다. JSON은 기본적으로 속성-값 쌍으로 이루어진 데이터 형식이며, 많은 프로그래밍 언어에서 지원하고 있습니다. 따라서, 프로그래머들은 자주 JSON을 사용하여 데이터를 전달하고 저장하는데 이용합니다.
+## What & Why? (무엇이며 왜?)
+JSON은 데이터 교환 형식입니다. 프로그래머들이 다양한 언어와 플랫폼에서 데이터를 공유하고 구조화된 데이터를 쉽게 처리할 수 있게 해줍니다.
 
-## How to:
-다음은 Gleam에서 JSON을 다루는 예제 코드입니다.
-```Gleam
+## How to: (방법)
+```gleam
 import gleam/json
+import gleam/map
 
-let user = json.encode_user({name: "John", age: 30})
-gleam.log(user.name) // 출력 결과: "John"
+fn main() {
+  // JSON 문자열 파싱
+  let json_str = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}"
+  let json_value = json.decode(json_str)
+  
+  // JSON 값을 Map으로 변환
+  case json_value {
+    Ok(value) -> 
+      let data = json.from(value)
+      case data {
+        map.Map(items) -> 
+          items
+            |> map.to_list
+            |> list.map(fn(tuple) {
+              let (key, value) = tuple
+              json.to_string(value)
+            })
+            |> io.debug
+        _ -> io.debug("Not a JSON Object")
+      }
+    Error(_) ->
+      io.debug("Failed to parse JSON")
+  }
+}
 ```
-위의 코드는 `gleam/json` 모듈을 이용하여 JSON 포맷으로 유저 정보를 인코딩하고, 해당 정보를 출력하는 예제입니다.
 
-## Deep Dive:
-JSON은 2000년대 초에 더글러스 크록포드(Douglas Crockford)에 의해 만들어진 데이터 형식입니다. 이전에는 XML과 같은 다른 데이터 형식들이 더 널리 사용되었지만, JSON은 더 간단하고 사용하기 쉬운 형식으로 인기를 얻게 되었습니다. 현재까지 JSON은 데이터 교환 및 저장을 위한 가장 인기있는 형식 중 하나로 남아있습니다. 또한, 대부분의 프로그래밍 언어에서 지원하는 것도 이러한 인기에 큰 역할을 합니다.
+Sample output:
+```
+["\"John\"", "30", "\"New York\""]
+```
 
-## See Also:
-더 많은 정보를 원하신다면, 다음 링크들을 참고하세요.
-- [JSON.org](https://www.json.org/): JSON 공식 웹사이트
-- [Gleam 공식 문서](https://gleam.run/): Gleam 언어 공식 문서
+## Deep Dive (깊이 알아보기)
+JSON은 JavaScript Object Notation의 약자로, 웹의 성장과 함께 표준 데이터 포맷으로 자리잡았습니다. XML과 비교하여 간결함이 주요 장점입니다. Gleam에서는 `gleam/json` 모듈을 사용하여 JSON 데이터를 처리합니다. 이 모듈은 JSON값을 Gleam 타입으로 바꾸는 데 필요한 함수들을 제공합니다.
+
+## See Also (참고 자료)
+- JSON tutorial: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+- Comparison of JSON and XML: [https://en.wikipedia.org/wiki/JSON#Comparison_with_XML](https://en.wikipedia.org/wiki/JSON#Comparison_with_XML)

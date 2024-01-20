@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con Yaml"
-html_title:           "Rust: Lavorare con Yaml"
-simple_title:         "Lavorare con Yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
+## What & Why?
+Lavorare con YAML significa manipolare dati strutturati facilmente leggibili dall'uomo. I programmatori lo fanno per configurazioni, serializzazione di dati o per interfacciarsi con servizi che lo adottano come Kubernetes o CI/CD tools.
 
-Lavorare con YAML è un modo per organizzare e gestire i dati in una forma leggibile sia per umani che per computer. I programmatori spesso usano YAML per memorizzare configurazioni, dati di installazione e altre informazioni di supporto nei loro progetti.
-
-## Come fare:
-
-Ecco un esempio di come creare una semplice struttura di dati in YAML utilizzando Rust:
+## How to:
+In Rust, per lavorare con YAML usiamo la crate `serde_yaml`. Ecco come serializzare e deserializzare dati:
 
 ```rust
-let yaml = "
-name: John Smith
-age: 30
-hobbies:
-  - hiking
-  - cooking
-job: Programmer
-";
+use serde::{Serialize, Deserialize};
+use serde_yaml;
+
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Config {
+    version: String,
+    features: Vec<String>,
+}
+
+fn main() -> Result<(), serde_yaml::Error> {
+    let data = "
+        version: '1.0'
+        features: 
+            - fast
+            - reliable
+            - secure
+    ";
+
+    // Deserializzazione di una stringa YAML in un'istanza di Config
+    let cfg: Config = serde_yaml::from_str(data)?;
+    println!("{:?}", cfg);
+
+    // Serializzazione di un'istanza di Config in una stringa YAML
+    let serialized = serde_yaml::to_string(&cfg)?;
+    println!("{}", serialized);
+    
+    Ok(())
+}
+```
+Output di deserializzazione: `Config { version: "1.0", features: ["fast", "reliable", "secure"] }`
+Output di serializzazione:
+```yaml
+---
+version: "1.0"
+features:
+  - "fast"
+  - "reliable"
+  - "secure"
 ```
 
-E il risultato sarà:
+## Deep Dive
+YAML, nato all'inizio degli anni 2000, è spesso preferito per la sua leggibilità rispetto a formati come JSON o XML. In Rust, l'ecosistema Serde fornisce strumenti per interagire con vari formati di serializzazione. Alternativamente, ci sono anche altre crate come `yaml-rust`, che non si appoggiano su Serde. Dettagli: `serde_yaml` usa `serde` per la serializzazione dei dati e `linked-hash-map` per mantenere l’ordine delle chiavi del YAML.
 
-```rust
-Name: John Smith
-Age: 30
-Hobbies: [hiking, cooking]
-Job: Programmer
-```
-
-## Approfondimenti:
-
-La sintassi di YAML è stata ispirata da altri formati di dati come XML, JSON e C. Tuttavia, YAML ha come obiettivo principale essere facilmente leggibile per gli umani.
-
-Un'alternativa popolare a YAML è l'utilizzo di file di configurazione in formato JSON. Tuttavia, YAML è spesso preferito per la sua maggiore leggibilità e flessibilità nella struttura dei dati.
-
-Per implementare il supporto per YAML in Rust, è possibile utilizzare la libreria "yaml-rust", che offre funzionalità per la lettura e la scrittura di file YAML.
-
-## Vedi anche:
-
-Per ulteriori informazioni su YAML e come utilizzarlo in Rust, consulta la documentazione ufficiale di Rust e la guida su "yaml-rust" su GitHub.
+## See Also
+- Documentazione di `serde_yaml`: https://docs.rs/serde_yaml/latest/serde_yaml/
+- Serde Guida Ufficiale: https://serde.rs/
+- YAML Spec: https://yaml.org/spec/1.2/spec.html
+- Comparazione delle Crate YAML per Rust: https://lib.rs/crates/categories/encoding_format::yaml

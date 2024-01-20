@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성"
-html_title:           "Go: 테스트 작성"
-simple_title:         "테스트 작성"
+title:                "테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-테스트 코드를 작성하는 것은 프로그래머가 프로그램의 버그를 찾고 수정하는 것을 돕기 위해 하는 것입니다. 테스트 코드는 코드의 올바른 작동을 보장하고 코드의 변경 사항이 예상치 못한 버그를 일으키지 않는지 확인하는 데 사용됩니다.
+## What & Why? (무엇과 왜?)
 
-## 어떻게:
-Go 언어에서의 테스트 코드 작성 방법은 간단합니다. ```Go test``` 명령어를 사용하여 테스트를 실행할 수 있고, 코드의 함수들을 테스트할 수 있습니다. 다음은 Go 언어를 사용하여 테스트 코드를 작성하는 예시입니다:
+테스트 코드 작성은 코드가 의도한 대로 작동하는지 검증하는 과정입니다. 버그를 줄이고, 리팩토링을 안전하게 하며, 코드 품질을 확보하기 위해 프로그래머들이 테스트를 작성합니다.
 
-```
-func Sum(a int, b int) int {
-  return a + b
+## How to: (방법)
+
+Go의 테스트는 간단하며 `testing` 패키지를 사용합니다. `_test.go` 파일에 단위 테스트를 만들어 보세요.
+
+```go
+package sum
+
+import (
+	"testing"
+)
+
+func Sum(a, b int) int {
+	return a + b
 }
 
 func TestSum(t *testing.T) {
-  result := Sum(5, 10)
-  if result != 15 {
-    t.Error("Sum function did not return the expected value")
-  }
+	total := Sum(5, 5)
+	if total != 10 {
+		t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
+	}
 }
 ```
 
-위 코드는 ```Sum``` 함수를 테스트하고, 함수의 결과 값이 예상한 값과 일치하지 않으면 에러를 출력합니다.
+테스트 실행:
 
-## 깊이 들어가기:
-테스트 코드의 역사적인 배경은 소프트웨어 개발의 핵심적인 부분이 되어 왔습니다. 이전에는 테스트를 수동으로하고, 버그를 수정한 다음 다시 테스트를 반복해야 했지만, 현재의 자동화 된 테스트는 시간과 비용을 절약할 수 있습니다. 또한 다른 언어에서도 테스트 코드를 작성할 수 있지만, Go 언어의 간단한 문법과 내장된 테스트 기능은 테스트 작성을 매우 효율적이고 쉽게 만듭니다.
+```shell
+$ go test
+```
 
-## 관련 자료:
-- [Go 언어 공식 문서](https://golang.org/doc/)
-- [Go 언어 공식 GitHub 저장소](https://github.com/golang/go)
-- [Go 언어를 사용한 테스트 코드 작성 예제](https://gobyexample.com/testing)
+출력:
+
+```
+PASS
+ok  	package/sum	0.002s
+```
+
+## Deep Dive (심층 분석)
+
+테스트는 SUnit이라는 Smalltalk 테스팅 프레임워크에서 유래했습니다. Go의 테스트 툴은 `go test` 명령으로 간단하게 실행할 수 있으며, TDD(Test-Driven Development)와 같은 개발 방법론에 적합합니다. `testing` 패키지 외에도 `testify` 같은 서드파티 라이브러리가 있어 다양한 기능을 제공합니다.
+
+## See Also (참고 자료)
+
+- Go 테스트 공식 문서: [https://pkg.go.dev/testing](https://pkg.go.dev/testing)
+- Go by Example 테스트 섹션: [https://gobyexample.com/testing](https://gobyexample.com/testing)
+- Testify 라이브러리: [https://github.com/stretchr/testify](https://github.com/stretchr/testify)

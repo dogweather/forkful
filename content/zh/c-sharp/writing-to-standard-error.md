@@ -1,7 +1,7 @@
 ---
-title:                "标准错误的编写"
-html_title:           "C#: 标准错误的编写"
-simple_title:         "标准错误的编写"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 内容及原因
-写入标准错误是一种程序员常用的技术，它允许将错误消息输出到控制台，而不是被隐藏在程序中。程序员使用它来帮助调试和查找程序中的错误。
+## What & Why? (是什么？为什么？)
+标准错误(stream)是用来输出程序的错误信息。程序员用它来分离错误信息和正常输出，方便调试和日志记录。
 
-## 如何操作
-在C#中，使用 `Console.Error.WriteLine()` 方法来将错误消息输出到标准错误。这个方法接受一个字符串参数，可以是任何你想要输出的消息。接下来，让我们看一下具体的代码示例和输出。
-
+## How to (如何做)：
 ```C#
-try
+using System;
+
+class Program
 {
-    // some code that may throw an exception
+    static void Main()
+    {
+        Console.Error.WriteLine("出现错误：无效的操作。");
+        Console.WriteLine("这是正常的输出。");
+    }
 }
-catch (Exception ex)
-{
-    Console.Error.WriteLine("错误消息：" + ex.Message);
-}
 ```
-
-输出：
-
+输出示例：
 ```
-错误消息：无效的操作数。
+这是正常的输出。
+出现错误：无效的操作。
 ```
+注意错误消息通常在命令行或日志文件中显示为红色。
 
-## 深入探讨
-写入标准错误最初是由Unix系统引入的，旨在通过控制台输出错误消息来帮助调试。如今，它已经成为许多编程语言的标准功能，包括C#。除了使用 `Console.Error.WriteLine()` 方法之外，还可以使用其他方法来实现写入标准错误，比如使用 `TraceListener` 类或 `EventLog` 类。
+## Deep Dive (深入了解)
+历史上，把错误信息写到标准错误可以让用户关注重要的问题，保持标准输出的清晰。备选方式包括使用日志框架。实现细节方面，`Console.Error`是`System.IO.TextWriter`的实例，和标准输出`Console.Out`分开。
 
-## 相关资料
-想要了解更多关于写入标准错误的信息，可以参考以下资源：
-
-- [Microsoft官方文档：Console类](https://docs.microsoft.com/zh-cn/dotnet/api/system.console?view=netcore-3.1)
+## See Also (另请参阅)
+- [Console.Error 属性 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.console.error)
+- [了解 .NET 中的 logging - Microsoft Docs](https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/logging/?view=aspnetcore-6.0)

@@ -1,6 +1,6 @@
 ---
 title:                "כתיבת בדיקות"
-html_title:           "C: כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "C"
 category:             "C"
@@ -10,35 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הכתיבת בדיקות היא כתיבת קוד המבדיל בין קוד נכון לקוד שגוי. הסיבה שתכנתנים עושים זאת הינה כי זה מאפשר להם לזהות ולתקן שגיאות מוקדם בעתיד ולהבטיח תמיכה רחבה יותר בתוכניות שלהם.
+## What & Why? (מה ולמה?)
+כתיבת בדיקות זה תהליך שבו מנסחים מקרי ניסיון כדי לוודא את תקינות הקוד. מתכנתים עושים זאת כדי לקלוט באגים מוקדם ולשמור על איכות התוכנה.
 
-## איך לעשותזה
-הנה דוגמה של כיצד לכתוב בדיקות בשפת C:
-
+## How to: (איך לעשות:)
+בסיסי:
 ```C
-#include <stdio.h>
+#include <assert.h>
+
+void addTest() {
+    int x = 5, y = 10;
+    assert(x + y == 15); // נכון!
+    assert(x + y == 20); // יקרוס בזמן ריצה אם הטענה לא תקפה.
+}
 
 int main() {
-    // כתיבת תוכנית המדפיסה את המספר שלאחר מכן תכפיל אותו בעצמו
-    int num = 5;
-    int result = num * num;
-    printf("התוצאה היא: %d", result);
-
+    addTest(); // ריצת טסט
     return 0;
 }
 ```
-
-הפלט המתואר הינו:
+סיפוק:
 ```
-התוצאה היא: 25
+Assertion failed: x + y == 20, file example.c, line 6
 ```
 
-## ירידה לעומק
-תיאור המקור היסטורי של כתיבת בדיקות בשפת C נמצא בסיפור מעניין של הנדסאי החשמל ויליאם גילבר.
-אפשרויות נוספות לכתיבת בדיקות כוללות ספריית האסמבלר Unity וספריית הבדיקות CppUnit.
-מימוש הפונקציות הרלבנטיות לכתיבת בדיקות הינו נושא של בדיקה רחבה לתלמידי תכנות.
+מתקדם:
+```C
+#include <stdio.h>
 
-## ראה גם
-- [מדריך לבדיקות קאפי](https://github.com/catchorg/Catch2)
-- [ספריית GTest לכתיבת קוד בדיקות בשפת C++](https://github.com/google/googletest)
+void testDivision(double (*divFunc)(double, double)) {
+    if(divFunc(10.0, 2.0) == 5.0) {
+        printf("Test passed!\n");
+    } else {
+        printf("Test failed!\n"); 
+    }
+}
+
+double divide(double a, double b) {
+    return a / b;
+}
+
+int main() {
+    testDivision(divide); // ריצת טסט לפונקציה divide
+    return 0;
+}
+```
+סיפוק:
+```
+Test passed!
+```
+
+## Deep Dive: (צלילה עמוקה)
+ב-assertions כבר היו בשימוש בשנות ה-70 כחלק משפות תכנות. במהלך השנים, פיתחו מסגרות טסטים מתקדמות כמו JUnit ל-Java ו-CppUnit ל-C++. ב-C, אפשר להשתמש במסגרות כמו cmocka ו-Unity. פרטים נוספים כוללים הבנת הצורך במודולריות ופיצול קוד ליחידות בדיקה.
+
+## See Also: (ראו גם)
+- [CUnit - A Unit Testing Framework for C](http://cunit.sourceforge.net/)
+- [cmocka – unit testing framework](https://cmocka.org/)
+- [Unity - Simple Unit Testing for C](https://www.throwtheswitch.org/unity)
+- [Google Test - Google Testing and Mocking Framework](https://github.com/google/googletest)

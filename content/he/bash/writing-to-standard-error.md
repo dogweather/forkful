@@ -1,7 +1,7 @@
 ---
-title:                "כתיבה לתקליטאי הפעולה התקניים"
-html_title:           "Bash: כתיבה לתקליטאי הפעולה התקניים"
-simple_title:         "כתיבה לתקליטאי הפעולה התקניים"
+title:                "כתיבה לפלט השגיאה הסטנדרטי"
+html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
+simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,14 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-כאשר מתכנתים מסתכלים על קוד שהם כתבו, הם יכולים לראות מספר שורות של קוד שנראות כאילו הם מדפיסים שגיאות. אבל למעשה, הם מדפיסים את הפלט לפלט התקן הכללי של השגיאות, ולא לפלט הרגיל של התוכנית. הסיבה לעשות זאת היא כדי להפוך לקל לנתח ולאתר שגיאות כאשר הקוד מתבצע.
+## מה ולמה?
+כתיבה ל-Standard Error (stderr) מאפשרת לנו לשדר הודעות שגיאה ולוגים בנפרד מהפלט הרגיל. מתכנתים עושים זאת כדי להפריד בין מידע רגיל למידע על תקלות, ולאפשר ניתוח תקלות יעיל יותר.
 
-כיצד?
-תחת קוראיות, תוכל למצוא דוגמאות קוד ופלט לפי הסדר, ואל תשכח לסגור אותם ברצועת קוד דו־פעמית ```Bash ... ```.
+## איך לעשות:
+```Bash
+#!/bin/bash
+# הדפסה ל-stdout
+echo "This is a normal message."
 
-עיון עמוק:
-עיון עמוק על המכנה והפצה של תקני העתקות, אפשרויות ופרטים ממשיים נוספים על כתיבת פלט לפלט הרגיל יכול לעזור למתכנתים להבין טוב יותר את שיטת השגיאות.
+# הדפסה ל-stderr
+echo "This is an error message." >&2
+```
+תוצאת דוגמה:
+```
+This is a normal message.
+This is an error message.
+```
+פלט השגיאה יופיע בטרמינל אבל ניתן להפנות אותו נפרד על ידי הפניה `2>`.
 
-ראה גם:
-- [הוראות ומדריכים רשמיים של Bash](https://www.gnu.org/software/bash/manual/bash.html)
+## עיון מעמיק:
+הגדרת ה-standard error ב-UNIX התפתחה כחלק מפילוסופיית הפילוג בין ערוצי זרימת הנתונים שונים. לחלופין, ניתן להשתמש בפקודות כמו `logger` להדפסות ל-log system או בפקודות כמו `>&` להפניה משולבת של stdout וstderr. שימוש נכון ב-stderr מאפשר יצירת סקריפטים שהפלט שלהם יכול להיות מסונן ולשמר את הערות השגיאות לניתוח נפרד.
+
+## ראה גם:
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
+- [GNU Bash documentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [The Unix Programming Environment by Kernighan and Pike](https://en.wikipedia.org/wiki/The_Unix_Programming_Environment)

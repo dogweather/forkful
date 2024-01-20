@@ -1,7 +1,7 @@
 ---
-title:                "Json 작업하기"
-html_title:           "Ruby: Json 작업하기"
-simple_title:         "Json 작업하기"
+title:                "JSON 다루기"
+html_title:           "Arduino: JSON 다루기"
+simple_title:         "JSON 다루기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ruby로 JSON 다루기
+## What & Why? (무엇과 왜?)
+JSON은 데이터 교환 포맷입니다. 프로그래머들은 구조화된 데이터를 저장하고 통신하기 위해 JSON을 사용합니다.
 
-## 무엇이며 왜?: 
-
-JSON 은 웹 개발에서 많이 사용되는 형식으로서 데이터를 저장하고 전송하는 데에 사용됩니다. 프로그래머들은 데이터를 보다 간결하게 처리하기 위해 JSON 을 사용합니다. 
-
-## 하는 방법:
-
-다음 예제는 Ruby 에서 JSON 을 다루는 방법을 보여줍니다. 
-
+## How to: (어떻게 하나요?)
 ```Ruby
 require 'json'
 
-# JSON 데이터를 해시로 변환하기
-json_data = '{"name": "John", "age": 30}'
-hash_data = JSON.parse(json_data)
-puts hash_data["name"] # "John"
+# JSON 생성하기
+user = { name: "Kim", age: 30, city: "Seoul" }
+user_json = user.to_json
+puts user_json # => {"name":"Kim","age":30,"city":"Seoul"}
 
-# 해시를 JSON 형식으로 변환하기
-hash = {name: "Emily", age: 25}
-json = JSON.generate(hash)
-puts json # {"name":"Emily","age":25}
+# JSON 파싱하기
+parsed_user = JSON.parse(user_json)
+puts parsed_user["name"] # => Kim
 ```
 
-## 깊이 들어가기:
+## Deep Dive (심층 분석)
+JSON은 JavaScript Object Notation의 약자이고, 처음에는 JavaScript에서 데이터를 객체로 나타내기 위해 만들어졌습니다. XML과 같은 다른 데이터 포맷에 비해 더 읽기 쉽고 가벼운게 특징입니다. Ruby에서 `json` 모듈을 사용하면 간편하게 JSON을 생성하고 파싱할 수 있습니다. C언어로 작성된 확장 모듈이기 때문에 성능도 뛰어납니다.
 
-1. JSON 의 역사: C 언어의 발명가 중 한 명이던 Douglas Crockford 가 2001년에 발표한 형식입니다. 
-2. 대안: XML, YAML 과 같은 다른 데이터 형식들도 JSON 과 비슷한 용도로 사용할 수 있지만, JSON 이 가장 간결하고 빠른 처리를 제공합니다.
-3. 구현 세부사항: Ruby 에서는 ```json``` 패키지를 사용하여 JSON 데이터를 처리할 수 있습니다. 
-
-## 더 알아보기:
-
-- [JSON 작동 원리](https://www.json.org/json-ko.html)
-- [Ruby 공식 문서 - JSON 처리](https://ruby-doc.org/stdlib-2.7.1/libdoc/json/rdoc/JSON.html)
+## See Also (참고 자료)
+- JSON 표준: [JSON](http://www.json.org/json-en.html)
+- JSON과 XML 비교: [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "Успішна робота з json"
-html_title:           "Elixir: Успішна робота з json"
-simple_title:         "Успішна робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-JSON (JavaScript Object Notation) - це легкий формат обміну даними, який широко використовується при передачі даних між програмами. Він часто використовується для передачі даних з сервера до клієнта та обернене. Багато програмістів використовують JSON, оскільки він легко читається та розуміється як люди, так і комп'ютери.
+## Що та чому?
+JSON - формат обміну даними. Програмісти використовують JSON, тому що він легкий, читабельний та широко підтримується мовами програмування, у тому числі Elixir.
 
-## What & Why?
+## Як це зробити:
+Встановлюємо бібліотеку `jason`:
 
-Робота з JSON - це про збереження та передачу даних у легкому та зрозумілому форматі. Такий формат дуже зручний для обміну даними між різними програмами та платформами. Програмісти використовують JSON, оскільки це дозволяє їм легко та швидко передавати дані без необхідності використання важких форматів.
+```elixir
+# Додайте в mix.exs
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
+```
 
-## How to:
+Серіалізація (з Elixir у JSON):
 
-```Elixir
-# Створення об'єкту JSON
-data = %{ "name" => "John", "age" => 27 }
-
-# Конвертація об'єкту у формат JSON
-json = Jason.encode(data)
-
-# Вивід результату
+```elixir
+# Код
+map = %{name: "Олексій", age: 28}
+json = Jason.encode!(map)
 IO.puts json
+
+# Вивід
+{"age":28,"name":"Олексій"}
 ```
 
-Приклад виводу:
+Десеріалізація (з JSON у Elixir):
+
+```elixir
+# Код
+json = "{\"name\":\"Олексій\",\"age\":28}"
+map = Jason.decode!(json)
+IO.inspect map
+
+# Вивід
+%{"age" => 28, "name" => "Олексій"}
 ```
-{"name": "John", "age": 27}
-```
 
-## Deep Dive:
+## Поглиблене занурення:
+Historically, JSON (JavaScript Object Notation) evolved from the need for a stateless, easy-to-parse data interchange format. It replaced XML in many applications for its simplicity. In Elixir, the `jason` library is a popular choice, though alternatives like `poison` and `jsx` exist. While `jason` prioritizes performance and compliance with the JSON standards, alternatives might offer different trade-offs.
 
-JSON був створений лабораторією MIT в 2001 році та швидко став популярним серед програмістів. Він був запроваджений як простий та легкий формат обміну даними для веб-додатків. У порівнянні з альтернативами, такими як XML, JSON є легшим та більш зрозумілим для людей.
+Технічно, працюючи з JSON в Elixir, ми маємо справу з трансформацією еліксирських структур даних в строки JSON та назад. Elixir використовує протоколи, як `Jason.Encoder`, для серіалізації структур, і подає красиві помилки, коли не може серіалізувати невідомі типи.
 
-Для роботи з JSON у Elixir, наявні різні бібліотеки, такі як Poison та Jason. Вони надають зручний спосіб створення та розбору об'єктів JSON. Крім того, Elixir має вбудований модуль Json, який також може бути використаний для роботи з JSON.
-
-## See Also:
-
-- [Офіційний сайт JSON](https://www.json.org/)
-- [Документація по бібліотеці Poison](https://hexdocs.pm/poison/readme.html)
-- [Документація по бібліотеці Jason](https://hexdocs.pm/jason/readme.html)
+## Дивіться також:
+- [HexDocs Jason Library](https://hexdocs.pm/jason/Jason.html)

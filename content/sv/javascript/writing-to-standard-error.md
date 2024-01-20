@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva till standardfel"
-html_title:           "Javascript: Att skriva till standardfel"
-simple_title:         "Att skriva till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+`Standard error` (stderr) är en output-kanal för att visa felmeddelanden och loggar. Programmerare använder den för att skilja vanlig data från fel, vilket är användbart för felsökning och loggning.
 
-Att skriva till standard error är en vanlig praxis bland programmerare för att skicka felmeddelanden eller information om körningen av en kod till konsolen. Det är ett viktigt sätt att kommunicera med användare av en applikation eller programvara och att felsöka eventuella fel som kan uppstå.
+## How to:
+Skriv till stderr med `console.error()`.
 
-## Hur to:
-
-Enklaste sättet att skriva till standard error i Javascript är att använda console.error() funktionen. Här är ett exempel på hur man kan använda den:
-
-```Javascript
-console.error("Ett fel har uppstått!");
-// Output: Ett fel har uppstått!
+```javascript
+console.error('Det här är ett felmeddelande!');
 ```
 
-Funktionen accepterar även variabler och uttryck som argument:
-
-```Javascript
-let num = 5;
-
-console.error("Variabeln num är nu: " + num);
-// Output: Variabeln num är nu: 5
+Output i terminal:
+```
+Det här är ett felmeddelande!
 ```
 
-## Djupdykning:
+Använd `process.stderr.write()` för att skriva utan newline-tecken.
 
-Att skriva till standard error är inspirerat av Unix-kommandot "stderr", som används för att skicka felmeddelanden till konsolen istället för standard output ("stdout"). Det finns även andra sätt att skicka felmeddelanden, såsom att använda try-catch-block i Javascript.
+```javascript
+process.stderr.write('Felmeddelande utan newline');
+```
 
-Det är viktigt att använda rätt typ av utskrift beroende på informationen som ska skickas. Standard error borde endast användas för felmeddelanden och inte för vanliga meddelanden eller loggar, som bör skickas till standard output.
+Output i terminal:
+```
+Felmeddelande utan newline%
+```
 
-## Se även:
+## Deep Dive
+Stderr härstammar från Unix och C systemanrop. Det är filnummer 2, medan standard output (stdout) är 1. Alternativ till stderr inkluderar loggfiler och externa loggtjänster. Implementation av stderr i Node.js används genom `process`-objektet som en Writable Stream.
 
-- [console.error() i MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Skicka felmeddelanden med console.error i Javascript](https://www.w3schools.com/js/js_errors.asp)
-- [Skillnaden mellan standard output och standard error i Unix](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))
+## See Also
+- Node.js documentation on console.error() (https://nodejs.org/api/console.html#console_console_error_data_args)
+- Node.js process.stderr (https://nodejs.org/api/process.html#process_process_stderr)
+- Stream handling in Node.js (https://nodejs.org/api/stream.html)

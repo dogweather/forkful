@@ -1,7 +1,7 @@
 ---
-title:                "Das Schreiben einer Textdatei"
-html_title:           "Rust: Das Schreiben einer Textdatei"
-simple_title:         "Das Schreiben einer Textdatei"
+title:                "Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Schreiben einer Textdatei ist eine gängige Aufgabe für Programmierer:innen. Es bedeutet einfach, dass wir einen Text in einer Datei speichern, damit er später von unserem Code gelesen oder bearbeitet werden kann. Programmierer:innen schreiben Textdateien, um Daten zu speichern, Konfigurationen zu erstellen oder Ergebnisse von Programmen zu speichern.
+## What & Why?
+Schreiben in eine Textdatei bedeutet, Daten in lesbarem Format zu speichern. Programmierer machen das, um Daten dauerhaft zu sichern und für Menschen und Programme leicht zugänglich zu machen.
 
-## Anleitung:
-Hier ist ein Beispiel in Rust, wie man eine Textdatei mit einem einfachen Textinhalt erstellt:
+## How to:
 ```Rust
 use std::fs::File;
 use std::io::Write;
 
-fn main() {
-    let mut file = File::create("output.txt").expect("Datei konnte nicht erstellt werden.");
-    file.write_all(b"Hallo, Welt!").expect("Konnte Inhalt nicht schreiben.");
+fn main() -> std::io::Result<()> {
+    let mut file = File::create("beispiel.txt")?;
+    file.write_all(b"Hallo, Rustaceans!")?;
+    Ok(())
 }
 ```
-
-Die letzte Zeile schreibt den Text "Hallo, Welt!" in die Datei "output.txt" und gibt eine Fehlermeldung aus, wenn etwas schief geht. Um den Inhalt einer Textdatei zu lesen, können wir die Funktion ```File::open``` verwenden:
-```Rust
-use std::fs::File;
-use std::io::prelude::*; // Für die Funktion `read_to_string`
-
-fn main() {
-    let mut file = File::open("input.txt").expect("Datei konnte nicht geöffnet werden.");
-    let mut content = String::new();
-    file.read_to_string(&mut content).expect("Konnte Inhalt nicht lesen.");
-    
-    println!("{}", content); // Gibt den Inhalt der Datei auf der Konsole aus.
-}
+Output in `beispiel.txt`:
+```
+Hallo, Rustaceans!
 ```
 
-## Tiefer Einblick:
-Das Schreiben von Textdateien ist eine grundlegende und wichtige Fähigkeit für Programmierer:innen. Es gibt jedoch auch alternative Methoden, um Daten zu speichern, z.B. das Schreiben in eine Datenbank oder das Verwenden von JSON-Dateien. Die Implementierung von Textdateien in Rust ist dank der Standardbibliothek ```std::fs``` relativ einfach und intuitiv. Es ist auch möglich, mit der externen Bibliothek ```serde``` automatisch komplexe Datentypen in Textdateien zu serialisieren und zu deserialisieren.
+## Deep Dive
+Textdateien schreiben ist seit den Anfängen von Unix ein grundlegender Bestandteil der Programmierung. Alternativen umfassen Datenbanken oder Binärdateien, die Struktur und Performance verbessern können. In Rust nutzt man `std::fs` und `std::io` für Dateioperationen. Dank Error-Handling über das `Result`-Typ sind Operationen sicher und fehlertolerant.
 
-## Weitere Informationen:
-- [Rust Dokumentation zu Dateien und Verzeichnissen](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust Standardbibliothek: Schreiben in Dateien](https://doc.rust-lang.org/std/fs/struct.File.html#method.write_all)
-- [Rust Standardbibliothek: Lesen von Dateien](https://doc.rust-lang.org/std/fs/struct.File.html#method.read_to_string)
-- [serde Bibliothek](https://docs.rs/serde/1.0.118/serde/index.html)
+## See Also
+- [The Rust Programming Language – File I/O](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
+- [Rust by Example – File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+- [Rust std::fs Module](https://doc.rust-lang.org/std/fs/index.html)

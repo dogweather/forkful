@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Haskell recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,65 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with YAML is a common practice among programmers as it allows for easy data serialization and configuration management. YAML is a human-readable data format that is used to represent complex data structures in a simple and concise manner. It is especially useful for configuring applications, storing data, and transferring data between systems.
+YAML (YAML Ain't Markup Language) is a human-friendly data serialization format. Programmers use it for configuration files and data exchange because of its readability and simplicity.
 
 ## How to:
 
-To work with YAML in Haskell, you can use the popular library "yaml" which provides functions for reading, writing, and parsing YAML data. First, make sure to have the "yaml" library installed by running the command `cabal install yaml` in your terminal.
+To work with YAML in Haskell, use the `yaml` package. First, install it:
 
-Next, import the library in your Haskell file using the following statement: `import Data.Yaml`.
-
-### Parsing YAML
-
-To parse a YAML file, use the `decodeFile` function which takes a file path as its argument and returns a `Data.Maybe` type which is either `Just` the parsed YAML data or `Nothing` if there was an error.
-
-```Haskell
-import Data.Yaml
-
-main = do
-    result <- decodeFile "my-data.yaml"
-    case result of
-        Just data -> print data
-        Nothing -> putStrLn "Error parsing YAML"
+```shell
+cabal install yaml
 ```
 
-### Writing YAML
+Define a data structure, and then encode and decode YAML:
 
-To write YAML data to a file, use the `encodeFile` function which takes a file path and the data to be written as arguments.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.YAML
+import Data.ByteString (ByteString)
 
-```Haskell
-import Data.Yaml
+-- Define a data structure
+data Person = Person
+    { name :: String
+    , age  :: Int
+    } deriving (Show)
 
+-- A sample Person instance
+examplePerson :: Person
+examplePerson = Person "Chris" 30
+
+-- Serialization (Haskell to YAML)
+yamlEncode :: Person -> ByteString
+yamlEncode = encode
+
+-- Deserialization (YAML to Haskell)
+yamlDecode :: ByteString -> Either String Person
+yamlDecode = decodeThrow
+
+main :: IO ()
 main = do
-    let data = ["Haskell", "YAML", "Tutorial"]
-    encodeFile "my-data.yaml" data
+    -- Encode to YAML and print the result
+    putStrLn "Encoded YAML:"
+    print $ yamlEncode examplePerson
+  
+    -- Example YAML data
+    let exampleYAML = "name: Alex\nage: 25\n"
+  
+    -- Decode from YAML and print the result
+    putStrLn "Decoded Haskell:"
+    print $ yamlDecode exampleYAML
 ```
 
-### Working with YAML data
+Sample output for encoding and decoding:
 
-YAML data is represented in Haskell as a `Value` type, which is a data structure that can be accessed using normal Haskell pattern matching and functions. For example, to access a key-value pair in a YAML mapping, you can use the `lookup` function.
-
-```Haskell
-import Data.Yaml
-
-main = do
-    result <- decodeFile "my-data.yaml"
-    case result of
-        Just (Object mapping) -> print $ lookup "key" mapping
-        Nothing -> putStrLn "Error parsing YAML"
+```plaintext
+Encoded YAML:
+"age: 30\nname: Chris\n"
+Decoded Haskell:
+Right (Person {name = "Alex", age = 25})
 ```
 
 ## Deep Dive
 
-YAML was first introduced in 2001 as a more human-readable alternative to other serialization formats such as XML and JSON. It is based on the YAML Ain't Markup Language (YAML) specification, which is a data serialization language designed for easy configuration and data exchange.
-
-As an alternative to YAML, some programmers use JSON or TOML. TOML is a newer configuration file format that is aimed at making configuration files more readable and easier to edit.
-
-The "yaml" library in Haskell is implemented using the "libyaml" C library, which provides high-performance and efficient parsing, emitting, and parsing of YAML data.
+YAML started in 2001, targeting data serialization and human readability. It's a popular choice for config files, like Docker Compose and GitHub Workflows. Alternatives include JSON and XML, but YAML's minimal syntax is often preferred for its clean appearance. When implementing YAML in Haskell, the key is defining data structures mapping to YAML's key-value pairs. The `yaml` package, built atop the libyaml C library, provides solid performance and compatibility.
 
 ## See Also
 
-- [YAML.org](https://yaml.org/)
-- [Hackage: yaml library](https://hackage.haskell.org/package/yaml)
-- [TOML](https://toml.io/)
-- [JSON](https://www.json.org/)
+- Official YAML website: [https://yaml.org](https://yaml.org)
+- `yaml` package on Hackage: [https://hackage.haskell.org/package/yaml](https://hackage.haskell.org/package/yaml)
+- `aeson` package, for JSON in Haskell which shares similarities: [https://hackage.haskell.org/package/aeson](https://hackage.haskell.org/package/aeson)

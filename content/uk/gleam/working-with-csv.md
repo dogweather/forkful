@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Gleam: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+## What & Why? / Що таке і навіщо?
+CSV - це простий формат файлів для збереження табличних даних. Програмісти використовують його, щоб легко обмінюватися даними між різними програмами.
 
-Робота з CSV - це процес обробки та маніпулювання даними у форматi Comma-Separated Values. Програмiсти зазвичай працюють з CSV, оскільки цей формат є загальноприйнятим для обміну даними між різними програмами та системами.
+## How to: / Як робити:
+```gleam
+import gleam/csv.{decode, encode}
+import gleam/list
+import gleam/io
 
-Як?
+fn main() {
+  let data = "name,age\nAlice,30\nBob,35"
+  let rows = decode(data) // Розбір CSV
+  case rows {
+    Ok(rows) -> io.print(rows |> list.map(fn(row) { row[0] })) // Виведення імен
+    Error(_) -> io.println("Помилка обробки CSV.")
+  }
 
-Нижче наводяться приклади коду та вихідних даних, які допоможуть вам розібратися, як працювати з CSV в Gleam.
-
-```Gleam
-import csv
-
-my_file = csv.read("my_data.csv")
-row_count = my_file |> List.length
+  let users = [["name", "age"], ["Alice", "30"], ["Bob", "35"]]
+  let csv_data = encode(users) // Кодування в CSV
+  case csv_data {
+    Ok(csv) -> io.print(csv)  // Виведення CSV-рядка
+    Error(_) -> io.println("Не вдалося створити CSV.")
+  }
+}
+```
+Sample Output:
+```
+Alice
+Bob
+name,age
+Alice,30
+Bob,35
 ```
 
-Ви можете отримати доступ до окремих рядків чи колонок даних, використовуючи функції утиліти CSV, наприклад `row["column_name"]` або `get_column(file, "column_name")`.
+## Deep Dive / Глибоке занурення
+CSV є віддзеркаленням електронних таблиць і з'явився з часів перших персональних комп'ютерів. Альтернативи, такі як JSON чи XML, забезпечують більше можливостей для структурування, але CSV залишається популярним через свою простоту. Gleam обробляє CSV без зовнішніх бібліотек, що спрощує використання.
 
-Глибше занурення
-
-CSV (Comma-Separated Values) вперше з'явився в 1972 році, коли компанія IBM використовувала його для обміну даними між електронними таблицями. Це стало популярним форматом для переміщення та обробки даних, оскільки він досить простий та універсальний.
-
-Існують інші формати для зберігання даних, які можуть бути більш потужними та гнучкими, такі як JSON або XML. Однак, використання CSV залишається популярним завдяки його простоті та широкій підтримці серед програм.
-
-Приведений приклад використання `csv.read`, що зображений в розділі "Як?", є лише одним із багатьох способів роботи з CSV в Gleam. Ви можете також записувати дані у CSV файл та використовувати функції для додавання рядків та стовпців.
-
-Дивіться також
-
-Тут перелічені деякі корисні посилання для отримання більш детальної інформації про роботу з CSV у Gleam:
-
-- Офіційна документація Gleam з розділом про CSV: https://gleam.run/documentation/stdlib/csv
-- Детальний огляд роботи з CSV у Gleam: https://medium.com/@gleam_lang/csv-handling-in-gleam-10bd1ded4c00
-- Приклади коду для роботи з CSV у Gleam: https://github.com/search?q=language%3Agleam+csv&type=code
+## See Also / Дивіться також
+- Про CSV на Вікіпедії: [uk.wikipedia.org/wiki/CSV](https://uk.wikipedia.org/wiki/CSV)
+- Звідки взявся CSV: [history-computer.com/](https://history-computer.com/)
+- JSON: [www.json.org/json-uk.html](http://www.json.org/json-uk.html)
+- XML: [w3schools.com/xml/](https://www.w3schools.com/xml/)

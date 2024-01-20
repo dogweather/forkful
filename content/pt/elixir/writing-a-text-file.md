@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "Elixir: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+## O Que & Porquê?
 
-Escrever um arquivo de texto é o processo de criar um arquivo contendo somente texto puro, sem nenhuma formatação especial. Programadores frequentemente escrevem arquivos de texto para armazenar dados simples, como nomes de usuários ou configurações de aplicativos.
+Escrever um arquivo de texto é registrar dados em um arquivo que qualquer editor de texto pode abrir. Programadores fazem isso para salvar configurações, dados de output ou para criar scripts utilizáveis.
 
 ## Como Fazer:
 
 ```elixir
-# Abrindo um arquivo para escrita
-arquivo = File.open("meu_arquivo.txt", [:write])
+# Cria ou sobre-escreve um arquivo chamado "exemplo.txt" com o conteúdo "Olá, Elixir!"
 
-# Escrevendo uma linha de texto
-File.write(arquivo, "Olá, mundo!")
+File.write!("exemplo.txt", "Olá, Elixir!\n")
 
-# Escrevendo múltiplas linhas de texto
-File.write(arquivo, "Primeira linha\nSegunda linha\nTerceira linha")
+# Para acrescentar conteúdo em vez de sobre-escrever, use `File.write/3` com o modo `:append`
 
-# Fechando o arquivo
-File.close(arquivo)
+File.write("exemplo.txt", "Mais texto.", [:append])
 ```
 
-## Deep Dive:
+### Exemplo de Output:
 
-Escrever arquivos de texto é um recurso muito útil e simples em programação, e tem sido usado há décadas. Existem muitas alternativas, com diferentes linguagens e bibliotecas oferecendo maneiras diferentes de escrever arquivos de texto. O Elixir, em particular, possui a função `File.write` que facilita muito esse processo.
+Depois de rodar o código acima, "exemplo.txt" terá o seguinte conteúdo:
+
+```
+Olá, Elixir!
+Mais texto.
+```
+
+## Mergulho Profundo:
+
+Historicamente, escrever em arquivos é um conceito que data da época em que os programas eram gravados em fita. No Elixir, a abstração para IO permite escrever em arquivos de maneira direta e funcional. Alternativas incluem usar streams para lidar com grandes volumes de dados ou bancos de dados para persistência a longo prazo. Quando se trata da implementação, Elixir trata arquivos como processos, o que significa que escrever para arquivos é efetivamente uma comunicação de mensagens.
 
 ## Veja Também:
 
-- [Documentação do Elixir sobre a função File.write](https://hexdocs.pm/elixir/File.html#write/2)
-- [Exemplos de escrita de arquivos em Elixir](https://stackoverflow.com/questions/3222970/how-to-write-text-file-using-elixir)
+- [Documentação oficial do módulo File do Elixir](https://hexdocs.pm/elixir/File.html)
+- [Guia Introdutório de Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Discussões sobre manipulação de arquivo com Elixir no Elixir Forum](https://elixirforum.com/search?q=file%20handling)

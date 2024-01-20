@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Testowanie kodu to proces sprawdzania jego poprawności i działania. Programiści robią to, aby upewnić się, że ich kod działa prawidłowo i aby uniknąć błędów w przyszłości.
+## What & Why?
+Testowanie kodu to proces sprawdzania, czy nasze skrypty działają poprawnie. Programiści testują, aby zapobiec błędom, oszczędzać czas i upewnić się, że nowe zmiany nie psują istniejących funkcji.
 
-## Jak to zrobić:
-Poniżej znajdują się przykłady kodu i wyniku, które wyjaśnią, jak pisać testy w Bash. 
-
-```Bash 
-#!/bin/bash
-
-# Przykładowy skrypt, którego wynik chcemy przetestować
-# Ten skrypt po prostu wyświetla "Hello World"
-
-echo "Hello World"
-```
+## How to:
+Testowanie w Bashu często odbywa się przez porównanie oczekiwanego wyniku z tym, który zwraca skrypt. Użyj `test` albo nawiasów kwadratowych `[]`.
 
 ```Bash
 #!/bin/bash
+# test_example.sh
 
-# Skrypt testowy
-# Sprawdzamy, czy wynik wyświetla się poprawnie
+expected_output="Hello, World!"
+actual_output=$(echo "Hello, World!")
 
-EXPECTED="Hello World" 
-# zmienna z oczekiwanym wynikiem
-
-OUTPUT=$(./hello_world.sh)
-# przypisujemy wynik skryptu do zmiennej
-
-if [ "$OUTPUT" == "$EXPECTED" ]; then 
-    # sprawdzamy, czy wyniki są takie same
-    echo "Test passed!" 
-    # jeśli tak, wyświetlamy komunikat o poprawnym teście
+# Testowanie porównaniem stringów
+if [ "$expected_output" == "$actual_output" ]; then
+    echo "Test passed!"
 else
-    echo "Test failed!" 
-    # jeśli nie, wyświetlamy komunikat o nieudanym teście
+    echo "Test failed!"
 fi
 ```
 
-## Deep Dive:
-Testowanie kodu jest częścią rozwoju oprogramowania, które powstało na początku lat 50. XX wieku. Alternatywą dla pisania testów w Bash jest użycie narzędzia do automatyzacji testów, np. Selenium. W Bash możemy pisać testy jednostkowe dla pojedynczych funkcji w skrypcie lub testować całe skrypty na różnych systemach operacyjnych.
+Wykonanie skryptu wyświetli `Test passed!` jeśli test się powiedzie.
 
-## Zobacz także:
-- [SeleniumHQ](https://www.seleniumhq.org/) - narzędzie do automatyzacji testów dla stron internetowych.
-- [Testowanie jednostkowe w Bash](https://github.com/lehmannro/assert.sh) - biblioteka pozwalająca na pisanie testów jednostkowych w Bash.
+## Deep Dive
+W Bashu nie ma wbudowanego zaawansowanego frameworka testowego, ale istnieją narzędzia jak `shunit2` czy `bats` ułatwiające proces. Historia testowania w Bashu sięga jego początków, gdyż nawet proste skrypty potrzebują weryfikacji. Najprostsze formy to porównania wyników lub statusów wyjścia.
+
+## See Also
+- Bash Automated Testing System (BATS): https://github.com/bats-core/bats-core
+- shUnit2 - xUnit based unit testing for shell scripts: https://github.com/kward/shunit2
+- Bash guide for beginners: https://tldp.org/LDP/Bash-Beginners-Guide/html/

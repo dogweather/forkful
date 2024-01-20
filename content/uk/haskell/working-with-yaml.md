@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Haskell: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-YAML (YAML Ain't Markup Language) - це формат даних, призначений для збереження структурованої інформації у зручному форматі. Це звичайний текстовий файл, який є більш зрозумілим для людей, ніж машинна мова, тому програмісти використовують YAML для зручності та читабельності.
+## Що це таке & Навіщо?
+YAML – це формат серіалізації даних, зручний для читання людиною. Програмісти використовують його для налаштувань, обміну даними та конфігурації проектів.
 
-Як це зробити?
-Кодування з YAML дуже просте за допомогою мови програмування Haskell. Для початку, ми повинні імпортувати модуль Data.YAML та вказати, який саме файлик ми хочемо зчитати. Потім, ми можемо використовувати вбудовані функції для обробки даних у форматі YAML. Ось приклад коду та результату виконання:
+## Як це зробити:
+В Haskell для роботи з YAML можна використовувати бібліотеку `yaml`. Давайте перетворимо дані з/в YAML.
 
 ```Haskell
-import Data.YAML
-myYAML <- decodeFile "example.yaml"
-print myYAML
+{-# LANGUAGE OverloadedStrings #-}
+
+import Data.Yaml
+import qualified Data.ByteString.Char8 as BS
+
+-- Представлення наших даних в Haskell
+data Config = Config
+  { name :: String
+  , enableLogging :: Bool
+  , port :: Int
+  } deriving (Show, Eq)
+
+-- Інстанси для автоматичного (де)серіалізування
+instance FromJSON Config where
+  parseJSON (Object v) =
+    Config <$> v .: "name"
+           <*> v .: "enableLogging"
+           <*> v .: "port"
+
+instance ToJSON Config where
+  toJSON (Config name enableLogging port) =
+    object ["name" .= name, "enableLogging" .= enableLogging, "port" .= port]
+
+-- Зчитування та запис в YAML
+main :: IO ()
+main = do
+  -- Зчитування YAML з файлу
+  configData <- BS.readFile "config.yaml"
+  let decodedConfig = decodeEither' configData :: Either ParseException Config
+  print decodedConfig
+  
+  -- Запис об'єкта в YAML
+  let config = Config "Server" True 8080
+  BS.writeFile "output.yaml" (encode config)
+
 ```
 
-Результат:
+Даний код зчитує `config.yaml`, перетворює його на `Config` і друкує. Також він серіалізує `Config` і зберігає в `output.yaml`.
 
-```
-Just (Object (fromList [("name",String "John"),("age",Number 25),("hobbies",Seq [String "coding",String "hiking",String "cooking"])]))
-```
+## Поглиблене вивчення:
+YAML виник у 2001 році як спрощення XML. В Haskell існують альтернативи: `aeson` для JSON, `tomland` для TOML. Робота з YAML у Haskell ґрунтується на швидкодії парсерів та міцній типізації.
 
-Глибокий пір?
-Дата випуску YAML припадає на 2001 рік, і її створила команда програмістів для полегшення обміну даними у форматі, зрозумілим для людей. Альтернативою YAML є JSON (JavaScript Object Notation), який також має читабельний синтаксис, але є більш популярним у веб-розробці. Реалізація обробки YAML в Haskell базується на стандартних типах даних, тому навчання її використовувати буде корисною навичкою для роботи з іншими форматами даних.
-
-Дивись також:
-- [YAML офіційний сайт](https://yaml.org/)
-- [JSON vs YAML: яка різниця?](https://www.educative.io/edpresso/json-vs-yaml-whats-the-difference)
+## Дивіться також:
+- [Official YAML website](https://yaml.org)
+- [Hackage `yaml` package](https://hackage.haskell.org/package/yaml)
+- [YAML Wikipedia article](https://uk.wikipedia.org/wiki/YAML)

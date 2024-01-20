@@ -1,7 +1,7 @@
 ---
-title:                "jsonの扱い方"
-html_title:           "C#: jsonの扱い方"
-simple_title:         "jsonの扱い方"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かとは？
-JSONとは、データのシンプルで軽量なフォーマットの一つです。開発者は、JSONを使用することで、データを直感的に扱うことができ、より柔軟なアプリケーションを作成することができます。
+## What & Why? (なにとなぜ？)
+JSONデータを扱うことは、アプリケーション間の軽量で読みやすいデータ交換に欠かせない。プログラマーはデータの保存、設定の管理、Web APIの利用にJSONを利用します。
 
-## 方法：
-JSONをC#で扱う方法を解説します。まずは、Newtonsoft.Jsonパッケージをダウンロードし、プロジェクトに追加します。次に、以下のようにJSONを読み込んでオブジェクトを作成することができます。 
-
-```C#
-//JSONを読み込んでオブジェクトに変換
-string json = System.IO.File.ReadAllText(@"path/to/json/file.json");
-var myObject = JsonConvert.DeserializeObject<MyClass>(json);
-```
-
-また、逆にオブジェクトをJSON形式に変換することも可能です。以下のように書くことで、オブジェクトをJSON文字列に変換できます。
+## How to: (実践方法)
+C#でJSONを扱うのには、`System.Text.Json`を使います。以下に基本的な使い方を例示します。
 
 ```C#
-//オブジェクトをJSON文字列に変換
-MyClass myObject = new MyClass();
-string json = JsonConvert.SerializeObject(myObject);
+using System;
+using System.Text.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        var jsonString = "{\"name\":\"Yamada\",\"age\":30}";
+        var person = JsonSerializer.Deserialize<Person>(jsonString);
+        
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
 ```
 
-## 深堀り：
-JSONは、JavaScript Object Notationの略で、JavaScriptのオブジェクト表記法をベースに作られたフォーマットです。近年、Webアプリケーションの人気が高まるにつれ、バックエンドとフロントエンド間でデータをやりとりする際に使用されるようになりました。代表的な代替フォーマットとしては、XMLがありますが、JSONはよりシンプルで簡潔な記述ができるため、より広く使われています。なお、C#では他にもJSONを扱うためのライブラリがありますが、Newtonsoft.Jsonは最も広く使われているものです。
+出力:
+```
+Name: Yamada, Age: 30
+```
 
-## 関連情報：
-Newtonsoft.Json公式ページ：[https://www.newtonsoft.com/json](https://www.newtonsoft.com/json)
+オブジェクトをJSON文字列に変換する例です。
 
-JSONの詳細については、W3Cのドキュメントを参照してください：[https://www.w3.org/TR/REC-json/](https://www.w3.org/TR/REC-json/)
+```C#
+using System;
+using System.Text.Json;
 
-C#のGitHubリポジトリには、JSONを扱うための標準ライブラリが含まれています：[https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/src/System/Text/Json/](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/src/System/Text/Json/)
+public class Program
+{
+    public static void Main()
+    {
+        var person = new Person
+        {
+            Name = "Suzuki",
+            Age = 25
+        };
+        
+        var jsonString = JsonSerializer.Serialize(person);
+        Console.WriteLine(jsonString);
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+```
+
+出力:
+```
+{"name":"Suzuki","age":25}
+```
+
+## Deep Dive (深掘り)
+JSON(JavaScript Object Notation)は2000年代初頭に登場しました。JavaScriptから派生したデータ表現ですが、言語に依存しないため、幅広いプログラミング言語で採用されています。`System.Text.Json`は高性能で、`Newtonsoft.Json`のような他のライブラリよりも.NET環境に統合されています。しかし、特定の機能では`Newtonsoft.Json`が依然として人気があります。
+
+## See Also (関連情報)
+- JSONの基本: https://www.json.org/json-ja.html
+- `System.Text.Json`ドキュメント: https://docs.microsoft.com/ja-jp/dotnet/api/system.text.json?view=net-5.0
+- `Newtonsoft.Json` (Json.NET): https://www.newtonsoft.com/json

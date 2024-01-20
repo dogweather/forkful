@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec le yaml"
-html_title:           "Python: Travailler avec le yaml"
-simple_title:         "Travailler avec le yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que YAML et pourquoi les programmeurs l'utilisent-ils?
+## What & Why?
+YAML, ou "YAML Ain't Markup Language", est un format de serialization facile à lire pour les données. Les devs l'utilisent pour configurer des projets, des containers Docker et dans les pipelines CI/CD car c'est clair et simple à comprendre.
 
-YAML est un langage de sérialisation de données qui permet de stocker des données structurées de manière lisible pour les humains. Les programmeurs utilisent YAML pour stocker des configurations, des données de test et d'autres informations dans un format facile à lire et à éditer.
+## How to:
+Pour travailler avec YAML en Python, la bibliothèque `PyYAML` est souvent utilisée. Voici comment on lit et écrit des données YAML :
 
-# Comment faire:
+```Python
+# Installer PyYAML avec pip
+# pip install pyyaml
 
-Pour travailler avec YAML en Python, vous devez d'abord importer le module PyYAML en utilisant la commande `import yaml`. Ensuite, vous pouvez utiliser les fonctions de chargement et de déchargement pour convertir des données YAML en objets Python et vice versa.
-
-Un exemple de code pour charger des données YAML à partir d'un fichier serait le suivant:
-
-```python
 import yaml
 
-with open("config.yml", 'r') as f:
-    config = yaml.safe_load(f)
+# Écrire dans un fichier YAML
+data = {'cle': 'valeur', 'liste': [1, 2, 3]}
+with open('example.yaml', 'w') as f:
+    yaml.dump(data, f)
 
-print(config)
-```
-
-Et voici comment vous pouvez enregistrer des données en tant que fichier YAML:
-
-```python
-import yaml
-
-config = {'nom': 'John', 'age': 30, 'adresse': '123 Rue du Village'}
-with open("config.yml", 'w') as f:
-    yaml.safe_dump(config, f)
-```
-
-Cela produirait un fichier YAML contenant les données suivantes:
+# Lire un fichier YAML
+with open('example.yaml', 'r') as f:
+    loaded_data = yaml.safe_load(f)
+    print(loaded_data)
 
 ```
-nom: John
-age: 30
-adresse: 123 Rue du Village
+
+Sortie :
+```
+{'cle': 'valeur', 'liste': [1, 2, 3]}
 ```
 
-# Plongée en profondeur:
+## Deep Dive
+YAML est apparu pour la première fois en 2001, offrant une alternative humainement lisible au XML et au JSON. Par rapport au JSON, YAML supporte les commentaires et est souvent plus souple avec les structures de données. Attention, cependant, que YAML peut être complexe avec des références et des contenus imbriqués. Des bibliothèques comme `ruamel.yaml` offrent plus de fonctionnalités que `PyYAML`, notamment la préservation des commentaires lors de l'écriture.
 
-YAML a été créé en 2001 par Clark Evans, Ingy döt Net et Oren Ben-Kiki en tant que langage de sérialisation de données plus simple et plus intuitif que d'autres formats comme XML et JSON. Il est également inspiré de formats de données tels que le courrier électronique, le HTML et le SGML.
+## See Also
+Pour en savoir plus sur YAML et PyYAML :
 
-Bien que YAML soit couramment utilisé pour stocker des configurations, il existe d'autres alternatives telles que TOML et JSON. YAML se distingue par sa simplicité et sa lisibilité pour les humains, mais cela peut entraîner des problèmes lors de la manipulation de données plus complexes.
-
-L'implémentation de YAML utilisée par PyYAML est basée sur la spécification officielle YAML 1.2. Cependant, cela peut entraîner des problèmes de compatibilité avec certaines autres implémentations de YAML.
-
-# Voir aussi:
-
-- Site officiel de YAML: https://yaml.org/
-- Documentation de PyYAML: https://pyyaml.org/wiki/PyYAMLDocumentation
-- Tutoriel sur l'utilisation de YAML avec Python: https://realpython.com/python-yaml/
-- Comparaison entre YAML, JSON et TOML: https://stackabuse.com/an-introduction-to-yaml/
+- Documentation YAML : https://yaml.org/spec/1.2/spec.html
+- PyYAML : https://pyyaml.org/wiki/PyYAMLDocumentation
+- ruamel.yaml: https://yaml.readthedocs.io/en/latest/

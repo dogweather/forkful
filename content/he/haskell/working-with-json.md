@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Haskell: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-מעבדים עם JSON הוא תהליך שבו מתבצעת התנגשות בין מידע מבנת דטה ובין מידע טורפי כמו תקשורת רשת או יישום מסוים. פופולאריותו של JSON מתבססת על היכולת שלו להיות קריא וכתיבה של קוד פשוט, מה שהופך אותו לכלי חיוני למתכנתים בדרך כלל.
+## מה ולמה?
 
-## איך לעשות זאת: 
-נתחיל עם דוגמה פשוטה:
-`Haskell
+JSON הוא פורמט של נתונים שמיועד לשמירת והעברת מידע באופן קליל וקריא. תוכניתנים משתמשים בו כי הוא נפוץ, קל לתפעול ומתאם טוב לשיתוף נתונים בין שרתים ולקוחות.
+
+## איך לעשות:
+
+בואו נשתמש בספריית `aeson` לעבוד עם JSON ב-Haskell.
+
+התקינו את `aeson`:
+
+```bash
+cabal update
+cabal install aeson
+```
+
+קוד לעיבוד JSON פשוט:
+
+```Haskell
 import Data.Aeson
+import Data.ByteString.Lazy as B
+import Data.Text
+import Control.Monad
 
---מיצוא JSON ממילה
-encode "מרנגו"
+-- דוגמה למבנה JSON
+jsonInput :: ByteString
+jsonInput = "{\"name\":\"John\", \"age\":30}"
 
---פלט: "\"\u05de\u05e8\u05e0\u05d2\u05d5\""
-`
-אתם יכולים לראות שהקלט "מרנגו" הפך למחרוזת של JSON מוצקה. 
-במשך הפעלה, זהו רק דוגמה מוצקה יותר.
+-- דוגמה להמרה של JSON למילון ב-Haskell
+decodeJSON :: ByteString -> Maybe Object
+decodeJSON = decode
 
-כעת, ננסה לטפל בתקשורת JSON יותר מתוחכמת. 
-`Haskell
-import Data.Aeson
+main = do
+  let maybeResult = decodeJSON jsonInput
+  case maybeResult of
+    Just result -> print result
+    Nothing -> putStrLn "פרסור ה-JSON נכשל"
+```
 
---המרת מחרוזת ממילה למבנה JSON אבסטרקטי
-decode "{\"key\":\"value\"}" :: Maybe Value
+פלט לדוגמא:
 
---פלט: Just (Object (fromList [("key",String "value")]))
-`
-אל תשכחו לייבא את המודול Data.Aeson בכדי להשתמש בכל האפשרויות הטובות של JSON בהרחבה הווקטורפית שלו.
+```
+fromList [("name", String "John"), ("age", Number 30.0)]
+```
 
-## נחתור עמוק: 
-אם ברצונכם לדעת על ההיסטוריה של JSON, יש להוריד את RFC 4627 שהיה הדבר שהכיר אליו את המונח JSON.
-אלטרנטיבות שניתן להשתמש בהן כפתרון לJSON הן XML ו-YAML.
-המימוש האקדמי לאפשרויות תכנות JSON מופיע ב-ECMA-404.
+## טבילה עמוקה
 
-## ראו גם: 
-כדי לקבל מידע נוסף על מעבדי נתונים, נוכחו וניסויים שלמותם, אפשר לסתום לדף הוויקי הרשמי של Haskell.
-אם ברצונכם ללמוד יותר על Data.Aeson, ניתן להתנסות על התיעוד המלא של הספרייה הביתית.
+`aeson` נכנס לשימוש ב-2011 והפך לסטנדרט בעבודה עם JSON ב-Haskell. קיימות אלטרנטיבות כמו `json` ו-`yaml`, אבל `aeson` הוא הפופולרי ביותר. הספרייה מתמך בהמרות אוטומטיות למודלים המיוצגים דרך סוגים אלגבריים, עם ממשק פשוט להרחבה והתאמה אישית.
+
+## ראה גם
+
+- [מדריך רשמי לספריית aeson](https://hackage.haskell.org/package/aeson)
+- [תיעוד JSON ב-MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [מאמר על סוגים אלגבריים ב-Haskell](https://wiki.haskell.org/Algebraic_data_type)

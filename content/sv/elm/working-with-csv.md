@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Elm: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-CSV står för "comma-separated values" och är en vanlig form av filformat som används för att lagra och manipulera data. Programerare använder CSV för att enkelt strukturera, bearbeta och utbyta data mellan olika system och verktyg.
+## What & Why?
+CSV står för "Comma-Separated Values". Det är ett enkelt filformat som används för att lagra tabulär data, som i kalkylblad eller databaser. Programmerare använder CSV för att enkelt importera och exportera data från olika applikationer.
 
-## Hur gör man:
-Det finns många sätt att arbeta med CSV i Elm, men ett vanligt tillvägagångssätt är att använda biblioteket csv-decode. För att komma igång behöver du först installera biblioteket genom att köra följande kommando i terminalen:
+## How to:
+Elm har inget inbyggt bibliotek för CSV-hantering, så vi använder en extern paket, som `elm-csv`. Installera det med `elm install panthershark/elm-csv` och kolla på koden nedan:
+
 ```Elm
-elm install rtfeldman/csv-decode
+import Csv
+
+decodeCsv : String -> List (List String)
+decodeCsv data =
+    case Csv.decode data of
+        Ok rows ->
+            rows
+
+        Err errorMessage ->
+            []
+
+sampleCsv : String
+sampleCsv =
+    "name,age\nAlice,30\nBob,25"
+
+-- Använd `decodeCsv` och skriv ut resultatet
+main =
+    decodeCsv sampleCsv |> toString |> text
 ```
-Sedan kan du importera biblioteket i din Elm-kod och använda dess funktioner för att dekodera och bearbeta CSV-data.
-```Elm
-import Csv.Decode as Decode
 
-myCsv = "Name,Age,Email
-Jane,25,jane@email.com
-John,30,john@email.com"
+Output i Elm's `main` blir: `[["name", "age"], ["Alice", "30"], ["Bob", "25"]]`
 
-type alias Person =
-  { name : String
-  , age : Int
-  , email : String
-  }
+## Deep Dive
+CSV skapades på 1970-talet och är fortfarande populärt på grund av sin enkelhet. Alternativ till CSV inkluderar JSON och XML, men de är inte lika lättlästa för människor. När man använder `elm-csv`, hanteras CSV-strängen genom att dela upp den i rader och sedan kolumner. Detaljer som att hantera specialtecken och radavslutningar sköts automatiskt.
 
-csvDecoder : Decode.Decoder (List Person)
-csvDecoder =
-  Decode.decodeString (Decode.list personDecoder)
-
-personDecoder : Decode.Decoder Person
-personDecoder =
-  Decode.map3 Person
-    (Decode.field "Name" Decode.string)
-    (Decode.field "Age" Decode.int)
-    (Decode.field "Email" Decode.string)
-```
-För att dekodera CSV-datasträngen "myCsv" till en lista av personer, behöver du bara köra följande kod:
-```Elm
-Decode.decodeString csvDecoder myCsv
-```
-Detta kommer att returnera en lista med dekodade personobjekt, som kan användas för att bearbeta och manipulera datan.
-
-## Djupdykning:
-CSV-formatet skapades på 1970-talet som en enkel och universell lösning för datautbyte mellan olika system och program. Sedan dess har det blivit ett populärt verktyg för att strukturera och manipulera stora mängder data i olika programeringsspråk.
-
-Det finns också andra alternativ för att arbeta med CSV i Elm, såsom manuell strängmanipulation eller andra tredjepartsbibliotek. Du kan välja att använda det som passar dig bäst beroende på dina specifika behov och preferenser.
-
-Det är också värt att notera att biblioteket csv-decode i dagsläget endast stödjer dekodning av CSV-data, vilket innebär att du behöver skriva egen kod för att kodera eller manipulera datasträngar.
-
-## Se även:
-- [Github-repo för biblioteket csv-decode] (https://github.com/rtfeldman/csv-decode)
-- [Elm-society - användbar information om Elm] (https://elm-society.gitbook.io/elm-society/)
+## See Also
+- Elm officiell guide: [The Official Elm Guide](https://guide.elm-lang.org/)
+- CSV på Wikipedia: [Comma-Separated Values on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)

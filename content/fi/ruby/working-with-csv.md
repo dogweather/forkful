@@ -1,7 +1,7 @@
 ---
-title:                "Töitä tehdessä CSV:n kanssa"
-html_title:           "Ruby: Töitä tehdessä CSV:n kanssa"
-simple_title:         "Töitä tehdessä CSV:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,19 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why?
+CSV (Comma-Separated Values) on tiedostoformaatti, joka tallentaa taulukollisen dataa yksinkertaisessa tekstiformaatissa. Ruby-ohjelmoijat käyttävät CSV:tä, koska se on laajasti tuettu, helppokäyttöinen ja se mahdollistaa datan siirtämisen eri järjestelmien ja ohjelmien välillä.
 
-CSV eli "comma-separated values" on tiedostomuoto, jota käytetään taulukkomuotoisten tietojen tallentamiseen. Ohjelmoijat käyttävät CSV:tä, koska se on helppo lukea ja käsitellä tietoja taulukkomuodossa.
+## How to:
+```Ruby
+require 'csv'
 
-## Miten:
+# CSV-tiedoston kirjoittaminen
+CSV.open("esimerkki.csv", "w") do |csv|
+  csv << ["Nimi", "Ikä", "Kaupunki"]
+  csv << ["Sakari", 28, "Helsinki"]
+  csv << ["Laura", 35, "Turku"]
+end
 
-Käyttäen Rubya voit lukea CSV-tiedostoja helposti ```CSV.read('tiedostonimi.csv')```. Tämä palauttaa tietojoukon, joka on tallennettu taulukkona. Voit myös tallentaa CSV-tiedostoja käyttäen ```CSV.open('tiedostonimi.csv', 'w') do |csv| csv << ["rivi1-solu1", "rivi1-solu2"] end```.
+# CSV-tiedoston lukeminen
+CSV.foreach("esimerkki.csv", headers: true) do |row|
+  puts "#{row['Nimi']} on kotoisin kaupungista #{row['Kaupunki']}."
+end
+```
+Output:
+```
+Sakari on kotoisin kaupungista Helsinki.
+Laura on kotoisin kaupungista Turku.
+```
 
-## Syväsukellus:
+## Deep Dive
+CSV-formaatti on ollut tiedonsiirron perustyökalu jo vuosikymmeniä. Se on tullut suosituksi sen yksinkertaisuuden ja joustavuuden vuoksi, ja se käy hyvin yhteen monien taulukkolaskentaohjelmien kanssa. Ruby-kielessä `csv`-kirjasto on standardikirjasto, joka on ollut sisäänrakennettuna jo jonkin aikaa ja mahdollistaa CSV-tiedostojen käsittelyn suoraviivaisesti. Vaihtoehtoisesti voit käyttää esimerkiksi `FasterCSV`-kirjastoa, joka tunnetaan nopeudestaan, mutta moderni Ruby käyttää `csv`-kirjastoa, koska se on yhdistetty `FasterCSV`:n kanssa.
 
-CSV on ollut käytössä jo vuodesta 1972 lähtien, mutta sen suosio on kasvanut viime vuosina XML-muodon rinnalla. CSV:tä käytetään usein tietojen siirtämisessä eri ohjelmistojen välillä. Vaihtoehtoina CSV:lle on esimerkiksi JSON-tiedostomuoto. CSV-tiedostoja käsitellään yleensä riveittäin, jolloin jokainen rivi vastaa yhtä tietueetta. CSV-tiedostojen kanssa voi myös käyttää erilaisia erottimia kuin vain pilkku, kuten puolipistettä tai tabulaattoria.
-
-## Katso myös:
-
-- [Ruby CSV Dokumentaatio](https://docs.ruby-lang.org/en/2.6.0/CSV.html)
-- [Wikipedia: CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
+## See Also
+- Ruby Standard Library CSV: https://ruby-doc.org/stdlib-3.1.0/libdoc/csv/rdoc/CSV.html
+- FasterCSV (nykyään osa Ruby Standard Library): https://github.com/JEG2/faster_csv
+- Ruby-dokumentaatio: https://www.ruby-lang.org/fi/documentation/

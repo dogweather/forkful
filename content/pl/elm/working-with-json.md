@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem JSON"
-html_title:           "Elm: Praca z formatem JSON"
-simple_title:         "Praca z formatem JSON"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,67 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robimy?
+## What & Why? 
+Praca z JSON w Elm polega na przetwarzaniu danych w formacie JSON, co jest standardem w komunikacji API. Programiści robią to, aby łatwo wymieniać dane między aplikacją front-end a back-end.
 
-Praca z JSON to nic innego jak przetwarzanie danych w formacie JavaScript Object Notation, czyli formatu wymiany danych opartego na składni JavaScript. Programiści wykorzystują ten format, ponieważ jest on lekki, czytelny dla człowieka oraz łatwy do przetwarzania przez komputery.
+## How to:
+```Elm
+import Json.Decode exposing (Decoder, field, int, string, decodeValue)
 
-## Jak to zrobić:
-
-Przykładowe użycie Elm do przetwarzania i wyświetlania odpowiedzi JSON:
-
-``` Elm
-import Http
-import Json.Decode exposing (..)
-
-type alias Post =
-    { userId : Int
-    , id : Int
-    , title : String
-    , body : String
+type alias User = 
+    { id : Int
+    , name : String
     }
 
-getPosts : Cmd Msg
-getPosts =
-    Http.get
-        { url = "https://jsonplaceholder.typicode.com/posts"
-        , expect = Http.expectJson GotPosts postDecoder
-        }
+userDecoder : Decoder User
+userDecoder =
+    Json.Decode.map2 User
+        (field "id" int)
+        (field "name" string)
 
-postDecoder : Decoder (List Post)
-postDecoder =
-    list
-        Post
-        |> field "userId" int
-        |> field "id" int
-        |> field "title" string
-        |> field "body" string
+jsonString : String
+jsonString =
+    "{\"id\": 1, \"name\": \"Ada\"}"
 
-update model msg =
-    case msg of
-        GotPosts (Ok posts) ->
-            ( { model | posts = posts }, Cmd.none )
+decodeResult : Result String User
+decodeResult =
+    decodeValue userDecoder (Json.Decode.string jsonString)
 
-        GotPosts (Err _) ->
-            ( model, Cmd.none )
+-- Wartość 'decodeResult' to teraz 'Ok { id = 1, name = "Ada" }'
 ```
 
-Przykładowy wynik wywołania funkcji `getPosts`:
-``` Elm
-[{ userId = 1
-  , id = 1
-  , title = "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
-  , body = "quia et suscipit suscipit ..."
-  }, { userId = 1
-  , id = 2
-  , title = "qui est esse"
-  , body = "est rerum tempore vitae ..."}]
+```Elm
+import Json.Encode exposing (object, int, string)
+
+user : User
+user =
+    { id = 1, name = "Ada" }
+
+encodeUser : User -> Json.Encode.Value
+encodeUser usr =
+    object
+        [ ("id", int usr.id)
+        , ("name", string usr.name)
+        ]
+
+-- Użycie 'encodeUser user' da nam '{ "id": 1, "name": "Ada" }'
 ```
 
-## Głębsze wstrząśnięcie:
+## Deep Dive
+JSON w Elm ma swoje korzenie w potrzebie typu bezpiecznego kodowania i dekodowania. Alternatywą jest używanie JavaScriptu po stronie serwera, ale to jest mniej bezpieczne. Elm używa specjalnych dekoderów, które gwarantują, że dane są dokładnie tym, czego oczekujemy, chroniąc przed błędami w czasie wykonania.
 
-Format JSON został zaprojektowany przez Douglas Crockford w latach 90. jako sposób na wymianę danych między aplikacjami internetowymi. Alternatywami dla Elm w przetwarzaniu JSON są inne języki programowania takie jak JavaScript, Python czy Java. W Elm wykorzystuje się dekodery do przekształcania danych JSON na struktury danych wewnątrz języka.
-
-## Zobacz również:
-
-- Dokumentacja Elm: https://elm-lang.org/docs/json
-- Wprowadzenie do JSON: https://www.json.org/json-pl.html
+## See Also
+- [Elm JSON.Decode documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
+- [Elm JSON.Encode documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Encode)
+- [Elm Guide on JSON](https://guide.elm-lang.org/effects/json.html)

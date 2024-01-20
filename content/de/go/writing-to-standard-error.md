@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "Go: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,43 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Schreiben auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehlermeldungen oder andere wichtige Informationen auf dem Terminal auszugeben. Dies ist besonders nützlich, wenn das Programm im Hintergrund ausgeführt wird und es keine grafische Benutzeroberfläche gibt. Ebenfalls hilfreich ist diese Methode, um sicherzustellen, dass wichtige Informationen nicht in der Standardausgabe überschrieben werden.
+Standardfehler (stderr) ist ein Ausgabekanal, den Programme nutzen, um Fehlermeldungen und Diagnoseinformationen zu senden. Programmierer verwenden stderr, um Fehler von normalen Ausgaben zu trennen, was beim Debuggen und Protokollieren hilft.
 
-## Wie geht's?
-Um auf den Standardfehler zu schreiben, kann die Funktion ```Fprintf``` aus der Standardbibliothek "fmt" verwendet werden. Ein einfaches Beispiel dafür sieht folgendermaßen aus:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Fprintf(os.Stderr, "Dies ist eine Fehlermeldung")
-}
-```
-
-Die Ausgabe wird dann auf dem Terminal als "Dies ist eine Fehlermeldung" angezeigt. Wenn Sie in Ihrer Funktion bereits einen Fehlerwert haben, können Sie auch die Funktion ```Fprintln``` verwenden, um eine Fehlermeldung zu generieren. Ein solches Beispiel sieht wie folgt aus:
+## Wie geht das?
+Verwendung von `os.Stderr` zum Schreiben:
 
 ```Go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-    if err := doSomething(); err != nil {
-        fmt.Fprintln(os.Stderr, "Fehler:", err)
-    }
+	if _, err := os.Stat("nichtexistent.datei"); err != nil {
+		fmt.Fprintf(os.Stderr, "Fehler gefunden: %v\n", err)
+	}
 }
 ```
 
-Die Ausgabe würde dann beispielsweise "Fehler: Datei nicht gefunden" sein.
+Beispielhafte Ausgabe:
 
-## Tiefer tauchen
-Das Schreiben auf den Standardfehler ist eine gängige Praxis in der Programmierung und wird auch von vielen anderen Sprachen unterstützt. Beispiele dafür sind die Funktionen "console.error" in JavaScript oder "System.err" in Java.
+```plaintext
+Fehler gefunden: stat nichtexistent.datei: no such file or directory
+```
 
-Alternativ zu der Funktion ```Fprintf``` kann auch direkt auf die Variable ```os.Stderr``` zugegriffen werden, um Text auf den Standardfehler zu schreiben.
-
-In der Go-Standardbibliothek gibt es auch die Funktion ```Log``` aus dem Paket "log", die automatisch auf den Standardfehler schreibt. Diese kann jedoch nicht so präzise angepasst werden wie die Funktionen aus dem Paket "fmt".
+## Tiefere Einblicke
+Historisch gesehen folgt stderr der Unix-Konvention, drei primäre Datenströme zu verwenden: Standard Input (stdin), Standard Output (stdout) und Standard Error (stderr). Alternativen für stderr sind das Schreiben in Log-Dateien oder die Verwendung von Logging-Frameworks. Die Implementierung in Go erfolgt über das `os` Paket, das plattformübergreifend Zugriff auf Systemfunktionen bietet, einschließlich File Descriptors, welche für stderr typisch die Nummer 2 haben.
 
 ## Siehe auch
-[Die offizielle Dokumentation zu "fmt.Fprintf"](https://golang.org/pkg/fmt/)
+- Go-Dokumentation für das `fmt` Paket: https://pkg.go.dev/fmt
+- Go-Dokumentation für das `os` Paket: https://pkg.go.dev/os
+- Artikel zu Unix-Datei-Streams: https://en.wikipedia.org/wiki/Standard_streams

@@ -1,6 +1,6 @@
 ---
 title:                "यामल के साथ काम करना"
-html_title:           "Go: यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
 simple_title:         "यामल के साथ काम करना"
 programming_language: "Go"
 category:             "Go"
@@ -10,53 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+YAML एक data serialization format है जिसका इस्तेमाल configuration files और data exchange में होता है। Programmers इसका इस्तेमाल इसलिए करते हैं क्योंकि यह पढ़ने में आसान है और diverse data structures को support करता है।
 
-यामल एक टेक्स्ट फॉर्मेट है जिसे प्रोग्रामर्स अपने डेटा को स्ट्रक्चर के रूप में स्टोर और लोड करने के लिए इस्तेमाल करते हैं। यह डेटा समीकरण के लिए एक सुविधाजनक तरीका है और सिस्टम भाषा क्षेत्र में एक स्टैंडार्ड स्वरूप के रूप में उपयुक्त है।
+## How to: (कैसे करें:)
+Go में YAML को handle करने के लिए, `go-yaml` library का प्रयोग करें। यहाँ एक basic example है:
 
-कैसे करें:
+```Go
+package main
 
-यामल को गो भाषा में काम करने के लिए, आपको इस लाइब्रेरी को इम्पोर्ट करने की जरूरत होगी: 
-```
-import "gopkg.in/yaml.v2"
-```
+import (
+	"fmt"
+	"gopkg.in/yaml.v2"
+	"log"
+)
 
-अब आप अपने डेटा को सीधे यामल फॉर्मेट में लिख सकते हैं और उसे marshal करके string या []byte में कनवर्ट कर सकते हैं। नीचे दिए गए उदाहरण में हम कैसे अपने डेटा को सीधे मार्शल कर सकते हैं दिखाएँगे: 
-
-```
-type Student struct {
-    Name  string `yaml:"name"`
-    Grade int    `yaml:"grade"`
+// Config struct represents the structure of our YAML configuration
+type Config struct {
+	Title       string
+	Description string
+	Database    struct {
+		User     string
+		Password string
+	}
 }
 
 func main() {
-    stud1 := Student{
-        Name:  "John",
-        Grade: 8,
-    }
+	data := `
+title: My Project
+description: A sample project with YAML config
+database:
+  user: admin
+  password: secret
+`
 
-    data, err := yaml.Marshal(stud1)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    fmt.Println(string(data))
+	var config Config
+	err := yaml.Unmarshal([]byte(data), &config)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("Title: %s\nDescription: %s\nDatabase User: %s\n", config.Title, config.Description, config.Database.User)
 }
 ```
-
-इसका आउटपुट निम्नलिखित होगा: 
+Sample Output:
 ```
-name: John
-grade: 8
+Title: My Project
+Description: A sample project with YAML config
+Database User: admin
 ```
 
-गहराईगत जानकारी:
+## Deep Dive (गहराई से जानकारी:)
+YAML (YAML Ain't Markup Language) शुरू में XML का एक सरल रूप प्रदान करने के लिए 2001 में develop किया गया था। इसके विकल्पों में JSON और XML शामिल हैं। YAML complex data dependencies को आसानी से संभाल सकता है और Go में इसका implementation `go-yaml` library के माध्यम से किया जाता है जो reflection का उपयोग कर object properties को map करता है।
 
-यामल को जॉन्टन यूटिलिटी लिब्रेरी द्वारा विकसित किया गया था और 2001 में जूलियन टांगन के द्वारा पेश किया गया था, लेकिन आज भी यह बहुत लोकप्रिय है। यामल का इस्तेमाल डेटा संग्रह से लेकर कॉन्फ़िगरेशन फ़ाइल तक में होता है। ये अन्य स्ट्रक्चरों जैसे JSON के समान हो सकते हैं लेकिन कुछ अंतर होते हैं। अगर आपको सीधे स्ट्रिंग मार्शल करने की जरूरत होती है और अपने डेटा को YAML फॉर्मेट में स्टोर करने की अनुमति नहीं है, तो आप JSON का इस्तेमाल कर सकते हैं।
-
-इसी तरह, आप यामल फ़ाइल को अनुरोधों के रूप में भी इस्तेमाल कर सकते हैं। इसमें आसानी से कंफ़िगरेशन और टेस्ट केस बनाने में मदद मिलती है।
-
-अन्य स्रोतों को देखें: 
-
-- यामल के ऑफिशियल डॉक्यूमेंटेशन: https://yaml.org/
-- गो भाषा में YAML का अधिक जानकारी के लिए गोलैंग एक्सप्लोरर: https://pkg.go.dev/gopkg.in/yaml.v2
+## See Also (और भी जानकारी पाएं:)
+- YAML official specification: [YAML Specification](https://yaml.org/spec/)
+- go-yaml library documentation: [go-yaml](https://pkg.go.dev/gopkg.in/yaml.v2)
+- JSON in Go: [JSON in Go](https://pkg.go.dev/encoding/json)

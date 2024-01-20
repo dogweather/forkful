@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec des fichiers CSV"
-html_title:           "C: Travailler avec des fichiers CSV"
-simple_title:         "Travailler avec des fichiers CSV"
+title:                "Manipulation de fichiers CSV"
+html_title:           "C: Manipulation de fichiers CSV"
+simple_title:         "Manipulation de fichiers CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et Pourquoi?
-CSV (Comma-Separated Values) est un format de fichier couramment utilisÃ© pour stocker et Ã©changer des donnÃ©es tabulaires. Les programmeurs utilisent souvent CSV pour importer et exporter des donnÃ©es Ã partir de bases de donnÃ©es, de feuilles de calcul et d'autres applications. CSV est un format simple et universellement pris en charge, ce qui le rend idÃ©al pour la manipulation de donnÃ©es dans diverses applications de programmation.
+## What & Why? (Quoi & Pourquoi ?)
+Manipuler les fichiers CSV (valeurs séparées par des virgules) c'est interagir avec des données tabulaires simples. Les programmeurs le font pour la simplicité d’intégration de ces données dans des systèmes divers.
 
-# Comment faire:
-Voici un exemple de code en C pour lire et afficher les donnÃ©es d'un fichier CSV:
+## How to: (Comment faire :)
+Voici comment lire et écrire des fichiers CSV en C.
 
+### Lire un fichier CSV:
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-int main(void) {
-    // Ouvrir le fichier CSV en mode lecture
-    FILE* fichier_csv = fopen("donnees.csv", "r");
-
-    // Lire et afficher chaque ligne du fichier
-    char ligne[100];
-    while (fgets(ligne, 100, fichier_csv) != NULL) {
-        // SÃ©parer les donnÃ©es en utilisant la virgule comme dÃ©limiteur
-        char* donnees = strtok(ligne, ",");
-        while (donnees != NULL) {
-            printf("%s ", donnees);
-            donnees = strtok(NULL, ",");
-        }
-        printf("\n");
+int main() {
+    FILE *fichier = fopen("exemple.csv", "r");
+    char ligne[1024];
+    
+    while (fgets(ligne, 1024, fichier)) {
+        printf("%s", ligne); // Affiche chaque ligne du fichier
     }
-
-    // Fermer le fichier
-    fclose(fichier_csv);
-
+    
+    fclose(fichier);
     return 0;
 }
 ```
 
-Voici un exemple de donnÃ©es CSV dans le fichier "donnees.csv":
-```
-nom,prenom,age,ville
-Dupont,Paul,25,Paris
-Martin,Marie,30,Lyon
+### Écrire dans un fichier CSV:
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *fichier = fopen("sortie.csv", "w");
+    fprintf(fichier, "nom,age\n"); // En-tête du CSV
+    fprintf(fichier, "Alice,30\n");
+    fprintf(fichier, "Bob,25\n");
+    
+    fclose(fichier);
+    return 0;
+}
 ```
 
-Et voici la sortie correspondante du programme:
-```
-nom prenom age ville
-Dupont Paul 25 Paris
-Martin Marie 30 Lyon
-```
+## Deep Dive (Plongée en profondeur)
+Les CSV existent depuis les premières années de l'informatique, offrant un format d'échange de données qui résiste au temps grâce à sa simplicité. Alternatives: JSON, XML, mais ils apportent complexité et surcharge. Implémentation: le parsing (analyse) et la production de CSV doivent gérer les nuances telles que l'échappement de virgules et de guillemets.
 
-# Le bain Ã  remous:
-CSV a Ã©tÃ© crÃ©Ã© dans les annÃ©es 1970 par des sociÃ©tÃ©s informatiques pour faciliter l'Ã©change de donnÃ©es entre diffÃ©rents systÃ¨mes. Il est Ã©galement souvent utilisÃ© pour migrer des donnÃ©es vers de nouveaux systÃ¨mes ou pour des opÃ©rations de sauvegarde. Bien qu'il soit souvent utilisÃ© pour une manipulation simple de donnÃ©es, il existe des bibliothÃ¨ques et des outils plus avancÃ©s pour manipuler les donnÃ©es CSV, tels que "libcsv" et "csvkit".
-
-# Voir aussi:
-- [Le format CSV sur Wikipedia](https://fr.wikipedia.org/wiki/Comma-separated_values)
-- [Documentation sur les fonctions de manipulation de chaÃ®nes en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Csvkit: une suite d'outils en ligne de commande pour travailler avec les donnÃ©es CSV](https://csvkit.readthedocs.io/en/latest/)
+## See Also (Voir aussi)
+- Spécification RFC 4180 pour CSV : https://tools.ietf.org/html/rfc4180
+- Tutoriel plus détaillé sur la manipulation des fichiers CSV en C : https://www.programmingsimplified.com/c/working-with-csv-files
+- Comparaison de CSV avec d'autres formats (JSON, XML) : https://www.datahub.io/docs/data-packages/csv-vs-json-vs-xml

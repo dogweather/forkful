@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Fish Shell: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
+## Що це & навіщо?
+YAML - це формат серіалізації даних, зручний для читання людиною. Програмісти використовують його для конфігурації, документації та обміну даними між сервісами.
 
-Робота з YAML - це популярний спосіб для програмістів організувати та зберігати дані в структурованому форматі, який легко підходить для людей та машин. Використовуючи YAML, ви можете створювати файли конфігурації та іншу структуровану інформацію для вашого програмного забезпечення.
+## Як це зробити:
+В Fish Shell для роботи з YAML зазвичай користуються зовнішніми утилітами, як-от 'yq'. Ось базове використання 'yq' для читання та зміни YAML файлів:
 
-## Як:
+```Fish Shell
+# Читаємо значення з YAML
+echo 'foo: bar' | yq e '.foo' -
 
-Код-приклади та вихідні дані ми покажемо в цьому розділі за допомогою блоків коду ```Fish Shell ... ```. Для початку, додайте розширення ```.yml``` до вашого файлу YAML, щоб Fish Shell розпізнав його як файл, що містить дані у цьому форматі.
+# Змінюємо значення і записуємо в файл
+echo 'foo: bar' | yq e '.foo = "baz"' - > output.yaml
 
-#### Читання даних з файлу YAML
-
-```
-Fish Shell >>> set data (yq e '.key' path/to/file.yml)
-```
-
-#### Запис даних в файл YAML
-
-```
-Fish Shell >>> set key "value"
-Fish Shell >>> echo $key > path/to/file.yml
+# Виводимо результат
+cat output.yaml
 ```
 
-#### Парсінг даних у форматі YAML
-
-``` 
-Fish Shell >>> set data "key: value"
-Fish Shell >>> echo $data | yq r - key
+Sample output:
+```
+foo: baz
 ```
 
-## Глибше
+## Поглиблений огляд:
+YAML, що розшифровується як "YAML Ain't Markup Language", з'явився у 2001 році. Зараз це популярна альтернатива JSON і XML через легкість читання і відсутність знаків пунктуації. У Fish Shell для роботи з YAML немає вбудованої підтримки, тому використовують утиліти типу 'yq' (заснована на 'jq' для JSON). 'yq' пропонує розширений синтаксис для маніпулювання YAML файлами.
 
-YAML був створений у 2001 році як спосіб для людей записувати та читати дані нарізані у структурованому форматі. Це популярний замінник XML та JSON, оскільки має простий та читабельний синтаксис. Існують багато бібліотек та інструментів для роботи з YAML у різних мовах програмування, включаючи Python, Ruby та Java.
-
-## Дивись також
-
-- [YAML Official Website](https://yaml.org/)
-- [YAML Spec](https://yaml.org/spec/)
-- [YAML Tutorial](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+## Дивись також:
+* Офіційний сайт YAML: https://yaml.org
+* Репозиторій 'yq': https://github.com/mikefarah/yq
+* Документація 'jq': https://stedolan.github.io/jq/manual/

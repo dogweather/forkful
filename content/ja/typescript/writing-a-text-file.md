@@ -1,7 +1,7 @@
 ---
-title:                "保存するテキストファイルの作成。"
-html_title:           "TypeScript: 保存するテキストファイルの作成。"
-simple_title:         "保存するテキストファイルの作成。"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## 何か & なぜ？"
-テキストファイルを書くとは何かを説明するために、プログラマーがテキストファイルを書く理由を説明します。 
+## What & Why? (なにとなぜ？)
+テキストファイルを書くことは、データを永続的に保存することです。プログラマはデータ交換、設定の保存、ログの生成にこれを行います。
 
-テキストファイルを書くとは、テキスト情報をファイルに書き込むことを意味します。プログラマーは、プログラムやデータを永続的に保存するためにテキストファイルを使います。
-
-"## 方法："
-以下のコードブロックの例を使用して、どのようにテキストファイルを書くかを学びましょう。
-
+## How to: (やり方)
 ```TypeScript
-import fs from 'fs';
+import { writeFile } from 'fs';
 
-// ファイルを書き込む関数
-function writeFile() {
-  // ファイルのパスと書き込む内容を指定
-  const file_path: string = 'example.txt';
-  const content: string = 'Hello, world!';
+// テキストを保存したい内容
+const content: string = "こんにちは、TypeScript!";
 
-  // ファイルに書き込み
-  fs.writeFileSync(file_path, content);
-}
+// ファイルに内容を書き込む関数
+const writeTextToFile = (filePath: string, text: string): void => {
+  writeFile(filePath, text, (err) => {
+    if (err) {
+      console.error('エラー発生:', err);
+      return;
+    }
+    console.log(`ファイル ${filePath} に書き込み完了`);
+  });
+};
 
-// プログラムを実行
-writeFile();
+// 関数を使ってみる
+writeTextToFile('./hello.txt', content);
+```
+サンプル出力:
+```
+ファイル ./hello.txt に書き込み完了
 ```
 
-上記のコードを実行すると、"example.txt"という名前のファイルが作成され、その中に"Hello, world!"という内容が書き込まれます。
+## Deep Dive (深掘り)
+初期のコンピュータでは、パンチカードやテープを使ってデータを保存していました。今日では、テキストファイルはJSONやXMLなどの形式で設定やデータ交換に使われます。Node.jsの`fs`モジュールは非同期I/Oを提供し、パフォーマンスの妨げにならないやり方でファイルシステムにアクセスできます。`writeFile`関数はファイルがない場合は作成し、ある場合は上書きします。同期的に書き込むには`writeFileSync`を使用できますが、ブロッキングが問題になる可能性があります。
 
-"## 詳細を調べる："
-テキストファイルを書くという機能は、コンピューターの歴史的な背景を持っています。コンピューターの初期の時代、テキストファイルはプログラムやデータを保存するための主要な方法でした。
-
-現在、プログラマーはテキストファイルの代わりにデータベースやクラウドストレージなどの新しいテクノロジーを使用することができますが、テキストファイルは簡単で柔軟性が高いため、今でも広く使用されています。
-
-テキストファイルを書く方法は、プログラミング言語によってわずかに異なりますが、基本的な概念は同じです。書き込むファイルのパスを指定し、書き込む内容を指定することで、テキストファイルを作成することができます。
-
-"## 関連情報を見る："
-テキストファイルを書く方法やその他のプログラミングのトピックについて知りたい場合は、以下のリンクを参考にしてください。
-
-- [Node.jsのfsモジュールのドキュメント](https://nodejs.org/api/fs.html)
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/home.html)
-- [プログラミング初心者向けのチュートリアルサイトCodecademy](https://www.codecademy.com/catalog)
+## See Also (関連情報)
+- Node.js fsモジュールドキュメント: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- TypeScript公式ドキュメント: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+- ファイルシステムに関するMDN Web Docs: [https://developer.mozilla.org/ja/docs/Web/API/File_System_Access_API](https://developer.mozilla.org/ja/docs/Web/API/File_System_Access_API)
+- JSONについての情報: [https://www.json.org/json-ja.html](https://www.json.org/json-ja.html)
+- XMLに関する情報: [https://www.w3.org/XML/](https://www.w3.org/XML/)

@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "Rust: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -11,40 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Arbetet med Comma Separated Values (CSV) är en vanlig uppgift för programmerare. CSV-filer fungerar som en strukturerad och läsbar metod för att lagra och överföra stora mängder data, särskilt tabeller eller listor med information. Därför är det viktigt för programmerare att kunna arbeta med CSV-filer för att hantera data effektivt.
+CSV, eller "Comma-Separated Values", är ett enkelt filformat som används för att lagra tabulär data. Programmerare använder CSV för att enkelt utbyta data mellan olika system och program eftersom det är textbaserat och programoberoende.
 
-## Hur man gör:
-Här är ett exempel på hur man kan arbeta med CSV i Rust:
+## How to:
+Rust har flera bibliotek för att hantera CSV-filer. Ett populärt val är `csv`-krate. Först, lägg till `csv = "1.1"` i din `Cargo.toml`. Här är hur du läser och skriver CSV:
 
 ```Rust
+use std::error::Error;
 use std::fs::File;
-use csv::Reader;
-fn main() {
-    let file = File::open("exempel.csv").unwrap();
-    let mut reader = csv::Reader::from_reader(file);
-    for result in reader.records() {
-        let record = result.unwrap();
-        println!("{} - {}", record[0], record[1]);
+use std::io::{self, Write};
+use csv::ReaderBuilder;
+use csv::WriterBuilder;
+
+fn read_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
+    let mut rdr = ReaderBuilder::new().from_path(file_path)?;
+    for result in rdr.records() {
+        let record = result?;
+        println!("{:?}", record);
     }
+    Ok(())
+}
+
+fn write_csv(file_path: &str, records: Vec<Vec<String>>) -> Result<(), Box<dyn Error>> {
+    let file = File::create(file_path)?;
+    let mut wtr = WriterBuilder::new().from_writer(io::BufWriter::new(file));
+    for record in records {
+        wtr.write_record(&record)?;
+    }
+    wtr.flush()?;
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    read_csv("data.csv")?;
+    write_csv("output.csv", vec![vec!["City".to_string(), "Population".to_string()], vec!["Stockholm".to_string(), "975551".to_string()]])?;
+    Ok(())
 }
 ```
 
-Exempelutdatat skulle se ut så här:
+Exempel på output vid läsning av CSV:
 
 ```
-1 - Förnamn
-2 - Efternamn
-3 - Ålder
-4 - Yrke
+StringRecord(["Stockholm", "975551"])
 ```
 
-## Djupdykning:
-CSV-filer uppfanns på 1970-talet och har sedan dess varit en populär metod för att lagra och överföra data. Alternativ till CSV inkluderar XML och JSON men CSV är fortfarande populärt på grund av sin enkelhet och läsbarhet. I Rust finns det olika paket, som "csv" som används i exemplet ovan, som gör det enkelt att arbeta med CSV-filer. Det är viktigt att uppmärksamma eventuella uppdateringar till dessa paket för att se till att din kod fortsätter att fungera korrekt.
+## Deep Dive
+CSV har sitt ursprung i tidiga datorsystem och blev en de facto-standard i början av 1970-talet. Trots nya format som JSON och XML är CSV fortfarande populärt för sin enkelhet och läsbarhet. När det gäller alternativ, hjälper bibliotek som `serde_csv` i Rust att hantera komplexa CSV-datamappningar med Rusts type system. För implementation, kan snabbhet och minneseffektivitet vara kritiska, och bibliotek som `csv` erbjuda möjligheter att läsa och skriva asynkront eller strömma stora filer.
 
-## Se även:
-För mer information om att arbeta med CSV i Rust, se följande källor:
-
-- [csv paketets dokumentation] (https://docs.rs/csv)
-- [Rust Standardbibliotekets dokumentation om filer och I/O] (https://doc.rust-lang.org/std/fs/index.html)
-
-Lycka till med ditt arbete med CSV-filer i Rust!
+## See Also
+- [csv crate documentation](https://docs.rs/csv/latest/csv/)
+- [CSV på Wikipedia](https://sv.wikipedia.org/wiki/CSV)
+- [Serde: Serialization framework för Rust](https://serde.rs/)
+- [Rust by Example: CSV-parsing](https://doc.rust-lang.org/stable/rust-by-example/std_misc/file/read_lines.html)

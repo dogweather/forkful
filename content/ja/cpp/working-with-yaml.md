@@ -1,7 +1,7 @@
 ---
-title:                "「Yaml についての作業」"
-html_title:           "C++: 「Yaml についての作業」"
-simple_title:         "「Yaml についての作業」"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-YAMLとは何か、プログラマーがそれをする理由について説明します。YAMLはHuman-readableなデータシリアライゼーションフォーマットです。プログラマーがデータを読みやすく、扱いやすくするために使われます。
+## What & Why?（何とその理由？）
+C++でYAML（YAML Ain't Markup Language）は、設定ファイルやデータ交換のために使われる。読みやすく、人間にもコンピュータにもフレンドリーだからだ。
 
-## 方法：
-下記の例はC++でYAMLを使う方法を示しています。`` `C++ ... ` ``コードブロック内にコーディング例と出力があります。
+## How to:（方法）
+まず、YAML-CPPライブラリを使ってみよう。これはC++のためのYAMLパーサーやエミッタだ。
 
-`` `C++
+```C++
 #include <yaml-cpp/yaml.h>
 #include <iostream>
+#include <fstream>
+#include <string>
 
-int main() {
-  // Creating YAML node for an array
-  YAML::Node node = YAML::Load("[1, 2, 3]");
+// ΥAMLファイルを読み込む
+void loadYAML(const std::string &filename) {
+    YAML::Node config = YAML::LoadFile(filename);
 
-  // Accessing elements in the array
-  std::cout << "First element: " << node[0].as<int>() << std::endl;
-  std::cout << "Second element: " << node[1].as<int>() << std::endl;
-  std::cout << "Third element: " << node[2].as<int>() << std::endl;
-  return 0;
+    if (config["title"]) {
+        std::cout << "Title: " << config["title"].as<std::string>() << std::endl;
+    }
+
+    if (config["owner"]["name"]) {
+        std::cout << "Owner Name: " << config["owner"]["name"].as<std::string>() << std::endl;
+    }
 }
-`` ` ``
 
-出力：
+// メイン関数
+int main() {
+    // 例としてsample.yamlファイルを読む。
+    loadYAML("sample.yaml");
 
-`` ``
-First element: 1
-Second element: 2
-Third element: 3
-`` ``
+    return 0;
+}
+```
 
-## 深く掘り下げる：
-YAMLは2001年に開発されたプログラミング言語であるPerlに由来しています。XMLやJSONと比べると、シンタックスがシンプルでかつ複雑な階層構造をサポートできる点が特徴です。代替としては、JSONやXMLが挙げられます。YAMLはコード内で使用することで、設定ファイルやデータベースのようなデータを簡単に読み書きすることができます。
+上記のコードは、`sample.yaml`ファイルをロードし、`title`と`owner.name`を出力する。
 
-## 関連リンク：
-- YAMLオフィシャルサイト： https://yaml.org/
-- YAMLとは？： https://ja.wikipedia.org/wiki/YAML
-- YAML-CPPライブラリ： https://github.com/jbeder/yaml-cpp
+## Deep Dive（深掘り）
+YAMLは2001年に登場。JSONやXMLより読みやすく、シンプルだ。C++でYAMLを扱うときは、YAML-CPPやBoost.YAMLがあるが、YAML-CPPのほうが人気。C++でYAMLを扱う場合は、パフォーマンスとライブラリの依存性に気をつけよう。
+
+## See Also（関連情報）
+- YAML-CPP GitHubページ: https://github.com/jbeder/yaml-cpp
+- YAML公式サイト: https://yaml.org
+- Boost.YAML GitHubページ: https://github.com/boostorg/yaml
+- YAML 1.2 Spec: https://yaml.org/spec/1.2/spec.html
+
+YAMLを学び、使いこなすには上のリンクが役立つだろう。

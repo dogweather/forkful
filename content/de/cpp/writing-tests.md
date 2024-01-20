@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "C++: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "C++"
 category:             "C++"
@@ -10,71 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
+Tests schreiben bedeutet, dass wir Code bereitstellen, der unseren Hauptcode automatisiert prüft. Wir tun dies, um Fehler frühzeitig zu entdecken, die Softwarequalität zu erhöhen und zukünftige Änderungen sicherer zu gestalten.
 
-Tests schreiben ist ein wesentlicher Bestandteil der Programmierung. Es bezieht sich auf das Schreiben von Code, der die Funktionalität und Korrektheit anderer Codefragmente prüft. Programmer schreiben Tests, um sicherzustellen, dass ihr Code zuverlässig funktioniert und mögliche Fehler identifiziert werden können.
-
-Wie geht's?
-
-### Einfaches Beispiel
+## How to:
+Hier ist ein einfaches Beispiel für einen Unit-Test in C++ unter Nutzung des Google Test Frameworks:
 
 ```C++
-#include <iostream>
-using namespace std;
+#include <gtest/gtest.h>
 
-int main() {
-  int a = 5;
-  int b = 10;
+int addieren(int a, int b) {
+    return a + b;
+}
 
-  if (a + b == 15) {
-    cout << "Das Ergebnis ist richtig!" << endl;
-  } else {
-    cout << "Das Ergebnis ist falsch!" << endl;
-  }
+TEST(RechenTest, AddierenTest) {
+    EXPECT_EQ(3, addieren(1, 2));
+    EXPECT_EQ(5, addieren(2, 3));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
-Ausgabe: Das Ergebnis ist richtig!
+Laufen diese Tests, erhalten wir folgenden Output:
 
-### Komplexerer Beispiel
+```
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from RechenTest
+[ RUN      ] RechenTest.AddierenTest
+[       OK ] RechenTest.AddierenTest (0 ms)
+[----------] 2 tests from RechenTest (0 ms total)
 
-```C++
-#include <algorithm>
-#include <cassert>
-#include <vector>
-using namespace std;
-
-// Funktion zum Sortieren von Vektoren
-vector<int> sortVector(vector<int>& v) {
-  sort(v.begin(), v.end());
-  return v;
-}
-
-int main() {
-  // Vektor erstellen und Werte hinzufügen
-  vector<int> v{5, 3, 9, 6, 2};
-
-  // Erwartete Ergebnisse
-  vector<int> expected{2, 3, 5, 6, 9};
-
-  // Das Ergebnis der Sortierfunktion
-  vector<int> result = sortVector(v);
-
-  // Überprüfen, ob das Ergebnis richtig sortiert ist
-  assert(result == expected);
-}
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 2 tests.
 ```
 
-### Ausgabe:
+## Deep Dive:
+Unit-Tests sind seit den späten 90er Jahren populär geworden, besonders durch die Extreme Programming (XP) Bewegung. Alternativen zu Google Test sind unter anderem das Catch2 Framework und Boost.Test. Bei der Implementierung ist darauf zu achten, dass Tests isoliert und unabhängig von externen Zuständen sind, um zuverlässige und wiederholbare Ergebnisse zu gewährleisten.
 
-Keine Ausgabe, da das Programm ohne Fehler ausgeführt wurde.
+## See Also:
+Google Test (GitHub): https://github.com/google/googletest
 
-Tiefere Einblicke
+Catch2: https://github.com/catchorg/Catch2
 
-Tests schreiben ist keine neue Konzeption in der Programmierung. In der Vergangenheit haben sich Entwickler auf manuelles Testen verlassen, um ihre Codes zu überprüfen. Mit dem Wachstum der Software-Industrie und der Einführung von agilen Methoden wurde es jedoch unpraktisch und zeitaufwendig, alle Codeänderungen manuell zu testen. Daher wurden automatisierte Tests eingeführt, die effizienter sind und genaue Ergebnisse liefern.
-
-Eine Alternative zum Schreiben von Tests ist das sogenannte "Test-Driven Development" (TDD). Dabei schreibt der Entwickler zunächst den Test und schreibt dann den entsprechenden Code, um den Test zu bestehen. Dieser Ansatz wird als effektiv angesehen, da er den Fokus auf die Funktionalität und Korrektheit des Codes legt.
-
-Ein wichtiger Aspekt beim Schreiben von Tests ist die Wahl der richtigen Testfälle. Es ist wichtig, sowohl positive als auch negative Testfälle abzudecken, um sicherzustellen, dass der Code in allen möglichen Szenarien richtig funktioniert. Eine gute Testabdeckung sorgt für mehr Vertrauen in den Code und erleichtert die Wartung und Erweiterung im späteren Verlauf.
-
-Sieh dir auch an
+Boost.Test: https://www.boost.org/doc/libs/release/libs/test/

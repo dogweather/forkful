@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Swift: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué & Por qué?
+Escribir pruebas es crear código que verifica que otro código funcione correctamente. Los programadores las realizan para asegurar la calidad, prevenir errores y facilitar la mantenibilidad del código.
 
-Escribir pruebas es una parte importante del proceso de desarrollo de software. Consiste en escribir código que prueba si nuestro código principal funciona correctamente. Los programadores lo hacen para asegurarse de que su código está libre de errores y funciona como se espera.
-
-## Cómo:
+## Cómo hacerlo
+Ejemplo de una prueba unitaria en Swift usando XCTest:
 
 ```Swift
-func sumar(_ a: Int, _ b: Int) -> Int {
-    return a + b
+import XCTest
+@testable import MiApp
+
+class MiAppTests: XCTestCase {
+    func testSumaCorrecta() {
+        let resultado = Calculadora().suma(2, 3)
+        XCTAssertEqual(resultado, 5, "La suma de 2 + 3 debería ser 5")
+    }
 }
 
-func testSumar() {
-    // Creamos un objeto de prueba
-    let resultado = sumar(3, 5)
-    // Comprobamos si el resultado es correcto
-    assert(resultado == 8, "La suma debería dar 8")
+class Calculadora {
+    func suma(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
 }
-
-// Ejecutamos la prueba
-testSumar()
-
 ```
 
-## Profundizar:
+Se ejecuta la prueba y el resultado esperado se muestra así:
+```
+Test Case '-[MiAppTests testSumaCorrecta]' passed (0.001 seconds).
+```
 
-Escribir pruebas automatizadas se ha vuelto cada vez más popular en el desarrollo de software en los últimos años. Esto se debe a que permite a los desarrolladores encontrar y solucionar errores rápidamente, asegurando un producto final de alta calidad. También existen otras formas de probar el código, como pruebas manuales o pruebas de aceptación, pero las pruebas automatizadas son más eficientes y confiables.
+## Análisis Profundo
+Las pruebas de software son una práctica estándar desde los primeros días de la programación. Con alternativas como TDD (Desarrollo guiado por pruebas) donde las pruebas se escriben antes del código funcional o BDD (Desarrollo guiado por comportamiento) que se centra en el comportamiento del usuario y los casos de uso. Swift utiliza XCTest para pruebas unitarias, que se integra fácilmente con su herramienta de construcción Xcode.
 
-Al escribir pruebas, es importante tener en cuenta que deben ser independientes y repetibles. Esto significa que una prueba no debe depender de otra y siempre debe dar el mismo resultado cada vez que se ejecute. También se pueden utilizar herramientas de pruebas como Xcode o XCTest para facilitar el proceso de escritura y ejecución de pruebas.
-
-## Ver también:
-
-- [Documentación oficial de Apple sobre pruebas en Swift](https://developer.apple.com/documentation/xctest)
+## Ver También
+- [Documentación oficial de XCTest](https://developer.apple.com/documentation/xctest)
+- [Guía de pruebas unitarias de Swift](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)

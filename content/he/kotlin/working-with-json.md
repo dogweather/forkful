@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Kotlin: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה זה & למה?
-עבודה עם JSON היא תהליך שמאפשר למתכנתים לקרוא, לכתוב ולעבד מידע בפורמט JSON (טקסט פשוט שמשמש כתקן לתעבורת מידע בין אפליקציות). מתכנתים משתמשים בתהליך זה כדי לשמור על מידע מובנה וקל לקריאה, ולקשר את המידע שלהם לישויות חיצוניות כמו מסדי נתונים או רשתות חברתיות.
+## מה ולמה?
+JSON, שמסמל JavaScript Object Notation, הוא פורמט להחלפת נתונים, קל לקריאה עבור אנשים וקל לעיבוד עבור מחשבים. מתכנתים עובדים עם JSON כי הוא הפורמט המועדף לשליחת וקבלת נתונים ב-APIs וביישומי רשת.
 
-כיצד לעשות:
-ניתן לעבוד עם JSON באמצעות שפת תכנות קוטלין (גרסה מקומית), ולייצג את המידע באמצעות מבני נתונים כמו מערכים ומילונים. לדוגמה, ניתן להשתמש בפונקציית ```json()``` כדי להמיר מחרוזת JSON למילון ולקרוא את הערכים שלו. התוצאה יכולה להיות כמו זה:
+## איך ל:
+```Kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
-```kotlin
-val json = "{"name": "John", "age":30}"
-val person = json.json()
-println(person.name) // Output: John
-println(person.age) // Output: 30
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = Json
+    val data = User("דוד", 30)
+
+    // קידוד ל-JSON
+    val jsonString = json.encodeToString(data)
+    println(jsonString) // {"name":"דוד","age":30}
+
+    // פענוח מ-JSON
+    val obj = json.decodeFromString<User>(jsonString)
+    println(obj) // User(name=דוד, age=30)
+}
 ```
 
-צלילת חלקים:
-כאשר ממשיכים לעבוד עם JSON, כדאי להיכנס יותר לעומק כדי להבין את היסטורייתו ואלטרנטיבות לתהליך זה. בעבר, JSON היה מקוריהו ב-JavaScript ונמצא כיום כחלק מכלי היבוא והייצוא המרכזיים ברשת. בנוסף, קיימות כמה מספריות ומסגרות עבור JSON בכמה שפות תכנות כדי לעזור למתכנתים לעבוד איתו בצורה יעילה יותר.
+## הצצה לעומק
+JSON נוצר בתחילת שנות ה-2000 כחלופה קלת משקל ל-XML. יש חלופות כמו TOML או YAML, אבל JSON נהיה סטנדרט דה-פקטו ברוב המקרים. ב-Kotlin, ניתן לעבוד עם JSON באמצעות ספריית kotlinx.serialization כדי להמיר אובייקטים ל-JSON וחזרה בצורה פשוטה.
 
-ראו גם:
-למידע נוסף על עבודה עם JSON בקוטלין, ניתן לבדוק את המסמכים הרשמיים של פרויקט הקוטלין ואת מדריכי המשתמש המאוחרים. בנוסף, ניתן למצוא מידע נוסף על JSON באתר הקוד הפתוח של פרויקט הקוטלין ובמסמכי התחברות המקוונת.
+## ראו גם
+- [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) - ספריית ה-serialization של Kotlin.
+- [Moshi](https://github.com/square/moshi) - ספריית JSON אחרת ל-Kotlin.
+- [Gson](https://github.com/google/gson) - ספריית Google לעבודה עם JSON ב-Java ו-Kotlin.

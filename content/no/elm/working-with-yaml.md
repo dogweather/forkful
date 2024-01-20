@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med yaml"
-html_title:           "Elm: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML er et format for å strukturere og organisere data, spesielt brukt i programmering og konfigurasjonsfiler. Det er en mer leselig og intuitiv måte å representere data på, sammenlignet med mer komplekse formater som JSON og XML. Mange programmører velger å bruke YAML på grunn av dens enkelhet og lesbarhet.
+## What & Why?
+YAML er et dataformat for å skrive konfigurasjoner lett leslig for mennesker. Programmerere bruker det for å håndtere konfigurasjoner og datautveksling.
 
-## Hvordan:
-For å jobbe med YAML i Elm, trenger du en pakke kalt `elm-yaml`. Med denne kan du enkelt konvertere YAML-filer til Elm-typer og omvendt. Her er et enkelt eksempel på hvordan du kan bruke `elm-yaml`:
-
-```Elm
-import Yaml exposing (..)
-
--- Definer YAML-data
-yamlData = "age: 28\nname: John"
-
--- Konverter YAML til Elm-typer
-elmData = decode yamlData
-
-```
-
-I dette eksempelet vil `elmData` bli en Elm-tuple med `("age", 28)` og `("name", "John")` som elementer. For å konvertere fra Elm til YAML, kan du bruke funksjonen `encode`:
+## How to:
+Elm har ingen innebygd støtte for YAML. Men du kan bruke JavaScript-biblioteker med `ports` for parsing. Her er et eksempel som bruker `js-yaml`:
 
 ```Elm
--- Konverter Elm-typer til YAML
-yaml = encode elmData
+port module Main exposing (..)
 
+-- Definerer en port for å sende YAML til JS
+port toYaml : String -> Cmd msg
+
+-- Definerer en port for å få den konverterte JS objektet tilbake som en streng
+port fromYaml : (String -> msg) -> Sub msg
+
+-- Funksjon for å sende en YAML streng til JS
+convertYaml : String -> Cmd msg
+convertYaml yamlString =
+    toYaml yamlString
+
+-- Abonnerer på svaret fra JS
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    fromYaml ConvertedYaml
+
+-- Mottar den konverterte YAML strengen som JSON
+type Msg = ConvertedYaml String
 ```
 
-Denne funksjonen vil produsere en streng med YAML-formatert data, klar til å bli lagret i din konfigurasjonsfil.
+Og på JavaScript-siden:
 
-## Dykk dypere:
-YAML ble utviklet i 2001 av Clark Evans for å være en mer menneskelig-leselig og enklere alternativ til JSON og XML. Det har blitt populært i utviklingen av kuber, Docker og andre infrastrukturverktøy på grunn av dets evne til å representere komplekse datastrukturer på en intuitiv måte. Alternativer til YAML inkluderer toml og HCL. Implementasjonen av `elm-yaml` er basert på libyaml og bruker PEG for parsing av YAML.
+```javascript
+// Fungerer med `elm/browser` og `ports`
+app.ports.toYaml.subscribe(function(yamlString) {
+    try {
+        var result = jsyaml.load(yamlString);
+        app.ports.fromYaml.send(JSON.stringify(result));
+    } catch (e) {
+        // Handle parsing errors
+    }
+});
+```
 
-## Se også:
-- [Offisiell YAML-nettside](https://yaml.org/)
+## Deep Dive
+YAML kom i 2001 og tilbød enklere konfigurasjonsfiler enn XML. Alternativer til YAML inkluderer JSON og TOML. For Elm, må du stole på JavaScript-biblioteker siden det er ingen direkte YAML-støtte. Når du bruker `ports`, send data mellom Elm og JavaScript forsiktig for å unngå runtime errors.
+
+## See Also
+- YAMLs offisiell nettsted: [yaml.org](https://yaml.org)
+- `js-yaml` GitHub-side: [github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+- Elm ports: [guide.elm-lang.org/interop/ports](https://guide.elm-lang.org/interop/ports.html)

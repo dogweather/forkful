@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Elm: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -11,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML står för "YAML Ain't Markup Language" och det är ett format för att strukturera data på ett läsbart och enkelt sätt. Programmörer använder YAML för att läsa och skriva data på ett effektivt sätt, speciellt inom webbutveckling och konfigurationshantering.
+YAML är ett format för datastrukturer, tänkt för konfigurationsfiler. Programmerare använder det för dess läsbarhet och enkelhet att parsa till olika datatyper.
 
-## Så här:
-Ett vanligt användningsområde för YAML inom Elm är för att definiera en lista av objekt. Till exempel:
+## Hur gör man:
+Elm har inget inbyggt stöd för YAML, så vi använder `elm-yaml` paketet. Installera genom `elm install elm/json` följt av `elm install kraklin/elm-yaml`. Här är ett exempel:
 
+```Elm
+import Json.Decode exposing (Decoder)
+import Yaml.Decode exposing (yamlString, string, int, dict, decodeValue)
+
+type alias Person =
+    { name : String
+    , age : Int
+    }
+
+personDecoder : Decoder Person
+personDecoder =
+    Yaml.Decode.map2 Person
+        (dict "name" string)
+        (dict "age" int)
+
+sampleYaml : String
+sampleYaml =
+    """
+    name: John Doe
+    age: 30
+    """
+
+parseResult : Result String Person
+parseResult =
+    sampleYaml
+        |> yamlString
+        |> decodeValue personDecoder
 ```
-listeAvObjekt : List { namn : String, ålder : Int }
-listeAvObjekt =
-    [ { namn = "Anna", ålder = 30 }
-    , { namn = "Peter", ålder = 25 }
-    , { namn = "Maria", ålder = 27}
-    ]
-```
 
-YAML tillåter oss att strukturera denna data på ett lättläst sätt:
+Du parsar `sampleYaml` och får antingen ett felmeddelande eller ett `Person` objekt.
 
-```
-- namn: "Anna"
-  ålder: 30
-- namn: "Peter"
-  ålder: 25
-- namn: "Maria"
-  ålder: 27
-```
+## Fördjupning
+YAML, "YAML Ain't Markup Language", lanserades i början av 2000-talet som ett enklare alternativ till XML. JSON är också ett alternativ men YAML's mer läsbara format är ofta att föredra för konfigurationsfiler. I Elm implementeras YAML-parsing genom externa bibliotek som `elm-yaml`, som bygger på att omvandla YAML till JSON för sedan använda Elms kraftfulla JSON dekodare.
 
-## Djupdykning:
-YAML utvecklades av Clark Evans och Ingy döt Net och först släpptes år 2001. Det används ofta för att skapa konfigurationsfiler för webbapplikationer, men det används även för andra ändamål som att strukturera data för API-anrop. En annan populär metod för att strukturera data är JSON (JavaScript Object Notation), men YAML erbjuder en mer läsbar syntax för människor.
-
-## Se även:
-- [YAML Reference](https://yaml.org/spec/1.2/spec.html)
-- [Elm documentation för YAML](https://package.elm-lang.org/packages/NoRedInk/elm-decode-pipeline/latest/Decode-Pipeline-YAML)
+## Se även
+- YAML specifikation: [yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- En jämförelse mellan JSON och YAML: [stackoverflow.com/a/1729545/3047276](https://stackoverflow.com/a/1729545/3047276)

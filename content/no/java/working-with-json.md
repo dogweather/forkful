@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Java: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å jobbe med JSON er å behandle data ved hjelp av et format kalt JavaScript Object Notation (JSON). Dette blir ofte brukt for å utveksle data mellom forskjellige systemer og programmeringsspråk. Programmerere bruker JSON fordi det er enklere å lese og skrive enn andre dataformater, som XML.
+## Hva & Hvorfor?
+JSON forvandler data til tekst som kan lagres og sendes mellom servere og klienter. Programmerere bruker det fordi det er lett å lese og skrive, samt lett å parse og generere av maskiner.
 
-Hvordan:
-For å jobbe med JSON i Java, må du bruke et bibliotek som heter Jackson. Først må du legge til denne avhengigheten i pom.xml-filen din: 
+## Hvordan:
+```java
+import org.json.JSONObject;
 
-```Java
-<!-- Jackson -->
-<dependency>
-  <groupId>com.fasterxml.jackson.core</groupId>
-  <artifactId>jackson-databind</artifactId>
-  <version>2.11.4</version>
-</dependency>
+public class Main {
+    public static void main(String[] args) {
+        // Oppretter en JSON objekt
+        JSONObject obj = new JSONObject();
+        obj.put("navn", "Ola Nordmann");
+        obj.put("alder", 30);
+        obj.put("erProgrammerer", true);
+
+        // Skriver ut det som en streng
+        System.out.println(obj.toString());
+
+        // Parser en JSON streng til et objekt
+        String jsonData = "{\"navn\":\"Kari Nordmann\",\"alder\":28,\"erProgrammerer\":false}";
+        JSONObject nyObj = new JSONObject(jsonData);
+        System.out.println(nyObj.toString());
+    }
+}
+```
+Sample output:
+```
+{"navn":"Ola Nordmann","erProgrammerer":true,"alder":30}
+{"navn":"Kari Nordmann","erProgrammerer":false,"alder":28}
 ```
 
-Deretter kan du bruke kode som dette for å mappe JSON-data til Java-objekter:
+## Deep Dive
+JSON (JavaScript Object Notation) ble designet tidlig på 2000-tallet og ble raskt web-utvikleres favoritt for å overføre data, takket være dets enkelhet sammenlignet med XML. Alternativer inkluderer XML og YAML, men JSON vinner ofte på grunn av støtte i JavaScript og de fleste andre programmeringsspråk. Java-biblioteker som Jackson og Gson kan også hjelpe med å implementere JSON i større prosjekter.
 
-```Java
-ObjectMapper mapper = new ObjectMapper();
-MyObject obj = mapper.readValue(jsonString, MyObject.class);
-```
-
-Hvis du vil lage JSON fra et Java-objekt, kan du gjøre dette:
-
-```Java
-ObjectMapper mapper = new ObjectMapper();
-MyObject obj = new MyObject();
-String jsonString = mapper.writeValueAsString(obj);
-```
-
-Dypdykk:
-JSON ble opprinnelig utviklet i 1999 som en enklere måte å strukturere data på sammenlignet med XML. Det finnes også andre alternativer for å behandle data, som for eksempel CSV og YAML. JSON har blitt et populært valg fordi det er enklere å lese og skrive, og det er godt støttet av de fleste programmeringsspråk og systemer.
-
-Se også:
-- Jackson: https://github.com/FasterXML/jackson
-- Baeldung sine Jackson tutorials: https://www.baeldung.com/jackson
+## See Also
+- Offisiell JSON-nettside: [json.org](https://json.org)
+- Jackson: [GitHub - FasterXML/jackson](https://github.com/FasterXML/jackson)
+- Gson: [GitHub - google/gson](https://github.com/google/gson)
+- JSON i Java [tutorial](https://www.oracle.com/technical-resources/articles/java/json.html) fra Oracle.

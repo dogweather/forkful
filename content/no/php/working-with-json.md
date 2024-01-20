@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "PHP: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -11,36 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-JSON står for JavaScript Object Notation og er et vanlig format for å lagre og utveksle data mellom forskjellige programmeringsspråk. Programmere bruker JSON fordi det er enkelt å lese og skrive, og det er også et standardisert format som mange programmer og API-er benytter seg av.
+JSON, eller JavaScript Object Notation, brukes for å utveksle data mellom server og webapplikasjoner. Programmerere bruker JSON på grunn av formatets letthet og fordi det er enkelt å tolke for mennesker, samt lett å parse for maskiner.
 
-## Slik gjør du det:
-Her er et eksempel på hvordan du kan jobbe med JSON i PHP:
+## Hvordan:
+Å jobbe med JSON i PHP er rett frem. Her's hvordan du gjør det i kode:
 
 ```PHP
-// Opprett et JSON-objekt med data
-$json = '{"navn": "Ola", "alder": 28, "jobb": "webutvikler"}';
-
-// Konverter JSON til et PHP-assosiativt array
-$arr = json_decode($json, true);
-
-// Hent ut og skrive ut informasjon fra arrayet
-echo "Navn: " . $arr['navn'];
-echo "Alder: " . $arr['alder'];
-echo "Jobb: " . $arr['jobb'];
+<?php
+// Enkod et PHP-array til en JSON-string
+$data = array("navn" => "Ola", "alder" => 30, "by" => "Oslo");
+$json_data = json_encode($data);
+echo $json_data;
 ```
 
-Dette vil gi følgende output:
-
+Output vil være en JSON-formattert string:
 ```
-Navn: Ola
-Alder: 28
-Jobb: webutvikler
+{"navn":"Ola","alder":30,"by":"Oslo"}
 ```
 
-## Dypdykk:
-JSON ble utviklet på 90-tallet som en enkel måte å representere data på. Det er inspirert av syntaksen til JavaScript, men det kan brukes med mange andre programmeringsspråk også. Alternativer til JSON inkluderer for eksempel XML og YAML. For å jobbe med JSON i PHP, er det viktig å være kjent med funksjonene `json_encode()` og `json_decode()`, samt å validere og sikre mot uønsket JSON-data.
+For å dekode tilbake til PHP:
 
-## Se også:
-- [Dokumentasjon for PHP sin `json_encode()` funksjon](https://www.php.net/manual/en/function.json-encode.php)
-- [Dokumentasjon for PHP sin `json_decode()` funksjon](https://www.php.net/manual/en/function.json-decode.php)
-- [Eksempler på bruk av JSON i PHP](https://www.w3schools.com/php/php_ajax_php.asp)
+```PHP
+<?php
+// Dekod en JSON-string til et PHP-array
+$json_string = '{"navn":"Ola","alder":30,"by":"Oslo"}';
+$php_array = json_decode($json_string, true);
+print_r($php_array);
+```
+
+Og output blir et assosiativt array i PHP:
+```
+Array
+(
+    [navn] => Ola
+    [alder] => 30
+    [by] => Oslo
+)
+```
+
+## Dypdykk
+JSON ble opprettet rundt tidlig 2000-tallet og er basert på JavaScript-syntaxen. Alternativer til JSON inkluderer XML og YAML, men JSON har vokst i popularitet takket være dets enkelhet og støtte i mange programmeringsspråk. PHP tilbyr innebygde funksjoner som `json_encode()` og `json_decode()`, noe som gjør det lett å implementere. Når du bruker `json_decode()`, pass på å bruke det andre argumentet for å spesifisere om du vil ha et array eller et objekt tilbake.
+
+## Se Også
+
+- PHP Manual om JSON: https://www.php.net/manual/en/book.json.php
+- JSON Offisiell Nettside: https://www.json.org/json-en.html
+- W3Schools PHP JSON Tutorial: https://www.w3schools.com/php/php_json.asp

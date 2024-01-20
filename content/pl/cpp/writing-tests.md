@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "C++: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "C++"
 category:             "C++"
@@ -11,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Pisanie testów jest często uciążliwym, ale niezbędnym elementem pracy programisty. Testy polegają na tworzeniu specjalnych fragmentów kodu, które sprawdzają, czy inne części kodu działają poprawnie. Robimy to po to, aby upewnić się, że nasz program działa zgodnie z oczekiwaniami i aby uniknąć błędów w przyszłości.
+Pisanie testów to tworzenie skryptów automatycznie sprawdzających, czy Twój kod działa jak należy. Programiści to robią, żeby szybko wyłapać błędy i spać spokojnie, wiedząc, że wprowadzone zmiany nie zepsują aplikacji.
 
 ## Jak to zrobić:
-
+Spójrz na prosty przykład w C++ wykorzystujący framework Catch2:
 ```C++
-#include <iostream>
+#define CATCH_CONFIG_MAIN  // Pozwala Catch2 stworzyć main
+#include <catch.hpp>
 
-// Przykładowa funkcja, którą będziemy testować
 int dodaj(int a, int b) {
-  return a + b;
+    return a + b;
 }
 
-int main() {
-  // Przykładowe testy dla funkcji dodaj
-  std::cout << "Test 1: " << (dodaj(2, 3) == 5 ? "PASSED" : "FAILED") << std::endl;
-  std::cout << "Test 2: " << (dodaj(-1, 5) == 4 ? "PASSED" : "FAILED") << std::endl;
-  std::cout << "Test 3: " << (dodaj(0, 0) == 0 ? "PASSED" : "FAILED") << std::endl;
-  return 0;
+TEST_CASE("Dodawanie działą poprawnie", "[matematyka]") {
+    REQUIRE(dodaj(2, 2) == 4);
+    REQUIRE(dodaj(-1, 1) == 0);
 }
 ```
-
-### Przykładowy wynik (output):
+Po uruchomieniu zobaczysz:
 ```
-Test 1: PASSED
-Test 2: PASSED
-Test 3: PASSED
+All tests passed (2 assertions in 1 test case)
 ```
-
 ## Głębsze spojrzenie:
+Pisanie testów w C++ zaczęło nabierać tempa wraz z popularyzacją Agile i TDD (Test-Driven Development) w latach 2000. Alternatywami dla Catch2 są Google Test czy Boost.Test. Każdy z nich ma swoje zalety, ale Catch2 wyróżnia się prostotą. W implementacji, ważne jest, by testy były izolowane, szybkie i wyraźnie mówiły, co poszło nie tak, gdy zawiodą.
 
-Pisanie testów jest stosunkowo nowym podejściem w programowaniu. Do niedawna wyłącznym sposobem sprawdzania poprawności kodu była ręczna weryfikacja przez programistę. Istnieją również inne metody testowania, takie jak testowanie manualne, ale są one mniej efektywne i bardziej podatne na błędy.
-
-Pisanie testów może być zaburzające dla programisty, ponieważ wymaga dodatkowego czasu i wysiłku. Jednak jest to inwestycja, która zwraca się w przyszłości, ponieważ pomaga w unikaniu błędów i ułatwia rozwój i utrzymanie aplikacji.
+## Zobacz również:
+- [Dokumentacja Catch2](https://github.com/catchorg/Catch2)
+- [Google Test](https://github.com/google/googletest)
+- [Boost.Test](https://www.boost.org/doc/libs/release/libs/test/)

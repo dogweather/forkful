@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "C#: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "C#"
 category:             "C#"
@@ -10,61 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+YAML to format danych idealny do konfiguracji. Programiści używają go, bo jest czytelny dla ludzi i maszyn.
 
-Pracowanie z YAML jest popularną praktyką wśród programistów. Jest to język znaczników, który jest wykorzystywany do wygodnego przechowywania i udostępniania danych. Programiści wykorzystują YAML, aby zapewnić prosty i czytelny sposób na przechowywanie i przekazywanie informacji w swoich projektach.
-
-## Jak to zrobić:
-
-Kodowanie przy użyciu YAML w języku C# jest proste i wygodne. Przykładowy kod i efekt znajdują się poniżej:
+## How to: (Jak to zrobić:)
+Aby pracować z YAML w C#, można użyć biblioteki `YamlDotNet`. Oto jak czytać i pisać pliki YAML:
 
 ```C#
-using System;
-using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using System.IO;
 
-namespace YAMLExample
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Przykładowy obiekt do serializacji
-            var person = new
-            {
-                Name = "John",
-                Age = 30,
-                Occupation = "Software Developer"
-            };
+var deserializer = new DeserializerBuilder()
+    .WithNamingConvention(CamelCaseNamingConvention.Instance)
+    .Build();
 
-            // Serializacja obiektu do formatu YAML
-            var serializer = new SerializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .Build();
-            var yaml = serializer.Serialize(person);
+var myData = deserializer.Deserialize<MyClass>(File.ReadAllText("config.yaml"));
 
-            // Wyświetlenie wyniku
-            Console.WriteLine(yaml);
-        }
-    }
-}
+var serializer = new SerializerBuilder()
+    .WithNamingConvention(CamelCaseNamingConvention.Instance)
+    .Build();
+
+string yaml = serializer.Serialize(myData);
+File.WriteAllText("output.yaml", yaml);
 ```
 
-Wynik:
-
-```md
-name: John
-age: 30
-occupation: Software Developer
+Wyjście (`output.yaml`):
+```yaml
+myProperty: Wartość
 ```
 
-## Głębsze zanurzenie:
+## Deep Dive (Dogłębna analiza):
+YAML powstał w 2001 roku jako skrót od "Yet Another Markup Language". Alternatywami dla YAML są JSON i XML, ale YAML jest zwykle bardziej czytelny. Podczas implementacji warto pamiętać, że YAML jest wrażliwy na wcięcia i wymaga uważnej kontroli struktury.
 
-YAML został stworzony w celu zastąpienia formatów XML i JSON jako ustandaryzowanej metody przekazywania informacji. Jest on bardzo czytelny dla człowieka ze względu na swoją składnię, która przypomina język naturalny. Alternatywnymi formatami są JSON i XML, jednak YAML oferuje prostszą i czytelniejszą strukturę. Aby wykorzystać YAML w swoim projekcie, programiści muszą zainstalować odpowiednią bibliotekę, taką jak ta wykorzystana w przykładzie powyżej.
-
-## Zobacz również:
-
-- [Dokumentacja YAML w języku C#](https://yaml.org/spec/)
-- [Strona główna biblioteki YAMLDotNet](https://github.com/aaubry/YamlDotNet)
-- [Porównanie YAML z innymi formatami danych](https://www.aonaware.com/yaml.html)
+## See Also (Zobacz także):
+- Dokumentacja `YamlDotNet`: https://github.com/aaubry/YamlDotNet
+- Specyfikacja YAML: https://yaml.org/spec/
+- Porównanie formatów danych: https://www.liquid-technologies.com/xml-vs-json-vs-yaml

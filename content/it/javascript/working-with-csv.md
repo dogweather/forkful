@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Javascript: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con CSV significa lavorare con il formato di file "Comma Separated Values" (Valori delimitati da virgole), che viene comunemente utilizzato per archiviare dati in forma tabellare. I programmatori lo fanno per importare o esportare dati da un sistema a un altro, o per manipolare facilmente grandi quantità di dati.
+## What & Why?
+Lavorare con i CSV, ovvero file Comma-Separated Values, significa manipolare dati in un formato testuale semplice. I programmatori lo fanno per importare, esportare, e trasformare dati in modo compatibile con diversi sistemi.
 
-## Come fare:
-Utilizzare la libreria "csv-parser" per analizzare un file CSV e accedere ai dati in esso contenuti:
-```Javascript
-const csv = require('csv-parser');
-fs.createReadStream('data.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('CSV file successfully processed');
-  });
-```
+## How to:
+Eseguiamo operazioni CSV in JavaScript. Prima, parsiamo un CSV; dopo, lo convertiamo in JSON.
 
-Utilizzare la libreria "csv-writer" per creare un nuovo file CSV e scrivere i dati al suo interno:
 ```Javascript
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const csvWriter = createCsvWriter({
-    path: 'output.csv',
-    header: [
-        {id: 'name', title: 'Nome'},
-        {id: 'age', title: 'Età'},
-    ]
-});
-const data = [
-    {
-        name: 'Mario',
-        age: 30,
-    },
-    {
-        name: 'Luigi',
-        age: 35,
+const csv = `name,age
+Mario,30
+Luca,24`;
+
+function parseCSV(csv) {
+  const lines = csv.split("\n");
+  const result = [];
+  const headers = lines[0].split(",");
+
+  for (let i = 1; i < lines.length; i++) {
+    const obj = {};
+    const currentline = lines[i].split(",");
+
+    for (let j = 0; j < headers.length; j++) {
+      obj[headers[j]] = currentline[j];
     }
-];
-csvWriter
-    .writeRecords(data)
-    .then(() => console.log('File CSV creato con successo'));
+
+    result.push(obj);
+  }
+
+  return result; // Array di oggetti
+}
+
+const data = parseCSV(csv);
+console.log(data);
 ```
 
-Utilizzare la funzione nativa "JSON.stringify" per convertire un oggetto in formato CSV:
+Output:
 ```Javascript
-const data = [
-    {
-        name: 'Pippo',
-        age: 25,
-    },
-    {
-        name: 'Topolino',
-        age: 40,
-    }
-];
-const csv = JSON.stringify(data, ['name', 'age']);
-console.log(csv);
+[ { name: 'Mario', age: '30' }, { name: 'Luca', age: '24' } ]
 ```
 
-## Approfondimenti:
-Il formato del file CSV è stato creato nel 1972 e ha subito diverse evoluzioni nel tempo. Oggi è uno dei formati più diffusi per l'interscambio di dati.
+## Deep Dive
+CSV esiste da prima dei personal computer; era usato in mainframe. Alternativamente, XML e JSON sono usati per dati strutturati, ma sono più verbosi. Nel parse CSV, considera i campi con virgole o nuove righe all'interno delle citazioni e usa librerie come `PapaParse` per casi complessi.
 
-Un'alternativa all'utilizzo di un file CSV è l'utilizzo di un database relazionale, che permette di organizzare i dati in tabelle e di eseguire query complesse.
-
-Per lavorare con i CSV in modo più efficiente, si può utilizzare la funzionalità di stream di Node.js, che permette di leggere e scrivere grandi quantità di dati in modo incrementale.
-
-## Vedi anche:
-- [Libreria "csv-parser"](https://www.npmjs.com/package/csv-parser)
-- [Libreria "csv-writer"](https://www.npmjs.com/package/csv-writer)
-- [Articolo di riferimento su come lavorare con CSV in Node.js](https://stackabuse.com/reading-and-writing-csv-files-with-node-js/)
+## See Also
+- [MDN Web Docs: Working with text](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting)
+- [PapaParse](https://www.papaparse.com/)
+- [CSV on Wikipedia](https://it.wikipedia.org/wiki/Comma-separated_values)

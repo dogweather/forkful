@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Javascript recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,77 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with CSV (Comma Separated Values) is a common task for programmers. It involves parsing and manipulating data stored in a text file with a specific format, where each value is separated by a comma. Programmers use CSV to import and export data from different sources, such as databases, spreadsheets, and other applications.
+Working with CSV (Comma-Separated Values) in JavaScript usually means parsing and generating text data for spreadsheets or data transfer. Programmers do it because CSV is super common, lightweight, and easy to read or create.
 
 ## How to:
 
-To work with CSV in Javascript, there are a few useful methods and libraries available. The following examples will demonstrate how to read and write CSV files using the built-in `fs` module and the popular `csv-parser` library.
-
-### Reading CSV files
-
-To read a CSV file in Javascript, we can use the `readFile` method from the `fs` module. This method takes in the path of the file to be read and a callback function to handle the data.
-
+**Parsing CSV to JSON:**
 ```javascript
-const fs = require('fs');
+const csv = `name,age,city
+Alice,30,New York
+Bob,22,Los Angeles`;
 
-fs.readFile('data.csv', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-```
-
-In the above example, the `data.csv` file is read and logged to the console. However, the output is still in a string format, and we need to convert it to an array of objects to work with the data effectively.
-
-To do so, we can use the `csv-parser` library, which will automatically parse the CSV data and return an array of objects, with each object representing a row in the CSV file.
-
-```javascript
-const csv = require('csv-parser');
-const fs = require('fs');
-
-fs.createReadStream('data.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('CSV file successfully processed');
+function csvToJson(csv) {
+  const lines = csv.split("\n");
+  const headers = lines[0].split(",");
+  return lines.slice(1).map(line => {
+    const data = line.split(",");
+    return headers.reduce((obj, nextKey, index) => {
+      obj[nextKey] = data[index];
+      return obj;
+    }, {});
   });
+}
+
+console.log(csvToJson(csv));
+// Output: [{name: 'Alice', age: '30', city: 'New York'}, {name: 'Bob', age: '22', city: 'Los Angeles'}]
 ```
 
-The above code uses the `createReadStream` method from `fs` to create a readable stream from the CSV file. Then, the `pipe` method is used to pipe the stream to the `csv` parser. Finally, we can handle the data using the `on` method, where the `data` event is emitted for each row in the CSV file, and the `end` event is emitted when all the data has been processed.
-
-### Writing CSV files
-
-To write data to a CSV file, we can use the `writeFile` method from the `fs` module. This method takes in the path of the file to be written and the data to be written. However, since CSV requires each row to be in a string format, we need to convert our data to a string before writing it.
-
+**Generating CSV from JSON:**
 ```javascript
-const fs = require('fs');
-
-const data = [
-  { name: 'John', age: 25 },
-  { name: 'Jane', age: 30 },
-  { name: 'Bob', age: 35 },
+const jsonData = [
+  { name: "Alice", age: 30, city: "New York" },
+  { name: "Bob", age: 22, city: "Los Angeles" }
 ];
 
-const csv = data.map((row) => Object.values(row).join(','));
+function jsonToCsv(json) {
+  const headers = Object.keys(json[0]).join(",");
+  const rows = json.map(obj =>
+    Object.values(obj).join(",")
+  ).join("\n");
+  return `${headers}\n${rows}`;
+}
 
-fs.writeFile('data.csv', csv.join('\n'), (err) => {
-  if (err) throw err;
-  console.log('CSV file successfully written');
-});
+console.log(jsonToCsv(jsonData));
+// Output: name,age,city
+//         Alice,30,New York
+//         Bob,22,Los Angeles
 ```
-
-In the above example, we have an array of objects representing the data we want to write to the CSV file. The `map` method is used to convert each object to a string, and the `join` method is used to join each value with a comma. Then, we use the `writeFile` method to write the CSV data to the file.
 
 ## Deep Dive
 
-CSV has been in use since the early days of spreadsheets and databases, and it remains a popular format for exchanging tabular data. It is a simple and human-readable format that is supported by most programming languages. However, it does have some limitations, such as not being able to handle complex data types or nested structures. In such cases, other formats like JSON or XML may be more suitable.
-
-Apart from the `csv-parser` library, there are other alternatives for working with CSV in Javascript, such as `fast-csv` and `csvtojson`. These libraries provide additional features and performance optimizations, which can be useful for larger CSV files. It is always recommended to research and compare different options before choosing the best one for your project.
-
-When working with CSV, it is essential to have a good understanding of how the data is structured, as well as how to properly handle and format it. Handling uppercase vs lowercase letters, white spaces, and special characters can be challenging, so it is crucial to use well-tested libraries or consider using a CSV validation tool.
+CSV's been around since the early days of computing - easy for machines to process and humans to understand. But it's not perfect. If your data is complex or nested, JSON or XML might be a better fit. Implementation-wise, handling CSV in JavaScript needed workarounds due to its lack of a standard library for this; however, today numerous libraries like PapaParse or csv-parser simplify this task. Also, edge cases such as newline characters within fields and character encoding can complicate CSV handling and need careful coding attention.
 
 ## See Also
 
-- [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
+- MDN Web Docs on Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (Grabbing CSV data from the web)
+- PapaParse: https://www.papaparse.com/ (Robust CSV parser for the browser)
+- RFC 4180: https://tools.ietf.org/html/rfc4180 (Standards for CSV files)

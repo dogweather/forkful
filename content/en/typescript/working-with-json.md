@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "TypeScript recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,37 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with JSON (JavaScript Object Notation) is the act of manipulating and accessing data in a format that is easy for humans to read and write, and for machines to parse and generate. Programmers often work with JSON because it is a lightweight and efficient way to store and transmit data between applications and servers.
+JSON (JavaScript Object Notation) is a lightweight data format for storing and transporting data. Programmers use it because it's readable, easy to parse, and readily used in web APIs and configs.
 
 ## How to:
 
-Coding examples and sample output:
+**Parse JSON:**
 
 ```TypeScript
-// Creating a JSON object
-let person = {
-  "name": "John",
-  "age": 25,
-  "location": "New York"
-}
-
-// Accessing values in JSON
-console.log(person.name); // Output: John
-console.log(person.age); // Output: 25
-console.log(person.location); // Output: New York
-
-// Adding a new property to the object
-person.job = "Software Developer";
-console.log(person); // Output: { "name": "John", "age": 25, "location": "New York", "job": "Software Developer" }
+const jsonString = '{"name":"John", "age":30, "city":"New York"}';
+let user = JSON.parse(jsonString);
+console.log(user.name); // John
 ```
 
-## Deep Dive:
+**Stringify JavaScript objects:**
 
-JSON was first introduced in 1999 as a simplified alternative to XML. It quickly gained popularity due to its lightweight nature, making it easy to parse and ideal for use in web applications. It is also supported by many programming languages, including TypeScript. When working with JSON, there are alternative formats such as YAML and XML, but JSON remains the standard for data interchange.
+```TypeScript
+const userObject = { name: 'Jane', age: 25, city: 'Los Angeles' };
+let jsonOutput = JSON.stringify(userObject);
+console.log(jsonOutput); // {"name":"Jane","age":25,"city":"Los Angeles"}
+```
 
-In TypeScript, JSON data can be easily converted to objects using the `JSON.parse()` method, and objects can be converted to JSON strings using the `JSON.stringify()` method. This makes it easy to send and receive data between a client and a server. JSON also supports arrays, making it a versatile data format.
+**Type Declarations:**
 
-## See Also:
+```TypeScript
+type User = {
+  name: string;
+  age: number;
+  city: string;
+};
 
-- [JSON tutorial on W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [JSON on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+const userJson = '{"name":"Jack", "age":28, "city":"Chicago"}';
+let user: User = JSON.parse(userJson);
+console.log(user.city); // Chicago
+```
+
+## Deep Dive
+
+JSON's got its start from JavaScript but is now language-agnostic; it's become the go-to for data interchange, replacing XML due to its simplicity. Although JSON natively doesn't enforce types (which TypeScript is all about), TypeScript lets you define types to ensure your JSON structure is what you expect. And while JSON is king for APIs, for configuration files, some prefer YAML, which is more human-readable. Under the hood, when `JSON.parse()` or `JSON.stringify()` is called in TypeScript, it's actually calling the JavaScript engine's JSON functions; TypeScript's main role is to enhance these operations with type safety.
+
+## See Also
+
+- [JSON.org](https://www.json.org/json-en.html): Official JSON documentation.
+- [MDN - Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON): Good old MDN provides a general background and use cases.

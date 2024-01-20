@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "C recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "C"
 category:             "C"
@@ -12,34 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests in C is the process of creating small code snippets or functions that test various aspects of your program. These tests help ensure that your code is functioning as intended and can catch any potential bugs or errors before they become larger issues. Programmers write tests to increase the reliability and quality of their code, ultimately making it easier to maintain and debug.
+Writing tests means crafting code that checks if your other code works. Programmers do it to catch bugs early, save time, and make sure that code works now and keeps working later.
 
 ## How to:
 
-To create a test in C, you first need to declare a `main` function, just like you would for any other C program. Within this function, you can use the `assert` function from the `<assert.h>` header file to check if a certain condition is true. Here's an example:
+In C, you can write tests by using a testing framework like CUnit or by hand-rolling your own simple testing setup. Below is a barebones example using assert to create a basic test function for an `add` function.
 
 ```C
 #include <assert.h>
 
+// Function to test
+int add(int a, int b) {
+    return a + b;
+}
+
+// Test function
+void test_add() {
+    assert(add(2, 2) == 4);
+    assert(add(-1, 1) == 0);
+}
+
 int main() {
-    int num = 5;
-    assert(num < 10);  // this test will pass
-    assert(num == 10); // this test will fail
+    test_add();
+    printf("All tests passed!\n");
     return 0;
 }
 ```
 
-You can also use the `printf` function to display any desired output. To run your tests, compile and execute your program, and check the output to see if all tests passed or if any failed.
+Sample output, if all tests pass:
 
-## Deep Dive:
+```
+All tests passed!
+```
 
-In the early days of C programming, writing tests was not a common practice due to the limitations of older testing frameworks. However, with the advancement of technology and the creation of new testing libraries, writing tests in C has become more accessible and popular.
+If a test fails, the program will abort and print an error message.
 
-An alternative to using the `assert` function is to use a testing library such as `cmocka` or `seatest`. These libraries provide additional features and testing capabilities, making it easier to write and manage tests. They also allow for more detailed output and enable test-driven development, where tests are written before the actual code.
+## Deep Dive
 
-When writing tests, it's essential to have a good understanding of your code's logic and behavior. This helps in creating effective tests and improves the overall quality of your code. Additionally, it's crucial to regularly run your tests and make updates as your codebase changes.
+Historically, C didn't come with a built-in testing framework. Programmers usually wrote custom test functions or used third-party frameworks. Popular frameworks include CUnit, Check, and Unity. Each offers features like automated test discovery, setup/teardown processes, and test result reporting. For small projects, simple assert-based tests might suffice, but as complexity grows, a proper framework saves time and hassle.
 
-## See Also:
+## See Also
 
-- [Official C documentation on <assert.h>](https://en.cppreference.com/w/c/error/assert)
-- [cmocka testing library](https://cmocka.org/)
+Here are some useful links for more immersive diving:
+
+- [CUnit](http://cunit.sourceforge.net/)
+- [Check](https://libcheck.github.io/check/)
+- [Unity](http://www.throwtheswitch.org/unity)
+- [Assert.h in C programming](https://www.tutorialspoint.com/assert-h-in-c-programming)

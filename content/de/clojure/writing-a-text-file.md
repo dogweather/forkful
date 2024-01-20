@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei schreiben."
-html_title:           "Clojure: Eine Textdatei schreiben."
-simple_title:         "Eine Textdatei schreiben."
+title:                "Eine Textdatei schreiben"
+html_title:           "Arduino: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,32 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und Warum? 
-Das Schreiben von Textdateien ist ein grundlegender Bestandteil des Programmierens und beinhaltet das Erstellen und Speichern von Textinhalten in einer Datei. Programmierer nutzen Textdateien, um Daten in einer leicht lesbaren und einfach zu manipulierenden Form zu speichern. 
+## Was & Warum?
+Textdateien schreiben bedeutet, Daten in einer einfachen Datei zu speichern, die als Text gelesen werden kann. Programmierer machen das, um Daten dauerhaft zu speichern, Logfiles zu erstellen oder Konfigurationen zu speichern.
 
-Wie geht's:
-(Benutzen Sie Clojure-Codeblöcke, um Beispiele und Ausgaben darzustellen)
-
-```Clojure 
-;; Eine Textdatei erstellen und schreiben 
-(with-open [f (clojure.java.io/writer "meineDatei.txt")]
-  (.write f "Dies ist ein Beispieltext, der in meineDatei.txt geschrieben wird."))
-
-;; Eine bestehende Textdatei lesen 
-(with-open [r (clojure.java.io/reader "meineDatei.txt")]
-  (println (.readLine r)))
+## How to:
+```Clojure
+(with-open [writer (java.io.BufferedWriter. (java.io.FileWriter. "beispiel.txt"))]
+  (.write writer "Hallo, Clojure-Leser!"))
 ```
 
-Ausgabe: 
-Dies ist ein Beispieltext, der in meineDatei.txt geschrieben wird. 
+Das obige Beispiel schreibt den Satz "Hallo, Clojure-Leser!" in eine Datei namens "beispiel.txt".
 
-Tief einsteigen:
-Das Schreiben von Textdateien ist ein grundlegender Teil des Programmierens, der schon seit langer Zeit verwendet wird. Alternativ können auch Datenbanken oder andere Dateiformate verwendet werden, aber das Schreiben von Textdateien ist eine einfache und effiziente Möglichkeit, Daten zu speichern. Die Implementation des Schreibens einer Datei in Clojure basiert auf Standardbibliotheken für den Umgang mit Dateien und ist somit einfach zu erlernen und anzuwenden. 
+## Deep Dive
+Das Schreiben von Textdateien in Clojure geschieht oft über das Java-Interop, weil Clojure auf der Java Virtual Machine läuft und Java's I/O-APIs nutzt. Alternativen zum `java.io.BufferedWriter` sind zum Beispiel `spit` für den einfachen Gebrauch oder Bibliotheken wie `clojure.java.io` für komplexere Aufgaben. Die Implementierungsdetails variieren je nach Anforderung, können aber Aspekte wie Zeichenkodierung, Pufferung und Fehlerbehandlung umfassen.
 
-Weitere Informationen:
-https://clojure.org/reference/java_interop
-https://clojure.org/guides/io
-
-Siehe auch:
-https://github.com/greglook/clj-new/example-app
-https://stackoverflow.com/questions/11437169/creating-and-writing-to-a-file-in-clojure
+## See Also
+- [Clojure-Dokumentation zu java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Java-Dokumentation zu BufferedWriter](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/io/BufferedWriter.html)
+- [Einführung in Clojure](https://clojure.org/guides/getting_started)

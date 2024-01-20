@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Gleam: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att arbeta med YAML, eller YAML Ain't Markup Language, är ett sätt för programmerare att strukturera och ordna data på ett läsbart och logiskt sätt. Det används ofta för att konfigurera och lagra inställningar, men kan också användas för att strukturera data och information i ett projekt.
+## Vad & Varför?
+YAML är ett dataformat för konfigurationsfiler och dataseriering. Programmerare använder YAML för att det är läsligt och kompatibelt med många programmeringsspråk.
 
-# Hur du gör:
-För att använda YAML i ditt Gleam-projekt, behöver du först importera YAML-paketet. Sedan kan du skapa en variabel och tilldela den värden från en YAML-fil genom att använda funktionen `decode` tillsammans med filnamnet och typen av data du vill ha.
+## Hur gör man:
+Gleam har ännu inte inbyggt stöd för YAML, så vi använder ett externt bibliotek för att hantera YAML-data.
 
-```
-import gleam/yaml
+```gleam
+// Först, lägg till ett YAML-bibliotek i din `gleam.toml` fil.
+// Exempelvis yaml_gleam, se https://hex.pm för det senaste.
 
-let settings: Map(String, String) =
-    yaml.decode("settings.yml", Map(String, String))
-```
+import yaml_gleam
 
-För att skriva till en YAML-fil, kan du använda funktionen `encode` tillsammans med den variabel du vill skriva till filen och filnamnet.
+pub fn main() {
+  let yaml_str = "
+  en: Hello, world!
+  sv: Hej, världen!
+  "
 
-```
-let example_settings =
-    Map.from_list(
-        [
-            ("language", "Swedish"),
-            ("theme", "Dark"),
-            ("notifications", "On")
-        ]
-    )
-
-yaml.encode(example_settings, "new_settings.yml")
+  case yaml_gleam.decode(yaml_str) {
+    Ok(data) -> io.println(data)
+    Error(err) -> io.println(f"Error: {err}")
+  }
+}
 ```
 
-# Djupdykning:
-YAML introducerades först 2001 som ett alternativ till XML-formatet för att strukturera data. YAML är utformat för att vara läsbart för både människor och maskiner, vilket gör det lätt att arbeta med och underhålla. Det finns också andra format för datastrukturering, såsom JSON och TOML, men YAML har fördelen av att vara mer lättförståeligt och lättare att läsa.
+Om allt går bra ska output vara något liknande detta:
+```
+{"en": "Hello, world!", "sv": "Hej, världen!"}
+```
 
-När du arbetar med YAML i Gleam, används biblioteket `gleam/yaml` som implementerar libyaml under huven. Detta betyder att du kan lita på att din YAML-kod kommer att vara effektiv och tillförlitlig för ditt projekt.
+## Deep Dive
+YAML introducerades i början av 2000-talet som ett enklare alternativ till XML. Andra populära alternativ idag är JSON och TOML. Eftersom Gleam är ett ungt språk, är stödet för YAML genom tredjepartsbibliotek. Implementationen använder Erlangs kraftfulla parsing och pattern matching för att omvandla YAML-strängar till Gleam-datastrukturer.
 
-# Se även:
-- Gleams YAML-paket: https://github.com/gleam-lang/yaml
-- YAML-specifikationen: https://yaml.org/spec/
-- Alternativa format för datastrukturering: JSON, TOML
+## See Also
+- YAML officiella webbplats: https://yaml.org
+- yaml_gleam bibliotek på Hex: https://hex.pm/packages/yaml_gleam
+- Erlang's YAML stöd: https://github.com/yaml/erlang-yaml

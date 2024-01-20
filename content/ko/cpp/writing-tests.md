@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성"
-html_title:           "C++: 테스트 작성"
-simple_title:         "테스트 작성"
+title:                "테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며, 왜?)
+테스트 작성은 코드가 의도한 대로 작동하는지 검증하는 과정입니다. 개발자는 버그를 줄이고, 코드 품질을 유지하며, 장기적으로 시간을 절약하기 위해 테스트를 합니다.
 
-테스트를 작성하는 것은 프로그래머가 자신이 작성한 코드의 정확성을 확인하기 위한 과정입니다. 목적은 프로그래밍에서 발생할 수 있는 버그를 사전에 발견하여 소프트웨어의 품질을 향상시키는 것입니다.
+## How to: (방법)
+C++에서 테스트를 작성하는 한 가지 표준 방법은 Google Test 프레임워크를 사용하는 것입니다. 아래 예제 코드를 보세요:
 
-## 하는 방법:
+```c++
+#include <gtest/gtest.h>
 
-다음은 ```C++``` 코드 블록 내부에 예제와 결과를 포함하여 테스트를 작성하는 방법을 간략하게 설명합니다.
-```
-// 테스트를 위한 C++ 코드 예제
-#include <iostream>
-using namespace std;
-
-// 덧셈 함수 정의
-int add(int num1, int num2) {
-  return num1 + num2;
+int Add(int a, int b) {
+    return a + b;
 }
 
-// 덧셈 함수를 테스트하는 코드
-int main() {
-  // 결과가 예상한대로 나오는지 확인
-  if (add(2, 3) == 5) {
-    cout << "덧셈 함수가 정상적으로 동작합니다.";
-  } else {
-    cout << "덧셈 함수가 정상적으로 동작하지 않습니다.";
-  }
-  return 0;
+TEST(AdditionTest, HandlesPositiveNumbers) {
+    EXPECT_EQ(7, Add(3, 4));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
+컴파일 후 해당 테스트를 실행하면 다음과 같은 결과가 출력됩니다:
+
 ```
-// 결과:
-덧셈 함수가 정상적으로 동작합니다.
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from AdditionTest
+[ RUN      ] AdditionTest.HandlesPositiveNumbers
+[       OK ] AdditionTest.HandlesPositiveNumbers (0 ms)
+[----------] 2 tests from AdditionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 2 tests.
 ```
 
-## 더 깊게:
+## Deep Dive (심층 분석)
+테스트 작성 방법은 오래 전부터 중요했습니다. 초기에는 단순히 출력을 확인하는 방식이었지만, 지금은 TDD(Test-Driven Development) 같은 체계적인 접근 방식이 있습니다. Google Test는 C++의 여러 테스트 프레임워크 중 하나로, xUnit 아키텍처를 따르며 사용자에게 많은 기능을 제공합니다. 이외에도 Catch2, Boost.Test 등 다양한 대안이 존재합니다. 구현 세부 사항으로는 테스트 케이스, 테스트 스위트, 어설션 등이 있으며, 이들은 개발자가 보다 쉽게 코드를 검증할 수 있도록 돕습니다.
 
-테스트를 작성하는 아이디어는 소프트웨어 공학의 하위 분야인 테스트 주도 개발(Test-driven development)에서 나왔습니다. 다른 방법으로는 수동 테스트, 디버깅, 사후 테스트 등이 있습니다. 자동화된 테스트는 코드를 더 효율적으로 관리하고 문제를 더 빠르게 해결할 수 있도록 도와줍니다. 일반적으로 단위 테스트, 통합 테스트, 기능 테스트 등 다양한 종류의 테스트를 작성합니다.
-
-## 관련 자료:
-
-- [테스트 주도 개발(Test-driven development) 관련 정보](https://ko.wikipedia.org/wiki/테스트_주도_개발)
-- [유닛 테스트(Unit test) 관련 정보](https://en.wikipedia.org/wiki/Unit_testing)
-- [Goole Test, CppUnit 등의 프레임워크](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C++)
+## See Also (참고 자료)
+- [Google Test GitHub repository](https://github.com/google/googletest)
+- [Google Test official documentation](https://google.github.io/googletest/)
+- [Catch2 GitHub repository](https://github.com/catchorg/Catch2)
+- [Boost.Test Documentation](https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/index.html)

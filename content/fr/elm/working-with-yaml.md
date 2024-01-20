@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Elm: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+Le YAML, c'est du texte pour des données. Les dev l'adorent pour sa simplicité, idéal pour la config ou des fichiers lourds en JSON.
 
-YAML est un langage de balisage utilisé par les programmeurs pour structurer et organiser des données. Il est populaire dans les applications web, les outils de développement logiciel et les scripts automatisés, car il est facile à lire et à écrire.
-
-## Comment:
-
-La syntaxe YAML utilise des indentations pour définir la structure des données. Voici un exemple en utilisant le module YAML de Elm:
+## How to:
+Elm n'a pas de lib standard pour YAML, mais on peut convertir du JSON en Elm. Utilisez `Json.Decode` pour parser un yaml converti.
 
 ```Elm
-import Yaml exposing (..)
+import Json.Decode as Decode
+import Http
 
-monFichier : String
-monFichier =
-    """
-    fruits:
-        - pomme
-        - banane
-        - fraise
-    legumes:
-        - carotte
-        - tomate
-    """
+type alias User =
+    { id : Int
+    , name : String
+    }
 
-monFichierEnYaml : Result ParserError Value
-monFichierEnYaml =
-    parse monFichier
+userDecoder : Decode.Decoder User
+userDecoder =
+    Decode.map2 User
+        (Decode.field "id" Decode.int)
+        (Decode.field "name" Decode.string)
+
+fetchUser : String -> Cmd Msg
+fetchUser url =
+    Http.get { url = url, decoder = userDecoder }
 ```
 
-La sortie de la fonction parse sera une structure de données que vous pourrez utiliser dans votre programme. Par exemple, vous pourriez accéder au premier fruit de la liste en utilisant `monFichierEnYaml.fruits[0]`, qui retournerait "pomme".
+Si YAML est déjà converti en JSON...
 
-## Plongée en profondeur:
+```Elm
+jsonString : String
+jsonString =
+    """
+    { "id": 1, "name": "Alice" }
+    """
 
-YAML a été créé en 2001 dans le but de remplacer les fichiers de configuration XML complexes. Il est largement utilisé dans le développement logiciel pour définir des configurations, des ressources et des données structurées. Certains alternatives à YAML sont JSON, qui est également largement utilisé dans le développement web, et TOML, qui se concentre sur la lisibilité pour les humains. En utilisant le module YAML de Elm, vous utilisez en fait le package JavaScript js-yaml, qui est basé sur le langage JavaScript.
+parseResult : Result String User
+parseResult =
+    Decode.decodeString userDecoder jsonString
+```
 
-## Voir aussi:
+## Deep Dive
+Elm est jeune : pas encore de lib YAML native. Autres langages en ont, comme PyYAML en Python. Si besoin, convertissez YAML à JSON et utilisez Elm.
 
-Pour en savoir plus sur YAML et son utilisation avec Elm, veuillez consulter la documentation officielle du module YAML de Elm: https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/
+## See Also
+- Elm JSON guide: https://guide.elm-lang.org/effects/json.html
+- YAML to JSON online: https://yamltojson.com
+- PyYAML pour inspiration: https://pyyaml.org
 
-Vous pouvez également consulter ces sources pour en apprendre davantage sur YAML et les autres langages de balisage:
-- https://yaml.org/
-- https://www.json.org/
-- https://toml.io/
+(elm-yaml n'est pas encore là, mais gardez un œil ouvert!)

@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "C# recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "C#"
 category:             "C#"
@@ -11,42 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing a text file in C# involves creating a file and inputting text into it. Programmers often write text files to store and preserve data that can be easily read and edited outside of the program. This allows for more flexibility and versatility in data management.
+Writing a text file means storing data like strings into a file on your disk. Programmers do it for logging, saving configurations, or plain data persistence.
 
 ## How to:
-
-To write a text file in C#, follow these simple steps:
+You can write a text file in C# using `File.WriteAllText`, `File.AppendAllText`, or a `StreamWriter`.
 
 ```C#
-// 1. Create a new text file using the File.Create() method and specify the file path and name
-// Note: This will overwrite any existing file with the same name
-File.Create("C:/Users/John/test.txt");
+using System;
+using System.IO;
 
-// 2. Create a StreamWriter object and specify the file path and name to write to
-// Note: This will append the new text to the existing file
-using (StreamWriter writer = new StreamWriter("C:/Users/John/test.txt", true))
+class Program
 {
-    // 3. Write the desired text to the file
-    writer.WriteLine("This is an example of writing a text file in C#.");
-}
+    static void Main()
+    {
+        // Write text to a new file
+        File.WriteAllText("log.txt", "Hello, file!");
 
-// 4. Close the StreamWriter object
-writer.Close();
+        // Append text to the existing file
+        File.AppendAllText("log.txt", "\nLet's add another line.");
+
+        // Use StreamWriter to write to a file
+        using (StreamWriter writer = new StreamWriter("log.txt", true))
+        {
+            writer.WriteLine("Another line with StreamWriter.");
+        }
+    }
+}
 ```
 
-The code above creates a new text file named "test.txt" in the specified file path and writes the text "This is an example of writing a text file in C#." to the file. The ```using``` statement ensures that the StreamWriter object is automatically closed after it finishes writing to the file.
+Sample output in `log.txt`:
+```
+Hello, file!
+Let's add another line.
+Another line with StreamWriter.
+```
 
-## Deep Dive:
+## Deep Dive
+Historically, file I/O in C# has evolved from basic `FileStream` operations to abstractions like `StreamWriter`. Alternatives include using `System.IO.FileStream` for more control or asynchronous methods like `WriteAllTextAsync` for efficiency. Under the hood, `StreamWriter` uses a buffer to optimize writing operations.
 
-Historically, text files were used as a basic form of storing and transmitting data. As technology has advanced, text files have remained a popular way to store, manage, and share data due to their simplicity and universality.
-
-Alternatives to writing text files include using databases and spreadsheets. While these options offer more features and functionalities, they may require special software and skills to access and manipulate the data.
-
-To implement writing a text file in C#, you can use the System.IO namespace, which provides useful classes and methods for handling input and output operations with files.
-
-## See Also:
-
-- [C# File.Create Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.create)
-- [C# StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
-- [Text File](https://en.wikipedia.org/wiki/Text_file)
+## See Also
+For related reading and in-depth tutorials:
+- [MSDN Documentation on File I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)
+- [MSDN StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
+- [Tutorial on Asynchronous File I/O in C#](https://docs.microsoft.com/en-us/dotnet/standard/io/asynchronous-file-i-o)

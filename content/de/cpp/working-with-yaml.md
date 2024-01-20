@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "C++: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "C++"
 category:             "C++"
@@ -10,69 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist YAML und warum nutzen Programmierer es?
+## What & Why? (Was & Warum?)
+YAML ist ein menschenlesbares Datenformat. Entwickler nutzen es für Konfigurationsdateien und Datenübertragungen, weil es einfach und klar ist.
 
-YAML ist eine einfache, menschenlesbare Datenformatierungssprache, die häufig von Programmierern verwendet wird, um Daten in einer kompakten und leicht verständlichen Art und Weise zu speichern und zu übertragen. YAML wird vor allem in der Konfiguration von Software oder beim Übertragen von Daten zwischen verschiedenen Anwendungen genutzt.
+## How to: (Wie geht das?)
+C++ hat keine eingebaute YAML-Unterstützung, daher verwenden wir die `yaml-cpp`-Bibliothek. Hier installierst du sie und liest eine YAML-Datei:
 
-## Anleitung:
+```cpp
+// yaml-cpp installieren: 
+// Folge den Anweisungen auf https://github.com/jbeder/yaml-cpp
 
-Die Verwendung von YAML in C++ ist recht einfach. Im Folgenden werden zwei Beispiele gezeigt, wie man Daten in YAML schreibt und liest. Beachte, dass für die folgenden Code-Beispiele eine YAML-Bibliothek wie yaml-cpp verwendet werden muss.
+#include <yaml-cpp/yaml.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 
-### Beispiel 1: Schreiben von Daten in YAML
+int main() {
+    // YAML-Datei laden
+    YAML::Node config = YAML::LoadFile("config.yaml");
 
-```C++
-YAML::Node data; // Erstellen eines leeren YAML-Nodes
+    // Zugriff auf Werte
+    std::string host = config["host"].as<std::string>();
+    int port = config["port"].as<int>();
 
-// Hinzufügen von Daten zu dem Node
-data["Name"] = "Max";
-data["Alter"] = 25;
-data["Hobbies"] = { "Lesen", "Musik", "Laufen" };
+    // Ausgabe
+    std::cout << "Host: " << host << "\n";
+    std::cout << "Port: " << port << "\n";
 
-// Schreiben des Nodes in eine Datei
-std::ofstream datei("daten.yml");
-datei << data; 
-```
-
-### Beispiel 2: Lesen von Daten aus YAML
-
-```C++
-// Einlesen von YAML-Daten aus einer Datei
-YAML::Node data = YAML::LoadFile("daten.yml");
-
-// Zugriff auf einzelne Daten
-std::string name = data["Name"].as<std::string>();
-int alter = data["Alter"].as<int>();
-
-// Iterieren über eine Liste von Daten
-for (std::string hobby : data["Hobbies"]) {
-    std::cout << hobby << " ";
+    return 0;
 }
 ```
 
-### Ausgabe:
-
-```C++
-Name: Max
-Alter: 25
-Hobbies: Lesen Musik Laufen
+Beispiel `config.yaml`:
+```yaml
+host: localhost
+port: 8080
 ```
 
-## Tiefentauchen:
+Sample Output:
+```
+Host: localhost
+Port: 8080
+```
 
-### Historischer Hintergrund:
+## Deep Dive (Tiefergehendes)
+YAML entstand Anfang der 2000er als Alternative zu XML und ähnelt JSON. Im Gegensatz zu JSON betont YAML Lesbarkeit und unterstützt Kommentare. `yaml-cpp` bietet eine C++-spezifische Implementierung, aber es gibt auch Bibliotheken für andere Sprachen wie PyYAML für Python.
 
-YAML wurde im Jahr 2001 vom Programmierer Clark Evans erfunden. Es wurde als Alternative zu anderen komplexeren Datenformaten wie XML entwickelt und hat sich seitdem zu einem beliebten Format bei Programmierern entwickelt.
-
-### Alternativen:
-
-Obwohl YAML von vielen Programmierern bevorzugt wird, gibt es auch andere Datenformate, die ähnliche oder sogar bessere Funktionen bieten. Dazu gehören JSON, TOML und INI-Dateien. Es ist wichtig zu prüfen, welches Format am besten zu den Anforderungen des jeweiligen Projekts passt.
-
-### Implementierungsdetails:
-
-YAML wird durch Tabellen und Listen dargestellt, die durch Einrückungen voneinander getrennt sind. Es ist daher wichtig, beim Schreiben von YAML-Dateien die Einrückungen korrekt zu setzen, da dies die Struktur und Lesbarkeit der Datei beeinflusst.
-
-## Siehe auch:
-
-- yaml-cpp Bibliothek: https://github.com/jbeder/yaml-cpp
+## See Also (Siehe auch)
 - YAML-Spezifikation: https://yaml.org/spec/1.2/spec.html
-- Vergleich verschiedener Datenformate: https://github.com/ztellman/data-format-comparison
+- `yaml-cpp` GitHub-Repo: https://github.com/jbeder/yaml-cpp
+- YAML-Tutorial: https://learnxinyminutes.com/docs/yaml/

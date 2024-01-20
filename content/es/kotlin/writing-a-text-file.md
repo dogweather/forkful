@@ -1,7 +1,7 @@
 ---
-title:                "Redactando un archivo de texto"
-html_title:           "Kotlin: Redactando un archivo de texto"
-simple_title:         "Redactando un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-
-Escribir un archivo de texto es el proceso de guardar información en forma de texto en un archivo en una computadora. Los programadores suelen hacerlo para almacenar datos de manera estructurada y poder acceder a ellos más tarde cuando sea necesario.
+## Qué y Por Qué?
+Escribir un archivo de texto implica guardar datos en un documento legible. Los programadores hacen esto para almacenar configuraciones, resultados de programas, o para intercambiar información entre diferentes partes de un programa o con otros programas.
 
 ## Cómo hacerlo:
+Para escribir un archivo de texto en Kotlin, puedes usar la función `writeText` que ofrece la librería estándar. Aquí hay un ejemplo:
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    // crear un objeto de archivo y especificar la ruta y el nombre del archivo a escribir
-    val archivo = File("miArchivo.txt")
-    
-    // escribir datos en el archivo utilizando la función "appendText"
-    archivo.appendText("¡Hola Mundo!")
-    
-    // cerrar el archivo para asegurar que todos los datos se han escrito correctamente
-    archivo.close()
-    
-    // verificar si el archivo se ha creado correctamente imprimiendo su contenido
-    println(archivo.readText())
+    val mensaje = "¡Hola, Kotlin!"
+    File("saludo.txt").writeText(mensaje)
 }
 ```
 
-**Output:**
+Tras ejecutar el código, encontrarás un archivo `saludo.txt` con el contenido "¡Hola, Kotlin!".
 
+Otro método es usar `printWriter` para escribir línea por línea:
+
+```Kotlin
+import java.io.File
+
+fun main() {
+    File("saludo_lineas.txt").printWriter().use { out ->
+        out.println("Primera línea")
+        out.println("Segunda línea")
+        out.println("Tercera línea")
+    }
+}
 ```
-¡Hola Mundo!
-```
 
-## Inmersión profunda:
+Este código crea un archivo `saludo_lineas.txt` con tres líneas de texto.
 
-Escribir archivos de texto ha sido una tarea común en la programación desde los inicios de las computadoras. Generalmente se utilizan para almacenar datos simples como nombres de usuarios, contraseñas y configuraciones de aplicaciones. También hay alternativas para escribir datos estructurados como bases de datos, sin embargo, los archivos de texto siguen siendo ampliamente utilizados debido a su simplicidad.
+## A Fondo
+La escritura de archivos en discos se remonta a los inicios de la informática y ha evolucionado con los sistemas operativos. En Kotlin, `writeText` y `printWriter` son dos formas sencillas de manejar archivos, pero hay otras como `FileOutputStream` para mayor control o `Files` con la API NIO para operaciones más avanzadas.
 
-Una implementación más detallada del código anterior implica el uso de bloques "try-catch" para manejar posibles errores al escribir en el archivo. También se pueden utilizar diferentes funciones de escritura como "writeText" y "writeBytes" para dar más control sobre cómo se almacenan los datos en el archivo. 
+Además, puedes agregar un modo de apertura en `FileWriter` (por ejemplo, para agregar texto sin sobrescribir el archivo) y control de excepciones con `try...catch` para manejar errores al escribir en archivos.
 
-## Ver también:
-
-- [Documentación de Kotlin para escritura de archivos](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-bytes.html)
-- [Escribiendo archivos de texto con otras opciones en Java](https://www.baeldung.com/java-write-to-file)
+## Ver También
+- [Oracle Java Documentation - java.io.PrintWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintWriter.html)
+- [Oracle Java Documentation - Working with Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

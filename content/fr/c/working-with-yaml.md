@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "C: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,99 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+YAML, "YAML Ain't Markup Language", c'est un format de données lisible par l'humain pour configurer des projets. Les devs l'aiment pour sa simplicité et sa facilité d'emploi dans l'automatisation et la configuration.
 
-Travailler avec YAML est le moyen pour les programmeurs de stocker des données dans un format facilement lisible par les humains et les machines. Il peut être utilisé pour configurer des applications, enregistrer des données de configuration ou même créer des documents structurés.
+## How to:
+Tu ne peux pas manipuler YAML directement en C sans librairie externe. On va utiliser `libyaml` :
 
-## Comment faire:
+1. **Read YAML**
 
-```
-#include <stdio.h>
+   ```C
+   #include <yaml.h>
 
-int main() {
-    FILE *file = fopen("example.yml", "w");
-    if (file == NULL) {
-        printf("Erreur lors de l'ouverture du fichier.");
-        return 1;
-    }
+   int main() {
+       FILE *fh = fopen("config.yaml", "r");
+       yaml_parser_t parser;
+       yaml_event_t event;
 
-    fprintf(file, "nom: Jean\nage: 25\nville: Paris\n");
-    fclose(file);
+       yaml_parser_initialize(&parser);
+       yaml_parser_set_input_file(&parser, fh);
 
-    return 0;
-}
-```
+       while (true) {
+           if (!yaml_parser_parse(&parser, &event)) break;
 
-La sortie sera un fichier example.yml contenant:
+           if (event.type == YAML_SCALAR_EVENT) {
+               printf("Value: %s\n", event.data.scalar.value);
+           }
 
-```YAML
-nom: Jean
-age: 25
-ville: Paris
-```
+           if (event.type != YAML_STREAM_END_EVENT) {
+               yaml_event_delete(&event);
+           } else {
+               break;
+           }
+       }
 
-## Plongez plus profondément:
+       yaml_parser_delete(&parser);
+       fclose(fh);
 
-YAML a été créé en 2001 et signifie "YAML Ain't Markup Language". Il a été conçu pour être un remplacement plus facile à lire et à écrire que XML. Cependant, il peut également être utilisé en conjonction avec JSON et d'autres formats de données.
+       return 0;
+   }
+   ```
+   Output:
+   ```
+   Value: example_value
+   ```
 
-Il existe d'autres alternatives à YAML telles que JSON, TOML et INI. Cependant, YAML est souvent préféré pour sa simplicité et sa syntaxe flexible.
+2. **Write YAML**
 
-La mise en œuvre de YAML se fait via des bibliothèques telles que libyaml, yaml-cpp ou yaml-c. Ces bibliothèques fournissent des fonctions et des méthodes pour lire et écrire des fichiers YAML.
+   ```C
+   #include <yaml.h>
 
-## Voir aussi:
+   int main() {
+       FILE *fh = fopen("config.yaml", "w");
+       yaml_emitter_t emitter;
+       yaml_event_t event;
 
-- [Site officiel de YAML](https://yaml.org/)
-- [Tutoriel pour débuter avec YAML](https://learnxinyminutes.com/docs/yaml/)
-- [Comparaison de YAML avec d'autres formats de données](https://stackoverflow.com/questions/1726802/what-is-a-good-choice-for-a-simple-document-format-that-is-easily-routable-in-j)
+       yaml_emitter_initialize(&emitter);
+       yaml_emitter_set_output_file(&emitter, fh);
+
+       yaml_stream_start_event_initialize(&event, YAML_UTF8_ENCODING);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_document_start_event_initialize(&event, NULL, NULL, NULL, 0);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_scalar_event_initialize(&event, NULL, NULL,
+           (unsigned char *)"example_key", -1, 1, 1, YAML_PLAIN_SCALAR_STYLE);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_scalar_event_initialize(&event, NULL, NULL,
+           (unsigned char *)"example_value", -1, 1, 1, YAML_PLAIN_SCALAR_STYLE);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_document_end_event_initialize(&event, 0);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_stream_end_event_initialize(&event);
+       yaml_emitter_emit(&emitter, &event);
+
+       yaml_emitter_delete(&emitter);
+       fclose(fh);
+
+       return 0;
+   }
+   ```
+
+   Sur la sortie, tu trouveras un fichier `config.yaml` avec le contenu :
+   ```
+   example_key: example_value
+   ```
+
+## Deep Dive
+YAML est né au début des années 2000, il est pratique et maintenant très commun. JSON et XML sont des alternatives, plus verbeuses. YAML est utilisé en C via des librairies comme `libyaml`, qui fait le parsing et l'émission de fichiers YAML. C'est bas niveau, donc parfois tu voudras peut-être une librairie qui mappe YAML sur des structures C directement.
+
+## See Also
+- Spec YAML: http://yaml.org/spec/1.2/spec.html
+- LibYAML GitHub: https://github.com/yaml/libyaml
+- YAML tutorial: https://learnxinyminutes.com/docs/yaml/

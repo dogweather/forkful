@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Ruby: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## O Que & Porquê?
 
-Trabalhar com YAML é uma maneira simples de armazenar e transmitir dados estruturados em um formato legível para humanos. Programadores usam YAML para configurar e armazenar dados de forma mais eficiente do que em outros formatos, como JSON ou XML.
+YAML, que significa "YAML Ain't Markup Language", é um formato de serialização de dados legível para humanos, usado frequentemente para configurações de projeto e transmissão de dados entre linguagens. Programadores usam YAML pela sua simplicidade e legibilidade, facilitando a modificação e compreensão de estruturas de dados complexas sem a complexidade de outros formatos como XML.
 
-## Como fazer:
+## Como Fazer:
 
-Para utilizar YAML em seu código Ruby, primeiro você precisa requerer o módulo YAML. Em seguida, é possível carregar e manipular dados YAML usando os métodos fornecidos pelo módulo, como `YAML.load` e `YAML.dump`.
-
-Exemplo de código:
+Para trabalhar com YAML em Ruby, use a gem 'yaml'. Primeiro, instale-a com `gem install yaml`. Depois, veja como carregar um YAML, alterar e salvar:
 
 ```Ruby
 require 'yaml'
 
-# carregar dados YAML de um arquivo
-data = YAML.load(File.read('arquivo.yaml'))
+# Carregar YAML de um arquivo
+config = YAML.load_file('config.yml')
 
-# modificar os dados e salvá-los em um novo arquivo
-data['chave'] = valor
-File.write('novo_arquivo.yaml', YAML.dump(data))
+# Acesso e manipulação de dados
+config['setting1'] = 'Novo valor'
+
+# Salvar em YAML
+File.open('config.yml', 'w') { |file| file.write(config.to_yaml) }
 ```
 
-Exemplo de saída:
-
-```Ruby
-chave: valor
+Se o `config.yml` for assim:
+```yaml
+setting1: valor1
+setting2: valor2
 ```
 
-## Profundando:
+A saída será o arquivo `config.yml` atualizado:
+```yaml
+---
+setting1: Novo valor
+setting2: valor2
+```
 
-YAML, que é a sigla para "YAML Ain't Markup Language", é um formato de serialização inventado em 2001 por um programador que queria uma maneira mais intuitiva de armazenar dados estruturados do que XML. Outras alternativas ao YAML incluem JSON e XML, mas YAML é frequentemente escolhido devido à sua simplicidade e legibilidade. É importante lembrar que YAML é um formato que não permite a execução de código, tornando-o mais seguro do que outros formatos que permitem a injeção de comandos.
+## Mergulho Profundo:
 
-## Veja também:
+YAML foi introduzido em 2001, projetado para ser mais legível e simples que o XML. Várias linguagens têm bibliotecas para trabalhar com YAML, como PyYAML para Python e go-yaml para Go. Em Ruby, a biblioteca padrão Psych é a implementação mais comum e está incluso por padrão desde a versão 1.9.3. Psych é baseado na libyaml, uma biblioteca em C para parsing e emissão de YAML, garantindo rapidez e eficiência no processamento dos dados.
 
-- Documentação oficial do módulo YAML para Ruby: https://ruby-doc.org/stdlib-2.7.0/libdoc/yaml/rdoc/YAML.html
-- Tutorial de YAML para iniciantes: https://www.tutorialspoint.com/ruby/yaml_really_ain_t_markup_language.htm
-- Comparação entre YAML, JSON e XML: https://medium.com/swlh/yaml-vs-json-vs-xml-which-one-to-choose-and-why-1e4281b53b9b
+## Veja Também:
+
+- Documentação oficial do Psych em Ruby: https://ruby-doc.org/stdlib/libdoc/psych/rdoc/Psych.html
+- YAML: http://yaml.org/
+- Tutorial de YAML com exemplos: https://learnxinyminutes.com/docs/yaml/
+- Ruby Gems para trabalhar com YAML: https://rubygems.org/gems/yaml
+- Especificação YAML: https://yaml.org/spec/1.2/spec.html

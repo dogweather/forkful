@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "C++ recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "C++"
 category:             "C++"
@@ -11,44 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests is the process of creating code that checks if your program is working as intended. It involves writing small pieces of code that test specific parts of your program's functionality. Programmers do this to ensure that their code is functioning correctly and to catch any bugs that may arise.
+Writing tests checks if your code does what it's supposed to, catching bugs early. Programmers test to save time, headaches, and ensure reliability.
 
 ## How to:
-Writing tests in C++ can be done using a library called "Catch2." This library provides an easy-to-use framework for creating and running tests. Here's an example of a test using Catch2:
+Let's use a simple C++ function and a test using the Catch2 framework.
 
-```C++
-TEST_CASE("Adding Numbers") {
-  REQUIRE(add(2, 3) == 5);
+```cpp
+// main.cpp
+#define CATCH_CONFIG_MAIN  // Let Catch provide main().
+#include <catch2/catch.hpp>
+
+int Add(int a, int b) {
+    return a + b;
+}
+
+TEST_CASE( "Addition works", "[math]" ) {
+    REQUIRE( Add(2, 2) == 4 );
 }
 ```
-
-The test above checks if the `add` function correctly adds two numbers and returns the expected result. If the test fails, Catch2 will provide information on what went wrong. Here's a sample output:
+Compile with `g++ -std=c++17 main.cpp -o test -lcatch2` and run `./test`. Sample output:
 
 ```
-===============================================================================
-Adding Numbers
-===============================================================================
-test.cpp:3
-...............................................................................
-
-test.cpp:5: FAILED:
-  REQUIRE( add(2, 3) == 4 )
-with expansion:
-  5 == 4
-===============================================================================
-test cases: 1 | 1 failed
-checksum: 3a4e471943a48dd1f014dd1c6a1271aa778da841
+All tests passed (1 assertion in 1 test case)
 ```
 
-This output indicates that the test failed because the `add` function did not return the expected result. By writing tests, we can catch these types of errors and fix them before the code reaches the production stage.
+## Deep Dive
+Testing wasn't always the norm. In the '70s, it was manual. Now, automated tests are key in agile and TDD (Test-Driven Development). Alternatives to Catch2? Google Test, Boost.Test, and CppUnit, each with unique flavors. Remember: tests assess if code meets requirements, not if those requirements are correct—that's a spec issue.
 
-## Deep Dive:
-Writing tests has become an essential practice in software development. It originated with the emergence of Test-Driven Development (TDD) in the early 2000s. TDD is a development process that involves writing tests before writing the actual code. This approach helps to ensure that the code meets the desired functionality and catches any bugs early on.
-
-An alternative to using Catch2 is Google Test, a testing framework developed by Google. It shares many similarities with Catch2, but some developers prefer Google Test for its extensive documentation and support for different programming languages.
-
-Writing tests also allows developers to continuously run and monitor their code's functionality, known as Continuous Integration. This practice ensures that any changes to the code do not break its existing functionality.
-
-## See Also:
-- [Catch2 Official Documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md)
-- [Test-Driven Development Explained](https://www.agilealliance.org/glossary/tdd/)
+## See Also
+- Catch2: https://github.com/catchorg/Catch2
+- Google Test: https://github.com/google/googletest
+- Boost.Test: https://www.boost.org/doc/libs/release/libs/test/
+- CppUnit: https://freedesktop.org/wiki/Software/cppunit/

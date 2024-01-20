@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם json"
-html_title:           "C: עובדים עם json"
-simple_title:         "עובדים עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,68 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-עבודה עם JSON היא תהליך שבו מתבצעת התמרת מידע מפורמטים אחרים לתבניות JSON ולהפך. תהליך זה נהדר עבור מפתחי תוכנה בגלל יעילות ופשטות העבודה עם תבניות נתונים כולל. 
+## מה ולמה?
+JSON (JavaScript Object Notation) הוא פורמט תקשורת נתונים פופולרי. מתכנתים משתמשים ב-JSON להמרת נתונים בין שרת ללקוח ובין שירותים באינטרנט כי זה פשוט, קריא ושפת אגנוסטי.
 
-כיצד לעשות:
- ישנן כמה דרכים לעבוד עם JSON בשפת C. אחת הדרכים היא להשתמש בספריית JSON-C, שתוכננה כדי לתמוך בעבודה עם תבניות JSON בקוד C. הנה דוגמה קטנה של איך זה נראה:
-
+## איך לעשות:
 ```C
 #include <stdio.h>
 #include <json-c/json.h>
- 
-int main() {
-  // יצירת משתנה מסוג json_object
-  json_object *jobj = json_object_new_object();
-  // הוספת מאפיין וערך למשתנה
-  json_object_object_add(jobj, "name", json_object_new_string("John"));
-  // הדפסת התוצאה
-  printf("%s", json_object_to_json_string(jobj));
-  // התחרטתי על הכפילות, נמחק!
-  json_object_put(jobj);
-  return 0;
-}
 
-// תוצאה:
-// { "name": "John" }
+int main() {
+    // יצירת אובייקט JSON
+    json_object *new_obj = json_object_new_object();
+    json_object *name = json_object_new_string("ירדן");
+    json_object *age = json_object_new_int(30);
+
+    // הוספת שדות לאובייקט
+    json_object_object_add(new_obj, "שם", name);
+    json_object_object_add(new_obj, "גיל", age);
+
+    // הדפסת האובייקט
+    printf("JSON object created: %s\n", json_object_to_json_string(new_obj));
+
+    // ניקוי זיכרון
+    json_object_put(new_obj);
+
+    return 0;
+}
+```
+תוצאה:
+```
+JSON object created: {"שם": "ירדן", "גיל": 30}
 ```
 
-עוד דרך לעבוד עם JSON ב-C היא להשתמש בספריית cJSON שמאפשרת פעולות נוספות עם תבניות נתונים מסוג JSON. כדי להשתמש בספרייה זו, נדרש להוריד את הקובץ cJSON.c והגירסה המתאימה של cJSON.h מהאתר הרשמי ולכלול אותם בקובץ ה-C שלנו.
+## צלילה לעומק
+ב-JSON התחיל כחלק משפת JavaScript אך הפך לתקן מאודות בכל השפות. האלטרנטיבות כוללות XML ו-YAML, אך JSON נותר פופולרי בזכות פשטותו. ב-C, לעבוד עם JSON דורש lib like json-c או jansson. אלו מעניקים השפת API לסידור וניתוח JSON עם ניהול זיכרון אוטומטי.
 
-עוד דוגמא לשימוש בספריית cJSON להדפסת תבנית JSON:
-
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include "cJSON.h"
- 
-int main() {
-  // כיוון ששימוש ב-cJSON מסובך יחסית, נאתחל כאן
-  char *json;
-  cJSON *root = cJSON_CreateObject();
-  cJSON *person = cJSON_CreateObject();
-  // הגדרת אובייקט
-  cJSON_AddStringToObject(person, "name", "John");
-  cJSON_AddStringToObject(person, "address", "123 Main Street");
-  // הוספת האובייקט לאובייקט הכללי
-  cJSON_AddItemToObject(root, "person", person);
-  // המרת התוצאה למחרוזת והדפסתה
-  json = cJSON_Print(root);
-  printf("%s\n", json);
-  // נזהה ונכנס לספריית cJSON, נמחק!
-  cJSON_Delete(root);
-  // נשיחרר את המחרוזת
-  free(json);
-  return 0;
-}
-
-//תוצאה:
-// { "person": { "name": "John", "address": "123 Main Street" } }
-```
-
-לצורך הפרדת העבודה עם JSON מהקוד הראשי, ניתן לשים קובץ שנקרא json_operations.c המכיל את כל הפונקציות המטפלות בעבודה עם JSON ולקרא אותם מקובץ ראשי יותר קצר ומסודר.
-
-דריסת הערכים בתוך תבניות JSON יכולה להיות יפהפייה עם שימוש ברקורסיה כפי שמתואר בדוגמאות המצורפות באתרים הרשמיים של הספריות.
-
-התױ נמיה!:
-תהליך עבודה עם JSON גמיש ופשוט. כי לאף אחת מהנוכחיות שלנו לעשות את כל העבודה בעצמה, ניתן להשתמש בספריות מוכנות המאפשרות המרה קלה של נתונים לתבניות JSON ולהיפך, כך שנוכל להתמקד בכיתוב
+## ראה גם
+- המדריך הרשמי ל-json-c: https://json-c.github.io/json-c/
+- מסמכי jansson: https://jansson.readthedocs.io/en/latest/
+- מקורות ללמידת JSON: https://www.json.org/json-en.html

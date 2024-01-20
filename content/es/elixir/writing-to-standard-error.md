@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo en el estándar de error."
-html_title:           "Elixir: Escribiendo en el estándar de error."
-simple_title:         "Escribiendo en el estándar de error."
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué & Por Qué?
+Escribir en el error estándar (stderr) permite mostrar mensajes de error y diagnósticos sin mezclarlos con la salida estándar (stdout). Los programadores lo hacen para facilitar el depurado y el manejo de errores, además de permitir su reutilización en otros programas o archivos.
 
-Escribir a la salida de error estándar es una forma en la que los programadores pueden imprimir mensajes de error mientras ejecutan su código. Esto les permite obtener información más detallada sobre los errores que ocurren durante la ejecución del programa.
+## Cómo Hacerlo:
+```elixir
+# Escribe un mensaje de error en stderr
+IO.puts(:stderr, "¡Error encontrado!")
 
-Los programadores utilizan esto para depurar su código y encontrar y solucionar errores de forma más eficiente.
-
-## Cómo:
-
-```Elixir
-IO.puts("Mensaje a la salida estándar")
+# Ejemplo usando `IO.warn/2` que también escribe en stderr pero con una convención para advertencias.
+IO.warn("Esto es una advertencia.")
 ```
-
-Salida:
-
-```Elixir
-Mensaje a la salida estándar
+Salida esperada en stderr:
 ```
+¡Error encontrado!
+Esto es una advertencia.
+```
+## Inmersión Profunda:
+Historia: El concepto de separar la salida estándar de errores data de los primeros días de Unix para mejorar el manejo de la información en la terminal.
 
-## Profundizando:
+Alternativas: Podrías escribir errores a un archivo de log, usar `Logger` para diferentes niveles de log, o capturar stderr en pruebas unitarias.
 
-Escribir a la salida de error estándar no es algo nuevo. Se remonta a las primeras etapas de la programación informática. En el pasado, los programadores escribían a una salida de error estándar para depurar sus programas y obtener información sobre posibles errores.
+Detalles de implementación: En Elixir, `IO.puts/2` con el primer argumento `:stderr` fuerza la escritura en stderr. `IO.warn/2` está pensado para advertencias y utiliza stderr por defecto.
 
-Hoy en día, escribir a la salida de error estándar sigue siendo una forma útil de depurar código y obtener información sobre posibles problemas en el mismo. Sin embargo, también existen otras alternativas, como los sistemas de registro, que permiten a los programadores almacenar y ver información de error de manera más organizada.
-
-En Elixir, escribir a la salida de error estándar se realiza utilizando la función `IO.puts/2`. Puedes imprimir cualquier tipo de dato a la salida de error estándar utilizando esta función.
-
-## Ver también:
-
-- [Documentación oficial de Elixir sobre `IO.puts/2`](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Ejemplos de cómo utilizar `IO.puts/2`](https://elixir-lang.org/getting-started/io-and-the-file-system.html#io-and-the-file-system)
+## Ver También:
+- Documentación oficial de `IO` en Elixir: https://hexdocs.pm/elixir/IO.html
+- Introducción a Elixir para la entrada/salida: https://elixir-lang.org/getting-started/io-and-the-file-system.html
+- Guía de Logging en Elixir: https://hexdocs.pm/logger/Logger.html

@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin kirjoittaminen tiedostoon"
-html_title:           "Bash: Tekstin kirjoittaminen tiedostoon"
-simple_title:         "Tekstin kirjoittaminen tiedostoon"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Tekstitiedostojen kirjoittaminen tarkoittaa tietojen tallentamista helposti luettavassa muodossa. Ohjelmoijat tekevät tämän datan säilömiseksi, lokien kirjaamiseksi ja konfiguraatioiden hallitsemiseksi.
 
-Kirjoittaminen teksti-tiedostoon tarkoittaa tiedostoon tallentamista, joka sisältää tekstiä ja mahdollisesti muita tietoja. Ohjelmoijat tekevät sitä tallentaakseen ja käsitelläkseen tietoja, kuten käyttäjän antamia syötteitä, suorituksen tuloksia tai tiedostojen sisältöä.
-
-## Kuinka:
-
-Esimerkkejä koodista ja ne "Bash...`"-lohkoja.
-
+## How to:
+Teksitiedoston kirjoittaminen ja lisäys peruskomennolla:
 ```Bash
-# Luodaan ja kirjoitetaan teksti-tiedosto
-touch tiedosto.txt # Luodaan tiedosto nimeltä "tiedosto.txt"
-echo "Tervetuloa Bashin maailmaan!" > tiedosto.txt # Kirjoitetaan tiedostoon teksti
+echo "Tämä on tekstirivi" > tiedosto.txt # Luo uuden tiedoston tai korvaa olemassaolevan sisällön
+echo "Lisää tekstiä" >> tiedosto.txt    # Lisää tekstiä tiedostoon
 
-# Näytetään tiedoston sisältö
-cat tiedosto.txt # Tulostetaan tiedoston sisältö
-
-# Lisätään uusi rivi tiedostoon
-echo "Olet oppinut uuden taidon!" >> tiedosto.txt # Lisätään uusi rivi tiedostoon
-
-# Näytetään uusi tiedostosisältö
-cat tiedosto.txt # Tulostetaan tiedoston uusi sisältö
+cat tiedosto.txt # Tulostaa tiedoston sisällön näytölle
+```
+Output:
+```
+Tämä on tekstirivi
+Lisää tekstiä
 ```
 
-Tuloste:
-
+Luodaan skripti tiedoston kirjoittamiseen:
+```Bash
+#!/bin/bash
+tiedoston_nimi="raportti.txt"
+teksti="Tarkistus suoritettu: $(date)"
+echo $teksti > $tiedoston_nimi
 ```
-Tervetuloa Bashin maailmaan!
-Olet oppinut uuden taidon!
-```
 
-## Syvemmälle:
+## Deep Dive
+Ennen graafisten käyttöliittymien aikaa kaikki tiedostojen käsittely tapahtui komentoriviltä. `echo` ja `cat` ovat yksinkertaisia ja nopeita työkaluja tiedoston käsittelyyn; `echo` lähettää annetun tekstin standardiulostuloon tai tiedostoon, ja `cat` (concatenate) yhdistää ja tulostaa tiedostoja. `>` on ylikirjoitusmodaattori ja `>>` lisäysmodaattori. Modernit skriptauskielet kuten Python ja Ruby tarjoavat monipuolisempia tiedostokäsittelytoimintoja, mutta Bash-skriptaus on edelleen yleistä nopeiden ja yksinkertaisten toimintojen automatisointiin Unix-pohjaisissa järjestelmissä.
 
-Historiallinen konteksti: Kirjoittaminen teksti-tiedostoon liittyy läheisesti käskyjen suorittamiseen komentotulkin kautta. Aikaisemmissa UNIX-järjestelmissä tiedoston kutsuttiin usein " tekstitiedostoksi" ja sen päätteeksi käytettiin ".txt". Nykypäivänä tiedostonimi voi olla mikä tahansa ja tiedoston sisältö voi olla muu kuin pelkkää tekstiä.
-
-Vaihtoehtoja: Bashin lisäksi muita mahdollisia tapoja kirjoittaa teksti-tiedosto ovat esimerkiksi käyttöliittymäpohjaiset ohjelmat kuten Notepad tai TextEdit, tai toisen ohjelmointikielen, kuten Pythonin, avulla kirjoitettu skripti.
-
-Toteutuksen yksityiskohdat: Bashin "echo" -komento on yksi tapa kirjoittaa tekstiä tiedostoon. Se tulostaa annetun tekstin ja ohjaa tulosteen tiedostoon. Vaihtoehtoinen tapa on käyttää ">>" ja neliö aaltosulkeita (">>[tekstitiedosto]") kirjoittaaksesi tiedostoon lisää sisältöä ilman, että uusi sisältö korvaa vanhan sisällön.
-
-## Katso myös:
-
-- "Bash Scripting Tutorial" - Bashin perusteet ja käytännön esimerkkejä: https://ryanstutorials.net/bash-scripting-tutorial/
-- "Redirecting Output to a File" - Lisätietoa tiedoston kirjoittamisesta Bashissa: https://www.tldp.org/LDP/abs/html/io-redirection.html#APPENDFILE
-- "Creating a Text File in Bash" - Asiantuntijaoppaan ohjeita tiedoston luomiseen Bashissa: https://www.howtogeek.com/657590/creating-a-text-file-in-bash-scripts/
+## See Also
+- GNU Core Utilities: https://www.gnu.org/software/coreutils/
+- Bash-skriptausopas: https://www.gnu.org/software/bash/manual/bash.html
+- Linux-komentorivin perusteet (kirja): https://www.linuxcommand.org/tlcl.php

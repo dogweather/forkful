@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "Python: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist es und warum?
+## Was & Warum?
+Schreiben auf `stderr` (Standardfehler) ermöglicht es Programmen, Fehlermeldungen separat von regulären Ausgaben zu senden. Dadurch können Entwickler und Benutzer Fehler leicht erkennen und die normale Ausgabe von der Fehlersuche trennen.
 
-In der Programmierung gibt es häufig Situationen, in denen wir Fehler- oder Debuginformationen ausgeben möchten, aber diese Ausgaben nicht den normalen Output stören sollen. Hier kommt das Schreiben auf den Standardfehler (englisch: standard error) ins Spiel. Es ist eine Möglichkeit, solche Informationen getrennt vom normalen Output auszugeben.
+## How to:
+Python bietet verschiedene Wege, um mit `stderr` zu arbeiten. Hier zwei einfache Methoden:
 
-Programmierer nutzen das Schreiben auf den Standardfehler, um diese zwei Arten von Ausgaben zu unterscheiden und gezielter zu verarbeiten. So können sie beispielsweise Fehlermeldungen an den Benutzer ausgeben, während sie gleichzeitig Debuginformationen für ihre eigenen Zwecke auf den Standardfehler schreiben.
+1. `sys.stderr.write()` nutzen:
+```Python
+import sys
 
-## Wie man es macht:
+sys.stderr.write('Das ist eine Fehlermeldung.\n')
+```
+Ausgabe im Terminal: `Das ist eine Fehlermeldung.`
 
-Das Schreiben auf den Standardfehler ist in Python sehr einfach. Wir verwenden dafür das `sys` Modul und die Funktion `stderr`:
+2. `print()` mit dem Argument `file=sys.stderr` verwenden:
+```Python
+import sys
 
-    ```Python
-    import sys
+print('Das ist auch eine Fehlermeldung.', file=sys.stderr)
+```
+Ausgabe im Terminal: `Das ist auch eine Fehlermeldung.`
 
-    sys.stderr.write("Diese Information wird auf den Standardfehler geschrieben.")
-    ```
+## Deep Dive
+Historisch gesehen kommt das Konzept von `stderr` aus den Unix-Systemen, wo es zusammen mit `stdout` (Standardausgabe) und `stdin` (Standardeingabe) eingeführt wurde. Alternativen zu `sys.stderr.write()` und `print(file=sys.stderr)` sind zum Beispiel Logging-Frameworks, die mehr Funktionalität bieten. Intern funktioniert `sys.stderr` als ein File-Objekt, welches Methoden wie `.write()` und `.flush()` anbietet.
 
-Die Ausgabe erscheint dann in roter Schrift, um sie von normalen Output zu unterscheiden. Hier ist ein Beispiel der Ausgabe:
-
-    ```
-Diese Information wird auf den Standardfehler geschrieben.
-    ```
-
-## Tiefer eintauchen:
-
-Das Schreiben auf den Standardfehler ist ein Teil des Streams-Konzepts in der Programmierung. Dabei gibt es drei Arten von Streams: `stdin`, `stdout` und `stderr`. `stdin` steht für die Standard-Eingabe, `stdout` für die Standard-Ausgabe und `stderr` für den Standardfehler.
-
-Historisch gesehen wurde das Schreiben auf den Standardfehler in der UNIX-Philosophie eingeführt, um zwischen normaler und fehlerhafter Ausgabe zu unterscheiden. In Python gibt es auch die Möglichkeit, Fehlermeldungen auf den Standardfehler zu schreiben, indem man das `raise` Statement verwendet.
-
-Als Alternative zum Schreiben auf den Standardfehler gibt es auch das Logging-Modul in Python, welches eine umfangreichere und strukturiertere Möglichkeit bietet, Informationen auszugeben.
-
-## Weitere Informationen:
-
-Wenn du mehr über das Schreiben auf den Standardfehler erfahren möchtest, kannst du diese Quellen konsultieren:
-
-- https://www.python.org/dev/peps/pep-0498/
-- https://docs.python.org/3/library/sys.html
-- https://docs.python.org/3/howto/logging.html
+## See Also
+- Python-Dokumentation für `sys`-Modul: https://docs.python.org/3/library/sys.html
+- Python-Logging-HowTo: https://docs.python.org/3/howto/logging.html
+- Erklärung zu Standard Streams: https://en.wikipedia.org/wiki/Standard_streams

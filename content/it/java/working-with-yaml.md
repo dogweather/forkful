@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Java: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## What & Why?
+Lavorare con YAML significa manipolare e gestire dati in un formato leggibile dall'uomo per la configurazione di applicazioni. I programmatori lo usano per la sua semplicità e facilità di comprensione rispetto a formati come JSON o XML.
 
-YAML è un formato di dati leggibile dall'uomo e dai computer, utilizzato dai programmatori per memorizzare e trasmettere i dati in maniera più semplice e organizzata. È ampiamente utilizzato nei moderni programmi e sistemi web, poiché è facile da leggere e da scrivere anche per chi non ha conoscenze approfondite di programmazione.
+## How to:
+Per lavorare con YAML in Java, useremo la libreria SnakeYAML. Prima, assicurati di aggiungere la dipendenza al tuo `pom.xml` se stai usando Maven:
 
-## Come fare:
+```xml
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.29</version>
+</dependency>
+```
 
-Ecco un esempio di come lavorare con YAML in Java:
+Esempio di codice:
 
-\`\`\`Java 
-// Importa la libreria SnakeYAML per lavorare con YAML 
-import org.yaml.snakeyaml.Yaml; 
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.util.Map;
 
-public class Main { 
-	public static void main(String[] args) { 
-    	// Creazione di un nuovo oggetto Yaml 
-      	Yaml yaml = new Yaml(); 
-      
-      	// Salvataggio di un oggetto in formato YAML 
-      	String yamlString = yaml.dump(new Object()); 
-      
-     	// Stampa del risultato 
-      	System.out.println(yamlString); 
-    } 
+public class YamlExample {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        try (InputStream inputStream = YamlExample.class
+            .getClassLoader()
+            .getResourceAsStream("config.yaml")) {
+            
+            Map<String, Object> data = yaml.load(inputStream);
+            System.out.println(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+```
 
-// Output: !!java.lang.Object {}
+Supponendo che `config.yaml` sia:
 
-\`\`\`
+```yaml
+database:
+  host: localhost
+  port: 3306
+```
 
-## Approfondimento:
+Output di esempio:
 
-Il formato YAML è stato creato dalla comunità open-source nel 2001 come alternativa al formato XML. È stato sviluppato per essere più semplice e leggibile ed è diventato popolare tra i programmatori per il suo utilizzo in diversi tipi di progetti. È possibile utilizzare librerie di codice per lavorare con YAML in vari linguaggi di programmazione, non solo Java.
+```plaintext
+{database={host=localhost, port=3306}}
+```
 
-## Vedi anche:
+## Deep Dive:
+YAML, che sta per "YAML Ain't Markup Language", è nato nei primi anni 2000 come alternativa meno ingombrante e più leggibile rispetto a XML. Sebbene JSON sia un altro popolare formato di scambio dati, YAML è spesso preferito per la configurazione grazie alla sua enfasi sulla chiarezza. Tra le sue features ci sono i commenti, supporto per le relazioni complesse e tipi di dati scalabili. Le alternative a SnakeYAML includono Jackson e la libreria yamlbeans.
 
-- [Sito ufficiale di YAML](https://yaml.org/) per informazioni dettagliate e documentazione.
+## See Also:
+- [SnakeYAML Wiki](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+- [YAML Official Site](https://yaml.org)
+- [Jackson YAML Processor](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)

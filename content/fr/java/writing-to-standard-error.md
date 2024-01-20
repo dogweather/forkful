@@ -1,7 +1,7 @@
 ---
-title:                "Écriture vers l'erreur standard"
-html_title:           "Java: Écriture vers l'erreur standard"
-simple_title:         "Écriture vers l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que la sortie d'erreur standard?
-La sortie d'erreur standard, également connue sous le nom de stderr, est un canal utilisé dans la programmation pour afficher des messages d'erreur. Cela permet aux développeurs de détecter et de diagnostiquer rapidement les problèmes dans leur code.
+## What & Why?
+En Java, écrire dans `stderr` signifie sortir des messages d'erreur. Les programmeurs l'utilisent pour séparer les erreurs des sorties normales, facilitant le débogage et le logging.
 
-Pourquoi les programmeurs utilisent-ils la sortie d'erreur standard?
-En tant que programmeurs, il est essentiel de connaître les erreurs qui se produisent dans notre code afin de pouvoir les corriger. En guidant les erreurs vers la sortie d'erreur standard, nous pouvons facilement les identifier et les résoudre. Cela permet également aux développeurs de fournir des informations sur les erreurs aux utilisateurs de leur programme.
-
-## Comment faire:
-```Java
-try {
-  // code pouvant potentiellement causer une erreur
-} catch(Exception e) {
-  System.err.println(e); // envoie l'erreur à la sortie d'erreur standard
+## How to:
+```java
+public class StdErrExample {
+    public static void main(String[] args) {
+        System.out.println("Sortie standard (stdout)");
+        System.err.println("Erreur standard (stderr)");
+    }
 }
 ```
-Exemple de sortie:
+Sortie :
 ```
-java.lang.NullPointerException
-    at MyClass.myMethod(MyClass.java:12)
-    ...
+Sortie standard (stdout)
+Erreur standard (stderr)
 ```
-Dans cet exemple, la sortie affiche l'erreur qui s'est produite (NullPointerException) et où elle s'est produite (ligne 12 de la méthode myMethod dans la classe MyClass).
 
-## Plongée en profondeur:
-La sortie d'erreur standard a été introduite pour la première fois dans le langage de programmation C. De nos jours, elle est couramment utilisée dans de nombreux langages, dont Java. Les alternatives à la sortie d'erreur standard incluent la journalisation et l'utilisation de bibliothèques spécifiques à la gestion des erreurs.
+## Deep Dive
+Historiquement, `stderr` a été conçu pour que les messages d'erreur puissent être traités séparément de la sortie standard (`stdout`). Ses alternatives incluent l'écriture de journaux dans des fichiers ou d'autres flux personnalisés. Dans Java, `System.err` est un `PrintStream` préconfiguré, similaire à `System.out`, mais toujours destiné aux erreurs.
 
-Les messages d'erreur affichés sur la sortie d'erreur standard peuvent être personnalisés en utilisant la méthode ```System.err.print(message)``` ou ```System.err.println(message)```. Nous pouvons également rediriger la sortie d'erreur standard vers un fichier en utilisant la classe ```java.util.logging```.
-
-## Voir aussi:
-- [La documentation officielle de Java sur la sortie d'erreur standard](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Un guide sur la gestion des erreurs en Java](https://www.baeldung.com/java-exceptions)
+## See Also
+- [JavaDoc PrintStream](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html)
+- [Oracle's guide on I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [StackOverflow discussion on stdout vs stderr](https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr)

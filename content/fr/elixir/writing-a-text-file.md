@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Elixir: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que & Pourquoi?
+## What & Why?
+Écrire dans un fichier texte permet de sauvegarder des données pour les réutiliser plus tard. Les programmeurs le font pour des logs, des configurations, des exportations de données, etc.
 
-Ecrire un fichier texte, c'est simplement enregistrer des informations sous forme de texte dans un fichier sur votre ordinateur. Les programmeurs le font principalement pour stocker et rendre l'information accessible pour leur application.
+## How to:
+```elixir
+# Création d'un fichier texte avec Elixir
 
-# Comment faire :
+# Ouvrir ou créer un fichier en mode écriture
+{:ok, file} = File.open("example.txt", [:write])
 
-```
-Elixir
+# Écriture de texte dans le fichier
+IO.write(file, "Bonjour le monde d'Elixir!\n")
 
-File.write("mon_fichier.txt", "Voici mon texte à enregistrer!")
+# Écriture de texte avec une nouvelle ligne
+IO.puts(file, "C'est facile écrire dans un fichier.")
 
-```
-
-Ce code enregistre le texte "Voici mon texte à enregistrer!" dans un fichier appelé "mon_fichier.txt". Vous pouvez ensuite lire ce fichier avec le code suivant :
-
-```
-Elixir
-
-File.read("mon_fichier.txt")
-
+# Fermeture du fichier
+File.close(file)
 ```
 
-Ce qui vous donnera l'output suivant :
+## Deep Dive
+Elixir, créé en 2011 par José Valim, est conçu pour être facile à utiliser pour les IO comme l'écriture de fichiers, s'appuyant sur Erlang VM pour la robustesse. Les alternatives incluent l'utilisation de la fonction `File.write/2`, qui offre un raccourci pour écrire dans des fichiers sans les ouvrir explicitement. Pour des gros volumes de données, on utilise souvent `Stream` pour une écriture efficace et paresseuse.
 
-```
-{:ok, "Voici mon texte à enregistrer!"}
-```
-
-# Plongée en profondeur :
-
-Historiquement, les fichiers texte étaient la seule option pour stocker des données. Maintenant, il existe d'autres options telles que les bases de données, mais les fichiers texte restent utiles pour de nombreuses tâches informatiques simples. Dans Elixir, vous pouvez utiliser la librairie stdlib pour travailler avec des fichiers texte en utilisant les modules ```File``` et ```IO```. Vous pouvez également automatiser l'écriture de fichiers texte en utilisant des templates avec des bibliothèques comme EEx.
-
-# Voir aussi :
-
-- Documentation sur la librairie stdlib pour travailler avec des fichiers : https://hexdocs.pm/elixir/File.html
-- Tutoriel sur l'utilisation de fichiers texte en Elixir : https://elixirschool.com/fr/lessons/libraries/file/
-- Tutoriel sur EEx pour automatiser l'écriture de fichiers texte: https://elixirschool.com/fr/lessons/basics/templating-with-eex/
+## See Also
+- [Documentation Elixir de IO](https://hexdocs.pm/elixir/IO.html)
+- [Documentation Elixir de File](https://hexdocs.pm/elixir/File.html)
+- [Guide d'apprentissage Elixir](https://elixir-lang.org/learning.html)

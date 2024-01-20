@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "Gleam: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
+JSON to format wymiany danych, który pozwala na komunikację między różnymi językami programowania. Programiści używają go, bo jest prosty, lekki i elastyczny w obsłudze.
 
-JSON jest to popularny format do przechowywania i przesyłania danych w postaci tekstu. Programiści często używają go do przechowywania danych w swoich aplikacjach, ponieważ jest prosty w użyciu i wszechstronny.
+## Jak to zrobić:
+```gleam
+import gleam/serde_json
+import gleam/dynamic.{Dynamic, from_int, from_list, from_map, to_string}
 
-## Jak?
+pub fn main() -> Nil {
+  let data = from_map([
+    ("name", from_string("Jan")),
+    ("age", from_int(30)),
+    ("hobbies", from_list([from_string("Piłka nożna"), from_string("Programowanie")])),
+  ])
 
-Aby przetwarzać dane JSON w Gleam, musimy najpierw zaimportować bibliotekę standardową [gleam/json](https://github.com/gleam-lang/gleam/blob/master/lib/json/src/json.gleam). Następnie możemy użyć jednej z funkcji tej biblioteki, takich jak `decode` lub `encode`, aby odpowiednio zamieniać dane z formatu JSON na format Gleam lub z formatu Gleam na format JSON.
-
-```Gleam
-import json
-
-pub struct Person(name: String, age: Int)
-
-let json_data = """
-  {
-    "name": "John",
-    "age": 28
+  case serde_json.encode(data) {
+    Ok(json) -> io.println(json)
+    Error(_) -> io.println("Nie udało się zakodować danych do JSON.")
   }
-"""
-
-let person = json.decode(json_data, Person)
-// person = Person("John", 28)
-
-let person_json = json.encode(person)
-// person_json = "{\"name\":\"John\",\"age\":28}"
+}
 ```
 
-## Wiecej
+Output:
+```json
+{"name":"Jan","age":30,"hobbies":["Piłka nożna","Programowanie"]}
+```
 
-JSON pojawił się po raz pierwszy w 2001 roku i od tego czasu jest jednym z najpopularniejszych formatów do przetwarzania danych. Alternatywami są na przykład formaty XML i YAML, ale JSON jest uważany za bardziej przejrzysty i czytelny. Implementacja biblioteki [gleam/json](https://github.com/gleam-lang/gleam/blob/master/lib/json/src/json.gleam) jest oparta o specyfikację [RFC 7159](https://tools.ietf.org/html/rfc7159).
+## Zanurz się głębiej
+JSON, czyli JavaScript Object Notation, powstał jako część języka JavaScript w latach 2000. Alternatywą dla JSON jest XML, ale JSON wygrywa ze względu na prostotę i mniejsze rozmiary plików. W Gleam, operacje na JSON wykonuje się za pomocą modułu `serde_json`, który dostarcza funkcji `encode` i `decode` do konwersji danych między typami `Dynamic` a JSON.
 
-## Zobacz także
-
-* [Oficjalna dokumentacja Gleam](https://gleam.run/)
-* [Proste wyjaśnienie czym jest JSON](https://www.json.org/json-pl.html)
+## Zobacz również
+- JSON: [https://www.json.org/json-pl.html](https://www.json.org/json-pl.html)
+- Gleam Book: [https://gleam.run/book](https://gleam.run/book)

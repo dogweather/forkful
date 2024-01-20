@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Haskell: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+JSON significa JavaScript Object Notation. Usiamo JSON perché è leggero, facile da leggere e scrivere per gli umani, e semplice da analizzare per i computer. È lo standard de facto per lo scambio di dati tra client e server su internet.
 
-Lavorare con JSON è una parte fondamentale della programmazione moderna. JSON (JavaScript Object Notation) è un formato di dati semplice, ma potente, usato per scambiare dati tra diverse applicazioni e sistemi. I programmatori lavorano con JSON perché è uno dei metodi più comuni per rappresentare e trasmettere dati.
-
-## Come fare:
-
-Per lavorare con JSON in Haskell, hai bisogno del pacchetto `aeson`. Puoi installarlo usando il tuo gestore dei pacchetti preferito, come `cabal` o `stack`. Una volta installato, puoi importarlo nel tuo file Haskell con `import Data.Aeson`.
-
-Ecco un esempio di codice che converte una stringa JSON in un valore Haskell:
+## How to:
+In Haskell, lavoriamo con JSON tramite la libreria `aeson`. Installala con `cabal install aeson`.
 
 ```Haskell
+-- Importa il modulo necessario
 import Data.Aeson
-import Data.Maybe (fromJust)
-import qualified Data.ByteString.Lazy as B
-import qualified Data.Text.IO as T
 
+-- Definisci un tipo di dato semplice
+data Pizzeria = Pizzeria { nome :: String, pizzaPreferita :: String } deriving Show
+
+-- Esempio di conversione da JSON
+esempioJSON :: ByteString
+esempioJSON = "{\"nome\": \"Da Gennaro\", \"pizzaPreferita\": \"Margherita\"}"
+
+-- Decodifica JSON in un'istanza di Pizzeria
+main :: IO ()
 main = do
-  json <- B.readFile "data.json"
-  let result = Data.Aeson.decode json :: Maybe Value
-  let str = show $ fromJust result
-  T.putStrLn $ T.pack str
+    let decodificaRisultato = decode esempioJSON :: Maybe Pizzeria
+    case decodificaRisultato of
+        Just pizzeria -> print pizzeria
+        Nothing -> putStrLn "Non è stato possibile decodificare il JSON."
 ```
 
-Questo codice legge un file JSON, lo analizza e lo stampa sullo schermo come una stringa. Puoi anche usare le funzioni `toJSON` e `fromJSON` per convertire i valori Haskell in JSON e viceversa.
+Output:
+`Pizzeria {nome = "Da Gennaro", pizzaPreferita = "Margherita"}`
 
-## Approfondimento:
+## Deep Dive
+JSON è nato nel 2001. Alternativamente, potresti usare XML, che è più verboso, o protocol buffers, che sono più efficienti per la banda.
 
-JSON è stato sviluppato da Douglas Crockford negli anni '90 ed è diventato uno dei formati di dati più popolari a causa della sua leggibilità e flessibilità. Se preferisci lavorare con un formato di dati diverso, puoi usare XML o YAML. Tuttavia, JSON è diventato lo standard de facto per lo scambio di dati.
+In Haskell, `aeson` fornisce `FromJSON` e `ToJSON` classi di tipo per decodificare e codificare. L'implementazione fa uso di combinators per costruire e destrutturare le strutture dati, rendendo il processo molto flessibile.
 
-Il pacchetto `aeson` fornisce una vasta gamma di funzioni e tipi dati per lavorare con JSON in Haskell. Puoi trovare maggiori informazioni sulla documentazione ufficiale del pacchetto. Inoltre, puoi trovare molti tutorial online che ti aiuteranno a iniziare a lavorare con JSON in Haskell.
-
-## Vedi anche:
-
-- Documentazione ufficiale del pacchetto aeson: https://hackage.haskell.org/package/aeson
-- Tutorial su come lavorare con JSON in Haskell: https://www.stackbuilders.com/tutorials/haskell/json/
+## See Also
+- Documentazione ufficiale `aeson`: http://hackage.haskell.org/package/aeson
+- Tutorial JSON in Haskell: https://artyom.me/aeson
+- Confronto tra JSON, XML e Protocol Buffers: https://www.oreilly.com/ideas/answers-to-common-questions-about-json-and-xml

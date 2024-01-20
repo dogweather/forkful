@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग पर Csv के साथ काम करना"
-html_title:           "Elm: कंप्यूटर प्रोग्रामिंग पर Csv के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग पर Csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-CSV से काम करना क्या है और कोडर्स इसे क्यों करते हैं?
+## What & Why? (क्या और क्यों?)
+CSV यानी Comma Separated Values, डाटा को संग्रहित और साझा करने का एक सामान्य तरीका है। प्रोग्रामर्स इसे डाटा का आदान-प्रदान करने या विश्लेषण के लिए उपयोग करते हैं, क्योंकि यह सरल और व्यापक रूप में समर्थित है।
 
-CSV का उपयोग डेटा को संरचित रूप से रखने और टेक्स्ट फ़ाइल के साथ संचालित करने के लिए होता है। यह आसानी से दृश्यता और शेयर करने में मदद करता है और कोडर्स CSV फ़ाइलों को प्रोसेस करके उनमें स्प्रेडशीट के साथ काम कर सकते हैं।
+## How to (कैसे करें):
+Elm में CSV के साथ काम करने के लिए कोई सीधा पुस्तकालय नहीं है, लेकिन आप डाटा को पार्स करने के लिए स्ट्रिंग फंक्शन्स उपयोग कर सकते हैं।
 
-## कैसे:
-CSV के साथ काम कैसे करें?
 ```Elm
-import Csv
+import Html exposing (text)
+import String exposing (split)
 
-myCsv: String
-myCsv = "Id,Name,Age
-1,John,24
-2,Jane,26
-3,David,30"
+parseCsvLine : String -> List String
+parseCsvLine line = 
+    split "," line
 
-parsedCsv = Csv.Parse.parse myCsv
--- Output: Ok [ [Id, Name, Age], [1, John, 24], [2, Jane, 26], [3, David, 30] ]
-
--- अब, आप इस CSV डेटा को अपनी Elm ऍप में इस तरह उपयोग कर सकते हैं:
-nameAgePairs = List.drop 1 parsedCsv
--- Output: [ [1, John, 24], [2, Jane, 26], [3, David, 30] ]
+main =
+    text (String.join " | " (parseCsvLine "एल्म,प्रोग्रामिंग,भाषा"))
 ```
 
-## गहराई में जाएं:
-CSV के साथ काम करने के लिए इतिहास, वैकल्पिक विकल्प और इम्प्लीमेंटेशन विवरण के बारे में:
-### इतिहास:
-CSV का उपयोग सबसे पहले 1972 में इंटरनेट के जनक रॉना ढागटप ने की थी। वे अपने ग्राहकों का बेहतर ध्यान रखने के लिए एक भारी डाटा फॉर्मेट की तलाश में थे। बाद में, यह फॉर्मेट विशेषज्ञों और विकासकर्ताओं के बीच लोकप्रिय हुआ।
-### वैकल्पिक विकल्प:
-CSV के साथ काम करने के लिए स्टैंडर्ड विकल्प Excel, LibreOffice और Google Sheets समेत कई ऑफ़िस सूट में उपलब्ध है। इनसे पैदा हुए CSV फ़ाइलों को Elm में प्रोसेस करने के लिए, Csv.Parse पैकेज का उपयोग करें।
-### इम्प्लीमेंटेशन विवरण:
-CSV डेटा स्ट्रिंग नहीं, सॉमन कोड के लिए पर्स स्ट्रिंगों के रूप में प्रदान करता है। आप उपयोग को दृढ़ बनाने के लिए, नए लाइन और कम्मोज्मज तर्क जैसे यूनिकोड लाइब्रेरी को भी उपयोग कर सकते हैं।
+यह कोड एक CSV लाइन को पार्स करता है और रिजल्ट `एल्म | प्रोग्रामिंग | भाषा` होता है।
 
-## और भी देखें:
-CSV को प्रोसेस करने के लिए Csv.Parse पैकेज के साथ अभ्यास करें: https://package.elm-lang.org/packages/elm-explorations/csv/latest/
+## Deep Dive (गहराई में जानकारी):
+CSV का इतिहास 1970 के दशक में शुरू हुआ और यह साधारण पाठ-आधारित फाइल होती है जो किसी भी स्प्रेडशीट या डेटाबेस प्रोग्राम में आसानी से खुल सकती है। Elm में डायरेक्ट CSV पैकेज का अभाव होते हुए भी, आप JSON के लिए शक्तिशाली लाइब्रेरीज का उपयोग कर सकते हैं या JavaScript से इन्टरऑपरेबिलिटी का लाभ उठा सकते हैं।
 
-CSV के बारे में और जानने के लिए: https://www.computerhope.com/jargon/c/csv.htm
+## See Also (और भी देखें):
+- Elm CSV विषयक जानकारी के लिए: [Elm Guide](https://guide.elm-lang.org/)
+- Elm के साथ JSON पार्सिंग: [JSON in Elm](https://package.elm-lang.org/packages/elm/json/latest/)
+- String फंक्शन्स और उपयोग: [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm और JavaScript इंटरऑपरेबिलिटी: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)

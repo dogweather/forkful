@@ -1,7 +1,7 @@
 ---
-title:                "Skrivning till standardfel"
-html_title:           "Swift: Skrivning till standardfel"
-simple_title:         "Skrivning till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,22 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skrivning till standardfel är en teknik som används av programmerare för att skicka felmeddelanden eller andra viktiga meddelanden till standardfelströmmen istället för standardutdataströmmen. Detta är användbart för att skilja dessa typer av meddelanden från vanlig programutdata och för att göra det möjligt för utvecklare att enkelt identifiera och hantera fel i sina program.
+Standardfel (stderr) är en separat utström för att rapportera fel och loggmeddelanden, så att de inte blandas med huvudprogrammets utdata (stdout). Programmerare använder stderr till att isolera felmeddelanden och diagnostisk information, vilket underlättar felsökning och logghantering.
 
-## Hur man:
-Här är ett exempel på hur man skriver ett meddelande till standardfelströmmen i Swift:
+## Hur man gör:
+```Swift
+import Foundation
 
+// Skriva till standardfel
+func writeToStandardError(_ message: String) {
+    if let data = "\(message)\n".data(using: .utf8) {
+        FileHandle.standardError.write(data)
+    }
+}
+
+// Använda funktionen
+writeToStandardError("Ett fel inträffade.")
+
+// Förväntad utskrift till standardfel:
+// Ett fel inträffade.
 ```
-Swift.print("Det här är ett felmeddelande till standardfelströmmen", to: &standardError)
-```
+Kör koden ovan för att se felmeddelandet i din konsol eller terminal.
 
-Detta kommer att skriva ut meddelandet "Det här är ett felmeddelande till standardfelströmmen" till standardfelströmmen istället för till standardutdataströmmen.
+## Fördjupning
+Historiskt sett kommer begreppet stderr från Unix-operativsystemen där tre huvudströmmar definierades: stdin, stdout och stderr. Detta är standard inom många programmeringsspråk idag. Alternativt kan fel loggas till filer eller andra loggningstjänster, vilket kan vara användbart för storskaliga system. I Swift sker skrivning till stderr via `FileHandle.standardError` och detta är knutet till filbeskrivaren 2 på ett låg nivåsystem.
 
-## Djupdykning:
-Historiskt sett användes skrivning till standardfelströmmen för att rapportera eventuella problem eller fel i programmet till användaren. Alternativt kan utvecklare använda en loggningsfunktion för att skicka meddelanden till en loggfil istället för standardfelströmmen.
-
-I Swift finns det en inbyggd global variabel som heter "standardError" som används för att specificera standardfelströmmen. Men utvecklare kan också ha sitt eget anpassade felmeddelande-utmatningsobjekt och skicka meddelanden till det istället.
-
-## Se även:
-- [Swift Standard Library Documentation](https://developer.apple.com/documentation/swift)
-- [Logging in Swift](https://www.raywenderlich.com/5373-logging-in-swift)
+## Se även
+- Swift API-dokumentation för `FileHandle`: [FileHandle | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filehandle)
+- En översikt av standard I/O strömmar: [Standard streams - Wikipedia](https://en.wikipedia.org/wiki/Standard_streams)

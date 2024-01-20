@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yamlin kanssa"
-html_title:           "Rust: Työskentely yamlin kanssa"
-simple_title:         "Työskentely yamlin kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-YAML (YAML Ain't Markup Language) on tiedostoformaatti, joka mahdollistaa datan tallentamisen selkeään ja luettavaan muotoon. YAML-tiedostot sisältävät tietoa tietorakenteista ja niitä käytetään usein konfigurointitiedostoina ohjelmistoissa. Ohjelmoijat käyttävät YAML:ää helpottaakseen datan tallentamista, lataamista ja käsittelyä ohjelmistoissaan.
+## What & Why? 
+"Mitä & Miksi?"
 
-## Miten?
-Rustissa voit käyttää YAML:n käsittelyyn esimerkiksi ranke- tai serde-yaml-kirjastoja. Seuraavat esimerkit näyttävät, kuinka voit luoda ja lukea YAML-tiedostoja Rustin avulla.
+YAML on ihmislukuisen datan serialisointiformaatti konfiguraatioille, hallintaan ja sovellusten asetuksiin. Ohjelmoijat käyttävät YAMLia, koska se on helppolukuinen, muokattava ja yleisesti tuettu eri teknologioissa.
+
+## How to:
+"Kuinka tehdä:"
+
+Rust-ohjelmissa YAML käsitellään 'serde_yaml' kirjaston avulla:
 
 ```Rust
-// Luo YAML-tiedosto ja tallenna siihen tietoa
-let data = "
-name: John
-age: 30
-hobbies:
-- hiking
-- reading
-";
+use serde::{Serialize, Deserialize};
+use serde_yaml;
 
-let mut file = File::create("tiedosto.yaml").unwrap();
-file.write_all(data.as_bytes()).unwrap();
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    username: String,
+    language: String,
+}
 
-// Lukee YAML-tiedostosta tiedot ja tulostaa ne konsoliin
-let f = File::open("tiedosto.yaml").unwrap();
-let buf_reader = BufReader::new(f);
-
-let yaml_value: Yaml = serde_yaml::from_reader(buf_reader).unwrap();
-println!("{:?}", yaml_value);
+fn main() {
+    let yaml_str = r#"
+username: "kayttajanimi"
+language: "Finnish"
+"#;
+    let config: Config = serde_yaml::from_str(yaml_str).expect("Invalid YAML format");
+    
+    println!("Username: {}", config.username);
+    println!("Language: {}", config.language);
+}
 ```
 
-## Syvemmälle
-YAML kehitettiin helpottamaan datan käsittelyä ja tiedon siirtämistä ohjelmien välillä. Se on suosittu vaihtoehto XML-tiedostoille, sillä YAML on helpompi lukea ja kirjoittaa ihmisille. Rustissa on myös muita vaihtoehtoja YAML:n käsittelyyn, kuten yaml-rust ja yaml-rs, jotka myös tarjoavat erilaisia toiminnallisuuksia.
+Tuloste:
+```
+Username: kayttajanimi
+Language: Finnish
+```
 
-YAML-tiedosto koostuu avain-arvo pareista, jotka on jäsennetty sisennyksillä. Tämä tarkoittaa, että tiedosto on helposti luettavissa ja ymmärrettävissä. YAML-tiedostoa käytetään yleisesti esimerkiksi konfigurointitiedostoina ohjelmistoissa ja tietojen tallentamiseen tietokannoissa.
+## Deep Dive:
+"Syvä sukellus:"
 
-## Katso myös
-- [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/stable/book/ch11-00-testing.html)
+YAML (YAML Ain't Markup Language) on kehitetty vuonna 2001 XML:n yksinkertaisemmaksi vaihtoehdoksi. Rustissa, 'serde_yaml' käyttää 'serde' (serialization/deserialization) kirjastoa datan käsittelyyn, ja se on yksi suosituimmista lähestymistavoista ruostepuolella. JSON ja TOML ovat suosittuja vaihtoehtoja YAMLille, mutta YAML on erottuva sen ihmislukuisuuden ja monimutkaisempien rakenteiden esittämiskyvyn ansiosta.
+
+## See Also:
+"Katso myös:"
+
+- Serde YAML dokumentaatio: [Serde YAML](https://docs.rs/serde_yaml/)
+- YAML virallinen sivusto: [YAML](https://yaml.org)
+- Rust serialization/deserialization 'serde' kirjasto: [Serde](https://serde.rs)

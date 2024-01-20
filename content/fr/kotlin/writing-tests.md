@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "Kotlin: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi?
+## Quoi & Pourquoi ?
 
-Écrire des tests est un processus dans lequel les programmeurs écrivent du code spécialement conçu pour tester leur propre code. Cela garantit que leur code fonctionne correctement et évite les bugs lors de l'exécution.
+Écrire des tests, c'est vérifier que chaque partie de votre code fonctionne comme prévu. Les développeurs font ça pour éviter les bugs, simplifier les modifications et assurer une qualité fiable.
 
-## Comment faire:
+## Comment faire :
 
 ```Kotlin
-// Exemple 1:
-fun addition(a: Int, b: Int) = a + b 
+// Ajoutons JUnit à notre projet Gradle
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+}
 
-``` 
-Output:
-```Kotlin
-addition(5, 7) 
-// 12 
+// Un test simple avec JUnit 5
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.*
+
+class CalculatriceTest {
+
+    @Test
+    fun `test addition`() {
+        val resultat = Calculatrice.additionner(3, 4)
+        assertEquals(7, resultat, "3 + 4 doit être égal à 7")
+    }
+}
+
+// La classe Calculatrice
+class Calculatrice {
+    companion object {
+        fun additionner(a: Int, b: Int) = a + b
+    }
+}
 ```
 
-```Kotlin
-// Exemple 2: 
-fun estPair(a: Int): Boolean = 
-    if (a % 2 == 0)
-        true
-    else
-        false
+Sortie :
+
+```
+Test passed.
 ```
 
-Output:
-```Kotlin
-estPair(3)
-// false 
+## Plongée profonde
 
-estPair(8)
-// true
-``` 
+Historiquement, JUnit est le framework de test dominant en Java, et par extension, en Kotlin. Alternativement, Kotlin offre aussi Kotest et Spek. Ces cadres insistent sur la lisibilité et l'idiomatisme Kotlin. Les détails d'implémentation comptent : une bonne isolation empêche les tests d'interférer entre eux.
 
-## Plongée en profondeur:
+## Voir aussi :
 
-Écrire des tests n'est pas un concept nouveau, car il a été introduit dans les années 1950 avec le développement des premiers ordinateurs. De nos jours, il existe différents types de tests tels que les tests unitaires, les tests d'intégration et les tests fonctionnels. Il existe également des alternatives comme le développement piloté par les tests (Test-Driven Development - TDD) et le développement piloté par le comportement (Behavior-Driven Development - BDD).
-
-Pour implémenter des tests en Kotlin, il existe plusieurs frameworks populaires tels que JUnit, Spek et Kotest.
-
-## Voir aussi:
-
-- [Introduction aux tests en Kotlin](https://www.kotlindevelopment.com/testing-kotlin/)
-- [Tutoriel JUnit pour les tests en Kotlin](https://medium.com/@jmathieu/tutoriel-junit-pour-tester-ses-applications-kotlin-91d2dc539c1c)
+- Documentation JUnit 5 : [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
+- Kotest : [https://kotest.io/](https://kotest.io/)
+- Un aperçu de Spek : [https://www.spekframework.org/](https://www.spekframework.org/)

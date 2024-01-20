@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "Bash: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,24 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Når du programmerer i Bash, kan du skrive ut informasjon til standard error i stedet for standard output. Dette er nyttig for å skrive ut feilmeldinger og annen viktig informasjon som ikke skal blandes med vanlig utdata.
+## What & Why?
+Skrive til standard error (stderr) er å sende feilmeldinger og diagnostikk separat fra vanlig utdata (stdout). Programmerere gjør dette for å logge feil uten å forstyrre programmets faktiske output.
 
-## Slik gjør du:
-For å skrive til standard error, bruker du kommandoen `>&2`. La oss si at du har en variabel som inneholder en feilmelding, kalt `error_msg`, og du vil skrive den ut til standard error. Da skriver du `echo $error_msg >&2`. Dette vil skrive ut `error_msg` til standard error i stedet for standard output.
+## How to:
+For å skrive til stderr i Bash, bruk `>&2`. Her er et eksempel:
 
-```
-Bash eksempel:
-error_msg="Noe gikk galt!"
-echo $error_msg >&2
-
-Output:
-Noe gikk galt!
+```Bash
+echo "Dette er en normal melding"
+echo "Dette er en feilmelding" >&2
 ```
 
-## Dypdykk:
-Siden Bash er en skall, ble standard error først introdusert i Bourne Shell i 1979. Før dette var det vanlig praksis å sende feilmeldinger til standard output, men dette kunne være forvirrende og vanskelig å få tak i når man kjørte større skall-script. Alternativet til å skrive til standard error er å sende utdata til en loggfil for senere referanse. Dette er spesielt nyttig i produksjonsmiljøer.
+Kjør koden, og du vil se begge meldingene, men feilmeldingen er sendt til stderr.
 
-## Se også:
-[The Linux Command Line: Writing to Standard Error](http://linuxcommand.org/lc3_man_pages/wget1.html) <br>
-[Bash programming tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+## Deep Dive
+I de tidlige dagene av Unix ble stderr introdusert for å skille feil fra ordinær output. Du kan omdirigere stderr til en fil eller et annet program. Alternativt kan `2>` brukes for å omdirigere feil. Selv om dagens programmeringsspråk har avanserte loggesystemer, forblir direkte skriving til stderr gjennom shell-scripting grunnleggende og nyttig i mange sammenhenger.
+
+## See Also
+- Bash Manual: https://www.gnu.org/software/bash/manual/
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+- Stack Overflow, for praktiske spørsmål og svar: https://stackoverflow.com/questions/tagged/bash

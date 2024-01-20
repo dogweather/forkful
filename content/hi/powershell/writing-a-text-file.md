@@ -1,7 +1,7 @@
 ---
-title:                "एक पाठ फ़ाइल लिखना"
-html_title:           "PowerShell: एक पाठ फ़ाइल लिखना"
-simple_title:         "एक पाठ फ़ाइल लिखना"
+title:                "टेक्स्ट फाइल लिखना"
+html_title:           "Bash: टेक्स्ट फाइल लिखना"
+simple_title:         "टेक्स्ट फाइल लिखना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,29 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-टेक्स्ट फ़ाइल लेखन में क्या चीज है और क्यों प्रोग्रामर इसे करते हैं? टेक्स्ट फ़ाइल लेखन से आप अपने पाठ्यक्रम में अतिरिक्त जानकारी बचाएंगे और अपने स्क्रिप्ट्स में उपयोगी डेटा को बचाएंगे।
+
+टेक्स्ट फाइल लिखना मतलब डाटा को टेक्स्ट रूप में सेव करना। प्रोग्रामर इसे कॉन्फिग्यूरेशन, डेटा स्टोरेज, लॉगिंग, और यूज़र डेटा को सहेजने के लिए करते हैं।
 
 ## कैसे करें:
-जब आप एक टेक्स्ट फ़ाइल लिखना चाहते हैं, तो आपको PowerShell में "Set-Content" कमांड का उपयोग करना होगा। नीचे दिए गए उदाहरण में, हम स्ट्रिंग कोई बिल्कुल नयी खाली टेक्स्ट फ़ाइल में लिखने का उपयोग करेंगे।
-
 ```PowerShell
-Set-Content -Path C:\Users\Username\Documents\sample.txt -Value "Hello world!"
+# टेक्स्ट फाइल बनाना और लिखना
+"हैलो, यह मेरा टेक्स्ट है!" | Out-File -FilePath .\example.txt
+
+# आउटपुट देखना
+Get-Content -Path .\example.txt
+```
+आउटपुट:
+```
+हैलो, यह मेरा टेक्स्ट है!
+```
+```PowerShell
+# फाइल में नई लाइन जोड़ना
+Add-Content -Path .\example.txt -Value "एक और लाइन!"
+
+# नया आउटपुट देखना 
+Get-Content -Path .\example.txt
+```
+आउटपुट:
+```
+हैलो, यह मेरा टेक्स्ट है!
+एक और लाइन!
 ```
 
-और यदि आपने पहले से ही एक टेक्स्ट फ़ाइल बना ली है, तो आप उस फ़ाइल मेंं अपने नए टेक्स्ट को जोड़ सकते हैं।
+## गहराई में:
 
-```PowerShell
-Add-Content -Path C:\Users\Username\Documents\sample.txt -Value "This is new text."
-```
+पावरशेल में `Out-File` कमांडलेट का उपयोग शुरू से होता आया है, जिससे फाइल सिस्टम में टेक्स्ट सेव कर सकें। इसे `.NET` क्लासेस के ऊपर बनाया गया है। 'Add-Content', 'Set-Content', और 'Out-File' जैसे कमांडलेट्स हैं जो अलग-अलग तरीकों से फाइल ऑपरेशन्स को हैंडल करते हैं। हालांकि, डाटा खोने के खतरे को रखते हुए, हमेशा `-Append` स्विच का उपयोग करना चाहिए जब हम एक मौजूदा फाइल में डेटा जोड़ रहे हों। 
 
-आप भी एक फ़ोल्डर्स्रच को चुन सकते हैं, जहाँ आप एक नई फ़ाइल बनाना चाहते हैं।
+## संबंधित स्रोत:
 
-```PowerShell
-New-Item -Path C:\Users\Username\Documents\ -Name "new_sample.txt" -ItemType "file" -Value "This is a new text file."
-```
-
-## गहराई में जाइए:
-टेक्स्ट फ़ाइल लेखन का इतिहास बहुत पुराना है और यह प्रोग्रामिंग के कई अन्य विषयों के संबंध में भी जानना जरूरी है। आप अपने स्क्रिप्ट में अतिरिक्त जानकारी बचा सकते हैं और भविष्य में उसे सुलभ बना सकते हैं एक अलग टेक्स्ट फाइल में। अन्य विकल्पों में "Out-File" कमांड हो सकता है जो एक फाइल को नया बना सकता है या "Add-Content" को उस फाइल मेंं जोड़ सकता है।
-
-## आपको भी देखना चाहिए:
-- [PowerShell documentation](https://docs.microsoft.com/en-us/powershell/scripting)
+- [Microsoft Docs: Out-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file)
+- [Microsoft Docs: Add-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/add-content)
+- [Microsoft Docs: Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)

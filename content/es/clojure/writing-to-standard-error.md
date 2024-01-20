@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo a la salida de error estándar"
-html_title:           "Clojure: Escribiendo a la salida de error estándar"
-simple_title:         "Escribiendo a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué es y por qué?
+Escribir en el error estándar (stderr) es enviar mensajes de error o log de diagnóstico a un canal de salida específico. Programadores lo usan para separar errores de los datos de salida (stdout), ayudando así a depurar y monitorizar programas sin interferir con la salida regular.
 
-Escribir a la salida de error estándar es una técnica utilizada por los programadores para mostrar mensajes de error o advertencia durante la ejecución de un programa. Esto les permite detectar y solucionar problemas en su código de manera más eficiente.
-
-## Cómo:
+## Cómo hacerlo:
+Clojure, como lenguaje en la JVM, usa los métodos de Java para escribir en stderr. Aquí hay un ejemplo:
 
 ```Clojure
-(defn divide [x y]
-  (when (zero? y)
-    (System/err "No se puede dividir por cero"))
-  (/ x y))
+;; Impresión simple en stderr
+(. System err (println "¡Ups! Ocurrió un error"))
 
-;; Ejemplo de salida de error
-(divide 10 0)
-;; No se puede dividir por cero
+;; Uso de println directamente desde clojure.core
+(clojure.core/binding [*err* *out*]
+  (println "Esto también va a stderr"))
+
+;; Escribiendo una excepción en stderr
+(try
+  (throw (Exception. "Algo salió mal"))
+  (catch Exception e
+    (. System err (println (.getMessage e)))))
 ```
 
-## Profundizando:
+Sample Output:
+```
+¡Ups! Ocurrió un error
+Esto también va a stderr
+Algo salió mal
+```
 
-La escritura a la salida de error estándar es una función estándar en muchos lenguajes de programación, incluyendo Clojure. Su origen se remonta a los primeros días de la programación cuando los programadores utilizaban un dispositivo llamado "consola" para imprimir mensajes de error.
+## Deep Dive:
+Escribir en stderr data desde los tiempos de los sistemas Unix y es una convención que la mayoría de los lenguajes de programación siguen. Además de `System/err`, se pueden usar otras bibliotecas en Clojure, como `tools.logging` para manejar logs más avanzados. En el nivel de implementación, Clojure usa la infraestructura de Java para stderr, que se puede redirigir o manipular como cualquier `java.io.PrintStream`.
 
-Aunque escribir a la salida de error es una forma útil de mostrar mensajes de error, es importante mencionar que también existen otras técnicas, como lanzar excepciones o imprimir mensajes en la consola a través de la función "println". Cada una tiene sus ventajas y desventajas, y los programadores pueden elegir la que mejor se adapte a sus necesidades.
-
-La implementación de la escritura a la salida de error en Clojure es sencilla, ya que se puede utilizar la función "System/err" para imprimir mensajes a la salida de error estándar.
-
-## Ver también:
-
-- [¿Qué es la salida de error estándar?](https://en.wikipedia.org/wiki/Standard_error)
+## See Also:
+- Documentación oficial de Clojure: [clojure.org](https://clojure.org/)
+- Documentación de Java sobre `System.err`: [System (Java Platform SE)](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- Librería de logging para Clojure: [tools.logging](https://github.com/clojure/tools.logging)

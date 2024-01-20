@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "PowerShell: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "YAML-tiedostojen käsittely"
+html_title:           "Arduino: YAML-tiedostojen käsittely"
+simple_title:         "YAML-tiedostojen käsittely"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+YAML on helppolukuinen datan serialisointimuoto, jota käytetään määrittelyihin ja konfiguraatioihin. Ohjelmoijat suosivat sitä selkeyden ja ihmiselle luettavan syntaksin vuoksi.
 
-YAML on yksinkertainen tapa tallentaa tietoja tekstimuodossa, esimerkiksi asetustiedostoja tai tietokantatietoja. Ohjelmoijat käyttävät YAMLia, koska se on helppo lukea ja muokata, ja se mahdollistaa tietojen tallentamisen rakenteellisesti ilman monimutkaisia tietokantoja.
-
-## Kuinka:
+## How to:
+PowerShellissa YAML-tiedostojen käsittelyyn tarvitaan usein lisäkirjasto, kuten `powershell-yaml`-moduuli. Asenna moduuli ja käytä sitä lukeaksesi ja kirjoittaaksesi YAML-tiedostoja.
 
 ```PowerShell
-# Tallentaminen YAML-tiedostoksi
-$asetukset = @{
-    Kieli = "suomi"
-    Laitteet = "kannettava, puhelin, älykello"
+# Moduulin asennus
+Install-Module -Name powershell-yaml
+
+# YAML-tiedoston lukeminen
+$yamlContent = Get-Content -Path 'config.yaml' | Out-String
+$yamlObject = ConvertFrom-Yaml $yamlContent
+$yamlObject
+
+# YAML-tiedoston kirjoittaminen
+$hashTable = @{
+    path = 'kansio/polku'
+    timeout = 30
 }
-$asetukset | ConvertTo-YAML | Out-File "asetukset.yml"
-
-# Lukea YAML-tiedostosta
-$asetukset = Get-Content "asetukset.yml" | ConvertFrom-YAML
-# Tulostetaan asetukset
-Write-Host "Nykyinen kieli:" $asetukset.Kieli
-Write-Host "Käytettävät laitteet:" $asetukset.Laitteet
+$yamlOutput = ConvertTo-Yaml $hashTable
+$yamlOutput | Set-Content -Path 'output.yaml'
 ```
 
-**Tuloste:**
+## Deep Dive
+YAML (YAML Ain't Markup Language) lanseerattiin 2001 helpottamaan datan esittämistä ja jakamista ohjelmistojen kesken. JSON ja XML ovat suosittuja vaihtoehtoja, mutta YAML erottuu luettavuudellaan. PowerShell käyttää .NET-kirjastoja YAML-datan käsittelyyn, joten PowerShell-moduulit kuten `powershell-yaml` hyödyntävät näitä kirjastoja YAML-tiedon parsimiseen ja muuntamiseen.
 
-```
-Nykyinen kieli: suomi
-Käytettävät laitteet: kannettava, puhelin, älykello
-```
-
-## Syvemmälle:
-
-1. YAML kehitettiin vuonna 2001, mutta sen suosio ohjelmoijien keskuudessa on kasvanut merkittävästi viime vuosina.
-2. Vaihtoehtoisia tapoja tallentaa tietoja tekstimuodossa ovat esimerkiksi JSON ja XML.
-3. PowerShellin `ConvertTo-YAML` ja `ConvertFrom-YAML` komennot mahdollistavat YAML-tiedostojen luomisen ja lukemisen suoraan PowerShell-konsolissa ilman lisäohjelmia.
-
-## Katso myös:
-
-- [YAML.org](https://yaml.org/) - YAMLin kotisivu.
-- [PowerShell-komentoikkunan dokumentaatio](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.1#convertto-yaml) - Lisätietoja `ConvertTo-YAML` ja `ConvertFrom-YAML` komennoista.
+## See Also
+- [YAML-aineisto GitHubissa](https://github.com/yaml/yaml)
+- [PowerShell Gallery - powershell-yaml](https://www.powershellgallery.com/packages/powershell-yaml)
+- [YAML-ohjeet ja spesifikaatiot](https://yaml.org/spec/1.2/spec.html)

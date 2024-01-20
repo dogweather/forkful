@@ -1,7 +1,7 @@
 ---
-title:                "Escritura a la salida de error estándar"
-html_title:           "PowerShell: Escritura a la salida de error estándar"
-simple_title:         "Escritura a la salida de error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué y por qué?
+## Qué y Por Qué?
+Escribir en el error estándar significa mandar mensajes de error o diagnóstico a un flujo separado que no es el de salida estándar. Los programadores lo usan para diferenciar la salida normal de los mensajes de advertencia o error, facilitando así el manejo y la depuración del programa.
 
-Escribir a la salida estándar (stderr) en programación puede ser útil para mostrar errores o mensajes de aviso en una aplicación. Esto le permite al usuario entender mejor lo que está sucediendo en el programa y cómo solucionar posibles problemas.
+## How to:
+Para escribir en el error estándar en PowerShell, usamos `Write-Error`, `Write-Host -ForegroundColor Red`, o redirigimos la salida con `2>`.
 
-## Cómo hacerlo:
+```PowerShell
+# Utilizar Write-Error
+Write-Error "Algo salió mal"
+
+# Utilizar Write-Host con color para simular un error
+Write-Host "Algo salió mal" -ForegroundColor Red
+
+# Escribir directamente en el flujo de error estándar
+"This is a regular output, but next comes an error" > out.txt
+"Este es un mensaje de error" 2> error.txt
 ```
-# Ejemplo 1: Escribir a la salida estándar
-Write-Error "¡Ups! Algo salió mal."
 
-# Ejemplo 2: Utilizar una variable para escribir a la salida estándar
-$mensaje = "No se encontró ningún archivo."
-Write-Error $mensaje
-
-# Salida:
-¡Ups! Algo salió mal.
-No se encontró ningún archivo.
+Salida esperada:
+```
+Algo salió mal
+Algo salió mal
 ```
 
-## Profundizando
+Los mensajes se mostrarán en rojo en la consola, indicando un error, y se redirigirán al archivo correspondiente si se usa la redirección.
 
-La salida estándar (stderr) es un canal de comunicación en la línea de comandos que se utiliza para mostrar mensajes de error en lugar de los resultados esperados. En el pasado, los programadores solían escribir a la salida estándar para mostrar mensajes de error, pero esta práctica ha disminuido en favor de otras técnicas, como lanzar excepciones o utilizar registros de eventos.
+## Deep Dive:
+Originalmente, conceptos como salida estándar y error estándar provienen de la programación de sistemas Unix y se han adoptado en muchos otros sistemas operativos y lenguajes de programación. En PowerShell, aparte de las funciones `Write-Error` y `Write-Host`, hay otras alternativas para el manejo de errores, como `Throw` para excepciones y `Write-Verbose` o `Write-Debug` para mensajes detallados en tareas de depuración. La implementación de la redirección en PowerShell permite destinar la salida de error (`stderr`) a otros destinos como archivos, funciones, o ignorarla completamente usando `2>$null`.
 
-Una alternativa a escribir a la salida estándar en PowerShell podría ser utilizar cmdlets de registro, como `Start-Transcript` y `Stop-Transcript`, que registran la salida de un comando en un archivo de texto. Sin embargo, escribir a la salida estándar sigue siendo una forma sencilla y directa de mostrar mensajes de error en tiempo real.
-
-Al escribir a la salida estándar en PowerShell, se utiliza el cmdlet `Write-Error`, que acepta una cadena o variable como argumento y escribe el mensaje a la salida estándar. Es importante tener en cuenta que al utilizar este cmdlet, el proceso del script no se detendrá y la ejecución continuará. Si se desea detener la ejecución en caso de un error, se puede utilizar el cmdlet `Throw` o `Exit`.
-
-## Consulta también
-- [Documentación de Microsoft sobre el cmdlet Write-Error](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/write-error)
-- [Documentación de Microsoft sobre cmdlets de registro](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.diagnostics/?view=powershell-7)
-- [Artículo de Medium sobre la importancia de escribir a la salida estándar en PowerShell](https://medium.com/@haacked/why-you-need-to-write-to-standard-error-in-powershell-b613f4ef5121)
+## See Also:
+- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
+- [about_Throw](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_throw)
+- [about_Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)

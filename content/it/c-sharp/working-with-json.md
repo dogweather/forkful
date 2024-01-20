@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "C#: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Working with JSON è quando i programmatori utilizzano un formato di dati molto comune utilizzato per la trasmissione di dati da un sistema all'altro. È ampiamente utilizzato nei sistemi web e mobile perché è leggero e facile da leggere e scrivere.
+## What & Why?
+JSON è un formato dati leggero usato per lo scambio di dati. I programmatori lo usano perché è facile da leggere e scrivere, e ben supportato dai sistemi moderni.
 
-## Come fare:
-[C# ... ]
-
-Per lavorare con JSON in C#, è necessario utilizzare il pacchetto "Newtonsoft.Json". Qui di seguito è riportato un esempio di come utilizzare questo pacchetto per serializzare un oggetto in una stringa JSON:
-
+## How to:
 ```C#
-using Newtonsoft.Json;
+using System;
+using System.Text.Json;
 
-public class Studente
+public class Program
 {
-    public string Nome { get; set; }
-    public string Cognome { get; set; }
-}
-
-class Program
-{
-    static void Main(string[] args)
+    public static void Main()
     {
-        Studente studente = new Studente { Nome = "Mario", Cognome = "Rossi" };
-        string json = JsonConvert.SerializeObject(studente);
-        Console.WriteLine(json);
+        // Crea un oggetto
+        var pizza = new { Tipo = "Margherita", Ingredienti = new[] { "Pomodoro", "Mozzarella", "Basilico" } };
+        
+        // Serializza in JSON
+        string jsonString = JsonSerializer.Serialize(pizza);
+        Console.WriteLine(jsonString);
+        
+        // Deserializza da JSON
+        var deserializedPizza = JsonSerializer.Deserialize<dynamic>(jsonString);
+        Console.WriteLine($"Tipo di Pizza: {deserializedPizza.Tipo}");
     }
 }
 ```
-
-L'output sarà qualcosa del genere:
-
-```json
-{ "Nome": "Mario", "Cognome": "Rossi" }
+Output:
+```
+{"Tipo":"Margherita","Ingredienti":["Pomodoro","Mozzarella","Basilico"]}
+Tipo di Pizza: Margherita
 ```
 
-Per deserializzare una stringa JSON in un oggetto, è possibile utilizzare il metodo `DeserializeObject` della classe `JsonConvert`. Ad esempio, se si ha una stringa JSON come questa: `"{ "Nome": "Mario", "Cognome": "Rossi" }"`, è possibile creare un oggetto `Studente` con i valori corrispondenti utilizzando il seguente codice:
+## Deep Dive
+JSON sta per JavaScript Object Notation ed è stato introdotto all'inizio degli anni 2000. Alternativa a XML, è più compatto, leggibile e più velocemente processabile. In C#, il namespace `System.Text.Json` fornisce funzionalità per serializzare e deserializzare oggetti. Più vecchio è `Newtonsoft.Json` (Json.NET), ma la libreria standard curata da Microsoft è oramai alla pari.
 
-```C#
-Studente studente = JsonConvert.DeserializeObject<Studente>(json);
-```
-
-## Approfondimento:
-JSON (JavaScript Object Notation) è stato inventato da Douglas Crockford nel 2001 ed è diventato uno dei formati di dati più utilizzati nel mondo della programmazione. Alcune alternative popolari a JSON includono XML e YAML. JSON ha guadagnato popolarità grazie alla sua facile leggibilità per il computer e per gli umani, il che lo rende ideale per l'utilizzo nei sistemi web e mobile. I dettagli di implementazione di JSON variano a seconda del linguaggio di programmazione utilizzato, ma in generale utilizza una sintassi molto semplice basata sui costrutti di JavaScript.
-
-## Vedi anche:
-- [Documentazione ufficiale di Newtonsoft.Json](https://www.newtonsoft.com/json)
-- [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Learn/JavaScript/Objects/JSON)
+## See Also
+- Documentazione Ufficiale System.Text.Json: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview)
+- Articolo introduttivo JSON: [json.org](http://json.org/json-it.html)
+- Confronto Json.NET vs System.Text.Json: [devblogs.microsoft.com](https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/)

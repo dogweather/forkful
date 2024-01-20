@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "Gleam: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
+## ¿Qué & Por Qué?
+Trabajar con YAML significa manejar un formato de serialización de datos muy leído por humanos, usado para configuraciones y transmisión de datos. Los programadores lo usan por su simplicidad y facilidad de lectura comparado con XML o JSON.
 
-Trabajar con YAML es una forma común para que los programadores puedan almacenar y compartir datos estructurados en un formato legible para las máquinas y los humanos. Es especialmente útil para configurar aplicaciones y automatizar tareas en el desarrollo de software debido a su simplicidad y flexibilidad.
+## Cómo Hacerlo:
+Gleam aún no tiene una biblioteca estándar para YAML, así que hipotéticamente podríamos usar una librería externa o ejecutar un binario de CLI con `shell` (si existiera). Aquí tienes un snippet que mostraría cómo sería trabajar con YAML suponiendo que existiera una librería:
 
-## Cómo hacerlo:
+```gleam
+import hypothetical_yaml_lib.{parse_yaml, emit_yaml}
 
-Para trabajar con YAML en Gleam, es necesario importar el módulo `yamlex` y luego utilizar la función `parse` para convertir un archivo YAML en un término de Gleam. A continuación se muestra un ejemplo de cómo se vería esto en código:
+// Parsear YAML a una estructura Gleam
+let data: Result(Yaml, Error) = parse_yaml("""
+- name: John Doe
+  age: 30
+- name: Jane Smith
+  age: 25
+""")
 
-```Gleam
-import gleam/yamlex
-
-let yaml_string = "hola: mundo"
-let term = yamlex.parse(yaml_string)
-
-// El término resultante será {ok, #{hola => "mundo"}}
+// Convertir un mapa a YAML
+let yaml_string: Result(String, Error) = emit_yaml(data)
 ```
 
-Use la función `to_yaml` para convertir un término de Gleam a un archivo YAML. Aquí hay un ejemplo:
+Suponiendo que esto funcione, tendrías algo como:
 
-```Gleam
-import gleam/yamlex
-
-let term = #{hola => "mundo"}
-let yaml_string = yamlex.to_yaml(term)
-
-// El resultado será "hola: mundo"
+```plaintext
+- name: John Doe
+  age: 30
+- name: Jane Smith
+  age: 25
 ```
 
-## Inmersión profunda:
+## Inmersión Profunda:
+YAML inició en 2001 como "Yet Another Markup Language", pero se remarcó como "YAML Ain't Markup Language" para enfatizar su naturaleza de formato de datos. En cuanto a alternativas, JSON y XML son bien conocidos, pero mientras JSON es similar en legibilidad, XML es más verbose y complejo. Al implementarlo con Gleam, considera los riesgos de inyección de YAML si se maneja entrada del usuario, dado que YAML carga en tipos nativos.
 
-YAML, que significa "Yet Another Markup Language" (Aún Otra Lenguaje de Marcado), se convirtió en un formato popular en la década de 2000 debido a su simplicidad y facilidad de uso. Algunas alternativas a YAML pueden ser JSON o XML, pero YAML se destaca por ser más legible y fácil de editar por humanos.
-
-El módulo `yamlex` en Gleam se basa en la biblioteca de Python PyYAML para proporcionar una interfaz con la que los programadores puedan interactuar. Esto significa que tiene la misma sintaxis básica y los mismos métodos para convertir entre YAML y otros formatos de datos.
-
-## Ver también:
-
-Puede encontrar más información sobre YAML y su sintaxis en la documentación oficial: https://yaml.org/spec/ . También puede consultar la documentación del módulo `yamlex` de Gleam para obtener más detalles sobre su implementación: https://gleam.run/modules/gleam-yamlex/latest/ .
+## Ver También:
+- Especificaciones de YAML: [yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- Tutorial de YAML: [learnxinyminutes.com/docs/yaml](https://learnxinyminutes.com/docs/yaml/)

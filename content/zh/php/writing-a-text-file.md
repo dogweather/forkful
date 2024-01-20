@@ -1,6 +1,6 @@
 ---
 title:                "编写文本文件"
-html_title:           "PHP: 编写文本文件"
+html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件 & 为什么要写?
+## What & Why? (是什么？为什么？)
+在PHP中写文本文件就是将数据保存到服务器的文件中。程序员这么做是为了数据持久化、日志记录或设置信息。
 
-写入文本文件是将数据写入到计算机中的某一个文件中。程序员经常写入文本文件，因为它是一种非常有效的存储和处理数据的方式。通过将数据保存在文本文件中，程序员可以方便地读取和修改数据，从而使他们的程序更加灵活和可靠。
+## How to (怎么做)
+```php
+<?php
+$file = 'example.txt';
+$content = "Hello, this is a test file.\n";
 
-## 如何实现:
+// 使用file_put_contents简单写文件
+file_put_contents($file, $content);
 
-```PHP
-$file = fopen("data.txt", "w"); // 创建一个名为data.txt的文本文件，模式为"w"表示写入模式
-fwrite($file, "Hello World!"); // 将文本数据 "Hello World!" 写入到文件中
-fclose($file); // 关闭文件资源
+// 检查是否写入成功
+if (file_exists($file)) {
+    echo "File written successfully.";
+} else {
+    echo "Failed to write the file.";
+}
+
+// 使用fopen, fwrite和fclose进行更细微的控制
+$handle = fopen($file, 'a');
+fwrite($handle, "Adding a new line to the file.\n");
+fclose($handle);
+?>
+```
+Sample Output:
+```
+File written successfully.
 ```
 
-以下为打印出文本文件中的内容：
+## Deep Dive (深入探讨)
+文件操作在PHP出现早期就已支持。历史上`fopen()`、`fwrite()`和`fclose()`组合是常见的操作方式，但点的PHP版本推荐`file_put_contents()`简化流程。选择方法时要考虑安全性、错误处理和文件锁定。
 
-```PHP
-$file = fopen("data.txt", "r"); // 打开data.txt文件，模式为"r"表示读取模式
-$contents = fread($file, filesize("data.txt")); // 读取文件内容并存储在变量 $contents 中
-fclose($file); // 关闭文件资源
-echo $contents; // 打印出文件内容，即输出 "Hello World!"
-```
-
-## 深入了解:
-
-- 文本文件是一种简单的文件格式，它主要由文本数据组成。
-- 除了写入和读取文本文件外，程序员也可以使用数据库或其他数据存储方式来处理数据。
-- 在写入文本文件时，程序员可以选择不同的写入模式，如"w"、"a"等，具体模式的含义可以参考官方文档或其他相关资源。
-
-## 参考资料:
-
-- [PHP 官方文档](https://www.php.net/manual/en/function.fwrite.php)
+## See Also (另请参阅)
+- PHP官方文档 [file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- PHP官方文档 [fopen()](https://www.php.net/manual/en/function.fopen.php)
+- PHP官方文档 [fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- PHP官方文档 [fclose()](https://www.php.net/manual/en/function.fclose.php)
+- PHP官方文档 [文件系统操作](https://www.php.net/manual/en/ref.filesystem.php)

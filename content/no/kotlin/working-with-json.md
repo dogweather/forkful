@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Kotlin: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -11,38 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å jobbe med JSON er essensielt for enhver moderne programmerer. JSON (JavaScript Object Notation) er en populær måte å strukturere og lagre data på. Det brukes ofte til å utveksle data mellom klient og server i webapplikasjoner, men har også blitt brukt i andre programmeringsspråk på grunn av sin enkelhet og allsidighet.
+Jobbing med JSON (JavaScript Object Notation) handler om datautveksling. Programmerere bruker JSON for å lagre og utveksle data på en lettleselig måte for både mennesker og maskiner.
 
-## Slik gjør du det:
-Kotlin har innebygde funksjoner for å jobbe med JSON-data. For å lese JSON-data, bruker vi funksjonen ```JSONObject()``` og ```JSONArray()```. Vi kan da bruke kjente metoder som ```get()```, ```put()``` og ```remove()``` for å manipulere dataene. Se et eksempel nedenfor:
+## Hvordan:
+I Kotlin kan du enkelt parse og generere JSON ved hjelp av biblioteket kotlinx.serialization. Først må du legge til avhengighet i `build.gradle.kts`:
 
-```
-// Opprett en JSON-string
-val jsonString = "{ "name": "Kari", "age": 25, "city": "Oslo" }"
-
-// Konverter til en JSON-objekt
-val jsonObject = JSONObject(jsonString)
-
-// Hent ut data fra objektet
-val name = jsonObject.get("name") // output: "Kari"
-val age = jsonObject.get("age") // output: 25
-val city = jsonObject.get("city") // output: "Oslo"
+```kotlin
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+}
 ```
 
-For å skrive JSON-data, kan vi bruke funksjonen ```toString()``` sammen med ```put()``` for å legge til data i et JSON-objekt. Se et eksempel nedenfor:
+Så kan du parse JSON til en Kotlin-klasse og omvendt:
 
+```kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+// Definer en dataklasse
+@Serializable
+data class Bruker(val navn: String, val alder: Int)
+
+fun main() {
+    // JSON-tekst
+    val jsonStr = """{"navn": "Ola", "alder": 30}"""
+
+    // Parse JSON til Kotlin-objekt
+    val bruker = Json.decodeFromString<Bruker>(jsonStr)
+    println(bruker) // Output: Bruker(navn=Ola, alder=30)
+
+    // Generer JSON fra Kotlin-objekt
+    val jsonOut = Json.encodeToString(bruker)
+    println(jsonOut) // Output: {"navn":"Ola","alder":30}
+}
 ```
-// Opprett et tomt JSON-objekt
-val jsonObject = JSONObject()
 
-// Legg til data ved hjelp av put()
-jsonObject.put("name", "Lars")
-jsonObject.put("age", 30)
-jsonObject.put("city", "Bergen")
+## Deep Dive
+JSON ble introdusert i 2001 og har raskt blitt standard for nettapplikasjoner. Alternativer til JSON inkluderer XML og YAML, men disse er ofte mer verbøse. kotlinx.serialization er laget for Kotlin og integrerer sømløst med Kotlin korutiner og andre språkfunksjoner, som dataklasser og immutabilitet.
 
-// Konverter til en JSON-string
-val jsonString = jsonObject.toString() // output: "{ "name": "Lars", "age": 30, "city": "Bergen" }"
-```
+## Se Også
+For mer om JSON og Kotlin serialisering:
 
-## Dypdykk:
-JSON ble opprinnelig utviklet for JavaScript, men har blitt populært i mange andre programmeringsspråk på grunn av sin enkelhet og lesbarhet. Et alternativ til JSON er XML, som også brukes til å strukturere data, men er mer kompleks og mindre populær. Implementasjonen av JSON i Kotlin er basert på Java-biblioteket org.json, som gir en enkel og effektiv måte å jobbe med JSON på.
+- kotlinx.serialization GitHub: https://github.com/Kotlin/kotlinx.serialization
+- Offisiell Kotlin serialization guide: https://kotlinlang.org/docs/serialization.html
+- JSON format spesifikasjon: https://www.json.org/json-en.html

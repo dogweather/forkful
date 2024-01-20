@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Javascript: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est ? 
-CSV (Comma-Separated Values) est un format de fichier couramment utilisé pour stocker des données sous forme de tableaux en utilisant des virgules comme séparateur. Les développeurs utilisent souvent des fichiers CSV pour stocker des données tabulaires telles que les données de vente, les stocks ou les listes d'étudiants.
+## What & Why? (Quoi & Pourquoi ?)
 
-# Pourquoi les programmeurs l'utilisent-ils ? 
-Les fichiers CSV sont faciles à lire et à écrire, compatibles avec une grande variété de programmes et peuvent être importés dans des applications telles que des tableurs pour une analyse plus approfondie. Cela rend les fichiers CSV très utiles pour le stockage et l'échange de données entre différentes applications.
+On manipule des CSV (Comma-Separated Values) pour gérer des données tabulaires sous forme de texte simple. C'est utile pour l'import/export avec Excel, des bases de données, ou des apps web.
 
-# Comment faire : 
-Voici un exemple simple de code JavaScript pour lire un fichier CSV et afficher son contenu :
+## How to: (Comment faire : )
 
-```javascript
-const url = "monfichier.csv";
-fetch(url)
-  .then(response => response.text())
-  .then(data => console.log(data))
-```
-
-Et voici comment écrire des données dans un fichier CSV :
+Pour lire et écrire des CSV en JavaScript, on peut utiliser la bibliothèque `PapaParse`. Voici comment :
 
 ```javascript
-const data = [
-   ["Nom", "Prénom", "Âge"],
-   ["Dupont", "Jean", 25],
-   ["Martin", "Julie", 30]
+// Pour lire un CSV :
+Papa.parse(csvString, {
+    complete: function(results) {
+        console.log(results.data);
+    }
+});
+
+// Pour écrire un CSV :
+var data = [
+  ["Column 1", "Column 2"],
+  ["foo", "bar"],
+  ["baz", "qux"]
 ];
-const csvContent = "data:text/csv;charset=utf-8," + data.map(row => row.join(",")).join("\n");
-const encodedUri = encodeURI(csvContent);
-window.open(encodedUri);
+var csv = Papa.unparse(data);
+console.log(csv);
 ```
 
-# Plongée en profondeur :
-Les fichiers CSV ont été développés dans les années 1970 comme un moyen de stocker des données dans des tableaux en utilisant des ordinateurs obsolètes. Aujourd'hui, les fichiers CSV sont encore largement utilisés en raison de leur simplicité et de leur compatibilité.
+Sortie pour la lecture :
+```javascript
+[
+    ["Colonne1", "Colonne2"],
+    ["valeur1", "valeur2"],
+    ["valeur3", "valeur4"]
+]
+```
 
-Bien qu'ils soient pratiques pour stocker des données tabulaires, les fichiers CSV peuvent être limités en termes de capacités d'organisation et de manipulation des données. Certaines alternatives populaires incluent les fichiers JSON et les bases de données relationnelles.
+Sortie pour l'écriture :
+```
+"Column 1","Column 2"
+"foo","bar"
+"baz","qux"
+```
 
-En JavaScript, il existe plusieurs bibliothèques telles que PapaParse et CSV.js qui facilitent le travail avec les fichiers CSV en offrant des méthodes pour lire, écrire et manipuler les données.
+## Deep Dive (Plongée en profondeur)
 
-# À voir aussi :
-- [PapaParse](https://www.papaparse.com/) - Une bibliothèque JavaScript open-source pour analyser les fichiers CSV.
-- [CSV.js](https://github.com/knrz/CSV.js) - Une autre bibliothèque JavaScript pour travailler avec les fichiers CSV.
-- [JSON vs CSV: Which one to Choose?](https://medium.com/swlh/json-vs-csv-which-one-to-choose-a52d54db0637) - Un article comparant les fichiers JSON et CSV.
+Historiquement, les CSV sont un format facile à comprendre et à éditer même sans logiciel spécialisé. Plusieurs alternatives existent, comme JSON ou XML, mais CSV reste populaire pour sa simplicité. En JavaScript, lire ou écrire des CSV sans librairie peut être fastidieux à cause des différents cas d'encodage et d'échappement des caractères. D'où l'intérêt d'utiliser `PapaParse` ou des bibliothèques similaires qui s'occupent des détails d'implémentation.
+
+## See Also (Voir aussi)
+
+- PapaParse documentation : [https://www.papaparse.com/docs](https://www.papaparse.com/docs)
+- CSV sur MDN : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/split](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/split) 
+- CSV sur W3C : [https://www.w3.org/TR/tabular-data-primer/](https://www.w3.org/TR/tabular-data-primer/)

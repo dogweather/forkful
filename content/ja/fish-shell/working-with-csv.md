@@ -1,7 +1,7 @@
 ---
-title:                "「CSV を扱う」"
-html_title:           "Fish Shell: 「CSV を扱う」"
-simple_title:         "「CSV を扱う」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
-CSVとは何か、それをプログラマーがする理由を約2〜3文で説明します。
+## What & Why? (何とその理由?)
+CSVとは、データをカンマで区切って保存するフォーマットのこと。プログラマーは構造が単純で、Excelなど多くのツールで扱えるため、CSVでデータを操作することがよくある。
 
-CSVとは、コンマで区切られたテキストファイルの形式のことで、データを表形式で保存するためによく使用されます。プログラマーがCSVを扱う理由は、データを取り出したり、処理したりするために簡単な方法を提供するからです。
+## How to: (方法)
+Fish ShellでCSVデータを扱うには、`string split`や`awk`コマンドを使うのが一般的です。以下にコード例と出力サンプルを示します。
 
-## 使い方：
-下のコードブロック内のコーディング例とサンプル出力を使い、Fish ShellでCSVを処理する方法をご紹介します。
-
-```
-Fish Shellを試すことで、CSVを簡単に操作できることがわかるでしょう。まず、CSVファイルを作成し、データを入力します。
-
-$ vim sample.csv
-
-次に、CSVファイルを読み込んで、データを表示します。
-
-$ fish -c "while read line; echo $line; end < sample.csv"
-
-このコマンドを実行すると、sample.csvファイルに入力されたデータが表示されます。  
-
+```fish
+# "data.csv"から各行を読み込んで処理する例
+cat data.csv | while read -l line
+    # カンマで分割して配列に格納
+    set -l columns (string split "," $line)
+    # 配列の要素を表示
+    for column in $columns
+        echo $column
+    end
+end
 ```
 
-## 詳細を探求:
-ここではCSVについての歴史的な文脈、代替手段、そしてCSV処理の実装詳細について説明します。
+出力例:
+```
+名前
+住所
+電話番号
+```
 
-### 歴史的文脈：
-CSVは1972年に最初に開発され、当初はメインフレームコンピューターのデータベースで使用されていました。その後、パーソナルコンピュータが普及するにつれ、CSVはより一般的に使用されるようになりました。
+```fish
+# AWKを使ってCSVの特定の列を抽出する例
+awk -F, '{print $2}' data.csv
+```
 
-### 代替手段：
-CSV以外にも、データを表形式で保存するためのさまざまなフォーマットがあります。例えば、XMLやJSON、SQLなどがあります。
+出力例:
+```
+住所
+```
 
-### 実装詳細：
-Fish Shellの内部コードは、Open CSV - Java CSVライブラリを使用して書かれています。また、`fish -c`コマンドを使用することで、1行ずつCSVを読み込み、データを処理することができます。
+## Deep Dive (深掘り)
+CSVは1972年にIBMで開発され、簡単で柔軟性のあるデータフォーマットとして広く利用されている。代替としてJSONやXMLがあるが、CSVはシンプルさで一定のニーズを満たしている。Fish ShellでCSVを扱う際は、バイルトイン関数とUnix系ツールの組み合わせが鍵となる。
 
-## 関連情報:
-CSVについてさらに学ぶためのリンクをいくつか紹介します。
-
-- [Open CSV - Java CSV library](http://opencsv.sourceforge.net/)
-- [CSVとは - Wikipedia](https://ja.wikipedia.org/wiki/Comma-Separated_Values)
+## See Also (その他関連情報)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [awk man page](https://man7.org/linux/man-pages/man1/awk.1p.html)
+- [GNU Coreutils: `cut` command](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+- [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)

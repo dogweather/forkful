@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "PowerShell: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym & Po co?
+## Co i dlaczego?
+Pisanie testów to sprawdzanie kodu pod kątem błędów i niezamierzonych zachowań. Programiści robią to, by upewnić się, że ich kod jest solidny i niezawodny przed wdrożeniem.
 
-Pisanie testów jest częstym aspektem pracy programisty. Polega ono na tworzeniu kodu, który będzie sprawdzał poprawność działania innych fragmentów naszego kodu. Jest to ważne, ponieważ pomaga w szybszym wykrywaniu błędów i ułatwia odnalezienie ich przyczyn.
-
-## Jak to zrobić?
-
-Sprawdzenie działania naszego kodu może być wykonane w bardzo prosty sposób, poprzez użycie komendy `test`. Możemy również skorzystać z modułu `Pester`, który oferuje bardziej rozbudowaną funkcjonalność testowania.
-
+## Jak to zrobić:
 ```PowerShell
-test { 2 + 2 -eq 4 }
-Pester { 2 + 2 -eq 4 }
+# Instalacja modułu Pester - frameworka testowego PowerShell
+Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# Przykładowy test sprawdzający działanie funkcji 'Add-Numbers'
+function Add-Numbers ($a, $b) {
+  return $a + $b
+}
+
+Describe "Add-Numbers Tests" {
+  It "adds two numbers" {
+    Add-Numbers 2 3 | Should -Be 5
+  }
+  
+  It "fails for non-numeric input" {
+    { Add-Numbers 2 'x' } | Should -Throw
+  }
+}
+
+# Wykonanie testów
+Invoke-Pester
 ```
 
-Oczekiwany wynik dla obu przykładów jest taki sam - `True`.
+Wyjście:
+```
+Describing Add-Numbers Tests
+  [+] adds two numbers 1ms
+  [+] fails for non-numeric input 76ms
+```
 
-## Głębsze zagadnienia
+## Zanurzamy się głębiej:
+Pester, najpopularniejszy framework testowy w PowerShell, pojawił się w wersji 3.0 w 2015 roku, oferując bogatą składnię i wsparcie dla testowania infrastruktury. Alternatywy dla Pester to np. .NET-owe NUnit z dodatkowym modułem PSate. Ważne, że Pester pozwala na testowanie kodu jednostkowo (unit testing) i behawioralnie (behaviour-driven development - BDD).
 
-Pisanie testów jest praktykowane od dłuższego czasu, jednak dopiero niedawno zyskało na popularności. Alternatywą dla Pester jest framework `PSDeploy`, który umożliwia testowanie poprawności skryptów deploymentowych.
-
-Jeśli chcemy napisać bardziej skomplikowane testy, możemy skorzystać z zaawansowanej składni, która pozwala na tworzenie różnych asercji i ustawianie warunków testowych.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o testowaniu w PowerShell, polecamy następujące źródła:
-
-- [Książka "PowerShell in Depth"](https://www.manning.com/books/powershell-in-depth)
+## Zobacz również:
+- [Pester, the PowerShell testing framework](https://pester.dev)
+- [PowerShell Gallery | Pester](https://www.powershellgallery.com/packages/Pester)

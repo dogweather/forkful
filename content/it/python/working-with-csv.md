@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "Python: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Lavorare con i file CSV"
+html_title:           "Bash: Lavorare con i file CSV"
+simple_title:         "Lavorare con i file CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## What & Why?
+Lavorare con i CSV significa manipolare dati in un formato testuale semplice, molto usato per l'esportazione e l'importazione di informazioni tra programmi e sistemi. I programmatori lo fanno per la sua universalità e la facilità nel trasferire dati tabellari.
 
-Lavorare con i file CSV, o "Comma Separated Values", significa manipolare dei dati che sono organizzati in modo tabellare, con ciascun dato separato da una virgola. I programmatori spesso lavorano con CSV poiché è uno dei formati di file più comuni per scambiare dati tra diverse applicazioni.
-
-## Come fare:
-
-```python
+## How to:
+```Python
 import csv
 
-# Aprire un file CSV in modalità lettura 
-with open('data.csv', 'r') as file:
-    # Creare un oggetto lettore CSV 
+# Lettura di un file CSV
+with open('esempio.csv', mode='r', newline='') as file:
     reader = csv.reader(file)
-    
-    # Ciclare attraverso ogni riga del file 
     for row in reader:
-        # Stampare ogni colonna separata da una virgola 
-        print(', '.join(row))
-      
-# Creare un nuovo file CSV in modalità scrittura 
-with open('new_data.csv', 'w') as file:
-    # Creare un oggetto scrittore CSV 
+        print(row)
+
+# Scrittura in un file CSV
+with open('esempio.csv', mode='w', newline='') as file:
     writer = csv.writer(file)
-    
-    # Scrivere una riga nel file 
-    writer.writerow(['Nome', 'Cognome', 'Età'])
-    
-    # Scrivere altre righe con una lista di valori 
-    writer.writerows([
-        ['Mario', 'Rossi', 30],
-        ['Giulia', 'Bianchi', 25]
-    ])
+    writer.writerow(['nome', 'cognome', 'età'])
+    writer.writerow(['Giulia', 'Rossi', 30])
+    writer.writerow(['Marco', 'Verdi', 45])
+
+# Output di lettura
+['nome', 'cognome', 'età']
+['Giulia', 'Rossi', '30']
+['Marco', 'Verdi', '45']
 ```
 
-Output:
-```
-Colonna1, Colonna2, Colonna3
-Dato1, Dato2, Dato3
-```
+## Deep Dive
+I CSV sono così vecchi quanto i primi computer. Alternativamente, si possono usare JSON o XML, più strutturati e con maggiore supporto per tipi di dati complessi, ma i CSV rimangono la scelta principale quando si maneggiano dati tabellari semplici per la loro leggibilità umana e compatibilità con fogli di calcolo. In Python, il modulo CSV gestisce dettagli come le virgolette e i problemi di codifica dei file, semplificando quest'operazioni.
 
-## Approfondimento:
-
-I file CSV sono stati introdotti per la prima volta negli anni '70 come una semplice soluzione per scambiare dati tra fogli elettronici. Nel corso degli anni, sono diventati uno standard nella comunicazione dei dati tra diverse applicazioni e piattaforme. Esistono anche altri formati di file per i dati tabellari, come il formato Excel XLSX, ma il CSV rimane uno dei più usati.
-
-## Vedi anche:
-
-- [Documentazione ufficiale di Python per il modulo CSV](https://docs.python.org/3/library/csv.html)
-- [Guida introduttiva al lavoro con CSV in Python](https://www.programiz.com/python-programming/csv)
+## See Also
+- Python CSV documentation: https://docs.python.org/3/library/csv.html
+- Tutorial CSV con Python: https://realpython.com/python-csv/
+- Esplorare dati con Pandas: https://pandas.pydata.org/

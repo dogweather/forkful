@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Lua: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,26 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+## What & Why? - Mitä & Miksi?
+Tekstitiedosto kirjoittaminen tallentaa dataa tiedostoon. Ohjelmoijat tekevät tätä tiedon säilömiseen ja jakamiseen.
 
-Tekstitiedoston kirjoittaminen on yksinkertainen tapa tallentaa tietoa ohjelman suorittamisen aikana. Ohjelmoijat käyttävät sitä usein tallentaakseen tilapäistä tietoa, kuten ohjelman käyttäjän antamia syötteitä tai ohjelman laskemia tietoja.
+## How to: - Miten:
+```Lua
+-- Tiedoston avaaminen kirjoitusmoodissa
+local tiedosto = io.open("esimerkki.txt", "w")
 
-## Ohjeet:
+-- Tekstin kirjoittaminen tiedostoon
+tiedosto:write("Terve maailma!\n")
 
-```Lua 
-file = io.open("tiedosto.txt", "w") -- Luo tai avaa tiedoston kirjoitettavaksi
-
-file:write("Tervetuloa, ohjelmoija!") -- Kirjoita teksti tiedostoon
-
-file:close() -- Sulje tiedosto 
+-- Tiedoston sulkeminen
+tiedosto:close()
 ```
+Tämä luo `esimerkki.txt` tiedoston, joka sisältää tekstin "Terve maailma!".
 
-Tämä koodiesimerkki luo tekstitiedoston nimeltä "tiedosto.txt" ja kirjoittaa siihen tekstirivin "Tervetuloa, ohjelmoija!". Lopuksi tiedosto suljetaan jotta muut ohjelmat voivat käyttää sitä.
+## Deep Dive - Syväsukellus
+Lua on käyttänyt tiedostojen käsittelyä versiosta 1.0, joka julkaistiin 1993. Vaihtoehtoisia tapoja sisältävät `io.popen` ulkoisia komentoja varten ja `io.tmpfile` väliaikaisten tiedostojen käsittelyyn. Kirjoitus suoritetaan puskuroituina operaatioina tehokkuuden vuoksi.
 
-## Syventävä tieto:
-
-Texkitiedoston kirjoittamisessa käytetään yleisesti io-kirjastoa, mutta on myös muita vaihtoehtoja kuten file-kirjasto. Tiedoston avaamisessa käytetään "w" -parametria, joka tarkoittaa, että tiedosto avataan kirjoitettavaksi. Voit myös käyttää "a" -parametria tiedoston lisäämiseen (append) tai "r+" -parametria tiedoston lukemiseen ja kirjoittamiseen. Tiedoston sulkeminen on tärkeää jotta muut ohjelmat voivat käyttää sitä.
-
-## Katso myös:
-
-[W3Schools: Lua - Writing Files](https://www.w3schools.com/lua/lua_file_io.asp)
+## See Also - Katso Myös
+- Lua-ohjelmoinnin virallinen dokumentaatio: [www.lua.org/manual/](https://www.lua.org/manual/)
+- Lua File I/O - Tutoriaali: [www.tutorialspoint.com/lua/lua_file_io.htm](https://www.tutorialspoint.com/lua/lua_file_io.htm)
+- Stack Overflow - Lua-yhteisön kysymykset ja vastaukset: [stackoverflow.com/questions/tagged/lua](https://stackoverflow.com/questions/tagged/lua)

@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Gleam: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Los programadores a menudo necesitan escribir archivos de texto como una forma de almacenar y manipular datos en sus aplicaciones. Es una forma sencilla y versátil de guardar información, y también facilita la lectura de datos por otros programas y sistemas.
+## Qué y Por Qué?
+Escribir un archivo de texto consiste en guardar texto en un archivo en tu sistema de archivos. Los programadores hacen esto para persistir datos, configuraciones, o para exportar información que luego otras aplicaciones o usuarios pueden leer.
 
 ## Cómo hacerlo:
-A continuación se muestra un ejemplo de cómo escribir un archivo de texto en Gleam:
+En Gleam, escribir un archivo de texto es sencillo. Aquí tienes un ejemplo básico:
 
-```Gleam
-let data = "Este es un archivo de texto creado con Gleam"
+```gleam
+import gleam/io
+import gleam/erlang.{File}
 
-let resultado = File.write("archivo.txt", data)
-// Esto escribirá el texto en un archivo llamado "archivo.txt"
+fn escribe_archivo() {
+  let resultado = File.open("salida.txt", [File.write]) // Abre el archivo en modo escritura
+  case resultado {
+    Ok(file) -> 
+      io.write(file, "¡Hola, Gleam!") // Escribe en el archivo
+      File.close(file)                // Cierra el archivo
+    Error(error) ->
+      io.println("Error al abrir archivo: " ++ error)
+  }
+}
 ```
 
-También es posible escribir en un archivo línea por línea, usando una lista de cadenas como datos:
+Si corres este código, creará un archivo llamado `salida.txt` con el contenido "¡Hola, Gleam!".
 
-```Gleam
-let datos = ["Línea 1", "Línea 2", "Línea 3"]
+## Profundizando
+Históricamente, la escritura de archivos viene desde los primeros días de la computación, inicialmente en tarjetas perforadas. Hoy, aunque hay muchas maneras de persistir datos, como bases de datos o almacenamiento en la nube, la escritura de archivos de texto sigue siendo una forma simple y directa de almacenar información.
 
-let resultado = File.write_lines("archivo.txt", datos)
-// Esto escribirá cada cadena en una línea separada en el archivo "archivo.txt"
-```
+Alternativas a `gleam/erlang.File` incluyen trabajar con bibliotecas específicas que facilitan la serialización de datos como JSON o XML para estructuras más complejas. También, dependiendo del sistema operativo y del entorno, podrías querer utilizar APIs nativas para funcionalidades más avanzadas. 
 
-## Profundizando:
-Los archivos de texto se han utilizado durante mucho tiempo en la programación como una forma de almacenar y compartir datos. Alternativas más recientes incluyen bases de datos y sistemas de archivos de documentos, que ofrecen más funcionalidades pero pueden resultar más complejos de implementar.
-
-En Gleam, la función `File.write()` utiliza un bloque de manejo de errores `try` para asegurarse de que el archivo se escriba correctamente. Si algo falla durante la escritura, se lanzará una excepción que puede ser manejada en un bloque `catch`.
-
-## Ver también:
-Para obtener más información sobre la escritura de archivos de texto en Gleam, consulta la documentación oficial: https://gleam.run/documentation/standard_library/file.html#write.
+En Gleam, el manejo de archivos se basa en las operaciones de entrada/salida de Erlang, que está diseñado para trabajar eficientemente con su modelo concurrente y distribuido. Es importante cerrar los archivos para no desperdiciar recursos del sistema.

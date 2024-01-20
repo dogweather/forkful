@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルを書く"
-html_title:           "Go: テキストファイルを書く"
-simple_title:         "テキストファイルを書く"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
-テキストファイルを書くとは、プログラマーがコンピューターに情報を記録することです。プログラマーがこれを行う理由は、データの永続性を確保し、後で再利用することができるようにするためです。
+## What & Why? (何となぜ？)
+テキストファイルを書くことは、データを永続的に保存します。プログラマは設定、ログ、データ交換のためにこれを行います。
 
-## 方法：
+## How to: (方法)
 ```Go
-// ファイルを作成し、開く
-file, err := os.Create("sample.txt")
-if err != nil {
-    log.Fatal(err)
-}
-defer file.Close()
+package main
 
-// 文字列を書き込む
-str := "Hello, World!"
-_, err = file.WriteString(str)
-if err != nil {
-    log.Fatal(err)
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	file, err := os.Create("example.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+
+	writer := bufio.NewWriter(file)
+	_, err = writer.WriteString("こんにちは、世界\n")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	err = writer.Flush()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
 ```
+出力: `example.txt` ファイルに "こんにちは、世界" が書かれます。
 
-上記のコードは、"sample.txt"という名前のファイルを作成し、開き、"Hello, World!"という文字列を書き込みます。
+## Deep Dive (深く掘り下げて)
+過去、テキストファイルは主要なデータ記録手段でした。現在は、JSON, XMLなどの代替フォーマットがありますが、簡易性と可読性からテキストファイルが好まれることも多いです。Go言語では、`os`と`bufio`パッケージで効率的なファイルライティングができます。エラー処理と`defer`ステートメントが重要です。
 
-## 深堀り：
-(1) テキストファイルの歴史的背景：テキストファイルは、コンピューターに情報を永続的に記録するために使用されてきました。初期のコンピューターでは、命令やプログラムを保存するために使用されていましたが、現在では様々な用途に使用されています。
-
-(2) 代替手段：テキストファイルの代わりに、データベースやクラウドストレージなどが使用されることもあります。しかし、データの永続性やポータビリティを考えると、テキストファイルの使用は依然として重要です。
-
-(3) 実装詳細：Goでは、osパッケージを使用してファイルを作成し、io/ioutilパッケージを使用してファイルに書き込むことができます。ファイルの存在をチェックするために、os.Stat関数を使用することもできます。
-
-## 関連情報：
-- [Go 官公式ドキュメント](https://golang.org/pkg/)
-- [Goでファイルを操作する方法](https://astaxie.gitbooks.io/build-web-application-with-golang/ja/04.5.html)
+## See Also (関連情報)
+- Go by Example: Writing Files: https://gobyexample.com/writing-files
+- Go Doc: os package: https://pkg.go.dev/os
+- Go Doc: bufio package: https://pkg.go.dev/bufio

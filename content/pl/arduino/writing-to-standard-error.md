@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+## Co i dlaczego?
+Wypisywanie do standardowego błędu (stderr) pozwala programom oddzielać normalne wyjście (stdout) od komunikatów o błędach. Programiści robią to, by łatwiej było im śledzić i przetwarzać błędy.
 
-Pisząc do standardowego błędu w Arduino oznacza wysyłanie komunikatów o błędach lub ostrzeżeń do specjalnego strumienia, który jest przeznaczony do wyświetlania użycia konsoli. Programiści robią to, aby uzyskać informacje o ewentualnych problemach w swoim kodzie i pomóc w identyfikacji błędów.
-
-## Jak to zrobić?
+## Jak to zrobić:
+Arduino nie ma dedykowanego stderr jak większość systemów operacyjnych, więc użyjemy Serial do symulacji.
 
 ```Arduino
-Serial.print("Błąd: Brak połączenia");
+void setup() {
+  // Zacznij komunikację szeregową
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Wysyłanie normalnych danych na standardowe wyjście
+  Serial.println("Witaj, świecie!");
+
+  // Symulacja stderr przez prefix błędu
+  Serial.println("ERROR: Coś poszło nie tak!");
+  
+  // Czekaj 5 sekund
+  delay(5000);
+}
 ```
-W powyższym przykładzie wykorzystujemy funkcję `Serial.print()` do wysłania komunikatu o błędzie "Brak połączenia" do standardowego błędu. Możemy także użyć `Serial.println()` aby dodać nową linię po komunikacie. Oba te polecenia wymagają wcześniejszego zainicjowania portu szeregowego przy użyciu polecenia `Serial.begin()`.
+
+Wynik symulowanego stderr:
+```
+Witaj, świecie!
+ERROR: Coś poszło nie tak!
+```
 
 ## Deep Dive
-
-Pisanie do standardowego błędu jest stosowane od dawna w programowaniu, szczególnie w przypadku języków wysokiego poziomu, aby pomóc programistom w debugowaniu swojego kodu. Alternatywną metodą jest użycie debuggera, ale nie wszystkie platformy lub języki obsługują tę funkcję. W przypadku Arduino, zawarte oprogramowanie zapewnia konsolę szeregową, która umożliwia wykorzystanie funkcji pisania do standardowego błędu.
+Historia stderr sięga systemów Unix, gdzie oddzielono wyjście programu od informacji o błędach. W Arduino brakuje prawdziwego stderr, ale można wykorzystać Serial do tego celu. Alternatywą może być użycie dedykowanego pinu do sygnalizowania stanów błędu.
 
 ## Zobacz także
-
-- Dokumentacja Arduino o wykorzystywaniu Serial Communication: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- Poradnik o debuggowaniu w Arduino: https://learn.adafruit.com/debugging-arduino-code-with-seral-serial-begin-and-print/serial-begin
+- [Arduino Reference: Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Wikipedia: Standard streams](https://en.wikipedia.org/wiki/Standard_streams)

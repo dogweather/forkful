@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "Rust: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +10,106 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-JSON ist ein gängiges Datenformat, das häufig von Programmierern verwendet wird, um Daten zu speichern und auszutauschen. Es steht für JavaScript Object Notation und ist eine einfache und effektive Möglichkeit, strukturierte Daten zu speichern, die von verschiedenen Programmiersprachen interpretiert werden können. 
-Programmierer nutzen JSON, um Daten zwischen verschiedenen Anwendungen oder Diensten auszutauschen oder um Daten in ihren Programmen zu speichern.
+## Was & Warum?
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Datenformat zum Datenaustausch. Programmierer nutzen JSON, weil es menschenlesbar und einfach zu analysieren oder zu erzeugen ist, insbesondere für Web APIs.
 
-## Wie geht's?
-Um mit JSON in Rust zu arbeiten, gibt es einige praktische Funktionen und Bibliotheken. Hier ist ein Beispiel, um eine JSON-Datei zu lesen und die enthaltenen Daten anzuzeigen:
+## So geht's:
+In Rust verwenden wir `serde_json` für das Arbeiten mit JSON. Beginnen wir mit der Einbindung in `Cargo.toml`:
 
-```Rust
-use serde_json::{from_str, Value};
-
-let data = r#"{
-    "name": "Max Mustermann",
-    "age": 28,
-    "hobbies": [
-        "programming",
-        "reading",
-        "hiking"
-    ]
-}"#;
-
-// JSON-Daten in ein Rust-Value-Objekt umwandeln
-let value: Value = from_str(data).unwrap();
-
-// Werte auslesen und ausgeben
-let name = &value["name"];
-let age = &value["age"];
-let hobbies = &value["hobbies"];
-
-println!("Name: {}", name); // Name: Max Mustermann
-println!("Alter: {}", age); // Alter: 28
-println!("Hobbys: {:?}", hobbies); // Hobbys: ["programming", "reading", "hiking"]
+```toml
+[dependencies]
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
 ```
 
-## Tiefsee-Tauchen
-JSON wurde in den 1990er-Jahren entwickelt und ist ein Subset von JavaScript. Heutzutage wird es aber auch von vielen anderen Programmiersprachen unterstützt, darunter auch Rust. 
-Es gibt auch andere Datenformate wie XML oder YAML, aber JSON ist aufgrund seiner Einfachheit und Lesbarkeit immer noch sehr beliebt. 
-Die Verwendung von Bibliotheken wie serde_json oder json-rust erleichtert das Arbeiten mit JSON in Rust, da sie das Parsen und Erstellen von JSON-Objekten einfacher machen.
+Jetzt zur Verarbeitung: ein JSON lesen, parsen und schreiben.
+
+### JSON lesen & parsen
+
+```rust
+extern crate serde_json;
+extern crate serde;
+#[macro_use] extern crate serde_derive;
+
+use serde_json::{Value, Error};
+
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    is_programmer: bool,
+}
+
+fn read_json() -> Result<Person, Error> {
+    let data = r#"
+    {
+        "name": "Anna",
+        "age": 30,
+        "is_programmer": true
+    }
+    "#;
+    serde_json::from_str(data)
+}
+
+fn main() {
+    match read_json() {
+        Ok(p) => println!("Name ist: {}", p.name),
+        Err(e) => println!("Fehler beim Parsen: {}", e),
+    }
+}
+```
+
+Ausgabe:
+
+```
+Name ist: Anna
+```
+
+### JSON schreiben
+
+```rust
+extern crate serde_json;
+extern crate serde;
+#[macro_use] extern crate serde_derive;
+
+use serde_json::Error;
+
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    is_programmer: bool,
+}
+
+fn write_json(person: &Person) -> Result<String, Error> {
+    serde_json::to_string(person)
+}
+
+fn main() {
+    let person = Person {
+        name: String::from("Anna"),
+        age: 30,
+        is_programmer: true,
+    };
+
+    match write_json(&person) {
+        Ok(json) => println!("{}", json),
+        Err(e) => println!("Fehler beim Schreiben: {}", e),
+    }
+}
+```
+
+Ausgabe:
+
+```
+{"name":"Anna","age":30,"is_programmer":true}
+```
+
+## Deep Dive
+JSON wurde Anfang der 2000er Jahre populär, da es eine Low-Overhead-Alternative zu XML ist. Alternativ könnten Programmierer auch andere Formate wie YAML oder Protobuf verwenden, wobei JSON wegen der breiten Unterstützung und der einfachen Integration in JavaScript-Ökosysteme oft bevorzugt wird. Die `serde_json`-Bibliothek in Rust ermöglicht es uns, mithilfe des Serde-Frameworks Rust-Datenstrukturen zu serialisieren und zu deserialisieren, unterstützt dabei auch komplexe und verschachtelte Datenstrukturen.
 
 ## Siehe auch
-- [serde_json Dokumentation](https://docs.rs/serde_json/1.0.64/serde_json/)
-- [JSON-Tutorial für Anfänger](https://www.w3schools.com/js/js_json_intro.asp)
+- Serde offizielle Dokumentation: https://serde.rs/
+- `serde_json` Crate Dokumentation: https://docs.serde.rs/serde_json/
+- Rust Programmierhandbuch: https://doc.rust-lang.org/book/

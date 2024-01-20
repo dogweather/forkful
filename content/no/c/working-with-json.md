@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "C: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-${DET} {å arbeide} med JSON er en viktig del av moderne programmering. JSON står for JavaScript Object Notation, og er et format for å lagre og utveksle data. {DET} er spesielt nyttig når {programmerere} trenger å sende data over internett eller lagre data i en fil. JSON er også lett å lese og skrive for både mennesker og datamaskiner.
+## Hva & Hvorfor?
 
-## Hvordan: 
-For å arbeide med JSON i C, kan du bruke et bibliotek som [cJSON](https://github.com/DaveGamble/cJSON). Her er et eksempel på hvordan du kan lage og behandle et JSON-objekt i C:
+Arbeid med JSON (JavaScript Object Notation) handler om å lagre og utveksle enkel datastrukturer. Programmerere bruker det fordi det er tekstbasert, menneskelesbart og lett å parse for maskiner.
+
+## Hvordan:
 
 ```C
 #include <stdio.h>
-#include "cJSON.h"
+#include <stdlib.h>
+#include <json-c/json.h>
 
 int main() {
-  // Lager et nytt JSON-objekt
-  cJSON *root = cJSON_CreateObject();
-  // Legger til en nøkkel og verdi
-  cJSON_AddStringToObject(root, "navn", "Ole");
-  // Konverterer JSON-objektet til en streng
-  char *json_str = cJSON_Print(root);
-  // Skriver ut strengen
-  printf("%s", json_str);
-  // Frigjør minne
-  free(json_str);
-  cJSON_Delete(root);
-  return 0;
-}
+    // Create a JSON object
+    struct json_object *jobj = json_object_new_object();
 
-// Output:
-// {"navn":"Ole"}
+    // Create JSON key-value pairs
+    json_object_object_add(jobj, "navn", json_object_new_string("Ola Nordmann"));
+    json_object_object_add(jobj, "alder", json_object_new_int(28));
+    json_object_object_add(jobj, "aktiv", json_object_new_boolean(1));
+
+    // Print the JSON object
+    printf("%s\n", json_object_to_json_string(jobj));
+
+    // Clean up memory
+    json_object_put(jobj);
+
+    return 0;
+}
 ```
 
-## Dykk ned:
-JSON ble opprinnelig utviklet av Douglas Crockford på slutten av 90-tallet som et alternativ til XML. Det har blitt et populært format for å lagre og utveksle data, særlig innen webutvikling. Det finnes også andre biblioteker for å arbeide med JSON i C, som [Jansson](https://github.com/akheron/jansson) og [jsmn](https://github.com/zserge/jsmn). Det er også viktig å huske på at sikkerhetsrisikoer kan oppstå når du behandler JSON-data, spesielt hvis de kommer fra eksterne kilder. Det er derfor viktig å validere og sanitisere dataene før du bruker dem i programmet ditt.
+Utdata:
+```
+{"navn": "Ola Nordmann", "alder": 28, "aktiv": true}
+```
 
-## Se også:
-- [cJSON dokumentasjon](https://github.com/DaveGamble/cJSON/blob/master/README.md)
-- [Jansson dokumentasjon](https://jansson.readthedocs.io/en/2.12/)
+## Deep Dive
+
+JSON ble introdusert i 2001, inspirert av JavaScript, men er språkuavhengig. Alternativer inkluderer XML og YAML, men JSON er ofte foretrukket for dets enkelhet. Implementering i C krever biblioteker som `json-c` eller `jansson`, for parsing og generering av JSON.
+
+## Se Også:
+
+- Offisiell JSON-standardside: https://www.json.org/json-en.html
+- `json-c` GitHub-side: https://github.com/json-c/json-c
+- JSON-tutorial for C programmerere: https://www.tutorialspoint.com/json_with_c/index.htm

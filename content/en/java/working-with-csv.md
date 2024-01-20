@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "Java recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "Java"
 category:             "Java"
@@ -12,52 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with CSV (Comma Separated Values) in Java refers to the process of reading and writing data to and from CSV files. CSV files are commonly used to store tabular data, making them a popular choice for data manipulation. Programmers often work with CSV files because they provide a standardized and simple way to store and share data between different applications and programming languages.
+Working with CSV, which stands for Comma-Separated Values, means handling data in a plain text format where each line is a data record with fields separated by commas. Programmers dig into CSVs because they're simple to use, widely supported, and perfect for exchanging data between different applications.
 
 ## How to:
 
-To work with CSV files in Java, you can use the built-in ```Scanner``` or ```BufferedReader``` classes to read data from a CSV file. Here is a basic code example:
+Let's read and write CSV files in Java using the commonly used `OpenCSV` library. First, add the dependency to your `pom.xml` if you're using Maven.
 
-```Java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class CSVReader {
-    public static void main(String[] args) {
-        String csvFile = "data.csv";
-        String line = "";
-        String delimiter = ",";
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(delimiter);
-                
-                // Do something with the data
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
+```xml
+<dependency>
+    <groupId>com.opencsv</groupId>
+    <artifactId>opencsv</artifactId>
+    <version>5.6</version> <!-- Check for the latest version -->
+</dependency>
 ```
 
-The code above reads data from the "data.csv" file and splits it into an array based on the comma delimiter. From there, you can manipulate the data as needed. 
+### Writing a CSV file
 
-To write data to a CSV file, you can use the ```BufferedWriter``` class. Here's an example of how you can write data to a CSV file using this class:
-
-```Java
-import java.io.BufferedWriter;
+```java
+import com.opencsv.CSVWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CSVWriter {
+public class CSVWritingExample {
     public static void main(String[] args) {
-        String csvFile = "output.csv";
-        String data = "123,John,Doe";
-        
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile))) {
-            bw.write(data);
+        String[] header = {"Name", "Age", "Country"};
+        String[] record1 = {"Alice", "24", "USA"};
+        String[] record2 = {"Bob", "19", "Canada"};
+
+        try (CSVWriter writer = new CSVWriter(new FileWriter("data.csv"))) {
+            writer.writeNext(header);
+            writer.writeNext(record1);
+            writer.writeNext(record2);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,15 +50,41 @@ public class CSVWriter {
 }
 ```
 
-## Deep Dive:
+### Reading a CSV file
 
-CSV files have been around since the 1970s and were first used in mainframe computers to store data. They gained popularity in the 1990s with the rise of Microsoft Excel and have since become a widely used format for storing data.
+```java
+import com.opencsv.CSVReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
 
-While CSV files are popular due to their simplicity and widely supported format, they do have some limitations. For example, they cannot store complex data types such as images or documents. In these cases, other alternatives such as JSON or XML may be a better choice.
+public class CSVReadingExample {
+    public static void main(String[] args) {
 
-Working with CSV files in Java also involves understanding how to handle different delimiters and how to handle errors or missing data. Additionally, there are third-party libraries available for more advanced CSV parsing and manipulation, such as the OpenCSV library.
+        try (CSVReader reader = new CSVReader(new FileReader("data.csv"))) {
+            List<String[]> r = reader.readAll();
+            r.forEach(x -> System.out.println(x[0] + ", " + x[1] + ", " + x[2]));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
 
-## See Also:
+Sample output after reading:
 
-- [Java CSV library - OpenCSV](http://opencsv.sourceforge.net/)
-- [History of CSV files](https://en.wikipedia.org/wiki/Comma-separated_values)
+```
+Name, Age, Country
+Alice, 24, USA
+Bob, 19, Canada
+```
+
+## Deep Dive
+
+Historically, CSVs have been used since the early days of personal computing, making them a kind of lingua franca for data interchange. Alternatives like JSON, XML, or even Excel formats may offer more advanced features, but CSV's simplicity ensures its endurance. When working with Java, while `OpenCSV` is a popular choice, you can also use the `java.util.Scanner` or `java.io.BufferedReader` for very basic tasks, though you'd handle the parsing yourself. `Apache Commons CSV` is another potent library available for similar tasks.
+
+## See Also
+
+- The OpenCSV homepage for documentation and guides: http://opencsv.sourceforge.net/
+- Apache Commons CSV for an alternative approach: https://commons.apache.org/proper/commons-csv/
+- Oracle's official Java tutorials for I/O operations: https://docs.oracle.com/javase/tutorial/essential/io/

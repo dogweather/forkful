@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "PHP: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cos'è e perché scriverle?
+## What & Why?
+Scrivere test è il processo di creazione di script che verificano il corretto funzionamento del codice. I programmatori scrivono test per assicurarsi che il loro codice funzioni come previsto e per prevenire regressioni.
 
-Scrivere i test è un processo importante per i programmatori. Ciò implica la creazione di codice aggiuntivo per testare il funzionamento del codice principale. I test aiutano i programmatori a verificare che il loro codice sia accurato e funzionante correttamente in varie situazioni, riducendo così il rischio di errori durante lo sviluppo e l'utilizzo dell'applicazione.
+## How to:
+PHP utilizza PHPUnit come framework standard per il testing. Ecco un esempio di test semplice:
 
-# Come si fa:
+```php
+<?php
+use PHPUnit\Framework\TestCase;
 
-```PHP
+class StackTest extends TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = [];
+        $this->assertSame(0, count($stack));
 
-// Definizione della funzione per testare
-function add($num1, $num2) {
-   return $num1 + $num2;
+        array_push($stack, 'foo');
+        $this->assertSame('foo', $stack[count($stack)-1]);
+        $this->assertSame(1, count($stack));
+
+        $this->assertSame('foo', array_pop($stack));
+        $this->assertSame(0, count($stack));
+    }
 }
-
-// Chiamata alla funzione e output
-echo add(5, 3) . PHP_EOL; // Output: 8
-echo add(2, -1) . PHP_EOL; // Output: 1
 ```
 
-# Approfondimento:
+Esecuzione del test con output di esempio:
+```bash
+$ ./vendor/bin/phpunit StackTest
+OK (1 test, 3 assertions)
+```
 
-I test sono diventati una pratica comune nella programmazione grazie all'approccio di sviluppo guidato dai test (TDD) introdotto negli anni '90. Questa metodologia prevede la scrittura dei test prima del codice stesso, al fine di guidare lo sviluppo e garantire che ogni componente funzioni come previsto.
+## Deep Dive
+PHPUnit è stato introdotto da Sebastian Bergmann ed è diventato il framework di test più popolare per PHP. Come alternativa, si può usare Behat per test di comportamento o PHPSpec per spec-based testing. Per scrivere test affidabili, si utilizzano assertion che confrontano i risultati attesi con quelli effettivi.
 
-Esistono varie alternative ai test automatizzati, come i test manuali o i test di accettazione, ma la scrittura di test automatizzati è diventata una pratica essenziale per la maggior parte dei progetti software moderni. Inoltre, esistono numerose librerie e framework di testing disponibili in PHP, tra cui PHPUnit, Codeception e Behat.
-
-Per implementare correttamente i test automatizzati, è importante seguire alcune best practice come scrivere test atomici, mantenere una buona copertura dei test e concentrarsi sui casi di test più importanti.
-
-# Vedi anche:
-
-- [PHPUnit documentazione](https://phpunit.de/manual/6.5/en/index.html)
-- [Behat documentazione](https://docs.behat.org/en/latest/)
+## See Also
+- [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
+- [Behat, BDD framework for PHP](https://docs.behat.org/en/latest/)
+- [PHPSpec, spec-based testing framework](http://www.phpspec.net/en/stable/)

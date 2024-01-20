@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json"
-html_title:           "Clojure: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -11,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att arbeta med JSON innebär att hantera data i ett format som är lätthanterligt och enkelt att läsa för både människor och datorer. JSON används ofta för att utbyta data mellan applikationer eller mellan en klient och en server. Det är också ett mycket populärt format för att lagra data i databaser. Programmerare använder JSON eftersom det är enkelt att förstå och använda, vilket gör det till ett utmärkt val för datahantering och utbyte.
+JSON, som är dataformatet alla pratar om, gör det enkelt att spara och utbyta data. Programmerare använder det för att jobba med data på webben, mellan olika språk och plattformar.
 
-## Så här:
- I Clojure finns en inbyggd funktion som heter `clojure.data.json` som möjliggör enkel hantering av JSON-data. Vi kan använda den för att konvertera data till JSON-format och vice versa. 
+## Hur gör man:
+I Clojure hanterar vi JSON med bibliotek som `cheshire`. Installera det genom att lägga till `[cheshire "5.10.1"]` i ditt `project.clj`. Så här ser kod och output ut:
 
 ```Clojure
-(require '[clojure.data.json :as json])
-;; konvertera data till JSON
-(json/write-str {:name "John" :age 30})
-;; => "{\"name\":\"John\",\"age\":30}"
+(require '[cheshire.core :as json])
 
-;; konvertera JSON till data
-(json/read-str "{\"name\":\"John\",\"age\":30}")
-;; => {:name "John", :age 30}
+;; Konvertera Clojure map till JSON sträng
+(json/encode {:a 1 :b true :c "clojure"})
+;; Output: "{\"a\":1,\"b\":true,\"c\":\"clojure\"}"
+
+;; Parse JSON sträng till Clojure map
+(json/decode "{\"a\":1,\"b\":true,\"c\":\"clojure\"}" true)
+;; Output: {:a 1, :b true, :c "clojure"}
 ```
 
-I det här exemplet använder vi `require` för att importera `clojure.data.json` och sedan använder vi `write-str` och `read-str` för att konvertera mellan data och JSON. Resultatet av `write-str` är en sträng, medan resultatet av `read-str` är en datastruktur i Clojure.
+## Djupdykning
+JSON utvecklades tidigt 2000-tal som ett enklare alternativ till XML. I Clojureland finns andra alternativ som `data.json` och `jsonista`. Cheshire använder Jackson-biblioteket under huven för snabbhet och extra funktioner, som custom encoders.
 
-## Djupdykning:
-JSON står för "JavaScript Object Notation" och har sitt ursprung från JavaScript-programmeringsspråket. Det är enkelt att förstå och skriva för människor, och är också lätt att läsa och skriva för datorer. Alternativ till JSON inkluderar XML, YAML och CSV.
-
-I Clojure är `clojure.data.json` ett standardbibliotek som innehåller hjälpfunktioner för att arbeta med JSON. Det finns också andra bibliotek som tillhandahåller liknande funktioner, till exempel `cheshire` och `data.json`.
-
-## Se även:
-- [Officiell dokumentation för clojure.data.json](https://clojure.github.io/data.json/)
-- [Jämförelse mellan olika dataformat](https://www.distilled.net/resources/json-vs-xml-a-performance-comparison/)
+## Se Också
+* Cheshire GitHub Repo: [https://github.com/dakrone/cheshire](https://github.com/dakrone/cheshire)
+* Clojure's `data.json`: [https://github.com/clojure/data.json](https://github.com/clojure/data.json)
+* Jsonista: [https://github.com/metosin/jsonista](https://github.com/metosin/jsonista)
+* Jackson-dokumentation: [https://github.com/FasterXML/jackson](https://github.com/FasterXML/jackson)

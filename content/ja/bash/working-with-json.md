@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱う」"
-html_title:           "Bash: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JSONを使う理由と方法
-
 ## What & Why?
-JSONとは、データの構造化フォーマットの一種です。プログラマーたちがJSONを使用する理由は、データを簡単かつ柔軟に扱うことができるからです。
+JSONはデータフォーマットです。プログラマはデータ交換や設定ファイルに使います。コンパクトで人間にも読みやすく、多くのプログラミング言語で容易に扱えます。
 
 ## How to:
-JSONを使用するためには、Bashのコマンドラインで"jq"パッケージをインストールする必要があります。次のコマンドを実行すると、インストールが始まります。
+BashでJSONを扱う一般的なツールには`jq`があります。例えば、`jq`を使ってJSONから特定の値を取得するには：
 
-```
-sudo apt install jq
-```
-
-JSONデータを解析するには、Bashのシェルスクリプトで"jq"コマンドを使用します。以下は、シンプルな例です。
-
-```
-echo '{"name": "John", "age": 30}' | jq '.'
+```Bash
+echo '{"name": "Taro", "age": 30}' | jq '.name'
 ```
 
 出力：
+
+```Bash
+"Taro"
 ```
-{
-     "name": "John",
-     "age": 30
-}
+
+配列から特定要素を取り出すには：
+
+```Bash
+echo '{"users": [{"name": "Taro"}, {"name": "Hanako"}]}' | jq '.users[1].name'
+```
+
+出力：
+
+```Bash
+"Hanako"
 ```
 
 ## Deep Dive
-JSONは1999年にダグラス・クロックフォードにより開発されました。JSONは、XMLよりも簡単な文法を持ち、WebアプリケーションやAPI、データベースとのインターフェースで広く使用されています。
-
-JSONの代替としては、XMLやYAMLなどがありますが、JSONが最も一般的に使用されています。
-
-JSONを使用する際、Bashのシェルスクリプトでは"jq"以外にもパッケージやライブラリを使用することができます。例えば、"gron"というパッケージを使用することで、JSONをプレーンテキストに変換することができます。
+JSON（JavaScript Object Notation）は2001年に登場しました。代替のフォーマットにはXMLやYAMLがあります。`jq`はC言語で記述されており、速度と柔軟性のバランスが良いツールです。
 
 ## See Also
-- Official "jq" Documentation: https://stedolan.github.io/jq/manual/
-- "gron" GitHub Repository: https://github.com/tomnomnom/gron
+- `jq`の公式ドキュメント：https://stedolan.github.io/jq/manual/
+- JSONの仕様：https://www.json.org/json-en.html
+- `jq`の処理例集：https://jqplay.org/

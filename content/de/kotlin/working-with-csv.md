@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Kotlin: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist CSV und warum verwenden Programmierer es?
+## Was & Warum?
+CSV steht für "Comma-separated values". Es ist ein einfaches Format zum Speichern tabellarischer Daten in Textform. Programmierer nutzen CSV wegen seiner Einfachheit und breiten Kompatibilität für Datenexport und -import in Datenbanken und Tabellenkalkulationen.
 
-CSV steht für "Comma Separated Values" und ist ein universales Dateiformat zum Speichern von tabellarischen Daten. Programmierer verwenden es, um Daten in eine einfach lesbare und bearbeitbare Struktur zu bringen.
-
-Wie geht das?
-
-Kotlin bietet verschiedene Methoden, um mit CSV-Dateien zu arbeiten. Das CSV-Library von JetBrains ist eine gut dokumentierte und leicht zu verwendende Option.
-
-1. CSV-Datei lesen:
-
-Um eine CSV-Datei zu lesen, wird zunächst ein Reader-Objekt erstellt, das die CSV-Datei als Parameter erhält. Dann kann die Datenzeile für Zeile ausgelesen werden.
-
+## How to:
 ```Kotlin
-val reader = CSVReader(FileReader("meine_datei.csv"))
-val csvData = reader.readAll() // Liste aller Datenzeilen
-for (data in csvData) {
-    println(data) // Aufruf der einzelnen Datenzeilen
+import java.io.File
+
+fun main() {
+    val csvData = """
+        Name,Alter,Beruf
+        Max,25,Entwickler
+        Erika,29,Designerin
+        """.trimIndent()
+
+    File("meineDaten.csv").writeText(csvData)
+
+    val lines = File("meineDaten.csv").readLines()
+    lines.drop(1) // Überspringe die Kopfzeile
+        .map { it.split(",") }
+        .forEach { println("${it[0]} ist ${it[1]} Jahre alt und arbeitet als ${it[2]}.") }
 }
+
+// Ausgabe:
+// Max ist 25 Jahre alt und arbeitet als Entwickler.
+// Erika ist 29 Jahre alt und arbeitet als Designerin.
 ```
 
-2. CSV-Datei schreiben:
+## Deep Dive
+CSV wurde in den frühen 1970er Jahren populär und ist seitdem ein standardisiertes Austauschformat, besonders wenn es um schnellen und simplen Datenaustausch geht. Alternativen wie JSON oder XML bieten mehr Struktur, sind aber komplexer. Beim Arbeiten mit CSV in Kotlin sollte man auf richtige Zeichenkodierung (z.B. UTF-8) und korrekte Behandlung von Sonderfällen wie Zeilenumbrüche oder Kommas in den Daten achten.
 
-Auch das Schreiben in eine CSV-Datei ist mit der CSV-Library von Kotlin möglich. Hier wird ein Writer-Objekt erstellt, dem die CSV-Datei und die zu schreibenden Daten übergeben werden. Anschließend können die Daten zeilenweise in die Datei geschrieben werden.
-
-```Kotlin
-val writer = CSVWriter(FileWriter("meine_neue_datei.csv"))
-val data = arrayOf("Spalte 1", "Spalte 2") // Daten, die geschrieben werden sollen
-writer.writeNext(data) // Schreiben der Daten in die CSV-Datei
-```
-
-## Vertiefung
-
-- Historischer Kontext: CSV wurde bereits 1972 entwickelt und ist eines der ältesten Dateiformate. Es war ursprünglich für die Speicherung von Daten in Tabellenkalkulationsprogrammen gedacht.
-- Alternativen: Es gibt auch andere Formate wie JSON oder XML, aber CSV ist aufgrund seiner einfachen Struktur und der Vielzahl an unterstützten Programmen immer noch eines der beliebtesten Formate.
-- Implementierungsdetails: CSV besteht aus einfachen Textdateien, in denen die Daten durch Trennzeichen wie Kommas oder Semikolons voneinander getrennt sind. Die erste Zeile enthält in der Regel die Spaltenüberschriften.
-
-## Siehe auch
-
-- [CSV-Format Spezifikation](https://tools.ietf.org/html/rfc4180)
+## See Also
+- Kotlin Dokumentation: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- CSV Format Spezifikation (RFC 4180): [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- OpenCSV-Bibliothek für komplexere CSV-Aufgaben: [http://opencsv.sourceforge.net/](http://opencsv.sourceforge.net/)

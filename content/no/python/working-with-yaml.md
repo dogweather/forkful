@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med yaml"
-html_title:           "Python: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,35 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-YAML er et tekstbasert dataformat som brukes for å lagre og legge til rette for utveksling av data mellom ulike programmeringsspråk. Det er spesielt nyttig for å lagre konfigurasjonsfiler eller for å utveksle data mellom applikasjoner. 
+YAML er et dataformat som leser og skriver data på en måte som er lett for folk å lese og skrive. Programmerere bruker YAML for konfigurasjonsfiler og datalagring på grunn av dens klare syntaks.
 
-Programmerere bruker YAML fordi det er en enkel og leselig måte å strukturere og organisere data på. Det tillater også enkel serialisering og deserialisering av data, noe som er viktig for å kunne kommunisere med andre programmer.
+## How to:
+For å jobbe med YAML i Python, trenger du `PyYAML`, et bibliotek som kan installeres med pip:
 
-## Hvordan:
+```Python
+pip install PyYAML
+```
+
+Last inn YAML i Python:
+
 ```Python
 import yaml
 
-# Opprette en YAML-fil
-data = {"navn": "Ole", "alder": 30, "hobbyer": ["programmering", "fotografering"]}
+# Lese YAML-string
+yaml_data = """
+en: Hello
+no: Hei
+"""
 
-with open("min_fil.yml", "w") as f:
-    yaml.dump(data, f)
-
-# Lese en YAML-fil
-with open("min_fil.yml") as f:
-    data = yaml.load(f)
-    
-print(data["navn"]) # Output: Ole
-print(data["alder"]) # Output: 30
-print(data["hobbyer"][0]) # Output: programmering
+data = yaml.safe_load(yaml_data)
+print(data['no'])
 ```
 
-## Dypdykk:
-YAML står for "YAML Ain't Markup Language" og ble utviklet på begynnelsen av 2000-tallet for å erstatte XML som et mer leselig og brukervennlig alternativ for å definere strukturerte data. Det finnes også andre formater som JSON og TOML, men YAML er mer fleksibelt og tillater blant annet kommentarer i filene.
+Output:
 
-For å bruke YAML i Python, må man installere pyyam biblioteket ved hjelp av en pakkehåndterer som pip eller conda. Det finnes også flere GUI-verktøy som gjør det enkelt å redigere YAML-filer.
+```
+Hei
+```
 
-## Se også:
-Offisiell dokumentasjon for YAML: https://yaml.org/ 
+Skrive til YAML:
 
-Pyyaml biblioteket: https://pyyaml.org/
+```Python
+import yaml
+
+data_to_write = {'en': 'Goodbye', 'no': 'Ha det'}
+
+# Skrive data til YAML-string
+yaml_data = yaml.dump(data_to_write, allow_unicode=True)
+print(yaml_data)
+```
+
+Output:
+
+```yaml
+en: Goodbye
+no: Ha det
+```
+
+## Deep Dive
+YAML, som står for "YAML Ain't Markup Language", startet rundt 2001. Det er ment som et brukervennlig alternativ til XML for data serialisering. JSON er et annet alternativ, men YAML er ofte foretrukket for konfigurasjonsfiler der lesbarhet er viktig. Ved implementering i Python, `PyYAML` tilbyr både low-level og high-level APIer for å håndtere YAML data, med `safe_load` og `safe_dump` å anbefale for å unngå å kjøre skadelig kode gjennom YAML.
+
+## See Also
+- Offisiell YAML-nettside: [https://yaml.org/](https://yaml.org/)
+- PyYAML-dokumentasjon: [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- YAML-spesifikasjon: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)

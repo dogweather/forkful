@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
-html_title:           "Clojure: Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Beim Programmieren mit Clojure kann es manchmal nötig sein, mit JSON-Daten umzugehen. Aber was ist das überhaupt und warum machen Programmierer das?
-
 ## Was & Warum?
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Format zum Datenaustausch. In Clojure nutzen wir es, weil es menschenlesbar und maschinenverarbeitbar ist – perfekt für Web-APIs und Config-Files.
 
-JSON steht für "JavaScript Object Notation" und ist ein gängiges Format zum Austausch von Daten zwischen verschiedenen Anwendungen. Es ist lesefreundlicher als z.B. XML und wird von vielen Programmiersprachen unterstützt, einschließlich Clojure. Programmierer nutzen JSON, um Daten effizient zu speichern und weiterzugeben, z.B. in Webanwendungen oder bei der Verarbeitung von APIs.
-
-## Wie geht's?
-
-Um mit JSON in Clojure zu arbeiten, können wir die Bibliothek "clojure.data.json" verwenden. Diese stellt Funktionen zur Verfügung, um JSON-Dateien zu lesen, zu schreiben und zu verarbeiten. Schauen wir uns ein Beispiel an:
+## How to:
+Um JSON in Clojure zu bearbeiten, nutzen wir die `cheshire` Bibliothek. Hier wie's geht:
 
 ```Clojure
-(require '[clojure.data.json :as json])
+;; Dependencies hinzufügen 
+;; `[cheshire "5.10.1"]` zu project.clj oder deps.edn
 
-;; JSON-Datei lesen
-(def data (json/read-str "{\"name\": \"John\", \"age\": 30}"))
+(require '[cheshire.core :as json])
 
-;; JSON-Datei schreiben
-(json/write-str {:name "Jane", :age 25})
+;; JSON-String parsen
+(def json-str "{\"name\":\"Ada\",\"age\":30}")
+(def data (json/parse-string json-str))
+;; => {"name" "Ada", "age" 30}
 
-;; JSON-Datei verarbeiten
-(def name (get data "name"))
-(def age (get data "age"))
+;; Clojure Map in JSON-String konvertieren
+(def clj-map {:name "Ada", :age 30})
+(def json-output (json/generate-string clj-map))
+;; => "{\"name\":\"Ada\",\"age\":30}"
 ```
 
-## Tief eintauchen
+## Deep Dive:
+JSON gibt es seit den frühen 2000ern, populär gemacht durch JavaScripts Web-Dominanz. Alternativen wie XML sind oft komplexer, mit Clojure bieten sich jedoch auch EDN oder Transit als weitere Formate an. `cheshire` nutzt intern Jackson, eine schnelle JSON-Bibliothek für Java, was die Verarbeitung effizient macht.
 
-JSON wurde Anfang der 2000er Jahre entwickelt und ist heute eines der am häufigsten verwendeten Datenformate. Eine alternative Möglichkeit, Daten in Clojure zu verarbeiten, ist die Verwendung von EDN (Extensible Data Notation), die in Clojure eingebaut ist. Im Gegensatz zu JSON ist EDN jedoch spezifisch für Clojure und keine universelle Lösung für den Austausch von Daten.
-
-Um mit komplexeren JSON-Strukturen umzugehen, gibt es auch die Möglichkeit, spezielle Bibliotheken wie "cheshire" oder "jsonista" zu verwenden. Diese bieten zusätzliche Funktionen, um z.B. JSON-Schemas zu validieren oder die Integration mit anderen Datenformaten zu erleichtern.
-
-## Siehe auch
-
-- Offizielle Clojure-Dokumentation für die "clojure.data.json" Bibliothek: https://clojuredocs.org/clojure.data.json 
-- Artikel über die Unterschiede zwischen JSON und EDN in Clojure: https://practicalli.github.io/blog/posts/edn-and-json-in-clojure/
-- Vergleich von verschiedenen JSON-Bibliotheken in Clojure: https://www.brianthicks.com/post/2015/01/31/json-processing-in-clojure/
+## See Also:
+- Cheshire GitHub Repo: [https://github.com/dakrone/cheshire](https://github.com/dakrone/cheshire)
+- EDN, eine Clojure-eigene Datennotation: [https://github.com/edn-format/edn](https://github.com/edn-format/edn)
+- Transit, für effizienteren Datenaustausch: [https://github.com/cognitect/transit-clj](https://github.com/cognitect/transit-clj)

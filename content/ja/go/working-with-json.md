@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱う」"
-html_title:           "Go: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かしら？: JSONとは何かと、プログラマーがそれを行う理由について2~3文で説明
+## What & Why?
+## 何となぜ？
 
-JSONとは、データを構造化された形式で表現するための言語です。プログラマーがJSONを使用する理由は、様々なシステムやプログラム間でデータを簡単に共有できるためです。JSONはシンプルで柔軟なフォーマットであり、多くの場合、Webやモバイルアプリケーションの開発で使用されています。
+JSONはデータ交換フォーマットです。シンプルで読みやすく、多言語間のデータ通信に使われます。
 
-## 手順：```Go ... ```コードブロック内のコーディング例とサンプル出力
+## How to:
+## 方法：
 
-Go言語を使用して、JSONデータを処理する非常に簡単な例を見てみましょう。まず、エンコーダーを使用してGoのデータをJSON形式にエンコードし、それを標準出力に書き込みます。
+Goでは`encoding/json`パッケージを用いてJSONとのやり取りを行います。基本的な使い方を見てみましょう。
 
 ```Go
+package main
+
 import (
     "encoding/json"
     "fmt"
+    "log"
 )
- 
-func main() {
-    data := map[string]string{"name": "John", "job": "Programmer"}
-    json, _ := json.Marshall(data)
-    fmt.Println(string(json))
+
+type User struct {
+    ID   int    `json:"id"`
+    Name string `json:"name"`
 }
- 
-/* sample output:
-{"name": "John", "job": "Programmer"}
-*/
+
+func main() {
+    // JSON文字列
+    jsonString := `{"id": 1, "name": "Taro"}`
+    
+    // JSONを構造体にデコード
+    var user User
+    err := json.Unmarshal([]byte(jsonString), &user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%+v\n", user) // 出力：{ID:1 Name:Taro}
+
+    // 構造体をJSONにエンコード
+    newJson, err := json.Marshal(user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(string(newJson)) // 出力：{"id":1,"name":"Taro"}
+}
 ```
 
-## 詳しく見てみる：JSONデータの歴史的な背景、代替手段、実装の詳細について
+## Deep Dive
+## 詳細：
 
-JSONは1999年にダグラス·クロックフォードによって作成されました。それ以来、Webアプリケーションの開発において主流のフォーマットとなっています。JSONの代替手段としては、XMLやCSVなどがありますが、JSONはより簡潔で理解しやすいため、多くの開発者にとっては優れた選択肢となっています。Go言語では、JSONデータをより効率的に処理するための組み込みパッケージが提供されています。
+JSONはJavaScript Object Notationの略で、1999年にECMAScript言語仕様とともに登場しました。XMLなどの代替品もありますが、JSONはその軽量さから特にWeb APIとの連携で広く使われています。Goでは`encoding/json`パッケージが内部リフレクションを使っており、構造体タグを通してフィールド名のカスタマイズができます。
 
-## 関連情報を見る：関連リソースへのリンク
+## See Also
+## 関連情報：
 
-- [Go言語公式ドキュメント：encoding/json](https://golang.org/pkg/encoding/json/)
+- GoのJSONパッケージ公式ドキュメント: https://pkg.go.dev/encoding/json
+- Go言語によるJSON処理の詳しいチュートリアル: https://blog.golang.org/json
+- JSONとは: https://www.json.org/json-ja.html

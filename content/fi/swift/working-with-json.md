@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Swift: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-JSON (JavaScript Object Notation) on yleinen tapa tallentaa ja vaihtaa tietoja ohjelmoinnissa. Se on yksinkertainen formaatti, joka käyttää avain-arvo -pareja tallentaakseen tietoja ja on erityisen hyödyllinen verkkosovelluksissa, kun tietoja tarvitsee lähettää ja vastaanottaa nopeasti. Tämän takia moni ohjelmoija käyttää JSONia osana päivittäistä työtään.
+## What & Why?
+JSON (JavaScript Object Notation) on kevyt dataformaatti datan tallennukseen ja siirtoon. Ohjelmoijat käyttävät JSONia sen yksinkertaisuuden ja ihmisen lukevan muodon vuoksi, ja se toimii hyvin eri alustojen ja kielten välillä.
 
-## Miten?
-Jos haluat luoda validin JSON -muotoisen tiedoston Swiftillä, sinun tarvitsee vain muokata datanavakkaa (struct) niin, että se sisältää tarvittavat avain-arvo -parit. Jälkeenpäin voit käyttää JSONSerialization -luokkaa muuntamaan datanavakan JSONiksi ja JSON -sta datanavakaksi. Katso allaolevia esimerkkejä.
+## How to:
+Swift käsittelee JSONia Codable-protokollan ja JSONDecoder-kirjaston avulla. Data muunnetaan `Encodable` -protokollaa toteuttavasta Swifin tyyppistä JSON:ksi ja päinvastoin. Katso esimerkki:
 
 ```Swift
-// Luodaan datanavakka party
+import Foundation
 
-struct Party {
-    let guests: [String]
-    let theme: String
+// Malli, joka edustaa JSON-tietoa
+struct Käyttäjä: Codable {
+    var nimi: String
+    var ikä: Int
 }
 
-// ALustetaan datanavakka
+// JSON merkkijono, jota käsitellään
+let jsonMerkkijono = """
+{
+    "nimi": "Matti",
+    "ikä": 28
+}
+""".data(using: .utf8)!
 
-let party = Party(guests: ["Maija", "Matti", "Hanna"], theme: "Retro")
-
-// Muunnetaan datanavakka JSONiksi
-
-var jsonData: Data
+// JSON datan muuntaminen Swift-olioksi
 do {
-    jsonData = try JSONSerialization.data(withJSONObject: party, options: .prettyPrinted)
+    let dekoodattuKäyttäjä = try JSONDecoder().decode(Käyttäjä.self, from: jsonMerkkijono)
+    print(dekoodattuKäyttäjä) // Tulostaa Käyttäjän tiedot
 } catch {
     print(error)
 }
-
-// Muunnetaan JSON datanavakaksi 
-
-var convertedParty: Party
-do {
-    let json = try JSONSerialization.jsonObject(with: jsonData, options: [])
-    if let jsonParty = json as? [String: Any] {
-        convertedParty = Party(guests: jsonParty["guests"][0] as! String, theme: jsonParty["theme"] as! String)
-    }
-} catch {
-    print(error)
-}
-
-print(convertedParty.guests) // tulostaa ["Maija", "Matti", "Hanna"]
-print(convertedParty.theme) // tulostaa "Retro"
 ```
 
-## Syvempi sukellus
-JSON luotiin alunperin selain- ja JavaScript -yhteensopivaksi tiedonsiirtoformaadiksi. Sitä kutsuttiin aluksi "Jaavscript -ohjelmien maitojauheeksi" ja sen käyttöönotto 90-luvun lopulla auttoi selaimia lähettämään ja vastaanottamaan tietoja nopeammin ja tehokkaammin. Nykyään JSONia käytetään paljon yleisemmin monenlaisissa ohjelmointikielissä ja sen suosio kasvaa jatkuvasti.
+## Deep Dive
+JSON-muoto esitettiin vuonna 2001 ja se nousi nopeasti suosioon keveytensä ja helppokäyttöisyytensä vuoksi. Vaihtoehtoisia formaatteja ovat XML ja YAML. Swiftin `Codable`-protokolla, joka julkistettiin Swift 4:ssä, tekee JSONin käsittelystä helpompaa automatisoimalla monet siihen liittyvät rutiinit.
 
-On myös muita vaihtoehtoja JSONille, kuten XML ja YAML, mutta JSON on yleensä nopeampi ja helpompi käyttää. Swiftin lisäksi myös muut ohjelmointikielet, kuten JavaScript, Python ja Ruby, tukevat JSONia.
-
-Jos haluat käyttää JSONia Swiftissä, tarvitset lisäksi JSONSerialization -luokan lisäksi myös Foundation -kirjaston. Voit lukea lisää JSONSerializationista ja sen eri metodeista Swiftin dokumentaatiosta.
-
-## Lisätietoa
-- [Swiftin dokumentaatio JSONSerializationista](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [JSON-formatin virallinen verkkosivu](https://www.json.org/)
+## See Also
+- Swiftin virallinen dokumentaatio Codable-protokollasta: [Swift Codable Documentation](https://developer.apple.com/documentation/swift/codable)
+- JSON-syntaksin selitys: [JSON.org](https://www.json.org/json-en.html)
+- Apple Developer -artikkeli JSONista ja Swiftistä: [Working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37)

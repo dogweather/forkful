@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Swift recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,28 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error is a way for programmers to display error messages in their code. It allows them to easily identify and troubleshoot issues without disrupting the normal output of the program.
+Writing to standard error (`stderr`) channels critical messages to a special output stream reserved for errors, separate from the main output (`stdout`). Programmers use it for logging errors and diagnostic messages so they don't jumble up regular program data and can be easily tracked or redirected.
 
 ## How to:
-To write to standard error in Swift, use the `print()` function with the `to` parameter set to `.standardError`. Here's an example:
+Swift makes writing to `stderr` straightforward. See the example below:
 
 ```Swift
-print("Error: Something went wrong.", to: .standardError)
+import Foundation
+
+// Writing to standard error
+func writeToStdErr(_ message: String) {
+    if let data = "\(message)\n".data(using: .utf8) {
+        FileHandle.standardError.write(data)
+    }
+}
+
+// Example usage
+writeToStdErr("Oops! Something went wrong.")
+
+// Output when run in a console could look like this
+// (although this won't be visible in Xcode's console):
+// Oops! Something went wrong.
 ```
 
-The error message will be displayed in the console with a designated error symbol next to it. Here's what the output would look like:
+## Deep Dive
+In earlier programming days, distinguishing between `stdout` (standard output) and `stderr` (standard error) was vital for parsing command output and handling errors. Other languages offer similar constructs, and in Unix-based systems, these streams relate directly to the terminal. Implementing this in Swift taps into the same underlying principles, where `stderr` serves as an unbuffered stream, meaning it immediately flushes the output. This behavior is crucial for real-time error reporting. 
 
-```
-❌ Error: Something went wrong.
-```
+Alternatives include logging frameworks that can offer more features, like log levels and message formats. Swift's own standard libraries are rather minimalistic; if you need sophistication, you'll likely look at third-party libraries or the Apple-unified logging system.
 
-## Deep Dive:
-The practice of writing to standard error has been around since the early days of programming. Initially, programmers would simply print error messages to the standard output, but this proved to be problematic as it would mix with the normal output of the program. Hence, the introduction of standard error as a dedicated channel for error messages.
+## See Also
+For a deeper understanding and additional context, check out these resources:
 
-An alternative to writing to standard error is using logging frameworks, such as Apple's own `os_log`. However, these frameworks can be more complex to set up and use compared to the simple `print()` function.
-
-Behind the scenes, writing to standard error uses the `stderr` stream, which is part of the UNIX file descriptor system. This stream is used to output text specifically for error messages, while the `stdout` stream is reserved for normal program output.
-
-## See Also:
-- [Logging in Swift](https://developer.apple.com/documentation/os/logging)
-- [Standard Streams in UNIX](https://en.wikipedia.org/wiki/Standard_streams)
+- [Apple's Unified Logging documentation](https://developer.apple.com/documentation/os/logging)
+- [Swift’s Standard Library reference for FileHandle](https://developer.apple.com/documentation/foundation/filehandle)

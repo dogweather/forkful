@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "C: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-CSV är en vanlig typ av filformat som används för att lagra och överföra data i tabellform. Det är en förkortning för "Comma-Separated Values" och fungerar som en mellanhand för att dela information mellan olika program och system. Programmörer använder CSV för att enkelt hantera och manipulera data som behöver organiseras i en tabellstruktur.
+## What & Why? ("Vad & Varför?")
+Arbete med CSV innebär att hantera data i "Comma-Separated Values" formatet, vilket är vanligt för datadelning. Programmerare gör detta för att enkelt utbyta och manipulera data mellan olika program och system.
 
-## Hur gör man:
-Att arbeta med CSV i C är relativt enkelt. Det första steget är att inkludera biblioteket "stdio" som ger möjlighet att läsa och skriva till filer. Sedan är det viktigt att komma ihåg de grundläggande reglerna för CSV-formatet: varje fält är separerat med ett kommatecken och varje rad är separerad med ett radbrytningstecken.
-
-Exempel på kod för att skriva data till en CSV-fil:
-
+## How to: ("Hur man gör:")
 ```C
 #include <stdio.h>
-int main() {
-   //öppna filen för skrivning
-   FILE *csvFile = fopen("data.csv", "w");
+#include <stdlib.h>
+#include <string.h>
 
-   //skriv data till filen
-   fprintf(csvFile, "Hund,Katt,Kanin\n");
-   fprintf(csvFile, "Brun,Svart,Vit\n");
-   
-   //stäng filen
-   fclose(csvFile);
-   
-   return 0;
+int main() {
+    FILE *fp = fopen("exempel.csv", "r");
+    if (!fp) {
+        printf("Kunde inte öppna filen.\n");
+        return EXIT_FAILURE;
+    }
+
+    char buf[1024];
+    int row_count = 0;
+    int field_count = 0;
+    
+    while (fgets(buf, 1024, fp)) {
+        field_count = 0;
+        row_count++;
+        
+        if (row_count == 1) continue; // Skippar rubrik
+        
+        char *field = strtok(buf, ",");
+        while (field) {
+            printf("%s ", field);
+            field = strtok(NULL, ",");
+            field_count++;
+        }
+        printf("\n");
+    }
+
+    fclose(fp);
+    return EXIT_SUCCESS;
 }
 ```
-
-Output i filen 'data.csv':
+Sample output for a CSV containing names and ages:
 ```
-Hund,Katt,Kanin
-Brun,Svart,Vit
+Alice 23 
+Bob 34 
+Charlie 29 
 ```
 
-## Djupdykning:
-CSV-formatet har funnits sedan tidigt 1970-tal och har blivit en standard för att överföra data mellan program och system på grund av dess enkelhet. En nackdel med CSV är att det inte kan hantera specialtecken som kommatecken eller radbrytningar inuti datafält, vilket kan orsaka problem vid hantering av mer komplex data.
+## Deep Dive ("Djupdykning")
+CSV-formatets enkelhet härstammar från tidiga dataprogram. Alternativ som JSON eller XML erbjuder rikare datatyper och strukturer men är mer komplexa. När du hanterar CSV-filer i C måste du ofta skriva egen kod för att parsa och validera data, vilket innebär att du måste hantera potentiella fallgropar som specialtecken och inkonsekvent användning av kommatecken.
 
-Det finns alternativ till CSV som kan hantera specialtecken bättre, till exempel JSON och XML. Dock så blir dessa format mer komplicerade att hantera för både människor och datorer.
-
-När det gäller implementation så är det viktigt att ha i åtanke att CSV-filer kan ha olika separatorer, inte bara kommatecken. Det finns också specifika regler för att hantera citattecken, som används för att inkludera specialtecken inuti datafält.
-
-## Se även:
-- [Reading and Writing CSV files in C](https://www.geeksforgeeks.org/csv-file-management-using-c/)
+## See Also ("Se även"):
+- [RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
+- [libcsv](http://sourceforge.net/projects/libcsv/), ett bibliotek för att hantera CSV i C
+- [GNU Datamash](https://www.gnu.org/software/datamash/), ett kommandoradsverktyg som kan utföra enkla manipulationer på textfiler, inklusive CSV.

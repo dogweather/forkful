@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Swift recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests is the process of creating code that checks the functionality and correctness of your overall code. Programmers do this in order to catch any potential bugs or errors in their code before it is released to the public. It is an important practice in ensuring code quality and reducing the likelihood of issues being discovered by users.
+Writing tests is crafting code that checks if your software works as planned. Programmers test to catch bugs early, ensure quality, and simplify maintenance.
 
 ## How to:
+Swift uses XCTest framework for testing. Here's a simple test for a function `add(a:b:)`:
 
-```Swift 
-//Example of writing a basic test
-func testAddition(){
-  let result = 2 + 3
-  if result == 5{
-    print("Test Passed!")
-  }
+```Swift
+import XCTest
+
+class MathTests: XCTestCase {
+
+    func testAdd() {
+        let result = add(a: 2, b: 3)
+        XCTAssertEqual(result, 5, "Expected 2 + 3 to equal 5")
+    }
+
+    func add(a: Int, b: Int) -> Int {
+        return a + b
+    }
 }
-testAddition()
-//Output: Test Passed!
+```
+Run tests with Xcode's Test Navigator or use `cmd+U`. Output should read:
+
+```plaintext
+Test Suite 'All tests' passed at ...
+    Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.004) seconds
 ```
 
-To write a test in Swift, simply define a function that tests a specific aspect of your code, and within that function, use conditional statements to check if the result is as expected. Running the function will then output whether the test passed or failed. Writing multiple tests for different parts of your code can help pinpoint any potential errors.
+## Deep Dive
+XCTest, part of Xcode since 2013, took over from OCUnit. Alternatives are Quick (BDD framework) and SnapshotTesting (UI tests). Testing implementation relies on assertion functions, test cases and optionally test suites, harnessing the XCTest framework's capabilities.
 
-## Deep Dive:
-
-Testing has been around since the early days of programming, with the first formal software testing being used in the 1950s to test the functionality of punched card equipment. There are different types of testing, such as unit testing which focuses on testing small, individual units of code, and integration testing which tests how different units work together. There are also alternative methods of testing, such as manual testing, but writing automated tests is the preferred method for many developers as it saves time and effort in the long run.
-
-When writing tests in Swift, there are various frameworks that can assist in the process, such as XCTest. These frameworks provide built-in functions and methods specifically designed for testing, making it a more streamlined and efficient process.
-
-## See Also:
-
-- [WWDC 2016: Testing in Xcode](https://developer.apple.com/videos/play/wwdc2016/409/)
-- [The Importance of Writing Unit Tests in Swift](https://medium.com/flawless-app-stories/the-importance-of-writing-unit-tests-in-swift-49463c98a8c9)
-- [Practical Guide to Unit Testing in Swift](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+## See Also
+- [Apple XCTest Overview](https://developer.apple.com/documentation/xctest)
+- [Ray Wenderlich's iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial)
+- [Testing Swift code with Quick](https://github.com/Quick/Quick)
+- [SnapshotTesting on GitHub](https://github.com/pointfreeco/swift-snapshot-testing)

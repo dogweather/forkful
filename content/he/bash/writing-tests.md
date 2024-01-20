@@ -11,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+כתיבת בדיקות היא יצירת סקריפטים הבודקים אם קוד מסוים עובד כראוי. תוכניתנים עושים זאת כדי לוודא אמינות ולהקל על תחזוקת הקוד בעתיד.
 
-כתיבת בדיקות היא תהליך שמטרתו לבדוק את התכניות שלנו ולוודא שהן עובדות כפי שצריכות. המדיניות השיחקת מנתקת את הסרגל ממקום שווה ומכולם. 
-
-## איך לעשות?
-
-כתיבת בדיקות דורשת שמדיניות טוענת. זה מאפשר לנו לבדוק ולוודא שהקוד שלנו עובד כפי שצריך. להלן כמה דוגמאות:
-
+## איך לעשות:
 ```Bash
-# בדיקת הצגת המשתנה הנרשם
-name="יוסף"
-echo $name
+# שימוש בתוכנית test לבדיקת תנאים
+[[ 10 -gt 5 ]] && echo "Yes, 10 is greater than 5"
+
+# פלט דוגמה
+Yes, 10 is greater than 5
+
+# בדיקת קיום קובץ
+FILE="/etc/passwd"
+[[ -f "$FILE" ]] && echo "$FILE exists" || echo "$FILE does not exist"
+
+# פלט דוגמה
+/etc/passwd exists
 ```
 
-תוצאה: `יוסף`
+## עיון עמוק
+החל מהגירסאות הראשונות של UNIX, ניתוח בדיקות נעשה באמצעות סקריפטים של. מאז התפתחו כלים רבים כמו Pytest ב-Python או JUnit ב-Java. ההבדל בין `test` (או `[`) ל-`[[` הוא ש-`[[` הוא מודרני יותר ותומך בתחביר מתקדם יותר כמו && ו-|| לתנאים מרובים.
 
-```Bash
-# בדיקת התו הראשון במחרוזת
-string="שלום"
-echo ${string:0:1}
-```
-
-תוצאה: `ש`
-
-## העמק
-
-הרקע ההיסטורי של כתיבת בדיקות התחיל בשנות ה-70 כשחברת AT&T כתבה מיקוד ברשתי TCsh. על אף זאת, כיום קיימות כמה אלטרנטיבות לכתיבת בדיקות, כגון JUnit לשפת ג'אווה ו-NUnit לשפת סי סי+. לפעמים כתיבת בדיקות מכובדת הנתונים מקצוע שהוערכו ושווים כלכלית לפני כבר קשורים לעולם.
-
-## ראה גם
-
-למידע נוסף ודוגמאות נוספות ניתן לעיין במדריכים ובמאמרים הבאים:
-
-- שיעורי Bash באתר Codeacademy: https://www.codecademy.com/learn/learn-bash
-- מאמר "כיצד לבצע בידיקות התקנה כספית עבור הפרויקט שלכם" באתר Better Programming: https://betterprogramming.pub/how-to-test-financial-installment-for-your-project-ce87dd32e8d8
+## ראה גם:
+- Bash Guide for Beginners: http://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html
+- Advanced Bash-Scripting Guide: http://tldp.org/LDP/abs/html/
+- Google’s Shell Style Guide: https://google.github.io/styleguide/shellguide.html

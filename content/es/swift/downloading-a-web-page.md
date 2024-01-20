@@ -35,6 +35,5 @@ Este programa imprimirá el código HTML de `www.example.com`.
 La descarga de páginas web ha sido fundamental en la vida útil de la web, permitiendo la indexación de motores de búsqueda y la toma de instantáneas de sitios. Además del método anterior, podrías usar bibliotecas como Alamofire para tareas más complejas. Cabe mencionar que si haces demasiadas solicitudes a un sitio en un corto período de tiempo, puedes ser bloqueado.
 
 ## Ver también
-1. [Kitura](https://www.kitura.io/): Un marco web ligero para Swift.
 2. [Alamofire](https://github.com/Alamofire/Alamofire): Una biblioteca Swift para tareas HTTP más complejas.
 3. [Documentación oficial de Swift](https://developer.apple.com/documentation/swift): Para profundizar en el lenguaje de programación Swift.

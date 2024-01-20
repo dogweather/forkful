@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Fish Shell: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבה לקובץ טקסט"
+html_title:           "Bash: כתיבה לקובץ טקסט"
+simple_title:         "כתיבה לקובץ טקסט"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,28 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא תהליך שבו מתווספים מידע או תכנים לקובץ טקסט קיים. תרגום פשוט למנגנון זה הוא "כתיבת קובץ". תכנותאים מבצעים פעולה זו כדי לשנות או להוסיף מידע לקבצים שמשמשים אותם בלי סוף.
+כתיבת קובץ טקסט היא התהליך שבו אתם יוצרים קובץ חדש או מעדכנים קובץ קיים עם טקסט. תוכניתנים עושים זאת לשמירת נתונים, תצורות ולוגים.
 
-## כיצד ל:
-משמעות "כתיבת קובץ" ניתן להשתמש בכל מנגנון שיכול לפעול במצב כתיבה, למשל במדף הטרמינל או בעזרת תוכנות כניסת שיט. למשל אפשר לכתוב טקסט מעוצב, להוסיף נוסחות או לשנות קבצי תצורה.
+## איך עושים זאת:
+כדי לכתוב לקובץ ב-Fish, השתמשו בפקודות כמו `echo` ו-`tee`.
 
-#### Fish Shell של דוגמה:
+```Fish Shell
+# כתיבה לקובץ חדש
+echo "שלום, עולם!" > hello.txt
+
+# הוספה לקובץ קיים
+echo "זהו קובץ קיים!" >> existing_file.txt
+
+# כתיבה לקובץ באמצעות tee
+echo "שורה חדשה" | tee -a file_with_tee.txt
 ```
-echo "כתוב טקסט בפומבל" > Hello.txt
-cat Hello.txt
+
+הוצאה לדוגמה:
+
+```
+# אין הוצאה בקונסול אלא אם נעשה שימוש ב-flag -a בפקודת tee
 ```
 
-#### פלט:
-```
-כתוב טקסט בפומבל
-```
+## צלילה לעומק:
+בעבר, כלים כמו `ed` או `sed` היו שימושיים לעריכת קבצים במערכות Unix. Fish מציעה גישה אינטואיטיבית יותר עם פקודות שחוברות ישירות ל-shell. עלתרנטיבות נוספות כוללות כתיבה באמצעות תוכניות עריכה אוטומטיות כמו `awk` או השימוש בשפות תכנות כמו Python או Perl. כשכותבים קובץ, המערכת הבסיסית מייצרת inode שמקשר את הקובץ למחיצה הפיזית שלו.
 
-## לא ניסעה:
-מגוון נרחב של כלי אפשרי משתמשים בכתיבת קבצים כדי לשנות את יכולת יצירתם, עיצובם או תוכנם. מניןגנונים כמו Vi או Vim ניתנים לשימוש בפקודות שונות כדי לתפעל ולכתוב קובץ, ועוד כמה מתעסקים מעין דיינים בתיקיות בתקיות.
-
-#### שיטבלוך של רשימות הוקרפת:
-- [Ein File Schreiben - Vie, Vim, und mehr](https://www.tldp.org/LDP/abs/html/x8011.html) אשר מציג ראשון כדי לכתוב קבצים במצבים רבים לעריכה אלו.
-- [Ein File Bearbeiten - Gothaischkeiten auf dener von Vi']י נטן מציג את האופציות העצמיות רוכש|ביגאןmannern מרולים מנטוריים|, מכב ועושן|היימות.
-
-## ראה גם:
-- [fish shell אתר הבית הרשמי](https://fishshell.com/) - מקור היוצרים של shell הנוח הזה.
+## ראו גם:
+- [Fish Documentation on Redirecting Output](https://fishshell.com/docs/current/index.html#redirects)
+- [GNU Coreutils: tee](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html)
+- [Unix Shell Scripting Tutorial](https://www.shellscript.sh/)

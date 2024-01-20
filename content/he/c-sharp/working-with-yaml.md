@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "C#: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-גם בתחום התכנות, תמיד יש מצבים שבהם נדרש לטפל בנתונים שמתקבלים ממקורות שונים. לעיתים אנו נתקלים במסמכים כמו קבצי תצורה או פרוטוקולים מורכבים. במקרים כאלה, יתרונותיו של YAML מכריחים אותנו להכיר קצת יותר את הכלים שהוא מציע.
-
 ## מה ולמה?
+YAML הוא פורמט נתונים קל לקריאה, נוח לכתיבת קונפיגורציות, אחסון נתונים ותיעוד. תכניתנים משתמשים בו כי זה פשוט, נקי וידידותי לאדם.
 
-עבור מתכנתים, YAML הוא כלי מאוד שימושי להתמודדות עם נתונים מבניים ומורכבים. במקור, הוא נוצר כפרויקט תמיכה בקוד שאינו תלוי בשפת תכנות ספציפית, אך הוא משמש היום ככלי לתיאור מבני נתונים ותצוגתם בקוד מובנה ונוח לקריאה.
-
-## הכיצד?
-
-כדי להתחיל לעבוד עם YAML בקוד C#, מומלץ להשתמש בספריית ' YamlDotNet ' הזמינה בפרויקט GitHub של המפתח Antoine Aubry.
-
-הנה דוגמאות לכתיבת YAML עם C#:
+## איך לעשות:
+כדי לעבוד עם YAML ב-C#, תצטרך להשתמש בחבילה כמו YamlDotNet. תחילה, התקן את החבילה דרך NuGet.
 
 ```C#
-// ייבוא הספרייה
-using YamlDotNet.Serialization;
-
-// יצירת מחלקה שלאיתה ניתן לשלוף את נתוני YAML
-public class Person 
-{
-	public string FirstName { get; set; }
-	public string LastName { get; set; }
-	public int Age { get; set; }
-}
-
-// קליטת נתוני YAML והמרתם לאובייקט C#
-var yaml = @"
-- FirstName: John
-  LastName: Doe
-  Age: 30
-- FirstName: Jane
-  LastName: Smith
-  Age: 25";
-
-var deserializer = new Deserializer();
-var people = deserializer.Deserialize<List<Person>>(yaml);
-
-// פלט מוקשר
-Console.WriteLine(people[0].FirstName); // John
-Console.WriteLine(people[1].LastName); // Smith
+// התקנת תיקיות YamlDotNet
+Install-Package YamlDotNet -Version X.Y.Z
 ```
 
-## העמקה
+הנה דוגמה פשוטה של עיבוד YAML לאובייקט ב-C#:
 
-במקום להשתמש בפורמטים מבניים כמו JSON או XML, YAML מציע התאמה יותר טובה לכתיבת מבני נתונים, ובפרט לנתונים מורכבים ומקוננים. הוא נמצא בשימוש בפרויקטים שונים כמו Docker ו Kubernetes, וכמו כן נתמך במגוון רחב של שפות תכנות.
+```C#
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
-אם אתם מעוניינים לקרוא עוד על הנושא, ניתן לבדוק את המפתח הישראלי רוטם סלאום והמאמר שלו על עבודה עם YAML בפרויקט הפתוח MigSharp.
+public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
 
-## ראו גם
+class Program {
+    static void Main() {
+        var yaml = @"
+name: Yossi
+age: 30
+";
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Use underscore casing
+            .Build();
 
-למידע נוסף על YAML ודוגמאות נוספות, ניתן להסתכל על התיעוד הרשמי של YAML בכתובת https://yaml.org/.
+        var person = deserializer.Deserialize<Person>(yaml);
 
-עוד כתבה מועילה על עבודה עם YAML ניתן למצוא בבלוג של המתכנת שאנדון מרסטין בקישור הבא: https://andrewlock.net/serializing-and-deserializing-yaml-in-csharp-using-yamldotnet/.
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+    }
+}
+```
 
-אם אתם מעוניינים לעשות שימוש בסיפרייה YamlDotNet לפרויקט שלכם, ניתן למצוא אותה בכתובת הסיפרייה הרשמית ב GitHub: https://github.com/aaubry/YamlDotNet.
+קלט:
+```yaml
+name: Yossi
+age: 30
+```
+
+פלט:
+```
+Name: Yossi, Age: 30
+```
+
+## נחפר עמוק יותר
+YAML (YAML Ain't Markup Language) התפתח בשנת 2001 כאלטרנטיבה ל-XML. ברבות השנים, הוא הפך לפופולרי בקרב פיתוח תוכנה על ידי הפשטות ועקביות שלו. בניגוד ל-JSON, YAML תומך בהערות, דבר שהופך אותו לאידיאלי עבור קבצי קונפיגורציה. חלופות אחרות כוללות TOML ו-JSON.
+
+ב-C#, עליך להשתמש בביבליות צד שלישי כמו YamlDotNet, כיוון שלא קיימת תמיכה רשמית ב-YAML מ-Microsoft. כשעובדים עם YAML, חשוב לזכור את הכללים הבסיסיים להכתבה כמו רווחים, ענייני הזחה ומערכות האובייקטים.
+
+## ראה גם
+- תיעוד YamlDotNet: https://github.com/aaubry/YamlDotNet/wiki
+- מורה ל-YAML: https://learnxinyminutes.com/docs/yaml/
+- איך לכתוב מבנים מורכבים ב-YAML: https://en.wikipedia.org/wiki/YAML#Advanced_components

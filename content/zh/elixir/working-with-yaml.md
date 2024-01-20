@@ -1,7 +1,7 @@
 ---
-title:                "使用yaml编程"
-html_title:           "Elixir: 使用yaml编程"
-simple_title:         "使用yaml编程"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是YAML，为什么程序员要用它？
+## What & Why? 什麼和為什麼？
+YAML是一種方便的數據序列化格式，常用於配置文件。程序員使用YAML是因為它易於閱讀，簡單，並且能夠很好地與多種編程語言配合。
 
-YAML是一种轻量级的文件格式，被用来存储和传输数据。它的语法简洁易读，而且可以被多种编程语言解析和处理。程序员通常会用YAML来定义和配置应用程序的运行环境，或者作为数据交换的格式。
+## How to: 如何進行
+Elixir處理YAML需要用到第三方庫，例如`yaml_elixir`。首先，在`mix.exs`文件添加依賴：
 
-## 如何使用YAML：
-
- ```Elixir
- # 定义一个简单的YAML文件
-yaml_content = """
-name: John
-age: 25
-programming_languages:
-  - Elixir
-  - JavaScript
-"""
-# 将YAML转换为Elixir Map
-Yaml.decode(yaml_content)
-
-# 输出结果
-%{"age" => 25, "name" => "John", "programming_languages" => ["Elixir", "JavaScript"]}
+```elixir
+def deps do
+  [
+    {:yaml_elixir, "~> 2.0"}
+  ]
+end
 ```
 
-## 深入了解：
+然後在終端執行`mix deps.get`。
 
-YAML最早是由程序员Clark Evans在2001年开发的，目的是为了解决XML文件格式的繁琐和复杂问题。虽然JSON也是一种轻量级的数据交换格式，但是相比之下，YAML的语法更加人类友好并且更容易阅读。除了Elixir，YAML也可以被Python、Ruby等多种编程语言解析和处理。
+讀取YAML文件：
 
-## 参考资料：
+```elixir
+yaml_content = """
+name: Zhang San
+age: 30
+"""
 
-- [YAML官方网站](https://yaml.org/)
-- [Elixir中的YAML库](https://hexdocs.pm/yaml/api-reference.html)
+{:ok, data} = YamlElixir.read_from_string(yaml_content)
+IO.inspect(data)
+```
+
+預期輸出將是Elixir的Map格式：
+
+```elixir
+%{"name" => "Zhang San", "age" => 30}
+```
+
+## Deep Dive 深入探索
+YAML，代表“YAML Ain't Markup Language”，原先為“Yet Another Markup Language”，強調輕量級和易於人類閱讀。儘管JSON是另一個受歡迎的選擇，但YAML在需要多行字符串和注釋的情景下更受青睞。在Elixir中，解析YAML需要轉接C語言庫如`libyaml`，通過NIF（Native Implemented Functions）或Port與虛擬機溝通。
+
+## See Also 相關資源
+- YAML官方網站: https://yaml.org
+- yaml_elixir GitHub頁面: https://github.com/KamilLelonek/yaml_elixir
+- Hex.pm的YamlElixir: https://hex.pm/packages/yaml_elixir
+- Elixir官方文檔: https://elixir-lang.org/docs.html

@@ -1,7 +1,7 @@
 ---
-title:                "「csvを使用する」"
-html_title:           "Ruby: 「csvを使用する」"
-simple_title:         "「csvを使用する」"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何それ？
+## What & Why?
+CSV（Comma-Separated Values）は、データを保存・交換するフォーマットです。RubyでCSVを扱う理由は、データ操作が簡単になり、他のシステムとの連携がスムーズに行えるからです。
 
-CSVとは、Comma Separated Valuesの略称で、コンマで区切られたテキストデータを扱うためのファイルフォーマットのことです。プログラマーは、データベースやスプレッドシートなど複数のソースから取得したデータを集約し、処理するためによく使用します。
-
-## 方法：
-
-Rubyでは、CSVファイルを読み込み、書き込むためにCSVライブラリが使用できます。下記のコードは、CSVファイルを読み込んでデータを表示する例です。
-
+## How to:
 ```Ruby
 require 'csv'
 
-CSV.foreach('data.csv') do |row|
-  puts row.join(', ')
+# CSVファイルの書き込み
+CSV.open('example.csv', 'w') do |csv|
+  csv << ["Name", "Age", "City"]
+  csv << ["Alice", 20, "Tokyo"]
+  csv << ["Bob", 22, "Osaka"]
+end
+
+# CSVファイルの読み込み
+CSV.foreach('example.csv', headers: true) do |row|
+  puts "#{row['Name']}は#{row['Age']}歳で、#{row['City']}に住んでいます。"
 end
 ```
 
-出力：
-
-```Ruby
-Alice, 20
-Bob, 30
+出力例：
+```
+Aliceは20歳で、Tokyoに住んでいます。
+Bobは22歳で、Osakaに住んでいます。
 ```
 
-## 深く掘り下げる
+## Deep Dive
+CSVは1972年にIBMで紹介されました。JSONやXMLといった代替フォーマットもありますが、CSVはシンプルさから多用されます。Rubyの`CSV`ライブラリは、RFC 4180をベースに構築され、柔軟な処理を提供します。`CSV.read`や`CSV.parse`など、さまざまなメソッドが使えます。
 
-CSVは、コンマの他にも、タブやセミコロンなどを区切り文字として使用することができます。また、CSVファイルにはヘッダー行を含め、列のタイトルを表示することもできます。
-
-Ruby以外にも、PythonやJavaなどの他のプログラミング言語でもCSVファイルを扱うことができます。また、データベースやスプレッドシートから直接CSV形式でデータをエクスポートすることもできます。
-
-CSVファイルを扱う際には、データの入力が正しく行われているかを確認するため、バリデーションを行うことが重要です。
-
-## 関連リンク
-
-- [CSVライブラリドキュメント](https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html)
-- [PythonのCSVモジュール](https://docs.python.org/3/library/csv.html)
-- [JavaのOpenCSVライブラリ](http://opencsv.sourceforge.net/)
+## See Also
+- [Rubyの公式ドキュメント（CSV）](https://ruby-doc.org/stdlib-2.6.1/libdoc/csv/rdoc/CSV.html)
+- [RFC 4180 – CSVの標準](https://tools.ietf.org/html/rfc4180)

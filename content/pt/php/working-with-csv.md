@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "PHP: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Porquê?
-CSV (Comma Separated Values) é uma forma de armazenar e gerenciar dados tabulares em um documento de texto simples, onde os valores são separados por vírgulas. Programadores utilizam CSV para importar e exportar dados de forma eficiente, especialmente em aplicações web onde é necessário transferir grandes quantidades de informações entre sistemas.
+## O Que & Porquê?
+Trabalhar com CSV (Comma-Separated Values ou Valores Separados por Vírgula) permite manipular dados textuais de forma estruturada. Programadores fazem isso para importar, exportar e manipular dados entre programas e sistemas de forma simples e rápida.
 
-Como fazer:
-Para trabalhar com CSV em PHP, utilize as funções built-in ```fopen()``` e ```fgetcsv()``` para abrir e ler o arquivo CSV. O exemplo a seguir busca por uma linha específica no arquivo e exibe seu conteúdo.
+## Como fazer:
+Para manipular arquivos CSV em PHP, vamos usar as funções `fgetcsv` e `fputcsv`. Seguem exemplos de leitura e escrita de um CSV:
 
-```
+Leitura de um arquivo CSV:
+```php
 <?php
-
-// abre o arquivo CSV
-$file = fopen('dados.csv', 'r');
-
-// percorre as linhas do arquivo
-while (($line = fgetcsv($file)) !== FALSE) {
-
-  // verifica se a linha desejada foi encontrada
-  if ($line[0] === '1234') {
-
-    // exibe os dados da linha
-    echo "ID: " . $line[0] . "\n";
-    echo "Nome: " . $line[1] . "\n";
-    echo "Sobrenome: " . $line[2] . "\n";
-    break;
-  }
+$csvFile = fopen("exemplo.csv", "r");
+while (($data = fgetcsv($csvFile, 1000, ",")) !== FALSE) {
+    echo "Nome: {$data[0]}, Idade: {$data[1]}\n";
 }
-
-// fecha o arquivo
-fclose($file);
-
-// saída:
-// ID: 1234
-// Nome: Maria
-// Sobrenome: Silva
+fclose($csvFile);
+?>
 ```
 
-## Deep Dive
-CSV surgiu nos anos 70 como um formato simples para transferir dados entre computadores. Em anos mais recentes, o formato ganhou popularidade devido à sua flexibilidade e suporte em diferentes softwares e linguagens. Uma alternativa ao CSV é o formato JSON, mais utilizado em aplicações web.
+Escrita em um arquivo CSV:
+```php
+<?php
+$list = array(
+    array('João', '30'),
+    array('Ana', '22'),
+    array('Carlos', '47')
+);
 
-O processo de escrita em um arquivo CSV é semelhante à leitura, utilizando a função ```fputcsv()```. É importante tomar cuidado com caracteres especiais e definir o delimitador e o separador de campos corretamente.
+$csvFile = fopen('exemplo_escrita.csv', 'w');
+foreach ($list as $line) {
+    fputcsv($csvFile, $line);
+}
+fclose($csvFile);
+?>
+```
 
-## See Also
-- [Documentação oficial do PHP para funções de manipulação de arquivos CSV](https://www.php.net/manual/en/ref.filesystem.php)
-- [Mais detalhes sobre o formato CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
+Saída (após ler o `exemplo.csv`):
+```
+Nome: João, Idade: 30
+Nome: Ana, Idade: 22
+Nome: Carlos, Idade: 47
+```
+
+## Aprofundando
+CSV é um formato que existe desde os primeiros dias da computação pessoal. Décadas depois, ainda é relevante devido à sua simplicidade. Embora existam alternativas - como JSON e XML - CSV é amplamente suportado e fácil de compreender. A implementação no PHP é direta, através de funções nativas, que lidam bem com diversas especificidades de diferentes padrões de CSV (delimitadores, qualificadores de texto, etc).
+
+## Veja Também
+Para ir além, confira estes recursos:
+- Documentação oficial do PHP sobre funções CSV: [php.net/manual/en/ref.funchand.php](https://www.php.net/manual/en/ref.funchand.php)
+- Guia de boas práticas com CSV: [The CSV on the Web Working Group (CSVW)](https://www.w3.org/2013/csvw/)
+- Para mais sobre manipulação de arquivos em PHP: [php.net/manual/en/book.filesystem.php](https://www.php.net/manual/en/book.filesystem.php)

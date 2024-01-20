@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Go: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Go"
 category:             "Go"
@@ -10,42 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## What & Why? (Cosa e Perché?)
+Scrivere test significa creare casi specifici per controllare che il codice funzioni come previsto. I programmatori scrivono test per assicurarsi che il loro codice sia corretto e per prevenire future regressioni.
 
-Scrivere test è un'attività molto importante per i programmatori di Go (la versione attuale del linguaggio di programmazione). I test sono piccoli programmi che permettono di verificare che il codice scritto funzioni correttamente. In altre parole, sono una sorta di "controllo di qualità" per il nostro codice.
-
-I programmatori scrivono test per garantire che il loro codice non abbia bug o errori, e per assicurarsi che quando fanno delle modifiche al codice, tutto continui a funzionare come previsto.
-
-## Come fare:
-
-Usando il pacchetto di testing integrato in Go, possiamo creare dei file di test separati dal nostro codice. Esempio:
-
+## How to: (Come fare:)
 ```Go
-package nomepacchetto
+package main
 
-import "testing" // importiamo il pacchetto di testing in Go
+import (
+    "testing"
+    "fmt"
+)
 
-func TestMyFunction(t *testing.T) { // nome della funzione di test
-	got := MyFunction(2, 3) // chiamiamo la funzione che vogliamo testare
-	want := 5 // risultato che ci aspettiamo dalla funzione
-	if got != want { // confrontiamo il risultato ottenuto con quello atteso
-		t.Errorf("MyFunction(2, 3) = %d; want %d", got, want)
-		// se il test fallisce, stampiamo un messaggio di errore con i risultati
-	}
+func Sum(a int, b int) int {
+    return a + b
 }
-``` 
 
-Questa è una semplice funzione di test che mostra come possiamo verificare se la nostra funzione `MyFunction` restituisce il risultato corretto. Se tutto va bene, il test passerà senza errori e possiamo essere sicuri che la nostra funzione funzioni correttamente.
+func TestSum(t *testing.T) {
+    total := Sum(5, 5)
+    if total != 10 {
+       t.Errorf("Sum was incorrect, got: %d, wanted: %d.", total, 10)
+    }
+}
 
-## Deep Dive:
+func ExampleSum() {
+    fmt.Println(Sum(5, 5))
+    // Output: 10
+}
+```
 
-Il concetto di scrivere test è chiamato "test-driven development" (TDD) e in pratica significa scrivere i test prima del codice. Questo approccio è stato introdotto per garantire una maggiore affidabilità del codice e una migliore gestione dei bug.
+Eseguendo `go test` otterrai:
+```
+PASS
+ok      path/to/your/package    0.002s
+```
 
-Ci sono anche altri strumenti per scrivere test in Go, come il pacchetto `gocheck` o `goconvey`, ma il pacchetto di testing integrato è già molto potente e generalmente sufficiente per le necessità dei programmatori di Go.
+Se il test fallisce, vedrai qualcosa simile:
+```
+--- FAIL: TestSum (0.00s)
+    sum_test.go:12: Sum was incorrect, got: 9, wanted: 10.
+FAIL
+exit status 1
+FAIL    path/to/your/package    0.002s
+```
 
-## See Also:
+## Deep Dive (Approfondimento)
+Il testing in Go ha radici nel movimento del software agile e nel TDD (Test-Driven Development). Una delle alternative al testing standard con il pacchetto `testing` è l'uso di framework come `Testify` o `GoConvey` per approcci più espressivi e funzionalità aggiuntive. A livello di implementazione, Go si affida a convenzioni, come i file di test che terminano in `_test.go` e le funzioni di test che iniziano con `Test`, per organizzare e rilevare automaticamente i test.
 
-Vogliamo che il nostro codice sia sempre il migliore possibile, quindi è importante avere delle buone pratiche di testing. Ecco alcuni link utili per ulteriori informazioni sui test in Go:
-
-- [Documentazione ufficiale di Go sul testing](https://golang.org/pkg/testing/)
-- [Tutorial su TDD con Go](https://medium.com/@roderickhsiao/test-driven-development-with-go-f7eb4a62a4c8)
+## See Also (Vedi Anche)
+- [Documentazione ufficiale su Testing in Go](https://golang.org/pkg/testing/)
+- [Esempi di Testify](https://github.com/stretchr/testify)
+- [Introduzione a GoConvey](http://goconvey.co/)
+- [Articolo su TDD in Go](https://ieftimov.com/post/testing-in-go-go-test/)

@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Fish Shell recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,29 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with YAML is a common task for programmers as it allows for easy configuration and data storage in a human-readable format. YAML stands for "YAML Ain't Markup Language" and is often used in place of XML due to its simplicity and readability.
+
+YAML, "YAML Ain't Markup Language", is a human-friendly data serialization standard that's notationally superior to tabular and markup languages for config files and data exchange. Programmers use it for its simplicity and readability in configuration files, deployment manifests, and more complex data structures.
 
 ## How to:
-Coding examples in the ```Fish Shell``` can greatly simplify working with YAML. For example, to print the contents of a YAML file, you can use the following command:
-```
-cat sample.yaml
+
+### Reading YAML Config
+```Fish Shell
+# Assuming 'config.yaml' contains:
+# name: Fishy
+# occupation: Shell
+
+set config (yaml2json < config.yaml | jq -r '.name, .occupation')
+echo $config
+# Output: Fishy Shell
 ```
 
-This will display the YAML file's contents in the terminal. You can also use the ```YAMLCPP``` Fish Shell library to interact with YAML in your script. Here's a sample code that creates a YAML file and adds key-value pairs to it:
-```
-yaml create sample.yaml
-yaml set sample.yaml key value
-```
+### Writing to YAML File
+```Fish Shell
+# Using 'yq', a portable command-line YAML processor
+echo -e "name: Nemo\ncolor: Orange" > fish.yaml
 
-The resulting YAML file will look like this:
-```yaml  
-key: value  
+# Add a new key
+yq e '.friends += ["Dory"]' -i fish.yaml
+
+cat fish.yaml
+# Output:
+# name: Nemo
+# color: Orange
+# friends:
+# - Dory
 ```
 
 ## Deep Dive
-YAML was first designed in 2001 as a more user-friendly alternative to XML. It stands out with its easy indentation-based syntax and lack of closing tags. Some alternative data formats include JSON and TOML, but YAML remains a popular choice due to its balance of readability and complexity.
 
-The ```YAMLCPP``` library for Fish Shell is based on the YAML-CPP library written in C++. It provides a powerful set of functions for manipulating YAML data, such as ```yaml get```, ```yaml insert```, and ```yaml delete```. This makes working with YAML in the Fish Shell even easier.
+YAML emerged in the early 2000s as a simplification of XML and has since become a standard for configuration files in the software industry. Its minimal syntax is both a boon and a bane—easy to read but tricky to parse without libraries. Alternatives to YAML include JSON, XML, and TOML, each with its own use case trade-offs. In Fish Shell, `yq` and `yaml2json` are commonly used for manipulating YAML files since Fish lacks built-in YAML parsing.
 
 ## See Also
-To learn more about working with YAML in the Fish Shell, check out the official documentation at https://fishshell.com/docs/current/index.html. You can also find more information on the ```YAMLCPP``` library at https://github.com/jbeder/yaml-cpp.
+
+- YAML official site: https://yaml.org
+- `jq` manual: https://stedolan.github.io/jq/manual/
+- `yq` repository and documentation: https://github.com/mikefarah/yq

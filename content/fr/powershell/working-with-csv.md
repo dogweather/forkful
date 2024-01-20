@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "PowerShell: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+CSV, c'est quoi ? Des fichiers textes pour stocker des données, chaque ligne est un enregistrement, les valeurs séparées par des virgules. Pourquoi ? Parce que c'est simple, universel, et facile à manipuler programmation.
 
-Le CSV (Comma-Separated Values) est un format de fichier couramment utilisé pour stocker des données tabulaires telles que des feuilles de calcul. Les programmeurs travaillent avec des fichiers CSV car ils sont faciles à lire, à écrire et à traiter en utilisant des langages de programmation.
-
-## Comment faire:
-
+## How to:
+### Importer un CSV
 ```PowerShell
-# Pour importer des données à partir d'un fichier CSV:
-$donnees = Import-Csv data.csv
-
-# Pour exporter des données vers un fichier CSV:
-$donnees | Export-Csv -Path output.csv
-
-# Pour manipuler des données dans un fichier CSV:
-$donnees | Where-Object {$_.colonne -eq "valeur"} | Select-Object colonne1, colonne2
+# Charger un CSV dans une variable
+$data = Import-Csv -Path 'chemin/vers/ton/fichier.csv'
 ```
 
-## Plongée en profondeur:
+### Afficher les données
+```PowerShell
+# Montrer le contenu de $data
+$data
+```
 
-Il est intéressant de noter que le format CSV a été créé dans les années 70 pour faciliter l'échange de données entre les systèmes informatiques. Bien que largement utilisé, il existe d'autres alternatives telles que JSON et XML pour stocker des données tabulaires.
+### Exporter en CSV
+```PowerShell
+# Exporter des données en CSV
+$data | Export-Csv -Path 'chemin/vers/nouveau_fichier.csv' -NoTypeInformation
+```
 
-En travaillant avec des fichiers CSV en PowerShell, il est important de noter que les valeurs sont généralement séparées par des virgules, mais il est possible de spécifier un autre caractère de séparation. De plus, l'utilisation de guillemets autour des valeurs est facultative, mais peut être nécessaire en cas d'utilisation de caractères spéciaux.
+### Filtrer et sélectionner des données
+```PowerShell
+# Sélectionner des enregistrements avec filtrage
+$dataFiltrés = $data | Where-Object { $_.age -gt 20 } | Select-Object nom, email
+```
 
-## À voir également:
+## Deep Dive
+CSV (Comma-Separated Values) existe depuis les premiers jours de l'informatique personnelle ; tout outil qui traite des données peut travailler avec. Alternatives ? XML, JSON, bases de données—plus structurés, mais plus complexes. Implémentation ? PowerShell rend les CSV encore plus accessibles grâce à ses cmdlets intégrées comme `Import-Csv` et `Export-Csv`, conçus pour simplifier la manipulation de ces fichiers.
 
-Pour en savoir plus sur le format CSV et comment travailler avec en PowerShell, vous pouvez consulter les ressources suivantes:
-
-- [Documentation Microsoft sur Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.1)
+## See Also
+- [Documentation officielle de `Import-Csv`](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/import-csv)
+- [Documentation officielle de `Export-Csv`](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/export-csv)

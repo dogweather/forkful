@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Bash: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-
-CSV to format pliku, który jest często używany przez programistów do przechowywania i przetwarzania danych tabelarycznych. Jest to skrót od angielskiego terminu "Comma Separated Values" (wartości oddzielane przecinkami). Ułatwia on przechowywanie danych w formacie tekstowym, co ułatwia czytanie i edycję dla programistów.
+## Co i dlaczego?
+Praca z plikami CSV to manipulacja danymi w formacie "Comma-Separated Values" - prostym i uniwersalnym, dlatego często wybieranym do przechowywania i wymiany danych między różnymi systemami.
 
 ## Jak to zrobić?
 
-Aby pracować z plikami CSV w Bash, możemy skorzystać z kilku poleceń takich jak ```cut``` albo ```awk```. Wyobraźmy sobie, że mamy plik ```example.csv```, który zawiera dane o pracownikach w firmie.
+```Bash
+# Wczytanie pliku CSV i wyświetlenie zawartości
+cat dane.csv
 
-- Wyświetlenie pierwszej kolumny pliku: 
-```
-cut -d ',' -f 1 example.csv
-```
-- Wyświetlenie rekordów, gdzie wartość w drugiej kolumnie jest równa "Manager":
-```
-awk -F ',' '$2 == "Manager"' example.csv
+# Filtrowanie danych z pliku CSV: wybieranie wierszy z wartością większą niż 100 w drugiej kolumnie
+awk -F, '$2 > 100' dane.csv
+
+# Sortowanie pliku CSV po pierwszej kolumnie, numerycznie
+sort -t, -k1,1n dane.csv
+
+# Zliczanie ile razy pojawiła się unikalna wartość w pierwszej kolumnie
+cut -d, -f1 dane.csv | sort | uniq -c
+
+# Podmienianie przecinków na średniki, zapisać do nowego pliku
+sed 's/,/;/g' dane.csv > dane_semicolon.csv
 ```
 
-## Głębsze pogłębienie
+Przykładowe wyjście dla komendy `cat dane.csv`:
+```
+Jan,Kowalski,30
+Anna,Nowak,45
+```
 
-Format CSV został stworzony w 1972 roku przez Petera Critchlowa. Jest to jeden z najprostszych sposobów na ustrukturyzowanie danych w postaci tabelarycznej. Alternatywą dla CSV jest format JSON, który jest bardziej popularny w nowszych aplikacjach webowych. W Bash, obsługa plików CSV jest możliwa dzięki wykorzystaniu poleceń takich jak ```sed``` czy ```awk```. Możemy także wykorzystać narzędzia dedykowane do przetwarzania danych tabelarycznych, takie jak Pandas w języku Python.
+## W głębi tematu
+
+Format CSV wywodzi się z lat 70., kiedy to po raz pierwszy zaczęto go używać w programach komputerowych do przechowywania danych tabelarycznych. Alternatywy dla CSV to m.in. JSON, XML, YAML, które mogą być bardziej elastyczne pod względem struktury danych, jednak CSV nadal pozostaje popularne ze względu na prostotę i szeroką kompatybilność. Ważne jest, aby pamiętać o odpowiednim cytowaniu danych, jeśli w wartościach występują przecinki, oraz o ujednoliceniu kodowania znaków, szczególnie podczas pracy na różnych systemach.
+
+## Zobacz też
+
+- [GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/) – dokumentacja składni i używania `awk`.
+- [GNU sed manual](https://www.gnu.org/software/sed/manual/sed.html) – dokumentacja `sed` i wyrażeń regularnych.
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) – przewodnik po podstawach skryptów w Bashu.

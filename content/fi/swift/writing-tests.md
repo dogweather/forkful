@@ -1,6 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
-html_title:           "Swift: Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Testaus tarkoittaa koodin automaattista tarkistamista virheiden varalta. Testit auttavat löytämään ja korjaamaan ongelmia ennen kuin ne päätyvät tuotantoon, minkä ansiosta koodi on luotettavampaa.
 
-Testien kirjoittaminen on ohjelmistokehittäjien tapa varmistaa, että koodi toimii oikein ja pysyy virheettömänä. Tämä auttaa vähentämään virheitä ja vikatilanteita ohjelmistossa, mikä johtaa parempaan lopputuotteeseen ja tyytyväisempiin käyttäjiin.
-
-## Miten:
+## How to:
+Swiftissä testejä voidaan kirjoittaa käyttämällä XCTest-kirjaston ominaisuuksia. Tässä esimerkissä luodaan yksinkertainen funktio ja testi sille.
 
 ```Swift
-func sumOfTwoNumbers(_ num1: Int, _ num2: Int) -> Int {
-    return num1 + num2
+// SimpleFunction.swift
+func addNumbers(a: Int, b: Int) -> Int {
+    return a + b
 }
 
-test("Sum of 2 and 3 is 5") {
-    expect(sumOfTwoNumbers(2, 3)).toBe(5)
+// SimpleFunctionTests.swift
+import XCTest
+@testable import YourApp
+
+class SimpleFunctionTests: XCTestCase {
+    func testAddNumbers() {
+        XCTAssertEqual(addNumbers(a: 2, b: 3), 5, "Should add two numbers correctly")
+    }
 }
+
+// Test output in the console
+Test Suite 'All tests' started at 2023-03-10 18:25:54.052
+Test Suite 'YourAppTests.xctest' started at 2023-03-10 18:25:54.053
+Test Suite 'SimpleFunctionTests' started at 2023-03-10 18:25:54.054
+Test Case '-[YourAppTests.SimpleFunctionTests testAddNumbers]' passed (0.001 seconds).
 ```
 
-Testikoodin kirjoittaminen on yksinkertaista. Ensiksi määrität funktion tai metodin, jolle haluat kirjoittaa testin. Sitten käytät testikehystä, kuten esimerkissä käytettyä `test`-funktiota, joka ottaa parametreina nimen ja testikoodin. Lopuksi käytät `expect`-funktiota, joka verrataan testin tulokseen ja odotettuun arvoon.
+## Deep Dive
+Swiftin testaustuki on kehittynyt vuosien varrella ja nykyisin XCTest tarjoaa kattavat työkalut eritasoiseen testaukseen. Vaihtoehtoisia testaustyökaluja ovat esimerkiksi Quick ja Nimble, mutta XCTest on Applen virallisesti tukema ja tyypillisesti ensisijainen valinta. Testien kirjoittaminen vaatii ymmärrystä siitä, mitä koodin osia tulee testata ja miten testitulokset interpretoidaan.
 
-## Syväsukellus:
-
-Testien kirjoittaminen on ollut osa ohjelmistokehitystä jo vuosikymmenien ajan. Perinteisesti se on tehty manuaalisesti, mutta nykyään on olemassa myös automatisoituja testikehyksiä, kuten esimerkiksi Swiftin oma XCTest. Näiden avulla testien kirjoittaminen on nopeampaa ja luotettavampaa.
-
-On myös olemassa erilaisia testaustapoja, kuten yksikkötestaus, integraatiotestaus ja hyväksymistestaus. Jokaisella on oma tarkoituksensa ja ne kaikki ovat tärkeitä osia ohjelmiston laadun varmistamisessa.
-
-## Tsekkaa myös:
-
-- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
-- [Unit Testing in Swift](https://www.raywenderlich.com/960290-ui-testing-and-continuous-integration-with-xcode-and-swift)
+## See Also
+- Apple's XCTest Documentation: [XCTest](https://developer.apple.com/documentation/xctest)
+- Test Driven Development in Swift: [TDD](https://www.raywenderlich.com/21020457-test-driven-development-tutorial-for-ios-getting-started)
+- Ray Wenderlich's iOS Unit Testing by Example: [iOS Unit Testing](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)

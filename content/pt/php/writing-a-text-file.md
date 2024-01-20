@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "PHP: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Porquê?
 
-Escrever um arquivo de texto é simplesmente criar um documento que contém texto legível para máquinas. Os programadores geralmente fazem isso para armazenar dados importantes que podem ser facilmente acessados e manipulados pelos seus códigos.
+Escrever um arquivo de texto em PHP é o processo de salvar dados em um arquivo no sistema de arquivos. Programadores fazem isso para persistir informação, configurar sistemas, registrar logs ou exportar dados.
 
-## Como fazer:
+## Como Fazer:
 
-```
+Exemplo simples para criar e escrever em um arquivo de texto:
+
+```php
 <?php
-$texto = "Olá mundo!"; // texto que será escrito no arquivo
+$texto = "Olá, mundo! Escrevendo em um arquivo.\n";
+$file = 'meu_arquivo.txt';
 
-// abre o arquivo em modo escrita
-$arquivo = fopen("arquivo.txt", "w") or die("Não foi possível criar o arquivo!");
+// Abre o arquivo ou cria se não existir, e então escreve o texto
+file_put_contents($file, $texto);
 
-// escreve o texto no arquivo
-fwrite($arquivo, $texto);
-
-// fecha o arquivo
-fclose($arquivo);
-
-// verifica se o texto foi adicionado ao arquivo
-echo "O texto foi escrito no arquivo com sucesso!";
+// Para acrescentar ao arquivo existente, use o flag FILE_APPEND
+file_put_contents($file, $texto, FILE_APPEND);
 ?>
 ```
 
-Saída: O texto foi escrito no arquivo com sucesso!
+Saída esperada: Se você verificar o conteúdo de `meu_arquivo.txt`, verá o texto escrito nele.
 
-## Mergulho profundo:
+## Aprofundamento:
 
-Escrever arquivos de texto é uma prática comum em programação desde os primórdios da linguagem PHP. Existem várias maneiras de fazer isso, como usando funções nativas do PHP como `file_put_contents()` ou bibliotecas externas como o "PHP-Excel". Além disso, é importante lembrar de sempre fechar o arquivo depois de escrever nele para evitar erros e vazamentos de memória.
+Escrever em arquivos de texto é uma técnica conhecida desde os primórdios da computação. Alternativas incluem bancos de dados ou armazenamento em nuvem, mas arquivos de texto permanecem populares pela simplicidade e portabilidade. Ao implementar, é fundamental lidar com permissões do sistema de arquivos e possíveis erros, usando abordagens como `file_put_contents()` ou, para mais controle, `fopen()`, `fwrite()` e `fclose()`.
 
-## Veja também:
+## Veja Também:
 
-- [Função `fopen()` do PHP](https://www.php.net/manual/pt_BR/function.fopen.php)
-- [Biblioteca PHP-Excel](https://github.com/PHPOffice/PHPExcel)
+- [Documentação oficial do PHP sobre manipulação de arquivos](https://www.php.net/manual/pt_BR/book.filesystem.php)
+- [Tutorial W3Schools sobre sistema de arquivos em PHP](https://www.w3schools.com/php/php_file.asp)
+- [Artigo sobre boas práticas para manipulação de arquivos com PHP](https://www.phptherightway.com/#files)

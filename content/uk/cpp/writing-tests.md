@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "C++: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Написання тестів є важливою частиною процесу програмування. Це практика створення спеціальних кодів, які перевіряють, чи працює програмний продукт правильно. Програмісти пишуть тести, щоб забезпечити якість своєї роботи та зменшити кількість багів у своїх програмах.
+## Що це таке & Навіщо?
 
-## Як: 
+Тестування коду - це процес перевірки правильності функціонування програми. Програмісти пишуть тести, аби забезпечити надійність коду та швидке виявлення багів.
+
+## Як це робити:
+
+Використаємо Google Test для прикладу юніт-тестування. Спершу встановіть Google Test, а потім створіть файл тесту.
+
 ```C++
-#include <iostream>
+#include <gtest/gtest.h>
 
-using namespace std;
-
-// Функція, яка додає два числа
-int add(int a, int b) {
+int Sum(int a, int b) {
     return a + b;
 }
 
-int main() {
-    // Перевіряємо, чи функція правильно додає два числа
-    if (add(2, 3) == 5) {
-        cout << "Тест пройшов успішно!" << endl;
-    } else {
-        cout << "Тест не пройшов :( " << endl;
-    }
+TEST(SumTest, PositiveNumbers) {
+    EXPECT_EQ(7, Sum(3, 4));
+}
 
-    return 0;
+TEST(SumTest, NegativeNumbers) {
+    EXPECT_EQ(-5, Sum(-2, -3));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
-Вихідний результат:
+Вивід під час успішного проходження тестів:
 ```
-Тест пройшов успішно!
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from SumTest
+[ RUN      ] SumTest.PositiveNumbers
+[       OK ] SumTest.PositiveNumbers (0 ms)
+[ RUN      ] SumTest.NegativeNumbers
+[       OK ] SumTest.NegativeNumbers (0 ms)
+[----------] 2 tests from SumTest (0 ms total)
+
+[==========] 2 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 2 tests.
 ```
 
-## Глибше: 
-Написання тестів було вперше запропоновано на початку 1970-х років. Одним з альтернативних методів тестування є використання "багатократного перевіряльника", коли програма виконується кілька разів з різними вхідними даними. Наприклад, для перевірки роботи функції додавання, ми можемо запустити її з різними парами чисел та перевірити, чи повертає функція правильний результат.
+## Поглиблений аналіз
 
-## Також подивіться:
-- [Матеріали про тестування в C++ на сайті Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus/modules/learn-cpp-testing)
+У минулому тестування часто ігнорувалось через затратність часу, але сучасні фреймворки, такі як Google Test, CppUnit, Boost.Test, зробили процес швидшим та ефективнішим.
+
+Є кілька видів тестування: модульне (юніт-тестування), інтеграційне, системне. Вони відрізняються об'єктом перевірки та їх метою.
+
+При написанні тестів слід враховувати граничні випадки, залежності від зовнішніх систем, та можливість відтворення стану системи.
+
+## Дивіться також
+
+* Google Test офіційна документація: https://google.github.io/googletest/
+* Вступ до юніт-тестування в C++ з Boost.Test: https://www.boost.org/doc/libs/release/libs/test/
+* Аналіз та порівняння C++ тестових фреймворків: https://accu.org/index.php/journals/1326

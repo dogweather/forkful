@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med yaml"
-html_title:           "Gleam: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,21 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML er en tekstbasert format for å representere og lagre datastrukturer. Det er brukt av programmører for å enkelt lese, lagre og dele data som ikke kan håndteres av andre formater som JSON eller XML.
+## What & Why?
+YAML står for "YAML Ain't Markup Language". Programmere bruker det for å håndtere konfigurasjonsfiler og datautveksling for letthet og lesbarhet.
 
-## Hvordan:
-For å arbeide med YAML i Gleam, må du først importere modulen `gleam_yaml` og deretter bruke funksjonene i denne modulen. For å lese en YAML-fil, kan du bruke `gleam_yaml.read_file`-funksjonen og angi filbanen som en streng. Hvis du vil konvertere YAML-data til Gleam-strenger eller moduler, kan du bruke `gleam_yaml.dumps` og `gleam_yaml.dumps_module`-funksjonene. Under er et enkelt eksempel på å lese en YAML-fil og skrive ut resultatet:
+## How to:
+Gleam har ennå ikke et dedikert YAML-bibliotek, så vi må håndtere YAML som strenger. Bruk andre språk med biblioteker, som `serde_yaml` i Rust, for tung YAML-behandling.
 
-```
-Gleam import gleam_yaml
-YAML_DATA <- gleam_yaml.read_file("min_datafil.yml")
-gleam_yaml.dumps(YAML_DATA) // => "min_datafil.yml"
+```gleam
+// Gleam-kode for enkel YAML-håndtering kommer når støtte er tilgjengelig
 ```
 
-## Dypdykk:
-YAML ble utviklet i 2001 av Clark Evans og Ingy döt Net for å være et menneskelesbart og konsist dataformat. Det har blitt et populært valg for å representere komplekse datastrukturer i programmeringsspråk som Python, Ruby og nå også Gleam. Alternativene til YAML inkluderer JSON og XML, men YAML har en mer menneskelesbar syntaks og støtter kommentarer og referanser til andre deler av YAML-filen. I Gleam er YAML-implementasjonen basert på en parser som bruker en tilpasset versjon av `libyaml`-biblioteket.
+## Deep Dive
+YAML lansert i 2001, er ofte foretrukket fremfor JSON for konfigurasjon fordi det er mer menneskelesbart. Alternativer inkluderer JSON og TOML. Implementasjon i Gleam er i vente, men interop med Erlang eller Elixir kan tilby midlertidige løsninger.
 
-## Se også:
-- [YAML offisiell nettside](https://yaml.org)
-- [YAML dokumentasjon](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+## See Also
+- YAML offisiell side: https://yaml.org/
+- `serde_yaml` for Rust: https://docs.rs/serde_yaml
+- Gleam-lang offisiell dokumentasjon: https://gleam.run/book

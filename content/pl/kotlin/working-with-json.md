@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "Kotlin: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego?
-
-Programowanie z użyciem JSON (Javascript Object Notation) polega na tworzeniu i manipulowaniu danymi w formacie tekstowym, wykorzystując składnię języka JavaScript. Programiści często korzystają z JSON, ponieważ jest to prosty i popularny sposób na wymianę danych między aplikacjami na różnych platformach.
+## Co i dlaczego?
+W pracy z JSON chodzi o manipulowanie i przechowywanie danych w formacie, który jest prosty dla człowieka do odczytania, a dla maszyny do parsowania. Programiści używają JSON, bo jest elastyczny, współgra z większością technologii i jest łatwy w użyciu.
 
 ## Jak to zrobić:
-
-Utworzenie obiektu JSON:
-
-```Kotlin
-var json = "{"name": "Anna", "age": 25}"
-```
-
-Dodanie nowego klucza i wartości do obiektu:
+Kotlin ułatwia pracę z JSON poprzez zintegrowane biblioteki. Oto przykład użycia biblioteki kotlinx.serialization do serializacji i deserializacji JSON:
 
 ```Kotlin
-json.put("hobby", "painting")
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = Json { prettyPrint = true }
+    val data = User("Jan", 25)
+
+    // Serializacja: Obiekt -> JSON
+    val jsonString = json.encodeToString(User.serializer(), data)
+    println(jsonString)
+
+    // Deserializacja: JSON -> Obiekt
+    val userData = json.decodeFromString(User.serializer(), jsonString)
+    println(userData)
+}
 ```
 
-Konwersja obiektu JSON na string:
-
-```Kotlin
-var jsonAsString = json.toString()
+Output będzie wyglądał następująco:
+```
+{
+    "name": "Jan",
+    "age": 25
+}
+User(name=Jan, age=25)
 ```
 
-## Głębsza analiza:
+## Wgłębiamy się
+JSON (JavaScript Object Notation) był pierwotnie wiązany z JavaScriptem, ale stał się niezależnym standardem. Alternatywy to XML czy YAML, ale JSON jest popularniejszy z powodu swojej prostoty. Implementując obsługę JSON w Kotlinie, warto używać bibliotek takich jak kotlinx.serialization lub Moshi, które automatyzują większość procesu.
 
-JSON został stworzony w 2001 roku przez Douglasa Crockforda jako lżejsza alternatywa dla formatu XML. JSON jest często wykorzystywany do przesyłania danych w aplikacjach internetowych, mobilnych oraz IoT (Internet of Things). Można go również wykorzystać do zapisywania danych lokalnie w plikach.
-
-Alternatywnymi sposobami przechowywania danych są na przykład format CSV lub XML. Więcej informacji na ten temat można znaleźć na stronie: https://www.json.org/json-pl.html.
-
-## Zobacz także:
-
-- Oficjalna dokumentacja języka Kotlin dotycząca pracy z JSON: https://kotlinlang.org/docs/reference/using-gradle.html
-- Narzędzia do pracy z JSON w środowisku programistycznym IntelliJ IDEA: https://plugins.jetbrains.com/plugin/7294-kotlin-json
-- Przykładowe projekty z wykorzystaniem JSON na platformie GitHub: https://github.com/search?q=kotlin+json
+## Zobacz także
+- Dokumentacja Kotlinx.serialization: [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+- Oficjalna dokumentacja JSON: [JSON.org](https://www.json.org/json-en.html)
+- Porównanie formatów danych (JSON vs XML vs YAML): [BitDegree Tutorials](https://www.bitdegree.org/learn/json-vs-xml-vs-yaml)

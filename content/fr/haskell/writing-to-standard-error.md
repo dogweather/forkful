@@ -1,7 +1,7 @@
 ---
-title:                "L'écriture sur l'erreur standard"
-html_title:           "Haskell: L'écriture sur l'erreur standard"
-simple_title:         "L'écriture sur l'erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
+## Quoi & Pourquoi ?
+Écrire sur la sortie d'erreur standard (stderr) permet d'envoyer des messages d'erreur sans les mélanger avec la sortie normale (stdout). Les programmeurs utilisent stderr pour diagnostiquer les problèmes sans perturber le flux de données principal.
 
-Ecrire vers la sortie d'erreur standard (stderr) est une pratique courante pour les programmeurs en Haskell. Cela permet d'afficher des messages d'erreur et de débogage, ainsi que de mieux gérer les exceptions. Cela peut également améliorer la lisibilité du code en séparant les messages d'erreur du reste de la sortie du programme. 
-
-## Comment:
-
-Voici un exemple simple d'utilisation de la sortie d'erreur standard en Haskell:
-
+## Comment faire :
 ```Haskell
-import System.IO (hPutStrLn, stderr)
+import System.IO
 
-main :: IO ()
 main = do
-    hPutStrLn stderr "Ceci est un message d'erreur"
-    putStrLn "Ceci est le reste de la sortie du programme"
+  hPutStrLn stderr "Ceci est un message d'erreur."
+```
+Sortie attendue (à afficher dans la console d'erreur) :
+```
+Ceci est un message d'erreur.
 ```
 
-La sortie de ce programme sera:
+## Plongée profonde
+Historiquement, les flux stdout et stderr sont des concepts hérités des systèmes Unix, permettant la séparation des données de sortie normales et des messages d'erreur. D'autres alternatives incluent l'écriture dans des fichiers de log, mais stderr reste le canal direct et standardisé pour rapporter les erreurs. En Haskell, `System.IO` gère ces flux, offrant des fonctions telles que `hPutStrLn` pour interagir spécifiquement avec stderr.
 
-```
-Ceci est le reste de la sortie du programme
-Ceci est un message d'erreur
-```
-
-Remarquez comment le message d'erreur apparaît après la sortie du programme. Cela peut être utile pour identifier où et pourquoi une erreur s'est produite. 
-
-## Plongée en Profondeur:
-
-Initialement, la sortie d'erreur standard était utilisée uniquement pour les messages d'erreur, mais elle est également devenue un moyen populaire pour les messages de débogage et les rapports d'exception. Cela est dû en partie à la popularité des systèmes de journalisation tels que "log4j" en Java. 
-
-Des alternatives à l'écriture vers la sortie d'erreur standard incluent l'utilisation de bibliothèques de journalisation telles que "log" ou la création de votre propre fonction pour gérer les messages de débogage. Ces alternatives peuvent fournir une meilleure gestion et organisation des messages d'erreur et de débogage. 
-
-Pour implémenter l'écriture vers la sortie d'erreur standard en Haskell, il suffit d'utiliser la fonction "hPutStrLn" du module "System.IO". Cette fonction prend deux arguments : le flux de sortie, dans ce cas "stderr", et la chaîne de caractères à écrire.
-
-## Voir Aussi:
-
-- [Documentation officielle de Haskell](https://www.haskell.org/)
-- [Module System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+## Voir également
+- Documentation Haskell pour `System.IO`: https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html
+- Guide sur l'utilisation des flux de données Unix: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+- Explication détaillée des flux stdout et stderr: https://www.jstor.org/stable/2582047

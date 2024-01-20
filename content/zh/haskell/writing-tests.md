@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Haskell: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是写测试
+## 什么是编写测试 & 为什么需要编写测试?
+编写测试是为了验证代码的正确性和功能。程序员通过测试来确保代码改动不会引入新的错误，并提高软件的质量与可靠性。
 
-写测试就是编写一些程序来检验我们的代码是否能够按照预期工作。程序员们这样做的原因是为了确保我们的代码质量，避免出现意外的bug，减少修复错误所需要的时间。
-
-## 如何编写测试
-
-以下是一个简单的示例代码，在Haskell中编写测试非常容易，我们可以使用hspec库来编写并运行测试。
+## 如何编写测试:
+Haskell 的测试可以使用 Hspec 框架来做。下面是个简单的例子：
 
 ```Haskell
-testSum :: IO ()
-testSum = hspec $ do
-  describe "sum" $ do
-    it "correctly sums up two integers" $ do
-      sum 1 2 `shouldBe` 3
-    it "correctly sums up a list of integers" $ do
-      sum [1, 2, 3] `shouldBe` 6
+import Test.Hspec
+import Test.QuickCheck
+
+isEven :: Int -> Bool
+isEven n = n `mod` 2 == 0
+
+main :: IO ()
+main = hspec $ do
+  describe "isEven" $ do
+    it "returns True for even numbers" $ do
+      isEven 2 `shouldBe` True
+
+    it "returns False for odd numbers" $ do
+      isEven 3 `shouldBe` False
+
+    it "property test for evens and odds" $ do      
+      property $ \n -> isEven (n * 2)
 ```
 
-运行以上代码，我们将得到下面的输出结果：
+运行测试你应该看到类似这样的输出：
 
 ```
-sum
-  - correctly sums up two integers
-  - correctly sums up a list of integers
+isEven
+  returns True for even numbers
+  returns False for odd numbers
+  property test for evens and odds
 
-Finished in 0.0001 seconds
-2 examples, 0 failures
+Finished in 0.0005 seconds
+3 examples, 0 failures
 ```
-
-我们可以看到，通过编写测试，我们可以很容易地检验我们的代码是否按照预期工作。
 
 ## 深入了解
+测试在软件开发的早期历史就已经存在。Haskell 社区通常使用 Hspec 和 QuickCheck 库来编写测试。Hspec 关注行为驱动开发（BDD），而 QuickCheck 则利用随机属性测试来发现错误。这些框架和库不仅提高了Haskell程序的健壮性，还帮助开发者构建更为准确的功能实现。
 
-写测试最早是在软件开发的早期阶段出现的一个重要实践。它可以帮助程序员们在代码量增大后保持代码的质量，并且保证新的修改不会破坏现有的功能。除了Haskell的hspec库之外，其他编程语言也有自己的测试框架，例如Python的unittest和Java的JUnit。
-
-## 相关链接
-
-了解更多关于Haskell中测试的信息，请查看hspec文档：http://hspec.github.io/
-
-欢迎探索其他编程语言的测试框架，慢慢发现自己喜欢的方法。
+## 参考资料
+- [Hspec User's Manual](http://hspec.github.io/)
+- [Haskell Testing: A Stack Approach](https://docs.haskellstack.org/en/stable/GUIDE/#testing)

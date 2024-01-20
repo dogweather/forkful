@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire sur erreur standard"
-html_title:           "PowerShell: Ecrire sur erreur standard"
-simple_title:         "Ecrire sur erreur standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+## What & Why?
+Écrire dans la sortie d'erreur standard permet de séparer les messages d'erreur du flux de sortie principal. Les programmeurs font ça pour mieux gérer et diagnostiquer les problèmes.
 
-L'écriture vers la sortie standard erreur (standard error) est un moyen de communiquer des messages d'erreur aux utilisateurs pendant l'exécution d'un script PowerShell. Les programmeurs l'utilisent pour diagnostiquer et résoudre des problèmes lors de l'exécution d'un script.
-
-# Comment faire:
-
-Pour écrire vers la sortie standard erreur en PowerShell, utilisez la commande `Write-Error` suivi du message d'erreur que vous souhaitez afficher. Voici un exemple de code:
+## How to:
+Pour écrire dans la sortie d'erreur standard en PowerShell, utilisez `Write-Error`, `Write-Host -ForegroundColor Red`, ou redirigez le flux avec `2>`.
 
 ```PowerShell
-Write-Error "Erreur: le fichier spécifié n'est pas trouvé"
+# Utilisation de Write-Error
+Write-Error "Ceci est un message d'erreur"
+
+# Redirection du flux d'erreur
+echo "Ceci est une erreur" 2>&1
+
+# Affichage avec Write-Host
+Write-Host "Attention, une erreur s'est produite !" -ForegroundColor Red
 ```
 
-Lorsque vous exécutez le script, le message d'erreur sera affiché dans la console. Voici un exemple de sortie:
+Les messages s'afficheront en rouge dans la console pour indiquer une erreur.
 
-```
-Erreur: le fichier spécifié n'est pas trouvé
-```
+## Deep Dive
+Historiquement, les shells Unix permettaient la redirection des flux standard et d'erreur dès le départ. PowerShell, héritant de cette philosophie, offre des cmdlets pour un contrôle précis. `Write-Error` génère une exception non-terminale, alors que l'opérateur `2>` dirige simplement le flux sans générer d'exception. Pour de l'interception ou du traitement avancé, on peut utiliser `$Error` ou `-ErrorVariable`.
 
-Il est également possible d'utiliser la sortie standard erreur pour afficher des messages d'informations ou de mise en garde. Pour cela, utilisez la commande `Write-Error` suivi du paramètre `-InformationAction` ou `-WarningAction` avec la valeur `Continue`. Voici un exemple de code:
-
-```PowerShell
-Write-Error "Attention: le fichier doit être modifié" -WarningAction Continue
-```
-
-Lors de l'exécution du script, le message sera affiché avec une icône de mise en garde. Voici un exemple de sortie:
-
-```
-Attention: le fichier doit être modifié
-```
-
-# Plongée en profondeur:
-
-L'écriture vers la sortie standard erreur existe depuis la première version de PowerShell et est largement utilisée par les programmeurs pour déboguer leurs scripts. Avant l'ajout de cette fonctionnalité, les erreurs étaient souvent masquées ou difficiles à trouver, rendant le processus de débogage plus long et fastidieux.
-
-Une alternative à l'écriture vers la sortie standard erreur est d'utiliser la sortie standard (standard output) pour afficher des messages d'erreur. Cependant, cela peut causer des problèmes si la sortie standard est redirigée vers un fichier ou un autre programme.
-
-Pour implémenter l'écriture vers la sortie standard erreur, PowerShell utilise le flux d'erreur (error stream) qui est séparé du flux de sortie standard. Cela permet aux messages d'erreur d'être gérés séparément par les utilisateurs.
-
-# Voir aussi:
-
-- [Documentation officielle de Microsoft sur la commande Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
+## See Also
+- [about_Redirection](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Redirection)
+- [Write-Error](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
+- [about_Automatic_Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Automatic_Variables)

@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "PowerShell: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV (Comma Separated Values) är ett vanligt filformat för att lagra och utbyta data i tabellform. Det är vanligtvis används för att exportera och importera data mellan olika program eller system. Programmerare använder CSV för att enkelt hantera en stor mängd data och utföra åtgärder som filtrering och manipulation.
+CSV (Comma-Separated Values) används för att lagra data i enkel textform, uppskattad för sin enkelhet och bredd av kompatibilitet. Programmerare använder CSV-formatet för att enkelt importera, exportera och manipulera data mellan program och system.
 
-## Så här gör du:
+## How to:
+Så här jobbar du med CSV-filer i PowerShell.
 
-Att arbeta med CSV i PowerShell är både enkelt och effektivt. Här är några vanliga åtgärder och exempel på kod:
-
-1. Importera en CSV-fil: 
+Importera en CSV-fil:
 ```PowerShell
-Import-Csv -Path "C:Users\User\Desktop\data.csv" 
+$csvData = Import-Csv -Path "C:\exempel.csv"
 ```
-Resultatet kommer att returnera en objektlista baserad på data som finns i filen.
 
-2. Skapa en CSV-fil: 
+Visa innehållet:
 ```PowerShell
-$books = Get-ChildItem | Select-Object Name, CreationTime, Length 
-$books | Export-Csv -Path "C:Users\User\Desktop\book_info.csv" 
+$csvData
 ```
-Detta exempel skapar en CSV-fil med information om böcker i en viss mapp.
 
-3. Lägga till data i en befintlig CSV-fil: 
+Skapa en ny CSV-fil:
 ```PowerShell
-$data = "Name, Age, City" 
-$data | Out-File -FilePath "C:Users\User\Desktop\people.csv" -Append 
+$nyData = [PSCustomObject]@{Namn="Anna"; Ålder=28; Stad="Stockholm"}
+$nyData | Export-Csv -Path "C:\ny_exempel.csv" -NoTypeInformation
 ```
-Här lägger vi till data för en ny person i slutet av en befintlig CSV-fil.
 
-För mer detaljerad information och fler exempel, besök Microsofts dokumentationssida om CSV-hantering i PowerShell.
+Lägg till data i befintlig CSV-fil:
+```PowerShell
+$extraData = [PSCustomObject]@{Namn="Björn"; Ålder=35; Stad="Göteborg"}
+$extraData | Export-Csv -Path "C:\exempel.csv" -Append -NoTypeInformation
+```
 
-## Djupdykning:
-CSV-formatet uppfanns på 1970-talet och var det första formatet som användes för att lagra data i textform. Idag används det fortfarande flitigt för att utbyta information mellan program och system.
+Filtrera data:
+```PowerShell
+$äldreAn30 = $csvData | Where-Object {$_.'Ålder' -gt 30}
+$äldreAn30
+```
 
-Det finns också andra sätt att hantera tabellformad data i PowerShell, som till exempel att använda objekt av typen [System.Data.DataTable]. Detta ger programmerare mer flexibilitet och möjlighet att hantera mer komplexa datastrukturer.
+## Deep Dive
+CSV introducerades under tidigt 1970-tal. Formatet har blivit standard för datautbyte tack vare dess textbaserade natur vilket gör det platformsoberoende. Alternativ till CSV inkluderar JSON och XML, som båda bär på mer datastruktur och -beskrivningar men kräver mer overhead. PowerShell använder cmdlets såsom `Import-Csv` och `Export-Csv` för att interagera med CSV, vilket eliminerar behovet av manuell textparsning.
 
-När du arbetar med CSV är det viktigt att hålla koll på separatorn som används i filen (vanligtvis ett kommatecken) och att se till att alla kolumner är korrekt formaterade. Det finns också möjlighet att exportera data som CSV med andra typer av separatorer, som till exempel semikolon eller tabb.
-
-## Se även:
-- Microsofts dokumentation om CSV-hantering i PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv
-- Skillnaden mellan CSV och andra dataformat i PowerShell: https://4sysops.com/archives/use-powershell-to-work-with-csv-formatted-data
-- Användningsfall för CSV i PowerShell: https://devblogs.microsoft.com/scripting/build-secret-csv-parser
+## See Also
+- Mer om alternativa dataformat: JSON – [https://www.json.org/json-en.html](https://www.json.org/json-en.html), XML – [https://www.w3.org/XML/](https://www.w3.org/XML/)
+- En djupdykning i cmdlets för CSV: [https://ss64.com/ps/](https://ss64.com/ps/)

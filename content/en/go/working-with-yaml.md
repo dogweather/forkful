@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Go recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Go"
 category:             "Go"
@@ -10,62 +10,105 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Go and YAML: A Powerful Combination
-
 ## What & Why?
-YAML, which stands for "YAML Ain't Markup Language", is a data serialization language that makes it easy to store and transmit structured data. Programmers often use YAML to configure applications, store application data, and communicate between different programming languages. 
+Working with YAML means parsing and generating data in the YAML format, a human-readable data serialization standard. Programmers do it to manage configuration files, data interchange between languages, and structure complex data.
 
 ## How to:
-To work with YAML in Go, we can use the "gopkg.in/yaml.v2" library. Let's look at an example of how we can read and parse a YAML file using this library:
+To work with YAML in Go, you'll need a library like `gopkg.in/yaml.v3`. Install it using:
+
+```bash
+go get gopkg.in/yaml.v3
+```
+
+Here's how to parse YAML:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "log"
-
-    "gopkg.in/yaml.v2"
+	"fmt"
+	"log"
+	"gopkg.in/yaml.v3"
 )
 
-type Config struct {
-    Database string `yaml:"database"`
-    Host     string `yaml:"host"`
-    Port     int    `yaml:"port"`
+var data = `
+a: Easy!
+b:
+  c: 2
+  d: [3, 4]
+`
+
+type StructA struct {
+	A string
+	B StructB
+}
+
+type StructB struct {
+	C int
+	D []int
 }
 
 func main() {
-    // Load YAML file into a struct
-    configFile := []byte(`
-        database: GoDB
-        host: localhost
-        port: 3306
-    `)
-    var config Config
-    err := yaml.Unmarshal(configFile, &config)
-    if err != nil {
-        log.Fatalf("error: %v", err)
-    }
+	var s StructA
 
-    // Print values from the struct
-    fmt.Println("Database:", config.Database)
-    fmt.Println("Host:", config.Host)
-    fmt.Println("Port:", config.Port)
+	err := yaml.Unmarshal([]byte(data), &s)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Println(s)
 }
 ```
+
 Output:
+
 ```
-Database: GoDB
-Host: localhost
-Port: 3306
+{Easy! {2 [3 4]}}
 ```
 
-## Deep Dive:
-YAML was first introduced in 2001 by Clark Evans and is often used for configuration files due to its human-readable format. It is more expressive than other data formats like JSON and XML, making it easier for developers to write and understand. YAML also allows for complex data structures, making it a popular choice for storing and transmitting data between different programming languages.
+Generating YAML:
 
-An alternative to YAML is JSON, which is more widely used and supported by most programming languages. However, YAML offers more flexibility and is easier to read and write for humans. It also supports comments, making it more convenient for developers to document their code.
+```Go
+package main
 
-In terms of implementation, the "gopkg.in/yaml.v2" library uses the go-yaml package to parse YAML data. This package is written entirely in Go, making it efficient and fast. It also follows the YAML 1.2 specification, ensuring compatibility with other tools and languages that support YAML.
+import (
+	"fmt"
+	"gopkg.in/yaml.v3"
+)
 
-## See Also:
-To learn more about working with YAML in Go, check out the official documentation for the "gopkg.in/yaml.v2" library: https://gopkg.in/yaml.v2. Additionally, you can also explore the go-yaml package and the YAML specification for a deeper understanding of the language.
+func main() {
+	data := StructA{
+		A: "Easy!",
+		B: StructB{
+			C: 2,
+			D: []int{3, 4},
+		},
+	}
+
+	d, err := yaml.Marshal(&data)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("---\n%s\n", string(d))
+}
+```
+
+Output:
+
+```
+---
+a: Easy!
+b:
+  c: 2
+  d:
+  - 3
+  - 4
+```
+
+## Deep Dive
+YAML started in 2001, with the goal of being a human-friendly data interchange format. It's used as an alternative to JSON and XML because it's more readable and can represent complex data structures. Go doesn't have built-in support for YAML, hence third-party libraries like `gopkg.in/yaml.v3` are popular. The library wraps libyaml, a C YAML parser and emitter, for efficiency and compliance with YAML standards.
+
+## See Also
+- The YAML v3 package documentation: https://pkg.go.dev/gopkg.in/yaml.v3
+- Official YAML website: https://yaml.org
+- YAML specification: https://yaml.org/spec/1.2/spec.html
+- JSON to YAML online converter: https://www.json2yaml.com/

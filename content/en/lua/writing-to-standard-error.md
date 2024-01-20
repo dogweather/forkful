@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Lua recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,42 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing to standard error in Lua is a way for programmers to display error messages or other important information to the user. This is useful for debugging purposes or for providing helpful feedback to the user in case of an error in the program.
+Writing to standard error (stderr) lets your program chat about errors without cluttering standard output (stdout). It’s a clear signal to users and other programs that something needs attention.
 
 ## How to:
 
-To write to standard error in Lua, we use the "io.stderr.write" function. This function takes a string as an argument and displays it to the user's standard error output. Let's take a look at an example:
+Lua talks to stderr using `io.stderr`. Here's how to print a simple error message:
 
-```Lua
-io.stderr.write("Oh no, an error has occurred!")
+```lua
+io.stderr:write("Error: Something went wrong!\n")
 ```
 
-The output of this code would be:
-
+Sample output on stderr:
 ```
-Oh no, an error has occurred!
-```
-
-We can also use the "io.stderr:write()" syntax to achieve the same result. Take a look at the following example:
-
-```Lua
-io.stderr:write("This is a warning message.")
+Error: Something went wrong!
 ```
 
-The output of this code would be:
+You can get fancy and combine it with error handling:
 
-```
-This is a warning message.
+```lua
+if not file then
+    io.stderr:write("Error: File not found.\n")
+    os.exit(1) -- bail with a non-zero exit code
+end
 ```
 
 ## Deep Dive
 
-In Lua, standard error is also referred to as "stderr" and is used to handle error messages separate from regular output, which is called "stdout". This allows for better organization and debugging of programs. In some cases, standard error messages may also be redirected to a log file for further analysis.
+Long time back, computers got two separate streams for output—stdout for main data, stderr for the oopsies. Lua kept this Unix convention. Sometimes, folks redirect stdout (like to a file) but still want errors on screen. That's stderr’s cue.
 
-An alternative method to writing to standard error in Lua is using the "assert" function. This function checks for an error condition and, if found, displays the error message to standard error. However, the "assert" function is limited to checking for certain types of errors, whereas the "io.stderr.write" function allows for more control over which messages are displayed to the user.
+Alternatives? Some write to a log file, use a logging library, or send it across networks. But stderr is low-hassle for simple stuff.
 
-For those interested in the technical implementation details, standard error in Lua is implemented using C's standard I/O functions. The "io.stderr" file handle is simply a reference to the standard error stream in C.
+Implementation-wise, Lua’s `io.stderr` is a file handle. It's like `io.stdout` or `io.stdin`, ready to go without fuss. Under the hood, whether it’s a text file or a terminal, Lua doesn't sweat—`io.stderr` handles it.
 
 ## See Also
 
-To learn more about writing to standard error in Lua, check out the official Lua documentation [here](https://www.lua.org/manual/5.3/manual.html#6.9). You can also read about standard error in general on the GNU website [here](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html#Standard-Streams).
+Dive deeper or get some context:
+
+- The Lua 5.4 Reference Manual: http://www.lua.org/manual/5.4/
+- Unix philosophy: https://en.wikipedia.org/wiki/Unix_philosophy
+- Learn more about `os.exit`: http://www.lua.org/pil/21.3.html
+- A tour of Lua's input and output facilities: http://www.lua.org/pil/21.html

@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फ़ाइल लिखना"
-html_title:           "C#: एक टेक्स्ट फ़ाइल लिखना"
-simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
+title:                "टेक्स्ट फाइल लिखना"
+html_title:           "Bash: टेक्स्ट फाइल लिखना"
+simple_title:         "टेक्स्ट फाइल लिखना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
+## क्या और क्यों?
 
-प्रोग्रामर एक पाठ फ़ाइल में लिखने का मतलब है कि वे एक टेक्स्ट फ़ाइल में अपने कोड का प्रवर्तन करना चाहते हैं। यह काम उन्हें अपने संगठन या अन्य प्रोजेक्ट के लिए आवश्यक होता है।
+टेक्स्ट फाइल लिखना डेटा को साधारण पाठ रूप में स्टोर करने की प्रक्रिया है। प्रोग्रामर्स इसे लॉग्स, सेटिंग्स, संदेश, या डेटा एक्सचेंज के लिए करते हैं।
 
-# कैसे करें?
+## कैसे करें:
 
-```c#
+```C#
+using System;
 using System.IO;
 
-// Create a new text file
-File.WriteAllText("newFile.txt", "This is a new text file.");
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"C:\example\test.txt";
+        string textToWrite = "नमस्ते, यह एक उदाहरण टेक्स्ट है।";
 
-// Append text to an existing file
-File.AppendAllText("existingFile.txt", "This text will be added to the end of the file.");
+        // टेक्स्ट फाइल बनाना और लिखना
+        File.WriteAllText(filePath, textToWrite);
 
-// Read text from a file
-string text = File.ReadAllText("existingFile.txt");
-Console.WriteLine(text); // Output: This is the text from the file.
+        // जाँच करें कि टेक्स्ट लिखा गया है
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine("फाइल सफलतापूर्वक लिखी गई!");
+        }
+    }
+}
 ```
 
-# गहराई में जाएँ
+सैंपल आउटपुट:
 
-आमतौर पर, प्रोग्रामर टेक्स्ट फ़ाइलों को पढ़ने और लिखने के लिए आसानी से उपलब्ध स्रोत को उपयोग करते हैं। यह पहले इंटरनेट के बाहर, शुरुआती कंप्यूटर और संगठनों द्वारा प्रयोग किया गया था। अलग रूप से, प्रोग्रामर एप्लीकेशन को डेटा को एक स्थायी फाइल में सुरक्षित रखने के लिए डेटाबेस का उपयोग कर सकते हैं। ये फ़ाइलें कंप्यूटर के लिए सर्वकार्यक्षम हैं और उसका इस्तेमाल बहुत से प्रोग्रामिंग लैंग्वेज में किया जाता है।
+```
+फाइल सफलतापूर्वक लिखी गई!
+```
 
-# अन्य स्रोत देखें
+## गहराई से जानकारी:
 
-- [MSDN: Writing to a Text File](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
+पाठ फाइलों को लिखने का विधि पहली बार में कमांड लाइन और बैच प्रोसेसिंग सिस्टम्स में उपयोगी थी। अन्य विकल्पों में XML, JSON, या बाइनरी फाइलें शामिल हैं, परन्तु सरलता और पठनीयता के लिए टेक्स्ट फाइलें अभी भी लोकप्रिय हैं। `StreamWriter` और `FileStream` जैसी कक्षाएं अधिक सूक्ष्म नियंत्रण के लिए इस्तेमाल की जाती हैं।
+
+## देखें भी:
+
+- Microsoft का डॉक्युमेंटेशन ऑन `System.IO` namespace: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/io/)
+- ट्यूटोरियल वेबसाइट `File Handling in C#`: [Tutorialspoint](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para erro padrão"
-html_title:           "Javascript: Escrevendo para erro padrão"
-simple_title:         "Escrevendo para erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Porquê?
-Escrever para o erro padrão (standard error) é um conceito importante na programação. É uma forma de direcionar informações de erro e depuração para um canal diferente do que é usado para a saída usual do programa. Os programadores utilizam essa técnica para facilitar a identificação e correção de erros em seus códigos.
+## O Que & Por Quê?
 
-Como Fazer:
-Existem duas maneiras principais de escrever para o erro padrão em Javascript: usando o método console.error() e utilizando o objeto process.stderr. Ambos retornam uma mensagem de erro no formato de texto e podem ser usados em conjunto com outros métodos de depuração para melhorar o processo de identificação de erros.
+Escrever no erro padrão (`stderr`) é uma forma de enviar mensagens de erro ou diagnóstico em vez de dados de saída regulares (`stdout`). Programadores fazem isso para separar informações de erro do conteúdo principal, facilitando o debug e a análise de logs.
+
+## Como fazer:
 
 ```Javascript
-//exemplo usando console.error()
-console.error("Houve um erro!");
-//saída: Houve um erro!
+// Escrevendo uma mensagem simples para stderr
+console.error('Erro: alguma coisa deu errado!');
 
-//exemplo usando process.stderr
-process.stderr.write("Houve um erro!");
-//saída: Houve um erro!
+// Exemplo com uma função que lança um erro
+function falhaAoProcessar() {
+    // Código que pode falhar
+    if (true) { // Substitua por uma condição real de erro
+        console.error('Falha no processamento da função.');
+    }
+}
+
+falhaAoProcessar(); // Chama a função para exemplificar
 ```
 
-Mergulho Profundo:
-A prática de escrever para o erro padrão tem sido usada por programadores há décadas. Antigamente, o procedimento era conhecido como "despejo de núcleo" e envolvia o salvamento de informações do programa em um arquivo para ser analisado posteriormente. Hoje em dia, com o avanço da tecnologia, existem outras alternativas para depurar erros, como a utilização de ferramentas de depuração integradas nos editores de código.
+Saída esperada no terminal:
 
-Veja Também:
-- Documentação oficial da função console.error: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
-- Tutorial sobre a utilização do objeto process.stderr: https://nodejs.org/api/process.html#process_process_stderr
-- Artigo sobre a evolução do processo de depuração na programação: https://queue.acm.org/detail.cfm?id=1864069
+```
+Erro: alguma coisa deu errado!
+Falha no processamento da função.
+```
+
+## Aprofundando:
+
+Historicamente, `stderr` e `stdout` são conceitos que vêm do Unix, distinguindo duas principais correntes de saída de um programa. Alternativas a `console.error` podem incluir o uso de bibliotecas de log que permitem mais configurações, como níveis de severidade e formatos de saída. No Node.js, `process.stderr.write('mensagem\n')` é uma forma de escrever diretamente para o `stderr`, o que pode ser útil para baixo nível de manipulação de saída. Em navegadores, o `console.error` também pode disparar a ferramenta de desenvolvedor para chamar atenção ao erro ocorrido.
+
+## Veja Também:
+
+- Documentação da MDN sobre Console: https://developer.mozilla.org/pt-BR/docs/Web/API/Console/error
+- Node.js `process.stderr`: https://nodejs.org/api/process.html#process_process_stderr
+- Artigo sobre stdout e stderr: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout

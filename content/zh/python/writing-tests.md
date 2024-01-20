@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Python: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 简介
+## What & Why? (是什么？为什么？)
+编写测试即是为代码创建一系列检验，确保其按预期运行。程序员这么做是为了提前发现错误，保证软件的质量和可靠性。
 
-编程测试是在编写代码后运行一系列自动化测试来验证代码是否正确的过程。这是程序员经常要做的工作，因为它可以帮助他们避免在将代码部署到生产环境之前发现重大错误。
-
-## 如何进行测试
-
-下面是一个简单示例，展示如何使用Python的`unittest`模块进行测试：
+## How to: (如何操作)
+以下示例使用Python内置的`unittest`模块：
 
 ```Python
 import unittest
 
 def add(x, y):
     return x + y
-  
-class AddTestCase(unittest.TestCase):
-    def test_add1(self):
-        self.assertEqual(add(2, 3), 5)
-    def test_add2(self):
-        self.assertEqual(add(5, 5), 10)
+
+class TestAddition(unittest.TestCase):
+    def test_add_integers(self):
+        self.assertEqual(add(3, 4), 7)
+
+    def test_add_strings(self):
+        self.assertEqual(add("Hello", "World"), "HelloWorld")
+
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-上面的示例使用`unittest`模块来创建一个测试用例`AddTestCase`，并编写两个测试方法`test_add1`和`test_add2`来验证`add()`函数的输出是否符合预期。我们可以运行这个脚本来测试代码是否正确。
+运行后输出:
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
 
-## 深入了解
+OK
+```
 
-编写测试的概念已经存在很长时间了，据说在20世纪50年代的时候就已经开始使用。除了`unittest`模块外，还存在其他的测试框架，如`pytest`和`nose`。它们都有各自的特点和优点，可以根据自己的喜好选择使用。除了自动化测试外，还有手动测试和代码重构等方法，可以帮助程序员提高代码质量。
+## Deep Dive (深度探索)
+- 历史背景: 测试驱动开发（TDD）自2000年起变得流行，强调先写测试再写功能代码。
+- 替代方案: 除了`unittest`，还有`pytest`、`nose2`等测试框架。
+- 实现细节: `unittest`支持测试固件、测试用例、测试套件和测试运行器的概念，专业地组织和运行测试。
 
-## 相关链接
-
-- Python unittest模块文档：https://docs.python.org/3/library/unittest.html
-- pytest官方网站：https://docs.pytest.org/en/latest/
-- nose官方网站：https://nose.readthedocs.io/en/latest/
+## See Also (另请参见)
+- 官方unittest文档: https://docs.python.org/3/library/unittest.html
+- pytest官网: https://pytest.org/
+- 测试驱动开发(TDD): https://en.wikipedia.org/wiki/Test-driven_development

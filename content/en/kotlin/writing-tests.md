@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "Kotlin recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests is the process of creating code specifically designed to test the functionality of existing code. This ensures that the code will continue to work as expected even after making changes and updates. Programmers write tests to catch any potential bugs or errors before they become major problems that can impact the functionality of their code.
+Writing tests means scripting code to check if other code works right. Programmers do it to catch bugs early, save time, and ensure the software does what it's supposed to do consistently.
 
 ## How to:
+Kotlin uses JUnit for testing. Here's how to write and run a simple test:
 
-To write tests in Kotlin, you will need to use the built-in testing framework, JUnit. Here's an example of a simple test:
-
-```Kotlin
-import org.junit.*
+```kotlin
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
 class CalculatorTest {
-
+    
     @Test
-    fun testAddition() {
-        val calculator = Calculator()
-        assertEquals(5, calculator.add(2, 3))
+    fun `adds two numbers`() {
+        assertEquals(4, Calculator.add(2, 2))
     }
+}
+
+object Calculator {
+    fun add(a: Int, b: Int) = a + b
 }
 ```
 
-This code creates a new instance of the calculator class and tests the add function to ensure that the result is equal to the expected value of 5. Running this test will either pass or fail, depending on whether or not the result matches the expected value.
+Run it. If your output's like this, you're golden:
 
-## Deep Dive:
+```
+Test passed
+```
 
-Writing tests has been a popular practice in software development for many years. However, with the rise of test-driven development (TDD), writing tests has become even more important. TDD is a methodology that requires developers to write tests before they write the actual code. This helps to create more reliable and robust code, as the tests act as a safety net for catching any potential errors.
+## Deep Dive
+JUnit, the go-to framework for testing in Kotlin, trails back to Java. Alternative test frameworks include Spek and Kotest, each having distinct syntaxes and features. Writing tests often involves understanding the SUT (System Under Test) structure, mocking dependencies with MockK or similar, and knowing the difference between unit, integration, and functional testing.
 
-In addition to JUnit, there are other testing frameworks available for Kotlin, such as TestNG and Spek. These alternatives provide different features and capabilities, allowing developers to choose the one that best suits their needs.
-
-Under the hood, writing tests in Kotlin uses annotations, such as @Test, to identify which functions are tests. These annotations are then processed by the testing framework to run the tests and report the results.
-
-## See Also:
-
-- [JUnit Website](https://junit.org/junit5/)
-- [Spek Website](https://spekframework.org/)
+## See Also
+- JUnit 5 User Guide: [junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
+- MockK Library: [mockk.io](https://mockk.io)
+- Spek Framework: [spekframework.org](https://spekframework.org)
+- Kotest: [kotest.io](https://kotest.io)

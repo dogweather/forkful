@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "Ruby: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-YAML er et lettvekts data serialiseringsformat som brukes av programmerere for å lagre og lese data. Det er et populært valg for konfigurasjonsfiler, internettprotokoller og andre tilfeller der data trenger å bli delt og leses av maskiner.
+## What & Why?
+"YAML Ain't Markup Language" (YAML) er en data-serialiseringsformat brukt i konfigurasjonsfiler. Programmerere bruker YAML fordi det er menneskelesbart og samtidig lett å tolke av maskiner.
 
-# Hvordan:
-For å arbeide med YAML i Ruby, må du først inkludere den innebygde biblioteket `yaml` i koden din. Deretter kan du bruke metoder som `load` og `dump` for å konvertere data mellom YAML-formatet og Ruby objekter.
+## How to:
+For å håndtere YAML i Ruby, bruk `yaml` biblioteket. Her er et eksempel på hvordan laste en YAML-konfigurasjon.
 
 ```Ruby
 require 'yaml'
 
-# Opprett et Ruby-objekt for å konvertere til YAML
-objekt = { navn: 'Per', alder: 25 }
+# Last inn YAML fra en fil
+config = YAML.load_file('config.yml')
 
-# Konverter Ruby-objekt til YAML-streng
-yaml_streng = YAML.dump(objekt)
+# Tilgang til data i YAML-filen
+puts config['database']['name']
 
-# Skriv YAML-streng til fil
-File.write('filnavn.yml', yaml_streng)
-
-# Les YAML-fil og konverter tilbake til Ruby-objekt
-yaml_fra_fil = YAML.load_file('filnavn.yml')
-
-# Resultat: { navn: 'Per', alder: 25 }
+# Output
+# => "my_database"
 ```
 
-# Dypdykk:
-YAML ble utviklet i 2001 av Clark Evans og Ingy döt Net. Det ble inspirert av XML, men har et enklere og mer leselig syntaks. Alternativene til YAML inkluderer JSON og XML, men YAML tilbyr et mer fleksibelt format som støtter komplekse datastrukturer som ikke er mulig i de andre formatene.
+For å skrive til en YAML-fil:
 
-Når du konverterer mellom YAML og Ruby-objekter, vil dataene bli gjort om til en streng som representerer YAML-formatet. Dette betyr at typer og klasser som ikke støttes av YAML, som symboler og regulære uttrykk, vil bli konvertert til strenger. For å unngå dette kan du bruke spesifikke metoder som `YAML.dump_stream` for å ta vare på datastrukturene.
+```Ruby
+require 'yaml'
 
-# Se også:
-Offisiell YAML-nettside: https://yaml.org/
+# En hash med konfigurasjonsdata
+config_data = {
+  database: {
+    name: 'my_database',
+    port: 5432
+  }
+}
 
-YAML-spesifikasjon: https://yaml.org/spec/
+# Skrive hashen til en ny YAML-fil
+File.open('new_config.yml', 'w') { |file| file.write(config_data.to_yaml) }
+```
 
-YAML og Ruby-dokumentasjon: https://ruby-doc.org/stdlib-2.8.0/libdoc/yaml/rdoc/YAML.html
+## Deep Dive
+YAML debuterte i 2001 som et enklere alternativ til XML. Det brukes ofte i programvareutvikling for applikasjonskonfigurasjon og dataoverføring. Alternativer til YAML inkluderer JSON og TOML, men YAML skiller seg ut med sin sterke lesbarhet. Ruby's YAML-implementering ligger i `Psych` biblioteket, som ble standard YAML-parser fra Ruby 1.9.3.
+
+## See Also
+- YAML offisielt nettsted: [yaml.org](https://yaml.org)
+- Ruby-dokumentasjon for `Psych` biblioteket: [ruby-doc.org](https://ruby-doc.org/stdlib-3.0.0/libdoc/psych/rdoc/Psych.html)

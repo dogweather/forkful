@@ -1,7 +1,7 @@
 ---
-title:                "Робота з json"
-html_title:           "C: Робота з json"
-simple_title:         "Робота з json"
+title:                "Робота з JSON"
+html_title:           "Arduino: Робота з JSON"
+simple_title:         "Робота з JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і чому програмісти це роблять?
+## What & Why? (Що та Чому?)
 
-JSON є скороченням від "JavaScript Object Notation" і є форматом обміну даними, який дозволяє легко читати та писати структуровані дані. Програмісти використовують JSON для обміну даними між програмними додатками та серверами, зокрема при розробці веб-додатків. Цей формат є популярним серед програмістів за його простоту та універсальність.
+Робота з JSON у C - це парсинг та генерація JSON-даних. Програмісти це роблять, бо формат JSON є універсальним для обміну даними в мережі, легкий для читання людиною та машини.
 
-## Як використовувати:
+## How to: (Як робити:)
 
-### Читання та запис JSON даних:
+Використовуємо бібліотеку `cJSON`. Ось як парсимо JSON:
+
 ```C
-// підключення необхідних бібліотек
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <json-c/json.h>
+#include "cjson/cJSON.h"
 
-// створення вихідного JSON об’єкту
-json_object * book = json_object_new_object();
-// додавання ключів та значень до об’єкту
-json_object_object_add(book, "title", json_object_new_string("У джунглях Юнголи"));
-json_object_object_add(book, "author", json_object_new_string("Братья Уайт"));
-json_object_object_add(book, "year", json_object_new_int(1929));
-// друк у вигляді рядка
-printf("Книга: %s, %s, %d.", json_object_get_string(json_object_object_get(book, "title")), json_object_get_string(json_object_object_get(book, "author")), json_object_get_int(json_object_object_get(book, "year")));
+int main() {
+    const char *json_data = "{\"name\": \"Andriy\", \"age\": 30}";
+    
+    cJSON *json = cJSON_Parse(json_data);
+    const cJSON *name = cJSON_GetObjectItemCaseSensitive(json, "name");
+    const cJSON *age = cJSON_GetObjectItemCaseSensitive(json, "age");
+    
+    if (cJSON_IsString(name) && (name->valuestring != NULL)) {
+        printf("Ім'я: %s\n", name->valuestring);
+    }
 
-// створення нового JSON об’єкту з рядка
-json_object * json_string = json_tokener_parse("{\"name\":\"Іван\", \"age\":30}");
-// отримання значень за ключами
-const char * name = json_object_get_string(json_object_object_get(json_string, "name"));
-int age = json_object_get_int(json_object_object_get(json_string, "age"));
-// друк у вигляді рядка
-printf("Ім’я: %s, Вік: %d.", name, age);
-```
+    if (cJSON_IsNumber(age)) {
+        printf("Вік: %d\n", age->valueint);
+    }
 
-### Створення та запис JSON об’єкту в файл:
-```C
-// створення об’єкту
-json_object * product = json_object_new_object();
-// додавання значень до об’єкту
-json_object_object_add(product, "id", json_object_new_int(12345));
-json_object_object_add(product, "name", json_object_new_string("Книжка"));
-json_object_object_add(product, "price", json_object_new_double(19.99));
-// створення JSON форматуваного рядка з об’єкту
-const char * json_string = json_object_to_json_string_ext(product, JSON_C_TO_STRING_PRETTY);
-// відкриття файлу для запису
-FILE * file = fopen("product.json", "w");
-if (file != NULL) {
-	// запис у файл
-	fputs(json_string, file);
-	printf("Файл успішно записано.");
-} else {
-	printf("Помилка запису у файл.");
+    cJSON_Delete(json);
+    return 0;
 }
-fclose(file);
+```
+Вивід:
+```
+Ім'я: Andriy
+Вік: 30
 ```
 
-## Поглиблене вивчення:
+Генерація JSON:
 
-### Історичний контекст:
-JSON був вперше використаний в 2001 році Дугом Крокфордом для обміну даними в мові JavaScript. Згодом, цей формат став стандартом для обміну даними між програмними додатками та веб-сайтами.
+```C
+#include <stdio.h>
+#include "cjson/cJSON.h"
 
-### Альтернативи:
-Існують різні альтернативи для обміну даними, такі як XML, YAML та CSV. Однак, JSON є більш легким та зрозумілим для програмістів, що робить його більш популярним у веб-розробці.
+int main() {
+    cJSON *json = cJSON_CreateObject();
+    cJSON_AddStringToObject(json, "name", "Olga");
+    cJSON_AddNumberToObject(json, "age", 25);
+    
+    char *rendered_json = cJSON_Print(json);
+    printf("%s\n", rendered_json);
+    
+    cJSON_Delete(json);
+    free(rendered_json);
+    return 0;
+}
+```
 
-### Деталі реалізації:
-Бібліотека JSON-C є однією з популярних для роботи з JSON у мові C. Вона дозволяє створювати та перетворювати об’єкти JSON, а також читати та записувати дані із файлів. Для отримання більш детальної інформації про реалізацію JSON у C можна ознайомитись з документацією бібліотеки.
+Вивід:
+```
+{"name":"Olga","age":25}
+```
 
-## Також подивіться:
+## Deep Dive (Поглиблений Занурення)
 
-- [Документація по бібліотеці JSON-C](https://github.com/json-c/json-c/wiki)
-- [JSON офіційний сайт](https://www.json.org/json-en.html)
+JSON вводиться 2001 року Дугласом Крокфордом. Він швидко стає стандартом для веб-застосунків. Альтернативи: XML, YAML, але JSON перемагає простотою і швидкістю. Бібліотеки для C: `cJSON`, `Jansson`, `json-c`. Важливо звертати увагу на безпеку: перевіряйте вхідні дані, використовуйте останні версії бібліотек.
+
+## See Also (Дивіться також)
+
+- cJSON GitHub: https://github.com/DaveGamble/cJSON
+- JSON стандарт: https://www.json.org/json-en.html
+- Порівняння JSON бібліотек: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats

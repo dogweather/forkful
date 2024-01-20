@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם csv"
-html_title:           "C: עבודה עם csv"
-simple_title:         "עבודה עם csv"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,70 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ועל מה?
-העבודה עם קבצי CSV היא חלק חשוב מהתפקיד של מתכנתים. CSV הוא פורמט נתונים המשמש לקריאה וכתיבה של נתונים מסודרים בפשטות, מה שהופך אותו לנפוץ ושימושי בתחום התכנות.
+## What & Why?
+מה זה עבודה עם CSV, ולמה זה חשוב? CSV (ערכים מופרדים פסיקים) הוא פורמט פשוט לאחסון נתונים טבלאיים. מתכנתים משתמשים בו כי הוא נפוץ, קל לקריאה וניתן לייבוא/ייצוא ממערכות רבות.
 
-## כיצד לעשות זאת:
-נהליך לפתרון הכי נפוץ ופשוט ביותר חלוף. הנה דוגמאות ותוצאות ממשקי קוד :C
+## How to:
+נתחיל עם דוגמה של קריאה וכתיבה לקובץ CSV בשפת C:
 
 ```C
-שם קובץ CSV: התאמה לקריאה ולכתיבה
-
-תוכן הנתונים:
-
-id, name, age 
-1, John, 30 
-2, Sarah, 25 
-3, Michael, 35
-
-קוד הקריאה:
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
-int main()
-{
-    FILE* file = fopen("example.csv", "r"); // פתיחת קובץ לקריאה
-    if (file == NULL)
-    {
-        perror("לא ניתן לפתוח את הקובץ");
-        return -1;
+// פונקציה לקריאת CSV
+void readCSV(const char* filename) {
+    FILE *file = fopen(filename, "r");
+    char buffer[1024];
+
+    if (file == NULL) {
+        printf("לא ניתן לפתוח את הקובץ\n");
+        return;
     }
 
-    char line[100];
-    char* token; // משתנה להצבעת הנתונים
-    const char* delimiter = ","; // המתו המבוקש לחלק את הנתונים ביניהם
-
-    printf("התוכן של הקובץ:\n");
-    while (fgets(line, 100, file) != NULL) // קריאת כל שורות הקובץ עד שהיא מודפסת ראשונה
-    {
-        token = strtok(line, delimiter);
-        while (token != NULL)
-        {
-            printf("%s ", token); // repeat prints the token
-            token = strtok(NULL, delimiter);
-        }
-
-        printf("\n");
+    while (fgets(buffer, 1024, file)) {
+        printf("%s", buffer);
     }
 
-    fclose(file); // סגירת הקובץ לסיום פתיחתו 
-
-    return 0;
+    fclose(file);
 }
 
-קוד פלט לקובץ CSV:
-התוכן של הקובץ:
-id  name  age
-1  John  30
-2  Sarah  25
-3  Michael  35
+// פונקציה לכתיבה לCSV
+void writeCSV(const char* filename) {
+    FILE *file = fopen(filename, "w");
+
+    if (file == NULL) {
+        printf("לא ניתן לפתוח את הקובץ\n");
+        return;
+    }
+
+    const char* data = "שם,גיל,עיר\nישראל ישראלי,30,תל אביב\nדנה כהן,25,ירושלים\n";
+    fputs(data, file);
+
+    fclose(file);
+}
+
+int main() {
+    const char* filename = "דוגמה.csv";
+    writeCSV(filename);
+    readCSV(filename);
+    return 0;
+}
 ```
 
-## חקירה מעמיקה:
-פורמט CSV פותח בשנות ה -70 כדי לציין את הקשרים האוטומטי שבין שדות הטקסט בבסיסי נתונים. כיום, ישנם מספר פתרונות אחרים לנתונים מבנק הנתונים כהתחלה. רעיונות כאלה כוללים JSON, XML וכברירת מחדל כי כך הוא פועל
+פלט:
+```
+שם,גיל,עיר
+ישראל ישראלי,30,תל אביב
+דנה כהן,25,ירושלים
+```
 
-הפוגשים בצורך לשמור נתונים בדיסק כדי לשלוט בהם לעבוד כרגע.
+## Deep Dive
+CSV פעמים רבות הוא האמצעי הכי ישיר לחילופי נתונים בין תוכנות שונות, מאז המצאתו בשנות ה-70. קיימות חלופות כמו XML ו-Jason, אבל CSV ממשיך להיות נפוץ בזכות פשטותו. בקוד שלמעלה, בכוונה לא טיפלנו בצורה מורכבת בדאטה – יש לזכור שבמציאות יש צורך להתמודד גם עם בעיות כמו מידע חסר או נתונים לא תקינים.
 
-## ראו גם:
-נוליןקים לדברים דומים והשוואה עם כוונת המידע הזה. כל קשר שהם מייצגים לחברת (בפורמט CSV? זה כל סימן שאתה יכול לדמות.)
+## See Also
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), המגדיר את המבנה הסטנדרטי לקבצי CSV.
+- [libcsv](http://sourceforge.net/projects/libcsv/), ספרייה עבור עיבוד קבצי CSV בשפת C.
+- [GNU Datamash](https://www.gnu.org/software/datamash/), כלי שורת פקודה למניפולציה על נתונים טבלאיים, תומך גם בCSV.

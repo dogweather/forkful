@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일과 함께 작업하기"
-html_title:           "Kotlin: CSV 파일과 함께 작업하기"
-simple_title:         "CSV 파일과 함께 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSV 작업이란?
+## What & Why?
+CSV(Comma-Separated Values)는 값들이 쉼표로 구분된 텍스트 파일이다. 프로그래머는 대량의 데이터를 손쉽게 읽고 쓰기 위해 CSV를 사용한다.
 
-CSV(Comma Separated Values)파일은 컴마(,)로 구분된 데이터를 의미합니다. 이러한 포맷은 모든 스프레드시트 프로그램에서 지원되므로 데이터의 교류가 기존 응용 프로그램에서 적은 노력으로 가능합니다. 프로그래머들은 CSV 작업을 이용하여 데이터를 저장, 분석 또는 처리하며 주로 데이터베이스 저장나 문서화 작업에 많이 사용됩니다.
-
-## 어떻게 하나요?
-
-CSV 작업을 위해서는 기본적으로 데이터를 읽고 쓰는 기능이 필요합니다. Kotlin에서는 표준 라이브러리에서 제공하는 ```FileReader```와 ```CSVParser```를 이용하여 간단하게 CSV 파일을 읽고 데이터를 처리할 수 있습니다. 아래 예제는 CSV 파일을 읽어 각 행의 컬럼 값을 출력하는 코드입니다.
+## How to:
+데이터를 읽고 쓰는 법.
 
 ```Kotlin
-import java.io.FileReader
-import org.apache.commons.csv.CSVParser
+import java.io.File
 
-val fileReader = FileReader("data.csv")
-val csvParser = CSVParser(fileReader)
-val records = csvParser.getRecords()
-for (record in records) {
-    println(record.get(0) + "," + record.get(1) + "," + record.get(2))
+fun main() {
+    // CSV 파일 쓰기
+    val dataToWrite = listOf(
+        listOf("id", "name", "age"),
+        listOf("1", "Kim", "25"),
+        listOf("2", "Lee", "30")
+    )
+    
+    File("data.csv").printWriter().use { out ->
+        dataToWrite.forEach { line ->
+            out.println(line.joinToString(","))
+        }
+    }
+    
+    // CSV 파일 읽기
+    val readData = File("data.csv").readLines().map { it.split(",") }
+    readData.forEach { println(it) }
 }
 ```
 
-출력 결과는 다음과 같습니다.
-
+Sample Output:
 ```
-Name,Age,City
-John,25,New York
-Lisa,30,Boston
-Mark,28,Chicago
+[id, name, age]
+[1, Kim, 25]
+[2, Lee, 30]
 ```
 
-## 깊게 파헤쳐보기
+## Deep Dive
+CSV 형식은 1970년대부터 사용되고 있다. XML이나 JSON과 같은 다른 데이터 형식과 비교하면, CSV는 구문 분석이 더 간단하고 소량의 메타데이터를 포함한다. 하지만 복잡한 구조를 표현하기에는 제한적이다.
 
-CSV는 1972년에 IBM에서 개발된 포맷으로, 당시에는 기록 장치에서 데이터를 전송하기 위해 사용되었습니다. 현재의 CSV는 RFC 4180에 기술되어 있으며, 가장 널리 사용되는 용도는 스프레드시트 프로그램과 데이터베이스 간 데이터 교환입니다.
-
-CSV 작업을 위해서는 Kotlin 외에도 다른 언어에서도 지원되는 다양한 라이브러리가 있습니다. Apache Commons CSV 라이브러리 외에도 Super CSV, OpenCSV 등이 있으며, 각 라이브러리마다 다양한 기능을 제공합니다.
-
-CSV 작업을 하면서 가장 중요한 것은 데이터가 올바르게 구분될 수 있도록 쓰기 규칙을 잘 지켜야 합니다. 특히 따옴표(""), 콤마(,), 개행문자 등의 특수기호를 적절히 사용하여 데이터가 올바르게 파싱되도록 해야 합니다.
-
-## 관련 자료
-
-- RFC 4180: https://tools.ietf.org/html/rfc4180
-- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
-- Super CSV: http://www.supercsv.org/
-- OpenCSV: http://opencsv.sourceforge.net/
+## See Also
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/)
+- [OpenCSV 라이브러리](http://opencsv.sourceforge.net/)
+- [RFC 4180, CSV 표준](https://tools.ietf.org/html/rfc4180)

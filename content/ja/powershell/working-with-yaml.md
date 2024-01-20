@@ -1,7 +1,7 @@
 ---
-title:                "Yamlを扱う。"
-html_title:           "PowerShell: Yamlを扱う。"
-simple_title:         "Yamlを扱う。"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？どうして？
+## What & Why?
+(何となぜ？)
 
-YAMLとは、データフォーマットの一種です。プログラマーが使用する理由は、データの読みやすさと編集のしやすさです。
+YAMLは設定やデータ交換によく使います。読みやすく、シンプルな構造が特徴です。PowerShellでYAMLを操作する理由は、自動化スクリプトや設定ファイルの管理が簡単になるからです。
 
-## 方法：
+## How to:
+(やり方)
 
-`PowerShell`コマンドブロック内のコーディング例と出力結果を示します。
+PowerShellでYAMLを扱うには、`powershell-yaml`モジュールが便利です。以下のコマンドでインストールし、YAMLファイルを読み込んでみましょう。
 
-### YAMLファイルを読み込む
+```PowerShell
+# powershell-yaml モジュールのインストール
+Install-Module -Name powershell-yaml
 
+# YAML ファイルの読み込み
+$yamlContent = Get-Content -Path 'example.yaml' | ConvertFrom-Yaml
+
+# 内容の表示
+$yamlContent
 ```
-$yaml = Get-Content -Path <yamlファイルパス> | ConvertFrom-Yaml
+
+`example.yaml` の内容を変更する例を示します。
+
+```PowerShell
+# 新しいデータの追加
+$yamlContent.newKey = 'newValue'
+
+# 変更をYAMLファイルに書き込む
+$yamlContent | ConvertTo-Yaml | Set-Content -Path 'example.yaml'
 ```
 
-### YAMLデータをコンソールに出力する
+実行結果は変更された `example.yaml` ファイルの内容になります。
 
-```
-Write-Output $yaml.<データプロパティ名>
-```
+## Deep Dive
+(掘り下げ)
 
-## 深堀り：
+YAMLは「YAML Ain't Markup Language」（元々「Yet Another Markup Language」）を意味し、2001年に登場しました。JSONやXMLに代わる選択肢であり、構造が直感的でわかりやすいです。PowerShellでは、`powershell-yaml` モジュール以外にも、.NETライブラリを使ったり、外部のパーサを呼びだしたりする方法がありますが、`powershell-yaml`が最も簡潔です。
 
-1. YAMLは、XMLやJSONのような他のデータフォーマットと比較して、より簡潔で人間に読みやすい構文を持っています。
-2. YAML以外にも、プログラマーが使用することができるデータフォーマットはたくさんあります。
-3. YAMLデータを扱うには、PowerShellに組み込まれた`ConvertTo-Yaml`と`ConvertFrom-Yaml`コマンドレットを使用することができます。
+## See Also
+(関連情報)
 
-## 関連情報：
-
-- YAMLの公式サイト: https://yaml.org/
-- YAMLフォーマットの紹介記事: https://www.stuartellis.name/articles/yaml/
-- PowerShellでのYAMLの使用例: https://powershellexplained.com/2017-03-19-Powershell-convertto-yaml/
+- [powershell-yaml GitHub page](https://github.com/cloudbase/powershell-yaml) - `powershell-yaml`の公式ドキュメントとソースコード
+- [YAML specification](https://yaml.org/spec/) - YAMLの仕様に関する詳細情報
+- [PowerShell Gallery](https://www.powershellgallery.com/packages/powershell-yaml) - `powershell-yaml`モジュールを含む他のPowerShellリソース

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "PowerShell: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Робота з CSV - це процес обробки табличних даних у форматі CSV (Comma-Separated Values) з використанням спеціального скрипту. CSV є одним з найпоширеніших форматів для збереження табличних даних, тому багато програмістів використовують його для роботи з даними.
+## Що та Чому?
+CSV, або "Comma-Separated Values", — це простий формат файлів для таблиць. Програмісти використовують CSV через його універсальність та легкість обробки в різних мовах програмування, включаючи PowerShell.
 
 ## Як це зробити:
+Створення CSV файлу з даними:
 ```PowerShell
-# Читання даних з CSV файлу
-Import-Csv C:\data.csv 
-
-# Запис даних у CSV файл
-$data | Export-Csv C:\data.csv 
+$data = @(
+    [PSCustomObject]@{Name='John'; Age=30; City='Kyiv'},
+    [PSCustomObject]@{Name='Olena'; Age=25; City='Lviv'}
+)
+$data | Export-Csv -Path 'users.csv' -NoTypeInformation
 ```
 
-**Вихід:**
-```
-Name, Age, Profession
-John, 25, Developer
-Jane, 30, Project Manager
+Завантаження даних з CSV файлу:
+```PowerShell
+$users = Import-Csv -Path 'users.csv'
+$users
 ```
 
-## Глибока інформація:
-1. **Історичний контекст:** CSV був розроблений в 1972 році істориком Харві Хартером в рамках свого дисертаційного дослідження. Це формат дозволяє зберігати дані у табличній формі і використовується до цього дня в різних програмах.
-2. **Альтернативи:** Крім CSV, існують інші формати для збереження табличних даних, такі як JSON, XML та Excel.
-3. **Деталі реалізації:** У PowerShell є вбудовані команди для роботи з CSV, які дозволяють ефективно читати, записувати та обробляти дані у цьому форматі.
+Вивід:
+```
+Name  Age City
+----  --- ----
+John  30  Kyiv
+Olena 25  Lviv
+```
+
+Фільтрація і обробка даних з CSV:
+```PowerShell
+$usersAged25 = Import-Csv -Path 'users.csv' | Where-Object { $_.Age -eq 25 }
+$usersAged25
+```
+
+## Поглиблений погляд
+CSV виник у 1970-х як зручний спосіб обміну структурованими даними. Сьогодні існує багато альтернатив, наприклад, JSON, XML, або бази даних SQL, які можна використовувати для складніших або більш специфічних задач. У PowerShell, робота з CSV здійснюється за допомогою cmdlet -ів `Import-Csv` та `Export-Csv`, які використовуються для читання та запису відповідно. Обробка таких файлів зазвичай використовує об'єктну модель PowerShell, що робить маніпуляцію даними гнучкою.
+
+## Дивись також
+- [Import-Csv (Microsoft Docs)](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv)
+- [Export-Csv (Microsoft Docs)](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv)

@@ -1,6 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
-html_title:           "Fish Shell: Escribiendo pruebas"
+html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Escribir pruebas es una forma de verificar si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código no tenga errores y para garantizar que funcione de la manera esperada.
+Escribir pruebas significa crear programas que verifican que otro software funcione como se espera. Los programadores las hacen para asegurar calidad, prevenir errores y facilitar el mantenimiento del código.
 
-## ¿Cómo?
+## ¿Cómo hacerlo?
 
-Utilizando el Fish Shell, podemos escribir pruebas de una manera sencilla y eficiente. Podemos usar el comando `test` para evaluar expresiones y verificar si cumplen con nuestras expectativas.
-
-Por ejemplo, si queremos verificar si una variable tiene el valor esperado, podemos escribir el siguiente código:
-
-```
-set variable "Hola"
-test "$variable" = "Hola"
-```
-
-Este comando devolverá un valor verdadero si la variable realmente tiene el valor "Hola". En caso contrario, devolverá un valor falso.
-
-Otra forma de escribir pruebas es utilizando `contains` para verificar si una cadena de texto contiene otra cadena específica:
-
-```
-set mensaje "Hola, mundo"
-test (contains "$mensaje" "mundo")
+```Fish Shell
+function test_suma
+    set resultado (math 2+2)
+    if test $resultado = 4
+        echo "Prueba pasada: suma funciona"
+    else
+        echo "Prueba fallada: suma no funciona"
+    end
+end
 ```
 
-En este caso, `contains` devolverá un valor verdadero ya que la cadena "mundo" está dentro de la variable `mensaje`.
+Salida esperada:
 
-## Profundizando
+```
+Prueba pasada: suma funciona
+```
 
-Escribir pruebas es una práctica común en el desarrollo de software. Además de utilizar Fish Shell, también existen otras herramientas populares para escribir pruebas como TAP, PHPUnit y JUnit.
+Para correr todas las pruebas en un directorio:
 
-En cuanto a la implementación, Fish Shell utiliza un sistema interno llamado test harness para ejecutar las pruebas y generar los resultados. Este sistema también permite modificar el comportamiento de las pruebas mediante opciones adicionales como `-v` para mostrar información detallada de cada prueba o `-q` para ejecutarlas de forma silenciosa.
+```Fish Shell
+for file in (ls tests/*.fish)
+    source $file
+    eval (basename $file '.fish')
+end
+```
 
-## Ver también
+## Análisis Profundo
 
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Introducción a la escritura de pruebas en Fish Shell](https://fishshell.com/docs/current/tutorial.html#sec-testing)
+Las pruebas automatizadas aparecieron en los 70 con "Test Driven Development" (Desarrollo Dirigido por Pruebas) popularizándose en los 90. Alternativas a Fish Shell incluyen bash o zsh para scripting o frameworks de pruebas como PyTest para Python. En Fish, las pruebas se escriben como funciones y usualmente se ejecutan manualmente o a través de un script que recorre archivos de prueba.
+
+## Ver También
+
+- Documentación oficial de Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Tutorial de Scripting en Fish: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
+- Artículo sobre TDD en Wikipedia: [https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas)

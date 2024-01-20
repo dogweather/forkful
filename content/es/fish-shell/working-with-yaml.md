@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "Fish Shell: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Trabajar con YAML es una forma de estructurar y almacenar datos que es popular entre los programadores ya que es fácil de leer y escribir, y es compatible con una amplia variedad de lenguajes de programación.
+## Qué y Por Qué?
 
-## Cómo hacerlo:
-Fish Shell tiene un módulo incorporado para trabajar con YAML llamado "yq". Puedes utilizarlo para leer y escribir archivos YAML, así como para convertir datos de YAML a otros formatos como JSON. Aquí hay un ejemplo de cómo leer un archivo YAML y crear una tabla con los datos utilizando Fish Shell:
+El YAML es un formato de serialización de datos legible por humanos, usado frecuentemente para los archivos de configuración. Los programadores lo utilizan por su simplicidad y facilidad de leer, especialmente en configuraciones complejas y proyectos que involucran múltiples lenguajes de programación.
+
+## Cómo:
+
+En Fish Shell, no hay herramientas incorporadas para manejar YAML de manera nativa, pero puedes usar `yq`, una herramienta de línea de comandos basada en `jq`. Primero, instala `yq` usando Homebrew:
 
 ```Fish Shell
-#!/usr/bin/fish
-
-set data (yq read sample.yml)
-
-for key in (yq -P eval "keys" $data)
-    printf "%s\t%s\n" $key (yq -P eval ".[\"$key\"]" $data)
-end
+brew install yq
 ```
 
-El resultado de este código sería una tabla impresa en la consola con las claves y valores del archivo YAML.
+Luego, puedes leer un archivo YAML:
 
-## Inmersión profunda:
-YAML fue creado en 2001 por el fundador de Ruby, Ingy döt Net, como una alternativa más human-readable al formato de datos JSON. Aunque YAML es ampliamente utilizado, también hay otras opciones para trabajar con datos estructurados, como XML y CSV.
+```Fish Shell
+yq e '.raíz.nodo' archivo.yaml
+```
 
-Fish Shell también tiene otra herramienta integrada llamada "jq" que puede ser utilizada para trabajar con JSON. Además, puedes encontrar otras herramientas de terceros que pueden facilitar la manipulación de datos YAML en Fish Shell.
+O modificar un archivo YAML:
 
-## Véase también:
-- [Página oficial de YAML](https://yaml.org/)
+```Fish Shell
+yq e '.raíz.nodo = "valorNuevo"' -i archivo.yaml
+```
+
+Comandos y salida de ejemplo para agregar un elemento a una lista:
+
+```Fish Shell
+echo -e "frutas:\n  - manzana\n  - banana" > frutas.yaml
+yq e '.frutas += "naranja"' -i frutas.yaml
+cat frutas.yaml
+```
+
+Salida:
+
+```YAML
+frutas:
+  - manzana
+  - banana
+  - naranja
+```
+
+## Profundización
+
+El YAML fue creado en 2001 y es un acrónimo para "YAML Ain't Markup Language". El diseño enfatiza la facilidad de lectura y soporta estructuras de datos como listas, mapas y escalares. Aunque JSON y XML son alternativas populares, YAML es preferido en ciertos entornos debido a su concisión y legibilidad. El uso correcto de `yq` y su integración en Fish Shell puede simplificar enormemente la manipulación de archivos YAML en múltiples contextos.
+
+## Ver También
+
+- Documentación oficial de `yq`: [https://mikefarah.gitbook.io/yq/](https://mikefarah.gitbook.io/yq/)
+- YAML 1.2 especificación oficial: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- Introducción a YAML para principiantes: [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)

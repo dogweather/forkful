@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Javascript: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+I JavaScript hanterar vi ofta JSON (JavaScript Object Notation) för att lagra och utbyta data. Det är smidigt för att det är textbaserat och lätt att läsa för människor, samtidigt som det är enkelt för maskiner att generera och tolka.
 
-Att arbeta med JSON innebär att man hanterar data i ett format som är lätt att parsa och läsbart för både människor och maskiner. Det är en populär metod bland programmerare för att skicka och ta emot data på ett standardiserat sätt.
-
-## Hur man gör:
-
-Skapa en variabel som innehåller ett objekt med olika attribut. Använd JSON.stringify() för att konvertera objektet till en sträng i JSON-format. För att läsa ett JSON-dokument behöver du använda JSON.parse() för att konvertera strängen tillbaka till ett JavaScript-objekt.
-
+## How to:
+### Skapa JSON-sträng från objekt
 ```Javascript
-let user = {
-  name: "John Doe",
-  age: 28,
-  hobbies: ["reading", "coding", "hiking"]
-};
-
-// Konvertera objektet till en sträng i JSON-format
-let userJSON = JSON.stringify(user);
-
-// Konvertera tillbaka till ett JavaScript-objekt
-let newUser = JSON.parse(userJSON);
+let objekt = { namn: "Anna", ålder: 25, yrke: "Utvecklare" };
+let jsonSträng = JSON.stringify(objekt);
+console.log(jsonSträng); // Output: '{"namn":"Anna","ålder":25,"yrke":"Utvecklare"}'
 ```
 
-Output: ```Javascript {"name": "John Doe", "age": 28, "hobbies": ["reading", "coding", "hiking"]}```
- 
-## Djupdykning:
+### Parse JSON-sträng till objekt
+```Javascript
+let jsonSträng = '{"namn":"Anna","ålder":25,"yrke":"Utvecklare"}';
+let objekt = JSON.parse(jsonSträng);
+console.log(objekt); // Output: { namn: 'Anna', ålder: 25, yrke: 'Utvecklare' }
+```
 
-JSON står för JavaScript Object Notation och har funnits sedan 2001. Det är ett lättviktigt och självdokumenterat format som bygger på JavaScript-syntax. Alternativ till JSON är bland annat XML och CSV, men JSON har blivit mer populärt på grund av sitt enkla och läsbara format.
+## Deep Dive
+JSON introducerades i början av 2000-talet och fick snabbt stor spridning på grund av sin enkelhet jämfört med XML. XML används fortfarande, särskilt där dokumentformat är viktigt, men JSON har blivit standarden för webb-API:er på grund av sin kompakthet och hastighet. Vid implementation måste man vara medveten om säkerhetsaspekter, som att validera och rensa JSON-data för att undvika säkerhetshot såsom XSS-attacker.
 
-## Se även:
-
-https://www.json.org/ - Officiell JSON-hemsida med information och dokumentation.
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON - Information och exempel om att arbeta med JSON i JavaScript från Mozilla.
+## See Also
+- MDN:s dokumentation om JSON: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- En jämförelse mellan JSON och XML: [https://www.json.org/xml.html](https://www.json.org/xml.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "TypeScript: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## Hva & Hvorfor?
+CSV, eller "kommadelte verdier", er et format brukt for å lagre tabelldata enkelt og greit. Programmerere bruker CSV fordi det er lettleselig for både mennesker og maskiner, og støttes av de fleste databehandlingsverktøy.
 
-Å jobbe med CSV, som står for "Comma-Separated Values", handler om å håndtere datafiler som er strukturert ved hjelp av komma som separator mellom ulike verdier. Programmerere bruker dette ofte for å importere og eksportere store mengder data mellom ulike applikasjoner og systemer.
-
-## Hvordan:
-
-TypeScript har et innebygd CSV-bibliotek som gjør det enkelt å jobbe med slike filer. For å importere biblioteket, bruker du kommandoen ```import {csv} from 'ts-csv';``` og deretter kan du enkelt lese og behandle dataene slik du ønsker. Et eksempel på bruk av biblioteket kan være:
+## Slik gjør du:
+Her er hvordan du kan jobbe med CSV-filer i TypeScript:
 
 ```TypeScript
-import {csv} from 'ts-csv';
+import fs from 'fs';
+import parse from 'csv-parse/lib/sync';
 
-let data = csv.parse('navn,alder,land
-Kenneth, 28, Norge
-Emma, 25, Sverige')
+const csvFileContent = fs.readFileSync('data.csv', 'utf8');
 
-console.log(data[0].navn); // output: Kenneth
+// Synkron parsing av CSV-innhold til et 2D array
+const records = parse(csvFileContent, {
+    columns: true,
+    skip_empty_lines: true,
+});
+
+// Logge resultatet
+console.log(records);
 ```
 
-I dette eksempelet bruker vi ```csv.parse``` for å lese en CSV-fil som inneholder informasjon om navn, alder og land for to personer. Deretter kan vi enkelt hente ut spesifikke verdier fra dataobjektet som opprettes.
+Om `data.csv` inneholder:
+```
+name,age
+Alice,25
+Bob,30
+```
 
-## Dypdykk:
+Vil output bli:
+```TypeScript
+[
+  { name: 'Alice', age: '25' },
+  { name: 'Bob', age: '30' }
+]
+```
 
-CSV-formatet har vært i bruk siden 1972 og har blitt adoptert av mange programmerere som et enkelt og universelt format for datautveksling. Det finnes også flere alternative formater som JSON og XML, men CSV brukes fortsatt mye på grunn av sin enkelhet og lesbarhet.
+## Dypdykk
+CSV-formatet har vært i bruk siden 1970-tallet og er et enkelt, tekstbasert format. Alternativer som JSON eller XML tilbyr mer kompleksitet og struktur for datarepresentasjon. Når du jobber med CSV i TypeScript, bør det tas hensyn til riktig tekstkoding (vanligvis UTF-8), escaping av spesialtegn og konvertering av datatyper fra strenger til passende format.
 
-Når det gjelder implementasjon av CSV-biblioteket i TypeScript, er det verdt å merke seg at det eksisterer flere forskjellige versjoner av biblioteket som kan ha noe ulik funksjonalitet. Det er derfor viktig å undersøke nøye hvilken versjon du trenger for ditt spesifikke prosjekt.
-
-## Se også:
-
-For mer informasjon om å jobbe med CSV i TypeScript, sjekk ut disse ressursene:
-
-- [TypeScript CSV Documentation](https://www.npmjs.com/package/ts-csv)
-
-Lykke til med å jobbe med CSV i TypeScript!
+## Se også
+- [RFC 4180](https://tools.ietf.org/html/rfc4180), standarden for CSV.
+- [Papaparse](https://www.papaparse.com/), en kraftig CSV-parser for nettleseren.
+- [D3-dsv](https://github.com/d3/d3-dsv), et JavaScript-bibliotek for å parse og formatere dsv (inkludert csv) data.

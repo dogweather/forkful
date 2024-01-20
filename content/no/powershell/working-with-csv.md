@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "PowerShell: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Når du jobber med data, er CSV et nyttig format å kjenne til. Det står for "Comma Separated Values" og er en måte å lagre og transportere tabellformatert data på. Dette er spesielt nyttig for programmerere, da det gjør det enklere å behandle store mengder data på en strukturert måte.
+## Hva & Hvorfor?
+CSV (Comma Separated Values) er et enkelt filformat som brukes til å lagre tabelldata, slik som en database eller et regneark i ren tekst. Programmerere bruker CSV fordi det er lett å lese og skrive data i et standard format som kan deles mellom ulike systemer.
 
-## Hvordan:
-Her er et enkelt eksempel på hvordan du kan jobbe med CSV-filer i PowerShell:
-
-```PowerShell
-#Importer CSV-fil
-$csv = Import-Csv -Path "C:\Eksempel.csv"
-
-#Velg bestemte kolonner
-$csv | Select-Object "Navn", "Alder"
-
-#Lag en ny CSV-fil
-$csv | Export-Csv -Path "C:\Ny.csv" -NoTypeInformation
-```
-
-Dette vil importere en CSV-fil, velge spesifikke kolonner og eksportere dem til en ny fil. Her er et eksempel på utdata:
+## Hvordan gjøre det:
+For å jobbe med CSV-filer i PowerShell bruker vi ofte Import-Csv og Export-Csv cmdletene. La oss se noen eksempler:
 
 ```PowerShell
-Navn        Alder
-----        -----
-Per         34
-Mia         28
-Jonas       42
+# Importere en CSV-fil
+$data = Import-Csv -Path "C:\eksempel\data.csv"
+
+# Vise de første fem radene
+$data | Select-Object -First 5
+
+# Eksportere data til en ny CSV-fil
+$data | Export-Csv -Path "C:\eksempel\utdata.csv" -NoTypeInformation
 ```
 
-## Dypdykk:
-CSV er et format som har eksistert i mange år, og er fortsatt utbredt i dag på grunn av sin enkelhet og kompatibilitet med ulike systemer og programmeringsspråk. Alternativene for å jobbe med CSV på PowerShell inkluderer også `ConvertFrom-Csv` og `ConvertTo-Csv` kommandoer.
+Sample output for å vise de første fem radene:
 
-Når du jobber med CSV-filer i PowerShell, er det viktig å huske på at kolonnedataene blir importert som objekter, og ikke som ren tekst. Dette betyr at du kan bruke objektmetoder som `Select-Object` og `Where-Object` for å bearbeide dataene.
+```PowerShell
+Navn  Alder  Yrke
+----  -----  ----
+Ola   34     Snekr
+Kari  28     Designer
+Per   45     Lærer
+Eva   52     Forsker
+Jon   38     Utvikler
+```
 
-## Se også:
-- [PowerShell dokumentasjon for Import-Csv](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv)
-- [Wikipedia artikkel om CSV formatet](https://en.wikipedia.org/wiki/Comma-separated_values)
+## Dypdykk
+Historisk sett kommer CSV fra tidlige dager i databehandling hvor det var et behov for et enkelt, tekstbasert format for å utveksle data. Alternativene inkluderer nå XML, JSON og andre spesialiserte dataformater, men CSV forblir populær på grunn av sin enkelhet.
+
+Implementasjonsdetaljer å merke seg i PowerShell er at Import-Csv automatisk lager objekter hvor hvert felt i CSV blir en egenskap. Dette gjør det enkelt å manipulere dataene med andre PowerShell cmdlets.
+
+## Se Også
+- Microsofts offisielle dokumentasjon for Import-Csv: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv
+- Microsofts offisielle dokumentasjon for Export-Csv: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv
+- Learn PowerShell Book - Arbeide med CSV-filer: https://www.leanpub.com/learn-powershell

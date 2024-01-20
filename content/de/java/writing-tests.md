@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "Java: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "Java"
 category:             "Java"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und Warum?
-Tests schreiben ist eine wichtige und unverzichtbare Praxis im Programmieren. Dabei werden spezielle Codeabschnitte geschrieben, um zu überprüfen, ob die Funktionalität des Programms ordnungsgemäß funktioniert. Programmierer nutzen Tests, um sicherzustellen, dass ihr Code zuverlässig und fehlerfrei ist. Dies spart Zeit und Mühe bei der Fehlerbehebung und gewährleistet eine bessere Qualität des Codes.
+## Was & Warum?
 
-## Wie geht's?
-Die grundlegende Syntax zum Schreiben von Tests in Java ist folgende:
+Tests schreiben heißt, Code zu erstellen, der deinen Code überprüft. Programmierer machen das, um Fehler zu vermeiden, Qualität zu sichern und die Wartung zu erleichtern.
+
+## Wie geht's:
+
+JUnit ist eine beliebte Testbibliothek in Java. Hier siehst du ein einfaches Beispiel:
 
 ```Java
-// Importieren der notwendigen Java-Klassen
-import org.junit.*; 
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-// Erstellen einer Testklasse
-public class MeinTest { 
-  
-  // Definieren von Testmethoden mit der Annotation "@Test"
-  // Hier ein Beispiel
-  @Test
-  public void testAddition() { 
-    // Initialisieren der Werte für den Test
-    int a = 5; 
-    int b = 3; 
+public class CalculatorTest {
 
-    // Ausführen der zu testenden Funktion
-    int ergebnis = a + b; 
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3));
+    }
+}
 
-    // Überprüfen, ob das Ergebnis korrekt ist
-    Assert.assertEquals(8, ergebnis); 
-  } 
-} 
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
 ```
-Der Codeblock beginnt mit dem Importieren der JUnit-Klasse, die für das Erstellen von Tests verwendet wird. Anschließend wird eine Testklasse erstellt, in der alle Testmethoden enthalten sind. Diese sind mit der Annotation "@Test" gekennzeichnet. Im Beispiel wird die Methode "testAddition" erstellt, welche die Addition zweier Zahlen überprüft. Durch die Verwendung von "Assert.assertEquals" wird geprüft, ob das Ergebnis der Addition dem erwarteten Ergebnis entspricht.
 
-## Tiefere Einblicke
-Die Praxis des Testens entstand in den 60er Jahren mit der Entwicklung von Software-Tests für den NASA-Großrechner. Seitdem hat sie sich zu einem wichtigen Bestandteil der Software-Entwicklung entwickelt. Es gibt auch alternative Ansätze zum Schreiben von Tests, wie zum Beispiel das Test-Driven Development (TDD), bei dem Tests vor dem eigentlichen Code geschrieben werden.
+Output:
 
-Es gibt auch spezielle Frameworks wie JUnit, TestNG oder Mockito, die die Erstellung von Tests erleichtern und erweiterte Funktionen bieten. Es ist wichtig, bei der Erstellung von Tests eine gute Testabdeckung zu erreichen, um sicherzustellen, dass alle möglichen Fälle getestet werden und der Code zuverlässig ist.
+```
+OK (1 test)
+```
 
-## Siehe auch
-- [Offizielle JUnit-Dokumentation (auf Englisch)](https://junit.org/junit5/docs/current/user-guide/)
+## Tiefgang:
+
+Tests im Java-Ökosystem begannen mit JUnit, heute existiert eine Vielfalt: TestNG, Spock, und andere. JUnit 5 ist die aktuelle Hauptversion, die mit Extensions, Lambdas und Annotations arbeitet und für Java 8 und darüber optimiert wurde. In Sachen Implementierung beachten: saubere Testumgebungen nutzen, Abhängigkeiten minimieren und Mock-Objekte einsetzen, um Isolation und Fokussierung der Tests zu erreichen.
+
+## Siehe auch:
+
+- JUnit 5 User Guide: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
+- Oracle's Java Tutorials – Testing: [https://docs.oracle.com/javase/tutorial/junit/index.html](https://docs.oracle.com/javase/tutorial/junit/index.html)
+- Mocking frameworks: Mockito ([https://site.mockito.org/](https://site.mockito.org/))

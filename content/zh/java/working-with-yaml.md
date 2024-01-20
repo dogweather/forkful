@@ -1,7 +1,7 @@
 ---
-title:                "与YAML一起工作"
-html_title:           "Java: 与YAML一起工作"
-simple_title:         "与YAML一起工作"
+title:                "处理 YAML 文件"
+html_title:           "Bash: 处理 YAML 文件"
+simple_title:         "处理 YAML 文件"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,67 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# YAML和程序员
+## What & Why?
+什么是 YAML？YAML 是 "YAML Ain't Markup Language"（YAML 不是标记语言）的递归缩写，用于配置文件和数据交换。为何使用 YAML？它易读，结构清晰，广泛用于配置文件、数据存储和跨语言数据分享。
 
-## 什么和为什么？
-
-YAML是一种用来配置数据的文本语言。程序员通常使用它来定义应用程序的设置和参数。它易于阅读和编写，让程序员可以快速配置应用程序，提高工作效率。
-
-## 如何：
+## How to:
+要在 Java 中使用 YAML，首先确保引入了 YAML 解析库，如 `snakeyaml`。以下是一个简单的例子。
 
 ```Java
 import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.util.Map;
 
-// 创建一个YAML实例
-Yaml yaml = new Yaml();
-
-// 将YAML文本加载成一个Map
-Map<String, Object> data = (Map<String, Object>) yaml.load(yamlText);
+public class YamlExample {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        InputStream inputStream = YamlExample.class
+            .getClassLoader()
+            .getResourceAsStream("config.yaml");
+        Map<String, Object> data = yaml.load(inputStream);
+        System.out.println(data);
+    }
+}
 ```
 
-这里有一个YAML文本的示例：
-
+`config.yaml` 文件:
 ```yaml
-# 欢迎信息
-welcome:
-  message: "欢迎来到我的应用程序！"
-  language: "中文"
+database:
+  host: localhost
+  port: 3306
 ```
 
-将这个文本传递给YAML实例后，我们可以通过以下方法来访问数据：
-
-```Java
-// 访问欢迎信息中的消息
-String message = (String) data.get("welcome").get("message");
-
-// 访问欢迎信息中的语言
-String language = (String) data.get("welcome").get("language");
-
-// 输出结果
-System.out.println(message + "当前语言为" + language);
+输出:
+```plaintext
+{database={host=localhost, port=3306}}
 ```
 
-输出结果为：
+## Deep Dive
+YAML 诞生于 2001 年，目的是更易读易用。JSON 和 XML 都是替代格式，但 YAML 特别适合配置文件。在 Java 中处理 YAML，通常通过 `snakeyaml` 库来解析和生成 YAML 数据，但也有其他库，如 `jackson-dataformat-yaml`.
 
-```
-欢迎来到我的应用程序！当前语言为中文
-```
-
-## 深入了解：
-
-### 历史背景：
-
-YAML最早是由Clark Evans在2001年提出的，目的是为了创造一个更易读，更容易操作的配置语言。它最初是作为Python项目的一部分，但后来成为一个独立的规范。
-
-### 其他选择：
-
-除了YAML，程序员还可以使用XML或JSON来配置数据。然而，YAML和JSON相比，它更容易阅读和理解。相比之下，XML则具有更复杂的标记结构，不太适合配置简单的数据。
-
-### 实现细节：
-
-YAML实现的方式是通过将YAML文本解析为Map对象来读取和操作数据。在Java中，我们可以使用Yaml库来实现这个功能。它是一个流行的库，可以帮助我们快速处理YAML文本。
-
-## 相关链接：
-
-- [YAML官方网站](https://yaml.org/)
-- [Yaml入门指南](https://www.baeldung.com/java-snake-yaml)
+## See Also
+- YAML 官网: https://yaml.org/
+- SnakeYAML 官方文档: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+- Jackson 数据格式库: https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml

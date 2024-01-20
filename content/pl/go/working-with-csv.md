@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikiem csv"
-html_title:           "Go: Praca z plikiem csv"
-simple_title:         "Praca z plikiem csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,68 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robią programiści?
+## Co i dlaczego?
+W Go praca z CSV to obsługa plików tekstowych z danymi podzielonymi przecinkami (Comma-Separated Values). Programiści wykorzystują je do wymiany danych, bo to prosty i uniwersalny format, łatwy do odczytu zarówno dla maszyn, jak i ludzi.
 
-Praca z plikami CSV (zwane również plikami z wartościami oddzielanymi przecinkami) jest częstym zadaniem dla programistów w celu manipulacji i analizowania danych. Pliki CSV są plikami tekstowymi zawierającymi informacje w formacie tabelarycznym, gdzie dane są oddzielone przecinkami. Programiści często pracują z plikami CSV, aby pobierać, przetwarzać i eksportować dane do różnych aplikacji.
-
-## Jak to zrobić?
-
-Go oferuje wiele wbudowanych funkcji i pakietów, które ułatwiają pracę z plikami CSV. Najpierw należy zaimportować pakiet "encoding/csv", aby móc korzystać z funkcji związanych z plikami CSV. Następnie można użyć funkcji "NewReader" lub "NewWriter", aby wczytać lub zapisać dane z pliku CSV.
-
+## Jak to zrobić:
 ```Go
 package main
 
 import (
-  "encoding/csv"
-  "fmt"
-  "os"
+    "encoding/csv"
+    "fmt"
+    "os"
+    "strings"
 )
 
 func main() {
-  // wczytywanie danych z pliku CSV
-  file, err := os.Open("dane.csv")
-  if err != nil {
-  	fmt.Println("Błąd podczas wczytywania pliku CSV:", err)
-  	return
-  }
-  
-  reader := csv.NewReader(file)
-  records, err := reader.ReadAll()
-  if err != nil {
-  	fmt.Println("Błąd podczas czytania danych z pliku CSV:", err)
-  	return
-  }
-  
-  // wyświetlanie pobranych danych
-  for _, row := range records {
-  	fmt.Println(row)
-  }
-  
-  // zapisywanie danych do pliku CSV
-  data := [][]string{{"Jeden", "1"}, {"Dwa", "2"}, {"Trzy", "3"}}
-  
-  file, err = os.Create("nowe_dane.csv")
-  if err != nil {
-    fmt.Println("Błąd podczas tworzenia pliku CSV:", err)
-    return
-  }
-  
-  writer := csv.NewWriter(file)
-  writer.WriteAll(data)
-  writer.Flush()
+    // Zapis do CSV
+    str := strings.NewReader("imię,wiek\nAlicja,25\nBob,30")
+    r := csv.NewReader(str)
+    records, _ := r.ReadAll()
+
+    file, _ := os.Create("przykład.csv")
+    w := csv.NewWriter(file)
+    _ = w.WriteAll(records)
+    w.Flush()
+
+    // Odczyt z CSV
+    f, _ := os.Open("przykład.csv")
+    defer f.Close()
+
+    reader := csv.NewReader(f)
+    readRecords, _ := reader.ReadAll()
+
+    for _, record := range readRecords {
+        fmt.Println(record)
+    }
 }
 ```
+Wyjście:
+```
+[imię wiek]
+[Alicja 25]
+[Bob 30]
+```
 
-W powyższym przykładzie pokazano, jak wczytać dane z istniejącego pliku CSV oraz jak zapisać dane do nowego pliku CSV. W przypadku wczytywania danych, każdy wiersz jest zapisywany jako slice stringów, a następnie można na nim wykonywać operacje. Natomiast przy zapisywaniu danych, należy najpierw utworzyć slice stringów zawierający dane w formacie tabelarycznym, a następnie użyć funkcji "WriteAll" i "Flush".
+## Deep Dive:
+CSV to format znany od lat 70., gdy dyski były drogie i ludzie potrzebowali oszczędnych formatów. Alternatywy to JSON, XML, ale CSV jest szybszy w obsłudze i łatwiejszy do pisania parserów. Implementacja w Go jest prosta: używamy pakietu `encoding/csv` i standardowej obsługi plików.
 
-## Głębsze wgląd
-
-Format CSV został wprowadzony w latach 70. i przez wiele lat był popularnym sposobem przechowywania i przetwarzania danych. Alternatywami dla plików CSV są między innymi formaty JSON i XML, ale format CSV jest nadal wykorzystywany przez wiele aplikacji do wymiany danych.
-
-Pakiet "encoding/csv" oferuje również funkcje do obsługi specjalnych znaków, jak np. cudzysłowy wewnątrz pól lub tabulatory jako separatorów. W przypadku wykonywania operacji na dużych plikach CSV, zaleca się wykorzystanie funkcji z pakietu "bufio" do wczytania danych linia po linii, zamiast używania funkcji "ReadAll".
-
-## Zobacz także
-
-- Dokumentacja pakietu "encoding/csv": https://golang.org/pkg/encoding/csv/
-- Poradnik na temat pracy z plikami CSV w Go: https://gobyexample.com/reading-files
-- Słowniczek Go: http://www.goworkbook.org/
+## Zobacz także:
+- Dokumentacja Go dla pakietu `encoding/csv`: https://pkg.go.dev/encoding/csv
+- Szczegółowe instrukcje odczytu/zapisu do plików w Go: https://gobyexample.com/reading-files i https://gobyexample.com/writing-files
+- Porównanie formatów danych (CSV, JSON, XML): https://www.datacamp.com/community/tutorials/data-formats-csv-json-xml

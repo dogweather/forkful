@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Java recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Java"
 category:             "Java"
@@ -12,41 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing to standard error is a way for Java programmers to display error messages or debug information in their code. It is a separate stream from standard output, which is typically used for normal program output. 
-
-Programmers use writing to standard error in order to clearly differentiate error messages from regular output and to provide helpful information for troubleshooting and debugging purposes. 
+Writing to standard error (stderr) is a way to output error messages and diagnostics separate from standard output (stdout). Programmers use it to signal that something exceptional has occurred, making it easier to debug and isolate issues.
 
 ## How to:
 
-To write to standard error in Java, simply use the `System.err` stream and the `println` method. Here is an example code snippet:
+Java makes writing to stderr simple using `System.err`. Here's a quick look:
 
-```Java
-System.err.println("Something went wrong!");
-```
-
-This will print the message "Something went wrong!" to the console in a different color, making it easier to spot and identify as an error message.
-
-Additionally, you can also use the `e.printStackTrace()` method to print out more detailed information about a caught exception to the standard error stream. Here is another example:
-
-```Java
-try {
-    // Some code that might throw an exception
-} catch (Exception e) {
-    e.printStackTrace();
+```java
+public class StderrExample {
+    public static void main(String[] args) {
+        System.err.println("Error: Something went wrong!");
+    }
 }
 ```
 
-This will print out the stack trace, including the line numbers of where the exception occurred, to the standard error stream.
+Running this gives you:
 
-## Deep Dive:
+```
+Error: Something went wrong!
+```
 
-Writing to standard error has been a commonly used practice in programming, dating back to the early days of UNIX systems and the C programming language. It allows for better separation between regular output and error messages, making it easier to distinguish them and handle them appropriately.
+Note: While stdout usually goes to the console, stderr can be redirected to a file or other destination, keeping error messages separate.
 
-An alternative to writing to standard error is to use logging frameworks, such as Log4j or SLF4J, which provide more advanced logging capabilities. However, for simple error messages and debugging purposes, using the `System.err` stream is a quick and easy solution.
+## Deep Dive
 
-When writing to standard error, it is important to note that the output will usually be displayed in a different color to indicate that it is an error message. This can be helpful in quickly identifying and troubleshooting issues in a program.
+Historically in Unix-like systems, stderr is file descriptor 2, distinct from stdout (file descriptor 1). This allows for different handling and redirection. Alternatives to `System.err` include logging frameworks like Log4J or SLF4J, which offer more features. In Java, stderr is implemented in the `System` class and is an instance of `PrintStream`. It's unbuffered, meaning output is immediate.
 
-## See Also:
+## See Also
 
-- [The official Java documentation on System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [A tutorial on standard output and error in Java](https://www.baeldung.com/java-printstream-printf)
+- [Oracle Java Docs - System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Wikipedia - Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
+- [Tutorial on Java Logging](https://www.baeldung.com/java-logging-intro)

@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Javascript: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
+YAML to format zapisu danych, podobny do JSON, ale bardziej czytelny dla człowieka. Programiści używają go często do konfiguracji aplikacji i wdrażania infrastruktury, szczególnie w projektach związanych z DevOps i konteneryzacją.
 
-Pracowanie z YAML to metoda konwertowania danych strukturalnych do łatwego do czytania formatu. Programiści wykorzystują to do łatwiejszego przechowywania i przetwarzania danych w plikach tekstowych.
+## Jak to zrobić:
+```
+// Do pracy z YAML w JavaScript potrzebujemy biblioteki js-yaml.
+// Instalujemy ją używając npm: npm install js-yaml
 
-## Jak:
-
-Aby zacząć korzystać z YAML, wystarczy zainstalować odpowiednie moduły za pomocą menedżera pakietów i wywołać komendy w dowolnym pliku Javascript. Przykładowy kod wygląda tak:
-
-```JavaScript
-const YAML = require('yaml');
+const yaml = require('js-yaml');
 const fs = require('fs');
 
-// zapis do pliku YAML
-fs.writeFileSync('plik.yml', YAML.stringify({a: [1, 2, 3]}));
+// Odczytanie pliku YAML i zamiana na obiekt JavaScript.
+try {
+  const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
+  console.log(doc);
+} catch (e) {
+  console.error(e);
+}
 
-// odczyt z pliku YAML
-let dane = YAML.parse(fs.readFileSync('plik.yml', 'utf8'));
+// Przykładowy plik 'config.yaml':
+// imie: "Jan"
+// praca:
+//   pozycja: "Programista"
+//   jezyk: "JavaScript"
 
-console.log(dane);
-// wyjście: {a: [1, 2, 3]}
+// Zapis obiektu JavaScript do pliku YAML.
+const dataToSave = {
+  name: "Kasia",
+  hobby: {
+    type: "Sztuki walki",
+    level: "Początkujący"
+  }
+};
+
+try {
+  const yamlStr = yaml.dump(dataToSave);
+  fs.writeFileSync('user.yaml', yamlStr, 'utf8');
+  console.log('Zapisano!');
+} catch (e) {
+  console.error(e);
+}
 ```
 
-## Głębsza zajawka:
-
-Kilka lat temu YAML zyskał popularność dzięki swojej czytelności i elastyczności w porównaniu do innych formatów danych, takich jak XML czy JSON. Alternatywami do YAML są np. TOML i INI, ale każdy z nich ma swoją specyfikę i wykorzystanie. Implementacja YAML jest również dostępna dla wielu innych języków programowania.
+## Deep Dive:
+YAML, który oznacza "YAML Ain't Markup Language", powstał na początku XXI wieku jako łatwiejsza w ludzkiej percepcji alternatywa dla XML. Format YAML jest szeroko stosowany w aplikacjach do zarządzania konfiguracją oraz w systemach orkiestracji kontenerów, takich jak Kubernetes. YAML jest formatem niezależnym od języka i może być używany w wielu językach programowania, przy czym najpopularniejsze biblioteki do obsługi YAML w JavaScript to `js-yaml` i `yamljs`.
 
 ## Zobacz też:
-
-- [Dokumentacja YAML](https://yaml.org/)
-- [Porównanie formatów danych](https://www.codeproject.com/Reference/720512/List-of-JSON-XML-and-YAML-Editors-Converters-and-vi)
-- [Pełna lista modułów YAML w npm](https://www.npmjs.com/search?q=yaml)
+- Dokumentacja `js-yaml`: https://github.com/nodeca/js-yaml
+- Specyfikacja YAML: https://yaml.org/spec/1.2/spec.html
+- Wprowadzenie do YAML dla początkujących: https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes
+- YAML w kontekście Kubernetes: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips

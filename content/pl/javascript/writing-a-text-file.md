@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Javascript: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Pisanie plików tekstowych jest podstawową czynnością w programowaniu. Polega ono na zapisywaniu tekstu na dysku komputera w postaci pliku. Programiści robią to, aby przechowywać i przetwarzać informacje w ich programach.
+Zapisywanie pliku tekstowego to proces tworzenia lub modyfikowania danych w formacie czytelnym dla człowieka. Programiści robią to, aby zapisywać konfiguracje, logi lub wymieniać dane między systemami.
 
 ## Jak to zrobić:
-
-Aby zapisać plik tekstowy za pomocą Javascript, musimy użyć wbudowanej funkcji "fs.writeFile()". Przykładowy kod wygląda następująco:
+Node.js umożliwia pracę z plikami. Użyj `fs` do zapisu:
 
 ```Javascript
-const fs = require('fs'); //importujemy moduł do manipulacji plikami
+const fs = require('fs');
 
-let data = "To jest przykładowy tekst do zapisania w pliku."; //definiujemy tekst do zapisania
+let data = "Cześć! To przykładowy tekst.";
 
-fs.writeFile('plik.txt', data, (err) => { //tworzymy plik o nazwie "plik.txt" i wpisujemy do niego tekst
+// Zapisz do nowego pliku
+fs.writeFile('przykladowy.txt', data, (err) => {
   if (err) throw err;
-  console.log('Plik został zapisany!'); //wyświetlamy informację o zapisaniu pliku
+  console.log('Plik został zapisany!');
+});
+
+// Zapisz do istniejącego pliku
+fs.appendFile('przykladowy.txt', '\nDo widzenia!', (err) => {
+  if (err) throw err;
+  console.log('Tekst został dopisany!');
 });
 ```
 
-Po wykonaniu tego kodu, na naszym dysku zostanie utworzony plik "plik.txt", w którym znajdzie się tekst zdefiniowany w zmiennej "data".
+W przeglądarkach użyj `Blob` i `URL.createObjectURL()`:
 
-## Zanurz się głębiej:
+```Javascript
+let data = new Blob(["Cześć! To tekst w pliku."], { type: 'text/plain' });
+let textFile = window.URL.createObjectURL(data);
 
-Pisanie plików tekstowych w Javascript jest możliwe dzięki modułowi "fs", który został wprowadzony w wersji 0.1.8 tej technologii. Istnieje również wiele alternatywnych metod zapisu plików tekstowych, takich jak na przykład używanie aplikacji zewnętrznych lub wykorzystanie innych języków programowania. Ważne jest, aby pamiętać o odpowiednim formatowaniu danych, aby plik był czytelny dla ludzi oraz dla programów.
+// Pobierz URL do świeżo utworzonego pliku
+console.log('URL pliku:', textFile);
+```
 
-## Zobacz także:
+## Deep Dive
+W Node.js, `fs` jest od lat, ale można użyć też `fs/promises` dla async/await. Przeglądarki wcześniej polegały na `FileReader` i `document.execCommand()`, ale Blob i `createObjectURL()` są nowocześniejsze. Warto też znać `fs.readFileSync()` i `fs.writeFileSync()` dla synchronicznej pracy z plikami.
 
-- Dokumentacja funkcji fs.writeFile(): https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback
-- Przydatny poradnik o manipulacji plikami w Javascript: https://www.w3schools.com/nodejs/nodejs_filesystem.asp
-- Alternatywne sposoby zapisu plików tekstowych: https://blog.fullstacktraining.com/ways-to-write-to-file-in-nodejs/
+## Zobacz również
+- [Node.js `fs` documentation](https://nodejs.org/api/fs.html)
+- [MDN Web Docs on Blobs](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
+- [HTML Living Standard for `createObjectURL`](https://html.spec.whatwg.org/multipage/browsers.html#dom-url-createobjecturl)

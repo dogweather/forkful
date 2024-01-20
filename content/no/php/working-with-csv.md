@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "PHP: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-CSV står for Comma Separated Values (kommaseparerte verdier) og er et enkelt og vanlig filformat for å lagre og utveksle data. Mange programmerere bruker CSV-filer for å lagre og manipulere store mengder data på en effektiv måte.
+## What & Why?
+CSV, eller "Comma-Separated Values", er et filformat som brukes for lagring av data i en enkel tekstformat der hver linje er en datarad, og hvert felt er skilt med komma. Programmerere bruker CSV fordi det er enkelt, universelt og lett å importere til og eksportere fra databaser og regneark.
 
-# Hvordan:
-Bruk PHPs innebygde funksjoner for å håndtere CSV-filer. Først må du åpne en CSV-fil ved å bruke fopen() funksjonen. Deretter kan du bruke fgetcsv() funksjonen til å lese data fra fila linje for linje. Du kan også bruke fputcsv() funksjonen for å skrive data til en CSV-fil.
+## How to:
+Å jobbe med CSV-filer i PHP er rett fram. Her er kode for å lese og skrive.
 
+### Lese CSV
 ```PHP
-// Åpne en CSV-fil for lesing
-$fil = fopen('data.csv', 'r');
-
-// Les data linje for linje
-while(($data = fgetcsv($fil)) !== FALSE){
+<?php
+$filnavn = 'data.csv';
+$handle = fopen($filnavn, 'r');
+while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    // behandle hver rad her
     print_r($data);
 }
-
-// Åpne en CSV-fil for skriving
-$fil = fopen('data.csv', 'w');
-
-// Skriv data til fila
-$data = array('Navn', 'Alder', 'E-post');
-fputcsv($fil, $data);
-
-// Lukk filen
-fclose($fil);
+fclose($handle);
+?>
+```
+Output kan se slik ut for en enkel rad:
+```
+Array
+(
+    [0] => Navn
+    [1] => Alder
+    [2] => By
+)
 ```
 
-Eksempel:
-Lar oss si at du har en CSV-fil med informasjon om ansatte på et selskap. Du kan bruke fgetcsv() funksjonen til å lese data fra fila og deretter bruke denne informasjonen til å opprette en nettleservennlig tabell med alle ansattes navn, alder og e-postadresser.
+### Skrive til CSV
+```PHP
+<?php
+$liste = array(
+    array('Navn', 'Alder', 'By'),
+    array('Ola', '23', 'Oslo'),
+    array('Kari', '35', 'Bergen')
+);
 
-# Dypdykk:
-CSV-filer har eksistert siden 1970-tallet og har vært et populært format for utveksling av data mellom forskjellige programmer. Det finnes alternativer til CSV som XML og JSON, men CSV er fortsatt mye brukt på grunn av sin enkelhet og effektivitet.
+$filnavn = 'ny_data.csv';
+$handle = fopen($filnavn, 'w');
 
-Når du jobber med CSV-filer, er det viktig å være oppmerksom på tegnsettet som brukes i fila. Noen ganger kan dette føre til problemer når du skal lese eller skrive data. Det er også viktig å sørge for at fila er formatert riktig, med komma som skilletegn mellom verdiene.
+foreach ($liste as $rad) {
+    fputcsv($handle, $rad);
+}
 
-En annen nyttig funksjon i PHP når man jobber med CSV-filer er str_getcsv() som lar deg konvertere en CSV-streng til et array.
+fclose($handle);
+?>
+```
 
-# Se også:
-- [PHP.net - CSV](https://www.php.net/manual/en/function.fgetcsv.php)
-- [Wikipedia - Comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values)
+## Deep Dive
+CSV har vært i bruk siden 1970-tallet og er fortsatt populært grunnet dets enkelhet. Alternativer til CSV inkluderer JSON og XML, som begge tillater mer komplekse strukturer. Når man implementerer CSV-håndtering i PHP, er det viktig å huske på tegnsett og feilhåndtering for å sikre riktig dataintegritet.
+
+## See Also
+- Mer om CSV-formatet: [tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- Sammenlikning av dataformater (inkludert CSV, JSON, XML): [w3schools.com](https://www.w3schools.com)

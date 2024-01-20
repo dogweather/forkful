@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성"
-html_title:           "Rust: 테스트 작성"
-simple_title:         "테스트 작성"
+title:                "테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? & 왜 하는 걸까요?
-테스트 작성이란 무엇이며, 프로그래머들이 왜 이를 수행하는지에 대한 간단한 설명입니다.
+## What & Why? (무엇과 왜?)
+테스트 작성은 코드가 예상대로 작동하는지 확인하는 과정입니다. 프로그래머들은 버그를 미리 찾아내고, 코드 변경에 따른 위험을 줄이기 위해 테스트를 합니다.
 
-## 방법:
+## How to: (방법)
 ```Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
-
+// src/lib.rs에 테스트 함수 정의
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
-    fn test_add() {
-        assert_eq!(add(2, 3), 5);
-        assert_eq!(add(0, 0), 0);
-        assert_eq!(add(-1, 1), 0);
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+    
+    #[test]
+    fn it_fails() {
+        assert_eq!(3 + 3, 9);
     }
 }
+
+// 터미널에서 `cargo test`로 실행
+```
+테스트 실행 결과:
+```
+running 2 tests
+test tests::it_works ... ok
+test tests::it_fails ... FAILED
+
+failures:
+
+---- tests::it_fails stdout ----
+thread 'tests::it_fails' panicked at 'assertion failed: `(left == right)`
+  left: `6`,
+ right: `9`', src/lib.rs:10:9
 ```
 
-테스트를 작성하는 예제와 그 결과를 ```Rust ... ``` 코드 블록 내에 제공합니다.
+## Deep Dive (깊이있는 탐색)
+테스트는 소프트웨어 개발 초기부터 중요한 부분이었으며, Rust에서도 `cargo test` 커맨드를 통해 손쉽게 테스트할 수 있습니다. 대안으로는 주석으로 코드를 확인하는 방법도 있지만 자동화된 테스트가 더 일반적입니다. 내부적으로 Rust는 테스트 함수에 쓰레드를 할당하고 병렬로 실행할 수 있어 테스트 성능을 최적화합니다.
 
-## 깊이 파고들기:
-테스트 작성에 대한 역사적 배경, 대안 및 구현 세부 사항과 같은 더 깊은 정보입니다.
-
-## 관련 자료
-관련 자료를 위한 링크를 제공합니다.
+## See Also (함께 보기)
+- [Rust 공식 문서 중 테스트 가이드](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [The Rust Programming Language (Book) – 파트 11 – 테스트](https://rinthel.github.io/rust-lang-book-ko/ch11-00-testing.html) (한국어 번역)
+- [`assert!` 매크로 사용법](https://doc.rust-lang.org/std/macro.assert.html)

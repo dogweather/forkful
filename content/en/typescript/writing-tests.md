@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-html_title:           "TypeScript recipe: Writing tests"
+html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,31 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests in TypeScript involves creating automated tests to check the functionality of your code. This is done to ensure that your code works as intended and catches any potential bugs before deployment. By writing tests, programmers can save time and prevent potential errors in their code.
+
+Writing tests means crafting code that checks if other code works right. Programmers do it to catch bugs early, save time, and make sure changes don't break stuff.
 
 ## How to:
-To write tests in TypeScript, you can use various testing libraries such as Jest or Mocha. Below is an example using Jest to test a function that adds two numbers:
 
-```TypeScript
-import { add } from './utils';
+Let's test a simple function using Jest, a popular testing framework for JavaScript and TypeScript.
+
+First, install Jest with TypeScript support:
+
+```bash
+npm install --save-dev jest @types/jest ts-jest
+```
+
+Add a `jest.config.js`:
+
+```js
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+Define a function in `math.ts`:
+
+```typescript
+export function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+Write a test in `math.test.ts`:
+
+```typescript
+import { add } from './math';
 
 test('adds 1 + 2 to equal 3', () => {
   expect(add(1, 2)).toBe(3);
 });
 ```
 
-The above code imports a function called `add` from a utils file and then uses the `test` function from Jest to create a test case. The `expect` function is used to verify that the result of `add(1, 2)` equals to `3`.
+Run tests:
 
-## Deep Dive:
-Writing automated tests has become an essential practice in software development, as it increases code reliability and speed. The concept of unit testing, which involves writing small tests for specific functions, dates back to the 1950s. Over the years, various testing frameworks and libraries have been developed to make testing more accessible for developers.
+```bash
+npx jest
+```
 
-Besides Jest and Mocha, other popular testing frameworks in TypeScript include Jasmine, Ava, and Tape. These frameworks have different styles and features, so it's essential to research and choose the one that best fits your project.
+Sample output:
 
-While writing tests can save time and prevent errors, it is crucial to note that it is not a substitute for debugging and manual testing. Developers should use a combination of different testing methods to ensure the functionality and quality of their code.
+```
+PASS  ./math.test.ts
+✓ adds 1 + 2 to equal 3 (5ms)
+```
 
-## See Also:
-- [Jest](https://jestjs.io/)
-- [Mocha](https://mochajs.org/)
-- [Jasmine](https://jasmine.github.io/)
-- [Ava](https://github.com/avajs/ava)
-- [Tape](https://github.com/substack/tape)
+## Deep Dive
+
+Testing in TypeScript builds off JavaScript testing practices. Here's what makes it special:
+
+- Historical context: TypeScript came to life in 2012. It was meant to add types to JavaScript, making code easier to maintain and test.
+- Alternatives: Other than Jest, there's Mocha, Jasmine, and more. Each has unique features; choose based on your needs.
+- Implementation details: Tests can live next to code or separately. TypeScript types help with autocompletion and added confidence in tests.
+
+## See Also
+
+- Jest: [Jest Documentation](https://jestjs.io/docs/getting-started)
+- Comparison of JS Testing Frameworks: [StateOfJS 2022 Survey](https://2022.stateofjs.com/en-US/libraries/testing/)

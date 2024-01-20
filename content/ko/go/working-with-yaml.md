@@ -1,7 +1,7 @@
 ---
-title:                "yaml 작업하기"
-html_title:           "Go: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? 
-YAML을 다루는 것은 단순한 데이터 형식으로 구조화된 파일을 작성하는 것입니다. 프로그래머들은 이를 효율적으로 사용할 수 있기 때문에 YAML을 사용합니다.
+## What & Why?
+(YAML 작업이란 무엇이며, 왜 프로그래머가 이것을 사용하나요?)
 
-## 어떻게 하나요? 
+YAML은 데이터 직렬화 형식입니다. 설정 파일, 데이터 교환 등을 위해서 보기 좋게 데이터를 표현하는데 사용합니다.
+
+## How to:
+(어떻게 사용하나요?)
+
+YAML 파일을 읽고 쓰려면, `gopkg.in/yaml.v3` 패키지가 필요합니다.
+
 ```Go
-import "gopkg.in/yaml.v2"
+package main
 
-type Person struct {
-  Name string `yaml:"name"`
-  Age  int    `yaml:"age"`
+import (
+    "fmt"
+    "io/ioutil"
+    "gopkg.in/yaml.v3"
+)
+
+type Config struct {
+    Version string `yaml:"version"`
+    Services map[string]Service `yaml:"services"`
 }
 
-data := `
-name: John
-age: 30
-`
-
-var person Person
-
-err := yaml.Unmarshal([]byte(data), &person)
-if err != nil {
-    panic(err)
+type Service struct {
+    Image string `yaml:"image"`
+    Ports []string `yaml:"ports"`
 }
 
-fmt.Printf("Name: %s, Age: %d", person.Name, person.Age)
-// Output: Name: John, Age: 30
+func main() {
+    configFile, err := ioutil.ReadFile("docker-compose.yml")
+    if err != nil {
+        panic(err)
+    }
+
+    var config Config
+    err = yaml.Unmarshal(configFile, &config)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("버전: %s\n", config.Version)
+    for name, service := range config.Services {
+        fmt.Printf("서비스: %s, 이미지: %s\n", name, service.Image)
+    }
+}
 ```
 
-## 깊이 파고들기 
-YAML은 2001년에 개발되었으며, JSON이나 XML과 같은 다른 데이터 형식보다 더 간단하고 가독성이 좋습니다. 대안으로는 TOML이나 HCL 같은 다른 데이터 형식이 있습니다. Go에서 YAML을 다루는 라이브러리는 gopkg.in/yaml.v2에 위치해 있습니다.
+## Deep Dive
+(깊이 있는 정보)
 
-## 관련 자료 
-- YAML 공식 홈페이지: https://yaml.org/
-- Go에서 YAML 다루는 라이브러리: https://gopkg.in/yaml.v2
+YAML은 "YAML Ain't Markup Language"(YAML은 마크업 언어가 아니다)의 재귀 약자입니다. JSON의 대안으로 보기 쉽상 외에 데이터를 간결하게 나타낼 수 있어 인기 있습니다. 그럼에도 파싱은 JSON보다 복잡하며, 대규모 데이터에는 성능 문제가 있을 수 있습니다.
+
+## See Also
+(참고 자료)
+
+- YAML 공식 웹사이트: https://yaml.org
+- go-yaml 라이브러리: https://pkg.go.dev/gopkg.in/yaml.v3
+- JSON과 YAML 비교: https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON

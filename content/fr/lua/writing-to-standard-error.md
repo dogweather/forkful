@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur la sortie standard"
-html_title:           "Lua: Écrire sur la sortie standard"
-simple_title:         "Écrire sur la sortie standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+Écrire sur l'erreur standard (stderr) permet d'envoyer des messages d'erreur ou des diagnostics séparément des données normales (stdout). Les programmeurs utilisent stderr pour signaler des problèmes sans perturber le flux principal des données.
 
- "Writing to standard error" en Lua est l'action de transmettre des erreurs ou des messages d'avertissement à l'utilisateur pendant l'exécution d'un programme. Cela peut être utile pour corriger les erreurs et déboguer le code.
+## How to:
+Lua simplifie l'écriture sur stderr. Utilisez `io.stderr:write()` pour envoyer des messages d'erreur.
 
-## Comment faire:
+```lua
+-- Envoyer un message simple à stderr
+io.stderr:write("Erreur trouvée!\n")
 
-Pour écrire un message d'erreur ou un avertissement à la sortie standard, utilisez la fonction `io.stderr:write` suivie du message entre parenthèses :
-
-```Lua
-io.stderr:write("Erreur : variable invalide. Veuillez réessayer.") -- exemple de message d'erreur
+-- Exemple avec une condition
+local fichier = io.open("fichier_inexistant.txt", "r")
+if fichier == nil then
+    io.stderr:write("Impossible d'ouvrir le fichier.\n")
+end
 ```
 
-Pour écrire un message d'erreur avec un code d'erreur spécifique, utilisez la fonction `error`, en spécifiant le code d'erreur suivi du message entre parenthèses :
-
-```Lua
-error(404, "Page introuvable.") -- exemple de message d'erreur avec un code 404
+Sortie possible sur stderr :
+```
+Erreur trouvée!
+Impossible d'ouvrir le fichier.
 ```
 
-## Plongée en profondeur:
+## Deep Dive
+Historiquement, séparer stdout et stderr permet aux systèmes Unix de rediriger les flux indépendamment. En Lua, `io.stderr` est un objet de fichier déjà ouvert, toujours disponible pour écrire les erreurs. Des alternatives comme le logging dans un fichier spécifique existent, mais l'usage de stderr est un standard sous Unix.
 
-Écrire à la sortie standard a été introduit dans Lua dans la version 3.0, et est toujours utilisé comme moyen de déboguer et d'indiquer les erreurs dans le code. Il existe d'autres façons d'effectuer cette tâche, comme utiliser la bibliothèque `debug`, mais écrire à la sortie standard reste une pratique courante pour les programmeurs Lua.
-
-## Voir aussi:
-
-Pour plus d'informations sur l'utilisation de `io.stderr:write` et d'autres fonctions associées, consultez la documenta
+## See Also
+- Documentation Lua pour `io.stderr`: http://www.lua.org/manual/5.4/manual.html#6.8
+- Pourquoi stderr est utile : https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)
+- Guide Unix sur la redirection des flux : https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html

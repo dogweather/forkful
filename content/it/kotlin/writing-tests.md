@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Kotlin: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & perché?
-Scrivere test è un'attività fondamentale per i programmatori. Consiste nella creazione di piccoli pezzi di codice che verificano se il codice principale funziona correttamente. Questo aiuta i programmatori a identificare e risolvere eventuali errori nel loro codice.
+## Cosa & Perché?
+
+Scrivere test è il processo di creare script programmati che controllano il funzionamento del codice. I programmatori lo fanno per assicurare che il codice funzioni correttamente e per prevenire la comparsa di bug nel futuro.
 
 ## Come fare:
-Di seguito sono riportati alcuni esempi di codice che mostrano come scrivere test in Kotlin.
 
-```Kotlin
-fun add(x: Int, y: Int): Int {
-    return x + y
+In Kotlin puoi scrivere test unitari usando JUnit. Ecco una classe di esempio e un test unitario semplice.
+
+```kotlin
+class Calcolatrice {
+    fun somma(a: Int, b: Int): Int {
+        return a + b
+    }
 }
-```
 
-```Kotlin
-fun testAdd() {
-    val result = add(2, 3)
-    if (result == 5) {
-        println("Test passed.")
-    } else {
-        println("Test failed.")
+class CalcolatriceTest {
+    @Test
+    fun testSomma() {
+        val calc = Calcolatrice()
+        val risultato = calc.somma(2, 3)
+        assertEquals(5, risultato)
     }
 }
 ```
 
-Output:
+Output del test:
+
 ```
-Test passed.
+Test passed: testSomma(0.01s)
 ```
 
-## Approfondimento:
-I test sono diventati sempre più importanti nel processo di sviluppo del software negli ultimi anni. In passato, i programmatori si affidavano principalmente al debugging manuale per individuare gli errori nel loro codice. Tuttavia, questo processo è spesso lungo e inefficiente. Scrivere test automatizzati, invece, permette di individuare più facilmente gli errori e risparmiare tempo e sforzi.
+## Approfondimento
 
-Alternative:
-Oltre ai test unitari, esistono varie tipologie di test, come i test di integrazione e i test di accettazione. Inoltre, ci sono anche diversi framework per scrivere test in Kotlin, come JUnit e KotlinTest.
+Testare codice ha radici nelle prime giornate dello sviluppo software. Alternativamente, potresti usare strumenti come Mockito per mock objects o KotlinTest per un approccio specifico per Kotlin. I test possono essere scritti a diversi livelli: unità, integrazione, sistema, accettazione. 
 
-Dettagli di implementazione:
-I test in Kotlin possono essere scritti utilizzando la sintassi `assert` o il framework di test prescelto. È importante assicurarsi che i test siano completi e coprano tutti i casi possibili.
+## Vedi Anche:
 
-## Vedi anche:
-- [KotlinTest framework](https://github.com/kotlintest/kotlintest)
+- Kotlin Testing Docs: https://kotlinlang.org/docs/reference/testing-overview.html
+- JUnit 5 User Guide: https://junit.org/junit5/docs/current/user-guide/
+- Mockito: https://site.mockito.org/
+- KotlinTest: https://github.com/kotest/kotest

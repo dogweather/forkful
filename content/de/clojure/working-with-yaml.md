@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "Clojure: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,28 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Arbeiten mit YAML ist eine Möglichkeit, Daten in einer strukturierten und lesbaren Weise zu speichern. Programmierer nutzen es, um Konfigurationsdateien, benutzerdefinierte Datenformate und sogar Übersetzungen im Code zu verwalten.
+## Was & Warum?
+YAML ist ein Datenformat ähnlich wie JSON, aber leichter zu lesen. Programmierer nutzen YAML zum Konfigurieren von Software und zum Austauschen von Daten, weil es menschenlesbar und einfach zu verstehen ist.
 
-# Wie geht's?
-In **Clojure** gibt es das Paket `yaml-clojure` für das Arbeiten mit YAML. Zuerst musst du es importieren: 
+## How to:
+Um mit YAML in Clojure zu arbeiten, verwende die Bibliothek `clj-yaml`. Hier ist ein Beispiel, wie du eine YAML-Datei einliest und sie in Clojure-Datenstrukturen umwandelst. Installiere `clj-yaml` über Leiningen mit `[clj-yaml "0.7.0"]` oder mit Clojure CLI/deps.edn `clj-yaml {:mvn/version "0.7.0"}`.
+
 ```Clojure
-(require '[yaml-clojure.core :as yaml])
+(require '[clj-yaml.core :as yaml])
+
+;; YAML-String in Clojure-Datenstruktur umwandeln
+(let [yaml-str "name: Max
+age: 30
+languages:
+  - Clojure
+  - Python"]
+  (println (yaml/parse-string yaml-str)))
 ```
-Um Daten von einer YAML-Datei zu lesen, verwende die Funktion `load` und gebe den Dateipfad als Argument an:
+
+Ausgabe:
 ```Clojure
-(yaml/load "~/pfad/zur/datei.yml")
+{:name "Max", :age 30, :languages ["Clojure" "Python"]}
 ```
-Um eine Karte in eine YAML-Datei zu schreiben, verwende `dump` und gebe die Karte und den Dateipfad als Argumente an:
+
+Und hier kannst du Clojure-Datenstrukturen in YAML umwandeln:
+
 ```Clojure
-(yaml/dump {:name "Max" :age 25} "~/pfad/zur/datei.yml")
+(def data {:name "Max", :age 30, :languages ["Clojure" "Python"]})
+
+(println (yaml/generate-string data))
 ```
-Die Ausgabe wird in der Datei als YAML-formatierter Text vorhanden sein.
 
-# Tiefer tauchen
-YAML wurde ursprünglich entwickelt, um eine einfachere und benutzerfreundlichere Alternative zu XML zu sein. Es ist ein offenes Format und es gibt mehrere Implementierungen für verschiedene Programmiersprachen. Alternativen zu YAML sind JSON und TOML.
+Ausgabe:
+```YAML
+name: Max
+age: 30
+languages:
+- "Clojure"
+- "Python"
+```
 
-Die `yaml-clojure`-Bibliothek verwendet das Java-Bibliothek SnakeYAML, um mit YAML-Daten zu arbeiten. Eine gut formatierte und detaillierte Dokumentation dazu findest du im [Github-Repository](https://github.com/yaml/yaml-clojure).
+## Tiefere Einblicke
+YAML steht für "YAML Ain't Markup Language" (oder rekursiv "YAML Ain't Markup Language") und wurde Anfang der 2000er als eine vereinfachte Alternative zu XML entwickelt. Im Gegensatz zu JSON unterstützt YAML Kommentare und kann Relationen durch Details wie Verankerungen und Verweise besser darstellen. Alternativen umfassen JSON und TOML, wobei die Wahl oft von persönlichen Vorlieben oder projektspezifischen Anforderungen abhängt. Clojure-YAML verwendet die SnakeYAML-Bibliothek für das Java-Interoperability-Back-End, was eine starke und zuverlässige Verarbeitung garantiert.
 
-# Siehe auch
-Weitere Informationen zum Arbeiten mit YAML in Clojure findest du in der [offiziellen Dokumentation](https://yaml-clojure.readthedocs.io/en/latest/). Für eine allgemeine Einführung in YAML kannst du die [offizielle Website](https://yaml.org/) besuchen.
+## Siehe Auch
+- YAML offizielle Webseite: https://yaml.org
+- clj-yaml GitHub Repository: https://github.com/clj-commons/clj-yaml
+- SnakeYAML, Java-Bibliothek verwendet von clj-yaml: https://bitbucket.org/asomov/snakeyaml

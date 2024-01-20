@@ -1,7 +1,7 @@
 ---
-title:                "写给标准错误"
-html_title:           "PHP: 写给标准错误"
-simple_title:         "写给标准错误"
+title:                "写入标准错误"
+html_title:           "Arduino: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是writing to standard error？为什么程序员要这么做？
+## What & Why? (是什么？为什么？)
 
-Writing to standard error是指在程序中将错误信息打印到控制台。程序员经常这样做是为了快速检测和解决程序中的错误，使得程序更加稳定和可靠。
+在PHP中，写入标准错误（STDERR）允许你把错误、警告和日志分开于正常输出。程序员这么做可以更好地控制和调试程序。
 
-## 如何实现？
+## How to: (如何执行：)
 
-在PHP中，可以通过使用`error_log()`函数将错误信息打印到标准错误流。下面是一个简单的例子：
+使用 fopen() 打开 STDERR 流，然后用 fwrite() 写入信息。示例如下：
 
 ```PHP
-$num = 10 / 0;
-if (!$num) {
-  error_log("除数不能为0！");
-}
+<?php
+$stderr = fopen('php://stderr', 'w');
+fwrite($stderr, "发生了一个错误。\n");
+fclose($stderr);
+?>
 ```
 
-执行以上代码后，控制台会输出错误信息“除数不能为0！”。除了使用`error_log()`函数，还可以使用`trigger_error()`函数和`die()`函数来输出错误信息。
+样本输出（在控制台）：
 
-## 深入了解
+```
+发生了一个错误。
+```
 
-写入标准错误流是一种用于调试和错误处理的常用方法，可以帮助程序员快速定位错误。除了PHP，其他编程语言如Java和Python也都提供了类似的功能。
+或者直接使用预定义的常量 STDERR：
 
-除了将错误信息打印到控制台，还可以将其记录到日志文件中，方便后续分析和修复。此外，也可以使用调试工具来捕获和查看程序中的错误。
+```PHP
+<?php
+fwrite(STDERR, "发生了一个错误。\n");
+?>
+```
 
-## 参考资料
+## Deep Dive (深入了解)
 
-- PHP中文手册：error_log - http://php.net/manual/zh/function.error-log.php
-- PHP中文手册：trigger_error - http://php.net/manual/zh/function.trigger-error.php
-- PHP中文手册：die - http://php.net/manual/zh/function.die.php
+历史上，标准错误是 UNIX 系统中的概念，它用于独立记录错误信息。PHP作为跨平台语言，沿用了这一概念。备选方案包括将错误写入文件或其他日志系统。实现细节上，PHP内建有多个错误处理函数和异常处理机制，但直接写入 STDERR 是最底层直接的方法。
+
+## See Also (另请参阅)
+
+- [PHP手册：错误处理和日志](https://www.php.net/manual/zh/book.errorfunc.php)
+- [PHP 手册：预定义变量](https://www.php.net/manual/zh/reserved.variables.php)
+- [UNIX标准输出和错误解释](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

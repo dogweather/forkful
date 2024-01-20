@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "C#: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z JSON"
+html_title:           "Bash: Praca z JSON"
+simple_title:         "Praca z JSON"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest JSON i po co to robić?
-JSON (JavaScript Object Notation) jest to lekki i czytelny sposób przedstawiania danych w postaci obiektów tekstowych. Programiści korzystają z JSON, aby łatwiej przekazywać i przechowywać dane, szczególnie w przypadku aplikacji internetowych.
+## Co i dlaczego?
+JSON to format wymiany danych, łatwy do czytania dla człowieka i maszyny. Programiści używają JSON do przechowywania ustawień, komunikacji z API i serializacji obiektów w aplikacjach sieciowych.
 
-## Jak to zrobić:
-### Przedstawienie danych w formacie JSON:
-```
-C# var person = new { name = "John", age = 30, hobbies = ["reading", "gaming"] };
-Console.WriteLine(JsonConvert.SerializeObject(person));
-```
+## Jak zrobić:
+Aby pracować z JSON w C#, używamy biblioteki `System.Text.Json`, która jest wbudowana od .NET Core 3.0. Poniżej znajdziesz przykłady serializacji i deserializacji.
 
-### Rezultat:
-```
-{"name":"John","age":30,"hobbies":["reading","gaming"]}
-```
+Serializacja:
+```C#
+using System.Text.Json;
 
-### Odczytanie danych z formatu JSON:
+var obiekt = new { Imie = "Jan", Nazwisko = "Kowalski", Wiek = 30 };
+string json = JsonSerializer.Serialize(obiekt);
+Console.WriteLine(json);
 ```
-C# var json = "{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"gaming\"]}";
-var person = JsonConvert.DeserializeObject<Person>(json);
-Console.WriteLine($"Name: {person.Name} \nAge: {person.Age} \nHobbies: {string.Join(", ", person.Hobbies)}");
+Wyjście:
+```
+{"Imie":"Jan","Nazwisko":"Kowalski","Wiek":30}
 ```
 
-### Rezultat:
+Deserializacja:
+```C#
+using System.Text.Json;
+
+string json = "{\"Imie\":\"Jan\",\"Nazwisko\":\"Kowalski\",\"Wiek\":30}";
+var obiekt = JsonSerializer.Deserialize<dynamic>(json);
+Console.WriteLine(obiekt.Imie);
 ```
-Name: John
-Age: 30
-Hobbies: reading, gaming
+Wyjście:
+```
+Jan
 ```
 
-## Głębsze zgłębienie tematu:
-### Kontekst historyczny:
-JSON został stworzony przez Douglasa Crockforda w 2001 roku i stał się popularnym sposobem zapisywania i wymiany danych.
+## Głębsze spojrzenie
+JSON, czyli JavaScript Object Notation, narodził się jako część języka JavaScript, ale szybko zyskał niezależność jako standard. Alternatywami dla JSON są XML i YAML, ale żaden nie jest tak prosty. W C#, przed `System.Text.Json`, popularna była biblioteka `Newtonsoft.Json`, znana też jako Json.NET.
 
-### Alternatywy:
-Jedną z alternatyw dla JSON jest format XML, który również służy do przechowywania i wymiany danych. Jednak JSON jest bardziej czytelny i łatwiejszy w użyciu dla programistów.
-
-### Szczegóły implementacji:
-W języku C# istnieje narzędzie o nazwie *Newtonsoft.Json*, które udostępnia metody do serializacji i deserializacji danych w formacie JSON.
-
-## Zobacz także:
-- [Dokumentacja Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/introduction.htm)
+## Zobacz również
+- Dokumentacja System.Text.Json: https://docs.microsoft.com/en-us/dotnet/api/system.text.json?view=net-5.0
+- Strona główna Json.NET: https://www.newtonsoft.com/json
+- Tutorial json.org: http://json.org/

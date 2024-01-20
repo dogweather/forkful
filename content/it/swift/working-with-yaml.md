@@ -1,6 +1,6 @@
 ---
 title:                "Lavorare con YAML"
-html_title:           "Swift: Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
 simple_title:         "Lavorare con YAML"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
-Lavorare con YAML è una pratica comune tra i programmatori per organizzare e gestire un grande numero di dati strutturati in un formato facile da leggere e modificare. Questo formato utilizza uno schema di indentazione per rappresentare i dati in modo strutturato, rendendolo ideale per gestire dati complessi.
+## What & Why?
+YAML è un formato human-friendly per dati. Programmatori lo usano per configurazione, facilitando la lettura e scrittura rispetto a JSON o XML.
 
-## Come Fare:
-Ecco un esempio di come utilizzare YAML in Swift per creare un dizionario di dati:
+## How to:
+Ecco un esempio in Swift utilizzando la libreria `Yams` per leggere un file YAML.
 
 ```Swift
-let data = """
-name: John
-age: 25
-favorite_color: Blue
+import Yams
+
+let yamlStr = """
+name: Mario Rossi
+age: 35
+languages:
+  - Swift
+  - Python
 """
 
-if let dict = try? YAMLDecoder().decode(Dictionary<String, String>.self, from: data),
-   let name = dict["name"],
-   let age = dict["age"],
-   let favoriteColor = dict["favorite_color"] {
-
-   print("\(name) is \(age) years old and their favorite color is \(favoriteColor)")
+do {
+    if let data = try Yams.load(yaml: yamlStr) as? [String: Any] {
+        print(data["name"] as? String ?? "N/A")  // Output: Mario Rossi
+        print(data["age"] as? Int ?? 0)          // Output: 35
+    }
+} catch {
+    print("Errore durante il parsing del YAML: \(error)")
 }
 ```
 
-Output:
-```
-John is 25 years old and their favorite color is Blue
-```
+Questo codice legge una stringa YAML e stampa i valori di `name` e `age`. Per usare `Yams`, installalo tramite Swift Package Manager.
 
-## Approfondimento:
-YAML (o "YAML Ain't Markup Language") è stato creato nel 2001 come un formato di serializzazione dei dati orientato al riuso e alla leggibilità. Oggi, viene ampiamente utilizzato in applicazioni web, configurazioni di server e nei file di configurazione di Ansible.
+## Deep Dive
+YAML (“YAML Ain't Markup Language”) è nato nei primi anni 2000 come alternativa a XML per la configurazione e trasmissione dati. Altri formati includono JSON e TOML. YAML spicca per la sua leggibilità e viene spesso usato in progetti come Docker e Kubernetes. Internamente, libreria `Yams` in Swift trasforma il testo YAML in una struttura di dati utilizzabile nella programmazione.
 
-Come alternativa a YAML, esistono altri formati di serializzazione dei dati come JSON e XML. Tuttavia, YAML è molto più leggibile e facile da scrivere rispetto a questi formati.
-
-Per lavorare con YAML in Swift, è possibile utilizzare la libreria di terze parti "Yams" o la libreria nativa "Codable". Entrambe consentono di codificare e decodificare dati YAML in oggetti Swift senza dover scrivere manualmente il codice per il parsing dei dati.
-
-## Vedi anche:
-- [YAML.org](https://yaml.org/)
-- [Yams on GitHub](https://github.com/jpsim/Yams)
-- [Codable on Apple Developer Documentation](https://developer.apple.com/documentation/swift/codable)
+## See Also
+- La documentazione ufficiale di YAML: https://yaml.org
+- Libreria `Yams` su GitHub: https://github.com/jpsim/Yams
+- Swift Package Manager: https://swift.org/package-manager/

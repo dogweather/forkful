@@ -1,6 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
-html_title:           "C#: Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 programming_language: "C#"
 category:             "C#"
@@ -11,34 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-YAML ist eine einfache, menschenlesbare Datenstrukturierungssprache. Programmer nutzen sie, um Daten in einem klaren Textformat zu speichern und zu lesen. Es ist einfach zu schreiben und zu verstehen, und wird häufig in Konfigurations- und Metadaten verwendet.
 
-## Wie geht das?
-Zum Lesen und Schreiben von YAML-Dateien in C# benötigt man eine Bibliothek wie z.B. YamlDotNet. Hier ist ein Beispielcode:
+YAML ist ein datenorientiertes Format für Konfigurationsdateien. Programmierer nutzen es, weil es menschenlesbar und leicht zu schreiben ist und sich nahtlos in viele Entwicklungsumgebungen integriert.
+
+## How to:
 
 ```C#
-// Lesen einer YAML-Datei
-var input = new StreamReader("dokument.yml");
-var deserializer = new DeserializerBuilder().Build();
-var doc = deserializer.Deserialize(input);
+using System;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
-// Schreiben einer YAML-Datei
-var data = new Dictionary<string, object>
+public class Person
 {
-    { "name", "Max Mustermann" },
-    { "alter", 25 },
-    { "hobbys", new string[] { "Lesen", "Radfahren", "Musik" } }
-};
-var serializer = new SerializerBuilder().Build();
-var output = serializer.Serialize(data);
-File.WriteAllText("meine_daten.yml", output);
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string[] Hobbies { get; set; }
+}
+
+class Program
+{
+    static void Main()
+    {
+        var ymlString = @"
+        name: Max Mustermann
+        age: 30
+        hobbies:
+          - Fußball
+          - Programmieren
+        ";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
+        var person = deserializer.Deserialize<Person>(ymlString);
+
+        Console.WriteLine($"Name: {person.Name}, Alter: {person.Age}");
+        foreach(var hobby in person.Hobbies)
+        {
+            Console.WriteLine($"Hobby: {hobby}");
+        }
+    }
+}
 ```
 
-## Tief einsteigen
-YAML wurde in den frühen 2000er Jahren entwickelt und ist inspiriert von Programmiersprachen wie Perl, Python und C. Es bietet eine flexible und leserliche Alternative zu XML und JSON. Alternativen zu YAML sind beispielsweise Toml oder JSON5. 
-Die Implementierung von YAML in C# bietet verschiedene Möglichkeiten zur Serialisierung und Deserialisierung von Daten, abhängig von den jeweiligen Anforderungen.
+Ausgabe:
 
-## Siehe auch
-- Offizielle YAML-Website: https://yaml.org/
-- Dokumentation für YamlDotNet: https://github.com/aaubry/YamlDotNet/wiki
-- Einsteiger-Tutorial für YAML: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
+```
+Name: Max Mustermann, Alter: 30
+Hobby: Fußball
+Hobby: Programmieren
+```
+
+## Deep Dive
+
+YAML begann um 2001 und steht für "YAML Ain't Markup Language". Es ist eine Alternative zu XML und JSON, die oft für Konfigurationsdateien genutzt wird. YAML hebt sich durch die Verwendung von Whitespace zur Datenstrukturierung ab, im Gegensatz zu den geschweiften Klammern bei JSON oder den Tags in XML. C# implementiert die Verarbeitung von YAML primär durch Drittanbieter-Bibliotheken wie YamlDotNet, da es keine native Unterstützung gibt.
+
+## See Also
+
+- YamlDotNet GitHub Repository: https://github.com/aaubry/YamlDotNet
+- YAML offizielle Webseite: https://yaml.org
+- Microsoft Konfigurationsdokumentation: https://docs.microsoft.com/de-de/aspnet/core/fundamentals/configuration/

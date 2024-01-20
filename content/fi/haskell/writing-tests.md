@@ -1,7 +1,7 @@
 ---
-title:                "Testausten kirjoittaminen"
-html_title:           "Haskell: Testausten kirjoittaminen"
-simple_title:         "Testausten kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Testing code is an essential practice for programmers, helping to ensure the quality and functionality of their code. By writing and running tests, programmers can catch bugs and errors early on and ensure their code is working as intended. 
+## What & Why?
+Testaaminen tarkoittaa ohjelmasi toiminnan varmistamista automatisoiduilla kokeilla. Ohjelmoijat testaavat koodinsa välttääkseen bugeja ja parantaakseen koodin laatua.
 
-## Mitä ja miksi?
+## How to:
+Haskellissa testit kirjoitetaan usein käyttäen HUnit- tai QuickCheck-kirjastoja. Tässä yksinkertainen esimerkki HUnitilla:
 
-Testien kirjoittaminen on prosessi, jossa ohjelmoijat luovat koodeja, joiden avulla he voivat tarkistaa ohjelmansa toimivuuden ja laadun. Tämä on tärkeä käytäntö, joka auttaa estämään virheitä ja varmistamaan koodin toimivuuden. 
+```Haskell
+import Test.HUnit
 
-## Kuinka:
+-- Funktio, joka kertoo kaksi numeroa
+multiply :: Int -> Int -> Int
+multiply x y = x * y
 
-Esimerkiksi, jos haluat testata yksinkertaisen laskutoimituksen, voit käyttää seuraavaa koodia:
+-- Testi funktiolle
+testMultiply :: Test
+testMultiply = TestCase (assertEqual "Should multiply two numbers" 20 (multiply 4 5))
+
+-- Testien suoritustoiminto
+main :: IO ()
+main = runTestTT testMultiply >>= print
 ```
-Haskell
-testi = 2+2 
-```
-Tämän jälkeen voit ajaa koodin, ja jos testi palauttaa oikean vastauksen, eli 4, niin voit olla varma, että laskutoimitus toimii oikein.
 
-## Syvemmälle:
+Suorita testi komennolla `runhaskell test.hs`. Tulostus kertoo testin tuloksen.
 
-Testaus on ollut tärkeä osa ohjelmointia jo pitkään, ja monilla ohjelmointikielillä on omat testikehysjärjestelmänsä, kuten esimerkiksi Haskellin Hspec. Vaihtoehtoina testien kirjoittamiselle voi olla manuaalinen testaus tai käyttäjien antama palaute. 
+## Deep Dive:
+Haskellin testaustyökalut ovat kehittyneet vuosien varrella. Alkuperäisen HUnitin rinnalle ovat nousseet QuickCheck ja hedgehog, jotka mahdollistavat satunnaistetut testit. Näiden avulla voimme luoda kattavampia testejä erilaisille syötteille. Testien ajamisessa yleensä käytetään Stack- tai Cabal-työkaluja, jotka mahdollistavat testien automatisoinnin osana rakennusprosessia.
 
-Testaamisen toteutus riippuu ohjelman ja sen tavoitteiden luonteesta. On tärkeää, että testit kattavat mahdollisimman paljon koodia ja erilaisia syötteitä. Testien kirjoittaminen voi myös auttaa löytämään mahdollisia virheitä tai puutteita ohjelmassa, ja antaa näin mahdollisuuden parantaa sen toimivuutta ja luotettavuutta.
-
-## Katso myös:
-
-- Lisätietoja Haskellin Hspec-testikehysjärjestelmästä: https://hspec.github.io/
-- Testausohjeita ja vinkkejä Haskell-koodaukseen: https://haskelltest.com/
+## See Also:
+- HUnit-kirjaston kotisivu: https://hackage.haskell.org/package/HUnit
+- QuickCheck-kirjasto: https://hackage.haskell.org/package/QuickCheck
+- Hedgehog-kirjasto: https://hackage.haskell.org/package/hedgehog
+- Haskell Stack-dokumentaatio: https://docs.haskellstack.org/en/stable/README/
+- Cabal-käyttöopas: https://www.haskell.org/cabal/users-guide/

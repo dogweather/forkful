@@ -1,7 +1,7 @@
 ---
-title:                "Yamlでの作業"
-html_title:           "Rust: Yamlでの作業"
-simple_title:         "Yamlでの作業"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 日本語のタイトル
-
-RustでYAMLを使う方法：シンプルで効率的なデータ管理
-
 ## What & Why?
-
-YAMLとは、プログラマーがデータをより簡単に管理するためのファイルフォーマットです。プログラマーは、YAMLを使用することで、コード内のデータをより直感的に扱うことができます。
+### 何となぜ？
+YAMLはデータ表現のための形式です。わかりやすく、人間にも機械にも扱いやすい。設定ファイルやデータのやり取りに使われる。
 
 ## How to:
+### どうやって：
+
+RustでYAMLを扱うには、`serde_yaml`クレートを使います。
 
 ```Rust
-// YAMLを読み込んで、データを取得する例
-let data = yaml::parse_file("data.yml")?;
+use serde::{Serialize, Deserialize};
+use serde_yaml;
 
-// 新しいデータをYAMLファイルに書き込む例
-let data = serde_yaml::to_string(&new_data)?;
-fs::write("new_data.yml", data)?;
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Config {
+    name: String,
+    durability: u8,
+    activated: bool,
+}
 
-// YAMLファイル内のデータを更新する例
-let mut data = yaml::parse_file("data.yml")?;
-data["key"] = "new_value".to_string();
-let new_yaml = serde_yaml::to_string(&data)?;
-fs::write("data.yml", new_yaml)?;
+fn main() -> serde_yaml::Result<()> {
+    // YAMLの文字列
+    let config_yaml = "
+name: SecretBox
+durability: 10
+activated: true
+";
+
+    // YAMLをデシリアライズ
+    let deserialized_config: Config = serde_yaml::from_str(&config_yaml)?;
+    println!("{:?}", deserialized_config);
+
+    // オブジェクトをYAMLにシリアライズ
+    let serialized_yaml = serde_yaml::to_string(&deserialized_config)?;
+    println!("{}", serialized_yaml);
+
+    Ok(())
+}
 ```
 
-## Deep Dive:
+出力:
 
-YAMLは、XMLやJSONと同様に、データのストレージと転送に使用されるフォーマットです。しかし、XMLやJSONに比べて、YAMLは読みやすく直感的な書式を採用しています。Rustでは、serde_yamlクレートを使用することで、YAMLのパースやシリアライズが簡単に行えます。
+```
+Config { name: "SecretBox", durability: 10, activated: true }
+---
+name: SecretBox
+durability: 10
+activated: true
+```
 
-代替手段としては、TOMLやINIファイルがありますが、YAMLはより複雑なデータ構造を表現することができるため、より柔軟性に富んでいます。
+## Deep Dive
+### 詳細な解説：
 
-YAMLは、2002年にオブジェクト指向プログラミング言語のPerlで開発されました。現在では、ほとんどの主要なプログラミング言語でサポートされており、データの管理に幅広く使用されています。
+YAMLは"YAML Ain't Markup Language"の略で可読性を重視。JSONやXMLより人間に優しいが、パーサの複雑さが増す。Rustでは`serde_yaml`を一般的に使うが、`yaml-rust`のような代替クレートもある。処理速度と機能に差があるため、用途に応じて選ぶ。
 
-## See Also:
+## See Also
+### 参考リンク：
 
-- [YAML公式サイト](https://yaml.org/)
-- [Rustのserde_yamlクレートドキュメント](https://docs.rs/serde_yaml/)
+- YAML公式サイト: [https://yaml.org/](https://yaml.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire sur la sortie standard"
-html_title:           "Swift: Ecrire sur la sortie standard"
-simple_title:         "Ecrire sur la sortie standard"
+title:                "Écrire dans l'erreur standard"
+html_title:           "Arduino: Écrire dans l'erreur standard"
+simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi et Pourquoi ?
+Écrire dans l'erreur standard (stderr) permet de séparer les messages d'erreurs du flux de sortie normal (stdout). Les programmeurs le font pour faciliter le débogage et la gestion des erreurs par les utilisateurs ou d'autres programmes.
 
-Ecrire vers la sortie d'erreur standard - ou "stderr" - est une pratique courante chez les programmeurs pour afficher des messages de débogage et d'erreur lors de l'exécution d'un programme. Cela peut aider les développeurs à identifier et résoudre rapidement les problèmes dans leur code.
-
-## Comment faire:
-
-Voici comment écrire vers stderr en Swift:
-
+## Comment ça marche :
 ```Swift
-FileHandle.standardError.write("Erreur: Impossible de trouver le fichier spécifié")
+import Foundation
+
+// Simple message d'erreur vers stderr
+func ecrireErreurStandard(message: String) {
+    if let data = "\(message)\n".data(using: .utf8) {
+        FileHandle.standardError.write(data)
+    }
+}
+
+// Utilisation
+ecrireErreurStandard(message: "Erreur: Fichier non trouvé.")
+
+// Sortie attendue dans stderr:
+// Erreur: Fichier non trouvé.
 ```
 
-Ce code écrira le message "Erreur: Impossible de trouver le fichier spécifié" vers stderr.
+## Plongée Profonde
+Historiquement, stderr est séparé de stdout pour permettre la redirection indépendante des messages d'erreur. Alternativement, on peut utiliser NSLog pour loguer les erreurs, mais cela va ajouter des métadonnées supplémentaires. L'implémentation en Swift fait souvent usage de `FileHandle` pour écrire dans stderr.
 
-## Plongée en profondeur:
-
-L'écriture vers stderr est utilisée depuis longtemps dans la programmation et est considérée comme une pratique standard. Une alternative à cela est d'utiliser la sortie standard, également appelée "stdout", mais cela peut entraîner un mélange de messages de débogage et de résultats de sortie, ce qui peut rendre le débogage plus difficile.
-
-L'implémentation de l'écriture vers stderr peut varier selon le langage de programmation utilisé. En Swift, l'utilisation de la fonction `write` sur le `FileHandle` associé à `standardError` est la façon recommandée d'écrire vers stderr.
-
-## Voir aussi:
-
-Vous pouvez en savoir plus sur l'utilisation et les avantages de l'écriture vers stderr en consultant les ressources suivantes:
-
-- [Documentation officielle de Swift sur l'utilisation de `FileHandle`](https://developer.apple.com/documentation/foundation/filehandle/)
-- [Article sur la différence entre stdin, stdout et stderr](https://www.gnu.org/software/libc/manual/html_node/Streams.html)
+## À Voir Aussi
+- Documentation Swift sur `FileHandle`: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filehandle)
+- Guide complet sur le système de flux POSIX (stdout, stderr): [GNU I/O Streaming](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+- Redirection des flux en ligne de commande Unix: [Redirection](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)

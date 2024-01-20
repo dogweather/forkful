@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "Elixir: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+CSV, eller "Comma-Separated Values", är ett enkelt filformat för att lagra tabulär data. Programmerare använder det för att enkelt utbyta data mellan olika program eller system.
 
-Att arbeta med CSV, också känt som Comma-Separated Values, innebär att behandla data som är organiserad i tabeller med kolumner och rader. Det är vanligtvis ett enkelt sätt att dela och utbyta data, särskilt när man hanterar stora mängder information. Programvaror som Excel och databaser stöder också CSV-formatet. Därför är det viktigt att kunna läsa och skriva CSV-filer för att hantera data på ett effektivt sätt.
-
-## Hur man:
+## How to:
+I Elixir använder vi `CSV` biblioteket för att hantera CSV-data. Så här ser det ut:
 
 ```Elixir
-defmodule CSV do
-  # Skapar en funktion för att läsa en CSV-fil
-  def read(file_name) do
-    raw_data = File.read!(file_name)
-    # Splittar raderna efter radbrytning
-    lines = String.split(raw_data, [ch: 10])
-    # Splittar raderna efter kommatecken och tar bort citattecken runt varje värde
-    lines |> Enum.map(fn line -> String.split(line, [ch: 44]) |> Enum.map(fn x -> String.trim(x, "\"") end) end)
-  end
-
-  # Skapar en funktion för att skriva till en CSV-fil
-  def write(file_name, data) do
-    # Konverterar data till en sträng och lägger till rad- och kommatecken på rätt ställen
-    output = data |> Enum.map(fn line -> Enum.join(line, ",") <> "\n" end) |> Enum.join
-    File.write!(file_name, output)
-  end
+# Lägg till CSV som ett beroende i mix.exs
+defp deps do
+  [
+    {:csv, "~> 2.4"}
+  ]
 end
 
-# Exempel på hur man kan använda funktionerna
-data = CSV.read("min_data.csv")
-CSV.write("ny_data.csv", data)
+# Läs en CSV-fil
+{:ok, data} = File.read("exempel.csv")
+rows = CSV.decode(data) |> Enum.to_list()
 
+# Skriv en CSV-fil
+headers = ["name", "age", "city"]
+people = [["Alice", 34, "Stockholm"], ["Bob", 28, "Göteborg"]]
+CSV.encode([headers | people]) |> Enum.each(&File.write!("output.csv", &1))
 ```
 
-## Deep Dive:
+Exempeloutput för `output.csv`:
+```
+name,age,city
+Alice,34,Stockholm
+Bob,28,Göteborg
+```
 
-CSV-formatet har funnits sedan 1972 och användes ursprungligen för tabellformat från IBM-mainframe. Sedan dess har det blivit ett populärt sätt att dela data mellan olika program och system. Alternativ till CSV inkluderar JSON och XML, men CSV är fortfarande mycket vanligt förekommande inom datahantering och utbyte. När man arbetar med CSV i Elixir är det viktigt att hantera eventuella speciella tecken som kan finnas i data, som till exempel radbrytningar eller kommatecken som inte är en del av värden.
+## Deep Dive
+CSV har har använts sedan 1970-talet, vilket gör det till ett av de mest etablerade formaten för dataportabilitet. Alternativ inkluderar JSON och XML, som är mer flexibla men också mer komplexa. CSV i Elixir hanteras ofta via tredjepartsbibliotek som `CSV`, som exempelvis använder `nimble_csv` under huven för att få bättre prestanda.
 
-## Se även:
-
-- Elixir's officiella dokumentation om [String-modulen](https://hexdocs.pm/elixir/String.html) som innehåller funktioner för att arbeta med text och teckensträngar.
-- [Elixir School](https://elixirschool.com/en/) en gratis läroplattform för att lära sig Elixir och dess ekosystem.
+## See Also
+- Elixir CSV bibliotek: https://hex.pm/packages/csv
+- Elixir officiella hemsida: https://elixir-lang.org/
+- Programmering med CSV i andra språk: https://en.wikipedia.org/wiki/Comma-separated_values

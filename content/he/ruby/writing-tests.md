@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת מבחנים"
-html_title:           "Ruby: כתיבת מבחנים"
-simple_title:         "כתיבת מבחנים"
+title:                "כתיבת בדיקות"
+html_title:           "Bash: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -11,26 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא תהליך שבו מתבצעת בדיקה ווודאות של קוד תוכנה על מנת לוודא שהוא עובד כפי שצריך ואין בו באגים. תהליך זה חשוב מאוד לכל מתכנת, הייתו זה מתחילים או מקצועיים, כיוון שהוא מסייע למנוע באגים ולשפר את איכות הקוד.
+כתיבת בדיקות היא תהליך שבו מתכנתים בודקים את הקוד שלהם כדי לוודא שהוא פועל כראוי. הם עושים זאת כדי לתפוס באגים מוקדם, למנוע שגיאות עתידיות, ולשפר את איכות הקוד.
 
-## איך לעשות?
+## איך לעשות:
+רובי מספקת מספר ספריות לבדיקת קוד. אהובה במיוחד היא RSpec. קודם כל, התקינו את RSpec:
+
 ```Ruby
-def add_numbers(a, b)
-  return a + b
+gem install rspec
+```
+
+לאחר מכן, צרו קובץ בדיקה:
+
+```Ruby
+# calculator_spec.rb
+require 'rspec'
+require_relative 'calculator'
+
+describe Calculator do
+  it "adds two numbers correctly" do
+    expect(Calculator.add(5, 3)).to eq(8)
+  end
 end
-
-puts add_numbers(3,5)
-```
-Output:
-```
-8
 ```
 
-## שקיפות לעומק
-ניתן למצוא את התורשות ההיסטורית של בדיקות תוכנה חזקה עד מה גם בתקופת ימי המחשבים הראשונים. כיום, ישנן אלטרנטיבות רבות לכתיבת בדיקות שבהן מתבצעות בדיקות אוטומטיות שנותנות תוצאות מדויקות יותר. בכל זאת, הכתיבה של בדיקות ידניות עדיין נחשבת לפנטסטית על מנת לבדוק ולוודא כי כל תיכנות הוא תקין.
+וקובץ המחלקה:
 
-## ראו גם
-למידע נוסף על כתיבת בדיקות תוכנה ב-Ruby, ניתן לעיין במקורות הבאים:
-- [בסיס מידע על כתיבת בדיקות תוכנה עם Ruby] (https://blog.testdouble.com/posts/2019-11-04-ruby-testing-101.html)
-- [מדריך של רובי ליסודות הבדיקות] (https://ruby-doc.org/core-2.7.1/MiniTest.html)
-- [אמרזון ועלויות של מעבדת בבדיקת איכות מוצרים] (https://aws.amazon.com/blogs/devops/testing-in-production-in-amazon-ecs-using-aws-codepipeline-aws-fargate-and-minimizing-impact-with-amazon-cloudfrontStub)
+```Ruby
+# calculator.rb
+class Calculator
+  def self.add(a, b)
+    a + b
+  end
+end
+```
+
+הפעלת הבדיקות:
+
+```bash
+rspec calculator_spec.rb
+```
+
+פלט לדוגמא:
+
+```
+.
+
+Finished in 0.00276 seconds (files took 0.10107 seconds to load)
+1 example, 0 failures
+```
+
+## עיון מעמיק
+בדיקת קוד התחילה בשנות ה-70 כדי לתת מענה לצורך של התעשייה באיכות קוד גבוהה. היום, ישנם מגוון גישות וכלים לבדיקת קוד, כגון מיני-טסט (Minitest), קפיבארה (Capybara) לבדיקות פונקציונליות, ו- Cucumber לבדיקת תכונה. יש להבדיל בין בדיקות יחידה, אשר בודקות חלקים קטנים של הקוד, לבין בדיקות אינטגרציה הבודקות תהליכים מלאים או יישומים.
+
+## ראו גם:
+- [Minitest Documentation](http://docs.seattlerb.org/minitest/)

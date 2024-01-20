@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "C: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qué y por qué?
+## ¿Qué & Por Qué?
+YAML es un lenguaje de serialización legible para humanos, usado para configuración, archivos de datos y más. Programadores usan YAML por su facilidad de lectura y compatibilidad con varios lenguajes de programación.
 
-Trabajar con YAML (YAML Ain't Markup Language) implica usar un formato de datos basado en texto para representar estructuras de datos. Los programadores lo utilizan porque es un formato fácil de leer y escribir, lo que lo hace ideal para configuraciones de aplicaciones y archivos de datos.
-
-# Cómo hacerlo:
+## Cómo Hacer:
+Para trabajar con YAML en C, necesitarás una biblioteca como `libyaml`. Aquí veremos cómo leer y parsear un archivo YAML simple.
 
 ```C
-// Incluye la biblioteca YAML
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-// Crea un documento YAML
-yaml_document_t document;
-yaml_document_initialize(&document, NULL, 0, 0);
+int main() {
+    FILE *fh = fopen("config.yaml", "r");
+    yaml_parser_t parser;
+    yaml_event_t event;
 
-// Agrega un par clave-valor al documento
-yaml_node_t *root = yaml_document_get_root_node(&document);
-yaml_node_t *key = yaml_document_add_scalar(&document, NULL, "key");
-yaml_node_t *value = yaml_document_add_scalar(&document, NULL, "value");
-yaml_node_pair_t *pair = yaml_document_add_mapping_pair(&document, root, key, value);
+    if(fh == NULL) {
+        printf("No se pudo abrir el archivo config.yaml\n");
+        return 1;
+    }
 
-// Imprime el documento
-yaml_document_dump(&document, stdout);
+    if(!yaml_parser_initialize(&parser)) {
+        printf("Inicialización del parseador fallida\n");
+        return 2;
+    }
 
-// Limpia el documento
-yaml_document_delete(&document);
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event)) {
+            printf("Error al parsear YAML\n");
+            break;
+        }
+
+        // Haz algo con event.type o event.data aquí
+
+        if (event.type == YAML_STREAM_END_EVENT) {
+            break;
+        }
+
+        yaml_event_delete(&event);
+    }
+
+    yaml_parser_delete(&parser);
+    fclose(fh);
+
+    return 0;
+}
 ```
 
-Salida: ```key: value```
+Este código abre un archivo `config.yaml`, inicializa un parser de YAML y lee el archivo, evento por evento. El procesamiento de los datos depende de tu aplicación.
 
-# Inmersión profunda:
+## Deep Dive:
+YAML, acrónimo de "YAML Ain't Markup Language" (un juego de palabras que significa "YAML no es un lenguaje de marcado"), emergió a principios de los años 2000. Se considera más simple y legible que alternativas como XML o JSON. La simplicidad es relativa; los archivos grandes de YAML pueden ser complicados. Librerías como `libyaml` (para C) ayudan a manejar la complejidad del parseo y la generación de archivos YAML.
 
-- YAML fue diseñado originalmente para ser un formato de serialización de datos para lenguajes de programación, pero también se puede utilizar para archivos de configuración y otros usos.
-- Alternativas populares a YAML incluyen JSON y XML.
-- Para implementar YAML en un proyecto de C, se puede utilizar una biblioteca como libyaml.
-
-# Ver también:
-
-- [Sitio oficial de YAML](https://yaml.org/)
-- [Documentación de la biblioteca libyaml](https://pyyaml.org/wiki/LibYAML)
-- [Especificación de YAML](https://yaml.org/spec/)
+## See Also:
+- Librería oficial de YAML para C: http://pyyaml.org/wiki/LibYAML
+- Especificación de YAML: https://yaml.org/spec/1.2/spec.html
+- Tutorial interactivo de YAML: https://learnxinyminutes.com/docs/yaml/

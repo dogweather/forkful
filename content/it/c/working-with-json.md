@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "C: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -11,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cos'è e perché?
-
-Lavorare con JSON significa manipolare dati in formato JSON, una forma compatta e leggibile di rappresentare dati strutturati. I programmatori utilizzano JSON per scambiare dati tra applicazioni o per memorizzarli su database.
+Lavorare con JSON (JavaScript Object Notation) significa manipolare dati strutturati, utili per lo scambio di informazioni tra client e server. Lo usiamo perché è leggero, facile da leggere per l'uomo e da analizzare per le macchine.
 
 ## Come fare:
-
-Utilizzare una libreria C come "json-c" per analizzare ed elaborare dati JSON. Di seguito è riportato un esempio di come leggere un file JSON e estrarre il valore di una chiave:
+Supponiamo di voler leggere un JSON e stampare il valore di una chiave specifica. Useremo la libreria `cJSON`:
 
 ```C
 #include <stdio.h>
-#include <json-c/json.h>
+#include "cjson/cJSON.h"
 
 int main() {
-  struct json_object* json = json_object_from_file("file.json");
-  struct json_object* value = json_object_object_get(json, "chiave");
-  printf("valore della chiave: %s\n", json_object_to_json_string(value));
-  json_object_put(json);
-  return 0;
+    // Esempio di JSON
+    char *my_json_string = "{\"name\":\"Mario\",\"age\":30}";
+
+    // Parse del JSON
+    cJSON *parsed_json = cJSON_Parse(my_json_string);
+    
+    // Estrazione del valore della chiave "name"
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(parsed_json, "name");
+    
+    if (cJSON_IsString(name) && (name->valuestring != NULL)) {
+        printf("Name: %s\n", name->valuestring);
+    }
+    
+    // Pulizia
+    cJSON_Delete(parsed_json);
+    
+    return 0;
 }
 ```
-
 Output:
 ```
-valore della chiave: "valore della chiave"
+Name: Mario
 ```
 
-## Approfondimento:
+## Approfondimenti
+Historicamente, JSON nasce nei primi anni 2000 come alternativa a XML, meno verboso e più semplice da manipolare. Altre alternative includono YAML o BSON. Implementare il supporto JSON in C richiede l'uso di librerie esterne come `cJSON` o `Jansson`, che forniscono funzioni per il parsing e la generazione di JSON.
 
-Il formato JSON è stato inventato da Douglas Crockford nel 2001 ed è diventato uno standard de facto per lo scambio di dati su internet. Alcune alternative al formato JSON sono XML e YAML, ma JSON è preferito per la sua semplicità e leggibilità. Per lavorare con JSON in C, puoi anche utilizzare altre librerie come "cJSON" o "jansson".
-
-## Vedi anche:
-
-- [Libreria json-c] (https://github.com/json-c/json-c)
-- [Libreria cJSON] (https://github.com/DaveGamble/cJSON)
-- [Libreria Jansson] (https://github.com/akheron/jansson)
+## Vedi anche
+- Documentazione di `cJSON`: https://github.com/DaveGamble/cJSON
+- Comparazione tra librerie JSON in C: https://en.wikibooks.org/wiki/C_Programming/JSON
+- Tutorial JSON in C con libreria `Jansson`: http://www.digip.org/jansson/

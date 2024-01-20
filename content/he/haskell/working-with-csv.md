@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם קובץ csv"
-html_title:           "Haskell: עובדים עם קובץ csv"
-simple_title:         "עובדים עם קובץ csv"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -11,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) נעשית לצורך קריאה וכתיבה של נתונים בפורמט פשוט ונפוץ. תכנתים עושים זאת כדי לשתף נתונים עם מערכות אחרות בקלות ולעבד נתונים בצורה אוניברסלית.
 
-CSV הוא פורמט קובץ נפוץ במיוחד בעולם התכנות ומיועד לאחסון נתונים טבלאיים בצורה פשוטה וקריאה. הפורמט מאפשר לנתונים להיחשב בקלות ולהיכנס בתוך תוכניות שונות, כך שמתכנתים יכולים לעבוד איתם ולעבוד עלייהם באופן מהיר ויעיל. 
+## איך לעשות:
+בעבודה עם הספרייה `cassava`, תעזרו בפונקציות `encode` ו`decode` לעיבוד נתונים:
 
-## איך לעשות?
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 
-דוגמאות קוד ניתנות למצוא בתוך המאמר זה, כולן מתוך שפת התכנות Haskell. תוכלו לראות את הקוד הכולל בתוך כוכביות כהערות, על מנת לקלקל את הקוד לתוך השורות הנכונות שנדרשות כדי לעבד נתונים במבנה CSV. הנה כמה דוגמאות קוד ופלט תמונות להדגמה:
+-- טיפול בנתונים נכנסים
+decodeCSV :: BL.ByteString -> Either String (V.Vector (String, Int, String))
+decodeCSV input = decode NoHeader input
 
-```Haskell
--- קליטת קובץ CSV כנתוני מילות מפתח
-let csvData = readFile "data.csv"
-let keywords = map (takeWhile (/= ',')) (lines csvData)
+-- ייצור נתונים לקובץ CSV
+encodeCSV :: V.Vector (String, Int, String) -> BL.ByteString
+encodeCSV = encode
 
--- יצירת קובץ CSV מתוך רשימת נתונים טבלאיים
-let tableData = [["שם", "גיל"], ["דניאל", "27"], ["שרה", "25"], ["משה", "30"]]
-let csvString = unlines $ map (intercalate ",") tableData
-writeFile "data.csv" csvString
+-- פלט לדוגמה:
+-- נניח קובץ 'data.csv' עם התוכן הבא:
+-- name,age,city
+-- John,30,New York
+-- Jane,25,Boston
+
+-- השימוש בפונקציות
+main :: IO ()
+main = do
+  csvData <- BL.readFile "data.csv"
+  case decodeCSV csvData of
+    Left err -> putStrLn err
+    Right rows -> BL.writeFile "new_data.csv" $ encodeCSV rows
 ```
 
-פלט: "שם,גיל"
-      "דניאל,27"
-      "שרה,25"
-      "משה,30"
+## עיון מעמיק:
+קבצי CSV נמצאים בשימוש מראשית המחשוב כמעט. נוחותם בגלל פשטותם וקלות הקריאה בעיני ראייה אנושית ובמערכת מחשב. ישנן חלופות רבות, כמו JSON או XML, אך לעיתים CSV הוא הבחירה מסיבות של תאימות או ביצועים. ב-Haskell, `cassava` היא הספרייה הנפוצה ביותר לעבודה עם CSV, מציעה פונקציונליות גמישה והמרה אוטומטית של טיפוסי נתונים.
 
-## מעמקים
-
-CSV הוא אקרונים ל-Comma Separated Values, והטכניקה שמאחורי פורמט הקובץ נוצרה בשנת 1972 ונהפכה למנהג בעולם התכנות. כיום, ישנם תוכניות רבות שמאפשרות עבודה עם CSV ומספקות כלים יעילים למתכנתים. עם זאת, ישנם גם פורמטים אחרים לאחסון נתונים טבלאיים כמו XML ו-JSON. כך שכשמתכנתים יבחרו לעבוד עם CSV, יש להם בדיקה מדוקדקת לעשות מה שתוכניות אחרות לא יעשו.
-
-## ראו גם
-
-למידע נוסף על כיצד לעבוד עם קבצי CSV ב-Haskell, בקרו בקישורים הבאים:
+## ראה גם:
+- [Cassava on Hackage](https://hackage.haskell.org/package/cassava)
+- [Haskell CSV tutorial](https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/)
+- [More about CSV on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)

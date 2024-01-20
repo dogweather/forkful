@@ -1,7 +1,7 @@
 ---
-title:                "「JSON での作業」"
-html_title:           "Haskell: 「JSON での作業」"
-simple_title:         "「JSON での作業」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何それ？なんでやるの？
+## What & Why? (何となぜ？)
+JSONはデータ交換のフォーマット。Web APIとの対話や設定ファイル利用のため重要。Haskellで扱う理由は型安全な操作とパフォーマンス。
 
-JSONを扱うことは、データの受け渡しや保存に便利なフォーマットです。JSONは、人間にとって読みやすく、コンピュータにとっても解析しやすい形式を持っています。プログラマーたちは、データを簡単に処理できるようにするために、JSONを使用します。
-
-## 方法：
-
-Haskellでは、JSONを扱うための便利なライブラリがたくさんあります。以下のようにインポートして、簡単にJSONの値を作成できます。
-
+## How to: (やり方)
 ```Haskell
+-- 必要なパッケージ：aeson
 import Data.Aeson
+
+-- JSONエンコード
+encodeExample = encode (["apple", "banana"] :: [String])
+
+-- JSONデコード
+decodeExample = decode "[\"apple\",\"banana\"]" :: Maybe [String]
+
+main = do
+  -- エンコードした結果を表示
+  print encodeExample
+  -- デコードした結果を表示
+  print decodeExample
 ```
 
-また、ファイルからJSONを読み込んだり、JSONからファイルを生成したりすることもできます。
-
-```Haskell
-import qualified Data.ByteString.Lazy as BS
-import Data.Aeson.Encode.Pretty
-
--- JSONからファイルを生成
-writeJSONtoFile :: ToJSON a => FilePath -> a -> IO ()
-writeJSONtoFile path json =
-  BS.writeFile path $ encodePretty json
-
--- ファイルからJSONを読み込み
-readJSONfromFile :: FromJSON a => FilePath -> IO (Maybe a)
-readJSONfromFile path = do
-  fileContent <- BS.readFile path
-  return $ decode fileContent
+出力:
+```
+"[\"apple\",\"banana\"]"
+Just ["apple","banana"]
 ```
 
-## 詳しく知る：
+## Deep Dive (深掘り)
+JSONはJavaScript Object Notationの略。2001年に開発され、軽量なテキストベースの交換フォーマットとして広まった。Haskellの`aeson`ライブラリはJSONのパースと生成における標準的選択。C言語で書かれた`json`ライブラリに比べ速度と安全性に優れる。代わりに`yaml`や`xml`など利用可能だが、JSONはシンプルでWebとの相性が良い。
 
-JSONは、プログラミング言語に依存しない一般的なフォーマットです。特に、ウェブアプリケーションを開発する際に、サーバーとクライアント間のデータのやり取りに頻繁に使用されます。他の言語でも、JSONを扱うためのライブラリが多数存在しますが、Haskellの型システムのおかげで、静的型付けと安全なコードを実現することができます。
-
-## 関連情報を見る：
-
-- [Hackage: Data.Aeson](https://hackage.haskell.org/package/aeson)
-- [JSON公式サイト](https://www.json.org/json-ja.html)
+## See Also (関連リンク)
+- `aeson` パッケージ: https://hackage.haskell.org/package/aeson
+- JSON specification: https://www.json.org/json-ja.html
+- Real World HaskellのJSON章: http://book.realworldhaskell.org/read/json.html

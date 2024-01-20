@@ -1,7 +1,7 @@
 ---
-title:                "לעבוד עם yaml"
-html_title:           "Lua: לעבוד עם yaml"
-simple_title:         "לעבוד עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-מטרת העבודה עם YAML היא לאפשר העברת מידע מורכב בין שפות תכנות שונות בצורה פשוטה וקלה. תוכניות נכתבות בשפות שונות, עבור תקשורת וגיבוי בקוד ויש יישומים מורכבים הדורשים שימוש בשפות שונות. YAML מספק דרך בטוחה וייעודית להעביר ולארגן מידע בין שפות. 
+## מה ולמה?
+YAML הוא פורמט קל לקריאה להגדרת נתונים והגדרות תצורה. תוכנים עובדים עם YAML כדי לשמור מידע בצורה מסודרת ונגישה, שמתאימה גם לאנשים וגם למחשבים.
 
-## איך לעשות: 
-תחביר YAML דומה במרביתו ל-JSON, ולכן משתמשים בה כדי לכתוב מידע בצורה ברורה וקריאה. השפה פונקציונאלית, ולכן ניתן לעבוד איתה בכמה צורות. 
-כאן ניתן לראות דוגמה פשוטה של כתיבת קוד ב-Lua עם פונקציית YAML כדי לארגן מידע: 
-```
---טעינת הספריות הדרושות
-local yaml = require "yaml" 
---יצירת מילון עם כמה שדות 
-local dictionary = { 
-  name = 'John', 
-  age = 27, 
-  hobbies = {'reading', 'painting', 'hiking'} 
-} 
---המרת המילון לקובץ YAML
-local yaml_text = yaml.dump(dictionary) 
---הדפסת התוצאה 
-print(yaml_text) 
-```
-תוצאת התוכנה היא: 
-```
-name: John 
-age: 27 
-hobbies: 
-- reading 
-- painting 
-- hiking
+## איך לעשות:
+ב-Lua אין תמיכה יילידית ב-YAML, אז נשתמש בספרייה חיצונית.
+
+התקן את lyaml:
+```bash
+luarocks install lyaml
 ```
 
-## טיול עמוק: 
-YAML, שם הקצר ל-"YAML Ain't Markup Language", נוצר בשנת 2001 כדי להיות דרך נוחה יותר להעברת מידע מורכב מתוך XML. כיום הוא משמש כטכנולוגיה פופולרית יותר מאי פעם ומשמש להעברת מידע בין שפות תכנות, פתרונות ענן, סביבות אינטרנט ועוד. בין האלטרנטיבות ל-YAML ניתן למצוא את JSON (אותו יישום לשפת תכנות כמו YAML) ו-TOML (תומל), ששימש כתחליף עבור קבצים בפורמט ini. 
-כאשר עובדים עם YAML, חשוב לזכור כי פני העבודה של השפה הם משתנים של מחרוזות פסקל ולא טיפוסים מוגדרים בשפת תכנות. כמו כן, חבילות פסקל יכולות להיות מעוצבות כדי להתקל בקוד יותר פשוט וקריא. 
+קוד לעיבוד קובץ YAML:
 
-## ראו גם: 
-כאן ניתן למצוא מדריכים, דוגמאות נוספות, ותיעוד מידע: 
-- אתר הבית של YAML: https://yaml.org/ 
-- דוגמאות ותיעוד מידע נוספים עבור YAML במדריכי ה-W3Schools: https://www.w3schools.io/file-formats/yaml/
+```Lua
+local yaml = require 'lyaml'
+
+-- טען תוכן YAML ממחרוזת
+local yaml_data = [[
+- name: Tomer
+  job: Software Developer
+- name: Alex
+  job: Data Analyst
+]]
+
+-- קרא את ה-YAML והמיר אותו לטבלה של Lua
+local people = yaml.load(yaml_data)
+
+-- הדפס את המידע
+for _, person in ipairs(people) do
+  print(person.name .. " is a " .. person.job)
+end
+```
+
+פלט לדוגמא:
+```
+Tomer is a Software Developer
+Alex is a Data Analyst
+```
+
+## היכנס לעומק:
+YAML (YAML Ain't Markup Language) פותח תחילה ב-2001 והוא אלטרנטיבה ל-XML או ל-JSON. YAML מיועד בעיקר למקרים בהם הקריאות לאדם חשובה מאוד, כמו קבצי תצורה. יש כמה ביבליות Lua לעבודה עם YAML, אבל 'lyaml' היא אחת מהנפוצות.
+
+## ראה גם:
+- המסמך הרשמי של YAML - https://yaml.org/spec/1.2/spec.html
+- lyaml ב-GitHub - https://github.com/gvvaughan/lyaml
+- עמוד הספרייה ב-LuaRocks - https://luarocks.org/modules/gvvaughan/lyaml

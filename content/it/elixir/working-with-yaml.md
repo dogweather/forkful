@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Elixir: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché? 
+## What & Why?
+YAML è un formato per dati umano-leggibili, usato per configurazioni o dati interscambiabili. Gli sviluppatori Elixir lo sfruttano per facilità di lettura e compatibilità tra varie tecnologie.
 
-Lavorare con YAML è un modo per gestire i dati in modo semplice e leggibile per i programmatori. È un formato di serializzazione di dati che permette di salvare informazioni in un formato di testo chiaro e strutturato. I programmatori utilizzano YAML principalmente per la configurazione di applicazioni e per l'interscambio di dati tra sistemi.
+## How to:
+Per lavorare con YAML in Elixir, usi la libreria `YamlElixir`. Ecco come leggere e scrivere in YAML:
 
-## Come fare:
+```elixir
+# Aggiungi `yaml_elixir` nel tuo mix.exs
+defp deps do
+  [
+    {:yaml_elixir, "~> 2.8"}
+  ]
+end
 
-Per iniziare a lavorare con YAML in Elixir, è necessario installare la libreria "YAML Elixir" tramite il comando `mix`. Una volta installata, è possibile importare il modulo utilizzando `use YAML` e iniziare a gestire i dati in formato YAML.
+# Uso per leggere YAML
+{ok, data} = YamlElixir.read_from_string("""
+name: Fulvio
+role: Developer
+languages:
+  - Elixir
+  - Ruby
+""")
 
-Ecco un esempio di come convertire dati in YAML utilizzando il modulo YAML Elixir:
+IO.inspect(data)
+# Produce: %{"name" => "Fulvio", "role" => "Developer", "languages" => ["Elixir", "Ruby"]}
 
-```Elixir
-data = %{ name: "John", age: 30, status: "active" }
+# Uso per scrivere in YAML
+map = %{
+  "name" => "Fulvio",
+  "role" => "Developer",
+  "languages" => ["Elixir", "Ruby"]
+}
 
-YAML.dump(data)
+yaml = YamlElixir.write_to_string(map)
+IO.puts yaml
+# Produce:
+# ---
+# languages:
+#   - Elixir
+#   - Ruby
+# name: Fulvio
+# role: Developer
 ```
 
-Questo codice produrrà il seguente output in formato YAML:
+## Deep Dive
+YAML nasce nel 2001 come alternativa a XML, facile da scrivere e leggere per umani. Per Elixir, `YamlElixir` è scelta comune, ma esistono anche librerie alternative come `yamerl` e `ex_yaml`. Internamente, `YamlElixir` si appoggia ad `erlang-yaml` che si basa su libyaml per parsing e dumping efficienti.
 
-```YAML
-name: John
-age: 30
-status: active
-```
-
-Per caricare invece un file YAML all'interno di una variabile in Elixir, si può utilizzare il seguente codice:
-
-```Elixir
-file = File.read!("data.yaml")
-
-YAML.load(file)
-```
-
-In questo caso, la variabile `file` conterrà il testo del file YAML e il metodo `YAML.load` permetterà di convertirlo in una mappa compatibile con Elixir.
-
-## Approfondimento:
-
-YAML è stato sviluppato nel 2001 da Ingy döt Net e Clark Evans come alternativa al formato XML per la memorizzazione e lo scambio di dati. Fornisce una sintassi molto più leggibile e semplice rispetto ad altri formati come JSON e XML. Inoltre, è disponibile in molte lingue di programmazione, tra cui Elixir.
-
-Un'alternativa alla libreria YAML Elixir è YAMLix, che fornisce funzionalità aggiuntive come la possibilità di convertire direttamente da YAML a codice Elixir.
-
-Per quanto riguarda l'implementazione, la libreria YAML Elixir utilizza la libreria YAML C per la conversione dei dati, permettendo una maggiore efficienza nei processi di serializzazione e deserializzazione.
-
-## Vedi anche:
-
-- [Documentazione sulla libreria YAML Elixir](https://hexdocs.pm/yaml/readme.html)
-- [Sintassi di YAML](https://yaml.org/spec/1.2/spec.html)
+## See Also
+- [YamlElixir](https://hex.pm/packages/yaml_elixir) su Hex
+- Documentazione libyaml: [LibYAML](https://pyyaml.org/wiki/LibYAML)
+  
+Ricorda di sempre consultare la documentazione delle dipendenze per eventuali aggiornamenti o cambiamenti nelle versioni più recenti.

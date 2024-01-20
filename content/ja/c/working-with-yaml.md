@@ -1,7 +1,7 @@
 ---
-title:                "「yamlでの作業」"
-html_title:           "C: 「yamlでの作業」"
-simple_title:         "「yamlでの作業」"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# YAMLとは何か？
+## What & Why? (何となぜ？)
+YAMLはデータを表すためのフォーマットです。設定ファイルやデータ交換に使用され、JSONよりも読みやすく、シンプルな構造が特徴です。
 
-YAMLは、人間が読みやすくて簡単な構文で構造化データを表現するために使われるフォーマットです。プログラマーは、YAMLを使用して設定ファイルやデータのシリアライズやストレージを行います。
+## How to: (やり方)
+C言語には標準のYAMLパーサーはありませんが、libyamlというライブラリを使うことができます。以下に基本的なYAMLファイルの読み込み例を示します。
 
-# 方法：
-
-## YAMLデータを読み込む
 ```C
-FILE *file = fopen("data.yaml", "r");
-yaml_parser_t parser;
-yaml_event_t event;
+#include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-yaml_parser_initialize(&parser);
-yaml_parser_set_input_file(&parser, file);
+int main(void) {
+    FILE *fh = fopen("example.yaml", "r");
+    yaml_parser_t parser;
+    yaml_event_t event;
 
-do {
-  yaml_parser_parse(&parser, &event);
-  /* 自分でやって */
-  yaml_event_delete(&event);
-} while (event.type != YAML_STREAM_END_EVENT);
+    if (!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize parser!\n", stderr);
+    if (fh == NULL)
+        fputs("Failed to open file!\n", stderr);
 
-yaml_parser_delete(&parser);
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
+
+        if (event.type == YAML_SCALAR_EVENT)
+            printf("Value: %s\n", event.data.scalar.value);
+
+        if (event.type != YAML_STREAM_END_EVENT)
+            yaml_event_delete(&event);
+        else
+            break;
+    }
+
+    yaml_event_delete(&event);
+    yaml_parser_delete(&parser);
+    fclose(fh);
+    return 0;
+}
 ```
 
-## YAMLデータを書き込む
-```C
-FILE *file = fopen("data.yaml", "w");
-yaml_emitter_t emitter;
-yaml_event_t event;
+このコードは`example.yaml`ファイルを読み込み、中の値を印刷します。実際の出力はYAMLの内容に依存します。
 
-yaml_emitter_initialize(&emitter);
-yaml_emitter_set_output_file(&emitter, file);
+## Deep Dive (深堀り)
+YAMLは2001年に登場し、INI、JSON、XMLなどのフォーマットが存在する中、その可読性と簡潔さで注目を集めました。C言語のlibyamlライブラリは、速度と安定性に重点を置いて設計されていますが、他にもYAMLパーサのライブラリが存在します。YAMLは階層的なデータ構造をうまく扱い、複雑なデータ構造をシンプルなテキスト形式で表現できるため、設定ファイルやアプリケーションのデータ保存に適しています。
 
-/* 自分でやって */
+## See Also (関連情報)
+- YAML公式サイト: https://yaml.org
+- LibYAML GitHubリポジトリ: https://github.com/yaml/libyaml
+- YAML 1.2 仕様 (和訳): https://yaml.org/spec/1.2/spec.html
 
-yaml_emitter_delete(&emitter);
-```
-
-# もっと詳しく：
-
-## 歴史的背景
-YAMLは、2001年にClark Evansによって開発されました。その後、Oren Ben-KikiとIngy döt Netが開発を引き継ぎ、2006年にに正式なバージョンがリリースされました。YAMLの名前は、「YAML Ain't Markup Language」の略です。
-
-## 代替手段
-XMLやJSONなどの他のデータフォーマットもよく使われていますが、YAMLはよりシンプルで人間が読みやすい構文を提供しています。
-
-## 実装の詳細
-YAMLは、YAML Ain't Markup Language (YAML)データシリアライザライブラリを使用して実装されています。ただし、これはC言語以外でも利用できるので、他の言語でも使用することができます。
-
-# 関連情報：
-
-- [YAML公式サイト](https://yaml.org/)
-- [YAML Ain't Markup Language (YAML)データシリアライザライブラリ](https://github.com/yaml/libyaml)
-- [YAMLの歴史](https://yaml.org/spec/history/2001-12-10.html)
+この記事で取り上げた内容をさらに学びたい場合は、上記のリンクを参照してください。

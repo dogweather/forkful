@@ -1,6 +1,6 @@
 ---
 title:                "Working with csv"
-html_title:           "PHP recipe: Working with csv"
+html_title:           "C recipe: Working with csv"
 simple_title:         "Working with csv"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,46 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Working with CSV (Comma Separated Values) in PHP refers to manipulating and processing data in a format that separates values using commas. Programmers use CSV because it is a simple, lightweight, and widely used file format for storing and exchanging tabular data.
+CSV, short for Comma-Separated Values, is a ubiquitous file format for storing tabular data. Programmers use it because it's simple, widely supported, and can be easily read and written by both computers and humans.
 
 ## How to:
 
-To start working with CSV in PHP, we first need to understand how to read and write CSV files.
+### Reading a CSV File
+```php
+<?php
+$filename = 'data.csv';
 
-To read a CSV file, we use the `fopen()` function to open the file, `fgetcsv()` to read each line of the file, and `fclose()` to close the file after we're done. Here's an example:
-
-```PHP
-$file = fopen("data.csv", "r"); // open the CSV file for reading
-while (($data = fgetcsv($file)) !== FALSE) { // loop through each line of the file
-    print_r($data); // print the data 
+if (($handle = fopen($filename, "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        echo "Row: " . print_r($data, true) . "\n";
+    }
+    fclose($handle);
 }
-fclose($file); // close the file
+?>
+```
+Sample Output:
+```
+Row: Array
+(
+    [0] => Name
+    [1] => Age
+    [2] => Email
+)
+
+Row: Array
+(
+    [0] => John Doe
+    [1] => 30
+    [2] => john@example.com
+)
 ```
 
-The `fgetcsv()` function returns an array containing the data from each line of the CSV file. We can then use `print_r()` to print the data out in a readable format.
+### Writing to a CSV File
+```php
+<?php
+$list = [
+  ['Name', 'Age', 'Email'],
+  ['Jane Doe', '25', 'jane@example.com'],
+  ['John Smith', '40', 'john.smith@example.com']
+];
 
-To write to a CSV file, we use the `fopen()` function with the "w" flag to open the file for writing, `fputcsv()` to write data to the file, and `fclose()` to close the file. Here's an example:
+$filename = 'output.csv';
 
-```PHP
-$file = fopen("data.csv", "w"); // open the CSV file for writing
-$data = array(1, "John", "Doe"); // data to be written to the file
-fputcsv($file, $data); // write data to the file
-fclose($file); // close the file
+$handle = fopen($filename, 'w');
+
+foreach ($list as $fields) {
+    fputcsv($handle, $fields);
+}
+
+fclose($handle);
+?>
 ```
 
-This will create a new CSV file named "data.csv" and write the data `1, "John", "Doe"` to the first line of the file.
+## Deep Dive
+CSV's been around since the early days of computing, making it one of the most enduring data storage formats. While JSON and XML offer more complexity, CSV remains popular for its simplicity. When using PHP to manipulate CSV files, you interact with the file system through built-in functions like `fgetcsv()` and `fputcsv()`. These functions encapsulate the nitty-gritty of file parsing and writing, making it pretty straightforward. Do note that the `fgetcsv()` function allows you to define a length parameter and a delimiter, which you may need to tweak according to your CSV file's specifics.
 
-## Deep Dive:
-
-CSV files have been around since the 1970s, and they have become a popular choice for storing and exchanging data due to their simplicity and compatibility with various software and programming languages.
-
-In PHP, there are alternative ways to work with CSV such as using the `SplFileObject` class or third-party libraries like LeagueCSV. These alternatives provide additional features and functionality for working with CSV files.
-
-It's important to note that when writing to a CSV file, we may encounter issues with characters that need to be escaped, such as commas and line breaks. To handle this, we can use the `fputcsv()` function's `delimiter` and `escape_char` parameters to specify the characters to use for delimiting and escaping data.
-
-## See Also:
-
-- [PHP manual on working with CSV](https://www.php.net/manual/en/ref.filesystem.php)
-- [SplFileObject class documentation](https://www.php.net/manual/en/class.splfileobject.php)
-- [LeagueCSV library documentation](https://csv.thephpleague.com/)
+## See Also
+- PHP Official Documentation on fgetcsv: https://www.php.net/manual/en/function.fgetcsv.php
+- PHP Official Documentation on fputcsv: https://www.php.net/manual/en/function.fputcsv.php
+- Introduction to CSV processing with PHP: https://www.php.net/manual/en/book.fileinfo.php
+- Online CSV editor and validator: https://csvlint.io/
+- RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files: https://tools.ietf.org/html/rfc4180

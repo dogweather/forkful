@@ -1,7 +1,7 @@
 ---
-title:                "「jsonを扱う」"
-html_title:           "Elixir: 「jsonを扱う」"
-simple_title:         "「jsonを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
+## What & Why? (何となぜ？)
+JSONデータの操作はよくあります。Elixir でのJSONは、データ交換が簡単で、APIやWebサービスとの通信に使われます。
 
-JSON(JavaScript Object Notation)は、データのフォーマットであり、Javascriptにおいてオブジェクトを扱う際に一般的に使われています。JSONは人間にとって読みやすく、機械にとっても解析しやすいため、プログラマーにとってはとても便利なツールです。
+## How to: (方法)
+ElixirでのJSON扱いには、PoisonやJasonなどのライブラリが必要です。以下はJasonの使い方例です。
 
-## 作り方：
+```Elixir
+# JasonライブラリをMixに追加
+defp deps do
+  [
+    {:jason, "~> 1.2"}
+  ]
+end
 
-Elixirを使ってJSONを作成するには、`Jason`モジュールを用いることができます。以下は簡単な例です。
+# JSON文字列をElixirのマップに変換
+json_string = "{\"key\": \"value\"}"
+map = Jason.decode!(json_string)
+IO.inspect(map) # 出力: %{"key" => "value"}
 
+# Elixirデータ構造をJSON文字列に変換
+map = %{"key" => "value"}
+json_string = Jason.encode!(map)
+IO.puts(json_string) # 出力: {"key":"value"}
 ```
-Elixir iex> Jason.encode!(%{name: "John", age: 25})
-"{\"name\":\"John\",\"age\":25}"
-```
 
-また、JSONを読み込む際には以下のようにします。
+## Deep Dive (深掘り)
+JSONはJavaScript Object Notationの略で、軽量なデータ交換フォーマットです。2001年に導入され、その使いやすさからXMLを置き換える主流のフォーマットになりました。Elixirでは、標準でJSONのサポートがありませんが、PoisonやJasonのようなライブラリを使うことで簡単に実装できます。これらのライブラリは、パフォーマンスや使いやすさにおいて異なる選択肢を提供します。
 
-```
-Elixir iex> Jason.decode!("{\"name\":\"John\",\"age\":25}")
-%{"name" => "John", "age" => 25}
-```
-
-## 詳しい解説：
-
-JSONは 2001年に開発され、軽量でシンプルなデータフォーマットとして広く受け入れられてきました。他の代表的なフォーマットであるXMLに比べてパースや処理が高速であるため、データの交換や保存に利用されます。
-
-Elixirでは、`Poison`や`Jason.so`などのモジュールもJSONの処理に使えるため、自分にとって最適な方法でJSONを操作することができます。
-
-## 関連リンク：
-
-- [Elixir 公式ウェブサイト](https://elixir-lang.org/)
-- [JSON フォーマット仕様書](https://www.json.org/json-ja.html)
-- [Poison モジュール](https://github.com/devinus/poison)
+## See Also (関連情報)
+- [Jason GitHubページ](https://github.com/michalmuskala/jason)
+- [Elixirの公式ページ](https://elixir-lang.org)
+- [JSONの公式サイト](https://www.json.org/json-ja.html)

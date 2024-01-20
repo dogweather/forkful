@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Haskell: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why?
+Manipuler des fichiers CSV (Comma-Separated Values), c'est travailler avec des données tabulaires simples. Les programmeurs le font pour importer, exporter, et traiter des données de manière interopérable.
 
-Le CSV (Comma Separated Values) est un format de fichier utilisé pour stocker des données sous forme de tableaux avec des valeurs séparées par des virgules. Les programmeurs travaillent souvent avec des fichiers CSV car ils sont faciles à lire et à écrire, et peuvent être importés dans de nombreux programmes et applications pour analyse et traitement des données.
+## How to:
+Utilisons `cassava`, une bibliothèque populaire pour gérer les CSV en Haskell. D'abord, installez le package avec cabal:
 
-## Comment faire:
+```shell
+cabal update
+cabal install cassava
+```
 
-Pour travailler avec des fichiers CSV en Haskell, vous aurez besoin d'importer le module ```Data.Csv``` dans votre code. Voici un exemple de code qui lit un fichier CSV et affiche chaque ligne avec son index:
+Voici un exemple de lecture d'un fichier CSV et d'affichage de son contenu.
 
-```Haskell
-import Data.Csv (decode, HasHeader(NoHeader))
-import qualified Data.ByteString.Lazy as ByteString
-import System.IO
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-inputFile = "data.csv"
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
 
+main :: IO ()
 main = do
-   contents <- ByteString.readFile inputFile
-   case decode NoHeader contents of
-      Left _ -> putStrLn "Erreur lors de la lecture du fichier"
-      Right rows -> zipWithM_ (\n row -> putStrLn (show n ++ ". " ++ show row)) [1..] rows
+    csvData <- BL.readFile "data.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \ (nom, age) ->
+            putStrLn $ nom ++ " a " ++ show age ++ " ans"
 ```
 
-Output:
+Si "data.csv" contient:
+
 ```
-1. ["John", "Doe", "30", "Engineer"]
-2. ["Jane", "Smith", "25", "Developer"]
-3. ["Bob", "Johnson", "45", "Manager"]
+Jean,30
+Marie,22
 ```
 
-## Plongée en profondeur:
+La sortie sera:
 
-Les fichiers CSV ont été inventés dans les années 1970 pour faciliter l'échange de données entre différentes applications. Bien qu'ils soient pratiques, ils peuvent également être source d'erreurs et de problèmes de compatibilité en raison de leur structure non normalisée. Alternativement, certains programmeurs préfèrent utiliser des formats de fichiers dédiés à l'échange de données tels que JSON ou XML.
+```
+Jean a 30 ans
+Marie a 22 ans
+```
 
-L'implémentation du module ```Data.Csv``` est basée sur le type de données ```Record``` qui représente une ligne de données dans un fichier CSV. Il est important de noter que le type de données est paramétré par un type fantôme défini dans le type classe ```HasHeader```, ce qui signifie que vous devez vous assurer que le type que vous utilisez est bien conforme à la classe avant de l'utiliser.
+## Deep Dive
+Le format CSV a été créé dans les années 70 et est depuis devenu un standard de facto pour l'échange de données. `cassava` est une alternative aux outils plus basiques comme `read` ou `writeFile`, offrant une API plus détaillée et une gestion des erreurs supérieure. Le parsing est réalisé grâce à des instances de `FromRecord` pour la lecture, et `ToRecord` pour l'écriture.
 
-## A voir également:
-
-- [Documentation du module Data.Csv](http://hackage.haskell.org/package/cassava/docs/Data-Csv.html)
-- [Traitement de fichiers CSV en Python](https://realpython.com/python-csv/)
+## See Also
+- [cassava sur Hackage](https://hackage.haskell.org/package/cassava)
+- [Spécification CSV RFC 4180](https://tools.ietf.org/html/rfc4180)
+- [Tutoriel sur la lecture de fichiers CSV en Haskell](https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/)

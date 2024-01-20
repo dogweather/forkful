@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med csv"
-html_title:           "PHP: Arbeta med csv"
+html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,41 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att jobba med CSV-filer handlar om att hantera data på en strukturerad och enkel sätt. Dessa filer kan innehålla tusentals rader med information, och med hjälp av PHP kan vi effektivt extrahera och bearbeta denna data. Det är ett vanligt verktyg för många programmerare när de behöver hantera stora datamängder.
+## What & Why?
+Att jobba med CSV (Comma-Separated Values) innebär att hantera data i en enkel, textbaserad filformat som är lätt att använda för att importera och exportera data från olika program. Programmerare använder CSV för att enkelt flytta data mellan system och för att göra det lättläst för människor.
 
-## Hur:
-Att arbeta med CSV-filer i PHP är väldigt enkelt och kräver bara några få steg. Först behöver vi öppna filen med funktionen `fopen()` och sedan läsa in datan rad för rad med `fgets()`. Därefter kan vi använda inbyggda PHP-funktioner som `explode()` för att dela den inlästa datan i separata fält. Vi kan också loopa igenom datan och utföra olika operationer på den, exempelvis byta ut värden eller lägga till ny information.
+## How to:
+För att jobba med CSV-filer i PHP, kan du använda inbyggda funktioner som `fgetcsv` och `fputcsv`. Se exempel nedan:
 
-```
-<?php
-
-// Öppna CSV-filen för läsning
-$csv = fopen('data.csv', 'r');
-
-// Loopa igenom varje rad i filen
-while (($rad = fgets($csv)) !== false) {
-    // Dela upp raden baserat på kommatecken
-    $falt = explode(',', $rad);
-    // Gör något med datan, exempelvis skriv ut på skärmen
-    echo $falt[0] . ' är ' . $falt[1] . ' år gammal.';
+```PHP
+// Läsa från en CSV-fil
+if (($handle = fopen("exempel.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        print_r($data);
+    }
+    fclose($handle);
 }
 
-// Stäng filen
-fclose($csv);
+// Skriva till en CSV-fil
+$list = array(array('ID', 'Namn', 'E-post'), array(1, 'Anna Svensson', 'anna@example.com'));
+
+$fp = fopen('nyfil.csv', 'w');
+foreach ($list as $fields) {
+    fputcsv($fp, $fields);
+}
+fclose($fp);
 ```
 
-Output:
+Sample output för läsning av CSV:
 ```
-Johan är 32 år gammal.
-Lisa är 28 år gammal.
+Array
+(
+    [0] => ID
+    [1] => Namn
+    [2] => E-post
+)
+Array
+(
+    [0] => 1
+    [1] => Anna Svensson
+    [2] => anna@example.com
+)
 ```
 
-## Djupdykning:
-CSV (Comma-Separated Values) formatet har funnits sedan 1970-talet och används fortfarande flitigt idag för att enkelt hantera stora datamängder. Det är ett populärt format för att överföra data mellan olika program och plattformar. Alternativ till CSV inkluderar XML och json, men CSV är fortfarande ett vanligt val på grund av sin enkla och lättlästa struktur.
+## Deep Dive
+CSV-filformatet finns i många år och stödjs av de flesta databas- och kalkylprogram. Det finns alternativ som JSON och XML, men CSV hålls populärt för sin enkelhet. I PHP, är hanteringen av CSV-filer robust och möjliggör enkla anpassningar, som att ändra skiljetecken eller encapsulation character.
 
-Förutom att läsa in och manipulera data från en CSV-fil, kan PHP även skapa och skriva till CSV-filer med hjälp av funktioner som `fputcsv()` och `fputcsv()`. Det finns också olika tredjepartsbibliotek som kan hjälpa till med att hantera CSV-data på ett mer avancerat sätt, till exempel hantera stora datamängder.
-
-## Se även:
-- [PHP manual: CSV functions](http://php.net/manual/en/ref.filesystem.php)
-- [PHP League CSV: A PHP library for reading and writing CSV files](https://csv.thephpleague.com/)
+## See Also
+- PHP Manual on fgetcsv: https://www.php.net/manual/en/function.fgetcsv.php
+- PHP Manual on fputcsv: https://www.php.net/manual/en/function.fputcsv.php
+- W3Schools introduction to CSV: https://www.w3schools.com/php/php_file_open.asp

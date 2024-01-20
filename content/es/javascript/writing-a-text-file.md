@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Javascript: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,29 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué & Por Qué?
 
-Escribir un archivo de texto puede ser una tarea común para los programadores, pero ¿qué significa exactamente? En pocas palabras, escribir un archivo de texto es guardar información en un archivo que puede ser leído por un ser humano en formato de texto plano. Los programadores hacen esto para almacenar datos, configuraciones o cualquier otra información que necesiten para su programa.
+Escribir un archivo de texto en Javascript te permite guardar datos en tu disco local. Los programadores hacen esto para preservar información entre sesiones, compartir datos con otros programas o simplemente para almacenar outputs de una forma permanente.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-En Javascript, escribir un archivo de texto es algo sencillo. Primero, necesitamos incluir el módulo "fs" para tener acceso a las funciones de sistema de archivos. Luego, utilizamos la función "writeFile" para crear un archivo con el nombre que queramos y el contenido que deseamos. Aquí tienes un ejemplo de cómo hacerlo:
+Para escribir archivos de texto en JavaScript del lado del servidor, utilizamos Node.js. Aquí te muestro cómo:
 
-```Javascript
+```javascript
 const fs = require('fs');
 
-fs.writeFile('miArchivo.txt', 'Este es el contenido de mi archivo creado con Javascript', (err) => {
+let data = "Este es el texto que quiero guardar en un archivo.";
+
+fs.writeFile('archivo.txt', data, (err) => {
     if (err) throw err;
-    console.log('¡Archivo creado correctamente!');
+    console.log('El archivo ha sido guardado!');
 });
 ```
 
-Si ejecutas este código, verás que se ha creado un archivo con el nombre "miArchivo.txt" en la misma ubicación donde se encuentra tu archivo Javascript. El contenido del archivo será "Este es el contenido de mi archivo creado con Javascript".
+Si corres este script en Node.js, crearás un archivo llamado `archivo.txt` con el texto especificado dentro. Verás la siguiente salida en la consola:
 
-## Un vistazo más profundo
+```
+El archivo ha sido guardado!
+```
 
-Para aquellos que quieran saber más sobre cómo escribir archivos de texto en Javascript, aquí hay algunos detalles adicionales. Esta función fue introducida en la versión 0.4.0 de Node.js y ha estado disponible en las versiones posteriores. Otra forma de crear un archivo de texto es utilizando el método "appendFile" en lugar de "writeFile". La diferencia entre ambos es que "writeFile" creará un archivo nuevo o sobrescribirá uno existente, mientras que "appendFile" añadirá el contenido al final del archivo ya existente.
+Para el lado del cliente, la cosa cambia un poco. Los navegadores restringen la escritura directa en el sistema de archivos del usuario por seguridad. Aun así, puedes crear y descargar archivos así:
 
-## Ver también
+```javascript
+let data = "Este es el texto que quiero guardar en un archivo.";
+let filename = 'archivo.txt';
+let type = 'text/plain';
 
-Si quieres saber más sobre cómo escribir archivos de texto en Javascript, puedes consultar la documentación oficial de Node.js sobre el módulo "fs" (https://nodejs.org/api/fs.html). También puedes encontrar algunos tutoriales y ejemplos útiles en línea. ¡Sigue practicando y pronto podrás escribir archivos de texto en Javascript sin problemas!
+let file = new Blob([data], {type: type});
+
+let a = document.createElement("a"),
+    url = URL.createObjectURL(file);
+a.href = url;
+a.download = filename;
+document.body.appendChild(a);
+a.click();
+
+setTimeout(function() {
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);  
+}, 0);
+```
+
+Este código generará un archivo `archivo.txt` que el usuario puede descargar en su máquina.
+
+## Deep Dive
+
+Antes de Node.js, escribir archivos de texto en JavaScript no era tarea sencilla ya que JavaScript se diseñó principalmente para manipular documentos web y no directamente el sistema de archivos. Node.js introdujo un módulo de sistema de archivos (`fs`) que proporciona esta funcionalidad.
+
+Existen alternativas como las bases de datos o almacenamiento en la nube, pero la escritura en archivos locales es útil para tareas de scripting y automatización.
+
+Detalles de implementación: para evitar problemas con operaciones asíncronas, puedes usar `fs.writeFileSync()` para una versión síncrona, pero bloquearás el hilo de ejecución durante la escritura, lo cual no es recomendable en entornos de producción.
+
+## See Also
+
+Aquí te dejo unos enlaces para que profundices más:
+
+- Documentación de Node.js [`fs`](https://nodejs.org/api/fs.html) module, para entender todas las funciones disponibles para trabajar con el sistema de archivos.
+- MDN Web API [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) para más información sobre cómo manejar objetos binarios grandes en el navegador.
+- [`FileSaver.js`](https://github.com/eligrey/FileSaver.js/) para una solución más sofisticada de guardar archivos desde el navegador.

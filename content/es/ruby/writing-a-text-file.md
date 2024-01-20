@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Ruby: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Escribir un archivo de texto en programación simplemente significa guardar información en un formato que pueda ser leído por una computadora. Los programadores utilizan esta técnica para guardar datos como variables, configuraciones o resultados de código.
+## Qué y Por Qué?
+Escribir un archivo de texto es guardar datos en un archivo legible. Los programadores hacen esto para almacenar configuración, datos de usuario o para lograr la interoperabilidad con otros programas.
 
-## ¿Cómo hacerlo?
-El proceso de escritura de un archivo de texto en Ruby es sencillo ya que cuenta con un método específico para hacerlo: `File.write()`. Este método requiere dos argumentos: el nombre del archivo y la información que deseamos guardar en él. Veamos un ejemplo práctico:
-
+## Cómo Hacerlo:
 ```Ruby
-# Crear un archivo de texto llamado "datos.txt" con la información "Hola mundo!"
-File.write("datos.txt", "Hola mundo!")
-
-# Podemos guardar información en una variable y luego escribirla en el archivo
-mensaje = "Este es un texto guardado en una variable"
-File.write("datos.txt", mensaje)
+# Primero, abre o crea un archivo llamado 'sample.txt' en modo de escritura
+File.open('sample.txt', 'w') do |file|
+  # Escribe una línea de texto en el archivo
+  file.puts "¡Hola Mundo!"
+  # Agrega otra línea
+  file.puts "Este es un archivo de texto de ejemplo."
+end
 ```
 
-Al ejecutar este código, se creará un archivo llamado "datos.txt" en la misma carpeta que nuestro archivo de código. Si abrimos ese archivo, veremos reflejada la información que guardamos en el método `write()`.
+Salida del archivo `sample.txt`:
+```
+¡Hola Mundo!
+Este es un archivo de texto de ejemplo.
+```
+## Análisis Profundo
+La capacidad de escribir en archivos de texto existe desde los primeros días de la programación. Antes, se usaban tarjetas perforadas y hoy, aunque hay alternativas como las bases de datos, los archivos de texto se mantienen por su simpleza y universalidad. La implementación en Ruby es directa gracias a su clase `File`, que maneja tanto la creación como la escritura de archivos.
 
-## Inmersión profunda
-Escribir archivos de texto es una técnica común en programación y es utilizada para una gran variedad de propósitos. Antes de que existieran las bases de datos, los archivos de texto eran la única forma de guardar y leer información. Aunque actualmente hay alternativas más complejas y avanzadas, muchos programadores siguen utilizando esta técnica por su simplicidad y eficiencia.
-
-Además del método `File.write()`, también podemos utilizar `File.new()` y `File.open()` para crear y abrir archivos de texto respectivamente. Estos métodos tienen algunas diferencias en su implementación, pero también pueden ser utilizados para escribir información en archivos.
-
-## Vea también
-- [Documentación de Ruby sobre el método File.write](https://ruby-doc.org/core-3.0.0/File.html#method-c-write)
-- [Tutorial de Ruby para escribir y leer archivos de texto](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Página web oficial de Ruby](https://www.ruby-lang.org/es/)
+## Ver También
+- [Clase File en Ruby](https://ruby-doc.org/core/File.html)
+- [Tutorial básico de E/S en Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Documentación de API de IO](https://ruby-doc.org/core/IO.html)

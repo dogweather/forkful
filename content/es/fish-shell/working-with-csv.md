@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "Fish Shell: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,60 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## ¿Qué y por qué?
 
-Trabajar con CSV (valores separados por comas) es una forma común de manejar datos tabulares en programación. Los programadores lo hacen para leer, escribir y manipular datos en un formato estructurado de manera eficiente.
+Trabajar con archivos CSV implica manipular datos en un formato de texto sencillo, donde cada línea representa un registro y las comas separan sus campos. Los programadores lo hacen porque es una forma estándar, simple y compatible para intercambiar datos entre distintas aplicaciones y sistemas.
 
 ## Cómo hacerlo:
 
-El siguiente es un ejemplo de cómo trabajar con un archivo CSV en Fish Shell:
+Para manejar archivos CSV en Fish, puedes usar herramientas de línea de comandos como `awk`, `sed` y `cut`. Aquí hay ejemplos:
 
-```Fish Shell
+```fish
+# Contar el número de filas en un CSV
+awk 'END { print NR }' datos.csv
 
-# Importar módulo CSV
-set csv (busca --path --qual fz)
+# Imprimir la segunda columna de un CSV
+cut -d ',' -f 2 datos.csv
 
-# Crear un nuevo archivo CSV
-set nuevo_csv "nuevo_archivo.csv"
+# Reemplazar comas por punto y coma en un CSV
+sed 's/,/;/g' datos.csv > datos_modificados.csv
 
-# Escribir datos en el archivo
-for i in (seq 1 3)
-  set filas (seq 1 5)
-  for j in $filas
-    echo "Fila $j, Columna $i" >> $nuevo_csv
-  end
-end
+# Filtrar líneas que contienen 'clave' en un CSV
+grep 'clave' datos.csv
+```
 
-# Leer el archivo CSV
-set leido_csv (csv $nuevo_csv)
+Output esperado (variará según el contenido de tu archivo CSV):
 
-echo $leido_csv
-
-# Resultado:
-# Fila 1, Columna 1
-# Fila 2, Columna 1
-# Fila 3, Columna 1
-# Fila 4, Columna 1
-# Fila 5, Columna 1
-# Fila 1, Columna 2
-# Fila 2, Columna 2
-# Fila 3, Columna 2
-# Fila 4, Columna 2
-# Fila 5, Columna 2
-# Fila 1, Columna 3
-# Fila 2, Columna 3
-# Fila 3, Columna 3
-# Fila 4, Columna 3
-# Fila 5, Columna 3
-
+```plaintext
+43
+John Doe
 ```
 
 ## Inmersión profunda:
 
-El formato CSV se remonta a los años 1970 cuando era común almacenar datos en hojas de cálculo. Alternativas a trabajar con CSV incluyen convertir los datos a otros formatos, como JSON o YAML, o utilizar bases de datos relacionales. Fish Shell ofrece el módulo CSV para trabajar con CSV de manera fácil y rápida. Este módulo utiliza el programa "busca" para interpretar los archivos CSV y permite leer y escribir en formato de tabla.
+Los CSV no son nuevos. Su uso se remonta a los primeros días de las computadoras personales. Sin embargo, a pesar de formatos de intercambio más modernos como JSON y XML, los CSV permanecen debido a su simplicidad y amplia adopción. Si bien Fish Shell por sí mismo no tiene comandos especializados para CSV, su potencia radica en combinar otras herramientas UNIX. Alternativas como Python con Pandas o programas especializados como `xsv` pueden manejar CSVs más eficientemente en tareas complejas.
 
 ## Ver también:
 
-- Página oficial de Fish Shell: https://fishshell.com/
-- Documentación del módulo CSV en Fish Shell: https://fishshell.com/docs/current/cmds/busca.html
-- Más información sobre el formato CSV: https://es.wikipedia.org/wiki/Comma-separated_values
+- Documentación de `awk`: https://www.gnu.org/software/gawk/manual/gawk.html
+- Tutorial de `sed`: https://www.grymoire.com/Unix/Sed.html
+- `cut` en man pages: http://man7.org/linux/man-pages/man1/cut.1.html
+- `grep` en man pages: http://man7.org/linux/man-pages/man1/grep.1.html
+- `xsv`, para manipulación de CSV más avanzada: https://github.com/BurntSushi/xsv

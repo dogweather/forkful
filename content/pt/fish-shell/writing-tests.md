@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Fish Shell: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que é & Por Que?
+Escrever testes é o processo de criar scripts que automaticamente testam seu código para garantir que ele funciona como esperado. Programadores fazem isso para economizar tempo, reduzir bugs e assegurar qualidade ao longo do desenvolvimento.
 
-Escrever testes como parte do processo de desenvolvimento de software é uma prática comum entre programadores. Esses testes são códigos escritos para verificar se o código principal está funcionando corretamente. Eles são importantes porque ajudam os programadores a detectar e corrigir rapidamente problemas em seu código, garantindo que o software final seja de alta qualidade.
-
-## Como fazer:
-
-Os testes podem ser escritos no Fish Shell usando a estrutura de testes integrada, que é conhecida como `fish unittest`. Aqui está um exemplo simples de como escrever um teste para verificar se uma função `add` retorna a soma correta de dois números:
-
-```
-fish unittest add_test
-function add
-  echo $1 + $2 | bc
+## Como Fazer:
+```Fish Shell
+function test_greeting
+    set output (echo "Oi, Mundo!" | my_greeting_function)
+    if test "$output" = "Oi, Mundo!"
+        echo "Teste passou"
+    else
+        echo "Teste falhou"
+    end
 end
 
-add_test "Should return correct sum" 5 2; and status 0; and eq $output 7
+test_greeting
 ```
 
-A primeira linha `fish unittest add_test` define o nome do teste e `function add` define a função `add` a ser testada. Em seguida, é usada a ferramenta `bc` para realizar a adição e o resultado é armazenado em `output`. O último comando verifica se o teste teve êxito, fornecendo uma mensagem personalizada e verificando se o resultado é igual a 7.
+Saída esperada:
+```
+Teste passou
+```
 
-## Mergulho Profundo:
+## Mergulho Profundo
+Historicamente, softwares eram testados manualmente, um processo lento e propenso a erros. Hoje, frameworks como Fisherman e Fishtape permitem a automação de testes em Fish Shell, garantindo integração contínua. Embora não tão populares quanto PHPUnit ou JUnit, essas alternativas em Fish proporcionam implementações leves e específicas a ambientes Unix-like.
 
-Escrever testes é uma prática importante na programação moderna, pois ajuda a garantir que o código seja confiável e tenha poucos bugs. Existem outras ferramentas de teste disponíveis, como o `fish -n` para verificar a sintaxe e a `fish -c` para testar comandos individuais. Também é possível usar a linguagem de script `fish bundle` para escrever testes mais complexos e personalizados.
-
-## Veja Também:
-
-- [Documentação oficial do Fish Shell para testes](https://fishshell.com/docs/current/#fish-unittest)
+## Veja Também
+- Fishtape no GitHub: https://github.com/jorgebucaran/fishtape
+- Fish Shell Documentação Oficial: https://fishshell.com/docs/current/index.html
+- Artigo detalhado sobre testes automatizados: https://martinfowler.com/articles/practical-test-pyramid.html

@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Java: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+CSV, eli Comma-Separated Values, on tiedostomuoto, jossa data on erotettu pilkuilla. Ohjelmoijat käyttävät sitä, koska se on yksinkertainen, lukuisissa järjestelmissä suosittu ja helppo ihmisen lukea ja kirjoittaa.
 
-CSV (comma-separated values) on tapa tallentaa ja käsitellä taulukoita tekstitiedostoina. Se on suosittu formaatti, koska se on helppo luoda ja käsitellä ohjelmallisesti. Ohjelmoijat käyttävät CSV:itä muun muassa datan tallentamiseen ja vaihtoon, koska se on yksinkertainen ja luettava formaatti.
+## How to:
+Java-koodi lukee CSV-tiedoston ja tulostaa arvot:
 
-## Miten:
-
-```Java
+```java
+import java.nio.file.*;
 import java.io.*;
 import java.util.*;
 
-public class CSVReader {
-  public static void main (String[] args){
-    //luo uusi tiedosto-olio ja määritä polku
-    File file = new File("tiedosto.csv");
-    
-    //luo uusi lukija-olio 
-    Scanner csvReader = new Scanner(file);
+public class SimpleCSVReader {
+    public static void main(String[] args) {
+        Path csvFilePath = Paths.get("data.csv");
 
-    //käy läpi tiedoston rivi kerrallaan
-    while (csvReader.hasNextLine()) {
-        //lue rivi ja tallenna se muuttujaan
-        String row = csvReader.nextLine();
-
-        //pilko rivi osiin pilkuilla
-        String[] data = row.split(",");
-
-        //tulosta tiedot 
-        for (String datum : data) {
-            System.out.print(datum + " ");
+        try (BufferedReader br = Files.newBufferedReader(csvFilePath)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                System.out.println(Arrays.toString(values));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        System.out.println();
     }
-  
-    //sulje lukija 
-    csvReader.close(); 
-  }
 }
 ```
-Tiedoston sisältö:
-```csv
-Nimi,Ikä,Asuinpaikka
-Matti,25,Tampere
-Anna,30,Helsinki
+
+Sample output:
+
+```
+["nimi", "ikä", "kaupunki"]
+["Mikko", "30", "Helsinki"]
+["Liisa", "25", "Espoo"]
 ```
 
-Tuloste:
-```
-Nimi Ikä Asuinpaikka 
-Matti 25 Tampere 
-Anna 30 Helsinki
-```
+## Deep Dive
+CSV-tiedostot ovat olleet käytössä jo vuosikymmeniä. Monet ohjelmat, kuten taulukkolaskentaohjelmat, tukevat CSV-vientiä ja -tuontia. Vaihtoehtoina ovat esimerkiksi JSON tai XML, joissa data on rakenteisempaa. CSV:n kanssa työskennellessä huomioi merkistökoodaus (kuten UTF-8) ja kenttäerotin (pilkku ei ole aina standardi).
 
-## Syvempi sukellus:
-
-CSV-formaatti kehitettiin alun perin taloudelliseen käyttöön, mutta nykyään sitä käytetään laajasti eri ohjelmointialustoilla. Vaihtoehtoja CSV:lle ovat muun muassa JSON ja XML. CSV-tiedostoja voi avata esimerkiksi tekstieditorilla ja niitä voi luoda ja muokata myös Excelillä. 
-
-## Katso myös:
-
-- [CSV (Wikipedia)](https://fi.wikipedia.org/wiki/CSV)
-- [Java CSV-kirjasto](https://sourceforge.net/projects/javacsv/)
+## See Also
+- OpenCSV-kirjasto: http://opencsv.sourceforge.net/
+- RFC 4180, CSV standardin dokumentaatio: https://tools.ietf.org/html/rfc4180
+- Oracle Java dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html

@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Ruby: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso e por quê?
-Escrever no erro padrão é uma técnica usada por programadores para enviar mensagens de erro específicas para a tela do usuário quando um código apresenta um problema ou falha durante sua execução. Isso ajuda a identificar e corrigir erros com mais facilidade, dando informações detalhadas sobre o que causou o problema.
+## O Que É & Porquê?
 
-## Como fazer:
-Para escrever no erro padrão em Ruby, usamos o método `STDERR.puts` e passamos uma string como argumento. Isso enviará a mensagem para a tela do usuário. Veja abaixo um exemplo:
+Escrever para o erro padrão (standard error - stderr) é o ato de enviar mensagens de erro para um stream específico, separando-as da saída normal (stdout). Programadores fazem isso para diagnosticar problemas e manter as saídas de erro e sucesso organizadas e fáceis de analisar.
 
-```ruby
-STDERR.puts "Erro: variável não definida"
-```
-```
-Erro: variável não definida
-```
-Essa técnica também pode ser utilizada em conjunto com o `raise`, que é utilizado para gerar uma exceção em caso de erro. Veja um exemplo:
+## Como Fazer:
+
+Em Ruby, você pode usar `$stderr` ou `STDERR` para escrever no erro padrão.
 
 ```ruby
-def dividir(x, y)
-  raise "O segundo número não pode ser zero" if y == 0
-  x / y
-end
+puts "Isso vai para a saída padrão"
+$stderr.puts "Isso vai para o erro padrão"
 
-dividir(10, 0)
+# Saída esperada:
+# Isso vai para a saída padrão
+# Isso vai para o erro padrão (será mostrado em stderr)
 ```
-```
-RuntimeError: O segundo número não pode ser zero
+
+Você também pode redirecionar `STDERR` para um arquivo:
+
+```ruby
+STDERR.reopen("erros.log", "w")
+STDERR.puts "Isso será escrito no arquivo erros.log"
+# Nenhuma saída esperada na tela, verifique o arquivo erros.log
 ```
 
 ## Aprofundando:
-Escrever no erro padrão é uma prática comum em programação, sendo uma extensão natural da ideia de depuração de código. Antes do surgimento de linguagens de programação modernas, era necessário usar técnicas mais complexas para informar o usuário sobre erros, como a impressão direta no console do sistema.
 
-Uma alternativa ao uso do `STDERR.puts` é utilizar o método `warn`, que também envia uma mensagem de erro para a tela do usuário, mas de uma forma mais amigável. A implementação deste método é baseada no `STDERR.puts`, então ambos acabam tendo o mesmo resultado final.
+Historicamente, separar stdout e stderr permitiu que usuários e outras aplicações diferenciassem saídas regulares de mensagens de erro. Em Unix, isso se tornou uma prática padrão. Alternativas ao uso direto de `STDERR` em Ruby incluem o uso de bibliotecas de logging, como a `Logger`, que oferecem mais flexibilidade. Internamente, `STDERR` é uma constante global que é uma instância da classe `IO`, pré-configurada para escrever para o erro padrão do sistema operacional.
 
-## Veja também:
-Para saber mais sobre a escrita no erro padrão em Ruby, veja a documentação oficial: https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts
+## Veja Também:
 
-Você também pode aprender mais sobre depuração de código em geral no site da Caelum: https://www.caelum.com.br/apostila-ruby-on-rails/usando-o-protractor-desenvolvimento-orientado-a-testes-javascript-com-jasmine-e-protractor/#9-10-depurando-o-codigo
-
-E para ficar por dentro das novidades e dicas sobre programação, acesse o blog do Ruby Brasil: https://www.rubyonrails.com.br/
+- Documentação oficial do Ruby sobre I/O: [https://ruby-doc.org/core-3.0.0/IO.html](https://ruby-doc.org/core-3.0.0/IO.html)
+- Guia sobre a classe Logger: [https://ruby-doc.org/stdlib-3.0.0/libdoc/logger/rdoc/Logger.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/logger/rdoc/Logger.html)

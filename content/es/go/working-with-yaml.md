@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "Go: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se usa?
+## Qué es y por qué?
 
-Trabajar con YAML es una forma flexible y sencilla de almacenar datos estructurados en formato de texto. Los programadores utilizan YAML porque es un lenguaje fácil de leer y escribir, y por su capacidad para ser utilizado en diferentes entornos y lenguajes de programación.
+Trabajar con YAML significa manipular un formato de serialización de datos legible por humanos, común para configuraciones y transmisión de datos. Los programadores lo usan por su claridad y fácil compatibilidad entre diferentes lenguajes y aplicaciones.
 
 ## Cómo hacerlo:
 
+En Go, usamos el paquete `gopkg.in/yaml.v3` para trabajar con YAML. Aquí hay un ejemplo sencillo de cómo leer y escribir datos YAML.
+
 ```Go
-// Importar el paquete YAML
-import "gopkg.in/yaml.v3"
+package main
 
-// Definir una estructura para los datos en YAML
-type Persona struct {
-  Nombre string `yaml:"nombre"`
-  Edad int `yaml:"edad"`
-  Hobbies []string `yaml:"hobbies"`
+import (
+	"fmt"
+	"gopkg.in/yaml.v3"
+	"log"
+	"os"
+)
+
+// Config representa una configuración en formato YAML.
+type Config struct {
+	Host    string `yaml:"host"`
+	Port    int    `yaml:"port"`
+	Enabled bool   `yaml:"enabled"`
 }
 
-// Crear datos en formato YAML
-datosYAML := `
-- nombre: Juan
-  edad: 25
-  hobbies:
-    - Fútbol
-    - Viajar
-- nombre: María
-  edad: 30
-  hobbies:
-    - Fotografía
-    - Cocina
+func main() {
+	// Datos YAML de ejemplo.
+	data := `
+host: localhost
+port: 8080
+enabled: true
 `
+	var config Config
 
-// Decodificar los datos YAML en la estructura definida
-var personas []Persona
-err := yaml.Unmarshal([]byte(datosYAML), &personas)
-if err != nil {
-  panic(err)
+	// Deserializar los datos YAML a la estructura Config.
+	if err := yaml.Unmarshal([]byte(data), &config); err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("--- config:\n%v\n\n", config)
+
+	// Modificar la configuración.
+	config.Port = 9090
+
+	// Serializar la estructura Config a YAML.
+	out, err := yaml.Marshal(&config)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("--- yaml:\n%s\n", string(out))
+  
+  // Escribir el YAML serializado en un archivo.
+	if err := os.WriteFile("config.yaml", out, 0644); err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Println("Archivo 'config.yaml' creado exitosamente.")
 }
-
-// Acceder a los datos
-fmt.Println(personas[0].Nombre) // Juan
-fmt.Println(personas[1].Hobbies[0]) // Fotografía
-
-// Codificar datos en YAML a partir de una estructura
-datos, err := yaml.Marshal(personas)
-if err != nil {
-  panic(err)
-}
-
-fmt.Println(string(datos)) // Imprime en formato YAML
-
 ```
 
-## Profundizando:
+Salida de muestra:
 
-El formato YAML fue creado en el año 2001 por Clark Evans y Dan Allen, y desde entonces ha ganado popularidad en el mundo de la programación. Una alternativa a YAML es el formato JSON, pero YAML ofrece una sintaxis más legible para los humanos, lo que lo hace muy útil para configurar aplicaciones y sistemas.
+```
+--- config:
+{localhost 8080 true}
 
-En Go, el paquete "gopkg.in/yaml.v3" es una implementación de la especificación YAML 1.2. Permite decodificar y codificar datos en formato YAML utilizando structs y tags, lo que lo hace muy sencillo y eficiente de trabajar.
+--- yaml:
+host: localhost
+port: 9090
+enabled: true
 
-## Ver también:
+Archivo 'config.yaml' creado exitosamente.
+```
 
-- Documentación de la especificación YAML: https://yaml.org/spec/
-- Paquete "gopkg.in/yaml.v3": https://pkg.go.dev/gopkg.in/yaml.v3
-- Comparación entre YAML y JSON: https://www.edivaldobrito.com.br/sintaxe-yaml-e-json/
+## Inmersión Profunda:
+
+YAML, que significa "YAML Ain't Markup Language", surgió a principios de los años 2000 como alternativa al XML y al JSON por ser más legible. Aunque JSON es ampliamente utilizado por su compatibilidad con JavaScript, YAML se destaca en configuraciones debido a su fácil legibilidad y soporte de comentarios. Dentro de Go, el proceso de serialización se denomina 'marshal', y el de deserialización 'unmarshal'. Se puede manipular fácilmente estructuras complejas, trabajar con tipos personalizados y manejar diferentes esquemas de datos.
+
+## Ver También:
+
+- Documentación del paquete YAML para Go: [gopkg.in/yaml.v3](https://pkg.go.dev/gopkg.in/yaml.v3)
+- Especificación de YAML: [yaml.org/spec](https://yaml.org/spec/1.2/spec.html)

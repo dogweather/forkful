@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Fish Shell: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Praca z CSV to przetwarzanie plików tekstowych zawierających dane oddzielone przecinkami. Programiści robią to, aby łatwo wymieniać dane między różnymi systemami i aplikacjami.
 
-Praca z plikami CSV jest częstym zadaniem dla programistów. Jest to krótki akronim od Comma-Separated Values, czyli plików wartości oddzielonych przecinkami. Programiści często wykorzystują pliki CSV do przechowywania danych, które są łatwe do odczytania i łatwo je przekazać innym programom.
+## How to: (Jak to zrobić:)
+```Fish Shell
+# Czytanie pliku CSV i wyświetlanie pierwszej kolumny
+cat dane.csv | string split -r ',' -- | read -la columns
+echo $columns[1]
 
-## Jak to zrobić:
+# Zapisywanie określonej kolumny do nowego pliku CSV
+cat dane.csv | string split -r ',' -- | read -la columns
+echo $columns[2] > nowa_kolumna.csv
 
-Fish Shell jest wyjątkowym narzędziem do pracy z plikami CSV. Poniżej przedstawiam kilka kodowych przykładów, aby pokazać jak łatwe jest to zadanie.
-
-Utworzenie nowego pliku CSV:
-
-```
-set data (csv-from-string "Imię,Nazwisko,Wiek
-Julia,Kowalska,30
-Marek,Nowak,45")
-```
-Wynik:
-```
-data=@desumablyset
-Imię Nazwisko Wiek
-Julia Kowalaska 30
-Marek Nowak 45
+# Sortowanie danych CSV po drugiej kolumnie i wyświetlanie wyników
+cat dane.csv | sort --field-separator=',' --key=2
 ```
 
-Dodanie nowej kolumny do istniejącego pliku CSV:
+## Deep Dive (Dogłębna analiza)
+CSV (Comma-Separated Values) to format używany od dawna ze względu na prostotę. Istnieją alternatywy jak JSON czy XML, ale CSV pozostaje popularny dla prostych tabel danych. Przetwarzanie CSV w Fish nie wymaga zewnętrznych narzędzi, lecz dla skomplikowanych zadań lepiej użyć dedykowanych programów jak `xsv` lub `csvkit`.
 
-```
-set data (string-escape "Jeżeli chcesz dodać nową kolumnę do pliku CSV, użyj polecenia 'csv-add-col'.")
-```
-Wynik:
-```
-csv-add-col pole tekstowy
-
-```
-
-## Głębokie zanurzenie:
-
-Pliki CSV zostały po raz pierwszy wprowadzone w 1972 roku przez programistkę Karen K. Wainber w celu wymiany danych. Alternatywą dla plików CSV jest format JSON, jednak wymaga on dodatkowego formatowania danych. W Fish Shell, pliki CSV są obsługiwane przez wbudowaną funkcję csv-from-string oraz dodatkowe polecenia csv-add-col i csv-insert-row. Fish Shell automatycznie formatuje dane w pliku CSV dla wygodnego odczytu.
-
-## Zobacz także:
-
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-- Więcej informacji o plikach CSV: https://en.wikipedia.org/wiki/Comma-separated_values
+## See Also (Zobacz również)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [xsv GitHub Repository](https://github.com/BurntSushi/xsv)
+- [csvkit Documentation](https://csvkit.readthedocs.io/en/latest/)

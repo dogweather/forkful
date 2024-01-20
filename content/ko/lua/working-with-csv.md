@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업하기"
-html_title:           "Lua: CSV 작업하기"
-simple_title:         "CSV 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-CSV는 Comma-Separated Values의 약자로, 쉼표로 구분된 데이터를 의미합니다. 프로그래머들은 CSV 파일 형식을 사용하여 데이터를 저장하고 처리하는 등 다양한 분야에서 활용합니다.
+## What & Why?
+CSV는 'Comma Separated Values'의 약어로, 데이터를 저장하고 교환하는 간단한 포맷입니다. 프로그래머들은 CSV를 사용하여 테이블 데이터를 편집하고 다른 언어나 프로그램 간에 쉽게 데이터를 주고받기 위해 사용합니다.
 
-## 어떻게:
-```
+## How to:
+Lua 코드로 CSV 파일 읽기와 쓰기 예제입니다:
+
+```Lua
 -- CSV 파일 읽기
-local csv = require("csv")
-local file = csv.open("example.csv") -- 파일 경로 지정
-for fields in file:lines() do -- 각 라인마다 필드를 읽어옴
-  print(fields[1], fields[2]) -- 필드 출력
+local function read_csv(filePath)
+    local file = io.open(filePath, "r")
+    if not file then return nil end
+    local data = {}
+    for line in file:lines() do
+        table.insert(data, line:split(','))
+    end
+    file:close()
+    return data
 end
-file:close() -- 파일 닫기
-```
 
-```
 -- CSV 파일 쓰기
-local csv = require("csv")
-local file = csv.open("example.csv", "w") -- 파일 경로 지정, 쓰기 모드
-file:write({"Name", "Age"}) -- 첫 줄에 필드명 추가
-file:write({"John", 25}) -- 데이터 추가
-file:write({"Mary", 28})
-file:close() -- 파일 닫기
-```
-
-```
--- CSV 문자열 파싱
-local csv = require("csv")
-local str = "John,25\nMary,28" -- 문자열 형식의 CSV 데이터
-local records = csv.parse(str) -- 데이터 파싱
-for i, record in ipairs(records) do
-  -- 각 레코드 출력
-  print(record[1], record[2])
+local function write_csv(filePath, data)
+    local file = io.open(filePath, "w")
+    for _, row in ipairs(data) do
+        file:write(table.concat(row, ',') .. '\n')
+    end
+    file:close()
 end
 ```
 
-## 깊이 파고들기:
-CSV는 1970년대에 탄생한 데이터 형식으로, 기존의 테이블 형식 데이터보다 더 간편하게 저장하고 처리할 수 있어서 널리 사용됩니다. 다른 대안으로는 XML, JSON 등의 형식이 있지만, CSV는 간단하고 가볍기 때문에 데이터 크기가 큰 경우에 유용합니다. CSV를 다루는 방법은 간단하지만, 데이터의 유효성 검사 및 문제 해결을 위해서는 문서를 참조하는 것이 좋습니다.
+실행 예시:
 
-## 관련 자료:
-- [Lua에서 CSV 처리하기](https://web.archive.org/web/20210119165520/https://jrgraphix.net/r/Unicode/0020-007F)
+```Lua
+local csvData = read_csv("sample.csv")
+for _, row in ipairs(csvData) do
+    print(table.concat(row, ', '))
+end
+
+write_csv("new_sample.csv", csvData)
+```
+
+## Deep Dive
+CSV 포맷은 1972년 IBM이 선보였고, 쉬운 사용법 때문에 여전히 인기가 많습니다. 대안으로는 JSON이나 XML 같은 데이터 포맷들이 있으나, CSV는 테이블 형태의 데이터를 처리할 때 가장 직관적입니다. Lua에서 CSV를 다룰 때는 문자열 함수와 파일 I/O 기능을 사용합니다.
+
+## See Also
+- Lua 문자열 함수: https://www.lua.org/manual/5.4/manual.html#6.4
+- Lua 파일 I/O: https://www.lua.org/manual/5.4/manual.html#6.8
+- LuaRocks CSV 모듈: https://luarocks.org/modules/search?q=csv

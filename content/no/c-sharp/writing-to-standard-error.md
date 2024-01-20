@@ -1,6 +1,6 @@
 ---
 title:                "Skrive til standardfeil"
-html_title:           "C#: Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Skrevet til feilutgang er når du sender en melding eller en feilkode til standard feilutgangskanalen i stedet for standard utgangskanalen. Dette gjøres vanligvis når du ønsker å varsle om en uvanlig tilstand eller en feil i programmet ditt.
+## Hva & Hvorfor?
+Skriving til standard error (stderr) handler om å sende feilmeldinger til et egen kanal, adskilt fra normal output (stdout). Programmerere gjør dette for å lettere kunne fange og håndtere feil, samt å logge disse separat for feilsøking.
 
 ## Hvordan:
-```
-Console.Error.WriteLine("En uventet feil har oppstått!");
-```
-Output:
-```
-En uventet feil har oppstått!
-```
+```C#
+using System;
 
-```
-int num1 = 10;
-int num2 = 0;
-
-try
+class Program
 {
-    int result = num1 / num2;
+    static void Main()
+    {
+        try
+        {
+            // Her produserer vi en feil med vilje
+            throw new Exception("En feil har skjedd!");
+        }
+        catch(Exception e)
+        {
+            // Skriver feilmeldingen til standard error
+            Console.Error.WriteLine(e.Message);
+        }
+    }
 }
-catch (DivideByZeroException ex)
-{
-    Console.Error.WriteLine("Kan ikke dele på null!");
-}
 ```
-Output:
+Forventet output til stderr:
 ```
-Kan ikke dele på null!
+En feil har skjedd!
 ```
+Merk: Kjøring i en IDE kan vise dette i output-vinduet, men det er faktisk sent til stderr streamen.
 
-## Dypdykk:
-Skrevet til feilutgang har vært en viktig del av programmering siden starten. Det gir en enkel måte å kommunisere feil og unike tilfeller til brukeren, uten å forstyrre standard utgangsmeldingene. Alternativet til å skrive til feilutgang er å bruke debuggervinduet, men dette kan være forstyrrende og mindre fleksibelt. Implementering av skriving til feilutgang i C# er enkelt, og er en metode som finnes i .NET Framework-klassen.
+## Dykket Ned:
+Historisk sett kommer konseptet med stderr fra Unix-systemer der det var viktig å skille mellom normal output (stdout) og feilmeldinger (stderr) for bedre kontroll over scripting og rørlegging (piping). I .NET kan vi bruke `Console.Error` for å nå stderr. Alternativer inkluderer logging biblioteker som NLog eller log4net som tilbyr mer fleksibilitet. Det grunnleggende trekket ved å skrive til stderr i C# er det at det ikke påvirker vanlig output-strømmen, og dermed gjør det mulig for feilmeldinger å bli omdirigert eller logget separat.
 
-## Se også:
-- https://docs.microsoft.com/en-us/dotnet/standard/io/errors-and-exceptions
-- https://www.codegrepper.com/code-examples/csharp/write+to+standard+error
-- https://www.c-sharpcorner.com/article/working-with-standard-input-output-and-error-in-C-Sharp/
+## Se Også:
+- Microsofts dokumentasjon på Console-klassen: https://docs.microsoft.com/en-us/dotnet/api/system.console
+- .NET logging biblioteker: 
+  - NLog: https://nlog-project.org/
+  - log4net: https://logging.apache.org/log4net/

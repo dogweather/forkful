@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Java recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Java"
 category:             "Java"
@@ -11,39 +11,106 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with YAML involves the utilization of a human-readable, data serialization language that is often used for configuration files and applications. Programmers often use YAML to configure settings without having to update and recompile code, making it a flexible and efficient choice.
+
+YAML, "YAML Ain't Markup Language," is a data serialization language. Programmers use it due to its readability and simplicity, particularly for config files, initial data dumps, or as a communication format between different systems.
 
 ## How to:
-To start working with YAML in Java, first install the SnakeYAML library. Then, create a YAML file and use the library to load and parse the file. Here's an example:
 
-```
-//Loading the SnakeYAML library
-import org.yaml.snakeyaml.*;
+To handle YAML in Java, let's use `snakeyaml`, a popular lib.
 
-//Creating a YAML object
-Yaml yaml = new Yaml();
+First, add the dependency to your `pom.xml`:
 
-//Loading and parsing the YAML file
-Object data = yaml.load(new FileInputStream(new File("myConfig.yaml")));
-
-//Accessing specific data from the YAML file
-Map<String, Object> config = (Map<String, Object>) data.get("config");
-int maxConnections = (int) config.get("maxConnections");
-System.out.println("Max Connections: " + maxConnections);
+```xml
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.29</version>
+</dependency>
 ```
 
-The output will be:
+Now, read a YAML file:
+
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
+import java.util.Map;
+
+public class YamlReader {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        try (InputStream in = YamlReader.class
+            .getClassLoader()
+            .getResourceAsStream("config.yaml")) {
+            
+            Map<String, Object> data = yaml.load(in);
+            System.out.println(data);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
-Max Connections: 10
+
+Suppose `config.yaml` looks like this:
+
+```yaml
+version: '1.0'
+services:
+  webapp:
+    build: .
+    ports:
+      - "5000:5000"
 ```
 
-## Deep Dive:
-YAML, short for "YAML Ain't Markup Language", was first designed in 2001 by Clark Evans as a lightweight data serialization language. It became popular in web development due to its human-readable syntax and easy integration with other programming languages.
+The output will be a `Map` representation of your YAML:
 
-Alternatives to working with YAML in Java include XML and JSON. However, YAML offers a more streamlined and readable way to store data, making it a preferred choice for many developers.
+```
+{version=1.0, services={webapp={build=., ports=[5000:5000]}}}
+```
 
-Working with YAML in Java requires the use of a YAML library, such as SnakeYAML or Jackson YAML. These libraries provide methods for parsing and extracting data from YAML files.
+Now, let's write YAML:
 
-## See Also:
-- [Jackson YAML library](https://github.com/FasterXML/jackson-dataformats-text)
-- [YAML official website](https://yaml.org/)
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class YamlWriter {
+    public static void main(String[] args) {
+        Yaml yaml = new Yaml();
+        Map<String, Object> data = new HashMap<>();
+        
+        data.put("name", "myapp");
+        data.put("version", "2.0");
+        
+        try (FileWriter writer = new FileWriter("output.yaml")) {
+            yaml.dump(data, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Check `output.yaml` to see the new YAML content:
+
+```yaml
+name: myapp
+version: '2.0'
+```
+
+## Deep Dive
+
+YAML hit the scene in the early 2000s as an alternative to XML for simpler data structuring. While JSON's rise overshadowed it for API communication, YAML’s human-friendliness keeps it popular for configs. Same data, but JSON and TOML are alternatives to YAML, depending on use cases. One YAML caveat: tabs aren't allowed for indentation; spaces only.
+
+## See Also
+
+Explore further with these resources:
+
+- Official YAML Spec: https://yaml.org/spec/1.2.2/
+- snakeyaml GitHub Repo: https://github.com/asomov/snakeyaml
+- YAML vs JSON: https://phoenixnap.com/kb/yaml-vs-json
+- YAML Lint, to validate your YAML files: http://www.yamllint.com/

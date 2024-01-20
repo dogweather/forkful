@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com arquivos csv"
-html_title:           "C++: Trabalhando com arquivos csv"
-simple_title:         "Trabalhando com arquivos csv"
+title:                "Trabalhando com CSV"
+html_title:           "Bash: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que é & Por Que?
 
-Trabalhar com CSV, ou "valores separados por vírgulas", é uma forma comum de organizar dados em um arquivo de texto. Os programadores geralmente trabalham com CSV para importar e exportar dados entre diferentes softwares ou para analisar grandes conjuntos de dados em linguagens de programação.
+Trabalhar com CSV (Valores Separados por Vírgula) é lidar com um formato de arquivo simples para armazenar dados tabulares. Programadores usam CSV para importar e exportar dados de forma fácil e interoperável entre programas e sistemas.
 
-## Como fazer:
+## Como Fazer:
 
-Para trabalhar com CSV em C++, você pode utilizar a biblioteca padrão do C++ e um pouco de manipulação de strings. Aqui está um exemplo de código que lê um arquivo CSV e imprime seus valores separados por vírgulas:
-
-```C++
+```cpp
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <sstream>
-#include <string>
-using namespace std;
 
-int main() {
-    ifstream file("dados.csv");
-    
-    string line;
-    while(getline(file, line)) {
-        istringstream iss(line);
-        string valor;
+// Função para ler um arquivo CSV e imprimir o conteúdo
+void lerCSV(const std::string& nomeArquivo) {
+    std::ifstream arquivo(nomeArquivo);
+    std::string linha;
+
+    while (getline(arquivo, linha)) {
+        std::istringstream iss(linha);
+        std::string valor;
+        
+        // Separa os valores por vírgula e imprime
         while (getline(iss, valor, ',')) {
-            cout << valor << " ";
+            std::cout << valor << " | ";
         }
-        cout << "\n";
+        std::cout << '\n';
     }
-
-    return 0;
 }
 
+int main() {
+    // Substitua 'dados.csv' pelo seu arquivo CSV
+    lerCSV("dados.csv");
+    return 0;
+}
 ```
 
-Imagine que o arquivo CSV "dados.csv" tem o seguinte conteúdo:
+O código acima lê o arquivo `'dados.csv'` e imprime o conteúdo em colunas separadas por `'|'`.
 
-```
-João,Silva,28
-Maria,Santos,35
-```
+## Mergulho Profundo:
 
-A saída do programa seria:
+Historicamente, CSV é um dos formatos mais antigos usados para troca de dados tabulares, fácil de ser entendido e gerado por qualquer planilha ou banco de dados. Alternativas incluem JSON e XML, que são mais ricos em recursos, mas também mais complexos. Na implementação, atenção deve ser dada ao tratamento de exceções, como a presença de quebras de linha e vírgulas dentro dos campos de dados, algo que nosso exemplo rudimentar não cobre.
 
-```
-João Silva 28
-Maria Santos 35
-```
+## Veja Também:
 
-## Deep Dive:
-
-CSV foi criado como um formato de arquivo universal para troca de dados em um tempo onde a interoperabilidade entre softwares era um grande desafio. Além disso, CSV é um formato de arquivo simples e fácil de ler e editar mesmo em softwares de edição de texto simples.
-
-Existem outras formas de trabalhar com dados estruturados, como XML e JSON, mas CSV se mantém popular devido à sua simplicidade e compatibilidade com diversas linguagens de programação.
-
-O exemplo de código acima é bastante simples e pode ser otimizado para lidar com casos mais específicos, como dados com aspas ou com diferentes delimitadores.
-
-## Veja também:
-
-- [Biblioteca padrão do C++](https://en.cppreference.com/w/cpp/header)
-- [Documentação sobre o formato CSV](https://tools.ietf.org/html/rfc4180)
+- Documentação C++ para leitura de arquivos: https://en.cppreference.com/w/cpp/io/basic_ifstream
+- RFC 4180, definindo o formato CSV padrão: https://tools.ietf.org/html/rfc4180
+- Biblioteca Boost para ler e escrever arquivos CSV: https://www.boost.org/doc/libs/release/libs/tokenizer/
+- Documentação sobre o fluxo de entrada/saída em C++ (iostreams): https://en.cppreference.com/w/cpp/io

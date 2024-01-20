@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Kotlin recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,23 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing to standard error in Kotlin allows programmers to output error messages or log information in their code. This is especially useful for debugging purposes, as it allows developers to identify and fix errors in their code.
+Standard error (stderr) is a stream where a program writes its error messages. Programmers use it to separate error logs from standard output (stdout) to debug more efficiently and streamline logging.
 
 ## How to:
 
-To write to standard error in Kotlin, use the writeText() function and specify the file "System.err". Here's an example:
+Here's a simple Kotlin snippet to print to standard error:
 
-```Kotlin
-System.err.writeText("Error: File not found")
+```kotlin
+fun main() {
+    System.err.println("Oops, an error occurred.")
+}
 ```
 
-This will print the error message "Error: File not found" to the standard error stream.
+And the output in your console will look like this (style may vary by terminal):
 
-## Deep Dive:
+```
+Oops, an error occurred.
+```
 
-Writing to standard error is a practice that has been around since the early days of programming. Initially, programmers would use it as a way to communicate with the user during runtime. However, as development tools and debugging techniques evolved, writing to standard error became primarily used for debugging purposes.
+## Deep Dive
 
-Although writing to standard error is a common practice, there are alternatives that can also be used, such as writing to the standard output stream or using logging libraries. However, writing to standard error is still preferred for debugging due to its convenience and simplicity.
+Originally in Unix-like systems, the rationale for stderr is clear-cut: stderr allows error messages to be sent to the screen or another file than normal output. It helps in distinguishing normal data from error messages, especially useful when output is piped elsewhere.
 
-Internally, writing to standard error in Kotlin uses the standard error stream, which is used to output error messages or log information in the console. This stream is separate from the standard output stream, which is used for regular program output.
+Alternatives to `System.err.println` include using a logging framework like Logback or log4j, which offers more control and options like logging levels and file output.
+
+The `System.err` in Kotlin is inherited from Java's `System` class, similar to `System.out` for standard output, both are PrintStream objects. By default, `System.err` prints to the console. However, it can be redirected to write to a file or a different output stream.
+
+## See Also
+
+- The Kotlin documentation on basic I/O: https://kotlinlang.org/docs/basic-io.html
+- Information about Unix standard streams: https://en.wikipedia.org/wiki/Standard_streams
+- Logback, a popular logging framework: http://logback.qos.ch/
+- Apache log4j, another logging framework: https://logging.apache.org/log4j/2.x/

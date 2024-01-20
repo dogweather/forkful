@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire un fichier texte"
-html_title:           "Ruby: Ecrire un fichier texte"
-simple_title:         "Ecrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,22 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que & pourquoi?
-Écrire un fichier texte en programmation consiste à créer un fichier contenant du texte, qui peut être lu et modifié par un programme informatique. Les programmeurs utilisent cette méthode pour stocker des données comme des paramètres, des configurations, ou pour générer des rapports à partir de leur code.
+## What & Why? (Quoi & Pourquoi ?)
+Écrire dans un fichier texte, c'est enregistrer des données ou du texte dans un fichier sur votre disque. On le fait pour la persistance des données, pour le partage, ou pour des logs.
 
-## Comment:
-Exemples de code et sortie:
+## How to: (Comment faire :)
+```Ruby
+# Ouvrir et écrire dans un fichier
+File.open('example.txt', 'w') do |file|
+  file.puts "Salut Rubyistes!" 
+end
+
+# Ajouter du texte à un fichier existant
+File.open('example.txt', 'a') do |file|
+  file.puts "Une autre ligne!"
+end
+
+# Lire le fichier
+puts File.read('example.txt')
 ```
-# Pour écrire dans un fichier texte, il faut utiliser la méthode open avec l'argument "w" pour spécifier l'écriture.
-fichier = File.open("nom_du_fichier.txt", "w") 
-# Ensuite, on peut utiliser la méthode puts pour écrire du texte dans le fichier.
-fichier.puts "Bonjour le monde!" 
-# N'oubliez pas de fermer le fichier une fois que vous avez fini d'écrire.
-fichier.close 
+```
+Salut Rubyistes!
+Une autre ligne!
 ```
 
-## Plongée en profondeur:
-Historiquement, les programmeurs ont dû écrire manuellement des fichiers texte pour stocker des données. Cependant, avec l'augmentation de la puissance de traitement des ordinateurs, des méthodes plus efficaces sont apparues, comme les bases de données. Cependant, écrire un fichier texte reste une méthode simple et largement utilisée pour stocker des données. Implémenter cette fonctionnalité nécessite des connaissances de base en programmation et des compétences en manipulation de fichiers.
+## Deep Dive (Plongée en Profondeur)
+Historiquement, écrire dans un fichier était plus complexe. Aujourd'hui, Ruby simplifie ce processus avec des méthodes comme `File.open`. Il existe des alternatives, comme `IO.write`, ou travailler directement avec des flux (`IO` objects). Niveau implémentation, Ruby gère la plupart des détails du système de fichiers sous-jacent, vous n'avez donc pas à vous en préoccuper.
 
-## Voir aussi:
-- [Ruby Documentation officielle sur File](https://ruby-doc.org/core-2.7.1/File.html)
+## See Also (Voir Aussi)
+- Ruby Doc on File: [ruby-doc.org/core/File.html](https://ruby-doc.org/core/File.html)
+- Ruby Doc on IO: [ruby-doc.org/core/IO.html](https://ruby-doc.org/core/IO.html)

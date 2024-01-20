@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit Yaml"
-html_title:           "C: Arbeiten mit Yaml"
-simple_title:         "Arbeiten mit Yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist YAML und warum nutzen Programmierer es?
+## Was & Warum?
+YAML, "YAML Ain't Markup Language", ist ein Datenformat zum leicht lesbaren Austausch von Daten. Programmierer nutzen es für Konfigurationsdateien und Datenübertragung wegen seiner Klarheit und Einfachheit.
 
-YAML steht für "YAML Ain't Markup Language" und ist eine einfache, aber leistungsstarke Sprache zur Strukturierung von Daten. Als Programmierer nutzen wir YAML, um komplexe Datenstrukturen in einer lesbareren und wartbareren Weise zu organisieren.
-
-Wie geht man vor:
+## How to:
+In C gibt es keine integrierte YAML-Unterstützung, also nutzt man Bibliotheken wie `libyaml`. Hier ein Beispiel für das Einlesen einer YAML-Datei:
 
 ```C
-int main() {
-  // Beispiel für ein YAML-Dokument
-  char yaml[20] = "name: Max";
-  char output[20];
+#include <stdio.h>
+#include <yaml.h>
 
-  // Abrufen und Ausgeben des Namen
-  strcpy(output, yaml_parse(yaml, "name"));
-  printf("%s\n", output);
-  return 0;
+int main(void){
+    FILE *fh = fopen("config.yaml", "r");
+    yaml_parser_t parser;
+    yaml_token_t  token;
+
+    if(!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize parser!\n", stderr);
+    if(fh == NULL)
+        fputs("Failed to open file!\n", stderr);
+
+    yaml_parser_set_input_file(&parser, fh);
+
+    do {
+        yaml_parser_scan(&parser, &token);
+        switch(token.type)
+        {
+        /* Token-Verarbeitung hier */
+        }
+    } while(token.type != YAML_STREAM_END_TOKEN);
+
+    yaml_token_delete(&token);
+    yaml_parser_delete(&parser);
+    fclose(fh);
+    return 0;
 }
 ```
 
-Dieses Beispiel zeigt, wie man einen einfachen Namen aus einem YAML-Dokument extrahieren kann. Die verwendete Funktion "yaml_parse" ist Teil der meisten YAML-Bibliotheken und ermöglicht es uns, Daten basierend auf Schlüsselwörtern abzurufen.
+Beispiel für config.yaml:
+```yaml
+version: 1
+path: "/usr/local/bin"
+enabled: true
+```
 
-Tiefergehende Informationen:
+Sample Output ist hier nicht sinnvoll, da das Lesen von YAML-Dateien im Wesentlichen im Reagieren auf Tokens besteht.
 
-YAML wurde erstmals 2001 veröffentlicht und war eines der ersten Datenformate, das auf menschenlesbarer Syntax basierte. Als Alternative zu komplexeren Datenformaten wie XML wurde YAML schnell beliebt unter Entwicklern. Es ist auch wichtig zu beachten, dass YAML nicht nur in der Programmierung, sondern auch in der Konfiguration von Systemen weit verbreitet ist.
+## Deep Dive
+YAML entstand Anfang der 2000er als human-freundliches Datenformat. Alternativen sind JSON und XML, aber YAML ist oft lesbarer. Die Komplexität von YAML ergibt sich aus der Unterstützung vielfältiger Datentypen und Strukturen. C mit YAML zu verwenden, erfordert meist eine externe Bibliothek, wie `libyaml` oder `yaml-cpp` für C++.
 
-Siehe auch:
-
-- Offizielle YAML-Website: https://yaml.org/
-- YAML-Spezifikation: https://yaml.org/spec/
-- Alternative Datenformate: JSON, XML
+## See Also
+- YAML offizielle Seite: https://yaml.org
+- `libyaml` – C-Bibliothek für YAML: https://github.com/yaml/libyaml
+- YAML Syntax: https://yaml.org/spec/1.2/spec.html
+- Ein Tutorial für YAML in C: https://www.wpsoftware.net/andrew/pages/libyaml.html

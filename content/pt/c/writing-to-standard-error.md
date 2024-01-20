@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "C: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Arduino: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porque?
+## What & Why?
+Escrever em "standard error" (stderr) é mandar mensagens de erro pra um lugar específico que é diferente da saída normal de um programa. Programadores fazem isso para separar a saída normal da saída de erro, facilitando a vida de quem tá rodando e depurando o programa.
 
-Escrever para o erro padrão (standard error) é simplesmente a prática de exibir mensagens de erro ou de depuração em vez de mensagens regulares. Isso é útil para os programadores porque permite que as mensagens de erro sejam separadas das mensagens normais e possam ser facilmente identificadas e corrigidas.
+## How to:
+```C
+#include <stdio.h>
 
-## Como fazer:
-
-```
-C printf("Mensagem de erro: Não foi possível abrir o arquivo.\n");
-```
-
-Saída:
-```
-Mensagem de erro: Não foi possível abrir o arquivo.
+int main() {
+    fprintf(stderr, "Erro encontrad0! \n");
+    return 0;
+}
 ```
 
-## Deep Dive:
+### Saída de Amostra:
+```
+Erro encontrado!
+```
 
-No início do desenvolvimento de software, as mensagens de erro eram exibidas apenas no terminal ou linha de comando, tornando difícil a identificação de erros em códigos muito extensos. Com a introdução do conceito de "erro padrão", tornou-se possível separar as mensagens de erro das mensagens regulares e exibi-las em locais diferentes, facilitando a identificação e correção de erros.
+## Deep Dive
+Historicamente, separar stdout (saída padrão) de stderr é uma prática do Unix, adotada para simplificar o processamento de erros. Alternativas incluem o uso de logs ou códigos de retorno. No C, stderr é um FILE * predefinido, acessível sem abrir explicitamente um arquivo. Quando escreve para stderr, o C trata de mandar as mensagens para o lugar certo, mesmo que seja redirecionado em um shell.
 
-Além disso, existem outras formas de lidar com mensagens de erro em C, como o uso da função ```perror()```, responsável por exibir uma mensagem de erro personalizada a partir do conteúdo da variável ```errno```. Isso permite uma maior personalização nas mensagens de erro e pode ser uma alternativa útil para exibir informações específicas em caso de problemas.
-
-## See Also:
-
-- [Tutorial sobre Mensagens de Erro em C](https://www.codingame.com/playgrounds/2205/manejo-de-erros-conceitos-basicos/tratamento-de-erros-no-c)
-- [Documentação Oficial do C](https://devdocs.io/c/)
+## See Also
+- Documentação do GNU sobre stderr: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- Guia do "Beej's Guide to C Programming" sobre I/O em Arquivos: https://beej.us/guide/bgc/output/html/multipage/stdio.html
+- Understanding UNIX/Linux Programming de Bruce Molay para mais contexto histórico.

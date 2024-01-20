@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Swift: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Zapisywanie pliku tekstowego"
+html_title:           "Arduino: Zapisywanie pliku tekstowego"
+simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i dlaczego?
+## Co i dlaczego?
 
-Pisanie pliku tekstowego to po prostu tworzenie i zapisywanie tekstu w pliku na komputerze. Programiści często robią to, aby zachować ważne informacje lub wyniki swojego kodu, tak aby mogli do nich powrócić w przyszłości.
+Zapisywanie pliku tekstowego to proces, w którym dane są zapisywane w pliku o formacie tekstowym. Programiści robią to, aby przechowywać dane konfiguracyjne, logować informacje lub wyeksportować wyniki pracy programu.
 
-## Jak to zrobić:
+## Jak to zrobić?
 
 ```Swift
-// Tworzenie nowego pliku tekstowego o nazwie "moj_plik.txt"
-let nazwaPliku = "moj_plik.txt"
-let tekst = "Ten tekst zostanie zapisany w pliku!"
- 
+import Foundation
+
+let str = "Witaj świecie!"
+let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+
 do {
-  // Używanie mechanizmu "try-catch" w przypadku, gdyby nie udało się utworzyć pliku.
-  try tekst.write(toFile: nazwaPliku, atomically: false, encoding: String.Encoding.utf8)
+    try str.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+    print("Plik został zapisany.")
+} catch {
+    print("Wystąpił błąd podczas zapisu pliku: \(error).")
 }
-catch {
-  print("Nie udało się zapisać pliku!")
+
+// Pomocnicza funkcja do znalezienia katalogu dokumentów
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
 }
 ```
 
-Powyższy kod utworzy nowy plik "moj_plik.txt" w folderze, w którym uruchomiono kod. Jeśli chcesz zmienić miejsce zapisu, możesz podać ścieżkę do odpowiedniego folderu w nazwie pliku.
+**Przykładowy wynik:**
+```
+Plik został zapisany.
+```
 
-## Głębsze wody:
+## Deep Dive
 
-- Pisanie pliku tekstowego jest często używane w celu zapisywania wyników obliczeń lub zmiennych, przetwarzania danych lub nawet tworzenia plików konfiguracyjnych dla innych aplikacji.
-- Istnieje wiele alternatywnych sposobów na pisanie plików w języku Swift, takich jak używanie funkcji `FileHandle` lub `Data` zamiast `String`.
-- Staraj się nie zapisywać ważnych danych w plikach tekstowych, ponieważ mogą one być narażone na utratę lub nadpisane przez inne aplikacje na twoim komputerze.
+Zapisywanie plików tekstowych w Swift zaczęło się od wersji Swift 1.0 i ewoluowało na przestrzeni lat. Alternatywą może być użycie `FileHandle` czy strumieni danych (`OutputStream`). Dane w pliku tekstowym są zapisywane jako ciąg znaków w wybranym kodowaniu, najczęściej UTF-8.
 
-## Zobacz też:
+## Zobacz też
 
-- [A guide to file handling in Swift](https://medium.com/@jacobawenger/file-handling-in-swift-1f851551c2a6)
-- [Apple's guide to using FileHandle for file operations in Swift](https://developer.apple.com/documentation/foundation/filehandle)
+- [Dokumentacja Apple o pracy z systemem plików](https://developer.apple.com/documentation/foundation/file_system)
+- [Dokumentacja Apple o klasie `FileManager`](https://developer.apple.com/documentation/foundation/filemanager)
+- [Tutorial o obsłudze plików w Swift](https://www.hackingwithswift.com/read/26/overview)

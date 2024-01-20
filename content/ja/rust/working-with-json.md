@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱うこと」"
-html_title:           "Rust: 「JSONを扱うこと」"
-simple_title:         "「JSONを扱うこと」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-JSONとは、データの構造化されたフォーマットの一つであり、プログラマーがデータの受け渡しや保存に使用することができます。JSONを使用することで、データを柔軟に管理することができるため、多様なアプリケーションやシステムでよく使われています。
+## What & Why? / 何となぜ？
 
-## やり方：
-以下のコードブロック内には、JSONを作成・アクセスする方法の例とその出力が示されています。
+JSONはデータ交換のフォーマットです。RustでJSONを扱うことで、Web APIや設定ファイルなどとデータを簡単にやり取りできます。
+
+## How to: / どのようにして：
+
+以下に、RustでJSONを扱う基本的な方法を示します。
 
 ```Rust
-use serde_json::{Value, json}; // クレートのインポート
+// serde_json dependency is needed in Cargo.toml
 
-fn main() {
-    // JSONを作成
-    let mut my_json = json!({
-        "name": "John",
-        "age": 30,
-        "hobbies": ["reading", "gaming", "cooking"]
-    });
+use serde::{Deserialize, Serialize};
+use serde_json::{Result, Value};
 
-    // JSONの値にアクセス
-    println!("Name: {}", my_json["name"]); // 出力：Name: John
-    println!("Age: {}", my_json["age"]); // 出力：Age: 30
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    is_programmer: bool,
+}
 
-    // 新しいキーと値を追加
-    my_json["favorite_color"] = json!("blue");
+fn main() -> Result<()> {
+    // Serialize
+    let person = Person {
+        name: "Alice".to_string(),
+        age: 30,
+        is_programmer: true,
+    };
+    let serialized = serde_json::to_string(&person)?;
+    println!("Serialized: {}", serialized);
 
-    // JSONの値を変更
-    my_json["age"] = json!(31);
+    // Deserialize
+    let deserialized: Person = serde_json::from_str(&serialized)?;
+    println!("Deserialized: {} is {} years old.", deserialized.name, deserialized.age);
 
-    // インデントを使用して美しく表示
-    println!("JSON: {}", serde_json::to_string_pretty(&my_json).unwrap());
-    /*
-    出力：
-    {
-        "name": "John",
-        "age": 31,
-        "hobbies": ["reading", "gaming", "cooking"],
-        "favorite_color": "blue"
-    }
-    */
+    // Parse arbitrary JSON
+    let data = r#"
+        {
+            "name": "Bob",
+            "age": null,
+            "is_programmer": false
+        }"#;
+    let v: Value = serde_json::from_str(data)?;
+    println!("Parsed name: {}", v["name"]);
+
+    Ok(())
 }
 ```
 
-## 詳細を調べる：
-JSONは、データの保存や交換のために生み出された軽量なフォーマットです。他にもXMLやYAMLといったフォーマットが存在し、それぞれ特有の特性がありますが、JSONはシンプルで理解しやすいため、広く使われています。Rustでは、serde_jsonというクレートを使用してJSONを扱うことができます。
+Sample output:
 
-## 関連リンク：
-- [RustにおけるJSONのドキュメント](https://docs.serde.rs/serde_json/)
-- [JSONの歴史と背景についての記事](https://www.json.org/json-ja.html)
-- [JSONの代替フォーマットとしてのXMLとYAMLの比較](https://medium.com/@chrisalbon/why-json-isnt-really-xml-javascript-object-notation-vs-extensible-markup-language-301692b25c0c)
+```
+Serialized: {"name":"Alice","age":30,"is_programmer":true}
+Deserialized: Alice is 30 years old.
+Parsed name: "Bob"
+```
+
+## Deep Dive / ディープダイブ
+
+JSONはJavaScript Object Notationの略で、2001年に導入されました。Rustでは`serde_json`クレートと`serde`ライブラリでJSONを扱います。`serde`はシリアライズとデシリアライズのためのフレームワークです。XMLやYAMLなどの他のフォーマットもありますが、JSONはその軽量さと人間が読める形式で広く使われています。
+
+## See Also / 参照
+
+- [`serde_json` documentation](https://docs.serde.rs/serde_json/)
+- [The Rust Programming Language – Working with JSON](https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html#storing-random-numbers-associated-with-an-id-in-the-hash-map)
+- [`serde` crate documentation](https://serde.rs/)

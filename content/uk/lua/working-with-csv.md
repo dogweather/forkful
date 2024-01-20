@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Lua: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що це таке та навіщо?
+CSV (Comma-Separated Values) — формат файла, у якому дані розділені комами. Програмісти використовують CSV для легкого обміну даними між різними системами та програмами.
 
-Робота з CSV – це обробка таблиць зі значеннями, які зберігаються у форматі коми-розділеного файла. Програмісти використовують цей формат для зберігання і обробки даних у компактній, легкій для читання формі.
-
-## Як?
+## Як це зробити:
+Простий скрипт на Lua для читання CSV:
 
 ```Lua
--- Завантажуємо бібліотеку для роботи з CSV
-local csv = require("csv")
+function parseCsvLine(line, sep)
+    local res = {}
+    local searchPattern = string.format('([^%s]+)', sep)
 
--- Відкриваємо файл зі значеннями
-local file = csv.open("table.csv")
+    for str in string.gmatch(line, searchPattern) do
+        table.insert(res, str)
+    end
 
--- Використання циклу для читання даних
-for fields in file:lines() do
-  -- Виводимо значення з таблиці
-  print(fields[1], fields[2], fields[3])
+    return res
 end
+
+local file = io.open('example.csv', 'r')
+for line in file:lines() do
+    local fields = parseCsvLine(line, ',')
+    -- Обробка полів
+    print(table.concat(fields, '|'))
+end
+file:close()
 ```
 
-Припустимо, що у таблиці є наступні дані:
+Припустимо, у `example.csv` є такі дані:
 ```
-Ім'я,Прізвище,Вік
-Катя,Ковальчук,25
-Павло,Петренко,30
-Олександр,Іванов,40
-```
-
-Вивід програми буде наступним:
-```
-Ім'я		Прізвище	Вік
-Катя		Ковальчук	25
-Павло		Петренко	30
-Олександр	Іванов		40
+name,age,city
+Alice,30,New York
+Bob,25,Los Angeles
 ```
 
-## Поглиблене вивчення
+Результат:
+```
+name|age|city
+Alice|30|New York
+Bob|25|Los Angeles
+```
 
-### Історичний контекст
+## Поглиблено:
+CSV виник у 1970-х для обміну даними. Серед альтернатив — JSON та XML. Перевага CSV: простота та широка підтримка. Однак, CSV має обмеження, наприклад, відсутність типізації даних.
 
-CSV був створений у 1972 році і використовувався для передачі та зберігання даних між програмами. Завдяки своїй простоті та універсальності, він є популярним форматом для обміну даними до сьогодні.
-
-### Альтернативи
-
-Хоча CSV є популярним, існують інші формати для зберігання даних, такі як JSON і XML. Вони надають більш структуровану інформацію та підтримують складніші типи даних.
-
-### Деталі реалізації
-
-Бібліотека CSV включена до стандартної бібліотеки Lua, тому її не потрібно встановлювати окремо. Вона підтримує як читання, так і запис даних у форматі CSV.
-
-## Дивись також
-
-- [Документація Lua для CSV](https://www.lua.org/manual/5.4/manual.html#pdf-csv)
-- [Стаття про роботу з CSV в Lua](https://www.codeproject.com/Articles/1030897/CSV-Tool-for-Lua)
-- [Збереження даних у форматі CSV в Lua](https://stackoverflow.com/questions/45233191/write-csv-file-in-lua)
+## Дивись також:
+- Lua Users Wiki: http://lua-users.org/wiki
+- RFC 4180, стандарт CSV: https://tools.ietf.org/html/rfc4180
+- Лекції про обробку CSV у Lua: https://www.tutorialspoint.com/lua/lua_file_io.htm

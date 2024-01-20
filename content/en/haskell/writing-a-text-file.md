@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "Haskell recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,32 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing a text file in Haskell involves creating a file and filling it with textual data. Programmers use this method to store data in a format that can be easily read and modified by both humans and machines.
+In Haskell, writing a text file is all about saving data to a file. Programmers do this to persist data between sessions, share information, or log program output.
 
 ## How to:
-
-To write a text file in Haskell, we use the `writeFile` function from the `System.IO` module. This function takes in two arguments: the file name and the text to be written. For example:
-
-```Haskell
-writeFile "myFile.txt" "This is the content of my file."
-```
-This creates a file named "myFile.txt" and writes the text "This is the content of my file." inside it. 
-
-To write multiple lines, we can use the `unlines` function to concatenate our lines into a single string, then pass it as the second argument to `writeFile`. Here's an example:
+Writing text files in Haskell is straightforward. Here's the gist using `writeFile`:
 
 ```Haskell
-let lines = ["Line 1", "Line 2", "Line 3"]
-writeFile "myFile.txt" (unlines lines)
+import System.IO
+
+main :: IO ()
+main = do
+  let content = "Hello, file!"
+  writeFile "greetings.txt" content
 ```
-This will create a file named "myFile.txt" and write the contents of `lines` as separate lines in the file.
 
-## Deep Dive:
+This code generates a file `greetings.txt` with "Hello, file!" inside.
 
-In earlier versions of Haskell, the `writeFile` function was not available and programmers had to use the `openFile` and `hPutStr` functions to achieve the same result. However, the `writeFile` function is now the preferred method as it simplifies the code and takes care of opening and closing the file for us.
+For appending text, use `appendFile`:
 
-An alternative to writing text files in Haskell is using the `Data.ByteString` module, which deals with raw bytes instead of characters. This can be more efficient for handling large amounts of data.
+```Haskell
+appendToFile :: FilePath -> String -> IO ()
+appendToFile file content = appendFile file content
 
-## See Also:
+-- Usage
+main :: IO ()
+main = appendToFile "greetings.txt" "\nSee you soon!"
+```
 
-- [Haskell Data.ByteString module documentation](http://hackage.haskell.org/package/bytestring-0.11.1.0/docs/Data-ByteString.html)
+Now, `greetings.txt` will also have "See you soon!" at the end.
+
+## Deep Dive
+Haskell's file writing functions stem from its robust IO handling. `writeFile` and `appendFile` are convenient wrappers around lower-level operations. Alternatives like `hPutStr` or `hPutStrLn` provide more control, letting us specify a file handle.
+
+Details:
+- `writeFile`: truncates the file before writing.
+- `appendFile`: doesn't truncate, just adds to the end.
+- Both handle text encoding and buffering.
+- For non-text data, use functions like `hPutBuf`.
+
+## See Also
+For more info and best practices:
+
+- [Haskell Documentation on IO](https://haskell.org/documentation)
+- [Learn You a Haskell for Great Good! - IO](http://learnyouahaskell.com/input-and-output)
+- [Real World Haskell - Working with Files](http://book.realworldhaskell.org/read/io.html)

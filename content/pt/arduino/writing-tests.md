@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por quê?
-Escrever testes é um processo de verificação para garantir que o código escrito funciona corretamente. Os programadores fazem testes para encontrar e corrigir erros no código antes de colocá-lo em produção.
+## O Que & Porquê?
+Escrever testes é criar códigos que verificam se outras partes do seu programa funcionam como esperado. Programadores testam para evitar bugs, garantir a qualidade, e facilitar atualizações no futuro.
 
-## Como fazer:
-Escrever testes no Arduino é bastante simples. Primeiro, é necessário incluir a biblioteca "ArduinoUnit.h". Em seguida, escreva o teste usando a função Test(); e execute-o com a função runalltests();. Por exemplo:
+## Como Fazer:
+```Arduino
+#include <Arduino.h>
+#include <unity.h>
 
+void test_led_builtin_pin_number(void) {
+    TEST_ASSERT_EQUAL(13, LED_BUILTIN);
+}
+
+void test_led_state_high(void) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    TEST_ASSERT_EQUAL(HIGH, digitalRead(LED_BUILTIN));
+}
+
+void test_led_state_low(void) {
+    digitalWrite(LED_BUILTIN, LOW);
+    TEST_ASSERT_EQUAL(LOW, digitalRead(LED_BUILTIN));
+}
+
+void setup() {
+    UNITY_BEGIN();
+    RUN_TEST(test_led_builtin_pin_number);
+    RUN_TEST(test_led_state_high);
+    RUN_TEST(test_led_state_low);
+    UNITY_END();
+}
+
+void loop() {
+    // não é usado em testes
+}
 ```
-#include <ArduinoUnit.h>
-
-void setup()
-{
-  Serial.begin(9600);
-  Test.begin();
-}
-
-// Exemplo de teste
-test(led_test) 
-{
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
-  assertEquals(HIGH, digitalRead(LED_BUILTIN));
-}
-
-void loop()
-{
-  runAllTests();
-  while (Test.available()) {
-    char c = Test.read();
-    Serial.print(c);
-  }
-}
+Saída Esperada:
 ```
+.
+.
+.
+```
+(Três pontos indicam que todos os três testes passaram)
 
-A saída do teste será exibida na porta serial do Arduino. Se todos os testes passarem, a saída será "OK", caso contrário, indicará qual teste falhou e por quê.
+## Aprofundamento
+Historicamente, escrever testes é uma prática vinda do desenvolvimento de software que tem sido adaptada para a programação em Arduino recentemente, graças ao surgimento de frameworks de teste, como a Unity. Alternativas para Arduino incluem AUnit e GoogleTest para projetos mais complexos. Detalhes importantes de implementação envolvem isolar o código a ser testado e simular o comportamento de hardware quando necessário.
 
-## Deep Dive:
-O processo de escrever testes é conhecido como Test Driven Development (TDD) e é uma prática comum em desenvolvimento de software. Existem outras bibliotecas de teste disponíveis para o Arduino, como a "Unity" e a "CppUTest".
-
-## Veja também:
-- [Documentação da biblioteca ArduinoUnit] (https://github.com/mmurdoch/arduinounit)
-- [Artigo sobre TDD no Arduino] (https://www.arduino.cc/en/software-testing-tools)
-- [Outras bibliotecas de teste para Arduino] (https://create.arduino.cc/projecthub/?q=testing&t=projects)
+## Veja Também
+- [AUnit Library](https://www.arduino.cc/reference/en/libraries/aunit/)

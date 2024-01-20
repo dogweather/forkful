@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "TypeScript: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-L'écriture d'un fichier texte peut sembler une tâche simple pour les programmeurs, mais elle est essentielle pour de nombreuses applications. Cela consiste à créer ou à modifier un fichier texte, qui est un fichier contenant uniquement du texte brut sans aucun formatage ou graphique. Les programmeurs utilisent souvent cette technique pour créer des fichiers de données ou de configuration, ou pour enregistrer des informations saisies par l'utilisateur.
+## What & Why?
+Écrire dans un fichier texte, c'est transcrire des données sous forme de texte. Les programmeurs le font pour enregistrer des configurations, des logs ou échanger des informations entre applications.
 
-## Comment faire:
-Voici un exemple en TypeScript pour écrire un fichier texte:
+## How to:
+TypeScript utilise Node.js pour écrire dans des fichiers. Installons `fs`, le module de système de fichiers.
 
-```
-import { writeFileSync } from "fs";
-
-// Création d'un fichier texte nommé "noms.txt"
-writeFileSync("noms.txt", "John" + "\n" + "Sarah" + "\n" + "Tom");
-
-// Output: Un fichier texte contenant les noms John, Sarah et Tom
+```bash
+npm install @types/node --save-dev
 ```
 
-Pour ajouter du contenu à un fichier existant, vous pouvez utiliser la méthode `appendFileSync` à la place de `writeFileSync`.
+Créez une fonction `ecrireFichier` :
 
+```typescript
+import * as fs from 'fs';
+
+function ecrireFichier(chemin: string, contenu: string): void {
+  fs.writeFileSync(chemin, contenu);
+}
+
+// Utilisation
+ecrireFichier('exemple.txt', 'Salut les devs TypeScript !');
 ```
-import { appendFileSync } from "fs";
 
-// Ajout d'un nouveau nom à notre fichier "noms.txt"
-appendFileSync("noms.txt", "\n" + "Amy");
+Vérifiez `exemple.txt` :
 
-// Output: Le fichier texte contient maintenant les noms John, Sarah, Tom et Amy
+```plaintext
+Salut les devs TypeScript !
 ```
 
-## Plongée en profondeur:
-L'écriture de fichiers texte remonte aux débuts de la programmation informatique. Autrefois, les programmes stockaient principalement leurs données dans des fichiers texte avant l'avènement des bases de données. Il existe également d'autres alternatives pour stocker des données, telles que les fichiers CSV ou les fichiers JSON, mais les fichiers texte restent encore très populaires en raison de leur simplicité et de leur compatibilité avec la plupart des langages de programmation.
+## Deep Dive
+En TypeScript, l'écriture de fichiers repose surtout sur Node.js, introduit en 2009. D'autres bibliothèques, comme `fs-extra` ou des APIs browser-based telles que l'API `File`, offrent des fonctionnalités alternatifs. Pour garantir la compatibilité, utilisez des polyfills ou transpilez vers des standards supportés par les navigateurs ciblés.
 
-L'implémentation de l'écriture de fichiers texte varie en fonction du langage de programmation utilisé, mais les étapes de base restent les mêmes: création d'un fichier, ajout ou modification de contenu, puis enregistrement du fichier sur le disque.
+## See Also
+- Documentation Node.js fs: [nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- TypeScript Node Starter: [github.com/microsoft/TypeScript-Node-Starter](https://github.com/microsoft/TypeScript-Node-Starter)
+- Mozilla Developer Network Web API interface | File: [developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)

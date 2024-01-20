@@ -1,7 +1,7 @@
 ---
-title:                "Csv के साथ काम करना"
-html_title:           "Lua: Csv के साथ काम करना"
-simple_title:         "Csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Bash: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-CSV के साथ काम करना मूल रूप से एक प्रोग्रामिंग टेक्निक है, जिसमें डेटा प्रस्तुत करने के लिए कॉमा (,) से अलग दर्शक हैं। प्रोग्रामर आमतौर पर डेटा को संरचित और आसानी से संशोधित करने के लिए CSV फाइलों से काम करते हैं।
+## What & Why? (क्या और क्यों?)
+CSV यानी Comma-Separated Values, एक साधारण फाइल फॉर्मेट है जो टेबुलर डेटा को स्टोर करता है। प्रोग्रामर्स इसे इसलिए इस्तेमाल करते हैं क्योंकि यह सरल है और डेटाबेस या एक्सेल शीट्स के साथ आसानी से काम करता है।
 
-## कैसे?
-`Lua` में CSV फाइलों के साथ काम करने के लिए, हम प्रथम आवश्यक `csv` लाइब्रेरी को लोड करेंगे। यह लाइब्रेरी `csv.parse()` फंक्शन को प्रदान करती है, जो CSV फाइल के अनुरूप उपलब्ध डेटा को एक टेबल में वापस देती है।
+## How to: (कैसे करें:)
+```Lua
+-- CSV फाइल पढ़ना
+local function ReadCSV(filePath)
+    local file = io.open(filePath, "r") -- फाइल खोल रहे हैं
+    if not file then return nil, "Unable to open file" end
 
+    local data = {} -- डेटा को स्टोर करने के लिए एक टेबल
+    for line in file:lines() do
+        local row = {}
+        for value in line:gmatch("[^,]+") do
+            table.insert(row, value)
+        end
+        table.insert(data, row)
+    end
+    file:close()
+    return data
+end
+
+-- CSV फाइल लिखना
+local function WriteCSV(filePath, data)
+    local file = io.open(filePath, "w") -- फाइल खोल रहे हैं
+    if not file then return false, "Unable to open file" end
+
+    for _, row in ipairs(data) do
+        file:write(table.concat(row, ",") .. "\n")
+    end
+    file:close()
+    return true
+end
+
+-- उपयोग (Usage)
+local filePath = "example.csv"
+
+-- CSV पढ़ना
+local data, err = ReadCSV(filePath)
+if data then
+    for i, row in ipairs(data) do
+        print("Row " .. i .. ":")
+        for j, value in ipairs(row) do
+            print(" ", value)
+        end
+    end
+end
+
+-- CSV लिखना
+local success, err = WriteCSV("new_example.csv", {{"ID", "Name", "Age"}, {1, "Aman", 30}, {2, "Priya", 25}})
+if not success then
+    print(err)
+end
 ```
-local csv = require('csv')
 
--- CSV फाइल खोलें
-local file = io.open("data.csv", "r")
+## Deep Dive (गहराई में जानकारी)
+CSV का इस्तेमाल 1970 के दशक से हो रहा है। अन्य फॉर्मेट्स जैसे JSON या XML भी डेटा को स्टोर करने के लिए होते हैं, पर CSV की सादगी इसे आकर्षक बनाती है। Lua में CSV का हैंडल करना प्रत्यक्ष है पर यदि उदाहरण के लिए डाटा में कॉमा या न्यूलाइन्स हैं, तो उसे कोट्स में wrap करना या अन्य एस्केपिंग तकनीक का इस्तेमाल करना ज़रूरी होता है।
 
--- CSV फाइल को पार्स करें
-local data = csv.parse(file:read())
-
--- CSV फाइल बंद करें
-file:close()
-
--- प्रदर्शन प्रिंट करें
-print(data)
-```
-
-उपरोक्त कोड ब्लॉक के लिए उपयुक्त `data.csv` फाइल बनाएं और आप अपने प्रिंटफंक्शन के संदर्भ में डेटा ताक प्राप्त करेंगे।
-
-## गहराई में जाएँ
-कॉमा से अलग डेटा को प्रस्तुत करने का आधुनिक धारावाहिक प्रकार १९७५ में "स्प्रेडशीट" प्रकार के कंप्यूटर प्रोग्राम से शुरू हुआ था। विभिन्न भाषाओं (पायथन, रुबी, जावा) की कई लाइब्रेरीज भी CSV के साथ काम करती हैं। CSV फाइलें यथासम्भव सीधी दिशा में पढ़ी जाती हैं और यह उचित तरीके से उचित प्रकार से कोड को प्रस्तुत करने में मदद करता है।
-
-## इससे जुड़े लिंक
-https://www.lua.org/manual/5.3/manual.html#6.4
-https://medium.com/@tylerpporter/csv-definitely-avoid-it-3e5a6155fdf1
+## See Also (इसे भी देखें)
+- Lua मैनुअल: [https://www.lua.org/manual/](https://www.lua.org/manual/)
+- CSV पर और पढ़ाई के लिए: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+- Lua में डेटा हैंडलिंग के अन्य तरीके: [https://www.tutorialspoint.com/lua/lua_file_io.htm](https://www.tutorialspoint.com/lua/lua_file_io.htm)

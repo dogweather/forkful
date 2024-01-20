@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "Go: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV файлами"
+html_title:           "Arduino: Робота з CSV файлами"
+simple_title:         "Робота з CSV файлами"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,67 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## What & Why?
+Що таке обробка CSV і навіщо це програмістам? CSV, або "Comma-Separated Values", це формат файлу, що зберігає таблицеві дані. Програмісти використовують CSV для легкого обміну даними між різними системами.
 
-Робота з CSV - це про використання текстових файлів для збереження табличної інформації. Програмісти часто використовують цей формат для обробки даних, так як він легкий для читання та обробки за допомогою програмного забезпечення.
-
-Як:
-
-```go
+## How to:
+```Go
 package main
 
 import (
-    "encoding/csv"
-    "os"
-    "log"
+	"encoding/csv"
+	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-    // Створюємо CSV файл з даними
-    file, err := os.Create("test.csv")
-    if err != nil {
-        log.Fatal("Error creating file: %s", err)
-    }
-    defer file.Close()
+	// Читання CSV зі строки.
+	csvData := "назва,ціна,кількість\nручка,10.99,100\nолівець,5.49,300"
+	reader := csv.NewReader(strings.NewReader(csvData))
+	records, _ := reader.ReadAll()
 
-    // Створюємо писаря CSV
-    writer := csv.NewWriter(file)
-    // Записуємо рядки в файл CSV
-    data := [][]string{
-        {"Персона ID", "Ім'я", "Роль"},
-        {"001", "Іван", "Аналітик"},
-        {"002", "Марія", "Розробник"},
-        {"003", "Олег", "Тестувальник"},
-    }
-    writer.WriteAll(data)
-    writer.Flush()
+	// Вивід прочитаних даних.
+	for _, record := range records {
+		fmt.Println("Товар:", record[0])
+		fmt.Println("Ціна:", record[1])
+		fmt.Println("Кількість:", record[2])
+	}
 
-    // Створюємо читача CSV
-    reader := csv.NewReader(file)
-    // Зчитуємо дані рядками
-    for {
-        record, err := reader.Read()
-        if err != nil {
-            break
-        }
-        fmt.Println(record)
-    }
+	// Запис CSV у файл.
+	file, _ := os.Create("products.csv")
+	writer := csv.NewWriter(file)
+	writer.WriteAll(records) // Зазвичай треба перевіряти помилки.
+	writer.Flush()
+	file.Close()
 }
 ```
-
-Виходом буде:
-
-```go
-[Персона ID Ім'я Роль]
-[001 Іван Аналітик]
-[002 Марія Розробник]
-[003 Олег Тестувальник]
+Приклад виводу:
+```
+Товар: назва
+Ціна: ціна
+Кількість: кількість
+Товар: ручка
+Ціна: 10.99
+Кількість: 100
+Товар: олівець
+Ціна: 5.49
+Кількість: 300
 ```
 
-Детальніше:
+## Deep Dive
+CSV з'явився ще у 1970-х. Через сумісність та простоту продовжує бути популярним. Альтернативи – це JSON, XML, але CSV швидший для читання і письма людиною. У Go для CSV є стандартний пакет `encoding/csv`, який надає інструментарій для ефективної роботи з цим форматом.
 
-Стандартний CSV формат був запропонований у 1972 році та використовується для обміну даними в текстовому вигляді. Існують альтернативи, такі як JSON або XML, але CSV залишається популярним для роботи з табличною інформацією. Один з переваг роботи з CSV в тому, що це простий та легкий формат, який можна швидко обробляти за допомогою програмного забезпечення. У Go мові є вбудовані бібліотеки для роботи з CSV, що робить її досить простою для використання.
-
-Дивись також:
-
-- [Стандартна бібліотека CSV у Go](https://golang.org/pkg/encoding/csv/)
+## See Also
+- [Офіційна документація по пакету encoding/csv](https://pkg.go.dev/encoding/csv)
+- [Стаття "Робота з CSV на Go"](https://www.golangprograms.com/golang-read-csv-file-into-struct.html)
+- [Використання Go для роботи з різними форматами файлів](https://medium.com/@ankurraina/using-go-for-file-handling-3e4cf0753494)

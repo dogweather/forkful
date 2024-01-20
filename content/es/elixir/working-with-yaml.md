@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "Elixir: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Trabajar con YAML es una forma común para que los programadores manejen y guarden datos estructurados. Se utiliza para archivos de configuración, intercambio de datos y más debido a su sintaxis simple y legible.
 
-## ¿Cómo hacerlo?
-El lenguaje Elixir proporciona una librería llamada YAML que nos permite interactuar con archivos y datos YAML fácilmente. A continuación, se muestran algunos ejemplos de cómo usarla:
+Trabajar con YAML significa manipular datos en el formato YAML ("YAML Ain't Markup Language"), común en configuración y transferencia de datos por su legibilidad humana. Programadores lo usan por su simplicidad y facilidad de uso en múltiples lenguajes de programación.
 
-### Cargar un archivo YAML
-```
-Elixir
-yaml = YAML.load_file("config.yml")
-```
+## Cómo hacerlo:
 
-### Obtener un valor específico
-```
-Elixir
-yaml["config"]["url"]
-# => "https://www.example.com"
+Elixir no incluye un parser de YAML en la biblioteca estándar, pero puedes usar la librería `yamerl` disponible en Hex. Primero, agrega la dependencia a tu `mix.exs`:
+
+```elixir
+defp deps do
+  [
+    {:yamerl, "~> 0.8"}
+  ]
+end
 ```
 
-### Guardar datos en un archivo YAML
-```
-Elixir
-data = %{username: "johndoe", password: "12345"}
-YAML.store("data.yml", data)
+Luego puedes cargar y parsear YAML de esta manera:
+
+```elixir
+{:ok, yaml} = YamlElixir.read_from_file("config.yaml")
+IO.inspect(yaml)
 ```
 
-### Convertir un mapa a formato YAML
+Si `config.yaml` contiene:
+
 ```
-Elixir
-data = %{name: "Elixir", version: "1.10.3"}
-YAML.dump(data)
-# => "---\n:name: \"Elixir\"\n:version: \"1.10.3\""
+nombre: "Alejandro"
+ocupacion: "Desarrollador"
 ```
 
-## Inmersión profunda
-YAML, que significa "YAML Ain't Markup Language", es un formato de serialización de datos que fue creado en el año 2001. Además de la librería YAML de Elixir, hay otras opciones como YamlElixir o Yamlix que también pueden ser utilizadas en proyectos.
+La salida será un mapa de Elixir:
 
-## Ver también
-- Sitio oficial de la librería YAML para Elixir: https://hexdocs.pm/yaml/
-- Otros paquetes de Elixir relacionados con YAML: YamlElixir (https://github.com/jeremyong/yaxpeax-elixir) y Yamlix (https://github.com/angelikatyborska/yaml-eex)
+```elixir
+%{"nombre" => "Alejandro", "ocupacion" => "Desarrollador"}
+```
+
+Para guardar datos en un archivo YAML:
+
+```elixir
+datos = %{"nombre" => "Alejandro", "ocupacion" => "Desarrollador"}
+File.write!("config.yaml", YamlElixir.write_to_string(datos))
+```
+
+Esto crea o sobrescribe `config.yaml` con el contenido estructurado.
+
+## Profundización
+
+YAML se diseñó en 2001 para ser amigable a humanos y trabajable con lenguajes de scripting. Alternativas incluyen JSON y XML, pero YAML destaca en configuraciones por su claridad. La implementación en Elixir generalmente requiere librerías externas porque el idioma valora la concisión y deja ciertas funcionalidades a la comunidad.
+
+## Vea También:
+
+- YAML especificación: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- Otros parsers de YAML en Elixir en Hex: [https://hex.pm](https://hex.pm) (buscar "YAML")

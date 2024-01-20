@@ -1,6 +1,6 @@
 ---
 title:                "테스트 작성하기"
-html_title:           "Elixir: 테스트 작성하기"
+html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇을 & 왜?
+## What & Why? (무엇과 왜?)
+테스트 코딩은 코드가 의도한 대로 작동하는지 확인하기 위해 사전에 작성된 시나리오를 실행하는 과정입니다. 프로그래머들은 버그 예방, 기능 안정성 확보, 그리고 미래의 코드 변경에 대한 자신감을 갖기 위해 테스트를 작성합니다.
 
-프로그래머들이 테스트를 작성하는 이유는 애플리케이션의 버그를 찾고 수정하기 위해서입니다. 테스트를 작성하는 것은 코드의 품질을 향상시키고 애플리케이션의 안정성을 보장하는 중요한 단계입니다.
+## How to: (어떻게 하나요?)
+```elixir
+# test/example_test.exs
+defmodule ExampleTest do
+  use ExUnit.Case
+  doctest Example
 
-## 하는 방법:
+  test "더하기 기능 체크" do
+    assert 2 + 3 == 5
+  end
+end
+```
+실행 결과:
+```elixir
+...
 
-```Elixir
-test "나이가 18살 이상인지 체크", do: 
-  assert 18 <= 18 # 이 테스트는 성공함
-``` 
+Finished in 0.03 seconds
+1 test, 0 failures
 
-테스트를 작성하는 방법은 간단합니다. ```test "테스트 이름", do: ``` 블록 안에 테스트를 작성하고 해당 테스트가 정확한 결과가 나오는지 확인하기 위해 ```assert``` 문을 사용합니다.
+Randomized with seed 918032
+```
 
-## 깊이 파헤치기:
+## Deep Dive (심화 학습)
+엘릭서는 ExUnit이라는 테스트 도구를 기본 제공합니다. ExUnit은 Elixir 1.0 이후부터 함께 제공되었고, 테스트 중심 개발(Test-Driven Development - TDD)을 지원하도록 설계되었습니다. 대안으로는 ESpec(유닛 테스트를 위한 BDD 도구) 등이 있으나 ExUnit이 가장 널리 사용됩니다. ExUnit을 사용할 때는, 각 테스트 케이스마다 독립된 환경에서 실행되어 서로 간섭되지 않는다는 점을 이해해야 합니다.
 
-**역사적 배경:** 테스트 주도 개발(Test-driven development)은 민첩한 소프트웨어 개발 방법론 중 하나로, 코드를 작성하기 전에 테스트부터 작성하고 해당 테스트를 성공시켜 나가며 개발을 진행하는 방식입니다. 이는 코드의 품질을 높이고 버그를 사전에 발견하여 애플리케이션의 안정성을 확보합니다.
-
-**대안:** 테스트 주도 개발 방법론 이외에도 다양한 테스트 방식이 존재합니다. 예를 들어, 수동 테스트(manual testing)는 사람이 직접 애플리케이션을 실행하고 기능을 테스트하는 방법입니다. 또한 인수 테스트(acceptance testing)는 애플리케이션이 사용자의 요구사항을 충족하는지를 테스트하는 방식입니다.
-
-**구현 세부 사항:** Elixir에서 테스트를 작성하기 위해 ```ExUnit``` 모듈을 사용합니다. 이 모듈은 간단한 다중 패러다임 테스트 프레임워크로, Elixir 코드의 모든 부분을 테스트할 수 있도록 해줍니다.
-
-## 더 많은 정보:
-
-- [테스트에 대한 좋은 글](https://medium.com/@WEtl/how-to-write-great-elixir-tests-2b52c7c8733b)
+## See Also (관련 정보)
+- [Elixir의 공식 웹사이트](https://elixir-lang.org/)
+- [ExUnit 공식 문서](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [ESpec GitHub 페이지](https://github.com/antonmi/espec)

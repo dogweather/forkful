@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "PowerShell: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,46 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
+Tekstitiedoston kirjoittaminen tarkoittaa merkkijonojen tallentamista tiedostoon. Ohjelmoijat tekevät sitä datan tallentamiseen, lokien luontiin ja asetusten säilyttämiseen.
 
-Tekstitiedoston kirjoittaminen tarkoittaa yksinkertaisesti tiedoston sisällön tallentamista tekstimuodossa. Ohjelmoijat tekevät sitä usein tallentaakseen ja muokatakseen tietoja sekä luodakseen ja hallitakseen sisältöä eri ohjelmien välillä.
-
-## Ohjeet:
-
-Käytä alla olevia esimerkkejä kirjoittaaksesi uuden tekstitiedoston ja tallentaaksesi sisällön muuttujaan:
+## How to:
+PowerShellilla tiedoston kirjoittaminen on yksinkertaista. Käytä `Out-File`-komentoa tai lyhyempää `>` -operaattoria.
 
 ```PowerShell
-# Luo uusi tekstitiedosto
-New-Item -Path "C:\esimerkkitiedosto.txt" -ItemType File
+# Käytä Out-File-komentoa
+"Tämä on tekstisisältö" | Out-File -FilePath .\esimerkki.txt
 
-# Tallenna sisältö tiedostoon
-Set-Content -Path "C:\esimerkkitiedosto.txt" -Value "Tämä on esimerkkitiedosto."
+# Tai käytä yksinkertaista uudelleenohjausta
+"Tämä on toinen tekstirivi" > .\toinen_esimerkki.txt
 ```
 
-Voit myös lisätä sisältöä olemassa olevaan tekstitiedostoon käyttämällä `Add-Content` -komentoa:
+Tulostiedosto `esimerkki.txt` ja `toinen_esimerkki.txt` luotu.
 
-```PowerShell
-# Lisää sisältöä olemassa olevaan tekstitiedostoon
-Add-Content -Path "C:\esimerkkitiedosto.txt" -Value "Tämä on lisää esimerkkisisältöä."
-```
+## Deep Dive:
+PowerShell on Microsoftin kehittämä objektipohjainen komentosarjakirjasto ja komentotulkki. Se julkaistiin vuonna 2006 ja korvasi aiemmat Windowsin komentosarjatyökalut. Vaihtoehtoiset tavat tiedostojen kirjoittamiseen sisältävät `Set-Content`- ja `Add-Content` -komennot. Implementaation yksityiskohdat paljastavat, että `Out-File` käyttää .NET-luokkia tiedostojen käsittelyyn ja tukee merkistön koodausta ja rivinvaihtoja.
 
-Lopuksi, voit lukea tiedoston sisällön käyttämällä `Get-Content` -komentoa:
-
-```PowerShell
-# Lue tiedoston sisältö
-Get-Content -Path "C:\esimerkkitiedosto.txt"
-
-# Tuottaa seuraavan tulosteen:
-# Tämä on esimerkkitiedosto.
-# Tämä on lisää esimerkkisisältöä.
-```
-
-## Syvällinen sukellus:
-
-Tekstitiedostojen kirjoittaminen on ollut oleellinen osa ohjelmointia jo vuosien ajan, ja se on edelleen tärkeä osa monien työtehtävien suorittamista. Ohjelmoijat voivat myös käyttää muita rekisteri- tai tietokantamuotoja tallentaakseen ja hallitakseen tietoja, mutta tekstitiedostot ovat nopeita ja yksinkertaisia vaihtoehtoja pienemmille tiedoille.
-
-## Katso myös:
-
-Tutustu seuraaviin lähteisiin saadaksesi lisätietoja tekstitiedostojen kirjoittamisesta PowerShellilla:
-
-- [PowerShell-asiakirja](https://docs.microsoft.com/fi-fi/powershell/scripting/overview) – Lisätietoja PowerShell-skriptikielestä ja sen käytöstä.
+## See Also:
+- PowerShellin `Out-File`-komento: [Out-File](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7)
+- PowerShellin `Set-Content` and `Add-Content` -komennot: [Set-Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7) | [Add-Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7)

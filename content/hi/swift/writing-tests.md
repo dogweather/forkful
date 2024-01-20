@@ -1,7 +1,7 @@
 ---
-title:                "आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
-html_title:           "Swift: आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
-simple_title:         "आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
+title:                "परीक्षण लिखना"
+html_title:           "Arduino: परीक्षण लिखना"
+simple_title:         "परीक्षण लिखना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Writing Tests: Kya Aur Kyun?
+## What & Why? (क्या और क्यों?)
+टेस्ट्स लिखने का मतलब है कोड के छोटे हिस्सों (यूनिट्स) की जाँच करना ताकि सुनिश्चित कर सकें कि वो सही ढंग से काम कर रहे हैं। प्रोग्रामर्स इसलिए टेस्ट्स लिखते हैं ताकि बग्स को पहले ही पकड़ सकें और बाद में कोड में बदलाव करते समय विश्वास के साथ कर सकें। 
 
-Aajkal, har koi programmer testing ke baare mein baat karta hai. Lekin kya aapko pata hai ki testing kya hai aur iska kya maqsad hai? Hum apne code mein errors aur bugs ko pakadne ke liye tests likhte hain. Isse humare application ke functionality aur performance ko improve karne mein madad milti hai.
-
-## Kaise Kare?
-
-Hum Swift mein tests likhne ke liye XCTest framework ka istemal karte hain. Ismein hum apne code ko simulate karte hain aur expected output ko compare karte hain. Yeh humare code ke different parts ko test karne mein madad karta hai.
-
-**Example:**
+## How to: (किस प्रकार:)
+Swift में टेस्ट केस लिखने के लिए XCTest फ्रेमवर्क का इस्तेमाल किया जाता है। पहले हम एक साधारण फंक्शन बनाएंगे, फिर उसके लिए टेस्ट केस।
 
 ```Swift
-// Function to add two numbers
+// साधारण फंक्शन जो दो संख्याओं को जोड़ता है
 func addNumbers(num1: Int, num2: Int) -> Int {
     return num1 + num2
 }
 
-// Test case for addNumbers function
-func testAddNumbers() {
-    let expectedResult = 5
-    let result = addNumbers(num1: 2, num2: 3)
+// XCTest का इस्तेमाल करके टेस्ट केस लिखना
+import XCTest
 
-    // Assert statement to compare expected and actual result
-    assert(result == expectedResult, "Addition function is not working as expected")
+class MathTests: XCTestCase {
+    func testAddNumbers() {
+        XCTAssertEqual(addNumbers(num1: 2, num2: 3), 5)
+    }
 }
 
-// Calling the test function
-testAddNumbers()
+// XCTest का उपयोग करके टेस्ट्स को रन करना और परिणाम देखना
+XCTMain([testCase(MathTests.allTests)])
 ```
 
-**Output:**
-No output means the test passed successfully.
+जब आप उपरोक्त टेस्ट को रन करेंगे, तो कंसोल आउटपुट पर आपको सफल परीक्षण का मैसेज मिलेगा।
 
-## Gehri Jhaank (Deep Dive)
+## Deep Dive (गहन अध्ययन)
+टेस्टिंग की शुरुआत डेवलोपमेंट की प्रक्रिया के जितनी जल्दी हो सके उतनी जल्दी करना चाहिए (टेस्ट-ड्रिवेन डेवलपमेंट या TDD). XCTest के अलावा, कुछ अन्य फ्रेमवर्क जैसे Quick और Nimble भी हैं जो बीहेवियर-ड्रिवेन डेवलपमेंट (BDD) के लिए उपयोगी हैं। टेस्ट केस लिखने से ना केवल बग्स की पहचान होती है बल्कि कोड डिज़ाइन में भी सुधार होता है क्योंकि यह डेवलपर को रिफैक्टरिंग और मोड्यूलराइज़ेशन के लिए प्रोत्साहित करता है। 
 
-Testing ke concept mein sabse pehle parikalan ka naam aata hai. Puri tareh se validation ke liye, hume apne code ke har hisse ko test karna zaroori hai. Agar hum code ko manually test karenge, toh yeh ek bahut lamba aur mamooli kaam ban jayega. Isi liye hum automation testing ka istemal karte hain, jisse hume time aur effort ki bachat hoti hai. Kuch log third-party frameworks jaise ki Quick and Nimble ka istemal bhi karte hain test likhne ke liye.
-
-## Juddhein (See Also)
-
-2. [Quick Framework](https://github.com/Quick/Quick)
-3. [Nimble Framework](https://github.com/Quick/Nimble)
+## See Also (और भी देखें)
+- एप्पल का XCTest टेस्टिंग फ्रेमवर्क: [XCTest Documentation](https://developer.apple.com/documentation/xctest)
+- Swift के लिए पॉप्युलर BDD फ्रेम्वर्क Quick और Nimble: [Quick GitHub](https://github.com/Quick/Quick)
+- टेस्ट-ड्राइवन डेवलपमेंट (TDD) के बारे में ज्यादा जानकारी: [TDD Tutorial](https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial)

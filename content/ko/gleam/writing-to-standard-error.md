@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류에 쓰는 것"
-html_title:           "Gleam: 표준 오류에 쓰는 것"
-simple_title:         "표준 오류에 쓰는 것"
+title:                "표준 오류로 쓰기"
+html_title:           "Bash: 표준 오류로 쓰기"
+simple_title:         "표준 오류로 쓰기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleam: 표준 에러에 쓰기
+## What & Why? (무엇인가 & 왜 사용하는가?)
+표준 오류는 오류 메세지와 로그 같은 정보를 출력하기 위한 특별한 통로입니다. 프로그래머는 시스템이 제대로 동작하지 않을 때 유용한 정보를 제공하기 위해 이를 사용합니다.
 
-## What & Why?
+## How to: (어떻게 사용하나요?)
+Gleam을 사용해 표준 오류에 쓰는 예시는 아래와 같습니다:
 
-표준 에러에 쓰기란 무엇일까요? 프로그래머들이 이 작업을 왜 할까요? 표준 에러는 프로그램 실행 중에 발생하는 오류 메시지를 출력하는 데 사용되는 채널입니다. 예기치 않은 상황이 발생할 때, 에러 메시지는 프로그래머들에게 문제 해결에 도움을 주는 중요한 정보가 됩니다.
+```gleam
+import gleam/io
 
-## How to:
-
-```Gleam
-let message = "Hello, world!"
-io.error.write(message)
+pub fn main() {
+  io.stderr("에러 발생: 파일을 찾을 수 없습니다.")
+}
 ```
 
-위의 코드를 실행하면, 콘솔에 "Hello, world!"라는 에러 메시지가 출력됩니다. 이것은 우리가 의도한 것이 아니었지만, 에러 메시지를 출력하는 방법은 이와 같습니다.
+실행 결과:
+```
+에러 발생: 파일을 찾을 수 없습니다.
+```
 
-## Deep Dive:
+## Deep Dive (심층 정보)
+과거에는 표준 출력(stdout)에 모든 정보를 출력했지만, 오류 메세지와 일반 출력을 분리함으로써 디버깅이 더 쉬워졌습니다. 표준 오류(stderr)의 대안들로 로깅 라이브러리나 시스템의 로그 서비스 등이 있지만 이들은 설정이 복잡할 수 있습니다. Gleam은 Erlang의 VM을 사용하여 구현되어 있기 때문에, 표준 오류 또한 Erlang의 I/O 기능을 기반으로 합니다.
 
-표준 에러에 쓰기는 오래된 통신 방식 중 하나입니다. 이 방식은 프로그램이 오래된 시스템이나 텍스트 기반 인터페이스를 이용해 작동하는 경우에도 유용합니다. 하지만 최근에는 더 진보된 방식인 로깅 시스템을 사용하는 것이 더 효율적입니다. 또한, 표준 에러에 쓰기는 프로그램에서 심각한 오류를 처리할 때만 사용되어야 합니다. 미세한 오류 메시지는 로깅 시스템을 통해 다루는 것이 좋습니다. 이를 따르지 않으면 프로그램의 성능이 저하될 수 있습니다.
-
-## See Also:
-
-- [Gleam 공식 문서](https://gleam.run/documentation/)
-- [프로그래밍 관련 블로그](https://medium.com/topic/programming)
+## See Also (참고 자료)
+- Gleam 공식 문서: [Gleam documentation](https://gleam.run)
+- Erlang의 표준 오류 처리에 대한 정보: [Erlang -- Errors](http://erlang.org/doc/apps/stdlib/io_protocol.html)
+- 프로그래밍에서의 로깅에 대한 베스트 프랙티스: [Logging Best Practices](https://12factor.net/logs)

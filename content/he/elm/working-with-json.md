@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Elm: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום לכולם! היום נדבר על נושא מעניין וחשוב בעולם התכנות - עבודה עם JSON ב-Elm. אנחנו נלמד מה זה JSON, למה התכניתנים עובדים איתו וכיצד להשתמש בו בקוד ה-Elm שלנו. נתחיל!
+## What & Why? (מה ולמה?)
+בעבודה עם JSON אנחנו מתעסקים בתיעוד ופרשנות של נתונים מובנים. זה חשוב בשביל שיתוף נתונים בין שרתים ללקוחות, אפליקציות ומערכות.
 
-## מה ולמה?
-JSON הוא פורמט נתונים פשוט ונפוץ בתכנות ובאינטרנט. הוא משמש ככלי למיפוי ואיחסון נתונים מתוך קוד JSON, תוך שימוש במילות מפתח וערכים. נושא זה חשוב כיוון שבעולם התכנות, לעיתים קרובות נזדקק לשיוך וטיפול בנתונים מעוצבים, ועבודה עם JSON היא דרך נוחה ויעילה לעשות זאת.
+## How to: (איך לעשות:)
+קוד ב-Elm לעבודה עם JSON:
 
-## איך לעשות?
-ב-Elm ישנן כמה דרכים להשתמש בנתוני JSON. הנה כמה דוגמאות ופלט שמראה מה קורה בכל אחת מהן:
-
-### ממילה-מפתח לערך
 ```Elm
-type alias User = { name : String, age : Int }
+import Json.Decode exposing (Decoder, string, int, list, field)
+import Json.Encode exposing (object, string, int)
+
+type alias User =
+    { id : Int
+    , name : String
+    }
 
 userDecoder : Decoder User
 userDecoder =
-  Decode.map2 User
-    (Decode.field "name" Decode.string)
-    (Decode.field "age" Decode.int)
+    field "id" int
+        |> Json.Decode.andThen (\id ->
+            field "name" string
+                |> Json.Decode.map (\name ->
+                    { id = id, name = name }
+                )
+           )
 
-result : Result String User
-result = Decode.decodeString userDecoder "{\"name\":\"John\",\"age\":25}"
-```
-פלט:
-```
-Ok { name = "John", age = 25 }
+encodeUser : User -> Json.Encode.Value
+encodeUser user =
+    object
+        [ ( "id", int user.id )
+        , ( "name", string user.name )
+        ]
+
+-- דוגמא לשימוש
+
+decodedUser : Result String User
+decodedUser = Json.Decode.decodeString userDecoder "{\"id\":1,\"name\":\"Alice\"}"
+
+encodedUser : Json.Encode.Value
+encodedUser = encodeUser { id = 2, name = "Bob" }
 ```
 
-### רשימת ערכים
+תוצאות דוגמא:
+
 ```Elm
-userListDecoder : Decoder (List User)
-userListDecoder =
-  Decode.list userDecoder
+-- פלט של decodedUser
+Ok { id = 1, name = "Alice" }
 
-result : Result String (List User)
-result = Decode.decodeString userListDecoder "[{\"name\":\"John\",\"age\":25},{\"name\":\"Samantha\",\"age\":30}]"
-```
-פלט:
-```
-Ok [ { name = "John", age = 25 }, { name = "Samantha", age = 30 }]
+-- פלט של encodedUser
+{"id":2,"name":"Bob"}
 ```
 
-## עומק מלא
-עבודה עם JSON לא הייתה שם מאז התחום שנפתח בשנות ה-90, כמוצא חלופי לXML. בימים אלה הייתה כמות גדולה של פורמטים שונים לנתונים מעוצבים בשימוש, ובזכות האפשרויות הפשוטות והיעילות של JSON, הוא נהפך לפופולארי ביותר.
+## Deep Dive (עומק התהום):
+JSON (JavaScript Object Notation) הוא פורמט תקשורת נתונים שהחל את דרכו ב-JavaScript אבל הפך לשפה רחבה בעולם התכנות. ב-Elm, `Json.Decode` ו-`Json.Encode` מאפשרים פרשנות ויצירה של מבנים בפורמט JSON בצורה טיפוסית. חלופות כוללות את עבודה עם XML או בינאריים כמו Protocol Buffers. האימפלמנטציה ב-Elm מבוססת על decoders וencoders שמתרגמים לוקחים ומתרגמים את הנתונים המובנים.
 
-בנוסף, ב-Elm ישנן כמה חבילות נושא שמכילות מימושים מתקדמים יותר לעבודה עם JSON, כך שאם אתם מעוניינים להשתמש בו בצורה מתקדמת יותר - תמיד יש אפשרויות לכם.
-
-למידע נוסף על עבודה עם JSON ב-Elm, ניתן לעיין במקורות הקשורים המצוינים במקום לסיום המאמר.
-
-## ראו גם
-לצפייה בפרויקט השלם המשמש תיגובה באמצעות JSON, ניתן לבקר ב[משאב זה](https://guide.elm-lang.org/interop/json.html) במדריך הרשמי של Elm.
-
-אם אתם מעוניינים לדעת עוד על JSON ככלי עבודה עם נתונים מעוצבים ברשת, מומלץ לעיין באתר [JSON.org](https://www.json.org/) לקבלת מידע מקיף על הפורמט עצמו.
-
-תודה שקראתם ובהצלחה בעבודה עם JSON ב-Elm!
+## See Also (ראה גם):
+- [Elm JSON.Decode Documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
+- [Elm JSON.Encode Documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Encode)
+- [JSON in Elm Guide](https://guide.elm-lang.org/interop/json.html)

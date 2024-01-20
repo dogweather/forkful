@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "Elixir: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,26 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skrivning till standard error är en vanlig praxis bland programmerare för att skicka felmeddelanden och loggar till en separat ström från den vanliga utmatningen. Detta gör att utvecklare enkelt kan skilja mellan normala utmatningsmeddelanden och felmeddelanden.
+Skriva till standard error (stderr) innebär att skicka felmeddelanden och diagnostik separat från standard output (stdout). Det hjälper till att separera programdata från fel och loggning, vilket gör det enklare att analysera problem.
 
-## Såhär gör du:
-Det är enkelt att skriva till standard error i Elixir genom användning av `IO.puts/2` funktionen. Detta tar två argument, det första är det meddelande du vill skriva och det andra är strömmen som du vill skriva till - i detta fall `:stderr`. Nedan är ett exempel på hur du kan skriva till standard error i Elixir.
+## Hur gör man:
+```elixir
+# Skicka ett enkelt meddelande till stderr
+IO.puts(:stderr, "Ett fel inträffade!")
 
-```Elixir
-IO.puts("Detta är ett felmeddelande", :stderr)
+# Använda :io.format/3 för formaterade meddelanden
+IO.format(:stderr, "Fel: ~s~n", ["Något gick snett"])
+
+# Logga ett fel med en stack trace
+try do
+  raise "Ett undantag!"
+rescue
+  exception -> 
+    IO.puts(:stderr, Exception.format(:error_report, exception))
+end
 ```
 
-Detta resulterar i att ett felmeddelande skrivs ut på skärmen (eller i terminalen om du kör en Elixir-app):
-
-```bash
-Detta är ett felmeddelande
+Exempelutdata:
+```
+Ett fel inträffade!
+Fel: Något gick snett
+=ERROR REPORT==== 24-Feb-2023::12:31:15 ===
+** (RuntimeError) Ett undantag!
 ```
 
-## Djupdykning:
-Historiskt sett har skrivning till standard error använts för att skicka felmeddelanden och loggar till en specifik ström istället för att blanda dem med den vanliga utmatningen. Det finns dock alternativ till att använda `IO.puts/2` funktionen, som `Logger.error/2` funktionen som är en del av Elixir-standarden, men det är fortfarande vanligt att använda sig av standard error för att skriva ut felmeddelanden.
+## Djupdykning
+Io-modulen i Elixir har hanterat stderr sedan språkets tidiga dagar, följer konventionen från erlang och andra UNIX-baserade system. Alternativ till stderr inkluderar skriva loggfiler och använda externa loggtjänster. Stderr-strömmen är vanligen obuffrad, vilket innebär att utdata skrivs direkt utan fördröjning, till skillnad från stdout som kan buffras.
 
-En viktig implementationsspecifik detalj är att `IO.puts/2` funktionen använder sig av en tryckförbindelse för att skicka utmatningen till strömmen, vilket kan påverka prestandan i situationer där många meddelanden skrivs ut till standard error i en loop.
-
-## Se även:
-- Elixir dokumentation om IO.puts/2 funktionen: https://hexdocs.pm/elixir/IO.html#puts/2
-- Artiklar om loggning i Elixir: https://www.google.com/search?q=elixir+logging
+## Se även
+- Elixir's officiella dokumentation för IO-modulen: https://hexdocs.pm/elixir/IO.html
+- Erlang's :io bibliotek, som Elixir's IO bygger på: http://erlang.org/doc/man/io.html
+- UNIX-standard för standard streams (stdin, stdout, stderr): https://en.wikipedia.org/wiki/Standard_streams

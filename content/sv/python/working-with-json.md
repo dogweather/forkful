@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Python: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -11,25 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+JSON (JavaScript Object Notation) hanterar data som text i nyckel-värdepar, liknande Python-dictionary. Programmerare använder JSON för att enkelt utbyta data mellan olika språk och tjänster, tack vare dess enkelhet och universalitet.
 
-Att arbeta med JSON i Python innebär att hantera en typ av dataformat som är vanligt inom programmering. JSON står för "JavaScript Object Notation" och används för att strukturera data på ett enkelt och läsbart sätt. Programmerare använder JSON för att lagra och utbyta data mellan olika program och plattformar.
-
-## Hur gör man:
-
-För att använda JSON i Python behöver du importera inbyggda modulen `json`. Därefter kan du använda funktionen `load()` för att läsa in JSON-data från en fil eller en URL. Om du vill skapa en JSON-sträng från en lista eller ett dictionary, använd funktionen `dumps()`.
-
-```
+## How to:
+### Läs in JSON
+```Python
 import json
 
-# Läs in JSON-data från fil
-with open('data.json') as f:
+# Förutsatt att du har en JSON-fil som heter 'data.json'.
+with open('data.json', 'r') as f:
     data = json.load(f)
-
-# Konvertera en lista till JSON-sträng
-my_list = ['a', 'b', 'c']
-json_str = json.dumps(my_list)
+print(data)
 ```
 
-## Deep Dive:
+### Skriv ut JSON
+```Python
+with open('data.json', 'w') as f:
+    json.dump(data, f)
+```
 
-Historiskt sett har JSON utvecklats för att ersätta XML som standard för datautbyte på webben. Ett alternativ till JSON är YAML, som har liknande syntax men är mer läsbar för människor. Implementationsdetaljer för JSON i Python finns på den officiella dokumentationen [här](https://docs.python.org/3/library/json.html).
+### Konvertera sträng till JSON
+```Python
+json_str = '{"namn": "Anna", "ålder": 30}'
+person = json.loads(json_str)
+print(person)
+```
+Output: `{'namn': 'Anna', 'ålder': 30}`
+
+### Konvertera JSON till sträng
+```Python
+person_str = json.dumps(person)
+print(person_str)
+```
+Output: `'{"namn": "Anna", "ålder": 30}'`
+
+## Deep Dive
+JSON introducerades 2001, designad för människoläsbarhet och maskinskrivning. XML är ett alternativ, men JSON är ofta snabbare och mer kompakt. JSON används i REST APIs och webbapplikationer för att skicka data mellan klient och server.
+
+## See Also
+- Läs mer om JSON-modulen i Python: https://docs.python.org/3/library/json.html
+- Jämför JSON och XML: https://www.json.org/xml.html
+- Upptäck JSON Schema för att validera JSON-data: http://json-schema.org/

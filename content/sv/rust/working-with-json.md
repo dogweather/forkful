@@ -1,6 +1,6 @@
 ---
 title:                "Arbeta med JSON"
-html_title:           "Rust: Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
 simple_title:         "Arbeta med JSON"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,42 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Working with JSON (JavaScript Object Notation) is a way for programmers to store and exchange data in a readable and structured format. It's commonly used for communication between different programs and systems, making it an essential skill for any programmer.
+JSON, eller JavaScript Object Notation, är ett textbaserat dataformat som används för att lagra och utbyta data. Programmerare använder JSON för att hantera data mellan olika system på ett enkelt och lättläst sätt.
 
-## Så här:
-Vi kan använda Rust's inbyggda Bibliotek serde för att enkelt hantera JSON-data. Här är ett exempel på hur vi kan läsa och skriva JSON-data, samt skriva ut det till konsolen:
+## Hur gör man:
+Rust använder `serde`-krate för att serialisera och deserialisera JSON-data. Nedan en exempelkod:
 
-```Rust
-use serde_json::{Value, Result};
+```rust
+use serde::{Deserialize, Serialize};
+use serde_json::Result;
+
+// Define en struktur som motsvarar din data
+#[derive(Serialize, Deserialize)]
+struct Användare {
+    namn: String,
+    ålder: u8,
+    epost: String,
+}
 
 fn main() -> Result<()> {
-    // Läs data från fil
-    let data = "{\"name\": \"Emma\", \"age\": 25, \"hobby\": \"programming\"}";
+    // Skapa ett användarobjekt
+    let användare = Användare {
+        namn: "Anna Svensson".to_string(),
+        ålder: 30,
+        epost: "anna.svensson@example.com".to_string(),
+    };
 
-    // Konvertera till JSON-objekt
-    let json: Value = serde_json:: from_str(data)?;
+    // Serialisera det till en JSON-sträng
+    let serialiserad = serde_json::to_string(&användare)?;
+    println!("Serialiserad: {}", serialiserad);
 
-    // Skriv ut JSON-data
-    println!("{} is {} years old and her hobby is {}", json["name"], json["age"], json["hobby"]);
+    // Deserialisera strängen tillbaka till en Användare
+    let deserialiserad: Användare = serde_json::from_str(&serialiserad)?;
+    println!("Deserialiserad: {} {}", deserialiserad.namn, deserialiserad.ålder);
 
-    // Konvertera tillbaka till sträng och skriv till fil
-    let data_written = serde_json::to_string(&json)?;
-    println!("{}", data_written);
     Ok(())
 }
 ```
-
-Output:
+Resultatet blir:
 ```
-Emma is 25 years old and her hobby is programming
-{"name":"Emma","age":25,"hobby":"programming"}
+Serialiserad: {"namn":"Anna Svensson","ålder":30,"epost":"anna.svensson@example.com"}
+Deserialiserad: Anna Svensson 30
 ```
 
-## Djupdykning:
-JSON har funnits sedan 2001 och är en populär ersättning för XML-formatet. Det är lättare att läsa och skriva än XML, men saknar vissa av dess funktioner, som möjligheten att validera data mot ett schema. Andra alternativ till JSON är CSV (Comma Separated Values) och YAML (YAML Ain't Markup Language). Men JSON är fortfarande det mest använda formatet för datautbyte.
+## Djupdykning
+JSON skapades i början av 2000-talet och blev en del av ECMAScript-standard 2013. Alternativ till JSON är till exempel XML och YAML. JSON används ofta för webbaserade API:er tack vare sin kompakthet och läsbarhet. Rust hanterar JSON effektivt genom `serde`-krate, som erbjuder kraftfull serialisering och deserialisering med minimal prestandapåverkan.
 
-I serde-biblioteket används en datastruktur som heter "Value" för att representera JSON-data, vilket kan vara en sträng, ett nummer, en bool eller en annan Value. Detta tillåter flexibilitet när man läser eller skriver JSON-data, men också kräver lite extra kod för att hämta specifika värden.
-
-## Se också:
-- [serde_json Dokumentation](https://docs.serde.rs/serde_json/) - Officiell dokumentation för serde-biblioteket för JSON-hantering i Rust.
-- [JSON Formatter & Validator](https://jsonformatter.org/) - En användbar online-verktyg för att formatera och validera JSON-data.
+## Se även
+- Serde officiella dokumentation: [https://serde.rs/](https://serde.rs/)
+- Serde JSON krate dokumentation: [https://docs.serde.rs/serde_json/](https://docs.serde.rs/serde_json/)
+- Mer om JSON-formatet: [https://www.json.org/json-sv.html](https://www.json.org/json-sv.html)

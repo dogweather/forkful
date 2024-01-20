@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Go: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad och Varför?
-YAML, vilket står för "YAML Ain't Markup Language", är ett sätt att strukturera och organisera data i en enkel, läsbar och programmerbar format. YAML används ofta av utvecklare för att hantera konfigurationsfiler, specifikationer och andra värdefulla data som behöver ordnas på ett lättförståeligt sätt.
+## Vad & Varför?
+YAML är ett format för data-serialisering, lättläst för människor. Programmerare använder det för konfigurationer och datalagring eftersom det är enkelt och tydligt.
 
-Hur man gör:
-Använd Go-paketet "gopkg.in/yaml.v2" för att arbeta med YAML i dina Go-projekt. Här är ett exempel på hur du kan läsa in en YAML-fil och hämta värden från den i Go:
+## Hur man gör:
+För att hantera YAML i Go, använd paketet `gopkg.in/yaml.v2` eller `gopkg.in/yaml.v3`. Exempelkod:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "io/ioutil"
-  "log"
-
-  "gopkg.in/yaml.v2"
+    "fmt"
+    "log"
+    "gopkg.in/yaml.v2"
 )
 
 type Config struct {
-  Database struct {
-    Host     string `yaml:"host"`
-    Port     int    `yaml:"port"`
-    Username string `yaml:"username"`
-    Password string `yaml:"password"`
-    Database string `yaml:"database"`
-  } `yaml:"database"`
+    Title  string
+    Owner  struct {
+        Name string
+    }
 }
 
 func main() {
-  file, err := ioutil.ReadFile("config.yaml")
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  var config Config
-  err = yaml.Unmarshal(file, &config)
-  if err != nil {
-    log.Fatal(err)
-  }
-
-  fmt.Printf("Databasvärdet är: %s:%d \n", config.Database.Host, config.Database.Port)
-  fmt.Printf("Användarnamnet är: %s \n", config.Database.Username)
-  fmt.Printf("Lösenordet är: %s \n", config.Database.Password)
-  fmt.Printf("Databasnamnet är: %s \n", config.Database.Database)
-
+    data := `
+title: Example YAML
+owner:
+  name: Jan Andersson
+`
+    var config Config
+    
+    err := yaml.Unmarshal([]byte(data), &config)
+    if err != nil {
+        log.Fatalf("error: %v", err)
+    }
+    fmt.Printf("--- config:\n%v\n", config)
 }
 ```
 
-Output: 
+När du kör programmet får du:
+
 ```
-Databasvärde: localhost:3306 
-Användarnamn: myusername 
-Lösenord: mypassword 
-Databasnamn: mydatabase 
+--- config:
+{Example YAML {Jan Andersson}}
 ```
 
-Djupdykning:
-YAML utvecklades ursprungligen av Ingy döt Net som ett enkelt och bättre alternativ till XML och JSON för att representera data i en hierarkisk form. Det är ett vanligt format inom DevOps-communityn för att hantera konfigurationsfiler och deployment-specifikationer. Det finns också alternativ för att arbeta med YAML i Go, som till exempel "kyleconroy/go-yaml" biblioteket. YAML stöder också kommentarer, vilket gör det mer läsbart och lättförståeligt.
+## Fördjupning
+YAML, som står för "YAML Ain't Markup Language", började användas i början av 2000-talet som ett enklare alternativ till XML. Alternativ inkluderar JSON och TOML, men YAML är ofta föredraget för dess läsbarhet. Implementationen i Go kräver noggrann användning av indentering och förståelse för hur man mappar data till Go-strukturer.
 
-Se även:
-- Officiell YAML hemsida: https://yaml.org/
-- Paketet "gopkg.in/yaml.v2" dokumentation: https://pkg.go.dev/gopkg.in/yaml.v2
-- Alternativt YAML-paket för Go: https://pkg.go.dev/github.com/kyleconroy/go-yaml/yaml
+## Se även
+- YAML-specifikation: https://yaml.org/spec/1.2/spec.html
+- Go yaml.v2-dokumentation: https://pkg.go.dev/gopkg.in/yaml.v2
+- Go yaml.v3-dokumentation: https://pkg.go.dev/gopkg.in/yaml.v3
+- En jämförelse mellan konfigureringsformat: https://atc.wiki/job-aid/compare-config-formats

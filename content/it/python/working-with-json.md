@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Python: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Arduino: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Lavorare con JSON è una pratica comune tra i programmatori, poiché JSON, acronimo di JavaScript Object Notation, è un formato di dati leggibile sia per gli umani che per le macchine. Viene spesso utilizzato per lo scambio di dati tra server e client in applicazioni web.
+## What & Why?
+Lavorare con i JSON in Python significa gestire dati strutturati come testo. I programmatori li usano per scambi dati in modo leggero tra server e app web.
 
-## Come fare:
-Di seguito sono riportati alcuni esempi di codice in Python per lavorare con JSON.
-
+## How to:
 ```Python
-# Importa il modulo JSON
+# Importa json
 import json
 
-# Definisci un dizionario
-persona = {
-    "nome": "Mario",
-    "cognome": "Rossi",
-    "età": 30
-}
+# Dizionario di esempio
+persona = {"nome": "Giovanni", "età": 30, "città": "Roma"}
 
-# Converti il dizionario in una stringa JSON
+# Converti in JSON
 persona_json = json.dumps(persona)
-print(persona_json)
-```
-Output:
-```
-{"nome": "Mario", "cognome": "Rossi", "età": 30}
+print(persona_json)  # Output: {"nome": "Giovanni", "età": 30, "città": "Roma"}
+
+# Converti stringa JSON in dizionario
+persona_dizionario = json.loads(persona_json)
+print(persona_dizionario)  # Output: {'nome': 'Giovanni', 'età': 30, 'città': 'Roma'}
+
+# Salvare un JSON in un file
+with open('persona.json', 'w') as file:
+    json.dump(persona, file)
+
+# Leggere un JSON da un file
+with open('persona.json', 'r') as file:
+    data_letta = json.load(file)
+print(data_letta)  # Output: {'nome': 'Giovanni', 'età': 30, 'città': 'Roma'}
 ```
 
-```Python
-# Definisci una stringa JSON
-libro_json = '{"titolo": "Il Signore degli Anelli", "autore": "J.R.R. Tolkien", "anni_stampa": [1954, 1955]}'
+## Deep Dive
+Il JSON (JavaScript Object Notation) è nato nei primi anni 2000 come alternativa semplice a XML. Altro formato: YAML, più leggibile ma meno diffuso. In Python, il modulo `json` trasforma dati Python in JSON e viceversa. Hanno rappresentazioni simili ma attenzione: JSON non accetta commenti e le chiavi sono sempre in doppie virgolette.
 
-# Converti la stringa JSON in un dizionario
-libro = json.loads(libro_json)
-print(libro)
-```
-Output:
-```
-{'titolo': 'Il Signore degli Anelli', 'autore': 'J.R.R. Tolkien', 'anni_stampa': [1954, 1955]}
-```
-
-```Python
-# Carica un file JSON esterno
-with open("film.json", "r") as file:
-    film = json.load(file)
-
-# Mostra il titolo del film
-print(film["titolo"])
-```
-Output:
-```
-Il Padrino
-```
-
-## Approfondimenti:
-JSON è stato originariamente sviluppato da Douglas Crockford nel 2001 ed è diventato uno standard di fatto per lo scambio di dati. Sebbene sia molto diffuso, ci sono alternative che vale la pena esplorare, come ad esempio CSV (Comma Separated Values) o XML (eXtensible Markup Language).
-
-Per lavorare con i dati JSON in Python, è possibile utilizzare sia il modulo integrato ```json```, che offre una semplice interfaccia per codificare e decodificare dati, sia il pacchetto esterno ```simplejson```, che offre prestazioni superiori nella gestione di grandi quantità di dati.
-
-## Vedi anche:
-- [Documentazione ufficiale di Python su JSON](https://docs.python.org/3/library/json.html)
-- [Links a esempi pratici di lavorare con JSON in Python](https://realpython.com/python-json/)
+## See Also
+Per sapere di più:
+- Documentazione ufficiale del modulo `json`: https://docs.python.org/3/library/json.html
+- JSON vs. XML: https://www.w3schools.com/js/js_json_xml.asp
+- Intro a YAML (in inglese): https://yaml.org/start.html

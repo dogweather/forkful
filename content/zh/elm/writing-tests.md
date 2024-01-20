@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "Elm: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试代码"
+html_title:           "Arduino: 编写测试代码"
+simple_title:         "编写测试代码"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? (是什么？为什么要这么做？)
+编写测试是创建用来验证代码正确性的程序。这样做帮助开发者捕捉bug，确保软件质量。
 
-写测试是指编写代码来测试你的程序功能是否正常。程序员会这么做是因为编写测试可以帮助他们更快地发现和解决代码中的错误，从而提高代码质量。
+## How to: (如何操作：)
+Elm中写测试，用`elm-test`库。先安装`elm-test`:
 
-## 如何：
-
-```Elm
--- 假设我们要测试一个函数，计算一个数字的平方
-square : Int -> Int
-square x =
-  x * x
-
-
--- 现在我们可以使用 elm-test 库来编写测试用例
-import Expect
-import Test exposing (..)
-
-tests =
-  describe "Square function test" [
-    test "should return 4 when input is 2" <|
-      \_ -> Expect.equal (square 2) 4,
-    test "should return 25 when input is 5" <|
-      \_ -> Expect.equal (square 5) 25
-  ]
+```shell
+elm install elm-explorations/test
 ```
 
-运行测试：
+写个简单测试：
 
+```elm
+import Expect exposing (equal)
+import Test exposing (test)
+
+test "Addition works correctly" <|
+    \_ -> 2 + 2 |> equal 4
 ```
-> tests
-Passed    Square function test should return 4 when input is 2
-Passed    Square function test should return 25 when input is 5
+
+运行测试，看到输出：
+
+```shell
+TEST RUN PASSED
+
+Duration: 42 ms
+Passed:   1
+Failed:   0
 ```
 
-## 深入探讨：
+## Deep Dive (深入了解)
+- **历史背景**: Elm的测试库是基于Haskell的QuickCheck。
+- **替代方案**: 其他前端框架如React使用Jest或Mocha。Elm选择`elm-test`因为它和Elm语言紧密整合。
+- **实现细节**: `elm-test`运行时，它转换Elm代码到JavaScript，然后在Node.js环境或浏览器中运行。
 
-编写测试是一种测试驱动开发（Test-Driven Development）的实践，它在很大程度上可以减少代码中的bug，并且可以帮助程序员更早地发现问题。除了编写单元测试，还有一些其他的测试方法，比如集成测试和端到端测试。与写测试相比，人工测试往往更容易出错，因此编写测试是一种有效的测试程序的方法。
-
-## 参考资料：
-
-- [关于测试的各种方法的比较 - Medium](https://medium.com/@kentbeck_7670/technical-debt-terminology-f6267088c11#.orge3mzcp)
+## See Also (另请参阅)
+- Elm测试介绍: [https://package.elm-lang.org/packages/elm-explorations/test/latest](https://package.elm-lang.org/packages/elm-explorations/test/latest)

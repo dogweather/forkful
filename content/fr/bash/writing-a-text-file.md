@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Bash: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et Pourquoi?
+## What & Why?
+Écrire un fichier texte permet de sauvegarder des données de façon persistante. Les programmeurs le font pour stocker des configurations, des logs, ou échanger des infos entre processus.
 
-Écrire un fichier texte en Bash signifie simplement créer ou modifier un fichier contenant du texte en utilisant le langage de programmation Bash. Les programmeurs le font souvent pour automatiser des tâches répétitives ou pour stocker des informations importantes de manière structurée.
+## How to:
+Créez et écrivez dans un fichier avec `echo` ou `printf`. Utilisez `>` pour écraser ou `>>` pour ajouter à un fichier.
 
-# Comment faire:
-
-Voici un exemple simple de code Bash pour écrire un fichier texte:
 ```Bash
-echo "Bonjour le monde!" > fichier.txt
+echo "Salut le monde!" > hello.txt
+cat hello.txt
 ```
-Cela créera un fichier appelé "fichier.txt" et y écrira le texte "Bonjour le monde!". Si vous voulez ajouter du texte à un fichier existant, utilisez ">>" au lieu de ">":
+Sortie:
+```
+Salut le monde!
+```
+
+Ajoutez du texte sans écraser:
 ```Bash
-echo "Au revoir le monde!" >> fichier.txt
+echo "À bientôt!" >> hello.txt
+cat hello.txt
 ```
-Et si vous voulez juste lire le contenu d'un fichier texte existant, utilisez la commande "cat":
-```Bash
-cat fichier.txt
+Sortie:
 ```
-Cela affichera le contenu du fichier sur votre terminal.
+Salut le monde!
+À bientôt!
+```
 
-# Plongée en profondeur:
+## Deep Dive
+Dans le passé, `>` et `>>` viennent du shell original de Unix. Pour de gros fichiers, `sed`, `awk` ou des langages de script comme Python peuvent être plus performants. Les détails impliquent la gestion des descripteurs de fichiers et l'écriture bufferisée.
 
-L'écriture de fichiers texte en Bash a une longue histoire, remontant aux débuts de Unix dans les années 1970. Depuis lors, de nombreux autres langages de programmation ont été créés, offrant différentes options pour interagir avec les fichiers texte. Parmi les alternatives populaires, on peut citer Python et Perl. En ce qui concerne les détails d'implémentation, il existe des commandes Bash spécifiques pour la manipulation de fichiers tels que "touch" pour créer un nouveau fichier et "rm" pour supprimer un fichier existant.
-
-# Voir aussi:
-
-- [Guide de référence de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Documentation officielle de Python](https://docs.python.org/fr/3/tutorial/inputoutput.html)
-- [Documentation officielle de Perl](https://perldoc.perl.org/perlfaq5.html#How-do-I-open-a-file-for-reading)
-
-*Aucune conclusion n'est nécessaire pour cet article. Bonne chance avec votre écriture de fichiers texte en Bash!*
+## See Also
+- Guide avancé de Bash: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+- Tutoriel sur les redirections: https://tldp.org/LDP/abs/html/io-redirection.html

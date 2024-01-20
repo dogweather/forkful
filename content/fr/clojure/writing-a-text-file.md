@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Clojure: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Écrire un fichier texte, c'est sauvegarder des données lisibles dans un fichier sur le disque. Les programmeurs le font pour persister de l'information, comme des logs, des configurations ou des données à partager.
 
-Ecrire un fichier texte est le fait de créer un document composé de caractères et de symboles pouvant être lu par un ordinateur. Les programmeurs le font pour stocker et transférer des données dans un format compréhensible pour les machines.
-
-## Comment faire:
+## How to:
+Clojure utilise `spit` pour écrire dans un fichier et `slurp` pour lire. Voici comment écrire du texte :
 
 ```Clojure
-;; Pour écrire un fichier texte, il faut utiliser la fonction `spit` avec le nom du fichier et le contenu à écrire en paramètres.
-(spit "mon_fichier.txt" "Bonjour le monde!")
-;; Ceci va créer un fichier nommé "mon_fichier.txt" contenant le texte "Bonjour le monde!" 
-
-;; On peut également utiliser une variable pour stocker le contenu à écrire.
-(def mon_texte "Salut tout le monde!")
-(spit "mon_fichier.txt" mon_texte)
-;; Ceci va créer un fichier nommé "mon_fichier.txt" contenant le texte "Salut tout le monde!"
-
+(spit "chemin/vers/le_fichier.txt" "Salut, c'est un test!")
 ```
 
-## Plongée en profondeur:
+Et pour lire le fichier que vous venez d'écrire :
 
-L'écriture de fichiers texte est un élément fondamental de la programmation, car elle permet de manipuler et de stocker des données à des fins diverses. Il existe des alternatives telles que l'utilisation de bases de données pour stocker des données, mais écrire des fichiers texte reste une méthode simple et efficace. L'implémentation de la fonction `spit` se fait en utilisant les fonctions de manipulation de fichiers de la bibliothèque standard de Clojure.
+```Clojure
+(println (slurp "chemin/vers/le_fichier.txt"))
+```
 
-## Voir aussi:
+Ça affichera `Salut, c'est un test!`.
 
-- La documentation officielle de la fonction `spit`: <https://clojuredocs.org/clojure.core/spit>
-- D'autres façons d'écrire des fichiers texte en Clojure: <http://clojure-doc.org/articles/cookbook/file_io.html>
+## Deep Dive
+Avant, on utilisait Java pour écrire des fichiers en Clojure. Maintenant, avec `spit`, c'est plus simple. Mais si vous voulez écrire pièce par pièce, regardez `with-open` et `writer`. En dessous, `spit` et `slurp` utilisent les mêmes mécanismes de streams que Java.
+
+## See Also
+- La documentation officielle de Clojure : [clojure.org](https://clojure.org/)
+- Tutoriels pour débuter : [Clojure for the Brave and True](https://www.braveclojure.com/)

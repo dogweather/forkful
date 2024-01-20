@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "PHP: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Rédaction de tests"
+html_title:           "Arduino: Rédaction de tests"
+simple_title:         "Rédaction de tests"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi devriez-vous écrire des tests?
+## Quoi et Pourquoi ?
+Écrire des tests, c'est créer des scénarios pour automatiquement vérifier que le code fonctionne comme prévu. Les développeurs font cela pour assurer la qualité, détecter des bugs tôt et faciliter la maintenance.
 
-Ecrire des tests est une pratique courante parmi les programmeurs pour s'assurer que leur code fonctionne comme prévu. Cela consiste à écrire du code qui vérifie le bon fonctionnement de chaque partie du code écrit.
-
-Les programmeurs écrivent des tests pour s'assurer que leur code est exempt de bugs et pour améliorer la qualité et la stabilité de leur application. Cela garantit également que de nouvelles modifications ou mises à jour n'ont pas d'impact négatif sur le code existant.
-
-## Comment le faire:
+## Comment faire :
+Utilise PHPUnit pour écrire des tests. Installe-le via Composer avec `composer require --dev phpunit/phpunit`. Voici un exemple simplifié :
 
 ```PHP
-Function addition($a, $b) {
-  return $a + $b;
+<?php
+use PHPUnit\Framework\TestCase;
+
+class StackTest extends TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = [];
+        $this->assertSame(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this->assertSame('foo', $stack[count($stack)-1]);
+        $this->assertSame(1, count($stack));
+
+        $this->assertSame('foo', array_pop($stack));
+        $this->assertSame(0, count($stack));
+    }
 }
-
-echo addition(2, 3); // affiche 5
-echo addition(-2, 5); // affiche 3
 ```
+Lancer les tests avec `./vendor/bin/phpunit tests`.
 
-Ce code est un exemple de test pour une fonction qui effectue une simple addition. Nous appelons la fonction avec différents paramètres et vérifions si la valeur de retour est correcte. Si elle correspond à ce que nous attendions, cela signifie que notre fonction fonctionne correctement.
+## Plongée en profondeur :
+Historiquement, PHPUnit s'est inspiré par JUnit, pratiquant le TDD (Test-Driven Development) à l'origine de Java. Des alternatives existent, comme PHPBehat pour le BDD (Behavior-Driven Development) ou PHPSpec. Les tests unitaires avec PHPUnit nécessitent que chaque fonctionnalité ait un test correspondant, isolant les composants pour vérifier leur bon fonctionnement indépendamment.
 
-## Approfondissement:
-
-La pratique d'écrire des tests a pris de l'importance ces dernières années avec l'essor des méthodes agiles de développement de logiciels. Elle est également étroitement liée à l'utilisation de la méthodologie de développement piloté par les tests (Test-Driven Development, ou TDD).
-
-Il existe plusieurs outils pour écrire des tests en PHP, tels que PHPUnit et Codeception. Ces outils offrent une variété de fonctionnalités telles que l'exécution de tests automatisés, la couverture de code et la génération de rapports.
-
-Il existe également des alternatives à l'écriture de tests en PHP, comme l'utilisation de langages de test dédiés tels que Cucumber ou Selenium. Ces langages sont largement utilisés pour des tests d'intégration ou de bout en bout.
-
-## A voir également:
-
-- [Documentation PHPUnit](https://phpunit.de/documentation.html)
-- [Cucumber](https://cucumber.io/)
-- [Selenium](https://www.selenium.dev/)
+## Voir aussi :
+- Documentation de PHPUnit : [phpunit.de/manual/current/en/index.html](https://phpunit.de/manual/current/en/index.html)
+- TDD sur Wikipedia: [fr.wikipedia.org/wiki/Test_driven_development](https://fr.wikipedia.org/wiki/Test_driven_development)
+- Tutoriel PHP Test : [phptherightway.com/#testing](https://phptherightway.com/#testing)

@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Elixir recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,35 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing to standard error (stderr) involves sending data not to the usual output (stdout), but to a separate channel intended for error messages. Programmers do this to separate the normal execution flow from error reporting, which aids in troubleshooting.
+Writing to standard error (`stderr`) is outputting text that’s not part of the main program data but indicates errors or diagnostics. Programmers do it to debug and log issues without cluttering the standard output (`stdout`), which is often reserved for program's result data.
 
 ## How to:
 
-Code to print to the stderr in Elixir is straightforward and executed via Erlang's `:io.stderr`:
+To write to `stderr` in Elixir, use `IO.warn/1` or `IO.puts/2`. Here's how:
 
 ```elixir
-:io.format(:standard_error,'~s', ['Hello, stderr!\n'])
+# Write to stderr with IO.warn
+IO.warn("Something went wrong!")
+
+# Write to stderr with IO.puts
+IO.puts(:stderr, "Detailed error information.")
 ```
 
-When you run this, "Hello, stderr!" will be printed to your standard error output.
+Sample output to `stderr`:
+
+```
+Something went wrong!
+Detailed error information.
+```
 
 ## Deep Dive
 
-In historical context, stderr was part of the three Unix standard data streams built into most programming environments — stdin (standard input), stdout (standard output), and stderr (standard error). 
+Historically, separating `stderr` from `stdout` allowed Unix users to handle error messages distinctly from regular output, which could be especially useful when redirecting output to a file or another program.
 
-Alternatives to `:io.format()` are using other libraries like the Logger library in Elixir:
+Elixir, being a modern language, maintains this tradition. While `IO.puts/1` defaults to `stdout`, passing the `:stderr` atom as the first argument switches the stream. `IO.warn/1` writes to `stderr` by default, which suits warning messages.
 
-```elixir
-require Logger
-Logger.error "Error message for stderr"
-```
-This has the added advantage of being configurable and supported across different logging backends.
+Alternatives for error logging in Elixir might include the Logger module for a more structured approach. This can be configured to write logs of various levels to `stderr`.
 
-In terms of implementation, writing to stderr in Elixir is straightforward because Elixir runs on the BEAM (the Erlang virtual machine). As a result, it has access to a host of powerful features from the underlying Erlang system, including robust error handling mechanisms such as stderr.
+Under the hood, Elixir's IO functions for stderr and stdout interact with Erlang's :io module, which in turn works with the underlying operating system's I/O streams.
 
 ## See Also
 
-1. More about `io.format`: <https://hexdocs.pm/elixir/1.12/IO.html#format/3>
-2. Logger library in Elixir: <https://hexdocs.pm/elixir/Logger.html>
-3. Information on Unix standard streams: <https://en.wikipedia.org/wiki/Standard_streams>
-4. more on BEAM and error handling: <https://ferd.ca/the-zen-of-erlang.html>
+- [Elixir's IO Module Documentation](https://hexdocs.pm/elixir/IO.html)
+- [Elixir's Logger Module Documentation](https://hexdocs.pm/logger/Logger.html)
+- [Erlang's :io Module Documentation](http://erlang.org/doc/man/io.html)

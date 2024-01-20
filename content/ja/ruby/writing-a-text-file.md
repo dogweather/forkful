@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "Ruby: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rubyでテキストファイルを書く
+## What & Why?（何となぜ？）
+テキストファイルへの書き込みは、データを永続化するプロセスです。プログラマーは、設定、データ交換、またはログ情報を保存するためにこれを行います。
 
-## 何をするのか？
-テキストファイルは、プログラマーがコンピューターに保存したい情報をテキストの形式で入力することを指します。プログラマーがテキストファイルを作成する理由は、プログラムの入力や出力として使用するためです。
+## How to:（方法）
+Rubyでテキストファイルに書き込む基本的な方法を見てみましょう。
 
-## 方法：
-Rubyを使用してテキストファイルを作成するには、`File`クラスを使用します。下のコード例を参考にしてください。
-```Ruby
-file = File.new("example.txt", "w")  # ファイルを作成し、書き込みモードで開く
-file.puts("こんにちは、世界！")      # ファイルにテキストを書き込む
-file.close                         # ファイルを閉じる
+```ruby
+# ファイルを新規作成して書き込む
+File.write('example.txt', "Hello, Ruby world!")
+
+# ファイルを開いてから書き込む
+File.open('example.txt', 'w') do |file|
+  file.puts "もう一行追加"
+end
 ```
-上記のコードを実行すると、"example.txt"という名前のテキストファイルが作成され、その中に「こんにちは、世界！」というテキストが書き込まれます。
 
-## 詳細：
-### 歴史的背景：
-テキストファイルは、早期のコンピューターではプログラムの入力や出力方法として一般的に使用されていました。しかし、今日では多くのプログラミング言語やデータベースが開発されており、テキストファイル以外の方法でも同じ機能を実現できるようになりました。
+ファイル`example.txt`の中身:
+```
+Hello, Ruby world!
+もう一行追加
+```
 
-### 代替方法：
-Ruby以外にも、テキストファイルを作成するためのさまざまな方法があります。例えば、Pythonの`open()`関数やJavaScriptの`fs.writeFile()`メソッドなどがあります。
+## Deep Dive（深掘り）
+Rubyは最初からファイルIOに対応していて、シンプルな`File.write`メソッドから`IO`クラスを通じた複雑な操作まで多岐にわたります。`write`メソッドは実際には`IO.write`から来ており、ショートカットとして便利です。`File.open`を利用すると、ブロック内でファイルを安全に書き込んだ後に自動的にクローズが行われます。他の言語と異なり、Rubyではシンプルなシンタックスでこれを行えるため、コードが読みやすくなります。
 
-### 実装の詳細：
-Rubyでは、テキストファイルを作成するために`File`クラスを使用しますが、このクラスには他にも多くの便利なメソッドが用意されています。また、ファイルを開くモードには`w`以外にも`a`や`r+`などのオプションがありますので、必要に応じて調べてみてください。
-
-## 関連情報：
-- [RubyのFileクラスについて（英語）](https://ruby-doc.org/core-2.7.0/File.html)
+## See Also（関連情報）
+- [RubyのIOクラス](https://docs.ruby-lang.org/ja/latest/class/IO.html)
+- [RubyのFileクラス](https://docs.ruby-lang.org/ja/latest/class/File.html)
+- [Ruby-Doc.org](https://www.ruby-doc.org/core-3.1.2/File.html)

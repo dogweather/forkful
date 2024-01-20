@@ -1,6 +1,6 @@
 ---
 title:                "Working with yaml"
-html_title:           "Rust recipe: Working with yaml"
+html_title:           "Arduino recipe: Working with yaml"
 simple_title:         "Working with yaml"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,44 +11,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with YAML in Rust refers to the process of using the YAML file format in your Rust applications. YAML is a human-readable data serialization language that is commonly used for configuration files and data storage. Programmers often use YAML because it allows for easy storage and retrieval of structured data in a human-friendly format.
+
+Working with YAML means dealing with data in the "YAML Ain't Markup Language" format—a human-friendly data serialization standard. Programmers use it for config files, data storage, or anywhere they need easily readable and writable structured data.
 
 ## How to:
-To work with YAML in Rust, you first need to add the `yaml-rust` crate to your project's dependencies. Then, you can use the `Yaml` type to load a YAML file into your application. Take a look at the following code example:
 
-```Rust
-// Import the necessary crate
-use yaml_rust::YamlLoader;
+To parse and generate YAML in Rust, we use the `serde_yaml` crate, which leans on `serde` for serialization/deserialization.
 
-// Define your YAML file as a string
-let yaml = "
-name: John
-age: 25
-";
+First, add dependencies to your `Cargo.toml`:
 
-// Load the YAML file as a vector of Yaml objects
-let docs = YamlLoader::load_from_str(yaml).unwrap();
-
-// Accessing the data
-let name = &docs[0]["name"];
-let age = &docs[0]["age"];
-
-// Print the data to the console
-println!("Name: {}", name);
-println!("Age: {}", age);
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
 ```
-**Output:**
+
+Now let's serialize a Rust struct to YAML:
+
+```rust
+use serde::{Serialize, Deserialize};
+use serde_yaml;
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    debug: bool,
+    environment: String,
+    port: u16,
+}
+
+fn main() -> serde_yaml::Result<()> {
+    let config = Config {
+        debug: true,
+        environment: "development".to_string(),
+        port: 8080,
+    };
+
+    // Serialize to YAML
+    let yaml_string = serde_yaml::to_string(&config)?;
+    println!("{}", yaml_string);
+    // Output:
+    // ---
+    // debug: true
+    // environment: "development"
+    // port: 8080
+
+    Ok(())
+}
 ```
-Name: John
-Age: 25
+
+To deserialize YAML into a Rust struct:
+
+```rust
+fn main() -> serde_yaml::Result<()> {
+    let yaml_string = r#"
+    debug: true
+    environment: "development"
+    port: 8080
+    "#;
+
+    let config: Config = serde_yaml::from_str(&yaml_string)?;
+    println!("{:?}", config);
+    // Output:
+    // Config { debug: true, environment: "development", port: 8080 }
+
+    Ok(())
+}
 ```
-The `YamlLoader` allows us to easily parse the YAML file and access its data. You can also deserialize the YAML data into a custom struct using the `serde_yaml` crate.
 
-## Deep Dive:
-YAML stands for "YAML Ain't Markup Language" and was first released in 2001. It was designed with the goal of being human-readable and easily understandable by both humans and machines. Some alternatives to YAML include JSON, TOML, and XML.
+## Deep Dive
 
-The `yaml-rust` crate is an implementation of the YAML 1.2 spec for Rust. This crate provides a fast and easy way to work with YAML files in your applications. It is also actively maintained and has good documentation.
+YAML started in 2001 as a user-friendly alternative to XML. Unlike JSON, YAML supports comments and is less noisy, making it a favorite for config files. Rust's `serde_yaml` leverages `serde` for data conversion, ensuring high compatibility and flexibility. While `serde_json` is more commonly used due to JSON's ubiquity in APIs, `serde_yaml` shines for local config and data files. It's worth noting that overly complex YAML features are rarely used and sometimes discouraged due to potential parsing issues.
 
-## See Also:
-- [The yaml-rust crate documentation](https://docs.rs/yaml-rust/)
-- [Official YAML website](https://yaml.org/)
+## See Also
+
+For further reading and more complex use cases:
+
+- Serde's official documentation: https://serde.rs/
+- Serde YAML crate documentation: https://docs.rs/serde_yaml/latest/serde_yaml/
+- YAML official specification: https://yaml.org/spec/1.2/spec.html
+- The Rust Programming Language book: https://doc.rust-lang.org/book/

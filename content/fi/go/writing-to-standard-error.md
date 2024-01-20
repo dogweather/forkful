@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "Go: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,16 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Kirjoittaminen standardivirheeseen on tapa, jolla ohjelmoijat voivat kirjoittaa virheitä tai ilmoituksia, jotka näkyvät komentorivillä tai komentokehotteella. Tämä on kätevä tapa ilmoittaa virheistä ja vianmäärityksen helpottamiseksi.
+## What & Why?
+"## Mitä & Miksi?"
 
-## Miten:
-Go-kielellä voit kirjoittaa standardivirheeseen käyttämällä ```Go os.Stderr.Write([]byte("virheilmoitus"))``` -komentoa. Tämä kirjoittaa annetun virheilmoituksen standardivirheeseen. Voit myös käyttää ```Go fmt.Fprintf(os.Stderr, "Virhe: %v", err)``` -komentoa, joka kirjoittaa muotoillun virheilmoituksen standardivirheeseen.
+Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheiden ja lokiviestien tulostamista erilliseen virtaan. Sitä käytetään, koska se auttaa erottamaan ohjelman pääasiallisen ulostulon ja virhetiedot toisistaan, mikä tekee virheenjäljityksestä ja lokien analysoinnista helpompaa.
 
-## Syväsukellus:
-Kirjoittaminen standardivirheeseen on yleinen tapa käsitellä ohjelmien virheitä ja ilmoituksia. Se vaatii vähemmän koodia kuin esimerkiksi tekstin tulostaminen näytölle tai tiedostoon ja tarjoaa selkeämmän tavan ilmoittaa virheistä. On myös mahdollista ohjata standardivirhe toiseen tiedostoon tai jopa piilottaa se kokonaan ohjelman suorituksen aikana.
+## How to:
+"## Kuinka tehdä:"
 
-## Katso myös:
--[Go-kielen viralliset dokumentaatiot standardivirheestä](https://golang.org/pkg/os/#pkg-variables)
--[Esimerkki ohjelmasta, joka käyttää standardivirheen kirjoittamista](https://play.golang.org/p/G1N4C3HzDvR)
--[Vinkkejä ohjelmien virheiden käsittelyyn](https://www.geeksforgeeks.org/error-handling-in-go/)
+```Go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Tavanomainen ulostulo
+	fmt.Println("Hei, stdout!")
+
+	// Virheviesti stderr:ään
+	_, err := fmt.Fprintln(os.Stderr, "Virhe: jotakin meni pieleen.")
+	if err != nil {
+		panic(err)
+	}
+}
+```
+
+Sample output:
+```
+Hei, stdout!
+Virhe: jotakin meni pieleen.
+```
+
+## Deep Dive
+"## Syväsukellus"
+
+Alun perin UNIX-järjestelmissä kehitetty virturointi (streaming) mahdollisti tiedon eriyttämisen kolmeen virtaan: stdin, stdout ja stderr. Stderr:ää käytetään virheiden raportointiin, mikä sallii erillisen käsittelyn, kuten ohjaamisen tiedostoon tai putkituksen toiseen prosessiin. Go:ssa `os`-paketin kautta kirjoittaminen stderr-virtaan on suoraviivaista. Vaihtoehtoisesti `log`-pakettia voidaan käyttää lokiviestien käsittelyssä, jolloin stderr käytetään oletuksena lokien kirjoitusvirtana.
+
+## See Also
+"## Katso myös"
+
+- Go:n dokumentaatio virheidenkäsittelyyn: https://golang.org/pkg/errors/
+- `log`-paketin dokumentaatio: https://golang.org/pkg/log/
+- UNIX-standardivirroista: https://en.wikipedia.org/wiki/Standard_streams

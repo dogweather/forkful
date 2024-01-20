@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "PowerShell: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
+simple_title:         "Skriving av en tekstfil"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,36 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Skrive en tekstfil i PowerShell betyr å lagre tekstinformasjon til en fil på harddisken. Programmerere gjør dette for å lagre data, logge informasjon, eller å automatisere konfigurasjonsfiler.
 
-Å skrive en tekstfil er å opprette en fil som inneholder tekst, vanligvis i form av kode eller instruksjoner. Dette er en viktig del av programmering, da teksten i filen kan leses og tolkes av datamaskinen for å utføre ønsket oppgave.
-
-## Hvordan:
+## Slik gjør du:
+For å skrive til en tekstfil, bruk `Out-File`, `Set-Content` eller `Add-Content` cmdlets.
 
 ```PowerShell
-# Opprett en ny tekstfil med navnet minfil.txt
-New-Item -Path .\minfil.txt -ItemType File
+# Skriver ny tekst til en fil, overskriver eksisterende innhold
+"Hello, World!" | Out-File -FilePath "hilsen.txt"
 
-# Skriv tekst inn i filen
-Set-Content .\minfil.txt -Value "Hei, dette er min første tekstfil!"
+# Skriver ny tekst til en fil, erstatte eksisterende innhold
+Set-Content -Path "hilsen.txt" -Value "Hei, Verden!"
 
-# Les tekst fra filen og vis den i terminalen
-Get-Content .\minfil.txt
+# Legger til tekst til eksisterende innhold
+Add-Content -Path "hilsen.txt" -Value "Hallo igjen!"
+
+# Eksempel på innhold i 'hilsen.txt' etter alle kommandoene har kjørt
+Get-Content "hilsen.txt"
+```
+Output:
+```
+Hei, Verden!
+Hallo igjen!
 ```
 
-**Output:**
+## Dypdykk
+Opprinnelig i DOS og tidlige Windows-versjoner ble tekstfiler ofte skrevet med batch-skript og `echo` kommandoer. PowerShell tilbyr mer avanserte og fleksible cmdlets for samme oppgave. Alternativene, som `StreamWriter` klassen fra .NET-rammeverket, tilbyr større kontroll over I/O-ytelse og encoding. `Set-Content` og `Add-Content` arbeider med pipeline-objekter og kan skrive uten å måtte laste hele filen inn i minnet, som er nyttig for store filer.
 
-Hei, dette er min første tekstfil!
-
-## Dykk Dypere:
-
-Å skrive en tekstfil har vært en viktig del av programmering siden programmeringens tidlige dager. Det gir utviklere muligheten til å lagre og lese tekstbasert informasjon, noe som er essensielt for å bygge programmer. I dag er det også alternative metoder for å lagre og lese data, som databaser og API-er.
-
-For å skrive en tekstfil i PowerShell bruker vi cmdlet-ene ```New-Item``` og ```Set-Content```. Ved å bruke disse i kombinasjon kan vi opprette og fylle en tekstfil med ønsket innhold.
-
-## Se Også:
-
-[Microsoft Dokumentasjon: New-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7)
-
-[Microsoft Dokumentasjon: Set-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-content?view=powershell-7)
-
-[PowerShell Scripting på Stedet](https://www.powershellscripting.nu/set-content/)
+## Se Også
+- [About Out-File (Microsoft Documentation)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file)
+- [About Set-Content (Microsoft Documentation)](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Set-Content)
+- [About Add-Content (Microsoft Documentation)](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Add-Content)
+- [PowerShell File I/O (small tidbit on .NET StreamWriter class)](https://devblogs.microsoft.com/scripting/understanding-streams-redirection-and-write-host-in-powershell)

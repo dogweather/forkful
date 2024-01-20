@@ -1,7 +1,7 @@
 ---
-title:                "「jsonとの作業」"
-html_title:           "Arduino: 「jsonとの作業」"
-simple_title:         "「jsonとの作業」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なにそれ？
-JSONとは、データを構造化するためのフォーマットの一種です。プログラマーがJSONを使用する理由は、コンピューターがやりとりするデータを簡単に扱えるようにするためです。
+## What & Why? (何となぜ？)
+JSONはデータ交換のフォーマット。シンプルで軽量。プログラマーはデバイス間通信やWeb API利用のために使う。
 
-## 使い方：
-ArduinoでJSONを扱う方法を説明します。以下のコードブロックを使用して、コーディングの例とサンプル出力を示します。
+## How to: (方法)
+ArduinoJsonライブラリを用いた例。インストール必要。
+```c++
+#include <ArduinoJson.h>
 
-```Arduino
-#include <ArduinoJson.h> // ArduinoJsonライブラリをインポート
+void setup() {
+  Serial.begin(9600);
+  // JSONを使ってデータを作成
+  StaticJsonDocument<200> doc;
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
 
-// 変数を定義する
-int sensorReading = 50;
+  JsonArray data = doc.createNestedArray("data");
+  data.add(48.756080);
+  data.add(2.302038);
 
-// JSONオブジェクトを作成する
-StaticJsonDocument<200> doc;
+  // JSONをシリアルに出力
+  serializeJson(doc, Serial);
+}
 
-// オブジェクトに変数を追加する
-doc["sensor"] = sensorReading;
+void loop() {
+  // ここに何もしない
+}
 
-// JSONオブジェクトをシリアルモニターに出力する
-serializeJson(doc, Serial);
+```
+出力例：
+```json
+{"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
 ```
 
-サンプル出力は以下のようになります：
+## Deep Dive (深掘り)
+JSONとはJavaScript Object Notationの略。2001年に登場。XMLより軽量で読み書きしやすい。Arduinoでは、ArduinoJsonライブラリが広く使われている。このライブラリは動的・静的メモリ・アロケーションをサポートし、ストリーム入出力可能。
 
-```Arduino
-{"sensor":50}
-```
-
-## 奥の深さ：
-JSONは、1999年にダグラス・クロックフォードによって作成されました。JSONの代替としては、XMLやCSVがありますが、JSONはよりシンプルかつ読みやすい構文を持っています。JSONの実装には、ArduinoJsonライブラリがあります。
-
-## さらに検討する：
-以下のリンクから、JSONに関するより詳しい情報を見つけることができます。
-
-- ArduinoJsonライブラリのドキュメンテーション：https://arduinojson.org/
-- ダグラス・クロックフォードによるJSONの歴史：https://www.json.org/json-en.html
+## See Also (関連情報)
+- ArduinoJson公式ドキュメント: https://arduinojson.org/
+- JSONの基本知識: https://www.json.org/json-ja.html
+- Arduinoのリファレンス: https://www.arduino.cc/reference/jp/

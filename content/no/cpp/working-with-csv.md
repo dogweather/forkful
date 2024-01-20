@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med csv"
-html_title:           "C++: Arbeid med csv"
-simple_title:         "Arbeid med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Programmering med CSV står for Comma-Separated Values og er en vanlig måte å organisere tabell-lignende data. Det er nyttig for programmerere fordi det gjør det lett å lagre og lese strukturerte data.
+## What & Why?
+Arbeid med CSV (Comma Separated Values) involverer lesing og skriving av data i en tekstformat delt med komma. Programmerere bruker CSV fordi det er enkelt, universelt, og kan brukes på tvers av forskjellige programmer.
 
-## Hvordan:
-For å arbeide med CSV-strukturer i C++, må du bruke ferdige biblioteker. Et populært alternativ er "CSV-parser" som gjør det enkelt å lese og skrive CSV-filer. Her er et eksempel på hvordan man kan lese data fra en CSV-fil og skrive den ut til konsollen:
-
+## How to:
 ```C++
 #include <iostream>
-#include "csv.h"
+#include <fstream>
+#include <vector>
+#include <sstream>
+
+// Enkel funksjon for å lese CSV
+std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
+    std::vector<std::vector<std::string>> data;
+    std::ifstream file(filename);
+    
+    std::string line;
+    while (std::getline(file, line)) {
+        std::istringstream s(line);
+        std::string field;
+        std::vector<std::string> row;
+        
+        while (getline(s, field, ',')) {
+            row.push_back(field);
+        }
+        data.push_back(row);
+    }
+    
+    return data;
+}
+
+// Enkel funksjon for å skrive til CSV
+void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
+    std::ofstream file(filename);
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+}
 
 int main() {
-    io::CSVReader<2> in("data.csv"); // Angi filnavn
-    in.read_header(io::ignore_extra_column, "Name", "Age"); // Angi kolonnenavn
-    std::string name;
-    int age;
-    while (in.read_row(name, age)) { // Gå gjennom hver rad
-        std::cout << name << " er " << age << " år gammel." << std::endl; // Skriv ut data
-    }
+    // Engangskjøring av lese og skrive funksjonene
+    const std::string filename = "example.csv";
+    std::vector<std::vector<std::string>> data = readCSV(filename);
+    writeCSV("output.csv", data);
+    
     return 0;
 }
 ```
+Sample output (innholdet av `output.csv` vil være identisk med `example.csv`).
 
-Her er et eksempel på data som kan være lagret i "data.csv" filen:
+## Deep Dive:
+CSV oppstod på 1970-tallet som et enkelt tekstformat for datautveksling. Alternativer til CSV inkluderer JSON, XML, og databaser som SQL. Implementeringsdetaljer i C++ kan inkludere bruk av bibliotek som `<fstream>` for filhåndtering, string streams for parsing av rader, og feilhåndtering.
 
-```
-Name, Age
-John, 25
-Sarah, 32
-David, 19
-```
-Output: 
-```
-John er 25 år gammel.
-Sarah er 32 år gammel.
-David er 19 år gammel.
-```
-
-## Dypdykk:
-CSV-formatet har vært i bruk siden 1970-tallet og har siden blitt en populær måte å lagre og overføre data på. Alternativene til CSV inkluderer XML og JSON, men CSV er fortsatt et godt valg for enkel og strukturert data.
-
-Parsing av CSV-data kan være krevende på grunn av forskjeller mellom implementasjoner og varierte formater. Derfor er det ofte en god ide å bruke et pålitelig bibliotek som "CSV-parser" for å sikre riktig håndtering av data.
-
-## Se også:
-For mer informasjon om CSV-formatet og hvordan man kan bruke det i C++, sjekk ut disse kildene:
-
-- [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [CSV-parser på GitHub](https://github.com/vincentlaucsb/csv-parser)
+## See Also:
+- [C++ filhåndtering (cplusplus.com)](https://www.cplusplus.com/reference/fstream/)
+- [RFC 4180 - Standard for CSV files (ietf.org)](https://tools.ietf.org/html/rfc4180)
+- [Modern C++: arbeid med JSON (nlohmann json)](https://github.com/nlohmann/json)

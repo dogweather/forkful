@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med json"
-html_title:           "TypeScript: Å arbeide med json"
-simple_title:         "Å arbeide med json"
+title:                "Arbeid med JSON"
+html_title:           "Arduino: Arbeid med JSON"
+simple_title:         "Arbeid med JSON"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -12,26 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å jobbe med JSON er å behandle data i en lettleselig, tekstbasert format som brukes ofte i webprogrammering. Programmere bruker JSON for å lagre og overføre data mellom forskjellige språk og systemer enkelt og effektivt.
+Jobbing med JSON (JavaScript Object Notation) handler om å utveksle data mellom server og klient, eller mellom programmer. Programmerere bruker JSON fordi det er lett å lese og skrive, godt støttet, og det bruker en standard format som kan tolkes av de fleste programmeringsspråk.
 
-## Hvordan:
+## Hvordan gjøre det:
 
-Enkelt eksempel på å skrive en JSON-streng i TypeScript og deretter parse den tilbake:
+```typescript
+// Definerer en TypeScript-interface for type-sikkerhet
+interface Bruker {
+  navn: string;
+  alder: number;
+  aktiv: boolean;
+}
 
+// Et eksempel på en JSON-string
+const jsonStr: string = '{"navn":"Ola","alder":30,"aktiv":true}';
+
+// Konverter JSON-string til TypeScript-objekt
+const brukerObj: Bruker = JSON.parse(jsonStr);
+
+console.log(brukerObj.navn); // Utskrift: Ola
+
+// Konverter TypeScript-objekt tilbake til JSON-string
+const nyJsonStr: string = JSON.stringify(brukerObj);
+
+console.log(nyJsonStr); // Utskrift: '{"navn":"Ola","alder":30,"aktiv":true}'
 ```
-let jsonStreng = '{"navn": "Erik", "alder": 27}';
 
-let person = JSON.parse(jsonStreng);
+## Dypdykk
 
-console.log(person.navn); // utskrift: Erik
-console.log(person.alder); // utskrift: 27
-```
+JSON eksisterte først som en del av JavaScript, men det har siden blitt et selvstendig dataformat som brukes på tvers av mange språk og plattformer. Alternativer til JSON inkluderer XML og YAML, men JSON er ofte foretrukket for dets enkelhet og hastighet. Implementeringsdetaljer inkluderer parsing og stringifying, som kan håndtere komplekse objekter, inkludert datoer og spesialtegn, som krever forsiktig behandling for å unngå feil.
 
-## Dypdykk:
+## Se også
 
-JSON (JavaScript Object Notation) ble utviklet i 1990-årene som en enkel måte for programmerere å utveksle strukturert data mellom forskjellige programmeringsspråk. Alternativer til JSON inkluderer XML og CSV, men JSON har blitt det foretrukne valget for mange på grunn av sin enkelhet og leselighet. I TypeScript brukes det ofte i form av JSON-strenger, men det finnes også innebygde funksjoner for å arbeide med JSON-objekter.
-
-## Se også:
-
-- TypeScript-dokumentasjon: https://www.typescriptlang.org/docs/handbook/basic-types.html
-- JSON.org: https://www.json.org/json-en.html
+- MDN Web Docs JSON: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- TypeScript Handbook: [https://www.typescriptlang.org/docs/handbook/intro.html](https://www.typescriptlang.org/docs/handbook/intro.html)
+- json.org: [http://json.org/](http://json.org/)

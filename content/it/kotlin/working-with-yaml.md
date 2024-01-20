@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Kotlin: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cos'è YAML e Perché i Programmatori lo Utilizzano?
+## What & Why?
+YAML sta per "YAML Ain't Markup Language" ed è un formato per serializzare dati facilmente leggibile dagli umani. I programmatori lo usano perché è semplice da scrivere e comprendere, ed è comunemente adoperato per file di configurazione e dati interscambiabili.
 
-YAML è un formato di dati leggibile dall'uomo utilizzato principalmente per la memorizzazione e il trasferimento di informazioni strutturate. I programmatori lo usano perché è molto semplice da leggere e scrivere, riducendo così il carico di lavoro e aumentando l'efficienza nella gestione dei dati.
+## How to:
+In Kotlin, puoi gestire YAML con librerie come `snakeyaml` o `kotlinx.serialization`. Ecco un esempio semplice che mostra come leggere e scrivere YAML.
 
-## Come Utilizzarlo:
 ```Kotlin
-import java.io.File
 import org.yaml.snakeyaml.Yaml
+import java.io.File
 
-// Creazione di un oggetto YAML e inserimento di dati
-val yaml = Yaml()
-val data = mapOf("nome" to "John", "cognome" to "Smith")
+fun main() {
+    val yaml = Yaml()
+    val data: Map<String, Any> = yaml.load(File("config.yml").inputStream())
 
-// Scrittura dei dati in un file YAML
-val file = File("esempio.yaml")
-yaml.dump(data, file)
+    println("Server: ${data["server"]}")
+    println("Port: ${data["port"]}")
 
-// Lettura dei dati da un file YAML
-val newData = yaml.load<Map<String, Any>>(file.readText())
-println(newData)
-```
+    val newYamlData = mapOf("server" to "localhost", "port" to 8080)
+    val yamlString = yaml.dump(newYamlData)
+    File("new_config.yml").writeText(yamlString)
+}
 ```
 Output:
-{nome=John, cognome=Smith}
+```
+Server: example.com
+Port: 80
 ```
 
-## Analisi Approfondita:
-YAML (YAML Ain't Markup Language) è un linguaggio di serializzazione dei dati creato nel 2001 da Clark Evans. È stato progettato per essere semplice da leggere e scrivere, utilizzando uno stile indentato per rappresentare la struttura dei dati. Ciò lo rende ideale per essere utilizzato in combinazione con altri linguaggi di programmazione come Java, Python e, ovviamente, Kotlin.
+## Deep Dive
+YAML è in uso dal 2001, come alternativa leggibile a XML. Mentre JSON è spesso considerato analogo, YAML permette commenti e supporta riferimenti a parti dello stesso YAML, rendendolo più potente per alcune configurazioni complesse. Molte librerie di parsing YAML in Kotlin sono wrapper di librerie Java a causa dell'interoperabilità JVM. È fondamentale gestire possibili eccezioni di parsing YAML.
 
-Alcune alternative a YAML includono JSON e XML, tuttavia YAML è considerato più leggibile e intuitivo. Inoltre, YAML ha una maggiore flessibilità e supporta la creazione di commenti all'interno dei dati, rendendolo più adatto per la documentazione.
-
-In Kotlin, è possibile utilizzare la libreria SnakeYAML per lavorare con le strutture dati in formato YAML. Questa libreria offre metodi per la creazione, la scrittura e la lettura di dati YAML, semplificando così il processo di gestione dei dati strutturati.
-
-## Vedi anche:
-- [Documentazione ufficiale di YAML](https://yaml.org/)
+## See Also
+- YAML ufficiale: https://yaml.org
+- Libreria SnakeYAML: https://bitbucket.org/asomov/snakeyaml
+- modulo `kotlinx.serialization` per YAML: https://github.com/Kotlin/kotlinx.serialization
+- Tutorial YAML per principianti: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/

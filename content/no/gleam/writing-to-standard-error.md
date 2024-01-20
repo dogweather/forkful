@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "Gleam: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "Arduino: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å skrive til standard error er en metode for å sende feilmeldinger og annen nyttig informasjon til en spesiell strøm som kalles "standard error". Programmere bruker dette for å få en bedre oversikt over feilene og for å kunne fange dem i koden.
+## Hva & Hvorfor?
+Å skrive til standard error (stderr) betyr å sende feil og diagnostiske meldinger til en separat utstrøm. Programmerere gjør dette for å skille vanlig utdata (stdout) fra feil, for lettere feilsøking og logging.
 
-## Hvordan:
+## Slik gjør du:
+I Gleam bruker du `io`-modulen for å skrive til stderr. Her er hvordan:
+
+```gleam
+import gleam/io
+
+pub fn main() {
+  io.stderr_print("Dette er en feilmelding\n")
+}
 ```
-Gleam.hvordan_skriver(shader)
-Gleam.hvordan_skriver("Til standard error: Dette er en feilmelding")
+
+Når du kjører denne koden, vil du se output i terminalen:
+
+```
+Dette er en feilmelding
 ```
 
-Eksempel på utgang:
-```
-Feil: Til standard error: Dette er en feilmelding
-```
+## Dypdykk:
+I eldre programmeringsspråk som C, ble stderr brukt til å skille utdiagnostiske meldinger. I Gleam og mange moderne språk er prinsippet det samme. Alternativer inkluderer logging-biblioteker eller rammerverk som kan gi mer funksjonalitet rundt loggbehandling. Intern implementasjonsdetalj for Gleam sin `io.stderr_print` bruker Erlang sin innebygde I/O funksjonalitet, siden Gleam kompilerer til Erlang bytecode.
 
-## Dykk dypere:
-Å skrive til standard error ble først brukt på Unix-systemer som en måte å skille mellom feilmeldinger og annen informasjon. Andre alternativer for å håndtere feil inkluderer å skrive til standard utgang eller å kaste unntak.
-
-En implementasjonsdetalj å merke seg er at når man skriver til standard error, vil det legges til en linjeskift på slutten av meldingen, mens standard utgang vil beholde meldingen som den er.
-
-## Se også:
-- [Official Gleam Documentation](https://gleam.run/documentation/)
-- [Gleam Github Repository](https://github.com/gleam-lang/gleam)
+## Se Også:
+- Gleam's offisielle dokumentasjon på `io`-modulen: https://hexdocs.pm/gleam_stdlib/gleam/io/
+- Erlang's dokumentasjon for feil og utdata håndtering: http://erlang.org/doc/apps/stdlib/io_page.html
+- Tutorial på logging i Gleam: [relevant lenke her når tilgjengelig]

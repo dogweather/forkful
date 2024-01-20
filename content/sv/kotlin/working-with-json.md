@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Kotlin: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att arbeta med JSON är ett sätt för programmerare att hantera och utbyta data på ett enkelt och strukturerat sätt. JSON används ofta för att spara och överföra data mellan olika applikationer eller system.
+## Vad & Varför?
+JSON står för JavaScript Object Notation och används för att lagra och utbyta data. Programmerare använder JSON för att det är textbaserat, lättläst och språköverskridande, vilket gör det optimalt för datakommunikation på webben.
 
-# Så här gör du:
-```Kotlin 
-// Skapa en ny JSON-object
-val jsonObject = JsonObject()
+## Hur gör man:
+I Kotlin kan vi hantera JSON enkelt med bibliotek som kotlinx.serialization eller Gson. Här är ett grundläggande exempel med kotlinx.serialization:
 
-// Lägg till värden i objektet
-jsonObject.addProperty("id", 123)
-jsonObject.addProperty("name", "Kotlin programmering")
-jsonObject.addProperty("author", "Jane Doe")
-
-// Konvertera till JSON-sträng
-val jsonString = jsonObject.toString()
-
-// Skriv ut resultatet
-println(jsonString)
-```
-
-Resultat:
 ```Kotlin
-{"id":123,"name":"Kotlin programmering","author":"Jane Doe"}
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = Json.encodeToString(User("Anna", 25))
+    println(json)
+
+    val user = Json.decodeFromString<User>(json)
+    println(user)
+}
+```
+Utdata:
+```
+{"name":"Anna","age":25}
+User(name=Anna, age=25)
 ```
 
-# Djupdykning:
-JSON (JavaScript Object Notation) har funnits sedan 90-talet och är ett populärt format för att strukturera data inom webbapplikationer. En av fördelarna med JSON är att den är läsbar för både människor och datorer. Andra alternativ för att hantera strukturerad data är till exempel XML och CSV, men JSON är oftast mer lättförståeligt och enklare att använda.
+## Djupdykning
+JSON härstammar från JavaScript men har blivit ett standardformat för webbaserad datautbyte. Kotlin erbjuder flera bibliotek för JSON: kotlinx.serialization är officiellt stödd av Kotlin, medan Gson är ett populärt alternativ. När du implementerar JSON-parsing, överväg prestanda, flexibilitet och underhåll av de olika biblioteken.
 
-För att arbeta med JSON i Kotlin finns det flera bibliotek att välja mellan, till exempel Jackson, Gson, och Moshi. Dessa bibliotek erbjuder enkel konvertering mellan JSON och Kotlin-objekt.
-
-# Se även:
-- [JSON](https://www.json.org/)
+## Se också
+- Kotlinx.serialization GitHub: https://github.com/Kotlin/kotlinx.serialization
+- Gson GitHub: https://github.com/google/gson
+- JSON officiell webbplats: https://www.json.org/json-en.html

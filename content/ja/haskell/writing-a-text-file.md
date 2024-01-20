@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "Haskell: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## What & Why? (何とその理由?)
+テキストファイルを書くことは、データを永続化する行為です。プログラマはログ生成、設定保存、データ交換のためにテキストファイルを利用します。
 
-ファイルを書くというのは、プログラマーがテキストファイルに情報を保存することを指します。これは、プログラマーが実行したコードやデータを保存するために必要です。
+## How to: (方法)
+```Haskell
+import System.IO
 
-## How to:
+-- ファイル書き込み関数
+writeFileExample :: IO ()
+writeFileExample = do
+    let content = "こんにちは、Haskell!\n"
+    writeFile "greeting.txt" content
 
-Haskellでテキストファイルを書くには、以下のコードを使用します。
+-- 実行結果
+main :: IO ()
+main = writeFileExample
+```
+
+`greeting.txt` が作成され、次の内容が含まれます:
 
 ```
-import System.IO 
-
-main = do 
-    let fileName = "sample.txt" 
-    let content = "This is a sample text file." 
-    writeFile fileName content 
-    putStrLn "File written successfully."
+こんにちは、Haskell!
 ```
 
-このコードを実行すると、`sample.txt`という名前のテキストファイルが作成され、中には `This is a sample text file.`という文章が保存されます。また、最後の行では、コンソールにメッセージが表示されます。
+## Deep Dive (深掘り)
+Haskellでは、テキストファイルに書き込む標準的な方法は `writeFile` 関数です。この関数は過去から存在し、`System.IO` ライブラリーの一部です。`writeFile` の代替品としては、`appendFile`（ファイルの末尾に追加）、`hPutStr`（ファイルハンドルを使用）、`ByteString`や`Text`ライブラリを使った効率的な書き込みがあります。実装の詳細においては、`writeFile` はファイルを開き、データを書き込み、そして自動的にファイルを閉じます。
 
-## Deep Dive:
-
-テキストファイルを書く機能は、Haskellの標準ライブラリで使用できる `System.IO` モジュールを介して提供されます。この機能を使用することで、コードを実行する際に生成されるデータや結果を永続的に保存することができます。
-
-代替方法としては、バイナリファイルを作成し、データを格納することもできますが、テキストファイルを使用することでデータをより見やすく、編集しやすくすることができます。
-
-ファイルの書き込み機能は、ファイルの作成やデータの保存という基本的なタスクを実行するためのものですが、より詳細なファイル操作や管理をするには、`System.Directory` モジュールや `Data.ByteString` パッケージを使用することができます。
-
-## See Also:
-
-- [System.IO Documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [System.Directory Documentation](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-- [Data.ByteString Package](https://hackage.haskell.org/package/bytestring)
+## See Also (関連情報)
+- [Haskell Documentation on System.IO](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
+- [LYAHFGG: Input and Output](http://learnyouahaskell.com/input-and-output)
+- [Real World Haskell: Working with Files](http://book.realworldhaskell.org/read/io.html)

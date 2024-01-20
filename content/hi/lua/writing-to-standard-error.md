@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड त्रुटि में लिखना"
-html_title:           "Lua: स्टैंडर्ड त्रुटि में लिखना"
-simple_title:         "स्टैंडर्ड त्रुटि में लिखना"
+title:                "मानक त्रुटि में लिखना"
+html_title:           "Arduino: मानक त्रुटि में लिखना"
+simple_title:         "मानक त्रुटि में लिखना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,23 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Lua में डिफेल्ट रूप से लिखने के लिए कई तरीके हैं, लेकिन एक मुख्य तरीका है 'स्टैण्डर्ड एरर' में लिखना। इसका उपयोग विकासकर्मियों द्वारा बजाय गए त्रुटियों को ट्रैक करने और सुधार करने के लिए किया जाता है।
+## What & Why? (क्या और क्यों?)
+Standard error (stderr) एक output stream होता है जो errors और diagnostic messages को display करता है. Programmers इसका इस्तेमाल करते हैं ताकि वे errors को user को सही ढंग से दिखा सकें और log files को clean रख सकें.
 
-## कैसे करें:
+## How to: (कैसे करें:)
 ```Lua
-print("यह स्टैण्डर्ड आउटपुट है।")
-io.stderr:write("यह स्टैण्डर्ड एरर है।")
+-- Lua में standard error में लिखने का बेसिक उदाहरण
+io.stderr:write("यह एक error message है.\n")
+
+-- प्रोग्राम को एक error के साथ terminate करना
+os.exit(1)
 ```
 
-आउटपुट:
+Sample Output:
 ```
-यह स्टैण्डर्ड आउटपुट है।
-यह स्टैण्डर्ड एरर है।
+यह एक error message है.
 ```
 
-## गहराई में जाएँ:
-आमतौर पर, इस तकनीक का इस्तेमाल ट्रैसबैक्स दिखाने और उन्हें ठीक करने के लिए किया जाता है। इस तरह, विकासकर्मियों को त्रुटि को आसानी से खोजने और सुधारने में मदद मिलती है। अन्य तरीकों की तुलना में बाहरी संसाधनों का अभ्यास करने का फायदा हो सकता है। इसका उपयोग विकासकर्मियों को पता लगाने के लिए भी किया जाता है कि क्या उनका कोड सबसे अच्छा रूप से काम कर रहा है या नहीं।
+## Deep Dive (गहराई में जानकारी)
+Lua में, `io.stderr` का इस्तेमाल कर standard error stream में लिखा जा सकता है. यह परंपरा UNIX systems से आई है जहां stdout (standard output), stderr (standard error), और stdin (standard input) मुख्य communication channels हैं. Alternatives में error handling libraries और logging frameworks शामिल हैं, जो advanced features प्रदान करते हैं. Implementing writing to stderr बहुत straightforward है और Lua runtime द्वारा manage किया जाता है.
 
-## देखें भी:
-अधिक जानकारी के लिए, हमारी रिकमेंडेशन उपनामी, 'स्टैण्डर्ड लाइब्रेरी' के बारे में पढ़ सकते हैं। यह स्टैण्डर्ड लाइब्रेरी प्रोग्रामिंग भाषाओं में स्टैण्डर्ड आउटपुट और स्टैण्डर्ड एरर को हैंडल करने के लिए एक प्रकार का स्टैंडर्ड है। इसके अलावा, Lua डॉक्यूमेंटेशन भी एक बहुत उपयोगी स्रोत है जहां आप स्टैण्डर्ड लाइब्रेरी और Lua के अन्य तत्वों के बारे में और बेहतर समझ सकते हैं।
+## See Also (और जानकारी के लिए)
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+- [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html)
+- [Lua-users wiki: I/O Library Tutorial](http://lua-users.org/wiki/IoLibraryTutorial)

@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Elm: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-CSV:n käsittely on yleinen ohjelmoinnissa, sillä se on helppo ja tehokas tapa tallentaa tietoja taulukkomuodossa. CSV (comma-separated values) on tiedostomuoto, jossa tiedot erotellaan pilkulla. CSV-tiedostoja käytetään usein tietokantojen tai Excel-taulukoiden tuontiin ja vientiin.
+## What & Why?
+CSV on yksinkertainen tiedostomuoto, jota käytetään tiedon tallentamiseen ja vaihtamiseen. Ohjelmoijat käyttävät sitä datan helpon siirrettävyyden ja laajan sovellustuen vuoksi.
 
-## Miten tehdä:
+## How to:
+Elmissä CSV-tiedoston käsittely vaatii pientä kikkailua, koska puhtaita stringioperaatioita suositaan.
+
 ```Elm
-import Csv
+import Html exposing (Html, text)
+import String
 
--- Avaamme CSV-tiedoston ja tallennamme sen sisällön listaan
-Csv.decodeFile "tiedostonimi.csv" |> Task.perform
-  (\either ->
-    case either of
-      Err error -> Debug.log "Virhe!" error
-      Ok data -> Debug.log "Data:" data
-  )
+type alias CSV =
+  List (List String)
+
+parseCSV : String -> CSV
+parseCSV input =
+  input
+    |> String.split "\n"
+    |> List.map (String.split ",")
+
+viewCSV : CSV -> Html msg
+viewCSV csvData =
+  text (String.join "\n" (List.map (String.join ", ") csvData))
+
+main =
+  viewCSV (parseCSV "name,age\nAlice,30\nBob,25")
 ```
 
-CSV-tiedoston avaamiseen ja sisällön listaan tallentamiseen tarvitaan Csv-kirjasto eli paketti. Tämän jälkeen tiedoston nimi annetaan ```decodeFile``` -funktiolle, joka palauttaa joko virheen tai oikean datan.
+Tulostaa:
+```
+name,age
+Alice,30
+Bob,25
+```
 
-## Syvemmälle:
-CSV:llä on pitkä historia, ja se on peräisin jo 1970-luvulta. Siinä käytetyt erotinmerkit vaihtelevat eri maissa, sillä esimerkiksi Yhdysvalloissa käytetään pilkkua desimaalierottimena. Alternatiivina CSV-tiedostoille on JSON muodossa tallennetut tiedostot, mutta CSV on edelleen suosittu erityisesti taulukkomuotoisen datan käsittelyssä.
+## Deep Dive:
+CSV (Comma-Separated Values) on ollut käytössä jo vuosikymmeniä. Suosio perustuu yksinkertaisuuteen ja lukuisten ohjelmien tukiin. Elm-tapauksessa käyttämättömyys johtuu sen funktionaalisen paradigman ja selkeän tyypin turvallisuuden korostamisesta. CSV-kirjastoja on saatavilla, mutta vakio syntaksi puuttuu. Käsittely on vaivatonta perusoperaatioita käyttäen, mutta monimutkaisempi datan validointi vaatii lisäkirjastoja tai itse kirjoitettua koodia.
 
-## Lue myös:
-- [Elmin virallinen dokumentaatio](https://guide.elm-lang.org/)
+## See Also:
+- Elm ja HTTP-datan käsittely: [Working with HTTP in Elm](https://guide.elm-lang.org/effects/http.html)
+- String-moduulin dokumentaatio: [Elm String Module](https://package.elm-lang.org/packages/elm/core/latest/String)

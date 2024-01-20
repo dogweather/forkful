@@ -10,20 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
-YAML to format danych używany przez programistów do przechowywania konfiguracji aplikacji. Daje możliwość zapisania danych w czytelnej dla człowieka formie, co ułatwia edycję oraz utrzymanie. Programiści wybierają YAML zamiast tradycyjnych form ustawień, takich jak pliki .json lub .xml, ponieważ jest on prostszy w użyciu i ma ładniejszą składnię.
+## Co i dlaczego?
+
+**YAML** to format reprezentacji danych, czytelny dla ludzi, używany w konfiguracji oprogramowania i innych miejscach, gdzie wymagana jest prostota. Programiści używają YAML, bo jest prosty w zapisie i czytelny, co ułatwia zarządzanie konfiguracją.
 
 ## Jak to zrobić:
-Korzystanie z YAML w Arduino jest proste. Możesz użyć biblioteki do obsługi tego formatu danych lub napisać własną funkcję do parsowania plików YAML. Poniżej przedstawiono przykładowy kod, który odczytuje dane z pliku YAML i wyświetla je na ekranie:
+
+Arduino nie obsługuje bezpośrednio YAML, ale możemy skorzystać z bibliotek serwerowych do przetwarzania YAML. Poniżej znajduje się przykład z wykorzystaniem biblioteki `ArduinoJson`, która obsługuje format JSON, bardziej typowy dla Arduino.
+
 ```Arduino
-// pobieranie danych z pliku
-String daneYAML = readYAML("ustawienia.yaml");
-// wyświetlanie danych na ekranie
-Serial.println(daneYAML);
+#include <ArduinoJson.h>
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Przykładowy JSON, który często służy jako alternatywa dla YAML
+  const char* json = "{\"temperature\": 23, \"humidity\": 60}";
+
+  StaticJsonDocument<200> doc;
+  DeserializationError error = deserializeJson(doc, json);
+
+  // Sprawdź czy nie ma błędów
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
+  }
+
+  int temperature = doc["temperature"]; // 23
+  int humidity = doc["humidity"]; // 60
+
+  Serial.print("Temperatura: ");
+  Serial.println(temperature);
+  Serial.print("Wilgotność: ");
+  Serial.println(humidity);
+}
+
+void loop() {
+  // Tutaj nic nie robimy.
+}
 ```
 
-## Mocne i słabe strony:
-YAML został stworzony w 2001 roku przez Clarka Evansa, Ingy döt Net oraz Oren Ben-Kiki. Jest on powszechnie używany w różnych językach programowania, takich jak Java, Python czy Ruby. Jedną z jego głównych zalet jest czytelność dla człowieka. Jednak niektórzy programiści uważają, że jest on mniej wydajny niż inne formaty. Pamiętaj, aby odpowiednio skalować wykorzystanie YAML w swoich projektach.
+Output na Serial Monitor gdy uruchomimy powyższy kod:
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o pracy z YAML w Arduino, zapoznaj się z oficjalną dokumentacją: https://www.arduino.cc/reference/en/libraries/yaml/. Możesz także poszukać przykładowych projektów w sieci lub na forach dla programistów.
+```
+Temperatura: 23
+Wilgotność: 60
+```
+
+## Wgłębienie się:
+
+YAML, czyli "YAML Ain't Markup Language", powstał jako alternatywa dla XML i JSON, oferując łatwość w czytaniu i prostotę. W środowisku Arduino, ze względu na ograniczone zasoby, YAML jest rzadziej używany, a programiści częściej wybierają JSON z biblioteką `ArduinoJson`. Jednak przy interakcji z zewnętrznymi systemami lub API, które używają YAML, może być konieczne przetworzenie tego formatu.
+
+## Zobacz również:
+
+- Dokumentacja ArduinoJson: https://arduinojson.org/
+- Specyfikacja YAML: https://yaml.org/spec/1.2/spec.html
+- Tutorial JSON w Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/Json

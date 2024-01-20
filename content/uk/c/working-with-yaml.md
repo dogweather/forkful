@@ -1,7 +1,7 @@
 ---
-title:                "Робота з форматом yaml"
-html_title:           "C: Робота з форматом yaml"
-simple_title:         "Робота з форматом yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,99 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Робота з YAML - це простий спосіб для організації та збереження данних у форматі ключ-значення. Це дозволяє програмістам легко зчитувати та зберігати конфігураційні файли та дані для їх програм. 
+## What & Why? (Що і Чому?)
+YAML — це формат даних для конфігурації, що легко читається людиною. Програмісти використовують його для налаштування програм, середовищ і для обміну даними між службами та додатками.
 
-Як?
-Нижче показано код C, який використовує бібліотеку LibYAML для зчитування і запису даних у форматі YAML. Також показані приклади вхідних та вихідних даних для кращого розуміння. 
-
+## How to: (Як це робити:)
 ```C
+#include <stdio.h>
 #include <yaml.h>
 
-// Структура даних для збереження YAML документу
-typedef struct {
-    char key[50];
-    char value[50];
-} yaml_data;
+int main() {
+    FILE *fh = fopen("config.yaml", "r");
+    yaml_parser_t parser;
+    yaml_token_t  token;
 
-// Функція для обробки YAML документу
-int process_yaml(yaml_parser_t *parser, yaml_data *data) {
+    if(!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize parser!\n", stderr);
+    if(fh == NULL)
+        fputs("Failed to open file!\n", stderr);
 
-    yaml_event_t event;
-    int done = 0;
+    yaml_parser_set_input_file(&parser, fh);
 
-    // Постійно отримуємо нові події, поки не дійдемо до кінця документу
-    while(!done) {
-        // Отримуємо наступну подію та перевіряємо, чи не виникли помилки
-        if(!yaml_parser_parse(parser, &event)) {
-            printf("Помилка при обробці події\n");
-            return 0;
+    do {
+        yaml_parser_scan(&parser, &token);
+        switch(token.type) {
+        /* Token types are PROCESSED HERE */
+        case YAML_STREAM_START_TOKEN: puts("Start Stream"); break;
+        case YAML_STREAM_END_TOKEN:   puts("End Stream");   break;
+        // Handle other tokens...
+        default: /* Do nothing */; 
         }
-        // Реагуємо на різні типи подій
-        switch(event.type) {
-            // Початок документу
-            case YAML_DOCUMENT_START_EVENT:
-                // Реалізуємо якщо потрібно
-                break;
-            // Кінець документу
-            case YAML_DOCUMENT_END_EVENT:
-                done = 1; // Завершуємо обробку, якщо досягли кінця
-                break;
-            // Початок мапи ключ-значення
-            case YAML_MAPPING_START_EVENT:
-                // Реалізуємо якщо потрібно
-                break;
-            // Кінець мапи ключ-значення
-            case YAML_MAPPING_END_EVENT:
-                // Реалізуємо якщо потрібно
-                break;
-            // Початок нового елементу
-            case YAML_SCALAR_EVENT:
-                // Зчитуємо ключ та значення
-                if(!strcmp(event.data.scalar. tag, "key")) {
-                    strcpy(data->key, event.data.scalar.value);
-                }
-                if(!strcmp(event.data.scalar.tag, "value")) {
-                    strcpy(data->value, event.data.scalar.value);
-                }
-                break;
-            // Інші типи подій, які можуть бути ігноровані
-            default:
-                break;
-        }
-        // Проводимо очищення після обробки події
-        yaml_event_delete(&event);
-    }
+        if(token.type != YAML_STREAM_END_TOKEN)
+            yaml_token_delete(&token);
+    } while(token.type != YAML_STREAM_END_TOKEN);
+    yaml_token_delete(&token);
 
-    return 1;
+    /* Cleanup */
+    yaml_parser_delete(&parser);
+    fclose(fh);
+    return 0;
 }
-
-``` 
-
-Приклад вхідного YAML документу:
-
-``` 
-key: "value"
-language: "C"
 ```
 
-Виведення ключа та значення:
-
-``` 
-key: "value"
-language: "C"
+*Sample output:*
+```
+Start Stream
+End Stream
 ```
 
-Глибокий занурення:
-Історичний контекст:
-YAML була створена в 2001 році як формат для збереження даних, придатний для людського читання та підключення до різних мов програмування. Хоча спочатку використовувалася переважно для мови Ruby, зараз вона підтримується більшістю мов програмування.
+## Deep Dive (Занурення у контекст):
+YAML створено у 2001 році як зручну альтернативу XML. Зараз існує кілька бібліотек для роботи з YAML у C, такі як libyaml (демонструється вище). Ця бібліотека дає детальний інтерфейс для аналізу та генерації YAML даних. YAML робить легшим серіалізацію структур даних, але вимагає пильності через свої особливості обробки типів і відступів.
 
-Альтернативи:
-YAML не є єдиним форматом для збереження даних. Інші популярні формати включають JSON та XML. Якщо вам потрібна більша структурованість та можливість зберігати багатовимірні дані, то JSON може бути кращим вибором, але для простих конфігураційних даних YAML є більш зручним та простим у використанні.
-
-Деталі реалізації:
-Реалізація обробки YAML документу полягає у використанні бібліотеки LibYAML, яка надає потужні інструменти для роботи з YAML в C. Ця бібліотека є кросплатформеною та надає можливості для зчитування та запису YAML документу, а також підтримує безліч різних типів даних.
-
-Див. також:
-- Офіційна документація LibYAML: [https://pyyaml.org/wiki/LibYAML](https://pyyaml.org/wiki/LibYAML)
-- Стандарт YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+## See Also (Додатково):
+- Official YAML website: [http://yaml.org](http://yaml.org)
+- libyaml GitHub repository: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)
+- YAML 1.2 specification: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+- An article about YAML syntax: [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML)
+- Stack Overflow discussions on YAML usage in C: [https://stackoverflow.com/questions/tagged/yaml?tab=Newest](https://stackoverflow.com/questions/tagged/yaml?tab=Newest)

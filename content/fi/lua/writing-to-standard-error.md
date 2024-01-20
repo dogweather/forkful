@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheelle"
-html_title:           "Lua: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Kirjoittaminen standardi virheenkorjaus (standard error) on tapa ilmoittaa virheistä ja muista tärkeistä viesteistä ohjelman suorituksen aikana. Sillä on tärkeä rooli ohjelmoijille virheiden havaitsemisessa ja korjaamisessa.
+## What & Why? (Mikä & Miksi?)
+Kirjoittaminen standardivirheeseen (stderr) on tapa tulostaa virheviestit ohjelmastasi. Ohjelmoijat käyttävät sitä erotellakseen normaalin tulosteen (stdout) ja virhetiedot, mikä auttaa virheiden diagnosoinnissa.
 
-## Etsin yksin
-Lua tarjoaa `io.stderr` -funktion, joka mahdollistaa kirjoittamisen standardi virheenkorjaus ikkunaan. Se ottaa vastaan tekstiä parametrinä ja tulostaa sen virheenkorjaus ikkunaan. Tässä on yksinkertainen esimerkki:
+## How to: (Kuinka tehdä:)
+```Lua
+-- Kirjoitetaan virhe stderr:iin
+io.stderr:write("Tapahtui virhe!\n")
 
-```lua
-io.stderr:write("Virhe: Jokin meni pieleen!") 
-```
-
-Tämä tulostaa "Virhe: Jokin meni pieleen!" standardi virheenkorjaus ikkunaan. Huomaa, että voit käyttää myös `print()` -funktiota standardi virheenkorjaus ikkunan sijaan. Tässä on esimerkki:
-
-```lua
-print("Virhe: Jokin meni pieleen!", io.stderr)
-```
-
-Tämä tulostaa saman viestin, mutta käyttää `print()` -funktiota sen sijaan, että kirjoittaisi suoraan `io.stderr` -funktiota.
-
-## Syvempi sukellus
-Kirjoitus standardi virheenkorjaus ikkunaan voi olla hyödyllistä myös esimerkiksi debuggauksessa. Voit käyttää `assert()` -funktiota ja ohjelmoida sen avulla oman virheenilmoituksen, jos jokin ehto ei täyty. Tässä on esimerkki:
-
-```lua
-function lukuJaTarkista(luku)
-  assert(type(luku) == "number", "Luku pitää olla numero!")
-  print("Luku on: ", luku)
+-- Jos haluat käyttää print-funktiota, ohjaa se stderr:iin
+local old_print = print
+print = function(...)
+    old_print(...)
+    io.stderr:write("Virhe: ", ...)
+    io.stderr:write("\n")
 end
 
-lukuJaTarkista("kaksi") -- Tämä aiheuttaa virheen ja tulostaa tekstin "Luku pitää olla numero!" standardi virheenkorjaus ikkunaan.
+-- Käytetään muokattua print-funktiota virheen näyttämiseen
+print("Tämä on virheviesti")
 ```
 
-Standardi virheenkorjaus ikkunan sijaan voit myös käyttää `io.output()` -funktiota, jolla voit määrittää mihin tulostus tapahtuu. Voit esimerkiksi luoda oman virheenkorjaus ikkunan tiedoston, johon kirjoitat virheviestit. Voit tarkistaa Lua-oppaan lisätietoja `io`-kirjastoon liittyen.
+Tuloste (esimerkki):
 
-## Katso myös
-- [Lua-opas](https://www.lua.org/manual/5.4/) - Täydellinen Lua-opas, josta löydät kaiken tarvitsemasi tiedon.
-- [io-kirjasto](https://www.lua.org/manual/5.4/manual.html#6.8) - Lisätietoja `io`-kirjaston käytöstä.
-- [assert()-funktio](https://www.lua.org/manual/5.4/manual.html#pdf-assert) - Lisätietoja `assert()`-funktion käytöstä.
+```
+Tämä on virheviesti
+```
+
+## Deep Dive (Syvä sukellus)
+Alusta asti, stderr on ollut yksi kolmesta Unix-standardivirrasta, muiden ollessa stdin (standardisyöte) ja stdout (standardituloste). Kun tulostat stderr:iin, viestisi menevät yleensä komentoriville tai virhelokiin, sen sijaan että ne sekoittuisivat normaaliin tulosteeseen. Lua käyttää `io`-kirjastoa tähän, ja `io.stderr:write()` on suorin tapa kirjoittaa virhetulostus. Lua:ssa voit myös ohjata `print`-funktiota kirjoittamaan stderr:iin, kuten yllä olevassa esimerkissä.
+
+## See Also (Katso myös)
+- Lua 5.4 Reference Manual `io` library: https://www.lua.org/manual/5.4/manual.html#6.8
+- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
+- Effective Lua Debugging Techniques: https://www.lua.org/pil/21.3.html

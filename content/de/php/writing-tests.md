@@ -1,6 +1,6 @@
 ---
 title:                "Tests schreiben"
-html_title:           "PHP: Tests schreiben"
+html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,45 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Tests schreiben bedeutet, Code zu erstellen, der überprüft, ob andere Teile des Codes wie erwartet funktionieren. Programmierer machen das, um Fehler früh zu entdecken, die Softwarequalität zu sichern und spätere Änderungen sicher und einfach zu machen.
 
-Tests schreiben ist eine wichtige Aufgabe in der Programmierung. Dabei werden automatisierte Tests erstellt, um sicherzustellen, dass der Code wie erwartet funktioniert und alle zugehörigen Anforderungen erfüllt werden. Programmierer machen das, um sicherzustellen, dass ihre Programme zuverlässig und fehlerfrei sind.
+## How to:
+Ein Beispiel für einen einfachen PHPUnit-Test:
 
-## Wie man es macht:
-
-```PHP
+```php
 <?php
-// Beispiel einer einfachen Funktion
-function add($x, $y) {
-  return $x + $y;
+use PHPUnit\Framework\TestCase;
+
+class StackTest extends TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = [];
+        $this->assertSame(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this->assertSame('foo', $stack[count($stack)-1]);
+        $this->assertSame(1, count($stack));
+
+        $this->assertSame('foo', array_pop($stack));
+        $this->assertSame(0, count($stack));
+    }
 }
+```
+Lauf den Test mit `./vendor/bin/phpunit tests`.
 
-// Testfall für die Funktion add()
-function testAdd() {
-  $x = 5;
-  $y = 10;
-  $expected = 15;
-  $actual = add($x, $y);
+Erwartete Ausgabe:
 
-  // Vergleicht das erwartete Ergebnis mit dem tatsächlichen Ergebnis
-  if ($expected === $actual) {
-    echo "Test erfolgreich durchgeführt!";
-  } else {
-    echo "Test fehlgeschlagen.";
-  }
-}
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
-// Aufrufen der Testfunktion
-testAdd();
+.                                                                   1 / 1 (100%)
+
+Time: 00:01.234, Memory: 24.00 MB
+
+OK (1 test, 3 assertions)
 ```
 
-Der Output würde hier "Test erfolgreich durchgeführt!" sein.
+## Deep Dive:
+Tests gab es so lange wie Softwareentwicklung, aber moderne Praktiken wie TDD (Test Driven Development) formten sich in den 2000ern. Alternativen zu PHPUnit sind PHPSpec, Behat und Codeception. Wichtig bei Tests sind Isolation (ein Test darf nicht von anderen abhängen), Wiederholbarkeit (ein Test soll immer das gleiche Ergebnis produzieren) und Automatisierung (Tests sollen sich automatisch ausführen lassen).
 
-## Tiefer Einblick:
-
-Tests wurden bereits in den Anfängen der Softwareentwicklung verwendet, um sicherzustellen, dass Programme korrekt funktionieren. Alternativen zu automatisierten Tests sind manuelles Testen oder Code Reviews durch andere Programmierer. Es gibt verschiedene Arten von Tests, wie z.B. unit tests, integration tests oder acceptance tests. Beim Schreiben von Tests ist es wichtig, klare und verständliche Testfälle zu erstellen und alle möglichen Szenarien abzudecken. Die Implementierung von Tests in den Entwicklungsprozess führt zu stabilerem Code und weniger Fehlern in der Anwendung.
-
-## Siehe auch:
-
-- [PHPUnit] (https://phpunit.de/) - Eine beliebte Test-Framework-Bibliothek für PHP
-- [PHP CodeSniffer] (https://github.com/squizlabs/PHP_CodeSniffer) - Ein Code-Qualitäts-Tool, das auch auf fehlende Tests hinweist
-- [The Art of Unit Testing] (https://www.manning.com/books/the-art-of-unit-testing-third-edition) - Ein empfohlenes Buch zum Thema Unit Testing in der Praxis
+## See Also:
+- [PHPUnit – The PHP Testing Framework](https://phpunit.de/)
+- [Test-Driven Development](https://www.agilealliance.org/glossary/tdd/)

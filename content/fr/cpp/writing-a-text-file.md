@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "C++: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Ecrire un fichier texte signifie créer un document sous forme de texte brut au lieu d'utiliser un formatage avancé comme dans les traitements de texte. Les programmateurs le font souvent pour stocker et manipuler des données de manière simple et lisible par les humains et les machines.
+## What & Why?
+Ecrire dans un fichier texte, c'est sauvegarder des données en format lisible. Les développeurs le font pour enregistrer des configurations, des logs ou des outputs de programmes.
 
-## Comment faire:
-Pour écrire un fichier texte en C++, vous devez suivre ces étapes:
-- Ouvrez un flux de sortie vers un fichier en utilisant l'objet `ofstream` et le nom du fichier en paramètre.
-- Vérifiez si le fichier est ouvert avec la méthode `is_open()` de l'objet `ofstream`.
-- Utilisez l'opérateur de flux `<<` pour écrire le contenu dans le fichier, comme dans l'exemple ci-dessous:
+## How to:
+Pour écrire dans un fichier texte en C++, on utilise `ofstream` de la librairie `<fstream>`.
+
 ```C++
-ofstream file("mon_fichier.txt");//ouverture du flux vers le fichier
-file << "Bonjour le monde!" << endl;//écriture du contenu dans le fichier
-file.close();//fermeture du flux
+#include <iostream>
+#include <fstream>
+
+int main() {
+    // Créer et ouvrir un fichier texte
+    std::ofstream monFichier("exemple.txt");
+
+    // Vérifier si le fichier est bien ouvert
+    if (monFichier.is_open()) {
+        // Ecrire dans le fichier
+        monFichier << "Salut C++ World!" << std::endl;
+        monFichier << "C'est facile d'écrire dans un fichier." << std::endl;
+
+        // Fermer le fichier
+        monFichier.close();
+    } else {
+        std::cout << "Impossible d'ouvrir le fichier." << std::endl;
+    }
+
+    return 0;
+}
 ```
-- Assurez-vous de fermer le flux une fois que vous avez fini d'écrire dans le fichier en utilisant la méthode `close()`.
 
-Le contenu du fichier sera alors:
+Ce code crée un fichier `exemple.txt` contenant:
+
 ```
-Bonjour le monde!
+Salut C++ World!
+C'est facile d'écrire dans un fichier.
 ```
 
-## Plongée en profondeur:
-L'écriture de fichiers texte en C++ a été introduite pour la première fois dans la version 2.0 du langage en 1985, avec l'utilisation des classes `fstream`. Les alternatives à cette méthode incluent l'utilisation de fonctions C telles que `fopen()` et `fprintf()`, ainsi que des bibliothèques tierces comme Qt.
+## Deep Dive
+Avant `<fstream>`, on se servait de la librairie `<stdio.h>` (partie de C) avec `fprintf`. Des alternatives modernes incluent des librairies comme Boost.IOStreams pour plus de flexibilité.
+Concernant l'implémentation, `ofstream` gère le buffer en arrière-plan, simplifiant l'écriture dans des fichiers.
 
-L'implémentation de l'écriture de fichiers textes en C++ est basée sur la surcharge des opérateurs de flux `<<`, qui permettent d'écrire des données dans un flux de sortie. Les méthodes `ofstream::open()` et `ofstream::write()` sont également utilisées pour écrire des données dans un fichier.
-
-## Voir aussi:
-- Documentation officielle C++ sur l'écriture de fichiers: https://en.cppreference.com/w/cpp/io/basic_ofstream
-- Tutoriel en français sur l'écriture de fichiers en C++: https://www.firmcodes.com/fr/c-2/c-ecriture-de-fichiers-en-c/
+## See Also
+- C++ Reference on ofstream: https://en.cppreference.com/w/cpp/io/basic_ofstream
+- C++ File I/O tutorial from cplusplus.com: http://www.cplusplus.com/doc/tutorial/files/

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Java: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Arduino: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att arbeta med JSON är ett sätt för programmerare att hantera data på ett strukturerat sätt. JSON står för JavaScript Object Notation och är ett populärt format för att lagra och överföra data mellan applikationer och system. Genom att använda JSON kan man enkelt hantera och strukturera data på ett sätt som är lättläst både för människor och datorer.
+## What & Why?
+JSON (JavaScript Object Notation) är textbaserat dataformat. Programmerare använder JSON för att lagra och utbyta enkel och maskinläsbar information mellan system - det är snabbt och språkoberoende.
 
-## Så här gör man:
-```Java
-// För att använda JSON i ditt Java-program, behöver du importera JSON-biblioteket:
-import org.json.*;
+## How to:
+Java använder `java.json` biblioteket för att hantera JSON. För att läsa och skriva JSON behövs bibliotek som `Jackson` eller `Gson`.
 
-// Skapa ett JSON-objekt:
-JSONObject obj = new JSONObject();
+**Läsa JSON:**
+```java
+import org.json.JSONObject;
 
-// Lägg till data i objektet:
-obj.put("namn", "Anna");
-obj.put("ålder", 25);
-
-// Skriv ut JSON-objektet:
-System.out.println(obj);
+public class JsonDemo {
+    public static void main(String[] args) {
+        String jsonData = "{\"name\":\"Anna\",\"age\":30}";
+        JSONObject jsonObject = new JSONObject(jsonData);
+        
+        String name = jsonObject.getString("name");
+        int age = jsonObject.getInt("age");
+        
+        System.out.println("Namn: " + name);
+        System.out.println("Ålder: " + age);
+    }
+}
 ```
-Output: {"namn":"Anna","ålder":25}
+**Utdata:**
+```
+Namn: Anna
+Ålder: 30
+```
 
-## Djupdykning:
-JSON har funnits sedan 2002 och har blivit ett populärt alternativ till XML för att hantera data. Det är ett enkelt format som är lätt att läsa och skriva för både människor och datorer. Det finns också många bibliotek och verktyg tillgängliga för att arbeta med JSON i olika programmeringsspråk.
+**Skriva JSON:**
+```java
+import org.json.JSONObject;
 
-## Se även:
-- [JSON - officiell hemsida](https://www.json.org/)
-- [JSON Tutorial för Java](https://www.tutorialspoint.com/json/json_java_example.htm)
+public class JsonDemo {
+    public static void main(String[] args) {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "Erik");
+        jsonObject.put("age", 25);
+        
+        String jsonData = jsonObject.toString();
+        System.out.println(jsonData);
+    }
+}
+```
+**Utdata:**
+```
+{"name":"Erik","age":25}
+```
+
+## Deep Dive:
+JSON introducerades 2001. Det har blivit ett populärt alternativ till XML för att det är mindre krångligt och snabbare att tolka. Alternativ till `java.json` inkluderar bibliotek som `Jackson` och `Gson`. Jackson är snabbare och kan hantera stora objekt, medan Gson är enklare att använda för mindre projekt. `java.json` standardiserar hur Java hanterar JSON utan tredjepartsbibliotek, men tredjepartslösningar erbjuder ibland mer funktioner och flexibilitet.
+
+## See Also:
+- [JSON.org](https://www.json.org/json-en.html) – JSON specifikationen.
+- [Jackson Project](https://github.com/FasterXML/jackson) – Jacksons GitHub sida.
+- [Google Gson](https://github.com/google/gson) – Gsons GitHub sida.
+- [Java API for JSON Processing](https://javaee.github.io/jsonp/) – Information om Java API för JSON Processing (`javax.json`).

@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Elm: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +10,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-YAML (Yet Another Markup Language) jest językiem znaczników używanym przez programistów do formatowania danych w sposób łatwy do czytania dla człowieka. Jest to popularna alternatywa dla innych formatów, takich jak JSON lub XML, ponieważ YAML jest uważany za bardziej przejrzysty i czytelny. Programiści używają YAML do przechowywania konfiguracji aplikacji lub danych w formie strukturyzowanej.
+YAML to format danych używany do konfiguracji i serializacji. Programiści korzystają z niego ze względu na jego czytelność i prostotę.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
 
+Elm nie ma wbudowanego wsparcia dla YAML, więc trzeba użyć zewnętrznej biblioteki lub konwertować YAML do JSON. Oto przykład konwersji YAML do JSON przy użyciu JavaScript i wysyłki danych do Elm:
 ```Elm
-import Data.Yaml exposing (..)
+port module Main exposing (..)
 
--- przykładowy plik YAML
-dreamTeam:
-  - Jan
-  - Kasia
-  - Tomek
-  - Ania
+-- Importujemy Ports i Json.Decode
+import Ports
+import Json.Decode as Decode
 
--- wczytanie danych z pliku
-readFile "team.yaml"
-    |> andThen decodeValue
-    |> Result.withDefault []
+-- Definicja typu dla danych z konfiguracji
+type alias Config =
+    { port : Int
+    , host : String
+    }
 
--- wynik
-["Jan", "Kasia", "Tomek", "Ania"]
+-- Dekoder JSON dla Config
+configDecoder : Decode.Decoder Config
+configDecoder =
+    Decode.map2 Config
+        (Decode.field "port" Decode.int)
+        (Decode.field "host" Decode.string)
+
+-- Nasłuchiwanie danych z YAML przesłanych przez port
+port configFromYaml : (Config -> msg) -> Sub msg
+
+-- Subskrybujemy port w `main`
+main : Program () Config Msg
+main =
+    Platform.worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        }
+
+init : (Config, Cmd Msg)
+init =
+    (Config 0 "", Cmd.none)
+
+type Msg
+    = NewConfig Config
+
+update : Msg -> Config -> (Config, Cmd Msg)
+update msg model =
+    case msg of
+        NewConfig newConfig ->
+            (newConfig, Cmd.none)
+
+subscriptions : Config -> Sub Msg
+subscriptions _ =
+    configFromYaml NewConfig
 ```
+W JavaScript:
+```JavaScript
+// Przykład konwersji YAML do JSON i wysłania do Elm poprzez port
+var jsYaml = require('js-yaml');
+var fs = require('fs');
 
-## Głębsza analiza:
+// Załóżmy, że mamy plik config.yaml
+var yamlText = fs.readFileSync('config.yaml', 'utf8');
+var config = jsYaml.safeLoad(yamlText);
 
-### Kontekst historyczny:
- YAML został opracowany w 2001 roku przez Clarka Evansa w celu stworzenia prostego i łatwego w użyciu języka znaczników. Od tego czasu stał się popularną opcją dla programistów ze względu na swoją czytelność i łatwość w rozwiązaniu różnych problemów związanych z formatowaniem danych.
+// Załóżmy, że mamy zdefiniowany port 'configFromYaml' w Elm
+elmApp.ports.configFromYaml.send(config);
+```
+Ważne: Musisz zintegrować Elm z JavaScript, aby obsłużyć YAML.
 
-### Alternatywy:
-Istnieje wiele innych formatów, takich jak JSON lub XML, które są również popularne wśród programistów. Każdy z nich ma swoje własne zastosowanie, więc wybór zależy od konkretnej potrzeby i preferencji programisty.
+## Deep Dive (Dogłębna analiza)
 
-### Szczegóły implementacji:
-ELM udostępnia moduł Data.Yaml, który pozwala na łatwe wczytywanie i zapisywanie danych w formacie YAML. Moduł ten zawiera wiele przydatnych funkcji, takich jak decodeValue i encode, które ułatwiają pracę z tym językiem znaczników.
+YAML powstał w 2001 roku jako human-friendly alternatywa do XML i JSON. Inne języki mają biblioteki do bezpośredniej pracy z YAML (np. PyYAML dla Pythona, ruamel.yaml dla Ruby), ale w Elm musisz to robić przez interfejs portów i JavaScript. Implementacja może się różnić w zależności od potrzeb, ale zaletą jest łatwość czytania i pisanie YAML.
 
-## Zobacz także:
+## See Also (Zobacz również)
 
-- [Oficjalna strona YAML](https://yaml.org/)
+- YAML Specyfikacja: https://yaml.org/spec/1.2/spec.html
+- Biblioteka `js-yaml` do konwersji w JavaScript: https://github.com/nodeca/js-yaml
+- Elm Ports: https://guide.elm-lang.org/interop/ports.html
+- Przykład konwersji YAML do JSON: https://stackoverflow.com/questions/49911616/converting-yaml-to-json-using-javascript

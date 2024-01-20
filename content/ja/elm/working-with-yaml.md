@@ -1,7 +1,7 @@
 ---
-title:                "「Yamlを使う」"
-html_title:           "Elm: 「Yamlを使う」"
-simple_title:         "「Yamlを使う」"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これは何というものか？
+## What & Why? (何となぜ？)
+YAMLは人間可読なデータシリアライゼーション形式です。構成ファイルやデータ交換で使われ、その明瞭さからプログラマーに好まれています。
 
-YAMLとは、人間が読みやすい形式でデータを表現するための言語です。プログラマーは、YAMLを使用してコンフィグファイルやデータ処理に関する情報を整理、保存、共有することができます。
-
-## 使い方：
+## How to: (方法)
+ElmでYAMLを扱う公式のライブラリは存在しません。しかし、JavaScriptとの相互運用を通じてYAMLを扱うことができます。
 
 ```Elm
--- 例1：コンフィグファイルを読み込む
-import Yaml.Decode as Decode
+port module Main exposing (..)
 
-type alias Config =
-  { username : String
-  , password : String
-  }
+-- ElmからJavaScriptにデータを送るポート
+port toJs : String -> Cmd msg
 
-config : Decode.Decoder Config
-config =
-  Decode.succeed Config
-    |> Decode.required "username" Decode.string
-    |> Decode.required "password" Decode.string
+-- JavaScriptからElmにデータを受け取るポート
+port fromJs : (String -> msg) -> Sub msg
 
-loadConfig : String -> Result String Config
-loadConfig filePath =
-  Decode.decodeString config filePath
-
--- 例2：データをYAML形式で保存する
-import Yaml.Encode as Encode
-
-data : List String
-data =
-  ["apple", "banana", "orange"]
-
-encodeData : String
-encodeData =
-  Encode.encode 2 data
-
--- 出力：
--- "- apple
---   - banana
---   - orange"
-
+-- YAML文字列をJavaScriptに送ってパースを依頼する
+parseYaml : String -> Cmd msg
+parseYaml yamlString =
+    toJs yamlString
 ```
 
-## より詳しく：
+JavaScript側でパースを行うコードは次の通りです:
 
-YAMLは、XMLやJSONと同様に、データの構造化と交換を目的として作られました。XMLよりもヒューマンリーダブルな構文を持ち、JSONよりもさらに簡潔にデータを表現することができます。代替手段として、XMLやJSONを使用することもできますが、YAMLはデータの記述をよりシンプルにすることができます。また、Elm以外にも、PythonやRubyなどでも使用することができます。
+```javascript
+// portsを使ってElmと通信する
+app.ports.toJs.subscribe(function(yamlString) {
+    try {
+        var result = YAML.parse(yamlString); // パース
+        app.ports.fromJs.send(JSON.stringify(result)); // 結果をElmに送信
+    } catch(error) {
+        app.ports.fromJs.send(JSON.stringify({ error: error.message })); // エラーをElmに送信
+    }
+});
+```
 
-## 関連情報を確認する：
+Elmでの受け取り例は以下の通りです。
 
-- Elmの公式ドキュメント: https://elm-lang.org/docs/syntax#yamls
-- YAML公式サイト: https://yaml.org/
-- YAMLスニペット集: https://github.com/kesselborn/elm-yaml-snippets
+```Elm
+type Msg
+    = ReceiveParsedData String
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    fromJs ReceiveParsedData
+```
+
+## Deep Dive (深いダイブ)
+YAMLはYAML Ain't Markup Languageの略で、設定ファイルなどに使われることが多いです。JSONの代わりとしても使われており、人が読み書きしやすい形式として設計されています。Elmにはネイティブサポートはないですが、JavaScriptと組み合わせることで簡単に扱うことが可能です。
+
+## See Also (関連リンク)
+- YAMLの公式サイト: https://yaml.org
+- ElmのJSONの扱い方: https://package.elm-lang.org/packages/elm/json/latest/
+- Elmのポートについて: https://guide.elm-lang.org/interop/ports.html

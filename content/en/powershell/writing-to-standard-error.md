@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "PowerShell recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,29 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error in PowerShell is a way to send error messages to the console, rather than outputting them as data. This is useful for troubleshooting and debugging code. Programmers do this to easily differentiate between regular data output and error messages, making it easier to identify and resolve issues in their code.
+Writing to standard error (stderr) sends error messages and diagnostics separately from standard output (stdout). Programmers do it to cleanly separate regular program output from error information, making debugging and logging easier.
 
 ## How to:
-To write to standard error in PowerShell, use the `Write-Error` command, followed by the error message in quotes. For example:
-
 ```PowerShell
-Write-Error "Uh oh, something went wrong!"
+# Write a simple error to stderr
+Write-Host "Oops, an error occurred!" -ForegroundColor Red 1>&2
+
+# Write an error using Write-Error cmdlet
+Write-Error "This is an error message!"
+
+# Using $ErrorView to display or handle errors differently
+$ErrorView = "CategoryView"
+try {
+    Get-ChildItem "nonexistentfile.txt"
+} catch {
+    Write-Host $_.Exception.Message -ForegroundColor Red 1>&2
+}
 ```
 
-This will display the error message in red text in the console.
-
-You can also write to standard error from within a script by using the `$ErrorActionPreference` variable. This determines how PowerShell handles error messages. Setting it to `"Stop"` will write the error to the console, while setting it to `"SilentlyContinue"` will suppress the error message.
-
-```PowerShell
-$ErrorActionPreference = "Stop"
+Sample output:
+```
+Oops, an error occurred!
+Write-Error: This is an error message!
+Get-ChildItem: Cannot find path 'C:\...\nonexistentfile.txt' because it does not exist.
 ```
 
-## Deep Dive:
-Writing to standard error is not a new concept in coding and has been used in other languages, such as C and Java, for years. In PowerShell, it is considered a best practice to write error messages to standard error rather than standard output.
+## Deep Dive
+Historically, segregating stdout and stderr has Unix roots, letting users redirect outputs separately. PowerShell, which inherits this concept, uses Write-Error and Write-Host (with a redirection), amongst other cmdlets, to send messages to stderr. Under the hood, PowerShell wraps .NET methods to implement this feature.
 
-An alternative to writing to standard error is to use try-catch blocks. However, this can be time-consuming and cumbersome, especially for longer scripts. Writing to standard error is a more efficient way to handle errors in PowerShell code.
+Alternatives include using throw statements or exception handling blocks; however, these affect script flow. Writing to stderr does not interrupt execution unless you specifically check $Error variable or use -ErrorAction parameters.
 
-## See Also:
-For more information on writing to standard error in PowerShell, check out the Microsoft documentation on [Error Handling in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/07-error-handling?view=powershell-7.1).
-
-You can also learn more about the `$ErrorActionPreference` variable and other error handling techniques in the article [Handling Errors the PowerShell Way](https://adamtheautomator.com/powershell-try-catch/).
+## See Also
+- [about_Redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection)
+- [Write-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error)
+- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.1)

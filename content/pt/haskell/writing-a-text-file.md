@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-html_title:           "Haskell: Escrevendo um arquivo de texto"
+html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O Que e Por Que Escrever um Arquivo de Texto?
+## O que é & Por quê?
+Escrever em um arquivo de texto é o processo de salvar dados em um arquivo no disco. Programadores fazem isso para persistir dados, configurar aplicações, ou logar informações.
 
-Escrever um arquivo de texto é basicamente o ato de criar e salvar um documento de texto em formato de arquivo. Programadores costumam escrever arquivos de texto para armazenar dados e informações que serão utilizados pelos seus programas.
+## Como fazer:
+```Haskell
+import System.IO
 
-# Como Fazer:
-
-```
-Haskell
-
--- Cria um arquivo de texto e escreve "Ola mundo!" dentro dele.
+-- Escrevendo em um arquivo
+main :: IO ()
 main = do
-  writeFile "ola_mundo.txt" "Ola mundo!"
-  putStrLn "Arquivo de texto criado com sucesso!" 
+    let lista = ["linha 1", "linha 2", "linha 3"]
+    writeFile "arquivo.txt" (unlines lista)
+```
+Saída (conteúdo de "arquivo.txt"):
+```
+linha 1
+linha 2
+linha 3
 ```
 
-Output esperado: 
-```
-Ola mundo!
-```
+## Mergulho Profundo
+Haskell vem com suporte embutido para escrita de arquivos desde suas versões iniciais. Alternativas incluem o uso de bibliotecas como `text` e `bytestring` para melhor performance ou funcionalidades adicionais. Detalhes de implementação envolvem tratar de maneira eficiente a escrita no disco e garantir o fechamento adequado dos arquivos após a escrita.
 
-# Aprofundando:
-
-Existem diversas formas de escrever arquivos de texto em linguagens de programação, mas em Haskell, a forma mais comum é utilizando a função `writeFile` que recebe como argumento o nome do arquivo e o conteúdo a ser escrito nele. É importante lembrar que essa função sobrescreve o conteúdo existente em um arquivo, caso ele já exista.
-
-Uma alternativa para escrever um arquivo de texto em Haskell é utilizando a função `appendFile`, que adiciona o conteúdo ao final do arquivo, sem sobrescrevê-lo.
-
-# Veja Também:
-
-- [Funções de escrita de arquivos em Haskell](https://hackage.haskell.org/package/base/docs/System-IO.html#v:writeFile)
-- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+## Veja Também
+- Documentação da biblioteca `System.IO` de Haskell para operações de entrada e saída de arquivo: [System.IO - Haskell](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- Um guia para a leitura e escrita de arquivos no Haskell Wiki: [Haskell IO Tutorial](https://wiki.haskell.org/IO_inside)
+- Pacote `text` para trabalhar com texto Unicode em Haskell: [text - Hackage](https://hackage.haskell.org/package/text)
+- Pacote `bytestring` para trabalhar com sequências de bytes: [bytestring - Hackage](https://hackage.haskell.org/package/bytestring)

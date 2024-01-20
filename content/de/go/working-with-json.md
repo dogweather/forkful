@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit json"
-html_title:           "Go: Arbeiten mit json"
-simple_title:         "Arbeiten mit json"
+title:                "Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -11,77 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-JSON steht für "JavaScript Object Notation" und ist ein einfaches Datenformat, das verwendet wird, um Daten zwischen Anwendungen auszutauschen. Programmierer verwenden JSON, um strukturierte Daten zu speichern und zu übertragen, da es einfach zu lesen und zu schreiben ist.
+JSON steht für JavaScript Object Notation und ist ein Format zum Austausch von Datenobjekten zwischen Server und Client. Entwickler verwenden es, weil es leichtgewichtig, leicht zu lesen und sprachunabhängig ist.
 
-## Wie geht's:
-Um mit JSON in Go zu arbeiten, musst du zunächst das Paket "encoding/json" importieren. Dann kannst du die Funktionen "Marshal" und "Unmarshal" nutzen, um Daten in JSON zu konvertieren oder umgekehrt.
+## How to:
+Go bietet eingebaute Unterstützung für JSON mit dem `encoding/json`-Paket. Hier ein Beispiel, wie man JSON in Go (de)serialisiert:
 
-Ein Beispiel für das Konvertieren von Daten in JSON:
 ```Go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+// Definiert eine Struktur, die der JSON entspricht
 type Person struct {
-    Name     string `json:"name"`
-    Age      int    `json:"age"`
-    Location string `json:"location"`
+	Name string `json:"name"`
+	Alter int    `json:"alter"`
 }
 
-person := Person{
-    Name:     "Max Mustermann",
-    Age:      25,
-    Location: "Berlin",
+func main() {
+	// JSON serialisieren
+	p := Person{Name: "Max", Alter: 25}
+	jsonData, err := json.Marshal(p)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(string(jsonData))
+
+	// JSON deserialisieren
+	var person Person
+	err = json.Unmarshal(jsonData, &person)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Printf("%+v\n", person)
 }
-
-jsonData, err := json.Marshal(person)
-if err != nil {
-    fmt.Println(err)
-}
-
-fmt.Println(string(jsonData))
-```
-Ergebnis:
-```bash
-{"name":"Max Mustermann","age":25,"location":"Berlin"}
 ```
 
-Ein Beispiel für das Lesen von Daten aus einer JSON-Datei:
-```Go
-type Fruit struct {
-    Name  string `json:"name"`
-    Color string `json:"color"`
-}
-
-var fruits []Fruit
-
-jsonFile, err := os.Open("fruits.json")
-if err != nil {
-    fmt.Println(err)
-}
-
-defer jsonFile.Close()
-
-byteData, _ := ioutil.ReadAll(jsonFile)
-json.Unmarshal(byteData, &fruits)
-
-fmt.Println(fruits)
+### Ausgabe
 ```
-JSON-Datei "fruits.json":
-```bash
-[
-    {"name": "Apple", "color": "Red"},
-    {"name": "Banana", "color": "Yellow"},
-    {"name": "Strawberry", "color": "Red"}
-]
-```
-Ergebnis:
-```bash
-[{Apple Red} {Banana Yellow} {Strawberry Red}]
+{"name":"Max","alter":25}
+{Name:Max Alter:25}
 ```
 
-## Tiefentauchen:
-JSON wurde ursprünglich von Douglas Crockford in den 1990er Jahren entwickelt und ist seitdem zu einem beliebten Format für den Austausch von Daten geworden. Es gibt auch alternative Datenformate wie XML oder YAML, aber JSON ist aufgrund seiner Einfachheit und Lesbarkeit ein häufig gewähltes Format.
+## Deep Dive
+JSON wurde Anfang der 2000er Jahre populär und ist heute eines der meistgenutzten Formate für Web APIs. Es gibt Alternativen wie XML, aber JSON ist kompakter und schneller zu parsen. Go's `encoding/json`-Paket verwendet Reflektion, um JSON in Go-Strukturen umzuwandeln und umgekehrt, was bei großen Datenmengen zu Leistungseinbußen führen kann. Für Hochleistungssysteme könnten Entwickler andere Bibliotheken wie `jsoniter` in Erwägung ziehen.
 
-Der "encoding/json" Stdlib in Go bietet auch die Möglichkeit, benutzerdefinierte Marshaler und Unmarshaler zu erstellen, um spezifische Felder zu ignorieren oder zu verarbeiten.
-
-## Siehe auch:
-- [Offizielle Dokumentation von "encoding/json" in Go](https://golang.org/pkg/encoding/json/)
-- [Einführung in JSON von Mozilla](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
-- [Vergleich von JSON mit anderen Datenformaten](https://www.json.org/xml.html)
+## See Also
+- Die offizielle Go Dokumentation zum `encoding/json`-Paket: https://pkg.go.dev/encoding/json
+- JSON und Go: https://blog.golang.org/json
+- Alternative JSON-Pakete für Go: https://github.com/json-iterator/go

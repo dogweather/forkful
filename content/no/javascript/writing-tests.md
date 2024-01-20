@@ -1,7 +1,7 @@
 ---
-title:                "Skriver tester"
-html_title:           "Javascript: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Testskriving er prosessen med å lage skript som automatisk sjekker at koden gjør det den skal. Vi gjør dette for å unngå bugs, sikre kvalitet, og spare tid på manuell testing.
 
-Testskriving er en viktig del av programvareutvikling som hjelper programvareutviklere å sikre at koden fungerer som den skal. Ved å skrive tester, kan utviklere raskt oppdage og løse eventuelle feil eller bugs i koden sin før de blir utgitt til brukere. Dette bidrar til å forbedre kvaliteten på programvaren og øke påliteligheten.
+## How to:
+I JavaScript kan vi bruke Jest-rammeverket for å skrive tester. Her er et enkelt eksempel:
 
-## Slik gjør du det:
-
-```Javascript
-// Eksempel på en test som sjekker om et tall er større enn 10
-function testStørreEnnTi(tall) {
-  if(tall > 10) {
-    console.log("Tallet er større enn 10");
-  }
-  else {
-    console.log("Tallet er mindre enn eller lik 10");
-  }
+```javascript
+// sum.js
+function sum(a, b) {
+  return a + b;
 }
+module.exports = sum;
 
-// Eksempel på bruk av testfunksjonen
-testStørreEnnTi(15);
-// Output: Tallet er større enn 10
+// sum.test.js
+const sum = require('./sum');
+
+test('adderer 1 + 2 for å gi 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+Kjør testene med `npm test`. Forventet output:
+
+```
+PASS  ./sum.test.js
+✓ adderer 1 + 2 for å gi 3 (5ms)
 ```
 
-## Dypdykk:
+## Deep Dive
+Tester i JavaScript har rot i TDD (Test-Driven Development) som begynte å ta form på 2000-tallet. Alternativer til Jest inkluderer Mocha, Jasmine og QUnit. Tester kan innebære rene funksjonstester, integrasjonstester, eller end-til-end tester (E2E). En god testingpraksis handler om å finne en balanse mellom testtyper basert på prosjektets behov.
 
-Historisk sett ble testing gjort manuelt av programmerere, noe som var tidkrevende og kunne føre til at feil ble oversett. Med innføringen av automatiserte tester, ble testprosessen mye mer effektiv og pålitelig. Alternativer til Javascript-testrammeverk inkluderer Mocha, Jest, og Jasmine. Implementering av tester innebærer å lage flere små tester som dekker forskjellige deler av koden, og disse testsene kan kjøres automatisk ved hjelp av et testrammeverk.
-
-## Se også:
-
-- [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
-- [Jasmine](https://jasmine.github.io/)
+## See Also
+- Jest dokumentasjon: [Jestjs.io](https://jestjs.io/)
+- Andre testrammeverk: [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/), [QUnit](https://qunitjs.com/)

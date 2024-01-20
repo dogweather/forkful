@@ -1,6 +1,6 @@
 ---
 title:                "עבודה עם YAML"
-html_title:           "Go: עבודה עם YAML"
+html_title:           "Bash: עבודה עם YAML"
 simple_title:         "עבודה עם YAML"
 programming_language: "Go"
 category:             "Go"
@@ -11,20 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם YAML היא תהליך שמשתמשים בו במימוש שפת תכנות. הוא מאפשר לכתוב ולקרוא נתונים בפורמט קל לקריאה על ידי אנשי מחשב והיישומים שלהם. כל מה שאתה צריך לעשות זה ליצור קוד עם מבנה תקייה של מפתח: ערך יחיד YAMLהעול עבור
+YAML הוא פורמט נתונים הנקראו בקלות על ידי אנשים ותוכנות. תוכניתנים משתמשים בו לקונפיגורציה וחילוץ נתונים, משום שהוא פשוט ונוח.
 
 ## איך לעשות:
-קודים דוגמא ופלט לדוגמה של YAML נמצאים מתחת לבלוקי קוד ```Go ... ```.
+כדי לעבוד עם YAML ב-Go צריך להשתמש בספרייה חיצונית כמו `gopkg.in/yaml.v3`. הדוגמאות כאן מראות איך לעשות פרס ומארשלינג של YAML.
 
-## הכנסמ
-  1. מיקוד ביותר: בעזרת YAML, אתה יכול להימנע ממפתחים ארוכים ומסורבלים וליצור קוד פשוט יותר.
-  2. אלטרנטיבות: בנוסף לYAML, ישנן גם פורמטי נתונים נוספים שמתאימים לשימוש על ידי מפתחים, כמו סימפלקס וJSON.
-  3. פרטי טיפול: בפועל, YAML מקל על כתיבת קוד תכנות ואינו דורש הכנסת תפריטים וקלט משתמשים. זה מאפשר למפתחים להתמקד בכתיבת קודים שמתאימים להם ולא על מבני הקובץ.
+```Go
+package main
 
-## ראה גם
-למידע נוסף על YAML ושימוש בו, אנו ממליצים לבדוק את המדריכים הבאים:
-1. [מסמכי YAML הרשמי](https://yaml.org/)
-2. [ספריית Go-YAML](https://github.com/go-yaml/yaml)
-3. [יכולות הפריסה המתקדמות של YAML](https://yaml.io/)
+import (
+	"fmt"
+	"log"
 
-כעת אתם מכירים את היתרונות של עבודה עם YAML ואת הדרכים להשתמש בו בשימושים שונים. בהצלחה בכתיבת קוד מהיר ויעיל.
+	"gopkg.in/yaml.v3"
+)
+
+type Config struct {
+	Server string
+	Port   int
+}
+
+func main() {
+	data := `
+server: localhost
+port: 8080
+`
+
+	var config Config
+	err := yaml.Unmarshal([]byte(data), &config)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+	fmt.Printf("--- config:\nserver: %v\nport: %v\n\n", config.Server, config.Port)
+}
+```
+
+תוצאה:
+
+```
+--- config:
+server: localhost
+port: 8080
+```
+
+## ניתוח עמוק:
+YAML (Yet Another Markup Language או YAML Ain't Markup Language) פותח בהתחלת שנות ה-2000 כאלטרנטיבה הנקראת ל-XML. האלטרנטיבות כוללות JSON ו-TOML. YAML משמש בעיקר בוויזואליזציה של מבני נתונים וקונפיגורציות תוכנה. התמיכה של Go ב-YAML אינה מובנית, מכיוון שה-Marshal ו-Unmarshal מושגיפים מהסטנדרטים של Go.
+
+## ראו גם:
+- YAML ספריית Go: https://pkg.go.dev/gopkg.in/yaml.v3
+- מועדון Golang ב-Stack Overflow: https://stackoverflow.com/questions/tagged/go
+- מדריך YAML באנגלית: https://yaml.org/start.html

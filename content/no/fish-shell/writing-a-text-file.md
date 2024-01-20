@@ -1,6 +1,6 @@
 ---
 title:                "Skriving av en tekstfil"
-html_title:           "Fish Shell: Skriving av en tekstfil"
+html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,22 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hva & Hvorfor?
-Å skrive en tekstfil er en grunnleggende programmeringsaktivitet hvor man lager en fil med tekst og kode som modellen av programmet ditt bruker for å utføre en bestemt funksjon. Programmere gjør dette for å organisere og lagre sin kode på en strukturert og lesbar måte.
+## Hva & Hvorfor?
+Å skrive en tekstfil betyr å lagre data i en fil som kan leses som tekst. Programmerere gjør dette for å lagre konfigurasjoner, logge informasjon eller kommunisere mellom prosesser.
 
-##Slik gjør du det:
-```Fish Shell``` brukes ofte til å skrive tekstfiler enkelt og effektivt. For å lage en tekstfil i Fish Shell, følg disse trinnene:
-1. Åpne terminalen og naviger til ønsket mappe ved å skrive ```cd mappe```
-2. Skriv deretter kommandoen ```touch filnavn.txt``` for å opprette en tom tekstfil med navnet du ønsker.
-3. For å legge inn tekst i filen, skriv kommandoen ```echo "Din tekst her" >> filnavn.txt```. Dette vil legge til teksten "Din tekst her" i filen din.
-4. For å sjekke at teksten er lagt til, kan du bruke kommandoen ```cat filnavn.txt```, som vil vise innholdet av filen i terminalen.
+## Slik gjør du:
+For å skrive tekst til en fil i Fish, bruk `echo` eller `printf` sammen med omdirigering.
 
-##Dykk dypere:
-Skriving av tekstfiler har eksistert siden de tidlige dagene av datamaskiner, og har vært en viktig del av programmering. Det finnes flere andre metoder for å skrive tekstfiler i andre programmeringsspråk, som for eksempel ```notepad``` i Windows eller ```vi``` i Linux.
+```Fish Shell
+echo "Hei, verden!" > minfil.txt  # Skriver ny fil
+echo "Husk denne linjen også" >> minfil.txt  # Legger til tekst
+```
 
-Etter å ha opprettet en tekstfil, kan du endre filens tillatelser ved å bruke kommandoen ```chmod```. Dette er nyttig for å gi andre brukere rettigheter til å lese, skrive eller utføre filen din.
+For å se innholdet i filen, bruk `cat`:
 
-##Se også:
-Få mer informasjon om Fish Shell og tekstbehandling i terminalen ved å sjekke ut disse kildene:
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [chmod kommandoen](http://man7.org/linux/man-pages/man1/chmod.1.html)
+```Fish Shell
+cat minfil.txt
+```
+
+Sample output:
+```
+Hei, verden!
+Husk denne linjen også
+```
+
+## Dybde:
+Historisk sett, er skriving til fil en grunnleggende funksjon i operativsystemer, ettersom de er designet for data lagring og manipulering. Alternativer i Fish Shell inkluderer bruk av `tee` for både visning og skriving samtidig, eller skript som bruker lavnivå-filsystemfunksjoner for finere kontroll. Filmanipulering i Fish er direkte og forenklet, uten behov for ekstra syntaks som i andre skall.
+
+## Se også:
+- Fish Shell dokumentasjon på filredigering: https://fishshell.com/docs/current/index.html#redirection
+- Unix `tee` kommandoen: https://linux.die.net/man/1/tee
+- Fish skripting tutorial: https://fishshell.com/docs/current/tutorial.html

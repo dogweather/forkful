@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su errore standard"
-html_title:           "Elixir: Scrivere su errore standard"
-simple_title:         "Scrivere su errore standard"
+title:                "Scrivere sull'errore standard"
+html_title:           "Arduino: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Scrivere su standard error (stderr) permette di separare i messaggi di errore dai normali output di un programma (stdout). I programmatori lo fanno per facilitare il debugging e la gestione degli errori.
 
-Scrivere su standard error significa inviare messaggi di errore al terminale mentre si esegue un programma. I programmatori lo fanno per informare gli utenti del programma di eventuali problemi durante l'esecuzione e per aiutare a risolverli.
+## How to:
+Ecco come scrivere su stderr in Elixir:
 
-## Come:
+```elixir
+# Invio di un messaggio semplice a stderr
+:erlang.io_putc(:standard_error, "Questo è un errore\n")
 
-### Esempio 1:
-```Elixir
-IO.puts("Messaggio di output") # stampa su standard output
-IO.puts(:stderr, "Messaggio di errore") # stampa su standard error
+# Usare IO.warn per loggare un avviso, che va di default su stderr
+IO.warn("Attenzione! Qualcosa non va...\n")
+```
+Esempio di output:
+
+```
+Questo è un errore
+Attenzione! Qualcosa non va...
 ```
 
-Output:
-```
-Messaggio di output
-Messaggio di errore
-```
+## Deep Dive
+In Elixir, stderr è un canale standard usato fin dagli albori dei sistemi UNIX-like per reportare errori e avvisi. L'utilizzo di :erlang.io_putc(:standard_error, ...) è diretto ma meno idiomatico in Elixir. `IO.warn/2` è più comune per messaggi di avviso o log e si integra con il logger di Elixir. In alternativa si può usare `:io.format(:standard_error, ...)` per formattazioni più complesse.
 
-### Esempio 2:
-```Elixir
-File.read("file_inesistente") # tenta di leggere un file inesistente
-|> case do
-  {:ok, result} -> IO.puts(result) # stampa il contenuto del file se viene letto con successo
-  {:error, reason} -> IO.puts(:stderr, "Errore di lettura: #{reason}") # invia un messaggio di errore su standard error
-end
-```
-
-Output:
-```
-Errore di lettura: no such file or directory
-```
-
-## Approfondimento:
-
-### Contesto storico:
-Scrivere su standard error è una pratica comune nei linguaggi di programmazione e nei sistemi operativi da diversi decenni. L'idea è nata come soluzione per differenziare i messaggi di debugging da quelli di output regolari.
-
-### Alternative:
-Esistono diverse alternative per gestire gli errori durante l'esecuzione di un programma, come l'uso di eccezioni o la stampa dei messaggi di errore direttamente nel codice dell'applicazione. Tuttavia, scrivere su standard error rimane una pratica efficace e consolidata per gestire gli errori.
-
-### Dettagli di implementazione:
-In Elixir, è possibile utilizzare la funzione `IO.puts/2` per scrivere su standard error invece che su standard output. È inoltre possibile utilizzare la macro `Macro.stderr/1` per ottenere il risultato equivalente.
-
-## Vedi anche:
-
-- [Documentazione di IO.puts/2 in Elixir](https://hexdocs.pm/elixir/IO.html#puts/2)
+## See Also
+- [Documentazione ufficiale Elixir IO](https://hexdocs.pm/elixir/IO.html)
+- [Guida per la gestione degli errori in Elixir](https://elixir-lang.org/getting-started/try-catch-and-rescue.html)
+- [UNIX Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)

@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med CSV"
-html_title:           "Rust: Jobbe med CSV"
-simple_title:         "Jobbe med CSV"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
+## Hva & Hvorfor?
 
-Arbeider du med store mengder data og trenger en måte å organisere og lagre informasjonen på? Da kan du ha nytte av CSV, som står for Comma-Separated Values. Dette er et vanlig format for å lagre tabellarisk data, og brukes ofte i programmering for å enkelt importere og eksportere data.
+Arbeid med CSV (Comma-Separated Values) håndterer data i en tabellformet format som er enkel å lese og skrive for både mennesker og maskiner. Programmerere bruker CSV fordi det er effektivt for lagring og utveksling av store datamengder mellom forskjellige programmer.
 
-Hvordan:
+## Hvordan gjøre det:
 
-Her er et eksempel på hvordan du kan lese en CSV-fil og skrive ut dataene i Rust:
+Rust gir deg kraftfulle verktøy for å jobbe med CSV-filer. Her er et eksempel som bruker `csv`-biblioteket:
 
-```Rust
-use std::fs::File;
-use std::io::{self, BufReader};
+```rust
+use csv::{ReaderBuilder, WriterBuilder};
 use std::error::Error;
-use csv::ReaderBuilder;
+use std::io;
 
-fn main() -> Result<(), Box<dyn Error>> {
-    // Åpne CSV-fil
-    let file = File::open("data.csv")?;
-    // Les fra filen
-    let reader = BufReader::new(file);
-    // Lag en CSV-leser med standardinnstillingene
-    let mut csv_reader = ReaderBuilder::new().has_headers(true).from_reader(reader);
-    // Iterer gjennom hver linje i filen
-    for result in csv_reader.records() {
-        // Håndter feil i lesingen av filen
-        let record = result?;
-        // Skriv ut dataene
-        println!("{:?}", record);
+fn lese_og_skrive_csv() -> Result<(), Box<dyn Error>> {
+    let data = "
+land,hovedstad
+Norge,Oslo
+Sverige,Stockholm
+";
+    
+    let mut reader = ReaderBuilder::new().from_reader(data.as_bytes());
+    let mut writer = WriterBuilder::new().from_writer(io::stdout());
+    
+    for record in reader.records() {
+        let record = record?;
+        writer.write_record(&record)?;
     }
     Ok(())
 }
+
+fn main() -> Result<(), Box<dyn Error>> {
+    lese_og_skrive_csv()
+}
 ```
 
-Dette vil skrive ut hver linje i CSV-filen som en vektor med verdier. For eksempel, hvis filen inneholder "Navn, Alder, Land" som overskrifter og "Lars, 25, Norge" som data, vil outputen bli: ```["Lars", "25", "Norge"]```. Du kan deretter bruke disse verdiene til å utføre flere handlinger i programmet ditt.
+Etter kjøring vil utskriften være:
 
-Dypdykk:
+```
+land,hovedstad
+Norge,Oslo
+Sverige,Stockholm
+```
 
-CSV-formatet har eksistert siden 1970-tallet og har blitt viktig i både dataanalyse og programmering. Det finnes også alternative formater for å lagre tabellarisk data, som JSON og XML, men CSV er ofte enklere å arbeide med fordi det er enklere å lese og skrive.
+## Dypdykk
 
-Implementasjonen av CSV i Rust er gjort gjennom biblioteket "csv", som tilbyr forskjellige innstillinger og funksjonaliteter for å arbeide med CSV-data. Det er også enkelt å integrere med andre Rust-biblioteker og å skrive egne funksjoner for å håndtere CSV-data på en tilpasset måte.
+CSV-formatet ble populært på 1970-tallet og er enkelt fordi det kun bruker komma for å skille verdier og ny linje for nye rader. Alternativer til CSV inkluderer JSON, XML og databaser som SQLite, men CSV forblir populært på grunn av sin enkelhet og bred støtte. Ved implementering i Rust, håndterer `csv`-biblioteket parsing og skriving, og tar seg av feil som manglende felt eller feil datatyper.
 
-Se også:
+## Se også
 
-- Rust sin offisielle dokumentasjon for CSV-biblioteket: https://docs.rs/csv/
-- En guide til å arbeide med CSV i Rust: https://rust-lang-nursery.github.io/rust-cookbook/data/import_data/csv.html
+1. [Rust `csv` crate dokumentasjon](https://docs.rs/csv/latest/csv/)
+2. [Rust Programming Language offisielle nettsted](https://www.rust-lang.org/)
+3. [RFC 4180, som definerer CSV standardformatet](https://tools.ietf.org/html/rfc4180)
+4. [Serde-biblioteket for data serialisering/deserialisering](https://serde.rs/)

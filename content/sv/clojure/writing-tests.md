@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Clojure: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Arduino: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att skriva tester är en viktig del av programmering. Det handlar om att skriva kod som verifierar att programmet fungerar som det ska. Tester hjälper oss att upptäcka buggar och fel i koden, och ger oss mer tillförlitliga program.
+## Vad & Varför?
+Skriva tester innebär att skapa små program som kontrollerar att din kod fungerar som förväntat. Programmerare gör det för att upptäcka buggar snabbt, förenkla framtida förändringar och säkerställa att programmet fortsätter att fungera korrekt genom olika utvecklingsstadier.
 
-Hur gör man?
-I Clojure använder vi oss av biblioteket `clojure.test` för att skriva tester. Detta ger oss en mängd funktioner som vi kan använda för att skriva olika typer av tester. Här är ett exempel på hur man skulle kunna skriva ett enkelt test:
+## Hur gör man?
+Clojure använder `clojure.test` för att skriva tester. Här är ett exempel på en enkel test-funktion och dess output:
 
-```clojure
-(ns example-test
-  (:require [clojure.test :refer :all]))
+```Clojure
+(require '[clojure.test :refer :all])
 
-;; Vi skapar en funktion som vi vill testa
-(defn multiply [x y]
-  (* x y))
+(deftest addition-test
+  (testing "Addition fungerar"
+    (is (= 5 (+ 2 3)))))
 
-;; Vi skriver ett test för funktionen
-(deftest test-multiply
-  (testing "Multiplicera två positiva tal"
-    (is (= 24 (multiply 8 3)))))
-
-;; Kör alla tester i detta namespace
 (run-tests)
+
+; Test output:
+;=> 
+;Ran 1 tests containing 1 assertions.
+;0 failures, 0 errors.
 ```
 
-Resultatet av testet bör bli:
+Detta exempel definierar ett test för en enkel addition och kör detta med `run-tests`.
 
-```clojure
-Testing example-test
+## Fördjupning
+Historiskt sett har testning i programmering utvecklats från manuell granskning till automatiserade system som det i Clojure. Alternativ till `clojure.test` inkluderar ramverk som `Midje` och `test.check`, som erbjuder olika förhållningssätt och förbättrade funktioner. När du skriver tester är det viktigt att fokusera på testfallens relevans snarare än kvantitet för att effektivt täcka kritiska aspekter av koden.
 
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-```
-
-Djupdykning
-Historiskt sett har testning varit en viktig del av programmering. En vanlig metod var att manuellt testa programmet och se om det fungerade som förväntat. Detta var dock väldigt tidskrävande och ineffektivt. Med introduktionen av automatiserade tester har processen blivit mycket smidigare och tillförlitligare.
-
-En alternativ metod för testning i Clojure är användning av biblioteket `clojure.spec`. Detta ger oss möjlighet att specificera vilken sorts data som funktioner tar emot och returnerar, och låter oss sedan köra genomsöknings- och valideringsfunktioner för att säkerställa att funktionerna uppfyller specifikationerna.
-
-Se också
-- https://clojure.org/guides/testing
-- https://clojure-doc.org/articles/tutorials/testing.html
+## Se även
+- Clojure's officiella guide för `clojure.test`: https://clojure.github.io/clojure/clojure.test-api.html
+- Midje på GitHub: https://github.com/marick/Midje
+- Användbar guide till Property-based testing med `test.check`: https://github.com/clojure/test.check

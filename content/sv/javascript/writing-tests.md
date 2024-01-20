@@ -1,6 +1,6 @@
 ---
 title:                "Skriva tester"
-html_title:           "Javascript: Skriva tester"
+html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
+## Vad & Varför?
+Skriva tester är processen att koda för att automatiskt kontrollera att annan kod fungerar som den ska. Programmerare gör det för att säkerställa kvalitet, hitta fel tidigt och spara tid som annars skulle läggas på manuella tester.
 
-Att skriva tester är en viktig del av programmering. Det är en process där man skapar specifika kodblock för att testa om ens kod fungerar korrekt. Programmörer gör detta för att säkerställa att deras kod är tillförlitlig och fungerar som den ska vid olika scenarion.
-
-## Så här gör du:
+## Hur gör man?:
+Låt oss dyka in i ett grundläggande exempel med Jest, ett populärt testramverk för JavaScript.
 
 ```Javascript
-// Exempel på en enkel testfunktion
-function add(x, y) {
-  return x + y;
+// sum.js
+function sum(a, b) {
+  return a + b;
 }
+module.exports = sum;
+```
 
-// Testfall för att kontrollera om funktionen fungerar som den ska
-console.log(add(2, 3)); // Förväntat resultat: 5
-console.log(add(5, 10)); // Förväntat resultat: 15
+```Javascript
+// sum.test.js
+const sum = require('./sum');
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+För att köra testet, använd följande kommando:
+
+```Javascript
+$ jest sum.test.js
+```
+
+Detta ska ge dig outputen:
+
+```Javascript
+PASS  ./sum.test.js
+✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
 ## Djupdykning:
+Testningens historia går tillbaka till de första programmeringsdagarna, men verktygen har utvecklats avsevärt. Jämfört med äldre ramverk som JUnit (Java) är Jest snabbare och mer fokuserad på moderna JavaScript-appar. Alternativ till Jest inkluderar Mocha, Jasmine och Tape. När du skriver tester är det viktigt att täcka olika användningsfall, felhantering och gränsvärdeanalys, samtidigt som du håller testerna enkla och snabba.
 
-Skapandet av tester har funnits sedan den tidiga utvecklingen av programmering. Det är ett sätt för utvecklare att säkerställa kvaliteten på sin kod och undvika fel i produktionsmiljön. Det finns olika verktyg och ramverk för att skriva och köra tester, som till exempel Jasmine, Mocha och Jest.
-
-En alternativ metod för testning är "testdriven utveckling", där man skriver testerna först och sedan skapar koden för att uppfylla dessa tester. Det finns också olika typer av tester, som enhetstester, integreringstester och systemtester, som används för att testa olika delar av en applikation.
-
-## Se även:
-
-- [Jasmine](https://jasmine.github.io/): Ett populärt verktyg för att skriva och köra tester i Javascript.
-- [Mocha](https://mochajs.org/): Ett ramverk för att köra tester asynkront.
-- [Jest](https://jestjs.io/): Ett JavaScript-testramverk med fokus på enkelhet och prestanda.
+## Se också:
+- Jest's officiella hemsida: [https://jestjs.io/](https://jestjs.io/)
+- JavaScript testning med Mocha: [https://mochajs.org/](https://mochajs.org/)
+- Ytterligare läsning om testning i JavaScript: [MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Introduction)

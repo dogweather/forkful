@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "PowerShell: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y para qué?
-Trabajar con YAML es una forma de organizar y estructurar datos de forma sencilla y legible para humanos y computadoras. Los programadores usan YAML para guardar información en un formato fácil de interpretar y modificar, lo que lo hace útil para configuraciones de software y archivos de datos.
+## ¿Qué y Por Qué?
+YAML (YAML Ain't Markup Language) es un formato legible por humanos para la configuración de datos. Los programadores lo utilizan por su claridad y compatibilidad con diferentes lenguajes de programación, facilitando tareas como la configuración de aplicaciones o la gestión de infraestructura.
 
-## Cómo hacerlo:
-Aquí hay un ejemplo de código en PowerShell para crear un archivo YAML:
+## Cómo Hacerlo:
+Para trabajar con YAML en PowerShell, primero instalaremos el módulo `powershell-yaml` usando `Install-Module`, y luego veremos cómo leer y escribir archivos YAML.
 
 ```PowerShell
-New-YamlFile -Path C:\Prueba\config.yml -Value @{
-    GoogleAnalytics = @{
-        TrackingID = "UA-123456-01"
-        IncludeIP = $true
-    }
-    Database = @{
-        Username = "usuario"
-        Password = "contraseña"
-        Name = "mi_base_de_datos"
-    }
+# Instalar el módulo powershell-yaml
+Install-Module -Name powershell-yaml
+
+# Leer un archivo YAML
+$yamlContent = Get-Content -Path 'config.yaml' | ConvertFrom-Yaml
+Write-Host "Contenido del archivo YAML: $yamlContent"
+
+# Crear contenido YAML y escribir a un archivo
+$objectToYaml = @{
+  usuario = 'Juan'
+  tarea = 'Ejemplo'
 }
+$yamlOutput = $objectToYaml | ConvertTo-Yaml
+$yamlOutput | Out-File -FilePath 'nuevaConfig.yaml'
+Write-Host "Archivo 'nuevaConfig.yaml' creado."
 ```
 
-Este código generará un archivo YAML llamado "config.yml" con los valores especificados. Aquí está un ejemplo de cómo podría verse el archivo:
+## Profundización
+El uso de YAML empezó a principios de los 2000 como una alternativa a otros formatos como XML, por ser más claro y sencillo de leer. Como alternativas, JSON es común por su facilidad de uso con JavaScript, y TOML gana popularidad en proyectos más nuevos. Implementar YAML en PowerShell requiere normalmente módulos adicionales pues no hay soporte nativo completo, pero esto permite a los desarrolladores usar funcionalidades extendidas y trabajar eficientemente con herramientas basadas en la nube y contenedores, como Kubernetes.
 
-```
-GoogleAnalytics:
-  TrackingID: UA-123456-01
-  IncludeIP: true
-Database:
-  Username: usuario
-  Password: contraseña
-  Name: mi_base_de_datos
-```
-
-Para leer un archivo YAML existente y obtener los valores almacenados, puedes usar este código:
-
-```PowerShell
-$file = Get-YamlFile -Path C:\Prueba\config.yml
-$file.GoogleAnalytics.TrackingID # Imprime "UA-123456-01"
-```
-
-## Inmersión profunda:
-YAML fue creado en 2001 y su principal objetivo es ser un formato de serialización de datos legible por humanos. Aunque YAML es compatible con muchos lenguajes de programación, se ha vuelto especialmente popular en la comunidad de DevOps como una forma de configurar y organizar la infraestructura de software.
-
-Si no tienes instalado el módulo de PowerShell para trabajar con YAML, puedes usar otras herramientas como el comando `ConvertTo-Yaml` o algún editor de texto con soporte para YAML.
-
-Para aprender más sobre YAML, puedes consultar la documentación oficial o revisar algunos proyectos de código abierto que utilizan YAML para sus configuraciones.
-
-## Ver también:
-- [YAML.org](https://yaml.org/)
+## También Vea
+- Documentación oficial de YAML: [https://yaml.org/](https://yaml.org/)
+- Repositorio de GitHub para el módulo PowerShell YAML: [https://github.com/cloudbase/powershell-yaml](https://github.com/cloudbase/powershell-yaml)
+- Tutorial de Microsoft sobre cómo usar archivos YAML en Azure DevOps: [https://docs.microsoft.com/es-es/azure/devops/pipelines/yaml-schema/](https://docs.microsoft.com/es-es/azure/devops/pipelines/yaml-schema/)

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml"
-html_title:           "Gleam: Робота з yaml"
-simple_title:         "Робота з yaml"
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
+## Що це & Навіщо?
+YAML – це формат для зберігання і передачі даних, який легко читається людиною. Програмісти використовують його для конфігурацій файлів, оскільки він простий і зрозумілий.
 
-Робота з YAML - це про роботу з мовою розмітки даних, яка використовується для зберігання та передачі структурованої інформації у вигляді текстового файлу. Як програмісти, ми використовуємо YAML для надання певної структури та логічного зв'язку між нашими даними.
-
-# Як:
-
-Давайте подивимося, як ми можемо використовувати YAML в нашому коді Gleam:
+## Як робити:
+Gleam має обмежену підтримку роботи з YAML, так що вам може знадобитися використовувати власний парсер або рішення на іншій мові, якщо така необхідність виникне. Нижче приклад коду на Erlang, який часто використовується у сценаріях з Gleam, щоб працювати з YAML файлами.
 
 ```Gleam
-person:
-  name: "John"
-  age: 32
-  address:
-    street: "Main Street"
-    city: "New York"
-    country: "USA"
+// Gleam currently doesn't have a YAML library.
+// You can use an Erlang library for YAML processing.
+// Add `yamerl` as a dependency in your `rebar.config`.
+
+external type YamlDocuments
+
+fn parse_yaml(yaml_string: String) -> Result(YamlDocuments, Nil) {
+  erlang.apply(atom("yamerl"), "load", [yaml_string])
+}
+
+fn main() {
+  let yaml_data = "
+  name: Gleam
+  version: '1.0.0'
+  dependencies:
+    - name: yaml_lib
+      version: '1.2.3'
+  "
+
+  let result = parse_yaml(yaml_data)
+  case result {
+    Ok(docs) -> docs
+    Error(_) -> "Failed to parse YAML"
+  }
+}
 ```
-В цьому прикладі ми створюємо об'єкт "person", який містить ім'я, вік та адресу. Ми використовуємо відступи, щоб позначити зв'язок між полями.
 
-А ось як ми можемо отримати доступ до цих даних:
+## Поглиблений розбір
+YAML (YAML Ain't Markup Language) з'явився у 2001 році як зручний формат для конфігураційних файлів. Від JSON відрізняється браком дужок і ком, і кращою читабельністю. Альтернативи YAML – це JSON та TOML. Програма на Gleam для роботи з YAML може включати в себе використання Erlang бібліотеки через FFI (Foreign Function Interface), тому що нативної бібліотеки під Gleam поки немає.
 
-```Gleam
-age = person.age
-city = person.address.city
-```
-
-В цьому випадку ми просто використовуємо крапку, щоб дістатися до конкретного поля в об'єкті.
-
-# Глибоке занурення:
-
-Історичний контекст: YAML був створений у 2001 році як альтернатива XML для більш читабельності та простоти використання.
-
-Альтернативи: Існують різні формати мови розмітки даних, такі як JSON та XML, але YAML відзначається своїм простим синтаксисом та здатністю до обробки складних структур даних.
-
-Деталі реалізації: Як і більшість мов програмування, Gleam має вбудовану підтримку для роботи з YAML. Більш детально про синтаксис та функції можна дізнатися в офіційній документації.
-
-# Дивитися також:
-
-- [Офіційна документація YAML](https://yaml.org/)
+## Див. також
+- YAML офіційний сайт: [https://yaml.org/](https://yaml.org/)
+- Yamerl, Erlang бібліотека для YAML: [https://github.com/yakaz/yamerl](https://github.com/yakaz/yamerl)
+- TOML у Gleam за допомогою Erlang бібліотеки: [https://hex.pm/packages/toml](https://hex.pm/packages/toml)

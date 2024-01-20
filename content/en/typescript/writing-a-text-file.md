@@ -1,6 +1,6 @@
 ---
 title:                "Writing a text file"
-html_title:           "TypeScript recipe: Writing a text file"
+html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,27 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing a text file is essentially creating a document made up of plain text that can be opened and read by anyone. Programmers often write text files as a way to save and organize code, configurations, or data that can be easily accessed and shared with others. This allows for better collaboration and organization in the development process.
+
+Writing a text file means saving data in a file with a `.txt` extension. Programmers do this for logging, configuration, or saving simple data without needing a database.
 
 ## How to:
-To write a text file in TypeScript, you can use the `fs` module from Node.js. First, you need to import the module using the `require` function. Then, you can use the `writeFile` function to create and write to a text file.
 
-```TypeScript
-const fs = require('fs');
+TypeScript, being a superset of JavaScript, doesn’t have its own file system module, but it can use Node.js for this task. Ensure you have Node.js installed and then, let’s roll:
 
-fs.writeFile('myFile.txt', 'Hello, world!', (err) => {
-  if(err) throw err;
-  console.log('File created and data written successfully.');
-});
+```typescript
+// Import the 'fs' module to interact with the file system
+import { writeFile } from 'fs';
 
+// The content you want to write
+const content = 'Hello, World!';
+
+// Function to write content to a file
+const writeTextToFile = (filePath: string, content: string): void => {
+  writeFile(filePath, content, (err) => {
+    if (err) {
+      console.error('Error writing file:', err);
+    } else {
+      console.log('File written successfully');
+    }
+  });
+};
+
+// Use the function to write to 'output.txt'
+writeTextToFile('./output.txt', content);
 ```
 
-Running this code will create a file called `myFile.txt` and write the text "Hello, world!" inside it. You can also specify a path for the file to be created in a specific directory, by passing the directory path as the first parameter of `writeFile`.
+Sample output:
+```
+File written successfully
+```
 
-## Deep Dive:
-Historically, before the use of computers, writing a text file was done on paper manually. With the advent of modern technology, computers and programming languages like TypeScript, writing text files has become much more efficient and scalable. Alternatively, text files can also be created and edited using text editors, but using TypeScript allows for automation and speed in creating and modifying large amounts of data.
+## Deep Dive
 
-In terms of implementation, the `writeFile` function in the `fs` module uses a callback function to ensure that the file is created and written successfully. The first parameter is the name or path of the file, the second parameter is the data to be written, and the third parameter is an error handling function.
+Historically, writing to text files is as old as computing itself for storage or communication between programs. Before databases became prevalent, flat files were common. Now, databases have largely taken this role, but text files are still vital for their simplicity.
 
-## See Also:
-- [Node.js: File System module](https://nodejs.org/api/fs.html)
+Alternatives to the Node.js 'fs' module include:
+
+- The new 'fs/promises' for Promise-based functions.
+- Using 'fs-extra' for convenience methods.
+- 'stream' module for dealing with large files.
+
+The 'writeFile' method shown above works well for small to medium-sized files. For larger files or streams of data, you might want to use streams to avoid loading everything into memory.
+
+## See Also
+
+- Node.js File System API: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- TypeScript official page: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- 'fs-extra' library: [https://github.com/jprichardson/node-fs-extra](https://github.com/jprichardson/node-fs-extra)
+- MDN Web Docs on Streams: [https://developer.mozilla.org/en-US/docs/Web/API/Streams_API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)

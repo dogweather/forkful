@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "PowerShell: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och varför?
+## What & Why?
+I PowerShell kan du skriva till standardfelet (stderr) för att hantera felmeddelanden separat från vanlig utmatning (stdout). Det är viktigt för att kunna skilja på normal data och fel, vilket förenklar felsökning och loggning.
 
-Att skriva till standardfel, eller "standard error" på engelska, är en vanlig praxis inom programmering. Det innebär helt enkelt att man skriver ut felmeddelanden till den standardiserade felutmatning som finns tillgänglig i de flesta programmeringsspråk. Detta är en viktig del av felsökningen och kan hjälpa utvecklare att hitta och åtgärda fel i sina program.
-
-# Hur gör man?
-
-Det finns flera sätt att skriva till standardfel i PowerShell, men den vanligaste metoden är att använda cmdleten "Write-Error". Detta kan göras genom att helt enkelt skriva cmdleten och det meddelande du vill skriva ut, till exempel:
-
+## How to:
 ```PowerShell
-Write-Error "Ett fel har uppstått."
+# Skicka ett enkelt meddelande till standardfelet
+Write-Host "Det här är ett felmeddelande" -ForegroundColor Red 1>&2
+
+# Alternativt använd Write-Error för att generera en felutmatning
+Write-Error "Oops, något gick fel"
+
+# Fånga felet i en try-catch-block
+try {
+    Get-Item "icke_existerande_fil.txt"
+} catch {
+    $_ | Out-String | Write-Host -ForegroundColor Red 1>&2
+}
+
+# Exempelutmatning för Write-Error
+Oops, något gick fel
++ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
++ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
 
-Detta kommer skriva ut meddelandet till standardfel och avbryta körningen av scriptet.
+## Deep Dive:
+Standardfelet introducerades i UNIX och har länge använts för att hantera felmeddelanden. PowerShell, inspirerat av UNIX shell, tillhandahåller detta. `Write-Error` är specifik för PowerShell och skapar ett error record. Alternativt kan operatören `1>&2` omdirigera stdout till stderr; `1` representerar stdout och `2` stderr. Implementationen av stderr i PowerShell är viktig vid skript som används i större automatiseringar, där felmeddelanden behöver hanteras skilt.
 
-Man kan också använda sig av PowerShell's inbyggda variabler `$error` och `$ErrorActionPreference` för att styra hur felmeddelanden ska hanteras. Till exempel kan man använda dessa variabler för att även skriva ut felmeddelanden när man använder tysta skriptningslägen.
+## See Also:
+- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
+- [Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
+- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally)
 
-# Deep Dive
-
-Att skriva till standardfel är ett viktigt verktyg i felsökningen av program. Det ger utvecklare en möjlighet att få viktig information om eventuella fel som kan uppstå under körningen av ett program. Det här konceptet är inte unikt för PowerShell, utan är en princip som används i många andra programmeringsspråk också.
-
-Det finns även alternativ till att skriva till standardfel, till exempel användning av loggning eller att skicka felmeddelanden till en extern tjänst. Men att skriva till standardfel är fortfarande en viktig del av felet i många situationer.
-
-När det kommer till implementationen av att skriva till standardfel i PowerShell så är det viktigaste att ha i åtanke att det är en del av felhantering och att man bör se till att man alltid hanterar eventuella fel som kan uppstå på ett korrekt sätt.
-
-# Se även
-
-För mer information om att skriva till standardfel i PowerShell bör du kolla in följande länkar:
-
-- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error
-- https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/how-to-debug-with-write-error-if-flow-control?view=powershell-7
+Observera att länkarna leder till engelskspråkiga resurser, då Microsofts dokumentation oftast är på engelska.

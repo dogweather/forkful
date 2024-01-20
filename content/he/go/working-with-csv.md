@@ -1,6 +1,6 @@
 ---
 title:                "עבודה עם קבצי CSV"
-html_title:           "Go: עבודה עם קבצי CSV"
+html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Go"
 category:             "Go"
@@ -10,54 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-עבודה עם CSV היא תהליך שבו מחברים עם קבצי נתונים הנתמכים על ידי רבים ומוכרים. זהו דרך נוחה ויעילה לנתח ולהתאים נתונים ממקורות שונים. תהליך זה הופך חייב הדיונים לפשוט יותר ושולי את טעויות בטיפול בנתונים.
+## What & Why? (מה ולמה?)
 
-## כיצד לעשות:
-לדוגמה, נוכל להשתמש ב-Package "encoding/csv" של Go כדי לבצע מניפולציה עם קבצי CSV. להלן דוגמה של קוד ופלט:
+CSV (Comma-Separated Values) משמש לאחסון והעברת נתונים טבולריים. מתכנתים משתמשים בו כי הוא פשוט, אוניברסלי וקל לקריאה ולכתיבה על-ידי תוכנות ובני אדם.
+
+## How to (איך לעשות):
+
 ```Go
 package main
 
 import (
-    "encoding/csv"
-    "fmt"
-    "log"
-    "os"
+	"encoding/csv"
+	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-    // פתיחת קובץ קיים לקריאה
-    f, err := os.Open("file.csv")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer f.Close()
+	// יצירת נתוני CSV לדוגמה
+	csvData := "שם,מספר\nרועי,1\nשירי,2"
 
-    // קריאת נתונים מהקובץ בעזרת הפונקציה ReadAll של ה-Package "csv"
-    records, err := csv.NewReader(f).ReadAll()
-    if err != nil {
-        log.Fatal(err)
-    }
+	// קריאת נתונים ממחרוזת
+	r := csv.NewReader(strings.NewReader(csvData))
 
-    // הדפסת כל רשומה הכוללת שורה של ערכים מופרדת בפסיק
-    for _, record := range records {
-        fmt.Println(record)
-    }
+	// קריאת כל השורות מה CSV
+	records, err := r.ReadAll()
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	// הדפסת הדאטה
+	for _, record := range records {
+		fmt.Println(record)
+	}
+
+	// כתיבת נתוני CSV לקובץ
+	recordsToWrite := [][]string{{"name", "number"}, {"Tomer", "3"}, {"Gal", "4"}}
+	file, err := os.Create("output.csv")
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	defer file.Close()
+
+	w := csv.NewWriter(file)
+	w.WriteAll(recordsToWrite)
+	if err := w.Error(); err != nil {
+		fmt.Println("Error:", err)
+	}
+
+	fmt.Println("CSV written successfully.")
 }
 ```
 
-הפלט יהיה משהו דומה לכך:
-```Go
-["אופציונלי" "תוכן" "שורת" "ערכים"]
-["פרפרת" "גל" "תוכן" "פרפר" "אדומה"]
-["כלב" "פודל" "תוכן" "4"]
-["חתול" "סיאמי" "תוכן" "מותג" "העכבר"]
+פלט:
+```
+[שם מספר]
+[רועי 1]
+[שירי 2]
+CSV written successfully.
 ```
 
-## כניסה מעמיקה:
-CSV נוצר בשנת 1972 על ידי החברה Informatics General בכדי למיין נתונים באמצעות טבלאות. עם השנים, הוא הפך לפורמט נרחב לניהול נתונים ומצא יישומים רבים בכלל המחשבה. בנוסף, ישנן אלטרנהטיבות דומות לעבודה עם CSV כגון JSON ו-XML, אך הנהיגה עם CSV דרך פאקטור מוכר יותר. הPHPPackage מספק תמיכה מעולה בטיפול בנתוני CSV, על אף שהוא הקטנת הטריות האלגנטיות שניתן למצוא בגו.
+## Deep Dive (צלילה עמוקה):
 
-## ראה גם:
-למידע נוסף על פקטור "encoding/csv" של Go ועל יישומים שלו, אני ממליץ לך לבקר בקישור הבא:
-- [פקטור "encoding/csv" של Go](https://pkg.go.dev/encoding/csv)
-- [CSV: רכיב משמעותי בשיווי שכר מחברת Informatics General](https://medium.com/towards-artificial-intelligence/csv-a-significant-component-of-the-payment-structure-of-the-informatics-general-company-3bd36bb00a61)
+CSV קיים מאז שנות ה-70 ונחשב כסטנדרט לשיתוף נתונים. חלופות כוללות JSON, XML ו-Excel, אך CSV עדיין נפוץ עקב פשטותו. בעבודה עם Go, מתכנתים ישתמשו בפקג' `encoding/csv` לקריאה וכתיבה, דרך `Reader` ו-`Writer`.
+
+## See Also (ראו גם):
+
+- התיעוד הרשמי של פקג' `csv` בGo: https://pkg.go.dev/encoding/csv
+- מדריך Go לעבודה עם קבצי CSV: https://golang.org/doc/articles/encoding_csv.html
+- על פורמט CSV בראשון: https://tools.ietf.org/html/rfc4180

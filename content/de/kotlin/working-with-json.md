@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit json"
-html_title:           "Kotlin: Arbeiten mit json"
-simple_title:         "Arbeiten mit json"
+title:                "Arbeiten mit JSON"
+html_title:           "Arduino: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Was & Warum?
+## Was & Warum?
 
-Arbeiten mit JSON bedeutet, Daten im JSON-Format zu verarbeiten. JSON ist ein Format, das verwendet wird, um strukturierte Daten auszutauschen. Programmierer nutzen JSON, um Daten von einer Quelle zu extrahieren oder sie zu einer Quelle zu senden.
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Datenformat zum Austausch von Daten. Entwickler nutzen es, weil es menschenlesbar und maschinenverarbeitbar ist - perfekt für APIs und Konfigurationen.
 
-### Wie geht's?
+## Wie geht das:
 
-Um mit JSON in Kotlin zu arbeiten, kannst du die Standardbibliothek von Kotlin verwenden. Hier ist ein Beispiel, wie du eine JSON-Zeichenfolge in ein Kotlin-Objekt konvertieren kannst:
+In Kotlin kannst du mit der `kotlinx.serialization` Bibliothek JSON problemlos handhaben. Hier ist ein Beispiel, wie du ein JSON-Objekt parsen kannst:
 
 ```Kotlin
-val jsonString = """{ "name": "Max", "age": 25, "hobby": "reading" }```
-val jsonObject = JSONObject(jsonString)
-val name = jsonObject.getString("name")
-val age = jsonObject.getInt("age")
-val hobby = jsonObject.getString("hobby")
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
-println("Name: $name, Age: $age, Hobby: $hobby")
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val json = """{"name": "Max", "age": 25}"""
+    val user = Json.decodeFromString<User>(json)
+    println(user)
+}
 ```
 
 Ergebnis:
+
 ```
-Name: Max, Age: 25, Hobby: reading
+User(name=Max, age=25)
 ```
 
-Du kannst auch objektorientierte Klassen verwenden, um JSON-Daten zu modellieren und zu verarbeiten. Hier ist ein Beispiel einer Klasse ```Person```, die Äquivalent zu dem Beispiel oben ist:
+Und so serialisiert du ein Kotlin-Objekt zu JSON:
 
 ```Kotlin
-class Person(val name: String, val age: Int, val hobby: String)
-
-val jsonString = """{ "name": "Max", "age": 25, "hobby": "reading" }```
-val jsonObject = JSONObject(jsonString)
-val person = Person(jsonObject.getString("name"), jsonObject.getInt("age"), jsonObject.getString("hobby"))
-
-println(person.name)
-println(person.age)
-println(person.hobby)
+fun main() {
+    val user = User("Max", 25)
+    val json = Json.encodeToString(user)
+    println(json)
+}
 ```
 
 Ergebnis:
+
 ```
-Max
-25
-reading
+{"name":"Max","age":25}
 ```
 
-### Tiefer tauchen
+## Deep Dive
 
-JSON wurde entwickelt, um eine einfache Alternative zu XML zu sein. Es ist lesbarer als XML und somit für den Menschen leichter zu verstehen. JSON wird in der Regel verwendet, um Daten für den Austausch zwischen Client- und Serveranwendungen zu strukturieren und zu übertragen. Es gibt auch alternative Formate wie YAML und CSV, aber JSON gilt als Standardformat für den Datenaustausch im World Wide Web.
+JSON wurde Anfang der 2000er als Alternative zu XML entwickelt und hat wegen seiner Einfachheit schnell an Beliebtheit gewonnen. Kotlin bietet mit `kotlinx.serialization` eine moderne Bibliothek, die auch mit Multiplattform-Projekten gut funktioniert. Als Alternativen kommen Gson oder Moshi infrage, beide sind ebenfalls in der Kotlin Welt verbreitet.
 
-### Siehe auch
+## Siehe auch:
 
-- [Kotlin Standardbibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html)
-- [JSON-Spezifikation](https://www.json.org/json-de.html)
+- Official kotlinx.serialization documentation: [https://github.com/Kotlin/kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+- Gson GitHub: [https://github.com/google/gson](https://github.com/google/gson)
+- Moshi GitHub: [https://github.com/square/moshi](https://github.com/square/moshi)
+- Kotlin Programming Language: [https://kotlinlang.org/](https://kotlinlang.org/)

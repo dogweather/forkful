@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "C: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Porquê?
 
-YAML é uma linguagem de serialização de dados, o que significa que ele permite que você salve dados em um formato legível para humanos e também para máquinas. Programadores frequentemente trabalham com YAML porque ele é fácil de escrever, ler e compartilhar, além de ser uma opção popular para armazenar dados estruturados.
+YAML é um formato de serialização legível por humanos usado para configuração de dados. Programadores o utilizam por sua clareza e compatibilidade com várias linguagens de programação.
 
-## Como fazer:
+## Como Fazer:
 
-Para começar a trabalhar com YAML em C, você precisa incluir o cabeçalho `yaml.h` no seu código:
+Para manipular YAML em C, é comum usar a biblioteca `libyaml`. Aqui está um exemplo básico de como ler um arquivo YAML:
 
 ```C
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void process_yaml_file(const char* filename) {
+    FILE *fh = fopen(filename, "r");
+    yaml_parser_t parser;
+    yaml_token_t  token;   
+
+    if (!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize YAML parser!\n", stderr);
+    if (fh == NULL)
+        fputs("Failed to open file!\n", stderr);
+
+    yaml_parser_set_input_file(&parser, fh);
+
+    do {
+        yaml_parser_scan(&parser, &token);
+        switch(token.type)
+        {
+        case YAML_STREAM_START_TOKEN: puts("YAML Stream Start"); break;
+        case YAML_STREAM_END_TOKEN:   puts("YAML Stream End"); break;
+        // Process other tokens like YAML_KEY_TOKEN and YAML_VALUE_TOKEN according to your needs
+        // ...
+        }
+        if(token.type != YAML_STREAM_END_TOKEN)
+            yaml_token_delete(&token);
+    } while(token.type != YAML_STREAM_END_TOKEN);
+    yaml_token_delete(&token);
+
+    yaml_parser_delete(&parser);
+    fclose(fh);
+}
+
+int main() {
+    process_yaml_file("example.yaml");
+
+    return EXIT_SUCCESS;
+}
 ```
 
-Em seguida, você pode começar a usar as funções disponíveis para manipular dados YAML. Por exemplo, aqui está um código simples para criar um novo documento YAML e escrever alguns dados nele:
+A saída vai depender do conteúdo de "example.yaml", mas você verá marcadores de início e fim da transmissão YAML.
 
-```C
-// Criar o documento
-yaml_document_t documento;
-yaml_document_initialize(&documento, NULL, NULL, NULL, 0, 0);
+## Aprofundando
 
-// Adicionar dados ao documento
-yaml_node_t* n1 = yaml_document_add_scalar(&documento, NULL, "nome: João");
-yaml_node_t* n2 = yaml_document_add_scalar(&documento, NULL, "idade: 30");
+YAML surgiu em 2001 como alternativa ao XML para ser mais legível e simples. Alternativas incluem JSON e TOML. Em C, escolher `libyaml` é prático por ser uma biblioteca C pura, mas existem wrappers para outras bibliotecas como `yaml-cpp` se estiver usando C++.
 
-// Serializar o documento e imprimir na tela
-int tamanho = yaml_document_to_str(&documento, buffer, sizeof(buffer));
-printf("%s", buffer);
+## Veja Também
 
-// Limpar memória
-yaml_document_delete(&documento);
-```
-
-Isso resultará na seguinte saída:
-
-```
-nome: João
-idade: 30
-```
-
-## Profundando:
-
-YAML foi originalmente criado por Clark Evans em 2001 e desde então tem sido amplamente adotado pelos programadores. Existem também alternativas para trabalhar com dados estruturados, como JSON e XML, mas YAML é frequentemente escolhido por sua simplicidade e facilidade de uso.
-
-Para implementar YAML em seu código C, você também pode usar a biblioteca libYAML, que fornece a funcionalidade para ler e escrever documentos YAML. Além disso, existem muitos recursos online disponíveis para ajudá-lo a aprender e aprofundar seu conhecimento sobre YAML.
-
-## Veja também:
-
-Para mais informações sobre YAML e como usá-lo em sua programação, confira os seguintes links:
-
-- [Página oficial do YAML](https://yaml.org/)
-- [Documentação da biblioteca libYAML](https://pyyaml.org/wiki/LibYAML)
-- [Tutorial de YAML para desenvolvedores C](https://www.ibm.com/developerworks/library/l-yaml/)
+- Documentação do `libyaml`: https://pyyaml.org/wiki/LibYAML
+- YAML 1.2 especificação: https://yaml.org/spec/1.2/spec.html
+- Comparação entre YAML, JSON e TOML: https://phoenixnap.com/kb/yaml-vs-json-vs-xml

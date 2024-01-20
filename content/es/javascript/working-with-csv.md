@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con csv"
-html_title:           "Javascript: Trabajando con csv"
-simple_title:         "Trabajando con csv"
+title:                "Trabajando con archivos CSV"
+html_title:           "Bash: Trabajando con archivos CSV"
+simple_title:         "Trabajando con archivos CSV"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Trabajar con archivos CSV es muy común para los programadores. CSV significa "valores separados por comas" y se utiliza para almacenar datos en formato de tabla. Esto permite una fácil lectura y procesamiento de la información.
+Trabajar con CSV (valores separados por comas) significa manejar datos en un formato de texto sencillo, donde cada línea representa un registro con campos divididos por comas. Los programadores lo usan por su simplicidad y compatibilidad con múltiples herramientas y lenguajes de programación.
 
-Los programadores utilizan archivos CSV para manipular grandes cantidades de datos estructurados, como listas de clientes, registros de ventas, informes financieros, entre otros. Los datos se pueden organizar, filtrar y analizar de manera más eficiente gracias al formato de tabla de CSV.
+## Cómo hacerlo:
 
-¿Cómo hacerlo?
+Para manejar CSV en JavaScript, primero leeremos un archivo CSV y luego lo convertiremos en un arreglo de objetos JSON.
 
-A continuación, se muestra un ejemplo simple de cómo leer un archivo CSV y mostrar sus datos en la consola:
-
-```Javascript
+```javascript
 const fs = require('fs');
-const csv = require('csv-parser');
+const parse = require('csv-parse/lib/sync');
 
-fs.createReadStream('mydata.csv')
-  .pipe(csv())
-  .on('data', (data) => console.log(data))
-  .on('end', () => console.log('Lectura de CSV finalizada.'));
+// Leer archivo CSV
+const input = fs.readFileSync('datos.csv', 'utf8');
+
+// Convertir CSV a JSON
+const records = parse(input, {
+  columns: true,
+  skip_empty_lines: true
+});
+
+console.log(records);
 ```
 
-Esta es la salida que obtendríamos en la consola:
-
-```bash
-{ name: 'Juan',
-  age: '25',
-  city: 'Madrid' }
-{ name: 'Ana',
-  age: '28',
-  city: 'Barcelona' }
-{ name: 'Carlos',
-  age: '32',
-  city: 'Valencia' }
+Suponiendo que `datos.csv` tiene el siguiente contenido:
+```
+nombre,edad,ciudad
+Juan,30,Madrid
+Lucía,25,Sevilla
 ```
 
-Profundizando un poco más
+La salida sería un arreglo de objetos JavaScript:
+```javascript
+[
+  { nombre: 'Juan', edad: '30', ciudad: 'Madrid' },
+  { nombre: 'Lucía', edad: '25', ciudad: 'Sevilla' }
+]
+```
 
-CSV se ha utilizado desde la década de 1970 para importar y exportar datos de hojas de cálculo. Ha sido ampliamente aceptado como formato estándar para compartir datos entre aplicaciones. Alternativas como JSON o XML también se utilizan para almacenar datos estructurados, pero CSV es más ligero y simple de entender.
+## Profundizando
 
-En la mayoría de los casos, los archivos CSV contienen datos en formato de texto plano, separados por comas. Sin embargo, también es posible tener otros delimitadores, como punto y coma o tabulaciones. Es importante tener en cuenta el tipo de delimitador que se está utilizando al leer o escribir un archivo CSV para evitar posibles errores.
+El formato CSV tiene raíces en los años 70 cuando era usado en programas antiguos para transferir datos. Aunque existen formatos alternativos, como JSON o XML, CSV permanece relevante por su simplicidad y la capacidad de ser editado fácilmente en un editor de texto o hojas de cálculo.
 
-Vea también
+Respecto a la implementación, programas Node.js a menudo emplean paquetes como `csv-parse` para parsear datos CSV. Si bien JavaScript puro en un navegador no soporta operaciones de archivos por razones de seguridad, la API `File` puede ser usada para cargar y leer archivos CSV en entornos de cliente.
 
-- [Documentación de Node.js para trabajar con archivos CSV](https://docs.nodejs.org/api/fs.html)
-- [Módulo CSV de NPM](https://www.npmjs.com/package/csv-parser)
+## Ver También:
+
+- Documentación de Node.js sobre el sistema de archivos (fs): https://nodejs.org/api/fs.html
+- Repositorio npm de `csv-parse`: https://www.npmjs.com/package/csv-parse
+- API `File` de JavaScript: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+- CSV en Wikipedia: https://es.wikipedia.org/wiki/Valores_separados_por_comas

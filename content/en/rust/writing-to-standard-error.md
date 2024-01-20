@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-html_title:           "Rust recipe: Writing to standard error"
+html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,42 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing to standard error is a way for programmers to print error messages or other important information to the command line. It can be helpful for debugging and providing feedback to the user. This is different from writing to standard output, which is typically used for regular program output.
+Writing to standard error (stderr) is outputting text to the error stream, separate from standard output (stdout). Programmers do it for logging errors and diagnostic messages without cluttering the regular output that might be redirected or piped into other programs.
 
 ## How to:
 
-To write to standard error in Rust, you can use the ```eprintln!()``` macro. This function takes in a formatting string and any arguments to be inserted into the string. Here's an example of how it would look like when used:
+Rust makes writing to stderr simple. Use the `eprintln!` macro for text, just like `println!` but for errors.
 
 ```Rust
-eprintln!("An error has occurred: {}", err);
+fn main() {
+    // Regular output
+    println!("This is a regular message.");
+
+    // Error output
+    eprintln!("This is an error message.");
+}
 ```
 
-This will print the error message provided by the ```err``` variable to the command line.
+Sample output:
 
-You can also use the ```eprint!()``` macro if you don't want to end the output with a new line. This is useful for printing multiple lines of output to standard error without a new line in between each line.
-
-```Rust
-eprint!("First line of output");
-eprint!("Second line of output");
+```shell
+This is a regular message.
+This is an error message.
 ```
 
-The output for this would be:
+Notice the error message goes to stderr. In a terminal, you won't see the difference. However, if you redirect stdout, stderr still shows up in the console.
 
+```shell
+$ cargo run > output.txt
+This is an error message.
 ```
-First line of outputSecond line of output
-```
+
+Here `output.txt` will only contain "This is a regular message."
 
 ## Deep Dive
 
-In contrast to standard output, standard error is meant for error messages and other important information that the user should see. Standard output is typically for regular program output and can be redirected to a file or another program.
+Historically, separating stdout and stderr allows Unix systems to handle regular and error data differently. It's good practice and helps with automation and logging.
 
-Before standard error was introduced, programmers would often print error messages to standard output, which would get mixed in with the program's regular output. This made it difficult to differentiate between error messages and regular output. Standard error was created to solve this issue and provide a dedicated channel for important messages.
+Alternatives for writing to stderr are lower-level, like using `std::io::stderr`. It gives more control and works well for non-text data.
 
-In addition to printing to standard error, some programmers also choose to log errors to a file for future reference. This allows them to go back and analyze any recurring errors or issues with their program.
+```Rust
+use std::io::{self, Write};
 
-There are also other alternatives to writing to standard error, such as using a logging library like ```log``` or ```env_logger```. These libraries provide more robust logging features and can be useful in larger projects.
+fn main() -> io::Result<()> {
+    let stderr = &mut io::stderr();
+    
+    // Write a string directly to stderr
+    writeln!(stderr, "Error: Could not complete the operation")?;
+    
+    Ok(())
+}
+```
+
+Under the hood, `eprintln!` is a macro wrapping `writeln!` to stderr, keeping things DRY (Don't Repeat Yourself).
 
 ## See Also
 
-- [Difference between standard error and standard output](https://askubuntu.com/questions/350208/command-piping-mkdir-error-message-to-text-file)
-- [Logging in Rust with the log and env_logger crates](https://www.reddit.com/r/rust/comments/4asrtr/logging_in_rust_with_the_log_and_env_logger/)
+For more on error handling and logging:
+
+- Rust By Example on stdio: https://doc.rust-lang.org/rust-by-example/std_misc/stdio.html
+- The Rust Book on Error Handling: https://doc.rust-lang.org/book/ch09-00-error-handling.html
+- The Rust `log` crate for a more comprehensive logging setup: https://crates.io/crates/log

@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "PowerShell: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Écriture d'un fichier texte"
+html_title:           "Arduino: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+## Quoi & Pourquoi?
 
-Écrire un fichier texte est une tâche courante pour les programmeurs. Cela consiste à créer un fichier contenant du texte brut, comme un document Word ou un document texte, en utilisant du code informatique plutôt que d'utiliser un logiciel.
-
-Les programmeurs écrivent des fichiers texte pour stocker toutes sortes de données, comme des configurations système, des instructions pour un programme, ou même du contenu pour un site web. Cela permet une meilleure organisation et un accès facile à ces données.
+Écrire dans un fichier texte, c'est sauvegarder des données lisibles par l'homme. Les développeurs le font pour conserver la configuration, les logs ou tout autre information qui doit être récupérée ou analysée plus tard.
 
 ## Comment faire :
 
-Pour écrire un fichier texte en utilisant PowerShell, nous allons utiliser la commande `Out-File`. Voici un exemple de code avec une explication détaillée :
-
 ```PowerShell
-# Créer une variable pour stocker le texte que nous souhaitons écrire dans le fichier
-$texte = "Bonjour à tous !"
+# Écrire du texte dans un fichier nouveau ou existant
+"Bonjour, monde!" | Out-File -FilePath .\exemple.txt
 
-# Utiliser la commande 'Out-File' pour écrire le texte dans un fichier nommé 'mon-fichier.txt'
-Out-File -FilePath mon-fichier.txt -InputObject $texte
+# Ajouter du texte à la fin d'un fichier existant
+"Ajout à mon fichier texte" | Add-Content -Path .\exemple.txt
+
+# Vérifier le contenu du fichier
+Get-Content -Path .\exemple.txt
 ```
 
-La sortie de ce code générera un fichier texte nommé 'mon-fichier.txt' contenant la phrase "Bonjour à tous !".
-
-Nous pouvons également utiliser la commande `Set-Content`, qui est similaire, pour écrire dans un fichier texte :
-
-```PowerShell
-# Créer une variable pour stocker le texte que nous souhaitons écrire dans le fichier
-$texte = "Bonjour à tous !"
-
-# Utiliser la commande 'Set-Content' pour écrire le texte dans un fichier nommé 'mon-fichier2.txt'
-Set-Content -Path mon-fichier2.txt -Value $texte
+Sortie échantillon :
+```
+Bonjour, monde!
+Ajout à mon fichier texte
 ```
 
-La différence entre les deux commandes est que `Out-File` créera un nouveau fichier s'il n'existe pas, tandis que `Set-Content` écrasera le contenu d'un fichier existant.
+## Plongée profonde :
 
-## Plongée en profondeur :
+À l'origine, les fichiers textes servaient à stocker des données de façon simple, sans nécessiter de structures de données complexes. PowerShell offre plusieurs cmdlets comme `Out-File`, `Add-Content` et `Set-Content` pour écrire dans des fichiers textes, chacun ayant des cas d'usages spécifiques. La distinction principale entre eux est la gestion du contenu existant et la performance en cas de gros volumes de données.
 
-L'écriture de fichiers texte en utilisant du code informatique peut sembler un peu ancienne, mais c'est en fait une méthode très courante et utile pour les programmeurs. L'avantage de cette méthode est qu'elle peut être utilisée pour créer des fichiers texte en masse ou pour automatiser des tâches répétitives.
+## Voir aussi :
 
-Bien que PowerShell dispose de nombreuses commandes pour écrire des fichiers texte, il existe aussi d'autres options telles que l'utilisation de modules externes ou la création de fichiers en utilisant du code HTML ou XML.
-
-## À voir également :
-
-Si vous souhaitez en savoir plus sur l'écriture de fichiers texte en utilisant PowerShell, voici quelques liens utiles :
-
-- [Un tutoriel YouTube sur l'écriture de fichiers texte avec PowerShell](https://www.youtube.com/watch?v=vq-PoTP3P6w)
+- [Out-File documentation on Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file)
+- [Get-Content documentation on Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)

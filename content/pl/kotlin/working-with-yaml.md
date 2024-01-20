@@ -1,6 +1,6 @@
 ---
 title:                "Praca z yaml"
-html_title:           "Kotlin: Praca z yaml"
+html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Praca z YAML to sposób definiowania danych w formacie tekstowym, który jest czytelny dla człowieka. Programiści wykorzystują go do przechowywania i przesyłania danych w swoich aplikacjach, ponieważ jest łatwy do zrozumienia i współpracuje z wieloma językami programowania.
+## What & Why?
+Czym jest i po co się z tym męczyć? YAML, czyli "YAML Ain't Markup Language", to ludzki format do danych konfiguracyjnych. Programiści używają go dla przejrzystości i prostej składni, co ułatwia zarządzanie konfiguracjami i danymi.
 
-## Jak to zrobić:
-Kotlin jest językiem programowania wspierającym YAML dzięki bibliotece SnakeYAML. Aby użyć jej w swoim projekcie, należy dodać odpowiednią zależność do pliku build.gradle:
-```
-dependencies {
-    implementation("org.yaml:snakeyaml:1.27")
-}
-```
-Następnie można użyć klasy Yaml do parsowania lub tworzenia danych YAML, np.:
-```
-val data = """
-        name: John Smith
-        age: 30
-        occupation: Programmer
+## How to:
+Aby pracować z YAML w Kotlinie, użyjemy biblioteki `snakeyaml`. Oto prosty przykład:
+
+```Kotlin
+import org.yaml.snakeyaml.Yaml
+import java.io.File
+
+fun main() {
+    val yaml = Yaml()
+    val configData = """
+        mysql:
+          host: localhost
+          port: 3306
+          user: root
+          password: pass
     """.trimIndent()
 
-    val yaml = Yaml()
-    val obj = yaml.load(data)
-
-    println(obj["name"]) // John Smith
+    val loadConfig = yaml.load<Map<String, Map<String, Any>>>(configData)
+    println("MySQL Host: ${loadConfig["mysql"]?.get("host")}")
+}
 ```
 
-## Głębsza wiedza:
-YAML (Yet Another Markup Language) został stworzony w 2001 roku i jest inspirowany formatami takimi jak XML czy JSON. Oprócz biblioteki SnakeYAML, istnieją też inne narzędzia do pracy z YAML w Kotlinie, np. kotlinx.serialization.
+Wyjście:
+```
+MySQL Host: localhost
+```
 
-## Zobacz też:
-- [Dokumentacja biblioteki SnakeYAML dla Kotlina](https://bitbucket.org/asomov/snakeyaml/wiki/Home)
-- [Oficjalna strona YAML](https://yaml.org/)
-- [Kotlinx.serialization - narzędzie do serializowania danych w YAML](https://github.com/Kotlin/kotlinx.serialization)
+Instalacja `snakeyaml` przez Gradle:
+
+```Groovy
+dependencies {
+    implementation("org.yaml:snakeyaml:1.29")
+}
+```
+
+## Deep Dive:
+YAML bywa mylnie mylony z językiem znaczników, ale to format serializacji danych. Pojawił się w 2001 roku jako alternatywa dla XML. Inne opcje to JSON czy TOML, które również łączą łatwą składnię z elastycznością. W Kotlinie pracuje się z YAML przy użyciu dodatkowych bibliotek jak `snakeyaml` lub `kotlinx.serialization` z obsługą formatu YAML.
+
+## See Also:
+- Specyfikacja YAML: https://yaml.org/spec/1.2/spec.html
+- Dokumentacja SnakeYAML: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+- kotlinx.serialization z obsługą YAML: https://github.com/charleskorn/kaml

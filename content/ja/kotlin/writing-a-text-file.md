@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルを書く"
-html_title:           "Kotlin: テキストファイルを書く"
-simple_title:         "テキストファイルを書く"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,23 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何を書く？
-テキストファイルを書くとは何かを説明し、プログラマーがそれをする理由を説明するための2〜3つの文。
+## What & Why? (何となぜ？)
+テキストファイルの書き込みは、データをテキスト形式で保存することです。プログラマーは、データの転送、保存、またはログ情報の記録のためにこれを行います。
 
-## 方法：
-```Kotlin
-// テキストファイルを書く方法
-val file = File("example.txt")
-file.writeText("こんにちは！私はKotlinを使っています。")
+## How to: (方法)
+```kotlin
+import java.io.File
+
+fun main() {
+    val text = "こんにちは、Kotlin プログラマー！"
+    val filePath = "example.txt"
+    
+    File(filePath).writeText(text)
+    println("ファイルへ書き込み完了：$filePath")
+}
+
+/*
+出力:
+ファイルへ書き込み完了：example.txt
+*/
 ```
 
-出力： `example.txt`ファイルには `こんにちは！私はKotlinを使っています。`というテキストが書き込まれています。
+## Deep Dive (深掘り)
+ファイル書き込みは、初期のコンピュータプログラミングから存在し、データ永続性を可能にします。JavaのFile I/O APIは伝統的に使われますが、Kotlinでは拡張関数が使いやすい。バッファリング、キャラクターエンコーディング、エラー処理は実装詳細にとって重要です。
 
-## 深く掘り下げる：
-- **歴史的背景**：テキストファイルは最も古いファイル形式の1つであり、テキストベースのデータを格納するために使用されてきました。
-- **他の方法**：テキストファイルの代わりに、データベースやスプレッドシートを使用することもできますが、シンプルなデータの保存にはテキストファイルが最適です。
-- **実装の詳細**：`java.io`パッケージには、テキストファイルの読み書きを行うための多くのクラスとメソッドがあります。KotlinはJavaをベースにしているため、Javaの実装と似ています。
-
-## 関連リンク：
-- [KotlinのFileクラスについて](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [テキストファイルを読み書きするためのJava IOチュートリアル](https://www.journaldev.com/19187/java-write-to-file)
+## See Also (関連情報)
+- [Kotlin Documentation: Reading and Writing to Files](https://kotlinlang.org/docs/idioms.html#read-and-write-to-files)
+- [Oracle Java Documentation: File I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
+- [GitHub: Kotlin Examples](https://github.com/JetBrains/kotlin-examples)

@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
-html_title:           "Clojure: Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Pisanie do standardowego błędu (stderr) to sposób na wyprowadzanie komunikatów o błędach i innych ważnych informacji diagnostycznych z programu. Programiści używają `stderr` do oddzielania normalnych danych wyjściowych od błędów, co ułatwia debugowanie i przetwarzanie logów.
 
-Zapisywanie do standardowego błędu jest procesem, który polega na przesyłaniu informacji o błędach lub ostrzeżeniach na standardowe wyjście błędu zamiast na standardowe wyjście. Programiści często robią to, aby łatwiej monitorować i debugować swoje programy.
+## How to: (Jak to zrobić?)
+W Clojure do pisania do `stderr` używa się funkcji `binding` z `*err*`. Oto krótki przykład wypisujący komunikat błędu:
 
-## Jak to zrobić:
-
-Kodując w języku Clojure, można użyć funkcji `(System/err (str "Tekst, który chcesz zapisać do standardowego błędu"))`, aby przekierować informacje o błędach na standardowe wyjście błędu. Poniżej znajduje się przykładowy kod i wyjście, który pokazuje działanie tej funkcji.
-
-```Clojure
-(defn throw-error []
-  (System/err (str "Wystąpił błąd!")))
-  
-(throw-error)
+```clojure
+(binding [*out* *err*]
+  (println "To jest błąd!"))
 ```
 
-Output:
+Wyjście będzie widoczne w stderr, nie będzie jednak zwracane jako wartość funkcji.
+
+Inny sposób to użycie funkcji `java.io.PrintWriter`:
+
+```clojure
+(import 'java.io.PrintWriter)
+
+(let [stderr-writer (PrintWriter. *err* true)]
+  (.println stderr-writer "To jest błąd!"))
 ```
-Wystąpił błąd!
-```
 
-## Głębszy Przegląd:
+Tym razem, wykorzystaliśmy klasę PrintWriter do stworzenia buforowanego obiektu piszącego do `stderr`.
 
-Zapisywanie do standardowego błędu jest częstym sposobem na komunikowanie informacji o błędach w programach. Praktyka ta pochodzi z Unixa, gdzie standardowe wyjście błędu jest oddzielone od standardowego wyjścia, co ułatwia debugowanie i przesyłanie informacji na zewnątrz. Alternatywą dla tego podejścia jest korzystanie z bibliotek do obsługi błędów, takich jak Sentry lub Log4j. Implementacja zapisywania do standardowego błędu w języku Clojure jest prostym procesem, ponieważ język ten jest zbudowany na platformie JVM, która obsługuje standardowe wyjście błędu.
+## Deep Dive (Dogłębna analiza)
+W historii programowania, idea dwóch różnych strumieni wyjście standardowe (stdout) i błąd standardowy (stderr) powstała by rozróżniać dane wyjściowe aplikacji od komunikatów o błędach. W Clojure, standardowe wiązania *out* i *err* reprezentują te dwa strumienie.
 
-## Zobacz też:
+Alternatywą dla bezpośredniego pisania do stderr jest użycie bibliotek logujących, które zapewniają większą elastyczność i konfigurowalność. 
 
-- Oficjalna dokumentacja języka Clojure: https://clojure.org
-- Dokumentacja na temat standardowych strumieni w języku Java: https://docs.oracle.com/javase/tutorial/essential/io/stream.html
+Bezpośrednie pisanie do `stderr` w Clojure jest realizowane przez sprawdzanie i przekierowanie *out*, które jest dynamicznym symbolem. Oznacza to, że moze być ono przypisane lokalnie w danym wątku.
+
+## See Also (Zobacz także)
+- Official Clojure Documentation on I/O: [https://clojure.org/reference/java_interop#_java_io](https://clojure.org/reference/java_interop#_java_io)
+- Clojure `core` API reference for `*err*`: [https://clojuredocs.org/clojure.core/*err*](https://clojuredocs.org/clojure.core/*err*)

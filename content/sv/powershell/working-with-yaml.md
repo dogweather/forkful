@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "PowerShell: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Arbete med YAML"
+html_title:           "Arduino: Arbete med YAML"
+simple_title:         "Arbete med YAML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-YAML står för "YAML Ain't Markup Language" (på svenska "YAML är ingen markup-språk") och det är ett lättläst format för data. YAML används ofta av programmerare för att konfigurera och strukturera data i sina applikationer.
+## What & Why?
+YAML (YAML Ain't Markup Language) används för konfigurationsfiler. Programmerare väljer YAML för sin läslighet och enkelhet att mappa komplexa datatyper.
 
-## Hur man:
-För att arbeta med YAML i PowerShell kan du använda modulen PSYaml. Här är ett exempel på hur du kan skapa en YAML-fil och sedan läsa in den i PowerShell:
+## How to:
+Installera `powershell-yaml` med:
 
 ```PowerShell
-# Skapa en YAML-fil
-@"
----
-Person:
-  Namn: John Smith
-  Ålder: 35
-  Yrke: Programmerare
-  Språk:
-    - PowerShell
-    - C#
-    - Python
-"@
-| Out-File -FilePath '.\person.yaml'
-
-# Läs in filen och konvertera till PowerShell-objekt
-$person = Get-Content -Path '.\person.yaml' | ConvertFrom-Yaml
-
-# Visa information om personen
-Write-Output "Namn: $($person.Person.Namn)"
-Write-Output "Ålder: $($person.Person.Ålder)"
-Write-Output "Yrke: $($person.Person.Yrke)"
-Write-Output "Språk: $($person.Person.Språk -join ', ')"
+Install-Module -Name powershell-yaml
 ```
 
-Output:
+Läs en YAML-fil:
+
+```PowerShell
+# Förutsätter att "config.yaml" finns
+$config = Get-Content -Path 'config.yaml' | ConvertFrom-Yaml
+$config
 ```
-Namn: John Smith
-Ålder: 35
-Yrke: Programmerare
-Språk: PowerShell, C#, Python
+
+Skriv en hash till en YAML-fil:
+
+```PowerShell
+$hash = @{
+  path = 'C:\SomeFolder'
+  settings = @{
+    color = 'blue'
+    size = 12
+  }
+}
+
+$hash | ConvertTo-Yaml | Out-File -FilePath 'output.yaml'
+# Kolla innehållet
+Get-Content -Path 'output.yaml'
 ```
 
-## Fördjupning
-YAML skapades ursprungligen av Ingy döt Net och Clark Evans 2001. Det är ett enkelt och intuitivt alternativ till JSON och XML för att strukturera data.
+## Deep Dive
+YAML introducerades 2001 som ett gränssnittvänligt alternativ till XML. Alternativ inkluderar JSON och TOML. Prestandan i PowerShell hanteras av `powershell-yaml`-modulen som använder .NET för parsing och generation av YAML.
 
-En annan fördel med YAML är att det är människoläsbar, vilket gör det lättare att felsöka och förstå.
-
-Förutom den tidigare nämnda PSYaml-modulen finns det också andra möjligheter att arbeta med YAML i PowerShell, som t.ex. YAMLDotNet-modulen.
-
-Vid implementering är det viktigt att vara noggrann med indrag och använda korrekt syntax för att undvika fel.
-
-## Se även
-- [PSYaml-modulen på PowerShell Gallery](https://www.powershellgallery.com/packages/PSYaml)
-- [YAML-specifikationen](https://yaml.org/spec/1.2/spec.html)
+## See Also
+- YAML-specifikation: https://yaml.org/spec/
+- GitHub `powershell-yaml`-modul: https://github.com/cloudbase/powershell-yaml
+- Lära dig mer om YAML: https://learnxinyminutes.com/docs/yaml/

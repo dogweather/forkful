@@ -1,7 +1,7 @@
 ---
-title:                "Написання до стандартного помилкового потоку"
-html_title:           "C: Написання до стандартного помилкового потоку"
-simple_title:         "Написання до стандартного помилкового потоку"
+title:                "Запис в стандартний потік помилок"
+html_title:           "Arduino: Запис в стандартний потік помилок"
+simple_title:         "Запис в стандартний потік помилок"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і для чого?
+## What & Why?
+(## Що таке & Чому?)
 
-Запис до стандартного потоку помилок - це процес, коли програмісти використовують спеціальну функцію для виведення повідомлень про помилки та іншу корисну інформацію у вікно помилок під час виконання їхніх програм. Це дає можливість зосям передбачати та уникнути можливих помилок або знаходити їх швидше, що полегшує роботу з програмами.
+Writing to standard error (stderr) means sending error messages and diagnostics there. Programmers do it to separate regular output from errors, making it easier to handle them differently.
 
-Як це зробити:
+## How to:
+(## Як це зробити:)
+
+Here's how to write to stderr in C:
 
 ```C
-#include<stdio.h>
+#include <stdio.h>
 
 int main() {
-
-   // Використовуємо fprintf для запису до стандартного потоку помилок
-   fprintf(stderr, "Це повідомлення про помилку!");
-
-   return 0;
+    fprintf(stderr, "An error occurred!\n");
+    return 0;
 }
 ```
 
-Виходячи з цього прикладу, ми можемо зробити висновок, що для запису до стандартного потоку помилок можна використовувати функцію ```fprintf``` з файловим дескриптором ```stderr```, який означає стандартний потік помилок. Це дозволяє програмістам виводити повідомлення про помилки та іншу корисну інформацію у вікно помилок під час виконання їхніх програм.
+Sample output when an error occurs:
 
-Глибоке занурення:
+```
+An error occurred!
+```
 
-Історичний контекст: Запис до стандартного потоку помилок був запропонований в оригінальній версії мови С з метою полегшення роботи з програмами та запобігання можливих помилок. Це стало популярним підходом серед програмістів і досі застосовується.
+## Deep Dive
+(## Поглиблений аналіз)
 
-Альтернативи: Ще одним підходом для виведення повідомлень про помилки є використання функції ```printf``` для виводу до стандартного потоку виведення. Однак, цей підхід не так ефективний, оскільки при використанні цієї функції потрібно буде додатково перенаправляти потік в стандартний потік помилок.
+Writing to stderr dates back to early Unix systems, keeping a clear distinction between standard output (stdout) and standard error. Alternatives include writing to log files or using syslog on Unix-like systems. Internally, stderr is a FILE* stream, buffered differently from stdout, and is typically unbuffered to speed up error reporting.
 
-Деталі реалізації: Виводом до стандартного потоку помилок може керувати системна змінна ```errno```. Також існує можливість використання інших функцій, таких як ```perror``` або ```strerror```, для отримання інформації про помилки у вигляді рядка.
+## See Also
+(## Дивіться також)
 
-Дивіться також:
-
-Щоб дізнатися більше про запис до стандартного потоку помилок у мові C, рекомендуємо переглянути наступні джерела:
-
-- Документація по функції fprintf у мові C: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html#Formatted-Output-Functions
-- Більш детальний огляд використання функції fprintf для запису до стандартного потоку помилок: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- Приклади використання функції fprintf для виводу повідомлень про помилки: https://www.geeksforgeeks.org/fprintf-in-c/
+- GNU C Library Manual on Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
+- POSIX standard definition for stderr: https://pubs.opengroup.org/onlinepubs/9699919799/functions/stderr.html
+- Advanced error handling with errno: http://man7.org/linux/man-pages/man3/errno.3.html

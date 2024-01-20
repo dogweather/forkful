@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con yaml"
-html_title:           "Ruby: Trabajando con yaml"
-simple_title:         "Trabajando con yaml"
+title:                "Trabajando con YAML"
+html_title:           "Arduino: Trabajando con YAML"
+simple_title:         "Trabajando con YAML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es YAML y por qué los programadores lo usan?
- YAML, YAML Ain't Markup Language, es un formato de serialización de datos de texto plano ampliamente utilizado en el mundo de la programación. Permite representar datos de forma legible tanto para humanos como para máquinas, lo que lo hace ideal para almacenar y compartir información en aplicaciones web, bases de datos o sistemas de configuración. Los programadores utilizan YAML principalmente por su simplicidad y flexibilidad, ya que es fácil de aprender y se puede adaptar a diferentes necesidades.
+## Qué & Por Qué?
+YAML es un formato de serialización de datos legible por humanos, usado comúnmente para archivos de configuración y data intercambio entre lenguajes. Programadores lo usan por su simplicidad y legibilidad comparado con JSON o XML.
 
 ## Cómo hacerlo:
-El formato YAML se basa en indentaciones y pares de claves y valores, similar a otros lenguajes como Python. A continuación se muestra un ejemplo de cómo se vería un archivo YAML:
+Ruby hace fácil trabajar con YAML usando la librería 'yaml'. Primero, instala la librería si aún no está:
 
 ```Ruby
-# Ejemplo de YAML
+gem install 'yaml'
+```
+
+Para parsear una cadena YAML:
+
+```Ruby
+require 'yaml'
+
+# Una cadena YAML simple
+yaml_string = <<-YAML
 nombre: Juan
-apellido: Pérez
-edad: 25
-teléfono: 555-1234-5678 
+profesion: Desarrollador
+YAML
+
+# Parseando la cadena YAML
+data = YAML.load(yaml_string)
+puts data['nombre'] # Salida: Juan
 ```
 
-Este código representa los datos de una persona en un formato estructurado y legible. Para acceder a estos datos en Ruby, se puede utilizar la gema YAML:
+Para generar una cadena YAML a partir de un hash de Ruby:
 
 ```Ruby
-require "yaml"
+require 'yaml'
 
-datos = YAML.load_file("usuario.yaml") # Carga el archivo YAML en una variable
+# Un hash de Ruby
+ruby_hash = { nombre: 'Juan', profesion: 'Desarrollador' }
 
-puts datos["nombre"] # Imprime "Juan"
-puts datos["apellido"] # Imprime "Pérez"
-puts datos["edad"] # Imprime 25
-puts datos["teléfono"] # Imprime "555-1234-5678"
+# Convirtiendo el hash a cadena YAML
+yaml_output = ruby_hash.to_yaml
+puts yaml_output
 ```
 
-## Detalles técnicos:
-YAML fue creado en 2001 y su primera versión fue publicada en 2002. A pesar de que se utiliza principalmente en entornos de programación web, también es usado en otros ámbitos como juegos de video o sistemas de configuración de servidores.
+## Exploración Profunda
+YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), se diseñó para ser más fácil de comprender para los humanos que otros formatos de serialización de datos. A pesar de que JSON se ha vuelto más popular en APIs web, YAML es aún muy usado en herramientas de DevOps como Docker y Kubernetes. Además de 'yaml', existen otras librerías como 'safe_yaml' que enfocan en seguridad, minimizando los riesgos al parsear YAML.
 
-Existen otros formatos de serialización de datos como JSON o XML, pero YAML se destaca por su simplicidad y legibilidad. Al ser un lenguaje interpretado, no requiere un proceso de compilación y es compatible con la gran mayoría de los lenguajes de programación.
-
-## Para saber más:
-Si quieres aprender más sobre YAML, puedes consultar la documentación oficial en su página web (https://yaml.org/) o revisar la implementación de la gema YAML en GitHub (https://github.com/ai/psych). También hay numerosos tutoriales y ejemplos en línea que te pueden ayudar a familiarizarte con este formato de serialización de datos.
+## Ver También:
+- Documentación oficial de Ruby para YAML: https://ruby-doc.org/stdlib-2.6.1/libdoc/yaml/rdoc/YAML.html
+- YAML Specification: https://yaml.org/spec/1.2/spec.html
+- Artículo "Working with YAML in Ruby": https://www.digitalocean.com/community/tutorials/how-to-work-with-yaml-in-ruby
+- SafeYAML: https://github.com/dtao/safe_yaml

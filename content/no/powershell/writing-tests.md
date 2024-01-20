@@ -1,7 +1,7 @@
 ---
-title:                "Skriver tester"
-html_title:           "PowerShell: Skriver tester"
-simple_title:         "Skriver tester"
+title:                "Skriving av tester"
+html_title:           "Arduino: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -11,33 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriver du tester i koden din? Ja, det er faktisk en viktig del av programmering! Tester er en måte å sikre at koden vår fungerer som den skal og at vi har færre feil når vi kjører den. Det sparer oss for mye tid og frustrasjon i det lange løp.
+Skrive tester betyr å lage scripts som sjekker at kode fungerer som forventet. Programmere gjør dette for å sikre kvalitet og forebygge feil.
 
-## Hvordan:
-Her er et raskt eksempel på hvordan du kan skrive en enkel test i PowerShell:
+## How to:
+For å skrive tester i PowerShell kan Pester, et rammeverk for testing, brukes. Her er et eksempel på en enkel test:
 
 ```PowerShell
-Function Add-Numbers ($a, $b) {
-    return $a + $b
+# Installer Pester hvis det ikke allerede er installert
+Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# Importer Pester-modulet
+Import-Module Pester
+
+# Skriv en enkel funksjon
+function Get-MultiplyResult($x, $y) {
+    return $x * $y
 }
 
-Describe "Add-Numbers" {
-    Context "When given two numbers" {
-        It "Adds them together correctly" {
-            $result = Add-Numbers 2 3
-            $result | Should -Be 5
-        }
+# Definer test
+Describe "Get-MultiplyResult Tests" {
+    It "multiplies two numbers" {
+        Get-MultiplyResult -x 2 -y 3 | Should -Be 6
     }
 }
+
+# Kjør testen
+Invoke-Pester
 ```
 
-I dette eksempelet lager vi en funksjon som legger sammen to tall, og deretter skriver vi en test for å forsikre oss om at funksjonen fungerer som den skal. Vi bruker "Describe", "Context" og "It" for å strukturere testen vår og sjekker resultatet med "Should -Be" setningen.
+Forventet output:
 
-## Dypdykk:
-Tester har blitt en viktig del av programmering siden begynnelsen av 2000-tallet. Det er mange forskjellige typer tester, som enhetstester, integrasjonstester og akseptansetester, som hver har sin egen rolle i å sikre koden vår. Alternativer til å skrive tester i PowerShell inkluderer å bruke ulike rammeverk som Pester eller NUnit.
+```
+Starting discovery in 1 files.
+Discovering in C:\path\to\your\tests.tests.ps1.
+Found 1 tests. 143ms
+Discovery finished in 191ms.
 
-Når du skriver tester i PowerShell, er det nyttig å ha et godt strukturert og formatert kode for å gjøre det enkelt å lese og vedlikeholde. Du kan også bruke ulike moduler og funksjoner som hjelper deg med å håndtere koden og resultatene av testene dine.
+Running tests from 'C:\path\to\your\tests.tests.ps1'
+Describing Get-MultiplyResult Tests
+ [+] multiplies two numbers 82ms (77ms|5ms)
+Tests completed in 273ms
+Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```
 
-## Se også:
-- [Pester documentation](https://pester.dev)
-- [NUnit framework documentation](https://nunit.org)
+## Deep Dive
+Pester ble introdusert i 2014 og ble raskt standard for PowerShell testing, delvis fordi det følger med i Windows 10 og nyere. Alternativer inkluderer PSUnit og PowerShell xUnit, men Pester er mest brukt. Pester tillater mocking, testdekning og BDD-stil testing og følger PowerShell skriptkonvensjoner, noe som gjør det til en naturlig del av PowerShell-utviklers verktøykasse.
+
+## See Also
+- [Pester, PowerShell testing framework](https://pester.dev/)
+- [PowerShell Testing Integration med Visual Studio Code](https://code.visualstudio.com/docs/languages/powershell#_testing-powershell)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "Haskell: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Lavorare con YAML"
+html_title:           "Bash: Lavorare con YAML"
+simple_title:         "Lavorare con YAML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Lavorare con YAML in Haskell significa manipolare dati in un formato che punta a essere facile da leggere per gli umani. Lo si fa per configurazioni, serializzare dati e per lavorare con tecnologie come Kubernetes o Docker che lo adottano ampiamente.
 
-Lavorare con YAML è un modo per gestire e organizzare i dati in un formato più facile da leggere e scrivere per i programmatori. Spesso viene utilizzato per configurare le impostazioni di un'applicazione o per gestire una grande quantità di dati. 
+## How to:
+Per lavorare con YAML in Haskell, usiamo il pacchetto `yaml`, ottenibile con `cabal install yaml`. Ecco un esempio per leggere un file YAML e convertirlo in una struttura dati Haskell:
 
-## Come Fare:
+```Haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-Un esempio di come utilizzare YAML in Haskell potrebbe essere il seguente:
+import Data.Yaml
+import Control.Applicative
+import Data.HashMap.Strict (HashMap)
+import qualified Data.ByteString.Char8 as BS
 
-```
-import Data.Yaml (decodeFileThrow)
+data Config = Config
+  { setting1 :: String
+  , setting2 :: Int
+  } deriving (Show, Eq)
+
+instance FromJSON Config where
+  parseJSON (Object v) =
+    Config <$> v .: "setting1"
+           <*> v .: "setting2"
+  parseJSON _ = empty
 
 main :: IO ()
 main = do
-  -- Esempio di lettura dei dati da un file YAML
-  utenti <- decodeFileThrow "utenti.yaml" :: IO [Utente]
-  -- Esempio di stampa dei dati letti
-  mapM_ (putStrLn . show) utenti
+  file <- BS.readFile "config.yaml"
+  let decoded = decodeEither' file
+  case decoded of
+    Left err -> print err
+    Right config -> print (config :: Config)
+```
+Esempio di output:
+```
+Config {setting1 = "test", setting2 = 42}
 ```
 
-Questo codice utilizza la libreria `Data.Yaml` per decodificare un file YAML e convertirlo in una struttura dati di tipo `Utente`. Successivamente, viene stampato l'elenco degli utenti letti dal file. 
+Per scrivere una struttura dati in un file YAML:
 
-## Approfondimento:
+```Haskell
+import Data.Yaml
 
-YAML è stato sviluppato nel 2001 da Clark Evans ed è diventato uno standard universale per la gestione dei dati strutturati. Sebbene sia utilizzato principalmente nei linguaggi di programmazione, può essere anche letto e scritto da umani in modo leggibile. 
+data User = User
+  { userId :: Int
+  , userName :: String
+  } deriving (Show)
 
-Alcune alternative a YAML sono JSON e XML, ma YAML è spesso preferito per la sua sintassi più semplice e intuitiva. Anche se la versione attuale di YAML è la 1.2, alcuni strumenti supportano ancora la versione precedente 1.1. 
+instance ToJSON User where
+  toJSON (User id name) =
+    object [ "userId" .= id
+           , "userName" .= name ]
 
-Per implementare l'utilizzo di YAML in Haskell, è necessario importare la libreria `Data.Yaml` e utilizzare le sue funzioni per leggere e scrivere i dati in formato YAML. Inoltre, è possibile utilizzare la libreria `Data.Aeson` per convertire i dati YAML in altri formati come JSON. 
+main :: IO ()
+main = BS.writeFile "user.yaml" (encode (User 1 "Alessandro"))
+```
 
-## Vedi Anche:
+Questo crea un file `user.yaml` con il seguente contenuto:
+```
+userId: 1
+userName: Alessandro
+```
 
-- [Documentazione ufficiale di YAML](https://yaml.org)
-- [Progetto GitHub della libreria `Data.Yaml`](https://github.com/snoyberg/yaml)
+## Deep Dive
+YAML, che sta per "YAML Ain't Markup Language", è stato creato nel 2001. È un super-set di JSON, offrendo più flessibilità e leggibilità. Alternativamente, in Haskell si possono usare `Data.Aeson` per JSON e `xml-conduit` per XML se YAML non è richiesto. La particolarità di YAML in Haskell si ottiene attraverso l'uso di typeclass `FromJSON` e `ToJSON` per la serializzazione personalizzata, garantendo che i tipi di dati complessi siano gestiti correttamente.
+
+## See Also
+- Documentazione ufficiale di YAML: [https://yaml.org](https://yaml.org)
+- Repository `yaml` Hackage: [https://hackage.haskell.org/package/yaml](https://hackage.haskell.org/package/yaml)
+- Introduzione a Aeson per JSON in Haskell: [https://hackage.haskell.org/package/aeson](https://hackage.haskell.org/package/aeson)

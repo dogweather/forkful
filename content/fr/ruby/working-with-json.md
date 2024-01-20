@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec JSON"
-html_title:           "Ruby: Travailler avec JSON"
-simple_title:         "Travailler avec JSON"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,28 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et Pourquoi?
-JSON, ou JavaScript Object Notation, est un format standard pour échanger des données entre applications. Les programmeurs utilisent JSON car il est facile à lire et à écrire pour les humains et à traiter pour les ordinateurs. Il est également léger et largement pris en charge par les langages de programmation.
+## What & Why?
+Travailler avec JSON (JavaScript Object Notation) permet d'échanger des données facilement entre applications. C'est essentiel pour le web, les APIs, et les applis modernes pour la simplicité et la portabilité.
 
-# Comment faire:
-Voici un exemple de code Ruby pour convertir un objet en JSON et vice versa:
-
+## How to:
 ```Ruby
 require 'json'
 
-# convertir un objet en JSON
-obj = { nom: "Jean", age: 25 }
-json_string = obj.to_json
+# Créer un hash et le convertir en JSON
+user_info = { name: "Jean", age: 30, city: "Paris" }
+user_json = user_info.to_json
+puts user_json # {"name":"Jean","age":30,"city":"Paris"}
 
-# convertir du JSON en objet
-obj = JSON.parse(json_string)
-
-puts obj[:age] # affiche 25
+# Parser une string JSON pour obtenir un hash Ruby
+parsed_info = JSON.parse(user_json)
+puts parsed_info["city"] # Paris
 ```
 
-# Plongée dans le sujet:
-JSON a été créé en 2001 par Douglas Crockford pour remplacer XML en tant que format léger pour échanger des données. Bien que JSON soit principalement utilisé avec JavaScript, il est largement pris en charge par d'autres langages de programmation tels que Ruby, Python et Java. Il existe également des alternatives à JSON telles que YAML et CSV pour stocker et échanger des données structurées.
+## Deep Dive
+JSON est né en 2001, conçu par Douglas Crockford. Il devient vite populaire pour sa simplicité par rapport à XML. Ruby fournit une librairie standard `json` pour le traitement. YAML et BSON sont des alternatives, chacun a ses cas d’usage.
 
-# Voir aussi:
-- Documentation officielle de la gem Ruby JSON: https://github.com/flori/json
-- Site web officiel de JSON: https://www.json.org/
+## See Also
+- [JSON.org](https://www.json.org/json-fr.html) pour les détails sur le format JSON.
+- [O'Reilly's "JSON: A Beginners Guide"](https://www.oreilly.com/library/view/json-a-beginners/9780470526910/) pour plus d'apprentissage sur JSON.

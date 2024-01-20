@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Swift: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## What & Why? (Quoi et Pourquoi ?)
+Manipuler du JSON, c’est jouer avec le format standard pour échanger des données. Les programmeurs le font pour communiquer avec des APIs, stocker des données ou configurer des applications.
 
-Travailler avec JSON est un moyen pour les programmeurs de partager et de stocker des données structurées dans un format léger et facile à lire. Cela permet également aux applications d'échanger des informations entre elles de manière efficace.
-
-## Comment faire:
-
+## How to (Comment faire)
 ```Swift
-// Création d'un objet JSON
-let json: [String: Any] = [
-    "nom": "Jean",
-    "âge": 35,
-    "ville": "Paris"
-]
+import Foundation
 
-// Conversion en données JSON
-if let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
-    // Conversion en chaîne de caractères
-    if let jsonString = String(data: jsonData, encoding: .utf8) {
-        // Affichage du résultat
-        print(jsonString)
+// Un JSON exemple
+let jsonString = """
+{
+    "name": "Jean Dupont",
+    "age": 31,
+    "isDeveloper": true
+}
+"""
+
+// Décode le JSON
+struct User: Codable {
+    var name: String
+    var age: Int
+    var isDeveloper: Bool
+}
+
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print(user)
+    } catch {
+        print("Erreur de décodage: \(error)")
     }
 }
 ```
+Sortie:
+`User(name: "Jean Dupont", age: 31, isDeveloper: true)`
 
-Voici le résultat de l'exemple ci-dessus:
+## Deep Dive (Plongée Profonde)
+Le JSON (JavaScript Object Notation) est né de la nécessité de faciliter l'échange de données entre serveurs et clients. Avant, on utilisait XML, plus verbeux. Aujourd'hui, on a aussi YAML, plus lisible, mais JSON reste roi pour sa simplicité et sa rapidité. Pour l'implémentation, Swift fournit `JSONDecoder` et `JSONEncoder` pour faciliter la sérialisation et la désérialisation.
 
-```Swift
-{
-    "nom": "Jean",
-    "âge": 35,
-    "ville": "Paris"
-}
-```
-
-## Plonger plus profondément:
-
-JSON, ou JavaScript Object Notation, a été développé par Douglas Crockford dans les années 1990 et est devenu un format de données populaire pour de nombreuses applications web et mobiles. Il existe également d'autres alternatives telles que XML, mais JSON est souvent privilégié en raison de sa simplicité et de sa compatibilité avec de nombreuses langues de programmation.
-
-L'implémentation de JSON peut être réalisée à l'aide de nombreuses bibliothèques et frameworks, tels que SwiftyJSON, Codable ou encore CodablePlus. Ces outils facilitent la manipulation de données JSON et peuvent être utiles pour les projets de grande envergure.
-
-## Voir aussi:
-
-Pour en savoir plus sur JSON et comment l'utiliser en Swift, voici quelques sources utiles:
-
-- [La documentation officielle de Swift sur le traitement de JSON](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID346)
-- [Un tutoriel vidéo sur l'utilisation de SwiftyJSON](https://www.youtube.com/watch?v=MQEL2OSvDZM)
-- [Un article sur les différentes bibliothèques de traitement de JSON en Swift](https://medium.com/@olton/processing-json-with-swift-5ef83ed2e826)
+## See Also (Voir Aussi)
+- Doc Swift officielle sur JSON: [Manipulation JSON](https://developer.apple.com/swift/)
+- Guide Apple sur le travail avec le codeable: [Encoding and Decoding Custom Types](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
+- Comparaison JSON vs. XML: [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)

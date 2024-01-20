@@ -1,7 +1,7 @@
 ---
-title:                "yamlを使用する"
-html_title:           "Kotlin: yamlを使用する"
-simple_title:         "yamlを使用する"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ワット＆ホワイ
-YAMLとは何かを説明するために、簡単に言えば、YAMLは人間にとって読みやすく書きやすい形式でデータを表現することができるファイル形式です。プログラマーたちは、YAMLを使用する主な理由は、データを分かりやすく整理するのに役立つからです。
+## What & Why? (何となぜ？)
+YAMLは設定やデータを表すためのフォーマット。読みやすく、編集もしやすいため、開発者がよく使う。
 
-## 使い方:
-まず最初に、YAMLを読み込むために必要なライブラリをインポートする必要があります。次に、```Yaml```クラスを使用して、YAMLファイルを読み込み、その内容をプログラム内のオブジェクトにマッピングすることができます。具体的なコーディング例を以下に示します:
+## How to: (やり方)
+KotlinでYAMLを扱うには、専用のライブラリが必要。例えば`snakeyaml`を使うことができる。
 
-```
+```kotlin
 import org.yaml.snakeyaml.Yaml
-import java.io.File
 
 fun main() {
     val yaml = Yaml()
-    val data = yaml.load(File("sample.yaml").inputStream()) //sample.yamlは読み込むYAMLファイル名に置き換えてください
-    println(data["title"])
+    val data = "name: Yuto\nage: 25"
+    val parsedData = yaml.load<Map<String, Any>>(data)
+
+    println(parsedData) // {name=Yuto, age=25}
 }
 ```
 
-上記の例では、```sample.yaml```ファイル内の```title```キーの内容をコンソールに出力しています。コンソールには、```sample.yaml```ファイル内の```title```の値が表示されます。
+`snakeyaml`ライブラリを使うと、YAML形式のテキストがKotlinのマップに変換される。
 
-## ディープダイブ:
-YAMLは2001年に登場したマークアップ言語です。主な競合相手はJSONで、YAMLはより人間にとって理解しやすい書式を採用しています。YAMLは設定ファイルやデータベースのエクスポートなど、さまざまな用途で使用されています。また、JavaやPythonなどの言語でも使用することができます。
+## Deep Dive (深掘り)
+YAMLは"YAML Ain't Markup Language"の略。JSONやXMLと比べ、人間が読み書きしやすい。しかし、パース時のエラーが起こりやすいのが難点。JSONやTOMLも良い選択肢。
 
-## 参照:
-- [YAML公式サイト](https://yaml.org/)
+## See Also (関連リンク)
+- YAML公式サイト: [https://yaml.org/](https://yaml.org/)

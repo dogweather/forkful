@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Ruby: Tekstitiedoston kirjoittaminen"
+html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## What & Why?
+"Mitä & Miksi?"
 
-Kun kirjoitat tekstitiedoston, tallennat tekstiä tietokoneellesi pysyvästi, jolloin voit käyttää sitä myöhemmin. Ohjelmoijat käyttävät tekstitiedostoja esimerkiksi tallentaakseen tietoa käyttäjistä tai asetuksista, tai luodakseen tietokantoja.
+Tekstitiedoston kirjoittaminen Rubyssä tarkoittaa tiedon tallentamista levylle tekstiformaatissa. Ohjelmoijat tekevät tämän datan varmuuskopiointia, lokitietojen seurantaa tai käyttäjätietojen talteenottoa varten.
 
-# Miten:
-
-Esimerkiksi Rubyllä voit käyttää `File.open`-funktiota kirjoittaaksesi tekstitiedoston. Alla on yksinkertainen esimerkki:
-
-```Ruby
-File.open("tiedostonimi.txt", "w") { |file| file.write("Tervetuloa!") }
-```
-
-Tämä avaa tai luo tekstitiedoston nimeltä "tiedostonimi.txt" ja kirjoittaa siihen tekstin "Tervetuloa!". Voit myös käyttää manyu-perusnotaatiota `<<` lisätäksesi tietoa tekstitiedostoon:
+## How to:
+"Kuinka tehdä:"
 
 ```Ruby
-File.open("tiedostonimi.txt", "a") { |file| file << "Lisää tekstiä!" }
+# Tiedoston luominen ja kirjoittaminen
+File.open("esimerkki.txt", "w") do |file|
+  file.puts "Hei Ruby!"
+end
+
+# Tiedoston lukeminen
+sisalto = File.read("esimerkki.txt")
+puts sisalto
 ```
 
-Tämä lisää tiedostoon "tiedostonimi.txt" tekstin "Lisää tekstiä!" ilman että nykyistä sisältöä poistetaan. Kun olet lopettanut tiedoston käytön, muista aina sulkea se `"close"`-funktion avulla, jotta kaikki muutokset tallentuvat oikein.
+Tuloste:
+```
+Hei Ruby!
+```
 
-# Syvä sukellus:
+## Deep Dive
+"Sukellus syvyyksiin"
 
-Tekstitiedostojen kirjoittaminen on ollut käytössä jo pitkään ja se on edelleen tärkeä osa ohjelmointia. Muut vaihtoehdot ovat esimerkiksi tietokannat, mutta tekstitiedostot ovat yksinkertainen tapa tallentaa ja jakaa tietoa.
+Ennen Rubyä tiedostojen käsittely oli yleensä monimutkaisempaa. Historiallisesti esimerkiksi C-kielessä käytettiin FILE-pohjaista lähestymistapaa. Ruby tarjoaa korkeamman tason IO-luokan, joka helpottaa tiedostonkäsittelyä. Vaihtoehtoisesti voi käyttää `IO#write` ja muita IO-menetelmiä tai kirjastoja, kuten CSV tai YAML tiedostoille. Implementation yksityiskohtien ymmärtäminen auttaa parantamaan suorituskykyä ja tietoturvaa.
 
-Implementointidetaljien osalta, Rubyllä on monia muita tapoja kirjoittaa ja muokata tekstitiedostoja. Tarkista Ruby-dokumentaatio lisäohjeita varten.
+## See Also
+"Näytä Myös"
 
-# Katso myös:
-
-- [Ruby-dokumentaatio](https://ruby-doc.org/core-2.6/File.html)
-- [Miten luoda tekstitiedostoja Rubyssa](https://stackoverflow.com/questions/3689133/quickly-create-a-large-file-on-a-windows-system)
+- Ruby IO Documentation: https://ruby-doc.org/core-3.1.0/IO.html
+- File class Documentation: https://ruby-doc.org/core-3.1.0/File.html
+- Ruby-Doc File I/O: https://www.ruby-doc.org/core-3.1.0/doc/syntax/io_rdoc.html

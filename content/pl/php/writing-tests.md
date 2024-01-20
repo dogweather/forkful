@@ -1,6 +1,6 @@
 ---
 title:                "Pisanie testów"
-html_title:           "PHP: Pisanie testów"
+html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robić?
-Pisanie testów jest procesem, w którym programista tworzy małe programy, aby sprawdzić, czy ich kod działa zgodnie z oczekiwaniami. Jest to ważna część procesu tworzenia oprogramowania, ponieważ pozwala uniknąć błędów i zapewnić, że aplikacja działa poprawnie.
+## Co i dlaczego?
+Pisanie testów to sprawdzanie kodu w różnych scenariuszach, by mieć pewność, że działa jak należy. Programiści robią to, by uniknąć błędów, upewnić się, że nowe zmiany nie psują istniejących funkcjonalności i by móc bez obaw refaktoryzować kod.
 
 ## Jak to zrobić:
+Będziemy używać PHPUnit – standardowego narzędzia do testów w PHP. Poniżej prosty test sprawdzający, czy nasza funkcja do sumowania liczb działa prawidłowo:
+
 ```PHP
-// Przykładowy test sprawdzający, czy suma dwóch liczb jest poprawna
-function testSum() {
-  $result = sum(2, 3);
-  if ($result == 5) {
-    echo "Test przeszedł pomyślnie";
-  } else {
-    echo "Test nie przeszedł";
-  }
+<?php
+use PHPUnit\Framework\TestCase;
+
+class SumTest extends TestCase
+{
+    public function testThatSumsRight()
+    {
+        require 'Sum.php'; // Załóżmy, że tutaj mamy naszą funkcję do sumowania
+        $result = sum(2, 3);
+        $this->assertEquals(5, $result);
+    }
+}
+?>
+```
+Załóżmy, że w `Sum.php` mamy:
+```PHP
+<?php
+
+function sum($a, $b) {
+    return $a + $b;
 }
 
-// Wywołanie funkcji testującej
-testSum();
+?>
 ```
+Uruchomienie tego testu da nam zieloną krzaczkę – znak, że test przeszedł pomyślnie.
 
-## Deep Dive:
-Pisanie testów jest częścią metodyki TDD (Test Driven Development), która została wprowadzona w 2003 roku przez programistę Kenta Becka. Jest to podejście, w którym testy są pisane przed napisaniem właściwego kodu. Istnieją również inne metody tworzenia testów, takie jak BDD (Behavior Driven Development), gdzie testy są pisane w języku naturalnym, aby lepiej odzwierciedlić oczekiwane zachowanie aplikacji.
+## W głębi tematu:
+Testy jednostkowe w PHP zyskały na popularności dzięki narzędziu xUnit. PHPUnit, który jest dzisiejszym standardem, został zainspirowany tym rozwiązaniem. Oprócz PHPUnit istnieją także inne frameworki jak Codeception czy phpspec. Ważne w testowaniu jest zrozumienie koncepcji testu jednostkowego, integracyjnego, systemowego i akceptacyjnego. Dodatkowo, implementacja Continuous Integration (CI) z automatyzacją testów pozwala na szybką i skuteczną weryfikację kodu.
+
+## Zobacz też:
+- Oficjalna strona PHPUnit: [https://phpunit.de/](https://phpunit.de/)
+- Wzorce testów xUnit: [https://en.wikipedia.org/wiki/XUnit](https://en.wikipedia.org/wiki/XUnit)

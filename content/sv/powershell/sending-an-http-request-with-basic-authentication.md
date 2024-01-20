@@ -52,5 +52,4 @@ När du implementerar HTTP-begäran med grundläggande autentisering i PowerShel
 ## Se också
 
 - [PowerShell Dokumentation](https://docs.microsoft.com/sv-se/powershell/)
-- [Invoke-RestMethod Guide](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
 - [Grundläggande autentisering](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Authentication)

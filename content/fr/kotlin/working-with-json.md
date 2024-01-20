@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec le JSON"
-html_title:           "Kotlin: Travailler avec le JSON"
-simple_title:         "Travailler avec le JSON"
+title:                "Manipulation de JSON"
+html_title:           "Arduino: Manipulation de JSON"
+simple_title:         "Manipulation de JSON"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Travailler avec JSON consiste à manipuler des données structurées au format JSON (JavaScript Object Notation) dans les applications. Les programmeurs le font pour faciliter l'échange de données entre différentes sources, telles que les serveurs et les clients, et pour pouvoir ensuite les traiter facilement dans leur code.
+## Quoi & Pourquoi ?
+JSON (JavaScript Object Notation) est un format léger d'échange de données facile à lire pour les humains et à analyser pour les machines. Les programmeurs l'utilisent pour échanger des données entre serveur et client, configurer des applications, et stocker des informations simples.
 
-## Comment faire:
-Utiliser JSON en Kotlin est simple et facile. Voici un exemple de code pour créer et lire un objet JSON:
-
-```Kotlin
-// Créer un objet JSON avec des paires de clé-valeur
-val jsonData = jsonObject("nom" to "Jean", "âge" to 25)
-// Lire et afficher la valeur de la clé "nom"
-println(jsonData["nom"])
-```
-Sortie: "Jean"
-
-Pour écrire un objet JSON dans un fichier, utilisez la fonction `writeToFile` avec le chemin du fichier en paramètre:
+## How to:
+Voici comment gérer du JSON en Kotlin :
 
 ```Kotlin
-val jsonData = jsonObject("nom" to "Jean", "âge" to 25)
-writeToFile("/chemin/vers/fichier.json", jsonData)
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+// On définit un data class pour représenter nos données 
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    // Création d'une instance User
+    val user = User("Jean", 30)
+
+    // Sérialisation : Data Class -> JSON String
+    val jsonString = Json.encodeToString(user)
+    println(jsonString) // {"name":"Jean","age":30}
+
+    // Désérialisation : JSON String -> Data Class
+    val userObj = Json.decodeFromString<User>(jsonString)
+    println(userObj) // User(name=Jean, age=30)
+}
 ```
+Ici on utilise la librairie `kotlinx.serialization`. Pour sérialiser, `encodeToString()`. Pour désérialiser, `decodeFromString()`.
 
-## Plongée en profondeur:
-JSON a été créé en 1999 comme alternative au format XML et est devenu l'une des méthodes les plus populaires pour transférer des données sur le web. Il est compatible avec la plupart des langages de programmation et est également largement utilisé dans les applications mobiles. D'autres formats de données, tels que YAML et CSV, peuvent également être utilisés pour les mêmes tâches, mais JSON reste le choix privilégié pour sa simplicité et sa flexibilité.
+## Deep Dive
+JSON existe depuis les débuts des années 2000. Alternatives incluent XML et YAML, mais JSON est favorisé pour sa simplicité. Kotlin utilise `kotlinx.serialization` comme bibliothèque standard pour la manipulation de JSON, offrant de bonnes performances grâce à la sérialisation en-ligne du code.
 
-En Kotlin, JSON est géré par la bibliothèque kotlinx.serialization, qui fournit des annotations pour marquer les classes comme sérialisables en JSON. Cette bibliothèque prend aussi en charge la détection automatique des types de données, ce qui rend la manipulation de JSON encore plus facile.
-
-## Voir aussi:
-Pour en savoir plus sur l'utilisation de JSON en Kotlin, vous pouvez consulter la documentation officielle de kotlinx.serialization (https://github.com/Kotlin/kotlinx.serialization) et d'autres tutoriels en ligne. Vous pouvez également apprendre à utiliser JSON dans d'autres langages de programmation tels que JavaScript et Python pour une meilleure compréhension de son utilisation dans les applications.
+## See Also
+- Documentation officielle de Kotlin Serialization: [kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
+- Spécification JSON: [json.org](https://www.json.org/json-fr.html)
+- Comparaison de JSON et XML: [w3schools.com](https://www.w3schools.com/js/js_json_xml.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "TypeScript: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "JSON-tiedostojen käsittely"
+html_title:           "Arduino: JSON-tiedostojen käsittely"
+simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+JSON eli JavaScript Object Notation on kevyt datanvaihtoformaatti. Ohjelmoijat käyttävät sitä tiedon tallentamiseen ja verkossa siirtämiseen, koska se on helppolukuinen ja -kirjoitettava sekä koneille että ihmisille.
 
-JSON eli JavaScript Object Notation on tapa tallentaa ja välittää tietoa JavaScript-objekteina. Se on yleisesti käytetty muoto tietojen siirtoon sovellusten välillä. JSON on helposti luettava ja ymmärrettävä, mikä tekee siitä suositun valinnan ohjelmoijille.
-
-## Kuinka:
-
-```TypeScript
-let data = {
-    name: "John",
-    age: 30,
-    hobbies: ["reading", "coding", "music"],
-}
-
-// Muuntaa JavaScript-objektin JSON-merkkijonoksi
-let json = JSON.stringify(data);
-
-// Tulostaa JSON-merkkijonon
-console.log(json);
-
-// Muuntaa JSON-merkkijonon JavaScript-objektiksi
-let obj = JSON.parse(json);
-
-// Tulostaa JavaScript-objektin
-console.log(obj);
-```
-
-Tulos:
+## How to:
+Yksinkertainen TypeScript-esimerkki JSONin käsittelystä:
 
 ```TypeScript
-{"name":"John","age":30,"hobbies":["reading","coding","music"]}
-{name: "John", age: 30, hobbies: ["reading", "coding", "music"]}
+// Määritellään TypeScript-tyyppi
+type Henkilo = {
+  nimi: string;
+  ika: number;
+  harrastukset?: string[]; // vapaaehtoinen kenttä
+};
+
+// Esimerkki JSON-olio
+const json = `{
+  "nimi": "Maija",
+  "ika": 30,
+  "harrastukset": ["juoksu", "lukeminen"]
+}`;
+
+// Miten muunnetaan JSON-merkkijono TypeScript-olioksi
+const henkilo: Henkilo = JSON.parse(json);
+
+console.log(henkilo.nimi); // Output: Maija
+
+// Miten muunnetaan TypeScript-olio JSON-merkkijonoksi
+const uusiJson = JSON.stringify(henkilo);
+console.log(uusiJson); // Output: {"nimi":"Maija","ika":30,"harrastukset":["juoksu","lukeminen"]}
 ```
 
-## Syväsukellus:
+## Deep Dive
+JSON kehitettiin alun perin JavaScript-kielen osana, mutta nykyään se on itsenäinen standardi, jota käytetään kieliriippumattomana datanvaihtoformaatina. Alternatiiveiksi JSONille voidaan mainita XML ja YAML, mutta JSON on ylivoimaisen suosittu osittain sen yksinkertaisuuden ja loogisen rakenteen takia. JSONin käsittely TypeScriptissä on suoraviivaista: `JSON.parse()` muuntaa JSON-merkkijonon TypeScript-olioksi, ja `JSON.stringify()` muuttaa TypeScript-olion takaisin JSON-merkkijonoksi.
 
-JSON kehitettiin vuonna 2001 Douglas Crockfordin toimesta, joka halusi standardoida tavan siirtää tietoa JavaScript-sovellusten välillä. Sittemmin JSON on noussut yhdeksi suosituimmista tiedonsiirtomuodoista.
-
-Muita vaihtoehtoja JSONille ovat esimerkiksi XML ja CSV. Vaikka XML on ollut käytössä pidempään, JSON on yleisesti ottaen nopeampi ja helpommin luettava. CSV on yksinkertaisempi muoto, joka sopii paremmin numeeristen tietojen välittämiseen.
-
-JSONin toteutus TypeScriptissa on mahdollista käyttämällä JSON-rajapintaa, joka tarjoaa metodeja JSON-tietojen muuntamiseen JavaScript-objekteiksi ja päinvastoin.
-
-## Katso myös:
-
-- [MDN web docs: JSON](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [TypeScript Doku: JSON](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#new-json-file-handling)
-- [JSON.org](https://www.json.org/)
+## See Also
+- MDN Web Docs, JSON: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- TypeScriptin viralliset sivut: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- JSON-spesifikaatio: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

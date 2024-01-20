@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
-html_title:           "Kotlin: Scrivere un file di testo"
+html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## Cosa & Perché?
+Scrivere un file di testo permette di salvare dati persistenti. I programmatori lo fanno per memorizzazione, configurazioni, log e scambio di dati fra applicazioni.
 
-Scrivere un file di testo significa salvare informazioni su un file che può essere letto e modificato come se fosse un normale documento di testo. I programmatori spesso scrivono file di testo per archiviare dati o per creare output leggibili a mano, come ad esempio report. 
-
-## Come:
-
+## Come fare:
+### Scrivere un file con `PrintWriter`:
 ```Kotlin
-// Creare un file di testo e scriverci dentro
-val file = File("mio_file.txt")
-file.writeText("Questo è un esempio di testo scritto nel mio file di testo!")
+import java.io.PrintWriter
 
-// Aggiungere del testo a un file esistente
-file.appendText("Ora sto aggiungendo del testo al mio file di testo!")
-
-// Leggere il contenuto di un file di testo
-val testo = file.readText()
-println(testo) // Output: Questo è un esempio di testo scritto nel mio file di testo! Ora sto aggiungendo del testo al mio file di testo!
+fun main() {
+    PrintWriter("esempio.txt").use { out ->
+        out.println("Ciao, questo è un file di testo!")
+    }
+}
 ```
+Output: File "esempio.txt" creato con il testo all'interno.
 
-## Approfondimenti
+### Uso di `File.writeText`:
+```Kotlin
+import java.io.File
 
-Scrivere file di testo è un processo comune nella programmazione, poiché permette di mantenere i dati in modo persistente. Tuttavia, è possibile anche utilizzare altri metodi per memorizzare dati come, ad esempio, un database. In Kotlin, l'utilizzo della classe ```File``` permette di scrivere e leggere da file di testo in modo semplice e intuitivo.
+fun main() {
+    val testo = "Ciao, questo è un file di testo!"
+    File("esempio.txt").writeText(testo)
+}
+```
+Output: File "esempio.txt" creato con il testo all'interno.
 
-## Vedi anche
+## Approfondimento
+Originariamente, scrivere su file si faceva con flussi 'stream' ('InputStream'/'OutputStream') in Java. Kotlin fornisce wrapper e funzioni di estensione per rendere il processo più ergonomico, come `writeText` e `printWriter()`. Un'alternativa è l'API `Files` di NIO, utile per file di grandi dimensioni o per operazioni asincrone.
 
-- [Tutorial su come scrivere un file di testo in Kotlin](https://www.baeldung.com/kotlin/write-file)
-- [Documentazione ufficiale di Kotlin sulla classe File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+## Vedi Anche
+- Documentazione ufficiale Kotlin su I/O: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- Java NIO: [oracle.com](https://docs.oracle.com/javase/8/docs/technotes/guides/io/index.html)
+- Gestione delle eccezioni in I/O file: [kotlinlang.org](https://kotlinlang.org/docs/reference/exceptions.html)

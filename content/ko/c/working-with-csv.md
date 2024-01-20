@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업하기"
-html_title:           "C: CSV 작업하기"
-simple_title:         "CSV 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# CSV 작업하는 방법과 이유
-CSV는 Comma Separated Values의 약자로, 콤마로 구분되어있는 텍스트 파일 형태입니다. 프로그래머들은 CSV를 사용하는 이유는 데이터를 저장하고 공유하기 위해서입니다. CSV는 엑셀 등 다른 프로그램에서도 쉽게 사용할 수 있어서 데이터 조작에 활용하기에 용이합니다.
+## What & Why? (CSV란 무엇이며 왜 사용하는가?)
 
-# 어떻게 하나요?
+CSV(Comma-Separated Values)는 데이터를 저장하고 교환하기 위한 텍스트 형식입니다. 쉼표로 구분된 값들은 테이블 형태의 데이터를 간단하게 표현하게 해서 데이터베이스와 스프레드시트가 손쉽게 교환될 수 있게 합니다.
+
+## How to: (실제 적용 방법)
 
 ```C
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 int main() {
-    // CSV 파일 열기
-    FILE *fp = fopen("sample.csv", "r");
-
-    // 파일에서 문자열 읽기
-    char str[100];
-    while(fgets(str, 100, fp) != NULL) {
-        // 문자열에서 콤마로 나누기
-        char *token = strtok(str, ",");
-
-        // 각 항목 출력
-        while(token != NULL) {
-            printf("%s", token);
-
-            // 다음 항목으로 이동
-            token = strtok(NULL, ",");
-        }
+    FILE *fp = fopen("data.csv", "r");
+    if (!fp) {
+        printf("File opening failed.");
+        return EXIT_FAILURE;
     }
 
-    // 파일 닫기
+    char buffer[1024];
+    while (fgets(buffer, 1024, fp)) {
+        // strtok 등을 사용해 쉼표로 구분한 값을 파싱하세요.
+        printf("%s", buffer);
+    }
+
     fclose(fp);
     return 0;
 }
 ```
+**[출력 예시]**
+```
+name,age,gender
+Alice,30,F
+Bob,25,M
+```
 
-### 코드 설명:
-- 파일을 열고, fgets 함수를 사용해 파일에서 문자열을 읽어옵니다.
-- 문자열을 strtok 함수를 이용해 콤마로 나누고, 각 항목을 출력합니다.
-- 파일을 닫아줍니다.
+## Deep Dive (깊이 알아보기)
 
-### 샘플 출력:
-- sample.csv 파일 내용: Alex,25,Programmer,Hobby: Coding
-- 출력: Alex
-    25
-    Programmer
-    Hobby: Coding
+CSV는 1970년대부터 사용되어 왔으며, 간단한 텍스트 혹은 로그 파일로 다룰 수 있는 가장 직관적인 자료 형식 중 하나입니다. JSON이나 XML 같은 현대적인 형식과 비교했을 때, CSV는 가독성이 떨어질 수 있지만, 파일 크기가 작고 파싱이 간단해서 여전히 널리 사용됩니다. 파싱은 `strtok` 같은 문자열 함수를 사용하거나, 더 복잡한 데이터 구조를 위해서 CSV 파싱 라이브러리를 활용할 수도 있습니다.
 
-# CSV 깊이 파보기
-- CSV는 1972년 Trinity 컴퓨터에서 최초로 사용되었습니다.
-- CSV는 다른 형식인 XML보다 용량이 작고 읽고 쓰기가 쉬워서 많이 사용됩니다.
-- 이 예제에서는 콤마로 데이터를 나누었지만, 다른 구분 기호도 사용할 수 있습니다. 예를 들어, 탭이나 세미콜론을 사용할 수 있습니다.
+## See Also (관련 자료 링크)
 
-# 관련 링크
-- [strtok 함수 정보](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [CSV 파일 형식 정보](http://www.ietf.org/rfc/rfc4180.txt)
-- [다른 구분 기호를 사용하는 예제](https://cboard.cprogramming.com/c-programming/162166-alternative-delimiters-strtok.html)
+- [RFC 4180](https://tools.ietf.org/html/rfc4180): CSV 파일 형식의 표준 정의
+- [libcsv](http://sourceforge.net/projects/libcsv/): 오픈 소스 CSV 파싱 라이브러리
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/csv?sort=votes&pagesize=15): CSV 관련 질문 및 답변

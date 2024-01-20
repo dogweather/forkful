@@ -1,7 +1,7 @@
 ---
-title:                "yamlを扱う"
-html_title:           "Clojure: yamlを扱う"
-simple_title:         "yamlを扱う"
+title:                "YAMLを扱う"
+html_title:           "Bash: YAMLを扱う"
+simple_title:         "YAMLを扱う"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAMLとは何か？
-YAMLとは、人間にとって読みやすいデータシリアライズ言語の一つです。プログラマーは構造化されたデータをファイルに保存したり、ネットワークで受け渡したりする際に、よく使用します。
+## What & Why? (何となぜ？)
 
-## How to:
-コーディング例と出力
+YAMLは設定ファイルやデータの交換に使われる。読みやすく、書きやすいから、プログラマーはよく使う。
+
+## How to: (やり方)
+
+Clojureには`clj-yaml`ライブラリがある。これを使ってYAMLを扱おう。
+
+```clojure
+;; 依存関係を追加
+;; [clj-yaml "0.7.0"]
+
+(require '[clj-yaml.core :as yaml])
+
+;; YAMLを文字列から読む
+(def config-string "
+http:
+  port: 8080
+  host: localhost
+")
+
+(def config (yaml/parse-string config-string))
+config
+;; => {:http {:port 8080, :host "localhost"}}
+
+;; オブジェクトをYAMLに変換
+(def config-map {:http {:port 8080, :host "localhost"}})
+
+(yaml/generate-string config-map)
+;; => "http:\n  host: \"localhost\"\n  port: 8080\n"
 ```
-Clojureコードブロックを使用して、YAMLデータを作成する方法を説明します。
-```
-(```Clojure)  
-(require '[clojure.data.yaml :as yaml])  
-(def data {:name "John" :age 25})  
-(yaml/write-str data)  
-```
 
-```  
-出力: "---\nage: 25\nname: John" 
+## Deep Dive (深掘り)
 
-## Deep Dive:
-深層情報
-YAMLのルーツは、プログラム言語であるPerlのモジュールである"YAML"から来ており、2001年に最初にリリースされました。代替としては、JSONやXMLがありますが、YAMLは読みやすさと表現力で優れています。YAMLは、様々なプログラミング言語でサポートされており、また、設定ファイルやデータ転送に広く使用されています。Clojureでは、YAMLの読み書きに"Clojure.data.yaml"ライブラリを使用することができます。
+YAMLは"YAML Ain't Markup Language"の略で、2001年に発表された。JSONの代わりに使う人もいる。ClojureではJavaのSnakeYAMLライブラリに基づいた`clj-yaml`がある。速度や特定の機能が重要なら他のライブラリも検討する価値がある。
 
-## See Also:
-関連リソースへのリンク
-- [Official YAML website](https://yaml.org/)
-- [Clojure.data.yaml official documentation](https://clojure.github.io/data.json/)
+## See Also (関連情報)
+
+- `clj-yaml` GitHubページ: https://github.com/clj-commons/clj-yaml
+- YAML公式サイト: https://yaml.org
+- SnakeYAML GitHubページ: https://github.com/asomov/snakeyaml

@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Elixir: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeid med CSV"
+html_title:           "Bash: Arbeid med CSV"
+simple_title:         "Arbeid med CSV"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-CSV står for Comma Separated Values og er en vanlig måte å organisere og lagre data på i tekstfiler. Programmører bruker CSV-filer for å lagre og arbeide med store mengder data på en enkel og strukturert måte. Dette gjør det enklere å importere og eksportere data til og fra ulike programmer og plattformer.
+## Hva & Hvorfor?
+CSV (Comma-separated values) innebærer data separert med kommaer. Programmerere bruker CSV fordi det er et enkelt format for å lagre og dele store datamengder, som kan brukes på tvers av ulike systemer.
 
-## Slik gjør du:
-I Elixir kan du arbeide med CSV-data ved å bruke funksjoner fra standardbiblioteket ```File```, ```CSV``` og ```Stream```. For eksempel kan du lese en CSV-fil ved å bruke ```File.stream!/2``` og deretter manipulere dataene ved hjelp av ```Stream.map/2```. Her er et eksempel på hvordan du kan skrive om hver rad i en CSV-fil til en liste i Elixir:
+## Hvordan gjøre det:
+Elixir gjør det enkelt å jobbe med CSV-filer ved bruk av eksterne biblioteker som `CSV`. Her er et eksempel:
 
+```elixir
+# For å inkludere CSV-biblioteket, legg til {:csv, "~> 2.4"} i mix.exs, og kjør mix deps.get
+
+defmodule MyCSV do
+  require CSV
+
+  def read_csv(path) do
+    File.stream!(path)
+    |> CSV.decode(separator: ?;, headers: true)
+    |> Enum.each(&process_row/1)
+  end
+
+  defp process_row(row) do
+    IO.inspect(row)
+  end
+end
+
+# Bruk
+MyCSV.read_csv("data.csv")
 ```
-file_path = "min_fil.csv"
+Eksempelutskrift for en rad: `%{"Header1" => "Verdi1", "Header2" => "Verdi2"}`
 
-File.stream!(file_path)
-|> CSV.decode()
-|> Stream.map(&IO.inspect/1)
-|> Stream.run()
-```
+## Dypdykk
+CSV er ikke nytt; det stammer fra tidlige regneark i 1970-årene. Alternativer som JSON og XML tilbyr mer struktur og funksjonalitet, men er tyngre å parse. Elixir's bibliotek `CSV` tilbyr en lettvekts løsning, med fleksibel håndtering av tegnsett og støtte for kodning og dekodning av datastrømmer.
 
-Dette vil ta hver rad i filen og skrive den ut til konsollen som en liste. Du kan også bruke funksjonene ```CSV.encode/1``` og ```File.write!/2``` for å skrive data til en CSV-fil.
-
-## Dypdykk:
-CSV er et populært filformat i dataverdenen og har vært i bruk siden 1972. Det finnes mange forskjellige måter å arbeide med CSV-data på, og Elixir tilbyr en enkel og effektiv måte å gjøre det på. Alternativer til Elixir inkluderer programmeringsspråk som Python og R, som også har biblioteker for å håndtere CSV-data.
-
-Når du arbeider med CSV-data i Elixir, bør du være oppmerksom på at funksjonene i standardbiblioteket ikke er ment for store datamengder. Hvis du har store CSV-filer, bør du vurdere å bruke et bibliotek som jobber med dataen i minne, som for eksempel `csv`-pakken fra Hex.
-
-## Se også:
-Her er noen ressurser for å lære mer om å arbeide med CSV i Elixir:
-
-- [Elixir Standardbiblioteket](https://hexdocs.pm/elixir/Kernel.html#CSV)
-- [`csv`-pakken fra Hex](https://hex.pm/packages/csv)
-- [Den offisielle CSV-spesifikasjonen](https://tools.ietf.org/html/rfc4180)
+## Se Også
+- Offisiell dokumentasjon for CSV-biblioteket i Elixir: [hexdocs.pm/csv](https://hexdocs.pm/csv/CSV.html)
+- Elixir's offisielle side: [elixir-lang.org](https://elixir-lang.org/)
+- Mer informasjon om CSV formatet: [RFC 4180](https://tools.ietf.org/html/rfc4180)

@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを扱う」"
-html_title:           "PowerShell: 「JSONを扱う」"
-simple_title:         "「JSONを扱う」"
+title:                "JSONを扱う方法"
+html_title:           "Arduino: JSONを扱う方法"
+simple_title:         "JSONを扱う方法"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# それは何で、なぜ？
-JSONを扱うとはどういうことか、そして何故プログラマーがそれを行うのかについて、2〜3文で説明します。
+## What & Why?
+JSONはデータ交換のための軽量なフォーマットです。プログラマーはAPI通信、設定ファイル、その他多くの場面でJSONと作業をします。
 
-JSONとは、テキスト形式でデータを表現するためのフォーマットです。プログラマーは、プログラム内でデータを簡単に読み書きするために、JSONを使用します。
-
-## 方法：
-次のように、JSONをPowerShellで作業する方法をお見せします。
-
+## How to:
+### JSONデータの読み込み
 ```PowerShell
-# テキストをJSON形式に変換する
-$text = 'hello world'
-$json = $text | ConvertTo-Json
+# JSONファイルの読み取り
+$json = Get-Content -Path 'data.json' | ConvertFrom-Json
 
-# JSONオブジェクトをテキストに変換する
-$json | ConvertFrom-Json
-
-# ファイルからJSONを読み取る
-$json = Get-Content 'file.json' | ConvertFrom-Json
+# 結果の表示
+$json
 ```
 
-## 深堀り
-### 歴史的背景
-JSONは、プログラミング言語JavaScriptのオブジェクト表記から着想を得て、ダグラス・クロックフォード氏によって生み出されました。JavaScript以外のプログラミング言語でも利用可能で、WebアプリケーションやAPI管理において、デファクトスタンダードとなっています。
+### JSONデータの生成
+```PowerShell
+# PowerShellオブジェクトの作成
+$pso = [PSCustomObject]@{
+  Name = 'Taro'
+  Age = 30
+  Email = 'taro@example.com'
+}
 
-### 代替手段
-JSON以外にもデータのフォーマットとして、XMLやCSVがあります。しかし、XMLは煩雑な書式であり、CSVは構造化されたデータを表現するには適していません。そのため、多くのプログラマーがJSONを選択する傾向にあります。
+# JSONに変換して表示
+$pso | ConvertTo-Json
+```
 
-### 実装の詳細
-PowerShellには、JSONを操作するための`ConvertTo-Json`、`ConvertFrom-Json`などのコマンドが備わっています。また、外部ライブラリを使用することでより高度な操作が可能になります。
+### JSONデータの変更と保存
+```PowerShell
+# 既存のJSONオブジェクトにプロパティ追加
+$json | Add-Member -Type NoteProperty -Name 'PhoneNumber' -Value '123-456-7890'
 
-## 関連情報を見る
-以下のリンクから、JSONについてさらに学ぶことができます。
+# 変更したオブジェクトをJSONとして保存
+$json | ConvertTo-Json | Set-Content -Path 'data_modified.json'
+```
 
-- [Wikipedia - JSON](https://ja.wikipedia.org/wiki/JavaScript_Object_Notation)
-- [JSON.org](https://www.json.org/)
+## Deep Dive
+JSON (JavaScript Object Notation)は2000年代初頭にダグラス・クロックフォードによって考案されました。XMLの軽量な代替として普及。PowerShellでは`ConvertFrom-Json`と`ConvertTo-Json`コマンドレットで簡単に操作が可能。内部実装は.NETのJson.NETライブラリを利用。
+
+## See Also
+- [PowerShell 公式ドキュメント](https://docs.microsoft.com/ja-jp/powershell/)
+- [Json.NETライブラリ](https://www.newtonsoft.com/json)

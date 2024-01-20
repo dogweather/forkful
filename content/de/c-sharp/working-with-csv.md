@@ -1,7 +1,7 @@
 ---
-title:                "In Zusammenarbeit mit CSV arbeiten"
-html_title:           "C#: In Zusammenarbeit mit CSV arbeiten"
-simple_title:         "In Zusammenarbeit mit CSV arbeiten"
+title:                "Arbeiten mit CSV-Dateien"
+html_title:           "Arduino: Arbeiten mit CSV-Dateien"
+simple_title:         "Arbeiten mit CSV-Dateien"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -11,29 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-CSV ist eine Abkürzung für Comma-Separated Values und ist ein weit verbreitetes Dateiformat für den Austausch von Tabellendaten. Programmierer nutzen CSV, um Daten aus verschiedenen Quellen in ein einheitliches Format zu bringen oder um Daten in Excel-Tabellen zu importieren und zu exportieren.
+Arbeiten mit CSV (Comma-Separated Values) bedeutet, Daten in einer simplen Textform zu handhaben, bei der Werte durch Kommas getrennt sind. Programmierer greifen darauf zurück, weil CSV eine leicht lesbare und schreibbare, weit verbreitete Datenformatierung für den Datenaustausch ist.
 
-## So geht's:
-Beim Lesen oder Schreiben von CSV-Dateien gibt es einige wichtige Schritte zu beachten. Zunächst müssen wir die ```System.IO```-Bibliothek importieren, um mit Dateien zu arbeiten. Dann können wir die Klasse ```CsvReader``` oder ```CsvWriter``` verwenden, je nachdem ob wir Daten lesen oder schreiben möchten. Ein Beispiel zum Lesen einer CSV-Datei könnte folgendermaßen aussehen:
+## How to:
+```C#
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-```
-string filepath = "C:\\example.csv";
-
-using (var reader = new CsvReader(filepath))
+// CSV erstellen und schreiben
+var datenListe = new List<string[]>()
 {
-    while (reader.Read())
+    new string[] {"Name", "Alter", "Stadt"},
+    new string[] {"Max", "25", "Berlin"},
+    new string[] {"Anna", "30", "München"}
+};
+
+var csvPfad = "beispiel.csv";
+using (var sw = new StreamWriter(csvPfad, false))
+{
+    foreach (var zeile in datenListe)
     {
-        string column1 = reader.GetField<string>(0);
-        int column2 = reader.GetField<int>(1);
-        // weitere Logik
+        var csvZeile = string.Join(",", zeile);
+        sw.WriteLine(csvZeile);
     }
 }
+
+// CSV lesen
+var geleseneDaten = new List<string[]>();
+using (var sr = new StreamReader(csvPfad))
+{
+    string zeile;
+    while ((zeile = sr.ReadLine()) != null)
+    {
+        geleseneDaten.Add(zeile.Split(','));
+    }
+}
+
+// Erste Zeile ausgeben
+foreach (var zelle in geleseneDaten[0])
+{
+    Console.Write(zelle + " ");
+}
+```
+Sample Output:
+```
+Name Alter Stadt
 ```
 
-## Tief eintauchen:
-CSV wurde bereits in den 1970er Jahren entwickelt, lange bevor Excel oder andere Tabellenkalkulationsprogramme existierten. Heutzutage gibt es verschiedene Alternativen wie JSON oder XML, die ebenfalls für den Datenaustausch verwendet werden können. Bei der Implementierung ist zu beachten, dass CSV keine standardisierte Spezifikation hat, was zu verschiedenen Interpretationen führen kann. Es ist daher wichtig, immer darauf zu achten, dass die Daten korrekt formatiert sind.
+## Deep Dive
+CSV ist seit den frühen Computertagen im Gebrauch und überzeugt durch seine Simplizität. Alternativen wie JSON oder XML bieten strukturierte Datenhaltung und Metadaten, sind aber komplexer. Beim Umgang mit CSV in .NET existieren Bibliotheken wie `CsvHelper`, welche die Implementation vereinfachen und robuste Funktionalitäten, etwa für Serialisierung und Fehlerbehandlung, bieten.
 
-## Siehe auch:
-- Offizielle Dokumentation zur CsvHelper-Bibliothek: https://joshclose.github.io/CsvHelper/
-- Vergleich von CSV, JSON und XML: https://www.upwork.com/resources/csv-json-xml-comparison
-- Spezifikation von CSV: https://tools.ietf.org/html/rfc4180
+## See Also
+- [RFC 4180](https://tools.ietf.org/html/rfc4180) – Das CSV-Standardformat
+- [CsvHelper library](https://joshclose.github.io/CsvHelper/) – Beliebte .NET-Bibliothek für CSV
+- [Microsoft's guide to file IO](https://docs.microsoft.com/en-us/dotnet/standard/io/) – Microsofts Anleitung für Datei-IO in .NET

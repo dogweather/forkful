@@ -1,6 +1,6 @@
 ---
 title:                "Escrevendo testes"
-html_title:           "Swift: Escrevendo testes"
+html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+## What & Why? (O Que e Por Que?)
+Escrever testes é criar verificações automáticas para o seu código. Isso é feito para garantir que tudo funcione como esperado e para prevenir bugs quando alterações são feitas.
 
-Testes de código são uma prática comum entre programadores para garantir que os seus programas funcionem corretamente e sem erros. Eles são como uma garantia de qualidade para o seu código.
+## How to: (Como fazer:)
 
-## Como fazer:
-
-Para escrever testes em Swift, você pode criar uma classe separada com o sufixo `Tests`. Dentro dessa classe, você pode criar funções com o prefixo `test` para testar diferentes partes do seu código. Por exemplo:
+Exemplo de Teste de Unidade usando XCTest:
 
 ```Swift
-class MinhaClasseTests {
+import XCTest
+@testable import YourApp
 
-    func testSoma() {
-        let resultado = soma(2, 3)
-        XCTAssertEqual(resultado, 5)
+class YourAppTests: XCTestCase {
+    
+    func testExample() {
+        let result = YourApp.addTwoNumbers(numberOne: 2, numberTwo: 3)
+        XCTAssertEqual(result, 5, "A soma de 2 + 3 deve ser 5")
     }
-
-    func testMaiorQue() {
-        let resultado = maiorQue(10, 5)
-        XCTAssertTrue(resultado)
-    }
-
-    func testDivisao() {
-        let resultado = divisao(10, 2)
-        XCTAssertNotEqual(resultado, 3)
-    }
+    
 }
+
 ```
 
-O método `XCTAssertEqual` testa se o resultado de uma determinada expressão é igual ao valor esperado. O método `XCTAssertTrue` testa se o resultado de uma expressão é verdadeiro. E o método `XCTAssertNotEqual` testa se o resultado de uma expressão é diferente do valor esperado.
+Saída esperada após rodar o teste:
 
-## Deep Dive:
+``` 
+Test Suite 'All tests' started at 2023-03-18 17:06:12.467
+Test Suite 'YourAppTests' started at 2023-03-18 17:06:13.134
+Test Case '-[YourAppTests testExample]' started.
+Test Case '-[YourAppTests testExample]' passed (0.007 seconds).
+```
 
-Escrever testes não é uma prática nova e já é amplamente utilizado em outras linguagens de programação. Além dos métodos mencionados acima, o Swift também oferece outras opções para realizar testes, como o uso de mocks e stubs.
+## Deep Dive (Mergulho Profundo)
 
-Uma alternativa ao uso de testes é fazer revisões de código em equipe. Isso pode ser útil para encontrar erros e problemas em outras partes do código que podem passar despercebidos durante os testes.
+O XCTest é o framework de teste fornecido pela Apple, introduzido ao lado do Xcode 5 e iOS 7. Alternativas incluem Quick e Nimble para um estilo de descrição mais expressivo, mas XCTest é suficiente para a maioria dos casos. Internamente, escrever testes implica em entender asserções e o ciclo de vida do XCTestCase.
 
-A implementação de testes em Swift é suportada pela ferramenta de linha de comando XCTest. Essa ferramenta é responsável por executar os testes e fornecer os resultados. Além disso, o Xcode também possui suporte integrado para criação e execução de testes.
+## See Also (Veja Também)
 
-## Veja também:
-
-- [Tutorial sobre testes em Swift](https://www.raywenderlich.com/71-ios-unit-testing-and-ui-testing-tutorial)
-- [Vídeo explicando a importância dos testes em programação](https://www.youtube.com/watch?v=Eu35xM76kKY)
+- Documentação XCTest da Apple: https://developer.apple.com/documentation/xctest
+- Tutorial de testes em Swift: https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial
+- Quick, uma lib de testes BDD para Swift: https://github.com/Quick/Quick
+- Nimble, uma lib de asserções correspondente: https://github.com/Quick/Nimble

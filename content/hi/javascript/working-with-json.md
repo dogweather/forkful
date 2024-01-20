@@ -1,7 +1,7 @@
 ---
-title:                "json के साथ काम करना"
-html_title:           "Javascript: json के साथ काम करना"
-simple_title:         "json के साथ काम करना"
+title:                "JSON के साथ काम करना"
+html_title:           "Arduino: JSON के साथ काम करना"
+simple_title:         "JSON के साथ काम करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-JSON काम करने का एक तरीका है जिसमें डेटा को आसानी से प्रस्तुत किया जाता है। प्रोग्रामर इसका उपयोग करते हैं अपने डेटा को स्टोर और ट्रांस्फर करने के लिए।
+## What & Why? (क्या और क्यों?)
+JSON (JavaScript Object Notation) सरलता से डेटा आदान-प्रदान के लिए एक प्रारूप है। इसका इस्तेमाल programmers इसलिए करते हैं क्योंकि यह हल्का, आसानी से पढ़ने योग्य, और भाषा-निरपेक्ष है। 
 
-## कैसे करें?
+## How to: (कैसे करें:)
 ```Javascript
-// एक ऑब्जेक्ट बनाएं
-var person = { "नाम": "जॉन", "उम्र": 30, "शहर": "मुंबई" };
+// JSON ऑब्जेक्ट को स्ट्रिंग में बदलना
+let object = { name: "Amit", age: 30, city: "Delhi" };
+let jsonString = JSON.stringify(object);
+console.log(jsonString); // {"name":"Amit","age":30,"city":"Delhi"}
 
-// एक जीसन का स्ट्रिंगफाइ करें
-var json = JSON.stringify(person);
-
-// एक जीसन का पार्स कारें
-var obj = JSON.parse(json);
-
-// जीसन के फील्ड एक्सेस करें
-console.log(obj.नाम);
+// स्ट्रिंग को JSON ऑब्जेक्ट में बदलना
+let jsonString = '{"name":"Amit","age":30,"city":"Delhi"}';
+let object = JSON.parse(jsonString);
+console.log(object); // {name: "Amit", age: 30, city: "Delhi"}
 ```
 
-आउटपुट:
-```
-जॉन
-```
+## Deep Dive (गहराई से जानकारी)
+JSON, 2001 में Douglas Crockford द्वारा विकसित, एक text-based data format है जो JavaScript की object literal notation से प्रेरित है। वैकल्पिक रूपों में XML और YAML हैं, लेकिन JSON की सरलता और Read/Write की गति इसे अधिक लोकप्रिय बनाती है। खासकर वेब APIs में इसका प्रयोग डेटा interchange format के रूप में होता है। JSON को जावास्क्रिप्ट के अलावा अन्य भाषाओं में भी इस्तेमाल करने के लिए libraries उपलब्ध हैं।
 
-## गहराई में जाएं
-JSON का उपयोग स्टैंडर्ड डेटा फॉर्मेट के रूप में 1999 में शुरू हुआ था। अन्य विकल्पों में XML और CSV शामिल हैं। आजकल, JSON उपयोगी और लोकप्रिय है क्योंकि यह अनुप्रयोगों के बीच डेटा स्ट्रिंग का आसानी से ट्रांसफर करने की अनुमति देता है। जीसन इसकी साधारण, सरल संरचना के कारण भी पसंद किया जाता है।
-
-## और भी देखें
-- [MDN का JSON आर्टिकल](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
-- [कैसे करें: JavaScript में जीसन स्ट्रिंगिफाइ और पार्स](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript)
+## See Also (और भी देखें)
+- [JSON सरकारी वेबसाइट](https://www.json.org/json-en.html)
+- [Mozilla Developer Network पर JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [W3Schools JSON Tutorial](https://www.w3schools.com/js/js_json_intro.asp)

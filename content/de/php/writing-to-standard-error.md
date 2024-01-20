@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "PHP: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Arduino: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Schreiben von Fehlernachrichten an die Standardfehlerausgabe ist eine Möglichkeit für Programmierer, Fehler und Warnungen in ihrer Code-Syntax zu identifizieren und zu beheben. Es wird oft verwendet, um Fehler in Echtzeit zu protokollieren und die Debugging-Prozesse zu erleichtern.
+## What & Why?
+"Was & Warum?"
 
-## Wie?
-Um eine Fehlermeldung an die Standardfehlerausgabe zu schreiben, verwenden Sie einfach die Funktion "fwrite", die eine Zeichenfolge an einen offenen Dateizeiger schreibt. Hier ist ein Beispielcode:
+Standardfehler (stderr) ist ein Ausgabekanal, der für die Protokollierung von Fehlern genutzt wird, während Standardausgabe (stdout) für normale Programmoutput steht. Programmierer nutzen stderr, um Fehlermeldungen von anderen Ausgaben zu trennen, was das Debugging und die Logfile-Analyse erleichtert.
 
-```PHP
-// Öffnen Sie die Standardfehlerausgabe für das Schreiben
-$stderr = fopen('php://stderr', 'w');
-// Schreiben Sie die Fehlermeldung an die Standardausgabe
-fwrite($stderr, "Fehler: Division durch Null\n");
-// Schließen Sie die Datei
-fclose($stderr);
+## How to:
+"Wie geht's?"
+
+PHP ermöglicht das Schreiben auf stderr mit dem `fwrite()`-Funktion oder dem `file_put_contents()`-Funktion, zusammen mit der Konstante `STDERR`. Hier ein Beispiel, wie man eine einfache Fehlermeldung schreibt:
+
+```php
+<?php
+// Schreiben auf Standardfehler
+fwrite(STDERR, "Ein Fehler ist aufgetreten.\n");
+
+// Alternativer Weg mit file_put_contents()
+file_put_contents('php://stderr', "Ein alternativer Fehler.\n");
 ```
 
-Dieser Code gibt die Fehlermeldung "Fehler: Division durch Null" in der Standardfehlerausgabe aus.
+Ausgabe könnte so aussehen (je nach Umgebung eventuell nur im Fehlerlogs sichtbar):
 
-## Tiefes Eintauchen
-Das Schreiben von Fehlernachrichten an die Standardfehlerausgabe ist ein gängiger Ansatz in der Programmierung, der bereits seit den Anfängen von Unix verwendet wird. Eine Alternative dazu ist das Schreiben von Fehlermeldungen in ein Protokolldatei, was jedoch mehr Systemressourcen in Anspruch nimmt. Die Verwendung von Standardfehlerausgabe ermöglicht eine einfachere und schnellere Fehlerbehandlung.
+```
+Ein Fehler ist aufgetreten.
+Ein alternativer Fehler.
+```
 
-Um die Standardfehlerausgabe in PHP zu implementieren, wird die Funktion "fwrite" verwendet, die auch zum Schreiben von Daten in Dateien verwendet wird. Die Option "php://stderr" stellt dabei einen Dateizeiger auf die Standardfehlerausgabe her.
+## Deep Dive
+"Deep Dive"
 
-## Siehe auch
-- Offizielle PHP-Dokumentation: https://www.php.net/manual/de/function.fwrite.php
-- Einführung in die Fehlersuche und Debugging in PHP: https://www.phpentwickler.de/php/fehlersuche-debugging/
-- Die Bedeutung von Fehlerbehandlung in der Programmierung: https://www.dev-insider.de/warum-fehlerbehandlung-so-wichtig-ist-a-875199/
+Früher war es üblich, stderr über Shell-Umleitungen oder separate Error-Log-Dateien zu verwenden. In PHP gibt es `STDERR` seit Version 4.3.0, und es ist ein vordefinierter Dateihandle, der ohne Öffnung direkt verwendet werden kann. Die Alternativen zum stderr wie Logging-Bibliotheken (z.B. Monolog) bieten mehr Flexibilität und Funktionen, sind aber für komplexe Anwendungen überdimensioniert, wenn man einfach nur schnelle Fehlermeldungen ausgeben möchte.
+
+## See Also
+"Siehe auch"
+
+Für weiterführende Informationen:
+
+- PHP.net on Standard Predefined Constants: https://www.php.net/manual/en/reserved.constants.php
+- Stack Overflow on When to use STDERR instead of STDOUT: https://stackoverflow.com/questions/1430956/when-to-use-stderr-instead-of-stdout
+- PHP The Right Way on Error Reporting: http://www.phptherightway.com/#error_reporting

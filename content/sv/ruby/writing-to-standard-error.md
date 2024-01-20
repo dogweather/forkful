@@ -1,7 +1,7 @@
 ---
-title:                "Skriver till standardfel"
-html_title:           "Ruby: Skriver till standardfel"
-simple_title:         "Skriver till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Skriva till standardfel (stderr) handlar om att separera programfel och diagnostisk output från vanlig output (stdout). Det underlättar felsökning och gör att felmeddelanden kan hanteras separat.
 
-Skrivning till standardfel är en metod som programmerare använder för att skicka felmeddelanden till konsolen istället för den vanliga utmatningsströmmen. Detta gör det möjligt för dem att separera felmeddelandena från vanlig utdata och gör det lättare att felsöka och identifiera problem i koden.
-
-## Så här gör du:
+## How to:
+I Ruby kan du skriva till stderr med `STDERR.puts` eller `$stderr.puts`. Här är exempel:
 
 ```Ruby
-# Skriv ut ett felmeddelande till standardfel
-$stderr.puts "Detta är ett felmeddelande."
-
-# Skriv ut flera felmeddelanden till standardfel
-$stderr.puts "Första felmeddelandet"
-$stderr.puts "Andra felmeddelandet"
-
-# Skriv ut ett felmeddelande med variabelvärde
-name = "John"
-$stderr.puts "Det finns ingen användare med namnet #{name}."
+puts 'Det här är normal output.'
+STDERR.puts 'Det här är ett felmeddelande.'
 ```
 
-Exempel på output:
+När du kör, får du något som:
 
 ```
-Detta är ett felmeddelande.
-Första felmeddelandet
-Andra felmeddelandet
-Det finns ingen användare med namnet John.
+Det här är normal output.
+Det här är ett felmeddelande.
 ```
 
-## Fördjupning:
+Stdout och stderr kan omdirigeras separat i terminalen.
 
-Historiskt sett har standardfel använts för att skriva ut felmeddelanden vid körning av kommandoradarprogram, men det används också i moderna programmeringsspråk som Ruby för att underlätta felsökning. Alternativ till att skriva till standardfel inkluderar att använda loggfiler eller att skicka felmeddelanden till en extern tjänst för övervakning. Implementationen av skrivning till standardfel varierar beroende på operativsystem, men i Ruby används motsvarande ```$stderr.puts``` som standardmetod.
+## Deep Dive
+Fram till mitten av 70-talet, då konceptet med standard streams introducerades i Unix, var outputhantering mer inkonsekvent. Stderr erbjuder en dedikerad stream så att felmeddelanden inte blandas med vanlig output. Alternativ till `STDERR.puts` inkluderar `warn` för att ge en varning, eller att använda `raise` för att kasta ett undantag. Bakom kulisserna använder Ruby globala variabler `$stdout` och `$stderr` som motsvarar dessa streams.
 
-## Se även:
-
-- [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+## See Also
+- Ruby's IO class documentation: [IO - Ruby-Doc.org](https://ruby-doc.org/core/IO.html)
+- En mer genomgripande guide till standard streams: [Wikipedia - Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- Ruby's Kernel Module: [Kernel - Ruby-Doc.org](https://ruby-doc.org/core/Kernel.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Gleam: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML"
+html_title:           "Bash: Travailler avec YAML"
+simple_title:         "Travailler avec YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Travailler avec YAML est un moyen pour les programmeurs de stocker et de gérer des données dans un format facilement lisible par les humains et les machines. Il est souvent utilisé pour configurer des applications ou des infrastructures, car il est léger, extensible et facile à comprendre.
+## What & Why?
+Travailler avec YAML, c'est manipuler un format de données lisible par l'humain pour la configuration et l'échange d'information. Les programmeurs l'adoptent pour sa simplicité et sa clarté, surtout dans les projets de logiciels avec des fichiers de configuration.
 
-## Comment faire:
-Voici un exemple de code en Gleam pour écrire et lire des données YAML:
+## How to:
+Gleam ne dispose pas d'une bibliothèque standard pour analyser YAML, mais on peut interagir avec des bibliothèques externes en utilisant le FFI (Foreign Function Interface). Voici comment vous pourriez le faire :
 
-```Gleam
-import gleam/yaml
+```gleam
+// Imaginez que nous avons une bibliothèque externe `yaml_gleam`
+import yaml_gleam
 
-let data = make_gleam_yaml_data([
-  {"name": "John", "age": 25},
-  {"name": "Jane", "age": 30}
-])
-
-let yaml = data
-  |> gleam_io/file.write("my_data.yaml")
-
-let read_yaml = yaml
-  |> gleam_io/file.read()
-  |> unwrap_just
-
-gleam_yaml.from_string(read_yaml)
-|> Ok
-|> expect_equal(data)
+pub fn read_yaml() {
+  let content: String = "- name: John Doe\n  age: 30\n- name: Jane Smith\n  age: 25"
+  let users = yaml_gleam.parse(content)
+  case users {
+    Ok(data) -> data
+    Error(err) -> err
+  }
+}
 ```
 
-Voici une sortie d'exemple d'une structure de données YAML:
+Sortie échantillon (en supposant une implémentation qui renvoie une liste de maps) :
 
-```Gleam
-{ name: "John", age: 25 }
+```plaintext
+[
+  #{"name": "John Doe", "age": 30},
+  #{"name": "Jane Smith", "age": 25}
+]
 ```
 
-## Plongée en profondeur:
-La première version de YAML a été créée en 2001 par Clark Evans, Ingy döt Net et Oren Ben-Kiki. Il a été conçu pour être orienté objet et facile à comprendre pour les êtres humains, avec une syntaxe indentée qui rappelle les fichiers de configuration INI. YAML est également utilisé pour échanger des données entre différentes langues de programmation.
+## Deep Dive
+Historiquement, YAML est né comme une alternative au XML, plus facile à lire et à écrire. Parmi les alternatives, on retrouve JSON, souvent favorisé pour les APIs web pour sa compatibilité avec JavaScript. En Gleam, on pourrait concevoir une analyse YAML en mappant directement les structures sur des types Gleam, mais les détails dépendent de la bibliothèque choisie et de son API.
 
-D'autres alternatives à YAML existent, telles que JSON et XML, mais YAML est souvent privilé comme format de données car il offre à la fois la lisibilité humaine et la fonctionnalité orientée objet.
-
-## À voir également:
-- Documentation officielle YAML: https://yaml.org/
-- Bibliothèque Gleam YAML: https://gleam.run/packages/gleam_yaml/0.6.0/
-- Tutoriel Gleam: https://gleam.run/getting-started/
+## See Also
+- La documentation officielle de YAML : https://yaml.org
+- Le repo Gleam pour chercher des bibliothèques : https://github.com/gleam-lang
+- Un tutoriel JSON avec Gleam pour comprendre la manipulation de formats de données similaires : https://gleam.run/book/tour/json.html

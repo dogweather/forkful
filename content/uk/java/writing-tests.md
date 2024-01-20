@@ -1,6 +1,6 @@
 ---
 title:                "Написання тестів"
-html_title:           "Java: Написання тестів"
+html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "Java"
 category:             "Java"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## What & Why? (Що та Чому?)
+Писати тести - це створення коду для перевірки бізнес-логіки вашого додатку. Тестування гарантує, що ваша програма працює правильно і захищає від майбутніх помилок при змінах.
 
-Написання тестів - це процес перевірки правильності роботи вашої програми. Це важлива частина програмування, оскільки дозволяє впевнитися, що ваш код працює так, як ви очікуєте.
+## How to: (Як на практиці:)
+```Java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-## Як?
+class CalculatorTest {
 
-Нижче наведено приклад створення тесту в Java для методу, який додає два числа:
+    @Test
+    void testAddition() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 must equal 5");
+    }
+}
 
-```java
-public void testAdd() {
-  Calculator calc = new Calculator();
-  int result = calc.add(2, 3);
-  assert result == 5;
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
+Sample Output:
+```
+[Test successful]
+```
 
-Результат виконання цього тесту буде показувати, що метод ```add()``` правильно обчислює суму двох чисел і повертає очікуване значення. Таким чином, ви можете бути впевнені, що ваш код працює як потрібно.
+## Deep Dive (Занурюємось глибше):
+Тести в Java почали писати з JUnit, який з’явився у вісімдесятих. Є альтернативи, такі як TestNG або Spock. Важливість тестів вбудована в Agile і TDD (Test-Driven Development). Грунтувати розроблення на тестуванні – значить мінімізувати ризики.
 
-## Поглиблене вивчення
-
-Історично, тести були створені для доведення правильності програм, написаних на інших мовах, але в останні роки вони стали невід'ємною частиною процесу розробки програмного забезпечення. Існують інші способи перевірки правильності коду, які можуть бути використані в деяких ситуаціях, але створення тестів є основою тестування програм.
-
-Детальніше про створення тестів в Java можна дізнатися з документації на офіційному сайті Java (https://www.oracle.com/technetwork/articles/java/index-137868.html).
-
-## Дивись також
-
-- Розробка програм: вступ до тестів (https://developer.ibm.com/technologies/java/tutorials/j-junit5-introduction/)
-- Навчальний курс Java: тести (https://www.tutorialspoint.com/java/java_testing.htm)
+## See Also (Дивись також):
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Maven Repository (for test dependencies)](https://mvnrepository.com/)

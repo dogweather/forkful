@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med yaml"
-html_title:           "Rust: Å jobbe med yaml"
-simple_title:         "Å jobbe med yaml"
+title:                "Arbeid med YAML"
+html_title:           "Arduino: Arbeid med YAML"
+simple_title:         "Arbeid med YAML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-YAML står for "YAML Ain't Markup Language" og er et tekstbasert språk som brukes til å representere datastrukturer. Programmerere bruker YAML for å lagre og overføre data på en enkel og menneskeleselig måte.
+## What & Why?
+YAML, "YAML Ain't Markup Language", er et menneskelesbart data-serieliseringsformat. Programmere bruker YAML for konfigurasjonsfiler og datautveksling fordi det er lett å forstå og skrive.
 
-# Slik gjør du det:
+## How to:
+For å jobbe med YAML i Rust, må du bruke `serde_yaml`-biblioteket. Installér det ved å legge til `serde_yaml = "0.8.23"` i `Cargo.toml`. Her er et eksempel på hvordan parse en YAML-streng:
+
 ```Rust
-use serde_yaml; // importerer biblioteket
+use serde::{Deserialize, Serialize};
+use serde_yaml;
 
-// opprett en struktur som representerer dataen din
 #[derive(Debug, Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u8,
-    hobbies: Vec<String>,
+struct Config {
+    title: String,
+    owner: Owner,
 }
 
-let data = "
-    name: John
-    age: 25
-    hobbies:
-        - Reading
-        - Hiking
-        - Cooking
-"; // her kan du legge inn dataen du vil representere i YAML-format
+#[derive(Debug, Serialize, Deserialize)]
+struct Owner {
+    name: String,
+    dob: String,  // Dato format: YYYY-MM-DD
+}
 
-// konverter dataen til YAML-format
-let yaml = serde_yaml::to_string(&data)?;
+fn main() {
+    let yaml_str = r#"
+        title: "Eksempel Konfig"
+        owner:
+          name: "Ola Nordmann"
+          dob: "1990-05-30"
+    "#;
 
-// konverter YAML tilbake til datastruktur
-let person: Person = serde_yaml::from_str(&yaml)?;
-println!("{:?}", person); // resultat: Person { name: "John", age: 25, hobbies: ["Reading", "Hiking", "Cooking"] }
+    let config: Config = serde_yaml::from_str(&yaml_str).unwrap();
+
+    println!("{:?}", config);
+}
 ```
 
-# Dypdykk:
-YAML ble utviklet i 2001 av Clark Evans som en enklere og mer lesbar alternativ til XML og JSON. Det er et populært valg for konfigurasjonsfiler og brukes også i mange programmeringsspråk som Python, Java og selvfølgelig Rust.
+Kjør dette programmet og se strukturen printet ut:
 
-I Rust finnes det også alternativer for å jobbe med datastrukturer som Toml, som er mer fokusert på konfigurasjonsfiler, og JSON, som er mer utbredt i webutvikling. Men YAML tilbyr en fin balanse mellom lesbarhet og funksjonalitet, og det er enkelt å integrere med biblioteker som serde_yaml.
+```
+Config {
+    title: "Eksempel Konfig",
+    owner: Owner {
+        name: "Ola Nordmann",
+        dob: "1990-05-30"
+    }
+}
+```
 
-# Se også:
-- [YAML-spesifikasjonen](https://yaml.org/spec/)
-- [Sammenligning av YAML, JSON og Toml](https://stackshare.io/stackups/json-vs-toml-vs-yaml)
+## Deep Dive
+YAML ble lansert i 2001 og er ofte sammenlignet med JSON og XML. Alternativer inkluderer TOML og JSON. YAML skinner hvor menneskelig redigering og lesbarhet er viktig. Implementasjonsdetaljer er viktige fordi YAML har flere feller – som tabulatormellomrom og indentering – som kan føre til feil i parsing.
+
+## See Also
+- YAML offisiell side: [yaml.org](https://yaml.org)
+- Serde YAML crate-dokumentasjon: [docs.rs/serde_yaml](https://docs.rs/serde_yaml)
+- Rust serialisering med Serde: [serde.rs](https://serde.rs)

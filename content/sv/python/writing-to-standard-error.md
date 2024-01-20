@@ -1,6 +1,6 @@
 ---
 title:                "Skriva till standardfel"
-html_title:           "Python: Skriva till standardfel"
+html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 programming_language: "Python"
 category:             "Python"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att skriva till standardfel är en viktig del av programmering eftersom det låter utvecklare skriva felmeddelanden eller andra viktiga meddelanden till ett speciellt ställe istället för att blanda upp det med vanlig utmatning. Detta gör det enklare att hitta och åtgärda fel i koden.
+## What & Why?
+Skriva till standardfel (stderr) hanterar felmeddelanden separat från huvudoutputen (stdout). Programmerare gör detta för att organisera loggar, felsöka, och hantera fel korrekt.
 
-## Hur gör man:
-För att skriva till standardfel i Python, använder man funktionen `sys.stderr.write()`. Detta tar in ett meddelande som argument och skriver det till standardfel. Här är ett exempel:
+## How to:
+Använd `sys.stderr.write()` för att skriva till stderr och `print()` med `file=sys.stderr` för att dirigera utskriften till stderr.
 
 ```Python
 import sys
 
-sys.stderr.write("Detta är ett felmeddelande.")
+# Skriver direkt till stderr
+sys.stderr.write('Det här är ett felmeddelande.\n')
+
+# Använder print-funktionen för att skriva till stderr
+print('Det här är också ett felmeddelande.', file=sys.stderr)
 ```
 
-**Output:**
+Sample output:
+```
+Det här är ett felmeddelande.
+Det här är också ett felmeddelande.
+```
 
-`Detta är ett felmeddelande.`
+## Deep Dive
+Standard error, introducerad med Unix, separerar felmeddelanden från vanlig output. Alternativ inbegriper loggfiler och tredjepartsbibliotek. Python implementerar stderr via `sys`-modulen och dess användning påverkar inte programmets returvärde.
 
-## Djupdykning:
-Att kunna skriva till standardfel är viktigt eftersom det ger utvecklare en enkel sätt att visa felmeddelanden utan att störa den vanliga koden. Innan standardfel, var ett sätt att logga fel till en fil, men detta var oftast krångligt och ineffektivt. Andra alternativ är att skriva till standardutmatning, men detta kan bli rörigt och svårt att hitta rätt information. 
-
-För att skriva till standardfel i Python, använder man en inbyggd metod som kallas `sys.stderr.write()`. Denna metod tar in ett sträng-argument och skriver det till standardfel. Detta kan också kombineras med andra metoder som `sys.exit()` för att tydligt visa att det har skett ett fel och avsluta programmet.
-
-## Se även:
-- [Python dokumentation om skrivning till standardfel](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [En diskussion om användningen av standardfel på Stack Overflow (engelska)](https://stackoverflow.com/questions/53395323/when-to-use-sys-stdout-write-instead-of-print)
+## See Also
+- Python's official documentation for the sys module: https://docs.python.org/3/library/sys.html
+- The Unix standard streams concept: https://en.wikipedia.org/wiki/Standard_streams
+- Logging best practices: https://docs.python.org/3/howto/logging.html

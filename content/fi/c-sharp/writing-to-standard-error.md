@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "C#: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Standard error (stderr) on tietokoneen tapa raportoida ohjelman virheitä. Ohjelmoijat käyttävät sitä erottamaan virheviestit normaalista tulosteesta, mikä helpottaa logien analysointia ja vianetsintää.
 
-Kirjoittaminen virheen sijainnin tulosteeseen (engl. writing to standard error) on tapa, jolla ohjelmoijat voivat näyttää virheilmoituksia ohjelman suorituksen aikana. Tämä auttaa ohjelmoijia etsimään ja korjaamaan virheitä koodissaan ja helpottaa ohjelman debuggaamista.
-
-## Miten:
-
-Seuraavassa esimerkissä käytetään C#-kieltä näyttämään virheilmoitus kirjoittamalla se standardi virheen sijaintiin:
+## How to:
+C#:ssa `Console.Error` on yleisin tapa kirjoittaa stderr-virtaan. Tässä esimerkki:
 
 ```C#
 using System;
 
-int x = 5;
-int y = 0;
-try
+class StderrExample
 {
-    int result = x / y;
-    Console.WriteLine("Result: " + result);
-}
-catch (Exception e)
-{
-    // Kirjoitetaan virheilmoitus standardi virheen sijaintiin
-    Console.Error.WriteLine("Virhe: " + e.Message);
+    static void Main()
+    {
+        Console.Error.WriteLine("Tämä on virheviesti!");
+        Console.WriteLine("Tämä on normaali tuloste.");
+    }
 }
 ```
 
-Esimerkin tulosteena näkyy "Virhe: Attempted to divide by zero", mikä kertoo ohjelmoijalle, että laskutoimituksessa on yritetty jakaa nollalla.
+Kun ajat edellisen ohjelman, näet:
 
-## Syväsukellus:
+```
+Tämä on normaali tuloste.
+```
 
-Kirjoittaminen standardi virheen sijaintiin on ollut käytössä jo pitkään ohjelmoinnissa ja se on yleinen tapa koodin debuggaamisessa. Se on myös yksi tapa, jolla ohjelmistoilta saadaan tietoa ongelmista, jota käyttäjät kohtaavat. Toisaalta on myös muita tapoja käsitellä virheilmoituksia, kuten kirjoittaminen standardi tulosteeseen (engl. standard output) tai kirjoittaminen lokitiedostoon (engl. log file).
+Virheviestit eivät näy konsoleilla oletusarvoisesti, mutta voit ohjata ne tiedostoon tai toiseen ulostuloon komentoriviltä.
 
-## Katso myös:
+## Deep Dive
+Historiallisesti standard error erotettiin standarditulosteesta (stdout), jotta virheviestit pysyvät näkyvissä, vaikka normaali tuloste ohjattaisiin muualle. C#:ssa `Console.Error` on `TextWriter`-objekti, ja voit vaihtaa kohdetta metodilla `Console.SetError`. Vaihtoehdot ovat kirjoittaa manuaalisesti tiedostoon tai käyttää logituskehyksiä (esim. NLog, Serilog), jotka tarjoavat enemmän toiminnallisuutta.
 
-- https://docs.microsoft.com/en-us/dotnet/api/system.console.error
-- https://www.dotnetperls.com/console-error
-- https://stackoverflow.com/questions/19766396/c-sharp-writing-to-standard-error
+## See Also
+- Microsoft Docs, Console.Error: https://docs.microsoft.com/en-us/dotnet/api/system.console.error
+- Microsoft Docs, Console.SetError: https://docs.microsoft.com/en-us/dotnet/api/system.console.seterror
+- Ohjeita virheenkirjaukseen .NET:ssä: https://serilog.net/
+- NLog, eräs .NET-kirjauskirjasto: https://nlog-project.org/

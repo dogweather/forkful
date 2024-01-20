@@ -1,6 +1,6 @@
 ---
 title:                "Working with json"
-html_title:           "C# recipe: Working with json"
+html_title:           "Arduino recipe: Working with json"
 simple_title:         "Working with json"
 programming_language: "C#"
 category:             "C#"
@@ -11,51 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with JSON is a way for programmers to transfer and store data in a lightweight and easy-to-read format. It stands for JavaScript Object Notation and is commonly used for data interchange between web applications. JSON's simplicity and flexibility make it a popular choice for data transfer, storage, and retrieval.
+
+Working with JSON means parsing and generating JSON (JavaScript Object Notation) data in your applications. Programmers do it because JSON is a lightweight, text-based data interchange format that's easy for humans to read and write, and easy for machines to parse and generate.
 
 ## How to:
-To work with JSON in C#, you can use the Newtonsoft.Json library. First, install the library using NuGet by running the following command in the Package Manager Console:
+
+In C#, you'll likely use the `System.Text.Json` namespace for JSON processing. Let's say you've got a simple class:
+
 ```C#
-Install-Package Newtonsoft.Json
-```
-Next, add a reference to the library in your C# code:
-```C#
-using Newtonsoft.Json;
-```
-To serialize an object to JSON, use the ```JsonConvert.SerializeObject()``` method:
-```C#
-var person = new { Name = "John", Age = 30 };
-
-string json = JsonConvert.SerializeObject(person);
-
-Console.WriteLine(json);
-
-// Output: {"Name":"John","Age":30}
-```
-
-To deserialize JSON into an object, use the ```JsonConvert.DeserializeObject()``` method:
-```C#
-var json = @"{ 'Name': 'Jane', 'Age': 25 }";
-var person = JsonConvert.DeserializeObject<Person>(json);
-Console.WriteLine(person.Name); // Output: Jane
-Console.WriteLine(person.Age); // Output: 25
-
-// Define a class that matches the JSON key-value pairs
-public class Person
+public class Gamer
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    public string GamerTag { get; set; }
+    public int HighScore { get; set; }
 }
 ```
 
-## Deep Dive:
-JSON was first introduced in 1999 as an alternative to the more complex XML format. It gained popularity with the rise of web APIs and is now the preferred format for data transfer in most web applications. Some alternatives to JSON include XML, CSV, and YAML, but JSON remains the most widely used due to its simplicity and wide support in programming languages.
+To serialize this object to JSON, do this:
 
-The structure of JSON is similar to that of a JavaScript object, with key-value pairs enclosed in curly braces. Values can be strings, numbers, booleans, arrays, or other objects. In C#, JSON can be manipulated using classes or dynamic objects.
+```C#
+var gamer = new Gamer { GamerTag = "PlayerOne", HighScore = 9001 };
+string jsonString = JsonSerializer.Serialize(gamer);
+Console.WriteLine(jsonString);
+```
 
-JSON is also human-readable, making it easy for developers to spot errors or debug data transfer issues. It is also supported by most modern web browsers and is a preferred data format for JavaScript developers.
+Output:
+```
+{"GamerTag":"PlayerOne","HighScore":9001}
+```
 
-## See Also:
-- [Newtonsoft.Json library] (https://www.newtonsoft.com/json)
-- [JSON.org] (https://www.json.org/)
-- [JSON on Wikipedia] (https://en.wikipedia.org/wiki/JSON)
+To deserialize from JSON back into an object:
+
+```C#
+string jsonString = "{\"GamerTag\":\"PlayerOne\",\"HighScore\":9001}";
+Gamer gamer = JsonSerializer.Deserialize<Gamer>(jsonString);
+Console.WriteLine($"GamerTag: {gamer.GamerTag}, HighScore: {gamer.HighScore}");
+```
+
+Output:
+```
+GamerTag: PlayerOne, HighScore: 9001
+```
+
+## Deep Dive
+
+JSON has been the go-to data format since the early 2000s, taking over from XML due to its simplicity. While `System.Text.Json` is now the preferred library in C# for .NET Core and .NET 5+, the `Newtonsoft.Json` library was the de facto standard for many years. `System.Text.Json` focuses on high performance and low memory allocation, but `Newtonsoft.Json` still has a broader feature set that some applications may require.
+
+## See Also
+
+- Microsoft Docs on `System.Text.Json`: https://docs.microsoft.com/dotnet/standard/serialization/system-text-json-overview
+- Newtonsoft.Json (Json.NET): https://www.newtonsoft.com/json
+- JSON Specification: https://www.json.org/json-en.html

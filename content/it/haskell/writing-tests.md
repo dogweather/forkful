@@ -1,6 +1,6 @@
 ---
 title:                "Scrivere test"
-html_title:           "Haskell: Scrivere test"
+html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa è e perché?
+## Che cosa e perché?
+Scrivere test nel codice serve a verificare che il software funzioni come atteso. I programmatori lo fanno per prevenire bug e garantire che le modifiche future non rompano funzionalità esistenti.
 
-Scrivere test di programma significa creare codice che verifica e prova le funzionalità del nostro software. I programmatori lo fanno per garantire che il loro codice funzioni correttamente e per trovare eventuali errori prima che i loro programmi vengano utilizzati da utenti reali.
-
-## Come si fa:
+## Come fare:
+Haskell utilizza HUnit e QuickCheck come librerie popolari per il testing. Ecco un esempio semplice con HUnit:
 
 ```Haskell
--- Importa il modulo di test di Haskell
 import Test.HUnit
 
--- Definisci una funzione da testare
-somma :: Int -> Int
-somma x = x + 5
+testAddition = TestCase (assertEqual "Verifica che 1 + 1 uguale 2" 2 (1 + 1))
 
--- Definisci una lista di test
-tests = TestList [
-  "Somma 3" ~: somma 3 ~?= 8, -- Verifica che la somma di 3 sia 8
-  "Somma 7" ~: somma 7 ~?= 12 -- Verifica che la somma di 7 sia 12
-]
-
--- Esegui i test e stampa l'output
-main = do
-  counts <- runTestTT tests -- Il risultato dei test viene assegnato a 'counts'
-  print counts -- Stampa il numero di test superati e falliti
+main :: IO ()
+main = runTestTT testAddition >>= print
 ```
 
+Output previsto:
+
 ```
-Cases: 2  Tried: 2  Errors: 0  Failures: 0
-Counts {cases = 2, tried = 2, errors = 0, failures = 0}
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Counts {cases = 1, tried = 1, errors = 0, failures = 0}
 ```
 
-## Approfondimento:
+Con QuickCheck per test basati su proprietà:
 
-Scrivere test è una pratica comune tra i programmatori per garantire la qualità del loro codice e facilitare la manutenzione. In passato, i programmatori dovevano testare manualmente ogni parte del loro software, ma con l'avvento dei moder
+```Haskell
+import Test.QuickCheck
+
+prop_reverseTwice :: [Int] -> Bool
+prop_reverseTwice list = reverse (reverse list) == list
+
+main :: IO ()
+main = quickCheck prop_reverseTwice
+```
+Output previsto:
+
+```
++++ OK, passed 100 tests.
+```
+
+## Analisi dettagliata:
+HUnit è ispirato a JUnit e permette di scrivere test di unità. QuickCheck implementa test basati su proprietà con input generati casualmente. Storicamente, QuickCheck ha influenzato il testing in altri linguaggi con concetti simili di generazione di test cases. Per implementare i test in Haskell, è importante comprendere il Controllo dei Tipi e le Funzioni Pure per un'efficacia ottimale.
+
+## Guarda anche:
+- HUnit: [http://hackage.haskell.org/package/HUnit](http://hackage.haskell.org/package/HUnit)
+- QuickCheck: [http://hackage.haskell.org/package/QuickCheck](http://hackage.haskell.org/package/QuickCheck)
+- Un articolo introduttivo ai test in Haskell: [https://wiki.haskell.org/Introduction_to_HUnit](https://wiki.haskell.org/Introduction_to_HUnit)
+- Una guida per approfondire QuickCheck: [https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html](https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html)

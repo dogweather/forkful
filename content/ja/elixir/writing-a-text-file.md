@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "Elixir: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,19 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 要点 & 理由？
-文章の記述を行うことは、プログラマーがファイルにテキストを書き込むことを指します。 テキストファイルへの書き込みは、プログラマーがコンピューター上でデータを保存したり、読み取ったりするために行う重要な作業です。
+## What & Why?
+テキストファイルの書き込みはデータ保存の基本。プログラムの結果や設定を永続化するために使う。
 
-## 方法：
+## How to:
+
+```elixir
+# ファイルに "Hello, World!" を書き込む
+File.write!("hello.txt", "Hello, World!")
+
+# 書き込み結果を確認
+IO.puts(File.read!("hello.txt"))
 ```
-Elixir.IO.write_file("file.txt", "Hello world!")
+
+出力:
+
 ```
-上記のコードは、"file.txt"という名前のファイルに"Hello world!"というテキストを書き込む方法を示しています。コマンドを実行すると、"file.txt"が作成され、その中に"Hello world!"というテキストが書き込まれます。
+Hello, World!
+```
 
-## 詳細説明：
-書き込み方法は、プログラミング言語によって異なります。Elixirでは、```IO.write_file()```関数を使用してファイルにテキストを書き込みます。他の言語では、同様の関数がある場合もありますが、構文が異なる場合もあります。
+## Deep Dive
+Elixirでのファイル書き込みは`File`モジュールを使用。`write/2`や`write!/2`が基本的な関数。この機能はElixirが生まれる前からあるが、ElixirはErlangのVM上で動いており、Erlangの堅牢性を受け継いでいる。別の方法としては、`Stream`を通じて大きなデータを作業することもできるが、小さなファイル向けには`File.write/2`のシンプルさが便利。
 
-## 関連リンク：
-- Elixir公式ドキュメント：https://elixir-lang.org/docs.html
-- テキストファイルの書き込み方法についての記事：https://qiita.com/tomy0610/items/11f393564decd41f63b6
-- ファイル操作に関するElixirのライブラリ：https://hexdocs.pm/elixir/1.12/Kernel.File.html
+## See Also
+
+- [Elixirの公式ドキュメント](https://hexdocs.pm/elixir/File.html)
+- [Erlangの :file モジュール](http://erlang.org/doc/man/file.html)
+- [Elixirフォーラム](https://elixirforum.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Escreviendo a error estándar"
-html_title:           "Kotlin: Escreviendo a error estándar"
-simple_title:         "Escreviendo a error estándar"
+title:                "Escribiendo en el error estándar"
+html_title:           "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
+## Qué y Por Qué?
+Escribir en el error estándar permite comunicar errores y diagnósticos sin mezclarlos con la salida de datos normales. Los programadores usan esto para separar los flujos de información y facilitar el debugging y el manejo de errores por parte de sistemas que consumen la salida del programa.
 
-Escribir a la salida de error estándar es una práctica común entre los programadores. Consiste en enviar mensajes de error o información adicional a la consola de la terminal mientras se ejecuta un programa. Esto se hace para facilitar la depuración y el monitoreo del código durante la ejecución.
-
-Los programadores utilizan la salida de error estándar para mostrar mensajes de error cuando el código encuentra un error en tiempo de ejecución. También se puede utilizar para imprimir información adicional que puede ser útil para entender la causa de un error o el comportamiento del programa.
-
-## Cómo:
-
-```Kotlin
+## Cómo Hacerlo:
+```kotlin
 fun main() {
-    val num = 0
-    try {
-        val result = 10 / num
-    } catch (e: ArithmeticException) {
-        System.err.println("¡No se puede dividir entre cero!")
-    }
+    // Imprimir en la salida estándar (stdout)
+    println("Esto es un mensaje en la salida estándar.")
+
+    // Imprimir en el error estándar (stderr)
+    System.err.println("¡Ups! Esto es un error.")
 }
 ```
+Salida esperada:
+```
+Esto es un mensaje en la salida estándar.
+¡Ups! Esto es un error.
+```
 
-Output: No se puede dividir entre cero!
+## Análisis Profundo
+Históricamente, la diferencia entre salida estándar y error estándar viene de Unix, donde se estableció una convención para separar los flujos de información. Existen alternativas para emitir errores, como el uso de archivos log o frameworks especializados para manejo de errores. La implementación depende del sistema operativo, pero generalmente, la escritura en el error estándar no está sujeta al buffering de salida, lo que significa que los mensajes de error se muestran inmediatamente.
 
-En el ejemplo anterior, el mensaje de error se imprime en la salida de error estándar, lo que permite al programador identificar el error y tomar medidas para solucionarlo.
-
-## Inmersión Profunda:
-
-La práctica de escribir a la salida de error estándar es común en varios lenguajes de programación, incluyendo Kotlin. Sin embargo, algunos lenguajes como Java tienen la opción de escribir mensajes de error a la salida estándar utilizando la función `e.printStackTrace()`. La diferencia es que al utilizar `System.err.println()`, el mensaje se mostrará con un color diferente en la consola, lo que lo hace más fácil de distinguir.
-
-Además, también es posible redirigir la salida de error estándar a un archivo, utilizando el operador `>` en la línea de comandos al ejecutar el programa.
-
-En cuanto a la implementación, escribir a la salida de error estándar se logra utilizando la clase `System` y su propiedad `err`. A través de esta propiedad, se puede acceder al flujo de la salida de error estándar y escribir mensajes utilizando el método `println()`.
+## Ver También
+- Documentación oficial de Kotlin: https://kotlinlang.org/docs/reference/
+- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
+- Guía de manejo de errores en Kotlin: https://kotlinlang.org/docs/exceptions.html

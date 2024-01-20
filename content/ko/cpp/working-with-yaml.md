@@ -1,7 +1,7 @@
 ---
-title:                "yaml 작업하기"
-html_title:           "C++: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## YAML이란 무엇이며, 왜 개발자들이 이를 사용할까요?
-YAML은 인간과 기계가 모두 읽고 쓰기 쉬운 형식의 데이터 직렬화 언어입니다. 개발자들은 YAML을 사용하여 데이터를 저장하고 전송하기 위해 사용합니다.
+## What & Why? (무엇을 왜?)
+YAML은 데이터 표현을 위한 간단한 언어입니다. 프로그래머들은 설정 파일, 데이터 교환 등을 위해 YAML를 사용합니다.
 
-## 사용 방법:
+## How to: (어떻게?)
+라이브러리 선택: yaml-cpp
 ```C++
-#include <iostream>
+// YAML 이용 예제
 #include <yaml-cpp/yaml.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 int main() {
-    // YAML 데이터 생성
-    YAML::Emitter out;
-    out << "name" << "John"
-        << "age" << 25;
+    // YAML 파일 읽기
+    std::ifstream fin("config.yaml");
+    YAML::Node config = YAML::Load(fin);
 
-    // YAML 데이터 출력
-    std::cout << out.c_str();
+    // 설정 데이터 접근
+    std::string name = config["name"].as<std::string>();
+    int age = config["age"].as<int>();
+    
+    // 출력
+    std::cout << "Name: " << name << ", Age: " << age << std::endl;
+    
+    // YAML 파일 쓰기
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "name" << YAML::Value << "Kim";
+    out << YAML::Key << "age" << YAML::Value << 25;
+    out << YAML::EndMap;
+
+    // 파일에 저장
+    std::ofstream fout("output.yaml");
+    fout << out.c_str();
 
     return 0;
 }
 ```
 출력:
 ```
-name: John
-age: 25
+Name: Lee, Age: 34
 ```
 
-## 깊이 들어가기:
-YAML은 오픈 소스 프로젝트인 라이브러리 LibYAML에서 시작되었습니다. 이제 해당 라이브러리는 유지보수되지 않지만, YAML 공식 사이트에서는 유용한 정보와 다른 라이브러리를 찾을 수 있습니다. 대안으로, C++에서 JSON과 XML과 같은 다른 데이터 형식을 사용할 수도 있지만, YAML은 읽기 쉽고 간결한 문법을 가지고 있으며 많은 개발자들이 선호하는 형식입니다. YAML은 C++ 뿐만 아니라 다른 프로그래밍 언어에서도 널리 사용됩니다.
+## Deep Dive (심층 분석)
+YAML은 "YAML Ain't Markup Language"입니다 (재귀적 약어). JSON, XML같은 다른 데이터 포맷에 비해 인간이 읽고 쓰기 쉽습니다. yaml-cpp는 C++에서 YAML을 파싱하고 출력하는 데 사용됩니다. C와 Python용 라이브러리도 있습니다.
 
-## 관련 자료:
-- [YAML 공식 사이트](https://yaml.org/)
-- [LibYAML 사이트](https://pyyaml.org/)
-- [공식 C++ YAML 라이브러리](https://github.com/jbeder/yaml-cpp)
-- [YAML 소개 비디오](https://youtu.be/vnh6Gj55OeY)
+## See Also (참고 자료)
+- YAML 공식 사이트: [yaml.org](https://yaml.org)
+- yaml-cpp GitHub 저장소: [github.com/jbeder/yaml-cpp](https://github.com/jbeder/yaml-cpp)
+- YAML 퀵 스타트 가이드: [learnxinyminutes.com/docs/yaml](https://learnxinyminutes.com/docs/yaml/)
+- YAML 사양: [yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)

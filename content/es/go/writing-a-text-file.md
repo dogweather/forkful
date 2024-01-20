@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo un archivo de texto"
-html_title:           "Go: Escribiendo un archivo de texto"
-simple_title:         "Escribiendo un archivo de texto"
+title:                "Escritura de un archivo de texto"
+html_title:           "Bash: Escritura de un archivo de texto"
+simple_title:         "Escritura de un archivo de texto"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+## Qué y Por Qué?
 
-Escribir un archivo de texto en Go es simplemente crear un archivo que contenga texto, como un documento de Word o un bloc de notas. Los programadores suelen hacer esto para almacenar datos o configuraciones importantes que necesitan ser accedidos y modificados por sus programas.
+Escribir un archivo de texto en Go es guardar datos en un fichero que puedes leer luego. Los programadores lo hacen para guardar configuraciones, resultados o compartir información entre programas y sesiones.
 
-# Cómo hacerlo:
+## Cómo Hacerlo:
 
-El proceso de escribir un archivo de texto en Go es bastante sencillo. Primero, debes importar el paquete "os" y el paquete "bufio" utilizando las líneas de código:
+Para escribir en un archivo en Go, usas el paquete `os`. Aquí tienes un ejemplo simple:
 
-```
-import "os"
-import "bufio"
-```
+```Go
+package main
 
-Luego, puedes crear un archivo nuevo utilizando la función "Create" del paquete "os". A continuación, utiliza la función "NewWriter" del paquete "bufio" y le pasa el archivo como parámetro para que puedas escribir en él. Finalmente, puedes escribir el texto deseado utilizando el método "WriteString" y cerrar el archivo con la función "Close". A continuación, tienes un ejemplo de cómo hacerlo:
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
 
-```
-archivo, err := os.Create("ejemplo.txt")
+func main() {
+    archivo, err := os.Create("ejemplo.txt")
+    if err != nil {
+        panic(err)
+    }
+    defer archivo.Close()
 
-if err != nil {
-    fmt.Println(err)
-    return
+    escritor := bufio.NewWriter(archivo)
+    _, err = escritor.WriteString("Hola, ¿qué tal?\n")
+    if err != nil {
+        panic(err)
+    }
+
+    escritor.Flush()
 }
 
-escritor := bufio.NewWriter(archivo)
-escritor.WriteString("¡Hola! ¡Este es un archivo de texto creado por un programa de Go!")
-escritor.Flush()
-archivo.Close()
 ```
 
-Si abres el archivo "ejemplo.txt" después de ejecutar este código, deberías ver el texto escrito dentro.
+Este código crea un archivo `ejemplo.txt` y escribe la línea "Hola, ¿qué tal?". Si el archivo ya existe, será sobreescrito.
 
-# Profundizando:
+## Profundizando
 
-Escribir archivos de texto en Go es un proceso común en la programación, ya que a menudo necesitamos almacenar información para su posterior uso. Sin embargo, también hay otras formas de almacenar datos, como en bases de datos o en lenguajes de marcado como JSON o XML.
+Históricamente, escribir en archivos ha sido una necesidad para persistir datos. Antes se usaban cintas y hoy discos o SSDs. En Go, además del `bufio` y `os`, puedes usar `ioutil`, aunque desde Go 1.16 está en desuso y se prefieren `os` y `io`. La escritura puede ser síncrona (esperando a que se complete) o asíncrona (en background), afectando el rendimiento y la respuesta.
 
-Si quieres profundizar más en cómo escribir archivos de texto en Go, puedes consultar la documentación oficial del lenguaje o explorar diferentes ejemplos en línea.
+## Ver También
 
-# Ver también:
-
-- [Documentación oficial de Go](https://golang.org/doc/)
-- [Ejemplos de escritura de archivos de texto en Go en GitHub](https://github.com/search?q=go+file+write)
+- Documentación oficial de Go para trabajar con archivos: https://golang.org/pkg/os/
+- Go by Example ofrece ejemplos sencillos para manejo de archivos: https://gobyexample.com/writing-files
+- Blog de Go sobre el paquete `io` en Go 1.16: https://blog.golang.org/go1.16#ioutil-package

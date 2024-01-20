@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura di test"
-html_title:           "Fish Shell: Scrittura di test"
-simple_title:         "Scrittura di test"
+title:                "Scrivere test"
+html_title:           "Arduino: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## What & Why? (Cosa e Perché?)
+Scrivere test significa creare script che verificano che il tuo codice funzioni come previsto. I programmatori lo fanno per assicurarsi che i nuovi cambiamenti non rompano funzionalità esistenti e per semplificare il mantenimento del codice. 
 
-Scrivere test è una pratica comune tra i programmatori con lo scopo di verificare che il codice scritto abbia il comportamento desiderato. Ciò permette ai programmatori di individuare e correggere eventuali errori nel codice prima che questo venga utilizzato nei programmi in produzione.
+## How to: (Come fare:)
+```Fish Shell
+# Definire una funzione per testare
+function test_sum
+    set result (math 2+2)
+    if test $result = 4
+        echo "test_sum: pass"
+    else
+        echo "test_sum: fail"
+    end
+end
 
-## Come fare:
-
-Utilizzare il Fish Shell per scrivere test è molto semplice. Basta utilizzare il comando ```fish -c [comando]``` per eseguire una serie di comandi e verificare che il risultato sia quello atteso. Ad esempio:
-
+# Eseguire la funzione di test
+test_sum
 ```
-fish -c "echo Ciao"```
+Output:
+```
+test_sum: pass
+```
 
-Questo eseguirà il comando ```echo Ciao``` e verificherà se l'output è "Ciao".
+## Deep Dive (Approfondimento)
+Testing in Fish è tipicamente minimalista rispetto ad altri shell come Bash; non esistono framework di testing integrati. Tuttavia, puoi usare strumenti come Fishtape o Fisherman per test più avanzati. Implementare test in Fish richiede una buona conoscenza delle sue funzionalità di scripting e delle convenzioni. 
 
-## Approfondimenti:
-
-La pratica di scrivere test è stata introdotta negli anni '50 e ha guadagnato popolarità nel mondo della programmazione. Alcune alternative al Fish Shell per scrivere test includono BASH, Z Shell e Korn Shell. Lo sviluppo dei test è una parte importante del processo di sviluppo del software e può aiutare a individuare ed eliminare bug prima che questi possano causare problemi ai programmi in produzione. 
-
-## Vedi anche:
-
-Per ulteriori informazioni sul Fish Shell e sulla scrittura dei test, visita il sito ufficiale del Fish Shell (https://fishshell.com/) o la documentazione ufficiale (https://fishshell.com/docs/current/).
+## See Also (Vedi Anche)
+- Fishtape: Uno strumento di test per Fish https://github.com/jorgebucaran/fishtape
+- Fisherman (ora chiamato Fisher): Un package manager per Fish https://github.com/jorgebucaran/fisher
+- Documentazione ufficiale di Fish: Guide e tutorial per Fish scripting https://fishshell.com/docs/current/index.html

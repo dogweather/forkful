@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם json"
-html_title:           "Swift: עבודה עם json"
-simple_title:         "עבודה עם json"
+title:                "עבודה עם JSON"
+html_title:           "Arduino: עבודה עם JSON"
+simple_title:         "עבודה עם JSON"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
-JSON הוא תבנית נתונים מקורית עבור מסמכי טקסט, המתאימה לשימוש בתכנות. מסמכים מסוג זה משמשים כדי להעביר מידע בין שתי השפות כאשר ניתן לקרוא ולכתוב באספקטים שונים
+## מה ולמה?
+JSON, שמשמעו JavaScript Object Notation, זהו פורמט מובנה לשיתוף נתונים בין שרת ללקוח או בין מערכות שונות. תכנתים שמתעסקים איתו כי זה פשוט, נקרא וכתוב על ידי מחשבים, וגם על ידי בני אדם.
 
-קוראים JSON כדי לעבד מידע מקוון בשפות תכנות כמו Swift. הכי קל לעבד עם בדיקת מסמכים כדי לבצע מסמך חדש ולצרף פזורים
+## איך לעשות:
+קריאה של JSON:
+```Swift
+import Foundation
 
-# כיצד לעבוד?
-כדי לגשת למידע JSON לשימוש בפרויקט Swift, ניתן להשתמש בתוכנית קוד אשר מאפשרת יצירת אובייקטים נתונים בצורה נוחה ומיידית.
-
-המהדר של Swift מאפשר לך להתמקד בעיבוד JSON ולתקשור עם מסמכי JSON בקלות ובמהירות.
-
-הנה דוגמא של קוד Swift:
-```
-let jsonData = """
+let jsonString = """
 {
-  "name": "John Doe",
-  "age": 28,
-  "hobbies": ["reading", "hiking", "painting"]
+    "name": "Jon Doe",
+    "age": 30
 }
-""".data(using: .utf8)
+"""
 
-// יצירת אובייקט נתונים מהמידע בתצורת JSON
-struct Person: Codable {
-  var name: String
-  var age: Int
-  var hobbies: [String]
+if let jsonData = jsonString.data(using: .utf8) {
+    do {
+        let person = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any]
+        if let name = person?["name"] as? String, let age = person?["age"] as? Int {
+            print("Name: \(name), Age: \(age)")
+        }
+    } catch {
+        print("JSON decoding failed: \(error)")
+    }
 }
+```
+תוצאה:
+```
+Name: Jon Doe, Age: 30
+```
+
+כתיבה של JSON:
+```Swift
+import Foundation
+
+let person = [
+    "name": "Jon Doe",
+    "age": 30
+] as [String : Any]
 
 do {
-  // שימוש במחלקה לקריאת המידע והמרתו לאובייקט נתונים
-  let person = try JSONDecoder().decode(Person.self, from: jsonData)
-  
-  // הדפסת המידע מהאובייקט נתונים
-  print(person.name) // John Doe
-  print(person.age) // 28
-  print(person.hobbies) // ["reading", "hiking", "painting"]
+    let jsonData = try JSONSerialization.data(withJSONObject: person, options: [])
+    if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString)
+    }
 } catch {
-  print(error)
+    print("JSON encoding failed: \(error)")
 }
 ```
+תוצאה:
+```
+{"name":"Jon Doe","age":30}
+```
 
-# טיפול מקיף
-במסמכי JSON ניתן להשתמש גם במבנה נתונים מורכב יותר, כמו אובייקטים מקוננים או מערכי אובייקטים. כדי להתמודד עם כל מבנה נתונים כתכונה, מתוך כך אתה יכול לעבור על טכנולוגיות נוספות או טכנולוגיות אחרות
+## עומק טכני
+JSON הוא שיטה שהתפתחה בשנים הראשונות של האינטרנט אבל הפכה לפופולרית בעיקר עם הזרמת אפליקציות רשת. באופן היסטורי, XML היה הבחירה הנפוצה יותר עבור מחליפי נתונים אבל JSON הפך למועדף בזכות קריאותו ופשטותו. ב-Swift, מחלקת `JSONSerialization` ב-Foundation framework מאפשרת לממש את הסידור והפיענוח של JSON בקלות. אפשרות נוספת היא מחלקת `JSONEncoder` ו-`JSONDecoder` שמספקות דרך נוחה יותר לסידור ופיענוח של הנתונים אל ומה-JSON באמצעות מודלים.
 
-אם לך יש בא געגוע לעבוד עם JSON, אתה יכול לרכישת חפטיות מהקוד לעבוד עם JSON וקבלת מידע ממסמכי JSON שונים
-
-#ראה גם
-למידת נושא JSON בעומק נוסף יש לבקר בקישור הבא: https://www.swiftbysundell.com/articles/parsing-json-in-swift/
+## ראו גם
+- [מדריך Swift לסידור ופיענוח JSON](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [JSON ב-Swift עם JSONDecoder ו-Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)

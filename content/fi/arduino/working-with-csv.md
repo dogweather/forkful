@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Arduino: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"# Miksi ja miten CSV-tietojen käsittely Arduinolla
+## What & Why? - Mikä ja miksi?
+CSV (Comma-Separated Values) on tiedostomuoto tietojen tallentamiseen helppolukuiseen muotoon. Ohjelmoijat käyttävät sitä yksinkertaisten tietojen vaihtoon ja säilytykseen, koska se on yhteensopiva monien ohjelmistojen kanssa.
 
-## Mitä & Miksi?
-
-CSV (Comma-Separated Values) on tapa tallentaa ja järjestellä taulukkodataa käyttäen pilkkua erottimena kenttien välillä. Tämä on hyödyllistä, kun halutaan tallentaa suuria määriä dataa, jota voidaan sitten käyttää ja muokata helposti. CSV-tiedostoja käytetään laajalti esimerkiksi Excel-taulukoissa ja tietokannoissa. Koodaajat usein käsittelevät CSV-tiedostoja, koska niiden avulla tiedon tallentaminen ja järjestely on nopeaa ja helppoa.
-
-## Miten:
-
-Arduino:lla on valmiina kirjasto, joka mahdollistaa CSV-tiedostojen lukemisen ja kirjoittamisen. Kirjastoa käyttämällä voit ladata CSV-tiedoston toisesta lähteestä, kuten muistikortilta, ja lukea sen sisällön tai tallentaa dataa CSV-muodossa. Alla on esimerkki koodista, jossa CSV-tiedosto ladataan SD-kortilta ja data sen sisällä tulostetaan sarjaportille:
-
+## How to: - Kuinka tehdä:
 ```Arduino
 #include <SD.h>
-#include <SPI.h>
-#include <CSV.h>
-
-File dataFile; //muuttuja tiedostoon
+File myFile;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) {
-    ; //odotetaan sarjaporttiakin käynnistyvän
+  
+  // Aloita SD-kortti moodissa 4
+  if (!SD.begin(4)) {
+    Serial.println("SD card failed or not present");
+    return;
   }
-
-  if (!CSV.begin(&dataFile, "testi.csv", ";")) { //muuttuja, tiedoston nimi, erottimen merkki
-    Serial.println("CSV tiedostoa ei voida avata");
+  // Lue CSV-tiedosto
+  myFile = SD.open("data.csv");
+  if (myFile) {
+    while (myFile.available()) {
+      String data = myFile.readStringUntil('\n');
+      Serial.println(data);
+    }
+    myFile.close();
+  } else {
+    Serial.println("error opening data.csv");
   }
 }
 
 void loop() {
-  if (CSV.next()) { // siirry seuraavaan riville
-    int val1 = CSV.getInt(0); // ensimmäinen sarake
-    float val2 = CSV.getFloat(1); // toinen sarake
-    Serial.print(val1);
-    Serial.print(", ");
-    Serial.println(val2); // tulostaa molemmat sarakeen arvot
-  } else {
-    Serial.println("CSV tiedosto loppu");
-    while (true); // lopeta loop
-  }
+  // Ei loop-koodia tässä esimerkissä
 }
 ```
-
-Output:
-
+**Tuloste:**
 ```
-1, 1.23
-2, 4.56
-3, 7.89
+sensor1, value1
+sensor2, value2
+sensor3, value3
+...
 ```
 
-## Syvällisempi sukellus:
+## Deep Dive - Syväsukellus
+CSV-muoto on aikojen saatossa yleistynyt, koska sen yksinkertaisuus tekee tiedonsiirrosta helppoa. Vaihtoehtoiset formaatit, kuten JSON tai XML, tarjoavat enemmän ominaisuuksia mutta ovat monimutkaisempia. Arduinoissa CSV:n käsittely rajoittuu perus tiedostojen käsittelyyn, koska laitteissa ei yleensä ole paljon muistia tai suoritustehoa.
 
-CSV-tiedostoilla on pitkä historia, ja niitä käytetään edelleen laajasti erilaisissa sovelluksissa. Toisinaan CSV-tiedostojen sijasta käytetään myös XML- tai JSON-formaatteja datan tallentamiseen ja järjestelyyn. CSV-tiedostojen hyvä puoli on niiden helppokäyttöisyys ja keveys, mutta ne eivät tue monimutkaisempia rakenteita kuten XML tai JSON. CSV-tiedostojen käsittelyllä on myös riski tietojen virheellisestä järjestelystä, mikäli tiedostossa ei ole selkeää rakennetta.
-
-CSV-kirjasto Arduino:lle on vielä kehitysvaiheessa, joten tulevaisuudessa siihen saatetaan lisätä uusia ominaisuuksia ja korjauksia havaittuihin ongelmiin.
-
-## Katso myös:
-
-- [CSV file format explanation](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [Alternatives to CSV for data storage and manipulation](https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats)
+## See Also - Katso myös:
+- Arduino SD-kirjaston dokumentaatio: https://www.arduino.cc/en/Reference/SD
+- CSV:n tarkempi kuvaus ja erityiskäyttökohteet: https://tools.ietf.org/html/rfc4180
+- JSONin ja XML:n vertailu CSV:hen: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
+- Esimerkkejä ja oppaita CSV:n käsittelystä eri ohjelmointikielillä: https://www.w3schools.com/python/python_file_handling.asp

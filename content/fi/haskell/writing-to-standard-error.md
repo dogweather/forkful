@@ -1,7 +1,7 @@
 ---
-title:                "Standardivirheen kirjoittaminen"
-html_title:           "Haskell: Standardivirheen kirjoittaminen"
-simple_title:         "Standardivirheen kirjoittaminen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Kirjoittaminen vakiotulosteeseen on tapa ilmoittaa tärkeitä viestejä ohjelman suorituksen aikana. Tämä on hyödyllistä esimerkiksi virheilmoituksissa tai tietojen tarkistamisessa, jotta ohjelman toiminnasta saadaan parempi yleiskuva. Ohjelmoijat käyttävät tätä tapaa varmistaakseen, että heidän koodinsa toimii niin kuin haluavat.
+## What & Why?
+Vakiostandardivirhe (stderr) on erillinen tulostusväylä, joka on suunniteltu virheviestien käsittelyyn. Ohjelmoijat käyttävät sitä erottamaan normaalin tulostuksen virheviesteistä ja debuggausinformaatiosta.
 
-## Miten?
+## How to:
+Haskellissa `hPutStrLn` ja `stderr` toimivat yhdessä virhetekstien kirjoittamiseen. Käytä `System.IO`-moduulia.
+
 ```Haskell
 import System.IO
 
--- Kirjoita "Virhe!" vakiotulosteeseen
-hPutStrLn stderr "Virhe!"
-
--- Kirjoita muuttujan arvo vakiotulosteeseen
-let x = 42
-hPutStrLn stderr ("x on " ++ show x)
+main :: IO ()
+main = do
+  hPutStrLn stderr "Tämä on virheviesti"
 ```
-Tällä koodilla saat tulosteen ```Virhe!``` sekä ```x on 42```.
 
-## Syväsukellus
-Standardi virhetulosteella on pitkä historia, ja se löytyy monista eri ohjelmointikielistä. Sen avulla koodin suorituksen aikaiset virheet ja varoitukset voidaan näyttää käyttäjälle selkeämmin ja ymmärrettävämmin. Joskus ohjelmoijat haluavat myös ohjata tulosteensa virhetulosteeseen, jotta he voivat erottaa sen muusta tulosteesta helpommin.
+Kun suoritat ohjelman, näet:
 
-Jos et halua käyttää standardi virhetulostetta, voit luoda oman tulosteen käyttämällä esimerkiksi ```putStrLn``` funktiota, joka tulostaa viestin vakiotulosteeseen.
+```
+Tämä on virheviesti
+```
 
-Tarkempi tieto kirjoittamisesta standoardi virhetulosteeseen löytyy Haskellin dokumentaatiosta.
+Voit ohjata vain virheviestit tiedostoon komennolla `./ohjelma 2> virheet.log`.
 
-## Katso myös
-- [Haskellin dokumentaatio](https://www.haskell.org/documentation/)
-- [System.IO-kirjasto](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+## Deep Dive
+Stderr juontaa juurensa Unix-järjestelmistä, jossa prosessilla on aina kolme perustiedostovirtaa: standardituloste (stdout), standardivirhe (stderr) ja standardisyöte (stdin). Haskellin `System.IO`-moduuli tarjoaa funktiot virrille kirjoittamiseen ja lukemiseen. Käytön helppous ja virheraportoinnin selkeys ovat keskeisiä syitä stderr:n käytölle. Vaihtoehtoisesti voi käyttää kirjastoa `System.Log.Logger`, jolloin saa enemmän lokitusvaihtoehtoja.
+
+## See Also
+- Hoogle `System.IO`: https://hoogle.haskell.org/?hoogle=System.IO
+- Understand `stdin`, `stdout`, `stderr`: https://en.wikipedia.org/wiki/Standard_streams

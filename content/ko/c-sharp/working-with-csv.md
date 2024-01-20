@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일 작업하기"
-html_title:           "C#: CSV 파일 작업하기"
-simple_title:         "CSV 파일 작업하기"
+title:                "CSV 파일 다루기"
+html_title:           "Arduino: CSV 파일 다루기"
+simple_title:         "CSV 파일 다루기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+CSV 파일은 데이터를 저장하는 간단한 형식입니다. 프로그래머들은 구조화된 데이터를 쉽게 교환하고, 다양한 어플리케이션 간 호환성을 위해 CSV를 사용합니다.
 
-CSV를 다루는 것은 일반적으로 쉼표로 구분된 값 파일로서 데이터를 저장하고 전송하기 위해 사용됩니다. 프로그래머들은 보다 효율적이고 간단한 방법으로 데이터를 처리하기 위해 CSV 파일을 사용합니다.
-
-## 방법:
-
-### CSV 파일 읽기:
-
+## How to:
 ```C#
-using(var reader = new StreamReader("파일경로"))
-{
-  while(!reader.EndOfStream)
-  {
-    var line = reader.ReadLine();
-    var values = line.Split(','); // 쉼표를 구분자로 사용하여 값을 분리
-    foreach(var value in values)
-    {
-      // 데이터 처리
+using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string csvPath = "test.csv";
+        // CSV 읽기
+        string[] csvLines = File.ReadAllLines(csvPath);
+        foreach (var line in csvLines) {
+            string[] values = line.Split(',');
+            Console.WriteLine($"Name: {values[0]}, Age: {values[1]}");
+        }
+
+        // CSV 쓰기
+        string[] newLine = { "John Doe", "30" };
+        File.AppendAllText(csvPath, string.Join(",", newLine) + Environment.NewLine);
     }
-  }
 }
 ```
-### CSV 파일 쓰기:
-
-```C#
-using(var writer = new StreamWriter("파일경로"))
-{
-  var values = new List<string>(){"값1", "값2", "값3"};
-  var line = string.Join(",", values); // 값들을 쉼표로 구분하여 한 줄로 결합
-  writer.WriteLine(line);
-}
+샘플 출력:
+```
+Name: Jane Doe, Age: 25
+Name: John Doe, Age: 30
 ```
 
-## 깊이있게 알아보기:
+## Deep Dive (깊은 탐구)
+CSV는 최초의 전자 테이블들과 함께 1970년대부터 사용되었습니다. XML이나 JSON 같은 현대적 대안들이 존재하지만, CSV는 그 단순함 덕분에 여전히 인기가 있습니다. C#에서는 File 클래스와 같은 내장 라이브러리를 활용하거나, 더 복잡한 처리가 필요할 경우 CsvHelper와 같은 외부 라이브러리를 사용할 수 있습니다.
 
-### 역사적 배경:
-
-CSV 파일 형식은 1972년 나외바가 개발한 Edwin Yamauchi의 개발한 구조를 기반으로 만들어졌습니다. 당시에 사용되었던 제품 모델 플레이트(PDP-11)에서는 데이터를 저장하기 위한 펴미터 파일 시스템이 없었기 때문에, 데이터를 쉼표로 구분하여 파일에 저장한 것이 CSV의 아버지라고 할 수 있습니다.
-
-### 다른 대안:
-
-CSV 파일을 다루는 대안으로는 JSON, XML 등이 있습니다. 각 형식의 장단점을 비교하여 프로젝트의 요구에 맞게 적합한 형식을 선택해야 합니다.
-
-### 구현 내용:
-
-CSV 파일을 읽기 위해서는 StreamReader 클래스를, 쓰기 위해서는 StreamWriter 클래스를 사용합니다. 또한 Split 메서드를 사용하여 쉼표로 구분된 값을 분리하거나, Join 메서드를 사용하여 자료형을 문자열로 결합할 수 있습니다.
-
-
-## 관련 자료:
-
-- [CSV 파일 형식](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [데이터 형식 비교](https://medium.com/on-coding/data-format-comparison-json-vs-xml-vs-csv-1497262ad055)
+## See Also (참고 자료)
+- Microsoft의 File 클래스 문서: https://docs.microsoft.com/dotnet/api/system.io.file
+- CsvHelper 라이브러리: https://joshclose.github.io/CsvHelper/
+- C#에서의 파일 작업 가이드: https://docs.microsoft.com/dotnet/standard/io/how-to-read-text-from-a-file

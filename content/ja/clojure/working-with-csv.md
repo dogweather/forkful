@@ -1,7 +1,7 @@
 ---
-title:                "csvを使ったプログラミング"
-html_title:           "Clojure: csvを使ったプログラミング"
-simple_title:         "csvを使ったプログラミング"
+title:                "CSVファイルの操作"
+html_title:           "Arduino: CSVファイルの操作"
+simple_title:         "CSVファイルの操作"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これは何ですか？
-CSVとは、Comma-Separated Valuesの略称で、データをカンマで区切って保存する形式のことです。プログラマーがCSVを扱う理由は、データをテキストファイルに保存することで、より簡単にデータの管理や共有ができるからです。
+## What & Why? (何となぜ？)
+CSV(Comma-Separated Values)は、データをカンマで区切って保存するファイル形式だ。プログラマはCSVを使ってデータの移動、保存、解析が簡単なため。
 
-## 使い方：
+## How to: (方法)
+ClojureでCSVを扱う基本。以下に例を示す。
+
 ```Clojure
+(require '[clojure.java.io :as io])
 (require '[clojure.data.csv :as csv])
+(require '[clojure.string :as str])
 
-;; CSVファイルを読み込む
-(csv/read-csv "data.csv")
+; CSVファイルを読み込む
+(with-open [reader (io/reader "data.csv")]
+  (doall 
+    (csv/read-csv reader)))
 
-;; CSVファイルを書き込む
-(csv/write-csv "data.csv" [["Apple", "25"], ["Banana", "12"], ["Orange", "8"]])
-
-;; CSVファイルをマップとして読み込む
-(csv/read-csv "data.csv" :key-fn keyword)
-
-;; マップをCSVフォーマットの文字列に変換する
-(csv/generate-csv (csv/split-lines "Name, Age\nJohn, 26\nJane, 30"))
-```
-出力：
-```
-([Apple 25] [Banana 12] [Orange 8])
-([:Name :Age] [:John "26"] [:Jane "30"])
-"Name, Age\nJohn, 26\nJane, 30"
+; CSVデータを書き込む
+(let [data [["name" "age" "city"] ["Alice" "30" "Tokyo"] ["Bob" "25" "Osaka"]]]
+  (with-open [writer (io/writer "output.csv")]
+    (csv/write-csv writer data)))
 ```
 
-## 深く掘り下げる：
-- CSVは1972年に米国で開発された、テキストベースのデータ形式です。
-- CSVを扱う他の方法としては、ExcelやGoogle Sheetsなどのスプレッドシートソフトウェアを使用する方法があります。
-- ```clojure.data.csv```ライブラリでは、データが入力されると自動的にCSVの形式に変換されるようになっています。
+`read-csv`でCSVを読み込む。`write-csv`でCSVを書き込む。簡単。
 
-## 関連情報：
-- [clojure.data.csvドキュメンテーション](https://clojure.github.io/data.csv/)
-- [RFC4180 - CSVフォーマットの仕様書](https://tools.ietf.org/html/rfc4180)
+## Deep Dive (掘り下げ)
+CSVは長い歴史を持つ。多くのプログラムでサポートされている。JSONやXMLなどの代替手段もあるが、読み書きの速さとシンプルさでCSVが選ばれることが多い。Clojureでは`clojure.data.csv`ライブラリが使われる。ライブラリはプログラムの依存性に追加するだけ。
+
+## See Also (関連情報)
+- Clojure公式サイトのCSV関連ドキュメント: [https://clojure.github.io/clojure](https://clojure.github.io/clojure)
+- `clojure.data.csv`ライブラリのガイド: [https://github.com/clojure/data.csv](https://github.com/clojure/data.csv)
+- CSVについて学ぶ: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

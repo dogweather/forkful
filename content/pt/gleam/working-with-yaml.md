@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Gleam: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com YAML"
+html_title:           "Arduino: Trabalhando com YAML"
+simple_title:         "Trabalhando com YAML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso e por que os programadores o usam?
-
-YAML é uma linguagem de marcação leve que é usada para formatar dados humanamente legíveis. Os programadores muitas vezes usam YAML para estruturar e organizar seus dados de forma simples e fácil de entender. É especialmente útil para armazenar configurações e informações de injeção de dependência em aplicativos.
+## O Quê & Por Quê?
+Trabalhar com YAML é lidar com uma linguagem de serialização de dados legível para humanos, comum para configurações e troca de dados. Programadores usam YAML por sua simplicidade e facilidade de leitura/escrever comparado a JSON ou XML.
 
 ## Como fazer:
-
-```Gleam 
-let dados = """
-nome: João
-idade: 30
-profissão: Desenvolvedor
-"""
-``` 
-```Gleam 
-let usuario = dados |> YAML.decode
-``` 
-```Gleam 
-IO.println(usuario["nome"])
+```gleam
+// Atualmente, Gleam não tem bibliotecas padrão para YAML.
+// Você precisaria usar uma biblioteca externa ou interagir com código Erlang/OTP.
 ```
- 
-Saída: "João"
+Exemplo hipotético (Gleam ainda não tem suporte direto para YAML):
+```gleam
+import yaml
 
-## Profundidade de mergulho:
+fn main() {
+  let data = """
+  - Hopper
+  - Lovelace
+  - Turing
+  """
+  let list = yaml.decode(data)
+  case list {
+    Ok(names) -> names |> List.map(fn(name) { name ++ " é incrível!" })
+    Error(_) -> ["Erro ao decodificar YAML"]
+  }
+}
+```
+Saída hipotética:
+```
+["Hopper é incrível!", "Lovelace é incrível!", "Turing é incrível!"]
+```
 
-O YAML foi criado em 2001 com o objetivo de ser uma sintaxe simples e fácil de usar para representar dados. Ele é frequentemente usado em conjunto com linguagens de programação para fornecer uma maneira mais intuitiva e legível de estruturar dados. Alternativas para YAML incluem JSON e XML, mas o YAML geralmente é preferido por sua sintaxe mais simples e clara. No Gleam, o módulo ```YAML``` fornece funções para decodificar e codificar dados YAML.
+## Aprofundamento
+YAML surgiu em 2001, idealizado como uma alternativa mais fácil de usar em comparação com XML para serialização de dados. Alternativas incluem JSON, XML e TOML. YAML é normalmente usado em arquivos de configuração e para trocar dados entre diferentes linguagens de programação, pois é facilmente interpretado por humanos e máquinas.
 
-## Veja também:
-
-Saiba mais sobre YAML aqui: https://yaml.org/
-
-Leia a documentação do módulo YAML no Gleam: https://gleam.run/modules/yaml/
-
-Confira este artigo sobre como usar YAML em aplicativos web: https://www.geeksforgeeks.org/yaml-yet-another-markup-language/
+## Veja Também
+- [Documentação Oficial YAML](https://yaml.org/)
+- [Wikipedia YAML](https://pt.wikipedia.org/wiki/YAML)
+- Tutoriais de YAML em várias linguagens de programação.
+- Informações sobre interop com Erlang para uso de bibliotecas YAML em Gleam.

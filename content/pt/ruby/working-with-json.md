@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json"
-html_title:           "Ruby: Trabalhando com json"
-simple_title:         "Trabalhando com json"
+title:                "Trabalhando com JSON"
+html_title:           "Arduino: Trabalhando com JSON"
+simple_title:         "Trabalhando com JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Por Que?
 
-Trabalhar com JSON é uma habilidade importante para os programadores, pois JSON é uma formatação comum e eficiente para troca de dados entre sistemas. Ele é amplamente usado em aplicações web e mobile, tornando-se um conhecimento necessário para quem deseja desenvolver nessas áreas.
+Trabalhar com JSON significa manipular um formato leve de troca de dados fácil de ler e escrever por humanos, e simples de ser analisado e gerado por máquinas. Programadores utilizam JSON porque é um padrão universal em APIs de web e é útil para armazenar e transportar dados estruturados.
 
-## Como fazer:
-
-```Ruby
-# Convertendo um objeto Ruby para JSON
-require 'json'
-
-objeto_ruby = {
-  "nome": "João",
-  "idade": 25
-}
-
-json = objeto_ruby.to_json
-puts json
-```
-Output: `{"nome":"João","idade":25}`
+## Como Fazer:
 
 ```Ruby
-# Convertendo JSON para um objeto Ruby
 require 'json'
 
-json = '{"nome":"Maria","idade":30}'
-objeto_ruby = JSON.parse(json)
+# Criando um hash e convertendo para string JSON
+meus_dados = { nome: "João", idade: 30, cidade: "Lisboa" }
+json_string = meus_dados.to_json
+puts json_string
+# => {"nome":"João","idade":30,"cidade":"Lisboa"}
 
-puts objeto_ruby["nome"]
-puts objeto_ruby["idade"]
+# Analisando uma string JSON e convertendo para um hash Ruby
+json_recebido = '{"nome":"Ana","idade":25,"cidade":"Porto"}'
+dados_ruby = JSON.parse(json_recebido)
+puts dados_ruby
+# => {"nome"=>"Ana", "idade"=>25, "cidade"=>"Porto"}
+
+# Tratamento de exceções ao analisar JSON inválido
+begin
+  invalid_json = '{"nome": "Miguel", "idade": trinta}'
+  JSON.parse(invalid_json)
+rescue JSON::ParserError => e
+  puts "Ocorreu um erro ao analisar o JSON: #{e.message}"
+end
 ```
-Output: `Maria` e `30`
 
-## Mergulho Profundo:
+## Aprofundamento
 
-JSON (JavaScript Object Notation) é uma formatação de dados baseada em texto que se tornou popular nos últimos anos. Ela é derivada da linguagem JavaScript, mas pode ser usada com qualquer linguagem de programação. Algumas alternativas para JSON incluem XML e YAML. No entanto, JSON é geralmente preferido devido à sua simplicidade e tamanho reduzido. Para trabalhar com JSON em Ruby, é necessário o uso da biblioteca padrão `json` e é possível convertê-lo facilmente para objetos Ruby usando `JSON.parse()` e objetos Ruby para JSON usando `to_json()`.
+JSON, sigla para JavaScript Object Notation, foi originalmente derivado da notação de objeto do JavaScript, mas agora é um padrão independente de linguagem com códigos e bibliotecas disponíveis para muitas linguagens, incluindo Ruby. Alternativas ao JSON incluem XML e YAML, mas JSON é geralmente preferido por sua facilidade de uso e velocidade. Ruby incorpora métodos de análise e geração de JSON na classe principal `JSON`, e a implementação é direta: convertendo objetos Ruby para strings JSON e vice-versa.
 
-## Veja também:
+## Veja Também:
 
-- [Documentação da biblioteca JSON em Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
-- [Introdução ao JSON](https://www.json.org/)
+- Guia rápido de JSON: [http://json.org/](http://json.org/)

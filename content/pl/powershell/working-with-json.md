@@ -1,6 +1,6 @@
 ---
 title:                "Praca z JSON"
-html_title:           "PowerShell: Praca z JSON"
+html_title:           "Bash: Praca z JSON"
 simple_title:         "Praca z JSON"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## W czym rzecz i dlaczego?
+## Co i Dlaczego?
 
-JSON to język znaczników, który jest często używany w programowaniu do przechowywania i przesyłania danych w formie tekstowej. Programiści często korzystają z niego, ponieważ jest prosty w użyciu i zapewnia wygodny sposób przechowywania oraz dostępu do informacji.
+JSON, czyli JavaScript Object Notation, to łatwy do odczytania format wymiany danych. Programiści używają go do komunikacji między serwerami i aplikacjami webowymi oraz do zapisu konfiguracji.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
 ```PowerShell
-$json = '[{"imie": "Anna", "wiek": 25}, {"imie": "Jan", "wiek": 32}]'
+# Zapisywanie obiektu do JSON
+$user = @{
+    Name     = 'Jan'
+    Surname  = 'Nowak'
+    Email    = 'jan.nowak@poczta.pl'
+}
+$user | ConvertTo-Json | Set-Content -Path 'user.json'
 
-# Wypisanie danych w postaci tabeli
-$json | ConvertFrom-Json | Format-Table -Property imie, wiek
-
-# Wypisanie danych w postaci listy
-$json | ConvertFrom-Json | ForEach-Object { "{0} ma {1} lat." -f $_.imie, $_.wiek }
+# Wczytywanie JSON z pliku
+$content = Get-Content -Path 'user.json' | ConvertFrom-Json
+Write-Output $content.Name  # Wypisze 'Jan'
 ```
 
-Wynik:
+## Deep Dive
 
-imie | wiek
------|-----
-Anna | 25
-Jan  | 32
+JSON w świecie IT pojawił się w latach 2000 i szybko stał się popularny jako prostsza alternatywa dla XML. PowerShell natywnie obsługuje JSON poprzez cmdlety `ConvertTo-Json` i `ConvertFrom-Json`. Chociaż są inne formacje jak YAML czy TOML, JSON pozostaje liderem ze względu na uniwersalność i szerokie wsparcie w różnych językach programowania.
 
-Anna ma 25 lat.
-Jan ma 32 lata.
+## Zobacz także:
 
-## Głębsze wgląd
-
-JSON został opracowany w latach 90. jako sposób na przesyłanie danych między aplikacjami internetowymi, jako alternatywa dla wcześniej stosowanego XML. W PHP jest często używany do formatowania danych w formie tablicy asocjacyjnej. W przypadku programu PowerShell, korzystamy z modułu ```ConvertFrom-Json```, który pozwala nam na przetworzenie danych w formacie JSON do wygodniejszych dla nas form.
-
-## Zobacz też
-
-- Dokumentacja modułu ```ConvertFrom-Json```: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json
-- Przykładowa strona z danymi w formacie JSON: https://jsonplaceholder.typicode.com/users
+- Oficjalna strona JSON: [json.org](https://www.json.org/json-pl.html)
+- Dokumentacja PowerShell dla `ConvertTo-Json`: [Microsoft Docs ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json)
+- Dokumentacja PowerShell dla `ConvertFrom-Json`: [Microsoft Docs ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit yaml"
-html_title:           "Lua: Arbeiten mit yaml"
-simple_title:         "Arbeiten mit yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "Bash: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
@@ -11,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-YAML ist ein Dateiformat, das für die Lesbarkeit von Maschinen und Menschen gleichermaßen entwickelt wurde. Es wird häufig von Programmierern verwendet, um Konfigurationsdateien zu speichern oder Daten zwischen verschiedenen Programmen auszutauschen.
+YAML ist ein menschenlesbares Datenformat für Konfigurationsdateien und Datenaustausch. Programmierer nutzen es wegen seiner Klarheit und Einfachheit im Vergleich zu JSON oder XML.
 
 ## How to:
-Das Parsen von YAML-Dateien in Lua ist einfach und unkompliziert. Hier ist ein Beispiel, wie man eine YAML-Datei öffnet und ihre Inhalte in eine Lua-Tabelle lädt:
+Zuerst musst du das `lyaml` Modul installieren. Benutze `luarocks`:
+
+```bash
+luarocks install lyaml
+```
+
+Hier ein einfaches Beispiel, YAML zu laden und zu parsen:
+
 ```Lua
-local yaml = require("yaml") -- Modul zum Parsen von YAML importieren
-local file = io.open("config.yaml", "r") -- YAML-Datei öffnen
-local data = yaml.parse(file:read("*all")) -- Inhalt der YAML-Datei parsen und in Lua-Tabelle laden
-file:close() -- Datei schließen
-```
-Die Variable "data" enthält nun alle Daten aus der YAML-Datei. Zum Beispiel, wenn die Datei folgende Inhalte hat:
-```YAML
-name: John
-age: 25
-hobbies:
-- coding
-- reading
-```
-Werden sie in Lua wie folgt gespeichert:
-```Lua
-data = {
-  name = "John",
-  age = 25,
-  hobbies = {"coding", "reading"}
-}
+local lyaml = require('lyaml')
+local yaml_data = [[
+- Just
+- A simple
+- YAML
+- List
+]]
+
+local lua_table = lyaml.load(yaml_data)
+for i, item in ipairs(lua_table) do
+  print(i, item)
+end
 ```
 
-## Deep Dive:
-YAML steht für "YAML Ain't Markup Language" und wurde ursprünglich als Alternativformat zu XML entwickelt. Im Vergleich zu XML ist YAML jedoch leichter lesbar und weniger verbose, was es für Programmierer attraktiver macht.
+Ausgabe:
 
-Alternativ zu YAML können Programmierer auch JSON verwenden, um Daten zu speichern und austauschen. Beide Formate haben ihre Vor- und Nachteile, aber YAML ist aufgrund seiner Einfachheit und Lesbarkeit bei vielen Programmierern beliebter.
+```plaintext
+1 Just
+2 A simple
+3 YAML
+4 List
+```
 
-Das oben gezeigte Beispiel verwendet das Lua-Modul "yaml" zum Parsen von YAML-Dateien. Dieses Modul ist Teil des "LuaRocks"-Projekts, das eine große Sammlung von Lua-Modulen zur Verfügung stellt. Es kann über den Befehl "luarocks install yaml" installiert werden.
+## Deep Dive
+YAML, kurz für "YAML Ain't Markup Language", wurde früh in den 2000ern entwickelt. Es gilt als einfacher in der Handhabung als XML und ist oft besser lesbar als JSON. Libraries wie `lyaml` erlauben die Implementierung in Lua. Alternativen zu YAML könnten JSON oder TOML sein, je nach Anwendungszweck.
 
-## Siehe auch:
-- [YAML-Homepage](https://yaml.org/)
-- [LuaRocks-Projekt](https://luarocks.org/)
-- [Offizielle Lua-Dokumentation](https://www.lua.org/docs.html)
+## See Also
+- YAML Spezifikation: https://yaml.org/spec/
+- `lyaml` Dokumentation: https://github.com/gvvaughan/lyaml
+- LuaRocks Repository: https://luarocks.org/modules/gvvaughan/lyaml

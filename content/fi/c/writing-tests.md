@@ -1,7 +1,7 @@
 ---
-title:                "Ohjelmointitestejä kirjoittaminen"
-html_title:           "C: Ohjelmointitestejä kirjoittaminen"
-simple_title:         "Ohjelmointitestejä kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Arduino: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Testien kirjoittaminen on kun ohjelmistokehittäjä luo koodia testatakseen ohjelmansa toimintaa. Testien avulla voidaan varmistua siitä, että koodi toimii odotetulla tavalla ja estetään mahdollisten virheiden syntymistä.
+## What & Why? - Mikä ja miksi?
+Testaus on koodin varmistamista sen toimimiseksi kuten pitää. Ohjelmoijat testaavat löytääkseen ja korjatakseen virheet nopeammin ja varmistaakseen, että koodimuutokset eivät riko aiemmin toiminutta.
 
-## Kuinka tehdä:
-Seuraavassa on esimerkki tapa luoda testi C-kielellä:
+## How to: - Miten:
 ```C
-#include <stdio.h>
+#include <assert.h>
 
-int add(int a, int b) {
+// Yksinkertainen funktio testattavaksi
+int summa(int a, int b) {
     return a + b;
 }
 
+// Testifunktio
+void testaa_summa() {
+    assert(summa(2, 2) == 4);
+    assert(summa(-1, 1) == 0);
+    // Lisää testejä tarvittaessa
+}
+
 int main() {
-    int result = add(5, 3);
-    if(result == 8) {
-        printf("Testi läpäisty!");
-    }
-    else {
-        printf("Testi epäonnistui!");
-    }
+    testaa_summa();
+    printf("Kaikki testit menivät läpi.\n");
     return 0;
 }
 ```
-Tässä esimerkissä luodaan yksinkertainen testi funktiolle add, joka laskee kahden luvun summan. Testissä tarkistetaan, että add-funktio palauttaa odotetun tuloksen. Näin testi varmistaa, että funktio toimii oikein.
 
-## Syvempi sukellus:
-Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin laadun ja vähentämään virheiden määrää. Nykypäivänä on myös olemassa erilaisia testauksen työkaluja, kuten järjestelmätestaus ja yksikkötestaus, jotka auttavat kehittäjää testaamaan ohjelmansa toimintaa. Testien kirjoittaminen on myös osa hyvää ohjelmointikäytäntöä ja auttaa kehittäjää ymmärtämään paremmin omaa koodiaan.
+Odotettu tulostus:
+```
+Kaikki testit menivät läpi.
+```
 
-## Katso myös:
-- [An introduction to testdriven development in C](https://developer.ibm.com/technologies/systems/articles/au-cintrotesting/)
+## Deep Dive - Syväsukellus:
+Historiallisesti C-kielessä ei ole ollut erillistä testikehystä. Ohjelmoijat ovat luoneet yksinkertaisia itsekirjoitettuja testejä, kuten `assert`-makroja. Vaihtoehtoja on kuten CUnit tai Unity testauskehykset. Näiden käyttö vaatii syvällisempää ymmärrystä ja operaatioita, kuten testien rekisteröintiä ja tulosten keräämistä.
+
+## See Also - Katso Myös:
+- CUnit: http://cunit.sourceforge.net/
+- Unity Test Framework: https://www.throwtheswitch.org/unity
+- C Standard Library (assert.h): https://en.cppreference.com/w/c/error/assert

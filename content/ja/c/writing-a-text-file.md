@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "C: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
-テキストファイルを書くというのは、コンピューターの中にテキストを保存することです。プログラマーは、コードやデータをテキストファイルに保存することで、バックアップや共有が簡単になります。
+## What & Why? (何となぜ？)
+ファイル作成は情報を保存するプロセスです。データの永続的保存、情報の共有と後で使うために行います。
 
-## 方法:
-下に示すように、テキストファイルを書くにはいくつかの方法があります。使用する関数や構文については、Cの[公式ドキュメント](https://www.cprogramming.com/tutorial/cfileio.html)を参照してください。
+## How to (方法)
+C言語でテキストファイルを書く基本的な方法:
 
 ```C
-// ファイルを書き込みモードで開く
-FILE *fp = fopen("sample.txt", "w");
+#include <stdio.h>
 
-// fprintfを使用してテキストをファイルに書き込む
-fprintf(fp, "Hello, World!");
+int main() {
+    FILE *filePtr;
+    filePtr = fopen("example.txt", "w"); // ファイルを開く
 
-// ファイルを閉じる
-fclose(fp);
+    if (filePtr == NULL) {
+        printf("ファイルを開けません。\n");
+        return 1;
+    }
+
+    fprintf(filePtr, "こんにちは、ファイル！\n"); // テキストを書く
+    fclose(filePtr); // ファイルを閉じる
+
+    return 0;
+}
 ```
 
-上記のコードでは、`fprintf`関数を使って"Hello, World!"というテキストを`sample.txt`という名前のファイルに書き込んでいます。
+実行後の`example.txt`の内容:
 
-## ディープダイブ:
-テキストファイルの書き込みは、大昔からコンピューターの機能の一部として使われてきました。他のプログラミング言語でも同様の機能がありますが、Cのような低レベル言語では特に重要です。
+```
+こんにちは、ファイル！
+```
 
-また、テキストファイルの他にもバイナリファイルを書き込むこともできます。バイナリファイルでは、テキストファイルとは異なる特殊な形式でデータが保存されます。
+## Deep Dive (深堀り)
+ファイルへの書き込みは、初期のコンピュータシステムから存在し、データ永続性の基礎を形成します。`fopen()`や`fprintf()`は標準入出力ライブラリにあります。`fwrite()`や`write()`のような低レベル関数も使えますが、直接バイナリデータを扱います。ファイルを開く際の`mode`を変更することで、追加書き込みや読み込み専用モードも選べます。例えば、追加モードは`"a"`で表されます。
 
-テキストファイルは読み書きが簡単ですが、バイナリファイルの方がより高度な処理が必要になることがあります。どちらが適しているかは、使用するデータやプログラムの目的によって異なります。
-
-## 関連情報:
-- [C プログラミングチュートリアル](https://www.cprogramming.com/tutorial/cfileio.html)
-- [テキストファイルとバイナリファイル](https://ja.wikipedia.org/wiki/ファイル形式#テキストファイルとバイナリファイル)
+## See Also (関連項目)
+- C Standard Library - Files: https://en.cppreference.com/w/c/io
+- Learn C Programming - Working with files: https://www.learn-c.org/en/Working_with_files
+- fopen, fclose, fprintf, and other File Handling functions in C: https://www.geeksforgeeks.org/basics-file-handling-c/

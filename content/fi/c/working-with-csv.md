@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "C: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "CSV-tiedostojen käsittely"
+html_title:           "Bash: CSV-tiedostojen käsittely"
+simple_title:         "CSV-tiedostojen käsittely"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+CSV on tekstitiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on yksinkertainen, yhteensopiva monien alustojen kanssa ja helppo muuttaa taulukkomuotoiseksi tiedoksi.
 
-CSV on yksinkertainen tiedostomuoto, jota käytetään datan tallentamiseen taulukkoihin. Se koostuu arvoista, jotka on erotettu pilkulla ja riveistä, jotka on erotettu rivinvaihdolla. Ohjelmoijat käyttävät CSV:tä, koska se on helppo luoda ja lukea, ja sitä voidaan käyttää erilaisiin tietojen tallennustarkoituksiin.
-
-## Kuinka:
-
+## How to: (Kuinka tehdään:)
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main()
-{
-  FILE *csv_file;
-  int value;
-  
-  csv_file = fopen("data.csv", "r");
-  
-  if (csv_file == NULL)
-  {
-    printf("Tiedostoa ei voitu avata!");
-    return 1;
-  }
-  
-  // Tulostetaan tiedoston sisältö
-  while (fscanf(csv_file, "%d,", &value) != EOF)
-  {
-    printf("%d ", value);
-  }
-  
-  fclose(csv_file);
-  
-  return 0;
+// CSV-tiedoston lukeminen ja tulostaminen
+int main() {
+    FILE *fp = fopen("esimerkki.csv", "r");
+    if (!fp) {
+        printf("Tiedostoa ei voida avata.\n");
+        return 1;
+    }
+
+    // Oleta, että yhdellä rivillä on korkeintaan 1024 merkkiä
+    char rivi[1024];
+
+    while (fgets(rivi, 1024, fp)) {
+        // Leikkaa riviltä rivinvaihto
+        rivi[strcspn(rivi, "\n")] = 0;
+        // Tulosta rivi
+        printf("%s\n", rivi);
+    }
+
+    fclose(fp);
+    return 0;
 }
 ```
-
-**Esimerkki sisäänmenosta:**
-
+Tuloste:
 ```
-1,2,3
-4,5,6
-```
-
-**Esimerkki tulosteesta:**
-
-```
-1 2 3 4 5 6
+sarake1,sarake2,sarake3
+data1,data2,data3
+...
 ```
 
-## Syvemmälle:
+## Deep Dive (Syväsukellus):
+CSV-formaatti juontaa juurensa varhaisiin tietokoneaikoihin, 1970-luvulle. Formaatti on pitänyt pintansa, vaikka nykyään on muitakin vaihtoehtoja kuten JSON ja XML. CSV:n käytön etuna on sen yksinkertaisuus; tiedostot ovat luettavia myös ihmisten silmin ja ne aukeavat helposti esimerkiksi Excelissä. Implementaatioissa haastetta tuo kenttärajaajien, kuten lainausmerkkien ja pilkkujen, käsittely.
 
-CSV kehitettiin vuonna 1972, joten se on ollut käytössä yli 40 vuotta. Tänä päivänä on myös muita vaihtoehtoja, kuten JSON ja XML, jotka tarjoavat enemmän ominaisuuksia, mutta ovat monimutkaisempia käyttää. CSV on edelleen suosittu vaihtoehto yksinkertaisiin taulukkolaskentatarkoituksiin.
-
-CSV-tiedoston sisällä voi olla myös erilaisia erottimia, kuten puolipiste tai tabulaattori, ja se voi aiheuttaa ongelmia tiedoston lukemisessa. On tärkeää käsitellä näitä erikoistapauksia ja varmistaa, että CSV-tiedoston käsittely on joustavaa.
+## See Also (Katso myös):
+- [RFC 4180, CSV standardi](https://tools.ietf.org/html/rfc4180)
+- [C Standard Library](https://en.cppreference.com/w/c/header)
+- [Stack Overflow CSV aiheiset kysymykset](https://stackoverflow.com/questions/tagged/csv?sort=frequent)

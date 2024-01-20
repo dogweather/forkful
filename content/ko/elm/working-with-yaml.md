@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Elm: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "YAML 다루기"
+html_title:           "Arduino: YAML 다루기"
+simple_title:         "YAML 다루기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 어떤 것이고 왜 그래? 
+## What & Why? (무엇과 왜?)
+YAML (YAML Ain't Markup Language)은 데이터를 표현하기 위한 인간 친화적인 형식입니다. 프로그래머들은 설정 파일, 데이터 교환 등에 쉽게 읽고 쓸 수 있도록 하기 위해 YAML을 사용합니다.
 
-YAML은 데이터를 저장하는 데 사용되는 일종의 파일 형식입니다. 프로그래머들은 YAML을 사용하여 구조화된 데이터를 더 쉽게 관리하고 사용할 수 있습니다.
-
-## 이렇게 하는 법:
+## How to: (어떻게 사용 하나요?)
+Elm에서는 YAML을 직접적으로 다루는 내장 라이브러리가 없어요. 그래서 JavaScript와 연동하여 사용할 수 있는데, `port`와 `decoder`를 활용해보세요. 아래는 그 예제입니다.
 
 ```Elm
--- YAML 라이브러리를 가져옵니다.
-import JonnyBurger/elm-graphql/Yaml exposing (..)
+port module Main exposing (..)
 
--- YAML 파일을 읽어옵니다.
-data : Result String Yaml.Value
-data =
-  Yaml.fromString """
-    first_name: John
-    last_name: Doe
-  -- 이 공백 줄은 필요하지 않지만, 라이브러리에서 데이터를 파싱하기 위해 사용됩니다.
-  """
+import Html exposing (Html, button, div, text)
+import Json.Decode exposing (decodeValue)
+import Json.Decode.Pipeline exposing (required)
+import Ports exposing (yamlDecoder)
 
--- 결과를 확인합니다!
-case data of
-  Ok yamlValue -> toString yamlValue -- "John Doe"를 반환합니다.
-  Err errorMessage -> "오류가 발생했습니다: " ++ errorMessage
+type alias User =
+    { name : String
+    , age : Int
+    }
+
+userDecoder : Json.Decode.Decoder User
+userDecoder =
+    decodeValue
+        (Json.Decode.Pipeline.required "name" Json.Decode.string
+            (Json.Decode.Pipeline.required "age" Json.Decode.int
+                Json.Decode.succeed User
+            )
+        )
+
+port getYaml : (String -> msg) -> Sub msg
+
+port sendYaml : String -> Cmd msg
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    getYaml GotYaml
+
+type Msg
+    = GotYaml String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotYaml yamlString ->
+            case userDecoder yamlString of
+                Ok user ->
+                    ( { model | user = Just user }, Cmd.none )
+                Err _ ->
+                    (model, Cmd.none)
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick (sendYaml "{name: 'Jin', age: 25}") ] [ text "Get User Data" ] 
+        , div [] [ text (maybe "No user data" (\user -> user.name) model.user) ]
+        ]
 ```
 
-## 깊이 파고들기:
+이 Elm 코드는 JavaScript와 연동되어야 하며, 해당 YAML 문자열을 처리하기 위해 외부에서 지원되는 함수를 필요로 합니다.
 
-YAML은 "YAML Ain't Markup Language"의 약자입니다. 마크업 언어가 아니라는 이름에서 알 수 있듯이, 이 파일 형식은 구조화된 데이터를 저장하는 데 사용됩니다. 다른 대안으로는 XML 또는 JSON이 있지만, YAML은 더 직관적이고 읽기 쉽습니다. 또한 Elm에서 YAML을 읽어오기 위해서는 자바스크립트 라이브러리를 사용해야 합니다.
+```JavaScript
+// 예: JavaScript 코드
+app.ports.sendYaml.subscribe(function(yaml) {
+    try {
+        var result = YAML.parse(yaml);
+        app.ports.getYaml.send(result);
+    } catch (e) {
+        console.error("Parsing failed!", e);
+    }
+});
+```
 
-## 더 알아보기:
+## Deep Dive (심화 학습)
+YAML은 2001년에 등장했어요. JSON과 비교할 때, 가독성이 뛰어나지만 파싱 과정이 복잡할 수 있습니다. Elm에서는 YAML을 직전단계인 JSON으로 변환해서 다루는 것이 일반적입니다. 이 경우, `yaml`을 `json`으로 변환하는 JavaScript 라이브러리가 필요해요.
 
-[YAML 공식 웹사이트](https://yaml.org/)
-
-[Elm에서 자바스크립트 코드 사용하기](https://guide.elm-lang.org/interop/javascript.html)
-
-[XML vs JSON vs YAML: 어떤 것을 사용할까요?](https://atlantbh.com/2018/10/05/xml-vs-json-vs-yaml/)
+## See Also (함께 보기)
+- YAML 공식 사이트: [https://yaml.org/](https://yaml.org/)
+- JavaScript YAML 파서 (js-yaml) [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
+- Elm의 JSON 디코딩: [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)

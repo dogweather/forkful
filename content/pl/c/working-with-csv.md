@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "C: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Bash: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest & dlaczego to robimy?
-Pracowanie z plikami CSV to nieodłączna część codzienności programisty. CSV to skrót od "Comma-Separated Values", czyli pliku przechowującego dane w formie tabeli z wartościami oddzielonymi przecinkami. Dlaczego warto pracować z CSV? Bardzo często dane są zapisywane w tym formacie, przez co praca z nimi jest niezbędna dla większości projektów programistycznych.
+## What & Why? (Co i Dlaczego?)
+CSV to pliki 'Comma-Separated Values', proste i popularne w przenoszeniu danych tabelarycznych. Programiści używają ich do importu, eksportu, analizy danych i ich szybkiego przetwarzania.
 
-## Jak to zrobić:
-Kodowanie z wykorzystaniem CSV w języku C jest bardzo proste i intuicyjne. Przykładowy kod wygląda następująco:
-```
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+## How to: (Jak to zrobić:)
+Przykład czytania CSV w C:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX_LINE_SIZE 1024
 
 int main() {
-   FILE *fp;
-   char line[100];
-   fp = fopen("plik.csv" , "r");
+    FILE *fp = fopen("data.csv", "r");
+    if (!fp) {
+        printf("Nie można otworzyć pliku.\n");
+        return EXIT_FAILURE;
+    }
 
-   while(fgets(line, 100, fp) != NULL) {
-      char *token = strtok(line, ",");
-      while(token != NULL) {
-         printf("%s ", token);
-         token = strtok(NULL, ",");
-      }
-      printf("\n");
-   }
-   fclose(fp);
-   return 0;
+    char line[MAX_LINE_SIZE];
+    while (fgets(line, MAX_LINE_SIZE, fp)) {
+        // Usuń znak nowej linii z wczytanej linii.
+        line[strcspn(line, "\n")] = 0;
+
+        char *token = strtok(line, ",");
+        while(token) {
+            printf("%s ", token);
+            token = strtok(NULL, ",");
+        }
+        printf("\n");
+    }
+    fclose(fp);
+    return EXIT_SUCCESS;
 }
 ```
-Powyższy kod odczytuje plik CSV o nazwie "plik.csv" i wypisuje jego zawartość na ekran. Za każdym razem, kiedy pobiera kolejną linię, dzieli ją na poszczególne kolumny za pomocą funkcji ```strtok``` i drukuje je na ekran. Proces ten powtarza się aż do wyczerpania zawartości pliku.
+Wyjście (output) będzie reprezentacją danych z pliku `data.csv` wydrukowaną w konsoli.
 
-## Głębszy zanurzenie:
-Pierwsza wersja pliku CSV pojawiła się w 1972 roku i została stworzona przez Petera F. Petersona. Początkowo był to nieoficjalny standard używany tylko w niektórych programach, jednak w 1987 roku został oficjalnie uznany przez RFC 4180. Alternatywnym formatem przechowywania danych może być na przykład XML, jednak CSV jest często wybierany ze względu na swoją prostotę i czytelność dla człowieka. Implementacja wczytywania danych z pliku CSV jest także możliwa za pomocą funkcji ```fscanf``` lub biblioteki libcsv.
+## Deep Dive (Dogłębna analiza)
+CSV powstało w latach `70 i jest formatem tekstowym, co oznacza prostotę i szerokie wsparcie. Istnieją alternatywnie: JSON, XML, ale CSV jest wydajniejsze dla dużych zbiorów prostych danych. W C brak biblioteki standardowej dla CSV - musisz samodzielnie zarządzać pamięcią i strukturami danych.
 
-## Zobacz też:
-Jeśli chcesz dowiedzieć się więcej o standardzie CSV, polecam przeczytać oficjalny dokument RFC 4180: https://tools.ietf.org/html/rfc4180. Jeśli natomiast wolisz skorzystać z biblioteki libcsv, znajdziesz ją tutaj: https://github.com/zaiah-libc/libcsv.
+## See Also (Zobacz również)
+- Do nauki i eksperymentów użyj tutoriali online jak [tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm) na temat `strtok()`.
+- Specyfikacja CSV oferowana przez [RFC 4180](https://tools.ietf.org/html/rfc4180).
+- Szukaj na [Stack Overflow](https://stackoverflow.com/questions/tagged/c+csv) dla przykładów i pomocy w precyzowaniu kodu do specyficznych wymagań.

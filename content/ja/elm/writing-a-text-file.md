@@ -1,7 +1,7 @@
 ---
-title:                "「テキストファイルの作成」"
-html_title:           "Elm: 「テキストファイルの作成」"
-simple_title:         "「テキストファイルの作成」"
+title:                "テキストファイルの書き込み"
+html_title:           "Bash: テキストファイルの書き込み"
+simple_title:         "テキストファイルの書き込み"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-テキストファイルを書くとは何かというと、プログラマーがテキストファイルを使用してコードを記述することを指します。テキストファイルは、コンピューターが読み取ることができるテキスト形式のファイルで、プログラムを実行するために必要不可欠なものです。
+## What & Why? (何となぜ？)
+プログラムでテキストファイルを書くことは、情報を永続的に保存する行為です。データのエクスポート、ログの生成、またはシンプルなデータの交換によく使われます。
 
-## 方法：
-Elmを使用してテキストファイルを書く方法は簡単です。下記のコードを使用してみましょう。
+## How to: (方法)
+Elmには直接ファイルシステムにアクセスする機能はありませんが、ElmからJavaScriptに情報を渡してファイルを作成することができます。以下はその例です。
 
 ```Elm
-import Text
+port module Main exposing (..)
 
-text = "こんにちは！"
+-- ポートを定義
+port saveFile : String -> Cmd msg
 
-Text.write "hello.txt" text
+-- テキストデータをJavaScriptに送る関数
+saveTextFile : String -> Cmd msg
+saveTextFile text =
+  saveFile text
+
+-- JavaScriptでファイルをダウンロードさせるコード例
+-- (HTMLファイル内のJavaScriptスクリプト)
+<script>
+  var app = Elm.Main.init();
+  app.ports.saveFile.subscribe(function (text) {
+    var blob = new Blob([text], {type : 'text/plain;charset=utf-8'});
+    saveAs(blob, "file.txt");
+  });
+</script>
 ```
 
-これにより、「hello.txt」という名前のテキストファイルが作成され、その中には「こんにちは！」というテキストが保存されます。
+## Deep Dive (深掘り)
+Elmは2012年に作られ、安全でメンテナンスしやすいウェブアプリケーションを実現するために設計されています。ファイルシステムへの直接アクセスはサポートしていないため、外部のJavaScriptと連携してファイルを生成するポート（`port`）と呼ばれる機構を利用します。Elmは`elm/file`パッケージを通じてファイルを読む機能を提供していますが、書く機能はブラウザのセキュリティ制約により直接ではできません。
 
-## 深層ダイブ：
-テキストファイルを書く方法は、コンピューターの歴史の中でも重要なものです。その他の方法としては、バイナリファイルを使用してデータを保存する方法がありますが、テキストファイルは可読性が高く、プログラムをより簡単に理解することができます。
-
-テキストファイルを書く方法の実装には、OSやプラットフォームによって異なる方法があります。しかし、Elmを使用することで、プラットフォームに依存しない方法でテキストファイルを書くことができます。
-
-## 関連リンク：
-- [Elm公式ドキュメント](https://elm-lang.org/docs)
-- [プログラミング言語の歴史](https://www.computerhope.com/issues/ch002321.htm)
+## See Also (関連情報)
+- Elmの公式ガイド: https://guide.elm-lang.org/
+- JavaScriptとElmのポートについての詳細な説明: https://guide.elm-lang.org/interop/ports.html
+- ファイル保存のJavaScriptライブラリ`FileSaver.js`: https://github.com/eligrey/FileSaver.js/

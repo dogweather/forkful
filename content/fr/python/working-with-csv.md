@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les CSV"
-html_title:           "Python: Travailler avec les CSV"
-simple_title:         "Travailler avec les CSV"
+title:                "Manipulation des fichiers CSV"
+html_title:           "Bash: Manipulation des fichiers CSV"
+simple_title:         "Manipulation des fichiers CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Travailler avec les fichiers CSV en Python est un moyen simple et pratique de stocker, lire, et traiter des données tabulaires. Les programmeurs utilisent souvent ce format de fichier car il est facilement lisible par les humains et les machines, et peut être facilement manipulé dans Python.
+## Quoi & Pourquoi ?
+Manipuler des fichiers CSV c’est gérer des données tabulaires, comme un Excel mais en plus simple. On bosse dessus pour importer, exporter, et analyser des données facilement entre des systèmes et des applis.
 
-## Comment faire:
-Voici un exemple simple de lecture d'un fichier CSV en Python et d'affichage de son contenu:
+## Comment faire :
 ```Python
 import csv
 
-# Ouverture du fichier CSV en mode lecture
-with open('employes.csv', 'r') as csv_file:
-    # Création d'un object lecteur CSV
-    csv_reader = csv.reader(csv_file)
+# Lire un fichier CSV
+with open('exemplaire.csv', 'r') as fichier:
+    lecteur = csv.reader(fichier)
+    for ligne in lecteur:
+        print(ligne)
 
-    # Boucle à travers les lignes du fichier
-    for ligne in csv_reader:
-        # Accès aux colonnes de chaque ligne
-        nom = ligne[0]
-        age = ligne[1]
-        poste = ligne[2]
-
-        # Affichage des informations
-        print(f"Nom: {nom}, Age: {age}, Poste: {poste}")
+# Écrire dans un fichier CSV
+with open('exemplaire_save.csv', 'w', newline='') as fichier:
+    ecrivain = csv.writer(fichier)
+    ecrivain.writerow(["nom", "ville", "age"])
+    ecrivain.writerow(["Alex", "Paris", "30"])
 ```
 
-Output:
+Sortie:
 ```
-Nom: Jean Dupont, Age: 30, Poste: Développeur
-Nom: Marie Martin, Age: 25, Poste: Designer
-Nom: Pierre Laurent, Age: 35, Poste: Analyste
+['nom', 'ville', 'age']
+['Alex', 'Paris', '30']
 ```
 
-## Plongée en profondeur:
-Les fichiers CSV (pour Comma-Separated Values) ont été créés dans les années 1970 pour stocker des données dans des tableaux simple. Ils sont très populaires dans l'informatique car ils sont universellement compatibles et faciles à manipuler. Alternativement, vous pouvez également utiliser un format de fichier comme JSON ou XML pour stocker des données tabulaires en Python. Pour travailler avec des fichiers CSV, Python propose le module csv qui fournit des outils pour lire et écrire dans ces fichiers de manière efficace.
+## Plongée Profonde
+CSV, ça vient des années 70, simple et universel. Alternatives? JSON, XML, mais CSV reste roi pour la compatibilité. En Python, le module `csv` est standard mais pour du lourd, Pandas gère mieux les gros datasets.
 
-## À voir aussi:
-- [Documentation officielle de Python sur le module csv](https://docs.python.org/fr/3/library/csv.html)
-- [Un tutoriel sur les fichiers CSV en Python](https://realpython.com/python-csv/)
+## À Voir Aussi
+- La doc Python sur CSV: https://docs.python.org/3/library/csv.html
+- Tutoriel Pandas: https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html
+- Comparaison de formats de données: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats

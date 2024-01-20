@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 작성하기"
-html_title:           "Gleam: 텍스트 파일 작성하기"
+html_title:           "Arduino: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,27 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-텍스트 파일을 작성하는 것은 말 그대로 텍스트를 적는 것을 의미합니다. 프로그래머들은 주로 이를 수행하는 이유는 데이터를 저장하고 관리하기 위해서입니다.
+## What & Why? (무엇과 왜?)
+텍스트 파일 작성은 문자 데이터를 파일로 저장 하는 것입니다. 프로그래머는 데이터 로그, 설정, 사용자 입력을 저장하기 위해 텍스트 파일을 작성합니다.
 
-## 방법:
-```Gleam
+## How to: (어떻게 하나요?)
+Gleam어에는 표준 라이브러리에서 파일을 쉽게 만들고 쓸 수 있는 기능이 있습니다. 예제 코드를 보겠습니다:
+
+```gleam
 import gleam/io
 
-// 텍스트 파일 생성
-let result =
-    file.write({path="/my-file.txt", contents="안녕하세요!"})
-
-// 텍스트 파일 내용 읽기
-let result =
-    file.read("/my-file.txt")
-
-// 텍스트 파일에 라인 추가하기
-file.append({path="/my-file.txt", contents="잘가요!"})
+pub fn main() -> Result(Nil, String) {
+  io.write(to: "./hello.txt", "안녕, 글리am!")
+  .map(|_| Nil)
+}
 ```
 
-## 심층 분석:
-(1) 텍스트 파일 작성의 역사적 배경은 다음과 같습니다. (2) 대안으로는 데이터베이스 등 다른 형태의 데이터 저장 방식이 있습니다. (3) 텍스트 파일 작성의 구현 방법은 파일 시스템을 통해 데이터를 디스크에 쓰는 과정을 포함합니다.
+위의 코드를 실행하면, 현재 디렉토리에 "hello.txt" 파일이 생성되어 "안녕, 글리am!" 이라는 내용이 담기게 됩니다.
 
-## 관련 자료:
-- [Gleam 문서](https://gleam.run/)
+## Deep Dive (심화 학습)
+텍스트 파일 작성은 오랜 기간 컴퓨터 과학에서 사용되어 왔으며, 다양한 프로그래밍 언어에서 지원합니다. Gleam어에서는 Erlang의 VM을 기반으로하며, 더 안전하고 간편한 API를 제공합니다. 파일 I/O(입출력)는 실패할 수 있기 때문에, Gleam은 이러한 연산을 `Result` 타입으로 처리하여 에러를 명시적으로 다룰 수 있게 합니다.
+
+## See Also (관련 링크)
+- Gleam 공식 문서: [https://gleam.run](https://gleam.run)
+- Erlang 파일 I/O 도큐멘테이션: [https://erlang.org/doc/man/file.html](https://erlang.org/doc/man/file.html)
