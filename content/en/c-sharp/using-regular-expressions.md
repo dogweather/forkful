@@ -105,4 +105,4 @@ Talking implementation, C#'s `Regex` class lives in `System.Text.RegularExpressi
 ## See Also
 - [Microsoft's Regex Documentation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 - [Regex Tester & Debugger](https://regex101.com/)
-- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) by Jeffrey Friedl - for those who want to get serious with regex.
+- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) by Jeffrey Friedl. _Note from [Robert](https://forkful.ai/en/about/): this is how I learned Regexes. I felt like I truly understood them after reading the book. And nowadays, I use the "Regex Tester & Debugger", listed above, when I have one to debug._
