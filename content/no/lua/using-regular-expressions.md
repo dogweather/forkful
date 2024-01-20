@@ -36,6 +36,4 @@ Historisk sett kommer regulære uttrykk fra teoretisk informatikk og var blant d
 
 ## Se Også:
 - [Lua Users Wiki: Patterns](http://lua-users.org/wiki/Patterns)
-- [GitHub: lpeg - Parsing Expression Grammars For Lua](https://github.com/sqmedeiros/lpeg)
-- [GitHub: rex - Regular Expressions for Lua](https://github.com/rrthomas/lua-rex)
 - [Stack Overflow: Lua Pattern Matching vs. Regular Expressions](https://stackoverflow.com/questions/2925159/lua-pattern-matching-vs-regular-expressions)

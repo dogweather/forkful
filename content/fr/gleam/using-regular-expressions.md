@@ -36,6 +36,5 @@ Sortie attendue:
 Les expressions régulières tirent leurs origines des théories mathématiques des années 1950. Des alternatives, comme le parsing structuré, existent mais sont souvent plus complexes pour des tâches simples. En Gleam, l'utilisation des expressions régulières est rendue plus sûre grâce à la gestion d'erreur de la fonction `from_string`.
 
 ## See Also (Voir Aussi)
-- Documentation Gleam sur les Regex: [Gleam Regex Documentation](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - Tutoriel interactif Regex: [RegexOne](https://regexone.com/)
 - 'A Play on Regular Expressions' pour comprendre les expressions régulières en s'amusant: [Regex Crossword](https://regexcrossword.com/)

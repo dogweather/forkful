@@ -31,6 +31,5 @@ Output:
 Historisk sett stammer regulære uttrykk fra teoretisk lingvistikk og er en sentral del av Unix. Alternativer inkluderer strengmanipuleringsfunksjoner, men disse mangler ofte fleksibiliteten og ytelsen til regulære uttrykk. Implementeringen i Gleam vender seg til Rust-biblioteket 'regex', som gir robust og høytytende mønstersøk.
 
 ## Se Også
-- [Gleam Regex Module Docs](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - [RegexOne: Interactive Regex Tutorial](https://regexone.com/)
 - [MDN Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

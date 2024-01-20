@@ -33,6 +33,5 @@ fn main() {
 Regexpit ovat UNIXista peräisin. Nykyään monet kielet, kuten JavaScript, Python ja Gleam käyttävät niitä. Vaihtoehtoina ovat tekstihaun funktiot, kuten `string.contains`. Gleam käyttää Erlangin regex-kirjastoa, mikä tekee regexp-käsittelystä tehokasta.
 
 ## See Also
-- Gleam's regex documentation: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - RegExr, for building and testing regex patterns: [https://regexr.com/](https://regexr.com/)
 - Interactive Gleam Playground: [https://gleam.run/](https://gleam.run/)

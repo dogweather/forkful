@@ -35,6 +35,5 @@ Hello Ruby
 实现删除匹配模式的字符功能是以计算机科学早期的需求驱动的，特别是当需要对输入数据进行清理以满足特定的格式要求时。由于Ruby是一种强大且灵活的语言，它提供了许多删除字符的方法，包括 `gsub` 和 `tr`。上述 `delete` 方法对于从字符串中删除指定字符非常直观且有效率。然而，如果您需要执行更复杂的字符串替换或者基于正则表达式的匹配删除，那么 `gsub`或者`tr`方法可能更加适合。
 
 ## 另请参阅
-1. [Ruby文档](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete)中的 `delete` 方法。
 2. [Ruby文档](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)中的 `gsub`方法。
 3. [Ruby文档中的](https://ruby-doc.org/core-2.7.2/String.html#method-i-tr) `tr`方法。

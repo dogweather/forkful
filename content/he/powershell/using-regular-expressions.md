@@ -53,6 +53,5 @@ $newText
 ביטויים רגולריים החלו להתפתח בשנות ה-50 ומאז הם התמקדסו רבות. ישנם אלטרנטיבות כמו חיפוש טקסט ידני או שימוש בפונקציות מובנות לחיפוש מחרוזות אבל הם לא גמישים כמו ביטויים רגולריים. ב-PowerShell, ביטויים רגולריים ממומשים דרך ה .NET Framework, שלמעשה מאפשרת שימוש בהם גם בשפות תכנות אחרות.
 
 ## גם כדאי לראות
-- [תיעוד רשמי של ביטויים רגולריים ב-PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expression?view=powershell-7.1)
 - [Learn Regex](https://regexr.com/) - מדריך אינטראקטיבי ואתר לבדיקת ביטויים רגולריים.
 - [Regular-Expressions.info](https://www.regular-expressions.info/) - משאב המסביר בפירוט רב על ביטויים רגולריים.

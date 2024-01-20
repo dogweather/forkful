@@ -43,5 +43,4 @@ if ($email -match $pattern) {
 ## See Also (참조)
 
 - [정규 표현식 - MSDN](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [PowerShell - About Regular Expressions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/deep-dives/everything-about-regular-expressions?view=powershell-7.1)
 - [정규 표현식 테스트 사이트 - Regex101](https://regex101.com/)

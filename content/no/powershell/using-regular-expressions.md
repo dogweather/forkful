@@ -59,6 +59,5 @@ Regular expressions, eller "regex", har sin historie helt tilbake til 1950-talle
 
 ## See Also
 
-- Microsofts dokumentasjon om regulære uttrykk: [About Regular Expressions](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
 - RegExr, et online verktøy for å lære, bygge, og teste regulære uttrykk: [RegExr](https://regexr.com/)
 - PowerShell sin offisielle dokumentasjonsside: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)

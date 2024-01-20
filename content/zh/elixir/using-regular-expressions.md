@@ -37,4 +37,3 @@ Regex.replace(regex, "hello world", "hi")
 ## See Also
 - [Elixir Regex 文档](https://hexdocs.pm/elixir/Regex.html)
 - [在线正则表达式测试器](https://regex101.com/)
-- [Elixir School 正则表达式教学](https://elixirschool.com/zh/lessons/basics/regex/)

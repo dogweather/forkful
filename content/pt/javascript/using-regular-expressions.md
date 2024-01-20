@@ -40,6 +40,5 @@ Quanto à implementação, JavaScript usa expressões regulares baseadas na bibl
 ## Veja Também:
 
 - MDN Web Docs sobre expressões regulares em JavaScript: [MDN RegExp](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-- Livro "Expressões regulares - Uma abordagem divertida": [Casa do Código](https://www.casadocodigo.com.br/products/livro-regex)
 - Testador de expressões regulares online: [RegExr](https://regexr.com/)
 - Resumo de métodos e propriedades de `RegExp` no JavaScript: [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

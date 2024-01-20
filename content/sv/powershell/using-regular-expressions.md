@@ -33,6 +33,5 @@ Output: Kontakta oss på support@example.se
 Reguljära uttryck härstammar från teoretisk datavetenskap och har implementerats i många programmeringsspråk och verktyg. Alternativ till reguljära uttryck inkluderar inbyggda strängfunktioner eller externa bibliotek. Implementationen i PowerShell är kraftfull och använder .NET:s Regex-klass, vilket gör den kompatibel med andra .NET-språk.
 
 ## Se även:
-- [Microsoft Docs: About Regular Expressions in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-regex?view=powershell-7.1)
 - [Regular-Expressions.info](https://www.regular-expressions.info/powershell.html)
 - [.NET Docs: Regular Expression Language - Quick Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

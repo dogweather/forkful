@@ -58,6 +58,4 @@ Output di esempio:
 Le espressioni regolari hanno origine negli anni '50 e sono diventate uno strumento standard in programmazione. Alternativamente, puoi usare funzioni di stringa native o parser dedicati, ma spesso sono meno flessibili. Gleam utilizza il pacchetto `regex` che compila le regex in codice che manipola le stringhe efficacemente.
 
 ## See Also
-- Il pacchetto `gleam_regex`: [https://hex.pm/packages/gleam_regex](https://hex.pm/packages/gleam_regex)
-- Documentazione sulle espressioni regolari di Gleam: [https://gleam.run/stdlib/regex/](https://gleam.run/stdlib/regex/)
 - Tutorial interattivi per le regex in generale: [https://regexone.com/](https://regexone.com/)

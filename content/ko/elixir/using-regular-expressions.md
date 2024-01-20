@@ -41,5 +41,4 @@ IO.puts(new_greetings) # "hi world, hi elixir"
 ## See Also:
 (참조하기)
 - Elixir 공식 문서 [Regex 모듈](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir School 정규 표현식](https://elixirschool.com/en/lessons/basics/regex/)
 - [Rubular: 정규 표현식 테스트 도구](http://rubular.com/)

@@ -31,5 +31,4 @@ String.scan("2023-04-12", regex_captures)
 
 ## See Also (और जानकारी के लिए)
 - [Elixir Regex Module](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir School's Lesson on Regex](https://elixirschool.com/en/lessons/basics/regex/)
 - [Erlang's documentation on regex](https://erlang.org/doc/man/re.html)

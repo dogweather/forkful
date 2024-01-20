@@ -36,6 +36,5 @@ Este texto tem espaços extras
 As expressões regulares têm suas raízes na teoria dos autômatos e linguagem formal, materializadas na década de 1950 pelo matemático americano Stephen Cole Kleene. Alternativas ao uso de regex incluem o processamento de strings com métodos tradicionais, embora muitas vezes sejam menos eficientes. No PowerShell, regex é implementado através do .NET, fornecendo uma variedade de operadores e classes para manipular texto.
 
 ## Veja Também
-- [Documentação oficial do PowerShell sobre regex](https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
 - [Tutorial interativo de regex](https://regexone.com/)
 - [Testador de regex online](https://regexr.com/)

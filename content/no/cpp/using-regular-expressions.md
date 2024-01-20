@@ -48,4 +48,3 @@ Regulære uttrykk oppsto på 1950-tallet og har utviklet seg til et kraftig verk
 ## See Also
 - [cppreference.com Regex library](https://en.cppreference.com/w/cpp/regex)
 - [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html)
-- [Using std::regex in C++11 and C++14](https://www.modernescpp.com/index.php/regular-expressions-in-c-11-and-c-14)

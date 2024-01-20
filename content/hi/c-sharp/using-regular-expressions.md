@@ -46,5 +46,4 @@ Regex का प्रयोग प्रोग्रामिंग में 1
 ## See Also (इसे भी देखें):
 - [.NET डॉक्स पर Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
 - [Regex101: ऑनलाइन regex tester और debugger](https://regex101.com/)
-- [जावा स्क्रिप्ट और पाइथन में regex की तुलना](https://www.regular-expressions.info/reflanguages.html)
 - [Regex सीखने के लिए interactive exercises](https://regexone.com/)

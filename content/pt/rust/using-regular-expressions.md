@@ -40,5 +40,4 @@ fn main() {
 
 ## Veja Também
 - Documentação do `regex` crate: [https://docs.rs/regex](https://docs.rs/regex)
-- Livro "Rust by Example" sobre expressões regulares: [https://doc.rust-lang.org/rust-by-example/std/regex.html](https://doc.rust-lang.org/rust-by-example/std/regex.html)
 - Tutorial "The Rust Programming Language" para manipulação de strings: [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)

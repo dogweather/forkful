@@ -35,4 +35,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## ראה גם:
 - [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
 - [Mozilla Developer Network - Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Practical Common Lisp - Chapter 13, Parsing Text with Regular Expressions](http://www.gigamonkeys.com/book/practical-an-introduction-to-regular-expressions.html)

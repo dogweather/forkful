@@ -39,4 +39,3 @@ Serial.println(result);
 
 * [아두이노 공식 페이지](https://www.arduino.cc)
 * [아두이노 공식 문서: substring()](https://www.arduino.cc/en/Tutorial/StringSubstring)
-* [아두이노 서브스트링 관련 블로그 포스트](https://www.megunolink.com/articles/3-tutorials/70-arduino-string-manipulation-using-minimal-ram)

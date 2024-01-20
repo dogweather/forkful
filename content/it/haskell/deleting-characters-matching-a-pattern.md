@@ -45,5 +45,4 @@ In termini di implementazione, `filter` in Haskell è implementato come una funz
 
 Per ulteriori informazioni sul filtraggio in Haskell, qui ci sono alcune risorse:
 
-2. [Programming in Haskell](https://www.cambridge.org/it/academic/subjects/computer-science/programming-languages-and-applied-logic/programming-haskell-2nd-edition): un libro che copre in dettaglio l'intera programmazione in Haskell. 
 3. [Corso online su Haskell](https://www.futurelearn.com/courses/functional-programming-haskell): un corso online che insegna le basi di Haskell e la programmazione funzionale.

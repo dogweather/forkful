@@ -44,5 +44,4 @@ fn main() {
 ## Дивіться також
 
 - [Документація крейта regex](https://docs.rs/regex/)
-- [Руководство по регулярним виразам в Rust](https://doc.rust-lang.org/regex/regex/index.html)
 - [Rust Book](https://doc.rust-lang.org/book/) для загального розуміння мови програмування Rust.

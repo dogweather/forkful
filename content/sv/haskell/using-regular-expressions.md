@@ -34,5 +34,4 @@ Reguljära uttryck har använts sedan 1950-talet, ursprungligen i automatteori o
 
 ## See Also
 - Haskell Text.Regex.Posix-dokumentation: [hackage.haskell.org/package/regex-posix](https://hackage.haskell.org/package/regex-posix)
-- "Real World Haskell" kapitel om regex: [realworldhaskell.org/read/regular-expressions.html](http://www.realworldhaskell.org/read/regular-expressions.html)
 - Wiki om reguljära uttryck: [en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)

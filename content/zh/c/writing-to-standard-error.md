@@ -44,5 +44,3 @@ int main() {
 如果你想了解更多关于标准错误的知识，请参考以下链接：
 
 - [《C语言标准》](http://www.open-std.org/JTC1/sc22/wg14/www/docs/n1570.pdf)
-- [《Unix编程环境》](https://book.douban.com/subject/25900403/)
-- [《Java编程思想》](https://book.douban.com/subject/2130190/)

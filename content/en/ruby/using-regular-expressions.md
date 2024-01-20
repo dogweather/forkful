@@ -42,4 +42,3 @@ Regular expressions in Ruby have been influenced by Perl's strong regex capabili
 ## See Also
 - [Ruby Regular Expressions](https://ruby-doc.org/core-3.1.0/Regexp.html): Official Ruby documentation for regex.
 - [Rubular](http://rubular.com/): A Ruby-based regular expression editor, good for testing patterns.
-- [Learn Regex the Hard Way](https://learnregexthehardway.org/): A comprehensive guide to understanding regex.

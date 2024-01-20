@@ -35,6 +35,5 @@ pub fn run() {
 정규 표현식은 1950년대 후반에 수학자 스티븐 클리니에 의해 처음 소개되었습니다. 대안으로 문자열 함수나 파싱 라이브러리를 사용할 수 있지만, 정규 표현식은 강력하고 다목적입니다. Gleam에서는 `gleam/regex` 라이브러리를 통해 엔진을 구현하며, Erlang의 레겍스와 호환됩니다.
 
 ## See Also (추가 정보)
-- [Gleam Regex Documentation](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - [Regular Expressions Quick Start Guide](https://www.regular-expressions.info/quickstart.html)
 - [Stack Overflow Regular Expressions Questions](https://stackoverflow.com/questions/tagged/regex)

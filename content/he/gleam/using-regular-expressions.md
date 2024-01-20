@@ -42,6 +42,5 @@ fn main() {
 רגולר אקספרשנים תחילה הוצגו בשנות ה-50 ומאז שיפרו מאוד. קיימות חלופות כמו פארסינג באמצעות גרמטיקות, אך לאקספרשנים יתרונות במהירות ונוחות. בגלים, `gleam/regex` מאפשר ליצור ולהחיל ביטויים רגולריים בקוד.
 
 ## גם ראה
-- תיעוד Gleam `gleam/regex`: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - מבוא לרגולר אקספרשנים: [https://regexone.com/](https://regexone.com/)
 - MDN Web Docs על רגולר אקספרשנים: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

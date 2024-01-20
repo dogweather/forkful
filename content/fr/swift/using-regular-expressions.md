@@ -42,4 +42,3 @@ Historiquement, les regex viennent des sciences théoriques de l'informatique et
 ## Voir Aussi
 - Documentation Apple sur `NSRegularExpression`: [Lien](https://developer.apple.com/documentation/foundation/nsregularexpression)
 - Guide ICU pour les expressions régulières : [Lien](https://unicode-org.github.io/icu/userguide/strings/regexp.html)
-- Swift Algorithm Club – Regex: [Lien](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Regex)

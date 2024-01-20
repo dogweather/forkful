@@ -44,4 +44,3 @@ Las expresiones regulares se originaron en la década de 1950 con el trabajo te�
 ## Ver También
 - [ClojureDocs](https://clojuredocs.org/), para ejemplos y documentación extra de funciones Clojure.
 - [The Java Tutorials - Regex](https://docs.oracle.com/javase/tutorial/essential/regex/), para referencia detallada en la implementación Java de expresiones regulares.
-- [Clj-commons/clj-regex](https://github.com/clj-commons/clj-regex), un repositorio GitHub para una biblioteca Clojure que simplifica trabajar con expresiones regulares.

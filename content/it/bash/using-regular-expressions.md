@@ -40,4 +40,3 @@ Le regex esistono dai primi anni '50, sviluppate da matematici come Stephen Klee
 - [GNU Grep Documentation](https://www.gnu.org/software/grep/manual/grep.html)
 - [Sed - An Introduction and Tutorial by Bruce Barnett](https://www.grymoire.com/Unix/Sed.html)
 - [Regex101: Online regex tester and debugger](https://regex101.com/) per testare le tue espressioni regolari online.
-- [The Regular Expressions chapter from the GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/html_node/Regular-Expressions.html) per vedere come Awk gestisce le regex.

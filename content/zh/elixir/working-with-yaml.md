@@ -40,4 +40,3 @@ YAML最早是由程序员Clark Evans在2001年开发的，目的是为了解决X
 
 - [YAML官方网站](https://yaml.org/)
 - [Elixir中的YAML库](https://hexdocs.pm/yaml/api-reference.html)
-- [YAML语法介绍](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)

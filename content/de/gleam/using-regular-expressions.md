@@ -47,6 +47,5 @@ pub fn main() {
 Regex entstand in den 1950ern und wurde in den 70ern durch die Unix-Welt populär. Alternativen zu Regex sind String-spezifische Funktionen wie `contains` oder Parsing-Bibliotheken, die für bestimmte Datenformate (z.B. JSON) optimiert sind. Intern verwendet Regex oft einen Zustandsautomaten, der die Muster effizient prüft.
 
 ## See Also:
-- Gleam Regex-Modul Dokumentation: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - Online Regex-Tester, um Muster zu testen: [https://regex101.com/](https://regex101.com/)
 - "Mastering Regular Expressions" von Jeffrey E.F. Friedl für ein tiefes Verständnis der Materie.

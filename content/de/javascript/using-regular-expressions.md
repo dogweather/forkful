@@ -37,4 +37,3 @@ Reguläre Ausdrücke wurden in den 1950er Jahren von Stephen Kleene erfunden und
 ## Siehe auch:
 - MDN Web Docs zu regulären Ausdrücken: [MDN Regular Expressions](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex-Tester und -Debugger: [regex101](https://regex101.com/)
-- Artikel über Regex-Performance: [Regex Performance](https://www.regular-expressions.info/performance.html)

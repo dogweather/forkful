@@ -54,4 +54,3 @@ Implementasjonsdetaljer for regex-biblioteker i Haskell kan variere, men de fles
 ## Se Også
 - Hackage for regex-tdfa: [https://hackage.haskell.org/package/regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)
 - Haskell Wiki om regex: [https://wiki.haskell.org/Regular_expressions](https://wiki.haskell.org/Regular_expressions)
-- "Real World Haskell" om regex: [http://book.realworldhaskell.org/read/regular-expressions.html](http://book.realworldhaskell.org/read/regular-expressions.html)

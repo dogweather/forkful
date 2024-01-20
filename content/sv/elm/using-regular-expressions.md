@@ -45,4 +45,3 @@ Reguljära uttryck, ofta förkortade som "regex", används sedan 1950-talet. I E
 ## Se även:
 - Elm Regex paketet: [http://package.elm-lang.org/packages/elm/regex/latest](http://package.elm-lang.org/packages/elm/regex/latest)
 - Elm strängdokumentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- En online regex testare för Elm: [https://elm-regex.vercel.app/](https://elm-regex.vercel.app/)

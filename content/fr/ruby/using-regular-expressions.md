@@ -47,4 +47,3 @@ Les regex ont été popularisées par Perl, influençant de nombreux autres lang
 
 - Documentation Ruby sur les regex: [Regexp](https://ruby-doc.org/core-2.7.0/Regexp.html)
 - Un tutoriel interactif pour apprendre les regex: [Rubular](http://rubular.com/)
-- Article sur l'histoire des regex et leur implémentation: [Regular Expressions History](https://www.regular-expressions.info/history.html)

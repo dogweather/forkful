@@ -40,4 +40,3 @@ Regular expressions, eller regex, ble skapt på 1950-tallet. I Ruby, er Onigurum
 ## See Also
 - [Ruby-Dokumentasjon for Regulære Uttrykk](https://ruby-doc.org/core-2.7.0/Regexp.html)
 - [Rubular: en Ruby-basert regulær uttrykk redigerer](http://rubular.com/)
-- [Ruby Quicktips: Regulære uttrykk](http://www.rubyquicktips.com/post/44385425189/regular-expressions)

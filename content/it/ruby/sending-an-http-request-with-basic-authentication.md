@@ -42,7 +42,6 @@ L'implementazione dell'autenticazione di base in Ruby è piuttosto semplice, com
 ## Vedi anche
 Ruby offre diverse librerie per lavorare con le richieste HTTP. Qui ci sono alcuni link per ulteriori informazioni:
 
-1. [Net::HTTP (Ruby standard library)](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
 2. [HTTParty Gem](https://github.com/jnunemaker/httparty)
 3. [Rest-Client Gem](https://github.com/rest-client/rest-client)
 

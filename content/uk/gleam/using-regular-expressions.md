@@ -39,5 +39,4 @@ Hello
 
 ## Див. також:
 - Офіційний сайт Gleam: [https://gleam.run](https://gleam.run)
-- Документація `gleam_regex`: [https://hex.pm/packages/gleam_regex](https://hex.pm/packages/gleam_regex)
 - Вступ до Regular Expressions: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)

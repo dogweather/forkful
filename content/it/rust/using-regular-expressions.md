@@ -38,5 +38,4 @@ Le regex sono nate negli anni '50 e continuano ad evolversi. Rust utilizza la li
 
 ## See Also
 - [La documentazione ufficiale del crate `regex`](https://docs.rs/regex/1.5.4/regex/)
-- [Rust Regex Book](https://rust-lang-nursery.github.io/regex/regex/index.html)
 - [Tutorial sul pattern matching in Rust](https://doc.rust-lang.org/book/ch18-00-patterns.html)

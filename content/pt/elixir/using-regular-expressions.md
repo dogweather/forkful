@@ -34,5 +34,3 @@ Expressões regulares, ou regex, surgiram na década de 1950, derivadas de teori
 
 ## Veja Também
 - [Documentação oficial de Regex em Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Learn Regex the Hard Way](https://learnregexthehardway.org/book/)
-- [Artigo "Regular Expressions in Elixir" do Elixir School](https://elixirschool.com/en/lessons/advanced/regex/)

@@ -51,5 +51,4 @@ Match found!
 
 ## Дивись також:
 - [Arduino Regex Library by Nick Gammon](http://www.gammon.com.au/forum/?id=11063)
-- [Regular Expressions - Arduino Reference](https://www.arduino.cc/reference/en/libraries/regex/)
 - [Matching Strings with Regular Expressions in C++](https://www.cplusplus.com/reference/regex/)

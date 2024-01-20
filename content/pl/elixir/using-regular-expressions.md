@@ -39,5 +39,3 @@ Wyrażenia regularne mają korzenie w automatach i teorii języka formalnego z l
 
 ## See Also
 - [Dokumentacja Regex modułu Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Przewodnik po wyrażeniach regularnych w Elixirze](https://elixirschool.com/en/lessons/basics/regex/)
-- [Artykuł o wydajności regexów w Elixirze](https://www.amberbit.com/blog/2017/9/22/elixir-regular-expressions-and-performance/)

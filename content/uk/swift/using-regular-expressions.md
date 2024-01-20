@@ -41,5 +41,4 @@ Valid email.
 
 ## Див. також:
 - Документація Apple про NSRegularExpression: [Пряме посилання](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- Руководство по регулярним виразам у Swift: [raywenderlich.com](https://www.raywenderlich.com/books/advanced-ios-app-architecture/v2.0/chapters/5-regular-expressions)
 - Online regex tester (для випробування та освоєння регулярних виразів): [Ресурс](https://regexr.com)

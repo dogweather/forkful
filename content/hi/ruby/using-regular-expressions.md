@@ -36,4 +36,3 @@ puts sentence.scan(words_pattern).size  # 5
 ## संबंधित सूचना स्रोत:
 - [RubyDoc Regexp Class](https://ruby-doc.org/core/Regexp.html)
 - [Rubular: एक Ruby रेगेक्स एडिटर](http://rubular.com/)
-- [Learn Ruby Regexp](https://www.learnrubyonline.org/en/Regular_Expressions)

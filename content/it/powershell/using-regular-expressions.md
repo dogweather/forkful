@@ -38,5 +38,4 @@ Le espressioni regolari risalgono agli anni '50 con la loro teoria formalizzata 
 
 ## See Also
 - Documentazione sulle espressioni regolari .NET: [docs.microsoft.com/dotnet/standard/base-types/regular-expressions](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions)
-- Guida introduttiva a PowerShell e regex: [docs.microsoft.com/powershell/scripting/how-to/working-with-regular-expressions](https://docs.microsoft.com/powershell/scripting/how-to/working-with-regular-expressions)
 - Esercitazioni e test interattivi sui regex: [regex101.com](https://regex101.com)

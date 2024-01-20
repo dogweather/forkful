@@ -32,5 +32,4 @@ fun main() {
 
 ## ראה גם:
 - [תיעוד קוטלין למחלקת Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [tutorialspoint - Kotlin Regular Expressions](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
 - [regex101](https://regex101.com/) - מחולל ומבדק רגקס אינטראקטיבי

@@ -38,4 +38,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 - Clojureの公式ドキュメント: [clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
 - Javaの `Pattern` クラス: [java.util.regex.Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- オンライン正規表現テスター: [RegexPlanet](http://www.regexplanet.com/advanced/clojure/index.html)

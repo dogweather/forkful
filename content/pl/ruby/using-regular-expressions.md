@@ -45,6 +45,5 @@ end
 Regularne wyrażenia, czyli regexy, pojawiły się w latach 50. XX wieku. Są standardem w większości języków programowania. Alternatywą dla regexów jest manualne przeszukiwanie stringów, co jest pracochłonne i mniej wydajne. W Ruby regexy są wbudowane i korzystają z różnych implementacji, np. Oniguruma.
 
 ## See Also:
-- Ruby's Regex dokumentacja: [Ruby-Doc Regex](https://ruby-doc.org/core/doc/regexp_rdoc.html)
 - Dokładniejsze wyjaśnienie regexów: [rubular.com](http://rubular.com/)
 - Interaktywne tutoriali: [regexone.com](https://regexone.com/)

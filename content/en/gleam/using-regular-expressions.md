@@ -64,6 +64,5 @@ Regex has been around since the 1950s; its use in Unix tools in the 1970s solidi
 
 ## See Also
 
-- [Gleam OTP `re` docs](https://hexdocs.pm/gleam_otp/gleam/otp/re/)
 - [Regex101](https://regex101.com/) for testing regex patterns online.
 - [Introduction to Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) for a fundamental grounding.

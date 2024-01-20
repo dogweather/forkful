@@ -52,7 +52,6 @@ int main() {
 
 ## Додатково:
 - [cppreference.com: std::regex](https://en.cppreference.com/w/cpp/regex)
-- [LearnCPP.com: Regular Expressions](https://www.learncpp.com/cpp-tutorial/regular-expressions/)
 - [Regular-Expressions.info: Tutorial](https://www.regular-expressions.info/tutorial.html)
 
 Звертайтеся до цих ресурсів, щоб поглибити свої знання з регулярних виразів.

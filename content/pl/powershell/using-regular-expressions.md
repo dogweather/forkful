@@ -51,6 +51,4 @@ Regularne wyrażenia są starym konceptem, zrodziły się w latach 50-tych. Alte
 
 ## Zobacz także
 
-- [Microsoft Docs: about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
 - [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html)
-- [PowerShell Gallery: Regex module](https://www.powershellgallery.com/packages/Regex)

@@ -56,5 +56,4 @@ Expressões regulares existem há décadas, sendo parte integrante de várias li
 ## Veja Também
 
 - Documentação oficial do pacote `regex`: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
-- Artigo "Elm e Expressões Regulares": [elm-lang.org/examples/regular-expressions](https://elm-lang.org/examples/regular-expressions)
 - Tutorial interativo de regex: [regexone.com](https://regexone.com)

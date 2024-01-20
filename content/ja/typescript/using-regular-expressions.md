@@ -43,4 +43,3 @@ console.log(newText); // TypeScriptを学ぼう！2023/はプログラミング�
 - MDN Web Docs: [正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
 - 正規表現のチュートリアル: [RegExr](https://regexr.com/)
 - TypeScript Handbook: [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- JavaScriptエンジンの正規表現パフォーマンス: [Regex Performance](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-javascript.html)

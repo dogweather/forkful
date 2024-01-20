@@ -55,5 +55,4 @@ main = do
 ## See Also 相关链接
 
 - Haskell `regex-tdfa`库文档：[Hackage: regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)
-- Real World Haskell中关于正则表达式的章节：[Real World Haskell: Regular Expressions](http://book.realworldhaskell.org/read/regular-expressions.html)
 - 廖雪峰的正则表达式教程（中文介绍正则表达式）：[廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400)

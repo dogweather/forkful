@@ -37,6 +37,5 @@ $emailPattern = '[\w.-]+@[a-zA-Z-]+\.[a-zA-Z]+'
 Регулярні вирази прийшли з теоретичної інформатики і були популяризовані у Unix утилітах, таких як sed та grep. Альтернативи регулярним виразам включають роботу з текстовими рядками за допомогою основних методів як IndexOf чи Replace, але це часто не настільки гнучко та потужно. PowerShell використовує .NET клас System.Text.RegularExpressions для регулярних виразів, що забезпечує широкий спектр функціональності та оптимізації.
 
 ## Дивіться також:
-- [Microsoft документація по регулярним виразам у PowerShell](https://docs.microsoft.com/uk-ua/powershell/scripting/learn/deep-dives/everything-about-regex?view=powershell-7.1)
 - [Інтерактивний тренажер для навчання регулярних виразів](https://regexr.com/)
 - [Довідник регулярних виразів](https://www.regular-expressions.info/)

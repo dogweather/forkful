@@ -37,5 +37,4 @@ Le regex risalgono agli anni '50 e furono introdotte da Stephen Kleene. Alternat
 
 ## Vedi Anche
 - [Documentazione ufficiale Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tutorial di Kotlin sulle Regex](https://play.kotlinlang.org/byExample/09_Regularexpressions/01_Regularexpressionbasics)
 - [Lezioni su espressioni regolari su RegexOne](https://regexone.com/)

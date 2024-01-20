@@ -37,5 +37,4 @@ Regexy sięgają lat 50. XX wieku, a ich obecna forma wywodzi się z formalnej t
 
 ## Zobacz również:
 1. [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
-2. [Brave and True - Chapter on Strings and Regular Expressions](https://www.braveclojure.com/strings/)
 3. [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html) - ogólne informacje o regexach, niezależnie od języka.

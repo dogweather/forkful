@@ -56,4 +56,3 @@ Dettagli di implementazione: `tagsoup` non fa un'analisi rigorosa. Ignora gli er
 
 - Documentation: [TagSoup](https://hackage.haskell.org/package/tagsoup)
 - Alternative: [html-conduit](https://hackage.haskell.org/package/html-conduit)
-- Testo accademico: [Combinator Parsing: A Short Tutorial](http://www.cs.nott.ac.uk/~pszgmh/monparsing.pdf)

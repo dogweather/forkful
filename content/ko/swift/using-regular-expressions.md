@@ -46,4 +46,3 @@ Swift에서는 `NSRegularExpression` 클래스를 사용하여 정규 표현식 
 ## See Also (참조)
 - [Swift 문자열과 문자 안내서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 - [NSRegularExpression Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift 알고리즘 클럽의 정규 표현식 가이드](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Regex)

@@ -33,5 +33,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## See Also (더 보기)
 - Clojure 공식 문서: [https://clojure.org/](https://clojure.org/)
-- Clojure에서 정규 표현식 사용하기: [https://clojure.org/guides/learn/regex](https://clojure.org/guides/learn/regex)
 - Java 정규 표현식 문서: [https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)

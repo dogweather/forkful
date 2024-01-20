@@ -49,6 +49,5 @@ replace_example()
 Reguljära uttryck har använts sedan 1950-talet och populariserades i Unix-verktyg på 1970-talet. Alternativ till regex inkluderar strängmanipuleringsfunktioner och parser generators, men de är oftast mer komplexa. Implementationen i Gleam via Rust's `regex` är snabb och säker, tack vare Rust's minneshantering och typsystem.
 
 ## See Also
-- Gleam's regex-dokumentation: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 - Rust's regex-bibliotek: [https://docs.rs/regex](https://docs.rs/regex)
 - Ett interaktivt regex-verktyg: [https://regex101.com/](https://regex101.com/)

@@ -32,6 +32,5 @@ Wynik: `Znaleziony adres email: email@example.com`
 Wyrażenia regularne powstały w latach 50. i od zawsze były kluczową częścią uniwersalnych edytorów tekstu oraz języków programowania. Alternatywą dla nich są parser’y, które jednak często wymagają bardziej skomplikowanego kodu. W PHP używa się składni PCRE (Perl Compatible Regular Expressions), która dostarcza bogaty zestaw funkcji, jak `preg_match()`, `preg_replace()` czy `preg_split()`.
 
 ## Zobacz też
-- [Oficjalna dokumentacja PHP dla wyrażeń regularnych](https://www.php.net/manual/pl/book.pcre.php)
 - [Tutorial wyrażeń regularnych](https://www.regular-expressions.info/tutorial.html)
 - [Online tester wyrażeń regularnych](https://regex101.com/)

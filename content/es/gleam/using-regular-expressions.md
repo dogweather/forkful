@@ -37,4 +37,3 @@ Históricamente, las expresiones regulares provienen de la teoría de autómatas
 ## Ver También
 - [Documentación oficial de Gleam](https://gleam.run/)
 - [Expresiones regulares en la programación](https://www.regular-expressions.info/)
-- [Tutorial de Regex en Gleam](https://hexdocs.pm/gleam_stdlib/gleam/regex/)

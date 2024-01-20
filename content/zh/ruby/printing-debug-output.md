@@ -41,5 +41,4 @@ add_two_numbers(2, 3)
 
 ## 相关资源
 
-- Ruby官方文档：[Kernel Module](https://ruby-doc.org/core-3.0.1/Kernel.html)——这个模块包含`puts`和`p`命令的官方文档。
 - [byebug](https://github.com/deivid-rodriguez/byebug)——这是一个强大的Ruby调试器，你可以在GitHub上找到关于它的所有信息。

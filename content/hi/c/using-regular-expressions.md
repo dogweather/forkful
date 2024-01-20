@@ -57,4 +57,3 @@ int main() {
 
 - [GNU C Library Manual: Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
 - [RegexOne: Learn Regular Expressions](https://regexone.com/)
-- [POSIX Regular Expressions](https://en.wikipedia.org/wiki/POSIX_basic_and_extended_regular_expressions)

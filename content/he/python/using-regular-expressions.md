@@ -44,4 +44,3 @@ Regex בפייתון מאפשר עבודה עם מילים!
 ## See Also
 - [תיעוד ביטויים רגולריים של Python](https://docs.python.org/3/library/re.html)
 - [Regex101](https://regex101.com/) - לבדוק וללמוד ביטויים רגולריים
-- [Learn Regex The Hard Way](https://learnregexthehardway.org/) - למידה עצמית של ביטויים רגולריים

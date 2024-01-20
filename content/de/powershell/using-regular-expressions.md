@@ -56,6 +56,5 @@ if ($licensePlate -match $pattern) {
 Die Nutzung von Regex geht auf die 1950er Jahre zurück und ist tief in der Informatik verwurzelt. Alternativen zu Regex sind spezialisierte Parser, Text-to-SQL-Abfragekonverter und String-Funktionen, die ohne Mustererkennung auskommen, aber weniger mächtig sind. PowerShell verwendet das .NET Regex-Objekt, welches eine Implementation der Regex-Funktionalität mit Zusatzfeatures wie benannten Gruppen und Lookaheads bietet.
 
 ## See Also
-- Microsoft Dokumentation zur PowerShell Regex: [PowerShell Regular Expressions](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
 - Online Regex Tester und Debugger: [regex101](https://regex101.com/)
 - Einsteigerfreundliches Regex-Tutorial: [RegexOne](https://regexone.com/)
