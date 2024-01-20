@@ -39,4 +39,4 @@ En ce qui concerne les alternatives, Rust propose aussi les expressions réguli�
 ## A voir aussi :
 
 - [Documentation Rust sur les chaînes de caractères](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Documentation Rust sur regex crate](https://docs.rs/regex/1.4.3/regex/) 
+- [Documentation Rust sur regex crate](https://docs.rs/regex/1.4.3/regex/)

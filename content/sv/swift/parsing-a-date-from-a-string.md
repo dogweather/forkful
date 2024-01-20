@@ -40,4 +40,4 @@ Genom att använda Swifts inbyggda `DateFormatter`, kan du lita på att datumen 
 ## Se även
 - [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
 - [Apple's Swift book: Dates and Times](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369-SW1)
-- [StackOverflow: DateFrom string in Swift](https://stackoverflow.com/questions/35700281/date-format-in-swift) 
+- [StackOverflow: DateFrom string in Swift](https://stackoverflow.com/questions/35700281/date-format-in-swift)

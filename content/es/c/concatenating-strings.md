@@ -52,4 +52,4 @@ La implementación de la concatenación de cadenas en C reserva espacio para la 
 Para más información sobre la concatenación de cadenas en C y funciones relacionadas, puedes visitar los siguientes enlaces:
 
 - [Tutorial de TutorialsPoint sobre la concatenación de cadenas en C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Información profunda sobre `strcat()`](https://www.cplusplus.com/reference/cstring/strcat/) 
+- [Información profunda sobre `strcat()`](https://www.cplusplus.com/reference/cstring/strcat/)

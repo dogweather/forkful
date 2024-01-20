@@ -40,5 +40,3 @@ Obliczanie daty w przyszłości i przeszłości jest powszechną praktyką data 
 Alternatywą do powyższego kodu byłoby dodawanie lub odejmowanie milisekund bezpośrednio do lub od czasu, ale jest to mniej czytelne.
 
 Szczegółem implementacyjnym jest to, że funkcje `add_days_to_date` i `subtract_days_from_date` używają funkcji `new_span` do tworzenia okresu czasu do dodania lub odjęcia, a następnie przeliczają ten okres na milisekundy za pomocą `span_to_ms` zanim dodadzą lub odejmą ten czas od daty.
-
-## Zobacz również

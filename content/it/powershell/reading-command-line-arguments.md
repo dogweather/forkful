@@ -47,5 +47,3 @@ Historicamente, l'accesso agli argomenti della riga di comando era un compito st
 Un'alternativa per leggere gli argomenti sarebbe l'uso dell'array automatico `$args`, ma il suo uso è sconsigliato perché offre meno flessibilità e sicurezza di tipo.
 
 L'interpretazione degli argomenti nella riga di comando avviene da sinistra a destra. Gli argomenti possono essere interpretati come nome del parametro, valore del parametro o argomento posizionale a seconda della loro posizione e del formato.
-
-## Vedi Anche:

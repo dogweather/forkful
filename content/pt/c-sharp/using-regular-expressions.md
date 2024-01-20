@@ -50,4 +50,4 @@ Para otimizar a performance, C# compila as expressões regulares para o código 
 
 ## Veja Também
 - Documentação Microsoft Regex: [https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
-- Regex Tutorial Interactivo: [https://regexone.com/](https://regexone.com/) 
+- Regex Tutorial Interactivo: [https://regexone.com/](https://regexone.com/)

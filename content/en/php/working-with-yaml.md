@@ -91,4 +91,4 @@ Under the hood, the YAML extension in PHP uses the libyaml library, which has C 
 ## See Also:
 
 - [Official Documentation for YAML in PHP](https://www.php.net/manual/en/book.yaml.php)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html) 
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)

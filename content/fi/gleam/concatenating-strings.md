@@ -34,5 +34,3 @@ Kuitenkin suuren määrän merkkijonojen yhdistämisessä, "+" -operaattori saat
 let viesti = io.format("Hei, ~p!", ["maailma"])
 io.println(viesti)  // Tulostaa: Hei, maailma!
 ```
-
-## Katso Myös

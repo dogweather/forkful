@@ -30,4 +30,4 @@ puts "I am #{age} years old."  # "I am 30 years old."
 
 ## ראה גם:
 - [String interpolation in Ruby](https://en.wikipedia.org/wiki/String_interpolation#Ruby)
-- [Ruby documentation: String](https://ruby-doc.org/core-2.7.0/String.html) 
+- [Ruby documentation: String](https://ruby-doc.org/core-2.7.0/String.html)

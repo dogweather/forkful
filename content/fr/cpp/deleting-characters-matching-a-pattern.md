@@ -56,4 +56,4 @@ Notez que `std::remove` ne réduit pas la taille de la chaîne, il modifie plut�
 Pour en apprendre davantage sur le traitement de texte en C++, visitez ces sites :
 
 - Manipulation de chaînes en C++ chez [cplusplus.com](http://www.cplusplus.com/cplusplus-strings/)
-- Documentation officielle C++ de [`std::remove` et `std::string::erase`](https://en.cppreference.com/w/cpp/algorithm/remove) sur cppreference 
+- Documentation officielle C++ de [`std::remove` et `std::string::erase`](https://en.cppreference.com/w/cpp/algorithm/remove) sur cppreference

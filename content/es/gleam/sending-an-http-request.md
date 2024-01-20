@@ -51,5 +51,3 @@ Enviar solicitudes HTTP es un enfoque básico y antiguo para la comunicación en
 Aunque hay alternativas como GraphQL o gRPC, las solicitudes HTTP siguen siendo de facto para muchas tareas debido a su simplicidad y la amplia adopción.
 
 En el Gleam, las solicitudes HTTP se basan en la biblioteca de cliente HTTP subyacente de Erlang, que es conocida por su robustez y fiabilidad.
-
-## Ver También

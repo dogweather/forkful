@@ -47,5 +47,3 @@ Tässä tapauksessa tilapäinen tiedosto on luotu nimellä "my_temp_file" ja yks
 ## Syvällinen sukellus:
 Gleam on suhteellisen uusi kieli, joka on rakennettu turvallisemman ja luotettavamman ohjelmoinnin tukemiseksi. Se tarjoaa tilapäisten tiedostojen luontiin tarvittavat perustyökalut, kuten `create_temp_file`.
 Rinnakkaisia menetelmiä, kuten tempdirin tai tempfile::tempnoran käyttöä muissa kielissä ei erityisemmin suositella Gleamissa, koska ne eivät tarjoa samanlaista turvallisuustasoa.
-
-## Katso myös:

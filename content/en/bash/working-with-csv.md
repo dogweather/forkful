@@ -33,5 +33,3 @@ csvtool sort 2 example.csv
 CSV files have been around since the early 1970s and have been a popular choice for storing and transferring data due to their simplicity and compatibility with a wide range of programs. However, CSV files do have some limitations, such as not being able to handle complex data structures. As a result, alternative formats such as JSON and XML have gained popularity in recent years.
 
 Working with CSV files in Bash requires the installation of the `csvtool` package. This package is part of the `debianutils` package and is usually pre-installed in most Linux distributions. `csvtool` is a set of command-line tools that use Unix's philosophy of small, simple, and composable tools to handle CSV data efficiently.
-
-## See Also

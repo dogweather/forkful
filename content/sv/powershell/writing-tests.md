@@ -32,5 +32,3 @@ $Results.FailedCount # outputs the number of failed tests
 # Fördjupning:
 
 (1) Tester har funnits i programmering sedan tidigaste dagar och hjälper oss att identifiera och förhindra buggar i vår kod. (2) Ett alternativ till Pester (det vanligaste testramverket för PowerShell) är platshållare som TestScript och RunspaceFactory. (3) I implementationsdetaljer använder vi vanligtvis Verify-Something funktioner för att jämföra resultatet av vår kod med det förväntade resultatet.
-
-# Se även:

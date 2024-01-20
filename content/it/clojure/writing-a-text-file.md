@@ -52,5 +52,3 @@ Scrivere un file di testo significa creare un documento digitale che contiene te
 ## Approfondimento:
 
 Scrivere file di testo è un processo fondamentale nella programmazione, che risale ai primi linguaggi di programmazione come il COBOL e il FORTRAN. Oltre a creare e salvare file di testo su un dispositivo, i programmatori spesso utilizzano librerie o moduli specifici per manipolare file di testo, come ad esempio per leggere o modificare il contenuto di un file.
-
-## Vedi anche:

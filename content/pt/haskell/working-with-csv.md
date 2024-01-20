@@ -62,6 +62,3 @@ CSV é um formato de arquivo bastante utilizado na indústria de banco de dados,
 Em termos de implementação, a biblioteca "haskell-csv" usa o conceito de "parsing", que é a transformação de uma string em uma estrutura de dados mais complexa. Ela usa técnicas avançadas e eficientes de parsing para garantir um desempenho rápido e seguro.
 
 Além disso, a biblioteca é bem documentada e possui código fonte aberto, o que permite aos programadores contribuírem com melhorias e correções de bugs.
-
-
-##Veja Também:

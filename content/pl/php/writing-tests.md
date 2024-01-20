@@ -31,5 +31,3 @@ testSum();
 
 ## Deep Dive:
 Pisanie testów jest częścią metodyki TDD (Test Driven Development), która została wprowadzona w 2003 roku przez programistę Kenta Becka. Jest to podejście, w którym testy są pisane przed napisaniem właściwego kodu. Istnieją również inne metody tworzenia testów, takie jak BDD (Behavior Driven Development), gdzie testy są pisane w języku naturalnym, aby lepiej odzwierciedlić oczekiwane zachowanie aplikacji.
-
-## Zobacz również:

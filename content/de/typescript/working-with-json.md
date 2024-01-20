@@ -42,5 +42,3 @@ newJsonString = '{"name": "Max", "age": 25, "hobby": "programming"}'
 JSON wurde erstmals im Jahr 2001 von Douglas Crockford eingeführt und hat sich seitdem zu einem der am häufigsten genutzten Datenformate entwickelt. Alternativen zu JSON sind beispielsweise XML und CSV, aber JSON bleibt aufgrund seiner einfachen Syntax und seiner Kompatibilität mit JavaScript eine beliebte Wahl.
 
 In TypeScript gibt es verschiedene Methoden zum Arbeiten mit JSON, wie zum Beispiel das Validieren von JSON-Daten durch Verwendung von Typen oder das Verwenden von JSON APIs zum Abrufen und Senden von Daten.
-
-## Siehe auch

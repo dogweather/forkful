@@ -44,5 +44,3 @@ HTTP protokollen ble skapt for å muliggjøre overføring av hypertext dokumente
 Når det gjelder alternative måter å sende HTTP-forespørsler på, finnes det forskjellige biblioteker som axios, got, request, etc. som alle tilbyr forskjellige funksjoner og brukervennlighet.
 
 I henhold til implementeringsdetaljer for HTTP-forespørsler, er det viktig å merke seg at fetch API returnerer et Promise som løser til Response-objektet som representerer svaret på forespørselen.
-
-## Se Også

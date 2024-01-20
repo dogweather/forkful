@@ -40,4 +40,4 @@ När det gäller implementation, se till att du tar bort debug utskrifter från 
 ## Se också
 För mer information om C programmering och debug tekniker, se följande källor:
 
-- [GDB: The GNU Project Debugger](https://www.gnu.org/software/gdb/) 
+- [GDB: The GNU Project Debugger](https://www.gnu.org/software/gdb/)

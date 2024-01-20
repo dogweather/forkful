@@ -46,5 +46,3 @@ Historia i kontekst: Pierwotnie, konwersja liter na wielkie było istotnym eleme
 Alternatywy: Alternatywą dla metody, którą przedstawiliśmy, jest użycie funkcji `String.to_uppercase`. Ten sposób jest bardziej bezpośredni, ale mniej elastyczny, jeśli chcesz dopasować specyficzne znaki lub użyć niestandardowych reguł kapitalizacji.
 
 Szczegóły implementacji: nasz kod najpierw przekształca tekst na listę punktów kodowych, po czym każdy punkt kodowy jest zamieniany na wielką literę. Na koniec, wszystkie te pojedyncze punkty kodu są łączone w jeden ciąg. Dzięki temu metoda jest bardzo skuteczna dla dowolnej długości tekstu, a także obsługuje znaki specjalne i diakrytyczne.
-
-## Zobacz także

@@ -39,5 +39,3 @@ Historiskt sett har datumberäkningar alltid varit en del av programmering, då 
 Ett alternativ till `gleam/calendar`-modulen är `gleam/date`-modulen, som också erbjuder funktioner för att hantera datum och tid.
 
 När det gäller genomförande av datum och tid i framtiden eller det förflutna, har alltid betydelsen av tidzoner och skottår beaktats, eftersom de spelar en stor roll i korrekta beräkningar.
-
-## Se Även

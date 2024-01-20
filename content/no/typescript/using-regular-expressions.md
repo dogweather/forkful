@@ -25,5 +25,3 @@ Output vil være `[ '3', '5' ]` som innebærer at vi har funnet og fanget to tal
 
 ## Dypdykk:
 Regulære uttrykk har eksistert siden 1950-tallet og blir brukt i flere programmeringsspråk. I tillegg til TypeScript, kan du også bruke regex i språk som Python og Perl. Alternativene til regex inkluderer stringmetoder som søking og erstattning, men disse er ikke like kraftige som regex og kan bli mer komplisert når man håndterer komplekse mønstre. Implementeringen av regex i TypeScript er basert på standarden for regulære uttrykk fra ECMAScript.
-
-## Se også:

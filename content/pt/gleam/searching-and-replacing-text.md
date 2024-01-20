@@ -34,5 +34,3 @@ Executando o código acima, o resultado seria `"Olá, Gleam!"`.
 1. Contexto histórico: As funções de busca e substituição ganharam popularidade com os editores de texto, facilitando a edição de grandes blocos de texto. Eles foram posteriormente adotados em linguagens de programação.
 2. Alternativas: Em algumas linguagens, como o JavaScript, `String.prototype.replace()` é usado, enquanto no Python, `str.replace()`. Em Gleam, usamos `string.replace()`.
 3. Detalhes de implementação: Em Gleam, `string.replace()` é uma função pura que retorna uma nova string, ao invés de modificar a string original.
-
-## Veja Também:

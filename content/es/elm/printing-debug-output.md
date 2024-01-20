@@ -36,5 +36,3 @@ En este código, `label` es una etiqueta descriptiva para la salida y `value` es
 2. **Alternativas**: En Elm existen otras maneras de depurar además de `Debug.log`, como `Debug.toString` que convierte una estructura de datos en una cadena.
 
 3. **Detalles de Implementación**: La función `Debug.log` imprime la salida en la consola del navegador. Sin embargo, usar `Debug.log` en exceso puede ralentizar la aplicación, debido a que la transformación de datos y la escritura en consola son operaciones costosas.
-
-## Ver También:

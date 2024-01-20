@@ -40,5 +40,3 @@ La práctica de escribir a la salida de error estándar es común en varios leng
 Además, también es posible redirigir la salida de error estándar a un archivo, utilizando el operador `>` en la línea de comandos al ejecutar el programa.
 
 En cuanto a la implementación, escribir a la salida de error estándar se logra utilizando la clase `System` y su propiedad `err`. A través de esta propiedad, se puede acceder al flujo de la salida de error estándar y escribir mensajes utilizando el método `println()`.
-
-## Ver También:

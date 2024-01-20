@@ -39,5 +39,3 @@ Ciao, Mario! Hai 30 anni.
 (2) Ci sono molte alternative all'interpolazione delle stringhe, ad esempio la concatenazione delle stringhe. Tuttavia, l'interpolazione delle stringhe è più leggibile e meno incline a errori.
 
 (3) In Gleam, l'interpolazione delle stringhe avviene tramite la funzione `Io.print()`. I valori all'interno delle parentesi graffe { } vengono sostituiti dai valori specificati nell'elenco di argumenti alla fine della funzione.
-
-## Vedere Anche

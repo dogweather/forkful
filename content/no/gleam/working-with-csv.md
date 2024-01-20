@@ -37,5 +37,3 @@ for {header, data} in headers_and_data {
 CSV-formatet ble utviklet i 1972 som en enkel måte å lagre data på, og har siden blitt en standard for utveksling av informasjon mellom ulike systemer. Selv om CSV er mye brukt, har det også sine begrensninger. For eksempel støtter det ikke komplekse datastrukturer, som kan gjøre det vanskelig å lagre data på en optimal måte. Alternativer til CSV inkluderer JSON og XML, som begge støtter mer komplekse datastrukturer og er mer utbredt i moderne programmering.
 
 Når du arbeider med CSV i Gleam, bør du være oppmerksom på eventuelle problemer med tegnsett og tegn som kan bryte med CSV-formatet. Det er også viktig å ha en god forståelse av hvordan CSV-dataene dine er strukturert, siden det kan påvirke ytelsen når du leser og manipulerer dataene.
-
-## Se også:

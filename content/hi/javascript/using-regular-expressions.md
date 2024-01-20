@@ -23,5 +23,3 @@ console.log(pattern.test("hello world"));
 
 ## गहराई की खोज:
 Regular Expressions को 1950 के दशक में जन्म दिया गया था। ये Ken Thompson और Dennis Ritchie द्वारा बनाया गया था, जो उस समय बेल लैबोरेट्रीज में काम कर रहे थे। इसके अलावा, regular expressions के दूसरे विकल्प भी मौजूद हैं, जैसे "match" और "search" methods। आप regular expressions को अपने आवश्यकताओं के अनुसार adjust कर सकते हैं, जो आसानी से प्रोग्रामिंग को अनुकूलित करता है।
-
-## देखें भी:

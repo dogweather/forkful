@@ -38,4 +38,4 @@ S'agissant des détails d'implémentation, la commande `date` utilise la bibliot
 ## Voir aussi:
 Pour plus d'informations sur le sujet, vous pouvez consulter :
 - La page de manuel de `date`: [https://fishshell.com/docs/current/commands.html#date](https://fishshell.com/docs/current/commands.html#date)
-- Les caractéristiques de la Fish Shell : [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)  
+- Les caractéristiques de la Fish Shell : [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)

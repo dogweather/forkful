@@ -32,5 +32,3 @@ L'output dovrebbe essere `1 runs, 1 assertions, 0 failures, 0 errors, 0 pendings
 La pratica di scrivere test è diventata sempre più popolare negli ultimi anni grazie all'approccio di sviluppo noto come "test-driven development" (TDD). Alcune alternative a `Test::Unit` includono `RSpec` e `minitest`.
 
 Per implementare i test, è importante comprendere i concetti di "assertions" e "fixtures". Le assertions sono dichiarazioni che descrivono i risultati attesi del test, mentre le fixtures sono dati di prova utilizzati per eseguire i test.
-
-## Vedi anche:

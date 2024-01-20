@@ -47,5 +47,3 @@ Errors:
 Testien kirjoittamisella on pitkä historia ohjelmistokehityksessä, ja se on vakiintunut käytäntö monissa ohjelmointikielissä, kuten C ja Java. Vaihtoehtona testien kirjoittamiselle on manuaalinen koodin tarkastelu, mutta tämä voi olla epäluotettavaa ja aikaa vievää. 
 
 Lua:ssa on useita testikirjastoja, kuten "LuaUnit" ja "busted", jotka tarjoavat erilaisia testausominaisuuksia ja -ratkaisuja. Testien kirjoittaminen vaatii tarkkuutta ja huolellisuutta, jotta ne ovat tehokkaita ja luotettavia.
-
-## Katso myös:

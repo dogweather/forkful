@@ -45,4 +45,4 @@ Elmの`String.toUpper`関数はUTF-16互換の全ての文字を対応する大�
 ## 関連情報:
 
 - Elmの文字列操作については、公式ドキュメンテーションで詳しく解説されています: [Elm String Module](https://package.elm-lang.org/packages/elm/core/latest/String) 
-- Unicodeについてのより詳しい情報はこちらで提供されています: [Unicode.org](https://www.unicode.org) 
+- Unicodeについてのより詳しい情報はこちらで提供されています: [Unicode.org](https://www.unicode.org)

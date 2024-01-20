@@ -28,5 +28,3 @@ Skrivande av textfiler är en vanlig och nödvändig del av programmering. Det a
 Det finns också alternativ till textfiler, som till exempel att använda databaser för att lagra och manipulera data. Men textfiler är fortfarande en vanlig och enkel metod för att hantera information.
 
 När du skriver en textfil i Kotlin används en teckenkodning som standard för att översätta tecken till binära värden. Det är viktigt att välja rätt teckenkodning för att kunna läsa och tolka filens innehåll korrekt.
-
-## Se även:

@@ -42,5 +42,3 @@ print(str) // "Witaj Swift"
 ```
 
 * **Szczegóły implementacji**: Gdy manipulujemy ciągami znaków w Swift, ważne jest, aby zwrócić uwagę na kwestie wydajności. Operacje na ciągach mogą być kosztowne pod względem zużycia pamięci i czasu procesora, szczególnie dla dużych ciągów danych.
-
-## Zobacz też:

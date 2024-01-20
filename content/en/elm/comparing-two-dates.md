@@ -40,4 +40,3 @@ The built-in `compare` function uses Unix timestamp internally for comparison. A
 ## See Also
 
 - Core Elm `Date` module documentation: [https://package.elm-lang.org/packages/elm/time/latest/Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
-  

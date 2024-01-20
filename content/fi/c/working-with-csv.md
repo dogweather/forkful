@@ -62,5 +62,3 @@ int main()
 CSV kehitettiin vuonna 1972, joten se on ollut käytössä yli 40 vuotta. Tänä päivänä on myös muita vaihtoehtoja, kuten JSON ja XML, jotka tarjoavat enemmän ominaisuuksia, mutta ovat monimutkaisempia käyttää. CSV on edelleen suosittu vaihtoehto yksinkertaisiin taulukkolaskentatarkoituksiin.
 
 CSV-tiedoston sisällä voi olla myös erilaisia erottimia, kuten puolipiste tai tabulaattori, ja se voi aiheuttaa ongelmia tiedoston lukemisessa. On tärkeää käsitellä näitä erikoistapauksia ja varmistaa, että CSV-tiedoston käsittely on joustavaa.
-
-## Katso myös:

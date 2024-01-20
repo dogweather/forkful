@@ -50,4 +50,4 @@ fn main() {
 
 ## Також дивіться:
 
-- [Chrono Documentation](https://docs.rs/chrono/0.4.11/chrono/) 
+- [Chrono Documentation](https://docs.rs/chrono/0.4.11/chrono/)

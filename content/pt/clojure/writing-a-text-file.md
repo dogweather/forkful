@@ -41,5 +41,3 @@ Além da função `spit` mencionada anteriormente, também é possível utilizar
 ```
 
 Outra alternativa para escrever arquivos de texto é utilizar bibliotecas externas, como a `clomp` ou a `unilog`. Essas bibliotecas oferecem funcionalidades adicionais, como escrever em arquivos de texto em outros formatos, como CSV ou JSON.
-
-## Veja também:

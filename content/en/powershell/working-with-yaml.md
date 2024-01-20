@@ -46,5 +46,3 @@ YAML was first introduced in 2001 as an alternative to XML. It quickly gained po
 There are other alternatives to YAML, such as JSON and XML. However, YAML stands out due to its simplicity and readability. It allows for easy nested structures and is less verbose compared to other markup languages. Additionally, PowerShell has built-in support for YAML, making it a convenient choice for working with structured data.
 
 When working with YAML in PowerShell, it's essential to keep in mind that indentation is significant. Similar to Python, the hierarchy of YAML data is defined by the indentation level. Incorrect indentation can lead to syntax errors or unexpected behavior when converting the YAML file into a PowerShell object.
-
-## See Also:

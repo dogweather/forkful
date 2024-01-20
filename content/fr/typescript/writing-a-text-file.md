@@ -40,5 +40,3 @@ appendFileSync("noms.txt", "\n" + "Amy");
 L'écriture de fichiers texte remonte aux débuts de la programmation informatique. Autrefois, les programmes stockaient principalement leurs données dans des fichiers texte avant l'avènement des bases de données. Il existe également d'autres alternatives pour stocker des données, telles que les fichiers CSV ou les fichiers JSON, mais les fichiers texte restent encore très populaires en raison de leur simplicité et de leur compatibilité avec la plupart des langages de programmation.
 
 L'implémentation de l'écriture de fichiers texte varie en fonction du langage de programmation utilisé, mais les étapes de base restent les mêmes: création d'un fichier, ajout ou modification de contenu, puis enregistrement du fichier sur le disque.
-
-## Voir aussi:

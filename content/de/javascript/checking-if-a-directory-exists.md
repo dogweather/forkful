@@ -44,4 +44,4 @@ In obigem Code verwenden wir das `fs` (File System) Modul in Node.js, um auf das
 ## Siehe auch  
 
 * [Node.js `fs` Modul Dokumentation](https://nodejs.org/api/fs.html)  
-* [`fs-extra` auf npm](https://www.npmjs.com/package/fs-extra)  
+* [`fs-extra` auf npm](https://www.npmjs.com/package/fs-extra)

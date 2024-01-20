@@ -50,4 +50,4 @@ Ważne jest, że mimo iż potentat w swojej domenie, regularne wyrażenia nie s�
 
 ## Zobacz również
 - [Manual GNU](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Regular Expressions in C](https://www.lemoda.net/c/unix-regex/) 
+- [Regular Expressions in C](https://www.lemoda.net/c/unix-regex/)

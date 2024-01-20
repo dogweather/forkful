@@ -39,6 +39,4 @@ Wynikowa informacja wyjściowa:
 
 (2) Alternatywy dla drukowania informacji diagnostycznych to tworzenie na dysku plików z dziennikami lub użycie debuggera. 
 
-(3) W Gleam, `println` wykorzystuje funkcję `display` do konwersji wartości na ciągi znaków. W rezultacie wartości są zapisywane w reprezentacji, która jest użyteczna dla debugowania, ale nie zawsze jest czytelna dla człowieka. 
-
-## Zobacz też:
+(3) W Gleam, `println` wykorzystuje funkcję `display` do konwersji wartości na ciągi znaków. W rezultacie wartości są zapisywane w reprezentacji, która jest użyteczna dla debugowania, ale nie zawsze jest czytelna dla człowieka.

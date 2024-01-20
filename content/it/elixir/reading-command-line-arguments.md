@@ -43,4 +43,4 @@ La lettura degli argomenti della riga di comando è implementata nel BEAM (la ma
 Per ulteriori informazioni e per approfondire l’argomento, vi suggerisco i seguenti collegamenti:
 
 - Documentazione ufficiale Elixir: [System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0) 
-- Documentazione ufficiale Elixir: [OptionParser](https://hexdocs.pm/elixir/OptionParser.html) 
+- Documentazione ufficiale Elixir: [OptionParser](https://hexdocs.pm/elixir/OptionParser.html)

@@ -45,5 +45,3 @@ Test 3: PASSED
 Pisanie testów jest stosunkowo nowym podejściem w programowaniu. Do niedawna wyłącznym sposobem sprawdzania poprawności kodu była ręczna weryfikacja przez programistę. Istnieją również inne metody testowania, takie jak testowanie manualne, ale są one mniej efektywne i bardziej podatne na błędy.
 
 Pisanie testów może być zaburzające dla programisty, ponieważ wymaga dodatkowego czasu i wysiłku. Jednak jest to inwestycja, która zwraca się w przyszłości, ponieważ pomaga w unikaniu błędów i ułatwia rozwój i utrzymanie aplikacji.
-
-## Zobacz również:

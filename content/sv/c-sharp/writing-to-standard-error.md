@@ -29,5 +29,3 @@ Detta kommer att skriva ut meddelandet "Ett fel har uppstått." till standardfel
 Skrivning till standardfelströmmen är en standardfunktion inom C# sedan version 2.0. Det ger en enkel och effektiv metod för att skriva ut fel och andra meddelanden utan att behöva använda externa bibliotek eller verktyg. Alternativet till att skriva till standardfel är att använda en extern loggningsramverk, men detta kan medföra en ökad komplexitet och prestandaförlust.
 
 Implementeringen av skrivning till standardfel görs genom att ändra standardfelströmmen till standardutströmmen. Detta kan då skrivas ut som vanligt med Console.Write() eller Console.WriteLine() metoden. Det finns även möjlighet att återställa standardfelströmmen till standardutströmmen, vilket skulle låta programmet skriva till båda strömmarna.
-
-# Se även:

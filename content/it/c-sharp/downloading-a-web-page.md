@@ -49,4 +49,3 @@ Per quanto riguarda i dettagli implementativi, `HttpClient.GetAsync` invia una r
 ## Vedi anche
 
 - Documentazione ufficiale Microsoft sulla HttpClient Class: [link qui](https://docs.microsoft.com/it-it/dotnet/api/system.net.http.httpclient?view=net-5.0)
-

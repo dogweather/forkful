@@ -35,5 +35,3 @@ El número es par
 
 ## Inmersión profunda:
 Escribir a la salida estándar se remonta a los primeros días de programación, cuando los programadores no tenían herramientas avanzadas para depurar y necesitaban imprimir mensajes de error directamente en la pantalla. Hoy en día, hay otras técnicas más sofisticadas disponibles, como el uso de un depurador, pero escribir a la salida estándar sigue siendo una herramienta valiosa y fácil de implementar.
-
-## Ver también:

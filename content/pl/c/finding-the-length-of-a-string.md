@@ -42,5 +42,3 @@ Na przykład, gdy wprowadzisz "Hello, World!", Output to "Długość łańcucha 
 Pomimo że `strlen()` jest łatwy do użycia i często stosowany, ma również swoje wady. Funkcja biega przez łańcuch do momentu natrafienia na null-terminator ('\0'), co sprawia, że nie jest to najwydajniejsza metoda.
 
 Alternatywą dla `strlen()` jest iterowanie przez łańcuch samodzielnie używając pętli, co daje więcej kontroli nad procesem. Pamiętaj, że każdy łańcuch zakończy się null-terminatorem.
-
-## Zobacz również

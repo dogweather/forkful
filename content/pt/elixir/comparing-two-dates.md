@@ -50,4 +50,3 @@ Esse recurso permite uma comparação precisa mesmo através dos fusos horários
 ## Veja Também:
 
 * [Documentação oficial do Elixir](https://elixir-lang.org/docs.html): uma excelente fonte para ler mais sobre a linguagem de programação Elixir e suas funcionalidades.
-  

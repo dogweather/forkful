@@ -50,5 +50,3 @@ Les origines de JSON remontent à JavaScript, où il a été conçu comme un for
 Bien que JSON soit populaire, il existe des alternatives telles que XML et YAML. L'avantage de JSON est sa clarté, sa simplicité et sa lisibilité pour les humains. Il est également facilement analysé par les ordinateurs.
 
 En utilisant Gleam, vous pouvez facilement créer des objets JSON à l'aide de la bibliothèque standard Json.Encode. Vous pouvez également utiliser Json.Decode pour analyser des données JSON et les convertir en objets Gleam pour une manipulation facile.
-
-## Voir aussi:

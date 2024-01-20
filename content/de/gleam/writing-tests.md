@@ -26,5 +26,3 @@ Die `assert`-Funktion erwartet eine boolesche Aussage und gibt eine Fehlermeldun
 
 ## Tief eintauchen
 Das Schreiben von Tests ist ein wichtiger Bestandteil von Test-getriebener Entwicklung (TDD). Dabei schreiben Programmierer Tests, bevor sie den eigentlichen Code schreiben, um sicherzustellen, dass er wie erwartet funktioniert. Neben `assert` gibt es auch weitere Möglichkeiten zum Schreiben von Tests in Gleam, wie beispielsweise die Verwendung von Modulen oder die Verwendung von Test-Frameworks wie `gleam_pest`.
-
-## Sieh dir auch an

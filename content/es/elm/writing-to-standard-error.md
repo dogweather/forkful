@@ -29,5 +29,3 @@ Esta técnica de escribir a la salida de errores estándar se remonta a los prim
 Otra forma de lograr un resultado similar en Elm es a través de la función `Debug.log`, que también es ampliamente utilizada por los programadores.
 
 Además, al escribir a la salida de errores estándar, es importante tener en cuenta que esta información no será visible para los usuarios finales de la aplicación, ya que se mostrará solo en la consola del navegador de los desarrolladores.
-
-## Véase también

@@ -47,5 +47,3 @@ Hej Kalle! Du är 25 år gammal.
 Kommandoradsargument användas i programmering länge och har sina rötter i UNIX-världen. Även om `$args` är det vanligaste sättet att läsa in argument i PowerShell, kan parametrar också användas för att skapa mer följsamma och användarvänliga skript.
 
 Det är värt att notera att `$args` fungerar lite annorlunda beroende på scriptets kontext. I script och funktioner representerar `$args` alla icke-namngivna parametrar som inte matchas till en parameterdeklaration. I en fil som inte har någon parametrar deklarerade representerar `$args` alla argument som överförs till filen.
-
-## Se även

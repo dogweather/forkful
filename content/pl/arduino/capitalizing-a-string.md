@@ -30,5 +30,3 @@ Podczas wykonania kodu wejściowego `"witam"`, wyjście będzie wyglądało jak 
 2. Alternatywy: W Arduino możesz także zamienić ciągi na małe litery, używając funkcji `toLowerCase()`.
 
 3. Szczegóły implementacji: Metoda `toUpperCase()` jest wbudowana w bibliotekę łańcuchów Arduino. Przechodzi przez każdą literę w łańcuchu i zamienia ją na wielką literą, jeśli jest to litera mała.
-
-## Zobacz także:

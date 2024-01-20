@@ -35,5 +35,3 @@ Tässä esimerkissä on määritelty funktio, joka summaa kaksi kokonaislukua. S
 ## Syväluotaus:
 
 Testien kirjoittaminen on keino varmistaa ohjelman toiminnallisuus ja löytää mahdolliset virheet jo ennen kuin ohjelma julkaistaan. Testien lisäksi on olemassa myös muita tapoja varmistaa koodin laatu, kuten koodin tarkastaminen ja käsin tehtävä debuggaus. On tärkeää löytää oma tapa testata ja varmistaa oman koodin toimivuus.
-
-## Katso myös:

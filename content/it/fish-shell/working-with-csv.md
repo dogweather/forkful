@@ -28,5 +28,3 @@ L'uso dei file CSV è diventato molto popolare negli ultimi anni perché sono fa
 Esistono diversi tipi di file CSV, come ad esempio quelli delimitati da tabulazioni o da altri simboli anziché da virgole. Inoltre, ci sono molti altri formati di file che possono essere utilizzati per organizzare dati tabellari, come ad esempio XML o JSON.
 
 L'implementazione di Fish Shell per lavorare con i file CSV si basa su una libreria esterna chiamata `libcsv`. Questa libreria fornisce funzioni di lettura e scrittura per i file CSV e viene utilizzata anche da altri programmi come Excel o LibreOffice.
-
-## Vedi anche: 

@@ -35,5 +35,3 @@ Terve, maailma!
 
 # Syvemmälle:
 CSV muoto kehitettiin ensimmäisen kerran 1972 IBM:n toimesta ja siitä tuli nopeasti yleinen taulukkomuodon tallennusformaatti. Vaikka se on helppokäyttöinen ja tunnettu, on myös muita vaihtoehtoja kuten JSON ja XML. Rustin csv-kirjasto tarjoaa tehokkaan ja nopean tavan käsitellä CSV-tiedostoja, mutta on myös muita kirjastoja, kuten Serde, jotka tarjoavat samanlaisen toiminnallisuuden.
-
-# Katso myös:

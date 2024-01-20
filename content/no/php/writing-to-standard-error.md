@@ -33,4 +33,4 @@ Dette er en feilmelding.
 # Se også:
 
 - [PHP Manualens sider om Writing to Standard Error](https://www.php.net/manual/en/function.fwrite.php)
-- [Unix Documentation om Standard Output and Standard Error](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdout.html) 
+- [Unix Documentation om Standard Output and Standard Error](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdout.html)

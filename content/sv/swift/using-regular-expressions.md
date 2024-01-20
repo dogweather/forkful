@@ -40,5 +40,3 @@ print(matches) // ["john.doe@example.com", "jane_smith@mail.com"]
 Reguljära uttryck har funnits sedan 1950-talet och används i många olika programmeringsspråk. Det finns också alternativ till reguljära uttryck, såsom strängmanipulationsfunktioner eller andra sökmetoder.
 
 I Swift används reguljära uttryck genom att använda strukturen `NSRegularExpression`. Det finns också många olika metoder för att söka och manipulera text med hjälp av reguljära uttryck, t.ex. `replacingMatches` och `rangeOfFirstMatch`.
-
-## Se även:

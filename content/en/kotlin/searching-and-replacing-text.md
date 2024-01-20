@@ -48,5 +48,3 @@ fun main() {
 ```
 
 Kotlin’s `replace()` and `replaceFirst()` are wrappers around Java’s `java.lang.String.replace()` and `java.util.regex.Matcher.replaceFirst()`. Meaning they are platform specific and might work differently on different platforms like JVM or JS.
-
-## See Also

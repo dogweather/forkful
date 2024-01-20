@@ -36,5 +36,3 @@ Le espressioni regolari sono state sviluppate negli anni '40 da matematici e lin
 Un'alternativa alle espressioni regolari sono i parser, che sono più potenti e flessibili ma richiedono maggiore conoscenza e tempo per essere implementati correttamente.
 
 In Rust, le espressioni regolari sono implementate tramite la crate regex, che utilizza il motore di ricerca adattativo di Thompson. Questo motore ha una buona velocità e utilizza un algoritmo non deterministico, rendendo le espressioni regolari più semplici da utilizzare rispetto ad altri motori.
-
-## Vedi anche:

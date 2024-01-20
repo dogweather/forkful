@@ -53,4 +53,4 @@ Hello, world!
 ## 関連リンク
 
 - [Oracle Java Documentation](https://docs.oracle.com/en/java/)
-- [Java File I/O (NIO.2) Tutorial](https://docs.oracle.com/javase/tutorial/essential/io/index.html) 
+- [Java File I/O (NIO.2) Tutorial](https://docs.oracle.com/javase/tutorial/essential/io/index.html)

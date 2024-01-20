@@ -46,5 +46,3 @@ Com este exemplo, o output será "A primeira data é mais antiga."
 A comparação de datas tem sido uma prática desde o início da programação. Alternativamente, você pode usar bibliotecas de terceiros para comparar datas ou até cálculos manuais com timestamps, mas Gleam fornece uma maneira fácil de fazer isso com a função `compare`.
 
 Leve em conta que `Date.new/3` pode lançar um erro. Assim, é recomendado usar com a função `try` para lidar com isso. Neste exemplo, simplificamos para manter a simplicidade.
-
-## Veja também:

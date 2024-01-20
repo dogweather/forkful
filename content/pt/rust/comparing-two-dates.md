@@ -60,4 +60,4 @@ A lógica de comparação da Chrono baseia-se na implementação do trait `Parti
 
 ## Ver Também
 
-- [Documentação Chrono](https://docs.rs/chrono/0.4.11/chrono/) 
+- [Documentação Chrono](https://docs.rs/chrono/0.4.11/chrono/)

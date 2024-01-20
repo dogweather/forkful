@@ -32,5 +32,3 @@ Historiquement, la recherche et le remplacement de textes sont des opérations f
 En ce qui concerne les alternatives, vous pouvez également utiliser des expressions régulières pour rechercher et remplacer du texte. Gleam ne supporte pas nativement les expressions régulières, mais il existe des bibliothèques tierces pour cela.
 
 Dans Gleam, `string.replace` est implémenté en utilisant la fonction `string.split` suivie par `list.join`, ce qui n'est pas le moyen le plus efficace. Toutefois, pour la plupart des cas d'utilisation courants, cela devrait suffire.
-
-## Voir Aussi:

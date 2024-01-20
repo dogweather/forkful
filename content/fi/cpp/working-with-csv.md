@@ -71,5 +71,3 @@ Emma 30 Tampere
 ## Syvällinen Dykkaus:
 
 CSV-tiedoston alkujuuret juontavat 70-luvun lopulle, jolloin tilastotieteilijät alkoivat käyttää sitä tallentaakseen dataa. Nykyään on olemassa muita vaihtoehtoisia tiedostomuotoja, kuten JSON ja XML, mutta CSV on edelleen suosittu sen yksinkertaisuuden vuoksi. CSV-tiedostoja voi lukea ja kirjoittaa monilla ohjelmointikielillä, eikä erillisiä kirjastoja tarvita.
-
-## Katso myös:

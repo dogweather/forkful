@@ -44,5 +44,3 @@ console.log(capitalizeWords("programming is cool.")); \\ Output: "Programming Is
 Det er andre metoder for å oppnå samme resultat, som bruk av CSS (Cascading Style Sheets) i nettutviklingskontekst. `text-transform: capitalize;` i CSS vil automatisk "capitalisere" alle ord i en tekst, uten å måtte manipulere selve strengen med JavaScript.
 
 Når det gjelder implementeringsdetaljer, vil du kanskje merke at vi først konverterer alle tegnene til små bokstaver i den andre funksjonen (`capitalizeWords(str)`). Dette gjøres for å sikre at alle ordene starter med små bokstaver, slik at vi deretter bare kan konvertere det første tegnet til stort bokstav.
-
-## Se Også

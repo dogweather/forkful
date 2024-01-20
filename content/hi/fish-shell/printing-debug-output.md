@@ -37,4 +37,4 @@ end
 ## अनुशासित:
 
 - [Fish-Shell स्वीकार्य विचारनीय प्रक्रिया](https://fishshell.com/docs/current/tutorial.html)
-- [Fish-Shell के साथ डिबगिंग](https://fishshell.com/docs/current/faq.html#faq-debugging) 
+- [Fish-Shell के साथ डिबगिंग](https://fishshell.com/docs/current/faq.html#faq-debugging)
