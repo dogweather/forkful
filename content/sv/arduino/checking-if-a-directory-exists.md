@@ -10,53 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att kontrollera om en mapp finns är processen att verifiera om en viss mapp finns på din Arduino-enhet. Programmerare gör detta för att förhindra fel och misslyckade operationer när de försöker arbeta med en icke-existerande mapp.
+## Vad & Varför?
+Att kontrollera om en katalog finns är processen att verifiera en mapps närvaro i filsystemet. Programmerare gör detta för att undvika fel vid filoperationer, som att läsa från eller skriva till icke-existerande mappar.
 
-## Hur man gör:
-Här är ett grundläggande exempel på hur du kan kontrollera om en mapp finns på din SD-kort med Arduino:
+## Hur gör man:
+Använd `SD` biblioteket för att interagera med filsystemet. För att kontrollera om en katalog finns, prova följande kod:
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
-
-const int chipSelect = 4;
 
 void setup() {
   Serial.begin(9600);
-  Serial.print("Initializing SD card...");
-  
-  if (!SD.begin(chipSelect)) {
-    Serial.println("Card Failed");
+  if (!SD.begin()) {
+    Serial.println("SD card initialization failed");
     return;
   }
-  Serial.println("Card Initialized");
   
-  if (SD.exists("/example")) {
-    Serial.println("Directory Exists");
-  } else {
-    Serial.println("Directory Not Found");
+  File root = SD.open("/");
+  if (root.isDirectory()) {
+    File dir = root.openNextFile();
+    while (dir) {
+      if (dir.isDirectory()) {
+        Serial.print("Directory Exists: ");
+        Serial.println(dir.name());
+        // Gör mer kod här om katalogen finns
+      }
+      dir = root.openNextFile();
+    }
   }
 }
 
 void loop() {
-  // nothing 
+  // Inget behövs i loopen
 }
 ```
 
-Om mappen "example" finns på SD-kortet kommer outputten att vara "Directory Exists" annars kommer den att vara "Directory Not Found".
+Sample output:
+```
+Directory Exists: MYDIR/
+```
 
-## Djupdykning
-Historiskt sett fanns det en tid då att kontrollera om en mapp finns i Arduino inte var möjligt. Denna funktion introducerades med tillkomsten av SD-library, vilket öppnade dörrarna för programmerare att hantera filer och kataloger mer effektivt.
-
-En alternativ metod för att kontrollera om en katalog finns är att försöka skapa eller öppna den och hantera alla fel som kan uppstå från operationen. Detta kanske inte alltid är det bästa alternativet eftersom vissa fel kan vara svåra att identifiera.
-
-Implementera 'Directory exists'-kontrollen är relativt enkelt i Arduino tack vare SD library metoden SD.exists(). Denna metod returnerar helt enkelt true om mappen finns och false om den inte gör det.
+## Fördjupning
+Att kontrollera om en katalog finns på ett SD-kort med Arduino började när SD-biblioteket lanserades, vilket möjliggjorde enkel tillgång till filsystemet. Det finns alternativ som `SDFat` biblioteket som också kan hantera filsystemoperationer. Implementationen är ganska rätfram: `SD.open()` öppnar katalogen, `isDirectory()` kontrollerar om den är en katalog, och `openNextFile()` itererar genom filsystemets objekt.
 
 ## Se även
-För mer information, se följande resurser på ämnet
-
-- [Arduino - SD Library](https://www.arduino.cc/en/Reference/SD)
-- [Arduino Stack Exchange](https://arduino.stackexchange.com/questions/578/how-to-check-if-a-file-exists)
-  
-Observera att dessa resurser är på engelska.
+- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
+- [SDFat Library](https://github.com/greiman/SdFat)

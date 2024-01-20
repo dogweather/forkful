@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Java: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:58:32.503457-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,37 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-בדיקה אם ספריה קיימת בחלל מערכת הפעלה היא פעולה שמאפשרת לנו לוודא שנתיב מסוים קיים והוא ספריה לפני שנעשה איתו שימוש. מתכנתים מבצעים את הפעולה הזו למניעת שגיאות ריצת יישום.
+בודקים שקיים תיקייה כדי למנוע שגיאות תוכנה ולדעת אם אפשר להמשיך בפעולות שתלויות בתיקייה הזו. זה חשוב במיוחד בפעולות כמו קריאה וכתיבה לקבצים.
 
 ## איך לעשות:
-
-הנה דוגמא של קוד בשפת Rust שבודק אם ספריה קיימת:
-
 ```Rust
 use std::path::Path;
+
 fn main() {
-    let path = Path::new("/some/path");
-    if path.exists() && path.is_dir() {
-        println!("The directory exists");
+    let path_str = "/example/directory";
+    let path = Path::new(path_str);
+
+    if path.exists() {
+        println!("The directory exists!");
     } else {
-        println!("The directory does not exist");
+        println!("The directory does not exist.");
     }
 }
 ```
-פלט לדוגמה זו יכול להיות:
 
+תוצאה אפשרית:
 ```
-The directory does not exist
+The directory exists!
+```
+או
+```
+The directory does not exist.
 ```
 
-## בהקשר הרחב
+## טבילה עמוקה
+בעבר, התכנתים בשפות כמו C דרשו יותר מאמץ לבדוק קיום תיקיות עם פונקציות מסובכות כמו `stat`. ב-Rust, הספרייה הסטנדרטית מספקת דרך נוחה ובטוחה לבדוק את קיום התיקייה עם המתודה `exists` של מבנה `Path`. אפשרויות חלופיות כוללות שימוש בספריות חיצוניות או בטכניקות ידניות, אבל רוב המקרים לא מחייבים את זה. חשוב לזכור שכאשר אנו עובדים עם מערכת קבצים, יש תמיד אתגרי זמינות והרשאות שעלולים לשנות מה שקוד התוכנה רואה.
 
-Rust מתנהגת כך באופן מסורתי, בדיוק כפי שאנו מצפים משפות תכנות מערכת. חלופה לשימוש בפונקציה `exists()` הנ"ל היא שימוש במודול 'Metadata', אך הוא מורכב יותר לשימוש.
-ביצוע הבדיקה נעשה דרך מערכת ההפעלה, כאשר השיחה למדעי המחשב משוואה את השאלה: האם הנתיב הזה קיים והאם הוא מצביע על ספריה?
-
-## ראה גם:
-
-- [חיבור Rust רשמי על std::path::Path](https://doc.rust-lang.org/std/path/struct.Path.html)
-- [חיבור StackOverflow על בדיקת נתיב](https://stackoverflow.com/questions/26958489/how-to-check-if-a-path-exists-in-rust)
-- [דיסקוסיה בפורום של Rust](https://users.rust-lang.org/t/how-to-check-if-a-file-exists/4918)
+## ראה גם
+- תיעוד של `std::path`: https://doc.rust-lang.org/std/path/
+- מדריך למערכת הקבצים ב-Rust: https://doc.rust-lang.org/book/ch12-00-an-io-project.html
+- פורום התמיכה של Rust לשאלות ותשובות: https://users.rust-lang.org/

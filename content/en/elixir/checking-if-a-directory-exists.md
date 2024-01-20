@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+html_title:           "C recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Checking if a directory exists in Elixir is a way to verify the presence of a file system directory before performing operations on it. This is crucial to avoid errors while reading, writing, or navigating through directories.
+
+Checking if a directory exists in Elixir ensures that you're interacting with a valid file path. Programmers do it to avoid errors like trying to read from or write to a non-existent location, which could crash their app or break a process.
 
 ## How to:
-Checking for a directory in Elixir is straightforward thanks to the inbuilt `File.dir?/1` function:
 
-```Elixir
-directory = "/path/to/your/directory"
-File.dir?(directory)
+Elixir's `File` module is your go-to for directory checks. Use `File.dir?/1` to return a boolean indicating if the directory exists.
+
+```elixir
+# Check if directory exists
+if File.dir?("/path/to/directory") do
+  IO.puts("Directory exists!")
+else
+  IO.puts("No such directory.")
+end
 ```
 
-A sample output for a directory would read `true` or `false`, indicating whether the system recognized the path as an existing directory or not.
-
-```Elixir
-iex> directory = "/home/documents"
-iex> File.dir?(directory)
-true
+Sample output for an existing directory:
+```elixir
+Directory exists!
 ```
 
-## Deep Dive:
-Historically, checking for the existence of a directory aided in error-proofing core tasks like file navigation, reading, and writing. As programming languages evolved, this basic function became fundamental, including in Elixir, which inherited the tradition from Erlang, its progenitor.
+Sample output for a non-existing directory:
+```elixir
+No such directory.
+```
 
-Alternative ways to check for a directory might include checking for errors when attempting to change into the directory with `File.cd/1`. However, using `File.dir?/1` is the preferred method due to its simplicity and readability.
+## Deep Dive
 
-Under the hood, Elixir's `File.dir?/1`, just like many file-related functions, relies on Erlang's `:file` module. It essentially wraps the `:file.read_file_info/1` function and checks if the `:type` field of the returned record is `:directory`.
+Historically, file system operations have carried significance in programming owing to the need for reading/writing data. In Elixir, the `File` module has abstracted these operations neatly. It's all about reliability with these checks; thus, `File.dir?/1` is a staple for verifying paths.
 
-## See Also:
-Check out these useful resources that contribute further to this topic:
+Alternatives to `File.dir?/1` can be using `File.stat/2` and checking if the result is `:ok`, which indicates the directory exists. Another approach might be utilizing `:filelib.is_dir/1` from Erlang's standard library, which Elixir can access due to its interoperability with Erlang.
 
-1. Elixir's official `File` module documentation: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
-2. Erlang's `:file` module documentation: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+Elixir's implementation of checking if a directory exists wraps around Erlang's robust file handling. This design leverages the BEAM's capability for fault-tolerant systems, wherein Elixir applications typically run.
+
+## See Also
+
+- Elixir's `File` module documentation: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+- Erlang's `filelib` module documentation for more file system functions: [http://erlang.org/doc/man/filelib.html](http://erlang.org/doc/man/filelib.html)
+- Robust file handling in Elixir: [https://elixir-lang.org/getting-started/io-and-the-file-system.html](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

@@ -38,5 +38,4 @@ Här kommer lite mer text.
 Förr när diskutrymmet var mer begränsat och dyrt, använde programmerare textfiler för enkel lagring och konfigivering. Alternativ till textfiler inkluderar databaser och andra dataformat som JSON och XML. Detaljerna i att skriva till en fil i Ruby är hanterade av IO klassen, där File är en subklass. Det handlar till stor del om att öppna en kanal till filen, skicka data till den, och sedan stänga den.
 
 ## Se även:
-- [Ruby IO Class](https://ruby-doc.org/core-2.7.0/IO.html)
 - [Ruby File Class](https://ruby-doc.org/core-2.7.0/File.html)

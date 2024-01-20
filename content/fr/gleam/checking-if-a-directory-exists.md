@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Gleam: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:56:26.408138-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Vérifier si un répertoire existe est une opération qui consiste à confirmer l'existence ou la non-existence d'un répertoire spécifique. Les programmeurs le font pour éviter les erreurs de chemin d'accès lors de l'exécution de code qui nécessite l'accès à des fichiers ou des répertoires spécifiques.
+## Quoi et Pourquoi ?
 
-## Comment faire:
-Dans Gleam, vous pouvez utiliser la fonction `does_exist` du module `file` pour vérifier si un répertoire existe. Voici un exemple:
+Vérifier l'existence d'un dossier, c'est s'assurer qu’un chemin spécifique est bien occupé par un dossier et non un fichier ou un néant. Les programmeurs le font pour éviter des erreurs lorsqu'ils accèdent ou manipulent des fichiers.
+
+## Comment faire :
 
 ```gleam
-import gleam/file
+import gleam/io
+import gleam/result
 
-pub fn directory_exists(directory: String) -> Result(Bool, Nil) {
-  file.does_exist(directory)
+pub fn check_directory_exists(path: String) -> result.Result(Nil, String) {
+  match io.is_dir(path) {
+    True ->
+      result.Ok(Nil)
+    False ->
+      result.Err("Le dossier n'existe pas.")
+  }
+}
+
+// Utilisation de la fonction
+fn main() {
+  let path = "chemin/vers/mon/dossier"
+  let check = check_directory_exists(path)
+
+  case check {
+    Ok(_) -> io.print("Le dossier existe.")
+    Err(err) -> io.print(err)
+  }
 }
 ```
-Cette fonction renvoie `Ok(True)` si le répertoire existe et `Ok(False)` si ce n'est pas le cas.
 
-## Plongée en profondeur
-La nécessité de vérifier l'existence d'un répertoire remonte à l'époque où les erreurs de chemin d'accès pouvaient entraîner des problèmes graves dans le traitement des données. 
+Sortie possible :
+```
+Le dossier existe.
+```
+Ou, si le dossier n'existe pas :
+```
+Le dossier n'existe pas.
+```
 
-Dans Gleam, il y a des alternatives comme `is_file` et `is_dir` du module `file` qui vérifient respectivement si le chemin donné est un fichier ou un répertoire. 
+## Plongée Profonde
 
-La fonction `does_exist` utilise la fonction standard de Erlang qui est utilisée pour accéder au système de fichiers, en prenant le nom de répertoire comme argument et en renvoyant le résultat après avoir effectué la vérification.
+Historiquement, vérifier l'existence d'un dossier est une opération de base en programmation pour éviter des erreurs de lecture/écriture. En Gleam, qui compile vers Erlang, cette opération est aussi importante que dans les autres langues du BEAM comme Elixir ou Erlang lui-même.
 
-## Voir également
-- Documentation Gleam: https://gleam.run/book/tour/
-- Gleam `file` module: https://hexdocs.pm/gleam_stdlib/gleam/file
+Il existe des alternatives à `io.is_dir`, comme utiliser des appels système spécifiques ou des bibliothèques tierces, mais Gleam cherche à offrir une API standard simple et sûre, éliminant la nécessité de recourir à des solutions externes.
 
-Souvenez-vous, les outils sont là pour vous aider. Utilisez-les judicieusement pour créer des programmes robustes et sans erreurs!
+Au niveau de l'implémentation, `io.is_dir` fait appel aux fonctionnalités du système d'exploitation pour vérifier les métadonnées du chemin spécifié, ce qui rend l'opération généralement rapide et fiable.
+
+## À Voir Aussi
+
+- Documentation officielle de Gleam : [https://gleam.run](https://gleam.run)
+- Forum de Gleam pour poser des questions ou partager des expériences : [https://github.com/gleam-lang/gleam/discussions](https://github.com/gleam-lang/gleam/discussions)

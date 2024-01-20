@@ -1,7 +1,8 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं यह जांचना"
-html_title:           "Go: डायरेक्टरी मौजूद है या नहीं यह जांचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं यह जांचना"
+title:                "डायरेक्टरी का अस्तित्व जाँचना"
+date:                  2024-01-20T14:57:21.300599-07:00
+html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
+simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या एवं क्यों?
+## What & Why? (क्या और क्यों?)
+डायरेक्टरी का अस्तित्व जांचना कहते हैं कि हम पता करें कि कोई फोल्डर कंप्यूटर में है या नहीं। प्रोग्रामर्स इसकी जांच इसलिए करते हैं क्योंकि फाइल ऑपरेशन्स से पहले यह जरूरी होता है कि हमें पता हो डायरेक्टरी मौजूद है या नहीं।
 
-डायरेक्टरी मौजूद है या नहीं जांचने कैसे समिधान किया जाता है, यह एक साधारण पुरीक्रिया है जिसका उपयोग कार्यक्रमकर्ता करते हैं। किसी भी त्रुटि को बचने के लिए या डायरेक्टरी में फ़ाइलें पढ़ने या लिखने से पहले, यह आवश्यक है कि हम यह सुनिश्चित करें कि डायरेक्टरी वास्तव में मौजूद है।
-
-## कैसे करें:
-
-नहीं जांचने के लिए आप `os` पैकेज का उपयोग कर सकते हैं। 
+## How to: (कैसे करें:)
+Go में डायरेक्टरी के होने का पता लगाने के लिए `os` पैकेज का उपयोग करें। 
 
 ```Go
 package main
@@ -26,30 +25,28 @@ import (
 	"os"
 )
 
-func dirExists(d string) bool {
-	_, err := os.Stat(d)
-	if os.IsNotExist(err) {
-		return false
-	}
-	return err == nil
-}
-
 func main() {
-	fmt.Println(dirExists("/home"))
+	dir := "/path/to/directory"
+
+	// Stat फंक्शन हमें फाइल या डायरेक्टरी की जानकारी देगा
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		fmt.Printf("डायरेक्टरी '%s' मौजूद नहीं है.\n", dir)
+	} else {
+		fmt.Printf("डायरेक्टरी '%s' मौजूद है.\n", dir)
+	}
 }
 ```
 
-यह कार्यक्रम `/home` नामक डायरेक्टरी मौजूद है या नहीं, यह चेक करने के लिए `dirExists` फ़ंक्शन का उपयोग करेगा। 
+आउटपुट:
+```
+डायरेक्टरी '/path/to/directory' मौजूद है.
+- या -
+डायरेक्टरी '/path/to/directory' मौजूद नहीं है.
+```
 
-## गहराई में:
+## Deep Dive (गहन जानकारी):
+जब `os.Stat` फंक्शन को कोई फाइल या डायरेक्टरी नहीं मिलती, तो यह एक एरर लौटाता है। `os.IsNotExist(err)` हमें यह बताता है कि अगर एरर इसलिए है क्योंकि फाइल या डायरेक्टरी मौजूद नहीं है, तो true देगा, अन्यथा false। पहले के समय में, प्रोग्रामर्स डायरेक्टरी का पता लगाने के लिए डायरेक्टरी को खोलने की कोशिश करते थे, पर वह पुराना तरीका है और कभी-कभी समस्या पैदा कर सकता है। `os.Stat` एक स्टैंडर्ड और भरोसेमंद तरीका हो गया है।
 
-डायरेक्टरी मौजूद है या नहीं जांचने के लिए, `os.Stat` और `os.IsNotExist` फ़ंक्शन्स का उपयोग किया जाता है। `os.Stat` फ़ंक्शन फ़ाइल या डायरेक्टरी की जानकारी प्राप्त करता है, और यदि ऐसा कुछ नहीं मिलता है, तो एरर देता है। यह एरर `os.IsNotExist` के द्वारा जांचा जाता है।
-
-वैकल्पिक रूप से, आप `ioutil.ReadDir` या `filepath.Walk` का भी उपयोग कर सकते हैं, लेकिन इन्हें ज्यादातर उच्च स्तर की जांच के लिए इस्तेमाल किया जाता है।
-
-## भी देखें:
-
-- [Go by Example: Directories](https://gobyexample.com/directories)
-- [os package - The Go Programming Language](https://golang.org/pkg/os/)
-- [ioutil package - The Go Programming Language](https://golang.org/pkg/io/ioutil/)
-- [filepath package  - The Go Programming Language](https://golang.org/pkg/path/filepath/)
+## See Also (और देखें):
+- Go by Example पर फाइल सिस्टम के अध्ययन के लिए: [Go by Example: Directories](https://gobyexample.com/directories)
+- The Go Programming Language Specification पर 'os' पैकेज की और जानकारी: [Package os](https://golang.org/pkg/os/)

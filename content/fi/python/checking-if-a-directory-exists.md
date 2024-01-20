@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Kotlin: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:58:06.040457-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,50 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tarkistetaan, Onko Hakemisto Olemassa Pythonissa
+## What & Why? (Mitä & Miksi?)
+Tarkistetaan, onko kansio olemassa ennen tiedostojen lukemista tai kirjoittamista. Tämä estää virheet ja tekee ohjelmasta vakaamman.
 
-## Mikä & Miksi?
-
-Tiedostohakemiston olemassaolon tarkistaminen Pythonissa tarkoittaa, onko määritelty hakemisto olemassa tiedostojärjestelmässä. Tällainen tarkistus on tarpeen, ettemme kohtaa virheitä, kun yritämme Sijoittaa (tai hakea) tietoa hakemistosta, joka ei ole olemassa.
-
-## Kuinka Tehdä:
-
-Alla on koodiesimerkki, joka tarkistaa, onko tietyllä polulla oleva hakemisto olemassa :
-
-```python
+## How to: (Kuinka tehdä:)
+```Python
 import os
 
-def tarkista_hakemisto(hakemisto):
-    if os.path.isdir(hakemisto):
-        print(f"Hakemisto {hakemisto} löytyy!")
-    else:
-        print(f"Hakemisto {hakemisto} ei ole olemassa.")
+# Tarkistetaan, löytyykö kansio
+def kansio_olemassa(polku):
+    return os.path.isdir(polku)
 
-tarkista_hakemisto("/polku/hakemistoon")
+# Esimerkkikäyttö
+polku = "/esimerkki/kansio"
+if kansio_olemassa(polku):
+    print("Kansio löytyy!")
+else:
+    print("Kansiota ei ole olemassa.")
+
+# Tulostus esimerkki
+# Kansio löytyy! TAI Kansiota ei ole olemassa.
 ```
 
-Tämä tulostaa "Hakemisto /polku/hakemistoon löytyy!" tai "Hakemisto /polku/hakemistoon ei ole olemassa." riippuen siitä, onko hakemisto olemassa.
+## Deep Dive (Syväsukellus)
+Vanhemmissa Python-versioissa `os.path.isdir()` oli yleinen tapa tarkistaa kansion olemassaolo. Python 3.4:n jälkeen voimme käyttää `pathlib`-moduulia, joka tarjoaa objektilähtöisen tavan käsitellä tiedostopolkuja. Se on usein selkeämpi ja mukautuu hyvin erilaisiin tilanteisiin.
 
-## Syvempi Sukellus
-
-Pythonin `os.path.isdir` -toiminto, jota käytimme ylläolevassa koodissa, tuli saataville Python 1.5.2 -versiossa julkisesti. Sen suorittaa kirjaston sisäinen `stat` -toiminto, joka tarkistaa tiedostojärjestelmän määritellyn polun olemassaolon ja tyypin.
-
-Vaihtoehtona voit käyttää `pathlib` -moduulia, joka tuli saataville Python 3.4:ssä ja tarjoaa objekti-orientoituneen tavan käsittellä tiedostopolkuja:
-
-```python
+Vaihtoehtoisesti:
+```Python
 from pathlib import Path
 
-hakemisto = Path('/polku/hakemistoon')
-if hakemisto.is_dir():
-    print(f"Hakemisto {hakemisto} löytyy!")
+# Tarkistetaan, löytyykö kansio
+polku = Path("/esimerkki/kansio")
+if polku.is_dir():
+    print("Kansio löytyy!")
 else:
-    print(f"Hakemisto {hakemisto} ei ole olemassa.")
+    print("Kansiota ei ole olemassa.")
 ```
 
-Tämä tarjoaa saman toiminnallisuuden, mutta elegantimman syntaksin.
+Implementoinnissa kannattaa ottaa huomioon käyttöoikeudet. Jos ohjelmalla ei ole riittäviä oikeuksia lukea kansiota, voimme saada virheellisen `False`, vaikka kansio olisikin olemassa.
 
-## Katso Myös 
-
-Lisätietoja Pythonin kansio- ja tiedostokäsittelystä saat seuraavista lähteistä:
-
-1. Pythonin virallinen ohjedokumentaatio: [os](https://docs.python.org/3/library/os.html) ja [pathlib](https://docs.python.org/3/library/pathlib.html)
+## See Also (Lisätietoja)
+- Python `os` module documentation: https://docs.python.org/3/library/os.html
+- Python `pathlib` module documentation: https://docs.python.org/3/library/pathlib.html
+- Käyttöoikeudet ja niiden hallinta Pythonissa: https://docs.python.org/3/library/os.html#os.access

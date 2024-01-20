@@ -1,7 +1,7 @@
 ---
-title:                "Sjekker om en katalog eksisterer"
-html_title:           "C: Sjekker om en katalog eksisterer"
-simple_title:         "Sjekker om en katalog eksisterer"
+title:                "Sjekke om en mappe finnes"
+html_title:           "Arduino: Sjekke om en mappe finnes"
+simple_title:         "Sjekke om en mappe finnes"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,33 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer gjør programmering mer dynamisk og feilresistent. Dette muliggjør kodens ustørthet ved å forhindre feil som skjer når man prøver å få tilgang til en ikke-eksisterende mappe.
+Sjekke om en mappe eksisterer er å verifisere at en spesifikk mappe faktisk finnes i filsystemet. Programmerere gjør dette for å unngå feil ved filoperasjoner, som å lese fra eller skrive til en ikke-eksisterende mappe.
 
 ## Slik gjør du:
-I den følgende eksemplet bruker vi `stat()` -funksjonen som sjekker filens tilstand og deretter sjekker om filen er en katalog.
+Bruk `stat`-strukturen og `opendir` fra `<sys/stat.h>` og `<dirent.h>` bibliotekene for å sjekke mappen. Her er et eksempel:
 
-```C
+```c
+#include <stdio.h>
 #include <sys/stat.h>
+#include <dirent.h>
 
 int directory_exists(const char *path) {
-   struct stat st;
+    struct stat statbuf;
+    if (stat(path, &statbuf) != 0) return 0; // Kunne ikke få status, anta at den ikke eksisterer
+    return S_ISDIR(statbuf.st_mode); // Sjekk om det er en mappe
+}
 
-   if(stat(path, &st) != 0)
-       return 0;
-   return S_ISDIR(st.st_mode);
+int main() {
+    const char *path = "/min/mappe";
+    if (directory_exists(path)) {
+        printf("Mappen '%s' eksisterer.\n", path);
+    } else {
+        printf("Mappen '%s' finnes ikke.\n", path);
+    }
+    return 0;
 }
 ```
-
-Korrekt implementasjon vil returnere `1` om mappen eksisterer og `0` hvis den ikke gjør det.
+Mulig utskrift kan være:
+```
+Mappen '/min/mappe' eksisterer.
+```
+Eller:
+```
+Mappen '/min/mappe' finnes ikke.
+```
 
 ## Dypdykk
-`stat()` -funksjonen har vært rundt i mange år, og ble først introdusert i UNIX Systems. Det gir detaljert informasjon om filer og er bredt akseptert som den mest pålitelige måten å sjekke om en mappe eksisterer i C.
+Å sjekke for eksistensen av en mappe har vært en del av programmeringsrutinene siden tidlige dager av Unix. Den tradisjonelle `stat`-funksjonen gir detaljert informasjon om filattributter, som kan brukes til å sjekke om en filsti korresponderer til en mappe. Selv om `stat` er effektiv, kan den møte race conditions, hvor mappens status kan endre seg mellom sjekken og den etterfølgende operasjonen.
 
-Alternativt kan du også bruke `opendir()` -funksjonen for å sjekke om en mappe eksisterer, men det er litt langsommere enn `stat()` da det fysisk prøver å åpne mappen.
+Alternativt, `opendir()` fra `<dirent.h>` sjekker også eksistensen av en mappe og er mer rettet mot katalogoperasjoner. En annen vanlig tilnærming på noen systemer er å bruke `access()` eller `faccessat()` med `R_OK` for å sjekke lesbarhet.
 
-Implementeringsdetaljer varierer etter systemet. For eksempel, i UNIX-lignende systemer returnerer `stat()` -funksjonen `-1` hvis den angitte banen ikke eksisterer. Derfor, for å sjekke om en katalog eksisterer, ser vi om funksjonen returnerer noe annet enn `-1`. I tillegg ser vi om det er en katalog ved å bruke `S_ISDIR` macro på `st_mode` medlem av `struct stat`.
+I programmeringssammenheng må vi alltid vurdere både portabilitet og ytelse. Noen metoder kan være mer bærekraftige på tvers av forskjellige plattformer, mens andre kan være raskere, men mindre kompatible.
 
 ## Se også
-- For mer informasjon om `stat()`, se [man pages](https://man7.org/linux/man-pages/man2/stat.2.html)
-- For mer informasjon om `opendir()`, se [man pages](https://www.man7.org/linux/man-pages/man3/opendir.3.html) 
-- Hvis du vil dykke dypere ned i filsystem API-er, sjekk ut [APUE](http://www.apuebook.com/) (Advanced Programming in the Unix Environment)
+- POSIX standarden for filsystemfunksjoner: http://pubs.opengroup.org/onlinepubs/9699919799/
+- C Standard Library dokumentasjon for `<sys/stat.h>`: https://en.cppreference.com/w/c/io
+- GNU C Library Manual for Directory Access: https://www.gnu.org/software/libc/manual/html_node/Directory-Access.html

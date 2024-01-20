@@ -1,6 +1,7 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "Java: Перевірка наявності директорії"
+date:                  2024-01-20T14:57:36.218214-07:00
+html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "Java"
 category:             "Java"
@@ -10,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Перевірка наявності директорії в Java - це процес визначення того, чи існує даний каталог чи ні. Програмісти це роблять, щоб завчасно виявити можливі проблеми чи помилки, пов'язані з відсутністю очікуваного каталогу.
+## Що це та Навіщо?
+Перевірка існування каталогу - це спосіб з'ясувати, чи є у файловій системі певна папка. Програмісти роблять це, щоб уникнути помилок при роботі з файлами або для створення каталогів, якщо таких ще немає.
 
 ## Як це зробити:
-Ми можемо використати стандартний метод `Files.exists()` з пакету `java.nio.file` для перевірки існування директорії.
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-```Java
-import java.nio.file.*;
-
-public class Main {
+public class DirectoryExists {
     public static void main(String[] args) {
-        Path path = Paths.get("/path/to/directory");
-        
+        // Перевірка чи існує каталог
+        Path path = Paths.get("/path/to/your/directory");
+
         if (Files.exists(path)) {
-            System.out.println("Каталог існує.");
+            System.out.println("Каталог існує!");
         } else {
-            System.out.println("Каталог не існує.");
+            System.out.println("Каталог не існує!");
         }
     }
 }
 ```
-Вихідний код:
+Вивід залежатиме від того, чи існує каталог на вашому комп'ютері:
 ```
-Каталог існує.
+Каталог існує!
 ```
 або
 ```
-Каталог не існує.
+Каталог не існує!
 ```
 
-## Поглиблений аналіз
-Перевірка наявності директорії може здаватися простою операцією, але історично вона була більш складною через різниці в операційних системах. З `java.nio.file`, введеним у Java 7, це значно спростилося. Щодо альтернатив, ви також можете використовувати `File.exists()` з `java.io.File`, але це менш надійний і менш гнучкий варіант.
+## Поглибленно:
+Перевірка існування каталогу у Java використовує класи з пакету `java.nio.file` введеного у Java 7. Це більш гнучкий та комплексний спосіб роботи з файловою системою порівняно зі старішим `java.io.File`. `Path` та `Files` дозволяють легше моделювати шляхи у файловій системі, і забезпечують кращу переносимість коду між різними ОС. Альтернативою є використання методу `File.exists()`, але в разі роботи зі складнішими файловими операціями `java.nio.file` надає переваги іншим інструментам.
 
-## Дивіться також
-- [Oracle documentation for java.nio.file.Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-- [StackOverflow: How to check if a folder exists](https://stackoverflow.com/questions/3775694/how-to-check-if-a-folder-exists)
+## Дивіться також:
+- [Official Java Documentation for Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
+- [Oracle Tutorial on File I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
+- [Stack Overflow discussion on checking a directory's existence](https://stackoverflow.com/questions/3634853/how-to-create-a-directory-in-java)

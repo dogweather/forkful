@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Kotlin: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:57:30.415272-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,55 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tarkastellaan toimintoa, jolla tarkistetaan, onko hakemisto olemassa. Sen käyttäjät pystyvät välttämään virheitä, jotka johtuvat siitä, että he yrittävät käsitellä olemattomia hakemistoja.
+## What & Why? (Mitä & Miksi?)
+Tarkistetaan, onko kansio olemassa tiedostojärjestelmässä. Koodarit tekevät tämän välttääkseen virheitä, kuten yrittää kirjoittaa olemattomaan kansioon.
 
-## Kuinka seuraavasti:
-Alla näet esimerkin siitä, miten Kotlinissa voit tarkistaa, onko kansio olemassa.
-
-```Kotlin
+## How to: (Kuinka tehdään:)
+```kotlin
 import java.nio.file.Files
 import java.nio.file.Paths
 
 fun main() {
-    val path = Paths.get("/path/to/directory")
-
+    val path = Paths.get("/polku/kansioon")
     val exists = Files.exists(path)
 
-    println("Directory exists: $exists")
+    println("Onko kansio olemassa? $exists")
 }
+
+// Esimerkkituloste:
+// Onko kansio olemassa? true
 ```
 
-Syötä komento ja saat tuloksen:
+## Deep Dive (Sukellus syvyyksiin)
+Kansioita on tarkistettu olemassaolonsa puolesta kauan, koska se on olennainen osa tiedostonhallintaa. Ennen Java NIO:t (New I/O), File-luokkaa käytettiin, mutta se ei ollut yhtä tehokas eikä yhtä monipuolinen. `Files.exists()` tuli käyttöön Java 7:ssä osana NIO.2:ta, tarjoten tehokkaamman tavan tehdä tämä tarkistus. Vaihtoehtoisesti `Files.isDirectory(path)` voidaan käyttää suoraan, jos odotetaan, että polku on aina kansio. Implementation yksityiskohdissa on hyvä pitää mielessä, että `Files.exists()` voi hitaasti reagoida verkkolevyillä ja voi palauttaa `false`, jos käyttöoikeudet puuttuvat, vaikka kansio olisikin olemassa.
 
-```Instance
-Directory exists: true
-```
-tai
-
-```Instance
-Directory exists: false
-```
-
-## Syvempi sukellus
-Historiallisesti Java-versioissa ennen Javan NIO.2: ta (joka esiteltiin Javassa 7) oli vaikea tehdä yksinkertaisia ​​tiedostojärjestelmätoimintoja, kuten tarkistaa, onko kansio olemassa. Kotlin hyödyntää Javassa 7 esiteltyjä NIO.2-toimintoja parantaakseen tätä kokemusta.
-
-Vaihtoehtoinen tapa tarkistaa onko kansio olemassa on `File` luokka. Esimerkki:
-
-```Kotlin
-import java.io.File
-
-fun main() {
-    val directory = File("/path/to/directory")
-
-    val exists = directory.exists()
-
-    println("Directory exists: $exists")
-}
-```
-
-Vaikka tämä menetelmä on helpompi aloittelijoille ymmärtää, se ei välttämättä ole yhtä joustava kuin `Files.exists` -menetelmä.
-  
-## Katso myös
-1. [Oracle Java Docs: Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
-2. [Kotlin Docs: java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+## See Also (Katso Myös)
+- Kotlinin virallinen dokumentaatio: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- StackOverflow keskustelut ja esimerkit tiedon käsittelystä Kotlinissa: [https://stackoverflow.com/questions/tagged/kotlin+file-io](https://stackoverflow.com/questions/tagged/kotlin+file-io)

@@ -1,6 +1,6 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "C++: Перевірка наявності директорії"
+html_title:           "Bash: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "C++"
 category:             "C++"
@@ -10,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## Що це таке та навіщо?
 
-Перевірка на існування директорії - це процес, який визначає, чи наявна вказана директорія. Програмісти це роблять, щоб уникнути помилок при спробі відкриття або зміни директорій, які не існують.
+Перевірка наявності директорії - це процес, під час якого програма визначає, чи існує певний шлях до папки у файловій системі. Програмісти роблять це, щоб уникнути помилок при спробі доступу або зміні файлів у неіснуючій директорії.
 
-## Як це робиться:
+## Як це зробити:
+
+C++17 запроваджує бібліотеку `<filesystem>`, що значно спрощує роботу з файлами і директоріями. Ось приклад перевірки наявності директорії:
 
 ```C++
+#include <iostream>
 #include <filesystem>
 
-bool is_directory_exists(const std::filesystem::path& p)
-{
-    return std::filesystem::exists(p) && std::filesystem::is_directory(p);
-}
+int main() {
+    std::filesystem::path dirPath = "/some/dir";
 
-int main()
-{
-    std::filesystem::path p{"/path/to/directory"};
-    if (is_directory_exists(p)) {
-        std::cout << "Directory exists.\n";
+    if (std::filesystem::exists(dirPath)) {
+        std::cout << "Directory exists: " << dirPath << '\n';
     } else {
-        std::cout << "Directory does not exist.\n";
+        std::cout << "Directory does not exist: " << dirPath << '\n';
     }
+
     return 0;
 }
 ```
 
-При відповідному шляху до директорії, вивід коду може бути таким:
-
+Прикладний вивід:
 ```
-Directory exists.
+Directory exists: "/some/dir"
+```
+або
+```
+Directory does not exist: "/some/dir"
 ```
 
-## Пірнемо глибше:
+## Детальний огляд:
 
-**Історичний контекст** - перевірка існування директорії в C++ не завжди була пряма. Перш ніж з’явилося стандартне бібліотеку <filesystem>, програмісти використовували бібліотеки сторонніх розробників або системні виклики.
+В історичному контексті, до C++17, перевірка наявності директорії в C++ була більш складною і залежала від платформи (наприклад, використання `stat` в POSIX). `<filesystem>` спрощує процес, надаючи платформо-незалежний API.
 
-**Альтернативи** - в деяких випадках, якщо ви працюєте з C++17 або старіше, можете використовувати `std::filesystem::is_directory()`, який також перевіряє існування перед визначенням, чи є шлях директорією.
+Існують альтернативи: використання `boost::filesystem` для старих версій C++ або прямі системні виклики (`_access` в Windows, `stat` в Unix-подібних системах). 
 
-**Деталі впровадження** - `std::filesystem::exists(p)` перевіряє, чи існує файл / директорія, тоді як `std::filesystem::is_directory(p)` перевіряє, чи є об'єкт директорією.
+Про деталі реалізації: `<filesystem>` використовує RAII (Resource Acquisition Is Initialization), гарантуючи коректне управління ресурсами. Клас `std::filesystem::path` дозволяє маніпулювати шляхами, а функції типу `exists()`, `is_directory()`, `create_directory()` полегшують роботу з файловою системою.
 
 ## Дивіться також:
 
-- C++ документація std::filesystem::exists: https://en.cppreference.com/w/cpp/filesystem/exists
-- C++ документація std::filesystem::is_directory: https://en.cppreference.com/w/cpp/filesystem/is_directory
-- Навчальний посібник з файлової системи C++17 від Microsoft: https://docs.microsoft.com/en-us/cpp/standard-library/file-system-navigation?view=msvc-160
+- [Документація по std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- [Boost.Filesystem, якщо ви використовуєте старший стандарт C++](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+- [Tutorial for file I/O in C++](https://www.cplusplus.com/doc/tutorial/files/)

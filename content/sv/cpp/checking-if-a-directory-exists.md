@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en katalog existerar"
-html_title:           "C++: Kontrollera om en katalog existerar"
-simple_title:         "Kontrollera om en katalog existerar"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför:
+## Vad & Varför?
+Att kontrollera om en katalog (directory) finns innebär att du i din kod ser efter om en viss filväg leder till en existerande katalog. Det är användbart för att säkerställa att dina filoperationer, som läsning och skrivning, inte misslyckas på grund av att katalogen inte finns.
 
-Att kontrollera om en katalog finns är enkelt: det är bara att se om en viss mapp har skapats på din filsystem. Varför gör vi detta? För att undvika felmeddelanden eller systemkrascher när vi försöker ändra eller flytta till en mapp som inte finns.
-
-## Så här gör du:
-
-För jämna saker ut, låt oss dyka in i lite kod. Vi kommer att behöva följa `#include <filesystem>`. `std::filesystem::exists()` kommer att göra jobbet.
+## How to: Så här gör du:
+Här är ett kort exempel som använder `<filesystem>` för att kolla om en katalog finns:
 
 ```C++
 #include <iostream>
 #include <filesystem>
 
 int main() {
-    if(std::filesystem::exists("/your/path")) {
-        std::cout << "Katalogen finns!\n";
+    std::filesystem::path dir = "/path/to/directory";
+
+    if(std::filesystem::exists(dir) && std::filesystem::is_directory(dir)) {
+        std::cout << "Katalogen finns." << std::endl;
     } else {
-        std::cout << "Katalogen finns inte.\n";
+        std::cout << "Katalogen finns inte." << std::endl;
     }
+
     return 0;
 }
 ```
 
-Om katalogen finns kommer output vara "Katalogen finns!", annars kommer det vara "Katalogen finns inte."
+Körningssvar beroende på om `/path/to/directory` finns:
+```
+Katalogen finns.
+```
+eller
+```
+Katalogen finns inte.
+```
 
-## Djupdykning:
+## Deep Dive: Fördjupning
+I gamla tider, före `<filesystem>` blev en del av standardbiblioteket i C++17, var vi hänvisade till plattformsspecifika API:er eller tredjepartsbibliotek som `boost::filesystem` för att utföra systemoperationer. `<filesystem>` abstraherar bort många av de plattformsspecifika detaljerna och ger en enhetlig gränssnitt för att arbeta med filer och kataloger. 
+Alternativ för att kontrollera om en katalog finns inkluderar:
 
-Dina alternativ är inte begränsade till `std::filesystem::exists()`. Första versionen av filsystem API tillägget kommer ifrån boost biblioteket före C++17. Ett annat alternativ är att använda `stat` systemanrop, men det kommer vara svårare att portera ditt program till andra plattformar. 
+- Användning av `stat` på UNIX-liknande system.
+- Användning av `GetFileAttributes` på Windows.
 
-## Se Även: 
+Dessa metoder kräver mer plattformsberoende kod och är mindre intuitiva att använda. Med `<filesystem>`, blir denna operation enkel och portabel.
 
-Vill du se mer? Kolla in dessa relaterade resurser:
+Implementationen av `<filesystem>` är trogen det övergripande paradigmet i standardbiblioteket, vilket är att ge starka garantier, såsom undantagshantering och resurshantering.
 
-- cppreference.com: [std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
-- boost.org: [Filesysteem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- linux.die.net: [stat system call](https://linux.die.net/man/2/stat)
+## See Also: Se Även
+- [Filesystem library](https://en.cppreference.com/w/cpp/filesystem)
+- [Boost.Filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+- Tutorial for legacy methods: [POSIX `stat`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html), [Windows `GetFileAttributes`](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesa)

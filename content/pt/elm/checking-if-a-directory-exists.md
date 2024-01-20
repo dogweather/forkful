@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Elm: Verificando se um diretório existe"
+date:                  2024-01-20T14:56:14.068274-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,39 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Checando se um Diretório Existe em Elm
-
-## O Que & Por Quê?
-
-Verificar se um diretório existe é um passo necessário para garantir que os programas acessem o local certo para ler ou gravar dados. Os programadores fazem isso para evitar erros causados pela tentativa de acessar diretórios inexistentes.
+## O Que é & Porquê?
+Checar se um diretório existe é o processo de verificar se um caminho específico refere-se a um diretório no sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em um diretório que pode não estar presente.
 
 ## Como Fazer:
-
-Infelizmente, no atual estado da linguagem Elm (0.19.1), não é possível interagir diretamente com o sistema de arquivos de uma maneira que permitiria verificar se um diretório existe, pois o Elm é uma linguagem voltada principalmente para a web e o navegador. Aqui está um exemplo de como você pode ter feito isso se fosse possível:
+Elm é uma linguagem para aplicações web e, portanto, não tem acesso direto ao sistema de arquivos do servidor ou do cliente, então você não pode verificar diretamente se um diretório existe como faria em outras linguagens como Node.js ou Python. Mas você pode fazer requisições para um servidor e manejar respostas para inferir se um diretório ou recurso está disponível. Abaixo está um exemplo simplificado usando `Http` para checar se um recurso existe:
 
 ```Elm
--- Isto é apenas um exemplo fictício, 'Dir.exists' não existe na linguagem Elm atual
-exemploFicticio : String -> Task String Bool
-exemploFicticio path =
-    Dir.exists path
-        |> Task.attempt
-            (\result ->
-               case result of
-                    Ok exists -> exists
-                    Err _ -> False
-            )
+module Main exposing (..)
+
+import Browser
+import Html exposing (text)
+import Http
+
+type Msg
+    = CheckResource
+    | HandleResponse (Result Http.Error ())
+
+type alias Model =
+    { resourceExists : Bool }
+
+init : Model
+init =
+    { resourceExists = False }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        CheckResource ->
+            (model, Http.head "http://example.com/mydirectory" |> Http.send HandleResponse)
+
+        HandleResponse (Ok _) ->
+            ({ model | resourceExists = True }, Cmd.none)
+            
+        HandleResponse (Err _) ->
+            (model, Cmd.none)
+
+view : Model -> Html.Html Msg
+view model =
+    if model.resourceExists then
+        text "O recurso existe!"
+    else
+        text "O recurso não existe ou está indisponível."
+
+main =
+  Browser.sandbox { init = init, update = update, view = view }
 ```
 
-## Aprofundando
+Esse código manda uma requisição `HEAD` para o servidor, se a resposta for positiva (`Ok _`), isso indica que o recurso existe, o contrário com um erro (`Err _`).
 
-Historicamente, a linguagem Elm sempre se manteve leal à sua filosofia de foco na segurança, simplicidade e facilidade para o desenvolvimento web. Isto explica por que a linguagem não fornece uma maneira direta de se interagir com o sistema de arquivos, pois essa ação pode ser vulnerável a ataques do tipo Directory Traversal e outras violações de segurança.
+## Mergulho Profundo
+Historicamente, verificações de diretórios são relevantes para linguagens com acesso ao sistema de arquivos local ou de servidores, como Python, Ruby ou Node.js. Elm, sendo focada no lado do cliente para aplicações web, opera sob um modelo diferente. Ainda assim, a necessidade de verificar a existência de recursos é gerida através de requisições HTTP, como ilustrado no exemplo acima.
 
-No entanto, existem algumas soluções alternativas. Poderíamos usar `ports` para se comunicar com código JavaScript, que tem permissão para usar a API `fs` do Node.js (ambiente do lado do servidor). Lembre-se de que é importante que você esteja ciente das implicações de segurança ao usar este método.
+Alternativas para esta função em Elm incluem o desenho de APIs no servidor que podem explicitamente informar sobre a existência de recursos ao invés de confiar em inferências feitas por respostas HTTP.
 
-Quanto aos detalhes de implementação, a verificação da existência de um diretório geralmente envolve a utilização de uma API do sistema operacional que lista diretórios e arquivos, em seguida, procurando pelo diretório desejado no resultado retornado. Como já mencionado, na linguagem de programação Elm, isso é feito através de bibliotecas JavaScript interfaceadas via `ports`.
+Detalhes de implementação para a checagem de diretórios em Elm vão normalmente envolver conexões com um backend via requests. O backend é que de fato interage com o sistema de arquivos e fornece respostas adequadas para a aplicação Elm.
 
 ## Veja Também
-
-- [Documentação oficial de Elm](https://elm-lang.org/docs)
-- [Guia Elm para Interoperabilidade JavaScript](https://guide.elm-lang.org/interop/)
-- [Documentação da API Node.js FS](https://nodejs.org/api/fs.html)
+- Elm Http package documentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm Guide on Effects - para um entendimento aprofundado de `Cmd`: [https://guide.elm-lang.org/effects/](https://guide.elm-lang.org/effects/)
+- HTTP response status codes - entendendo respostas do servidor: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

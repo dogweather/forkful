@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:56:28.011050-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Go"
 category:             "Go"
@@ -11,16 +12,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Programmers often need to check if a directory exists to avoid errors when reading or writing files, or when constructing file paths dynamically. Understanding whether a directory exists before interacting with it is a fundamental part of error handling in I/O operations.
+Checking if a directory exists means confirming whether a specific folder is present on the file system. Programmers do this to prevent errors, like trying to read from or write to a directory that isn't there.
 
 ## How to:
+Go’s standard library makes it easy. Use `os.Stat` and check for errors with `os.IsNotExist`:
 
-In Go, we use the `os` package's `Stat` function and `os` package's `IsNotExist` function in conjunction. 
-
-Here's an example:
-
-```Go
+```go
 package main
 
 import (
@@ -29,40 +26,35 @@ import (
 )
 
 func main() {
-	dirPath := "/path/to/directory"
-	_, err := os.Stat(dirPath)
-
-	if os.IsNotExist(err) {
-  		fmt.Printf("Directory %s does not exist.\n", dirPath)
+	dir := "/path/to/your/directory"
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		fmt.Printf("Oops: %v\n", err)
 	} else {
-  		fmt.Printf("Directory %s exists.\n", dirPath)
-	}	
+		fmt.Println("Yep, it exists!")
+	}
 }
 ```
 
-After you run this code, if the directory exists, then it prints:
-
-``` 
-Directory /path/to/directory exists.
-```
-And if it doesn't:
+Sample output if the directory doesn't exist:
 
 ```
-Directory /path/to/directory does not exist.
+Oops: stat /path/to/your/directory: no such file or directory
+```
+
+And if it does:
+
+```
+Yep, it exists!
 ```
 
 ## Deep Dive
+This "existence check" has been part of Go from the early days, part of the robust `os` package. There's another way: `ioutil.ReadDir` reads the directory and returns an error if it's non-existent. But why bother? It's less efficient for just checking existence.
 
-The `os.Stat` function retrieves the `FileInfo` structure (which describes a file or directory's metadata). However, if the path does not exist, `os.Stat` will return an error.
+Under the hood, `os.Stat` does a system call to retrieve the file or directory information. No need to make a call for each file when one will do.
 
-In Go's earlier versions, the common way was to check if the error was the exported `os` package's `ErrExist` error type. However, this approach got deprecated because reasons like multiple filesystems and symbolic links complicated error checking. 
+In the past, programmers used to touch a file in the directory, but that's unnecessary I/O. We want efficient and elegant code. Go does this with simplicity.
 
-Instead, starting Go 1.0, `os.IsNotExist` emerged as the preferred, more accurate method. This function checks if the error from `os.Stat` resembles a non-existent path error across various file systems and link scenarios, adding to error-checking robustness.
-
-Some alternatives include using the `os.Open` function, which also returns an error if the directory doesn't exist. Still, `os.Stat` is more widely used due to its specific use case and performance in terms of system calls.
-
-## See also
-
-- [os package - The Go Programming Language](https://golang.org/pkg/os/)
-- [os.Stat function - GoDoc](https://godoc.org/os#Stat)
-- [A discussion about different methods of checking file or directory existence in Go on StackOverflow](https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go)
+## See Also
+- Go's `os` package documentation: https://pkg.go.dev/os#Stat
+- File system operations in Go: https://golang.org/pkg/io/ioutil/#ReadDir
+- More about error handling in Go: https://blog.golang.org/error-handling-and-go

@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Lua: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:58:40.317461-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,38 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Tarkistetaan, onko tiedostopolku olemassa kun on tarvetta varmistaa ettei esimerkiksi kirjoiteta päällekkäin tärkeitä dataa. Tämä on yleinen turvaoperaatio tiedostojen kanssa työskentelyssä.
 
-Tarkistamme onko hakemisto olemassa, jotta tiedämme voimmeko tallentaa tiedostoja sinne vai ei. Tämä on tarpeellista, koska ohjelman pitää välttää virheitä, joita syntyy, jos se yrittää kirjoittaa hakemistoon, jota ei ole olemassa.
-
-## Miten Tehdään:
-
-Swiftin käyttö huom! Tässä esimerkissä käytetään FileManager-olio:
-
+## How to: (Kuinka tehdä:)
 ```Swift
 import Foundation
 
 let fileManager = FileManager.default
-let dirPath = "/Users/testDir/"
+let directoryPath = "/path/to/directory"
 
-if fileManager.fileExists(atPath: dirPath) {
-    print("Hakemisto on olemassa")
+if fileManager.fileExists(atPath: directoryPath) {
+    print("Kansio on olemassa.")
 } else {
-    print("Hakemisto ei ole olemassa")
+    print("Kansio ei ole olemassa.")
 }
 ```
+Esimerkin tulostus riippuu polun olemassaolosta.
 
-Jos hakemisto on olemassa, tulostetaan "Hakemisto on olemassa". Muussa tapauksessa tulostetaan "Hakemisto ei ole olemassa"
+## Deep Dive (Syväsukellus)
+Historiallisesti tiedostonhallintatoiminnot ovat olleet keskeinen osa ohjelmointia. Swift käyttää FileManager-luokkaa, joka perustuu Cocoa Frameworkin tarjoamiin palveluihin. Vaihtoehtoja ovat esimerkiksi komentorivikomennot shellissä tai alhaisemman tason system calls, mutta `FileManager` on suositeltava Swiftin käyttöympäristössä.
 
-## Syvempi Sukellus:
-
-Historia: Swiftissa, FileManager käyttää peräisin olevaa C-kirjastoa tarkistaakseen, onko tiedosto tai hakemisto olemassa.
-
-Vaihtoehdot: Voit myös käyttää `attributesOfItem(atPath:)` -menetelmää saadaksesi tarkempia tietoja hakemistosta.
-
-Toteutus: Swiftin FileManager käyttää `fileExists(atPath:)` -metodia, joka on hyvin suoraviivainen ja helposti ymmärrettävä. Koodi yksinkertaisesti tarkistaa, onko hakemistopolku olemassa tiedostojärjestelmässä.
-
-## Katso Myös:
-
-1. Swiftin virallinen dokumentaatio, jossa on lisätietoja FileManager-luokasta ja sen metodeista: [https://developer.apple.com/documentation/foundation/filemanager](https://developer.apple.com/documentation/foundation/filemanager)
-2. StackOverflow keskustelu, jossa käsitellään tarkistamista, onko hakemisto tai tiedosto olemassa Swiftissä: [https://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file](https://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file)
+## See Also (Katso Myös)
+- [FileManager Class Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift Standard Library](https://developer.apple.com/documentation/swift/swift_standard_library)

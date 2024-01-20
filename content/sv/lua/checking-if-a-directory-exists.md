@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:57:53.236234-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,36 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lua-kodning: Hur man kontrollerar om en mapp finns
-
-## Vad och Varför?
-Att kontrollera om en mapp finns innebär att se om en specifik mapp existerar på skivan. Programmerare gör detta för att undvika fel orsakade av att försöka komma åt en mapp som inte finns.
+## Vad & Varför?
+Att kontrollera om en mapp finns innebär att man skriver kod som ser om en särskild katalog existerar på filsystemet. Programmerare gör detta för att undvika fel genom att förutsätta att en mapp finns, vilket kan vara fallet vid läsning, skrivning eller när man manipulerar filer.
 
 ## Hur man gör:
-
-Här är exempel på hur du kan kontrollera om en mapp finns i Lua.
-
 ```Lua
-local lfs = require('lfs')
+local lfs = require("lfs") -- Ladda LuaFileSystem-modulen
 
+-- Funktion för att kontrollera om en mapp finns
 function directory_exists(path)
-    if lfs.attributes(path, 'mode') == 'directory' then
-        return true
-    else
-        return false
-    end
+    local attributes = lfs.attributes(path)
+    return attributes and attributes.mode == "directory"
 end
 
-print(directory_exists("/path/to/directory"))  -- Replace with your directory path
+-- Användning
+local path = "/din/önskade/sökväg"
+if directory_exists(path) then
+    print("Mappen finns!")
+else
+    print("Mappen existerar inte.")
+end
 ```
-Om mappen finns, skriver koden ut `true`. Annars skriver den ut `false`.
+### Exempel på utdata:
+```
+Mappen finns!
+```
+eller
+```
+Mappen existerar inte.
+```
 
 ## Djupdykning
+Historiskt har tillgången till filsystemet i Lua krävt externa moduler som LuaFileSystem eftersom standardbiblioteket inte har den funktionaliteten. LuaFileSystem (lfs) är den vanligaste lösningen och har blivit de facto-standarden för filsystemåtgärder i Lua.
 
-Historiskt sett har Lua inte haft ett inbyggt sätt att kontrollera om en fil eller mapp finns. Därför behövs biblioteket LuaFileSystem (lfs). Det finns alternativ till lfs, som os.execute och io.open, men dessa har nackdelar. os.execute kan vara långsamt och osäkert, medan io.open inte kan skilja mellan filer och mappar.
+Alternativ till LuaFileSystem inkluderar att använda `os`-biblioteket för att köra kommandon som är specifika för operativsystemet, men detta är mindre portabelt och kan vara säkerhetsrisk. Det finns också andra tredjepartsbibliotek och FFI-biblioteket (Foreign Function Interface) som kan användas för att åstadkomma samma sak.
 
-Det är viktigt att notera att funktionen lfs.attributes i exemplet ovan returnerar en tabell med information om mappen om den finns. Elementet 'mode' i denna tabell indikerar om sökvägen är en mapp, en fil eller något annat.
+När det gäller implementationen använder `lfs.attributes` för att hämta attributen för en fil eller mapp. Genom att kontrollera att attributet 'mode' är 'directory' kan vi avgöra om sökvägen är en mapp.
 
-## Se även
-
-2. [Lua User Wiki: Fil och Mapp funktioner](http://lua-users.org/wiki/FileAndDirectoryOperations)
+## Se också
+- LuaFileSystem dokumentation: http://keplerproject.github.io/luafilesystem/
+- Lua 5.4 referensmanual: https://www.lua.org/manual/5.4/
+- Lua Användar-Wiki för filsystemåtgärder: http://lua-users.org/wiki/FileSystemOperations

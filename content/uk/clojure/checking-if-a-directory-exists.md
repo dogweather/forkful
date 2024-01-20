@@ -1,6 +1,6 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "Clojure: Перевірка наявності директорії"
+html_title:           "Bash: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо нам це потрібно?
+## Що і Навіщо?
+Перевірка існування директорії - це спосіб встановити, чи є вказаний шлях реальною папкою. Програмісти роблять це, щоб уникнути помилок під час читання чи запису файлів.
 
-Перевірка наявності директорії висвітлює, дійсно існує чи не існує директорія за вказаним шляхом. Програмісти використовують це, щоб запобігти помилкам, які виникають, коли вони намагаються працювати з неіснуючою директорією.
-
-## Як це робити:
-
-```Clojure 
+## Як це зробити:
+```Clojure
 (require '[clojure.java.io :as io])
 
 (defn directory-exists? [path]
-  (-> path
-      (io/file)
-      (.exists)
-      (and (.isDirectory (io/file path)))))
+  (let [file (io/file path)]
+    (and (.exists file) (.isDirectory file))))
 
-(defn test-directory-exists []
-  (println (directory-exists? "/path/to/directory"))
-  (println (directory-exists? "/path/to/nonexistent/directory")))
-
-(test-directory-exists)
+;; Usage
+(println (directory-exists? "/path/to/directory")) ;; true or false
 ```
-Виведення коду:
-
-```Clojure 
+Приклад результату:
+```
 true
+```
+або
+```
 false
 ```
 
-## Пірнання глибше:
+## Поглиблений Розгляд:
+Спосіб перевірки існування директорії змінювався з часом та залежав від операційної системи. У Clojure така перевірка спрощена завдяки JVM, яка забезпечує однакову поведінку незалежно від платформи. Стандартною альтернативою є використання команди `ls` в Unix-подібних системах або `dir` у Windows через виклик з системного шела, але це менш портативно і може бути менш ефективним. З іншого боку, використання Java interop в Clojure дозволяє ефективно працювати з файловою системою.
 
-Історично в Clojure така функція не була передбачена за замовчуванням, тому ми використовуємо java.io.File з Java для цього. Альтернативою є використання бібліотеки third-party.
-
-Основна ідея реалізації полягає в тому, щоб створити об'єкт Java File і перевірити його наявність за допомогою методу .exists. Тоді, якщо файл існує, ми використовуємо метод .isDirectory, щоб перевірити, чи це директорія.
-
-## Дивіться також:
-
-1. Clojure - Java Interop: https://clojure.org/reference/java_interop
-2. Java IO File: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
-3. Clojure Cookbook - Checking Whether a File or Directory Exists: https://www.programming-books.io/essential/clojure/1b76384c5f5e4f84a94bdbd32919c1e5-checking-whether-a-file-or-directory-exists
+## Дивіться Також:
+- Clojure `clojure.java.io` [documentation](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- Java `File` class [documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/io/File.html)
+- StackOverflow discussion on file system interactions in Clojure: [link](https://stackoverflow.com/questions/tagged/clojure+file-io)

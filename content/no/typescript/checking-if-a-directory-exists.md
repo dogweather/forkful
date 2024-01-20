@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Lua: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:48.161121-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,46 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sjekke om en Mappe Eksisterer i TypeScript
+## What & Why?
+Å sjekke om en mappe eksisterer betyr å programmert verifisere at et bestemt mappe på filsystemet er tilgjengelig. Programmerere gjør dette for å unngå feil når de forsøker å lese fra eller skrive til mapper som kanskje ikke finnes.
 
-## Hva og Hvorfor?
-
-Å sjekke om en mappe eksisterer i programmering er akkurat hva det høres ut som: Vi sjekker om en bestemt mappe finnes i systemet. Programmører gjør dette for å unngå feil som oppstår når de forsøker å lese eller skrive fra en mappe som ikke finnes.
-
-## Hvordan?
-
-I TypeScript kan du sjekke om en mappe eksisterer ved hjelp av Node.js's `fs` (files system) bibliotek. Her er hvordan:
+## How to:
+I TypeScript bruker vi `fs`-modulen for å jobbe med filsystemet. Her er et eksempel på hvordan å sjekke om en mappe eksisterer:
 
 ```TypeScript
-import fs from 'fs';
+import * as fs from 'fs';
 
-if(fs.existsSync('/sti/til/mappen')) {
-    console.log('Mappen eksisterer!');
+function checkDirectoryExists(path: string): boolean {
+  return fs.existsSync(path);
+}
+
+const dirPath = './path/to/your/directory';
+
+if (checkDirectoryExists(dirPath)) {
+  console.log('Mappen eksisterer.');
 } else {
-    console.log('Mappen eksisterer ikke!');
+  console.log('Mappen eksisterer ikke.');
 }
 ```
 
-Utdata ditt vil være en av disse to beskjedene, avhengig av om mappen eksisterer:
+Kjør programmet. Hvis mappen finnes, får du output:
 
-```TypeScript
-'Mappen eksisterer!'
 ```
-eller
-
-```TypeScript
-'Mappen eksisterer ikke!'
+Mappen eksisterer.
 ```
 
-## Dypdykk
+Om den ikke finnes, får du:
 
-Å sjekke om en mappe eksisterer er ikke en ny oppfunnet metode; det har vært rundt så lenge det har vært filsystemer å lese og skrive til.
+```
+Mappen eksisterer ikke.
+```
 
-Hvis du bruker annen JavaScript-rammeverk enn Node.js, kan det hende du må bruke en annen metode for å sjekke om en mappe eksisterer. For eksempel, i en nettleser, har du ikke direkte tilgang til filsystemet.
+## Deep Dive
+Historisk sett har `fs.exists` og `fs.existsSync` vært brukt til å sjekke om en fil eller mappe eksisterer. Fra Node.js har det blitt anbefalt å bruke `fs.access` eller `fs.stat` i stedet, da disse gir mer nøyaktig informasjon og følger beste praksiser.
 
-I tillegg, Node `fs.existSync` metode er synkron. Det betyr at JavaScript vil vente til det har fullført før det fortsetter med neste linje i koden din. Selv om synkrone funksjoner kan være lettere å håndtere, kan de gjøre programmet ditt tregere hvis de tar lang tid.
+Andre alternativer er å prøve å lese mappen med `fs.readdir` eller `fs.readdirSync`, som vil gi en feil dersom mappen ikke eksisterer.
 
-## Se Også
+Detaljer om implementasjon: `fs.existsSync` sjekker synkront, mens `fs.exists` er asynkron og har blitt foreldet. I en moderne applikasjon vil du kanskje håndtere dette asynkront med `fs.promises` eller ved bruk av `async/await` sammen med `fs.access`.
 
-- Node.js fs.exists: https://nodejs.org/api/fs.html#fs_fs_exists_path_callback
-- Stack Overflow - How do you check if a directory exists in TypeScript: https://stackoverflow.com/questions/45584364/how-do-you-check-if-a-directory-exists-in-typescript.
+## See Also
+- Node.js File System Dokumentasjon: https://nodejs.org/api/fs.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- MDN om asynkron programmering i JavaScript: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous

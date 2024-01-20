@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Haskell: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:56:58.803802-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co?
+## What & Why? (Czym jest i dlaczego?)
+Sprawdzanie istnienia katalogu w Haskellu to proces weryfikacji, czy katalog znajduje się w systemie plików. Programiści robią to, aby uniknąć błędów podczas próby dostępu lub modyfikacji plików w nieistniejącym katalogu.
 
-Sprawdzanie, czy katalog istnieje, to po prostu mechanizm, który umożliwia programom zrozumienie struktury plików na dysku. Programiści robią to, aby uniknąć błędów podczas prób odczytu lub zapisu do lokalizacji, których może nie być.
+## How to: (Jak to zrobić:)
+```Haskell
+import System.Directory (doesDirectoryExist)
 
-## Jak to zrobić:
-
-```haskell
-import System.Directory
-
-sprawdzKatalog :: FilePath -> IO Bool
-sprawdzKatalog = doesDirectoryExist
+-- Użycie funkcji doesDirectoryExist do sprawdzenia katalogu
+main :: IO ()
+main = do
+    let dirPath = "/path/to/your/directory"
+    exists <- doesDirectoryExist dirPath
+    putStrLn $ "Katalog " ++ (if exists then "istnieje." else "nie istnieje.")
 ```
-Gdy teraz wywołasz `sprawdzKatalog "./mojKatalog"`, dostaniesz `True` lub `False` w zależności od tego, czy katalog istnieje.
+Sample output (Przykładowe wyjście):
+```
+Katalog istnieje.
+```
+lub jeśli katalogu nie ma:
+```
+Katalog nie istnieje.
+```
 
-## Wgłębne spojrzenie
+## Deep Dive (Dogłębna analiza):
+W przeszłości, sprawdzenie istnienia katalogu mogło wymagać bezpośredniego wywołania poleceń systemowych lub komplikacji z używaniem bibliotek systemowych języka C. W nowoczesnym Haskellu używamy modułu `System.Directory`, który udostępnia funkcje wyższego poziomu, takie jak `doesDirectoryExist`. Jest to abstrakcja, która zapewnia przenośność między różnymi systemami operacyjnymi.
 
-Jak sugerują stare źródła biblioteki `System.Directory`, możliwość sprawdzania istnienia katalogów jest dostępna od czasów Haskell 98, co podkreśla użyteczność i konieczność takiej funkcji. Alternatywa to używanie `getPermissions` i `readable`, ale są one mniej bezpośrednie i mogą prowadzić do wołania błędów, jeśli katalog nie istnieje.
+Alternatywą dla `doesDirectoryExist` może być ręczne sprawdzenie przy pomocy funkcji `getDirectoryContents` czy `catch`, ale to zwykle niepotrzebne dodatkowe kroki. Natomiast implementacja funkcji `doesDirectoryExist` polega na wykorzystaniu odpowiednich wywołań systemowych zależnych od platformy – na przykład wywołania `stat` w systemach rodziny UNIX.
 
-Konkretnie, `doesDirectoryExist` zaczyna od sprawdzenia, czy ścieżka istnieje za pomocą `doesPathExist`, a następnie sprawdza, czy to jest katalog. To ważne, bo świat systemów plików jest pełen różnych przypadków. Możliwe jest na przykład, że ścieżka existuje, ale nie jest katalogiem.
-
-## Zobacz też
-
-* Ogólne informacje o System.Directory można znaleźć [tutaj](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
-* Niezmiernie przydatne wprowadzenie do programowania w Haskellu znajdziesz [tutaj](http://learnyouahaskell.com/).
+## See Also (Zobacz także):
+- Haskell `System.Directory` documentation: [Hackage – System.Directory](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)

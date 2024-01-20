@@ -1,6 +1,6 @@
 ---
 title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "C: Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "C"
 category:             "C"
@@ -10,42 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+(## Was & Warum?)
+Überprüfen, ob ein Verzeichnis existiert, heißt einfach zu checken, ob ein bestimmter Pfad auf dem Dateisystem ein Ordner ist. Programmierer machen das, um Fehler zu vermeiden, bevor sie versuchen, Dateien zu lesen oder zu schreiben, oder das Verzeichnis selbst zu manipulieren.
 
-Prüfen, ob ein Verzeichnis existiert, ist eine grundlegende Funktion in der Programmierung, die es uns erlaubt, die Existenz eines spezifischen Verzeichnisses auf unserer Festplatte zu bestätigen. Programmierern ist dies wichtig, um eventuelle Fehler zu vermeiden, die auftreten können, wenn versucht wird, auf ein nicht existierendes Verzeichnis zuzugreifen oder Dateien darin zu speichern.
-
-## Wie es geht:
-
-In C können wir die Funktion `stat()` aus der Bibliothek `sys/stat.h` verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein einfaches Beispiel:
+## How to:
+(## Wie geht das:)
+Um zu prüfen, ob ein Verzeichnis in C existiert, verwenden wir die `stat()` Funktion aus der `<sys/stat.h>` Bibliothek.
 
 ```C
-#include <sys/stat.h>
 #include <stdio.h>
+#include <sys/stat.h>
 
-int main()
-{
-    struct stat stats;
+int directory_exists(const char *path) {
+    struct stat statbuf;
+    if (stat(path, &statbuf) != 0) {
+        return 0; // Kann nicht auf das Verzeichnis zugreifen
+    }
 
-    if (stat("C:\\Verzeichnis", &stats) == 0 && S_ISDIR(stats.st_mode))
+    // Überprüfe, ob es ein Verzeichnis ist
+    return S_ISDIR(statbuf.st_mode);
+}
+
+int main() {
+    const char *path = "/path/to/directory";
+
+    if (directory_exists(path)) {
         printf("Das Verzeichnis existiert.\n");
-    else
+    } else {
         printf("Das Verzeichnis existiert nicht.\n");
+    }
 
     return 0;
 }
 ```
-Ausgabe:
 
+Sample Output:
+```
+Das Verzeichnis existiert.
+```
+Oder:
 ```
 Das Verzeichnis existiert nicht.
 ```
 
-## Tiefer Tauchen:
+## Deep Dive:
+(## Tiefer eintauchen:)
+Die Funktion `stat()` gibt seit den frühen Unix-Tagen. Sie holt Datei-Informationen. Weil eine '0' für "falsch" in C steht, liefert `stat()` eine nicht-0 zurück, wenn es den Pfad nicht findet.
 
-Die `stat()` Funktion wurde ursprünglich in der Unix-Betriebssystemfamilie eingeführt und ist seitdem Teil der meisten C-Standardbibliotheken geworden. Es gibt auch Funktionen wie `access()`, `fstat()`, oder `lstat()` die alternativ verwendet werden können. Die `stat()` Funktion allerdings, gibt detaillierte Informationen über das Verzeichnis oder die Datei, einschließlich des Zeitstempels der letzten Modifikation, Größe, und ob es sich um ein Verzeichnis oder eine Datei handelt.
+Es gibt auch `fstat()` und `lstat()` – `fstat()` arbeitet mit File-Deskriptoren, `lstat()` folgt keine symbolischen Links. Mit `dirent.h` gibt es eine andere Methode, die `opendir()` und `readdir()` verwendet, aber `stat()` ist kürzer für diesen Check.
 
-## Siehe Auch:
+In unseren Code, `S_ISDIR()` prüft, ob die Modus-Bits auf 'Verzeichnis' stellen – ein klares Indiz, dass der Pfad existiert und ein Verzeichnis ist.
 
-Für mehr Informationen schauen Sie diese Ressourcen an:
+## See Also:
+(## Siehe auch:)
+- Man-Page für `stat()`: https://linux.die.net/man/2/stat
+- Stack Overflow Diskussionen über das Überprüfen der Verzeichnisse in C
+- GNU C Library Dokumentation zu File System Utilities: https://www.gnu.org/software/libc/manual/html_node/File-System-Utilities.html
 
-- [C Programming Files I/O](https://www.programiz.com/c-programming/c-file-input-output)
+Bitte beachte, dass Online-Quellen und -Tools sich entwickeln und ändern können; checke immer das aktuelle Datum der Materialien, um sicher zu sein, dass die Infos noch korrekt sind.

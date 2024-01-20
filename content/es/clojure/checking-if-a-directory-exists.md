@@ -1,7 +1,7 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "Clojure: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+html_title:           "Bash: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Comprobar si un directorio existe es una tarea esencial en programación para prevenir errores y garantizar el flujo correcto del programa. Nos ayuda a evitar la creación de archivos o directorios duplicados o la lectura fallida de un directorio inexistente.
+Comprobar si un directorio existe implica verificar que una ruta de acceso específica corresponde a un directorio en el sistema de archivos. Los programadores realizan esta comprobación para evitar errores como intentar leer un directorio que no existe o crear duplicados.
 
 ## Cómo hacerlo:
 
-En Clojure, la biblioteca java.nio.file.Files se usa para verificar si un directorio existe. Aquí tienes código ejemplo:
+```Clojure
+; Importamos el namespace para operaciones de archivos
+(require '[clojure.java.io :as io])
 
-```clojure
-(import 'java.nio.file.Files 'java.nio.file.Paths)
+; Función para verificar si un directorio existe
+(defn directory-exists? [path]
+  (let [file (io/file path)]
+    (and (.exists file) (.isDirectory file))))
 
-(defn directory-exists? [dir-path]
-  (Files/exists (Paths/get dir-path (into-array String []))))
+; Ejemplo de uso
+(println "¿Existe el directorio '/usr/bin'? " (directory-exists? "/usr/bin"))
+(println "¿Existe el directorio '/path/to/nonexistent/dir'? " (directory-exists? "/path/to/nonexistent/dir"))
 ```
 
-Uso de código:
-
-```clojure
-(directory-exists? "/home/user/Documents")
+**Salida de ejemplo:**
+```
+¿Existe el directorio '/usr/bin'? true
+¿Existe el directorio '/path/to/nonexistent/dir'? false
 ```
 
-En caso de que el directorio exista, el código devolverá `true`; si no, será `false`.
+## Profundizando:
 
-## Inmersión profunda:
+Históricamente, la necesidad de verificar la existencia de directorios viene del hecho de que las operaciones con archivos incorrectos pueden causar errores críticos e interrumpir el flujo de un programa. En Clojure, la interacción con el sistema de archivos se gestiona a menudo a través de extensiones del Java IO, que provee un alto nivel de interoperabilidad.
 
-En los primeros días de Java, se usaba la clase 'File' para verificar la existencia de directorios. Sin embargo, java.nio.file, introducido en Java 7, es más versátil y eficiente.
+Alternativas para la verificación incluyen el uso de funciones en bibliotecas de terceros o incluso llamadas directas al sistema operativo, pero esto último puede resultar en código menos portátil.
 
-Una alternativa a `Files/exists` es la función `Files/notExists`. Esta devolverá `true` si el directorio no existe, y `false` en caso contrario.
+La implementación mostrada usa Java interop (`clojure.java.io/file`) para acceder a métodos de la clase `File` de Java que determinan si una ruta de acceso corresponde a un directorio existente (`exists`) y si esa ruta es realmente un directorio (`isDirectory`).
 
-En la implementación real, `Files/exists` usa la función nativa `stat` en sistemas Unix e `GetFileAttributesEx` en Windows para verificar la existencia del directorio.
+## Ver También:
 
-## Ver también:
-
-- Documentación oficial de Oracle sobre `java.nio.file`: 
-[Oracle’s java.nio.file documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
-- Guía de inicio rápido de Clojure para Java Devs: 
-[Getting Started with Clojure for Java Developers](https://clojure.org/guides/getting_started)
+- Documentación de Clojure's `clojure.java.io`: [clojure.github.io/clojure/clojure.java.io-api.html](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- Guía de interoperabilidad Java y Clojure: [clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)

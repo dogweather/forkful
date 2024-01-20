@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:57:06.977235-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,44 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Ever ran into frustrating errors due to non-existing directories in your programs? Well, that's where the need to check if a directory exists in Kotlin comes in. It’s easy and prevents bugs and crashes arising from unavailable directories.
+
+Checking if a directory exists in Kotlin lets you confirm whether a folder is present before you try to read or write files there. This helps avoid errors like `FileNotFoundException`, and helps your program make smart decisions, like creating the directory if it's missing.
 
 ## How to:
-Checking if a directory exists in Kotlin is done using the `exists()` method of the `java.io.File` class, as shown in the sample code below:
+
+In Kotlin, you'll typically use `java.io.File` (from Java's standard library) to check for a directory. Here's a quick example:
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val dir = File("/path/to/your/directory")
+    val directoryPath = "path/to/directory"
+    val directory = File(directoryPath)
 
-    if(dir.exists()){
-        println("Directory exists!")
+    if (directory.exists() && directory.isDirectory) {
+        println("The directory exists!")
     } else {
-        println("Directory doesn't exist!")
+        println("The directory does not exist.")
     }
 }
 ```
 
-When you run this program, it will print "Directory exists!" if the directory exists, and "Directory doesn't exist!" if it doesn't.
+Sample output when the directory exists:
 
-## Deep Dive
-This technique of checking if a directory exists in Kotlin has been prevalent and largely unchanged since the early releases of the Java platform, on which Kotlin is based. It's straightforward and fits most cases.
-
-For alternatives, Kotlin also offers the extension function `File.isDirectory()`. This method not only checks if the path exists, but also if it's a directory and not a file:
-
-```Kotlin
-if(dir.isDirectory){
-    println("Directory exists!")
-} else {
-    println("It either doesn't exist or isn't a directory!")
-}
+```
+The directory exists!
 ```
 
-Lastly, let's dive into the workings of `exists()`. It's a native method implemented in Java's File class and extends to Kotlin. It essentially makes a system call to access the file directory, returning a Boolean based on the outcome.
+And when it doesn't:
+
+```
+The directory does not exist.
+```
+
+## Deep Dive
+
+The `exists()` method in Java has been around since the early days of Java. When Kotlin came along, it kept strong interoperability with Java, allowing us to use Java libraries directly. `exists()` returns `true` if a file or directory exists, but to make sure it's a directory, not a file, we also check `isDirectory`.
+
+Now, alternatives:
+
+- **Kotlin's java.nio.file package**: It provides `Files.exists(path)` and `Files.isDirectory(path)`. These methods work similarly but offer more control over file attributes.
+
+- **Kotlin-specific libraries**: Some community-driven libraries extend Kotlin's file-handling capabilities. They offer more idiomatic Kotlin solutions, but under the hood, they're often simply wrappers around Java's I/O classes.
+
+Working with directories is a mix of checking presence (does it exist?) and type (is it a file or directory?). Both checks are key to preventing your program from tripping over unexpected filesystem states.
 
 ## See Also
-For more reading and resources related to file and directory operations, refer to the following sources:
 
-- [Kotlin's official Java interoperability documentation](https://kotlinlang.org/docs/java-interop.html)
-- [Java's official File class documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [`File` API documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html) - Dive into what you can do with `File`.
+- [`Files` API documentation in java.nio.file package](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html) - For advanced file operations.
+- [Kotlin's official documentation](https://kotlinlang.org/docs/home.html) - Learn more about Kotlin's capabilities.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/kotlin) - Find community-sourced issues and solutions.

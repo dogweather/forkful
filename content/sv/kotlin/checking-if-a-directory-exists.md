@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:57:33.668246-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,35 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog finns är processen att bestämma om en viss katalog existerar inom ditt filsystem. Programmers gör detta för att undvika fel som kan uppstå vid försök att manipulera en katalog som inte existerar.
+
+Att kontrollera om en katalog (directory) finns handlar om att se till att den plats där din app eller program ska lagra eller hitta data verkligen finns tillgänglig. Programmerare gör detta för att undvika fel vid filåtkomst och för att säkerställa att programmet kan hantera filer korrekt.
 
 ## Hur man gör:
-Här är hur du kan kontrollera om en katalog finns med Kotlin:
+
+Här är ett enkelt sätt att kolla om en katalog finns i Kotlin:
 
 ```Kotlin
 import java.nio.file.Files
 import java.nio.file.Paths
 
-fun main() {
-    val path = Paths.get("/home/myDirectory")
+fun doesDirectoryExist(path: String): Boolean {
+    return Files.exists(Paths.get(path))
+}
 
-    if (Files.exists(path)) {
-        println("Katalogen finns.")
+fun main() {
+    val directoryPath = "/path/to/directory"
+    if (doesDirectoryExist(directoryPath)) {
+        println("Katalogen finns!")
     } else {
         println("Katalogen finns inte.")
     }
 }
 ```
 
-Om katalogen finns kommer detta att skriva ut "Katalogen finns.". Annars kommer det att skriva ut "Katalogen finns inte.".
+Kör programmet och få output beroende på om katalogen finns eller inte:
 
-## Djupdykning:
-1. **Historisk kontext:** Kotlin är ett relativt ungt programmeringsspråk som introducerades 2011 av JetBrains. Trots det har det snabbt blivit mycket populärt, särskilt för Android-utveckling, tack vare sin stramlade syntax och moderna funktioner. Förmågan att kontrollera om en katalog finns är bara en av dessa många praktiska funktioner.
+```
+Katalogen finns!
+```
 
-2. **Alternativ:** Förutom detta `Files.exists(path)`-metod, kan du också använda klassiska Java I/O metoder för att kontrollera om en fil eller katalog existerar. Men Kotlin's `Files.exist`-metod är mer läsbar och rekommenderad att använda.
+eller
 
-3. **Implementationsdetaljer:** `Files.exists(path)`-metoden kontrollerar faktiskt om den angivna sökvägen existerar och är nåbar på filsystemet.
+```
+Katalogen finns inte.
+```
 
-## Se också:
-Kotlin officiella dokumentation: https://kotlinlang.org/docs/reference/
-Using Paths and Files in Java: https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html
+## Fördjupning
+
+Kontroll av katalog finns från de tidiga dagarna av programmering. Alternativ till `Files.exists` i Kotlin kan inkludera att använda `File` klassen från Java:
+
+```Kotlin
+import java.io.File
+
+fun doesDirectoryExistUsingFile(path: String): Boolean {
+    return File(path).exists()
+}
+```
+
+Det är betydelsefullt att notera att `Files.exists` och `File.exists` kan ge olika resultat under vissa omständigheter. `Files.exists` räknar till exempel inte tillgängliga men ej läsbara kataloger som "existerande", medan `File.exists` gör det.
+
+## Se även
+
+- Officiell Kotlin-dokumentation om filhantering: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- Java `Files` klassdokumentation: [https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- Java `File` klassdokumentation: [https://docs.oracle.com/javase/8/docs/api/java/io/File.html](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

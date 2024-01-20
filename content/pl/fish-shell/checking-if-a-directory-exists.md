@@ -1,5 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:56:10.675936-07:00
 html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Fish Shell"
@@ -10,45 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Sprawdzanie, czy katalog istnieje, to proces weryfikacji obecności katalogu w systemie plików. Programiści robią to, aby uniknąć błędów podczas prób odczytu, zapisu czy tworzenia plików w nieistniejącym katalogu.
 
-Sprawdzenie, czy katalog istnieje, to proces polegający na sprawdzeniu, czy dany katalog jest widoczny w systemie plików. Programiści robią to, by uniknąć błędów podczas próby manipulacji nieistniejącymi katalogami.
+## How to: (Jak to zrobić:)
+Sprawdzanie, czy katalog istnieje w Fish, jest proste. Wykorzystaj `test` i `and/or` do kontrolowania przepływu.
 
-## Jak to zrobić:
-
-Podstawowy kod w Fish Shell-u, który pozwala sprawdzić, czy katalog istnieje, wygląda tak:
-
-```fish
-if test -d /scieżka/do/katalogu
-    echo "Katalog istnieje"
-else 
-    echo "Katalog nie istnieje"
+```Fish Shell
+if test -d /jakis/katalog
+    echo "Katalog istnieje!"
+else
+    echo "Katalog nie istnieje."
 end
 ```
 
-Więc jesli mamy katalog o nazwie "dom", output będzie taki:
-
-```fish
-~> if test -d /dom
-      echo "Katalog istnieje"
-  else 
-      echo "Katalog nie istnieje"
-  end
-Katalog istnieje
+Jeśli katalog `/jakis/katalog` istnieje, zobaczysz:
+```
+Katalog istnieje!
+```
+A jeśli nie, to:
+```
+Katalog nie istnieje.
 ```
 
-## Pogłębiona analiza:
+## Deep Dive (Dogłębna analiza)
+Sprawdzanie istnienia katalogu nie jest niczym nowym; od lat jest to standardowa funkcjonalność w skryptach powłoki. W Unixowych systemach, jak Linux czy macOS, komenda `test -d` skutecznie sprawdza istnienie katalogu.
 
-Sprawdzanie, czy katalog istnieje, to jedne z podstawowych operacji, które są wykonywane od początku istnienia systemów operacyjnych. Bez tej możliwości pracowanie z systemem plików byłoby niebezpieczne i nieefektywne.
+Alternatywnie, można użyć `and` i `or` dla krótszej wersji:
 
-Alternatywą dla powyższego kodu jest zastosowanie funkcji `test -e`, która sprawdza, czy ścieżka istnieje, niezależnie od tego, czy jest to plik, czy katalog.
+```Fish Shell
+test -d /jakis/katalog; and echo "Katalog istnieje"; or echo "Katalog nie istnieje"
+```
 
-Decydując się na użycie `-d` zamiast `-e`, mamy dodatkową pewność, że ścieżka prowadzi do katalogu, a nie do pliku.
+Ta metoda jest bardziej bezpośrednia i nie wymaga `if`. `test -d` zwraca `0` (prawda) gdy katalog istnieje i niezerowy kod błędu (fałsz) w przeciwnym razie.
 
-## Zobacz także:
+W starszych powłokach, jak Bash, często stosuje się `[]` lub `[[ ]]` do podobnych zadań, ale Fish stosuje `test` dla zwiększenia czytelności i unifikacji. Fish z założenia unika nadmiarowych nawiasów gdzie to możliwe, dążąc do większej klarowności i prostoty.
 
-Dodatkowe informacje na temat Fish Shell oraz funkcji `test` znajdziesz w tych źródłach:
-
-1. Dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-2. Wirtualny kurs Fish Shell: [http://fishshell.com/tutorial.html](http://fishshell.com/tutorial.html)
-3. Opis funkcji `test`: [https://fishshell.com/docs/current/cmds/test.html](https://fishshell.com/docs/current/cmds/test.html)
+## See Also (Zobacz również)
+- [Fish Documentation](https://fishshell.com/docs/current/index.html) – Dokumentacja Fish, pełna informacji o wbudowanych funkcjach i składni.
+- [Unix test man page](https://man7.org/linux/man-pages/man1/test.1.html) – Dokumentacja komendy `test` w systemach Unix.
+- [The Linux Command Line](http://linuxcommand.org/) – Przewodnik po komendach Linuxa, który przydaje się do porównań z Fish.

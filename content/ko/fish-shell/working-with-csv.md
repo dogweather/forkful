@@ -47,5 +47,4 @@ CSV는 1972년 IBM에서 처음 나왔습니다. 대안으로는 JSON, XML 등�
 
 ## See Also
 - Fish Shell 공식 문서: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Unix 명령어 튜토리얼: [https://www.gnu.org/software/coreutils/manual](https://www.gnu.org/software/coreutils/manual)
 - CSV 관련 RFC 문서: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)

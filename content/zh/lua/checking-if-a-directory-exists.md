@@ -1,6 +1,7 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "PowerShell: 检查目录是否存在"
+date:                  2024-01-20T14:57:50.852192-07:00
+html_title:           "Elixir: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,32 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-检查目录是否存在是一个常见的编程任务，它是指通过编程代码来确定某个特定的文件夹是否在计算机上实际存在。它对于避免在尝试访问不存在的目录时出错，或者在需要创建新目录时避免重复创建非常有用。
+## What & Why? 什么以及为什么？
+检查目录是否存在是一种验证特定路径下文件夹是否存在的操作。程序员这么做是为了避免在操作不存在的文件夹时出现错误，保证程序的稳定性和数据的安全性。
 
-## 如何做：
-在Lua中，我们可以使用`lfs`（Lua文件系统）库来检查目录是否存在。以下是如何做的示例：
+## How to 怎么做
+Lua自身不提供直接检测目录是否存在的功能，但我们可以通过调用操作系统的命令或使用第三方库来实现。
+
 ```Lua
-local lfs = require('lfs')
+local lfs = require('lfs') -- 引入luafilesystem库
 
-function is_dir(path)
-    -- lfs.attributes(path, 'mode')如果路径存在，就返回路径的模式（文件或目录），否则返回nil
-    return lfs.attributes(path, 'mode') == 'directory'
+function directoryExists(directory)
+    local ok, error, code = os.rename(directory, directory)
+    if not ok then
+       if code == 13 then
+          -- 代码13表示权限不足，即路径存在
+          return true
+       end
+    end
+    return ok, error
 end
 
---测试用例
-print(is_dir('/path/to/directory'))  --如果目录存在，返回 true，否则返回 false
+-- 使用函数检查目录
+if directoryExists("/path/to/directory") then
+    print("目录存在！")
+else
+    print("目录不存在或无法访问。")
+end
 ```
-## 深入探讨
-在早些时候的Lua版本中，没有内置函数来检查目录是否存在。我们必须依赖于系统的特定命令或者其他库。然而，在最新版本中，Lua文件系统`lfs`库提供了这个功能，并且通过`lfs.attributes(path, 'mode')`函数，它可以很容易地实现。
 
-`lfs.attributes(path, 'mode')`函数的工作原理是首先尝试获取路径的所有属性，然后通过'mode'参数返回文件类型。如果路径不存在，则函数返回nil。
+**样本输出：**
+```
+目录存在！
+```
+或者
+```
+目录不存在或无法访问。
+```
 
-除了`lfs`库，还有其他一些库（如`posix`）也可以实现检查目录是否存在的功能。但是，由于`lfs`库的简单和便利，它通常是首选。
+## Deep Dive 深入探讨
+自Lua 5.1起，luafilesystem第三方库被广泛使用来处理文件和目录。尽管有其他方法，比如调用`os.execute`来运行系统命令或使用`io.popen`，但这些方法可能会因操作系统不同而变得不可靠。luafilesystem提供了一个跨平台的解决方案。
 
-## 另见
-有关`lfs`库和`lfs.attributes`函数的更多详细信息，请参阅：
-- Lua文件系统： https://keplerproject.github.io/luafilesystem/
-- Lua文件系统手册：https://keplerproject.github.io/luafilesystem/manual.html#attributes
-如果你想要了解其他库或方法的更多信息，你可以参考：
-- `posix`库：https://github.com/luaposix/luaposix
+而在历史上，Lua开发者经常依赖于操作系统特定的指令来间接得到文件系统的信息，这显得不够优雅且容易出错。现在，使用`lfs`可以更简单地实现跨平台的文件系统操作，如检查目录是否存在。
+
+`os.rename`函数通常用于重命名文件或目录。但在这里，我们用它来尝试重命名目标目录到自身，如果目录不存在或无法访问，它会返回一个错误。这是一种利用现有工具的创新做法，但请注意，它可能不会检测隐藏目录或系统保护的目录。
+
+## See Also 查看更多
+- Lua 5.4参考手册：[https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- LuaRocks —— Lua的包管理器：[https://luarocks.org/](https://luarocks.org/)

@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Haskell: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:57:57.276141-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Python"
 category:             "Python"
@@ -10,41 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
-Vérifier qu'un répertoire existe est une étape où un programmeur demande au système de confirmer qu'un dossier spécifié est présent sur le système de fichiers. En le faisant, les programmeurs évitent d'essayer d'accéder à un dossier qui n'existe pas, ce qui permet d'éviter des erreurs gênantes.
+## What & Why? (Quoi et Pourquoi ?)
+Vérifier l'existence d'un dossier, c'est s'assurer qu'il est là avant de tenter d'y accéder ou de le modifier. Les programmeurs font cela pour éviter les erreurs et s'assurer que leur code est robuste.
 
-## Comment faire :
-L'un des moyens les plus simples de faire cela avec Python utilise les bibliothèques `os` et `os.path`. Voici un exemple :
-
+## How to (Comment faire) :
 ```Python
 import os
 
-def est_existant(chemin):
-    return os.path.isdir(chemin)
+# Chemin du dossier à vérifier
+chemin_dossier = "mon_dossier"
 
-# Utilisez cette fonction pour vérifier l'existence d'un répertoire
-print(est_existant("/chemin/vers/le/dossier"))
-```
-Si le répertoire existe, cela renverra `True`. Si ce n'est pas le cas, ça retournera `False`.
+# Vérifier si le chemin existe et est un dossier
+if os.path.isdir(chemin_dossier):
+    print(f"Le dossier '{chemin_dossier}' existe.")
+else:
+    print(f"Le dossier '{chemin_dossier}' n'existe pas.")
 
-## Plongée profonde
-Historiquement, vérifier qu'un répertoire existe n'était pas toujours facile. Avant la version actuelle de Python, nous avions besoin de gérer les exceptions, ce qui pouvait rendre le code plus difficile à lire et à déboguer.
-
-Il existe aussi des alternatives comme l'utilisation de la bibliothèque `pathlib` disponible à partir de Python 3.4, comme ceci :
-
-```Python
+# Pour Python 3.5 et plus, on utilise pathlib
 from pathlib import Path
 
-def est_existant(chemin):
-    return Path(chemin).is_dir()
+# Chemin du dossier à vérifier avec pathlib
+dossier = Path("mon_dossier")
+
+# Vérifier si le dossier existe avec pathlib
+if dossier.is_dir():
+    print(f"Le dossier '{dossier}' existe.")
+else:
+    print(f"Le dossier '{dossier}' n'existe pas.")
 ```
-Cette bibliothèque possède une compatibilité inter-plateformes et offre une interface orientée objet.
 
-Au niveau de l'implémentation, vérifier si un répertoire existe revient fondamentalement à demander au système d'exploitation. Les détails précis dépendent de la manière dont le système d'exploitation et le système de fichiers gèrent les informations sur le répertoire.
+Output (Sortie) :
+```
+Le dossier 'mon_dossier' n'existe pas.
+Le dossier 'mon_dossier' n'existe pas.
+```
 
-## Voir aussi
+## Deep Dive (Plongée Profonde) :
+Historiquement, on utilisait le module `os` et `os.path` pour travailler avec les chemins de fichiers en Python. Avec Python 3.5, le module `pathlib` a été introduit pour une interface orientée objet pour les chemins de fichiers, rendant le code plus lisible.
 
-Pour en savoir plus, voici quelques ressources utiles :
-1. [Python os.path documentation](https://docs.python.org/3/library/os.path.html)
-2. [Python pathlib documentation](https://docs.python.org/3/library/pathlib.html)
-3. [StackOverflow - Check if a directory exists and create it if necessary](https://stackoverflow.com/questions/273192/check-if-a-directory-exists-and-create-it-if-necessary)
+Il y a plusieurs manières de vérifier l'existence d'un dossier :
+- `os.path.exists(chemin)`: Vérifie si le chemin existe, mais ne distingue pas entre fichier et dossier.
+- `os.path.isdir(chemin)`: Spécifique pour les dossiers.
+- `pathlib.Path(chemin).is_dir()`: Plus moderne, utilise `pathlib`.
+
+Les détails d'implémentation comprennent la gestion des permissions et des liens symboliques (ou "symlinks"). Il est important de savoir qu'un dossier peut exister mais ne pas être accessible en raison de restrictions de permissions.
+
+## See Also (Voir Aussi) :
+- Documentation Python sur `os.path`: https://docs.python.org/3/library/os.path.html
+- Documentation Python sur `pathlib`: https://docs.python.org/3/library/pathlib.html
+- Un tutoriel sur le module `os`: https://realpython.com/working-with-files-in-python/#checking-whether-a-file-exists
+- Un tutoriel sur le module `pathlib`: https://realpython.com/python-pathlib/

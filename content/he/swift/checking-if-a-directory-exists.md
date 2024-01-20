@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Java: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:59:10.090576-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,36 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## מה ולמה?
-
-בדיקה אם ספרייה קיימת במערכת הקבצים, היא פעולה שבה התוכנה מסתכלת על המיקום שניתן לה ומחליטה האם יש בו ספריה או לא. בכחול השמים, מתכנתים מבצעים פעולה זו כדי לוודא שהקובץ שהם מחפשים יהיה שם בעת מה, או כדי למנוע שגיאות בעת יצירת ספריה חדשה.
+בדיקה אם תיקייה קיימת זו תהליך פשוט - אתה מוודא שתיקייה כבר קיימת במערכת הקבצים לפני שתנסה לקרוא ממנה, לכתוב אליה, או ליצור אותה. מתכנתים עושים את זה כדי למנוע שגיאות בעת פעולות עם קבצים.
 
 ## איך לעשות:
-
-יש דרך קלה לבדוק אם מדובר בספריה ב־Swift. הנה קוד שיבדוק אם ספריה מסוימת קיימת:
+בנות נתיב ובדיקת קיום בSwift:
 
 ```Swift
 import Foundation
 
-func isDirectoryExists(path: String) -> Bool {
-    var isDirectory = ObjCBool(false)
-    let exists = FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory)
-    return exists && isDirectory.boolValue
+let fileManager = FileManager.default
+let directoryPath = "/path/to/directory"
+
+if fileManager.fileExists(atPath: directoryPath) {
+    print("התיקייה קיימת!")
+} else {
+    print("התיקייה לא קיימת!")
 }
-
-print(isDirectoryExists(path: "/User/Desktop")) // sample output: true or false
 ```
-משתנה ה-output של הפונקציה הוא בוליאני שמציין האם הנתיב המבוקש הוא ספריה (true) או לא (false).
 
-## נסיעה לעומק:
+תוצאת דוגמא:
+```
+התיקייה קיימת!
+```
+או:
+```
+התיקייה לא קיימת!
+```
 
-הפונקציה `fileExists(atPath:isDirectory:)` שאנו משתמשים בה לבדוק אם ספריה קיימת הוא חלק מ- `FileManager`, המשמש כממשק לתכנת לעבודה עם מערכת הקבצים של המחשב. המחלקה הזו תמיד הייתה חלק מניתוח פלטפורמה של Apple ואנחנו משתמשים בה המון בעבודה עם קבצים ונתיבים.
+## צלילה לעומק
+בSwift, `FileManager` היא הדרך לנהל קבצים ותיקיות.
+היסטוריה: לפני `FileManager`, היינו משתמשים ב`NSFileManager`, שהיא חלק מObjective-C. במעבר לSwift, הAPI שופר והוא יותר "Swifty".
+אלטרנטיבות: אפשר גם להשתמש בממשק של `POSIX` בפונקציה `stat` או `opendir` בSwift לבדיקות דומות.
+פרטי היישום: `fileExists(atPath:)` מחזיר `true` או `false`, תלוי אם הנתיב קיים ומדובר בתיקייה. שימו לב: היא לא תבדוק אם התיקייה זמינה לקריאה/כתיבה.
 
-ייתכן שיהיו תחליפים אחרים לקוד הזה, כמו `NSFileManager` (מתוך Cocoa) במוסדות, אך `FileManager` הוא האופציה המועדפת לתכנות Swift המודרני.
-
-## ראו גם:
-
-- הנחיות למתכנתים של Apple ל- FileManager: [Link](https://developer.apple.com/documentation/foundation/filemanager)
-- מתכנתים ב- StackOverflow מדברים על ההיסטוריה של FileManager והשימוש שלו: [Link](https://stackoverflow.com/questions/56495661/managing-files-and-directory-paths-using-filemanager-in-ios)
+## ראה גם
+- התיעוד הרשמי של Apple ל `FileManager`: [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- סקירה של מערכת הקבצים על macOS: [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)

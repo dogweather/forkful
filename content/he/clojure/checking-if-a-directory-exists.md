@@ -1,7 +1,7 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Clojure: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם ספרייה קיימת"
+html_title:           "Arduino: בדיקה האם ספרייה קיימת"
+simple_title:         "בדיקה האם ספרייה קיימת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,26 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#מה זה ולמה?
-בדיקה אם תיקייה קיימת היא פעולה שבה התכנית בודקת האם ספסיףי תיקייה קיים כבר במערכת הקבצים. מתכנתים בוחרים לבדוק את זה למנוע שגיאות כתיבה לתיקייה שלא קיימת ולוודא שהמאמרים מאוחסנים במקום הנכון.
+## What & Why? (מה ולמה?)
+בדיקת קיום תיקייה ב-Clojure משמשת לוודא שהפתח לשימוש בקבצים או תיקיות אכן מציאותי. זה חשוב כדי למנוע שגיאות בעת קריאה, כתיבה, או יצירת קבצים.
 
-#איך לעשות:
-אפשר לבדוק אם תיקייה קיימת באמצעות המשפט `clojure.io/file` שבו Clojure:
+## How to (איך לעשות:)
+קוד Clojure שמראה איך לבדוק אם תיקייה קיימת:
 
 ```Clojure
-(let [dir (clojure.java.io/file "/path/to/directory")]
-  (.exists dir))
+(require '[clojure.java.io :as io])
+
+(defn directory-exists? [path]
+  (.isDirectory (io/file path)))
+
+(println (directory-exists? "/path/to/my/directory")) ; הפלט: true או false, תלוי אם התיקייה קיימת או לא
 ```
-אם התיקייה קיימת, הקוד מחזיר את הערך `true`. אם היא לא קיימת, הקוד מחזיר את הערך `false`.
 
-#צלילה עמוקה:
-בדיקה אם תיקייה קיימת היא מטלה פשוטה לשם ולמרות זאת היא שגרתית בתכנות. למרות ש-clojure.io/file מרגיש כמו הדרך ה"נכונה" לבדוק את זה, קיימות גם שיטות אלטרנטיביות. אחת מהן היא לנסות ליצור את התיקייה עם `clojure.io/make-dir`, שמחזיר `nil` אם התיקיה כבר קיימת. אבל, זו איננה המתודה המומלצת, מכיוון שהשימוש בזה יכול להוביל לתוצאות לא צפויות אם קיימת תיקיה עם השם שהוזן.
+## Deep Dive (צלילה לעומק)
+ב-Clojure, בדיקת קיום תיקייה היא פעולה פשוטה, המאפשרת לנו לנהוג בזהירות כשעובדים עם מערכת הקבצים. מספר שפות מתמקדות בפונקציונליות דומה, כמו Python עם הפונקציה `os.path.isdir()` ו-Ruby עם `Dir.exist?()`. ב-Clojure, אנו משתמשים בספריית `clojure.java.io`, שתוכננה לספק ממשק נוח לעבודה עם קבצים ותיקיות. הקוד משתמש ב-Java interop להפעלת ה-fn `.isDirectory` מהקלאס `java.io.File`.
 
-#ראה גם:
-רקע נוסף ומידע מעמיק אפשר למצוא במקורות הבאים:
-
-[Clojure Documentation: clojure.java.io/file](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
-
-[Stack Overflow: How to check if a directory exists in Clojure?](https://stackoverflow.com/questions/2850203/how-to-check-if-a-directory-exists-in-clojure)
-
-[Oracle Documentation: File I/O in Clojure](https://docs.oracle.com/cd/E88353_01/html/E37843/bgbkf.html)
+## See Also (ראה גם)
+- [Clojure java.io documentation](https://clojuredocs.org/clojure.java.io)
+- [Official Java File Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [ClojureDocs - a community-powered documentation and examples repository for Clojure](https://clojuredocs.org/)

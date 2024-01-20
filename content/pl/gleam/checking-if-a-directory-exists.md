@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Gleam: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:56:26.626273-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Sprawdzanie, czy katalog istnieje, to zadanie polegające na weryfikacji, czy określony katalog istnieje w systemie plików. Programiści wykonują to, aby zapobiec błędom podczas próby odczytywania lub zapisywania plików z/do nieistniejącego katalogu.
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, to prosty test, który mówi nam, czy ścieżka w systemie plików prowadzi do katalogu. Programiści robią to, aby uniknąć błędów przy próbie dostępu do katalogu, który nie istnieje, lub aby utworzyć katalog, jeśli jeszcze go nie ma.
 
 ## Jak to zrobić:
+Aktualna wersja Gleam nie posiada wbudowanej funkcji do bezpośredniego sprawdzania, czy katalog istnieje, więc musisz użyć zewnętrznych paczek lub rozwiązań systemowych.
 
-Obecnie, Gleam (najnowsza wersja) nie oferuje bezpośredniego sposobu na sprawdzenie, czy katalog istnieje. Najbliższą koncepcją jest używanie funkcji `fs.Dir.read` i zobaczenie, czy zwraca ona błąd. Oto przykładowy kod:
+```gleam
+// Załóż, że korzystasz z hipotetycznej biblioteki 'filesystem'
 
-```Gleam
-import gleam/fs.{Dir}
+import filesystem
 
-...
+pub fn check_directory_exists(path: String) -> Bool {
+  filesystem.dir_exists(path)
+}
 
-Dir.read("moj_folder")
-|> result.is_error
+// Przy użyciu funkcji w praktyce
+pub fn main() {
+  let path = "/path/to/directory"
+  
+  let exists = check_directory_exists(path)
+  case exists {
+    True -> io.println("Katalog istnieje")
+    False -> io.println("Katalog nie istnieje")
+  }
+}
 ```
 
-Jeśli kod zwróci `True`, oznacza to, że katalog nie istnieje. W przeciwnym razie katalog istnieje.
+### Wyjście przykładowe
+```
+Katalog istnieje
+```
+Albo, jeśli katalog nie istnieje:
+```
+Katalog nie istnieje
+```
 
-## Deep Dive 
+## Pogłębienie wiedzy
+Sprawdzanie istnienia katalogu jest podstawową operacją w wielu językach programowania. Tradycyjnie, dobrze zaprojektowane aplikacje unikały zakładania, że zasoby na dysku istnieją, i zamiast tego dynamicznie reagowały na ich dostępność. Mimo braku natywnej obsługi tej funkcjonalności w Gleam można skorzystać z zewnętrznych bibliotek, jak `filesystem` w przykładzie, lub użyć interfejsów FFI (Foreign Function Interface) do wywołania odpowiednich funkcji z języków pozwalających na łatwe sprawdzanie istnienia katalogów, na przykład Rust czy C. Alternatywnie, jeśli operujesz w środowisku Unixowym, możesz po prostu skorzystać z wywołania systemowego za pomocą `os.cmd` do `ls` lub `test -d`, choć wiązać się to będzie z pewną nieporęcznością i dodatkową obsługą błędów.
 
-W Gleam, brak funkcji do bezpośredniego sprawdzania istnienia katalogu wynika z założeń języka, które preferują bezpieczne i przewidywalne operacje IO. Sprawdzanie, czy katalog istnieje, może prowadzić do problemów zwanych "race conditions", gdzie stan katalogu może zmienić się tuż po sprawdzeniu, co prowadzi do błędów.
-
-Alternatywą jest przechwytywanie błędów podczas próby otwarcia lub zapisu do katalogu. Jest to bardziej bezpośredni sposób na zrozumienie, czy operacja jest możliwa.
-
-Warto pamiętać, że Gleam jest językiem statycznie typowanym, więc część tej logiki jest obsługiwana na poziomie typów. Często nie musimy martwić się o te rzeczy, ponieważ typy a priori eliminują wiele potencjalnych błędów.
-
-## Zobacz również 
-
-Może Ci się przydać zapoznanie się z dokumentacją modułu `fs.Dir` na oficjalnej stronie Gleam. Odnajdziesz ją pod tym linkiem: [https://hexdocs.pm/gleam_stdlib/gleam/fs/dir.html](https://hexdocs.pm/gleam_stdlib/gleam/fs/dir.html).
-
-Innym dobrym źródłem wiedzy na temat Gleam jest oficjalna strona języka: [https://gleam.run/](https://gleam.run/).
-
-Niezależnie od powyższego, sprawdzanie istnienia katalogów jest powszechne w wielu językach programowania i funkcje obsługujące ten podzespół są często dostępne w pakietach standardowych.
+## Zobacz również
+- [Erlang :file module](http://erlang.org/doc/man/file.html) - na wypadek gdybyś chciał stworzyć własną abstrakcję wykorzystując Erlanga
+- [Bash 'test' command](https://man7.org/linux/man-pages/man1/test.1.html) - dla przykładów użycia poleceń systemowych w Unix/Linux

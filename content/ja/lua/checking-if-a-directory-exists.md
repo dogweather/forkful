@@ -1,6 +1,7 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
-html_title:           "Elixir: ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:57:49.664638-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,51 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何故？
+## What & Why? (何となぜ？)
+ディレクトリが存在するかをチェックすることは、ファイルシステムにおけるディレクトリの存在を確認する処理です。これは、データを保存したり、読み込んだりする前に、エラーを防ぎ、プログラムがスムーズに動作するために行われます。
 
-ディレクトリが存在するか確認するとは、その指定したディレクトリパスが実際に存在するのか何か処理を実行する前に確認することです。この確認フローは、エラーや予期しない結果を防ぐためにプログラマーによって行われます。
-
-## 手順：
-
-Luaでは、以下のコードを用いて目的のディレクトリが存在するか、またそれがディレクトリであるかどうかを確認することができます。
-
+## How to: (方法)
 ```Lua
-local lfs = require('lfs')
+local lfs = require("lfs")
 
-local function dirExists(dirname)
-    if lfs.attributes(dirname, "mode") == "directory" then
-        return true
-    else
-        return false
-    end
+function directory_exists(path)
+    local attributes = lfs.attributes(path)
+    return attributes and attributes.mode == "directory"
 end
 
---サンプル出力
-print(dirExists('/path/to/directory'))  --存在すれば true、存在しなければ false を返す
-```
-
-## ディープダイブ：
-
-過去のバージョンのLuaでは`lfs`のライブラリがなかったため、ディレクトリの存在確認は通常、`os.execute`を使ってシステムコマンドを実行することによって行われていました。
-
-また、`lfs`ライブラリ以外にも、`io.popen`を使う方法が代替手段として存在します。
-
-その実装方法は以下の通りです。
-
-```Lua
-local function dirExists(dirname)
-    local f = io.popen("if [ -d " .. dirname .. " ]; then echo true; else echo false; fi")
-    local exists = f:read("*a")
-    f:close()
-    return exists == "true\n"
+-- 例:
+if directory_exists("some/directory") then
+    print("ディレクトリが存在します。")
+else
+    print("ディレクトリが存在しません。")
 end
 ```
 
-だが、この方法はシェルに依存しており、ポータブルではありません。そのため、市場に出るソフトウェアを開発する場合、`lfs`ライブラリを使用することが推奨されます。
+サンプル出力:
+```
+ディレクトリが存在します。
+```
+または
+```
+ディレクトリが存在しません。
+```
 
-## 関連情報：
+## Deep Dive (深い潜入)
+Luaには組み込みのディレクトリチェック関数がないため、LuaFileSystem（lfs）という外部ライブラリを使います。このライブラリは、Luaのファイルシステム関連の機能を拡張します。歴史的に、外部ライブラリに頼るのはLuaの一般的なパターンであり、コア言語が軽量であるためです。他の言語であれば標準ライブラリに含まれている機能も、Luaでは外部モジュールを用いる必要があります。
 
-以下のリンクには、Luaでのディレクトリ存在確認に関する役立つ情報があります。
-1. LuaFileSystem（lfs）公式ドキュメンテーション：https://keplerproject.github.io/luafilesystem/manual.html
-2. StackOverflowのLuaカテゴリー: https://stackoverflow.com/questions/tagged/lua
-3. Lua: 入門できるリソース：http://lua-users.org/wiki/TutorialDirectory
+実装の詳細として、`lfs.attributes`関数は、与えられたパスが指すオブジェクトの属性をテーブル形式で返します。このテーブルの`mode`属性をチェックして、`"directory"`かどうかを確認します。さらに`lfs`ライブラリは多くのプラットフォームをサポートしていますが、環境によっては別の方法や追加のセットアップが必要になることもあります。
+
+## See Also (さらに見る)
+- Programming in Lua (第四版): [https://www.lua.org/pil/](https://www.lua.org/pil/)

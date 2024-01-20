@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Kotlin: Verificando se um diretório existe"
+date:                  2024-01-20T14:58:50.860876-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,34 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Verificar se um diretório existe é o ato de confirmar se uma determinada localização de arquivo está presente ou não. Programadores fazem isso para garantir a integridade de caminhos de arquivos e prevenir erros antes de tentar acessar ou manipular esses diretórios.
+## What & Why?
+Verificar a existência de diretórios ajuda a prevenir erros de arquivo não encontrado e permite que programas tomem decisões com base na estrutura atual do sistema de arquivos. Programadores fazem isso para garantir que seus apps leiam ou escrevam só se o diretório estiver lá.
 
-## Como fazê-lo:
-Aqui está um exemplo usando o FileManager em Swift para verificar a existência de um diretório.
+## How to:
+Vamos usar a classe `FileManager` para verificar se um diretório existe no Swift.
 
 ```Swift
 import Foundation
 
 let fileManager = FileManager.default
+let directoryPath = "/caminho/para/seu/diretório"
 
-let directoryPath = "/DirectoryPath/You/Are/Checking"
-
-if fileManager.fileExists(atPath: directoryPath) {
+var isDirectory = ObjCBool(false)
+if fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory) && isDirectory.boolValue {
     print("O diretório existe.")
 } else {
     print("O diretório não existe.")
 }
 ```
 
-Se o diretório especificado existir, você verá `O diretório existe.` Se não, `O diretório não existe.`
+Saída, dependendo da situação:
+```
+O diretório existe.
+```
+ou
+```
+O diretório não existe.
+```
 
-## Aprofundamento
-No passado, a verificação de diretórios existentes era muito menos eficiente. Antigamente, era comum enumerar todos os diretórios e compará-los à busca. Porém, com a introdução do método `fileExists(atPath:)` no FileManager do Swift, isso se tornou muito mais direto.
+## Deep Dive
+Historicamente, a manipulação de arquivos em Swift se apoia fortemente no `FileManager`, que vem do Foundation framework. Alternativamente, você poderia usar APIs de nível mais baixo como `posix` para chegar ao mesmo resultado, mas com complexidade maior.
 
-Alternativas à essa prática incluem verificar a existência de diretórios por meio de manipulação de erros ao tentar ler ou escrever em um caminho específico.
+O método `fileExists(atPath:)` verifica tanto arquivos quanto diretórios. Ao passar um ponteiro booleano `isDirectory`, podemos verificar especificamente por um diretório. Cuidado ao considerar thread-safety: `FileManager.default` é thread-safe, mas instâncias criadas pelo usuário não são garantidas como tal.
 
-A implementação `fileExists(atPath:)` vai diretamente ao sistema de arquivos para confirmar se um item existe no caminho especificado. Por isso é importante notar que se o aplicativo não tiver permissão para acessar o caminho especificado, o método retornará `false`.
+Ao trabalhar com iOS, lembre de que o app só pode verificar diretórios dentro de seu sandbox, a menos que você tenha permissões especiais.
 
-## Veja Também
-Para mais detalhes, consulte a documentação oficial da Apple sobre o [FileManager] (https://developer.apple.com/documentation/foundation/filemanager) e sobre o método/fileExists(atPath:) (https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists). Além disso, você pode encontrar outras discussões úteis no [Stack Overflow] (https://stackoverflow.com/questions/24097826/read-and-write-a-string-from-text-file).
+## See Also
+- Documentação oficial do `FileManager`: https://developer.apple.com/documentation/foundation/filemanager
+- Guia sobre o sistema de arquivos do iOS: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
+- Tutorial sobre manipulação de arquivos em Swift: https://www.raywenderlich.com/9664901-ios-file-management-with-filemanager

@@ -1,6 +1,7 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "Bash: Перевірка наявності директорії"
+date:                  2024-01-20T14:57:37.469046-07:00
+html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Навіщо?
-Перевірка наявності директорії - це процес виявлення, чи існує певна директорія на вашому файловому системі. Програмісти роблять це, щоб уникнути помилок читання або запису, які можуть статися, якщо директорія не існує.
+## Що це таке & Навіщо?
+Перевірка існування каталогу — це процес визначення, чи існує певний каталог у файловій системі. Програмісти виконують це, щоб уникнути помилок перед виконанням операцій із файлами чи каталогами.
 
 ## Як це зробити:
+Приклад коду Kotlin, який показує як перевірити існування каталогу:
+
 ```Kotlin
 import java.nio.file.Files
 import java.nio.file.Paths
 
 fun main() {
-    val directoryPath = Paths.get("/path/to/your/directory")
-
-    val directoryExists = Files.exists(directoryPath)
-
-    if (directoryExists) {
-        print("Directory Exists")
+    val path = Paths.get("/path/to/directory")
+    
+    if (Files.exists(path)) {
+        println("Каталог існує.")
     } else {
-        print("Directory Does not Exists")
+        println("Каталог не знайдено.")
     }
 }
 ```
-У цьому прикладі ми використовуємо пакет `java.nio.file` для перевірки наявності директорії. 
 
-## Пірнання вглиб:
-Перевірка наявності директорії не є новим поняттям у програмуванні. Вона використовується вже декілька десятиліть, оскільки є необхідною для роботи з файлами і директоріями.
+Просто замініть `/path/to/directory` шляхом до вашого каталогу.
 
-Як альтернативу, ви можете використовувати `java.io.File`, але `java.nio.file.Paths` і `java.nio.file.Files` є більш новим та гнучкішим рішенням, яке надає більше можливостей.
+## Поглиблений Розгляд:
+Історично, перевірка існування каталогів у Java могла бути реалізована за допомогою класу `File`. Але з Java 7 і далі, рекомендують використовувати `java.nio.file` пакет, який надає більшу гнучкість і читабельність коду.
 
-Важливо пам'ятати, що оператори I/O можуть викликати помилки, отже переконайтесь, що ваш код враховує це, використовуючи блоки try-catch для обробки таких помилок.
+Альтернативою методу `Files.exists()` є `Files.notExists()`, який явно перевіряє відсутність каталогу. Важливо враховувати, що оба методи можуть давати невизначену поведінку, якщо доступ до шляху обмежено.
 
-## Див. також:
-- Докладніше про `java.nio.file.Files`: [Oracle Docs - Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-- Про обробку помилок в Kotlin: [Handling Exceptions in Kotlin](https://kotlinlang.org/docs/exceptions.html)
+При перевірці існування каталогу також слід враховувати можливість гонки умов (race condition), коли стан файлової системи може змінитися після того, як було виконано перевірку.
+
+## Дивіться Також:
+- [Java NIO File API](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Kotlin Documentation](https://kotlinlang.org/docs/reflection.html#function-references)

@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:56:37.727310-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,41 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp existerar är en procedur inom programmering som säkerställer att en viss mapp finns i filsystemet. Programmerare gör detta för att undvika felsituationer som kan uppstå om mappen inte finns, till exempel 'FileNotFoundException'.
+Att kolla om en katalog finns innebär att du kontrollerar att en viss sökväg pekar på en riktig katalog i filsystemet. Det görs för att försäkra sig om att filoperationer såsom läsa och skriva kan utföras utan fel.
 
-## Så här gör man:
-Följande Gleam-kod visar hur man kontrollerar om en mapp existerar.
+## Hur gör man:
+I Gleam kan en enkel funktion för att kontrollera om en katalog finns se ut så här:
 
-```Gleam
-import gleam/otp/applications
-import gleam/otp/application
-import gleam/directory
+```gleam
+import gleam/io
 
-fn check_directory() {
-  let path = "/my/directory/path"
-  let directory_exists = directory.exists(path)
-  case directory_exists {
-    Ok(exists) ->
-      if exists {
-        io.println("Mappen finns!")
-      } else {
-        io.println("Mappen finns inte!")
-      }
-      
-    Error(err) ->
-      io.println("Ett fel inträffade: ", err)
+pub fn check_directory_exists(path: String) -> Result(Bool, Nil) {
+  io.is_dir(path)
+}
+
+pub fn main() {
+  let path = "path/to/your/directory"
+  let does_exist = check_directory_exists(path)
+  
+  case does_exist {
+    Ok(True) -> io.println("Katalogen finns!")
+    Ok(False) -> io.println("Katalogen finns inte.")
+    Error(_) -> io.println("Kunde inte kontrollera katalogen.")
   }
 }
 ```
-
-Kör programmet och beroende på om mappen existerar, så kommer du att se antingen "Mappen finns!" eller "Mappen finns inte!".
+Förväntat utskriftsexempel beroende på katalogens status:
+```
+Katalogen finns!
+```
+eller,
+```
+Katalogen finns inte.
+```
 
 ## Djupdykning
-Funktionen för att kontrollera om en mapp existerar i Gleam är relativt ny och faktiskt mycket lättare att använda jämfört med tidigare metoder. I äldre programmeringsmiljöer krävdes ibland ett helt bibliotek för att åstadkomma samma sak. 
-
-Ett alternativ till att kontrollera om en mapp finns är att helt enkelt försöka använda mappen och hantera eventuella fel som uppstår. Men denna metod kan leda till onödigt komplex kod.
-
-För att göra detta i Gleam, använder vi modulen `gleam/directory` och funktionen `exists`. Detta baseras på Erlangs inbyggda bibliotek för hantering av filsystemet, vilket ger oss stark driftsäkerhet och prestanda.
+Historiskt sätt har kontroll för om kataloger och filer finns länge varit en del av många programmeringsspråk och deras standardbibliotek. I Gleam, som är byggt ovanpå Erlang VM (BEAM), utförs filsystem-operationer genom att kalla på underliggande Erlang-funktioner. Alternativ för att kontrollera om en katalog finns inkluderar att direkt använda Erlang-bibliotek eller att använda andra Gleam-paket som hanterar filsystem-operationer. Implementationsmässigt är det viktigt att hantera fel som kan uppstå när filsystemets status eller tillgänglighet är osäker.
 
 ## Se även
-För mer information om hantering av mappar och filer i Gleam, se de officiella dokumenten:
+- Erlang :file-modulen dokumentation för jämförelse: [https://erlang.org/doc/man/file.html](https://erlang.org/doc/man/file.html)

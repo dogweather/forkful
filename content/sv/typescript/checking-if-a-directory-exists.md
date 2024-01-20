@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "C: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:58:48.142757-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,34 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att kontrollera om en katalog finns är en grundläggande men viktig uppgift i programmering. Vi gör detta för att säkerställa att vi inte hanterar oexisterande kataloger, vilket kan leda till fel och undantagsproblem i vår kod.
+## What & Why?
+Att kontrollera om en mapp finns handlar om att se till att en angiven sökväg leder till en existerande mapp innan man jobbar med den. Programmerare gör det för att undvika fel när filsysteminteraktioner kräver att mappen finns.
 
-## Hur man gör:
-Här är ett exempel på hur du kan kontrollera om en katalog finns med fs-modulen i Node.js.
+## How to:
+Använd `fs`-modulen för att kontrollera om en mapp finns. Jag visar standard och asynkront sätt.
 
 ```TypeScript
 import * as fs from 'fs';
 
-function directoryExists(path: string): boolean {
+// Synkront exempel
+const dirPath: string = 'path/to/directory';
+
+if (fs.existsSync(dirPath)) {
+  console.log('Mappen finns!');
+} else {
+  console.log('Mappen finns inte.');
+}
+
+// Asynkront exempel med Promises
+import { promises as fsPromises } from 'fs';
+
+const checkDirectoryExists = async (path: string): Promise<void> => {
   try {
-    return fs.statSync(path).isDirectory();
+    await fsPromises.access(path, fs.constants.F_OK);
+    console.log('Mappen finns!');
   } catch {
-    return false;
+    console.log('Mappen finns inte.');
   }
 }
 
-console.log(directoryExists('/path/to/directory')); // Exempel på utdatan: true eller false
+checkDirectoryExists(dirPath);
 ```
-I koden ovan försöker vi hämta statusinformation för en given sökväg med fs.statSync. Om sökvägen representerar en giltig katalog, returrerar vi 'true'; annars returrerar vi 'false'.
 
-## Djupdykning
-Användandet av fs-modulet för denna uppgift har sina rötter i Node.js ursprungliga utformning, där fs-modulen ingår som en grundläggande del i File System API. Även om fs-modulen är kraftfull och kompetent, finns det alternativ. Till exempel finns fs-extra-modulen, som inkluderar promise-baserade versioner av fs-operationerna, plus några användbara tillägg.
+Sample output:
 
-Ytterligare en implementeringsdetalj att notera är att vi använder den synkrona versionen av stat-operationen, fs.statSync, istället för den asynkrona fs.stat. Detta är för att förenkla koden i denna demonstration, men i ett verkligt scenario kan du vilja använda den asynkrona versionen för att undvika att blockera Node.js händelse loop.
+```
+Mappen finns!
+```
 
-## Se också
-1. [Node.js fs documentation](https://nodejs.org/api/fs.html)
-2. [fs-extra module on npm](https://www.npmjs.com/package/fs-extra)
+eller
 
-Kom ihåg, var noga med att hantera dina filvägar och kataloger säkert för att undvika eventuella fel som kan störa din applikation!
+```
+Mappen finns inte.
+```
+
+## Deep Dive
+Förr använde vi `fs.exists`, men den är inaktuell på grund av dess oklara callback-hantering. `fs.existsSync` och `fs.promises.access` är pålitligare. Asynkron kontroll med `fs.promises.access` är att föredra i I/O-intensiva applikationer då den inte blockerar event-loopen.
+
+Att använda `constants.F_OK` med `fs.promises.access` kontrollerar filsystemets tillgänglighet och är ett robust sätt att försäkra sig om mappens existens.
+
+## See Also
+- Node.js fs Documentation: https://nodejs.org/api/fs.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- Async/Await i TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html

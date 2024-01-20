@@ -1,7 +1,7 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "Bash: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+html_title:           "Bash: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
+## Qué y Por Qué?
+Verificar si un directorio existe es comprobar si hay una carpeta con este nombre en el sistema. Los programadores lo hacen para evitar errores al intentar acceder o manipular directorios que no están.
 
-La verificación de la existencia de un directorio es una tarea común en la programación Bash. Los programadores verifican si un directorio existe para evitar errores de sintaxis al intentar acceder o manipular directorios inexistentes.
-
-## ¿Cómo se hace?
-
-Los códigos siguientes muestran cómo verificar la existencia de un directorio en Bash.
+## Cómo hacerlo:
+Aquí te muestro cómo verificar si un directorio existe:
 
 ```Bash
-# verificar si un directorio existe
-if [ -d "/ruta/directorio" ]; then
-    echo "El directorio existe."
+if [ -d "/ruta/al/directorio" ]; then
+  echo "El directorio existe."
 else
-    echo "El directorio no existe."
+  echo "El directorio no existe."
 fi
 ```
 
-En este ejemplo, si el "directorio" en "/ruta/directorio" existe, se imprime "El directorio existe." De lo contrario, se imprime "El directorio no existe."
+Si el directorio existe, verás:
+```
+El directorio existe.
+```
 
-## Profundización
+Si no existe, obtendrás:
+```
+El directorio no existe.
+```
 
-Historicamente, Bash incluye la capacidad de verificar la existencia de un directorio desde sus primeras versiones. Esta funcionalidad es vital en muchas tareas de scripting, como navegación de archivos, respaldo de datos, y manipulación de archivos y directorios. 
+## Profundizando
+Históricamente, el comando `test` (también representado por `[ ]`) ha sido utilizado en Unix y sus descendientes para evaluar expresiones condicionales.  `-d` es uno de los muchos operadores que test puede usar; específicamente, verifica si existe un directorio.
 
-Existen alternativas a la verificación de la existencia de un directorio en Bash. Por ejemplo, se puede usar un enfoque orientado a objetos en lenguajes de programación más modernos, como Python o Ruby, pero estas suelen ser sobre-dimensionadas para tareas simples.
+Alternativas a `[ -d "/ruta/al/directorio" ]` incluyen usar `[[ ]]` para una versión más moderna de prueba incorporada en Bash, o `find` para scripts más complejos. Podrías también utilizar scripts en Perl o Python para tareas más avanzadas, pero para una simple verificación Bash es suficiente y rápido.
 
-En cuanto a los detalles de implementación, el `-d` en el script es una opción de test que comprueba si el directorio existe. Bash interpreta diferentes opciones de prueba para verificar diversos tipos de ficheros, por lo que otra opción diferente a `-d` daría un resultado distinto.
+En la implementación, es importante considerar si solamente quieres saber si un directorio existe, o si también necesitas verificar si tienes permisos para leer o escribir en él.
 
-## Ver también
-
-Puedes continuar tu aprendizaje en Bash y cómo manejar directorios con los siguientes recursos:
-
-- Guía de Bash para principiantes: https://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html
-- Comandos de Bash para manipulación de directorios: https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320
-- Bash scripting: https://www.shellscript.sh
+## Véase también
+- Documentación de Bash para pruebas condicionales: https://www.gnu.org/software/bash/manual/bash.html#Conditional-Constructs
+- Tutorial avanzado de scripting en Bash: http://tldp.org/LDP/abs/html/
+- Información sobre el comando `find`: https://man7.org/linux/man-pages/man1/find.1.html

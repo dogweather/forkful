@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,26 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att verifiera om en katalog existerar i Bash sammanhang innebär att kontrollera om en särskild mapp finns i systemet innan en operation utförs på den. Det är viktigt för att förhindra fel, som kan orsakas av att försöka kopiera filer in i en icke-existerande katalog.
+## Vad & Varför?
+Att kontrollera om en katalog finns är processen att verifiera om en viss katalog redan existerar i filsystemet. Programmerare gör detta för att undvika fel vid filoperationer och för att säkerställa att skriptet beter sig som förväntat.
 
-## Så här gör du:
-Att kolla upp om en katalog finns i Bash är lätt. Se koden nedan:
+## Hur man gör:
+För att checka om en katalog finns, använd `-d` flaggan i `if` satser. Här är några exempel hur man kan göra det:
+
 ```Bash
 if [ -d "$DIRECTORY" ]; then
-  echo "Katalogen existerar."
+    echo "Katalogen finns."
 else
-  echo "Katalogen finns inte."
+    echo "Katalogen finns inte."
 fi
 ```
-Om `DIRECTORY` finns, kommer skriptet att skriva ut "Katalogen existerar". Om det inte gör det, visar skriptet "Katalogen finns inte".
 
-## Djupgående:
-Detta kommando går tillbaka till de tidiga dagarna av UNIX. Det är en del av en större grupp testkommandon som förkortas med ett enda hakparentes. Alternativa kommandon, som `test` och `[[...]]`, bjuder också på mer avancerade syntaxer och funktioner. Detta inkluderar strängjämförelse, regex matchning, och mer.
+Eller med `[[ ]]` som är mer modern syntax:
 
-För att komma ihåg det lättare, tänk på -d som "directory exists".
+```Bash
+if [[ -d "$DIRECTORY" ]]; then
+    echo "Katalogen finns."
+else
+    echo "Katalogen finns inte."
+fi
+```
 
-## Se även:
-- `man test`: UNIX manualen för testkommandon. [Länk här](http://man7.org/linux/man-pages/man1/test.1.html).
-- `man bash`: Den fullständiga manualen för Bash. [Länk här](http://man7.org/linux/man-pages/man1/bash.1.html).
-- Bash Scripting Guide: En helfruktig guide till Bash programmering. [Länk här](https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html).
+Testa skriptet med olika kataloger för att se olika resultat:
+
+```Bash
+DIRECTORY=/någon/katalog
+
+if [[ -d "$DIRECTORY" ]]; then
+    echo "Katalogen finns."
+else
+    echo "Katalogen finns inte."
+fi
+```
+
+Sample Output:
+
+```
+Katalogen finns inte.
+```
+
+## Fördjupning
+Möjligheten att kontrollera filsystemet i Bash har funnits sedan tidiga versioner av shellskriptning, vilket reflekterar Unix-filosofin att allt är en fil – inklusive kataloger. Andra alternativ för att kontrollera existerande kataloger inkluderar att använda `test` kommandot eller kommandot `find`, men de kan vara överdrivet komplicerade för så enkla operationer.
+
+`test -d` och `[[ -d ]]` är snabbare och enklare sätt att göra jobbet. De skiljer sig åt där `[[ ]]` är en mer modern version som erbjuder förbättrad funktionalitet, som att till exempel hantera strängar som innehåller blanksteg utan behov av att citera dem.
+
+Under motorhuven använder Bash olika systemanrop för att kontrollera tillståndet av filsystemet. Flaggor som `-d` ber operativsystemet att bekräfta om sökvägen refererar till en vanlig katalog och inte en fil eller en annan resurs.
+
+## Se även
+- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html)
+- [Stack Overflow: "How to check if a directory exists in a Bash shell script?"](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)

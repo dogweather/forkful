@@ -1,7 +1,8 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "Javascript: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+date:                  2024-01-20T14:58:39.071496-07:00
+html_title:           "Gleam: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,42 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## What & Why?
+Comprobar si existe un directorio es verificar si hay una carpeta en un lugar específico del sistema de archivos. Los programadores hacen esto para evitar errores al leer, escribir o modificar archivos, asegurándose de que el directorio deseado está presente antes de intentar operar en él.
 
-Verificar si un directorio existe es un proceso en el cual, con código, determinamos la existencia de un directorio específico en el sistema de archivos. Los programadores lo hacen para evitar errores durante la operación de lectura o escritura de archivos.
-
-## ¿Cómo se hace?
-
-En Swift, puedes comprobar si un directorio existe con funciones de FileManager. Aquí tienes un ejemplo:
+## How to:
+Swift nos da el `FileManager` para trabajar con el sistema de archivos. Aquí tienes un ejemplo práctico de cómo verificar la existencia de un directorio:
 
 ```Swift
 import Foundation
 
 let fileManager = FileManager.default
-let directorio = "/ruta/tu_directorio" 
+let directoryPath = "/ruta/al/directorio"
 
-if fileManager.fileExists(atPath: directorio) {
-    print("El directorio existe.")
+if fileManager.fileExists(atPath: directoryPath, isDirectory: UnsafeMutablePointer<ObjCBool>.allocate(capacity: 1)) {
+    print("¡El directorio existe!")
 } else {
     print("El directorio no existe.")
 }
 ```
-En este código, primero importamos el módulo Foundation y luego inicializamos una instancia de `FileManager`. Luego, verificamos si un directorio con la ruta dada existe o no.
 
-## Un Vistazo Más Profundo
+Si corres esto con una ruta válida, verás:
 
-Históricamente, diversos lenguajes de programación han implementado formas de verificación de la existencia de directorios, debido a que la operación de archivos es un componente crucial en programación. En Swift, el módulo Foundation proporciona la clase `FileManager` para gestionar los archivos y directorios.
-
-Además de `fileExists(atPath:)`, Swift ofrece `attributesOfItem(atPath:)`, que puede proporcionar más información detallada, como fecha de creación y modificación, del directorio.
-
-```Swift
-try? fileManager.attributesOfItem(atPath: directorio)
 ```
-Esta función devolverá `nil` si el directorio no existe, lo cual también te dice que el directorio no existe. Si el directorio existe, te dará un diccionario con sus atributos.
+¡El directorio existe!
+```
 
-## Ver También
+Para rutas inválidas o no existentes, obtendrás:
 
-- "Trabajar con rutas de archivos y directorios": https://developer.apple.com/documentation/foundation/filemanager
-- "Verificar si un archivo o directorio existe": https://stackoverflow.com/questions/30056471/check-if-a-file-exists-in-swift
+```
+El directorio no existe.
+```
 
-En estos enlaces puedes encontrar información más detallada sobre cómo trabajar con directorios y archivos en Swift. Las referencias te ayudarán a entender mejor y aplicar de manera efectiva estas operaciones.
+## Deep Dive
+Antes de `FileManager`, tenía que recurrirse a métodos de C como `stat()` para obtener detalles del sistema de archivos. Hoy, `FileManager` de Foundation es la forma moderna, ofreciendo métodos para tareas de manejo de archivos y directorios.
+
+Hay alternativas a `fileExists(atPath:)`, como trabajar con `URL` y el método `resourceValues(forKeys:)`, que puede proporcionar más detalles a través de `URLResourceValues`. Aunque `fileExists(atPath:)` es suficientemente bueno para una verificación rápida.
+
+Detalles de implementación a tener en cuenta: `fileExists(atPath:)` puede no ser completamente seguro en ambientes de múltiples hilos si el sistema de archivos cambia entre la verificación y el siguiente uso del archivo.
+
+## See Also
+- Documentación de Apple sobre `FileManager`: [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- Guía de Apple para trabajar con rutas de archivos y URLs: [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)
+- Tutorial de Swift sobre manejo del sistema de archivos: [Ray Wenderlich File Management Tutorial](https://www.raywenderlich.com/666-filemanager-class-tutorial-for-macos-getting-started-with-the-file-system)

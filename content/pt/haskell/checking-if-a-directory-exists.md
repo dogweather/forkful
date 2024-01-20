@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Haskell: Verificando se um diretório existe"
+date:                  2024-01-20T14:56:47.708670-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O quê e por quê?
-
-Verificar se um diretório existe é uma operação comum em programação. Trata-se de conferir se um caminho de diretório corresponde a um diretório existente. Fazemos isso para evitar erros ao tentar acessar ou manipular diretórios inexistentes.
+## O que é & Por quê?
+Verificar se um diretório existe é checar se, no sistema de arquivos, uma certa pasta está lá. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em diretórios que não existem.
 
 ## Como fazer:
+Tá na hora de botar a mão na massa. Com Haskell, você usa a biblioteca `directory` para saber se um diretório tá no ar. Veja como:
 
-Você pode verificar se um diretório existe em Haskell usando a função `doesDirectoryExist` do módulo `System.Directory`. Veja o exemplo a seguir:
+```haskell
+import System.Directory (doesDirectoryExist)
 
-```Haskell
-import System.Directory
-
+main :: IO ()
 main = do
-   b <- doesDirectoryExist "/caminho/para/o/diretorio"
-   if b then putStrLn "O diretório existe"
-     else putStrLn "O diretório não existe"
+    let dir = "pastaTeste"
+    exists <- doesDirectoryExist dir
+    putStrLn $ "O diretório " ++ dir ++ (if exists then " existe." else " não existe.")
 ```
 
-Quando executado, esse programa irá imprimir "O diretório existe" se o diretório '/caminho/para/o/diretorio' existir, e "O diretório não existe" no caso contrário.
+Execute isso e obtenha:
 
-## Aprofundando-se no assunto
+```
+O diretório pastaTeste existe.
+```
+ou
+```
+O diretório pastaTeste não existe.
+```
+dependendo se a pasta está lá ou não.
 
-O módulo `System.Directory` do Haskell fornece funções de manipulação de diretórios e arquivos. A função `doesDirectoryExist` foi introduzida na versão 1.2 do pacote `directory`, disponibilizado pela primeira vez com o GHC 6.8.1 em outubro de 2007. 
+## Aprofundamento
+Lá atrás, antes das bibliotecas modernas, verificar diretórios em Haskell podia ser um parto. Mas hoje, com a `directory` library, a vida tá fácil. Alternativas? Você pode usar `System.FilePath` para mexer com paths de uma forma mais pura. Agora, por dentro, `doesDirectoryExist` chama funções do sistema operacional para verificar a existência do diretório. É simples, direto e não precisa reinventar a roda.
 
-Como alternativa ao `doesDirectoryExist`, pode-se usar a função `getDirectoryContents` e o tratamento de exceções para verificar se o diretório existe. Mas, em geral, é mais fácil e eficiente usar `doesDirectoryExist` diretamente.
+## Veja também:
+- Para mais sobre a biblioteca `directory`, consulta: [Hackage - Directory](https://hackage.haskell.org/package/directory)
+- Um guia de `System.FilePath` para os nitty-gritty de paths: [Hackage - System.FilePath](https://hackage.haskell.org/package/filepath)
 
-A implementação da função `doesDirectoryExist` depende do sistema operacional. No Unix, por exemplo, ela faz uso da chamada de sistema `stat` para verificar a existência do diretório.
-
-## Veja também
-
-Para mais informações sobre o módulo `System.Directory` e suas funções, consulte a documentação oficial do Haskell: [System.Directory](https://hackage.haskell.org/package/directory-1.3.6.2/docs/System-Directory.html)
-
-Além disso, aqui está um exemplo de como manipular diretórios e arquivos em Haskell: [Tutoriais de manipulação de arquivos em Haskell](https://wiki.haskell.org/Programming_tips/Files)
+Ler essas fontes vai te dar uma base forte e vai preparar você para evitar aqueles erros chatos de diretório no seu próximo projeto Haskell.

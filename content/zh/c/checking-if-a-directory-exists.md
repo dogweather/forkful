@@ -10,42 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 究竟是什么&为什么?
+## What & Why? (什么与为什么?)
 
-检查目录是否存在是一种常见的编程需求，可以保证你的程序读取到正确的文件路径，避免出现文件不存在的错误。编程者进行目录检查以保障程序运行的稳定和兼容性。
+在C语言中确认文件夹是否存在是检测给定的文件夹路径能否在文件系统找到的过程。程序员做这个的原因是为了避免在不存在的文件夹上执行操作，从而造成错误。
 
-## 如何操作:
-
-以下是在C言语中实现目录检查的代码示例：
+## How to (如何操作):
 
 ```C
 #include <stdio.h>
 #include <sys/stat.h>
+#include <stdbool.h>
+
+bool doesDirectoryExist(const char *path) {
+    struct stat statbuf;
+    
+    if (stat(path, &statbuf) != 0) {
+        return false;
+    }
+    
+    return S_ISDIR(statbuf.st_mode);
+}
 
 int main() {
-   struct stat st = {0};
-
-   if (stat("/path/to/dir", &st) == -1) {
-       printf("目录不存在\n");
-   } else {
-       printf("目录存在\n");
-   }
-
-   return 0;
+    const char *path = "/path/to/directory";
+    
+    if (doesDirectoryExist(path)) {
+        printf("Directory exists.\n");
+    } else {
+        printf("Directory does not exist.\n");
+    }
+    
+    return 0;
 }
 ```
 
-运行以上代码，如果目录存在，将输出“目录存在”，如果目录不存在，则输出“目录不存在”。
+Sample output (样例输出):
 
-## 深入探究:
+```
+Directory exists.
+```
+or (或者)
 
-在早期的C版本中，我们需要通过尝试打开目录文件来检查目录是否存在，这种方法并不高效。现在，我们使用stat这个函数，可以更便利、快速地完成这个任务。
+```
+Directory does not exist.
+```
 
-另外，还有其他替代方案如使用`access`或`opendir`函数。但这些方法各有利弊，`stat`功能更全面，除了检查目录是否存在，还可以提供目录的信息，如大小，创建时间等。但需要注意的是，以上所有函数在不同操作系统下可能存在差异，所以在具体应用时需要考虑到平台兼容性。
+## Deep Dive (深入探索):
 
-## 查看相关:
+这个功能的实现利用了 `stat` 函数，这个函数尝试获取文件状态，并填充 `stat` 结构体。如果路径表示的是目录，`S_ISDIR` 宏检查 `st_mode` 字段确认它。
 
-以下是一些有关C语言和目录操作的相关资源：
+对于历史环境而言，此方法已经存在多年，是Unix和类Unix系统的标准部分。Windows系统有其他的API调用方式。实际上，有很多其他方法可以实现同样的目标，例如使用 `opendir()` 函数和C++17中的 `std::filesystem::exists()`。
 
-- C语言教程: [https://www.learn-c.org/](https://www.learn-c.org/)
-- Linux stat函数详解: [https://man7.org/linux/man-pages/man2/stat.2.html](https://man7.org/linux/man-pages/man2/stat.2.html)
+实施细节方面，考虑文件的权限和可能的错误处理是很重要的。例如，如果程序运行在没有读取特定文件夹权限的用户下，`stat()` 调用可能失败。
+
+## See Also (另请参阅):
+
+- C标准库的 `stat` 文档：https://en.cppreference.com/w/c/io/stat
+- POSIX `stat` 参考：https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html
+- C++ `std::filesystem` 参考：https://en.cppreference.com/w/cpp/filesystem
+
+请注意，网站链接可能是英文的。相关技术阅读时应考虑翻译或对应的中文资源。

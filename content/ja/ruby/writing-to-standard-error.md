@@ -59,5 +59,4 @@ end
 
 ## See Also / 関連情報
 
-- Rubyの公式ドキュメント: [IO - Ruby-Doc.org](https://ruby-doc.org/core-3.1.0/IO.html)
 - さらに詳しいUNIXの標準ストリーム: [Standard Streams - Wikipedia](https://en.wikipedia.org/wiki/Standard_streams)

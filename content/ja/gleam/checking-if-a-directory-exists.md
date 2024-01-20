@@ -1,5 +1,6 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:56:16.399306-07:00
 html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Gleam"
@@ -10,45 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何とどうして？ | What & Why?
-ディレクトリが存在するかどうかの確認は、ファイルシステムへのデータの保存分析に不可欠です。存在しないディレクトリに書き込もうとするとエラーが発生しますから、プログラマーはあらかじめチェックを行います。
+## What & Why? (何となぜ？)
+ディレクトリが存在するかどうかを確認するとは、ファイルシステム上のフォルダが実際に存在するかをチェックする処理です。この確認は、ファイル操作前のエラー防止や、動的にファイルシステムを扱う際に重要です。
 
-## 実施方法 | How to:
-以下は、Gleamでディレクトリ存在の確認を行う方法を示すコードです。
+## How to:
+```gleam
+// Gleam module importing functions for dealing with the file system
+import gleam/io
 
-```Gleam
-import gleam/otp/process
-import gleam/otp/process.{ExitStatus}
-import gleam/io.{Result}
-import gleam/string
-​
-
-let exist_directory = fn(directory: String) {
-let command = string.concat(["test -d ", directory, " && echo 'exists' || echo 'does not exist'"])
-Result.unwrap(process.run(command, []))
+pub fn check_directory_exists(dir: String) -> Bool {
+  // Try to read the directory and return true if it exists
+  case io.read_dir(dir) {
+    Ok(_) -> true
+    Error(_) -> false
+  }
 }
 
-match exist_directory("path-to-check") {
- Ok(status) -> 
-  case status {
-   Success(_("exists")) -> print("Directory exists.")
-   Success(_("does not exist")) -> print("Directory does not exist.")
-   Success(_) | Error(_) -> print("An unknown error occurred.")
-  }
-Error(error) -> io.println(error)
-}  
+// Sample usage
+fn main() {
+  let directory = "some/directory/path"
+  let exists = check_directory_exists(directory)
+  io.println(exists) // prints "true" if directory exists, "false" otherwise
+}
 ```
-このコマンドは、特定のディレクトリが存在するかどうかをテストします。存在する場合は"exists"を、存在しない場合は"does not exist"を出力します。
 
-## 深掘り | Deep Dive
-ディレクトリ存在チェックの手法は時代と共に進化してきました。初期のUNIXシステムでは、コマンド`test -d <directory>`を利用していました。最近では、多くのプログラミング言語が独自の抽象化を提供しています。
+## Deep Dive (深い潜行)
+Gleamのファイルシステム機能は、Elixir言語やその他のErlang VM言語に触発されています。`io.read_dir`はディレクトリを読み込むための関数で、成功すれば`Ok`の値が、失敗すれば`Error`の値が返されます。代わりに`file.stat`や`file.exists`のような関数を使うことも可能ですが、直接ディレクトリ内のファイルを読む動作の結果に基づいた判断が一般的です。
 
-代替案としては、`os.path.exists()`や`os.path.isdir()`等の専用関数を使用する方法もあります。
-
-Gleamでは存在チェックはシェルコマンドを呼び出し実行しますが、これは他の言語やフレームワークで一般的に利用される方法とは異なります。これはGleamがErlangのOTPを活用しており、目的のシステムコールへの直接アクセスを提供していないためです。
-
-## 参照 | See Also
-以下のリンクで、より深くGleamの説明、さらに詳細な情報が見られます：
-
-- [fs module in Node.js](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
-- [Pythonのos library](https://docs.python.org/3/library/os.path.html)
+## See Also (関連するリンク)
+- Gleam's official website and documentation: [https://gleam.run/](https://gleam.run/)
+- Erlang's :file module, for more file system operations: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+- Elixir's File module, for further understanding of file handling in the BEAM ecosystem: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)

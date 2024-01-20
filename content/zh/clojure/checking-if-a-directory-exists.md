@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "Clojure: 检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-检查目录是否存在是评估计算机文件系统中特定目录是否存在的过程。程序员这样做主要是为了避免在操作尚未创建或已删除的目录时出现错误。
+## 什么 & 为什么？
+在编程中检查目录是否存在是指验证电脑的文件系统中某个特定目录是否已经被创建。程序员会这么做来避免文件读写错误，或是在需要的时候创建新目录。
 
-## 如何做：
-Clojure有一个很方便的Java库可以用来检查目录是否存在。以下是一些例子:
-
+## 如何操作：
 ```Clojure
-;; 导入java.nio.file
+;; 引入java.io.File类来处理文件系统
 (require '[clojure.java.io :as io])
 
 ;; 检查目录是否存在的函数
-(defn directory-exists? [dir-name]
-  (.exists (io/file dir-name)))
+(defn directory-exists? [path]
+  (.isDirectory (io/file path)))
 
-;; 测试片段
-(println (directory-exists? "test_dir"))  ;; 输出：false
+;; 使用例子
+(println (directory-exists? "/path/to/directory")) ; 换成你想检查的目录路径
+(println (directory-exists? "/path/that/does/not/exist"))
 ```
-如果目录不存在, 它将会输出false, 反之则输出true.
+输出示例：
+```
+true
+false
+```
 
-## 深度探讨：
-检查目录存在这个功能在文件操作中非常常见，尤其是在处理用户上传或者读写文件等场景中。早在UNIX/LINUX开发的早期阶段，就已经提供了此功能。
+## 深入探究
+Clojure 作为一门现代的 Lisp 方言，自2007 年问世以来，它通过简洁、强大的函数式编程特性迅速获得了开发者的喜爱。与直接使用Java的File类方法相比，Clojure提供了`clojure.java.io/file`作为一种更加简便、Clojure风格的封装。
 
-各种编程语言都有各种检查目录是否存在的方法，你可以根据自己使用的编程语言选择对应的方法。有一些更便捷的方法，例如Python中的os.path或者Node.js中的fs模块。
+除了上述方法，你还可以使用`file-seq`函数配合`filter`遍历目录并检查，但这不如直接使用`isDirectory`方法高效。Clojure还有一些其他的库，例如`clojure.tools.io`，你可以探索这些提供更多强大文件操作的库。
 
-在Java（因此，也在Clojure）中，我们通常使用java.nio.file包来操作文件系统。java.nio.file包里的Files.exists可以用来检查一个路径(包括文件和目录)是否存在。
+当你检查目录时，重要的是了解与文件相关的操作可能会受到操作系统权限的限制，合理处理权限问题可以避免安全隐患。
 
-## 另鉴：
-如果你需要更深入地了解如何在Clojure或其他语言中处理文件，强烈建议你查看以下链接：
-
-1. [Java 7的文件I/O（NIO)教程](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
-2. [Python的os.path模块](https://docs.python.org/3/library/os.path.html)
-3. [Node.js的fs模块](https://nodejs.org/api/fs.html)
-4. [Clojure的java.io库](https://clojuredocs.org/clojure.java.io)
+## 参考资料
+- [Clojure官方文档](https://clojure.org/reference/reader)
+- [clojure.java.io API](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Clojuredocs - clojure.core](https://clojuredocs.org/core-library)

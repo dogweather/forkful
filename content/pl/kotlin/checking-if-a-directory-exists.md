@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Kotlin: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:57:26.506770-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Sprawdzanie, czy katalog istnieje w systemie plików, to kontrola przed próbą dostępu czy modyfikacji. Programiści robią to, aby uniknąć błędów i zapewnić prawidłowe działanie aplikacji.
 
-Sprawdzanie, czy katalog istnieje, to proces potwierdzania obecności określonego katalogu w systemie plików. Programiści robią to, aby zapobiec błędom wykonania podczas operacji plikowych.
+## How to: (Jak to zrobić:)
+Użyjemy `File` z Javy w Kotlinie:
 
-## Jak to zrobić:
-
-Skorzystaj z metody `exists()` klasy `java.nio.file.Files` do sprawdzenia, czy dany katalog istnieje. Oto przykład:
-
-```Kotlin
-import java.nio.file.Files
-import java.nio.file.Paths
+```kotlin
+import java.io.File
 
 fun main() {
-    val path = Paths.get("/sciezka/do/katalogu")
-    if (Files.exists(path)) {
-        println("Katalog istnieje")
+    val directoryPath = "/path/to/directory"
+    val directory = File(directoryPath)
+
+    if (directory.exists() && directory.isDirectory) {
+        println("Katalog istnieje: $directoryPath")
     } else {
-        println("Katalog nie istnieje")
+        println("Katalog nie istnieje.")
     }
 }
 ```
+Jeśli katalog istnieje, output to:
+```
+Katalog istnieje: /path/to/directory
+```
+Jeśli nie, output to:
+```
+Katalog nie istnieje.
+```
 
-## Głębsza wiedza:
+## Deep Dive (Dogłębna analiza):
+Sprawdzanie czy katalog istnieje nie jest nowością – funkcje do tego służące są w językach programowania od dawna. W Kotlinie korzystamy bezpośrednio z klas Javy, bo Kotlin jest z nią kompatybilny. Alternatywy? Możesz użyć `Files.exists(Paths.get(directoryPath))` z Java NIO dla większej elastyczności i czytelności kodu. Gdy sprawdzasz istnienie katalogu, pamiętaj o uprawnieniach – możesz napotkać `SecurityException`. Optymalizacja? Sprawdzaj istnienie tylko wtedy, gdy to konieczne – nadmiarowe sprawdzanie może spowolnić aplikację.
 
-Kiedy Kotlin został po raz pierwszy zaprezentowany w 2011 roku, przyjęcia znacznej ilości funkcji z Javy nie było jeszcze pewne. Ale Trust JetBrains, twórcy Kotlin, dostrzega świetność Javy i wiąże Kotlin bardzo blisko z Javą, szczególnie jeśli chodzi o zarządzanie plikami i katalogami.
-
-Alternatywnie, możemy użyć klasy `java.io.File`. Ale `java.nio.file.Files` jest lepszym rozwiązaniem, ponieważ jest to nowoczesne podejście do obsługi plików w Javie.
-
-Szczególnie ważne jest sprawdzanie istnienia katalogu w przypadku operacji zapisu. Bez sprawdzania, nasz program może próbować utworzyć plik w miejscu, które nie istnieje, co skutkuje błędem czasu wykonania.
-
-## Zobacz również:
-
-- Dokumentacja Kotlin: https://kotlinlang.org/docs/reference/
-- Dokumentacja Java NIO: https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html
-- Dokumentacja Java IO: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+## See Also (Zobacz również):
+- [Kotlin Documentation](https://kotlinlang.org/docs/reference/)
+- [Java File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [Java NIO Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Handling Permissions in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)

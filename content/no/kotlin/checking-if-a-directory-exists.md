@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Kotlin: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:57:16.974551-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,33 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sjekke om en mappe eksisterer betyr å bestemme om en spesifikk mappe allerede er på plass på et gitt datafil-system. Programmers gjør dette for å unngå feil som kan oppstå når du prøver å opprette eller får tilgang til en mappe som ikke eksisterer.
+Å sjekke om en mappe finnes betyr ganske enkelt å bekrefte at den er der før du utfører operasjoner som å lese eller skrive til den. Programmerere gjør dette for å unngå feil og kræsj når applikasjonen forventer at bestemte mapper skal være på plass.
 
-## Hvordan til:
-I Kotlin kan vi enkelt sjekke om en mappe eksisterer ved å bruke `exists()` funksjonen. Funksjonen returnerer "true" hvis mappen eksisterer, og "false" hvis den ikke gjør det.
 
-```Kotlin
+## Hvordan:
+```kotlin
 import java.nio.file.Files
 import java.nio.file.Paths
 
-fun main(args: Array<String>) {
-    val path = Paths.get("/sti/til/mappen")
-    val eksisterer = Files.exists(path)
-
-    if (eksisterer) {
-        println("Mappen eksisterer")
+fun main() {
+    val directoryPath = Paths.get("/noen/vei/til/mappen")
+    
+    if (Files.exists(directoryPath)) {
+        println("Mappen finnes!")
     } else {
-        println("Mappen eksisterer ikke")
+        println("Mappen finnes ikke.")
     }
 }
 ```
-Hvis mappen er til stede vil dette skriptet skrive ut "Mappen eksisterer". Hvis mappen ikke er til stede vil det skrive ut "Mappen eksisterer ikke".
+Kjør dette, og du får "Mappen finnes!" eller "Mappen finnes ikke." avhengig av om mappen er der eller ikke.
 
-## Dyp Dykk
-Historisk sett, før introduksjonen av NIO API i Java 7 og i koden deretter Kotlin, ble filsystemoperasjoner utført ved hjelp av `File` klassen, som også har en `exits()` funksjon. Alternativt kan du også bruke `File().isDirectory` funksjonen i Kotlin, men denne vil returnere "true" selv om den angitte stien er en fil og ikke en mappe. Så det er enda bedre å bruke `Paths.get()` og `Files.exists()` funksjonene som vi gjorde i eksemplet vårt.
 
-Den underliggende implementeringen av `exists()` går gjennom katalogindeksen på filsystemet, noe som gjør det mye raskere enn å manuelt skanne gjennom hele filsystemet.
+## Dypdykk:
+Før Java 7 og Kotlin, sjekket man ofte om mapper eksisterte ved å bruke `File`-klassen og dens `exists()`-metode, noe som ikke alltid var like pålitelig da det ikke skilte mellom filer og mapper. Med `java.nio.file.Files` og `Paths` i Java 7 (som Kotlin arver), fikk utviklere mer robuste verktøy for filhåndtering. Alternativer inkluderer bruk av Kotlin's `File` klasse direkte:
 
-## Se Også
-2. Java Dokumentasjon på Path API: [Link](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
-3. Stack Overflow Diskusjoner: [Link](https://stackoverflow.com/questions/46561458/how-to-check-if-folder-exists-if-not-the-folders-should-be-created-in-kotlin)
+```kotlin
+import java.io.File
+
+fun main() {
+    val directory = File("/noen/vei/til/mappen")
+
+    if (directory.exists() && directory.isDirectory) {
+        println("Mappen finnes og er en faktisk mappe!")
+    } else {
+        println("Mappen finnes ikke eller er ikke en mappe.")
+    }
+}
+```
+
+Ved å legge til `isDirectory`, sørger vi for at det vi finner ikke bare eksisterer, men også at det er en mappe.
+
+Noen taler om å lytte etter filesystem-events med `WatchService` hvis man trenger å reagere i sanntid til endringer i filsystemet. 
+
+
+## Se Også:
+- Java NIO File API: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+- Kotlin's File Class: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/
+- Introduksjon til Java NIO WatchService: https://docs.oracle.com/javase/tutorial/essential/io/notification.html

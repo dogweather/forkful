@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en katalog eksisterer"
-html_title:           "Elm: Sjekker om en katalog eksisterer"
-simple_title:         "Sjekker om en katalog eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:00.022112-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
-Å sjekke om en mappe eksisterer er en prosess der en kode spør operativsystemet om en spesifikk mappe finnes på en gitt plassering. Dette er nyttig for å unngå feil ved manipulering av filbaner, som å skrive til en mappe som ikke eksisterer.
+## Hva & Hvorfor?
+Å sjekke om en katalog eksisterer dreier seg om å bekrefte at en filsti leder til en faktisk mappe. Programmerere gjør dette for å unngå feil ved filoperasjoner og for å sikre at deres skript oppfører seg som forventet.
 
 ## Hvordan:
-Her er et eksempel på hvordan man kan sjekke om en mappe eksisterer i PHP:
-
-```PHP
+```php
 <?php
-$mappe = '/sti/til/mappe';
+$directory = "/min/katalog/sti";
 
-if (file_exists($mappe) && is_dir($mappe)) {
-   echo "Mappen eksisterer.";
+if (is_dir($directory)) {
+    echo "Katalogen eksisterer!";
 } else {
-   echo "Mappen eksisterer ikke.";
+    echo "Katalogen finnes ikke.";
 }
 ?>
 ```
+Resultat hvis katalogen eksisterer:
+```
+Katalogen eksisterer!
+```
+Resultat hvis katalogen ikke eksisterer:
+```
+Katalogen finnes ikke.
+```
 
-Når du kjører koden, vil utskriften være enten "Mappen eksisterer." eller "Mappen eksisterer ikke.", basert på om mappen faktisk eksisterer.
+## Dypdykk:
+Historisk sett har `is_dir` fungksjonen vært metoden å bruke i PHP for å sjekke om en mappe eksisterer. Et alternativ er å bruke `file_exists`, som også kontrollerer om filer eksisterer, men ikke selvstendig om det er en mappe. I praksis, hvis du bare trenger å vite om en mappe eksisterer, er `is_dir` veien å gå fordi den sikrer at stien faktisk er en katalog.
 
-## Deep Dive:
-Historisk sett har metoden for å sjekke om en mappe eksisterer i PHP vært ganske rett frem. `file_exists()` funksjonen har eksistert siden PHP 4, og `is_dir()` siden PHP 3. 
+Når du jobber med filsystemer, er det også viktig å vurdere rettighetene. En PHP-script kan feile på `is_dir` om den ikke har tilstrekkelige rettigheter til å lese katalogen, selv om katalogen faktisk eksisterer. Dette må man ta høyde for og håndtere i scriptet.
 
-Alternativt kan du sjekke om en mappe eksisterer med `glob()` funksjonen, men denne funksjonen kan være treigere når du jobber med mange filer. 
-
-Ved implementeringen er det viktig å merke seg at `file_exists()` faktisk vil returnere `true` selv om det ikke er en mappe, men en fil. Derfor bruker vi `is_dir()` i tillegg for å sikre oss at stien peker til en mappe.
+Det er verdt å nevne at `is_dir` opererer på serverens filsystem når PHP-kode kjøres på en webserver. Ved lokal utvikling, sørg for at filstiene som brukes er korrekte for systemet PHP-koden kjøres på.
 
 ## Se Også:
-1. Offisiell PHP Dokumentasjon for `file_exists()`: https://php.net/manual/en/function.file-exists.php
-2. Offisiell PHP Dokumentasjon for `is_dir()`: https://php.net/manual/en/function.is-dir.php
-3. "PHP Filesystem Functions": https://www.w3schools.com/php/php_ref_filesystem.asp
-4. Diskusjon på Stackoverflow om sjekking av mappetilværelse: https://stackoverflow.com/questions/5428262/php-check-if-a-directory-exists
+- PHP Manual on `is_dir`: [php.net/manual/en/function.is-dir.php](https://www.php.net/manual/en/function.is-dir.php)
+- PHP Manual on `file_exists`: [php.net/manual/en/function.file-exists.php](https://www.php.net/manual/en/function.file-exists.php)
+- Stack Overflow for diskusjoner om filoperasjoner i PHP: [stackoverflow.com/questions/tagged/php+filesystem](https://stackoverflow.com/questions/tagged/php+filesystem)

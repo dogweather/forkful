@@ -48,6 +48,5 @@ int main() {
 ## इसे भी देखें:
 - [Cplusplus.com - Regular Expressions Library](https://www.cplusplus.com/reference/regex/)
 - [cppreference.com - std::regex](https://en.cppreference.com/w/cpp/regex)
-- [GNU - Regular Expression](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html)
 
 इन लिंक्स पर जाकर आप और जानकारी पा सकते हैं और अपनी समझ बढ़ा सकते हैं।

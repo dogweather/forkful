@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,47 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog finns innebär att vi avgör om en specifik mappläge existerar i filsystemet. Programmerare gör detta för att undvika fel som uppstår när de försöker läsa, skriva eller manipulera icke-existerande kataloger.
 
-## Hur man gör:
-I Clojure, vi kan använda `java.nio.file` för att kontrollera om en katalog finns.
+Att kontrollera om en katalog finns innebär att du verifierar att en specifik mapp existerar i filsystemet. Programmerare gör detta för att undvika fel vid filoperationer, såsom läsning från eller skrivning till en mapp som inte finns.
 
-Först, importera nödvändiga klasser:
-```Clojure
-(import '[java.nio.file Files Paths])
-```
+## Så här gör du:
 
-Sedan, skapa en Path-objekt av katalogen:
-```Clojure
-(def my-path (Paths/get "/example/directory" (into-array String [])))
-```
+Här är hur du kan kolla om en mapp finns med hjälp av Clojure:
 
-Till sist, använd `Files/exists` för att kontrollera om katalogen finns:
-```Clojure
-(defn directory-exists? [path]
-  (Files/exists path))
-```
-
-Prova denna funktion:
-```Clojure
-(directory-exists? my-path)
-```
-
-Om katalogen existerar, resultatet kommer att vara `true`. Annars, kommer det att vara `false`.
-
-## Djupdykning
-Historiskt sett, kontroll av om en katalog finns var inte alltid ett inbyggt koncept i tidiga programmeringsspråk. I Unix baserade system, till exempel, utvecklare var tvungna att försöka skapa eller öppna den angivna katalogen och fånga ett undantag om det misslyckades.
-
-Alternativt, i Clojure kan du använda `clojure.java.io/file` och ` .exists` metoden:
-```Clojure
-(import '[clojure.java.io file])
+```clojure
+(require '[clojure.java.io :as io])
 
 (defn directory-exists? [dir]
-  (.exists (file dir)))
+  (.exists (io/file dir)))
+
+(println (directory-exists? "/path/to/your/directory")) ; Byt ut mot din sökväg
+(println (directory-exists? "/path/that/does/not/exist"))
 ```
-Men, `java.nio.file` paketet ger en mer robust lösning för att hantera filsystemet.
 
-## Se också
-Se "Java Platform, Standard Edition File I/O Tutorial" för mer detaljer om `java.nio.file`: https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+Sample output:
 
-För mer om Clojure och Java interoperation, se den officiella Clojure-dokumentationen: https://clojure.org/reference/java_interop
+```clojure
+true
+false
+```
+
+## Fördjupning:
+
+Historiskt sett har filsystemshanteringen varierat beroende på operativsystem, men JVM (Java Virtual Machine) har standardiserat dessa operationer för Clojure. Alternativen till `clojure.java.io` kunde inkludera anrop till shell-kommandon eller användning av lågnivå Java-filsystem-API:er. Klojurs enkelhet i `io/file` och relaterade funktioner döljer de underliggande komplexa Java-implementationsdetaljerna.
+
+## Se även:
+
+Här är några länkar för vidare läsning och relaterade resurser:
+
+- Clojure's `clojure.java.io` doc: [https://clojuredocs.org/clojure.java.io](https://clojuredocs.org/clojure.java.io)
+- Mer om JVM och filsystem: [https://docs.oracle.com/javase/tutorial/essential/io/](https://docs.oracle.com/javase/tutorial/essential/io/)
+- Officiell Clojure-guide till Java Interoperability: [https://clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)

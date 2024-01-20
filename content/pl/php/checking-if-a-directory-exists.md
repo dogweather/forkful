@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:57:47.511534-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,36 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Co i Dlaczego?"
 
-Sprawdzanie, czy katalog istnieje, to jest kluczowe zadanie w PHP. Programiści to robią, aby uniknąć błędów podczas manipulacji plikami i katalogami oraz zapewniania bezpiecznego dostępu do zasobów.
+Sprawdzanie, czy katalog istnieje w PHP, to sprawdzanie obecności danego folderu na serwerze. Robimy to, żeby uniknąć błędów podczas tworzenia plików, zapisywania danych czy też ładowania zasobów z katalogów, które mogłyby nie istnieć.
 
-## Jak to zrobić:
+## How to:
+"Jak to zrobić:"
 
-Sprawdź, czy katalog istnieje za pomocą funkcji `is_dir()` w PHP. Na przykład:
+Sprawdzanie, czy katalog istnieje, jest proste. Używamy funkcji `is_dir()` do sprawdzenia, a `mkdir()` do stworzenia katalogu, jeśli nie istnieje.
 
 ```PHP
 <?php
-$dir_check = '/path/to/your/directory';
+$directory = "/some/path/to/directory";
 
-if (is_dir($dir_check)) {
-    echo 'Katalog istnieje';
+if (is_dir($directory)) {
+    echo "Katalog już istnieje.";
 } else {
-    echo 'Katalog nie istnieje';
+    mkdir($directory, 0777, true);
+    echo "Katalog został stworzony.";
 }
 ?>
 ```
+Wynik działania:
+Jeśli katalog istnieje: `Katalog już istnieje.`
+Jeśli katalog nie istnieje: `Katalog został stworzony.`
 
-Jeśli katalog istnieje, na ekranie wyświetli się napis "Katalog istnieje". W przeciwnym razie pojawia się napis "Katalog nie istnieje".
+## Deep Dive
+"Dogłębna analiza"
 
-## Głębsze zrozumienie
+Sprawdzanie istnienia katalogu nie zawsze było tak proste. W starszych wersjach PHP, przed wprowadzeniem `is_dir()`, programiści musieli korzystać z innych funkcji, jak `file_exists()`, co nie zawsze dawało pewność. Alternatywnie, można użyć `file_exists()` do sprawdzania zarówno plików, jak i katalogów, ale `is_dir()` jest specyficzne dla katalogów, co czyni kod bardziej zrozumiałym.
 
-Sprawdzanie, czy katalog istnieje, rozpoczęło się w PHP 4, kiedy wprowadzono funkcję `is_dir()`. Istnieją alternatywy jak `file_exists()`, ale ta funkcja sprawdza zarówno pliki, jak i katalogi, co może prowadzić do niejasności. `is_dir()` jest preferowane, ponieważ jest jasne, co sprawdza. Oczywiście kod wykonuje się szybciej, jeśli nie musimy sprawdzać, czy coś jest plikiem, czy katalogiem.
+Kiedy `mkdir()` tworzy katalog, drugi parametr określa prawa dostępu (w Unixowych systemach), a trzeci, ustawiony na `true`, pozwala na rekursywne tworzenie struktury katalogów.
 
-## Zobacz także
+Przy implementacji zawsze warto zastanowić się nad obsługą wyjątków i błędów, na przykład co zrobić, jeśli stworzenie katalogu się nie powiedzie.
 
-Istnieje wiele źródeł do nauki PHP i manipulacji plikami i katalogami. Tutaj niektóre z nich:
+## See Also
+"Zobacz również"
 
-- Oficjalna dokumentacja PHP na `is_dir()`: [Link do dokumentacji](https://www.php.net/manual/en/function.is-dir.php)
-- Oficjalna dokumentacja PHP na `file_exists()`: [Link do dokumentacji](https://www.php.net/manual/en/function.file-exists.php)
-- Wspaniały tutorial na stronie PHP.net o manipulacji plikami i katalogami: [Link do tutoriala](https://www.php.net/manual/en/intro.filesystem.php)
+- Oficjalna dokumentacja PHP na `is_dir()`: https://www.php.net/manual/en/function.is-dir.php
+- Oficjalna dokumentacja PHP na `mkdir()`: https://www.php.net/manual/en/function.mkdir.php
+- Wskazówki na temat praw dostępu do plików w PHP: https://www.php.net/manual/en/function.chmod.php

@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Lua: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:53.833421-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,40 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sjekker om en Katalog Eksisterer i Swift
+## What & Why? (Hva & Hvorfor?)
+Å sjekke om en mappe eksisterer betyr å verifisere at en spesifikk sti på filsystemet ditt peker til en faktisk mappe. Programmerere gjør dette for å unngå feil ved filhåndtering, som å forsøke å lese fra eller skrive til en ikke-eksisterende mappe.
 
-## Hva og Hvorfor?
-
-Sjekker om en katalog eksisterer innebærer at vi leter etter en spesifikk katalog i et filsystem. Dette gjør vi for å unngå feil som kan oppstå hvis det vi prøver å lese eller skrive til en katalog som ikke finnes.
-
-## Hvordan Gjør vi Det?
-
-I Swift er det veldig rett fram å sjekke om en katalog eksisterer.
+## How to: (Hvordan:)
+Swift gir oss `FileManager` for å håndtere filsystemoperasjoner. Her er hvordan du sjekker om en mappe eksisterer:
 
 ```Swift
 import Foundation
 
 let fileManager = FileManager.default
-let directoryPath = "/path/to/your/directory"
+let path = "/some/path/to/directory"
 
-if fileManager.fileExists(atPath: directoryPath) {
-    print("Katalogen eksisterer")
+if fileManager.fileExists(atPath: path, isDirectory: nil) {
+    print("Mappen eksisterer!")
 } else {
-    print("Katalogen eksisterer ikke")
+    print("Mappen eksisterer ikke.")
 }
 ```
 
-Kjører du dette eksemplet og bytter `/path/to/your/directory` med en faktisk sti, vil du se stringen "Katalogen eksisterer" eller "Katalogen eksisterer ikke" printet ut i terminalen din.
+Output kan være:
 
-## Fordypning
+```
+Mappen eksisterer!
+```
 
-Denne metoden har lenge vært et grunnleggende verktøy i programmering siden tidlige dager av UNIX. Alternativer inkluderer bruk av `attributesOfItem(atPath:)` metoden, men det gir mer informasjon enn bare om katalogen eksisterer. Det er verdt å merke seg at `fileExists(atPath:)` metoden også sjekker om filer eksisterer, så navnet kan være misvisende.
+Eller:
 
-## Se Også
+```
+Mappen eksisterer ikke.
+```
 
-For mer informasjon om `FileManager` og relaterte metoder, sjekk ut disse lenkene:  
-1. [Apple Dokumentasjon on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-2. [Stack Overflow: How to check if a directory exists in Swift](https://stackoverflow.com/questions/30089775/how-to-check-if-a-directory-exists-in-swift) 
-3. [Apple Dokumentasjon on fileExists(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists)
+## Deep Dive (Dypdykk)
+Før `FileManager` var NSFileManager standarden i Objective-C. Swift forenklet prosessen med høyere nivå API'er. Det finnes alternativer som å bruke `URL`-objekter og `fileSystemRepresentation` for mer robust håndtering av sti-tegnkodinger. Ved sjekking med `fileExists(atPath:)`, husk at funksjonen returnerer `true` for både filer og mapper, så for å spesifikt bekrefte en mappe, bruk `isDirectory` parameteret.
 
-*Artikkelen har ingen konklusjonsdel.*
+```Swift
+var isDir: ObjCBool = false
+if fileManager.fileExists(atPath: path, isDirectory: &isDir) {
+    if isDir.boolValue {
+        // Det er bekreftet å være en mappe
+    } else {
+        // Stien eksisterer, men det er en fil, ikke en mappe
+    }
+}
+```
+
+Ved å referere til `isDir`, kan vi skille mellom filer og mapper.
+
+## See Also (Se også)
+- [Apple FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/)
+- [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)

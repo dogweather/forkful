@@ -1,7 +1,7 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "C: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+html_title:           "Bash: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,60 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Verificación si un Directorio Existe en C
+## Qué y Por Qué?
+Verificar si un directorio existe es básicamente preguntarle a tu sistema de archivos, "Oye, ¿tienes esta carpeta?". Los programadores hacen esta verificación para evitar errores como intentar escribir en un directorio inexistente, lo cual causaría un fracaso en la ejecución del programa.
 
-## ¿Qué y Por Qué?
-En programación, queremos saber si un directorio existe antes de usarlo, para evitar errores o problemas inesperados. Esto es especialmente relevante al manipular archivos y rutas.
-
-## ¿Cómo hacerlo?
-En C, puedes verificar la existencia de un directorio mediante el uso de la función `stat()` en la biblioteca `sys/stat.h`. Aquí se muestra un ejemplo de cómo hacerlo.
+## Cómo Hacerlo:
+Aquí hay un trozo de código usando la función `stat` de la biblioteca estándar para verificar la existencia de un directorio. La función `stat` toma una ruta como argumento y rellena una estructura con información sobre el archivo o directorio si existe. 
 
 ```C
+#include <stdio.h>
 #include <sys/stat.h>
 
-int directory_exists(const char* path) {
-   struct stat buffer;   
-   return (stat(path, &buffer) == 0);
-}
+int main() {
+    struct stat info;
+    const char *path = "./directorio_ejemplo";
 
-int main() { 
-   if(directory_exists("/ruta/al/directorio")) {
-       printf("El directorio existe.\n"); 
-   } else {
-       printf("El directorio no existe.\n");
-   }
-   return 0;
+    if (stat(path, &info) != 0) {
+        printf("El directorio '%s' no existe.\n", path);
+    } else if (info.st_mode & S_IFDIR) {  // Verificamos si es un directorio
+        printf("El directorio '%s' existe.\n", path);
+    } else {
+        printf("'%s' existe pero no es un directorio.\n", path);
+    }
+
+    return 0;
 }
 ```
 
-Si el directorio existe, este programa emitirá "El directorio existe." de lo contrario, emitirá "El directorio no existe.".
+Si el directorio existe, verás:
 
-## Profundización
-
-La función `stat()` ha existido desde los inicios de Unix, y sigue siendo una forma relevante de interactuar con los atributos de archivos y directorios. Sin embargo, no es la única manera de verificar la existencia de un directorio. Alternativamente podría usar `opendir()` de `dirent.h`, que intenta abrir el directorio, devolviendo NULL si falla.
-
-Las implementaciones pueden variar según el sistema operativo y el sistema de archivos. Por ejemplo, algunas implementaciones de `stat()` fallarán en rutas que contienen enlaces simbólicos.
-
-```C
-#include <sys/stat.h>
-#include <dirent.h>
-
-int directory_exists(const char* path) {
-   DIR* dir = opendir(path);
-   if(dir) {
-       closedir(dir);
-       return 1;
-   } else {
-       return 0;
-   }
-}
+```
+El directorio './directorio_ejemplo' existe.
 ```
 
-Este código hace lo mismo que el anterior, pero usando `opendir()`. 
+Si no, obtendrás:
+
+```
+El directorio './directorio_ejemplo' no existe.
+```
+
+## Profundizando
+Antes de tener funciones cómodas y portables como `stat`, los programadores a menudo dependían de llamadas al sistema específicas de cada plataforma o ejecución de comandos de shell externos para obtener esta información, lo que podía ser más complejo y propenso a errores.
+
+Una alternativa a `stat` es `opendir()`, que intenta abrir un directorio y retorna NULL si no existe. Pero `stat` te da información adicional, como permisos y tiempo de modificación, lo cual puede ser útil.
+
+En detalles de implementación, la estructura `struct stat` contiene campos como `st_mode` que indican el tipo de archivo y los permisos. El macro `S_IFDIR` se usa para decodificar el campo `st_mode` y verificar si el path corresponde a un directorio.
 
 ## Ver También
+Para explorar más sobre manejo de archivos y directorios en C:
+- [Man Page de stat(2)](https://linux.die.net/man/2/stat)
+- [El estándar POSIX sobre sys/stat.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_stat.h.html)
+- [Tutorial de manejo de archivos en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
 
-Para aprender más sobre la manipulación de directorios y archivos en C, aquí hay algunas fuentes útiles:
-
-- [Documentación de `sys/stat.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/sysstat.h.html)
-- [Documentación de `dirent.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html)
+Estos recursos te ayudarán a comprender mejor los detalles y capacidades de la gestión de archivos en C.

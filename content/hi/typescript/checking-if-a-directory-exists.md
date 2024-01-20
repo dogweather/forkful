@@ -1,7 +1,8 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं जांचना"
-html_title:           "TypeScript: डायरेक्टरी मौजूद है या नहीं जांचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं जांचना"
+title:                "डायरेक्टरी का अस्तित्व जाँचना"
+date:                  2024-01-20T14:59:14.586916-07:00
+html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
+simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,39 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-डायरेक्टरी मौजूद है या नहीं इसे जांचना मतलब है के क्या कोई विशेष फ़ोल्डर या डायरेक्टरी पथ मौजूद है या नहीं। प्रोग्रामर्स इसे इसलिए चेक करते हैं क्योंकि यदि पथ मौजूद नहीं होता है, तो फ़ाइल की पठन या लेखन की कोशिश त्रुटियों का कारण बन सकती है।
+डायरेक्टरी की जांच करने का मतलब है कि हम कंप्यूटर में एक खास फोल्डर के अस्तित्व की पुष्टि करते हैं। प्रोग्रामर्स इसका उपयोग फाइल सिस्टम में विशेष डेटा के पढ़ने, लिखने या मॉडिफिकेशन से पहले सत्यापन के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-`TypeScript` में, `fs` मॉड्यूल द्वारा दिए गए `existsSync` function का उपयोग करके डायरेक्टरी की मौजूदगी को जांचा जा सकता है।
+TypeScript में `fs` मॉड्यूल का `accessSync` मेथड या `existsSync` मेथड का प्रयोग करके हम जांच सकते हैं कि डायरेक्टरी मौजूद है या नहीं।
 
-```TypeScript
-import * as fs from 'fs';
+```typescript
+import { accessSync, constants } from 'fs';
 
-const directoryPath = "/path/to/directory";
-
-if (fs.existsSync(directoryPath)) {
-    console.log("डायरेक्टरी मौजूद है।");
-} else {
-    console.log("डायरेक्टरी मौजूद नहीं है।");
+try {
+  // डायरेक्टरी का पथ दिया गया है
+  accessSync('/path/to/directory', constants.F_OK);
+  
+  console.log('डायरेक्टरी मौजूद है।');
+} catch (error) {
+  console.error('डायरेक्टरी मौजूद नहीं है।');
 }
 ```
-स्वाभाविक रूप से, यदि डायरेक्टरी मौजूद होती है, तो आपको "डायरेक्टरी मौजूद है।" का आउटपुट मिलेगा। एन्काउंटर डायरेक्टरी नहीं होती तो "डायरेक्टरी मौजूद नहीं है।" का आउटपुट प्राप्त होगा।
 
-## गहराई में:
+```typescript
+import { existsSync } from 'fs';
 
-इस तकनीक का मूल उपयोग किरणेन "fs" नामक Node.js कोर मॉड्यूल से मिलता है। यदि आपके पास TypeScript की अद्यतित संस्करण है, तो आप `fs.promises` API का उपयोग करके वादा-आधारित कार्यक्रम लिख सकते हैं।
+// डायरेक्टरी का पथ दिया गया है
+if (existsSync('/path/to/directory')) {
+  console.log('डायरेक्टरी मौजूद है।');
+} else {
+  console.error('डायरेक्टरी मौजूद नहीं है।');
+}
+```
 
-इसके अलावा, आप भी `fs.access` का उपयोग कर सकते हैं जो डायरेक्टरी की मौजूदगी की जांच के साथ-साथ पहुंचने की क्षमता की भी जांच करता है। लेकिन इसमें एक समस्या हो सकती है, इसे race condition कहते हैं, इसे विगत 'access' और 'read/write' की अंतराल में directory state में हुई किसी भी परिवर्तन से उत्पन्न हो सकती है। 
+## Deep Dive (गहन अन्वेषण):
 
-## अतिरिक्त जानकारी:
+Node.js `fs` मॉड्यूल पुराना है और फाइल सिस्टम ऑपरेशंस के साथ शुरुआती दिनों से ही उपयोग में है। `existsSync` मेथड का उपयोग सुविधाजनक होता है, लेकिन यह `deprecate` हो चुका है क्योंकि यह Boolean वापस करता है जो error handling को सीमित करता है। इसकी जगह `accessSync` मेथड का प्रयोग करने की सिफारिश की जाती है, जो कि errors throw करता है और ज्यादा robust error handling की अनुमति देता है।
 
-अगर आप अधिक जानकारी चाहते हैं, तो आप निम्नलिखित लिंक का पालन कर सकते हैं:
+हालांकि, ये मेथड्स synchronous हैं, और इनका प्रयोग ब्लॉकिंग हो सकता है। इसलिए बड़े एप्लिकेशन में जहाँ परफॉर्मेंस महत्वपूर्ण है, वहाँ एसिंक्रोनस वेरिएंट्स `access` और `exists` (जिन्हें प्रॉमिसेज या कॉलबैक पैटर्न के साथ प्रयोग किया जा सकता है) का उपयोग करना बेहतर होगा।
 
-1. Node.js द्वारा प्रदान किया गया `fs.existsSync` फ़ंक्शन: [https://nodejs.org/api/fs.html#fs_fs_exists_path_callback](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
+## See Also (देखें भी):
 
-2. `fs.promises` API: [https://nodejs.org/api/fs.html#fs_fs_promises_api](https://nodejs.org/api/fs.html#fs_fs_promises_api)
-
-3. `fs.access` function: [https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback)
+- Node.js Documentation for the `fs` module: [Node.js fs Module](https://nodejs.org/api/fs.html)
+- TypeScript Documentation: [TypeScript Lang](https://www.typescriptlang.org/docs/)
+- MDN Web Docs on asynchronous programming: [Asynchronous Programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)

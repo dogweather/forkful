@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:57:18.841267-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,33 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Kontrollera om en katalog finns. Det är så grundläggande som det låter: leta upp en mapp i ditt filsystem och se om den faktiskt finns. Varför gör programmerare detta? För att undvika felsituationer när de försöker läsa, skriva, eller manipulera filer i en mapp som kanske inte är där.
+Att kontrollera om en mapp finns i ditt filsystem är en grundläggande operation som kan undvika fel eller beteendefel i program där filer hanteras. Programmerare gör detta för att säkerställa att filoperationer som läsning eller skrivning inte orsakar onödiga fel, och för att skapa mappar som behövs vid avsaknad.
 
-## Så här gör du:
-För att kontrollera om en katalog finns, använder man med fördel inbyggda metoder i 'fs' modulen i Node.js. Här är ett enkelt exempel:
-
-```Javascript
+## Hur man gör:
+```javascript
 const fs = require('fs');
+const directoryPath = '/path/to/directory';
 
-if (fs.existsSync('/sökväg/till/din/mapp')) {
-  console.log("Mappen finns!");
+// Asynchronous check using fs.access
+fs.access(directoryPath, fs.constants.F_OK, (err) => {
+  if (err) {
+    console.error(`${directoryPath} does not exist`);
+  } else {
+    console.log(`${directoryPath} exists`);
+  }
+});
+
+// Synchronous check using fs.existsSync
+if (fs.existsSync(directoryPath)) {
+  console.log(`${directoryPath} exists`);
 } else {
-  console.log("Mappen finns inte!");
+  console.error(`${directoryPath} does not exist`);
 }
 ```
+Sample output om mappen finns:
+```
+/path/to/directory exists
+```
+Sample output om mappen inte finns:
+```
+/path/to/directory does not exist
+```
 
-När du kör detta skript, kommer det antingen att skriva ut "Mappen finns!" om mappen finns, eller "Mappen finns inte!" om den inte gör det. 
-
-## Djup dykning
-'-fs.existsSync' är en synkron version som kontrollerar om en mapp finns. Den har varit en del av Node.js sedan version 0.1.21, vilket är varför det är så brett använd i dagens Javascript kod. 
-
-Alternativt kan du också använda '-fs.access()', som är en asynkron version. Du kan avgöra vilken att använda på din användarfall och prestandakrav. 
-
-På implementeringsnivå utför dessa metoder faktiskt en systemanrop till filesystemet, vilket innebär att de kan vara relativt långsamma. I de flesta fall är detta inte ett problem, men om du behöver upprepa operationen många gånger kan det vara klokt att skapa en cache eller använda en annan teknik, som '-fs.watch()'.
+## Djupdykning
+Kontrollera om mappar finns är lika viktigt nu som det var i tidiga datorer. Historiskt sett har olika programmeringsspråk erbjudit olika metoder för att hantera detta, och i Node.js, vilket är en körningsmiljö för JavaScript, används `fs`-modulen vanligtvis. Alternativen sträcker sig från synkrona metoder som `fs.existsSync()` till asynkrona versioner som `fs.access()`. Medan `fs.existsSync()` är enklare och blockerande, `fs.access()` tillåter dig att skriva icke-blockerande kod som kan hantera andra uppgifter under filkontrollprocessen. Tänk på att användning av synkrona metoder kan påverka programmens prestanda, särskilt i situationer med hög I/O-belastning.
 
 ## Se även
-Det finns mycket mer att läsa om att arbeta med filer och kataloger i Node.js. Här är några nyttiga länkar för vidare läsning:
-
-- Node.js dokumentation om 'fs' modulen: [fs - Node.js v16.6.1 Documentation](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html)
-- En bra StackOverflow-tråd om 'fs.access' vs 'fs.existsSync': [fs.existsSync vs fs.access - Stack Overflow](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
-- 'fs-extra' är ett mycket användbart npm-paket som utökar 'fs' med fler hjälpfunktioner: ['fs-extra' på npm](https://www.npmjs.com/package/fs-extra)
+- Node.js Filesystem Documentation: [fs.access()](https://nodejs.org/api/fs.html#fsaccesspath-mode-callback) och [fs.existsSync()](https://nodejs.org/api/fs.html#fsexistssyncpath)
+- MDN web dokumentation om asynkron programmering i JavaScript: [Asynchronous programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)

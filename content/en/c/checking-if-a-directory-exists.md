@@ -11,55 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-If you're writing a C program that interacts with the file system, you need to know if a directory exists before performing operations on it. This is preventive error handling: you stop bugs before they mess up your user's data.
+
+Checking if a directory exists is about confirming whether a specific folder is present in the file system. Programmers do it to avoid errors like trying to access or create files in a non-existent directory, which could crash a program or lead to data loss.
 
 ## How to:
-In C, we use the `stat` function and `S_ISDIR` macro to check if a directory exists. This works for both Unix-based systems (like Linux and MacOS) and Windows.
+
+We'll use the `stat` function from the `sys/stat.h` header to check for directory existence in C. Here's a simple code example:
 
 ```C
-#include <sys/stat.h>
 #include <stdio.h>
+#include <sys/stat.h>
+
+int directory_exists(const char *path) {
+    struct stat statbuf;
+    if (stat(path, &statbuf) != 0) {
+        return 0; // Directory does not exist or error occurred
+    }
+    return S_ISDIR(statbuf.st_mode);
+}
 
 int main() {
-    struct stat status = {0};
-    const char *dirPath = "./testdirectory";
-    if(stat(dirPath, &status) == -1 || !S_ISDIR(status.st_mode)) {
-        printf("Directory does not exist\n");
+    const char *path_to_check = "/path/to/directory";
+    if (directory_exists(path_to_check)) {
+        printf("Directory exists!\n");
+    } else {
+        printf("Directory does not exist.\n");
     }
-    else {
-        printf("Directory exists\n");
-    }
-
     return 0;
 }
+```
+
+Sample output if the directory exists:
+
+```
+Directory exists!
+```
+
+Or, if it doesn't:
+
+```
+Directory does not exist.
 ```
 
 ## Deep Dive
-The `stat` function has been a part of Unix-based systems since the 70s, allowing programmers to access file or directory properties. Passed the correct path, it populates a `struct stat` with information about the file or directory. Windows implements `stat` as part of the POSIX compatibility in its C library.
 
-`S_ISDIR` is a POSIX macro that uses the `st_mode` field of `struct stat` to determine if the path belongs to a directory.
+The `stat` function has been around since Unix's early days, part of POSIX specifications. It grabs info about the file or directory at the given path, and that info gets stored in a `struct stat`. Specifically, we check the `st_mode` field to determine if the path points to a directory.
 
-But we have alternatives too. `opendir` function, for an instance, tries to open a directory and will return `NULL` if it doesn't exist or can't be read.
+Alternatives to `stat` include `access` or `fstatat` in C. In Linux, you can also tap into higher-level APIs like `g_file_test` from the GLib library.
 
-```C
-#include <dirent.h>
-#include <stdio.h>
+For implementation details, keep these in mind:
 
-int main() {
-    const char *dirPath = "./testdirectory";
-    DIR* dir = opendir(dirPath);
-    if (dir) {
-        printf("Directory exists\n");
-        closedir(dir);
-    }
-    else {
-        printf("Directory does not exist\n");
-    }
-
-    return 0;
-}
-```
-This works perfectly well, but it's best to only use it if you actually want to read the directory. For merely checking if it's there, `stat` uses fewer resources.
+- `stat` can fail not just when the directory doesn't exist but also due to permissions issues or a bad path. Error checking is essential.
+- Symbolic links need special handling; `lstat` is used instead of `stat` if you're dealing with them.
+- Performance may vary. If you're checking multiple properties or doing several checks, there might be more efficient paths.
 
 ## See Also
-For more info, see the official documentation on [`stat`](https://man7.org/linux/man-pages/man2/stat.2.html), [`S_ISDIR`](https://linux.die.net/man/3/s_isdir), and [`opendir`](https://linux.die.net/man/3/opendir). To deepen your understanding, engage in [this](https://stackoverflow.com/questions/4553012/checking-if-a-file-is-a-directory-or-just-a-file) StackOverflow discussion.
+
+- POSIX `stat` documentation: [https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html)
+- GLib File Utilities: [https://docs.gtk.org/glib/func.file_test.html](https://docs.gtk.org/glib/func.file_test.html)

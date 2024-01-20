@@ -1,7 +1,8 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं यह जांचना"
-html_title:           "Fish Shell: डायरेक्टरी मौजूद है या नहीं यह जांचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं यह जांचना"
+title:                "डायरेक्टरी का अस्तित्व जाँचना"
+date:                  2024-01-20T14:56:31.177328-07:00
+html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
+simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,28 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-निर्देशिका का अस्तित्व जांचना मतलब देखना की क्या एक विशेष फ़ाइल या फ़ोल्डर मौजूद है या नहीं। कार्यक्रमकर्ताओं को इसे काम में लाने की जरूरत तब होती है जब उन्हें ऐसे कोड लिखने की जरूरत होती है जो केवल तब ही चले जब एक विशेष निर्देशिका मौजूद हो। 
+## What & Why? (क्या और क्यों?)
+डायरेक्टरी का अस्तित्व जांचने का मतलब है यह पता करना कि कोई फोल्डर उपस्थित है कि नहीं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि एरर्स से बचा जा सके और उचित ऑपरेशंस किये जा सकें।
 
-## कैसे करें:
-निम्नलिखित कोड का उपयोग करके आप Fish Shell में निर्देशिका के अस्तित्व की जांच कर सकते हैं।
+## How to: (कैसे करें:)
+Fish Shell में डायरेक्टरी चेक करने के लिए कोड सैंपल:
 
 ```Fish Shell
-if test -d your_directory
-    echo "निर्देशिका मौजूद है"
+if test -d /path/to/directory
+    echo "Directory exists!" # डायरेक्टरी उपस्थित है!
 else
-    echo "निर्देशिका उपलब्ध नहीं है"
+    echo "Directory not found." # डायरेक्टरी नहीं मिली।
 end
 ```
 
-यदि 'your_directory' मौजूद होता है, तो यह "निर्देशिका मौजूद है" प्रिंट करेगा, अन्यथा यह "निर्देशिका उपलब्ध नहीं है" प्रिंट करेगा।
+सैंपल आउटपुट:
 
-## गहराई में:
-निर्देशिका की जांच की क्षमता इनिशियल Unix शेल के साथ आती है जिसे 1970 में डेवलप किया गया था। फ़िश शेल ने इसे समर्थन करना जारी रखा है। वैकल्पिक तरीके में, आप ऐसे शब्दों का उपयोग कर सकते हैं जैसे 'find' और 'ls', लेकिन 'test' -d कमांड सबसे सारल और सीधा है। इसे लागू करने के बारे में विस्तृत जानकारी के लिए, आप 'man test' कमांड का उपयोग कर सकते हैं।
+```
+Directory exists!
+```
+या
 
-## भी देखें:
-आप इन संसाधनों का उपयोग करके अपने ज्ञान को बढ़ा सकते हैं
+```
+Directory not found.
+```
 
-1. Fish Documentation: [दस्तावेज़ीकरण](https://fishshell.com/docs/current/index.html)
-2. Unix man pages: [मैन पेज](https://man7.org/linux/man-pages/man1/test.1.html).
-3. Shell Scripting Tutorial: [शेल स्क्रिप्टिंग ट्यूटोरियल](https://www.shellscript.sh/).
+## Deep Dive (गहराई से जानकारी)
+Fish Shell में `test -d` कमांड का उपयोग परंपरा से चला आ रहा है। UNIX-like सिस्टम्स में यह स्थानिक जांच का तरीका है।
+अल्टरनेटिव्स में `[ -d /path/to/directory ]` और `[[ -d /path/to/directory ]]` का उपयोग बैश शेल में होता है। Fish Shell अधिक उपयोगी फीचर्स और सार्थक संदेशों के साथ आता है जो डेवलपर्स को डायरेक्टरी की जांच में सहायता करते हैं।
+
+## See Also (देखें भी)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Stack Overflow Fish Tag](https://stackoverflow.com/questions/tagged/fish)
+- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)

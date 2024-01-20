@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Java: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:56:59.241864-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Java"
 category:             "Java"
@@ -10,20 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Découvrir si un répertoire existe est une opération simple mais cruciale en programmation Java, elle consiste à vérifié l'existence d'un emplacement de fichier spécifique. Les développeurs ont besoin de vérifier ces emplacements pour prévenir les erreurs dans leurs programmes, que ce soit pour empêcher de manipuler un fichier qui n'existe pas ou pour éviter l'écriture d'informations dans un répertoire inexistant.
+## What & Why?
+Vérifier si un répertoire existe permet de s'assurer que les fichiers sont où on pense qu'ils sont. Les programmeurs font ça pour éviter des erreurs, comme lire ou écrire dans un répertoire qui n'existe pas.
 
-## Comment faire:
-Pour vérifier l'existence d'un répertoire en Java, on peut utiliser la classe `Files` en tandem avec `Paths`. Voici un exemple:
+## How to:
+Java nous offre `Files.exists()` pour vérifier facilement :
 
-```Java
-import java.nio.file.*;
+```java
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-public class DirectoryCheck {
+public class DirectoryExistsDemo {
     public static void main(String[] args) {
-        Path dirPath = Paths.get("/mon/chemin/vers/le/dossier/");
-        if (Files.exists(dirPath)) {
-            System.out.println("Le répertoire existe.");
+        String directoryPath = "/chemin/vers/le/repertoire";
+
+        if(Files.exists(Paths.get(directoryPath))) {
+            System.out.println("Le répertoire existe !");
         } else {
             System.out.println("Le répertoire n'existe pas.");
         }
@@ -31,17 +34,24 @@ public class DirectoryCheck {
 }
 ```
 
-Si le répertoire existe, vous verrez `"Le répertoire existe."`. Sinon, vous verrez `"Le répertoire n'existe pas."`.
+Si le répertoire existe, le programme sortira :
+```
+Le répertoire existe !
+```
 
-## Plongée profonde
-Avant Java 7, on utilisait la classe `File` pour accomplir la tâche de vérification de l'existence d'un répertoire. L'approche `Files` démontre une amélioration significative pour deux raisons principales: elle simplifie le code et fournit une meilleure gestion des erreurs.
+Sinon, il affichera :
+```
+Le répertoire n'existe pas.
+```
 
-En complément, pour vérifier si le chemin donné est non seulement existant mais est aussi un répertoire, vous pouvez utiliser la méthode `Files.isDirectory(Path)`. Cette méthode garantit que vous traitez réellement avec un répertoire et non avec un fichier.
+## Deep Dive
+Avant Java NIO (New Input/Output), on vérifiait l'existence d'un répertoire avec `File.exists()`. La NIO apporta une approche plus flexible et performante pour manipuler les systèmes de fichiers.
 
-La classe `Files` regorge d'autres méthodes utiles pour traiter avec des fichiers et des répertoires. Les développeurs Java sont encouragés à explorer la documentation officielle pour en savoir plus.
+Alternativement, `Files.notExists(Path)` peut être utilisé pour une logique inversée. Mais attention, `Files.exists(Path)` et `Files.notExists(Path)` ne sont pas parfaitement symétriques – si les deux retournent `false`, cela ne signifie pas que le fichier est dans un état Schrödinger-esque, mais qu'il y a peut-être un problème d'accès.
 
-## Voir aussi
-Pour une compréhension plus approfondie du sujet, vous pouvez visiter les liens suivants:
-- Documentation Oracle : [Classe Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
-- Tutoriel Oracle sur les systèmes de fichiers : [Fichiers IO et NIO](https://docs.oracle.com/javase/tutorial/essential/io/notification.html)
-- [StackOverflow](https://stackoverflow.com/questions/4871051/how-to-check-if-a-directory-exists-in-java) : Discussion sur la vérification de l'existence d'un dossier en Java.
+Il est aussi possible de vérifier les droits d'accès en même temps avec la méthode `Files.isReadable(Path)` ou `Files.isWritable(Path)` pour les opérations de lecture et écriture respectivement.
+
+## See Also
+- Documentation Oracle sur la classe Files : https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+- Tutoriel Oracle sur la file NIO.2 : https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+- Guide d'introduction à Java NIO : https://www.baeldung.com/java-nio-2-file-api

@@ -1,6 +1,6 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Arduino: Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä & Miksi?
+Tarkistetaan, onko hakemisto olemassa, jotta tiedostot eivät katoa tyhjyyteen. Koodarit tekevät tämän, koska se säästää aikaa ja estää virheitä.
 
-Tarkistamme onko hakemisto olemassa yksinkertaisesti vahvistaaksemme sen olemassaolo sijainnissa ennen tiedostojen luku- tai kirjoitustoimintoja. Jos programmia ei varmisteta ja yrität käyttää olematonta kansiota, ohjelma saattaa kaatua tai tuottaa virheen.
-
-## Kuinka:
-
+## How to: - Miten:
 ```Arduino
-if (SD.exists("/example")) {
-  Serial.println("Directory exists.");
-} else {
-  Serial.println("Directory does not exist.");
+#include <SD.h>
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("SD-kortin alustus epäonnistui");
+    return;
+  }
+  
+  File root = SD.open("/");
+  if (root.isDirectory()) {
+    Serial.println("Pääkansio on olemassa");
+  } else {
+    Serial.println("Pääkansiota ei löydy");
+  }  
+}
+
+void loop() {
+  // Ei koodia loopissa tässä esimerkissä
 }
 ```
+Tuloste:
+```
+Pääkansio on olemassa
+```
 
-Esimerkissä ylhäällä tarkistamme, onko hakemisto nimeltä 'example' olemassa SD-kortissa. Jos se on olemassa, tulostetaan "Directory exists.". Jos ei, tulostetaan "Directory does not exist."
+## Deep Dive - Sukellus syvemmälle
+Hakemiston olemassaolon tarkistus on olennainen toiminto, kun käsitellään tiedostoja mikrokontrollerissa. Historiallisesti, tietokoneissa, tämä on tapahtunut käyttöjärjestelmän tarjoamien työkalujen kautta, mutta Arduinossa käytämme `SD`-kirjastoa, joka interfaceaa SD-kortille SPI-väylän kautta. Vaihtoehtoisesti, voit käyttää `SdFat`-kirjastoa, joka on tehokkaampi mutta monimutkaisempi. Tarkistuksessa `isDirectory()`-funktio tarkastaa, onko tiedosto, jonka avasit, hakemisto. Mitään ei tapahdu, jos hakemistoa ei ole; siksi on hyvä tarkistaa ensin.
 
-## Syväsukellus:
-
-Hakemiston olemassaolon tarkistaminen ei ole uusi käsite; se on osa tiedostojärjestelmän hallintaa, joka on sisällytetty useimpiin ohjelmointikieliin. Arduinoon se tuli käyttöön, kun SD-kirjasto esiteltiin, mikä mahdollisti SD-kortin käytön datan tallentamiseen.
-
-Vaihtoehtoisesti voit myös yrittää luoda hakemiston ja tarkistaa palautusarvon - jos luominen epäonnistuu, se tarkoittaa todennäköisesti, että hakemisto on jo olemassa.
-
-On huomattava, että SD-kirjaston `exists`-metodi toimii sekä tiedostoille että hakemistoille. Tämä voi joskus aiheuttaa sekaannusta, jos tiedostolla on sama nimi kuin tarkistettavalla hakemistolla.
-
-## Katso myös:
-
-- Arduinon SD-kirjaston viralliset dokumentit: https://www.arduino.cc/en/reference/SD
-- Vastaava StackOverflow-keskustelu: https://stackoverflow.com/questions/13546778/how-do-i-check-if-a-directory-exists-on-an-sd-card
-- Tiedostojärjestelmien yleiset käsitteet: https://en.wikipedia.org/wiki/File_system
+## See Also - Katso myös
+- Arduinon SD-kirjaston dokumentaatio: [https://www.arduino.cc/en/Reference/SD](https://www.arduino.cc/en/Reference/SD)
+- `SdFat`-kirjaston GitHub-sivu: [https://github.com/greiman/SdFat](https://github.com/greiman/SdFat)
+- SPI-väylän yleiskatsaus: [https://www.arduino.cc/en/reference/SPI](https://www.arduino.cc/en/reference/SPI)

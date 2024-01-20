@@ -1,7 +1,8 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "Haskell: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+date:                  2024-01-20T14:56:48.891592-07:00
+html_title:           "Gleam: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
 
-Verificar si existe un directorio es una tarea básica en cualquier lenguaje de programación. Un directorio es un archivo del sistema que contiene otros archivos y directorios. Como programador, podrías necesitar verificar si un directorio existe antes de intentar leer, escribir o manipular de alguna manera los contenidos del directorio.
+Revisar si un directorio existe te permite confirmar su presencia antes de interactuar con él, como leer o escribir archivos. Los programadores lo hacen para evitar errores como 'directorio no encontrado' y manejar estos casos graciosamente.
 
 ## Cómo hacerlo:
 
-En Haskell, usamos el módulo `System.Directory` y la función `doesDirectoryExist` como se muestra:
-
 ```Haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
+
+main :: IO ()
 main = do
-  let path = "/path/to/directory"
-  dirExists <- doesDirectoryExist path
-  print dirExists
+  let dir = "path/to/your/directory"
+  exists <- doesDirectoryExist dir
+  putStrLn $ "El directorio " ++ (if exists then "existe." else "no existe.")
 ```
 
-Ejecutar este código devolverá `True` si el directorio especificado existe, y `False` si no existe.
+Ejecutar este programa te dará una línea de salida que dice `El directorio existe.` o `El directorio no existe.` dependiendo de la realidad del directorio que estás revisando.
 
-## Profundización:
+## Profundización
 
-Verificar si un directorio existe no siempre ha sido tan directo en los lenguajes de programación. En los primeros días de los sistemas operativos, los programas tenían que interactuar directamente con el sistema operativo para realizar estas comprobaciones.
+Historicamente, revisar si un directorio existe era más complicado y osado de errores. La función `doesDirectoryExist` de la librería `System.Directory` simplifica esta tarea, formando parte de las prácticas seguras y modernas en Haskell.
 
-Usar `System.Directory` y `doesDirectoryExist` no es la única forma de hacerlo en Haskell. Por ejemplo, puedes usar la biblioteca `Shelly` que es más de alto nivel:
+Alternativamente, podrías usar la función `getDirectoryContents` para enumerar archivos y directorios y luego verificar si tu directorio está en la lista; sin embargo, `doesDirectoryExist` es más directo y eficiente.
 
-```Haskell
-import Shelly
-main = do
-  let path = "/path/to/directory"
-  dirExists <- shelly $ test_d path
-  print dirExists
-```
+Internamente, `doesDirectoryExist` hace una syscall para obtener la información del sistema de archivos, manejando adecuadamente los permisos y errores posibles, lo que hace que sea confiable y recomendable para este propósito.
 
-La función `doesDirectoryExist` utiliza la interacción del sistema operativo a través de FFI (Interfaz de Funciones Extranjeras).
+## Ver También
 
-## Consulta también:
+- La documentación de Haskell para el módulo `System.Directory`: 
 
-- Módulo `System.Directory`: http://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html
-- Módulo `Shelly`: http://hackage.haskell.org/package/shelly-1.9.0/docs/Shelly.html
+  [System.Directory en Hackage](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
 
-Evita las complicaciones y verifica siempre si un directorio existe antes de intentar operar con él en tu código.
+- Artículo sobre el manejo de archivos y directorios en Haskell:
+
+  [Learn You a Haskell for Great Good! - Input and Output](http://learnyouahaskell.com/input-and-output#files-and-streams) 
+
+- Preguntas frecuentes sobre el manejo de directorios en StackOverflow:
+
+  [Haskell on StackOverflow](https://stackoverflow.com/questions/tagged/haskell+directory)

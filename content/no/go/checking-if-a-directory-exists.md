@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Go: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:56:34.810625-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer i programmering er å bekrefte om en gitt filsti peker til en gyldig katalog. Dette er viktig for å unngå feil som kan oppstå når du prøver å manipulere mappen (for eksempel lese eller skrive til den) hvis den ikke finnes.
+## What & Why? (Hva & Hvorfor?)
+Å sjekke om en mappe finnes er det å verifisere at den spesifiserte stien peker til noe som eksisterer på filsystemet. Programmerere gjør dette for å unngå feil som oppstår når kode prøver å aksessere eller skrive til en ikke-eksisterende mappe.
 
-## Hvordan du gjør det:
-Her er en kortfattet Go kodebit som sjekker om en mappe eksisterer:
-
-```Go
+## How to: (Slik gjør du:)
+```go
 package main
 
 import (
@@ -25,24 +24,22 @@ import (
 )
 
 func main() {
-    _, err := os.Stat("/path/to/directory")
+    path := "./eksempelmappe"
 
-    if os.IsNotExist(err) {
-        fmt.Println("Mappen eksisterer ikke")
+    if _, err := os.Stat(path); os.IsNotExist(err) {
+        fmt.Printf("Mappen %s finnes ikke.\n", path)
     } else {
-        fmt.Println("Mappen eksisterer")
+        fmt.Printf("Mappen %s finnes.\n", path)
     }
 }
 ```
-Utfører du denne koden, vil output være enten `Mappen eksisterer ikke` eller `Mappen eksisterer`, avhengig av om mappen eksisterer.
 
-## Dyp Dykking
-Go-språket har en innebygget pakke kalt `os` for å håndtere operativsystemrelaterte funksjoner, som fil- og mappeoperasjoner. Metoden `os.Stat(path)` henter filinformasjonen. Hvis det oppstår en feil og den er av typen `os.IsNotExist`, indikerer det at mappen ikke eksisterer.
-En viktig detalj å merke seg er at denne metoden vil returnere `false` både når en fil eller mappe ikke finnes, og når det oppstår en feil av hvilken som helst annen grunn.
-Alternativer til denne metoden kan være å bruke tredjepartsbibliotek, men de bruker vanligvis samme metode bak kulissene og gir mer alvorlige feilhåndteringsfunksjoner.
+Kjører du denne koden vil utskriften enten være `"Mappen ./eksempelmappe finnes ikke."` eller `"Mappen ./eksempelmappe finnes."` avhengig av om mappen eksisterer.
 
-## Se Også
-For mer detaljerte informasjon og relaterte ressurser, besøk følgende linker:
-1. Go offisiell dokumentasjon: [os Pakken](https://golang.org/pkg/os/)
-2. Go Blogg: [Error handling and Go](https://blog.golang.org/error-handling-and-go)
-3. Stack Overflow post: [How do you check if a directory exists in Go?](https://stackoverflow.com/questions/10510691/how-do-you-check-if-a-file-exists-without-opening-it-in-the-go-language)
+## Deep Dive (Dypdykk)
+Historisk har forskjellige programmeringsspråk tilbudt diverse måter å sjekke om mapper eksisterer. Go har en innebygd `os` pakke som gir tilgang til filsystemfunksjoner, inkludert å sjekke om filer og mapper eksisterer. Alternativer til `os.Stat` inkluderer bruk av `os.IsExist` eller tredjeparts biblioteker som tilbyr mer abstrakte filhåndteringsfunksjoner. Detaljene i `os.Stat` kaller `stat` eller `lstat` systemkallene bak kulissene, avhengig av operativsystemet, for å skaffe filinformasjon, noe som er vanlig praksis for filsysteminteraksjoner på lavt nivå.
+
+## See Also (Se også)
+- [os package documentation](https://pkg.go.dev/os)
+- [Working with filesystems in Go](https://golang.org/doc/)
+- [Filepath package for working with file paths](https://pkg.go.dev/path/filepath)

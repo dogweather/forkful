@@ -1,5 +1,6 @@
 ---
 title:                "Перевірка наявності директорії"
+date:                  2024-01-20T14:56:13.716704-07:00
 html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "C#"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Навіщо?
-Перевірка на наявність каталогу - це процес, який дозволяє вам з'ясувати, чи існує конкретний каталог на вашому диску. Програмісти роблять це, щоб уникнути помилок вводу-виводу при роботі з файлами.
+## What & Why? / Що та Чому?
+Перевірка існування директорії – це процес, що дозволяє визначити, чи фактично існує папка на файловій системі. Програмісти роблять це для уникнення помилок під час спроби доступу або модифікації файлів у неіснуючій директорії.
 
-## Як це зробити:
+## How to: / Як це зробити:
 ```C#
+using System;
 using System.IO;
 
-string yourPath = @"C:\your_directory_path";
+class Program {
+    static void Main() {
+        string path = @"C:\MyFolder";
 
-if(Directory.Exists(yourPath))
-{
-  Console.WriteLine("Каталог існує.");
+        if (Directory.Exists(path)) {
+            Console.WriteLine("Directory exists.");
+        } else {
+            Console.WriteLine("Directory does not exist.");
+        }
+    }
 }
-else
-{
-  Console.WriteLine("Каталог не існує.");
-}
 ```
-
-Коли виконаєте цей код і ваш каталог існує, ви побачите:
-```C#
-"Каталог існує."
+Sample Output:
 ```
-Інакше, ви побачите:
-```C#
-"Каталог не існує."
+Directory exists.
 ```
+or
+```
+Directory does not exist.
+```
+Above code checks if `MyFolder` exists in the `C:` drive.
 
-## Занурення у деталі
-Метод `Directory.Exists` був представлений у .NET Framework 1.1 і є основним способом перевірити, чи існує каталог. Існують альтернативні підходи, але вони менш розповсюджені: наприклад, використання `DirectoryInfo.Exists` або обробка виключень при спробі відкрити каталог.
+## Deep Dive / Поглиблений Розділ:
+Checking if a directory exists in C# can be traced back to the .NET Framework days, using the `System.IO` namespace. Alternatives include creating a directory if it doesn't exist with `Directory.CreateDirectory(path)` or trying to access the directory and handling exceptions. The check is implemented using native Windows API calls or system calls on other operating systems, abstracted by .NET's runtime environment to work across platforms.
 
-## Дивіться також
-Для більш глибокого вивчення теми перегляньте документацію: 
-1. Про `Directory.Exists`: [Тут](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0).
-2. Про `DirectoryInfo.Exists`: [Тут](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.exists?view=net-5.0).
-3. Про обробку виключень в C#: [Тут](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/).
+## See Also / Див. також:
+- MSDN System.IO.Directory.Exists method: https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.exists
+- Microsoft's guide to file system IO: https://learn.microsoft.com/en-us/dotnet/standard/io/file-system
+- Stack Overflow discussions on directory checking in C#: https://stackoverflow.com/search?q=C%23+check+if+directory+exists

@@ -1,7 +1,8 @@
 ---
-title:                "Verificando si un directorio existe"
-html_title:           "Gleam: Verificando si un directorio existe"
-simple_title:         "Verificando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+date:                  2024-01-20T14:56:06.237232-07:00
+html_title:           "Gleam: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## What & Why? | ¿Qué y Por Qué?
+Verificar si un directorio existe asegura que nuestro programa acceda solo a rutas válidas. Hacemos esto para evitar errores de lectura/escritura y para confirmar que los datos que necesitamos están donde esperamos.
 
-Verificar si un directorio existe es una operación común de IO: Un programa de computadora verifica si un cierto directorio está presente en el sistema de archivos. Los programadores lo hacen para evitar errores al tratar de acceder o manipular un directorio que puede no estar allí.
+## How to: | Cómo hacerlo:
+```gleam
+import gleam/io
+import gleam/erlang
+import gleam/erlang/file
 
-## Cómo hacer:
+pub fn check_dir_exists(path: String) -> Bool {
+  // Usa 'erlang.file:read_dir' para intentar leer el directorio
+  case file.read_dir(path) {
+    Ok(_) -> true  // El directorio existe
+    Error(_) -> false  // No existe o hay un error de permisos
+  }
+}
 
-En Gleam, podemos usar la función `directory_exists` del módulo `gleam/filesystem` para comprobar si un directorio existe. Aquí hay un ejemplo:
-
-```Gleam
-import gleam/filesystem.{directory_exists}
-
-let dir = "/path/to/directory" 
-
-match directory_exists(dir) {
-  Ok(True) -> 
-    print("El directorio existe")
-  Ok(False) -> 
-    print("El directorio no existe")
-  Error(_) -> 
-    print("Ocurrió un error al verificar el directorio")
+// Uso
+fn main() {
+  let dir_exists = check_dir_exists("some/path/to/directory")
+  io.debug(dir_exists)  // Imprime 'True' si existe, 'False' si no
 }
 ```
 
-Cuando ejecutas este código, verás una de las tres salidas, dependiendo de si el directorio existe, no existe o si ocurrió un error.
+## Deep Dive | Inmersión Profunda
+Antes, para verificar la existencia de directorios, teníamos que depender del Sistema Operativo o de llamadas a comandos del shell. En Gleam, abstraemos esta funcionalidad con `gleam/erlang/file`. Otros lenguajes tienen sus métodos; por ejemplo, Python usa `os.path.exists` y Node.js `fs.existsSync`.
 
-## Profundización
+El código muestra como usar el módulo `file` de la biblioteca estándar Erlang. El manejo de errores es crucial; un `Error(_)` puede indicar que el directorio no existe o que ocurrió un problema de permisos.
 
-Históricamente, la verificación de la existencia de un directorio es un problema de programación fundamentada desde los primeros días de los sistemas operativos. Las alternativas a `directory_exists` pueden ser intentar abrir el directorio y manejar cualquier error, aunque esta es generalmente una solución menos preferida debido a su complejidad.
+Alternativamente, si estás construyendo una aplicación robusta que necesita manejar muchos escenarios de sistema de archivos, considera usar una biblioteca externa que ofrezca más funciones y detalles.
 
-La función `directory_exists` en Gleam trabaja a un nivel más bajo. Utiliza llamadas al sistema operativo para preguntar directamente si un directorio está presente, lo que hace que sea una opción más eficiente y segura.
-
-## Ver También
-
-Para información adicional y fuentes relacionadas, consulte los siguientes enlaces:
-
-1. [Documentación oficial de Gleam](https://gleam.run/)
+## See Also | Ver También
+- Documentation of Erlang's `file` module: [Erlang -- file](http://erlang.org/doc/man/file.html)
+- The `gleam/erlang/file` docs: [Gleam stdlib](https://hexdocs.pm/gleam_stdlib/)

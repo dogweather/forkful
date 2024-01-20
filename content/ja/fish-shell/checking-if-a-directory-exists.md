@@ -1,7 +1,8 @@
 ---
-title:                "ディレクトリが存在するかどうかを確認する"
-html_title:           "Fish Shell: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:56:25.489175-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,43 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+ディレクトリが存在するかチェックすることとは、ファイルシステム上の特定の場所に特定のフォルダがあるかどうかを確認するプロセスです。このチェックはスクリプトがエラーなく動作するため、または必要なリソースが利用可能かを保証するために行われます。
 
-ディレクトリが存在するか確認するとは、指定したパスのディレクトリが実際にシステム上に存在するかどうかを確認するプロセスのことを指します。プログラマーがこれを行う理由は、ある操作がディレクトリ依存性を持ち、そのディレクトリが存在しない場合にエラーが発生する可能性があるからです。
-
-## どうやって：
-
-以下にFish Shellでディレクトリの存在を確認するためのコード例とその出力結果を示します。
+## How to: (やり方)
+Fish Shellでディレクトリの存在を確認するには `test` コマンドを使います。以下の例と出力をご覧ください。
 
 ```Fish Shell
-if test -d /your/directory/path
-    echo "Directory exists."
+if test -d /path/to/directory
+    echo "存在する"
 else
-    echo "Directory does not exist."
+    echo "存在しない"
 end
 ```
-存在するディレクトリに対する出力:
 
-```Fish Shell
-Directory exists.
+サンプル出力:
+
 ```
-存在しないディレクトリに対する出力:
-
-```Fish Shell
-Directory does not exist.
+存在する
 ```
 
-## 深掘り：
+または、ディレクトリが存在しない場合:
 
-ディレクトリの存在を確認する理由は馴染みがありますが、歴史的背景、代替案、そしてその実装詳細も見ていきましょう。
+```
+存在しない
+```
 
-1. **歴史的背景**： 基本的なファイルシステム操作として、ディレクトリの存在を確認する動作は、最初のUnixオペレーティングシステムから存在しています。
-2. **代替案**： '-e' オプションを使用してディレクトリまたはファイルの存在を確認することも可能です。
-3. **実装詳細**： '-d' オプションは、指定したパスがディレクトリであり、そのディレクトリが現在のシステムに存在するかどうかを検証します。
+## Deep Dive (深掘り)
+Fish Shellでは、他のシェル同様に`test`コマンドを使ってファイルやディレクトリの状態をチェックすることができます。 `-d` オプションはディレクトリ専用です。Fishの歴史の中で、`[ ]`や`[[ ]]`の代わりに`test`が好まれるようになりました。これは、`test`が組み込みコマンドとして提供されており、POSIX準拠であるためです。また、`and` や `or` を使って複雑な条件を構成することも可能です。他に `stat` コマンドを用いても同様のチェックを行うことができますが、`test`の方が一般的にはシンプルで広く使われています。
 
-## 参考文献：
-
-以下は、ディレクトリの存在を確認する方法の詳細とFish Shellの詳細について学ぶための追加情報へのリンクです。
-
-- Fish Shell documentation: [Fish Scripting Manual](https://fishshell.com/docs/current/index.html)
-- How to check if directory exists in Fish Shell: [StackOverflow Discussion](https://stackoverflow.com/questions/14902516/fish-shell-script-how-to-test-if-exists)
+## See Also (関連情報)
+- [Fish Shellのドキュメント](https://fishshell.com/docs/current/index.html)
+- [POSIX test コマンド](https://pubs.opengroup.org/onlinepubs/009695399/utilities/test.html)
+- [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)

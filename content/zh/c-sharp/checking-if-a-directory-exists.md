@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "C#: 检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? (什么 & 为什么？)
+检查目录是否存在是查询文件系统，确认指定路径的文件夹是否已经存在的过程。程序员这么做是为了避免读写错误，确保文件操作针对的是正确的路径。
 
-查看目录是否存在是检查特定文件夹路径是否真实存在的过程。程序员这么做是为了避免在访问不存在的目录时引发运行时异常。
-
-## 如何做：
-
-使用C#来检查目录是否存在相当简单。`System.IO.Directory`类中的`Exists`方法就可以实现这个功能。
+## How to (如何执行)
+C#中可以使用`System.IO`命名空间下的`Directory`类来检查目录是否存在。这里是一个示例：
 
 ```C#
+using System;
 using System.IO;
 
-string dirToCheck = @"C:\Program Files";
+class Program
+{
+    static void Main()
+    {
+        string pathToCheck = @"C:\MyFolder";
 
-if (Directory.Exists(dirToCheck)) 
-{
-    Console.WriteLine("The directory exists.");
-} 
-else 
-{
-    Console.WriteLine("The directory does not exist.");
+        if (Directory.Exists(pathToCheck))
+        {
+            Console.WriteLine("Directory exists.");
+        }
+        else
+        {
+            Console.WriteLine("Directory does not exist.");
+        }
+    }
 }
 ```
 
-运行这段代码，如果"C:\Program Files"目录存在，就会打印出"The directory exists."，否则会打印出"The directory does not exist."。
+如果目录存在，控制台输出：
 
-## 深度解析
+```
+Directory exists.
+```
 
-检查目录存在性的方法在早期编程中并不常见，直到微软推出了.NET框架才引入这个方便的功能。
+如果目录不存在，控制台输出：
 
-虽然C#中直接使用Directory.Exists是最直观的方法，但有一些其他的替代方案也可以实现同样的效果。例如，可以试图打开目录，如果抛出异常，则说明目录不存在。这是一种叫做"备选方案（EAFP）"的编程风格。
+```
+Directory does not exist.
+```
 
-对于Directory.Exists的底层实现，.NET基础库在调用Directory.Exists时会直接调用一次系统API检查目录是否存在。而无论目录是否存在，这个系统API调用都会产生一定的性能开销。因此，如果你的程序需要在短时间内检查大量的目录，可能需要考虑其他的解决方案。
+## Deep Dive (深入了解)
+早期的.NET版本就已经引入了`System.IO.Directory.Exists`方法，至今依然是检查目录存在性的简洁方式。作为替代，也可以通过异常处理来尝试访问目录并捕获可能的`DirectoryNotFoundException`，但这通常认为是不推荐的做法，因为异常处理代价较高。具体实现是通过调用系统级别的文件访问API来确定目录是否存在。
 
-## 更多参阅
-
-- Official Documentation for DirectoryInfo.Exists: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netframework-4.8
-- File and Directory Operations in .NET: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-check-that-a-file-or-directory-exists
+## See Also (参考链接)
+- Microsoft Docs on `Directory.Exists`: [https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- Stack Overflow discussion on checking directory existence: [https://stackoverflow.com/questions/1410127/c-sharp-test-if-user-has-write-access-to-a-folder](https://stackoverflow.com/questions/1410127/c-sharp-test-if-user-has-write-access-to-a-folder)

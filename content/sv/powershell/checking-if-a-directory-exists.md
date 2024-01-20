@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:58:34.396588-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att kontrollera om en mapp existerar är att låta ditt PowerShell skript avgöra om en viss katalog finns eller inte på din dator. Programmerare gör det för att undvika fel som uppstår när skript försöker läsa, skriva, eller navigera till en mapp som inte finns.
+## What & Why?
+Att kolla om en mapp finns är processen där man verifierar om en specifik mapp existerar i filsystemet. Programmerare gör detta för att undvika fel när man försöker åtkomma eller manipulera mappar som inte finns.
 
-## Hur man gör:
-Här är PowerShell-skriptet för att kontrollera om en mapp existerar.
+## How to:
+Använd `Test-Path` för att snabbt kontrollera mappar. Här är ett exempel:
 
 ```PowerShell
-$path = 'C:\Temp'
-if (Test-Path $path) {
-    Write-Host 'Mappen finns.'
+# Kolla om en mapp existerar
+$mapp = "C:\MinMapp"
+if (Test-Path $mapp) {
+    Write-Host "Mappen finns."
 } else {
-    Write-Host 'Mappen finns inte.'
+    Write-Host "Mappen finns inte."
 }
 ```
 
-Kodens utdata kommer att vara antingen 'Mappen finns.' om den angivna mappen finns, eller 'Mappen finns inte.' om den inte gör det.
+Utfall:
 
-## Djupdykning
-Historiskt sett fanns det andra sätt att kontrollera ifall en mapp existerar i äldre versioner av PowerShell, men `Test-Path` är det vanligaste och mest pålitliga sättet i dagens version.
+```
+Mappen finns.
+```
 
-Alternativa sätt att kontrollera om en mapp existerar inkluderar användning av .NET bibliotek och cmdlets som `Get-ChildItem`, men `Test-Path` har fördelen att det är enklare och snabbare eftersom det inte läser innehållet i mappen.
+Eller:
 
-När det gäller implementeringsdetaljer returnerar `Test-Path` helt enkelt sant eller falskt baserat på om sökvägen finns. Det följer symboliska länkar, vilket betyder att om sökvägen är en symbolisk länk till en mapp, kommer `Test-Path` att returnera sant även om länken inte har någon destination.
+```
+Mappen finns inte.
+```
 
-## Se också
-För mer information, här är några användbara länkar:
+## Deep Dive
+I historien har Windows-användare lärt sig att använda `if`-satser och kommandon som `exist` i batch-skript. PowerShell erbjuder nu en mer kraftfull och lättläst metod med `Test-Path`.
 
-- [`Test-Path` dokumentation](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
-- [Diskussion om alternativa metoder](https://stackoverflow.com/questions/9149997/different-ways-to-check-if-a-directory-exists-in-powershell)
+Det finns alternativ till `Test-Path`, som att försöka navigera till mappen med `Set-Location` och fånga undantag om det misslyckas, men `Test-Path` är det snabbaste och enklaste sättet.
+
+`Test-Path` kan också användas med olika parametrar för att finjustera vad du kontrollerar, som att särskilja filer från mappar med `-PathType` flaggan:
+
+```PowerShell
+# Kolla endast om en mapp existerar, inte en fil
+Test-Path $mapp -PathType Container
+```
+
+Detaljerna i `Test-Path` implementeringen är inbyggda i PowerShell och använder .NET Framework (eller .NET Core/.NET 5+ i nyare versioner av PowerShell) under ytan, vilket ger god prestanda och tillförlitlighet över olika Windows-versioner såväl som cross-platform.
+
+## See Also
+- [Om `Test-Path` i PowerShell-dokumentationen](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Test-Path)
+- [Om att hantera undantag i PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.1)

@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier si un répertoire existe"
-html_title:           "Clojure: Vérifier si un répertoire existe"
-simple_title:         "Vérifier si un répertoire existe"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Bash: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+Vérifier l'existence d'un répertoire permet de s'assurer que le chemin d'accès utilisé est valide et d'éviter les erreurs de fichier. Les programmeurs le font pour des raisons de sécurité et de robustesse dans le flux de travail de leurs applications.
 
-Vérifier si un répertoire existe consiste simplement à s'assurer que le chemin vers un dossier spécifié piste bien vers un emplacement réel sur le système de fichiers. C’est essentiel pour éviter les erreurs lors de l'écriture, de la lecture ou du déplacement de fichiers.
-
-## Comment faire :
-
-Utiliser `java.io.File` avec `exists` et `directory?` de Clojure. Le premier vérifie si le chemin existe, le deuxième confirme si c'est un répertoire.
+## How to:
+Utiliser `clojure.java.io/file` et `clojure.java.io/exists?` pour vérifier si un répertoire existe :
 
 ```Clojure
+(require '[clojure.java.io :as io])
+
 (defn directory-exists? [dir-path]
-  (let [dir (java.io.File. dir-path)]
-    (and (.exists dir) (.isDirectory dir))))
+  (let [dir (io/file dir-path)]
+    (.exists dir)))
+
+(println (directory-exists? "/path/to/your/directory")) ; Renvoie true si le répertoire existe, false sinon.
 ```
 
-Exemple d'utilisation :
-
-```Clojure
-(directory-exists? "/mon/chemin/vide")
-; => false
-
-(directory-exists? "/chemin/existant")
-; => true
+Sample output: 
+```
+true
 ```
 
-## Deep Dive :
+## Deep Dive
+Historiquement, la gestion des fichiers et répertoires en Clojure se fait grâce aux abstractions sur les entrées/sorties de Java. `clojure.java.io` est un wrapper autour des classes Java standard pour les fichiers.
 
-`java.io.File` a été présent dans Java depuis JDK 1.0, donc c'est une solution éprouvée. Cependant, notez que depuis Java 7, nous avons une alternative, `java.nio.file.Files` avec la méthode `exists` et `isDirectory`, qui est plus moderne et flexible.
+Alternatives: Pour ceux qui préfèrent les solutions natives, `java.nio.file.Files` et `java.nio.file.Paths` offrent des fonctions modernes et plus riches en Java, accessibles depuis Clojure.
 
-Détails de mise en œuvre : `java.io.File.exists()` vérifie simplement l'accessibilité en lecture des fichiers. Ce n'est donc pas une méthode fiable pour vérifier les permissions complètes sur un répertoire. Si vous avez besoin de plus de contrôle, regardez du côté de `java.nio.file.Files`.
+Détails d'implémentation: `clojure.java.io/file` crée une instance `java.io.File`, tandis que `exists?` appelle la méthode `.exists` de l'instance pour vérifier l'existence physique du fichier ou répertoire.
 
-## À Voir :
-
-1. [Java File Docs](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-2. [Clojure Java Interop](https://clojure.org/reference/java_interop)
-3. [Java Nio Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+## See Also
+- Clojure Documentation: https://clojure.org/
+- API clojure.java.io: https://clojuredocs.org/clojure.java.io
+- Java NIO Files: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+- Guide sur les fichiers et répertoires en Clojure: https://www.braveclojure.com/clojure-for-the-brave-and-true/

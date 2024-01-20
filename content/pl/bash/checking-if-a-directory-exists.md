@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Co i po co? Sprawdzanie istnienia katalogu to zapytanie w Bashu, aby zobaczyć, czy dany folder jest na dysku. Robimy to, by zapobiec błędom przy próbie dostępu do nieistniejących katalogów.
 
-Sprawdzanie, czy katalog istnieje, to metoda używana w Bash, aby potwierdzić, czy dany katalog faktycznie istnieje na dysku. Programiści robią to unikania błędów podczas prób zapisu lub odczytu z niewłaściwych lokalizacji.
-
-## Jak to zrobić:
-
-Przykład kodu, który sprawdza, czy katalog istnieje, możemy napisać tak:
+## How to:
+Jak to zrobić:
 
 ```Bash
-if [ -d "$nazwa_katalogu" ]; then
-    echo "Katalog istnieje"
-else 
-    echo "Katalog nie istnieje"
+if [ -d "$DIRECTORY" ]; then
+  echo "Katalog $DIRECTORY istnieje."
+else
+  echo "Katalog $DIRECTORY nie istnieje."
 fi
 ```
 
-Gdy `$nazwa_katalogu` to ścieżka do sprawdzenia, to na wyjściu otrzymamy "Katalog istnieje" albo "Katalog nie istnieje" w zależności od tego, czy dany katalog rzeczywiście istnieje.
+Wyjście przykładowe, jeśli katalog istnieje:
 
-## Głębszy wgląd
+```
+Katalog /home/uzytkownik/Dokumenty istnieje.
+```
 
-Koncepty sprawdzania istnienia katalogu są jednymi z najważniejszych w Bash i są obecne prawie od początku języka. Alternatywą dla powyższego kodu może być użycie `if` z `test -d "$nazwa_katalogu"`. Wewnętrznie, Bash wykonuje te operacje poprzez sprawdzenie informacji inode systemu plików na dysku. 
+Wyjście przykładowe, jeśli katalog nie istnieje:
 
-## Zobacz także
+```
+Katalog /home/uzytkownik/NieistniejacyKatalog nie istnieje.
+```
 
-- Inne flagi do testowania rodzaju pliku w Bash: [GNU Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- Więcej o poleceniu `test`: [GNU Coreutils Manual](https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html)
+## Deep Dive:
+Zanurzenie:
+
+Historia: Sprawdzanie istnienia pliku/katalogu jest jedną z podstawowych operacji w Unixowych systemach od początków ich istnienia. Bash, będąc jedną z najpopularniejszych powłok w systemach Unix i Linux, odziedziczył wiele funkcji z wcześniejszych powłok sh i ksh.
+
+Alternatywy: Oprócz wbudowanej instrukcji `[ -d "$DIRECTORY" ]`, możemy użyć `[[ -d "$DIRECTORY" ]]` dla nowszych wersji Bash lub `test -d "$DIRECTORY"` w starych skryptach. Również polecenie `find` i `ls` mogą służyć do identyfikacji istnienia katalogów, ale są to bardziej rozbudowane narzędzia niż potrzeba w prostym scenariuszu sprawdzania istnienia.
+
+Szczegóły: Flaga `-d` w [ ] sprawdza, czy określona ścieżka jest katalogiem. Jest to bezpieczne narzędzie, które można stosować w skryptach wykonywanych na różnych komputerach i w różnych środowiskach, ponieważ rzadko ulega zmianom między wersjami Bash.
+
+## See Also:
+Zobacz również:
+
+- `man test` - instrukcja działania polecenia test w systemach Unix
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/ - kompendium wiedzy o skryptach w Bashu
+- Stack Overflow: https://stackoverflow.com/ - społeczność programistów, z której pomocą można rozwiązywać trudne problemy i zadawać pytania
+
+Pamiętaj, że Internet jest Twoim przyjacielem. Kiedy napotykasz na problem lub potrzebujesz więcej informacji, zawsze jest gdzieś strona lub forum, które może pomóc!

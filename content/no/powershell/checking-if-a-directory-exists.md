@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en katalog eksisterer"
-html_title:           "PowerShell: Sjekker om en katalog eksisterer"
-simple_title:         "Sjekker om en katalog eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:06.705183-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## Hva & Hvorfor?
+Å sjekke om en mappe finnes er å spore om en bestemt mappe eksisterer på en datalagringsenhet. Programmerere gjør dette for å unngå feil i skript som forutsetter at en mappe er tilgjengelig for lesing, skriving eller navigering.
 
-## Hva & Hvorfor? - What & Why?
-Sjekke om en mappe eksisterer i PowerShell innebærer å validere for tilstedeværelsen av en bestemt mappe på systemet ditt. Denne operasjonen er sentral for å unngå feil og unødvendige krasj når man prøver å manipulere mapper som kanskje ikke eksisterer.
-
-## Hvordan gjør man det - How to:
-
-Her er et enkelt eksempel på hvordan du kan sjekke om en mappe eksisterer ved hjelp av PowerShell:
+## Hvordan:
+For å sjekke om en mappe eksisterer i PowerShell, bruk `Test-Path` kommandoen:
 
 ```PowerShell
-if(Test-Path C:\FolderenMin)
-{
-  Write-Host "Mappen eksisterer."
-}
-else
-{
-  Write-Host "Mappen eksisterer ikke."
+# Sjekker om mappen 'C:\EksempelMappe' eksisterer
+$mappePath = 'C:\EksempelMappe'
+if (Test-Path $mappePath) {
+    "Mappen eksisterer."
+} else {
+    "Mappen eksisterer ikke."
 }
 ```
 
-Ved å kjøre denne koden vil PowerShell returnere enten "Mappen eksisterer." eller "Mappen eksisterer ikke.", avhengig av mappens eksistens.
+Når du kjører dette skriptet, får du enten "Mappen eksisterer." eller "Mappen eksisterer ikke." som output, avhengig av om mappen finnes.
 
-## Dypdykk - Deep Dive:
-Måten å sjekke om mapper eksisterer på i tidligere versjoner av PowerShell og Command Prompt var litt forskjellig, men Test-Path cmdlet har gjort det mye enklere og mer robust i nyere versjoner av PowerShell. 
+## Dypdykk:
+Funksjonen til å sjekke om en mappe eksisterer har vært en del av kommandolinjeverktøy siden de tidligste dagene av programmering. I PowerShell har `Test-Path` kommandoen vært standardmetoden for å utføre denne sjekken siden PowerShell v1.0. Den fungerer ikke bare for mapper, men også for filer og registry keys.
 
-Selv om Test-Path er den mest brukte metoden, er det også andre alternativer tilgjengelig, som å bruke [System.IO.Directory]::Exists metoden i .NET-klassen.
+Et alternativ til `Test-Path` er å bruke .NET-klassen `[System.IO.Directory]` med `Exists()` metoden:
 
 ```PowerShell
-[System.IO.Directory]::Exists('C:\FolderenMin')
+[System.IO.Directory]::Exists($mappePath)
 ```
-Denne koden vil returnere "True" hvis mappen eksisterer, og "False" i motsatt tilfelle.
 
-## Se Også - See Also:
-Her er noen nyttige lenker for deg som vil lære mer om PowerShell og bruk av stier og mapper:
+Implementasjonsmessig er bruken av `Test-Path` mer "idiomatisk" PowerShell; det følger skriptspråkets konvensjoner og er generelt mer lesbar og lettere å vedlikeholde. `[System.IO.Directory]::Exists()` er mer direkte, og det indikerer en sterkere knytning til .NET-rammeverket som PowerShell er bygget på.
 
-1. Microsoft Docs - About Test-Path: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/test-path?view=powershell-7
-2. Microsoft Docs - System.IO.Directory Class: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0
+## Se Også:
+- Microsofts offisielle dokumentasjon for `Test-Path`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path
+- StackOverflow diskusjoner om emnet: https://stackoverflow.com/questions/tagged/powershell+directory-existence
+- Windows PowerShell Programmer's Guide for dypere konseptforståelse: https://docs.microsoft.com/en-us/powershell/scripting/developer/developer-guide

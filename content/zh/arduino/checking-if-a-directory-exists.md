@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "Arduino: 检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,45 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-检查目录是否存在是在使用文件系统时，判断特定的文件目录是否已经存在的过程。这对于避免在不存在的目录中创建文件或存储数据至关重要。
+## What & Why? (什么及为什么？)
+检查目录是否存在是确认特定路径下的文件夹是否已被创建的过程。程序员这么做是为了避免错误如试图访问不存在的文件夹，或者在不必要的情况下重复创建目录。
 
-## 怎么做：
-```Arduino
-#include <SPI.h>
+## How to: (怎么做：)
+```arduino
 #include <SD.h>
 
 void setup() {
   Serial.begin(9600);
+  while (!Serial) {
+    ; // 等待串行端口连接。仅需于使用 Leonardo、Micro 或者 Boarduino 等微控制器时。
+  }
 
   if (!SD.begin(4)) {
-    Serial.println("Initialization failed!");
+    Serial.println("初始化SD卡失败");
     return;
   }
 
-  if (SD.exists("/test")) {
-    Serial.println("Directory exists.");
+  if (SD.exists("/example")) {
+    Serial.println("/example 目录存在");
   } else {
-    Serial.println("Directory does not exist.");
+    Serial.println("/example 目录不存在");
   }
 }
 
 void loop() {
-  // nothing here
+  // 这里不需要代码
 }
 ```
-串行监视器的输出结果：
-```Arduino
-Directory exists.
+
+示例输出：
 ```
-如果你的 '/test' 目录存在。如果目录不存在，你将会看到：
-```Arduino
-Directory does not exist.
+/example 目录存在
+```
+或
+```
+/example 目录不存在
 ```
 
-## 深入了解
-在Arduino的早期版本里，进行目录检查的功能并没有被包含进SD库。随着开发者对丰富文件处理功能的需求增加，这个功能被后续添加进去。 你也可以换种方式实现，例如尝试在目录里创建文件，如果失败则表明目录不存在。尽管有效，但这种方式并不被推荐，因为可能会导致不必要的文件创建。 
+## Deep Dive (深入解析)
+在Arduino的早期版本中，主要通过SD库与SD卡交互。`SD.exists()` 函数就是用来检查文件或目录是否存在。这对于防止文件覆盖、避免写入错误和合理管理存储空间是很重要的。
 
-## 另请参见
-- Arduino SD 库官方说明：https://www.arduino.cc/en/Reference/SD
-- Arduino 文件系统指南：https://www.arduino.cc/en/Guide/Examples#fullFileIO
+传统上，当你创建一个新文件前，你需要检查它所在的目录是否存在。如果不存在，你可以使用 `SD.mkdir()` 创建一个新目录。随着时间发展，除了SD库之外，还有其他选择，比如SdFat库，提供了更高的效率和更多的功能。
+
+在实施过程中，你可能会遇到不同类型的存储介质和文件系统，这是检查目录存在性的一大挑战，例如，FAT16/32文件系统与新兴的exFAT或NTFS等不同。
+
+## See Also (另请参阅)
+- 官方SD库文档：[Arduino - SD](https://www.arduino.cc/en/reference/SD)
+- SdFat库GitHub页面：[SdFat](https://github.com/greiman/SdFat)
+- Arduino存储技术讨论：[Arduino Forum Storage](https://forum.arduino.cc/index.php?board=12.0)

@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Elm: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:57:41.578171-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,54 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tarkistetaan Onko Hakemisto Olemassa PHP:ssa?
+## What & Why? - Mikä & Miksi?
+Tarkistetaan, olemassaako hakemisto vai ei, joka on PHP:ssä yksinkertainen mutta tärkeä toiminto. Ohjelmoijat tekevät tämän, ettei sovellus kompastu puuttuviin tiedostoihin ja kansioihin, mikä voisi aiheuttaa virheitä tai turvallisuusriskejä.
 
-## Mikä & Miksi?
-
-Hakemiston olemassaolon tarkistaminen on prosessi, jonka avulla näemme, onko tietty hakemisto olemassa tietyssä sijainnissa. Ohjelmoijat tekevät tämän, jotta voidaan välttää virheitä, jotka tapahtuisivat, jos yritämme käyttää hakemistoa, joka ei ole olemassa.
-
-## Miten Näin:
-
-PHP tarjoaa built-in funktion `is_dir()` tarkistamaan, onko hakemisto olemassa. Näin se toimii:
-
+## How to: - Kuinka tehdään:
 ```PHP
 <?php
+$directory = "/var/www/html/my_folder";
 
-$dir = '/path/to/your/directory';
-
-if (is_dir($dir)) {
-    echo "Hakemisto on olemassa";
+// Tarkistetaan, onko hakemisto olemassa
+if (is_dir($directory)) {
+    echo "Hakemisto on olemassa.";
 } else {
-    echo "Hakemisto ei ole olemassa";
+    echo "Hakemistoa ei löydy.";
 }
 
-```
-Tämä scriptin tulostaa "Hakemisto on olemassa", jos hakemisto on olemassa. Muutoin se tulostaa "Hakemisto ei ole olemassa".
-
-## Deep Dive
-
-Ennen PHP 4:n versiota, `is_dir()` funktio ei ollut saatavilla, joten ohjelmoijat joutivat käyttämään `opendir()` funktiota ja hallitsemaan virheitä tilanteissa, jossa hakemistoa ei ollut.
-
-Vaihtoehtona `is_dir()` funktiolle, voit yrittää avata hakemiston `opendir()` funktion avulla ja tarkistaa, palauttaako se FALSE. Tämä tarkoittaa, ettei hakemisto ole olemassa:
-
-```PHP
-<?php
-
-$dir = '/path/to/your/directory';
-
-if (@opendir($dir)) {
-    echo "Hakemisto on olemassa";
-} else {
-    echo "Hakemisto ei ole olemassa";
-}
+// Tulostus: Hakemisto on olemassa. TAI Hakemistoa ei löydy.
+?>
 ```
 
-Kuitenkin, `is_dir()` on yksinkertaisempi ja suoraviivaisempi tapa saavuttaa sama tulos.
+## Deep Dive - Syväsukellus:
+Historiallisesti `is_dir` on ollut PHP:n perustyökalu hakemistojen olemassaolon tarkistamiseen. Alternatiivina `file_exists`-funktio voidaan käyttää, mutta se ei erottele tiedostoja ja hakemistoja. Tiedosto- ja hakemistopolitiikat voivat vaikuttaa tarkistukseen – esimerkiksi oikeudet ja symboliset linkit voivat johtaa harhaanjohtaviin tuloksiin. Tästä syystä on hyvä ymmärtää funktioiden taustalogiikka ja testiprosessit eri ympäristöissä.
 
-PHP ylläpitää hakemistolistaa hakemistopolkujen ratkaisemiseksi. Kun tarkistat, onko hakemisto olemassa `is_dir()` funktion avulla, PHP tarkistaa ensin tämän sisäisen listan. Jos se ei löydä hakemistoa sieltä, se tarkistaa hakemiston tiedostojärjestelmästä.
-
-## Katso Myös
-
-- PHP Manual: is_dir() [linkki](https://www.php.net/manual/en/function.is-dir.php)
-- PHP Manual: opendir() [linkki](https://www.php.net/manual/en/function.opendir.php)
-- StackOverflow: How to check if directory exists in PHP [linkki](https://stackoverflow.com/questions/3294918/how-to-check-if-directory-exists-in-php)
+## See Also - Katso myös:
+- PHP:n virallinen dokumentaatio `is_dir`: https://www.php.net/manual/en/function.is-dir.php
+- PHP:n virallinen dokumentaatio `file_exists`: https://www.php.net/manual/en/function.file-exists.php
+- Stack Overflow keskusteluja ja esimerkkejä hakemistojen käsittelystä PHP:ssä: https://stackoverflow.com/questions/tagged/php+directory

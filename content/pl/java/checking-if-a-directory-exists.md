@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Java: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:57:10.650048-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Java"
 category:             "Java"
@@ -10,52 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sprawdzanie czy katalog istnieje w Java
+## What & Why?
+"Co i dlaczego?"
 
-## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w Java, to metoda weryfikacji obecności folderu w systemie plików. Robimy to, by uniknąć błędów podczas operacji na plikach i folderach, na przykład przed próbą odczytu zawartości nieistniejącego katalogu.
 
-Sprawdzanie, czy katalog istnieje, polega na weryfikacji, czy dany katalog istnieje w systemie plików. Programiści robią to, aby zapobiec błędom podczas pracy z plikami.
+## How to:
+"Jak to zrobić:"
 
-## Jak to zrobić:
+Sprawdzanie istnienia katalogu jest łatwe dzięki klasie `Files` i `Path`:
 
-Java udostępnia klasę `Files` do manipulacji plikami i katalogami. Możemy użyć metody `exists(Path)` do sprawdzenia, czy dany katalog istnieje. Oto jak to zrobić:
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-```Java
-import java.nio.file.*;
-
-public class Main {
+public class DirectoryExists {
     public static void main(String[] args) {
-        Path path = Paths.get("/sciezka/do/katalogu");
+        Path path = Paths.get("/jakas/sciezka/do/katalogu");
+
+        boolean exists = Files.exists(path);
+        boolean notExists = Files.notExists(path);
         
-        if (Files.exists(path)) {
-            System.out.println("Katalog istnieje");
+        if (exists) {
+            System.out.println("Katalog istnieje.");
+        } else if (notExists) {
+            System.out.println("Katalog nie istnieje.");
         } else {
-            System.out.println("Katalog nie istnieje");
+            System.out.println("Status katalogu nieznany.");
         }
     }
 }
 ```
 
-Wynik działania programu:
+Gdy uruchomimy kod, otrzymamy jeden z wyników:
 
-```Java
-Katalog istnieje
-lub
-Katalog nie istnieje
+```
+Katalog istnieje.
 ```
 
-## Pogłębione informacje
+Lub:
 
-- Historyczny kontekst: Wcześniejsze wersje Javy wymagały korzystania z klasy `File` do manipulacji plikami i katalogami. Nowoczesne wersje Javy (od verzji 7), wprowadziły nową bibliotekę `java.nio.file` z klasą `Path` i `Files`, która oferuje bardziej intuicyjne i elastyczne API.
-  
-- Alternatywy: Możemy również użyć klasy `File` w Javie do sprawdzenia, czy katalog istnieje. Metoda `File.exists()` zwraca `true`, jeśli katalog istnieje, i `false` w przeciwnym razie.
-  
-- Szczegóły implementacji: Metoda `java.nio.file.Files.exists(Path)` używa natywnej implementacji systemu plików do sprawdzenia, czy dany plik lub katalog istnieje. Działa to zarówno dla lokalnych systemów plików, jak i sieciowych systemów plików, takich jak NFS.
+```
+Katalog nie istnieje.
+```
 
-## Zobacz także
+## Deep Dive:
+"Głębsze spojrzenie:"
 
-- [Dokumentacja Oracle na temat klasy Files](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Files.html)
-  
-- [Dokumentacja Oracle na temat klasy Path](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Path.html)
-  
-- [Dokumentacja Oracle na temat klasy File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+Sprawdzanie, czy katalog istnieje, jest częścią zarządzania systemem plików w każdym języku programowania. W Javie, przed wprowadzeniem NIO.2 (New Input/Output 2) w Java SE 7, głównie używano klasy `File`. Po wprowadzeniu `java.nio.file` zyskaliśmy bardziej intuicyjne API do pracy z systemem plików.
+
+Główne różnice:
+- `Files.exists(Path)` jest lepsze od `File.exists()`, bo obsługuje lepiej symboliczne linki i jest lepiej zintegrowane z wyjątkami.
+- Wątpliwości związane z `Files.exists` i `Files.notExists` można rozstrzygnąć przez `Files.isDirectory(Path, LinkOption...)`, co bezpośrednio sprawdza, czy ścieżka jest katalogiem.
+
+Alternatywnie, można użyć `File.isDirectory()` z klasy `File`, ale jej użycie obecnie jest uważane za mniej pożądane ze względu na lepszą funkcjonalność oferowaną przez `java.nio.file`.
+
+## See Also:
+"Zobacz także:"
+
+- Dokumentacja Oracle dla klasy `Files`: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+- Porównanie IO i NIO w Javie: https://www.baeldung.com/java-nio-2-file-api
+- Przewodnik po Java NIO: https://www.jenkov.com/tutorials/java-nio/index.html

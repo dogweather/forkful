@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Lua: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:58:21.698213-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Vérifier l'existence d'un répertoire, c'est comme sonner à une porte pour s'assurer que quelqu'un est chez lui. Les programmeurs font ça pour éviter les erreurs : lire, écrire ou modifier un répertoire qui n'existe pas, c'est un non-sens.
 
-Vérifier si un répertoire existe est une opération courante qui consiste à déterminer si un chemin particulier mène à un répertoire existant ou non. Les programmeurs le font pour éviter les erreurs inattendues lors de l'interaction avec des fichiers et des répertoires.
+## How to:
+Pour vérifier si un répertoire existe en Rust, utilisez le module `std::fs` et la fonction `metadata()` ou `Path::exists()`.
 
-## Comment faire:
-
-Pour vérifier si un répertoire existe en Rust, on utilise les méthodes `metadata()` ou `exists()` de la classe `std::fs::Path`. Voici un exemple:
-
-```Rust
+```rust
+use std::fs;
 use std::path::Path;
 
 fn main() {
-    let path = Path::new("/chemin/vers/le/repertoire");
-    let existe = path.metadata().is_ok();
+    let path = Path::new("/chemin/vers/le/dossier");
 
-    println!("Le repertoire existe: {}", existe);
+    // Avec fs::metadata()
+    match fs::metadata(path) {
+        Ok(metadata) => {
+            if metadata.is_dir() {
+                println!("Le répertoire existe!");
+            } else {
+                println!("C'est un fichier, pas un répertoire.");
+            }
+        },
+        Err(e) => println!("Le répertoire n'existe pas: {}", e),
+    }
+
+    // Ou plus simplement avec Path::exists()
+    if path.exists() {
+        println!("Le répertoire existe!");
+    } else {
+        println!("Le répertoire n'existe pas.");
+    }
 }
 ```
 
-Et voici ce que vous verrez comme sortie:
-
+Sortie possible :
 ```
-Le repertoire existe: true
+Le répertoire existe!
+Le répertoire n'existe pas.
 ```
 
-Si le chemin mène à un répertoire existant, la valeur retournée sera "true". Sinon, elle sera "false".
+## Deep Dive
+Historiquement, vérifier l'existence d'un répertoire est essentiel depuis les débuts de la gestion des systèmes de fichiers. En Rust, `std::fs::metadata()` vous donne plus d'info, mais si vous voulez juste savoir si le répertoire existe, `Path::exists()` est plus direct et ergonomique.
 
-## Détails techniques
+Alternativement, pour plus de contrôle, `fs::metadata()` vous permet de vérifier si le chemin est un fichier ou un répertoire et d'accéder aux métadonnées. C'est utile pour des vérifications plus fines. Mais attention, vérifier l'existence puis lire ou écrire peut mener à une condition de compétition (_race condition_): entre la vérification et l'action, le statut peut changer suite à une action externe.
 
-Historiquement, Rust utilise des classes de la bibliothèque standard `std::fs::Path` pour manipuler les chemins de fichiers. L'approche présentée ici - utiliser `metadata()` ou `exists()` - est un choix simple et efficace pour vérifier l'existence d'un répertoire.
+## See Also
+Pour approfondir votre compréhension et explorer la documentation officielle de Rust:
 
-Les alternatives peuvent être plus complexes et moins efficaces. Vous pourriez par exemple tenter d'ouvrir le répertoire avec `std::fs::read_dir()` et vérifier si une erreur se produit. Cependant, utiliser `metadata()` ou `exists()` a l'avantage d'être plus rapide et direct.
-
-En effet, ces deux méthodes vérifient simplement si le système de fichiers peut obtenir des métadonnées pour le chemin donné. Aucun fichier ou répertoire n'est ouvert. Par conséquent, il n'y a pratiquement aucune performance à perdre.
-
-## Voir aussi:
-
-Pour plus d'informations sur la manipulation de fichiers et de répertoires en Rust, consultez les ressources suivantes:
-
-- Documentation officielle de Rust sur std::fs: https://doc.rust-lang.org/std/fs/index.html
-- Un excellent tutoriel sur la manipulation des fichiers en Rust par le site tuto.com : https://www.tuto.com/rust/manipulation-fichiers-rust,2345.html
+- [`std::fs` module](https://doc.rust-lang.org/std/fs/index.html)
+- [Trait `std::path::Path`](https://doc.rust-lang.org/std/path/struct.Path.html)
+- [Trait `Metadata`](https://doc.rust-lang.org/std/fs/struct.Metadata.html)

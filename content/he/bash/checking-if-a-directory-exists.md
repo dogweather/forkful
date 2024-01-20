@@ -1,7 +1,7 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Bash: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם ספרייה קיימת"
+html_title:           "Arduino: בדיקה האם ספרייה קיימת"
+simple_title:         "בדיקה האם ספרייה קיימת"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-בדיקה אם ספרייה קיימת היא מהלך קוד שבו התוויה בודקת אם ספרייה מסוימת כבר קיימת במערכת. זה זה נחוץ למנות כדי למנוע פעולות בלתי רצויות, כמו יצירת ספריות כפולות או שגיאות עת מניחים שספרייה קיימת כאשר היא לא.
+בדיקת קיום דירקטוריה ב-Bash היא פעולה שמאפשרת לנו לודא אם דירקטוריה מסוימת קיימת במערכת הקבצים. תוכניתנים עושים זאת כדי למנוע שגיאות בזמן ריצת תוכנית ולהבטיח שהנתיבים המתאימים זמינים לשימוש.
 
 ## איך לעשות:
-
-באמצעות בדיקת תנאי עם הפקודה `if`, אפשר לבחון בקלות אם ספרייה קיימת. לחלופין, אפשר להשתמש בפקודה `test`.
-
 ```Bash
-# בודקים אם הספרייה '/my-dir' קיימת
-if [ -d "/my-dir" ]; then
-  echo "The directory exists."
+# בדיקה אם דירקטוריה קיימת
+if [ -d "/path/to/directory" ]; then
+  echo "הדירקטוריה קיימת."
 else
-  echo "The directory does not exist."
+  echo "הדירקטוריה אינה קיימת."
 fi
 ```
-הקוד הזה מדפיס "הספרייה קיימת" אם הספרייה '/my-dir' קיימת, ו"הספרייה לא קיימת" אם אינה קיימת.
-
-## צלילה עמוקה:
-
-בהיסטוריה, הפקודה `test` שומשה בתנאי, אך בהמשך הכניסו מעטפת בניסיון להפוך את התנאים לנוחים יותר. אם מעדיפים את המראה הקלאסי, אפשר להשתמש ב-`test`:
-
-```Bash
-test -d "/my-dir" && echo "The directory exists." || echo "The directory does not exist."
+פלט דוגמא:
 ```
-הקוד הזה יעשה בדיוק אותו דבר. הפקודה `test` עצמה זו כלי יעיל, ובמקרים מסוימים עדיף לזה שלמעלה.
+הדירקטוריה קיימת.
+```
+או
+```
+הדירקטוריה אינה קיימת.
+```
 
-## ראה גם:
+## עיון מעמיק
+הפקודה `[-d]` ב-Bash מבצעת בדיקת דירקטוריה כחלק מהטסטים המובנים לכלי ה-builtin `test`. גרסאות ישנות יותר של שורת הפקודה לא תמיד תמכו בה. אפשרויות חלופיות כוללות שימוש בפקודות כמו `ls` ו-`find`, אבל שימוש ב`[-d]` הוא המקובל והבטוח יותר. בנוסף, הדרך בה שורת הפקודה והסקריפט מטפלים בסוגריים מרובעים ובמרווחים היא קריטית להבנת איך לבצע בדיקות תנאי בצורה נכונה.
 
-[חוברת GNU Coreutils `test`](https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html)
-[מדריך תכנות Bash](https://www.tldp.org/LDP/abs/html/)
-[מדריך בנושא בדיקת חלקי קוד](https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php)
+## ראה גם
+- [Bash test constructs](https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions) - מידע על תנאים ב-Bash ממדריך המשתמש הרשמי.
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) - מדריך לכתיבת סקריפטים מתקדמים ב-Bash.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/bash) - שאלות ותשובות פופולריות על Bash בפורום Stack Overflow.

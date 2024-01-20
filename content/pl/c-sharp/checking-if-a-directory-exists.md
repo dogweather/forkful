@@ -1,6 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "C#: Sprawdzanie, czy katalog istnieje"
+html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "C#"
 category:             "C#"
@@ -10,53 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Sprawdzanie czy katalog istnieje to sposób na uniknięcie błędów, gdy aplikacja próbuje operować na plikach. Programiści to robią, aby upewnić się, że operacja na plikach nie zakończy się niepowodzeniem z powodu braku katalogu.
 
-Sprawdzanie, czy katalog istnieje, to proces umożliwiający określenie, czy dany katalog jest present na dysku. Programiści wykonują to sprawdzanie, aby uniknąć błędów podczas operacji na plikach lub katalogach, które mogą nie istnieć.
-
-## Jak to zrobić:
-
-Aby sprawdzić, czy katalog istnieje w C#, użyjemy klasy `Directory` z przestrzeni nazw `System.IO`. Poniżej znajduje się przykładowy kod:
+## How to (Jak to zrobić):
+Sprawdźmy, jak łatwo możemy to zrobić w C#. Skorzystamy z klasy `Directory` z przestrzeni nazw `System.IO`.
 
 ```C#
+using System;
 using System.IO;
 
 class Program
 {
     static void Main()
     {
-        if(Directory.Exists("C:\\MyDirectory"))
+        string path = @"C:\ExampleDirectory";
+
+        if (Directory.Exists(path))
         {
-            System.Console.WriteLine("Katalog istnieje");
+            Console.WriteLine("Katalog istnieje!");
         }
         else
         {
-            System.Console.WriteLine("Katalog nie istnieje");
+            Console.WriteLine("Katalog nie istnieje.");
         }
     }
 }
 ```
-
-Wynik wyjścia:
+Odpalając ten kod zobaczysz:
 ```
-Katalog istnieje
+Katalog istnieje!
 ```
 lub
 ```
-Katalog nie istnieje
+Katalog nie istnieje.
 ```
+zależnie od tego, czy katalog istnieje czy nie.
 
-## W Głębi Tematu
+## Deep Dive (Dogłębna analiza):
+Sprawdzanie istnienia katalogu jest ważną czynnością w programowaniu już od wczesnych lat systemów plików. W C#, `Directory.Exists` jest standardowym podejściem i częścią .NET Framework od wersji 1.0. 
 
-Sprawdzanie, czy katalog istnieje, to podstawowy element wielu aplikacji, który umożliwia bezpieczne operacje na plikach. Wynika to z historii systemów plików, które zawsze miały możliwość niewłaściwego odwołania się do niewłaściwego pliku lub katalogu.
+Alternatywą jest próba wykonania operacji na katalogu i obsłużenie ewentualnego wyjątku, ale to nie jest zalecane jako pierwsza linia obrony. Jest to tzw. programowanie przez wyjątki i może prowadzić do wolniejszego działania aplikacji w przypadku częstego nieistnienia katalogu.
 
-W C# istnieje kilka alternatyw dla metody `Directory.Exists()`, takich jak `File.Exists()` dla sprawdzania plików lub `DirectoryInfo.Exists`, która jest częścią obiektu DirectoryInfo.
+Za kulisy, `Directory.Exists` wywołuje natywne funkcje systemu operacyjnego, aby stwierdzić status katalogu, co jest efektywne, ale wymaga również zrozumienia, że różne systemy operacyjne mogą zwracać różne wyniki (np. wrażliwość na wielkość liter w ścieżkach).
 
-Kiedy używasz `Directory.Exists()`, metoda ta stara się zlokalizować katalog na fizycznym dysku za pomocą dostarczonej ścieżki. Jeśli katalogu nie ma, metoda zwraca false.
-
-## Zobacz Również
-
-Możesz dowiedzieć się więcej na temat operacji na plikach i katalogach w C#, odwiedzając następujące linki:
-
-- [Dokumentacja Microsoft na temat klasy Directory](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory?view=net-5.0)
-- [StackOverflow: Sprawdzanie, czy katalog istnieje w C#](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory)
+## See Also (Zobacz również):
+- Dokumentacja Microsoft dla `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- Microsoft .NET API Documentation: [Link](https://docs.microsoft.com/en-us/dotnet/)
+- Artykuł o obsłudze wyjątków w C#: [Link](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/)

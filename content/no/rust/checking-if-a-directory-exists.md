@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Lua: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:32.385413-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,55 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust programmering: Hvordan sjekke om en mappe eksisterer
+## What & Why?
+Kontrollere om en mappe eksisterer betyr å sjekke filsystemet for en spesifikk sti. Programmerere gjør dette for å unngå feil ved filhåndtering eller for å forsikre seg om at påvente operasjoner har en gyldig starttilstand.
 
-## Hva & Hvorfor?
-I programmering betyr 'å sjekke om en mappe eksisterer' å bekrefte om en bestemt filsti peker mot en eksisterende mappe. Dette gjøres for å unngå errors når vi prøver å manipulere filer eller mapper som kanskje ikke finnes.
+## How to:
+Rust har en innebygd funksjonalitet for å sjekke om en mappe eksisterer gjennom `std::path::Path` og `std::fs` bibliotekene. Her er et eksempel på bruk:
 
-## Hvordan gjøre det:
-Du kan bruke `std::path::Path` og metoden `exists()` for å sjekke om en mappe eksisterer i Rust.
-
-```Rust
+```rust
 use std::path::Path;
 
 fn main() {
-    let path = Path::new("/noen/mappe/sti");
+    let path = Path::new("/en/tilfeldig/mappe");
 
     if path.exists() {
-        println!("Mappen eksisterer");
+        println!("Mappen eksisterer.");
     } else {
-        println!("Mappen eksisterer ikke");
+        println!("Mappen eksisterer ikke.");
     }
 }
 ```
-Hvis mappen eksisterer, vil "Mappen eksisterer" printes ut. Ellers vil "Mappen eksisterer ikke" printes ut.
 
-## Deep Dive
-Sjekke om en mappe eksisterer er ikke en ny idé; det har vært en nødvendig del av programmering siden de tidligste dager. Før Rust, kunne du gjøre dette i C med `stat()` funksjonen, for eksempel.
+Dette vil skrive ut:
 
-En annen metode i Rust du kan bruke til å sjekke om en filsti peker til en eksisterende mappe er `metadata()`. Denne metoden returnerer mer detaljerte data om filsti, inkludert om det er en mappe eller ikke.
-
-```Rust
-use std::fs;
-
-fn main() {
-    match fs::metadata("/noen/mappe/sti") {
-        Ok(metadata) => {
-            if metadata.is_dir() {
-                println!("Dette er en mappe");
-            } else {
-                println!("Dette er ikke en mappe");
-            }
-        }
-        Err(_) => println!("Filstien finnes ikke"),
-    }
-}
 ```
-Begge disse metodene er vanlig praksis i Rust programmering, men hvilken en du velger å bruke kan avhenge av hvilken type data du trenger for ditt spesifikke case.
+Mappen eksisterer.
+```
 
-## Se Også
-- [Rust Dokumentasjon på Path](https://doc.rust-lang.org/std/path/)
-- [Rust Dokumentasjon på metadata()](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Rust Dokumentasjon på exists()](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists) 
+hvis mappen faktisk eksisterer på angitt sti, eller:
 
-Dette bør gi deg en god start på å sjekke om mapper eksisterer i Rust.
+```
+Mappen eksisterer ikke.
+```
+
+hvis den ikke gjør det.
+
+## Deep Dive:
+Lenge før Rust fantes, var slike operasjoner en del av de fleste programmeringsspråkene. I Rust er det trygt og robust på grunn av språkets fokus på sikkerhet og ytelse. Et alternativ til å bruke `exist()` er `metadata()`, som gir mer detaljert info, men for simpel eksistensjekk er `exists()` å anbefale.
+
+Under panseret bruker `exists()` funksjonen systemkall for å interagere med filsystemet. På ulike operativsystemer kan dette bety forskjellige implementeringsdetaljer, men i Rust er disse abstrahert bort for å gi en konsekvent API.
+
+## See Also:
+- Offisiell Rust dokumentasjon for `Path`: https://doc.rust-lang.org/std/path/struct.Path.html
+- `std::fs` modulen i Rust: https://doc.rust-lang.org/std/fs/
+- Rust bok på handling av feil ved filoperasjoner: https://doc.rust-lang.org/book/ch09-00-error-handling.html

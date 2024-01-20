@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier si un répertoire existe"
-html_title:           "C#: Vérifier si un répertoire existe"
-simple_title:         "Vérifier si un répertoire existe"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Bash: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,48 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi? 
+## What & Why? (Quoi et Pourquoi ?)
+Vérifier l'existence d'un répertoire, c'est s'assurer qu'un dossier est bien là où on pense qu'il est. On fait ça pour éviter des erreurs, comme essayer de lire ou d'écrire dans un répertoire qui n'existe pas.
 
-Vérifier si un répertoire existe est une opération de base en programmation C#. Les programmeurs le font pour éviter des erreurs d'exécution qui peuvent survenir lorsqu'ils essaient d'accéder, de lire ou d'écrire dans un répertoire qui n'existe pas.
-
-## Comment faire:
-
-Pour vérifier si un répertoire existe en C#, on utilise principalement la méthode `Directory.Exists()` de la classe `System.IO`. Voici un exemple de code qui montre comment cela fonctionne:
+## How to (Comment faire ?)
+En C#, on utilise la classe `System.IO.Directory` et sa méthode `Exists` pour vérifier l'existence d'un répertoire :
 
 ```C#
+using System;
 using System.IO;
 
 class Program
 {
     static void Main()
     {
-        string path = @"C:\example\directory";
+        string path = @"C:\UnDossier";
         
         if (Directory.Exists(path))
         {
-            System.Console.WriteLine("Le répertoire existe.");
+            Console.WriteLine("Le répertoire existe !");
         }
         else
         {
-            System.Console.WriteLine("Le répertoire n'existe pas.");
+            Console.WriteLine("Le répertoire n'existe pas.");
         }
     }
 }
 ```
+Sortie possible :
+```
+Le répertoire existe !
+```
+ou
+```
+Le répertoire n'existe pas.
+```
 
-Si le répertoire "C:\example\directory" existe, le programme affichera "Le répertoire existe." Sinon, il dira "Le répertoire n'existe pas."
+## Deep Dive (Plongée en profondeur)
+L'usage de la méthode `Exists` remonte aux débuts de .NET. Elle constitue un moyen sûr et fiable d'éviter des erreurs de fichier courantes. Des alternatives incluent la création de try-catch autour des opérations de fichier, mais c'est lourd. Utiliser `Exists` est direct et efficace. En interne, `Exists` fait appel aux API systèmes pour vérifier l'existence physique des fichiers, cela peut impliquer une certaine latence due aux appels système et il faut être conscient des permissions nécessaires pour accéder aux répertoires.
 
-## Plongée profonde
-
-La méthode `Directory.Exists()` existe depuis le début du .NET Framework. Sa principale alternative est de tenter une opération comme 'Open', 'Read' ou 'Write', et de traiter les exceptions qui se produisent si le répertoire n'existe pas. Cependant, cette approche est généralement moins efficace que de simplement utiliser `Directory.Exists()`.
-
-L'implémentation de la méthode `Directory.Exists()` est relativement simple. Elle utilise des appels API Windows pour essayer d'ouvrir le répertoire spécifié. Si l'appel réussit, le répertoire existe; sinon, il n'existe pas.
-
-## Voir aussi
-
-Pour des informations supplémentaires sur la vérification de l'existence d'un répertoire en C#, consultez ces ressources :
-
-- [Documentation Microsoft sur Directory.Exists](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [Guide MSDN pour la gestion des exceptions d'opérations de fichiers et de répertoires](https://docs.microsoft.com/fr-fr/dotnet/standard/io/handling-io-errors)
-
-Garçon, rappelez-vous, la vérification de l'existence d'un répertoire est une étape cruciale pour éviter les bugs inattendus et les crashs de vos applications !
+## See Also (Voir aussi)
+- Documentation Microsoft sur `Directory.Exists` : [msdn.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- Classe `DirectoryInfo` pour plus d'informations sur un répertoire : [msdn.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo)
+- Gestion des erreurs et des exceptions en C# : [msdn.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)

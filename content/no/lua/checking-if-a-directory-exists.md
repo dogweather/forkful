@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Lua: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:57:40.343460-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,30 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en katalog eksisterer er det å verifisere tilstedeværelsen av et spesifikt katalognavn innen et bestemt filsystem. Programmerere gjør dette for å unngå feil når de prøver å få tilgang til kataloger som kanskje ikke eksisterer.
+Å sjekke om en mappe finnes er prosessen med å verifisere om en bestemt mappe eksisterer på filsystemet. Programmere gjør dette for å unngå feil som kan oppstå når programmet forsøker å lese fra eller skrive til en mappe som ikke finnes.
 
-## Hvordan gjør man dette:
-Her er en grunnleggende kodebit på Lua for å sjekke om en katalog eksisterer:
+## Hvordan Gjøre:
 
 ```Lua
 local lfs = require('lfs')
 
-function directory_exists(path)
-  return lfs.attributes(path, 'mode') == 'directory'
+local function is_directory_exists(path)
+    local attr = lfs.attributes(path)
+    return attr and attr.mode == "directory"
 end
 
-print(directory_exists("./example_directory"))
+-- Bruk funksjonen for å sjekke om en mappe finnes
+if is_directory_exists("/min/eksisterende/mappe") then
+    print("Mappen finnes!")
+else
+    print("Mappen finnes ikke.")
+end
 ```
-Utførelsen av denne koden vil returnere `true` hvis 'example_directory' eksisterer, og `false` hvis den ikke gjør det.
 
-## Dypdykk:
-Historisk sett har det alltid vært behov for metoder for å sjekke om en katalog eksisterer innen programmering. Det er fordi at ønsket tilgang til en ikke-eksisterende katalog ville være katastrofalt for mange programmer. 
+Eksempel på utdata:
+```
+Mappen finnes!
+```
 
-Alternativer til `lfs.attributes` funksjonen finnes, som bruk av `os.execute` funksjonen med en shellkommando. Dette er imidlertid ikke anbefalt da det er plattformavhengig og potensielt usikker. 
+eller hvis mappen ikke finnes:
 
-Implementeringsdetaljene for å sjekke om en katalog eksisterer i Lua stammer fra `lfs.attributes` funksjonen som er en del av LuaFileSystem-biblioteket. Når det gis en sti og 'mode' som argumenter, returnerer det modusattributtet til den gitte stien, noe som muliggjør verifikasjon av om stien er en katalog.
+```
+Mappen finnes ikke.
+```
 
-## Se også:
-2. [Lua Programmeringsguide](http://www.lua.org/pil/contents.html)
-3. ['lfs.attributes' funksjonsdetaljer på Stack Overflow](https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua)
-4. [Sikker kodepraksis for Lua på Lua-Users](http://lua-users.org/wiki/SecureProgramming)
+## Dypdykk
+Før Lua 5.1, var det ingen innebygd støtte for filsystemoperasjoner. `lfs` (Lua File System) ble introdusert som et eksternt bibliotek for å tilføre denne funksjonaliteten. Å sjekke om en mappe eksisterer er viktig for filhåndtering og kan utelukke mange vanlige feilkilder. Alternativer til `lfs` inkluderer OS-spesifikke kommandoer via `os.execute`, men disse er mindre portable og kan introdusere sikkerhetshull. `lfs` tilbyr en mer robust og portabel måte å håndtere filsystemet.
+
+Når man sjekker om en mappe eksisterer, er "attributes"-funksjonen i `lfs` brukt for å hente metadata om en fil eller mappe. Dette inkluderer informasjon som endringstidspunkt, størrelse, og viktigst, filmodusen. Ved å sjekke modusen, kan vi avgjøre om stien representerer en mappe, en fil, en socket, osv.
+
+## Se Også
+
+- Lua File System (LFS) dokumentasjon: https://keplerproject.github.io/luafilesystem/
+- Lua 5.4 referansemanual: https://www.lua.org/manual/5.4/
+- 'Programming in Lua' for en omfattende veiledning i Lua: https://www.lua.org/pil/

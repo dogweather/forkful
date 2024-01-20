@@ -1,7 +1,8 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "C#: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉토리 존재 여부 확인하기"
+date:                  2024-01-20T14:59:24.697690-07:00
+html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
+simple_title:         "디렉토리 존재 여부 확인하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,35 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜하고 무엇을하는지? (What & Why?)
+## What & Why? (무엇이며 왜 필요한가?)
+디렉토리가 존재하는지 확인하는 것은 파일 시스템에 특정 폴더가 있는지 검사하는 과정입니다. 프로그래머들은 파일을 읽거나 쓰기 전에 이 작업을 수행함으로써 에러를 피하고, 필요하다면 디렉토리를 생성합니다.
 
-디렉토리 존재 여부를 확인하는 것은 파일 시스템에 특정 폴더가 존재하는지를 파악하는 과정입니다. 이것은 프로그래머가 파일을 읽거나 쓰기 전에 문제가 발생하지 않도록 하거나 또는 디렉토리를 처음 만들 때 중복을 방지하는 데 필요한 주요 도구입니다.
-
-## 어떻게 하는가? (How to)
-
-TypeScript에서 디렉토리 존재 여부를 확인하려면 Node.js의 `fs` 모듈을 사용하면 됩니다.
-```TypeScript
+## How to: (방법)
+```typescript
 import * as fs from 'fs';
+import { promisify } from 'util';
 
-const directory = './my-directory';
+// 비동기적 방법 (async/await)
+const existsAsync = promisify(fs.exists);
 
-if (fs.existsSync(directory)) {
-  console.log('The directory exists');
-} else {
-  console.log('The directory does not exist');
+async function checkDirectory(directory: string) {
+  const exists = await existsAsync(directory);
+  console.log(`Directory ${directory} exists: ${exists}`);
 }
+
+// 동기적 방법
+function checkDirectorySync(directory: string) {
+  const exists = fs.existsSync(directory);
+  console.log(`Directory ${directory} exists: ${exists}`);
+}
+
+// 샘플 사용 예시
+checkDirectory('./data'); // 비동기적 방법 사용
+checkDirectorySync('./data'); // 동기적 방법 사용
 ```
-'./my-directory'가 존재하면 'The directory exists'라는 문장이 출력됩니다. 그렇지 않으면 'The directory does not exist' 라는 문구가 출력됩니다.
 
-## 깊게 들어가기 (Deep Dive)
+샘플 출력 결과:
+```
+Directory ./data exists: false
+Directory ./data exists: false
+```
 
-디렉토리 존재 여부 확인 기능은 파일 시스템 관련 작업이 필요할 때마다 매우 중요합니다. 이 과정이 없다면, 어플리케이션은 중복되는 디렉토리를 만들거나, 존재하지 않는 디렉토리에서 파일을 찾으려는 등의 문제를 겪을 수 있습니다.
+## Deep Dive (심층 분석)
+'fs.exists'는 Node.js가 초창기부터 제공하는 함수로, 디렉토리나 파일이 존재하는지 확인하는 데 사용됩니다. 그러나 이 방법은 현재는 권장되지 않습니다(‘fs.exists’의 사용은 공식적으로 노후화(deprecated)되었습니다). 더 나은 방법은 'fs.stat'나 'fs.access'을 사용하는 것이며, 이는 권한을 검사할 수도 있기 때문입니다.
 
-이 행위의 대안은 'fs.stat' 또는 'fs.access'를 사용하는 것인데 이 방법들은 파일 또는 디렉토리의 정보를 제공하거나 존재여부를 확인하는 데 사용됩니다. 그러나 File System 모듈의 ‘fs.existsSync’는 가장 일반적이고 직관적인 방법입니다. 
+또 다른 방법으로는, 써드파티 라이브러리를 사용하는 것인데, 예를 들어 'fs-extra'는 확장된 기능을 제공하며 사용하기 쉽습니다. TypeScript를 사용할 때는 써드파티 라이브러리에 대한 DefinitelyTyped의 타입 정의를 사용하면 퍼포먼스 및 타입 안정성을 확보할 수 있습니다.
 
-## 참고 자료 (See Also)
+## See Also (추가 정보)
+- Node.js fs 모듈 문서: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- fs-extra 라이브러리: [https://www.npmjs.com/package/fs-extra](https://www.npmjs.com/package/fs-extra)
+- TypeScript DefinitelyTyped: [https://definitelytyped.org/](https://definitelytyped.org/)
 
-다른 관련 자료들에 대해서는 아래 링크들을 참고해주세요:
-- [Node.js fs Documentation](https://nodejs.org/api/fs.html)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [How to check if a file or directory exists in Node.js](https://stackoverflow.com/questions/17699599/how-to-check-if-a-file-or-directory-exists-in-node-js)
+이렇게 'fs' 모듈을 이용해 디렉토리의 존재 유무를 확인하는 기본적인 방법들을 알아보았습니다.안정적이고 효율적인 코드를 작성하는 데 이 지식이 도움이 되길 바랍니다.

@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Lua: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:57:52.389179-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,33 +13,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Sprawdzanie, czy katalog istnieje, to proces używany przez programistów do potwierdzenia, czy dany katalog jest dostępny w systemie plików. Jest to kluczowe dla zapobiegania błędom, które mogą wystąpić, gdy program próbuje uzyskać dostęp do katalogu, który nie istnieje.
+Sprawdzenie, czy katalog istnieje, to proces weryfikacji obecności folderu w systemie plików. Programiści wykonują to, by uniknąć błędów podczas tworzenia plików, zapisu danych, czy przetwarzania ścieżek - jeśli katalog nie istnieje, działanie może się nie powieść.
 
 ## Jak to zrobić:
 
-Używamy funkcji `lfs.attributes` z biblioteki `lfs` (LuaFileSystem) w Lua. Funkcja ta zwraca tabelę informacji o katalogu lub pliku, jeśli istnieje. Oto przykładowy kod:
+Sprawdzanie istnienia katalogu w Lua wymaga użycia funkcji zewnętrznych, ponieważ standardowe API nie oferuje takiej funkcjonalności. Poniżej znajdziesz przykład z wykorzystaniem standardowej biblioteki `os` oraz biblioteki `lfs` (Lua File System).
 
 ```Lua
 local lfs = require('lfs')
 
-function DirectoryExists(path)
-    local attr = lfs.attributes(path)
-    return (attr ~= nil) and (attr.mode == 'directory')
+-- Sprawdzenie przy użyciu lfs
+function directory_exists(path)
+    local attributes = lfs.attributes(path)
+    return attributes and attributes.mode == "directory"
 end
 
-print(DirectoryExists('/moj/katalog'))  -- zamień '/moj/katalog' na ścieżkę do rzeczywistego katalogu 
+-- Sprawdzenie przy użyciu os.execute i komendy systemowej (działa głównie na systemach typu Unix)
+function directory_exists_with_os(path)
+    local command = string.format('cd %s 2>/dev/null', path)
+    local success = os.execute(command)
+    return success == true
+end
+
+print(directory_exists("/tmp")) -- Wynik: prawda lub fałsz
+print(directory_exists_with_os("/tmp")) -- Wynik: prawda lub fałsz
 ```
 
-Utwórz ten skrypt i uruchom go. Jeśli wydrukowane jest `true`, oznacza to, że katalog istnieje. W przeciwnym razie, jeśli jest `false`, katalog nie istnieje.
+Pamiętaj, że wykorzystanie `os.execute` może być mniej przenośne i bezpieczne, dlatego częściej zaleca się użycie `lfs`.
 
-## Dogłębna analiza
+## Wnikliwa analiza
 
-Funkcja `lfs.attributes` jest częścią biblioteki LuaFileSystem, która jest zewnętrznym rozszerzeniem Lua dla operacji na plikach i katalogach. Ta funkcja była dostępna od Lua 5.1, co pokazuje jej dojrzałość i niezawodność.
+Sprawdzenie istnienia katalogu jest istotne przy manipulowaniu plikami; podstawowe API Lua nie obsługuje tego bezpośrednio, więc trzeba polegać na bibliotekach zewnętrznych, takich jak `lfs`, którą można zainstalować za pomocą menedżera pakietów LuaRocks:
 
-Alternatywą dla lfs jest użycie składni `os.execute` z wbudowanym poleceniem systemowym, ale generalnie jest niezalecane ze względu na zależności platformowe i potencjalne zagrożenia bezpieczeństwa.
+```bash
+luarocks install luafilesystem
+```
 
-Implementacja `lfs.attributes` uwzględnia różne atrybuty katalogu lub pliku, takie jak czas modyfikacji, rozmiar i typ. W tym przypadku koncentrujemy się tylko na `mode`, aby sprawdzić, czy ścieżka jest katalogiem.
+`lfs` zapewnia bogatszy interfejs do pracy z systemem plików, dobrze integruje się z Lua i jest szeroko używana. Alternatywnie, można użyć komend systemowych, ale to podejście może być platformozależne i narażone na zagadnienia bezpieczeństwa związane z wstrzykiwaniem poleceń.
 
-## Zobacz też
+Historia: funkcje takie jak te dostarczane przez `lfs` kiedyś były częścią więcej złożonych skryptów przed pojawieniem się dedykowanych bibliotek.
 
-Zainteresowanych czytelników odsyłam do oficjalnej dokumentacji biblioteki LuaFileSystem na stronie: https://keplerproject.github.io/luafilesystem/, gdzie znajdziesz więcej informacji na temat różnych funkcji i ich użycia. Jeśli chcesz rozwijać swoją wiedzę na temat Lua, polecam stronę: https://www.lua.org/docs.html.
+## Zobacz także
+
+- Lua File System (LFS):
+  [http://keplerproject.github.io/luafilesystem](http://keplerproject.github.io/luafilesystem)
+- LuaRocks - Menedżer Pakietów:
+  [https://luarocks.org/](https://luarocks.org/)
+- Lua 5.4 Reference Manual (w szczególności sekcja o `os` i `io`):
+  [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)

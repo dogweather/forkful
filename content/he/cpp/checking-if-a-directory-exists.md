@@ -1,7 +1,7 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "C++: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם ספרייה קיימת"
+html_title:           "Arduino: בדיקה האם ספרייה קיימת"
+simple_title:         "בדיקה האם ספרייה קיימת"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### מה ולמה?
-בדיקה אם ספרייה קיימת מהווה, פשוט פשוט, חיפוש לוֹקציה מסוימת במערכת ההפעלה שלכם. מתכנתים בודקים זאת כדי למנוע שגיאות שעלולות להתרחש כאשר ניסיון לגשת לספרייה שלא קיימת או ליצור ספרייה שנמצאת כבר שם.
+## מה ולמה?
+בדיקה אם ספרייה קיימת ב-C++ מאפשרת לקוד לזהות אם ספרייה נתונה נמצאת במערכת הקבצים. תכניתנים עושים זאת כדי להימנע משגיאות בעת יצירת ספרייה שכבר קיימת, או לטפל בקבצים בתוך ספריות שקיימות.
 
-### איך לבצע:
-במטה בקוד ה- C++, אתה יכול לראות כיצד לבדוק אם ספרייה קיימת או לא.
+## איך לעשות:
 ```C++
-#include <sys/stat.h>
 #include <iostream>
+#include <filesystem>
 
-bool doesDirectoryExist(const std::string& dirName_in) {
-    struct stat info;
-    if(stat(dirName_in.c_str(), &info) != 0) {
-        return false;
-    } else if(info.st_mode & S_IFDIR) {
-        return true;
-    }
-    return false;
-} 
+namespace fs = std::filesystem;
 
 int main() {
-    std::string dirName = "/מקום/ל/ה/ספרייה/שלך";
-    if (doesDirectoryExist(dirName))
-        std::cout << dirName << " exist.\n";
-    else
-        std::cout << dirName << " does not exist.\n";
+    std::string path_to_check = "/path/to/directory";
+
+    if(fs::exists(path_to_check)) {
+        std::cout << "הספרייה קיימת!" << std::endl;
+    } else {
+        std::cout << "הספרייה אינה קיימת." << std::endl;
+    }
+
     return 0;
 }
 ```
-במקרה זה, אנחנו משתמשים בפונקציה של שימוש בנתונים המבנית stat, שמאחסנת מידע אודות הספרייה.
+פלט לדוגמא:
+```
+הספרייה קיימת!
+או
+הספרייה אינה קיימת.
+```
 
-### צלילה עמוקה:
-בעבר, שֵׂמִיתִים משתמשים בסילוקים כדי לחפש ספריות. אבל זה יכול להיות בעייתי במערכת הפעלה ייחודית מאוד, שלא מראה את המילים המתאימות. אם לא תמצא ספרייה, C++ ייתן שגיאה. לכן, אנחנו משתמשים ב-fstat במקום.
+## עיון מעמיק
+בידיקת קיום ספרייה הוא פעולה נפוצה בתכנות. לפני הסטנדרט C++17, תכניתנים נאלצו להשתמש ב-API של מערכת ההפעלה או ספריות צד שלישי כמו Boost.Filesystem. הסטנדרט C++17 הציג את ספריית `<filesystem>`, שמפשטת את ביצוע משימות נפוצות כאלו. אלטרנטיבות ל `<filesystem>` עדיין קיימות ויכולות לכלול שימוש ב-funcitons כמו `stat()` ב-Unix או `GetFileAttributes()` ב-Windows.
 
-אפשרות אחרת היא השימוש ב- boost::filesystem. שימוש ב- boost::filesystem::exists מספקת דרך נוחה ונוחה לבדוק אם ספרייה קיימת.
-
-זהות הספרייה היא בהחלט חשובה במהלך הבדיקה. זה שם הספרייה שתבדוק. אם הספרייה לא תמצא, התוכנית תחזיר שגיאה.
-
-### ראה גם:
-ליישום הפעולה שלך, אתה יכול לעיין במקורות הבאים:
-- [מדריך למתכנתים של C++](https://www.learncpp.com/)
-- [Stack Overflow: כיצד לבדוק אם הספרייה קיימת](https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi)
-- [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- [מקורות ספריית לינוקס](https://linux.die.net/man/2/stat)
+## ראו גם:
+- [std::filesystem documentation](https://en.cppreference.com/w/cpp/filesystem)
+- [Boost.Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

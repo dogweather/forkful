@@ -1,6 +1,6 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "C++: Verificando se um diretório existe"
+html_title:           "Arduino: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "C++"
 category:             "C++"
@@ -10,59 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## O Que & Por Quê?
 
-# Verificar se um Diretório Existe em C++
+Verificar se um diretório existe é simplesmente checar se um determinado caminho no sistema de arquivos aponta para um lugar que realmente está lá. Programadores fazem isso para evitar erros ao tentar acessar, ler, ou escrever em diretórios que não existem, prevenindo assim falhas e comportamentos indesejados em seus programas.
 
----
+## Como Fazer:
 
-## O que é e Porquê?
-
-Verificar se um diretório existe em C++ é uma simples condição que controla o fluxo do programa. Os programadores fazem isso para evitar erros de entrada/saída, que podem ocorrer se o diretório não existir quando o programa tenta acessá-lo.
-
----
-
-## Como fazer:
-
-O seguinte bloco de código C++ detalha como pode verificar a existência de um diretório.
+A biblioteca `filesystem` em C++ faz esse trabalho. Veja como usar:
 
 ```C++
+#include <iostream>
 #include <filesystem>
 
-bool diretório_existe(const std::string& caminho_do_diretório){
-    return std::filesystem::exists(caminho_do_diretório);
+int main() {
+    std::filesystem::path dir = "algum_diretorio/";
+
+    if (std::filesystem::exists(dir)) {
+        std::cout << "O diretório existe!" << std::endl;
+    } else {
+        std::cout << "O diretório não existe." << std::endl;
+    }
+
+    return 0;
 }
 ```
+Se o diretório `algum_diretorio/` existir, a saída será:
 
-Este código define uma função que recebe um caminho do diretório como um argumento, e depois usa a função `exists()` da biblioteca `filesystem` para verificar se o diretório existe ou não.
+```
+O diretório existe!
+```
+Caso contrário:
 
-Por exemplo, aqui está um exemplo de chamada e saída da função.
-
-```C++
-std::cout << diretório_existe("/Users/seunome") << std::endl;
+```
+O diretório não existe.
 ```
 
-Saída: `1` para diretorio existente e `0` para um diretorio não existente.
+## Aprofundamento
 
-
----
-
-## Análise Profunda
-
-Com a introdução do C++17, a biblioteca `filesystem` foi adicionada, que fornece as funções para realizar as operações de sistema de arquivos. Antes do C++17, nós precisávamos de chamadas ao sistema operacional por meio de `dirent.h` ou `sys/stat.h` em Unix/Linux ou `windows.h` em Windows.
-
-Alternativamente, frameworks como Boost ou QT fornecem suas próprias implementações multi-plataforma para verificação de existência de diretório. 
-
-Vale ressaltar que a função `exists()` retorna `false` não apenas quando o diretório não existe, mas também se ocorrer um erro enquanto acessa o caminho especificado. Portanto, pode ser necessário lidar adequadamente com as exceções ao usar esta função em um ambiente de produção.
-
----
+Antes do C++17, os programadores usavam bibliotecas de terceiros como o Boost ou sys/stat.h para essa tarefa. A introdução do módulo `filesystem` no C++17 padronizou as operações de sistema de arquivos. Além de `std::filesystem::exists`, você pode usar funções como `is_directory` para verificar especificamente por diretórios, ou `create_directory` para criar um diretório se ele não existir. Sob o capô, `exists` faz chamadas de sistema específicas para cada plataforma, como o `stat` em Unix ou `GetFileAttributes` no Windows.
 
 ## Veja Também
 
-- Biblioteca Filesystem C++ (https://en.cppreference.com/w/cpp/filesystem)
+Para mais detalhes sobre o módulo filesystem, consulte:
 
-- Funcionalidades de C++17 (https://isocpp.org/wiki/faq/cpp17-language)
+- [Documentação do std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
 
-- Documentação do Boost Filesystem Library (https://www.boost.org/doc/libs/1_76_0/libs/filesystem/doc/index.htm)
+E para entender erros comuns e exceções ao usar filesystem:
 
-- Guia QT para lidar com Arquivos e Diretórios (https://doc.qt.io/qt-5/qdir.html)
+- [Exceções no std::filesystem](https://en.cppreference.com/w/cpp/filesystem/exists#Exceptions)

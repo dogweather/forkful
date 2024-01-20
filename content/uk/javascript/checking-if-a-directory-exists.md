@@ -1,6 +1,7 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "Clojure: Перевірка наявності директорії"
+date:                  2024-01-20T14:57:35.116137-07:00
+html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Чи Існує Директорія? Робота з JavaScript
-## Що і навіщо?
-Перевірка наявності директорії - це процес дізнатися, чи існує папка на вашому комп’ютері чи сервері. Перед тим, як приступити до роботи з директорією (читання, запис і т.д.), програмісти перевіряють її наявність, щоб уникнути помилок.
+## What & Why? (Що та Чому?)
+Перевірка існування директорії дозволяє уникнути помилок перед читанням чи записом файлів. Програмісти виконують таку перевірку щоб не спричинити збої у програмі при доступі до неіснуючих папок.
 
-## Як це зробити:
-Використовуємо модуль `fs` в Node.js для перевірки наявності директорії.
+## How to: (Як це зробити:)
+Використовуйте модуль `fs` з Node.js, щоб перевірити наявність директорії:
 
 ```Javascript
 const fs = require('fs');
+const path = './path/to/directory';
 
-if (fs.existsSync('/ шлях / до / директорії')) {
-  console.log('Директорія існує.');
-} else {
-  console.log('Директорія не існує.');
+try {
+  if (fs.statSync(path).isDirectory()) {
+    console.log('Directory exists.');
+  }
+} catch (e) {
+  if (e.code === 'ENOENT') {
+    console.log('Directory does not exist.');
+  } else {
+    console.error('An error occurred:', e);
+  }
 }
 ```
-Якщо така директорія існує, цей код виведе "Директорія існує." Якщо ні - "Директорія не існує."
 
-## Поглиблено
-Історично, Node.js надавав синхронний та асинхронний методи для перевірки наявності файлу або директорії (`fs.exists` і `fs.existsSync`). Однак метод `fs.exists` застарілий, тому для асинхронної перевірки наявності директорії рекомендується використовувати `fs.stat` чи `fs.access`.
+Цей код дасть наступний вивід:
+- Якщо директорія існує: `Directory exists.`
+- Якщо директорії немає: `Directory does not exist.`
+- Якщо виникла інша помилка: `An error occurred: [Error object]`
 
-Також існують альтернативи. Наприклад, ви можете використовувати `fs.promises.stat` з ES2017 і вище, що повертає проміс, коли перевіряє наявність файлу. 
+## Deep Dive (Занурення глибше):
+Перевірка існування директорії важлива з часів Unix. На початку, програмісти вручну перевіряли файлову систему, але це неефективно. Node.js використовує асинхронне виконання для ефективності, але ми показали синхронний метод для простоти.
 
-Процес перевірки наявності директорії складається з двох шагів: спершу операційна система перевіряє, чи існує такий шлях. Якщо так, то вона перевіряє, чи цей шлях є директорією. 
+Альтернативою `fs.statSync()` є використання `fs.existsSync()`, який повертає `true` чи `false` без виключень:
 
-## Додатково
-Робота з файлами в Node.js: https://nodejs.dev/learn/the-nodejs-fs-module
+```Javascript
+const directoryExists = fs.existsSync(path);
+console.log(directoryExists ? 'Directory exists.' : 'Directory does not exist.');
+```
 
-Документація `fs` в Node.js: https://nodejs.org/api/fs.html
+Проте використання синхронних методів може сповільнити ваш додаток, якщо ви виконуєте багато операцій з файловою системою. Розгляньте асинхронні варіанти для продакшен сценаріїв.
 
-Працюємо з промісами в JavaScript: https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Using_promises
+## See Also (Дивіться також):
+- Node.js fs Docs: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- Блог про асинхронне програмування в Node.js: [https://blog.risingstack.com/mastering-async-await-in-nodejs/](https://blog.risingstack.com/mastering-async-await-in-nodejs/)

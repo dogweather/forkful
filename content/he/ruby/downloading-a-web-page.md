@@ -44,6 +44,5 @@ puts response.body
 במשך שנים, חלפו שיטות רבות להורדת האינטרנט. מספר השינויים המרכזיים הם התנהלות עם אתרי HTTPS והתלת מבנים XML/HTML של תוכן העמוד. 
 
 ## ראה גם:
-1. [הספרייה הרשמית של Ruby ה-Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
 2. [HTTParty - ספרייה של צד שלישי לשליחת בקשות HTTP בRuby](https://github.com/jnunemaker/httparty)
 3. [Open-URI - ספרייה בנויה לתוך Ruby לפתיחת URIs](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)

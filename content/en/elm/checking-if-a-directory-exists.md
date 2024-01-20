@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:56:09.311344-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,63 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# An Informal Introduction to Elm: Checking If a Directory Exists
-
 ## What & Why?
-
-Checking if a directory exists is just like peeking in your mailbox; it's checking to see whether a specific location on your system (a directory) is there or not. As coders, we do this to ensure that we're reading from or writing to a valid location, because if we don't, well...errors happen!
+Checking if a directory exists means confirming whether a specific folder path is present in the file system. Programmers do it to avoid errors when accessing, reading, or writing files.
 
 ## How to:
+Elm is a front-end web programming language, so it doesn't have direct access to the file system. However, you'd typically send a command to a backend service in JavaScript. Here's how you might structure such an interaction with Elm:
 
-Unfortunately, Elm, as a front-end focused language, does not have direct file or directory operations available. It can't interact directly with the filesystem due to the security model of the browser where Elm runs. You need to interact with a server using HTTP or through ports with JavaScript. Here's the JavaScript code to check if a directory exists:
-
-```JavaScript
-const fs = require('fs');
-
-fs.access('/your-directory-path', fs.constants.F_OK, (err) => {
-  console.log(`${err ? 'does not exist' : 'exists'}`);
-});
-```
-
-And if you absolutely want to stick to Elm, here's how you can utilize JavaScript through ports:
-
-```Elm
+```elm
 port module Main exposing (..)
 
-port checkDirectory : String -> Cmd msg
+-- Define a port to talk to JavaScript
+port checkDir : String -> Cmd msg
 
-port directoryExists : (Bool -> msg) -> Sub msg
+-- Example usage
+checkDirectory : String -> Cmd Msg
+checkDirectory dir =
+    checkDir dir
 ```
 
-In JavaScript, subscribe to `checkDirectory` and send result to `directoryExists`:
+Then, in your JavaScript:
 
-```JavaScript
-const app = Elm.Main.init();
-const fs = require('fs');
-
-app.ports.checkDirectory.subscribe(function (path) 
-{
-    fs.access(path, fs.constants.F_OK, (err) => 
-    {
-        app.ports.directoryExists.send(!err);
-    });
+```javascript
+app.ports.checkDir.subscribe(function(dir) {
+    var exists = fs.existsSync(dir); // This uses Node's 'fs' module to check the directory
+    app.ports.dirExists.send(exists);
 });
 ```
 
-If the directory exists, the `directoryExists` will be true.
+Back in Elm, handle the response:
+
+```elm
+port dirExists : (Bool -> msg) -> Sub msg
+
+type Msg = DirExists Bool
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    dirExists DirExists
+```
+
+Note: This requires setting up ports and appropriate backend handling in JavaScript.
 
 ## Deep Dive
+Elm's browser-restricted environment means it can't access the file system directly, unlike Node.js. Historically, server-side languages and Node.js have provided functionality for file system access, with browser languages relying on server APIs to manage files. Elm's strict type system doesn't natively manage side effects like I/O operations; instead, it uses ports for JavaScript interop. While Elm itself cannot check if a directory exists, using Elm with a backend service via ports allows for this functionality in web applications.
 
-Historically, understanding filesystems wasn't front-and-center for most languages. Languages like C provided this ability early on because they had system-level ambitions. JavaScript - and therefore Elm, which compiles to JavaScript - originally targeted the browser, where security concerns make direct access to the filesystem a non-starter.
+Alternatives in a Node.js environment include the `fs.existsSync` or `fs.access` methods. For Elm, consider server-side Elm with a backend like `elm-serverless` which can handle file operations more directly than client-side Elm.
 
-Even so, here are alternatives:
-  * Menial: Ask the user to submit the directory through an input field.
-  * Clever: Launch a server module (Node.js or Python, perhaps?), and ping it from your Elm app.
+Implementation-wise, once you've set up your ports, your Elm app sends messages to JavaScript which carries out the file system check. JavaScript then sends the results back to Elm. This keeps Elm's frontend code pure and free from side effects, maintaining its architecture principles.
 
-With regards to implementation, remember Elm ports are not like traditional function calls. Rather, we can think of them as subscription-based models that respond when something engaging happens.
-
-## See Also:
-
-- Learn more about Elm here: https://elm-lang.org/docs
-- Understand Elm ports: https://guide.elm-lang.org/interop/ports.html
-- Dive deeper into Node.js fs module: https://nodejs.org/api/fs.html
+## See Also
+- Elm Official Guide on Ports: https://guide.elm-lang.org/interop/ports.html
+- Node.js `fs` module documentation: https://nodejs.org/api/fs.html
+- elm-serverless for server-side Elm interactions: https://package.elm-lang.org/packages/ktonon/elm-serverless/latest/

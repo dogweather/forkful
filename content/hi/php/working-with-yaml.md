@@ -77,4 +77,3 @@ YAML, 2001 में विकसित हुआ था। यह JSON और X
 ## See Also (इसे भी देखें)
 - [YAML वेबसाइट](https://yaml.org/)
 - [PHP.net पर yaml फंक्शन्स](https://www.php.net/manual/en/book.yaml.php)
-- [PECL YAML एक्सटेंशन](https://pecl.php.net/package/yaml)

@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Lua: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:58:22.852351-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Sprawdzenie, czy dany katalog istnieje, polega na kode potwierdzenia obecności określonego katalogu w systemie plików. Programiści robią to, aby zapobiec błędom podczas pracy z plikami, takimi jak próba odczytu czy zapisu do nieistniejącego katalogu.
+## What & Why? (Co & Dlaczego?)
+Sprawdzamy, czy katalog istnieje, aby uniknąć błędów podczas próby dostępu czy też zapisu. Dzięki temu możemy też dynamicznie zarządzać strukturą katalogów w naszej aplikacji.
 
-## Jak to zrobić:
-Możesz sprawdzić, czy katalog istnieje, używając metody `directory?` z modułu `File`. Oto jak to zrobić:
+## How to: (Jak to zrobić:)
+Sprawdzanie, czy katalog istnieje w Ruby, jest proste. Oto jak:
 
 ```Ruby
-if File.directory?("/ścieżka/do/katalogu")
-  puts "Katalog istnieje."
+require 'fileutils'
+
+if Dir.exist?('/sciezka/do/twojego/katalogu')
+  puts 'Katalog istnieje!'
 else
-  puts "Katalog nie istnieje."
+  puts 'Katalog nie istnieje!'
 end
 ```
 
-Jeśli katalog istnieje, wygenerowany zostanie output:
-
+Jeśli katalog istnieje, zobaczysz:
 ```
-Katalog istnieje.
-```
-
-Jeśli katalog nie istnieje, otrzymasz:
-```
-Katalog nie istnieje.
+Katalog istnieje!
 ```
 
-## Poruszam głębiej:
-Kontrola, czy katalog istnieje, jest koniecznością od początków programowania. We wczesnych wersjach języka Ruby, alternatywą dla sprawdzenia, czy katalog istnieje, było łapanie wyjątku generowanego podczas próby odczytu lub zapisu do nieistniejącego katalogu. Konieczność ręcznego reagowania na te wyjątki, skłoniła twórców Ruby do dodania metody 'directory?'.
+W przeciwnym razie:
+```
+Katalog nie istnieje!
+```
 
-Nie ma jednej uniwersalnej metody kontroli, która będzie działać na wszystkich systemach operacyjnych. Ruby jednakowo dobrze poradzi sobie zarówno na Windowsie, jak i na Uniksie, używając właściwych do danej platformy funkcji systemowych.
+## Deep Dive (Dogłębna analiza)
+Metoda `Dir.exist?` pojawiła się w Ruby 1.9, zastępując starą metodę `File.exists?`, która też mogła sprawdzać katalogi. 
 
-## Zobacz także:
-Więcej informacji na temat modułu `File` oraz jego metod znajdziesz tutaj:
+Alternatywą jest użycie `File.directory?`, która sprawdzi, czy dana ścieżka jest katalogiem:
 
-1. [Dokumentacja Ruby - Moduł File](https://ruby-doc.org/core/File.html)
-2. [StackOverflow - Jak sprawdzić, czy katalog istnieje w Ruby](https://stackoverflow.com/questions/753918/how-to-check-if-a-directory-exists-in-ruby)
+```Ruby
+if File.directory?('/sciezka/do/twojego/katalogu')
+  puts 'To jest katalog!'
+else
+  puts 'To nie jest katalog lub nie istnieje!'
+end
+```
+
+Ruby używa biblioteki `FileUtils` dla wielu operacji na plikach i katalogach. Jest ona bogata w metody, które mogą pomóc w znacznie bardziej zaawansowanym zarządzaniu plikami.
+
+## See Also (Zobacz również)
+Dokumentacja Ruby Dir class: https://ruby-doc.org/core-3.1.2/Dir.html
+Dokumentacja Ruby FileUtils: https://ruby-doc.org/stdlib-3.1.2/libdoc/fileutils/rdoc/FileUtils.html
+Ruby API (po angielsku): https://rubyapi.org/

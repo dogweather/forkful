@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "C#: Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "C#"
 category:             "C#"
@@ -11,35 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att kontrollera om en katalog finns innebär att vi kollar om en specifik mapp finns på disken. Programmerare gör detta för att undvika fel, såsom `DirectoryNotFoundException`, och för att kunna skapa eller använda mappen om den faktiskt finns.
 
-Att kontrollera om en katalog existerar i programmering innebär att verifiera att en filväg leder till en fysiskt närvarande mapp på en enhet. Programmerare gör detta för att undvika fel och undantag som uppstår när man försöker att läsa från, skriva till, eller interagera med en icke-existerande katalog.
-
-## Hur man gör:
-
-C# ger oss en elegant och robust metod `Directory.Exists` för att verifiera existensen av en katalog. Kodexemplet nedan visar hur man använder den.
-
+## Hur gör man:
 ```C#
+using System;
 using System.IO;
 
-string path = @"C:\example\directory\path";
+class DirectoryCheck
+{
+    static void Main()
+    {
+        string path = @"C:\min_katalog";
 
-if (Directory.Exists(path))
-{
-    System.Console.WriteLine("Directory exists.");
-}
-else
-{
-    System.Console.WriteLine("Directory does not exist.");
+        // Kontrollera om katalogen finns
+        if (Directory.Exists(path))
+        {
+            Console.WriteLine("Katalogen finns!");
+        }
+        else
+        {
+            Console.WriteLine("Katalogen finns inte.");
+        }
+    }
 }
 ```
 
-Produktionen av denna kod kommer att vara antingen "Directory exists." eller "Directory does not exist." beroende på status för `'path'`.
+Sample Output:
+```
+Katalogen finns inte.
+```
 
-## Fördjupning:
+Om katalogen finns, byt uttrycket "Katalogen finns inte." med "Katalogen finns!".
 
-`Directory.Exists` i C#, introducerades med .NET Framework 1.1. Alternativen till `Directory.Exists` inkluderar att hantera undantag som uppstår när man interagerar med en icke-existerande katalog, men detta är ingen bra praxis och undvikt bäst. `Directory.Exists` har intern implementering med hjälp av Win32 API-funktionen `GetFileAttributesW` för att säkerställa snabb och effektiv verifikation av katalognärvaro.
+## Fördjupning
+Att kontrollera katalogers existens är grundläggande i filsystemshanteringen och har varit en del av programmering sedan de tidiga dagarna av persondatorer. I äldre system var sådana kontroller till och med mer kritiska på grund av begränsade användargränssnitt och feedback-mekanismer.
 
-## Se även:
+Alternativ till `Directory.Exists` kan inkludera att fånga undantag som `DirectoryNotFoundException` när man försöker accessera en katalog, men detta betraktas generellt som en sämre praxis eftersom det är dyrare prestandamässigt.
 
-1. Microsoft officiella dokumentation om Directory.Exists: [https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-2. Diskussionsforum för C#-utvecklare, där liknande ämnen diskuteras: [https://stackoverflow.com/questions/tagged/c%23](https://stackoverflow.com/questions/tagged/c%23)
+Implementeringsdetaljer i .NET Framework och .NET Core använder systemanrop för att avgöra filsystemsstatus. Detta betyder att `Directory.Exists` faktiskt ber systemet om informationen, vilket kan variera beroende på operativsystemet och dess filsystem.
+
+## Se även
+- Microsofts dokumentation för `Directory.Exists`: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
+- Artikel om hantering av filer och kataloger i .NET: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-enumerate-directories-and-files

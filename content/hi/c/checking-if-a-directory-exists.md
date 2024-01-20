@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं, कैसे जाँचें"
-html_title:           "C: डायरेक्टरी मौजूद है या नहीं, कैसे जाँचें"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं, कैसे जाँचें"
+title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+html_title:           "Arduino: यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,56 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+जांचना कि एक डायरेक्टरी मौजूद है या नहीं वह प्रक्रिया है जिससे हम C प्रोग्राम में फाइल सिस्टम का पता लगाते हैं। यह जानकारी का अधिग्रहण करना आवश्यक है ताकि प्रोग्राम कोई त्रुटि न करे जब वह डायरेक्टरी तक पहुंचने या उसमें लिखने की कोशिश करे।
 
-डायरेक्टरी की मौजूदगी की जांच यह सत्यापित करने की प्रक्रिया है कि एक कंप्यूटर की फाइल सिस्टम में निर्दिष्ट डायरेक्टरी मौजूद है या नहीं। प्रोग्रामर्स इसे करते हैं ताकि उन्हें ऐसा कोई ऑपरेशन न करें जो किसी अदृश्य डायरेक्टरी पर निर्भर करता हो।
-
-## कैसे करें:
-
-निम्नलिखित कोड इसे करने का एक तरीका दिखाता है:
-
+## How to: (कैसे करें:)
 ```C
+#include <stdio.h>
 #include <sys/stat.h>
-#include <stdbool.h>
 
-bool is_dir_exists(const char *path)
-{
-   struct stat stats;
-   stat(path, &stats);
-   return S_ISDIR(stats.st_mode);
+int directory_exists(const char *path) {
+    struct stat statbuf;
+    if (stat(path, &statbuf) != 0) {
+        return 0; // डायरेक्टरी मौजूद नहीं है
+    }
+    return S_ISDIR(statbuf.st_mode); // यह जांचता है कि यह डायरेक्टरी है या नहीं
 }
 
-int main()
-{
-   const char* path = "/path/to/directory";
-   if (is_dir_exists(path))
-   {
-      printf("%s directory exists\n", path);
-   }
-   else
-   {
-      printf("%s directory does not exist\n", path);
-   }
-   return 0;
+int main() {
+    const char *path = "/path/to/directory";
+    if (directory_exists(path)) {
+        printf("डायरेक्टरी '%s' मौजूद है.\n", path);
+    } else {
+        printf("डायरेक्टरी '%s' मौजूद नहीं है.\n", path);
+    }
+    return 0;
 }
 ```
+सैंपल आउटपुट:
 
-इस कोड का आउटपुट इस प्रकार होगा:
+`डायरेक्टरी '/path/to/directory' मौजूद है.`
 
-```
-/path/to/directory directory exists
-```
 या
 
-```
-/path/to/directory directory does not exist
-```
+`डायरेक्टरी '/path/to/directory' मौजूद नहीं है.`
 
-## गहराई में जानकारी:
+## Deep Dive (गहराई में जानकारी)
+पारंपरिक C भाषा में `stat()` फ़ंक्शन का इस्तेमाल करके हम फ़ाइल सिस्टम में ऑब्जेक्ट्स की जानकारी ले सकते हैं। `stat` संरचना में `st_mode` फील्ड होता है जो फाइल-प्रकार और परमिशन्स के बारे में सूचना देता है। `S_ISDIR` मैक्रो यह जांचता है कि क्या यह डायरेक्टरी है। 
 
-डायरेक्टरी की मौजूदगी की जांच का एक और तरीका है POSIX `access()` फ़ंक्शन का उपयोग करना। `access()` फ़ंक्शन एक आवेदनकर्ता की पहचान के आधार पर एक फ़ाइल या डायरेक्टरी के पाठ्य पहुंच की जांच करता है। हालाँकि, इसे कड़ाई से उपयोग करें क्योंकि यह स्थिति को अपने "जांचने और उपयोग करने" के बीच में बदलने की संभावना को नहीं रोकता है।
+इसके विकल्प के रूप में POSIX स्टैंडर्ड `opendir()` और `readdir()` फ़ंक्शन्स भी हैं, लेकिन `stat()` अधिक सीधा और आम तरीका है।
 
-## आगे देखें:
+पीछे की तकनीकी प्रक्रियाओं में, सिस्टम OS केर्नेल फाइल सिस्टम टेबल्स की जांच करता है और आवश्यक जानकारी लौटाता है। 
 
-1. [GNU C Library: File System Interface](https://www.gnu.org/software/libc/manual/html_node/File-System-Interface.html)
-2. [Stack Overflow: How to check if a directory exists in C?](https://stackoverflow.com/questions/12510874/how-can-i-check-if-a-directory-exists)
+## See Also (संबंधित सूत्रों)
+- `man 2 stat` – `stat()` फ़ंक्शन के लिए UNIX मैनुअल पेज।
+- `man opendir` – डायरेक्टरी स्ट्रीम के लिए POSIX आधारित फ़ंक्शन को देखने के लिए।
+- [GNU C Library: File Attributes](https://www.gnu.org/software/libc/manual/html_node/File-Attributes.html) – GNU C Library में फ़ाइल विशेषताओं के बारे में अधिक जानकारी।

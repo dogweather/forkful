@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Go: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:56:40.202417-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,45 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tarkistetaanko Hakemisto Olemassa?
+## What & Why? (Mitä ja Miksi?)
+Tarkistamme, onko kansio olemassa, koska tiedämme, ettei mielenkiintoisia asioita voi tehdä olemattomilla kansioilla. Se on peruskysely, jonka avulla vältetään virheitä, kun käsittelemme tiedostoja ja kansioita.
 
-## Mikä & Miksi?
-Hakemiston olemassaolon tarkistaminen on menettely, jossa ohjelmisto varmistaa, onko tietyllä polulla hakemisto. Tämä on tärkeää, koska virheelliset polut voivat aiheuttaa ohjelman epäonnistumisen.
-
-## Kuinka tehdä:
-Go:n os-paketti tarjoaa funktiot hakemistojen ja tiedostojen hallintaan. Tässä on esimerkki siitä, miten tarkistaa, onko hakemisto olemassa.
-
+## How to: (Kuinka tehdä:)
 ```Go
 package main
+
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    dirPath := "/path/to/dir"
-    _, err := os.Stat(dirPath)
+	directory := "/path/to/directory"
 
-    if os.IsNotExist(err) {
-        fmt.Printf("Hakemisto %v ei ole olemassa.\n", dirPath)
-    } else {
-        fmt.Printf("Hakemisto %v on olemassa.\n", dirPath)
-    }
+	if _, err := os.Stat(directory); os.IsNotExist(err) {
+		fmt.Printf("Kansiota ei löydy: %s\n", directory)
+	} else {
+		fmt.Printf("Kansio löytyy: %s\n", directory)
+	}
 }
 ```
+**Esimerkkitulostus:**
+```
+Kansiota ei löydy: /path/to/directory
+```
+Tai jos kansio on olemassa:
+```
+Kansio löytyy: /path/to/directory
+```
 
-Jos hakemistoa ei ole, tuloste on "Hakemisto /path/to/dir ei ole olemassa.". Muussa tapauksessa ohjelma tulostaa "Hakemisto /path/to/dir on olemassa.".
+## Deep Dive (Syväsukellus)
+Ennen `os.Stat` funktiota, ohjelmoijien piti selvitä kansion olemassaolo käsin avaten kansioita ja tarkistamalla virheitä. `os.Stat` ja `os.IsNotExist` ovat nyt standarditavat Go:ssa tehdä tämä tarkistus. Ne ovat olleet osa Go:ta sen varhaisten versioiden lähtien, ja ne hoitavat eri alustoilla toimimisen. Vaihtoehtoina `os.Stat` funktiolle voidaan käyttää kolmansien osapuolien kirjastoja, kuten `github.com/pkg/errors`, jotka tarjoavat lisäominaisuuksia virheenkäsittelyyn, mutta useimmissa tapauksissa Go:n vakio-kirjastot riittävät ja ovat tehokkaita.
 
-## Deep Dive:
-Historiallisesti tiedostojärjestelmien kanssa työskentely merkitsi matalan tason tiedostojärjestelmäkutsuja. Mutta Go tarjoaa abstraktin 'os' -paketin, joka tekee monimutkaisista toiminnoista yksinkertaisia.
-
-Vaihtoehtoisesti voit käyttää ioutil-paketin ReadDir-metodia, mutta os.Stat on yleensä parempi valinta, koska se ei lue koko hakemiston sisältöä, mikä tekee siitä tehokkaamman suurille hakemistoille.
-
-Hakemiston olemassaolon tarkistuskoodi käyttää Go:n error-tyyppiä. Virhe palautetaan, jos ei voida selvittää, onko hakemistoa olemassa, yleensä koska hakemistonlukija ei kykene käyttämään tiedostojärjestelmän rajapintaa.
-
-## Katso Myös:
-Lisätietoa saat alla olevista linkeistä:
-
-- Golang os paketti: https://pkg.go.dev/os
-- Virheenkäsittely Go:ssa: https://blog.golang.org/error-handling-and-go
-- Tiedostojärjestelmien kanssa työskentely Go:ssa: https://flaviocopes.com/golang-list-directory-files/
+## See Also (Katso Myös)
+- Go:n virallinen dokumentaatio `os.Stat`: https://golang.org/pkg/os/#Stat
+- Go:n virallinen dokumentaatio virheiden käsittelyyn: https://golang.org/doc/effective_go.html#errors
+- Go by Example, kansiotiedot: https://gobyexample.com/directories

@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Lua: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:58:39.903064-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,43 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+In Swift zu überprüfen, ob ein Verzeichnis existiert, bedeutet, sicherzustellen, dass ein bestimmter Pfad auf eine echte Position im Dateisystem verweist. Programmierer machen das, um Fehler zu vermeiden, die auftreten, wenn sie versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen oder darin zu arbeiten.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein grundlegendes Verfahren, mit dem wir feststellen, ob ein bestimmter Speicherort in unserer Dateistruktur vorhanden ist. Programmierer machen dies um sicherzustellen, dass sie keine Daten lesen oder schreiben, wo es nicht zulässig oder möglich ist.
-
-## Wie macht man das:
-
-In Swift können Sie mit dem FileManager checken, ob ein Verzeichnis existiert. Hier ist ein einfaches Beispiel:
+## Wie geht das?
+Swift bietet das `FileManager`-Objekt, um mit dem Dateisystem zu arbeiten. Um zu überprüfen, ob ein Verzeichnis existiert, nutzt du die `fileExists(atPath:)`-Methode. Hier ist ein einfaches Beispiel:
 
 ```Swift
 import Foundation
 
 let fileManager = FileManager.default
-let directoryPath = "/Users/username/Documents/Test"
+let path = "/Pfad/zum/Verzeichnis"
 
-var isDirectory: ObjCBool = false
-if fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        // Verzeichnis existiert
-        print("\(directoryPath) existiert.")
-    } else {
-        // Datei existiert, aber kein Verzeichnis
-        print("\(directoryPath) ist eine Datei.")
-    }
+if fileManager.fileExists(atPath: path) {
+    print("Das Verzeichnis existiert.")
 } else {
-    // Verzeichnis existiert nicht
-    print("\(directoryPath) existiert nicht.")
+    print("Das Verzeichnis existiert nicht.")
 }
 ```
 
-## Vertiefung:
+Ausgabe könnte sein:
+```
+Das Verzeichnis existiert.
+```
+oder
+```
+Das Verzeichnis existiert nicht.
+```
 
-Historisch gesehen ermöglichen fast alle Betriebssysteme und Programmiersprachen die Überprüfung, ob ein Verzeichnis existiert, jedoch auf unterschiedliche Weisen. Bei Python beispielsweise, benutzt man `os.path.isdir()` und bei Java setzt man `Files.isDirectory()` ein.
+## Tiefgang
+Historisch gesehen haben Programmiersprachen oft Funktionen zur Dateisystem-Manipulation bereitgestellt. In Swift erledigt das `FileManager`‑Objekt diese Aufgabe. Es gibt Alternativen, wie die Verwendung von `attributesOfItem(atPath:)`, was aber mehr Informationen zurückgibt und für einfaches Existenz-Checken überdimensioniert ist.
 
-Eine Alternative zur Verwendung des `fileExists(atPath:isDirectory:)` von Swift besteht darin, das `FileAttributeType`-Attribut des Verzeichnisses zu überprüfen. Wenn dieses Attribut auf `NSFileTypeDirectory` eingestellt ist, bedeutet das, es handelt sich um ein Verzeichnis.
+Beim Implementieren ist zu beachten, dass die `fileExists(atPath:)`-Methode nicht zwischen Dateien und Verzeichnissen unterscheidet. Wenn du ausschließlich nach einem Verzeichnis suchen möchtest, kannst du den `isDirectory`-Parameter so verwenden:
 
-Trotzdem hat `fileExists(atPath:isDirectory:)` Vorteile: es ist direkt und simpel und das 'Bool' Argument akzeptiert eine Variable, die dann die Information beinhaltet, ob es ein Directory ist.
+```Swift
+var isDir: ObjCBool = false
+if fileManager.fileExists(atPath: path, isDirectory: &isDir), isDir.boolValue {
+    print("Es ist ein Verzeichnis.")
+} else {
+    print("Es ist keine Verzeichnis oder es existiert nicht.")
+}
+```
 
-## Weitere Informationen:
-
-- Swift Documentation: [FileManager.fileExists(atPath:isDirectory:)](https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists)
-- StackOverflow: [How to check if a file or directory exists](https://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file)
+## Siehe auch
+- [FileManager Class Reference](https://developer.apple.com/documentation/foundation/filemanager)
+- [Working with Directories in Swift on iOS](https://www.raywenderlich.com/660-using-the-filemanager-to-work-with-files-in-ios)
+- [Swift Documentation](https://swift.org/documentation/)

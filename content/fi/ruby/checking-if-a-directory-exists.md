@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Javascript: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:58:11.792989-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mikä ja miksi?
+Tarkistetaan, onko hakemisto olemassa, jotta vältetään virheet tiedostoihin kirjoitettaessa tai hakemistosta luettaessa. Tämä vahvistaa koodin luotettavuutta, koska varmistetaan, että operoitava kohde on olemassa.
 
-Hakemiston olemassaolon tarkistaminen tarkoittaa sitä, että ohjelmoija tarkastaa, onko tietty hakemisto jo olemassa tiedostojärjestelmässä. Tätä tehdään hakemiston kahden kertaisen luomisen välttämiseksi ja virheiden ehkäisemiseksi.
-
-## Kuinka:
-
-Rubyssa voit tarkistaa, onko hakemisto olemassa, käyttämällä Dir.exist? -metodia. 
-
+## Kuinka toimia:
 ```Ruby
-if Dir.exist?('/polku/hakemisto')
+require 'fileutils'
+
+# Tarkista, onko hakemisto olemassa
+if Dir.exist?('/polku/hakemistoon')
   puts "Hakemisto on olemassa."
 else
-  puts "Hakemisto ei ole olemassa."
+  puts "Hakemisto ei ole olemassa, luodaan..."
+  FileUtils.mkdir_p('/polku/hakemistoon')
 end
 ```
-Tämän koodinpätkän tuloste olisi:
-
+Jos hakemisto on olemassa:
 ```
 Hakemisto on olemassa.
 ```
-tai
-
+Jos hakemistoa ei ole:
 ```
-Hakemisto ei ole olemassa.
+Hakemisto ei ole olemassa, luodaan...
 ```
-riippuen siitä, onko hakemisto “/polku/hakemisto” olemassa.
 
-## Syvempi tarkastelu:
+## Syväsukellus:
+Ruby on perinteisesti käyttänyt `File`- ja `Dir`-luokkia tiedostojen ja hakemistojen käsittelyssä. `Dir.exist?` on suora tapa tarkistaa hakemiston olemassaolo, kun taas `File.directory?` on vanhempi, vaihtoehtoinen metodi. Koodin selkeyden vuoksi suositellaan käyttämään `Dir.exist?` kun kyse on nimenomaan hakemistoista. Raaka polkujen käsittely voi aiheuttaa ongelmia eri käyttöjärjestelmien välillä, mutta Ruby pyrkii piilottamaan nämä yksityiskohdat abstraktion tasolla.
 
-Dir.exist? -metodi on ollut olemassa jo pitkään ja on Rubyn standardikirjaston osa. Se on suoraviivainen ja helppo tapa tarkistaa, onko hakemisto olemassa.
-
-Vaihtoehtoisesti voit käyttää File.directory? -metodia, mutta se ei paljasta, onko tiedostopolku olemassa, vaan sen, onko kyseinen polku hakemisto.
-
-Historiallisesti Rubyssa oli tapana käydä läpi tiedostojärjestelmä hakemistojen löytämiseksi. Moderni Ruby mahdollistaa hakemistojen olemassaolon tarkistamisen suoraviivaisella ja intuitiivisella tavalla.
-
-## Lisätietoja:
-
-- Ruby-doc.org | Dir.exist? metodi: [Linkki](https://ruby-doc.org/core-2.6.5/Dir.html#method-c-exist-3F)
-- Ruby-doc.org | File.directory? metodi: [Linkki](https://ruby-doc.org/core-2.6.5/File.html#method-c-directory-3F)
+## Katso myös:
+- Ruby FileUtils moduuli: https://ruby-doc.org/stdlib-2.5.1/libdoc/fileutils/rdoc/FileUtils.html
+- Ruby Dir luokka: https://ruby-doc.org/core-2.5.1/Dir.html
+- Ruby File luokka: https://ruby-doc.org/core-2.5.1/File.html

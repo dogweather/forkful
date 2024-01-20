@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Kotlin: Verificando se um diretório existe"
+date:                  2024-01-20T14:59:04.110037-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,55 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Verificando se um diretório existe em TypeScript
+## O Que & Por Que?
+Verificar a existência de um diretório é checar se uma pasta específica está presente no sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em diretórios que não existem.
 
-## O quê e por quê?
+## Como Fazer:
+Usaremos o módulo `fs` do Node.js para verificar se um diretório existe. `fs.existsSync` retorna um booleano e `fs.promises.access` trabalha com promessas para operações assíncronas.
 
-Em programação, "verificar se um diretório existe" é o ato de verificar a existência de um diretório específico dentro do sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar ou manipular um diretório que pode não existir.
-
-## Como fazer:
-
-Vamos usar a biblioteca **fs** do Node.js para verificar a existência de um diretório. Aqui está o código em TypeScript:
-
-```TypeScript
+```typescript
 import * as fs from 'fs';
 
-let diretorio: string = '/caminho/para/o/diretório';
+// Método síncrono
+const directoryExistsSync = (path: string): boolean => {
+  return fs.existsSync(path);
+}
 
-fs.access(diretorio, fs.constants.F_OK, (err) => {
-    if (err) {
-        console.error(`${diretorio} não existe`);
-    } else {
-        console.log(`${diretorio} existe`);
-    }
+console.log(directoryExistsSync('./minhaPasta')); // Saída: true ou false
+
+// Método assíncrono com promessas
+const directoryExistsAsync = async (path: string): Promise<boolean> => {
+  try {
+    await fs.promises.access(path, fs.constants.F_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+directoryExistsAsync('./minhaPasta').then(exists => {
+  console.log(exists); // Saída: true ou false
 });
 ```
 
-O código acima verificará se o diretório especificado existe e imprimirá a mensagem apropriada.
+## Aprofundando o Conhecimento:
+Historicamente, o módulo `fs` não tinha suporte para promessas, e as funções assíncronas utilizavam callbacks. Com a evolução do Node.js, foi introduzido `fs.promises` que permitiu o uso de `async/await`. Alternativamente, pode-se usar a função `fs.stat` ou `fs.access`, mas cuidado com potenciais problemas de race condition - quando o estado do arquivo muda entre a checagem e a operação subsequente. É importante entender a diferença entre métodos síncronos (bloqueantes) e assíncronos (não bloqueantes) para decidir qual é o melhor para a sua aplicação.
 
-## Mergulho profundo:
-
-Historicamente, podemos usar o método `fs.exists()` para verificar a existência de um diretório. No entanto, `fs.exists()` foi depreciado desde Node.js v4.0.0 devido à maneira desajeitada de lidar com erros e recomenda-se a utilização do método `fs.access()`.
-
-Alternativamente, podemos usar o método síncrono `fs.existsSync()`:
-
-```TypeScript
-import * as fs from 'fs';
-
-let diretorio: string = '/caminho/para/o/diretório';
-
-if (fs.existsSync(diretorio)) {
-    console.log(`${diretorio} existe`);
-} else {
-    console.error(`${diretorio} não existe`);
-}
-```
-
-Observação importante: conveniente por ser síncrono, o `fs.existsSync()` pode bloquear o thread principal se o diretório estiver em um sistema de arquivos lento, causando potenciais problemas de desempenho.
-
-## Veja também:
-
-Para uma compreensão mais profunda dos métodos do sistema de arquivos e da programação de Node.js, você pode consulte esses recursos:
-
-1. Documentação oficial do Node.js: [File System](https://nodejs.org/api/fs.html)
-2. Guia de Início Rápido do TypeScript: [TypeScript em 5 minutos](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+## Veja Também:
+- Documentação Node.js `fs`: https://nodejs.org/api/fs.html
+- Artigo sobre problemas de race conditions no SO: https://stackoverflow.com/questions/2739376/example-of-race-condition
+- Blog sobre callbacks, promises e async/await: https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/

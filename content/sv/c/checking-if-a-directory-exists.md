@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "C: Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "C"
 category:             "C"
@@ -10,57 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att kolla om en katalog finns är att verifiera att en specifik mapp existerar i ett filsystem. Programmerare gör detta för att undvika felmeddelanden och undantag vid försök att interagera med en icke-existerande katalog.
+## What & Why? (Vad & Varför?)
+Att kontrollera om en katalog finns är processen att säkerställa att en specifik mapp finns på filsystemet. Programmerare gör detta för att undvika fel när de till exempel ska läsa från eller skriva till filer i katalogen.
 
-## Så här gör du:
-Här är en kodsnutt som visar hur du kan kontrollera om en katalog existerar med hjälp av `stat` funktionen i C.
+## How to (Hur man gör)
+Använd `stat()` från `sys/stat.h` för att kontrollera kataloger.
 
 ```C
 #include <sys/stat.h>
 #include <stdio.h>
 
 int main() {
-    struct stat st = {0};
+    struct stat statbuf;
+    char *dirPath = "/path/to/directory";
 
-    if (stat("/äsöme/directory", &st) == -1) {
-        printf("Katalog existerar inte.\n");
+    // Kontrollera om katalogen finns
+    if (stat(dirPath, &statbuf) == 0 && S_ISDIR(statbuf.st_mode)) {
+        printf("Katalogen finns.\n");
     } else {
-        printf("Katalog existerar.\n");
+        printf("Katalogen finns inte.\n");
     }
 
     return 0;
 }
 ```
-Om katalogen inte finns, skriver koden ut "Katalog existerar inte." Om den finns, skriver den ut "Katalog existerar."
 
-## Djupdykning
-Att kolla om en katalog finns är inget nytt. Det har varit en del av Unix-baserade system ända sedan 70-talet när `stat` funktionen introducerades. Ett alternativ till `stat` är funktionen `access`, men `stat` är att föredra på grund av dess förmåga att ge mer detaljerad information om filen/katalogen.
-
-När det kommer till implementationen, ju mer exakt vi vill vara, desto mer komplicerade blir koden. Till exempel, för att verifiera att sökvägen faktiskt leder till en katalog och inte en fil, behöver vi använda `S_ISDIR(st.st_mode)` funktionen.
- 
-```C
-#include <sys/stat.h>
-#include <stdio.h>
-
-int main() {
-    struct stat st = {0};
-
-    if (stat("/ämazing/directory", &st) != -1) {
-        if (S_ISDIR(st.st_mode)) {
-            printf("Katalog existerar.\n");
-        } else {
-            printf("Det är en fil, inte en katalog.\n");
-        }
-    } else {
-        printf("Sökvägen existerar inte.\n");
-    }
-
-    return 0;
-}
+Sample output för en existerande katalog:
 ```
-## Se även
-För mer information, se följande länkar:
-- Man sidan för `stat`: http://man7.org/linux/man-pages/man2/stat.2.html
-- C Library-funktioner: https://www.gnu.org/software/libc/manual/html_node/Testing-File-Type.html
-- Diskutera och förstå `stat` och `struct stat`i detalj: https://stackoverflow.com/questions/4553012/checking-if-a-file-is-a-directory-or-just-a-file
+Katalogen finns.
+```
+
+Sample output för en icke-existerande katalog:
+```
+Katalogen finns inte.
+```
+
+## Deep Dive (Djupdykning)
+Funktionen `stat()` har en lång historia i Unix-baserade system, där den infördes för att hämta filstatus. I C gör `stat()` samma sak: den hämtar filattribut för den angivna sökvägen. 
+
+Alternativa metoder:
+- `opendir()` från `dirent.h` kan också användas men öppnar katalogen istället för att endast kontrollera dess existens.
+- `access()` med `F_OK` kan kontrollera tillgängligheten av filen/katalogen, men den ger inte detaljerad information om det är en fil eller katalog.
+  
+Implementation:
+- `stat()` fyller `stat`-strukturen med information om filen/katalogen. `st_mode` innehåller filtypen och rättigheterna.
+- Makrot `S_ISDIR()` används för att kontrollera om `st_mode` indikerar en katalog.
+- En nolla returneras vid framgång och `-1` vid fel. Använd `errno` för att få mer specifik felinformation.
+
+## See Also (Se även)
+- POSIX `stat` manpage: http://man7.org/linux/man-pages/man2/stat.2.html
+- GNU C Library: https://www.gnu.org/software/libc/manual/
+- Stack Overflow – Common C file operations: https://stackoverflow.com/questions/tagged/c+file
+- `opendir()` dokumentation: https://linux.die.net/man/3/opendir
+- `access()` system call: https://www.man7.org/linux/man-pages/man2/access.2.html

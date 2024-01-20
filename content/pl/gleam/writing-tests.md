@@ -41,5 +41,4 @@ Uruchom testy komendą `rebar3 eunit`.
 Pierwsze frameworki do testowania pojawiły się lata temu, ułatwiając życie programistom. W Gleamie, podobnie jak w wielu językach Erlanga VM, popularne jest używanie EUnit. Alternatywą jest często Common Test dla bardziej złożonych przypadków. Detale implementacyjne? Gleam korzysta z asercji z modułu `gleam/should`, łatwo weryfikując poprawność kodu.
 
 ## Zobacz też
-- [Erlang EUnit](http://erlang.org/doc/apps/eunit/chapter.html)
 - [Common Test for Erlang](http://erlang.org/doc/apps/common_test/basics_chapter.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "Go: Перевірка наявності директорії"
+date:                  2024-01-20T14:58:56.478251-07:00
+html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,46 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-
-Перевірка наявності каталогу - це процес визначення, чи існує певний каталог у файловій системі. Програмісти це роблять, щоб запобігти помилкам при спробі читання або запису в неіснуючий каталог.
+## Що це таке & Навіщо?
+Перевірка наявності директорії – це процес визначення, чи існує певний каталог у файловій системі. Програмісти роблять це, щоб уникнути помилок при спробі доступу або модифікації файлів в неіснуючій папці.
 
 ## Як це зробити:
+Swift надає клас `FileManager` для роботи з файловою системою. Ось як перевірити існування директорії:
 
-В Swift можна використовувати клас FileManager для цієї задачі. Ось приклад коду:
+```swift
+import Foundation
 
-```Swift
 let fileManager = FileManager.default
+let path = "/path/to/directory"
 
-if let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
-    let path = documentsDirectory.appendingPathComponent("MyDirectory")
-    
-    var isDir : ObjCBool = false
-    if fileManager.fileExists(atPath: path.path, isDirectory:&isDir) {
-        if isDir.boolValue {
-            // Directory exists
-            print("Каталог існує")
-        } else {
-            print("Це не каталог")
-        }
-    } else {
-        print("Каталогу не існує")
-    }
+if fileManager.fileExists(atPath: path, isDirectory: UnsafeMutablePointer<ObjCBool>.allocate(capacity: 1)) {
+    print("Директорія існує.")
+} else {
+    print("Директорії не існує.")
 }
 ```
 
-## Поглиблений занурення:
+## Поглиблений огляд:
+Перевірка наявності папок у Swift використовує `FileManager`, унаслідуваний від попередніх Apple API, таких як NeXTSTEP та Cocoa. Інші мови мають свої інструменти, наприклад, `os.path.exists()` у Python. Попри те, що попередні версії Swift могли вимагати більш складних методів для перевірки існування папок, зараз `FileManager` є стандартним та ефективним рішенням. Також варто зауважити, що `fileExists(atPath:)` може бути використаний для файлів та силок на них, тому перевірка чи об'єкт є директорією важлива.
 
-1. **Історичний контекст.** З часів Unix існують різні методи перевірки існування каталогу, більшість з яких включають використання системного виклику stat або його варіантів.
-2. **Альтернативи.** Є переваги над легковаговими методами, такими як використання команди 'ls' через запуск процесу Shell, але вони непортабельні і потенційно дозволяють вразливості оболонки.
-3. **Деталі реалізації.** `fileExists(atPath:isDirectory:)` використовує системний виклик stat за лаштунками. Якщо ви зрозумієте деталі цього, то буде легше зрозуміти, як це працює.
-
-## Дивіться також:
-
-Пов'язані джерела включають:
-
-- Офіційну документацію Apple по FileManager:
-  [Документація FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-
-- Stackoverflow про обробку помилок під час роботи з файлами та каталогами: 
-  [Обробка помилок функції FileManager](https://stackoverflow.com/questions/24355866/how-to-catch-exception-thrown-by-nsfilemanager-defaultmanager-contents-of-dire)
+## Ознайомтеся також:
+- [Apple Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [NSHipster article on File System Operations in Swift](https://nshipster.com/filemanager/)
+- [Ray Wenderlich's guide to working with files in iOS](https://www.raywenderlich.com/1918-beginning-ios-file-system-programming-in-swift)

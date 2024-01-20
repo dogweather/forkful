@@ -1,7 +1,8 @@
 ---
-title:                "ディレクトリが存在するかどうかを確認する"
-html_title:           "Haskell: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:56:52.424504-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,26 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-ディレクトリ存在確認は、あるディレクトリが存在するか否かをチェックするプロセスのことを指します。これはプログラマーが不必要なエラーを防ぎ、効率的にディレクトリへの読み書き操作を行うために行います。
+## What & Why? (何となぜ？)
+ディレクトリが存在するか確認することは、ファイルシステムに対するクエリです。プログラムがリソースを効率的に処理し、エラーを防ぐために行います。
 
-## 方法：
-Haskellでは、System.Directory モジュール内の doesDirectoryExist 関数を使用します。以下はその使用例です。
+## How to: (方法)
+Haskellでは、ディレクトリが存在するかどうかを確認するには`System.Directory`モジュールを使用します。
 
 ```Haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
 
+main :: IO ()
 main = do
-    isDir <- doesDirectoryExist "/your/directory/path"
-    if isDir
-      then putStrLn "Directory exists"
-      else putStrLn "Directory does not exist"
+  let dirPath = "some/directory/path"
+  directoryExists <- doesDirectoryExist dirPath
+  putStrLn $ "Directory exists: " ++ show directoryExists
 ```
-これを実行すると、指定したパスがディレクトリとして存在する場合は "Directory exists"、存在しない場合は "Directory does not exist" と出力されます。
 
-## 深い掘り下げ
-歴史的な背景としては、この関数は GHC 6.4 から利用可能で、その後 Haskell の標準ライブラリに組み込まれています。代替手段としては、手元にST Monadを使用してこの処理を自作することも可能ですが、既に標準ライブラリに存在する関数を使用した方がコードは簡潔になります。実装については、この関数は裏側でOSのシステムコールを呼び出してディレクトリの存在を確認しています。
+実行結果は存在する場合に`True`、存在しない場合に`False`を出力します。
 
-## 参考文献：
-* System.Directory モジュール公式ドキュメンテーション: [http://hackage.haskell.org/package/directory](http://hackage.haskell.org/package/directory)
-* HaskellのST Monadについて: [https://wiki.haskell.org/State_Monad](https://wiki.haskell.org/State_Monad)
+```
+Directory exists: True
+```
+または
+```
+Directory exists: False
+```
+
+## Deep Dive (詳細解説)
+`doesDirectoryExist`関数はIOモナド内で動作し、I/O操作の一部としてディレクトリの存在を確認します。この関数は、POSIX系システムでの過去の実装方法や、Windows APIの呼び出しに基づいています。代替手段として、直接ファイルパスにアクセスしてエラーキャッチを行う手法もありますが、`doesDirectoryExist`はより安全で簡潔です。なお、並列性やキャッシュの影響で、結果は100%の確実性を保証するものではありません。
+
+## See Also (関連情報)
+- [`System.Directory` モジュールのドキュメント](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+- [`FilePath` ライブラリについての情報](https://hackage.haskell.org/package/filepath)
+- [Haskell IOに関するチュートリアル](http://learnyouahaskell.com/input-and-output)

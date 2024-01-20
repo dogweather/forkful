@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Lua: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:58:45.979575-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,65 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Sprawdzanie istnienia katalogu to potwierdzenie, czy ścieżka prowadzi do realnego folderu. Programiści robią to, aby uniknąć błędów przy próbie dostępu lub zapisu do nieistniejącego katalogu.
 
-Sprawdzenie, czy dany katalog istnieje, to podstawowe działanie, które sprawdza, czy dany katalog rzeczywiście istnieje w systemie plików. Programiści robią to, aby zapewnić poprawne działanie kodu i unikać błędów w czasie wykonania.
-
-## Jak to zrobić:
-
-Rust umożliwia proste sprawdzenie, czy katalog istnieje za pomocą funkcji `std::path::Path::exists()`. 
-
+## How to: (Jak to zrobić:)
 ```Rust
 use std::path::Path;
 
 fn main() {
-    let dir = Path::new("/sciezka/do/katalogu");
+    let path = Path::new("/tmp/example");
 
-    if dir.exists() {
-        println!("Katalog istnieje");
+    if path.exists() {
+        println!("Katalog istnieje!");
     } else {
-        println!("Katalog nie istnieje");
+        println!("Katalog nie istnieje!");
     }
 }
 ```
+W zależności od istnienia katalogu `/tmp/example`, wydrukowane zostanie "Katalog istnieje!" lub "Katalog nie istnieje!".
 
-Wyjście z programu będzie wyglądało następująco:
+## Deep Dive (Dogłębna analiza)
+Koncepcja sprawdzania istnienia katalogu jest stara jak systemy plików. W Rust, możemy to robić wykorzystując standardową bibliotekę `std::path::Path`, która zawiera metody do manipulacji i sprawdzania ścieżek plików i katalogów.
 
-```
-Katalog istnieje
-```
+Alternatywą dla `path.exists()` jest użycie `fs::metadata()` i sprawdzenie, czy rezultat istnieje oraz czy jest katalogiem, co może dostarczyć więcej informacji, ale również wymaga obsługi błędów.
 
-Lub:
+Implementacyjnie Rust korzysta z wywołań systemowych, aby ustalić stan pliku czy katalogu. Na różnych platformach może to wyglądać inaczej, ale abstrakcja `Path` dba o to, by developer nie musiał się tym martwić.
 
-```
-Katalog nie istnieje
-```
-W zależności od stanu katalogu.
-
-## Głębsze Zanurzenie
-
-W przeszłości, w językach programowania bez wbudowanej obsługi systemu plików, takich jak C, programiści musieli korzystać z niskopoziomowych wywołań systemowych i obsługiwać wiele możliwych kodów błędów. Rust upraszcza to zadanie, zapewniając bezpieczną i wygodną abstrakcję.
-
-Alternatywą dla użycia `Path::exists()` jest użycie `std::fs::metadata()`, które nie tylko sprawdzi, czy ścieżka istnieje, ale również zwróci informacje o niej, takie jak czy jest plikiem czy katalogiem.
-
-```Rust
-use std::fs;
-
-fn main() {
-    match fs::metadata("/sciezka/do/katalogu") {
-        Ok(metadata) => {
-            if metadata.is_dir() {
-                println!("Katalog istnieje");
-            } else {
-                println!("To nie jest katalog");
-            }
-        }
-        Err(err) => println!("Błąd: {}", err),
-    }
-}
-```
-
-## Zobacz Również
-
-- [Dokumentacja Rust dla `std::path::Path`](https://doc.rust-lang.org/std/path/struct.Path.html)
-- [Przewodnik "Jak używać systemu plików w Rust"](http://blog.guillaume-gomez.fr/articles/2016-03-15+How+to+use+rust+filesystem%3F)
+## See Also (Zobacz również)
+- Dokumentacja Rust `Path`: https://doc.rust-lang.org/std/path/struct.Path.html
+- Tutorial Rust o obsłudze błędów IO: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
+- Dokumentacja do `fs::metadata()`: https://doc.rust-lang.org/std/fs/fn.metadata.html
+- Opis systemów plików: https://en.wikipedia.org/wiki/File_system

@@ -1,6 +1,6 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "C++: Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "C++"
 category:             "C++"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tarkistaminen, onko kansio olemassa, on menetelmä selvittää, löytyyko järjestelmästä tiettyä kansiota. Ohjelmoijat tekevät sen tavallisesti ennen kuin he kirjoittavat tiedostoja kyseiseen kansioon, jotta he voivat käsitellä virheitä paremmin.
+## What & Why? (Mitä & Miksi?)
+Tarkistetaan, olemassaoleeko kansio koodissa. Näin vältetään virheitä, kun tiedostoja luetaan tai kirjoitetaan. Tärkeää luotettavuuden ja käyttäjäkokemuksen kannalta.
 
-## Miten Tehdä:
-Voit tarkistaa, onko kansio olemassa, käyttäen `std::filesystem` kirjastoa. Tässä on esimerkki:
-
+## How to (Kuinka tehdään)
 ```C++
+#include <iostream>
 #include <filesystem>
 
-bool directoryExists(const std::string& dir) {
-    return std::filesystem::exists(dir);
-}
+namespace fs = std::filesystem;
 
 int main() {
-   std::string dir = "/path/to/directory";
-   if(directoryExists(dir)) {
-       std::cout << "Directory exists\n";
-   } else {
-       std::cout << "Directory doesn't exist\n";
-   }
+    fs::path dirPath = "/polun/tarkistettava/kansio";
 
-   return 0;
+    if (fs::exists(dirPath)) {
+        std::cout << "Kansio on olemassa!" << std::endl;
+    } else {
+        std::cout << "Kansiota ei löydy." << std::endl;
+    }
+
+    return 0;
 }
 ```
-Jos kansio löytyy, ohjelma tulostaa "Directory exists". Jos kansiota ei löydy, tulostuu "Directory doesn't exist".
+**Tulostus:**
+```
+Kansio on olemassa!
+```
+tai
+```
+Kansiota ei löydy.
+```
 
-## Syvällinen Katsaus:
-Historiallisesti tarkistaaksemme, onko kansio olemassa, usein käytettiin `stat` funktiota POSIX standardista. C++17 lisäsi kuitenkin `std::filesystem` kirjaston, joka tarjoaa yksinkertaisen ja tehokkaan tavan tällaiseen toimintaan.
+## Deep Dive (Sukellus syvälle)
+Tiedostojärjestelmien hallinta on ollut osa C++:aa pitkään, mutta vasta C++17 standardin myötä `std::filesystem` kirjasto tuli standardiksi. Ennen sitä, kehittäjät turvautuivat kolmannen osapuolen kirjastoihin, kuten Boost.Filesystem. Tietojen kirjoittaminen ja lukeminen olemattomiin kansioihin voi johtaa runtime-virheisiin, jotka ovat turhauttavia käyttäjille ja aiheuttavat ohjelman kaatumisia.
 
-Vaihtoehtoisesti voit käyttää myös `boost::filesystem` -kirjastoa, joka on samanlainen kuin `std::filesystem`, mutta toimii vanhemmilla C++ standardeilla.
+C++17-standardi mahdollistaa kansioihin liittyvien toimintojen suorittamisen yhtenäisellä tavalla riippumatta käyttöjärjestelmästä. `std::filesystem`-kirjasto tarjoaa työkalut polkujen hallintaan, tarkasteluun ja manipulointiin. Jos sovelluksesi edellyttää vanhempia C++-standardeja, vaihtoehtona on käyttää `boost::filesystem` tai käyttöjärjestelmäkohtaisia rajapintoja, kuten `stat` POSIX-järjestelmissä tai `GetFileAttributes` Windowsissa.
 
-Toteuttaessa, `std::filesystem::exists` funktio tarkistaa tiedoston tai kansion olemassaolon polun avulla. Se palauttaa `false`, jos polku ei ole olemassa tai jos tapahtui virhe (esim. jos sinulla ei ole riittäviä oikeuksia).
-
-## Katso Myös:
-Lisätietoja voit löytää seuraavista lähteistä:
-- [Boost.Filesystem library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+## See Also (Katso myös)
+- C++ Standard Library reference: [std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- Boost.Filesystem library documentation: [Boost.Filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+- POSIX 'stat': [POSIX stat](https://pubs.opengroup.org/onlinepubs/009695399/functions/stat.html)

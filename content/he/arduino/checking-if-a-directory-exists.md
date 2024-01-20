@@ -1,7 +1,7 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Arduino: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם ספרייה קיימת"
+html_title:           "Arduino: בדיקה האם ספרייה קיימת"
+simple_title:         "בדיקה האם ספרייה קיימת"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,40 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בדיקה האם תיקייה קיימת היא פעולה בה מנסים לאמת האם נתיב מסוים במערכת הקבצים מתייחס לתיקייה שכבר קיימת. מתכנתים מבצעים פעולה זו כדי למנוע שגיאות כאשר ניסיונות לגשת לתוכן תיקייה שאינה קיימת.
+בדיקה אם תיקייה קיימת במערכות המבוססות על Arduino היא פרוצדורה שבודקת אם תיקייה מסוימת נמצאת בכרטיס ה-SD או בזיכרון. תכניתנים עושים זאת כדי לוודא שהקבצים והתיקיות שהם רוצים לעבוד איתם ממש קיימים לפני ניסיון לגשת או לשנות אותם, מניעת שגיאות וקריסות.
 
-##איך לעשות:
-אם אתה משתמש במערכת הפעלה שמריצה קוד Arduino, הנה דוגמה של בדיקת האם תיקייה קיימת:
-
+## איך עושים את זה:
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!SD.begin(4)) {
-    Serial.println("Initialization Failed");
+  if (!SD.begin()) {
+    Serial.println("Failed to initialize SD card.");
     return;
   }
-  if (SD.exists("/dir")) {
-    Serial.println("The directory exists.");
+
+  File directory = SD.open("/exampleDir");
+  if (directory && directory.isDirectory()) {
+    Serial.println("Directory exists!");
   } else {
-    Serial.println("The directory doesn't exist.");
+    Serial.println("Directory not found.");
   }
+  directory.close();
 }
 
-void loop() {}
+void loop() {
+  // קוד כאן יכול להמשיך לבצע פעילויות אחרות...
+}
 ```
-במקרה שבו התיקייה קיימת, הפלט יהיה:
+פלט לדוגמה:
+```
+Directory exists!
+```
+או
+```
+Directory not found.
+```
 
- ```
-The directory exists.
-```
-ואם התיקייה לא קיימת, הפלט יהיה:
-```
-The directory doesn't exist.
-```
+## עיון נוסף:
+פונקציונליות זו שימושית כבר מאז הוצגו כרטיסי SD בשימוש עם לוחות Arduino. אלטרנטיבות כוללות שימוש בספריות שונות או בפקודות סיסטמה אבל, הספריה SD.h היא שיטת ה-Standard. כאשר אתם בודקים אם תיקייה קיימת, חשוב לסגור אותה עם `directory.close()` כדי לשחרר משאבים. הבדלים באופן שבו מערכות קבצים שונות מנהלות את התיקיות יכולים להשפיע על אופן השימוש בפונקציה בקוד שלכם.
 
-##צלילה עמוקה
-תהליך הבדיקה האם תיקייה קיימת הוא חלק מהבסיס של פעילויות מערכת הפעלה. מתכנתים שפיתחו מערכת Arduino אמצו אפשרויות של שפות תכנות נוספות על מנת להנגיש את המערכת למשתמשים. 
-אופציה אחרת היא לשפת Python, ב הספרייה "os.path" מספקת פונקציה בשם "exists" שמאפשרת לבדוק אם נתיב מסוים קיים.
-ניתן להשתמש בפונקציות מתכנתות תוך כדי שמירה על ראש פתוח לשילוב של שיטות חדשות ומכניזמים נוספים במערכת שלך.
+## ראה גם:
+- תיעוד SD Library לקבלת מידע נוסף: https://www.arduino.cc/en/Reference/SD
+- פורום Arduino לשאלות ותמיכה: https://forum.arduino.cc
+- מדריך למערכת הקבצים ב-Arduino: https://www.arduino.cc/en/Guide/Environment#toc9

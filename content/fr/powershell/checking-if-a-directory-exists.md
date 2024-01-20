@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Gleam: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:58:01.385432-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vérifier si un répertoire existe en PowerShell
+## What & Why? (Quoi et Pourquoi ?)
+Vérifier l'existence d'un répertoire, c’est s’assurer qu’un chemin spécifique est valide et accessible. Les programmeurs font ça pour éviter les erreurs lors de la manipulation de fichiers ou de répertoires – pour que tout se déroule sans accroc.
 
-## Quoi & Pourquoi?
-
-La vérification de l'existence d'un répertoire est une étape essentielle pour éviter les erreurs lors de la manipulation de fichiers en PowerShell. Cela permet de garantir que l'opération de fichier prévue peut s'exécuter correctement sans générer d'erreur de chemin non trouvé.
-
-## Comment faire:
-
-La manière la plus courante de vérifier si un répertoire existe en PowerShell est d'utiliser la méthode `Test-Path`. Voici un exemple simple:
-
+## How to: (Comment faire :)
 ```PowerShell
-$DirectoryPath = "C:\VotreCheminRépertoire"
-if (Test-Path $DirectoryPath) {
-    Write-Output "Le répertoire existe."
+# Vérifiez si le répertoire existe
+$chemin = "C:\ExempleDossier"
+if (Test-Path $chemin -PathType Container) {
+    "Le répertoire existe."
 } else {
-    Write-Output "Le répertoire n'existe pas."
+    "Le répertoire n'existe pas."
 }
 ```
-Si le répertoire existe, le message "Le répertoire existe." s'affichera. Sinon, "Le répertoire n'existe pas." sera affiché.
 
-## Plongée profonde:
+Sortie échantillon si le répertoire existe :
+```
+Le répertoire existe.
+```
 
-La méthode `Test-Path` a constitué une évolution importante par rapport à la précédente approche basée sur `.NET Framework` pour vérifier l'existence d'un répertoire. Auparavant, vous auriez utilisé `[System.IO.Directory]::Exists($DirectoryPath)`. Cependant, `Test-Path` est recommandé dans PowerShell car il est plus facile à utiliser et plus cohérent avec les autres commandes PowerShell.
+Sortie échantillon si le répertoire n'existe pas :
+```
+Le répertoire n'existe pas.
+```
 
-Il existe également d'autres méthodes pour vérifier l'existence d'un répertoire, notamment en utilisant une approche `try-catch`, où on tente d'accéder au répertoire et on gère ensuite l'erreur éventuelle. Cependant, cela peut être gênant car il généralement préférable d'éviter les erreurs plutôt que de les gérer après coup.
+## Deep Dive (Plongée en Profondeur)
+Le cmdlet `Test-Path` est votre outil de prédilection pour vérifier l’existence des répertoires depuis PowerShell V1. Historiquement, les programmeurs effectuaient cette tâche en capturant des exceptions lors de tentatives d'accès ou de création. Heureusement, `Test-Path` est plus intuitif. Les alternatives ? Scripts .NET, ou lors de l'utilisation de PowerShell Core, l'API .NET `System.IO.Directory.Exists()`. La précision est clé : `Test-Path` a l'argument `-PathType` qui permet une distinction entre les fichiers et les répertoires (`Container` pour les répertoires).
 
-Ce qui est génial avec `Test-Path`, c'est qu'il n'est pas seulement limité à tester les chemins de répertoires. Vous pouvez l'utiliser pour tester la présence de fichiers, de clés de registre et bien plus encore. Vous pouvez également utiliser le paramètre `-IsValid` pour tester si un chemin donné est valide, qu'il existe ou non.
-
-## Voir aussi:
-
-Pour plus d'informations, consultez ces ressources utiles:
-
-- [Test-Path sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/test-path)
-- [PowerShell: Comment vérifier si un répertoire ou un fichier existe](https://adamtheautomator.com/powershell-check-if-file-exists/)
+## See Also (Voir Aussi)
+- [about_Test-Path (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
+- [about_if (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7.1)
+- [System.IO.Directory.Exists (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)

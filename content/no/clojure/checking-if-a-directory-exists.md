@@ -1,7 +1,7 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Clojure: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe finnes"
+html_title:           "Arduino: Sjekke om en mappe finnes"
+simple_title:         "Sjekke om en mappe finnes"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Sjekking om en katalog eksisterer hjelper oss å unngå feil når filsystem operasjoner utføres. Det er viktig for kondisjonelle flyter og datapersistering.
 
-Å sjekke om en mappe eksisterer betyr ganske enkelt å bekrefte at en bestemt katalog finnes på en angitt sti i et filsystem. Dette gjør programmerere for å unngå feil ved forsøk på å lese fra eller skrive til en ikke-eksisterende katalog.
+## How to:
+Clojure gjør det enkelt med `java.io.File` klassen:
 
-## Slik gjør du:
+```clojure
+(import '[java.io File])
 
-I Clojure kan du bruke `java.nio.file` biblioteket for å sjekke om en mappe eksisterer. Her er et eksempel:
+(defn directory-exists? [path]
+  (.isDirectory (File. path)))
 
-```Clojure
-(import 'java.nio.file.Files 'java.nio.file.Paths)
-
-(defn directory-exists? [dir]
-  (Files/exists (Paths/get dir (into-array String []))))
+(println (directory-exists? "/et/eksisterende/sted")) ; => true
+(println (directory-exists? "/et/ikke-eksisterende/sted")) ; => false
 ```
-Hvis katalogen eksisterer, vil funksjonen `directory-exists?` returnere `true`:
-```Clojure
-(directory-exists? "/min/eksempel/mappe") ;; blir enten true eller false
-```
-## Dypdykk
+Output vil være `true` eller `false` avhengig av om katalogen finnes.
 
-Clojure, som en variant av Lisp- og på JVM, gir direkte tilgang til Java's plattformfunksjoner, inkludert `java.nio.file` biblioteket som brukes her. Selv om det er andre måter å sjekke om en mappe eksisterer i Java, som `java.io.File`, tilbyr `java.nio.file` mer effektive og robuste alternativer for fil- og mappeoperasjoner.
+## Deep Dive
+Fra starten, har Clojure levert effektive metoder for å samhandle med JVM og Java klasser. Sjekking av om kataloger eksisterer er ingen unntak. Denne funksjonaliteten er ikke spesifikk for Clojure – det låner fra Java IO-rammeverket. Alternative tilnærminger inkluderer bruk av `file-seq` for å generere en sekvens av filer i en katalog og sjekke om sekvensen er tom.
 
-Implementeringen over bruker `Files/exists` metoden fra `java.nio.file.Files` klasse, og `Paths/get` metoden fra `java.nio.file.Paths` klasse. Vi konverterer stien til en `java.nio.file.Path` instans, og bruker deretter `Files/exists` metoden for å sjekke om katalogen eksisterer.
+Når det gjelder underliggende implementeringsdetaljer, `File` klassen sjekker filsystemets metadata for å bestemme om en bestemt sti er en katalog. Ytelsen for denne operasjonen kan variere avhengig av filsystemets størrelse og type.
 
-## Se også
-
-For mer informasjon om fil og mappe operasjoner i Clojure og Java, se:
-
-- [java.nio.file.Files dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html)
-- [java.nio.file.Paths dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Paths.html)
-- [Clojure's java interop dokumentasjon](https://clojure.org/reference/java_interop) 
-
-Vær oppmerksom på at du kan ulike variasjoner av ovenstående funksjon basert på dine spesifikke behov, inkludert å kontrollere spesifikke filtyper, sjekke lese- eller skrivetilgang, og så videre.
+## See Also
+- Clojure Docs om IO: https://clojuredocs.org/clojure.java.io
+- Java `File` klasse: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+- Clojure `file-seq` funksjonen: https://clojuredocs.org/clojure.core/file-seq

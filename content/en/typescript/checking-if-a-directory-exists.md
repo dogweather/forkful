@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:59:16.497629-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Checking if a Directory Exists in TypeScript
-
 ## What & Why?
-
-Checking if a directory exists is a check made by the program to see whether a certain file folder (directory) exists on your computer's file system. Programmers do this to prevent errors when trying to access or manipulate directories that might not exist.
+Checking if a directory exists is about making sure a folder is actually there before you read from it or write to it. Programmers do it to avoid errors, like trying to save a file to a nonexistent place – that's a definite no-go.
 
 ## How to:
+In TypeScript, you'll usually use Node.js's `fs` module to check for a directory. Here's the quick way to do it:
 
-Let's see how to do it in TypeScript. We'll use Node.js' built-in `fs` module to get the job done. Have a look at the following example:
+```typescript
+import { existsSync } from 'fs';
 
-```TypeScript
-import * as fs from 'fs';
+// Check if a directory exists
+const directoryPath = './path/to/directory';
 
-const directoryToCheck = './some_directory';
-
-fs.access(directoryToCheck, fs.constants.F_OK, (err) => {
-    if (err) {
-        console.log(`Directory doesn't exist`);
-    } else {
-        console.log(`Directory exists`);
-    }
-});
-```
-
-After running this script, if the directory './some_directory' exists, you'll see 'Directory exists'; otherwise, 'Directory doesn't exist' in your console.
-
-## Deep Dive
-
-Historically, the need to check if directories exist dates back to the earliest times of file system operations. Realizing that blindly carrying out operations on non-existent targets could cause problems, developers incorporated existence checks into their routines.
-
-Alternatively, you could use the `fs.existsSync` function, but be cautious about its synchronous nature, which can block the main thread:
-
-```TypeScript
-import * as fs from 'fs';
-
-if(fs.existsSync(directoryToCheck)) {
-    console.log('Directory exists');
+if (existsSync(directoryPath)) {
+  console.log(`Yep, it's there!`);
 } else {
-    console.log('Directory does not exist');
+  console.log(`Nope, doesn't exist.`);
 }
 ```
 
-Behind the scenes, the `fs.access` function checks permissions for the file or directory specified. The `F_OK` flag, in particular, checks the existence of the path.
+Output depends on the directory's existence:
+```
+Yep, it's there!
+// or
+Nope, doesn't exist.
+```
+
+## Deep Dive
+Historically, folks used the asynchronous `fs.exists`, but it was deprecated because it had a pesky habit of causing coding mistakes, like check-then-act race conditions. `existsSync` is simpler and cuts out the callback mess.
+
+As for alternatives, the `fs.statSync` or `fs.accessSync` methods can do the job too but require a bit more code:
+
+```typescript
+import { statSync } from 'fs';
+
+try {
+  const stats = statSync(directoryPath);
+  if (stats.isDirectory()) {
+    console.log('It exists indeed.');
+  }
+} catch (error) {
+  if (error.code === 'ENOENT') {
+    console.log('Nope, nowhere to be found.');
+  }
+}
+```
+
+Both `statSync` and `accessSync` throw errors if the path doesn't exist, so you'll need to handle that.
+
+When using TypeScript, remember that these methods come from Node.js, not TypeScript itself. And TypeScript's role? Mainly, it just provides the types and makes sure you're using the methods correctly.
 
 ## See Also
-
-For more details and options about the `fs` module, check out the [Node.js documentation](https://nodejs.org/api/fs.html). If you want to dive even deeper, explore the [Node File System tutorial](https://www.w3schools.com/nodejs/nodejs_filesystem.asp) from W3Schools. For advanced users, consider taking a look at the [File System section](https://nodejs.dev/learn/the-nodejs-fs-module) on Node.js.dev.
+- Node.js File System Docs: https://nodejs.org/api/fs.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- Error Handling in Node.js: https://nodejs.org/en/knowledge/errors/what-are-the-error-conventions/

@@ -1,7 +1,8 @@
 ---
-title:                "Verifica se una directory esiste"
-html_title:           "Haskell: Verifica se una directory esiste"
-simple_title:         "Verifica se una directory esiste"
+title:                "Verifica dell'esistenza di una directory"
+date:                  2024-01-20T14:56:48.730114-07:00
+html_title:           "Gleam: Verifica dell'esistenza di una directory"
+simple_title:         "Verifica dell'esistenza di una directory"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Controllare se esiste una Directory in Haskell
-Un articolo per aiutare i programmatori italiani a navigare attraverso questa attività comune.
+## What & Why?
+Verificare l'esistenza di una directory significa assicurarsi che un percorso specificato corrisponda a una cartella sul file system. I programmatori lo fanno per evitare errori nei programmi, come tentare di accedere o scrivere in una cartella inesistente.
 
-## Cosa & Perché?
-Il controllo dell'esistenza di una directory significa verificare se una certa cartella esiste nella posizione specificata o meno. Quest'operazione permette ai programmatori di evitare errori durante l'esecuzione, garantendo che i dati acceduti o manipolati risiedano effettivamente in un percorso valido.
-
-## Come Fare:
-In Haskell, possiamo utilizzare la funzione `doesDirectoryExist` dal modulo `System.Directory` per controllare se una directory esiste. La funzione restituisce `True` se la directory esiste, e `False` altrimenti.
+## How to:
+In Haskell, usiamo il modulo `System.Directory` per controllare l'esistenza di una directory. Ecco un esempio:
 
 ```haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
 
 main :: IO ()
 main = do
-  let dir = "/percorso/alla/cartella"
-  exists <- doesDirectoryExist dir
-  if exists then putStrLn $ "La directory " ++ dir ++ " esiste." else putStrLn $ "La directory " ++ dir ++ " non esiste."
+  let dirPath = "/path/to/directory"
+  dirExists <- doesDirectoryExist dirPath
+  putStrLn $ "La directory " ++ (if dirExists then "esiste." else "non esiste.")
 ```
 
-Se eseguiamo questo pezzo di codice, otterremo un'output simile a questo:
+Esempio di output se la directory esiste:
 
-```shell
-La directory /percorso/alla/cartella non esiste.
+```
+La directory esiste.
 ```
 
-## Approfondimenti
-La funzione `doesDirectoryExist` è disponibile in Haskell già dalla versione 1.0, pubblicata nel 2003. Essa fornisce un modo semplice ed efficiente per controllare l'esistenza di una directory, tuttavia ci sono alternative. Ad esempio, possiamo utilizzare la funzione `getDirectoryContents`, anch'essa del modulo `System.Directory`, per ottenere un elenco di tutte le cartelle e i file in una directory e poi cercare quella che ci interessa.
+E se non esiste:
 
-Tuttavia, questa soluzione è meno efficiente rispetto all'utilizzo di `doesDirectoryExist`, perché richiede il caricamento di un elenco completo di elementi della directory.
+```
+La directory non esiste.
+```
 
-Funzioni come `doesDirectoryExist` sono fondamentali in qualsiasi linguaggio di programmazione, perché garantiscono che il codice interagisca solo con percorsi di file o directory validi. Siccome questi controlli sono effettuati al livello del sistema operativo, la loro implementazione precisi può variare a seconda della piattaforma su cui si esegue Haskell.
+## Deep Dive
+Il modulo `System.Directory` è parte della libreria base di Haskell e fornisce funzionalità di interazione con il file system. Introdotta nei primi anni del linguaggio, questa funzionalità aiuta a evitare errori comuni di I/O.
 
-## Vedi Anche
-1. [Modulo System.Directory - Hackage Haskell](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
+Come alternativa, potresti voler esplorare il pacchetto `directory`, che offre una gamma più ampia di operazioni sui filesystem. Implementare la verifica di una directory senza `doesDirectoryExist` può comportare il controllo degli errori di I/O basso livello, ma questo è sconsigliato a meno che non sia strettamente necessario.
+
+## See Also
+- Per ulteriori informazioni sulla libreria `System.Directory`, consulta [Hackage - System.Directory](https://hackage.haskell.org/package/directory)
+- Tutorial Haskell generale: [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- Specifiche della libreria base Haskell: [Haskell 2010 Language Report](https://www.haskell.org/onlinereport/haskell2010/)

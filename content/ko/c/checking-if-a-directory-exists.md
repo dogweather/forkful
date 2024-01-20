@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "C: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉토리의 존재 여부 확인하기"
+html_title:           "Arduino: 디렉토리의 존재 여부 확인하기"
+simple_title:         "디렉토리의 존재 여부 확인하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+디렉터리 존재 여부 확인은 파일 시스템에서 특정 경로의 폴더가 실제로 있는지 확인하는 작업입니다. 프로그래머들은 리소스가 적절한 위치에 있는지 확인하거나 에러를 방지하기 위해 이를 수행합니다.
 
-디렉토리가 존재하는지 체크하는 것은 파일 시스템 내 특정 디렉토리의 존재 유무를 확인하는 프로그래밍 테크닉입니다. 이는 유효한 파일 경로를 처리하거나 존재하지 않는 디렉토리를 만들기 전 불필요한 오류를 방지하기 위해 중요합니다.
+## How to: (어떻게 하나요?)
+C에서는 `<sys/stat.h>` 헤더의 `stat` 함수를 이용해 디렉터리 존재 여부를 확인할 수 있습니다. 간단한 예로:
 
-## 어떻게:
-
-예시 코드와 출력 결과는 다음과 같습니다:
-
-```C
-#include<stdio.h>
-#include<unistd.h>
+```c
+#include <stdio.h>
+#include <sys/stat.h>
 
 int main() {
-   if(access("/mydirectory", F_OK ) != -1) {
-      printf("Directory exists.\n");
-   } else {
-      printf("Directory doesn't exist.\n");
-   }
-   return 0;
+    struct stat statbuf;
+    char *dirname = "example_dir";
+    
+    // stat 함수로 디렉터리 정보 확인
+    if (stat(dirname, &statbuf) == 0 && S_ISDIR(statbuf.st_mode)) {
+        printf("Directory '%s' exists.\n", dirname);
+    } else {
+        printf("Directory '%s' does not exist.\n", dirname);
+    }
+    
+    return 0;
 }
 ```
-이 코드의 결과는 "/mydirectory"라는 디렉토리가 존재하면 "Directory exists."를 출력하고, 그렇지 않으면 "Directory doesn't exist."를 출력하는 것입니다.
 
-## 깊이 들어가기:
+실행 결과:
 
-디렉토리 존재 여부를 확인하는 것은 Unix 시스템에서부터 시작된 표준 테크닉으로, 상대적으로 대부분의 운영 체제에서 사용됩니다.
+```
+Directory 'example_dir' exists.
+```
+또는
 
-대안적으로, `stat` 함수 또는 `opendir` 함수를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 그러나 `access` 함수는 `F_OK` 플래그를 사용하여 디렉토리의 존재를 빠르게 확인할 수 있으므로 효율적입니다.
+```
+Directory 'example_dir' does not exist.
+```
 
-C 언어에서 디렉토리를 처리할 때는 파일 시스템의 특성을 이해하고 적절한 에러 처리를 수행하는 것이 중요하다는 점을 항상 기억해야 합니다.
+## Deep Dive (심층 분석)
+`stat` 함수는 Unix에서 오래 전부터 사용되어왔습니다. 파일의 메타데이터를 얻기 위해 사용되며, 여기에는 파일 타입도 포함됩니다. `stat` 구조체의 `st_mode` 필드를 이용하면 디렉터리인지 아닌지 구분할 수 있습니다. 하지만 `stat`은 파일 시스템에 접근해야 하므로, 자주 호출하면 성능에 영향을 줄 수 있습니다. 
 
-## 참고:
+대안으로 `opendir`과 `readdir` 같은 함수를 사용할 수도 있지만, 이들은 파일 내용을 읽기 위한 것으로, 단순히 존재 여부만 확인하려면 `stat`가 더 직접적입니다.
 
-다음은 이 주제와 관련된 링크입니다:
+C11 표준 이후 최신 C에서는 파일 시스템을 위한 표준 라이브러리가 개선되었습니다. 하지만, 현재 많은 시스템들이 여전히 POSIX API를 따르므로, `stat` 함수 사용법을 알아두는 것이 편할 수 있습니다.
 
-- Chmod, Change Mode의 이해: <http://bit.ly/chmodUnderstanding>
-- 파일 또는 디렉토리의 존재 확인하는 방법을 자세히 설명: <http://bit.ly/checkExistence>
-- 파일 시스템과 관련 기타 함수에 대한 C Library Tutorial: <http://bit.ly/ClibTutorial>
+## See Also (더 보기)
+- [POSIX stat](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/stat.h.html)
+- [C11 Standard](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
+- [Linux Manual Page for stat(2)](https://man7.org/linux/man-pages/man2/stat.2.html)

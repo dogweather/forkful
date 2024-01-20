@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "C#: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:56:17.062739-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,34 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+בדיקה אם ספרייה קיימת ב-C# היא תהליך של אימות הקיום וגישה לתיקייה במערכת הקבצים. תוכניתנים עושים זאת כדי למנוע שגיאות בעת ניסיון לקרוא מתיקייה שלא קיימת או לכתוב לתוכה.
 
-אימות קיומו של תיקייה הוא תהליך שבו התוכנית מבדיקה אם תיקייה מוגדרת כבר קיימת במערכת הקבצים. מתכנתים עושים את זה למנוע שגיאות כאשר ישנן פעולות הכוללות קריאה או כתיבה לתיקייה.
-
-## איך 
-
-דוגמאות מהקוד ופלט מדגם בתוך בלוקי קוד ```C# ... ```
-
+## איך לעשות:
 ```C#
+using System;
 using System.IO;
 
-string path = @"C:\folder";
-
-if (!Directory.Exists(path))
+class Program
 {
-    Directory.CreateDirectory(path);
+    static void Main()
+    {
+        string pathToCheck = @"C:\example\path";
+
+        if (Directory.Exists(pathToCheck))
+        {
+            Console.WriteLine("The directory exists.");
+        }
+        else
+        {
+            Console.WriteLine("The directory does not exist.");
+        }
+    }
 }
 ```
 
-אם התיקייה אינה קיימת, יוֹצֵר את התיקייה שנקבעה בנתיב (path).
+פלט לדוגמא:
+```
+The directory does not exist.
+```
+או
+```
+The directory exists.
+```
 
-## הצצה למטה
+## עיון נוסף
+בהקשר ההיסטורי, בדיקת קיום תיקייה היא חלק מתכנות מחשבים מאז ומעולם. השפה המודרנית של סי-שארפ מעניקה כלים פשוטים לביצוע הפעולה. לחלופין, אפשר להשתמש בכלים של מערכת ההפעלה, אבל `Directory.Exists` הוא הכי ישר ובטוח. פרטי היישום כוללים קריאה ל-API של חלונות אשר מברר את סטטוס התיקייה.
 
-אימות קיומו של תיקייה הוא שיטה שהשתמשה מאז שהמערכת הראשונה של ניהול הקבצים קיימה בצורה ממוחשבת. היא אמנם פשוטה ומדויקת, אך ישנם חלופות שמתחילות להופיע, כמו למשל File System Access API של גוגל, שנותן גישה למערכת הקבצים ישירות מהדפדפן.
-
-## ראו גם:
-
-1. [Directory.Exists Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-
-2. [Directory.CreateDirectory Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=net-5.0)
-
-3. [File System Access API](https://web.dev/file-system-access/)
+## ראה גם
+- [מחלקת Directory במיקרוסופט](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netcore-3.1)

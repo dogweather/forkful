@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Java: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:57:41.662682-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,42 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# בדיקה אם תיקייה קיימת בלואה 
-
-## מה זה ולמה?
-בהצלחה לבדוק אם תיקייה קיימת במערכת הקבצים היא חלק חיוני בכתיבת קוד מתקדם. זה מאפשר לנו לבטל את אפשרות השגיאות בתהליך, כמו לנסות לכתוב קובץ לתיקייה שאינה קיימת.
+## מה ולמה?
+בדיקה אם תיקייה קיימת זהו שלב בו אנחנו וודאים שתיקייה שאנחנו צריכים היא באמת שם לפני שאנחנו נכנסים לעבוד איתה. זה חשוב כי זה מונע שגיאות ומאפשר לנו לעבוד עם הקבצים בצורה נכונה.
 
 ## איך לעשות:
+ב-Lua, אין פונקציה ישירה בשפה עצמה שבודקת קיום של תיקייה, אבל אפשר להשתמש בממשק של מערכת הפעלה כדי לעשות זאת. הדוגמה הבאה תראה איך לברר אם תיקייה קיימת באמצעות הפעלת פקודת `lfs`.
 
 ```Lua
 local lfs = require('lfs')
 
--- שם התיקייה לבדיקה
-local dir = '/path/to/directoy'
-
--- פונקציה לבדיקה האם תיקייה קיימת
-local function directory_exists(path)
-  -- בדיקה באמצעות lfs.attributes
-  -- מחזירה nil אם התיקייה לא קיימת 
-  return lfs.attributes(path,"mode") == "directory"
+function isDirectoryExists(path)
+    local cd = lfs.currentdir()
+    local isExists = lfs.chdir(path) and true or false
+    lfs.chdir(cd)
+    return isExists
 end
 
--- משתמשים בפונקציה
-if directory_exists(dir) then
-  print(dir.. ' קיימת')
+local dirPath = "/path/to/directory"
+
+if isDirectoryExists(dirPath) then
+    print("Directory exists: " .. dirPath)
 else
-  print(dir.. ' לא קיימת')
+    print("Directory does NOT exist: " .. dirPath)
 end
 ```
 
-## צלילה עמוקה
-לואה הייתה מקבלת פונקציה קבועה שאפשרה לבדוק האם תיקייה קיימת, אך בגרסאות החדשות ביותר, הוסיף הקהל את ספריית 'lfs' (Lua File System), שהיא האופציה המקובלת כיום.
+פלט עשוי להיות:
+```
+Directory exists: /path/to/directory
+```
+או
+```
+Directory does NOT exist: /path/to/directory
+```
 
-אלטרנטיבה ל-lfs היא השימוש ב- os.execute עם הפקודה 'ls' (בלינוקס ומק), או 'dir' (בווינדוס). זה יכול לעבוד, אך לא מומלץ מכיוון שהיא מתלויה במערכת ההפעלה ועלולה להוות סיכון אבטחתי.
+## עומק הצלילה
+בעבר, אנחנו היינו נאלצים לעשות שימוש בפקודות עם `os.execute` או `io.popen` ולפרסר את התוצאות בעצמנו, מה שיכל להוביל לפרצות אבטחה או נפילות לא צפויות. הספרייה `LuaFileSystem` (lfs) פותחה כדי להפוך עבודה עם מערכות קבצים לנוחה ובטוחה יותר. קיומה מאפשר למפתחים גישה משופרת לפעולות על תיקיות וקבצים. כמובן, תמיכת הפלטפורמה חשובה, ולכן עליכם לוודא שהסביבה בה אתם מריצים את הקוד תומכת ב`lfs`.
 
-לגבי הביצוע, השימוש ב-luafilesystem הוא מהיר ויעיל. הוא מתבצע בצורה ישירה דרך ה-API של המערכת המקומית, ולא יוצר תהליכים חיצוניים או מחכה להחזרות של מערכת ההפעלה.
+השימוש ב`lfs.chdir()` לבדוק אם אפשר להחליף תיקייה זהו טריק חכם. אם הפעולה מצליחה, זה אומר שהתיקייה קיימת. אם לא, אז היא לא קיימת. זיכרו לשחזר את התיקייה הנוכחית בסוף כדי שהצעדים הבאים של התוכנית יוכלו להמשיך כרגיל.
 
-## ראה גם
-רשימה של כמה משאבים שיכולים לעזור לכם להעמיק את הידע שלכם בנושא זה:
-- [Lua 5.1 המדריך למתחילים](http://lua-users.org/wiki/ForTutorial)
-- [StackOverflow - בדיקה אם ספרייה קיימת ב-Lua](https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua)
+## ראו גם
+- LuaFileSystem (LFS): http://keplerproject.github.io/luafilesystem/
+- מדריך Lua: https://www.lua.org/manual/5.4/
+- איך לבדוק אם קובץ קיים ב-Lua: https://stackoverflow.com/questions/4990990/lua-check-if-a-file-exists
+- התיעוד של Lua: https://www.lua.org/docs.html

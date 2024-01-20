@@ -1,7 +1,7 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "C#: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe finnes"
+html_title:           "Arduino: Sjekke om en mappe finnes"
+simple_title:         "Sjekke om en mappe finnes"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,58 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
 
-Kontroll for om en mappe eksisterer er en essensiell funksjon for programmering. Det lar programmerere sikre at en spesifisert sti er gyldig, forhindre feil og bedre brukeropplevelsen.
+Å sjekke om en katalog eksisterer handler om å bekrefte at en bestemt mappe er tilgjengelig på filsystemet før du prøver å lese fra eller skrive til den. Dette forhindrer feil som oppstår når kode antar at en mappe finnes, og den faktisk ikke gjør det.
 
-## Hvordan:
+## How to:
 
-Bruk Directory.Exists funksjonen i System.IO namespace. Her er hvordan du gjør det:
+For å sjekke om en katalog eksisterer i C#, bruk `Directory.Exists()` metoden fra `System.IO`-navneområdet. Se på eksempelet:
 
 ```C#
+using System;
 using System.IO;
 
-class Program 
+class DirectoryCheck
 {
     static void Main()
     {
-        string path = @"C:\temp";
+        string path = @"C:\EksempelKatalog";
 
-        if (Directory.Exists(path))
+        if(Directory.Exists(path))
         {
-            System.Console.WriteLine("Mappen eksisterer.");
+            Console.WriteLine($"Katalogen {path} eksisterer.");
         }
         else
         {
-            System.Console.WriteLine("Mappen eksisterer ikke.");
+            Console.WriteLine($"Katalogen {path} eksisterer ikke.");
         }
     }
 }
 ```
 
-Output vil være en av følgende, avhengig av om mappen eksisterer:
+Om katalogen finnes, får du output:
 
-``` 
-Mappen eksisterer.
 ```
-Eller
-
-``` 
-Mappen eksisterer ikke.
+Katalogen C:\EksempelKatalog eksisterer.
 ```
 
-## Dyp Dykk
+Ellers:
 
-Metoden for å sjekke om en mappe eksisterer har vært en del av C# siden det ble introdusert, men det er viktig å merke seg at det aldri er en 100% pålitelig måte å sjekke. En ny mappe kan bli opprettet nettopp etter at sjekken ble utført, eller tilgangsrettigheter kan endre seg.
+```
+Katalogen C:\EksempelKatalog eksisterer ikke.
+```
 
-Alternativt kan du også bruke DirectoryInfo.Exists metoden eller prøve å åpne en fil i mappen og fange unntaket hvis det mislykkes. Disse metodene er dyrere i form av ytelse, men kan gi mer presis informasjon i noen tilfeller.
+## Deep Dive
 
-En detalj om implementasjonen av Directory.Exists er at det faktisk ikke åpner mappen. Det bruker et operativsystemkall for å hente informasjon om mappen, så det er relativt raskt og bruker lite ressurser.
+Å sjekke om en katalog eksisterer er en vesentlig operasjon datamaskiner har gjort siden de fikk et filsystem. I eldre programmeringsspråk var det oftere nødvendig å håndtere filsystemfeil direkte. I C#, derimot, tar `System.IO`-klassene seg av mye av den kompleksiteten for oss.
 
-## Se Også
+Alternativene inkluderer å prøve å lese eller skrive til en katalog og håndtere eventuelle unntak som en 'FileNotFoundException'. Men det er generelt sett dårlig praksis – det er bedre å bruke `Directory.Exists()` for eksplicitte sjekker før du prøver operasjoner på katalogen.
 
-[Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+I bakhånd håndterer `Directory.Exists()` et par viktige sjekker for oss: det ser ikke bare at stien peker til noe som eksisterer, men det bekrefter også at dette noe er en katalog, ikke en fil.
 
-[DirectoryInfo.Exists Property](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.exists?view=net-5.0)
+## See Also
 
-[How to: Check that a File or Folder Exists](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-check-that-a-file-or-folder-exists)
+- Microsofts offisielle dokumentasjon for Directory.Exists metoden: [Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- Guide til System.IO-navneområdet: [System.IO Namespace](https://docs.microsoft.com/en-us/dotnet/standard/io/)
+- Feilhåndtering i C#: [Exception Handling](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)

@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:56:20.679011-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,29 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Checker om en katalog existerar är operationen för att kontrollera integriteten till en katalogs plats i ett datasystems filstruktur. Programmerare gör det här för att hindra felutlösande försök till att läsa eller skriv över en inte existerande katalog.
+Att kontrollera om en katalog finns är processen att verifiera en sökvägs existens i filsystemet. Programmerare gör detta för att försäkra sig om att filoperationer, som att läsa eller skriva filer, inte misslyckas på grund av saknade kataloger.
 
 ## Hur man gör:
-
-Elm har inte en inbyggd kodblock för att verifiera om en katalog existerar eftersom Elm-kod körs i webbläsaren och inte har permission att läsa filsystemet direkt. Men vi kan använda JavaScript's inbyggda ```fs``` paket genom att utrusta oss med några flags. Notera att FS modulen är en del av Node.js, inte webbläsarbaserad JavaScript.
+Eftersom Elm är inriktad på front-end utveckling och körs i webbläsare, hanterar det inte direkt åtkomst till filsystemet. Du kan dock kommunicera med en server via HTTP för att kontrollera en katalog. Här är ett fiktivt exempel:
 
 ```Elm
-port checkDirectory : String -> Cmd msg
-port directoryExists : (Bool -> msg) -> Sub msg
+import Http
+import Json.Decode as Decode
+
+type Msg = DirectoryExists Bool | DirectoryCheckFailed Http.Error
+
+checkDirectory : String -> Cmd Msg
+checkDirectory url =
+    Http.get
+        { url = url
+        , expect = Http.expectJson (Decode.map DirectoryExists Decode.bool)
+        }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        DirectoryExists exists ->
+            ( { model | directoryExists = Just exists }
+            , Cmd.none
+            )
+
+        DirectoryCheckFailed _ ->
+            ( { model | directoryExists = Just False }
+            , Cmd.none
+            )
+
+-- Antag att servern svarar med en enkel JSON: { "exists": true } eller { "exists": false }
 ```
-Observera: I Elm, ports är den godkända vägen för tvåvägs interaktion mellan Elm och JavaScript.
 
-## Fördjupning:
+I exemplet görs ett anrop till en server Endpoint som förväntar sig en JSON med en boolean `exists`-nyckel för att signalera om katalogen finns.
 
-Historiskt sett, frågan om hur att verifiera om en katalog existerar har förändrats med språkets utveckling och dess förmåga att interagera med operativsystemet. I den tidiga C och Java, var detta ett vanligt problem. 
+## Fördjupning
+I Elm's värld hanterar vi inte direkt filsystemet eftersom det körs i en webbläsarmiljö. Historiskt sett har tillgång till filsystemet begränsats i klient-side programmering på grund av säkerhetsrisker. Alternativt, kan du använda JavaScript interop-funktionen, `ports`, för att kommunicera med JavaScript-kod som har tillgång till filsystemet (i en Node.js-miljö). Implementationen kräver att du skickar meddelanden mellan Elm och JavaScript, där JS-sidan kan använda inbyggda API:er som `fs` för att kontrollera filsystemet.
 
-Alternativ till Elm för att hantera sådana filsystemrelaterade operationer inkluderar användning av server-side språk som Python eller Ruby, eller att använda JavaScript direkt. 
-
-Implementeringsdetaljer gäller begränsningarna i att använda webbläsarbaserade språk för direkt interaktion med filsystem. Elm kör i webbläsaren och är därmed begränsad i sin förmåga att direkt interagera med filsystemets operationer, så som att kontrollera om en katalog existerar.
-
-## Se även:
-
-3. Node.js's fs package documentation [Node.js's fs](https://nodejs.org/api/fs.html)
-4. Learning more about JavaScript [Mozilla JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-5. More about filesystem operations in JavaScript [Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+## Se även
+- Elm's officiella dokumentation om ports: https://guide.elm-lang.org/interop/ports.html
+- MDN Web Docs om webbläsarens begränsningar: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server
+- Node.js `fs` dokumentation för filsystemet: https://nodejs.org/api/fs.html

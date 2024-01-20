@@ -1,6 +1,7 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
-html_title:           "Go: ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:58:53.360173-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+ディレクトリが存在するかチェックするとは、ファイルシステム上で特定のディレクトリが存在するかどうかを確認することです。これをプログラマーが行うのは、ファイルの読み書きやディレクトリの作成前にエラーを避けるためです。
 
-ディレクトリ存在チェックは、指定したディレクトリが現在存在しているかどうかを確認することです。プログラマーは、操作の前にディレクトリが存在することを確認して、存在しない場合にはディレクトリを作成またはエラーを報告するためにこれを行います。
-
-## 方法：
-
-以下のTypeScriptソースコードは、ディレクトリが存在するかどうかをチェックする方法の一つを示しています:
-
+## How to: (方法)
 ```TypeScript
-import fs from 'fs';
+import * as fs from 'fs';
+import * as path from 'path';
 
-function directoryExists(path: string): boolean {
-    return fs.existsSync(path);
+// 非同期関数を用いた例
+async function checkDirectoryExists(dirPath: string): Promise<void> {
+  try {
+    await fs.promises.access(dirPath, fs.constants.F_OK);
+    console.log(`Directory exists: ${dirPath}`);
+  } catch {
+    console.error(`Directory does not exist: ${dirPath}`);
+  }
 }
 
-console.log(directoryExists('./myFolder'));  // true or false
+// 使用例
+const myDir = path.join(__dirname, 'myDirectory');
+checkDirectoryExists(myDir);
 ```
 
-このプログラムはfsモジュールの`existsSync`関数を使用してディレクトリが存在するかどうかをチェックします。`./myFolder`という名前のディレクトリが存在する場合は`true`を、存在しない場合は`false`を出力します。
+サンプル出力:
+```
+Directory exists: /your/current/directory/myDirectory
+// または
+Directory does not exist: /your/current/directory/myDirectory
+```
 
-## 深掘り：
+## Deep Dive (詳細な解説)
+ディレクトリの存在確認には主に`fs`モジュールが使われます。 `fs.stat` や `fs.access` はノードの初期から利用可能ですが、Node.js v10.0.0からはPromiseベースのAPIが追加され、`fs.promises`オブジェクトを通じて非同期関数を使うことが推奨されています。同期的なチェックを行いたい場合は、`fs.existsSync`関数もありますが、これはブロッキングであり、大規模なアプリケーションでは非同期版が一般に推奨されています。
 
-TypeScriptの初期バージョンでは、このような機能は存在せず、Node.jsのfsモジュールの`existsSync`関数を使用するデフォルトのアプローチが必要でした。
-
-他の代替方法として、非同期バージョンの`exists`関数を利用することもできますが、非同期性が避けられない場合にのみ推奨されます。これは、`existsSync`がブロッキングオペレーションを提供するのに対し、`exists`はノンブロッキングオペレーションを提供するためです。
-
-なお、`exists`関数は現在非推奨とされており、代わりに`access`関数または`stat`関数を使用することが推奨されています。これらの関数は、より詳細な情報を提供し、Promiseベースの非同期APIも提供しています。
-
-## 参考文献：
-
-1. Node.js fsモジュールドキュメント：[https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-2. `fs.existsSync`関数についての詳細：[https://nodejs.org/api/fs.html#fs_fs_existssync_path](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-3. `fs.access`関数についての詳細：[https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback)
-4. `fs.stat`関数についての詳細：[https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
+## See Also (関連情報)
+- Node.js FileSystem API: https://nodejs.org/api/fs.html
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
+- Asynchronous Programming (Patterns and Best Practices): https://nodejs.dev/learn/modern-asynchronous-javascript-using-promises-async-await-and-callbacks

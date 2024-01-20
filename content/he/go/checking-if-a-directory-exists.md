@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Go: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:57:05.773225-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,10 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בתכנות, בדיקה אם ספרייה קיימת מתייחסת לאיתור של מקום ספציפי במערכת הקבצים. תכניתאים בודקים את זה על מנת למנוע שגיאות ריצת זמן או לבדוק אם תיקייה מסויימת קיימת לפני שהם יוצרים את התיקייה.
+בדיקת קיום ספריה היא אימות שספריה מסוימת נמצאת במערכת הקבצים. תכניתיים צריכים לדעת אם ספריה קיימת כדי לקרוא, לכתוב או לשנות קבצים בה.
 
-## איך:
-חלק זה מכיל דוגמאות לקוד ופלט כדי להראות איך לבדוק אם ספרייה קיימת ב Go:
+## איך לעשות:
+החלק הזה מראה קוד גולנג שבודק אם ספריה קיימת.
+
 ```Go
 package main
 
@@ -24,35 +26,30 @@ import (
 )
 
 func main() {
-	dirExists, err := doesDirExist("/path/to/directory")
-	if err != nil {
-		fmt.Println(err)
+	dir := "/path/to/your/directory"
+
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		fmt.Printf("Directory %s does not exist.\n", dir)
 	} else {
-		fmt.Printf("operation successful - directory exists: %v\n", dirExists)
+		fmt.Printf("Directory %s exists.\n", dir)
 	}
 }
-
-func doesDirExist(dirPath string) (bool, error) {
-	info, err := os.Stat(dirPath)
-	if os.IsNotExist(err) {
-		return false, nil
-	}
-
-	return info.IsDir(), err
-}
 ```
-פלט:
-```Go
-operation successful - directory exists: false
+הפלט יהיה אחד משניים, תלוי אם הספריה קיימת או לא:
 ```
-## צלילה עמוקה:
-הגדרת הפונקציה 'os.Stat' שנוצרה בהיסטוריה הארוכה של Go, מחזירה מידע על קובץ או ספרייה (אותו FileIno). במקרה של שגיאה, אם הקובץ או הספרייה לא קיימים, המשתנה 'err' שהיא מחזירה, יהיה מסוג PathError או LinkError.
+Directory /path/to/your/directory does not exist.
+```
+או:
+```
+Directory /path/to/your/directory exists.
+```
 
-אלטרנטיבות לפונקציה הזו כוללות את 'os.Dirfs' (שצריכה לטפל בכוננים בלבד) ו 'io.ReadDir' (בגרסאות Go 1.16 ומעלה).
+## עומקי הים:
+לפני `os.Stat`, הדרך הקלאסית לבדוק ספריה הייתה עם הפונקציה `ioutil.ReadDir`, אבל `ioutil` נפרדה מ-Go בגרסה 1.16 לטובת החבילה `os`. יתר על כן, קיימות אלטרנטיבות ל-`os.Stat`, כגון השימוש ב-`os.IsExist` או טיפול בשגיאה במקרה ונסיון לפתיחת הספריה נכשל.
 
-באשר לפרטי היישום, שגיאה מסוג Linkerror או PathError מתרחשת רק כאשר היישום מנסה לגשת לנתיב שלא קיים. במקרה הזה, הפונקציה 'os.IsNotExist(err)' תחזיר true.
+בקרב מפתחים, זהו משהו שנתקלים בו הרבה - רוצים להבטיח שלא יכתבו על פני קבצים קיימים או להיות תלויים בספריה שלא קיימת. מימוש יעיל ישמור על תוכנה יציבה וימנע קריסות בלתי צפויות.
 
-## ראו גם:
-[איך לבדוק אם ספרייה קיימת ב Go 1.16]()
-[הסברים נוספים על os.Stat و os.ErrNotExist]()
-[מדריך Go מרוכז בנושא טיפול בשגיאות בשפת Go]()
+## גם כדאי לראות:
+- תיעוד החבילה `os` ב-Golang: https://pkg.go.dev/os
+- הגדרות שגיאה בגולנג: https://blog.golang.org/go1.13-errors
+- מדריכים לניהול קבצים וספריות בגולנג: https://golangbot.com/read-files/

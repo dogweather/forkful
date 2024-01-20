@@ -1,7 +1,8 @@
 ---
-title:                "Verifica se una directory esiste"
-html_title:           "Lua: Verifica se una directory esiste"
-simple_title:         "Verifica se una directory esiste"
+title:                "Verifica dell'esistenza di una directory"
+date:                  2024-01-20T14:58:14.804324-07:00
+html_title:           "Gleam: Verifica dell'esistenza di una directory"
+simple_title:         "Verifica dell'esistenza di una directory"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,52 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché? (What & Why?)
+## Cosa & Perché?
+Controllare se una directory esiste ci permette di verificare la presenza di una cartella sul filesystem. I programmatori lo fanno per evitare errori durante la lettura/scrittura dei file e per assicurarsi che i percorsi necessari esistano prima di procedere con le operazioni.
 
-Verificare se una directory esiste è un'operazione che consiste nel controllare se una determinata directory è presente o meno sul filesystem. I programmatori lo fanno per evitare errori di runtime cercando di accedere a directory che potrebbero non esistere.
-
-## Come fare: (How to)
-
-Ruby fornisce un modo molto diretto per controllare se una directory esiste tramite il suo modulo integrato 'File'. Ecco come:
-
+## Come fare:
 ```Ruby
-if File.directory?("/path/to/directory")
-  puts "La directory esiste."
+require 'fileutils'
+
+# Controllo se una directory esiste
+directory = "/percorso/alla/directory"
+if Dir.exist?(directory)
+  puts "La directory esiste!"
 else
-  puts "La directory non esiste."
+  puts "La directory non esiste. Creiamola ora."
+  FileUtils.mkdir_p(directory)
 end
 ```
-
-Se la directory a '/path/to/directory' esiste, verrà stampato "La directory esiste.", altrimenti "La directory non esiste.".
-
-## Approfondimento (Deep Dive)
-
-Il metodo `File.directory?` è presente in Ruby da tempo. Capire come funziona può aiutarti a scrivere codice più solido e a prevenire errori potenziali.
-
-In realtà, ci sono altre due strade che puoi percorrere per raggiungere lo stesso risultato. La prima è tramite la classe `Dir`. Puoi usare il metodo `Dir.exist?` in questo modo:
-
-```Ruby
-if Dir.exist?("/path/to/directory")
-  puts "La directory esiste."
-else
-  puts "La directory non esiste."
-end
+Output (se la directory esiste):
+```
+La directory esiste!
+```
+Output (se la directory non esiste):
+```
+La directory non esiste. Creiamola ora.
 ```
 
-La seconda via alternativa è tramite il modulo `FileTest` che fornisce il metodo `.directory?`:
+## Approfondimento
+In passato, i programmatori Ruby potevano utilizzare il metodo `File.exists?`, ma è stato deprecato in favore di `File.exist?` e `Dir.exist?`. Utilizzare `Dir.exist?` è ora la maniera standard per verificare l'esistenza di directory. Se devi gestire il filesystem in modo più avanzato, considera gemme come 'fileutils' per operazioni complesse. I dettagli implementativi di `Dir.exist?` fanno uso di interfacce di basso livello offerte dal sistema operativo, che variano tra UNIX e sistemi Windows—motivo per cui Ruby astrae queste operazioni per offrirci un interfaccia semplice e pulita.
 
-```Ruby
-if FileTest.directory?("/path/to/directory")
-  puts "La directory esiste."
-else
-  puts "La directory non esiste."
-end
-```
-
-Rubato dal Javascript, Ruby ha ora asincronicità, dunque sarebbe possibile creare un metodo di verifica della directory esistenza in modo asincrono.
-
-## Per Saperne Di Più (See Also)
-
-* [Documentazione ufficiale Ruby per File.directory?](https://ruby-doc.org/core-3.0.0/File.html#method-c-directory-3F)
-* [Ruby API per Dir.exist?](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
-* [Metodo Ruby FileTest.directory?](https://ruby-doc.org/core-3.0.0/FileTest.html#method-c-directory-3F)
+## Vedi Anche
+- [FileUtils module](https://ruby-doc.org/stdlib-3.1.0/libdoc/fileutils/rdoc/FileUtils.html)
+- [Class: Dir](https://ruby-doc.org/core-3.1.0/Dir.html)
+- Ruby API Doc: [File.exist?](https://ruby-doc.org/core-3.1.0/File.html#method-c-exist-3F)
+- Guida a [File e I/O in Ruby](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

@@ -1,7 +1,8 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "C#: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉토리 존재 여부 확인하기"
+date:                  2024-01-20T14:57:40.822173-07:00
+html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
+simple_title:         "디렉토리 존재 여부 확인하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,50 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 쓰나요?
+## What & Why? (무엇과 왜?)
+디렉토리 존재 여부 확인은 파일 시스템에서 특정 폴더가 실제로 있나 찾아보는 것입니다. 프로그래머들은 데이터 저장, 읽기, 바꾸기 전에 에러를 피하기 위해 이 작업을 합니다.
 
-디렉토리가 존재하는지 확인하는 것은 파일 시스템에서 특정 디렉토리가 있는지를 검증하는 것입니다. 가끔씩 데이터를 읽거나 저장해야 할 때, 해당 디렉토리가 없으면 에러가 발생할 수 있기 때문에, 이런 과정이 중요합니다. 
-
-## 어떻게 하나요:
-
-PHP에서 디렉토리가 존재하는지 확인하려면 `is_dir` 함수를 사용합니다. 
-
+## How to: (어떻게 하나요?)
 ```PHP
 <?php
-$dir = "/path/to/your/directory";
+$directory = "/path/to/directory";
 
-if(is_dir($dir)){
-    echo "The directory exists";
-}else{
-    echo "The directory does not exist";
+// Check if the directory exists
+if (is_dir($directory)) {
+    echo "The directory exists.";
+} else {
+    echo "The directory does not exist.";
 }
 ?>
 ```
 
-위의 코드를 실행하면, 해당 디렉토리가 존재하는지에 따라 "The directory exists" 또는 "The directory does not exist"라는 메시지가 출력됩니다.
+이 코드는 `$directory`에 지정된 경로가 존재하는지 확인합니다. 폴더가 있으면 "The directory exists."를, 없으면 "The directory does not exist."를 출력합니다.
 
-## Deep Dive
+## Deep Dive (심층 분석)
+디렉토리 존재 여부 확인 기능은 오래전부터 있었습니다. PHP에서 `is_dir`함수는 PHP 4 버전 때부터 사용할 수 있었어요. `file_exists` 함수로도 폴더 또는 파일 존재 여부를 체크할 수 있지만, 주로 파일 존재 여부에 쓰입니다. 성능 측면에서는 `is_dir` 함수가 특정 경로가 디렉토리인지만 확인하면 되니까 `file_exists` 함수보다 조금 더 빨라요. 이런 차이 때문에 디렉토리인지 아닌지 분명히 구분해야 할 때는 `is_dir` 함수를 사용하는 것이 좋습니다.
 
-디렉토리의 존재 여부를 확인하는 것은 PHP의 초기 버전부터 필요했던 요소입니다. 파일 I/O 작업이 중요한 작업이기 때문입니다. 
-
-`is_dir` 함수를 사용하는 것 외에도 `file_exists` 함수를 사용해도 디렉토리의 존재 여부를 확인할 수 있습니다. 하지만 `file_exists` 함수는 파일 뿐만 아니라 디렉토리의 존재 여부도 확인하기 때문에 사용에 주의가 필요합니다.
-
-```PHP
-<?php
-$dir = "/path/to/your/directory";
-
-if(file_exists($dir)){
-    echo "The directory or file exists";
-}else{
-    echo "The directory or file does not exist";
-}
-?>
-```
-
-`is_dir` 함수는 내부적으로 `stat` 시스템 호출을 이용해 디렉토리 정보를 얻어와서 디렉토리인지 아닌지를 판별합니다.
-
-## 참고 자료
-
-1. `is_dir` 함수에 대한 PHP 공식 문서: [Link](https://www.php.net/manual/en/function.is-dir.php)
-2. `file_exists` 함수에 대한 PHP 공식 문서: [Link](https://www.php.net/manual/en/function.file-exists.php)
-3. `stat` 시스템 호출에 대한 정보: [Link](https://man7.org/linux/man-pages/man2/stat.2.html)
+## See Also (함께 보기)
+- PHP 공식 문서에서 `is_dir` 함수에 대한 정보: [php.net/manual/en/function.is-dir.php](https://www.php.net/manual/en/function.is-dir.php)
+- PHP `file_exists` 함수에 대한 자세한 설명: [php.net/manual/en/function.file-exists.php](https://www.php.net/manual/en/function.file-exists.php)
+- 파일 시스템 관련 PHP 함수 목록: [php.net/manual/en/ref.filesystem.php](https://www.php.net/manual/en/ref.filesystem.php)

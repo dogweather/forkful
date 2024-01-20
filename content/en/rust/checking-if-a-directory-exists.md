@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:58:30.687642-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,58 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Checking if a directory exists involves verifying the presence of a particular directory or folder in a file system. It's useful to ensure we don't repeat operations like creation or deletion if a directory already exists or prevent errors when accessing non-existent directories.
+Checking if a directory exists in Rust is about verifying a folder is present on the file system. Programmers do it to prevent errors when accessing or modifying files, ensuring smoother file operations.
 
 ## How to:
 
-In Rust, the `std::path::Path` and `std::fs` modules provide methods for checking if a directory exists. The `exists()` method is particularly useful in this case:
+Rust's standard library makes this task simple with `std::path::Path` and `std::fs`:
 
-```Rust
+```rust
 use std::path::Path;
 
 fn main() {
-    let dir = Path::new("/some/directory/path");
+    let path = Path::new("/some/directory");
 
-    if dir.exists() {
-        println!("Directory exists.");
+    if path.exists() && path.is_dir() {
+        println!("Directory exists!");
     } else {
         println!("Directory does not exist.");
     }
 }
 ```
 
-When you run this code, if the directory "/some/directory/path" exists, you'll see "Directory exists.", otherwise, you'll see "Directory does not exist.".
-
-## Deep Dive
-
-Historically, programmers have had different tactics to check for the existence of directories across programming languages. In Unix systems, the command-line and shell scripts provided tools to do this.
-
-Rust, being a language focused on system-level operations, provides this functionality through the standard library in `std::path::Path`. Importantly, using the `exists()` method isn't always the best solution: if you want to ensure a directory also has the correct permissions or verify it's indeed a directory (not a file), prefer `metadata()` and the `is_dir()` methods.
-
-```Rust
-use std::path::Path;
-
-fn main() {
-    let dir = Path::new("/some/directory/path");
-
-    match dir.metadata() {
-        Ok(metadata) => {
-            if metadata.is_dir() {
-                println!("Directory exists.");
-            } else {
-                println!("Not a directory.");
-            }
-        },
-        Err(_) => println!("Directory does not exist."),
-    }
-}
+Sample output, if directory exists:
+```
+Directory exists!
 ```
 
-This code provides more granular control over error handling and verifies that the path in question is indeed a directory.
+Sample output, if directory does not exist:
+```
+Directory does not exist.
+```
 
-## See Also
+## Deep Dive:
 
-To learn more about interacting with the filesystem in Rust, check out the following resources:
+Historically, file operations needed more verbose error handling, making the code clunky. Rust simplifies this with concise methods that "just work". Alternatives, like using shell commands or other libraries, exist but aren't as streamlined. The `exists()` method only checks for existence, not for whether it's a directory or a file; combine it with `is_dir()` for directories. These methods internally use the OS's system calls to query the file system efficiently.
 
-- Official Rust Documentation: [std::fs](https://doc.rust-lang.org/std/fs/index.html), [std::path](https://doc.rust-lang.org/std/path/index.html)
-- [Rust by Example – Filesystem Operations](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+## See Also:
+
+- Rust's Path documentation: https://doc.rust-lang.org/std/path/struct.Path.html
+- Rust's fs module documentation: https://doc.rust-lang.org/std/fs/
+- Error handling in Rust: https://doc.rust-lang.org/book/ch09-00-error-handling.html

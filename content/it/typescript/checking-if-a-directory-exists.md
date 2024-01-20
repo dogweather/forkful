@@ -1,7 +1,8 @@
 ---
-title:                "Verifica se una directory esiste"
-html_title:           "Lua: Verifica se una directory esiste"
-simple_title:         "Verifica se una directory esiste"
+title:                "Verifica dell'esistenza di una directory"
+date:                  2024-01-20T14:58:50.954414-07:00
+html_title:           "Gleam: Verifica dell'esistenza di una directory"
+simple_title:         "Verifica dell'esistenza di una directory"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,45 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Controllare l'esistenza di una directory significa verificare se una cartella è presente nel file system. I programmatori lo fanno per evitare errori durante l'accesso ai file, la lettura o la scrittura, garantendo che l'operazione sia sicura.
 
-Verificare se una directory esiste significa determinare se un determinato percorso nel sistema di file del tuo disco rigido contiene una cartella. È una pratica comune tra i programmatori per evitare errori legati all'accesso a directory inesistenti che possono causare problemi nel programma.
+## How to:
+Usare `fs` di Node.js per verificare se una directory esiste in TypeScript, installate prima `@types/node` per i tipi:
 
-## Come fare:
-
-In TypeScript, possiamo utilizzare il modulo `fs` del Node.js per verificare se una directory esiste. Ecco come:
-
-```TypeScript
-import { existsSync } from 'fs';
-
-console.log(existsSync('/path/to/dir'));  // ritorna true se la directory esiste, altrimenti false
-```
-Ecco un esempio di output:
-
-```TypeScript
-true
-```
-## Approfondiamo
-
-Verificare se una directory esiste è un'operazione fondamentale nell'interazione con il sistema di file. Negli anni, vari linguaggi di programmazione hanno fornito diversi metodi per eseguire questa verifica.
-
-In TypeScript, l'opzione principale viene fornita dal modulo `fs` di Node.js. Tuttavia, vale la pena notare che l'utilizzo di 'existsSync' può portare a condizioni di gara, dove lo stato del file potrebbe cambiare tra il controllo e l'accesso successivo al file. In questi casi, potrebbe essere meglio semplicemente aprire il file e gestire un'eventuale eccezione se il file non esiste.
-
-Un'altra alternativa è l'uso della funzione 'access' del modulo `fs`, che verifica i permessi di accesso per il percorso specificato, ma è più lento.
-
-```TypeScript
-import { access } from 'fs';
-
-access('/path/to/dir', error => {
-    if (error) {
-        console.log("La directory non esiste");
-    } else {
-        console.log("La directory esiste");
-    }
-});
+```bash
+npm install --save-dev @types/node
 ```
 
-## Vedi anche
+Ecco un esempio di codice:
 
-1. Documentazione Node.js `fs`: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-3. Stack Overflow - 'fs.existsSync vs fs.access': [https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
+```typescript
+import * as fs from 'fs';
+import { promisify } from 'util';
+
+// Convert fs.exists into a promise-based function
+const exists = promisify(fs.exists);
+
+async function checkDirectory(directoryPath: string): Promise<void> {
+  const directoryExists = await exists(directoryPath);
+
+  console.log(directoryExists 
+    ? `La directory esiste: ${directoryPath}` 
+    : `La directory non esiste: ${directoryPath}`);
+}
+
+// Usa la funzione e stampa il risultato
+checkDirectory('./esempio-directory').then(() => process.exit());
+```
+
+Output possibile:
+
+```
+La directory esiste: ./esempio-directory
+```
+
+Oppure:
+
+```
+La directory non esiste: ./esempio-directory
+```
+
+## Deep Dive:
+`fs.exists` veniva usato in passato, ma ora è deprecato perché non fornisce errori specifici. Invece si consiglia `fs.access` o `fs.stat`. `fs.access` verifica i permessi, mentre with `fs.stat` si ottengono informazioni dettagliate dell'entità file. Ecco le alternative moderne:
+
+```typescript
+import { promises as fsPromises } from 'fs';
+
+async function checkDirectoryNew(directoryPath: string): Promise<void> {
+  try {
+    await fsPromises.access(directoryPath);
+    console.log(`La directory esiste: ${directoryPath}`);
+  } catch (error) {
+    console.error(`La directory non esiste: ${directoryPath}`);
+  }
+}
+
+// Usage
+checkDirectoryNew('./nuova-esempio-directory').then(() => process.exit());
+```
+
+`fsPromises.stat` è utile se volete anche altre informazioni, come la dimensione della directory.
+
+## See Also:
+- Node.js 'fs' module: https://nodejs.org/api/fs.html
+- `fsPromises.access`: https://nodejs.org/api/fs.html#fspromisesaccesspath-mode
+- `fsPromises.stat`: https://nodejs.org/api/fs.html#fspromisesstatpath-options
+- NPM '@types/node': https://www.npmjs.com/package/@types/node

@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier si un répertoire existe"
-html_title:           "C++: Vérifier si un répertoire existe"
-simple_title:         "Vérifier si un répertoire existe"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Bash: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi?
+## What & Why? 
+(Quoi et Pourquoi ?)
 
-Vérifier si un répertoire existe est une tâche courante: il s'agit de confirmer la présence d'un dossier spécifique dans le système de fichiers de l'ordinateur. Les programmeurs font cela pour éviter les erreurs lors de la manipulation des fichiers, par exemple en essayant d'écrire dans un dossier inexistant.
+Parfois, on doit vérifier si un dossier existe pour éviter les erreurs lors de la manipulation de fichiers. Cela aide à la robustesse de nos programmes.
 
-## Comment faire:
-
-Nous utiliserons la bibliothèque `filesystem` introduite dans C++17. Voici un exemple:
+## How to:
+(Comment faire:)
 
 ```C++
-#include <filesystem>
 #include <iostream>
- 
-int main() {
-    std::string chemin = "/chemin/vers/le/dossier";
-    
-    if(std::filesystem::exists(chemin)) {
-        std::cout << "Le répertoire existe.\n";
-    } else {
-        std::cout << "Le répertoire n'existe pas.\n";
-    }
+#include <filesystem>
 
+namespace fs = std::filesystem;
+
+int main() {
+    fs::path pth{"./chemin/vers/dossier"};
+    
+    if(fs::exists(pth)) {
+        std::cout << "Le dossier existe!" << std::endl;
+    } else {
+        std::cout << "Le dossier n'existe pas!" << std::endl;
+    }
+    
     return 0;
 }
+
+```
+Sortie échantillon:
+```
+Le dossier existe!
+```
+ou
+```
+Le dossier n'existe pas!
 ```
 
-Dans cet exemple, changez la valeur de la variable `chemin` à votre choix. Le programme vous dira si le répertoire existe ou non.
+## Deep Dive
+(Plongée en profondeur)
 
-## Plongée profonde
+Avant C++17, on utilisait `struct stat` avec `stat()` ou des fonctions propres à chaque système d'exploitation. Maintenant, `std::filesystem` simplifie la portabilité. C'est plus sûr et plus lisible. Il existe aussi des bibliothèques tierces comme Boost.Filesystem, mais `std::filesystem` devient la norme.
 
-Historiquement, vérifier si un répertoire existe n'était pas si facile en C++. Avant C++17, il fallait utiliser des appels de système spécifiques à la plate-forme, ce qui rendait le code difficile à porter.
+## See Also
+(Voir aussi)
 
-Il y a des alternatives comme `boost::filesystem` de la bibliothèque Boost, mais cela exige l'installation de Boost. Maintenant, avec `std::filesystem` en C++17, cette tâche est beaucoup plus simple et portable.
-
-Côté mise en œuvre, `std::filesystem::exists` interroge le système de fichiers de l'ordinateur pour vérifier l'existence du chemin. Cela peut échouer si le programme n'a pas les permissions nécessaires.
-
-## Voir aussi
-
-- [Un aperçu de la bibliothèque Boost et de Boost::filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- [Comment définir les permissions d'accès aux fichiers en C++](https://en.cppreference.com/w/cpp/filesystem/perms)
+- Documentation de `std::filesystem`: https://en.cppreference.com/w/cpp/filesystem
+- Tutoriel Boost.Filesystem: https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm
+- Comparaison entre différentes méthodes: https://stackoverflow.com/questions/18100097/portable-way-to-check-if-directory-exists-windows-linux-c

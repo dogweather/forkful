@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Haskell: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:56:44.812703-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Verzeichnis Existenzprüfung in Haskell
-
 ## Was & Warum?
+Überprüfen, ob ein Ordner existiert, bedeutet, sicherzustellen, dass ein Pfad auf ein tatsächlich vorhandenes Verzeichnis zeigt. Programmierer machen das, um Fehler zu vermeiden, die entstehen, wenn ihr Code mit nicht vorhandenen Dateisystempfaden arbeiten soll.
 
-Die Überprüfung, ob ein Verzeichnis existiert, ist eine Operation, um das Vorhandensein eines bestimmten Pfads im Dateisystem festzustellen. Es ermöglicht Programmierern, Fehlern bei Dateioperationen vorzubeugen.
+## How to:
+Hier ist ein einfaches Beispiel, wie du in Haskell mit der Bibliothek `directory` überprüfen kannst, ob ein Verzeichnis existiert:
 
-## So wird's gemacht:
+```haskell
+import System.Directory (doesDirectoryExist)
 
-In Haskell könnten wir die `doesDirectoryExist` Funktion aus dem `System.Directory` Modul verwenden, um dies zu erreichen. Hier ist ein Codeausschnitt:
-
-```Haskell
-import System.Directory
-
-checkDirectory :: IO ()
-checkDirectory = do
-    result <- doesDirectoryExist "pfad/zum/verzeichnis"
-    if result
-    then putStrLn "Das Verzeichnis existiert."
-    else putStrLn "Das Verzeichnis existiert nicht."
+main :: IO ()
+main = do
+  let path = "/path/to/directory"
+  directoryExists <- doesDirectoryExist path
+  putStrLn $ "Existiert das Verzeichnis? " ++ show directoryExists
 ```
 
-Was passiert hier? Der `doesDirectoryExist`-Aufruf gibt ein `IO Bool` zurück. Dieses Resultat wird überprüft und darauf entsprechend reagiert.
+Wenn das Verzeichnis existiert, wird die Ausgabe `True` sein, andernfalls `False`.
 
-## Tiefere Tauchgänge
+## Deep Dive
+Haskell bietet über seine Paketbibliothek mehrere Wege, die Existenz von Verzeichnissen zu prüfen. Das `directory`-Paket ist der Standardweg, weil es direkt die plattformabhängigen Systemaufrufe kapselt. Historisch gesehen entstammen solche Funktionen dem UNIX-Konzept der Dateisystemverwaltung. Alternativen wie `System.FilePath` oder `unix`-Paket bieten ähnliche Funktionalitäten, manchmal mit zusätzlichen Features. Bei der Umsetzung wird tatsächlich oft die POSIX-Funktion `stat` verwendet, um Informationen über Dateipfade zu erhalten.
 
-Haskell implementiert die Verzeichnisprüfung grundsätzlich über das zugrunde liegende Betriebssystem. Im Hintergrund wird auf POSIX-Systemen ein `stat`-Systemaufruf ausgeführt und die Rückgabe interpretiert.
-
-Andere Methoden sind ein direkter Systemaufruf in C oder der Einsatz von externen Shell-Befehlen, die jedoch in der Regel weniger idiombasiert und potenziell fehleranfälliger sind.
-
-Historisch gesehen war das Arbeiten mit Dateien und Verzeichnissen in Haskell immer ein wenig umständlich, da diese Operationen Nebeneffekte haben und daher in den IO-Monaden behandelt werden müssen. Mit der Einführung des `System.Directory`-Moduls wurde jedoch versucht, dem entgegenzuwirken und eine bequemere API bereitzustellen.
-
-## Siehe auch
-
-Weitere Informationen und Anleitungen zum Umgang mit Dateien und Verzeichnissen in Haskell finden Sie in den folgenden Links:
-
-- [System.Directory in Haskell](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+## See Also
+- Haskell `directory` paket: [https://hackage.haskell.org/package/directory](https://hackage.haskell.org/package/directory)
+- Haskell IO Tutorial mit weiteren Dateisystemoperationen: [https://www.haskell.org/tutorial/io.html](https://www.haskell.org/tutorial/io.html)
+- POSIX `stat` Funktion: [https://linux.die.net/man/2/stat](https://linux.die.net/man/2/stat)

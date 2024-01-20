@@ -35,5 +35,4 @@ Output blir JSON-format: `{"name":"Anna","age":34,"city":"Stockholm"}` och sedan
 JSON (JavaScript Object Notation) togs fram i början av 2000-talet. Alternativ till JSON inkluderar XML och YAML. Ruby använder `json`-biblioteket, som följer `RFC 7159`. Parsing med `JSON.parse` och serialisering med `.to_json` är grundstommar i Ruby's hantering av JSON.
 
 ## See Also
-- Ruby's dokumentation om JSON: [ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html)
 - JSON-specifikationen: [json.org/json-sv.html](http://json.org/json-sv.html)

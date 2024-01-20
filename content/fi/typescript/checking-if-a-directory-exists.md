@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Lua: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:58:48.197909-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# TypeScript: Tarkista onko hakemisto olemassa
-
 ## Mitä & Miksi?
+Tarkistamme, onko hakemisto olemassa, ettei sovelluksemme kaadu yrittäessään lukea tai kirjoittaa olemattomaan kansioon. Tämä on tärkeää tiedostojärjestelmän virheiden ehkäisyssä ja tiedonhallinnassa.
 
-Hakemiston olemassaolon tarkistaminen tarkoittaa tiedostojärjestelmässä sijaitsevan hakemiston löytämistä ja sen varmistamista, että se on olemassa. Ohjelmoijat tekevät tätän tarkistaakseen etukäteen ovatko resurssit saatavana, ennen kuin he aloittavat työskentelyn niihin.
-
-## Kuinka tehdä:
-
-Tarkistamme onko hakemisto olemassa käyttämällä Node.js 'fs' moduulia. 
-
+## Kuinka:
 ```TypeScript
-import { existsSync } from 'fs';
+import * as fs from 'fs';
+import { promisify } from 'util';
 
-function checkDirectory(directoryPath: string): void {
-  if (existsSync(directoryPath)) {
-    console.log("Hakemisto on olemassa.");
-  } else {
-    console.log("Hakemisto ei ole olemassa.");
+const exists = promisify(fs.exists);
+
+async function checkDirectory(directoryPath: string) {
+  try {
+    const dirExists = await exists(directoryPath);
+    console.log(dirExists ? 'Hakemisto löytyy.' : 'Hakemistoa ei ole olemassa.');
+  } catch (error) {
+    console.error('Virhe tarkistaessa hakemistoa:', error);
   }
 }
 
-checkDirectory("./someDirectory");  // Esimerkkihakemiston tarkistus
+// Käytä funktiota
+checkDirectory('./polku/hakemistoon');
 ```
+Esimerkkilokissa näkyy joko "Hakemisto löytyy." tai "Hakemistoa ei ole olemassa." sen mukaan, onko hakemisto olemassa.
 
-Käytettäessä 'fs' moduulia, `existsSync`-funktio tarkistaa, onko tietty hakemisto olemassa tiedostojärjestelmässä. 
+## Syväsukellus
 
-## Syvällisempi sukellus:
+Hakemistojen olemassaolon tarkistus on ollut osa ohjelmistokehitystä tiedostojärjestelmien alkuajoista asti. JavaScript-ympäristössä, kuten Node.js:ssä, tämä tehdään `fs` (FileSystem)-moduulin avulla, joka tarjoaa synkronisia ja asynkronisia funktioita tähän tarkoitukseen.
 
-Hakemistojen olemassaolon tarkistaminen on joukkotiedostojärjestelmien perusominaisuuksia. Siitä lähtien, kun hakemistorakenteet otettiin käyttöön, ohjelmoijat ovat tarvinneet keinoja tarkistaa, ovatko heidän osoittamansa tiedostopolut olemassa.
+Historiallisesti `fs.exists` oli tapa tarkistaa kansioita, mutta se on virallisesti katsottu vanhentuneeksi, koska se ei laske virheitä normaaliin Node.js callback -malliin. Nykyään `fs.access` on suositeltavampi tapa, koska se seuraa Node.js:n paradigmaa ja antaa mahdollisuuden tarkistaa myös käyttöoikeuksia.
 
-Vaihtoehtoisesti voit käyttää `fs.stat` tai `fs.access` funktioita. Mutta näitä funktioita on kutsuttava virheenkäsittelyn kera, koska ne heittävät virheen, jos hakemistoa ei ole olemassa.
+Kuitenkin, kun käytetään TypeScriptiä, joka on JavaScriptin superset, tulee mukana tyypit ja kehittyneemmät abstraktiot virhekäsittelyyn ja asynkronisiin operaatioihin, kuten yllä olevassa esimerkissä nähtiin.
 
-Kun tarkistat onko hakemisto olemassa, yrität lukea tiedostojärjestelmän metatietoja. Tämä ei vaadi tiedostojen sisällön lukemista, joten se on suhteellisen nopea toiminto.
+Eri lähestymistapoina voidaan mainita myös käyttö funktioiden `fs.stat` tai `fs.readdir` kautta, jotka antavat enemmän tietoa tiedostojärjestelmästä. Nämä funktiot voivat heittää virheen, jos polku ei ole olemassa, joten ne vaativat virheiden käsittelyä.
 
-## Katso myös:
-
-1. Node.js 'fs' moduuli dokumentaatio: https://nodejs.org/api/fs.html
-2. TypeScriptin opas: https://www.typescriptlang.org/docs/handbook/intro.html
-3. Hakemistorakenteen Wikipedia-artikkeli: https://fi.wikipedia.org/wiki/Hakemisto_(tietotekniikka)
+## Katso Myös
+- Node.js FileSystem Documentation: [Node.js fs](https://nodejs.org/api/fs.html)
+- TypeScript Documentation: [TypeScript Lang](https://www.typescriptlang.org/docs/)
+- More on Promises and async/await pattern: [MDN - Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)

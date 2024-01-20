@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Lua: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:58:21.538652-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,34 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+"Mikä & Miksi?"
 
-Hakemiston olemassaolon tarkistaminen tarkoittaa sitä, että ohjelmoija tarkistaa koodissaan, onko tietty hakemisto jo luotu järjestelmään. Tätä tehdään yleensä välttääksemme virheitä, kuten tiedoston kirjoittamista hakemistoon, jota ei ole olemassa.
+Tarkistetaan, onko hakemisto olemassa, jotta vältetään virheitä tiedostopohjaisessa I/O-toiminnassa. Tämä on välttämätöntä tiedostojen luomisen, lukemisen tai kirjoittamisen yhteydessä.
 
-## Kuinka:
+## How to:
+"Kuinka tehdä:"
 
-Tarkistetaan onko hakemisto olemassa Rust-ohjelmointikielessä näin:
+Rustissa hakemiston olemassaolon voi tarkistaa käyttämällä `std::path::Path` -tyyppiä ja `exists`-metodia. Tässä on esimerkki:
 
-```Rust
+```rust
 use std::path::Path;
 
 fn main() {
-    if Path::new("/polku/hakemistoon").exists() {
-        println!("Hakemisto on olemassa");
+    let path = Path::new("./example_dir");
+
+    if path.exists() {
+        println!("Hakemisto löytyy!");
     } else {
-        println!("Hakemistoa ei ole olemassa");
+        println!("Hakemistoa ei ole olemassa.");
     }
 }
 ```
 
-Tämän ohjelman tulostus olisi joko "Hakemisto on olemassa" tai "Hakemistoa ei ole olemassa", riippuen siitä onko annettu hakemisto jo luotu.
+Jos `example_dir` on olemassa, tuloste:
+```
+Hakemisto löytyy!
+```
 
-## Syvällistä tietoa:
+Jos hakemistoa ei ole, tuloste:
+```
+Hakemistoa ei ole olemassa.
+```
 
-Hakemiston olemassaolon tarkistamiseen on ollut tarve jo kauan, ja se on hyvin yleinen tehtävä monilla ohjelmointikielillä. Rustissa `Path::new().exists()` on kätevin tapa tarkistaa se. On myös muita menetelmiä, kuten `fs::metadata()` funktion käyttö, mutta ne vaativat enemmän koodia ja ovat monimutkaisempia. `Path::new().exists()` toimii suoraan `std::path::Path` rakenteeseen, joka on osa Rustin standardikirjastoa ja se tarkistaa sekä tiedostojen että hakemistojen olemassaolon.
+## Deep Dive:
+"Syväsukellus:"
 
-## Katso myös:
+Ennen Rustia, kielet kuten C tai Python tarjosivat monimutkaisempia tapoja hakemiston olemassaolon tarkistamiseen. Rustin standardikirjasto tarjoaa suoran ja tyypin turvallisen tavan.
 
-Rustin virallinen dokumentaatio antaa hyvää tietoa aiheesta:
-- Rust-syntaksin ja standardikirjaston perusteet: https://doc.rust-lang.org/book/
-- Tarkistetaan tiedoston tai hakemiston olemassaolo: https://doc.rust-lang.org/std/path/struct.Path.html#method.exists
+Vaihtoehtoisesti, voimme käyttää `std::fs` -moduulin `metadata`-funktiota, joka antaa lisätietoa tallennusmedian kohteesta. Se on tehokkampi, mutta yksinkertaista tarkistusta varten `Path::exists` on suositeltava.
+
+Hakemiston olemassaolon tarkistusta käytetään usein konfiguraatio- ja väliaikaishakemistojen käsittelyssä. Performance-vaikutukset ovat vähäisiä, mutta turhat tiedostosysteemioperaatiot vältetään.
+
+## See Also:
+"Katso myös:"
+
+- Rustin dokumentaatio `std::path::Path`: https://doc.rust-lang.org/std/path/struct.Path.html
+- Rustin dokumentaatio `std::fs`: https://doc.rust-lang.org/std/fs/index.html
+- Filesystem operations in Rust: https://doc.rust-lang.org/book/ch12-00-an-io-project.html

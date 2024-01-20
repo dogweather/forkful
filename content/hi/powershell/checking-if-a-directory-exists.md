@@ -1,7 +1,8 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं यह जांचना"
-html_title:           "Go: डायरेक्टरी मौजूद है या नहीं यह जांचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं यह जांचना"
+title:                "डायरेक्टरी का अस्तित्व जाँचना"
+date:                  2024-01-20T14:58:25.590091-07:00
+html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
+simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# डायरेक्टरी मौजूद है या नहीं, कैसे जांचें? PowerShell का प्रयोग करना सीखें।
+## What & Why? (क्या और क्यों?)
+डायरेक्टरी का अस्तित्व चेक करना मतलब है पता लगाना कि कोई फोल्डर सिस्टम में है भी या नहीं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि गलतियों को रोक सकें और फाइल्स को सेव या रीड करने से पहले सही जगह का पता चल सके।
 
-## क्या और क्यों?
-डायरेक्टरी की मौजूदगी की जांच करने का अर्थ है, यह सुनिश्चित करना कि एक विशेष डायरेक्टरी कंप्यूटर पर मौजूद है या नहीं। प्रोग्रामर्स इसे ताकि कॉड या स्क्रिप्ट अनपेक्षित त्रुटियों से बच सके, इसका उपयोग करते हैं।
-
-## कैसे करें:
-नीचे दिया गया कोड सैंपल दिखाता है कि कैसे हम PowerShell का उपयोग करके डायरेक्टरी की मौजूदगी की जांच कर सकते हैं।
-
+## How to: (कैसे करें:)
 ```PowerShell
-$path = "C:\Temp\MyDirectory"
+# डायरेक्टरी चेक करना:
+$directoryPath = "C:\ExamplePath"
 
-if (Test-Path $path) {
-    Write-Host "Directory exists"
+# Test-Path cmdlet का उपयोग करके चेक करें
+if (Test-Path $directoryPath) {
+    Write-Host "डायरेक्टरी मौजूद है!"
 } else {
-    Write-Host "Directory does not exist"
+    Write-Host "डायरेक्टरी मौजूद नहीं है!"
 }
+
+# सैंपल आउटपुट:
+# अगर मौजूद है, तो:
+"डायरेक्टरी मौजूद है!"
+
+# अगर नहीं मौजूद है, तो:
+"डायरेक्टरी मौजूद नहीं है!"
 ```
 
-कोड जब चलता है। यह `C:\Temp\MyDirectory` पथ मौजूद है या नहीं, जांचेगा। अगर पथ मौजूद होता है, तो यह "Directory exists" प्रिंट करेगा, अन्यथा "Directory does not exist" प्रिंट होगा। 
+## Deep Dive (गहराई से जानकारी):
+डायरेक्टरी चेक करने के लिए `Test-Path` PowerShell कमांडलेट काफी पुराना और भरोसेमंद तरीका है। यह न सिर्फ फोल्डर के लिए बल्कि फाइल्स के लिए भी इस्तेमाल होता है। अल्टरनेटिव में, कुछ स्क्रिप्टर्स `[System.IO.Directory]::Exists($path)` डॉटनेट क्लास का उपयोग भी करते हैं, लेकिन `Test-Path` ज्यादा स्ट्रेटफॉरवर्ड है। इसे अलग अलग पैरामीटर्स जैसे कि `-PathType` के साथ और भी शक्तिशाली बना सकते हैं, जिससे आप चेक कर सकते हैं कि ऑब्जेक्ट एक डायरेक्टरी है, फाइल है, या कुछ और।
 
-## गहराई में जाने:
-विगत में, प्रोग्रामर्स `if (dir $path)` की तरह पुराने तरीकों का उपयोग करके डायरेक्टरी की मौजूदगी की जांच करते थे। अब PowerShell `Test-Path` cmdlet का प्रदान करता है, जो इसे और अधिक सुविधाजनक और विश्वसनीय बनाता है। 
-
-इसके विकल्पों में Python, Bash और अन्य स्क्रिप्टिंग भाषाओं में विभिन्न उपयोगों के लिए विभिन्न तरीके होते हैं, लेकिन PowerShell का उपयोग Windows पर विधानानुसार काम करने के लिए बनाया गया है।
-
-## यह भी देखें:
-1. [PowerShell का आधिकारिक दस्तावेजीकरण](https://docs.microsoft.com/en-us/powershell/)
-2. [PowerShell स्क्रिप्टिंग गाइड](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-3. [PowerShell `Test-Path` cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7)
+## See Also (देखने के लिए):
+- [Test-Path Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.2)
+- [about_Automatic_Variables (इसमें `$PWD` जो वर्तमान डायरेक्टरी को दिखाता है)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2)
+- [PowerShell Scripting guide](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)
+- [File System Provider](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/providers/filesystem-provider?view=powershell-7.2)

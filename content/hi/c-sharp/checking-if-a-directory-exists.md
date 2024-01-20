@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं जाँचना"
-html_title:           "C#: डायरेक्टरी मौजूद है या नहीं जाँचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं जाँचना"
+title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+html_title:           "Arduino: यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-डायरेक्टरी मौजूद है या नहीं, का जांचने का अर्थ है कि प्रोग्राम एक विशेष फ़ाइल पथ हेतु अस्तित्व की पुष्टि करता है। प्रोग्रामर्स इसे तब इस्तेमाल करते हैं जब उन्हें यह सुनिश्चित करना होता है कि एक ऑपरेशन करने से पहले एक डायरेक्टरी मौजूद है।
+## What & Why? (क्या और क्यों?)
+Directory का पता लगाना है कि वह मौजूद है या नहीं। Programmers इसे करते हैं ताकि errors को रोका जा सके जब कोई file या data उस directory में save किया जा रहा हो।
 
-## कैसे करें:
-C# में किसी डायरेक्टरी की उपस्थिति की जांच करने के लिए, आप `Directory.Exists` फ़ंक्शन का उपयोग कर सकते हैं। यह जांचता है कि निर्दिष्ट पथ पर डायरेक्टरी है या नहीं।
+## How to: (कैसे करें:)
+C# में directory का पता लगाने के लिए `System.IO` namespace का `Directory.Exists` method का इस्तेमाल करते हैं। 
 
 ```C#
 using System;
 using System.IO;
 
-class Program
-{
-    static void Main()
-    {
-        string path = @"C:\SomeDirectory";
-        if (Directory.Exists(path))
-        {
-            Console.WriteLine("Directory exists.");
-        }
-        else
-        {
-            Console.WriteLine("Directory does not exist.");
+class Program {
+    static void Main() {
+        string directoryPath = @"C:\examplepath";
+
+        if (Directory.Exists(directoryPath)) {
+            Console.WriteLine("Directory मौजूद है।");
+        } else {
+            Console.WriteLine("Directory मौजूद नहीं है।");
         }
     }
 }
 ```
 
-संभाव्य आउटपुट:
+Sample Output:
+- अगर directory मौजूद है: `Directory मौजूद है।`
+- अगर directory मौजूद नहीं है: `Directory मौजूद नहीं है।`
 
-```
-Directory does not exist.
-```
+## Deep Dive (गहराई में जानकारी)
+`System.IO.Directory.Exists` method C# में लंबे समय से है और यह .NET Framework के साथ ही आया था। इस method का use करते हुए, programmers सीधे check कर सकते हैं कि कोई directory है भी या नहीं बिना किसी exception के। 
 
-## गहरी डाइव
-इतिहासिक प्रसंग में, इस तकनीक का उपयोग करने से पहले आपको निर्देशिका का पूर्ण पथ सही होना चाहिए। अन्य विकल्पों में, आप `DirectoryInfo.Exists` फ़ंक्शन का उपयोग कर सकते हैं, लेकिन यह Directory class से अधिक overhead ला सकता है। इन फंक्शनों का उपयोग जांचने के लिए किया जाता है कि क्या फ़ाइल सिस्टम निर्देशिका पथ के सहज उपयोग के लिए सही है।
+Alternatives की बात करें, तो कुछ programmers `DirectoryInfo` class का `Exists` property का भी उपयोग कर सकते हैं, लेकिन `Directory.Exists` सरल और सीधी विधि है।
 
-## देखें भी
-1. माइक्रोसॉफ्ट डॉक्स: [डायरेक्टरी. मौजूदता की जांच करें](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-2. StackOverflow: [कैसे निर्दिष्टित किया जाए कि क्या एक निर्देशिका मौजूद हैं](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory)
+Implementation details में, यह method न सिर्फ directory की मौजूदगी चेक करता है, बल्कि यह भी ध्यान देता है कि उस path तक access की permissions हैं या नहीं। यदि path तक पहुंचने में असमर्थ होता है तो यह `false` return करता है।
+
+## See Also (और अधिक जानकारी के लिए)
+- Microsoft's documentation on `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- MSDN article on `DirectoryInfo.Exists` vs `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.exists)
+- Stack Overflow discussions on file I/O in C#: [Link](https://stackoverflow.com/questions/tagged/c%23+file-io)

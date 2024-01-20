@@ -11,50 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-
-Verificar se um diretório existe é o processo pelo qual se confirma a presença de uma pasta específica num sistema de arquivos. Programadores fazem isto para evitar erros de tempo de execução, tais como 'FileNotFoundException', que ocorrem quando se tenta acessar um diretório inexistente.
+Verificar se um diretório existe é simplesmente o ato de checar se um determinado caminho leva a uma pasta conhecida no seu cartão SD ou memória flash. Programadores fazem isso para evitar erros ao tentar acessar ou escrever arquivos em diretórios que não existem.
 
 ## Como fazer:
-
-Aqui está um exemplo de como verificar a existência de um diretório com Arduino:
-
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!SD.begin(4)) {
-    Serial.println("Inicialização falhou!");
+  if (!SD.begin()) {
+    Serial.println("Falha na inicialização do cartão SD");
     return;
   }
-  if (SD.exists("/meu_diretorio")) {
-    Serial.println("O diretório existe.");
+  
+  File root = SD.open("/");
+  if (root.isDirectory()) {
+    File dir = root.openNextFile();
+    while (dir) {
+      if (dir.isDirectory()) {
+        Serial.print("Diretório encontrado: ");
+        Serial.println(dir.name());
+      }
+      dir = root.openNextFile();
+    }
   } else {
-    Serial.println("O diretório não existe.");
+    Serial.println("Raiz não é um diretório!");
   }
 }
 
 void loop() {
-  // código vazio
+  // Não é necessário implementar esse loop
 }
-
 ```
 
-Quando executado, o código acima irá imprimir "O diretório existe." se "/meu_diretorio" existir, caso contrário, imprimirá "O diretório não existe.".
+Sample output:
+```
+Diretório encontrado: DCIM
+Diretório encontrado: MUSICA
+```
 
-## Mergulho Profundo:
+## Mergulho Profundo
+Historicamente, o conceito de verificar a existência de um diretório é importante em muitas plataformas e linguagens de programação, não só em Arduino. Em Arduino, principalmente com o uso de cartões SD, esta verificação é crucial para a gestão correta dos arquivos. Alternativas para a biblioteca SD padrão incluem SdFat, que oferece mais funcionalidades e eficiência em certos casos. A implementação dessas verificações geralmente depende do sistema de arquivos do dispositivo de armazenamento e da API fornecida pela biblioteca em uso.
 
-Ao verificar a existência de um diretório, estamos a manter uma prática de programação defensiva, o que ajuda a mitigar possíveis problemas. Esta funcionalidade foi introduzida na primeira versão da biblioteca SD no Arduino.
-
-Alternativas a este método envolvem a manipulação direta dos erros ao tentar acessar o arquivo, ou utilizar outras bibliotecas para a realização desta tarefa, dependendo do sistema de arquivos em uso.
-
-Um detalhe de implementação interessante é que a função `SD.exists()` não só verifica a existência de diretórios, mas também de arquivos. Isto deve ser levado em conta ao utilizar esta função.
-
-## Veja também:
-
-Para informações detalhadas sobre o uso do SD no Arduino, verifique a documentação oficial do Arduino [aqui](https://www.arduino.cc/en/reference/SD).
-
-Para uma discussão profunda sobre programação defensiva, visite este link: [Programming defensively](https://en.wikipedia.org/wiki/Defensive_programming).
-
-Para uma visão geral sobre manipulação de erros em Arduino, dê uma olhada [aqui](https://www.arduino.cc/en/tutorial/tryCatch).
+## Veja Também:
+- Documentação oficial da biblioteca SD do Arduino: [Arduino - SD](https://www.arduino.cc/en/Reference/SD)
+- Biblioteca SdFat para alternativa de gestão de arquivos em SD: [SdFat - GitHub](https://github.com/greiman/SdFat)

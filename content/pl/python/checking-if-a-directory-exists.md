@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Elm: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:58:17.994546-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Python"
 category:             "Python"
@@ -10,53 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Co i Dlaczego?"
 
-Sprawdzanie, czy dany katalog istnieje w Pythonie, to po prostu sposób na upewnienie się, czy katalog, z którym chcemy pracować, faktycznie istnieje w systemie plików. Programiści robią to, aby uniknąć błędów podczas próby pracy z nieistniejącym katalogiem.
+Sprawdzanie, czy katalog istnieje, to sposób na uniknięcie błędów podczas próby dostępu do nieistniejących folderów. Robimy to, aby nasz kod był niezawodny i bezpiecznie obsługiwał pliki i foldery.
 
-## Jak to zrobić:
+## How to:
+"Jak to zrobić:"
 
-Możemy to zrobić za pomocą modułu os. Oto proste przykłady:
+Sprawdzamy istnienie katalogu w Pythonie z modułem `os` lub `pathlib`.
 
-```Python
+```python
 import os
 
-# Sprawdzamy, czy katalog istnieje
+# Używając os.path
 if os.path.isdir("/ścieżka/do/katalogu"):
-    print("Katalog istnieje")
+    print("Katalog istnieje.")
 else:
-    print("Katalog nie istnieje")
-```
+    print("Katalog nie istnieje.")
 
-Jeśli chcemy sprawdzić i stworzyć katalog, jeśli go nie ma, możemy użyć:
-
-```Python
-directory = "/ścieżka/do/katalogu"
-
-if not os.path.exists(directory):
-    os.makedirs(directory)
-```
-
-## Deep Dive: 
-
-Sprawdzanie, czy katalog istnieje, to stara praktyka znana wszystkim programistom pracującym z systemami plików. W Pythonie możemy to zrobić na kilka sposobów, ale najpopularniejsze i najbardziej "pythoniczne" są metody `os.path.isdir` i `os.path.exists` wraz z `os.makedirs`.
-
-Warto zauważyć, że `os.path.exists` sprawdza, czy dana ścieżka istnieje, niezależnie od tego, czy jest to katalog, czy plik. Jeśli potrzebujesz sprawdzić specyficznie katalog, powinieneś użyć `os.path.isdir`.
-
-Alternatywą dla modułu os jest moduł pathlib, który jest częścią standardowej biblioteki od Pythona 3.4.
-
-```Python
+# Używając pathlib
 from pathlib import Path
 
-# Sprawdzenie, czy katalog istnieje
-if Path('/ścieżka/do/katalogu').is_dir():
-    print('Katalog istnieje.')
+if Path("/ścieżka/do/katalogu").is_dir():
+    print("Katalog istnieje.")
 else:
-    print('Katalog nie istnieje.')
+    print("Katalog nie istnieje.")
+```
+Wyjście zależy od tego, czy katalog istnieje:
+```
+Katalog istnieje.
+```
+Lub:
+```
+Katalog nie istnieje.
 ```
 
-## Zobacz również: 
+## Deep Dive:
+"Dogłębne Zanurzenie:"
 
-- Dokumentacja Pythona na temat modułów os and pathlib: https://docs.python.org/3/library/os.path.html, https://docs.python.org/3/library/pathlib.html
-- Artykuł — Praca z plikami i katalogami w Pythonie: https://realpython.com/working-with-files-in-python/
-- Post na StackOverflow na temat sprawdzania istnienia katalogu: https://stackoverflow.com/questions/8933237/how-to-find-if-directory-exists-in-python
+Metoda `os.path.isdir()` istnieje w Pythonie od dawna. `pathlib`, dodana w Python 3.4, jest nowocześniejszą alternatywą oferującą obiektowo zorientowany interfejs. W przeciwieństwie do `os.path`, `pathlib` może także efektywnie łączyć ścieżki.
+
+Używanie `os` jest typowe dla starszych programów, ale `pathlib` przynosi większą czytelność i jest często rekomendowany jako bardziej "pythoniczny".
+
+## See Also:
+"Zobacz Również:"
+
+- Dokumentacja modułu `os`: https://docs.python.org/3/library/os.html
+- Dokumentacja modułu `pathlib`: https://docs.python.org/3/library/pathlib.html
+- Porównanie os.path i pathlib: https://treyhunner.com/2018/12/why-you-should-be-using-pathlib/

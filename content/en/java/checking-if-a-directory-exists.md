@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:56:39.519215-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Java"
 category:             "Java"
@@ -11,54 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Checking if a directory exists in Java simply means validating if a specific folder is present on your filesystem. It's essential to prevent errors (e.g., file not found, permission denied), especially before reading files or creating new ones in the directory.
+Checking if a directory exists means verifying it's there before you try to read or write files in it. Programmers do this to avoid errors, like trying to save a file where there's no place to put it.
 
 ## How to:
+Here's how you check if a directory exists with `java.nio.file`:
 
-We will use the `Files` class in Java's NIO package. Let's get straight to it:
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-```Java
-import java.nio.file.*;
+public class DirectoryCheck {
 
-public class CheckDirectory {
-  public static void main(String[] args) {
-    Path path = Paths.get("/path/to/directory");
+    public static void main(String[] args) {
+        Path directoryPath = Path.of("/path/to/directory");
 
-    if(Files.exists(path)) {
-      System.out.println("The directory exists!");
-    } else {
-      System.out.println("Directory doesn't exist!");
+        // Check if the directory exists
+        boolean directoryExists = Files.exists(directoryPath);
+
+        // Print the result
+        System.out.println("Does the directory exist? " + directoryExists);
     }
-  }
 }
 ```
-If the directory is present at the given path, it will print "The directory exists!", otherwise "Directory doesn't exist!".
+
+If you run this, your console will simply show:
+
+```
+Does the directory exist? true // or false
+```
+
+Knock yourself out.
 
 ## Deep Dive
+Back in the day, people used the `java.io.File.exists()` method. But `java.nio.file.Files.exists(Path)` is the hotshot now because it's more versatile. You can also check file attributes with the same API.
 
-Historically, we used the `File` class of Java I/O to check a directory's existence. The `File` class methods, however, are deemed less efficient and less versatile compared to `Files` class methods.
+But wait, there's more. The `Files.exists` method is not bulletproof—there's a race condition. What if something happens to the directory right after you check? Boom, your operation fails. To mitigate this, use `Files.exists` sparingly and handle exceptions properly when doing actual file operations.
 
-Additionally, the `Files` class also offers `Files.notExists(path)`, a bit clearer and more specific.
+Alternatively, you could simply attempt the file operation and catch the possible `NoSuchFileException`. This is known as "easier to ask for forgiveness than permission" (EAFP) versus "look before you leap" (LBYL), which is what `Files.exists()` is doing.
 
-```Java
-if(Files.notExists(path)) {
-  System.out.println("Directory doesn't exist!");
-} else {
-  System.out.println("The directory exists!");
-}
-```
-Or you can add an extra level of checks to look if the path is a directory:
-
-```Java
-if(Files.exists(path) && Files.isDirectory(path)) {
-  System.out.println("The directory exists!");
-}
-```
-These small, robust methods can handle your directory validity requirements seamlessly and effectively.
-
-## See Also:
-
-1. [Oracle: Java NIO Files class documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-2. [Oracle: Java NIO Path class documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html)
-3. [StackOverflow: How to check if a directory exists in Java](https://stackoverflow.com/questions/3775694/how-to-check-if-a-directory-exists-in-java)
+## See Also
+- [Files.exists()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#exists(java.nio.file.Path,java.nio.file.LinkOption...))
+- [File I/O in Java](https://docs.oracle.com/javase/tutorial/essential/io/)
+- A cool article about EAFP vs. LBYL: [The EAFP Principle](https://devblogs.microsoft.com/python/idiomatic-python-eafp-versus-lbyl/)

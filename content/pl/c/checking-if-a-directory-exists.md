@@ -1,6 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "C: Sprawdzanie, czy katalog istnieje"
+html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "C"
 category:             "C"
@@ -10,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why?
+**Co i dlaczego?**
+Sprawdzanie, czy katalog istnieje w C, to po prostu test przed wykonaniem operacji, które wymagają jego obecności. Robimy to, aby uniknąć błędów i zapewnić płynność działania programu.
 
-Sprawdzanie, czy katalog istnieje, to proces weryfikacji obecności określonej ścieżki katalogu w systemie plików. Programiści robią to, aby zapobiec błędom podczas operacji na plikach i katalogach.
-
-## Jak zrobić:
-
-Poniżej przedstawiam kod w języku C, który sprawdza, czy dany katalog istnieje. 
-
+## How to:
+**Jak to zrobić:**
 ```C
-#include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+bool does_directory_exist(const char *path) {
+    struct stat info;
+    
+    if(stat(path, &info) != 0)
+        return false; // nie można uzyskać dostępu do katalogu
+    else if(info.st_mode & S_IFDIR) 
+        return true; // jest katalogiem
+    return false; // jest czymś innym niż katalog
+}
 
 int main() {
-    struct stat st = {0};
-    if (stat("/path/to/your/directory", &st) == -1) {
-        printf("Katalog nie istnieje.\n");
-    } else {
+    const char *dirPath = "/tmp/example_dir";
+    
+    if(does_directory_exist(dirPath)) {
         printf("Katalog istnieje.\n");
+    } else {
+        printf("Katalog nie istnieje.\n");
     }
+    
     return 0;
 }
 ```
+Sample output:
+```
+Katalog istnieje.
+```
+or
+```
+Katalog nie istnieje.
+```
 
-Jeżeli katalog istnieje, to wyświetli "Katalog istnieje.", a jeżeli nie - "Katalog nie istnieje.".
+## Deep Dive
+**Głębsze spojrzenie:**
+Historia sięga funkcji `stat` z Unix'a. `stat` zbiera informacje o pliku używając jego ścieżki. Jeśli funkcja zwraca `0`, plik istnieje; `-1` oznacza problem. Bit `S_IFDIR` z `info.st_mode` pokazuje, czy plik jest katalogiem.
 
-## Bunny Dive
+Są alternatywy, np. `opendir` i `readdir` z `dirent.h`, ale `stat` jest prostsze i często w zupełności wystarczające.
 
-Chociaż specyficzna funkcja stat() nie była dostępna w pierwszych wersjach C, podobna funkcjonalność była dostarczana przez różne biblioteki. W nowszych wersjach języka C funkcja stat() została dodana do języka jako część API POSIX.
+Jeśli chcesz tworzyć katalogi, gdy ich nie ma, funkcja `mkdir` z `sys/stat.h` jest przydatna. Wtedy możesz najpierw sprawdzić i stworzyć katalog, jeśli to konieczne.
 
-Co więcej, inny sposób sprawdzenia, czy katalog istnieje, to użycie funkcji opendir() z biblioteki dirent.h, ale ta metoda jest mniej popularna, ponieważ może otworzyć katalog, co nie jest zawsze pożądane.
-
-Podczas używania funkcji stat(), warto pamiętać, że sprawdza ona wszelkiego rodzaju "pliki", nie tylko katalogi. Oznacza to, że może ona zwrócić true, nawet jeśli podana ścieżka jest do pliku, a nie do katalogu. Dlatego ważne jest, aby dodatkowo sprawdzić wartość S_ISDIR(st.st_mode) aby upewnić się, że podana ścieżka jest ścieżką do katalogu.
-
-## Zobacz także
-
-- Dokumentacja funkcji stat(): http://man7.org/linux/man-pages/man2/stat.2.html
-- Dokumentacja funkcji opendir(): http://man7.org/linux/man-pages/man3/opendir.3.html
-- Szczegóły na temat API POSIX: https://pl.wikipedia.org/wiki/POSIX
+## See Also
+**Zobacz również:**
+- [Functions: stat, fstat, lstat (GNU Libc)](https://www.gnu.org/software/libc/manual/html_node/Attribute-Meanings.html)
+- [POSIX standard for mkdir()](https://pubs.opengroup.org/onlinepubs/9699919799/functions/mkdir.html)
+- [opendir() and readdir() documentation](https://pubs.opengroup.org/onlinepubs/007908799/xsh/readdir.html)

@@ -1,7 +1,8 @@
 ---
-title:                "ディレクトリが存在するかどうかを確認する"
-html_title:           "C#: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:57:04.608807-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,49 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why?
+ディレクトリが存在するかどうかのチェックとは、指定されたパスにディレクトリが存在するか、どうかを判定する処理です。プログラマーはファイル操作を行う前に、エラーを避けるためにこのチェックをよく行います。
 
-ディレクトリが存在するかどうかを確認するとは、ファイルシステムに特定のディレクトリが存在しているかをJavaで調べることです。これはプログラマがファイルやディレクトリを通過する前にエラーや例外を防ぐための良い習慣であり、必要です。
-
-## どうやって:
-
-以下にディレクトリが存在するかどうかを確認するJavaのコード例を示します。
+## How to:
+Javaにおいて、ディレクトリが存在するかどうかは`Files.exists()`メソッドで簡単に確認できます。以下の例を見てみましょう。
 
 ```java
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public class Main {
+public class DirectoryExists {
     public static void main(String[] args) {
-        // 検証したいディレクトリのパスを指定します。
-        Path path = Paths.get("/Users/your_name/Documents/test_directory");
+        Path path = Paths.get("/path/to/directory");
 
-        // Files.existsメソッドを使用してディレクトリが存在するかを確認します。
-        boolean directoryExists = Files.exists(path);
-
-        // 結果を出力します。
-        if(directoryExists) {
-            System.out.println("The directory exists.");
+        if (Files.exists(path)) {
+            System.out.println("ディレクトリが存在します。");
         } else {
-            System.out.println("The directory does not exist.");
+            System.out.println("ディレクトリが存在しません。");
         }
     }
 }
 ```
 
-このコードを動かすと、「The directory exists.」または「The directory does not exist.」という結果が得られます。
+サンプル出力:
 
-## ディープダイブ
+```
+ディレクトリが存在します。
+```
+あるいは
 
-ディレクトリの存在を確認することはJavaが誕生した1990年代から存在します。Java7で導入された`java.nio.file`パッケージのFiles.existsメソッドは極めて便利で、異なるプラットフォームでの互換性も考慮しています。
+```
+ディレクトリが存在しません。
+```
 
-実装面では、Files.existsはバックグラウンドで`java.nio.file.FileSystems`のgetDefaultメソッドを使ってActive File Systemを取得し、そこから所望の結果を提供します。
+## Deep Dive
+`Files.exists()`はJava 7で導入されたメソッドです。それ以前は`File`クラスの`exists()`メソッドを使っていましたが、新しい`java.nio.file`パッケージの方が柔軟でエラーに強くなっています。また、`Files.notExists()`メソッドはディレクトリが存在しないことを明示的に確認する際に使われ、三つ目の状態として「不明」(ディレクトリの存在が確認できない場合)も扱えます。なお、ディレクトリの存在確認はファイルシステムとのやり取りが発生するため、パフォーマンスへの影響を考慮する必要があります。
 
-代わりに`java.io.File`のexistsメソッドを使用することもできますが、このメソッドは古く、非推奨です。その理由は、次のような問題があるからです: (1) I/Oエラーが発生した場合、その情報を失います, (2) セキュリティマネージャが存在する場合、未確認の結果を返す可能性があります。
-
-## 参考
-
-それ以降の深科学的研究のために、以下のリンクを参照してください。
-
-1. [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#exists-java.nio.file.Path-java.nio.file.LinkOption...-)
-2. [Baeldung Guide on java.nio.file API](https://www.baeldung.com/java-nio-2-file-api)
-3. [StackOverflow discussion on File.exists vs Files.exists](https://stackoverflow.com/questions/3757767/pros-and-cons-java-io-file-vs-java-nio-file)
+## See Also
+- [Path Operations (Java Tutorial)](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
+- [Class Files (Java API Documentation)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Class Path (Java API Documentation)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Lua: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:57:43.410152-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,35 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Checken, ob ein Verzeichnis existiert in Lua
-
 ## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis existiert, bedeutet zu kontrollieren, ob ein bestimmter Ordnerpfad auf dem Dateisystem vorhanden ist. Das ist wichtig, um Fehler zu vermeiden, wenn man Dateien speichert oder liest und das genannte Verzeichnis benötigt wird.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein Vorgang, bei dem ein Programm feststellt, ob ein bestimmtes Verzeichnis auf dem System vorhanden ist. Programmierer machen das, um Fehler zu vermeiden, die auftreten können, wenn sie versuchen, auf ein nicht vorhandenes Verzeichnis zuzugreifen.
+## So geht’s:
+Lua bietet keine eingebaute Funktion für das Überprüfen von Verzeichnissen, aber wir können das `lfs` (LuaFileSystem) Modul verwenden oder auf OS-spezifische Befehle zurückgreifen.
 
-## So geht's:
-
-In Lua kann man mit `lfs.attributes()` überprüfen, ob ein Verzeichnis existiert. Hier ist ein kurzer Codeausschnitt:
-
+Beispiel mit LuaFileSystem (lfs):
 ```Lua
 local lfs = require('lfs')
 
-function isDirectory(path)
-    -- `lfs.attributes(path).mode` returns 'directory' if path is a directory
-    return lfs.attributes(path, 'mode') == 'directory'
+function directory_exists(path)
+    local ok, err, code = os.rename(path, path)
+    if not ok then
+        if code == 13 then
+            -- Pfad existiert, ist aber ein Verzeichnis
+            return true
+        end
+        return false
+    end
+    -- Überprüfe, ob der Pfad wirklich ein Verzeichnis ist
+    return lfs.attributes(path, "mode") == "directory"
 end
 
-print(isDirectory('/path/to/directory'))  -- false if the directory does not exist
+-- Beispielhafter Aufruf
+if directory_exists("/pfad/zum/verzeichnis") then
+    print("Verzeichnis existiert.")
+else
+    print("Verzeichnis existiert nicht.")
+end
+```
+Ausgabe könnte sein:
+```
+Verzeichnis existiert.
+```
+oder
+```
+Verzeichnis existiert nicht.
 ```
 
-## Tiefgehende Betrachtung
+## Deep Dive
+In früheren Lua-Versionen mussten Entwickler oft auf umständlichere Methoden zurückgreifen, wie z.B. os.execute mit system-spezifischen Befehlen. Das `lfs`-Modul vereinfacht diese Aufgabe, bietet aber eine zusätzliche Abhängigkeit.
 
-Historisch gesehen war es nicht immer einfach, in Lua zu überprüfen, ob ein Verzeichnis existiert. Vorerst war eine direkte Implementierung nicht vorhanden. Man benutzte oft FFI-Bibliotheken oder rief systemeigene Funktionen auf. Mit der Einführung von 'LuaFileSystem' (lfs), einer portablen Bibliothek zur Manipulation von Dateisystemen, wurde es viel einfacher.
+Alternativen ohne `lfs`:
+- Plattrformspezifische Skripting, z.B. `io.popen("if exist mydir echo 1")` für Windows
+- `os.execute` und ähnliche Funktionen für Shell-Befehle
 
-Eine Alternative zum obigen Ansatz ist die Verwendung der Funktion `os.execute()`. Aber beachten Sie, dass dieser Befehl systemabhängig ist und möglicherweise nicht auf allen Plattformen funktioniert. 
+Beim Implementieren einer Funktion, die das Vorhandensein eines Verzeichnisses überprüft, ist es wichtig, auf Berechtigungsfehler (Code 13) zu achten, da diese darauf hinweisen können, dass das Verzeichnis existiert, aber nicht modifiziert werden kann.
 
-Die Funktionsweise von `lfs.attributes(path, 'mode')` ist recht einfach. Wenn das Verzeichnis existiert, gibt es 'directory' zurück, andernfalls gibt es nil zurück.
-
-## Siehe auch
-
-Für mehr Informationen über `lfs.attributes()`, siehe die offizielle Laravel-Dokumentation: [https://keplerproject.github.io/luafilesystem/manual.html#attributes](https://keplerproject.github.io/luafilesystem/manual.html#attributes)
+## Siehe Auch:
+- LuaFileSystem Dokumentation: https://keplerproject.github.io/luafilesystem/
+- Lua 5.4 Referenzmanual: https://www.lua.org/manual/5.4/
+- Stack Overflow: Diskussionen und Lösungen zu "check if a directory exists in Lua"

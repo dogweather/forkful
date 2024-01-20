@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "Bash: 디렉토리가 존재하는지 확인하기"
-simple_title:         "디렉토리가 존재하는지 확인하기"
+title:                "디렉토리의 존재 여부 확인하기"
+html_title:           "Arduino: 디렉토리의 존재 여부 확인하기"
+simple_title:         "디렉토리의 존재 여부 확인하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
+## What & Why? (무엇과 왜?)
+디렉토리 존재 여부를 확인하는 것은, 파일 시스템에서 특정 경로가 실제로 존재하는 폴더인지를 검사하는 과정입니다. 이를 통해 프로그래머는 파일 조작이나 디렉토리 관리를 올바르게 할 수 있어서, 예기치 못한 에러를 방지할 수 있습니다.
 
-디렉터리 존재 확인이란 소프트웨어가 특정 디렉터리의 존재 여부를 파악하는 등의 작업을 말합니다. 이러한 작업은 파일의 있음 없음에 따라 동작을 수행하거나 오류를 방지하는 등, 다양한 코딩 시나리오에서 요구됩니다.
+## How to: (방법)
+Clojure에서는 `java.io.File` 클래스를 사용하여 디렉토리가 존재하는지 확인할 수 있습니다. 여기 간단한 예제가 있습니다:
 
-## 어떻게:
-
-Clojure에서는 'clojure.java.io' 라이브러리의 'file' 함수와 Java의 'exists' 메서드를 사용하여 디렉터리 존재 확인을 합니다.
-
-```Clojure
-(require '[clojure.java.io :as io])
+```clojure
+(import '(java.io File))
 
 (defn directory-exists? [path]
-  (.exists (io/file path)))
+  (let [dir (File. path)]
+    (.exists dir)))
+
+;; 예제 사용
+(println (directory-exists? "/path/to/dir")) ; 존재하면 true, 아니면 false
 ```
+코드를 실행하면, 존재하는 디렉토리에 대해 `true`가, 존재하지 않는 경우 `false`가 출력됩니다.
 
-이 함수를 사용하여 디렉터리의 존재 여부를 확인 가능합니다.
+## Deep Dive (심도 있는 분석)
+Clojure는 JVM 위에서 동작하기 때문에 자바의 표준 라이브러리를 활용한 위와 같은 방법이 일반적입니다. 과거에는 `clojure.java.io/file`, `clojure.java.io/as-file` 같은 기능을 사용했지만, 현재는 바로 `java.io.File`을 쓰는 것이 널리 퍼진 방식입니다. 또 다른 방법으로 `nio.file.Files/exist`를 사용할 수도 있지만, 일상적인 Clojure 작업에서는 약간 과한 편입니다. 
 
-```Clojure
-(directory-exists? "/path/to/directory")
-```
+가장 중요한 점은, 프로그램이 디렉토리의 존재 여부만을 확인한다면 큰 리소스를 사용하지 않는다는 것입니다. 애플리케이션의 안정성을 확보하면서 최소한의 리소스를 사용하는 것은 프로그래머가 고려해야 할 중요한 사항 중 하나입니다.
 
-## 딥 다이브:
-
-디렉터리 존재 확인은 컴퓨터 프로그래밍의 초기부터 필요한 작업이었습니다. 요즘에는 대부분의 언어가 이 기능을 내장하고 있습니다. Clojure도 마찬가지이며 Java의 API를 활용하여 이 작업을 처리합니다. 
-
-대안적으로, 운영 체제의 명령어(shell commands)를 사용할 수도 있지만, 이는 플랫폼 종속적인 측면이 있으며, 순수 Clojure 코드를 사용하는 것보다 에러 처리도 복잡합니다.
-
-'io/file' 함수와 '.exists' 메서드의 사용은 매우 간단합니다. 'io/file' 함수는 제공된 경로로 파일 객체를 생성하고, '.exists' 메서드는 해당 파일(또는 디렉터리)가 실제로 존재하는지 확인합니다.
-
-## 참고 자료:
-
-1. Clojure 공식 문서: [clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
-2. Java 공식 문서: [File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#exists())
+## See Also (참고 자료)
+- Clojure 공식 문서: [https://clojure.org/](https://clojure.org/)
+- 자바 `File` API 문서: [https://docs.oracle.com/javase/8/docs/api/java/io/File.html](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- Stack Overflow Clojure 태그: [https://stackoverflow.com/questions/tagged/clojure](https://stackoverflow.com/questions/tagged/clojure)

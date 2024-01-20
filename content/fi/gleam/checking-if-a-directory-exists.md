@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Gleam: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:56:07.177574-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,28 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Onko hakemisto olemassa?
+
 ## Mikä & Miksi?
+Tarkistetaan onko hakemisto olemassa. Tämä on pakollista tiedon integriteetin ja virheenhallinnan kannalta.
 
-Tarkistetaan, onko hakemisto olemassa selventääksemme, löytyykö hakemisto filejärjestelmästämme. Ohjelmoijat tekevät tämän virheiden välttämiseksi, jos he yrittävät lukea tai kirjoittaa hakemistoon, jota ei ole olemassa.
+## How to:
+Gleam ei omaa suoraa standardikirjastoa hakemistojen käsittelyyn, joten tämä esimerkki käyttää ulkopuolista `gleam_file`-kirjastoa. Asenna se ennen kokeilua.
 
-## Miten tehdä:
+```gleam
+import gleam/file
 
-```Gleam
-import gleam/filesystem.{File}
+pub fn check_dir_exists(path: String) -> Bool {
+  file.is_dir(path)
+}
 
-let file_handle = File.open("path/to/dir", [])
-IO.puts(File.exists?(file_handle)
+fn main() {
+  let path = "oma_hakemisto/"
+  let exists = check_dir_exists(path)
+  
+  case exists {
+    True -> io.println("Hakemisto löytyy!")
+    False -> io.println("Hakemistoa ei ole olemassa.")
+  }
+}
 ```
-Jos yllä oleva koodiajona ajetaan ja hakemisto on olemassa, se tulostaa `True` konsoliin. Ellei, se palauttaa `False`.
 
-## Syvällinen sukellus:
+Tulostus riippuen tilanteesta:
+```
+Hakemisto löytyy!
+```
+tai
+```
+Hakemistoa ei ole olemassa.
+```
 
-Tarkistamalla, onko hakemisto olemassa, on suhtellisen uusi käsite, kun tarkastellaan ohjelmoinnin pitkää historiaa. Vain viime vuosikymmenillä, kun tiedostojärjestelmät ovat kasvaneet massiivisesti, tällainen toiminnallisuus on tullut välttämättömäksi.
+## Syväluotaus
+Historiallisesti hakemistojen olemassaolon tarkistus on ollut osa ohjelmointia tiedostojärjestelmäoperaatioiden alusta alkaen. Gleamissa se vaatii usein ulkopuolisen kirjaston, sillä Gleamin vakio-kirjasto keskittyy funktioparadigman ja tyypin turvallisuuden ylläpitämiseen.
+Vaihtoehtoisia tapoja tarkistaa hakemistoja on monia ja ne voivat riippua käytössäsi olevista kirjastoista. Voit itse kirjoittaa oman funktion joka hyödyntää esim. Erlangin `filelib`-moduulia käyttäen `gleam/erlang` sidontoja.
+Hakemistojen olemassaolon tarkistus on usein IO-operaatio, joka voi epäonnistua tai ottaa aikaa, joten käsittelijän olisi hyvä olla valmis käsittelemään mahdolliset virheet tai viiveet asianmukaisesti.
 
-Vaihtoehtoisena lähestymistapana, jotkut ohjelmoijat saattavat yrittää avata hakemistoa ja nähdä, palautetaanko virhe. Tämä on kuitenkin harvinaista ja saattaa johtaa hämmentäviin virheviesteihin.
-
-Gleam-kielessä, hakemiston olemassaolon tarkistaminen tehdään `filesystem`-moduulissa, esimerkiksi käyttämällä `File.exists?` -funktiota. Tämä funktio avaa sille syötetyn filePath merkkijonon ja palauttaa arvon `True`, jos hakemisto on olemassa. Muussa tapauksesssa se palauttaa `False`.
-
-## Katso myös:
-
-- [Understanding file systems](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)
+## Näe Lisäksi
+- [gleam_file](https://hex.pm/packages/gleam_file) - Hakemiston tarkistus Gleamissa
+- [Erlang filelib](http://erlang.org/doc/man/filelib.html) - Erlangin tiedostokäsittelymoduuli

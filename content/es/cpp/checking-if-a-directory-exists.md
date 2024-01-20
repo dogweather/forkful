@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si un directorio existe"
-html_title:           "C++: Comprobando si un directorio existe"
-simple_title:         "Comprobando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+html_title:           "Bash: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,43 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
 
-Verificar si un directorio existe en C++ implica confirmar si existe una ruta de directorio específica en nuestro sistema de archivos. Esto es vital para evitar errores al intentar acceder a un directorio que no existe.
+Verificar si un directorio existe implica confirmar su presencia en el sistema de archivos antes de realizar operaciones con él. Los programadores hacen esto para evitar errores al intentar acceder a directorios que tal vez no estén disponibles, lo que es esencial para la estabilidad y fiabilidad del programa.
 
 ## Cómo hacerlo:
 
-Un ejemplo de cómo verificar la existencia de un directorio utilizando la librería `<filesystem>` de C++, introducida en C++17, es el siguiente:
+Con C++17, `std::filesystem` entra al juego, simplificando las cosas. Aquí te dejo un ejemplo compacto:
 
 ```C++
-#include <filesystem>
 #include <iostream>
+#include <filesystem>
 
 int main() {
-     std::filesystem::path p{"ruta/de/directorio"};
+    std::filesystem::path dirPath = "/path/to/directory";
 
-     if (std::filesystem::exists(p)) {
-        std::cout << "El directorio existe.\n";
-     } 
-     else {
-        std::cout << "El directorio no existe.\n";
-     }
+    if(std::filesystem::exists(dirPath)) {
+        std::cout << "El directorio existe!" << std::endl;
+    } else {
+        std::cout << "El directorio no existe!" << std::endl;
+    }
 
     return 0;
 }
 ```
-Si el directorio existe, el programa imprimirá 'El directorio existe' en la consola. Si el directorio no existe, imprimirá 'El directorio no existe'.
+
+Si el directorio existe, verás:
+
+```
+El directorio existe!
+```
+
+En caso contrario:
+
+```
+El directorio no existe!
+```
 
 ## Inmersión Profunda:
 
-Históricamente, verificar la existencia de un directorio en C++ ha sido laborioso, demandando la inclusión de librerías dependientes de la plataforma y código extra. Con la introducción de `<filesystem>` en C++17, se ha facilitado enormemente.
+Antes de C++17, esta tarea era más propensa a errores, dependiendo de funciones del sistema operativo o de bibliotecas de terceros. `boost::filesystem` era una opción popular.
 
-Existen alternativas como la función `stat` y `opendir` en POSIX o `GetFileAttributes` en Windows, aunque requieren más código y complejidad.
+Hay alternativas, como `stat` en POSIX y `GetFileAttributes` en Windows. Sin embargo, `std::filesystem` vino a unificar y simplificar este proceso.
 
-La función `std::filesystem::exists` retorna un booleano indicando si la ruta de archivo o directorio proporcionada existe realmente. Es importante tener en cuenta que la función puede fallar si no se tienen suficientes permisos para acceder a la ruta.
+El chequeo de existencia en sí no es costoso, pero si se hace repetidamente en un bucle o en un entorno de múltiples hilos, podría ser mejor pensar en un enfoque de manejo de errores más sofisticado para no detener la ejecución innecesariamente.
 
 ## Ver También:
 
-Para una comprensión más profunda de la librería de sistema de archivos en C++, puedes ver la documentación oficial en cppreference: https://en.cppreference.com/w/cpp/filesystem
+Para profundizar, consulta los siguientes enlaces:
 
-Para los temas relacionados con las funciones de directorio en POSIX, el siguiente enlace será útil: https://pubs.opengroup.org/onlinepubs/9699919799/functions/directory.html
+- Documentación `std::filesystem` de C++17: https://en.cppreference.com/w/cpp/filesystem
+- Una mirada a `boost::filesystem` (predecesor de `std::filesystem`): https://www.boost.org/doc/libs/release/libs/filesystem/
+- `stat` de POSIX: http://pubs.opengroup.org/onlinepubs/009695399/functions/stat.html
+- `GetFileAttributes` de Windows API: https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributes

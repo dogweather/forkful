@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:58:05.742962-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Python"
 category:             "Python"
@@ -11,31 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog existerar i Python innebär att verifiera om en viss mapp finns på en viss plats i filsystemet. Programmerare gör detta för att undvika filfel och säkerställa korrekt datahantering. 
+Att kolla om en katalog finns är att se till att en specifik mapp är där vi förväntar oss den. Programmerare gör detta för att undvika fel, när de till exempel ska läsa data från eller skriva data till filsystemet.
 
-## Hur gör man:
-För att kontrollera om en katalog existerar i Python använder vi `os`-modulen och dess `path.exists`-metod. Här är en exempelkod:
+## Hur man gör:
+För att kolla om en katalog finns i Python använder vi `os.path.exists()` eller `os.path.isdir()` från `os`-modulen. Nedan finns exempelkod:
 
-```Python
+```python
 import os
 
-def kolla_katalog(path):
-    if os.path.exists(path):
-        print("Katalogen existerar.")
-    else:
-        print("Katalogen existerar inte.")
+# Kolla om en katalog finns
+directory = '/var/www/html'
 
-kolla_katalog("/din/väg/här")
+# Metod 1: Kolla om en sökväg existerar
+exists = os.path.exists(directory)
+print(f"Existerar '{directory}'? {exists}")
+
+# Metod 2: Kolla om sökvägen är en katalog
+is_dir = os.path.isdir(directory)
+print(f"Är '{directory}' en katalog? {is_dir}")
 ```
-Om katalogen finns kommer programmet skriva ut "Katalogen existerar" i konsolen, annars "Katalogen existerar inte."
+
+Förväntad utskrift kan vara:
+
+```
+Existerar '/var/www/html'? True
+Är '/var/www/html' en katalog? True
+```
 
 ## Djupdykning
-Historiskt sett var man tidigare tvungen att försöka öppna katalogen och hantera eventuella fel för att kontrollera om en katalog existerade. Det var bökigt. Metoden `os.path.exists` introducerades som en förbättring och är nu standardmetoden.
+Funktionerna `os.path.exists()` och `os.path.isdir()` har funnits sedan tidiga versioner av Python och är den föredragna metoden för att hantera filsystemet. Även om de gör liknande saker, `os.path.isdir()` är striktare då den även kontrollerar om sökvägen är en katalog och inte bara en fil. Sidan `pathlib`, introducerad i Python 3.4, tillhandahåller ett objektorienterat gränssnitt för filsystemoperationer. Med `pathlib` kan vi använda `Path.exists()` och `Path.is_dir()` för samma ändamål med en modernare syntax.
 
-Som alternativ finns också `os.path.isdir()`-funktionen, men den returnerar `False` både när katalogen inte existerar och när sökvägen är till en fil, inte en katalog.
+Här är ett exempel med `pathlib`:
 
-En viktig detalj att känna till är att `os.path.exists` faktiskt kollar både om katalogen och filer existerar. Om du vill vara säker på att det är en katalog, använd den mer specifika `os.path.isdir()`.
+```python
+from pathlib import Path
 
-## Se också
-1. Python `os`-modulens officiella dokumentation: https://docs.python.org/3/library/os.html
-2. Skillnaden mellan `os.path.exists` och `os.path.isdir`: https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions
+# Kolla om en katalog finns med pathlib
+directory = Path('/var/www/html')
+
+# Kolla om sökvägen existerar
+exists = directory.exists()
+print(f"Existerar '{directory}'? {exists}")
+
+# Kolla om sökvägen är en katalog
+is_dir = directory.is_dir()
+print(f"Är '{directory}' en katalog? {is_dir}")
+```
+
+Observera att det är viktigt att hantera situationer där katalogen inte finns för att undvika `FileNotFoundError` när du försöker läsa från eller skriva till filsystemet.
+
+## Se även
+- [os.path documentation](https://docs.python.org/3/library/os.path.html)
+- [pathlib documentation](https://docs.python.org/3/library/pathlib.html)
+- [Filesystem error handling in Python](https://docs.python.org/3/library/exceptions.html#FileNotFoundError)

@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Java: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:56:43.820116-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,66 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Å sjekke om en mappe eksisterer betyr å bekrefte at en bestemt sti refererer til en mappe på filsystemet før man opererer videre med den. Vi gjør dette for å unngå feil eller å skape nye mapper ved behov.
 
-Sjekke om en katalog eksisterer refererer til å verifisere at det er en angitt sti til en fil i et datasystem. Programmerere gjør dette for å forhindre feil som oppstår når programmet prøver å få tilgang til en ikke-eksisterende katalog.
+## How to:
+Java tilbyr `Files`-klassen for å sjekke eksistensen av mapper. Her er et enkelt eksempel:
 
-## Hvordan du gjør det:
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-I Java har vi flere måter å sjekke om en katalog eksisterer på. Her er noen eksempler:
+public class DirectoryExistsExample {
 
-Bruke File klasse:
-
-```Java
-import java.io.File;
-
-public class DirectoryExists {
     public static void main(String[] args) {
-        File file = new File("/var/tmp");
+        Path path = Paths.get("/some/directory/path");
 
-        if (file.isDirectory()){
-            System.out.println("Directory exists");
-        } else {
-            System.out.println("Directory does not exist");
-        }
+        boolean directoryExists = Files.exists(path);
+
+        System.out.println("Directory exists: " + directoryExists);
     }
 }
 ```
 
-Bruke Java NIO Files klasse:
+Kjører du dette vil utskriften enten være `Directory exists: true` eller `Directory exists: false`, avhengig av om mappen eksisterer eller ikke.
 
-```Java
-import java.nio.file.*;
+## Deep Dive
+Før Java 7, ville en bruke `File`-klassen for å sjekke om en mappe eksisterer. Dette er fortsatt mulig, men `Files`-klassen er mer moderne og gir flere fordeler, som bedre feilhåndtering og støtte for symboliske lenker.
 
-public class DirectoryExists {
-    public static void main(String[] args) {
-        Path path = Paths.get("/var/tmp");
+Alternativer:
+* `File.exists()` er en enkel, men mindre robust måte.
+* `Files.isDirectory()` sjekker at stien er både eksisterende og at det er en mappe.
 
-        if (Files.exists(path)){
-            System.out.println("Directory exists");
-        } else {
-            System.out.println("Directory does not exist");
-        }
-    }
-}
-```
+Implementasjonsdetaljer:
+* `Files.exists()` sjekker ikke om stien er en mappe eller en fil. For en mer spesifikk sjekk, bruk `Files.isDirectory()`.
+* Operativsystemets tilgangskontroll kan påvirke utfallet av eksistenssjekken.
 
-I begge disse eksemplene vil output enten være "Directory exists" eller "Directory does not exist" avhengig av om katalogen eksisterer.
-
-## Dyp Dykk
-
-Sjekke om en katalog eksisterer er en nødvendig teknikk som har blitt implementert i mange programmeringsspråk, og Java er intet unntak. Siden Java 1.0, hvor den første metoden ble introdusert i File-klassen, har Java lagt til alternative metoder som støtter nye funksjoner og økt fleksibilitet gjennom Java NIO.
-
-Alternativene for å gjøre dette har også utvidet, slik som den statiske metoden `Files.exists()`, som var introdusert i Java 7. Den bruker grunnleggende filattributter og er mer fleksibel og effektiv enn den tidligere `File.isDirectory()` metoden.
-
-Implementasjonsdetaljer kan variere basert på brukssaker, for eksempel om du bare vil sjekke tilstedeværelse eller også sjekke at du har riktig tillatelser til å lese/skrive til katalogen.
-
-## Se Også
-
-For mer informasjon om arbeid med filer og kataloger i Java, ta en titt på disse linkene:
-
-- Java Fil API: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html 
-
-- Java NIO Fil API: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html 
-
-- Komplett guide til Java NIO: https://www.baeldung.com/java-nio
+## See Also
+- [Java 7 Files API Documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
+- [Path Operations (Java Tutorials)](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)

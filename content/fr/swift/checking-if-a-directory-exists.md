@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Lua: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:58:55.152419-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,52 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vérifier si un répertoire existe en Swift
+## Quoi et Pourquoi ?
+Vérifier l'existence d'un répertoire assure que votre application n'essaie pas d'accéder à un emplacement qui n'existe pas, ce qui évite les erreurs. Les programmeurs font cela pour confirmer que tout est en place avant de lire ou d'écrire des données.
 
-## Qu'est-ce que c'est et Pourquoi?
-
-Vérifier si un répertoire existe est une tâche courante qui permet de s'assurer que nos programmes sont stables et sécurisés. C'est une pratique essentielle pour prévenir des erreurs lors de l'accès à des fichiers.
-
-## Comment faire:
-
-En Swift, vous pouvez utiliser la méthode `fileExists(atPath:)` sur une instance de `FileManager` pour vérifier si un répertoire spécifique existe. Voici un exemple:
+## Comment faire :
+Pour vérifier l'existence d'un répertoire en Swift, on utilise `FileManager` et sa méthode `fileExists(atPath:)`. Voici un petit exemple :
 
 ```Swift
-import Foundation 
+import Foundation
 
 let fileManager = FileManager.default
-let directoryPath = "/path/to/directory"
+let path = "/chemin/vers/le/repertoire"
 
-if fileManager.fileExists(atPath: directoryPath) {
+if fileManager.fileExists(atPath: path) {
     print("Le répertoire existe.")
 } else {
     print("Le répertoire n'existe pas.")
 }
 ```
 
-Si le répertoire existe, ce qui se produirait:
-
+Si le répertoire existe, vous verrez : 
 ```
 Le répertoire existe.
 ```
 
-Et si le répertoire n'existe pas, on aura:
-
+Sinon, le résultat sera :
 ```
 Le répertoire n'existe pas.
 ```
 
-## Exploration en profondeur
+## Immersion :
+Historiquement, la vérification de l'existence d'un fichier ou d'un répertoire est une opération de base dans de nombreux systèmes d'exploitation. En Swift, `FileManager` gère cette tâche. De plus, il faut faire attention à ne pas confondre un fichier avec un répertoire ; pour cela, on peut utiliser `fileExists(atPath:isDirectory:)` que `FileManager` fournit aussi :
 
-Historiquement, les programmeurs vérifient s'ils un répertoire existe pour éviter les erreurs d'exécution et sécuriser le processus de lecture / écriture de fichiers. Swift facilite ces vérifications grâce à la classe `FileManager`.
+```Swift
+var isDir : ObjCBool = false
+if fileManager.fileExists(atPath: path, isDirectory: &isDir) {
+    if isDir.boolValue {
+        print("C'est un répertoire.")
+    } else {
+        print("C'est un fichier.")
+    }
+}
+```
 
-Comme alternative, vous pouvez utiliser la méthode `attributesOfItemAtPath(_:)` qui renvoie un dictionnaire contenant les attributs du fichier ou du répertoire à l'emplacement donné. Cependant, cette méthode peut renvoyer une erreur si le chemin d'accès ne mène pas à un fichier ou à un répertoire existant, d'où l'intérêt de `fileExists(atPath:)`.
+Alternativement, on peut utiliser `attributesOfItem(atPath:)` pour obtenir plus d'informations sur l'élément en question, ou `contentsOfDirectory(atPath:)` pour lister les fichiers dans un répertoire. En choisissant la bonne méthode, on optimise la performance et l'exactitude de notre programme.
 
-L'implémentation de `fileExists(atPath:)` en Swift est simplement une liaison à une fonction C dans le sous-système de fichiers UNIX du système d'exploitation, ce qui signifie que c'est une vérification efficace et performante.
-
-## Voir aussi
-
-Pour de plus amples informations, vous pouvez consulter les ressources suivantes:
-
-- La documentation officielle de Swift sur [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- Un exemple détaillé sur [how to check if a file exists or not, using Swift](https://www.hackingwithswift.com/example-code/system/how-to-check-whether-a-file-exists)
+## Voir également :
+- Documentation Apple sur `FileManager` : [Gestionnaire de fichiers](https://developer.apple.com/documentation/foundation/filemanager)
+- Guide sur la manipulation des fichiers et dossiers en Swift : [Apple Developer - Fichiers et Dossiers](https://developer.apple.com/documentation/foundation/file_system)

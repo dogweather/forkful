@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Javascript: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:57:14.789912-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,39 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sprawdzanie czy katalog istnieje w JavaScript
+## What & Why?
+"Co i dlaczego?"
 
-## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, to proces weryfikacji ścieżki w systemie plików. Programiści robią to, aby uniknąć błędów podczas prób dostępu do nieistniejących katalogów czy zapisywania plików.
 
-Sprawdzanie, czy katalog istnieje, polega na potwierdzeniu, że na dysku twardym istnieje określony folder. Programiści robią to, aby uniknąć błędów, kiedy pliki są zapisywane lub odczytywane z miejsc, które faktycznie nie istnieją.
+## How to:
+"Jak to zrobić:"
 
-## Jak to zrobić?
+Do sprawdzenia istnienia katalogu w Node.js używamy modułu `fs`. Przykłady:
 
-Oto przykładowy kod, jak to zrobić w Node.js:
+Synchronicznie:
 
-```Javascript
+```javascript
 const fs = require('fs');
-const folderPath = './path/to/your/directory';
 
-if (fs.existsSync(folderPath)) {
-    console.log('Katalog istnieje!');
+const directoryPath = './path/to/directory';
+
+if (fs.existsSync(directoryPath)) {
+  console.log('Katalog istnieje!');
 } else {
-    console.log('Katalog nie istnieje!');
+  console.log('Katalog nie istnieje!');
 }
 ```
 
-Po uruchomieniu tego kodu, otrzymamy wiadomość mówiącą nam, czy katalog istnieje, czy nie.
+Asynchronicznie z `fs.promises`:
 
-## Więcej szczegółów
+```javascript
+const fs = require('fs').promises;
 
-W kontekście historycznym, sprawdzanie czy katalog istnieje w JavaScript nie zawsze było możliwe. Dopiero od wprowadzenia Node.js i modułu `fs`, zdolność do interakcji z systemem plików stała się możliwa.
+async function checkDirectory(directoryPath) {
+  try {
+    await fs.access(directoryPath);
+    console.log('Katalog istnieje!');
+  } catch {
+    console.log('Katalog nie istnieje!');
+  }
+}
 
-Co do implementacji, metoda `fs.existsSync()`  wymaga jednego argumentu: ścieżki do katalogu, który chcesz sprawdzić.
+checkDirectory('./path/to/directory');
+```
 
-Jest też alternatywa do `fs.existsSync()`, to `fs.stat()` lub `fs.access()`. Ale `fs.existsSync()` jest bardziej bezpośredni, bo zwraca tylko `true` albo `false`.
+## Deep Dive
+"Dogłębna analiza"
 
-## Zobacz też
+W starszych wersjach Node.js, `fs.exists` był często używany do tego zadania, ale został wycofany z powodu wprowadzania w błąd. Asynchroniczne API, takie jak `fs.access` i `fs.stat`, są teraz zalecane. `fs.access` sprawdza uprawnienia, a `fs.stat` daje dodatkowe informacje o plikach/katalogach. Te funkcje są przydatne, ponieważ zapobiegają potencjalnym wyścigom, które mogą wystąpić, gdy stan systemu plików zmienia się między sprawdzeniami a operacjami.
 
-1. [Dokumentacja Node.js fs](https://nodejs.org/api/fs.html)
+## See Also
+"Zobacz również"
 
-W pracy z katalogami takimi jak te, pamiętaj, aby zawsze być precyzyjnym w ścieżkach, którymi się poruszasz. Kod, który działa poprawnie na jednym komputerze, może zwrócić błędy na innym, jeżeli katalogi są inaczej strukturyzowane.
+- [Node.js File System Docs](https://nodejs.org/api/fs.html) - oficjalna dokumentacja modułu `fs`.
+- [Working with file descriptors in Node.js](https://nodejs.org/dist/latest-v15.x/docs/api/fs.html#fs_working_with_file_descriptors) - jak pracować z deskryptorami plików.
+- [Path Module in Node.js](https://nodejs.org/api/path.html) - moduł `path` do zarządzania ścieżkami plików.

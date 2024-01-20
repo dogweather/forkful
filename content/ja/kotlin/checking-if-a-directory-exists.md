@@ -1,7 +1,8 @@
 ---
-title:                "ディレクトリが存在するかどうかを確認する"
-html_title:           "C#: ディレクトリが存在するかどうかを確認する"
-simple_title:         "ディレクトリが存在するかどうかを確認する"
+title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-01-20T14:57:28.212098-07:00
+html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,57 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? (何とその理由？)
+ディレクトリが存在するかどうかをチェックするとは、ファイルパスが示す場所にフォルダがあるかを調べることです。このチェックは、ファイル操作前に誤ったエラーを防ぐため、または動的なパス作成の際に確実性を持たせるために行います。
 
-## 何となぜ?（What & Why?）
-
-ディレクトリ存在確認とは、特定のディレクトリが存在するかどうかを確かめるプログラミング処理のことです。これを行う理由は、プログラムがファイルにアクセスする前に、ディレクトリが存在するか否かを確認し、エラーを防ぐためです。
-
----
-
-## 手順（How to）
-
-以下のコードを使用してKotlinでディレクトリの存在を確認できます。
-
-```Kotlin
+## How to: (方法)
+```kotlin
 import java.nio.file.Files
 import java.nio.file.Paths
 
 fun main() {
-    val directory = Paths.get("ディレクトリパス")
-
-    if (Files.exists(directory)) {
-        println("ディレクトリが存在します")
+    val path = Paths.get("/path/to/directory")
+    
+    if (Files.exists(path)) {
+        println("ディレクトリが存在します。")
     } else {
-        println("ディレクトリが存在しません")
+        println("ディレクトリが存在しません。")
     }
 }
 ```
 
-これが出力結果です。
-
-```Kotlin
-ディレクトリが存在します
-// または
-ディレクトリが存在しません
+出力例:
+```
+ディレクトリが存在します。
+```
+もしくは
+```
+ディレクトリが存在しません。
 ```
 
----
+## Deep Dive (詳細情報)
+ディレクトリの存在チェックはファイルI/O処理の基本で、Javaの標準ライブラリから継承された `java.nio.file.Files` クラスの `exists` 方法をKotlinでも利用できます。代替手段として `File` クラスを使う方法もありますが、`Files` クラスのほうが新しく、より多機能です。実装の際には、シンボリックリンクが指し示す先の存在をチェックするか否か (`NOFOLLOW_LINKS` オプション) といった詳細な制御が可能です。
 
-## 詳細（Deep Dive） 
-
-ディレクトリ存在確認は古くからある重要な操作です。これにより、プログラムが途中でエラーに陥ることなく、スムーズに実行を続けることができます。
-
-代替手段としては、KotlinでdeprecatedとなったJavaのFileクラスを使う方法があります。しかしこの方法は冗長であり、新しいNIOを使う方法が推奨されています。
-
-ディレクトリ存在確認の実装については、基本的にはファイルシステムに対して指定のパスのディレクトリが存在するか確認するクエリを実行します。
-
----
-
-## 参照（See Also）
-
-以下のリンクで関連情報を見つけることができます。
-
-- [Kotlin公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
-- [Java NIO.2公式チュートリアル（英語）](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
-- [Java Fileクラスについて（英語）](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+## See Also (関連情報)
+- [java.nio.file.Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Kotlinの公式ドキュメント](https://kotlinlang.org/docs/home.html)

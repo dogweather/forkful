@@ -1,6 +1,6 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Clojure: Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Tarkistamme onko hakemisto olemassa, koska väärässä paikassa suoritettu toiminto voi aiheuttaa virheitä. Haluamme varmistaa, että data menee oikeaan paikkaan ja että sovelluksemme käyttäytyy odotetusti.
 
-Tyypillisesti, tarkistamme, onko hakemisto olemassa, estääksemme virheitä, joita saattaa ilmetä, jos yritämme käyttää olematonta hakemistoa. Se auttaa meitä varmistamaan, että ohjelma toimii odotetulla tavalla ja ylläpitämään ohjelman luotettavuutta.
-
-## Kuinka:
-
-Klojurella hakemiston olemassaolotarkistus on suoraviivaista. Tässä on esimerkkikoodi.
-
+## How to: - Kuinka:
 ```Clojure
-(require '[clojure.java.io :as io])
+(ns example.dir-check
+  (:require [clojure.java.io :as io]))
 
-(defn directory-exists? [dir]
-  (.exists (io/file dir)))
+(defn directory-exists? [dir-path]
+  (.exists (io/as-file dir-path)))
+
+;; Esimerkin käyttö:
+(println "Does the directory exist? " (directory-exists? "path/to/your/dir"))
 ```
+Jos hakemiston polku on olemassa, tulostus on `true`, muuten `false`.
 
-Ja sen käyttö:
+## Deep Dive - Syväsukellus:
+Historiallisesti Clojuren tapa tarkistaa hakemistojen olemassaolo perustuu Javan tiedostojen käsittelyyn. Vaihtoehtoisesti voisi käyttää Javan NIO-pakettia, mutta clojure.java.io tarjoaa yksinkertaisemman ja clojuremaisen tavan tehdä saman.
 
-```Clojure
-(directory-exists? "/path/to/directory") 
-;=> Tämä palauttaa true, jos hakemisto on olemassa, muuten false
-```
+Clojuren filosofiassa funktiot ovat pääosasassa, ja niinpä 'directory-exists?' kapseloi yleisen tehtävän ytimekkäästi. Javaa käytettäessä vastaavasta toiminnallisuudesta vastaisi 'java.io.File' luokan 'exists()' metodi.
 
-## Syvempi Sukellus:
+On tärkeää ymmärtää, että hakemiston olemassaolon tarkistus on hetkellinen: hakemistosta voidaan tarkistaa sen olemassaoloa välittömästi ennen toimintoa, mutta tosimaailmassa tilanteet muuttuvat nopeasti. Konkreettinen hakemisto voi kadota tai syntyä uudestaan millä hetkellä tahansa (käyttöjärjestelmän tai toisen sovelluksen toimesta), joten sovelluksen tulisi olla valmis käsittelemään näitä tilanteita dynaamisesti.
 
-Historiallisesti, ohjelmoijien on täytynyt tarkistaa manuaalisesti tiedostojärjestelmän eheyttä. Clojure, ja sen taustalla toimiva Java-platformi, tarjoavat kuitenkin nämä toiminnallisuudet valmiina.
+Uudemmissa Clojure-versioissa ei ole odotettavissa merkittäviä muutoksia tiedostojen olemassaolon tarkistamismekanismeihin, koska tämä toiminnallisuus on jo vakiintunut ja yksinkertainen.
 
-Clojuren `java.io`-kirjasto mahdollistaa järjestelmätason operaatioiden suorittamisen, kuten hakemiston olemassaolon tarkistuksen, korkean tason funktioilla, mikä tekee toiminnasta järjestelmäriippumatonta.
-
-Kuten aina, on olemassa useita muita tapoja toteuttaa sama toiminto. Eräs Clojuren arkkitehtuurin kauneimmista puolista on, että se antaa ohjelmoijien valita parhaiten sopivan tien. Mikäli haluat tarkistaa tiedoston (eikä hakemiston) olemassaolon, voit käyttää esimerkiksi Clojure `java.nio.file`-kirjaston `Files/exists` -metodia.
-
-## Katso Myös:
-
-Lisätietoja voit saada seuraavista viitteistä:
-
-1. [Clojure's 'java.io' library documentation](https://clojuredocs.org/clojure.java.io)
-2. [Java 7 java.nio.file documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
-3. [StackOverflow: How to check if a file exists? (in Clojure)](https://stackoverflow.com/questions/2028158/how-to-check-if-a-file-exists-in-clojure)
+## See Also - Katso Myös:
+- Clojuren virallinen opas tiedostoille: [https://clojure.org/guides/deps_and_cli](https://clojure.org/guides/deps_and_cli)
+- Java NIO Files -luokka (vaihtoehtoinen tapa): [https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- ClojureDocs, käytännön esimerkkejä: [https://clojuredocs.org/](https://clojuredocs.org/)

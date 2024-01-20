@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Java: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:58:24.795119-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מאמר PowerShell: בדיקה אם מדריך קיים
-אני מניח שאתם מכירים את ה-cmdlet Test-Path של PowerShell שמאפשר לכם לבדוק אם נתיב קיים. אם אתם לא, אז יש לכם מזל, הגעתם למקום הנכון!
-
 ## מה ולמה?
-הפקודות של PowerShell המבדיקות אם ספריה קיימת הן קריטיות בקוד שמנהל מערכת קבצים. הן מסייעות נגד ארורי קוד פושע ושגיאות קיבוץ.
+בדיקה אם תיקייה קיימת ב-PowerShell היא אופן למנוע שגיאות יוזם פעולות עם תיקיות. תכניתנים עושים את זה כדי להבטיח תקינות זרימת העבודה ולמנוע נסיונות לגשת לתיקיות שלא קיימות.
 
 ## איך לעשות:
-Programmer אם אתם רוצים לבדוק אם מדריך מסוים קיים, תשתמשו בפקודה Test-Path של PowerShell. להלן דוגמא:
+כדי לבדוק אם תיקייה קיימת, השתמשו בפקודת `Test-Path` והעבירו את הנתיב של התיקייה שאתם רוצים לבדוק:
+
 ```PowerShell
-PS C:\> Test-Path -Path "your\directory\path"
+# בדיקה אם תיקייה קיימת
+$directoryPath = "C:\Users\ExampleFolder"
+$doesExist = Test-Path $directoryPath
+
+# הדפסת התוצאה
+if ($doesExist) {
+    Write-Host "התיקייה קיימת."
+} else {
+    Write-Host "התיקייה אינה קיימת."
+}
 ```
-אם המדריך קיים, הקוד יחזיר "True". אם המדריך לא קיים, הקוד יחזיר "False".
 
-## צלילה עמוקה:
-בעבר, למתכנתים הייתה התמצאות באמצעים מגוונים עשויים בצורך לבנות את הפקודה שלהם בעצמם. חשבו על התחנה ב-\_ \ _ \ _ \ _. אך בעם הזמן, Microsoft פיתחה את cmdlet Test-Path של PowerShell כדי לספק למתכנתים כלי אמינה לבדיקה של המידע הזה.
+תוצאת הדוגמא:
+```
+התיקייה אינה קיימת.
+```
 
-מרגע ש- Test-Path קיימת, אלטרנטיבות אחרות נחשבת לפחות אמינות וחולשות במובנים אחרים אם נהוג להתמקד ב- Test-Path לבדיקה אם ספריה קיימת.
+או לקבל תוצאה בוליאנית (True/False) ישר למסוף:
+```PowerShell
+Test-Path $directoryPath
+```
 
-מבחינת פרטי האמיתה, \Test-Path עובד באמצעות שמירה בדגמה המסוימת של העץ התיקייה שנמסרה לה ובדיקה אם יש להיא מסלול מתאים קיים.
+## טבילה עמוקה:
+'`Test-Path` היא פקודה שנכנסה לשימוש ב-PowerShell 1.0. זו אחת מפקודות היסוד שסופקו עם השקתה של פלטפורמת PowerShell. יש אלטרנטיבות כמו כתיבת סקריפט ב. NET ושימוש במחלקות הקיימות, אבל `Test-Path` היא הדרך הכי ישירה ופשוטה לבדוק את תקינות הנתיב.
+
+כשמשתמשים ב-`Test-Path`, ניתן להוסיף פלאגים שונים כדי לבצע בדיקות נוספות כמו בדיקה אם הנתיב הוא תיקייה ולא קובץ עם `-PathType`. זה חשוב כאשר אתם רוצים לוודא שאתם מחברים לתיקייה ולא לקובץ בטעות.
+
+כמו כן, שימו לב שבחלונות יש רגישות לאותיות רישיות וקטנות, אבל במערכות פעולה אחרות כמו Linux - ייתכן שתצטרכו להיות מדויקים יותר בנתיבים שלכם.
 
 ## ראה גם:
-[עזרה ב-Cmdlet Test-Path של PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7)
-[מדריך PowerShell Beginners](https://www.microsoft.com/en-us/download/details.aspx?id=59185)
+- [about_Test-Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
+- [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)

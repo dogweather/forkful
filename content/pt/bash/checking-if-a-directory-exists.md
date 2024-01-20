@@ -10,46 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Checar se um diretório existe é verificar se há uma pasta específica num sistema de arquivos. Programadores fazem isso para prevenir erros antes que tentem acessar, modificar ou remover diretórios que podem não estar presentes.
+## O Que & Porquê?
 
-## Como fazer:
-Aqui estão alguns exemplos de como fazer isso no Bash. Em cada exemplo, assumimos que o diretório que queremos verificar é `/tmp/testdir`.
+Verificar se uma diretoria existe é identificar se um caminho especificado é uma pasta no sistema de arquivos. Programadores fazem isso para evitar erros como tentar ler ou escrever em uma pasta que não existe.
 
-Para verificar se o diretório existe:
+## Como Fazer:
 
-```Bash
-if [ -d "/tmp/testdir" ] 
-then
-    echo "O diretório existe."
-else
-    echo "O diretório não existe."
-fi
-```
-Output esperado quando o diretório existir: `O diretório existe.`
-Output esperado quando o diretório não existir: `O diretório não existe.`
-
-## Deep Dive
-
-Bash é uma interface de linha de comando do usuário que foi lançada pela primeira vez em 1989. A verificação da existência de um diretório é uma operação comum e antiga em programação que permite que o desenvolvedor manuseie erros de I/O eficientemente.
-
-Na verdade, o comando '-d' não é a única maneira de verificar a existência de um diretório em Bash. '-e' também pode ser usado para verificar se qualquer tipo de arquivo (incluindo diretórios) existe.
+Para verificar se uma diretoria existe, você pode usar o comando `[ -d ]`:
 
 ```Bash
-if [ -e "/tmp/testdir" ] 
-then
-    echo "O arquivo ou diretório existe."
+if [ -d "/caminho/para/a/diretoria" ]; then
+  echo "A diretoria existe."
 else
-    echo "O arquivo ou diretório não existe."
+  echo "A diretoria não existe."
 fi
 ```
 
-Claro, em termos de detalhes de implementação, é importante notar que esses comandos Bash funcionarão apenas em sistemas operacionais baseados em UNIX, como Linux ou macOS.
+Exemplo de saída se a diretoria existir:
 
-## Veja Também
+```
+A diretoria existe.
+```
 
-Para mais detalhes ou para resolver qualquer dúvida, você pode verificar os links abaixo:
+Exemplo de saída se a diretoria não existir:
 
-1. Manual do Bash: https://www.gnu.org/software/bash/manual/bash.html
-2. Referência do Bash: https://tldp.org/LDP/abs/html/testconstructs.html#DBLBRACKETS 
-3. Perguntas frequentes sobre o Bash de Greg's Wiki: https://mywiki.wooledge.org/BashFAQ/031
+```
+A diretoria não existe.
+```
+
+Você também pode usar `[[ -d ]]` para a mesma verificação, o qual é mais moderno e suporta características adicionais como operadores lógicos:
+
+```Bash
+[[ -d "/caminho/para/a/diretoria" ]] && echo "Existe" || echo "Não existe"
+```
+
+## Aprofundamento:
+
+Historicamente, verificação de existência de diretórios é uma necessidade básica nos scripts Bash para prevenir a execução de comandos em diretórios errados, o que poderia levar a resultados inesperados ou danos ao sistema. Alternativamente, além do teste `-d`, existe o comando `test` que pode ser usado para o mesmo propósito, embora em forma menos legível. Os detalhes de implementação no Bash envolvem a verificação das informações do inode do sistema de arquivos para determinar o tipo do caminho especificado.
+
+Antes do Bash, em shells mais antigos, os programadores muitas vezes tinham que criar diretórios sem a verificação prévia, resultando em mensagens de erro ou diretórios duplicados. O Bash trouxe comandos de teste integrados, como `[` e `[[`, melhorando a escrita de scripts seguros e eficientes.
+
+Quando se trata de alternativas, o uso de `-e` ou `-f` pode verificar a existência de arquivos e diretórios ou apenas arquivos, respectivamente.
+
+## Ver Também:
+
+- [Bash Conditional Expressions](https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions)
+- [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)
+- [Stack Overflow: How to check if a directory exists in a Bash shell script?](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)

@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Arduino: Überprüfung, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,49 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Die Überprüfung, ob ein Verzeichnis existiert, bezieht sich auf den Prozess der Verifizierung der Existenz eines bestimmten Ordners in einem Speichergerät mit der Arduino-Software. Dies ist nützlich, um Fehler zu vermeiden, die auftreten können, wenn wir versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen.
+Das Überprüfen, ob ein Verzeichnis existiert, ist der Prozess, zu verifizieren, dass ein bestimmter Speicherort auf dem Dateisystem vorhanden ist. Programmierer machen das, um Fehler zu vermeiden, die auftreten, wenn auf ein nicht existierendes Verzeichnis zugegriffen wird.
 
 ## So geht's:
-
-Wir nutzen den SPIFFS (SPI Flash File System) in der ESP8266 Arduino-Core und überprüfen die Existenz des Verzeichnisses anhand folgender Beispiele. 
+Verwenden Sie die SD-Bibliothek, um auf das Dateisystem zuzugreifen. Hier ist ein Beispiel:
 
 ```Arduino
-#include "FS.h"
+#include <SD.h>
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   
-  if (!SPIFFS.begin()) {
-    Serial.println("An Error has occurred while mounting SPIFFS");
+  if (!SD.begin()) {
+    Serial.println("SD-Kartenfehler");
     return;
   }
+  
+  File root = SD.open("/");
 
-  if(SPIFFS.exists("/myDir")){
-    Serial.println("Directory exists!");
-  }
-  else{
-    Serial.println("Directory doesn't exist!");
+  if (SD.exists("/meinVerzeichnis")) {
+    Serial.println("Verzeichnis existiert!");
+  } else {
+    Serial.println("Verzeichnis existiert nicht.");
   }
 }
 
 void loop() {
-  
+  // Nichts zu tun hier
 }
 ```
+Beispiel-Ausgabe:
+```
+Verzeichnis existiert!
+```
+oder
+```
+Verzeichnis existiert nicht.
+```
 
-In diesem Code erstellt `SPIFFS.begin()` das Dateisystem, während `SPIFFS.exists("/myDir")` überprüft, ob das Verzeichnis existiert oder nicht. Der resultierende Ausdruck wird dann auf der seriellen Konsole ausgegeben.
+## Deep Dive
+Die Überprüfung, ob ein Verzeichnis existiert, ist vor allem seit der Einführung von SD- und Mikro-SD-Kartenmodulen für Arduino-Boards wichtig. Früher, wo der Speicher direkt auf dem Mikrocontroller war, gab es weniger dynamischen Speicher. Mit SD-Karten können Verzeichnisse erstellt und gelöscht werden, deshalb muss deren Existenz überprüft werden.
 
-## Tiefgreifende Informationen
+Alternativen gibt es nicht viele – meistens geht es darum, die SD-Bibliothek zu benutzen oder eigene Implementierung für das Dateisystem zu schreiben. Bei der SD-Bibliothek nutzt man `exists()`, um zu prüfen, ob Dateien oder Verzeichnisse vorhanden sind.
 
-Die Funktion `SPIFFS.exists()` wurde in frühen Arduino-Versionen eingeführt, um die Interaktion mit dem Dateisystem zu erleichtern. Alternativ können Sie die `File`-Klasse und ihre `open()`-Methode verwenden, die jedoch mehr Code und Komplexität erfordert.
-
-Die Überprüfung, ob ein Verzeichnis existiert, ist hilfreich, um Unsicherheiten in Bezug auf die Speicherstatus Ihrer Programme zu reduzieren.	Dies gewährleistet, dass Ihr Programm nicht versucht, Dateien in einem nicht existierenden Verzeichnis zu speichern oder von dort zu lesen, was zu Laufzeitfehlern führen könnte.
+Die Implementierungsdetails hangen weitgehend davon ab, wie das Dateisystem auf der SD-Karte strukturiert ist, die File Allocation Table (FAT) ist hier üblich. Die Funktion `exists()` sucht nach dem Eintrag im FAT, um die Existenz zu bestätigen oder zu verneinen.
 
 ## Siehe auch
-
-Für weitere Details und Beispiele zur Interaktion mit dem Dateisystem auf der ESP8266 Arduino Core, besuchen Sie die Dokumentationsseite unter [https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html](https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html).
-
-Für eine gründlichere Erklärung der `SPIFFS.exists()`-Methode, besuchen Sie die Arduino Reference unter [https://www.arduino.cc/en/Reference/SPISFFSexists](https://www.arduino.cc/en/Reference/SPISFFSexists).
-
-Ein Verständnis dieser Funktionen und Praktiken gibt Ihnen mehr Kontrolle und Sicherheit beim Programmieren mit Arduino.
+- Die Arduino SD Bibliotheksdokumentation: [https://www.arduino.cc/en/reference/SD](https://www.arduino.cc/en/reference/SD)
+- Ein Tutorial zur Dateiverwaltung auf SD-Karten: [https://www.arduino.cc/en/Tutorial/LibraryExamples/Files](https://www.arduino.cc/en/Tutorial/LibraryExamples/Files)

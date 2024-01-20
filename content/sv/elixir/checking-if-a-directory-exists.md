@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Elixir: Kontrollera om en katalog finns"
+html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog finns är en metod för att ta reda på om en viss sökväg pekar på en existerande filsystemskatalog. Programmerare gör detta för att förhindra fel vid försök till filoperationer på icke-existerande kataloger.
+Att kontrollera om en mapp finns handlar om att verifiera dess existens i filsystemet. Programmerare gör detta för att undvika fel vid filhantering, till exempel när de ska läsa från eller skriva till filer i mappen.
 
-## Så här gör du:
-I Elixir kan du använda `File.dir?/1` funktionen för att kontrollera om en katalog finns. Här är ett exempel:
+## Hur man gör:
+Elixir använder `File` modulen för att interagera med filsystemet. Här är ett exempel:
 
-```Elixir
-# Kontrollerar om katalogen finns
-if File.dir?("/path/to/directory")
-    IO.puts "/path/to/directory finns!"
+```elixir
+if File.dir?("min_mapp") do
+  IO.puts("Mappen finns!")
 else
-    IO.puts "/path/to/directory finns inte!"
+  IO.puts("Mappen finns inte.")
 end
 ```
 
-Koden ovan kommer att skriva ut "/path/to/directory finns!" om katalogen finns, och "/path/to/directory finns inte!" om den inte gör det.
+Om "min_mapp" existerar, skriver konsolen ut "Mappen finns!", annars "Mappen finns inte."
 
-Surfa till [Elixir dokumentation](https://hexdocs.pm/elixir/File.html#dir%3F/1) för att se mer information.
+## Djupdykning:
+Funktionen `File.dir?/1` introducerades i Elixir för att ge enkel tillgång till vanliga filoperationer. Det finns alternativ som `:filelib.is_dir/1` från Erlangs standardbibliotek, men `File.dir?/1` är mer lättanvänt i Elixir-program.
 
-## Utförligare förklaring
-Historiskt sett har det alltid varit nödvändigt att veta om kataloger finns när man programmerar, för att undvika överraskande fel vid runtime. Elixir, liksom de flesta moderna programmeringsspråk, erbjuder därför inbyggda sätt att kontrollera detta.
+Att kontrollera mappars existens är direkt relaterat till operativsystemets API och dess filsystem. Effektiviteten av sådana anrop kan variera beroende på underliggande system.
 
-Alternativa sätt att kontrollera om en katalog finns inkluderar användning av funktioner som `:file.read_file_info/1`, men det här är mer invecklat och `File.dir?/1` är att föredra i de flesta sammanhang.
-
-`File.dir?/1` i Elixir kör egentligen `:file.read_link_info/1` funktionen i Erlang, som är det språk Elixir är byggt på. Denna funktion returnerar detaljinformation om den angivna filen (eller katalogen), inklusive om det är en katalog eller inte.
+I historiskt sammanhang har denna funktionalitet alltid varit grundläggande för programmering eftersom den påverkar hur program läser in och sparar data. Det är också en säkerhetsfråga, då program som blindt litar på filresurser kan orsaka fel eller säkerhetsbrister.
 
 ## Se även:
-Det finns många resurser online för att lära sig mer om Elixir och dess inbyggda filsystemsfunktioner:
-
-- [Elixir dokumentation](https://hexdocs.pm/elixir/File.html) – den officiella dokumentationen för Elixir's File modul.
-- [Elixir Getting Started Guide](https://elixir-lang.org/getting-started/introduction.html) – En introduktion till Elixir programmering, skriven av skaparna av språket.
-- [Erlang dokumentation](http://erlang.org/doc/man/file.html) - Om du är intresserad av de underliggande Erlang-funktionerna kan du kolla in den officiella Erlang-dokumentationen.
-- [Elixir forum](https://elixirforum.com) - En plats för att ställa frågor, få hjälp och diskutera ideér med andra Elixir-programmerare.
+- Elixir's `File` modul dokumentation: https://hexdocs.pm/elixir/File.html
+- Erlang's `filelib` dokumentation: http://erlang.org/doc/man/filelib.html
+- Förståelse kring filsystem och operativsystem: https://en.wikipedia.org/wiki/File_system

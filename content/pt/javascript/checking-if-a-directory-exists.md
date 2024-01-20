@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Javascript: Verificando se um diretório existe"
+date:                  2024-01-20T14:57:17.684400-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,39 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê e Por Quê?
+## O Que & Porquê?
+Verificar a existência de um diretório é basicamente perguntar ao sistema operacional se um certo caminho no seu disco possui uma pasta. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em pastas que não existem.
 
-Verificar se um diretório existe é uma das funções básicas em programação, que confirma a existência de um diretório específico em um sistema de arquivos. Isso é útil pois evita erros durante a manipulação do sistema de arquivos.
-
-## Como fazer:
-
-Nós podemos verificar se um diretório existe usando o módulo 'fs' do Node.js. Aqui está um exemplo simples:
-
-```Javascript
+## Como Fazer:
+```javascript
 const fs = require('fs');
 
-fs.access('teste-diretório', (err) => {
-  if (err) {
-    console.log('O diretório não existe');
-  } else {
-    console.log('O diretório existe');
+// Síncrono
+const dirPath = './meuDiretorio';
+if (fs.existsSync(dirPath)) {
+  console.log(`O diretório '${dirPath}' existe!`);
+} else {
+  console.log(`O diretório '${dirPath}' não existe.`);
+}
+
+// Assíncrono com async/await
+const fsPromises = fs.promises;
+async function checkDirectoryExists() {
+  try {
+    await fsPromises.access(dirPath, fs.constants.F_OK);
+    console.log(`O diretório '${dirPath}' existe!`);
+  } catch {
+    console.log(`O diretório '${dirPath}' não existe.`);
   }
-});
+}
+
+checkDirectoryExists();
 ```
-Neste caso, você verá "O diretório não existe" se o diretório 'teste-diretório' não existir, ou "O diretório existe" se existir.
+Saída esperada (dependendo se o diretório existe ou não):
+```
+O diretório './meuDiretorio' existe!
+```
+ou
+```
+O diretório './meuDiretorio' não existe.
+```
 
-## Mergulho Profundo
+## Mergulho Profundo:
+Historicamente, a necessidade de verificar a presença de um diretório antes de realizar operações sobre ele é vital para prevenir erros de 'diretório não encontrado'. Antes do Node.js, essa operação podia ser mais desafiadora em JavaScript, visto que era primariamente uma linguagem focada no navegador. Alternativas de checagem incluem usar a função `fs.stat` ou `fs.readdir`, que podem fornecer mais informações sobre o caminho em questão. Ao nível de implementação, a função `fs.existsSync` bloqueia a thread — ou seja, espera pela resposta antes de seguir adiante — enquanto `fsPromises.access` permite um approach não-bloqueante, ideal para aplicativos que precisam manter a fluidez de execução.
 
-Historicamente, a necessidade de verificar se um diretório existe decorre da possibilidade de erros de E/S durante a manipulação de sistemas de arquivos. No passado, usávamos o método 'fs.exists', mas foi depreciado devido à sua incapacidade de diferenciar entre erros de E/S e a inexistência do caminho especificado.
-
-Uma alternativa é o método fs.existsSync(), que retorna um valor booleano indicando a existência ou não de um diretório. No entanto, este método é sincronizado, o que pode bloquear outras operações. Por isso, é recomendado o uso do método 'fs.access' para operações assíncronas.
-
-Posteriormente, com a popularização do módulo 'fs-extra' do Node.js, passamos a ter acesso a funções simplificadas para manipulação de diretórios, como o método 'ensureDir()' que cria um diretório se ele não existir.
-
-## Veja Also 
-
-[Documentação do Node.js 'fs' Module](https://nodejs.org/api/fs.html)
-
-['fs-extra' Módulo no npm](https://www.npmjs.com/package/fs-extra)
-
-[Artigos sobre manipulação de sistema de arquivos](https://www.digitalocean.com/community/tutorial_series/working-with-data-and-files-in-node-js).
+## Veja Também:
+- Documentação Node.js fs: https://nodejs.org/api/fs.html
+- Artigo sobre leitura e escrita de arquivos em Node.js: https://nodejs.dev/learn/reading-files-with-nodejs
+- Explicações sobre programação assíncrona em JavaScript: https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Asynchronous

@@ -1,6 +1,6 @@
 ---
 title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "Bash: Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash Programmierung: Überprüfen ob ein Verzeichnis existiert
-
-Willkommen. Heute werfen wir einen Blick auf das Szenario, in dem wir prüfen müssen, ob ein Verzeichnis in Bash existiert oder nicht. 
-
 ## Was & Warum?
-
-Prüfen, ob ein Verzeichnis existiert, bedeutet herauszufinden, ob ein bestimmtes Verzeichnis in Ihrem Dateisystem vorhanden ist oder nicht. Programmierer tun dies, um Laufzeitfehler zu verhindern, die auftreten, wenn versucht wird, auf ein nicht existierendes Verzeichnis zuzugreifen.
+Das Überprüfen, ob ein Verzeichnis existiert, erlaubt es uns, sicherzustellen, dass unsere Skripte nur dann laufen, wenn die benötigten Daten verfügbar sind. Programmierer machen das, um Fehler zu vermeiden und die Robustheit der Skripte zu verbessern.
 
 ## So geht's:
 
-Im Bash-Skript verwenden wir die `-d` Option von Test, um zu überprüfen, ob ein Verzeichnis existiert oder nicht. Hier ist ein Code-Beispiel:
-
 ```Bash
-if [ -d "$directory" ]; then
-    echo "Das Verzeichnis existiert"
+# Überprüfen, ob ein Verzeichnis existiert
+if [ -d "/pfad/zum/verzeichnis" ]; then
+  echo "Das Verzeichnis existiert."
 else
-    echo "Das Verzeichnis existiert nicht"
+  echo "Das Verzeichnis existiert nicht."
 fi
 ```
 
-Ausgabe wäre:
+Beispielausgabe:
 
 ```Bash
-Das Verzeichnis existiert
-oder
-Das Verzeichnis existiert nicht
+Das Verzeichnis existiert.
 ```
 
-Je nachdem, ob das angegebene Verzeichnis vorhanden ist oder nicht.
-
-## Tiefer eintauchen:
-
-`-d` ist ein Unix-Bash-Symbol, das verwendet wird, um zu überprüfen, ob ein Dateisystem-Objekt ein Verzeichnis ist oder nicht. In der Anfangszeit von Unix war es die einzige Möglichkeit, dies zu tun. Alternativ könnten Sie in neueren Bash-Versionen `[[ -d "$directory" ]]` statt `[ -d "$directory" ]` verwenden. Dies stellt eine erweiterte Teststruktur dar, die eine detailliertere Fehlerprotokollierung ermöglicht. Intern verwendet Bash die `stat` Systemaufruf unter der Haube, um zu ermitteln, ob das Verzeichnis existiert oder nicht.
+## Tiefergehend
+Früher verwendeten viele Bash-Skripte `test`-Befehle, wie `-d`, um Datei-Eigenschaften zu prüfen. Mit der Zeit wurde der `[ ... ]`-Syntax eingeführt, der lesbarer ist. Alternativ hätte man `[[ ... ]]` für erweiterten Test nutzen können, der aber in älteren oder anderen Shells nicht garantiert vorhanden ist. Bei der Implementierung ist zu beachten, dass das `-d` Flag spezifisch für Verzeichnisse ist und nicht prüft, ob ein allgemeiner Pfad existiert – für Dateien gibt es andere Flags wie `-f`.
 
 ## Siehe auch:
 
-- [Offizielle GNU Bash-Dokumentation](http://www.gnu.org/s/bash/)
-
-- [Bash Beginners Guide](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
-
-*Diese Links führen Sie zu weiteren Ressourcen, wenn Sie mehr über Bash-Programmierung erfahren möchten. 
-
-Bis zum nächsten Artikel!
+- Advanced Bash-Scripting Guide: [https://www.tldp.org/LDP/abs/html/](https://www.tldp.org/LDP/abs/html/)
+- Bash Conditional Expressions (Man Page): [https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- StackOverflow Diskussionen über Bash-Skripting-Probleme und -Lösungen: [https://stackoverflow.com/questions/tagged/bash](https://stackoverflow.com/questions/tagged/bash)

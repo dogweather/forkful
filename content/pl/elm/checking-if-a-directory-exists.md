@@ -1,6 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Elm: Sprawdzanie, czy katalog istnieje"
+html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,24 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Co i dlaczego?"
 
-Sprawdzanie, czy katalog istnieje, to proces, który odpowiada na pytanie, czy określony katalog istnieje w systemie plików. Programiści robią to, aby uniknąć błędów związanych z próbami odczytu lub zapisu do nieistniejącego katalogu.
+Sprawdzanie istnienia katalogu pozwala potwierdzić, czy dany folder jest dostępny w systemie plików. Programiści robią to, aby uniknąć błędów przy próbie dostępu do plików lub zapisywania w nieistniejącym katalogu.
 
+## How to:
+"Jak to zrobić:"
 
-## Jak to zrobić:
+Elm nie zapewnia natywnej możliwości sprawdzania istnienia katalogów, ponieważ działa w przeglądarce i nie ma bezpośredniego dostępu do systemu plików. Musisz użyć JavaScript Interop za pomocą portów. Oto przykładowy sposób:
 
-Szanowni Państwo, niestety Elm (w obecnej wersji) nie ma bezpośredniej możliwości sprawdzenia, czy katalog istnieje, ponieważ Elm jest językiem programowania skoncentrowanym na przeglądarce i nie ma dostępu do systemu plików.
+```Elm
+port module Main exposing (..)
 
-## Głębsze spojrzenie:
+-- Port używany do wysyłania wiadomości do JavaScript
+port checkDirExists : String -> Cmd msg
 
-Jako język programowania skierowany na bezpieczeństwo, Elm jest zaprojektowany tak, aby unikać przypadkowych efektów ubocznych. Dostęp do systemu plików to coś, co Elm celowo nie eksponuje jako część swojego API. Elm dzięki swoim ograniczeniom pozwala na tworzenie aplikacji webowych, które są bezpieczne przed wieloma typami ataków, takimi jak ataki Cross-Site Scripting (XSS).
+-- Port do odbierania wiadomości z JavaScript
+port onDirCheckResult : (Bool -> msg) -> Sub msg
 
-Jednakże, w przypadku, gdy chcesz mieć interakcję ze swoim lokalnym systemem plików używając Elmu, musisz stworzyć tzw. "porty", które umożliwiają komunikację Elmu z obszarami JavaScript, dostarczającymi takie możliwości. 
+-- Zasubskrybowanie odpowiedzi
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    onDirCheckResult DirCheckResult
 
-Alternatywą dla tego, można użyć Node.js interfejsu API do systemu plików, który umożliwia sprawdzanie, czy katalog istnieje, ale wymaga wyjścia poza czysty Elm.
+-- Słuchanie odpowiedzi
+type Msg
+    = DirCheckResult Bool
 
-## Zobacz też:
-- [Elm Ports:](https://guide.elm-lang.org/interop/ports.html) Oficjalny przewodnik po portach w Elm.
-- [JavaScript Interoperability:](https://guide.elm-lang.org/interop/) Przewodnik po interakcji JavaScript z Elm.
-- [Node.js File System API:](https://nodejs.org/docs/latest-v8.x/api/fs.html) Dokumentacja API systemu plików w Node.js.
+-- Update modelu na podstawie sprawdzenia
+update : Msg -> Model -> (Model, Cmd Msg)
+update (DirCheckResult exists) model =
+    ({ model | dirExists = exists }, Cmd.none)
+```
+
+JavaScript, który odbiera polecenie i zwraca wynik:
+
+```javascript
+app.ports.checkDirExists.subscribe(function(path) {
+    // Sprawdzenie istnienia folderu (przykładowy kod)
+    var dirExists = /* check if directory exists using Node.js or another backend method */;
+    app.ports.onDirCheckResult.send(dirExists);
+});
+```
+
+## Deep Dive
+"Dogłębna analiza"
+
+Elm jest bezpiecznym językiem zaprojektowanym do tworzenia aplikacji webowych, dlatego nie ma bezpośredniego dostępu do systemu plików — to byłoby ogromne ryzyko bezpieczeństwa. Historia języka Elm wskazuje na rozwój z myślą o czystości i bezpieczeństwie.
+
+Alternatywy dla sprawdzania katalogów wiążą się z wykorzystaniem JavaScript i komunikacją przez porty, jak pokazano wyżej. Możesz też wykonać to po stronie serwera, jeśli nie przeszkadza Ci zmiana architektury aplikacji.
+
+Szczegółowo, traktując Elm jako klienta, powinieneś przemyśleć, czy sprawdzanie istnienia katalogu jest naprawdę konieczne po stronie klienta. Często można to zrobić bardziej efektywnie po stronie serwera.
+
+## See Also
+"Zobacz także"
+
+- [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
+- [Node.js File System](https://nodejs.org/api/fs.html)
+- [Elm Architecture](https://guide.elm-lang.org/architecture/)

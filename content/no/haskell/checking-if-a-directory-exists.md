@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Haskell: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:57:00.616639-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,32 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å sjekke om en katalog eksisterer refererer til handlingen å bekrefte om en spesifikk katalog fins på varslet plass i lagringssystemet. Programmerere gjør dette for å hindre feil som kan oppstå når man prøver å få tilgang til en katalog som ikke eksisterer.
+Sjekke om en katalog finnes er å verifisere dens eksistens i filsystemet før vi prøver å lese eller skrive til den. Programmerere gjør dette for å unngå feil og krasj under kjøringen.
 
 ## Hvordan:
-
-Her er hvordan du kan sjekke om en katalog eksisterer i Haskell, ved hjelp av `System.Directory` pakken.
+I Haskell bruker vi ofte `doesDirectoryExist` funksjonen fra `System.Directory` for å sjekke en katalogs eksistens. Her er et eksempel:
 
 ```Haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
 
+main :: IO ()
 main = do
-    let dirName = "/sti/til/katalog"
-    dirExists <- doesDirectoryExist dirName
-    print dirExists
+    let dir = "/path/to/directory"
+    exists <- doesDirectoryExist dir
+    putStrLn $ "Directory " ++ (if exists then "exists." else "does not exist.")
 ```
 
-Kodeutdraget ovenfor vil returnere `True` dersom katalogen eksisterer, og `False` dersom den ikke gjør det.
+Kjører du dette kan du forvente følgende utskrift:
 
-## Dypdykk
+```
+Directory exists.
+```
 
-Haskell's innebygde funksjon `doesDirectoryExist` har vært tilgjengelig siden starten av `System.Directory` modulen rundt 2001. 
+eller
 
-Det finnes også alternative metoder for å sjekke om en katalog eksisterer. En er ved å bruke `catchIOError` funksjonen som tillater behovsbetinget håndtering av mulige I/O feil, inklusive manglende kataloger.
+```
+Directory does not exist.
+```
 
-Hvis du vil dykke dypere i hvordan `doesDirectoryExist` funksjonen er implementert, kan du undersøke Haskell's bibliotekskildekode. Men i en nøtteskall, bruker det de underliggende systemkallene for å interagere med filsystemet.
+avhengig av om katalogen eksisterer.
 
-## Se Også
+## Dykk Ned:
+Før `doesDirectoryExist` ble tilgjengelig, måtte du kanskje bruke mer lavnivå funksjoner for å sjekke filmetainformasjon, noe som kunne bli klønete. Denne funksjonen, sammen med andre hjelpefunksjoner i `System.Directory`, tilbyr et høynivå API som er enkelt å bruke. Alternativer for å kontrollere filsystemet innebærer å bruke `System.FilePath` for å bygge sti spesifikt for operativsystemet eller å lese direkte fra filsystemet ved hjelp av rå systemkall. Implementasjonsdetaljer varierer avhengig av plattformen, men Haskell abstraherer disse forskjellene via biblioteket, slik at du kan skrive plattformuavhengig kode.
 
-- [Haskell System.Directory Modul Dokumentasjon](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+## Se Også:
+- [System.Directory dokumentasjon](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+- [FilePath-biblioteket dokumentasjon](https://hackage.haskell.org/package/filepath)

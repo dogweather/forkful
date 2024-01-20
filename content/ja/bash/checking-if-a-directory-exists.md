@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかチェックする"
-html_title:           "Bash: ディレクトリが存在するかチェックする"
-simple_title:         "ディレクトリが存在するかチェックする"
+title:                "ディレクトリが存在するかどうかを確認する"
+html_title:           "Bash: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,40 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なぜ？とは？)
+ディレクトリが存在するかどうかを確認することは、ファイル操作の前に予期せぬエラーを防ぐためです。プログラムがスムーズに流れるよう、確実性を持たせる重要なステップです。
 
-ディレクトリが存在するかの確認とは、ファイルシステムに特定のディレクトリが存在するかどうかを確認する過程のことです。これを行うと、プログラマーはエラーを防ぎ、プログラムが順調に進行することが可能となります。
-
-## 手順：
-
-ディレクトリが存在するかを確認する最も基本的な方法を以下のBashコードで示します。このコードは特定のディレクトリ（ここでは"/tmp/test"）が存在するか確認します。
-
+## How to: (方法)
 ```Bash
-if [ -d "/tmp/test" ] 
-then
-    echo "Directory Exists"
+# ディレクトリが存在するかチェックする
+if [ -d "$DIRECTORY" ]; then
+  echo "$DIRECTORY exists."
 else
-    echo "Directory Not Exists"
+  echo "$DIRECTORY does not exist."
 fi
+
+# 実行結果
+# /path/to/dir exists.
+# または
+# /path/to/dir does not exist.
 ```
 
-このコードを実行すると以下のような出力が得られます（"/tmp/test"が存在しない場合）。
+## Deep Dive (深掘り)
+ディレクトリが存在するかどうかのチェックはUNIX由来の機能で、初期のコンピューターシステムから続いています。`test`コマンド(`[`とも書きます)の`-d`オプションを利用します。この方法は古典的ですが、効果的です。また、Bashスクリプトでは`[[ -d $DIRECTORY ]]`のように二重角括弧を使うことも可能です。`mkdir -p`コマンドを使い、存在しない場合は作成することもできます。
 
-```
-Directory Not Exists
-```
-
-## ディープダイブ：
-
-これがシェルスクリプトの標準テスト演算子 `-d` で、Unix時代から存在します。これはディレクトリが存在するかどうかをチェックするための極めて信頼性の高い方法です。
-
-代わりに `[[ -d "/path/to/dir" ]]` を使用することも可能です。これは新しいシンタックスで、結果を逆にする (`!`) または複数のテストを組み合わせる (`&&`、`||`) など、より高度な操作が可能です。
-
-Bashには、ディレクトリをチェックするための他の方法もあります。例えば、 `stat` コマンドを利用する方法などです。しかし、 `-d` 演算子を使用することが一般的です。
-
-## その他の参考資料：
-
-1. Official Bash Manual: https://www.gnu.org/software/bash/manual/bash.html
-2. Unix Test Operators: https://www.tutorialspoint.com/unix/unix-test-command.htm
-3. Bash Beginners Guide: http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
-4. Stat Command in Linux: https://www.tecmint.com/stat-command-in-linux/
+## See Also (関連情報)
+- Bashマニュアル: https://www.gnu.org/software/bash/manual/
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/

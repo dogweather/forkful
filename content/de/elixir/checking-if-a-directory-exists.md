@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Elixir: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:56:14.336265-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,25 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-In der Programmierung prüft man, ob ein Verzeichnis existiert ("Checking if a directory exists"), um Fehler aufgrund fehlender Verzeichnisse zu vermeiden. Das schützt Ihre Codeausführung vor unerwarteten Unterbrechungen.
+Prüfen, ob ein Verzeichnis existiert, heißt zu sehen, ob ein bestimmter Ordner auf dem Dateisystem vorhanden ist. Programmierer machen das, um Fehler beim Zugriff auf nicht existierende Verzeichnisse zu vermeiden oder um dynamisch mit Dateisystemstrukturen zu arbeiten.
 
-## So geht's:
-Mit Elixir können Sie die `File.dir?/1` Funktion verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Hier ist eine einfache Demonstration:
-
+## Wie geht das:
 ```elixir
-defmodule Test do
-  def dir_exists?(dir) do
-    File.dir?(dir)
-  end
+# Verwenden von File.dir?/1, um zu prüfen, ob ein Verzeichnis existiert
+def check_directory_exists(directory) do
+  File.dir?(directory)
 end
 
-IO.puts Test.dir_exists?("/path/to/directory")  # Dies könnte entweder wahr oder falsch zurückgeben, je nachdem, ob das Verzeichnis existiert.
+# Beispiel Nutzung
+is_directory_present = check_directory_exists("/mein/pfad/zu/pruefen")
+IO.puts(is_directory_present) # Gibt 'true' oder 'false' aus
 ```
+Sample Output:
+```
+true
+```
+Wenn es "`true`" ausgibt, existiert das Verzeichnis. "`false`" bedeutet das Gegenteil.
 
-## Vertiefung
-Die Funktion `File.dir?/1` wurde erstmals in Elixir 1.0 eingeführt und ist seitdem unverändert geblieben. Es gibt Alternativen wie das Verwenden von `:filelib.file_info/1` aus Erlang, aber `File.dir?/1` ist die einfachste und am häufigsten bevorzugte Methode in Elixir. Intern verwendet `File.dir?/1` tatsächlich die Erlang Funktion :filelib.isDirectory/1, um die Existenz eines Verzeichnisses zu überprüfen.
+## Tiefgang
+Historisch gesehen beruht die Möglichkeit, Dateisystem-Checks durchzuführen, auf Betriebssystemfunktionen. In Elixir stellt das `File` Modul viele Funktionen bereit, um das Dateisystem zu handhaben. `File.dir?/1` ist speziell dafür gedacht, rasch zu überprüfen, ob ein Pfad ein Verzeichnis ist. Alternativen in anderen Sprachen beinhalten Funktionen wie `os.path.isdir()` in Python oder `fs.existsSync()` in Node.js. Implementierungsdetails hängen von der zugrundeliegenden Betriebssystem-API und der Elixir-Version ab.
 
-## Siehe Auch
-1. Offizielle Elixir Dokumentation zu `File.dir? / 1` - https://hexdocs.pm/elixir/File.html#dir%3F/1
-2. Erlang Dokumentation zu `:filelib.file_info/1` - https://erlang.org/doc/man/filelib.html#file_info-1
-3. Elixir Forum Diskussionen zum Überprüfen der Existenz eines Verzeichnisses - https://elixirforum.com/t/how-to-check-if-a-directory-exists/1203
+## Siehe auch
+- Elixir's offizielle Dokumentation zu File.dir?/1: [https://hexdocs.pm/elixir/File.html#dir?/1](https://hexdocs.pm/elixir/File.html#dir?/1)
+- Erlang's :file Modul, auf dem Elixirs File-Modul basiert: [https://erlang.org/doc/man/file.html](https://erlang.org/doc/man/file.html)
+- Eine Anleitung zur Fehlerbehandlung beim Zugriff auf das Dateisystem in Elixir: [https://elixir-lang.org/getting-started/io-and-the-file-system.html](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

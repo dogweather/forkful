@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं, जांचना"
-html_title:           "C++: डायरेक्टरी मौजूद है या नहीं, जांचना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं, जांचना"
+title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+html_title:           "Arduino: यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# आपका स्वागत है! 
+## What & Why? (क्या और क्यों?)
 
-## क्या और क्यों?
+डायरेक्टरी की जाँच से मतलब है कि क्या एक निश्चित पाथ पर फोल्डर मौजूद है या नहीं का पता लगाना। प्रोग्रामर इसे इसलिए करते हैं ताकि वे सुनिश्चित कर सकें कि डेटा को सहेजने, खोलने या मोडिफाई करने से पहले वह डायरेक्टरी मौजूद हो।
 
-- "डिरेक्टरी मौजूद है या नहीं", उनके अस्तित्व की जाँच करना कहलाता है। 
-- इसे सुनिश्‍चित करने के लिए कि आपकी प्रोग्राम के द्वारा किसी विशेष डिरेक्टरी से डेटा आ रहा है या नहीं।
+## How to: (कैसे करें:)
 
-## कैसे:
-
-कोड उदाहरण और उदाहरण आउटपुट निम्नानुसार होगा:
-
-```Cpp
-#include <filesystem>
+```c++
 #include <iostream>
+#include <filesystem>
 
 int main() {
-    if (std::filesystem::exists("directory_path")) {
-        std::cout << "Directory exists\n";
+    std::string directory_path = "/path/to/your/directory";
+
+    // std::filesystem का उपयोग कर के डायरेक्टरी की जाँच करें
+    if (std::filesystem::exists(directory_path)) {
+        std::cout << "Directory exists: " << directory_path << std::endl;
+    } else {
+        std::cout << "Directory does not exist: " << directory_path << std::endl;
     }
-    else {
-        std::cout << "Directory does not exist\n";
-    }
+
     return 0;
 }
 ```
-यदि डिरेक्टरी मौजूद हो, तो `"Directory exists"` प्रिंट होगा, अन्यथा `"Directory does not exist"` प्रिंट होगा।
 
+सैंपल आउटपुट:
 
-## गहरी डाइविंग:
+```
+Directory exists: /path/to/your/directory
+```
+या
+```
+Directory does not exist: /path/to/your/directory
+```
 
-- C++17 के साथ `std::filesystem` की कक्षा मौजूद है। यह आधिकारिक रूप से डिरेक्टरी की जांच करने का संदर्भ है।
-- `boost::filesystem` एक वैकल्पिक उपयोग है जो अधिक पुराने संस्करणों में काम करता है।
-- `std::filesystem::exists()` वास्तविक रूप से एक `error_code` तत्व वर्तमान होने पर वापस आता है जो डिरेक्टरी मूल्यांकन के समय मौजूद है या नहीं।
+## Deep Dive (गहराई से जानकारी):
 
-## देखने के लिए यह भी:
+पहले, डायरेक्टरी की जाँच POSIX सिस्टम कॉल `stat` का उपयोग करके की जाती थी। लेकिन C++17 के बाद से, `std::filesystem` मॉड्यूल पेश किया गया जो फाइल सिस्टम ऑपरेशन को मानकीकृत करता है। इससे पोर्टेबल कोड लिखना आसान हो जाता है।
 
-- [C++ std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
-- [Boost filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- [Filesystem Design with POSIX Interface](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html) 
+वैकल्पिक तरीके में बूस्ट फाइलसिस्टम लाइब्रेरी या `dirent.h` (POSIX स्पेसिफिक) शामिल हैं, पर `std::filesystem` का उपयोग करना ज्यादा सीधा और मानकीकृत है।
 
-यहां आपको C++ में बुनियादी डिरेक्टरी प्रेक्षापण का परिचय मिलेगा। आपकी जानकारी और उन्नति के लिए, ऊपर लिंक प्रदान की गई हैं।
+डायरेक्टरी की जाँच का व्यवहार प्लेटफार्म पर निर्भर करता है, और यह व्यवहार एक्सेस परमीशन, फाइल सिस्टम की सुरक्षा सेटिंग्स, और सिम्लिंक्स के साथ विवर्तनिक हो सकता है। इसलिए, अच्छे प्रोग्राम को इन सब विचारों को महत्व देना चाहिए।
+
+## See Also (देखें भी):
+
+- [Filesystem library documentation](https://en.cppreference.com/w/cpp/filesystem)
+- [Boost.Filesystem Tutorial](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/tutorial.html)
+- [ISO C++ Standards Committee - Filesystem Technical Specification](https://isocpp.org/std/the-standard)

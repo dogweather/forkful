@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Go: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:16.833807-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -11,48 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Sjekke om en katalog eksisterer er en måte å se om en bestemt filsti eksisterer i systemet. Programmere gjør dette for å hindre feil når et program prøver å lese eller skrive til en ikke-eksisterende katalog.
+Sjekke om en mappe finnes i Python betyr å verifisere at en bestemt sti peker til en reell mappe. Programmerere trenger å vite dette for å unngå feil under filhåndtering, som for eksempel ved lesing, skriving eller sletting av filer.
 
 ## Hvordan gjøre det:
-
-Bruk innebygde `os` og `os.path` biblioteker for sjekke om en katalog eksisterer. Her er et eksempel med utskrift.
-
 ```Python
 import os
 
-directory_path = "/path/to/the/directory"
+# Sti til mappen du vil sjekke
+mappe_sti = "/eksempel/mappe"
 
-if os.path.isdir(directory_path):
-    print("Katalogen eksisterer")
+# Sjekk om mappen finnes
+if os.path.isdir(mappe_sti):
+    print(f"Mappen '{mappe_sti}' finnes.")
 else:
-    print("Katalogen eksisterer ikke")
+    print(f"Mappen '{mappe_sti}' finnes ikke.")
 ```
-Hvis katalogen eksisterer vil programmet skrive ut "Katalogen eksisterer", ellers vil det skrive ut "Katalogen eksisterer ikke".
 
-## Tief Dykk:
+### Sample Output
+```
+Mappen '/eksempel/mappe' finnes ikke.
+```
 
-Det er nyttig å vite noen detaljer når vi bruker dette i virkelige koder. Historisk sett er kontrollere eksistensen av en katalog en viktig del av filbehandling i programmering. Dette prinsippet holder også i dag.
-
-Et alternativ til `os.path.isdir()` metoden er bruk av `Path().exists()` i pathlib-modulen. Her er et eksempel:
+## Dypdykk
+Før i tiden brukte man ofte `os.path.exists()` for å sjekke om en fil eller mappe fantes. Problemet er at `exists` kan være misvisende siden den returnerer `True` for både filer og mapper. Derfor er `os.path.isdir()` mer pålitelig når man eksplisitt vil vite om en sti peker til en mappe. Et alternativ til `os`-modulen er å bruke `pathlib`, et bibliotek introdusert i Python 3.4, som gir et høyere abstraksjonsnivå for filsystemoperasjoner.
 
 ```Python
 from pathlib import Path
 
-directory = Path("/path/to/the/directory")
+# Sti til mappen du vil sjekke
+mappe_sti = Path("/eksempel/mappe")
 
-if directory.exists():
-    print("Katalogen eksisterer")
+# Sjekk om mappen finnes bruker Path.exists()
+if mappe_sti.is_dir():
+    print(f"Mappen '{mappe_sti}' finnes.")
 else:
-    print("Katalogen eksisterer ikke")
+    print(f"Mappen '{mappe_sti}' finnes ikke.")
 ```
 
-Så hvordan fungerer metoden `os.path.isdir()`? Først henter det filsti som en streng, og deretter bruker det lavnivå operativ system kall for å sjekke om stien peker til en eksisterende katalog.
+Bare husk at `is_dir()` vil gi `False` hvis stien ikke eksisterer overhodet, så kombinere det med `exists()` kan være nyttig for å skille mellom ikke-eksisterende stier og stier som peker til filer.
 
-## Se Også:
-
-For mer informasjon, sjekk ut følgende kilder:
-
-1. [Offisiell Python-documentation for os-modulen](https://docs.python.org/3/library/os.html)
-2. [Offisiell Python-documentation for pathlib-modulen](https://docs.python.org/3/library/pathlib.html)
-3. [Stackoverflow post om forskjellene mellom os og pathlib](https://stackoverflow.com/questions/6004073/how-can-i-check-if-a-directory-exists)
+## Se Også
+- Python's offisielle dokumentasjon for `os`-modulen: https://docs.python.org/3/library/os.html
+- Python's offisielle dokumentasjon for `pathlib`-modulen: https://docs.python.org/3/library/pathlib.html
+- En nyttig Stack Overflow diskusjon om emnet: https://stackoverflow.com/questions/8933237/how-to-find-if-directory-exists-in-python

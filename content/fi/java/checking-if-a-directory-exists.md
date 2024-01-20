@@ -1,7 +1,8 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Java: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+date:                  2024-01-20T14:56:41.186024-07:00
+html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,44 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Tarkistaaksemme olemassaoloa, tutkimme, onko kohdekansio fyysisesti olemassa tiedostojärjestelmässä. Ohjelmoijat tekevät tämän välttääkseen virheitä tai poikkeuksia, kun yrittävät lukea, kirjoittaa tai muuten käsitellä kansioita, joita ei ehkä ole.
 
-Tarkistaminen, onko hakemisto olemassa, on ohjelmiston kehittäjän tapa varmistaa, että hakemisto on järjestelmässä ennen sen käyttöä. Tämä on tärkeää, koska se estää virhetilanteita, kuten tiedoston luku- tai kirjoitusyrityksiä olemattomaan hakemistoon.
-
-## Kuinka tehdään:
-
-Voit tarkistaa, onko hakemisto olemassa, Java'ssa `Files` luokan `exists()` metodia käyttäen:
-
-```Java
+## How to: (Kuinka tehdä:)
+```java
 import java.nio.file.*;
 
 public class DirectoryExists {
     public static void main(String[] args) {
-        Path dirPath = Paths.get("/path/to/directory");
+        Path directoryPath = Paths.get("/path/to/directory");
         
-        if (Files.exists(dirPath)) {
-            System.out.println("Hakemisto on olemassa.");
+        if (Files.exists(directoryPath)) {
+            System.out.println("Kansio on olemassa!");
         } else {
-            System.out.println("Hakemisto ei ole olemassa.");
+            System.out.println("Kansiota ei löydy.");
         }
     }
 }
 ```
 
-Tämän ohjelman ajaminen tulostaa "Hakemisto on olemassa" jos hakemisto on olemassa ja "Hakemisto ei ole olemassa" jos se ei ole.
+Sample Output:
+```
+Kansio on olemassa!
+```
 
-## Syväsukellus:
+tai 
 
-Tarkistaaksesi, onko hakemisto olemassa, Java ohjelmoijat käyttivät usein `File` luokan `exists()` metodia ennen Java 7:n julkaisua. Uudemmissa versioissa suositellaan `Files` luokan `exists()` metodin käyttämistä, koska se on monipuolisempi ja tarjoaa parempaa virheenkäsittelyä.
+```
+Kansiota ei löydy.
+```
 
-Toinen vaihtoehto on `Files` luokan `notExists()` metodi, joka tarkistaa, onko hakemisto olemassa. Siinä on se ero, että se palauttaa `true`, jos hakemisto ei ole olemassa.
+## Deep Dive (Syväsukellus)
 
-Hakemiston olemassaolon tarkistamisen yksityiskohtana on, että vaikka `exists()` metodi palauttaa `true`, ei välttämättä tarkoita, että ohjelma pystyy kirjoittamaan tai lukemaan hakemistosta. Tämän voi tarkistaa erikseen `Files.isWritable()` tai `Files.isReadable()` metodeilla.
+Aikaisemmin, ennen `java.nio.file` -pakettia, `File`-luokkaa käytettiin tiedostojen olemassaolon tarkistamiseen. `java.nio.file` esiteltiin Java 7:ssä ja toi mukanaan `Path`- ja `Files`-luokat, tarjoamalla paremman API:n tiedostojen käsittelyyn. Tarkistamiseen voi käyttää myös `Files.notExists(directoryPath)` metodia, mikä voi olla selkeämpi tietyissä konteksteissa. Pohdittaessa suorituskykyä, `Files.exists` tarkistaa tiedoston olemassaolon lukematta metatietoja, mikä tekee siitä nopeamman vaihtoehdon.
 
-## Katso myös:
+## See Also (Katso myös)
 
-[Lue lisää `Files` luokan koko API:sta Java dokumentaatiosta täältä.](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-
-[Opas Java 7:n tiedosto I/O (NIO.2) toiminnallisuudesta.](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
-
-[Lisätietoa Java ohjelmoinnista Oracle'ssa.](https://www.oracle.com/java/technologies/javase/documentation/api-overview.html)
+- [Official Java Documentation for `Files.exists`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#exists(java.nio.file.Path,java.nio.file.LinkOption...))
+- [Stack Overflow discussion on checking for file existence in Java](https://stackoverflow.com/questions/ Files.exists-vs-Files.notExists)

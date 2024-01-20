@@ -1,6 +1,6 @@
 ---
 title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "Clojure: Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Prüfen, ob ein Verzeichnis existiert, bedeutet zu kontrollieren, ob ein bestimmter Pfad auf dem Dateisystem zu einem realen Ordner führt. Programmierer machen das, um Fehler zu vermeiden, die entstehen, wenn sie auf nicht vorhandene Verzeichnisse zugreifen wollen.
 
-In der Programmierung prüfen wir oft, ob ein Verzeichnis existiert. Das ist wichtig, um Fehler zu vermeiden, wenn wir versuchen, Dateien zu lesen oder zu schreiben, die nicht da sind. 
+## So geht’s:
+In Clojure verwenden wir die `java.io.File` Klasse und die `exists` Methode, um zu prüfen, ob ein Verzeichnis existiert. Hier ist ein einfaches Beispiel:
 
-## Wie funktioniert das:
+```clojure
+(import '[java.io File])
 
-Clojure ist elegant und prägnant. Hier ist ein einfacher Weg, um zu überprüfen, ob ein Verzeichnis in Clojure existiert. 
+(defn directory-exists? [path]
+  (.exists (File. path)))
 
-```Clojure
-(ns directory-check.core
-  (:require [clojure.java.io :as io]))
-
-(defn directory-exists? [dir-path]
-  (let [dir (io/file dir-path)]
-    (and (.exists dir) (.isDirectory dir))))
-
-(println (directory-exists? "/home/user/documents"))
+(println (directory-exists? "/mein/existierendes/verzeichnis")) ; => true
+(println (directory-exists? "/nicht/existierendes/verzeichnis")) ; => false
 ```
 
-Durch den Aufruf der Funktion mit dem Pfad zu dem Verzeichnis, das wir überprüfen möchten, wird entweder `true` (wenn es existiert) oder `false` (wenn es nicht existiert) ausgegeben.
+## Tieftauchen:
+Diese Funktionalität basiert auf Java, da Clojure auf der Java Virtual Machine (JVM) läuft. In früheren Zeiten, vor Dateisystem-Abstraktionen, war der Prozess OS-spezifisch und komplexer. Alternativen zur Verwendung von `java.io.File` sind die `java.nio.file.Files` Klasse und die `exists` Methode zusammen mit `Paths` (ab Java 7), die eine modernere API bietet:
 
-## In die Tiefe:
+```clojure
+(import '[java.nio.file Files Paths])
 
-Die Überprüfung der Existenz eines Verzeichnisses ist grundlegend für viele Anwendungen, daher war diese Funktion bereits in früheren Programmiersprachen vorhanden. Clojure, das auf Java basiert, ermöglicht dies auf ruhige und einfache Weise über das clojure.java.io-Modul.
+(defn directory-exists-nio? [path]
+  (Files/exists (Paths/get path (into-array String []))))
 
-Als Alternativen könnten Sie native Java-Aufrufe verwenden, aber Clojure's abstrakter Ansatz ist einfacher und idiomatischer. Es ist möglich, weitere Überprüfungen nach Bedarf hinzuzufügen (z.B. ob Sie Lese- oder Schreibzugriff haben).
+(println (directory-exists-nio? "/mein/existierendes/verzeichnis")) ; => true
+(println (directory-exists-nio? "/nicht/existierendes/verzeichnis")) ; => false
+```
 
-## Weiterführende Links:
+Die `java.nio.file` API bietet zudem bessere Fehlerbehandlung und ist für größere Projekte generell empfehlenswert.
 
-Clojure ist eine mächtige und ausdrucksstarke Sprache und hier sind einige Ressourcen, die Ihnen helfen könnten, tiefer in sie einzutauchen:
-
-- [Offizielle Clojure-Dokumentation](https://clojure.org)
-- [Clojure Über Clojure.java.io](https://clojuredocs.org/clojure.java.io)
-- [Online-Kurs: Clojure for the Brave and True](https://www.braveclojure.com)
+## Siehe auch:
+- Clojure's offizielle Dokumentation: https://clojure.org/
+- Java's `File` Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
+- Java's `Path` und `Files` Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
+- Ein praktischer Leitfaden zur Java NIO: https://www.baeldung.com/java-nio2-file-api

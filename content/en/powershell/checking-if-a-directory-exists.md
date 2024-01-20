@@ -1,6 +1,7 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "C# recipe: Checking if a directory exists"
+date:                  2024-01-20T14:58:01.879406-07:00
+html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,50 +13,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-"Checking if a directory exists" means verifying the presence of a specific folder within a particular file system using a programming script, like PowerShell. Checking directories is crucial to prevent errors in scripts that rely on the existence of specific directories for reading files, storing data, etc.
+Checking if a directory exists is simply verifying if a folder is present at a specified path in the filesystem. Programmers do this to prevent errors, manage files efficiently, and ensure that data is being written or read from the correct locations.
 
 ## How to:
 
-Checking whether a directory exists in PowerShell is straightforward. You use the `Test-Path` cmdlet, which returns `$True` if a specified path exists and `$False` otherwise.
-
-Here's an example:
+Use the `Test-Path` cmdlet to check for a directory's existence. This cmdlet returns a boolean: `$true` if the directory exists, and `$false` if it doesn't.
 
 ```PowerShell
-$directoryPath = "C:\SomeDirectory"
+# Check if a directory exists
+$directoryPath = "C:\ExampleFolder"
+$exists = Test-Path $directoryPath
+Write-Output $exists  # Outputs True or False
+```
+
+Sample Output:
+```
+True
+```
+or if the directory doesn't exist:
+```
+False
+```
+
+You can also use it directly in an `if` statement:
+
+```PowerShell
+# Using Test-Path in an if statement
 if (Test-Path $directoryPath) {
-    echo "This directory exists."
+    Write-Output "Yep, it's there."
 } else {
-    echo "This directory does not exist."
+    Write-Output "Nope, can't find it."
 }
-```
-
-If the directory, "C:\SomeDirectory", exists, this script will output: 
-
-```PowerShell
-This directory exists.
-```
-
-If the directory does not exist, the output will be:
-
-```PowerShell
-This directory does not exist.
 ```
 
 ## Deep Dive
 
-The `Test-Path` cmdlet has been a part of PowerShell since its initial release in 2006, aiding scripts to work efficiently by avoiding file and directory related errors. 
+The `Test-Path` cmdlet has been around since PowerShell v1.0. It's not just a one-trick pony; alongside directories, it can be used to check files, registry keys, and other items via different 'paths'.
 
-An alternative of checking directory in PowerShell is with the `Get-ChildItem` cmdlet; however, it's less efficient as it fetches all item details.
+There are alternatives. PowerShell is built on the .NET Framework, so you could drop down into .NET methods if you wanted:
 
-Then there's the old `if exist` command from cmd.exe compatible with PowerShell. Yet, it has less flexibility compared to `Test-Path`.
+```PowerShell
+[system.io.directory]::Exists($directoryPath)
+```
 
-While these alternatives can be used, `Test-Path` is the recommended method; it exploits the object-based system of PowerShell and involves less computation than other methods.
+This serves the same purpose but goes about it the "long way 'round." Why bother, when `Test-Path` is built for the job?
+
+Implementation-wise, checking for a directory before performing operations is best practice. It's about being predictable. You wouldn't drag race with an empty gas tank, right? So you don't read from or write to a nonexistent directory, either.
 
 ## See Also
 
-For more details, check out the official Microsoft documentation:
+For more info, peruse these links:
 
-1. [`Test-Path` - Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
-2. [`Get-ChildItem` - Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
-
-For cmd.exe command usage in PowerShell:
+- [Test-Path Cmdlet Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path)
+- [.NET Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)

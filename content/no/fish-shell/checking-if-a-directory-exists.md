@@ -1,7 +1,8 @@
 ---
-title:                "Sjekke om en katalog eksisterer"
-html_title:           "Fish Shell: Sjekke om en katalog eksisterer"
-simple_title:         "Sjekke om en katalog eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:56:05.766314-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,24 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer, handler om å bekrefte at en bestemt mappe (eller katalog) finnes i filsystemet før du foretar deg noe med den. Programmerere gjør dette for å forhindre feil som kan oppstå når du prøver å manipulere en ikke-eksisterende mappe.
+Å sjekke om en mappe finnes betyr å bekrefte om en bestemt mappe er tilgjengelig på filsystemet. Programmerere gjør dette for å sørge for at scriptene deres ikke krasjer når de prøver å lese fra eller skrive til mapper som ikke eksisterer.
 
 ## Hvordan:
-Her er hvordan du sjekker om en mappe eksisterer i Fish Shell.
+Inne i Fish Shell, kan du sjekke om en mappe finnes slik:
 
 ```Fish Shell
 if test -d /sti/til/mappen
-    echo "Mappen eksisterer."
+    echo "Mappen finnes!"
 else
-    echo "Mappen eksisterer ikke."
+    echo "Mappen finnes ikke."
 end
 ```
-Utfør koden ovenfor, så hvis mappen eksisterer, vil utdata være "Mappen eksisterer.". Hvis ikke, "Mappen eksisterer ikke.".
+
+Her er et eksempel på output:
+
+```Fish Shell
+Mappen finnes!
+```
+
+eller
+
+```Fish Shell
+Mappen finnes ikke.
+```
 
 ## Dypdykk
-Tidligere versjoner av Fish Shell støttet ikke denne funksjonaliteten rett ut av boksen, så du måtte ty til å bruke andre verktøy som `find` eller `ls` for å oppnå det samme. Selv om alternativer som `find` og `ls` fortsatt kan brukes i noen tilfeller, er `test -d` mer pålitelig og mindre tilbøyelig til å lage feil, spesielt med mappenavn som inneholder spesielle tegn.
+Å sjekke om mapper finnes er en vanlig operasjon og har vært en del av Unix-lignende shells helt siden de tidligste dagene av operativsystemer. I Fish Shell brukes `test` kommandoen - som er en bygget-inn kommando - til å utføre denne sjekken. Alternativt kan programmerere bruke `and` og `or` konstruksjoner for å kjede sammen tester, som kan bidra til mer kompakt kode når det kombineres med kondisjonell logikk. På implementeringsnivået bruker `test` systemkall for å innhente informasjon om filsystemet, som `stat` under Linux, som henter filstatus.
 
-Undertestet `-d` fungerer ved å spørre operativsystemet direkte om mappen eksisterer, noe som er både raskere og mer pålitelig.
-
-## Se også
-For mer informasjon om å kode i Fish Shell, sjekk ut [Fish Shell dokumentasjonen](https://fishshell.com/docs/current/index.html). Du kan også finne [dette blogginnlegget](https://jorgebucaran.com/understanding-test-in-fish/) om 'understanding test in fish' nyttig for mer avanserte bruksscenarioer.
+## Se Også
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)

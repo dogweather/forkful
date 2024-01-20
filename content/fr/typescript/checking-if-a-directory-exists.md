@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Lua: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:58:40.003744-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,49 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi ?
+## What & Why?
 
-Vérifier l'existence d'un répertoire est un contrôle auquel les programmeurs recourent pour s'assurer qu'un chemin de répertoire spécifique est présent dans le système de fichiers avant de poursuivre les opérations telles que la lecture ou l'écriture. C'est crucial pour éviter les interruptions d'exécution ou les erreurs de lecture/écriture.
+Vérifier l'existence d'un dossier, c'est chercher si un certain chemin sur le disque mène à un dossier réel. Les développeurs font ça pour éviter des erreurs en écriture/lecture ou pour créer des dossiers manquants.
 
-## Comment faire :
-
-Voici un code simple en TypeScript qui aide à comprendre comment vérifier l'existence d'un répertoire.
+## How to:
 
 ```TypeScript
-import * as fs from 'fs';
+import { promises as fs } from 'fs';
 
-function isDirectoryExist(path: string): boolean {
-  return fs.existsSync(path);
+async function checkDirectoryExists(path: string): Promise<boolean> {
+    try {
+        await fs.access(path);
+        return true;
+    } catch {
+        return false;
+    }
 }
 
-console.log(isDirectoryExist('./your_directory_path'));
+// Utilisation:
+const pathToCheck = '/chemin/vers/le/dossier';
+checkDirectoryExists(pathToCheck)
+    .then(exists => console.log(`Le dossier existe: ${exists}`))
+    .catch(error => console.error('Erreur:', error));
 ```
 
-Après avoir exécuté ce code, vous obtiendrez `true` si le répertoire spécifié existe, sinon `false`.
+Résultat possible:
+
+```
+Le dossier existe: true
+```
+ou en cas d'absence:
+
+```
+Le dossier existe: false
+```
 
 ## Deep Dive
 
-Historiquement, la fonction `existsSync()`, que nous avons utilisée ci-dessus, a été mise en dépréciation dans Node.js v0.12.0 et retirée dans Node.js v1.0. Cependant, en raison de son utilisation élevée, elle a été réintroduite dans Node.js v4.0.0.
+Historiquement, la vérification de l'existence d'un fichier ou d'un dossier se faisait via des modules comme `fs` de Node.js. Avant, on utilisait `fs.existsSync()`, mais cette méthode est bloquante et n'est pas recommandée dans un contexte asynchrone.
 
-Une autre méthode pour vérifier l'existence d'un répertoire est d'utiliser `fs.statSync()`, qui fournira plus d'informations sur le chemin demandé.
+Alternatives: on pourrait utiliser `fs.stat()` ou `fs.readdir()` pour obtenir plus d'informations, mais ceci ajoute de la complexité.
 
-```TypeScript
-import * as fs from 'fs';
+Détails d'implémentation: `fs.access()` vérifie les permissions, ce qui suffit pour tester l'existence d'un dossier. Utiliser `promises as fs` permet d'avoir accès aux versions asynchrones et basées sur les promesses des méthodes de `fs`.
 
-function isDirectoryExist(path: string): boolean {
-  try {
-    return fs.statSync(path).isDirectory();
-  } catch (error) {
-    return false;
-  }
-}
+## See Also
 
-console.log(isDirectoryExist('./your_directory_path'));
-```
-Cette version peut retourner des informations détaillées sur le répertoire, mais peut également déclencher une exception si le chemin n'existe pas. C'est pourquoi nous l'avons placée dans une instruction `try/catch`.
-
-## Voir aussi
-
-1. Documentation de Node.js fs.existsSync(): [fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-2. Documentation de Node.js fs.statSync(): [fs.statSync()](https://nodejs.org/api/fs.html#fs_fs_statsync_path_options)
-4. Documentation officielle de TypeScript : [TypeScript Doc](https://www.typescriptlang.org/)
+- Documentation Node.js sur `fs` : [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+- Article MDN sur les promesses : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- Guide sur async/await : [https://javascript.info/async-await](https://javascript.info/async-await)

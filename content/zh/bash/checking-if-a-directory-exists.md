@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash编程：如何检查一个目录是否存在
+## What & Why?
+检查目录是否存在就是确认在文件系统中该目录是否真实存在。程序员经常需要这个操作来避免错误，比如读取不存在的目录，或者尝试在一个已经存在的目录里创建同名目录。
 
-## 什么和为什么？
-
-检查目录是否存在是一种用Bash脚本来识别系统里指定文件夹是否存在的方法。程序员经常这样做，以防止由于试图访问、修改或删除一个不存在的目录而引发的错误。
-
-## 如何做：
-
-检查一个目录是否存在的最基本方法，在Bash中是使用`-d`运算符。假设我们想查找的目录是`/tmp/mydir`。
-
+## How to:
 ```Bash
-if [ -d "/tmp/mydir" ] 
-then
-    echo "目录存在"
+if [ -d "$DIRECTORY" ]; then
+  echo "The directory $DIRECTORY exists."
 else
-    echo "目录不存在"
+  echo "The directory $DIRECTORY does not exist."
 fi
 ```
-
-如果`/tmp/mydir`存在，你会在shell输出中看到"目录存在"。否则，你会看到"目录不存在"。
-
-## 深入了解
-
-在UNIX和Linux出现早期，几乎所有的文件和目录操作都是由明确的shell命令完成的。但随着时间的推移，这些命令逐渐被各种测试运算符取代，这些运算符为Bash（和其他shell）提供了更大的灵活性和控制力。
-
-对于检查目录是否存在，`-d`不是唯一的方式。你也可以使用`-e`运算符，它检查任何类型的文件（包括目录）是否存在。例如：
-
-```Bash
-if [ -e "/tmp/mydir" ] 
-then
-    echo "文件或目录存在"
-else
-    echo "文件或目录不存在"
-fi
+示例输出：
+```
+The directory /path/to/your/directory exists.
+```
+或
+```
+The directory /path/to/your/directory does not exist.
 ```
 
-然而，在大多数情况下，我们确实想知道的是一个特定的'路径'是否存在作为一个目录，所以我们更常使用`-d`运算符。
+## Deep Dive
+在Unix和类Unix系统中，检查文件和目录的存在是一项基础功能，几乎所有的shell脚本编程语言都提供了这个能力。Bash使用`-d`标志来特别检查一个目录是否存在。这个标志是`test`命令的一部分，也经常以`[` 作为`test`命令的一个别名。为什么要检测目录存在？因为它可以帮助你决定是否可以继续执行后续的文件操作，从而避免可能出现的运行时错误。
 
-## 参考资料：
+方法的替代品包括使用`mkdir -p`来创建目录，这个命令会创建目录，如果该目录已经存在，它会静默地成功执行。另外，对于复杂的脚本，程序员可能会选择更高级的语言如Python或Ruby来处理文件系统的交互。
 
-1. [GNU Bash Manual - Conditional Expressions](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-3. [Testing Files in Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_02.html)
+关于实现细节，`-d`标志背后，Bash实际上调用的是`stat`系统调用。这个调用会返回文件或目录的元信息，包括类型，然后Bash会检查它是否为目录。
+
+## See Also
+- Bash手册：https://www.gnu.org/software/bash/manual/
+- `test`命令详细信息：https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html
+- `stat`系统调用参考：http://man7.org/linux/man-pages/man2/stat.2.html

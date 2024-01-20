@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier si un répertoire existe"
-html_title:           "C: Vérifier si un répertoire existe"
-simple_title:         "Vérifier si un répertoire existe"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Bash: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,58 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Déterminer l'existence d'un dossier, c'est juste checker si un chemin pointe sur un truc qui existe réellement sur le disque. Les devs le font pour éviter des erreurs, genre essayer de lire ou écrire dans un dossier fantôme.
 
-Contrôler l'existence d'un répertoire consiste simplement à vérifier si un certain emplacement de fichier spécifié existe déjà ou non. Les programmeurs le font généralement pour éviter les erreurs au moment de l'exécution du programme, comme tenter d'accéder à un répertoire inexistant.
-
-## Comment Faire :
-
-En C, vous pouvez utiliser des fonctions comme `stat()` ou `opendir()` pour vérifier l'existence d'un répertoire. Voici comment vous pouvez le faire :
-
+## How to: (Comment faire : )
 ```C
-#include <sys/types.h>
+#include <stdio.h>
 #include <sys/stat.h>
-#include <unistd.h>
 
-int directoryExists(const char* path) {
-    struct stat info;
-
-    if(stat(path, &info) != 0)
-        return 0;
-    else if(info.st_mode & S_IFDIR)
-        return 1;
-    else
-        return 0;
-}
-```
-Lorsque vous exécutez ce bloc de code avec le chemin correct, il retournera 1 si le répertoire existe, et 0 s'il n'existe pas.
-
-## Plongée Profonde :
-
-La méthode mentionnée ci-dessus a des origines historiques dans le système d'exploitation Unix, où la commande `stat` a d'abord été utilisée pour vérifier les informations de fichier.
-
-En termes d'alternatives, vous pouvez également utiliser la fonction `opendir()` qui ouvre un flux de répertoire pour lire. Cette fonction renvoie un pointeur non nul si le répertoire existe.
-
-Dans le détail de l'implémentation, `stat()` renvoie un enregistrement de structure avec information détaillée sur le fichier. `S_IFDIR` est une macro qui est vraie si le fichier est un répertoire.
-
-```C
-#include <dirent.h>
-
-int directoryExists(const char* path) {
-    DIR* dir = opendir(path);
-
-    if (dir) {
-        closedir(dir);
-        return 1;
-    } else {
-        return 0;
+int directory_exists(const char *path) {
+    struct stat statbuf;
+    if (stat(path, &statbuf) != 0) {
+        return 0; // Le chemin n'existe pas ou erreur de lecture
     }
+    return S_ISDIR(statbuf.st_mode);
+}
+
+int main() {
+    const char *path = "/chemin/vers/le/dossier";
+    if (directory_exists(path)) {
+        printf("Yep, le dossier existe.\n");
+    } else {
+        printf("Nope, le dossier n'est pas là.\n");
+    }
+    return 0;
 }
 ```
-## Voir Aussi :
+Sortie possible :
+```
+Yep, le dossier existe.
+```
+Ou, si le dossier n'existe pas :
+```
+Nope, le dossier n'est pas là.
+```
 
-Pour plus d'information sur les détails et alternatives pour vérifier l'existence d'un répertoire en C :
+## Deep Dive (Plongée en profondeur)
+Historiquement, la fonction `stat()` est utilisée pour obtenir des infos sur un fichier/dossier. `stat()` remplit une structure avec plein de détails, et tu peux utiliser `S_ISDIR` pour checker si le chemin pointe sur un dossier. Il y a `opendir()` du header `<dirent.h>`, mais c'est moins direct.
 
-- [Documentation de la fonction `stat`](https://man7.org/linux/man-pages/man2/stat.2.html) 
-- [Documentation de la fonction `opendir`](https://man7.org/linux/man-pages/man3/opendir.3.html)
-- [Forum StackOverflow sur le sujet](https://stackoverflow.com/questions/4553012/checking-if-a-file-is-a-directory-in-c)
+Concernant l'implémentation, gaffe aux faux-positifs. `stat()` renvoie 0 si le chemin est un lien symbolique vers un dossier, donc c'est pas parfait. Faut toujours prévoir la gestion d'erreur si `stat()` échoue.
+
+## See Also (Voir Également)
+- La page de manuel pour `stat` : [man7.org](https://man7.org/linux/man-pages/man2/stat.2.html)
+- La doc GNU C Library sur File Attributes : [gnu.org](https://www.gnu.org/software/libc/manual/html_node/Testing-File-Type.html)
+- Tuto sur la gestion des fichiers/dossiers en C : [cprogramming.com](https://www.cprogramming.com/tutorial/cfileio.html)

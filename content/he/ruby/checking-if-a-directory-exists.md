@@ -1,7 +1,8 @@
 ---
-title:                "בדיקה אם ספרייה קיימת"
-html_title:           "Java: בדיקה אם ספרייה קיימת"
-simple_title:         "בדיקה אם ספרייה קיימת"
+title:                "בדיקה האם תיקייה קיימת"
+date:                  2024-01-20T14:58:27.709785-07:00
+html_title:           "Gleam: בדיקה האם תיקייה קיימת"
+simple_title:         "בדיקה האם תיקייה קיימת"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,20 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-בדיקה אם ספריה קיימת היא תהליך בו משתמש המחשב בודק אם ספריה מסוימת קיימת במערכת. זה חשוב כדי למנוע שגיאות בהרצה, כאשר התוכנה מנסה לגשת אל מיקום שאינו קיים.
+## What & Why?
+מה זה בדיקה אם דירקטוריה קיימת ולמה זה נדרש? בפשטות, זוהי הליך שבו התכנית שלנו מוודאת אם דירקטוריה (תיקייה) קיימת במערכת הקבצים. תכניתנים צריכים לעשות זאת לפני שהם יוצרים, מוחקים, או משנים קבצים בתוך דירקטוריה, כדי למנוע שגיאות ולהבטיח את תקינות התהליך.
 
-## איך לבדוק:
-הקוד הבא בשפת Ruby מדגים איך בודקים אם ספריה קיימת.
-```Ruby
-Dir.exists?("/path/to/directory")
+## How to:
+קוד Ruby פשוט שמראה איך לבדוק אם דירקטוריה קיימת:
+
+```ruby
+require 'fileutils'
+
+# שיטה לבדוק אם דירקטוריה קיימת
+def directory_exists?(directory_path)
+  File.directory?(directory_path)
+end
+
+# דוגמה לשימוש
+if directory_exists?('/path/to/my/directory')
+  puts 'הדירקטוריה קיימת!'
+else
+  puts 'הדירקטוריה לא נמצאה.'
+end
 ```
-אם הספריה קיימת הקוד מחזיר ערך של True, אחרת הוא מחזיר False.
 
-## היכנס עמוק יותר:
-בעבר, בשפת Ruby, השימוש היה ב-mkdir מהמחלקה Dir ליצירה של ספריה. אך הפקודה לא מקנה את האפשרות לבדוק אם הספריה ממש נוצרה. עבור זאת הומצאה הפקודה exists?. אפשרויות נוספות הן גם `File.exists?` או `File.directory?`. לגבי אשר כל אחת מהן נמצאת במעמד שונה של "אידאומטיות" בשפת Ruby.
+תוצאה אפשרית:
+```
+הדירקטוריה קיימת!
+```
+או אם היא לא קיימת, תראה:
+```
+הדירקטוריה לא נמצאה.
+```
 
-## ראה גם:
-- [מסמך הגדרה של מחלקת Dir בשפת Ruby](https://ruby-doc.org/core-2.7.1/Dir.html)
-- [מדריך לשימוש במחלקת File בשפת Ruby](https://ruby-doc.org/core-2.2.0/File.html)
-- [דיון בStackoverflow על הבחינה בין File.directory? ל-Dir.exists?](https://stackoverflow.com/questions/2108727/which-in-ruby-file-exists-vs-file-directory)
+## Deep Dive:
+בעבר, כדי לבדוק אם דירקטוריה קיימת ב-Ruby, מתכנתים לעיתים ישתמשו בשיטות ישנות יותר כמו `Dir.exist?` או הספרייה `FileUtils`. כיום, `File.directory?` היא השיטה הנפוצה והמומלצת. היא מחזירה `true` או `false` בהתאם לקיום הדירקטוריה.
+
+אם נרצה לדעת לא רק אם הדירקטוריה קיימת אלא גם לוודא שיש לנו הרשאות כתיבה או קריאה, נוכל להשתמש ב:
+
+```ruby
+File.writable?(directory_path) # בדיקת הרשאת כתיבה
+File.readable?(directory_path) # בדיקת הרשאת קריאה
+```
+
+לפעולות אלו השפעות על תכנונית האבטחה של התוכנה, ויש להבין אותן היטב לפני יישום.
+
+## See Also:
+* [Ruby's File.directory? documentation](https://ruby-doc.org/core-2.7.0/File.html#method-c-directory-3F)
+* [Ruby's FileUtils module documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/fileutils/rdoc/FileUtils.html)
+* [Stack Overflow discussions on file and directory operations in Ruby](https://stackoverflow.com/questions/tagged/ruby+file+directory)

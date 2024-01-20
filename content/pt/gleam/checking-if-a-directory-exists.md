@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Gleam: Verificando se um diretório existe"
+date:                  2024-01-20T14:56:16.713184-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,39 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Verificar se um diretório existe é uma função comum em programação que retorna se um diretório específico já existe no sistema. Fazemos isso para evitar erros ao tentar criar um diretório que já existe ou acessar um que não existe.
+Verificar a existência de um diretório é essencial para evitar erros ao tentar ler ou escrever arquivos nele. Programadores fazem isso para garantir a integridade de operações de arquivo e para reagir adequadamente caso o diretório não exista.
 
-## Como Fazer: 
-Aqui está um exemplo de como você pode fazer isso na linguagem de programação Gleam:
+## Como Fazer:
+```gleam
+import gleam/io
+import gleam/erlang/error
 
-```Gleam
-import gleam/filesystem
+pub fn check_directory_exists(dir: String) -> Bool {
+  try io.file_info(dir)
+  |> result.map(fn(_) { true })
+  |> result.catch(fn(error) {
+    case error {
+      | error.NotFound -> false
+      | _ -> error.return()
+    }
+  })
+}
 
-let check = filesystem.dir_exists("caminho/para/o/diretório")
-case check {
-  True ->
-    io.println("O diretório existe!")
-  False ->
-    io.println("O diretório não existe!")
+// Exemplo de uso
+fn main() {
+  let dir_exists = check_directory_exists("path/to/dir")
+  io.println(dir_exists) // Saída: true ou false
 }
 ```
-Quando executado, a saída para um diretório existente será:
-``` 
-O diretório existe!
-```
-E se o diretório não existir, a saída será:
-``` 
-O diretório não existe!
-```
 
-## Mergulho Profundo
-Historicamente, a verificação da existência de um diretório sempre fez parte das operações de sistema de arquivos. Isso é crucial principalmente no desenvolvimento de aplicativos que lidam com leitura e gravação de arquivos.
+## Aprofundamento
+No passado, verificar a existência de um diretório envolvia interações diretas com o sistema operacional usando comandos shell ou funções da biblioteca padrão de baixo nível. Alternativas modernas, como na linguagem Gleam, utilizam funções encapsuladas que abstraem detalhes específicos do sistema operacional.
 
-In Gleam, a biblioteca 'filesystem' incorpora funções como 'dir_exists' para manipular o sistema de arquivos. Esta função retorna um 'boolean', onde 'True' significa que o diretório existe e 'False', o contrário.
+A função `io.file_info` do Gleam verifica metadados de um arquivo ou diretório. Um erro `NotFound` indica que o diretório não existe. Outros erros são propagados, permitindo que o programa os trate conforme necessário. 
 
-Uma alternativa para 'dir_exists' seria usar 'list_dir' que lista os diretórios e arquivos existentes, e então checar se o diretório desejado está nessa lista. No entanto, para grandes sistemas de arquivos, isso seria ineficiente. 
+Gleam, ao ser executado na Erlang VM, se beneficia das poderosas bibliotecas e funções de manipulação de arquivos do Erlang. No entanto, ao contrário do Erlang, Gleam é fortemente tipado e possui uma sintaxe mais amigável e moderna, proporcionando uma abordagem robusta e menos propensa a erros para operações de sistema de arquivos.
 
-## Veja Também 
-A documentação completa para a biblioteca 'filesystem' em Gleam pode ser encontrada em [Gleam filesystem documentation](https://gleam.run/documentation/libraries/gleam-filesystem). 
-
-Além disso, a documentação oficial da linguagem Gleam pode ser acessada em [Gleam documentation](https://gleam.run/documentation/). Ele é uma ótima fonte para entender mais sobre outras funcionalidades do Gleam!
+## Veja Também
+- [Gleam Language GitHub](https://github.com/gleam-lang/gleam)
+- [Erlang File Operations](https://erlang.org/doc/man/file.html)

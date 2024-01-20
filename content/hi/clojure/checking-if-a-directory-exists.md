@@ -1,7 +1,7 @@
 ---
-title:                "एक निर्देशिका मौजूद है या नहीं, इसकी जाँच करना"
-html_title:           "Clojure: एक निर्देशिका मौजूद है या नहीं, इसकी जाँच करना"
-simple_title:         "एक निर्देशिका मौजूद है या नहीं, इसकी जाँच करना"
+title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+html_title:           "Arduino: यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
+simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या एवं क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+डायरेक्टरी का अस्तित्व जांचना यह देखने के लिए होता है कि सिस्टम में एक विशेष फोल्डर मौजूद है या नहीं। प्रोग्रामर्स यह चेक करते हैं ताकि वे एरर हैंडलिंग कर सकें, फाइल्स क्रिएट या मोडिफाई कर सकें, या डायरेक्टरीज में ऑपरेशन्स करने से पहले सुनिश्चित हो सकें कि डायरेक्टरी उपलब्ध है।
 
-डायरेक्टरी मौजूद है होने की जांच आपको यह बताती है कि किसी विशेष फ़ाइल सिस्टम पथ पर कोई डायरेक्टरी मौजूद है या नहीं। यह तब आवश्यक होता है जब किसी फ़ाइल को पढ़ना, लिखना या बनाने का प्रयास किया जाता है, ताकि गलतियां या अपवादों को पहले ही रोका जा सके।
+## How to: (किस प्रकार:)
+Clojure में डायरेक्टरी के अस्तित्व की जांच `java.io.File` क्लास और `clojure.java.io/file` फंक्शन के साथ की जा सकती है। यहाँ एक सरल उदाहरण है:
 
-## कैसे: (How to:)
+```clojure
+(defn directory-exists? [path]
+  (let [dir (clojure.java.io/file path)]
+    (and (.exists dir) (.isDirectory dir))))
 
-Clojure में, हम इसे `clojure.java.io/file` और `exists?` का उपयोग करके चेक कर सकते हैं।
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-(defn directory-exists? [dir]
-  (and (.exists (io/file dir)) (.isDirectory (io/file dir))))
-
-(directory-exists? "path/to/directory")
+(println (directory-exists? "/tmp")) ;; जांचता है कि /tmp डायरेक्टरी मौजूद है या नहीं
+(println (directory-exists? "/thisdoesnotexist")) ;; अस्तित्वहीन डायरेक्टरी की जांच
+```
+संभावित आउटपुट हो सकता है:
+```
+true
+false
 ```
 
-यदि डायरेक्टरी 'path/to/directory' मौजूद है, तो यह `true` लौटाएगा, अन्यथा `false`.
+## Deep Dive (गहराई से जानकारी):
+पहले सॉफ्टवेयर प्रोग्राम्स में, डायरेक्टरी की मौजूदगी का पता करने का मैकेनिज़्म बहुत प्राथमिक था या कई बार मौजूद भी नहीं था। समय के साथ, फाइल सिस्टम इंटरैक्शन APIs ने विकास किया और इसे आसान बनाया। Clojure, जावा प्लेटफार्म पर चलने वाली एक डायनैमिक प्रोग्रामिंग भाषा होने के नाते, जावा क्लासेज़ और लाइब्रेरीज को इंटरैक्ट कर सकती है। इसलिए, जब हम डायरेक्टरी की जांच करते हैं तो हम वास्तव में जावा की `File` क्लास का उपयोग कर रहे होते हैं। 
 
-## गहराई में: (Deep Dive)
+वैकल्पिक तरीकों में हम `nio.file.Files` और `nio.file.Paths` क्लासेज का उपयोग कर सकते हैं, जो अधिक समकालीन हैं और बेहतर परफॉर्मेंस तथा अधिक सुविधाएँ प्रदान करते हैं। लेकिन क्लोजर का साधारण और फंक्शनल दृष्टिकोण इसे सीखने और लागू करने में आसान बनाता है।
 
-**ऐतिहासिक संदर्भ:** Clojure 2007 में जारी हुआ था और इसने जावा की बहुत सारी क्षमताओं को अदान-प्रदान किया। इसलिए, हम जावा कोड को एक्सेस और इस्तेमाल कर सकते हैं, जैसे कि डायरेक्टरी मौजूद होने की जांच करना।
-
-**विकल्प:** डायरेक्टरी की मौजूदगी की जाँच करने के कई तरीके हैं। `java.nio.file.Files` का उपयोग करना एक अन्य विकल्प हो सकता है। 
-
-**कार्यान्वयन विवरण:** `io/file dir` हमें एक जावा `File` ऑब्जेक्ट देगा। `.exists` और `.isDirectory` दो जावा मेथड हैं जो `true` या `false` लौटाते हैं। जब दोनों `true` होते हैं, हमें पता चलता है कि ये एक मौजूदा डायरेक्टरी है।
-
-## अधिक देखें: (See Also)
-
-- जावा मेथड का उपयोग करते हुए डायरेक्टरी की जाँच करने के बारे में अधिक जानकारी के लिए: [Java Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+## See Also (और भी देखें):
+- Java `File` Class Documentation: [Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- Clojure `java.io` Namespace: [Clojure Docs](https://clojuredocs.org/clojure.java.io)
+- Java NIO Files Tutorial: [Java NIO Files](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)

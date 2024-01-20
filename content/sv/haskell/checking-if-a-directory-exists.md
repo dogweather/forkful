@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:57:01.593021-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
-# Kolla Om En Katalog Finns Med Haskell
-
 ## Vad & Varför?
+Att kolla om en mapp finns är processen att bekräfta mappens närvaro i filsystemet. Programmerare gör detta för att undvika fel vid försök att läsa från eller skriva till icke-existerande mappar.
 
-Att kontrollera om en katalog finns innebär att se till att en specifik sökväg faktiskt pekar på en befintlig katalog. Programmerare gör detta för att förhindra fel som kan uppstå när man försöker manipulera en icke-existerande katalog.
-
-## Hur du gör:
-
-För att kontrollera om en katalog finns i Haskell, kan vi använda `doesDirectoryExist` funktion från `System.Directory` modulen. Se koden nedan:
+## Så här gör du:
+För att kontrollera om en mapp finns i Haskell kan du använda `doesDirectoryExist` funktionen från `System.Directory` modulen.
 
 ```Haskell
-import System.Directory
+import System.Directory (doesDirectoryExist)
 
+main :: IO ()
 main = do
-    let dir = "/path/to/directory"
-    exists <- doesDirectoryExist dir
-    print exists
+  let directoryPath = "/vägen/till/din/mapp"
+  directoryExists <- doesDirectoryExist directoryPath
+  putStrLn $ "Finns mappen? " ++ show directoryExists
 ```
-Låt oss köra detta program. Om katalogen finns ger den `True`, om inte ger den `False`.
+
+Kör du koden ger det antingen `Finns mappen? True` om mappen finns, eller `Finns mappen? False` om den inte gör det.
 
 ## Djupdykning
+Historiskt sett har filsystemshanteringen i många programmeringsspråk varit grundläggande. I Haskell tillhandahålls operativsystem-relaterade funktioner genom `System.Directory` modulen, som utvecklats över tid för att erbjuda ett högre abstraktionslager för fil- och katalogoperationer. Alternativ till `doesDirectoryExist` inkluderar att fånga undantag som kastas när man försöker accessa en icke-existerande mapp eller att använda tredjepartsbibliotek som ger mer sofistikerade verktyg för filsystemsinteraktion. Det är värt att notera att `doesDirectoryExist` utför ett IO-samtal och därför resultatet är inom `IO` monaden vilket reflekterar potentiellt föränderliga filsystemstillstånd.
 
-Funktionen `doesDirectoryExist` är en del av `System.Directory`-modulen sedan Haskell Plattformen 2010.2.0.0. Den baseras på Unix-funktionen `stat`, vilket gör den till en snabb och tillförlitlig metod. 
-
-Ett alternativ till `doesDirectoryExist` kan vara att använda `getDirectoryContents` funktion som returnerar en lista med kataloginnehåll, och sen kontrollerar om sökvägen hör till listan. Men detta kan vara mer resurskrävande.
-
-På låg nivå implementeras `doesDirectoryExist` via `getFileInfo` funktion som hämtar information om filsystemet, inklusive filer och kataloger, i ett effektivt och säkert sätt.
-
-## Se även 
-
-För mer information, ta en titt på dessa länkar:
-
-- [`System.Directory` i Haskells basbibliotek](http://hackage.haskell.org/package/directory)
-- [Dokumentation av `doesDirectoryExist`](http://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:doesDirectoryExist)
+## Se Också
+- Haskell Documentation for `System.Directory`: https://hackage.haskell.org/package/directory
+- Real World Haskell, Kapitel 9 – "Files and streams": http://book.realworldhaskell.org/read/io.html
+- Haskell IO Tutorial: https://www.haskell.org/tutorial/io.html

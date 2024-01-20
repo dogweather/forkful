@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Bash: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Onko hakemisto olemassa? Tarkistaminen"
+html_title:           "Bash: Onko hakemisto olemassa? Tarkistaminen"
+simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Bashissa, toiminnallisuus, jolla tiedetään, onko hakemisto olemassa, on koodin pätkä, joka tarkistaa, onko tietty hakemisto olemassa ennen kuin ohjelma jatkaa toimintaansa. Tätä käytetään välttämään virheitä, jotka syntyvät, kun yrittää käyttää olematonta hakemistoa.
+## What & Why? (Mitä & Miksi?)
+Tarkistamme, onko hakemisto olemassa, koska se vaikuttaa seuraaviin toimiin – et halua yrittää lukea kirjoittamatonta hakemistoa. Se on virheiden hallintaa: eteenpäin vain, jos polku on validi.
 
-## Näin se tehdään:
-Bashin sisäänrakennettu `[-d DIR]` -testi tarkistaa, onko hakemisto olemassa. Se palauttaa "true" (arvo 0), jos hakemisto on olemassa.
-
+## How to: (Kuinka tehdä:)
 ```Bash
-#!/bin/bash
-hakemisto="/polku/hakemistoon"
-if [ -d "$hakemisto" ]; then
-    echo "Hakemisto on olemassa."
+# Tarkistetaan, onko hakemisto olemassa
+if [ -d "$DIRECTORY" ]; then
+  echo "Hakemisto $DIRECTORY löytyy."
 else
-    echo "Hakemisto ei ole olemassa."
+  echo "Hakemisto $DIRECTORY ei ole olemassa."
 fi
 ```
-Esimerkin tulostus voisi näyttää tältä:
 
-```Bash
-Hakemisto on olemassa.
+Esimerkkitulostus, kun hakemisto on olemassa:
 ```
-tai
-```Bash
-Hakemisto ei ole olemassa.
+Hakemisto /home/kayttaja/dokumentit löytyy.
 ```
-## Syvällisemmin
-Bashin sisäänrakennettu `-d` -testi on peräisin Unixin varhaisista päivistä, ja sitä on käytetty samalla tavalla alun perin syntyneissä Bourne shellissä. On myös muita tapoja tarkistaa, onko hakemisto olemassa, kuten `[[ -d $hakemisto ]]` kaksoishakasuluissa, joka on nykyaikaisempi ja välttää joitakin "test"-käskyn ongelmia. On myös tärkeää muistaa, että tämä tarkistus ei kerro, onko kyseisellä käyttäjällä kyseiseen hakemistoon, vaan vain, onko hakemisto olemassa.
 
-## Katso myös
-- GNU Bash Manual: [`test`](https://www.gnu.org/software/bash/manual/bash.html#Bourne-Shell-Builtins)
-- `man test`: Komentorivin manuaalinen sivu sisäänrakennetulle `test`-käskylle eri unix-järjestelmissä.
+Esimerkkitulostus, kun hakemistoa ei ole:
+```
+Hakemisto /home/kayttaja/vaarahakemisto ei ole olemassa.
+```
+
+## Deep Dive (Sukellus syvemmälle)
+Ennen kuin Bash oli suosittu, ihmiset käyttivät muita komentotulkkeja, kuten sh tai csh. Bash, lyhenne "Bourne Again Shell", tuli suosituksi sen joustavuuden ja paranneltujen ominaisuukset ansiosta.
+
+Vaihtoehtona `if`-testille voisi käyttää `test`-komentoa tai sen synonyymiä `[ ]`. Saatavilla on myös modernimpia työkaluja, kuten `[[ ]]` rakenteet ja `test -e` mutta `-d` on oikea valinta kun selvästi tarkistetaan hakemistoja.
+
+Hakemiston olemassaolon tarkistaminen Bash-skriptissä on tärkeää mm. silloin, kun:
+- Luodaan tiedostoja tai hakemistoja vain, jos kohdehakemisto on olemassa.
+- Tehdään puhdistustoimia, kuten vanhojen lokejen poisto.
+
+## See Also (Katso myös)
+- [Bash manuaali](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
+- [ShellCheck](https://www.shellcheck.net/), staattinen analyysityökalu skriptien virheiden löytämiseen.

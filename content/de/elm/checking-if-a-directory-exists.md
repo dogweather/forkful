@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Elm: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:56:28.663923-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,43 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+"Was & Warum?" bezieht sich darauf, wie man in Elm überprüfen kann, ob ein Verzeichnis existiert. Dies ist wichtig, um Fehler zu verhindern, wenn man auf Dateien zugreift oder Operationen durchführt, die ein bestimmtes Verzeichnis voraussetzen.
 
-In Programmiersprachen überprüfen wir oft, ob ein Verzeichnis existiert, da es uns hilft, Fehler wie das Fehlen einer erforderlichen Datei zu vermeiden. Dies kann dazu beitragen, die Stabilität und Zuverlässigkeit unseres Programmes zu gewährleisten.
+## How to:
+Elm läuft im Browser und hat keinen direkten Zugriff auf Dateisysteme. Daher können wir nicht direkt in Elm prüfen, ob ein Verzeichnis existiert. Stattdessen nutzen wir Javascript über Ports. Hier ist ein Beispiel, wie das gemacht wird.
 
-## So geht's:
-
-Elm hat nicht die native Fähigkeit, auf Dateisysteme zuzugreifen, aber es kann durch Ports auf JavaScript zugreifen. So ein Beispiel könnte folgendermaßen aussehen:
+Elm-Code, der eine Nachricht über einen Port sendet:
 
 ```Elm
 port module Main exposing (..)
 
-port checkDirectoryExists : String -> Cmd msg
-port directoryExists : (Bool -> msg) -> Sub msg
+-- Definiere einen Port, um eine Nachricht an JavaScript zu senden.
+port checkDirectory : String -> Cmd msg
+
+-- Sende einen Befehl, um zu überprüfen, ob ein Verzeichnis existiert.
+checkIfDirectoryExists : String -> Cmd msg
+checkIfDirectoryExists directoryPath =
+    checkDirectory directoryPath
 ```
 
-Dann würden Sie auf der JS-Seite den Callback `directoryExists` anwenden:
+Dazugehöriger JavaScript-Code, der den Port abhört:
 
-```JavaScript
-const app = Elm.Main.init();
-const fs = require('fs');
-
-app.ports.checkDirectoryExists.subscribe((dir) => {
-  const dirExists = fs.existsSync(dir);
-  app.ports.directoryExists.send(dirExists);
+```javascript
+// Abonnieren des Ports aus Elm, um Verzeichnis-Checks zu handhaben.
+app.ports.checkDirectory.subscribe(function(directoryPath) {
+    // Überprüfen, ob das Verzeichnis existiert (pseudo-code).
+    const directoryExists = fs.existsSync(directoryPath); // Node.js-Funktion
+    // Sende das Ergebnis zurück zum Elm-Code.
+    app.ports.directoryCheckResult.send(directoryExists);
 });
 ```
 
-Die Ausgabe wäre dann `True` wenn das Verzeichnis existiert, oder `False` wenn es nicht existiert.
+## Deep Dive
+Historisch gesehen ist Elm für die Verwendung im Browser konzipiert und hat daher keinen direkten Zugriff auf das Dateisystem eines Servers oder eines Clients. Um das zu umgehen, verwenden Entwickler Ports, um Nachrichten zwischen Elm und Javascript auszutauschen. Alternativen dazu könnten sein, eine reine JavaScript-Frontend-Lösung zu nutzen oder die Verzeichnisprüfung auf dem Server in einer Backend-Sprache wie Node.js durchzuführen.
 
-## Vertiefung
+Die Implementierung mittels Ports erfordert ein gutes Verständnis des Nachrichtenaustauschs zwischen Elm und JavaScript. Dabei ist zu beachten, dass die Kommunikation asynchron ist; man muss also Callbacks oder Promises in JavaScript nutzen, um mit den Ergebnissen umzugehen.
 
-Historisch gesehen wurde Elm für Web-Anwendungen entwickelt und hatte dementsprechend keinen eingebauten Zugriff auf Dateisysteme. Dies kann über Ports mit JavaScript umgangen werden, es ist jedoch wichtig zu beachten, dass dies aufgrund Sicherheitseinschränkungen von Browsern nur auf der Serverseite oder in einer Umgebung wie NodeJS durchgeführt werden kann.
+## See Also
+Für weitere Informationen, siehe:
 
-Alternativ können Sie auch Tools wie Elixir und Phoenix mit Elm verwenden, die eine komfortable Server-Seiten Umgebung bieten, in welcher Sie Verzeichnisse und Dateien überprüfen können.
-
-## Siehe auch
-
-Für mehr zu diesem Thema, siehe folgende Links:
-
-- [Elm Ports Dokumentation](https://guide.elm-lang.org/interop/ports.html)
-- [NodeJS Dateisystem API](https://nodejs.org/api/fs.html)
+- Elm Ports Dokumentation: https://guide.elm-lang.org/interop/ports.html
+- `fs.existsSync` Node.js Dokumentation: https://nodejs.org/api/fs.html#fsexistssyncpath
+- Elm und JavaScript Interoperabilität: https://elm-lang.org/news/porting-to-elm

@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかどうかの確認"
-html_title:           "C: ディレクトリが存在するかどうかの確認"
-simple_title:         "ディレクトリが存在するかどうかの確認"
+title:                "ディレクトリが存在するかどうかを確認する"
+html_title:           "Bash: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,58 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-ディレクトリが存在するか確認とは、特定のディレクトリが現在のファイルシステムに存在するかどうかをプログラムで調べることです。これは、ファイルの保存やデータの読み取りなど操作前にディレクトリの存在を確認することで、エラーを予防するために行います。
+## What & Why? (何となぜ？)
+ディレクトリが存在するかどうかを確認することは、指定したパスにディレクトリが存在するかどうかチェックするプロセスです。プログラマーは、ファイル操作を行う前にエラーを防ぐためにこれを行います。
 
-## 方法：
-ディレクトリ存在確認の基本的な方法は、`stat`関数を利用することです。
+## How to: (方法)
+C言語でディレクトリの存在をチェックする一般的な方法を示します。
+
 ```C
+#include <stdio.h>
 #include <sys/stat.h>
-#include <stdbool.h>
 
-bool doesDirectoryExist(char* path) {
+int doesDirectoryExist(const char *path) {
     struct stat statbuf;
-    if (stat(path, &statbuf) != -1) {
-       if (S_ISDIR(statbuf.st_mode)) {
-           return true;
-       }
-    }
-    return false;
+    if (stat(path, &statbuf) != 0) 
+        return 0; // エラーを表すために0を返す
+    return S_ISDIR(statbuf.st_mode);
 }
 
 int main() {
-    if (doesDirectoryExist("/path/to/dir")) {
-        printf("Directory exists!\n");
+    const char* path = "./exampleDir";
+    
+    if (doesDirectoryExist(path)) {
+        printf("Directory exists: %s\n", path);
     } else {
-        printf("Directory does not exist!\n");
+        printf("Directory does not exist: %s\n", path);
     }
+    
     return 0;
 }
 ```
 
-このコードの出力は次の通り：
+サンプル出力:
 ```
-Directory does not exist!
+Directory exists: ./exampleDir
 ```
-調べたいディレクトリのフルパスをこの関数に渡します。
-
-## 詳細説明：
-ディレクトリ存在確認はUNIX系オペレーティングシステムの初期から存在し、`stat`システムコールによって実装されています。「stat」は「status」の略で、ファイルやディレクトリの状態を調べるために使用されます。`stat`はただし、存在しないパスを指定した場合には-1を返すので、その結果をチェックすることでディレクトリの存在を確認します。
-
-オペレーティングシステムによっては、`access`関数を使ったアプローチもあります。
-
-```C
-#include <unistd.h>
-
-bool doesDirectoryExist2(char* path) {
-    if (access(path, F_OK) != -1) {
-       return true;
-    }
-    return false;
-}
+または
 ```
-しかし、この場合はパスが存在するだけでなく、プログラムが実際にそれにアクセスできるかどうかを確認します。そのため、必ずしもディレクトリが存在することを意味するわけではありません。
+Directory does not exist: ./exampleDir
+```
 
-## 参考文献：
-- [The GNU C Library: Testing File Type](https://www.gnu.org/software/libc/manual/html_node/Testing-File-Type.html)
-これらのソースは、`stat`と`access`機能を詳しく議論しています。 深く理解したい場合*にはぜひ参照してください。
+## Deep Dive (深掘り)
+ディレクトリの存在をチェックするためには`stat`関数が使われます。これはUNIXに由来する関数で、ファイルの状態を取得します。`stat`が0以外を返した場合、エラーが発生したと見なします。`stat`が成功すれば、`statbuf.st_mode`からディレクトリかどうかをチェックできます。`S_ISDIR`マクロは、モードがディレクトリを表すかどうかを確認します。Cプログラムでは頻繁にファイルシステムに対する操作を行うため、重要なチェックです。
+
+代わりの方法として、`opendir`と`closedir`関数を使用する方法もありますが、一般的に`stat`が推奨されます。そちらはディレクトリを開いて正常に閉じれることを確認することで存在をチェックする方法です。
+
+## See Also (関連情報)
+- POSIX `stat` documentation: https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html
+- GNU C Library Reference Manual - File Attributes: https://www.gnu.org/software/libc/manual/html_node/File-Attributes.html
+- Stack Overflow discussions on directory checking in C: https://stackoverflow.com/search?q=C+check+directory+exists

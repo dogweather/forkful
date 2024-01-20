@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "C++: 检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-```Chinese (Simplified)```
+## What & Why? (什么以及为什么？)
+检查目录是否存在是判断给定路径的文件夹是否在文件系统中存在的过程。程序员这么做是为了避免在目录不存在时进行无意义的文件操作，造成错误。
 
-## 什么与为何? ("What & Why?")
-
-检查目录是否存在是在程序中确认特定文件夹是否已存在的过程。程序员之所以进行此操作，是因为才能更好地进行文件操作，例如文件存储或读取等。
-
-## 如何操作: ("How to:")
-
-我们可以使用 C++17 的 `<filesystem>` 库中的 `exists` 函数来检查目录是否存在。以下是一个简单的示例：
+## How to: (如何做：)
+使用 `<filesystem>` 库检查目录。下面是示例代码：
 
 ```C++
 #include <iostream>
 #include <filesystem>
 
-namespace fs = std::filesystem;
-
 int main() {
-    fs::path p{"/path/to/directory"};
-    if (fs::exists(p)) {
-        std::cout << "The directory exists.\n";
+    std::string dir = "/path/to/directory";
+
+    if (std::filesystem::exists(dir)) {
+        std::cout << "Directory exists!" << std::endl;
     } else {
-        std::cout << "The directory does not exist.\n";
+        std::cout << "Directory does not exist." << std::endl;
     }
+
     return 0;
 }
 ```
 
-运行此程序将会输出 `"The directory exists."`（如果目录存在） 或者 `"The directory does not exist."` （如果目录不存在）。
+如果目录存在，输出将是：
 
-## 深入了解 ("Deep Dive")
+```
+Directory exists!
+```
 
-在之前的C++版本中，并没有内置函数可以直接检查目录是否存在。通常的做法是尝试打开该目录或在其内创建一个文件。
+如果目录不存在，输出将是：
 
-C++17 通过引入 `<filesystem>` 库，使文件和目录操作变得更简单。此外，除了 `exists` 函数，我们还可以使用 `is_directory` 函数来确认一个路径是否指向一个目录。
+```
+Directory does not exist.
+```
 
-`<filesystem>` 库的提供，让使用C++进行文件系统操作更加统一，减少了平台差异带来的麻烦。
+## Deep Dive (深入了解)
+在 `<filesystem>` 库之前，C++ 没有标准化方法检查目录，需要依赖平台特定代码或第三方库。`<filesystem>` 是 C++17 引入的，提供了跨平台处理文件系统的方式。此外，还可以使用 `std::filesystem::is_directory` 来特定检查路径是否是一个目录，这确保了路径不仅存在而且是正确的类型。`<filesystem>` 的引入让文件和目录操作程简化了许多。
 
-## 更多参考 ("See Also")
-
-更多信息和用例，可以参考以下链接：
-
-- [`<filesystem>`](https://en.cppreference.com/w/cpp/filesystem)
-- [`fs::exists`](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [`fs::is_directory`](https://en.cppreference.com/w/cpp/filesystem/is_directory)
+## See Also (另请参阅)
+- C++17 `<filesystem>` 文档: [cppreference.com](https://en.cppreference.com/w/cpp/filesystem)
+- Boost 文件系统库(在 `<filesystem>` 出现之前的选择): [boost.org](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+- C++ 文件IO 教程: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/files/)

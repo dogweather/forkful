@@ -1,7 +1,8 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "Lua: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-01-20T14:58:34.290536-07:00
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
+Å sjekke om en mappe finnes i Ruby betyr å verifisere at en bestemt sti leder til en faktisk mappe i filsystemet. Programmerere gjør dette for å forhindre feil før de prøver å lese fra eller skrive til filer i mappen.
 
-Sjekking av om en mappe eksisterer er prosessen hvor programmeret fastslår om det er en gitt mappe i systemet eller ikke. Dette er nyttig for å unngå feil som kan forekomme når programmer prøver å få tilgang til mapper som ikke eksisterer.
-
-## Hvordan Gjøre Det:
-
-Eksemplet nedenfor viser hvordan sjekke om en katalog eksisterer i Ruby. 
-
+## Hvordan gjøre det:
 ```Ruby
-def directory_exists?(directory)
-  Dir.exist?(directory)
+require 'fileutils'
+
+# Sjekk om en mappe finnes
+if Dir.exist?('/path/to/directory')
+  puts 'Mappen finnes!'
+else
+  puts 'Mappen finnes ikke.'
 end
 
-puts directory_exists?('/path/to/directory') # returnerer enten true or false
+# Eksempel output:
+# Mappen finnes!
+# eller
+# Mappen finnes ikke.
 ```
 
-Ved å kjøre koden ovenfor, vil du se `true` hvis mappen '/path/to/directory' eksisterer, og `false` hvis den ikke gjør det.
+## Dypdykk
+Å sjekke om en mappe finnes er kjernen i mange Ruby-skript som jobber med filsystemet. I Ruby's tidlige dager brukte vi `File.directory?('/path/to/directory')` for å oppnå dette. `Dir.exist?` og `File.directory?` er i bunn og grunn det samme i moderne Ruby-versjoner, men `Dir.exist?` er mer intuitiv når det kommer til mappenavngivning. Når en mappe ikke finnes, og man prøver å lese/skrive til den, vil Ruby kaste en `Errno::ENOENT` (Error NO ENTry) unntak - noe man absolutt vil unngå.
 
-## Dyp Dykk:
+Det finnes alternativer som `FileUtils.cd('/path/to/directory', Verbose: false)` som kaster en unntak hvis mappen ikke finnes, men dette endrer også den nåværende arbeidsmappen i prosessen, noe som kanskje ikke er ønskelig.
 
-Den `Dir.exist?` metoden har blitt brukt til å sjekke om en mappe eksisterer siden Ruby 1.9.3. Før denne versjonen, måtte programmerere bruke `File.directory?` metoden.
+Detaljert, `Dir.exist?` kaller `File.stat(path).directory?` under hetten, og det sjekker filsystemet på lavt nivå for å bekrefte at stien leder til en mappe.
 
-Et alternativ til `Dir.exist?` er `File.directory?`, som også returnerer `true` hvis katalogen eksisterer. Bruken er nesten lik:
-
-```Ruby
-def directory_exists?(directory)
-  File.directory?(directory)
-end
-
-puts directory_exists?('/path/to/directory') # returnerer enten true or false
-```
-
-Forskjellen mellom `Dir.exist?` og `File.directory?` er at sistnevnte også sjekker om stien peker på et filsystem objekt som er en mappe, mens `Dir.exist?` kun sjekker om stien er gyldig.
-
-## Se Også:
-
-For mer komplette diskusjoner og relaterte ressurser om dette emnet, se følgende lenker:
-
-1. Ruby Dokumentasjon: [Dir.exist?](https://ruby-doc.org/core-2.6.3/Dir.html#method-c-exist-3F)
-2. Ruby Dokumentasjon: [File.directory?](https://ruby-doc.org/core-2.6.3/File.html#method-c-directory-3F)
-3. Stack Overflow: [Hvordan sjekke om en katalog eksisterer i Ruby](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-a-file-exists)
-4. Ruby Forum: [Diskusjoner om katalog behandling i Ruby](https://www.ruby-forum.com/c/ruby)
+## Se også
+- Ruby-dokumentasjonen for [Dir.exist?](https://ruby-doc.org/core-3.1.2/Dir.html#method-c-exist-3F)
+- Ruby-dokumentasjonen for [File.directory?](https://ruby-doc.org/core-3.1.2/File.html#method-c-directory-3F)
+- Stack Overflow-diskusjoner om å håndtere filer og mapper i Ruby
+- `FileUtils` modulen for mer avansert filhåndtering [FileUtils](https://ruby-doc.org/stdlib-3.1.2/libdoc/fileutils/rdoc/FileUtils.html)

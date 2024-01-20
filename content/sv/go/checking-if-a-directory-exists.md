@@ -1,6 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Bash: Kontrollera om en katalog finns"
+date:                  2024-01-20T14:56:28.851997-07:00
+html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Go"
 category:             "Go"
@@ -11,41 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att kontrollera om en mapp finns är att se om en specifik mapp existerar på filsystemet. Programmerare gör det för att undvika fel när de försöker läsa från eller skriva till en mapp som inte finns.
 
-En grundläggande uppgift i Go programmering är att kontrollera om en mapp existerar. Detta är viktigt för att förhindra potentiella fel som kan uppstå då vi försöker att läsa, skriva eller ändra en mapp som inte finns.
+## Hur gör man:
+I Go använder du paketet `os` för att kontrollera om en mapp finns. Om mappen saknas kan `os.Stat()` kasta ett fel som du kan granska.
 
-## Hur man gör:
-
-För att kontrollera om en mapp existerar kan vi använda os paketets funktion `os.Stat()`. Här är ett exempel på hur man använder den:
-
-```Go
+```go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    _, err := os.Stat("/path/to/directory")
-    if os.IsNotExist(err) {
-        fmt.Println("Mappen finns inte!")
-    } else {
-        fmt.Println("Mappen finns!")
-    }
+	mappNamn := "./enTestMapp"
+
+	if _, err := os.Stat(mappNamn); os.IsNotExist(err) {
+		fmt.Printf("Mappen '%s' finns inte.\n", mappNamn)
+	} else {
+		fmt.Printf("Mappen '%s' finns.\n", mappNamn)
+	}
 }
 ```
 
-Om mappen inte finns kommer detta program att skriva ut `Mappen finns inte!`. Om mappen finns kommer det att skriva ut `Mappen finns!`.
+Körs programmet och `enTestMapp` inte finns, blir utskriften:
+```
+Mappen 'enTestMapp' finns inte.
+```
 
-## Djupdykning:
+Annars, om mappen finns:
+```
+Mappen 'enTestMapp' finns.
+```
 
-`os.Stat()` funktionen i Go har använts sedan de tidiga versionerna av Go och är fortfarande det mest rekommenderade sättet att kontrollera om en fil eller mapp existerar. Alternativt kan man använda `os.IsExist(err)` istället för `os.IsNotExist(err)` för att hantera olika feltyper på ett effektivare sätt.
+## Djupdykning
+Historiskt sett har filsystemshanteringen alltid varit en viktig del av programmering. Före `os`-paketet i Go, använde många andra språk liknande funktioner som `stat()` i C eller `File.Exists()` i .NET. I Go förlitar vi oss på `os.Stat()` för att få information om filstatus. Ett alternativ är att försöka öppna mappen med `os.Open()`, vilket också kan indikera om mappen finns eller ej beroende på om ett fel uppstår. Med dessa implementationer är det viktigt att hantera potentiella race conditions där mappens status kan ändras mellan att du kontrollerar existensen och din nästa operation.
 
-Notera att vi använder ett understreck `_` för att ignorera det första returnerade värdet från `os.Stat()`. I Go är det standard att ignorera värden vi inte använder genom att tilldela dem till `_`.
-
-## Se också:
-
-Mer information om att hantera filer och mappar i Go kan du hitta på följande platser:
-
-- Go Dokumentation: [os paket](https://golang.org/pkg/os/)
+## Se även
+- Go dokumentation om `os`-paketet: https://pkg.go.dev/os
+- Go blogg om filsystemshanteringen: https://blog.golang.org/io2015
+- Artikel om race conditions: https://en.wikipedia.org/wiki/Race_condition

@@ -1,6 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Javascript: Vérifier si un répertoire existe"
+date:                  2024-01-20T14:57:06.766831-07:00
+html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vérifier si un répertoire existe en JavaScript
+## What & Why?
+Vérifier l'existence d'un dossier, c'est juste contrôler si un chemin donné pointe sur un truc réel sur votre machine. On fait ça pour éviter des erreurs quand on tente de lire ou d’écrire dedans.
 
-## Qu'est-ce que c'est et pourquoi ?
+## How to:
+En JavaScript (avec Node.js), on utilise les modules `fs` et `fs/promises` pour toucher au système de fichiers. Voilà comment on vérifie si un dossier existe :
 
-Vérifier si un répertoire existe est une technique de base en programmation informatique. C'est un contrôle utile qui prévient les erreurs avant qu'elles ne se produisent, par exemple lorsqu'une application essaie d'écrire dans un répertoire qui n'existe pas.
-
-## Comment faire :
-
-Voici comment vérifier si un répertoire existe en utilisant Node.js :
-
-```Javascript
+```javascript
 const fs = require('fs');
 
-fs.access('/chemin/vers/ton/dossier', error => {
-  if (!error) {
-    console.log('Le répertoire existe.');
-  } else {
-    console.log('Le répertoire n\'existe pas.');
-  }
-});
+// Version synchrone
+const dossierExiste = fs.existsSync('/chemin/du/dossier'); // retourne true ou false
+console.log('Le dossier existe:', dossierExiste);
+
+// Version asynchrone (avec Promises)
+const fsPromises = require('fs').promises;
+const cheminDossier = '/chemin/du/dossier';
+
+fsPromises.access(cheminDossier, fs.constants.F_OK)
+  .then(() => console.log('Le dossier existe.'))
+  .catch(() => console.log('Le dossier n’existe pas.'));
 ```
 
-Dans cet exemple, le module 'fs' de Node.js est requis pour accéder au système de fichiers. La méthode 'access' vérifie l'existence du répertoire. Si le répertoire existe, la fonction de rappel ne reçoit pas d'erreur. Si le répertoire n'existe pas, une erreur sera renvoyée.
+## Deep Dive
+Historiquement, on se servait de `fs.exists`, mais Node.js l’a déprécié car c’était une source de problèmes, surtout avec son style non standard de callback. On préfère maintenant `fs.existsSync` ou `fs.access` avec `fs.constants.F_OK`, qui vérifie les droits d'accès au dossier.
 
-## Plongée en profondeur
+Alternatives? Y'en a pas vraiment des masses. Ou tu fais avec le système `fs` de Node, ou tu passes par un outil externe avec `child_process`. Mais franchement, `fs` suffit dans la plupart des cas.
 
-Historiquement, dans des versions plus anciennes de Node.js, la méthode 'exists' était utilisée pour vérifier l'existence de fichiers et de répertoires. Cependant, elle a été dépréciée en faveur de la méthode 'access'.
+Concernant les détails d'implémentation, `fs.existsSync` bloque le fil d’exécution jusqu'à ce qu'il ait fini. Bon à savoir si tu codes quelque chose très sensible au temps. Pour les applications sensibles à la performance, la version asynchrone avec `fsPromises.access` est préférable.
 
-Une autre méthode pour vérifier l'existence d'un répertoire est d'essayer d'ouvrir ou de lire son contenu avec 'fs.readdir' ou 'fs.open'. Si ces méthodes ne renvoient pas d'erreur, cela signifie que le répertoire existe.
-
-Toutes ces méthodes sont asynchrones, ce qui signifie qu'elles ne bloquent pas le fil d'exécution principal. C'est une bonne pratique en JavaScript, car cela rend les applications plus performantes.
-
-## Voir aussi
-
-Pour plus d'informations et de détails techniques, consultez la documentation officielle Node.js ici : https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback
+## See Also
+- Node.js `fs` docs: https://nodejs.org/api/fs.html
+- À propos de `fsPromises.access`: https://nodejs.org/api/fs.html#fspromisesaccesspath-mode
+- Une discussion sur la dépréciation de `fs.exists`: https://github.com/nodejs/node/issues/103
+- Pour exécuter des commandes shell, `child_process`: https://nodejs.org/api/child_process.html

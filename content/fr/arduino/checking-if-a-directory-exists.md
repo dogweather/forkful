@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier si un répertoire existe"
-html_title:           "Arduino: Vérifier si un répertoire existe"
-simple_title:         "Vérifier si un répertoire existe"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Bash: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -12,47 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Quoi et Pourquoi ?
 
-La vérification de l'existence d'un répertoire est une action qui permet de s'assurer qu'un certain dossier ou répertoire existe bien dans votre système de fichiers. Les programmeurs font cela pour empêcher des erreurs lors de la tentative d'accéder à des répertoires qui n'existent pas.
+Vérifier l'existence d'un répertoire c'est s'assurer qu'un dossier spécifique est présent sur la carte SD de notre Arduino. On fait ça pour éviter des erreurs lors de la création, la lecture ou l'écriture de fichiers - personne n'aime un code qui plante parce qu'il ne trouve pas son chemin.
 
-## Comment Faire :
-
-Malheureusement, Arduino ne prend pas en charge directement la vérification de l'existence d'un répertoire comme certains autres langages de programmation. Cependant, on pourrait le faire après avoir configuré un module de carte SD. Voici un exemple de comment cela pourrait être réalisé:
+## Comment faire :
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
 
-File racine;
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("Erreur d'initialisation de la carte SD");
+    return;
+  }
+  if (SD.exists("/monDossier")) {
+    Serial.println("Le dossier existe !");
+  } else {
+    Serial.println("Le dossier n'existe pas.");
+  }
+}
 
-void setup ()
-{
-    Serial.begin (9600);
-    if (!SD.begin (4)) {
-        Serial.println ("Erreur d'initialisation de la carte SD");
-        return;
-    }
-    racine = SD.open ("/");
-
-    if (!racine) {
-      Serial.println("Le répertoire n'existe pas.");
-    } else {
-      Serial.println("Le répertoire existe."); 
-    }
+void loop() {
+  // rien ici
 }
 ```
 
-## Plongée en Profondeur 
+Output:
+```
+Le dossier existe !
+```
+ou
+```
+Le dossier n'existe pas.
+```
 
-Les langages de programmation modernes, y compris Arduino, ne prennent généralement pas en charge la vérification de l'existence d'un répertoire de manière native. Cependant, en utilisant des bibliothèques supplémentaires comme le module SD dans l'exemple ci-dessus, les développeurs Arduino peuvent introduire cette fonctionnalité.
+## Plongée profonde
 
-Il existe des alternatives à l'utilisation du module SD, notamment en utilisant le module ESP8266FS, qui contribue également à la gestion de fichiers sur Arduino.
+Avant l'existence des cartes SD sur Arduino, on stockait les données de manière rudimentaire : EEPROM ou mémoires externes complexes. Avec l'intégration de la librairie SD, vérifier un répertoire est devenu un jeu d'enfant. En termes d'alternatives, d'autres librairies comme SPIFFS pour ESP8266 ou ESP32 gèrent aussi cette fonctionnalité mais différemment. Pour ce qui est des détails d'implémentation, `SD.exists()` s'appuie sur le système de fichiers FAT (File Allocation Table) et recherche l'entrée correspondante à votre dossier.
 
-En ce qui concerne les détails de l'implémentation, Arduino ouvre un fichier via la méthode `SD.open` et renvoie un objet `File`. Si la tentative d'ouvrir le fichier échoue (ce qui peut être dû au fait que le fichier n'existe pas), l'objet `File` retourné ne sera pas valide. Vous pouvez alors vérifier si le fichier est valide en utilisant `if (! maFichier)`.
+## Voir aussi
 
-## À Voir Aussi 
-
-Vous pouvez trouver plus d'informations sur la gestion des fichiers sur Arduino en visitant ces liens:
-
-1. Documentation Arduino sur la gestion de fichiers avec une carte SD : https://www.arduino.cc/en/Reference/SD
-2. Un guide sur la gestion des fichiers sur Arduino utilisant ESP8266FS : https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/
-3. Explication détaillée des objets `File`: https://www.arduino.cc/en/Reference/File
+- Documentation Arduino sur `SD.exists()`: https://www.arduino.cc/en/Reference/SDExists
+- La librairie SD sur GitHub : https://github.com/arduino-libraries/SD
+- Tutorial Arduino SD Card : https://www.arduino.cc/en/Tutorial/LibraryExamples/CardInfo

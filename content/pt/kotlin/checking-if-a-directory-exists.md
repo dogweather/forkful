@@ -1,6 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Kotlin: Verificando se um diretório existe"
+date:                  2024-01-20T14:57:29.903585-07:00
+html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,38 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Verificar se um diretório existe se refere a conferir se um determinado caminho de arquivo aponta para um diretório ou localização que realmente exista no sistema. Os programadores fazem isso para evitar erros de arquivos ausentes, que podem fazer com que o programa falhe ou se comporte de forma imprevisível.
+Verificar se um diretório existe é o processo de checar se um caminho específico no sistema de arquivos aponta para uma pasta real. Programadores fazem isso para evitar erros de arquivo não encontrado ou para decidir se criam um novo diretório.
 
-## Como fazer:
-Aqui estão alguns exemplos de como verificar se um diretório existe usando a linguagem de programação Kotlin:
-
-Primeiro, importe o pacote necessário:
-
-```Kotlin
-import java.nio.file.*
-```
-
-Em seguida, você pode utilizar a função `Files.exists()` para verificar se um diretório já existe:
-
+## Como Fazer:
 ```kotlin
-val diretorio = Paths.get("/caminho/para/o/diretorio")
-if(Files.exists(diretorio)){
-    println("O diretório existe.")
-} else {
-    println("O diretório não existe.")
+import java.nio.file.Files
+import java.nio.file.Paths
+
+fun main() {
+    val path = Paths.get("/caminho/para/o/diretorio")
+    
+    if (Files.exists(path)) {
+        println("Diretório existe!")
+    } else {
+        println("Diretório não existe.")
+    }
 }
 ```
+Output caso exista:
+```
+Diretório existe!
+```
+Output caso não exista:
+```
+Diretório não existe.
+```
 
-Se o diretório existir, o output será `O diretório existe`. Caso contrário, o output será `O diretório não existe`.
-
-## Mergulhando Mais a Fundo
-Até o Java 7, a verificação da existência de um diretório era feita usando o método `File.exists()`. No entanto, com a introdução do pacote `java.nio.file` no Java 7, muitos preferem usar as funções deste pacote, como `Files.exists()`, por serem mais completas e eficientes.
-
-Existem algumas alternativas ao uso do `Files.exists()`. Por exemplo, você pode usar a função `File.isDirectory()` que retornará `true` se o caminho do arquivo existir e for um diretório.
-
-Ao verificar a existência de um diretório em Kotlin, a JVM é a responsável por lidar com os detalhes específicos do sistema operacional, como a padronização dos separadores de caminhos. Portanto, o mesmo código funcionará sem problemas em qualquer sistema operacional que suporte a JVM.
+## Mergulho Profundo
+No início, checar a existência de um diretório era uma operação mais dependente do sistema operacional. Com o Java NIO (New Input/Output), introduzido no Java 7 e também disponível em Kotlin, abstraímos essas verificações para serem mais portáveis entre diferentes SOs. Alternativas? Use `File.exists()` para abordagens mais antigas ou antes do Java NIO. Quanto aos detalhes de implementação, o `Files.exists()` checa as permissões e pode lançar `SecurityException` se o acesso ao diretório for negado, algo a ter em mente.
 
 ## Veja Também
-1. Documentação oficial da classe Files no Kotlin: [Files (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html)
-2. Documentação oficial da classe Path no Kotlin: [Path (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html)
-3. Documentação oficial da classe File no Kotlin: [File (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java Platform SE 8 - Files.exists](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#exists-java.nio.file.Path-java.nio.file.LinkOption...-)
+- [Kotlin API - File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)

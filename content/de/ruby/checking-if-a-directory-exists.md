@@ -1,6 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "Lua: Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-01-20T14:58:27.377057-07:00
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,51 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+Das Überprüfen, ob ein Verzeichnis existiert, bedeutet zu kontrollieren, ob ein spezifischer Ordner im Dateisystem vorhanden ist. Programmierer tun dies, um Fehler zu vermeiden, die auftreten, wenn man versucht, in ein nicht vorhandenes Verzeichnis zu lesen oder zu schreiben.
 
-Beim Prüfen, ob ein Verzeichnis existiert, sehen wir nach, ob ein bestimmtes Verzeichnis in unserem Dateisystem tatsächlich vorhanden ist. Programmierer tun dies, um potenzielle Fehler in ihrem Code zu vermeiden, z. B. beim Versuch, auf ein nicht existierendes Verzeichnis zuzugreifen.
-
-## So geht's:
-
-Prüfen Sie, ob ein Verzeichnis in Ruby existiert, ist ziemlich einfach. Nutzen Sie die Methode `Dir.exist?`. Hier ist ein einfacher Codeausschnitt:
+## How to: (Wie macht man das:)
+Ruby macht es uns leicht, die Existenz eines Verzeichnisses zu überprüfen. Hier sind zwei schlanke Methoden, die du verwenden kannst:
 
 ```Ruby
-if Dir.exist?('testdirectory')
-  puts "Das Verzeichnis existiert."
-else
-  puts "Das Verzeichnis existiert nicht."
-end
+require 'fileutils'
+
+# Methode 1: File.directory?
+puts File.directory?('dein/verzeichnis') ? 'Existiert!' : 'Existiert nicht!'
+
+# Methode 2: Dir.exist?
+puts Dir.exist?('dein/verzeichnis') ? 'Existiert!' : 'Existiert nicht!'
 ```
 
-Das gibt entweder "Das Verzeichnis existiert." aus, wenn das Verzeichnis vorhanden ist, oder "Das Verzeichnis existiert nicht." wenn es nicht ist.
-
-## Tief tauchen:
-
-Historisch gesehen, `Dir.exist?` ist in Ruby seit Version 1.9 verfügbar. Davor verwendeten Entwickler die Methode `File.directory?`, die immer noch nutzbar und funktional äquivalent ist:
-
-```Ruby
-if File.directory?('testdirectory')
-  puts "Das Verzeichnis existiert."
-else
-  puts "Das Verzeichnis existiert nicht."
-end
+Beispieloutput für beide Methoden, wenn das Verzeichnis existiert:
+```
+Existiert!
 ```
 
-Eine weitere Alternative ist die Methode `File.exist?`, die jedoch auch Dateien berücksichtigt, nicht nur Verzeichnisse:
-
-```Ruby
-if File.exist?('testdirectory')
-  puts "Datei oder Verzeichnis existiert."
-else
-  puts "Datei oder Verzeichnis existiert nicht."
-end
+Wenn das Verzeichnis nicht existiert:
+```
+Existiert nicht!
 ```
 
-Hinsichtlich der Implementierungsdetails wird `Dir.exist?` intern das Systemaufruf `stat` verwenden, um Informationen über das Verzeichnis abzurufen.
+## Deep Dive (Tiefer eintauchen)
+Historisch gesehen war die Überprüfung auf ein Verzeichnis schon immer Teil der Standardbibliotheken von Ruby. Frühere Versionen von Ruby verwendeten `File.exists?`, welche jedoch veraltet und durch `File.exist?` ersetzt wurde. `File.directory?` ist spezifischer, da es sicherstellt, dass der Pfad tatsächlich ein Verzeichnis ist und keine Datei.
 
-## Siehe auch:
+Alternativ könntest du auch niedrigerstufige Bibliotheken wie `Pathname` verwenden oder gar system-spezifische Befehle ausführen, obwohl dies weniger portabel ist. Die Methoden `File.directory?` und `Dir.exist?` sind jedoch ausreichend und eingebettet in Ruby's intuitive Art der Problembehandlung, also brauchst du normalerweise nicht weiterzusuchen.
 
-- [Die offizielle Dokumentation zu `Dir.exist?`](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
-- [Die offizielle Dokumentation zu `File.directory?`](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
-- [Die offizielle Dokumentation zu `File.exist?`](https://ruby-doc.org/core-2.7.1/File.html#method-c-exist-3F)
-- [Eine detaillierte Diskussion zur Verwendung von `Dir.exist?` vs `File.directory?`](https://stackoverflow.com/questions/1755665/determine-whether-a-directory-exists-with-ruby) in StackOverflow.
+Im Kontext der Implementierung, wenn du etwa mit Webanwendungen arbeitest, prüfst du vielleicht Verzeichnisse auf hochgeladene Dateien oder erstellst dynamisch neue Verzeichnisse für Benutzerdaten. Eine solche Überprüfung ist essentiell, um sicherzustellen, dass deine Anwendung robust und widerstandsfähig gegen fehlerbedingte Unterbrechungen ist.
+
+## See Also (Siehe auch)
+- Ruby-Dokumentation zu `Dir.exist?`: https://ruby-doc.org/core-2.7.0/Dir.html#method-c-exist-3F
+- Ruby-Dokumentation zu `File.directory?`: https://ruby-doc.org/core-2.7.0/File.html#method-c-directory-3F
+- FileUtils Modul-Dokumentation: https://ruby-doc.org/stdlib-2.7.0/libdoc/fileutils/rdoc/FileUtils.html
+
+Immer daran denken, die Version der Dokumentation anzupassen, falls du nicht die aktuellste Ruby-Version verwendest.

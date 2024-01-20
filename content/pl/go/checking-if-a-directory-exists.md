@@ -1,6 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-html_title:           "Go: Sprawdzanie, czy katalog istnieje"
+date:                  2024-01-20T14:56:57.726025-07:00
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Go"
 category:             "Go"
@@ -10,47 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
 
-Sprawdzenie, czy dany folder istnieje, to zasadnicza czynność wykonywana przez programistów. Jest to niezbędne w przypadkach, kiedy nasz kod chce przeczytać plik z folderu lub zapisać do niego, ze szczególnym uwzględnieniem dzielenia danych między różnymi uruchomieniami programu.
+Sprawdzanie, czy katalog istnieje, to proces weryfikowania obecności folderu w systemie plików. Programiści to robią, żeby uniknąć błędów przy próbie dostępu lub zapisu, i żeby wiedzieć, kiedy trzeba utworzyć nowy katalog.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
 
-Za pomocą wbudowanej biblioteki os w Go, możemy łatwo sprawdzić, czy dany katalog istnieje czy nie. Oto prosty przykład:
+W Go można użyć `os.Stat()` i sprawdzić error zwrócony przez funkcję:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	_, err := os.Stat("/ścieżka/do/folderu")
+    dir := "/path/to/directory"
 
-	if os.IsNotExist(err) {
-		fmt.Println("Folder nie istnieje.")
-	} else {
-		fmt.Println("Folder istnieje.")
-	}
+    if _, err := os.Stat(dir); os.IsNotExist(err) {
+        fmt.Printf("Directory %s does not exist.\n", dir)
+    } else {
+        fmt.Printf("Directory %s exists.\n", dir)
+    }
 }
 ```
 
-Gdy uruchomisz ten kod, otrzymasz odpowiedź "Folder nie istnieje." lub "Folder istnieje." w zależności od tego, czy ścieżka, którą podałeś, prowadzi do istniejącego folderu.
+Uruchomienie kodu z istniejącym katalogiem:
 
-## Głębsze zrozumienie:
+```Go
+Directory /path/to/directory exists.
+```
 
-Funkcja `os.Stat` zwraca informacje o pliku. W przypadku błędu, czyli gdy plik lub folder nie istnieje, zwraca wartość `error`. `os.IsNotExist` to funkcja, która zwróci `true`, jeśli błąd wskazuje, że plik/coś nie istnieje.
+Uruchomienie kodu z nieistniejącym katalogiem:
 
-Go (wcześniej nazywane Golang), stworzone przez Google, koncentruje się na prostocie i niezawodności. Różne metody były używane do sprawdzania, czy katalog istnieje w różnych językach programowania, ale Go zapewnia jedno z najprostszych rozwiązań.
+```Go
+Directory /path/to/directory does not exist.
+```
 
-Jeśli chcesz sprawdzić, czy coś, co może być plikiem lub folderem, istnieje bez wskazania konkretnego typu, ten sam kod działa bez zarzutu. Jeśli jednak chciałbyś sprawdzić tylko foldery, musisz posprawdzać typ pliku, który otrzymujesz z `os.FileInfo`.
+## Deep Dive: (Dogłębna analiza)
 
-## Zobacz także:
+Metoda `os.Stat()` zwraca informacje o pliku/katalogu. Jeśli plik/katalog nie istnieje, error jest typu `*PathError`. `os.IsNotExist(err)` rozpoznaje takie błędy.
 
-1. Dokumentacja Go dla 'os' - https://golang.org/pkg/os/
+Historycznie, sprawdzanie istnienia katalogu było różne w zależności od systemu operacyjnego i języka. W Go stawia się na prostotę i spójność międzyplatformową.
 
-2. Jak używać pakietu 'os' w Go - https://go.dev/blog/using-go-modules
+Alternatywnie, `os.IsNotExist()` może być użyty z `os.Open()` – jeśli nie możesz otworzyć pliku/katalogu, prawdopodobnie nie istnieje.
 
-3. Opis funkcji 'os.Stat' - https://pkg.go.dev/os#Stat
+Ważny szczegół: `os.Stat()` może zwrócić inne błędy, nie tylko fakt, że ścieżka nie istnieje. Zawsze warto sprawdzić dokładny rodzaj błędu.
+
+## See Also: (Zobacz także)
+
+- Dokumentacja Go na temat pakietu `os`: https://pkg.go.dev/os
+- Więcej o obsłudze błędów w Go: https://blog.golang.org/error-handling-and-go
+- Artykuł na temat systemu plików i operacji na plikach w Go: https://golangbot.com/read-files/
+- Wzorce projektowe dla systemów plików w Go: https://www.oreilly.com/library/view/go-design-patterns/9781788390552/ch04s04.html

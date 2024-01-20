@@ -1,6 +1,6 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "C#: Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "C#"
 category:             "C#"
@@ -10,56 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Tarkistetaan, onko hakemisto olemassa, jotta välttämme virheitä yrittäessämme käsitellä sitä. Koodarit tekevät tämän varmistaakseen, ettei sovellus kaadu eikä tieto katoa.
 
-Tarkistaa, onko hakemisto olemassa, tarkoittaa sitä, että koodissamme teemme tarkastuksen, jos tietyllä polulla on jo olemassa oleva hakemisto. Tämä on välttämätöntä, koska sen avulla ohjelmistokehittäjät voivat välttää virheitä, kuten luodaan samoja hakemistoja tai käsitellään olemattomia hakemistoja.
-
-## Kuinka se toimii:
-
-Tässä on esimerkkikoodi, joka näyttää, kuinka tarkistaa, onko hakemisto olemassa, C# -kielen nykyversiota käyttäen.
+## How to: (Kuinka tehdä:)
+Käytä `Directory.Exists` -metodia. Se palauttaa `true`, jos hakemisto on olemassa, ja `false`, jos ei. Esimerkki: 
 
 ```C#
+using System;
 using System.IO;
 
-public class DirectoryChecker
+class Program
 {
-    public static bool DoesDirectoryExist(string directoryPath)
+    static void Main()
     {
-        return Directory.Exists(directoryPath);
+        string path = @"C:\test";
+        
+        if (Directory.Exists(path))
+        {
+            Console.WriteLine($"{path} exists.");
+        }
+        else
+        {
+            Console.WriteLine($"{path} does not exist.");
+        }
     }
 }
 ```
 
-Jos haluat tarkistaa, onko hakemisto olemassa, voit tehdä seuraavat:
-
-```C#
-string directoryPath = @"C:\SomeDirectory";
-
-if (DirectoryChecker.DoesDirectoryExist(directoryPath))
-{
-    System.Console.WriteLine("Directory exists.");
-}
-else
-{
-    System.Console.WriteLine("Directory does not exist.");
-}
-```
-
-Output:
+Sample Output:
 
 ```
-Directory does not exist.
+C:\test exists.
+```
+tai jos hakemistoa ei ole,
+```
+C:\test does not exist.
 ```
 
-Muuta yllä olevaa `directoryPath` -muuttujaa ja testaa eri hakemisto-polkuja.
+## Deep Dive (Syväsukellus)
+Hakemiston olemassaolon tarkistus on ollut oleellinen osa ohjelmistokehitystä jo varhaisista käyttöjärjestelmistä lähtien. Tiedostojärjestelmien hallinta on keskeistä, ja ennen `System.IO`-nimiavaruuden myötä tuotuja nykyaikaisia apuvälineitä kehittäjien tuli turvautua alhaisemman tason kutsuihin. Vaihtoehtoisia tapoja tarkistaa hakemiston olemassaolo ovat esimerkiksi `FileInfo`- tai `DriveInfo`-olioiden käyttö, mutta `Directory.Exists` on yksinkertaisin ja suoraviivaisin lähestymistapa. Sen toteutus hyödyntää alustan riippumattomuutta, mikä tarkoittaa sitä, että sovellukset toimivat saumattomasti eri käyttöjärjestelmien välillä.
 
-## Syvä sukellus:
-
-Directory.Exists -funktio on osa .NET Frameworkia Microsoftilta ja se on ollut olemassa jo pitkään. Alternatiiveja tälle toiminnolle on olemassa, kuten yritys avata tiedosto ja ottaa virhe kiinni, mutta tämä voi aiheuttaa suorituskyvyn hitautta.
-
-Funktion toteutus riippuu myös käytetystä käyttöjärjestelmästä. Windowsissa toiminto käyttää Win32 API -toimintoa nimeltä `GetFileAttributesW`. Unix-pohjaisissa järjestelmissä se käyttää `stat64` -toimintoa.
-
-## Katso myös:
-
-- Microsoftin virallinen dokumentaatio [System.IO.Directory.Exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- Stack Overflow keskustelu eri tavoista tarkistaa, onko hakemisto olemassa: [C# Directory.Exists alternatives](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-folder-or-a-file)
+## See Also (Katso Myös)
+- Microsoft Docs `Directory.Exists` method: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
+- MSDN File and Stream I/O: https://docs.microsoft.com/en-us/dotnet/standard/io/
+- MSDN How to: Enumerate Directories and Files: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-enumerate-directories-and-files
