@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:39:30.263048-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐하고, 왜?
+## What & Why? (무엇인가 & 왜죠?)
+문자열에서 날짜를 파싱한다는 것은 문자로 된 날짜 정보를 실제 날짜 타입으로 변환하는 과정입니다. 프로그래머들은 데이터 교환, 사용자 입력 처리, 타임스탬프 기록 등을 위해 이 작업을 합니다.
 
-문자열에서 날짜를 파싱하는 것은, 특정 형식의 문자열을 날짜 데이터로 변환하는 프로그래밍 기술입니다. 이는 사용자가 입력한 날짜 정보를 프로그램에서 사용 가능한 형식으로 만들기 위해 자주 사용됩니다.
+## How to: (어떻게 하나요?)
+```typescript
+const dateString: string = "2023-04-01"; // 날짜 형식 문자열
+const parsedDate: Date = new Date(dateString); // 문자열 파싱하여 Date 객체 생성
 
-## 어떻게 하면 될까요:
-
-아래에 TypeScript를 사용하여 문자열에서 날짜를 파싱하는 방법에 대한 예를 들어 설명하겠습니다.
-
-```TypeScript
-let inputString = "2022-08-02";
-let parsedDate = new Date(inputString);
-
-console.log(parsedDate);
+console.log(parsedDate); // 출력: 2023-04-01T00:00:00.000Z (지역 시간대에 따라 다를 수 있음)
 ```
 
-위에 코드는 "2022-08-02"라는 문자열을 Date 객체로 변환하고 출력합니다.
+날짜와 시간 포맷을 직접 처리하고 싶다면:
+```typescript
+const dateString: string = "2023년 4월 1일 오후 3시";
+const dateParts = dateString.match(/\d+/g); // 숫자만 추출
 
-```Shell
-2022-08-02T00:00:00.000Z
+if (dateParts) {
+    const year = parseInt(dateParts[0], 10);
+    const month = parseInt(dateParts[1], 10) - 1; // JavaScript의 월은 0부터 시작
+    const day = parseInt(dateParts[2], 10);
+    const hour = parseInt(dateParts[3], 10) + (dateString.includes('오후') ? 12 : 0); // 오후 체크
+
+    const customParsedDate = new Date(year, month, day, hour);
+    console.log(customParsedDate); // 출력 형식: Sat Apr 01 2023 15:00:00 GMT+0900 (한국 표준시)
+}
 ```
 
-## 디테일:
+## Deep Dive (심층 분석)
+과거에는 날짜와 시간을 다루는 일반적인 방법이 없었습니다. 각자 필요에 맞게 숫자와 문자열을 처리해야 했죠. 그러나 ECMAScript 5에서 `Date.parse`와 `new Date()`를 도입하며 이 문제가 일부 해결되었습니다. 자바스크립트의 `Date` 객체는 ISO 8601과 같은 표준 날짜 포맷을 지원합니다.
 
-먼저, 문자열에서 날짜 파싱은 오래된 문제입니다. 날짜 문자열의 포맷은 다양하며, 이를 파싱하는 방법은 여러가지가 있습니다. `new Date()` 밖에 없는 것은 아닙니다. `Date.parse()`나 라이브러리(Library) such as Moment.js, date-fns 등을 사용할 수도 있습니다.
+다만, 복잡한 날짜 형식이나 다양한 시간대를 처리할 때는 `Date` 객체의 한계에 부딪힙니다. 그래서 많은 개발자가 Moment.js 같은 날짜 관리 라이브러리를 선호합니다. 최근에는 Moment.js 대신 더 가볍고 현대적인 Date-fns나 Day.js 같은 라이브러리가 인기를 얻고 있습니다.
 
-그럼에도 불구하고 `new Date()` 함수는 상대적으로 간단하며 다양한 날짜 포맷을 지원합니다. 이는 ISO 8601 날짜 문자열 표현법을 기본으로 지원하므로 이번 예제에서는 이 방법을 사용하였습니다.
+이런 라이브러리들은 보다 명확한 API로 날짜 파싱 기능을 제공하며, 복잡한 타임존 관리, 형식화된 문자열 출력, 상대적 날짜 계산 등의 기능도 갖추고 있습니다.
 
-## 참조:
+TypeScript에서 날짜 파싱은 자바스크립트와 동일하게 작동합니다. 다만, TypeScript는 타입 안전성을 제공하므로 변수나 함수가 반환하는 날짜 타입을 명확히 할 수 있습니다.
 
-- [MDN Web Docs - Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](http://momentjs.com/)
-- [date-fns](https://date-fns.org/)
+## See Also (더 보기)
+- [MDN의 Date 객체 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [ISO 8601 날짜 표준](https://en.wikipedia.org/wiki/ISO_8601)
+- [Date-fns 라이브러리](https://date-fns.org/)
+- [Day.js 라이브러리](https://day.js.org/)

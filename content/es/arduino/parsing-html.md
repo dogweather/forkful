@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:30:03.954519-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,49 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Parsear HTML es el proceso de analizar el código HTML y extraer información específica de él. Los programadores lo hacen para interactuar con contenido web, automatizar la extracción de datos o integrar funcionalidades web en sus proyectos.
 
-Interpretar HTML se refiere a tomar una cadena de texto HTML y convertirla en un objeto o estructura de datos manipulable. Los programadores necesitan interpretar HTML para interactuar y manipular páginas web de forma automática, a veces para extraer datos o para pruebas automatizadas.
-
-## ¿Cómo se hace?
-
-Aquí tienes un ejemplo básico de cómo puedes interpretar HTML utilizando la biblioteca Arduino HttpClient para solicitar páginas HTML y ArduinoJson para interpretar los datos.
+## Cómo:
+Arduino no está diseñado para procesar HTML directamente, ya que se utiliza principalmente para programar microcontroladores; sin embargo, con módulos adicionales como el ESP8266 o ESP32, podemos conectar Arduino a Internet y realizar tareas básicas de procesamiento. Aquí tienes un ejemplo sencillo:
 
 ```Arduino
-#include <HttpClient.h>
-#include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-HttpClient client;
-String url = "http://miweb.com";
+const char* ssid = "TU_SSID";
+const char* password = "TU_CONTRASEÑA";
 
-int httpCode = client.get(url);
-if(httpCode) {
-  String payload = client.getString();
-  DynamicJsonBuffer jsonBuffer;
-  JsonObject& root = jsonBuffer.parseObject(payload);
-  
-  const char* titulo = root["titulo"];
-  const char* contenido = root["contenido"];
-  
-  Serial.println(titulo);
-  Serial.println(contenido);
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Conectando a WiFi...");
+  }
+
+  HTTPClient http;
+  http.begin("http://example.com"); // URL de la página a parsear
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println("HTML Recibido:");
+    Serial.println(payload);
+    // Aquí va la lógica para parsear el contenido de 'payload'
+  } else {
+    Serial.println("Error en la solicitud HTTP.");
+  }
+
+  http.end();
+}
+
+void loop() {
+  // Nada aquí por ahora
 }
 ```
 
-El resultado será el título y el contenido de la página web solicitada.
+Este código se conecta a una red WiFi e imprime el HTML de una página web. Para parsear el HTML, necesitarías una lógica adicional que no está incluida aquí.
 
-## Mergullo Profundo
+## Inmersión Profunda
+Arduino no nació para interactuar con la web, su fuerte es el hardware y la electrónica. La posibilidad de conectarlo a internet es bastante reciente, gracias a módulos como el ESP8266 y el ESP32. Estos chipsets ofrecen WiFi y la capacidad de realizar peticiones HTTP.
 
-El análisis de HTML ha sido una parte integral de la programación desde los primeros días de la web. Los primeros intentos de interpretar HTML incluyen la utilización de complejas expresiones regulares.
+Para parsear HTML en Arduino, podríamos usar funciones de cadena para buscar y manipular datos, pero este no es el enfoque más robusto ni eficiente. Herramientas especializadas como BeautifulSoup en Python están diseñadas para esta tarea, pero eso requeriría otro tipo de hardware, como una Raspberry Pi.
 
-Hoy en día, existen numerosas bibliotecas para interpretar HTML, como BeautifulSoup para Python o JSoup para Java. Arduino no cuenta con una biblioteca dedicada para este propósito, por lo que hacemos uso de HttpClient y ArduinoJson para obtener y procesar los datos.
+En el mundo Arduino, tendríamos que escribir nuestra propia lógica de procesamiento de texto. Esto implica buscar patrones, cortar strings y manejar excepciones, todo con recursos limitados.
 
-Es importante tener en cuenta que la interpretación de HTML puede variar dependiendo de la estructura de la página web. Algunas páginas usan AJAX para cargar contenido dinámico que podría no ser visible al realizar una solicitud get simple.
+Otra alternativa es usar servicios de terceros que procesen el HTML y devuelvan los datos ya estructurados, pero esto implicaría dependencia de una conexión a internet y posiblemente otras vulnerabilidades.
+
+En términos de implementación, la relevancia de parsear HTML con Arduino es limitada. Es más común usarlo para controlar sensores, motores y otros dispositivos, mientras que el procesamiento de datos web normalmente se realiza en un dispositivo más potente y luego se comunica con la placa Arduino.
 
 ## Ver También
+Para entender mejor cómo conectar tu placa Arduino a internet y avanzar en proyectos IoT (Internet of Things), puedes visitar:
 
-Si estás interesado en aprender más sobre la interpretación de HTML o buscar otras soluciones, consulta las siguientes fuentes:
-- BeautifulSoup para Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- JSoup para Java: https://jsoup.org/
-- HttpClient para Arduino: https://www.arduino.cc/en/Reference/HttpClient
-- ArduinoJson para JSON en Arduino: https://arduinojson.org/
+- Documentación oficial de ESP8266: https://arduino-esp8266.readthedocs.io/en/latest/
+- Documentación oficial de ESP32: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/
+
+Para una introducción al parseo de HTML en general (no específico de Arduino), sitios como:
+
+- Tutorial de parsing en Python con BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Curso online de procesamiento y scraping de datos web: https://www.datacamp.com/courses/web-scraping-with-python
+
+Recuerda que el parseo de HTML a menudo implica problemas de legalidad y privacidad, así que siempre verifica la legalidad de tus acciones.

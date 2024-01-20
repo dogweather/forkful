@@ -1,5 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
+date:                  2024-01-20T15:34:22.181067-07:00
 html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Arduino"
@@ -10,52 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
-文字列から日付を解析するとは、文字列形式の日付をプログラムに認識可能な日付形式に変換することです。このプロセスは、ユーザーが日付情報を入力し、それをプログラムで処理する必要があるアプリケーションで頻繁に行われます。
+## What & Why? (何となぜ？)
+文字列から日付を解析する: 文字列の中にある日付情報を読み取る作業です。データ記録やイベント管理など、プログラムが日付を理解し扱う必要があるために行います。
 
-## どうやって:
-以下に、Arduinoで文字列から日付を解析する例を示します。
-
+## How to: (やり方)
 ```Arduino
-#include <TimeLib.h>
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS1307 rtc;
 
 void setup() {
   Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  if (!rtc.isrunning()) {
+    Serial.println("RTC is NOT running!");
+  }
+  
+  // 以下の行で日付をセット。年、月、日、時、分、秒の順
+  rtc.adjust(DateTime(2023, 1, 21, 3, 0, 0));
 }
 
 void loop() {
-  char dateString[] = "5/05/2022";
-  TimeElements tm;
-  if (parseTime(dateString, tm)) {
-    Serial.print("Year: ");
-    Serial.println(tm.Year + 1970); 
-    Serial.print("Month: ");
-    Serial.println(tm.Month);
-    Serial.print("Day: ");
-    Serial.println(tm.Day);
-  } else {
-    Serial.println("Failed to parse date");
-  }
+  DateTime now = rtc.now();
+  
+  // 日付を YYYY/MM/DD 形式で出力
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+  
   delay(1000);
 }
 ```
+出力例: `2023/1/21`
 
-上記のコードの出力は以下のようになります。
+## Deep Dive (深掘り)
+日付の解析が必要になるのは、古くはコンピュータが人間の読める形式の日付を理解しなければならない場面で始まりました。Arduino で日付文字列を扱うには、RTCライブラリ（実時間クロック）を使用し、`DateTime`クラスを活用します。`DateTime`オブジェクトは年、月、日、時、分、秒を保持し、これらを個別に読み出したり、特定のフォーマットで出力することができます。
 
-```
-Year: 2022
-Month: 5
-Day: 5
-```
+代わりに、文字列パーサを自作することも可能ですが、RTCライブラリを使う方が信頼性が高く再利用しやすいです。パースの際の注意点としては、月と日は1から始まること、年は4桁であることを確認しましょう。
 
-## ディープダイブ
-日付解析の歴史は古く、その起源はプログラムが日付情報を理解して処理する必要があるときにまで遡ります。替代案として、一部の開発者はUNIXタイムスタンプを直接使用しますが、これは人間にとっては可読性が低くなります。Arduinoの`parseTime`関数は、内部的には文字列を区切り記号で分割し、それぞれの部分を適切な日付フィールドに格納する単純な方法を採用しています。
-
-## 関連資料
-以下のリンクは、このトピックに関してより深く理解するためのものです。
-
-1. Arduinoの公式文書: [Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-2. [Parsing date and time from serial input](https://forum.arduino.cc/index.php?topic=136447.0) 
-3. [Date and Time functions](http://playground.arduino.cc/code/time)
-
-記事を読んでいただきありがとうございます。
+## See Also (関連情報)
+- Arduino RTC Library: https://www.arduino.cc/reference/en/libraries/rtclib/
+- Arduino `DateTime` class: https://www.arduino.cc/en/Reference/DateTime
+- Date and Time functions: https://www.arduino.cc/reference/en/language/functions/time/

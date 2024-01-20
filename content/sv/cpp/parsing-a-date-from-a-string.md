@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:35:23.429810-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+Att tolka ett datum från en sträng innebär att extrahera och omvandla textinformation till ett datumformat som programmet kan hantera. Utvecklare gör detta för att möjliggöra bearbetning av datumdata som kommer i textform, t.ex. från användarinmatning eller filer.
 
-Att tolka ett datum från en sträng innebär att konvertera en sträng som representerar ett datum till ett effektivt minnesformat. Detta gör programmerare för att manipulera data, göra beräkningar och visa resultat på ett mer lämpligt eller förståeligt format för användaren.
+## How to:
+I C++, kan vi använda `<chrono>` biblioteket tillsammans med `<sstream>` och `<iomanip>` för att tolka datumsträngar.
 
-## Hur man gör:
-
-Låt oss dyka rakt in i kodexemplen i C++. Vi använder `std::get_time`, ett praktiskt biblioteksfunktion för att tolka datum och tid.
-```C++
+```cpp
 #include <iostream>
 #include <sstream>
+#include <chrono>
 #include <iomanip>
-#include <ctime>
 
 int main() {
-    std::tm tm = {};
-    std::istringstream ss("2021-08-14");
-    ss >> std::get_time(&tm, "%Y-%m-%d");
-    
-    if (ss.fail()) {
-        std::cout << "Det gick inte att tolka datumsträngen.\n";
-    } else {
-        std::time_t time = mktime(&tm);
-        if (time != -1) {
-            std::cout << "Tolkat datum: " << std::asctime(std::localtime(&time));
-        }
-    }
+    std::string date_str = "2023-04-03";  // YYYY-MM-DD format
+    std::istringstream iss(date_str);
+    std::chrono::system_clock::time_point tp;
+    iss >> std::chrono::parse("%Y-%m-%d", tp);
 
+    if (iss.fail()) {
+        std::cout << "Parse failed\n";
+    } else {
+        std::cout << "Parse succeeded\n";
+        // Gör något med 'tp' nu...
+    }
     return 0;
 }
 ```
-När du kör koden får du:
-```C++
-'Tolkat datum: Sat Aug 14 00:00:00 2021'
+Sample output:
 ```
-## Djupdykning
+Parse succeeded
+```
 
-Historiskt sett, före C++20, användes ofta manuella strängmanipuleringstekniker för att tolka datum. Det öppnade dock för fel och var i allmänhet inte så effektivt.
+## Deep Dive
+Förr, hade C++ utvecklare ofta behövt luta sig mot bibliotek som `<ctime>` och funktioner som `strptime` för att bearbeta datumsträngar. Med introduktionen av `<chrono>` i C++11 och sedan utökningar i C++20, erbjuder C++ standardbiblioteket nu mer robusta och säkra verktyg för datum- och tidsbearbetningar. Trots dessa förbättringar så kan tredjepartbibliotek som Boost.Date_time eller Howard Hinnant's date bibliotek fortfarande vara till hjälp för mer komplexa behov.
 
-Alternativ till `get_time` inkluderar strängparsningsbibliotek som `boost::date_time` och `date.h` biblioteket. Nackdelen med dessa lösningar är att de kan vara tunga för att lösa specifika problem.
+När du tolkar datum från strängar, tänk på formatet som datumsträngarna kommer i. `<chrono>` hanterar många standardformat men är strikt; om strängen avviker från förväntat format kan parsningen misslyckas.
 
-På implementeringsnivå konverterar `std::get_time` strängen till ett `std::tm` objekt, som internt representerar datum som separata fält (t.ex., år, månad, dag, timme, minut, sekund).
-
-## Se även
-
-För vidare läsning rekommenderas:
-- [C++ Referens - get_time](http://www.cplusplus.com/reference/iomanip/get_time/)
-- [Alternativ till date.h](https://stackoverflow.com/questions/11213326/how-to-parse-a-date-string-into-a-boostgregorian-date)
-- [Formatering och tolkning av tid och datum](https://en.cppreference.com/w/cpp/io/manip/get_time)
+## See Also
+- C++ `chrono` documentation: https://en.cppreference.com/w/cpp/chrono
+- Howard Hinnant's date library: https://github.com/HowardHinnant/date
+- Boost.Date_time dokumentation: https://www.boost.org/doc/libs/release/libs/date_time/

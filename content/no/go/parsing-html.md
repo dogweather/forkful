@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:31:51.995572-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,51 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Å Parse HTML i Go
+## What & Why? (Hva & Hvorfor?)
+Parsing HTML betyr å analysere HTML-kode for å forstå og manipulere dens struktur og innhold. Programmere gjør dette for å hente ut data, migrere innhold eller teste webapplikasjoner.
 
-## Hva & Hvorfor?
-Parsing av HTML er prosessen med å konvertere HTML markups til strukturer som kan forstås av programmer. Dette gjør vi programmerere for å hente informasjon effektivt og organisere data på en strukturert måte fra HTML koder.
-
-## Hvordan:
-Her er et grunnleggende eksempel i Go for å parse en HTML-streng med Go’s innebygde "net/html" pakke.
+## How to: (Slik gjør du det:)
 ```Go
-pakkeringen hoved
+package main
 
-importer(
-	"fmt"
-	"golang.org/x/net/html"
-	"strenger"
+import (
+    "fmt"
+    "strings"
+
+    "golang.org/x/net/html"
 )
 
-funksjon hoved() {
-	s := "<p forname='link'>Hei, <b>verden</b>!</p>"
-	doc, err := html.Parse(strenger.NewReader(s))
-	if err != nil {
-		panic(err)
-	}
-	var f funksjonen(n *html.Node) {
-		if n.Type == html.ElementNode {
-			fmt.Println(n.Data, ": ", n.Attr)
-		}
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			f(c)
-		}
-	}
-	f(doc)
+func main() {
+    // Eksempel HTML
+    rawHTML := `<p>Hei, Norge!</p><div><span>Velkommen til Go!</span></div>`
+
+    // Parse HTML
+    doc, err := html.Parse(strings.NewReader(rawHTML))
+    if err != nil {
+        panic(err)
+    }
+
+    // Traverser og skriv ut tekstinnhold
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.TextNode {
+            fmt.Println(n.Data)
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
+    f(doc)
 }
+
+// Utdata:
+// Hei, Norge!
+// Velkommen til Go!
 ```
-Når du kjører denne koden, vil utdataene se slik ut:
-```Go
-p :  [{ fornavn link }]
-b :  []
-```
-## Dyp Dykk
-**Historisk kontekst**: Parsing av HTML i programmering har vært anvendt siden tiden for web scraping, for å manipulere og hente data fra internett-sider. 
 
-**Alternativer**: Det er mange biblioteker tilgjengelig for parsing av HTML som 'BeautifulSoup', 'lxml', 'html.parser' i andre programmeringsspråk som Python, men Go sin 'net/html' pakke gir en god og enkel måte å parse HTML på.
+## Deep Dive (Dypdykk)
+Parsing HTML i Go ble enklere med pakken "golang.org/x/net/html", som ble introdusert som del av golangs tredjepartspakker. Før dette var alternativene å bruke regulære uttrykk (ikke anbefalt for HTML) eller andre språk. Detaljene innebærer å bygge et DOM tre og traversere nodene. Man kan finne spesifikke elementer, attributter, og tekstverdier, noe som er essensielt for web scraping og automatisering av oppgaver.
 
-**Implementeringsdetalj**: I praksis kan HTML parsing bli kompleks avhengig av hvor sammensatt HTML-koden er. Men Go's innebygde 'net/html' pakke forenkler denne kompleksiteten ved å behandle HTML's hierarkiske DOM-struktur som en rekke noder.
-
-## Se Også
-- Hvis du ønsker å fordype deg enda mer innen HTML parsing, kan du sjekke ut denne artikkelen: [Advanced HTML parsing in Go](https://medium.com/@ankurgel/working-with-go-1-11-4ca098a178a).
-- For en mer detaljert veiledning i HTML parsing i andre programmeringsspråk, sjekk ut disse linkene: [Parsing HTML in Python](https://realpython.com/python-web-scraping-practical-introduction/), [Parsing HTML in Javascript](https://javascript.info/dom-parsing).
+## See Also (Se også)
+- Go Docs for "net/html" package: [https://pkg.go.dev/golang.org/x/net/html](https://pkg.go.dev/golang.org/x/net/html)
+- Go Query, for jQuery-lignende parsing av HTML i Go: [https://github.com/PuerkitoBio/goquery](https://github.com/PuerkitoBio/goquery)

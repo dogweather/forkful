@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:38:08.343904-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇 & 왜?)
+문자열에서 날짜를 파싱하란 문자열 속 날짜 정보를 추출하여 사용 가능한 형태로 변환하는 행위를 말해요. 프로그래머들은 데이터 가공, 날짜 연산, 또는 사용자 인터페이스와의 상호작용을 위해 이 작업을 합니다.
 
-문자열에서 날짜를 파싱한다는 것은, 문자열을 통해 날짜 정보를 추출하는 작업을 말합니다. 프로그래머들은 데이터 처리, 정렬, 비교 등을 위해 이와 같은 작업을 수행합니다.
-
-## 어떻게 하나요:
-
-Ruby에서 문자열에서 날짜를 파싱하기 위해 Date.parse 메소드를 사용할 수 있습니다. 먼저 'date' 라이브러리를 임포트해야 합니다.
-
+## How to: (어떻게 하나요?)
 ```Ruby
 require 'date'
 
-date = Date.parse('2022-04-22')
-puts date
+# 문자열에서 Date 객체 생성
+date_string = "2023-04-01"
+parsed_date = Date.parse(date_string)
+puts parsed_date       # 2023-04-01
+
+# strftime을 활용해 형식 지정
+formatted_date = parsed_date.strftime("%Y년 %m월 %d일")
+puts formatted_date   # 2023년 04월 01일
+
+# 유효하지 않은 날짜가 있다면?
+begin
+  invalid_date = Date.parse("잘못된-날짜")
+rescue ArgumentError => e
+  puts "유효하지 않은 날짜입니다: #{e.message}"
+end
 ```
 
-결과는 다음과 같습니다:
+## Deep Dive (심층 분석)
+날짜 파싱은 초기 프로그래밍 시절부터 필요했습니다. 까다로운 국제표준을 만족시키기 위해, 다양한 포맷과 시간대를 지원해야 했죠. Ruby에서는 표준 라이브러리인 'date'를 사용하여 날짜를 쉽게 파싱할 수 있어요. 복잡한 파싱이 필요하다면, 'time'이나 'datetime'을 사용할 수도 있죠. 'strptime' 메소드를 통해 커스텀 형식의 문자열을 파싱하는 방법도 있어요. 주요 포인트는 날짜 데이터가 정확하고, 타임존에 주의하며, 예외 처리를 통해 오류를 깔끔하게 관리하는 겁니다.
 
-```Ruby
-2022-04-22
-```
-
-## 심화 학습:
-
-1) 역사적 맥락: 초기 프로그래밍 언어에서는 문자열을 날짜로 변환하는 기능이 내장되지 않아 복잡한 알고리즘을 직접 구현해야 했습니다. Ruby에서는 'date' 라이브러리를 통해 이를 쉽게 할 수 있습니다.
-
-2) 대체 방법: 구조화된 문자열에서 날짜를 파싱하는 것 외에, 시간 객체를 직접 생성하거나 epoch 시간(1970년 1월 1일 이후 초)을 계산하는 방법도 있습니다.
-
-3) 구현 세부 사항: 내부적으로 Date.parse는 입력된 문자열을 분석하고 유효한 날짜 형식을 찾습니다. 유효한 형식이 없는 경우, ArgumentError가 발생합니다.
-
-## 참고 자료:
-
-1) Ruby 공식 문서 - Date.parse: https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-c-parse
-2) 문자열을 날짜로 변환하는 다양한 방법: https://www.justinweiss.com/articles/3-ways-to-parse-a-date-in-ruby/
-3) Ruby에서 시간과 날짜 처리: https://www.tutorialspoint.com/ruby/ruby_date_time.htm
+## See Also (참고자료)
+- Ruby 공식 문서: [Date](https://ruby-doc.org/stdlib-3.1.2/libdoc/date/rdoc/Date.html)
+- Ruby 공식 문서: [DateTime](https://ruby-doc.org/stdlib-3.1.2/libdoc/date/rdoc/DateTime.html)
+- strftime 지시자 목록: [strftime](https://apidock.com/ruby/DateTime/strftime)

@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:34:13.723455-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-HTML-tolkning handlar om att läsa HTML-kod och omvandla den till ett formellt format, vilket ofta är ett objektträd. Programmerare gör det för att extrahera, analysera och manipulera webbinnehåll, och till och med skrapa webbplatser.
+## What & Why? (Vad & Varför?)
+Parsing HTML innebär att vi läser och tolkar HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att manipulera, extrahera eller interagera med webbinnehåll.
 
-## Hur man gör:
-Följande är ett exempel på hur man tolkar HTML med Node.js och `jsdom` biblioteket i TypeScript:
+## How to: (Hur?)
+Vi använder `DOMParser` för att parse:a HTML i TypeScript.
 
-```TypeScript
-import { JSDOM } from 'jsdom';
+```typescript
+const htmlString = `<p>Hej världen!</p>`;
+const parser = new DOMParser();
+const doc = parser.parseFromString(htmlString, 'text/html');
 
-async function parseHTML(html: string) {
-   const dom = new JSDOM(html);
-   return dom;
-}
-
-const html = "<div>Hej Världen!</div>";
-parseHTML(html).then(dom => {
-  console.log(dom.window.document.querySelector("div").textContent);
-});
+console.log(doc.body.firstChild?.textContent); // Output: "Hej världen!"
 ```
 
-När du kör denna kod, borde output vara:
+Ett mer komplext exempel, där vi får tag på element via klassnamn:
 
+```typescript
+const htmlString = `<div><p class="hälsning">Hej igen!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+
+const greeting = doc.querySelector('.hälsning');
+console.log(greeting?.textContent); // Output: "Hej igen!"
 ```
-Hej Världen!
-```
 
-## Djupdykning
-Historiskt sett har det funnits flera metoder för att tolka HTML, inklusive men långt ifrån begränsat till standard DOM-API: er och bibliotek som ``beautifulsoup`` (Python) och ``jquery`` (JavaScript). 
+## Deep Dive (Djupdykning)
+Förr i tiden extraherade vi data ur HTML med regular expressions, men det var knepigt och osäkert. DOMParser erbjuder en robust lösning som följer webbstandarder, vilket gör det enklare att arbeta med XML- eller HTML-dokument. 
 
-Ett alternativ till att använda ``jsdom`` är att använda cheerio-biblioteket, vilket kan ge bättre prestanda för server-side rendering men saknar förmågan att hantera JavaScript inuti HTML.
+JavaScript-bibliotek som Cheerio är alternativ som kör på serversidan och erbjuder jQuery-liknande syntax för att navigera DOM-trädet. Andra ramverk som JSDom låter dig simulera en webbläsarmiljö.
 
-När det gäller implementation, konverterar `jsdom` hela HTML-strängen till ett DOM-träd i minnet. Detta kan leda till stora minnesfotavtryck för stora HTML-dokument, så se upp för det.
+När du använder `DOMParser` bör du tänka på säkerhetsaspekter som innebär att inte manipulera DOM:n med farligt innehåll (t.ex., `XSS`-attacker).
 
-## Se även
-- JSDOM GitHub repo: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
-- Cheerio GitHub repo: [https://github.com/cheeriojs/cheerio](https://github.com/cheeriojs/cheerio)
-- HTML-parsing med Node.js: [https://nodejs.org/api/all.html#all_console_dir_obj_options](https://nodejs.org/api/all.html#all_console_dir_obj_options)
+## See Also (Se också)
+- MDN Web Docs om DOMParser: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+- Cheerio GitHub-sida: https://github.com/cheeriojs/cheerio
+- JSDom GitHub-sida: https://github.com/jsdom/jsdom

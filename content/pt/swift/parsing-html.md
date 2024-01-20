@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:34:13.802519-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML no Swift: O que, porquê e como?
+## What & Why?
+Parsear HTML é o ato de transformar texto HTML em algo que seu programa entenda e possa manipular. Programadores fazem isso para extrair informações, automatizar interações com páginas web ou migrar conteúdo para diferentes formatos.
 
-## O que & Porquê?
-
-*Parsing* HTML é o processo de analisar documentos escritos em HTML para obter informações estruturadas. Programadores fazem isso para extrair dados úteis de páginas da web e manipulá-los conforme necessário.
-
-## Como Fazê-lo:
-
-A biblioteca SwiftSoup é uma opção sólida para analisar HTML no Swift. Aqui está um exemplo simples de como isso funciona:
+## How to:
+Swift não tem suporte nativo para parsear HTML, então vamos usar uma biblioteca chamada SwiftSoup. Instale adicionando `SwiftSoup` ao seu arquivo `Podfile` ou `Package.swift`.
 
 ```Swift
 import SwiftSoup
 
-do {
-    let html = "<html><head><title>Página de teste</title></head><body>Olá Mundo!</body></html>"
-    let doc: Document = try SwiftSoup.parse(html)
-    let title: Element = try doc.select("title").first()!
-    print(try title.text())
-} catch Exception.Error(let type, let message) {
-    print(message)
-} catch {
-    print("Erro desconhecido")
+func extrairTitulos(html: String) {
+    do {
+        let doc = try SwiftSoup.parse(html)
+        let titulos = try doc.select("h1").array().map { try $0.text() }
+        print(titulos)
+    } catch Exception.Error(_, let message) {
+        print(message)
+    } catch {
+        print("Erro desconhecido.")
+    }
 }
+
+let htmlString = "<html><head><title>Exemplo</title></head><body><h1>Cabeçalho 1</h1><h1>Cabeçalho 2</h1></body></html>"
+extrairTitulos(html: htmlString)
 ```
 
-Output:
-
-```Swift
-Página de teste
+Output esperado:
+```
+["Cabeçalho 1", "Cabeçalho 2"]
 ```
 
-## Mergulho Profundo
+## Deep Dive:
+Parsear HTML com Swift é relativamente novo, comparado com linguagens como Python ou Java que têm ferramentas como BeautifulSoup e Jsoup, respectivamente. SwiftSoup é inspirada em Jsoup e oferece uma API similar. É importante saber que fazer parsing de HTML pode ser arriscado se o HTML não for bem formado ou confiável – sempre limpe o conteúdo para evitar ataques como XSS. Alternativas ao SwiftSoup incluem o Kanna e o Alamofire com extensões HTML. Quanto à implementação, a biblioteca SwiftSoup faz um uso pesado de padrões de projetos conhecidos, especialmente o `Visitor Pattern` para percorrer o DOM (Documento Object Model) do HTML.
 
-Desde a invenção do HTML nos anos 90, os programadores têm usado métodos diferentes para analisá-lo. Métodos antigos incluíam combinações de regex e funções de manipulação de strings, mas essas técnicas eram frágeis e propensas a erros. Ferramentas modernas, como o SwiftSoup, tornam o processo muito mais robusto e confiável.
-
-Existem várias alternativas ao SwiftSoup que você pode considerar. Por exemplo, Kanna e Ji são duas bibliotecas populares de parsing HTML para Swift.
-
-O SwiftSoup implicitamente implementa o que é conhecido como um analisador descendente (*top-down parser*), que analisa o HTML começando do topo (o elemento html) e trabalhando para baixo através dos elementos filhos.
-
-## Veja Também
-
-1. [Documentação do SwiftSoup](https://scinfu.github.io/SwiftSoup/)
-3. [Parsing HTML com Ji](https://github.com/honghaoz/Ji)
+## See Also:
+- [SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup)
+- [Tutorial sobre Kanna](https://github.com/tid-kijyun/Kanna)
+- [Guia de injeção segura de HTML em Swift](https://developer.apple.com/documentation/foundation/nsattributedstring/1524613-init)

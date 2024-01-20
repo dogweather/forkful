@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:30:39.019288-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi?
+## What & Why?
+L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une page web. Les programmeurs le font pour extraire des données, automatiser des tâches ou tester des applications.
 
-L'analyse HTML, en somme, signifie la transformation des données HTML en une structure que votre programme peut utiliser. Les programmeurs le font pour récupérer des données d'un document HTML.
-
-## Comment faire:
+## Comment faire :
 
 ```clojure
-(use 'enlive.core)
-(def page (html-resource (java.net.URL. "http://example.com")))
+(require '[enlive.core :as enlive])
 
-(defn parse-data [node]
-  {:title (-> node (select [:#title]) text)})
+; Charger le HTML depuis une URL ou un fichier
+(def page-html (enlive/html-resource (java.net.URL. "http://exemple.com")))
+
+; Sélectionner et extraire des éléments avec un sélecteur CSS
+(defn extract-titles [html]
+  (map :content (enlive/select html [:h1])))
+
+; Utiliser sur notre page chargée
+(extract-titles page-html)
 ```
 
-Envoie:
+Sortie prévue :
+
 ```clojure
-{:title "Example Domain"}
+("Titre de la Page")
 ```
 
-La bibliothèque Clojure `enlive` se charge tout simplement de la tâche d'analyse. Ici, nous obtenons le titre de la page à l'aide de la fonction `select`.
+## Plongée profonde
 
-## Plongée profonde:
+Historiquement, l'analyse HTML était ardue. La variabilité et la complexité du HTML rendaient les parseurs classiques insuffisants. EnLive, la bibliothèque utilisée dans notre exemple Clojure, utilise des sélecteurs à la CSS pour identifier les éléments, simplifiant ainsi le processus.
 
-L'analyse HTML a commencé dans le besoin de récupérer et manipuler les informations disponibles sur le web. Aujourd'hui, de nombreux outils comme BeautifulSoup (Python), Nokogiri (Ruby) et maintenant `enlive` (Clojure) existent à cette fin.
+Alternatives :
+- `jsoup` est une autre option, similaire à EnLive mais issue du monde Java.
+- `hickory` et `hiccup` sont des bibliothèques Clojure pour représenter et manipuler du HTML de manière idiomatique.
 
-En Clojure, en live offre un moyen idiomatique d'analyser HTML. Cependant, il n'est pas le seul. Des options comme `jsoup` et `hickory` sont disponibles si `enlive` ne répond pas à vos besoins.
+Détails d'implémentation :
+EnLive navigue dans le DOM (Document Object Model) pour récupérer et manipuler des éléments. L'approche consistant à utiliser des sélecteurs CSS pour identifier les zones d’intérêt rend l'outil à la fois puissant et accessible.
 
-En termes de mise en œuvre, `enlive` utilise des documents basés sur les nœuds pour représenter et manipuler le HTML. Cela signifie que nous pouvons transmettre des parties du document à des fonctions pour une manipulation plus fine.
+## Voir Aussi
 
-## Voir aussi:
-
-Enlive GitHub - https://github.com/cgrand/enlive
-
-Document Clojure on parsing HTML with Enlive - https://clojuredocs.org/clojure.xml/parse
-
-Jsoup: Java HTML Parser - https://jsoup.org/
-
-Hickory, a Clojure library for parsing HTML - https://github.com/davidsantiago/hickory
-
-N'oubliez pas de tester et d'expérimenter avec différentes bibliothèques pour voir laquelle conviendra le mieux à votre projet!
+- Documentation de EnLive : [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- Tutoriel jsoup pour les débutants : [https://jsoup.org/cookbook/](https://jsoup.org/cookbook/)
+- La documentation de Hickory : [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+- Guide de démarrage rapide Hiccup : [https://github.com/weavejester/hiccup](https://github.com/weavejester/hiccup)

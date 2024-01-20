@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:30:46.117574-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "C#"
 category:             "C#"
@@ -10,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Title: HTML पर्सिंग के बारे में C# में जानें
+## What & Why? (क्या और क्यों?)
+HTML parsing का मतलब है HTML documents से data extract करना। Programmers इसका इस्तेमाल web pages से information निकालने के लिए करते हैं, जैसे कि web scraping, content analysis, या data migration.
 
-## क्या और क्यों ?
-HTML पार्सिंग वह प्रक्रिया है जिसके द्वारा हमें HTML डॉक्यूमेंट को उसके घटकों या element के रूप में विभाजित किया जाता है। प्रोग्रामर्स इसे वेबसाइट डाटा खोजने, मनिपुलेट करने और डाटा माइनिंग के लिए करते हैं। 
-
-## कैसे :
-यहाँ हम HtmlAgilityPack लाइब्रेरी का इस्तेमाल करेंगे।
+## How to: (कैसे करें:)
+आइए C# में HTML parsing करने के लिए `HtmlAgilityPack` library का उपयोग करते हैं।
 
 ```C#
 using HtmlAgilityPack;
-var web = new HtmlWeb();
-var doc = web.Load("https://example.com");
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-// Html element की खोज
-var node = doc.DocumentNode.SelectSingleNode("//head/title");
-Console.WriteLine("Title: {0}", node.InnerHtml);
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        var url = "http://example.com";
+        var httpClient = new HttpClient();
+        var html = await httpClient.GetStringAsync(url);
 
-// Output: Title: Example Domain
+        var htmlDoc = new HtmlDocument();
+        htmlDoc.LoadHtml(html);
+
+        var nodes = htmlDoc.DocumentNode.SelectNodes("//h1");
+        
+        foreach (var node in nodes)
+        {
+            Console.WriteLine(node.InnerText);
+        }
+    }
+}
 ```
+Sample output इस प्रकार हो सकता है:
+```
+Example Domain
+```
+यह कोड example.com से H1 tags के अंदर का text प्रिंट करता है।
 
-## गहरा शोध
-### ऐतिहासिक संदर्भ
-HTML पार्सिंग की आवश्यकता तब आई जब वेबसाइट्स का डाटा अधिक डाइनामिक हो गया था।
+## Deep Dive (गहराई से समझें)
+HTML parsing की जरूरत पहली बार महसूस की गई जब internet पर बहुतायत से information मिलने लगी। पिछले समय में, जैसे-जैसे websites की संरचना जटिल होती गई, HTML parsing के method भी advanced होते गए।
 
-### विकल्प
-JavaScript के लिए jsoup, Python के लिए BeautifulSoup जैसे अलग-अलग भाषा में विभिन्न लाइब्रेरीज़ उपलब्ध हैं।
+`HtmlAgilityPack` .NET के लिए एक popular HTML parsing library है, जो कि robust है और broken HTML को भी handle कर सकती है। अन्य alternatives में `AngleSharp` जैसी libraries भी शामिल हैं जो modern web standards को support करती हैं।
 
-### क्रियान्वयन विवरण
-HtmlAgilityPack इसे आधिकारिक तरीके से DOM में बदलता है जो इसे प्रगतिशील और लचीला बनाता है।
+Implementation में, parsers XHTML और HTML standards के अनुसार DOM (Document Object Model) तैयार करते हैं, जिससे developers के लिए specific nodes ढूंढना और manipulate करना आसान हो जाता है।
 
-## और भी देखें
-- [HtmlAgilityPack GitHub](https://github.com/zzzprojects/html-agility-pack)
-- [Jsoup: Java HTML Parser](https://jsoup.org)
-- [Beautiful Soup: Python Library](https://www.crummy.com/software/BeautifulSoup/)
+## See Also (और जानकारी के लिए)
+- HtmlAgilityPack GitHub page: [HtmlAgilityPack](https://github.com/zzzprojects/html-agility-pack)
+- AngleSharp GitHub page: [AngleSharp](https://github.com/AngleSharp/AngleSharp)
+- W3C standards for HTML: [W3C HTML](https://www.w3.org/TR/html52/)

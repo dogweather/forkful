@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:37:50.820892-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-Використовуючи PowerShell, нерідко виникає необхідність аналізувати дату з рядка. Цей процес називається "parsing". Програмісти роблять це для сортування, порівняння або просто керування датами в рядках.
+## Що & навіщо?
+Парсинг дати із рядка -- це процес витягнення дати у стандартизованому форматі із тексту. Програмісти роблять це для обробки та аналізу часових даних в автоматизованому режимі.
 
-## Як це робити:
-Ось простий приклад коду, який показує, як виконується процес:
+## Як це зробити:
 ```PowerShell
-$StringDate = '01-02-2021'
-$ParsedDate = [datetime]::ParseExact($StringDate, 'dd-MM-yyyy', $null)
-Write-Output $ParsedDate
+# Parsю ввести дату у форматі рядка
+$dateString = "12 квітня 2023"
+
+# Використовую [datetime]::ParseExact(), щоб перетворити рядок у об'єкт DateTime
+$format = "d MMMM yyyy"
+$culture = [System.Globalization.CultureInfo]::GetCultureInfo("uk-UA")
+$dateTime = [datetime]::ParseExact($dateString, $format, $culture)
+
+# Вивід результату
+$dateTime
 ```
-При виконанні цього скрипта, ви отримаєте наступний результат:
-```PowerShell
-Sunday, February 1, 2021 12:00:00 AM
+Виходить:
 ```
-
-## Глибоке занурення:
-Перед введенням PowerShell, программісти використовували різні способи аналізу дати з рядка, наприклад прийоми з JScript або VBScript. Але PowerShell вносить у цей процес значні полегшення.
-
-Наприклад, альтернативою для ```[datetime]::ParseExact``` є ```[datetime]::TryParseExact```, що повертає булеве значення, яке вказує, чи було успішним аналізування рядка або ні.
-
-Якщо рядок містить фрагменти, які потрібно проігнорувати при аналізуванні, то випарсити дату можна за допомогою його формату:
-```PowerShell
-$StringDate = 'Дата: 01-02-2021'
-$ParsedDate = [datetime]::ParseExact($StringDate, "'Дата: 'dd-MM-yyyy", $null)
-Write-Output $ParsedDate
+середа, 12 квітня 2023 р. 0:00:00
 ```
 
-## Додатково:
-Чудове джерело для додаткового вивчення цієї теми - офіційна документація Microsoft, особливо сторінка ParseExact: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=netframework-4.7.2
+## Поглиблено:
+Колись дати вводилися вручну та перевірялися на помилки. Сучасні технології дозволяють автоматизувати цей процес. Метод `ParseExact` дозволяє вказати конкретний формат дати і культурний контекст (наприклад, українську локаль `uk-UA`). Є альтернативи: `Parse()`, який намагається розпізнати формат автоматично, і `TryParse()`, який використовується для безпечного парсингу, коли є ризик помилок у форматі дати.
+
+## Дивись також:
+- [Документація по класах DateTime і CultureInfo на Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Про CultureInfo на Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
+- [Про форматування дат і часу на Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

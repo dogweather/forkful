@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:30:05.240707-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,53 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Parsing HTML innebærer å tolke og analysere HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å hente ut eller manipulere data, trappe opp web scraping, eller bygge innholdsdrevne applikasjoner.
 
-Å parse HTML handler om å bryte ned HTML-kode i mindre deler for å forstå dens struktur og innhold. Programmerere utfører denne handlingen for å ekstrahere spesifikk informasjon, manipulere data, og bygge dynamiske nettsider i realtid.
-
-## Hvordan:
-
-Her er et eksempel på hvordan å lage en enkel HTML-parser i C:
+## How to: (Slik gjør du:)
+For å parse HTML i C, kan du bruke biblioteket `libxml2`. Her er et eksempel som viser grunnleggende bruk:
 
 ```C
 #include <stdio.h>
-#include "gumbo.h"
-
-void print_tree( GumboNode* node ) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
-    }
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        print_tree(children->data[i]);
-    }
-}
+#include <libxml/HTMLparser.h>
 
 int main() {
-    GumboOutput* output = gumbo_parse("<h1>Hello, World!</h1>");
-    print_tree(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    htmlDocPtr doc;
+    htmlNodePtr root;
+
+    // Parse HTML fra en streng
+    const char *html = "<html><body><p>Hello, Norway!</p></body></html>";
+    doc = htmlReadDoc((xmlChar*)html, NULL, NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+
+    // Få rotnoden
+    root = xmlDocGetRootElement(doc);
+    
+    // Skriv ut rotnoden
+    printf("Root element: %s\n", (char *)root->name);
+
+    // Rydd opp
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+
     return 0;
 }
 ```
 
-Da du kjører denne koden, vil utdata se slik ut:
-
+Eksempelutdata:
 ```
-Hello, World!
+Root element: html
 ```
 
-Du vil ikke se HTML-taggene, men teksten blir ekstrahert.
+## Deep Dive (Dypdykk)
+Parsing HTML med C har ikke alltid vært greit. Før biblioteker som `libxml2`, måtte man ofte skrive sin egen parser, et arbeid som er både komplekst og feilutsatt.
 
-## Dypdykk
+Alternativer inkluderer å bruke regulære uttrykk for enkel dataekstraksjon eller koble seg til en nettlesermotor for å gjøre jobben. Men disse metodene kommer med egne problemer – regex er upålitelig for komplekse HTML og nettlesermotorer er tyngre løsninger.
 
-Gumbo er en åpen kildekode C HTML-parser bygget av Google. Historisk sett har det vært få gode alternativer for HTML-parsing i C, men de nyere alternativene har blitt mer fremtredende, som MyHTML og HTMLParserC.
+Det settes pris på `libxml2` fordi det tilbyr en rimelig balanse av ytelse og fleksibilitet. Det håndterer feil i HTML på en vennlig måte og tar seg av utfordringene som kommer med å tolke "ekte verden" HTML.
 
-Parsing av HTML kan variere i kompleksitet, avhengig av hvor robust parseren er. Det krever forståelse av Document Object Model (DOM), som er en kryssplattform og språkuavhengig grensesnitt som lar programmer manipulere HTML.
-
-## Se Også
-
-1. Gumbo HTML-parser: https://github.com/google/gumbo-parser
-2. MyHTML GitHub: https://github.com/lexborisov/myhtml
-3. HTMLParserC GitHub: https://github.com/AMDmi3/htmlparser
-4. Document Object Model (DOM): https://developer.mozilla.org/no/docs/Web/API/Document_Object_Model/Introduction
+## See Also (Se Også)
+- Offisiell `libxml2` nettside: http://xmlsoft.org/
+- W3C HTML spesifikasjon: https://www.w3.org/TR/html52/
+- TutorialsPoint's guide til `libxml2`: https://www.tutorialspoint.com/libxml/index.htm

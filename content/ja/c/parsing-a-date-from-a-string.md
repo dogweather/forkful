@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:34:54.844894-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "C"
 category:             "C"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-日付のパースとは、文字列から日付情報を取り出すプロセスのことを指します。これは、さまざまなフォーマットの日付を統一し、要求に応じて効率的に使用できるようにするためにプログラマーが行います。
+## What & Why? (何となぜ？)
+デート文字列の解析は、文字列から日付データへの変換です。データ処理、有効性チェック、ユーザーインターフェイスとのやり取りのためにプログラマーはこれを行います。
 
-## 使い方：
-以下に示すように、`sscanf`関数の利用で、文字列から日付をパースします。
-
-```C
+## How to: (方法)
+```c
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 int main() {
-    int day, month, year;
-    char str[] = "15-09-2021";
-    sscanf(str, "%d-%d-%d", &day, &month, &year);
-    printf("Day: %d, Month: %d, Year: %d\n", day, month, year);
+    const char *dateString = "2023-04-05";
+    struct tm tm;
+    char buf[255];
+
+    if (strptime(dateString, "%Y-%m-%d", &tm) == NULL) {
+        printf("Date parsing failed.\n");
+        return 1;
+    } else {
+        // successfully parsed, now you can use tm to manipulate date
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("Parsed date: %s\n", buf);
+    }
+
     return 0;
 }
 ```
-
-このコードを実行すると以下のような出力が生じます：
+Sample Output:
 ```
-Day: 15, Month: 9, Year: 2021
+Parsed date: Wednesday, April 05, 2023
 ```
 
-## 深堀り：
-### ヒストリカルコンテキスト
-早い段階では、日付の解析は手動で行われ、それぞれの文脈で異なる方法が使用されました。 Cプログラミング言語が提供する一般的な関数のひとつとしての`sscanf`は、標準化と自動化を提供しました。
+## Deep Dive (深く掘り下げる)
+日付の解析は C 標準ライブラリが 'strptime()' 関数でサポートしていますが、これは UNIX 系システムでのみ利用できます。Windows では別の関数を使うことになります。代替として、自作の解析関数を書くことも可能ですが、複雑性やエラーチェックが必要です。この関数を使うと、便利な操作ができるようになる 'struct tm' に日付が格納されます。カスタム形式で出力したい場合は 'strftime()' を使います。
 
-### 代替案：
-一部のプロジェクトでは、特殊なニーズを満たすためにカスタムパーサーを使用することがあります。また、他の言語やライブラリには、より深いコントロールまたはより豊富な機能を提供する日付パーサがあります。
-
-### 実装の詳細：
-Cにおける`sscanf`の基本的な機能では、「%d」は整数を検索し、「-」は区切り文字として機能します。この関数は文字列を左から右へと読み進み、指示に従って値を抽出します。
-
-## 参考資料：
-- Cプログラミングにおける[`sscanf`](https://www.cplusplus.com/reference/cstdio/sscanf/)
-- [`strftime`](https://www.cplusplus.com/reference/ctime/strftime/)によるCにおける日付フォーマットのカスタマイズ。
+## See Also (さらに参照)
+- C Standard Library Documentation: https://en.cppreference.com/w/c/chrono
+- GNU C Library manual for strptime: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html
+- strftime format options: https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#index-strftime

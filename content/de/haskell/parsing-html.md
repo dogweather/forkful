@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:31:58.563713-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Haskell"
@@ -10,44 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML in Haskell: Eine leichte Methode
-
 ## Was & Warum?
 
-Das Parsen von HTML bedeutet, HTML-Strings zu analysieren und sie in eine für den Computer verständliche Struktur umzuwandeln. Wir tun dies, um den Inhalt von Webseiten programmgesteuert zu manipulieren oder auszulesen.
+Parsing von HTML bedeutet, den Quelltext einer Webseite in eine strukturierte Form umzuwandeln, die programmatisch verarbeitet werden kann. Das machen Programmierer, um Informationen zu extrahieren oder Webinhalte zu interagieren.
 
-## Wie geht's:
+## Vorgehensweise:
 
-Um einen HTML-String in Haskell zu parsen, können wir die `html-conduit` und `xml-conduit` Bibliotheken benutzen. Im Folgenden finden Sie ein einfaches Beispiel:
+In Haskell nutzen wir Bibliotheken wie `hxt` (Haskell XML Toolbox), um die Arbeit zu erleichtern. Hier ist ein einfaches Beispiel:
 
 ```Haskell
-import Text.XML.Cursor
-import Network.HTTP.Conduit
-import qualified Data.Text as T
+import Text.XML.HXT.Core
 
 main :: IO ()
 main = do
-  doc <- simpleHttp "https://example.com" >>= return . parseLBS_ def 
-  let cursor = fromDocument doc
-  print $ cursor $// element "title" &// content
+  let html = "<html><body><p>Hallo, Welt!</p></body></html>"
+  runX $ readString [withParseHTML yes, withWarnings no] html
+         >>> deep (isElem >>> hasName "p")
+         >>> getText
 ```
-Wenn Sie dieses Programm ausführen, lädt es die HTML-Seite von `example.com` und gibt den Inhalt des Titel-Tags aus.
 
-## Tief eingehen
+Wenn du das ausführst, erhältst du als Ausgabe:
 
-HTML-Parsing hat seinen Ursprung in der Notwendigkeit, die oft chaotische und uneinheitliche Struktur von HTML-Code in eine konsistente und leicht manipulierbare Datenstruktur zu überführen.
+```
+Hallo, Welt!
+```
 
-Als Alternative zum `html-conduit` und `xml-conduit` könnten Sie auch `tagsoup`, `html-tagsoup` oder `pandoc` benutzen, die ebenso beliebt und mächtig sind.
+## Tiefgang:
 
-Im Detail verwendet unser obiger Code die Funktion `simpleHttp`, um eine HTTP-Anfrage zu senden und die Antwort als `ByteString` zurückzugeben. Dann verwendet es `parseLBS_` um diesen `ByteString` in ein `Document` zu überführen, und `fromDocument` um das `Document` zu einem `Cursor` zu machen. Jeder dieser Schritte bietet verschiedene Möglichkeiten zur Fehlersuche und Optimierung, die außerhalb des Rahmens dieses Artikels liegen.
+Parsing von HTML kann trickreich sein, weil HTML oft nicht wohlgeformt ist. Historisch betrachtet war das Parsen daher fehleranfällig. Libraries wie `hxt` abstrahieren viele Herausforderungen. Alternativen in anderen Sprachen, wie Beautiful Soup für Python, zeigen, wie verbreitet das Bedürfnis nach robusten Parsing-Werkzeugen ist. Implementation details in `hxt` nutzen Lazy Parsing, Arrow-Notation für Klarheit und Anpassungsfähigkeit, und Fehlerbehandlung, um mit der Unbeständigkeit realer HTML-Dokumente umzugehen.
 
-## Siehe auch
+## Siehe auch:
 
-Für weitere Informationen, durchsuchen Sie folgende Links:
-
-1. Der Quellcode von `html-conduit`: https://github.com/snoyberg/xml
-2. Eine gründlichere Einführung in `xml-conduit`: http://www.yesodweb.com/book/xml
-3. Eine Präsentation über HTML-Scraping in Haskell: https://www.slideshare.net/chrisdone/scraping-html-in-haskell
-4. Ein Artikel über `tagsoup`: https://neilmitchell.blogspot.com/2007/10/parsing-html-in-haskell.html
-
-Frohes Parsen!
+- Haskell XML Toolbox (HXT): http://hackage.haskell.org/package/hxt
+- Über XML Arrows in Haskell: https://en.wikibooks.org/wiki/Haskell/XML
+- CSS Selektoren fürs Parsing mit Haskell: http://hackage.haskell.org/package/hxt-css-selectors

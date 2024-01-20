@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:36:01.367000-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що та Чому?
 
-Парсинг дати з рядка - це процес переведення рядка, що містить дату, в дату, що може бути використана програмами. Програмісти це роблять, щоб можна було працювати з датами, як з об'єктами, а не просто як з текстом.
+Розбір дати зі строки — це процес перетворення текстового представлення дати в структурований формат, яким легко маніпулювати. Програмісти роблять це, щоби працювати з датами: порівнювати, додавати час, змінювати формати.
 
-## Як це працює:
+## Як це зробити:
 
-У Fish Shell це виглядає так:
+Простий приклад у Fish Shell, щоби перетворити строку в дату:
 
-```fish
-set -l date_string "2022-02-20"
-set -l parsed_date (date -u -j -f %Y-%m-%d $date_string "+%s")
+```Fish Shell
+set date_string "2023-03-23"
+set epoch_time (date --date=$date_string +%s)
+echo $epoch_time
 ```
 
-Тут ми створюємо змінну `date_string` із рядком дати, а потім переводимо цей рядок в дату за допомогою команди `date -u -j -f %Y-%m-%d $date_string "+%s"`.
+Цей код повертає Unix час (кількість секунд з 1 січня 1970) у вигляді числа.
 
-## Поглиблений розгляд
+Для виводу в нормальному форматі можемо зробити так:
 
-Історично, парсинг дати був болючим процесом через розмаїтість форматів дати. Розуміння форматів потребує знання локалізації та культурних особливостей, що може бути викликом. 
+```Fish Shell
+set normal_time (date --date=$date_string +"%Y-%m-%d %H:%M:%S")
+echo $normal_time
+```
 
-Альтернативною можливістю для Fish Shell є використання вбудованих команд інших оболонок, таких як bash чи zsh, але це може призвести до збоїв у скриптах, якщо не врахувати всі можливі відмінності між оболонками. 
+Тут ми отримали строку типу "2023-03-23 00:00:00".
 
-Details implementation-wise, Fish Shell uses the inbuilt `date` command with specified flags to convert the string into a timestamp. If you want to use a different format, alter the format specifier (like %Y-%m-%d) inside the date command. 
+## Поглиблено:
 
-## Дивись також 
+Розбір дати зі строки — стандартний процес в будь-якій мові програмування. Головна мета — зробити дату зручною для обчислень та форматувань. У минулому кожен розробник писав свої функції, тепер це вбудовані функції або бібліотеки. У Fish Shell `date` — це зовнішня команда Unix, що працює з датами. Інші мови мають свої інструменти, наприклад, `datetime` у Python. Особливістю Fish Shell є те, що багато зручностей є "з коробки", а робота зі строками і датами не виключення.
 
-- [Офіційна документація Fish Shell про управління датою та часом](https://fishshell.com/docs/current/index.html#date-and-time)
-- [Туторіал про обробку дати і часу в Unix shell](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [StackOverflow розмови про парсинг дати в Fish Shell](https://stackoverflow.com/questions/24582338/how-can-i-get-beautiful-date-time-on-the-command-line-interface)
+## Також гляньте:
+
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- Unix `date` command: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- POSIX standards for date and time: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/date.html
+- Stack Overflow, examples and community wisdom: https://stackoverflow.com/questions/tagged/fish

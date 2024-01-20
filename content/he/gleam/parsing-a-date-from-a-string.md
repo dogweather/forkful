@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:36:21.252403-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,40 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+פענוח תאריך ממחרוזת זה התהליך שבו מתרגמים טקסט לתאריך שהמחשב יכול להבין. תכניתנים עושים זאת כי עליהם לעבוד עם תאריכים בפורמטים שונים, לשמור אותם במסדים ולהציג אותם למשתמשים.
 
-ביצוע "פירסונג" לתאריך ממחרוזת הוא פעולה שבה אנו משנים את הצורה של מחרוזות לצורה של משתנה מסוג תאריך. מתכנתים עושים זאת כדי להפוך נתונים אקראיים להיות משמשים בקוד, כמו לבצע חישובים של משך זמן.
-
-## איך לעשות את זה:
-
-להלן דוגמה של קוד שלמ בשפת Gleam:
+## איך לעשות:
+כאן נראה איך לעשות את זה ב-Gleam. דוגמא פשוטה:
 
 ```gleam
-import gleam/calendar.{iso8601, date}
+import gleam/calendar.{Date}
+import gleam/should
+import gleam/string.{from_slice}
+
+fn parse_date(date_string: String) -> Result(Date, Nil) {
+  // Your implementation here to parse the date string
+  // לדוגמא, נניח שאנחנו מנתחים תאריך בפורמט YYYY-MM-DD
+  "2023-03-14"
+    |> from_slice
+    |> String.split(separator: "-")
+    |> should.map(split_string -> {
+      case split_string {
+        [year, month, day] ->
+          Date.from_iso8601(year, month, day)
+        _ ->
+          Error(Nil)
+      }
+    })
+}
 
 fn main() {
-  let date_string = "2022-03-09"
-  let parsed_date = iso8601.date.parse(date_string)
-  
-  case parsed_date {
-    Ok(date) -> date |> date.to_iso8601 |> io.println 
-    Error(Nil) -> "Invalid date format" |> io.println
-  }
+  parse_date("2023-03-14")
 }
 ```
 
-הפלט של הקוד מעלה יהיה:
+תוצאת דוגמא:
+```gleam
+Ok(#Date(year: 2023, month: 3, day: 14))
 ```
-2022-03-09
-```
 
-## צלילה עמוקה:
+## צלילה עמוקה
+פענוח תאריכים הוא נושא שנלמד לעומק ביישומי קלנדר וזמנים. בעבר, תכניתנים נאבקו עם תאימות פורמטים ובעיות של אזורי זמן. כיום, ספריות כגון `gleam/calendar` מפשטות את המשימה. אלטרנטיבות כוללות פונקציונאליות מובנית במערכות בסיס נתונים או שימוש בספריות צד שלישי.
 
-מאז ימי Altair 8800, חלק מהיעדים הראשונים של מתכנתים היה למפר נתונים חוץ של תאריכים לצורות מוכרות יותר. בנוסף, ישנן טכניקות אלטרנטיביות לפירסונג של תאריך ממחרוזת, כמו שימוש בריקורוסיה ותבניות נוספות. בפרט, Gleam משתמש בספריית `gleam/calendar` כדי להפוך את הפונקציה `date.parse` פעולה פשוטה וקלה.
+ביישום, יש להיות מודעים לתקן ISO 8601 עבור פורמט התאריך הבינלאומי ולזכור את החלוקה לאזורים זמנים. טיפול נכון בפורמט יכול למנוע בעיות תאימות עתידיות וטעויות של נתונים.
 
-## המשך קריאה:
-
-אם תרצה לעמוק יותר וללמוד יותר על Gleam ועל התהליך של parsing, אם תרצה להכיר דרך אחרת לעשות זאת, תוכל לבדוק את המקורות הבאים:
-
-1. מדריך בסיסי לשפת Gleam: https://gleam.run/book/tour/
-2. תיעוד של ספריית 'gleam/calendar': https://gleam.run/standard-libraries/library/gleam/calendar/0.2.4/
-3. מקורות שהתייחסים ל-Parsing: https://www.cs.nmsu.edu/~rth/pretty-printers.html
+## ראה גם:
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Understanding Time Zones in Programming](https://www.w3.org/TR/timezone/)

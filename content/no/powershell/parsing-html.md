@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:33:10.166240-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,55 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
-# Parsing HTML med PowerShell: En Trinnsvis Veiledning
-
----
-
 ## Hva & Hvorfor?
+Parsing av HTML handler om å tolke og trekke ut data fra HTML-koder. Programmerere gjør dette for å automatisere prosesser, høste data eller integrere nettsider i apps.
 
-Parsing HTML betyr å analysere HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å trekke ut informasjon eller manipulere websider.
-
-## Hvordan gjør mån det:
-
-Her er en grunnleggende eksempel på hvordan du kan parse HTML ved bruk av PowerShell:
-
+## Hvordan:
 ```PowerShell
-$webpage = Invoke-WebRequest -Uri "https://example.com"
-$parsedHTML = New-Object -ComObject "HTMLFile"
-$parsedHTML.IHTMLDocument2_write($webpage.Content)
+# Installer nødvendig modul
+Install-Module -Name HtmlAgilityPack
+
+# Last inn HtmlAgilityPack
+Add-Type -Path "C:\path\to\HtmlAgilityPack.dll"
+
+# Last inn HTML-dokumentet
+$html = New-Object HtmlAgilityPack.HtmlDocument
+$html.LoadHtml((Invoke-WebRequest -Uri "https://eksempelside.no").Content)
+
+# Finn elementer ved bruk av XPath
+$nodes = $html.DocumentNode.SelectNodes('//h1')
+
+# Skriv ut resultatet
+$nodes | ForEach-Object { $_.InnerText }
 ```
-Dette utdraget henter HTML kodene fra `"https://example.com"` og lager et HTML Document objekt med innholdet, noe som gjør det lettere å manipulere.
-
-For eksempel kan du hente tittelen på en nettside med følgende kode:
-
-```PowerShell
-$title = $parsedHTML.title
-Write-Output $title
+Eksempelresultat:
 ```
-
-Disse kodene vil skrive ut tittelen på nettsiden til konsollen.
-
----
+Velkommen til vår hjemmeside!
+```
 
 ## Dypdykk
+Å tolke HTML har vokst ut fra behovet for å forstå og manipulere webinnhold. Web skraping er en vanlig bruk, men det bryter ofte med nettsidens brukervilkår, så vær forsiktig. Alternativer til HtmlAgilityPack inkluderer AngleSharp og .NET sin egen `HttpClient` klasse for nettanrop kombinert med regulære uttrykk, selv om sistnevnte kan være feilutsatt. For mer robuste løsninger er kunnskap om DOM (Document Object Model) og bruk av XPath eller CSS-selectors viktig.
 
-Historisk sett ble HTML parsing opprinnelig håndtert med lavnivåspråk som C, men moderne programmeringsspråk som PowerShell kan gjøre det samme med mindre kode og mindre kompleksitet. 
-
-Det er flere alternative metoder for parsing av HTML, inkludert bruk av regex eller spesialiserte biblioteker som HtmlAgilityPack i .NET. Velg den metoden som passer best til dine spesifikke behov.
-
-Ved implementering, bør du alltid huske på at strukturen på en nettside kan endres uten varsel, og din parsingkode må håndtere disse endringene pent for å unngå feil.
-
----
-
-## Se også
-
-- `Invoke-WebRequest` og `New-Object` cmdlets i PowerShell dokumentasjon:  
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest  
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-object
-
-- Innføring i HtmlAgilityPack:  
-https://html-agility-pack.net/
-
----
+## Se Også
+- HtmlAgilityPack dokumentasjon: https://html-agility-pack.net/
+- Web scraping guide: https://www.scrapehero.com/how-to-scrape-websites-with-powershell/
+- XPath Syntax: https://www.w3schools.com/xml/xpath_syntax.asp

@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:35:04.325863-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке & Навіщо?
+## Що та навіщо?
 
-Розбір HTML, або парсинг HTML, - це процес аналізу HTML-коду, щоб отримати структуровані дані й взаємодіяти з ними. Програмісти роблять це для автоматичної обробки, маніпуляції даними або витягування інформації з веб-сторінок.
+Парсинг HTML — це процес аналізу HTML-коду для отримання даних чи структури сторінки. Програмісти парсять HTML, щоб маніпулювати контентом, автоматизувати роботу з веб-формами та збирати інформацію з веб-сайтів.
 
 ## Як це зробити:
 
-```TypeScript
-import { parse } from 'node-html-parser';
+Створимо простий парсер HTML у TypeScript за допомогою бібліотеки `node-html-parser`. Найперше, встановимо бібліотеку:
 
-const html = `<ul id="list"><li class="item">Item One</li><li class="item">Item Two</li></ul>`;
-const root = parse(html);
-
-console.log(root.querySelector("#list").text);  // "Item OneItem Two"
+```shell
+npm install node-html-parser
 ```
 
-Вищенаведений код вихоплює текст з елементів у списку HTML.
+Тепер застосуємо її у коді:
 
-## Пірнаємо глибше
+```typescript
+import { parse } from 'node-html-parser';
 
-Розбір HTML виник у 1990-их роках з появою перших веб-сторінок. Є багато альтернатив (бібліотек і модулів), щоб робити це, залежно від мови програмування. Зазвичай, вони будують DOM-дерево з HTML-коду, тобто модель сторінки, яку можна проаналізувати і змінити. Наприклад, в JavaScript можна використовувати JSDOM або Cheerio, а в Python - Beautiful Soup.
+const htmlContent = `
+  <html>
+    <body>
+      <p>Привіт, світ!</p>
+    </body>
+  </html>
+`;
 
-## Дивіться також 
+const root = parse(htmlContent);
+const p = root.querySelector('p');
+console.log(p?.textContent); // Виведе 'Привіт, світ!'
+```
 
-1. [Node HTML Parser на GitHub](https://github.com/taoqf/node-html-parser)
-2. [Стаття на MDN про DOM](https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model)
-3. [Python Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
-4. [JSDOM GitHub Repo](https://github.com/jsdom/jsdom)
-5. [Cheerio на GitHub](https://github.com/cheeriojs/cheerio)
+## Поглиблено:
+
+HTML парсинг — не новий тренд. З початком розвитку вебу програмісти шукали способи читати та керувати HTML. До популярності JavaScript та серверних мов, таких як PHP чи Ruby, HTML зазвичай парсився з допомогою регулярних виразів, що нині вважається поганою практикою через складність надійного аналізу.
+
+Сьогодні, крім `node-html-parser`, існує безліч бібліотек, наприклад, `cheerio` чи `jsdom`, які можуть емулювати поведінку браузера для більш глибокої взаємодії з DOM.
+
+Парсер має відповідати стандартам, що означає працювати з некоректним HTML, аналогічно як це роблять браузери. Процес парсингу складний та включає токенізацію, відстеження стану та відновлення помилок.
+
+## Додатково:
+
+- Бібліотека `node-html-parser`: https://www.npmjs.com/package/node-html-parser
+- Про `cheerio`: https://cheerio.js.org/
+- Про `jsdom`: https://github.com/jsdom/jsdom
+- Специфікація HTML парсингу: https://html.spec.whatwg.org/

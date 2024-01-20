@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:35:44.372902-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,41 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Ale co to i dlaczego?
+## What & Why?
+## Co i Dlaczego?
+Parsing a date from a string means converting text like "2023-04-01" to a date format that a program can understand and manipulate. Programmers do this because dates in text form need to be turned into date types for sorting, comparisons, and other operations.
 
-Parsowanie daty z ciągu to przekształcanie tekstu reprezentującego datę względem określonego formatu w obiekt daty, umożliwiający łatwiejszą manipulację. Programiści to robią, aby uprościć przetwarzanie danych i interakcję użytkownika.
-
+## How to:
 ## Jak to zrobić:
+```Elm
+import Date exposing (Date)
+import Date.Extra.Parse exposing (isoString)
 
-W Elm stosowany jest następujący sposób na parsowanie daty z ciągu:
+parseDate : String -> Result String Date
+parseDate str =
+    case isoString str of
+        Ok date ->
+            Ok date
 
-```elm
-import Time
-import Time.Extra
+        Err error ->
+            Err "Date parse error"
 
-parseDate: String -> Maybe Time.Posix
-parseDate dateString =
-    Time.fromString dateString |> Maybe.andThen Time.Extra.dateTime
+sampleDateStr : String
+sampleDateStr = "2023-04-01"
 
+-- Usage
 main =
-    parseDate "2020-05-12T10:45:00Z"
-        |> Maybe.map Time.toIsoString
-        |> Maybe.withDefault "Niepoprawna data"
+  let
+    parsedDate = parseDate sampleDateStr
+  in
+  case parsedDate of
+    Ok date -> 
+      -- Do something with the `date` (it's now a Date type!)
+    Err errorMessage -> 
+      -- Handle the error
 ```
+Sample output for `parseDate "2023-04-01"` will be `Ok <date_representation>`.
 
-Output:
+## Deep Dive:
+## W Głąb Tematu:
+Historically, parsing dates in Elm has evolved with the language and its type safety features. It's focused on correctness and avoiding runtime errors common in JavaScript. Alternatives to native Elm libraries for parsing dates include using JavaScript interop with ports, but this compromises type safety.
 
-```elm
-"2020-05-12T10:45:00Z"
-```
+Implementation in Elm involves `Result` types to handle potential parsing errors gracefully, a pattern that preserves Elm's guarantees about runtime exceptions. Elm's standard libraries don't include date parsing, so third-party libraries like `justinmimbs/date-extra` are necessary.
 
-## Głębsze spojrzenie
+When implementing date parsing, consider time zones and locales, which can make parsing non-trivial. Rely on libraries that handle these complexities.
 
-Elm jest młodym językiem, ale w jego bibliotece do zarządzania czasem można znaleźć metody do parsowania dat. Alternatywą dla tego jest używanie biblioteki third-party, takiej jak elm-date-extra, która oferuje wiele dodatkowych funkcji, ale może wprowadzać dodatkowe zależności.
-
-Parsowanie daty z ciągu jest zwykle operacją niezawodną, ale w Elm jest ono typu `Maybe`, co oznacza, że może się nie udać i może zwrócić `Nothing`, jeśli format ciągu wejściowego jest niepoprawny. To jest zgodne z filozofią Elm, aby unikać błędów w czasie wykonywania.
-
-## Zobacz też:
-
-- Elm Time -> https://package.elm-lang.org/packages/elm/time/latest/
-- Elm Date Extra -> https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/
+## See Also:
+## Zobacz Również:
+- Elm Date documentation: https://package.elm-lang.org/packages/justinmimbs/date/latest/
+- Elm `Date.Extra.Parse` module: https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/Date-Extra-Parse
+- Elm time zone handling: https://package.elm-lang.org/packages/justinmimbs/timezone-data/latest/

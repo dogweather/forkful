@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:37:08.224833-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Парсинг дати з рядка - це техніка, яка дозволяє комп'ютеру розпізнати дату в заданому текстовому форматі. Це важливо для успішного аналізу даних, сортування та фільтрації.
+## Що та Чому?
+Розбір дати з рядка — це процес отримання структурованої інформації про дату з текстового формату. Програмісти роблять це, щоб користувачі могли вводити дати як простий текст, а потім обробляти ці дані машинами.
 
-## Як це робити?
-Тут приведений простий приклад парсингу дати в Haskell:
+## Як це зробити:
+Найпростіший спосіб розпізнати дату в Haskell — використовувати пакунок `time`. Розберемо на прикладі:
 
 ```Haskell
-import Data.Time
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
 
-parseDate :: String -> IO Day
-parseDate = parseTimeM True defaultTimeLocale "%d-%m-%Y" 
-  
-main = print =<< parseDate "22-12-2020"
+-- Функція для парсингу дати з рядка
+parseDate :: String -> Maybe UTCTime
+parseDate dateString = parseTimeM True defaultTimeLocale "%Y-%m-%d" dateString
+
+main :: IO ()
+main = do
+    let dateStr = "2023-03-14"
+    case parseDate dateStr of
+        Just date -> putStrLn $ "Успішно розпізнано дату: " ++ show date
+        Nothing -> putStrLn "Не вдалося розпізнати дату."
 ```
-Виходом є:
-```Haskell
-2020-12-22
+
+При запуску цього коду ви отримаєте:
 ```
-Функція `parseTimeM` змінює рядок у тип `Day`, використовуючи прийняті об'єкти часу та місцевості.
+Успішно розпізнано дату: 2023-03-14 00:00:00 UTC
+```
 
-## Поглиблено
-Бібліотека `Data.Time` в Haskell була розроблена в рамках пакету time, який був представлений у 2006 році і є частиною базового репозиторію GHC з тих пір. Він надає можливості для роботи з часом та датами.
+## Розбір Деталей
+Функція `parseTimeM` в Haskell використовується для парсингу рядків у дати. Вона належить до бібліотеки `time`, яка є стандартною для роботи з часом і датами.
 
-Існують альтернативні пакети для парсингу дати як, наприклад, `Data.Time.Format.Parse`, який дає більший контроль над форматом дати.
+Історично, робота з датами була досить складною через різноманіття форматів та календарів. В Haskell, `time` стандартизує обробку часу. Однак, є альтернативи, як-от `Data.Time.Calendar` для більш складних завдань.
 
-Специфіка реалізації полягає в тому, що при розборі дати, Haskell використовує монади для обробки помилок. Якщо формат дати не вгадується, Haskell поверне помилку.
+Метод `%Y-%m-%d` у `formatTime` вказує на конкретний формат дати: рік, місяць, день. Змініть цей шаблон, щоб розпізнати різні формати дат.
 
-## Дивіться також
-Для більш детального ознайомлення з темою, перегляньте наступні ресурси:
+Парсинг дати можна кастомізувати, використовуючи власні формати часу і шаблони. Для більшої гнучкості та узгодження з іншими системами можна використовувати бібліотеки, такі як `time-locale-compat`, яка забезпечує більше локалей.
 
-1. [Документація `Data.Time`](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-2. [Проект Haskell Time на GitHub](https://github.com/haskell/time)
-3. [Офіційний учбовий посібник Haskell](https://www.haskell.org/tutorial/)
+## Також Гляньте
+- Офіційні документи для `time` пакунка: http://hackage.haskell.org/package/time
+- Про `Data.Time.Clock`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
+- Про `Data.Time.Format` та `formatTime`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
+- Про `System.Locale` та локалі: http://hackage.haskell.org/package/time-1.9.3/docs/System-Locale.html
+- Про `time-locale-compat` для компатибільності локалей: http://hackage.haskell.org/package/time-locale-compat

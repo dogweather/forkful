@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:34:54.167632-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,58 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärän erottamista tekstistä ja sen muuntamista hyödynnettävään muotoon. Ohjelmoijat tekevät tätä syöttöjen käsittelyn ja päivämäärätietojen hyödyntämisen helpottamiseksi.
 
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa erityispäivän erottamista tekstistä. Ohjelmoijat tekevät tätä yksilöidäkseen ja käsitelläkseen päivämääräkohtaisia ​​tietoja.
-
-## Näin teet:
-
-Käytetään C++ standardikirjaston `<chrono>`-luokkaa, jossa on `from_stream`-metodi:
-
+## Kuinka:
 ```C++
-#include <chrono>
-#include <sstream>
+#include <iostream>
 #include <string>
+#include <sstream>
+#include <iomanip>
+#include <chrono>
 
 int main() {
-    std::string s = "2015-09-15";
-    std::istringstream ss(s);
-
-    std::chrono::year_month_day ymd;
-    ss >> std::chrono::parse("%F", ymd);
-
+    std::string date_str = "2023-04-05";
+    std::istringstream ss(date_str);
+    std::tm dt = {};
+    
+    ss >> std::get_time(&dt, "%Y-%m-%d");
     if(ss.fail()) {
-        std::cout << "Parsing failed\n";
-    } else {
-        std::cout << "Year: " << (int)ymd.year() << ", Month: " 
-                  << (unsigned)ymd.month() << ", Day: " 
-                  << (unsigned)ymd.day() << "\n";   
+        std::cout << "Virheellinen päivämäärä!" << std::endl;
+        return 1;
     }
+
+    std::cout << "Vuosi: " << dt.tm_year + 1900 << std::endl; // tm_year on vuosia vuodesta 1900
+    std::cout << "Kuukausi: " << dt.tm_mon + 1 << std::endl;  // tm_mon kuukausia alkaen 0
+    std::cout << "Päivä: " << dt.tm_mday << std::endl;         // tm_mday päiviä alkaen 1
     return 0;
 }
 ```
-
-Output:
-
-```code
-Year: 2015, Month: 9, Day: 15
+Tuloste:
+```
+Vuosi: 2023
+Kuukausi: 4
+Päivä: 5
 ```
 
-## Syvä sukellus:
+## Syväsukellus:
+Päivämäärän jäsentämisen tarve juontaa juurensa aikaan, jolloin tietojenkäsittely alkoi digitalisoitua. Historiallisesti päivämäärät tallennettiin ja prosessoitiin monin eri tavoin. Standardi kirjastojen, kuten `<chrono>` ja `<iomanip>`, käyttö parantaa luettavuutta ja vähentää virheiden riskiä.
 
-Historiallisesti päivämäärän jäsentäminen on aina ollut haastavaa johtuen eri päivämääräformaatteista. C++20 esitteli `<chrono>`-luokan, jolle annettiin kyky jäsentää päivämääriä, mikä helpottaa tätä prosessia.
+Vaihtoehtona voi käyttää `std::chrono` kirjastoa, joka tarjoaa lisää työkaluja ajan käsittelyyn C++20 standardista alkaen. Kokonaisuudessaan päivämäärän jäsentäminen voi olla monimutkaista eri formaattien ja aikavyöhykkeiden takia, joten standardikirjaston toiminnot tarjoavat hyvän pohjan monipuoliselle käsittelylle.
 
-Vaihtoehtoisesti voit käyttää Boost.Date_Time -kirjastoa jos vanhan standardin kanssa työskentelet. `from_string(str)` -funktiolla voi jäsentää merkkijonon päivämääräksi:
-
-```C++
-#include <boost/date_time/gregorian/gregorian.hpp>
-
-boost::gregorian::date d = boost::gregorian::from_string("2015-09-15");
-```
-
-Jäsentämistä voidaan hallinnoida myös manuaalisesti, mutta se vaatii enemmän koodia eikä ole suositeltavaa.
-
-## Katso myös:
-
-- `<chrono>`-kirjasto dokumentaatio: https://en.cppreference.com/w/cpp/chrono
-- Boost.Date_Time documentation: https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html
-- `<date>`-kirjasto dokumentaatio: https://github.com/HowardHinnant/date
+## Katso Myös:
+- C++ `<chrono>` dokumentaatio: https://en.cppreference.com/w/cpp/chrono
+- C++ `<iomanip>` dokumentaatio: https://en.cppreference.com/w/cpp/io/manip/get_time
+- ISO 8601 Päivämäärä- ja aikaformaatit: https://en.wikipedia.org/wiki/ISO_8601

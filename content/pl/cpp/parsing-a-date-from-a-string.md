@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:35:25.414984-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,48 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Co i Dlaczego?"
-Analiza daty z ciągu to proces przekształcania tekstu w wartość daty. Dzięki temu programiści mogą łatwo manipulować danymi związanymi z datą i czasem oraz porównywać różne formaty dat.
+## Co i Dlaczego?
+Parsowanie daty z ciągu znaków polega na konwersji tekstowej reprezentacji daty do struktury data/czas, którą można potem łatwo manipulować w programie. Programiści robią to, aby umożliwić użytkownikom wprowadzanie dat w różnych formatach oraz przetwarzać i analizować informacje o czasie w aplikacjach.
 
-"## Jak to zrobić:"
-Oto, jak w C++ możemy przekształcić tekst w datę.
-
+## Jak to zrobić:
 ```C++
-#include <string>
 #include <iostream>
-#include <chrono>
+#include <sstream>
 #include <iomanip>
+#include <ctime>
 
 int main() {
-  std::string data_string = "2002-09-24";
-  std::istringstream ss(data_string);
-  std::tm tm = {};
+    std::string date_str = "2023-04-02 14:20:12";
+    std::tm tm = {};
+    
+    std::istringstream ss(date_str);
+    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");  // format odpowiadający wzorcowi daty
+    
+    if (ss.fail()) {
+        std::cerr << "Parsowanie daty nie powiodło się." << std::endl;
+        return 1;
+    }
 
-  ss >> std::get_time(&tm, "%Y-%m-%d");
-
-  if (ss.fail()) {
-    std::cout << "Nie udało się przeparsować daty.\n";
-  } else {
-    std::cout << std::put_time(&tm, "%Y-%m-%d") << '\n';
-  }
-
-  return 0;
+    std::cout << "Dzień: " << tm.tm_mday << std::endl;
+    std::cout << "Miesiąc: " << tm.tm_mon + 1 << std::endl;  // tm_mon jest od 0 do 11
+    std::cout << "Rok: " << tm.tm_year + 1900 << std::endl;  // tm_year jest liczone od 1900
+    std::cout << "Godzina: " << tm.tm_hour << std::endl;
+    std::cout << "Minuta: " << tm.tm_min << std::endl;
+    std::cout << "Sekunda: " << tm.tm_sec << std::endl; 
+    return 0;
 }
 ```
-
-Przykładowe wyjście:
-
+Sample Output:
 ```
-2002-09-24
+Dzień: 2
+Miesiąc: 4
+Rok: 2023
+Godzina: 14
+Minuta: 20
+Sekunda: 12
 ```
 
-"## Deep Dive":
-Przy analizowaniu daty z ciągu, ważne jest zrozumienie kontekstu historycznego. W latach 70. i 80., podczas początkowych dziesięcioleci informatyki, analiza daty była rzadko stosowanym zadaniem, a formaty dat były różne w zależności od lokalnych norm i praktyk. W miarę upowszechniania się sieci komputerowych i potrzeby interoperacyjności, pojawiła się potrzeba standardizacji.
+## Deep Dive
+W przeszłości do parsowania dat używano funkcji takich jak `strptime` czy `strftime`. W nowoczesnym C++ warto używać biblioteki `<chrono>` oraz `<iomanip>` dla większej czytelności i bezpieczeństwa typów. Alternatywą dla wbudowanych funkcji jest także użycie bibliotek zewnętrznych, jak `boost::date_time`. W przypadku `std::get_time`, jest to funkcja manipulatora strumienia, która działa razem z `std::istringstream` w celu przekonwertowania stringa na strukturę `std::tm`. Ważne jest, aby znać format daty, który chcemy odczytać, co określamy za pomocą specyfikatorów formatu jak `%Y`, `%m`, `%d`, itd.
 
-Jednym z alternatywnych podejść jest użycie bibliotek zewnętrznych, takich jak Boost.Date_time, które zapewniają potężne i elastyczne narzędzia do przetwarzania daty i czasu.
-
-Co do szczegółów implementacji, funkcja `std::get_time` jest templatką, która wyodrębnia wartości czasu z ciągu znaków zgodnie z formatem podanym jako drugi argument, a następnie umieszcza wyniki w strukturze `std::tm`.
-
-"## Zobacz też":
-1. Dokumentacja C++ - Date and Time utilities: https://en.cppreference.com/w/cpp/chrono
-2. Strona Boost.Date_Time: https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html
+## See Also
+- [cppreference.com - std::get_time](https://en.cppreference.com/w/cpp/io/manip/get_time)
+- [cppreference.com - <chrono> Library](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)

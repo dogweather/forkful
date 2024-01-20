@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:33:54.229003-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Rust"
@@ -10,33 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מַה וְלָמָּה?
-פירוס HTML הוא התהליך בו מנתחים קוד HTML כדי ליצור תוכנה מרוחקת. מתכנתים עושים את זה כדי לפענח דפים אינטרנט, לשלוט בתוכן, או להתממשק עם API.
+## מה ולמה?
 
-## אֵיךְ לְעַשׂוֹת 
-נגזור בקוד זרם המסיבי(Html) באמצעות Rust.
+Parsing HTML בעברית פירושו לפרק ולהבין קוד HTML. תכנתים עושים את זה כדי לעבד תוכן מדפי אינטרנט – לקרוא, לשנות, או לאסוף מידע מהם.
+
+## איך לעשות:
+
+שימוש בספריה `scraper`:
+
 ```Rust
-use html5ever::rcdom::RcDom;
-use html5ever::tendril::TendrilSink;
-use html5ever::Driver;
-use html5ever::interface::tokenizer::TokenSink;
+use scraper::{Html, Selector};
 
 fn main() {
-    let html = "<html><body><h1>Hello, World!</h1></body></html>";
-    let dom: RcDom = html5ever::parse_document(RcDom::default(), Default::default())
-        .from_utf8()
-        .read_from(&mut html.as_bytes())
-        .unwrap();
+    // קוד HTML לדוגמה
+    let html = r#"
+        <ul>
+            <li>עגבניה</li>
+            <li>מלפפון</li>
+            <li>פלפל</li>
+        </ul>
+    "#;
+
+    // פרסינג של הקוד
+    let document = Html::parse_document(html);
+
+    // יצירת בורר (selector) לפריטי הרשימה
+    let selector = Selector::parse("li").unwrap();
+
+    // איטרציה על פריטים והדפסתם
+    for element in document.select(&selector) {
+        let text = element.text().collect::<Vec<_>>().join("");
+        println!("פריט: {}", text);
+    }
 }
 ```
+פלט לדוגמה:
 
-## שְׁחִיפַת עוֹמֶק
-הפירוס של HTML כפי שאנחנו מבינים אותו היום מתפתח לאורך שנים. במקור, האינטרנט לא יוצר עם הכוונה של תמיכה במסמכים מורכבים של HTML, אך חדשנות ושיפורים תוך כדי הפעלה הביאו ליכולת שלנו לפענח מסמכים אלה.
+```
+פריט: עגבניה
+פריט: מלפפון
+פריט: פלפל
+```
 
-החלופה הנפוצה ביותר לפירוס HTML היא XML. XML הוא שפה שזויה מוחלטת שאותה מכונה, אך אינה מספקת את הגמישות של HTML לייצג תוכן דינמי.
+## צלילה לעומק
 
-בהקשר של Rust, html5ever הוא דרייברים מבוססי Rust שמאפשרים פירוס של HTML5. 
+Parsing HTML הוא חלק מאתגר של עיבוד קודים שנוצרו לאינטרנט. בעבר, רוב הפרסינג נעשה בשפות כמו Perl, אבל היום יש ספריות בכל שפה כמעט, כולל Rust. האתגר הוא בקריאה נכונה של מבנים מורכבים וגם בעמידה בתקני האינטרנט השונים. אלטרנטיבות ל`scraper` ב-Rust כוללות את `html5ever` ו`select.rs`. כשאתה כותב קוד לפרסינג, חשוב לבדוק שזה גמיש ויכול להתמודד עם HTML פחות מובנה היטב.
 
-## ראה גם
-- [html5ever on Github](https://github.com/servo/html5ever)
-- [Rust Documentation](https://www.rust-lang.org/learn)
+## ראו גם:
+
+- מסמכי הספריה `scraper`: https://docs.rs/scraper
+- תיעוד `HTML5` לפיתוח ובדיקות ב-Rust: https://github.com/servo/html5ever
+- `select.rs`, ספריה לביטויים כמו ב-jQuery: https://crates.io/crates/select
+- מערכת בדיקת ה-RFC ל-HTML כדי להבין את תקני הפרסינג: https://validator.w3.org/

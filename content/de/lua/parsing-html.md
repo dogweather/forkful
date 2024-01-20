@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:32:33.737464-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Lua"
@@ -11,38 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTML-Parser ermöglichen das Auslesen und Verarbeiten von HTML-Dateien. Programmierer nutzen sie, um Daten automatisiert zu sammeln oder Inhalte von Webseiten zu manipulieren.
 
-HTML-Parsing ist der Prozess, bei dem der Quelltext einer Webseite gelesen und analysiert wird, um bestimmte Informationen herauszufiltern und nutzbar zu machen. Programmierer machen dies, um Webinhalte zu sammeln, zu modifizieren oder zu manipulieren.
+## How to:
+Um HTML in Lua zu parsen, nutzt man häufig Bibliotheken wie `lua-html` oder `luaxml`. Hier ein einfaches Beispiel mit `lua-html`:
 
-## Wie geht das:
+```lua
+local html = require("lua-html")
 
-Lua hat eine Bibliothek namens LuaHTML, die HTML-Parsing ermöglicht. Hier ist ein einfaches Beispiel, um den Inhalt eines HTML-Tags zu lesen.
+local text = [[
+<html>
+<head><title>Testseite</title></head>
+<body><p>Hallo, Welt!</p></body>
+</html>
+]]
 
-```Lua
-luaHTML = require("luahtml") 
- -- Auf den HTML-Inhalt zugreifen
-HTML_content = '<h1>Willkommen zu Lua HTML Parsing </h1>'
-parsed_HTML = luaHTML.parse(HTML_content)
-print(parsed_HTML:h1())  -- Output: Willkommen zu Lua HTML Parsing
+local parsed_html = html.parse(text)
+local paragraphs = parsed_html:query_selector('p')
+
+for _, p in ipairs(paragraphs) do
+    print(p:get_text())
+end
 ```
-In diesem kleinen Abschnitt, nutzten wir die Funktion 'parse', um auf den HTML-Inhalt zuzugreifen und den Inhalt des `h1`-Tags zu drucken.
 
-## Vertiefung:
+Ausgabe:
+```
+Hallo, Welt!
+```
 
-Die Geschichte des HTML-Parsing ist spannend. HTML wurde ursprünglich von Tim Berners-Lee in den 1990er Jahren entwickelt. Seitdem ist die Notwendigkeit entstanden, HTML zu analysieren, um auf den riesigen Umfang an im Web verfügbaren Daten zuzugreifen.
+## Deep Dive
+HTML-Parser gab es schon, seitdem Webseiten entwickelt werden. Sie sind kritisch für Suchmaschinen und Datenanalyse-Tools. Während Lua nicht die Hauptwahl für Web-Scraping ist, bietet es doch effiziente Libraries dafür. Alternativen zu Lua-Parsern sind BeautifulSoup (Python) oder Nokogiri (Ruby). Die Herausforderung beim Parsen von HTML ist das Handling von schlecht geformtem HTML, was oft zu Parser-spezifischer Logik führt.
 
-Es gibt verschiedene alternativen zu Lua zum Parsen von HTML wie Python mit BeautifulSoup oder Jsoup in Java.
-
-Die Implementierung von HTML-Parsing in Lua ist ziemlich einfach. Sie nutzen Library-Funktionen zum Abrufen von DOM-Elementen, die in der HTML-Struktur verwenden werden. 
-
-## Siehe auch:
-
-Für mehr Informationen besuchen Sie bitte:
-
-LuaHTML: http://lua-users.org/wiki/LuaHtml
-
-Lua Programmiersprache: https://www.lua.org
-
-HTML Parsing mit Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/ 
-
-HTML Parsing mit Java: https://jsoup.org
+## See Also
+- Lua-html Github: https://github.com/tarantool/lua-html
+- LuaXML GitHub: https://github.com/LuaDist/luaxml
+- W3C HTML Parser Spezifikationen: https://html.spec.whatwg.org/multipage/parsing.html

@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:33:42.094155-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Python"
 category:             "Python"
@@ -10,43 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
+## What & Why? (무엇과 왜?)
+HTML 파싱은 웹 페이지에서 데이터를 추출하고 구조를 분석하는 과정입니다. 프로그래머가 이를 수행하는 이유는 웹 콘텐츠를 자동화하여 처리하거나 정보를 수집하기 위해서입니다.
 
-HTML 파싱이란, 웹 페이지 즉 HTML 문서의 구조를 분석하는 것을 말합니다. 프로그래머들이 이 작업을 수행하려하는 이유는 웹 상에서 데이터를 쉽고 빠르게 가져오기 위함입니다.
-
-## 실습 방법:
-
-Python에서는 `BeautifulSoup` 라이브러리를 이용해 HTML을 쉽게 파싱할 수 있습니다. 간단한 예제를 보겠습니다.
+## How to: (방법)
+BeautifulSoup 라이브러리를 사용하여 HTML을 파싱해봅시다. 필요한 라이브러리를 설치하고 기본적인 사용법을 살펴보겠습니다.
 
 ```Python
+# 필요한 라이브러리를 설치합니다.
+!pip install beautifulsoup4
+!pip install requests
+
+# 라이브러리를 임포트하고 HTML을 파싱합니다.
 from bs4 import BeautifulSoup
 import requests
 
-# 웹 사이트 HTML 가져오기
-response = requests.get('https://www.example.com')
-html_content = response.text
+url = "http://example.com"
+response = requests.get(url)
+html = response.text
 
-# BeautifulSoup 객체 생성
-soup = BeautifulSoup(html_content, 'html.parser')
+soup = BeautifulSoup(html, 'html.parser')
 
-# HTML 파싱
-tag = soup.find('h1')
-print(tag.text)
+# title 태그를 찾아서 출력합니다.
+title_tag = soup.title
+print(title_tag)
+```
+이 코드를 실행하면, `http://example.com` 에서 `<title>` 태그의 텍스트를 출력합니다.
+
+```
+<title>Example Domain</title>
 ```
 
-위 예제의 결과는 웹 사이트 `www.example.com`의 `h1` 태그 내용을 출력하게 될 것입니다.
+## Deep Dive (심층적 분석)
+HTML 파싱은 웹의 초기부터 필요했습니다. 초기 파싱 방법은 간단한 문자열 처리에 불과했습니다. 하지만 웹의 복잡성이 증가하면서, 효율적이고 정확한 라이브러리가 필요하게 되었습니다. BeautifulSoup과 같은 도구는 이러한 요구에 부응하여 개발되었습니다. 대안으로는 lxml이나 html.parser도 있습니다만, BeautifulSoup이 사용하기 쉽고 강력하여 널리 사용됩니다.
 
-## 깊이 들어가보기:
+내부적으로, BeautifulSoup은 파싱할 때 여러 파서를 선택할 수 있도록 합니다. 예를 들어, 'html.parser', 'lxml' 또는 'html5lib'입니다. 각각의 파서는 속도나 유연성에서 차이를 보일 수 있으므로, 상황에 따라 적절한 파서를 선택하는 것이 중요합니다.
 
-HTML 파싱은 웹 스크래핑의 핵심이며, 초기 인터넷 붐의 시기인 1990년대부터 사용되어 왔습니다. Python에서는 `BeautifulSoup` 외에도 `lxml`이나 `html.parser` 등 다른 라이브러리를 이용해 HTML 파싱을 할 수 있습니다.
+또한, HTML 파싱을 할 때는 웹사이트의 'robots.txt' 파일과 저작권을 확인하여 법적 문제를 피해야 합니다.
 
-`BeautifulSoup`는 구조화되지 않은 HTML 및 XML 파일을 구조화하여 파싱하는 데 있어 직관적이고 편리해 넓게 사용되고 있습니다. `lxml`은 속도가 빠르다는 장점이 있지만, `BeautifulSoup`보다 사용하기 어려운 편입니다.
+## See Also (관련 자료)
+BeautifulSoup 공식 문서:
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
-## 추천하는 자료:
+W3Schools HTML 파싱 튜토리얼:
+https://www.w3schools.com/python/python_beautifulsoup.asp
 
-아래 자료들을 참조하면 파이썬을 이용한 HTML 파싱에 대해 더 깊게 이해하실 수 있습니다.
+lxml 파서 공식 문서:
+https://lxml.de/parsing.html
 
-1. BeautifulSoup 공식 문서: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-2. lxml 공식 문서: https://lxml.de/
-3. Python 공식 문서 - HTML 파싱 모듈: https://docs.python.org/3/library/html.parser.html
-4. Real Python - Practical Introduction to Web Scraping in Python: https://realpython.com/python-web-scraping-practical-introduction/
+웹 크롤링과 관련된 법적 고려사항:
+https://www.lexology.com/library/detail.aspx?g=6a8a3a8d-4658-4a8d-af9b-5f00c6d5dbd3

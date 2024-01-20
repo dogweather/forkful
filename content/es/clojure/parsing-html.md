@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:30:57.210334-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,47 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parseo HTML en Clojure para principiantes
+## ¿Qué y Por Qué?
 
-## ¿Qué & Por qué?
+El análisis (parsing) de HTML implica interpretar y extraer información de documentos HTML. Los programadores lo hacen para procesar y manipular datos, como recoger información de páginas web o alimentar servicios de scraping.
 
-El parseo HTML implica el proceso de decodificar y entender la estructura de una página web. Como programadores, lo hacemos para extraer información útil y manipular, analizar o presentar los datos de la web de una manera más manejable.
+## ¿Cómo hacerlo?
 
-## Cómo hacerlo:
+Para analizar HTML en Clojure, podemos usar la librería [Enlive](https://github.com/cgrand/enlive). Aquí tienes un ejemplo sencillo:
 
-Usaremos la biblioteca `clj-tagsoup` para parsear HTML en Clojure. Sigue estos pasos:
-
-### Paso 1: Añadir clj-tagsoup a tu archivo project.clj
 ```Clojure
-:dependencies [[clj-tagsoup "0.3.0"]]
+(require '[net.cgrand.enlive-html :as enlive])
+
+(defn extraer-titulos [html]
+  (map :content (enlive/select html [:title])))
+
+(let [html (enlive/html-resource (java.net.URL. "http://ejemplo.com"))]
+  (println (extraer-titulos html)))
 ```
 
-### Paso 2: Importar clj-tagsoup
-```Clojure
-(ns my.ns
-  (:require [clj-tagsoup.core :as soup]))
+Salida de ejemplo:
+
+```
+("El título de la página")
 ```
 
-### Paso 3: Parsear HTML
-```Clojure
-(def page (soup/parse "https://www.paginaweb.com/"))
-```
+## Inmersión Profunda
 
-Aquí podría ser el resultado:
-```Clojure
-{:tag :html, :attrs {}, :content [{:tag :head...}{:tag :body...}]}
-```
+Originalmente, el análisis de HTML solía ser una tarea complicada debido a la inconsistencia y complejidad del HTML en la web. Librerías como Enlive han simplificado este proceso al permitir consultas estilo CSS para localizar elementos específicos. Alternativamente, puedes usar otras bibliotecas como [Hickory](https://github.com/davidsantiago/hickory) que convierte HTML en una estructura de datos de Clojure, permitiéndote trabajar con HTML como si fueras a trabajar con cualquier otra colección de datos en Clojure.
 
-## Inmersión profunda
+Los detalles de implementación varían, pero en general, el parsing HTML se trata de convertir una cadena de texto con marcado HTML en una representación estructurada que el código puede entender y manipular. Esto suele implicar tokenizar el HTML, construir un árbol de nodos del documento, y luego permitir al usuario hacer consultas sobre este árbol.
 
-Históricamente, el parseo de HTML ha sido problemático debido a la flexibilidad y tolerancia de errores de HTML. Afortunadamente, `clj-tagsoup` facilita este proceso.
+## Ver También
 
-A pesar de que `clj-tagsoup` es una herramienta fantástica, hay varios métodos alternativos para parsear HTML en Clojure. Por ejemplo, `Enlive` y `Hickory` son también soluciones viables, pero pueden tener una curva de aprendizaje más empinada.
-
-`clj-tagsoup` opera tomando HTML mal formado y generando un árbol de sintaxis abstracta (AST). Una vez que tenemos este AST, podemos recorrerlo y buscar los datos que nos interesan.
-
-## Ver también
-
-- Documentación de clj-tagsoup: https://github.com/nathell/clj-tagsoup
-- HTML simple parseo con Enlive: https://github.com/cgrand/enlive
-- Introducción a Hickory: https://github.com/davidsantiago/hickory
+- Documentación de Enlive: [Enlive Wiki](https://github.com/cgrand/enlive/wiki)
+- Referencia rápida de CSS para selectores usados en Enlive: [Selectores CSS](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+- Tutorial de Clojure: [Clojure for the Brave and True](https://www.braveclojure.com/)

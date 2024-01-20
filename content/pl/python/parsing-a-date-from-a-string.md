@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:38:04.391091-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing daty z ciągu znaków to proces zamieniania tekstu na obiekt daty, którym można łatwo manipulować w kodzie. Programiści robią to, aby obsługiwać różne formaty datasowe i umożliwić automatyczne przetwarzanie dat w aplikacjach.
 
-Analiza daty z ciągu znaków to proces przekształcania tekstu w formacie daty (na przykład "13 grudnia 2021") na dane, które Python może przeczytać jako datę. Robimy to, aby ułatwić manipulowanie danymi daty i czasu, sortowanie, porównywanie itd.
-
-## Jak to zrobić:
-
-W Pythonie istnieje build-in moduł o nazwie `datetime` do obsługi dat i czasu. Możemy użyć metody `strptime` z tego modułu do analizy daty z ciągu znaków.
-
+## How to: (Jak to zrobić:)
 ```Python
 from datetime import datetime
 
-data_string = '13 grudnia 2021'
-data = datetime.strptime(data_string, '%d %B %Y')
+# Parsowanie daty ze standardowego formatu YYYY-MM-DD
+date_string = "2022-03-15"
+parsed_date = datetime.strptime(date_string, "%Y-%m-%d")
+print(f"Parsed date: {parsed_date}")
 
-print(data)
+# Parsowanie niestandardowego formatu daty, np. DD/MM/YYYY
+custom_date_string = "15/03/2022"
+parsed_custom_date = datetime.strptime(custom_date_string, "%d/%m/%Y")
+print(f"Parsed custom date: {parsed_custom_date}")
 ```
 
-Po uruchomieniu tego kodu, otrzymamy:
-
-```Python
-2021-12-13 00:00:00
+Output:
+```
+Parsed date: 2022-03-15 00:00:00
+Parsed custom date: 2022-03-15 00:00:00
 ```
 
-Po prostu przekazujemy nasz ciąg daty i format daty do metody `strptime` i voilà! Mamy naszą datę.
+## Deep Dive (Dogłębna analiza)
+Parsing daty z ciągu znaków nie zawsze jest proste, bo formaty dat mogą się różnić. Python używa modułu `datetime`, który przekształca stringi w obiekty daty. Wcześniej ludzie bazowali na modułach takich jak `time`, ale `datetime` dostarcza większej elastyczności i łatwiejszej obsługi. 
 
-## Deep Dive:
+Jednym z dostępnych w Pythonie alternatyw jest moduł `dateutil`, który lepiej radzi sobie z rozbudowanymi formatami dat bez potrzeby określania ich ręcznie. Innym rozwiązaniem jest użycie biblioteki `pandas`, która jest szczególnie pomocna przy analizie danych i automatycznie rozpoznaje wiele formatów.
 
-Python oferuje wiele podejść do analizy dat, właściwie wyboru która ścieżka do podążania zależy od specyficznych wymagań projektu. Oprócz `datetime`, inne popularne moduły to `dateutil` i `arrow`, które oferują większą elastyczność i łatwość użycia, choć mogą wymagać dodatkowej instalacji.
+Przy parsingu warto pamiętać o uwzględnieniu różnych stref czasowych oraz lokalizacji, bo to często źródło błędów. Dlatego istotne jest testowanie parsera z różnymi formatami dat i czasów, aby zapewnić jego poprawne działanie.
 
-Podczas pracy z `datetime`, ważne jest, aby dokładnie zrozumieć, jak działa formatowanie daty i czasu Pythona. Chociaż to nie jest skomplikowane, różne formaty mogą być mylące. Na przykład `%d` oznacza dzień miesiąca jako liczbę, a `%B` oznacza pełną nazwę miesiąca. Więcej informacji na temat formatowania można znaleźć w [dokumentacji Pythona](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
-
-## Zobacz też:
-
-1. Dokumentacja Pythona na temat `datetime`: https://docs.python.org/3/library/datetime.html
-2. Dokumentacja Pythona na temat formatowania czasu: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
-3. Moduł `dateutil`: https://dateutil.readthedocs.io/en/stable/
-4. Moduł `arrow`: https://arrow.readthedocs.io/en/latest/
+## See Also (Zobacz także)
+- Dokumentacja `datetime`: https://docs.python.org/3/library/datetime.html
+- Dokumentacja `dateutil`: https://dateutil.readthedocs.io
+- Tutorial Pandas – Praca z datami: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html
+- PEP 3101 – Advanced String Formatting: https://www.python.org/dev/peps/pep-3101/

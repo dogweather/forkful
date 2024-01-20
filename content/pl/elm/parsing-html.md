@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:32:09.180890-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,42 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Parseowanie HTML to proces przekształcania surowego kodu HTML na strukturę, z którą Elm może pracować programistycznie. Robimy to, żeby móc manipulować i analizować dokumenty HTML w aplikacjach Elm, co jest przydatne w przetwarzaniu i wyświetlaniu danych.
 
-Rozbieranie HTML, to proces, który pozwala na wyodrębnienie konkretnych danych i informacji z kodu HTML. Programiści robią to, aby przeanalizować struktury stron internetowych, pozyskać potrzebne dane lub przekształcić je w inny, bardziej użyteczny format.
-
-## Jak to zrobić:
-
+## Jak to zrobić?
 ```Elm
-import Html.Parser
-import Html.Parser.Util
+import Html exposing (Html)
+import Html.Attributes exposing (class)
+import Html.Parser exposing (run, text, oneOf, tag, attribute, node)
+import Html.Parser.Attributes exposing (class)
 
-exampleHtml : String
-exampleHtml =
-    """
-    <p>Witaj Świecie!</p>
-    """
+parseHtml : String -> Result String (Html msg)
+parseHtml htmlString =
+    run (oneOf [text, myCustomTagParser]) htmlString
 
-parseHello : String -> Maybe String
-parseHello htmlText =
-    Html.Parser.parse htmlText
-        |> Result.andThen (Html.Parser.Util.select "p")
-        |> Result.toMaybe
-        |> Maybe.andThen List.head
-        |> Maybe.andThen .innerHtml
+myCustomTagParser : Parser (Html msg)
+myCustomTagParser =
+    node "div" [ attribute "class" (class "fancy") ] (text "Here's a fancy div!")
+
+-- Użycie parsera na przykładowym HTML
+case parseHtml "<div class='fancy'>Here's a fancy div!</div>" of
+    Ok parsedHtml ->
+        -- Tutaj możesz coś zrobić z przetworzonym HTML.
+    
+    Err errorMsg ->
+        -- Tutaj obsługujesz ewentualne błędy podczas parseowania.
 ```
 
-Naszym wynikiem po zastosowaniu `parseHello exampleHtml` będzie `Just "Witaj Świecie!"`.
+## Głębiej w temat
+Historia parseowania HTML sięga początków języków skryptowych na przeglądarki, kiedy to potrzebowano sposobu na manipulowanie DOM bezpośrednio z kodu. Elm zapewnia przyjazną dla programisty alternatywę do JavaScript, wykorzystując silny system typów i funkcyjną czystość.
 
-## Deep Dive
+Alternatywy do parseowania HTML w Elm obejmują bezpośrednie korzystanie z odpowiednich bibliotek JavaScript i przechwytywanie wyników. Decodeursy Elm również są używane do dekodowania JSON-a, ale do HTML potrzebne są specyficzne parsery.
 
-Rozbieranie HTML ma swoje korzenie w początkach internetu, kiedy to statyczne strony HTML były podstawą komunikacji sieciowej. Dziś, z nadejściem dynamicznych aplikacji internetowych, możemy pracować z HTML na bardzo różne sposoby.
+Implementacyjnie, Elm korzysta z własnych parserów HTML, które konwertują stringi na abstrakcyjne modele drzewa DOM. Pozwala to na wydajne i bezpieczne zarządzanie widokami, gwarantując, że aplikacja nie wygeneruje nigdy błędnego HTML.
 
-Alternatywą dla Html.Parser jest `Html.Parser2`, który oferuje więcej elastyczności, ale jest mniej intuicyjny.
-
-Podczas implementacji "parsing" HTML w Elm, ważne jest zrozumienie, jak działa monad `Maybe` i `Result`. Te typy danych mają centralne znaczenie dla obsługi błędów w czasie parsowania, a doświadczenie z nimi jest bezcenne podczas pracy z Html.Parser.
-
-## Zobacz także:
-
-- Dokumentacja Elm: https://elm-lang.org/docs
-- Html.Parser w Elm: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
-- Html.Parser2 w Elm: https://package.elm-lang.org/packages/eeue56/elm-html-parser/latest/
+## Zobacz także
+- Elm's HTML Parser [https://package.elm-lang.org/packages/elm/html/latest/Html-Parser](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
+- A Guide to Elm's Syntax [https://elm-lang.org/docs/syntax](https://elm-lang.org/docs/syntax)

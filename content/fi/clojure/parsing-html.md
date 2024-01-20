@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:30:45.707879-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Clojure"
@@ -10,48 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+(Mitä & Miksi?)
+HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen lukemista ja sen sisällön muuntamista käsiteltäväksi tietorakenteeksi. Ohjelmoijat tekevät tätä sisällön automaattiseksi käsittelyksi, tiedon kaivamiseksi tai web-sivujen manipulointia varten.
 
-## Mitä & Miksi?
+## How to:
+(Miten tehdään:)
+```Clojure
+; Valitse ja lisää projektiisi kirjasto, esim. Enlive
+(require '[net.cgrand.enlive-html :as html])
 
-HTML:n jäsentäminen tarkoittaa HTML-dokumentin rakenteen muuttamista ymmärrettävään muotoon. Ohjelmoijat tekevät sen, koska se mahdollistaa sivujen sisällön analysoinnin ja muokkaamisen sujuvasti.
+; Esimerkki HTML-dokumentin jäsentämisestä
+(def page "<html><head><title>Tervetuloa</title></head><body><h1>Hei Maailma</h1></body></html>")
 
-## Miten:
+; Jäsentäminen ja elementin etsiminen
+(defn parse-and-find []
+  (let [document (html/html-resource (java.io.StringReader. page))
+        h1-text (html/text (first (html/select document [:h1])))]
+    h1-text))
 
-Clojuren `hiccup`-kirjastoa voidaan käyttää HTML:n jäsennykseen. 
-
-```clojure
-(ns my-namespace.core
-  (:require [hiccup.core :refer [html]]))
-
-(defn greet []
-  (html
-    [:html
-      [:head
-        [:title "Tervetuloa!"]]
-      [:body
-        [:h1 "Hei, maailma!"]]]))
+; Tulos
+(prn (parse-and-find))
+; Tulostuu: "Hei Maailma"
 ```
 
-Koodin suorittaminen palauttaa HTML-stringin:
+## Deep Dive:
+(Syväsukellus:)
+Alunperin HTML:n jäsentämisen tarve tuli siitä, että internetin sisällöstä haluttiin hyötyä automaattisesti. Vaihtoehtoina jäsentimille ovat olleet regex-pohjaiset ratkaisut, jotka voivat olla riskialttiita ja virheherkkiä puutteellisen standardinmukaisuuden vuoksi.
 
-```clojure
-"<html><head><title>Tervetuloa!</title></head><body><h1>Hei, maailma!</h1></body></html>"
-```
+Käytännössä HTML-jäsentimet kuten Enlive (Clojure) tai Beautiful Soup (Python) ottavat käsiteltävän HTML-koodin, luovat siitä Document Object Model (DOM) -puun ja mahdollistavat sen elementtien käytön ohjelmoinnissa.
 
-## Sukellus syvemmälle:
+DOM-puun rakentaminen on keskeistä, koska se mahdollistaa monimutkaistenkin HTML-dokumenttien rakenteen käsittelyn ja manipuloimisen koherentilla ja virheettömällä tavalla. Tämä on välttämätöntä palvelimien välisessä kommuniokoinnissa ja automatisoiduissa prosesseissa.
 
-HTML-jäsennys sai alkunsa 1990-luvun alussa WWW:n kanssa. Ensimmäiset parserit olivat yksinkertaisia kirjastoja, mutta ovat sittemmin kehittyneet monimutkaisiksi työkaluiksi.
+Clojure-ympäristössä suosittuja HTML-jäsentimiä ovat muun muassa Enlive ja Hickory, joista kumpikin käsittelee HTML:ää eri tavoin. Enlive keskittyy selektori- ja muokkausoperaatioihin, kun taas Hickory muuntaa HTML:n Clojure-dataksi.
 
-Clojure-kielessä on myös muita tapoja jäsennellä HTML-sisältöä, kuten `enlive` ja `clojure.data.xml`. Valinta riippuu siitä, kuinka kompleksisia sivustoja analysoit.
-
-Hiccupin sisällä HTML-elementit esitetään Clojure-vetoina, joissa ensimmäinen elementti on tageja ja loput attribuutteja tai lapsielementtejä. Luonteenomaisen datarakenteen ansiosta hiccup mahdollistaa Clojure-syntaksin käytön HTML:n manipuloimiseksi.
-
-## Katso myös:
-
-1. Hiccupin dokumentaatio: [https://github.com/weavejester/hiccup](https://github.com/weavejester/hiccup)
-2. Clojuren HTML-jäsentäminen – Stack Overflow: [https://stackoverflow.com/questions/3478592/parsing-html-in-clojure](https://stackoverflow.com/questions/3478592/parsing-html-in-clojure)
-
----
-
-Huomio: Tämä artikkeli olettaa, että sinulla on perustiedot Clojuresta ja HTML:stä. Jos haluat syvällisempää tietoa, suosittelemme lukemaan lähdemateriaalia ja kokeilemaan koodiesimerkkejä.
+## See Also:
+(Lisää tietoa:)
+- Enlive dokumentaatio: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- "Practical Web Scraping for Data Science: Best Practices and Examples with Python" kirja, joka antaa kontekstia web scraperien maailmaan: [Linkki kirjaan](https://www.datascraping.co/practical-web-scraping/)
+- Hickory GitHub-sivu: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)

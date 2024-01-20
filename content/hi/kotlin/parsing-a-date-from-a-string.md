@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:37:33.382833-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,33 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीखों को पार्स करना मतलब है तारीख के डेटा को स्ट्रिंग से निकालना। प्रोग्रामर इसे इसलिए करते हैं क्योंकि यूजर इनपुट और डेटा स्टोरेज कई बार स्ट्रिंग फॉरमैट में होता है और उसे डेट ऑब्जेक्ट में बदलना पड़ता है।
 
-"स्ट्रिंग से तारीख पार्स करना" एक काम है जिसमें हम किसी तारीख को स्ट्रिंग रूप में प्रदान करते हैं और प्रोग्राम इसे वास्तविक तारीख में बदल देता है। प्रोग्रामर्स इसे करते हैं ताकि वे इंटरफेस, डेटाबेस, और अन्य जगहों से मिलने वाले स्ट्रिंग डेटा को काम में ले सकें। 
-
-## कैसे करें:
-
+## How to (कैसे करें):
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-val dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-val dateAsString = "23-12-2021"
-val actualDate = LocalDate.parse(dateAsString, dateFormatter)
-
-println(actualDate)  // Output: 2021-12-23
+fun main() {
+    val dateString = "15-04-2023"
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+    val date = LocalDate.parse(dateString, formatter)
+    println(date)  // Output: 2023-04-15
+}
 ```
 
-इस कोड का उद्देश्य स्ट्रिंग "23-12-2021" को एक `LocalDate` ऑब्जेक्ट में परिवर्तित करना है। `DateTimeFormatter` का उपयोग दिनांक प्रारूप को सेट करने के लिए किया जाता है, जो कि पार्सर को स्थानीय दिनांक में बदलने के लिए दिशानिर्देश देता है। 
+## Deep Dive (गहराई से समझें):
+पहले प्रोग्रामर SimpleDateFormat का इस्तेमाल करते थे। अब, नए API, java.time (जसे LocalDateTime और LocalDate) है, जो थ्रेड सेफ और फ्लेक्सिबल है। जावा 8 से पहले तारीखों को पार्स करना थोड़ा जटिल था, पर अब LocalDate और DateTimeFormatter का कॉम्बिनेशन आपको आसानी से तारीख पार्स करने देता है।
 
-## गहरा विवरण
+अल्टरनेटिव्स में कोटलिन एक्सटेंशन्स और थर्ड-पार्टी लाइब्रेरीज़ भी हैं, जैसे कि Joda-Time (जिसका प्रयोग अब कम होता है)।
 
-1. **ऐतिहासिक प्रसंग**: "स्ट्रिंग को तारीख में पार्स करना" की आवश्यकता तब होती जब इंटरनेट पर डेटा आदान-प्रदान पहले हुआ था। डेटा का आदान-प्रदान स्ट्रिंग रूप में ही संभव था क्योंकि इसे नेटवर्क के माध्यम से भेजा जा सकता है। 
-
-2. **विकल्प**: विभिन्न भाषाओं में तारीख पार्स करने के विभिन्न तरीके हो सकते हैं। जावा में `SimpleDateFormat` का उपयोग किया जा सकता है, PHP में `date_create_from_format` तथा Python में `datetime.strptime` का उपयोग किया जाता है। 
-
-3. **कार्यान्वयन का विवरण**: अधिकतर मामलों में, दिनांक पार्स करने की क्रियाएँ जटिल नहीं होती हैं। यद्यपि, ध्यान देने योग्य बात यह है कि अलग अलग संस्कृतियों में तारीखें अलग अलग प्रारूपों में हो सकती हैं, जो डेटा पार्स करने के प्रक्रिया को जटिल बना सकती है। 
-
-## यदि आप और अधिक जानना चाहते हैं:
-
-- [ISO Date-Time Standards](https://www.w3.org/TR/NOTE-datetime) - ISO के द्वारा मान्यता प्राप्त तारीख-समय प्रारूप के बारे में अधिक।
+## See Also (और भी जानकारी):
+- [Kotlin Official Documentation](https://kotlinlang.org/docs/home.html)
+- [Java 8 Date/Time API Guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+- [DateTimeFormatter JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

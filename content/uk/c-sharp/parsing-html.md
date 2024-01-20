@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:30:55.331384-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,36 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Парсинг HTML це процес, через який ми можемо витягти корисну інформацію з HTML-документів. Програмісти роблять це, щоб аналізувати, маніпулювати або навіть виготовляти нові дані, що залежать від вмісту HTML.
+## What & Why? (Що і Чому?)
+Parsing HTML means you're extracting useful info from a web page's HTML code. We do it to automate data collection or to interact with websites programmatically.
 
-## Як зробити:
-Нижче подано приклад коду у C#, який показує, як парсити HTML за допомогою бібліотеки HtmlAgilityPack:
+## How to: (Як це зробити:)
+**Installing HtmlAgilityPack:**
 
-```C#
+```csharp
+// Use NuGet to install the HtmlAgilityPack package.
+// Run this command in your Package Manager Console.
+Install-Package HtmlAgilityPack
+```
+
+**Basic parsing example:**
+
+```csharp
+using System;
 using HtmlAgilityPack;
 
-private static void Main(string[] args)
+class Program
 {
-    HtmlWeb web = new HtmlWeb();
-    HtmlDocument document = web.Load("https://приклад.com");
-
-    foreach (HtmlNode node in document.DocumentNode.SelectNodes("//а"))
+    static void Main()
     {
-        string link = node.GetAttributeValue("href", string.Empty);
-        Console.WriteLine("Посилання: " + link);
+        // Load the HTML document
+        var web = new HtmlWeb();
+        var doc = web.Load("http://example.com");
+
+        // Parse the titles from the website
+        foreach (var node in doc.DocumentNode.SelectNodes("//title"))
+        {
+            Console.WriteLine("Title: " + node.InnerText);
+        }
     }
 }
 ```
-У цьому прикладі ми отримуємо всі посилання (<a href="....") з HTML-сторінки і виводимо їх в консоль.
 
-## Поглиблено:
-1. Історичний контекст: HTML було створено 1991 року, але перший парсер HTML з'явився лише в 2000 році в формі HtmlAgilityPack.
-2. Альтернативи: Незалежно від HtmlAgilityPack, є інші бібліотеки, такі як Fizzler або CsQuery.
-3. Деталі реалізації: HtmlAgilityPack працює шляхом створення DOM (Document Object Model) з HTML-документа, що дозволяє вам обробляти HTML-елементи як об'єкти.
+**Sample output:**
 
-##Дивіться також:
-Екосистема C# має чимало ресурсів для допомоги вам у поглиблений вивченні парсингу HTML. Ось декілька посилань, якими варто скористатись:
-1. [Офіційна документація HtmlAgilityPack](https://html-agility-pack.net/)
-2. [Вступ до парсингу HTML у C# на Medium](https://medium.com/@codenamejason/parsing-html-in-c-e9ddbbb96fdf)
-3. [StackOverflow: альтернативи HtmlAgilityPack](https://stackoverflow.com/questions/2899275/c-sharp-html-parsing-library-similar-to-beautifulsoup)
+```
+Title: Example Domain
+```
+
+## Deep Dive (Поглиблений аналіз):
+**Historical Context:** Initially, HTML parsing relied on regular expressions and custom parsers. Tools like HtmlAgilityPack provide a DOM-like interface making it more robust against malformed HTML.
+
+**Alternatives:** Besides HtmlAgilityPack, you can use AngleSharp or even regular expressions for simpler tasks. Some prefer using browser automation tools like Selenium for more complex scenarios.
+
+**Implementation Details:** HtmlAgilityPack allows you to perform standard DOM operations, like selecting nodes via XPath or CSS Selectors. It's crucial to manage errors properly, as real-world HTML can often be quite far from standards compliant.
+
+## See Also (Дивіться також):
+- HtmlAgilityPack GitHub Repository: [https://github.com/zzzprojects/html-agility-pack](https://github.com/zzzprojects/html-agility-pack)
+- AngleSharp GitHub Repository: [https://github.com/AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)
+- Introduction to XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

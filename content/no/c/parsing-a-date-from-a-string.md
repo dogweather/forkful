@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:34:58.533104-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "C"
 category:             "C"
@@ -11,37 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å parse en dato fra en streng er prosessen med å konvertere en tekstrepresentasjon av en dato til en brukbar datatyp i programmering. Vi programmerer gjør det fordi det gir oss muligheten til å manipulere og bruke disse datoene på en mer effektiv måte i vår kode.
+Parsing av datoer fra strenger gjør tekstomvorming til strukturerte datatyper mulig, noe som er kritisk for datobehandling. Programmerere trenger dette for datalagring, sammenligning og manipulasjon.
 
 ## Hvordan:
+For å parse en dato fra en streng i C, kan vi bruke `strptime`-funksjonen fra `<time.h>`-biblioteket. Her er et eksempel:
 
-Angående eksempel, vi kan bruke `strptime` funksjonen i C for å parse en dato fra en streng. Her er et eksempel på hvordan du kan gjøre det.
-
-```C
-#include <time.h>
+```c
 #include <stdio.h>
+#include <time.h>
 
 int main() {
     struct tm tm;
-    char buf[255];
-
-    strptime("2022-05-12", "%Y-%m-%d", &tm);
-    strftime(buf, sizeof(buf), "%Y-%m-%d", &tm);
-    puts(buf);
-
+    char *str = "2023-04-05";
+    
+    if (strptime(str, "%Y-%m-%d", &tm) != NULL) {
+        printf("År: %d, Måned: %d, Dag: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    } else {
+        printf("Feil format på dato\n");
+    }
+    
     return 0;
 }
 ```
 
-I dette eksempelet vil output være `2022-05-12`.
+Eksempel på output:
 
-## Dypdykk
+```
+År: 2023, Måned: 4, Dag: 5
+```
 
-Historisk sett, tidligere versjoner av C leverte ikke innebygde funksjoner for å parse datoer fra strenger, men dagens versjoner gir denne funksjonaliteten gjennom `time.h` biblioteket. Som alternativer kan "third-party" biblioteker som `boost.date_time` i C++ brukes. Ved implementering av datoparsing fra en streng, er det viktig å merke seg at forskjellige land har forskjellige formater for datoer. Du må derfor håndtere disse formatene ettersom `strptime` funksjonen tar hensyn til dette.
+## Dypdykk:
+Tidligere brukte vi `sscanf` eller manuell inndatahåndtering for å parse datoer, noe som ikke alltid var robust. `strptime` gir en standardisert metode for å interpretere datoer og tider. Utfordringen er at `strptime` ikke er en del av C-standarden (C11), selv om den ofte er tilgjengelig på Unix-lignende systemer. Alternativer inkluderer strukturen `sscanf` eller tredjepartspakker som "date.h".
 
-## Se Også
+Detaljert, `strptime` leser inn en streng i henhold til et format og fyller en `struct tm` med informasjonen. Implementasjonen kan variere mellom systemer, så det er viktig å sjekke dokumentasjonen.
 
-[Tutorial for parsing dates in C](https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm)
-
-[C Date & Time library documentation](https://www.cplusplus.com/reference/ctime/)
+## Se også:
+- C Standard Library Reference: https://en.cppreference.com/w/c/chrono
+- GNU C Library Manual `strptime`: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html
+- date.h – A date and time library: https://github.com/HowardHinnant/date

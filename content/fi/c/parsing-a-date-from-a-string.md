@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:35:03.446925-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,43 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä ja Miksi?)
+Stringistä päivämäärän parsiminen tarkoittaa tekstissä esitetyn päivämäärän muuttamista ohjelman käsiteltävään muotoon. Sitä tarvitaan, jotta voidaan käsitellä ja verrata päivämääriä, tehdä muunnoksia tai tallentaa tietokantoihin järkevästi.
 
-Päivämäärän jäsennys merkkijonosta C-ohjelmointikielessä tarkoittaa päivämäärän lukemista merkkij perusta. Ohjelmoijat tekevät näin, kun heidän pitää käsitellä päivämääriä, jotka on syötetty ohjelmaan tekstimuodossa.
-
-## Kuinka toimitaan:
-
-Parse päivämäärä merkkijonosta käyttäen `strptime` funktiota:
-
+## How to (Kuinka tehdä):
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main(void) {
+int main() {
+    const char *date_str = "2023-04-07";
     struct tm tm;
-    char buf[256];
-
-    strptime("2021-09-05", "%Y-%m-%d", &tm);
-    strftime(buf, sizeof(buf), "%d-%m-%Y", &tm);
-
-    puts(buf);
-
+    if (strptime(date_str, "%Y-%m-%d", &tm)) {
+        printf("Parsed date: %04d-%02d-%02d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    } else {
+        printf("Failed to parse date.\n");
+    }
     return 0;
 }
 ```
+Output:
+```
+Parsed date: 2023-04-07
+```
 
-Tämä programmi tulostaa päivämäärän uudessa formaatissa: `05-09-2021`.
+## Deep Dive (Syväsukellus):
+Historiallisesti päivämäärän parsiminen on ollut ohjelmistokehittäjien yleinen päänsärky, koska päivämäärämuotoja on monia ja ne vaihtelevat kulttuureittain. C-kielen standardikirjasto tarjoaa `strptime`-funktion päivämäärien käsittelyyn, mutta se ei ole aina ollut osa standardia ja sen toteutus voi vaihdella.
 
-## Syvällinen tarkastelu
+Vaihtoehtoisesti päivämäärän voi parsia itse määrittelemällässä omat säännöt ja käyttämällä stringin käsittelyyn tarkoitettuja funktioita kuten `sscanf` tai manuaalista käsittelyä. Tämä voi olla tarpeen, jos työskennellään alustoilla, joilla `strptime` ei ole saatavilla.
 
-Historiallinen konteksti: `strptime` funktio on osa POSIX-standardia, joka on ollut olemassa jo 1980-luvulta lähtien.
+Toteutuksessa täytyy ottaa huomioon erilaiset päivämääräformaattien noudattamat standardit, kuten ISO 8601 (`YYYY-MM-DD`), joka on käytössä esimerkikissämme. On myös tärkeää varautua virheen käsittelyyn ja varmistaa, ettei virheellinen data aiheuta ongelmia ohjelman toiminnassa.
 
-Vaihtoehtoja: Voit myös käyttää kolmannen osapuolen kirjastoja, kuten [Boost.Date_Time](https://www.boost.org/doc/libs/1_69_0/doc/html/date_time.html).
-
-Jäsennyksen yksityiskohdat: `strptime` ottaa merkkijonon "2021-09-05", jäsentelee sen siihen sisältyvien - erikseen määriteltyjen - mallien mukaan ja tallentaa tiedot `tm`-rakenteeseen.
-
-## Katso myös
-
-Lue lisää päivämäärien jäsennyksestä merkkijonoista ja `strptime` funktion käytöstä näistä lähteistä:
-- [C Library - <time.h> (tutorialspoint.com)](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Date and time functions (cplusplus.com)](http://www.cplusplus.com/reference/ctime/)
+## See Also (Katso myös):
+- C11 standardin `strptime`-funktion määrittely: https://en.cppreference.com/w/c/chrono/strptime
+- ISO 8601 päivämäärä- ja aikaformaatin standardi: https://www.iso.org/iso-8601-date-and-time-format.html
+- `strftime`-funktio päivämäärien formatointiin: https://en.cppreference.com/w/c/chrono/strftime

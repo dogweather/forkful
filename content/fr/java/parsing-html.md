@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:32:17.861310-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Java"
 category:             "Java"
@@ -10,70 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
+## Quoi & Pourquoi ?
+L'analyse de HTML, c'est quand on lit et on interprète le code HTML pour extraire des données ou comprendre la structure d'une page web. Pourquoi ? Pour automatiser des tâches comme scraper des sites, ou pour manipuler le contenu directement dans nos applications.
 
-L'analyse de HTML est le processus de conversion d'un document HTML en un arbre d'éléments structuré. Les programmeurs le font pour manipuler, extraire ou comprendre les données contenues dans le HTML.
+## Comment faire :
+Voici un petit bout de code avec Jsoup, une bibliothèque Java populaire pour parser le HTML.
 
-## Comment faire:
-
-Examinons un exemple simple où nous utilisons la bibliothèque Jsoup pour analyser un document HTML:
-
-```Java
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-public class Main {
-  public static void main(String[] args) {
-    String html = "<html><body><p>Bonjour tout le monde</p></body></html>";
-    Document doc = Jsoup.parse(html);
-    System.out.println(doc.text());
-  }
-}
-```
-
-Si vous exécutez le code ci-dessus, la sortie sera:
-
-```Java
-Bonjour tout le monde
-```
-
-Maintenant, si nous voulons extraire tous les paragraphe d'un document HTML:
-
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Main {
-  public static void main(String[] args) {
-    String html = "<html><body><p>Bonjour tout le monde</p><p>Soyez les bienvenus</p></body></html>";
-    Document doc = Jsoup.parse(html);
-    Elements paragraphs = doc.select("p");
-    for (Element paragraph : paragraphs) {
-      System.out.println(paragraph.text());
+public class HtmlParserDemo {
+    public static void main(String[] args) {
+        String html = "<html><head><title>Exemple</title></head>"
+                    + "<body><p>Ceci est un paragraphe.</p></body></html>";
+        Document doc = Jsoup.parse(html);
+        
+        String title = doc.title();
+        System.out.println("Titre de la page: " + title);
+        
+        Elements paragraphs = doc.select("p");
+        for (Element p : paragraphs) {
+            System.out.println("Paragraphe: " + p.text());
+        }
     }
-  }
 }
 ```
 
-La sortie sera :
-
-```Java
-Bonjour tout le monde
-Soyez les bienvenus
+Sortie attendue :
+```
+Titre de la page: Exemple
+Paragraphe: Ceci est un paragraphe.
 ```
 
-## Plongée profonde
+## Plongée profonde :
+Historiquement, l'analyse du HTML était une affaire complexe, surtout avant des standards comme DOM. On utilisait des expressions régulières (mauvaise idée pour le HTML complexe!) ou des parsers XML (pas toujours compatibles avec les subtilités du HTML). 
 
-L'analyse de HTML est nécessaire depuis l'adoption massive du Web dans les années 90. Il y avait et il y a toujours une nécessité d'interagir avec le HTML d'une manière plus structurée. 
-Une alternative à Jsoup pourrait être le `DOM Parsing API` intégré dans `Java`, mais il est généralement considéré comme plus verbeux et plus difficile à utiliser.
+Aujourd'hui, on a des outils comme Jsoup qui facilitent grandement la tâche. Mais pourquoi préférer Jsoup à d'autres ? D'abord, il tolère bien le HTML "mal formé". Ensuite, il est rapide et respecte la sémantique des CSS pour sélectionner des éléments.
 
-Au niveau d'implémentation, Jsoup utilise une analyse syntaxique ascendante, dans laquelle il lit le HTML de gauche à droite et crée un arbre représentatif, permettant à l'utilisateur d'interagir avec le HTML de manière structurée.
+Pour implémenter le parsing, Jsoup crée son propre DOM en Java. Cela vous permet de manipuler facilement les éléments et cela ressemble beaucoup à manipuler du HTML avec jQuery.
 
-## Pour aller plus loin
+Alternativement, il y a d'autres bibliothèques comme HtmlUnit ou même des API natives en Java comme XPath qui peuvent servir à parser le HTML. Choisir l'une ou l'autre dépend de vos besoins spécifiques.
 
-- [Documentation officielle de Jsoup](https://jsoup.org/)
-- [API Java DOM Parsing](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html)
-
-N'hésitez pas à consulter ces ressources pour une compréhension plus approfondie de l'analyse de HTML en Java.
+## Voir aussi :
+- [Jsoup Official Documentation](https://jsoup.org/)
+- [HTML parsing and scraping in Java with Jsoup – Baeldung](https://www.baeldung.com/java-with-jsoup)
+- [What is the best HTML parser for Java? – Stack Overflow](https://stackoverflow.com/questions/3152138/what-is-the-best-html-parser-java-library)

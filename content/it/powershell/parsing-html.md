@@ -1,7 +1,8 @@
 ---
-title:                "Analisi del html"
-html_title:           "Arduino: Analisi del html"
-simple_title:         "Analisi del html"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:33:11.276961-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,49 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analisi dell'HTML con PowerShell
+## What & Why? (Cosa & Perché?)
+Il parsing di HTML consiste nell'estrarre dati da una pagina web. I programmatori lo fanno per automatizzare il recupero di informazioni, integrare contenuti esterni nelle app o per analisi di dati web.
 
-## Cos'è & Perché?
-
-L'analisi dell'HTML, o Parsing HTML, consiste nell'interpretazione del codice HTML per l'elaborazione dei dati al suo interno. Questa tecnica è utilizzata dai programmatori per estrarre informazioni specifiche da pagine web o manipolare la struttura dell'HTML.
-
-## Come fare:
-
-Ecco un rapido esempio su come fare l'analisi di una pagina web utilizzando PowerShell e il modulo HtmlAgilityPack.
-
-Prendiamo per esempio una semplice pagina web, e cercare di estrarre il titolo di questa pagina.
+## How to: (Come fare:)
+Per fare il parsing di HTML in PowerShell, puoi utilizzare il cmdlet `Invoke-WebRequest` e il pacchetto HtmlAgilityPack. Esempio:
 
 ```PowerShell
-# Prima, installiamo il modulo HtmlAgilityPack
-Install-Package HtmlAgilityPack 
+# Installa il pacchetto HtmlAgilityPack se non presente
+# Install-Package HtmlAgilityPack
 
-# Importiamo il modulo nell'ambito corrente
-Import-Module HtmlAgilityPack
+# Usa Invoke-WebRequest e seleziona elementi HTML
+$response = Invoke-WebRequest -Uri 'http://example.com'
+$html = New-Object -TypeName HtmlAgilityPack.HtmlDocument
+$html.LoadHtml($response.Content)
 
-# E ora, scarichiamo e analizziamo la pagina web 
-$url = "https://esempio.com"
-$web = Invoke-WebRequest -Uri $url
-$doc = New-Object HtmlAgilityPack.HtmlDocument
-$doc.LoadHtml($web.Content)
-
-# Troviamo l'elemento titolo e stampiamo il suo contenuto
-$titolo = $doc.DocumentNode.SelectSingleNode("//title").InnerText
-Write-Output $titolo
+# Estrai dati usando XPath
+$nodes = $html.DocumentNode.SelectNodes('//h1')
+foreach ($node in $nodes) {
+    Write-Output $node.InnerText
+}
+```
+Output di esempio:
+```
+Titolo della Pagina
 ```
 
-Quando esegui questo script, vedrai sul tuo terminale il titolo della pagina web a cui hai puntato.
+## Deep Dive (Analisi Approfondita)
+Il parsing di HTML risale agli albori del web per l'analisi dei contenuti. PowerShell supporta varie tecniche incluse regex e packages come HtmlAgilityPack. Regex è rapido ma può essere impreciso. HtmlAgilityPack è uno standard de facto, affidabile e flessibile, che imita il DOM e comprende XPath e CSS selectors.
 
-## Approfondimenti
-
-L'analisi dell'HTML risale ai primi tempi del Web quando le pagine HTML erano molto più semplici di oggi. Nel corso degli anni, sono stati sviluppati un certo numero di strumenti per facilitare questo processo.
-
-Per quanto riguarda le alternative, ci sono molti altri linguaggi e librerie che puoi utilizzare per analizzare l'HTML come Python con la sua libreria BeautifulSoup, o JavaScript con JSDOM. 
-
-Riguardo ai dettagli di implementazione, HtmlAgilityPack utilizza un modello di parse simile a quello del Document Object Model (DOM) standard implementato nei browser. Questa libreria fornisce un'interfaccia facile da usare per esplorare e manipolare nodi HTML.
-
-## Vedi Anche
-
-[HtmlAgilityPack Documentation](https://html-agility-pack.net/documentation)
-[PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-[BeautifulSoup4 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-[JSDOM Documentation](https://github.com/jsdom/jsdom)
+## See Also (Vedi Anche)
+- [HtmlAgilityPack su GitHub](https://github.com/zzzprojects/html-agility-pack)
+- [Documentazione ufficiale PowerShell](https://docs.microsoft.com/it-it/powershell/)
+- [XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp)

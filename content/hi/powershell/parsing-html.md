@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:33:09.285475-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,36 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-HTML Parsing सिंधांत रूप से, एक HTML दस्तावेज़ को विश्लेषण करने की प्रक्रिया है, ताकि उसकी संरचना और विषय-वस्तु का पता चल सके। प्रोग्रामर्स इसे वेबसाइटों की ताजगी और विशेषज्ञता में सुधार करने के लिए इस्तेमाल करते हैं। 
+HTML पार्स करना मतलब है HTML कोड को समझकर उससे डेटा निकालना। प्रोग्रामर इसे वेबसाइट्स से जरूरी जानकारी एकत्र करने या डेटा माइनिंग के लिए करते हैं।
 
 ## कैसे करें:
-
-PowerShell के साथ HTML पर्सिंग के लिए, आप `Invoke-WebRequest` कमांडलेट का उपयोग कर सकते हैं। यहाँ एक उदाहरण है:
-
-```PowerShell
-# वेबसाइट से HTML प्राप्त करें
-$response = Invoke-WebRequest -Uri 'https://www.example.com'
-
-# HTML पार्स करें
-$parsedHtml = $response.ParsedHtml
-
-# शीर्षक एलिमेंट का पाठ प्राप्त करें
-$title = $parsedHtml.getElementsByTagName('title')[0].innerText
-```
-आउटपुट:
+PowerShell में HTML पार्स करने के लिए, `Invoke-WebRequest` cmdlet का इस्तेमाल करके और `HtmlWebResponseObject` से डेटा एकत्र करने का उदाहरण यहाँ है:
 
 ```PowerShell
-PS> $title
-"Example Domain"
+# वेब पेज प्राप्त करें
+$response = Invoke-WebRequest -Uri 'http://example.com'
+
+# सभी लिंक्स एकत्र करें
+$links = $response.Links.Href
+
+# पहले 5 लिंक्स दिखाएँ
+$links | Select-Object -First 5
 ```
 
-## गहरा डाइव
+यह कोड सिर्फ वेब पेज से पहले पांच लिंक्स दिखाएगा।
 
-HTML पार्सिंग का इस्तेमाल 90 के दशक में हुआ था। PowerShell उपकरण मे इसे जोड़ा गया। दूसरे विकल्प में Python का BeautifulSoup library और Node.js का Cheerio library शामिल हैं। HTML पार्सिंग का कार्य पहले टैग पर ध्यान केंद्रित करने, फिर उसकी विशेषताओं पर जाने और अंत में उसके भीतर की सामग्री पर निर्भर करता है।
+## गहराई से जानकारी:
+HTML पार्सिंग एक पुराना कांसेप्ट है जो वेब स्क्रेपिंग के रूप में मशहूर है। इसके विकल्पों में लाइब्रेरीज जैसे कि HtmlAgilityPack शामिल हैं, जो डॉट नेट में इस्तेमाल होती हैं। PowerShell का `Invoke-WebRequest` एक सरल सहज औज़ार है जो विशिष्ट HTML तत्वों जैसे कि फॉर्म, इमेजेज और लिंक्स तक एक्सेस प्रदान करता है। हालांकि, जटिल HTML डॉक्यूमेंट्स को पार्स करने के लिए ज्यादा शक्तिशाली पार्सर्स की जरूरत हो सकती है।
 
-## और भी देखें
-
-1. [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest) के बारे में अधिक जानकारी के लिए Microsoft का डाक्युमेंटेशन देखें।
-2. Python के लिए [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library. 
-3. Node.js के लिए [Cheerio](https://cheerio.js.org/) library.
+## संबंधित स्रोत:
+- [PowerShell's Web Cmdlets](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70#web-cmdlets)
+- [HtmlAgilityPack GitHub repository](https://github.com/zzzprojects/html-agility-pack)
+- [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)

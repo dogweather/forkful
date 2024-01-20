@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:30:08.873905-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "C++"
 category:             "C++"
@@ -11,59 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing HTML involves analyzing an HTML document to understand its structure. Programmers parse HTML to access or modify web content programmatically using coding languages like C++.
+Parsing HTML means breaking down HTML content into something a program can understand and manipulate. Programmers do this to extract data, manipulate content, or integrate web scraping into their applications.
 
 ## How to:
-
-Let's parse HTML using a fantastic lib `gumbo-parser` in C++. The steps might look like:
-
-1. Install 'gumbo-parser': `apt-get install libgumbo-dev`
+C++ doesn't come with built-in HTML parsing capabilities. You'll often use a library like Gumbo-parser by Google, or something similar. Here's a quick example using Gumbo-parser:
 
 ```C++
-#include <stdio.h>
+#include <iostream>
 #include <gumbo.h>
 
-void parse_html(const std::string& html)
-{
-    GumboOutput* output = gumbo_parse(html.c_str());
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    if (node->v.element.tag == GUMBO_TAG_A) {
+        GumboAttribute* href = gumbo_get_attribute(&node->v.element.attributes, "href");
+        if (href) {
+            std::cout << href->value << std::endl;
+        }
+    }
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    }
+}
 
-    // your operations...
-
+int main() {
+    const char* html = "<html><body><a href='https://example.com'>Link</a></body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_links(output->root);
     gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
 
-2. Use C++ to call `gumbo_parse()`, giving it your HTML. It returns `GumboOutput* output`.
-```C++
-std::string html = "<html><body>Hello World!</body></html>";
-GumboOutput* output = gumbo_parse(html.c_str()); // parse the HTML.
+Sample output:
 ```
-
-3. Traverse the `output` tree to access the parsed HTML content.
-```C++
-GumboNode* html_node = output->root;
+https://example.com
 ```
-
-Gumbo destroys the output to prevent memory leaks!
-```C++
-gumbo_destroy_output(&kGumboDefaultOptions, output);
-```
-
-Run that C++ code, and HTML is now accessible!
 
 ## Deep Dive
+Parsing HTML hasn't always been straightforward in C++. Historically, programmers would use regex or hand-written parsers, both of which are error-prone and cumbersome. Nowadays, robust libraries like Gumbo-parser handle the intricacies of parsing, making it easier and more reliable.
 
-Parsing HTML as a practice has been around since the web's inception. HTML's hierarchical tree-like structure makes traversal and content manipulation possible.
+Alternatives include Tidy, MyHTML, or even integrating C++ with Python's BeautifulSoup via the C++ `system` function or embedded interpreters.
 
-`gumbo-parser` is a C implementation by Google, compliant with the HTML5 specification. Alternatively, programmers utilize libs like `htmlcxx` C++ library, the Python-based BeautifulSoup, or `Jsoup` in Java.
-
-Performing HTML parsing in C++ attraction lies in its high-performance potential, however, managing memory manually in C++ can be tricky and lead to potential leaks if not handled correctly.
+Implementation-wise, these libraries convert HTML to a Document Object Model (DOM) tree. Traversing and manipulating the DOM allows users to extract and work with data as demonstrated in the How to section.
 
 ## See Also
-
-To learn more about parsing HTML in C++ and the gumbo-parser library:
-
-1. Official Documentation: <https://github.com/google/gumbo-parser>
-2. HTML parsing in C++: <https://stackoverflow.com/questions/686041/recommendation-for-html-parsing-library-for-c-and-or-c>
-3. The gumbo-parser API: <https://docs.rs/crate/gumbo-parser/0.1.4>
+- [Gumbo-parser GitHub repository](https://github.com/google/gumbo-parser)
+- [List of HTML parsing libraries](https://en.cppreference.com/w/c/experimental/dynamic)
+- [C++ and Python interoperability](https://docs.python.org/3/extending/embedding.html)

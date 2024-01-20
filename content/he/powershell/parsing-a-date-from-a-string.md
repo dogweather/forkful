@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:38:23.292741-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,46 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? (מה ולמה?)
+פיענוח תאריכים ממחרוזות הוא תהליך שבו אנו הופכים טקסט לסוג של אובייקט תאריך. זה עוזר למתכנתים להתמודד עם תאריכים בבקרת פורמט, חישובים ושמירת נתונים באופן יעיל.
 
-עיבוד תאריך ממחרוזת הוא פעולה שבה משתמשים בקוד להמיר מחרוזת כלשהי אשר מתארת תאריך, למשתנה מסוג תאריך. השימוש בפעולה זו מוצדק כאשר נתוני תאריך מגיעים בפורמטים שונים ואנו רוצים להימנע מבעיות תאימות.
-
-## איך:
-
-להלן דוגמאות לקודים ב-PowerShell:
-
+## How to (איך לעשות:)
 ```PowerShell
-# פורמט YYYY/MM/DD
-$DateString = '2022/01/01'
-$DateObject = [DateTime]::ParseExact($DateString, 'yyyy/MM/dd', $null)
-$DateObject
-```
+# דוגמא לפיענוח תאריך ממחרוזת
+$DateString = "23/04/2023" # פורמט dd/MM/yyyy
+$DateObject = [datetime]::ParseExact($DateString, 'dd/MM/yyyy', $null)
+Write-Output $DateObject  # יוצג התאריך כאובייקט תאריך של PowerShell
 
-דוגמה לפלט:
-```
-Saturday, January 01, 2022 12:00:00 AM
+# פלט
+Sunday, April 23, 2023 12:00:00 AM
 ```
 
 ```PowerShell
-# פורמט DD-MM-YYYY 
-$DateString = '01-01-2022'
-$DateObject = [DateTime]::ParseExact($DateString,'dd-MM-yyyy',$null)
-$DateObject
+# כיצד להתמודד עם פורמטים שונים ואזורי זמן
+$DateString = "2023-04-23T14:00:00Z" # ISO 8601 format
+$CultureInfo = [System.Globalization.CultureInfo]::InvariantCulture
+$DateObject = [datetime]::Parse($DateString, $CultureInfo)
+Write-Output $DateObject
+
+# פלט
+Sunday, April 23, 2023 2:00:00 PM
 ```
 
-דוגמה לפלט:
-```
-Saturday, January 01, 2022 12:00:00 AM
-```
+## Deep Dive (צלילה עמוקה)
+Parsing תאריכים היה אתגר מאז התחלתו של תכנות. למרות שהקונספט נשאר זהה - להפוך טקסט לאובייקט תאריך - הכלים והשיטות השתנו. PowerShell, לדוגמה, עושה שימוש ב.NET Framework לפיענוח תאריכים.
 
-## עומק תוכן:
+ישנן אלטרנטיבות כמו `Parse` ו-`TryParse`, אך `ParseExact` מאפשר בקרה מלאה על פורמט הקלט. באזורים שבהם פורמטי תאריך יכולים להיות סובייקטיביים, חשוב להשתמש בפונקציות שיבטיחו קריאה נכונה של הנתונים.
 
-פעמים רבות, מידע מגיע בתצורות שונות ולא מתאים. במהלך השנים, התקנים נהיו יותר אחידים, אך לפעמים משתמשים עדיין ישלחו את התאריך במחרוזת שבהלם להמיר.
-
-חלופות ל-PowerShell כוללות שפות אחרות כמו Python, Java, או C#, שכולם מציעים המרת מחרוזת לתאריך, אך בשיטות ותחבירים שונים.
-
-ההמרה ב-PowerShell מתבצעת באמצעות שיטת ה-ParseExact של האובייקט DateTime. אנו מספקים את המחרוזת, הפורמט של המחרוזת, והמשתנה שמכיל את המידע.
-
-## ראו גם:
-
-- התיעוד הרשמי של Microsoft ל-[DateTime.ParseExact](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact)
+## See Also (ראו גם)
+- [תיעוד רשמי של עצמי התאריך של .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)

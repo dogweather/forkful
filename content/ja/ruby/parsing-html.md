@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:33:46.117022-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Ruby"
@@ -10,37 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？（What & Why?）
+## What & Why? (何となぜ？)
+HTMLパースは、HTMLドキュメントからデータを取得・解析することです。プログラマーは情報を抽出したり、Webスクレイピングを行ったりするためにこれを行います。
 
-HTMLバース（Parsing HTML）とは、HTMLドキュメントを構成要素に分解して理解するプロセスのことです。これは、ウェブスクレイピングを行ったり、ウェブページの内容を分析したりするためによく使われます。
+## How to (やり方)
+RubyではNokogiriというライブラリを使って簡単にHTMLをパースできます。インストールしてみましょう。
 
-## どうやって？（How to）
+```ruby
+gem install nokogiri
+```
 
-Rubyでは、`Nokogiri`ライブラリを使用してHTMLを解析（パース）できます。以下がサンプルコードです。
+以下は基本的な使い方です。
 
 ```ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(open('http://www.example.com'))
+# HTMLを読み込む
+doc = Nokogiri::HTML(URI.open('http://example.com'))
 
-doc.css('h1').each do |header|
-  puts header.text
-end
+# タイトルを取得
+title = doc.css('title').first.content
+puts title # => "Example Domain"
+
+# リンクを全て取得
+links = doc.css('a').map { |link| link['href'] }
+puts links # => ["http://www.iana.org/domains/example"]
 ```
 
-上記のコードは`www.example.com`の各`h1`タグのテキストを出力します。
+このコードは、まずNokogiriを使ってHTMLを読み込み、タイトルタグの内容と全てのリンクを取得しています。
 
-## 深掘り（Deep Dive）
+## Deep Dive (深掘り)
+Nokogiriは、2008年にリリースされたRubyのライブラリです。パースのスピードが速く、多くの開発者に信頼されています。
 
-HTMLパースの歴史は、ウェブの成長とともに深まってきました。当初は簡単な正規表現を使用してHTMLタグをマッチさせるだけだったのが、IE5の頃にはDOM（Document Object Model）が公式に確立され、XMLやHTMLの解析が一段と容易になりました。
+他にもオプションはありますが、Nokogiriは文書操作が容易で、CSSセレクタやXPathをサポートしています。内部的には、Nokogiriはlibxml2というXMLのCライブラリを利用していて、そのためパフォーマンスが良好です。
 
-現在では、Ruby以外のプログラムでもHTML解析ライブラリが利用可能です。Pythonの`BeautifulSoup`やJavascriptの`cheerio`などが例として挙げられます。
+処理速度をさらに向上させたい場合は、HTMLをパースする前に不要な内容を削除する等の前処理を行うことが可能です。
 
-また、Nokogiri自体はcライブラリ`libxml2`と`libxslt`のラッパーとなっています。技術的には、ウェブページの読み込みは`open-uri`によって、HTMLの解析は`libxml2`によって行われています。
+## See Also (関連情報)
+- Nokogiriの公式ドキュメント: [http://nokogiri.org/](http://nokogiri.org/)
+- Rubyのダウンロードとインストールガイド: [https://www.ruby-lang.org/ja/downloads/](https://www.ruby-lang.org/ja/downloads/)
+- Webスクレイピングの法的側面: [https://www.eff.org/issues/coders rights](https://www.eff.org/issues/coders-rights)
 
-## 参照（See Also）
-
-- Nokogiri公式ドキュメント：http://nokogiri.org/
-- HTMLパースの歴史について：https://www.quora.com/What-is-the-history-of-HTML-parsing
-- libxml2公式サイト：http://xmlsoft.org/
+注意: Webスクレイピングは対象サイトの利用規約や法律を遵守する必要があります。使用前に確認しましょう。

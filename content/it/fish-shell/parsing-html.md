@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:31:17.849235-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos’è e Perché?
+## What & Why?
+Il parsing HTML consiste nell'analizzare il codice HTML per estrarre dati o comprendere la struttura della pagina. I programmatori lo fanno per automatizzare l'interazione con i siti web, raccogliere informazioni o testare il contenuto.
 
-L'analisi HTML (Parsing HTML) prende testo e lo traduce in elementi di un documento. Questo è utile perché permette ai programmatori di estrarre, manipolare e interagire con il contenuto di pagine web.
+## How to:
+Fish non è il linguaggio ideale per il parsing HTML, ma potete usare strumenti di riga di comando come `pup`, un parser HTML che si integra bene con Fish. Installiamo `pup` e proviamolo.
 
-## Come fare:
+```Fish Shell
+# Installazione di pup su sistemi basati su Debian
+sudo apt install pup
 
-Fish Shell rende facile lavorare con HTML. Ecco un esempio di come prendere un documento HTML e individuarne gli elementi con Fish.
-
-```Fish
-# installazione di pup, uno strumento per l'analisi HTML
-brew install pup
-
-function estrai-html
-    curl -s $argv | pup 'elemento selezionato'
-end
+# Utilizzando pup per estrarre titoli da un file HTML
+cat index.html | pup 'h1 text{}'
 ```
 
-Ecco un esempio di output di come potrebbe apparire:
-
-```Fish
-<p>
-    Questo è un esempio di estrazione di contenuto HTML.
-</p>
+Output:
+```
+Il mio titolo di pagina
 ```
 
-## Approfondimento
+## Deep Dive
+Fish Shell non è stato progettato per il parsing HTML; è ottimizzato per la gestione di compiti di shell e pipeline. In passato, i programmatori usavano espressioni regolari per il parsing HTML, ma questo approccio è notoriamente fragile e complicato. Strumenti come `pup`, `beautifulsoup` (Python) o `nokogiri` (Ruby) sono ora preferiti perché analizzano HTML in modo più strutturato e sicuro, rispettando la complessità del linguaggio HTML. `pup` si ispira a `jq` per il JSON, offrendo una sintassi dichiarativa per navigare e manipolare HTML.
 
-L'analisi HTML ha avuto un lungo viaggio dai primi giorni del web. Inizialmente, era un compito difficile e dispendioso in termini di tempo, ma strumenti come Fish Shell e pup hanno semplificato questo processo.
-
-Ci sono diverse alternative là fuori per l'analisi HTML. Alcuni programmatori preferiscono utilizzare Python o JavaScript, entrambi offrono ottime librerie per l'analisi HTML come BeautifulSoup e JSDOM.
-
-Tuttavia, quello che rende Fish Shell unico è che è stato progettato per essere user-friendly. Ciò significa che funziona bene sia per il codice di scripting veloce che per gli script più grandi.
-
-## Approfondimento
-
-Per ulteriori informazioni sull'analisi HTML e sui diversi strumenti e tecniche disponibili, ecco alcuni link utili:
-
-1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-2. [Pup Tool on Github](https://github.com/ericchiang/pup)
-3. [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-4. [JSDOM Documentation](https://github.com/jsdom/jsdom)
+## See Also:
+- Documentazione di `pup`: https://github.com/ericchiang/pup
+- Tutorial su BeautifulSoup per Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Documentazione di `nokogiri` per Ruby: https://nokogiri.org/

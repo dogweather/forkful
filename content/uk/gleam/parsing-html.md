@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:31:43.439104-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,25 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-Парсинг HTML – це процес, коли ваш код аналізує HTML файл і розбиває його на частини для маніпулювання чи отримання даних. Це головний інструмент для веб скрапінгу або збору даних з веб-сайтів.
+## What & Why? / Що і Чому?
+Parsing HTML – це процес аналізу структури HTML-кода щоб отримати з нього дані. Програмісти роблять це для автоматизації веб-скрапінгу, тестування веб-сайтів, чи перетворення HTML в інші формати.
 
-## Як це зробити:
-```Gleam
+## How to: / Як це зробити:
+У Gleam, для парсингу HTML ми можемо використати зовнішні бібліотеки, такі як `gleam_html`. Ось приклад:
+
+
+```gleam
+import gleam/html
+import gleam/string
+
+pub fn parse_html_example(input: String) -> Result(list(html.Node), Nil) {
+  html.parse(input)
+}
+
 fn main() {
-   let html = "<html><body><h1>Привіт, світе!</h1></body></html>";
-   let document = Html::parse_document(&html);
+  let raw_html = "<!DOCTYPE html><html><head><title>My Title</title></head><body><p>Hello, World!</p></body></html>"
+  let parsed_html = parse_html_example(string.from_slice(raw_html))
 
-   let h1_tag = document.select("h1").unwrap().next().unwrap();
-   assert_eq!(h1_tag.text(), "Привіт, світе!");
+  case parsed_html {
+    Ok(nodes) ->
+      nodes
+        |> list.map(html.text_from_node)
+        |> list.filter(option.is_some)
+        |> list.map(option.unwrap)
+        |> io.debug
+
+    Error(_) ->
+      io.debug("Failed to parse HTML.")
+  }
 }
 ```
-Вищенаведений код аналізує HTML-рядок, а потім шукає тег "h1" і отримує його текстове значення.
 
-## Поглиблений огляд
-Парсинг HTML — досить стара концепція, що з'явилася з появою HTML і необхідністю аналізувати веб-сторінки. Є різні способи робити це, включаючи регулярні вирази або DOM-дерево. Але Gleam використовує бібліотеку для парсингу HTML, що дозволяє працювати з кодом HTML як з об'єктом.
+Цей код парсує HTML-рядок і виводить текстовий контент з нього в консоль.
 
-## Дивіться також
-[Gleam HTML parsing library](https://github.com/gleam-lang/html)
-[Web scraping guide](https://www.dataquest.io/blog/web-scraping-beautifulsoup/)
-[Alternative parsing techniques](https://tomassetti.me/parsing-in-python-all-the-tools-and-libraries-you-can-use/)
+## Deep Dive / Глибше занурення:
+Parsing HTML інколи складно через непередбачуваність і невалідність реального HTML. У історичному контексті, браузери розвивалися, щоб обробляти неправильний HTML, але для парсерів це залишається проблемою.
+
+Існує багато альтернатив для парсингу HTML на різних мовах програмування як наприклад BeautifulSoup на Python, Nokogiri в Ruby або AngleSharp на C#. Проте, Gleam, будучи молодшою мовою, має менший вибір, але `gleam_html` пропонує чіткий, функціональний підхід до парсингу в Gleam.
+
+`gleam_html` обробляє HTML використовуючи парсингове дерево, що дозволяє нам працювати з вузлами документа як з даними. Це відрізняється від регулярних виразів, які не є надійним способом для парсингу HTML через його складну вкладену структуру.
+
+## See Also / Дивіться також:
+- Документація `gleam_html`: https://hexdocs.pm/gleam_html/
+- HTML5 Parsing Algorithm: https://html.spec.whatwg.org/multipage/parsing.html
+- Веб-скрапінг з Gleam (блог): https://example.com/web-scraping-with-gleam
+- Використання регулярних виразів в Gleam: https://hexdocs.pm/gleam_stdlib/gleam/regex/

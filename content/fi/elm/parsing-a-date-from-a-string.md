@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:35:58.978280-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,31 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? 
+"Mikä ja Miksi?"
 
-Päivämääräjonojen jäsentäminen tarkoittaa sitä, että otetaan merkkijono, joka edustaa tietyn päivämäärän, ja muunnetaan se päivämääräolioksi. Tämä on hyödyllistä, koska se tekee päivämäärädatasta helposti käsiteltävää ja vertailtavaa.
+Jäsennämme päivämäärän merkkijonosta, koska tieto on usein vuorovaikutuksessa teksti-muodossa, ja meidän on käsiteltävä sitä ohjelmallisesti. Esimerkiksi kun käyttäjä syöttää päivämäärän tai lataamme dataa palvelimelta.
 
-## Näin se tehdään:
+## How to:
+"Näin se toimii:"
 
-```elm
+Elm tarjoaa puhtaan syntaksin ja type turvallisuuden, mutta se ei sisällä sisäänrakennettua päivämäärän jäsennystä. Käytämme usein `elm/time` kirjastoa yhdessä `justinmimbs/date` kanssa.
+
+```Elm
 import Time
+import Date exposing (Date)
+import Date.Extra.Parse exposing (iso8601)
 
-parsiDate : String -> Maybe Time.Posix
-parsiDate input =
-    Time.fromIsoString ("2020-12-01" ++ "T12:00:00Z")
+parseDate : String -> Result String Date
+parseDate dateStr =
+    dateStr |> iso8601
+
+-- Esimerkiksi käytössä:
+case parseDate "2021-04-23T18:25:43.511Z" of
+    Ok date -> 
+        -- jatka päivämäärän kanssa
+    Err errorMessage ->
+        -- käsittele virhettä
 ```
 
-Yllä oleva koodiesimerkki ottaa sisään stringin muodossa olevan päivämäärän ja yrittää muuntaa sen järjestelmänymmärtämään muotoon. Ellei muunnos onnistu, palautetaan `Nothing`.
+## Deep Dive
+"Syväsukellus:"
 
-## Syvempi sukellus
+Päivämäärän jäsennys Elm:ssä ei ole niin suoraviivaista kuin joissain muissa kielissä. Alkujaan Elm ei tarjonnut vahvoja päivämääräkäsittelyn työkaluja, joten yhteisö luo kirjastoja, kuten `justinmimbs/date`.
 
-Historiallisesti päivämäärän jäsentämistä merkkijonosta on tarvittu ohjelmoinnissa melko yleisesti, koska tiedonvaihto tietojärjestelmien välillä hoidetaan usein merkkijonojen avulla. Elm tarjoaa oletusarvoisesti ISO 8601 -muodon tukemisen kautta tarvittavat työkalut.
+Vaihtoehtoja on muitakin, esimerkiksi `ryannhg/date-format`, joka tarjoaa funktioita päivämäärän muotoiluun. Nämä kirjastot nojaavat `elm/time`-pakettiin, mutta laajentavat sen toiminnallisuutta.
 
-Elmiä käytettäessä on myös mahdollista hyödyntää kolmannen osapuolen kirjastoja, jotka tarjoavat laajemman tuen eri päivämäärämuodoille. Esimerkiksi `rtfeldman/elm-iso8601-date-strings` on hyvä vaihtoehto harkita.
+Päivämäärien käsittelyssä on myös aikavyöhykkeiden ja lokaalin mukaisten esitystapojen huomioiminen. `justinmimbs/date`-kirjastossa `iso8601`-funktio ymmärtää ISO 8601 -muotoisia merkkijonoja ja palauttaa `Result`-tyypin, mikä auttaa virheenkäsittelyssä.
 
-Jäsennys tapahtuu aikavyöhykkeestä riippumatta, mikä tarkoittaa, että sisäisesti päivämäärätiedot tallennetaan sekunteina UNIX-ajan alusta lähtien. Tämän takia on tärkeää olla tietoinen mahdollisista aikavyöhykkeen aiheuttamista eroista, jos päivämääriä käsitellään kansainvälisesti.
+## See Also
+"Katso myös:"
 
-## Katso myös 
-
-- [Elm Time dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/)
-- [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/)
+- Elm Time library documentation: [packages.elm-lang.org/packages/elm/time/latest](https://package.elm-lang.org/packages/elm/time/latest)
+- Justin Mimbs's Date library on GitHub: [github.com/justinmimbs/date](https://github.com/justinmimbs/date)
+- Ryan's date-format for string formatting: [github.com/ryannhg/date-format](https://github.com/ryannhg/date-format)

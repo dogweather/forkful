@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:34:39.122013-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing HTML to proces analizy kodu HTML, by zrozumieć jego strukturę i wyodrębnić z niego dane. Programiści robią to, żeby manipulować tym kodem lub pobierać informacje z dokumentów HTML, które można wykorzystać w różnych aplikacjach.
 
-Przetwarzanie HTML to proces, dzięki któremu tekst zawierający kod HTML może być analizowany i interpretowany przez komputer. Programiści go używają, aby manipulować, edytować, i interaktywować z danymi na stronie internetowej.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```TypeScript
-import { parse } from 'fast-html-parser';
+import { JSDOM } from 'jsdom';
 
-let htmlStr = '<div class="powitanie">Cześć, Programisto!</div>';
+// przykładowy HTML do sparsowania
+const exampleHTML = `
+    <div id="greetings">
+        <p>Hello, World!</p>
+        <p>Witaj, Świecie!</p>
+    </div>
+`;
 
-let root = parse(htmlStr);
+// tworzenie DOM z HTML
+const dom = new JSDOM(exampleHTML);
 
-console.log(root.querySelector('.powitanie').rawText);
+// uzyskanie dostępu do elementów
+const greetings = dom.window.document.querySelector('#greetings');
+
+// wyświetlenie zawartości
+console.log(greetings.textContent);
+// Wyjście: 
+// Hello, World!
+// Witaj, Świecie!
 ```
 
-Po uruchomieniu powyższego kodu, otrzymasz na wyjściu następujący tekst:
+## Deep Dive (Dogłębna Analiza)
+Parsing HTML nie zawsze był tak prosty jak teraz. W przeszłości używano skomplikowanych regularnych wyrażeń, które niezbyt dobrze radziły sobie z niestandardowym kodem HTML. Błogi czas przed DOM i jQuery!
 
-```
-Cześć, Programisto!
-```
+Alternatywy? Oczywiście! Istnieją inne biblioteki, na przykład `cheerio` lub `parse5`, które również pozwalają na analizę HTML w Node.js.
 
-## Deep Dive :
+Jeśli chodzi o implementację, najważniejsza jest wydajność i dokładność działania. Biblioteka `jsdom`, którą użyliśmy w przykładzie, naśladuje DOM w środowisku Node.js, co ułatwia zadanie, ale czasami może być trochę za wolna. W przypadkach, gdzie liczy się szybkość, może lepszym wyborem będzie `cheerio`, które poświęca precyzję na rzecz wydajności.
 
-(1) Historycznie, przetwarzanie HTML było dosyć trudne i niewygodne, ale nowoczesne biblioteki, takie jak `fast-html-parser` w TypeScript, uczyniły ten proces dużo łatwiejszym.
+## See Also (Zobacz również)
+- MDN Web Docs na temat DOM: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+- Oficjalna dokumentacja `jsdom`: https://github.com/jsdom/jsdom
+- Dokumentacja `cheerio`: https://cheerio.js.org/
+- Dokumentacja `parse5`: https://github.com/inikulin/parse5
 
-(2) Istnieje wiele alternatyw dla `fast-html-parser`, takich jak `jsdom` czy `cheerio`, ale każda z nich ma swoje plusy i minusy. Na przykład, `jsdom` jest dosyć potężny, ale może okazać się zbyt skomplikowany do prostych zadań. Znalezienie odpowiedniego narzędzia zależy od konkretnego przypadku.
-
-(3) To, jak działa przetwarzanie HTML, to dosyć złożony temat. Ale mówiąc najprościej, biblioteka tak jak `fast-html-parser` przegląda cały tekst HTML od początku do końca, identyfikując tagi HTML i zasoby, które one zawierają, a następnie tworzy z nich strukturę danych, którą możemy łatwo przefiltrować i manipulować.
-
-## Zobacz także:
-
-- Dokumentacja `fast-html-parser`: [https://www.npmjs.com/package/fast-html-parser](https://www.npmjs.com/package/fast-html-parser)
-- Więcej o `jsdom`: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
-- Więcej o `cheerio`: [https://cheerio.js.org/](https://cheerio.js.org/)
+Wykorzystanie tych zasobów pozwoli Ci zagłębić się w świat parsowania HTML i zrozumieć, jak różne narzędzia są dostosowane do różnych potrzeb.

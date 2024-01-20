@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:31:09.248361-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,42 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos'è & Perché? 
+## What & Why? (Cosa & Perché?)
+Il parsing HTML consiste nel trasformare il codice HTML in una struttura dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre informazioni, manipolare e interagire con i contenuti web.
 
-L'analisi del HTML (parsing HTML) consiste nel decomporre e comprendere un documento HTML. I programmatori lo fanno per estrarre informazioni utili da pagine web o manipolare la struttura di un documento HTML.
+## How to: (Come fare:)
+```elixir
+# Installa Floki con: mix deps.get {:floki, "~> 0.30.0"}
+defmodule HtmlParser do
+  require Logger
 
-## Come si fa:
-Elixir offre molte soluzioni per l'analisi del HTML. Un esempio è usando la libreria Floki. Qui c'è un esempio:
-
-```Elixir
-def deps do
-  [
-    {:floki, "~> 0.30.0"}
-  ]
+  def fetch_and_parse(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{body: body}} ->
+        body
+        |> Floki.parse()
+        |> Floki.find("a")
+        |> Enum.map(&({"Link testo:", Floki.text(&1), "URL:", Floki.attribute("href", &1)}))
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        Logger.error("Errore: #{reason}")
+    end
+  end
 end
+
+# Esempio di utilizzo:
+parsed_links = HtmlParser.fetch_and_parse("https://elixir-lang.org")
+IO.inspect(parsed_links)
 ```
-Per estrarre un elemento dalla pagina:
 
-```Elixir
-def parse_html_page() do
-  {:ok, body} = HTTPoison.get("https://example.com")
-  Floki.find(body.body, "div.article")
-end
+Output campione:
+```elixir
+[
+  {"Link testo:", "Learn more", "URL:", "https://elixir-lang.org/learning"},
+  {"Link testo:", "Installation", "URL:", "https://elixir-lang.org/install.html"},
+  ...
+]
 ```
-Questo codice restituirà tutti gli elementi `div` con classe `article` dalla pagina web.
 
-## Approfondimenti
-Sure, l'analisi del HTML sembra semplice il questi giorni grazie a Elixir e Floki, ma non è sempre stato così. In passato, l'analisi del HTML era un'operazione dolorosa, spesso dipendeva da espressioni regolari che non erano affidabili.
+## Deep Dive (Approfondimento)
+La storia del parsing HTML è legata all'evoluzione del web. All'inizio, l'HTML era semplice e si poteva gestire con espressioni regolari. Man mano che HTML si è evoluto, il parsing è diventato più complesso. Librerie come Floki in Elixir sfruttano il parsing basato su alberi, che è più adatto a HTML complesso. Floki si basa su mochiweb per gestire gli alberi HTML.
 
-Un alternativa a Floki potrebbe essere Mochiweb, un'altra libreria Elixir. Offre un set di funzionalità simile ma la scelta tra i due dipende spesso dal caso d'uso e dalle preferenze personali.
+Alternative come `meeseeks` offrono anche parsing basato su query simili a jQuery. L'implementazione di Floki è progettata pensando alla concorrenza. Elixir, con il suo modello di attori (processi leggeri isolati), riesce a parallelizzare facilmente il parsing di grandi volumi di HTML, il che è un vantaggio significativo in termini di prestazioni e scalabilità.
 
-Per quanto riguarda i dettagli implementativi, Floki sfrutta una combinazione di trasformazioni a livello di stringa e alberi di sintassi astratta (AST) per il parsing e la manipolazione di documenti HTML.
-
-## Vedi Anche
-Per ulteriori informazioni su questo argomento, ecco alcuni link utili:
-
-1. [Guida ufficiale Floki](https://hexdocs.pm/floki/readme.html)
-2. [La documentazione di HTTPoison](https://hexdocs.pm/httpoison/readme.html)
-3. [Progetto GitHub di Mochiweb](https://github.com/mochi/mochiweb)
-
-Ricorda, il mestiere di un programmatore è fatto di apprendimento continuo. Buona programmazione!
+## See Also (Vedi Anche)
+- [Floki GitHub](https://github.com/philss/floki)
+- [HTTPoison GitHub](https://github.com/edgurgel/httpoison)
+- [Elixir Official Docs](https://elixir-lang.org/docs.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:35:12.834107-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
+Parsing av datoer konverterer strenger til datotyper. Programmerere gjør dette for å håndtere datoer konsistent, utføre datooperasjoner og støtte internasjonalisering.
 
-Å parse en dato fra en streng er prosessen med å konvertere en tekstuell representasjon av datoen til et datoto objekt som en datamaskin kan forstå og manipulere. Dette gjøres for å håndtere datoer på en mer strukturert og pålitelig måte.
-
-## Hvordan:
-
-Her er et eksempel på hvordan du gjør parsing av en dato fra en streng i C++:
+## Slik Gjør Du:
 ```C++
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 #include <chrono>
+#include <iomanip>
 
 int main() {
-    std::istringstream date_stream("2023-11-24");
-    std::tm date = {};
-    date_stream >> std::get_time(&date, "%Y-%m-%d");
-
-    if (date_stream.fail()) {
-        std::cout << "Failed to parse date!\n";
+    std::string date_str = "2023-03-28";
+    std::istringstream ss(date_str);
+    
+    std::chrono::year_month_day parsed_date;
+    ss >> std::chrono::parse("%F", parsed_date);
+    
+    if (ss.fail()) {
+        std::cout << "Parsing failed.\n";
     } else {
-        std::cout << std::put_time(&date, "%Y-%m-%d") << "\n";
+        std::cout << "Parsed date is: " << parsed_date << '\n';
     }
+    
     return 0;
 }
-```
-Utskriften av programmet vil være:
-```
-2023-11-24
-```
-Hvis den ikke klarer å parse datoen, vil du få et "Failed to parse date!"-melding.
 
-## Fordypning
+/*
+Output:
+Parsed date is: 2023-03-28
+*/
+```
 
-Historisk sett har programmerere laget egne funksjoner for å parse datoer. Men med fremveksten av moderne programmeringsspråk, som C++, er det standardiserte funksjoner og biblioteker tilgjengelig for å utføre denne oppgaven. Alternativt til 'get_time'-funksjonen, kan du bruke 'strptime'-funksjonen i C.
-
-Her er noen detaljer angående implementasjonen: 'get_time' funksjonen brukes til å lese tegn fra en innstrømsbuffer, parse dem i henhold til formatet gitt (i dette tilfellet "%Y-%m-%d"), og lagre de produserte verdier i de medlemmene av 'tm'-strukturen. Hvis parsingen mislyktes, vil 'failbit'-flagget være satt til 'date_stream'.
+## Dypdykk
+I gamle dager brukte C++ `std::tm` med `std::get_time` for parsing av datoer. Med C++20 introduseres `std::chrono` biblioteket som skaper en mer moderne og sikker måte å håndtere datoer og tider på. Alternativer inkluderer bruk av tredjeparts biblioteker som `boost::date_time`. Parsing involverer ofte feilsjekking, tidsonehåndtering og kulturavhengig format.
 
 ## Se Også
-
-For en dypere forståelse av hvordan å parse datoer I C++, kan du sjekke ut følgende kilder:
-
-- [cppreference](https://en.cppreference.com/w/cpp/io/manip/get_time)
-- [StackOverflow](https://stackoverflow.com/questions/14136833/stdget-time-vs-strptime) discussion on get_time versus strptime.
+- [cppreference.com: std::chrono](https://en.cppreference.com/w/cpp/chrono)
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)

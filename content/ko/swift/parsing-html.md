@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:33:59.091245-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
-HTML 파싱이란 HTML을 읽고 분석해서 해당 정보를 가져오는 것입니다. 프로그래머들은 웹 페이지에서 데이터를 추출하거나 웹 크롤링을 실행하기 위해 HTML 파싱을 합니다.
+## What & Why? (무엇과 왜?)
+HTML 파싱은 웹 페이지의 구조적 데이터를 추출 및 조작하는 과정입니다. 프로그래머들은 웹 콘텐츠의 데이터를 읽고, 스크랩하거나, 다른 형식으로 변환하기 위해 파싱을 합니다.
 
-## 어떻게 사용하는가?
-Swift에서 HTML을 파싱하기 위해 SwiftSoup 라이브러리를 사용해 보겠습니다. 아래 코드는 기본적인 사용법을 보여줍니다.
+## How to: (어떻게:)
+Swift에서는 `SwiftSoup` 같은 서드파티 라이브러리로 HTML을 파싱할 수 있습니다. 예시를 보시죠.
 
-```swift
+```Swift
 import SwiftSoup
 
-let html = "<p>안녕하세요, SwiftSoup!</p>"
+// HTML 문자열 예시
+let html = "<html><head><title>First parse</title></head>" + "<body><p>Parsed HTML into a doc.</p></body></html>"
+
 do {
-    let doc: Document = try SwiftSoup.parse(html)
-    let p: Element = try doc.select("p").first()!
-    print(try p.text())
+    // HTML 파싱
+    let doc = try SwiftSoup.parse(html)
+    // title 요소 내용 추출
+    let title = try doc.title()
+    // 바디의 텍스트 추출
+    let body = try doc.body()?.text()
+    print(title) // "First parse" 출력
+    print(body!) // "Parsed HTML into a doc." 출력
 } catch Exception.Error(let type, let message) {
-    print(message)
+    print("Message: \(message)")
 } catch {
     print("error")
 }
 ```
+이렇게 `SwiftSoup`을 사용하면 쉽게 HTML 내용을 읽을 수 있습니다.
 
-이 코드를 실행하면 `안녕하세요, SwiftSoup!`가 출력됩니다.
+## Deep Dive (심층 탐구)
 
-## 더 깊이 알아보기
-HTML 파싱은 웹 개발의 초기부터 사용되어 왔습니다. 그 이유는 HTML 문서의 구조를 이해하는 것이 효과적인 웹 스크래핑을 위해 필수이기 때문입니다.
+HTML 파싱은 초창기 웹 시절부터 중요했습니다. HTML 문서는 웹의 기본 빌딩 블록인데, 파싱 없이는 머신이 이해할 수 없는 단순 텍스트에 불과합니다.
 
-HTML 파싱 대안으로는 정규 표현식 등이 있지만, 정확도가 떨어질 수 있으니 주의해야 합니다.
+Swift용 HTML 파싱 라이브러리로는 SwiftSoup 외에도 Kanna나 hpple 같은 옵션이 있습니다. SwiftSoup은 Java의 Jsoup 라이브러리에 영감을 받아 만들어졌으며, HTML 요소를 간단히 조작하고 쿼리할 수 있는 API를 제공합니다.
 
-SwiftSoup 라이브러리의 구현은 백엔드에서 HTML 트리를 만들고, 특정 태그나 클래스를 선택하는 방식으로 작동합니다.
+파싱의 세부사항을 살펴보면, 파서가 DOM (Document Object Model)을 구성하고, 요소의 속성과 텍스트를 추출하는 방식을 이해할 수 있습니다. 또한, 네트워크 호출로 HTML을 직접 가져오는 작업도 필요할 수 있습니다.
 
-## 참고 자료
-SwiftSoup 라이브러리에 대해 더 알고 싶다면, [공식 문서](https://github.com/scinfu/SwiftSoup)를 확인해 보세요. 또한, HTML 파싱에 대한 배경 지식을 더 얻고 싶다면, [MDN 문서](https://developer.mozilla.org/ko/docs/Web/HTML)를 참조하시기 바랍니다.
+XML과 HTML은 유사해 보이지만, HTML은 유효하지 않은 마크업을 자주 포함합니다. SwiftSoup와 같은 라이브러리는 이런 유효하지 않은 마크업을 잘 처리해 줍니다. 성능은 사용하는 라이브러리에 따라 크게 달라질 수 있으니, 사용 전에 잘 고려해야 합니다.
+
+## See Also (참고 자료)
+
+- [SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup)
+- [HTML Standard](https://html.spec.whatwg.org/)
+- [W3C DOM](https://www.w3.org/DOM/)
+- [Kanna GitHub](https://github.com/tid-kijyun/Kanna)
+- [hpple GitHub](https://github.com/topfunky/hpple)

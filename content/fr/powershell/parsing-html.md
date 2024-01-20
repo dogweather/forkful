@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:33:11.218561-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La syntaxe HTML est convertie ('parsée') en structures de données par un analyseur HTML. Les programmeurs le font pour extraire des informations spécifiques, manipuler des pages Web ou même construire des crawlers Web.
+## What & Why?
+Le parsing HTML, c'est transformer le code HTML en un format exploitable par les scripts. Les programmeurs l'utilisent pour automatiser l'analyse et l'extraction d'informations des pages web.
 
-## Mode d'emploi:
-Pour parser du HTML dans PowerShell, on utilise un objet HTMLDocument avec la méthode 'InvokeScript'. Regardez cet exemple :
+## How to:
+PowerShell n'a pas de fonctionnalité de parsing HTML intégrée, mais on peut utiliser le module HtmlAgilityPack. Installez-le via NuGet et voyons comment l'utiliser avec un exemple simple :
 
 ```PowerShell
-# Ajouter un type pour interagir avec Internet Explorer 
-Add-Type -AssemblyName Microsoft.mshtml
-# Charger le HTML dans un objet HTMLDocument
-$html = New-Object -ComObject "HTMLFile"
-$html.IHTMLDocument2_write($(Invoke-WebRequest -uri “https://votre-site-web.com”))
+# Installer HtmlAgilityPack
+Install-Package HtmlAgilityPack -Scope CurrentUser
 
-# Extraire un élément par son ID
-$element = $html.getElementById('votre_id')
+# Utilisation de HtmlAgilityPack pour parser un document HTML
+$html = New-Object HtmlAgilityPack.HtmlDocument
+$html.LoadHtml("<html><body><p>Salut le monde !</p></body></html>")
 
-# Afficher le texte de l'élément
-$element.innerText
+# Extraction du contenu du paragraphe
+$pContent = $html.DocumentNode.SelectSingleNode("//p").InnerText
+Write-Host $pContent
 ```
-Ce code va télécharger le HTML, le parser, trouver un élément par son identifiant et imprimera son texte en sortie.
 
-## Plongée en profondeur
-Historiquement, HTML était moins structuré et plus souple que le XML, causant des problèmes pour parser certains documents. Avec HTML5, le HTML a adopté une syntaxe plus stricte facilitant le parsing.
+Sortie :
+```
+Salut le monde!
+```
 
-Il y a plusieurs alternatives à PowerShell pour parser HTML, notamment BeautifulSoup pour Python ou Cheerio pour Node.js. Ces outils offrent plus de fonctionnalités mais nécessitent l'installation d'un environnement de programmation distinct.
+## Deep Dive
+Avant HtmlAgilityPack et d'autres bibliothèques similaires, les techniques de parsing HTML étaient rudimentaires et impliquaient souvent l'utilisation d'expressions régulières, ce qui n'est pas idéal étant donné la complexité et la variabilité du HTML. HtmlAgilityPack résout ce problème en fournissant un modèle d'objet document (DOM) que vous pouvez interroger avec XPath. Ses alternatives incluent AngleSharp ou des approches côté client comme JavaScript avec la méthode `document.querySelectorAll`. Les détails d'implémentation avec HtmlAgilityPack impliquent que le DOM HTML est chargé dans un objet facile à explorer et à manipuler. Cela vous permet de réaliser des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer) sur le contenu HTML.
 
-La méthode InvokeScript exécute un bloc de script, le rendant idéal pour interagir avec une page web en utilisant son DOM.
-
-## À voir également
-- [BeautifulSoup Python Library](https://www.crummy.com/software/BeautifulSoup/)
-- [Cheerio Node.js Library](https://cheerio.js.org)
+## See Also
+- HtmlAgilityPack Documentation: https://html-agility-pack.net/?z=codeplex
+- XPath Syntax: https://www.w3schools.com/xml/xpath_syntax.asp
+- AngleSharp GitHub Repository: https://github.com/AngleSharp/AngleSharp

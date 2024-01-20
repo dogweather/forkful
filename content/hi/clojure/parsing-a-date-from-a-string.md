@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:35:55.059451-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+पार्सिंग एक स्ट्रिंग से डेट का मतलब होता है स्ट्रिंग में मौजूद तारीखों को पहचानना और उन्हें संग्रहित करना। प्रोग्रामर्स इसे डेटा वैलिडेशन, सर्टिफिकेशन, और मैनिपुलेशन के लिए करते हैं।
 
-धागे से एक तारीख की पाठ्यक्रमण क्या होती है? यह एक कार्य होता है जिसमें किसी धागे में संग्रहीत तारीख को मिलाने के लिए किसी तारीख के प्रारूप को मान्यता की जाती है। प्रोग्रामर इसे विशेष रूप से क्यों करते हैं? यह हमें डाटा को विशिष्ट तारीख प्रारूपों में पुन: स्थापित करने, मिलाने और बदलने की क्षमता देता है।
-
-## कैसे:
-
-Clojure में, हमें Java के java.time लाइब्रेरी के साथ काम करने के लिए clj-time लाइब्रेरी का उपयोग करना होगा।
+## How to: (कैसे करें:)
+Clojure में डेट पार्स करने के लिए `clj-time` लाइब्रेरी का इस्तेमाल किया जाता है, जिसे `java.time` के समर्थन के साथ अपडेट किया गया है। उदाहरण और उनके आउटपुट देखिए:
 
 ```Clojure
-(ns date-parsing.core
-  (:require [clj-time.coerce :as c]
-            [clj-time.format :as f]))
+(require '[java.time.format :refer [DateTimeFormatter]])
+(require '[java.time :as jt])
 
-(defn parse-date [s] 
-  (c/from-string (f/parse s)))
+(defn parse-date [date-string]
+  (let [formatter (DateTimeFormatter/ofPattern "dd-MM-yyyy")]
+    (.format (jt/parse date-string formatter))))
+
+;; Example usage:
+(parse-date "23-05-2021")
+;; Output: "2021-05-23"
 ```
 
-अगर हमें "2020-12-12" को parse करना हो तो, हमें केवल `parse-date` function को call करना होगा:
+इस कोड से आप "23-05-2021" फॉर्मेट वाली स्ट्रिंग को ISO-8601 फॉर्मेट में पार्स कर सकेंगे।
 
-```Clojure
-(parse-date "2020-12-12")
-```
+## Deep Dive (गहराई में जानकारी)
+डेट पार्सिंग, पूर्व में पुराने `java.util.Date` और `java.util.Calendar` पर निर्भर थी। जावा 8 में `java.time` API लाई गई, जिसे Clojure सामुदायिक लाइब्रेरीज जैसे कि `clj-time` ने शामिल किया। इससे पार्सिंग अधिक लचीली और विश्वसनीय हो गई है।
 
-और यह हमें #inst "2020-12-12T00:00:00.000-00:00" ऑउटपुट देगा।
+पार्सिंग के लिए विकल्प में बाहरी लाइब्रेरीज जैसे कि `Joda-Time` शामिल हैं, पर `java.time` के साथ इसकी आवश्यकता कम हो गई है।
 
-## गहराईवादी जानकारी:
+इम्प्लीमेंटेशन डिटेल्स पर गौर करें तो, पार्सिंग के दौरान फॉर्मेटर्स का इस्तेमाल करके स्ट्रिंग को सही तरीके से पार्स करना होता है। इसके लिए पैटर्न स्ट्रिंग बहुत महत्वपूर्ण होता है।
 
-1. इतिहासिक संदर्भ: Clojure को Java पर बनाया गया था, और डेटा को पार्स करने के हमारे लिए मुख्य पुस्तकालय हमें Java से ही मिला।
-
-2. विकल्प: 'clj-time' के अलावा 'java.time' जैसे अन्य लाइब्रेरी भी है जिसका उपयोग किया जा सकता है। 
-
-3. कार्यान्वयन विवरण: दी गई तारीख के पाषण का कार्य java.time लाइब्रेरी के द्वारा किया जाता है, और clj-time लाइब्रेरी बस इसे Clojure के लिए अधिक उपयोगी ढांचे में रूपांतरित करती है।
-
-## और देखें:
-
-
-2. [clj-time GitHub](https://github.com/clj-time/clj-time)
-
-3. [Java Date और Time API (Java 8)](https://www.javatpoint.com/java-8-date-time-api)
+## See Also (और भी जानकारी)
+- java.time API के दस्तावेज: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- clj-time GitHub पृष्ठ: https://github.com/clj-time/clj-time
+- Clojure डॉक्स का `java-time` लाइब्रेरी पर पृष्ठ: https://clojuredocs.org/clojure.java-time

@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:35:21.864595-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å parse en dato fra en streng er prosessen med å oversette tekstlig representasjon av en dato til et datatypen som programmeret kan behandle. Vi gjør dette fordi da kan vi manipulere og beregne data, for eksempel å finne forskjellene mellom to datoer.
+## What & Why?
+Dato-parsing fra strenger er å gjøre lesbare datoer om til strukturerte data datamaskiner kan behandle. Vi gjør dette for å enkelt kunne manipulere og sammenligne datoer, lagre dem i databaser, og for å kommunisere mellom systemer.
 
-## Hvordan:
-```Clojure 
-(require '[java.time :as jt])
-(require '[java.time.format :as fmt])
+## How to:
+Clojure gir oss en rekke verktøy for å takle dato-parsing. La oss dykke rett inn i noen kodelinjer som viser hvordan dette kan gjøres.
 
-(defn parse-date [date-str] 
-  (jt/LocalDate/parse date-str (fmt/DateTimeFormatter/ofPattern "dd-MM-yyyy")))
+```Clojure
+(require '[clj-time.format :as fmt])
+(require '[clj-time.coerce :as coerce])
 
-(println (parse-date "31-12-2020")) 
-;; output: 2020-12-31
+; Definer et datoformat
+(def custom-formatter (fmt/formatter "dd.MM.yyyy"))
+
+; Parsing av en streng til en dato
+(def parsed-date (fmt/parse custom-formatter "31.12.2022"))
+
+; Viser datoen
+(prn (str "Parsed date is: " parsed-date))
+
+; Konverterer til java.util.Date for kompatibilitet
+(def java-date (coerce/to-date parsed-date))
+
+; Printer java.util.Date
+(prn (str "Java Date: " java-date))
 ```
-Her tar vi en dato streng "31-12-2020" og konverterer den til LocalDate-format som kan lett blir manipulert i Clojure.
 
-## Dypdykk
-1) Historisk kontekst: I de tidlige dagene av programmering, måtte programmererne håndtere dato parsing manuelt. Men moderne språk som Clojure har innebygd støtte for dato parsing.
+Output:
+```
+"Parsed date is: 2022-12-31T00:00:00.000Z"
+"Java Date: Sat Dec 31 00:00:00 UTC 2022"
+```
 
-2) Alternativer: Alternativt til 'java.time', kan du også bruke 'clj-time' bibliotek hvis du bruker en eldre versjon av Clojure eller Joda-Time bibliotek i Java.
+## Deep Dive
+I eldre dager var java.util.Date veien å gå for dato-manipulasjon i JVM-språk, inkludert Clojure. Men java.util.Date hadde sine begrensninger og problemer. Joda-Time biblioteket ble introdusert for å fylle disse hullene. Clojure's clj-time bibliotek er en wrapper rundt Joda-Time og gir en mer funksjonell tilnærming som passer godt med Clojure's filosofi. 
 
-3) Implementeringsdetaljer: 'java.time.LocalDate/parse' og 'java.time.format.DateTimeFormatter/ofPattern' er metoder tilgjengelige i Java-biblioteket, og Clojure tillater oss å bruke dem direkte i kode.
+Alternativer til clj-time inkluderer java.time biblioteket (kjent som JSR-310), som er inkludert i Java 8 og utover. Dette gir et omfattende API for dato og tid, og er ment å erstatte eldre verktøy som java.util.Date.
 
-## Se Også:
-1) Clojure Official Documentation: [https://clojure.org/](https://clojure.org/)
-2) Java era and time-manipulation features: [https://docs.oracle.com/javase/tutorial/datetime/](https://docs.oracle.com/javase/tutorial/datetime/)
-3) Clojure Cookbook: Date and Time: [https://clojure-cookbook.com/](https://clojure-cookbook.com/)
+Når du parser en dato fra en streng, bør formatteren matche formatet på strengen nøyaktig. Det er også viktig å håndtere tidssoner riktig for å unngå feil.
+
+## See Also
+- `clj-time` GitHub-side: https://github.com/clj-time/clj-time
+- ClojureDocs, en community-drevet dokumentasjon: https://clojuredocs.org/
+- Java 8 Date and Time guide: https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html

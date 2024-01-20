@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:38:42.177660-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,44 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String ist ein Prozess, bei dem ein Textformat in ein Datumsobjekt umgewandelt wird. Programmierer machen dies, um Daten in ein benutzerfreundlicheres und einfacher zu verarbeitendes Format zu bringen.
 
-## So Geht's:
+Datum aus einem String parsen bedeutet, geschriebenes Datum in ein Date-Objekt umzuwandeln. Das ist nötig, um mit Datumsangaben zu rechnen, sie zu vergleichen oder in einem anderen Format auszugeben.
 
-In Swift können wir das `DateFormatter`-Objekt verwenden, um Datumsstrings zu parsen. Hier ist ein einfaches Beispiel.
+## How to:
 
 ```Swift
 import Foundation
 
-let datumsString = "2020-12-31"
-let formatter = DateFormatter()
-formatter.dateFormat = "yyyy-MM-dd"
+// String zu Datum mit DateFormatter
+let dateString = "31.03.2023"
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd.MM.yyyy"
+dateFormatter.locale = Locale(identifier: "de_DE")
 
-if let datum = formatter.date(from: datumsString) {
-    print("Das Datum ist \(datum).")
+if let date = dateFormatter.date(from: dateString) {
+    print("Das geparste Datum ist: \(date)")
 } else {
-    print("Ungültiges Datumsformat.")
+    print("Parsing des Datums fehlgeschlagen.")
 }
 ```
 
-Wenn wir diesen Code ausführen, ist das Ausgabeergebnis: 
+Sample Output:
 
-```Swift
-Das Datum ist 2020-12-31 00:00:00 +0000.
 ```
-## Vertiefung:
+Das geparste Datum ist: 2023-03-30 22:00:00 +0000
+```
 
-(1) Historischer Kontext: Die Notwendigkeit, Datumswerte zu parsen, besteht bereits seit den frühen Tagen der Programmierung. Früher wurden oft eigene Funktionen dafür geschrieben, aber moderne Sprachen wie Swift bieten eingebaute Werkzeuge dafür.
+## Deep Dive
 
-(2) Alternativen: Verschiedene Programmiersprachen haben unterschiedliche Methoden zur Bearbeitung von Datumswerten. In Python zum Beispiel verwenden wir das `datetime` Modul, während in JavaScript die `Date`-Klasse verwendet wird.
+Das Parsen von Datumsangaben aus Strings ist essenziell, da sehr viele menschliche Interaktionen mit Daten darüber laufen. DateFormatter ist Teil von Foundation seit Swift's Anfangstagen und bietet einen flexiblen Weg, Strings in Date-Objekte umzuwandeln. Alternativ gibt es Libraries wie `SwiftDate`, die noch mehr Funktionalitäten bereitstellen. Die Implementierung von DateFormatter beruht auf den Locale-Einstellungen, was bedeutet, dass ohne passende Locale, das Parsing scheitern kann – achte also darauf!
 
-(3) Implementierungsdetails: Der `DateFormatter` in Swift arbeitet nach den ICU-Spezifikationen, was bedeutet, dass er eine große Vielfalt an Datumsformaten unterstützt. Weiterhin ist zu beachten, dass das Parsen fehlschlägt, wenn das Datumsformat nicht mit dem des Strings übereinstimmt.
+## See Also
 
-## Siehe Auch:
-
-Für weitere Informationen zum Parsen von Datumswerten, schauen Sie sich die folgenden Quellen an:
-
-- Apple's offizielle Dokumentation zu [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- Stack Overflow Diskussion zu [Date Parsing in Swift](https://stackoverflow.com/questions/35700281/date-format-in-swift) 
-
-Erinnern Sie sich, Date Parsing ist ein alltägliches Problem in der Programmierung, und Swift macht es uns leicht, es zu lösen!
+- [ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
+- [SwiftDate GitHub Repository](https://github.com/malcommac/SwiftDate)

@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:36:51.343698-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è & Perché?
-
-Estrarre una data da una stringa significa convertire un testo (come "01/02/2003") in un oggetto ```Date``` in Javascript. Lo facciamo per manipolare e utilizzare la data in vari modi nel nostro codice, ad esempio per fare calcoli o per organizzare in modo efficace i dati temporali.
+## Cosa & Perché?
+Il parsing di una data da una stringa significa estrarre le informazioni temporali e convertirle in un formato utilizzabile dal programma. Gli sviluppatori lo fanno per manipolare, salvare o confrontare date in modo coerente in diverse zone geografiche, sistemi o formati.
 
 ## Come fare:
+JavaScript fornisce `Date.parse()` ma spesso gestiamo le date con l'oggetto `Date` e i metodi come `new Date()`.
 
-Ecco un esempio su come farlo in Javascript:
+```javascript
+// Parsing di una data usando il costruttore Date
+let data = new Date('2023-04-01T12:00:00Z');
+console.log(data.toString());
+// "Sat Apr 01 2023 14:00:00 GMT+0200 (ora legale dell’Europa centrale)"
 
-```Javascript
-let stringaData = "03/04/2005";
-let data = new Date(stringaData);
+// Parsing con Date.parse() che restituisce un timestamp
+let timestamp = Date.parse('April 1, 2023 12:00:00');
+console.log(timestamp);
+// 1680416400000
+```
+
+## Approfondimento
+Nel mondo JavaScript, il parsing delle date ha una storia complicata dovuta a diversi formati e problemi di inconsistenza di browser. Per questo, molte alternative come le librerie `Moment.js` o `date-fns` sono nate per semplificarlo.
+
+Le date JS seguono le specifiche ISO 8601 (`YYYY-MM-DDTHH:mm:ss.sssZ`). Se non specifici un fuso orario, JavaScript usa quello locale. Attenzione agli offset di fuso orario creando date in questo modo.
+
+La libreria `date-fns` fornisce funzioni leggere e modulari per il parsing delle date:
+
+```javascript
+// Parsing di una data con date-fns
+import { parseISO } from 'date-fns';
+let data = parseISO('2023-04-01T12:00:00Z');
 console.log(data);
 ```
 
-Questo ti restituirà un oggetto ```Date``` come:
+Prima della specifica ECMAScript 5, il parsing delle date era ancora più hit or miss, non fidarti del parsing nativo per applicazioni complesse.
 
-```Javascript
-Sat Apr 03 2005 00:00:00 GMT+0200 (Central European Standard Time)
-```
-
-## Panoramica
-
-La possibilità di creare un oggetto ```Date``` da una stringa è stata introdotta in Javascript 1.0. Ma dato che ci sono molti formati di data e ora nel mondo, Javascript offre vari modi per interpretare le stringhe di data. Se la stringa non è nel formato specificato da ECMAScript (ISO 8601), Javascript proverà a interpretarla utilizzando il formato Date del browser. Questo può variare a seconda della localizzazione e del browser, quindi è più sicuro utilizzare una stringa compatibile con ISO 8601 per l'interpretazione coerente dei dati in tutte le piattaforme.
-
-Ci sono anche librerie Javascript dedicate come Moment.js che forniscono più funzionalità per lavorare con le date e fornire parsing più robusto e preciso.
-
-Per quanto riguarda i dettagli di implementazione, quando crei un nuovo oggetto ```Date``` con una stringa, Javascript utilizza il costruttore nativo ```Date``` per convertire la stringa in un formato di data che può usare per le operazioni di data.
-
-## Approfondimenti
-
-- [Documentazione completa per Moment.js](https://momentjs.com/docs/)
-- [Dettagli ECMAScript sulla Date](http://www.ecma-international.org/ecma-262/11.0/index.html#sec-date-constructor)
+## Vedi Anche
+- Documentazione MDN su Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Moment.js: https://momentjs.com/
+- date-fns: https://date-fns.org/
+- Specifica ISO 8601: https://www.iso.org/iso-8601-date-and-time-format.html

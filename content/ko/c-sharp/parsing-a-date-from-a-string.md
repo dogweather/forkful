@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:35:40.272691-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+문자열에서 날짜 파싱은 텍스트 형식의 날짜 정보를 날짜와 시간 객체로 변환하는 것입니다. 이 과정은 사용자 입력이나 파일과 같은 외부 소스에서 날짜 데이터를 읽고 이해할 때 필수적입니다.
 
-문자열에서 날짜를 파싱하는 것은 특정 문자열 형식의 날짜를 DateTime 객체로 변환하는 과정입니다. 이는 프로그래머들이 날짜와 시간 데이터를 용이하게 조작하고 사용하기 위해 필요한 작업입니다.
-
-## 어떻게 하나요:
-
-다음은 C#에서 문자열에서 날짜를 파싱하는 코드입니다:
-
+## How to: (방법)
 ```C#
-string dateString = "2022-07-21";
-DateTime parsedDate;
+using System;
+using System.Globalization;
 
-if (DateTime.TryParse(dateString, out parsedDate))
+class Program
 {
-    Console.WriteLine("파싱 성공: {0}", parsedDate);
+    static void Main()
+    {
+        // 문자열에서 날짜 파싱
+        string dateString = "2023-04-15";
+        DateTime parsedDate = DateTime.ParseExact(dateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+        
+        // 결과 출력
+        Console.WriteLine(parsedDate); // 출력: 2023-04-15 00:00:00
+    }
 }
-else
-{
-    Console.WriteLine("파싱 실패");
-}
 ```
-이 코드는 문자열 "2022-07-21"을 DateTime 객체로 파싱합니다. 'TryParse' 메서드는 파싱을 시도하고, 성공하면 true를 반환하고 'parsedDate'에 변환 된 DateTime 객체를 설정합니다. 그렇지 않으면 false를 반환합니다.
+날짜 문자열을 `DateTime` 객체로 변환했습니다. `ParseExact` 메서드를 사용해 날짜 포맷을 명시적으로 지정했어요.
 
-이 코드의 출력 예는 다음과 같습니다:
+## Deep Dive (심층 분석)
+날짜 파싱은 .NET의 초기부터 함께 했습니다. 연-월-일 형식은 표준적입니다만, `CultureInfo`를 이용해 다양한 지역과 포맷을 지원합니다. `DateTime.Parse`, `DateTime.ParseExact`, `DateTime.TryParse`, `DateTime.TryParseExact` 같은 메서드들이 있지요.
 
-```
-파싱 성공: 2022-07-21 00:00:00
-```
+- `DateTime.Parse`: 날짜와 시간의 문자열 표현을 `DateTime` 객체로 변환합니다.
+- `DateTime.TryParse`: 변환에 실패해도 예외를 발생시키지 않고 성공 여부를 반환합니다.
+- `DateTime.ParseExact`와 `DateTime.TryParseExact`: 정확한 형식이 알려져 있을 때 사용합니다.
 
-## 심화 내용:
+알맞은 메서드를 선택하는 건 중요합니다. `TryParse`와 `TryParseExact`는 변환 실패 시 예외 대신 false를 반환하기 때문에 더 안전한 파싱을 가능하게 합니다. 또한, `CultureInfo.InvariantCulture`를 사용함으로써 문화권-중립적 날짜 포맷을 정의할 수 있습니다.
 
-1. **역사적 맥락**: C#에서 날짜와 시간을 파싱하고 조작하는 기능은 프로그래밍 언어의 초기 버전부터 존재했습니다. 일관된 작업을 위해 .NET은 국제 표준을 따르는 DateTime과 DateTimeOffset 유형을 제공합니다.
-
-2. **대안**: "DateTime.Parse"와 "DateTime.TryParse" 외에도 "DateTime.ParseExact"와 "DateTime.TryParseExact" 메서드를 사용하여 날짜와 시간 형식의 문자열을 파싱할 수 있습니다. 이러한 메서드는 특정 형식을 명확하게 지정할 수 있다는 장점이 있습니다.
-
-3. **구현 세부사항**: 파싱하기 전 문자열의 형식이 DateTime 형식 (예: "yyyy-MM-dd")과 일치해야합니다. 아닐 경우 파싱에 실패합니다.
-
-## 참고 자료:
-
-- MS Docs의 DateTime 구조에 대한 설명: <https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0>
-- Date and Time Format in C#: <https://www.c-sharpcorner.com/blogs/date-and-time-format-in-c-sharp-programming1>
-- C# - Date & Time: <https://www.tutorialspoint.com/csharp/csharp_date_time.htm>
+## See Also (참고 자료)
+- [DateTime.Parse Method | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-7.0)
+- [Custom Date and Time Format Strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [CultureInfo Class | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-7.0)

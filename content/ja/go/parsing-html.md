@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:32:06.809864-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Go"
@@ -10,57 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTMLパースとは何か、なぜするのか？
+## What & Why? / 何となぜ？
 
-HTMLパースは、HTML文書を解析するプロセスのことです。プログラマーがこれを行う主な理由は、ウェブページから特定のデータを抽出したり、HTML文書の構造を理解したりするためです。
+HTMLの解析（Parsing HTML）は、ウェブページの構造を理解したり、特定のデータを取得したりするために行います。プログラマーは通常、Webスクレイピングやデータマイニング、自動化されたテストなどにこの手法を活用します。
 
-# 使い方：
+## How to / 方法
 
-Go言語でHTMLをパースする基本的な例を以下に示します。
+Go言語でHTMLを解析するには、標準ライブラリに含まれる`"net/html"`パッケージを使用します。以下のサンプルコードでは、HTMLドキュメントからタイトルを抽出しています。
 
-```Go
+```go
 package main
 
 import (
 	"fmt"
-	"golang.org/x/net/html"
 	"strings"
+	"golang.org/x/net/html"
 )
 
 func main() {
-	s := `<p>Go言語によるHTMLパーシングの例</p>`
-	doc, _ := html.Parse(strings.NewReader(s))
+	h := `<html><head><title>サンプルページ</title></head><body><p>こんにちは、世界！</p></body></html>`
+	doc, err := html.Parse(strings.NewReader(h))
+	if err != nil {
+		panic(fmt.Sprintf("HTML parse error: %v", err))
+	}
 
 	var f func(*html.Node)
 	f = func(n *html.Node) {
-		if n.Type == html.TextNode {
-			fmt.Println(n.Data)
+		if n.Type == html.ElementNode && n.Data == "title" {
+			fmt.Println(n.FirstChild.Data)
 		}
 		for c := n.FirstChild; c != nil; c = c.NextSibling {
 			f(c)
 		}
 	}
+
 	f(doc)
 }
 ```
-実行結果は以下の通りです：
 
-```Go
-Go言語によるHTMLパーシングの例
+このコードを実行すると、以下の出力が得られます。
+
+```
+サンプルページ
 ```
 
-# ディープダイブ：
+## Deep Dive / 詳細な解析
 
-HTMLパーシングの歴史的な文脈は、ウェブが生まれ、情報を整理する必要性が高まったことに始まります。HTML文書のパースは、特定の情報を効率的に取得できるようにしました。
+HTMLの解析は、Webの成立初期から必要とされてきました。初期の解析器は簡単な正規表現に頼ることも多かったですが、今日ではDOM（Document Object Model）に基づく解析が一般的です。`net/html`パッケージはGo言語におけるHTML解析のためのロバストなツールです。`net/html`は、効率的なトークン化と構文解析のために、内部的にトークンベースのパーサーを使用しています。
 
-Go言語以外にも、JavaScriptやPythonといった他の言語を使用してHTMLをパースする方法があります。それぞれの言語には様々なライブラリが提供されており、要求によってはこちらを選択するのも良いでしょう。
+替わりに、「goquery」のようなサードパーティのライブラリを利用することもあります。これらのライブラリは、jQueryのような構文を使用して、柔軟かつ便利なDOM操作を可能にすることが特徴です。
 
-Go言語では、`golang.org/x/net/html`パッケージを使用してHTMLを解析します。このパッケージは、「トークン化」、「解析」、「ツリー構築」の3つの主要なステップを使用してHTMLをパースします。
+## See Also / 関連する情報
 
-# 参考情報：
-
-以下のリンクを参考にしてみてください。
-
-- Go言語の公式文書: https://golang.org/
-- net/htmlパッケージの詳細: https://godoc.org/golang.org/x/net/html
-- GoによるHTMLパーシング関連のブログ記事：https://yourbasic.org/golang/howto-web-scraping-go-chromedp/
+- Go言語の公式ドキュメント: [net/html package](https://pkg.go.dev/golang.org/x/net/html)
+- クエリベースの操作を簡単にする `goquery`: [GoQuery package](https://github.com/PuerkitoBio/goquery)
+- HTMLとDOMについての詳細情報: [Mozilla Developer Network - DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)

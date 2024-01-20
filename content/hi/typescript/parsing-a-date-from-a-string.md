@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:39:01.415443-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# डेट पार्सिंग: TypeScript में एक स्ट्रिंग से डेट पार्स करना 
+## What & Why? (क्या और क्यों?)
+तारिखें अक्सर स्ट्रिंग के रूप में आती हैं। तारिख को पार्स करने का मतलब है इस स्ट्रिंग को ऐसे फॉर्मेट में बदलना जिसे कंप्यूटर समझ सके। प्रोग्रामर्स इसे तारिखों के साथ गणना और मान्यताएँ करने के लिए करते हैं।
 
-## क्या और क्यों?
-डेट पार्सिंग से हमारा मतलब होता है की हम कोई स्ट्रिंग से डेट को निकाल रहे हैं। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि इससे डेटा को सुविधाजनक रूप से उपयोग कर सकते हैं और अनुप्रयोग की आवश्यकताओं को पूरा कर सकते हैं।
-
-## कैसे करें:
-TypeScript में डेट पार्सिंग हम निम्नलिखित तरीके से कर सकते हैं।
-
+## How to: (कैसे करें)
 ```typescript
-// निम्न स्ट्रिंग से डेट पार्स करें: "2022-04-15"
-let parsedDate: Date = new Date("2022-04-15");
-console.log(parsedDate); // Outputs: 2022-04-15T00:00:00.000Z
+let dateString: string = '2023-04-05T14:48:00.000Z';
+
+// साधारण तरीके से Date ऑब्जेक्ट बनाना
+let date: Date = new Date(dateString);
+console.log(date); // Wed Apr 05 2023 20:18:00 GMT+0530 (India Standard Time)
+
+// Date-fns लाइब्रेरी का यूज करके पार्स करना
+import { parseISO } from 'date-fns';
+let parsedDate = parseISO(dateString);
+console.log(parsedDate); // Wed Apr 05 2023 20:18:00 GMT+0530 (India Standard Time)
 ```
-यहां पर, `new Date()` इस स्ट्रिंग को `Date` ऑब्जेक्ट में परिवर्तित कर रहा है और हम इसे `parsedDate` में संग्रहित कर रहे हैं।
 
+## Deep Dive (गहराई से जानकारी)
+तारिख पार्स करना ऑनलाइन फॉर्म्स और JSON डेटा के साथ बहुत आम है। इतिहास में, लोग `Date.parse()` या `new Date()` जैसे बिल्ट-इन जावास्क्रिप्ट फ़ंक्शन का यूज करते थे। लेकिन, ये अलग-अलग ब्राउज़र्स में भिन्नताओं की वजह से समस्या पैदा कर सकते हैं।
 
-## गहराई से जानकारी 
+लाइब्रेरीज़ जैसे `date-fns` या `Moment.js` ने इसे आसान बना दिया है, ये विश्वसनीय पार्सिंग प्रोवाइड करते हैं और टाइमज़ोन्स, लीप सेकंड्स जैसी चीजों को हैंडल भी करते हैं। `date-fns` छोटा और modular है, इसलिए ये पसंद किया जाता है जब आपको पूरी `Moment.js` लाइब्रेरी की जरुरत नहीं होती।
 
-डेट पार्सिंग का इतिहास सरल जीवन की शुरुआत से विशिष्ट किया जा सकता है जहां कंप्यूटर उद्योग में तारीख/समय सहनशीलता की आवश्यकता शुरू हुई।
-
-विकल्प रूप में, हम भी `Date.parse()` का उपयोग कर सकते हैं, यदि हम केवल मिलिसेकंड की अवधि प्राप्त करने में रुचि रखते हैं।
-```typescript
-let timeStamp: number = Date.parse("2022-04-15");
-console.log(timeStamp); // Outputs: 1652678400000
-```
-अंतिम में, इसे कैसे किया जाता है? `Date` कन्स्ट्रक्टर या `Date.parse` विधि ECMAScript कानूनों का अनुसरण करती है, जो कि विभिन्न तारीख और समय स्वरूपों को स्वीकार करती है । 
-
-## अधिक जानकारी के लिए:
-1. [MDN Web Docs: Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-3. [ECMAScript 2021 Language Specification](https://tc39.es/ecma262/#sec-date.parse)
+## See Also (और भी देखें)
+- MDN Web Docs of Date: [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Date-fns documentation: [date-fns Documentation](https://date-fns.org/v2.16.1/docs/Getting-Started)
+- Moment.js Guide: [Moment.js - Docs](https://momentjs.com/docs/)

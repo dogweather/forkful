@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:32:15.306535-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,30 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Що та чому?
-Аналіз HTML - це процес розбиття коду HTML на його складові для подальшої обробки в програмі. Це допомагає програмістам витягувати, маніпулювати та використовувати дані з HTML-документів.
+## What & Why? (Що і Чому?)
+Parsing HTML isn't rocket science—it's just extracting data from HTML markup. Programmers do it for web scraping, data mining, or when they need to interact with web pages not designed for programmatic access.
 
-### Як зробити:
-Ми можемо використовувати бібліотеку `tagsoup` в Haskell для аналізу HTML. Подивимося на невеликий приклад:
+## How to: (Як це зробити:)
+Let's parse HTML in Haskell using the `tagsoup` library. Install it first:
+
+```bash
+cabal update
+cabal install tagsoup
+```
+
+Here's a snippet that fetches and parses a simple HTML document:
+
 ```Haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Text.HTML.TagSoup
+import Network.HTTP.Conduit (simpleHttp)
 
 main :: IO ()
 main = do
-    let html = "<html><body><p>Hello, World!</p></body></html>"
+    html <- simpleHttp "http://example.com"
     let tags = parseTags html
-    print tags
-```
-Виведе:
-```Haskell
-[TagOpen "html" [],TagOpen "body" [],TagOpen "p" [],TagText "Hello, world!",TagClose "p",TagClose "body",TagClose "html"]
-```
-Вище ми подали строку HTML до функції `parseTags` та вивели результати.
+    let links = [ deTag x | TagOpen "a" atts <- tags, x <- atts, fst x == "href" ]
+    print links
+    
+deTag :: (String, String) -> String
+deTag = snd
 
-### Поглиблений розгляд:
-Основним способом аналізу HTML в Haskell є бібліотека `tagsoup`. Вона бере неправильний HTML та повертає список тегів, які можна легко проаналізувати. Слід пам'ятати, що є й інші бібліотеки для аналізу HTML, такі як `html-conduit` та `hxt`, але `tagsoup` дає більше гнучкості при аналізі невідповідного HTML.
+```
 
-### Дивіться також:
-1. Офіційна документація: http://hackage.haskell.org/package/tagsoup
-2. Інші методи аналізу HTML в Haskell: http://www.yesodweb.com/book/xml
-3. Гайд по Tagsoup (англійською): https://www.fpcomplete.com/blog/2015/04/scraping-html-using-tagsoup
+This simple program will print out all hyperlinks on the "http://example.com" homepage.
+
+## Deep Dive (Поглиблений Аналіз)
+Haskell's `tagsoup` has been around since the early 2000s. It's quirky but practical. `tagsoup` allows for lenient parsing, meaning it can handle real-world, messy HTML well.
+
+There are alternatives like `html-conduit`, which is built on top of the streaming library `conduit` for more memory-efficient parsing, especially useful for large documents.
+
+Key implementation detail: `tagsoup` parses HTML into a list of tags, treating the document as text, not a tree—this is different from libraries that build a DOM.
+
+## See Also (Дивіться також)
+For more on `tagsoup`:
+- Hackage: https://hackage.haskell.org/package/tagsoup
+
+For an alternative approach with `html-conduit`:
+- Tutorial: https://www.yesodweb.com/book/xml
+
+For general concepts around web scraping in Haskell:
+- Blog post: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup

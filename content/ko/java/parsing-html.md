@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:32:03.529806-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Java"
 category:             "Java"
@@ -10,51 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
-HTML 파싱이란 프로그래머가 조작하거나 분석할 수 있게 HTML 문서를 데이터 구조로 변환하는 방법입니다. 이 과정은 웹 크롤링, 웹 페이지 내용 분석 및 수정 등 다양한 프로그래밍 작업에서 필수적인 단계입니다.
+## What & Why? (무엇인가 & 왜 사용하는가?)
+HTML 파싱은 HTML 문서에서 데이터를 추출하는 과정입니다. 웹 스크래핑, 데이터 마이닝 등에서 필요하며, 웹에서 정보를 자동으로 수집하고자 할 때 사용합니다.
 
-## 이렇게 해보세요:
-자바에서 HTML을 파싱하기 위해世界적으로 널리 사용되는 라이브러리 중 하나인 JSoup을 사용합니다. JSoup은 웹 페이지에서 데이터를 스크립트화하고 추출하는 데 사용되며, 사용하기 아주 편리한 API를 제공합니다.
+## How to (방법)
+자바에서 HTML 파싱을 위해 Jsoup 라이브러리를 사용할 수 있습니다. Jsoup을 활용하면 쉽게 HTML 요소에 접근하고 조작할 수 있습니다. 예시 코드를 확인해 보세요.
 
-사용 사례로 아래 HTML 문서에서 모든 링크를 추출해보겠습니다.
-
-
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        String html = "<html><head><title>초기 웹페이지</title></head>"
-                   + "<body><p>아래는 직접 입력한 HTML 링크입니다.</p>"
-                   + "<a href=\"http://example.com\">자세히 보기</a>"
-                   + "</body></html>";
-        Document doc = Jsoup.parse(html);
-        Elements links = doc.select("a");
-        for (Element link : links) {
-            System.out.println("링크 : " + link.attr("href"));
-            System.out.println("텍스트: " + link.text());
+public class HtmlParserExample {
+    public static void main(String[] args) throws IOException {
+        String htmlString = "<html><head><title>Sample Title</title></head>"
+            + "<body><p>Parsed HTML into a doc.</p></body></html>";
+        
+        Document doc = Jsoup.parse(htmlString);
+        String title = doc.title();  
+        Elements paragraphs = doc.select("p");
+
+        System.out.println("Title: " + title);
+        for (Element paragraph : paragraphs) {
+            System.out.println("Paragraph: " + paragraph.text());
         }
     }
 }
 ```
 
-위 코드를 실행하면 다음과 같이 출력됩니다:
+출력 예시:
 
-```shell
-링크 : http://example.com
-텍스트: 자세히 보기
+```
+Title: Sample Title
+Paragraph: Parsed HTML into a doc.
 ```
 
-## 깊이 들여다보기
-사실 HTML 파싱과 이를 가능하게 하는 기술은 웹의 초기 시작부터 존재했습니다. 최근에는 HTML5와 EOF를 지원하며 웹 페이지의 동적 콘텐츠를 보다 잘 처리하는 JSoup 같은 최신 라이브러리가 등장했습니다.
+## Deep Dive (심층 분석)
+HTML 파싱 기술은 2000년대 초반 웹의 급성장과 더불어 중요해졌습니다. Jsoup 외에도 HTMLUnit, JsoupXML과 같은 대안이 있지만 Jsoup는 직관적인 API 때문에 많이 선호됩니다. 이 라이브러리는 내부적으로 HTML 문서를 DOM 구조로 변환하여 쉽게 탐색하고 조작할 수 있도록 해줍니다. 
 
-HTML 파싱의 대안으로는 정규 표현식(regular expression), XML 파서 등이 있지만 이들은 JSoup처럼 사용하기 쉽지 않거나 HTML에 특화되지 않았을 수 있습니다.
-
-구현 세부사항으로는, JSoup은 내부적으로 SAX (Simple API for XML) 파싱 메커니즘을 사용하여 HTML을 파싱합니다. 이를 통해 효율적으로 대용량 HTML 문서를 처리할 수 있게 됩니다.
-
-## 참고하기
-- JSoup 공식 문서: https://jsoup.org/
-- HTML 파싱 관련 Java API 가이드: https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html
+## See Also (참고 자료)
+- Jsoup 공식 문서: https://jsoup.org/
+- HTMLUnit 공식 페이지: http://htmlunit.sourceforge.net/
+- W3C HTML 파싱 가이드라인: https://www.w3.org/TR/html5/syntax.html#parsing

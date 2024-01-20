@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:09.974537-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Fish Shell"
@@ -10,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-פרסון HTML הוא התהליך שבו נקרא קוד HTML ומפשטים אותו למבנה נתונים שמחשבים יכולים לעבוד איתו. מתכנתים מבצעים פעולה זו כשהם רוצים לאפשר לתוכניהם לתקשר או לשיפור עמוד רשת.
+## What & Why? (מה ולמה?)
+Parsing HTML means extracting information from HTML documents. Programmers parse HTML to manipulate, scrape, or analyze web data.
 
-## איך לעשות:
-אם נרצה לפרסם HTML עם Fish Shell, נכתוב פונקציה שכך עובדת:
+## How to: (איך לעשות:)
+Fish doesn't have built-in HTML parsing abilities. You'll need external tools. Here’s how to use `pup`, a command-line HTML parser, with Fish.
 
+Install `pup`:
 ```Fish Shell
-function parse_html
-    set html (curl -s $argv[1])
-    echo $html | pup 'p text{}'
-end
-```
-בריצה, הפונקציה תחזיר את הטקסט בתוך כל הפסקאות שבעמוד:
-```Fish Shell
-> parse_html https://he.wikipedia.org/wiki/HTML
-ה-HTML (HyperText Markup Language לשמו המלא באנגלית, בתרגום חופשי לעברית: שפת סימון היפר-טקסט) היא שפת סימון שמשמשת ל...
+sudo apt install pup
 ```
 
-## צלילה עמוקה:
-הפרסון של HTML היה חשוב בהיסטוריה של המחשוב מאז שה-WWW נוצר ב-1989. בשפת פיש, אנו מתאימים את מנגנון הפרסינג שלנו ל-HTML לאמצעות ספריית `pup` שמפשטת את הפרסנים לאובייקטים JS.
+Suppose we have a file `example.html` with this content:
+```html
+<ul>
+    <li>First Item</li>
+    <li>Second Item</li>
+</ul>
+```
 
-חלופות ל-Pup כוללות Jsoup, Beautiful Soup ו-lxml. אף אחת מהן אינה קיימת לפיש, אך כולן היו מתאימות אם כתבתם ב-Python או ב-Java.
+To extract list items:
+```Fish Shell
+cat example.html | pup 'li text{}'
+```
 
-## ראה גם:
-- [דף הבית של Pup](https://github.com/ericchiang/pup)
-- [מדריך לשפת Pup](https://github.com/ericchiang/pup/blob/master/README.md)
-- [חמישה דרכים לפרסם HTML](https://www.scrapingbee.com/blog/five-ways-to-extract-data-from-html/)
-- [Fish Shell באתר הרשמי](https://fishshell.com/)
+Sample output:
+```
+First Item
+Second Item
+```
+
+## Deep Dive (עומק הצלילה)
+Fish, being a shell designed for interactive use, isn't intended for HTML parsing. Historically, Unix philosophy suggests using specialized tools in combination. `pup` parses HTML using CSS selectors. Other tools like `xmllint` and `tidy` can serve similar purposes. 
+
+Working with `pup` in Fish is simple due to the piping mechanism, which is a robust Unix feature. This modular approach leverages the power of existing Unix command-line utilities, keeping scripts simple and maintainable.
+
+## See Also (ראה גם)
+[Pup GitHub Repository](https://github.com/ericchiang/pup) - Learn more about `pup`.
+
+[HTML Parsing with Python](https://docs.python.org/3/library/html.parser.html) - For a language with built-in support.
+
+[Web Scraping Best Practices](https://www.scrapingbee.com/blog/web-scraping-best-practices/) - To understand the ethics and legalities.

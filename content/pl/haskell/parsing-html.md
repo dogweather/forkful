@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:31:54.755875-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Parsing HTML to proces wydobywania danych z dokumentów HTML. Programiści robią to, by manipulować, analizować lub ekstrahować specyficzne informacje z stron internetowych.
 
-Analiza składniowa HTML - to proces ekstrakcji danych ze struktury HTML. Jest niezbędna dla programistów, aby uzyskać specyficzne informacje z dokumentów internetowych.
-
-## Jak to zrobić:
-
-Haskell ma kilka bibliotek do parsowania HTML, ale skupimy się na jednej zwanej `tagsoup`. Poniżej znajduje się przykładowy kod.
+## How to: (Jak to zrobić:)
+Haskell posiada kilka bibliotek do parsowania HTML, ale skupimy się na `hxt`, która jest potężna i wygodna w użyciu.
 
 ```Haskell
-import Text.HTML.TagSoup
+{-# LANGUAGE Arrows #-}
 
+import Text.XML.HXT.Core
+
+main :: IO ()
 main = do
-    let htmlCode = "<html><body><p>Hello, World!</p></body></html>"
-    let tags = parseTags htmlCode
-    print tags
+    -- Załóżmy, że 'example.html' zawiera HTML do sparsowania
+    runX $ readDocument [withParseHTML yes, withWarnings no] "example.html"
+         >>> deep (isElem >>> hasName "a" >>> getAttrValue "href")
+         >>= print
 ```
+Wyjście to lista URL-i, które są wartościami atrybutu href dla tagów anchor (`<a>`).
 
-Przykładowe wyjście to:
+## Deep Dive (Głębsze spojrzenie)
+Początki bibliotek do parsowania HTML w Haskellu sięgają lat, kiedy język ten zyskiwał na popularności wśród entuzjastów programowania funkcyjnego. `hxt` wykorzystuje koncepcję arrowów, oferując wyrafinowany, ale czytelny sposób pracy z XML i HTML.
 
-```Haskell
-[TagOpen "html" [],TagOpen "body" [],TagOpen "p" [],TagText "Hello, World!",TagClose "p",TagClose "body",TagClose "html"]
-```
+Alternatywą dla `hxt` może być `tagsoup`, prościej podejście, które jest mniej rygorystyczne co do poprawności parsowanego HTML.
 
-## Głębsze zrozumienie:
+Parsowanie HTML polega na konwersji stringów (lub strumieni bajtów) na strukturę danych, zazwyczaj drzewo, co ułatwia wyszukiwanie elementów i atrybutów.
 
-### Historyczne kontekst:
-
-Haskell, zamiast zwracać błędy podczas analizy składniowej, zwraca listę znaczników, które programista może następnie przefiltrować lub analizować według własnych potrzeb. Taka strategia wywodzi się z filozofii języka skoncentrowanej na funkcjach.
-
-### Alternatywy:
-
-Innymi bibliotekami do analizy składniowej HTML w języku Haskell są `html-conduit` i `pandoc`. Każde z nich oferuje różne zestawy funkcji i abstrakcje, które możemy dopasować do naszych potrzeb.
-
-### Szczegóły implementacji:
-
-`tagsoup` pozwala na analizę składniową dowolnego tekstu, nie tylko kodu HTML. Parsuje on również używając techniki leniwego przetwarzania, co zwiększa wydajność podczas pracy z dużymi plikami HTML.
-
-## Zobacz też:
-
-1. Dokumentacja `tagsoup` na Hackage: http://hackage.haskell.org/package/tagsoup
-2. Poradnik Haskell na Stack Overflow: https://stackoverflow.com/tags/haskell/info
-3. Blog o wyciąganiu danych z HTML za pomocą Haskell: https://chrispenner.ca/posts/tagsoup
+## See Also (Zobacz też)
+- HXT tutorial: http://haskell.github.io/hxt/
+- TagSoup: http://hackage.haskell.org/package/tagsoup
+- Haskell XML Toolbox (HXT): http://hackage.haskell.org/package/hxt
+- "Real World Haskell" (rozdział o parsowaniu XML/HTML): http://book.realworldhaskell.org/read/programming-with-monads.html

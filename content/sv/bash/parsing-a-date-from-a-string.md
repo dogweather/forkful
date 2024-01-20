@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:34:48.616853-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,38 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att tolka ett datum från en textsträng innebär att omvandla texten till ett datumformat som datorn förstår. Programmerare gör detta för att enkelt kunna jämföra datum, sortera poster, eller utföra datum- och tidberäkningar.
 
-Att parsa ett datum från en sträng innebär att extrahera och tolka datuminformation från en textsträng. Programmerare gör detta eftersom det är ett effektivt sätt att läsa in, bearbeta och skapa datuminformation från olika källor.
-
-## Så här gör du:
-
-Nedan är ett Bash exempel på hur man konverterar ett datumuttryck till en viss format.
-
+## How to:
 ```Bash
-datum_sträng="2021-12-31"
-datum_format="%Y-%m-%d"
-strtotime=$(date -d "${datum_sträng}" +"${datum_format}")
-echo $strtotime
+#!/bin/bash
+datum_str="2023-04-01"
+datum=$(date -d "$datum_str" '+%Y-%m-%d')
+echo $datum
+```
+Output:
+```
+2023-04-01
+```
+Ett annat exempel, med svensk lokal inställning för att visa dagens namn:
+```Bash
+#!/bin/bash
+export LC_TIME=sv_SE.UTF-8
+datum_str="1 april 2023"
+datum=$(date -d "$datum_str" '+%A, den %d %B %Y')
+echo $datum
+```
+Output:
+```
+lördag, den 01 april 2023
 ```
 
-Körning av denna kod ger följande output:
+## Djupdykning
+Att tolka datum har varit viktigt sedan datorer började användas. För att hantera datum i `bash` använder vi kommandot `date`. Det är flexibelt och stödjer många format. Det finns alternativ som `dateutils` och externa program som `GNU date`, men i `bash`, är `date` det vanligaste verktyget. Implementeringsdetaljer kan variera mellan olika system – till exempel är `date -d` specifik för GNU date och fungerar inte på macOS, där man istället skulle använda `date -j -f`.
 
-```Bash
-2021-12-31
-```
-
-## Djupdykning:
-
-1. Historisk kontext: Även om Bash ursprungligen inte designades för att parsa datum från strängar, har det genom tiden lagts till flera funktioner som kan göra detta. `date -d` är ett exempel på detta.
-
-2. Alternativ: Det finns många sätt att parsa ett datum från en sträng i Bash. Förutom `date -d`, kan du också använda `date +%Y-%m-%d -d` eller specialiserade parsingverktyg som `dateutils`.
-
-3. Implementeringsdetaljer: Att parsa ett datum från en sträng i Bash innebär att tolka strängen och konvertera den till en struktur som datorn kan förstå och arbeta med. Detta kan vara komplicerat när och om datumen finns i olika format.
-
-## Se också:
-
-För mer detaljerad information om ämnet, bekanta dig med följande resurser:
-
-1. [GNU-coreutills: Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
-2. [Bash Guide för nybörjare](https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_03.html)
-3. [Bash manualsidan](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+## Se Också
+- GNU Coreutils Manual för `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash-guide för nybörjare: https://tldp.org/LDP/Bash-Beginners-Guide/html/
+- Information om locale settings under Linux: https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html

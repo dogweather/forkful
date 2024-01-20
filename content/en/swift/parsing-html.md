@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:34:11.799596-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Swift"
 category:             "Swift"
@@ -12,40 +13,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the process of accessing and extracting specific data from HTML data structures. Programmers parse HTML to manipulate web content, automate web interactions and extract relevant info for data analysis.
+Parsing HTML means sifting through the soup of a website's code to find useful nuggets — text, links, images, etc. Programmers do it to extract data, automate web interactions, or import content into their apps.
 
 ## How to:
 
-To parse HTML, we'll use a common Swift package known as SwiftSoup. To illustrate, let's parse an example HTML string and extract the title:
+Swift doesn't have built-in HTML parsing; we need a helper. Let's use SwiftSoup, a Swift library reminiscent of Python's BeautifulSoup. First, add SwiftSoup to your project using Swift Package Manager.
+
+Here's how it's done:
 
 ```Swift
 import SwiftSoup
 
-let html = "<html><head><title>Swift HTML Parsing!</title></head><body></body></html>"
 do {
-    let document: Document = try SwiftSoup.parse(html)
-    let title: Element = try document.title()
-    print("Title: \(title)") 
-} catch Exception.Error(_, let message) {
-    print (message)
+    let html = "<html><head><title>First parse</title></head>"
+                + "<body><p>Parsed HTML into a doc.</p></body></html>"
+    let doc = try SwiftSoup.parse(html)
+    let title = try doc.title()
+    let bodyText = try doc.body()?.text()
+    
+    print(title) // Output: First parse
+    print(bodyText) // Output: Parsed HTML into a doc.
+} catch Exception.Error(let type, let message) {
+    print("An error of type: \(type) occurred: \(message)")
 } catch {
-   print("An error occurred")
+    print("An unknown error occurred")
 }
-```
-Running this would output:
-```
-Title: Swift HTML Parsing!
 ```
 
 ## Deep Dive
 
-In the past, Swift developers might have used NSHTMLTextDocumentType from NSAttributedString, but this was verbose and limited. SwiftSoup emerged as a Swift adaptation of the popular Java library Jsoup, providing a well-featured, easy to use HTML parsing package.
+HTML, or HyperText Markup Language, has been web's backbone since Tim Berners-Lee introduced it (and the web) in 1991. As web evolved, so has HTML, escalating the parsing complexity.
 
-Alternatives to SwiftSoup include Kanna and Swift-HTML-Parser, but SwiftSoup generally comes out on top due to its flexibility and feature set. For instance, SwiftSoup supports CSS selector syntax, while others do not.
+Here's why SwiftSoup shines:
+- **User-Friendly**: Its API mirrors JQuery, meaning it's intuitive for those familiar with web dev.
+- **Robustness**: Handles real-world HTML quirks well.
+- **Performance**: Swift's fast, which matters for big parsing jobs.
 
-Understanding the implementation details of SwiftSoup or any HTML parser requires a grasp of data structures like Document Object Models (DOM). When SwiftSoup parses an HTML string, it creates a DOM - essentially a tree structure, mirroring the HTML tags and their hierarchy. You can then traverse and manipulate this DOM tree, just as you would in JavaScript.
+Alternatives? Certainly!
+- **WebKit**: Use this for heavier tasks like rendering web pages or executing JavaScript.
+- **libxml2**: Hardcore C route, but you better be up for the challenge.
+- **Regex**: Just no. It’s not a parser. Don't try to “parse” HTML with regex. Seriously.
+
+However, remember that a parser like SwiftSoup doesn't just read the page as-is; it's oblivious to any content dynamically loaded by JavaScript. For that, head towards solutions involving WebKit or browser headless modes.
 
 ## See Also
 
-- [Official SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup): For full library documentation and usage examples.
-- [Mozilla Developer Guide to DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction): To understand the underlying data structure the parsers work with.
+- SwiftSoup on GitHub: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
+- Swift Package Manager: [https://swift.org/package-manager/](https://swift.org/package-manager/)
+- WebKit documentation: [https://developer.apple.com/documentation/webkit](https://developer.apple.com/documentation/webkit)
+- Handling dynamic content: [Selenium WebDriver](https://www.selenium.dev/documentation/en/) (not Swift-specific but relevant for automated interactions with dynamic web pages)

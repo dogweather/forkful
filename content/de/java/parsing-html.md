@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:32:30.380110-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Java"
@@ -10,52 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTML parsen: Was & Warum?
-HTML-Parsing ist der Prozess, bei dem eine HTML-Datei in ihre Elemente zerlegt wird. Dies wird oft in Programmen durchgeführt, die Informationen von Webseiten extrahieren oder manipulieren müssen.
+## What & Why? (Was & Warum?)
+HTML-Parsing ist das Auslesen und Umformen von HTML-Dokumenten in eine für Programme bearbeitbare Struktur. Wir machen das, um Inhalte von Webseiten zu extrahieren, automatisiert zu verarbeiten oder zu scrapen.
 
-## So geht's: 
-Hier ist ein einfaches Beispiel, wie man HTML in Java mit der Bibliothek Jsoup parst. Diese Bibliothek steht unter einer freien Lizenz und kann einfach per Maven oder Gradle installiert werden. 
+## How to: (Wie geht das?)
+Hier ist ein Beispiel mit der JSoup-Library, die in Java für HTML-Parsing verwendet wird. Installiere sie zuerst mit Maven oder Gradle.
 
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Main {
+public class HtmlParserBeispiel {
 
-    public static void main(String[] args) throws Exception {
-        // HTML-Code als String
-        String html = "<html><head><title>Erste Parse</title></head>"
-                + "<body><p>Parsed HTML in einen Körper.</p></body></html>";
-        // Dokument erstellen
+    public static void main(String[] args) {
+        final String html = "<html><head><title>Beispielseite</title></head>"
+                + "<body><p>Dies ist ein Absatz.</p><a href='https://beispiel.com'>Link</a></body></html>";
+
         Document doc = Jsoup.parse(html);
-
-        // Titel des Dokuments auslesen
-        String title = doc.title();
-        System.out.println("Title : " + title);
         
-        // Elemente per CSS-Selector auswählen
+        String title = doc.title();
+        System.out.println("Titel der Seite: " + title);
+        
         Elements paragraphs = doc.select("p");
         for (Element paragraph : paragraphs) {
-            System.out.println(paragraph.text());
+            System.out.println("Absatz: " + paragraph.text());
         }
+        
+        Element link = doc.select("a").first();
+        System.out.println("Link: " + link.attr("href"));
     }
 }
 ```
-Sample Output:
+
+Und das ist die Ausgabe:
+
 ```
-Title : Erste Parse
-Parsed HTML in einen Körper.
+Titel der Seite: Beispielseite
+Absatz: Dies ist ein Absatz.
+Link: https://beispiel.com
 ```
 
-## Vertiefung
-Anfang der 90er Jahre, als das Web noch jung war, gab es das HTML-Parsing noch nicht. Andrew H. W. Tanenbaum sagte einmal "Das schöne am HTML ist, dass es fehlertolerant ist." Mitte der 90er Jahre, zusammen mit dem Boom des Internets, erschienen die ersten Bibliotheken, um HTML zu parsen. XmlPull und HTML Tidy sind Beispiele für frühe Bibliotheken.
+## Deep Dive (Tiefergehende Infos)
+Das Parsen von HTML ist so alt wie das Web selbst. Im Laufe der Zeit sind viele Libraries entstanden, wie JSoup, HTMLCleaner und TagSoup. JSoup ist beliebt wegen seiner jQuery-ähnlichen Syntax und Fähigkeit, auch fehlerhaftes HTML zu verstehen. Beim Parsen ist es wichtig, auf die korrekte Struktur zu achten und möglichst ressourcenschonend vorzugehen, um die Server nicht zu überlasten.
 
-Heute haben wir mehrere Alternativen zum Parsen von HTML in Java, darunter Jsoup, HTMLUnit, TagSoup und JDom.
+## See Also (Siehe auch)
+- JSoup Dokumentation: https://jsoup.org/
+- W3C HTML5 Spezifikation: https://www.w3.org/TR/html5/
+- HTMLCleaner Projektseite: http://htmlcleaner.sourceforge.net/
+- TagSoup GitHub Repository: https://github.com/ccil/cowan/tagsoup
 
-Beim Parsen lesen und analysieren wir den HTML-Code Zeile für Zeile. Welche Methode für Sie am besten geeignet ist, hängt von Ihren speziellen Anforderungen ab. Jede Methode hat ihre eigenen Vorteile und Einschränkungen.
-
-## Siehe auch
-1. [Jsoup offizielle Dokumentation](https://jsoup.org/)
-2. [HTMLUnit offizielle Dokumentation](http://htmlunit.sourceforge.net/)
+Beachte: Dieser Artikel reflektiert den Stand von Java bis einschließlich März 2023. Informiere dich über mögliche Aktualisierungen bei den verwendeten Bibliotheken.

@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:30:05.167808-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "C"
 category:             "C"
@@ -12,65 +13,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML refers to the process of breaking down HTML code into its individual elements, such as tags, attributes, and content. Programmers do this to interact, search, or manipulate web content programmatically, like web scraping, DOM manipulation, etc.
+Parsing HTML means reading and understanding the structure of HTML documents by a program. Programmers do it to manipulate, extract, or check content, often while scraping websites or processing web data.
 
 ## How to:
 
-Below, you'll find a basic C code snippet that uses the Gumbo parser API to parse an HTML file.
+Alright, let's get to the code. C doesn't have built-in support for HTML parsing, so we'll use a library called Gumbo, which is a pure C HTML5 parser. Here's a quick example:
 
 ```C
-
 #include <stdio.h>
 #include <gumbo.h>
 
-void parse_node(GumboNode* node) {
-    if (node->type == GUMBO_NODE_ELEMENT) {
-        // Get the node's tag name
-        const char* tag_name = gumbo_normalized_tagname(node->v.element.tag);
-        printf("Tag: %s\n", tag_name);
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
     }
-
-    // Recursively traverse the DOM tree
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        printf("Link found: %s\n", href->value);
+    }
     GumboVector* children = &node->v.element.children;
     for (unsigned int i = 0; i < children->length; ++i) {
-        parse_node(children->data[i]);
+        search_for_links(children->data[i]);
     }
 }
 
 int main() {
-    FILE* fp = fopen("sample.html", "r");
-    char buffer[2048];
-    
-    // Read file into buffer and parse it
-    size_t read_bytes = fread(buffer, 1, sizeof(buffer), fp);
-    GumboOutput* output = gumbo_parse_with_options(
-        &kGumboDefaultOptions, buffer, read_bytes);
-
-    // Process nodes
-    parse_node(output->root);
-
-    // Cleanup
+    const char* html = "<html><body><a href='https://example.com'>Example</a></body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_links(output->root);
     gumbo_destroy_output(&kGumboDefaultOptions, output);
-    fclose(fp);
-
     return 0;
 }
+```
+
+Sample output:
 
 ```
+Link found: https://example.com
+```
+
+This example finds 'a' tags and prints out the href attributes. Remember to link against gumbo (`gcc -o example example.c -lgumbo`) and install the library first.
+
 ## Deep Dive
 
-C was chosen for HTML parsing due to the language's details control over memory which is crucial to manage large amounts of HTML data. A popular library for parsing HTML in C is "Gumbo" created by Google.
+The story of HTML parsing in C is a bit rugged. There's no one-size-fits-all solution because HTML is complex and usually not so consistent. Gumbo, which we used, was developed by Google as a part of their open-source projects. It's designed to tolerate real-world messiness of web pages.
 
-Considering alternatives, there are many high-level language libraries such as BeautifulSoup (Python) and JSoup (Java). These are easier to use but offer less control over memory and performance than C.
+Alternatives include libxml2 with an HTML parser mode, though it's historically been more aligned with XML parsing. Another one is htmlcxx which is actually C++, but let's not get sidetracked.
 
-In the given example, we use Gumbo API's parse feature. It represents HTML documents as tree structures called Document Object Models (DOM). Each HTML tag has an equivalent in the DOM, and we extract the tags one by one.
+Performance-wise, C parsers can be blazing fast but normally don't offer the ease of use that Python libraries do. When rolling out C for HTML parsing, you're likely after performance, or you're integrating it into an existing C codebase. It can be fiddly, as most C libraries are low-level and more hands-on than Python or JavaScript parsers.
 
 ## See Also
 
-Check out these sources and references to learn more:
-
-1. ["Parsing HTML: The Basics" (MDN)](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
-2. ["libxml - HTML parsing library written in C" (GNOME)](http://xmlsoft.org/html/libxml-HTMLparser.html)
-3. ["BeautifulSoup Documentation" (Python)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-4. ["HtmlAgilityPack .NET library to parse HTML files" (C#)](http://html-agility-pack.net)
-5. ["Gumbo - An HTML5 parsing library in C"](https://github.com/google/gumbo-parser)
+- Gumbo Parser: [https://github.com/google/gumbo-parser](https://github.com/google/gumbo-parser)
+- libxml2 HTML parser: [http://xmlsoft.org/html/libxml-HTMLparser.html](http://xmlsoft.org/html/libxml-HTMLparser.html)
+- htmlcxx: [http://htmlcxx.sourceforge.net/](http://htmlcxx.sourceforge.net/) 
+- For a gentle start, consider a tutorial on web scraping with Python using Beautiful Soup or Python's `html.parser` as an easier intro to the subject.

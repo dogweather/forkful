@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:33:59.686760-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,53 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML in TypeScript: An Informal Guide 
-
-Let's navigate the journey of parsing HTML using TypeScript together in this quick, easy tutorial.
-
 ## What & Why?
 
-Parsing HTML refers to converting it from a string into a structured format that we can interact with programmatically. We do this to enable information extraction, manipulation, and the embedding of scripts, especially in web scraping and web automation.
+Parsing HTML means sifting through HTML code to find, extract, or manipulate info. Programmers do it to interact with web content—maybe scraping data, or automating browsers.
 
 ## How to:
 
-Here's a simple way to parse HTML with the help of jsdom library (version 16.6.0 as of writing). Let's get started:
+To get started, install a library like `node-html-parser`. Here's the terminal command:
 
-```TypeScript
-import { JSDOM } from 'jsdom';
-
-function parseHTML(htmlString: string): void {
-  const dom = new JSDOM(htmlString);
-  console.log(dom.window.document.querySelector("h1").textContent);
-}
+```bash
+npm install node-html-parser
 ```
-To use this, simply input an HTML string and run the function. It will output the content of any `h1` tags it finds.
 
-Example:
+Now, let's parse some basic HTML in TypeScript:
 
 ```typescript
-parseHTML("<h1>Hello, world!</h1>")
-//Outputs: Hello, world!
+import { parse } from 'node-html-parser';
+
+const html = `<ul class="fruits">
+                <li>Apple</li>
+                <li>Banana</li>
+              </ul>`;
+
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Apple Banana"
+```
+
+And if you want to grab just the bananas:
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
 ```
 
 ## Deep Dive
 
-Now, let's delve into the depths.
+Parsing HTML isn't new—it's been around since the web's early days. Initially, developers might have used regular expressions, but that got messy fast. Enter the DOM Parser: stable, but browser-bound.
 
-jsdom emerged in the late 2000s as an effort to provide a pure-JavaScript implementation of the DOM that can be used outside of a browser. It has since continued to adapt to changes and advancements in the web platform.
+Libraries like `node-html-parser` abstract the pain away. They let you query HTML like you would with jQuery, but server-side with Node.js. It's fast, tolerant to dirty HTML, and DOM-friendly.
 
-While jsdom is widely used due to its completeness and ease of use, other libraries such as "cheerio" are often desirable due to their simplicity and speed. Cheerio is a lean implementation of core jQuery; it's faster than jsdom, but builder for HTML manipulation not full-scale web-page emulation.
+There's also `jsdom`, simulating a whole browser environment. It's heavier but more thorough, creating a full-blown Document Object Model (DOM) for manipulation and interaction.
 
-In jsdom's implementation, the parser uses the htmlparser2 library under the hood, which converts the HTML string into a tree-like structure that mirrors the HTML's tag structure. Meanwhile, cheerio uses parse5 which provides nearly exactly HTML5 spec-comparable parse and serialize capabilities.
+Let's not forget Cheerio, either. It blends speed with a jQuery-like syntax and smaller footprint, sitting happily between the two.
 
 ## See Also
 
-For more details, you can dig further using some of these links:
-
-- TypeScript official Handbook [here](https://www.typescriptlang.org/docs/handbook/intro.html)
-- jsdom on GitHub [here](https://github.com/jsdom/jsdom)
-- cheerio on GitHub [here](https://github.com/cheeriojs/cheerio)
-- parse5 on GitHub [here](https://github.com/inikulin/parse5)
-- htmlparser2 on GitHub [here](https://github.com/fb55/htmlparser2)
-
-With that, you are now geared up to start parsing HTML using TypeScript. Happy coding!
+If you're thirsty for more, dip into these:
+- [DOM Parsing and Serialization W3C Specification](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser on GitHub](https://github.com/taoqf/node-html-parser)
+- [jsdom GitHub Repository](https://github.com/jsdom/jsdom)
+- [Cheerio Website](https://cheerio.js.org/)

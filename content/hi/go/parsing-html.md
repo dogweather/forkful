@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:31:47.668566-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Go"
 category:             "Go"
@@ -10,47 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## "क्या और क्यों?"
+## What & Why? (क्या और क्यों?)
+HTML को पार्स करना मतलब वेब पेज की मार्कअप को समझना और उसे संसाधित करना है। प्रोग्रामर्स इसे डेटा निकालने, वेबसाइट्स की जाँच-पड़ताल करने या ऑटोमेशन के लिए करते हैं।
 
-HTML पार्सिंग (parsing) एक प्रक्रिया है जिसमें एक HTML डॉक्यूमेंट को उसके संगठनात्मक संरचना में विभाजित किया जाता है। प्रोग्रामर्स इसे उपयोग करते हैं ताकि वे वेब पेजेस के विभिन्न हिस्सों (जैसे कि शीर्षक, पैराग्राफ, लिंक, इत्यादि) के उपयोग और संपादन को स्वचालित कर सकें।
-
-## "कैसे:"
-
-आप Go से HTML पार्स कर सकते हैं गो नेट / HTML पैकेज का उपयोग करके। निम्नलिखित कोड संकेत देता है कि कैसे:
-
+## How to: (कैसे करें:)
 ```Go
-इंपॉर्ट (
-    "fmt"
-    "golang.org/x/net/html"
-    "net/http"
+package main
+
+import (
+	"fmt"
+	"golang.org/x/net/html"
+	"net/http"
+	"strings"
 )
-  
+
 func main() {
-    res, err := http.Get("http://www.google.com")
-    if err != nil {
-        fatal("%s", err)
-    }
-  
-    doc, err := html.Parse(res.Body)
-    if err != nil {
-        fatal("%s", err)
-    }
-  
-    fmt.Println(doc)
+	resp, err := http.Get("https://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	doc, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "a" {
+			for _, a := range n.Attr {
+				if a.Key == "href" {
+					fmt.Println(a.Val)
+					break
+				}
+			}
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
+	f(doc)
 }
 ```
+सैंपल आउटपुट:
+```
+https://www.iana.org/domains/example
+```
 
-ये कोड ब्लॉक Google के होमपेज की HTML डॉक्यूमेंट को पार्स करेगा और पार्स किये गए संरचना को प्रिंट करेगा।
+## Deep Dive (गहराई से जानिए)
+HTML पार्सिंग का इतिहास वेब के शुरुआती दिनों से चला आ रहा है। `golang.org/x/net/html` पैकेज Go मे बिना किसी बाहरी पुस्तकालयों की जरूरत के HTML पार्स करने की अनुमति देता है। हालांकि, अन्य विकल्प जैसे `GoQuery` या स्क्रेपिंग टूल्स भी हैं जो jQuery की शैली में सुविधाएँ प्रदान करते हैं। पार्सिंग जटिल हो सकती है क्योंकि HTML में गलतियाँ और अनियमितताएँ हो सकती हैं, लेकिन Go के पैकेज में इन चुनौतियों से निपटने के लिए रोबस्ट एल्गोरिद्म हैं।
 
-## "गहरी डाइव"
-
-HTML पार्सिंग का इस्तेमाल वेब डेवलपमेंट की शुरुआत से ही किया जा रहा है। पार्सिंग से वेब पेजेस के डाटा को एक्स्ट्रैक्ट करने या विश्लेषित करने के लिए दानवादी प्रक्रियाएं और फ़ंक्शन्स बना सकते हैं।
-
-Go के अलावा, भाषाएं जैसे कि Python और JavaScript भी HTML पार्सिंग समर्थन करती हैं, जिनमें पार्सर्स जैसे BeautifulSoup और Cheerio शामिल हैं। 
-
-Go का `net/html` पैकेज, जो Golang का कोर लाइब्रेरी का हिस्सा है, उसके DOM-like पार्सिंग समर्थन के साथ-साथ HTML5 स्पेसिफिकेशन में उल्लिखित विभिन्न 'नोड' का समर्थन करता है।
-
-## "और भी देखें:"
-
-2. Python BeautifulSoup HTML पार्सिंग: [Link](https://beautiful-soup-4.readthedocs.io/)
-3. JavaScript Cheerio HTML पार्सिंग: [Link](https://cheeriojs.github.io/cheerio/)
+## See Also (इसे भी देखें)
+- GoQuery के बारे में और जानिए: https://github.com/PuerkitoBio/goquery
+- Go के html पैकेज का डॉक्स: https://pkg.go.dev/golang.org/x/net/html
+- HTML पार्सिंग शुरुआती गाइड: https://www.owasp.org/index.php/Web_2.0_Security_Cheat_Sheet#HTML_Parsing

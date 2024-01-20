@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:34:35.493227-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,47 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
+Parsing a date from a string הוא תהליך שבו ממירים טקסט לאובייקט תאריך. תכנתים זאת כדי לאפשר עיבוד נתונים והשוואות זמן בצורה אוטומטית.
 
-עיבוד תאריך ממחרוזת הוא פעולה שבה אנו ממירים מחרוזת המייצגת תאריך לפורמט של תאריך בתכנות. מתכנתים ביצעים את זה כשעליהם להפוך מידע ממחרוזת - למשל, מקלט ממשתמש - לפורמט נמשך יותר, כמו תאריך.
-
-## איך מבצעים את זה:
-
-דוגמא של קוד:
-
+## איך לעשות:
 ```Arduino
-# include <TimeLib.h>
-# include <Wire.h>
-# include <DS1307RTC.h>
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) ; 
-  setSyncProvider(RTC.get);  
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
 }
 
 void loop() {
-  time_t t = now();
-  char buffer[] = "DD/MM/YYYY";
-  strftime(buffer, sizeof(buffer), "%d/%m/%Y", localtime(&t));
-  Serial.println(buffer);
+  DateTime now = rtc.now();
+
+  char dateStr[11];
+  sprintf(dateStr, "%d/%02d/%02d", now.year(), now.month(), now.day());
+  Serial.println(dateStr);
+
   delay(1000);
 }
 ```
+תוצאת דוגמה: `2023/04/01`
 
-חלונית פלט:
+## נבחנת העמקה
+במקור, עיבוד תאריכים התבצע ידנית ודרש ידע בפורמטים. כיום, ספריות כמו `RTClib` מקלות על התהליך. גישות אלטרנטיביות כוללות שימוש ב-firmware כמו `Time.h` או מערכות זמן מובנות של מיקרו-מעבד. פרטי היישום כרוכים בלימוד ה-API של הספרייה והתאמת הפורמט לצרכים הספציפיים של המיזם.
 
-```Arduino
-14/02/2022
-15/02/2022
-16/02/2022
-...
-```
-
-## הסבר מעמיק
-
-כדי לפענח תאריך ממחרוזת, משתמשים בפונקצית הספרייה `strftime()`, המאפשרת לנו להמיר תאריך בפורמט מחרוזת לממד תאריך ממשי ב-C. אם אתה רוצה לבחון אלטרנטיבות לספריית TimeLib, קיימת ספרייה Arduino שנקראת RTClib שתכלול שירותים דומים. אך שים לב, אף שהפונקציות שונות, התהליך של ניתוח התאריך נשאר זהה.
-
-## ראה גם:
-
-2. [דוקומנטציה של ספריית Arduino RTClib](https://www.arduino.cc/reference/en/libraries/rtclib/)
+## ראה גם
+- [RTClib GitHub Repository](https://github.com/adafruit/RTClib)
+- [Arduino Official Documentation on Date and Time](https://www.arduino.cc/reference/en/libraries/rtclib/#dateTime)

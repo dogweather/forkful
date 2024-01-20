@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:32:32.334541-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,36 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie HTML to proces analizowania kodu HTML i przekształcania go w użyteczne dane lub strukturę. Programiści robią to, aby łatwiej manipulować strukturą strony, ekstrahować informacje lub inaczej interaktywować z dokumentem HTML.
+## What & Why? (Co i Dlaczego?)
+Parsing HTML, czyli analiza struktury HTML, to proces przekształcania kodu HTML na dane, które można łatwo przetworzyć w JavaScript. Programiści robią to, aby manipulować zawartością stron, wydobywać informacje, a nawet testować aplikacje webowe.
 
-## Jak to zrobić:
-Aby przeprowadzić parsowanie HTML w JavaScript, możemy korzystać z interfejsu DOMParser API. Oto prosta demonstracja:
+## How to: (Jak to zrobić?)
+Do parsowania HTML w JavaScript często wykorzystuje się `DOMParser`. Oto przykład użycia:
 
-```Javascript
-let tekstHtml = "<h1>Tytuł</h1><p>Paragraf</p>";
-let parser = new DOMParser();
-let dokument = parser.parseFromString(tekstHtml, "text/html");
-
-console.log(dokument.body.firstChild.textContent);
-console.log(dokument.body.lastChild.textContent);
+```javascript
+const parser = new DOMParser();
+const htmlString = '<div>Hello, World!</div>';
+const doc = parser.parseFromString(htmlString, 'text/html');
+console.log(doc.body.firstChild.textContent);  // Output: Hello, World!
 ```
 
-Output:
+Powyższy kod przekształca string HTML na dokument DOM, który pozwala na dostęp do treści wewnątrz elementu `div`.
 
-```Javascript
-"Tytuł"
-"Paragraf"
-```
+## Deep Dive (Dogłębna analiza)
+Parsing HTML w JavaScript sięga początków interaktywnych stron internetowych. Historycznie, korzystano z `innerHTML`, ale to było pełne pułapek ze względu na bezpieczeństwo i wydajność. DOMParser, wprowadzony w HTML5, to nowsze i bezpieczniejsze rozwiązanie. Alternatywy jak jQuery (`$.parseHTML`) pomagały w poprzednich dekadach, choć obecnie ich użycie maleje.
 
-## Na głęboką wodę
-Historia parseing HTML jest blisko związana z historią rozwoju języków znaczników. Początkowo parsowanie HTML było skomplikowane i niewielu programistów rozumiało jak to zrobić, ale z biegiem lat stało się to łatwiejsze dzięki narzędziom takim jak jQuery.
+Przy implementacji warto zwrócić uwagę na:
+- Wydajność: DOMParser jest szybszy i mniej podatny na błędy niż inne metody.
+- Bezpieczeństwo: unikaj `innerHTML` ze względu na potencjalne ataki XSS.
+- Kompatybilność: DOMParser jest dobrze wspierany w nowoczesnych przeglądarkach.
 
-Alternatywą dla DOMParser jest innerHTML, ale jest mniej bezpieczny i może prowadzić do ataków typu cross-site scripting (XSS). Inne narzędzia do parsowania, takie jak `htmlparser2` lub `jsdom`, oferują swoje własne funkcje i mogą być lepiej przystosowane do konkretnych zastosowań.
-
-DOMParser jest wbudowany w większość przeglądarek i przekształca ciąg znaków HTML w obiekty DOM, które są łatwe do manipulowania za pomocą JavaScript. Implementacja będzie zależała od szczegółów konkretnej aplikacji i wymagań.
-
-## Zobacz także
-- Dokumentacja DOMParser API - [link](https://developer.mozilla.org/pl/docs/Web/API/DOMParser)
-- Pakiet npm htmlparser2 - [link](https://npmjs.com/package/htmlparser2)
-- Pakiet npm jsdom - [link](https://npmjs.com/package/jsdom)
+## See Also (Zobacz również)
+- MDN Web Docs na temat `DOMParser`: [developer.mozilla.org/en-US/docs/Web/API/DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- Specyfikacja WHATWG dla HTML Living Standard (parser): [html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
+- Informacje o bezpieczeństwie i `innerHTML`: [developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations)

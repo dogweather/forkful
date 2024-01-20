@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:34:11.437306-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Ruby"
@@ -11,30 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פרסור HTML הוא התהליך שבו אנו מפרשים קוד HTML לנתונים שהוא מייצג. מתכנתים עושים את זה להגיש נתונים מדף אינטרנט בצורה מבנית.
+פירסופ של HTML הוא התהליך שבו אנחנו לוקחים מסמך HTML וממירים אותו למבנה נתונים שאפשר לעבוד איתו ב-Ruby. אנחנו עושים את זה כדי לחלץ מידע, לשנות תוכן, או לפרסם אותו בצורות שונות.
 
-## איך:
-הנה דוגמא של קוד Ruby שמשתמש ב-gem שנקרא 'nokogiri' לפרסור HTML.
-
+## איך לעשות:
 ```Ruby
-require 'open-uri'
 require 'nokogiri'
+require 'open-uri'
 
-url = 'http://example.com'
-doc = Nokogiri::HTML(open(url))
+# פתח את ה-HTML מURL או קובץ מקומי
+html = open('https://example.com/')
+doc = Nokogiri::HTML(html)
 
-doc.css('h1').each do |title|
-  puts title.text
-end
+# חלץ תוויות כותרת
+titles = doc.css('h1').map { |node| node.text }
+puts titles
+
+# שנה טקסט בפסקה והדפס את ה-HTML המעודכן
+doc.css('p').first.content = 'שלום עולם!'
+puts doc.to_html
 ```
-הפלט של דוגמא זו יהיה כל הכותרות מסוג h1 מהאתר http://example.com.
+פלט דוגמא:
+```
+["כותרת בדף הדוגמא"]
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>כותרת בדף הדוגמא</h1>
+    <p>שלום עולם!</p>
+  </body>
+</html>
+```
 
-## צלילה עמוקה :
-הפרסור של HTML שונה קצת מפרסור שאר שפות התכנות משום ששפת HTML היא שפה שמאוד חשיפה לשגיאות. פרסרים של שפות אחרות לא ירחמו, אך ה- HTML פרסרים נותנים לנו מעין התמרמרות על שגיאות סינטקס. אלטרנטיבות ל- 'nokogiri' כוללות gems כמו 'hpricot' ו- 'oga'. 'Nokogiri', אך ורק, נהיה למועדף בשל flexability ומהירות שלו. הוא מאפשר למתכנת לבחור את המנוע שעליו הפרסר ירוץ - yaoba או REXML.
+## צלילה לעומק
+פירסופ של HTML התפתח כשהאינטרנט התפשט. ספריות נפוצות כמו Nokogiri ב-Ruby, BeautifulSoup ב-Python, ו-jsoup ב-Java, הפכו לסטנדרט לעיבוד HTML. פעולה זו חוסכת זמן ומאפשרת אוטומציה של פעולות על מסמכים ברשת.
+Nokogiri, למשל, משתמש במנוע XPath ו-CSS selectors לחיפוש יעיל במסמך. זה מתבסס על libxml2 ו-libxslt אשר מספקים יכולות נרחבות לעיבוד XML ו-XSLT, גם כן.
 
-## ראה גם:
-1. [Nokogiri](https://nokogiri.org/)
-2. [Hpricot](https://github.com/hpricot/hpricot)
-3. [Oga](https://github.com/YorickPeterse/oga)
+אלטרנטיבות ל-Nokogiri כוללות ספריות כמו Oga או Hpricot (שכיום כבר לא בשימוש רב). כל ספרייה מציעה נקודות חוזק וחולשה שווה להתייחס. לעיתים הבחירה בספרייה תלויה בצרכים הספציפיים של הפרויקט או בהעדפות האישיות של המפתח.
 
-אין לשכוח מהבנות HTML משום שהן משחקות תפקיד חיוני ביצירת קוד ראוי. יותר מאשר כלי, הן הבחירה של מאמץ.
+## ראה גם
+- [Nokogiri מדריך רשמי](http://www.nokogiri.org/)
+- [מידע נוסף על libxml2](http://xmlsoft.org/)
+- [מדריכים לניתוח HTML ב-Ruby](https://www.ruby-toolbox.com/categories/html_parsing)

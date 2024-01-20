@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:36:06.832405-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,38 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीखों को स्ट्रिंग से पार्स करने का मतलब है टेक्स्ट में दी गई तारीख को पढ़ना और उसे ऐसे फॉर्मेट में बदलना जिसे प्रोग्राम समझ सकें। प्रोग्रामर इसका इस्तेमाल उपयोगकर्ता इनपुट, डेटा स्टोरेज, या एपीआई इंटरैक्शन में करते हैं।
 
-एक स्ट्रिंग से डेट को पार्स करना यानी डेटा को उसके मूल तत्वों में विभाजित करना होता है, जैसे की दिन, महीना, और साल। प्रोग्रामर्स इसे करते हैं ताकि वे गठित डेटा को अधिक सुलभ और समझने योग्य तरीके से प्रबंधित कर सकें।
+## How to: (कैसे करेंः)
+Elixir में DateTime स्ट्रक्चर का उपयोग करके आप आसानी से स्ट्रिंग से तारीख पार्स कर सकते हैं। नीचे एक उदाहरण है कि कैसे यह किया जा सकता है:
 
-## कैसे: 
+```elixir
+# datetime.ex
 
-Elixir में स्ट्रिंग से डेट पार्स करने के लिए, `Date.from_iso8601/1` फ़ंक्शन का उपयोग करें। इसकी एक उदाहरण:
-
-```Elixir
-case Date.from_iso8601("2021-12-31") do
-  {:ok, date} -> IO.inspect(date)
-  {:error, reason} -> IO.puts("Error: #{reason}")
+defmodule DateTimeParser do
+  def parse_date_string(date_string) do
+    case DateTime.from_iso8601(date_string) do
+      {:ok, datetime, _} -> datetime
+      {:error, _} -> {:error, "Invalid date format"}
+    end
+  end
 end
+
+# उपयोग करने का उदाहरण:
+
+{datetime, _} = DateTimeParser.parse_date_string("2023-03-25T13:45:30Z")
+IO.inspect datetime
 ```
-नतीजा इस ढ़ंग से दिखेगा:
 
+परिणाम:
+```elixir
+# यदि सही है तो
+%DateTime{
+  year: 2023,
+  month: 3,
+  day: 25,
+  hour: 13,
+  minute: 45,
+  second: 30,
+  time_zone: "Etc/UTC",
+  zone_abbr: "Z",
+  utc_offset: 0,
+  std_offset: 0,
+  ...
+}
+
+# यदि गलत है तो
+{:error, "Invalid date format"}
 ```
-~D[2021-12-31]
-```
 
-## गहराई से जानने के लिए: 
+## Deep Dive (गहराई से जानकारी)
+Elixir में तारीखों को पार्स करने की क्षमता, इसे ऑवर 2014 में प्रकाशित होने वाले `DateTime` मॉड्यूल के साथ लाई गई थी। ISO 8601 स्टैंडर्ड सबसे आम है और इसका इस्तेमाल अंतरराष्ट्रीय प्रारूप में तारीख और समय को प्रस्तुत करने के लिए होता है। Elixir `DateTime.from_iso8601/1` फ़ंक्शन आपको इस प्रारूप की स्ट्रिंग को आसानी से पार्स करने की सुविधा देता है।
 
-1. ऐतिहासिक सन्दर्भ: डेट पार्सिंग की कार्यवाही आस्थायी डेटा को अधिक स्थायी और स्थायी रूप में बदलने के लिए क्रियान्वित हुई है। यह सांख्यिकीय विश्लेषण के लिए विशेष रूप में महत्वपूर्ण हो सकता है।
+अगर आपको अलग फॉर्मेट्स की तारीखें पार्स करनी हैं, तो आप `Timex` जैसी लाइब्रेरीज का सहारा ले सकते हैं, जो अधिक फ्लेक्सिबिलिटी और फ़ीचर्स प्रदान करती हैं।
 
-2. विकल्प: Elixir के अलावा अन्य भाषाओं में भी डेट पार्स किए जा सकते हैं। JavaScript, Python और Ruby में इसके समरूपित फ़ंक्शन होते हैं। 
-
-3. कार्यान्वयन विवरण: `Date.from_iso8601/1` एक विशेष ISO 8601 स्ट्रिंग को अपवादित करता है और यह निर्भर करता है कि स्ट्रिंग ISO 8601 तारीख प्रारूप के अनुसार होता है या नहीं। 
-
-## अधिक जानने के लिए: 
-
-ये कुछ संसाधन हैं जिनमें से आप अधिक जानकारी प्राप्त कर सकते हैं: 
-
-1. Elixir का अधिकारिक दस्तावेज़ीकरण: [Date.from_iso8601/1](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)
-2. Date and Time in Elixir: [Elixir School](https://elixirschool.com/en/lessons/basics/date-time/)
-3. काम करने का और व्यापक तरीका: [ISO 8601 Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
+## See Also (देखें भी)
+- [DateTime Module Documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [ISO 8601 Standard](https://en.wikipedia.org/wiki/ISO_8601)
+- [Timex Library on Hex.pm](https://hex.pm/packages/timex)

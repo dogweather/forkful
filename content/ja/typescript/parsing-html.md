@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:34:14.448959-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "TypeScript"
@@ -10,29 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？ 
-HTMLパースとは、HTML文書を解析し、意味を抽出するプロセスです。開発者がこれを行う主な理由は、ウェブページから特定の情報を取得し、そのデータをさまざまな目的（スクレイピング、ウェブテスト、サイトの改善など）に使用可能にするためです。
+# HTMLの解析って何？どうして？
 
-## やり方：
-以下に簡単なTypeScriptによるHTML解析の例を示します。
+HTMLを解析するとは、HTMLドキュメントからデータを抜き出し、使いやすい形に変換するプロセスのこと。プログラマーは通常、Webスクレイピング、データ抽出、または自動化タスクのためにこれを行います。
+
+# 実装方法
 
 ```TypeScript
-import jsdom from 'jsdom';
+// npmでnode-html-parserをインストール
+import { parse } from 'node-html-parser';
 
-const { JSDOM } = jsdom;
+// サンプルHTMLコード
+const html = `<ul id="fruits">
+  <li class="apple">Apple</li>
+  <li class="orange">Orange</li>
+  <li class="pear">Pear</li>
+</ul>`;
 
-const dom = new JSDOM('<!DOCTYPE html><html><body>Hello world</body></html>');
+// HTMLを解析
+const root = parse(html);
 
-console.log(dom.window.document.querySelector("body").textContent); // "Hello world"
+// 要素を取得
+const fruits = root.querySelectorAll('li');
+fruits.forEach(fruit => {
+  console.log(fruit.textContent);
+});
+
+// 出力:
+// Apple
+// Orange
+// Pear
 ```
 
-この短いプログラムはHTML文書をパースし、bodyタグの中身を表示します。
+# 詳細解説
 
-## 深く掘り下げる
-HTMLのパースはウェブ開発の中心的な部分で、その歴史はウェブ自体とほぼ同じです。古いテクニックは正規表現を使用してHTMLを解析することでしたが、これは完全に機能するための多くのエッジケースと落とし穴があったため、現在はあまり使われていません。
-現代のアプローチでは、DOMベースのパーサー（上記の例で使用したJSDOMなど）やHTMLパーサライブラリ（Beautiful SoupやPuppeteerなど）が一般的です。
+HTML解析は、90年代初頭のウェブの浮上以来、開発者が取り組んでいます。初期は文字列操作や正規表現が多用されましたが、ツールの進化により、DOMベースの解析が主流になりました。解析の代わりに、JSONやXMLのような構造化されたデータフォーマットが使われることもあります。実装面では、速度や正確性、どれほどのHTML標準に準拠しているかが重要です。`node-html-parser`は、これらの条件を満たし、Node.js環境での使用に適した選択肢です。
 
-## 参考資料:
-- [JSDOM](https://github.com/jsdom/jsdom)：Node.jsのJavaScriptのためのDOMの実装
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)：HTMLとXMLファイルを解析するためのPythonライブラリ
-- [Puppeteer](https://github.com/GoogleChrome/puppeteer)：無頭ChromeまたはChromiumブラウザの高水準API
+# 参考リンク
+
+- Node-html-parserのGitHubページ: [https://github.com/taoqf/node-html-parser](https://github.com/taoqf/node-html-parser)
+- HTMLパースに関するMozillaのドキュメント: [https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)

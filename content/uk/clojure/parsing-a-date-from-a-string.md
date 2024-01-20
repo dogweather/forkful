@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:35:46.863428-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Парсинг дати зі строки — це процес конвертації текстового представлення дати до структури даних, яку програма може зрозуміти і обробити. Це потрібно, щоб можна було легко маніпулювати датами та виконувати з ними операції, як-от додавання днів або порівняння.
 
-Розпізнавання дати з рядка - це процес, під час якого ми змінюємо текстову інформацію про дату на машинозрозумілий формат. Програмісти роблять це, щоб уникнути помилок вводу даних, полегшити обробку дати та забезпечити безпеку даних.
-
-## Як це зробити:
-
+## How to: (Як це зробити:)
 ```Clojure
-(require '[clj-time.core :as t])
-(require '[clj-time.format :as f])
+(require '[clj-time.coerce :as coerce]
+         '[clj-time.format :as format])
 
-(defn parse-date [date-string]
-  (f/parse (f/formatters :date-time-no-ms) date-string))
+;; Визначаємо формат дати
+(def my-formatter (format/formatters :basic-date-time))
 
-;; приклад використання
-(println (parse-date "2021-08-29T14:30:00"))
+;; Парсинг зі строки в дату
+(def my-date-str "20230415T123000Z")
+(def parsed-date (coerce/from-string my-formatter my-date-str))
+
+;; Виведення результату
+(println parsed-date)
+```
+Sample output:
+```
+2023-04-15T12:30:00.000Z
 ```
 
-Виконуючи цей код, ви отримаєте результат:
-```Clojure
-2021-08-29T14:30:00.000Z
-```
+## Deep Dive (Занурення у Деталі):
+Давніше, парсинг дат у Clojure часто здійснювався за допомогою Java Date APIs через Java Interop. Це було не завжди ідеально. З'явилася бібліотека `clj-time`, основана на Joda Time, яка значно спростила роботу з датами у Clojure.
 
-## Занурення у тему
+Крім `clj-time`, можна використовувати інші бібліотеки, як `java-time`, яка більш характерна для нових версій Java.
 
-* *Історичний контекст*: Розпізнавання дати з рядка було важливою річчю для програмування з самого початку, починаючи від ранніх середовищ розробки.
-* *Альтернативи*: Є інші методи розпізнавання дати в Clojure, включаючи використання Java Interop для виклику Java's SimpleDateFormat. Однак, за допомогою clj-time, все стає набагато простішим.
-* *Деталі реалізації*: При розпізнаванні дати з рядка important є розуміння, що не всі формати рядків дати відповідають стандарту ISO 8601. clj-time використовує Joda-Time бібліотеку під капотом для обробки дати та часу.
+Щодо імплементації - Clojure відмінно інтегрується з Java, тому часто використовується обгортання Java бібліотек. Це дає простоту синтаксису Clojure та велику можливість Java екосистеми.
 
-## Див. також
-
-* Офіційна документація clj-time: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time) 
-* Підручник Clojure: [https://www.braveclojure.com/](https://www.braveclojure.com/) 
-
-Парсинг дати - це одне з основних завдань, які ви виконуєте при роботі з даними у вашій додатках. Поважний виклик цього => підводити під машинний розуміння. Навчіться цьому наскрізно.
+## See Also (Дивіться також):
+- [clj-time GitHub repository](https://github.com/clj-time/clj-time)
+- [java-time GitHub repository](https://github.com/dm3/clojure.java-time)
+- [ClojureDocs - a community-powered documentation and examples repository for Clojure](https://clojuredocs.org/)
+- [The Joda-Time project](https://www.joda.org/joda-time/)

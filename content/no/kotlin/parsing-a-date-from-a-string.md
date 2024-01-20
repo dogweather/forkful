@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:37:14.737512-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing Datoer fra Strenger i Kotlin
+## What & Why?
+Dato-parsing fra en streng betyr å konvertere tekst til et `Date`-objekt. Programmerere gjør dette for å håndtere datoer og tider på en standardisert, manipulerbar måte i apps og systemer.
 
-## Hva & Hvorfor?
-Å analysere en dato fra en streng handler om å konvertere tekstformen til dato- og klokkeslettverdier. Programmerere gjør dette for å gjøre brukerens input forståelig for maskinen.
+## How to:
+I Kotlin parser vi datoer ved hjelp av `java.time`-biblioteket. Her er et eksempel:
 
-## Hvordan gjør man det: 
-I Kotlin, kan vi bruke `LocalDate.parse()` funksjonen til å utføre denne oppgaven. Her er et eksempel:
-
-```kotlin
-import java.time.LocalDate
-
-fun main() {
-    val streng = "2022-02-28"
-    val dato = LocalDate.parse(streng)
-
-    println(dato)
-}
-```
-
-Når du kjører dette programmet, vil utskriften være:
-
-```kotlin
-2022-02-28
-```
-
-## Dypdykk: 
-(1) I fortiden, før Java 8 og Kotlin, brukte vi `SimpleDateFormat`-klassen til å analysere datoer. Den har sine egne utfordringer, mestrelevant var trådsikkerhet.
-
-(2) Et alternativ i nåtiden er `DateTimeFormatter`-klassen i `java.time`-pakken. Den ble introdusert i Java 8 og fungerer i Kotlin.
-
-(3) `LocalDate.parse()` bruker ISO_LOCAL_DATE som standard, men du kan også spesifisere et annet format ved å bruke `DateTimeFormatter`.
-
-```kotlin
+```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 fun main() {
-    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-    val streng = "28-02-2022"
-    val dato = LocalDate.parse(streng, formatter)
-
-    println(dato)  // 2022-02-28
+    val dateString = "2023-04-02"
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val date = LocalDate.parse(dateString, formatter)
+    
+    println(date) // Skriver ut: 2023-04-02
 }
 ```
 
-## Se Også: 
-* Offisiell Kotlin Dokumentasjon på dato og tid: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
-* En guide til Java 8 Dato og Tid API: [link](https://www.baeldung.com/java-8-date-time-intro)
+Og med et annet format:
+
+```Kotlin
+import java.time.LocalDateTime
+
+fun main() {
+    val dateTimeString = "02.04.2023 14:00"
+    val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+    val dateTime = LocalDateTime.parse(dateTimeString, formatter)
+
+    println(dateTime) // Skriver ut: 2023-04-02T14:00
+}
+```
+
+## Deep Dive
+Før `java.time` kom i Java 8, brukte programmerere `SimpleDateFormat` fra `java.util` som var mindre robust og ikke trådsikker. `java.time`-biblioteket introduserte en mer intuitiv API og faste datamodeller. 
+
+Som alternativ til innebygd parsering, kan du bruke tredjepartsbiblioteker som Joda-Time, men dette er ofte ikke nødvendig siden `java.time` er så kraftig. Ved implementering er det viktig å forstå datoformatet du jobber med. Mønsteret i `DateTimeFormatter` må matche strengen eksakt, ellers kastes en `DateTimeParseException`.
+
+## See Also
+- [Official Java Time Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

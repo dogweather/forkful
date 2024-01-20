@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:34:39.343520-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "TypeScript"
@@ -10,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ?מה ולמה
-פרסינג HTML הוא התהליך שבו אנחנו "קוראים" את קוד HTML ומהפכים אותו למבנה שניתן להתמנע ממנו בקוד. בהקשר של פיתוח, זה מאפשר לנו לתמנע ולשלוט על קוד HTML באופן דינמי.
+## מה ולמה?
+פרסור HTML הוא התהליך שבו קוד HTML מומר למבנה נתונים שניתן לטפל בו בתוכנה. תוכניות כמו מנועי חיפוש וכלי פיתוח אינטרנט מבצעים פרסור כדי לנתח דפי אינטרנט ולאסוף מידע מהם.
 
-## מדריך: 
-אז איך אנחנו עושים את זה בפועל? ניתן להשתמש בספרייה בNode.js בשם htmlparser2:
+## איך לעשות:
+בדוגמה זו נשתמש במודול 'node-html-parser' לצורך פרסור HTML ב-TypeScript.
+
 ```TypeScript
-import * as htmlparser from "htmlparser2";
+import { parse } from 'node-html-parser';
 
-const rawHTML = "<html><body>ברוך הבא למעלה!</body></html>";
+// קטע HTML פשוט לדוגמה
+const html = `
+  <ul id="fruits">
+    <li class="apple">Apple</li>
+    <li class="banana">Banana</li>
+  </ul>
+`;
 
-const parser = new htmlparser.Parser({});
-parser.write(rawHTML);
-parser.end();
+// פרסור ה-HTML והמרתו ל-DOM וירטואלי
+const root = parse(html);
 
-console.log(rawHTML);
+// הדפסת תוצאות פרקטיות
+console.log(root.querySelector('.apple').innerText); // Apple
+console.log(root.querySelector('.banana').textContent); // Banana
 ```
 
-אתה צפוי לראות בתוצאה את המחרוזת:
-```
-"<html><body>ברוך הבא למעלה!</body></html>"
-```
+קוד ה-TypeScript הזה מדפיס `Apple` ואחריו `Banana` - הטקסט מתוך האלמנטים ב-HTML.
 
-## צלילה עמוקה:
-בעבר, פרסינג HTML היה די מסובך. ב[[שם|https://en.wikipedia.org/wiki/HTML_parsing]] הוסבר על HTML parsing ואיך התפתח במשך השנים. היום, יש הרבה ספריות חיצוניות אשר מתייחסות לגרסאות שונות של HTML ומאפשרות כתיבת קוד בצורה יותר ידידותית ואינטואיטיבית.
+## עיון מעמיק
+בהיסטוריה, פרסור HTML התבצע בעיקר על ידי דפדפנים כדי להציג דפי אינטרנט. בשנים האחרונות, גידול במספר מפתחים וכלים שמתעסקים ב-web scraping (איסוף נתונים אוטומטי מאתרים) ו-SEO (אופטימיזציה למנועי חיפוש) הביא לכך שיש צורך גובר בפרסור בצד הלקוח והשרת. ישנם שיטות חלופיות כמו ביטויים רגולריים אך הם לא מומלצות כיוון שהם פגיעים לשגיאות ופחות קריאים. פרסור HTML נכון דורש מתודולוגיה שחוזרת על הדרך בה הדפדפן עובד – כלומר, יצירת עץ DOM שמשקף את מבנה ה-HTML.
 
-## עיון נוסף:
-1. [[שם|https://developer.mozilla.org/he/docs/Web/HTML]] - מדריך מלא לHTML מ-Mozilla.
-2. [[שם|https://www.w3schools.com/html/]] - מדריך לHTML מ-W3Schools.
-3. [[שם|https://htmldom.dev/]] - מדריך למניפולציות עם DOM בJavaScript.
+## ראה גם
+- מדריך node-html-parser: https://github.com/taoqf/node-html-parser
+- מידע נוסף על DOM: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+- מדריך ל-web scraping ב-TypeScript: https://dev.to/ryands17/web-scraping-in-typescript-5g7n

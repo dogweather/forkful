@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:38:54.964181-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-문자열에서 날짜를 파싱한다는 것은, 정해진 포맷의 문자열을 날짜 형식으로 바꾸는 것을 뜻합니다. 프로그래머들이 이를 사용하는 이유는, 사용자 입력, 로그 파일 등에서 날짜 정보를 추출하고 이를 활용하기 편리하기 때문입니다.
+## 무엇 & 왜?
+문자열에서 날짜 파싱은 문자열 형태의 날짜를 실제 날짜 타입으로 변환하는 과정을 말합니다. 프로그래머들은 데이터 처리, 유효성 검사 또는 날짜 연산을 위해 이 과정을 수행합니다.
 
-## 이렇게 하세요:
-최신 버전의 Rust를 사용하여, 문자열에서 날짜를 어떻게 파싱하는지 확인해 보겠습니다. 그러기 위해 `chrono` 라이브러리를 사용합니다.
-
+## 사용 방법:
 ```Rust
-use chrono::NaiveDate;
+use chrono::{DateTime, NaiveDateTime, Utc};
+
+fn main() {
+    let date_str = "2023-03-27T12:45:00Z";
     
-let s = "2021-07-06";
-let dt = NaiveDate::parse_from_str(s, "%Y-%m-%d");
+    // rfc3339 포맷을 사용하는 예시
+    let date: DateTime<Utc> = date_str.parse().expect("Invalid date format");
+    println!("Parsed Date & Time: {}", date);
 
-match dt {
-    Ok(date) => println!("{}", date),
-    Err(e) => println!("Error parsing date: {:?}", e),
+    // 특정 포맷을 지정하는 예시
+    let custom_format = "%Y-%m-%d %H:%M:%S";
+    let naive_date = NaiveDateTime::parse_from_str("2023-03-27 12:45:00", custom_format)
+        .expect("Invalid date format");
+    println!("Parsed Naive Date & Time: {}", naive_date);
 }
+
+// 출력:
+// Parsed Date & Time: 2023-03-27 12:45:00 UTC
+// Parsed Naive Date & Time: 2023-03-27 12:45:00
 ```
-위 코드 실행시 결과는 다음과 같습니다:
 
-```Rust
-2021-07-06
-```
+## 깊이 들여다보기:
+문자열에서 날짜를 파싱하는 기능은 컴퓨터가 시간을 이해하고 처리하는 데 필수적입니다. Rust에서는 `chrono` 크레이트가 대중적으로 이용됩니다. 이전에는 표준 라이브러리의 기능에 더 의존했지만, `chrono`는 더 강력한 기능과 사용 편의성을 제공합니다.
 
-## 디테일:
-문자열에서 날짜를 파싱하는 데 사용되는 기술은 오래전부터 있었습니다. 언어마다 다양한 방법이 존재하며, Rust에서는 `chrono`라는 외부 라이브러리를 사용하여 직관적이고 간단하게 날짜 파싱을 수행할 수 있습니다.
+대안으로는 `time` 크레이트 또는 `dateutil`과 같은 여러 서드파티 라이브러리가 있습니다.
 
-날짜 파싱의 구현 메커니즘은 비교적 단순합니다. 문자열이 주어지면, 그 문자열이 정해진 날짜 포맷에 있는 숫자와 문자들의 위치에 따라 분석됩니다. 위치에 따라 연도, 월, 일으로 나누어져 각각의 값이 반환됩니다.
+구현에 있어서는, 포맷 지정자를 통해 매우 다양한 날짜 형식을 해석할 수 있습니다. `DateTime`, `NaiveDateTime`, `Date`, `Time`과 같은 객체들을 사용해서 날짜와 시간을 나타낼 수 있으며, 라이브러리마다 기능과 표현 방식이 조금씩 다를 수 있습니다.
 
-## 참고 자료:
-Rust로 날짜 파싱을 하기 위한 자세한 정보는 아래 링크에서 찾아볼 수 있습니다. 
-
-- chrono 라이브러리: https://docs.rs/chrono/0.4.11/chrono/
-- Rust 날짜 및 시간에 대한 학습 자료: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+## 관련 자료:
+- [chrono crate documentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [The Rust Programming Language Book, date and time handling](https://doc.rust-lang.org/book/ch12-05-working-with-environment-variables.html#storing-values-in-the-environment)

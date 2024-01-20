@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:30:22.426444-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "C"
@@ -10,46 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# HTML-Parsing: Was & Warum?
 
-Das Parsen von HTML ist der Prozess, bei dem die Struktur eines HTML-Dokuments analysiert und in eine verständliche Form für die Programmierung umgewandelt wird. Programmierer machen dies, um die Inhalte solcher Dokumente zu manipulieren, Daten zu extrahieren oder Webseiten zu scrappen.
+HTML-Parsing ermöglicht es Programmen, die Struktur von Webseiten zu verstehen und Inhalte gezielt auszulesen. Entwickler machen das, um Daten zu sammeln, Web-Scraping zu betreiben oder Inhalte automatisiert zu verarbeiten.
 
-## Wie zu
+# So geht's:
 
-Hier ist ein einfacher Codeausschnitt in C, der das Parsen eines HTML-Dokuments mit Hilfe der Bibliothek Gumbo demonstriert.
+Librarys wie `libxml2` bieten in C Tools fürs HTML-Parsing. Hier ein simples Beispiel:
 
 ```C
 #include <stdio.h>
-#include <gumbo.h>
-
-void parse_html(const char* html) {
-    GumboOutput* output = gumbo_parse(html);
-    
-    // Code to traverse and manipulate the tree structure...
-
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
-}
+#include <libxml/HTMLparser.h>
 
 int main() {
-    const char* html = "<html><body>Hallo Welt!</body></html>";
-    
-    parse_html(html);
-    
+    htmlDocPtr doc;
+    htmlNodePtr node;
+
+    // HTML-String, kann auch aus einer Datei oder dem Internet stammen
+    char *html = "<html><body><p>Hello, World!</p></body></html>";
+
+    // HTML-Parser initialisieren und Dokument parsen
+    doc = htmlReadDoc((xmlChar*)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+
+    // root element holen
+    node = xmlDocGetRootElement(doc);
+
+    // einfach über die Knoten iterieren und Namen ausgeben
+    for (node = node->children; node; node = node->next) {
+        printf("Element Name: %s\n", (char *) node->name);
+    }
+
+    // Speicher freigeben
+    xmlFreeDoc(doc);
+
     return 0;
 }
 ```
 
-Wenn Sie dieses Programm ausführen, wird es das gegebene HTML parsen und "Hallo Welt!" auf Ihrer Konsole ausgeben.
+Ausgabe könnte so aussehen:
 
-## Tiefer Tauchen
+```
+Element Name: body
+Element Name: p
+```
 
-Ursprünglich war das Parsen von HTML eine ziemlich chaotische Angelegenheit. Das hat sich jedoch mit Standards wie HTML5 und XML und Bibliotheken wie Gumbo stark verbessert. Alternativen zum Parsen von HTML in C sind die Verwendung anderer Sprachen wie Python mit BeautifulSoup oder Javascript mit cheerio. Implementationsdetails können sehr variieren, abhängig davon, ob Sie eine DOM- oder SAX-ähnliche Methode verwenden, ob Sie HTML oder XHTML parsen und welche Bibliothek Sie verwenden.
+# Hinter den Kulissen:
 
-## Siehe Auch
+In der Vergangenheit wurde HTML oft mit regulären Ausdrücken (regex) geparsed, was fehleranfällig ist. HTML ist keine reguläre Sprache und kann mit regex nicht korrekt geparst werden. Deshalb greifen Entwickler auf spezialisierte Parser wie `libxml2` zurück.
 
-Für weitere Informationen zu diesem Thema finden Sie hier einige nützliche Links:
+Alternativen zu `libxml2` sind `Gumbo` von Google oder `htmlcxx` für C++. Diese nutzen unterschiedliche Ansätze und APIs, doch das Ziel bleibt dasselbe: verlässliches Parsing von HTML.
 
-- [Gumbo Parsing Library](https://github.com/google/gumbo-parser)
-- [C programming tutorials](https://www.learn-c.org/)
-- [HTML parsing guide](https://html.spec.whatwg.org/multipage/parsing.html)
-- [HTML5 specification](https://www.w3.org/TR/html5/)
+Beim Parsing intern wird der HTML-Text in einen DOM (Document Object Model) überführt. Das ermöglicht es, auf einzelne Teile der Struktur zuzugreifen, als wären sie Teile eines baumartig aufgebauten Graphen.
+
+# Siehe auch:
+
+- Die `libxml2`-Dokumentation: http://xmlsoft.org/html/libxml-HTMLparser.html
+- `Gumbo` Parser: https://github.com/google/gumbo-parser
+- `htmlcxx` HTML/CSS-Parser in C++: http://htmlcxx.sourceforge.net/
+- W3C zu HTML und DOM: https://www.w3.org/DOM/

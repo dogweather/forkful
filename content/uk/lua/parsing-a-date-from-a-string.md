@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:37:41.587647-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,30 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
-Розбір дати з рядка - це спосіб отримання значення дати з текстового рядка. Програмісти роблять це, щоб обробити інформацію з різних джерел або форматів.
+## What & Why? (Що таке й Навіщо?)
+Parsing a date from a string means converting text into a date object. Programmers do it to manipulate dates, compare them, or save them efficiently.
 
-## Як це зробити:
-Lua має вбудовану функцію `os.time`, яка дає нам можливість розібрати дату з рядка. Наприклад:
-
+## How to: (Як зробити:)
 ```Lua
-local date_str = "07/29/2021"
-local pattern = "(%d+)/(%d+)/(%d+)"
-local xday, xmonth, xyear = date_str:match(pattern)
-local converted_time = os.time({year = xyear, month = xmonth, day = xday})
-print(converted_time)
+-- Lua 5.4 example
+
+-- Load the OS library for date and time functions
+local os = require("os")
+
+-- Parse a date in the format "dd/mm/yyyy"
+function parseDate(dateString)
+  local pattern = "(%d+)%/(%d+)%/(%d+)"
+  local day, month, year = dateString:match(pattern)
+  -- Convert to numerical values
+  day, month, year = tonumber(day), tonumber(month), tonumber(year)
+  -- Return os.time table
+  return os.time({year = year, month = month, day = day})
+end
+
+-- Usage example
+local dateStr = "27/03/2023"
+local parsedDate = parseDate(dateStr)
+print(os.date("%A, %d %B %Y", parsedDate))  -- Output: Monday, 27 March 2023
 ```
 
-Цей код використовує регулярні вирази для розбиття рядка дати на день, місяць і рік. Потім він створює новий об'єкт Date використовуючи `os.time`.
+## Deep Dive (Поглиблений Розділ)
+Parsing dates in Lua isn't built-in like in some languages. Historically, Lua focuses on a small set of core features, relying on external libraries or custom functions for specifics like date parsing.
 
-## Поглиблене вивчення
-Розбір дати з рядка був використаний з самого початку програмування і все ще є необхідністю. Lua, як і багато інших мов програмування, має вбудовані функції, які допомагають нам з цим завданням.
+Alternatives:
+1. `os.date` and `os.time` functions work for basic needs. They are part of the standard library.
+2. Patterns (Lua's version of regex) to extract parts of the string manually.
+3. External libraries, like `luadate` if advanced date manipulation is needed.
 
-Існує багато альтернатив засобів розбиття дати з рядка: ви можете написати власну функцію, що використовує регулярні вирази або повністю вбудовані функції аналізу дати.
+Implementation details:
+- `os.time` creates a time object from a table. 
+- Patterns can be complex based on the date format. Always validate to avoid errors.
+- Don't forget time zones and locales when dealing with dates.
 
-Метод `os.time`, який ми використовували вище, використовує системний час комп'ютера для створення нового об'єкту часу. `os.time` приймає таблицю і повертає час в секундах що сплили від 1 січня 1970 року.
-
-## Дивіться також
-- [Lua User’s Wiki: Date and Time](http://lua-users.org/wiki/DateAndTime)
-- [Tutorialspoint: Lua Strings](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- [Lua 5.3 Reference Manual](https://www.lua.org/manual/5.3/)
+## See Also (Дивись Також)
+- Official Lua documentation: http://www.lua.org/manual/5.4/manual.html#6.9
+- LuaDate library for more complex operations: https://github.com/Tieske/date
+- A tutorial on Lua patterns: https://www.lua.org/pil/20.2.html

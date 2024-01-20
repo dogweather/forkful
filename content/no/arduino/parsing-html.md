@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:29:55.427269-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,61 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Parsing av HTML betyr å tolke og bearbeide koden som nettlesere bruker for å vise websider. Programmere gjør dette for å trekke ut data, interagere med nettsider eller integrere webinnhold i egne applikasjoner.
 
-Parsing av HTML er prosessen når en HTML-dokument blir analysert og konvertert til en struktur som er enkel for programmerere å forstå og jobbe med. Vi gjør dette for å lette datautvinning og web skraping.
-
-## Hvordan gjør man det:
-
-Her er enkel kode for å parse HTML ved hjelp av en Arduino Ethernet skjold og Ethersheild bibliotek. Vi bruker Google-hjemmesiden som eksempel:
+## Slik gjør du:
+Arduino har ikke innebygd støtte for HTML-parsing, men du kan bruke tekstbehandlingsteknikker for å hente ut informasjon. Her er et enkelt eksempel:
 
 ```Arduino
-#include <EtherShield.h>
- 
-// Definer nettverksdetaljer
-byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-byte ip[] = {10, 0, 0, 2};
-byte gw[] = {10, 0, 0, 1};
-byte dns[] = {8, 8, 8, 8};
-
-// Opprett en Ethernet-klient
-EthernetClient client;
+String html = "<h1>Title</h1><p>This is a paragraph.</p>";
+String title = html.substring(html.indexOf("<h1>") + 4, html.indexOf("</h1>"));
+String paragraph = html.substring(html.indexOf("<p>") + 3, html.indexOf("</p>"));
 
 void setup() {
-  Ethernet.begin(mac, ip, dns, gw);
   Serial.begin(9600);
-
-  // Koble til Google
-  if (client.connect("www.google.com", 80)) {
-    Serial.println("Connected to Google");
-    // Send en HTTP-forespørsel
-    client.println("GET / HTTP/1.0");
-    client.println();
-  }
-  
-  // vent og motta data
-  while (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-
-  // Lukk tilkoblingen
-  client.stop();
+  while (!Serial) continue; // vent på seriell port
+  Serial.println("Tittel: " + title);
+  Serial.println("Avsnitt: " + paragraph);
 }
 
 void loop() {
-  // Ikke noe som trengs her
+  // Ikke nødvendig for dette eksemplet.
 }
 ```
-Eksempelutgang vil være rå HTML-kode fra Google-hjemmesiden.
 
-## Dyp Dykk
+## Dypdykk
+HTML-parsing på enheter som Arduino har historisk vært begrenset på grunn av begrenset minne og prosesseringskraft. Programmerere har tradisjonelt brukt server-side språk som Python eller PHP for slike oppgaver. Biblioteket `String` på Arduino kan brukes for enkel tekstmanipulasjon, men for kompleks HTML kan det være bedre å bruke en dedikert mikrokontroller med en nettverksstack som ESP8266 eller ESP32 som kan kjøre kraftigere parsingbiblioteker. 
 
-Parsing av HTML har vært standard siden opprettelsen av web-skraping, hvor programmerere trengte å trekke ut spesifikk data fra nettsider. Ytterligere alternativer for parsing inneholder biblioteker som Beautiful Soup (Python), Jsoup (Java) og HtmlAgilityPack (.NET).
+Det finnes grunnleggende alternativer som regex (regulære uttrykk), selvom det ikke anbefales for kompleks HTML-parsing på grunn av HTMLs ofte uregelmessige natur. En mer robust tilnærming involverer bruk av en ekstern tjeneste eller API for å sende HTML og motta strukturert data tilbake, ta av belastningen fra Arduino.
 
-HTML Parser bruker generelt en teknikk kjent som Tre-gående, hvor Parser går gjennom HTML-treet og utfører spesifikke handlinger basert på nodetype.
-
-## Se Også
-
-1. Arduino Ethernet Shield dokumentasjon: https://www.arduino.cc/en/Main/ArduinoEthernetShield
-2. Ethershield bibliotek: https://www.arduino.cc/en/Reference/Ethernet
-3. "Tregående algoritmer" for mer dybde på hvordan parsing teknikker jobber: https://en.wikipedia.org/wiki/Tree_traversal
+## Se Også:
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [ESP8266 NodeMCU HTTP Client](https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/)

@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:36:31.973220-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-
-पार्सिंग एक तारीख का अर्थ होता है- किसी वाक्यांश को प्रक्रिया करना, ताकि कंप्यूटर उसे पढ़ सके। प्रोग्रामर इसे तभी करते हैं जब उन्हें डेटा को उसके मूल फॉर्मेट से बदलकर और व्यावहारिक फॉर्मेट में लाना होता है।
+## क्या और क्यों?
+एक तारीख को स्ट्रिंग से पार्स करने का मतलब है उसे ऐसे फॉर्मेट में बदलना जिसे कंप्यूटर समझ सके और इस्तेमाल कर सके। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे तारीखों की तुलना, गणना और मैनिपुलेशन कर सकें।
 
 ## कैसे करें:
+Fish Shell में तारीख पार्स करना:
 
-```Fish Shell 
-# दिनांक पार्स करने के लिए, Fish में अगला कोड उपयोग करें।
-set date_string "2022-10-01"
-set parsed_date (date -u -j -f "%Y-%m-%d" $date_string "+%d-%m-%Y")
-
-# पार्स की गई तारीख को मुद्रित करें
-echo $parsed_date
-```
-सैंपल आउटपुट: 
-``` 
-01-10-2022
+```Fish Shell
+set date_string "2023-03-15"
+set epoch_time (date -ud "$date_string" +"%s")
+echo $epoch_time
 ```
 
-## गहरा डाइव:
+आउटपुट:
 
-1. ऐतिहासिक प्रसंग: डेटा पार्सिंग का इतिहास एक्साइटिंग और चुनौती पूर्ण है। Fish Shell, जो एक UNIX shell है, पीढ़ियों तक की पारंपरिक shell scripting की असुविधाओं को दूर करने के लिए बनाई गई है।
+```
+1678847400
+```
 
-2. विकल्प: Fish की तुलना में Bash और Zsh जैसे अन्य shells पार्सिंग विभिन्न गुणों के साथ करते हैं। 
-
-3. क्रियान्वयन विशेषताएं: Fish में डेट स्ट्रिंग का पार्स डेताइम ऑब्जेक्ट में किया जाता है, जिसे बाद में तारीख, समय, और टाइमज़ोन की जानकारी प्राप्त करने के लिए उपयोग किया जा सकता है। 
+## गहराई से जानकारी:
+समय के साथ, शैल स्क्रिप्टिंग में तारीख पार्सिंग सुधार होते रहे हैं। UNIX में `date` कमांड का इस्तेमाल होता आया है, जो GNU `date` में और विशेषताओं के साथ आता है। विकल्पों में `strptime` और भाषा-विशिष्ट फंक्शंस जैसे कि Python में `datetime.strptime` हैं। Fish में, हम आमतौर पर `date` कमांड का उपयोग करते हैं, जो कि डेटा और समय को मानव-पठनीय फॉर्मेट से Unix Epoch टाइम में बदलने के लिए उपयोगी है, जिसे सिस्टम और स्क्रिप्ट्स आसानी से समझ और प्रोसेस कर सकती हैं।
 
 ## यह भी देखें:
-
-- [[Fish Shell डॉक्यूमेंटेशन]](https://fishshell.com/docs/current/index.html)
-- [[Fish Shell GitHub]](https://github.com/fish-shell/fish-shell)
+- GNU `date` मैन्युअल: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- Epoch Converter: https://www.epochconverter.com/

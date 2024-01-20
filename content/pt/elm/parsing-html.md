@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:31:15.808761-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,47 +11,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que é e Por que?
+## O Que é & Porquê?
 
-Parsing HTML é o ato de converter código HTML em uma representação estruturada e manipulável, geralmente uma árvore, chamada de DOM (document object model). Programadores fazem isso para obter, alterar ou adicionar conteúdo a páginas da web de maneira programática.
+O parsing de HTML é o processo de converter strings de HTML em uma estrutura que possa ser manipulada e acessada pelo seu programa Elm. Programadores fazem isso para interagir com o conteúdo de páginas web, como ler informações ou até modificar elementos do DOM dinamicamente.
 
 ## Como Fazer:
 
-Aqui está um exemplo básico de como analisar um HTML em Elm por meio da biblioteca elm/html:
+Em Elm, usamos `elm/html` para criar HTML e `elm/parser` para interpretar strings de HTML. Vamos a um exemplo:
 
 ```Elm
-import Html.Parser
-import Html.Parser.Util
+module Main exposing (..)
 
-códHtml : String
-códHtml = "<p>Olá mundo!</p>"
+import Html exposing (Html, text)
+import Html.Attributes exposing (id)
+import Html.Parser exposing (run)
+import Html.Parser.Html5 exposing (node, textNode)
+import Html.Parser.Util exposing (parse)
 
-parseHtml : String -> Maybe (List Html.Parser.Node)
-parseHtml = 
-  Html.Parser.run (Html.Parser.Util.spaces >> Html.Parser.Util.ignoreComments >> Html.Parser.nodes)
 
-main : Html a
+type alias Model =
+    { content : String }
+
+
+type Msg
+    = HtmlParsed (Result String (Html Msg))
+
+
 main =
-  text (case parseHtml códHtml of
-    Just nodes ->
-      toString nodes
+    Html.program
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        }
 
-    Nothing ->
-      "Erro na análise do HTML!")
+
+init : (Model, Cmd Msg)
+init =
+    ( { content = "" }
+    , Cmd.none
+    )
+
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        HtmlParsed (Ok html) ->
+            ( { model | content = toString html }, Cmd.none )
+
+        HtmlParsed (Err error) ->
+            ( { model | content = "Erro ao fazer parsing: " ++ error }, Cmd.none )
+
+view : Model -> Html Msg
+view model =
+    Html.div []
+        [ Html.pre [] [ text model.content ] ]
+
+
+parseHtml : String -> Cmd Msg
+parseHtml htmlString =
+    let
+        parser =
+            node "div" []
+                [ node "span" [ id "my-id" ] [ textNode "Olá, Mundo!" ]
+                ]
+    in
+    Task.perform HtmlParsed (Task.succeed (run parser htmlString))
+
+
+-- Suponha que `sampleHtml` é uma string de HTML que você obteve de alguma forma.
+sampleHtml : String
+sampleHtml =
+    "<div><span id=\"my-id\">Olá, Mundo!</span></div>"
+
 ```
 
-Este programa irá imprimir: Just [Element "p" [] [Text "Olá mundo!"]].
+Quando executamos `parseHtml sampleHtml`, obtemos como resultado a representação Elm do HTML que podemos manipular mais facilmente.
 
-## Deep Dive:
+## Aprofundamento
 
-A análise de HTML tem uma longa história, tendo sido uma parte vital da web desde os seus primeiros dias. Originalmente, a análise de HTML costumava ser feita à mão com ajuda de regex. No entanto, com a evolução das páginas da web e a necessidade de analisar HTML mais complexo, essa abordagem caiu em desuso.
+Historicamente, o parsing de HTML foi e continua sendo um desafio devido à complexidade e variações do HTML. Ferramentas como `elm/html` e `elm/parser` simplificaram esses processos, permitindo uma manipulação mais direta e confiável do HTML dentro do Elm. Embora Elm seja fortemente tipado e funcional, processos como o parsing de HTML se beneficiam de uma abordagem declarativa, o que se alinha bem com os princípios da linguagem.
 
-Hoje, utilizamos parsers de HTML, como o `elm/html`, para simplificar esse processo. Eles são mais robustos, conseguindo lidar com HTML mal formado, e fornecem uma interface fácil de usar.
+Alternativas para parsing de HTML em Elm incluem utilizar diretamente APIs de JavaScript por meio de ports, o que pode ser adequado para casos onde a biblioteca de parsing de Elm não é suficiente.
 
-Existem alternativas ao `elm/html`, como o `hecrj/html-parser`, mas cada um tem suas próprias vantagens e desvantagens. Por exemplo, `hecrj/html-parser` dá um controle mais granular sobre a análise, mas tem um desempenho levemente inferior.
+Detalhes de implementação são importantes: como Elm é uma linguagem funcional, cada resultado deve ser tratado - sucesso ou erro. Essa abordagem previne muitos bugs que são comuns em outras linguagens onde o tratamento de erros é opcional ou negligenciado.
 
-## Ver Também:
+## Veja Também
 
-1. [Documentação do elm/html](https://package.elm-lang.org/packages/elm/html/latest/)
-2. [Análise de HTML com o hecrj/html-parser](https://package.elm-lang.org/packages/hecrj/html-parser/latest/)
-4. [Análise de HTML com Regex, uma abordagem histórica](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+- [Elm Parser](http://package.elm-lang.org/packages/elm/parser/latest)
+- [Elm Lang - Trabalhando com HTML](https://guide.elm-lang.org/interop/)

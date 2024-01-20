@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:32:48.630276-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -12,32 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å parse HTML handler om å analysere HTML-koden i en webside for å trekke ut relevant informasjon. Programvareutviklere gjør dette for å skrape data, automatisere webaktiviteter, eller analysere strukturen på en webside.
+Parsing av HTML betyr å analysere og forstå innholdet i en HTML-fil slik at man kan manipulere eller hente spesifikk informasjon fra den. Programmerere parser HTML for å automatisere datainnsamling, sjekke nettsiders innhold, eller for å integrere tredjepartstjenester som skraper nettdata.
 
 ## Hvordan:
-Her er et grunnleggende eksempel på HTML-parsing i Kotlin ved å bruke Jsoup biblioteket:
+
+Kotlin er flott for å parse HTML siden det kan integrere Java-biblioteker som Jsoup. Her er et eksempel:
 
 ```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Tittelen på siden min</title></head></html>"
+    val html = "<html><head><title>Hei Norge!</title></head><body><p>Dette er en HTML-tekst til parsing.</p></body></html>"
     val doc = Jsoup.parse(html)
 
-    val title = doc.select("title").first().text()
-    println(title)  // Skriver ut: "Tittelen på siden min"
+    val title = doc.title()
+    println("Tittelen på siden er: $title")
+
+    val paragraph = doc.select("p").first().text()
+    println("Innholdet i <p>-taggen er: $paragraph")
 }
+
+// Utdata:
+// Tittelen på siden er: Hei Norge!
+// Innholdet i <p>-taggen er: Dette er en HTML-tekst til parsing.
 ```
-I denne koden henter vi tittelen fra HTML-koden ved hjelp av Jsoup's `select` funksjonen.
 
 ## Dypdykk:
 
-Historisk sett har teknikker for parsing av HTML utviklet seg sammen med språkets utvikling. Før Jsoup og lignende biblioteker, kunne HTML-parsing være en frustrerende oppgave som krevde komplekse regulære uttrykk eller manuell strengmanipulasjon.
+Historisk har parsing av HTML vært gjort gjennom regelmessige uttrykk og manuell tekstanalyse, men det er komplekst og feilutsatt. Jsoup-biblioteket, en Java-bibliotek omskrevet for Kotlin-bruk, gir et mer robust og enklere alternativ. 
 
-Alternativene til Jsoup for HTML-parsing i Kotlin er biblioteker som HtmlUnit, Selenium og Jtidy. Valget mellom dem kan avhenge av mange faktorer, som graden av kompleksitet i HTML-dokumentene man arbeider med, eller behovet for å etterligne brukerinteraksjon.
+Metoder som `parse` lar deg konstruere et `Document`-objekt som representerer HTML-strukturen. Fra der, kan du bruke DOM-metoder som `select` og `text` for å hente ut og manipulere dataen.
 
-Implementation-wise, Jsoup fungerer ved å oversette HTML til en intern datastruktur kjent som Document Object Model (DOM). Denne strukturen lar deg navigere og manipulere HTML som om det var en trestruktur.
+Alternativer til Jsoup inkluderer HTML-parsers som er innebygd i Android SDK og andre biblioteker som HtmlCleaner eller tagsoup. Ytelsen og funksjonene vil variere, men Jsoup er kjent for sin brukervennlighet og ekstensiv støtte av CSS-selektorer.
 
 ## Se Også:
-- [Jsoup Hjemmeside](https://jsoup.org/)
-- [Kotlin Dokumentasjon](https://kotlinlang.org/docs/home.html)
+
+- Jsoup offisielle nettsted: https://jsoup.org/
+- Kotlin dokumentasjon: https://kotlinlang.org/docs/reference/
+- Guide til web scraping med Kotlin og Jsoup: https://medium.com/@hussien89aa/kotlin-and-jsoup-the-best-web-scraping-combo-5d63300e4f4a
+- Android's offisiell guide til HTML: https://developer.android.com/guide/topics/text/html_compat

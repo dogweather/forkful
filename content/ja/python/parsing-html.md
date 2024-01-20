@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:33:35.800580-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Python"
@@ -10,68 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTMLパースは、ウェブページからデータを抽出することです。プログラマーはHTMLをパースしてデータを得たり、コンテンツを解析したりするために行います。
 
-HTMLの解析は、HTMLのコードを解読してそれがどう組み立てられているかを理解することです。プログラマーはこれを、データを抽出したり、ウェブスクレイピングしたり、ウェブサイトをデバッグしたりするために行います。
-
-## 手順：
-
-Pythonでは、「BeautifulSoup」というライブラリを使ってHTMLを簡単に解析できます。例を見てみましょう。
+## How to: (方法)
+PythonでHTMLをパースする基本的な方法は、`BeautifulSoup`と`requests`ライブラリを使うことです。
 
 ```Python
 from bs4 import BeautifulSoup
+import requests
 
-html_doc = """
-<html><head><title>サイトタイトル</title></head>
-<body>
-<p class="title"><b>ストーリータイトル</b></p>
-<a href="http://example.com/elsie" class="sister" id="link1">イルシー</a>,
-<a href="http://example.com/lacie" class="sister" id="link2">レイシー</a>
-</body>
-</html>
-"""
+# ウェブページを取得
+url = 'http://example.com'
+response = requests.get(url)
 
-soup = BeautifulSoup(html_doc, 'html.parser')
+# BeautifulSoupオブジェクトを作成
+soup = BeautifulSoup(response.text, 'html.parser')
 
-print(soup.prettify())
+# タイトルを抽出
+title = soup.find('title').text
+print(f'ページのタイトルは「{title}」です。')
 ```
 
-上のコードを実行すると次のような結果が得られます。
-
+実行結果:
 ```
-<html>
- <head>
-  <title>
-   サイトタイトル
-  </title>
- </head>
- <body>
-  <p class="title">
-   <b>
-    ストーリータイトル
-   </b>
-  </p>
-  <a class="sister" href="http://example.com/elsie" id="link1">
-   イルシー
-  </a>
-  ,
-  <a class="sister" href="http://example.com/lacie" id="link2">
-   レイシー
-  </a>
- </body>
-</html>
+ページのタイトルは「Example Domain」です。
 ```
 
-## ディープダイブ：
+## Deep Dive (深掘り)
+HTMLのパースは1990年代から行われています。初期は正規表現などの基本的なテキスト処理で行っていましたが、複雑さを理解するためにDOMツリーを解析するライブラリが開発されました。`BeautifulSoup`はそのうちの一つで、その使いやすさから人気があります。他の選択肢には`lxml`や`html.parser`(Python標準ライブラリ)が存在します。HTML構造は複雑で予測不可能なため、これらのツールは強力なエラー処理機能を持っている必要があります。
 
-HTML解析の歴史的な背景については、1990年代初頭に誕生したHTMLが、現在のウェブの基礎を築くインターネットの革命の一部だったと言えます。そこから、ウェブコンテンツの動的な解析と抽出の必要性が生まれ、今日のHTML解析の技術が開発されました。
-
-BeautifulSoupのようなライブラリの代わりにJavaScriptや他のプログラミング言語を使ってHTMLを解析する方法もありますが、Pythonはこの目的に特に優れています。なぜなら、BeautifulSoupはあらゆる種類のコードを簡単に解析でき、ウェブスクレイピング作業を容易にします。
-
-実装については、BeautifulSoupは様々なパーサー（'html.parser'、'lxml'、'html5lib'など）を用いてHTML文書を解析します。これらのパーサーは、HTMLの構造を解釈し、Pythonオブジェクトとして利用できるようにします。
-
-## 参照リンク：
-
-- BeautifulSoup公式ドキュメンテーション: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Pythonによるウェブスクレイピング: https://realpython.com/beautiful-soup-web-scraper-python/
-- 'html.parser' vs 'lxml' の比較: https://lxml.de/tutorial.html
+## See Also (関連情報)
+- BeautifulSoupのドキュメント: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Python `requests`ライブラリ: https://requests.readthedocs.io/en/master/
+- Python標準ライブラリ `html.parser`: https://docs.python.org/3/library/html.parser.html
+- `lxml`ライブラリ: https://lxml.de/

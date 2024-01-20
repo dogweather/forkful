@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:33:59.591304-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,47 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-HTML-parsning handlar om att omvandla HTML-kod till en strukturerad representation, ofta ett syntaxträd. Programmerare gör detta för att hämta, ändra, eller extrahera information från webbsidor.
+Parsing HTML handlar om att tolka och omvandla HTML-kod till något som programmet kan hantera och förstå. Programmerare gör detta för att manipulera, extrahera data eller interagera med webbsidor.
 
-## Hur man gör:
-Använd `html5ever`-biblioteket för att parsa HTML-kod. Installera det genom att lägga till detta till din Cargo.toml fil:
+## Så här gör du:
+För att parse:a HTML i Rust, använd biblioteket `scraper`. Först, lägg till beroendet i din `Cargo.toml`:
 
-```Rust
+```toml
 [dependencies]
-html5ever = "0.24.1"
+scraper = "0.12.0"
 ```
 
-Här är ett enkelt exempel:
-```Rust
-extern crate html5ever;
-use html5ever::driver::ParseOpts;
-use html5ever::rcdom::RcDom;
-use html5ever::tendril::TendrilSink;
+Importera och använd sedan så här:
+
+```rust
+use scraper::{Html, Selector};
 
 fn main() {
-    let html = "<p>Hello World</p>";
-    let dom = parse_html(html);
+    let html = r#"
+        <ul>
+            <li>Rust</li>
+            <li>HTML</li>
+            <li>Parsing</li>
+        </ul>
+    "#;
 
-    // ... hantera dom-objektet
-}
-
-fn parse_html(html: &str) -> RcDom {
-    let opts = ParseOpts::default();
-    let dom = html5ever::parse_document(RcDom::default(), opts)
-        .from_utf8()
-        .read_from(&mut html.as_bytes())
-        .unwrap();
-
-    dom
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("li").unwrap();
+    
+    for element in document.select(&selector) {
+        println!("{}", element.inner_html());
+    }
 }
 ```
 
-## Fördjupning
-Historiskt sett var HTML-parsning ovanligt inom programmering, men eftersom webben har växt har behovet ökat avsevärt. Det finns alternativ till `html5ever`, som `lxml` i Python och `jsoup` i Java.
+Exekvera koden och du borde se:
 
-HTML5ever, som vi använde här, är måhända det bästa valet i Rust. Det är en del av Servo-projektet och är utformat för att hantera den verkliga, icke-perfekta HTML som man ofta hittar i det vilda på webben.
+```
+Rust
+HTML
+Parsing
+```
+
+## Djupdykning
+Parsing av HTML är inte nytt. I tidiga webbdagar hanterades det oftast server-sidan via CGI-skript. Nu har det blivit en del av många språk och ramverk, som Rust med `scraper` eller JavaScript med `Cheerio`.
+
+Andra bibliotek i Rust som kan användas för att parse:a HTML inkluderar `html5ever` och `select.rs`. `scraper` förlitar sig faktiskt på `html5ever` för parsing, vilket är byggt av Servo-projektet och är extremt snabbt och robust.
+
+Implementeringsdetaljer inkluderar att hantera olika typer av HTML-dokument, såsom slice eller `String`, och felhantering när HTML inte kan parse:as korrekt (t.ex. när HTML inte är välskriven eller saknar nödvändiga taggar).
 
 ## Se även
-- Rust Programmering bok: [https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)
-- HTML5ever dokumentation: [https://docs.rs/html5ever/0.24.1/html5ever/](https://docs.rs/html5ever/0.24.1/html5ever/)
-- Servo: [https://github.com/servo/servo](https://github.com/servo/servo)
+- `scraper` dokumentation: [docs.rs/scraper](https://docs.rs/scraper)
+- `html5ever` GitHub sida: [github.com/servo/html5ever](https://github.com/servo/html5ever)
+- Rust officiella webbplats och dokumentation: [rust-lang.org](https://www.rust-lang.org/)

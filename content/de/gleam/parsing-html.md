@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:31:22.620622-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Gleam"
@@ -11,35 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTML-Parser ist ein Werkzeug, um HTML-Code in seine Bestandteile zu zerlegen und so leichter bearbeitbar zu machen. Programmierer nutzen dies, um Webinhalte zu analysieren, zu extrahieren oder zu manipulieren.
 
-Das Parsen von HTML bezieht sich auf den Prozess, in dem ein HTML-Dokument analysiert und seine Struktur erfasst wird. Programmierer machen dies, um auf bestimmte Daten zuzugreifen oder Webseiten zu scrapen.
+## Anleitung:
+Gleam besitzt momentan keine eingebaute HTML-Parsing-Bibliothek, deshalb verwenden wir beispielhaft eine externe Bibliothek – stellen Sie sich eine vor mit dem Namen `gleam_html`.
 
-## Wie zu:
+```gleam
+import gleam_html
 
-In Gleam könnte der Code zum Parsen eines HTML-Dokuments mit der Bibliothek `gleam/http` folgendermaßen aussehen.
+// HTML content to parse
+let html_content = "<p>Hello, Gleam!</p>"
 
-```Gleam
-import gleam/http.{get, start_link}
+// Parse the HTML content
+match gleam_html.parse(html_content) {
+  Ok(parsed_html) ->
+    // Parsed HTML use
+    let _ = parsed_html // Use parsed HTML as needed
 
-fn main(_) {
-  case start_link() {
-    Error(e) -> io.println(e)
-    Ok(_) ->
-      case get("https://example.com") {
-        Error(e) -> io.println(e)
-        Ok(response) -> io.println(response.body)
-      }
-  }
+  Error(parse_error) ->
+    // Error handling
+    io.println("Parsing failed: " ++ parse_error)
 }
 ```
-Führen Sie diesen Code aus und Sie werden den HTML-Inhalt der Webseite `https://example.com` auf der Konsole anzeigen.
 
-## Deep Dive
+Beim Ausführen wird das HTML-Parsing versucht und entweder das geparste HTML genutzt oder ein Fehler ausgegeben.
 
-Das Parsen von HTML hat eine lange Geschichte, die bis in die frühen Tage des Webs zurückreicht, als Entwickler anfingen, Daten von Websites zu extrahieren. Alternativen zum Parsen von HTML sind das Screen-Scraping oder der Datenzugriff über APIs, sofern diese vorhanden sind.
+## Tiefgang:
+Parsing von HTML ist keine triviale Aufgabe und erfordert die Berücksichtigung vieler Regeln und Ausnahmen, da HTML von Browsern auch dann interpretiert werden kann, wenn es nicht ganz korrekt ist. Historische Parser wie `html5ever` in Rust stellen sicher, dass auch fehlerhaftes HTML gut verarbeitet wird.
 
-In Gleam können Sie bei der Implementierung von HTML-Parsing auf bestehende Bibliotheken wie Beautiful Soup oder Html Agility Pack zurückgreifen, wenn Sie die Interoperabilität mit Sprachen wie Python oder .NET nutzen möchten.
+Alternativen zum manuellen Parsing sind z.B. das Nutzen von APIs, die bereits geparste Daten zur Verfügung stellen. Wichtig sind effiziente Algorithmen und korrektes Encoding, um Webseiten in verschiedenen Sprachen zu verarbeiten.
 
-## Siehe Auch
-
-Für weitere Informationen zu Gleam und der Verwendung von HTTP-Anfragen in Gleam, besuchen Sie bitte die offizielle Gleam-Dokumentation (https://gleam.run/docs/introduction/). Sie können auch das Gleam-Repository auf GitHub besuchen (https://github.com/gleam-lang/http) für detaillierte Beispiele und Diskussionen zur Verwendung der `gleam/http` Bibliothek.
+## Mehr sehen:
+- Hier könnte ein Link zu `gleam_html` auf Hex (https://hex.pm/packages/gleam_html) stehen, wenn es existieren würde.
+- Eine gute Einführung in HTML-Parsing allgemein bietet Mozilla: https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML
+- Eine Übersicht über Web scraping und Parsing-Tools bietet https://www.scrapingbee.com/blog/web-scraping-101-with-python/ (auch wenn es Python-bezogen ist, die Konzepte sind übertragbar).

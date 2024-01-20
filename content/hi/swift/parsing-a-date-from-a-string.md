@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:39:26.212596-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,30 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-डेट को स्ट्रिंग से पार्स करना मतलब है डेट को हमारी स्ट्रिंग से अलग करना। कोडर्स इसे तारीखों को कार्यान्वित करने और दृष्टांत करने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
+डेट को स्ट्रिंग से पार्स करना मतलब टेक्स्ट फॉर्म में दी गई तारीख को प्रोग्राम के समझने योग्य फॉर्मेट में बदलना है। प्रोग्रामर्स इसे इसलिए करते हैं ताकि तारीख से संबंधित क्रियावलियां (जैसे कि तुलना करना, समय क्षेत्र में बदलाव करना) को आसान बनाया जा सके।
 
-## कैसे
-स्विफ्ट में तारीख को स्ट्रिंग से पार्स करने के लिए `DateFormatter` का उपयोग करें। 
+## How to (कैसे करें):
+Swift में `DateFormatter` क्लास का उपयोग करके हम आसानी से एक स्ट्रिंग को डेट में पार्स कर सकते हैं।
 
-```Swift 
+```swift
+import Foundation
+
+let dateString = "2023-04-02"
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd"
-let date = dateFormatter.date(from: "2022-03-28")
 
-print(date)
+if let date = dateFormatter.date(from: dateString) {
+    print("डेट पार्स हो गई: \(date)")
+} else {
+    print("गलत फॉर्मेट है।")
+}
 ```
 
-इसे चलाने पर यह आउटपुट देगा -
+इस कोड से आपको आउटपुट मिलेगा जो `Date` ऑब्जेक्ट को प्रिंट करेगा अगर पार्सिंग सही से हुई हो। 
 
-```Swift
-Optional(2022-03-28 00:00:00 +0000)
-```
+## Deep Dive (गहराई से जानकारी):
+डेट पार्सिंग की महत्ता तब से है जब से प्रोग्रामिंग शुरू हुई, क्योंकि तारीख की मानकीकरण और विभिन्न फॉर्मेटों की अदला-बदली जरूरत बहुत आम है। `DateFormatter` के अलावा, Swift में `ISO8601DateFormatter` जैसे स्पेशलाइज्ड फॉर्मेटर्स भी हैं जो ISO 8601 स्टैंडर्ड फॉर्मेट में डेट को पार्स करने के लिए उपयोग होते हैं।
 
-## विस्तृत जानकारी
-स्ट्रिंग से डेट पार्सिंग को iOS 2.0 के लॉन्च के साथ डेट को अधिक सरल और विशेष ज्ञान के बिना प्रक्रिया करने के लिए शामिल किया गया है। इसके विकल्पों में रेगेलर एक्सप्रेशन विधायन शामिल है, लेकिन यह अधिक जटिल हो सकता है। इससे तारीख की तर्जजनक फॉर्मेट को प्रदर्शित करने में सहायता मिलती है। 
+Implementation details में `dateFromString` फंक्शन लोकल टाइमज़ोन में डेट ऑब्जेक्ट को इंटरप्रेट करता है, जब तक कि एक विशेष `timeZone` सेट न किया गया हो। दुनियाभर में समय क्षेत्रों की विविधता के कारण, यह सुनिश्चित करना जरूरी है कि स्ट्रिंग से पार्स की गई डेट सही टाइमज़ोन में हो।
 
-## अन्य स्रोतों की जानकारी
-निम्नलिखित लिंक में Swift से संबंधित और अधिक जानकारी प्राप्त करें। 
-- [Swift Documentation](https://developer.apple.com/documentation/swift)
-- [Working with Dates and Time in Swift](https://www.hackingwithswift.com/articles/141/working-with-dates-and-time-in-swift)
+## See Also (इसे भी देखें):
+- Swift के `Date` और `DateFormatter` के लिए अधिकारी दस्तावेज़ (Documentation): [Date](https://developer.apple.com/documentation/foundation/date) और [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- Apple का Date Formatting Guide: [Date Formatters](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html)
+- `ISO8601DateFormatter` के बारे में Apple का दस्तावेज़: [ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter)

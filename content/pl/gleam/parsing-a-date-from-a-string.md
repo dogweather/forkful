@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:36:23.747994-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,31 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Parsowanie daty ze stringa polega na przekształceniu ciągu znaków reprezentującego datę w faktyczny obiekt daty w programie. Programiści robią to, by móc manipulować danymi daty i stosować różne operacje, takie jak porównywanie, sortowanie itp.
+Parsowanie daty z ciągu znaków pozwala na konwertowanie tekstowych reprezentacji dat do formatu, którym program może łatwo zarządzać. Programiści parsują daty, aby umożliwić operacje takie jak porównanie dat, przechowywanie w bazach danych czy formatowanie do różnych stref czasowych.
 
 ## Jak to zrobić:
+Gleam jeszcze nie posiada wbudowanej obsługi dla dat, więc będziemy potrzebować zewnętrzną bibliotekę, jak `gleam_datetime`. Aby zainstalować, dodaj jej zależności do `rebar.config` i uruchom `rebar3 deps`.
 
-W aktualnej wersji Gleam, biblioteka do obsługi dat i czasu nie jest jeszcze dostępna. Możesz jednak użyć funkcji Erlang'a do parsowania daty za pomocą interopcji. Oto jak:
+```gleam
+import gleam/datetime
+import gleam/int
+import gleam/result
 
-```Gleam
-import gleam/erlang/time.{StringToDate}
+pub fn parse_date(date_string: String) -> result.Result(datetime.DateTime, tuple(String, int)) {
+  datetime.parse_iso8601(date_string)
+}
 
-// Parsowanie daty ze stringa formatu "YYYY-MM-DD"
-let date_string = "2021-12-01"
-let maybe_date = StringToDate.string_to_date(date_string)
+// Przykładowe użycie
+pub fn main() {
+  let example_date = "2021-04-12T23:20:50.52Z"
+  let parsed_date = parse_date(example_date)
+  
+  case parsed_date {
+    Ok(date) -> datetime.to_string(date)
+    Error(_) -> "Couldn't parse the date"
+  }
+}
 ```
 
-Kod zwróci datę w formacie `{Year, Month, Day}` jeśli string jest prawidłowy, w przeciwnym razie zwróci błąd.
+Output przykładowego użycia może wyglądać tak: `"2021-04-12T23:20:50Z"`
 
-## Dogłębne Zagłębianie:
+## Głębsze spojrzenie
+Historia parsowania dat sięga początków programowania, kiedy to konwersja danych z jednego typu na inny była kluczowa dla obliczeń i rejestrowania czasu. Alternatywy dla ręcznego parsowania obejmują użycie standardowych bibliotek oferowanych przez języki programowania lub dedykowane usługi API. Implementacja w Gleam wykorzystuje standard ISO 8601, który jest międzynarodowym standardem notacji dat i czasu, ułatwiającym interoperacyjność pomiędzy systemami.
 
-Parsowanie daty ze stringa jest konceptem, który ma miejsce prawie w każdym systemie, który obsługuje daty. Początkowo, w wielu językach programowania, parsowanie to było dość skomplikowane. Gleam, jako nowoczesny język funkcjonalny, czerpie z doświadczeń tych starszych języków i ma na celu ułatwienie tego zadania.
-
-Jeżeli chodzi o alternatywy, funkcja `StringToDate.string_to_date/1` nie jest jedyną dostępną funkcją do parsowania daty w Erlangu. Istnieją również inne biblioteki, takie jak `calendar` czy `timex`, które oferują o wiele więcej funkcjonalności. 
-
-Wszystko to jest możliwe dzięki interopcji Gleam z Erlangiem. Dzięki temu można wykorzystywać bogatą bibliotekę funkcji Erlangu w naszych programach napisanych w Gleam.
-
-## Zobacz Również:
-
-- Kurs Erlanga o parsowaniu daty: [https://learnyousomeerlang.com/time](https://learnyousomeerlang.com/time)
+## Zobacz również
+- [ISO 8601 Wikipedia](https://pl.wikipedia.org/wiki/ISO_8601)
+- [Gleam oficjalna strona](https://gleam.run/)

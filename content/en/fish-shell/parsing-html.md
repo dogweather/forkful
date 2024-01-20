@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:31:22.176142-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,61 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell and Parsing HTML: A Coding Guide
-
 ## What & Why?
-
-Parsing HTML is the process of analyzing a document, typically web pages, to identify its structural and content details. Programmers do it to manipulate, extract or understand data present on a web page.
+Parsing HTML is the process of decoding the web's lingua franca to sift data or manipulate content. Programmers parse HTML to automate web scraping, integrate APIs, or convert data formats.
 
 ## How to:
-
-Writing the code in Fish Shell:
-
-```fish
-set url "https://example.com"
-set content (curl -sL $url)
-set dom (echo $content | pup 'html{}')
-
-echo $dom
-```
-
-This program fetches a webpage's HTML (using `curl`), then deduces its structure (via `pup`).
-
-Here's a hypothetical output example:
+Fish Shell isn't the go-to for parsing HTML, but with the right tools, it's doable. Let's pull in `pup`, a command-line HTML parser, to work with HTML content.
 
 ```fish
-<html>
-  <head>
-    <title>Example Website</title>
-  </head>
-  <body>
-    <h1>Welcome to Example.com!</h1>
-    <p>This is an example website.</p>
-  </body>
-</html>
+# First, install pup
+brew install pup
+
+# Fetch the title from example.com
+curl -s http://example.com | pup 'title text{}'
+
+# Sample output should be the website's title, something like:
+# Example Domain
 ```
 
-Now, if you need to extract specific details like the title tag:
+Now let's snag all the hyperlinks:
 
 ```fish
-set title (echo $dom | pup 'title text{}')
+# Extract links (href attributes) from example.com
+curl -s http://example.com | pup 'a attr{href}'
 
-echo $title
+# Sample output:
+# http://www.iana.org/domains/example
 ```
 
-Sample output:
-```fish
-Example Website
-```
+## Deep Dive
+Before Fish Shell and `pup`, folks would use clunky regex or complex server-side scripts. Tools like `pup` smartened the process, leaning on CSS-selector syntax for more intuitive and reliable parsing.
 
-## Deep Dive 
+Alternatives include Python's Beautiful Soup or Node.js with Cheerio; they're more powerful but not as concise for one-liners.
 
-Parsing in Fish Shell is a newer development with historical roots. Before libraries like `pup` in Fish Shell, programmers had to wrestle with complicated regex commands or use bulky languages like Python or Java to parse HTML.
-
-Alternatives for `pup` in Fish Shell are syntax parsing libraries like `beautifulsoup4` in Python or `Jsoup` in Java, which offer more intensive parsing operations.
-
-Moreover, `pup` is an example of a basic yet powerful HTML parser. Its easiness can be attributed to its design. In the parsing process, the `pup` command treats the HTML tags like they are part of a file directory, simplifying the commands needed to find specific pieces. 
+Parsing HTML with Fish boils down to outsourcing the task to specialized tools due to its limited text manipulation capabilities. Fish calls out to these tools, captures their output, and lets you work your scripting magic.
 
 ## See Also
-
-To learn more, see the Fish Shell documentation ([www.fishshell.com/docs/current/index.html](https://fishshell.com/docs/3.1/index.html)) and the `pup` command's GitHub repository ([www.github.com/ericchiang/pup](https://github.com/ericchiang/pup)). For broader context, check out 'HTML Parsing' on Wikipedia ([en.wikipedia.org/wiki/HTML_parsing](https://en.wikipedia.org/wiki/HTML_parsing)).
+- [Pup GitHub Repo](https://github.com/ericchiang/pup) - Documentation and examples.
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - Learn more about Fish.
+- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - For more complex HTML parsing in Python.
+- [Cheerio GitHub Repo](https://github.com/cheeriojs/cheerio) - For those interested in a JavaScript-based approach.

@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:34:29.802475-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Zamiana daty z ciągu znaków, czyli 'parsing', to proces, w którym data reprezentowana jako tekst zostaje przekształcona w format daty. Programiści robią to, aby móc manewrować i manipulować datami schowanymi w tekście.
+## Co i Dlaczego?
+Parsowanie daty z ciągu znaków to proces wyciągania informacji o dacie z łańcucha tekstowego. Programiści robią to, by przetworzyć dane wejściowe użytkownika lub plików w formacie czytelnym dla maszyny.
 
 ## Jak to zrobić:
-Przykład kawałka kodu pokazującego jak to zrobić. Załóżmy, że nasza data jest zapisana w formacie "DD-MM-YYYY".
-
 ```Arduino
-#include <TimeLib.h> 
-String dateString = "31-12-2020";
-int day = dateString.substring(0,2).toInt();
-int month = dateString.substring(3,5).toInt();
-int year = dateString.substring(6,10).toInt();
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
+
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Nie można znaleźć RTC");
+    while (1);
+  }
+}
+
+void loop() {
+  DateTime now = rtc.now();
+  Serial.print("Aktualna data: ");
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+  delay(1000);
+}
 ```
-Teraz mamy dzień, miesiąc i rok zapisane jako liczby, które możemy łatwo manipulować.
-
-```Arduino
-tmElements_t tm;
-
-tm.Day = day;
-tm.Month = month;
-tm.Year = CalendarYrToTm(year);
-
-time_t t = makeTime(tm);
+Wyjście przykładowe:
 ```
-Z powyższego kodu wynika, że nasza data jest teraz pakowana do struktury `tmElements_t`.
+Aktualna data: 2023/3/15
+```
 
-## Głębszy Wgląd
-"Parsing" daty z tekstu jeszcze nie tak dawno było trudnym zdaniem. Wcześniej programiści musieli samodzielnie pisać wszystko, od wymiany danych między różnymi formatami do obsługi wszelkiego rodzaju wyjątków, takich jak lata przestępne.
+## Wnikliwy Rzut Oka
+Daty z ciągu znaków były parsowane od czasów wczesnych języków programowania. W Arduinio, wygodne jest używanie gotowych bibliotek jak RTClib, która załatwia trudną pracę. Alternatywą może być ręczne parsowanie z wykorzystaniem funkcji `sscanf` lub innych funkcji manipulacji tekstem, jednak to może być mniej wydajne i bardziej skomplikowane. Rzecz w tym, że mikrokontrolery, takie jak używane w Arduino, mają ograniczone zasoby, więc optymalizacja jest kluczowa.
 
-Istnieją alternatywne metody parsowania daty, ale używając biblioteki TimeLib, proces ten jest znacznie uproszczony. Nie mniej jednak, zawsze warto zrozumieć podstawowe kwestie, które stoją za takimi działaniami, takie jak różnice między systemami czasu.
-
-Szczegół implementacji to wykorzystanie biblioteki TimeLib do łatwego manipulowania danymi typu czasowo-datowego. Wszystko, co musisz zrobić, to sparsować dzień, miesiąc i rok, umieścić je w odpowiedziach lub użyć, jak chcesz.
-
-## Zobacz również:
-1. [Dokumentacja Arduino Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
-2. [Jak parsować datę z ciągu - Stack Overflow](https://stackoverflow.com/questions/5590381/easiest-way-to-convert-int-to-string-in-c)
+## Zobacz także:
+- Dokumentacja RTClib: https://adafruit.github.io/RTClib/html/index.html
+- Przewodnik po bibliotece Time: http://www.arduino.cc/playground/Code/Time
+- Arduino Reference (String functions): https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/

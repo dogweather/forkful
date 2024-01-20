@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:36:36.332673-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,25 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירסום תאריך ממחרוזת הוא ההמרה של תאריך ממרכז טקסט למבנה נתונים שנותן ביכולת שלנו להפעיל עליו פונקציות מבנה תאריך. מתכנתים עושים את זה כדי לשלוט במידע בצורה יעילה יותר.
+המרת תאריך ממחרוזת היא תהליך שבו הופכים תיאור תאריך בתור מחרוזת למבנה נתונים שניתן לעבוד איתו בקוד. מתכנתים עושים זאת כדי לאפשר ניתוח ותפעול של תאריכים באופן יעיל ונוח.
 
-## איך ל:
+## איך לעשות:
+בואו נראה כיצד אפשר לעשות את זה בHaskell.
+
 ```Haskell
-import Data.Time
-import System.Locale
+import Data.Time.Format
+import Data.Time.Clock
+import Locale
 
-readTime defaultTimeLocale "%Y-%m-%d" "2021-07-21" :: UTCTime
+parseDate :: String -> Maybe UTCTime
+parseDate str = parseTimeM True defaultTimeLocale "%Y-%m-%d %H:%M:%S" str
+
+main :: IO ()
+main = print $ parseDate "2023-03-14 08:44:55"
 ```
-הפלט אמור להיראות כך:
+
+פלט לדוגמה:
+
 ```
-2021-07-21 00:00:00 UTC
+Just 2023-03-14 08:44:55 UTC
 ```
-## צלילה עמוקה
-הפירסום של תאריך ממחרוזת אף פעם לא היה פשוט במיוחד, עם המון פורמטים שונים וארוכים שנבנים בהנחות שונות. Haskell מתמקדת בבניית תאריך ממחרוזת באמצעות קביעת פורמט במערך, מה שמאפשר לנו לארגן נתונים שונים בנוסף לתאריכים.
 
-חלופה לספרייה `Data.Time` היא `Data.Time.Format`, שמאפשרת גמישות יותר ותמיכה בכלים כמו `Parsec`.
+הפונקציה `parseDate` ממירה מחרוזת לתאריך ושעה בUTC. `parseTimeM` משמשת לביצוע ההמרה, עם פורמט מוסכם עולמית.
 
-הפרטים של המימוש של readTime εינם פשוטים, עם רזולוציית מיקרו (10-6 שניות), מה שמבטיח שיש לנו כל המידע שאנו צריכים, אך זה יכול להיות יותר מדי מה שאנחנו מצפים על תאריך.
+## טבילה עמוקה
+ההסטוריה של ניתוח תאריכים חוזרת לימי התחלה של התוכנות, כאשר היה צורך לייצר ממשק קליל למשתמשים להקליד תאריכים. בHaskell, ספריית Time מספקת מגוון רחב של כלים לעבוד עם תאריכים וזמנים, שמגיעים במקום פונקציות ידניות מסורבלות שהיו פופולריות בעבר.
 
-## ראה גם
-- [Official Haskell Library Documentation for Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+חלופות קיימות כגון הספרייה `time` דורשת למעשה ידע מסוימת בפורמט התאריך של המחרוזת. בימינו, יש מגוון ספריות שמספקות פונקציונליות דומה עם ניתוח יותר חופשי של פורמטים.
+
+בתוך הפונקציה `parseTimeM`, המרה מוצלחת תחזיר `Just` עם הערך, בעוד שתאריך לא תקין יחזיר `Nothing`, שזה מאפשר לטפל בשגיאות בקלות.
+
+## ראו גם
+1. הספרייה `time` עם התיעוד הרשמי: [Time Library on Hackage](https://hackage.haskell.org/package/time)
+2. מדריך לניתוח תאריכים בHaskell: [Learn You a Haskell - Dates and Times](http://learnyouahaskell.com/input-and-output#dates-and-times)
+3. פוסט בבלוג על טיפול בתאריכים וזמנים בHaskell: [Working with Dates and Times in Haskell](https://two-wrongs.com/haskell-time-library-tutorial)

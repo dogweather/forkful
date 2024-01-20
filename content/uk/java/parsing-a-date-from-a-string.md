@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:36:44.133291-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Java"
 category:             "Java"
@@ -10,47 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why?
+**Що таке та навіщо?**
 
-1) Парсинг дати з рядка - це процес перетворення текстового представлення дати і часу на об'єкт `java.util.Date` або `java.time.LocalDate`. 
-2) Програмісти це роблять, щоб маніпулювати цими даними під час розробки ПЗ.
+Parsing dates means converting text into a date format Java understands. Programmers do this to manipulate dates, such as calculating durations or comparing them.
 
-## Як це зробити:
+## How to:
+**Як це зробити:**
+
+Let's say you've got a date as a string: "2023-03-21". You want Java to get this as a `LocalDate`. Here's how:
 
 ```java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Main {
-    public static void main (String [] args) {
-        String str = "2022-01-01";
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate date = LocalDate.parse(str, formatter);
+public class DateParsingExample {
+
+    public static void main(String[] args) {
+        String dateString = "2023-03-21";
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE;
+        LocalDate date = LocalDate.parse(dateString, formatter);
+        
         System.out.println(date);
     }
 }
 ```
 
-Виведення:
+Output:
 
-```text
-2022-01-01
+```
+2023-03-21
 ```
 
-## Глибше занурення:
+This will parse a string following the "YYYY-MM-DD" format. Easy!
 
-1) Історичний контекст: Перші спроби парсингу дати з рядка в програмуванні були величезною проблемою через різницю в загальноприйнятих форматах дати і часу. Java просто розв'язала цю проблему шляхом введення нового API для дати і часу в Java 8. 
+## Deep Dive:
+**Поглиблений аналіз:**
 
-2) Альтернативи: Сама Java надає багато способів парсингу дати з рядка. Ви також можете використовувати сторонні бібліотеки, наприклад Joda-Time.
+Back in the day, Java used `SimpleDateFormat` from the `java.text` package. It had issues: thread-unsafe and clunky. Then Java 8 happened in 2014, bringing `java.time`, the modern Java Date and Time API — way better.
 
-3) Подробиці реалізації: За замовчуванням, класи Java для парсингу дати використовують шаблон ISO-8601. Ми можемо кастомізувати це, використовуючи `DateTimeFormatter`.
+Alternatives? Sure. Older projects might use Joda-Time or even the `java.util` date classes. But since Java 8, the best practice is `java.time`.
 
-## Дивіться також:
+Implementation details? `DateTimeFormatter` is the main tool here. It's flexible — you can define your own pattern or use predefined ones. It's also immutable and thread-safe, which solves old problems.
 
-1) [Java - Date Time] (https://www.tutorialspoint.com/java/java_date_time.htm)
+## See Also:
+**Дивіться також:**
 
-2) [Java LocalDate] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-
-3) [Java - DateTimeFormatter] (https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-
-4) [Joda-Time Library] (https://www.joda.org/joda-time/)
+- For all the date-time patterns: [DateTimeFormatter Docs](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- More about `java.time` package: [Oracle Tutorials](https://docs.oracle.com/javase/tutorial/datetime/)
+- Specifics on `LocalDate`: [LocalDate Docs](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:37:48.787185-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,56 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+Att parsra ett datum från en sträng innebär att du översätter text till ett datum-format som PHP kan förstå och arbeta med. Programmerare behöver detta för att hantera datum-indata, som användardata eller tidstämplar från en databas.
 
-Att tolka ett datum från en sträng innebär att konvertera en strängrepresentation av ett datum till ett format som datorprogram kan förstå och manipulera. Programmerare gör detta för att hantera och manipulera data mer effektivt, speciellt när datan används i beräkningar eller logikstyrning.
+## How to:
+För att parsra ett datum från en sträng kan du använda `DateTime` klassen eller `strtotime()` funktionen. Här är ett enkelt exempel:
 
-## Så här gör du:
-
-PHP erbjuder inbyggda funktioner för att tolka datum från strängar. En av de mest använda funktionerna är `strtotime()` som konverterar en datumsträng till ett Unix-timestamp.
-
-```PHP
+```php
 <?php
-$dateString = "20-May-2022";
-$timestamp = strtotime($dateString);
-echo $timestamp;
-?>
-```
-Exempelutmatningen skulle vara ett Unix-timestamp, som: `1653628800`.
+$datumStrang = "2023-03-15 14:00:00";
+$datumObjekt = new DateTime($datumStrang);
+echo $datumObjekt->format('Y-m-d H:i:s'); // Utmatning: 2023-03-15 14:00:00
 
-Men om du vill ha ett mer läsbart datumformat, kan du använda PHP:s `date()`-funktion.
-
-```PHP
-<?php
-$dateString = "20-May-2022";
-$timestamp = strtotime($dateString);
-$readableDate = date('Y-m-d', $timestamp);
-echo $readableDate;
-?>
-```
-Detta skulle ge en utmatning som: `2022-05-20`.
-
-## Djupdykning
-
-Historiskt sett har PHP alltid erbjudit `strtotime()` funktionen, men i PHP 5.2 och framåt fick vi tillgång till `DateTime`-classen som erbjuder mer flexibilitet och funktioner.
-
-Alternativt till `strtotime()`, kan du också använda `DateTime::createFromFormat()` för att bestämma det specifika formatet som din datumsträng har.
-
-```PHP
-<?php
-$dateString = "20-May-2022";
-$date = DateTime::createFromFormat('j-M-Y', $dateString);
-$timestamp = $date->getTimestamp();
-echo $timestamp;
+$timestamp = strtotime($datumStrang);
+echo date('Y-m-d H:i:s', $timestamp); // Utmatning: 2023-03-15 14:00:00
 ?>
 ```
 
-Viktigt att påpeka är att även om dessa funktioner är kraftfulla, har de sina begränsningar. De kan ha problem att tolka felaktiga eller konstiga datumformat. I sådana fall kan du behöva skriva egna tolkningsfunktioner.
+`DateTime` är mer kraftfull och flexibel, men `strtotime()` fungerar bra för enkla situationer och läsbar kod.
 
-## Se även:
+## Deep Dive:
+Att parsra datum har länge varit en central del av många programmeringsspråk. I PHP har `DateTime` klassen gradvis blivit standard sedan dess introduktion i PHP 5.2.0, och det för att den hanterar olika tidzoner och datumformat väl. Förut använde många den mer begränsade `strtotime()`.
 
-Kolla in följande länkar för mer information om PHP:s datumhantering:
+Finns det alternativ? Ja, förutom `DateTime` och `strtotime()`, kan du använda `IntlDateFormatter` för att parsra datum beroende på olika lokaliseringsinställningar. PHP håller koll på sekunderna sedan Unix-epokens start (1 Januari 1970), vilket är viktigt när du behöver jämföra datum eller räkna ut skillnader mellan tider.
 
-1. PHP manualen för [`strtotime()`](https://www.php.net/manual/en/function.strtotime.php)
-2. PHP manualen för [`DateTime`](https://www.php.net/manual/en/class.datetime.php)
-3. StackOverflow-post om [när man bör använda `DateTime` vs `strtotime()`](https://stackoverflow.com/questions/3133857/php-datetime-vs-strtotime) för datumtolkning i PHP.
+## See Also:
+- [PHP manual on DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [PHP manual on strtotime](https://www.php.net/manual/en/function.strtotime.php)
+- [PHP manual on IntlDateFormatter](https://www.php.net/manual/en/class.intldateformatter.php)

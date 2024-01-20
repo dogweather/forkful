@@ -1,7 +1,8 @@
 ---
-title:                "Analyser le HTML"
-html_title:           "Kotlin: Analyser le HTML"
-simple_title:         "Analyser le HTML"
+title:                "Analyse syntaxique de HTML"
+date:                  2024-01-20T15:33:25.915221-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,50 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Le parsing HTML, c'est lire et transformer le HTML en informations exploitables. Les programmeurs le font pour récupérer des données, automatiser des interactions avec des sites web, ou import/export de contenu.
 
-Le traitement HTML, ou parsing, est le procédé utilisé pour interpréter et analyser du HTML en des composants manipulables. Les programmeurs font cela pour extraire des données, automatiser des tâches ou affiner leur interface utilisateur.
-
-## Comment Faire:
-
-Pour analyser du HTML en Ruby, nous avons une gem bien connue appelée `Nokogiri`. Vous pouvez l'installer avec `gem install nokogiri`:
-
-```ruby
-# installation de la gem
-gem install nokogiri
-```
-
-Voici un exemple de son utilisation :
-
-```ruby
+## How to: (Comment faire :)
+```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-# ouverture d'une page web
-doc = Nokogiri::HTML(open("https://www.example.com"))
+# Récupérer le HTML depuis un site web
+html_content = URI.open('http://example.com').read
 
-# récupération de tous les titres h1
-doc.css("h1").each do |header|
-  puts header.text
-end
+# Parser ce contenu avec Nokogiri
+document = Nokogiri::HTML(html_content)
+
+# Rechercher des éléments spécifiques avec CSS selectors
+headings = document.css('h1').map(&:text)
+
+puts headings
+# Exemple de sortie :
+# ["Welcome to example.com"]
+
 ```
 
-Sortie d'échantillon :
+## Deep Dive (Plongée en profondeur)
+Historiquement, le parsing HTML était bordélique. Conçu pour être tolérant aux erreurs, le HTML peut être un cauchemar à analyser précisément. Nokogiri et d'autres bibliothèques fournissent une analyse robuste et indulgente. Qui plus est, elles gèrent les subtilités de l'encodage et la sécurisation des appels réseau.
 
-```
-Voici un exemple de site Web
-```
+On pourrait aussi utiliser d'autres gemmes comme Oga ou des outils intégrés comme Regexp mais chaque méthode a ses avantages et inconvénients. Nokogiri, par exemple, mise sur l'équilibre entre la facilité d'utilisation et la performance grâce à sa construction sur libxml2.
 
-## Exploration Approfondie:
+Et le choix de la bibliothèque peut dépendre des besoins : extraction rapide de données, sécurité, compatibilité, ou la consommation de ressources.
 
-Le traitement HTML est une pratique courante qui existe depuis les premiers jours du web. Avant `Nokogiri` en Ruby, il fallait écrire des expressions régulières compliquées, ce qui pouvait devenir rapidement désordonné et difficile à gérer.
-
-En ce qui concerne les alternatives, nous avons également `Oga` et `REXML`. `Oga` est une option plus rapide mais moins populaire, tandis que `REXML` est intégré en natif dans Ruby, cependant, son utilisation est déconseillée pour de gros morceaux de HTML.
-
-Fonctionnellement, `Nokogiri` lit et interprète du HTML en un "document" qui peut être manipulé en Ruby. Chaque balise HTML devient un "nœud" et peut être parcourue, modifiée ou extraite.
-
-## Pour Aller Plus Loin:
-
-- Nokogiri Documentation: https://nokogiri.org/tutorials/parsing_an_html_xml_document.html
-- Oga gem: https://github.com/YorickPeterse/oga
-- Ruby REXML documentation: https://ruby-doc.org/stdlib-2.6.1/libdoc/rexml/rdoc/REXML/Document.html
+## See Also (Voir aussi)
+- Nokogiri documentation: [https://nokogiri.org/](https://nokogiri.org/)
+- 'open-uri' Ruby Standard Library: [https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html)
+- Ruby Regexp documentation: [https://ruby-doc.org/core-3.0.0/Regexp.html](https://ruby-doc.org/core-3.0.0/Regexp.html)

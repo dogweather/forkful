@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:39:09.168946-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing daty z ciągu tekstowego to przekształcanie tekstu na typ daty. Programiści robią to, aby obsłużyć daty w różnych formatach i łatwo manipulować czasem w aplikacjach.
 
-Parsowanie daty z ciągu znaków to proces wyodrębniania określonej informacji o dacie (np. dni, miesiące, lata) z ciągu tekstowego. Programiści robią to, aby móc operować na danych datowych i wykorzystywać je w różnych funkcjach programu.
-
-## Jak to zrobić:
-
+## How to (Jak to zrobić):
 ```PowerShell
-# przykładowy ciąg znaków
-$dataStr = '14-02-2021'
+# Prosty przykład parsowania daty
+$dateString = "2023-04-01"
+$date = [datetime]::Parse($dateString)
+Write-Output $date
 
-# parsowanie daty
-$parsowanaData = [datetime]::ParseExact($dataStr, 'dd-MM-yyyy', $null)
-
-# wydrukowanie parsowanej daty
-$parsowanaData
-```
-Przykładowe wyniki:
-```PowerShell
-February 14, 2021 00:00:00
+# Format niestandardowy
+$customDateString = "01 kwietnia 2023"
+$customFormat = "dd MMMM yyyy"
+$culture = [Globalization.CultureInfo]::CreateSpecificCulture("pl-PL")
+$customDate = [datetime]::ParseExact($customDateString, $customFormat, $culture)
+Write-Output $customDate
 ```
 
-## Pogłębione informacje:
+Przykładowe wyjście:
+```
+Saturday, April 1, 2023 12:00:00 AM
+Friday, April 1, 2023 12:00:00 AM
+```
 
-(1) W kontekście historycznym - pomysł parsowania daty z ciągu znaków pojawił się wraz z narodzinami języków programowania. W primerzych językach programowania napisane były dedykowane funkcje do tego celu. W PowerShell (używając .NET Framework) operacja parsowania daty stała się znacznie prostsza i bardziej elastyczna. 
+## Deep Dive (Głębsze zagadnienia):
+Parsing daty sięga czasów, gdy pierwsze aplikacje zaczęły wymagać obsługi różnych formatów daty. W PowerShellu prosty parsing dokonuje się z wykorzystaniem wbudowanej metody `[datetime]::Parse()`. Kiedy format daty jest nietypowy lub różni się w zależności od ustawień regionalnych, używamy metody `[datetime]::ParseExact()` razem z obiektem `CultureInfo`, aby precyzyjnie określić, jakich reguł należy użyć.
 
-(2) Alternatywy - warto wiedzieć, że istnieje wiele różnych formatów czasu i zależnie od regionu, parsowanie daty może wymagać innej sekwencji znaków. Istnieje także możliwość uzycia `TryParseExact()`, która zamiast zgłaszać wyjątek podczas błędnego parsowania, zwróci wartość logiczną `False`.
+Alternatywą jest używanie cmdletu `Get-Date`, który również umożliwia konwersję ciągów tekstowych na daty, z opcją `-Format` do określenia formatu zdjęciowego.
 
-(3) Szczegóły implementacji - podczas parsowania daty, argumenty funkcji `ParseExact()` to: (1) ciąg, który ma zostać przeparsowany, (2) format ciągu i (3) dostawca formatu (który może być `null`, jeżeli nie jest wymagany konkretny format). 
+Ciekawostką jest fakt, że systemy operacyjne i aplikacje często posiadają wbudowane normy określające format daty zgodnie z ustaleniami regionalnymi, co z kolei wpływa na interpretację i walidację dat.
 
-## Zobacz również:
-
-- Dokumentacja Microsoft na temat metody ParseExact: [https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=net-5.0)
+## See Also (Zobacz również):
+- Dokumentacja Microsoftu na temat `[datetime]` w PowerShellu: [Microsoft Docs - datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-7.0)
+- Informacje o `[CultureInfo]` i obsłudze różnych formatów kulturowych: [Microsoft Docs - CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-7.0)
+- Opis cmdletu `Get-Date` w PowerShellu: [Microsoft Docs - Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)

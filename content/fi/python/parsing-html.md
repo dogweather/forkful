@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:33:32.619222-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Python"
@@ -10,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä ja Miksi?
 
-HTML-koodin jäsennys tarkoittaa, että analysoimme HTML-merkkijonon ja muutamme sen muotoon, jota ohjelma voi käsitellä (esimerkiksi puurakenteeksi). Ohjelmoijat tekevät tämän, koska se mahdollistaa verkkosivun datan hakemisen ja manipuloinnin.
+HTML:n jäsentäminen tarkoittaa HTML-dokumentin rakenteen lukemista ja sen sisällön muuttamista hyödynnettäväksi muodoksi. Ohjelmoijat jäsentävät HTML:ää esimerkiksi verkkosivujen tietojen kaapimiseen tai sisällön automaattiseen muokkaamiseen.
 
-## Miten:
+## Kuinka:
 
-Käytetään Pythonin kirjastoa `Beautiful Soup` HTML:n jäsennykseen. Asenna se komennolla:
-
-```Python
-pip install beautifulsoup4
-```
-
-Esimerkkikoodi verkkosivun HTML:n jäsennykseen ja tulostamiseen:
+Pythonissa HTML:n jäsentämiseen käytetään usein `BeautifulSoup`-kirjastoa, jota tukee `requests`-kirjasto nettipyyntöjen tekemiseen.
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-sivu = requests.get("https://www.python.org/")
+# Hae sivun sisältö
+sivu = requests.get('https://esimerkki.fi')
+sivun_sisalto = sivu.content
 
-soup = BeautifulSoup(sivu.content, 'html.parser')
+# Luo BeautifulSoup-olio
+soup = BeautifulSoup(sivun_sisalto, 'html.parser')
 
-print(soup.prettify())
+# Etsi kaikki 'a'-tagit eli hyperlinkit
+linkit = soup.find_all('a')
+
+# Tulosta linkkien teksti ja osoite
+for linkki in linkit:
+    print(linkki.text, '-', linkki.get('href'))
 ```
 
-## Syvällinen tarkastelu:
+Jos tehdään pyyntö osoitteeseen `https://esimerkki.fi` jossa on linkkejä, saatamme saada tuloksen:
 
-HTML:n jäsentäminen on vanha tekniikka, jota on käytetty internetin alkuajoista asti. Vaihtoehtoisia työkaluja ovat esimerkiksi `lxml` ja `html.parser`, mutta `Beautiful Soup` on erittäin suosittu sen helppokäyttöisyyden ansiosta.
+```
+Etusivu - /etusivu
+Ota Yhteyttä - /yhteys
+Tuotteet - /tuotteet
+```
 
-`Beautiful Soup` muuntaa HTML:n puurakenteeksi, jolloin voit hakea tietoja tageista ja niiden sisällöstä. Puurakenteen avulla voit esimerkiksi löytää kyseisen tagin vanhemman, sisarukset tai lapset.
+## Syväsukellus:
 
-## Katso myös:
+HTML:n jäsentäminen on ollut tärkeää Internetin alkuaikoina lähtien, kun tietojen automaattinen kerääminen ja käsittely on tullut mahdolliseksi. Vaikka `BeautifulSoup` on suosittu valinta, on olemassa muitakin kirjastoja, kuten `lxml` ja `html.parser`, jotka ovat osa Pythonin vakiovarustusta. Kuitenkin, `BeautifulSoup` tarjoaa usein helppokäyttöisemmän ja joustavamman rajapinnan erilaisten HTML-rakenteiden jäsentämiseen.
 
-1. Beautiful Soupin dokumentaatio: https://www.crummy.com/software/BeautifulSoup/docsv
-2. W3Schoolsin opas HTML:n jäsentämiseen: https://www.w3schools.com/python/python_parsing.asp
-3. Pipy: https://pypi.org/project/beautifulsoup4/
+Tietojen jäsentämisen oikeellisuus ja eettinen puoli on otettava huomioon; eri sivustojen käyttöehdot voivat rajoittaa automatisoitua käsittelyä. On myös muistettava, että HTML-rakenteet voivat muuttua, mikä saattaa tehdä jäsentämiskoodin päivittämisen tarpeelliseksi.
+
+## Katso Myös:
+
+- BeautifulSoup dokumentaatio: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Requests: https://requests.readthedocs.io/en/master/
+- W3C HTML5 spesifikaatio: https://www.w3.org/TR/html5/
+- Pythonin standardikirjaston `html.parser`: https://docs.python.org/3/library/html.parser.html
+- `lxml` parserin dokumentaatio: https://lxml.de/parsing.html
+
+Muista, että Python ja sen kirjastot kehittyvät, tarkista siis aina uusin tieto ja dokumentaatio.

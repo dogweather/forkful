@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:32:19.606894-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Java"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？(What & Why?)
-HTMLのパースは、HTMLドキュメントを構文解析してその構造や内容を理解できる形式に変換するプロセスです。これはデータの抽出、ウェブスクレイピング、またはウェブコンテンツの自動化された操作に必要です。
+## What & Why? (何となぜ？)
+HTMLパースは、HTML文書を解析し、その情報を操作や抽出に使える形にすることです。プログラマーはこのプロセスを使って、ウェブページから必要なデータを取得したり、DOM(Document Object Model)を操作するために行います。
 
-## 方法 (How to)
-Jsoupという便利なJavaライブラリを使ってHTMLをパースしてみましょう。
+## How to: (やり方)
+Javaの`jsoup`ライブラリを使うとHTMLのパースが簡単にできます。以下に基本的なコード例を示します。
 
 ```Java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        String html = "<p>An <a href='http://example.com/'><b>example</b></a> link.</p>";
+public class HTMLParser {
+    public static void main(String[] args) {
+        String html = "<html><head><title>Example</title></head>"
+                    + "<body><p>Parsed HTML into a doc.</p></body></html>";
         Document doc = Jsoup.parse(html);
-        System.out.println(doc.body());
+        Element body = doc.body();
+        
+        System.out.println("Title: " + doc.title());
+        System.out.println("Body: " + body.text());
     }
 }
 ```
 
-この場合、出力は以下のようになります。
-
-```Java
-<body>
- <p>An <a href="http://example.com/"><b>example</b></a> link.</p>
-</body>
+出力例:
+```
+Title: Example
+Body: Parsed HTML into a doc.
 ```
 
-## ディープダイブ (Deep Dive)
-HTMLのパースはウェブが発展するにつれて重要になってきました。初期のインターネットではなかったものが、今日ではウェブスクレイピングやSEO対策などのために必要となってきています。異なるライブラリやツール (例えばHtmlUnit, Jsoupなど) が存在し、それぞれに異なる特性やパフォーマンスがあります。上記の例のようにJsoupは直感的に使いやすいが、大規模なウェブスクレイピングなどではHtmlUnitの方が適している場合もあります。
+## Deep Dive (深堀り)
+HTMLパースは1990年代から行われ、初期は手作業での文字列処理が一般的でした。しかし、これはエラーが発生しやすく、保守性も低い方法です。`jsoup`や`JTidy`はJavaでHTMLを扱う場合の2つの主流なライブラリです。`jsoup`は操作がシンプルで、HTML5をサポートし、失敗に寛容(Tolerant)なパーサーとして人気があります。一方で、`JTidy`はHTMLをクリーンアップし、XHTMLまたはXML出力に変換するのに適しています。DOMに近い形式でHTMLをパースすると、プログラム的に操作がしやすく、データの抽出が効率的になります。
 
-## また参照してみてください (See Also)
-HTMLを理解するために、以下のリンクが役立つでしょう。
-- HTML標準: https://html.spec.whatwg.org/
-- Java Jsoupライブラリ: https://jsoup.org/
-- Java HtmlUnitライブラリ: http://htmlunit.sourceforge.net/
+## See Also (関連情報)
+- jsoup: https://jsoup.org/ - HTMLをパースし、DOM操作、クリーニング、抽出機能を提供。
+- JTidy: http://jtidy.sourceforge.net/ - HTMLからXHTMLまたはXMLを生成。
+- W3C HTML Parser: https://www.w3.org/TR/html5/syntax.html#parsing - HTMLパーサーに関するW3C規格の情報。

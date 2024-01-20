@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:33:40.383950-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Parsing HTML betyr å omforme HTML-koden til en struktur en Rust-app kan jobbe med. Vi gjør dette for å kunne dra ut data, skifte innhold eller for å gjøre web scraping.
 
-Å parse HTML handler om å tolke en HTML-fil og bygge et tre av noder for hvert HTML-element som kan leses og manipuleres av en programmerer. Vi gjør dette for å hente ut, endre, eller navigere informasjon på en nettside.
+## How to:
+For å parse HTML i Rust kan vi bruke `scraper`-biblioteket. Installasjon avhenger av å legge det til i `Cargo.toml`. Her er et enkelt eksempel:
 
-## Slik gjør du det:
-
-Bruk `scraper`-pakken i Rust til å parse HTML. Installer med `cargo`:
-
-```Rust
-[dependencies]
-scraper = "0.3.1"
-```
-
-Kodeeksempel:
-
-```Rust
+```rust
 use scraper::{Html, Selector};
 
 fn main() {
-    let html = Html::parse_document("<div><h1>Hei, Norge!</h1></div>");
-
-    let selector = Selector::parse("h1").unwrap();
-
-    let element = html.select(&selector).next().unwrap();
-
-    println!("{:?}", element.inner_html()); // Printer: "Hei, Norge!"
+    let html_str = r#"<p>Hei Verden!</p>"#;
+    let document = Html::parse_document(html_str);
+    let selector = Selector::parse("p").unwrap();
+    
+    for element in document.select(&selector) {
+        println!("{}", element.inner_html());
+    }
 }
 ```
-Kjører du denne koden vil du se "Hei, Norge!" i terminalen.
 
-## Dypdykk
+Kjør koden, og du får følgende utskrift:
+```
+Hei Verden!
+```
 
-Å parse HTML har interessant historisk kontekst. I begynnelsen, tidlig på 1990-tallet, var web-sider ganske enkle, men de har vokst i kompleksitet. Dagens behov for enkel navigering og manipulering av HTML har ført til utviklingen av mange kjente parsing bibliotek.
+## Deep Dive
+Parsing av HTML er ikke nytt. Det har vært sentralt i mange oppgaver siden webens barndom. Alternativer til Rust inkluderer BeautifulSoup i Python, Nokogiri i Ruby, eller jsoup i Java.
 
-Det er alternative måter å parse HTML på i Rust, som `html5ever` og `kuchiki`, men `scraper` er vanligvis det beste valget for nybegynnere på grunn av enklere syntaks og brukervennlighet. 
+I Rust er `scraper` effektiv fordi den bygger på `html5ever` og `selectors` pakker, kjent for sin hastighet og standard-samsvar. 'html5ever', utviklet av Servo prosjektet, er spesielt konstruert for moderne webstandarder.
 
-HTML parsing er basert på byggingen av en Document Object Model (DOM). Når en HTML-fil blir parset, blir hvert HTML-element omformet til en node i DOM-treet, deretter kan nodenes tekst, attributter og tilknyttede noder manipuleres.
+Bruk av `scraper` kan involvere å lage selektorer for spesifikke HTML elementer, hantering av klasser, IDer, eller endre innhold dynamisk. Det er også mulig å håndtere mer avanserte oppgaver som å traversere DOM-treet eller å filtrere ut bestemte noder.
 
-## Se Også:
-
-For videre læring, se på denne detaljerte veiledningen om parsing av HTML med Rust av Eryk Napierała: https://www.oreilly.com/library/view/rust-programming-by/9781788390637/B073QF4SC2_ch09.xhtml
-
-Eller denne StackOverflow-tråden der community-medlemmer diskuterer fordeler og ulemper med forskjellige Rust HTML-parsing-biblioteker: https://stackoverflow.com/questions/50241738/how-to-parse-html-with-rust
+## See Also
+- Rust `scraper` dokumentasjon: https://docs.rs/scraper/
+- Servo prosjektet: https://servo.org/
+- `html5ever`: https://github.com/servo/html5ever
+- W3C HTML spesifikasjoner: https://www.w3.org/TR/html/

@@ -1,7 +1,8 @@
 ---
-title:                "Analyser le HTML"
-html_title:           "Kotlin: Analyser le HTML"
-simple_title:         "Analyser le HTML"
+title:                "Analyse syntaxique de HTML"
+date:                  2024-01-20T15:34:24.432021-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analyse HTLM avec TypeScript: Un guide simple et clair
+# TypeScript: Parsing HTML Simplifié
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Le parsing HTML, c'est lire et comprendre le code HTML en utilisant un programme. On le fait pour extraire des données, manipuler le contenu, et interagir avec des pages web depuis nos applications.
 
-L'analyse de HTML, c'est le processus de transformer le code HTML en une structure de données plus facile à manipuler pour votre programme. Nous faisons cela pour extraire des informations, manipuler des éléments ou interagir de manière plus sophistiquée avec nos pages Web.
-
-## Comment faire:
-
-Avec TypeScript, nous allons utiliser une bibliothèque appelée `jsdom`. Voici comment on peut l'utiliser pour analyser un fragment de HTML.
+## How to: (Comment faire :)
+Imaginez que l'on veut extraire le titre d'une page web. Avec TypeScript, on utilise souvent la librairie `node-html-parser`. Installons et utilisons-la :
 
 ```TypeScript
-import { JSDOM } from 'jsdom';
+import { parse } from 'node-html-parser';
 
-let dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
+async function getTitle(html: string): Promise<string> {
+  const root = parse(html);
+  const title = root.querySelector('title')?.textContent;
+  return title || 'Titre non trouvé';
+}
+
+// Utilisation exemple
+const htmlContent = '<!DOCTYPE html><html><head><title>Page Exemple</title></head></html>';
+getTitle(htmlContent).then(title => console.log(title)); // Affiche: Page Exemple
 ```
 
-Dans cet exemple, nous avons créé un nouveau JSDOM et recherché un élément paragraphe à travers `querySelector`. Le `textContent` nous donne le contenu de cet élément.
+Installation nécessaire:
+```bash
+npm install node-html-parser
+```
 
-## Plongée Profonde
+## Deep Dive (Plongée en profondeur)
+Historiquement, le parsing HTML nécessitait des méthodes complexes et non standardisées. Avec l'évolution de JavaScript et TypeScript, des librairies modernes comme `node-html-parser` simplifient la tâche. Par rapport à `DOMParser` (le choix natif du navigateur), `node-html-parser` est plus flexible et fonctionne aussi côté serveur (Node.js).
 
-Historiquement, l'analyse de HTML était beaucoup plus compliquée et moins flexible. Il y avait un besoin d'outils plus sophistiqués et modernes, et c'est pourquoi `jsdom` a été créé.
+On trouve d'autres options comme `cheerio` pour qui préfère une syntaxe proche de jQuery, ou `jsdom` pour simuler un DOM complet en dehors du navigateur.
 
-Il existe d'autres alternatives à `jsdom`, comme `cheerio`, qui est plus rapide mais ne prend en charge que le sous-ensemble de jQuery. Si vous n'avez pas besoin d'une simulation de navigateur complète (que `jsdom` offre), `cheerio` pourrait être une meilleure option.
+Les détails d'implémentation incluent la gestion de l'encodage des caractères, les nuances du DOM, et le respect des spécifications HTML5 pour ne pas introduire de vulnérabilités XSS (Cross-Site Scripting) lors de manipulations.
 
-En parlant de l'implémentation, `jsdom` utilise document.implementation.createHTMLDocument() pour parser le HTML en un objet DOM. Cette fonction est une API standard du navigateur, ce qui rend notre code beaucoup plus fiable.
-
-## Voir Aussi
-
-1. Documentation de Jsdom: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
-3. API de CreateHTMLDocument() : [https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument](https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument)
+## See Also (Voir également)
+- Documentation de `node-html-parser`: [github.com/taoqf/node-html-parser](https://github.com/taoqf/node-html-parser)
+- Comparaison des librairies de parsing HTML en Node.js: 
+  [www.npmjs.com/search?q=html+parser](https://www.npmjs.com/search?q=html+parser)
+- Spécifications de l'HTML5 concernant le parsing: 
+  [html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
+- Informations sur les vulnérabilités XSS: 
+  [owasp.org/www-community/attacks/xss/](https://owasp.org/www-community/attacks/xss/)

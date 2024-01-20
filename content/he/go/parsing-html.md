@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:32:04.939461-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Go"
@@ -11,66 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+פיענוח (Parsing) של HTML הוא תהליך שבו אנו מעבדים מסמך HTML כדי להבין את מבנהו ותוכנו. מפתחים עושים זאת כדי לקרוא, לערוך, או לאסוף נתונים מדפי אינטרנט.
 
-אנליזת HTML היא התהליך שבו קוד מחשב מפרש את מבנה ה- HTML בדף אינטרנט. מתכנתים עושים זאת כדי לאפשר עיבוד של מידע מהדף.
-
-## כיצד:
-
-הנה קטע קוד בסיסי ב Go שמנתח קובץ HTML:
+## איך לעשות:
+גו (Go) מספקת ספרייה מובנית בשם `net/html` שתעזור לנו לפרס דפי HTML. להלן דוגמה פשוטה:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"golang.org/x/net/html"
-	"os"
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
 
 func main() {
-	file, err := os.Open("example.html")
-	if err != nil {
-		fmt.Printf("error: %v\n", err)
-		os.Exit(1)
-	}
-	defer file.Close()
+    resp, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
 
-	tokenizer := html.NewTokenizer(file)
+    doc, err := html.Parse(resp.Body)
+    if err != nil {
+        panic(err)
+    }
 
-	for {
-		tokenType := tokenizer.Next()
-
-		switch {
-		case tokenType == html.ErrorToken:
-			// הגענו לסוף הקובץ, יציאה מהלולאה
-			return
-		case tokenType == html.StartTagToken:
-			token := tokenizer.Token()
-
-			// טיפול בכל מנות tag 
-			fmt.Println("tag name: ", token.Data)
-		}
-	}
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    fmt.Println(a.Val)
+                    break
+                }
+            }
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
+    f(doc)
 }
 ```
-זה הפלט:
-```Go
-tag name:  html
-tag name:  head
-tag name:  title
-tag name:  body
-tag name:  h1
-tag name:  p
+
+תוצאת דוגמה:
+
+```
+http://www.iana.org/domains/example
 ```
 
 ## צלילה עמוקה
-
-אנליזת HTML התפתחה לאורך השנים כתשובה לצורך של מתכנתים לדלות מקוונים ולנהל מידע באופן אוטומטי. Go היא שפת תכנות המספקת קטעי קוד מוכנים מראש (packages) שמאפשרים ניתוח HTML. חלופות כוללות שפות עם ספריות XML/HTML תואמות, כמו Python או JavaScript.
-
-כאשר אנו משתמשים בפונקציה NewTokenizer, היא מחזירה פונקציה שנותנת לנו גישה לtoken הבא בקובץ.
+בעבר, פיענוח HTML היה מאתגר בשל מגוון המבנים והתקנים. היום, עם כלים כמו `net/html` בגו, התהליך פשוט יותר. ישנם גם חלופות כמו `goquery` שמדמה את jQuery. בעת ביצוע פיענוח, חשוב לזכור ש HTML אינו תמיד תקני וכלים צריכים להיות עמידים בפני שגיאות.
 
 ## ראה גם
-
-טיפים נוספים ועומק נוסף בנושא ניתוח HTML ב Go מוצגים במקורות הבאים:
-- מידע על החבילה "x/net/html": [GoDoc](https://godoc.org/golang.org/x/net/html)
-- מדריך פרקטי לאנליזת HTML ב- Go: [מדריך](https://www.devdungeon.com/content/web-scraping-go)
+- דוקומנטציית `net/html`: https://pkg.go.dev/golang.org/x/net/html
+- מדריך לספריה `goquery`: https://github.com/PuerkitoBio/goquery
+- איך להשתמש ב`goquery` לפרסינג של HTML: https://www.devdungeon.com/content/web-scraping-go-using-goquery

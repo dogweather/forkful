@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:31:53.098220-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,75 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Analiza składni (parsing) HTML polega na przetworzeniu struktury dokumentu HTML na dane, które są zrozumiałe i użyteczne dla programu. Programiści robią to, aby uzyskać wyższy poziom kontroli i zrozumienia struktury i zawartości stron www, pozyskiwać z nich dane lub manipulować nimi.
+Parsing HTML umożliwia ekstrakcję danych z dokumentów HTML. Programiści używają tego do analizy struktur stron internetowych, autoryzacji treści, czy do scrapingu danych.
 
 ## Jak to zrobić:
-
-For the sake of translation, the comments in the code below are in Polish for your understanding.
-
 ```Go
 package main
 
 import (
-    "fmt"
-    "golang.org/x/net/html"
-    "net/http"
-    "os"
+	"fmt"
+	"golang.org/x/net/html"
+	"net/http"
+	"strings"
 )
 
 func main() {
-    resp, err := http.Get("http://www.jakas-strona.pl")
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "nie można otworzyć strony: %v\n", err)
-        os.Exit(1)
-    }
+	resp, err := http.Get("http://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
 
-    doc, err := html.Parse(resp.Body)
-    resp.Body.Close()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "nie można przeanalizować składni: %v\n", err)
-        os.Exit(1)
-    }
+	doc, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
 
-    // Wydrukujmy tytuł strony.
-    fmt.Printf("Tytuł: %s\n", traverse(doc))
-}
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "a" {
+			for _, a := range n.Attr {
+				if a.Key == "href" {
+					fmt.Println(a.Val)
+					break
+				}
+			}
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
 
-// Veni, vidi, vici.
-func traverse(n *html.Node) string {
-    if n.Type == html.ElementNode && n.Data == "title" {
-        return n.FirstChild.Data
-    }
-
-    for c := n.FirstChild; c != nil; c = c.NextSibling {
-        title := traverse(c)
-        if title != "" {
-            return title
-        }
-    }
-
-    return ""
+	f(doc)
 }
 ```
-
-Przykładowe wyjście:
-
+Sample output:
 ```
-Tytuł: Strona główna - www.jakas-strona.pl
+http://www.iana.org/domains/example
 ```
 
-## Bardziej szczegółowo
+## Wnikliwe spojrzenie:
+HTML, od lat 90. XX wieku, jest standardem webowym. Parsing HTML zwykle używa DOM (Document Object Model). Alternatywy to regexy (ale uwaga: [nie są do tego zalecane](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)) czy biblioteki takie jak BeautifulSoup w Pythonie. W Go, `golang.org/x/net/html` to oficjalne narzędzie do parsingu, oparte o tokenizację, zapewniające dostęp do elementów DOM bez uruchamiania JS czy stosowania zewnętrznych usług.
 
-Analiza składni HTML datuje się na początki powstawania HTML jako języka znaczników. Do tej pory powstało wiele bibliotek i narzędzi do analizy składni HTML, zarówno w Go, jak i innych językach programowania.
-
-Alternatywą do `golang.org/x/net/html` mogą być takie biblioteki jak `goquery`, które udostępniają API podobne do jQuery, czy `colly`, efektywna biblioteka do scrapingu stron.
-
-Warto zaznaczyć, że choć analiza składni HTML jest niezbędna dla wielu zastosowań, nie zawsze jest to najbardziej efektywne rozwiązanie. Często lepszym podejściem może być skorzystanie z API strony, jeśli taka opcja jest dostępna.
-
-## Zobacz też
-
-* [Goquery](https://github.com/PuerkitoBio/goquery) - jQuery-like syntax in Go
-* [Colly](http://go-colly.org/) - Elegant Scraper and Crawler Framework for Golang.
-* [Documentacja golang.org/x/net/html](https://pkg.go.dev/golang.org/x/net/html) - Oficjalna dokumentacja modułu HTML Go.
-* [Analiza składni HTML na Wikipedia](https://pl.wikipedia.org/wiki/Parsing) - Wikipedia entry on HTML parsing.
+## Zobacz także:
+- Dokumentacja `net/html`: https://pkg.go.dev/golang.org/x/net/html
+- Oficjalny tutorial Go na temat scrapingu webowego: https://golang.org/doc/articles/wiki/
+- Artykuł o problemach z używaniem regexów do parsingu HTML: https://blog.codinghorror.com/parsing-html-the-cthulhu-way/

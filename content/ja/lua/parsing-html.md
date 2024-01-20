@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:32:59.987359-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Lua"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# LuaでHTMLの解析を学ぼう
+## What & Why? (何となぜ？)
+HTMLをパース（解析）するのは、ウェブページの構造を理解してデータにアクセスすることです。プログラマーはデータ抽出、自動化、コンテンツマイニングなどのためにこれを行います。
 
-## 何となぜ？
+## How to: (どうやって？)
+Luaでは、外部ライブラリを利用してHTMLをパースします。`lua-html`は使いやすい選択です。
 
-HTMLの解析とは、HTMLファイルの構造を理解し、その中の情報を抽出する事を指します。これはデータマイニングやウェブスクレイピングにおいて、ウェブページから必要な情報を取得するために行います。
+```lua
+local html = require("html.parser")
+local page = [[
+<html>
+  <head>
+    <title>Sample Page</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>This is a sample paragraph.</p>
+  </body>
+</html>
+]]
 
-## 実施方法：
+local dom = html.parse(page)
 
-Luaには便利なHTML解析ライブラリがあります。今回は`htmlparser`ライブラリを例に取ります。
+-- タイトルを取得
+local titles = dom:select("title")
+for i, title in ipairs(titles) do
+    print(title:getcontent())
+end
 
-```Lua
-local htmlparser = require "htmlparser"
-local html = "<html><body><h1>Hello, Lua!</h1></body></html>"
-local root = htmlparser.parse(html)
-
-print(root:select("h1")[1]:getcontent())  -- LuaでHelloと出力
+-- 結果: Sample Page
 ```
 
-これは、HTMLの`h1`タグの中身を取得する簡単な例です。
+## Deep Dive (深掘り)
+HTMLパースは1990年代初頭から行われています。LynxブラウザなどがテキストモードでHTMLを表示するために最初にこれを行いました。Luaでは標準ライブラリにHTMLパーサーは含まれておらず、`lua-html`や`Gumbo`などのサードパーティ・ライブラリがあります。これらはDOMを解析し易い形で提供し、CSSセレクタで要素を簡単に抽出できます。パフォーマンスと正確性はライブラリによって異なります。
 
-## ディープダイブ：
+## See Also (関連情報)
+- lua-html: https://github.com/msva/lua-html
+- Gumbo parser: https://github.com/craigbarnes/lua-gumbo
+- Lua 5.4 reference manual: https://www.lua.org/manual/5.4/
+- HTML5 parsing algorithm: https://html.spec.whatwg.org/multipage/parsing.html
 
-1. 歴史的な背景: Lua言語は1993年にリリースされ、その専用性と柔軟性から多くのソフトウェア開発に利用されてきました。
-2. 代替案: Lua以外の言語もHTML解析には広く利用されています。例えばPythonのBeautifulSoupやJavaScriptのCheerioなどがあります。
-3. 実装の詳細：`htmlparser`ライブラリはDOM(Document Object Model)に基づいてHTMLを解析します。DOMはHTMLの構造を表現するためのモデルで、このライブラリはHTMLをこのモデルに変換します。
-
-## 参考資料：
-
-1. "Lua-users wiki: Libraries and Bindings": https://lua-users.org/wiki/LibrariesAndBindings
-2. "Lua-htmlparser GitHub": https://github.com/msva/lua-htmlparser
-3. "W3C HTML DOM": https://www.w3schools.com/js/js_htmldom.asp
+HTMLのパースには、正しいツールと知識が必要です。最適なライブラリを選び、素晴らしいLuaプログラミングを！

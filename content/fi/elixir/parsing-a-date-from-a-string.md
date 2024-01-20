@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:35:29.776965-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa, että muunnat tekstin päivämäärämuotoon, jota ohjelmat voivat käyttää. Ohjelmoijat tarvitsevat tätä toiminnallisuutta, kun heidän pitää käsitellä käyttäjien syötteitä, tallentaa päivämääriä tietokantoihin tai muotoilla päivämääriä käyttöliittymissä.
 
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa kelvollisen päivämääräobjektin luomista tekstiesityksestä. Ohjelmoijat tekevät tämän usein, koska tietoja tallennetaan ja lähetetään usein merkkijonoina.
-
-## Miten:
-
-Elixirin kanssa voit käyttää DateTime-muuntotoimintoja päivämäärän jäsentämiseen merkkijonosta. Tässä esimerkki:
+## How to (Kuinka tehdä):
+Elixiriin sisältyy laaja valikoima päivämääräkäsittelytoimintoja. Käytetään `NaiveDateTime`-moduulia jäsentämiseen:
 
 ```elixir
-string_date = "2022-01-31 10:30:15Z"
-{:ok, date_time} = DateTime.from_iso8601(string_date)
-IO.inspect(date_time)
+# Jäsennetään ISO8601-muotoinen päivämäärä
+date_string = "2023-04-05T14:30:05Z"
+{:ok, naive_datetime} = NaiveDateTime.from_iso8601(date_string)
+IO.inspect(naive_datetime)
+
+# Määritetään muotoilu itse ja jäsentää y custom date string
+custom_date_string = "05.04.2023"
+{:ok, datetime, _} = DateTime.from_iso8601("#{custom_date_string}T00:00:00Z")
+IO.inspect(datetime)
 ```
 
-Tämä muuntaa merkkijonon DateTime-objektiksi. Tuotteen pitäisi näyttää näin:
+Esimerkki tulostaa:
 
 ```
-#DateTime<2022-01-31 10:30:15Z>
+~N[2023-04-05 14:30:05]
+~U[2023-04-05 00:00:00Z]
 ```
 
-## Syvempi sukellus:
+Esim. vaativaan päivämääräkäsittelyyn katso `Timex`-kirjasto.
 
-Päivämäärän jäsentäminen merkkijonosta on ollut tarpeellinen taito ohjelmoinnissa sen varhaisista päivistä lähtien. Se on tärkeää, koska ihmiset ja järjestelmät ilmaisevat ja tallentavat päivämäärät ja ajat monin eri tavoin.
+## Deep Dive (Syvä sukellus):
+Päivämäärän jäsentäminen on osa ohjelmistosuunnittelua jo aikojen alusta. ISO8601-standardi luotiin selkiyttämään päivämäärien esitystä kansainvälisesti. Elixirin sisäänrakennetut moduulit, kuten `NaiveDateTime` ja `DateTime`, tarjoavat helpon tavan jäsentää ja muuttaa päivämääriä. `Timex`-kirjasto ottaa askeleen pidemmälle, tarjoten monipuolisempia toiminnallisuuksia ja formaatteja.
 
-Elixirlang tarjoaa myös muita tapoja käsitellä merkkijonoja ja päivämääriä. Voit käyttää `NaiveDateTime.from_iso8601/2` ja `Date.from_iso8601/2` jos aikavyöhyke ei ole tarpeellinen tai käytettävissä.
+Elixir käyttää Erlangin `:calendar`-moduulia alapinnallaan, mikä tekee aikakäsittelystä tehokasta. Päivämäärästringit voidaan jäsentää useissa eri formaateissa, mutta ISO8601 on yleisesti käytetty standardi, koska se vähentää sekaannuksen mahdollisuuksia.
 
-Elixirin DateTime-muunnin toimii ISO 8601 muotoisten päivämäärien kanssa. ISO 8601 on kansainvälinen standardi, joka määrittelee päivämäärän ja ajan esitysmuodon.
-
-## Katso myös:
-
-1. [DateTime Elixir dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-2. [ISO 8601 Wikipedia](https://fi.wikipedia.org/wiki/ISO_8601)
+## See Also (Katso myös):
+- Elixirin virallinen dokumentaatio `NaiveDateTime`- ja `DateTime`-moduuleista: https://hexdocs.pm/elixir/NaiveDateTime.html ja https://hexdocs.pm/elixir/DateTime.html
+- Timex-kirjasto päivämäärä- ja aikakäsittelyyn: https://hex.pm/packages/timex
+- ISO8601-päivämäärä ja aika -standardin yleiskatsaus: https://en.wikipedia.org/wiki/ISO_8601

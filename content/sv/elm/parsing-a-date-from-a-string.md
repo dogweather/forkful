@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:36:09.622844-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att tolka ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett faktiskt datumvärde som datorn kan förstå och hantera. Utvecklare gör detta för att enkelt kunna behandla och manipulera datumdata som kommer i strängformat, vilket är vanligt i olika datakällor och API:er.
+## What & Why?
+Att tolka ett datum från en sträng innebär att konvertera textformaterad data till ett datumformat som programmet kan förstå och använda. Programmerare gör detta för att enkelt hantera och manipulera datumvärden, såsom att beräkna tidsskillnader eller visa datum enligt olika tidszoner.
 
-## Hur man gör:
-Här är ett exempel på hur du tolkar ett datum från en sträng i Elm:
+## How to:
+Elm gör det enkelt att hantera datum genom `Date` modulen. Tänk på att Elm inte har inbyggda funktioner för datumtolkning från strängar, så vi lutar oss mot `elm/time` arkivet och kan behöva en JS interop via ports för komplexa format.
+
 ```Elm
-import Date
 import Time
-import Time.Extra exposing (Hour, Minute, Second)
+import Json.Decode as Decode
 
-parseDate : String -> Maybe Date
-parseDate str =
-    Time.fromString str
-        |> Maybe.andThen Time.toTime
-        |> Maybe.map Date.fromTime
+parseDate : String -> Decoder Time.Posix
+parseDate dateStr =
+    Decode.map Time.millisToPosix (Decode.int)
 
--- usage
--- parseDate "2021-03-14T15:09:26.535Z" --> Just (Date.fromTime { year = 2021, month = Mar, day = 14 })
+sampleDateStr : String
+sampleDateStr = "1617181920" -- Ett exempel på en UNIX-tidsstämpel i millisekunder som en sträng
 
+-- Antag att vi får detta som en del av en större JSON-svar
+type alias ApiResponse =
+    { date : Time.Posix }
+
+dateDecoder : Decode.Decoder ApiResponse
+dateDecoder =
+    Decode.map ApiResponse (Decode.field "date" (parseDate sampleDateStr))
+
+-- När du kör decodern får du `Time.Posix` som du kan arbeta med i Elm.
 ```
-Koden ovan skapar en funktion `parseDate` som tar en sträng och försöker konvertera den till ett `Maybe Date`-objekt.
 
-## Djupdykning
-Historiskt sett har datumtolkning varit en utmaning för utvecklare, särskilt på grund av olika datumformat och tidszoner. I Elm är standardbiblioteket för tid och datum `Time`, som har funktioner för att både tolka och skapa strängrepresentationer av tider och datum.
+Observera ovanstående kodstycke är ett enkelt exempel. För att dekoda en faktisk datumsträng från JSON, ersätt `sampleDateStr` med din JSON:s datumfält.
 
-En alternativ funktion för att tolka datum i formatet "åååå-mm-dd" från en sträng i Elm är `Date.fromIsoString`. Observera dock att denna funktion bara accepterar datum i ISO 8601-format.
+## Deep Dive
+Elm har en striktare hantering av datum än många andra språk. Tidiga versioner av Elm hade mer omfattande datumfunktioner, men dessa förenklades för att minska komplexitet och externa beroenden. 
 
-När det gäller implementeringsdetaljer i `Time.fromString`, använder den JavaScripts `Date.parse`-funktion under huven, vilket innebär att den accepterar datumsträngar i samma format som `Date.parse`.
+Alternativ till att tolka datumsträngar inkluderar att använda JavaScript-portar för att använda starkare JS-bibliotek som `Moment.js` eller `date-fns`. Elm-communityt har också skapat bibliotek som `elm-date-extra` för att hantera datum.
 
-## Se även
-För mer information om hur du arbetar med datum och tid i Elm, se följande länkar:
-- Elm Time-biblioteket: https://package.elm-lang.org/packages/elm/time/latest/
-- Elm Date-biblioteket: https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/
-- Officiell Elm guide: https://guide.elm-lang.org/
+När Elm tolkar datum, sker det ofta i form av POSIX-tid (tid i millisekunder sedan Unix-epoken), vilket gör det jämförbart över olika system. För att tolka mer komplexa datumformat, kan anpassade decoders skapas som använder `String` manipulation följt av `String -> Int` konverteringar innan de skapar en `Time.Posix` instans.
+
+## See Also
+Här är några användbara länkar för att utforska mer:
+
+- Elm `Time` modulen: [package.elm-lang.org/packages/elm/time/latest](https://package.elm-lang.org/packages/elm/time/latest)

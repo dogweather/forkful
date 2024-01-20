@@ -40,4 +40,3 @@ Goの`strings.ToUpper`関数を使うと、簡単に文字列を大文字にで�
 
 ## See Also (参考文献)
 - Goの公式ドキュメント: [strings package](https://pkg.go.dev/strings)
-- Unicodeについて詳しく: [Unicode's official website](https://unicode.org)

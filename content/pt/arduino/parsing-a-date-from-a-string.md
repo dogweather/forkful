@@ -1,6 +1,7 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-html_title:           "PowerShell: Analisando uma data a partir de uma string"
+date:                  2024-01-20T15:34:35.077479-07:00
+html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,49 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê & Porquê?
-
-Analisar a data de uma string significa extrair uma data válida de um conjunto de caracteres. Os programadores fazem isso para manipular e interagir com datas de forma eficiente.
+## O Que é & Por Que?
+Extrair uma data de uma string significa decifrar uma data inserida como texto. Programadores fazem isso para transformar a informação em formatos úteis para armazenar, comparar ou manipular datas.
 
 ## Como Fazer:
-
-Para interpretar uma data de uma string no Arduino, vamos usar a função `strtok()`. Para obter a data de uma string no formato "dd-mm-yyyy":
-
-```Arduino
-char data[] = "21-03-2020";
-char delimitador[] = "-";
-
-char *dia = strtok(data, delimitador);
-char *mes = strtok(NULL, delimitador);
-char *ano = strtok(NULL, delimitador);
-
-Serial.println(dia);
-Serial.println(mes);
-Serial.println(ano);
-```
-
-A saída será:
+Examinando a data em uma string formatada como "DD/MM/AAAA", você pode decompor e converter os componentes dia, mês e ano para inteiros.
 
 ```Arduino
-21
-03
-2020
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS1307 rtc;
+
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("RTC não encontrado !");
+    while (1);
+  }
+
+  String dataString = "31/12/2023";
+  int dia = dataString.substring(0, 2).toInt();
+  int mes = dataString.substring(3, 5).toInt();
+  int ano = dataString.substring(6).toInt();
+
+  rtc.adjust(DateTime(ano, mes, dia));
+
+  DateTime agora = rtc.now();
+  Serial.print("Data ajustada para: ");
+  Serial.print(agora.day());
+  Serial.print("/");
+  Serial.print(agora.month());
+  Serial.print("/");
+  Serial.println(agora.year());
+}
+
+void loop() {
+  // Nada a fazer aqui no loop.
+}
 ```
+Saída esperada:
+```
+Data ajustada para: 31/12/2023
+```
+## Mergulho Profundo
+Antes das bibliotecas especializadas, a conversão entre strings e datas exigia manipulação manual da string. Alternativas modernas incluem o uso de bibliotecas como `RTClib`, que facilitam a integração com módulos de tempo real (RTC). A implementação depende da consistência do formato da string. Data e hora são vitais para registrar eventos, marcar timestamps, e agendar tarefas em sistemas embarcados.
 
-Aqui, `strtok()` está dividindo a data em dia, mês e ano usando '-' como delimitador.
-
-## Um Olhar Mais Profundo 
-
-O tratamento de datas sempre foi uma parte vital da computação. Desde o início do Unix nos anos 70, a hora e a data foram capturadas como segundos passados desde 1 de janeiro de 1970, uma prática que ainda está em voga hoje, conhecida como Unix Time. A interpretação da data a partir de uma string é um pequeno fragmento dessa funcionalidade global.
-
-Em termos de alternativas, em outras linguagens de programação como o Python, existem módulos de análise de data integrados como `dateutil.parser`. No entanto, devido à natureza simples e direta da linguagem C no Arduino, geralmente recorremos a `strtok()`.
-
-Um aspecto crucial a notar é que o `strtok()` altera a string original, então se você precisa da string original intacta, faça uma cópia antes de usar `strtok()`.
-
-## Veja Mais
-
-Para saber mais sobre o `strtok()`, consulte: https://www.cplusplus.com/reference/cstring/strtok/
-
-Para entender mais sobre o Unix Time, confira: https://www.unixtimestamp.com/
-
-Para um aprofundamento na análise de datas e horas, você pode querer verificar: https://www.arduino.cc/reference/en/libraries/rtclib/
+## Veja Também
+- Documentação da biblioteca RTClib (https://github.com/adafruit/RTClib)
+- Referência sobre a classe String na Arduino (https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- Informações sobre módulos RTC e Arduino (https://www.arduino.cc/en/Guide/Libraries#toc4)

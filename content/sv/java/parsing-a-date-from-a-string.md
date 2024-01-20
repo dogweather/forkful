@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:36:55.474699-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,38 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## What & Why?
+Att tolka ett datum från en sträng innebär att göra om textinformationen till ett datumformat som Java förstår. Programmerare behöver det för att hantera och manipulera datum, t.ex. för att spara i databaser eller jämföra med andra datum.
 
-Att parsa ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett programmerbart object. Programmerare gör detta för att kunna hantera och manipulera datumvärden i sina kodrutiner.
-
-## Hur gör man:
-
-Här är ett grundläggande exempel:
-```Java
+## How to:
+```java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-public class Main {
-  public static void main(String[] args) {
-    String date = "2023-04-01";
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    
-    LocalDate parsedDate = LocalDate.parse(date, formatter);
-    System.out.println(parsedDate); // 2023-04-01
-  }
+public class DateParsingExample {
+    public static void main(String[] args) {
+        String dateString = "2023-04-01";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate parsedDate = LocalDate.parse(dateString, formatter);
+        
+        System.out.println(parsedDate);  // Output: 2023-04-01
+    }
 }
 ```
-I koden ovan skapar vi en DateFormatter med det önskade datummönstret ('yyyy-MM-dd') och använder sedan `LocalDate.parse()` för att konvertera en sträng till ett LocalDate-objekt. Koden printar ut date-objektet som en sträng.
 
-## Djupdykning
+## Deep Dive
+Innan Java 8, användes `SimpleDateFormat` för att tolka och formatera datum, men det var inte trådsäkert och lite klumpigt. `DateTimeFormatter` introducerades i Java 8 som en del av det nya datum- och tids-API:et i paketet `java.time`, som är både säkrare och mer intuitivt. 
 
-Historiska kontext: I tidiga versioner av Java användes `SimpleDateFormat`-klassen för att parsa datumsträngar. Modernare versioner har dock infört `DateTimeFormatter`, som är mer trådsäker och flexibel.
+Alternativt kan man använda tredjepartsbibliotek som Joda-Time, men med `java.time`-paketet är det sällan nödvändigt. Vad gäller implementeringsdetaljer gör formattering och tolkning av datum med `DateTimeFormatter` att du kan specificera ett mönster och även lokaliseringsinställningar med `Locale`, vilket är bra för att stödja internationella program.
 
-Alternativ: Java tillåter också parsning av datumsträngar med hjälp av `Instant.Parse()` eller `ZonedDateTime.Parse()` beroende på användarens behov.
-
-Implementeringsdetaljer: Funktionen `parsec()` är inte begränsad till förinställda format. Användare kan ange sitt eget format i `DateTimeFormatter`.
-
-## Se också:
-
-1. [DateTimeFormatter dokumentation](http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-2. [Tutorial på Oracle](https://docs.oracle.com/javase/tutorial/datetime/iso/format.html)
+## See Also
+- [DateTimeFormatter dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [LocalDate dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java Date and Time API guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)

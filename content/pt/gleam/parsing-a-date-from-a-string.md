@@ -1,6 +1,7 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-html_title:           "PowerShell: Analisando uma data a partir de uma string"
+date:                  2024-01-20T15:36:22.601378-07:00
+html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## O Que & Porquê?
+Converter uma data de uma string é transformar texto em um formato de data reconhecível pelo sistema. Programadores fazem isso para manipular e armazenar datas em formatos úteis para análise e lógica de negócios.
 
-# Analisando datas em Gleam: o quê e por quê?
-
-Analisar datas a partir de uma string é o ato de interpretar e converter sequências de caracteres num formato de data legível por programas. Programadores fazem isso para manipular e trabalhar com dados de tempo de maneira mais eficaz, direta e humanamente compreensível.
-
-## Como fazer:
-
-Gleam ainda não tem bibliotecas integradas para análise de datas, então vamos criar uma função simples para esse fim. Aqui nós a chamamos de `parse_date`, que receberá uma string e retornará uma tupla.
-
+## Como Fazer:
 ```gleam
-fn parse_date(date_string: String) -> Result(tuple(String, String, String), Nil) { 
-    case String.split(date_string, "/") {
-        [Ok(day), Ok(month), Ok(year)] -> 
-            Ok(tuple(day, month, year))
-            
-        _ -> 
-            Error(Nil)
-    }
+import gleam/io
+import gleam/should
+import gleam/calendar.{Date, from_iso8601}
+
+pub fn main() {
+  let date_string = "2023-04-02"
+  case from_iso8601(date_string) {
+    Ok(date) -> io.println("Data convertida: " ++ date)
+    Error(_error) -> io.println("Erro ao converter data.")
+  }
 }
+
+// Saída esperada: "Data convertida: 2023-04-02"
 ```
 
-Após chamar `parse_date("10/11/2020")`, você receberá `Ok(tuple("10", "11", "2020"))`.
+## Aprofundando
+Antes de termos padrões como ISO 8601, a interpretação de datas variava muito por cultura e localidade, resultando em confusão na programação global. Alternativas ao `from_iso8601` poderiam incluir parsers personalizados usando expressões regulares ou bibliotecas de terceiros que suportam múltiplos formatos. O detalhe de implementação crítico é garantir que a conversão considere diferentes fusos horários e estilos de datas, para assegurar a consistência e a exatidão dos dados de tempo.
 
-## Mergulho profundo
-
-Historicamente, analisar datas é um problema comum na maioria das linguagens de programação. Para resolver isso, as linguagens modernas, como Python e Java, têm bibliotecas poderosas incorporadas para lidar com datas e horários.
-
-Embora Gleam ainda não tenha um pacote de data e hora robusto, você pode usar funções personalizadas ou wrappers em torno das bibliotecas Erlang para analisar datas como no exemplo acima.
-
-Existem alguns pacotes Erlang poderosos como o `calendar` e o `erlang` disponíveis para uso, embora eles possam não ser tão idiomáticos para usuários Gleam e possam exigir um pouco mais de trabalho para serem configurados corretamente.
-
-## Veja também
-
-1. A documentação oficial do Gleam: https://gleam.run/docs/
-2. Exemplos do Gleam: https://github.com/gleam-lang/example
-3. Calendário e bibliotecas Erlang: http://erlang.org/doc/man/calendar.html.
+## Veja Também
+- Especificação ISO 8601: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)

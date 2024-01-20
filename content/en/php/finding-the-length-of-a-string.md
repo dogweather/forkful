@@ -45,6 +45,5 @@ Sample output now is `14`.
 ## See Also
 
 - PHP Documentation on `strlen()` [link](https://www.php.net/manual/en/function.strlen.php)
-- PHP Documentation on `mb_strlen()` [link](https://www.php.net/manual/en/function.mb-strlen.php)
 - Stack Overflow thread on "Why should I use `mb_strlen()` instead of `strlen()`?" [link](https://stackoverflow.com/questions/3656713/why-should-i-use-mb-strlen-instead-of-strlen)
 - PHP Manual on character encoding [link](https://www.php.net/manual/en/mbstring.supported-encodings.php)

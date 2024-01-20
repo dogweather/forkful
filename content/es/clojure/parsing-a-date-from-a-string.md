@@ -1,7 +1,8 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
-html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
+title:                "Análisis de una fecha a partir de una cadena"
+date:                  2024-01-20T15:35:33.331669-07:00
+html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
+simple_title:         "Análisis de una fecha a partir de una cadena"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,40 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-
-La conversión de una fecha a partir de una cadena (parsing) es un proceso que transforma texto en una representación estructurada de una fecha. Los programadores hacen esto para manipular fechas y trabajar con ellas en formatos más utilizables.
+Parsear una fecha desde un string significa convertir texto que representa una fecha a una forma con la que el programa puede trabajar fácilmente. Lo hacemos para manipular, almacenar o comparar fechas, tareas comunes en programación.
 
 ## Cómo hacerlo:
+Usaremos la biblioteca `clj-time`, basada en Joda-Time, para parsear fechas en Clojure. Primero, asegúrate de añadir la última versión de `clj-time` a tu archivo `project.clj` como dependencia. Luego, aquí te dejo un ejemplo de cómo parsear una fecha:
 
-En Clojure, utilizamos la biblioteca `clojure.java-time` para convertir una cadena a una fecha. Aquí está un ejemplo:
+```clojure
+(require '[clj-time.format :as fmt])
+(require '[clj-time.coerce :as coerce])
 
-```Clojure
-(require '[java-time :as jt])
+;; Definimos el formato de la fecha que esperamos
+(def custom-formatter (fmt/formatter "dd-MM-yyyy"))
 
-(defn parse-date [date-str]
-  (jt/local-date date-str))
+;; Parseamos el string a un objeto Joda-Time DateTime
+(defn parse-date [date-string]
+  (coerce/from-string (fmt/parse custom-formatter date-string)))
+
+;; Ejemplo de uso
+(parse-date "23-03-2023")
+;; => #object[org.joda.time.DateTime 0x somehash "2023-03-23T00:00:00.000Z"]
 ```
 
-Si ejecutamos nuestro código con una cadena de fecha, por ejemplo `parse-date "2021-12-01"`, obtendremos como salida `2021-12-01`.
+## Datos Detallados:
+Clj-time es una envoltura Clojure alrededor de Joda-Time, la biblioteca Java estándar para fechas antes de Java 8. Java 8 introdujo `java.time`, una API de tiempo más moderna, pero clj-time sigue popular en proyectos Clojure.
 
-```Clojure
-(parse-date "2021-12-01")
-; => #object[java.time.LocalDate  "2021-12-01"]
-```
-## Profundización:
+Otras alternativas incluyen el uso de la biblioteca estándar de Java directamente con `java.util.Date` o `java.time`. Una implementación en Clojure podría usar funciones `clj-time.core` para manipular fechas despues de parsearlas.
 
-Históricamente, Clojure ha dependido de las bibliotecas de Java para trabajar con fechas y tiempo, debido a que Clojure se ejecuta en la Máquina Virtual de Java (JVM).
+Detalles de implementación importantes:
+- Asegúrate de manejar zonas horarias (timezones) correctamente.
+- Valida el string de la fecha antes de parsearlo para prevenir errores.
+- Cuando parsees fechas, considera usar `clj-time` para una API más idiomática y funcional.
 
-Hay alternativas a `java-time`, como `clj-time`, pero `java-time` es actualmente la opción recomendada porque está basada en la API de tiempo de Java 8, que es más moderna y completa.
-
-A nivel de implementación, cuando llamamos a `jt/local-date` con una cadena, se está utilizando la función `LocalDate.parse` de Java para convertir la cadena en un objeto `LocalDate`.
-
-## Vea También:
-
-Puedes explorar más sobre fechas y tiempos en Clojure en los siguientes enlaces:
-
-- Biblioteca java-time de Clojure: https://cljdoc.org/d/java-time/java-time/0.3.2/api/java-time
-- API de Java 8 Time: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- Librería clj-time: https://github.com/clj-time/clj-time
-
-Recuerda, trabajar con fechas y cadenas puede ser complicado. Asegúrate de entender bien cómo la conversión de cadena a fecha funciona en tu contexto específico para evitar errores sutiles y difíciles de detectar.
+## Ver También:
+- Documentación de `clj-time`: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Guía de Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+- Sobre `java.time`: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

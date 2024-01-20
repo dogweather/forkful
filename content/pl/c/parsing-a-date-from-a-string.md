@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:35:03.894134-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,50 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? / Co i Dlaczego?
+Parsing dates from strings is about converting text to a date/time format that a program can understand. Programmers do it to process user input, to interact with databases, and to handle date logic in applications.
 
-Analiza daty z ciągu (stringu) to proces ekstrakcji konkretnych informacji o dacie z tekstu. Programiści to robią, aby przekształcić dane wejściowe w postaci tekstowej na format, który jest łatwiejszy do przetworzenia i analizy.
-
-## Jak to zrobić:
-
-Przykład programu, który analizuje datę ze stringa:
+## How to / Jak to zrobić:
+Here's a simple example of how to do it in C using the `strptime` function:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(){
+int main() {
     struct tm tm;
-    char buf[255];
-
-    memset(&tm, 0, sizeof(struct tm));
-    strptime("2022-09-26", "%Y-%m-%d", &tm);
-    strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
-
-    printf("Data: %s\n", buf);    
-
+    char *str_date = "2023-03-14";
+    
+    if (strptime(str_date, "%Y-%m-%d", &tm) == NULL) {
+        printf("Date format error\n");
+    } else {
+        printf("Successfully parsed: Year: %d, Month: %d, Day: %d\n", 
+               tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    }
+    
     return 0;
 }
 ```
 
-Gdy uruchomisz ten kod, otrzymasz następującą odpowiedź:
-
-```C
-Data: poniedziałek, wrzesień 26, 2022
+Output:
+```
+Successfully parsed: Year: 2023, Month: 3, Day: 14
 ```
 
-## Dogłębne zanurzenie
+Note: `tm.tm_year` is the number of years since 1900, and `tm.tm_mon` is zero-indexed (0 = January).
 
-1. **Kontekst historyczny**: Funkcję `strptime` dodano do biblioteki C w 1989 roku, a początkowo była dostępna tylko na platformach BSD i Linux. Obecnie jest dostępna w większości dystrybucji C.
+## Deep Dive / W Głąb Tematu:
+Parsing a date from a string isn't new. In C, `strptime()` has been the go-to since POSIX standards came into play. There are alternatives, like `sscanf` or third-party libraries, but they have trade-offs in complexity and safety.
 
-2. **Alternatywy**: Chociaż najczęściej używanymi funkcjami są `strptime` i `strftime`, inne biblioteki, takie jak `getdate`, także mogą być używane do rozwiązania tego problemu.
+The `strptime` function's job is to translate a string form based on provided format directives (like `%Y` for year). It populates a `tm` struct with this data. However, remember it doesn't set `tm.tm_wday` or `tm.tm_yday` unless you explicitly use day of the week or day of the year in your format string.
 
-3. **Szczegóły implementacji**: `strptime` musi być zdefiniowane przez bibliotekę czasu. Ponieważ może być to zdefiniowane różnie na różnych systemach, zachowanie może się różnić.
+Also, mind the locale. `strptime` behavior may differ with locale settings regarding day/month names.
 
-## Zobacz również
-
-1. Dokumentacja na temat funkcji `strptime`: https://man7.org/linux/man-pages/man3/strptime.3.html
-
-2. Więcej informacji na temat zrozumienia formatów daty i czasu: https://strftime.org/
-
-3. Dyskusja na StackOverflow na temat analizy daty z ciągu: https://stackoverflow.com/questions/2891494/how-do-i-use-strptime
+## See Also / Zobacz Również:
+- C Standard Library Documentation on `strptime`: https://en.cppreference.com/w/c/chrono/strptime
+- GNU C Library Reference Manual: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html
+- POSIX Standard for Time Functions: https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html

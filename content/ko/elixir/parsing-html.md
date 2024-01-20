@@ -1,5 +1,6 @@
 ---
 title:                "HTML 파싱"
+date:                  2024-01-20T15:31:07.686568-07:00
 html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Elixir"
@@ -10,44 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## What & Why? (무엇이며 왜?)
+HTML 파싱은 HTML 문서를 분석해서 데이터를 추출하거나 의미를 이해하는 과정입니다. 프로그래머들이 데이터를 크롤링하거나, 웹 내용을 분석하고 조작하기 위해 이 작업을 수행합니다.
 
-HTML 파싱은 HTML 문서를 분석하고 그 내용을 처리하는 것을 의미합니다. 프로그래머는 HTML 파싱을 통해 웹사이트에서 필요한 데이터를 추출하거나, 웹 페이지의 구조를 이해하거나, 콘텐츠를 수정하거나, 새로운 웹 페이지를 생성하는데 사용합니다.
-
-## '어떻게' 부분:
-
-Elixir에서는 Floki 라이브러리를 사용하여 HTML을 파싱할 수 있습니다. 아래는 간단한 예제입니다.
+## How to:
+Elixir에서 HTML을 파싱하기 위해 `Floki` 라이브러리를 사용하는 간단한 예제입니다:
 
 ```elixir
+# 의존성 추가해야 함 (mix.exs 파일에서):
 defp deps do
   [
-    {:floki, "~> 0.30.0"}
+    {:floki, "~> 0.26.0"}
   ]
 end
-```
 
-이 버전의 Floki 라이브러리를 프로젝트에 추가하고, HTML 문서를 파싱하는 함수를 생성합니다.
-
-```elixir
+# HTML 문서를 파싱하는 예제
 defmodule HtmlParser do
-  def parse_html(html) do
-    html
-    |> Floki.find("p")
-    |> Enum.map(fn {_, [], inner_text} -> inner_text end)
+  def parse(html) do
+    {:ok, document} = Floki.parse_document(html)
+    document |> Floki.find("h1") |> Enum.map(&Floki.text/1)
   end
 end
+
+# 사용 예제
+html_content = "<html><body><h1>Welcome to Elixir</h1></body></html>"
+titles = HtmlParser.parse(html_content)
+IO.inspect(titles)  # 출력: ["Welcome to Elixir"]
 ```
+이 코드는 HTML 문서에서 `<h1>` 태그의 텍스트를 추출합니다.
 
-위의 함수는 HTML 문서에서 "p" 태그를 찾아서 텍스트만 추출합니다.
+## Deep Dive (심층 정보):
+HTML 파싱은 1990년대 초 월드 와이드 웹이 시작되면서 함께 태어났습니다. Elixir에서는 `Floki`, `MochiWeb`, `HTML5ever` 등과 같은 다양한 라이브러리를 사용할 수 있습니다. `Floki`는 jQuery의 선택자와 비슷한 문법을 사용하여 HTML을 쉽게 조회하고 조작할 수 있게 해 줍니다. 내부적으로, `Floki`는 Elixir가 사용하는 `Erlang` 가상 머신 위에서 효율적으로 실행되도록 최적화되어 있습니다.
 
-## 깊이있게 보기:
+HTML 파싱의 대안으로는 정규 표현식을 사용하는 방법도 있지만, 이는 복잡하고 실수하기 쉬운 경향이 있습니다. 따라서 안정적이고 정확하게 HTML을 파싱하기 위해서는 `Floki` 같은 전용 라이브러리를 사용하는 것이 좋습니다.
 
-HTML 파싱은 웹 개발 초기부터 필요한 기술 중 하나였습니다. 이는 HTML 문서의 구조를 이해하고 데이터를 추출하는데 필요하기 때문입니다. 다른 대안에는 정규 표현식(regex)이 있지만, HTML 파싱이 복잡한 구조에 대해 더 강한 핸들링을 제공하므로 보다 나은 선택이 될 수 있습니다.
-
-Elixir에서 HTML 파싱은 Floki 라이브러리를 사용합니다. 이 라이브러리는 HTML DOM에 대한 간단한 인터페이스를 제공하며, CSS 선택자를 지원하여 목표된 HTML 요소를 쉽게 찾을 수 있도록 합니다.
-
-## 참고하셔도 좋은 자료:
-
-1. Floki 라이브러리: https://hexdocs.pm/floki/Floki.html
-2. Elixir 공식 문서: https://elixir-lang.org/getting-started/introduction.html
-3. HTML 파싱에 대한 상세 글: https://www.freecodecamp.org/news/best-practices-in-html-parsing-with-elixir/
+## See Also (참고 자료):
+- Floki GitHub repository: [https://github.com/philss/floki](https://github.com/philss/floki)
+- Elixir 공식 문서: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+- HTML5ever, an HTML parser in Rust: [https://github.com/servo/html5ever](https://github.com/servo/html5ever)
+- MochiWeb, an Erlang library for building lightweight HTTP servers: [https://github.com/mochi/mochiweb](https://github.com/mochi/mochiweb)

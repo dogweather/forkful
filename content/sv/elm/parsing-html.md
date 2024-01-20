@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:31:08.369871-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why? (Vad & Varför?)
+Parsing HTML handlar om att tolka och omvandla HTML-kod till något som programmets logik kan hantera. Vi gör det för att kunna manipulera, analysera och utvinna användbar data från webbsidor.
 
-Att parsa HTML handlar om att omvandla HTML-kod till en datastruktur som ett program kan förstå och bearbeta. Programmers gör detta för att de kan interagera med webbinnehåll på ett mer nyanserat sätt, till exempel extrahera specifik data, manipulera sidinnehåll eller implementera webbskrapning.
-
-## Hur man gör:
-
-Här är ett Elm-program som parar en HTML-sträng genom att använda `Html.Parser`-biblioteket. 
+## How to: (Hur man gör:)
+I Elm använder vi paketet `html-parser` för att parsa HTML. Dina Elm-modeller blir en representation av det parsade innehållet.
 
 ```Elm
-import Html.Parser exposing (..)
-import Html.Parser.Util exposing (tag)
+import Html.Parser exposing (parse)
 
-parseHtml : String -> Result Parser.Error (List Parser.Step)
-parseHtml =
-    parse <| oneOf [ tag "h1", tag "p" ]
-
-example : String
-example =
-    """
-    <h1>Hello world!</h1>
-    <p>Welcome to Elm.</p>
-    """ 
-
-main = 
-    case parseHtml example of
-        Ok result ->
-            -- process the result
-        Err _ ->
-            -- handle the error
+main =
+    let
+        htmlString = "<p>Hej Världen!</p>"
+        parsedHtml = parse htmlString
+    in
+    -- Inspect the result of parsing
+    Debug.toHtml parsedHtml
 ```
 
-Kör du det programmet kommer du få en lista av `Parser.Step` som representar h1- och p-taggar i HTML-strängen.
+Kör den här koden, så får du en struktur av det parsade HTML-elementet som output.
 
-## Fördjupning:
+## Deep Dive (Djupdykning)
+Parsing av HTML i Elm sker genom funktionella transformer. Historiskt sett har parsers i olika språk varierat från regexbaserade till DOM-baserade tekniker. `html-parser` i Elm är deklarativ och bygger på immutabla datastrukturer, vilket passar Elm:s arkitektur.
 
-Historiskt sett har HTML-parsing utförts på serversidan med hjälp av språk som PHP och Java. Som en kompileringsspråk möjliggör Elm parsing av HTML på klientsidan, vilket kan vara mer effektivt beroende på användningsfallet.
+Alternativ till `html-parser` inkluderar att använda native JavaScript-bibliotek via ports, men det går emot Elm:s filosofi om renhet och pålitlighet. En annan aspekt att nämna är prestanda – Elm's parsing är snabb tack vare dess effektiva Virtual DOM.
 
-Alternativen till att parsa HTML med Elm inkluderar att använda JavaScript-bibliotek som JSDOM eller Cheerio.
+## See Also (Se även)
+- Elm `html-parser` package: https://package.elm-lang.org/packages/hecrj/html-parser/latest/
+- Tutorial on parsing in Elm: https://elmprogramming.com/parsing.html 
+- Elm's Virtual DOM: https://guide.elm-lang.org/optimization/lazy.html
 
-När vi pratar om implementeringsdetaljer använder Elm-bibliotek som `Html.Parser` en teknik som kallas för "recursive descent parsing". Det här tillvägagångssättet bygger parse trädet rekursivt nerifrån och upp genom att matcha HTML-strängen med en serie av försök till parsers definierade i programmet.
-
-## Se även:
-
-- [Elm's Html.Parser modul](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser): Det huvudsakliga biblioteket för att parsa HTML i Elm.
-- [Parser Combinators in Elm](https://medium.com/@_rchaves_/parser-combinators-in-elm-22654ffd02f2): En djupare dykning i parser combinators, som är grunden för Elm's parsing bibliotek.
+För djupare förklaringar och mer komplexa exempel, utforska länkarna ovan.

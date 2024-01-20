@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:33:47.196590-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Ruby"
@@ -10,42 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+HTML:n jäsentäminen tarkoittaa HTML-dokumentin rakenteen muuttamista käsiteltävässä muodossa, esimerkiksi haettaessa tietoja web-sivuilta. Ohjelmoijat jäsentävät HTML:ää datan kaapamiseen, automatisointiin ja verkkosivujen sisällön analysointiin.
 
-HTML-tiedostojen jäsentäminen (parsing) on prosessi, jossa muutetaan web-sivun HTML-koodi joukoksi merkityksellisiä elementtejä. Ohjelmoijat tekevät tämän esimerkiksi tiedon kaappaamiseksi tai sivuston rakenteen ymmärtämiseksi.
+## How to: (Kuinka tehdä:)
+Jäsentämiseen Rubyssa, `nokogiri`-helmi on suosittu valinta. Asenna se käyttämällä `gem install nokogiri`, ja olet valmis aloittamaan.
 
-## Miten:
-
-Rubyssa voit käyttää Nokogiri-gemistön avulla HTML:n jäsentämistä. Tässä on perusesimerkki:
-
-```ruby
+```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Avaa sivu ja luo Nokogiri-objekti
-doc = Nokogiri::HTML(open('http://www.example.com'))
+# Avaa web-sivu ja luo Nokogiri-objekti
+doc = Nokogiri::HTML(URI.open('https://example.com'))
 
-# Etsi kaikki linkit (a-tunnisteet)
-links = doc.css('a')
-
-# Tulosta jokaisen linkin teksti
-links.each do |link|
-  puts link.text
+# Etsi kaikki 'h1'-otsikot
+doc.css('h1').each do |header|
+  puts header.content
 end
 ```
 
-Tämä koodi käy läpi jokaisen linkin `www.example.com` sivulta ja tulostaa sen tekstin.
+Tämä tulostaisi jokaisen `h1` -otsikon sisällön `https://example.com` sivulta.
 
-## Syväsukellus:
+## Deep Dive (Sukellus syvyyksiin)
+HTML:n jäsentäminen Rubyssa on tärkeä taito, joka on ollut tarpeellinen jo webin alkupäivistä. `Nokogiri` on yksi suosituimmista kirjastoista ja perustuu `libxml2` kirjastoon, joka on tehokas ja nopea XML:n ja HTML:n käsittelyyn. Vaihtoehtoisia työkaluja ovat `Oga` ja `Hpricot` (vaikkakin `Hpricot` on jo vanhentunut). Nokogiri erottuu kyvyllään käsitellä sekä fragmentteja että kokonaisia dokumentteja ja tarjoaa XPath ja CSS3-selektorit tiedon haun optimointiin.
 
-HTML-jäsentämisen historiallinen konteksti on syvällisesti yhteydessä webin kehittymiseen ja sen mukana tulleisiin tietorakenteisiin. Yksinkertaistettuna, HTML-jäsentämisen avulla on mahdollista ymmärtää miten web-sivut on rakennettu ja mitä tietoa ne sisältävät.
-
-Vaihtoehtoja Ruby:n Nokogiri-kirjastolle ovat esimerkiksi `Oga` ja `Hpricot`, mutta Nokogiri on ehkä suosituin sen kattavien ominaisuuksiensa ansiosta.
-
-HTML-jäsentämisen toteuttaminen riippuu siitä, minkä kirjaston tai teknologian valitset ja mitkä ovat vaatimuksesi. Joissakin tapauksissa riittää yksinkertainen säännöllinen lauseke (regex), mutta monimutkaisemmat sivustot vaativat täysiverisen HTML-jäsentimen kuten Nokogirin.
-
-## Katso myös:
-
-1. [Nokogiri-ohjekirja](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html)
-2. [Oga-ohjekirja](https://github.com/YorickPeterse/oga)
-3. [Hpricot](https://github.com/hpricot/hpricot/wiki)
+## See Also (Katso myös)
+- Nokogiri dokumentaatio: [https://nokogiri.org/](https://nokogiri.org/)

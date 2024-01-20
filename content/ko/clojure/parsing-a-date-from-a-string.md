@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:35:50.061152-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요한가?
-문자열에서 날짜를 파싱한다는 것은 문자열 형태로 되어있는 날짜를 컴퓨터가 이해할 수 있는 형태로 변환하는 것을 의미합니다. 프로그래머들은 데이터를 분석하거나 처리할 때 이런 변환이 필요하며, 이를 위해 Clojure에서는 java.time 패키지를 사용할 수 있습니다.
+## What & Why? (무엇과 왜?)
+문자열에서 날짜를 파싱한다는 것은 문자열 형태로된 날짜를 프로그램이 이해할 수 있는 날짜 객체로 변환하는 것이다. 프로그래머들은 데이터 저장, 검색, 사용자 입력 처리 시 이 과정을 활용한다.
 
-## 사용 방법:
-Clojure에서 문자열로부터 날짜를 파싱하는 방법을 간략히 살펴보겠습니다.
+## How to: (실행 방법)
+Clojure에서 날짜를 파싱하는 가장 일반적인 방법은 `java.time` 패키지를 사용하는 것이다.
 
 ```Clojure
-(require '[clojure.java-time :as jt])
+(require '[java-time :as jt])
 
-(defn string-to-date [s]
-  (jt/parse s))
+;; 문자열에서 LocalDate로 파싱
+(def date-str "2023-04-01")
+(def parsed-date (jt/local-date date-str))
+(parsed-date) ;; => #object[java.time.LocalDate 0x... "2023-04-01"]
 
-(string-to-date "2021-12-31")
+;; 혹은 패턴을 지정하여 파싱
+(def custom-date-str "01/04/2023")
+(def date-pattern "dd/MM/yyyy")
+(def parsed-custom-date (jt/local-date custom-date-str date-pattern))
+(parsed-custom-date) ;; => #object[java.time.LocalDate 0x... "2023-04-01"]
 ```
 
-이렇게 하면 결과는 "2021-12-31" 문자열이었던 날짜가 java.time.LocalDate 형태로 변환되는 것을 확인할 수 있습니다.
+파싱한 날짜를 사용하여 다양한 날짜 연산을 할 수 있다.
 
-## 깊이 있게 알아보기:
-이 방식의 역사적 맥락, 대안, 그리고 구현에 대한 세부적인 정보를 살펴보겠습니다.
+```Clojure
+;; 날짜에 일주일 더하기
+(def one-week-later (jt/plus-days parsed-date 7))
+(one-week-later) ;; => #object[java.time.LocalDate 0x... "2023-04-08"]
+```
 
-1. 역사적 맥락: 문자열에서 날짜를 파싱하는 작업은 가장 초기의 프로그래밍부터 필요했던 작업입니다. 복잡한 시간 포맷을 다루기 위해 여러 표준과 라이브러리가 등장하였고, 그 중에서도 java.time 패키지는 현재 가장 널리 쓰이고 있습니다.
-2. 대안: java.time 패키지 뿐 아니라, Joda-Time나 Apache Commons Lang 등 다른 라이브러리들도 이용할 수 있습니다. 하지만 대부분의 경우 java.time 패키지가 충분합니다.
-3. 구현 세부정보: 위의 예제에서는 단순한 "YYYY-MM-DD" 포맷에 대해서만 언급하였습니다. 하지만 java.time 패키지는 서로 다른 형태의 문자열에서도 날짜를 파싱하는 기능을 제공하며, 이는 java.time.format.DateTimeFormatter 클래스를 통해 구현됩니다.
+## Deep Dive (깊이 들여다보기)
+날짜 파싱은 오래전부터 필요한 기능이었다. Clojure가 JVM 기반 랭귀지이기 때문에, `java.util.Date`나 `java.util.Calendar`와 같은 자바 라이브러리를 활용한 방식으로 시작했다. 이후, `java.time` (Joda-Time에서 영향을 받은) 패키지가 자바 8부터 등장하면서 더욱 쉽고 안정적으로 날짜를 다룰 수 있게 되었다.
 
-## 관련 자료:
-아래에는 문자열에서 날짜를 파싱하고 이를 이용한 프로그래밍에 대한 추가적인 자료가 있습니다.
+클래스 변환 없이 바로 사용하는 방식(`java.time`) 말고도, `clj-time`이라는 라이브러리를 사용하는 방법도 있다. 이 라이브러리는 Joda-Time을 기반으로 하며, Clojure에서 더 자연스러운 날짜 타임 기능을 제공한다.
 
-1. Official Clojure Documentation (https://clojure.org)
-2. Java.time Tutorial (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-3. Clojure Cookbook (https://clojure-cookbook.com)
+장점은 사용 용이성과 Clojure에 더 잘 맞는 인터페이스를 가짐이지만, java.time에 비해 성능적인 측면에서 손실이 있을 수 있다는 점을 고려해야 한다.
+
+## See Also (참고 자료)
+- Clojure 공식 문서: [https://clojure.org/](https://clojure.org/)
+- `java-time` 라이브러리: [https://github.com/dm3/clojure.java-time](https://github.com/dm3/clojure.java-time)
+- `clj-time` 라이브러리: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- 자바 8 `java.time` 패키지 문서: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

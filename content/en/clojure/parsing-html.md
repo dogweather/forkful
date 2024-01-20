@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:30:55.511340-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,42 +13,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML simply means interpreting HTML documents into a structure a computer can understand. Programmers do it to manipulate, extract or change webpage contents automatically.
+Parsing HTML is the act of turning a string of HTML into a data structure your program can understand and manipulate. Programmers do it to interact with, extract, and modify content from the web.
 
 ## How to:
 
-In Clojure, libraries like Enlive and Hickory make HTML parsing easier. Here's a basic example using Enlive:
+To parse HTML in Clojure, we use the `clj-tagsoup` library, a wrapper for the Tagsoup Java library which is handy for parsing real-world HTML.
 
-```Clojure
-(require '[net.cgrand.enlive-html :as html])
+First, add the clj-tagsoup dependency to your project:
 
-(defn parse-html [html-content]
-  (-> html-content
-      java.io.StringReader.
-      html/html-resource
-      html/select [[:p]]))
-
-(println (parse-html "<p>Hello, Clojure!</p>"))
+```clojure
+[clj-tagsoup "0.3.3"] ; Check for the latest version
 ```
 
-Running this code will print the text inside the paragraph tag:
+Now, let's parse some HTML:
 
-`[Hello, Clojure!]`
+```clojure
+(require '[clj-tagsoup.core :as tagsoup])
+
+; Parse HTML and get a vector of maps representing the parsed elements
+(def parsed-html (tagsoup/parse-string "<html><body><p>Hello, World!</p></body></html>"))
+
+; Access elements
+(println (first parsed-html))
+```
+
+Sample output:
+
+```clojure
+{:tag :html, :attrs {}, :content [...]}
+```
+
+To extract specific elements, like paragraphs:
+
+```clojure
+(defn extract-paragraphs [html]
+  (let [parsed (tagsoup/parse-string html)]
+    (filter #(= :p (:tag %)) parsed)))
+
+; Usage
+(extract-paragraphs "<p>First</p><p>Second</p>")
+```
 
 ## Deep Dive
 
-Parsing HTML in Clojure is not traditionally done by built-in functions but with third-party libraries. Enlive, used above, offers parser and selector capabilities and has been around since Clojure 1.2. Alternatively, Hickory offers Clojure idioms for HTML as data and is praised for its simplicity.
+Parsing HTML in Clojure, as with other languages, typically involves navigating a tree-like structure. Back in the day, this could get messy. Libraries like Tagsoup made life easier by handling quirky real-world HTML.
 
-Internally, these libraries implement HTML parsing via Java libraries (like Jsoup for Enlive and TagSoup for Hickory). An HTML document is converted to a parse tree, which Clojure can manipulate as a simple data structure.
+Clojure’s functional nature lets us manipulate HTML data smoothly. Libraries like `clj-tagsoup` leverage Java's battle-tested tools while adding Clojure's elegance.
+
+Alternative libraries include `Enlive` and `Hickory`. Enlive specializes in both parsing and templating, allowing more complex operations. Hickory translates HTML to Clojure data structures for those who prefer a pure Clojure solution.
+
+The implementation focuses on ease and a declarative style. Under the hood, `clj-tagsoup` uses locators and navigators to traverse HTML, providing a higher abstraction over direct DOM manipulation.
 
 ## See Also
 
-For further reading, here are some great resources:
-
-1. [Enlive GitHub](https://github.com/cgrand/enlive) - For advanced usage and detailed documentation.
-
-2. [Hickory GitHub](https://github.com/davidsantiago/hickory) - For further understanding on HTML parsing in the Hickory style.
-
-3. [Clojure for the Brave and True](https://www.braveclojure.com/) - Provides a good starting point for those new to Clojure.
-
-4. [StackOverflow: Parsing HTML](https://stackoverflow.com/questions/5374495/parsing-html-in-clojure) - A discussion on various ways to parse HTML in Clojure.
+- clj-tagsoup on GitHub: https://github.com/nathell/clj-tagsoup
+- Tagsoup, the underlying Java library: https://github.com/McCLIM/cl-tagsoup
+- Enlive, another Clojure HTML parsing library: https://github.com/cgrand/enlive
+- Hickory, a Clojure project for parsing HTML: https://github.com/davidsantiago/hickory

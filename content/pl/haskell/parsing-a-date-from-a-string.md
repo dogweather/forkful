@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:36:32.151862-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why?
+Co i dlaczego? Parsing to proces przekształcenia tekstu na dane o określonej strukturze, w tym przypadku - daty. Programiści parsują daty, aby móc manipulować i wykorzystywać je w aplikacjach.
 
-Przetwarzanie daty z ciągu znaków to proces zamiany tekstowej reprezentacji daty (np. "20-12-2022") na odpowiednią strukturę danych. Programiści robią to, aby manipulować datami i czasem w bardziej wymiarowy sposób.
-
-## Jak to zrobić:
-
-Haskell oferuje nam wiele możliwości do parsowania dat. Możemy skorzystać z biblioteki `Data.Time` i użyć funkcji `parseTimeM`. Oto, jak to zrobić:
+## How to:
+Jak to zrobić:
 
 ```Haskell
-import Data.Time
 import Data.Time.Format
+import Data.Time.Clock
 
+-- parsowanie daty
+parseDate :: String -> Maybe UTCTime
+parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
+
+main :: IO ()
 main = do
-  let dateString = "2022-12-20"
-  let format = "%Y-%m-%d"
-  let maybeDate = parseTimeM True defaultTimeLocale format dateString
-  print (maybeDate :: Maybe Day)
+  let exampleDate = "2021-09-17"
+  print $ parseDate exampleDate
 ```
 
-Po uruchomieniu tego kodu otrzymasz taki wynik:
-
-```Haskell
-Just 2022-12-20
+Wyjście:
+```
+Just 2021-09-17 00:00:00 UTC
 ```
 
 ## Deep Dive
+Głębsze spojrzenie: Historia funkcji parse działających na datach sięga czasów pierwszych komputerów. W Haskellu, biblioteka `Data.Time.Format` pozwala na elastyczne parsowanie i formatowanie dat. Alternatywami są biblioteki takie jak `time` i `old-time`. Implementacja wykorzystuje 'locale', czyli ustawienia regionalne, które decydują o formacie daty, oraz specyfikatory formatu, takie jak "%Y-%m-%d" dla "rok-miesiąc-dzień".
 
-Jeżeli mówimy o przetwarzaniu dat z ciągu znaków, warto znać historię. Analiza danych była od zawsze ważnym elementem programowania, przede wszystkim dlatego, że dane wejściowe są często postrzegane jako ciągi znaków, a parsowanie pozwala na ich łatwe użycie. 
+## See Also
+Zobacz także:
 
-Mniejsze projekty mogą skorzystać z innych funkcji do przekształcenia ciągu znaków w datę, takich jak `read` i `show`, ale nie oferują one takiej elastyczności jak `parseTimeM`. 
-
-`parseTimeM` pochodzi z biblioteki `Data.Time`. To bardzo wydajne narzędzie, które daje nam dużo opcji, ale wszystko sprowadza się do Tru, False, formule formatu i ciągu.
-  
-## Zobacz Też:
-
-- [Dokumentacja biblioteki Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Poradnik o parsowaniu dat w Haskellu](https://riptutorial.com/haskell/example/5805/parsing-a-date-and-time)
+- [Haskell Time Library](https://hackage.haskell.org/package/time)
+- [LYAHFGG: Dates and Times](http://learnyouahaskell.com/input-and-output#dates-and-times)

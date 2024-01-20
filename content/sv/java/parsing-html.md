@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:32:25.132505-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,40 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att tolka (parse) HTML handlar om att konvertera HTML-data till ett mer "hanterbart" format, såsom ett trädstruktur. Det är viktigt för programmerare att gör detta för att kunna bearbeta, analysera, och manipulera webbinnehåll på ett effektivt sätt.
+Parsing av HTML är att läsa och tolka HTML-koden så att dess struktur och innehåll blir begripligt och hanterbart för program. Programmerare gör det för att automatisera webbskrapning, kontrollera innehåll eller interagera med webbsidor i applikationer.
 
-## Hur man gör:
-I Java kan du använda biblioteket JSoup för att göra detta. JSoup är en robust och flexibel bibliotek för att arbeta med HTML-data. Till exempel:
+## Hur gör man?:
+För att parsa HTML i Java kan vi använda Jsoup, ett kraftfullt bibliotek för att hantera HTML. Här är ett snabbt exempel:
 
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        String html = "<html><head><title>Test</title></head>"
-                    + "<body><p>Testparagraf.</p></body></html>";
-        Document doc = Jsoup.parse(html);    
-        System.out.println(doc.title());
-        System.out.println(doc.body().text());
+public class HtmlParserExample {
+    public static void main(String[] args) {
+        String html = "<html><head><title>Exempelsida</title></head>"
+                + "<body><p>Dett är en <a href='http://example.com/'>länk</a>.</p></body></html>";
+        
+        Document doc = Jsoup.parse(html);
+        Element link = doc.select("a").first();
+        
+        System.out.println("Länktext: " + link.text());
+        System.out.println("URL: " + link.attr("href"));
     }
 }
 ```
-Kör du den här koden, så skulle output bli:
+Körning av koden ger följande output:
 ```
-Test
-Testparagraf.
+Länktext: länk
+URL: http://example.com/
 ```
-## Djupdykning
-För historisk kontext, HTML-tolkning, eller parsing, har funnits sedan vi började använda webben. Men med Java och bibliotek som Jsoup, har det aldrig varit enklare. 
 
-Det finns andra alternativ förutom Jsoup, till exempel HtmlCleaner och jHtml, men många anser att Jsoup är mer intuitivt och kraftfullt tack vare dess stöd för CSS-selektor syntax.
+## Djupdykning:
+Parsing av HTML har funnits så länge som HTML själv. Det började med enkla verktyg i CGI och Perl och har utvecklats till komplexa bibliotek som Jsoup i Java, Beautiful Soup i Python och Cheerio i Node.js. Medan Jsoup är lätt att använda och ger kraftfulla selektorer liknande jQuery, finns det också andra Java-bibliotek som HtmlUnit som är mer till för att simulera webbläsare. Implementationsdetaljer är viktiga; att välja rätt bibliotek kan spara tid och undvika fallgropar som att hantera felaktig eller ofullständig HTML som ofta förekommer i verkliga webbsidor.
 
-För implementation, Html-tolkning fungerar genom att programmet går igenom HTML-koden från början till slut, tolkar varje tagg och skapar överensstämmande noder i det resulterande dokumentträdet.
-
-## Se också
-Här är några relaterade källor för mer detaljerade studier:
-- JSoup API dokumentation: https://jsoup.org/apidocs/
-- Officiell Java dokumentation: https://docs.oracle.com/javase/tutorial/
-- ‘HtmlCleaner’ biblioteket: http://htmlcleaner.sourceforge.net/
-- ‘jHtml’ biblioteket: https://jhy.io/jHtml
+## Se även:
+- Jsoup officiella webbplats: https://jsoup.org/
+- HtmlUnit officiella webbplats: https://htmlunit.sourceforge.io/
+- W3C HTML parser jämförelse: https://www.w3.org/html/wg/drafts/html/master/single-page.html#parsing-html-documents

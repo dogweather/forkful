@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:35:52.485236-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-לנתח תאריך ממחרוזת הוא תהליך של חילוץ המידע הרלוונטי ממחרוזת, והאפשרות להציגו או להשתמש בו באופן יותר יעיל. מתכנתים עושים את זה כדי ליצור אינטראקציות יותר עשירות, דינמיות ואישיות 
+## מה ולמה?
+פירסונג תאריך ממחרוזת הוא תהליך שבו מתרגמים נתונים מטקסטואליים למבנה נתונים מתאריך. תכנתים עושים זאת כדי לאפשר מניפולציה והשוואות עם נתוני תאריכים בתוך התוכנה.
 
-## איך עושים את זה: 
-הקוד הבא מדגים את התהליך:
-```Elixir
-{:ok, date} = Date.from_iso8601("2016-01-01")
+## איך לעשות:
+אייליקסיר מציעה כמה אופציות לפירסונג תאריכים. הנה דוגמא:
 
-IO.puts(to_string(date))
+```elixir
+defmodule DateParser do
+  def parse_date(string) do
+    {:ok, date} = NaiveDateTime.from_iso8601(string)
+    date
+  end
+end
+
+# דוגמא לשימוש
+parsed_date = DateParser.parse_date("2025-03-14T11:52:39.123Z")
+IO.inspect(parsed_date)
 ```
 
-תוצאת הקוד הנ"ל תהיה:
+פלט דוגמא:
 
-"2016-01-01"
+```elixir
+~N[2025-03-14 11:52:39.123]
+```
 
-## בדיקה מעמיקה:
-חלק מההקשר ההיסטורי לעבודה עם תאריכים במחרוזת הוא שמתחילה מיישומים על מחשבים מקומיים, בהם היו תצורות אישיות של תאריכים וזמנים. 
+## צלילה עמוקה
+פירסונג תאריכים היה חלק מתכנות מאז שנות ה-60. כל שפה מציגה ספריה סטנדרטית לעבודה עם תאריכים וזמנים. באייליקסיר, `NaiveDateTime` מספק המרה ממחרוזת בפורמט ISO8601 - סטנדרט בינלאומי לתאריכים וזמנים. חלופות כוללות ספריות כמו `Timex`, אשר מציעה יותר גמישות ופונקציות נוספות. בעבודה עם פורמטים אחרים שאינם ISO8601, יש לבחור בספריה המתאימה או ליצור פונקציית פירסונג מותאמת אישית.
 
-כבר היו מספר בחינות שאפשרנו למתכנתים לנתח תאריכים ממחרוזות, כולל Timex וCalendar. עם זאת, הטרק ביבליוטקה של Elixir כוללת כיום יכולת מובנית לנתח תאריכים.
-
-מעתה והלאה, נכונה עכשיו, יש יכולת מובנית בשפת Elixir לנתח לתאריך ממחרוזת, מה שמקנה לנו את היכולת לבצע זאת בצורה יעילה ונוחה מאוד.
-
-## ראה גם:
-1. [Elixir Date Documentation](https://hexdocs.pm/elixir/Date.html) - התיעוד הרשמי של המודול 'Date' בשפת Elixir.
-2. [Introduction to Elixir](https://elixir-lang.org/getting-started/introduction.html) - מבוא לשפת Elixir
-3. [Elixir School](https://elixirschool.com/en/) - לימוד Elixir interactive למתכנתים של כל הרמות.
+## ראה גם
+- [Elixir's NaiveDateTime documentation](https://hexdocs.pm/elixir/NaiveDateTime.html)
+- [Timex - Elixir date/time library](https://hexdocs.pm/timex/Timex.html)

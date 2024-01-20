@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:36:58.004701-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列から日付を解析するとは、文字列を特定の形式の日付に変換する操作です。プログラマがこれを行うのは、データを適切な形式に照合し、操作できるようにするためです。
+## What & Why?
+何となぜ？
 
-## チュートリアル：
-以下はGleamのコード例とその出力です。
+文字列から日付を解析するとは、日付のデータを文字列から抽出して利用可能な形式に変換することです。プログラマーはデータ収集、ログ分析、ユーザー入力の処理などで使用します。
 
-```gleam
-import gleam/try
-import gleam/bit_builder
+## How to:
+やり方
 
-pub fn parse_date_string(date_string: String) -> Result(Date, Nil) {
-    date_string
-    |> bit_builder.lines()
-    |> bit_builder.formatted_date("[YYYY]-[MM]-[DD]")
-    |> try.unwrap_or_default()
+```Gleam
+import gleam/calendar
+import gleam/should
+
+pub fn parse_date(date_string: String) -> Result(calendar.Date, String) {
+  calendar.Date.from_iso8601_string(date_string)
 }
 
-let result = parse_date_string("2022-09-14")
+fn main() {
+  let date_example = "2023-04-02"
+  case parse_date(date_example) {
+    Ok(date) -> should.equal(date, calendar.Date(2023, 04, 02))
+    Error(err) -> io.println(err)
+  }
+}
 ```
 
-このコードは文字列 "2022-09-14" を特定の形式（YYYY-MM-DD）に解析します。
+出力サンプル：
+```
+Ok(#Date(year: 2023, month: 4, day: 2))
+```
 
-## ディープダイブ
-つまり、文字列から日付を解析するというアクションは、歴史的に見て、データ形式が一貫性を欠いていた時代から存在しています。これによりプログラマは、異なる形式の日付データをうまく解析し、ユニバーサルな形式に変換できます。
+## Deep Dive
+深掘り
 
-また他の代替手段としては、手動で文字列を解析し、日付部分を抽出することもできますが、これは時間がかかり、エラープローンです。
+文字列から日付を解析する機能は、いずれのプログラミング言語にも共通です。歴史的には、多様な日付フォーマットが使われてきましたが、ISO 8601は国際的な標準フォーマットとして広く受け入れられています。Gleamでは、`calendar`モジュールを使いISO 8601形式の日付文字列から日付型へ確実に変換できます。代替手段として、独自の解析規則を設けることも可能ですが、標準フォーマットの使用が推奨されます。Gleamの型安全な性質は、期待するパース結果をしっかり保証してくれるので、解析エラーを適切に扱うことが重要です。
 
-Gleamの `bit_builder` ビルダーパッケージの `formatted_date` 関数は、この日付解析を非常に簡単にします。これは、指定した形式で提供された日付の文字列を解析し、年、月、日の値を持つDateオブジェクトを返すことができます。
+## See Also
+関連情報
 
-## 参考リンク
-日付の解析についてさらに詳しく知るためのソース :
-* [Gleam Documentation](https://gleam.run/documentation/)
-* [Date parsing in Gleam - Stack Overflow](https://stackoverflow.com/questions/...)
+- ISO 8601 Date and time format overview: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)

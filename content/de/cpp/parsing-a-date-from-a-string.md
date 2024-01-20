@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:35:08.019179-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,12 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Parsing eines Datums aus einem String bedeutet, dass man eine Datumseinheit aus einer gegebenen Zeichenkette extrahieren und interpretieren kann. Programmierer nutzen dies, um Daten in einem konsumierbaren Format zu manipulieren oder zu verarbeiten.
+## Was & Warum?
+
+Das Parsen eines Datums aus einem String wandelt Text in ein Datum um, das der Computer verarbeiten kann. Programmierer brauchen das, um Daten zu vergleichen, zu sortieren oder Zeitabhängigkeiten zu managen.
 
 ## So geht's:
 
-Sie können `std::istringstream` und `std::get_time` aus der Standardbibliothek verwenden, um ein Datum in C++ zu parsen. Hier ist ein einfacher Code, der dies verdeutlicht:
+Hier ist ein einfaches Beispiel, wie du mit C++ ein Datum aus einem String parst:
 
 ```C++
 #include <iostream>
@@ -24,36 +26,39 @@ Sie können `std::istringstream` und `std::get_time` aus der Standardbibliothek 
 #include <ctime>
 
 int main() {
-    std::string s = "21-06-2021"; //dd-mm-yyyy
+    std::string dateString = "2023-03-22";
     std::tm tm = {};
-    std::istringstream ss(s);
-    ss >> std::get_time(&tm, "%d-%m-%Y");
-  
+    std::istringstream ss(dateString);
+
+    ss >> std::get_time(&tm, "%Y-%m-%d"); // Strenge Formatierung
     if (ss.fail()) {
-        std::cout << "Parse fehlgeschlagen!\n";
-    } else {
-        std::cout << std::put_time(&tm, "%c") << '\n';
+        std::cerr << "Parse-Fehler!" << std::endl;
+        return 1;
     }
+
+    // Hier könntest du mit tm weiterarbeiten
+    std::cout << "Erfolg! Datum: "
+              << std::put_time(&tm, "%d.%m.%Y") << std::endl;
+
     return 0;
 }
 ```
 
-Wenn Sie dieses Programm ausführen, erhalten Sie die Ausgabe:
-
+Ausgabe:
 ```
-Mon Jun 21 00:00:00 2021
+Erfolg! Datum: 22.03.2023
 ```
 
 ## Deep Dive:
 
-Das Parsen von Daten aus Zeichenketten wurde historisch für alles verwendet, von Webentwicklung bis hin zu maschinellem Lernen. Es hat Entwicklern geholfen, komplexe Datumsangaben zu handhaben und sie flexibel und verwertbar zu machen.
+Das Parsen von Daten wurde wichtig mit dem Aufkommen von digitaler Kommunikation. Früher wurde es manuell erledigt – ein mühsamer Prozess. Heutzutage gibt es in vielen Programmiersprachen eingebaute Möglichkeiten das zu tun, in C++ etwa mit `get_time` und `put_time`.
 
-In C++ können Sie auch Bibliotheken wie Boost verwenden, um ähnliche Funktionen zu ermöglichen. Boost bietet eine robustere Erfahrung und mehr Unterstützung für verschiedene Datumsformate.
+Es gibt Alternativen wie die `strptime()`-Funktion aus der C Standardbibliothek oder Bibliotheken von Drittanbietern wie `date.h` von Howard Hinnant, welche mehr Funktionalitäten bieten.
 
-Eine wichtige Einzelheit in der Implementierung ist, dass `std::get_time` keinerlei Ausnahme wirft, wenn das Parsen fehlschlägt. Stattdessen setzen wir die Failbit des `std::istringstream`-Objekts, welches durch die Methode `fail()` überprüft werden kann.
+Hinsichtlich der Implementierung sollte man achten, dass verschiedene Länder unterschiedliche Datumsformate nutzen und Zeitzonen sowie Sommerzeit berücksichtigt werden sollten. Fehlerbehandlung, also das Erkennen und richtige Reagieren auf ungültige Daten, ist ebenso von Bedeutung.
 
-## Siehe Auch:
+## Siehe auch:
 
-- [Cplusplus.com get_time](http://www.cplusplus.com/reference/iomanip/get_time/)
-- [StackOverflow - How to parse date properly](https://stackoverflow.com/questions/5286945/timestamp-string-to-time-t-in-c)
-- [Boost Date Time Library](https://www.boost.org/doc/libs/1_67_0/doc/html/date_time.html)
+- C++ Date and Time [Tutorial](http://www.cplusplus.com/reference/ctime/)
+- Howard Hinnant's Date library [GitHub Repository](https://github.com/HowardHinnant/date)
+- ISO 8601 Date and Time Formats [Information](https://en.wikipedia.org/wiki/ISO_8601)

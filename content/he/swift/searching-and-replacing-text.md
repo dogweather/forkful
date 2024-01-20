@@ -30,6 +30,5 @@ Hello, world
 במקרא דינמי כמו שלנו כיום, למתכנתים יש צורך תמידי להשתמש בכלים שיבחינו אותם מהזמן והמאמץ של כתיבת קוד מחדש. חיפוש והחלפה של סימנים התפתחו כתוך זמן והם אף הפכו לפונקציונליות בסיסית בכל שפת תכנות. Swift מספקת את המתודה `replacingOccurrences`, אך קיימות גם שיטות אחרות כמו `split` והרכבה חדשה של מחרוזות, או שימוש ב- Regular Expressions לביצוע תהליכים מורכבים יותר.
 
 ## ראו גם:
-* [Apple's Swift Documentation](https://developer.apple.com/documentation/swift) - התיעוד של Apple לשפת Swift כולל מידע נרחב על המתודה `replacingOccurrences`.
 * [SwiftRocks](https://swiftrocks.com) - אתר המאגד מנות רבות נוספות על שפת Swift.
 * [Stack Overflow](https://stackoverflow.com) - ניתן למצוא עזרה נוספת ודוגמאות לשפה Swift בקהילת Stack Overflow.

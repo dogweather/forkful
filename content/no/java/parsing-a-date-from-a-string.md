@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:36:44.679545-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Java"
 category:             "Java"
@@ -10,71 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing av dato fra streng i Java
+## Hva & Hvorfor?
+Parsing en dato fra en streng er prosessen der du tar en tekstrepresentasjon av en dato og gjør om til et dato-objekt som Java forstår. Vi gjør det fordi data ofte kommer i tekstformat, og vi trenger å manipulere det som tid og dato.
 
-## Hva og hvorfor?
-
-Å parse en dato fra en streng er prosessen med å omforme en tekstrepresentasjon av en dato (f.eks. "01/01/2021") til en datatyperepresentasjon som Java-programmet kan behandle. Dette er nyttig når vi håndterer brukerinndata eller leser datoer fra tekstfiler.
-
-## Hvordan:
-
-Her er et eksempel på hvordan du parser en dato fra en streng i Java med `SimpleDateFormat`:
-
-```java
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class Main {
-    public static void main(String[] args) {
-        try {
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            String dateStr = "01/01/2021";
-            Date parsedDate = format.parse(dateStr);
-            System.out.println(parsedDate);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-Når du kjører denne koden, får du output som dette:
-
-```shell
-Fri Jan 01 00:00:00 CET 2021
-```
-
-## Dypdykk:
-
-Historisk har Java tilbudt flere måter å parse datoer på, inkludert `Date` og `Calendar` klassene. Men disse hadde mange begrensinger og problemer, så fra Java 8 introduserte de nye Date-Time API, som `LocalDate`.
-
-Her er et eksempel på hvordan du parser en dato med `LocalDateTime`:
-
-```java
-import java.time.LocalDateTime;
+## Hvordan gjøre det:
+```Java
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Main {
+public class DateParsingExample {
     public static void main(String[] args) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String dateStr = "01/01/2021";
-        LocalDateTime parsedDate = LocalDateTime.parse(dateStr, formatter);
-        System.out.println(parsedDate);
+        String dateString = "2023-03-28";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate parsedDate = LocalDate.parse(dateString, formatter);
+        
+        System.out.println("Parsed date: " + parsedDate);
     }
 }
 ```
-
-Koden gir denne output'en:
-
-```shell
-2021-01-01T00:00
+Output:
+```
+Parsed date: 2023-03-28
 ```
 
-`SimpleDateFormat` er ikke trådsikker, noe som betyr at du kan få problemer ved samtidig bruk i flertrådede programmer. Derfor anbefales det å bruke Date-Time API fra Java 8.
+## Dypdykk
+I tidligere Java-versjoner brukte vi `SimpleDateFormat` fra `java.text`-pakken, men denne var feilutsatt og ikke trådsikker. Java 8 introduserte `java.time`, også kalt Date-Time API, som er bedre på alle måter. Det støtter ulike tidszoner, kan håndtere ulike kalendere, og er sikrere å bruke i en flertrådet kontekst.
+
+Om du skulle trenge å parse en dato i en annen format, kan `DateTimeFormatter` tilpasses. For eksempel, hvis datoen er gitt som "28.03.2023", bruk da mønsteret `"dd.MM.yyyy"`. For eldre Java-versjoner eller spesielle behov, kan Joda-Time biblioteket være et godt alternativ, men anbefales ikke for nye prosjekter da `java.time` er foretrukket.
+
+Implementasjonsdetaljer kan variere basert på hvordan datoen er formatert. Pass på å håndtere `DateTimeParseException` som kan kastes hvis strengen ikke passer med formatteringsmønsteret. Det er også mulig å la brukeren definere formatet dynamisk, men da øker kompleksiteten rundt feilhåndtering og datavalidering.
 
 ## Se også:
-
-1. [SimpleDateFormat Java Doc](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-2. [LocalDateTime Java Doc](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-3. [Date-Time API Tutorial fra Oracle](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html)
-4. [Official Java Tutorial - Date and Time](https://docs.oracle.com/javase/tutorial/datetime/TOC.html)
+- [Date and Time API guide](https://docs.oracle.com/javase/tutorial/datetime/)
+- [DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Joda-Time library](https://www.joda.org/joda-time/)

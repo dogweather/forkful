@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:34:44.400270-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,49 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analisi di una Data da una Stringa in C
+## What & Why?
+Tradurre una data da una stringa significa convertire un testo in una struttura data che il programma può capire e usare. I programmatori lo fanno per poter manipolare e confrontare date, spesso inserite dagli utenti o lette da file.
 
-## Cos'è & Perché?
-
-L'interpretazione di una data da una stringa è l'azione di estrarre informazioni sulla data da un formato di stringa. I programmatori lo fanno per processare e manipolare le date in una forma più utilizzabile nel codice.
-
-## Come fare:
-
-Ecco un esempio semplice su come analizzare una data da una stringa usando la funzione `strptime` della libreria `time.h` in C.
+## How to:
+Per estrarre una data da una stringa in C, possiamo usare la funzione `strptime`, disponibile nella libreria time.h. Ecco un esempio pratico:
 
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 int main() {
     struct tm tm;
-    char buf[255];
+    char *str = "01/04/2023";
+    strptime(str, "%d/%m/%Y", &tm);
 
-    strptime("2022-02-15 22:45:50", "%Y-%m-%d %H:%M:%S", &tm);
-    strftime(buf, sizeof(buf), "%d %B %Y", &tm);
-    
-    printf("Data analizzata: %s\n", buf);
+    printf("Giorno: %d, Mese: %d, Anno: %d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
     
     return 0;
 }
 ```
 
-Uscita:
-
+Output:
 ```
-Data analizzata: 15 February 2022
-``` 
+Giorno: 1, Mese: 4, Anno: 2023
+```
 
-## Approfondimento
+## Deep Dive
+La funzione `strptime` è stata introdotta in POSIX.1-2001. Nota che non è parte dello standard C ISO, quindi alcuni compilatori Windows potrebbero non supportarla. Alternative includono la funzione `sscanf` o le librerie di terze parti come 'date.h'.
 
-1. **Contesto storico**: L'interpretazione di una data da una stringa è una necessità comune nella programmazione da quando le date sono state rese disponibili in formato di stringa. Le funzioni come `strptime` sono state introdotte per risolvere questo problema.
-   
-2. **Alternative**: Ci sono diverse librerie disponibili che offrono funzioni di parsing della data come `date.h` o `boost/date_time.hpp` in C++. Queste offrono una gamma più ampia di funzioni e opzioni.
+La scelta di `strptime` è dovuta alla sua capacità di interpretare diversi formati di date, e alla sua integrazione naturale con le strutture `tm` di time.h. La funzione legge la data dalla stringa secondo il formato specificato dal programmatore, e popola una struttura `tm` con anno, mese, giorno ecc.
 
-3. **Dettagli Implementativi**: La funzione `strptime` prende una stringa e un formato come input e restituisce una struttura `tm`. Questa struttura contiene dettagli sulla data come anno, mese, giorno, ora, minuto, e secondo.
+Va ricordato che `tm_mon` inizia da 0 per gennaio e `tm_year` è l’anno meno 1900, quindi bisogna regolare questi valori per l’output.
 
-## Vedi Anche
-
-- [`strptime`](https://pubs.opengroup.org/onlinepubs/007908799/xsh/strptime.html), La Funzione Originale da `time.h`
-- [`boost::date_time`](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html), Eccezionali Capacità di Parsing della Data in C++
-- [`strftime`](https://www.cplusplus.com/reference/ctime/strftime/), Per Formattare la Data in Stringhe
+## See Also
+- Documentazione POSIX su `strptime`: https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html
+- Libreria 'date.h' per un handling più robusto delle date in C++: https://github.com/HowardHinnant/date
+- Tutorial su `struct tm` e gestione del tempo in C: https://www.cplusplus.com/reference/ctime/tm/

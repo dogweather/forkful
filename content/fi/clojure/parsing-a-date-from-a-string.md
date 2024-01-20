@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:35:23.466682-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? / Mikä ja Miksi?
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärä-tiedon erottelemista ja muuttamista ymmärrettävään muotoon. Ohjelmoijat tekevät tätä datan validoinnin, tallennuksen ja käsittelemisen helpottamiseksi.
 
-Päivämäärän jäsennys merkkijonosta tarkoittaa päivämäärän hahmottamista merkkijonosta. Ohjelmoijat tekevät tätä käyttäjän syötteiden, tiedostojen tai tietokannan päivämäärämuotoilujen ymmärtämiseksi. 
+## How to / Kuinka tehdä:
+```Clojure
+(require '[java.time.format :as dtf])
+(require '[java.time.LocalDate :as ld])
 
-## Kuinka Näin:
+;; Määritellään päivämäärän formaatti ja jäsentäjä
+(def date-format (dtf/DateTimeFormatter/ofPattern "dd.MM.yyyy"))
+(defn parse-date [date-string]
+  (ld/parse date-string date-format))
 
-Jäsentää päivämäärä merkkijonosta Clojuren avulla:
-
-```Clojure 
-(require '[clj-time.format :as f])
-(def iso-formatter (f/formatters :date-time-no-ms))
-(f/parse iso-formatter "2012-12-12T12:12:12Z")
+;; Esimerkki päivämäärän jäsentämisestä
+(parse-date "01.05.2023")
+;; => #object[java.time.LocalDate "2023-05-01"]
 ```
 
-Tulostaa tuloksen: `#object[org.joda.time.DateTime 2012-12-12T14:12:12.000Z]`, päivämäärä- ja aikaolio vakiomuodossa.
+Esimerkki kertoo, kuinka luodaan päivämäärän jäsentäjä halutulla formaatilla ja jäsentää merkkijono päivämääräksi Clojuressa käyttäen java.time-kirjastoa.
 
-Mutta entä jos meillä on muoto, jota Clojure ei ymmärrä oletusarvoisesti? Ei hätää, voit määritellä oman muodon:
-```Clojure 
-(def custom-formatter (f/formatter "dd-MM-yyyy"))
-(f/parse custom-formatter "12-12-2012")
-```
-Tämä tuottaa saman tuloksen kuin edellinen, mutta nyt muotoillaan päivämäärä omalla muodolla.
+## Deep Dive / Syväsukellus
+Päivämäärän jäsentämisen historia ulottuu ohjelmoinnin alkuaikoihin, kun tiedon standardoitu esitysmuoto oli tarpeen. Vaihtoehtoja `java.time`-kirjastolle ovat muun muassa Joda-Time ja `clj-time`-kirjasto, mutta `java.time` on nykyisin standardi Clojuressa, sillä se on suorituskykyinen ja monipuolinen.
 
-## Syvempi sukellus
+Clojure on suunniteltu toimimaan tehokkaasti Javan ekosysteemissä, joten hyödynnämme tässä nativiisti Javan `java.time`-kirjaston luokkia päivämäärän käsittelyyn. `java.time.LocalDate`-luokka kuvaa päivämäärää ilman kellonaikaa, joten se on ihanteellinen pelkän päivämäärän käsittelyyn.
 
-Alun perin, ohjelmoijat käyttivät JavaScriptin pudotetun Date.parse-toiminnon, jolla on paljon haittoja, kuten epäjohdonmukaisuus selaimen alustoilla. Clojure tarjoaa selkeämmän ja joustavamman lähestymistavan, joka perustuu Joda-Time-kirjastoon, täynnä erilaisia aika- ja päivämääränmuuntoja ja -muotoja.
-
-Vaihtoehtoisia tapoja päivämäärän jäsennystä varten merkkijonosta ovat muun muassa Java.util.Date ja SimpleDateFormat, mutta ne ovat suhteellisen monimutkaisia käyttää ja niillä on monia aikavyöhykkeisiin liittyviä kysymyksiä.
-
-Clojuren toteutus käyttää sisäisesti Joda-Time-menetelmiä, jotka tekevät siitä vakaan ja tehokkaan. Se määrittää formattereita käyttäen DateTimeFormat-luokan menetelmää, joka palauttaa DateTimeFormatter-olioita - nämä voivat valita parse-strategian merkkijonojen perusteella.
-
-## Katso myös
-
-Linkit liittyviin lähteisiin:
-- [Clojure Date Time Documentation](https://clojuredocs.org/clojure.instant)
-- [Joda-Time Github](https://github.com/JodaOrg/joda-time)
+## See Also / Katso Myös
+- Official Java `java.time` documentation: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Clojure for the Brave and True (a book with Clojure programming basics): [https://www.braveclojure.com](https://www.braveclojure.com)
+- ClojureDocs, a community-powered documentation and examples repository: [https://clojuredocs.org](https://clojuredocs.org)

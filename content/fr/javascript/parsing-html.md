@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:32:07.654243-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-Analyser du HTML, c'est transformer une chaîne de texte HTML en une structure de donnée. Les programmeurs le font pour manipuler, extraire des données, ou intégrer des scripts dans les pages web.
+## Quoi & Pourquoi ?
+Le parsing HTML consiste à analyser le contenu d'une page web pour en extraire des informations structurées. Les programmeurs le font pour manipuler, scraper des données ou interagir avec des pages dynamiquement.
 
 ## Comment faire :
-Voici un exemple simple avec la bibliothèque JSDOM qui nous permet de parser du HTML :
-
 ```Javascript
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const dom = new JSDOM(`<!DOCTYPE html><body><h1>Hello world</h1></body></html>`);
-console.log(dom.window.document.querySelector("h1").textContent); // Outputs: 'Hello world'
+// Utilisons le DOMParser pour analyser une chaîne HTML simple
+let parser = new DOMParser();
+let doc = parser.parseFromString('<p>Bonjour le monde!</p>', 'text/html');
+
+console.log(doc.body.textContent); // Sortie: "Bonjour le monde!"
+
+// Et avec jQuery (si déjà intégré dans votre projet)
+let html = $('<div><p>Salut à tous!</p></div>');
+console.log(html.find('p').text()); // Sortie: "Salut à tous!"
 ```
-Ici, nous avons créé une nouvelle instance JSDOM et nous avons analysé une simple chaîne HTML. Ensuite, nous avons utilisé la méthode querySelector pour sélectionner la balise h1 et afficher son contenu.
 
-## Plongée en profondeur
-Historiquement, l'analyse de HTML était compliquée et inefficace. Mais avec l'évolution des technologies, des bibliothèques comme JSDOM ou Cheerio ont radicalement simplifié le processus.
+## Exploration Plus Profonde :
+Autrefois, parsing du HTML évoquait souvent 'innerHTML' ou des méthodes jQuery. C'était avant une compréhension complète de la sécurité et la performance. DOMParser, présenté ici, est la méthode recommandée. 
 
-En termes d'alternatives, vous pourriez utiliser des expressions régulières, bien que cela peut être délicat et sujet à des erreurs. Vous avez aussi des techniques plus récentes comme l'utilisation de l'API Fetch et DOMParser dans un environnement de navigateur.
+Il existe d'autres moyens : avec Node.js, on utilise 'cheerio' ou 'jsdom'. Ces bibliothèques offrent plus de flexibilité et des fonctionnalités adaptées au server-side.
 
-D'un point de vue technique, les parseurs HTML parcourent chaque caractère de la chaîne HTML et produisent un arbre DOM (Document Object Model). Il s'agit d'une représentation structurée de votre document.
+Pour finir, comptez toujours sur la sécurité. Le parsing HTML peut mener à des vulnérabilités XSS si mal géré. Nettoyez toujours le contenu avant de l'utiliser.
 
-## A voir aussi
-N'hésitez pas à approfondir le sujet avec les liens ci-dessous:
-- [JSDOM sur GitHub](https://github.com/jsdom/jsdom)
-- [Cheerio sur GitHub](https://github.com/cheeriojs/cheerio)
-- [MDN Web Docs sur querySelector](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector)
-- [MDN Web Docs sur DOMParser](https://developer.mozilla.org/fr/docs/Web/API/DOMParser)
+## Voir Aussi :
+- MDN DOMParser:
+  [https://developer.mozilla.org/fr/docs/Web/API/DOMParser](https://developer.mozilla.org/fr/docs/Web/API/DOMParser)
+- jQuery.parseHTML:
+  [https://api.jquery.com/jquery.parsehtml/](https://api.jquery.com/jquery.parsehtml/)
+- Node.js 'cheerio':
+  [https://cheerio.js.org/](https://cheerio.js.org/)
+- Node.js 'jsdom':
+  [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)

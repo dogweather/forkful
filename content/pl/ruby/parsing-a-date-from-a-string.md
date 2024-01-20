@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:38:27.410677-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing a date from a string is turning text into a date/time object. Programmers do it to make sense of dates in logs, user input, and saved data.
 
-Analiza ostatniej daty z łańcucha polega na przekształceniu daty zapisanej jako łańcuch znaków (np. "2022-02-22") na obiekt Date, który używany jest powszechnie w programowaniu. Zasadniczo, to pozwala nam pracować z datami w bardziej logiczny i wydajny sposób.
-
-## Jak zrobić:
-
-Najprostszym sposobem na przekształcenie stringa do formatu Date w Ruby jest użycie klasy wbudowanej Date i metody `.parse`. Oto przykład:
-
+## How to: (Jak to zrobić?)
 ```Ruby
 require 'date'
 
-string_z_data = "2022-02-22"
-data = Date.parse(string_z_data)
-puts data
+# Parse a date from a string
+date_string = "2023-04-10"
+parsed_date = Date.parse(date_string)
+
+puts parsed_date           # Outputs: 2023-04-10
+puts parsed_date.class     # Outputs: Date
+
+# Parse a date and time
+datetime_string = "2023-04-10 14:30"
+parsed_datetime = DateTime.parse(datetime_string)
+
+puts parsed_datetime       # Outputs: 2023-04-10T14:30:00+00:00
+puts parsed_datetime.class # Outputs: DateTime
 ```
+Remember, Date and DateTime are part of Ruby's standard library. No gem installation needed.
 
-Gdy uruchomisz to wśród swojego kodu, otrzymasz:
+## Deep Dive (Głębsze Zagłębienie)
+Rubies didn't always come with great date parsing. It used to be a pain. Now, the built-in `Date` and `DateTime` classes make it easy. They've got `parse` methods that read various date formats automatically. You try '2023-01-01', '01/01/2023', or 'January 1, 2023' – it just works.
 
-```Ruby
-# 2022-02-22
-```
+But there's more. If you need to parse more obscure formats, or need stricter parsing, there's `strptime` – it lets you specify the exact format. There's also Chronic, a gem that's really forgiving about input. Great for user-provided data.
 
-## Głębokie wgłębienie
+Speaking of gem alternatives, Rails has ActiveSupport's `TimeWithZone` for time zone support. It's more robust if you need to handle different time zones.
 
-Analiza daty z łańcucha jest praktyką, która ma wiele zastosowań od początku działań programistycznych. Historycznie jest to proces niezbędny do pracy z danymi czasowymi w prosty i skuteczny sposób. 
+Finally, time zones: `DateTime.parse` assumes UTC if no zone is provided. If you need specific time zone handling, you must take extra steps.
 
-Alternatywą do `Date.parse` jest `Date.strptime`. Służy do analizy daty z łańcucha, pozwalając określić format łańcucha wejściowego.
-
-```Ruby
-require 'date'
-
-string_z_data = "2022-22-02"
-data = Date.strptime(string_z_data, "%Y-%d-%m")
-puts data
-```
-
-W tym przypadku output będzie taki sam jak w poprzednim przykładzie, ale metoda umożliwia bardziej precyzyjne przekształcanie stringów z określonym formatem.
-
-## Zobacz także
-
-Zapoznaj się z następującymi źródłami do głębszego wyjaśnienia:
-
-1. [Oficjalna dokumentacja Ruby - Klasa Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-2. [Poradnik po angielsku o analizie daty z łańcucha](https://www.rubyguides.com/2015/12/ruby-time/) 
-3. [Różnice między .parse a .strptime](https://stackoverflow.com/questions/39159373/ruby-date-parse-vs-date-strptime)
+## See Also (Zobacz Również)
+- [Ruby DateTime documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
+- [Chronic gem](https://github.com/mojombo/chronic)
+- [Rails ActiveSupport TimeWithZone](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)

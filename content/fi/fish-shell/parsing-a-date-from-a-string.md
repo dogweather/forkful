@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:36:28.342089-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,40 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell: Päivämäärän parsiminen merkkijonosta
+## What & Why? (Mikä & Miksi?)
+Tietojen jäsennys merkkijonosta tarkoittaa päivämäärän erottelua tekstiformaatista. Ohjelmoijat tekevät sen, koska päivämäärät on saatava muunnettua eri järjestelmien ymmärtämään muotoon. 
 
-## Mikä & Miksi?
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän erottamista tekstistä ja sen käsittelyä ohjelmoimista varten. Ohjelmoijat tekevät näin, jotta he voivat käsitellä päivämäärää järjestelmässään haluamallaan tavalla.
-
-## Näin teet:
-Alla on esimerkkejä siitä, kuinka päivämäärä voidaan parsia Fish Shellissä. 
+## How to: (Kuinka tehdään:)
+Fish Shell tarjoaa työkaluja päivämäärän jäsentämiseen. Voit muuntaa merkkijonon päivämääräksi hyödyntäen `string` ja `date` komentoja:
 
 ```Fish Shell
-set päivä "20248-09-15"
-set -l päivä_osa (string split -r -m1 "-" $päivä)
-
-echo "Vuosi: "$päivä_osa[1]
-echo "Kuukausi: "$päivä_osa[2]
-echo "Päivä: "$päivä_osa[3]
+set date_str "2023-04-01"
+set epoch_time (date -ud "$date_str" +"%s")
+echo $epoch_time
 ```
-Tämä koodi tuottaa seuraavan tulosteen: 
+
+Esimerkin tulostus näyttäisi tältä, joka on Unix-aikaleima:
+
+```
+1679942400
+```
+
+Toinen esimerkki, missä muutetaan aikaleima normaaliksi päivämääräksi:
 
 ```Fish Shell
-Vuosi: 2024
-Kuukausi: 09
-Päivä: 15
+set epoch_time 1679942400
+set normal_date (date -ur "$epoch_time" +"%Y-%m-%d")
+echo $normal_date
 ```
 
-## Syvemmälle:
-### Historiallinen Konteksti
-Päivämäärän parsiminen merkkijonosta on ollut tärkeä taito ohjelmoinnissa jo useita vuosia. Se helpottaa ohjelmiston kehittämistä, sillä päivämäärä voidaan muuntaa halutulle formaatille tai sitä voidaan käyttää laskelmissa ja vertailuissa.
-### Vaihtoehtoja
-Fish Shellin lisäksi on olemassa monia muita ohjelmointikieliä, jotka tarjoavat päivämäärien parsimisen, kuten Python, JavaScript ja PHP. Vaikka nämä kielet eroavat Fish Shellistä, niillä kaikilla on samanlaiset perusmekanismit päivämäärien parsimiseen. 
-### Toteutus
-Tärkeintä päivämäärän parsimisessa merkkijonosta on merkkijonon oikea jakaminen. Tässä esimerkissä käytämme Fish Shellin `string split` -toimintoa, joka jakaa merkkijonon "-" -merkin kohdalta. Jakamisen jälkeen jokainen osa (vuosi, kuukausi, päivä) tallennetaan erilliseen muuttujaan.
+Tulostuu:
 
-## Katso myös:
-Lisätietoa päivämäärien parsimisesta ja Fish Shellin koodauksesta:
-1. Fish Shellin kotisivu: [https://fishshell.com/](https://fishshell.com/)
-2. StackOverflow, Fish Shell -aiheiset keskustelut: [https://stackoverflow.com/questions/tagged/fish](https://stackoverflow.com/questions/tagged/fish)
-3. GitHub, Fish Shell -projekti: [https://github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
+```
+2023-04-01
+```
+
+## Deep Dive (Syväsukellus)
+Ennen Unix-aikaleimoja ja standardoituja päivämäärämuotoja, päivämääräkäsittely oli hankalaa. Yksi ratkaisu oli luoda omia funktioita merkkijonojen purkamiseen. 
+
+Fish Shell, kuten monet muut kuoret, ei itsessään tarjoa päivämääräjäsennystä, vaan se nojaa ulkoisiin komentoihin kuten `date`. Tämä on käyttöjärjestelmistä riippuvaista; esimerkiksi GNU date ja BSD date saattavat käyttäytyä eri tavalla. Varmista käyttämäsi version sopivuus.
+
+Päivämääräkomennolle annettavat muotoiluoptiot (`+%Y-%m-%d`) määrittelevät, miten tulostettu aika esitetään. Komento `date -u` käyttää UTC-aikaa ja `-r` tulkitsee annetun Unix-aikaleiman. Fish:n vahvuuksia on että se integroituu saumattomasti käyttöjärjestelmän työkaluihin, kuten `date` komentoon, mahdollistaen tehokkaan päivämäärän käsittelyn yhdessä muiden Unix-komentojen kanssa.
+
+## See Also (Katso Myös)
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- GNU Coreutils `date` komento: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Unix-aikaleimat sekä niiden muuntaminen: [https://en.wikipedia.org/wiki/Unix_time](https://en.wikipedia.org/wiki/Unix_time)

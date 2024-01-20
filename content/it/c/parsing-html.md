@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:30:04.186097-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,42 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
-L'analisi o parsing dell'HTML è il processo di lettura e comprensione del codice HTML al fine di creare una rappresentazione interna, detta albero DOM. I programmatori lo fanno per manipolare, analizzare e ristrutturare le pagine web.
+## Che cosa & Perché?
+Il parsing HTML significa analizzare il codice di una pagina web per estrarre dati specifici. I programmatori lo fanno per automatizzare l'interazione con siti web, sfruttare informazioni, o integrare contenuti web nelle loro applicazioni.
 
-## Come fare:
-Il seguente codice serve come esempio basilare di analisi HTML. Utilizza la libreria di parsing Gumbo, sviluppata e manutenuta da Google.
+## Come Fare:
+Utilizzeremo libcurl per il download dell'HTML e la libreria libxml2 per il parsing.
 
 ```C
 #include <stdio.h>
-#include <gumbo.h>
+#include <curl/curl.h>
+#include <libxml/HTMLparser.h>
 
-static void cerca_nodi(GumboNode* nodo) {
-    if (nodo->type != GUMBO_NODE_ELEMENT) {
-        return;
-    }
-    GumboVector* nodi_figli = &nodo->v.element.children;
-    for (unsigned int i = 0; i < nodi_figli->length; ++i) {
-        cerca_nodi(nodi_figli->data[i]);
-    }
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((char *)userp)[size * nmemb] = '\0'; // Assicurarsi di terminare la stringa
+    return size * nmemb;
 }
 
-int main() {
-    GumboOutput* output = gumbo_parse("<h1>Ciao, Mondo!</h1>");
-    cerca_nodi(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+    char buffer[100000]; // Un buffer abbastanza grande per contenere l'HTML
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, buffer);
+        
+        res = curl_easy_perform(curl);
+        if(res == CURLE_OK) {
+            htmlParserCtxtPtr ctxt = htmlNewParserCtxt();
+            if(ctxt != NULL) {
+                htmlDocPtr doc = htmlCtxtReadMemory(ctxt, buffer, strlen(buffer), NULL, NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+                // Fai il parsing di doc qui ...
+            }
+        }
+        curl_easy_cleanup(curl);
+    }
     return 0;
 }
 ```
-Quando eseguito, questo programma non restituirà nulla, ma analizzerà l'HTML fornito e creerà un albero DOM corrispondente.
+*Ricordati di linkare contro `libcurl` e `libxml2` quando compili.*
 
-## Approfondimenti
-(1) L'HTML, come linguaggio di markup, esiste dal 1991 e nel corso degli anni i metodi di parsing si sono evoluti notevolmente. Dall'analisi regolare delle espressioni all'introduzione delle API di parsing come Gumbo da Google.
-(2) Esistono diverse alternative alla libreria Gumbo, tra cui html5lib e libxml2, ognuna con i suoi pro e contro.
-(3) Nota importante riguardo all'implementazione: la memoria allocata da gumbo_parse deve essere distrutta con gumbo_destroy_output per evitare perdite di memoria.
+## Approfondimento:
+Il parsing HTML richiede attenzione perché HTML nel mondo reale è spesso non ben formato. Le librerie come libxml2 sono robuste e affrontano queste imperfezioni. Nel tempo, oltre a metodi standard come DOM e SAX per il parsing, sono fiorite librerie come Beautiful Soup per Python o jsoup per Java. Per il C, usiamo spesso libxml2 perché è esaustiva e conforme agli standard.
 
-## Vedi Anche
-- Documentazione della libreria Gumbo: https://github.com/google/gumbo-parser
-- Documentazione della libreria html5lib: https://github.com/html5lib/html5lib-python
-- Documentazione della libreria libxml2: http://xmlsoft.org/
-- Una guida all'albero DOM: https://developer.mozilla.org/it/docs/Web/API/Document_Object_Model
+Libcurl è praticamente uno standard de facto per il trasferimento dati via URL, mentre libxml2 domina nel parsing di XML e HTML. Le alternative implicano spesso scrivere codice da zero per gestire casi limite, il che sarebbe oneroso e inaffidabile.
+
+## Vedi Anche:
+- Documentazione libxml2: http://xmlsoft.org/
+- Tutorial libcurl: https://curl.haxx.se/libcurl/c/
+- W3 HTML Parsing Rules: https://www.w3.org/TR/html5/syntax.html#parsing
+- Overflow di stack su argomenti di parsing HTML in C: https://stackoverflow.com/questions/tagged/html-parsing+c

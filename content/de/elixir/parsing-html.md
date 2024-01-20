@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:31:15.080254-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Elixir"
@@ -10,52 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsen von HTML mit Elixir
+## What & Why? (Was & Warum?)
+HTML zu parsen bedeutet, die Struktur und den Inhalt von Webseiten zu analysieren. Programmierer machen das, um Informationen zu extrahieren, automatisiert Inhalte zu verarbeiten oder Web-Scraping durchzuführen.
 
-## Was & Warum?
-
-HTML-Parsen ist ein Prozess, der die Struktur von HTML-Dokumenten analysiert und sie in verwertbarer Form wiedergibt. Dieses Verfahren ist nützlich, um Informationen aus Webseiten zu gewinnen, Webseiten zu crawlen oder um Webinhalte zu modularisieren und zu transformieren.
-
-## So geht's:
-
-Mit Elixir geht das ganz einfach. Benutzen wir als Beispiel die beliebte Bibliothek `Floki`.
+## How to: (Wie geht das?)
+Du kannst in Elixir mit der Floki-Bibliothek HTML parsen. Hier ist ein Beispiel, das zeigt, wie man Überschriften aus einer HTML-Datei extrahiert.
 
 ```elixir
-defdeps do
-    [
-      {:floki, "~> 0.30"}
-    ]
+# Zuerst füge Floki zu deinen Abhängigkeiten in mix.exs hinzu:
+# defp deps do
+#   [
+#     {:floki, "~> 0.27"}
+#   ]
+# end
+# Dann führe mix deps.get aus, um Floki zu installieren.
+
+defmodule HTMLParser do
+  def parse_html(html) do
+    html
+    |> Floki.parse()
+    |> Floki.find("h1")
+    |> Enum.map(fn {_, attributes, inner_html} -> {attributes, inner_html} end)
   end
+end
+
+# Beispiel-HTML
+html = """
+<html>
+  <body>
+    <h1>Willkommen</h1>
+    <p>Das ist ein Elixir-Beispiel.</p>
+  </body>
+</html>
+"""
+
+# Parsing und Ausgabe
+result = HTMLParser.parse_html(html)
+IO.inspect(result)
 ```
 
-Laden Sie einfach ein HTML-Dokument und benutzen Sie `find` um Elemente auszuwählen.
-
-```elixir 
-html = "<div class='ololo'><h2>Hello World</h2></div>"
-{"<h2>", _, _} = Floki.find(html, ".ololo h2")
-IO.puts content
+Beispiel-Ausgabe:
 ```
+[
+  {[{"class", "headline"}], ["Willkommen"]}
+]
+```
+Dies zeigt eine Liste von Tupeln mit den Attributen und Inhalten jeder `h1`-Überschrift.
 
-Die Ausgabe wird so aussehen:
+## Deep Dive (Tiefergehender Einblick)
+Früher waren reguläre Ausdrücke (Regex) zur HTML-Analyse gängig, aber problematisch aufgrund der Komplexität von HTML. Floki basiert auf der html5ever-Bibliothek, welche die HTML5-Parsing-Regeln nutzt. Alternativen zu Floki sind z.B. `Mechanize` oder `Scrapy` in anderen Sprachen (Python). Floki bietet eine jQuery-ähnliche Schnittstelle, die es einfach macht, bestimmte Knoten zu finden und Inhalte zu extrahieren. Es ist effizient und fehlertolerant.
 
-``` 
-Hello World
-``` 
-
-## Tiefgang:
-
-Historisch gesehen wurden HTML-Parsings oft manuell oder mit weniger leistungsfähigen Tools durchgeführt, aber mit dem Einzug funktionaler Programmiersprachen wie Elixir und Libraries wie `Floki` sind wir in der Lage, diese Aufgaben mit größerer Effizienz und Präzision zu bewältigen. 
-
-Alternativ zur Elixir-Library `Floki` können Sie auch `Meeseeks` oder `Sweet_xml` verwenden, die jeweils andere parsing-Strategien anbieten. `Floki` beruht auf ercxml und css Selektoren, während `Meeseeks` auf Rustler und `Sweet_xml` auf Xmerl_xpath aufbaut.
-
-Sich weiter in die Details einzulassen, würde den Rahmen sprengen, aber es ist zu bemerken, dass beim Parsen von HTML immer XPath oder CSS-Selektoren zur Identifizierung und Extraktion spezifischer Elemente zum Einsatz kommen.
-
-## Siehe auch:
-
-Erkunden Sie weitere Techniken und Tools rund um das HTML-Parsing in Elixir durch die folgenden Links:
-
-- [Floki Bibliothek](https://hexdocs.pm/floki/readme.html)
-- [Meeseeks Bibliothek](https://hexdocs.pm/meeseeks/readme.html)
-- [Sweet_xml Bibliothek](https://hexdocs.pm/sweet_xml/readme.html)
-- [Grundlagen von CSS-Selektoren](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors)
-- [XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
+## See Also (Siehe auch)
+- Floki-Dokumentation: [https://hexdocs.pm/floki](https://hexdocs.pm/floki)
+- html5ever GitHub-Repository: [https://github.com/servo/html5ever](https://github.com/servo/html5ever)

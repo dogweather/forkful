@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:32:51.859751-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 어떤 것 & 왜? 
+## 무엇이며 왜하는가?
+HTML 파싱은 HTML 문서에서 정보를 추출하는 과정입니다. 프로그래머들은 데이터를 다루거나 웹 스크래핑할 때 이 작업을 합니다.
 
-HTML 파싱이란, HTML 코드를 분석하고 이해하는 과정을 말합니다. 이를 통해 프로그래머는 웹 페이지의 구조를 이해하고, 특정 데이터를 추출하거나 웹 크롤링을 수행할 수 있습니다.
+## 실행 방법:
+Lua에서 HTML을 파싱하기 위해 `lxsh` 모듈을 사용할 수 있습니다. 아래는 간단한 예제입니다:
 
-## 어떻게:
 ```Lua
-htmlparser = require("htmlparser")
+local lxsh = require 'lxsh'
 
--- HTML 코드 정의
-local html = [[<div><p>안녕하세요!</p></div>]]
+-- HTML 문자열
+local html = [[
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Hello, Lua!</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+]]
 
--- HTML 파서 생성
-local root = htmlparser.parse(html)
-
--- p 태그를 가진 엘리먼트 찾기
-local elements = root:select("p")
-
--- 결과 출력
-for _, element in ipairs(elements) do
-    print(element:getcontent())
+-- lxsh를 사용한 파싱
+local parser = lxsh.parse.html()
+for kind, text in parser:match(html) do
+  if kind == 'start-tag' then
+    print('Start tag:', text)
+  elseif kind == 'end-tag' then
+    print('End tag:', text)
+  elseif kind == 'text' then
+    print('Text:', text)
+  end
 end
 ```
 
-위 코드를 실행하면, 화면에 '안녕하세요!'라는 문구가 출력됩니다.
+## 심층 탐구:
+HTML 파싱은 웹의 초창기부터 필요했습니다. 초기에는 정규식을 많이 사용했지만, 정확하지 않고 복잡한 HTML에는 적합하지 않았습니다. Lua에서 HTML 파싱을 위한 대안으로는 `luaxml`이나 `htmlparser` 라이브러리도 있습니다. `lxsh`는 구문 분석과 태그의 계층적 관계를 처리하는데 더 직관적입니다. 구현 세부 사항에서는 퍼포먼스 최적화를 위해 C 라이브러리를 바인딩하기도 합니다.
 
-## 깊은 탐구
-HTML 파싱에 대한 역사적 측면에서 볼 때, 원시적인 방법부터 복잡한 라이브러리를 사용하는 방식까지 거쳐 왔습니다. 이는 웹의 복잡성과 함께 발전했습니다.
-
-HTML 파싱의 대안으로는 BeautifulSoup, lxml 등 다양한 파이썬 라이브러리를 사용할 수 있습니다. 그러나 Lua를 사용하면, 간단하고 가벼운 코드로 빠른 성능을 낼 수 있습니다. 
-
-HTML을 파싱함에 있어 구현 세부사항은 사용되는 라이브러리나 요구 사항에 따라 다릅니다. 예를 들어, Lua의 htmlparser 라이브러리는 DOM 으로 HTML을 표현하고 CSS 선택자를 사용하여 요소를 선택합니다.
-
-## 추가 정보
-HTML 파싱에 대한 더 많은 정보는 아래의 링크를 참조하세요.
-
-[HTML 파싱 - Mozilla MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Parser)
-
-[Lua htmlparser GitHub](https://github.com/msva/lua-htmlparser)
-
-[Web 크롤링 - Wikipedia](https://ko.wikipedia.org/wiki/웹_크롤러)
+## 참고 자료:
+- lxsh GitHub 페이지: https://github.com/daurnimator/lxsh
+- Lua HTML parser GitHub 페이지: https://github.com/msva/lua-htmlparser
+- LuaXML 공식 매뉴얼: http://www.keplerproject.org/luaxml/

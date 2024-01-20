@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:38:15.512275-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?: 
+## What & Why? (무엇과 왜?)
+문자열에서 날짜를 파싱한다는 것은 문자열로부터 날짜 정보를 추출하고 사용 가능한 형식으로 변환하는 과정입니다. 프로그래머들은 데이터 처리와 시간관리를 위해 이를 수행합니다.
 
-문자열에서 날짜를 파싱한다는 것은 문자열을 날짜와 시간 데이터로 변환하는 것입니다. 프로그래머들이 이것을 하는 이유는 날짜와 시간을 실제로 계산하고 비교하려는 경우, 이를 수행하기 위해 문자열 형식에서 날짜 형식으로 변환해야하기 때문입니다.
-
-## 어떻게 해야 합니까?:
-
-Python에서 문자열로부터 날짜를 파싱하려면 datetime 모듈을 사용해야 합니다.
+## How to: (방법)
 ```Python
 from datetime import datetime
 
-date_string = "2022-05-15"
-date_object = datetime.strptime(date_string, "%Y-%m-%d")
+# 날짜 문자열 정의
+date_string = "2023-04-05 14:30:00"
 
-print(date_object)
+# datetime 객체로 파싱
+parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+
+print(parsed_date)
 ```
-위 코드를 실행하면 결과는 아래와 같습니다.
+
+출력:
 ```
-2022-05-15 00:00:00
+2023-04-05 14:30:00
 ```
-## 깊이 파헤치기:
 
-문자열에서 날짜를 파싱하는 것은 프로그래밍의 공통적인 작업 중 하나로, 이는 프로그램이 날짜 및 시간 정보를 전달하는 데 사용되는 표준적인 방법입니다. 파이썬 외의 많은 언어, 예를 들어 자바, 자바스크립트, C# 등도 이 기능을 지원합니다. 문자열에서 날짜 파싱은 비교적 간단하나, 다양한 형식의 날짜와 시간 문자열을 파싱해야 하는 경우 복잡성이 늘어납니다. 커스텀 날짜/시간 형식을 만들어 파싱하는 방법으로, strftime() 및 strptime() 함수를 사용합니다.
+## Deep Dive (심화 탐구)
+날짜 파싱은 데이터 교환의 기원과 함께 시작되었습니다. 초기엔 간단한 형식이 많았지만, 전 세계적인 데이터 교환 증가로 ISO 8601 같은 국제 표준이 등장했습니다.
 
-## 관련 링크:
+파이썬에서는 `datetime` 모듈의 `strptime()` 함수를 주로 사용하지만, `dateutil.parser` 같은 대안도 존재합니다. 이 함수들은 문자열을 해석하여 `datetime` 객체로 변환하는 내부 메커니즘을 가집니다.
 
-1. Python의 공식 datetime 문서: https://docs.python.org/3/library/datetime.html
-2. 날짜와 시간에 대한 Python Cookbook: https://pymotw.com/3/datetime/index.html
-3. strftime() 및 strptime() 함수에 대한 설명: https://www.programiz.com/python-programming/datetime/strftime.
+정확성과 빠른 처리 속도를 위해 파싱 로직은 C 언어로 구현돼있을 수 있습니다. 한편, 에러 메시지나 예외 처리는 파이썬에서 담당합니다. 따라서 효율적이면서도, 파이썬 특유의 명확성을 유지합니다.
+
+## See Also (참고 자료)
+- `datetime` 모듈 문서: https://docs.python.org/3/library/datetime.html
+- Python 날짜 및 시간 처리에 대한 포괄적인 가이드: https://realpython.com/python-datetime/
+- ISO 8601 표준: https://www.iso.org/iso-8601-date-and-time-format.html
+- `python-dateutil` 라이브러리: https://dateutil.readthedocs.io/en/stable/

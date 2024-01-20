@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:30:17.740449-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "C"
 category:             "C"
@@ -10,49 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why?
+"Quoi et pourquoi ?"
+L'analyse (parsing) du HTML consiste à décomposer le contenu d'une page web en éléments compréhensibles pour les programmes. Les développeurs le font pour extraire des données, manipuler le contenu ou intégrer des fonctionnalités web dans leurs applications.
 
-Le parsing HTML est l'action de décomposer et d'analyser un document HTML pour le transformer en un format utilisable pour votre programme. C'est essentiel pour les programmeurs qui souhaitent automatiquement extraire, manipuler ou utiliser des informations à partir de pages Web.
-
-## Comment faire :
-
-Alors, comment pouvons-nous analyser du HTML en C ? Le code ci-dessous montre une façon simple d'accomplir cela en utilisant une bibliothèque populaire appelée « gumbo-parser ».
-
+## How to:
+"Comment faire :"
 ```C
-// Inclure la bibliothèque gumbo-parser
-#include <gumbo.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "my_html_parser.h" // Considérez ceci comme une bannière pour votre bibliothèque de parsing HTML.
 
-// Fonction pour parse le HTML
-void parse_html(const char* html) {
-    GumboOutput* output = gumbo_parse(html);
-
-    // Print le titre de la page, si existant
-    GumboNode* title = find_title(output->root);
-    if (title) {
-        printf("Titre : %s\n", GumboNode->v.text.text);
+int main() {
+    // Initialisation : charger du HTML dans un char* (string)
+    char *html_content = "<html><head><title>Test</title></head><body><p>Hello, World!</p></body></html>";
+    
+    // Utilisation du parseur hypothétique
+    HTMLNode *root = parse_html(html_content);
+    
+    // Chercher des éléments, par exemple : <p>
+    HTMLNode *paragraph = find_node_by_tag(root, "p");
+    if (paragraph != NULL) {
+        printf("Found paragraph: %s\n", paragraph->inner_text);
     }
-
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    
+    // Nettoyage
+    free_html_tree(root);
+    return 0;
 }
 
-// Fonction pour trouver le titre de la page
-static GumboNode* find_title(const GumboNode* root) {
-    // implémentation dépendante de vous
-}
+// Sortie supposée
+// Found paragraph: Hello, World!
 ```
+Notez qu'on ne trouve pas de parseurs HTML standard en C. Utilisez des librairies tierces comme `libxml2`.
 
-En supposant que vous avez correctement installé gumbo-parser, le code ci-dessus va lire le HTML donné, et si existant, imprimera le titre de la page.
+## Deep Dive:
+"Plongée profonde :"
+Le parsing HTML n'est pas né hier. Comme le web, il évolue depuis les années 90. Historiquement, la complexité du HTML a entraîné des problèmes d'analyse; c'est pourquoi le W3C crée des standards pour simplifier l'interprétation.
 
-## Approfondissement :
+Parmi les alternatives, on trouve `libxml2` pour du parsing robuste et `Gumbo` pour un parsing HTML5. Ces libraires gèrent la complexité des documents réels sur le web - souvent mal formés ou non conformes.
 
-Historiquement, le parsing HTML en C était un processus complexe et précaire, due à la nature flexible du HTML. Les bibliothèques telles que gumbo-parser ont été développées pour simplifier ce processus.
+Une implémentation soignée doit gérer les spécificités des balises et les cas limites, comme les scripts ou les styles inline, tout en restant performante. Parseurs performants souvent utilisent des machines d'état ou des analyses syntaxiques (parsing arborescent) pour réduire la complexité algorithmique.
 
-En ce qui concerne les alternatives, libxml2 est une autre bibliothèque populaire pour le parsing HTML en C. Cependant, elle peut être considérée comme plus complexe à utiliser.
-
-Concernant les détails d'implémentation, le processus de parsing HTML est un processus à deux étapes : la construction de l'arbre DOM et le rendu de l'arbre. Dans notre exemple, gumbo-parser fait simplement la phase de construction DOM. Le rendu est laissé à votre discrétion.
-
-## Voir Aussi :
-
-- Documentation de Gumbo : https://github.com/google/gumbo-parser
-- Tutoriel de libxml2 : http://www.xmlsoft.org/html/libxml-HTMLparser.html
-- W3C HTML DOM : https://www.w3schools.com/js/js_htmldom.asp
+## See Also:
+"Voir aussi :"
+- La documentation de `libxml2`: http://xmlsoft.org/
+- Gumbo parser, un parseur HTML5: https://github.com/google/gumbo-parser
+- W3C pour comprendre les standards HTML: https://www.w3.org/standards/techs/html

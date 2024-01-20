@@ -1,6 +1,7 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-html_title:           "PowerShell: Analisando uma data a partir de uma string"
+date:                  2024-01-20T15:35:01.365611-07:00
+html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "C"
 category:             "C"
@@ -10,54 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## O Que & Porquê?
+Converter uma data de string para um formato utilizável permite que os programas manipulem datas e horários. Os programadores fazem isso para validar dados, realizar comparações de tempo ou simplesmente formatar para exibição.
 
-Analisar uma data a partir de uma string é extrair valores específicos como dia, mês e ano de uma cadeia de caracteres. Programadores fazem isso para manipular, formatar ou comparar datas de maneira personalizada.
-
-## Como Fazer
-
-Vamos usar a função `strptime` que faz parte da biblioteca de tempo padrão em C. Neste exemplo, vamos transformar uma string em uma estrutura de data e tempo:
-
-```C
-#include <time.h>
+## Como fazer:
+O exemplo abaixo demonstra como converter uma string que contém uma data para uma estrutura `tm` usando a função `strptime` da biblioteca `time.h`.
+```c
 #include <stdio.h>
+#include <time.h>
 
 int main() {
-    struct tm temp;
-    const char *date_string = "27/09/2020";
-    strptime(date_string, "%d/%m/%Y", &temp);
-
-    printf("Ano: %d \n", temp.tm_year + 1900);
-    printf("Mês: %d \n", temp.tm_mon + 1);
-    printf("Dia: %d \n", temp.tm_mday);
+    const char *dataString = "2023-03-15 14:58:00";
+    struct tm dataEstrutura;
+    
+    if (strptime(dataString, "%Y-%m-%d %H:%M:%S", &dataEstrutura) == NULL) {
+        printf("Falha ao converter a data.\n");
+    } else {
+        printf("Data convertida com sucesso: %d-%d-%d %d:%d:%d\n",
+            dataEstrutura.tm_year + 1900, // Ano desde 1900
+            dataEstrutura.tm_mon + 1,     // Mês começa em 0
+            dataEstrutura.tm_mday,
+            dataEstrutura.tm_hour,
+            dataEstrutura.tm_min,
+            dataEstrutura.tm_sec);
+    }
     return 0;
 }
 ```
-
-A saída será:
-
+Saída de exemplo:
 ```
-Ano: 2020 
-Mês: 9 
-Dia: 27 
+Data convertida com sucesso: 2023-3-15 14:58:0
 ```
 
 ## Aprofundando
+O parsing de strings de datas tem sido uma necessidade desde que os computadores começaram a interagir com tempo e calendários. Tradicionalmente, a biblioteca padrão C inclui funções como `strptime` e `strftime` para manipular representações de tempo.
 
-### Contexto Histórico 
-A função `strptime` está em uso desde os primeiros sistemas Unix e foi posteriormente incluída na biblioteca C padronizada. 
+Alternativas para `strptime` em outros contextos incluem funções específicas de bibliotecas, como `getdate` em algumas implementações POSIX ou até bibliotecas de terceiros que lidam com o tempo de formas mais sofisticadas.
 
-### Alternativas
-Outras opções incluem escrever sua própria função de análise ou usar bibliotecas de terceiros como o `GNU Library` ou `Boost DateTime`.
+Em relação aos detalhes da implementação, `strptime` funciona interpretando a string de acordo com os formatos especificados. Por exemplo, `%Y` representa o ano com o século como um número decimal, `%m` o mês e `%d` o dia do mês. A estrutura `tm` é preenchida com os valores correspondentes.
 
-### Detalhes de implementação
-O analisador de datas da string convertida em uma estrutura `tm` pela função `strptime` pode variar dependendo do ambiente. Certifique-se de fornecer o formato de data correto.
-
-## Ver Também
-
-* Tutorial completo sobre a biblioteca de tempo em C: [tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-* Outras funções de manipulação de tempo e data: [geekhideout.com](http://www.geekhideout.com/urlcode.shtml)
-
----
+## Veja Também
+Para mais sobre manipulação de datas e horas em C:
+- Manual do `strptime`: https://www.man7.org/linux/man-pages/man3/strptime.3.html
+- Tutorial sobre a biblioteca `time.h`: https://www.tutorialspoint.com/c_standard_library/time_h.htm
+- Referência da estrutura `tm`: https://en.cppreference.com/w/c/chrono/tm

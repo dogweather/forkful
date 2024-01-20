@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:36:25.536740-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,40 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Parsen eines Datums aus einem String wandelt Text in ein Datumsformat um, das der Computer verstehen und bearbeiten kann. Programmierer tun das, um datumsbezogene Operationen wie Sortierung oder Differenzberechnung zu ermöglichen.
 
-Das Parsen eines Datums aus einem String bezieht sich auf den Prozess der Umwandlung eines vorgegebenen String-Eintrags in ein Datum oder eine Uhrzeit. Programmierer tun dies, um das Datumsformat zu standardisieren und um zeitbezogene Berechnungen und Operationen durchführen zu können.
+## How to:
+In Haskell gebruachen wir die `Time`-Bibliothek, um Datums-Strings zu parsen. Hier ein einfaches Beispiel:
 
-## Wie Macht Man Das:
-
-Hier ist ein einfaches Beispiel, wie man in Haskell ein Datum aus einem String parst. Wir verwenden die `parseTimeM` Funktion aus dem `Data.Time.Format` Modul:
-
-```Haskell
-import Data.Time
-import System.Locale
-
-parseDateString :: String -> Maybe UTCTime
-parseDateString = parseTimeM True defaultTimeLocale "%Y-%m-%dT%H:%M:%S%Z" 
+```haskell
+import Data.Time.Format (parseTimeM, defaultTimeLocale)
 
 main :: IO ()
 main = do
-  print $ parseDateString "2021-02-26T14:12:36UTC"
+  let format = "%Y-%m-%d"
+      dateString = "2023-03-15"
+  parseResult <- parseTimeM True defaultTimeLocale format dateString :: IO (Maybe Day)
+  case parseResult of
+    Just day -> print day
+    Nothing -> putStrLn "Das Parsen des Datums ist fehlgeschlagen."
+
+-- Ausgabe:
+-- 2023-03-15
 ```
 
-Und hier ist die Ausgabe des oben genannten Haskell-Codes:
+## Deep Dive
+Das Parsen von Datumswerten ist essentiell, da Termine und Fristen oft in textueller Form vorliegen. Die Funktion `parseTimeM` wurde in Haskell entwickelt, um Strings anhand eines angegebenen Formats in Daten umzuwandeln. Historisch gesehen war die Datumsverarbeitung komplizierter, verschiedene Standards haben das heute vereinfacht.
 
-```Haskell
-Just 2021-02-26 14:12:36 UTC
-```
+Alternativen zum `Time`-Modul umfassen Pakete wie `chronos` oder `thyme`, die zwar ähnliche Funktionen bieten, aber unterschiedliche Designphilosophien haben. Die `parseTimeM`-Funktion basiert auf Typklassen, was ihre Verwendung typsicher macht. Es ist jedoch wichtig, das korrekte Format zu spezifizieren, da Fehlformatierungen zu einem `Nothing`-Ergebnis führen.
 
-## Vertiefung:
-
-Das Parsen eines Datums aus einem String ist oft erforderlich, da Daten gelegentlich in Textform anstatt als spezialisierte Datentypen vorliegen. Die Implementierung in Haskell ist besonders elegant, da sie einen funktionalen Ansatz nutzt und Musterabgleich verwendet.
-
-Es gibt auch Alternativen zur `parseTimeM` Funktion. Sie könnten beispielsweise die Funktionen `read` oder `reads` verwenden, wenn Sie wissen, dass das Format immer korrekt ist und Sie keine Fehlerbehandlung benötigen.
-
-In Bezug auf Implementierungsdetails verwendet `parseTimeM` eine Monade, um das Ergebnis zu verarbeiten. Im Fall eines Parse-Fehlers gibt die Funktion `Nothing` zurück, und wenn das Parsen erfolgreich ist, erhält man `Just parsedTime`.
-
-## Siehe Auch:
-
-- Die Dokumentation zur `Data.Time` Bibliothek finden Sie [hier](https://hackage.haskell.org/package/time-1.5/docs/Data-Time.html).
-- Eine ausführliche Anleitung zur Haskell-Programmiersprache finden Sie auf der offiziellen [Haskell-Website](https://www.haskell.org/).
+## See Also
+- Haskell `Time`-Library: http://hackage.haskell.org/package/time
+- Haskell Wiki zu Datums- und Zeitfunktionen: https://wiki.haskell.org/Working_with_time
+- Tutorials zu `Data.Time`: https://two-wrongs.com/haskell-time-library-tutorial

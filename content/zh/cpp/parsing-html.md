@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:30:28.615784-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "C++"
 category:             "C++"
@@ -10,51 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-HTML解析是一种处理并理解HTML文档的过程，从而使编程者可以对其进行操作和处理。我们程序员之所以要做这个，主要是因为要处理网页数据，从HTML代码中提取有用的信息。
+## What & Why? 什么以及为什么？
 
-## 如何操作：
-在C++中，我们可以使用著名的库Gumbo来解析HTML。下面是一个简单的例子。
+Parsing HTML means extracting data and information from HTML code. Programmers parse HTML to interact with web content, automate data extraction, scrape websites, or to test web applications.
+
+## How to? 怎么做？
+
+Here’s a simple C++ code snippet using the library Gumbo for HTML parsing:
 
 ```C++
+#include <gumbo.h>
 #include <iostream>
-#include "gumbo.h"
 
-static void search_for_links(GumboNode* node) {
-  if (node->type != GUMBO_NODE_ELEMENT) {
-    return;
-  }
-  GumboAttribute* href;
-  if (node->v.element.tag == GUMBO_TAG_A &&
-      (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-    std::cout << href->value << "\n";
-  }
-  GumboVector* children = &node->v.element.children;
-  for (unsigned int i = 0; i < children->length; ++i) {
-    search_for_links(static_cast<GumboNode*>(children->data[i]));
-  }
+void search_for_text(GumboNode* node) {
+    if (node->type == GUMBO_NODE_TEXT) {
+        std::cout << node->v.text.text << std::endl;
+    } else if (node->type == GUMBO_NODE_ELEMENT) {
+        GumboVector* children = &node->v.element.children;
+        for (unsigned int i = 0; i < children->length; ++i) {
+            search_for_text(static_cast<GumboNode*>(children->data[i]));
+        }
+    }
 }
 
 int main() {
-  GumboOutput* output = gumbo_parse("<a href='http://www.google.com'>Google</a>");
-  search_for_links(output->root);
-  gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char* html = "<html><body>Hello, world!</body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_text(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
 
-这段代码会输出：
-
+Output:
 ```
-http://www.google.com
+Hello, world!
 ```
 
-## 深入探讨：
-HTML解析历来是网页抓取、内容提取和自动化测试的关键步骤。这个过程可以追溯到90年代，随着网络和网页的发展，需求逐渐增加。虽然选择多样，但C++的Gumbo库因其高效率和良好的错误处理，被广泛应用在各种大型项目中。
+## Deep Dive 深入探讨
 
-在实施细节方面，HTML解析首先是词法分析，将输入的HTML字符串划分为一系列的令牌。然后，解析器根据这些标记创建DOM树。此过程称为“树构筑”。
+Parsing HTML has evolved. In the ’90s, parsing was often done with regular expressions, which led to many problems. Better alternatives like specialized libraries (e.g., Gumbo, HTML Tidy) now exist, which parse HTML into a DOM structure.
 
-处理可能出现的HTML语法错误也是解析过程的重要部分。例如，如果存在未关闭的标签，解析器通常会自动修复。
+The Gumbo parser library is designed by Google. It's excellent for C/C++ and doesn't depend on external libraries. When implementing, manage memory properly. Use `gumbo_destroy_output` to avoid leaks.
+ 
+Alternatives include libraries in other languages, like Beautiful Soup in Python, which offer more features but may lack performance compared to C++ libraries.
 
-## 参见：
-1. [Gumbo文档](https://github.com/google/gumbo-parser)
-2. [W3C对HTML解析的规定](https://html.spec.whatwg.org/multipage/parsing.html)
+## See Also 参考链接
+
+- Gumbo Parser: https://github.com/google/gumbo-parser
+- HTML Tidy Project: http://www.html-tidy.org/
+- Beautiful Soup Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/ 
+
+Remember to choose libraries considering your project needs, performance requirements, and language familiarity. Happy parsing!

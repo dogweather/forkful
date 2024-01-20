@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:12.689295-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Clojure"
@@ -11,35 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פיענוח HTML הוא הפעולה של תיאורמט, ניתוח והמרת מסמך HTML לצורה מבנית que אחרת, נמשך Lisz st למשל. מתכנתים מפענחים HTML כדי לשלוט במידע, לשנות או לנתח את המסמך.
 
-## כיצד:
-הבדיקה הבאה מדגימה איך לפענח HTML, שימוש בספריה Enlive של Clojure.
+לעשות פרסינג ל-HTML זה להמיר את הקוד של דף אינטרנט לנתונים שאפשר לקרוא ולעבד בשפת תכנות. תוכניתנים עושים את זה כדי לחלץ מידע, לאוטומט טפסים, ולעשות בדיקות אוטומטיות לאתרים.
+
+## איך לעשות:
 
 ```Clojure
-(require '[net.cgrand.enlive-html :as e])
+(require '[enlive.core :as enlive])
 
-(defn parse-html [html-string]
-  (-> html-string
-      java.io.StringReader.
-      e/html-resource
-      e/select [:body :p]))
+;; נטען את ה-HTML
+(defn fetch-html [url]
+  (-> (java.net.URL. url) .openStream slurp))
 
-(parse-html "<html><body><p>Clojure rules!</p></body></html>")
-;=> ({:tag :p, :attrs nil, :content ["Clojure rules!"]})
+;; מחזיר את כל טקסטים מתגית מסוימת
+(defn extract-texts [html tag]
+  (map :content (enlive/select (enlive/html-resource (java.io.StringReader. html)) [tag])))
+
+;; דוגמה לשימוש
+(def html-sample (fetch-html "https://www.example.com"))
+(println (extract-texts html-sample :p))
 ```
 
-## צלילה עמוקה
-## 
-היסטוריה: פיענוח HTML מאוד נפוץ בתכנות, וראה מגוון רחב של פתרונות לאורך השנים. Clojure בחר בלהציע ספריה לצורך זה, כמו Enlive.
+דוגמת פלט:
 
-אלטרנטיבות: ספריות נוספות כמו Hickory ו Jsoup מספקות יכולות דומות.
+```
+("טקסט של פסקה ראשונה" "טקסט של פסקה שנייה" ...)
+```
 
-פרטי המימוש: Enlive מצליח להפעיל כל JavaScript המובנה בעמוד האינטרנט, בנוסף לפיענוח ה-HTML עצמו, מה שהופך אותו לכלי עוצמתי.
+## עומק הים:
 
-## ראה גם
-- [Enlive GitHub page](https://github.com/cgrand/enlive)
-- [Jsoup Library](https://jsoup.org/)
-- [Hickory GitHub page](https://github.com/davidsantiago/hickory)
+פרסינג ל-HTML אינו פשוט כמו המרה טקסטואלית רגילה. HTML יכול להיות מורכב ולא תמיד תקני. במהלך השנים, ספריות רבות נוצרו למטרה זו. הן מנסות להיות קשוחות לשגיאות ולנהל מגוון רחב של קידודי HTML.
 
-אין הסכמה.
+enlive, שראינו לעיל, היא ספרייה חזקה לפרסינג של HTML/XML ב-Clojure. היא מאפשרת לנו לבצע שאילתות ולשנות את ה-HTML בצורה מוכוונת נתונים. חלופות כוללות ספריות כמו Hickory או jsoup, אשר מספקות יכולות דומות בזהויות של דומיינים שונים של מידע.
+
+כאשר מגיעים לבחירה של כלי פרסינג, חשוב לשקול גמישות מראש, ביצועים וקלות שימוש. בחירת הכלים הנכונים יכולה להבדיל בין קוד פשוט ואלגנטי לבין קוד מסורבל ומתסכל.
+
+## ראה גם:
+
+- [Enlive GitHub Repository](https://github.com/cgrand/enlive)
+- [Hickory GitHub Repository](https://github.com/davidsantiago/hickory)
+- [Jsoup: Java HTML Parser](https://jsoup.org/)

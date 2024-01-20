@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:35:08.433577-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "C++"
 category:             "C++"
@@ -10,54 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 文字列から日付をパースする方法の解説：
+## What & Why? (何となぜ？)
+日付の解析とは、文字列から年、月、日を抽出することです。これは、ユーザー入力を取得したり、ファイルから読み込んだりした場合に日付データとして利用するために行います。
 
-## 何となぜ？(What & Why?)
-
-文字列から日付のパースは、文字列形式の日付を計算可能な日付形式に変換するプロセスです。これは、日付が文字列として保存または送信され、後でそれを操る必要が生じるときにプログラマーにとって重要です。
-
-## どのように？(How to?)
-
-以下に示す通り、C++の`std::get_time`関数を使って文字列から日付を解析することができます:
-
+## How to (方法):
 ```C++
-
 #include <iostream>
-#include <iomanip>
+#include <string>
 #include <sstream>
+#include <iomanip>
 #include <ctime>
 
 int main() {
-    std::tm tm = {}; 
-    std::string s("2022-09-09 20:30:00");
-    std::istringstream ss(s);
-
-    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
+    std::string date_str = "2023-04-12";
+    std::tm tm = {};
+    std::istringstream ss(date_str);
+    
+    ss >> std::get_time(&tm, "%Y-%m-%d");
+    
     if (ss.fail()) {
-        std::cout << "Parse failed\n";
-    } else {
-        std::cout << std::put_time(&tm, "%c") << '\n';
+        std::cerr << "Date parsing failed." << std::endl;
+        return 1;
     }
+
+    // Outputting for demonstration purposes
+    std::cout << "Year: " << tm.tm_year + 1900 << '\n';
+    std::cout << "Month: " << tm.tm_mon + 1 << '\n';
+    std::cout << "Day: " << tm.tm_mday << '\n';
+
     return 0;
 }
-
 ```
 
-上記のコードが出力する結果は次のとおりです:
-
-```shell
-Fri Sep  9 20:30:00 2022
+Sample output:
+```
+Year: 2023
+Month: 4
+Day: 12
 ```
 
-## ディープダイブ(Deep Dive)
+## Deep Dive (深層潜航):
+Parsing a string to a date is a common task. Before C++11, developers often used `strptime` or custom parser functions. But these could be risky - they might not handle all date formats or could behave inconsistently across different platforms.
 
-1. 歴史的背景：文字列からの日付解析は、ユーザー入力やファイル、ウェブリクエストなどから受け取った日付情報を解析と操作する為に開発されました。
-2. 代替手段：C++には、Boostなどのサードパーティライブラリを使って日付を解析するオプションもあります。
-3. 実装の詳細：`std::get_time` は文字列を解析し、tm構造体へ結果を保存します。解析が失敗した場合、`failbit`が設定されます。
+C++11 introduced `<chrono>` and `<iomanip>`, making date parsing safer and more standardized. The above example uses `<iomanip>`'s `get_time` function to ensure correct parsing according to the expected format. Alternatives are using third-party libraries like Boost.Date_Time or Howard Hinnant's date library.
 
-## 参照 (See Also) 
+Implementation wise, C++ now leverages types and standard library features to prevent common mistakes like out-of-range errors or month-day misinterpretations. Embrace these facilities for robust applications.
 
-以下に、関連するリンクと情報を提供します:
-
-2. [Cppreference](https://en.cppreference.com/w/cpp/io/manip/get_time) - もっと深い理解のためのRvalue, Lvalueなどの概念と使い方を説明しています。
-3. [Boost](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html) - C++のBoostライブラリの日付と時間操作についての詳細なドキュメンテーションがあります。
+## See Also (関連リンク):
+- [C++ reference for `<iomanip>`](https://en.cppreference.com/w/cpp/header/iomanip)
+- [C++ reference for `<chrono>`](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost.Date_Time documentation](https://www.boost.org/doc/libs/release/libs/date_time/)
+- [Howard Hinnant's date library GitHub repository](https://github.com/HowardHinnant/date)

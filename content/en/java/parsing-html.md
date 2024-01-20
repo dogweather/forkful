@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:32:16.739950-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Java"
 category:             "Java"
@@ -12,67 +13,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the process of analyzing a document to extract meaningful information. Programmers often parse HTML files to manipulate, extract, and transform the contained data, particularly in web scraping or data mining tasks.
+Parsing HTML means digging through the markup to extract data like text, links, or other elements. We do it to interact with or scrape web content, automate browsing tasks, or test web apps.
 
 ## How to:
 
-Let’s dive into some coding. We'll use the Jsoup, a popular library in Java. 
+Let's use Jsoup, a handy library for working with real-world HTML. First, add the dependency:
 
-First, add the following Maven dependency to your project's pom.xml:
-
-```Java
+```xml
 <dependency>
-   <groupId>org.jsoup</groupId>
-   <artifactId>jsoup</artifactId>
-   <version>1.13.1</version>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.2</version>
 </dependency>
 ```
 
-Then, here's how to connect to a website and parse its HTML:
+Now to the fun part. Here's how to grab a webpage's title and print it:
 
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-	
-public class Main
-{
-    public static void main(String[] args) throws Exception
-    {
-        Document document = Jsoup.connect("http://example.com").get();
-        System.out.println(document.title());
+
+public class HtmlParser {
+    public static void main(String[] args) throws IOException {
+        String url = "http://example.com";
+        Document doc = Jsoup.connect(url).get();
+        String title = doc.title();
+        System.out.println("Title: " + title);
     }
 }
 ```
 
 Output:
+
 ```
-Example Domain
+Title: Example Domain
 ```
 
-Simple, isn't it? In the above example, the `Jsoup.connect().get()` opens a connection to the given URL and fetches the HTML. `document.title()` prints out the title of the webpage.
+How about extracting all the links?
+
+```java
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+// ... inside the main or another method
+Elements links = doc.select("a[href]");
+for (Element link : links) {
+    System.out.println("Link: " + link.attr("href"));
+}
+```
 
 ## Deep Dive
 
-HTML parsing in Java goes way back and currently, libraries like Jsoup, HTMLUnit enrich the Java ecosystem. HTML parsers were not cool initially; their importance grew after the web scraping boom. 
+Once upon a time, HTML was tamed by regex patterns, a method both error-prone and nightmarish for complex documents. Enter Jsoup in the late aughts, providing a jQuery-like interface for Java to parse, traverse, and manipulate HTML.
 
-Jsoup, for instance, provides APIs to extract and manipulate the data using DOM, CSS, and JQuery-like methods. 
+Jsoup is not the only choice. There's HtmlUnit for full-fledged web app testing with JavaScript support, but it's heavier and more complex. For lightweight tasks, Apache Commons Validator is great just for extracting URLs.
 
-However, the alternative parser, HTMLUnit, while a bit unwieldy, provides more than just parsing; it’s a complete web browser simulator. 
+Under the hood, Jsoup uses a DOM parser, which models the entire document in memory as a tree. This approach makes selecting and navigating the HTML structure a breeze. Plus, it's forgiving with sloppy HTML, fixing issues on-the-fly to ensure robust parsing.
 
-Fundamentally, parsing HTML involves breaking down HTML documents into parse trees. These trees can then be navigated and manipulated easily for data extraction. 
-
-While using libraries like Jsoup simplifies our task, it’s crucial to understand the underlying concepts and the complexities involved in their creation. Cold hard fact: Underneath, it’s a web of tokens, syntax analysis, and tree construction - a complex mechanism.
+Remember, when scraping, always check a site's `robots.txt` and terms of service to avoid legal troubles or getting IP-banned.
 
 ## See Also
 
-Here is some food for thought:
-
-[Jsoup official documentation][1]: Need more insights into Jsoup features? 
-
-[HTMLUnit official documentation][2]: Want to go beyond just parsing? Try HTMLUnit.
-
-[HTML Parsing theory][3]: Interested in the mechanism of HTML parsing? Dive in. 
-
-[1]: http://jsoup.org/
-[2]: http://htmlunit.sourceforge.net/
-[3]: https://html.spec.whatwg.org/multipage/parsing.html
+- Jsoup Official Documentation: https://jsoup.org/
+- HtmlUnit: http://htmlunit.sourceforge.net/
+- Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

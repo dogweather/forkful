@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:34:04.710203-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "PowerShell"
@@ -11,45 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+פענוח HTML הוא תהליך שבו אנחנו לוקחים קוד HTML ומתרגמים אותו לצורה שבה ניתן לעבוד איתה בסקריפטים. תוכניתנים עושים את זה כדי לחלץ נתונים, לבדוק תקינות, ולאוטומט פעולות על דפי אינטרנט.
 
-פענוח HTML הוא פעולת ניתוח של קוד HTML לצורך שימוש או מטרה מסויימת. התכנתים עושים את זה כדי לקרוא, לשפר או לאחזר מידע מאתרי אינטרנט.
-
-## איך:
+## איך לעשות:
+כדי לפענח HTML בפאוורשל, אפשר להשתמש במודולים חיצוניים כמו `HtmlAgilityPack` או בפקודות פשוטות יותר כמו `Invoke-WebRequest`. נתחיל בדוגמה עם `Invoke-WebRequest`:
 
 ```PowerShell
-# התקנה של Invoke-WebRequest
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-Install-Module -Name Invoke-WebRequest -Force
+# שולף את קוד ה-HTML של דף אינטרנט
+$response = Invoke-WebRequest -Uri 'https://www.example.com'
 
-# פענוח HTML עם PowerShell
-$URL = 'https://www.example.com'
-$HTML = Invoke-WebRequest -Uri $URL
-$ParsedHTML = $HTML.ParsedHtml
+# מוציא קטעים מסוימים מה-HTML באמצעות CSS selectors
+$titles = $response.ParsedHtml.getElementsByTagName('h1')
 
-$ParsedHTML.getElementsByTagName('tag_name') | foreach {$_.innerText}
-```
-פלט דוגמה:
-```PowerShell
-Element text 1
-Element text 2
-Element text 3
+# מדפיס כל כותרת
+foreach ($title in $titles) {
+  Write-Output $title.innerText
+}
 ```
 
-## הצוללת המעמיקה:
+הפלט יהיה את טקסט הכותרות שנמצאים בתוך תגי `<h1>` מהדף שגישה אליו ביצענו.
 
-### ההקשר ההיסטורי
+## ניתוח עמוק
+פאוורשל לא בנוי עם פענוח HTML בראש מעייניו. זה הסיבה שלעיתים אנו נזדקק למודולים כמו `HtmlAgilityPack`. בעבר, בפאוורשל הישן, פענוח ה-HTML היה מסורבל יותר עם קוד קומ ועזרים שונים כמו Internet Explorer COM object. כיום, עם פונקציות ברמת המערכת כמו `Invoke-WebRequest`, התהליך פשוט יותר, אבל עדיין לא מושלם.
 
-PowerShell הושקה ב-2006 כאמצעי ממוחשב לניהול ואוטומציה של משימות בעזרת סריפטים.
+האלטרנטיבה הפופולרית `HtmlAgilityPack` מתמודדת עם ה-HTML בצורה מורכבת יותר ומאפשרת אינטראקציה עם ה-HTML באופן ידידותי יותר למתכנת, דומה לעבודה בשפות כמו C# או Python בעזרת מודולים או ספריות מתאימות.
 
-### חלופות
+מלבד `HtmlAgilityPack`, ישנם כלים נוספים כמו `AngleSharp` שנועדו לדמות את ה-DOM בצורה אפקטיבית ויעילה בפלטפורמות .NET.
 
-עוד שפות תכנות שיכולות לפענח HTML הן Python (עם BeautifulSoup) וJavaScript (עם Node.js).
-
-### פרטים בנוגע ליישום
-
-הפקודה `Invoke-WebRequest` משתמשת ב-object מסוג HTMLDocument של MSHTML - COM object של Microsoft המספק את אפשרות הפענוח.
-
-## ראה גם:
-
-- [HTML parsing in Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [HTML parsing in Node.js](https://cheerio.js.org/)
+## ראה גם
+- [`HtmlAgilityPack` GitHub repository](https://github.com/zzzprojects/html-agility-pack)
+- [ניתוח תגי HTML באמצעות `Invoke-WebRequest`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [AngleSharp GitHub repository](https://github.com/AngleSharp/AngleSharp)

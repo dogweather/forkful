@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:30:43.776163-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "C"
@@ -11,43 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עיבוד HTML הוא התהליך שבו מנתחים קוד HTML ומשנים אותו למודל מבנה שאפשר לתכנים לעבוד איתו בקלות יותר. במערכות רבות, זה דרך בטוחה ויעילה לשנות את התוכן והמבנה של דף האינטרנט.
+פענוח HTML הוא תהליך שבו מתוכנת קורא ומנתח את קוד ה-HTML כדי להבין את מבנה ותוכן הדף. תכניתנים עושים זאת כדי לחלץ מידע, לבצע בדיקות אוטומטיות של אתרי אינטרנט, או לעבד דפי ווב באופן דינמי.
 
-## איך לעשות:
-נסקור בקוד C איך לנתח מסמך HTML באמצעות הספרייה Gumbo. Gumbo היא ספרייה של C לניתוח HTML שנוצרה על ידי Google.
-
+## איך לעשות?
+קוד C לדוגמה:
 ```C
 #include <stdio.h>
-#include <gumbo.h>
+#include <stdlib.h>
+#include <string.h>
 
-void search_for_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
+// פונקציה פשוטה למציאת תיוג התחלה
+const char* find_start_tag(const char *html, const char *tag) {
+    char *start_tag = NULL;
+    if ((start_tag = strstr(html, tag)) != NULL) {
+        return start_tag;
     }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-    (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("%s\n", href->value);
-    }
-
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(children->data[i]);
-    }
+    return NULL;
 }
 
+// דוגמא לשימוש בפונקציה
 int main() {
-    GumboOutput* output = gumbo_parse("<a href='www.google.com'>Google</a>");
-    search_for_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char *html = "<html><body><h1>Title</h1></body></html>";
+    const char *tag = "<h1>";
+    const char *start = find_start_tag(html, tag);
+    if (start) {
+        printf("Found tag %s\n", tag);
+    } else {
+        printf("Tag %s not found\n", tag);
+    }
+    return 0;
 }
 ```
-התוצאה הצפויה היא קישור לגוגל: www.google.com
 
-## צלילה עמוקה
-פעם, הכיוון הכללי בניתוח HTML היה לכתוב את המנתח שלך. זה לא תמיד היה יעיל ותמיד הכיל סיכונים של שגיאות. כיום, ישנן ספריות רבות, כמו Gumbo של Google, שהוקמו כדי לפשט את התהליך ולהפוך אותו למדויק יותר. אפשר לעבוד עם XML ושפות פיתוח אחרות כמו Python במקום C אם זה מתאים לצרכים שלך.
+פלט משוער:
+```
+Found tag <h1>
+```
+
+## טבילה עמוקה
+פענוח HTML הוא אתגר שעמד בפני מתכנתים כבר מתחילת האינטרנט. בשנים הראשונות, הספריות היו פרימיטיביות ולא תואמות תקנים, מה שהוביל לקוד בלתי תחזוק. היום ישנן ספריות מתקדמות כמו libxml2 ל-C שיכולות לבצע ניתוח קפדני של HTML ו-XML. יש גם אלטרנטיבות בשפות אחרות כמו BeautifulSoup ב-Python. הכרעה בין הכלים צריכה להתבצע לפי המשימה הספציפית ומורכבות ה-HTML שאתה מתמודד איתו.
 
 ## ראה גם
-- [מסמך ה-W3C על ניתוח HTML](https://www.w3.org/TR/html51/syntax.html#parsing)
-- [מדריך למנתח ה-HTML של Google Gumbo](https://github.com/google/gumbo-parser)
-- [דוגמאות לשימוש בספריית Gumbo של Google](https://github.com/google/gumbo-parser/tree/master/examples)
+- ספריית [libxml2](http://xmlsoft.org/)
+- מדריך ל-[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- מסמך המאגד [ספריות לניתוח HTML](https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers)

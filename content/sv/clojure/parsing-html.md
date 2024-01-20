@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:31:00.002513-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,33 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML är den process genom vilken vi läser och tolkar HTML-kod för att bearbeta dess struktur. Programmerare gör det för att extrahera, manipulera och interagera med data som är instängda i HTML-dokument.
+Parsing HTML innebär att omvandla HTML-kod till en datastruktur som ditt program kan hantera. Programmerare gör detta för att extrahera data, manipulera innehållet eller skrapa webbsidor.
 
 ## Så här gör du:
-Med Clojure, använd `jsoup` bibliotek för att parsa HTML enkelt. Så här kan ditt kodblock se ut:
+Clojure har kraftfulla bibliotek för HTML-parsing, som `enlive` eller `hickory`. Här använder vi `hickory` för dess enkelhet:
 
-```Clojure
-(ns your-namespace
-  (:require [clojure.java.io :as io])
-  (:import (org.jsoup Jsoup)))
+```clojure
+;; Lägg till hickory i dina projektberoenden first
+;; [hickory "0.7.1"] for example (check for the latest version)
 
-(defn parse-html [file]
-  (-> (io/file file)
-      slurp
-      Jsoup/parse))
+(require '[hickory.core :as hickory]
+         '[clojure.java.io :as io])
 
-(defn -main []
-  (let [doc (parse-html "your-file.html")]
-    (println (jsoup-title doc))))
+;; Läs och parse HTML
+(let [html-str (slurp (io/resource "example.html")) ; antar att "example.html" finns i resurser
+      doc (hickory/parse html-str)]
+  ;; Hitta alla länkar
+  (hickory/select doc [:a]))
 ```
-Kör koden och du får titeln på ditt HTML-dokument utskrivet på konsolen.
+Sample output kan variera beroende på HTML-innehållet, men du kan förvänta dig något som:
+```clojure
+({:tag :a, :attrs {:href "http://exempel.com"}, :content ["Exempellänk"]})
+```
 
-## Djupdykning
-Tidigt parsa HTML var notoriskt komplicerade och fyllda med taggfel. Men med tiden har bibliotek som `jsoup` förenklat processen. Alternativ till `jsoup` inkluderar `htmlunit` och `jtidy` men `jsoup` är favorit tack vare dess användarvänlighet. Dessutom var dess lätta tillgång till DOM-manipulation och dataextraktion idealisk i jämförelse med andra bibliotek.
+## Deep Dive
+HTML-parsing i Clojure går tillbaka till språkets Java-rötter, med många bibliotek bryggandes Java och Clojure. Alternativ som `enlive` använder djup selector-syntakt för att manipulera HTML, medan `hickory` bygger på den bekanta `hiccup`-syntaxen.
 
-## Se även
-För mer information, kolla in dessa länkar:
-- [Jsoup dokumentation](https://jsoup.org/)
-- [Clojure dokumentation](https://clojure.org/guides/getting_started)
-- [HtmlUnit](http://htmlunit.sourceforge.net/)
-- [JTidy](http://jtidy.sourceforge.net/)
+Implementationen av HTML-parsing i Clojure händer oftast så här: HTML läses in som en sträng, parsningsbiblioteket konverterar strängen till en Clojure-datastruktur (ofta ett träd), och sedan kan du navigera/traversera detta träd för att hitta, ändra eller extrahera delar av HTML-dokumentet.
+
+## Se även:
+- Hickory GitHub Repo: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+- Enlive GitHub Repo: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- ClojureDocs, en community-drivna samling av Clojure-exempel och dokumentation: [https://clojuredocs.org/](https://clojuredocs.org/)

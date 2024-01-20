@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:33:41.894322-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# रूबी से HTML पार्स करना : एक त्वरित पत्रिका 
+## What & Why? (क्या और क्यों?)
 
-## क्या और क्यों?
+HTML पार्सिंग यानी वेब पेज के HTML को उसके घटकों में तोड़ना ताकि हम उससे डेटा निकाल सकें। यह जानकारी एकत्रित करने, वेब क्रॉलर बनाने, या डेटा को ऑटोमेटिक तरीके से देखने के लिए किया जाता है।
 
-HTML पार्स करना होता है वेबपेज का HTML कोड पढ़ना और बोध करना। इसकी आवश्यकता वेब स्क्रेपिंग (वेबपेज से जानकारी निकालने) में होती है।
+## How to: (कैसे करें:)
+Ruby में HTML पार्स करने के लिए नोकोगिरी जेम बहुत लोकप्रिय है। नोकोगिरी का इस्तेमाल करके आप HTML डॉक्युमेंट से जानकारी निकाल सकते हैं। नीचे एक साधारण उदाहरण दिया गया है:
 
-## कैसे:
-
-```Ruby
-require 'open-uri'
+```ruby
 require 'nokogiri'
+require 'open-uri'
 
-url = 'http://नमूना.वेबसाइट'
-html = open(url)
+# HTML डॉक्युमेंट खोलने के लिए
+html = open('https://www.example.com')
 
+# Nokogiri का इस्तेमाल करके पार्स करें
 doc = Nokogiri::HTML(html)
 
-# शीर्षक प्राप्त करना
-title = doc.at_css('title').text
-puts title
+# हेडर्स निकालें
+headers = doc.css('h1, h2, h3').map(&:text)
+
+# आउटपुट प्रिंट करें
+puts headers
 ```
 
-ऊपरी कोड एक वेबपेज से HTML पार्स करने और शीर्षक प्राप्त करने के लिए है।
+यदि www.example.com पर तीन हेडर्स हैं - "Welcome!", "Learn More", और "Contact Us", तो आउटपुट होगा:
+```
+Welcome!
+Learn More
+Contact Us
+```
 
-## गहरा डाइव:
+## Deep Dive (गहराई में जानकारी):
 
-HTML पार्स करने का इतिहास वेब स्क्रेपिंग के साथ ही शुरु होता है। बदलते समय के साथ, विभिन्न भाषाओं और फ्रेमवर्क में विभिन्न तरीके उभरे हैं।
+HTML पार्सिंग की जड़ें वेब के शुरुआती दिनों में हैं जब ब्राउज़र्स को सादे टेक्स्ट से स्ट्रक्चर्ड पेज बनाना होता था। नोकोगिरी से पहले, Ruby में Hpricot जैसे लाइब्रेरीज़ थी, लेकिन नोकोगिरी की गति और विश्वसनीयता ने इसे प्रधान बना दिया।
 
-Ruby में, 'Nokogiri' एक बहुत ही लोकप्रिय और शक्तिशाली लाइब्रेरी है, जिसे HTML पार्स करने के लिए इस्तेमाल किया जाता है।
+वैकल्पिक लाइब्रेरीज में Oga, HTML::Parser, और Mechanize शामिल हैं। इनका उपयोग भी परिस्थितियों के अनुसार होता है। पार्सिंग के दौरान, ध्यान देना होगा कि वेबसाइट की टर्म्स ऑफ सर्विस का उल्लंघन न हो।
 
-'Nokogiri' का उपयोग 'open-uri' लाइब्रेरी के साथ मिलकर HTML को पार्स करने में किया जाता है।
+## See Also (और जानकारी):
 
-## देखिए भी:
-
-1. Nokogiri ट्यूटोरियल: https://nokogiri.org/tutorials/
-2. 'open-uri' डॉक्युमेंटेशन: https://ruby-doc.org/stdlib/libdoc/open_uri/rdoc/OpenURI.html
-3. Web scraping से संबंधित इस महत्वपूर्ण लेख को deekhein: https://realpython.com/beautiful-soup-web-scraper-python/
+- Nokogiri ऑफिशियल साइट: [Nokogiri Website](https://nokogiri.org/)
+- Mechanize जेम: [Mechanize Library](https://github.com/sparklemotion/mechanize)

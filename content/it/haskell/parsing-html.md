@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:32:12.868016-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,49 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analisi HTML (Parsing) con Haskell
+## What & Why? (Cosa & Perché?)
+Il parsing HTML consiste nel leggere e interpretare il codice HTML per estrarre dati o manipolare la struttura. I programmatori lo fanno per automatizzare l'analisi dei contenuti web, per data mining o per testare le applicazioni.
 
-Ciao a tutti! Oggi esploreremo insieme come analizzare l'HTML usando Haskell, il paradiso dei linguaggi di programmazione funzionali. 
-
-## Cos'è e perché?
-
-L'analisi HTML consiste nel tradurre il codice HTML, un linguaggio di marcatura, in una struttura dati che il nostro programma può manipolare. Lo facciamo per ottenere o manipolare dati da pagine web.
-
-## Come fare:
-
-Iniziamo con l'installare la libreria `tagsoup` su Haskell:
-
+## How to: (Come fare:)
 ```Haskell
-cabal install tagsoup
-```
+{-# LANGUAGE OverloadedStrings #-}
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
+import Text.HTML.Scalpel
 
-Ora possiamo scrivere un semplice programma di analisi. Ecco un esempio:
+-- Definizione del tipo per estrarre il contenuto del titolo
+type Title = T.Text
 
-```Haskell
-import Text.HTML.TagSoup
+-- Estrae il titolo da una stringa HTML
+extractTitle :: T.Text -> Maybe Title
+extractTitle html = scrapeStringLike html $ text "title"
 
-htmlParser :: String -> [Tag String]
-htmlParser = parseTags
-
+-- Test della funzione `extractTitle`
+main :: IO ()
 main = do
-  let tags = htmlParser "<title>Benvenuto alla programmazione Haskell!</title>"
-  print tags
+    html <- TIO.readFile "example.html" -- sostituisci con il tuo file HTML
+    let title = extractTitle html
+    case title of
+        Nothing -> putStrLn "Nessun titolo trovato."
+        Just t  -> TIO.putStrLn $ "Titolo: " <> t
 ```
 
-Questo parser stampa una lista di tag HTML. Ecco l'output:
-```Haskell
-[TagOpen "title" [],TagText "Benvenuto alla programmazione Haskell!",TagClose "title"]
+Output di esempio, dato un file HTML con `<title>Benvenuti in Haskell!</title>` nel head:
+```
+Titolo: Benvenuti in Haskell!
 ```
 
-## Approfondimento
+## Deep Dive (Approfondimento)
+Il parsing di HTML risale agli albori del web. Da allora, molteplici librerie sono emerse per facilitare questo compito, alcune performanti ed altre focalizzate sulla facilità d'uso. In Haskell, `Text.HTML.Scalpel` è una scelta popolare per la sua sintassi chiara e capacità di gestire HTML complesso. Alternative come `Text.HTML.TagSoup` offrono un approccio più tollerante agli errori di markup.
 
-Una volta, l'HTML era analizzato principalmente con espressioni regolari, ma questo metodo ha i suoi limiti. Haskell, nato nel lontano 1990, ha reso l'analisi molto più semplice e sicura con l'uso di parser componibili.
+Dettaglio implementativo: Scalpel utilizza i Selector per trovare elementi HTML, e può restituire dati in diverse strutture, inclusi testi semplici, liste, o elementi annidati. Fa uso intenso del potente sistema di tipi di Haskell e della programmazione funzionale per mantenere il codice conciso e espressivo.
 
-Un'alternativa a `tagsoup` è `html-conduit`, che funziona bene con lo streaming di dati.
-
-Dettagli di implementazione: `tagsoup` non fa un'analisi rigorosa. Ignora gli errori di sintassi HTML e cerca di produrre un output utile nonostante il markup malformato. Questo è utile per lavorare con l'HTML del mondo reale.
-
-## Per saperne di più
-
-- Documentation: [TagSoup](https://hackage.haskell.org/package/tagsoup)
-- Alternative: [html-conduit](https://hackage.haskell.org/package/html-conduit)
+## See Also (Vedi Anche)
+- [Scalpel documentation](https://hackage.haskell.org/package/scalpel)
+- [TagSoup on Hackage](https://hackage.haskell.org/package/tagsoup)

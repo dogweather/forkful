@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:32:28.765238-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 해야하나?
+## What & Why? (무엇이며, 왜?)
+HTML 파싱은 HTML 데이터를 읽고 그 구조를 이해하는 과정이다. 개발자들은 데이터를 추출, 조작, 저장하기 위해 이 작업을 한다.
 
-HTML 파싱은 HTML문서나 문자열을 분석하여 DOM 노드들로 변환하는 과정입니다. 이를 통해 개발자들이 HTML 요소들을 쉽게 조작하고, 데이터를 찾거나, 정보를 추출할 수 있게 해줍니다.
+## How to: (어떻게 하나요?)
+```javascript
+const parser = new DOMParser();
+const htmlString = `<div>Hello, <b>World!</b></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
 
-## 어떻게 하나:
-
-HTML 노드를 파싱하는 가장 간단한 예제는 아래와 같습니다.
-
-```Javascript
-let parser = new DOMParser();
-let doc = parser.parseFromString("<html><body><p>Hello World!</p></body></html>", "text/html");
-console.log(doc.body.textContent);
+// 요소 접근 및 데이터 추출
+const div = doc.querySelector('div');
+console.log(div.innerHTML); // 출력: Hello, <b>World!</b>
 ```
 
-이 예제의 출력 값은 "Hello World!" 입니다.
+## Deep Dive (심층 분석)
+웹 초기에는 HTML 파싱이 주로 서버에서 이루어졌다. Node.js 등장으로 자바스크립트도 서버사이드 파싱이 가능해졌다. 돔파서(DOMParser), 뷰티풀 수프(Beautiful Soup; 파이썬) 같은 도구가 있으며, 이들은 성능과 사용 편의성이 각자 다르다. DOMParser는 브라우저에 내장된 API로, HTML/XML 문서를 파싱한다. 내부적으로는 DOM 트리를 만들며, 결과는 문서 객체로 반환된다. 이해하기 쉽고 빠르다는 장점이 있다.
 
-## 깊게 알아보기:
-
-1. **역사적 맥락**: 웹 페이지가 처음으로 개발되었을 때, HTML 파싱은 매우 간단한 작업으로 간주되었습니다. 문법 구조는 단순했고, 화면에 표시할 요소만 존재했습니다. 하지만 웹이 복잡해짐에 따라, 파싱 로직도 복잡해졌고 이를 위한 도구들도 발전되었습니다.
-
-2. **대안들**: 대안으로는 `jQuery`와 같은 라이브러리를 사용할 수 있습니다. 이는 HTML 문자열을 쉽게 파싱하고 요소에 접근할 수 있도록 도와줍니다. 하지만 `DOMParser`는 표준 내장 API이기 때문에 외부 라이브러리 없이도 브라우저에서 사용 가능합니다.
-
-3. **구현에 관한 세부 정보**: HTML 파싱은 글로벌 `DOMParser` 객체를 사용하여 수행될 수 있으며, 이는 브라우저에서 제공하는 표준 API입니다. `parseFromString`메소드를 사용하여 HTML 문자열을 DOM 트리로 변환할 수 있습니다.
-
-## 참고하면 좋을 링크들:
-
-1. [MDN: DOMParser](https://developer.mozilla.org/ko/docs/Web/API/DOMParser)
-
-2. [W3C: Parsing HTML strings](https://www.w3.org/TR/html5/infrastructure.html#parsing-html-strings)
-
-3. [jQuery: Parse HTML](https://api.jquery.com/jquery.parsehtml/)
+## See Also (참고 자료)
+- MDN Web Docs의 [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Node.js cheerio](https://cheerio.js.org/) – 서버사이드에서 사용하는 jQuery식 파서
+- W3C의 [HTML5 파싱 규격](https://www.w3.org/TR/html5/syntax.html#parsing)

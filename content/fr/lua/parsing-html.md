@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:32:37.205490-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? / Quoi et Pourquoi ?
+L'analyse (parsing) HTML consiste à interpréter le code HTML pour en extraire des données. Les programmeurs font cela pour manipuler, nettoyer ou récupérer des informations depuis des pages web.
 
-Analyser HTML, c'est décomposer un document HTML en ses composants pour une utilisation programmable. Les programmeurs le font pour interagir avec les éléments de la page web et manipuler les données à leur guise.
-
-## Comment faire:
-
-Voici un exemple basique sur comment on peut analyser du HTML en Lua en utilisant `lua-htmlparser`. Installer d'abord le package `lua-htmlparser` avec luarocks:
+## How to / Comment faire :
+Voici un exemple simple en Lua pour parser du HTML en utilisant la bibliothèque `lxp`. On va extraire le titre d'une page HTML.
 
 ```Lua
-luarocks install htmlparser
+local lxp = require 'lxp'
+
+local contents = [[
+<html>
+<head>
+<title>Exemple de Page</title>
+</head>
+<body>
+<h1>Bienvenue!</h1>
+</body>
+</html>
+]]
+
+local title
+local capture = false
+
+callbacks = {
+  StartElement = function (parser, tagname)
+    if tagname == "title" then capture = true end
+  end,
+  CharacterData = function (parser, string)
+    if capture then title = string end
+  end,
+  EndElement = function (parser, tagname)
+    if tagname == "title" then capture = false end
+  end,
+}
+
+local p = lxp.new(callbacks)
+p:parse(contents)
+p:parse() -- fin du document
+p:close()
+
+print("Le titre trouvé est :", title)
 ```
 
-Maintenant, voici comment vous pouvez analyser un simple document HTML:
+Sortie :
 
-```Lua
-local htmlparser = require "htmlparser"
-
-local html = "<html><body>Hello, World!</body></html>"
-local root = htmlparser.parse(html)
-
-root("body"):each(function(i, el)
-  print(el:getcontent())
-end)
+```
+Le titre trouvé est : Exemple de Page
 ```
 
-Cela imprimera:
+## Deep Dive / Exploration Approfondie :
+Le parsing HTML est fondamental depuis la naissance du web. Historiquement, des bibliothèques robustes comme `BeautifulSoup` pour Python dominent. En Lua, `lxp` (basée sur la bibliothèque Expat XML) est fréquemment utilisée, bien qu'elle nécessite que le HTML soit bien formé. Les autres options en Lua incluent `htmlparser` et `gumbo`, qui sont plus indulgentes avec le HTML mal formé.
 
-```Lua
-Hello, World!
-```
+Un détail important lors du parsing HTML est de gérer correctement l'encodage des caractères et les entités HTML. Utiliser une bibliothèque dédiée permet d'éviter de nombreux pièges, comme les erreurs de syntaxe ou la perte de contenu important.
 
-## Plongée Profonde
-
-1. En ce qui concerne le contexte historique, bien que le HTML soit largement utilisé aujourd'hui, les bibliothèques pour l'analyser en Lua n'ont été développées que récemment.
-2. Pour les alternatives, souvenez-vous que vous pouvez analyser le HTML en utilisant plusieurs bibliothèques en Lua, comme `htmlparser` et `Gumbo`. Comparez et choisissez en fonction de vos nécessités.
-3. Sur l'implémentation, `htmlparser` utilise une analyse basée sur des expressions régulières pour la rapidité, mais cela peut conduire à des erreurs d'analyse sur HTML mal formé. Cependant, si le HTML que vous analysez est toujours bien formé, cela ne devrait pas poser de problème.
-
-## Voir Aussi
-
-1. [Lua HTML Parser sur GitHub](https://github.com/msva/lua-htmlparser)
-2. [Bibliothèque Gumbo en Lua](https://github.com/craigbarnes/lua-gumbo)
+## See Also / Voir Aussi :
+- Lua Expat (lxp) : [https://github.com/lunarmodules/luaexpat](https://github.com/lunarmodules/luaexpat)
+- Htmlparser Lua : [https://github.com/msva/lua-htmlparser](https://github.com/msva/lua-htmlparser)
+- Gumbo parser : [https://github.com/craigbarnes/lua-gumbo](https://github.com/craigbarnes/lua-gumbo)
+- Lua Users Wiki sur le parsing XML : [http://lua-users.org/wiki/LuaXml](http://lua-users.org/wiki/LuaXml)

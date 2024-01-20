@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:30:28.953683-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,39 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å parse HTML er prosessen med å oversette HTML-tekst til et format som et program kan forstå, som et dokumentobjektmodell. Programmerere gjør dette for å hente nyttige data fra websider eller manipulere HTML-dokumenter.
+Parsing av HTML er prosessen med å lese og forstå HTML-koden slik at vi kan hente ut eller manipulere dataene. Programmerere gjør dette for å automatisere interaksjon med websider, trekke ut informasjon, eller teste webgrensesnitt.
 
-## Hvordan gjøre det:
-For å parse HTML i C#, kan vi bruke HtmlAgilityPack, et populært .NET-bibliotek. Her er en enkel kodebit som viser hvordan vi kan hente alle hyperlinkene fra en nettside:
+## Slik gjør du:
+C# har ikke innebygd støtte for HTML-parsing. Vi bruker ofte et bibliotek som HtmlAgilityPack. Her er en rask guide for å komme i gang:
 
 ```C#
 using System;
 using HtmlAgilityPack;
- 
-public class Program
+
+class Program
 {
-    public static void Main()
+    static void Main()
     {
-        var url = "https://eksempel.com";
+        var url = "https://example.com";
         var web = new HtmlWeb();
-        var htmlDoc = web.Load(url);
+        var doc = web.Load(url);
 
-        var node = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
-
-        foreach(var link in node)
+        foreach (var node in doc.DocumentNode.SelectNodes("//a[@href]"))
         {
-            Console.WriteLine(link.GetAttributeValue("href", ""));
+            Console.WriteLine($"Link: {node.Attributes["href"].Value}");
         }
     }
 }
 ```
+Eksempelresultat:
+```
+Link: https://example.com/about
+Link: https://example.com/contact
+```
 
 ## Dypdykk
-Historisk sett ble HTML-parsing i C# påbegynt med biblioteker som HtmlAgilityPack, fordi det tilbyr funksjonalitet som ikke er tilgjengelig i standardbiblioteket. Alternativer inkluderer AngleSharp.
+HTML-parsing startet tidlig i webens dager for å gjøre innhold tilgjengelig for ulike systemer. HtmlAgilityPack, lansert i 2005, er en robust løsning for .NET utviklere. Alternativer inkluderer AngleSharp som tilbyr moderne asynkron API og full CSS3-støtte. Ved parsing er det viktig å huske på at HTML fra eksterne kilder kan variere i struktur og kvalitet - det er viktig å skrive robust kode som kan håndtere dette.
 
-Å parse HTML krever vanligvis at du først laster inn HTML-siden du vil parse, deretter bruker du en metode for å søke gjennom nodene på siden. Du kan søke etter bestemte noder ved å bruke XPath-uttrykk, CSS-selektorer eller klasse- og id-attributter.
-
-## Se også:
-1. [HtmlAgilityPack dokumentasjon](https://html-agility-pack.net/)
-2. [AngleSharp: En alternativ HTML-parser i C#](https://anglesharp.github.io/)
-4. [Offisielle HTML5 Spesifikasjoner](https://www.w3.org/TR/html52/)
+## Se Også
+- HtmlAgilityPack på NuGet: https://www.nuget.org/packages/HtmlAgilityPack/
+- AngleSharp GitHub-side: https://github.com/AngleSharp/AngleSharp
+- C# Dokumentasjon: https://docs.microsoft.com/en-us/dotnet/csharp/

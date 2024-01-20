@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:31:56.573125-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Go"
@@ -10,56 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Golangilla HTML:n jäsentäminen: Miksi ja miten?
+## What & Why? (Mitä ja Miksi?)
+HTML:n jäsentäminen on prosessi, jossa HTML-dokumentin sisältö muutetaan rakenteiseksi dataksi, jonka ohjelmat voivat ymmärtää ja käsitellä. Koodarit jäsentävät HTML:ää, jotta voivat suorittaa data-analyysiä, web-sisällön kaappauksia tai testata web-sovelluksia.
 
-## Mikä & Miksi?
-
-HTML-jäsentäminen on prosessi, jossa muunnetaan HTML-koodi rakenteelliseksi representaatioksi. Ohjelmoijat tekevät tämän, jotta voivat helposti hakea, lisätä, muokata tai poistaa HTML-elementtejä ohjelmallisesti.
-
-## Miten:
- 
-**Go:ssa** HTML:n jäsentäminen on yksinkertaista. Esimerkkinä jäsennämme Go:n standardikirjaston **net / html** -paketin avulla alla olevan HTML-koodin.
-
+## How to: (Kuinka tehdään:)
 ```Go
 package main
 
 import (
 	"fmt"
 	"golang.org/x/net/html"
+	"net/http"
 	"strings"
 )
 
 func main() {
-	s := `<p>Hei maailma!</p>`
-	doc, _ := html.Parse(strings.NewReader(s))
+	resp, err := http.Get("http://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	root, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
 	var f func(*html.Node)
 	f = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "p" {
-			fmt.Println(n.FirstChild.Data)
+		if n.Type == html.ElementNode && n.Data == "a" {
+			for _, a := range n.Attr {
+				if a.Key == "href" {
+					fmt.Println(a.Val)
+					break
+				}
+			}
 		}
 		for c := n.FirstChild; c != nil; c = c.NextSibling {
 			f(c)
 		}
 	}
-	f(doc)
+	f(root)
 }
 ```
-Suoritettaessa tämä koodi, tulostuu seuraava:
 
-`Hei maailma!`
+Sample output:
+```
+http://www.iana.org/domains/example
+```
 
-Tässä me luomme HTML-dokumentin, jolla on vain yksi alue-elementti ja tulostetaimme sen sisällön.
+## Deep Dive: (Syväsukellus)
+HTML:n jäsentämistä on käytetty Webin alkuajoista lähtien kun ohjelmoijat halusivat ymmärtää ja hyödyntää verkkosivujen rakennetta. Golangissa x/net/html -kirjasto on nykyinen työkalu HTML:n jäsentämiseen. Se tarjoaa DOM-puuta muistuttavan rakenteen, mutta ei täyttä DOM APIa.
 
-## Syvällisemmin
+Vaihtoehtoja ovat muun muassa BeautifulSoup Pythonissa ja Nokogiri Rubyssa, jotka on suunniteltu helpottamaan HTML:n ja XML:n käsittelyä. Golangissa käytetään puuta käsitteleviä funktioita selkeyden vuoksi ja koska kieli suosii kompositiota perinnön sijasta.
 
-HTML-jäsentämisen historia juontaa juurensa WWW:n alkuaikoihin. Aluksi HTML-dokumentit luotiin ja muokattiin manuaalisesti, mutta kun web kasvoi, tämä kävi yhä vaikeammaksi. Tämä johti ohjelmallisen HTML-jäsentämisen kehitykseen.
+Jäsentämisen toteutuksessa huomioon otetaan HTML:n löyhät standardit: dokumentit voivat olla epätäydellisiä tai virheellisiä, mutta x/net/html pyrkii olemaan joustava ja käsittelemään näitä tilanteita armoillisesti.
 
-HTML-jäsentämisen vaihtoehtoina on monia muita menetelmiä, kuten regexien käyttö tai jopa manuaalinen merkkijonojen käsittely. Kuitenkin, nämä ovat yleensä virhealttiimpia ja vaikeammin kuin olisi suotavaa. Siksi strukturoitu jäsentäminen, kuten Go:ssa `html / parse` paketin avulla, on suositeltavin tapa.
-
-Go:n `html / parse` -paketti toteuttaa jäsentämisen luomalla puurakenteita, joista kukin solmu vastaa HTML-dokumentin eri osaa. Liikutaan puun läpi käyttämällä syvyyssuuntaista ensinnäkijän hakua.
-
-## Katso myös
-
-- Go:n HTML Parse paketti: https://godoc.org/golang.org/x/net/html
-- w3c:n HTML Parse algoritmi: https://www.w3.org/TR/html50/parsing.html
-- Matala XML-vastaava: https://golang.org/pkg/encoding/xml/
+## See Also: (Katso Myös)
+- Go’s html package documentation: [https://pkg.go.dev/golang.org/x/net/html](https://pkg.go.dev/golang.org/x/net/html)
+- Go by Example: HTTP Clients: [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)

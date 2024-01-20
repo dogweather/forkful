@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:32:27.916405-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Kotlin"
@@ -10,42 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTMLのパース（解析）は、HTML文書を分析してデータを取り出すことです。プログラマはウェブスクレイピングやデータの変換のためにこれを行います。
 
-HTMLの解析とは、HTML文書を読み解き、それを構成する要素を理解できる形式に変換することです。これは、ウェブスクレイピングやウェブページからのデータ抽出など、特定の情報を取得するためにプログラマーが行います。
+## How to: (方法)
+KotlinでHTMLをパースするのにJsoupを使います。以下は簡単なコード例です。
 
-## 使い方：
-
-KotlinでのHTML解析の実例を以下に示します。使用するライブラリは `jsoup` です。
-
-```Kotlin
+```kotlin
+// Jsoupライブラリをインポート
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Welcome</title></head>"
+    val html = "<html><head><title>サンプル</title></head>" +
+               "<body><p>これはパーサーの例です。</p></body></html>"
     val doc = Jsoup.parse(html)
-    println(doc.title())
+    
+    // タイトル要素を取得
+    val title = doc.title()
+    println("タイトル: $title")
+    
+    // パラグラフ要素を取得
+    val p = doc.select("p").first()?.text()
+    println("パラグラフ: $p")
 }
 ```
 
-このコードを実行すると、「Welcome」という文字が出力されます。
-
-```Kotlin
-Welcome
+出力:
+```
+タイトル: サンプル
+パラグラフ: これはパーサーの例です。
 ```
 
-## 深堀り：
+## Deep Dive (深掘り)
+HTMLパースの歴史は複雑です。初期のウェブブラウザはさまざまなHTML標準に対応するためにパーサーを内蔵し始めました。今日では、JsoupのようなライブラリはHTMLとXMLの両方をパースできる強力なツールです。
 
-HTML解析の歴史は、ウェブ自体の進化と共に発展してきました。かつては正規表現や手作業で行われていましたが、今日では多機能なライブラリや専用設計されたパーサーが主流です。
+代替手段としてHTMLパースには、Kotlin/JavaではHtmlCleanerやTagSoup、PythonではBeautifulSoupやlxmlがあります。
 
-また、HTML解析には多くの方法があります。例えば、PythonのBeautifulSoupやPHPのDomCrawlerなど、他のプログラミング言語でも利用可能なツールがあります。
+実装の詳細に関しては、Jsoupは内部でDOM（Document Object Model）を構築しており、CSSセレクターを使って要素を簡単に検索できるようにしています。
 
-最後に、HTML解析の実装詳細について説明します。HTMLが解析されると、通常、DOM（Document Object Model）と呼ばれるツリー構造が生成されます。このツリー構造を通じて、要素へのナビゲートやデータの抽出が可能となります。
-
-## 参考資料：
-
-以下は、HTML解析に関連する資料のリンクです。
-
-- Jsoup公式サイト：[https://jsoup.org/](https://jsoup.org/)
-- Kotlin公式サイト：[https://kotlinlang.org/](https://kotlinlang.org/)
-- Document Object Model (DOM)：[https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model)
+## See Also (参照)
+- Jsoup公式ドキュメント: https://jsoup.org/
+- HTMLCleaner: http://htmlcleaner.sourceforge.net/
+- TagSoup: http://home.ccil.org/~cowan/XML/tagsoup/
+- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/

@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:33:56.051678-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Rust"
@@ -10,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? - 何となぜ?
 
-## 何となぜ？
+HTML解析（パース）とは、HTMLデータから構造情報や内容を取り出すことです。プログラマーはそれを行い、Webページのデータを抽出したり、解析したりするためにそれを行います。
 
-HTML解析とは、HTMLデータを構造化するプロセスのことです。プログラマーがこれを行う理由は、ウェブページのデータを効果的に抽出、操作、利用するためです。
+## How to: - 方法
 
-## 方法：
+以下は、RustでHTMLを解析するシンプルな例です。必要なライブラリとして`scraper`を使用します。
 
-RustでHTMLのパースを行うための一般的な方法は、`select.rs`というライブラリを使用することです。以下は基本的な使用方法です：
-
-```rust
-use select::document::Document;
-use select::predicate::Name;
+```Rust
+use scraper::{Html, Selector};
 
 fn main() {
-    let doc = Document::from(include_str!("your_file.html"));
+    // HTMLデータ
+    let html = r#"
+        <ul>
+            <li>Rust</li>
+            <li>Programming</li>
+            <li>HTML</li>
+        </ul>
+    "#;
 
-    for node in doc.find(Name("div")) {
-        println!("{}", node.text());
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("li").unwrap();
+
+    for element in document.select(&selector) {
+        let text = element.text().collect::<Vec<_>>();
+        println!("{:?}", text);
     }
 }
 ```
 
-このコードは、`your_file.html`というファイルからHTMLデータを読み取り、`div`という名のすべてのノードを見つけ出します。
+これは出力結果です:
 
-## ディープダイブ：
+```
+["Rust"]
+["Programming"]
+["HTML"]
+```
 
-HTML解析はウェブクローリングおよびウェブスクレイピングの根幹であり、それらが現代のウェブテクノロジーの一部となった1990年代から存在しています。RustにおけるHTML解析は、パフォーマンスと安全性の観点から見ると優れた選択であり、JavaScriptの`cheerio`やPythonの`BeautifulSoup`など他の言語・ツールに比べ、より高速で確実な結果を得ることができます。
+## Deep Dive - 深掘り
 
-特にRustにおける`select.rs`ライブラリは、優れたパフォーマンスとモダンな使いやすさを兼ね備えています。しかし、Rustの学習曲線が比較的急であるという問題を克服する必要があります。
+歴史的背景から言うと、HTML解析はウェブの初期から行われている基本的な作業です。RustでHTMLを解析するためのライブラーリはいくつかあり、`scraper`、`html5ever`、`kuchiki`などがあります。`scraper`は`html5ever`に依存していて、高い性能を持っています。`html5ever`はServoブラウザエンジンにも使われており、解析速度が一定なのが特徴です。
 
-## 参考資料：
+実装の面では、`scraper`は`lxml`や`BeautifulSoup`のようなPythonライブラリに影響を受けて設計されています。セレクタはCSSセレクタと同様の文法を利用しているため、Web開発者には親しみやすいはずです。
 
-2. [Select.rs Documentation](https://docs.rs/select)
+## See Also - 参照
 
- 注意：あくまでRustでHTMLをパースするのは一例です。用途により、適切なツール・言語を選択することが重要です。
+- `scraper`のドキュメント: [https://docs.rs/scraper](https://docs.rs/scraper)
+- `html5ever` GitHub ページ: [https://github.com/servo/html5ever](https://github.com/servo/html5ever)
+- Servoブラウザエンジン: [https://github.com/servo/servo](https://github.com/servo/servo)

@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:31:16.696494-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,44 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
+## What & Why? (Що і Чому?)
+Parsing HTML – це процес читання і аналізу коду HTML, щоб зрозуміти його структуру та зміст. Парсинг HTML дозволяє програмам маніпулювати кодом HTML, отримувати дані та інтегрувати веб-контент в свої додатки.
 
-Парсинг HTML - це процес, при якому програма (парсер) розбирає HTML-код і перетворює його на зрозумілі для неї структури. За його допомогою програмісти можуть отримувати специфічну інформацію з веб-сторінок або модифікувати їх.
-
-## Як?
-
-Мова Elm має вбудований інструмент для парсингу HTML, візьміть цей приклад:
+## How to: (Як це зробити:)
+Elm має вбудовану бібліотеку `Html.Parser` для парсингу HTML. Ось як ви можете розібрати простий HTML за допомогою Elm:
 
 ```Elm
-import Html.Parser as Parser
-import Html.Parser.Util as ParserUtil
-import Char
+import Html.Parser exposing (parse, text, element)
+import Html.Parser.Attributes exposing (attribute)
 
-html = "<div><h1>Elm</h1><p>Вивчаємо парсинг HTML</p></div>"
+parseHtml : String -> Maybe String
+parseHtml html =
+    html
+        |> parse 
+        |> List.head
+        |> Maybe.andThen (element "p")
+        |> Maybe.map (.children >> List.head)
+        |> Maybe.andThen text
 
 main =
-  case Parser.run ParserUtil.document html of
-    Ok elements ->
-      String.concat (List.map show elements)
+    parseHtml "<p>Hello, Ukraine!</p>"
+        |> Maybe.withDefault "Parsing failed."
 
-    Err message ->
-      "Помилка: " ++ message
+-- Виведення: "Hello, Ukraine!"
 ```
 
-Результат виконання програми:
+## Deep Dive (Детальне занурення)
+Парсинг HTML в Elm почав розвиватись із випуском Elm версії 0.19. Використовуючи пуританський Elm-синтаксис, парсер `Html.Parser` забезпечує чіткий та надійний спосіб обробки HTML. Відмінністю Elm від інших мов, таких як JavaScript з бібліотекою cheerio або Python з Beautiful Soup, є те, що Elm підтримує функціональний і типізований підхід. Це означає, що результати парсингу більш передбачувані та безпечні через статичну систему типів.
 
-```
-[Element "div" [] [Element "h1" [] [Text "Elm"],Element "p" [] [Text "Вивчаємо парсинг HTML"]]]
-```
-
-## Поглиблений огляд
-
-Історично парсинг HTML використовувався для скрапінгу веб-сторінок, але з розвитком веб-програмування його використовують для програмного взаємодії з веб-сторінками.
-Альтернативами парсингу HTML є використання API чи JSON. Однак, не всі веб-сторінки мають API, а JSON не завжди є доступний.
-
-Elm використовує інтуїтивно зрозумілий, але потужний алгоритм парсингу, який робить впевнене і безпечне видобування даних з HTML-коду.
-
-## Дивіться також
-
-* [Elm HTML Parser](https://package.elm-lang.org/packages/elm/html/latest/)
-* [Застосування парсерів в Elm](https://www.elm-spa.dev/guide/parsers)
+## See Also (Дивіться також)
+- Офіційна документація по `Html.Parser` для Elm: [https://package.elm-lang.org/packages/elm/html/latest/Html-Parser](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
+- Вступ до Elm і робота з HTML: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
+- Спільнота Elm на Reddit, де можна отримати допомогу та поділитись досвідом: [https://www.reddit.com/r/elm/](https://www.reddit.com/r/elm/)

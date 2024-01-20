@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:34:10.927158-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,48 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y Por Qué?
+## ¿Qué y Por Qué?
 
-Analizar HTML implica examinar y procesar la estructura interna de los documentos HTML en un formato manipulable. Los programadores lo hacen para extraer información, manipular y presentar contenido web de manera más conveniente.
+Parsear HTML es el proceso de convertir texto HTML en una estructura de datos comprensible y manipulable por programas. Los programadores lo hacen para extraer información, manipular y interactuar con páginas web de manera programática.
 
-## Cómo:
+## Cómo Hacerlo:
 
-Aquí se muestra cómo analizar HTML en TypeScript. Usaremos la biblioteca `jsdom` para esto.
+Digamos que quieres extraer todos los enlaces de una página web. Usando TypeScript, puedes emplear librerías como `node-html-parser` para hacer el trabajo pesado.
 
-Instale la biblioteca `jsdom` con npm:
+```typescript
+import { parse } from 'node-html-parser';
 
-```TypeScript
-npm install jsdom
+const html = `<html><body><a href="https://ejemplo.com">Enlace</a></body></html>`;
+const root = parse(html);
+
+const enlaces = root.querySelectorAll('a').map((element) => element.getAttribute('href'));
+console.log(enlaces);
 ```
 
-Aquí está el ejemplo de código:
+Y la salida será algo como esto:
 
-```TypeScript
-import { JSDOM } from 'jsdom';
-
-const html = `<body>
-                <h1>Hola, Mundo!</h1>
-                <p>Este es un párrafo.</p>
-              </body>`;
-
-const dom = new JSDOM(html);
-
-// Imprime "Hola, Mundo!"
-console.log(dom.window.document.querySelector('h1').textContent);
+```
+[ 'https://ejemplo.com' ]
 ```
 
-Este fragmento de código analiza el HTML e imprime el texto del elemento `<h1>`.
+## Profundización:
 
-## Inmersión Profunda:
+Históricamente, parsear HTML era un desafío debido a la variabilidad y la complejidad del HTML en la web. Las bibliotecas modernas como `node-html-parser` y `Cheerio` han simplificado mucho este proceso. Aún así, la implementación del análisis puede variar entre las herramientas: algunas construyen un `Document Object Model (DOM)` completo, mientras que otras optan por un modelo más sencillo y rápido especialmente útil en el entorno de `Node.js`.
 
-El análisis de HTML ha sido una parte esencial del desarrollo web desde sus primeros días. La biblioteca `jsdom` que utilizamos es una de muchas soluciones disponibles, y elegimos usarla por su simplicidad y compatibilidad con TypeScript.
-
-Alternativamente, algunas otras bibliotecas populares para analizar HTML incluyen `parse5` y `cheerio`. Muchas de estas herramientas tienen su propia sintaxis y características especiales, por lo que la elección depende de las necesidades de su proyecto.
-
-En términos de implementación, `jsdom` crea un modelo de objeto de documento (DOM) basado en el HTML proporcionado. Esto permite manipular y consultar el DOM como si estuviera trabajando en el navegador.
+A diferencia de `DOMParser` en el navegador, estas librerías están diseñadas para ser usadas con `Node.js` y no dependen de un navegador para funcionar. Esto las hace ideales para el scraping web y la automatización de tareas en servidores.
 
 ## Ver También:
 
-- [Documentación oficial de JSDOM](https://github.com/jsdom/jsdom)
-- [Biblioteca Parse5 en npm](https://www.npmjs.com/package/parse5)
-- [Biblioteca Cheerio en npm](https://www.npmjs.com/package/cheerio)
+- Documentación de `node-html-parser`: [https://github.com/taoqf/node-html-parser](https://github.com/taoqf/node-html-parser)
+- Cheerio, otra biblioteca poderosa: [https://cheerio.js.org/](https://cheerio.js.org/)
+- Para entender más sobre cómo funciona el DOM: [https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model)

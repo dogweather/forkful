@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:02.107014-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "C++"
@@ -10,33 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
+## מה ולמה?
+פירסום HTML הוא התהליך שבו ניתוח קוד ה-HTML כדי לאחזר מידע ספציפי או לעבד אותו. תכניתנים עושים זאת כדי ליצור אינטראקציה עם תוכן של אתרי אינטרנט ולהשתמש בנתונים באפליקציות שלהם.
 
-אנליזת HTML מתייחסת לתהליך שבו אנו מרחיבים ומאירגנים את קוד ה-HTML לעץ המייצג את מבנה דף האינטרנט. מתכנתים עושים זאת כדי לשלוט על מידע מתוך דף אינטרנט: לחפש, לאסוף, או לשנות אותו.
-
-## איך לבצע:
-הנה מעט קוד ב-C++ שמשחרר HTML מסוים להצגה פשוטה לעץ:
+## איך לעשות:
+בדוגמאות הקוד הבאות, אנו משתמשים בספריה חיצונית בשם Gumbo-parser לפירסום HTML ב-C++. לפני שנתחיל, התקן את Gumbo-parser במערכת שלך.
 
 ```C++
+#include <iostream>
 #include <gumbo.h>
-#include "htmlparser.cpp"
 
-void parse(const std::string &html) {
-    GumboOutput* output = gumbo_parse(html.c_str());
-    ... // פה אנחנו מנותא LCDs 1the מ-NavigatorLCD ועץ ה-Gumbo
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+
+    if (node->v.element.tag == GUMBO_TAG_A) {
+        GumboAttribute* href = gumbo_get_attribute(&node->v.element.attributes, "href");
+        if (href) {
+            std::cout << href->value << std::endl;
+        }
+    }
+
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    }
+}
+
+int main() {
+    const char* html = "<html><body><a href='http://example.com'>Example</a></body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    
+    search_for_links(output->root);
+    
     gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
-שימו לב, עליכם להתקין את ספרית ה-Gumbo מ-Google לכדי להפעיל את הקוד.
+הפלט של קוד זה יהיה כתובת האינטרנט שניתחת:
+```
+http://example.com
+```
 
-## צלילה עמוקה
+## עיון מעמיק
+פירסום HTML הוא אחד ממשימות הסטנדרט של מתכנתים כבר שנים רבות. בעבר השתמשו בביטויים רגולריים, אבל זה לא תמיד מדויק ויכול להיות מבלבל. לכן, פיתחו ספריות מסובכות יותר כמו Gumbo-parser שמנתחות את ה-HTML באופן מובנה ואמין יותר.
 
-אנליזת HTML היא לא רעיון חדש. זה נעשה מאז שהיו דפים אינטרנט המתעניים במידע חשוב. אבל בעבר, זה היה די מסובך ולא אמין בגלל מגבלות הטכנולוגיה של אז.
-
-היו כמה אלטרנטיבות לספרית Gumbo, כולל BeautifulSoup ב-Python ו-jsoup ב-Java. אבל זו האפשרות הכי מהירה ופשוטה למימוש צ'רזר.
+בנוסף ל-Gumbo, ישנם כלים אחרים כמו Beautiful Soup ב-Python או Jsoup ב-Java, שמספקים יכולת דומה בשפות אחרות. בחירת הכלי תלויה בשפת התכנות שאתה משתמש בה ובדרישות המסוימות של הפרויקט שלך.
 
 ## ראה גם
+- [Gumbo-parser GitHub](https://github.com/google/gumbo-parser)
+- [מדריך ל-Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [מדריך ל-Jsoup](https://jsoup.org/)
 
-2. [jsoup: מנתח HTML עבור Java](https://jsoup.org/)
-3. [BeautifulSoup: מנתח תוכן HTML וXML ב-Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-4. [StackOverflow: "איך אני מנתח HTML ב-C++?"](https://stackoverflow.com/questions/352800/how-do-i-parse-html-in-c)
+בקיצור, בבחירה של כלי לפירסום HTML חשוב לשקול את סוג הפרויקט, נוחות השימוש ואיך הכלי מתממשק עם שפת התכנות שאתה בוחר.

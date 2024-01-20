@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:36:29.764085-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Go"
 category:             "Go"
@@ -10,13 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+## What & Why?
 ## Що і чому?
 
-Аналіз дати з рядка - це процес, під час якого ми перетворюємо текстове представлення дати в формі рядка в конкретний формат дати, яким машина може маніпулювати.	  Програмісти роблять це для кращої обробки і маніпуляцій датами в їх коді.
+Parsing a date means converting a string into a `time.Time` object. Programmers do it to interpret and manipulate dates programmatically, which is key for scheduling, data records, and time-based logic.
 
+## How to:
 ## Як це зробити:
- 
-В Go програмуванні, це можна зробити використовуючи пакет `time` і метод `Parse`.
 
 ```Go
 package main
@@ -27,32 +28,36 @@ import (
 )
 
 func main() {
-	layout := "2006-01-02"
-	str := "2020-08-31"
-	t, err := time.Parse(layout, str)
+	const layoutISO = "2006-01-02"
+	dateStr := "2023-03-15"
+
+	parsedDate, err := time.Parse(layoutISO, dateStr)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error parsing date:", err)
+		return
 	}
-	fmt.Println(t)
+
+	fmt.Printf("Parsed Date: %s\n", parsedDate.Format(time.RFC1123))
 }
 ```
 
-Якщо ви запустите цей код, отримаєте наступний вивід:
-
-```Go
-2020-08-31 00:00:00 +0000 UTC
+Output:
+```
+Parsed Date: Wed, 15 Mar 2023 00:00:00 UTC
 ```
 
-## Пірнання в глибину
+## Deep Dive
+## Поглиблений огляд
 
-1. Історичний контекст: Дати представлені в рядках часто не мають стандартного формату, це може бути будь-який варіянт від "31/08/2020" до "31st August, 2020". Відповідно, нам необхідно зрозуміти як цей конкретний рядок має бути перетворений у дату, і саме тут приходить на допомогу парсинг дат.
+Go's standard time package uses layout strings as a reference. The layout must show by example how to interpret any date string: use "2006" for the year, "01" for January, and "02" for the second day of the month, based on the specific time -- January 2, 15:04:05 MST 2006.
 
-2. Альтернативи: В Go існують інші методи та бібліотеки, що можуть використовуватися для парсингу дат, наприклад jodaTime або dateparse.
+Alternatives? Sure. You could use third-party libraries like `timeparse` or `dateparse`. But why bother? Go's standard library is powerful and usually sufficient.
 
-3. Деталі реалізації: Важливо розуміти, що рядок `layout`, який ви передаєте в метод `Parse` - це шаблон. Він використовує конкретний момент часу (Mon Jan 2 15:04:05 MST 2006) для визначення формату вхідного рядка.
+Internally, parsing a date consists of tokenizing the string and mapping it to the layout. It's crucial to match the layout to your string's format; otherwise, you'll run into errors.
 
+## See Also
 ## Дивіться також
 
-1. [Go Time Package Documentation](https://golang.org/pkg/time/)
-2. [Go by Example: Time Formatting / Parsing](https://gobyexample.com/time-formatting-parsing)
-3. [Go Date Parsing](https://programming.guide/go/format-parse-string-time-date-example.html)
+- Go by Example: Time Formatting/Parsing: https://gobyexample.com/time-formatting-parsing
+- Go's time package documentation: https://pkg.go.dev/time
+- Go's layout string explained: https://yourbasic.org/golang/format-parse-string-time-date-example

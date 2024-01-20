@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:31:51.959006-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,50 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i dlaczego?)
+Parsing HTML means turning a string of HTML code into a structure a program can understand and manipulate. Programmers do it to scrape websites, automate interactions, or process content.
 
-Analiza składniowa HTML to proces, dzięki któremu możemy "rozumieć" treść strony internetowej. Programiści robią to, aby pobierać, przetwarzać i manipulować danymi z intensywnością większą niż pozwala na to interfejs użytkownika.
+## How to: (Jak to zrobić:)
+Gleam doesn't have its own HTML parser, but you can use Erlang libraries thanks to Gleam's compatibility with BEAM. Here's an example using `:mochiweb_html`:
 
-## Jak to zrobić:
+```gleam
+import gleam/erlang
+import gleam/list
 
-Załóżmy prosty przykład w Gleam, gdzie tworzymy funkcję do analizy składniowej dokumentu HTML:
-
-```Gleam
-pub fn main(project: Project) {  
-  import gleam/httpc  
-  import gleam/bit_builder.{BitBuilder}  
- 
-  httpc.get("https://www.example.com")  
-      |> ===================================  
-      |> bit_to_string  
-      |> html_doc_parse  
- "")
-}  
-
-fn bit_to_string(bit: BitBuilder) -> String {  
- to_string(bit)  
-}  
-
-fn html_doc_parse(doc: String) -> HtmlElement {  
-  import gleam/html  
- 
-  html.parse(doc)  
+// Assuming `:mochiweb_html` Erlang library is available
+fn parse_html(html_string: String) -> list(tuple(String, list(String))) {
+  erlang.apply(
+    module: ":mochiweb_html", 
+    function: "parse", 
+    arguments: [html_string]
+  )
+  |> result.unwrap()
+  |> list.map(fun(node) {
+    (node |> element_name(), node |> element_attributes())
+  })
 }
-```  
-Po uruchomieniu tego kodu otrzymamy drzewo elementów HTML danego dokumentu.
 
-## W głąb tematu 
+fn element_name(node: tuple(String, list(String))) -> String {
+  let tuple(name, _) = node
+  name
+}
 
-Pierwotnie, analiza składniowa HTML została wprowadzona dla przeglądarek internetowych, aby mogły one poprawnie wyświetlić strony. Dzisiaj, na skutek rosnącego zastosowania danych w sieci, jest elementem kluczowym dla wielu różnych dziedzin, takich jak dziedzin.
+fn element_attributes(node: tuple(String, list(String))) -> list(String) {
+  let tuple(_, attrs) = node
+  attrs
+}
 
-Alternatywnie, istnieją inne biblioteki i języki, które mogą dokonać analizy składniowej HTML, takie jak BeautifulSoup w Pythonie, Nokogiri w Ruby, czy jsoup w Javie.
+// Sample usage in main function
+fn main() {
+  let html = "<html><body><h1>Title</h1><p class=\"text\">Hello, Gleam!</p></body></html>"
+  parse_html(html) |> io.debug
+}
+```
 
-Szczegóły implementacji mogą się różnić w zależności od wykorzystywanej biblioteki, jednak na ogół polega to na konwersji ciągu znaków HTML na drzewo dokumentów, które następnie można przeszukiwać i manipulować.
+Output:
+```
+[("html", []), ("body", []), ("h1", []), ("p", ["class=\"text\""])]
+```
 
-## Zobacz też
+## Deep Dive (Głębsze spojrzenie):
+Parsing HTML in Gleam relies on Erlang's ecosystem, which includes libraries like `:mochiweb_html` from the MochiWeb project. This is due to the young age of the Gleam ecosystem and the strong interoperability with BEAM languages.
 
-1) [Gleam HTTP client](https://hexdocs.pm/gleam_httpc/gleam/httpc/)
-2) [Gleam HTML parsing](https://hexdocs.pm/gleam_html/gleam/html/)
-3) [Gleam BitBuilder](https://hexdocs.pm/gleam_bit_builder/gleam/bit_builder/BitBuilder/) 
+Alternatives to `:mochiweb_html` include `:floki`, which is widely used in Elixir, another language that runs on the BEAM VM. Floki offers a more friendly syntax for navigating the parsed HTML with a jQuery-like selector system.
 
-Pamiętaj, że pisanie krateryzującego kodu jest kluczem do zrozumienia, jak działa analiza składniowa HTML. Próbuj różnych podejść, eksperymentuj i baw się dobrze!
+Regarding implementation, HTML parsing involves tokenization, where the parser scans the HTML string and identifies tags, attributes, and content. The tokens are then processed to create a Document Object Model (DOM) tree.
+
+## See Also (Zobacz też):
+- [`:mochiweb_html` on Hex](https://hex.pm/packages/mochiweb)
+- [`:floki` on Hex](https://hex.pm/packages/floki)
+- [Web scraping in Erlang/Elixir](https://elixir-lang.org/getting-started/mix-otp/ets.html#web-scraping)

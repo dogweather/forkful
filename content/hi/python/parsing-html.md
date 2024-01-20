@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:35:13.973358-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Python"
 category:             "Python"
@@ -11,44 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTML पार्सिंग का मतलब होता है HTML डॉक्यूमेंट को विश्लेषित करना ताकि उसकी हायरार्की और इलेमेंट्स को समझा जा सके। प्रोग्रामर्स इसे करते हैं ताकि वे वेबपेज की जानकारी को खोज सकें, संशोधित कर सकें और व्यवस्थित कर सकें।
+HTML पार्स करना मतलब वेब पेज के HTML कोड को प्रोसेस करके उसकी स्ट्रक्चर और सामग्री को समझना और उपयोग करना। प्रोग्रामर्स इसे डेटा एक्सट्रैक्ट करने, वेब स्क्रेपिंग, और वेबसाइट्स की टेस्टिंग के लिए करते हैं।
 
-## कैसे करें:
-Python में, आप BeautifulSoup लाइब्ररी का उपयोग करके HTML पार्स कर सकते हैं। नीचे उदाहरण है:
+## कैसे?
+Python में HTML पार्स करने के लिए `BeautifulSoup` एक प्रसिद्ध लाइब्रेरी है। इसके इस्तेमाल का उदाहरण नीचे दिया गया है:
 
 ```Python
 from bs4 import BeautifulSoup
 
-html_doc = """<html><head><title>मेरा पहला वेबपेज</title></head>
-<body><p>हेल्लो दुनिया.</p></body></html>"""
+# साधारण HTML डॉक्यूमेंट
+html_doc = """
+<html>
+<head>
+    <title>मेरा पेज</title>
+</head>
+<body>
+    <h1>मेरा शीर्षक</h1>
+    <p>मेरी पहली पैराग्राफ.</p>
+</body>
+</html>
+"""
 
+# BeautifulSoup ऑब्जेक्ट बनाना
 soup = BeautifulSoup(html_doc, 'html.parser')
 
-print(soup.prettify())
+# टाइटल टैग प्रिंट करना
+print(soup.title)
+# शीर्षक टेक्स्ट प्रिंट करना
+print(soup.h1.string)
+# पहले पैराग्राफ को प्रिंट करना
+print(soup.p.text)
 ```
 
-उपरोक्त कोड का आउटपुट नीचे दिया गया है:
-
-```Python
-<html>
- <head>
-  <title>
-   मेरा पहला वेबपेज
-  </title>
- </head>
- <body>
-  <p>
-   हेल्लो दुनिया.
-  </p>
- </body>
-</html>
+नमूना आउटपुट:
+```
+<title>मेरा पेज</title>
+मेरा शीर्षक
+मेरी पहली पैराग्राफ.
 ```
 
-## गहरा डाइव
-इतिहास में, HTML पार्सिंग की पहली बार आवश्यकता तब पेश आई जब वेब सर्फिंग मनोहारी और प्रभावी होने लगा। BeautifulSoup के अलावा, आप lxml और html.parser जैसे अन्य टूल्स का भी उपयोग कर सकते हैं। BeautifulSoup सबसे आम और लोकप्रिय पसंद है क्योंकि यह अधिक सहज और लचीला है। 
+## गहराई से जानकारी
+`BeautifulSoup` को Leonard Richardson ने डेवलप किया था। HTML और XML फाइल्स को पार्स करने के लिए यह बहुत लोकप्रिय हो गया है। `lxml` और `html.parser` जैसे अलग पार्सर्स का इस्तेमाल करके `BeautifulSoup` विभिन्न प्रकार की पार्सिंग क्षमताओं को प्रदान करता है।
 
-## देखने वाले
-अधिक जानकारी के लिए, निम्नलिखित संसाधनों की जांच करें:
-- [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Python's html.parser](https://docs.python.org/3/library/html.parser.html)
-- [Parsing HTML using lxml](https://lxml.de/parsing.html)
+हालांकि, यदि वेब पेज जावास्क्रिप्ट द्वारा हेवी जनरेटेड होते हैं, तो `BeautifulSoup` अकेले पर्याप्त नहीं होता। इस स्थिति में, `Selenium` जैसे टूल्स को अपनाया जाता है जो ब्राउजर के जरिए पेज लोड करके HTML प्राप्त कर सकते हैं।
+
+## यह भी देखें
+- [BeautifulSoup डॉक्यूमेंटेशन](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [lxml लाइब्रेरी](https://lxml.de/)
+- [Selenium डॉक्यूमेंटेशन](https://selenium-python.readthedocs.io/)
+- [Web स्क्रेपिंग गाइड](https://realpython.com/beautiful-soup-web-scraper-python/)

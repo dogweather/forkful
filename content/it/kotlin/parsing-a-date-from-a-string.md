@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:37:10.073857-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,49 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## What & Why?
+Il parsing di una data da stringa consiste nel convertire testo che rappresenta una data in un formato utilizzabile per calcoli e manipolazioni. I programmatori lo fanno per interagire con date in formati differenti, per validazione o per immagazzinare informazioni in modo consistente.
 
-La conversione di una data da una stringa è un processo nel quale trasformiamo una stringa in un oggetto data. Questo viene fatto dai programmatori per manipolare e utilizzare meglio le date in un contesto di programmazione.
-
-## Come fare:
-
-Ecco un esempio su come fare parsing di una stringa in una data in Kotlin:
-
-```kotlin
+## How to:
+```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 fun main() {
-  val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
-  val stringData = "21.12.2022"
-  val data = LocalDate.parse(stringData, formatter)
+    val dateString = "2023-04-01"
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val date = LocalDate.parse(dateString, formatter)
 
-  println(data)  // Stampa: 2022-12-21
+    println(date) // Output: 2023-04-01
 }
 ```
 
-In questo esempio, definiamo un formato di data (dd.MM.yyyy) e una stringa di data. Usiamo il metodo `LocalDate.parse()` per convertire la stringa in un oggetto data.
+## Deep Dive
+Parsing di date è una pratica comune in programmazione sin dalle origini. In Kotlin, la libreria `java.time` (introdotto in Java 8 e disponibile in Kotlin), permette un handling robusto di date e orari.
 
-## Approfondisci:
+Alternativamente, si può usare la vecchia libreria `java.util.Date`, ma è meno consigliata per i suoi problemi di design, come la mutabilità e i problemi di thread safety. Prima di Java 8, librerie di terze parti come Joda-Time erano uno standard per la gestione del tempo in modo più elegante e meno problematico.
 
-Nel contesto storico, prima dell'introduzione del modulo `java.time.*` con Java 8, i programmatori usavano le classi `java.util.Date` e `java.text.SimpleDateFormat` per effettuare il parsing delle stringhe data. Ma queste classi erano poco pratiche e presentavano diversi problemi, tra cui thread-safety.
+Per quanto riguarda l’implementazione, usare il formato standard ISO (come `yyyy-MM-dd`) aiuta nella comunicazione di date fra sistemi diversi. Si può personalizzare il formato usando `DateTimeFormatter`.
 
-Una alternativa notevole al `LocalDate.parse()` nelle versioni più recenti di Kotlin è l'utilizzo degli standard ISO per rappresentare le date. Ad esempio, possiamo fare parsing di date ISO senza dover specificare un formato:
-
-```kotlin
-import java.time.LocalDate
-
-fun main() {
-  val stringData = "2022-12-10"
-  val data = LocalDate.parse(stringData)
-
-  println(data)  // Stampa: 2022-12-10
-}
-```
-
-Dettagli di implementazione: quando si effettua il parsing di una data, è importante specificare il formato corretto. Se il formato non matcha la stringa data, si otterrà un errore di runtime.
-
-## Vedi anche:
-
-2. [Java 8 Date/Time API - Tutorial by Oracle](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
-3. [Guide to the Date and Time API in Java](https://www.baeldung.com/java-8-date-time-intro)
+## See Also
+- [Oracle JavaDocs - DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Baeldung tutorial on java.time](https://www.baeldung.com/java-8-date-time-intro)

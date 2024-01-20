@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:36:04.051758-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa e perché?
-Parserizzare una data da una stringa appunta a convertire un testo che rappresenta una data in un formato comprensibile per il codice. I programmatori fanno questo per poter manipolare e utilizzare le date nei loro programmi in modo efficiente.
+## What & Why?
+Tradurre una stringa in una data significa estrarre informazione temporale da un testo. Si fa per manipolare e confrontare date in modo più semplice.
 
-## Come fare:
-In Fish Shell, possiamo parserizzare una data da una stringa usando il comando 'date':
-
+## How to:
 ```Fish Shell
-set data_stringa "2022-03-27 09:00:00"
-
-# Convertire la stringa a data
-set data (date -d $data_stringa)
-
-echo $data
+set data_string "2023-03-15 10:30:00"
+set timestamp (date -d $data_string "+%s")
+echo $timestamp
+```
+Output:
+```
+1678871400
 ```
 
-Uscita prevista:
-
 ```Fish Shell
-Dom 27 Mar 2022 09:00:00 CET
+set data_leggibile (date -d "2023-03-15 10:30:00" "+%A, %d %B %Y %H:%M:%S")
+echo $data_leggibile
+```
+Output:
+```
+Wednesday, 15 March 2023 10:30:00
 ```
 
-## Approfondire
-Questo conveniente metodo per interpretare le date ha una lunga storia nel comando UNIX 'date', che risale agli albori del sistema operativo Unix negli anni '70. 
-Firefox e Chrome, per esempio, hanno implementato metodi alternativi per il parsing delle date con le loro rispettive funzioni Date.parse(), ma il comando 'date' continua ad essere utilizzato per la sua semplicità e compatibilità con una vasta gamma di sistemi. 
+## Deep Dive
+Historia: Il parsing delle date è essenziale sin dall'inizio della programmazione. Con l'evoluzione dei sistemi, le funzioni di parsing sono diventate più robuste.
 
-A livello di implementazione, 'date' legge la stringa da sinistra a destra, cercando di abbinare i modelli dei formati di data comuni. Quando trova un match, converte la corrispondenza nel corrispondente valore di data. 
+Alternative: Oltre a `date`, ci sono strumenti come `strptime` e librerie in vari linguaggi per parsing più complessi.
 
-## Vedi anche
-- Manuale di Fish Shell: https://fishshell.com/docs/current/commands.html
-- Uso del comando 'date' in Linux: https://www.lifewire.com/date-command-in-linux-4090726
-- Ulteriori informazioni sui metodi Date.parse() di JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+Dettagli Implementativi: `date` in Fish (e Unix in generale) utilizza formati di data standard, `%s` per timestamp e altri identificatori, come `%A`, `%d`, per formati leggibili.
+
+## See Also
+- Tutorial sui comandi `date`: https://ss64.com/bash/date.html
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
+- Documentazione POSIX `strptime`: https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html

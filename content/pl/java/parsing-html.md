@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:32:18.276505-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,52 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## Co i dlaczego?
+Parsing HTML to proces wydobywania danych ze struktur HTML. Programiści to robią, by manipulować treścią, wyciągać konkretne informacje, lub zmieniać struktury stron internetowych.
 
-Analiza składniowa HTML polega na interpretacji dokumentów HTML w celu zrozumienia ich struktury i zawartości. Programiści robią to, aby manipulować strukturą strony, ekstrahować dane, testować UX i wiele więcej.
-
-## Jak to zrobić:
-
-Aby zacząć, musimy najpierw dodać odpowiednią bibliotekę do projektu. Będziemy potrzebować biblioteki Jsoup:
-
-```java
-// Dodaj to do pliku pom.xml
-<dependency>
-   <groupId>org.jsoup</groupId>
-   <artifactId>jsoup</artifactId>
-   <version>1.13.1</version>
-</dependency>
-```
-Teraz możemy zacząć z kodowaniem. Oto przykład jak to zrobić:
+## Jak to zrobić?
+Do parsowania HTML w Javie można użyć biblioteki jsoup. Oto prosty przykład:
 
 ```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        Document doc = Jsoup.connect("http://example.com").get();
-        Elements newsHeadlines = doc.select("#mp-itn b a");
-        for (Element headline : newsHeadlines) {
-            System.out.println(headline.attr("title"));
-            System.out.println(headline.absUrl("href"));
+public class HtmlParser {
+    public static void main(String[] args) {
+        String html = "<html><head><title>Pierwsza lekcja HTML</title></head>"
+                + "<body><p>Witaj na naszej stronie!</p></body></html>";
+
+        Document doc = Jsoup.parse(html);
+        Elements paragraphs = doc.select("p");
+        
+        for (int i = 0; i < paragraphs.size(); i++) {
+            System.out.println("Akapit " + (i + 1) + ": " + paragraphs.get(i).text());
         }
     }
 }
 ```
-Jeśli wszystko zadziała poprawnie, powinniśmy zobaczyć tytuły niektórych artykułów na stronie "example.com"
 
-## Głębsze spojrzenie:
+Sample output:
+```
+Akapit 1: Witaj na naszej stronie!
+```
 
-Historia analizy składni HTML jest historycznie związana z rozwojem sieci internetowej i technologii webowych. Przez lata powstało wiele różnych narzędzi do analizy składni HTML, takich jak Beautiful Soup, HtmlUnit, i wiele innych. Jsoup, który omówiliśmy tu, jest znany ze swojej szybkości i wydajności.
+## W pogłębieniu
+Parsowanie HTML istnieje odkąd HTML stał się standardem w internetowych dokumentach. W przeszłości używano do tego różnorodne narzędzia, włączając w to wyrażenia regularne, które były słabo dostosowane do złożoności HTML.
 
-Alternatywą dla Jsoup może być HtmlUnit, która jest również mocną biblioteką do analizy składni HTML w Javie. Jeścieś odważny, możesz nawet spróbować napisać własny parser!
+Alternatywą do jsoup mogą być inne biblioteki jak HtmlUnit lub tag soup. Warto jednak pamiętać, że jsoup jest wysoce ceniony za swoją łatwość użycia i efektywność.
 
-Implementacja analizy składni HTML z za pomocą Jsoup polega na zastosowaniu DOM (Document Object Model) do reprezentowania struktury HTML.
+Implementując parser HTML, musimy rozważyć wydajność (czas odpowiedzi i zużycie pamięci), obsługę nietypowych lub niepoprawnych struktur HTML oraz potencjalne zagrożenia związane z bezpieczeństwem, jak ataki XSS przez nieoczyszczone dane.
 
-## Zobacz także:
-
-- [Dokumentacja Jsoup](https://jsoup.org/cookbook/)
-- [Tutorial HtmlUnit](http://htmlunit.sourceforge.net/)
+## Zobacz także
+- [jsoup: Java HTML Parser](https://jsoup.org/)
+- [Tutorialspoint - Java XML Parser](https://www.tutorialspoint.com/java_xml/java_dom_parse_document.htm)
+- [W3Schools - HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

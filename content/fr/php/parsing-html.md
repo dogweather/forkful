@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:32:45.133834-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Plongée dans le Parsing HTML avec PHP 
+## What & Why?
+Traduire le HTML, c'est fouiller dans le markup pour en extraire des données. On le fait pour gratter des infos sur le web, manipuler du contenu, ou intégrer des services tiers.
 
-## Quoi & Pourquoi?
-Le parsing HTML est le processus d'analyse syntaxique d'un code HTML afin de le comprendre et de pouvoir l'interagir avec lui. Les programmeurs font du parsing HTML pour extraire des informations, manipuler des pages web ou créer du contenu dynamique.
+## How to:
+Voici un bout de code PHP qui utilise `DOMDocument` pour parser du HTML et récupérer tous les liens:
 
-## Comment faire :
-Pour parser du HTML avec PHP, nous utilisons la classe `DOMDocument`. Voyons comment faire :
-
-```PHP
+```php
 <?php
-$dom = new DOMDocument;
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemple</title>
+</head>
+<body>
+    <a href="https://example.com">Lien 1</a>
+    <a href="https://example.com/deux">Lien 2</a>
+</body>
+</html>
+HTML;
 
-// Charger HTML à partir d'une chaîne
-$dom->loadHTML('<div id="hello">Bonjour le monde!</div>');
+$dom = new DOMDocument();
+@$dom->loadHTML($html);
+$links = $dom->getElementsByTagName('a');
 
-// Trouver et afficher l'élément div
-$divs = $dom->getElementsByTagName('div');
-foreach ($divs as $div) {
-    echo $div->nodeValue, PHP_EOL;
+foreach ($links as $link){
+    echo $link->getAttribute('href') . PHP_EOL;
 }
+?>
 ```
-Résultat :
+
+Sortie :
 ```
-Bonjour le monde!
+https://example.com
+https://example.com/deux
 ```
-## Plongée Profonde :
-Historiquement, les développeurs utilisaient les expressions régulières pour analyser le HTML. Cependant, ce n'est pas la solution idéale car le HTML a une structure d'arbre, pas linéaire. 
+## Deep Dive:
+Le parsing de HTML existe depuis les débuts du web. Avant `DOMDocument`, on utilisait des expressions régulières (pas l'idéal). Il y a aussi des libs comme `SimpleXML` et `DOMXPath` pour d'autres approches. Dans l'implémentation, on charge le HTML, on le traverse et on extrait ce qu'on veut.
 
-Pour le parsing HTML, PHP propose aussi SimpleXML qui est plus facile a utiliser mais moins puissant que DOMDocument. 
-
-En ce qui concerne l'implémentation, la méthode `loadHTML()` de la classe `DOMDocument` utilise libxml pour analyser la chaîne HTML en un arbre DOM.
-
-## Voir Aussi :
-
-- Documentation sur la Manipulation de documents XML - PHP: https://www.php.net/manual/fr/book.dom.php
-- Tutoriel PHP SimpleXML : https://www.php.net/manual/fr/book.simplexml.php
-- Guide de libxml - XML C parser and toolkit: http://xmlsoft.org/
+## See Also:
+- Documentation PHP sur DOMDocument: [php.net/manual/fr/class.domdocument.php](https://www.php.net/manual/fr/class.domdocument.php)
+- SimpleXML pour lire du XML simplement: [php.net/manual/fr/book.simplexml.php](https://www.php.net/manual/fr/book.simplexml.php)
+- Tutoriel sur l'utilisation de DOMXPath: [php.net/manual/fr/class.domxpath.php](https://www.php.net/manual/fr/class.domxpath.php)

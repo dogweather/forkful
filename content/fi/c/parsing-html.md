@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:30:20.372485-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "C"
@@ -10,45 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+HTML:n jäsentäminen eli parsing tarkoittaa HTML-dokumentin rakenteen lukemista ja sen sisällön muuttamista käsiteltävään muotoon. Ohjelmoijat jäsentävät HTML:ää, koska sen avulla voidaan automatisoida tietosisällön käsittelyä, validoida HTML-koodia tai vaikkapa kaapia dataa web-sivuilta.
 
-HTML:n jäsennys on prosessi, jossa HTML-teksti muutetaan rakenteelliseksi muodoksi, jolla ohjelmat voivat käsitellä tiedot. Ohjelmoijat tekevät sen, jotta voivat käyttää HTML:stä saatavia tietoja kolmannen osapuolen tarkoituksiin.
-
-## Kuinka se tehdään:
-
-Esimerkinä libxml2-kirjaston käyttö C-kielellä. Tarkastelemme HTML-tiedostoa ja siirrämme sen tiedot rakenteisiin.
+## How to (Kuinka?):
+C-kielessä HTML:n jäsentäminen vaatii ulkoisen kirjaston, esimerkkinä voidaan käyttää `libxml2`, joka on laajalti käytössä oleva jäsentämiskirjasto.
 
 ```C
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
 int main() {
-    htmlDocPtr doc = htmlReadFile("esimerkki.html", NULL, HTML_PARSE_RECOVER);
-    xmlNodePtr node = xmlDocGetRootElement(doc);
-
-    while (node != NULL) {
-        printf("Elementin nimi: %s\n", node->name);
-        node = node->next;
+    htmlDocPtr doc; // HTML-dokumentin käsittelyyn tarkoitettu osoitin
+    htmlNodePtr cur; // Solmu rakenteessa, alkio jota käsitellään
+  
+    // Parse HTML document from a string (tätä voisi olla esim. HTTP-vastauksessa)
+    char *htmlContent = "<html><body><p>Hello, Finland!</p></body></html>";
+    doc = htmlReadDoc((xmlChar*)htmlContent, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+  
+    // Käydään läpi dokumentin solmut
+    cur = xmlDocGetRootElement(doc);
+    while (cur != NULL) {
+        if (cur->type == XML_ELEMENT_NODE) {
+            printf("Elementti '%s'\n", cur->name);
+        }
+        cur = cur->next;
     }
 
+    // Vapautetaan dokumentin muisti
     xmlFreeDoc(doc);
-
+  
     return 0;
 }
 ```
 
-Käynnistettäessä yllä oleva ohjelma, se tulostaa HTML-dokumentin esimerkki.html kaikkien elementtien nimet konsoliin.
+Sample output (Otostuloste):
+```
+Elementti 'html'
+Elementti 'body'
+Elementti 'p'
+```
 
-## Syvempi sukellus
+## Deep Dive (Sukellus syvemmälle):
+HTML:n jäsentäminen C-kielellä ei ole ihan yhtä suoraviivaista kuin jotkut korkeamman tason kielet, kuten Python tai JavaScript tarjoavat. Historiallisesti C-kieltä ei ole suunniteltu verkko-ohjelmointiin, mutta monipuolisten kirjastojen myötä se on mahdollista.
 
-HTML-jäsentämistä on käytetty Webin alkuaikoina luomaan Web-robotteja ja -indeksoijia, jotka lukevat ja indeksoivat verkkosivuja. Nykyään sitä käytetään erilaisiin sovelluksiin, kuten datan kaivamiseen verkkosivuilta tai käyttöliittymien automatisointiin.
+Alternatiiveina `libxml2`:lle voi mainita `Gumbo` -parserin, joka on Googlen kehittämä HTML5:n jäsentämiseen.
 
-On olemassa erilaisia tapoja jäsennys HTML:ää. Esimerkki, jonka annoimme, käyttää libxml2-kirjastoa. Muita vaihtoehtoja on olemassa, kuten BeautifulSoup tai lxml, mutta ne ovat saatavilla Pythonille, eivät C:lle.
+Jäsentämisessä tärkeää on tunnistaa elementtien hierarkia ja attribuutit. `libxml2` perustuu DOM (Document Object Model) -pohjaiseen käsittelyyn, missä koko dokumentti ladataan muistiin ja jäsentämisen jälkeen dokumentti voidaan käsitellä olio-rakenteena.
 
-HTML-jäsentämisen toteutuksen oleellinen yksityiskohta liittyy DOM:rakenteeseen (Document Object Model), joka on järjestetty puurakenne, jonka HTML-elementit ja niiden ominaisuudet muodostavat.
+## See Also (Katso myös):
+- `libxml2` dokumentaatio: http://xmlsoft.org/
+- `Gumbo` parser: https://github.com/google/gumbo-parser
+- HTML standardi: https://html.spec.whatwg.org/
+- C standardikirjasto: http://www.iso-9899.info/wiki/The_Standard
 
-## Katso myös
-
-1. Libxml2-dokumentaatio: http://xmlsoft.org/html/libxml-HTMLparser.html
-2. C-kielen oppimateriaali: https://www.learn-c.org/
-3. Document Object Model (DOM): https://www.w3.org/TR/DOM-Level-2-Core/introduction.html
+Jos aihe jäi kiinnostamaan, näissä linkeissä on lisätietoa ja syventävää materiaalia.

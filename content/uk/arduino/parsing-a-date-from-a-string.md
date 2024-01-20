@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:34:30.318791-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що і Чому?
+Парсинг дати з рядка – це процес видобування інформації про дату з текстового формату. Програмісти це роблять для обробки і використання дат у програмах, як день народження або термін придатності.
 
-Парсинг дати з рядка - це процес вилучення інформації про дату з текстового рядка. Програмісти роблять це, щоб взаємодіяти з датами в коді - виконувати оператори порівняння, арифметичні операції тощо.
-
-## Як це робиться:
-
+## Як це зробити:
 ```Arduino
-// Припустимо, у нас є рядок у форматі «dd.mm.yyyy»
-String str_date = "31.12.2020";
+#include <Wire.h>
+#include <RTClib.h>
 
-// Розділяємо стрічку на частини
-int day = str_date.substring(0, 2).toInt();
-int month = str_date.substring(3, 5).toInt();
-int year = str_date.substring(6, 10).toInt();
+RTC_DS3231 rtc; // Ініціалізація об’єкту реального часу
 
-// Виводимо значення
-Serial.print("День: ");
-Serial.println(day);
-Serial.print("Місяць: ");
-Serial.println(month);
-Serial.print("Рік: ");
-Serial.println(year);
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, let's set the time!");
+    // Наступний рядок налаштовує дату і час при втраті живлення
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+}
+
+void loop() {
+  DateTime now = rtc.now(); // Отримання поточного часу і дати
+
+  // Форматування дати в рядок
+  char dateStr[11];
+  sprintf(dateStr, "%02u/%02u/%04u", now.day(), now.month(), now.year());
+  
+  Serial.println(dateStr); // Виведення рядка з датою
+  delay(1000); // Затримка перед наступним виведенням
+}
 ```
+Прикладний вивід: `20/04/2023`
 
-## Занурення:
+## Поглиблення:
+Раніше для парсингу дати були менш зручні бібліотеки або програмісти писали власні функції. Сьогодні ми використовуємо бібліотеку `RTClib`, яка спрощує взаємодію з RTC модулями, такими як DS3231. Парсинг залежить від формату дати, що використовується. У нашому прикладі ми показали `dd/mm/yyyy`. Існують інші формати, як `ISO 8601` (yyyy-mm-dd). Обираєте, що краще для вашого проекту.
 
-**Історичний контекст**: У минулому, коли ресурси були обмежені, парсинг дат був важливим аспектом оптимізації коду. 
-
-**Альтернативи**: Замість цього, ви можете використовувати бібліотеки, що забезпечують можливість парсингу дати, такі як TimeLib у випадку Arduino. 
-
-**Деталі реалізації**: Пам'ятайте, що Arduino не має вбудованих функцій для роботи з датами. Парсинг дати і часу з рядка - це простий спосіб обійти цю проблему.
-
-## Дивіться також:
-
-1. Офіційна документація Arduino: https://www.arduino.cc/reference/en/
-2. TimeLib, бібліотека для роботи з датами і часом на Arduino: https://www.arduinolibraries.info/libraries/time
-3. Порядок роботи з рядками на Arduino: https://create.arduino.cc/projecthub/iot_lover/string-handling-by-arduino-string-character-array-93b68f
+## Додатково:
+- Документація по бібліотеці RTClib: https://github.com/adafruit/RTClib
+- Все про RTC модуль DS3231: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
+- Arduino Time Library для часових функцій: https://www.arduino.cc/en/Reference/Time

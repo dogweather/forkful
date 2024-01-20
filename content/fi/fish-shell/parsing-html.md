@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:31:27.791692-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Fish Shell"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? 
+Mikä & Miksi?
 
-HTML:n jäsentäminen tarkoittaa HTML-koodin muuttamista järkeväksi rakenteeksi, jota ohjelma voi ymmärtää. Ohjelmoijat tekevät tämän tiedon eristämiseksi ja jäsennetyn datan käytön helpottamiseksi.
+Parsing HTML tarkoittaa HTML-koodin lukemista ja siitä tiedon irti saamista. Ohjelmoijat parsivat HTML:ää, kun haluavat hyödyntää tai muokata web-sivujen dataa.
 
-## Näin teet:
+## How to:
+Kuinka toimia:
+
+Fish shell ei ole ihanteellinen työkalu HTML:n parsimiseen, mutta pystyt tekemään yksinkertaista data-ekstraktiota käyttäen komentorivin työkaluja. Oletetaan, että haluat löytää kaikki linkit tietyistä HTML-tiedostoista. Tässä helppo esimerkki käyttäen `grep`- ja `sed`-työkaluja:
 
 ```Fish Shell
-# Asenna html-xml-utils
-sudo apt-get install html-xml-utils
-
-# Muuntoskriptin luominen fishillä
-function parse_html
-    set url $argv[1]
-    curl $url | hxnormalize -x
-end
-
-# Skriptin käyttö
-parse_html "https://esimerkki.fi"
+cat your_file.html | grep -oP '(?<=href=")[^"]*' | sed 's/&amp;/\&/g'
 ```
 
-Yllä olevassa esimerkissä luodaan funktion `parse_html`, joka lataa ja jäsentää HTML-sivun käyttämällä `curl`- ja `hxnormalize`-työkaluja.
+Tämä tulostaa näytölle kaikki `href`-attribuutit, korvaten HTML-koodatun `&`-merkin tavallisella `&`-merkillä.
 
-## Deep Dive:
+## Deep Dive
+Syvä sukellus:
 
-HTML:n jäsentämisessä ei ole mitään uutta; se on ollut web-kehittäjille tarpeellista 90-luvun alkupuolelta lähtien. Vaihtoehtoja Fish Shellille ovat esimerkiksi Python, JavaScript tai Ruby, mutta Fish erottuu selkeydellään. Tässä esimerkissä käytämme `hxnormalize`-työkalua, joka on osa `html-xml-utils`-pakettia. Se ottaa syötteenä raakaa HTML-koodia ja palauttaa siitä siistin, jäsennetyn version.
+Historiallisesti, komentorivin työkalut eivät ole olleet suunniteltuja HTML:n käsittelyyn, koska HTML:n rakenteet voivat olla monimutkaisia ja muuttuvia. Ohjelmissa kuten Python tai JavaScript, on erityisiä kirjastoja, kuten Beautiful Soup tai jsdom, jotka on tehty juuri HTML:n käsittelyyn ja tarjoavat paljon vahvemmat ja joustavammat tavat käsitellä webin dataa.
 
-## Katso myös:
+Käytettäessä Fish Shelliä, saatat turvautua ulkopuolisiin työkaluihin kuten `pup`, joka on komentorivipohjainen HTML-parseri. Siinä missä `grep` ja `sed` ovat tehokkaita yksinkertaisiin tekstioperaatioihin, `pup` tarjoaa spesifejä komentoja DOM-mallin mukaiseen käsittelyyn.
 
-1. [Fish:](https://fishshell.com/)
-Suosittu yksinkertainen komentosarjan kieli.
+## See Also
+Katso myös:
 
-2. [HTML-XML-utils:](https://www.w3.org/Tools/HTML-XML-utils/)
-Kokoelma yksinkertaisia ohjelmia HTML- ja XML-tiedostojen käsittelyyn.
-
-3. [Curl:](https://curl.se/)
-Työkalu tiedon siirtämiseen verkkoprotokollilla.
+- [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [`pup` GitHub repository](https://github.com/ericchiang/pup)
+- [W3Schools HTML Parser Tutorial](https://www.w3schools.com/xml/xml_parser.asp)

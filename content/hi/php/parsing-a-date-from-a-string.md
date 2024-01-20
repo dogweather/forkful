@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:38:44.147376-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+डेट को स्ट्रिंग से पार्स करना यानी स्ट्रिंग में दी गई डेट की जानकारी को निकालना, जैसे दिन, महीना, और साल। प्रोग्रामर इसलिए डेट पार्सिंग करते हैं क्योंकि डेटा संसाधित करने, वैध करने, या डेटेबेस में डेट को स्टोर करने के लिए स्टैंडर्ड फॉर्मेट में होना जरूरी होता है।
 
-स्ट्रिंग से डेटा पार्स करना का मतलब है कि आप एक स्ट्रिंग से डेट के कॉम्पोनेंटों को निकालते हैं, जैसे कि दिन, महीना, वर्ष। यह तभी उपयोगी होता है जब आपको प्रोग्राम में भिन्न डेट कॉम्पोनेंट्स की जरूरत हो। 
-
-## कैसे करें:
+## How to: (कैसे करें:)
+PHP में डेट पार्स करने के लिए `DateTime` क्लास और `date_create_from_format` फंक्शन का उपयोग करें।
 
 ```PHP
 <?php
-$dateString = '2020-10-22';
-$datetime = new DateTime($dateString);
+$dateString = "25-03-2023";
+$dateObject = date_create_from_format('d-m-Y', $dateString);
 
-echo $datetime->format('Y-m-d');
+// डेट ऑब्जेक्ट को चेक करें और फॉर्मेटेड स्ट्रिंग प्रिंट करें
+if ($dateObject) {
+    echo $dateObject->format('Y-m-d'); // आउटपुट: 2023-03-25
+} else {
+    echo "डेट वैध नहीं है।";
+}
+
 ?>
 ```
+यह कोड स्निपेट एक स्ट्रिंग को `DateTime` ऑब्जेक्ट में कन्वर्ट करता है और फिर उसे ISO 8601 फॉर्मेट में प्रिंट करता है।
 
-ऊपर दिए गए कोड का आउटपुट इस प्रकार होता है:
+## Deep Dive (गहन जानकारी)
+पहले के वर्जन में PHP में डेट पार्स करने के लिए `strtotime()` और `date()` फंक्शन्स का इस्तेमाल होता था। अब, `DateTime` क्लास बेहतर टाइमज़ोन सपोर्ट और ऑब्जेक्ट ओरिएंटेड एप्रोच की वजह से ज़्यादा तरजीह पाता है। `date_create_from_format()` से आप कस्टम पैटर्न वाले डेट पार्स कर सकते हैं। अगर पार्सिंग में कोई गलती हो तो `DateTime::getLastErrors()` यूज कर के एरर्स को देख सकते हैं। विकल्प के रूप में, `strtotime`, `date_parse` और `strptime` जैसे फंक्शन्स भी हैं, पर वे उतने लचीले नहीं हैं और सभी फॉर्मेट्स को सपोर्ट नहीं करते।
 
-```PHP
-2020-10-22
-```
-
-## गहराई में:
-
-PHP का 'DateTime' क्लास बहुत ही शक्तिशाली है और इसे PHP5 के संस्करण में एड किया गया था। मूलतः स्ट्रिंग्स से डेट वैल्यूज़ को पार्स करने के लिए 'strtotime()' फ़ंक्शन का उपयोग किया जाता था, लेकिन 'DateTime' क्लास इसे और भी आसान बनाती है।
-
-अल्टरनेटिवली, तिथि पार्स करने के लिए 'date_parse()' फ़ंक्शन का भी इस्तेमाल किया जा सकता है। इसका उपयोग तब करना बेहतर होता है जब आपके पास एक विशिष्ट फ़ॉर्मेट का स्ट्रिंग नहीं हो। 
-
-संगतता का प्रश्न उठ सकता है क्योंकि 'DateTime' क्लास PHP 5.2.0 और उसके बाद के संस्करणों में ही उपलब्ध है। 
-
-## देखे भी:
-
-- [PHP manual for DateTime](https://www.php.net/manual/en/class.datetime.php)
-- [PHP 'date_parse' function](https://www.php.net/manual/en/function.date-parse.php)
-- [strtotime() function](https://www.php.net/manual/en/function.strtotime.php)
+## See Also (और जानें)
+- [PHP Manual on DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [PHP Manual on date_create_from_format](https://www.php.net/manual/en/function.date-create-from-format.php)
+- [PHP Date/Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+- [PHP The Right Way: Date and Time](https://phptherightway.com/#date_and_time)

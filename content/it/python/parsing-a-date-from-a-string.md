@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:37:59.437397-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,41 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-## Cosa & Perché?
+## What & Why?
+Trasformare una data da stringa a un formato utilizzabile in programmi è essenziale per gestire input come date di nascita o scadenze. I programmatori fanno questo per manipolare, confrontare e archiviare date in modo efficiente.
 
-L'analisi di una data da una stringa significa trasformare una stringa che rappresenta una data in un oggetto di tipo datetime in Python. Lo facciamo per poter manipolare e confrontare facilmente le date nel nostro codice.
+## How to:
+Utilizziamo `datetime` per fare magie con le date in Python. Ecco come si trasforma una stringa in una data:
 
-## Come fare:
-
-Parsing di una data da una stringa con il modulo datetime di Python:
 ```Python
 from datetime import datetime
-data_stringa = "12/05/2021"
-data = datetime.strptime(data_stringa, "%d/%m/%Y")
-print(data)
+
+date_string = "1 aprile 2023"
+date_object = datetime.strptime(date_string, "%d %B %Y")
+
+print(date_object)
 ```
-Risultato:
+
+Ecco l'output:
+
+```
+2023-04-01 00:00:00
+```
+
+Vuoi un formato più europeo? Usiamo `strftime`:
+
 ```Python
-2021-05-12 00:00:00
+formatted_date = date_object.strftime("%d/%m/%Y")
+print(formatted_date)
 ```
 
-## Approfondimenti:
+Output:
 
-(1) Contesto storico - L'elaborazione di una data da una stringa è stato un problema comune sin dall'inizio della programmazione, con vari metodi sviluppati per differenti linguaggi di programmazione.
-
-(2) Alternative - Oltre a `strptime`, Python offre anche `dateutil.parser.parse`, un metodo più flessibile capace di interpretare formati di data più vari:
-```Python
-from dateutil.parser import parse
-data_stringa = "12/05/2021"
-data = parse(data_stringa)
-print(data)
+```
+01/04/2023
 ```
 
-(3) Dettagli implementativi - Entrambi i metodi sopra trasformano una stringa in un oggetto datetime. Questa trasformazione viene effettuata interpretando la stringa secondo un formato dato (che indica la posizione di giorno, mese e anno) e creando l'oggetto di data corrispondente.
+## Deep Dive
+Parsing significa letteralmente "analisi sintattica", il che rimanda agli anni '70 quando si cominciò ad analizzare il linguaggio di programmazione. In Python, `datetime.strptime` è lo standard per convertire stringhe in date. Il metodo analizza la stringa basandosi su formati come `%d` per il giorno e `%m` per il mese. Ci sono anche librerie alternative come `dateutil` che sono più permissive con i formati.
 
-## Per approfondire:
+Dettagli di implementazione? `datetime.strptime` è costruito su funzioni C, rendendolo veloce. Se però hai a che fare con moltissime date, ci sono moduli come `ciso8601` che possono fare il lavoro ancora più in fretta.
 
-- Documentazione ufficiale Python su datetime: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
-- Libreria dateutil: https://dateutil.readthedocs.io/en/stable/
-- Guida Python su stringhe e datetime: https://www.w3schools.com/python/python_datetime.asp
+## See Also
+Vuoi scavare ancora più a fondo? Dai un'occhiata a questi:
+
+- Documentazione di `datetime`: https://docs.python.org/3/library/datetime.html
+- `dateutil`, una libreria esterna per il parsing di date: https://dateutil.readthedocs.io/
+- `ciso8601`, una libreria C per parsing veloci: https://github.com/closeio/ciso8601

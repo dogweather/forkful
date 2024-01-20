@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:30:07.441230-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "C"
@@ -10,50 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTMLパージングの何となぜ？
-HTMLパーシングとは、HTML文書を解析しデータを抽出するプロセスのことです。プログラマはHTMLパージングを使用してウェブページから情報を引き出し、データ分析やwebクローリングの作業を可能にします。
+## What & Why? (何となぜ？)
+HTML解析とは、HTML文書から情報を取得するプロセスのことです。プログラマーはウェブページの内容を抽出したり、Webスクレイピングを行ったりするためにこれを行います。
 
-# 方法:
-GitHubで公に利用できるGumboというライブラリを使ってHTMLのパーサを作りましょう。 Gumboは純粋なCライブラリで、Googleによってメンテナンスされています。以下にその一例を示します。
+## How to: (方法)
+C言語でHTMLを解析するには、専門のライブラリーを使用します。以下に、libxml2を使った例を示します。
 
 ```C
 #include <stdio.h>
-#include <gumbo.h>
-#include <assert.h>
-
-static void search_for_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
-    }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-        (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("%s\n", href->value);
-    }
-
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(children->data[i]);
-    }
-}
+#include <libxml/HTMLparser.h>
 
 int main() {
-    GumboOutput* output = gumbo_parse("<a href='http://example.com'>Hello, world!</a>");
-    search_for_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char *htmlContent = "<html><body><p>Hello, World!</p></body></html>";
+    
+    // HTMLパーサの初期化
+    htmlDocPtr doc = htmlReadMemory(htmlContent, strlen(htmlContent), NULL, NULL, 0);
+    
+    if (doc == NULL) {
+        fprintf(stderr, "Document not parsed successfully.\n");
+        return 1;
+    }
+    
+    // BODYタグの中身を取得
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    xmlNode *bodyNode = root_element->children->next;
+    printf("Body content: %s\n", bodyNode->children->content);
+    
+    // ドキュメントを解放
+    xmlFreeDoc(doc);
+    
     return 0;
 }
 ```
-これにより、「http://example.com」と出力されます。
 
-# 深掘り:
-HTMLパーシングは、ユーザーがウェブサイトから必要な情報を取得できるようにするために発明されました。初期のパーサは独自の実装をしていましたが、代わりに標準化された方法でHTMLを解析するための新しいライブラリが開発されるようになりました。
+サンプル出力:
+```
+Body content: Hello, World!
+```
 
-HTMLパーシングの代替手段としては、JavaScriptやPythonなどの他の言語を使用する方法があります。これらの言語はHTMLを解析するために多くのライブラリを持っています。
+## Deep Dive (徹底分析)
+HTML解析は複雑です。古来から、正規表現による解析が一般的でしたが、この方法はエラーが発生しやすく信頼性が低いです。より正確な解析のために、HTMLをDOM (Document Object Model) としてパースするライブラリが開発されました（例：libxml2）。なお、C言語の代わりにPythonなどの他の言語を使ったほうが手軽かもしれません。しかし、パフォーマンスや制御が重要なシナリオでは、C言語を使用することが理想的です。
 
-Gumboの実装では、トークンの抽出からDOMツリーの生成までが行われます。これにより、フロントエンドとバックエンド両方で利用できるデータ構造が生成されます。
+実装の詳細では、libxml2はHTMLとXMLの両方をパースすることができます。それは、HTMLを解析するときに、文書構造の厳密さをあまり求めずに処理する柔軟性を持っています。そのため、不完全または不正なHTMLでも適切に扱うことができるのです。
 
-# 参考資料:
-- Gumbo GitHubリポジトリ: https://github.com/google/gumbo-parser
-- PythonによるHTMLパーシング: https://docs.python.org/3/library/html.parser.html
-- JavaScriptによるHTMLパーシング: https://developer.mozilla.org/ja/docs/Web/API/DOMParser
+## See Also (関連リンク)
+- libxml2公式サイト: http://xmlsoft.org
+- W3CのHTMLとXMLについて: https://www.w3.org/html/
+- Webスクレイピングのガイドライン: https://developer.mozilla.org/docs/Web/HTTP/Web_scraping
+
+HTML解析はWeb開発の重要な側面であり、適切なツールと知識があれば、C言語でも効率的に行えます。幅広い方法とリソースにアクセスすることで、プログラマーはウェブデータの採掘と活用を最大化することができます。

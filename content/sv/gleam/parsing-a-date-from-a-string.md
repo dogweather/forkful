@@ -1,7 +1,8 @@
 ---
-title:                "Analysera ett datum från en sträng"
-html_title:           "Kotlin: Analysera ett datum från en sträng"
-simple_title:         "Analysera ett datum från en sträng"
+title:                "Tolka ett datum från en sträng"
+date:                  2024-01-20T15:36:10.093565-07:00
+html_title:           "Bash: Tolka ett datum från en sträng"
+simple_title:         "Tolka ett datum från en sträng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,49 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att tolka ett datum från en sträng innebär att omvandla text till ett datumformat som programmet kan förstå och hantera. Programmerare gör detta för att kunna bearbeta och analysera datumdata som kommer i textform - tänk användarinmatning eller filer externt.
 
-Att tolka ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett datumformat som ett program kan manipulera. Programmerare gör detta för att låta datorer veta hur de ska interagera med data de får som text.
+## How to:
+```gleam
+import gleam/erlang
+import gleam/calendar.{Date, ParseError}
+import gleam/string
 
-## Så här gör du:
+pub fn main() {
+  let raw_date = "2023-03-14"
+  let parsed_date = string.split(raw_date, "-")
+                      |> parse_date_parts
 
-I Gleam kan vi använda `date`-biblioteket för att tolka ett datum från en sträng. Nedan följer ett exempel:
+  case parsed_date {
+    Ok(date) -> erlang.display(date)
+    Error(_) -> erlang.display("Ogiltigt datumformat")
+  }
+}
 
+fn parse_date_parts(parts: List(String)) -> Result(Date, ParseError) {
+  match parts {
+    [year, month, day] ->
+      case int_of_string(year) {
+        Ok(y) -> 
+          case int_of_string(month), int_of_string(day) {
+            Ok(m), Ok(d) -> Date.new(y, m, d)
+            _, _ -> Error(ParseError)
+          }
+        Error(_) -> Error(ParseError)
+      }
+    _ -> 
+      Error(ParseError)
+  }
+}
+
+fn int_of_string(value: String) -> Result(Int, Nil) {
+  try int_from_string(value)
+}
 ```
-import gleam/date
-import gleam/string.{from_int}
-import gleam/list.{append}
+Exempelutskrift: `Ok(#Date<2023-03-14>)`
 
-let my_date_str = "2021-05-12"
-let {year, month, day} = date.new(2021, 5, 12)
+## Deep Dive
+Datumtolkning är grundläggande i programvaruutveckling och särskilt relevant i situationer där system måste stödja flera lokaler och datumformat. Historiskt sett har detta varit en källa till buggar och missförstånd, med problem från år 2000 (Y2K) som det mest kända. Alternativ till Gleam för datumtolkning inkluderar bibliotek i andra språk som Moment.js för JavaScript eller DateTime i Elixir. Implementeringsdetaljer beror ofta på systemets lokala inställningar och hur strängdatumet är formaterat.
 
-let my_parsed_date = my_date_str
-                      |> string.split("-")
-                      |> map(from_int)
-                      |> append([year, month, day])
-
-my_parsed_date
-```
-
-Kör koden ger oss följande output:
-
-```
-Ok(#Date(year: 2021, month: 5, day: 12))
-```
-
-## Fördjupning
-
-Historiskt sett har datumsträngs tolkning varit en källa till buggar i program. Därför skapade vi standarder som ISO 8601 för att minska dessa problem.
-
-Alternative sätt att hantera datum i Gleam inkluderar att använda tidsstämplar, vilket kan vara mer lämpligt för vissa ändamål men kan också innebära komplikationer vid tidszonsomvandlingar.
-
-När det gäller implementeringsdetaljer fungerar Gleam på Erlang's underliggande system, som har omfattande funktioner för tids- och datumhantering.
-
-## Se även
-
-För mer information och detaljer, kolla in följande resurser:
-
-
-
-3. ISO 8601 Standard: [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
-
-4. Erlang's date and time handling: [Erlang Docs](https://erlang.org/doc/man/calendar.html)
+## See Also
+- [Gleam's standard library documentation](https://hexdocs.pm/gleam_stdlib/)
+- [Erlang's calendar module](http://erlang.org/doc/man/calendar.html)
+- [Understanding Y2K](https://en.wikipedia.org/wiki/Year_2000_problem)

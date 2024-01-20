@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:34:31.691443-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "TypeScript"
@@ -10,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What and Why? - Mikä ja Miksi?
+HTML:n jäsentäminen tarkoittaa HTML-merkkijonon muuttamista rakenteelliseen muotoon, kuten DOM-puuksi. Ohjelmoijat tekevät tämän datan kaivamiseksi, dokumenttien muokkaukseksi tai web-sisällön skräppäämiseksi.
 
-HTML-parsinta tarkoittaa HTML-dokumentin rakenteen analysoimista ja muuntamista ohjelmalliseen muotoon. Ohjelmoijat tekevät tämän, jotta voidaan helposti lukea, muuttaa ja manipuloida verkkosivun sisältöjä.
-
-## Näin se tehdään:
-
-Käytämme "jsdom" kirjastoa HTML-parsintaan TypeScriptissa. Tässä on esimerkkikoodi:
-
+## How to: - Miten:
 ```TypeScript
-import { JSDOM } from 'jsdom';
+import * as parser from 'node-html-parser';
 
-const htmlContent = `<body><h1>Terve Suomi!</h1></body>`;
+const html = '<!DOCTYPE html><html><body><h1>Otsikko 1</h1><p>Ensimmäinen kappale.</p></body></html>';
+const root = parser.parse(html);
 
-const dom = new JSDOM(htmlContent);
+// Etsi elementtejä
+const h1Text = root.querySelector('h1').textContent;
+console.log(h1Text); // Output: Otsikko 1
+
+const pText = root.querySelector('p').textContent;
+console.log(pText); // Output: Ensimmäinen kappale.
+
+// Muokkaa HTML:ää
+root.querySelector('h1').set_content('Muutettu Otsikko');
+console.log(root.toString()); // Output: muuttaa <h1>:n sisällön
 ```
 
-Nyt voimme käyttää `dom` objektia HTML-elementtien käsittelyyn.
+## Deep Dive - Syvä Sukellus:
+Historiallisesti HTML:n jäsentäminen JavaScriptillä tapahtui pääasiassa selaimessa, jossa DOM API teki työn. Noden myötä tarve palvelinpuolen HTML-jäsennykselle kasvoi. Tämä johti kirjastoihin kuten `node-html-parser`.
 
-```TypeScript
-let h1 = dom.window.document.querySelector('h1');
-console.log(h1.textContent); // Tulostaa: "Terve Suomi!"
-```
+Vaihtoehtoisia työkaluja on lukuisia, kuten Cheerio ja JSDOM. Cheerio on nopea ja kevyt, kun taas JSDOM pyrkii jäljittelemään selaimen ympäristöä tarkemmin.
 
-## Syvempi tarkastelu
+Implementoinnissa on tärkeää pitää mielessä, että HTML-dokumentit voivat olla epäjohdonmukaisia. Jäsentäjän täytyy olla joustava ja toleroida virheitä.
 
-HTML-parsinnalla on pitkä historia web-ohjelmoinnissa, kun ohjelmoijat alkoivat tarvita työkaluja HTML-dokumenttien käsittelyyn. On olemassa useita metodeja HTML-parsintaan, kuten SAX (Simple API for XML) ja DOM (Document Object Model).
-
-"jsdom" on yksi monista kirjastoista, jolla voit tehdä HTML-parsintaa. Se luo "oikean" DOM-puun JavaScript-ympäristöissä, jolloin voit tehdä yhtä tehokkaasti HTML-parsintaa palvelinpäässä kuin selaimessa. 
-
-Vaihtoehtoisesti, voit käyttää "cheerio" nimistä kirjastoa, joka on erittäin suorituskykyinen ja jQuery-tyylinen kirjasto HTML-parsintaan.
-
-## Katso myös
-
-Lisätietoja aiheesta voit löytää seuraavista lähteistä:
-
-- "jsdom" npm paketti: https://www.npmjs.com/package/jsdom
-- "cheerio" npm paketti: https://www.npmjs.com/package/cheerio
-- MDN Web Docs, HTML-parsinnan perusteet: https://developer.mozilla.org/en-US/docs/Web/HTML/Parser
+## See Also - Katso Myös:
+- [DOMstandardi](https://dom.spec.whatwg.org/): Yksityiskohtainen selostus siitä, miten DOM toimii.
+- [node-html-parser](https://www.npmjs.com/package/node-html-parser): Jäsennyskirjasto, jota käytimme esimerkeissä.
+- [Cheerio](https://www.npmjs.com/package/cheerio): jQuery-tyylinen kirjasto HTML:n käsittelyyn Node.js:ssä.
+- [JSDOM](https://www.npmjs.com/package/jsdom): Node.js-ympäristölle tehty selainmalli.

@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:30:13.246657-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Arduino"
@@ -10,57 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+פיענוח HTML הוא תהליך שבו ניתוח קוד HTML והוצאת נתונים רלוונטיים ממנו. תוכניתנים עושים זאת כדי לאסוף מידע אוטומטית מאתרי אינטרנט לשימושים שונים, כגון סינכרון נתונים או מוניטורינג של תוכן.
 
-עיבוד HTML הוא התהליך של קריאת קוד HTML והמרתו למבנה מידע שיכול להיות מנוהל על ידי תוכנה. אנו עובדים HTML כדי לאפשר לנו להבין את מידע האתר. 
-
-## איך:
-
-באמצעות Arduino Ethernet Library, נוכל לנתח HTML מאתרי אינטרנט. עם כמה שורות של קוד, אנו משיגים את זה:
-
+## איך לעשות:
+הרשמה לשימוש בחומרה וספריות נדרשות בראש הקוד:
 ```Arduino
 #include <Ethernet.h>
+#include <SPI.h>
+```
 
+קישור לרשת וביצוע בקשה HTTP:
+```Arduino
 EthernetClient client;
+client.connect(server, 80);
+client.println("GET /path/to/resource HTTP/1.1");
+```
 
-void setup() {
-  Serial.begin(9600);
-  
-  if (Ethernet.begin(mac) == 0) {
-    Serial.println("Failed to configure Ethernet using DHCP");
-    for(;;)
-      ;
-  }
-}
-
-void loop() {
-  if (client.connect(server, 80)) {
-    client.println("GET / HTTP/1.0");
-    client.println();
-  }
-  else {
-    Serial.println("connection failed");
-  }
-
-  while(client.connected()) {
-    if(client.available()) {
-      char c = client.read();
-      Serial.print(c);
-    }
-  }
-  
-  client.stop();
+קריאה ופיענוח תגי HTML:
+```Arduino
+if (client.find("<title>")) {
+  String title = client.readStringUntil('<');
+  Serial.println(title);
 }
 ```
 
-הקוד מחבר לשרת בפורט 80. הוא מבצע GET request ומדפיס את התשובה, הכוללת גם קוד HTML.
+פלט דוגמא:
+```
+Arduino Project Page
+```
 
-## הצצה למטה:
+## צלילה לעומק:
+במקור, פיענוח HTML נעשה יידנית עם ספריות PHP, Python או כל שפה סקריפטית. לאורך הזמן, פותחו כלים ייעודיים כמו BeautifulSoup ו-lxml. התמיכה של ארדואינו בפיענוח HTML מוגבלת בשל חומרה לא חזקה. במקום לנתח HTML מורכב, רבים משתמשים בארדואינו לדרוש מהשרת מידע כבר מעובד בפורמט JSON או XML דרך API.
 
-עיבוד HTML הוא כלי חיוני בעולם הרשת. חשוב לדעת שהשיטה שהצגנו היא דרך פשוטה ובסיסית שמשתמשת ב- Ethernet library של Arduino. למדנו גם אודות הטכניקה של GET Request. ישנם גם שיטות אלטרנטיביות, כמו ביבליות JavaScript או Python. 
-
-## ראה גם:
-
-- [W3 Schools - HTML Parsing](https://www.w3schools.com/php/php_ajax_rss_reader.asp)
+## ראו גם:
 - [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
-- [Python - BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Arduino JSON parsing with ArduinoJson library](https://arduinojson.org/)
+- [Web Scraping with Python](https://realpython.com/beautiful-soup-web-scraper-python/)

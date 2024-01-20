@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:33:14.281024-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,43 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why? (Що і Чому?)
+Parsing HTML means extracting data from HTML content. Programmers do it to automate data retrieval from websites, like scraping prices or headlines.
 
-Парсинг HTML - це процес, під час якого програма читає HTML-код і розуміє його структуру. Це лягає в основу багатьох веб-скраперів та інших ємних застосунків, щоб надати корисну інформацію із сложної структури HTML.
-
-## Як це робити:
-
-PowerShell маєат все необхідне для парсингу HTML. Спрощений приклад:
+## How to (Як це зробити):
+Install `AngleSharp`, a .NET library, using PowerShell:
 
 ```PowerShell
-# Встановлюємо бібліотеку HtmlAgilityPack
-Install-Package -Name HtmlAgilityPack
-
-# Імпортуємо бібліотеку
-Add-Type -Path 'C:\path\to\HtmlAgilityPack.dll'
-
-# Створюємо новий об'єкт парсера
-$doc = New-Object HtmlAgilityPack.HtmlDocument
-
-# Завантажуємо HTML
-$doc.Load('C:\path\to\your.html')
-
-# Доступ до елементів HTML
-$doc.DocumentNode.SelectSingleNode('//title').InnerText
+Install-Package AngleSharp
 ```
 
-Це код виведе вміст тега `<title>` з вказаного файлу HTML.
+Example of parsing an HTML string to grab all `h1` elements:
 
-## Занурення в глибини:
+```PowerShell
+Add-Type -Path "path\to\AngleSharp.dll"
 
-Перед розробкою PowerShell, парсинг HTML зазвичай передбачав використання низькорівневих мов програмування, що було в значної мірі занадто складно. Інструменти, такі як HtmlAgilityPack, значно спростили процес, дозволяючи перетворити HTML в об'єкти .NET, які можна легко маніпулювати.
+$html = @"
+<html>
+<head><title>Test</title></head>
+<body>
+    <h1>Heading 1</h1>
+    <h1>Heading 2</h1>
+    <p>Hello, world!</p>
+</body>
+</html>
+"@
 
-Як альтернативи, можна використовувати інші мови програмування, як-от Python або Javascript, що мають великий вибір бібліотек для парсингу HTML.
+$parser = New-Object AngleSharp.Html.Parser.HtmlParser
+$document = $parser.ParseDocument($html)
+$headings = $document.QuerySelectorAll("h1")
 
-Використання Regex для парсингу HTML є поганою практикою, оскільки це призводить до проблем зі стійкістю та відсутністью гнучкості.
+foreach ($h in $headings) {
+    Write-Output $h.TextContent
+}
+```
 
-## Див. також:
-1. HtmlAgilityPack: https://www.nuget.org/packages/HtmlAgilityPack/
-2. Парсинг HTML з Python: https://docs.python.org/3/library/html.parser.html
-3. Парсинг HTML з Javascript: https://developer.mozilla.org/uk/docs/Web/API/DOMParser
-4. Погана практика: парсинг HTML з Regex: https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
+Sample output:
+
+```
+Heading 1
+Heading 2
+```
+
+## Deep Dive (Глибоке занурення):
+Historically, HTML parsing in PowerShell relied on Internet Explorer COM objects or regex hacks, but this was unreliable. AngleSharp, a modern .NET library, provides a robust and standards-compliant way to parse HTML. Other alternatives include HtmlAgilityPack and CsQuery. AngleSharp parses HTML into a Document Object Model (DOM) that you can query, making it similar to JavaScript's `document`.
+
+## See Also (Дивіться також):
+- AngleSharp GitHub Page: https://github.com/AngleSharp/AngleSharp
+- HtmlAgilityPack GitHub Page: https://github.com/zzzprojects/html-agility-pack
+- PowerShell Gallery: https://www.powershellgallery.com/
+- DOM Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model

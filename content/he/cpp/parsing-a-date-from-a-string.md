@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:35:03.263490-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-פענוח תאריך ממחרוזת באופן תלחיתי הוא תהליך של המרת מחרוזת טקסט לתאריך, בהנחה שהוא כתוב בפורמט מסוים. מתכנתים משתמשים בפעולה זו למניעת שגיאות קלט ולהכוונת המשתמש לקלט חוקי.
+## What & Why? (מה ולמה?)
+פרסינג (Parsing) של תאריך ממחרוזת זה תהליך של קריאה והמרה של תאריך כתוכן טקסט לאובייקט תאריך בקוד. תכנתים עושים זאת כדי לאפשר עיבוד, אימות, או שמירה של תאריכים במערכות ממוחשבות.
 
-## איך לעשות:
-נקודת ההתחלה שלנו היא מחרוזת תאריך בפורמט "YYYY-MM-DD". היש דרך להמיר אותה לסוג התאריך של C++ באמצעות הספרייה `<chrono>`.
-
-```C++
-#include <chrono>
+## How to: (איך לעשות:)
+```cpp
+#include <iostream>
 #include <sstream>
+#include <iomanip>
+#include <chrono>
+#include <string>
 
-std::istringstream ss("2023-01-17");
-std::chrono::year_month_day ymd;
-ss >> std::chrono::parse("%F", ymd);
-// now ymd holds the date 2023-Jan-17
+int main() {
+    // דוגמה למחרוזת תאריך
+    std::string date_str = "2023-03-14 16:05:23";
+    
+    // יצירת time_point מתוך המחרוזת
+    std::tm tm = {};
+    std::istringstream ss(date_str);
+    
+    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");  // פורמט התאריך
+    if (ss.fail()) {
+        std::cerr << "Parse failed\n";
+        return 1;
+    }
+    
+    // יצירת time_point והדפסה
+    std::chrono::system_clock::time_point tp = std::chrono::system_clock::from_time_t(std::mktime(&tm));
+    std::time_t time_out = std::chrono::system_clock::to_time_t(tp);
+    std::cout << "Parsed date and time: " << std::ctime(&time_out);
+    
+    return 0;
+}
+```
+פלט דוגמה:
+```
+Parsed date and time: Tue Mar 14 16:05:23 2023
 ```
 
-## בהעמקה
-ההיסטוריה של פענוח התאריכים ממחרוזות ב-C++ פחות מפורשת מאשר בשפות תכנות אחרות, כמו ג'אווה או Python. נערך הרבה אינטרפרטציה לפני הגעה לתקן C++20, שהציג את `<chrono>`, ספרייה חדשה לעיבוד הזמן.
+## Deep Dive (עומק הנושא)
+בעבר, C++ השתמשה בספריית C עבור עבודה עם זמנים ותאריכים. זה הביא לבלבול וטעויות. מאז כוללת C++11 את ספריית chrono, עדינה יותר ומאופיינת ביתר בטיחות. קיימים גם ספריות של צד שלישי, כמו Boost.Date_Time, אך chrono כבר מספקת בסיס טוב לרוב המקרים. Parsing מתבצע באמצעות std::get_time, שזה הכלי המוכלל המאפשר המרה מחרוזת לטיפוסי זמן באופן בטוח יותר.
 
-לראשונה, `std::istringstream` משמשת לקריאה ממחרוזת, והפתרון `std::chrono::parse` מרחיב זאת למחרוזות תאריך.
-
-דרך חלופית לביצוע זה הייתה שימוש ב-`std::strftime`, אך הוא מחייב התמודדות מרובה עם C-strings, שהן מסורבלות יותר.
-
-מי שרוצה להשתמש ב-`<chrono>` צריך להתמודד עם מושגים חדשים כמו `std::chrono::year_month_day`. זה גורם להכרח לקרוא יותר, אך בסופו של דבר הקוד נהיה יעיל ונקי יותר.
-
-## קישורים למקורות נוספים
-העמקה:
-- [הפענוח של מחרוזות תאריך וזמן](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time/posix_time.html)
-
-קודדים וקודים אחרים:
-- [המרת מחרוזת לתאריך](https://stackoverflow.com/questions/10716042/fastest-way-to-convert-stl-string-to-date-and-hour)
-- [הפענוח של מחרוזות תאריך וזמן](https://www.boost.org/doc/libs/1_52_0/doc/html/date_time/date_time_io.html)
+## See Also (ראו גם)
+- [cppreference std::get_time](https://en.cppreference.com/w/cpp/io/manip/get_time) - מידע נוסף על std::get_time.
+- [cppreference std::chrono](https://en.cppreference.com/w/cpp/chrono) - מידע נוסף על ספריית chrono ב-C++.
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html) - סטנדרט הפורמט של תאריך וזמן המומלץ לשימוש.

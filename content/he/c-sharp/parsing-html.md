@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:19.416110-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "C#"
@@ -11,30 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-ניתוח HTML, באנגלית: Parsing HTML, הוא התהליך שבו קוראים ומפרשים את הקוד השיפועי של בניין אתרי HTML. מתכנתים עושים את זה כדי לחלץ, לשנות או לנתח את הנתונים מאתרי אינטרנט.
+פרסור HTML הוא תהליך שבו אנחנו פותרים את הקוד של HTML לחתיכות נתונים שהמחשב יכול לנהל בקלות. פרוגרמרים עושים את זה כדי למשוך מידע ספציפי מדפי אינטרנט, למנוע שימוש ב-API, או כדי לבדוק את פעולות האתר.
 
-## איך ל:
+## איך לעשות:
+נבנה תוכנית פשוטה ב-C# שמפרסרת HTML באמצעות החבילה HtmlAgilityPack.
+
 ```C#
 using HtmlAgilityPack;
-// טעינת דף HTML
-var web = new HtmlWeb();
-var doc = web.Load("http://yourwebsite.com");
-// הגעה לאלמנט מסוים תחת div עם id מסוים
-var Nodes= doc.DocumentNode.SelectNodes("//div[@id='yourdivid']//li");
-// הגעה לתוכן הטקסט של האלמנט
-foreach(var node in Nodes)
+using System;
+using System.Linq;
+
+class HtmlParser
 {
-   Console.WriteLine(node.InnerText);
+    static void Main()
+    {
+        var web = new HtmlWeb();
+        var doc = web.Load("http://example.com");
+
+        var headers = doc.DocumentNode.SelectNodes("//h1");
+        foreach (var header in headers)
+        {
+            Console.WriteLine(header.InnerText);
+        }
+    }
 }
 ```
-הקוד מעלה מטעין דף HTML, מחפש div עם id מסויים, ומטעין את הטקסטים של האלמנטים "li" תחתיו.
 
-## צלילה עמוקה
-ניתוח HTML הוא אכן מעט מסובך מאשר ניתוח טקסט פשוט, בזכות המבנה המשולב של HTML ברמות שונות. בעבר, המתכנתים יצרו קוד ניתוח באופן ידני, אך היום משפחת הספריות `HtmlAgilityPack` שיהלם את זיקת המשא ומתן ומניעת שגיאות.
+הפלט יהיה הטקסט של כותרות ה-H1 מהדף example.com.
 
-אלטרנטיבות ל`HtmlAgilityPack` כוללות `CsQuery` ו`AngleSharp`, כאשר כל אחת מהן מספקת את יתרונות וחסרונותיה המיוחדים.
+## עומק הנושא:
+בעבר, פרסור HTML היה מסובך יותר. רוב הכליות לא היו בשימוש, ופרוגרמרים היו נאלצים לפתח פיתרונות ייחודיים. היום, יש לנו חבילות כמו HtmlAgilityPack שמקלות עלינו את העבודה. זה לא האפשרות היחידה – ישנם כלים אחרים כמו אנגל'ה פרסר ו-CSQuery. הטריק הוא לבחור את הכלי המתאים לצורך הספציפי שלך: חזות, ביצועים, תמיכה ב-XPath ועוד. 
 
-## ראו גם
-למדע נוסף על בניית HTML משובצת ואופטימיזציה של קוד ניתוח, ראו את המקורות הבאים:
-1. [מסמכי HtmlAgilityPack](https://html-agility-pack.net/)
-3. [CSQuery ב- GitHub](https://github.com/jamietre/csquery)
+HtmlAgilityPack, למשל, טובה בפרסור מסמכים שאינם תקניים, מה שמאד שימושי בעולם אינטרנט אמיתי שלא תמיד נקי משגיאות.
+
+## ראה גם:
+- המסמך הרשמי של HtmlAgilityPack: https://html-agility-pack.net/
+- דוקומנטציה של קבוצת תקינה של HTML (W3C): https://www.w3.org/TR/html52/
+- XPath Tutorial: https://www.w3schools.com/xml/xpath_intro.asp

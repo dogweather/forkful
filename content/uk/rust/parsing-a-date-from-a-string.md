@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:38:36.050258-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,34 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-**Розбір дати з рядка** - це процес вилучення конкретного значення дати з текстового рядка. Програмісти роблять це, коли потрібно працювати з датою, яка була отримана у форматі рядка, наприклад, при отриманні даних з API.
+## Що це таке & навіщо?
+Парсинг дати з рядка — це процес перетворення текстових даних у специфічний формат дати, який програма може інтерпретувати і використовувати. Програмісти роблять це, щоб легко маніпулювати датами та часом для порівняння, сортування або арифметичних операцій.
 
 ## Як це зробити:
-Нижче наведений приклад коду на Rust який працює з бібліотекою `chrono` для розбору дати з рядка.
+Розглянемо код використання `chrono`, яка є популярною бібліотекою для роботи з датою та часом у Rust:
 
 ```Rust
-use chrono::{DateTime, NaiveDate, NaiveDateTime, NaiveTime, TimeZone, Utc};
+use chrono::NaiveDate;
 
-let date_str = "2022-09-03";
-let parse_from_str = NaiveDate::parse_from_str(date_str, "%Y-%m-%d");
-match parse_from_str {
-    Ok(date) => println!("Відповідь: {:?}", date),
-    Err(e) => println!("Помилка: {:?}", e),
+fn main() {
+    let date_str = "2023-03-14";
+    match NaiveDate::parse_from_str(date_str, "%Y-%m-%d") {
+        Ok(date) => println!("Parsed date is: {}", date),
+        Err(e) => println!("Error parsing date: {}", e),
+    }
 }
 ```
-Приклад вище виведе: 
+
+Вивід буде:
 ```
-Відповідь: NaiveDate(2022, 9, 3)
+Parsed date is: 2023-03-14
 ```
 
-## Поглиблений занурення
-1. **Історичний контекст**: Розбір дати з рядка був важливим аспектом програмування майже з самого початку історії комп'ютерних наук. З розширенням глобальних мереж, особливо з розвитком Інтернету, ця потреба стала більш важливою.
-2. **Альтернативи**: Rust пропонує ряд альтернатив для розбору дати, в тому числі: бібліотеки `time`, `date` і `rust-datetime`.
-3. **Деталі реалізації**: У Rust, дата представлена як структура `NaiveDate` і має метод `parse_from_str`, якому передається рядок і формат дати. Цей метод повертає `Result`, що розпаковується при помилці.
+## Поглиблений огляд:
+Historically, handling dates and times is tricky because of different formats and timezones. `chrono` simplifies this in Rust. Alternatives to `chrono` include using the standard library's `time` module, though it's less feature-rich. When parsing dates, you specify the format with format specifiers like `%Y-%m-%d`. This tells the parser to expect a four-digit year, a two-digit month, and a two-digit day. The under-the-hood details involve validating format and checking calendar correctness.
 
-## Додатково
-Докладніше про розбір дати с рядка в Руст можна дізнатися з наступних ресурсів:
-- Документація `chrono` - [chrono.rs](https://docs.rs/chrono/0.4.19/chrono/)
-- Практичний приклад на `stackoverflow` - [stackoverflow.com](https://stackoverflow.com/questions/41464719/how-to-parse-a-date-string-in-rust)
-- Документація `NaiveDate` - [chrono::naive::date](https://docs.rs/chrono/0.4.2/chrono/naive/date/struct.NaiveDate.html)
+## Дивіться також:
+- Official `chrono` crate documentation: [docs.rs/chrono](https://docs.rs/chrono/)
+- Rust `time` module documentation: [doc.rust-lang.org/std/time/index.html](https://doc.rust-lang.org/std/time/index.html)

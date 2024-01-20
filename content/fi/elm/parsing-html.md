@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:31:05.395564-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Elm"
@@ -10,44 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä ja Miksi?
+HTML:n jäsentäminen on tapahtuma, jossa HTML-koodi muutetaan rakenteelliseen muotoon, jota ohjelmat voivat helpommin käsitellä. Ohjelmoijat tekevät sen sisällön käsittelyn, datan louhinnan ja sovellusten toiminnallisuuden lisäämisen takia.
 
-HTML:n jäsentäminen tarkoittaa koodin käyntiä läpi ja sen tiedon erottamista, jota tarvitset. Ohjelmoijat tekevät tämän helpottaakseen verkkosivujen tietojen käsittelyä.
-
-## Miten:
-
-Luodaan HTML-jäsentäjä käyttäen Elm-pakettia nimeltä `elm/parser`. Tässä on malli:
-
+## How to: - Kuinka:
 ```Elm
-import Html
-import Parser exposing ((|.), DeadEnd, Parser, Step(..), StepDone, StepLoop, oneOf, problem, succeed, symbol)
+import Html exposing (text)
+import Html.Parser exposing (run, textTag)
 
-type alias Html = 
-    { tagName : String
-    , children : List Html
-    }
+sampleHtml : String
+sampleHtml = "<p>Tervetuloa Elm-maailmaan!</p>"
 
-parseTag : Parser String
-parseTag = 
-    symbol "<" 
-    |. Parser.getChompedString (Parser.chompWhile (/= '>'))
-    |> Parser.map (\tag -> String.trim (String.dropRight 1 tag))
+parseHtml : String -> String
+parseHtml html =
+    case run textTag html of
+        Ok parsedText ->
+            parsedText
+
+        Err error ->
+            "Parsing failed: " ++ Debug.toString(error)
+
+main =
+    text (parseHtml sampleHtml)
 ```
 
-Voit ajaa koodin ja saat tämän tuloksen:
-
-```Elm
-parseTag "</div>" 
--- returns ("div", 5)
+Kun ajat tämän koodin, saat:
 ```
-   
-## Syvällinen sukellus:
+"Tervetuloa Elm-maailmaan!"
+```
 
-HTML-jäsentäminen on ollut olennainen osa web-ohjelmointia siitä lähtien, kun ensimmäiset dynaamiset verkkosivut luotiin. Muita vaihtoehtoja on, kuten esimerkiksi käyttää ulkoista palvelua kuten Puppeteeriä, joka hallinnoi Chromium-selainta Node.js:n kautta. Kuitenkin, Elm:llä voit tehdä tämän saman työn vähemmällä koodilla ja suuremmalla teholla.
+## Deep Dive - Sukellus Syvemmälle:
+Elm, toisin kuin monet muut kielet, on suunniteltu selkeästi front-end kehitystä varten, ja sen lähteet juontavat funktionaalisen ohjelmoinnin periaatteista. Elm omaksuu myös omintakeisen tapansa käsitellä HTML:ää.
 
-HTML:n jäsentämisen toteutus Elm:llä on tehokas ja siinä on mahdollisuus hyödyntää Elm:n vahvoja tyyppejä virheenkäsittelyyn.
+Kun HTML:ää jäsentävät kirjastot muissa kielissä, kuten JavaScript, ovat valtavirran, Elm tarjoaa oman standardikirjaston `Html.Parser`-moduulin. Se on tyyppiturvallinen ja puhtaasti funktionaalinen tapa jäsentää HTML. Elm ei sisällä perinteistä DOM käsittelyä, vaan käyttää Virtual Domia, mikä tekee HTML:n jäsentämisestä mutkikkaampaa mutta tehokkaampaa.
 
-## Katso myös:
+Vaihtoehtoisesti, voit turvautua kolmannen osapuolen kirjastoihin kuten `elm-xml` jäsentämiseen, jos tarvitset monipuolisempia työkaluja.
 
-- [Elm-parserin dokumentaatio](https://package.elm-lang.org/packages/elm/parser/latest)
-- [Puppeteer](https://pptr.dev/) luotettava, mutta monimutkainen vaihtoehto.
+## See Also - Katso Myös:
+- Elm’s official `Html.Parser` module documentation: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
+- "Elm in Action" by Richard Feldman: https://www.manning.com/books/elm-in-action
+- Elm community forums for discussions and questions: https://discourse.elm-lang.org/

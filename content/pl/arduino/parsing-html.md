@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:30:08.963432-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,54 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Analiza składniowa HTML polega na czytaniu i analizowaniu kodu HTML w celu zrozumienia jego struktury i zawartości. Programiści robią to, aby wykorzystać, wydobyć lub manipulować danymi zawartymi w stronach internetowych.
+Parsing HTML to sposób, by komputer czytał i rozumiał struktury HTML - język budowy stron internetowych. Programiści parsują HTML, żeby wydobyć dane, zarządzać treścią lub naprawić błędy.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
 
-Teraz zrozumiesz podstawy analizy składni HTML. Poniżej podaję przykładowy kod z użyciem Arduino wraz z wyjściem.
+Obecnie nie ma dedykowanej funkcji do parsowania HTML w Arduino. Można jednak użyć biblioteki String, by przetworzyć prosty HTML.
 
 ```Arduino
-#include <Ethernet.h>
-#include <HTMLParser.h>
-
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1,1);
-EthernetClient client;
-HTMLParser htmlParser;
+#include <String.h>
 
 void setup() {
-    Serial.begin(9600); 
-    Ethernet.begin(mac, ip); 
+  Serial.begin(9600);
+  String htmlData = "<html><body><h1>Arduino Rocks!</h1></body></html>";
+  int startIndex = htmlData.indexOf("<h1>") + 4;
+  int endIndex = htmlData.indexOf("</h1>");
+  String heading = htmlData.substring(startIndex, endIndex);
+  Serial.println(heading);
 }
 
 void loop() {
-    if (client.connect("www.example.com", 80)) {
-     client.println("GET / HTTP/1.1");
-     client.println("Host: www.example.com");
-     client.println("Connection: close");
-     client.println();
-     htmlParser.begin();
-     while(client.connected() && !client.available()); 
-     while (client.available()){
-        htmlParser.processInput((char)client.read());
-     }
-    client.stop();
-    }
+  // nic nie robimy w pętli
 }
 ```
 
-Tutaj skrypt łączy się z www.example.com i przeprowadza analize składni HTML strony głównej.
+Sample output:
+```
+Arduino Rocks!
+```
 
-## Głębsze zanurzenie
+## Deep Dive (W głąb tematu):
 
-Analiza składniowa HTML ma swoje korzenie w początkach tworzenia sieci, kiedy strony internetowe były tworzone i przeglądane w postaci czystego kodu HTML. Uzyskanie dostępu do treści strony wymagało "rozumienia" kodu HTML, stąd konieczność analizy składniowej. Istnieją alternatywy dla analizy składniowej HTML, takie jak wykorzystanie API, które zwraca dane w bardziej przyswajalnym formacie, takim jak JSON. Jednakże, nie wszystkie strony oferują API i czasami analiza składniowa HTML jest jedynym sposobem na dostęp do danych.
+Arduino nie ma wbudowanej obsługi XML czy HTML, więc operujemy na prostych stringach. W przeszłości HTML interpretowano ręcznie lub przy użyciu bardziej skomplikowanych bibliotek na innych platformach. Alternatywy to używanie wyrażeń regularnych lub dedykowanych bibliotek jak Gumbo-parser dla C++. Ważne, by pamiętać, że Arduino ma ograniczone zasoby i nie nadaje się do skomplikowanego parsowania.
 
-## Zobacz też
+## See Also (Zobacz też):
 
-- Dokumentacja Arduino: https://www.arduino.cc/reference/en/
-- Instrukcje dla innych procesorów HTML: https://htmlparser.sourceforge.io/
-- Przykładowe projekty Arduino: https://create.arduino.cc/projecthub
-
-Produktywnego kodowania! Pomocne mogą być te dodatkowe źródła.
+- Dokumentacja String w Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Przykłady użycia wyrażeń regularnych: https://www.regular-expressions.info/
+- Gumbo-parser, parser HTML dla C++: https://github.com/google/gumbo-parser

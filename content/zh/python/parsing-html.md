@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:33:36.964458-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Python"
 category:             "Python"
@@ -10,61 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 这是什么和为什么？ (What & Why?)
+## What & Why? (什么是HTML解析以及为什么要进行HTML解析?)
+HTML解析就是将网页上的HTML代码转换成可供程序使用的数据结构。程序员通常这样做是为了提取网页中的信息，比如链接、文本或者其他数据。
 
-HTML解析，是指计算机程序读取HTML（超文本标记语言）文本，分析其结构，转化为可以操作的数据结构，如DOM树。程序员之所以要解析HTML，是因为这可以帮助他们抓取和分析网页数据，改善用户的网络体验。
+## How to: (如何进行HTML解析)
+Python中进行HTML解析，我们通常使用`BeautifulSoup`库。下面的代码展示了如何用它来抓取网页标题：
 
-## 怎么做？ (How to?)
-
-我们使用Python中的`beautifulsoup4`库来完成HTML解析。首先，需要安装此库：
-
-```
-pip install beautifulsoup4
-```
-
-然后，我们来看一段示例代码：
-
-```python
+```Python
 from bs4 import BeautifulSoup
+import requests
 
-html_doc = """
-<html><head><title>The Dormouse's story</title></head>
-<body>
-<p class="title"><b>The Dormouse's story</b></p>
-"""
-soup = BeautifulSoup(html_doc, 'html.parser')
-print(soup.prettify())
+# 抓取网页
+response = requests.get('http://example.com')
+html = response.content
+
+# 解析HTML
+soup = BeautifulSoup(html, 'html.parser')
+
+# 提取标题并打印
+title = soup.find('title').get_text()
+print(title)
 ```
 
-运行这段代码，输出是：
+运行这段代码，输出应该是网页的标题：
 
 ```
-<html>
- <head>
-  <title>
-   The Dormouse's story
-  </title>
- </head>
- <body>
-  <p class="title">
-   <b>
-    The Dormouse's story
-   </b>
-  </p>
- </body>
-</html>
+Example Domain
 ```
 
-## 深入研究 (Deep Dive)
+## Deep Dive (深入了解)
+HTML解析可以追溯到万维网的早期。最初，提取数据不外乎遍历字符串。后来，出现了像`BeautifulSoup`、`lxml`和`html.parser`这样的库，它们的容错能力更强，使用也更为简便。
 
-HTML解析的历史可以追溯到90年代初，互联网刚开始流行的时候。那时，大部分网页都是静态HTML，因此，解析HTML成为提取网页内容的主要方法。
+Python的标准库带有`html.parser`，但它速度比较慢且容错能力有限。`BeautifulSoup`是第三方库，易用而且功能丰富。它可以结合`html.parser`,`lxml`或`html5lib`使用。
 
-此外，不同于用Python编写的`beautifulsoup4`库，还有一些其它的解析器，例如Ruby的`Nokogiri`，Java的`Jsoup`等等。
+除了抓取静态HTML外，有时你可能需要从动态内容生成的HTML中解析数据，这时可以使用`Selenium`或`Pyppeteer`等工具。
 
-在实现细节上，`beautifulsoup4`可以处理包括不良结构在内的各种HTML。它首先会将HTML进行词法分析，生成标记(token)，然后将这些标记组织成一棵解析树。
-
-## 参考资料 (See Also)
-
-- Python BeautifulSoup官网: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- W3Schools HTML教程: https://www.w3schools.com/html/
-- Mozilla HTML教程: https://developer.mozilla.org/en-US/docs/Web/HTML
+## See Also (延伸阅读)
+- BeautifulSoup文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Requests库文档：https://requests.readthedocs.io/en/master/
+- `lxml`解析器：https://lxml.de/
+- `html5lib`解析器：https://html5lib.readthedocs.io/en/latest/
+- `Selenium`自动化工具：https://www.selenium.dev/documentation/en/
+- `Pyppeteer`库：https://pyppeteer.github.io/pyppeteer/

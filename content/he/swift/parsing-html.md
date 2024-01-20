@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:34:06.809775-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Swift"
@@ -11,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-ניתוח HTML הוא תהליך של הפרדת קובץ HTML לרכיביה המרכזיים - תגים, טקסט, תמונות וכו'. מתכנתים עושים את זה כאשר הם זקוקים לשלוט ולתפעל עם נתונים מדף אינטרנט מסוים.
+פירוס HTML הוא תהליך של הפיכת מבנה HTML למבנה נתונים שניתן לניתוח ושימוש בקוד. תוכניתנים עושים זאת כדי לקרוא או לשנות את תוכן ומבנה דפי אינטרנט באופן אוטומטי.
 
-## איך:
-להלן דוגמה לקוד שמנתח HTML באמצעות Swift, ואז מציג מספר מעוצב של קישורים:
+## איך לעשות:
+בדוגמה נשתמש בספריית `SwiftSoup`. קודם כל, צריך להתקין את הספרייה דרך Swift Package Manager.
 
 ```Swift
 import SwiftSoup
 
-func parseHtml() throws {
-    let htmlContent = "<html><body><a href='www.example1.com'>Example1</a><a href='www.example2.com'>Example2</a></body></html>"
-    let doc: Document = try SwiftSoup.parse(htmlContent)
-    let links: Elements = try doc.select("a")
-
-    for link in links.array() {
-        let linkHref = try link.attr("href")
-        let linkText = try link.text()
-        print("Text: \(linkText), URL: \(linkHref)")
-    }
-}
+let htmlString = "<html><head><title>שלום</title></head><body><p>זה טקסט בעברית!</p></body></html>"
 
 do {
-    try parseHtml()
+    let doc: Document = try SwiftSoup.parse(htmlString)
+    let bodyText = try doc.body()?.text()
+    print(bodyText ?? "לא נמצא טקסט")
 } catch Exception.Error(let type, let message) {
-    print(message)
+    print("משהו השתבש: \(type) \(message)")
 } catch {
-    print("error")
+    print("אירעה שגיאה כללית")
 }
 ```
 
-## צלילה עמוקה
-ביצועים של ניתוח HTML הם בעיה בלתי ברורה בביצועי מנות החיפוש שלנו. ההיסטוריה שמאחורי כלי הניתוח הם טמונים בבעיות של שפות HTML צעירות ודינמיות מאוד, לרבות הבנה של כיצד להתמודד עם שפת סימון מורכבת וללא תוקף כמו HTML. דינמיות הניתוח הוקפאה כאשר HTML5 הגיע, וכעת אנו בראשית שיפור הביצועים של מנות החיפוש.
+פלט דוגמה:
+```
+זה טקסט בעברית!
+```
 
-בנוסף ל-SwiftSoup, שהוא מעולה לניתוח HTML, ישנם כלים נוספים כדי לעבוד עם HTML ב-Swift, כולל HTMLKit ו-Fuzi.
-
-מנגנון מרכזי שמאחורי SwiftSoup הוא JSoup, מנות החיפוש העצמאית של Java לרכיבים של HTML, כאשר היא כתובה ב- Java.
+## ניתוח עמוק
+הרעיון שמאחורי ניתוח HTML הוא לא חדש. כבר בשנות ה-90 התוכניתנים נאלצו לעבוד עם HTML כדי לטעון ולעבד נתונים מדפי אינטרנט. הבעיה המרכזית היא ש-HTML נוטה לא להיות מהוקצע ולכן זקוק לניתוח קפדני. בעולם המודרני, ספריות כמו `SwiftSoup` מנצלות כלים לניתוח מורכב כדי להסיר את הקושי הזה. ישנן גם אלטרנטיבות כמו `WebKit` או `libxml2` עבור מטרות שונות, כולל פיר(מ)וס של קבצים XML.
 
 ## ראה גם
-לקבלת מידע נוסף בנושא, הסתכל מן [Documents of SwiftSoup](https://www.scrapehero.com/how-to-parse-html-in-swift/), [Introduction to HTMLKit](https://github.com/vapor/html-kit), [Introduction to Fuzi](https://github.com/cezheng/Fuzi)
+- [SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup)
+- [WebKit Documentation](https://developer.apple.com/documentation/webkit)
+- [libxml2](http://xmlsoft.org/)

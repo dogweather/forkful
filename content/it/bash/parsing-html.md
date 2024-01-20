@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'html"
-html_title:           "Bash: Analisi sintattica dell'html"
-simple_title:         "Analisi sintattica dell'html"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:29:49.817357-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,47 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash per Parsing HTML
+## What & Why?
+L'analisi HTML consiste nel decomporre il codice HTML per estrarne dati specifici. I programmatori la eseguono per raccogliere informazioni dai siti web in modo automatico.
 
-## Cos'è & Perché?
-Il parsing HTML invita il tuo codice a leggere ed interpretare il codice HTML. I programmatori lo fanno per estrarre dati, manipolare contenuti e interagire con le pagine web in modi nuovi e creativi.
+## How to:
+Per analizzare HTML in Bash, possiamo utilizzare strumenti come `grep`, `sed`, o `awk`. Ma il migliore è `pup`, uno strumento specifico per l'HTML.
 
-## Come fare:
-Ecco un esempio semplice utilizzando `wget` e `grep`.
-
+Installiamo `pup`:
 ```Bash
-# Scarica la pagina
-wget https://www.esempio.com -O esempio.html
-
-# Ottieni il titolo
-grep -oP '(?<=<title>).*(?=</title>)' esempio.html
+sudo apt-get install -y pup
 ```
 
-Ecco un altro esempio utilizzando `curl` e `awk`.
-
+Supponiamo di voler estrarre i titoli da una pagina HTML:
 ```Bash
-# Scarica la pagina
-curl https://www.esempio.com -o esempio.html
-
-# Ottieni il titolo
-awk -v RS='</title>' '/<title>/{gsub(/.*<title>|\n+/,"");print;exit}' esempio.html
+curl -s https://esempio.com | pup 'h1 text{}'
 ```
 
-Questi comandi semplificati restituiscono il titolo del documento HTML.
+Questo estrae tutti i testi all'interno degli elementi `<h1>`. Semplice, no?
 
-## Approfondimenti
-### Contesto Storico
-Inizialmente, il parsing HTML era una operazione complessa che richiedeva librerie software dedicate al calcolo. Oggi, Bash lo rende più semplice con strumenti come `wget`, `curl`, `grep` e `awk`.
+## Deep Dive
+L'analisi di HTML con i classici strumenti di testo di Unix può essere ostica. Questi strumenti non comprendono la struttura HTML, così facilmente rompono con HTML complicato.
 
-### Alternative
-Esistono alternative a Bash per il parsing HTML, tra cui Python (con BeautifulSoup o PyQuery), PHP (con DOM), e JavaScript (con jQuery o JSDOM).
+`pup` è venuto a colmare questa lacuna, offrendo un modo specifico per analizzare HTML in linea di comando. 
 
-### Dettagli di implementazione
-Il parsing HTML è un'attività di basso livello e gli strumenti di parsing devono essere in grado di gestire non solo il corretto codice HTML, ma anche il mal formato.
+Altre alternative includono: `xmllint`, `html-xml-utils` e linguaggi come Python che hanno librerie come BeautifulSoup.
 
-## Vedi Anche
-1. [Guida di Bash](https://www.gnu.org/software/bash/manual/bash.html)
-2. [Manuale di Grep](https://www.gnu.org/software/grep/manual/grep.html)
-3. [Manuale di AWK](https://www.gnu.org/software/gawk/manual/gawk.html)
-4. [Documentazione di Wget](https://www.gnu.org/software/wget/manual/wget.html)
-5. [Documentazione di Curl](https://curl.haxx.se/docs/manpage.html)
+Dettaglio implementativo: mentre `grep` cerca semplicemente pattern di testo, `pup` converte l'HTML in un documento DOM, che può poi navigare e manipolare.
+
+## See Also
+- Documentazione `pup`: https://github.com/ericchiang/pup
+- BeautifulSoup (Python): https://www.crummy.com/software/BeautifulSoup/
+- `xmllint`: http://xmlsoft.org/xmllint.html
+- `html-xml-utils`: https://www.w3.org/Tools/HTML-XML-utils/

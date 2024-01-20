@@ -1,7 +1,8 @@
 ---
-title:                "Розбір html"
-html_title:           "Javascript: Розбір html"
-simple_title:         "Розбір html"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:32:51.759876-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке та навіщо?
-
-Парсінг HTML - це процес видобування даних із HTML документу. Програмісти роблять це для перетворення структурованого хтмл в код щоб легко доступитися до його компонентів.
+## Що це та навіщо?
+HTML-парсинг — це процес аналізу HTML-коду для отримання даних, що його структурують. Робимо це, щоб автоматизувати роботу з даними, які спочатку призначені для людського читання.
 
 ## Як це зробити:
+```Javascript
+// Використання DOMParser для парсингу HTML
+const parser = new DOMParser();
+const htmlString = '<div>Hello, world!</div>';
+const doc = parser.parseFromString(htmlString, 'text/html');
 
-Можна використовувати Node.JS з JSDOM для парсингу HTML. Ось код, який ви можете спробувати:
-
-```javascript
-var jsdom = require("jsdom");
-var { JSDOM } = jsdom;
-var dom = new JSDOM(` 
-  <!DOCTYPE html>
-  <div class="hello-world">Привіт, світ! </div>`);
-console.log(dom.window.document.querySelector(".hello-world").textContent); // "Привіт, світ!"
+console.log(doc.body.textContent); // Вивід: Hello, world!
 ```
-## Поглиблений огляд:
 
-1. **Історичний контекст:** Парсинг HTML з'явився з розвитком вебу. Він покращив якість взаємодії користувачів з інтернетом.
+```Javascript
+// Використання бібліотеки jQuery для шукання елементів
+let $html = $(htmlString);
+let text = $html.find('div').text();
 
-2. **Альтернативи:** Інші варіанти парсингу HTML включають бібліотеки, такі як "Beautiful Soup" (Python) або "Cheerio" (Node.js).
+console.log(text); // Вивід: Hello, world!
+```
 
-3. **Деталі реалізації:** Під час парсингу HTML, код програми читає файл HTML та перетворює його на дерево об'єктів, зазвичай DOM.
+## Поглиблено:
+HTML-парсинг — не новинка. Спочатку в основному використовували регулярні вирази, але це може призвести до помилок. Точність та зручність покращилися з введенням DOMParser.
 
-## Див. також:
+Є й інші методи, як наприклад: інтерфейс `innerHTML` або бібліотеки як jQuery. На великих проєктах можуть бути використані серверні рішення: наприклад, Node.js з бібліотеками типу `cheerio`.
 
-1. [JSDOM Documentation](https://github.com/jsdom/jsdom)
-2. [Cheerio Documentation](https://cheerio.js.org/)
-3. [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+При роботі з парсингом HTML, важливо розуміти безпечність. Вхідний HTML може містити шкідливий код, переконайтесь у використанні надійних інструментів та чищенні контенту перед взаємодією.
+
+## Додатково:
+- [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- [Cheerio.js](https://cheerio.js.org/)
+- [Техніки безпечного парсингу HTML](https://owasp.org/www-community/attacks/xss/) (OWASP)

@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:33:59.514523-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,57 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co & Dlaczego?)
+Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydobyć z niego konkretne dane. Programiści robią to, by pozyskać informacje ze stron internetowych, które nie oferują API, lub dla szybkiej transformacji treści HTML na inne formaty.
 
-Przetwarzanie HTML (parsing HTML) to proces ekstrakcji danych z dokumentów HTML. Programiści robią to, aby uzyskać dostęp do istotnych danych umieszczonych na stronach internetowych, które mogą być używane w różnych celach, takich jak web scraping i web automation.
+## How to: (Jak to zrobić:)
+Swift nie ma wbudowanej obsługi parsowania HTML, więc wykorzystamy bibliotekę zewnętrzną, jak `SwiftSoup`. Aby jej użyć, musisz dodać zależność do swojego pliku `Package.swift`:
 
-## Jak to zrobić:
+```swift
+.package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.3.2")
+```
 
-Swift nie ma wbudowanej biblioteki do przetwarzania HTML, ale możemy używać zewnętrznej biblioteki, takiej jak Kanna. Oto jak to zrobić:
+Teraz, możesz spróbować prostego parsowania tytułu strony:
 
-```Swift
-// Importujemy bibilotekę Kanna
-import Kanna
+```swift
+import SwiftSoup
 
-func przetwarzanieHTML(nazwaStrony: String) {
-  do {
-    // Pobieramy zawartość strony
-    let zawartosc = try String(contentsOf: URL(string: nazwaStrony)!, encoding: .utf8)
-      
-    // Tworzymy dokument HTML
-    let doc = try HTML(html: zawartosc, encoding: .utf8)
-      
-    // Wyciągamy interesujące nas dane
-    for link in doc.xpath("//a | //link") {
-      print(link.text!, link["href"]!)
+let html = "<html><head><title>Witaj, Swift!</title></head></html>"
+do {
+    let doc = try SwiftSoup.parse(html)
+    if let title = try doc.title() {
+        print(title)
     }
-  } catch let error {
-    print("Błąd: \(error)")
-  }
+} catch {
+    print("Nie udało się sparsować HTML-a: \(error)")
 }
+
+// Wydruk w konsoli: "Witaj, Swift!"
 ```
 
-Sample output:
+## Deep Dive (Zagłębiamy się)
+Parsowanie HTML w Swift to jeszcze młoda dziedzina. Inne języki, jak Python z biblioteką BeautifulSoup, mają bardziej rozwinięte narzędzia. Historia parsowania HTML zaczyna się jednak dużo wcześniej i rozwija wraz z webem. Alternatywami dla SwiftSoup mogą być inne biblioteki takie jak Fuzi czy Kanna, które także wykorzystują XPath i CSS selectors. Ważne jest, żeby pamiętać o potencjalnych problemach przy parsowaniu skomplikowanej i zmieniającej się zawartości HTML, jak dynamicznie generowane strony.
 
-```Swift
-"Strona główna", "/index.html"
-"Kontakt", "/contact.html"
-```
+Implementacja parsowania jest różna - może być na podstawie DOM, SAX, albo innego modelu. SwiftSoup stara się dostarczyć API podobne do silnika przeglądarki, z tą różnicą, że działamy w kontekście aplikacji Swift.
 
-## Deep Dive
-
-Historia przetwarzania HTML sięga początków internetu. Wtedy programiści zaczęli odkrywać potrzebę ekstrakcji danych z dokumentów HTML do różnych celów, takich jak automatyzacja przeglądarek i web scraping.
-
-Inne języki programowania, takie jak Python czy JavaScript, mają również swoje biblioteki do przetwarzania HTML. W przypadku Swifta, użyliśmy biblioteki Kanna, ale istnieją inne, takie jak SwiftSoup czy SwiftHtmlParser.
-
-Szczegóły implementacji parowania HTML zależą od wykorzystanej biblioteki. W przypadku Kanna, używa ona XPath do identyfikacji interesujących nas elementów na stronie. Należy jednak pamiętać, że parowanie HTML jest procesem który może się różnić w zależności od struktury danego dokumentu HTML.
-
-## Zobacz również:
-
-Możesz dowiedzieć się więcej o przetwarzaniu HTML na tych stronach:
-
-- Kanna: https://github.com/tid-kijyun/Kanna
-- SwiftSoup: https://github.com/scinfu/SwiftSoup
-- XPath: https://www.w3schools.com/xml/xpath_intro.asp
-- HTML Parser w Python: https://docs.python.org/3/library/html.parser.html
-- HTML Parser w JavaScript: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+## See Also (Zobacz także)
+- SwiftSoup GitHub: https://github.com/scinfu/SwiftSoup
+- Dokumentacja SwiftSoup: https://scinfu.github.io/SwiftSoup/
+- BeautifulSoup w Pythonie: https://www.crummy.com/software/BeautifulSoup/
+- "Web Scraping with Swift" Tutorial: https://www.raywenderlich.com/567-urlsession-tutorial-getting-started

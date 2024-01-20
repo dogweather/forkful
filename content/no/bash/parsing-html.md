@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:30:07.956066-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,35 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Parsing av HTML er prosessen med å oversette HTMLs tekstdokumenter til objekter for programmet å manipulere. Programmerere bruker det fordi det lar dem trekke ut data, manipulere innhold, og dynamisk oppdatere nettsider.
+## What & Why?
+Parsing HTML betyr å lese og forstå HTML-koden slik at du kan hente ut spesifikk informasjon. Programmere gjør dette for å automatisere prosesser som nettskraping eller for å integrere data fra ulike websider i egne applikasjoner.
 
-## Hvordan gjøre det:
-La oss starte med en enkel oppgave: ekstrahere alle `<a>` tags fra en HTML-fil. `grep` verktøyet med regulære uttrykk kan brukes:
+## How to:
+Bash er ikke ideelt for HTML-parsing, men det kan gjøres med verktøy som `grep`, `sed`, og `awk`. For robust parsing, bruk kommando-linjeverktøy som `lynx`, `pup` eller `xmllint`.
 
+### Eksempel med `grep` og `sed`:
 ```Bash
-$ grep -o '<a[^>]*>.*</a>' file.html
+echo "<p>Hello, World!</p>" | grep -oP '(?<=<p>).*(?=</p>)'
+
+# Output:
+Hello, World!
 ```
 
-Hvis du vil hente attributtene til en tag, kan du bruke `sed`:
-
+### Eksempel med `pup`:
+Installer først `pup` med `brew install pup` eller tilsvarende.
 ```Bash
-$ sed -n 's/.*<a href="\([^"]*\).*/\1/p' file.html
+echo '<div><p class="message">Hei Verden!</p></div>' | pup 'p.message text{}'
+
+# Output:
+Hei Verden!
 ```
-Resultatet blir nettadressene som `<a>` tags referer til.
 
-For mer komplisert HTML-parsing, kan du bruke biblioteker som pup, xmlstarlet, eller hxselect.
+### Eksempel med `xmllint`:
+```Bash
+echo '<div><p>Hei igjen, Verden!</p></div>' | xmllint --html --xpath '//p/text()' -
 
-## Dypdykk
-HTML-parsing har vært nødvendig siden nettlesere begynte å vise sider skrevet i HTML. Det finnes mange alternative verktøy for parsing av HTML, som bs4 for Python eller Beautiful Soup for Ruby.
+# Output:
+Hei igjen, Verden!
+```
 
-Når det gjelder implementering, kan HTML-parsing være komplisert avhengig av kompleksiteten til HTML-dokumentet. En XML-parser kan brukes for enkel HTML, men hvis dokumentet inneholder spesielle karakterer eller ikke-standard syntax, kan det være nødvendig med en spesiell HTML-parser.
+## Deep Dive:
+Parsing HTML med Bash er mer av et "hack" enn en ordentlig løsning. Historisk sett har Bash-scripting vært mer fokusert på tekstbehandling. For mer kompleks HTML og ekte parsing er språk som Python med `BeautifulSoup` eller `lxml` mer egnet.
 
-## Se Også
-For dypere forståelse, besøk disse linkene:
+Versjoner av kommandoer som `awk`, `sed`, og `grep` kan strippe enkel HTML, men sliter med kompleks struktur. Verktøy som `pup` og `xmllint` er eksempler på mer hensiktsmessige alternativer som faktisk forstår HTML-strukturen.
 
-- grep: http://www.gnu.org/software/grep/
-- sed: http://www.gnu.org/software/sed/
-- pup: https://github.com/ericchiang/pup
-- xmlstarlet: http://xmlstar.sourceforge.net/
-- hxselect: http://www.html-xml-utils.org/hxselect.1.html
+Når du parser HTML, er det viktig å huske at HTML-strukturen kan endre seg, så dine script kan fort bli utdaterte. Sikkerhetsaspekter som å håndtere skadelig kode i HTML-en må også vurderes nøye.
+
+## See Also:
+- [`pup`](https://github.com/ericchiang/pup) for HTML-parsing i kommandolinjen.
+- [`xmllint`](http://xmlsoft.org/xmllint.html) for parsing og validering av XML-filer.
+- [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/) for avansert HTML- og XML-parsing i Python.
+- Bash-håndboken: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html

@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:37:31.560244-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,32 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å analysere en dato fra en streng innebærer å hente ut informasjon om dato, måned og år fra en strengtekst. Dette gjør programmerere for å manipulere data, gjøre beregninger, utføre funksjoner som sortering og filtrering, og tilby mer tilpasset brukeropplevelse i programmer og applikasjoner.
+Parsing av dato fra en tekststreng betyr å omdanne skrevet tekst til en dato et program kan forstå og bruke. Programmerere trenger dette for å håndtere datoer effektivt, for eksempel til å sortere eller lagre hendelser.
 
-## Hvordan gjør man det:
-Her er en enkel måte å analysere en dato fra en string i Lua. Koden er skrevet i Lua 5.4.2, som er den seneste versjonen av Lua ved skrivetidspunktet.
+## Slik gjør du:
+I Lua, bruk standard `os.date` og `os.time` funksjonene:
 
 ```Lua
-dato_streng = "2022-04-18"
-dato, måned, år = dato_streng:match("(%d+)-(%d+)-(%d+)")
-print("Dato: "..dato.." - Måned: "..måned.." - År: "..år)
+function parseDate(dateString)
+    local pattern = "(%d+)-(%d+)-(%d+)"
+    local year, month, day = dateString:match(pattern)
+    return os.time({year=year, month=month, day=day})
+end
+
+local myDateString = "2023-03-15"
+local timestamp = parseDate(myDateString)
+print(os.date("%Y-%m-%d", timestamp))  -- 2023-03-15
 ```
-Når du kjører dette skriptet, vil utdataene være:
 
+Output:
 ```
-Dato: 18 - Måned: 04 - År: 2022
+2023-03-15
 ```
 
-## Dypdykk
-Datoanalyse har alltid vært en viktig del av programmering, og det har gått gjennom flere iterasjoner og metoder for implementering. I tidlige programmeringsspråk ble dette ofte gjort manuelt, men moderne språk som Lua tilbyr innebygde funksjoner for å lette prosessen.
+## Dykk Ned:
+Før Lua, brukte vi C eller Perl for parsing, som ofte var omstendelig. Lua forenkler dette med innebygde funksjoner. Alternativer inkluderer `date` biblioteker som `luadate` for mer komplekse behov. Parsing i seg selv er relativt rett frem, men pass på lokale tidssoner og datoformater.
 
-Det finnes også alternative måter å analysere en dato på fra en streng i Lua, som å bruke funksjoner fra biblioteker som `os.date` og `os.time` hvis du jobber med mer komplekse dato- og tidsformater.
-
-Så langt vi har sett, utfører Lua match-funksjonen ovenfor sammenligning på tegnnivå for å finne korresponderende verdier. Som sådan er det viktig å sørge for at datoformatet i strengen samsvarer med mønsteret du har gitt i match-funksjonen.
-
-## Se Også
-For mer detaljert informasjon om hvordan håndtere datoer og tider i Lua, sjekk ut følgende kilder:
-
-1. Programming in Lua (4. utgave) av Roberto Ierusalimschy
-2. Lua-Users Wiki: http://lua-users.org/wiki/OsLibraryTutorial
-3. Lua Documentation: https://www.lua.org/manual/5.4/manual.html#6.9
+## Se Også:
+- Lua Users Wiki om dato og tid: http://lua-users.org/wiki/DateAndTime
+- `luadate` biblioteket for komplekse dato-operasjoner: https://github.com/Tieske/date

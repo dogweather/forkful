@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:33:21.585946-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,44 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+El parseo de HTML implica descomponer el código HTML en componentes para manipularlo o extraer información específica. Los programadores lo hacen para interactuar con sitios web, extraer datos, automatizar tareas de navegación o realizar pruebas.
 
-El análisis de HTML se trata de descomponer un documento HTML en sus elementos y atributos para manipularlos o extraer información. Los programadores lo hacen por muchas razones, desde la extracción de datos, la automatización de la web, hasta las pruebas de funcionalidad del software.
+## Cómo hacerlo:
+En PowerShell, puedes utilizar la librería `HtmlAgilityPack` para parsear HTML de manera sencilla. A continuación se muestra cómo instalar la librería y un ejemplo de uso.
 
-## ¿Cómo se hace?
-
-Primero instalamos el módulo `HtmlAgilityPack` con `Install-Package`.
-
+Instalación de HtmlAgilityPack mediante NuGet:
 ```PowerShell
 Install-Package HtmlAgilityPack
 ```
-Después, importamos el módulo y analizamos un archivo local de HTML.
 
+Código para cargar un documento HTML y obtener títulos de un sitio web:
 ```PowerShell
-Add-Type -Path 'C:\path\to\HtmlAgilityPack.dll'
-$doc = New-Object HtmlAgilityPack.HtmlDocument
-$doc.Load('C:\path\to\your.html')
-$doc.DocumentNode.SelectNodes('//a[@href]') | ForEach-Object { $_.Attributes['href'].Value }
+# Cargar la librería
+Add-Type -Path "ruta\a\HtmlAgilityPack.dll"
+
+# Crea un nuevo objeto de HtmlWeb y carga la página
+$htmlWeb = New-Object HtmlAgilityPack.HtmlWeb
+$documento = $htmlWeb.Load("https://example.com")
+
+# Extraer todos los elementos con la etiqueta 'h1'
+$titulos = $documento.DocumentNode.SelectNodes("//h1")
+
+# Mostrar los títulos
+foreach ($titulo in $titulos) {
+    Write-Host $titulo.InnerText
+}
 ```
-O también podemos analizar HTML directamente desde una URL.
 
-```PowerShell
-$web = New-Object HtmlAgilityPack.HtmlWeb
-$doc = $web.Load('https://example.com')
-$doc.DocumentNode.SelectSingleNode('//title').InnerText
+Resultado esperado (depende del contenido del sitio):
+```
+Bienvenidos a Example.com
+Conoce más sobre nosotros
 ```
 
-## Más a fondo
+## Profundización:
+**Contexto Histórico**: Anteriormente, la extracción de datos de HTML se hacía mediante expresiones regulares, pero esto resultaba complicado y propenso a errores debido a la naturaleza no lineal del HTML.
 
-Historia: PowerShell comenzó incluyendo el análisis de HTML en su versión 3.0, aprovechando la biblioteca .NET `HtmlAgilityPack`. Antes de esto, los programadores solían hacer uso de métodos rudimentarios como el uso de expresiones regulares, lo cual era propenso a errores.
+**Alternativas**: Aparte de `HtmlAgilityPack`, existen otras herramientas como `AngleSharp`, que es una librería moderna para .NET, y herramientas en otros lenguajes como BeautifulSoup para Python.
 
-Alternativas: hay varias alternativas a PowerShell para analizar HTML, tales como Python con Beautiful Soup, Javascript con JSDOM o PHP con DOMDocument.
+**Detalles de Implementación**: HtmlAgilityPack analiza el HTML en un DOM (Document Object Model) manejable, permitiendo consultas con XPath o LINQ para localizar y manipular nodos específicos del documento.
 
-Detalles de la implementación: El `HtmlAgilityPack` en PowerShell permite a los programadores analizar HTML tanto bien formado como mal formado. Puede manejar tags que no están cerrados y las inconsistencias que son comunes en el HTML de la web real.
-
-## Ver también
-
-1. [Html agility pack](https://html-agility-pack.net/)
-2. [Librerías de Python para parsear HTML](https://realpython.com/python-html-parser/#beautiful-soup)
-3. [JSDOM en JavaScript](https://www.npmjs.com/package/jsdom)
-4. [DOMDocument en PHP](https://php.net/manual/book.dom.php)
+## Ver También:
+- Documentación oficial de HtmlAgilityPack: [https://html-agility-pack.net/](https://html-agility-pack.net/)
+- Referencia de XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)
+- GitHub de AngleSharp: [https://github.com/AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)

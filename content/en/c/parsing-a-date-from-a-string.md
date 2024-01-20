@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:35:03.035290-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "C"
 category:             "C"
@@ -11,44 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from string in C is the process of converting a string that represents a date into a data structure that represents the date. This is done to facilitate calculations, sorting, and many other operations that are difficult to do on dates represented as strings.
+
+Parsing a date from a string means to extract and convert the date expressed as text into a structured format that a program can understand and work with. Programmers do it because dates in text form aren't handy for calculations, comparisons, or storing in a standardized format.
 
 ## How to:
-We can parse a date from a string by using the `strptime` function in `time.h`. Below is a basic example of how to use it:
+
+Here's a tiny guide on parsing a date string in C using `strptime()` from `time.h`. It reads the date in the format `"YYYY-MM-DD"` and turns it into a `struct tm`.
 
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 int main() {
+    const char *date_str = "2023-03-14";
     struct tm tm;
-    char buf[255];
+    
+    // Clear struct to avoid garbage values
+    memset(&tm, 0, sizeof(struct tm));
+    
+    // Parse the date string
+    if (strptime(date_str, "%Y-%m-%d", &tm) == NULL) {
+        printf("Date parsing failed.\n");
+        return 1;
+    }
 
-    strptime("2022-06-24 14:45", "%Y-%m-%d %H:%M", &tm);
-    strftime(buf, sizeof(buf), "%d %B %Y %H:%M", &tm);
-
-    printf("Parsed date: %s\n", buf);
+    // Print the parsed date
+    printf("Year: %d, Month: %d, Day: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
 
     return 0;
 }
 ```
 
-When you run this program, it will output:
-
-```bash
-Parsed date: 24 June 2022 14:45
+Sample output:
+```
+Year: 2023, Month: 3, Day: 14
 ```
 
-This indicates that the date string "2022-06-24 14:45" has been successfully parsed into a `struct tm` object.
-
 ## Deep Dive
-Historically, the parsing of dates has been a tedious process due to the varied date formats across different locales. Things got easier with the introduction of the `time.h` library in C89, which included the `strptime` function.
 
-An alternative approach, albeit less portable, is to manually parse the string using other string manipulation functions like `strtok`. You then convert these individual string components into integers for the day, month, and year.
+Once upon a time, dates were a mess to handle in C, with programmers parsing strings manually by fiddling with `strtok()`, `sscanf()` or even raw loops and character checks. But then `strptime()` rolled in as part of POSIX, allowing us to convert strings representing time to `struct tm` with predefined formats.
 
-Take note that the `strptime` function takes a format string, similar to `printf` and `scanf`, to interpret the input string. The resulting `struct tm` struct can be further used to output the formatted date or for internal computations.
+Alternatives like `getdate()` exist but aren't used as widely. And there's the manual way - directly manipulating strings but let's not go back to the dark ages, okay?
+
+Implementation wise, `strptime()` does need you to clear out your `struct tm` because it won't do it for you. If you skip that zeroing out using `memset()`, you might get random garbage in the unused fields, leading to unexpected results.
+
+Remember, `strptime()` is part of POSIX, so if you're on a non-POSIX system like Windows, you'll need to look for a different solution or a compatibility layer, like `win32` implementations or third-party libraries.
 
 ## See Also
-- C Library - <ctime>: https://www.cplusplus.com/reference/ctime/
-- `strftime` function: https://www.cplusplus.com/reference/ctime/strftime/
-- `strptime` function: https://www.cplusplus.com/reference/ctime/strptime/
+
+- [C++ `<chrono>` Library](https://en.cppreference.com/w/cpp/header/chrono)
+For those also dabbling in C++ and seeking a more modern take on date and time manipulation.
+
+Though the focus here is C, a deeper understanding of POSIX time functions is always a plus.
+
+- [strftime and strptime Behavior](https://man7.org/linux/man-pages/man3/strptime.3.html)
+The man page for `strptime()` and `strftime()` for understanding how to format time in C.
+
+When playing with times and dates, watch out for timezones and daylight saving changes — these can throw a wrench into the works when not handled properly. Happy coding!

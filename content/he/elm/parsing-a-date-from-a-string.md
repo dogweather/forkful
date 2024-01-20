@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:36:05.444026-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-עיבוד תאריך ממחרוזת הוא תהליך שבו מחשב מתייחס למחרוזת כנתונים מתאריך. תכנתים עושים את זה כדי לנתח ולהמיר את המחרוזות של התאריכים לאובייקטים מתאריך.
+## What & Why? (מה ולמה?)
+לנתח תאריך ממחרוזת זה להמיר טקסט שמייצג תאריך למבנה תאריך שהשפה מבינה. תוכניתנים עושים את זה כדי לעבוד עם תאריכים באופן יעיל ומדויק, לדוגמה, לאחסון נתונים או להשוואות.
 
-## איך לעשות:
-ב- Elm, אנו משתמשים בספרייה 'elm/time' וב- 'elm/parse'. הינה דוגמה לקוד שיוצר לנו תאריך ממחרוזת:
+## How to: (איך לעשות:)
+ב-Elm אתה פועל בסביבה טיפוסית וטהורה, אז אם אתה רוצה לנתח תאריך ממחרוזת, תצטרך חבילה כמו `justinmimbs/date`.
 
 ```Elm
-import Time
-import Parser exposing ((|.), map, succeed)
+import Date
+import Date.Extra.Parse exposing (isoDate)
 
-iso8601 : String -> Maybe Time.Posix
-iso8601 string =
-    Parser.run dateParser string
+-- פונקציה שמנתחת תאריך ממחרוזת בפורמט ISO 8601
+parseDate : String -> Maybe Date.Date
+parseDate dateString =
+    isoDate dateString
+    
+-- שימוש בפונקציה
+result = parseDate "2023-04-01"
 
-dateParser : Parser Time.Posix
-dateParser =
-    Parser.succeed Time.millisToPosix
-        |= (Time.year 4 |> map String.fromInt)
-        |. spaces
-        |= (Time.month Time.Jan |> int)
-        |. spaces
-        |= (Time.day 2 |> int )
+-- הדפסת התוצאה
+case result of
+    Just date ->
+        Date.toIsoString date  -- "2023-04-01"
+
+    Nothing ->
+        "Invalid date"
 ```
-מאבק השורות למעלה יוצר אובייקט dTime.Posix` ממחרוזת בפורמט "yyyy mm dd".
 
-## שיעור מעמיק
-בעבר, אנשים השתמשו בספריות של שלישים כמו Moment.js כדי לנתח מחרוזות תאריכים. מאז, העולם של Javascript התפתח, ומשתמשים מועדפים להשתמש בפונקציות תאריך בנויות בעידן החדיש. בעוד שלמידה לנתח את התאריך ממחרוזת באמצעות Elm יכול לקחת קצת זמן, היא הרבה יותר מאובטחת מהפתרונות הנפוצים של αs strftime או String.
+תוצאה מדוגמת:
+```Elm
+"2023-04-01" -- תאריך תקין
+"Invalid date" -- מחרוזת לא תקינה
+```
 
-## ראה גם
-דוקומנטציה ל- 'elm/time': https://package.elm-lang.org/packages/elm/time/latest/
-ספרייה 'elm/parser': https://package.elm-lang.org/packages/elm/parser/latest/
+## Deep Dive (צלילה עמוקה)
+בעבר, ניתוח תאריכים ב-Elm היה מסורבל יותר כיוון שהשפה ממוקדת בטיפוסיות מדויקת ובטיהור. היום יש חבילות כמו `justinmimbs/date` שמקלות על התהליך. חלופות כוללות כתיבת פונקציות ניתוח משלך אבל זה עלול לגרום לשגיאות רבות. ניתוח תאריכים חשוב גם לאינטרנציונליזציה שכן פורמטי תאריך משתנים בין תרבויות.
+
+## See Also (ראה גם)
+- Elm package for Dates: [justinmimbs/date](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- Elm Date.Extra.Parse documentation: [Date.Extra.Parse](https://package.elm-lang.org/packages/justinmimbs/date/latest/Date-Extra-Parse)
+- Elm Date type information: [Date](https://package.elm-lang.org/packages/elm/time/latest/Time#Date)

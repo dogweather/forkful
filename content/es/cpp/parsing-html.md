@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:30:41.932786-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,57 +11,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
+El análisis de HTML (parsing HTML) implica desgranar y entender el contenido marcado de una página web. Los programadores lo hacen para extraer información, manipular elementos de la página o automatizar interacciones web.
 
-El análisis de HTML implica descomponer y entender el contenido de una página web escrita en HTML. Los programadores lo hacen para extraer datos útiles, interactuar con sitios web o incluso construir web scrapers.
+## Cómo hacerlo:
 
-## ¿Cómo hacerlo?
+Aquí hay un ejemplo simple utilizando la biblioteca C++ `Gumbo`. Primero, instala la biblioteca:
 
-Aquí hay un ejemplo de cómo podemos analizar HTML utilizando la biblioteca de C++ `htmlcxx`:
+```bash
+sudo apt-get install libgumbo-dev
+```
+
+Luego, el código de ejemplo:
 
 ```C++
-#include <htmlcxx/html/ParserDom.h>
-using namespace std;
-using namespace htmlcxx;
+#include <iostream>
+#include "gumbo.h"
 
-int main(){
- string html = "<html><body>Hola Mundo!</body></html>";
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
 
- HTML::ParserDom parser;
- tree<HTML::Node> dom = parser.parseTree(html);
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        std::cout << href->value << std::endl;
+    }
 
- //Recorremos el árbol
- for(auto it = dom.begin(); it != dom.end(); ++it){
-   if(it->isTag()){
-     cout << it->tagName() << endl;
-   } else if(it->isComment()){
-     cout << "Comment: " << it->text()<< endl;
-   } else {
-     cout << "Text: "<< it->text() << endl;
-   }
- }
- return 0;
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    }
+}
+
+int main() {
+    const char* html = "<html><body>"
+                       "<a href=\"http://example.com\">First link</a>"
+                       "<a href=\"http://example2.com\">Second link</a>"
+                       "</body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
-Este código muestra la salida:
+
+Si guardas esto en un archivo llamado `main.cpp` y lo compilas con:
+
+```bash
+g++ main.cpp -lgumbo -o htmlparser
+```
+
+La salida sería:
 
 ```
-html
-body
-Text: Hola Mundo!
+http://example.com
+http://example2.com
 ```
 
-## Buceo Profundo
+## Profundización:
 
-1. **Contexto Histórico**: Los primeros buscadores de la web utilizaban análisis de HTML para indexar el contenido de la web.
+Históricamente, el HTML se analizaba con expresiones regulares, pero esto se volvió complicado debido a la naturaleza irregular del HTML. Las bibliotecas modernas, como `Gumbo`, facilitan este proceso utilizando el Análisis Sintáctico (parsing) de HTML basado en el estándar de HTML5.
 
-2. **Alternativas**: Existen muchas otras bibliotecas para realizar análisis de HTML en C++, como Gumbo, Myhtml, entre otros.
+Alternativas populares en C++ incluyen `libxml2` y `htmlcxx`. En otros lenguajes, `BeautifulSoup` en Python es una opción recurrente, y `jsdom` en JavaScript es común para tareas de scraping en Node.js.
 
-3. **Detalles de Implementación**: Las bibliotecas de análisis de HTML generalmente construyen un Document Object Model (DOM) - un árbol que representa la estructura HTML - que permite recorrer y manipular los elementos HTML.
+Sobre la ejecución, es clave considerar la robustez del parser frente a HTML mal formado o errores de sintaxis. Los parsers modernos tienden a ser tolerantes a errores y capaces de procesar HTML como lo hacen los navegadores web modernos.
 
-## Ver También
+## Ver También:
 
-1. [Documentación de htmlcxx](http://htmlcxx.sourceforge.net/)
-2. [Gumbo: Un analizador HTML de Google](https://github.com/google/gumbo-parser)
-3. [Myhtml: Un analizador HTML rápido y modular](https://github.com/lexborisov/myhtml)
-4. [W3C Document Object Model (DOM)](https://www.w3.org/DOM/)
+- Documentación de Gumbo: https://github.com/google/gumbo-parser
+- XML y HTML con libxml2: http://xmlsoft.org/html/libxml-HTMLparser.html
+- htmlcxx, un parser HTML en C++: http://htmlcxx.sourceforge.net/
+- BeautifulSoup para Python: https://www.crummy.com/software/BeautifulSoup/
+- `jsdom` para Node.js: https://github.com/jsdom/jsdom

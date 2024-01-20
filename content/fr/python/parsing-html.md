@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:33:28.965849-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi?
-L'analyse de HTML (HTML parsing) consiste à décomposer et à comprendre une page web codée en HTML. Les programmeurs utilisent souvent des parseurs HTML pour extraire des données spécifiques à partir de sites Web ou pour réorganiser et modifier les sites existants.
+## What & Why? (Quoi et Pourquoi?)
+Analyser du HTML, c'est tirer des données d'une page web. Les programmeurs le font pour récupérer des infos, automatiser des tâches ou alimenter des apps.
 
-## Comment faire:
-Voici un exemple simple en utilisant BeautifulSoup, une librairie Python populaire pour le parsing HTML.
+## How to (Comment faire) :
+On va utiliser Beautiful Soup, une bibliothèque de Python :
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-url = "http://example.com"
-response = requests.get(url)
+url = "https://example.com"
+reponse = requests.get(url)
+soup = BeautifulSoup(reponse.content, 'html.parser')
 
-soup = BeautifulSoup(response.text, 'html.parser')
-
-print(soup.title.text) # Affiche le titre du site web
+for lien in soup.find_all('a'):
+    print(lien.get('href'))
 ```
 
-Résultat:
+Résultat possible :
 
-```Python
-'Example Domain'
+```
+/accueil
+/contact
+/produits
 ```
 
-## Plongée profonde:
+## Deep Dive (Plongée Profonde) :
+L'analyse HTML existe depuis qu'internet est devenu interactif. Avant Beautiful Soup, il y avait des solutions comme regex (mauvaise idée pour HTML complexe) ou des parseurs DOM en JavaScript. Beautiful Soup permet d'être plus précis et moins verbeux que regex. Il utilise un parseur comme lxml ou html5lib pour convertir le HTML en un arbre de syntaxe analysable.
 
-**Histoire:** L'analyse HTML est un processus aussi ancien que l'Internet lui-même. Au fil du temps, le processus d'analyse a été amélioré et optimisé.
+Alternatives :
+- lxml : Rapide, efficace, mais moins souple que Beautiful Soup.
+- Scrapy : Cadre complet dédié au scraping, plus complexe.
+- PyQuery : jQuery en Python.
 
-**Alternatives:** Il existe d'autres options pour l'analyse HTML en Python, comme html.parser, lxml et html5lib. Le choix entre eux dépend des besoins spécifiques tels que la vitesse, la quantité de mémoire utilisée et la facilité d'utilisation.
+Détails d'implémentation :
+Beautiful Soup transforme du texte HTML en objets Python navigables. Il gère bien les HTML mal formés et peut intégrer différents parseurs en fonction des besoins de performance ou de compatibilité.
 
-**Détails d'implémentation:** BeautifulSoup traduit simplement le document HTML en une structure arborescente d'objets Python. Ensuite, vous pouvez accéder et/ou interagir avec ces objets de la même manière que vous le feriez pour n'importe quel autre objet Python.
-
-## Voir aussi:
-
-1. Documentation de Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-2. Tutoriel de scraping web avec Python et Beautiful Soup: https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/
-3. Comparaison de différentes librairies de parsing HTML en Python: https://www.geeksforgeeks.org/best-python-libraries-for-web-scraping/
+## See Also (Voir Aussi) :
+- Documentation Beautiful Soup : https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Tutoriel requests : https://requests.readthedocs.io/en/master/
+- Comparaison des parseurs : https://lxml.de/parsing.html
+- Guide Scrapy : https://docs.scrapy.org/en/latest/index.html
+- Documentation PyQuery : https://pythonhosted.org/pyquery/

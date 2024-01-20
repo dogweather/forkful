@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:35:07.424069-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## "क्या और क्यों?"
+## What & Why? (क्या और क्यों?)
 
-HTML पार्सिंग, एचटीएमएल कोड को उसके संघटकों में तोड़ने की प्रक्रिया होती है ताकि हम उस पर काम कर सकें। कार्यक्रमकर्ताओं को इसकी आवश्यकता होती है ताकि वे हमेशा HTML में डेटा और सूचना का पता लगा सकें, और इन जानकारियों को उपयोग करके वेब एप्लिकेशनों को बेहतर बनाने के लिए कोड कर सकें।
+HTML पार्स करने का मतलब है HTML डाटा को प्रोग्रामिंग भाषा में समझने योग्य रूप में बदलना। इसे किया जाता है ताकि वेब पेज की सामग्री को पढ़ा या संशोधित किया जा सके।
 
-## "कैसे करें:" 
+## How to: (कैसे करें:)
 
-```TypeScript
-import { parse } from 'fast-html-parser';
+आप TypeScript में HTML को पार्स करने के लिए `cheerio` जैसे लाइब्रेरी का उपयोग कर सकते हैं। यहां एक साधारण उदाहरण है:
 
-const html = '<div class="myClass">Hello World!</div>';
+```typescript
+// npm install cheerio
 
-let root = parse(html);
+import * as cheerio from 'cheerio';
 
-console.log(root.querySelector('.myClass').rawText); 
-// Output: Hello World!
+const html = `<html>
+  <head>
+    <title>मेरा वेबपेज</title>
+  </head>
+  <body>
+    <h1>नमस्ते दुनिया!</h1>
+  </body>
+</html>`;
+
+const $ = cheerio.load(html);
+
+console.log($('title').text());  // आउटपुट: मेरा वेबपेज
+console.log($('h1').text());    // आउटपुट: नमस्ते दुनिया!
 ```
-इस कोड का उपयोग करके, हम HTML दस्तावेज़ को पार्स कर सकते हैं और फिर हमें जो तत्व चाहिए होता है उसे ढूँढ़ने के लिए ऐसी querySelector जैसी मेथड का उपयोग कर सकते हैं।
 
-## "गहरी जानकारी"
+## Deep Dive (गहराई में जानकारी):
 
-HTML पार्सिंग का पहला उदाहरण 1990 के दशक के बाद से देखा जा सकता है, जब WWW खोलने के बाद पहली बार इसकी आवश्यकता पाई गई।
+HTML पार्सिंग का इतिहास ब्राउजर के इवोल्यूशन के साथ ही शुरू होता है। DOM (Document Object Model) के आधार पर काम करने वाली लाइब्रेरीज by जैसे कि `cheerio`, `jsdom`, और `node-html-parser` वर्तमान में बहुत प्रचलित हैं। ये Node.js में HTML/XML डॉक्युमेंट्स को आसानी से पार्स और मैनिपुलेट करने के लिए बनाई गई हैं। इसका मुख्य काम वेब स्क्रेपिंग, टेस्टिंग, और सर्वर-साइड डॉम मैनिपुलेशन है।
 
-'fast-html-parser' के अलावा भी, 'htmlparser2', 'cheerio' जैसे अन्य लाइब्रेरी भी हैं जो HTML पार्सिंग की सहायता करते हैं।
+## See Also (इसे भी देखें):
 
-पार्सर का काम HTML को DOM (Document Object Model) में बदलना होता है। DOM एक ऑब्जेक्ट-आधारित मॉडल होता है जिसमें HTML दस्तावेज़ को नोड्स और ऑब्जेक्ट्स के रूप में दर्शाया जाता है।
-
-## "देखने के लिए और"
-
-ज्यादा जानकारी के लिए, नीचे दिए गए स्रोतों की जांच करें:
-
-- [Fast HTML Parser](https://www.npmjs.com/package/fast-html-parser)
-- [Cheerio.js](https://cheerio.js.org/)
-- [htmlparser2](https://www.npmjs.com/package/htmlparser2)
+- Cheerio GitHub Repository: [Cheerio](https://github.com/cheeriojs/cheerio)
+- Jsdom GitHub Repository: [Jsdom](https://github.com/jsdom/jsdom)
+- Types for Node.js: [@types/node](https://www.npmjs.com/package/@types/node)
+- TypeScript Documentation: [TypeScript](https://www.typescriptlang.org/docs/)

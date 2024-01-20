@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:30:51.137928-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,72 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+HTML पार्सिंग का मतलब है HTML डेटा को विश्लेषित करके उससे संरचना और जानकारी निकालना। प्रोग्रामर इसलिए HTML पार्सिंग करते हैं ताकि वे वेब पेजेस से डेटा निकाल सकें और IoT डिवाइस के साथ इंटरैक्ट कर सकें।
 
-HTML पार्सिंग, इसने वेबपेज को खोलकर, उसे पढ़ने और मशीन-पढ़ने योग्य फॉर्मेट में संगठित करने का काम करता है। इसे प्रोग्रामर्स वेबपेज की संरचना को समझने, उसे रेकोड करने और विश्लेषित करने के लिए आता है।
-
-## कैसे : 
-
-निम्नलिखित Arduino कोड HTML कॉंटेंट को पार्स करने के उदाहरण के साथ :
+## How to: (कैसे करें)
+ध्यान दें कि Arduino में सीधे HTML पार्सिंग करना मुश्किल हो सकता है। आपको अक्सर स्पेशलिज्ड लाइब्रेरीज की जरूरत होती है। आइए एक उदाहरण देखें:
 
 ```Arduino
-#include <Arduino.h>
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266HTTPClient.h>
+#include <Ethernet.h>
+#include <HttpClient.h>
+#include <ArduinoJson.h>
 
-const char* ssid = "नाम";
-const char* password = "पासवर्ड";
+EthernetClient client;
+HttpClient http(client);
+int statusCode = 0;
+String response;
 
-void setup () {
-
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-
-    delay(1000);
-    Serial.println("वाईफ़ाई से कनेक्ट करने का प्रयास ...");
-
-  }
-
-  Serial.println("वाईफ़ाई से जुड़ गया है।");
-  Serial.println("आईपी पता: ");
-  Serial.println(WiFi.localIP());
+void setup() {
+  Serial.begin(9600);
+  // नेटवर्क सेटिंग्स के लिए क्रमांकन
+  // इथरनेट शुरू करें
 }
 
 void loop() {
-
-  if (WiFi.status() == WL_CONNECTED) { 
-
-    WiFiClient client;
-    HTTPClient http;  //Declare object of class HTTPClient
-
-    http.begin("http://jsonplaceholder.typicode.com/comments?id=1");  //Specify request destination
-    int httpCode = http.GET();  
-
-    if (httpCode > 0) { 
-
-      String payload = http.getString();
-      Serial.println(payload);
-    }
-
-    http.end();   //Close connection
-  }
-
-  delay(5000);
+  http.get("http://example.com"); // HTML पेज की रिक्वेस्ट
+  http.responseStatusCode();       // स्टेटस कोड
+  http.responseBody();             // रिस्पॉन्स बॉडी
+  
+  // यहां पार्सिंग लॉजिक होगा
+  
+  delay(10000); // कुछ समय के लिए रुकें
 }
 ```
+Sample Output (नमूना आउटपुट):
+```
+HTTP/1.1 200 OK
+Content-Type: text/html
+<html> ... </html>
+```
+## Deep Dive (गहराई से जानकारी)
 
-## गहरी गोता 
+HTML पार्सिंग, कंप्यूटर साइंस की एक बेसिक अवधारणा है जो वेब से जानकारी प्राप्त करने के लिए महत्वपूर्ण है। पुराने जमाने में, वेब पेज को मैन्युअली पढ़कर डेटा निकाला जाता था, जो कि समय लेने वाला और थकाऊ था। कंप्यूटर प्रोग्राम्स ने इस प्रक्रिया को तेज और आसान बना दिया है। Arduino के संदर्भ में, HTML पार्सिंग आमतौर पर वेब सर्वर से डेटा प्राप्त करने और IoT प्रोजेक्ट्स में लागू करने के लिए की जाती है। हालांकि, क्योंकि Arduino डिवाइस में प्रोसेसिंग क्षमता और मेमोरी सीमित होती है, इसलिए साधारण और हल्की पार्सिंग लाइब्रेरीज़ का उपयोग ज्यादा कारगर होता है। 
 
-1. ऐतिहासिक प्रासंगिकता : HTML पार्सिंग मशीनों के लिए वेब कंटेन्ट को और अधिक उपयोगी बनाता है।
-2. विकल्प : सीधे मैन्युअल तरीके से डेटा एक्सट्रैक्ट करने की तुलना में, Python के BeautifulSoup और JavaScript के cheerio जैसे टूल्स का उपयोग करके HTML पार्स करनाकाफी आसान है। 
-3. क्रियान्वयन विवरण : Arduino के प्रयोग द्वारा HTML पार्सिंग, HTTPClient और WiFiClient के क्लास का उपयोग कर वेबपेज से डेटा एक्सट्रैक्ट करता है।
+ArduinoJson जैसी लाइब्रेरीज JSON डेटा को पार्स करने में अधिक उपयुक्त हैं, क्योंकि ज्यादातर एपीआई कॉल्स JSON फॉर्मेट में डेटा लौटाते हैं। HTML पार्सिंग के लिए किसी स्पेशल HTML पार्सिंग लाइब्रेरी का उपयोग करना होगा या फिर बहुत बेसिक रेगेक्स पैटर्न और स्ट्रिंग मैनिपुलेशन की मदद से सिम्पल डेटा को निकाला जा सकता है।
 
-## अधिक देखें 
+## See Also (अन्य संसाधन)
 
-1. Arduino कोडिंग गाइड : https://www.arduino.cc/reference/en/
-2. BeautifulSoup और Cheerio का उपयोग करने का तरीका : https://realpython.com/beautiful-soup-web-scraper-python/
-3. JSON Placeholder डेटा: https://jsonplaceholder.typicode.com/
+- ArduinoJson लाइब्रेरी: [ArduinoJson GitHub](https://github.com/bblanchon/ArduinoJson)
+- इथरनेट शील्ड के उपयोग के बारे में अधिक जानकारी: [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+- रेगेक्स (Regex) और स्ट्रिंग मैनिपुलेशन के तरीके: [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+  
+इस लेख में दी गई जानकारी आपकी Arduino प्रोजेक्ट्स में HTML पार्सिंग करने के लिए एक शुरुआती गाइड के तौर पर काम कर सकती है।

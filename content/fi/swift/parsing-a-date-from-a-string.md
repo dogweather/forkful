@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Javascript: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:38:47.048734-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,46 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing Päivämääriä Stringistä Swiftissä
+## What & Why? - Mikä & Miksi?
+Datasta string-muodossa päivämäärän irrottaminen tarkoittaa merkkijonossa olevan päivämäärän muuttamista päivämäärätyypiksi. Ohjelmoijat tekevät tätä, koska käyttäjän syötteet ja tiedostomuodot ovat usein tekstimuotoisia ja niitä on helpompi käsitellä ja tallentaa standardimuodossa.
 
-## Mikä & Miksi?
-
-Päivämäärien jäsennys (parsing) stringistä on prosessi, jossa päivämäärät muunnetaan tekstistä käyttökelpoiseen muotoon. Tätä tehdään, jotta voidaan käsittellä ja analysoida päivämääriä ohjelmissamme helposti.
-
-## Näin teet:
-
-Ohessa esimerkkikoodi Swiftistä, joka jäsentelee stringin päivämääräksi.
-
+## How to: - Näin teet:
 ```Swift
 import Foundation
 
+// Luodaan DateFormatter
 let dateFormatter = DateFormatter()
+
+// Määritellään päivämäärän formaatti
 dateFormatter.dateFormat = "dd.MM.yyyy"
 
-if let date = dateFormatter.date(from: "27.12.2021") {
-    print(date)
+// Esimerkki stringistä joka sisältää päivämäärän
+let dateString = "24.03.2023"
+
+// Muunnetaan string päivämääräksi
+if let parsedDate = dateFormatter.date(from: dateString) {
+    print("Päivämäärä on: \(parsedDate)")
 } else {
-   print("Päivämäärää ei voitu muuntaa.")
+    print("Stringiä ei pystytty muuntamaan päivämääräksi.")
 }
 ```
 
-Esimerkkikoodin tuloste näyttää seuraavalta:
-
-```Swift
-2021-12-27 00:00:00 +0000
+Sample output:
+```
+Päivämäärä on: 2023-03-24 00:00:00 +0000
 ```
 
-## Syvempi Sukellus
+## Deep Dive - Syvä sukellus
+Ennen `DateFormatter`-luokkaa Swiftissä käytettiin muita keinoja, kuten C-kielen funktioita, päivämäärän parsimiseksi. `DateFormatter` tarjoaa kattavat työkalut päivämäärän formaatoinnille ja lokalisoinnille. Toinen vaihtoehto on käyttää `ISO8601DateFormatter`-luokkaa ISO 8601 -standardin mukaisille päivämäärille. Kun puhutaan implementaatiosta, on tärkeä muistaa, että `DateFormatter` on raskas luokka. Älä siis luo uutta instanssia joka kerta kun sitä tarvitset, vaan käytä olemassa olevia tai tallenna ne uudelleenkäytettäväksi. Lisäksi käyttäjän laitteen asetukset voivat vaikuttaa siihen, miten päivämääräformaatti tulisi määrittää.
 
-Historiallisesti päivämääräjäsennys on ollut osa ohjelmointia lähes sen alusta asti. Vaikka se näyttää yksinkertaiselta, se voi olla yllättävän haastavaa, koska päivämäärämuotoilut vaihtelevat paljon eri puolilla maailmaa. 
-
-Vaihtoehtoisia tapoja päivämäärien jäsennykseen Swiftissä ovat mm. `ISO8601DateFormatter` tai muokatun `DateComponents`-olion käyttö.
-
-Kun jäsennetään päivämäärä stringistä Swiftillä, käytetään taustalla `NSDateFormatter`-luokkaa, joka on osa Foundation-paketin tarjoamia ominaisuuksia. Tämä luokka käyttää Kansainvälisen standardointijärjestön ISO-koodauksia, mukaan lukien aikavyöhyke- ja kalenterikäsittely.
-
-## Katso myös:
-
-Seuraavista lähteistä löydät lisätietoa päivämääräjäsennyksestä Swiftissä:
-
-- Swiftin virallinen käsikirja: [Date ja DateFormatter](https://developer.apple.com/documentation/foundation/date)
-- Stack Overflow: [Keskustelua päivämäärien jäsennyksestä Swiftissä](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+## See Also - Katso myös
+- [DateFormatter Class Reference](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Working with Date and Time in Swift](https://www.raywenderlich.com/5817-working-with-date-and-time-in-swift)

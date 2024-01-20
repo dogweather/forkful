@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:34:28.271230-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,32 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parseeraa päivämäärä merkkijonosta Bash-ohjelmointikielessä
+## What & Why?
+Datapäivämäärän parsinta merkkijonosta muuttaa tekstimuotoisen päivämäärän ohjelmallisesti käsiteltävään muotoon. Käsittely mahdollistaa päivämäärän vertailut, ajanlaskut ja muotoilut.
 
-## Mikä & miksi?
-Parseeraus on prosessi, jossa merkkijonosta eristetään tietoja - tässä tapauksessa päivämäärä. Ohjelmoijat tekevät näin, koska joskus päivämäärätiedot saapuvat yleisemmissä muodoissa tai ne voivat syntyä dynaamisesti koodin aikana.
+## How to:
+Päivämäärien parsinta Bashissa käyttäen `date` komentoa:
 
-## Näin se tehdään:
 ```Bash
-#!/bin/bash
-pvm_merkkijono="2022-05-23"
-pvm_objekti=$(date -d$pvm_merkkijono)
-echo $pvm_objekti
-```
-Kun suoritat tämän koodin, tulos näyttää seuraavalta: 
-```Bash
-Mon May 23 00:00:00 EEST 2022
+# Muunnetaan merkkijono päivämääräksi
+parsed_date=$(date -d '2023-04-01 14:00' '+%Y-%m-%d %H:%M:%S')
+echo $parsed_date
+# Tulostuu: 2023-04-01 14:00:00
+
+# Muunnetaan toiseen aikavyöhykkeeseen
+helsinki_date=$(TZ='Europe/Helsinki' date -d '2023-04-01 14:00 UTC' '+%Y-%m-%d %H:%M:%S')
+echo $helsinki_date
+# Tulostuu: 2023-04-01 17:00:00
 ```
 
-## Syvempi sukellus
-Bash tukee päivämärän parseerausta `date`-komennon avulla, joka on osa GNU coreutils-pakettia. Tämä paketti on olennainen osa lähes kaikkia Linux-järjestelmiä.
- 
-Vaihtoehtona Bashille, käyttäjät voivat käyttää Pythonia tai JavaScriptiä parseeraukseen, joilla on valtavat kirjastot date-tietojen käsittelyyn.
- 
-Bash 'date'-komanto käsittelee päivämäärät Unix aikaleimoina, jotka ovat sekunteja siitä hetkestä, kun Unix-aika alkoi (1970-01-01 00:00:00 UTC). Tämän tiedon avulla se pystyy tulkitsemaan päivämäärämerkkijonot.
+## Deep Dive
+Bashin `date` komento on ollut osana UNIX-järjestelmiä alusta asti, ja se on vakiintunut työkalu ajan käsittelyyn skripteissä. Yleisiä vaihtoehtoja datan parsintaan ovat: `awk`, `sed` ja modernit ohjelmointikielet kuten Python tai Ruby, joissa päivämääräkäsittely on usein monipuolisempaa.
 
-## Katso myös
-- [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html) 
-- [Bash-käsikirjan](https://www.gnu.org/software/bash/manual/bash.html)
-- [Python datetime moduuli](https://docs.python.org/3/library/datetime.html)
-- [JavaScript Date-objekti](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+`date` komennon käyttö voi vaihdella käyttöjärjestelmän ja Bash-version mukaan, mutta yllä annetut esimerkit toimivat useimmissa ympäristöissä.
+
+## See Also
+- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash-skriptausopas: https://www.tldp.org/LDP/Bash-Beginners-Guide/html/
+- Ajan käsittely POSIX-järjestelmissä: https://pubs.opengroup.org/onlinepubs/009695399/utilities/date.html

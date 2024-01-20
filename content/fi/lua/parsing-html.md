@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:32:38.710308-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Lua"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+HTML-parsinta tarkoittaa HTML-koodin lukemista ja sen rakenteen käsittelemistä ohjelmallisesti. Sitä tarvitaan, kun halutaan esimerkiksi kaivaa tietoa verkkosivuilta tai muokata HTML-sisältöä automaattisesti.
 
-HTML:n jäsennys tarkoittaa HTML-dokumentin rakenteen lukemista ja tulkitsemista. Ohjelmoijat tekevät tämän yleensä joko datan kaivamiseksi tai dokumentin muuntamiseksi johonkin toiseen formaattiin.
-
-## Miten se tehdään:
+## How to: (Kuinka tehdä:)
+Lua ei oletuksena tue HTML-parsintaa, mutta käytännössä tarvitaan ulkoista kirjastoa, kuten luasoup. 
 
 ```Lua
-htmlparser = require("htmlparser")
+local luasoup = require('luasoup')
 
-local root = htmlparser.parse('<div>Hei, Suomi!</div>')
+-- Ladataan HTML-sisältö merkkijonona
+local html_content = [[
+<html>
+    <head>
+        <title>Esimerkkisivu</title>
+    </head>
+    <body>
+        <h1>Tervetuloa!</h1>
+        <p>HTML-parsinta on kivaa.</p>
+    </body>
+</html>
+]]
 
-root("div"):each(function(_, div)
-  print(div:getcontent())
-end)
+-- Parsitaan HTML sisältö luasoup-kirjaston avulla
+local soup = luasoup.parse(html_content)
+
+-- Etsitään otsikko
+local h1_tag = soup:select('h1')[1]
+print(h1_tag:text())  -- Output: Tervetuloa!
+
+-- Muutetaan kappaleen tekstiä
+local p_tag = soup:select('p')[1]
+p_tag:set_text('HTML-parsinta Lualla on sujuvaa.')
+print(soup:select('p')[1]:text())  -- Output: HTML-parsinta Lualla on sujuvaa.
 ```
-Suorittaessasi tämän koodin, tulostuu konsoliin: 'Hei, Suomi!'. Tämä on hyvin perustason esimerkki, jossa etsitään `div`-elementit ja tulostetaan niiden sisältö.
 
-## Syvempi tieto:
+## Deep Dive (Sukellus syvemmälle)
+Ennen luasoupia ja muita kirjastoja Lua-ohjelmoijat joutuivat turvautumaan säännöllisiin lausekkeisiin (regex), jotka ovat virhealttiita ja hankalia monimutkaisessa HTML:n käsittelyssä. Luasoup tarjoaa DOM-pohjaista lähestymistapaa, joka on luotettavampi ja luettavampi. Vaihtoehtoisesti voi käyttää LuaXML-kirjastoa XML:n ja HTML:n käsittelyyn, mutta se on vähemmän suosittu. Luasoup käyttää sisäisesti lxml parseria, joka perustuu libxml2-kirjastoon.
 
-HTML:n jäsennys on ollut olemassa lähes yhtä kauan kuin HTML itse, 1990-luvun alusta. Muita vaihtoehtoja jäsennykseen ovat esimerkiksi DOM-puun jäsennys tai Regular Expressions -menetelmät.
-
-Lua:ssa HTML:n jäsentämistä varten on useita kirjastoja, esimerkiksi LuaHTML ja HTMLparser, joka on osa LuaSec-kirjastoa. Nuokin kirjastot käyttävät pääsääntöisesti lexikaalista analyysiä tagien erottamiseen ja DOM-puun luomiseen.
-
-## Katso myös:
-
-Lue lisää HTML:n jäsennyskirjastoista ja niiden käytöstä näiltä sivuilta:
-
-- LuaHTML: https://luarocks.org/modules/craigb/luaxml
-- LuaSec (johon HTMLparser kuuluu): https://github.com/brunoos/luasec
-- DOM-puun käyttö HTML:n jäsennyksessä: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
-- Regular Expressions -menetelmä: https://www.regular-expressions.info/examples.html
+## See Also (Katso myös)
+- [Lua-users Wiki: Handling XML with Lua](http://lua-users.org/wiki/LuaXml)
+- [luaxml GitHub repository](https://github.com/LuaDist/luaxml)

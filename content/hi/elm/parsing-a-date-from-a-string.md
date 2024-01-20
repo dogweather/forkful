@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:35:59.352626-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+एक स्ट्रिंग से डेट पार्स करना यानी की एक टेक्स्ट-आधारित तिथि को प्रोग्राम की समझ में आने वाले फॉर्मेट में बदलना होता है। प्रोग्रामर्स यह इसलिए करते हैं ताकि वे तिथियों को संग्रहित कर सकें, तुलना कर सकें, या तिथियों के साथ कोई गणना कर सकें।
 
-Date parsing सादा अर्थ में "एक string से दिनांक पाठ्य करना" होता है। यह इसलिए काम में लिया जाता है ताकि कार्यक्रम दिनांकों को सही तरीके से प्रदर्शित और रूपांतरित कर सके। 
+## How to: (कैसे करें:)
+Elm में स्ट्रिंग से डेट पार्स करने के लिए आपको एक पैकेज की जरूरत होती है। आइए `justinmimbs/date` पैकेज का इस्तेमाल करके देखते हैं।
 
-## कैसे:
-
-Elm में, आप `Date.fromString` का उपयोग करके इसे कर सकते हैं।
-
-```Elm
+```elm
 import Date
-import Json.Decode as Decode
+import Date.Extra.Parse as DateParse
 
-main =
-    let
-        date =
-            Result.withDefault Date.zero <|
-                Date.fromString "2013-04-01T22:41:51.607Z"
-    in
-    Debug.log "date" date
+-- स्ट्रिंग से ISO 8601 डेट पार्स करना
+parseDate : String -> Maybe Date.Date
+parseDate dateString =
+    DateParse.fromIsoString dateString
+
+-- उदाहरण
+parseResult : Maybe Date.Date
+parseResult = parseDate "2021-03-14"
+
 ```
 
-यह डिवाइसर इस "2013-04-01T22:41:51.607Z" string को एक `Date` में परिवर्तित करेगा। 
+यदि आप `parseResult` की वैल्यू देखें तो `Just <डेट>` मिलेगी, अगर पार्सिंग सफल होती है, अन्यथा `Nothing` मिलेगी।
 
-## गहराई
+## Deep Dive (गहराई से जानकारी)
+डेट पार्सिंग लंबे समय से एक जटिल मुद्दा रहा है, खासकर विभिन्न फॉर्मेट्स और लोकेल के कारण। Elm में, `justinmimbs/date` जैसे पैकेज इस समस्या के समाधान में मदद करते हैं। इसके अलावा, `elm/time` कोर पैकेज भी है जो बेसिक डेट और टाइम फंक्शनलिटी प्रदान करता है।
 
-Historical context में, Date parsing एक महत्वपूर्ण विषय रहा है इसलिए codes को मानकीकृत किया गया है। अन्य alternatives जैसे की `Date.Parse` आदि का उपऔग भी हो सकता है। `Date.fromString` प्रशोधन को बहुत अधिक सरल और सुनिश्चित करता है क्योंकी यह ISO8601 मानक का पालन करता है
+इम्प्लीमेंटेशन डिटेल्स में, पार्सिंग आमतौर पर स्ट्रिंग पैटर्न मैचिंग और डेटा कन्वर्शन पर निर्भर करती है। Elm की स्ट्रिक्ट टाइप सिस्टम गलतियों को कम करती है।
 
-## और देखें
-
-Elm दस्तावेज़ीकरण (https://package.elm-lang.org/packages/elm/time/latest/Date).
-ISO 8601 मानक (https://www.iso.org/iso-8601-date-and-time-format.html).
+## See Also (और देखें):
+- [`justinmimbs/date` पैकेज](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- [Elm `getTime` फंक्शन](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
+- [ISO 8601 स्टैंडर्ड](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [`elm/time` कोर पैकेज](https://package.elm-lang.org/packages/elm/time/latest/)

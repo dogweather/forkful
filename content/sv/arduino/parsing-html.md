@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:29:53.244059-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,34 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att tolka (parse) HTML betyder att omvandla en block av HTML-kodningar till ett format som är enklare att arbeta med programmeringsmässigt. Programmerare gör detta för att extrahera data, förändra innehållet, eller bygga webbskrapor.
 
-## Hur Gör Man:
-Här är ett exempel på hur du kan tolka (parse) HTML med hjälp av Arduino och biblioteket "Arduino-Xml":
+Att tolka (parsing) HTML innebär att man analyserar och extraherar data från HTML-kod. Programmerare gör detta för att interagera med webbinnehåll, exempelvis för att hämta information från en webbsida till en mikrokontroller.
+
+## Hur gör man:
+
 ```Arduino
-#include <Arduino-Xml.h>
+#include <Ethernet.h>
+#include <EthernetClient.h>
+#include <SPI.h>
+
+EthernetClient client;
 
 void setup() {
-  Serial.begin(115200);
+  Ethernet.begin(/* Din nätverksinfo här */);
+  Serial.begin(9600);
+
+  if (client.connect("example.com", 80)) {
+    client.println("GET /index.html HTTP/1.1");
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println();
+  }
 }
 
 void loop() {
-  const char* html = "<div><p>Hej Arduino!</p></div>";
-  XmlDocument doc(256);
-  doc.from(html);
+  while (client.available()) {
+    String line = client.readStringUntil('\n');
+    if (line.indexOf("<title>") != -1) {
+      int start = line.indexOf("<title>") + 7;
+      int end = line.indexOf("</title>");
+      String pageTitle = line.substring(start, end);
+      Serial.println(pageTitle);
+      break;
+    }
+  }
   
-  XmlNode* textNode = doc.getRoot()->getFirstChild()->getFirstChild();
-  Serial.println(textNode->getValue());
+  if (!client.connected()) {
+    client.stop();
+  }
 }
+
 ```
-Vid körning av det här programmet kommer utskriften på seriemonitorn att vara: "Hej Arduino!".
+
+Sample Output:
+```
+Example Domain
+```
 
 ## Djupdykning
-Historiskt sett var HTML-tolkning ett komplext problem för programmerare, eftersom HTML strukturer kan vara väldigt komplexa och oförutsägbara. Med introduktionen av Arduino-XML kan HTML nu lätt omvandlas till färdiga XML-strukturer som är lättare att bredda med vanliga programmeringstekniker.
 
-Det finns andra bibliotek för att parse HTML, som Html-Parser (för C++), men Arduino-Xml erbjuder fler funktioner och en mer optimerad tolkning av HTML.
+Att behandla HTML-data är inte nytt. 'Web scrapers' har gjort det sedan internets barndom. Ändå har inbyggda system som Arduino ofta begränsade resurser, vilket gör HTML-parsing utmanande. Alternativ till direktparsing med Arduino är att använda en mellanhand i form av en server som kan ta hand om stora delar av datatolkningen och sedan skicka enklare data till Arduinon.
 
-När du tolkar HTML på Arduino är det viktigt att övervaka din minnesanvändning. HTML-dokument kan snabbt äta upp resurser om de inte hanteras korrekt i stora applikationer eller spädbarn.
+Implementationsdetaljer kan inkludera att hantera oregelbunden HTML och potentiellt stora datamängder som kan överskrida Arduinos begränsade minne. En vanlig strategi är att fokusera på specifika delar av HTML-koden och ignorera resten.
 
-## Se Även
-- [Mozilla Developer Network - HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+## Se även
+
+- Arduino Ethernet-bibliotek: https://www.arduino.cc/en/Reference/Ethernet
+- String klassen i Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Web scraping med Python som alternativ: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

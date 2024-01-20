@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:36:03.246644-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Parsing en dato fra en streng innebærer å trekke ut og tolke datoinformasjonen som er representert som tekst. Programmerere gjør dette for å manipulere datoer, sammenligne tidsstempel eller formatere datoen riktig for ulike applikasjoner.
 
-Å analysere en dato fra en streng betyr å konvertere en tekst som representerer en dato til et standard datatidsformat. Programmerere gjør dette for enklere håndtering og manipulering av datoer. 
-
-## Slik Gjør Du Det:
-
-For å analysere en dato i Fish Shell, bruk `date`-kommandoen med `-u`-flagget og skriv datoen som argument. Her er et eksempel:
-
-```fish
-set -l date_string "2022-01-01 00:00:00"
-set -l parsed_date (date -u -j -f "%Y-%m-%d %T" $date_string "+%s")
+## How to:
+```Fish Shell
+set date_string "2023-04-01"
+set parsed_date (date -d $date_string "+%A, %d %B %Y")
 echo $parsed_date
 ```
+Output:
+```
+Lørdag, 01 April 2023
+```
 
-Koden over vil gi uttaket `1640995200`, som er representasjonen av "2022-01-01 00:00:00" i Unix-tidsstempel.
+## Deep Dive
+I IT-verdenen trenger vi ofte å forstå og arbeide med datoer i forskjellige formater. Historisk sett, før programmeringsspråk standardiserte behandlingen av datoer, var dette en kilden til mange feil og misforståelser. I Fish Shell bruker man ofte `date`-kommandoen for dato-operasjoner, og et vanlig brukstilfelle er parsing. Denne kommandoen interfacer med systemets dato- og tidstjenester og gir fleksibilitet til å håndtere forskjellige datoformater.
 
-## Dyp Dykk
+Det finnes alternativer til `date` for mer komplekse behov, som `strptime` i Python eller DateTime-biblioteket i Perl. Implementasjonsdetaljer varierer på tvers av systemer og programmeringsspråk, men POSIX-standarder har bidratt til å skape konsistens for operasjoner som parser en dato fra en streng.
 
-Analysere datoer fra strenger har blitt en vanlig oppgave i programmering ettersom det letter datatids-håndtering. I skriptspråk som Fish Shell har dette blitt enda enklere takket være innebygde funksjoner som `date`.
-
-Alternativt kan du også analysere en dato i Fish Shell ved hjelp av `strptime`-funksjonen, men den er mer kompleks og manuell. 
-
-Når det gjelder implementasjon, bruker `date`-kommandoen i Fish Shell `getdate`-funksjonen fra glibc, og formatstrengen følger samme format som `strftime`-funksjonen.
-
-## Se Også:
-
-For mer informasjon om analyse av datoer i Fish Shell, vennligst se følgende kilder:
-
-- [Fish Shell Dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
-- [StackOverflow: Parsing Dates in Fish Shell](https://stackoverflow.com/questions/65935528/parsing-dates-in-fish-shell)
+## See Also
+- Fish Shell documentation: https://fishshell.com/docs/current/index.html
+- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- POSIX standard for `date`: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/date.html

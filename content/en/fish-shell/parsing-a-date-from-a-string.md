@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:36:14.617111-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,35 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string means converting written or typed text into a datetime object a program can understand. We do this because sometimes the only way to get a date out of certain systems is via text.
+
+Parsing a date from a string involves reading date information that's formatted as text and converting it to a date data structure the program can understand. Programmers do this to manipulate and work with dates—think analytics, scheduling, or simply displaying them in a different format.
 
 ## How to:
 
-Fire up your Fish Shell and let's get parsing!
+```Fish Shell
+# Basic date parsing using `strptime` function
+set date_string "2023-04-15"
+set -l format "%Y-%m-%d"
+set -l parsed_date (string tolower (date -u --date=$date_string +"$format"))
 
-```fish
-# Define the date string
-set dateString "2022-03-25 14:20:00"
-
-# Parse the date string into a Unix timestamp
-set parsedDate (date -u -d $dateString +%s)
-
-# Echo the parsed date
-echo $parsedDate
+echo $parsed_date # Outputs: 2023-04-15
 ```
-When you run this, you will see the converted Unix timestamp spit out. Pretty neat, huh?
+
+```Fish Shell
+# Handling multiple date formats using a switch
+set date_string1 "15-04-2023"
+set date_string2 "April 15, 2023"
+
+function parse_date -a date_string
+    switch $date_string
+        case "*-*-*"
+            date --date=$date_string +%Y-%m-%d
+        case "* *, *"
+            date --date=$date_string +%Y-%m-%d
+    end
+end
+
+echo (parse_date $date_string1) # Outputs: 2023-04-15
+echo (parse_date $date_string2) # Outputs: 2023-04-15
+```
 
 ## Deep Dive
-Historically, date parsing was a necessity because legacy systems often relied on human-readable date strings. With Fish Shell, parsing dates is easy, but there are alternatives, like Python’s `dateutil.parser.parse()` or JavaScript’s `Date.parse()`.
 
-Different systems or programming languages may store and manage dates differently, but most will convert to a Unix timestamp when parsing. This is a numerical representation of a date as the number of seconds that have passed since the "Unix Epoch", 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970, not counting leap seconds.
+Fish Shell doesn't have built-in date parsing functions like some other languages. Instead, it leans on external utilities like `date`. The `date` command is versatile, and with help from `strptime` (string parse time), which is a standard C library function, it can handle many date formats.
 
-In Fish Shell, the `-d` option is fed the date string and the `+%s` option is used to specify the output format which, in this case, is a Unix timestamp. This makes it possible to work with the parsed date.
+Before `date` and `strptime`, programmers wrote custom parsers—often buggy and complex. Now, utilities handle the quirks of time zones and leap years, sparing us headaches.
+
+Alternatives? Sure, scripting languages like Python have robust date-time libraries like `datetime`. But Fish, being a 'shell', prefers lightweight, command-line programs for a job like this.
+
+In our examples, we used `switch` to choose the date format for `date` to parse. It's clean and extendable. Want more formats? Add more `case` blocks.
+
+Why `string tolower` in the first example? It's about consistency, ensuring the format string and output are uniformly lowercase. A small touch, but it illustrates Fish's preference for simple string operations.
 
 ## See Also
 
-For more details on the Fish Shell, check out these resources:
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Python dateutil Library](https://dateutil.readthedocs.io/en/stable/)
-- [JavaScript Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+- The `date` man page: `man date`
+- Fish Shell's string manipulation documentation: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- General date command usage examples: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

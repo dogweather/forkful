@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:36:24.857842-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,13 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
+## What & Why? (무엇 & 왜?)
+문자열에서 날짜 파싱이란 문자열 형식의 날짜를 컴퓨터가 이해할 수 있는 날짜 객체로 변환하는 과정입니다. 프로그래머가 이 작업을 수행하는 이유는 사용자로부터 날짜를 입력받아 이를 처리, 저장, 비교하기 위해서입니다.
 
-문자열에서 날짜를 파싱한다는 것은 문자열을 날짜 형태로 전환하는 것을 의미합니다. 이는 프로그래머가 사용자의 입력이나 외부 소스에서 날짜 정보를 받아서 내부적으로 작동하는 날짜 형식으로 형변환하는 경우에 사용됩니다.
-
-## 사용법:
-
-다음은 Go 언어로 문자열에서 날짜 형식을 파싱하는 방법입니다:
+## How to: (어떻게 하나:)
 ```Go
 package main
 
@@ -26,32 +24,37 @@ import (
 )
 
 func main() {
-	const inputFormat = "2006-01-02"
-	date, err := time.Parse(inputFormat, "2020-12-31")
+	// 예제 문자열 날짜
+	dateStr := "2023-04-12T15:04:05Z"
+
+	// time 패키지의 파싱 포맷
+	layout := time.RFC3339
+
+	// 문자열을 time.Time 형으로 파싱
+	parsedDate, err := time.Parse(layout, dateStr)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("날짜 파싱 에러:", err)
+		return
 	}
-	fmt.Println(date)
+
+	// 파싱된 날짜 출력
+	fmt.Println("파싱된 날짜:", parsedDate)
 }
 ```
-
-이 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다:
-
-```Go
-2020-12-31 00:00:00 +0000 UTC
+샘플 출력:
+```
+파싱된 날짜: 2023-04-12 15:04:05 +0000 UTC
 ```
 
-## 깊게 알아보기:
+## Deep Dive (심층 탐구)
+계산기와 컴퓨터 초기 단계에서 날짜 파싱은 주로 간단한 형식으로 이루어졌습니다. Go 언어에는 `time` 패키지가 내장되어 있어 표준화된 RFC3339, RFC1123 같은 많은 날짜 형식을 지원합니다. `Parse` 함수는 특정 포맷의 문자열을 `time.Time` 타입으로 변환합니다. 
 
-날짜 파싱은 컴퓨터 사이언스의 초기 단계에서 문제 해결을 위해 개발되었다. 그 이후로 여러 언어에서 다양한 구현이 등장했으며 Go언어에서는 제공하는 time 패키지를 통해 구현할 수 있다.
+대안으로, 복잡한 날짜 처리를 위해 `github.com/araddon/dateparse` 라이브러리 같은 서드 파티 라이브러리를 사용할 수도 있습니다. 이러한 라이브러리들은 다양한 형식과 로케일을 지원하며 사용법이 간단합니다.
 
-하지만, 알트베이스나 다른 문자열 파싱 라이브러리를 사용하여 다른 방법으로 날짜 파싱을 수행할 수도 있다. 
+Go의 날짜 파싱은 내부적으로 레이아웃 문자열을 사용하여 주어진 날짜 형식을 해석합니다. 이 때 사용되는 'layout'은 2006년 1월 2일 오후 3시 4분 5초 UTC의 예시 날짜를 기준으로 사용하는 특이한 설정 방식이라고 할 수 있습니다.
 
-특히 Go는 약간의 혼란을 야기할 수 있는 고유의 날짜/시간 형식을 가지고 있다. 이 형식은 "2006-01-02 15:04:05"에 기반하고 있으며, 이를 기억하면 문자열에서 날짜를 파싱하는데 도움이 됩니다.
-
-## 관련 자료
-
-다음은 날짜/시간 파싱에 관련된 추가 자료 링크입니다:
-
-- [Go 공식 문서: 날짜와 시간](https://golang.org/pkg/time/)
-- [Go 시간 포맷에 대한 흥미로운 글](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+## See Also (관련 자료)
+- Go by Example: Time Formatting / Parsing: https://gobyexample.com/time-formatting-parsing
+- Go `time` Package Documentation: https://golang.org/pkg/time/
+- The `araddon/dateparse` Library: https://github.com/araddon/dateparse
+- Go Blog on Time: https://blog.golang.org/time

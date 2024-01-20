@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:30:37.767643-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "C#"
 category:             "C#"
@@ -10,48 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-Le parsing HTML est le processus de traduction du texte brut HTML en éléments structurés et compréhensibles pour le programme. Les développeurs les utilisent pour extraire des données d'HTML, automatiser des actions sur le web ou pour créer du web scraping.
+## What & Why? (Quoi & Pourquoi?)
+Parser du HTML, c'est lire et comprendre le code d'une page web pour en extraire des données. Les programmeurs le font pour automatiser la collecte d'informations, analyser le contenu ou intégrer des fonctionnalités web dans leurs applis.
 
-## Comment faire:
-Voici comment vous pouvez utiliser la bibliothèque `HtmlAgilityPack` pour analyser du HTML.
-
-Installation du paquet Nuget.
-```C#
-Install-Package HtmlAgilityPack
-```
-
-Voici un exemple basique de parsing HTML en C#.
+## How to (Comment faire):
+Utilisons HtmlAgilityPack, une bibliothèque C# populaire pour le parsing HTML.
 
 ```C#
 using HtmlAgilityPack;
-HtmlWeb web = new HtmlWeb();
-HtmlDocument doc = web.Load("http://exemple.com");
 
-var nodes = doc.DocumentNode.SelectNodes("//p");
+var web = new HtmlWeb();
+var document = web.Load("https://exemple.com");
+var nodes = document.DocumentNode.SelectNodes("//h2");
 
 foreach (var node in nodes)
 {
-    Console.WriteLine(node.InnerHtml);
+    Console.WriteLine(node.InnerText);
 }
 ```
-Un exemple de sortie pourrait être:
 
-```C#
-<div class='mon_div'>Bonjour Monde!</div>
-<div class='autre_div'>Voici un autre div.</div>
+Sortie attendue:
+```
+Le titre du premier H2
+Le titre du second H2
+...
 ```
 
-## Un peu plus de perspective:
-Le parsing HTML est devenu vital avec l'augmentation du web scraping et de l'automatisation web. Il a été utilisé pour la première fois dans les années 90 lors de la montée des navigateurs web. 
+## Deep Dive (Plongée Profonde):
+Historiquement, parser du HTML était compliqué en raison de la non-standardisation et de la latitude laissée aux développeurs web. HtmlAgilityPack a été une révolution, offrant une interface similaire à XPath/XML pour manipuler du HTML. 
 
-En C#, nous avons des alternatives comme `CsQuery` qui fonctionne comme jQuery pour C# et `AngleSharp` qui est une implémentation DOM compétente. Choisir l'un d'eux dépend des besoins spécifiques de votre projet.
+Alternatives : AngleSharp est une autre bibliothèque moderne qui respecte les derniers standards du Web.
 
-Lors de votre choix, pensez à vérifier facteurs comme: le support des standards web, la vitesse d'exécution, la documentation, la compatibilité avec différentes versions de .NET, etc.
+Détail d'implémentation : HtmlAgilityPack gère les HTML mal formés, corrigeant les erreurs communes pour permettre un parcours du DOM efficace.
 
-## Voir aussi :
-Visiter ces liens pour plus d'informations :
-
-- Documentation HtmlAgilityPack : https://html-agility-pack.net/documentation
-- Documentation CsQuery : https://github.com/jamietre/CsQuery
-- Documentation AngleSharp : https://anglesharp.github.io/
+## See Also (Voir Aussi):
+- HtmlAgilityPack sur NuGet: https://www.nuget.org/packages/HtmlAgilityPack
+- Documentation HtmlAgilityPack: https://html-agility-pack.net/
+- AngleSharp sur GitHub: https://github.com/AngleSharp/AngleSharp

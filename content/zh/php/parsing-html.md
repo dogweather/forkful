@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:33:09.346015-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-解析HTML是一种提取HTML代码中特定数据或信息的方法。也是程序员在网页数据整理及操作时，必不可少的步骤。
+## What & Why? (是什么？为什么？)
+解析HTML就是从一堆看似无序代码里提取有用信息。程序员这么做通常是为了自动化地处理网页数据，比如抓取、数据挖掘。
 
-## 如何做：
-以下是一个使用PHP的DOM抓取HTML元素的例子。
-
+## How to: (如何做？)
 ```PHP
-<?php
+// 确保你安装了DOMDocument拓展
+$doc = new DOMDocument();
+@$doc->loadHTML(file_get_contents('https://example.com'));
+$xpath = new DOMXPath($doc);
 
-// 创建DOM文档对象
-$dom = new DOMDocument();
+// 获取所有<h1>标签内容
+$h1s = $xpath->query('//h1');
+foreach($h1s as $h1) {
+    echo $h1->nodeValue . PHP_EOL;
+}
 
-// 加载HTML字符串
-@$dom->loadHTML('<div class="hello">Hello World!</div>');
-
-// 获取hello div标签的内容
-$hello = $dom->getElementsByTagName('div')->item(0)->nodeValue;
-
-echo $hello; // 输出: Hello World!
-
-?>
+// 查询class为"important"的div
+$importantDivs = $xpath->query('//div[@class="important"]');
+foreach($importantDivs as $div) {
+    echo $div->nodeValue . PHP_EOL;
+}
 ```
-在这个示例中，我们创建了一个新的DOM文档对象并加载了一个HTML字符串。然后，我们获取`div`标签的内容并将其输出。
+输出会显示你查询的所有 `<h1>` 标签和类名为 "important" 的 `<div>` 标签的内容。
 
-## 深入探索
-解析HTML的历史可以追溯到网页编程的早期。随着网页可编译联动程式的发展，需求也日益增长。对于解析HTML，除了PHP的DOM外，还有其他一些替代选择如Simple HTML DOM、phpQuery等。这些方法更方便于实现具体任务，选择哪种解析方式取决于你的具体需求以及复杂程度。另外，值得注意的是，在解析HTML时，要考虑到错误处理以及非预期输入的可能性。
+## Deep Dive (深入研究)
+在早期，PHP程序员经常使用正则表达式来解析HTML，但这种方法易错且维护困难。DOMDocument 和 DOMXPath 出现后，提供了一个更强大和标准化的方式来解析HTML。这不仅更可靠，而且使得代码易于理解和维护。有时候，开发者可能会使用第三方库如 `Simple HTML DOM Parser`，但内置的 DOM 扩展在性能和兼容性上通常更胜一筹。相对来说，使用 DOMXPath 进行查询，可以实现更复杂的文档搜索和处理，尤其是当处理有特定结构的HTML时。
 
-## 另见
-以下是一些有用的资源，可以学习更多关于解析HTML的内容或了解更深层次的相关知识点。
-1. DOM 手册 - [https://www.php.net/manual/en/book.dom.php](https://www.php.net/manual/en/book.dom.php)
-2. Simple HTML DOM 解析器手册 - [http://simplehtmldom.sourceforge.net/](http://simplehtmldom.sourceforge.net/)
-3. PHP 官方网站教程：[https://www.php.net/manual/zh/](https://www.php.net/manual/zh/)
+## See Also (另请参阅)
+- [DOMDocument](https://www.php.net/manual/zh/class.domdocument.php)
+- [DOMXPath](https://www.php.net/manual/zh/class.domxpath.php)
+- [Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/)

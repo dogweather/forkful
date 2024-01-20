@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:36:12.424219-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
-날짜를 문자열에서 파싱하는 것은 주어진 문자열을 날짜 객체로 변환하는 프로세스를 의미합니다. 이는 이벤트의 타임라인, 문자열 데이터에서 시계열 분석 등을 위해 프로그래머가 필요로 하는 일반적인 작업입니다.
+## What & Why? (무엇 & 왜?)
+문자열에서 날짜 파싱은 문자열 형태의 데이터로부터 날짜 형식을 추출하는 과정입니다. 프로그래머들은 데이터 소프트웨어 처리에서 날짜 관련 연산을 하기 위해 파싱을 수행합니다.
 
-## 어떻게:
-Fish Shell에서는 아래와 같이 날짜 파싱을 수행할 수 있습니다.
+## How to (어떻게 하나)
+Fish Shell에서 문자열로부터 날짜를 파싱하려면 `strptime` 함수를 사용하세요. 아래는 예시 코드와 출력 결과입니다.
 
-```
-Fish Shell 코드:
+```Fish Shell
+# 날짜 문자열 파싱하기
+set date_string "2023-03-14 09:26:53"
+set format "%Y-%m-%d %H:%M:%S"
+set epoch_time (date --date="$date_string" "+%s")
 
-function parse_date -d "parse a date from a string and display it in standard format"
-    set date (date -d $argv[1] +'%Y-%m-%d %H:%M:%S')
-    echo $date
-end
-
-## 사용 예:
-parse_date "2021-12-12 12:12:12"
-
-## 결과:
-2021-12-12 12:12:12
+# 결과 출력
+echo $epoch_time
 ```
 
-## 깊이 들여다보기
-날짜 파싱은 프로그래밍의 초기 시점부터 필요한 작업이었습니다. Unix 시간인 1970년 1월 1일 이후의 시간을 초로 표시하는 방식 등, 다양한 형식의 날짜-시간 표현 방식이 발전하였습니다.
+이 예제에서는 "2023-03-14 09:26:53"라는 문자열을 Unix epoch time으로 변환합니다. 출력 결과는 해당 날짜의 epoch 시간입니다.
 
-Fish Shell과 같은 최신 스크립트 언어들은 이러한 작업을 간편하게 수행할 수 있는 내장 함수를 제공하고 있습니다. 그러나 각 언어 및 플랫폼에 따라 날짜 파싱 방식과 사용 가능한 기능은 다릅니다.
+## Deep Dive (심층 분석)
+Fish Shell에서의 날짜 파싱은 다른 쉘과 비교했을 때 비교적 직관적입니다. 예전에는 더 복잡한 절차나 외부 도구가 필요했지만, 현재는 내장된 `date` 명령을 통해 문자열에서 날짜로의 변환이 가능합니다. 대안으로는 `strftime` 함수를 사용하여 날짜 형식을 문자열로 변환할 수 있으며 양방향의 파싱이 가능합니다. 구현 세부 사항으로는 `date` 명령이 시스템의 `date` 명령을 래핑(wrapping)하여 사용한다는 점입니다. 이는 사용환경의 `date` 명령에 의존하는 바, 다른 환경에서도 동일한 결과를 보장하기 위해서는 주의가 필요합니다.
 
-날짜 파싱 작업의 복잡성은 대부분 예외 케이스 처리와 관련이 있습니다. 시간대, 윤년, 일광 절약 시간 등 다양한 요소를 고려해야 합니다.
-
-## 참고
-Fish Shell의 공식 문서는 폭넓은 주제에 대한 자세한 정보를 제공하므로, 추가적으로 알아보려면 아래 링크가 유용할 것입니다.
-* [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
+## See Also (관련 자료)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils Date Documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [strftime and strptime Behavior](https://man7.org/linux/man-pages/man3/strftime.3.html)

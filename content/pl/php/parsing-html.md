@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:32:59.958768-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
+Parsing HTML to proces tłumaczenia kodu HTML na struktury danych, które łatwo przetwarzają programy. Robimy to, aby wydobyć informacje, manipulować zawartością lub integrować rozmaite usługi z istniejącymi stronami internetowymi.
 
-Analiza składniowa HTML to proces ekstrakcji danych z dokumentów HTML. Programiści wykonują to, aby zdobyć istotne informacje z dokumentu lub manipulować strukturą strony na podstawie konkretnych wymagań.
+## Jak to zrobić?
+PHP ma wbudowany sposób na parsing HTML – rozszerzenie `DOMDocument`. Oto prosty przykład użycia:
 
-## Jak to zrobić:
-
-Użyjemy biblioteki `DOMDocument` dostępnej w PHP. Tu jest podstawowy przykład:
-
-```PHP
+```php
 <?php
-$dom = new DOMDocument();
-@$dom->loadHTML('<div class="test">Witaj Świecie!</div>');
+$html = '<!DOCTYPE html><html><body><p>Witaj, Świecie!</p></body></html>';
 
-$divs = $dom->getElementsByTagName('div');
-foreach($divs as $div) {
-    if($div->getAttribute('class') === 'test') {
-        echo $div->nodeValue;
-    }
+$dom = new DOMDocument();
+@$dom->loadHTML($html);
+$paragraphs = $dom->getElementsByTagName('p');
+
+foreach ($paragraphs as $p) {
+    echo $p->nodeValue . "\n";
 }
 ?>
 ```
-
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
-
-```PHP
-Witaj Świecie!
+Wynik:
 ```
-## Głębokie zanurzenie:
+Witaj, Świecie!
+```
 
-1) Kontekst historyczny: Przetwarzanie HTML stało się popularne z pojawieniem się dynamicznych stron internetowych, gdzie interakcje użytkowników wymagały manipulacji strukturą HTML.
+## A może głębiej?
 
-2) Alternatywy: Inne popularne parsery HTML dla PHP to: `phpQuery`, `Simple HTML DOM Parser`. Każda metoda ma swoje zalety i wady, wybór zależy od specyfikacji projektu.
+Historia łamanek HTML sięga lat 90-tych, kiedy to internet zaczął prężnie rosnąć. PHP wspierał różne techniki, ale `DOMDocument` trafiło do mainstreamu.
 
-3) Szczegóły implementacji: `DOMDocument` to biblioteka PHP do parsowania HTML. Co istotne, ignoruje ona błędy podczas wczytywania HTML (dzięki użyciu '@'), co jest bardzo wygodne przy pracy z niedoskonałymi dokumentami HTML.
+Inne metody to `SimpleXML` czy używanie wyrażeń regularnych (regex), jednak te ostatnie są niezalecane z powodu skomplikowości HTML.
 
-## Zobacz także:
+Implementation parsingu HTML powinna kierować się standardami, tak aby był odporny na zmienny i czasem niepoprawny kod HTML. `libxml` używane przez PHP do obsługi XML i HTML, pomaga sobie z tym znakomicie.
 
-- Dokumentacja `DOMDocument`: https://www.php.net/manual/en/class.domdocument.php
-- Biblioteka `phpQuery`: https://code.google.com/archive/p/phpquery/
-- Biblioteka `Simple HTML DOM Parser`: http://simplehtmldom.sourceforge.net/
+## Zobacz też
+
+- Oficjalna dokumentacja PHP `DOMDocument`: https://www.php.net/manual/en/class.domdocument.php
+- Wprowadzenie do `libxml`: https://www.php.net/manual/en/book.libxml.php
+- `SimpleXML` — alternatywna, prostsza biblioteka do manipulacji XML: https://www.php.net/manual/en/book.simplexml.php

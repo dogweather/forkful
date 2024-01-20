@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:35:07.657841-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+## What & Why?
 ## Що і чому?
 
-Розбір дати з рядка - це процес перетворення формату дати, записаної як текст, на тип даних, який комп'ютер може розуміти та обробляти. Програмісти роблять це для завдань, що пов'язані з обробкою дат, таких як порівняння дат, додавання або віднімання днів, та інших.
+Parsing a date from a string means extracting the date components—day, month, year—from text. Programmers often do this to handle user input, store or manipulate dates, or interface with databases.
 
+## How to:
 ## Як це зробити:
 
 ```C++
 #include <iostream>
-#include <iomanip> 
-#include <sstream> 
+#include <sstream>
+#include <iomanip>
+#include <ctime>
 
 int main() {
-    std::string s = "24.10.2021";
+    std::string date_str = "2023-03-15";
+    std::istringstream ss(date_str);
     std::tm date = {};
-
-    std::stringstream ss(s);
-
-    ss >> std::get_time(&date, "%d.%m.%Y");
-
-    std::cout << std::put_time(&date, "%Y-%m-%d") << "\n";
+    
+    ss >> std::get_time(&date, "%Y-%m-%d");
+    if(ss.fail()) {
+        std::cerr << "Failed to parse date." << std::endl;
+    } else {
+        std::cout << "Parsed date: "
+                  << std::put_time(&date, "%d-%m-%Y") << std::endl;
+    }
+    
     return 0;
 }
 ```
-При виконанні цього коду виходом буде:
-```C++
-2021-10-24
+
+Sample output:
 ```
-## Пірнемо глибше:
+Parsed date: 15-03-2023
+```
 
-Розбір дати з рядка є стандартною технікою в програмуванні з часів, коли ми почали використовувати комп'ютери для обробки дат і часу. Альтернативами можуть бути бібліотеки як Boost Date_Time, chrono і тд. В даних прикладах ми використовуємо стандартні бібліотеки C++. 
+## Deep Dive:
+## Поглиблений розбір:
 
-Ми використовуємо std::get_timeдля парсинга рядка до структури tm. Ця структура та std::put_time, яка використовується для форматування цієї структури у рядок, обидві є частиною <iomanip>, одного з стандартних заголовків C++, які використовуються в цій задачі.
+Historically, C++ has relied on C-style strings and structs. The `<ctime>` header provides `struct tm` to represent time. The `std::get_time` and `std::put_time` functions, introduced in C++11, facilitate parsing and formatting.
 
-## Дивіться також:
+Alternatives include using third-party libraries, like Boost.DateTime, or since C++20, the `<chrono>` library's more comprehensive date and time utilities.
 
-- [C++ reference на std::get_time](http://www.cplusplus.com/reference/iomanip/get_time/)
-- [C++ reference на std::put_time](http://www.cplusplus.com/reference/iomanip/put_time/)
-- [Boost Date_Time](https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html)
-- [std::chrono](http://en.cppreference.com/w/cpp/chrono)
+Implementation-wise, understand that `std::get_time` uses format specifiers like `%Y` and `%d`. They match the expected form of the string. Tread carefully: if the string format doesn't match, parsing fails.
 
-Примітка: Для розбору дати з рядка має різні можливості, і вибір правильного засобу залежить від специфічних вимог вашого проекту.
+## See Also:
+## Див. також:
+
+- [C++ reference for std::get_time](https://en.cppreference.com/w/cpp/io/manip/get_time)
+- [C++ reference for std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
+- [C++ reference for <chrono> library](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost.DateTime documentation](https://www.boost.org/doc/libs/release/libs/date_time/)

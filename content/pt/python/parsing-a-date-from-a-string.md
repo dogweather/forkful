@@ -1,6 +1,7 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-html_title:           "PowerShell: Analisando uma data a partir de uma string"
+date:                  2024-01-20T15:38:12.605980-07:00
+html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Python"
 category:             "Python"
@@ -10,44 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing de datas em Python
-
-## O Que & Porquê?
-
-Parsing é o processo de decompor uma string data/hora em seus elementos constituintes. Os programadores fazem isso para que possam manipular e analisar datas de maneira mais coerente e apropriada.
+## O Que é & Por Que?
+Pegar uma data de um texto é como tirar um coelho da cartola: você tem uma string e quer transformá-la numa data que seu programa entende para poder usar em comparações, cálculos ou armazenamento. Programadores fazem isso porque as datas frequentemente vêm em formatos variados, como entradas de usuário ou arquivos externos, e precisam ser normalizadas para um uso consistente no software.
 
 ## Como Fazer:
-
-Vamos usar o módulo `datetime` do Python. Abaixo, um exemplo de uma string data/hora sendo convertida para um objeto `datetime`.
+Python tem uma biblioteca chamada `datetime` que é a varinha mágica para lidar com datas e tempos. Veja como isso funciona:
 
 ```Python
 from datetime import datetime
 
-minha_data_string = "20/10/2021"
-minha_data = datetime.strptime(minha_data_string, "%d/%m/%Y")
+# Parse de uma data em formato conhecido
+data_string = "01/04/2023"
+data_formato = "%d/%m/%Y"
+data_objeto = datetime.strptime(data_string, data_formato)
 
-print(minha_data)
+print(data_objeto) # Saída: 2023-04-01 00:00:00
+
+# Parse de uma data em formato ISO 8601
+data_iso_string = "2023-04-01T15:30:00"
+data_iso_objeto = datetime.fromisoformat(data_iso_string)
+
+print(data_iso_objeto) # Saída: 2023-04-01 15:30:00
 ```
 
-Quando corre essa código, vai receber o seguinte output:
+## Mergulho Profundo:
+Nas eras paleolíticas da computação, como na década de 70, parsear datas era trabalho manual e cheio de armadilhas. Com a evolução das linguagens, surgiram bibliotecas para isso. Em Python, a biblioteca `datetime` é a forma padrão desde a versão 2.3, substituindo a módulos mais antigos como o `time`.
 
-```Python
-2021-10-20 00:00:00
-```
+Existem alternativas como `dateutil`, que pode lidar com formatos mais malucos e flexíveis. Já para quem precisa de performance, `ciso8601` é um parser de data ISO 8601 escrito em C, bem mais rápido.
 
-## Deep Dive
+Em termos de implementação, `datetime.strptime()` trabalha com uma string de formato que você define. Por exemplo, `%d` corresponde ao dia do mês e `%Y` ao ano com quatro dígitos. Essa string de formato precisa ser ajustada exatamente ao formato de entrada para que a conversão ocorra sem erros.
 
-Historicamente, o parsing de datas tem sido um problema notório em muitas linguagens de programação, não apenas em Python. A necessidade de analisar datas de diferentes formatos exigiu o desenvolvimento de módulos robustos e versáteis como o `datetime`.
-
-Python oferece alternativas ao módulo `datetime`, como o módulo `dateutil`, que pode analisar datas de strings em formatos mais complexos.
-
-Em termos de implementação, o método `strptime` do objeto `datetime` usa uma string de formato para determinar a divisão dos elementos em uma string data/hora. Isso permite que ele lide com uma ampla variedade de formatos de data.
-
-## Veja Também
-
-Aqui estão alguns recursos adicionais para ajudá-lo a vice:
-
-1. [Python Datetime](https://docs.python.org/3/library/datetime.html)
-2. [Python Dateutil](https://dateutil.readthedocs.io/en/stable/)
-3. [Tutorial de datas e horários em Python](https://realpython.com/python-datetime/)
-4. [Aprendendo a lidar com datas e horários em Python](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-dates)
+## Veja Também:
+- Documentação oficial do `datetime`: https://docs.python.org/3/library/datetime.html
+- `dateutil`, para parsear formatos mais complexos: https://dateutil.readthedocs.io
+- `ciso8601`, se você quiser performance pura: https://github.com/closeio/ciso8601

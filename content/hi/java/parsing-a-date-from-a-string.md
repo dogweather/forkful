@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:37:20.040481-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीख को स्ट्रिंग से पार्स करने का मतलब है स्ट्रिंग फॉर्मेट में दी गई तारीख को Java की Date ऑब्जेक्ट में बदलना। यह जरूरी है क्योंकि यूज़र से मिली इनपुट या डेटाबेस से आंकड़े स्ट्रिंग फॉर्मेट में हो सकते हैं, जिन्हें हमें तारीखों के रूप में प्रोसेस करना होता है।
 
-विभाजन ("पार्सिंग") किसी विशेष दिनांक ("डेट") को एक वर्णमाला ("स्ट्रिंग") से प्राप्त करना इत्यादि का एक क्रियाकलाप है। प्रोग्रामर इसे डेटा का व्यवस्थित रूप से हैंडल करने और मशीन को समझाने के लिए करते हैं।
-
-## कैसे करें:
-
-आइए JDK 8 और इसके ऊपर के संस्करणों में दिनांक को पार्स करने का उदाहरण देखते हैं। 
-
+## How to: (कैसे करें:)
 ```Java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Main {
+public class DateParsingExample {
     public static void main(String[] args) {
-        String dateString = "2022-02-05";
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate parsedDate = LocalDate.parse(dateString, formatter);
-        System.out.println(parsedDate);
+        String dateString = "25-03-2023";
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+       
+        try {
+            Date date = formatter.parse(dateString);
+            System.out.println("Date is: " + date);
+        } catch (ParseException e) {
+            System.out.println("Invalid format");
+        }
     }
 }
 ```
-
-ऊपरी कोड स्निपेट का परिणाम होगा:
-
+**Sample Output:**
 ```
-2022-02-05
+Date is: Sat Mar 25 00:00:00 IST 2023
 ```
 
-## गहरी जानकारी:
+## Deep Dive (गहराई से जानकारी):
+तारीख पार्सिंग का उपयोग Java में बहुत पहले से होता आ रहा है। `SimpleDateFormat` क्लास इस कार्य के लिए लंबे समय से इस्तेमाल हो रही है और अब Java 8 और उसके बाद के वर्ज़न में `java.time` पैकेज ने कई आसान और लचीले तरीके प्रस्तुत किए हैं। `DateTimeFormatter` और `LocalDate` जैसी क्लासेस के साथ, डेवेलपर्स को ज़्यादा पावरफुल और थ्रेड-सेफ ऑप्शंस मिलते हैं। पार्सिंग में गलतियों से बचने के लिए `try-catch` ब्लॉक का प्रयोग करना चाहिए।
 
-जावा भाषा में दिनांक पार्स करने का इतिहास छोटा है, लेकिन इसके कई रूप हैं। उदाहरण के लिए, पहले `SimpleDateFormat` का उपयोग किया जाता था, जो अब आमतौर पर `DateTimeFormatter` द्वारा बदल दिया गया है। 
-
-`SimpleDateFormat` के अपेक्षा, `DateTimeFormatter` में कई बड़े लाभ हैं, जैसे कि thread safety और बेहतर एपीआई। 
-
-किंतु, अगर आप एक पुराने कोडबेस के साथ काम कर रहे हैं, तो आपको शायद `SimpleDateFormat` का सामना करना पड़े।
-
-## और देखें:
-
-- Oracle Java Documentation: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- Baeldung: [Guide to LocalDate](https://www.baeldung.com/java-8-date-time-intro)
-- StackOverflow: [Parsing date from String using Java 8 DateTimeFormatter](https://stackoverflow.com/questions/22463062/how-to-parse-format-dates-with-localdatetime-java-8)
+## See Also (और जानकारी के लिए):
+- [Date and Time Classes in Java 8](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [SimpleDateFormat Documentation](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [Date to LocalDate Conversion](https://www.baeldung.com/java-date-to-localdate-and-localdatetime)

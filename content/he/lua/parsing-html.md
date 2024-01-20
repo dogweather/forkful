@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:32:59.864311-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Lua"
@@ -11,28 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-תפעול של Parsing HTML מאפשר למתכנת לקרוא ולנתח את הדף האינטרנט כדי לנצל מידע ספציפי. מתכנתים עושים את זה בשביל לאסוף, לנתח או לעכל מידע מדף אינטרנט.
+פענוח HTML הוא תהליך שבו מתוכנת מנתח את המבנה והתוכן של דף אינטרנט. תכנותים עושים זאת כדי לאחזר, לעבד, או לשנות נתונים מדפי ווב.
 
 ## איך לעשות:
+Lua אינה כוללת מודולים מובנים לפענוח HTML במובנה הקלאסי. אנו נשתמש בחבילה חיצונית כמו `luahtml` לדוגמה:
+
 ```Lua
--- תוסיפו את הספרייה
 local htmlparser = require "htmlparser"
 
--- לדוגמה, HTML: 
-local html = "<p>Hello, world!</p>"
+-- טען HTML כמחרוזת
+local htmlString = [[
+<html>
+  <head>
+    <title>דוגמה</title>
+  </head>
+  <body>
+    <h1>שלום עולם</h1>
+  </body>
+</html>
+]]
 
--- ניתוח ה-HTML
-local root = htmlparser.parse(html)
+-- פענח את ה-HTML
+local root = htmlparser.parse(htmlString)
 
--- הדפסה של התוכן של ה-Elem (Hello, World!):
-print(root("p"):getcontent())
-
--- יוצא: Hello, world!
+-- הדפס את כותרת הדף
+local title = root:select("title")[1]
+print(title:getcontent()) -- תוציא "דוגמה"
 ```
 
-## צלילה עמוקה
-אי לכך משמעות ל-NLP (Natural Language Processing) במסגרת העולם המחשבי. Parsing HTML הוא אחד מהכלים שמתכנתים משתמשים בהם כדי לעשות ניתוח של שפה טבעית. בראשית, Parsing HTML היה מסורבל, אך עם השפה של Lua נוצר דרך יעילה לעבודה עם HTML.
-תחליפים ל-Parsing HTML מסבירים סינטקס של HTML הבינוני, ואפשרות נוספת היא להשתמש ב-Python או ב-JavaScript. עבודה עם הספרייה של htmlparser ב-Lua, מאפשרת ניתוח של  HTML בצורה יותר יעילה ונוחה.
+הקוד משתמש בפונקציה `parse` כדי להמיר את מחרוזת HTML לעץ DOM, שאותו אפשר לחפש ולחלץ ממנו מידע.
 
-## ראה גם:
-- [הספרייה של Lua (המסעיף שמתאר את HTML Parser)](https://www.lua.org/manual/5.1/)
+## צלילה עמוקה
+במקור, Lua לא פותחה כדי לעבד את האינטרנט, ולכן אינה מספקת כלים לפענוח HTML מהקופסא. יחד עם זאת, הקהילה פיתחה ספריות כגון `luahtml` ו-`luaxml` שממלאות פער זה.
+
+חלופות ללואה בעבודה עם HTML יכולים להיות שפות אחרות עם ספריות עשירות יותר, כמו Python עם BeautifulSoup או חבילת lxml. אבל אם רוצים להשאר עם Lua, אז השימוש בחבילות חיצוניות הוא הדרך ללכת.
+
+מימוש פענוח HTML בלואה מתבצע בדרך כלל דרך פרסור המחרוזת והמרתה לעץ DOM, דומה לשפות אחרות. זה כולל חיפוש וחלץ אלמנטים באמצעות מתודות כמו `select` ו-`getcontent`.
+
+## ראה גם
+- למד עוד על DOM (Document Object Model): [https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)

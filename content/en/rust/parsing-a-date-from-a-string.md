@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:38:08.957602-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,39 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing a date from a string transforms a readable date format into a machine-understood date object. Programmers use this to convert and manipulate data when dates are initially in string format.
+Parsing a date from a string means converting text into a date format your code can understand. We do this because dates often come as strings from user input or external data sources and we need them in a structured form for computation and storage.
 
 ## How to:
+To parse dates in Rust, we use the `chrono` crate, a go-to library for date and time.
 
-Here's a handy walk-through on how you can parse a date string in Rust:
+First, add `chrono` to your `Cargo.toml`:
 
-```Rust
-extern crate chrono;
-use chrono::*;
-
-let input = "2021-08-31 12:00:09";
-let parsed_date = NaiveDateTime::parse_from_str(input, "%Y-%m-%d %H:%M:%S").unwrap();
-
-println!("{:?}", parsed_date);
+```toml
+[dependencies]
+chrono = "0.4"
 ```
 
-With the output as follows:
+Then, here's a simple example of parsing an ISO 8601 date:
 
-```Rust
-NaiveDateTime(2021-08-31T12:00:09)
+```rust
+extern crate chrono;
+use chrono::prelude::*;
+
+fn main() {
+    let date_str = "2023-04-05";
+    let parsed_date = date_str.parse::<NaiveDate>().unwrap();
+
+    println!("Parsed date is: {}", parsed_date);
+}
+
+```
+Output:
+```
+Parsed date is: 2023-04-05
 ```
 
 ## Deep Dive
+`chrono` is Rust's choice for date and time parsing, pretty much since Rust's inception. Before `chrono`, Rust had a basic time library, but it lacked features. `chrono` filled that gap.
 
-Historically, hand-coding a parsing mechanism to handle different date formats was a common thing. But bugs? Don't get me started. It was inefficient and error-prone which led to birth of libraries like `chrono`.
+For alternatives, you've got `time` crate, but `chrono` wins in popularity and feature set. Implementation-wise, parsing a date string involves specifying the format and handling the possibility of failure—that's why we used `unwrap()`, which is fine in examples but use `match` or `unwrap_or_else` in real code to handle errors gracefully.
 
-Now, you'd think, "Why not just use standard functions available in the language?" Well, Rust's standard library does not yet provide comprehensive date parsing and formatting capabilities. That's why `chrono` steps in. It's the de facto crate to manage dates and times in Rust. 
+Historically, programming languages have struggled with date and time. It's complex due to leap years, time zones, and daylight saving changes. That's why crates like `chrono` are valuable—they handle the oddities for us.
 
-You could also go off the beaten path and use other crates like `time` or even `dateparser`, but `chrono` remains a strong favorite in the Rustacean's toolkit for its robustness and ease of use. 
-
-## See Also:
-
-For a deep-dive into the chrono feature-set, check out: [Chrono on crates.io](https://crates.io/crates/chrono)  
-For more info about Rust's date and time handling, check out: [Rust Lang's documentation](https://doc.rust-lang.org/std/time/index.html)
-And for alternatives, you might find: [Dateparser crate](https://github.com/stevedonovan/dateparser) and [Time crate](https://github.com/time-rs/time) useful.
+## See Also
+- Official `chrono` crate documentation: https://docs.rs/chrono/
+- Rust API guidelines about error handling: https://rust-lang.github.io/api-guidelines/error.html
+- An in-depth look at Rust's time library history: https://www.reddit.com/r/rust/comments/2z54zb/history_of_rusts_time_library/

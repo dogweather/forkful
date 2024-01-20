@@ -33,5 +33,4 @@ IO.puts StringTools.capitalize("HELLO") # Outputs: "Hello"
 
 ## ראו גם
 - [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/strings/)
 - [Unicode Normalization Forms](https://unicode.org/reports/tr15/)

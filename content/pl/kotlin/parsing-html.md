@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:32:32.480293-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,28 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Parsing HTML pozwala nam na wydobywanie i manipulację danymi ze stron internetowych. Programiści robią to, aby pobierać potrzebne informacje lub interaktywnie integrować się z innymi serwisami webowymi.
 
-Parsowanie HTML, to proces analizowania kodu HTML, aby uzyskać strukturalne reprezentacje strony. Programiści robią to, by manipulować, wyodrębniać dane, a nawet symulować interakcje użytkownika z stroną.
+## How to:
+Parsowanie HTML w Kotlinie jest proste z biblioteką jsoup. Oto jak:
 
-## Jak to zrobić?
+```kotlin
+import org.jsoup.Jsoup
 
-```Kotlin
-val document = Jsoup.connect("http://example.com").get()
-val title = document.title()
-println("Tytuł: $title")
+fun main() {
+    val html = "<html><head><title>Przykładowy Tytuł</title></head>" +
+               "<body><p>Witaj, Kotlin!</p></body></html>"
+    val doc = Jsoup.parse(html)
+    
+    // Wydobądź treść tytułu
+    val title = doc.title()
+    println("Tytuł: $title")
+
+    // Znajdź paragraf i wydrukuj jego zawartość
+    val pText = doc.select("p").first().text()
+    println("Paragraf: $pText")
+}
+```
+Wyjście próbkowe:
+```
+Tytuł: Przykładowy Tytuł
+Paragraf: Witaj, Kotlin!
 ```
 
-Wyjście z tego kodu to:
-```
-Tytuł: Example Domain
-```
+## Deep Dive:
+Parsowanie HTML zyskało na znaczeniu wraz z boomem na WWW w latach 90'. Do dziś, to podstawowa umiejętność w web scrapingu i data miningu.
 
-## Głębsze spojrzenie
+Alternatywami dla jsoup mogą być biblioteki jak HtmlUnit czy AngleSharp (dla C#) oraz mechanizmy wbudowane w język (np. lxml w Pythonie).
 
-(1) Kod HTML, służy jako ramy dla stron internetowych od początku internetu. (2) Istnieją inne metody parsowania, takie jak wyrażenia regularne, jednak są one często bardziej skomplikowane i mniej niezawodne niż prostsze biblioteki, takie jak Jsoup. (3) Szczegóły implementacji mogą się różnić, ale zazwyczaj obejmują połączenie z witryną, pobranie kodu HTML, analizowanie go, a następnie przeszukanie wyników.
+Implementacja w Kotlinie z jsoup jest wygodna, ponieważ biblioteka ta jest wystarczająco elastyczna, by obsłużyć różnorodne struktury HTML, a także zapewnia potężne API do selekcji i manipulacji elementami.
 
-## Zobacz także
-
-- [JSoup Documentation](https://jsoup.org/)
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+## See Also:
+- Jsoup Documentation: https://jsoup.org/
+- Wprowadzenie do Web Scrapingu z Kotlinem: https://medium.com/@ssaurel/learn-how-to-make-web-scraping-in-kotlin-542043c43b96
+- HTMLUnit: http://htmlunit.sourceforge.net/
+- AngleSharp (biblioteka .NET, ale dobra dla inspiracji): https://anglesharp.github.io/

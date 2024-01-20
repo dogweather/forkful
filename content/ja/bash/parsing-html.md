@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:29:56.433582-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Bash"
@@ -10,54 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? (何となぜ？)
+HTML解析とはHTMLデータから特定の情報を取り出すことです。プログラマーはウェブスクレイピングやデータ処理、自動化のためにHTMLを解析します。
 
-## 1.何となぜ?
+## How to: (やり方)
+Bash単独ではHTML解析は得意ではありませんが、`grep`, `sed`, `awk`, そして`curl`と組み合わせると基本的なデータ抽出が可能です。ここでいう「基本的な」とは正確なHTMLパースではなく、簡易的な文字列操作を意味しています。
 
-HTMLパースとは、HTML文書のデータ構造を解析して操作しやすい形式に変換することです。プログラマーは、ウェブスクレイピングやウェブコンテンツの自動化操作などに使用するデータを抽出するためにこれを行います。
+例えば、`curl`を使ってHTMLコンテンツを取得し、`grep`で特定のタグを含む行を抽出する簡単なスクリプトです。
 
----
-
-## 2.やり方:
-
-以下は、Bashを使ったHTMLパージングの基本例です：
-
-```Bash 
-$ echo "<h1>こんにちは、世界！</h1>" | grep -oP '(?<=<h1>).*(?=</h1>)'
+```Bash
+curl -s http://example.com | grep "<title>"
 ```
 
-このコードは出力に`こんにちは、世界！`を返します。
+これは出力します:
 
-しっかりとしたHTML解析には、xsoupやpupのような専用のツールを使うことを推奨します。
+```HTML
+<title>Example Domain</title>
+```
 
----
+より複雑な解析が必要な場合は、専用のツールを使うのが良いでしょう。
 
-## 3.深掘り:
+## Deep Dive (深掘り)
+過去、BashスクリプトでのHTML解析は限界がありましたが、XMLStarletやpupのようなツールが導入され、コマンドラインからでもより高度な解析が可能になっています。
 
-1. 歴史的な文脈：
+代替方法としては、Pythonの`BeautifulSoup`やRubyの`Nokogiri`のような専門のパーサライブラリがあります。これらはHTML形式の厳密な解釈、破損したHTMLへの対応、DOMを利用したクエリが可能です。
 
-      Bashは元々1971年にはじめて実装されたsh（Bourne Shell）の後継として1990年代に生み出されました。  
-   
-2. 代替手段：
+実装の詳細については、HTMLパースにおいては文法の正確さよりも、目的のデータをどれだけ効率的かつ正確に抽出できるかが重要です。
 
-      Bash以外にも、PythonのBeautifulSoupやRubyのNokogiriなど、他の言語のライブラリを用いることでより強固なHTMLパージングが可能です。
-   
-3. 実装詳細：
-
-      BashでのHTMLパージングは、基本的には正規表現を使用しています。しかし複雑なパージングには向かず、その場合は目的に合わせたツールの利用を推奨します。
-
----
-
-## 4. 詳細資料:
-
-- Bash Scripting Tutorial: [https://ryanstutorials.net/bash-scripting-tutorial/](https://ryanstutorials.net/bash-scripting-tutorial/)
-   
-- xsoup: [https://github.com/code4craft/xsoup](https://github.com/code4craft/xsoup)
-
-- pup: [https://github.com/ericchiang/pup](https://github.com/ericchiang/pup)
-   
-- BeautifulSoup: [https://www.crummy.com/software/BeautifulSoup/](https://www.crummy.com/software/BeautifulSoup/)
-   
-- Nokogiri: [https://nokogiri.org/](https://nokogiri.org/)
-
----
+## See Also (関連情報)
+- コマンドラインHTMLパーサーの詳細：[XMLStarlet](http://xmlstar.sourceforge.net/)
+- コマンドラインでのHTMLパーサー、pup: [pup](https://github.com/EricChiang/pup)
+- `BeautifulSoup`ドキュメント：[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- `Nokogiri`について：[Nokogiri](https://nokogiri.org/)

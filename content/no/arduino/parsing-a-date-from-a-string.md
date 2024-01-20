@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:34:26.490172-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,47 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Parsing av en dato fra en streng innebærer å konvertere tekst til et datoformat programmet kan forstå og bruke. Vi gjør det for å enkelt håndtere datofunksjoner som lagring, sammenligning og beregninger.
 
-Å tolke en dato fra en streng betyr å omdanne den lesbare tekstformen til en datoverdi for datohåndtering. Programmerere gjør dette for å utføre tidsspesifikke operasjoner, som å beregne tiden mellom datoer eller håndtere datoformat på tvers av forskjellige tidssoner.
-
-## Hvordan Gjøre:
-
-Her er en grunnleggende Arduino-kode for datoparsing fra en streng.
-
+## Hvordan:
 ```Arduino
-#include <TimeLib.h> //Dette biblioteket åpner for tid og dato funksjoner.
-  
-String datoStreng = "26/11/2020"; //Definerer dato som en streng.
-  
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
+
 void setup() {
-  
-  Serial.begin(9600); //Start seriell kommunikasjon med en baudrate på 9600.
-  
-  int dag = datoStreng.substring(0,2).toInt(); //Hent dag.
-  int mnd = datoStreng.substring(3,5).toInt(); //Hent måned.
-  int år = datoStreng.substring(6,10).toInt(); //Hent år.
-  
-  setTime(0, 0, 0, dag, mnd, år); //Sett tiden ved hjelp av den tolkede datoen. 
-  Serial.println(day());  //Skriv ut dagen.
-  Serial.println(month()); //Skriv ut måneden.
-  Serial.println(year()); //Skriv ut året.
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Kunne ikke finne RTC");
+    while (1);
+  }
 }
-  
+
 void loop() {
-  
-  //La denne plassen være fri.
+  DateTime now = rtc.now();
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+
+  delay(1000);
 }
 ```
-## Dyp Dykk:
+**Eksempelutskrift:**
+```
+2023/03/01
+2023/03/02
+2023/03/03
+```
 
-Å tolke datoer fra strenger har blitt brukt siden tidlige programmeringsspråk som COBOL og Fortran. Det krever ikke bare å omdanne representasjonen, men også å håndtere skuddår og forskjellige kalenderformater.
+## Dypdykk
+Historisk har datoparsing vært utfordrende på grunn av ulike formater og tidssoner. Alternativer til RTC-biblioteket inkluderer Time.h eller innebygde funksjoner som `strptime()`. Viktige implementeringsdetaljer innebærer å ta hensyn til skuddår og lokal tidssonejustering.
 
-En alternativ måte er å bruke funksjonen `strptime()` som er tilgjengelig i noen C/C++ bibliotek. Men det er ikke alltid tilgjengelig på Arduino plattformen. Dessuten, for svært begrensete systemer som Arduino, kan manuell parsing være mer ressurseffektiv.
-
-Implementeringsdetaljer kan variere basert på strengformatet. Typiske datoformater inkluderer "MM/DD/ÅÅÅÅ", "DD-MM-ÅÅÅÅ" eller "ÅÅÅÅ/MM/DD". Din kode må kunne håndtere det formatet du forventer.
-
-## Se Også:
-
-1. [Time Arduino Library](https://www.arduino.cc/reference/en/libraries/time/) - Bibliotek for tid- og datohåndtering.
-2. [Arduino String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - For mer informasjon om strengobjekter i Arduino. 
-3. [Arduino Reference](https://www.arduino.cc/reference/en/) - Den offisielle referansemanualen, med detaljer om innebygde funksjoner.
+## Se Også
+- Arduino Time Library: http://playground.arduino.cc/Code/Time
+- RTClib GitHub Repository: https://github.com/adafruit/RTClib
+- Arduino støttedokumentasjon for `strptime()`: https://www.arduino.cc/reference/en/

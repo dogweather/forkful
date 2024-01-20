@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:31:47.530728-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,53 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML i Elm: En Introduksjon
-
 ## Hva & Hvorfor?
+Parsing av HTML betyr å gjøre om HTML-kode til noe et program kan forstå og bruke. Programmerere gjør dette for å manipulere, hente ut data eller generere dynamisk innhold.
 
-Parsing av HTML handler om å forvandle brutt kode til noe som kan forstås og manipuleres av et dataprogram. Programmerere gjør dette for å hente data, manipulere websider, automatisere handlinger osv.
-
-## Hvordan:
-
-La oss dykke rett i. Her er en enkel eksempel på hvordan du kan parse HTML i Elm.
+## Slik gjør du:
+I Elm bruker du vanligvis `elm/html` biblioteket for å jobbe med HTML. La oss kjøre gjennom et enkelt eksempel der vi parser en statisk HTML-streng.
 
 ```Elm
-import Html exposing (Html)
-import Html.Parser exposing (..)
-import Html.Parser.Util exposing (..)
+import Html exposing (text)
+import Html.Parser exposing (run)
+import Html.Parser.Html5 exposing (textNode)
+
+parseHtml : String -> String
+parseHtml html =
+    case run textNode html of
+        Ok model ->
+            "Parsingen var vellykket!"
+
+        Err error ->
+            "Det oppsto en feil under parsing: " ++ toString error
 
 main =
-    let
-        html = 
-            """
-            <html>
-                <head>
-                <title>Test</title>
-                </head>
-                <body>
-                <h1>Hello, world!</h1>
-                </body>
-            </html>
-            """
-        parser = tag "h1" (text)
-        result = run(parser, parse(html))
-    in 
-        Html.text <| case result of 
-            Ok val -> val
-            Err err -> toString err
+    text (parseHtml "<p>Hei, Elm!</p>")
 ```
 
-Kjør koden ovenfor og Elm vil skrive ut "Hello, world!"
+Dette vil gi output:
+```
+"Parsingen var vellykket!"
+```
 
-## Dypdykk
+## Dykk dypere
+Parsing av HTML i Elm har sin røtter i funksjonell programmering. Elm ble designet for å sikre robuste webapplikasjoner og parsing sikrer at HTML-strukturen er korrekt før bruk. Alternativer til Elm inkluderer JavaScript-biblioteker som `cheerio` eller `jsdom`. Når det gjelder implementasjon, er det lurt å forstå Elm’s Virtual DOM og hvordan den bygger og oppdaterer nettleserens DOM. Det sikrer effektiv manipulasjon av HTML-elementer skapt eller endret via Elm.
 
-Elm er relativt nytt sammenlignet med andre språk som JavaScript, så støtte for HTML-parsing har måttet utvikle seg. Det er imidlertid fortsatt et noenlunde simpelt virkemiddel sammenlignet med noen andre språk. Andre alternativer for scraping av nettsider inkluderer språk som Python og JavaScript, men Elm tilbyr en mer sikker og pålitelig måte å gjøre det på.
-
-Når du parser HTML i Elm, bruker du faktisk en funksjonell tilnærming til problemet. Du bygger opp parsefunksjoner som leser bestemte biter av HTML-kode og returnerer en verdi de representerer.
-
-## Se Også
-
-Her er noen nyttige lenker til relaterte ressurser:
-
-- [Elm HTML Parser Docs](https://package.elm-lang.org/packages/elm-lang/html/latest/Html-Parser) - Den offisielle dokumentasjonen er alltid et bra sted å starte.
-- [HTML Parsing in Elm](https://www.youtube.com/watch?v=Nf6a8ub9smM) - Om du foretrekker videoformat, presenterer denne YouTube-videoen parsing i Elm på en klar og forståelig måte.
+## Se også
+- [Elm HTML package documentation](https://package.elm-lang.org/packages/elm/html/latest/)
+- [Elm Parser documentation](https://package.elm-lang.org/packages/elm/parser/latest/)

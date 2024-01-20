@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:36:32.425244-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,25 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché? 
-L'analisi di una data da una stringa consiste nel trasformare una data rappresentata come una serie di caratteri in un valore di tipo data che può essere utilizzato in un programma. I programmatori lo fanno perché consente all'applicazione di interagire con le date in un modo più funzionale, come il confronto di date o il calcolo di intervalli di tempo.
+## What & Why?
+Analizzare una data da una stringa significa convertire testo in un formato data riconoscibile dal programma. Questo processo è essenziale per leggere e manipolare date inserite dall'utente o estratte da documenti e database.
 
-## Come si fa:
-In Haskell, possiamo utilizzare la libreria `Data.Time` per analizzare una data da una stringa. Ecco un esempio semplice:
+## How to:
+Utilizziamo la libreria `time` per parse le date. Ecco un esempio:
 
-```Haskell
-import Data.Time
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import Data.Time.Calendar
 
+parseDate :: String -> Maybe Day
+parseDate str = parseTimeM True defaultTimeLocale "%Y-%m-%d" str
+
+-- Uso
 main :: IO ()
-main = do
-    let dataStr = "2021-01-01"
-    let dataVal = parseTimeM True defaultTimeLocale "%Y-%m-%d" dataStr :: Maybe Day
-    print dataVal
+main = case parseDate "2023-03-25" of
+  Just day -> putStrLn $ "Data analizzata: " ++ show day
+  Nothing -> putStrLn "Formato data non valido."
 ```
 
-## Approfondimento
-Nel contesto storico, l'elaborazione di stringhe di data è un problema antico nel campo della programmazione. Le librerie evolute come `Data.Time` in Haskell rendono il compito relativamente semplice oggi, ma la questione della gestione dei diversi formati di data, dei fusi orari e dell'ora legale rimane una sfida. Ci sono molte alternative per affrontare il problema, inclusa la scrittura di funzioni personalizzate per gestire specifici formati di data. Usando `defaultTimeLocale`, `Data.Time` può gestire comodamente molti formati comuni, ma può essere personalizzato per gestire formati di data insoliti. 
+Output:
 
-## Vedi Anche
+```
+Data analizzata: 2023-03-25
+```
 
-- Documentazione ufficiale Haskell su [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+## Deep Dive
+La gestione delle date in Haskell ha le sue radici nel modulo `Data.Time`, che fornisce funzionalità per lavorare con tempo e date. 
+
+Altre librerie, come `time-parsers`, offrono funzioni di parsing più avanzate. 
+
+Dal punto di vista implementativo, parsing significa interpretare una stringa seguendo un formato specifico, come `"%Y-%m-%d"` che sta per anno-mese-giorno, e convertirla in un tipo `Day`.
+
+## See Also
+- Documentazione `time`: http://hackage.haskell.org/package/time
+- Tutorial su date e tempo in Haskell: https://www.haskell.org/tutorial/dates.html
+- Pacchetto `time-parsers` su Hackage: http://hackage.haskell.org/package/time-parsers

@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:33:11.216226-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Python"
@@ -10,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+HTML-Parsing ist das Umwandeln von HTML-Dokumenten in eine Struktur, die von Software verarbeitet werden kann. Programmierer machen das, um Inhalte von Webseiten automatisch zu extrahieren und zu manipulieren.
 
-HTML zu parsen heißt, man durchsucht und analysiert ein HTML-Dokument, um es effektiv nutzbar zu machen. Programmierer tun dies, um bestimmte Informationen aus Webseiten zu extrahieren oder um Web-Scraping zu betreiben.
-
-# So geht's:
-
-Um mit Python HTML zu parsen, verwenden wir die Bibliothek BeautifulSoup. Hier ist der grundlegende Ablauf:
+## How to:
+Zum Parsen von HTML in Python verwenden wir BeautifulSoup. Es ist einfach und effektiv. Hier ein Beispiel:
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-url = "http://www.irgendeinewebsite.de"
-antwort = requests.get(url)
-soup = BeautifulSoup(antwort.text, "html.parser")
+url = 'https://example.com'
+response = requests.get(url)
+html_content = response.text
 
-überschriften = soup.find_all("h1")    # Findet alle Überschriften
-for überschrift in überschriften:
-    print(überschrift.text.strip())   # Zeigt den Text ohne zusätzlichen Leerraum
-```
-Bearkeitungsergebnis könnte so aussehen:
-
-```Python
-"Erste Überschrift"
-"Zweite Überschrift"
+soup = BeautifulSoup(html_content, 'html.parser')
+title = soup.find('title').get_text()
+print(title)
 ```
 
-# Tiefgreifende Informationen:
+Wenn `https://example.com` einen Titel-Tag mit "Beispiel-Seite" hat, wird die Ausgabe:
 
-Geschichtlich gesehen wurde HTML-Parsing entwickelt, um die strukturierten Daten, die in HTML-Dokumenten verborgen sind, lesbar und nutzbar zu machen.
+```
+Beispiel-Seite
+```
 
-Alternativ zum Parsen von HTML könnten wir beispielsweise screen scraping verwenden. Dennoch ist HTML-Parsing genauer und effizienter, da es auf die HTML-Struktur selbst ausgerichtet ist.
+## Deep Dive
+Historisch gesehen, wurde HTML-Parsing mit regulären Ausdrücken oder komplexen String-Operationen gemacht. Aber das ist fehleranfällig und ineffizient. BeautifulSoup hingegen nutzt einen Parser, der die Struktur von HTML versteht. Dies vereinfacht das Extrahieren von Informationen erheblich.
 
-Die Implementierungsdetails von BeautifulSoup basieren auf dem Durchlaufen des HTML-Baums: Jedes Element des Dokuments wird zu einem Python-Objekt, das dann verarbeitet werden kann.
+Als Alternative zu BeautifulSoup gibt es auch noch `lxml` oder `html.parser` in Python, aber BeautifulSoup bietet eine benutzerfreundlichere API. 
 
-# Siehe auch:
+Implementierungsdetails: BeautifulSoup wandelt HTML in ein Baumdiagramm von Objekten um. Dadurch wird es einfacher, Elemente zu finden und zu bearbeiten. Man kann nach Tags, Klassen, IDs und mehr suchen.
 
-Für weiterführende Informationen über BeautifulSoup und HTML-Parsing in Python, könnten die folgenden Quellen hilfreich sein:
-
-- BeautifulSoup Dokumentation: https://beautiful-soup-4.readthedocs.io/en/latest/
-- Python Requests Bibliothek: https://docs.python-requests.org/en/latest/
-- Mehr über Web scraping: https://realpython.com/beautiful-soup-web-scraper-python/
+## See Also
+- BeautifulSoup Dokumentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- `requests` Bibliothek: https://docs.python-requests.org/
+- Einführung zu HTML und CSS: https://developer.mozilla.org/de/docs/Learn/Getting_started_with_the_web/HTML_basics

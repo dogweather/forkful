@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:34:13.526523-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,45 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing Date from a String with Arduino: A concise guide
-
 ## What & Why?
 
-Parsing a date from a string involves extracting usable date information from a given text. Programmers do it to convert and manipulate date data when handling various user inputs and interactions.
+Parsing a date from a string means extracting the date information like day, month, and year, and converting it into a format a computer can understand. Programmers do this because the date and time data is often needed in a structured form to perform operations like comparisons, calculations, or storing in a database.
 
 ## How to:
 
-Ready to parse some dates? Here's a practical example using Arduino's built-in functions.
+Let's turn a string into a date:
 
 ```Arduino
-String dateStr = "2022-07-01"; // this is your date string.  
+#include <Wire.h>
+#include <RTClib.h>
 
-int Year = dateStr.substring(0, 4).toInt(); 
-int Month = dateStr.substring(5, 7).toInt(); 
-int Day = dateStr.substring(8, 10).toInt(); 
+RTC_DS1307 rtc;
 
-Serial.println(Year); // 2022
-Serial.println(Month); // 07  
-Serial.println(Day); // 01  
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+  
+  // Let's assume the date string is in the format "DD/MM/YYYY"
+  String dateString = "24/12/2023"; 
+  
+  int day = dateString.substring(0, 2).toInt();
+  int month = dateString.substring(3, 5).toInt();
+  int year = dateString.substring(6).toInt();
+  
+  rtc.adjust(DateTime(year, month, day));
+  
+  Serial.print("Date set to: ");
+  Serial.print(day);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(year);
+}
+
+void loop() {
+  // Doing nothing here
+}
 ```
 
-This code snippet gets the year, month, and day from a string in the "YYYY-MM-DD" format and converts them into integer values.
+Sample output:
+```
+Date set to: 24/12/2023
+```
 
 ## Deep Dive
 
-Parsing dates from strings isn't a new trick. Dating back to the early days of computing, it's been a necessity for dealing with time-related data. Yet, the problem of interpreting dates correctly remains. This little issue is related to the different date formats used worldwide.
+Parsing dates has been a common task since the early days of programming. Historically, handling dates was platform-specific and error-prone. The Arduino, with its many libraries like RTClib, simplifies this process considerably.
 
-As an alternative to our example, the Arduino Time Library offers built-in functions for time manipulation, including parsing strings. But be aware: it requires more memory which could be a constraint on Arduino devices with limited resources. 
-
-When using the `substring()` function, remember it doesn't check if the data makes sense as a date. For instance, it wouldn't bat an eyelid at "9999-99-99". So, you might want to include additional error-checking code to handle such scenarios.
+Alternatives to RTClib for date parsing include using built-in functions or writing custom code to validate and convert date strings. Implementation details such as checking for leap years or dealing with different date formats can make parsing complex. Ensuring input strings are in expected formats and error-checking the parsed values are crucial to avoid glitches.
 
 ## See Also
 
-Want to know more about how string manipulation works in Arduino? Dive into the Official Arduino Reference for String:
-[String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject)
-
-For a more detailed approach to time manipulation using Arduino, there's the Official Arduino Time Library Documentation:
-[Time Library](https://www.arduino.cc/reference/en/libraries/time)
-
-Ready to explore more about error checking and validations? This community post provides detailed explanations:
-[Arduino Community: Error Checking](https://forum.arduino.cc/index.php?topic=396450.0)
+- RTClib on GitHub: https://github.com/adafruit/RTClib
+- Arduino Time Library: https://www.arduino.cc/reference/en/libraries/time/
+- Arduino DateTime Class reference: https://github.com/adafruit/RTClib/blob/master/DateTime.h

@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:33:12.341706-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "PowerShell"
@@ -10,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mitä & Miksi?)
+HTML:n jäsentäminen on prosessi, jossa HTML-sisällöstä poimitaan tietoja. Koodaajat tekevät tämän datan hyödyntämiseen, esimerkiksi verkkosivujen sisällön kaapaukseen tai automatisoituun testaukseen.
 
-HTML:n jäsentäminen on prosessi, jossa otetaan syöttönä HTML-dokumentti ja muutetaan se metatietorakenteeksi. Ohjelmoijat käyttävät tätä prosessia yleisimmin datan louhintaan verkkosivuilta.
-
-## Näin se tapahtuu:
-
-PowerShell käyttää Invoke-WebRequest -komentoa HTML:n jäsentämiseen. Esimerkiksi seuraava koodinpätkä hakee sivun sisällön ja tulostaa sivun otsikon.
-
+## How to: (Miten tehdä:)
 ```PowerShell
-$webRequest = Invoke-WebRequest -Uri 'https://example.com'
-$webRequest.ParsedHtml.title
+# Asenna ensin tarvittava HtmlAgilityPack-moduuli
+Install-Package HtmlAgilityPack
+
+# Lataa HTML-sivun sisältö
+$html = Invoke-WebRequest -Uri 'http://example.com'
+
+# Lataa HtmlAgilityPack
+Add-Type -Path 'path\to\HtmlAgilityPack.dll'
+
+# Luo HTML-dokumentin ja jäsentää sen
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+$doc.LoadHtml($html.Content)
+
+# Hae tiettyjä elementtejä XPathilla
+$nodes = $doc.DocumentNode.SelectNodes('//h1')
+foreach($node in $nodes){
+    Write-Output $node.InnerText
+}
+```
+Esimerkkitulostus:
+```
+Tervetuloa esimerkkisivulle
 ```
 
-Ajon jälkeen tulosteessa näkyisi esimerkiksi sivun otsikko, kuten "Example Domain".
+## Deep Dive (Syväsukellus):
+HTML:n jäsentäminen on ollut tarpeen siitä asti, kun verkkosivuja alettiin laajemmin hyödyntää dataa varten. Vaihtoehtoiset työkalut kuten JavaScriptin `DOMParser` tai Pythonin `BeautifulSoup` tarjoavat samankaltaista toiminnallisuutta. PowerShellin etu on sen vahva integroituvuus Windows-ympäristössä. HtmlAgilityPack on suosittu .NET-kirjasto HTML-dokumenttien käsittelyyn, ja sen avulla voidaan käyttää XPath-kyselyä sopivien elementtien löytämiseen ja niiden sisällön käsittelyyn. Tämä tekee jäsentämisprosessista joustavan ja voimakkaan.
 
-## Syvennys:
-
-HTML:n jäsentämisen historiallinen yhteys: HTML on luotu merkitsemään dokumentin rakenteita, ei datarakenneita. Siksi sen jäsentäminen ohjelmoitavaan muotoon on ollut aina haaste.
-
-Vaihtoehtoja: On muita kieliä, kuten JavaScript ja Python, jotka voivat tehdä saman.
-
-Toteutustiedot: Invoke-WebRequest -komento palauttaa ParsedHtml ominaisuuden, joka on Internet Explorerin (IE) Document Object Modelin (DOM) ilmentymä ja se vaatii IE:n olevan asennettuna koneellesi. IE:n DOM on valmis esineiden hierarkia, joka tekee työstä miellyttävää.
-
-## Lisää tietoa löydät:
-
-- Microsoftin Invoke-WebRequest -komentodokumentaatio: [Link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-- DuckDuckGo -haku PowerShell HTML Parsing: [Link](https://duckduckgo.com/?q=powershell+html+parsing&ia=web)
-- StackOverflow keskusteluja PowerShell HTML Parsing: [Link](https://stackoverflow.com/search?q=powershell+html+parsing)
+## See Also (Katso Myös):
+- [HtmlAgilityPack-kotisivu](https://html-agility-pack.net/)
+- [PowerShell Gallery](https://www.powershellgallery.com/)
+- [XPath-tutorial](https://www.w3schools.com/xml/xpath_intro.asp)

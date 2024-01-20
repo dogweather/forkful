@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:36:51.341190-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tietojen hahmontaminen (eli parsiminen) tekstistä on prosessi, jossa jäsennellään erityisessä formaatissa oleva tekstiä ja muunnetaan se sopivaan esitysmuotoon, kuten Java-päivämääräksi. Tätä käytetään usein, kun käsitellään ulkoista dataa, esimerkiksi API-tiedusteluja tai tiedostojen lukemista.
+## What & Why? (Mitä & Miksi?)
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa sen muuttamista ohjelmoinnissa käsiteltävään muotoon. Tämä on hyödyllistä, sillä se mahdollistaa päivämäärän vertaamisen, laskennan ja muotoilun ohjelmissa.
 
-## Näin tehdään:
-Aloitetaan perus esimerkillä kuinka parsiaan päivämäärä String-tyyppiseltä arvolta:
-
-```Java
+## How to: (Kuinka tehdään:)
+```java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
-public class Main {
+public class DateParser {
     public static void main(String[] args) {
-        String pvmTeksti = "2022-02-01";
-        DateTimeFormatter muodonMuunnin = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-       
-        LocalDate parsedPvm = LocalDate.parse(pvmTeksti, muodonMuunnin);
-        System.out.println("Parsed päivämäärä: " + parsedPvm);
+        String dateString = "2023-04-05";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        try {
+            LocalDate date = LocalDate.parse(dateString, formatter);
+            System.out.println("Parsed date is: " + date);
+        } catch (DateTimeParseException e) {
+            System.out.println("Error parsing date: " + e.getMessage());
+        }
     }
 }
 ```
+Tulostus: `Parsed date is: 2023-04-05`
 
-Tämän ohjelman suoritus tuottaa tulosteen: `Parsed päivämäärä: 2022-02-01`.
+## Deep Dive (Syväsukellus)
+Aikaisemmin Java-ohjelmoijat käyttivät `SimpleDateFormat`-luokkaa päivämäärän jäsentämiseen, mutta se oli ongelmallinen monisäikeisissä ympäristöissä. Java 8 toi `DateTimeFormatter`:n, mikä on turvallisempi ja tehokkaampi. Vaihtoehtoja on muitakin, kuten Joda-Time-kirjasto, mutta se on nyt suurelta osin korvattu `java.time`-paketin myötä. Jäsentäessä tärkeää on määritellä oikea formaatti, jotta muunnos merkkijonosta päivämäärä-olioksi onnistuu.
 
-## Syvällinen tarkastelu
-Historiallisesti päivämäärä-parsing oli suoritettu `SimpleDateFormat` luokalla, mutta se on ollut heikoilla kohdallaan syyt johtuen turvallisuusongelmista ja suorituskyvystä. Nykyaikaisempi tapa on käyttää `java.time` kirjastoa, jota on käytetty tässä esimerkissä.
-
-On olemassa myös muita vaihtoehtoja, kuten Joda-Time kirjasto, mutta `java.time` on nyt suositumpaa koska se on osa standardia Java-kirjastoa.
-
-Java-päivämäärän hahmontaminen vaatii jäsennyskuvion. Yleisimmät kuviot ovat `yyyy-MM-dd` päivämäärille ja `HH:mm:ss` ajoille. On tärkeää muistaa, että kuukauden ja minuutin kuvioiksi käytetään suurta M-kirjainta ja pientä m-kirjainta.
-
-## Katso myös
-Ohjelmistoja ja esimerkkejä, jotka saattavat auttaa sinua ymmärtämään tätä paremmin:
-- [Joda-Time - Java date and time API](https://www.joda.org/joda-time/)
-- [Java DateTimeFormatter luokka](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Miksi SimpleDateFormat ei ole thread-safe](https://stackoverflow.com/questions/6840803/why-is-javas-simpledateformat-not-thread-safe)
+## See Also (Katso Myös)
+- [DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Java 8 Date and Time guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+- [Joda-Time library](https://www.joda.org/joda-time/)

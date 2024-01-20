@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:34:03.721547-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Swift"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artikel: HTML in Swift parsen
-
 ## Was & Warum?
+Das Parsen von HTML bedeutet, den Inhalt und die Struktur von HTML-Code zu analysieren und zu verstehen. Programmierer machen das, um Daten aus Webseiten zu extrahieren oder deren Inhalt programmgesteuert zu verarbeiten.
 
-HTML-Parsing bedeutet, den Quellcode einer Webseite zu analysieren und zu verarbeiten. Dies ermöglicht uns, bestimmte Daten aus dem HTML-Dokument zu extrahieren, wie z.B. Text, Links oder Bilder.
-
-## So geht's:
-
-Mit Swift 5.5 können wir die `SwiftSoup` Bibliothek zur HTML-Analyse verwenden. Hier ist ein einfaches Beispiel:
+## Vorgehensweise:
+In Swift nutzen wir Libraries wie `SwiftSoup` für das Parsen von HTML. Hier ein kurzes Beispiel:
 
 ```Swift
 import SwiftSoup
 
-let html = "<html><body><p>Hallo Welt!</p></body></html>"
+let html = "<html><head><title>Willkommen</title></head><body><p>Hallo Welt!</p></body></html>"
 do {
-    let doc: Document = try SwiftSoup.parse(html)
-    let text: String = try doc.body()!.text()
-    print(text)
-    // Ausgabe: Hallo Welt!
+    let doc = try SwiftSoup.parse(html)
+    let bodyText = try doc.body()?.text()
+    print(bodyText ?? "Kein Text gefunden.")
 } catch Exception.Error(let type, let message) {
-    print(message)
+    print("Fehler \(type): \(message)")
 } catch {
-    print("catch error")
+    print("Ein unbekannter Fehler ist aufgetreten.")
 }
 ```
-In diesem Code-Parsing-HTML-String erstellen wir ein `Document` Objekt und extrahieren dann den Text aus dem HTML-Code.
 
-## Tiefere Einblicke
+Ausgabe:
+```
+Hallo Welt!
+```
 
-Früher war HTML-Parsing eine aufwendige und fehleranfällige Aufgabe. Mit modernen Bibliotheken wie `SwiftSoup` ist es jetzt viel einfacher und sicherer. Alternativen zu `SwiftSoup` sind das `WKWebKit` Framework und `XMLParser` von Apple.
+## Vertiefung:
+HTML-Parsing hat seine Wurzeln in der Notwendigkeit, Informationen aus dem Web zu extrahieren, die nicht direkt über APIs verfügbar sind. Im Laufe der Zeit entstanden verschiedene Libraries und Tools für verschiedene Programmiersprachen. Vor `SwiftSoup` gab es in der Swift-Welt nicht viele Optionen – Entwickler griffen oft auf Objective-C Libraries zurück oder nutzten `NSRegularExpression` für einfaches Parsing. `SwiftSoup` ist inspiriert von `JSoup`, einer populären Java-Library, und bietet eine komfortable und sichere Art, HTML in Swift zu handeln. Alternativ könnten Entwickler auch auf WebKit's `DOM` Parsing zurückgreifen, aber dies ist meist aufwendiger und weniger flexibel.
 
-Beim Parsen von HTML geht es nicht nur um das Extrahieren von Daten. Es kann auch zum Manipulieren oder Bereinigen von HTML-Dokumenten verwendet werden.
-
-## Siehe auch
-
-Zur Weiterbildung schlage ich die folgenden Ressourcen vor:
-
-- Offizielle Dokumentation zu `SwiftSoup` auf GitHub: [SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- Swift-Protokolldokumentation zu `XMLParser`: [XMLParser](https://developer.apple.com/documentation/foundation/xmlparser)
-- Programmierleitfaden zu `WKWebKit` von Apple: [WKWebKit](https://developer.apple.com/documentation/webkit/wkwebview)
-
-Für weitere Informationen und Tutorials empfehle ich auch, die [Stack Overflow](https://stackoverflow.com/questions/tagged/swift) Fragen zu `Swift` zu durchsuchen.
+## Siehe auch:
+- SwiftSoup GitHub: https://github.com/scinfu/SwiftSoup
+- JSoup: https://jsoup.org – wenn du mehr über das Original erfahren möchtest
+- Swift Dokumentation zu `NSRegularExpression`: https://developer.apple.com/documentation/foundation/nsregularexpression – falls du den klassischen Weg gehen möchtest

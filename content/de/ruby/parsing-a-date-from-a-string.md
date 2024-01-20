@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:38:06.043009-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,31 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Datum-Parsing verwandelt Text in ein Datum-Objekt. Das wird gemacht, um Datumsangaben zu vergleichen, zu speichern oder zu manipulieren.
 
-Das Parsen eines Datums aus einem String in Ruby bedeutet, diesen String in ein Datum-Objekt umzuwandeln. Programmierer tun dies, um mit den Daten in Formaten zu arbeiten, die mit Datums- und Zeitoperationen kompatibel sind.
-
-## So geht's:
-
-Mit der Ruby's built-in Methode `parse` von `Date` Klasse können wir ganz einfach ein Datum aus einem String parsen:
-
+## How to:
 ```Ruby
 require 'date'
-datum_string = "2022-01-01"
-datum = Date.parse(datum_string)
-puts datum
+
+# Beispiel: Datum aus einem String parsen
+datum_string = '2023-04-05'
+datum_objekt = Date.parse(datum_string)
+puts datum_objekt.strftime('%d.%m.%Y') # Gibt aus: "05.04.2023"
+
+# Falls das Format bekannt ist:
+datum_objekt = Date.strptime(datum_string, '%Y-%m-%d')
+puts datum_objekt.strftime('%d.%m.%Y') # Gibt aus: "05.04.2023"
 ```
-Die Ausgabe wird "2022-01-01" sein.
+Sample Output:
+```
+05.04.2023
+05.04.2023
+```
 
-## Tiefer Eintauchen
+## Deep Dive:
+Datums-Parsing in Ruby verwendet die 'date' Bibliothek. Vor 'date' nutzte man andere Wege, z.B. Time.parse. Die 'date' Bibliothek ist jedoch besser, weil sie mehr Formate automatisch erkennt und einfacher ist.
 
-Parsen eines Datums hat eine lange Geschichte. Früher mussten Programmierer teils komplexe Algorithmen schreiben, um dies zu erreichen. Heute erleichtert Ruby's eingebaute ‘Date’ Klasse diesen Vorgang.
+Es gibt Alternativen wie 'chronic', die noch flexiblere Datums-Parsing-Methoden bieten. 'chronic' versteht natürlichsprachliche Datenangaben wie "nächsten Dienstag".
 
-Es gibt auch Alternativen zur Methode `parse`. Einige davon sind `strptime` oder `iso8601`. Der Unterschied liegt darin, dass `strptime` und `iso8601` ein bestimmtes Format erwarten, während `parse` verschiedene Formate behandelt.
+Bei der Umsetzung ist es wichtig zu wissen, dass `Date.parse` automatisch Formate erkennt, was zu Fehlern führen kann, wenn das Datum-Format variabel ist. `Date.strptime` vermeidet das, indem es ein festes Format verlangt.
 
-Bei der Umsetzung dieser Methode ist darauf zu achten, dass `parse` eine mögliche Ausnahme wie "ArgumentError" wirft, wenn der String nicht in ein gültiges Datum umgewandelt werden kann. Daher ist es praktisch, den Prozess in einer "begin-rescue"-Struktur zu verpacken, um solche Probleme zu behandeln.
-
-## Siehe auch:
-
-1. [Ruby's Date documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-2. [Ruby's time handling (stackoverflow)](https://stackoverflow.com/questions/3700110/how-do-i-use-date-strptime-with-a-format-from-datetime-to-time)
-3. [More on parsing dates (tutorialspoint)](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+## See Also:
+- Info über 'chronic': [chronic - GitHub](https://github.com/mojombo/chronic)

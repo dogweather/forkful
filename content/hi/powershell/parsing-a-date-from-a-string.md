@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:37:55.851272-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+तारीख को स्ट्रिंग से पार्स करने का मतलब है, टेक्स्ट फॉर्मैट में दी गई तारीख को कंप्यूटर की भाषा में तब्दील करना ताकि सिस्टम इसे समझ और प्रोसेस कर सके। प्रोग्रामर्स इसे इसलिए करते हैं ताकि तारीख से संबंधित अलग-अलग ऑपरेशन्स को आसानी से परफॉर्म किया जा सके।
 
-पार्सिंग डेट का मतलब होता है एक स्ट्रिंग को डेट टाइप में बदलना। इसका उपयोग तब होता है जब डाटा विशेषकर तारीख, स्ट्रिंग के रूप में प्राप्त होती है और हमें उसे डेट टाइप में प्रविष्ट करना चाहिए। 
-
-## कैसे करें? 
-
-तारीख को किसी स्ट्रिंग से पार्स करने के लिए, PowerShell में [DateTime]::ParseExact फ़ंक्शन का उपयोग कर सकते हैं। यहां कुछ उदाहरण दिए गए हैं। 
-
-```PowerShell  
-$dateString = '12-03-2021'
-$dateFormat = 'dd-MM-yyyy'
-$cultureInfo = [System.Globalization.CultureInfo]::InvariantCulture
-$parsedDate = [DateTime]::ParseExact($dateString, $dateFormat, $cultureInfo)
-Write-Output $parsedDate
-```
-
-आउटपुट होगा:
-
+## How to: (कैसे करें:)
 ```PowerShell
-Friday, March 12, 2021 12:00:00 AM
+# स्ट्रिंग से डेट पार्स करने का एक उदाहरण
+$dateString = "31-01-2023"
+$parsedDate = [datetime]::ParseExact($dateString, 'dd-MM-yyyy', $null)
+
+# पार्स की गई तारीख दिखाएं
+$parsedDate
+```
+सैंपल आउटपुट:
+```
+Tuesday, January 31, 2023 12:00:00 AM
 ```
 
-## गहराई से समझना 
+## Deep Dive (गहराई से जानकारी)
+पावरशेल में तारीख को पार्स करना काफ़ी आम है। `[datetime]::ParseExact` मेथड .NET फ्रेमवर्क से आता है और यह तारीख और समय को सटीक प्रारूप में पार्स करने के लिए इस्तेमाल होता है। पावरशेल 7 अपने पिछले संस्करणों के मुकाबले अधिक क्रॉस-प्लेटफ़ॉर्म और आधुनिक .NET कोर फ्रेमवर्क पर बना है।
 
-विगत वर्षों में, डेवलपर्स ने विभिन्न तारीख पार्सिंग पद्धतियों का उपयोग किया है, लेकिन PowerShell ने इसे सरल और सुगम बनाया है। वैकल्पिक रूप से हम TryParseExact फ़ंक्शन का भी उपयोग कर सकते हैं जो किसी त्रुटि की स्थिति में फ़ॉल्स लौटाता है, न कि अपवाद उत्पन्न करता है। 
+कई तरीके हैं जिनके द्वारा डेट को पार्स किया जा सकता है; `ParseExact`, `TryParse`, `TryParseExact` उदाहरण हैं। `TryParse` और `TryParseExact` इस्तेमाल करने पर अगर पार्सिंग में कोई त्रुटि आती है, तो वे फॉल्स (false) रिटर्न करते हैं और एक्सेप्शन (exception) थ्रो नहीं करते, जिससे एरर हैंडलिंग आसान हो जाती है।
 
-डेट पार्सिंग को सफल बनाने के लिए, सटीक तारीख/समय प्रारूप स्पष्ट रूप से निर्दिष्ट किया जाना चाहिए। 
+इतिहास के संदर्भ में, पावरशेल ने हमेशा .NET फ्रेमवर्क के मजबूत दिनांक और समय फ़ंक्शन्स का फायदा उठाया है। पावरशेल स्क्रिप्टिंग के दौरान डेट पार्सिंग बहुत ही स्थानिक कामों का हिस्सा है, चाहे वो फाइल्स के टाइमस्टैम्प्स वेरिफाई करना हो या लॉग्स में से डेटा एक्सट्रेक्ट करना।
 
-## और भी देखें 
-
-1. [MSDN - DateTime.ParseExact Method](https://msdn.microsoft.com/en-us/library/w2sa9yss(v=vs.110).aspx)
-2. [MSDN - DateTime.TryParseExact Method](https://msdn.microsoft.com/en-us/library/ms131044(v=vs.110).aspx)
+## See Also (और जानकारी के लिए)
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [.NET DateTime.ParseExact Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=netcore-3.1)
+- [PowerShell GitHub repository](https://github.com/PowerShell/PowerShell)

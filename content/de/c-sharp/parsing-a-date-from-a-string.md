@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:35:03.449068-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,54 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analysieren eines Datums aus einer Zeichenkette in C#
-
 ## Was & Warum?
+Das Parsen eines Datums aus einem String bedeutet, einen Text in ein `DateTime`-Objekt umzuwandeln. Wir machen das, weil Daten und Zeiten oft als Text aus Dateien, Benutzereingaben oder APIs kommen und für Datumsoperationen in einem standardisierten Format vorliegen müssen.
 
-Das Umwandeln eines Datums aus einer Zeichenkette, bekannt als Parsing, ist eine Methode, die verwendet wird, um eine Zeichenkette in ein Datumsformat umzuwandeln. Entwickler tun dies zum Beispiel, um im Text vorliegende Datumsformate korrekt zu verwenden oder umzuformatieren.
-
-## So geht's:
-
-C# bietet mit der Methode `DateTime.Parse` eine einfache und unkomplizierte Option für diese Aufgabe. Hier ist die Grundanwendung:
-
+## How to:
 ```C#
-string dateString = "15.06.2019";
-DateTime date = DateTime.Parse(dateString);
-Console.WriteLine(date);  // Gibt "15.06.2019 00:00:00" aus
-```
+using System;
+using System.Globalization;
 
-Daneben existiert noch die Methode `DateTime.TryParse`, die sicherer handhabt, falls die Formatierung des Datums nicht gültig ist:
-
-```C#
-string dateString = "nicht ein Datum";
-DateTime date;
-if (DateTime.TryParse(dateString, out date))
+class Program
 {
-    Console.WriteLine(date);
+    static void Main()
+    {
+        string dateString = "24.12.2023";
+        string format = "dd.MM.yyyy";
+        CultureInfo provider = CultureInfo.InvariantCulture;
+        
+        try
+        {
+            DateTime parsedDate = DateTime.ParseExact(dateString, format, provider);
+            Console.WriteLine(parsedDate.ToString("d")); // Gibt das Datum aus: 24.12.2023
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Ungültiges Datum.");
+        }
+    }
 }
-else
-{
-    Console.WriteLine("Ungültiges Datumsformat!");
-}  // Gibt "Ungültiges Datumsformat!" aus
 ```
 
-## Tiefer eintauchen
+## Deep Dive
+Das Parsen von Datumsangaben ist wichtig, da verschiedene Kulturen verschiedene Formate verwenden. Deshalb bietet .NET `CultureInfo`, um Missverständnisse zu vermeiden. Vor .NET gab es mehr Arbeit, da Entwickler eigene Parser schreiben mussten oder sich auf weniger flexible APIs verließen.
 
-Historisch gesehen waren bei C#'s Vorläufer Sprache C++ die Methoden fürs Parsing von Datumsformaten weit weniger benutzerfreundlich und intuitiv. 
+Alternativen zu `DateTime.ParseExact` sind `DateTime.TryParse` und `DateTime.TryParseExact`, die fehlertoleranter sind und `false` zurückgeben statt eine Ausnahme zu werfen. Für die Verarbeitung von Zeitstempeln in verschiedenen Formaten können wir `DateTimeOffset` verwenden.
 
-Bei Bedarf lässt sich auch ein individuelles Format zum Parsen angeben. Hierfür stehen die Methoden `DateTime.ParseExact` und `DateTime.TryParseExact` zur Verfügung. Mit diesen Methoden können Sie ein genaues Format für die Datumsstring angeben. 
+Details der Implementierung: `ParseExact` verlangt ein genaues Format, sonst wirft es eine `FormatException`. Die `CultureInfo.InvariantCulture` hilft dabei, kulturunabhängig zu parsen, z.B. wenn wir wissen, das Datum ist immer im gleichen Format.
 
-```C#
-string dateString = "15 Juni 2019";
-string format = "dd MMMM yyyy";
-DateTime date = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
-Console.WriteLine(date);  // Gibt "15.06.2019 00:00:00" aus
-```
-
-Alternativen zum in C# integrierten Parsing sind z.B. Drittanbieter-Bibliotheken wie NodaTime oder DateTimeOffset, je nach Anforderungen und Vorlieben.
-
-## Siehe auch
-
-- Zeichenkettendarstellung eines Datums in ein DateTime-Objekt umwandeln: https://docs.microsoft.com/de-de/dotnet/api/system.datetime.parse?view=net-5.0
-- Datum und Uhrzeit in .NET formatieren: https://docs.microsoft.com/de-de/dotnet/standard/base-types/formatting-dates-and-times
-- Verwenden von Datum und Uhrzeit in .NET: https://docs.microsoft.com/de-de/dotnet/standard/datetime/
+## Siehe Auch
+- Microsoft Dokumentation zu `DateTime`: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1
+- Über `CultureInfo`: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1
+- Zum Thema Zeitformate in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings

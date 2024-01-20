@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:37:50.121640-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,49 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+Beim Parsen eines Datums aus einem String wird Text in ein Datum-Objekt umgewandelt. Programmierer machen das, um Daten aus Textdateien, Benutzereingaben oder Datenbanken zu extrahieren und damit zu arbeiten.
 
-Ein Datum aus einem Zeichenfolge zu parsen bedeutet, die Zeichenfolge zu analysieren und das darin vorhandene Datum zu extrahieren. Dies wird oft von Programmierern benötigt, wenn sie mit Daten arbeiten, die in Textform (wie in einer CSV-Datei) vorliegen.
-
-## Wie man:
-
-Hier ist ein Codebeispiel, die die `strptime` Methode aus dem `datetime` Modul verwendet, um ein Datum aus einer Zeichenfolge zu parsen. 
+## How to (Wie man es macht):
+Um ein Datum aus einem String in Python zu parsen, nutzen wir die `datetime` Bibliothek. Sie hat die `strptime`-Methode, die Strings in Datumsobjekte umwandelt. Hier ist ein einfaches Beispiel:
 
 ```Python
 from datetime import datetime
 
-date_string = "12/03/2021"
-date_object = datetime.strptime(date_string, "%d/%m/%Y")
+datum_string = "2023-04-12"
+datum_objekt = datetime.strptime(datum_string, "%Y-%m-%d")
 
-print(date_object)
+print(datum_objekt)  # Ausgabe: 2023-04-12 00:00:00
 ```
 
-Ausgabe: 
+Das Format `%Y-%m-%d` steht für Jahr-Monat-Tag und muss dem Format des Eingabestrings entsprechen.
+
+## Deep Dive (Tiefergehende Betrachtung):
+Das Parsen von Daten aus Strings ist eine alte Praxis, die auf die Anfänge der Programmierung zurückgeht, als Daten noch als Text übertragen wurden. Python's `datetime.strptime` ist ein starkes Werkzeug, erlaubt aber keine Fehler im Datumsformat. Bist du nicht sicher über das Format, musst du entweder sämtliche Möglichkeiten vorsehen oder Bibliotheken wie `dateutil.parser` nutzen, die flexiblere Parsing-Optionen bieten.
+
+Python's Standardmethode des Datumparsens über `strptime` ist effizient, aber manchmal braucht es einen erleichterten Umgang mit Formaten, Zeitzonen oder Lokalitäten. `dateutil.parser` kann zum Beispiel besser mit unterschiedlichen Sprachen und Datumsformaten umgehen und erkennt oft das richtige Format automatisch.
 
 ```Python
-2021-03-12 00:00:00
+from dateutil import parser
+
+datum_string = "12. April 2023"
+datum_objekt = parser.parse(datum_string)
+
+print(datum_objekt)  # Ausgabe: 2023-04-12 00:00:00
 ```
 
-## Tiefgreifender Einblick 
+Das Ausgabedatum ist dabei das gleiche Objekt wie zuvor, aber der Input konnte freier in natürlicher Sprache angegeben werden.
 
-Die Methode `strptime` der `datetime`-Klasse ist die übliche Methode für das Parsen von Daten. Es wurde in früheren Versionen von Python eingeführt und ist seitdem die Standardlösung für diese Aufgabe.
-
-Eine Alternative zu `strptime` wäre die Verwendung der `dateutil.parser.parse` Funktion, die in der Lage ist, die meisten datumsähnlichen Strings automatisch zu parsen und dabei auf eine vordefinierte Formatangabe zu verzichten.
-
-```Python
-from dateutil.parser import parse
-
-date_string = "12/03/2021"
-date_object = parse(date_string, dayfirst=True)
-
-print(date_object)
-```
-
-Hinsichtlich des Implementierungsdetails des Datums-Parsing haben Python-Entwickler versucht, den Prozess so effizient wie möglich zu gestalten. Dennoch kann der Vorgang bei großen Mengen von Daten zeitintensiv sein.
-
-## Siehe auch
-
-Für weitere Informationen und Dokumentationen über das Parsen von Daten aus Zeichenfolgen in Python können Sie die offizielle Python-Dokumentation besuchen: 
-
-- [Python datetime Modul](https://docs.python.org/3/library/datetime.html)
-- [Python dateutil Modul](https://dateutil.readthedocs.io/en/stable/parser.html)
+## See Also (Siehe auch):
+- Python's `datetime` Dokumentation: https://docs.python.org/3/library/datetime.html
+- `dateutil.parser` Dokumentation: https://dateutil.readthedocs.io/en/stable/parser.html
+- ISO 8601 Datum und Zeit Standards: https://www.iso.org/iso-8601-date-and-time-format.html

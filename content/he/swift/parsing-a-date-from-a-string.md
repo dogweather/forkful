@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:38:48.510156-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,30 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? - What & Why?
-פרסומת של תאריך ממחרוזת הוא מרכז פעולה בה משנים מחרוזת שמכילה תאריך ושעה למופע של `Date`. מתכנתים עושים את זה כדי לטפל במתנהג באופן קריא וחביב יותר עם נתוני תאריך ושעה.
+## מה ולמה?
+לנתח תאריך ממחרוזת זה להמיר מהות טקסט (מחרוזת) לפורמט התאריך הגיוני שהמחשב יכול להבין ולעבוד איתו. תכנתים עושים זאת כי רוצים להשוות תאריכים, לחשב הפרשים ביניהם, או לפורמטם להצגה.
 
-## איך לעשות - How to:
-בדוגמאות הקוד הבאות, אנו משתמשים ב- `DateFormatter` לפרסום תאריך ממחרוזת.
+## איך לעשות:
+ב-Swift, נייצר אובייקט `DateFormatter` ונגדיר את פורמט התאריך. לדוגמא:
 
 ```Swift
 import Foundation
 
+let dateString = "23-02-2023 17:45"
+
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let aDate = dateFormatter.date(from: "2022-09-15")
+dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+dateFormatter.locale = Locale(identifier: "he_IL") // לקוח בחשבון שמירה על פורמט התאריך עברי
 
-print(aDate)
+if let date = dateFormatter.date(from: dateString) {
+    print("התאריך: \(date)")
+} else {
+    print("לא הצלחנו לנתח את המחרוזת לתאריך.")
+}
+
+// Output:
+// התאריך: 2023-02-23 15:45:00 +0000
 ```
+## טבילה עמוקה:
+לנתח תאריכים זה אתגר ישן כמו התכנות עצמו. לפני ש-Swift הכיר ב-`DateFormatter`, היו נפוצים גישות רודניות יותר, כמו ניתוח ידני של מחרוזות. כיום, יש גם אלטרנטיבות כמו הספרייה `SwiftDate` שמקלה על הניתוח ומציעה פונקציונליות נוספת. עם זאת, הבנה של `DateFormatter` חשובה עדין כי היא מספקת גמישות ודיוק. שימו לב לזמן המקומי ולמיקום, `locale`, שיכולים לשפיע על הנתוח.
 
-הפלט יהיה:
-
-```Swift
-Optional(2022-09-15 00:00:00 +0000)
-```
-
-## צלילה עמוקה - Deep Dive
-פונקציה של פרסום של תאריך ממחרוזת נמשך כבר הרבה שנים, והיא משפרת את מדדי המידע. אם אתה מחפש אלטרנטיבות, בוא לנסות במספר ספריות פופולריות רדום, אופטובר עם פונקציונליות זהה. בראש ובראשונה, `DateFormatter` הוא מרכז פעולה מרכזי ב- Swift, מה שאומר שהוא שולב בעומק במרכז המערכת.
-
-## ראה גם - See Also
-- [Apple's Documentation on DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+## גם כדאי לראות:
+- [NSDateFormatter - Apple Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+- [SwiftDate Library on GitHub](https://github.com/malcommac/SwiftDate)
+- [Locale - Apple Documentation](https://developer.apple.com/documentation/foundation/locale)

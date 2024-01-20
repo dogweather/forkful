@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:35:48.173074-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,39 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Przetwarzanie daty z łańcucha znaków to proces konwersji tekstów na datę. To jest kluczowe dla programistów, gdyż pozwala manipulować i używać danych czasu które są zapisane jako tekst.
+## What & Why? (Co i Dlaczego?)
+Zamiana ciągu znaków na datę to proces przekształcenia tekstu zawierającego datę w strukturalny format daty/czasu. Programiści robią to, aby łatwiej zarządzać i manipulować datami w aplikacjach.
 
-## Jak to zrobić:
-Praca z datami w C# jest prosta dzięki wbudowanej klasie DateTime. Poniżej znajduje się przykład konwersji łańcucha na datę:
-
+## How to: (Jak to zrobić:)
 ```C#
-string myDateString = "2022-09-22 14:30";
-DateTime dateVar = DateTime.Parse(myDateString);
-Console.WriteLine(dateVar);
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        string dateString = "2023-04-01";
+        DateTime convertedDate;
+        
+        // Użycie domyślnych ustawień systemowych
+        convertedDate = DateTime.Parse(dateString);
+        Console.WriteLine($"Domyślne ustawienia: {convertedDate}");
+
+        // Użycie konkretnego formatu
+        string format = "yyyy-MM-dd";
+        CultureInfo provider = CultureInfo.InvariantCulture;
+        convertedDate = DateTime.ParseExact(dateString, format, provider);
+        Console.WriteLine($"Format wybrany: {convertedDate}");
+    }
+}
 ```
-W wyniku otrzymamy `2022-09-22 14:30:00`
 
-Jednakże, jeżeli twój łańcuch daty ma niestandardowy format, musisz użyć `DateTime.ParseExact()`.
-
-```C#
-string dateString = "22/09/2022 14:30";
-string format = "dd/MM/yyyy HH:mm";
-DateTime resultDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
-Console.WriteLine(resultDate);
+Sample output (Przykładowe wyjście):
+```
+Domyślne ustawienia: 2023-04-01 00:00:00
+Format wybrany: 2023-04-01 00:00:00
 ```
 
-Po wykonaniu tego kodu wynik będzie `2022-09-22 14:30:00`.
+## Deep Dive (Dogłębna analiza):
+Historia: W C# od wczesnych wersji istnieje możliwość parsowania dat. `DateTime.Parse` i `DateTime.ParseExact` to metody, które ewoluowały, ale ich podstawowa funkcjonalność pozostała niezmieniona.
 
-## Głębsze zanurzenie
-Początkowo, C# nie zawierał funkcji parsowania daty. Dopiero C# 2.0 wprowadził `DateTime.Parse()`. Następnie w C# 3.5, aby sprostać rosnącemu zapotrzebowaniu na elastyczność, dodano `DateTime.ParseExact()`.
+Alternatywa: Poza standardowym `DateTime` jest `DateTimeOffset`, które dodatkowo uwzględnia strefę czasową, oraz nowszy `System.Globalization.CultureInfo` do obsługi różnych formatów regionalnych.
 
-Alternatywą dla `DateTime.Parse()` jest `DateTime.TryParse()`. Ta metoda zwraca wartość logiczną, która informuje, czy konwersja się powiodła czy nie, co pozwala łatwiej obsłużyć nieoczekiwane formaty.
+Szczegóły implementacyjne: `DateTime.ParseExact` wymaga określenia konkretnego wzorca daty, co daje kontrolę nad formatem. `CultureInfo.InvariantCulture` pozwala uniknąć problemów z różnicami regionalnymi.
 
-Szczególną rzeczą, na którą należy zwrócić uwagę, jest to, że metoda `DateTime.Parse()` będzie korzystać z ustawień regionalnych systemu do interpretacji tekstu. Jeżeli potrzebujesz konkretnego formatu, skorzystaj z `DateTime.ParseExact()` i określ odpowiedni format.
-
-## Zobacz też
-Istnieje wiele źródeł, które pomogą ci zrozumieć ten temat:
-
-1. [Dokumentacja Microsoft na temat klasy DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime)
-3. [Dokumentacja Microsoft na temat metody ParseExact()](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact)
+## See Also (Zobacz również):
+- [Dokumentacja DateTime.Parse](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parse?view=netframework-4.8)
+- [Dokumentacja DateTime.ParseExact](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=netframework-4.8)
+- [Przewodnik po formatach daty i czasu w .NET](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- [Różnice pomiędzy DateTime a DateTimeOffset](https://docs.microsoft.com/pl-pl/dotnet/standard/datetime/choosing-between-datetime)

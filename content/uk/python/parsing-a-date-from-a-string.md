@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:38:17.438534-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що й чому?
-Аналіз дати з рядка - це процес, коли ми витягуємо інформацію про дату з текстового рядка. Програмісти роблять це, щоб спростити обробку дати та часу за допомогою програми.
+## What & Why?
+Що таке парсинг дат та чому це важливо?
+Parsing a date from a string involves converting text to a date object. We do this to manipulate dates easily – compare, store, or change formats.
 
-## Як це зробити:
-У Python для парсинга дат з рядків ми використовуємо модуль `datetime`. Ось простий приклад:
-
+## How to:
 ```Python
 from datetime import datetime
 
-data_str = '12/10/2021'
+# Створюємо строку з датою
+date_string = "14.04.2023"
 
-data_obj = datetime.strptime(data_str, '%d/%m/%Y')
+# Парсимо строку у datetime об'єкт
+date_object = datetime.strptime(date_string, '%d.%m.%Y')
 
-print(data_obj)
-# 2021-10-12 00:00:00
+print(date_object)  # Output: 2023-04-14 00:00:00
 ```
 
-У цьому коді ми перетворюємо текстовий рядок '12/10/2021' на об’єкт datetime.
+```Python
+# Зміна формату дати
+formatted_date = date_object.strftime('%Y/%m/%d')
+print(formatted_date)  # Output: 2023/04/14
+```
 
-## Поглиблений аналіз
-Перетворення рядків на дати було важливою частиною комп'ютерного програмування практично з початку його існування. Історично, дати зберігалися як текст, що призвело до потреби їх аналізу.
+```Python
+# Обробка неправильного формату
+try:
+    wrong_date_string = "2023-14-04"
+    datetime.strptime(wrong_date_string, '%Y-%d-%m')
+except ValueError as e:
+    print(e)  # Output: time data '2023-14-04' does not match format '%Y-%d-%m'
+```
 
-Є інші способи парсінгу дат з рядків у Python, наприклад, можна використовувати модуль `dateutil`, який набагато гнучкіше інтерпретує вхідний текстовий рядок.
+## Deep Dive
+Parsing dates is about understanding. It started with manual parsing - think splitting strings and converting to integers. Today, libraries like `datetime` in Python handle the complexity.
 
-Слід зазначити, що при аналізі даних залежно від формату можуть виникнути різного роду помилки та непридатні дані для аналізу.
+Alternatives? Yes, many. `dateutil` is smarter at guessing formats. For web apps, libraries like `date-fns` or `Moment.js` (JavaScript) are common.
 
-## Додатково
-- Документація по Python `datetime` модулю: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
-- Документація по Python `dateutil` модулю: [https://dateutil.readthedocs.io/en/stable/](https://dateutil.readthedocs.io/en/stable/)
+Implementation details? The `strptime` method follows patterns (directives) like `%Y` for the year. It raises `ValueError` if things don't match. It's all about the rules you set.
+
+## See Also
+- Python `datetime` documentation: https://docs.python.org/3/library/datetime.html
+- `dateutil` parser: https://dateutil.readthedocs.io/en/stable/parser.html
+- For globalization and localization: https://babel.pocoo.org/
+- Python `strftime` directives: http://strftime.org/

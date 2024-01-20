@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:39:03.370118-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,42 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why?
+## Що таке й навіщо?
+Парсинг дати зі строки — це процес перетворення текстової інформації про дату у формат, що можна використати в коді. Програмісти роблять це, щоб легко маніпулювати датами і часом, забезпечувати логіку бізнес-операцій та працювати з API, які передають дати в текстових форматах.
 
-Парсинг дати з рядка це процес конвертації текстового представлення дати в спеціальний об'єкт дати. Це корисно тоді, коли працюємо з датами у форматах, котрі не відразу можна використати в програмі, наприклад, при зчитуванні дати з текстового файлу або від користувача.
-
-## Як це робиться
-
-Приклади коду та результати їх виконання в Swift:
-
+## How to:
+## Як робити:
 ```Swift
 import Foundation
 
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd-MM-yyyy"
-let dateFromString = dateFormatter.date(from: "15-03-2021")
+// Створюємо DateFormatter
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-print("Дата в об'єкт: \(String(describing: dateFromString))")
+// Строка дати для парсингу
+let dateString = "2023-03-14 15:09:26"
+
+// Парсимо строку в Date
+if let date = formatter.date(from: dateString) {
+    print("Дата успішно спарсена: \(date)")
+} else {
+    print("Не вдалося спарсити дату.")
+}
+
+// Вивід: Дата успішно спарсена: 2023-03-14 15:09:26 +0000
 ```
+Тут ми використовуємо `DateFormatter` для конвертації строки у дату. Зверніть увагу: шаблон в `dateFormat` має відповідати формату вашої строчки.
 
-У консолі ви побачите щось на зразок: 
+## Deep Dive:
+## Підводні камені:
+Історично парсинг дат був завданням з купою пасток через різні формати дат і часові зони. Swift пропонує `DateFormatter`, що базується на ICU (International Components for Unicode). 
 
-```Swift
-Дата в об'єкт: Optional(2021-03-14 22:00:00 +0000)
-```
+Альтернативи? ISO8601DateFormatter для ISO 8601, unix timestamps, або навіть користувацькі розширення `Date` класу якщо є специфічні потреби.
 
-## Більше деталей
+Під капотом, коли викликається `date(from:)`, `DateFormatter` розбирає строку крок за кроком, використовуючи заданий шаблон і локаль. Часова зона може бути налаштована, щоб впевнитися, що дата інтерпретується правильно. 
 
-1. Історія: Перші способи парсингу дати були простіші, але мали обмеження у форматах. До приходу Swift ця задача покладалась на `NSDateFormatter` в Objective-C.
-
-2. Альтернативи: Є інші бібліотеки, такі як `DateTools` або `SwiftDate`, які надають розширені можливості для роботи з датами.
-
-3. Деталі реалізації: При парсингу дати важливо врахувати часовий пояс та локаль, бо це впливає на точне представлення дати. 
-
-## Дивіться також
-
-1. [Робота з Датами та Часом в Swift](https://www.hackingwithswift.com/articles/141/how-to-work-with-dates-and-times-in-swift)
-   
-2. [Парсинг дати на StackOverflow](https://stackoverflow.com/questions/35700281/date-format-in-swift)
-
-3. [Докладно про DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+## See Also:
+## Дивіться також:
+- [Apple Developer Documentation for DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Working with Dates and Times in Swift (raywenderlich.com)](https://www.raywenderlich.com/5539282-working-with-dates-and-times-in-swift)
+- [Unicode Date Format Patterns](https://unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns)

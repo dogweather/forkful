@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:32:37.587235-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Kotlin"
@@ -11,45 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTML-Parsing ist der Prozess, bei dem HTML-Text in seine Strukturbestandteile zerlegt wird. Programmierer machen das, um die Daten der Webseiten zu analysieren, zu ändern oder zu extrahieren.
+HTML-Parser lesen und interpretieren den Inhalt von Webseiten, damit Apps und Services die Daten nutzen können. Wir programmieren sowas, um Inhalte automatisch zu verarbeiten, wie z.B. Scraping oder Datenextraktion.
 
-## So geht's:
-Lasst uns loslegen! Wir werden jsoup verwenden, eine praktische Kotlin-Bibliothek, um HTML zu parsen.
-
-Fügen Sie zuerst die jsoup-Bibliothek zu Ihrem Projekt hinzu.
-
-```Kotlin
-dependencies {
-  implementation 'org.jsoup:jsoup:1.13.1' 
-}
-```
-Nun können wir eine einfache Webseite analysieren.
-
-```Kotlin
+## Anleitung
+```kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Erste Parsing Seite</title></head>"
-              + "<body><p>Hallo Welt!</p></body></html>"
+    val html = "<html><head><title>Beispielseite</title></head>" +
+               "<body><p>Dies ist ein Beispiel</p></body></html>"
     val doc = Jsoup.parse(html)
-    println(doc.title())
-    println(doc.body().text())
+
+    val title = doc.title()
+    val bodyText = doc.body().text()
+
+    println("Titel der Seite: $title")
+    println("Inhalt des Body: $bodyText")
 }
-```
-Die Ausgabe wird sein:
-```
-Erste Parsing Seite
-Hallo Welt!
-```
 
-## Tiefgreifende Besprechung
-HTML-Parsing hat eine lange Geschichte, die mit der Entwicklung des Webs selbst zusammenfällt. Ursprünglich erfolgte das HTML-Parsing manuell über String-Manipulation. Mit der Entwicklung von Sprachen wie Python, JavaScript und jetzt Kotlin haben sich Bibliotheken entwickelt, die Parsing einfacher und sicherer machen.
+// Ausgabe:
+// Titel der Seite: Beispielseite
+// Inhalt des Body: Dies ist ein Beispiel
+```
+Jsoup ist eine Java-Bibliothek, die auch in Kotlin verwendet werden kann. Sie analysiert den HTML-Code und erlaubt einfachen Zugriff auf die Elemente.
 
-Alternativen zu jsoup umfassen Bibliotheken wie HtmlCleaner und Jericho HTML Parser. Jede dieser Bibliotheken hat Vor- und Nachteile, abhängig von Ihren speziellen Anforderungen.
-
-Beim HTML-Parsing mit jsoup handelt es sich um top-down-Parsing. Erst wird die gesamte HTML-Datei geladen und dann wird der HTML-Baum von oben nach unten analysiert. Dies ist wichtig zu wissen, wenn Sie mit sehr großen HTML-Dokumenten arbeiten, da dies ihren Speicherbedarf beeinflusst.
+## Tiefgang
+Historisch gesehen wurden für das Parsen von HTML oft reguläre Ausdrücke verwendet, was aber zu fehleranfälligen Lösungen führte. Moderne Bibliotheken wie Jsoup verwenden einen DOM-Parser, der wesentlich robuster und sicherer ist. Alternativen zu Jsoup sind z.B. HtmlCleaner oder jsoup: Java HTML Parser. Beim Parsen sollte man auf Performance und korrekte Fehlerbehandlung achten, gerade bei komplexen oder fehlerhaften HTML-Dokumenten.
 
 ## Siehe auch
-Für weitere Informationen über das HTML-Parsing in Kotlin, werfen Sie einen Blick auf folgende Quellen:
-1. [jsoup Dokumentation](https://jsoup.org/cookbook/)
-4. [Kotlin-Dokumentation](https://kotlinlang.org/docs/reference/)
+- Jsoup: [Offizielle Webseite](https://jsoup.org/)
+- Jsoup GitHub Repository: [https://github.com/jhy/jsoup](https://github.com/jhy/jsoup)
+- W3C HTML5 Spezifikation: [https://www.w3.org/TR/html5/](https://www.w3.org/TR/html5/)
+- Kotlin Programmierung: [https://kotlinlang.org/](https://kotlinlang.org/)

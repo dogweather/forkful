@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:31:32.906318-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,42 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att tolka HTML betyder att analysera och förstå HTML-kod för att utvinna specifik data eller struktur. Programmerare gör detta för att interagera med webbsidor, extrahera information eller automatisera webbuppgifter.
 
-Att tolka HTML innebär att omvandla HTML-strängar till något mer användbart för ditt program, till exempel Gleams trästruktur. Programmers gör detta för att plocka ut och interagera med data i HTML-dokument.
-
-## Hur till:
-
-Här är ett exempel på hur du kan tolka HTML med Gleam:
-
+## Hur gör man?:
 ```Gleam
-import gleam/http.{HttpClient}
-import gleam/string_builder.{Builder}
+extern crate gleam_html;
+import gleam_html.{parse, Element, Text, Document};
 
-fn html_tolk() {
-  let http = HttpClient.To.apply()
-  let url = "http://example.com"
-  
-  let respons = HttpClient.get(http, url)
-  let html_sträng = Builder.to_string(respons.body)
+fn main() {
+    let html = "<html><body><p>Hello, Gleam!</p></body></html>";
+    let document = parse(html);
+    
+    match document {
+        Ok(Document(elements)) -> {
+            for element in elements {
+                analyse_element(element);
+            }
+        }
+        Error(_) -> {
+            io.println("Failed to parse HTML");
+        }
+    }
+}
 
-  // Din HTML-tolkning logik här
-  // ...
+fn analyse_element(element: Element) {
+    match element {
+        Element(_, children) -> {
+            for child in children {
+                match child {
+                    Text(text_content) -> io.println(text_content),
+                    _ -> {}
+                }
+            }
+        }
+        _ -> {}
+    }
 }
 ```
+Exempelutskrift: `Hello, Gleam!`
 
-Output:
+## Djupdykning:
+Tolkning av HTML är inte unikt för Gleam; det är ett vanligt behov i många programmeringsspråk. Historiskt har bibliotek som Beautiful Soup för Python och Nokogiri för Ruby varit populära för HTML-parsing. Gleam, som är ett relativt nytt och typsäkert funktionellt programmeringsspråk som bygger på Erlang's virtuella maskin, erbjuder sina egna verktyg och fördelar som robust felhantering. Det skiljer sig genom att vara kompilerat istället för tolkat, vilket kan ge prestandafördelar och bättre typsäkerhet i parsingprocessen.
 
-```Gleam
-"<!doctype html>..."
-```
-
-## Fördjupning 
-
-Historiskt sett, HTML-tolkning har använts länge för webbskrapning och att få data från webbsidor. Det finns alternativ till HTML-tolkning, som inkluderar API-anrop och JSON-analys.
-
-Men, HTML-tolkning tillåter interaktion med webbsidor på ett mycket mer detaljerat sätt. I Gleam, HTML-tolkning drivs av Gleams fantastiska sträckor, vilket gör att HTML-dokument kan representeras som inbäddade listor och lattelefoner.
-
-## Se även 
-
-- [W3Schools Tutorial på HTML DOM Traversal & Manipulation](https://www.w3schools.com/js/js_htmldom_navigation.asp)
-- [Mozilla dokumentation om HTML tolkning](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+## Se även:
+- Gleam's officiella dokumentation: [Gleam Docs](https://gleam.run/documentation/)
+- Erlang's officiella webbplats: [Erlang.org](https://www.erlang.org/)

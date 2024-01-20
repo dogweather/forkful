@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:35:36.245383-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,36 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Parsing a date from a string means converting text that represents a date into a format a program can work with. Programmers do this to manipulate dates—think sorting events or calculating durations—in apps that handle scheduling, deadlines, and more.
 
-Parsing a date from a string is the process of taking a text input and converting it into a machine-readable format, usually a Date object. Programmers do this because text is often the most common and universal format for data, especially when pulling information from APIs, forms, or databases.
-
-## How To:
-
-Let's use Elm's `Date.fromString` function. Given a date input as a string, this function will return a `Result Result.DateParseError Date` type. If parsing succeeds, a `Date` object is returned, otherwise, `Result.DateParseError` object containing a description of the error.
-
-Here's a simple example of parsing a date from a string:
+## How to:
+Elm uses the `Date` module to handle dates, but as of my knowledge cutoff in early 2023, there isn't a built-in Elm library for parsing dates from strings. You'll likely use a package like `justinmimbs/date` to do the job. Here's how you roll with it:
 
 ```Elm
-import Date exposing (Date)
-import Date.Extra.Formats as Formats exposing (formatsDate)
+import Date
+import Date.Extra.Parse as DateParse
 
-parseStringtoDate : String -> Result String Date
-parseStringtoDate dateString =
-    formatsDate ["YYYY-MM-DD", "YYYY/MM/DD", "DD-MM-YYYY", "DD/MM/YYYY"] dateString
+-- Parsing a date from a string
+parseDate : String -> Maybe Date
+parseDate dateString =
+    DateParse.fromIsoString dateString
 
--- Let's test it
-parseStringtoDate "2021-12-31"
--- -> Ok <| Date 2021 12 31 0 0 0 0
+-- Sample usage
+main =
+    case parseDate "2023-04-01" of
+        Just date ->
+            -- Successfully parsed, do something with `date`
+            ...
+
+        Nothing ->
+            -- Parsing failed, handle error
+            ...
 ```
+Sample output for parsing `"2023-04-01"` would be a `Date` value, and if parsing fails, you'd get `Nothing`.
 
 ## Deep Dive
+In the early days, JavaScript's Date methods were often directly used in Elm through ports, but this wasn't ideal. Things got better with packages like `justinmimbs/date`, which provide more Elm-like ways to handle dates. Elm's strong type system and emphasis on reliability favor explicit parsing methods, where failure is clearly signaled through `Maybe` types, over JavaScript's sometimes unpredictable Date parsing.
 
-The `Date.fromString` function comes from Elm's core `Date` module, which dates back to the first public version of Elm. It has served as a simple and straight-forward method for parsing dates since its inception.
+As of the current version, there are no built-in string-to-date functions in Elm's core `Date` module, which is why community packages are so important. Alternates like `ryannhg/date-format` can format dates into strings but parsing is a different beast—which is why `justinmimbs/date` is more suitable for this task.
 
-An alternative method of parsing dates would be to utilize Regex implementations. However, Elm is a language favouring simplicity and explicitness over abbreviation. Therefore, using `Date.fromString` is the preferred way, unless you have a specific use case that this function does not cover.
-
-The parsing mechanism works by looking for patterns in the string provided, such as 'YYYY', 'MM', or 'DD', and uses these to break down and understand the composition of the date. If it fails to find an expected pattern, it returns an error highlighting where the parsing failed.
+Regarding implementation, Elm's approach keeps your app robust: invalid dates won't crash it unexpectedly, thanks to the clear `Maybe Date` signaling whether the parsing succeeded.
 
 ## See Also
-
-1. [Official Elm Date Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm Date documentation: https://package.elm-lang.org/packages/elm/time/latest/
+- justinmimbs/date library for parsing: https://package.elm-lang.org/packages/justinmimbs/date/latest/
+- elm-community/elm-time for additional time utilities (if needed): https://package.elm-lang.org/packages/elm-community/elm-time/latest/

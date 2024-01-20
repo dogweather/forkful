@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:34:40.895770-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,49 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-L'analyse syntaxique HTML concerne la conversion des fichiers HTML en une structure de données compréhensible par votre programme. Les programmeurs l'effectuent pour manipuler, extraire des données, et interagir avec le contenu web.
+## Quoi & Pourquoi ?
+Le parsing HTML, c'est transformer le code HTML en structures de données utilisables en Rust. On le fait pour manipuler, extraire des données ou interagir avec le contenu web.
 
 ## Comment faire :
-
-Voici un exemple simple de comment utiliser le crate html5ever de Rust pour analyser un document HTML.
-
 ```Rust
-use html5ever::driver::ParseOpts;
-use html5ever::tendril::TendrilSink;
+use scraper::{Html, Selector};
 
 fn main() {
-    let html = "<html><body>Rust est super!</body></html>";
-    let dom = kuchiki::parse_html().one(html);
-    println!("{:#?}", dom);
+    // HTML example
+    let html = r#"
+        <html>
+            <body>
+                <h1>Welcome to my website!</h1>
+                <p>Here is some text</p>
+            </body>
+        </html>
+    "#;
+
+    // Parse the HTML
+    let parsed_html = Html::parse_document(&html);
+
+    // Create a Selector
+    let selector = Selector::parse("h1").unwrap();
+
+    // Use the Selector to find the matching element and print its text
+    if let Some(element) = parsed_html.select(&selector).next() {
+        println!("Text in <h1>: {}", element.inner_html().trim()); // Prints: Welcome to my website!
+    }
 }
 ```
 
-L'exécution de ce code affichera une structure DOM que vous pouvez explorer.
+## Exploration en profondeur
+Historiquement, le parsing HTML a toujours été compliqué en raison de la nature nébuleuse des standards du web et des implémentations divergentes des navigateurs. Rust offre une façon sûre et performante de le faire grâce à des bibliothèques comme `scraper`. C'est important de se rappeler que le parsing de HTML peut être sujet aux erreurs à cause de malformations ou d'incompatibilités dans le code source HTML — s'attendre à et gérer les erreurs est essentiel.
 
-```Rust
-Document {
-    node: Node {
-        parent: None,
-        previous_sibling: None,
-        next_sibling: None,
-        first_child: Some(Doctype),
-        last_child: Some(Element),
-        data: Document,
-    },
-    encoding_name: UTF-8,
-    url: None,
-    quirks_mode: NoQuirks,
-}
-```
+Les alternatives populaires en Rust comprennent `html5ever` et `select`. `html5ever` est un parseur HTML conforme aux spécifications WHATWG, tandis que `select` est inspiré par `jQuery` et facilite la sélection des éléments du document. Choisir entre ces options dépend du niveau de contrôle et de précision souhaité par le développeur.
 
-## Plongée profonde :
+Lors de la mise en œuvre, il est crucial de respecter la gestion efficace de la mémoire — une force de Rust — surtout lors du traitement de gros documents HTML. Les bibliothèques Rust pour le parsing HTML utilisent souvent une combinaison d'analyse lexique et syntaxique pour transformer le texte brut en une structure de données (comme une arborescence DOM).
 
-L'analyse syntaxique HTML existe depuis les débuts du web, mais elle est devenue plus complexe avec l'évolution des standards HTML. En Rust, les alternatives à html5ever incluent html-parser et select.rs. Cependant, html5ever est largement reconnu pour son exhaustivité et sa conformité aux spécifications HTML5. Il convertit le document HTML en arbre d'objets document (DOM), qui peut être exploré et modifié par le programmeur.
-
-## Voir aussi :
-
-- Documentation html5ever : https://html5ever.org/
-- Crate html-parser : https://crates.io/crates/html-parser
-- Crate select.rs : https://crates.io/crates/select
+## Voir aussi
+- Rust documentation for web scraping: [https://docs.rs/scraper/](https://docs.rs/scraper/)
+- WHATWG HTML parsing spec: [https://html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)

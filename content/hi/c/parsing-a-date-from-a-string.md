@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:35:25.908497-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## "क्या और क्यों?" (What & Why?)
+## What & Why? (क्या और क्यों?)
+पार्सिंग डेट फ्रॉम ए स्ट्रिंग का मतलब है कि एक टेक्स्ट स्ट्रिंग से डेट और टाइम की जानकारी निकालना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि बहुत सी एप्लिकेशंस में डेटा को सही फॉर्मेट में स्टोर और प्रोसेस करने की जरूरत होती है। 
 
-"पार्सिंग ए डेट फ्रॉम ए स्ट्रिंग" एक क्रिया होती है जिसमें हम एक तारिख को string से पढ़ते हैं। यह तारीख को इस्तेमाल करने और संगठित करने के लिए प्रोग्रामर्स द्वारा की जाने वाली सामान्य क्रियाओं में से एक है।
-
-## "कैसे" (How to:)
-
-यहां सी भाषा में कोडिंग उदाहरण और उसके आउटपुट दिए गए हैं:
-
-```C
-#include<stdio.h>
-#include<time.h>
+## How to: (कैसे करें:)
+```c
+#include <stdio.h>
+#include <time.h>
 
 int main() {
+    const char *dateStr = "01/04/2023";
     struct tm tm;
-    char buf[255];
-    char *s = "01/12/2021 10:20";
-    memset(&tm, 0, sizeof(struct tm));
-    strptime(s, "%d/%m/%Y %H:%M", &tm);
-    strftime(buf, sizeof(buf), "%d %B %Y %H:%M", &tm);
-    printf("%s\n", buf);
+    if (strptime(dateStr, "%d/%m/%Y", &tm)) {
+        printf("Year: %d, Month: %d, Day: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    } else {
+        printf("Date parsing failed!\n");
+    }
     return 0;
 }
 ```
-विभाजकों एवं तारीख/समय के प्रारूप को ध्यान में रखकर उचित परिवर्तन करें। 
-
-आउटपुट होगा:
-
+उपरोक्त कोड एक स्ट्रिंग से डेट को पार्स करके सही फॉर्मेट में प्रिंट करेगा।
+सैंपल आउटपुट: 
 ```
-01 December 2021 10:20
+Year: 2023, Month: 4, Day: 1
 ```
 
-## "गहराई से जानिए" (Deep Dive)
+## Deep Dive (गहराई से समझे)
+समय के साथ, डेट पार्सिंग ने विकास किया है। पुराने समय में प्रोग्रामर्स मैन्युअली पार्सिंग करते थे, पर अब लाइब्रेरीज जैसे कि `<time.h>` में `strptime` फंक्शन इसे बहुत आसान बना देते हैं। वैकल्पिक रूप से, आप `sscanf` या तीसरे पक्ष की बाहरी लाइब्रेरीज का भी उपयोग कर सकते हैं। प्रत्येक मेथड के अपने फायदे और नुकसान हैं। C11 और C18 के नए संस्करणों में सुरक्षित और सुविधाजनक फंक्शंस का समावेश किया गया है।
 
-तारीख पार्स करने के लिए कई तरीके हैं और यह अधिकतर प्रोग्रामिंग भाषाओं में समर्थित है। अधिक कार्यक्षमता और नियंत्रण के लिए, विशेषकृत तारीख/समय लाइब्रेरीज़ का उपयोग करना भी एक विचारणीय विकल्प हो सकता है।
-
-C में, `strptime` और `strftime` फंक्शन का उपयोग करके आसानी से डेट स्ट्रिंग्स को पार्स किया जा सकता है। `strptime` फंक्शन का उपयोग करके, आप स्ट्रिंग में डेट और समय को `struct tm` में पार्स करते हैं। फिर `strftime` फंक्शन का उपयोग करके आप उस को वांछित प्रारूप में परिवर्तित कर सकते हैं। 
-
-## "अन्य उपयोगी संसाधन" (See Also)
-
-* [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-* [strftime function](http://www.cplusplus.com/reference/ctime/strftime/)
-* [strptime function](https://man7.org/linux/man-pages/man3/strptime.3.html)
+## See Also (यह भी देखें)
+- C Standard Library `<time.h>` documentation: https://en.cppreference.com/w/c/chrono
+- C11 Standard: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
+- ISO/IEC 9899:2018 (C18) at ISO: https://www.iso.org/standard/74528.html

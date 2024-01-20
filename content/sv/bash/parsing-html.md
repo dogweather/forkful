@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:30:11.843567-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,31 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML i Bash: En Livsnerv i Programmering 
+## Vad och varför?
+Parsing av HTML handlar om att extrahera specifik data från HTML-kod. Programmerare gör detta för att automatisera samlandet av information från webbsidor eller för att bearbeta innehållet.
 
-## Vad & Varför?
-Parsing av HTML handlar om att läsa och bearbeta kod för att utvinna värdefull data, som kan användas i programmering. Programmerare gör detta för att manipulera, eller bara förstå, strukturen och innehållet i en webbsida.
+## Hur man gör:
+Att parse:a HTML kan vara klurigt med Bash eftersom det inte är designat för riktigt så komplexa strukturer. Men med verktyg som `grep`, `sed`, och `awk`, kan man göra enkla extraktioner. För bättre resultat är specialiserade verktyg som `xmllint` eller `pup` att föredra.
 
-## Hur man:
-Här är ett enkelt exempel på hur du kan använda Bash för att parse HTML. 
-
+### Enkel extraktion med grep:
 ```Bash
-#!/bin/bash
-
-curl -s 'https://example.com' | awk -vRS='<' -F'>|<!--' '
-    $2 ~ /^style/ || $2 ~ /^script/ {next}
-    $1 !~ /^img/ && $1 !~ /^{/ && $1 !~ /^--/ && $2 != "" {print $2}
-'
+echo '<p>Hej världen!</p>' | grep -oP '(?<=<p>).*(?=</p>)'
+```
+Output:
+```
+Hej världen!
 ```
 
-Ovanstående script hämtar HTML från `https://example.com` och filtrerar ut text som inte ligger inom `<script>` eller `<style>` taggar.
+### Extrahera titel med sed:
+```Bash
+echo '<title>Min Sida</title>' | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p'
+```
+Output:
+```
+Min Sida
+```
 
-## Djup Dykning
-Historiskt sett var Bash inte ursprungligen avsett för att parse HTML; det har dock blivit populärt tack vare sin enkelhet och kraft. Alternativ inkluderar andra skriptspråk som Python eller JavaScript, vilka erbjuder robusta bibliotek för att hantera HTML-kod. Implementation av HTML parsing i Bash skiljer sig från dessa alternativ i den aspekten att Bash själv inte har inbyggda funktioner för HTML parsing, så vi måste använda externa verktyg som `awk` eller `sed`.
+## Fördjupning:
+Bash-scriptning är inte idealisk för att parse:a HTML eftersom HTML inte är en regelbunden syntax och kan vara svårt att förutsäga. Historiskt sett har folk använt regex-verktyg som `grep`, `sed`, och `awk`, men dessa kan lätt krångla till det och är inte robusta lösningar.
 
-## Se Även
-1. [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
-2. [HTML Scraping](https://docs.python-guide.org/scenarios/scrape/)
-3. [Intro to awk](https://www.geekhideout.com/urlcode.shtml)
+Alternativ som `xmllint`, en del av `libxml2` paketet, ger en bättre konsekvens och säkerhet. Ett annat alternativ är `pup`, ett kommandoradsverktyg för HTML parsing inspirerad av `jq`.
 
-Kom ihåg, programmering är mer konst än vetenskap. Använd verktygen som fungerar bäst för dig! Lycka till och happy coding!
+I Bash är det viktigt att hålla sig till enkla parseringsscenarion, eller att överväga ett mer lämpligt programmeringsspråk som Python med bibliotek som Beautiful Soup när det krävs mer avancerad och detaljerad parsing.
+
+## Se även:
+- xmllint: http://xmlsoft.org/xmllint.html
+- pup: https://github.com/ericchiang/pup
+- Beautiful Soup dokumentation (för Python): https://www.crummy.com/software/BeautifulSoup/bs4/doc/

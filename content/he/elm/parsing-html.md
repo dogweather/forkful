@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:42.243036-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Elm"
@@ -11,40 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+פרסור HTML הוא תהליך שבו אנחנו מתרגמים את קוד הHTML למבנה שהתוכנית שלנו יכולה להבין ולעבוד איתו. תכנתים עושים את זה כדי לקרוא ולנתח נתונים מדפי אינטרנט, לשפר אבטחה, או לבצע בדיקות אוטומטיות.
 
-התעניינות ב-HTML מהווה את ההקלטה של משמעויות מתוך טקסט HTML. מתכנתים עושים את זה כדי לנצל, לשנות או לאשחר מידע ממסמך HTML.
-
-## איך
-
-נגיש מספר ספריות Elm לפרסום HTML. אחת מהן היא `elm/html`.
+## איך לעשות:
+בעזרת החבילה `html-parser` אפשר לפרסר HTML בElm. להלן קטע קוד שמראה איך לנתח קטע של HTML:
 
 ```Elm
-import Html exposing (text)
+import Html.Parser exposing (parse)
+import Html.Parser.Node exposing (Node)
 
-main =
-  text "שלום, עולם"
+parseHtml : String -> List Node
+parseHtml html =
+    case parse html of
+        Ok nodes -> nodes
+        Err _ -> []
+
+sampleHtml = "<div>Hello, Elm!</div>"
+nodes = parseHtml sampleHtml
 ```
 
-הקוד הזה פשוט מחזיר "שלום, עולם" כטקסט בHTML.
+ההדפסה של `nodes` תפלט מבנה שמייצג את ה HTML.
 
-```Elm
-import Html exposing (div, text)
-import Html.Attributes exposing (class)
+## צלילה עמוקה:
+היסטוריה: Elm עצמה היא שפת תכנות פונקציונלית שנוצרה על מנת להפוך את פיתוח וביצוע של יישומי ווב לקל ונעים יותר.
 
-main =
-  div [ class "greeting" ] [ text "שלום, עולם" ]
-```
+אלטרנטיבות: בשפות אחרות כמו JavaScript, ישנם ספריות כמו Cheerio או JSDom לפרסור. בElm, ישנם מספר חבילות שונות לפרסור, אבל `html-parser` היא אחת מהפופולריות.
 
-כאן, אנו מתוייגים את טקסט הברכה עם Class שנקרא "greeting".
+פרטי יישום: פרסור HTML בElm מתבצע תוך כדי שהיא מתמודדת עם אופיינה של שפה פונקציונלית טהורה – כלומר, חסרת תופעות לוואי, זו דורשת טיפול מיוחד בשגיאות ובנתונים שאינם צפויים.
 
-## צלילה עמוקה
-
-עם כמה שנים של היסטוריה מאחוריה, Elm הוכחה ככלי מדהים להקל על פרסום HTML. יעילות גבוהה וערוך מבנה ברור הם רק חלק מהיתרונות המשכנעים שלה.
-
-קיימות אלטרנטיבות ל-Elm כמו Purescript, Javascript או Typescript, אך Elm מצטיין במספר תכונות, חלקן הן אבטחת למדוד סוג של כישלון בזמן ההרצה ודיאלקטיקה שמעודדת תכנות מבני בלתי ניתן לאמתנים.
-
-## ראה גם
-
-1. [Elm Guide](https://guide.elm-lang.org/) - מדריך רשמי ל-Elm.
-2. [Elm Html Library](https://package.elm-lang.org/packages/elm/html/latest/) - הספרייה Html של Elm.
-3. [Elm Html GitHub Repo](https://github.com/elm/html) - מאגר ה-GitHub של Elm Html.
+## ראה גם:
+- חבילת `html-parser`: [package.elm-lang.org/packages/hecrj/html-parser/latest/](https://package.elm-lang.org/packages/hecrj/html-parser/latest/)
+- המדריך לתחביר של `Html.Parser`: [package.elm-lang.org/packages/elm/parser/latest/Parser](https://package.elm-lang.org/packages/elm/parser/latest/Parser)
+- מבוא לשפת Elm: [elm-lang.org](https://elm-lang.org/)

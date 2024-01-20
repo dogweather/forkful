@@ -1,5 +1,6 @@
 ---
 title:                "HTML 파싱"
+date:                  2024-01-20T15:29:55.049999-07:00
 html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Arduino"
@@ -10,39 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며, 왜?)
+HTML 파싱은 HTML 마크업에서 데이터를 추출하는 과정입니다. 프로그래머들은 웹페이지의 데이터를 자유롭게 활용하기 위해 이를 수행합니다.
 
-HTML 파싱은 웹페이지의 데이터를 추출하기 위해 HTML 코드를 분석하는 작업입니다. 이는 프로그래머들이 동적으로 사이트의 내용을 읽고 분석하게 해줍니다.
-
-## 어떻게:
-
+## How to: (방법)
 ```Arduino
-#include <ArduinoHttpClient.h>
-#include <ArduinoJson.h>
+#include <Ethernet.h>
+#include <HttpClient.h>
 
-HttpClient client = HttpClient(WiFi, server, port);
-client.get(uri);
+EthernetClient ethClient;
+HttpClient client = HttpClient(ethClient, "example.com");
+int statusCode = 0;
+String response;
 
-while (client.available()) {
-  String line = client.readStringUntil('\n');
-  StaticJsonDocument<256> jsonBuffer;
-  DeserializationError error = deserializeJson(jsonBuffer, line);
-  
-  if (!error) {
-    const char* value = jsonBuffer["value"];
-    Serial.println(value);
+void setup() {
+  Ethernet.begin(mac);
+  Serial.begin(9600);
+  client.get("/path/to/resource");
+  statusCode = client.responseStatusCode();
+  response = client.responseBody();
+  parseHtml(response);
+}
+
+void parseHtml(String htmlContent) {
+  // HTML 파싱 로직: 간단한 예시
+  int startIndex = htmlContent.indexOf("<title>") + 7;
+  int endIndex = htmlContent.indexOf("</title>");
+  if (startIndex > 0 && endIndex > 0) {
+    String pageTitle = htmlContent.substring(startIndex, endIndex);
+    Serial.println(pageTitle);
   }
 }
+
+void loop() {
+  // 여기서는 필요없습니다.
+}
+```
+**Sample Output:**
+```
+Example Domain
 ```
 
-위의 코드는 간단한 HTML 파싱의 예제입니다. Arduino가 웹페이지에 연결하고, 페이지의 내용을 읽어들입니다. 그 다음, HTML 내용을 파싱하여 우리가 필요한 정보를 추출합니다.
+## Deep Dive (심층 분석)
+HTML 파싱은 1990년대 웹의 초창기부터 필요했습니다. 초기에 파싱은 주로 서버 사이드에서 이루어졌으나, IoT의 발달로 마이크로컨트롤러에서도 필요해졌습니다. Arduino 같은 보드에는, 리소스가 제한적이므로 경량 라이브러리 또는 단순한 문자열 처리를 주로 사용합니다. 대안으로는 regex(정규 표현식) 또는 전용 HTML 파싱 라이브러리가 있지만, 메모리 제한 떄문에 Arduino에서는 일반적이지 않습니다. 구현할 때는 HTML의 구조를 잘 이해하고 있어야 하며, 파싱 로직은 대상 HTML에 따라 달라질 수 있습니다.
 
-## 깊은 탐색:
-
-HTML 파싱은 웹 크롤링의 주요 요소여서, 인터넷 초기 단계부터 존재했습니다. XPATH, CSS Selector 등 다양한 파싱 방법이 있습니다. 
-
-또한, 파싱 방식에는 Stream-based 파싱과 DOM-based 파싱이 있습니다. Stream 기반 파싱은 메모리 효율적입니다. 반면 DOM 기반 파싱은 콘텐츠를 트리 구조로 바꾸어 이해하기 쉽고 코딩하기 편합니다.
-
-## 참고 링크:
-
-1. [ArduinoJson 라이브러리](https://arduinojson.org/)
+## See Also (추가 정보)
+- Arduino Ethernet 라이브러리: https://www.arduino.cc/en/Reference/Ethernet
+- Arduino HttpClient 라이브러리: https://github.com/amcewen/HttpClient
+- HTML 파싱에 대한 일반적인 정보: https://www.w3schools.com/html/html_intro.asp
+- 문자열 처리에 대한 Arduino 참고자료: https://www.arduino.cc/reference/en/language/variables/data-types/string/

@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:30:49.183253-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "C++"
 category:             "C++"
@@ -10,53 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-HTML पार्सिंग, हमारे कंप्यूटर को वेब पेज की संरचना को पढ़ने और समझने की कला है। कार्यक्रमकर्ता इसे ताकि वे वेबसाइट्स की जानकारी बाहर निकाल सकें और उसे अन्य उद्देश्यों के लिए उपयोग कर सकें, करते हैं।
+Parsing HTML एक ऐसी प्रक्रिया है जिसमें हम HTML डॉक्यूमेंट्स को पढ़ते हैं और उनके में छिपे डेटा और संरचना को समझते हैं। प्रोग्रामर्स इसे वेब पेजेस से जरूरी जानकारी प्राप्त करने या ऑटोमेशन के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
+
+C++ में, आप HTML को पार्स करने के लिए किसी third-party library का इस्तेमाल करते हैं। Gumbo-parser एक ऐसी library है। यहां एक उदाहरण है:
 
 ```C++
-// गम्भीर पुस्तकालय लोड करें।
-#include <htmlcxx/html/ParserDom.h>
+#include <gumbo.h>
+#include <iostream>
+
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+        (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        std::cout << href->value << std::endl;
+    }
+
+    for (unsigned int i = 0; i < node->v.element.children.length; ++i) {
+        search_for_links(static_cast<GumboNode*>(node->v.element.children.data[i]));
+    }
+}
 
 int main() {
- // पार्सर बनायें।
- htmlcxx::HTML::ParserDom parser;
-
- // HTML कंटेंट का उदाहरण।
- std::string html = "<html><body><h1>नमस्ते दुनिया</h1></body></html>";
-  
- // पार्स HTML।
- auto dom = parser.parseTree(html);
-  
- // ट्री में प्रवेश करें।
- auto root = dom.begin();
-
- // रूट से शीर्षक तक।
- auto title = root->find(htmlcxx::HTML::TAG::H1);
-
- // शीर्षक प्रिंट करें।
- std::cout << title->text() << std::endl;
-  
- return 0;
+    const char* html = "<html><body><a href='https://example.com'>Link</a></body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
 
-इसके आउटपुट में "नमस्ते दुनिया" होगा।
+नतीजा इस प्रकार होगा:
 
-## Deep Dive:
+```plaintext
+https://example.com
+```
 
-1. HTML पार्सिंग का इतिहास:
-   HTML पार्सिंग की जरूरत पहली बार WWW (World Wide Web) के विस्तार के साथ आई। यह नए प्रौद्योगिकी से प्रभावित होता है और साथ ही साथ बदलता रहता है।
+## Deep Dive (गहराई से जानकारी):
 
-2. वैकल्पिक विधियाँ:
-   BeautifulSoup, lxml और PyQuery जैसे पायथन के पुस्तकालय भी HTML पार्सिंग करने के लिए मौजूद हैं। यह आपके प्रोजेक्ट की आवश्यकताओं पर निर्भर करता है कि आप किसे चुनते हैं।
+HTML पार्सिंग का इतिहास वेब की शुरुआत से चला आ रहा है। शुरुआत में, पार्सिंग बहुत ही बुनियादी थी और ज्यादातर रेगुलर एक्सप्रेशंस (Regular Expressions) पर निर्भर करती थी, जो न तो प्रभावी थी और न ही विश्वसनीय। आज, कई मजबूत libraries जैसे कि Gumbo-parser उपलब्ध हैं, जो HTML5 के स्पेसिफिकेशन का पालन करते हैं। 
 
-3. आवश्यक विवरण:
-   HTML पार्सर, वेब पृष्ठ के डॉम(DOM) ट्री का निर्माण करता है, जिससे कोड वेबसाइट के विभिन्न हिस्सों को पहुंच सकता है।
+अलग-अलग libraries में परफॉर्मेंस और API डिजाइन को लेकर विविधताएँ होती हैं। उदाहरण के लिए, BeautifulSoup और lxml जैसी libraries पायथन प्रोग्रामिंग में प्रयोग की जाती हैं। इसी तरह, कुछ प्रोग्रामर्स जावास्क्रिप्ट का उपयोग कर cheerio जैसे libraries को पसंद करते हैं। 
 
-## चर्चा वर्जित:
+जैसे कि Gumbo-parser का उदाहरण दिया गया है, C++ में HTML पार्सिंग करते समय आप डोम (DOM) ट्री को ट्रॅवर्स कर सकते हैं और नोड्स पर विचार कर सकते हैं। हालांकि, C++ की स्टैंडर्ड लाइब्रेरी में HTML पार्सिंग के लिए कोई नेटिव सपोर्ट नहीं है, इसीलिए हम third-party libraries का सहारा लेते हैं।
 
-1. [W3Schools HTML Parsing](https://www.w3schools.com/php/php_ref_simplexml.asp)
-2. [HTML Parsing in Python](https://docs.python.org/3/library/html.parser.html)
+## See Also (और जानकारी के लिए):
+
+- Gumbo-parser GitHub: https://github.com/google/gumbo-parser
+- HTML5 Parsing algorithm: https://html.spec.whatwg.org/multipage/parsing.html
+- W3C's list of HTML parsing libraries: https://www.w3.org/2002/02/mid/4D5AAB6A.2011%40prescod.net

@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:33:03.330136-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,40 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why?
 
-Парсинг HTML - це процес, в якому програма аналізує код HTML та перетворює його на зрозумілу для PHP структуру. Програмісти роблять це, щоб зручно витягувати, маніпулювати або змінювати дані з веб-сторінок.
+Парсинг HTML — це процес витягування даних із структури HTML-документа. Програмісти це роблять для аналізу веб-сторінок, збору інформації та автоматизації веб-інтерактивів.
 
-## Як це зробити:
+## How to:
 
-Використовуючи PHP, ми можемо використовувати вбудований клас DOMDocument для парсингу HTML. Давайте розглянемо приклад:
+У PHP можна парсити HTML, використовуючи клас `DOMDocument`. Ось як це працює:
 
-```PHP
+```php
 <?php
-libxml_use_internal_errors(true);
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Welcome to my Website!</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+HTML;
 
-$dom = new DOMDocument;
-$dom->loadHTML('<html><body><p>Hello, World!</p></body></html>');
+$dom = new DOMDocument();
+@$dom->loadHTML($html);
+$titles = $dom->getElementsByTagName('title');
 
-$p = $dom->getElementsByTagName('p')->item(0);
-
-echo $p->textContent;
+foreach ($titles as $title) {
+    echo $title->nodeValue; // Виведе: Test Page
+}
 ?>
 ```
 
-Виходом буде: `Hello, World!`. Це те, що міститься в тегах `<p>` вашого HTML.
+Ми використовуємо `loadHTML` для завантаження HTML і `getElementsByTagName` для отримання елементів за тегом.
 
-## Поглиблений аналіз:
+## Deep Dive:
 
-1. Історичний контекст: Функціонал парсингу HTML був добавлений в PHP в версії 5.0.0, з метою фахівцям відправляти вміст веб-сторінки безпосредньо в PHP скрипт.
+Парсинг HTML у PHP має довгу історію. Раніше це робили з регулярними виразами, але цей метод схильний до помилок. Пізніше почали використовувати `DOMDocument` і бібліотеки типу `SimpleHTMLDom`.
 
-2. Альтернативи: Крім вбудованого класу `DOMDocument`, існують інші інструменти для парсингу HTML, як-от `SimpleXML` або бібліотеки третіх сторін, наприклад `PHPQuery` та `Goutte`.
+Є альтернативи: `XPath` для складних запитів і `Curl` для завантаження HTML із веб. Один із недоліків `DOMDocument` в PHP - слабка обробка помилок у неправильно сформованому HTML, тому ми використовуємо `@` для придушення помилок.
 
-3. Деталі реалізації: Під час парсингу HTML, DOMDocument конвертує текстовий HTML у об'єктову модель документа (DOM). Це дозволяє вам працювати з елементами HTML, як з об'єктами.
+При роботі з UTF-8 текстом, не забудьте ставити `mb_internal_encoding('UTF-8')` перед парсингом і встановлювати заголовок `Content-type: text/html; charset=utf-8` у HTTP відповіді.
 
-## Дивіться також:
+## See Also:
 
-1. [Офіційна документація PHP на DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
-2. [Зрозумійте PHP SimpleXML з прикладами](https://www.w3schools.com/php/php_ref_simplexml.asp)
-3. [PHPQuery: PHP бібліотека для парсингу HTML](https://code.google.com/archive/p/phpquery/)
-4. [Goutte, PHP веб-скрепер та бібліотека для парсингу HTML](https://github.com/FriendsOfPHP/Goutte)
+- [PHP DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
+- [XPath Syntax](https://www.w3schools.com/xml/xpath_syntax.asp)
+- [SimpleHTMLDom Parser](http://simplehtmldom.sourceforge.net/)
+- [Curl with PHP](https://www.php.net/manual/en/book.curl.php)
+
+Всі ці ресурси нададуть вам більше інформації про парсинг HTML та способи роботи з ним у PHP.

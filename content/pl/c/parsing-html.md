@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:30:12.326301-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,45 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Parsing HTML, czyli analiza kodu HTML, jest procesem ekstrakcji danych z dokumentów HTML. Programiści to robią, aby móc korzystać z zawartości stron internetowych w aplikacjach, przetwarzać informacje czy generować struktury danych.
 
-Parsing HTML to proces interpretacji kodu HTML, czyli języka używanego do budowy stron internetowych. Programiści parsują HTML, aby mogli manipulować strukturą strony, analizować jej zawartość lub dostosować wygląd strony do konkretnej sytuacji.
-
-## Jak to zrobić:
-
-Podajemy prosty przykład zastosowania biblioteki Gumbo do parsowania HTML w C:
+## How to:
+Uwaga: C nie jest najbardziej naturalnym językiem do parsowania HTML, ale można tego dokonać używając biblioteki `libxml2`. Oto przykład:
 
 ```C
 #include <stdio.h>
-#include <gumbo.h>
+#include <libxml/HTMLparser.h>
 
 int main() {
-  GumboOutput* output = gumbo_parse("<h1>Witaj Świecie</h1>");
-  
-  printf("Element główny: %s\n", gumbo_normalized_tagname(output->root->v.element.tag));
-  
-  gumbo_destroy_output(&kGumboDefaultOptions, output);
-  return 0;
+    htmlDocPtr doc;
+    htmlNodePtr node;
+	
+    // Załadowanie dokumentu HTML
+    doc = htmlReadFile("example.html", NULL, 0);
+    if (doc == NULL) {
+        printf("Could not parse the HTML file\n");
+        return 1;
+    }
+	
+    // Dostęp do głównego węzła
+    node = xmlDocGetRootElement(doc);
+	
+    // Iterowanie po węzłach dokumentu
+    for (node = node->children; node; node = node->next) {
+        if (node->type == XML_ELEMENT_NODE) {
+            printf("node type: Element, name: %s\n", node->name);
+        }
+    }
+	
+    // Sprzątanie
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+    return 0;
 }
 ```
 
-Gdy wykonamy ten program, zobaczymy output:
-
-```C
-Element główny: html
+Sample output:
+```
+node type: Element, name: body
+node type: Element, name: div
+node type: Element, name: p
+...
 ```
 
-## W głąb tematu
+## Deep Dive
+Parsowanie HTML w C ma swoje korzenie w czasach, gdy dostęp do narzędzi było ograniczony. Libxml2 jest najbardziej zaawansowaną biblioteką w C do tej pracy. Alternatywnie, do innych języków jak Python czy JavaScript istnieją gotowe, wyspecjalizowane biblioteki.
 
-Parsowanie HTML pojawiło się nieodłącznie z rozwojem internetu i potrzebą lepszego zrozumienia i manipulacji treścią stron WWW. Istnieją inne techniki parsowania, takie jak analiza składniowa XML czy JSON. Zależy to od zastosowania i struktury danych.
+Jako że HTML jest często nieregularny i może zawierać błędy, każdy parser musi być odporny na niepoprawne dane. Libxml2 radzi sobie z takimi przypadkami, normalizując HTML przed analizą.
 
-Gumbo, biblioteka którą użyliśmy w powyższym przykładzie, jest jednym z wielu narzędzi do parsowania HTML w C. Inni mogą preferować inne narzędzia, takie jak libxml2, w zależności od ich specyficznych potrzeb.
+Zaangażowanie C w procesie parsowania jest sensowne przy potrzebie szybkości lub integracji z istniejącym kodem w C. Znaczące są także ograniczenia – w C jest więcej kodu "boilerplate" i konieczna jest obsługa pamięci, której inne języki zarządzają automatycznie.
 
-Gumbo interpretuje HTML i generuje drzewo parsowania zgodne z Modelem Obiektu Dokumentu, co pozwala łatwiej manipulować i analizować zawartość strony.
-
-## Zobacz także:
-
-1. Dokumentacja Gumbo: https://github.com/google/gumbo-parser
-2. Wprowadzenie do dokumentów HTML i DOM: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
-3. Informatory o parsingu HTML w C: https://www.educba.com/c-html-parser/
-4. Wszystko o HTML i XML: https://www.w3schools.com/whatis/whatis_html.asp
+## See Also
+- Dokumentacja libxml2: http://xmlsoft.org/html/libxml-HTMLparser.html
+- Tutorial do libxml2: http://xmlsoft.org/tutorial/index.html
+- Alternatywy dla C - BeautifulSoup dla Python: https://www.crummy.com/software/BeautifulSoup/
+- jsoup: Biblioteka do parsowania HTML w Java: https://jsoup.org/

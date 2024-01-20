@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:38:41.574445-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,33 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+פריסת תאריך ממחרוזת היא תהליך שבו הופכים טקסט לאובייקט תאריך. פיתוחים לעושים את זה כדי לנהל בצורה יעילה תאריכים בתוכנות.
 
-ניתוח תאריך ממחרוזת מתייחס לתהליך של פירוק נתונים המגיעים בפורמט מחרוזת לתאריך. זהו פעולה נפוצה בתכנות, המאפשרת למתכניתים להשתמש במגוון המשתנים והמבנים בתוך השפה בנוחות ויעילות.
-
-## איך לעבוד:
-
-ראשית, כדי לנתח את התאריך ממחרוזת, נחליט להשתמש במחלקה Date שבספרייה השכללית של Ruby:
-
-```Ruby
+## איך לעשות:
+```ruby
 require 'date'
 
-date_string = "2022-03-15"
-date = Date.parse(date_string)
+# פריסת מחרוזת לאובייקט תאריך
+date_string = "2023-03-14"
+parsed_date = Date.parse(date_string)
+puts parsed_date
+# => 2023-03-14
 
-puts date.year    # => 2022
-puts date.month   # => 3
-puts date.day     # => 15
+# השתמש ב-strptime כאשר יש פורמט מותאם אישית
+custom_format_date_string = "14/03/2023"
+custom_format_parsed_date = Date.strptime(custom_format_date_string, '%d/%m/%Y')
+puts custom_format_parsed_date
+# => 2023-03-14
 ```
 
-## צלילה עמוקה:
+## עומק הצלילה
+ב-Ruby, פריסת תאריך ממחרוזת היא משהו די ישיר עם הגמ"ח 'date'. קודם לגרסת 1.9, מרבית הפיתוחים השתמשו בספריה 'time' או ספריות צד שלישי, כמו 'chronic'. ישנם גם חלופות מודרניות כמו 'active_support' ב-Rails, שמספק עוד יכולות פריסה וניהול תאריכים. עמידה בפני שגיאות ניתוח היא חשובה; לכן זה עשוי להיות חכם להשתמש ב-'begin-rescue' כדי להתמודד עם תאריכים בלתי תקניים.
 
-כאשר Ruby הופקדה לראשונה, היא כוללת פקודות ליישום פעולות תאריך. דרך אחת לעשות זאת היא באמצעות המחלקה Date, אך  ישנם גם שיטות נוספות כמו השימוש במחלקה Time או DateTime.
-להזכיר, כל שיטה מגיעה עם תכונות ואתגרים משלה ומומלץ לבחירה שתתאים לדרישות של המטלה.
-
-## ראה גם:
-
-למידע נוסף אודות איך לעבוד עם תאריכים וזמנים ב-Ruby, בידק/י את המקורות הבאים:
-
-2. [מחלקה דאטה](http://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html) בתיעוד הרשמי של Ruby.
-3. [מחלקה טיים](https://ruby-doc.org/core-2.6.3/Time.html) בתיעוד הרשמי של Ruby.
+## ראו גם
+- [דוקומנטציה רשמית של Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- [מדריך לניהול זמן ותאריכים ב-Ruby](https://www.rubyguides.com/2015/12/ruby-time/)
+- [קהילת StackOverflow על ניתוח תאריכים](https://stackoverflow.com/questions/tagged/ruby+date-parsing)

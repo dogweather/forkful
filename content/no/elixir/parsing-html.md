@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:31:10.860404-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+HTML-parsing er å tolke og analysere oppbygningen av en HTML-dokument. Programmerere gjør dette for å trekke ut data, manipulere innhold eller integrere nettsider med andre tjenester.
 
-Parsing av HTML er prosessen med å dekode HTML-språkets syntaks for å forstå og manipulere strukturen på en webside. Programmerere gjør dette for å hente, analysere eller endre data på nettsteder mer effektivt.
+## How to:
+Her ser vi hvordan man kan parse HTML med Elixir ved å bruke biblioteket Floki.
 
-## Hvordan gjøre det:
-
-La oss prøve å bruke `Floki`, et populært Elixir bibliotek for HTML-parsing.
-
-```Elixir
-# Først installerer vi Floki.
+```elixir
+# Legg til Floki til mix.exs avhengigheter
 defp deps do
-  [{:floki, "~> 0.31"}]
+  [
+    {:floki, "~> 0.32.0"} # Sjekk den siste versjonen
+  ]
 end
 
-# Importer Floki i koden din.
-import Floki
+# Fetch og parse en HTML-side
+def fetch_and_parse(url) do
+  {:ok, response} = HTTPoison.get(url)
+  {:ok, dok} = response.body
+  |> Floki.parse()
+  dok
+end
 
-# Si at vi aspirerer for å få tittelen på en nett side.
-html = "<html><head><title>Elixir - The power of simplicity</title></head></html>"
+# Hent ut alle linker fra en nettside
+def extract_links(html) do
+  html
+  |> Floki.find("a")
+  |> Floki.attribute("href")
+end
 
-# Vi kan få tittelen ved bruk av `find` funksjonen.
-title = html |> Floki.find("title") |> Floki.raw_html
-
-# Nå, 'tittel' variabelen inneholder 'Elixir - The power of simplicity'.
-IO.inspect(title)
+fetch_and_parse("https://eksempel.no")
+|> extract_links
+|> IO.inspect
 ```
 
-## Dypdykk:
+Resultatet vil vise en liste av linker fra den spesifiserte nettsiden.
 
-HTML parsing har vært en nødvendig del av programmering siden webens begynnelse. I Elixir bruker vi biblioteker som `Floki`.
+## Deep Dive:
+I gammeldagse dager brukte man regex for å parse HTML, men det var ingen god idé — HTML er for kompleks for regex. I Elixir-verdenen har vi biblioteker som Floki og meeseeks, bygget på toppen av en robust parser som heter mochiweb html.
 
-Alternativt kan man bruke `Meeseeks` eller `Mochiweb`. Valget avhenger av dine spesifikke krav og preferanser.
+Bruk av Floki er populært på grunn av dens jQuery-lignende syntaks, mens meeseeks kan tiltrekke de som liker den CSS-selektor tilnærmingen. Det er viktig å velge et bibliotek som passer best til dine behov.
 
-Når det kommer til implementeringsdetaljer i `Floki`, bruker den Elixir's kraft til å gjøre parsing raskt og effektivt. Den bruker `:mochiweb_html` på bunnen for å parse HTML og deretter bruker sin egen algoritme for å gjøre trærne søkbare.
+Kjernen i problemet med parsing av HTML ligger i det faktum at HTML ikke alltid er godt strukturert. Biblioteker må derfor håndtere feil og mangler i dokumenter på en elegant måte, og det er dette Floki og meeseeks er designet for.
 
-## Se også:
-
-- [Floki Dokumentasjon](https://hexdocs.pm/floki)
-- [Alternativer til Floki](https://elixirforum.com/t/how-do-you-parse-html-in-elixir/2385)
+## See Also:
+- [Floki on Hex.pm](https://hex.pm/packages/floki)
+- [HTTPoison on Hex.pm](https://hex.pm/packages/httpoison)
+- [Meeseeks on Hex.pm](https://hex.pm/packages/meeseeks)
+- [Awesome Elixir: A curated list of amazingly awesome Elixir libraries](https://github.com/h4cc/awesome-elixir)

@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:36:31.561482-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Datapäivämäärän jäsentäminen merkkijonosta muuttaa tekstimuotoiset päivämäärät ohjelmoijille sopivaan formaattiin. Tämä on tärkeää, koska se mahdollistaa päivämäärien käsittelyn, vertailun ja tallennuksen.
 
-Aikaleimamuotoilu on prosessi, jossa otetaan merkkijono, joka kuvaa päivämäärää, ja muutetaan se koneen ymmärtämään päivämäärämuotoon, esimerkiksi siihen muotoon, että sitä voidaan vertailla muihin päivämääriin. Ohjelmoijat tekevät sen, kun heidän tarvitsee käsitellä päivämääriä, jotka ovat tulleet tiedostosta, verkkolomakkeesta tai muusta liikkuvasta lähteestä.
-
-## Näin tehdään:
+## How to: (Kuinka tehdä:)
+Haskellissa päivämäärän jäsentäminen voidaan tehdä `time`-kirjaston `parseTimeM` funktion avulla. Tässä on perusesimerkki:
 
 ```Haskell
 import Data.Time
+import Data.Time.Format (defaultTimeLocale, parseTimeM)
 
-parseDate :: String -> IO UTCTime
-parseDate input = parseTimeM True defaultTimeLocale "%Y-%m-%d" input :: IO UTCTime
+-- Asetetaan suomalainen aikaformaatti
+let finnishLocale = defaultTimeLocale { dateFormat = "%-d.%-m.%Y", timeFormat = "%H:%M" }
 
-main = do
-    parsedDate <- parseDate "2020-07-01"
-    print parsedDate
+-- Jäsentämisen esimerkki
+maybeDate :: Maybe UTCTime
+maybeDate = parseTimeM True finnishLocale "%-d.%-m.%Y %H:%M" "24.12.2023 18:00"
+
+main :: IO ()
+main = print maybeDate
 ```
 
-Tämä ohjelma ottaa sisään päivämäärämerkkijonon huipputason funktiolle `parseDate` ja palauttaa tulokset keskitason päivämääränä.
+Suoritettaessa antaa:
 
-## Syvemmälle
+```
+Just 2023-12-24 16:00:00 UTC
+```
 
-Haskellin aikapäivämäärän parseaushistoria perustuu POSIX-tyylisiin aikatoimintoihin ja funktioihin, jotka ovat jo pitkään olleet ohjelmistokehityksen vakiotoiminnot. Haskellissa on myös useita vaihtoehtoisia tapoja päivämäärän jäsennys, esim. Parsec-kirjasto.
+## Deep Dive (Perusteellinen Sukellus):
+Haskellin `time`-kirjasto on ollut osa kieltä jo pitkään, mutta sen käyttöliittymä on parantunut ajan saatossa. `parseTimeM` on monadinen funktio, joka palauttaa `MonadFail`-instanssin omaavan monadin, yleensä `Maybe`. Tämä merkitsee, että jäsentäminen on epäonnistumissalliva toimenpide; se voi palauttaa `Nothing` jos annettu syöte ei vastaa odotettua formaattia.
 
-`parseTimeM`-toiminto tekee kaiken raskaan työn. Sille annetaan lokalisointitiedot - tässä tapauksessa `defaultTimeLocale`, joka kertoo kuinka voisit analysoida merkkijonot, sillä on oletetta, että olemme käsittelemässä ISO 8601 -muotoisia päivämääriä.
+Vaihtoehtoja standardikirjaston `time`-kirjastolle ovat mm. `chronos` ja `thyme`, jotka tarjoavat hieman erilaisia API:ja. Nämä kirjastot saattavat tarjota parempaa suorituskykyä tai lisäominaisuuksia tietyissä tilanteissa.
 
-## Katso myös
+Kun puhutaan implementaatiosta, Haskellin tyypitysjärjestelmä mahdollistaa virheiden käsittelyn kompilaatioajassa. Jos päivämäärä jäsentyy väärin, tyyppivirheet varoittavat ohjelmoijaa ennen ohjelman ajamista.
 
-- [Data.Time-moduuli Hoogle-ohjelmassa](https://hoogle.haskell.org/?hoogle=Data.Time)
-
-- [Parsec-kirjasto Hackage-sivustolla](https://hackage.haskell.org/package/parsec)
+## See Also (Katso Myös):
+- Haskell `time`-kirjaston dokumentaatio: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
+- `chronos`-kirjasto: [https://hackage.haskell.org/package/chronos](https://hackage.haskell.org/package/chronos)
+- `thyme`-kirjasto: [https://hackage.haskell.org/package/thyme](https://hackage.haskell.org/package/thyme)
+- Haskell:n viralliset oppaat: [https://www.haskell.org/documentation/](https://www.haskell.org/documentation/)

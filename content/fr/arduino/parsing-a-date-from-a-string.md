@@ -1,7 +1,8 @@
 ---
-title:                "Analyser une date à partir d'une chaîne"
-html_title:           "Clojure: Analyser une date à partir d'une chaîne"
-simple_title:         "Analyser une date à partir d'une chaîne"
+title:                "Analyse d'une date à partir d'une chaîne de caractères"
+date:                  2024-01-20T15:34:13.913490-07:00
+html_title:           "Arduino: Analyse d'une date à partir d'une chaîne de caractères"
+simple_title:         "Analyse d'une date à partir d'une chaîne de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,51 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analyser une Date d'une Chaîne de Caractères avec Arduino
+## What & Why?
+Le "parsing" d'une date, c'est extraire et convertir l'information de date d'une chaîne de caractères. On le fait pour traiter des dates dans le format désiré, pour les enregistrer ou les comparer.
 
-## Quoi et Pourquoi?
+## Comment faire :
+Voici un exemple simple pour parser une date depuis une chaîne de caractères avec Arduino :
 
-L'analyse d'une date à partir d'une chaîne de caractères est le processus de conversion des dates codées en texte dans une forme que votre programme peut manipuler. Ce processus est essentiel pour les programmeurs pour utiliser les dates saisies par les utilisateurs de manière logique, par exemple, pour effectuer des calculs de dates.
+```cpp
+#include <Wire.h>
+#include <RTClib.h>
 
-## Comment Faire :
-
-Voilà comment on peut analyser une date d'une chaîne de caractères avec Arduino. L'exemple ci-dessous démontre un code simple pour cette tâche.
-
-```Arduino
-#include <TimeLib.h>
+RTC_DS1307 rtc;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) ; // attendre l'ouverture du port série
-  time_t t = parseDate("12/31/2020", "MM/dd/yyyy");
-  if (t != 0) {
-    Serial.println(t);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
   }
 }
 
-time_t parseDate(char* sDate, char* sFormat) {
-  tmElements_t tm;
-  if (!strptime(sDate, sFormat, &tm)) return 0; // conversion de chaîne en tm
-  return makeTime(tm); // conversion de tm en time_t
-}
-
 void loop() {
+  DateTime now = rtc.now();
+
+  String dateStr = "DD/MM/YYYY";
+  dateStr.replace("DD", String(now.day()));
+  dateStr.replace("MM", String(now.month()));
+  dateStr.replace("YYYY", String(now.year()));
+
+  Serial.println(dateStr);
+  delay(1000);
 }
 ```
 
-Cela permet de convertir la chaîne "31/12/2020" en un timestamp Unix, qu'il imprime.
+Sortie attendue :
+```
+04/03/2023
+```
 
-## Plongée Profonde :
+## Exploration approfondie
+Historiquement, la gestion des dates en informatique est complexe, notamment à cause des multiples formats et des fuseaux horaires. En Arduino, les bibliothèques comme `RTClib` simplifient le travail en offrant des fonctions pratiques pour manipuler les dates et heures. Il existe d'autres approches comme l'utilisation de fonctions personnalisées ou d'autres bibliothèques, chacune avec ses trade-offs entre mémoire, précision et fonctionnalités.
 
-Direccion Softworks a conçu la bibliothèque TimeLib pour qu'elle soit intuitive et facile à utiliser dans Arduino. Elle supporte le format de date américain (mois/jour/année) ainsi que le format international (jour/mois/année).
+Lorsqu'on travaille avec des chaînes de caractères pour les dates, on doit s'assurer que le format est bien respecté pour éviter les erreurs de conversion. L’implémentation peut varier selon le type de puce RTC (Real Time Clock) utilisée, mais les principes de base restent les mêmes.
 
-Il y a d'autres alternatives pour l'analyse des dates. Les bibliothèques comme `DateStrings` et `RTClib` offrent également cette fonctionnalité. Cependant, `TimeLib` a tendance à être plus utilisé en raison de sa flexibilité et de sa simplicité.
-
-Lorsqu'on analyse une date à partir d'une chaîne de caractères avec Arduino, il est important de comprendre que le résultat est un timestamp Unix - le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC (sans tenir compte des secondes intercalaires).
-
-## Voir Aussi :
-
-Pour plus d'informations sur l'analyse de date avec Arduino :
-- [Documentation officielle d'Arduino](https://www.arduino.cc/reference/en/)
-- [Github - TimeLib](https://github.com/PaulStoffregen/Time)
-- [Guide de l'Horloge temps réel (RTC) avec Arduino](https://www.makerguides.com/rtc-arduino-tutorial/)
+## Voir aussi
+- [Documentation de la bibliothèque RTClib](https://github.com/adafruit/RTClib)
+- [Arduino Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [Guide sur les bases de temps avec Arduino](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit?view=all)

@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:37:51.692723-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,54 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PHP: Datum aus einem String parsen
-
 ## Was & Warum?
-Das Parsen eines Datums aus einem String ermöglicht ein einfaches Lesen und Manipulieren von Datums- und Zeitinformationen, die als Text vorliegen. Es ist ein wichtiger Vorgang, der hilft, Benutzereingaben, Datendateien oder Netzwerknachrichten zu analysieren.
+Parsing bedeutet, einen Datumswert aus einem String herauszulesen. Programmierer machen das, um Benutzerdaten zu verarbeiten, Termine zu speichern oder Zeiträume zu berechnen.
 
 ## So geht's:
-In PHP ermöglicht die eingebaute Funktion `date_parse` das Parsen eines Datums aus einem String.
+In PHP nutzen wir das `DateTime` Objekt für das Parsing von Datumsstrings. Mit der `createFromFormat` Methode können wir Formate definieren und umwandeln.
 
 ```PHP
-$string = "2022-07-05";
-$Datum = date_parse($string);
-print_r($Datum);
+<?php
+$datumString = "2023-04-01 14:30:00";
+
+// Datum aus einem definierten Format erstellen
+$datumObjekt = DateTime::createFromFormat('Y-m-d H:i:s', $datumString);
+
+// Ausgabe des DateTime-Objekts
+echo $datumObjekt->format('Y-m-d H:i:s');
+?>
 ```
 
-Die obige Code gibt die folgende Ausgabe:
+Ausgabewert wäre: 
+```
+2023-04-01 14:30:00
+```
+
+Mit `strtotime()` können wir die Erstellung des `DateTime` Objekts auch vereinfachen, allerdings ohne ein festes Format zu definieren:
 
 ```PHP
-Array
-(
-    [year] => 2022
-    [month] => 7
-    [day] => 5
-    [hour] => 
-    [minute] => 
-    [second] => 
-    [fraction] => 
-    [warning_count] => 0
-    [warnings] => Array
-        (
-        )
+<?php
+$datumString = "next Thursday";
 
-    [error_count] => 0
-    [errors] => Array
-        (
-        )
-
-    [is_localtime] => 
-)
+// Datum parsen und ausgeben
+$datum = strtotime($datumString);
+echo date('Y-m-d H:i:s', $datum);
+?>
 ```
 
-## Tiefgang
-Die Bereitstellung der `date_parse`-Funktion in PHP ist keineswegs selbstverständlich. In früheren versionen musste das Parsen manuell erfolgen.
+Ausgabewert könnte sein (abhängig vom aktuellen Datum):
+```
+2023-04-06 00:00:00
+```
 
-Alternative Funktionen wie `DateTime::createFromFormat` ermöglichen weitere Flexibilität, indem sie das Format des Datumsstrings bestimmen.
+## Hintergrundwissen:
+Das Parsen von Datumsstrings ist in der Programmierung tief verwurzelt. In der Vergangenheit behelften sich Entwickler oft mit `strtotime()` und den `date()` Funktionen. Doch diese Verfahren hatten ihre Tücken bei komplexen oder nicht standardisierten Formaten.
 
-Die `date_parse` Funktion selbst verwendet ein internes Datum- und Zeit-Modell, um das geparste Datum korrekt zu repräsentieren.
+Die `DateTime` Klasse, eingeführt in PHP 5.2.0, bietet eine objektorientierte Lösung, mit der man viel präziser arbeiten kann. Sie versteht eine Vielzahl von Formaten und Zeitangaben und kann Zeitzonen verarbeiten. Für die meisten modernen Anwendungen ist die `DateTime` Klasse deshalb der Standard.
 
-## Siehe auch
-Um mehr über eingebaute Datum- und Zeitfunktionen in PHP zu erfahren, beachten Sie bitte die offizielle PHP-Dokumentation [hier](https://www.php.net/manual/de/book.datetime.php).
-Für eine tiefergehende Untersuchung der `DateTime::createFromFormat` Funktion, klicken Sie [hier](https://www.php.net/manual/de/datetime.createfromformat.php).
-Um mehr über Programmierpraktiken und -techniken in PHP zu lernen, besuchen Sie die PHP-Tutorial-Seite [hier](https://www.php.net/tut.php).
+Alternativen zum PHP-Core sind Bibliotheken wie Carbon, ein Erweiterungspaket, das auf `DateTime` aufbaut und zusätzliche Funktionalitäten anbietet.
+
+Wichtig ist auch, dass beim Parsen von Datumsstrings in verschiedenen Kulturen/Regionen unterschiedliche Formatierungen zu beachten sind – etwas, das `DateTime` mit den Lokalisierungs-Optionen steuern kann.
+
+## Siehe auch:
+- Die offizielle PHP-Dokumentation über die `DateTime` Klasse: https://www.php.net/manual/de/class.datetime.php
+- Informationen zu `strtotime()`: https://www.php.net/manual/de/function.strtotime.php
+- Carbon, eine Bibliothek für Datums- und Zeiteinstellungen in PHP: https://carbon.nesbot.com

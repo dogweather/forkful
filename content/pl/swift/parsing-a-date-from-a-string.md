@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:38:31.578814-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Analiza daty z ciągu tekstowego to proces przetwarzania tekstu, który reprezentuje datę i czas, do obiektu `Date` w Swift. Programiści robią to, aby poradzić sobie z różnymi formatami dat i czasu używanymi w różnych częściach świata, oraz w celu manipulowania i porównywania dat.
+## What & Why? (Co i dlaczego?)
+Parsing daty z ciągu znaków oznacza przekształcanie tekstowego zapisu daty na typ danych rozumiany przez program. Programiści robią to, aby łatwo obsługiwać i manipulować datami w logice aplikacji.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
+Swift dostarcza silne narzędzia do zarządzania datami. Poniżej znajdziesz prosty przykład konwersji stringa do daty.
+
 ```Swift
+import Foundation
+
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let dateStr = "2023-03-21 19:45:00"
 
-let dateInString = "2022-11-15 18:00:00"
-let date = dateFormatter.date(from: dateInString)
-
-print(date)
-```
-Wynik:
-```Swift 
-Optional(2022-11-15 18:00:00 +0000)
+if let date = dateFormatter.date(from: dateStr) {
+    print("Data: \(date)")
+} else {
+    print("Nie udało się przekształcić daty.")
+}
 ```
 
-## Zagłębiamy się:
-**Kontekst historyczny**
-Początki analizowania daty z ciągu są związane z pytaniami o ilość dni między datami, daty przyszłego wydarzenia itp, które są trudne do przeliczenia ręcznie. 
+Wyjście:
+```
+Data: 2023-03-21 19:45:00 +0000
+```
 
-**Alternatywy**
-Inne metody analizowania daty z ciągu to na przykład użycie `ISO8601DateFormatter` w Swift dla ciągów w formacie ISO 8601. 
+## Deep Dive (Dogłębna analiza)
+Daty bywają podchwytliwe. Formaty są różne w zależności od regionu; stąd `DateFormatter` w Swift umożliwia ustawienie lokalizacji (`locale`) i strefy czasowej (`timeZone`). W historycznym kontekście, różne systemy używały różnych kalendarzy, ale ISO8601 stał się międzynarodową normą. Alternatywą dla `DateFormatter` jest używanie `ISO8601DateFormatter`, jeśli pracujesz ze standardowym formatem ISO. W przeszłości, manipulacje datami bywały trudniejsze i mniej intuicyjne, ale Swift uprościł ten proces, choć nadal wymaga od programistów znajomości pewnych niuansów, jak np. różnorodność formatów.
 
-**Szczegóły implementacji**
-Podczas analizy daty, używany jest określony format daty, który musi pasować do formatu ciągu, który próbujesz przetworzyć. W przeciwnym razie zwraca `nil`. 
-
-## Zobacz też:
-1. Dokumentacja Apple o [analizowaniu dat](https://developer.apple.com/documentation/foundation/dateformatter#2843288).
-2. Post na StackOverflow na temat [różnych formatów dat](https://stackoverflow.com/questions/35700281/date-format-in-swift).
-3. Więcej informacji o [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html).
+## See Also (Zobacz również)
+- [Swift Documentation on Date](https://developer.apple.com/documentation/foundation/date)

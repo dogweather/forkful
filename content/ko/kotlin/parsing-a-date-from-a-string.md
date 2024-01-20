@@ -1,7 +1,8 @@
 ---
-title:                "문자열에서 날짜 분석하기"
-html_title:           "Gleam: 문자열에서 날짜 분석하기"
-simple_title:         "문자열에서 날짜 분석하기"
+title:                "문자열에서 날짜 파싱하기"
+date:                  2024-01-20T15:37:34.505957-07:00
+html_title:           "Arduino: 문자열에서 날짜 파싱하기"
+simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇인가요? 왜 사용하죠?)
+문자열에서 날짜를 파싱한다는 건, 텍스트 데이터 포맷의 날짜를 프로그램이 이해하고 사용할 수 있는 날짜 객체로 변환하는 것입니다. 데이터 교환, 사용자 입력 처리, 날짜 포맷 변경 등 다양한 이유로 프로그래머들이 이 작업을 수행합니다.
 
-문자열에서 날짜를 파싱하는 것은 특정 형식의 문자열을 날짜와 시간 객체로 변환하는 과정입니다. 프로그래머가 이 작업을 하면 문자열이 제시하는 정보를 프로그램으로 조작할 수 있습니다.
-
-## 어떻게:
-
+## How to: (어떻게 하나요?)
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 fun main() {
-    val string = "2022-03-25"
+    val dateString = "2023-04-02"
     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val date = LocalDate.parse(string, formatter)
+    val parsedDate = LocalDate.parse(dateString, formatter)
     
-    println(date)
+    println("날짜 객체: $parsedDate")
 }
 ```
-이 코드 실행 결과는 다음과 같습니다:
+출력:
 ```
-2022-03-25
+날짜 객체: 2023-04-02
 ```
 
-## 깊게 파헤치기:
+## Deep Dive (더 알아보기)
+문자열로부터 날짜를 파싱하는 기능은 Java 8에 도입된 `java.time` 패키지가 표준으로 사용되기 전에는 `java.util.Date`와 `java.text.SimpleDateFormat`이 주로 사용되었습니다. `java.time`은 보다 직관적이고 오류를 방지하는 설계 덕분에 현재 가장 널리 채택되고 있습니다. 날짜 파싱과 관련된 구현 세부사항으로는, 파싱할 때 주의해야 하는 날짜 형식, 시간대 문제, 유연한 파싱을 위한 `DateTimeFormatterBuilder` 등이 있습니다. 대안으로는 Joda-Time 라이브러리가 있었으나, 대부분은 이제 `java.time`으로 이동했습니다.
 
-날짜 파싱은 문자열에서 시간 요소를 추출하는 데 사용되는 작업입니다. 과거에는 `SimpleDateFormat`을 사용하여 문자열에서 날짜를 파싱했습니다. 하지만 이는 스레드에 안전하지 않고 사용하기 복잡했습니다. 그 대안으로 `java.time` 패키지가 Java 8에서 도입되었습니다. 위의 코틀린 코드도 `java.time` 클래스를 사용하여 문자열에서 날짜를 파싱하고 있습니다.
-
-그 대체 기능으로 `DateUtils.parseDateStrictly`를 사용합니다. 이 함수는 `DateFormat` 객체를 사용하여 여러 패턴을 시도합니다. 그러나 `java.time` 패키지가 나오면서 이 보다 더 좋은 대안이 유효해졌습니다.
-
-## 관련 자료: 
-
-1. Java 8 DateTime API: https://docs.oracle.com/javase/tutorial/datetime/index.html
-2. DateFormat 클래스 도큐먼트: https://developer.android.com/reference/java/text/DateFormat
-3. 원문 Kotlin 공식 문서: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-date-time-format/index.html
+## See Also (추가 정보)
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
+- [`java.time` 패키지 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Joda-Time 라이브러리](https://www.joda.org/joda-time/)

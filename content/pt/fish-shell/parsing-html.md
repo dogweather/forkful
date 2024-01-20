@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:31:35.580204-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,46 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Analisar (parse) HTML é o processo de decifrar o código das páginas da web, de modo a extrair e manipular informações. Programadores fazem isso para rastrear dados da web, testar a integridade do código, renderizar páginas na web, entre outros.
+## O Que é & Porquê?
+Parsear HTML é o processo de extrair informações específicas de um documento HTML. Programadores fazem isso para automatizar a coleta de dados, manipular conteúdos de páginas web e integrar diferentes sistemas.
 
-## Como Fazer:
-Vamos parsear HTML com o Fish Shell (versão atual) usando o 'Beautiful Soup'.
-Primeiro instale o lxml e o Beautiful Soup com o pip:
+## Como fazer:
+Em Fish Shell, não temos ferramentas nativas específicas para parsear HTML, por isso recorremos a utilitários externos como `pup` ou `hxselect`. Vamos usar `pup` como exemplo.
+
+Instale o `pup` (assumindo que você está usando Homebrew):
 ```Fish Shell
-pip install beautifulsoup4 lxml
+brew install pup
 ```
-Agora, usamos o Beautiful Soup para analisar o HTML:
+
+Suponha que você tenha um arquivo HTML `pagina.html` e quer extrair todos os títulos:
+
 ```Fish Shell
-echo '
-import sys
-from bs4 import BeautifulSoup
-html = """<html><head><title>Test Page</title></head><body><p>This is a test</p></body></html>"""
-soup = BeautifulSoup(html, "lxml")
-print(soup.prettify())
-' | python
-```
-O output mostra a estrutura HTML analisada:
-```HTML
-<html>
- <head>
-  <title>
-    Test Page
-  </title>
- </head>
- <body>
-  <p>
-   This is a test
-  </p>
- </body>
-</html>
+cat pagina.html | pup 'h1 text{}'
 ```
 
-## Mergulho Profundo
-1. Contexto Histórico: O parsing de HTML tem sido usado desde o início dos tempos da web, permitindo que os navegadores convertam código em páginas renderizadas.
-2. Alternativas: Além do Beautiful Soup, existem outras ferramentas para parsing de HTML, como o html.parser, lxml, html5lib e PyQuery.
-3. Detalhes de Implementação: O Beautiful Soup permite parsear HTML e XML, ele situa cada elemento HTML como um objeto Python, o que facilita a manipulação do seu conteúdo.
+Se você quiser salvar o resultado em um arquivo:
 
-## Veja Também
-1. Beautiful Soup Documentação: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-2. Como usar BeautifulSoup: [https://realpython.com/beautiful-soup-web-scraper-python/](https://realpython.com/beautiful-soup-web-scraper-python/)
+```Fish Shell
+cat pagina.html | pup 'h1 text{}' > titulos.txt
+```
+
+Mostrando os títulos extraídos:
+```Fish Shell
+cat titulos.txt
+```
+
+Saída de exemplo:
+```
+Olá Mundo
+Exemplo de Título
+Bem-vindo à Fish Shell
+```
+
+## Mergulho Profundo:
+Parsear HTML em Fish Shell normalmente requer ferramentas de terceiros, já que o shell em si não tem recursos inerentes para manipulação de HTML. `pup` é uma ferramenta minimalista de linha de comando para processar HTML, similar ao `jq` para JSON. `hxselect` é outra ferramenta que vem com `html-xml-utils` e permite seleções no estilo CSS.
+
+Historicamente, parsear HTML era comum em linguagens como Python ou PHP, mas com a ascensão de APIs RESTful e formatos de dados como JSON, tornou-se menos frequente. Contudo, ainda é crucial para web scraping e automação onde APIs não estão disponíveis.
+
+Quando se trata de implementação, ao escolher uma ferramenta de parseamento, considere a robustez, a suportabilidade de padrões web e a facilidade de uso.
+
+## Veja Também:
+- Documentação do `pup`: https://github.com/ericchiang/pup
+- Tutorial de `hxselect`: https://www.w3.org/Tools/HTML-XML-utils/
+- Sobre web scraping com Fish Shell (em inglês): https://github.com/fish-shell/fish-shell/wiki/Scripts#web-scraping
+- Guia de seletores CSS (em português): https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Selectors

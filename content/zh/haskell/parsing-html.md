@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:31:54.182026-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
+## What & Why? 什么以及为什么？
+解析HTML是指读取和转换HTML文档的内容，以便程序能理解和操作。程序员通常做这件事来抓取网页数据，自动化测试网站，或是处理网页内容。
 
-解析HTML是处理HTML源代码以提取数据或信息的过程。程序员之所以要进行HTML解析，主要是为了从网页上抽取有用的信息。
-
-## 怎么做:
-
-使用Haskell来解析HTML, 我们将采用`tagsoup`库，它销售一个简洁的API，很适合我们的需求。
-
-让我们下载这个库并写个例子:
+## How to: 如何操作
+使用Haskell解析HTML，我们可以用`hxt`库。这个例子简单展示了如何加载HTML，找到特定的数据。
 
 ```Haskell
-import Text.HTML.TagSoup
+import Text.XML.HXT.Core
 
+main :: IO ()
 main = do
-    let tags = parseTags "<html><body><a href=www.google.com>Google!</a></body></html>"
-    print $ filter (~== "<a>") tags
+  html <- readFile "example.html"
+  let doc = readString [withParseHTML yes, withWarnings no] html
+  links <- runX $ doc >>> css "a" ! "href"
+  print links
+
+example.html 的内容:
+<html>
+  <body>
+    <a href="http://example.com">Example</a>
+    <a href="http://haskell.org">Haskell</a>
+  </body>
+</html>
+
+输出结果:
+["http://example.com", "http://haskell.org"]
 ```
+这个程序读取`example.html`文件，然后找到所有的`<a>`标签，并提取它们的`href`属性值。
 
-上述代码解析HTML字符串，然后筛选出所有的`<a>`标签。
+## Deep Dive 深度剖析
+Haskell处理HTML的历史比较短。它更知名于处理函数式编程模型。随着Web编程的普及，一些库像`hxt`出现了。而`pandoc`, Haskell 的文档转换工具，也可以处理HTML。
 
-运行结果应该如下:
+其他语言有更多的HTML解析选项：Python有`BeautifulSoup`和`lxml`，JavaScript有`cheerio`等。但是Haskell的解析库通常更注重类型安全和函数式程序设计原则。`hxt`利用了Haskell的强大类型系统和箭头(Arrow)抽象来处理XML/HTML文档。
 
-```Haskell
-[TagOpen "a" [("href","www.google.com")],TagText "Google!",TagClose "a"]
-```
+实现时，`hxt`与其他解析库有所不同。它的核心是代数数据类型和箭头。数据类型代表文档的结构，而箭头则用于指导解析过程和抽取数据。
 
-## 深度解析
+## See Also 另请参阅
+- `hxt`库文档: http://hackage.haskell.org/package/hxt
+- `pandoc`文档转换工具: https://pandoc.org
+- Online tutorial on Haskell XML parsing: https://wiki.haskell.org/HXT 
 
-历史背景: Haskell的`tagsoup`库由Neil Mitchell创建，他是一位知名的Haskell程序员。这个库鼓励使用函数式编程的方式处理HTML，它相比传统的暴力解析方法，更简洁并且强大。
-
-替代方案: `tagsoup`不是唯一的选择，还有`html-conduit`、`hxt`、`lambdasoup`等库也可以实现HTML的解析。
-
-实施细节: `tagsoup`通过标记化HTML，然后使用模特匹配（pattern matching）的方式，对HTML元素进行筛选和提取。
-
-## 扩展阅读
-
-如果你对解析HTML更感兴趣，你可以查看以下链接:
-
-1. [TagSoup库官方文档](https://hackage.haskell.org/package/tagsoup)
-2. [Neil Mitchell的博客](http://neilmitchell.blogspot.com/)
+请注意，链接可能会随时间变动，请查看最新的文档和资源。

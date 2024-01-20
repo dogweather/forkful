@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:29:51.232707-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML Using Bash
-
 ## What & Why?
 
-Parsing HTML refers to breaking down web data into more readable or usable parts. As programmers, we do this to extract specific information from webpages like data scraping.
+Parsing HTML means sifting through the structure and content of an HTML file to extract information. Programmers do it to access data, manipulate content, or scrape websites.
 
 ## How to:
 
-We'll be using the `grep` and `sed` commands in Bash for parsing. Here is an example:
+Bash isn't the go-to for parsing HTML, but it can be done with tools like `grep`, `awk`, `sed`, or external utilities like `lynx`. For robustness, we'll use `xmllint` from the `libxml2` package.
 
-```Bash
-curl -s 'http://yourwebsite.com' | grep '<title>' | sed -e 's,<title>,,g' -e 's,</title>,,g'
+```bash
+# Install xmllint if necessary
+sudo apt-get install libxml2-utils
+
+# Sample HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Sample Page</title>
+</head>
+<body>
+  <h1>Hello, Bash!</h1>
+  <p id="myPara">Bash can read me.</p>
+</body>
+</html>
+EOF
+
+# Parse the Title
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "The title is: $title"
+
+# Extract Paragraph by ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "The paragraph content is: $para"
 ```
 
-This will print the title of the webpage. Here's what each part does:
-
-- `curl -s 'http://yourwebsite.com'`: Fetches the webpage's HTML.
-- `grep '<title>'`: Searches for the line containing the `<title>` tag.
-- `sed -e 's,<title>,,g' -e 's,</title>,,g'`: Removes the `<title>` and `</title>` tags.
+Output:
+```
+The title is: Sample Page
+The paragraph content is: Bash can read me.
+```
 
 ## Deep Dive
 
-Parsing HTML has been around since the early days of the internet, with several programming languages offering their tools. Bash has `grep` and `sed`, but if you're looking for more powerful alternatives, you might get into a language like Python. Libraries like BeautifulSoup in Python provide more flexible parsing capabilities.
+Back in the day, programmers used regex-based tools like `grep` to scan HTML, but that was clunky. HTML isn't regular—it's contextual. Traditional tools miss this and can be error-prone.
 
-Technical note: this Bash method is somewhat crude, as it only matches the exact lines containing `<title>`. Tools like BeautifulSoup handle nested tags, varying spaces, and other complexities found in real-world HTML.
+Alternatives? Plenty. Python with Beautiful Soup, PHP with DOMDocument, JavaScript with DOM parsers—languages with libraries designed to understand HTML's structure.
+
+Using `xmllint` in bash scripts is solid for simple tasks. It understands XML, and by extension, XHTML. Regular HTML can be unpredictable, though. It doesn’t always follow XML’s strict rules. `xmllint` forces HTML into an XML model which works well for well-formed HTML but can stumble on messy stuff.
 
 ## See Also
 
-- Bash scripting tutorial: https://ryanstutorials.net/bash-scripting-tutorial/
-- BeautifulSoup Python library: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- More about `grep` and `sed`: https://www.gnu.org/software/grep/manual/grep.html and https://www.gnu.org/software/sed/manual/sed.html.
+- [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Demystifies HTML DOM.
+- [MDN Web Docs - Parsing and serializing XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): For XML parsing principles that apply to XHTML.
+- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): A Python library for HTML parsing.
+- [libxml2 Documentation](http://xmlsoft.org/): Details on `xmllint` and related XML tools.

@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:34:34.939427-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+日付を文字列から解析するとは、テキスト形式の日付を扱える形に変換することです。プログラマーは、ユーザーの入力やデータファイルから日付データを得て操作するためにこれを行います。
 
-文字列から日付を解析するとは、文字列形式で表現された日付と時刻をコンピューターが理解できる日付オブジェクトに変換することです。これは、日付を比較したり、計算したりする為にをプログラマーが行います。
-
-## どうやってやるか：
-
-以下にBashで文字列から日付を解析するサンプルコードを示します：
+## How to: (方法)
+Bashで日付を解析するには、`date` コマンドと `+` オプションを使います。以下は具体的な例です。
 
 ```Bash
-date -d '2022-01-01 00:00:00' '+%s'
-```
+# ISO 8601 形式の日付を解析する
+date_input="2023-03-14T15:53:00"
+parsed_date=$(date -d "$date_input" '+%Y-%m-%d %H:%M:%S')
+echo $parsed_date
 
-実行結果は以下の通りです：
+# 出力: 2023-03-14 15:53:00
+```
 
 ```Bash
-1640995200
+# 日本の日付形式を解析してみます
+date_jp="2023年03月14日 15時53分"
+parsed_date_jp=$(date -d "$date_jp" '+%Y-%m-%d %H:%M:%S')
+echo $parsed_date_jp
+
+# 出力: date: invalid date ‘2023年03月14日 15時53分’
+# Bashの 'date' コマンドはこの形式を標準で解析できません
 ```
 
-このコードは、指定した日付と時刻をUNIXエポック（1970年1月1日）からの経過秒数で表す形式に変換しています。
+## Deep Dive (深い潜水)
+Bashの `date` コマンドは1970年代からあるUNIXコマンドの一つで、時刻や日付の扱いには長い歴史があります。ただし、このコマンドは言語や地域設定に強く依存し、特定の日付形式だけを解析できます。ある国の日付形式を解析するためには、場合によっては`sed` や `awk` などのツールで前処理を行う必要があることもあります。
 
+```Bash
+# 日本の日付形式を解析するための前処理例
+date_jp="2023年03月14日 15時53分"
+parsed_date_jp=$(date -d "$(echo $date_jp | sed -E 's/年|-|月/-/g; s/日//g; s/時/:/g; s/分//g')" '+%Y-%m-%d %H:%M:%S')
+echo $parsed_date_jp
 
-## ディープダイブ：
+# 出力: 2023-03-14 15:53:00
+```
 
-Bashにおける日付パースの機能は、UNIXライクなオペレーティングシステムの歴史と密接に関連しています。UNIXエポックは、UNIX、Linux、そしてその他多くのシステムで使われる時間の基準点です。
+他の言語では、専用のライブラリや関数が用意されており、日付の解析がより柔軟に行えます。例えば、Pythonには `dateutil` ライブラリがあります。
 
-代替方法として、GNU `date`コマンドの機能を活用することも可能です。ユーザーフレンドラーな日付形式をパースできるのが特徴です。
-
-Bashが日付を処理する方法には、コンピュータのローカルタイムゾーンが考慮される点があります。そのため、タイムゾーンの違う場所で同じコードを実行すると、出力結果が変わる可能性があります。
-
-## 関連情報：
-
-以下のサイトも参考にしてみてください。
-
-GNU coreutils - Dateコマード：https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-
-UNIXエポック時間とは何か：https://ja.wikipedia.org/wiki/UNIX%E6%99%82%E9%96%93
-
-Bashスクリプトについての追加情報：https://www.tldp.org/LDP/abs/html/abs-guide.html
+## See Also (関連項目)
+- GNU Coreutilsの `date` マニュアル: https://www.gnu.org/software/coreutils/manual/coreutils.html#date-invocation
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
+- `date` コマンドに関する詳細な例と説明: https://linuxize.com/post/date-command-in-linux/

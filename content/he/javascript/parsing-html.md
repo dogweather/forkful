@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:32:47.684437-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Javascript"
@@ -10,22 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה? 
-פרסונג של HTML הוא התהליך שבו נתונים מפורמטים מהופכים לאוביקטים תוכניתיים שניתן להשתמש בהם. מתכנתים עושים את זה כדי לגעת באלמנטים DOM מתוך משאית קוד HTML.
+## מה ולמה?
+פיענוח HTML (Parsing) הוא קריאה ואנליזה של קוד HTML כדי למנף את התוכן והמבנה שלו בתוך תוכנית JavaScript. מתכנתים עושים את זה כדי לטעון נתונים דינמיים, למשל מ-API, לשנות או לאנליז את המסמך, ולעבוד עם מידע בדפי אינטרנט.
 
-# איך לעשות:
-ניתן לבצע פרסונג של HTML באמצעות 'DOMParser'. הראה דוגמא לביצוע זה:
-```Javascript
-var parser = new DOMParser();
-var htmlDoc = parser.parseFromString('<p>Hello World</p>', 'text/html');
+## איך לעשות:
+כדי לפענח HTML ב-JavaScript, ניתן להשתמש במחלקה `DOMParser`. דוגמא:
 
-console.log(htmlDoc.body.textContent); // "Hello World"
+```javascript
+const htmlString = '<div>שלום עולם!</div>';
+const parser = new DOMParser();
+const doc = parser.parseFromString(htmlString, 'text/html');
+
+console.log(doc.body.textContent); // יודפס: שלום עולם!
 ```
-הפונקציה parseFromString מאפשרת יצירת אוביקט DOM שהוא מראה של ה-HTML המקורי. 
 
-# צלילה עמוקה: 
-אף פעם לא מיותר לדעת בחדשות. DOMParser הוא חלק מתקן ה-W3C המשערת שהפקודה היא חלק תוך כדי בניית התקן Document Object Model. קיימות גם אופציות חלופיות, כמו jQuery's parseHTML, אך הן מאפשרות רק חלק מהיכולות של DOMParser. כמו כן, על אמצעים כמו DOMParser לעבוד באופן שקף ברוב הדפדפנים, מה שמקל על העבודה היומיומית שלנו כמתכנתים.
+להלן דוגמא נוספת, למציאת קישורים בתוך מחרוזת HTML:
 
-#ראה גם
-- [מסמך MDN על DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [הבנת שפת ה-HTML](https://he.khanacademy.org/computing/computer-programming/html-css)
+```javascript
+const htmlString = '<a href="https://example.com">לדוגמא</a>';
+const doc = parser.parseFromString(htmlString, 'text/html');
+const links = doc.querySelectorAll('a');
+
+links.forEach(link => console.log(link.href)); // יודפס: https://example.com
+```
+
+## עיון נוסף:
+כלי הפיענוח HTML, `DOMParser`, הודגש בתחילה בספציפיקציות DOM Level 2. זה מאפשר פיתרון פשוט ויעיל לטעינת קוד HTML לאובייקט DOM שיהיה נגיש ב-JavaScript. לאלו שעובדים עם Node.js, מודולים כמו `node-html-parser` חלופה נפוצה, כיון ש`DOMParser` אינו זמין כברירת מחדל בסביבת Node. בנוסף, חשוב לשים לב שפיענוח HTML יכול להיחשב פעולה מתמשכת ולכן יש להשתמש בו בזהירות בקוד שמופעל בדפדפן, כדי למנוע קפיצות בביצועים או איטיות.
+
+## ראו גם:
+- [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [`node-html-parser` on npm](https://www.npmjs.com/package/node-html-parser) - מודול לפיענוח HTML ב-Node.js.
+- [HTML Living Standard](https://html.spec.whatwg.org/) - המפרט הרשמי ל-HTML מכיל פרטים על איך דפדפנים צריכים להתייחס למבנה קוד HTML.

@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:29:55.672190-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Arduino"
@@ -10,48 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
 
-HTML解析は、HTMLコードを個々の要素と属性に分解して理解するプロセスです。これは、Webページの内容を抽出したり、構造を解析したりするためにプログラマーが行う作業です。
+HTMLパース（解析）とはHTML文書からデータを抽出することです。ウェブページから特定の情報を自動的に取得したいときに行います。
 
-## どのように:
+## How to: (やり方：)
 
-以下のコードスニペットはHTML解析の基本的な例です。
+Arduinoでは直接HTMLをパースするライブラリは少ないですが、簡単なHTMLデータをパースするサンプルコードは以下の通りです。アウトプット例も見てみましょう。
 
-```Arduino
-#include <HTMLParser.h>
+```arduino
+#include <Ethernet.h>
+#include <EthernetClient.h>
 
-HTMLParser parser;
+EthernetClient client;
 
 void setup() {
+  Ethernet.begin(/* your MAC address */, /* your IP address */);
   Serial.begin(9600);
-  parser.begin();
-  parser.parse("<p>Hello, World!</p>");
+  if (client.connect(/* server's IP address */, 80)) {
+    client.println("GET /path/to/page.html HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
+  }
 }
 
 void loop() {
-  if (parser.parse()) {
-    if (parser.tagName() == "p") {
-      Serial.println(parser.innerText());
+  while (client.available()) {
+    String line = client.readStringUntil('\n');
+    if (line.indexOf("<title>") > 0) {
+      int start = line.indexOf("<title>") + 7;
+      int end = line.indexOf("</title>");
+      String title = line.substring(start, end);
+      Serial.println(title);
     }
   }
 }
 ```
 
-このコードの出力は次のようになります：
-```Arduino
-Hello, World!
+サンプルのアウトプット:
+```
+Your Page Title
 ```
 
-## ディープダイブ:
+## Deep Dive (詳細解説）
 
-1. 歴史的な文脈: HTML解析はWebスクレイピングの基礎であり、初のWebブラウザが作成された時から存在しています。
+ArduinoにおけるHTMLパースは通常のウェブ開発とは違います。メモリが限られているため、大きなHTMLドキュメントのパースは実用的ではありません。Arduinoの初期バージョンから、インターネット接続はEthernetやWiFiシールドを使ったり、ESP8266のような派生ボードの利用が一般的ですが、パーサはシンプルな文字列の検索に限られています。htmlparser.hなどのライブラリを探すときに利用可能性がありますが、これはArduinoの公式サポート外です。できるだけシンプルなタグを照会し、リソース消費を控えることが重要です。
 
-2. 代替手段: プログラムに依存せず、人間が手動でHTMLを解析することも可能ですが、それは大変時間がかかります。その他のプログラミング言語（Python、JavaScriptなど）もHTML解析をサポートしています。
+## See Also (関連情報）
 
-3. 実装詳細: Arduinoでは、HTMLParserというライブラリを使用してHTMLの解析を行います。このライブラリは、HTMLエレメントを効率的に解析し、分析するためのメソッドを提供します。
-
-## 参考文献:
-
-- Arduinoの公式ドキュメンテーション: [HTML parsing](https://arduino.cc)
-- Stack Overflow: [HTML parsing in Arduino](https://stackoverflow.com/questions/tagged/arduino+html-parsing)
+- Arduino Ethernet Library: https://www.arduino.cc/en/Reference/Ethernet
+- Arduino String functions (for parsing strings): https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
+- Ethernet Shield: https://store.arduino.cc/usa/arduino-ethernet-shield-2
+- ESP8266 Introduction: https://www.espressif.com/en/products/socs/esp8266

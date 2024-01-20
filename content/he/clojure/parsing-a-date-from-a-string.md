@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:35:40.157966-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,29 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה אומר ולמה?
-פארסינג תאריך ממחרוזת הוא התהליך שבו ממירים מחרוזת שמכילה תאריך לפורמט תאריך שהמחשב יכול לעבוד איתו. תכניתאים עושים זאת כדי להפוך את הנתונים לפורמט שיכול להשתלב בלוגיקה של התוכנה, מאפשר ניתוחים על התארים ומאפשר תצוגה אחידה של תאריך למשתמש הסופי.
+## מה ולמה?
+פיענוח תאריך ממחרוזת הוא התהליך שבו אנו ממירים טקסט למבנה תאריך מובנה. תכנתים עושים זאת כדי לאפשר עיבוד וניתוח של נתוני תאריכים בצורה יעילה ונכונה.
 
 ## איך לעשות:
-ניתן להשתמש במודול `clj-time` ב-Clojure לפארסינג של תאריכים.
+מוטב העסקה הוא תוספת `java-time` המתממשקת עם Java Time API בקלות.
 
-```clojure
-(require '[clj-time.format :as f])
+```Clojure
+(require '[java-time :as jt])
 
-(defn parse-date [date-str] 
-  (f/parse (f/formatter "yyyy-MM-dd") date-str))
+(defn parse-date [date-str]
+  (jt/local-date date-str))
 
-(parse-date "2022-01-30")
+(parse-date "2023-04-01")
+;; => #object[java.time.LocalDate 0x4e64842e "2023-04-01"]
 ```
+כעת יש לנו עצם `LocalDate` שאיתו אפשר לעבוד בקלות.
 
-במקרה הזה, נקבל כתוצאה – `#object[org.joda.time.DateTime 2022-01-30T00:00:00.000Z]`.
+## צלילה לעומק
+פעם היינו משתמשים ב`java.util.Date` אך ה-API של Java Time החדש הוא הרבה יותר רובוסטי ונוח. התוספת `java-time` מנצלת זאת לטובת מתכנתי Clojure ומציעה ממשק נעים ופונקציונלי.
 
-## חקירה יותר מעמיקה:
-1. היסטוריה: באופן כללי, פארסינג של תאריכים היה תמיד קשה עד שהתפתחו ספריות מסוימות שמקלות על התהליך.
-2. אלטרנטיבות: יצרני Clojure יכולים לבחור בין מספר ספריות עיבוד תאריכים: `java.util.Date`, `java.time` ו-`clj-time`.
-3. פרטי אמיתה: `clj-time` הוא ספרייה Clojure על פני Joda-Time (ספריית Java), המקלה על עיבוד תאריכים וזמנים ב-Clojure.
+אלטרנטיבה לכך היא דרך `clj-time` שהיא ספרייה פופולרית גם כן, אך היא נחשבת כיום לפחות עדכנית לאחר הופעת `java-time`.
 
-## קישורים נוספים:
-1. [תיעוד clj-time](https://github.com/clj-time/clj-time)
-2. [מדריך ל- java.util.Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-3. [מדריך ל- java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+במידת הצורך, ניתן לעבוד ישירות עם Java API ללא תוספים, אך דורש זאת היכרות עמוקה יותר של ה-Java Interop.
+
+## ראה גם
+- [java-time GitHub](https://github.com/dm3/clojure.java-time)
+- [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

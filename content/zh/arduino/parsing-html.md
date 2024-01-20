@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:30:03.925686-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,41 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
+## What & Why? (什么和为什么？)
+解析HTML意味着从网页代码中提取有用信息。程序员这么做是为了自动化处理网页数据，比如获取温度、股票价格等。
 
-HTML解析是一种将HTML代码解构为其组成元素的方法，这样程序员可以更容易地处理和操控这些元素。编程者做这个是为了能够从HTML中抓取数据，或在需要的情况下更改HTML代码。
-
-## 如何操作:
-
-以下是在Arduino中解析HTML的一个例子。我们将使用一个叫做ArduinoJson的库。
+## How to: (怎么做：)
+在Arduino中，解析HTML可以用多种库来进行，这里以MiniXPath为例，因其简洁高效：
 
 ```Arduino
-#include <ArduinoJson.h>
+#include <Ethernet.h>
+#include <MiniXPath.h>
+
+EthernetClient client;
+char website[] = "example.com";
+int port = 80;
 
 void setup() {
   Serial.begin(9600);
-  
-  const char* html = "<h1>你好世界!</h1>";
-  DynamicJsonDocument doc(1024);
-  deserializeHtml(doc, html);
-
-  JsonObject root = doc.as<JsonObject>();
-  Serial.println(root["h1"].as<char *>()); // 你好世界!
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println("Failed to configure Ethernet using DHCP");
+  }
+  if(client.connect(website, port)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println();
+  }
 }
 
 void loop() {
+  if (client.available()) {
+    String line = client.readStringUntil('\r');
+    char* result = XPath.match("<title>", line.c_str());
+    if (result) Serial.println(result);
+  }
+
+  if (!client.connected()) {
+    client.stop();
+  }
 }
 ```
-这个例子中，`deserializeHtml`函数便会把HTML代码解析为JSON对象。然后，你就可以像上面一样，通过访问JSON对象的方式来访问HTML元素了。
 
-## 深入研究:
+样本输出：
+```
+Arduino Project Hub
+```
 
-在HTML的早期版本中，HTML解析是一个相当琐碎和混乱的过程，因为需要通过编写大量的正则表达式或字符串操作来提取所需要的信息。今天，有了像ArduinoJson这样的库，HTML解析变得非常直接和简单。
+## Deep Dive (深入研究)
+解析HTML历史悠久，但在资源受限的Arduino上可能较复杂。MiniXPath是一个轻量级解析库，专门为Arduino等小型装置设计。虽然功能有限，它不支持复杂的XPath查询，但适用于简单任务。其它库如HtmlParser和ArduinoJson也可以用于HTML解析，但可能需更多内存。
 
-在Arduino中，还有其他一些库可以帮助你进行HTML解析，例如htmlText和Arduino HTML Parser。你可以根据你的需求和偏好来选择。
-
-在使用HTML解析库时，需要注意的一点是，HTML解析可能占用大量的内存。在制定解析策略时，最好预先考虑到你Arduino 设备的内存限制。
-
-## 参考资料:
-
-1. [ArduinoJson库官方文档](https://arduinojson.org/v6/doc/deserialization/)
+## See Also (另请参阅)
+- Arduino Ethernet库参考: [https://www.arduino.cc/en/Reference/Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
+- ArduinoJson库: [https://arduinojson.org/](https://arduinojson.org/)

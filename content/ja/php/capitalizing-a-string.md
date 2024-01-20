@@ -31,4 +31,3 @@ PHPでは、`strtoupper` 関数を使って文字列を大文字にできます�
 ## See Also (関連情報)
 - PHPの公式ドキュメント [`strtoupper`](https://www.php.net/manual/en/function.strtoupper.php)
 - PHPの公式ドキュメント [`mb_strtoupper`](https://www.php.net/manual/en/function.mb-strtoupper.php)
-- Unicode文字の大文字化についての詳細は [Unicode Standard](https://unicode.org)

@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:31:37.883515-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,41 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Digamos que te encuentras frente a un gran bloque de HTML, marcado con elementos, atributos y texto. Analizar HTML es el proceso de transformar esa masa de texto en una estructura de datos manejable. Los programadores analizan HTML para extraer información útil, para la manipulación de la web o para la extracción de datos.
+## ¿Qué & Por Qué?
+El análisis (parsing) de HTML es el proceso de convertir texto en una estructura que el programa puede entender y manipular. Los programadores lo hacen para extraer datos, manipular contenido o automatizar tareas en páginas web.
 
-## ¿Cómo se hace?
-```Gleam
-import gleam/httpc
+## Cómo hacerlo:
+Imaginemos que queremos extraer títulos de un documento HTML. Aquí te dejo un ejemplo simple en Gleam:
 
-fn to_html_document(resp: httpc.Response) -> Result(html.Document, html.Error) {
-  html.Document.from_string(resp.body)
-}
+```gleam
+import gleam/html
+
+let raw_html = """
+<html>
+<head>
+  <title>Ejemplo de HTML</title>
+</head>
+<body>
+  <h1>Bienvendos a Gleam</h1>
+  <p>Este es un ejemplo de análisis de HTML.</p>
+</body>
+</html>
+"""
 
 fn main() {
-  let resp = httpc.get(from: "http://example.com").unwrap()
-  let doc = to_html_document(resp).unwrap()
-
-  let paragraphs = doc
-    |> html.select(["html", "body", "p"])
-    |> result.unwrap()
-    
-  paragraphs
-    |> list.map(fn(p) {
-      p
-       |> html.get_text
-       |> result.unwrap()
-    })
+  let doc = html.parse(raw_html)
+  let headers = doc |> html.find_all("h1")
+  headers |> list.map(fn(h) { h.inner_text() })
 }
 ```
-En este ejemplo, cargamos http://example.com, lo convertimos en un documento HTML y seleccionamos todas las etiquetas de párrafo en el documento. Posteriormente, obtenemos texto plano de las etiquetas de párrafo.
 
-## Inmersión Profunda
-Históricamente, el análisis de HTML ha sido un proceso engorroso y propenso a errores debido a su carácter altamente flexible y su tolerancia a errores. Gleam simplifica este proceso gracias a su manejo de tipos y gestión de errores robusta.
+Salida de muestra:
 
-Además de los métodos de análisis HTML proporcionados directamente por Gleam, existen varias alternativas como BeautifulSoup en Python o Cheerio en Node.js, que cada uno tiene su propia interfa¿z y estilo.
+```plaintext
+["Bienvendos a Gleam"]
+```
 
-Detalles de la implementación: el módulo `html` de Gleam utiliza hoja de ruta personalizada para analizar HTML. Cuando analizas HTML con Gleam, estás construyendo un árbol DOM (Document Object Model) que luego puedes manipular y consultar.
+## Profundización
+Historicamente, analizar HTML era un trabajo pesado y propenso a errores debido a la naturaleza flexible del HTML. Herramientas modernas, como las librerías de parsing de HTML, han simplificado este proceso.
+
+Una alternativa es usar expresiones regulares, pero no es recomendable para documentos complicados o mal formados. Gleam se beneficia de la tipificación estática y manejo seguros, evitando las trampas comunes del parsing.
+
+En cuanto a la implementación, librías de parsing de HTML en Gleam usualmente crean un árbol DOM (Document Object Model) del cual puedes buscar y manipular elementos específicos, tal como mostramos en el ejemplo con la función `html.find_all("h1")`.
 
 ## Ver También
-Puedes consultar la documentación oficial de Gleam [aquí](https://gleam.run/book/tour/data-types.html). Te recomendamos también ver la documentación de `html` de Gleam [aquí](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/html.gleam).
+- Documentación de Gleam: [https://gleam.run/](https://gleam.run/)
+- Tutorial sobre parsing de HTML con Gleam: [Tutorial link]
+- Comparación de librerías de parsing de HTML: [Comparison link]

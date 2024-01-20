@@ -1,6 +1,7 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Fish Shell: HTML 파싱"
+date:                  2024-01-20T15:34:14.077934-07:00
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,45 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+HTML 파싱은 웹 페이지의 구조와 내용을 분석해서 데이터를 추출하는 과정입니다. 프로그래머들은 일반적으로 자동화된 데이터 수집, 웹 스크레이핑, 내용 검증을 위해 파싱을 합니다.
 
-HTML 파싱이란 HTML 문서의 내용을 분석하는 과정을 말합니다. 이는 웹사이트 경우 필요한 정보를 추출하거나 특정 데이터를 변경하거나 조작하기 위해 프로그래머들이 자주 사용합니다.
-
-## 어떻게 하는가:
-
-HTML 파싱을 수행하기 위해 TypeScript에서 사용하는 라이브러리는 'jsdom'입니다. 아래에 간단한 예제를 제시합니다:
-
+## How to: (어떻게:)
 ```TypeScript
-import { JSDOM } from "jsdom";
+// TypeScript에서 HTML 파싱하기 예제
 
-const dom = new JSDOM(`<body>
-  <div id="container">
-    <h1>Welcome to my Website</h1>
-    <p>This is a sample paragraph</p>
-  </div>
-</body>`);
+import axios from 'axios';
+import { JSDOM } from 'jsdom';
 
-const container = dom.window.document.getElementById("container");
-console.log(container.innerHTML);
+// 웹 페이지를 가져오는 비동기 함수
+async function fetchHTML(url: string): Promise<string> {
+  const response = await axios.get(url);
+  return response.data;
+}
+
+// HTML 내용을 파싱하는 함수
+function parseHTML(html: string) {
+  const dom = new JSDOM(html);
+  const document = dom.window.document;
+
+  // 예를 들어 title 태그의 내용을 출력
+  const title = document.querySelector('title')?.textContent;
+  console.log(title);
+}
+
+// 실행
+fetchHTML('https://www.example.com').then(html => parseHTML(html));
+```
+콘솔 출력 예제:
+```
+'Example Domain'
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 출력됩니다:
+## Deep Dive (심층 분석)
+HTML 파싱은 웹의 초창기부터 중요했습니다. 초기에는 정적 HTML 문서에서 데이터를 추출하는 단순한 작업이었지만, 현재는 동적으로 생성되는 콘텐츠를 다루는 복잡성이 있습니다.
 
-```Output
-<h1>Welcome to my Website</h1>
-<p>This is a sample paragraph</p>
-```
+대안으로는 정규 표현식(REGEX), HTML 파서 라이브러리 등이 있습니다. 그러나 정규 표현식은 복잡한 HTML에 적합하지 않고, 에러를 유발할 여지가 많습니다. HTML 파서(예: JSDOM, Cheerio 등)는 DOM을 제대로 구성하고 더 안정적으로 데이터를 추출할 수 있게 해줍니다.
 
-## 면밀히 살펴보기:
+TypeScript에서 JSDOM 같은 라이브러리를 사용하면 노드 환경에서 DOM API에 접근할 수 있어서, 브라우저에서만 가능했던 작업들도 서버 측이나 스크립트에서 수행할 수 있습니다.
 
-HTML 파싱이라는 개념은 웹 표준의 발전과 맞물려 확립되었습니다. 초기에는 HTML 파싱 모듈이 별도로 존재하지 않았고, 개발자들이 직접 만든 코드로 HTML을 분석하곤 했습니다. 다른 대안으로는 'cheerio'와 'puppeteer' 등의 라이브러리가 있습니다.
- 'jsdom' 라이브러리는 순수 자바스크립트로 DOM을 구현하는 데 목적을 두고 있으며, 결과적으로 Node.js 환경에서 HTML을 파싱하는 데 유용하게 사용되고 있습니다.
-
-## 참고 자료:
-
-HTML 파싱에 대한 추가 정보와 관련 리소스를 확인하실 수 있습니다:
-
-1. JSDOM 라이브러리: https://github.com/jsdom/jsdom
-2. Cheerio 라이브러리: https://github.com/cheeriojs/cheerio
-3. Puppeteer 라이브러리: https://github.com/puppeteer/puppeteer
-4. HTML 파싱에 대한 MDN 설명서: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+## See Also (참조)
+- [JSDOM GitHub page](https://github.com/jsdom/jsdom)
+- [axios GitHub page](https://github.com/axios/axios)
+- [Mozilla Developer Network - Parsing and serializing XML](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Cheerio GitHub page](https://github.com/cheeriojs/cheerio)

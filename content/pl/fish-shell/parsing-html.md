@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:31:18.733618-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,45 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing HTML to przekształcanie kodu HTML na strukturalne informacje, które program może łatwo zrozumieć i manipulować. Programiści robią to, by automatyzować interakcje z witrynami, ekstrahować dane lub testować aplikacje webowe.
 
-Analiza składniowa HTML polega na przetwarzaniu kodu HTML i tworzeniu z niego struktury danych. Programiści robią to, aby zrozumieć i manipulować strukturą dokumentu HTML.
-
-## Jak to zrobić:
-
-Fish shell nie posiada natywnych narzędzi do analizy HTML, ale jest parę zewnętrznych jak [Pup](https://github.com/ericchiang/pup) czy [hxselect](https://www.w3.org/Tools/HTML-XML-utils/README).
-
-Przykład z użyciem Pup:
+## How to: (Jak to zrobić:)
+Fish nie ma wbudowanych funkcji do parsowania HTML, co oznacza, że będziemy używać narzędzi zewnętrznych, jak `pup` (jeśli jeszcze tego nie masz, najpierw zainstaluj go używając `brew install pup` na macOS lub odpowiedniego polecenia dla Twojego systemu).
 
 ```Fish Shell
-# Pobranie strony i przeparsowanie jej:
-curl "https://przykladowa-strona.pl" | pup 'body text{}'
+# Przykład pobierania tytułów z dokumentu HTML za pomocą 'pup'
+curl -s https://example.com | pup 'h1 text{}'
 ```
+Wyniki będą wylistowane jeden pod drugim w terminalu.
 
-Przykład z użyciem hxselect:
+## Deep Dive (Dogłębna analiza)
+Parsowanie HTML stało się rzeczą powszechną wraz z rosnącą popularnością internetu. W przeszłości programiści często stosowali własne, często zawodne, metody ekstrakcji danych. Dziś mamy narzędzia dedykowane tej czynności, jak `pup`, `beautifulsoup` w Pythonie czy `cheerio` w Node.js.
 
-```Fish Shell
-# Pobranie strony i przeparsowanie jej:
-curl "https://przykladowa-strona.pl" | hxnormalize -x | hxselect -i 'body'
-```
+Alternatywy dla `pup`:
+- `xmllint` - jeśli potrzebujesz czegoś lżejszego;
+- `tidy` - jeśli musisz również uporządkować HTML.
 
-## Zagłębienie się:
+Wybór narzędzia zależy od złożoności zadania. `pup`, będąc strumieniowym parserem, jest idealny do szybkich, prostych zadań. Dla skomplikowanych zadań, rozważ użycie pełnoprawnych bibliotek języka programowania.
 
-Fish Shell, choć nie posiada wbudowanych narzędzi do analizy składniowej HTML, poprzez zapewnienie łatwej integracji z innymi narzędziami, staje się uniwersalnym skryptem powłoki. Wielu programistów korzysta z Pup lub hxselect, aby przeprowadzić analizę składniową HTML w Fish Shell. Te narzędzia, mimo że nie są tak stare jak HTML, są znacznie młodsze i nadal aktywnie rozwijane.
+## See Also (Zobacz także)
+- Oficjalna strona `pup`: https://github.com/ericchiang/pup
+- Dokumentacja `beautifulsoup`: https://www.crummy.com/software/BeautifulSoup/
+- Dokumentacja `cheerio`: https://cheerio.js.org/
 
-Poza Pup i hxselect, programiści mają do wyboru wiele alternatyw, takich jak Beautiful Soup dla Pythona czy Nokogiri dla Ruby.
-
-Sposób działania tych narzędzi polega na przetwarzaniu surowego kodu HTML i przekształcaniu go w strukturę drzewiastą, nazywaną Document Object Model (DOM). Następnie, przy pomocy wyrażeń CSS lub XPath, możemy manipulować i uzyskiwać konkretne elementy z tej struktury.
-
-## Zobacz też:
-
-1. Wyrażenia regularne w Fish Shell:
-    - https://fishshell.com/docs/current/index.html#regex
-2. Dokumentacja Pup:
-    - https://github.com/ericchiang/pup
-3. Dokumentacja hxselect:
-    - https://www.w3.org/Tools/HTML-XML-utils/README
-4. Beautiful Soup dla Pythona:
-   - https://www.crummy.com/software/BeautifulSoup/doc
-5. Nokogiri dla Ruby:
-   - https://nokogiri.org/tutorials/parsing_an_html_xml_document.html
+Korzystając z tych źródeł, możesz zagłębić się w tematykę i poszerzyć swoje umiejętności w parsowaniu HTML.

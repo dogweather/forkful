@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:37:50.364660-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,43 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+日付の解析は文字列から日付データ型への変換です。プログラマーはデータ処理や日付の検証でよく使います。
 
-文字列から日付を解析することは、日付情報を文字列から日付オブジェクトに変換するプロセスです。プログラマーがこれを行うのは、日付関連の操作（並べ替え、比較、計算など）を行うためです。
-
-## 方法：
-
-PowerShellで日付解析を行う例を以下に示します。
+## How to: (方法)
+以下の例では、文字列から日付への解析方法を紹介します。
 
 ```PowerShell
-$strDate = '2022/05/11'
-$date = [DateTime]::Parse($strDate)
-```
-そして、出力は次のようになります：
-```PowerShell
-Wednesday, May 11, 2022 12:00:00 AM
-```
-## ディープダイブ：
+# 基本的な日付の解析
+$dateString = "2023-04-01"
+$date = [datetime]::Parse($dateString)
+echo $date
 
-1. **歴史的なコンテキスト**： PowerShellは2006年に発表され、そのパワフルな文字列解析能力により評価を受けてきました。
-2. **代替案**： PowerShellの 'ParseExact' メソッドを使うことも可能です。これは、明示的な日付/時間形式を指定して解析を行う場合に役立ちます。
-3. **実装の詳細**： PowerShellの[DateTime]::Parse メソッドは、与えられた文字列を現在のカルチャ設定に基づいて日付と時間に解析します。これは、カルチャによって日付の書式が異なるため、特に重要です。
+# 特定の文化に依存するフォーマットを指定
+$culture = [Globalization.CultureInfo]::CreateSpecificCulture("ja-JP")
+$date = [datetime]::ParseExact($dateString, "yyyy-MM-dd", $culture)
+echo $date
 
-```PowerShell
-$strDate = '11/5/2022'
-$format = 'd/M/yyyy'
-$culture = [Globalization.CultureInfo]::InvariantCulture
-$date = [DateTime]::ParseExact($strDate, $format, $culture)
+# ParseExactを使ってフォーマットを厳格に適用
+$formattedDate = [datetime]::ParseExact($dateString, "yyyy-MM-dd", $null)
+echo $formattedDate
 ```
 
-そして、出力は次のようになります：
+これらのコマンドを実行すると、適切な`DateTime`オブジェクトを得られます。
 
 ```PowerShell
-Saturday, May 11, 2022 12:00:00 AM
+Saturday, April 1, 2023 12:00:00 AM
+Saturday, April 1, 2023 12:00:00 AM
+Saturday, April 1, 2023 12:00:00 AM
 ```
 
-## 参照資料：
+## Deep Dive (深掘り)
+日付解析は古くからありますが、PowerShellでは`.NET`クラスの方法を用いることが多いです。 `Parse`メソッドは汎用的で、`ParseExact`では特定の日付・時刻フォーマットを厳密に適用できます。時には`TryParse`メソッドを使うとエラー発生時にプログラムが停止せずに済むので有効です。
 
-- [Microsoft公式ドキュメンテーション：DateTime.Parse メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse?view=net-5.0)
+異なる国や地域では日付のフォーマットが異なるため、カルチャーを指定して解析することは国際化されたスクリプトには必須です。例えば、米国では`MM/dd/yyyy`ですが、日本では`yyyy/MM/dd`です。
 
-以上で日付の解析に関する解説を終わります。
+精度が要求される場合や、特定の形式に対応する必要がある場合は`.NET`の`DateTimeOffset`や`TimeZoneInfo`を使用することで、タイムゾーンの情報を含めた解析も可能です。
+
+## See Also (関連リンク)
+- [DateTime.Parse メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse?view=net-6.0)
+- [DateTime.ParseExact メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parseexact?view=net-6.0)
+- [カルチャに固有の日付と時刻の形式](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/standard-date-and-time-format-strings)

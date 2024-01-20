@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:30:38.307168-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Clojure"
@@ -10,39 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTML Verarbeitung mit Clojure
+## What & Why? (Was & Warum?)
+HTML-Parser lesen und interpretieren den HTML-Code einer Webseite. Programmierer nutzen das, um Daten zu extrahieren, automatisiert zu interagieren oder Inhalte zu prüfen.
 
-## Was & Warum?
-
-HTML-Verarbeitung ist die Methode zur Interpretation und Manipulation von HTML-Strukturen. Die Programmierer setzen sie ein, um strukturierte Daten aus Webseiten zu gewinnen oder diese zu manipulieren.
-
-## Wie man es macht:
+## How to: (Wie geht das?)
+Clojure bietet verschiedene Bibliotheken, um HTML zu parsen. `Enlive` ist eine beliebte Wahl. Hier ist ein schnelles Beispiel:
 
 ```Clojure
-;;; Einbindung der Anforderungen
-(require '[clj-http.client :as client])
-(require '[hickory.core :as hickory])
-(require '[hickory.select :as select])
+(ns mein-projekt.core
+  (:require [net.cgrand.enlive-html :as html]))
 
-;;; Webseitenabruf
-(def res (client/get "https://example.com"))
+(defn parse-html [html-str]
+  (html/html-resource (java.io.StringReader. html-str)))
 
-;;; Parsen des HTML
-(def doc (hickory/parse (:body res)))
-
-;;; Auswahl eines spezifischen HTML-Elements
-(defn get-elements [doc css-selector]
-  (select/select (select/css css-selector) doc))
+;; Nutzung:
+(let [html-str "<html><body><p>Hello, Clojure!</p></body></html>"]
+  (println (parse-html html-str)))
 ```
-Dieses Beispiel zeigt wie man eine Webseite mit `clj-http.client` abruft und anschließend das HTML mit `hickory` parst. Mit der `get-elements` Funktion kann man spezifische HTML-Elemente auswählen.
 
-## Vertiefung
+Ausgabe:
 
-HTML-Verarbeitung hat eine lange Geschichte, die mit der Entwicklung von HTML einhergeht. Es existieren Alternativen wie zum Beispiel `Jsoup`. `Jsoup` ist jedoch eine in Java geschriebene Bibliothek, also nicht nativ in Clojure.
+```
+({:tag :html, 
+  :attrs nil, 
+  :content [{:tag :body, 
+             :attrs nil, 
+             :content [{:tag :p, 
+                        :attrs nil, 
+                        :content ["Hello, Clojure!"]}]}]})
+```
 
-Die `hickory` Bibliothek bietet eine schöne Schnittstelle zum Parsen und Auswählen von HTML-Elementen in Clojure. Es verwendet unter der Haube `jsoup` zum Parsen des HTML und erweitert es um eine clojurische API. Der Datenfluss in `hickory` wird durch Map-Transformationen dargestellt.
+Das Ergebnis ist eine verschachtelte Datenstruktur, die die HTML-Elemente abbildet.
 
-## Siehe Auch
+## Deep Dive (Tiefergehendes)
+Früher setzten Entwickler oft auf regelbasierte Ansätze mit regulären Ausdrücken, um HTML zu parsen. Aber HTML ist komplex und reguläre Ausdrücke sind fehleranfällig. Moderne Parser wie `Enlive` erzeugen eine Manipulierbare Baumstruktur.
 
-- [Clojure's clj-http Bibliothek](https://github.com/dakrone/clj-http)
-- [Hickory](https://github.com/davidsantiago/hickory)
+`jsoup` ist eine Alternative, die Java-Bibliothek ist aber in Clojure weniger idiomatisch. `Hickory` wandelt HTML in Clojure-Datenstrukturen um, die direkte Manipulation in Clojure erlauben.
+
+Enlive nutzt Selector-basierte Templates, um nicht nur zu parsen, sondern auch, um HTML zu transformieren - mächtig für Web Scraping und Templating.
+
+## See Also (Siehe auch)
+- Enlive-Dokumentation: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- Hickory auf GitHub: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+- Jsoup: [https://jsoup.org/](https://jsoup.org/)

@@ -1,6 +1,7 @@
 ---
 title:                "Parsing html"
-html_title:           "Gleam recipe: Parsing html"
+date:                  2024-01-20T15:33:38.456428-07:00
+html_title:           "Bash recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,50 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing HTML involves taking a HTML document as an input and breaking it down into readable elements for manipulation purposes. Programmers do it to extract data, automate web tasks, or modify web content.
+Parsing HTML means tearing apart a chuck of HTML code to grasp its structure and content. Programmers do it to extract data, manipulate content, or migrate info between formats and systems.
 
 ## How to:
+To parse HTML in Ruby, install the 'Nokogiri' gem with `gem install nokogiri`. Nokogiri is like a Swiss Army knife for working with HTML and XML in Ruby. Here's a quick example:
 
-Parsing HTML in Ruby is a pretty straightforward process. Nokogiri is the most popular HTML parsing library for Ruby.
-
-First, install Nokogiri:
-
-```Ruby
-gem install nokogiri
-```
-
-To parse HTML:
-
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(open('http://www.example.com'))
-puts doc
+# Load HTML content from a website
+html_content = URI.open('http://example.com').read
+
+# Parse the HTML
+doc = Nokogiri::HTML(html_content)
+
+# Extract the title
+title = doc.xpath('//title').text
+puts "The title of the page is: #{title}"
 ```
 
-This will print the parsed HTML of the example webpage. To extract specific elements, use CSS selectors:
+This spits out something like: `The title of the page is: Example Domain`.
 
-```Ruby
-doc.css('h1').each do |header|
-  puts header.content
-end
-```
+## Deep Dive
+Back in the early Ruby days, options for parsing HTML were limited. REXML was built-in but slow. Then Hpricot showed up, but it fizzled out. Nokogiri debuted in 2008, blending the ease of Hpricot with the speed and power of libxml, a proven XML toolkit.
 
-This code extracts all `<h1>` tags from the parsed HTML and prints their content.
+In the parsing world, there are always alternatives. Some swear by the built-in 'rexml' library or 'oga', another XML/HTML parser for Ruby. But Nokogiri remains a favorite for its robustness and speed, not to mention its vast array of features.
 
-## Deep Dive:
+Under the hood, Nokogiri converts HTML into a Document Object Model (DOM)—a tree structure. This makes it easy to navigate and manipulate elements. Using XPath and CSS selectors, you can pinpoint any piece of information you need.
 
-In the early days of the web, HTML tags were regex-matched, which was cumbersome and error-prone. Nokogiri, introduced in 2007, significantly simplified this process. While other libraries like Hpricot have become obsolete or discontinued, Nokogiri, being quick, reliable, and easy to use, remains popular in Ruby applications.
-
-There are alternatives to Nokogiri, such as Oga and rexml. These can be faster but lack Nokogiri's extensive feature set. 
-
-Nokogiri parses HTML with a native C extension that leverages the libxml2 library. This makes it fast, but also means it might be slower to install than pure Ruby alternatives, as it needs to compile a C extension during installation.
-
-## See Also:
-
-- [Nokogiri documentation](https://nokogiri.org/)
-- [libxml2 library](http://xmlsoft.org/)
-- [Oga libray](https://github.com/YorickPeterse/oga)
-- [rexml library](https://github.com/ruby/rexml)
+## See Also
+- Nokogiri gem: [https://nokogiri.org/](https://nokogiri.org/)
+- Ruby's rexml documentation: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Alternative parser 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Learn about XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

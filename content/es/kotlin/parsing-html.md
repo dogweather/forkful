@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:32:42.499461-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,40 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué? 
-
-Parsear HTML consiste en convertir el código HTML en una estructura de datos en memoria que podamos manipular. Los programadores lo necesitan para extraer información útil y realizar diversas operaciones en páginas web.
+## Qué y Por Qué?
+El *parsing* de HTML consiste en analizar y extraer datos de documentos HTML. Los programadores lo hacen para interactuar con contenido web, extrayendo información útil o manipulando la estructura de la página.
 
 ## Cómo hacerlo:
-Podemos utilizar la biblioteca jsoup, muy conocida y fácil de utilizar para parsear HTML en Kotlin. Aquí tienes un ejemplo simple.
+Kotlin no tiene una biblioteca estándar para parsear HTML, pero podemos usar Jsoup, una biblioteca poderosa y flexible.
 
-```Kotlin
-import org.jsoup.Jsoup
-
-fun main(args: Array<String>) {
-    val html = "<html><head><title>Un sitio web simple</title></head>" +
-            "<body><p>Hola mundo</p></body></html>"
-    val doc = Jsoup.parse(html)
-    println(doc.title())
-    println(doc.body().text())
+Primero, agrega Jsoup como dependencia en tu `build.gradle`:
+```gradle
+dependencies {
+    implementation 'org.jsoup:jsoup:1.14.3'
 }
 ```
-El resultado de este código será:
 
-```Kotlin
-Un sitio web simple
-Hola mundo
+Ahora, parseemos un sencillo HTML en Kotlin:
+```kotlin
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+
+fun main() {
+    val html = """
+        <html>
+            <head>
+                <title>Mi Página</title>
+            </head>
+            <body>
+                <p>Hola, Kotlin!</p>
+            </body>
+        </html>
+    """.trimIndent()
+
+    val doc: Document = Jsoup.parse(html)
+    val bodyText = doc.body().text()
+    val titleText = doc.title()
+
+    println("El cuerpo contiene: $bodyText")
+    println("El título es: $titleText")
+}
 ```
 
-## Profundizando
+Salida esperada:
+```
+El cuerpo contiene: Hola, Kotlin!
+El título es: Mi Página
+```
 
-1. Contexto histórico: El análisis y procesamiento de HTML ha sido una tarea importante para los desarrolladores desde el advenimiento de la web. Con el tiempo, las bibliotecas de parseo de HTML se hicieron cada vez más sofisticadas para manejar mejor HTML mal formado y dar soporte a documentos HTML5.
+## Análisis Profundo:
+El parsing de HTML no es un concepto nuevo. Desde los inicios de la web, se ha requerido extraer información de las páginas. Antes de bibliotecas como Jsoup, los programadores a menudo usaban expresiones regulares, lo cual podía ser tedioso y propenso a errores.
 
-2. Alternativas: jsoup es una opción estelar, pero otras bibliotecas de parseo HTML en Kotlin se encuentran disponibles. Por ejemplo, HtmlUnit, Jericho HTML Parser y TagSoup son dignas de consideración dependiendo de tus necesidades específicas.
+Alternativas a Jsoup incluyen la API `DOMParser` en JavaScript o `lxml` en Python. Cada una ofrece diferentes niveles de complejidad y control.
 
-3. Detalles de implementación: En términos simples, al parsear HTML, primero se analiza el documento HTML en nodos. Luego, cada nodo es examinado para entender su naturaleza y el tipo de información que contiene, que puede variar desde un simple texto hasta una imagen o un enlace.
+Jsoup en particular destaca por su capacidad de manejar HTML mal estructurado, cómo lo haría un navegador real, y su sintaxis tipo "jQuery" para seleccionar y manipular datos con facilidad.
 
-## Ver También
-
-1. [Documentación jsoup](https://jsoup.org/)
-2. [Biblioteca HtmlUnit](http://htmlunit.sourceforge.net/)
+## Ver También:
+- Documentación oficial de Jsoup: [https://jsoup.org/](https://jsoup.org/)

@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:33:27.853083-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,48 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsowanie HTML w Python: Krótki poradnik
-
-## Co & Dlaczego?
-
-Parsowanie HTML to proces analizy kodu HTML w celu wyodrębnienia informacji. Programiści parse'ują HTML, aby zdobyć dane z stron internetowych i manipulować strukturą strony.
+## Co i dlaczego?
+Parsing HTML to proces wydobywania danych ze struktur HTML. Programiści to robią, by manipulować zawartością stron internetowych lub scrapować informacje.
 
 ## Jak to zrobić:
-
-Używamy pakietu `BeautifulSoup`, aby uprościć parsowanie kodu HTML. Do zainstalowania, wykonaj następujące polecenie:
-
-```Python
-pip install beautifulsoup4
-```
-
-Przykładowy kod do parsowania HTML:
+Użyjemy biblioteki `BeautifulSoup`, aby zeskrapować tytuł strony.
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://www.python.org/"
+url = "http://example.com"
 response = requests.get(url)
-html = response.text
+soup = BeautifulSoup(response.text, 'html.parser')
 
-soup = BeautifulSoup(html, 'html.parser')
-for link in soup.find_all('a'):
-    print(link.get('href'))
+title = soup.find('title').get_text()
+print(f"Tytuł strony to: '{title}'")
 ```
 
-Powyższy kod pobiera i analizuje stronę główną Python.org, a następnie wypisuje wszystkie linki zawarte na tej stronie. 
+Wynik:
+```
+Tytuł strony to: 'Example Domain'
+```
 
-## Wnikliwe spojrzenie:
+## Głębsze spojrzenie:
+Parsing HTML nie jest nowym tematem. W latach '90, kiedy internet zaczął się rozwijać, potrzeba analizowania HTML-a rosła. W Pythonie, poza `BeautifulSoup`, mamy też `lxml` i wbudowany moduł `html.parser`. Każda z nich ma swoje plusy i minusy: `lxml` jest szybszy, ale wymaga dodatkowych zależności C, a `html.parser` jest częścią standardowej biblioteki Pythona, ale jest wolniejszy i mniej elastyczny.
 
-Parsowanie HTML zaczęło się po wykorzystaniu języka HTML do strukturyzowania stron internetowych. Istnieją alternatywne metody, takie jak wykorzystanie XPath lub modułu `lxml`. Wybór zależy od potrzeb projektu i preferencji osoby programującej. 
-
-`BeautifulSoup` nawiguje po drzewie parsowania lepiej niż inne metody i jest bardziej odporny na błędy w kodzie HTML. Może jednak być wolniejszy w porównaniu z `lxml` lub `re`.
-
-## Zobacz też:
-
-1. BeautifulSoup Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-2. Python requests: https://docs.python-requests.org/en/latest/
-3. lxml library: https://lxml.de/
-4. HTML specifications: https://html.spec.whatwg.org/
-
-Lektura tych źródeł pozwoli ci lepiej zrozumieć parsowanie HTML w Pythonie. Zawsze warto pogłębiać swoją wiedzę.
+## Zobacz również:
+- Dokumentacja `BeautifulSoup`: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Porównanie parserów HTML w Pythonie: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser
+- Tutorial Web Scraping w Pythonie: https://realpython.com/beautiful-soup-web-scraper-python/

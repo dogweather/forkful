@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:31:08.433097-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Парсинг HTML - це процес витягування специфічної інформації з HTML-документів. Програмісти роблять це, щоб автоматизувати обробку даних з веб-сторінок.
+## Що це таке та навіщо?
+Парсинг HTML — це процес аналізу HTML коду для вилучення даних. Програмісти парсять HTML, щоб отримати доступ до інформації з веб-сторінок і використовувати її в своїх додатках або для аналізу.
 
-## Як це зробити:
-Clojure надає бібліотеку, яка дозволяє нам парсити HTML документи. Нагадую, що ми працюємо з синтаксисом XML, отже, маємо знати його основи.
+## Як це робиться:
+У Clojure для парсингу HTML можна використовувати бібліотеку `enlive`. Ось простий приклад її використання:
 
 ```Clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn fetch-html [url]
- (html/html-resource (java.net.URL. url)))
+(defn parse-html [html-content]
+  (html/select (html/html-resource (java.io.ByteArrayInputStream. (.getBytes html-content))) [:div]))
 
-(def parsed-html 
-  (fetch-html "http://somesite.org"))
+(let [html-content "<html><body><div>Hello, World!</div></body></html>"]
+  (println (parse-html html-content)))
 ```
 
-Вищенаведений код: витягуємо HTML соместрічку і парсимо її. `fetch-html` - це функція, яка витягує HTML з URL.
+Приклад виведення:
+```
+([{:tag :div, :attrs nil, :content ["Hello, World!"]}])
+```
 
-## Поглиблений розбір
-В історичному контексті, парсинг HTML був складним процесом і потребував багато коду. Але з розвитком мов, як Clojure, це стало набагато простіше.
+## Заглиблення:
+Enlive — це потужний парсер HTML для Clojure, який був створений у 2009 році. Він дозволяє вам не тільки витягувати дані, але й шаблонізувати HTML. Серед альтернатив є `jsoup` та `hickory`, які також можна використовувати у проектах Clojure. Enlive працює на основі CSS селекторів, які дають гнучкість у виборі даних з HTML.
 
-Альтернативами для парсингу HTML в Clojure є бібліотеки, такі як JSoup або HtmlUnit, хоча вони можуть бути більш складними в використанні.
-
-Використовуючи `enlive-html`, наш HTML документ розбивається на дерево вузлів, яке ми можемо легко переглядати та маніпулювати.
-
-## Дивіться також
-3. [Офіційна документація Enlive](https://github.com/cgrand/enlive). 
-4. [Про XML в Clojure](https://clojuredocs.org/clojure.xml)
+## Дивись також:
+- [Jsoup - Java HTML Parser](https://jsoup.org/)
+- [Hickory Github Page](https://github.com/davidsantiago/hickory)
+- ClojureDocs - універсальний ресурс з прикладами та обговореннями для багатьох тем Clojure [ClojureDocs](https://clojuredocs.org/)

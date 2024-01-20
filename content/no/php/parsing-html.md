@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:33:02.577964-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Å parse HTML med PHP
+## Hva & Hvorfor?
+Parsing av HTML betyr å lese og tolke HTML-koden for å forstå strukturen og innholdet. Programmerere parser HTML for å manipulere, hente ut data, eller integrere med andre tjenester.
 
-## Hva og hvorfor?
-
-Å parse HTML er prosessen der vi dekoder HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å ekstrahere data, manipulere strukturen, eller integrere innhold fra nettsider.
-  
-## Slik gjør du
-
-Vi bruker `DOMDocument`-klassen i PHP for å parse HTML. Først oppretter vi en ny instans av `DOMDocument`.
+## Hvordan:
+For å parse HTML i PHP kan du bruke `DOMDocument` klassen. Her er et enkelt eksempel:
 
 ```PHP
-$dom = new DOMDocument;
+<?php
+// Innholdet du vil parse
+$htmlString = '<!DOCTYPE html><html><body><h1>Hei Norge</h1></body></html>';
+
+// Opprett en ny DOMDocument
+$dom = new DOMDocument();
+
+// Last inn HTML, undertrykk feilmelding med @
+@$dom->loadHTML($htmlString);
+
+// Finn h1-tag ved hjelp av DOMXPath
+$xpath = new DOMXPath($dom);
+$h1 = $xpath->query('//h1')->item(0);
+
+// Skriv ut h1-innholdet
+echo $h1->nodeValue;
+?>
 ```
 
-Deretter laster vi inn HTML-koden vi vil parse.
+Utdata vil bli `Hei Norge`.
 
-```PHP
-$dom->loadHTML($html);
-```
+## Dypdykk:
+Historisk har HTML-parsing vært plundrete på grunn av ulike nettleserstandarder. `DOMDocument` og `DOMXPath` i PHP gjør det enklere. Disse er foretrukne fremfor regulære uttrykk på grunn av nøyaktighet og mindre sjanse for feil. Vær oppmerksom på `loadHTML` kan være kresen med HTML5, så `libxml_use_internal_errors(true);` kan være nyttig for å undertrykke parse-feil. Andre verktøy inkluderer SimpleXML og tredjeparts biblioteker som `phpQuery`.
 
-Vi kan nå få tilgang til HTML-elementene.
-
-```PHP
-$headings = $dom->getElementsByTagName('h1');
-foreach ($headings as $heading) {
-    echo $heading->nodeValue, PHP_EOL;
-}
-```
-  
-## Dypdykk
-
-**Historisk kontekst**: PHP startet ut som en templating motor og har over tid utviklet seg til å bli en fullverdig programmeringsspråk med mange funksjoner, inkludert HTML-parsing.
-
-**Alternativer**: Andre biblioteker som `phpQuery` og `simplehtmldom` gir mer brukervennlige grensesnitt for HTML parsing, men kan være overkill for enkle oppgaver.
-
-**Implementeringsdetaljer**: `DOMDocument`-klassen bruker libxml2 til å parse HTML. libxml2 er en XML parser og toolkit skrevet i C for Gnome prosjektet.
-
-## Se også
-
-- [PHP DOMDocument Manual](https://www.php.net/manual/en/class.domdocument.php)
-- [phpQuery on GitHub](https://github.com/phpquery/phpquery)
-- [libxml2](http://xmlsoft.org/)
+## Se Også:
+- Offisiell PHP dokumentasjon for DOMDocument: https://www.php.net/manual/en/class.domdocument.php
+- SimpleXML funksjonalitet: https://www.php.net/manual/en/book.simplexml.php
+- `phpQuery` på GitHub: https://github.com/punkave/phpQuery
+- Andre biblioteker på Packagist: https://packagist.org/

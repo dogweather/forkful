@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:30:45.295705-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,55 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Parsing HTML betyr å tolke og konvertere HTML-kode slik at data kan hentetes og manipuleres. Programmerere gjør dette for å skrape nettsider, trekke ut informasjon, eller migrere innhold til en annen plattform.
 
-HTML-parsing er prosessen med å analysere HTML-kode for å opprette objekter som kan manipuleres og brukes i dine programmer. Dette gjør det mulig for programmerere å hente ut data, manipulere strukturer, eller programmere interaksjoner i websider.
+## How to:
+I Clojure kan du bruke `enlive` biblioteket for å enkelt parse HTML.
 
-## Hvordan gjøre det:
-
-Clojure har en fantastisk bibliotek for å parse HTML - Enlive. La oss se hvordan det fungerer. For eksempel, tenk at vi har en enkel HTML-fil som vi vil jobbe med:
-
-```html
-<!DOCTYPE html>
-<html>
-    <body> 
-        <h1>Hei Clojure!</h1>
-        <p>Velkommen til programmeringsverden!</p>
-    </body>
-</html>
-```
-La oss analysere den med Enlive. For det første, la oss legge inn Enlive avhengigheten i `project.clj`:
-
-```clojure
-(defproject parsing-demo "0.1.0-SNAPSHOT"
-            :dependencies [[org.clojure/clojure "1.10.1"]
-                           [net.cgrand/enlive "1.1.6"]])
-```
-Og her skal vi parse HTML-koden:
-
-```clojure
+```Clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn parse-html []
-    (let [htmldoc (html/html-resource (java.io.StringReader. "<!DOCTYPE html> <html> <body> <h1>Hei Clojure!</h1><p>Velkommen til programmeringsverden!</p></body></html>"))]
-        (println htmldoc)))
+(defn fetch-titles [html-content]
+  (html/select (html/html-resource (java.io/StringReader. html-content))
+               [:title]))
+
+(let [html-content "<html><head><title>Hei, Norge!</title></head><body></body></html>"]
+  (println (:content (first (fetch-titles html-content)))))
 ```
-Kjør funksjonen `parse-html`, så får du utskriften:
 
-```clojure
-{:tag :html, :attrs nil, :content ({:tag :body, :attrs nil, :content...} )
+Forventet resultat:
+
 ```
-## Deep Dive:
+"Hei, Norge!"
+```
+Dette eksemplet henter ut innholdet i `<title>` tagger fra HTML-strengen.
 
-HTML-parsing har vært en viktig del av webutvikling siden begynnelsen, og det finnes ulike måter å bygge HTML-parser på. Når vi snakker om Clojure, har vi tilgang til flere biblioteker å velge mellom, ikke bare Enlive.
+## Deep Dive
+HTML-parsing har en lang historie, tett knyttet til utviklingen av internett og behovet for datahøsting. I Clojure-miljøet har `enlive` lenge vært et sterk verktøy for parsing, men alternativer som `hickory` og `jsoup` (via Java interoperabilitet) finnes også.
 
-For eksempel, hickory er et annet populært bibliotek for HTML-parsing i Clojure. Det gir lignende funksjonalitet som Enlive, men med en litt annen syntaks og brukergrensesnitt.
+Ved å benytte `enlive` kan du utnytte dens DSL (domain-specific language) for å peke på spesifikke HTML-elementer du er interessert i. Dette krever forståelse av CSS-selektorer og grundig kunnskap om HTML-strukturen du jobber med.
 
-Det er viktig å merke seg at parsing i seg selv ikke er nok for å jobbe effektivt med websider - du må også kunne manipulere og endre det parsede objektet. Med Clojure's funksjonelle programmeringsparadigme og rik datastrukturer, blir dette en ganske enkel oppgave.
+Interessant nok er parsing av HTML en ikke-triviell oppgave på grunn av "uren" HTML som ofte finnes i det virkelige liv, noe som fører til at parseren må være både tolerant og intelligent for å håndtere varierende kvaliteter på HTML-koden.
 
-## Se også:
-
-- Dokumentasjon for Enlive: https://github.com/cgrand/enlive
-- Hickory sitt repo: https://github.com/davidsantiago/hickory
-- Clojure sin guide på web-scraping: https://clojure-cookbook.com/posts_output/web_scraping_with_enlive.html
-- HTML-parsing utført med Java: https://www.journaldev.com/2016/html-parsing-using-java-htmlunit
+## See Also
+- Enlive GitHub Repo: https://github.com/cgrand/enlive
+- ClojureDocs Enlive Examples: https://clojuredocs.org/net.cgrand.enlive-html
+- jsoup: https://jsoup.org/ (for Java interoperabilitet)

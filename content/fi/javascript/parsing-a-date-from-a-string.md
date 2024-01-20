@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Javascript: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:37:12.377385-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,29 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkijonosta päivämäärän jäsennys on prosessi, jossa analyyttisesti muutetaan tekstiä päivämääräobjektiin Javascript-kieltä varten. Ohjelmoijat tekevät sen, jotta he pystyvät manipuloimaan aikatietoja ja suorittamaan toimintoja, kuten aikavertailuja ja aikavälien laskemista.
+## What & Why? (Mitä ja Miksi?)
+Päivämäärän jäsentäminen merkkijonosta muuttaa tekstin päiväysmuotoon, jota koodi ymmärtää. Ohjelmoijat tekevät sen, koska sovellukset tarvitsevat usein aikatietoja laskentaan, varmistukseen tai ajan näyttämiseen käyttäjille.
 
-## Näin se toimii:
-Ohessa on joitakin esimerkkejä siitä, miten päivämäärä voidaan jäsentää merkkijonosta Javascriptin avulla.
+## How to: (Kuinka tehdä:)
 ```Javascript
-// Tavanomainen tapa on käyttää sisäänrakennettua Date constructoria
-let d = new Date("2021-02-18");
-console.log(d.toString());  // Outputs: "Thu Feb 18 2021 02:00:00 GMT+0200 (Eastern European Standard Time)"
+// Esimerkki: Merkkijonon jäsentäminen Date-objektiksi
+const dateString = "2023-04-25T15:30:00.000Z";
+const parsedDate = new Date(dateString);
 
-// Lisäksi voit käyttää Date.parse-metodia, joka palauttaa ajan millisekunneissa Unix Epochista lähtien
-let ms = Date.parse("2021-02-18");
-console.log(ms);  // Outputs: 1613587200000
+console.log(parsedDate.toString()); // Tulostaa: Tue Apr 25 2023 18:30:00 GMT+0300 (Itä-Euroopan kesäaika)
+
+// Esimerkki: Päivämäärän jäsentäminen epästandardista muodosta
+const finnishDateString = "25.4.2023 15:30";
+const dateParts = finnishDateString.split(/[. :]/);
+const year = parseInt(dateParts[2], 10);
+const month = parseInt(dateParts[1], 10) - 1; // Kuukaudet alkavat nollasta
+const day = parseInt(dateParts[0], 10);
+const hours = parseInt(dateParts[3], 10);
+const minutes = parseInt(dateParts[4], 10);
+const finnishDate = new Date(year, month, day, hours, minutes);
+
+console.log(finnishDate.toString()); // Tulostaa: Tue Apr 25 2023 15:30:00 GMT+0300 (Itä-Euroopan kesäaika)
 ```
 
-## Syväsukellus
-Jäsennettäessä päivämäärä merkkijonosta on tärkeää ymmärtää sen historiallinen konteksti Javascriptin ohjelmointikielessä. Javascript Java-kielessä Date-olion ensimmäinen versio käytettiin tähän tarkoitukseen 90-luvun puolivälissä. Jotkut näistä varhaisista keinoista ovat nyt vanhentuneita, joten on tärkeää pysyä ajan tasalla uusimmista standardeista.
+## Deep Dive (Syväsukellus):
+Jäsentäminen oli ennen monimutkaisempaa ennen `Date.parse()` ja `Date` konstruktorin standardisointia. Päivämäärän jäsentämiseen löytyy monia kirjastoja, kuten Moment.js tai Date-fns, jotka tarjoavat lisätoiminnallisuutta ja helpompaa kansainvälistä tukea.
 
-Vaihtoehtoiset menetelmät merkkijonosta päivämäärän jäsentämiseksi sisältävät kolmannen osapuolen kirjastojen, kuten moment.js tai day.js, käytön. Nämä kirjastot tarjoavat useita työkaluja ja ominaisuuksia päivämäärien ja ajan käsittelyyn.
+JavaScript selvittää päivämäärämerkkijonon itse kun käytetään `new Date()`, mutta muotojen on oltava yhteensopivia ECMAScriptin määritelmien kanssa. Epästandardit formaatit vaativat manuaalista jäsentämistä, kuten yllä esimerkissä.
 
-Tehtäessä näitä merkkijonosta päivämäärän jäsentämisiä on tärkeää varmistaa tiedon oikeellisuus ja käsittelyn avaaminen. Javascriptin sisäänrakennettu Date-olio ja metodit tarjoavat useita eri tapoja tehdä tätä, mutta ne voivat tuottaa erilaisia tuloksia eri selaimissa ja alustoilla.
+ISO 8601 on kansainvälinen standardi päivämäärille, ja se on JavaScriptin suosittelema muoto: `YYYY-MM-DDTHH:mm:ss.sssZ`. Arvot ilman aikavyöhykettä käsitellään aina UTC:nä eli koordinoituina yleisaikoina.
 
-## Katso myös:
-* [Mozilla Developer Network: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [Moment.js](https://momentjs.com/)
-* [Day.js](https://day.js.org/)
+## See Also (Katso Myös):
+- MDN Date Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Date-fns kirjasto: https://date-fns.org/
+- Moment.js kirjasto: https://momentjs.com/docs/#/parsing/
+- ISO 8601 standardin tiedot: https://www.iso.org/iso-8601-date-and-time-format.html
+- Aikavyöhykkeet JavaScriptissä: https://www.iana.org/time-zones

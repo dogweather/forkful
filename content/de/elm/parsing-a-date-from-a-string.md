@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:35:41.263372-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,48 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Datum-Parsing bedeutet, ein Textdatum in ein strukturiertes Format zu verwandeln – nützlich, weil Daten oft als Strings übertragen, aber als Datumstypen verarbeitet werden.
 
-Das Parsen eines Datums aus einem String bezeichnet den Prozess, bei dem ein String in eine Datumsstruktur umgewandelt wird. Programmierer machen das, um eine menschenlesbare Datumsdarstellung in eine für die Maschine verarbeitbare Form zu bringen.
-
-## So geht's:
-
-Hier ist eine Code-Beispiel in Elm, wie man ein Datum in der Form von - Jahr-Monat-Tag - in ein tatsächliches Datum umwandeln kann:
+## How to:
+Im Elm, ein einfaches Beispiel mit dem Paket `justinmimbs/date`:
 
 ```Elm
-import Time
+import Date
+import Date.Extra.Parse exposing (isoString)
 
-stringZuDatum : String -> Maybe Date
-stringZuDatum s =
-  case String.split "-" s of
-      [ jahr, monat, tag ] ->
-          Time.fromString (jahr ++ "T" ++ monat ++ "-" ++ tag )
+-- Beispielfunktion zum Parsen eines ISO 8601 Datum-Strings
+parseDate : String -> Maybe Date.Date
+parseDate dateString =
+    isoString dateString
 
-      _ ->
-          Nothing
+-- Verwende diese Funktion
+parsedDate : Maybe Date.Date
+parsedDate =
+    parseDate "2021-11-01T12:45:00Z"
+    
+-- Resultat ist Maybe Date.Date, also Nothing oder Just Date.Date
 ```
 
-Probieren wir es mit dem String "2022-03-30". Die Ausgabe sollte das Datum "30. März 2022" als `Date`-Objekt sein.
+## Deep Dive
+Historisch gesehen hatte Elm im Kern nicht den besten Support für Datum-Parsing, daher der Rückgriff auf Community-Pakete wie `justinmimbs/date`. Alternative Methoden beinhalten das Schreiben eigener Parser oder das Verwenden von JavaScript interop. Die Verarbeitung der Zeitzone ist oft ein Stolperstein beim Datum-Parsing, deshalb achte auf ISO 8601 Strings, die dieses Problem standardisieren.
 
-```Elm
-main =
-    Html.text <| case stringZuDatum "2022-03-30" of
-        Just date ->
-            toString date
-
-        Nothing ->
-            "Fehler beim Parsen des Datums"
-```
-
-## Tiefere Einblicke
-
-Historisch gesehen, mussten Programmierer zunächst die einzelnen Teile des Datums (Tag, Monat, Jahr) aus dem String extrahieren und dann in Einzelteile umwandeln. Modernere Sprachen wie Elm bieten jedoch einfache Funktionen, die diesen Vorgang automatisieren und vereinfachen.
-
-Als Alternative könnte man die Datumsteile auch mathematisch berechnen, dies eignet sich aber eher für Fälle, in denen man mit spezifischen Datumstypen und -formaten arbeitet. 
-
-Die Implementierungsdetails variieren je nach Sprache und Framework. In Elm verwenden wir `Time.fromString`, die ein `String` annimmt und versucht, ihn in ein `Date` umzuwandeln, indem sie das Standard-ISO-8601-Datumsformat verwendet.
-
-## Siehe auch
-
-Weitere Informationen finden Sie in den offiziellen Elm-Dokumenten und in verwandten Tutorials:
-
-- [Elm Time Paket](https://package.elm-lang.org/packages/elm/time/latest/)
+## See Also
+- Elm Date Paket: [package.elm-lang.org/packages/justinmimbs/date/latest/](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- Elm ISO 8601 Date Strings: [package.elm-lang.org/packages/justinmimbs/date/latest/Date-Extra-Parse#isoString](https://package.elm-lang.org/packages/justinmimbs/date/latest/Date-Extra-Parse#isoString)
+- Elm's Time Paket: [package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)

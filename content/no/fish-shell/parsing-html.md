@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:31:34.320060-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,36 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Analysere (parse) HTML er prosessen der en datamaskin leser og forstår HTML-kode. Programmerere gjør dette hovedsakelig for å manipulere, hente data fra eller endre struktur på websider.
+Parsing av HTML betyr å lese og gjøre om koden til et strukturert format som kan manipuleres programmert. Grunnen til at programmerere gjør dette er for å hente eller bearbeide innhold fra websider automatisk.
 
 ## Hvordan:
+I Fish Shell kan vi bruke verktøy som `pup` for å tolke HTML. Her er hvordan man installerer og bruker `pup`:
 
-Her er et enkelt eksempel på hvordan du kan analisere HTML med Fish Shell:
+```fish
+# Installer 'pup', et kommandolinjeverktøy for parsing av HTML 
+sudo apt install pup
 
-```Fish Shell
-set html "<html><body><h1>Hei Verden!</h1></body></html>"
-set begynnelsen (string match -r "<h1>" $html)
-set slutten (string match -r "</h1>" $html)
-echo (string sub -s (math $begynnelsen+4) -l (math $slutten-$begynnelsen-4) $html)
+# Parse en HTML-fil og hent ut alle titler (antatt at du har en fil 'index.html')
+cat index.html | pup 'title text{}'
 ```
 
-Når du kjører denne koden, får du følgende utskrift:
+Eksempel på utskrift:
+```
+Din Hjemside Tittel
+```
 
-```Fish Shell
-Hei Verden!
+For å hente ut lenker:
+```fish
+cat index.html | pup 'a attr{href}'
+```
+
+Eksempel på utskrift:
+```
+http://eksempel.com
+http://eksempel.com/om
+http://eksempel.com/kontakt
 ```
 
 ## Dypdykk:
+Fra de første dagene av nettet har det vært behov for å automatisere henting av informasjon fra HTML-dokumenter. Dette startet med enkle skript som grep og sed, men har utviklet seg til mer komplekse verktøy som BeautifulSoup for Python, Nokogiri for Ruby og `pup` for kommandolinjen.
 
-Historisk sett har parsing av HTML blitt brukt siden tidlige dager av nettutvikling. Det tilbyr en effektiv måte å hente data og manipulere nettstedsinnhold på. 
+Alternativer til `pup` inkluderer:
+- `htmlq`: Ligner på `jq`, men for HTML.
+- `xmllint`: Del av libxml2 pakken, mer allsidig men også mer kompleks.
 
-Alternativt til Fish Shell er det mange andre verktøy som også kan brukes til å analysere HTML, som Python's BeautifulSoup, Node's Cheerio og mange flere.
-
-Når det kommer til implementeringsdetaljer er Fish Shell karakterisert ved sin enkelhet og lesebarhet, men det kan være mindre kraftig for komplekse oppgaver sammenlignet med noen av de andre verktøyene nevnt ovenfor.
+Implementasjonsdetaljer å merke seg:
+- HTML er vanligvis ikke så strukturer som XML, og kan være vanskeligere å parse feilfritt.
+- Parsing i Fish Shell ved hjelp av rør og andre kommandolinjeverktøy betyr at du behandler HTML som tekst, så det er viktig å håndtere uforutsigbarheter i hvordan HTML er formatert.
 
 ## Se Også:
-
-1. [Fish Shell Dokumentasjon](https://fishshell.com/docs/current/index.html)
-2. [Python's BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-3. [Node's Cheerio](https://github.com/cheeriojs/cheerio)
+- [pup GitHub side](https://github.com/ericchiang/pup)
+- [HTML parsing i Python med BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+- [Parsing HTML med Nokogiri og Ruby](https://nokogiri.org/)

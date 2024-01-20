@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:32:43.180547-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Java"
@@ -11,37 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חילוץ HTML הוא תהליך שבו אנו מפרקים קובץ HTML לישויות יחידות לניתוח נוסף. התכנתים עושים זאת שמצלבים באפקטיביות נתונים ממרחב האינטרנט.
+(Parse HTML: מה זה ולמה עושים את זה?)
+Parsing HTML בג'אווה זה פשוט לקרוא ולהבין קוד HTML באמצעות תוכנה. זה נחוץ למשל כשאתה רוצה למשוך מידע מדפי אינטרנט או לעבוד עם התוכן שלהם בתוך האפליקציה שלך.
 
 ## איך לעשות:
-נסתכל על דוגמא ב-Java באמצעות Jsoup, הספריה הפופולרית ביותר לניתוח HTML.
+(דוגמאות קוד ופלט דוגמה)
 
+עלינו להשתמש בספרייה שתעזור לנו בפענוח. נבחר ב-jsoup, ספרייה פופולרית לעבודה עם HTML בג'אווה.
 ```Java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class ParseHtmlExample {
+public class HTMLParser {
     public static void main(String[] args) {
-        String html = "<html><body><p>Hello, wolrd!</p></body></html>";
-        Document document = Jsoup.parse(html);
-        Elements paragraphs = document.select("p");
-
+        String html = "<html><head><title>First Parse</title></head>"
+                    + "<body><p>Parsed HTML into a doc.</p></body></html>";
+        Document doc = Jsoup.parse(html);
+        Elements paragraphs = doc.select("p");
+        
         for (Element paragraph : paragraphs) {
             System.out.println(paragraph.text());
         }
     }
 }
 ```
-התוצאה תהיה:
+פלט דוגמה:
 ```
-Hello, world!
+Parsed HTML into a doc.
 ```
 
-## הצצה לתובנה 
-עם ההתפתחות של האינטרנט והידע המשותף, הוא לקח איתו סיפור היסטורי של חילוץ HTML. למרות שישנם דרכים אחרות לניתוח HTML - כמו XPath ו-DOM Parsing, Jsoup מספק את הקלות של jQuery מהסקריפטים של משתמש כדי לסננת את האיברים שאנו מחפשים. הוא מעצב להיות הכי יעיל ולעמוד באתגרים של ניתוח HTML.
+## צלילה לעומק:
+(jsoup: פרטים נוספים)
 
-## ראו גם
-- [תיעוד Jsoup](https://jsoup.org/)
-- [XPath](https://www.w3schools.com/xml/xpath_intro.asp)
+ב-2006, פרויקט jsoup נולד לחיים, כדי להפוך פענוח HTML לקל ואינטואיטיבי. הוא מאפשר לנו לנתח HTML כפי שהוא מופיע בדפדפן, עם תחביר נוח ופשוט.
+
+חלופות הן לדוגמא: HTMLCleaner, JsoupXpath ועוד.
+
+בחירת ספרייה תלויה בצרכים: jsoup טובה לרוב המקרים, אבל אם יש צורך ב-XML למשל, ייתכן שנבחר בספריה אחרת.
+
+## ראה גם:
+(קישורים למקורות קשורים)
+
+- [jsoup - הדוקומנטציה הרשמית](https://jsoup.org/)
+- [מתכוני JSOUP](https://jsoup.org/cookbook/)
+- [HTMLCleaner - ספרייה חלופית](http://htmlcleaner.sourceforge.net/)
+- [Tutorial: Web scraping באמצעות Java ו-jsoup](https://www.baeldung.com/java-with-jsoup)

@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:35:32.915554-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+日付を文字列から解析するのは、特定の形式のテキストを日付データ型に変換することです。プログラマーはデータの検証、保存、操作が必要な場合にこれを行います。
 
-日付の解析とは、文字列から日付情報を抽出する操作を指します。一般的には、ユーザー入力や外部源からのデータを処理する際に使用します。
+## How to: (方法)
+Elixirで日付を解析する一般的な方法は、`Date` モジュールを使うことです。例を見てみましょう:
 
-## やり方
-
-以下はElixirで日付の解析を行う具体的なコード例です：
-
-```Elixir
-{:ok, datetime, _} = DateTime.from_iso8601("2012-04-01T01:23:10Z")
-IO.inspect(datetime)
+```elixir
+{:ok, date} = Date.from_iso8601("2023-04-05")
+IO.inspect(date)
 ```
 
-これを実行すると、以下のような結果が得られます：
+出力結果:
 
-```Elixir
-#DateTime<2012-04-01 01:23:10Z>
+```elixir
+~D[2023-04-05]
 ```
 
-## ディープダイブ
+もしエラー処理が必要であれば、パターンマッチングを使って対処できます:
 
-Elixirのバージョン1.3から、ISO8601の日付と時刻の形式を解析するための機能が追加されました。これはRubyやPythonなど、多くの言語でも実装されています。あるいは、`Timex`のようなライブラリを使用することも選択肢に入ります。
+```elixir
+case Date.from_iso8601("不正な日付") do
+  {:ok, date} -> 
+    date
+  {:error, _reason} -> 
+    IO.puts("無効な日付形式です。")
+end
+```
 
-日付解析は固定長の形式を用いるので、計算コストは低く、実装も単純です。一方で、日付の形式が異なる場合、各形式に対応した処置が必要となります。
+## Deep Dive (深堀り)
+Elixirは2011年に公開された新しい言語ですが、日付の解析は古くからプログラミングの常識です。昔ながらの言語では独自の解析方法を用意する必要がありましたが、Elixirでは`Date.from_iso8601/1` のような組み込み関数によって簡単に日付を扱えます。
 
-## 関連資料
+他の言語では、例えばRubyでは`Date.parse`、Pythonでは`datetime.strptime()`が使われます。Elixirでは、ISO8601形式以外の日付を解析する必要がある場合は、`Timex`ライブラリなどのサードパーティ製ライブラリを利用することが一般的です。
 
-- Elixirの公式ドキュメンテーション：[DateTime.from_iso8601](https://hexdocs.pm/elixir/DateTime.html#from_iso8601/1)
-- ISO8601について：[ISO8601 - Wikipedia](https://ja.wikipedia.org/wiki/ISO_8601)
+実装の詳細としては、Elixirの日付解析は、内部的には厳格な文字列パーサーを使ってISO8601フォーマットに準じた文字列を`Date`構造体に変換しています。
+
+## See Also (関連情報)
+- Elixir公式ドキュメントの`Date`モジュール: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+- Timexライブラリ: [https://hex.pm/packages/timex](https://hex.pm/packages/timex)
+- ISO8601について: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)

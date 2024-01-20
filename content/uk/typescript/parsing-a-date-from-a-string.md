@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:39:01.048697-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,37 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why?
+## Що це таке та Навіщо?
 
-Парсинг дати з рядка - це процес, за допомогою якого ми перетворюємо текстове представлення дати в більш управліну форму, як-от об'єкт дати. Програмісти роблять це, щоб легше оброблювати та маніпулювати датами в коді. 
+Parsing a date from a string means converting text that represents a date into a `Date` object. Programmers do this to manipulate and use date-related information in their code.
 
-## Як це робиться:
-
-Ось простий приклад того, як можна парсити дату з рядка в TypeScript:
-
-```TypeScript
-let dateStr: string = "2020-05-14"; 
-let dateObj: Date = new Date(dateStr);
-console.log(dateObj); 
-```
-
-На виході ви отримаєте:
+## How to:
+## Як це зробити:
 
 ```TypeScript
-// Output: 2020-05-13T22:00:00.000Z 
+// Simple parsing using the Date constructor
+const dateString: string = '2023-04-01T10:00:00Z';
+const parsedDate: Date = new Date(dateString);
+console.log(parsedDate);  // Outputs: 2023-04-01T10:00:00.000Z
+
+// Using Date.parse (less recommended)
+const timeInMs: number = Date.parse('01 Apr 2023 10:00:00 GMT');
+const dateFromMs: Date = new Date(timeInMs);
+console.log(dateFromMs);  // Outputs: 2023-04-01T10:00:00.000Z
+
+// Using libraries like date-fns or moment.js for more complex parsing
+import { parseISO } from 'date-fns';
+
+const complexDateString: string = '1st of April 2023 at 10 o'clock UTC';
+// With date-fns, we need a standard format
+const standardizedDate: Date = parseISO('2023-04-01T10:00:00Z');
+console.log(standardizedDate);  // Outputs: 2023-04-01T10:00:00.000Z
 ```
 
-Об'єкт Date створюється з певною датою, вказаною в рядку.
+## Deep Dive:
+## Поглиблений Розбір:
 
-## Поглиблено
+Parsing dates has been tricky historically because of variation in formats and timezones. JavaScript's `Date` has limitations and quirks. It often uses the local timezone which can be problematic.
 
-Iсторично JavaScript та TypeScript використовували рядки для передачі дат. Однак, цей підхід має певні цікаві аспекти. Наприклад, формат дати, використовуваний у рядку, може вплинути на результат парсинга. 
+Alternatives like `Moment.js` or `date-fns` provide powerful functions for parsing, formatting, and manipulating dates, and they handle edge cases more gracefully.
 
-Є інші способи парсинга дати, включаючи використання бібліотек третіх сторін, як-от moment.js, які надають більш гнучкі та потужні інструменти для роботи з датами.
+Details: JavaScript `Date` objects are built on milliseconds since the Unix epoch (1 January 1970 UTC). Parsing strings into dates involves calculating this time value based on the input string's format.
 
-За реалізацією об'єкта Date в TypeScript kриється вбудований об'єкт Date в JavaScript. Тому поведінка цього об'єкта і інтерпретація рядків дати залежить від стандарту JavaScript.
+## See Also:
+## Дивіться також:
 
-## Дивіться також 
-
-1. [Офіційна документація TypeScript по об'єкту Date](https://www.typescriptlang.org/docs/handbook/utility-types.html#datetype)
-2. [Бібліотека moment.js для роботи з датами](https://momentjs.com/)
+- MDN Web Docs on `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- `date-fns` documentation: https://date-fns.org/
+- `Moment.js` guide: https://momentjs.com/docs/#/parsing/

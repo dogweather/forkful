@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:32:04.347826-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi?
-L'analyse HTML consiste à décomposer et à comprendre le code HTML. Les programmeurs le font pour extraire des données spécifiques, modéliser les données sous-jacentes ou manipuler la structure d'un site Web.
+## Quoi & Pourquoi ?
 
-## Comment faire:
-Pour ce faire, on peut utiliser la librairie "tagsoup" en Haskell. Voyons un exemple:
+Le parsing HTML, c'est transformer du code HTML en une structure de données manipulable par le programme. Les programmeurs le font pour extraire des infos, manipuler des contenus, ou simplement pour comprendre la structure d'une page web.
 
-```Haskell
+## Comment faire :
+
+En Haskell, on utilise des bibliothèques comme `tagsoup` ou `html-conduit` pour parser le HTML. Voici un petit exemple avec `tagsoup` :
+
+```haskell
 import Text.HTML.TagSoup
 
-extraireLien :: String -> [String]
-extraireLien html = [lien | TagOpen "a" atts <- parseTags html, 
-                      ("href", lien) <- atts ]
+-- Fonction pour extraire tous les liens d'une page HTML
+extraireLiens :: String -> [String]
+extraireLiens html = [href | TagOpen "a" attrs <- parseTags html, ("href", href) <- attrs]
 
+-- Utilisation sur un morceau de HTML
+main :: IO ()
 main = do
-  contenu <- readFile "test.html"
-  print $ extraireLien contenu
+    let htmlSample = "<html><head></head><body><a href='https://example.com'>Example</a></body></html>"
+    print $ extraireLiens htmlSample
 ```
 
-Lorsqu'on exécute cela sur un fichier `test.html`, on obtient une liste de tous les liens contenus dans le fichier.
+Sortie :
 
-## Plongée Profonde
-L'analyse HTML était plus couramment utilisée avant l'arrivée des API modernes qui fournissent des données JSON plus faciles à manipuler. Cependant, il reste encore d'énormes quantités de données disponibles uniquement en HTML. La librairie "tagsoup" est l'un des outils en Haskell pour l'analyse HTML, mais il y a aussi "html-conduit" et "hxt" qui fournissent des fonctionnalités plus avancées. En ce qui concerne les détails de mise en œuvre, "tagsoup" ignore délibérément les erreurs de syntaxe HTML pour faciliter le travail avec du HTML mal formé, ce qui est très fréquent sur le web.
+```
+["https://example.com"]
+```
+
+## Plongée profonde
+
+Le parsing HTML est né de la nécessité de comprendre et manipuler les pages web dynamiquement. Historiquement, des langages comme Perl étaient très utilisés pour le parsing grâce à leur puissance de traitement de texte. En Haskell, le parsing est souvent effectué en utilisant des monades pour gérer les erreurs et les états de manière élégante.
+
+À côté de `tagsoup`, qui est souple et tolère bien le HTML mal formé, il y a `html-conduit` basé sur la librairie plus stricte `xml-conduit`. Pour les applications plus robustes, `html-conduit` offrira une structure plus rigoureuse.
+
+La particularité de l'implémentation en Haskell réside dans son typage fort et sa gestion des effets secondaires, ce qui favorise des parsers fiables et maintenables. Les fonctions comme `parseTags` transforment le HTML en liste de tags que l'on peut facilement interroger, réduire ou transformer.
 
 ## Voir aussi
-- [Documentation de TagSoup](https://hackage.haskell.org/package/tagsoup)
-- [Librairie html-conduit](https://hackage.haskell.org/package/html-conduit)
-- [Librairie HXT](https://hackage.haskell.org/package/hxt)
+
+- La documentation de `tagsoup`: http://hackage.haskell.org/package/tagsoup
+- Le package `html-conduit` pour une approche différente: http://hackage.haskell.org/package/html-conduit
+- Un tutoriel complet sur le parsing en Haskell : https://wiki.haskell.org/Parsing_a_document
+- Pour aller plus loin sur les monades, un concept clé en Haskell : https://wiki.haskell.org/Monads

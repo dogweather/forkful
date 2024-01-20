@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:34:33.278455-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,45 +13,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-HTML पार्सिंग का अर्थ होता है कि हम HTML डाक्युमेंट को अच्छी तरह से व्यवस्थित डाटा संरचना में बदल देते हैं। प्रोग्रामर्स इसे तभी करते हैं जब उन्हें वेबसाइट से डाटा एक्सट्रैक्ट करना होता है या HTML को मनिपुलेट करना होता है।
+HTML पार्स करने से हमें वेब पेज के मार्कअप को समझने और उसे संसाधित करने का अवसर मिलता है। प्रोग्रामर्स इसे डेटा एकत्रित करने, वेबसाइट की स्थिति जांचने, और ऑटोमेटेड टेस्टिंग के लिए करते हैं।
 
-## कैसे:
+## कैसे करें:
 
-Rust में HTMl पार्सिंग के लिए, हम सुनिश्चित कर सकते हैं कि हमारे पास html5ever लाइब्ररी है। यह उदाहरण दिखाता है कि कैसे Rust में HTML पार्सिंग होता है:
+Rust में HTML को पार्स करने के लिए `scraper` क्रेट का उपयोग किया जाता है। यहाँ नमूना कोड है:
 
 ```Rust
-use html5ever::{parse_document, serialize, tendril::TendrilSink};
-use markup5ever_rcdom::RcDom;
+use scraper::{Html, Selector};
 
-let html_doc = "<!DOCTYPE html><html><head><title>Hello Rust!</title></head><body><h1>Hi there!</h1></body></html>";
+fn main() {
+    // HTML कोड जिसे पार्स करना है
+    let html_content = r#"
+        <html>
+            <body>
+                <p>Hello, world!</p>
+            </body>
+        </html>
+    "#;
 
-let dom = parse_document(RcDom::default(), Default::default())
-    .from_utf8()
-    .read_from(&mut html_doc.as_bytes())
-    .unwrap();
-
-let mut bytes = vec![];
-serialize(&mut bytes, &dom.document, Default::default()).unwrap();
-
-let parsed_html = String::from_utf8(bytes).unwrap();
-
-println!("{}", parsed_html);
+    // HTML पार्स करने के लिए
+    let parsed_html = Html::parse_document(html_content);
+    
+    // `<p>` टैग्स को ढूंढने के लिए `Selector`
+    let p_selector = Selector::parse("p").unwrap();
+    
+    // सभी `<p>` टैग्स को इटेरेट
+    for element in parsed_html.select(&p_selector) {
+        // एलिमेंट का टेक्स्ट कंटेंट प्रिंट करना
+        println!("{}", element.inner_html().trim());
+    }
+}
 ```
-उपरोक्त कोड की आउटपुट के रूप में, हमें HTML डॉक्यूमेंट मिलेगा:
+
+सैंपल आउटपुट:
 
 ```
-<!DOCTYPE html><html><head><title>Hello Rust!</title></head><body><h1>Hi there!</h1></body></html>
+Hello, world!
 ```
 
-## गहराई में: 
+## गहराई में:
 
-HTML पार्सिंग की आवश्यकता वेब स्क्रेपिंग जैसे कार्यों के लिए आती है, जो 90 के दशक में वेब की उभरती हुई प्रभावशालिता के साथ ही लोकप्रिय हुआ। Rust का उपयोग करके HTML पार्सिंग करना एक नया विचार है, जो स्पीड और मेमोरी सुरक्षा प्रदान करता है। 
+HTML पार्सिंग वेब स्क्रेपिंग में जरूरी है, और ये वेब डेवलपमेंट के शुरुआती दिनों से ही की जा रही है। `scraper` क्रेट `html5ever` और `selectors` जैसे लाइब्रेरीज पर निर्मित है, जो तेज़ और लचीले हैं। वैकल्पिक रूप से, `beautifulsoup` जैसे उपकरण पाइथन में लोकप्रिय हैं, लेकिन Rust का `scraper` मेमोरी सेफ्टी और परफॉर्मेंस के अतिरिक्त लाभ प्रदान करता है। प्रत्येक एलिमेंट और नोड के साथ व्यावहारिक रूप से काम करने के लिए, `scraper` एक डोम बनाता है, जिससे ट्रीवाल्क करना आसान हो जाता है।
 
-HTML पार्सिंग के लिए विकल्पों में Python (BeautifulSoup), Javascript (Cheerio, JSDOM), और PHP DOM पार्सर शामिल हैं। 
+## संबंधित सूत्र:
 
-HTML पार्सिंग का कार्य, एक HTML डाक्युमेंट को एक DOM (Document Object Model) में बदलने से होता है, जहां हर एक HTML टैग को एक नोड के रूप में प्रस्तुत किया जाता है।
+- [html5ever GitHub रिपॉजिटरी](https://github.com/servo/html5ever)
+- [Rust ऑफिशियल डॉक्यूमेंटेशन](https://doc.rust-lang.org/book/)
 
-## भी देखें:
-
-1. [HTML5ever documentation](https://docs.rs/html5ever/0.25.1/html5ever/)
-3. [Rust HTML parsing comparison](https://medium.com/@pmzubar/rust-and-the-curse-of-the-static-html-parser-564ce58f0d0e)
+ध्यान देने योग्य है कि Rust जैसी कम लेवल वाली भाषाओं में पार्सिंग लॉजिक जटिल हो सकता है, लेकिन `scraper` जैसे उपकरणों की मदद से यह प्रक्रिया सरल और सुव्यवस्थित हो जाती है।

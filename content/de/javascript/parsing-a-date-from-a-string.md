@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:37:08.021525-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Datums-Formatierung in Javascript
-
 ## Was & Warum?
+Das Parsen eines Datums aus einem String bedeutet, die textuellen Informationen eines Datums in ein Date-Objekt umzuwandeln. Das brauchen Programmierer, um Datumsangaben zu verarbeiten, zu vergleichen und in verschiedenen Formaten anzuzeigen.
 
-Die Analyse (Parsing) eines Datums aus einem String in Javascript ermöglicht es uns, Text in ein Datum umzuwandeln. Das brauchen wir, um flexible Datenmanipulationen und -operationen zu ermöglichen.
+## How to:
+Um ein Datum aus einem String in JavaScript zu parsen, kannst du den `Date` Konstruktor oder die `Date.parse()` Methode verwenden, wobei beide mit vielen Datum-String-Formaten umgehen können.
 
-## So geht's:
+```javascript
+// Einfache Nutzung des Date Konstruktors
+let meinDatum = new Date('2023-04-01T12:00:00Z');
+console.log(meinDatum.toString()); // "Sat Apr 01 2023 14:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)"
 
-In Javascript verwenden wir das `Date` Objekt und seine Methode `.parse()`, um ein Datum aus einem String zu erstellen.
-
-```Javascript
-let datumString = "2023-07-25T10:15:00Z";
-let datum = new Date(datumString);
-console.log(datum);
+// Nutzung von Date.parse()
+let zeitstempel = Date.parse('01 April 2023 12:00 UTC');
+let datumAusZeitstempel = new Date(zeitstempel);
+console.log(datumAusZeitstempel.toString()); // "Sat Apr 01 2023 14:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)"
 ```
 
-Wenn Sie das ausführen, wird das erhaltene Ergebnis etwa so aussehen:
-```Javascript
-Tue Jul 25 2023 12:15:00 GMT+0200 (Mitteleuropäische Sommerzeit)
-```
+Beachte, dass die Interpretation des Datums abhängig von der JavaScript-Engine des Browsers ist und unterschiedliche Ergebnisse liefern kann.
 
-## Tiefergrund
+## Deep Dive:
+Historisch gesehen war die Datumsanalyse in JavaScript fehleranfällig, weil verschiedene Browser unterschiedliche String-Formate unterschiedlich interpretierten. ECMAScript 5 führte einen standardisierten Date-String-Format (ISO 8601) ein, was das Ganze viel zuverlässiger machte.
 
-Ursprünglich konnte Javascript nur englische Datumsangaben analysieren. Mit ECMAScript 5 wurde jedoch ein ISO 8601 Format eingeführt, das jetzt standardmäßig verwendet wird.
+Alternative Bibliotheken wie Moment.js, Date-fns oder Luxon bieten oft mehr Flexibilität und Funktionen, wie Zeitberechnungen, internationale Zeitformatierung und eine bessere Zeitzonenunterstützung, als die eingebauten JavaScript-Methoden.
 
-Es gibt auch Bibliotheken wie Moment.js, die mehr Formate und Funktionen anbieten, aber sie fügen Ihrer Anwendung zusätzliche Größe hinzu.
+Was die Implementierungsdetails betrifft, konvertiert `Date.parse()` einen Datumsstring in einen Unix-Zeitstempel (die Anzahl der Millisekunden seit dem 1. Januar 1970 UTC), und der `Date` Konstruktor kann diesen Zeitstempel dann verwenden, um ein entsprechendes Date-Objekt zu erstellen.
 
-Die Javascript Datumsanalyse erfolgt in der lokalen Zeitzone des Computers - es sei denn, es wird, wie im obigen Beispiel, das 'Z'-Zeitzone-Format verwendet.
-
-## Siehe auch
-
-- [MDN Dokumentation für Date.parse()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [ISO 8601 Datum und Zeit Format](https://www.cl.cam.ac.uk/~mgk25/iso-time.html)
-- [Moment.js](http://momentjs.com/)
+## See Also:
+- MDN-Webdokumentation zu Date-Objekten: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Überblick zur ISO 8601: https://de.wikipedia.org/wiki/ISO_8601
+- Moment.js: https://momentjs.com/
+- Date-fns: https://date-fns.org/
+- Luxon: https://moment.github.io/luxon/

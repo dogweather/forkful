@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:30:11.823505-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Bash"
@@ -10,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi? 
+## What & Why?
+Miksi ja mitä? HTML:n jäsentäminen on prosessi, jossa HTML-dokumentti muunnetaan rakenteellisiksi, käsiteltäviksi tiedoiksi. Ohjelmoijat tekevät tämän, jotta he voivat lukea tai manipuloida web-sivujen sisältöä automatisoidusti.
 
-HTML:n jäsentäminen tarkoittaa HTML-koodin halkomista yksittäisiksi osiksi (tagit, attribuutit ja muut), jotta voimme käsitellä niitä erikseen. Ohjelmoijat tekevät tämän yleensä tiedon keräämiseksi tai sisällön muokkaamiseksi.
-
-## Miten:
-
-Jäsentämiseen HTML:a Bash:ssa voimme käyttää työkaluja kuten 'grep', 'sed' and 'awk'. Tässä on esimerkki:
-
+## How to:
 ```Bash
-#!/bin/bash
-# Etsi kaikki 'h1' tagit
-curl -s https://esimerkki.fi | grep -o '<h1[^>]*>.*</h1>' 
+# Asenna lynx - komentorivipohjainen selain
+sudo apt-get install lynx
+
+# Käytä lynx:iä sivun tekstisisällön noutamiseen
+lynx -dump http://esimerkki.fi > esimerkki.txt
+
+# Hae haluttu sisältö sed:in tai grep:in avulla
+grep 'tietty tagi' esimerkki.txt
 ```
-Xuutta ajetaan, se tulostaa kaikki 'h1' tagi:t esimerkki.fi sivulta.
 
-## Sukellus syvemmälle:
+Esimerkkinosto:
+```Bash
+cat esimerkki.txt | grep 'h1'
+# Tulos voisi näyttää tältä:
+# <h1>Otsikko sivulla</h1>
+```
 
-HTML:n jäsentäminen ilmestyi ensimmäiseksi 1980-luvulla, kun WWW:ssä käytettiin ensisijaisesti HTML:ää tiedon merkkaamiseen. Nykyään on olemassa monia vaihtoehtoja, kuten XML ja JSON, mutta HTML pysyy yhä standardina.
+## Deep Dive
+Historiallisesti nettisivujen jäsentäminen komentoriviltä on ollut haastavaa, koska HTML:n rakenteelliset standardit ovat välillä löyhät. Nykyään on olemassa työkaluja kuten `lynx`, `wget` ja `curl` jotka helpottavat sisällön noutamista. Koodin jäsentämiseen voi käyttää myös erikoistyökaluja kuten `beautifulsoup` Pythonilla tai `pup` komentorivillä.
+Alternatiiveja ovat esimerkiksi headless-selaimet kuten `puppeteer` JavaScriptillä, jotka suorittavat JavaScriptiä ja käsittelevät dynaamista sisältöä paremmin kuin komentorivityökalut.
+Tärkeää on valita oikea työkalu; staattiselle sisällölle yksinkertaiset komennot riittävät, mutta dynaamisempien sivujen kohdalla kannattaa miettiä monimutkaisempia ratkaisuja.
 
-Vaikka se onkin mahdollista Bash:ssa, HTML:n jäsentäminen Bash:ssa ei ole aina soveliasta, koska Bash ei pysty käsittelemään monimutkaisia HTML rakenteita yhtä tehokkaasti kuin jotkin erikoistuneet työkalut.
-
-Työkalujen, kuten 'grep', 'sed' and 'awk', rajoitukset tulevat esille kun käsitellään monimutkaisempia HTML rakenteita. Tässä tapauksessa kannattaa harkita erikoistuneempien työkalujen, kuten 'Beautiful Soup' (Python pohjainen) tai 'jsoup' (Java pohjainen), käyttöä.
-
-## Katso myös:
-
-1. ['Beautiful Soup' Dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-1. ['jsoup' Dokumentaatio](https://jsoup.org/)
-1. [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
-1. [Bash-skriptausohje](https://www.shellscript.sh/)
+## See Also
+- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
+- [Puppeteer GitHub Repository](https://github.com/puppeteer/puppeteer)

@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:35:37.846890-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "C#"
 category:             "C#"
@@ -10,45 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なにとなぜ？)
+文字列から日付をパースするのは、文字列に含まれた日付情報をDateTimeオブジェクトに変換すること。データの保存形式が文字列だけど、日付として扱いたい場面でよく使われる。
 
-日付のパースとは文字列から日付を抽出することを指します。この操作は、受け取ったデータを特定のフォーマット（通常は日付）に変換するためにプログラマーによって実行されます。
-
-## 方法:
-
-以下に、C#で文字列から日付を解析する方法を示します:
+## How to: (やり方)
+C#では `DateTime.Parse` や `DateTime.TryParse` などのメソッドで日付パースが可能です。例を見てみましょう。
 
 ```C#
 using System;
+using System.Globalization;
 
-// 日付を格納する文字列
-string dateString = "2021-10-15";
-
-// 変換された日付を格納するDateTimeオブジェクト
-DateTime parsedDate = DateTime.Parse(dateString);
-
-// 出力
-Console.WriteLine(parsedDate);
+class Program
+{
+    static void Main()
+    {
+        string dateString = "2023/04/01";
+        
+        // DateTime.Parse例
+        DateTime parsedDate = DateTime.Parse(dateString);
+        Console.WriteLine(parsedDate);  // "2023-04-01 00:00:00"
+        
+        // DateTime.TryParse例
+        if(DateTime.TryParse(dateString, out DateTime tryParsedDate))
+        {
+            Console.WriteLine(tryParsedDate);  // "2023-04-01 00:00:00"
+        }
+        else
+        {
+            Console.WriteLine("パース失敗");
+        }
+        
+        // カルチャを指定してパース
+        CultureInfo provider = CultureInfo.InvariantCulture;
+        string format = "yyyy/MM/dd";
+        DateTime parsedDateWithCulture = DateTime.ParseExact(
+            dateString, format, provider);
+        Console.WriteLine(parsedDateWithCulture);  // "2023-04-01 00:00:00"
+    }
+}
 ```
 
-これは次のように出力されます:
+## Deep Dive (深掘り)
+日付のパースはC#の初期バージョンから存在します。`Parse`メソッドは適切な日付文字列の場合うまく動きますが、不正確なデータや不明な形式が来たときにはエラーを投げることがあります。
 
-```
-2021-10-15 12:00:00 AM
-```
+`TryParse`はこの問題に対処します。エラーを投げずに、パースできるかbool値で返してくれます。`ParseExact`および`TryParseExact`は特定の書式とカルチャを指定できるので、厳密な形式の制御が必要な場面で役立ちます。
 
-## より深く:
+他のライブラリもあります。`NodaTime`などは、より多機能で複雑な日付と時間操作を必要とするアプリケーション向けです。
 
-日付の解析には歴史的な文脈があり、元々は文字列操作とパターンマッチングに依存していました。しかしC#では便利な関数`DateTime.Parse`が提供されており、これを使用するだけで解析を行うことが可能です。
+パース処理は内部で`DateTimeFormatInfo`や`CultureInfo`を用いており、グローバル化されたアプリケーションではこれが重要になります。異なる地域の日付/時間形式は、アプリケーションを多言語に対応させる上で重要な役割を果たしています。
 
-この操作の代替手段としては、`DateTime.TryParse`や`DateTime.ParseExact`があります。これらのメソッドは日付の書式を指定したり、解析が可能かどうかを確認したりするために使われます。
-
-実装の詳細については、`DateTime.Parse`は内部的に`DateTime.TryParse`を使用しており、解析に失敗した場合にはInvalidCastExceptionをスローします。
-
-## 関連資料:
-
-以下のリンクは、日付の解析に関してさらに詳しい情報を提供しています:
-
-- [Microsoft Docs: DateTime.Parse メソッド (System)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse?view=net-5.0)
-- [Microsoft Docs: DateTime.TryParse メソッド (System)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.tryparse?view=net-5.0)
-- [Microsoft Docs: DateTime.ParseExact メソッド (System)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parseexact?view=net-5.0)
+## See Also (参照)
+- [DateTime.Parse メソッド (System)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse)
+- [DateTime.TryParse メソッド (System)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.tryparse)
+- [CultureInfo クラス (System.Globalization)](https://docs.microsoft.com/ja-jp/dotnet/api/system.globalization.cultureinfo)
+- [NodaTime ライブラリ](https://nodatime.org/)
+- [日付と時刻の書式設定](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/formatting-types#datetime-and-timespan-formatting)

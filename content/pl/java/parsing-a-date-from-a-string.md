@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:36:52.987498-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Konwersja daty z ciągu znaków, znana jako analiza składniowa daty, to proces przekształcania tekstu na typ daty lub czasu. Programiści robią to, aby umożliwić programom rozumienie i manipulację danymi daty.
+## What & Why? (Co i Dlaczego?)
+Parsowanie daty z tekstu to zamiana reprezentacji tekstowej daty na obiekt daty. Programiści to robią, by mogły one być łatwo obrabiane i porównywane, zgodnie z logicznymi i matematycznymi regułami języków programowania.
 
-## Jak to zrobić:
-Java posiada wbudowaną bibliotekę ```java.time``` do obsługi dat. 
+## How to: (Jak to zrobić:)
+Poniżej znajdziesz prosty kod Java, który demonstruje jak sparsować datę z tekstu:
 
-Oto przykład jak przekształcić ciąg znaków na datę:
 ```Java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-public class Main {
+public class DateParsingExample {
     public static void main(String[] args) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String dateInString = "08-08-2022";
-        LocalDate localDate = LocalDate.parse(dateInString, formatter);
-
-        System.out.println(localDate); 
+        String dateText = "2023-04-01";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+        LocalDate parsedDate = LocalDate.parse(dateText, formatter);
+        
+        System.out.println("Parsed date is: " + parsedDate);
     }
 }
 ```
-Będziemy mieli taki wynik:
-```Java
-2022-08-08
+
+Przykładowe wyjście:
 ```
-W tym przypadku przekształcamy datę typu String "08-08-2022" w typ daty LocalDate.
+Parsed date is: 2023-04-01
+```
 
-## Głębsza analiza:
-- **Historyczny kontekst**: Początkowo, parsowanie daty odbywało się za pomocą klas `Date` i `SimpleDateFormat` w pakiecie `java.util`. Ale od wersji Java 8, poprzez wprowadzenie nowego API daty i czasu, te klasy stały się przestarzałe.
-- **Alternatywy**: Można również używać bibliotek zewnętrznych, takich jak Joda-Time, do parsowania dat, które oferują większą elastyczność. Jednak przy korzystaniu z JDK 8 lub nowszej, zaleca się korzystanie z pakietu `java.time`.
-- **Szczegóły implementacji**: Używając `java.time.LocalDateTime` można przeprowadzić analizę składniową ciągu znaków do daty, a także czasu, jeśli jest to konieczne. Można to zrobić za pomocą metody `LocalDateTime.parse()`. Dla specyficznych formatów daty, można użyć klasy `DateTimeFormatter`.
+## Deep Dive (Dogłębna analiza)
+Początkowo, w Javie data była parsowana głównie za pomocą `SimpleDateFormat` z pakietu `java.util`. Jednak klasa ta nie była bezpieczna przy użyciu w wielowątkowych scenariuszach i dlatego z czasem pojawiła się nowa API - `java.time` (wprowadzona w Java 8), z której pochodzi użyta wyżej klasa `LocalDate`.
 
-## Zobacz też:
-1. Dokumentacja API Java Time: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-2. Poradnik Oracle na temat nowego API daty i czasu: [https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
-3. Dokumentacja API Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+Alternatywą jest klasa `Date` ale jest ona uznawana obecnie za przestarzałą (deprecated). Warto też wspomnieć o bibliotece Joda-Time – była popularna przed Java 8, ale od tego czasu rekomendowane jest używanie `java.time`.
+
+Pamiętaj, parsowanie jest wrażliwe na format – musisz znać format źródłowej daty tekstowej, by poprawnie stworzyć wzorzec w `DateTimeFormatter`. Pominięcie lub błędy w formacie mogą prowadzić do wyjątków `DateTimeParseException`.
+
+## See Also (Zobacz również)
+- [Dokumentacja klasy LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Dokumentacja klasy DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Przewodnik Oracle po API java.time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [Biblioteka Joda-Time](https://www.joda.org/joda-time/)

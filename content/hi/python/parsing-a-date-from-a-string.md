@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:38:36.410318-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,38 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
+## क्या और क्यों? (What & Why?)
+डेट को स्ट्रिंग से पार्स करना मतलब है टेक्स्ट के रूप में आया डेटा को पायथन की डेटटाइम ऑब्जेक्ट में बदलना। इससे डेटाबेस में स्टोर करना, सॉर्ट करना या कंडीशनल ऑपरेशंस करना आसान हो जाता है।
 
-दिनांकों को स्ट्रिंग से पार्स करना मतलब होता है दिनांकों को स्ट्रिंग से ढूंढना और उसे प्यथन दिनांक वस्तु में बदल देना। प्रोग्रामर्स इसे उन दिनांकों को संदर्भित करने और उन्हें मान्यतानुसार संचालित करने के लिए करते हैं, जो स्ट्रिंग के रूप में प्रदान की गई हो।
-
-## कैसे करें:
-
-विभिन्न तरीकों से Python में दिनांकों को स्ट्रिंग से पार्स कर सकते हैं। एक आम तरीका `datetime.strptime` का उपयोग करना है।
-
+## कैसे करें? (How to:)
 ```Python
 from datetime import datetime
 
-# आपकी तारीख जो आप पार्स करना चाहते हैं
-date_string = "21 June, 2018"
+# स्ट्रिंग से डेट पार्स करने का उदाहरण:
+date_string = "25-03-2023"
+date_object = datetime.strptime(date_string, "%d-%m-%Y")
+print(date_object)  # 2023-03-25 00:00:00
 
-# दिनांक को पार्स करें
-date_object = datetime.strptime(date_string, "%d %B, %Y")
-
-print(date_object)
+# अलग-अलग फॉरमेट में डेट पार्स करना:
+date_string_2 = "March 25, 2023, 14:30"
+date_object_2 = datetime.strptime(date_string_2, "%B %d, %Y, %H:%M")
+print(date_object_2)  # 2023-03-25 14:30:00
 ```
 
-```
-2018-06-21 00:00:00
-```
+## गहरी जानकारी (Deep Dive)
+डेट पार्सिंग 1970 के दशक से प्रोग्रामिंग में आम है, जब से कंप्यूटर्स में डेट्स का इस्तेमाल बढ़ा। `strptime()` मेथड, जो C लैंग्वेज से आया है, का इस्तेमाल कर के हम स्ट्रिंग से डेट ऑब्जेक्ट्स बनाते हैं। विकल्पों में `dateutil.parser` शामिल है जो कई फॉरमेट्स को फ्लेक्सिबली हैंडल करता है। पर `datetime.strptime()` सीधा और तेज है अगर फॉरमेट पता हो तो।
 
-## गहराई से जानकारी:
-
-1. ऐतिहासिक प्रसंग: Python में `strptime` मेथड की उत्पत्ति C’s `strptime()` फ़ंक्शन से हुई है, जो एक स्ट्रिंग से दिनांक पार्स करता था।
-2. विकल्प: अन्य जबरजस्त लाइब्ररी पायथन `dateutil` है जो एक स्वतंत्र पाठ पार्सर(`parser.parse`) प्रदान करती है।
-3. कार्यान्व्यान विवरण: `strptime` मेथड का काम पाठ मैपिंग को पार्स करने और दिनांक ऑब्जेक्ट में परिवर्तन करने का है।
-
-## देखें भी:
-
-- Python दस्तावेज़ीकरण: https://docs.python.org/3/library/datetime.html
-- dateutil लाइब्ररी: https://dateutil.readthedocs.io/en/stable/parser.html
-- Python के `strptime` और `strftime` फ़ॉर्मेट नियम: http://strftime.org/
+## संबंधित सूत्रों के लिंक्स (See Also)
+- `datetime` मॉड्यूल का ऑफिशियल डॉक्युमेंटेशन: https://docs.python.org/3/library/datetime.html
+- `dateutil.parser` का डॉक्युमेंटेशन: https://dateutil.readthedocs.io/en/stable/parser.html
+- डेट और टाइम पार्सिंग के बेस्ट प्रैक्टिसेस: https://realpython.com/python-datetime/

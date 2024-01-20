@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:38:14.324467-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärätiedon erottamista ja analysointia tekstidatasta. Ohjelmoijat tekevät sen usein datan esikäsittelyssä, jotta he voivat käsitellä päivämääriä matemaattisesti ja tehdä niistä vertailukelpoisia.
+## What & Why? (Mitä & Miksi?)
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärämuotoisen tekstin muuttamista ohjelmoitavaksi objektiksi. Tämän teemme, koska haluamme käsitellä päivää ja aikaa ohjelmassamme – esimerkiksi tallentaa tietokantaan, vertailla päivämääriä tai muotoilla ne uudelleen.
 
-## Miten tehdä:
-Pythonin standardikirjasto tarjoaa `datetime` moduulin, jossa on apufunktioita päivämäärän jäsentämiseen. Tässä on esimerkki sen käyttämisestä:
-
+## How to: (Kuinka tehdä:)
 ```Python
 from datetime import datetime
 
-date_string = "15/07/2021"
-date_format = "%d/%m/%Y"
+# Syötetty päivämäärä merkkijonona
+date_string = "28.2.2023"
 
-try:
-    parsed_date = datetime.strptime(date_string, date_format)
-    print(parsed_date)
-except ValueError:
-    print("Incorrect format")
+# Määritellään päivämäärän muoto
+format = "%d.%m.%Y"
+
+# Jäsentäminen datetime-objektiksi
+parsed_date = datetime.strptime(date_string, format)
+
+# Tulostetaan jäsentynyt päivämäärä
+print(parsed_date)
+# Output: 2023-02-28 00:00:00
+
+# Lisäesimerkki: muot laajennettu aikaan asti
+time_string = "28.2.2023 14:45"
+format_with_time = "%d.%m.%Y %H:%M"
+parsed_time = datetime.strptime(time_string, format_with_time)
+print(parsed_time)
+# Output: 2023-02-28 14:45:00
 ```
 
-Konsoli näyttää seuraavanlaisen tuloksen:
+## Deep Dive (Syväsukellus):
+Päivämäärien jäsentäminen on ollut ohjelmoinnissa alusta asti, sillä päivämäärien kanssa työskentely on universaali vaatimus. Historiallisesti päivämääriä on käsitelty monin eri tavoin riippuen kielestä ja alustasta. Pythonissa `datetime`-kirjastoa on käytetty laajalti alkuvuosista lähtien päivämäärien jäsentämiseen. 
 
-```Python
-2021-07-15 00:00:00
-```
+Vaihtoehtoina `datetime`-moduulille voisi käyttää kolmannen osapuolen kirjastoja kuten `dateutil`, joka tarjoaa joustavampia työkaluja päivämäärien jäsentämiseen. Esimerkiksi, `dateutil` sietää erilaisia päivämäärämuotoja paremmin.
 
-## Syvä sukellus
-Historiallisessa kontekstissa päivämäärän jäsentämistä on käytetty jo vuosikymmeniä, koska kaikki tieto on alkujaan ollut tekstistä. Erilaisia tekniikoita, kuten säännölliset lausekkeet ja leksikaalinen analyysi, on käytetty sen jälkeen.
+Jäsentämisen yksityiskohdat ovat tärkeitä; väärä muoto tai virhe tulkitessa voi johtaa vääriin tuloksiin tai virheisiin. Käyttäessä `strptime`-metodia muista, että sinun tulee määritellä täsmälleen oikea muoto, jotta jäsentäminen onnistuu.
 
-Vaihtoehtona Pythonille, JavaScript, Java ja monet muut kielet myös tarjoavat työkaluja päivämäärän jäsentämiseen merkkijonosta.
-
-Implementoinnin osalta, `strptime` funktio ottaa sisään kaksi merkkijonoa: päivämäärän tekstiversion ja muotoilumerkkijonon. Funktio selvittää miten päivämäärän tiedot vastaavat muotoilumerkkijonoa ja muodostaa vastaavan `datetime` objektin.
-
-## Katso myös
-- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [W3Schoolsin päivämäärä- ja aikaoppitunti](https://www.w3schools.com/python/python_datetime.asp)
-- [Python datetimesta Stack Overflowssa](https://stackoverflow.com/questions/466345/converting-string-into-datetime)
+## See Also (Katso myös):
+- Pythonin virallinen dokumentaatio datetime-moduulista: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+- Dateutil-kirjaston kotisivu: https://dateutil.readthedocs.io/en/stable/
+- Pythonin aikavyöhykeiden käsittelyyn pytz-kirjasto: http://pytz.sourceforge.net/

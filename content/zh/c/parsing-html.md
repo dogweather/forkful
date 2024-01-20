@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:30:23.458772-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "C"
 category:             "C"
@@ -10,59 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? (是什么？为什么？)
 
-解析HTML是将HTML文本（属于‘标记语言’）转换成其组件和层级结构的过程。程序员这样做是为了更简单、更有效地与网页交互和利用其数据。
+HTML解析就是将HTML文档转换成对计算机程序友好的数据结构。程序员这么做是为了操作和获取网页内容，实现网页数据抓取、自动化测试等功能。
 
-## 如何操作：
+## How to (如何做)
 
-下面是一个使用库`Gumbo`的简单C编程示例，用于解析HTML。相关代码和输出样例如下：
+在C语言中，可以使用libxml2库来解析HTML。以下展示基本用法：
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <gumbo.h>
-
-void search_for_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
-    }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-        (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("%s\n", href->value);
-    }
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(children->data[i]);
-    }
-}
+#include <libxml/HTMLparser.h>
 
 int main() {
-    GumboOutput* output = gumbo_parse("<a href='http://example.com'>I'm a link!</a>");
-    search_for_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    htmlDocPtr doc;
+    htmlNodePtr cur;
+
+    // 初始化库
+    htmlInitParser();
+    
+    // 解析HTML字符串
+    const char *html = "<html><body><p>Hello, World!</p></body></html>";
+    doc = htmlReadDoc((xmlChar*)html, NULL, NULL, HTML_PARSE_NOERROR | HTML_PARSE_RECOVER);
+
+    // 获取根节点
+    cur = xmlDocGetRootElement(doc);
+
+    // 遍历文档
+    cur = cur->xmlChildrenNode;
+    while (cur != NULL) {
+        if (cur->type == XML_ELEMENT_NODE) {
+            printf("Node type: Element, name: %s\n", cur->name);
+        }
+        cur = cur->next;
+    }
+
+    // 释放文档
+    xmlFreeDoc(doc);
+    
+    // 清理库
+    xmlCleanupParser();
+
     return 0;
 }
 ```
 
-输出：
+Sample output:
 
-```shell
-http://example.com
+```
+Node type: Element, name: body
+Node type: Element, name: p
 ```
 
-## 深度学习：
+## Deep Dive (深入了解)
 
-解析HTML在网络爬虫和网页分析中曾起到核心作用。早在1990年代的网页出现之初，由于HTML规范并没有完全定义，所以解析HTML是一项相当大的挑战。现在，我们有了不同的工具和库（如上述的Gumbo），使得这个过程变得更容易。
+历史背景：HTML解析有很多工具和库，早期的解析器通常依赖严格的HTML规则，但现代解析器，如libxml2，能处理不完整或错误的HTML，使其更加健壮。
 
-解析HTML有很多方法。例如，你可以使用诸如Python的Beautiful Soup或者JavaScript的Cheerio这样的库。然而，C语言因其执行速度快和内存效率高，通常常常被用于解析大型或复杂的HTML文件。
+备选方案：除了libxml2，还有Gumbo、MyHTML等库。
 
-具体到解析HTML，通常都涉及到一个叫做DOM（文档对象模型）的概念。DOM是一种编程接口，它将标记型语言（例如HTML）按照树状结构表示出来，便于程序员更好地定位和操作其中的元素和属性。
+实现细节：HTML解析库通常使用DOM（文档对象模型）来表示HTML文档结构，它将页面转换为节点树，便于查询和操作。
 
-## 更多信息：
+## See Also (另请参阅)
 
-如果你对HTML解析或Gumbo库感兴趣，这里有一些有益的链接：
-- Gumbo库：https://github.com/google/gumbo-parser
-- HTML Parsing基础知识：https://www.w3.org/TR/html52/syntax.html#parsing
-- HTML和DOM：https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+- [libxml2官方文档](http://xmlsoft.org/html/libxml-HTMLparser.html)
+- [Gumbo解析器](https://github.com/google/gumbo-parser)
+- [MyHTML库](https://github.com/lexborisov/myhtml)

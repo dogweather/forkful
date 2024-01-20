@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:34:30.692890-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,30 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Analiza daty z ciągu to proces, w którym ciąg zawierający informacje o dacie i godzinie jest konwertowany na datę. Programiści robią to, żeby łatwo manipulować i porównywać daty oraz godziny.
+Parseowanie daty z ciągu znaków to proces wyłuskiwania informacji o dacie z tekstu. Programiści robią to, by przetworzyć dane wejściowe, np. z formularzy lub logów, do formatów użytecznych w programach i skryptach.
 
 ## Jak to zrobić:
-
-Możemy skorzystać z wbudowanej komendy Bash `date -d`. Zobacz poniżej:
-
 ```Bash
-date_string="2022-03-01 23:59:59"
-date_in_seconds=$(date -d "$date_string" +%s)
-echo $date_in_seconds
+#!/bin/bash
+
+# Przykład parsowania daty z ciągu znaków
+date_string="2023-04-05 14:23:00"
+parsed_date=$(date -d "$date_string" '+%Y-%m-%d %H:%M:%S')
+
+echo "Oryginalny ciąg znaków: $date_string"
+echo "Sparsowana data: $parsed_date"
 ```
-Po uruchomieniu powyższego kodu, wydrukowany zostanie odpowiednik danej daty w sekundach, od 1 stycznia 1970 roku (początek ery UNIX).
 
-## Zagłębianie się 
+Output:
+```
+Oryginalny ciąg znaków: 2023-04-05 14:23:00
+Sparsowana data: 2023-04-05 14:23:00
+```
 
-Analiza daty z ciągu rozpoczęła się prawdopodobnie wraz z powstawaniem pierwszych języków programowania. Skonstruowanie odpowiedniego formatu do przechowywania daty i czasu jest kluczowe dla prawidłowego funkcjonowania aplikacji i systemów.
+## Głębsze spojrzenie:
+Parsowanie dat w Bashu polega na wykorzystaniu polecenia `date`, które ma długą historię w systemach Unix i Linux. Działa poprzez konwersję tekstowych reprezentacji daty i czasu do formatu, który Bash może łatwiej przetworzyć. Alternatywą jest użycie zewnętrznych programów jak `awk`, `sed` czy języków skryptowych jak Python, gdzie posługują się one własnymi, bardziej zaawansowanymi metodami parsowania.
 
-Jako alternatywę dla 'date -d', możemy użyć `date -jf` w systemach Unixowych, gdzie 'j' oznacza „Julian date”, a 'f' umożliwia precyzyjne określenie formatu wejściowego.
+Szczegółowo, funkcja `date` w Bash pozwala na formatowanie wyjściowego ciągu znaków z daty (opcja '+%Y-%m-%d %H:%M:%S') i parsowanie niestandardowych formatów daty przy pomocy opcji `-d`. Obraca ona zróżnicowane formaty wejściowe na standardowe daty i godziny.
 
-Podczas analizy, data jest najpierw konwertowana na sekundy (od początku ery Unix), co umożliwia porównywanie różnych dat. Obie metody zwracają datę jako liczbę sekund, co pozwala na łatwe porównywanie i manipulację danymi.
-
-## Zobacz także:
-
-- Szczegółowa dokumentacja komendy `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Kurs na temat analizy daty z ciągu w Bash: https://www.tutorialkart.com/bash-shell-scripting/bash-date-format-options/
-- Dodatkowe informacje na temat daty w Julianskim formacie: https://en.wikipedia.org/wiki/Julian_day
+## Zobacz również:
+- Bash manual: https://www.gnu.org/software/bash/manual/
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/index.html
+- Date command examples: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/

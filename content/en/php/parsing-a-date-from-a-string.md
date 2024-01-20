@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:37:40.081063-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,45 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing a date from a string means transforming the string into a format that a computer can comprehend as a date. We need this because computers, unlike humans, don't understand the variety of ways dates can be written.
+Parsing a date from a string means converting text that represents a date and time into a programmable format. Programmers do this to manipulate dates, compare them, or store them in a database efficiently.
 
 ## How to:
 
-PHP has a built-in function called `strtotime()` for this task. Stick a string into it, and out comes a time-stamp. It's quite magical. Here's how we do it:
+PHP makes parsing dates from strings fairly straightforward with the `DateTime` class. Here's a quick example:
 
-```PHP
-$date = "15th January 2023";
-$timestamp = strtotime($date);
-echo date('d-m-Y', $timestamp);
+```php
+<?php
+$dateString = '2023-04-12 14:00:00';
+$dateTime = new DateTime($dateString);
+
+echo $dateTime->format('Y-m-d H:i:s'); // Outputs: 2023-04-12 14:00:00
+?>
 ```
 
-This script will output: `15-01-2023`.
+Simple, right? Now, want to change the format or timezone? Here's how:
 
-Or let's take a date string with a different format:
+```php
+<?php
+$dateString = 'April 12, 2023 14:00:00';
+$dateTime = DateTime::createFromFormat('F j, Y H:i:s', $dateString);
+$dateTime->setTimezone(new DateTimeZone('Europe/London'));
 
-```PHP
-$date = "2023/01/15";
-$timestamp = strtotime($date);
-echo date('d-m-Y', $timestamp);
+echo $dateTime->format('Y-m-d H:i'); // Outputs: 2023-04-12 14:00
+?>
 ```
 
-And here you'll get the exact same output, `15-01-2023`, despite the different input format.
+Play with formats and timezones to see how powerful this can be.
 
 ## Deep Dive
 
-`strtotime()` actually has a heap of history. It was born in PHP 4 as 'Magpie' for its ability to pick out dates regardless of format. Over time, it's evolved and matured, just like a fine wine.
+Historically, PHP developers had to manually parse date strings or use `strtotime()` which is effective but less powerful than `DateTime`. Introduced in PHP 5.2.0, `DateTime` provides object-oriented date/time manipulation.
 
-Alternatives, you ask? Well, PHP's `DateTime` class is another way to parse dates. It's object-oriented, offering more flexibility if you're doing more complex operations with dates.
+Why the change? Because `DateTime`:
 
-Implementation-wise, `strtotime()` internally uses the `Parsedate` library, which is why it handles such a wide array of formats.
+1. Handles exceptions.
+2. Works with different calendars.
+3. Is timezone-aware.
+4. Has more formatting and parsing options. 
+
+Alternatives include the `IntlDateFormatter` for internationalization or the `Carbon` library for modern syntactic sugar.
+
+When parsing, mind the pitfalls:
+
+- Always validate input. Incorrect formats cause wrong dates or errors.
+- Timezones matter. Store in UTC and display locally.
+- Leap seconds and daylight saving times can affect computations.
 
 ## See Also
 
-Boost your PHP knowledge with these resources:
-
-1. PHP's official Date/Time documentation: https://www.php.net/manual/en/book.datetime.php
-2. Excellent strtotime() reference guide: https://www.php.net/manual/en/function.strtotime.php
-3. Learn more about the `DateTime` class: https://www.php.net/manual/en/class.datetime.php
-
-Remember, practice makes perfect. Happy coding!
+- [PHP Manual on DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [PHP Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+- [Carbon: A simple PHP API extension for DateTime](https://carbon.nesbot.com/)

@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:32:19.547773-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analysering av HTML med Javascript
+## What & Why? (Hva & Hvorfor?)
+Parsing HTML betyr å tolke og omforme HTML-koden slik at man kan manipulere den med programmering. Vi gjør det for å kunne hente ut, endre, eller interagere med innholdet på en nettside.
 
-## Hva & Hvorfor?
-
-Å analysere HTML, eller parsing, handler om å oversette en HTML-streng til et forståelig format for datamaskinen. Vi gjør dette for å ekstrahere informasjon og manipulere data på webområdet.
-
-## Hvordan:
-
-Her er et eksempel på hvordan parsing fungerer i praksis ved bruk av Det Innebygde DOM-parserobjektet i Javascript:
+## How to: (Hvordan:)
 
 ```Javascript
-let parser = new DOMParser();
-let doc = parser.parseFromString('<h1>Hallo verden</h1>', 'text/html');
-console.log(doc.body.firstChild.textContent); // "Hallo verden"
+// Eksempel: Hente ut innhold fra et HTML-element
+
+const parser = new DOMParser();
+const htmlString = '<div id="greeting">Hei, Verden!</div>';
+const doc = parser.parseFromString(htmlString, 'text/html');
+const content = doc.getElementById('greeting').textContent;
+
+console.log(content);  // Output: "Hei, Verden!"
 ```
 
-Koden ovenfor viser hvordan vi kan omdanne en HTML-streng til et element i Document Object Model (DOM), og deretter ekstrahere innholdet fra dette elementet.
+```Javascript
+// Eksempel: Endre inneholdet i et HTML-element
 
-## Dyp Dykk:
+const newHtmlString = '<div id="farewell">Ha det bra, Verden!</div>';
+const newDoc = parser.parseFromString(newHtmlString, 'text/html');
+doc.body.replaceChild(newDoc.getElementById('farewell'), doc.getElementById('greeting'));
 
-Historisk sett har HTML-parsers vært fundamentale for nettleseres evne til å vise nettsteder. Nå kan vi bruke parse-teknologi direkte i våre egne Javascript-applikasjoner for å manipulere og bruke HTML-data.
+console.log(doc.body.innerHTML);  // Output: "<div id="farewell">Ha det bra, Verden!</div>"
+```
 
-Alternativer til DOMParser inkluderer jQuery's `$.parseHTML()` og Node.js bibliotek som `cheerio`. Valget mellom disse avhenger av dine spesifikke behov og omgivelser.
+## Deep Dive (Dypdykk)
 
-Når det gjelder implementasjonsdetaljer, er det viktig å merke seg at parsing er en ressursintensiv oppgave, spesielt for større HTML-dokumenter, så sørg alltid for at du har effektiv kode.
+Parsing HTML er en gammel praksis, forenklet i moderne tid med DOMParser API-et, introdusert med HTML5. Tidligere brukte utviklere XMLHttpRequest for å hente og parse HTML, men det var mer omstendelig og mindre effektivt. 
 
-## Se Også:
+Alternativer for parsing inkluderer biblioteker som jQuery, som forenkler seleksjonsprosessen, eller server-side verktøy som Beautiful Soup for Python, som ikke er avhengig av en nettleser. 
 
-1. [MDN: DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-2. [jQuery: $.parseHTML()](https://api.jquery.com/jQuery.parseHTML/)
-3. [Node.js: Cheerio](https://cheerio.js.org/)
+DOMParser parser HTML strengen til et ‘Document’ objekt, som man deretter kan manipulere som en vanlig DOM. Dette gjør det mulig å behandle strengebasert HTML som om den var en del av den originale nettsiden.
+
+## See Also (Se Også)
+
+- [MDN Web Docs: DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [JavaScript.info: Modifying the document](https://javascript.info/modifying-document)
+- [W3C: HTML5 Parsing spec](https://www.w3.org/TR/html5/syntax.html#parsing)

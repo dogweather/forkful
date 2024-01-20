@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:31:40.077072-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Go"
 category:             "Go"
@@ -10,12 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Parser HTML c'est analyser et transformer le code HTML en une structure de données plus facile à comprendre pour les programmes. Les programmeurs le font pour extraire et manipuler les données sur le web.
+## Quoi et Pourquoi ?
+Parsez du HTML, c'est comme lire le journal et chercher les gros titres, sauf qu'ici, c'est pour extraire des données du code HTML. Les développeurs font ça pour récupérer du contenu, tester des applis web, ou pour du web scraping.
 
-## Comment faire:
-On peut utiliser le paquet `golang.org/x/net/html` pour parser du HTML. Voici un exemple simple:
-
+## Comment faire :
 ```Go
 package main
 
@@ -27,38 +26,46 @@ import (
 )
 
 func main() {
-	resp, _ := http.Get("https://www.example.com")
-	doc, _ := html.Parse(resp.Body)
+	resp, err := http.Get("https://exemple.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	doc, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
 
 	var f func(*html.Node)
 	f = func(n *html.Node) {
-		if n.Type == html.TextNode {
-			text := strings.TrimSpace(n.Data)
-			if len(text) > 0 {
-				fmt.Println(text)
+		if n.Type == html.ElementNode && n.Data == "a" {
+			for _, a := range n.Attr {
+				if a.Key == "href" {
+					fmt.Println(a.Val)
+					break
+				}
 			}
 		}
 		for c := n.FirstChild; c != nil; c = c.NextSibling {
 			f(c)
 		}
 	}
+
 	f(doc)
 }
 ```
-Ce programme extrait tout le texte de la page HTML, en ignorant les balises et les espaces superflus.
 
-## Une exploration plus profonde
+Output échantillon (varie en fonction du HTML de exemple.com) :
+```
+https://exemple.com/contact
+https://exemple.com/about
+```
 
-Le parser HTML de Go utilise une technique appelée analyseur syntactique récursive, une méthode couramment utilisée pour analyser des langages contextuels-libres tels que HTML.
+## Plongée en profondeur
+Par le passé, l'analyse de HTML était bordélique. Avec Go, c'est plus structuré grâce au package "golang.org/x/net/html" qui facilite la vie. Alternatives ? Il y a regexp pour les cas simples, mais c'est risqué. En détail, `html.Parse` transforme le contenu HTML en structures de donnée navigables, permettant d'inspecter, de chercher ou de manipuler des éléments HTML.
 
-Il existe d'autres approches pour parser du HTML en Go, comme `goquery` qui fournit une interface similaire à celle de jQuery. Cependant, `net/html` est souvent privilégié car il fait partie de la bibliothèque standard de Go et ne nécessite pas de dépendances externes.
-
-En ce qui concerne les détails d'implémentation, Go utilise une machine à états pour gérer la complexité de l'analyse HTML. Cela permet au code de rester compréhensible et maintenable malgré le large éventail de scénarios possibles lors de l'analyse HTML.
-
-## Voir aussi
-
-Pour plus d'information:
-
-- La documentation officielle du package `net/html`: https://golang.org/pkg/net/html/
-- Le repository Github pour `goquery`: https://github.com/PuerkitoBio/goquery
-- Un tutoriel sur le parsing HTML en Go: https://www.devdungeon.com/content/web-scraping-go
+## Voir aussi :
+- Documentation du package HTML de Go : https://pkg.go.dev/golang.org/x/net/html
+- Tutoriel Go sur le web scraping : https://golangdocs.com/web-scraping-in-golang
+- Pourquoi éviter regexp pour parsez HTML : https://stackoverflow.com/a/1732454

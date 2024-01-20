@@ -1,5 +1,6 @@
 ---
 title:                "ניתוח HTML"
+date:                  2024-01-20T15:31:00.510449-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Elixir"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? (מה ולמה?)
+פיענוח HTML מתייחס לתהליך שבו מתוכנת מנתחת מסמך HTML ומשיגה ממנו מידע סטרוקטורי. תוכניתנים עושים זאת כדי לשלוף נתונים, לאוטומט פעולות באינטרנט ולעבד דפי ווב.
 
-פיענוח HTML הוא התהליך שבמהלכו אנו ממירים מסמך HTML למבנה נתונים שניתן לעבד. מתכנתים מבצעים אותו לניתוח התוכן של עמודי אינטרנט ולאיסוף מידע מהם.
+## How to: (איך לעשות:)
+ב-Elixir, אתה יכול להשתמש בספריה כמו Floki לפיענוח HTML בקלות. דוגמא לקוד:
 
-## איך עושים?
+```elixir
+defmodule HTMLParser do
+  def parse_html(html) do
+    {:ok, document} = Floki.parse(html)
+    Floki.find(document, "a")
+    |> Enum.map(fn({_, attrs, _}) -> attrs end)
+    |> Enum.map(&List.keyfind(&1, "href", 0))
+  end
+end
 
-נשתמש בספרייה Floki של אליקסיר:
-
-```Elixir
-{:floki, "~> 0.26"}
-
-html = "<div><p>Hello, world!</p></div>"
-{"div", _, children} = Floki.parse(html) |> hd()
-IO.inspect(children)
+html_content = "<html><body><a href='https://example.com'>Link</a></body></html>"
+links = HTMLParser.parse_html(html_content)
+IO.inspect(links)
 ```
 
-כאן אנו טוענים את הספרייה, מפרשים מסמך HTML פשוט ומדפיסים את התוכן שוּנמצא בתוך תג <div>. תצוגה מקדימה:
+פלט לדוגמא:
 
-```Elixir
-[%{"p" => ["Hello, world!"]}]
+```
+[{"href", "https://example.com"}]
 ```
 
-## צלילה מעמיקה
+## Deep Dive (צלילה לעומק):
+פעם, פענוח HTML היה אתגר גדול יותר עם ספריות מסורבלות ואי-הצמדות לתקנים של יצרני דפדפנים. היום, ספריות כמו Floki ב-Elixir נשענות על XPath וCSS selectors לשליפת נתונים ביעילות. אלטרנטיבות כוללות Nokogiri ב-Ruby וBeautifulSoup ב-Python. בחירת ספרייה תלויה בשפת התכנות ובדרישות הפרויקט.
 
-מעבר לFloki, קיימות ספריות אחרות לפיענוח HTML באליקסיר, כמו הספרייה מוס (Mochiweb). Floki הוא האפשרות הפופולרית ביותר בגלל פקודות הפשוטות שלה לאיסוף מידע.
-ישנה חשיבה למפרשים באליקסיר, שיש אותה בליבת השפה, שמתמקדת בקלות שימוש, ניתוח פשוט, וראיית השיפורים בפעולה.
-
-## עוד לעיון
-
-[תיעוד Floki](https://hexdocs.pm/floki/readme.html)
-[פרויקט Mochiweb ב-GitHub](https://github.com/mochi/mochiweb)
+## See Also (ראו גם):
+* [Floki on Hex](https://hex.pm/packages/floki) - מידע על ספריית Floki, כולל מדריכים.
+* [Programming Phoenix ≥ 1.4](https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/) - פרקים על טיפול בHTML באמצעות Elixir וPhoenix.
+* [Elixir Forum](https://elixirforum.com) - לשאלות וקהילה של מתכנתי Elixir.

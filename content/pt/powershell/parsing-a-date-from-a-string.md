@@ -1,6 +1,7 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-html_title:           "PowerShell: Analisando uma data a partir de uma string"
+date:                  2024-01-20T15:37:56.170495-07:00
+html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que é & Por Quê?
-
-Analisar uma data de uma string em PowerShell significa converter a string em um objeto DateTime. Fazemos isso para manipular datas e horários de maneira eficiente em nossos scripts.
+## O Que & Porquê?
+Analisar uma data a partir de uma string significa converter o texto que representa uma data para um formato que o PowerShell compreende e pode trabalhar. Programadores fazem isso para manipular datas em scripts, desde calcular diferenças de tempo até agendar tarefas.
 
 ## Como Fazer:
-
-Aqui está um exemplo básico de como analisar uma data de uma string.
-
 ```PowerShell
-$strData = '03/14/2022'
-$data = [DateTime]::Parse($strData)
-Write-Host $data
+# Analisando uma data de uma string usando 'Get-Date'
+$dataString = "25/04/2023 14:00"
+$dataObjeto = Get-Date $dataString
+
+# Exibindo o objeto data
+$dataObjeto
+
+# Formatação personalizada de data/hora
+$dataFormatada = $dataObjeto.ToString("dd/MM/yyyy HH:mm")
+Write-Output $dataFormatada
+```
+Saída da amostra:
+```
+terça-feira, 25 de abril de 2023 14:00:00
+25/04/2023 14:00
 ```
 
-Essa script tomará a string '03/14/2022' e a converterá em um objeto DateTime. O resultado deste script será '14 de março de 2022 00:00:00'.
+## Mergulho Profundo
+Antigamente, analisar datas no PowerShell podia ser confuso devido a diferentes formatos e locais. Com o cmdlet `Get-Date`, isso se simplificou, mas ainda precisamos ter atenção ao formato de data do sistema ou especificar o formato desejado. Existem alternativas como `[datetime]::ParseExact()`, que dão mais controle sobre o formato da data:
 
-## Aprofundando
+```PowerShell
+$dataString = "25/04/2023 14:00"
+$formato = "dd/MM/yyyy HH:mm"
+$provider = [System.Globalization.CultureInfo]::InvariantCulture
+$dataObjeto = [datetime]::ParseExact($dataString, $formato, $provider)
+Write-Output $dataObjeto
+```
 
-Historicamente, a análise de dados era uma parte importante do trabalho de um programador, pois os dados eram frequentemente armazenados como strings. Embora existam outras maneiras de alcançar o mesmo resultado (como com o método ParseExact ou TryParse), a abordagem padrão Parse é mais flexível e geralmente será suficiente.
+Implementar a análise de datas pode variar de acordo com o idioma e a localização. O PowerShell usa as configurações de cultura do sistema, então está pronto para lidar com formatos tipicamente brasileiros.
 
-A análise de datas de strings em PowerShell faz uso de classes .NET, especificamente a classe System.DateTime. Isso faz sentido, já que o PowerShell foi construído sobre o .NET Framework.
-
-Por favor, note que ao analisar uma data de uma string, o PowerShell assume que o formato da data corresponde ao formato de data do sistema local. Se isso não for o caso, é possível que você encontre erros. Portanto, se estiver trabalhando com formatos de data que podem não corresponder ao do sistema local, seria melhor usar o método ParseExact.
-
-## Veja Também:
-
-- [Métodos de DateTime no site do .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+## Veja Também
+- [Get-Date](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
+- [Personalizando formatos de data e hora](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [Classe CultureInfo](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
+- [Blog do PowerShell Scripting](https://devblogs.microsoft.com/scripting/)

@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:35:16.481704-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "C#"
 category:             "C#"
@@ -10,37 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Навіщо і чому?
+## What & Why?
+## Що та Навіщо?
 
-Парсинг дати з рядка – це процес витягування і обробки дати, запакованої у форматі тексту. Програмісти це роблять, щоб використовувати дату в рядку як об'єкт DateTime у комп'ютерних програмах.
+Parsing a date means converting a string into a DateTime object. Programmers do it to handle date information within a program, such as saving or comparing dates.
 
+## How to:
 ## Як це зробити:
 
-C# дуже зручний для парсингу дати з рядка. Методи, які нам знадобляться - `DateTime.Parse()` і `DateTime.TryParse()`. Ось декілька прикладів:
-
 ```C#
-string strDate = "1/1/2020";
+using System;
+using System.Globalization;
 
-DateTime date1 = DateTime.Parse(strDate);
-Console.WriteLine(date1.ToString()); // Виведе: 01.01.2020 00:00:00
+class Program
+{
+    static void Main()
+    {
+        string dateString = "24-03-2023";
+        string format = "dd-MM-yyyy";
+        CultureInfo provider = CultureInfo.InvariantCulture;
 
-bool isParsed = DateTime.TryParse(strDate, out DateTime date2);
-Console.WriteLine(isParsed ? date2.ToString() : "Неправильна дата!"); // Виведе: 01.01.2020 00:00:00
+        try
+        {
+            DateTime parsedDate = DateTime.ParseExact(dateString, format, provider);
+            Console.WriteLine(parsedDate.ToString("dddd, dd MMMM yyyy"));
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine($"{dateString} is not in the correct format.");
+        }
+    }
+}
 ```
 
-## Поглиблено:
+Sample Output:
+```
+Friday, 24 March 2023
+```
 
-Парсинг дати з рядка з'явився задовго до C#, розвиваючись з простих алгоритмів обробки тексту. Проте, з появою об'єктно-орієнтованих мов, як C#, парсинг став набагато простішим та безпечнішим завдяки вбудованим методам.
+## Deep Dive:
+## Поглиблений Аналіз:
 
-Варто зауважити, що `DateTime.Parse()` може викликати виключення, якщо рядок неможливо обробити як дату, тоді як `DateTime.TryParse()` просто повертає false, що робить його більш безпечним для використання.
+Historically, date parsing in C# has evolved. Previous versions relied on `DateTime.Parse` which works well but lacks precision. `DateTime.ParseExact` and `TryParseExact` methods provide more control by requiring a specific date format.
 
-Також, важливо пам'ятати, що C# обробляє формати дати відповідно до культурних налаштувань системи. Щоб вказати конкретний формат дати, необхідно використовувати `DateTime.ParseExact()` та `DateTime.TryParseExact()`.
+Alternatives include using DateTimeOffset for time zone-aware applications or third-party libraries like NodaTime for more complex scenarios.
 
-## Дивитеся також:
+Implementation-wise, it's crucial to use `CultureInfo`, as date formats vary worldwide. For example, the US uses "MM-dd-yyyy", while most of Europe prefers "dd-MM-yyyy". You have to use the right culture to avoid date interpretation errors.
 
-Поглибити ваши знання можна з допомогою цих матеріалів:
+## See Also:
+## Дивіться Також:
 
-1. [Офіційна документація з DateTime.Parse](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-5.0)
-2. [Офіційна документація з DateTime.TryParse](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=net-5.0)
-3. [Приклади коду з DateTime.ParseExact](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=net-5.0)
-4. [Приклади коду з DateTime.TryParseExact](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparseexact?view=net-5.0)
+- [Microsoft Docs - DateTime.ParseExact Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact)
+- [Microsoft Docs - Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [NodaTime Documentation](https://nodatime.org/)

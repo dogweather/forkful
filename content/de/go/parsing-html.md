@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:31:58.087971-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Go"
@@ -10,48 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## Was & Warum?
+HTML-Parsing ermöglicht es, den Inhalt und die Struktur von Webseiten zu analysieren und Daten daraus zu extrahieren. Programmierer nutzen es, um auf relevante Informationen gezielt zuzugreifen und automatisiert zu verarbeiten.
 
-HTML-Parsing ist der Prozess, HTML-Strings zu analysieren und zu interpretieren. Programmierer tun dies, um Daten aus Webseiten zu extrahieren oder Informationsstruktur der Webseiten zu manipulieren.
-
-## So wird’s gemacht:
-
-Mit dem `net/html` Paket in Go, können wir HTML einfach etablieren. Hier ist ein einfacher Codeausschnitt:
-
-```Go 
+## Wie geht das?
+```Go
 package main
 
 import (
-  "fmt"
-  "golang.org/x/net/html"
-  "strings"
+	"fmt"
+	"golang.org/x/net/html"
+	"net/http"
 )
 
 func main() {
-  doc, _ := html.Parse(strings.NewReader("<html><head></head><body>Hello World</body></html>"))
-  var f func(*html.Node)
-  f = func(n *html.Node) {
-    if n.Type == html.TextNode {
-      fmt.Println(n.Data)
-    }
-    for c := n.FirstChild; c != nil; c = c.NextSibling {
-      f(c)
-    }
-  }
-  f(doc)
+	resp, err := http.Get("http://beispiel.de")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	doc, err := html.Parse(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "a" {
+			for _, a := range n.Attr {
+				if a.Key == "href" {
+					fmt.Println(a.Val)
+					break
+				}
+			}
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
+
+	f(doc)
 }
 ```
+Beispiel Ausgabe:
+```
+http://example.com/link1
+http://example.com/link2
+```
 
-Wenn du dieses Programm ausführst, wird es "Hello World" auf der Konsole ausgeben.
+## Tiefen Tauchgang
+HTML-Parsing ist seit den Anfängen des Webs entscheidend. Die Go-Standardbibliothek bietet grundlegende Werkzeuge, wie das `net/html` Paket. Alternativen wie `goquery` imitieren jQuery für einen einfacheren Umgang mit dem DOM. Beim Parsen von HTML kommt es darauf an, korrekt auf das sich ständig ändernde Mark-up von Webseiten zu reagieren und fehlertolerant zu sein.
 
-## Tiefer einsteigen:
-
-HTML-Parsing hat eine lange Geschichte, von Anfang an mit Perl und Regular expressions, bis hin zum aktuellen Stand mit leistungsfähigen Bibliotheken in fast jeder Sprache. Alternativen in Go wären `goquery` zum Beispiel, das eine zusätzliche Schicht über `net/html` schafft und es einfacher macht, bestimmte Knoten zu finden.
-
-Für mehr Kontext darüber, was `net/html` unter der Haube tut: es ist eigentlich eine Basis-Implementierung eines HTML5-Parser gemäß der HTML5-Spezifikation. Es enthält einen Tokenizer, der den HTML String in kleinere Teile bricht, sowie einen Parser, der diese Token dann in eine nachvollziehbare Dokumentenstruktur aufbaut.
-
-## Siehe auch:
-
-- Go net/html Dokumentation: https://pkg.go.dev/golang.org/x/net/html
-- Goquery: https://github.com/PuerkitoBio/goquery
-- "Web Scraping with Go": Sehr ausführliches Tutorial, auf das sich jeder beziehen kann, der es ernst meint mit Web Scraping in Go: https://edmundmartin.com/web-scraping-with-golang/
+## Siehe Auch
+- Go-Dokumentation für das `net/html` Paket: https://pkg.go.dev/golang.org/x/net/html
+- goquery-Projektseite: https://github.com/PuerkitoBio/goquery
+- Einführung in das Parsen von HTML mit Go: https://schier.co/blog/2015/04/26/a-simple-web-scraper-in-go.html

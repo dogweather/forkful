@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:30:43.587967-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,38 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cos'è e Perché?
-
-L'analisi sintattica di HTML, o parsing, consiste nel leggere codice HTML e convertirlo in una rappresentazione utilizzabile dai programmi. I programmatori lo fanno per estrarre dati, manipolare il contenuto o costruire applicazioni web scraping.
+Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne dati specifici. I programmatori lo fanno per automatizzare il recupero di informazioni da siti web e interagire con il web in modo programmatico.
 
 ## Come Fare:
+Ecco un esempio di base che usa la libreria `enlive` per fare il parsing di un frammento HTML:
 
-Ecco un semplice esempio di come utilizzare la libreria Enlive di Clojure per l'analisi sintattica di HTML:
+```clojure
+(require '[net.cgrand.enlive-html :as enlive])
 
-```Clojure
-(ns mio.progetto
-  (:require [net.cgrand.enlive-html :as enlive]))
-
-(defn get-html [url]
-  (enlive/html-resource (java.net.URL. url)))
+(def html-snippet "<html><body><p>Salve, mondo!</p></body></html>")
 
 (defn parse-html [html]
-  (enlive/select html [:h1]))
+  (enlive/select (enlive/html-resource (java.io.ByteArrayInputStream. (.getBytes html))) [:p]))
 
-(let [html (get-html "http://example.com")]
-  (println (parse-html html)))
+(println (parse-html html-snippet))
 ```
 
-L'output sarà l'elenco dei contenuti di tutti gli elementi `<h1>` sulla pagina.
+Output di esempio:
+
+```
+({:tag :p, :attrs nil, :content ["Salve, mondo!"]})
+```
 
 ## Approfondimento:
+Il parsing di HTML esiste da quando l'HTML è diventato il linguaggio standard per la creazione di pagine web. In Clojure, `enlive` è una libreria popolare per questa attività, ma ci sono alternative come `hickory` e `jsoup` (che richiede l'interoperabilità Java).
 
-L'analisi sintattica di HTML ha una lunga storia risalente all'inizio del web, quando era un compito molto più difficile. Ora abbiamo librerie molto efficienti come Enlive per Clojure.
+`enlive` utilizza un approccio basato su selettori simili a CSS per navigare e manipolare la struttura HTML. È potente per estrarre dati e può gestire anche documenti "maleformati" grazie alla sua tolleranza agli errori.
 
-Esistono alternative all'analisi sintattica di HTML in Clojure come Jsoup e Hickory, entrambe fornendo un set di funzionalità diverso.
+Se ti serve qualcosa di più orientato al web scraping, potresti considerare `clj-webdriver`, che è più adatto all'interazione diretta con il browser, ma è anche più pesante e complesso da usare.
 
-Anche se Enlive permette di analizzare facilmente l'HTML, è importante ricordare che lavorare con HTML non ben formato può portare a vari tipi di problemi. I parser HTML moderni sono progettati per essere molto tolleranti con il codice HTML malformato, ma ancora possono esserci insidie.
-
-## Vedi Anche:
-
-- **Documentazione ufficiale Enlive**: [link qui](https://github.com/cgrand/enlive)
-- **Hickory**, una libreria per trasformare HTML in Clojure data structures: [link qui](https://github.com/davidsantiago/hickory)
+## Vedere Anche:
+- Enlive GitHub repository: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- Documentazione Enlive: [https://github.com/cgrand/enlive/wiki](https://github.com/cgrand/enlive/wiki)
+- Hickory: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+- Clj-webdriver: [https://github.com/semperos/clj-webdriver](https://github.com/semperos/clj-webdriver)

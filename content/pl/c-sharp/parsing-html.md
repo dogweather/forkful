@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:31:06.728712-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,44 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+"**Parsing HTML** – to proces przekształcania kodu HTML w strukturę, którą można łatwiej przetworzyć w innym języku programowania, np. C#. Robimy to, aby odnaleźć, przeczytać lub zmodyfikować konkretne elementy strony, takie jak tekst, linki czy inne dane, bez konieczności ręcznej obróbki surowego kodu.
 
-Parsowanie HTML to proces analizy struktury dokumentu HTML w celu zrozumienia jego zawartości. Programiści robią to, aby łatwo manipulować strukturą dokumentu, ekstrahować dane i dynamicznie renderować stronę internetową.
-
-## Jak to zrobić:
-
-Aby przeprowadzić parsowanie HTML w C#, najpierw musisz zainstalować pakiet `HtmlAgilityPack` przy pomocy narzędzia NuGet. Poniżej znajduje się przykładowy fragment kodu.
+## Jak to zrobić?
+Do parsowania HTML w C# wykorzystamy bibliotekę **HtmlAgilityPack**. Jest ona dość lekka, a zarazem potężna i prosta w użyciu.
 
 ```C#
 using HtmlAgilityPack;
+using System;
+using System.Linq;
 
-public void ParseHtml(string html)
+class Program
 {
-    var doc = new HtmlDocument();
-    doc.LoadHtml(html);
+    static void Main()
+    {
+        // Ładowanie dokumentu HTML z URL
+        var url = "http://przykladowa-strona.pl";
+        var web = new HtmlWeb();
+        var doc = web.Load(url);
 
-    var node = doc.DocumentNode.SelectSingleNode("//head/title");
+        // Wyszukanie elementu po tagu
+        var nodes = doc.DocumentNode.SelectNodes("//p");
+        
+        foreach (var node in nodes)
+        {
+            Console.WriteLine(node.InnerText);
+        }
 
-    Console.WriteLine("Title: {0}", node.InnerHtml);
+        // Wyszukiwanie elementu po klasie
+        var classNode = doc.DocumentNode.SelectNodes("//div[@class='klasa-przykladowa']");
+        
+        foreach (var node in classNode)
+        {
+            Console.WriteLine(node.InnerHtml);
+        }
+    }
 }
 ```
 
-Wyjście: 
-```
-Title: Tytuł strony
-```
+Powinniśmy zobaczyć wydrukowany tekst z paragrafów (p), oraz zawartość diva o klasie „klasa-przykladowa”.
 
-Kod wczytuje dokument HTML, a następnie wybiera pierwszy element title znajdujący się wewnątrz tagu head.
+## Deep Dive
+**HtmlAgilityPack** pojawił się, gdy deweloperzy zaczęli potrzebować sposobów na manipulowanie i ekstrakcję danych z HTML po stronie serwera. Alternatywnie, można użyć wyrażeń regularnych (regex), ale to z reguły trudniejsze i mniej niezawodne dla złożonych dokumentów HTML.
 
-## Dogłębne spojrzenie:
+Inną opcją jest użycie **AngleSharp**, nowoczesnej biblioteki .NET, która oferuje jeszcze lepsze wsparcie dla nowych standardów HTML i CSS.
 
-Parsowanie HTML ma długą historię, począwszy od czasów, gdy strony internetowe były zdecydowanie prostsze. Dzisiaj, z pojawieniem się nowszych technologii frontendowych, parsowanie HTML jest wykorzystywane do zrozumienia i manipulacji skomplikowanymi strukturami HTML zamiast prostego wyświetlania zawartości.
+Implementacja parserów HTML powinna zarządzać zarówno poprawnym kodem, jak i tymi z błędami (których w prawdziwym świecie HTML jest sporo). HtmlAgilityPack dobrze radzi sobie z takimi przypadkami, działając podobnie do przeglądarek internetowych, które interpretują nawet nieco „zepsuty” HTML.
 
-Alternatywą dla `HtmlAgilityPack` jest `CsQuery`, który oferuje podobne funkcje z interfejsem zapożyczonym od popularnej biblioteki JavaScript JQuery.
-
-Ponieważ HTML jest językiem znaczników, parser HTML, tak jak nasz kod z przykładu, pracuje, identyfikując i interpretując te znaczniki, a następnie mapując je na struktury danych, które mogą być dalej manipulowane w kodzie.
-
-## Zobacz także:
-
-* Dokumentacja HtmlAgilityPack: https://html-agility-pack.net/
-* Dokumentacja CsQuery: https://github.com/jamietre/CsQuery
-* HTML DOM: https://www.w3schools.com/whatis/whatis_htmldom.asp
+## Zobacz także
+- HtmlAgilityPack na NuGet: https://www.nuget.org/packages/HtmlAgilityPack/
+- Dokumentacja HtmlAgilityPack: https://html-agility-pack.net/
+- Projekt AngleSharp na GitHub: https://github.com/AngleSharp/AngleSharp
+- Tutorial wideo do HtmlAgilityPack: [Link do odpowiedniego tutorialu na YouTube lub innym serwisie wideo]

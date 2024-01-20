@@ -1,6 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Bash: 文字列から日付を解析する"
+date:                  2024-01-20T15:35:38.265905-07:00
+html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,46 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何故？
+## What & Why?
+何となぜ？: 文字列から日付を解析することと、プログラマーがそれを行う理由。
 
-日付の解析（パーシング）は、文字列から日付情報を抽出するプログラミング技法です。逆に、特定の形式の文字列を日付に変換します。これは、データ入力、ログ分析、データの検証などのために必要です。
+日付の解析は文字列データを日付オブジェクトに変換するプロセスです。日付操作、保存、もしくは複雑なビジネスロジックを実行するために必要です。
 
-## 実践方法：
+## How to:
+やり方:
 
-以下に、Clojureで文字列から日付を解析する基本的な例を示します。
-
-```Clojure
-(import '[java.text SimpleDateFormat])
-(import '[java.util Date])
-
-(defn string-to-date [s format]
-  (.parse (SimpleDateFormat. format) s))
-```
-
-例えば、次のコーンドを呼び出してみてください。
+Clojureでは`clj-time`ライブラリが人気です。以下は基本的な使用例です:
 
 ```Clojure
-(string-to-date "2020/01/02" "yyyy/MM/dd")
+(require '[clj-time.format :as fmt])
+(require '[clj-time.coerce :as coerce])
+
+;; 文字列から日付への解析
+(def custom-formatter (fmt/formatter "yyyy-MM-dd"))
+(def parsed-date (fmt/parse custom-formatter "2023-04-01"))
+
+;; 解析された日付の表示
+(println parsed-date)
+;; => #<DateTime 2023-04-01T00:00:00.000Z>
+
+;; 現在の日付に対する操作
+(def today (coerce/to-date-time (java.util.Date.)))
+
+;; 日付の比較
+(println (fmt/after? today parsed-date))
+;; => true or false
 ```
 
-出力結果:
+## Deep Dive
+深掘り:
 
-```Clojure
-#inst "2020-01-02T00:00:00.000-00:00"
-```
+Clojureでは、古くから`java.util.Date`や`java.text.SimpleDateFormat`クラスを利用してきましたが、Java 8から導入された`java.time`パッケージ（JSR-310）が現代的なアプローチとなります。`clj-time`ライブラリはこの新しいAPIをClojureに導入し、より容易に日付と時刻を処理できます。代替手段として`java-time`という直接`java.time`を扱うライブラリもありますが、`clj-time`はより広く採用されています。詳細な処理、例えばタイムゾーンの処理や、閏年なども、これらのライブラリを通じて簡単に扱うことができます。
 
-##深掘り情報：
+## See Also
+参照情報:
 
-日付解析は古くから存在する技法で、多くの方法とライブラリでサポートされています。Clojureでは、標準的なJavaのDateとSimpleDateFormatクラスを使用する最もシンプルな方法ですが、joda-timeライブラリの使用も一般的です。
-
-詳細としては、SimpleDateFormatの文字列フォーマットがあります。これは、どの形式の文字列がどのような日付データへと変換されるべきかを決定します。たとえば、「yyyy/MM/dd」は年/月/日の形式になります。
-
-##参考情報：
-
-以下に、日付の解析に関連するいくつかのリンクを掲載します。
-
-1. Clojure日付操作のガイド：https://clojure-cookbook.com/ 
-
-2. 日付形式について：https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
-
-3. Clojureでの日付と時間の操作（英語）：https://www.baeldung.com/clojure-date-time
+- `clj-time` GitHub リポジトリ: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Java 8 `java.time` パッケージドキュメント: [https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
+- `java-time`ライブラリ: [https://github.com/dm3/clojure.java-time](https://github.com/dm3/clojure.java-time)

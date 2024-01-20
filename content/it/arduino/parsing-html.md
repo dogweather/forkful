@@ -1,7 +1,8 @@
 ---
-title:                "Analisi del html"
-html_title:           "Arduino: Analisi del html"
-simple_title:         "Analisi del html"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:29:53.293117-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,51 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa è e Perché?
+## Che Cosa & Perché?
+Il parsing HTML consiste nell'analizzare il codice HTML per estrarre dati specifici. I programmatori lo fanno per interagire con il web, raccogliere informazioni o integrare funzionalità di terze parti nelle loro applicazioni.
 
-L'analisi (Parsing) HTML è la procedura mediante la quale una stringa di codice HTML viene convertita in un formato leggibile dalla macchina. E' molto utilizzata per estrarre informazioni da pagine web professionalmente e comodamente.
-
-## Come Fare:
-
-Arduino non supporta direttamente l'analisi HTML, ma possiamo utilizzare una libreria esterna come ArduinoJson per farlo. Ecco un esempio di base:
+## Come fare:
+Ecco un esempio semplice che mostra come connettere un Arduino alla rete, fare una richiesta HTTP e effettuare il parsing di una risposta HTML.
 
 ```Arduino
-#include "ArduinoJson.h"
+#include <Ethernet.h>
+#include <SPI.h>
 
-void setup(){
+// Inizializza la libreria Ethernet con l'indirizzo MAC e l'IP del tuo Arduino
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress ip(192, 168, 1, 177);
+EthernetClient client;
+
+void setup() {
+  Ethernet.begin(mac, ip);
   Serial.begin(9600);
-  StaticJsonDocument<200> doc;  
-
-  char json[] = "<html><body>Ciao Mondo!</body></html>";
-  
-  DeserializationError error = deserializeJson(doc, json);
-  
-  if(error){
-    Serial.println("Fallimento Deserializzazione");
+  while (!Serial) {
+    ; // aspetta la connessione della porta seriale
   }
-  else{
-    const char* messaggio = doc["html"]["body"]; 
-    Serial.println(messaggio); 
+
+  if (client.connect("example.com", 80)) {
+    client.println("GET /pagina.html HTTP/1.1");
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println();
   }
 }
 
-void loop(){}
+void loop() {
+  while (client.connected()) {
+    if (client.available()) {
+      char c = client.read();
+      // Qui puoi fare il parsing di c
+      Serial.print(c);
+    }
+  }
+  
+  client.stop();
+}
 ```
 
-Nel Monitor Seriale, vedrai: `Ciao Mondo!`
+Risultato: Output della risposta HTML sul monitor seriale.
 
-## Approfondimento:
+## Approfondimenti:
+Il parsing HTML con Arduino è una versione molto semplice di ciò che si potrebbe fare con un computer completo. Storicamente, il parsing è stato fatto con linguaggi come Python o Java, ma con l'avvento di dispositivi IoT come Arduino, il parsing è diventato popolare anche in queste piattaforme.
 
-(1) L'analisi di HTML è antica quanto il web stesso, dato che è la tecnica principale utilizzata dai browser per interpretare i siti web.
-
-(2) Ci sono alternative come BeautifulSoup in Python, ma Arduino richiede soluzioni leggere e veloci, quindi l'utilizzo della libreria ArduinoJson è molto indicata.
-
-(3) L'implementazione dettagliata dell'analisi HTML può variare a seconda del formato e della complessità dell'HTML di input. Tuttavia, il concetto di base rimane sempre lo stesso: leggere l'HTML come stringa e analizzarlo per estrarre le informazioni desiderate.
+Alternativamente, si può usare una libreria di parsing HTML come "ArduinoHtmlParser" che gestisce molti dettagli di parsing, ma questa aggiunge complessità e utilizza spazio in memoria. Va considerato che Arduino non ha le stesse capacità di elaborazione o la quantità di memoria di altri dispositivi, quindi il parsing HTML deve essere il più snello possibile.
 
 ## Vedi Anche:
-
-Per ulteriori informazioni, consulta le seguenti risorse:
-
-1. [Documentazione ArduinoJson](https://arduinojson.org/)
-2. [Tutorial parsing JSON con Arduino](https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide)
-3. [Guida alla sintassi JSON](https://www.w3schools.com/js/js_json_syntax.asp)
+- Documentazione ufficiale di Ethernet library per Arduino: https://www.arduino.cc/en/Reference/Ethernet
+- Un'introduzione al parsing HTML: https://www.codeproject.com/Articles/298519/Fast-and-simple-HTML-parsing
+- Libreria ArduinoHtmlParser: https://github.com/forcer/ArduinoHtmlParser

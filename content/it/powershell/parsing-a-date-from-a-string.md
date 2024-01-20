@@ -1,7 +1,8 @@
 ---
-title:                "Analizzare una data da una stringa"
-html_title:           "Fish Shell: Analizzare una data da una stringa"
-simple_title:         "Analizzare una data da una stringa"
+title:                "Estrarre una data da una stringa"
+date:                  2024-01-20T15:37:57.924896-07:00
+html_title:           "Arduino: Estrarre una data da una stringa"
+simple_title:         "Estrarre una data da una stringa"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,50 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ## Che cosa e perché?
+## What & Why?
+Interpretare una data da una stringa significa trasformarla in un formato che il computer capisce. I programmatori lo fanno per manipolare o confrontare date in maniera automatica.
 
-Parse della data da una stringa è il processo di trasformazione di una rappresentazione di testo di una data in un equivalente comprensibile della macchina, spesso un oggetto DateTime. I programmatori lo fanno per manipolare le date in modi più complessi che semplicemente leggere o scrivere una stringa.
-
-# ## Come fare:
-
-Ecco come fare parsing di una data utilizzando PowerShell:
+## How to:
+In PowerShell, usi `[datetime]` o il metodo `ParseExact` per convertire stringhe in date. Ecco due esempi:
 
 ```PowerShell
-$dataStringa = "2022-01-01"
-$data = [DateTime]::Parse($dataStringa)
+# Uso semplice con casting
+$dataStringa = "31/03/2023"
+$data = [datetime]$dataStringa
 $data
 ```
 
-E qui c'è l'output di esempio:
-
-```PowerShell
-Saturday, January 1, 2022 12:00:00 AM
+Output:
+```
+venerdì 31 marzo 2023 00:00:00
 ```
 
-Se invece la tua data è in un formato diverso, puoi utilizzare `[DateTime]::ParseExact` per specificare il formato:
-
 ```PowerShell
-$dataStringa = "2022/01/01 13:15:00"
-$formato = "yyyy/MM/dd HH:mm:ss"
-$cultura = [Globalization.CultureInfo]::InvariantCulture
-$data = [DateTime]::ParseExact($dataStringa, $formato, $cultura)
+# Uso avanzato con ParseExact
+$dataStringa = "31-03-2023 14:00"
+$formato = "dd-MM-yyyy HH:mm"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$data = [datetime]::ParseExact($dataStringa, $formato, $culture)
 $data
 ```
 
-L'output di esempio:
-
-```PowerShell
-Saturday, January 1, 2022 13:15:00 PM
+Output:
+```
+venerdì 31 marzo 2023 14:00:00
 ```
 
-# ## Approfondimento
+## Deep Dive
+PowerShell usa le classi del .NET Framework per lavorare con date e orari. Questo risale ai primi giorni del .NET, introducendo un modo standardizzato per gestire le date.
 
-Historicamente, PowerShell eredita la funzionalità del parser di date da .NET, che è noto per la sua flessibilità. Esistono molte alternative per analizzare le date. Oltre a `DateTime.Parse` e `DateTime.ParseExact`, ad esempio, potresti usare `DateTime.TryParse` e `DateTime.TryParseExact`, che non generano un'eccezione su una stringa mal formata, ma restituiscono un booleano di successo e assegnano l'oggetto DateTime ripristinato in un parametro di output.
+Ci sono alternative come `Get-Date` per il parsing più flessibile e la manipolazione delle date:
 
-Inoltre, il parsing delle date può essere influenzato da molte impostazioni, come la cultura corrente e la zona oraria del sistema. Ad esempio, la cultura corrente impatta sull'interpretazione del formato della data.
+```PowerShell
+# Parsing flessibile con Get-Date
+$dataStringa = "2023-03-31"
+$data = Get-Date $dataStringa
+$data
+```
 
-# ## Vedi anche
+I dettagli implementativi da tener presente includono la gestione del formato della data e dell'ora, fuso orario e culture diverse, che possono influenzare come interpretare la stringa.
 
-Di seguito alcuni link utili che potrebbero aiutarti a saperne di più:
-
-1. Documentazione ufficiale Microsoft per l'uso di DateTime in PowerShell: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
+## See Also
+- [La classe DateTime in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Informazioni sulla cultura in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)

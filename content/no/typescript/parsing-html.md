@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:34:26.946021-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Parsing HTML betyr å omforme HTML-kode til et format en applikasjon eller et bibliotek kan forstå og manipulere. Programmerere parser HTML for å trekke ut data, manipulere innhold, eller migrere innhold til nye plattformer.
 
-Å parse HTML handler om å tolke og bryte ned HTML-kode til forståelig datastruktur. Dette gjør programmerere for å hente, manipulere og analysere data fra websider på en mer effektiv måte.
+## How to: (Slik gjør du:)
+I TypeScript kan biblioteket `node-html-parser` brukes for enkel HTML-parsing. Her er et eksempel:
 
-## Slik gjør du det:
+```typescript
+import { parse } from 'node-html-parser';
 
-I TypeScript kan vi bruke biblioteket `parse5` for å parse HTML. Her er et grunnleggende eksempel:
+const rawHTML = '<div><p>Hei, verden!</p></div>';
+const root = parse(rawHTML);
 
-```TypeScript
-import * as parse5 from 'parse5';
-
-const html = `<body><p>Hello, verden!</p></body>`;
-const document = parse5.parse(html);
-
-console.log(document.childNodes[0].nodeName); // utskrift: "#document"
+console.log(root.querySelector('p').textContent); // Output: "Hei, verden!"
 ```
 
-Kjøring av dette programmet vil parse `<body><p>Hello, verden!</p></body>`, og deretter skrive ut nodenavnet til den første child noda. 
+For å installere `node-html-parser`:
 
-## Dyp dykk:
+```bash
+npm install node-html-parser
+```
 
-Parsing av HTML har vært relevant siden webens oppstart, da det gir programmører muligheten til å interagere med internett på en strukturert måte. Tidligere metoder for parsing HTML har blant annet omfattet regulære uttrykk, men dette kan bli raskt komplisert med komplekse HTML-strukturer. TypeScript gir en mer moderne og robust løsning.
+## Deep Dive (Dypdykk)
+Historisk sett har HTML-parsing vært utfordrende på grunn av 'tag soup' - HTML-sider som ikke følger standarder. Biblioteker som jQuery ble populære på grunn av evnen til å håndtere denne suppa. I dag finnes det moderne biblioteker som `node-html-parser` som er raskere og mer forutsigbare.
 
-Alternativer til `parse5` inkluderer biblioteker som `htmlparser2` eller `cheerio`, som har forskjellige funksjoner og prestasjonsnivåer basert på dine behov. 
+Alternativer inkluderer `cheerio`, som ligner på jQuery, eller `jsdom`, som etterligner en webbrowsermiljø i Node.js. Valg av bibliotek kan avhenge av behov for ytelse, funksjonalitet og hvordan HTML-en skal brukes etter parsing.
 
-Når vi snakker om implementeringsdetaljer, er det viktig å merke seg at parsing ikke nødvendigvis vil gi akkurat samme resultater på tvers av forskjellige plattformer eller nettlesere. Dette er grunn til `quirks mode` og variasjoner i hvordan ulike nettlesere tolker HTML.
+Detaljer om implementasjonen av `node-html-parser` inkluderer hvordan det håndterer DOM-trær og trekk som lynrask parsing og støtte for CSS-selektorer for å hente ut elementer fra HTML-strukturen.
 
-## Se også:
-
-
-
-3. [Cheerio.js API Dokumentasjon](https://cheerio.js.org/)
+## See Also (Se Også)
+- [node-html-parser GitHub](https://github.com/taoqf/node-html-parser)
+- [cheerio GitHub](https://github.com/cheeriojs/cheerio)
+- [jsdom GitHub](https://github.com/jsdom/jsdom)
+- [Mozilla Web Docs - Parsing and serializing HTML](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)

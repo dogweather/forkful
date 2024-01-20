@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:37:11.144578-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Parsowanie daty ze stringa polega na przekształceniu tekstu w obiekt daty. Programiści robią to, aby móc manipulować danymi daty i czasu oraz porównywać różne daty.
+## What & Why? (Co i dlaczego?)
+Parsing daty ze stringa to proces zamiany tekstu w obiekt daty. Programiści to robią, by móc operować datami: dodawać dni, porównywać, wyświetlać w róznych formatach.
 
-## Jak to zrobić:
-Poniżej znajduje się przykład, jak można przeprowadzić parsowanie daty w JavaScript przy użyciu metody `Date.parse()`:
-
-```Javascript 
-let dateStr = "2022-03-15T21:45:00Z";
-let dateObj = new Date(Date.parse(dateStr));
-console.log(dateObj);
-```
-Gdy uruchomisz ten kod, otrzymasz coś takiego:
-
+## How to: (Jak to zrobić:)
 ```Javascript
-2022-03-15T21:45:00.000Z
-```
-Możemy również sparsować daty w innych formatach, na przykład:
+const dateString = '2023-04-01'; // przykładowy string z datą
+const parsedDate = new Date(dateString);
 
-```Javascript 
-let dateStr2 = "15 Mar 2022 21:45:00 GMT";
-let dateObj2 = new Date(Date.parse(dateStr2));
-console.log(dateObj2);
-```
-W wyniku otrzymamy:
+console.log(parsedDate); // Pokaże datę w formacie obiektu Date
 
-```Javascript
-2022-03-15T21:45:00.000Z
+// A teraz formatowanie daty na przykładzie
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = parsedDate.toLocaleDateString('pl-PL', options);
+
+console.log(formattedDate); // Pokaże "1 kwietnia 2023"
 ```
 
-## Głębsze spojrzenie 
-Parsowanie daty ze stringa jest ważnym elementem manipulacji danymi daty w JavaScript, odkąd ten język został stworzony. Istniej jednak wiele technik do jego wykonania. 
+## Deep Dive (Dogłębna analiza)
+Wcześniej JavaScript nie miał wbudowanego wsparcia dla parsingu dat, przez co programiści często sięgali po biblioteki jak Moment.js. Od ES5 można użyć `Date.parse()` albo konstruktora `new Date()`, które radzą sobie z ISO 8601. Pamiętajmy, że interpretacja stringów bez standardu może być różna w zależności od przeglądarki.
 
-Oprócz `Date.parse()`, możemy też użyć konstruktora `Date()`, który jest bardziej elastyczny, ale może prowadzić do niejednoznaczności. 
+Alternatywy jak Luxon, date-fns czy Day.js oferują więcej opcji i lepszą strefę czasową. Implementacje w różnych środowiskach mogą różnić się obsługą brzegowych przypadków. Gdy robimy parsing dat, warto być ostrożnym z formatami i zawsze testować.
 
-Detail implementacji `Date.parse()` może się różnić w zależności od silnika JavaScript. Zawsze warto sprawdzić specyfikację ECMAScript dla dokładnych szczegółów.
-
-## Zobacz również
-- Dokumentacja Mozilla Developer Network na temat [Date.parse()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- Wytyczne [ECMAScript](https://tc39.es/ecma262/#sec-date.parse) dla Date.parse()
-- [Moment.js](https://momentjs.com/), biblioteka JavaScript do manipulacji datami. 
-- [Date-fns](https://date-fns.org/), nowoczesna alternatywa dla Moment.js.
+## See Also (Zobacz również)
+- [MDN Web Docs Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+- [MDN Web Docs Date() constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+- [date-fns library](https://date-fns.org/)
+- [Day.js library](https://day.js.org/)
+- [Luxon documentation](https://moment.github.io/luxon/#/)

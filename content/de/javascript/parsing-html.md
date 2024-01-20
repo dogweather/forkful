@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:32:30.731816-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Javascript"
@@ -10,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing von HTML mittels JavaScript 
-
 ## Was & Warum?
 
-HTML zu parsen bedeutet, den Code zu analysieren und zu interpretieren. Programmierer tun dies, um z.B. Inhalte aus einer Webseite zu extrahieren oder Web Scraping durchzuführen.
+HTML-Parsing ist der Prozess, bei dem man HTML-Code liest und dessen Struktur und Inhalt versteht. Programmierer machen das, um Daten aus Webseiten zu extrahieren, Inhalte zu manipulieren oder die Struktur für eigene Zwecke zu nutzen.
 
-## So geht's:
+## How to:
 
-Hier unser Beispiel:
+Beispiel: HTML mit JavaScript parsen und Elemente auswählen:
 
-``` Javascript
-let parser, dom;
-parser = new DOMParser();
-dom = parser.parseFromString(' <!DOCTYPE html><p>JS ist toll!</p>', 'text/html');
-console.log(dom.body.textContent);
+```javascript
+const parser = new DOMParser();
+const htmlString = `
+  <div>
+    <p id="first">Hallo, Welt!</p>
+    <p id="second">Parsing ist spaßig.</p>
+  </div>
+`;
+const doc = parser.parseFromString(htmlString, "text/html");
+const firstParagraph = doc.getElementById("first").textContent;
+console.log(firstParagraph); // Gibt aus: "Hallo, Welt!"
 ```
 
-Die Ausgabe dieses Programms ist:
+## Deep Dive
 
-``` Javascript
-"JS ist toll!"
-```
+Historisch gesehen war das Parsen von HTML oft kompliziert und fehleranfällig, besonders wegen schlecht strukturierten Codes und Browser-Inkonsistenzen. Alternativen zu `DOMParser` wie `jQuery.parseHTML()` haben die Aufgabe vereinfacht. Allerdings liefern moderne Web-APIs wie `DOMParser` eine saubere und standards-konforme Methode, die mit guten Performance-Ergebnissen überzeugt. Beim Implementieren ist darauf zu achten, dass der HTML-Code, den man parst, vertrauenswürdig ist, um Cross-Site-Scripting (XSS) Angriffe zu vermeiden.
 
-In diesem Code erzeugen wir mithilfe der `DOMParser()`-Methode einen neuen DOM-Parser. Anschließend nutzen wir `parseFromString()`, um HTML-Code zu einer DOM-Struktur zu konvertieren. Abschließend geben wir den Textinhalt des HTML-Dokuments aus.
+## See Also
 
-## Vertiefung
-
-Das Parsen von HTML hat eine lange Geschichte und war schon immer zentraler Bestandteil der Webentwicklung. Alternative Methoden sind etwa die Verwendung von Regex (nicht empfohlen) oder spezialisierten Libraries wie Cheerio oder JSDOM.
-
-Während unserer Implementierung genutzte Methode, die DOMParser API, ist eine Web-API, die von den meisten modernen Browsern unterstützt wird. Es ermöglicht das Parsen von XML oder HTML zu einem Document-Objekt.
-
-## Siehe auch
-
-- [MDN Web Docs: DOMParser](https://developer.mozilla.org/de/docs/Web/API/DOMParser)
-- [Web Scraping mit JavaScript und Node.js](https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3/)
-- [Cheerio Fast, flexible & lean implementation of core jQuery](https://cheerio.js.org)
-- [JSDOM](https://github.com/jsdom/jsdom)
+- MDN-Dokumentation zu `DOMParser`: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+- XSS-Angriffe und wie man sie verhindert: https://owasp.org/www-community/attacks/xss/
+- Eine Einführung in Web-Scraping mit JavaScript: https://javascript.info/parsing-html

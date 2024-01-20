@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:32:32.502103-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML handlar om att konvertera HTML-kod till strukturerade data. Programmerare gör detta för att enklare kunna extrahera, manipulera eller modifiera HTML-data.
+HTML-parsing är när vi extraherar data från HTML-kod, lite som att plocka äpplen från ett träd. Vi gör det för att använda webbinnehållet i våra appar, som datakälla eller för att analysera webbsidor.
 
 ## Så här gör du:
-Kotlin har ett inbyggt bibliotek, Jsoup, speciellt utformat för HTML-parsing. Så här kan kod exempelvis se ut:
+I Kotlin använder vi ofta biblioteket Jsoup för att göra HTML-parsing. Det är smidigt och kraftfullt. Här är ett snabbt exempel:
 
-```Kotlin
-val doc = Jsoup.connect("http://example.com").get()
-val title = doc.title()
-
-println("Rubrik: $title")
-```
-
-I detta exempel ansluter vi till en webbsida, hämtar dess HTML-kod och sparar den i `doc`. Därefter extraherar vi sidans titel och skriver ut den. Kom ihåg att importera Jsoup:
-```Kotlin
+```kotlin
 import org.jsoup.Jsoup
+
+fun main() {
+    val html = "<html><head><title>Hej Sverige!</title></head><body><p>Välkommen till Kotlin.</p></body></html>"
+    val doc = Jsoup.parse(html)
+    
+    val title = doc.title()
+    println(title)  // Skriver ut: Hej Sverige!
+
+    val pText = doc.select("p").first()?.text()
+    println(pText)  // Skriver ut: Välkommen till Kotlin.
+}
 ```
 
-## Djupgående
-HTML-parsing har utvecklats över tid för att meet behovet av att läsa och förstå HTML-kod programmatiskt. Alternativ till Jsoup inkluderar htmlcleaner och jtidy, men Jsoup anses ofta vara mer modern och effektiv.
+## Djupdykning
+HTML-parsing är inte nytt. I Java-eran använde vi SAX och DOM, men de krävde mycket kod och var klumpiga. Jsoup förändrade spelet genom sin "jQuery-liknande" syntax som förenklar parsning och manipulation av HTML.
 
-Detaljer som kan vara intressanta: Jsoup fungerar genom att genomsöka HTML-koden och bygga upp ett "DOM-träd"(Document Object Model) som representerar strukturen i HTML-dokumentet. Till detta träd kan du sedan utföra diverse operationer.
+Alternativ till Jsoup skulle kunna vara HtmlUnit eller Kotlinx.html, men Jsoup är ofta favoriten på grund av dess enkelhet och tillförlitlighet.
+
+När du implementerar parsing, kom ihåg att respektera webbsidors användningsvillkor och robots.txt-filer för att undvika juridiska problem.
 
 ## Se även
-För mer information om HTML-parsing kan du läsa följande resurser:
-
-1. Jsoup's officiella dokumentation: [Klicka här](https://jsoup.org/)
-2. Officiell Kotlin dokumentation: [Klicka här](https://kotlinlang.org/docs/home.html)
-3. Kurs i HTML-parsing: [Klicka här](https://www.coursera.org/learn/data-structures-optimizing-performance)
+- Jsoup's officiella webbplats: [https://jsoup.org/](https://jsoup.org/)
+- Kotlinx.html GitHub-repo: [https://github.com/Kotlin/kotlinx.html](https://github.com/Kotlin/kotlinx.html)
+- HtmlUnit's webbplats: [http://htmlunit.sourceforge.net/](http://htmlunit.sourceforge.net/)

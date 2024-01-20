@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:33:11.110045-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,36 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Parsing av HTML innebär att man analyserar HTML-kod för att extrahera specifik data — som att hitta text inuti vissa taggar. Programmerare gör det för att automatisera datainsamling från webbsidor och bearbeta innehållet.
 
-Att analysera HTML innebär att bryta ner HTML-koden till dess beståndsdelar för att sedan använda dessa delar inom programmeringen. Programmörer gör det för att fånga data, manipulera sidor och automatisera uppgifter webbsidors nivå.
-
-## Hur man gör:
-
-Här är ett enkelt exempel på hur man använder PowerShell för att analysera HTML:
+## Hur gör man:
+För att köra kodexemplen, se till att du har `Invoke-WebRequest` och `HtmlAgilityPack` tillgängliga i din PowerShell-session. `HtmlAgilityPack` är en .NET-bibliotek som gör det enklare att hantera HTML.
 
 ```PowerShell
-# Ladda ner en webbsida
-$webcontent = Invoke-WebRequest -Uri "https://www.exempelsida.se"
+# Installera HtmlAgilityPack
+Install-Package HtmlAgilityPack -Scope CurrentUser
 
-# Analysera HTML:n, extrahera data
-$data = $webcontent.ParsedHtml.getElementsByTagName('tagname')
+# Anropa en webbsida
+$response = Invoke-WebRequest -Uri 'https://example.com'
 
-# Skriv ut data
-$data | ForEach-Object { Write-Output $_.innerText }
+# Ladda HTML in i ett HtmlDocument-objekt med HtmlAgilityPack
+$html = New-Object HtmlAgilityPack.HtmlDocument
+$html.LoadHtml($response.Content)
+
+# Hitta alla element med en specifik klass
+$nodes = $html.DocumentNode.SelectNodes("//div[@class='min-klass']")
+
+# Skriv ut texten för varje node
+$nodes | ForEach-Object { $_.InnerText }
 ```
-I det här exemplet byter du ut "https://www.exempelsida.se" mot webbadressen du vill analysera, och 'tagname' till den HTML-tag du letar efter. Utdata varierar beroende på vilken webbsida och tag du valt.
+Exempelutmatning:
 
-## Fördjupning:
+```
+Detta är den första texten i klassen 'min-klass'.
+Här är lite mer text i en annan element med samma klass.
+```
 
-Historiskt sett har HTML-analys varit komplicerad och beroende av specifika bibliotek. PowerShell förenklar det här mycket genom att innehålla inbyggda metoder för att hämta och analysera webbsidor.
+## Fördjupning
+Att parse HTML är inte något nytt. Sedan webben blev mainstream på 90-talet har behovet av att bearbeta HTML-data vuxit. Tillbaka i tiden använde vi enklare regex-metoder, men de är ökända för att vara opålitliga för komplex HTML. HtmlAgilityPack är ett bättre verktyg för .NET och PowerShell, som hanterar HTML effektivt och på ett strukturerat sätt.
 
-Ett alternativ till Invoke-WebRequest är att använda .NET-klassen WebClient, men det är mer komplicerat och kräver mer kod.
+Alternativen till HtmlAgilityPack inkluderar andra bibliotek som AngleSharp för C# eller cheerio för JavaScript. De har liknande funktioner men skiljer sig åt i syntax och integration.
 
-Om du behöver mer kontroll över analysprocessen, eller om du hanterar komplicerad HTML, kan det vara värt att titta på mer avancerade verktyg, som t ex. HtmlAgilityPack.
+När du parse HTML, tänk på att webbsidors struktur kan ändras. Din kod kan behöva uppdateras om målwebbplatsen gör ändringar i sin HTML.
 
-Powershell utför analysen genom COM-objektet MSHTML, vilket innebär att analyserna i grunden är beroende av Internet Explorer's rendering och kan därför ge olika resultat beroende på vilken version av IE som är installerad på maskinen.
-
-## Länkar till vidare läsning:
-
-1. Powershell dokumentation på [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-3. Officiella [HTML5-specifikationen](https://www.w3.org/TR/html5/) är oumbärliga om du vill djupdyka in i HTML-analys.
+## Se även:
+- [HtmlAgilityPack på GitHub](https://github.com/zzzprojects/html-agility-pack)
+- [PowerShell Documentation - Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [AngleSharp GitHub](https://github.com/AngleSharp/AngleSharp)
+- [cheerio GitHub](https://github.com/cheeriojs/cheerio)

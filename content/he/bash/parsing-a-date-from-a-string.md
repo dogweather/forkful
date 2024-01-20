@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:34:56.799166-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,32 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+מיפוי תאריך ממחרוזת פירושו להמיר את הנתונים הטקסטואליים בתאריך למבנה שהמחשב יוכל להבין ולעבוד איתו. מתכנתים עושים זאת כדי לקרוא ולנתח את התאריכים ממקורות שונים, כמו קבצי עדכון וקלט משתמש.
 
-שדרוג תאריך ממחרוזת מדובר על פעולה בה אנו מבצעים את המחרוזת, לרוב משתמש, ומפענחים את ערכי היום, החודש והשנה. תיכופי במיוחד, אנו נזקקים עבור זה עריריה אפשרויות הזנה של המשתמשים ואת טיפול הנתונים.
-
-## איך:
-
-באם גרסת ה-Bash שלך היא 4.2 או חדשה, אתה יכול להשתמש ב- `printf` בשילוב עם פונקצית התאריך. 
+## איך לעשות:
+דוגמה בשורת הפקודה למיפוי תאריך מתוך מחרוזת, בהנחה שיש לך תאריך בפורמט `dd-mm-yyyy`:
 
 ```Bash
-date_unformatted='2022-5-1'
-formatted_date=$(date -d"$date_unformatted" +'%d/%m/%Y')
-printf "%s\n" "$formatted_date"
+date_string="25-03-2023"
+IFS='-' read -r day month year <<< "$date_string"
+echo "Day: $day, Month: $month, Year: $year"
 ```
 
-הפלט המיוצר יהיה:
+פלט דוגמה:
 
-```Bash
-01/05/2022
+```
+Day: 25, Month: 03, Year: 2023
 ```
 
-## צלילה עמוקה:
+אם יש לך תאריך בפורמט אחר, תצטרך לשנות את התווים שמפרידים במשתנה `IFS`.
 
-השדרוג של נתונים הוא מישור מרכזי בראות יישומי המחשב שלנו. מאז שמחשבים התחילו לנהל תאריכים ושעות, בעיות תאריך רבות נפתרו. ישנן גם חלופות כמו `dateutils` אשר הן ספריות המתממשקות לטיפול משובח בתאריכים. עם `date` ב-Bash, עלינו לנקוט לב שהפורמט הנתמך הוא 'YYYY-MM-DD'. כשאנחנו מפענחים תאריך, אנו מניחים כי המחרוזת המיובאת עומדת באותו פורמט. 
+## עיון נוסף:
+בעבר, למיפוי תאריכים היינו משתמשים בפקודות משוכללות כמו `date` ו`awk`. כיום, ניתן לעשות זאת גם עם פקודות פשוטות יותר בבאש. חשוב לזכור שבאש היא לא שפה אידיאלית לניתוחת תאריכים מורכבים; למקרים כאלה עדיף לשקול את שימוש בשפות תיכנות כמו Python או Perl. במידה ואתם עובדים עם GNU date, יש לכם גם את האפשרות להמיר פורמטים יותר מורכבים ישירות.
 
-## ראו גם:
-
-חפש אחר מאמרים נוספים בנושאים קרובים:
-- [Linux date command (nixCraft)](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [How to Parse a Date From a String (StackOverflow)](https://stackoverflow.com/questions/10286204/the-right-json-date-format)
-- [The GNU `date` manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+## ראה גם:
+- `man bash` – למידע על שפת הסקריפטים של באש.
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) – מדריך לתחביר מתקדם של באש.

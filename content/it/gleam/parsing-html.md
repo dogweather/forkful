@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:31:48.404884-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,50 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Il parsing HTML implica leggere e interpretare il codice HTML per estrarne dati o struttura. I programmatori lo fanno per automatizzare l'interazione con il web, estrarre informazioni o testare l'integrità dei siti.
 
-Il parsing di HTML significa interpretare documenti HTML per estrarre dati significativi. I programmatori lo fanno per manipolare, estratto, e analizzare i dati web in modo efficiente.
+## How to:
+Gleam non ha una libreria standard per il parsing HTML al momento, quindi dobbiamo usare un'estensione. Supponiamo che `gleam_html_parser` sia la nostra scelta ipotetica. Mettiamo mani al codice:
 
-## Come fare:
-In Gleam, possiamo utilizzare le librerie di terze parti come 'Floki' per il parsing dell'HTML. Ecco un esempio di base:
+```gleam
+import gleam_html_parser
 
-```Gleam
-import floki.Parser
+pub fn main() {
+  let html = "<p>Hello, Gleam!</p>"
+  let parsed_data = gleam_html_parser.parse(html)
 
-let parsedHtml = Parser.from_string("<html><body><h1>Ciao, mondo!</h1></body></html>")
+  case parsed_data {
+    Ok(nodes) -> 
+      nodes
+        |> List.map(fn(node) { 
+          node.text() 
+        })
+        |> io.println
+    Error(_) -> 
+      io.println("Failed to parse HTML")
+  }
+}
 ```
-L'output mostra l'HTML convertito in una struttura ad albero:
 
-```Gleam
-{:ok,
- [
-  {:tag,
-   "html",
-   [],
-   [
-    {:tag,
-     "body",
-     [],
-     [
-      {:tag, "h1", [], [text: "Ciao, mondo!"]}
-     ]}
-   ]}
- ]}
+Output:
 ```
-Questo ti permette di trattare l'HTML come una struttura di dati manipolabile.
+["Hello, Gleam!"]
+```
 
-## Approfondimenti
+## Deep Dive:
+Parsing HTML risale al tempo quando il web era ancora giovane. Moduli come Python's `BeautifulSoup` hanno reso più semplice scavare nei segreti del HTML. In alternativa, ci sono parser basati su espressioni regolari, ma attenzione: queste sono fragili e possono fallire con HTML non ben formato.
 
-Nel contesto storico, il parsing dell'HTML è esistito fin dall'inizio del web per facilitare il trattamento e l'analisi dei dati. Ci sono molte alternative come 'Beautiful Soup' in Python o 'Cheerio' in JavaScript, ed è importante scegliere la libreria più adatta alle tue necessità.
+Gleam è un linguaggio giovane con un ecosistema in crescita, quindi opzioni come `gleam_html_parser` (ipotetica) potrebbero essere limitate o in via di sviluppo. Il parsing HTML in Gleam avrebbe una forte enfasi sulla sicurezza del tipo, sfruttando le sue funzionalità di pattern matching per un parsing robusto e affidabile.
 
-L'implementazione del parsing HTML può variare, ma tutte condividono un obiettivo comune: suddividere il testo in elementi logici come tag, attributi e contenuto di testo.
+In altre lingue si usano spesso libreria come `lxml` o `Jsoup`, ma in Gleam fare parsing significa anche lavorare con la concorrenza e pattern matching che il linguaggio offre, per un approccio funzionale e più espressivo.
 
-## Guarda anche
-
-Per ulteriori informazioni, consulta questi link:
-
-1. Documentazione di Gleam: https://gleam.run/docs/
-
-2. Documentazione Floki: https://github.com/philss/floki
-
-3. Wikipedia su HTML Parsing: https://en.wikipedia.org/wiki/HTML_parsing
+## See Also:
+- [Gleam's official website](https://gleam.run)
+- [Gleam Standard Library Documentation](https://hexdocs.pm/gleam_stdlib/)
+- [HTML5 Parsing Algorithm Spec](https://html.spec.whatwg.org/multipage/parsing.html)

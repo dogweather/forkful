@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:37:03.742990-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,34 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän jäsentäminen merkkijonosta Kotlin-ohjelmointikielessä
+## What & Why? (Mitä & Miksi?)
+Päivämäärän jäsentäminen merkkijonosta muuttaa tekstimuodossa olevan päivämäärän ohjelmointikielessämme käsiteltäväksi tiedoksi. Tämä on tarpeen, sillä ohjelmat joutuvat käsittelemään päivämääriä monenlaisissa ympäristöissä, kuten käyttöliittymissä, tietokannoissa ja API-kutsuissa.
 
-## Mitä ja Miksi?
-Merkkijonosta päivämäärän jäsentäminen tarkoittaa tekstissä olevan päivämäärän siirtämistä ymmärrettäväksi päivämäärä-objektiksi. Käytämme tätä tekniikka yleisesti tiedostojen luennassa, käyttäjän syötetietojen analysoinnissa, ja päivämäärätiedon manipuloinnissa.
+## How to: (Kuinka tehdään:)
+Kotlinissa päivämäärän jäsentämiseen käytetään `java.time`-kirjastoa. Tässä on esimerkki:
 
-## Kuinka toimin:
-Jäsentäminen on yksinkertaista Kotlinissa:
 ```Kotlin
-    import java.time.LocalDate
-    import java.time.format.DateTimeFormatter
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
-    fun main() {
-        val formatter = DateTimeFormatter.ofPattern("d.MM.yyyy")
-        val dateString = "23.12.2021"
-        val date = LocalDate.parse(dateString, formatter)
-        println(date) // Tulostaa: 2021-12-23
-    }
+fun main() {
+    val dateAsString = "2023-04-01"
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val parsedDate = LocalDate.parse(dateAsString, formatter)
+
+    println("Päivämäärä: $parsedDate")
+}
 ```
-Tässä ohjelmassa muunnamme merkkijonon "23.12.2021" päivämääräksi ja tulostamme päivämäärän.
 
-## Syvä Sukellus:
-Varhaisissa ohjelmointikielissä päivämäärätiedot käsiteltiin usein merkkijonoina. Nykyaikaiset ohjelmointikielet, kuten Kotlin, tarjoavat helpompia ja tehokkaampia tapoja käsittellä päivämääriä. Alternatiiveista parhaita ovat Joda-Time ja ThreeTenABP-kirjastot.
+Tuloste:
+```
+Päivämäärä: 2023-04-01
+```
 
-`LocalDate.parse` perustuu java.time-paketin toiminnallisuuteen. Jos haluat mukautetun muodon, voit luoda `DateTimeFormatter` -objektin ja määrittää oman muodon stringinä. Muoto "d.MM.yyyy" tarkoittaa päivää (d), kuukautta (M) ja vuotta (y). 
+## Deep Dive (Syväsukellus)
+Jäsenneissä, kuten `SimpleDateFormat` Java-klassikossa, ajan jäsentäminen meni oikein, mutta se ei ollut turvallinen säikeille ja aiheutti päivämäärien virheellisiä esityksiä. Java 8:n myötä esiteltiin `java.time`, joka on säieturvallinen ja paremmin suunniteltu. Kotlin hyödyntää näitä luokkia päivämääräkäsittelyssä.
 
-## Katso myös:
-[Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/dates-and-times.html)
-[Joda-Time](https://www.joda.org/joda-time/)
-[ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP)
+Vaihtoehtona on käyttää kirjastoja, kuten Joda-Time, mutta `java.time` on nykyään suositeltava tapa. Kun tietomuotoja jäsentää, on tärkeä ymmärtää kohdekulttuurin päivämääräformaatit.
 
-Huomioithan, että valinta riippuu paljon tarpeista ja tilanteestasi. Jotkut kirjastot voivat paremmin tukea erityistarpeitasi kuin toiset.
+Javan `DateTimeFormatter` käsittelee jäsentämisen ja muotoilun, ja se tukee laajalti erilaisia muotoja. Määritä ensin muoto `ofPattern`-metodilla ja välitä se sitten `parse`-funktiolle merkkijonon kera.
+
+## See Also (Katso myös)
+- `java.time`-paketin [dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Kotlin-dokumentaatio](https://kotlinlang.org/docs/reference/)
+- Aika- ja päivämääräkäsittelyyn liittyvät artikkelit Stack Overflow'ssa: [Aika- ja päivämääräkäsittely](https://stackoverflow.com/questions/tagged/date+time+kotlin)

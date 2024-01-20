@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:30:58.368924-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Elm"
@@ -10,31 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Beim Parsen von HTML wird eine HTML-Datei in ein Format umgewandelt, das von Programmiersprachen verarbeitet werden kann. Programmierer tun dies, um Informationen aus der Struktur und den Inhalten von Webseiten zu extrahieren.
+## Was & Warum?
 
-## So funktionierts:
-Hier ein typischer Elm-Code zum Parsen von HTML:
+HTML-Parser verwandeln HTML-Code in eine Struktur, die Programmiersprachen verstehen. Wir nutzen sie, um die Inhalte und das Design von Webseiten auszulesen oder zu manipulieren.
+
+## How to:
+
+Elm bietet mit `Html.Parser` ein Modul fürs Parsen von HTML. Hier ein einfaches Beispiel:
 
 ```Elm
-import Html exposing (Html, div, text)
-import Html.Parser exposing (node, text, decode, run)
+import Html.Parser exposing (..)
+import Html.Parser.Attributes exposing (..)
 
-parseNode : String -> Html msg
-parseNode htmlStr = 
-  case run decode htmlStr of
-    Ok html -> html
-    Err _   -> div [] [ text "Parsing error." ]
+parseHtml : String -> List (Html msg)
+parseHtml htmlString =
+    parse htmlString
+        |> Result.withDefault []
 
-decode : Parser (Html msg)
-decode = 
-  node "div" [] [ text ]
+main =
+    let
+        htmlString = "<p class='text'>Hallo Welt!</p>"
+        parsedHtml = parseHtml htmlString
+    in
+    -- Hier könntest du was mit parsedHtml machen
 ```
 
-Wenn Sie diese Codezeile ausführen `parseNode "<div>Hello World</div>"`, wird die Ausgabe `Hello World` sein.
+Jetzt hast du eine Elm-Struktur von deinem HTML-String.
 
 ## Deep Dive
-Historisch gesehen wurde HTML-Parsing ursprünglich für Web-Crawling und Datenextraktion eingesetzt. Alternativ könnten Sie auch reguläre Ausdrücke verwenden, aber das ist meistens schwieriger und fehleranfällig. In Elm erledigen die Pakete `Html.Parser` und `Html.Parser.run` die meiste Arbeit hinter den Kulissen.
 
-## Siehe auch
-- Weitere Informationen zur [Html.Parser.run Funktion](https://package.elm-lang.org/packages/elm-lang/html/2.0.0/Html-Parser#run)
+Elm hat sich bewusst für eine stark typisierte HTML-Parser-Bibliothek entschieden. Das unterscheidet sich von Sprachen wie JavaScript, wo Bibliotheken wie `cheerio` oder die browserintegrierte `DOMParser` API genutzt werden können. Die Typisierung in Elm sorgt für Sicherheit und Zuverlässigkeit, kann aber zu Beginn gewöhnungsbedürftig sein. Die Implementierung basiert auf Funktionen, die HTML als String nehmen und `Result`-Typen zurückgeben, um Fehler zu handhaben.
+
+## See Also
+
+- Elm Html.Parser Dokumentation: [https://package.elm-lang.org/packages/elm/html/latest/Html-Parser](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
+- Elm Guide zum Umgang mit HTML: [https://guide.elm-lang.org/interop/](https://guide.elm-lang.org/interop/)

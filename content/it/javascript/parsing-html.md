@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:32:28.731584-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Analisi del codice HTML con Javascript - Un viaggio passo dopo passo
+## What & Why?
+Parsing HTML significa estrarre dati da una struttura HTML. Lo facciamo per manipolare il DOM, ottenere informazioni da pagine web o per scrapare dati da siti esterni.
 
-## Cos'è e perché?
-L'analisi del codice HTML, o "parsing", è il processo mediante il quale si estraggono dati significativi da un documento HTML. Questo è fondamentale per gli sviluppatori perché consente di manipolare, modificare e utilizzare tali dati in modi utili e produttivi.
-
-## Come fare:
-Vediamo come utilizzare la funzione `DOMParser` integrata in JavaScript per analizzare una stringa HTML.
+## How to:
+Esempio con `DOMParser`:
 
 ```Javascript
 let parser = new DOMParser();
-let doc = parser.parseFromString('<p class="myClass">Ciao, mondo!</p>', 'text/html');
-console.log(doc.body.firstChild.className); // Outputs: myClass
+let doc = parser.parseFromString('<p>Ciao mondo!</p>', 'text/html');
+console.log(doc.body.textContent); // Output: Ciao mondo!
 ```
 
-Nel codice di cui sopra, abbiamo analizzato una stringa HTML e ottenuto l'oggetto "firstChild" del corpo del documento analizzato. Dopodiché, abbiamo registrato la classe di quell'elemento.
+Esempio con `innerHTML`:
 
-## Approfondimenti
-L'analisi del codice HTML ha radici antiche, risalenti ai primi giorni del web quando i documenti HTML erano statici e semplici. Con l'avvento di applicazioni web dinamiche e di JavaScript, l'analisi del codice HTML è diventata molto più rilevante.
+```Javascript
+let container = document.createElement('div');
+container.innerHTML = '<p>Ciao mondo!</p>';
+console.log(container.firstChild.textContent); // Output: Ciao mondo!
+```
 
-Ci sono diverse alternative a DOMParser, tra cui JSDOM per Node.js, e Cheerio, che implementa un subset del core di jQuery specificatamente per l'uso del server. Entrambe queste librerie possono essere più adatte se avete bisogno di eseguire l'analisi del codice HTML su un server piuttosto che in un browser.
+## Deep Dive
+Il parsing di HTML ha una storia abbastanza ricca. Nasce dalla necessità di leggere documenti HTML in modi non previsti dai semplici browser web. Alcuni tool storici includono `BeautifulSoup` per Python e `Nokogiri` per Ruby. In JavaScript, abbiamo visto soluzioni come `jQuery`, che offre metodi per manipolare il DOM facilmente.
 
-Quando si utilizza DOMParser, è importante ricordare che questo costruisce un nuovo Documento ogni volta che viene invocato il metodo `parseFromString`. Di conseguenza, non è particolarmente adatto per l'analisi di grandi quantità di HTML a meno che non sia necessaria la creazione di un Documento separato per ogni pezzo di HTML.
+Il parsing HTML in JavaScript è diventato più semplice con l'introduzione di `DOMParser` e l'API Fetch. `DOMParser` permette di analizzare stringhe HTML e costruire un `Document` che rappresenta il DOM, mentre Fetch può aiutarci a ottenere HTML da fonti remote.
 
-## Vedi anche
-Per approfondimenti maggiori sull'argomento, controlla queste risorse:
+Gli sviluppatori dovrebbero essere attenti con la sicurezza quando si effettua il parsing di HTML, specialmente con dati non affidabili che potrebbero portare a attacchi XSS. Assicurati sempre di sanificare l'HTML prima di usarlo.
 
-- [MDN Web Docs: DOMParser](https://developer.mozilla.org/it/docs/Web/API/DOMParser)
-- [HTML Parser su npm](https://www.npmjs.com/package/html-parser)
-- [Github: Progetti di parsing di HTML](https://github.com/topics/html-parsing?l=javascript)
-
-E con questo, avete acquisito una buona conoscenza sull'analisi del codice HTML con JavaScript. Continuate a codificare e a imparare!
+## See Also
+- MDN Web Docs su DOMParser: https://developer.mozilla.org/it/docs/Web/API/DOMParser
+- OWASP per pratiche sicure di parsing HTML: https://owasp.org/www-community/attacks/xss/
+- Esempi pratici con Fetch API: https://developer.mozilla.org/it/docs/Web/API/Fetch_API/Using_Fetch

@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:32:30.888958-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,38 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Parsear HTML es el proceso de analizar un documento HTML y convertirlo en un objeto entendible para el programa. Los programadores lo hacen para interactuar y manipular el HTML, permitiéndoles por ejemplo, extraer datos y realizar automatizaciones web.
+## ¿Qué y Por Qué?
+Parsear HTML es el proceso de convertir el código HTML en algo que tu programa pueda entender y manipular. Los programadores lo hacen para interactuar con páginas web, extrayendo información o modificándola dinámicamente.
 
-## ¿Cómo se hace?
-Aquí te presento un ejemplo utilizando la biblioteca Jsoup en Java para parsear un HTML. Mira cómo convertimos un documento HTML en un objeto `Document` y luego extraemos datos.
+## Cómo hacerlo:
+Vamos a utilizar la librería [jsoup](https://jsoup.org/). Primero, agregala a tu proyecto usando Maven:
 
-```Java
+```xml
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.2</version>
+</dependency>
+```
+
+Ahora, un ejemplo simple para obtener el título de una página web:
+
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
-public class Main {
-    public static void main(String[] args) {
-        String html = "<html><head><title>Mi primera página web</title></head>"
-            + "<body><p>¡Hola, mundo!</p></body></html>";
-
-        Document doc = Jsoup.parse(html);
-        Element body = doc.body();
-        String texto = body.text();
-
-        System.out.println(texto);  // Imprime: ¡Hola, mundo!
+public class HtmlParserDemo {
+    public static void main(String[] args) throws Exception {
+        String url = "https://example.com";
+        Document doc = Jsoup.connect(url).get();
+        String title = doc.title();
+        
+        System.out.println("El título de la página es: " + title);
     }
 }
 ```
 
-## Buceo Profundo
-1. Contexto histórico: Parsear HTML no es algo nuevo. Ya en los años 90, con el auge de la web, los programadores empezaron a analizar HTML para interactuar con las páginas web.
-2. Alternativas: Jsoup es solo una biblioteca de Java para parsear HTML. Otras opciones populares incluyen HtmlCleaner y Jericho.
-3. Detalles de implementación: Parsear HTML puede resultar en una estructura tipo árbol conocida como DOM (Modelo de Objetos del Documento). Este modelo permite a los programas manipular el contenido, la estructura y el estilo de los documentos web.
+Si corres esto, tendrás como resultado:
+
+```
+El título de la página es: Example Domain
+```
+
+## Profundizando
+Parsear HTML no es nuevo; es fundamental para los motores de búsqueda y herramientas de análisis web desde los inicios de la web. Antes de jsoup, librerías como JTidy y HTMLParser eran populares, pero jsoup es conocido por su simplicidad y su capacidad para manejar HTML "sucio". El parseo implica típicamente convertir la estructura del DOM (Modelo de Objeto de Documento) de HTML a objetos en Java que puedes manipular con métodos.
+
+La complejidad de parsear viene del hecho del HTML no siempre sigue las reglas estrictas de XML, donde cada elemento se cierra adecuadamente. HTML es, por naturaleza, más flexible, y los navegadores modernos son muy tolerantes con el código imperfecto. Jsoup emula esa tolerancia, creando un árbol DOM a partir de HTML realista, no idealizado.
+
+Alternativas a jsoup incluyen HtmlUnit y tagsoup, pero jsoup lidera en facilidad de uso. En general, cuando parsees HTML deberías siempre ser consciente del hecho que las estructuras de páginas web pueden cambiar; cualquier solución debe ser mantenida para adaptarse a esos cambios.
 
 ## Ver También
-- [Documentación oficial de Jsoup](https://jsoup.org/)
-- [Tutorial de HTML parsing con HtmlCleaner](http://htmlcleaner.sourceforge.net/)
-- [Guía del W3C sobre el modelo DOM](https://www.w3.org/TR/DOM-Level-2-Core/introduction.html)
-Por fa, visita estos enlaces para aprender más sobre el análisis de HTML.
+- [Documentación Oficial de jsoup](https://jsoup.org/cookbook/)

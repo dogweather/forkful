@@ -50,5 +50,4 @@ JUnit התחיל כפרויקט ב-1997. הוא הופך לסטנדרט לכתי
 
 ## See Also (ראה גם)
 - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Maven – Surefire Plugin (for running tests)](http://maven.apache.org/surefire/maven-surefire-plugin/)
 - [Introduction to CI/CD with GitLab](https://docs.gitlab.com/ee/ci/introduction/)

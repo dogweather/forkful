@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:33:48.524713-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Rust"
@@ -10,53 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust und HTML Parsing: Ein praktischer Ansatz
-
-## Was und Warum?
-
-HTML-Parsing bezeichnet die Zerlegung von HTML in seine Bestandteile, um sie für Programmierungszwecke nutzbar zu machen. Programmierer machen dies, um Inhalte aus Webseiten zu extrahieren oder um Webseiten zu testen und zu debuggen.
+## Was & Warum?
+HTML-Parser verwandeln HTML-Code in eine Struktur, die von Programmen verarbeitet werden kann. Das ist nötig, wenn man Daten aus Webseiten extrahieren oder die Struktur von Webseiten programmatisch verstehen möchte.
 
 ## So geht's:
-
-Wir werden mit dem "scraper" Paket arbeiten. Beginnen wir mit der Einbindung des Pakets in unsere cargo.toml Datei.
-
 ```Rust
-[dependencies]
-scraper = "0.12.0"
-```
-
-Jetzt erstellen wir einen einfachen Parser:
-
-```Rust
+extern crate reqwest;
 extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    let html = r#"<p class='red'>Hallo, Welt!</p>"#;
-    let document = Html::parse_document(&html);
-    let selector = Selector::parse(".red").unwrap();
-
+    // HTML von einer Webseite holen
+    let res = reqwest::blocking::get("https://www.rust-lang.org").unwrap();
+    assert!(res.status().is_success());
+    let body = res.text().unwrap();
+    
+    // HTML-Struktur parsen
+    let document = Html::parse_document(&body);
+    
+    // Ein Selector, um z.B. nach h1-Tags zu suchen
+    let selector = Selector::parse("h1").unwrap();
+    
+    // Durch die h1-Tags iterieren und den Textinhalt ausgeben
     for element in document.select(&selector) {
-        let text = element.text().collect::<Vec<_>>();
-        println!("{}", text[0]);
+        println!("Gefundener Text: {}", element.text().collect::<Vec<_>>().join(""));
     }
 }
 ```
+Ausgabe könnte sein:
+```
+Gefundener Text: Empowering everyone to build reliable and efficient software.
+```
 
-Wenn Sie das ausführen, erhalten Sie den Ausdruck "Hallo, Welt!".
-
-## Vertiefung
-
-Historisch gesehen ist HTML-Parsing direkt mit dem Aufkommen des Webs und der Notwendigkeit verbunden, Websiten zugänglich und nutzbar zu machen. Es gibt viele Alternativen zum HTML-Parsing in Rust, wie z.B. html5ever und kuchiki, die allerdings unterschiedliche Funktionalitäten und Spezifitäten bieten.
-
-Die Implementierung von HTML-Parsing variiert stark je nach Sprache und den spezifischen Anforderungen des Projekts. In Rust konzentrieren wir uns häufig auf Effizienz und Genauigkeit, einschließlich der Fähigkeit, Fehler zu erkennen und darauf zu reagieren.
+## Tiefergehende Einblicke
+Das Parsen von HTML ist kein neuer Trick. Seit dem Aufkommen von HTML haben Entwickler Bibliotheken und Tools entwickelt, um diese Aufgabe zu bewältigen. Historisch gesehen haben Programmiersprachen wie Perl und PHP hier Vorreiterarbeit geleistet. In Rust gibt es mehrere Bibliotheken, zum Beispiel `scraper` oder `html5ever`, die auf unterschiedliche Bedürfnisse zugeschnitten sind. `scraper` nutzt Selektoren ähnlich wie in JavaScript, um durch das HTML-Dokument zu navigieren, während `html5ever` einen Parser bietet, der den HTML5-Standard genau implementiert. Alternativen, wie Regex zum Parsen von HTML, werden oft nicht empfohlen, da HTML zu komplex für einfache Regex-Muster ist.
 
 ## Siehe auch
-
-Weitere Informationen, Beispiele und Ressourcen zum HTML-Parsing in Rust finden Sie unter folgenden Links:
-
-- Rust-Dokumentation: https://doc.rust-lang.org/book/
-- Scraper Crate Dokumentation: https://docs.rs/scraper/0.12.0/scraper/
-- Rust Cookbook Eintrag zum HTML-Parsing: https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html
-- html5ever Repo: https://github.com/servo/html5ever
-- Kuchiki Repo: https://github.com/kuchiki-rs/kuchiki
+- Rust `scraper` Dokumentation: https://docs.rs/scraper/latest/scraper/
+- `html5ever` GitHub Repository: https://github.com/servo/html5ever
+- Zum weiterlesen: "Why regex is usually not the best choice for HTML parsing": https://stackoverflow.com/a/1732454

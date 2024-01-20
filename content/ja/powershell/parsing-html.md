@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:33:28.465931-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "PowerShell"
@@ -10,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-HTMLの解析はウェブページからデータを抽出するためのプロセスです。これは自動化されたウェブスクレイピングやデータマイニングに必要なものです。
+## What & Why? (何となぜ？)
+HTMLパースとは、HTMLコードを解析してデータを抽出することです。プログラマはウェブスクレイピング、データマイニング、またはコンテンツ管理システムでのデータ変換のためにこれを行います。
 
-## 使い方：
-以下はHTMLを解析するPowerShellのコード例と出力結果です。
+## How to: (方法)
+PowerShellを使用してHTMLをパースする基本的なサンプルです。
 
 ```PowerShell
-# Invoke-WebRequestでHTMLを取得
-$page = Invoke-WebRequest -Uri "http://example.com"
+# Invoke-WebRequestを使ってHTMLを取得
+$response = Invoke-WebRequest -Uri 'http://example.com'
 
-# HTMLの構造を解析
-$ParsedHtml = New-Object -ComObject "HTMLFile"
-$ParsedHtml.IHTMLDocument2_write($page.Content)
+# HtmlAgilityPackを用いてHTMLをロード
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+$htmlDoc = New-Object HtmlAgilityPack.HtmlDocument
+$htmlDoc.LoadHtml($response.Content)
 
-# 解析結果から特定の要素(たとえば、h2タグ)を取得
-$headings = $ParsedHtml.getElementsByTagName("h2") 
-foreach ($heading in $headings) {
-    $heading.innerText
+# XPathを用いて特定の要素を見つける
+$nodes = $htmlDoc.DocumentNode.SelectNodes('//h1')
+
+# 要素の内容を出力
+foreach ($node in $nodes) {
+  Write-Output $node.InnerText
 }
 ```
-上記のコードはウェブページから全てのh2タグを抽出し、そのテキストをコンソールに表示します。
 
-## 深掘り:
-**歴史的背景**: PowerShellはMicrosoftが開発したコマンドラインシェルです。初めてHTML解析機能が実装されたのはVer2.0以降で、ウェブページから情報を取得して操作するために使われています。
+実行結果はウェブページにあるすべてのh1タグのテキストを出力します。
 
-**代替策**: PowerShell以外にも、PythonのBeautifulSoupやJavaScriptのjQueryなど、HTMLの解析に力を入れている他のプログラミング言語も多数存在します。
+## Deep Dive (深掘り)
+HTMLをパースするには、かつては正規表現が使われましたが、今では専用のライブラリやツールが一般的です。HtmlAgilityPackは.NETでよく使われるHTMLパースライブラリの一つです。XMLパースと同様にXPathやCSSセレクターを使うことで、特定のHTML要素に簡単にアクセスできます。内部では、HTMLをDOMツリーに変換して操作を行います。
 
-**実装の詳細**: PowerShellでは、`Invoke-WebRequest`コマンドを用いてHTMLを取得します。その後、COMオブジェクトの`HTMLFile`を生成し、`IHTMLDocument2_write`メソッドに取得したHTMLコンテンツを渡すことで解析を行います。
+代替として、AngleSharpなどのモダンなライブラリがあります。実装の詳細に関しては、HTMLの解析にはHTML5の仕様に準拠しているパーサーが望ましいですが、ウェブ上のHTMLが常に標準に沿っているわけではないため、柔軟性も重要です。
 
-## 参照情報:
-1. [PowerShellの公式ドキュメンテーション](https://docs.microsoft.com/ja-jp/powershell/)
-2. [HTML解析に関する詳細](https://devhints.io/xpath)
-3. [PowerShellでのウェブスクレイピングガイド](https://blog.jourdant.me/post/3-ways-to-download-files-with-powershell)
+## See Also (関連リンク)
+- [HtmlAgilityPack GitHub Repository](https://github.com/zzzprojects/html-agility-pack)
+- [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [XPath Syntax](https://www.w3schools.com/xml/xpath_syntax.asp)
+- [AngleSharp GitHub Repository](https://github.com/AngleSharp/AngleSharp)

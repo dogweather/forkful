@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:30:54.402634-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,40 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTML पार्सिंग, वेब पेज के विश्लेषण की प्रक्रिया है जिसमें टैग्स, एट्रिब्यूट्स और डेटा को निकाला जाता है। प्रोग्रामर्स इसे वेब स्क्रेपिंग, सोशल मीडिया साइट्स की मॉनिटरिंग, और स्वचालित टेस्टिंग आदि के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
+HTML पार्सिंग यानी हाइपरटेक्स्ट मार्कअप लैंग्वेज डेटा को प्रोसेस करके स्ट्रक्चर्ड डेटा में बदलना। प्रोग्रामर्स ऐसा वेबसाइट्स से डेटा निकालने, और उसे विश्लेषण या दूसरे प्रोजेक्ट्स में इस्तेमाल करने के लिए करते हैं।
 
-## कैसे पार्सिंग करें:
-Clojure में Enlive लाइब्ररी का उपयोग करके HTML पर्सिंग कर सकते हैं। इसके लिए पहले के लाइब्ररी को कॉन्फ़िगर करें:
+## How to: (कैसे करें?)
+Clojure में HTML पार्सिंग के लिए `enlive` लाइब्रेरी एक लोकप्रिय विकल्प है। नीचे देखिए `enlive` का उपयोग करके कैसे HTML को पार्स किया जाता है:
 
 ```Clojure
 (require '[net.cgrand.enlive-html :as html])
+
+(defn parse-html
+  [html-content]
+  (html/html-resource (java.io.ByteArrayInputStream. (.getBytes html-content))))
+
+(let [parsed-html (parse-html "<html><body><h1>Hello, World!</h1></body></html>")]
+  (html/select parsed-html [:h1]))
 ```
 
-अब, आप HTML फ़ाइल को लोड कर सकते हैं:
+उदाहरण का आउटपुट ऐसा होगा:
 
 ```Clojure
-(defn load-html [filename]
-  (html/html-resource (java.io.File. filename)))
+({:tag :h1, :attrs nil, :content ["Hello, World!"]})
 ```
 
-और इसे पार्स कर सकते हैं:
+## Deep Dive (गहराई से जानकारी)
+HTML पार्सिंग का इतिहास वेब स्क्रैपिंग के उदय के साथ शुरू होता है, जो 1990 के दशक में लोकप्रिय हुआ। `enlive` के अलावा, Clojure में `jsoup` और `hickory` जैसे लाइब्रेरियां भी हैं, जो HTML पार्सिंग का काम करती हैं। पर इनके इंप्लीमेंटेशन अलग-अलग होते हैं। `enlive` एक डेक्लैरेटिव ऐप्रोच लेता है, `jsoup` जावा पर आधारित है, और `hickory` डीएसएल (डोमेन स्पेसिफिक लैंग्वेज) का उपयोग करता है। चुनाव आपके प्रोजेक्ट की जरूरतों पर निर्भर करता है।
 
-```Clojure
-(defn parse-html [html-file]
-  (-> (load-html html-file)
-      (html/select [:body])
-      first
-      :content
-      str))
-```
-
-उदाहरण कार्यान्वयन पर चलाने पर, आपको HTML के कंटेंट का आउटपुट मिलेगा।
-
-## गहरी पड़ताल:
-HTML पार्सिंग की आवश्यकता सामान्यतः तब होती है जब आपको वेब पेज से डेटा निकालना हो। Clojure में Enlive नामक लाइब्ररी का उपयोग करके इसे आसानी से किया जा सकता है। हालांकि, इतना ही नहीं, ऐसे भी कई प्रघ्यापन हैं जिनमें आप JSoup, Hiccup जैसी अन्य लाइब्ररीज का उपयोग कर सकते हैं।
-
-## अधिक देखें:
-HTML पार्सिंग के बारे में और अधिक जानकारी के लिए, यह लिंक्स देखें:
-2. [Enlive डॉक्स](https://github.com/cgrand/enlive)
-3. [HTML पार्सिंग का प्रलेखन](https://developer.mozilla.org/en-US/docs/Web/HTML)
+## See Also (देखें भी)
+- [Jsoup - a Java HTML parser](https://jsoup.org/)
+- [Hickory - Clojure HTML Parser](https://github.com/davidsantiago/hickory)

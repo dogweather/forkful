@@ -1,7 +1,8 @@
 ---
-title:                "Análisis sintáctico de html"
-html_title:           "Ruby: Análisis sintáctico de html"
-simple_title:         "Análisis sintáctico de html"
+title:                "Análisis de HTML"
+date:                  2024-01-20T15:30:12.471770-07:00
+html_title:           "Arduino: Análisis de HTML"
+simple_title:         "Análisis de HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,53 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué & Por Qué?
+El análisis de HTML implica examinar y procesar el código HTML para obtener su estructura y contenidos. Los programadores lo hacen para extraer datos, modificar páginas de manera programática o hacer scraping web para recopilar información.
 
-La interpretación (parsing) del HTML es el proceso de analizar el código HTML para su manipulación y extracción de datos. Los programadores lo hacen para recolectar información o renderizar páginas web en un navegador.
-
-## ¿Cómo hacerlo?
-
-Ejemplo sencillo de cómo leer y parsear un archivo HTML usando la biblioteca Gumbo en C:
+## Cómo Hacerlo:
+Para analizar HTML en C, uno podría usar librerías como `libxml2`. Aquí hay un ejemplo básico de cómo usarla para extraer información:
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <gumbo.h>
-
-void busqueda_textos(GumboNode* node) {
-    if (node->type == GUMBO_NODE_TEXT) {
-        printf("%s\n", node->v.text.text);
-    } else if (node->type == GUMBO_NODE_ELEMENT &&
-            node->v.element.tag != GUMBO_TAG_SCRIPT &&
-            node->v.element.tag != GUMBO_TAG_STYLE) {
-        GumboVector* children = &node->v.element.children;
-        for (unsigned int i = 0; i < children->length; ++i) {
-            busqueda_textos(children->data[i]);
-        }
-    }
-}
+#include <libxml/HTMLparser.h>
 
 int main() {
-    GumboOutput* output = gumbo_parse("<h1>¡Hola Mundo!</h1>");
-    busqueda_textos(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    // Imagina que esta es tu cadena HTML
+    const char *html = "<html><body><p>Hola, mundo!</p></body></html>";
+
+    // Parsear la cadena HTML a un documento DOM
+    htmlDocPtr doc = htmlReadDoc((xmlChar *)html, NULL, NULL, 0);
+
+    // Obtener el nodo raíz
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+
+    // Tu lógica de procesamiento aquí, por ejemplo, imprimir 'Hola, mundo!'
+    if (root_element->type == XML_ELEMENT_NODE) {
+        xmlNode *p = root_element->children->next;
+        printf("%s\n", (char *)p->children->content);
+    }
+
+    // Limpiar y liberar recursos
+    xmlFreeDoc(doc);
+    return 0;
 }
 ```
 
-La salida de este programa será simplemente:
-
-```C
-¡Hola Mundo!
+Salida esperada:
 ```
-## Inmersión profunda
+Hola, mundo!
+```
 
-La interpretación de HTML data desde los inicios de la web cuando los navegadores tenían que interpretarlo para renderizarlo. Existen varias bibliotecas de interpretación de HTML para diferentes lenguajes. En el caso de C, aparte de Gumbo, algunos otros son htmlcxx, MyHTML y libxml2.
+## Inmersión Profunda:
+Análisis de HTML nace de la necesidad de entender y manipular el código HTML. Antes, en los primeros días de la web, el HTML era a menudo más simple y predecible. Ahora es más complejo, con JavaScript y CSS imbricado, lo que requiere herramientas más sofisticadas.
 
-La implementación de la interpretación del HTML implica la lectura y análisis del código, identificando etiquetas, atributos y texto. Después de este análisis, queda desglosado en un árbol de nodos (Dom Tree) facilitando su manipulación.
+Alternativas incluyen otras librerías como `Gumbo` o `htmlcxx` en C, o incluso lenguajes más orientados a la manipulación de texto como Python con `BeautifulSoup`.
 
-## Ver también
+La mayoría de las librerías de análisis de HTML en C manejan bien los documentos mal formados, un detalle importante ya que el HTML en la web no siempre sigue las normas.
 
-1. Gumbo: https://github.com/google/gumbo-parser
-2. MyHTML: https://github.com/lexborisov/myhtml
-3. libxml2: http://xmlsoft.org/examples/index.html
-4. htmlcxx: http://htmlcxx.sourceforge.net/
+Implementación detallada puede variar, pero un flujo común es: convertir la cadena HTML a un DOM (Document Object Model), navegar y manipular dicho DOM, y extraer la información necesaria.
+
+## Véase También:
+- Documentación de `libxml2`: http://xmlsoft.org/html/libxml-HTMLparser.html
+- Proyecto `Gumbo` de Google: https://github.com/google/gumbo-parser
+- `htmlcxx`: http://htmlcxx.sourceforge.net/
+- Tutorial de `BeautifulSoup`: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

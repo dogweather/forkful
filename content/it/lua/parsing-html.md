@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:32:42.901630-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,51 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos'è & Perché?
+## What & Why? (Cosa e Perché?)
+Il parsing di HTML significa estrarre dati da una pagina web. I programmatori lo fanno per automatizzare la raccolta di informazioni, come i prezzi dei prodotti o i titoli delle news.
 
-L'analisi del HTML (parsing) consiste nel decomporre il codice HTML in elementi più piccoli per manipolarli. I programmatori lo fanno per estrarre dati, modificare il contenuto del sito web, testare l'accessibilità e molto altro.
-
-## Come Fare:
-
-Ecco un esempio su come fare parsing di HTML in Lua utilizzando il modulo LuaHtml:
+## How to: (Come Fare)
+Lua non ha una libreria standard per il parsing di HTML, quindi dobbiamo usare una esterna come `lua-html` o `luascrape`. Qui un esempio con `lua-html`:
 
 ```Lua
-local LuaHtml = require 'LuaHtml'
+local html = require("html")
 
-local html = [[
-<html>
-  <head>
-    <title>Mio Titolo</title>
-  </head>
-  <body>
-    <p>Paragrafo del mio sito web.</p>
-  </body>
-</html>
-]]
+-- Caricare l'HTML da una stringa (si può anche usare html.parseFile per caricare da file)
+local doc = html.parse("<html><head><title>Prova</title></head><body><p>Ciao, mondo!</p></body></html>")
 
-local document = LuaHtml.parse(html)
+-- Trovare il titolo della pagina
+local title = doc:select("title")[1]
+print(title:getcontent())  -- Output: Prova
 
-print(document:select('title')[1]:get_content())
-print(document:select('p')[1]:get_content())
-```
-Questo script stampa:
-
-```Lua
-'Mio Titolo'
-'Paragrafo del mio sito web.'
+-- Trovare tutti i paragrafi
+for _, p in ipairs(doc:select("p")) do
+    print(p:getcontent())  -- Output: Ciao, mondo!
+end
 ```
 
-## Approfondimenti:
+## Deep Dive (Approfondimento)
+Il parsing di HTML in Lua non è built-in: devi affidarti a librerie di terze parti. Fino a poco tempo fa, la comunità Lua mancava di una solida libreria HTML, spingendo gli sviluppatori verso soluzioni come l'espressioni regolari, che possono essere inefficienti e inaffidabili per questo scopo. Le moderne librerie, come `lua-html`, hanno colmato questa lacuna. Un'alternativa è `luascrape`, che facilita il web scraping. Tenete presente che il parsing dipenderà dalla correttezza dell'HTML; HTML malformato potrebbe richiedere una pre-elaborazione.
 
-L'analisi del HTML è un concetto storico nel web scraping e nel web testing. Una volta si usava il parsing Regex, ma è diventato poco pratico a causa della sua complessità.
-
-Una alternativa al parsing del HTML in Lua è l'utilizzo di altri linguaggi di programmazione come Python con BeautifulSoup. Ogni strumento ha i suoi punti di forza e di debolezza.
-
-In termini di implementazione, la libreria LuaHtml crea un Document Object Model (DOM) dall'HTML, permettendo ai programmatori di manipolare gli elementi del DOM usando la sintassi CSS.
-
-## Vedi Anche:
-
-Per saperne di più sul parsing del HTML e le sue applicazioni, consulta:
-
-1. Tutti gli aspetti del web scraping: [link](https://realpython.com/tutorials/web-scraping/)
-3. Elementi fondamentali dell'HTML per programmatori: [link](https://developer.mozilla.org/it/docs/Web/HTML)
+## See Also (Vedi Anche)
+- Documentazione ufficiale Lua: [Lua Official Documentation](https://www.lua.org/manual/5.4/)

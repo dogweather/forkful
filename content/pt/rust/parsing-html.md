@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:33:57.910574-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,50 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Entendendo Parsing de HTML com Rust
+## O Que é e Por Quê?
+Analisar HTML significa dissecar o código de uma página web para entender sua estrutura e conteúdo. Programadores fazem isso para extrair dados, manipular o conteúdo ou migrar informações para outros formatos.
 
-## O Que & Por Quê?
+## Como Fazer:
+Vamos ver o básico com a crate `scraper`. Primeiro, adicione no `Cargo.toml`:
 
-Parsing de HTML é o processo de converter HTML bruto em uma estrutura de dados que podemos manipular em nossos programas. Fazemos isso para extrair informações, manipular a estrutura do HTML, ou até mesmo para realizar verificações de consistência.
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
 
-## Como fazer:
-
-Rust nos fornece várias bibliotecas para parsing de HTML. Vamos usar a biblioteca `scraper` para um exemplo simples.
+Depois, um exemplo de código em Rust:
 
 ```rust
-// Adiciona a dependência ao seu arquivo Cargo.toml
-[dependencies]
-scraper = "0.3.0"
-
-// Utilização básica: 
+extern crate scraper;
 
 use scraper::{Html, Selector};
 
 fn main() {
-    let html = Html::parse_document("<html><body><p>Hello world!<p></body></html>");
-    let selector = Selector::parse("body").unwrap();
+    let html_content = r#"
+        <html>
+            <body>
+                <h1>Olá, Rustaceans!</h1>
+                <p>Scraping é divertido com Rust.</p>
+            </body>
+        </html>
+    "#;
 
-    let body = html.select(&selector).next().unwrap();
-    assert_eq!(body.text().collect::<Vec<_>>(), vec!["Hello world!"]);
+    let document = Html::parse_document(html_content);
+    let selector = Selector::parse("h1").unwrap();
+    let h1 = document.select(&selector).next().unwrap().inner_html();
+
+    println!("Conteúdo encontrado: {}", h1);
 }
 ```
 
-Neste exemplo, estamos fazendo parse de um snippet HTML simples para selecionar o elemento `body` e extrair o texto correspondente.
+Resultado:
 
-## Mergulho Profundo
+```
+Conteúdo encontrado: Olá, Rustaceans!
+```
 
-O parsing de HTML existe desde o início da web, sendo inicialmente uma tarefa de scripts Perl ou JavaScript do lado do servidor. Com Rust, obtemos um desempenho muito melhor e segurança na memória.
+## Mergulho Profundo:
 
-Existem alternativas ao 'scraper', como 'html5ever' ou 'kuchiki'. Cada um vem com suas próprias vantagens, sendo o 'html5ever' muito rápido, mas menos amigável com relação ao usuário se comparado ao 'scraper'.
+**Contexto Histórico**: HTML é a linguagem de marcação fundamental da web desde os anos 90. Extrair dados de páginas HTML é uma necessidade que surgiu com a própria web.
 
-Os detalhes da implementação dependem muito do que você está tentando alcançar. Se você estiver fazendo scraping em um site inteiro, por exemplo, você vai querer usar um cliente HTTP robusto, tratar links etc. Outras considerações são relativas ao desempenho - se você estiver lidando com grandes quantidades de HTML, você vai querer ter cuidado com o uso de memória.
+**Alternativas**: Existem várias bibliotecas para analisar HTML em muitas linguagens. Em Rust, além do `scraper`, você pode usar `html5ever` ou `select.rs`.
 
-## Veja Também
+**Detalhes de Implementação**: `scraper` é construído sobre a crate `html5ever`, que faz o parsing compatível com o padrão HTML5. Isso garante uma análise precisa mesmo com HTML "sujo" ou malformado.
 
-Os seguintes recursos podem ser úteis para aprofundar seu conhecimento em Parsing de HTML com Rust:
+## Veja Também:
 
-1. Documentação oficial do Rust: [Rust HTML Parsing](https://docs.rs/html5ever/0.25.1/html5ever/)
-
-2. Postagem de blog detalhada: [Parsing HTML with Rust](https://www.programming-idioms.org/idiom/68/parse-html/2316/rust)
-
-3. Stack Overflow para dúvidas relacionadas: [Stack Overflow 'Rust' + 'HTML Parsing'](https://stackoverflow.com/questions/tagged/rust+html-parsing)
+- Documentação da crate `scraper`: https://docs.rs/scraper/latest/scraper/
+- Livro "The Rust Programming Language": https://doc.rust-lang.org/book/
+- Tutorial de Web Scraping com Rust: https://www.freecodecamp.org/news/how-to-build-a-web-scraper-with-rust/

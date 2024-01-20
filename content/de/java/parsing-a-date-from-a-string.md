@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:36:48.684984-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -12,41 +13,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Parsen eines Datums aus einem String ist ein übliches Verfahren zum Extrahieren und Speichern von Datumswerten aus Textformaten, besonders beim Umgang mit Benutzereingaben oder Datenfeeds. Es ist nützlich, da Datumsangaben in unterschiedlichen Formaten kommen können und wir müssen sie in einer einheitlichen Form speichern, damit wir sie in unserem Code einfach verwalten können.
+Das Parsen eines Datums aus einem String bedeutet, dass ein Text, der ein Datum repräsentiert, in ein Date-Objekt umgewandelt wird. Programmierer müssen das oft tun, um mit den Daten weiterarbeiten zu können – sei es zum Speichern, Vergleichen oder für Berechnungen.
 
-## Wie geht's:
+## So geht's:
 
-In Java verwenden wir die `parse()` Methode in der `SimpleDateFormat` Klasse, um ein Datum aus einem String zu parsen.
+Java bietet die `java.time`-Bibliothek, die das Parsen von Datumsstrings vereinfacht. Hier ist ein schnelles Beispiel:
 
-```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Main {
+public class DatumParsen {
     public static void main(String[] args) {
-        try {
-            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-            Date date = format.parse("01.12.2020");
-            System.out.println(date);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        String datumString = "2023-04-01";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate datum = LocalDate.parse(datumString, formatter);
+        System.out.println(datum); // Gibt das geparse Datum aus
     }
 }
 ```
+
 Ausgabe:
-```Java
-Tue Dec 01 00:00:00 CET 2020
+
+```
+2023-04-01
 ```
 
-## Tiefgang:
+## Tiefere Einblicke:
 
-Historisch waren die Datumsformate in unterschiedlichen Kulturen und Technologien sehr unterschiedlich. In den frühen Tagen der Programmierung mussten Programmierer oftmals ihre eigenen Parsertools schreiben. Heutzutage stellen fast alle Programmiersprachen eine eingebaute Methode zum Parsen von Datumsstrings bereit. In Java haben wir mehrere Alternativen wie `LocalDate.parse()` oder die `DateTimeFormatter` Klasse.
+Früher haben Java-Entwickler `SimpleDateFormat` aus `java.text` verwendet, das nicht thread-safe war und ein weniger intuitives API hatte. Mit Java 8 kam `java.time`, bekannt als JSR-310, einem viel sichereren und flexibleren System, das durch Joda-Time inspiriert wurde.
 
-Intern wird die `parse()` Methode von `SimpleDateFormat` durch Umwandlung des gegebenen Strings in seine Datums-/Zeitfeldwerte implementiert. Diese Werte werden dann in eine `Date`-Instanz überführt, die das spezifische Datum und die Uhrzeit repräsentiert.
+Alternativen zum `DateTimeFormatter` sind Bibliotheken von Drittanbietern wie Joda-Time, die vor Java 8 oft benutzt wurden. Auch `java.util.Date` und `java.util.Calendar` sind ältere Alternativen, die aber als veraltet gelten.
+
+Bei der Implementierung ist zu beachten, dass nicht alle Datumsstrings gleich sind. Einige haben Zeitstempel, andere haben keine, und das Format variiert. Der `DateTimeFormatter` muss passend zum zu parsenden String erstellt werden.
 
 ## Siehe auch:
 
-Weitere Informationen zu diesem Thema finden Sie unter den folgenden Links:
-- Offizielle Java-Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-- Tutorial für Fortgeschrittene zur SimpleDateFormat-Klasse: https://www.javatpoint.com/java-simpledateformat
+- [Java 8 Date/Time guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+- [DateTimeFormatter JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Joda-Time library](https://www.joda.org/joda-time/)
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)

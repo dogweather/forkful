@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:34:04.466148-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Rust"
@@ -10,51 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-(Sorry, but I can't generate text in Finnish.)
+## What & Why? (Mitä & Miksi?)
+HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen muuttamista sellaiseen muotoon, johon ohjelmat voivat helposti kajota. Ohjelmoijat jäsentävät HTML:ää datan kaivamiseksi verkkosivuilta, automaatioon tai sisällön validointiin.
 
-## Mitä & Miksi?
-
-HTML -koodin jäsentäminen tarkoittaa sen rakenteen purkamista ohjelmoitavaan muotoon, josta tietokone voi lukea ja käsitellä sisältöä. Tarve siihen voi syntyä erilaisista syistä, kuten web scraping -projekteissa, sivustojen sisällön analysoinnissa tai vaikkapa web-kehittäjän työkaluna sivun debuggauksessa.
-
-## Miten se tehdään:
-
-Asennetaan ensin "html5ever", Rust -kielen HTML parser -kirjasto. 
-
+## How to: (Kuinka tehdä:)
 ```Rust
-[dependencies]
-html5ever = "0.25.1"
-```
-
-Tämän jälkeen voidaan luoda yksinkertainen esimerkkikoodi:
-
-```Rust
-extern crate html5ever;
-
-use html5ever::driver::ParseOpts;
-use html5ever::rcdom::{Doctype, Document, Comment, Element, RcDom, Text};
-use html5ever::tendril::TendrilSink;
-use html5ever::parse_document;
+extern crate select;
+use select::document::Document;
+use select::predicate::Name;
 
 fn main() {
-let html = "<html><head></head><body><h1>Moi Suomi!</h1></body></html>".to_string();
-let dom: RcDom = parse_document(RcDom::default(), ParseOpts::default())
-.one(html.into());
+    let html = r#"
+        <html>
+            <head>
+                <title>Rust Esimerkki</title>
+            </head>
+            <body>
+                <h1>Tervetuloa!</h1>
+                <p>Rust ja HTML jäsentäminen.</p>
+            </body>
+        </html>
+    "#;
+
+    let document = Document::from(html);
+
+    let title = document.find(Name("title")).next().unwrap().text();
+    println!("Otsikko: {}", title);
+
+    let header = document.find(Name("h1")).next().unwrap().text();
+    println!("Otsake: {}", header);
 }
 ```
+Sample output:
+```
+Otsikko: Rust Esimerkki
+Otsake: Tervetuloa!
+```
 
-Tällä esimerkillä analysoidaan yksinkertainen HTML -rakenne ja tehdään siitä jäsentynyt DOM. 
+## Deep Dive (Sukellus syvyyksiin):
+HTML:n jäsentäminen ei ole uusi konsepti; se on ollut web-kehityksen perusta jo vuosikymmenien ajan. Rust-ekosysteemissä käytettävät kirjastot, kuten `select`, tarjoavat tehokkaat työkalut HTML:n jäsentämiseen. Vaihtoehtoina on muita kirjastoja kuten `html5ever`, joka perustuu modernin HTML:n syntaksianalyysiin ja `scraper`, joka puolestaan tukeutuu `select`-kirjastoon.
 
-## Syvempi pureutuminen
+Nämä kirjastot helpottavat HTML-elementtien valikointia ja niiden tietojen manipulointia, esimerkiksi CSS-selektorien avulla. Jäsentämisen suorituskyky ja tarkkuus ovat Rustissa keskeisiä etuja, erityisesti concurrent ja memory-safe suunnitteluperiaatteiden ansiosta.
 
-HTML -jäsentäminen on ollut ohjelmistotekniikan alalla yleistä sitten webin alkuaikojen, kun tarvittiin keinoja tulkita ja käsitellä kasvavaa määrää web -sisältöä. 
-
-Vaihtoehtoisia tapoja HTML:n jäsentämiseen ovat esimerkiksi erilaisten kirjastojen käyttö muissa ohjelmointikielissä, kuten BeautifulSoup Pythonissa tai Jsoup Javassa. Rust kielen etuina voidaan mainita sen tehokkuus ja turvallisuus.
-
-HTML -jäsentämisen toteutuksessa tärkeitä seikkoja ovat mm. sen kyky käsitellä puutteellisesti muotoiltua tai virheellistä HTML -koodia, sekä sen suorituskyky ja tehokkuus.
-
-## Katso myös:
-
-1. [html5ever documentation](https://docs.rs/html5ever/)
-2. [Rust documentation](https://www.rust-lang.org/tools/install)
-3. [BeautifulSoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-4. [Jsoup documentation](https://jsoup.org/)
+## See Also (Katso myös):
+- `select`-kirjaston dokumentaatio: https://docs.rs/select/latest/select/
+- `html5ever` GitHub-sivu: https://github.com/servo/html5ever
+- `scraper`-kirjaston dokumentaatio: https://docs.rs/scraper/latest/scraper/
+- Rust-ohjelmointikielen viralliset oppaat: https://doc.rust-lang.org/book/
+- Rust-käyttäjäkokouksen esitelmät HTML:n jäsentämisestä: https://www.rust-lang.org/community#conferences

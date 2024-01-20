@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:32:10.254841-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,66 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Навіщо?
+## Що і чому?
+Парсинг HTML - це процес аналізу HTML коду для отримання даних чи маніпуляції структурою документа. Програмісти роблять це для веб-скрапінгу, тестування веб-інтерфейсів, або автоматизації веб-взаємодій.
 
-Витяг з HTML - це процес зчитування коду HTML та його перетворення на структуровані дані. Програмісти виконують це для вилучення корисної інформації з веб-сторінок.
-
-## Як це зробити:
-
-Використаємо пакет `GoQuery` в Go для синтаксичного аналізу HTML. Встановіть його командою:
-
-```Go
-go get github.com/PuerkitoBio/goquery
-```
-
-А потім використайте наступний код:
+## Як це робити:
+Go використовує пакет "golang.org/x/net/html" для парсингу HTML. Ось простий приклад:
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
-	"log"
+	"golang.org/x/net/html"
 	"net/http"
+	"strings"
 )
 
-func scrapWebsite() {
-	resp, err := http.Get("http://example.com")
+func main() {
+	resp, err := http.Get("http://example.com/")
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	defer resp.Body.Close()
 
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
-	if err != nil {
-		log.Fatal(err)
+	z := html.NewTokenizer(resp.Body)
+
+	for {
+		tt := z.Next()
+
+		switch tt {
+		case html.ErrorToken:
+			// Кінець документа, виходимо з циклу
+			return
+		case html.StartTagToken, html.SelfClosingTagToken:
+			token := z.Token()
+			if token.Data == "a" {
+				for _, attr := range token.Attr {
+					if attr.Key == "href" {
+						fmt.Println("Знайдене посилання:", attr.Val)
+						break
+					}
+				}
+			}
+		}
 	}
-
-	doc.Find("div").Each(func(index int, item *goquery.Selection) {
-		title := item.Text()
-		fmt.Printf("Title %d: '%s'\n", index, title)
-	})
-}
-
-func main() {
-	scrapWebsite()
 }
 ```
 
-Цей код витягує текст з усіх блоків `<div>` з сайту.
+Видасть список усіх посилань (<a href="...">), знайдених на "http://example.com/".
 
-## Поглиблений розбір:
+## Поглиблено:
+Парсинг HTML не новий. Головний стандарт (DOM - Document Object Model) існує вже понад десятиліття. У Go, пакет "golang.org/x/net/html" імітує частину цього стандарту. Крім нього, є й інші пакети, наприклад "goquery", який схожий на jQuery. Важливо вибирати інструмент, який відповідає задачі: якщо треба тільки витягнути дані – "goquery" буде кращим. Для більш складних завдань з маніпуляції HTML, "golang.org/x/net/html" дасть більше контролю.
 
-1. **Історичний контекст**: Vin Cerf та інші створили мову розмітки HTML у 1980-х році. HTML был першою мовою для опису структури інформації на веб-сторінках. Сьогодні вона є основою всього Всесвітнього вебу.
-   
-2. **Альтернативи**: Иснують інші способи обробки HTML, залежно від мови програмування. Наприклад, в Python можете використовувати BeautifulSoup, а в Javascript - Cheerio.
-
-3. **Деталі реалізації**: GoQuery написаний на Go і використовує внутрішній пакет Go net / html для синтаксичного аналізу HTML. Це означає, що GoQuery дотримується специфікацій WHATWG, роблячи його надійним варіантом для парсингу HTML.
-
-## Додатково:
-
-1. [Документація GoQuery](https://pkg.go.dev/github.com/PuerkitoBio/goquery)
-2. [Розбір HTML у Python за допомогою BeautifulSoup](https://realpython.com/beautiful-soup-web-scraper-python/)
-3. [Специфікації HTML WHATWG](https://whatwg.org/)
-4. [Вікіпедія про HTML](https://uk.wikipedia.org/wiki/HTML)
+## Дивіться також:
+- Документація по воркінгу з HTML в Go: https://pkg.go.dev/golang.org/x/net/html
+- goquery, для більшій схожості з jQuery: https://github.com/PuerkitoBio/goquery
+- Вступ до веб-скрапінгу з Go: https://blog.golang.org/html-template
+- Туторіал по golang.org/x/net/html: https://schier.co/blog/2015/04/26/a-simple-web-scraper-in-go.html

@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:34:51.467497-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,10 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Ein Datum aus einem String zu lesen, ist die Umwandlung des Datumswerts von einem textbasierten Format in ein Datumsformat, dass vom Computer verstanden wird. Programmierer benötigen dies, um Inhalte wie Log-Dateien, Kalenderereignisse oder Ereignisse im Freitext zu analysieren und für Analysen zu verwenden.
+Das Parsen eines Datums aus einem String bedeutet, Text in ein Datum-Format umzuwandeln, das der Computer versteht. Programmierer brauchen das, um von Benutzern oder Datenquellen eingegebene Datumsangaben zu verarbeiten und sinnvoll zu nutzen.
 
 ## So geht's:
+Man verwendet die `strptime` Funktion, um einen String in eine `struct tm` umzuwandeln. Hier ein Beispiel:
 
 ```C
 #include <stdio.h>
@@ -22,33 +23,26 @@ Ein Datum aus einem String zu lesen, ist die Umwandlung des Datumswerts von eine
 
 int main() {
     struct tm tm;
-    char buf[255];
-
-    const char* str_date = "2022-10-01 22:35";
-    strptime(str_date, "%Y-%m-%d %H:%M", &tm);
-    strftime(buf, sizeof(buf), "%d %B %Y, %H:%M", &tm);
-
-    printf("Parsed date: %s\n", buf);
-
+    char *input = "2023-03-15";
+    if (strptime(input, "%Y-%m-%d", &tm) != NULL) {
+        printf("Erfolgreich geparst: %d-%02d-%02d\n", tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday);
+    } else {
+        printf("Fehler beim Parsen des Datums.\n");
+    }
     return 0;
 }
 ```
 
-Wenn Sie das Programm ausführen, liefert es die Ausgabe:
+Probelauf:
+
 ```
-Parsed date: 01 October 2022, 22:35
+Erfolgreich geparst: 2023-03-15
 ```
 
-## Deep Dive
+## Tiefgang:
+Früher benutzten Programmierer eigene Algorithmen, um Strings zu parsen, was fehleranfällig war. Heutzutage bieten Bibliotheken wie `time.h` fertige Lösungen. Alternativen zu `strptime` sind Bibliotheken wie `getdate` oder Programmiersprachen-interne Parser. Bei der Implementierung ist zu beachten, dass `strptime` die Locale-Einstellungen des Systems nutzt und nicht mit allen Systemen kompatibel ist.
 
-Die Umsetzung von Datumsstrings in programmverständliche Daten ist keine aktuelle Entwicklung. Seit den frühen Tagen des programmierenden Computings wird diese Funktion benötigt, um menschenlesbare Daten in etwas umzuwandeln, mit dem ein System interagieren kann. 
-
-In C gibt es Bibliotheken wie `time.h`, die Funktionen wie `strptime` und `strftime` bereitstellen, um diese Aufgabe zu erledigen. Es gibt jedoch auch alternative Möglichkeiten, die von früheren C-Versionen oder anderen Plattformen bereitgestellt werden. Diese können ins Spiel kommen, wenn die Umgebung oder der Codekontext die Verwendung von Bibliotheken wie `time.h` nicht erlaubt.
-
-Die Umsetzung selbst erfolgt, indem der String analysiert wird und nach Mustern gesucht wird, die als Datum erkannt werden können. Im obigen Beispiel sucht `strptime` nach den Mustern, die durch die Formatzeichenfolge vorgegeben sind, und füllt die `struct tm` entsprechend.
-
-## Siehe Auch
-
-- strftime - https://www.cplusplus.com/reference/ctime/strftime/
-- strptime - https://man7.org/linux/man-pages/man3/strptime.3.html
-- C library to make it easy to read and write CSV data - https://github.com/robertpostill/dsv
+## Siehe auch:
+- C Standard Library Dokumentation: https://en.cppreference.com/w/c/chrono/strptime
+- GNU C Library Dokumentation zu `strptime`: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html
+- Informationen über `struct tm`: https://en.cppreference.com/w/c/chrono/tm

@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
-html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
-simple_title:         "Analiza składniowa daty z ciągu znaków"
+title:                "Przetwarzanie daty ze łańcucha znaków"
+date:                  2024-01-20T15:36:31.028729-07:00
+html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
+simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Przetwarzanie daty z napisu to technika, która pozwala nam zmienić datę zapisaną jako ciąg znaków na format daty, który można potem używać w operacjach programistycznych. Programiści to robią, by móc używać dat w bardziej złożonych operacjach, takich jak porównywanie, sortowanie czy różne obliczenia.
+## What & Why? (Co i Dlaczego?)
+Parsing dates converts string representations of dates and times into a structured format we can manipulate. Programmers do this to handle user input, store or display dates in different formats, and perform operations like date arithmetic.
 
-## Jak to Zrobić:
-Go oferuje wbudowaną funkcję `time.Parse`, która umożliwia parsowanie dat z łańcucha znaków. 
+## How to: (Jak to zrobić:)
+Start by importing the `time` package. Use `time.Parse` to convert your string into a `time.Time` object. Here's a basic example:
+
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    dataString := "2022-05-26"
-    data, _ := time.Parse("2006-01-02", dataString)
-    fmt.Println(data)
+	strDate := "2023-03-15 14:45:00"
+	layout := "2006-01-02 15:04:05" // Go’s reference date
+	parsedDate, err := time.Parse(layout, strDate)
+	if err != nil {
+		fmt.Println("Error parsing date:", err)
+		return
+	}
+	fmt.Println("Parsed date:", parsedDate)
 }
 ```
-Powinieneś zobaczyć coś takiego po uruchomieniu powyższego kodu:
+
+Sample Output:
 ```
-2022-05-26 00:00:00 +0000 UTC
+Parsed date: 2023-03-15 14:45:00 +0000 UTC
 ```
-## Dogłębne Zrozumienie
-Pierwotnie, nie istniał żaden standard dla reprezentacji dat jako ciągów znaków, co prowadziło do wielu problemów (np. 12/01/22 to po polsku 12 stycznia, a po angielsku 1 grudnia). W 1988 roku ISO opracowało standard ISO 8601, który umożliwia jednoznaczną reprezentację daty zapisanej jako ciąg znaków.
 
-Alternatywą dla funkcji `time.Parse` jest stosowanie formatu z unix, który jest znacznie mniej czytelny dla ludzi, ale szybszy dla maszyn. Na przykład: `1514764800` reprezentuje "2018-01-01T00:00:00Z".
+## Deep Dive (Dogłębna analiza):
+Date parsing in Go is unique. It uses a reference date, `Mon Jan 2 15:04:05 MST 2006`, to dictate the format. Why 2006? It's arbitrary, but the numbers (1 2 3 4 5 6 7) give each date and time component a distinct value, making it mnemonic.
 
-Szczegół implementacji: `time.Parse` zasługuje na wzmiankę, że format, którego używasz jako wzorca parsowania, to nie wzorzec jakiegokolwiek formatu zapisu daty, ale to musi być `"Mon Jan 2 15:04:05 MST 2006"` napisane naszymi wybranymi danymi. 
+Alternatives to `time.Parse` include third-party libraries that offer additional functionality or different interfaces. `time.ParseInLocation` is used to parse a date with a specific timezone.
 
-## Zobacz Również
-1. Dokumentacja Golang na temat pakietu czasu [tutaj](https://golang.org/pkg/time/).
-3. Historia standardu ISO 8601 [tutaj](https://en.wikipedia.org/wiki/ISO_8601).
+Implementation-wise, Go parses strings based on patterns, not specific formats like other languages do. Once parsed, `time.Time` methods allow manipulation of dates, such as adding or subtracting time, comparison, and formatting to strings.
+
+## See Also (Zobacz również):
+- Go's time package documentation: https://golang.org/pkg/time/
+- Go by Example – Time formatting and parsing: https://gobyexample.com/time-formatting-parsing
+- The Go Blog on time and dates: https://blog.golang.org/time

@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:34:32.513317-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,38 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string means to extract and interpret the constituent parts of a date (like day, month, and year) from a text string. Programmers do this to use, manipulate, or compare dates within their scripts.
 
-## How To:
+Parsing a date from a string means extracting the date components—like day, month, and year—from text. Programmers do it to manipulate or display dates in different formats or to calculate time differences in scripts.
 
-Let's discuss the most common option for date parsing in Bash using the `date` command.
+## How to:
 
-```Bash
-# Define date string
-date_string="2021-07-07 16:40:30"
-# Parse date string to a date
-parsed_date=$(date -d "$date_string" +"%Y-%m-%d %T")
-echo $parsed_date
-```
-
-Output:
+Using `date` with `+%Y-%m-%d` gives us a formatted output:
 
 ```Bash
-2021-07-07 16:40:30
+date_str="Jan 01 2023"
+formatted_date=$(date -d "$date_str" '+%Y-%m-%d')
+echo $formatted_date
+```
+```
+2023-01-01
 ```
 
-Here, the `-d` option makes `date` interpret the input string, and the `+"%Y-%m-%d %T"` part formats the output.
+`date -d` lets us parse our string, while `+%Y-%m-%d` specifies the output format.
 
-## Deep Dive:
+## Deep Dive
 
-Historically, date parsing in Unix-like systems was a bit of a pain due to varying date formats across geographical locations. The current `date` command in GNU Coreutils, used in Bash, became standardized for more consistency.
+Bash itself isn't great at date parsing. Historically, Unix systems didn't include a built-in for this. Most scripts relied on external tools or complex workarounds. GNU `date` changed the game with its `-d` option, allowing easy date parsing and output formatting.
 
-The `date` command is not the only way to parse dates. If you want to get creative, use other Unix utilities like `awk`, `sed`, or Python with its `datetime` module to parse dates.
+Alternatives? Sure, there's `awk`, `sed`, and `perl`. Each has its own way of tackling the problem, but `date` is typically the first choice due to simplicity.
 
-After parsing a date from a string, Bash holds it as a UNIX timestamp, the number of seconds since 1970-01-01 00:00:00 UTC. When required, it formats this timestamp to human-readable forms.
+Implementation details get spicier. `date` uses system locale settings by default, affecting how it interprets input. Overriding locale may be necessary for consistent behavior across different environments. Plus, handling dates before 1970 or after 2038? That's where things can get buggy due to Unix timestamp constraints.
 
-## See Also:
+## See Also
 
-1. GNU Coreutils `date` manual: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) 
-2. Further reading on the `awk` command: [https://www.gnu.org/software/gawk/manual/](https://www.gnu.org/software/gawk/manual/)
-3. Python `datetime` processing: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
+- GNU `date` man page: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- More on Unix timestamp and the Y2038 problem: https://en.wikipedia.org/wiki/Year_2038_problem
+- Date parsing in `awk`: https://www.gnu.org/software/gawk/manual/html_node/Time-Functions.html

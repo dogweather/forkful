@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:30:46.054042-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Clojure"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？ (What & Why?)
+## What & Why? (何となぜ？)
 
-HTMLのパ−ジングとは、ウェブページのHTMLを読み込み、それを解析し、情報を抽出するプロセスです。プログラマーがこれを行う理由は主に、特定のウェブサイトからデータを取得したり、ウェブページを解析して特定の情報を抽出するためです。
+HTMLパースは、HTMLからデータを読み取る過程です。プログラマは、ウェブページの内容を解析・取得するためや、ウェブスクレイピングするためにこれを行います。
 
-## 実装方法 (How to)
+## How to (方法)
 
-次のコードは、ClojureでEnliveライブラリを使ってHTMLをパーズする例を示しています。
+Clojureでは、`enlive`や`hiccup`のようなライブラリでHTMLをパースできます。以下は、`enlive`を使った基本的な例です。
 
-```Clojure
-(ns html-parser.core
-  (:require [net.cgrand.enlive-html :as html]))
+```clojure
+(require '[net.cgrand.enlive-html :as html])
 
-(defn parse-html [html-string]
-  (html/html-snippet html-string))
+(defn fetch-title [html-content]
+  (html/select (html/html-resource (java.io.StringReader. html-content)) [:title]))
 
-(def doc (parse-html "<html><body><p>Hello, World!</p></body></html>"))
-
-(println doc)
+(let [html-string "<html><head><title>こんにちは、Clojure!</title></head><body>...</body></html>"]
+  (println (fetch-title html-string)))
 ```
 
-このコードはHTML文をパースし、それを出力します。この例では、文字列は単純なHTMLページで、「Hello, World!」というテキストを含む一つのパラグラフです。出力は次のようになります：
+出力サンプル:
 
 ```
-{:tag :html, :attrs nil, :content [{:tag :body, :attrs nil, :content [{:tag :p, :attrs nil, :content ["Hello, World!"]}]}]}
+([:title "こんにちは、Clojure!"])
 ```
-## 詳細について (Deep Dive)
 
-HTMLのパースは古くからある問題で、多数のソリューションが存在します。JavaではJsoupやHtmlUnit、PythonではBeautifulSoupなど、多くの言語で複数の解決策が開発されています。Clojureでも、EnliveやHickoryなどのライブラリがあります。
+## Deep Dive (深く掘り下げる)
 
-一方、HTMLのパースは難しく、HTMLが正しく形式化されていないケースはよくあります。このような場合は、Robustness principle（ロバストネスの原則）が推奨されます。すなわち、「入力に対しては寛容に、出力に対しては慎重に」行動します。
+HTMLをパースすることは1990年代から行われています。初期は簡素だったHTMLですが、次第に複雑になり、パースも進化しました。`enlive`はClojureのためのHTMLパージングライブラリの一つで、DOMの抽象化とクエリ機能を提供します。正規表現や文字列操作では難しいタスクも`enlive`を使えば簡単になります。
 
-## 参考資料 (See Also)
+JavascriptライブラリやPythonの`BeautifulSoup`といった他言語のツールも存在しますが、Clojureにおいては、`enlive`や`hiccup`が好まれます。それは、Clojureのシンボリックな特性とデータ駆動のアプローチによく合っているためです。パースしたHTMLはS-expressionとして表され、Clojureのコレクションとして自然に操作が可能です。
 
-以下は関連するリンクです:
+## See Also (関連情報)
 
-- Enlive GitHub: https://github.com/cgrand/enlive
-- Hickory GitHub: https://github.com/davidsantiago/hickory
-- Jsoup: https://jsoup.org/
-- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Enliveの公式ドキュメント: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- HiccupのGitHubリポジトリ: [https://github.com/weavejester/hiccup](https://github.com/weavejester/hiccup)
+- Clojureに関するその他のリソース: [https://clojure.org/](https://clojure.org/)

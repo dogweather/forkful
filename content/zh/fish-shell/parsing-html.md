@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:31:43.790663-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
+## What & Why? (是什么？为什么？)
+解析HTML是指提取网页代码中的数据及结构信息。程序员这样做是为了自动化处理网页内容，比如数据抓取或测试网页。
 
-解析HTML是一种从HTML文档中提取有用数据的过程。程序员为此需要做很多，因为这是网页爬取，信息提取，甚至某些类型的网络攻击的基础。（Translation: Parsing HTML is the process of extracting useful data from HTML documents. Programmers do it a lot because it's a basis for web scraping, information extraction, and even certain types of cyber attacks.）
+## How to: (如何操作)
+在Fish Shell中，我们可以使用外部程序，像是`pup`或`hxselect`进行HTML解析。这是一个使用`pup`解析HTML标题的例子。
 
-## 如何操作：
-
-```Fish Shell 
-# 首先，我们安装 html-parser 库
-fisher install jorgebucaran/html-parser.fish
-
-# 之后，我们来解析一段简单的HTML。
-set html '<html><body><h1>Hello, world!</h1></body></html>'
-html-parse $html -n
-```
-过程操作后将会显示：
 ```Fish Shell
-document: 1
-  html: 2
-    body: 3
-      h1: 4
-        #text: Hello, world!
+echo "<html><body><h1>你好，Fish Shell！</h1></body></html>" | pup 'h1 text{}'
 ```
 
-## 深入研究
+输出将会是这样的：
 
-HTML解析的历史可以追溯到HTML的诞生。随着HTML的发展和更多复杂网站的出现，提取HTML信息变得越来越重要。(Translation: The history of HTML parsing traces back to the birth of HTML. As HTML evolved and more complex websites were born, extracting information from HTML became more and more important.)
+```plaintext
+你好，Fish Shell！
+```
 
-Fish Shell并非解析HTML的唯一工具。有许多其他解析器，如Python的BeautifulSoup，或Node.js的cheerio等等。每个工具有自己的优缺点，你可以根据需求选择适合的工具。(Translation: Fish Shell is not the only tool to parse HTML. There are many other parsers such as BeautifulSoup in Python, cheerio in Node.js, and so on. Each tool has its strengths and weaknesses and you can choose the right tool based on your needs.)
+## Deep Dive (深入了解)
+HTML解析有它的历史背景。最早的网页主要是静态内容，使用正则表达式就能完成大部分任务。随着网页变得更复杂，出现了专门的解析器，如`BeautifulSoup`（Python），使得解析过程更准确也更复杂。
 
-在Fish Shell中，我们使用html-parser库，它是用Fish Script编写的。它简单，高效，并且易于使用，适合需要浅层数据提取的场景。(Translation: In Fish Shell, we use the html-parser library, which is written in Fish Script. It's simple, efficient, and easy to use, suitable for scenarios requiring shallow data extraction.)
+Fish Shell本身并不内置HTML解析功能，但通过管道命令可以很方便地调用外部程序。`pup`和`hxselect`是流行的选择，因为它们支持CSS选择器，操作直观，易于学习。
 
-## 另请参阅
+在处理复杂网页时，有时我们需要处理JavaScript渲染的内容。此时，可以使用像`puppeteer`和`Selenium`这样的工具来先渲染网页。
 
-- [Fish Shell官方网站](https://fishshell.com): 更多关于Fish Shell的信息和示例。
-- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): 强大的Python库，可进行深度HTML解析。(Translation: A powerful Python library for deep HTML parsing)
+实施细节上，需要注意HTML的多样性和不规则性。优秀的HTML解析库不仅能处理标准的HTML文档，还能优雅地处理有错误的标记。
+
+## See Also (另请参阅)
+- [`pup` GitHub 仓库](https://github.com/ericchiang/pup)
+- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
+- [BeautifulSoup 文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [`puppeteer` GitHub 仓库](https://github.com/puppeteer/puppeteer)
+- [`Selenium` 官方网站](https://www.selenium.dev/)

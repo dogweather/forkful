@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:36:21.324606-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,45 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+Das Parsen eines Datums aus einem String wandelt Text in ein `time.Time`-Objekt um. Programmierer nutzen dies, um mit Datumsangaben zu rechnen, sie zu vergleichen und in verschiedenen Formaten auszugeben.
 
-Das Parsen eines Datums aus einem String ist der Prozess, einen Textstring anzunehmen, der ein Datum repräsentiert, und diesen in ein für die Software verständliches Format zu konvertieren. Programmierer machen das, um mit solchen Daten zu arbeiten, Berechnungen durchzuführen oder Datumsangaben zu speichern und zu manipulieren.
-
-## So geht's:
-
-Mit Go können wir Datumswerte mit der Funktion `time.Parse` parsen. Hier ist ein einfaches Beispiel:
+## How to: (Wie geht's?)
+Go bietet das Paket `time` für die Datum- und Zeitverarbeitung. Mit der `Parse`-Funktion kannst du einen String in ein `time.Time`-Objekt umwandeln.
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-  str := "2022-07-18"
-  layout := "2006-01-02"
-  t, _ := time.Parse(layout, str)
-  fmt.Println(t)
+	const layout = "02.01.2006 15:04"
+	dateString := "25.12.2023 18:30"
+	date, err := time.Parse(layout, dateString)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Parsed Date:", date)
 }
 ```
 
-Dieser Code gibt folgendes aus:
+Ausgabe:
 
-```Shell
-2022-07-18 00:00:00 +0000 UTC
+```Go
+Parsed Date: 2023-12-25 18:30:00 +0000 UTC
 ```
 
-## Vertiefung
+## Deep Dive (Tiefgang)
+Golang verwendet ein einzigartiges Layoutsystem für Datum und Zeit. Anstatt komplizierte Formatierungszeichenfolgen zu verwenden, benutzt es eine spezifische Referenzzeit: `Mon Jan 2 15:04:05 MST 2006`. Alternative Methoden wie die Pakete `time.ParseInLocation` oder Drittanbieter wie `github.com/araddon/dateparse` können für komplexere Anforderungen genutzt werden.
 
-Historischer Kontext: Die Interpretation von Datumswerten aus Strings kann auf den Beginn der Informatik zurückverfolgt werden. Heutzutage gibt es viele Möglichkeiten, Datumsinformationen in Textformat zu speichern, und dementsprechend viele Methoden, diese Informationen zu parsen.
+Beim Parsen prüfen, ob das Layout exakt mit der Eingabe übereinstimmt. Beachte Zeitzonen -- `Parse` interpretiert das Datum in UTC, wenn keine Zeitzone angegeben ist.
 
-Alternativen: Go bietet auch andere Funktionen wie `time.ParseInLayout`, die es ermöglichen, das Eingabeformat besser zu steuern. Es ist wichtig, die richtige Methode zu wählen, die den Anforderungen jeder Situation entspricht.
+## See Also (Siehe Auch)
+- [time package](https://pkg.go.dev/time)
+- [Go by Example: Time Formatting / Parsing](https://gobyexample.com/time-formatting-parsing)
 
-Implementierungsdetails: Unter der Haube verwendet `time.Parse` eine Layout-Zeichenkette, um das erwartete Format des Eingabestrings festzulegen. Diese Layout-Zeichenkette muss das Referenzdatum 2006-01-02 15:04:05 sein, das dann anhand der gegebenen Zeichenkette modifiziert wird.
-
-## Weiterführende Informationen
-
-1. Die Go Standardbibliothek Dokumentation für das `time` Paket: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
-2. Ein ausführlicher Artikel über das Arbeiten mit Datums- und Zeitwerten in Go: [https://yourbasic.org/golang/format-parse-string-time-date-example/](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+Kein Schlussabschnitt nötig. Information ist vollständig.

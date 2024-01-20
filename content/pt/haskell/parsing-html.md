@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:32:07.801546-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Embainhar com Haskell: Como Fazer Parse de HTML
-
-## O quê e Por quê?
-
-Parse de HTML é a extração de dados estruturados a partir de código HTML. Programadores fazem isso para manipular, analisar ou extrair informações específicas de páginas da web.
+## O Que é & Porquê?
+Analisar HTML significa extrair dados estruturados de documentos HTML. Programadores fazem isso para automatizar a recuperação de informações de páginas web, como para web scraping ou para alimentar dados em aplicativos.
 
 ## Como Fazer:
+Experimente a biblioteca `tagsoup`, uma maneira fácil de mexer com HTML em Haskell. Não é estritamente um parser XML/HTML pois é tolerante a erros, sendo perfeita para lidar com o HTML "real" que encontramos.
 
-A biblioteca `tagsoup` é uma excelente opção em Haskell para fazer parse de HTML. Aqui está um exemplo rápido:
-
-```Haskell
+```haskell
 import Text.HTML.TagSoup
 
-htmlParse :: String -> IO ()
-htmlParse url = do
-  -- pegar o HTML da URL
-  html <- openURL url
+-- Exemplo: Encontrar todos os hyperlinks em um documento HTML
+extractLinks :: String -> [String]
+extractLinks html = [href | TagOpen "a" attrs <- parseTags html, ("href", href) <- attrs]
 
-  -- fazer o parse das tags HTML e exibir os textos das tags que são links
-  let tags = parseTags html
-  putStrLn "Links na página:"
-  mapM_ print [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
-
--- função auxiliar para pegar o código HTML de uma URL
-openURL :: String -> IO String
-openURL x = getResponseBody =<< simpleHTTP (getRequest x)
+-- Use a função acima em algum HTML de exemplo
+main :: IO ()
+main = do
+    let htmlSample = "<html><body><a href='http://example.com'>Example</a></body></html>"
+    print $ extractLinks htmlSample
 ```
 
-Isso listará todos os links de uma página da web especificada. Claro, esse é um exemplo simples para ilustrar como fazer o parse de HTML.
+Resultado esperado será simplesmente:
 
-## Mergulho Profundo
+```
+["http://example.com"]
+```
 
-A análise de HTML tem uma história longa desde a criação da web, e Haskell tem várias bibliotecas para lidar com ela, cada uma com seus próprios prós e contras.
+## Mergulho Profundo:
+Haskell tem uma reputação por ser ótimo com tarefas de parsing, graças à sua precisão e expressividade. A `tagsoup` foi desenvolvida para oferecer uma forma robusta e indulgente de fazer parsing de HTML, ideal para a natureza imprevisível do HTML na internet. Alternativas como `xeno` e `html-conduit` existem e podem ser mais adequadas se precisar de conformidade estrita com os padrões XML/HTML.
 
-Alternativas ao `tagsoup` incluem `html-conduit` e `pandoc`. A escolha depende das suas necessidades: 
-- `html-conduit` é útil se a entrada for grande ou se for potencialmente infinita, como uma transmissão ao vivo.
-- `pandoc` é perfeito para converter HTML em outros formatos de markup.
+Ao trabalhar com parsing de HTML, deve-se considerar também asdiretrizes éticas e legais; scraping de sites sem permissão pode ser controverso ou até ilegal em alguns contextos.
 
-A biblioteca `tagsoup` em si faz uma análise tolerante a falhas, o que é bom para lidar com HTML real na web, que pode não estar bem formatado.
-
-## Veja Também
-
-- A documentação do `tagsoup`: https://hackage.haskell.org/package/tagsoup
-- Como parsear HTML com Conduit: https://www.yesodweb.com/book/xml
-- Converter HTML com o Pandoc: https://pandoc.org/MANUAL.html#readers
+## Veja Também:
+- Documentação da `tagsoup`: https://hackage.haskell.org/package/tagsoup
+- Biblioteca `xeno`: https://hackage.haskell.org/package/xeno
+- Biblioteca `html-conduit` para parsing mais rigoroso: https://hackage.haskell.org/package/html-conduit
+- Um bom tutorial sobre web scraping com Haskell: https://www.schoolofhaskell.com/school/advanced-haskell/beautiful-concurrency/3-web-scraping-part-1

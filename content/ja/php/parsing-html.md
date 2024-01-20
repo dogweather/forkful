@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:32:48.675616-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "PHP"
@@ -10,35 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？そしてなぜ？
-HTMLのパースはウェブページの内容を理解し操作する手段です。プログラマはこれを行うことで、HTMLの各要素に動的にアクセスし、データの取得、編集、または変換を行います。
+## What & Why? (何となぜ？)
+HTMLパース（解析）は、HTML文書からデータを抽出や操作することです。プログラマーはこれを使って、Webスクレイピングやコンテンツの自動処理を行います。
 
-## どうやって：
-PHPにはDOM（Document Object Model）とSimpleXMLという便利な組み込みツールがあります。これらを使うとHTMLをパースすることができます。例を見てみましょう:
+## How to: (やり方)
+PHPでは、DOMDocumentクラスを使ってHTMLを簡単にパースできます。以下は基本的な例です。
 
-```PHP 
+```php
 <?php
-$dom = new DOMDocument();
-@$dom->loadHTML('<p>Hello parse!</p>'); // Suppress warnings with @
-$paragraphs = $dom->getElementsByTagName('p');
-echo $paragraphs->item(0)->nodeValue; // Displays: Hello parse!
+$doc = new DOMDocument();
+@$doc->loadHTML(file_get_contents('https://example.com'));
+$tags = $doc->getElementsByTagName('a');
+
+foreach ($tags as $tag) {
+    echo $tag->getAttribute('href') . PHP_EOL;
+}
 ?>
 ```
-このコードは段落 (`<p>`) タグを抽出し、そのテキストを表示します。
 
-## 深掘り：
-HTMLパーサーの歴史は長く、その発展はウェブテクノロジーの進化と共に歩んできました。それぞれが異なる方法を採用していますが、最終的な目標はすべて同じです：HTML文書を適切に解析してその構造を明らかにすること。
+これはウェブページから全てのリンクを抜き出して表示します。
 
-PHPでは、DOMやSimpleXML以外にも「phpQuery」「QueryPath」など、他のライブラリやツールも利用できます。これらはさらに詳細な操作が可能で、多機能なHTMLパーサーとして利用可能です。
+## Deep Dive (深掘り)
+HTMLパースは、PHPがはじめから備えている機能じゃありません。初期のPHPでは正規表現や文字列関数でHTMLを扱っていましたが、これは脆弱でエラーが多い方法です。そのため、DOMDocumentクラスが導入され、XMLとHTMLを安全かつ正確に解析する手法が可能になりました。他の方法にはSimple HTML DOM Parserやthird-partyライブラリがありますが、DOMDocumentが最も一般的です。パフォーマンスやメモリ使用について理解することも重要です。大きなHTMLドキュメントでは、資源を大量に使用することがあります。
 
-実装の詳細については、たとえばHTML5に準拠したパーサーでは、HTML5の仕様を厳密に順守して、例外を見つけたり既知のバグを回避するための多くの特別な処理が含まれます。
-
-## 参考リンク：
-- PHP: DOMドキュメント - Manual
-  [https://www.php.net/manual/en/class.domdocument.php](https://www.php.net/manual/en/class.domdocument.php)
-- PHP: SimpleXML - Manual
-  [https://www.php.net/manual/en/book.simplexml.php](https://www.php.net/manual/en/book.simplexml.php)
-- phpQuery: A PHP Port of jQuery's Syntax
-  [https://code.google.com/archive/p/phpquery/](https://code.google.com/archive/p/phpquery/)
-- QueryPath: HTML/XML Manipulation, Traversal, and Extraction
-  [https://querypath.org/](https://querypath.org/)
+## See Also (関連項目)
+- [PHP: DOMDocument - Manual](https://www.php.net/manual/en/class.domdocument.php)
+- [PHP: DOMElement - Manual](https://www.php.net/manual/en/class.domelement.php)
+- [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/)

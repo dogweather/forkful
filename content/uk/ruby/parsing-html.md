@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:34:34.315152-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що й чому?
-Парсинг HTML це процес вилучення потрібних даних з HTML-документа. Програмісти роблять це, щоб організувати великі обсяги web-інформації, яку потім можна використовувати за потреби.
+## Що це таке & Чому?
+Парсинг HTML – це процес аналізу HTML-коду для витягнування інформації. Програмісти це роблять, щоб маніпулювати, збирати, або змінювати дані в веб-документах.
 
-## Як це робиться:
-Використаємо Ruby-бібліотеку Nokogiri для парсингу HTML. 
-
-```Ruby
+## Як це робити:
+```
+Ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Відкриваємо веб-сторінку
-doc = Nokogiri::HTML(open("https://www.example.com"))
+# Завантаження HTML з веб-сайту
+doc = Nokogiri::HTML(URI.open('https://example.com'))
 
-# Знайдемо всі посилання на сторінці
-links = doc.css('a')
+# Пошук елемента за тегом
+puts doc.at_css("title").text
 
-links.each { |link| puts link['href'] }
+# Виведення всіх посилань
+doc.css('a').each do |link|
+  puts link.content + ": " + link['href']
+end
+```
+Вивід:
+```
+Home Page: https://example.com
+About Us: https://example.com/about
+Contact: https://example.com/contact
 ```
 
-У наведеному вище прикладі ми отримаємо список всіх посилань, які є на сторінці example.com.
+## Поглиблений аналіз:
+Нокогірі (Nokogiri) – це бібліотека для Ruby, названа на честь японського терміна "ножівка", яка була створена для зручного парсингу XML та HTML. До її появи, альтернативами були мануальний розбір або використання регулярних виразів, що часто були неточними та ненадійними. Nokogiri використовує нативні парсери, як от libxml2, для точного аналізу вмісту та швидкої роботи.
 
-## На глибині:
-1. Історичний контекст: Парсинг HTML був потужним інструментом ще зі стародавніх часів, коли 'веб-гребінки' за допомогою цього інструменту збирали дані з веб-сайтів.
-2. Альтернативи: Крім Nokogiri, можна використовувати інші Ruby-бібліотеки, такі як Oga або Hpricot.
-3. Деталі впровадження: Часто парсинг HTML використовується в комбінації з web scraping, коли даний метод дозволяє витягти конкретні елементи за допомогою селекторів CSS або XPath.
-
-## Див. також:
-- Офіційна документація Nokogiri: [https://nokogiri.org](https://nokogiri.org)
-- Обговорення парсингу HTML на Stack Overflow: [https://stackoverflow.com/questions/tagged/html-parsing](https://stackoverflow.com/questions/tagged/html-parsing)
-- Документація Ruby про обробку веб-даних: [https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI/OpenRead.html](https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI/OpenRead.html)
+## Дивіться також:
+- Документація Nokogiri: [https://nokogiri.org](https://nokogiri.org)
+- W3C справочник по HTML: [https://www.w3.org/TR/html52/](https://www.w3.org/TR/html52/)

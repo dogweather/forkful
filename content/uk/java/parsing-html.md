@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:32:11.518269-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,41 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке парсинг HTML та навіщо це потрібно?
+## What & Why? (Що та Чому?)
+Parsing HTML means extracting data from HTML files. Programmers do this to interact with web content, automate tasks, or scrape data.
 
-1) Парсинг HTML - це процес розбору HTML документу на менші частини, щоб їх можна було аналізувати та обробляти. 
-2) Розробники роблять це для витягування конкретних даних з веб-сторінок, зміни їх структури або навіть створення нових сторінок.
+## How to: (Як це зробити:)
+Let's use Jsoup, a Java library for HTML parsing. Add it to your project with Maven:
 
-## Як це зробити:
+```xml
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.14.3</version>
+</dependency>
+```
 
-Java бібліотека `Jsoup` чудово справляється з парсингом HTML. Ось приклад:
+Here's a snippet that fetches a webpage and grabs the title:
 
-```Java
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-public class Main {
+public class HtmlParserDemo {
     public static void main(String[] args) throws Exception {
         Document doc = Jsoup.connect("http://example.com").get();
-        Elements newsHeadlines = doc.select("#news .headline");
-        for (Element headline : newsHeadlines) {
-            System.out.println(headline.text());
-        }
+        String title = doc.title();
+        System.out.println("Title: " + title);
     }
 }
 ```
-Цей код отримує HTML документ з `http://example.com`, знаходить всі елементи з класом "headline" в секції "news" та друкує їх текст.
 
-## Поглиблений розгляд:
+Sample output:
 
-1) Історичний контекст: Парсинг HTML виник з необхідності обробки та аналізу веб-даних. Його було створено у 1990-х, коли інтернет став більш популярним. 
-2) Альтернативи: Інші бібліотеки, такі як HtmlUnit та jDOM також можуть використовуватися для парсингу HTML в Java.
-3) Деталі реалізації: Jsoup працює з HTML як з рядком. Він не виконує JavaScript та не підтримує AJAX.
+```
+Title: Example Domain
+```
 
-## Див. також:
+## Deep Dive (Поглиблений Розгляд):
+Historically, parsing HTML was complicated due to messy code and lack of standards. Tools like Jsoup revolutionized the process by providing a forgiving parser and a jQuery-like interface.
 
-1) [Jsoup документація](https://jsoup.org/).
-2) [Курс про парсинг HTML на Coursera](https://www.coursera.org/courses?query=html%20parsing).
-3) [Порівняння бібліотек для парсингу HTML](https://www.slant.co/topics/6578/~best-html-parsers-for-java).
+Alternatives to Jsoup include HtmlUnit for testing web apps, and XPath for queries on XML-like structures.
+
+Implementation-wise, Jsoup uses a DOM (Document Object Model) approach, building an in-memory tree representation of the HTML. It can fix bad HTML on the fly, making it resilient to real-world web pages.
+
+## See Also (Дивіться також):
+- [Jsoup Official Documentation](https://jsoup.org/)
+- [HtmlUnit](http://htmlunit.sourceforge.net/)

@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:31:05.744077-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Elixir"
@@ -10,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-HTML:n jäsentäminen on prosessi, jossa raakamuotoinen HTML-muotoinen web-sivukoodi muunnetaan strukturoidummaksi muodoksi, jota ohjelmisto voi helpommin ymmärtää ja hallita. Ohjelmoijat tekevät tämän sisällön erittämiseksi ja käsittelemiseksi, verkko-ottimien kehittämiseksi tai datan hakemiseksi verkkosivustoilta.
+HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen muuttamista datarakenteiksi, joita ohjelmat voivat käsitellä. Ohjelmoijat tekevät tätä esimerkiksi verkkosivustojen tietojen kaapaukseen tai sisällön manipulointiin.
 
-## Miten?
+## Kuinka:
+
+Elixirissä HTML:n jäsentämistä varten voidaan käyttää esimerkiksi `Floki`-kirjastoa, joka tukee CSS-selektoreita datan kaapauksessa.
 
 ```elixir
-defmodule MyParser do
-  def parse(html_code) do
-    {:ok, result, _} = Floki.find(html_code, ".my-class")
-    Enum.map(result, fn(elem) -> Floki.text(elem) end)
-  end
+# Lisää `Floki` riippuvuuksiin mix.exs-tiedostossa
+defp deps do
+  [
+    {:floki, "~> 0.30.0"}
+  ]
 end
 
-IO.puts MyParser.parse("<div class='my-class'>Hello, World!</div>")
+# Jäsentä esimerkki HTML-dokumentti
+def parse_html(html) do
+  {:ok, parsed_html} = Floki.parse(html)
+  titles = Floki.find(parsed_html, "h1")
+  Floki.text(titles)
+end
+
+# Käyttö esimerkki
+html = "<html><body><h1>Hei Suomi!</h1></body></html>"
+IO.inspect(parse_html(html)) # Tulostaa "Hei Suomi!"
 ```
 
-Edellä oleva koodi palauttaisi seuraavan:
+## Syväluotaus:
 
-```
-Hello, World!
-```
+Elixirin alkuajat juontuvat 2011 vuoteen, kun José Valim loi kielen. HTML:n jäsentämiseen Elixirillä, `Floki` on nykyään suosittu työkalu, vaikka vaihtoehtojakin, kuten `Meeseeks`, löytyy. Molemmat kirjastot tukeutuvat Elixirin ja Erlangin tehokkuuteen käsittelemään rinnakkaista suoritustapaa. `Floki`:n käyttö perustuu moitteettoman HTML:n puhdistukseen ja jäsentämiseen, ottamalla käyttöön `mochiweb` HTML-työkaluja.
 
-## Syvemmälle
+## Katso Myös:
 
-HTML:n jäsentämisen historia on pitkä ja se on ollut osa nousevia kieliä ja teknologioita, kuten Python, JavaScript ja PHP. Nykyään Elixir-tuen ansiosta voimme hyödyntää sen tehokkaita rinnakkaistamistoimintoja tähän tarkoitukseen.
-
-Erityisesti Elixirissa, `Floki` on voimakas ja suosittu vaihtoehto, joka helpottaa HTML:n jäsentämistä. On myös muita kirjastoja, kuten `Mochiweb` ja `html5ever_elixir`, mutta `Floki` on pysynyt tehokkaana työkaluna HTML:n jäsentämisessä.
-
-Elixir-koodi toimii eri tavalla kuin monissa muissa kielissä, koska se hyödyntää rinnakkaistamista hyvän suorituskyvyn saavuttamiseksi. Se kykenee käsittelemään useita HTML-dokumentteja samanaikaisesti ilman suorituskyvyn menetystä.
-
-## Katso Myös
-
-- [Floki GitHub](https://github.com/philss/floki)
-- [Mochiweb GitHub](https://github.com/mochi/mochiweb)
-- [Parsing HTML with Elixir: A guide](https://hackernoon.com/parsing-html-with-elixir-a-how-to-guide-9eb07f7dde0c)
+- Floki GitHub-sivu: https://github.com/philss/floki
+- Elixirin viralliset dokumentit: https://elixir-lang.org/docs.html
+- "Programming Phoenix" -kirja, joka sisältää lukuja HTML:n käsittelystä Elixirillä: https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/
+- Meeseeks-kirjasto: https://github.com/mischov/meeseeks

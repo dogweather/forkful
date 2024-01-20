@@ -1,7 +1,8 @@
 ---
-title:                "Розбір HTML"
-html_title:           "Arduino: Розбір HTML"
-simple_title:         "Розбір HTML"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:30:47.863984-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,35 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## Що це таке & навіщо?
 
-Парсинг HTML - це процес видобування специфічної інформації з HTML-документа. Це часто потрібно програмістам для обробки, аналізу та використання даних у HTML-файлах.
+Розбір HTML – це процес аналізу коду HTML для витягування даних або змінення структури. Програмісти парсять HTML, щоб автоматизувати процеси, збирати інформацію з веб-сторінок, чи модифікувати контент.
 
-## Як це робиться:
-
-Для парсингу HTML у C++ корисно використовувати бібліотеку Gumbo. Ось приклад коду:
+## Як це зробити:
 
 ```C++
-#include "gumbo.h"
-...
-void parse_html(const char* html) {
+#include <iostream>
+#include <gumbo.h>
+
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        std::cout << href->value << std::endl;
+    }
+
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    }
+}
+
+int main() {
+    const char* html = "<html><body><a href='https://example.com'>Example</a></body></html>";
     GumboOutput* output = gumbo_parse(html);
-    ...
+    search_for_links(output->root);
     gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
-Выдобута інформація потім використовується у програмі.
 
-## Детальніше:
+Вище наведений код використовує бібліотеку Gumbo для пошуку усіх посилань на сторінці. В результаті ми отримаємо: 
 
-Історично, парсинг HTML був складою та помилкозрону задачею. HTML володіє комплексною структурою та звичайно містить помилки у коді, які не заважають його відображенню у браузері, але утруднюють парсинг.
+```
+https://example.com
+```
 
-Альтернативи парсингу HTML на C++ включають використання таких бібліотек, як htmlcxx, myhtml або використання інших мов програмування, таких як Python або JavaScript, які мають вбудовані інструменти для цього.
+## Підводні камені:
 
-Що стосується деталей реалізації, Gumbo перетворює HTML в DOM-дерево, яке потім можна проаналізувати та використати.
+Парсинг HTML може бути справою хитрою. Структура HTML часто мінлива, а стандарти еволюціонують. У минулому, багато бібліотек для парсингу HTML, на зразок Beautiful Soup у Python, рятували ситуацію, але в C++ такий стандартний інструмент відсутній.
+
+Сьогодні вибір падає на такі бібліотеки, як Gumbo – інтерфейс розроблений Google для досконалого розбору документів HTML5. Ще одна альтернатива – бібліотека htmlcxx, яка менш вимоглива до стандартів HTML і може обробляти більш хаотичний HTML-код.
+
+Реалізуючи парсер HTML, важливо бути готовим до неочікуваних змін у HTML-структурі та робити код максимально адаптивним.
 
 ## Дивись також:
 
-1. Офіційний репозиторій Gumbo на GitHub: https://github.com/google/gumbo-parser.
-2. "Чому Gumbo": https://opensource.googleblog.com/2013/08/announcing-gumbo-new-c-html5-parser.html.
-3. Вікіпедія про DOM: https://uk.wikipedia.org/wiki/Document_Object_Model.
+- Офіційна сторінка Gumbo Parser: https://github.com/google/gumbo-parser
+- Завантаження та інструкції до htmlcxx: http://htmlcxx.sourceforge.net/
+- Огляд парсерів HTML для C++: https://www.slant.co/topics/1234/~best-html-parsers-for-cplusplus

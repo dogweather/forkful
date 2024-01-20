@@ -1,7 +1,8 @@
 ---
-title:                "פענוח תאריך ממחרוזת"
-html_title:           "Bash: פענוח תאריך ממחרוזת"
-simple_title:         "פענוח תאריך ממחרוזת"
+title:                "ניתוח תאריך ממחרוזת"
+date:                  2024-01-20T15:36:37.011891-07:00
+html_title:           "Arduino: ניתוח תאריך ממחרוזת"
+simple_title:         "ניתוח תאריך ממחרוזת"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,32 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פָּרסִינְג של תאריך ממחרוזת היא לתמרור נתונים ממחרוזת כדי להשיג תאריך שהמחשב יכול להבין. מתכנתים מבצעים את זה כדי לנצל את התאריך באופן שאינו אפשרי כאשר התאריך מגיע כמחרוזת.
 
-## איך ל:
-הנה דוגמא לקוד שיבצע זאת ב-Fish shell:
+פענוח תאריך ממחרוזת זהו תהליך שבו מתרגמים מידע ממחרוזת לתאריך מובנה - משהו שמחשב יכול לעבוד איתו. מתכנתים עושים את זה כאשר הם צריכים לנהל תאריכים להצגה, אחסון או השוואות.
+
+## כיצד לעשות:
+
+ב-Fish Shell, לפרס את התאריך עושים תוך שימוש בכלים פנימיים כמו `string` ופקודות כמו `date`.
 
 ```Fish Shell
+# לדוגמה, כדי לפרס תאריך במבנה yyyy-mm-dd
+set date_str "2023-03-15"
+set day (string sub -s 9 -l 2 $date_str)
+set month (string sub -s 6 -l 2 $date_str)
+set year (string sub -s 1 -l 4 $date_str)
 
-set date_string "2021-07-14"
-set formatted_date (date -ud $date_string +"%d/%m/%Y")
+# משתמשים בפקודת `date` להמרה
+set parsed_date (date -j -f "%Y-%m-%d" "$year-$month-$day" "+%A, %d %B %Y")
 
-echo $formatted_date
+# הדפסת התאריך המובן
+echo $parsed_date
 ```
 
-תוצאת הדוגמה היא:
+פלט דוגמא:
 ```
-14/07/2021
+Wednesday, 15 March 2023
 ```
 
-## הטבלה 
-1. המסגרת ההיסטורית: Fish Shell מתמקד בעיקר בפונקציונליות פשוטה וגבישה. המטרה העיקרית של שפת התכנות הזו היא להקל על שימוש המשתמש.
-2. אלטרנטיבות: באלתרנטיבות אחרות כמו bash או zsh, אתה יכול למצוא את אותה התנהגות עם שינויים קלים בדקדוק. זה יכול להיות מתסכל עבור מתכנתים שלא מבינים את השפה המקורית.
-3. האם ידעת? בהינתן שFish Shell הוא shell אינטראקטיבי, הוא משתמש ב "innerHTML" במקום "innerHTML" אחר בדיוק כמו שJavaScript עושה.
+## צלילה לעומק
 
-## ראה גם:
-1. [דוקומנטציה של Fish Shell](https://fishshell.com/docs/3.0/index.html) 
-2. [טיפים לשפת תכנות Fish Shell](https://github.com/jorgebucaran/awesome-fish) 
-3. [ספר יבש Fish Shell](https://fishshell.com/docs/3.1/tutorial.html) 
+בעבר, עיבוד תאריכים היה עניין מסורבל יותר ודרש שימוש בכלים נפרדים או כתיבת פונקציות מורכבות. היום, מעטפות כמו Fish Shell מצויידות בפונקציונליות עשירה שמקלה על זה. ישנם גם אלטרנטיבות כמו התכנית `dateutils` הכוללת פקודה בשם `dconv` להמרה של תאריכים. בתהליך הפרסינג חשוב לשים לב לפורמט של המידע המקורי ולעמוד בתקנים הרלוונטיים כדי להבטיח תקינות ותאימות.
 
-שימו לב, Fish Shell היא שפת תכנות פשוטה ועוצמתית שכדאי להכיר!
+## ראה גם
+
+- [תיעוד של Fish Shell על מניפולציות מחרוזת](https://fishshell.com/docs/current/index.html#string)
+- [דף ידע על פקודת `date`](https://linux.die.net/man/1/date)
+- [אתר הבית של `dateutils`](http://www.fresse.org/dateutils/)

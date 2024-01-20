@@ -1,6 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
-html_title:           "Bash: Tolke en dato fra en streng"
+date:                  2024-01-20T15:36:32.407507-07:00
+html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,39 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Parsing av en dato fra en streng er prosessen med å lese en dato skrevet i tekstformat og omdanne den til en datotype som forstås av programmet. Programmører gjør dette for å jobbe mer effektivt med datoer og tider.
+Parsing av dato fra en streng betyr å omdanne tekst til et dato-objekt. Programmerere gjør dette for å enkelt manipulere og sammenligne datoer, og for å integrere brukerinput i programmer.
 
 ## Hvordan:
-
-Her er et eksempel på Hvordan parse en dato fra en streng i Haskell.
+For å parse en dato i Haskell, bruk biblioteket `time` og funksjonen `parseTimeM`. Her er et eksempel:
 
 ```Haskell
 import Data.Time
 
-readDate :: String -> Maybe Day
-readDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
+parseDate :: String -> Maybe Day
+parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+
+main :: IO ()
+main = do
+    let dateString = "2023-04-05"
+    print $ parseDate dateString
 ```
-Du kan prøve det slik:
+
+Kjører du dette vil utdata være:
 
 ```Haskell
-*> readDate "2022-03-01"
-Just 2022-03-01
-*> readDate "Ikke en dato"
-Nothing
+Just 2023-04-05
 ```
 
+Hvis du gir en ugyldig dato, vil funksjonen returnere `Nothing`.
+
 ## Dypdykk
-
-Parsing av dato fra en streng har vært en viktig del av programmering siden begynnelsen, da data ofte blir gitt i menneskelig lesbare formater som strenger, men krever konvertering til mer håndterbare formater for beregning.
-
-Alternativt, kan vi bruke biblioteker som `datetime` eller `time` i Haskell for mer komplekse format.
-
-I Haskell, funksjonen `parseTimeM` er del av `Data.Time.Format` modulen. Det bruker en streng mal ("%Y-%m-%d" i dette tilfellet) for å matche og konvertere datoene.
+Historisk har datainnlesing og -parsing vært et vanlig problem. I Haskell lar `time` biblioteket brukere enkelt håndtere datoer og klokkeslett. Det finnes alternativer som `Data.Time.Calendar` og `Data.Time.Clock`, som tilbyr mer funksjonalitet for spesifikke situasjoner. Parsing av datoer innebærer å tolke strenger basert på forventet mønster – i vårt eksempel `%Y-%m-%d` for året, måneden og dagen.
 
 ## Se Også
+For mer informasjon om `time` biblioteket, sjekk ut:
 
-For mer informasjon, sjekk ut disse lenkene:
-
-- [Data.Time.Format documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Stack Overflow: How to convert String to Data.Time in Haskell?](https://stackoverflow.com/questions/3030675/how-to-convert-string-to-data-time-in-haskell)
+- Hackage `time` pakken: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)

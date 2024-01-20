@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:32:45.998359-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,43 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Att Parse HTML med Lua
-
 ## Vad & Varför?
 
-Att parse HTML handlar om att tolka en HTML-sträng strukturerat. Programmerare gör det för att bearbeta webbdata eller skrapa specifika information från webbsidor.
+Parsing HTML betyder att du läser och tolkar HTML-kod så att du kan manipulera eller extrahera specifik data från den. Programmerare parser HTML för att automatisera webbskrapning, databearbetning, eller för att integrera externa webbinnehåll i sina applikationer.
 
-## Hur fungerar det?
+## Hur gör man:
 
-Kodexempel och exempel på resultaten nedan:
+För att parse HTML i Lua, kan vi använda `lua-html` biblioteket. Här är ett grundläggande exempel:
 
-```Lua
--- Använder Lua-htmlparser biblioteket
-local htmlparser = require "htmlparser"
+```lua
+local html = require("html")
 
-local root = htmlparser.parse('<h1>Hello World!</h1>')
+local code = [[
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+    <p>This is a test paragraph.</p>
+</body>
+</html>
+]]
 
-for _, element in ipairs(root:select('h1')) do
-    print(element:getcontent())  -- Skriver ut "Hello World!"
+local parsed = html.parse(code)
+for _, element in ipairs(parsed:select("p")) do
+    print(element:getcontent())
 end
 ```
 
-Testa denna kod, resultatet kommer att skrivas ut på skärmen. Egentligen kan du med kåda strängar parse mer komplicerade HTML-strukturer och extrahera nödvändig information.
+Sample output:
+```
+This is a test paragraph.
+```
 
-## Djup Dykning
+## Djupdykning
 
-HTML-parsering har varit nödvändig sedan början av webbens tid. Eftersom HTML är grunden till de flesta webbsidorna, har behovet av att tolka och manipulera det alltid funnits.
+HTML-parsing har funnits ända sedan webben blev populär. Tidiga verktyg var ofta skräddarsydda och bräckliga. Numera finns det robusta bibliotek som `lua-html`. Alternativa bibliotek som `luasoup` eller inbyggda funktioner i web frameworks kan också användas. När du parser HTML är det viktigt att hantera illa formaterad HTML, vilket är vanligt. `lua-html` hanterar detta fint genom sin förmåga att korrigera och tolka oregelbunden HTML.
 
-Det finns olika metoder att parsea HTML, som att använda reguljära uttryck, men dessa metoder kan vara problematiska. Lua-htmlparser och andra liknande bibliotek är utformade för att hantera HTML:s komplexa natur.
+## Se även:
 
-När det gäller implementation av detaljer fungerar lua-htmlparser genom att bygga upp ett DOM (Document Object Model) träd, vilket tillåter effektiv navigering och manipulering av HTML-strukturen.
+För mer om Lua och HTML-parsing, kolla in följande resurser:
 
-## Se också
-
-För mer information, kolla in följande länkar:
-
-1. [Document Object Model (DOM) på MDN](https://developer.mozilla.org/sv-SE/docs/Web/API/Document_Object_Model/Introduction)
-2. [Regular Expression Parsing vs. HTML parsing](https://stackoverflow.com/questions/590747/using-regular-expressions-to-parse-html-why-not)
-3. [Lua-htmlparser på GitHub](https://github.com/msva/lua-htmlparser) 
-
-Det var allt för denna introduktion på att parsea HTML med Lua. Tack för att du läste!
+- Lua Users Wiki om webbprogrammering: [http://lua-users.org/wiki/ProgrammingInLuaWebProgramming](http://lua-users.org/wiki/ProgrammingInLuaWebProgramming)

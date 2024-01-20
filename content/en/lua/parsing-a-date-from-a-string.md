@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:37:15.204476-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,36 +13,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string in programming involves reading a text input in the format of a date (such as '12/01/2021') and transforming it into a data representation that the program can use. This is an essential task for handling user input, processing data from APIs or databases, and for various other use cases.
+Parsing a date from a string means converting text that represents a date into a format a program can understand and work with. Programmers do it because systems often receive dates as text, and they need to compare, store, or manipulate these dates programmatically.
 
 ## How to:
 
-Lua does not have a built-in date parsing method. But, thanks to its string manipulation functions, we are able to parse dates from strings.
+Lua doesn't have a built-in date parser, but you can get the job done with `os.time` and pattern matching. Let's say you've got a date string `date_str` and you want to turn it into a table that Lua can handle:
 
-Let's say we have a date in this format 'dd/mm/yyyy'. Here's a simple example in Lua:
+```lua
+local date_str = "2023-04-05" -- ISO 8601 format
+local pattern = "(%d+)-(%d+)-(%d+)"
+local year, month, day = date_str:match(pattern)
+local date_table = {year = year, month = month, day = day}
 
-```Lua
-function stringToDate(dateStr)
-    local day, month, year = dateStr:match("(%d+)/(%d+)/(%d+)")
-    return { day = tonumber(day), month = tonumber(month), year = tonumber(year) }
-end
-
-local date = stringToDate("12/01/2021")
-print(date.day, date.month, date.year) -- outputs: 12 01 2021
+print(os.time(date_table)) -- Sample output: 1679785200
 ```
-On running this script, the Lua interpreter will print `12 01 2021`, representing day, month, and year, respectively.
 
-## Deep Dive 
+And that's your date, parsed and ready!
 
-Lua, a lightweight scripting language, doesn't provide an extensive date-time API like Python or JavaScript. It only offers a simple `os.date` function that formats current time or a given timestamp. Hence, to parse a date from a string, programmers need to resort to string manipulation.
+## Deep Dive
 
-An alternative approach is to use Lua-based libraries, such as lua-date, which provide higher-level date and time manipulation functions. Lua-date can handle different date formats and timezones, providing a more flexible solution.
+Lua is quite minimalist, so for parsing dates, you often roll your own solution or use a library. Historically, handling dates in Lua was mostly manual, involving string pattern matching and the `os.date` and `os.time` functions.
 
-The implementation detail of our script uses a basic regular expression to extract day, month, and year from the string, which are then converted to a number using `tonumber` due to Lua treating matched strings as text by default.
+If you're not into reinventing the wheel, check out libraries like `Penlight` or `date.lua`. These give you more flexibility and power when dealing with dates.
+
+As for implementation, remember that Lua's pattern matching isn't regex; it's simpler and sometimes that means a bit more work to parse complex date formats. Always test your patterns thoroughly!
 
 ## See Also
 
-For more details and advanced uses, you can check out the following resources:
-* [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
-* [Lua-date library on GitHub](https://github.com/Tieske/date)
-* [Lua String Manipulation Tutorial](https://www.tutorialspoint.com/lua/lua_strings.htm)
+- Lua 5.4 Reference Manual for `os.time` and pattern matching: https://www.lua.org/manual/5.4/
+- Penlight library's documentation: https://stevedonovan.github.io/Penlight/api/
+- date.lua library on GitHub for a dedicated date parsing solution: https://github.com/Tieske/date

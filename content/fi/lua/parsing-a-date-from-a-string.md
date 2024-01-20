@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:37:23.868183-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,37 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Päivämäärän jäsentäminen merkkijonosta muuntaa tekstimuotoisen päivämäärän ohjelmointikielelle ymmärrettävään muotoon. Ohjelmoijat tekevät tämän, koska päivämäärädatan käsittely vaatii standardimuodon tietojenkäsittelyä ja vertailua varten.
 
-Päivämäärän parsiminen merkkijonosta on prosessi, jossa puramme ja tulkitaan päivämäärä kirjallisesta muodosta sen numeeriseen esitysmuotoon. Ohjelmoijat tekevät tämän tiedon käsittelyn helpottamiseksi ja päivämäärätietojen käytön mahdollistamiseksi ohjelmissaan.
-
-## Näin se tehdään:
-
+## How to: (Kuinka tehdä:)
 ```Lua
--- Luo ensin päivämäärän desimaalimuotoinen esitys merkkijonosta
-pvm = os.date("*t", os.time({year=2021, month=11, day=23}))
+-- Simple date parsing in Lua
+local dateStr = "24/03/2023"
+local pattern = "(%d+)/(%d+)/(%d+)"
+local day, month, year = dateStr:match(pattern)
 
--- tulostetaan päivämäärä
-print(os.date("%x", os.time(pvm)))
+print("Day:", day, "Month:", month, "Year:", year)
 ```
-
-Tämän koodin ajamisen tuloksena saadaan seuraava:
-
-```Lua
-23/11/2021
+Sample output:
 ```
+Day: 24 Month: 03 Year: 2023
+```
+## Deep Dive (Syväsukellus)
+Lua ei tee oletusarvoisesti päivämäärien jäsentämistä, joten käytämme merkkijonojen käsittelyfunktioita. Historiallisesti päivämäärien jäsentäminen on vaihdellut alustojen ja paikallisten formaattien välillä. Vaihtoehtoina Lua-kirjastoissa on mm. os.date-funktio ja ulkopuoliset kirjastot, kuten LuaDate. Toteutuksessa on tärkeää huomioida formaatin yhdenmukaisuus ja mahdolliset poikkeukset, kuten karkausvuodet tai eri aikavyöhykkeet.
 
-## Syvempi perehtyminen:
-
-Historiallisesti päivämäärän parsiminen merkkijonosta on ollut välttämätöntä aikojen tiedonvälityksessä ja -käsittelyssä lukuisissa sovelluksissa, esimerkiksi logien analysointi ohjelmistojen virheenkorjauksessa. 
-
-Vaikka Lua tarjoaa yllä esitetyn funktion, on monia muitakin tapoja suorittaa tämä toiminto. Esimerkiksi käyttämällä luetteloita, regexejä tai muita kirjastoja, kuten DateLib.
-
-Päivämäärän parsiminen on luonteeltaan yksinkertainen operaatio, mutta sillä on omat sudenkuoppinsa. Lukuisia päivämäärämuotoja ja -standardeja (kuten ISO 8601) huomioonottaen, parsiminen voi olla haaste jos ei käytä oikeita työkaluja tai funktioita.
-
-## Katso myös:
-
-Lisätietoa ohjelmistokehityksestä Lua: 
-- [Lua manual](https://www.lua.org/manual/5.4/)
-- [Lua.org](https://www.lua.org/)
-- [Date and Time in Lua](http://lua-users.org/wiki/DateAndTime)
+## See Also (Katso Myös)
+- Lua-users Wiki: Date and Time - http://lua-users.org/wiki/DateAndTime
+- LuaDate library - https://github.com/Tieske/date

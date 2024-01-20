@@ -1,5 +1,6 @@
 ---
 title:                "HTMLの解析"
+date:                  2024-01-20T15:31:18.851109-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Elixir"
@@ -10,40 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何とその理由?)
+HTMLのパースとは、HTMLドキュメントから情報を抽出するプロセスです。Webスクレイピングや自動化のため、プログラマーは構造化されたデータが必要で、そのために行います。
 
-HTMLのパースは、HTMLファイルを解析し、その構造とデータを理解するプロセスです。プログラマーはこれを行うことで、ウェブページから情報を取得したり、HTMLの構造を操作したりすることが可能になります。
+## How to: (やり方:)
+ElixirにはHTMLをパースするためのライブラリがいくつかあります。ここでは`Floki`を使って基本的なパースを行う方法を見ていきましょう。まず、`Floki`をmix.exsに追加してインストールします。
 
-## どうやるか：
-
-ElixirでHTMLをパースする基本的なコード例を以下に示します。この例では、Flokiというライブラリを使用しています。
-
-```Elixir
-{:ok, html} = File.read("example.html")
-parsed_html = Floki.find(html, "h1")
-IO.inspect(parsed_html)
+```elixir
+defp deps do
+  [
+    {:floki, "~> 0.30.0"}
+  ]
+end
 ```
 
-上記のコードは、"example.html"というファイルを読み込み、その中のh1タグを探し、最後に結果を表示します。 Floki.find関数は、ターゲットのHTMLエレメントを探します。
+そして、HTMLドキュメントをパースしてみましょう。
 
-出力例：
+```elixir
+html = """
+<html>
+  <body>
+    <div class="content">
+      <p>Hello, Elixir!</p>
+      <p>Enjoy parsing.</p>
+    </div>
+  </body>
+</html>
+"""
 
-```Elixir
-[{"h1", [{"class", "header"}], ["Hello, world!"]}]
+{:ok, document} = Floki.parse_document(html)
+paragraphs = Floki.find(document, ".content p")
+
+IO.inspect paragraphs
 ```
 
-出力では、h1エレメント、その属性、およびテキスト内容を確認できます。
+出力は次のようになります。
 
-## 深掘り
+```
+[
+  {"p", [], ["Hello, Elixir!"]},
+  {"p", [], ["Enjoy parsing."]}
+]
+```
 
-HTMLのパースは、ウェブブラウザがHTMLを解析してレンダリングする工程の一部を再現するものです。貴重な情報がHTML内に埋め込まれているため、この技術はデータマイニングおよびウェブスクレイピングに広く利用されています。
+この例では、`.content`クラス内にある`<p>`タグのテキストを取得しました。
 
-ElixirでHTMLをパースするための代替手段としては、mochiweb_htmlやhtml5ever_elixirなどがあります。これらはいずれも異なる機能を提供します。適切なライブラリを選ぶためには、実際にパースしたいHTMLの内容と、そこから取得したい情報を考慮する必要があります。
+## Deep Dive (深掘り)
+HTMLパースの必要性は1990年代初頭にさかのぼります。その頃、ウェブが急成長し、情報の自動取得が必要になりました。`Floki`のようなライブラリは、`HTML5ever`という耐久性のあるパースアルゴリズムを使い、Elixirでパイプライン操作をサポートします。そうすることで、HTMLのノード選択や属性の抽出が簡単になります。
 
-FlokiライブラリはNokogiri（Rubyライブラリ）の"CSSセレクタによるノード選択"という機能をElixirで再現しようとして作られました。これにより、ElixirでもCSSセレクタを用いたHTMLパーシングが容易になりました。
+別の選択肢としては、`MochiWeb`や`html5ever`のElixirバインディングがあります。これらは異なるアプローチや性能を提供することがありますが、`Floki`はその使いやすさと直感的なAPIで人気があります。
 
-## 関連情報：
+実際のHTMLのパースでは、ドキュメントがどのような構造をしているか、どの要素が必要かを熟知することが求められます。パフォーマンスも考慮しなければならず、巨大なHTMLドキュメントや複雑なセレクタでは効率が重要になります。
 
-- [公式Elixirドキュメント](https://hexdocs.pm/elixir/Kernel.html)
-- [FlokiのGitHubリポジトリ](https://github.com/philss/floki)
-- [mochiweb_html GitHubリポジトリ](https://github.com/mochi/mochiweb)
+## See Also (関連情報)
+- [Floki GitHub repository](https://github.com/philss/floki)
+- [HexDocs for Floki](https://hexdocs.pm/floki/Floki.html)
+- [Web scraping with Elixir](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+- [Selectorgadget – CSS Selector tool](http://selectorgadget.com/)

@@ -1,5 +1,6 @@
 ---
 title:                "HTML 파싱"
+date:                  2024-01-20T15:30:58.493857-07:00
 html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Clojure"
@@ -10,48 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇인가 & 왜인가?)
+HTML을 파싱한다는 것은 HTML 문서에서 정보를 추출하는 것을 말합니다. 프로그래머들은 데이터를 자동으로 수집하거나 콘텐츠를 가공할 목적으로 이 작업을 합니다.
 
-HTML 파싱이란, HTML 코드 내부의 요소를 분석하고 구조화하는 과정을 의미합니다. 프로그래머들이 이를 사용하는 이유는 웹 페이지에서 필요한 정보를 추출하기 위해서입니다. 
+## How to: (어떻게 하나:)
+```clojure
+;; Clojure에서 HTML 파싱하기
 
-## 어떻게 하나요:
+;; Enlive 라이브러리 추가
+(require '[net.cgrand.enlive-html :as html])
 
-아래는 'clojure.data.xml' 라이브러리를 사용해 HTML을 파싱하는 Clojure 코드 예제입니다. 
+;; HTML 문서 불러오기
+(def page (html/html-resource (java.net.URL. "https://example.com")))
 
-```Clojure
-(ns html-parsing.core
-  (:require [clojure.data.xml :as xml]
-            [clojure.java.io :as io]))
+;; 특정 요소 추출하기
+(defn get-titles [page]
+  (html/select page [:title]))
 
-(defn parse-html [filepath]
-  (with-open [reader (io/reader filepath)]
-    (xml/parse reader)))
-
-(defn -main [& args]
-  (println (parse-html "/path/to/your/file.html")))
+;; 출력 예시
+(println (get-titles page))
+;; => ({:tag :title, :attrs nil, :content ["Example Domain"]})
 ```
 
-실행 결과:
+## Deep Dive (심층 탐구)
+HTML 파싱은 1990년대 초 웹 탄생 이래로 필요했습니다. 'Enlive'는 Clojure에서 매력적인 HTML 파싱 라이브러리 중 하나입니다. Enlive는 DOM을 제어하기보다는 쿼리와 변환을 이용해 데이터를 추출합니다. HTML을 파싱하는 다른 방법으로는 Jsoup, Hickory 등이 있지만, Enlive는 Clojure적인 접근 방식을 수용합니다. 
 
-```Clojure
-{:tag :html, :attrs {}, :content [...]}
-```
-
-## Deep Dive:
-
-HTML 파싱에 대해 더 알아볼 때 몇 가지 요소들을 고려해 보아야 합니다.
-
-1. **역사적 맥락** : HTML 파싱은 웹 크롤링, 웹 스크랩핑, 웹 데이터 마이닝 등 다양한 응용분야에서 중요하게 사용되어 왔습니다. 
-
-2. **대안** : 'clojure.data.xml' 외에도 'jsoup', 'webdriver', 'htmlcleaner' 등의 다른 라이브러리들도 HTML 파싱에 사용할 수 있습니다. 
-
-3. **구현 세부 정보** : 'clojure.data.xml'는 SAX (Simple API for XML)를 구현하여 파싱을 수행합니다. 이를 통해 대용량 XML과 HTML 문서를 효율적으로 처리할 수 있습니다.
-
-## 참고자료 :
-
-아래 링크들을 통해 HTML 파싱에 대한 추가 정보를 얻을 수 있습니다.
-
-1. [Clojure 공식 문서](https://clojure.org/)
-2. ['clojure.data.xml' GitHub page](https://github.com/clojure/data.xml)
-3. [Jsoup Documentation](https://jsoup.org/)
-4. [HtmlCleaner Documentation](https://htmlcleaner.sourceforge.io/)
+## See Also (더 보기)
+- Enlive 공식 문서: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+- Clojure에 대한 더 깊은 학습을 위한 공식 가이드: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- Clojure HTML 파싱을 위한 다른 라이브러리, Hickory: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)

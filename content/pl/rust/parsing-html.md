@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:34:03.643944-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,45 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Html w języku Rust: Przetwarzanie w locie
-
 ## Co i dlaczego?
+Parsowanie HTML to proces analizy kodu HTML i przekształcania go w użyteczne struktury danych. Programiści to robią, by manipulować i korzystać z zawartości stron internetowych – ekstrakcja danych, testy aplikacji webowych, itp.
 
-Przetwarzanie HTML to proces analizowania kodu HTML na strukturę, którą program może zrozumieć. Programiści wykonują to działanie, aby manipulować, wydobywać dane lub tworzyć dynamiczne interakcje z treścią HTML.
+## Jak to zrobić?
+Użyjemy crate'a `scraper` – to Rustowa biblioteka do parsowania HTML.
 
-## Jak to zrobić:
-
-Załóżmy, że mamy bibliotekę Rust o nazwie `select.rs`, która umożliwia przetwarzanie i manipulowanie treścią HTML. 
-
-```Rust
-use select::document::Document;
-use select::predicate::Name;
+```rust
+use scraper::{Html, Selector};
 
 fn main() {
-    let html = r#"<p>Witaj, świecie!</p>"#;
+    let html_content = r#"
+        <html>
+            <body>
+                <p class='greeting'>Cześć, Rustaceans!</p>
+            </body>
+        </html>
+    "#;
 
-    let document = Document::from(html);
-    
-    for node in document.find(Name("p")) {
-        println!("{}", node.text());
+    let document = Html::parse_document(html_content);
+    let selector = Selector::parse(".greeting").unwrap();
+
+    for element in document.select(&selector) {
+        println!("Znaleziony tekst: {}", element.inner_html());
     }
 }
 ```
-Po uruchomieniu powyższego kodu, wyjście będzie wyglądać tak:
 
-```Rust
-"Witaj, świecie!"
+Wynik działania:
+```
+Znaleziony tekst: Cześć, Rustaceans!
 ```
 
-## W głąb tematu
+## Wgłębiamy się
+Parsowanie HTML w Rust zaczęło się od prostych parserów, ale z czasem ewoluowało do bardziej wyrafinowanych bibliotek, takich jak `scraper`. Zamiast `scraper`, można użyć `select` lub `html5ever`, jeśli szukasz większej kontroli lub wydajności.
 
-**Kontekst historyczny** - Początkowo przetwarzanie HTML nie było tak różnorodne i zaawansowane. Z czasem jednak, gdy web zaczął się rozwijać, rozpoznawanie i manipulowanie kodem HTML stało się nieodzownym elementem tworzenia stron internetowych.
+Głębokość parsowania HTML zależy od potrzeb: można szukać tylko określonych tagów, atrybutów czy klas, lub przechodzić przez cały dokument. Implementacja w `scraper` polega na używaniu selektorów CSS do lokalizowania danych, które chcemy wyciągnąć.
 
-**Alternatywy** - Istnieje wiele alternatyw do przetwarzania html innych językach programowania, takich jak JSoup dla Javy, BeautifulSoup dla Pythona itd. Wybór odpowiedniej metody zależy od konkretnego projektu, środowiska rozwoju i preferencji programisty.
-
-**Szczegółowa implementacja** - `select.rs` działa poprzez przeprowadzenie przejścia przez drzewo DOM DOM (Model Obiektowy Dokumentu), identyfikując elementy pasujące do określonego predykatu. W powyższym przykładzie, użyliśmy predykatu `Name` do odszukania wszystkich znaczników `<p>`.
-
-## Zobacz także
-
-1. Dokumentacja `select.rs` [link](https://docs.rs/select)
-3. Source code examples [link](https://github.com/utkarshkukreti/select.rs).
+## Zobacz również
+- [Dokumentacja crate'a `scraper`](https://docs.rs/scraper/)
+- [Rust Cookbook - Parsing HTML](https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html)

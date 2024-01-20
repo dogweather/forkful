@@ -1,7 +1,8 @@
 ---
-title:                "Analiza składniowa HTML"
-html_title:           "Gleam: Analiza składniowa HTML"
-simple_title:         "Analiza składniowa HTML"
+title:                "Przetwarzanie HTML"
+date:                  2024-01-20T15:30:01.443421-07:00
+html_title:           "Bash: Przetwarzanie HTML"
+simple_title:         "Przetwarzanie HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,37 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Parsing HTML, czyli analiza kodu HTML, pozwala programistom wydobyć dane z dokumentów HTML. Robimy to, by przetworzyć strukturyzowaną zawartość internetową na użyteczne informacje, czy to w celu indeksowania, scrapingu danych czy innych operacji.
 
-Analiza HTML (parsing HTML) to proces wyodrębniania danych z kodu HTML. Robimy to, aby skutecznie manipulować, analizować i używać struktur danych zawartych w kodzie internetowego dokumentu.
-
-## Jak to zrobić:
-
-Bash nie jest najbardziej odpowiedni do parsowania HTML, ale możemy uzyskać pewne wyniki z użyciem narzędzi jak `grep`, `sed` lub `awk`.
+## How to: (Jak to zrobić:)
+Bash nie jest idealny do parsowania HTML, ale w razie potrzeby możesz użyć narzędzi jak `grep`, `sed`, `awk`, a najlepiej `xmllint` czy `pup`.
 
 ```Bash
-$ echo '<div class="klasa">Cześć, Świecie!</div>' | grep -oP '(?<=class="klasa">).*(?=</div>)'
-Cześć, Świecie!
+# Pobierz tytuł strony za pomocą xmllint
+curl -s http://example.com | xmllint --html --xpath '//title/text()' 2>/dev/null
+
+# Użycie pup do wydobycia linków
+curl -s http://example.com | pup 'a attr{href}'
 ```
 
-Lepiej uzyć specjalistycznych narzędzi jak `pup` lub `hxselect` z `HTML-XML-utils`.
-
-```Bash
-$ echo '<div class="klasa">Cześć, Świecie!</div>' | pup 'div.klasa text{}'
-Cześć, Świecie!
+Wyjście może wyglądać następująco:
+```
+Strona Przykładowa
+http://example.com/link1
+http://example.com/link2
 ```
 
-## Dogłębna analiza
+## Deep Dive (Dogłębna analiza)
+Historia parsowania HTML jest tak stara jak i samo HTML. Początkowo polegała na prostych skryptach i narzędziach typu `grep`. Obecnie, lepsze do tego są specjalnie zaprojektowane języki i biblioteki, jak Beautiful Soup dla Pythona czy Nokogiri dla Ruby.
 
-Parsowanie HTML w Bash jest nieortodoksyjne i trudne. Bash jest powłością (shellem) systemu Unix zaprojektowaną do uruchamiania poleceń, a nie do analizy dokumentów. 
+Alternatywy dla Bash-a to wspomniane już Python, Ruby, czy nawet Node.js z różnorodnymi i efektywnymi parserami.
 
-Histerycznie wiele narzędzi Bash-a, takich jak `grep`, `sed`, i `awk` były używane do analizy danych, ale nie są idealne do analizy HTML ze względu na skomplikowaną naturę języka HTML. 
+Parsowanie HTML w Bashu to przeważnie kombinowanie z wyrażeniami regularnymi i narzędziami tekstowymi. Nie jest to idealne, bo HTML nie jest regularnym językiem i może prowadzić do błędów, ale w prostych przypadkach może się sprawdzić. Ważne jest, aby używać narzędzi, które respektują strukturę XML, jak `xmllint`.
 
-Alternatywą mogą być dedykowane narzędzia do parsowania HTML jak `pup` czy `hxselect` z `HTML-XML-utils`, które są dedykowane do analizy składniowej języka HTML. Utworzone specjalnie z myślą o HTML, od początku są projektowane, aby właściwie interpretować i manipulować tą skomplikowaną strukturą danych.
-
-## Zobacz też
-
-- Dokumentacja Bash: https://www.gnu.org/software/bash/manual/bash.html
-- Man page dla `grep`: https://man7.org/linux/man-pages/man1/grep.1.html
-- Dokumentacja `pup`: https://github.com/ericchiang/pup
-- Dokumentacja `HTML-XML-utils`: https://www.w3.org/Tools/HTML-XML-utils/README
+## See Also (Zobacz również)
+- `[Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)` - dokumentacja do parsera dla Pythona.
+- `[Nokogiri Website](https://nokogiri.org/)` - strona główna parsera dla Ruby.
+- `[pup GitHub Repo](https://github.com/EricChiang/pup)` - projekt pup na GitHubie, dla narzędzia działającego z linii komend.
+- `[xmllint Manual](http://xmlsoft.org/xmllint.html)` - manual do xmllint, narzędzia do XML i HTML.

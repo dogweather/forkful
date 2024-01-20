@@ -1,7 +1,8 @@
 ---
-title:                "Analyser une date à partir d'une chaîne"
-html_title:           "Clojure: Analyser une date à partir d'une chaîne"
-simple_title:         "Analyser une date à partir d'une chaîne"
+title:                "Analyse d'une date à partir d'une chaîne de caractères"
+date:                  2024-01-20T15:35:45.492872-07:00
+html_title:           "Arduino: Analyse d'une date à partir d'une chaîne de caractères"
+simple_title:         "Analyse d'une date à partir d'une chaîne de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ? 
+## What & Why? / Quoi et Pourquoi ?
+Extraire une date d'une chaîne de caractères permet de comprendre et manipuler des informations temporelles. Les programmeurs le font pour traiter des dates dans différents formats et pour les intégrer dans des opérations logiques.
 
-La conversion d'une date d'une chaîne de caractères consiste à prendre une date exprimée en texte et à la convertir en un format que le logiciel peut utiliser. Les programmeurs effectuent cette opération pour pouvoir effectuer des calculs avec des dates, les comparer, les stocker de manière plus efficace, etc.
-
-## Comment faire :
-
-Pour parseur une date d'une chaîne de caractère en utilisant Fish Shell, vous devez utiliser la commande `date` avec l'option `-d`. Voici un exemple:
-
+## How to / Comment faire :
 ```Fish Shell
-# Parse une date à partir d'une chaîne de caractères
-set date_string "2022-03-01 10:30:00"
-date -d "$date_string" "+%Y-%m-%d %H:%M:%S"
+# Exemple de parsing d'une date :
+set date_string "2023-03-15 10:00:00"
+set epoch_time (date -ud "$date_string" +"%s")
+echo $epoch_time
+
+# Sortie exemple :
+1678872000
 ```
 
-L'exécution de ce script renverra
+## Deep Dive / Plongée en Profondeur
+Historiquement, le shell a toujours été un outil pour manipuler du texte, y compris des dates. Fish Shell n'est pas différent, mais il est plus convivial. D'autres outils comme `dateutils`, `GNU date` ou des langages de script plus lourds (comme Python avec `datetime`) peuvent également effectuer le parsing. Concernant l'implémentation, la commande `date` sous Fish utilise les mêmes principes que les autres shells, mais la syntaxe est souvent plus épurée.
 
-```
-2022-03-01 10:30:00
-```
-
-## Plongée en profondeur :
-
-Historiquement, le parseur d'une date d'une chaîne de caractères était une tâche complexe du fait des différents formats de date existants. Aujourd'hui, la majorité des langages de programmation et des interpréteurs de commandes, comme Fish Shell, offrent un moyen direct pour le faire.
-
-En alternative à Fish Shell, il existe d'autres interpréteurs de commandes qui permettent de parser une date, comme Bash et Zsh, avec leur propre syntaxe.
-
-En ce qui concerne les détails de l'implémentation, l’interpréteur de commandes Fish Shell utilise la fonction `strptime()` de la bibliothèque C pour faire le parsing.
-
-## Voir aussi :
-
-Pour plus d'informations sur le Shell de poisson, consultez le [tutoriel officiel](https://fishshell.com/docs/current/tutorial.html) et le [manuel du langage de script](https://fishshell.com/docs/current/language.html).
+## See Also / Voir Aussi
+- [Fish Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Unix StackExchange discussion on date parsing in the shell](https://unix.stackexchange.com/questions/tagged/date)

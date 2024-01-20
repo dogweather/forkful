@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:31:34.562990-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why? - Quoi & Pourquoi ?
 
-Le parsing HTML, c'est l'analyse des éléments structurels d'une page web pour en extraire le contenu. Les développeurs le font pour manipuler, extraire des données ou rendre interactifs les éléments HTML.
+Le parsing HTML, c'est transformer du code HTML en une structure qu'on peut manipuler en programmation. On fait ça pour extraire des données, pour manipuler du contenu web, ou pour automatiser des interactions avec des sites.
 
-## Comment faire :
+## How to - Comment faire :
 
-Voici un exemple de code Gleam pour le parsing HTML.
-
-```Gleam 
+```gleam
+// Imaginons que vous importez une librairie de parsing HTML.
 import gleam/html
 
-fn main() {
-  let html = "<html><body><h1>Bonjour le monde!</h1></body></html>";
-  match gleam/html.parse(html) {
-    Ok(tree) -> 
-      io.println("Parsing réussi ! Voici l'arbre HTML:", tree)
-    Error(err) -> 
-      io.println("Erreur de parsing:", err)
-  }
+pub fn extract_titles(html: String) -> List(String) {
+  // Utilisez la librairie pour parser le HTML et obtenir les titres.
+  ...
 }
+
+// Utilisez votre fonction.
+let titles = extract_titles("<html>...</html>")
+io.debug(titles) // Affiche quelque chose comme: ["Titre 1", "Titre 2", "Titre 3"]
 ```
 
-Voici la sortie si tout se passe bien :
+(Remarque: Gleam n'a pas de librairie de parsing HTML intégrée. Vous devrez faire appel à une librairie externe ou interfacer avec du code Erlang/Elixir.)
 
-```
-Parsing réussi! Voici l'arbre HTML: { tag: "html", children: [ { tag: "body", children: [ { tag: "h1", innerHTML:  "Bonjour le monde!" } ] } ] }
-```
-## Plongée en profondeur
+## Deep Dive - Plongée en profondeur
 
-L'HTML a été introduit en 1993 par Tim Berners-Lee. Le parsing HTML a rapidement suivi pour permettre une interaction plus sophistiquée avec les pages web.
+History:
+Le parsing HTML n'est pas nouveau. Avec l'évolution du web, ces techniques sont devenues essentielles pour le web scraping et pour les tests automatisés de sites web.
 
-En ce qui concerne les alternatives, plusieurs langages ont des bibliothèques pour le parsing HTML. JavaScript avec jQuery, Python avec BeautifulSoup, pour en nommer quelques-uns.
+Alternatives:
+Avant Gleam, Erlang et Elixir étaient souvent utilisés pour le parsing HTML, avec des librairies comme `Floki`. En fait, vous pouvez toujours utiliser ces librairies avec Gleam via les capacités d’interopérabilité de la plate-forme BEAM.
 
-Pour faire du parsing HTML en Gleam, nous utilisons le crate Rust `scraper`. Il offre une API de haut niveau pour parcourir le document et extraire ce que nous voulons.
+Implementation:
+Faire du parsing de HTML à la main peut être compliqué car le HTML n'est pas toujours bien formé. C'est pourquoi la majorité des programmeurs Gleam préfèreront utiliser des librairies existantes, qui se chargent de gérer les cas tordus et les subtilités de la spécification HTML.
 
-## Voir également
+## See Also - Voir aussi
 
-- [Tutoriel BeautifulSoup pour Python](https://realpython.com/beautiful-soup-web-scraper-python/)
+- Documentation officielle de Gleam: https://gleam.run/
+- Repo GitHub pour découvrir des paquets Gleam: https://github.com/gleam-lang
+- Documentation de la librairie `Floki` pour Elixir (utilisable depuis Gleam): https://hexdocs.pm/floki
+- Guide pour interfacer Gleam avec Erlang/Elixir: https://gleam.run/book/tour/erlang-interop.html

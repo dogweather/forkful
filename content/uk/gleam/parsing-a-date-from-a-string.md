@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:36:37.546021-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Парсинг дати з рядка - це процес читання даних у вигляді тексту і перетворення їх на дату відповідного формату. Програмісти роблять це, щоб зручно та ефективно обробляти та маніпулювати датами в межах коду.
+## What & Why? (Що & Чому?)
+Parsing a date from a string is about converting text into a date format that a program can understand and work with. Programmers parse dates to handle and manipulate timelines, schedule events, and record time-stamped data.
 
-## Як це робити:
-У Gleam це можна зробити за допомогою бібліотеки `date_time`. Спочатку вам потрібно її імпортувати.
+## How to: (Як це зробити:)
+Gleam doesn't have a built-in date parsing function, so let's use `chrono` library which provides date and time functionality. First, add it to your `gleam.toml` dependencies:
 
-```Gleam
-import gleam/date_time.{StringParseError, convert_iso8601_date}
+```toml
+[dependencies]
+chrono = "~> 0.1"
 ```
+Here's a Gleam function to parse a date string:
 
-Тепер ви можете перетворювати стрічки у дати таким чином:
+```rust
+import chrono
 
-```Gleam
-let date_result = convert_iso8601_date("2020-01-01")
-case date_result {
-  Error(e: StringParseError) -> io.println(e)
-  Ok(date) -> io.println(date)
+pub fn parse_date_string(date_string: String) -> Result(chrono.DateTime, String) {
+  chrono.string_to_datetime(date_string)
+}
+```
+And using the function:
+
+```rust
+pub fn main() {
+  let date_result = parse_date_string("2023-04-01T12:30:00Z")
+  case date_result {
+    Ok(date) -> date
+    Error(e) -> e
+  }
 }
 ```
 
-Якщо ви запустите цей код, та стрічка "2020-01-01" буде перетворена в дату.
+Sample output might be a `DateTime` object or an error message.
 
-## Поглиблений огляд
-Парсинг дати з рядку став поширеним з виникненням потреби обробляти та представляти дати в коді. Існують альтернативні методи роботи з датами, такі як работа з датами як з числами. Однак, парсинг дати з рядка широко використовується через його зручність та гнучкість. Використання методу `convert_iso8601_date` в Gleam використовує стандарт формату дати ISO 8601. Помилки в обробці рядків перехоплюються та повертаються як тип `StringParseError`.
+## Deep Dive (Поглиблений аналіз):
+Historically, date parsing was a mess with numerous formats and the Y2K bug. Now, standards like ISO 8601 help. Alternatives to `chrono` include writing custom parsers or using other libraries, but `chrono` is handy for its simplicity and coverage of common use cases. Parsing involves error-handling, as input might not match the expected format.
 
-## Додатково
-2. Подробиці формату дати ISO 8601: [link](https://uk.wikipedia.org/wiki/ISO_8601)
+## See Also (Дивіться також):
+- [ISO 8601 Date format guide](https://en.wikipedia.org/wiki/ISO_8601)

@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:35:51.070035-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Das Parsen eines Datums aus einem String bezeichnet den Prozess der Umwandlung des Zeichenkettenformats eines Datums in ein tatsächliches Datumsobjekt, das von einem Programm verwendet werden kann. Programmierer machen das häufig, weil viele Systeme und Datenformate Daten in Zeichenkettenform zurückgeben.
+## Was & Warum?
+Das Parsen eines Datums aus einem String ist der Prozess, bei dem Datumswerte aus Textformaten extrahiert werden. Programmierer machen das, um Datumsangaben zu verarbeiten und manipulieren, oft für Anwendungen wie Kalender, Logfiles oder User-Input.
 
-## So geht's:
-Sie können den eingebauten "date" Befehl in der Fish Shell verwenden, um ein Datums-String zu parsen. Hier ist ein einfaches Beispiel, wie man das macht:
-
+## How to:
 ```Fish Shell
-# Definiere einen Datum-String
-string Datum="2022-03-14"
+# Datum aus String parsen
+set date_string "2023-04-02"
 
-# Parse das Datum mit dem "date"-Befehl
-date -d $Datum
+# Fish verwendet 'string match' und 'date' für einfaches Parsing
+set year (string match -r "\d{4}" $date_string)[1]
+set month_day (string match -r "\d{2}-\d{2}" $date_string)[1]
+
+# Ausgabe der Ergebnisse
+echo "Jahr: $year"
+echo "Monat und Tag: $month_day"
+
+# Datum mit 'date' Kommando konvertieren
+set full_date (date -j -f "%Y-%m-%d" $date_string +"%A, %d %B %Y")
+echo "Vollständiges Datum: $full_date"
+```
+Sample Output:
+```
+Jahr: 2023
+Monat und Tag: 04-02
+Vollständiges Datum: Sunday, 02 April 2023
 ```
 
-Der obige Code gibt das geparste Datum in der Form "Mon DD HH:MM:SS CET YYYY" aus.
+## Deep Dive
+Früher mussten Datumswerte oft mühsam per Hand zerlegt werden, bis Werkzeuge wie reguläre Ausdrücke und spezielle Funktionen in Programmiersprachen dies vereinfachten. In Fish Shell bietet das `date` Kommando diverse Möglichkeiten, mit Datums- und Zeitangaben umzugehen, was Fish neben seiner Scripting-Funktionalität nützlich für Dateioperationen und -verwaltung macht. Alternativen in anderen Shells oder Sprachen können komplexer sein, wie zum Beispiel Date-Parsing in Bash, das oft auf externe Tools wie `date` und `awk` angewiesen ist. Fishs Ansatz bleibt einfach: `string match` für das Pattern-Matching und Kombinationen mit `date` für die Formatierung.
 
-```Fish Shell
-# Beispiel Ausgabe
-Mon Mar 14 00:00:00 CET 2022
-```
-
-## Deep Dive:
-
-- Historischer Kontext: Der Gebrauch von Datumsparsing ist seit der Anfangszeit von UNIX weithin bekannt. Der "date"-Befehl, den wir in Unix-ähnlichen Systemen (wie die Fish Shell) sehen, hat seine Wurzeln in den 1970er Jahren.
-
-- Alternativen: Obwohl der "date"-Befehl universell genutzt wird, gibt es andere Tools wie "datetime" in Python, die ausgefeiltere Funktionen wie Zeitzonenumwandlungen und Zeitspannenberechnungen bieten.
-
-- Implementierungsdetails: Der "date"-Befehl in der Fish Shell verwendet die glibc-Funktion "strptime" für das Parsen von Datum-Strings. Sie bietet eine Vielzahl von Möglichkeiten, das Format Ihres Datum-Strings anzugeben.
-
-## Siehe auch:
-
-- Offizielle Dokumentation für den "date"-Befehl (https://linux.die.net/man/1/date)
-
-- Fish Shell GitHub Seite (https://github.com/fish-shell/fish-shell)
-
-- Fish Shell Programmierhandbuch (https://fishshell.com/docs/current/index.html)
+## See Also
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
+- GNU Coreutils 'date': https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- POSIX Shell Command Language: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html

@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:32:04.181978-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Haskell"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+HTML-parserointi tarkoittaa HTML-dokumentin rakenteen muuttamista ohjelmallisesti käsiteltävään muotoon. Ohjelmoijat tekevät tätä sisällön lukuun, koneelliseen käsittelyyn tai päästäkseen käsiksi sivun tietoihin, joita ei tarjota API:n kautta.
 
-HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen lukemista ja analysointia. Ohjelmoijat tekevät tämän ymmärtääkseen ja käsitelläkseen verkkosivujen sisältöä ohjelmoimallaan tavalla.
-
-## Kuinka näin:
-
-Tässä on yksinkertainen esimerkki HTML:n jäsentämisestä Haskellin "tagsoup" -kirjaston avulla
-
+## How to:
 ```Haskell
+-- Install the `tagsoup` library first:
+-- cabal install tagsoup
+
 import Text.HTML.TagSoup
 
-haeLinkit :: String -> [String]
-haeLinkit = 
-  map (fromAttrib "href") 
-  . filter (~== "<a href>")
-  . parseTags
+-- Etsi linkit HTML:stä
+findLinks :: String -> [String]
+findLinks html = [href | TagOpen "a" attrs <- parseTags html, ("href", href) <- attrs]
+
+-- Esimerkkikäyttö
+main :: IO ()
+main = do
+  let htmlContent = "<html><body><a href='http://example.com'>Example</a></body></html>"
+  print $ findLinks htmlContent
 ```
 
-Tämä funktio hakee kaikki linkit annetusta HTML-koodista.
-
-Esimerkki sen suorittamisesta:
-
-```Haskell
-> haeLinkit "<html><a href=\"http://example.com\"></a></html>"
+Sample output:
+```
 ["http://example.com"]
 ```
 
-## Syvempi sukellus
+## Deep Dive
+HTML-parseroinnin avulla kone voi ymmärtää ja käsitellä web-sivuja, jotka on suunniteltu ihmissilmälle. Haskellin 'TagSoup'-kirjasto on suosittu työkalu tähän, se tarjoaa joustavia funktioita syntaksiltaan viallisenkin HTML:n käsittelyyn. Vaihtoehtoja, kuten 'xml-conduit', on olemassa, mutta ne ovat tiukempia syntaksin suhteen. 'TagSoup' sivuuttaa virheet ja antaa kehittäjän keskittyä sisältöön. Historiallisesti, HTML:n parsiminen on ollut haasteellista johtuen epästandardista koodista ja monimutkaisista sivurakenteista. Haskell tarjoaa työkaluja tämän monimutkaisuuden hahmottamiseen funktio-ohjelmoinnin kautta.
 
-HTML-jäsentämisen käyttö on kasvanut verkkosivujen dynaamisuuden ja monimutkaisuuden kasvaessa. Historiallisesti ohjelmoijat ovat luoneet omia jäsentimiä, mutta nyt on saatavilla erilaisia kirjastoja, kuten Haskellin tagsoup.
-
-Kuten monien ohjelmointitehtävien kohdalla, myös HTML-jäsentämisessä on erilaisia tapoja. Yksi alternative jäsentämiselle on 'regex' tai säännölliset lausekkeet, mutta ne voivat olla hankalia ja virheherkkiä monimutkaisen HTML:n käsittelyssä.
-
-Jäsentämisen tekninen toteutus riippuu paljon käytetystä kirjastosta. Tagsoup-kirjasto esimerkiksi luo listan tunnisteista, joita voidaan sitten manipuloida.
-
-## Katso myös
-
-[Tagsoup-kirjaston dokumentaatio](http://hackage.haskell.org/package/tagsoup)
-
-[W3Schoolsin HTML-tutorial](https://www.w3schools.com/html/)
-
-[Haskell Café -keskustelualue](https://mail.haskell.org/pipermail/haskell-cafe/)
+## See Also
+- TagSoup library: http://hackage.haskell.org/package/tagsoup
+- XML-conduit library: http://hackage.haskell.org/package/xml-conduit
+- Functio-ohjelmointi Haskellissa: http://learnyouahaskell.com/chapters

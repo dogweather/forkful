@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:37:59.441410-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,57 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? (Mitä & Miksi?)
+Muunnetaan päivämäärät merkkijonoista ymmärrettävään muotoon. Taklataan käyttäjän syötteitä, tiedostojen logimerkintöjä ja päivämäärämuotojen epäjohdonmukaisuutta. Se on välttämätöntä tiedonhallinnassa ja automaatiossa.
 
-## Mitä ja Miksi?
-
-Parsing-päivämäärä merkkijonosta tarkoittaa, että jäsennämme päivämäärän merkkijonojen muodossa ja muutamme sen päivämääräobjektiksi, jota voimme käsitellä ohjelmoinnissa. Sitä tarvitaan, kun teemme ohjelmia, jotka lukevat tai tallentavat päivämäärärajoituksia merkkijonona.
-
----
-
-## Kuinka tehdä:
-
+## How to: (Kuinka tehdä:)
 ```PowerShell
-# Luodaan merkkijono, joka sisältää päivämäärän
-$päivämääräMerkkijono = "21.12.2022"
+# Yksinkertainen päivämäärän jäsentäminen
+$pvmMerkkijono = "25.03.2023"
+$pvmObjekti = [datetime]::ParseExact($pvmMerkkijono, "dd.MM.yyyy", $null)
+Write-Output $pvmObjekti
 
-# Muunnetaan merkkijono päivämääräksi
-$päivämäärä = [DateTime]::ParseExact($päivämääräMerkkijono, 'dd.MM.yyyy', $null)
+# Tulostaa: 25. maaliskuuta 2023 0.00.00
 
-# Tulostetaan päivämäärä
-Write-Output $päivämäärä
-```
-Esimerkkisuorituksen tulostus on: `21. joulukuuta 2022 0:00:00`
-
----
-
-## Syvällistä:
-
-1. **Historiallinen konteksti**:
-Parsing-päivämäärä merkkijonoista on yleinen tehtävä, joka on ollut olemassa ohjelmoinnin alkuaikojen jälkeen. PowerShellin syntaksi suorittaa tämän käyttämällä `ParseExact` -metodia.
-
-2. **Vaihtoehtoja**:
-Voit myös käyttää `DateTime.TryParse` -metodia provosoidaksesi virheitä, jos merkkijono ei ole suoritettavissa päivämääränä.
-
-```PowerShell
-$päivämääräMerkkijono = "21.12.2022"
-$onnistuuko = [DateTime]::TryParseExact($päivämääräMerkkijono, 'dd.MM.yyyy', $null, [System.Globalization.DateTimeStyles]::None, [ref]$päivämäärä)
-
-if($onnistuuko) {
-    Write-Output $päivämäärä
-} else {
-    Write-Output "Ei voitu muuntaa päivämääräksi"
+# Monimuotoista syötettä käsittelevä jäsentäminen
+$useitaMuotoja = @("25-03-2023", "2023/03/25", "March 25, 2023")
+$kulttuuri = [System.Globalization.CultureInfo]::InvariantCulture
+foreach ($muoto in $useitaMuotoja) {
+    $pvmObjekti = [datetime]::Parse($muoto, $kulttuuri)
+    Write-Output $pvmObjekti
 }
+
+# Tulostaa:
+# 25. maaliskuuta 2023 0.00.00
+# 25. maaliskuuta 2023 0.00.00
+# 25. maaliskuuta 2023 0.00.00
 ```
 
-3. **Rakentamistiedot**: 
-`ParseExact` -metodi ottaa 3 parametria: (1) merkkijonon, joka jäsennetään, (2) formaatilla esitetyt päivämäärän muotoilusäännöt, ja (3) kulttuuri-informaatio, jota käytetään jäsennyksessä. Jos tämä arvo on $null, käytetään nykyistä kulttuuria.
+## Deep Dive (Syväluotaus)
+Päivämäärien jäsentäminen merkkijonosta on ollut tarpeen päivämäärätietojen alkukausista lähtien, kun eri formaatteja käytettiin eri järjestelmissä. Historiallisesti se on ollut yksi yleisimmistä mutta haastavimmista ohjelmoinnin tehtävistä. TypeScript- ja JavaScript-kehittäjät käyttävät kirjastoja kuten Moment.js, kun taas Pythonissa on `datetime`-moduuli. PowerShellissä `[datetime]`-tyyppimuunnos ja `ParseExact`-metodit ovat kaksi tapaa tehdä töitä päivämäärien kanssa. Täsmällinen parsinta vaatii tiedon datan formaatista, kun taas enemmän jouston salliva `Parse` hoitaa useita formaatteja. Kulttuurin määrittäminen on tärkeää, sillä päivämääräformaatti voi vaihdella alueittain.
 
----
-
-## Katso myös:
-
-2. [DateTime.TryParse-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.tryparse?view=net-5.0)
-3. [DateTime.ParseExact-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.parseexact?view=net-5.0)
-
----
+## See Also (Katso Myös)
+- .NET:n dokumentaatio `DateTime`-luokasta: [DateTime Struct (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- Lisätietoa kulttuurikohtaisista muotoiluista: [CultureInfo Class (System.Globalization)](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
+- Microsoftin PowerShell-käsikirja: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)

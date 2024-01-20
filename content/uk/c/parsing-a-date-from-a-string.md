@@ -1,6 +1,7 @@
 ---
 title:                "Аналіз дати з рядка"
-html_title:           "C++: Аналіз дати з рядка"
+date:                  2024-01-20T15:34:45.059656-07:00
+html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 programming_language: "C"
 category:             "C"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і чому це важливо?
-Парсинг дати з рядка - це процес перетворення текстової рівніці, що представляє багато числових шматків, в практично значущі дати або часові етапи. Програмісти роблять це, щоб правильно розподілити та використати ці шматки в контексті дати чи часу.
+## What & Why? (Що та Чому?)
+Parsing a date from a string means pulling out date information from text. Programmers do this to make dates usable for operations like comparisons, sorting, or storage in a standardized format.
 
-## Як це зробити:
-```C 
-#include <time.h>
+## How to: (Як це зробити:)
+```C
 #include <stdio.h>
+#include <time.h>
 
 int main() {
+    const char *date_str = "2023-03-15";
     struct tm tm;
-    char buf[255];
-
-    printf("Enter a date (dd-mm-yyyy): ");
-    fgets(buf,255,stdin);
-    strptime(buf, "%d-%m-%Y", &tm);
-    printf("Year: %d; Month: %d; Day: %d; \n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
-
+    if (strptime(date_str, "%Y-%m-%d", &tm)) {
+        printf("Year: %d, Month: %d, Day: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    } else {
+        printf("Failed to parse the date.\n");
+    }
     return 0;
 }
 ```
-У вище поданому коді, ми записуємо стрічку рівнянь, перетворюємо її в числові значення дати і виводимо на екран.
+Sample Output:
+```
+Year: 2023, Month: 3, Day: 15
+```
 
-## Занурення у глибини
-Парсинг дати з рядка був складним завданням для програмістів протягом декількох декад. Ще у 70-х роках 20-го століття, коли С було вперше створено, програмісти повинні були писати власні бібліотеки для вирішення цієї проблеми. 
+## Deep Dive (Поглиблений Аналіз)
+Parsing dates from strings is common in C, especially before JSON became prevalent. In the early days, programmers mostly handled dates manually. `strptime()` is now our go-to for parsing, introduced in POSIX. It's not part of standard C, so check for compatibility. Alternatives? `sscanf()` - more manual, less safe. `strptime()` lets us specify the expected format and handles various locales. Implementation-wise, it fills a `struct tm` with info, which we can use as needed.
 
-Функція sscanf з стандартної бібліотеки С, що широко використовувалась у минулому, тепер вважається менш ефективною для парсингу дат. Альтернатива, 'strptime', у міру часу довела свою ефективність і тепер вважається надійнішим варіантом.
-
-## Більше інформації
-1. [Man Page для strptime](https://man7.org/linux/man-pages/man3/strptime.3.html)
-2. [C Library Functions - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/)
+## See Also (Дивіться також)
+- C Standard Library documentation: https://en.cppreference.com/w/c
+- POSIX `strptime` function details: http://man7.org/linux/man-pages/man3/strptime.3.html
+- Date and time tutorial in C: https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm

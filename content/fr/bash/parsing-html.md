@@ -1,6 +1,7 @@
 ---
 title:                "Analyse syntaxique de HTML"
-html_title:           "Bash: Analyse syntaxique de HTML"
+date:                  2024-01-20T15:30:05.820770-07:00
+html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Parser du HTML, c'est l'art de décortiquer et comprendre le contenu des pages web. On le fait pour extraire des infos, automatiser des tâches, ou alimenter des applis.
 
-Analyser du HTML, c'est extraire des données à partir d'un document HTML. Les programmeurs le font pour récupérer des informations d'une page web dans un format manipulable.
-
-## Comment faire:
-
-Utilisons `html-xml-utils`, un utilitaire propre pour le parsing HTML en Bash. Installez-le d'abord:
-
+## How to (Comment faire ?)
 ```Bash
-sudo apt-get install html-xml-utils
+# Utiliser curl pour récupérer le HTML
+html=$(curl -s https://exemple.com)
+
+# Utiliser grep pour extraire des données simples
+echo "$html" | grep -o '<title>[^<]*' | cut -d'>' -f2
 ```
 
-Ensuite, scrappez une page web avec sa structure intacte:
-
-```Bash
-curl https://example.com | hxnormalize -x
+Sortie échantillon:
+```
+Le titre de la page
 ```
 
-Maintenant, imaginez que vous voulez tous les liens `href` sur la page. Faites cela:
-
 ```Bash
-curl https://example.com | hxnormalize -x | hxselect -s '\n' 'a[href]' | cut -d'"' -f2
+# Pour des tâches plus complexes, utiliser xmllint
+echo "$html" | xmllint --html --xpath '//h1/text()' 2>/dev/null
 ```
 
-Voilà, c'est du scraping HTML en Bash.
+Sortie échantillon:
+```
+Le titre principal de la page
+```
 
-## Plongée profonde
+## Deep Dive (Plongée en profondeur)
+Historiquement, analyser du HTML avec des outils de ligne de commande comme awk, sed ou grep était courant, mais ces outils ne sont pas conçus pour le HTML. Leurs résultats manquent de fiabilité avec des structures HTML complexes.
 
-Les premiers parsers HTML ont été développés à la naissance du web, dans les années 90. Alternativement, vous pouvez utiliser des langages plus modernes comme Python ou Javascript qui ont des bibliothèques de parsing HTML robustes, telles que BeautifulSoup et Cheerio. Cependant, Bash reste une solution rapide et portable sans l'overhead d'un langage de script complet.
+Alternatives:
+- **BeautifulSoup** pour Python, très populaire pour des raisons de flexibilité et de facilité d'utilisation.
+- **Nokogiri** pour Ruby, puissant et bien intégré.
+- **Goquery** pour Go, inspiré de jQuery pour les mordus de Go.
 
-L'analyseur `html-xml-utils` fonctionne en construisant un arbre de documents à partir d'une page HTML, et en appliquant ensuite des filtres de sélection sur cet arbre pour extraire les informations souhaitées.
+Détails d'implémentation: Quand on analyse du HTML, c'est essentiel de respecter la structure du document (DOM). Les alternatives comme xmllint utilisent des parseurs HTML, qui saisissent la structure du DOM, contrairement aux regex ou grep.
 
-## Voir aussi:
-
-- Documentation officielle de `html-xml-utils`: http://www.w3.org/Tools/HTML-XML-utils/README
-- Tutoriel sur le Web Scraping avec Python et BeautifulSoup: https://www.dataquest.io/blog/web-scraping-tutorial-python/
-- Guide de débutant pour le Web Scraping en JavaScript avec Node.js: https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3/
+## See Also (Voir aussi)
+- Documentations `curl`: https://curl.haxx.se/docs/manpage.html
+- Tutoriel `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- `xmllint`: http://xmlsoft.org/xmllint.html
+- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
+- Nokogiri: https://nokogiri.org/
+- Goquery: https://github.com/PuerkitoBio/goquery

@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:33:56.035317-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing av HTML med Ruby: En Praktisk Guide
-
 ## Hva & Hvorfor?
-Parsing av HTML handler om å analysere og oversette html koden til et format som er mindre komplekst, og derfor mer håndterbart. Programmere gjør det for å manipulere, hente eller skrape data fra web-sider.
+Parsing av HTML betyr å lese og forstå HTML-koden slik at vi kan hente ut data eller endre innholdet. Programmerere gjør dette for å skrape nettinnhold, teste nettsider eller automatisere webinteraksjoner.
 
-## Hvordan gjøre: 
-Vi skal bruke en Ruby gem `Nokogiri` for vår oppgave. La oss prøve noen koder.
-
-Installer Nokogiri først med: `gem install nokogiri`.
+## Hvordan:
+Ruby har flere gems som lar oss parse HTML, men vi fokuserer på Nokogiri, et populært og kraftfullt verktøy.
 
 ```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(URI.open("https://www.example.com"))
+# Last ned og parse en HTML-side
+doc = Nokogiri::HTML(URI.open('https://example.com'))
 
-doc.css('h1').each do |title|
-  puts title.text
-end
+# Hent ut alle headingene
+headings = doc.css('h1, h2, h3').map(&:text)
+puts headings
+
+# Finn et spesifikt element med id
+paragraph = doc.at_css('#main-content p').text
+puts paragraph
+
+# Søk etter elementer med en klasse
+products = doc.css('.product-name').map(&:text)
+puts products
 ```
 
-Dette vil skrape og vise all tekst innkapslet i h1 tags fra "www.example.com”.
+Forventet output:
+```
+["Overskrift 1", "Underoverskrift 2", "Seksjonsoverskrift 3"]
+"Her er et avsnitt fra hovedinnholdet."
+["Produkt 1", "Produkt 2", "Produkt 3"]
+```
 
-## Dyp Dykk
-1) HTML parsing har en lengre historisk kontekst—fra webskraping til dataanalyse—og har endret hvordan vi interagerer med weben. 
-2) Alternativene til Nokogiri inkluderer hpricot og mechanize. Men Nokogiri er ofte foretrukket for sin raskhet og pålitelighet.
-3) Parsing av HTML med Ruby og Nokogiri involverer flere trinn: henting av HTML-dokumenter, traversering av DOM og henting av den nødvendige data.
+## Dykk dypere:
+Nokogiri er japansk for 'sågøy' og symboliserer gemsens evne til å "så"-gjennom HTML og XML. Det bygger på libxml2, en av de raskeste XML-parsere. Før Nokogiri, brukte Ruby-programmerere REXML, som er ren Ruby, men langsommere. Alternativer til Nokogiri inkluderer Oga og Hpricot, men Nokogiri er ofte foretrukket for sin hastighet og allsidighet.
 
-## Se Også
-1) [Nokogiri offisiell dokumentasjon](https://nokogiri.org/)
-2) [En detaljert guide til web-skraping med Ruby og Nokogiri](https://www.rubyguides.com/ruby-tutorial/html-parsing/)
-3) [Cookbook for å forstå HTML Parse-trær](https://tenderlovemaking.com/2009/12/04/html-tree-parsing-and-searching-with-nokogiri.html)
+Parsing av HTML er ikke bare å finne tags; moderne webapplikasjoner bruker JavaScript for å laste innhold dynamisk. Dette krever verktøy som Selenium eller Watir for å kontrollere en nettleser som kjører JavaScript før parsing.
+
+Når det gjelder parsing, er presisjon viktig. Feil håndtering av HTML kan føre til feil data eller manglende informasjon, spesielt med dårlig strukturerte HTML-dokumenter. Nokogiri kan navigere og rense opp selv i komplekse dokumenter, noe som gjør det til et uunnværlig verktøy for web scraping og dataekstraksjon.
+
+## Se Også:
+- Nokogiris offisielle nettsted: [http://nokogiri.org](http://nokogiri.org)
+- Ruby-Doc for Nokogiri: [https://rubydoc.info/github/sparklemotion/nokogiri](https://rubydoc.info/github/sparklemotion/nokogiri)
+- W3C's HTML/XHTML Validator: [https://validator.w3.org](https://validator.w3.org)
+- Selenium WebDriver for automatiserte tester og web scraping: [https://www.selenium.dev/documentation/en/webdriver/](https://www.selenium.dev/documentation/en/webdriver/)

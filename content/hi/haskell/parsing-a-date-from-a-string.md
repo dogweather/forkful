@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:37:37.228376-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,39 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why?
+"क्या और क्यों?"
 
-स्ट्रिंग से डेट का पार्स करना एक प्रक्रिया है, जिसमें हम टेक्स्ट रूप में दी गई तारीख को कंप्यूटर के समझने योग्य तारीख फॉर्मॅट में बदलते हैं। इसे प्रोग्रामर्स डेट से संबंधित ऑपरेशन्स और समन्वय (सिंख्रोनाइज़ेशन) को सीधे करने के लिए करते हैं।
+तारीख को स्ट्रिंग से पार्स करना मतलब स्ट्रिंग में लिखी तारीख को पढ़कर उसे किसी विशेष डेटा फॉर्मेट में बदलना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि अलग-अलग सिस्टम्स तारीख के डेटा को अलग फॉर्मेट में उपयोग और संग्रहित करते हैं।
 
-## कैसे करें:
+## How to:
+"कैसे करें:"
 
-Haskell में, हम पैकेज `Data.Time` का उपयोग करके यह कर सकते हैं। यहां कुछ कोड के उदाहरण और आउटपुट हैं:
+Haskell में `Data.Time` लाइब्रेरी का उपयोग करके आसानी से तारीख को पार्स कर सकते हैं। नीचे उदाहरण दिया गया है:
 
 ```Haskell
 import Data.Time
 
-parseDate :: String -> Day
-parseDate input = parseTimeOrError True defaultTimeLocale "%Y-%m-%d" input
+parseDate :: String -> Maybe Day
+parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+
+main :: IO ()
+main = do
+  let dateString = "2023-03-28"
+  print $ parseDate dateString
 ```
 
-उदाहरण के लिए:
-```Haskell
-parseDate "2021-09-15"
+यह कोड निम्न आउटपुट देगा:
+
+```
+Just 2023-03-28
 ```
 
-आउटपुट:
-```Haskell
-2021-09-15
-```
+## Deep Dive:
+"गहराई से जानकारी:"
 
-## गहरा डाइव:
+तारीख को पार्स करने की आवश्यकता पुराने समय से है, जब से कंप्यूटर्स में तारीख और समय के प्रबंधन की जरूरत पड़ी। `Data.Time` हास्केल की मानक लाइब्रेरी है, पर `time` पैकेज के अलावा भी `chronos`, `thyme` जैसे विकल्प मौजूद हैं। इनपुट स्ट्रिंग को पार्स करने के लिए `parseTimeM` फंक्शन `True` फ्लैग के साथ मोनैडिक कंटेक्स्ट में सेफली पार्स करता है, जिससे गलत फॉर्मेट होने पर `Nothing` रिटर्न होता है। 
 
-1. **ऐतिहासिक संदर्भ**: Haskell के पुराने संस्करणों में, `Data.Time` पैकेज मौजूद नहीं था। इसके बजाय, `time` पैकेज का उपयोग किया जाता था।
-2. **विकल्प**: `thyme` और `time` जैसे कुछ अन्य पैकेज्स भी उपलब्ध हैं, जो डेट पार्सिंग का समर्थन करते हैं।
-3. **आधार विवरण**: `parseTimeOrError` फ़ंक्शन तारीख की स्ट्रिंग को पार्स करता है, रूप रेखा (मार्कअप) निर्दिष्ट करने के लिए एक फ़ॉर्मेट स्ट्रिंग को स्थानांक की तरह उपयोग करता है। यदि पारिंग विफल होती है, तो इसे एक त्रुटि उत्पन्न करता है।
+फंक्शन के अंदर `"%Y-%m-%d"` एक डेट फॉर्मेट है, जो साल-महीना-दिन का प्रतिनिधित्व करता है। इसका उपयोग करके यह धारणा की जाती है कि इनपुट स्ट्रिंग इसी फॉर्मेट में है।
 
-## देखें भी:
+## See Also:
+"और देखें:"
 
-व्या पार्सिंग के सम्बंध में अधिक जानकारी के लिए, निम्नलिखित स्रोतों की जांच करें:
-
-1. [Haskell time package](https://hackage.haskell.org/package/time)
+- Haskell `time` library documentation: https://hackage.haskell.org/package/time
+- Haskell Date and Time tutorial: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/date-and-time
+- Alternative libraries for date and time in Haskell: 
+  - https://hackage.haskell.org/package/chronos
+  - https://hackage.haskell.org/package/thyme

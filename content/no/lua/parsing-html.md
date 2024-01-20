@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:33:12.687950-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,35 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Parsing av HTML er å tolke og omforme HTML-koden til en struktur programmer kan jobbe med. Vi gjør dette for å hente ut eller manipulere data fra nettsider.
 
-Å parse HTML er prosessen med å analysere HTML-koden til en nettside for å forstå dens struktur. Programmerere gjør dette for å hente, manipulere, eller endre spesifikk data fra websider.
-
-## Slik gjør du det:
-
-Lua gir ikke innebygd støtte til HTML parsing. Vi bruker et tredjeparts bibliotek som "htmlparser". Installere det med luarocks:
-
+## Slik gjør du:
 ```Lua
-luarocks install htmlparser
-```
+local htmlparser = require("htmlparser")
 
-Her er et enkelt eksempel på hvordan du kan bruke det:
+local html = [[
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eksempelside</title>
+</head>
+<body>
+    <h1>Hei, Norge!</h1>
+    <p>Dette er en eksempeltekst.</p>
+</body>
+</html>
+]]
 
-```Lua
-local htmlparser = require "htmlparser"
-
-local html = [[<body>Hei, verden!</body>]]
 local root = htmlparser.parse(html)
-local body = root("body"):get(1)
+local headings = root:select("h1")
 
-print(body:getcontent())  -- Outputs: Hei, verden!
+for _, heading in ipairs(headings) do
+    print(heading:getcontent())  -- Outputter teksten innenfor <h1>-taggen
+end
+```
+Output:
+```
+Hei, Norge!
 ```
 
-## Dyp Dykk
-
-HTML-parsing er ikke en ny idé. Internett har revolusjonert hele verden, og det var behovet for å analysere og manipulere nettinnhold. Alternativene til "htmlparser" inkluderer "htmlua", som gir mer fleksibilitet, men kan være mer komplisert for nybegynnere.
-
-Ved parsing, "htmlparser" konverterer HTML-teksten til et sett med noder, noe som gjør det lettere å navigere i HTML. Det er basert på "tagsoup" -paradigmet, som er i stand til å håndtere ugyldig og dårlig formatert HTML, noe som er et vanlig scenario i det virkelige liv.
+## Dypdykk
+Parsing av HTML startet for å kunne hente ut og bearbeide informasjon fra nettsider. Rundt midten av 90-tallet, med økningen av internettet, ble behovet større. Alternativer til Lua for HTML-parsing inkluderer biblioteker i språk som Python (BeautifulSoup) og JavaScript (Cheerio). Ved implementasjon er det viktig med robust håndtering fordi HTML ofte er ustrukturert og inneholder mangler.
 
 ## Se Også
-
-For mer komplekse behov, kan du ta en titt på "htmlua" (https://github.com/msva/lua-htmlparser). Men hvis du er ny til konseptet, vil "html parser" være det beste alternativet (https://github.com/msva/lua-htmlparser).
+- Lua HTML-parser repo på GitHub: [https://github.com/msva/lua-htmlparser](https://github.com/msva/lua-htmlparser)
+- Lua-dokumentasjon: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- W3Schools HTML Tutorial: [https://www.w3schools.com/html/](https://www.w3schools.com/html/)

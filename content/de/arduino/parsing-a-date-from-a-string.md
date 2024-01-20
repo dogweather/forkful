@@ -1,7 +1,8 @@
 ---
-title:                "Einen Datum aus einem String parsen"
-html_title:           "Elixir: Einen Datum aus einem String parsen"
-simple_title:         "Einen Datum aus einem String parsen"
+title:                "Datum aus einem String parsen"
+date:                  2024-01-20T15:34:14.848921-07:00
+html_title:           "Arduino: Datum aus einem String parsen"
+simple_title:         "Datum aus einem String parsen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,52 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Datum-String-Parsing bedeutet, einen Text mit einem Datum in eine Struktur umzuwandeln, die der Computer versteht. Programmierer machen das, um Daten zu verarbeiten, zu vergleichen und umzuwandeln.
 
-Parsing eines Datums aus einem String ist die Umwandlung von Text in ein Datenstruktur, die auf einen spezifischen Tag verweist. Programmierer machen dies, um komplexe Datumsmanipulationen zu erleichtern oder Informationen aus Benutzereingaben oder Dateien auszulesen.
-
-## So geht's:
-
-Hier ist ein einfacher Arduino-Code, der einen String in ein Datum umwandelt:
-
+## How to:
 ```Arduino
-#include <TimeLib.h>  
-#include <Time.h>
- 
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
+
 void setup() {
   Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("RTC nicht gefunden!");
+    while (1);
+  }
+  if (rtc.lostPower()) {
+    Serial.println("RTC hat die Zeit verloren!");
+    // RTC mit Datum & Uhrzeit der Kompilation setzen:
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
- 
+
 void loop() {
-  String datum = "06.12.2021";
-  int Tag = datum.substring(0,2).toInt();
-  int Monat = datum.substring(3,5).toInt();
-  int Jahr = datum.substring(6,10).toInt();
-  
-  tmElements_t tm;
-  
-  tm.Day = Tag;
-  tm.Month = Monat;
-  tm.Year = Jahr - 1970;  
-  
-  time_t t = makeTime(tm);
-  
-  Serial.println(day(t));
-  Serial.println(month(t));
-  Serial.println(year(t));
-    
+  DateTime jetzt = rtc.now();
+
+  Serial.print("Aktuelles Datum & Uhrzeit: ");
+  Serial.print(jetzt.year(), DEC);
+  Serial.print('/');
+  Serial.print(jetzt.month(), DEC);
+  Serial.print('/');
+  Serial.print(jetzt.day(), DEC);
+  Serial.print(" ");
+  Serial.print(jetzt.hour(), DEC);
+  Serial.print(':');
+  Serial.print(jetzt.minute(), DEC);
+  Serial.print(':');
+  Serial.print(jetzt.second(), DEC);
+  Serial.println();
+
   delay(1000);
 }
 ```
-Mit diesem Code lesen wir das Datum als Tag, Monat und Jahr aus dem String und konvertieren es in einen `time_t` Datentyp.
+Ausgabe:
+```
+Aktuelles Datum & Uhrzeit: 2023/3/15 12:45:30
+```
 
-## Vertiefung:
+## Deep Dive
+Das Parsing von Datum-Strings ist nicht neu. Frühe Rechner benutzten ähnliche Methoden. Heute gibt es viele Bibliotheken (z.B. `RTClib` für Arduino), die das Handling vereinfachen. Implementierungsdetails hängen von der gegebenen Bibliothek ab. Alternativen zum manuellen Parsing sind fertige Time-Management-Bibliotheken, die diesen Prozess abstrahieren.
 
-Historisch gesehen, war Parsing von Strings zu Datumsformaten in vielen Programmiersprachen eine Herausforderung aufgrund von verschiedenen Datumskonventionen und Zeitzonen. In Arduino wurde diese Aufgabe durch die `TimeLib.h` Bibliothek vereinfacht. 
-
-Alternativ können auch andere Methoden wie sscanf() verwendet werden, die ein wenig komplexer sind und mehr Kontrolle bieten. Für das Einfügen von Datum und Zeit in einen String gibt es Funktionen wie sprintf().
-
-Besonders bemerkenswert ist, dass die Arduino `TimeLib.h` Bibliothek das Jahr relativ zu 1970 berechnet. Daher muss beim Setzen des Jahres 1970 subtrahiert werden.
-
-## Siehe auch:
-
-Weitere Informationen und Beispiele können Sie in der offiziellen Arduino Time Library Dokumentation finden (https://playground.arduino.cc/Code/Time) und im Arduino Forum (http://forum.arduino.cc/), wo viele Diskussionen über dieses Thema geführt wurden. Für tiefere Einsichten in das Thema empfehlen sich auch Bücher wie "Programming Arduino: Getting Started with Sketches" von Simon Monk.
+## See Also
+- [Arduino Time Library](https://github.com/PaulStoffregen/Time)
+- [RTClib (eine Echtzeituhr-Bibliothek für Arduino)](https://github.com/adafruit/RTClib)

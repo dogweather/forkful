@@ -1,6 +1,7 @@
 ---
 title:                "解析HTML"
-html_title:           "Clojure: 解析HTML"
+date:                  2024-01-20T15:31:03.750548-07:00
+html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,47 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## What & Why? (什么以及为什么？)
+解析HTML意味着从网页代码中提取数据。程序员这么做通常是为了获取信息，整合内容或者自动化网页交互。
 
-解析HTML就是从HTML文档内容中提取具体的信息。程序员做这个主要是为了获取网页中的数据，或者进行网页内容的操作和修改。
+## How to: (怎么做：)
+```Elixir
+# 第一步: 添加Floki库
+defp deps do
+  [
+    {:floki, "~> 0.34.0"}
+  ]
+end
 
-## 如何操作:
+# 第二步: 获取HTML并解析
+html = "<html><body><p>Hello, Elixir!</p></body></html>"
+{:ok, document} = Floki.parse_document(html)
 
-让我们通过用Elixir编写一段简单的代码来解析HTML。我们将使用Floki库。
+# 第三步: 使用选择器获取数据
+paragraphs = Floki.find(document, "p")
+# 输出: [{"p", [], ["Hello, Elixir!"]}]
 
-首先，安装Floki库:
-```elixir
-  defp deps do
-    [
-      {:floki, "~> 0.30.1"}
-    ]
-  end
-```
-然后，获取HTML信息并解析:
-```elixir
-  html = "<div><a href='http://elixir-lang.github.io/'>Elixir</a></div>"
-  {:ok, parsed_html} = Floki.parse_document(html)
-  links = Floki.find(parsed_html, "a")
-```
-输出如下
-```elixir
-[
-  {"a", [{"href", "http://elixir-lang.github.io/"}], ["Elixir"]}
-]
+# 第四步: 提取文本
+text_list = Floki.text(paragraphs)
+# 输出: ["Hello, Elixir!"]
 ```
 
-## 深入探究
+## Deep Dive (深入探讨)
+解析HTML有着悠久的历史，最初为了在服务器端处理网页内容。在Elixir中，Floki是基于HTML5解析器Myhtm的一个库，专为高效处理HTML而设计。与正则表达式等替代方法相比，Floki可以确保操作符合HTML文档标准，并提供了更加直观和简洁的API接口。实现细节上，它使用了一种叫做“选择器”的方式来查找和操作HTML元素，类似于在CSS中的用法。
 
-解析HTML的发展早在网页出现之初就已经开始了。人们开始认识到在处理大量网页信息时，自动化提取信息的技术的价值，这就是解析HTML的来源。
-
-解析HTML的代替方案包括使用正则表达式，并进行手动解析。然而这些通常比使用成熟的库更困难，且容易出错。
-
-在实现方面，解析HTML涉及到计算机科学中的许多基本问题，包括数据结构（例如树）和算法。库中的解析引擎首先将HTML分割成元素和属性，然后将它们组合在一起形成DOM（文档对象模型）树。
-
-## 参考链接
-
-Elixir的Floki库: https://github.com/philss/floki
-
-HTML的DOM操作教程: https://www.w3schools.com/js/js_htmldom.asp
-
-HTML解析的基础知识: https://htmlparser.info/parser/
+## See Also (另请参阅)
+- [Floki GitHub repository](https://github.com/philss/floki)
+- [Myhtm GitHub repository](https://github.com/lexborisov/myhtml)
+- [HTML5规范](https://html.spec.whatwg.org/)

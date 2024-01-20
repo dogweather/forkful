@@ -1,6 +1,7 @@
 ---
 title:                "HTML पार्स करना"
-html_title:           "C++: HTML पार्स करना"
+date:                  2024-01-20T15:32:12.746622-07:00
+html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,31 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? क्या और क्यों?
+HTML पार्सिंग है वैब पेज के HTML कोड को समझकर उसकी संरचना को पहचानना। प्रोग्रामर्स इसे डेटा निकालने, वेब स्क्रेपिंग, या कंटेंट मॉडिफिकेशन के लिए करते हैं।
 
-HTML पार्सिंग, वेब पेज को ऐसे स्ट्रक्चर में बदलने का एक तरीका है, ताकि कंप्यूटर इसे प्रोसेस कर सके। यह काम ताकि प्रोग्रामर्स जान सकें कि HTML डॉक्यूमेंट में क्या है और वो इसे अपने कोड में इस्तेमाल कर सकें।
-
-## कैसे करें:
-
-हास्केल का `Text.HTML.DOM` पैकेज HTML पार्सिंग के लिए बहुत उपयोगी है। इसका प्रयोग हम इस प्रकार से कर सकते हैं:
+## How to: कैसे करें?
+Haskell में HTML पार्सिंग के लिए, हम `tagsoup` लाइब्रेरी का इस्तेमाल करेंगे।
 
 ```Haskell
-import Text.HTML.DOM (parseLBS)
-import qualified Data.Text.Lazy.IO as L
+import Text.HTML.TagSoup
 
+-- HTML डॉक्युमेंट को पार्स करने का फंक्शन
+parseHtml :: String -> [Tag String]
+parseHtml = parseTags
+
+-- मुख्य फंक्शन जहाँ पार्सिंग होगी
+main :: IO ()
 main = do
-    htmlData <- L.readFile "example.html"
-    let dom = parseLBS htmlData
-    print dom
+    htmlContent <- readFile "example.html"
+    let parsedHtml = parseHtml htmlContent
+    print parsedHtml
 ```
-इस कोड को रन करने पर आपको HTML डॉक्यूमेंट का पार्स्ड संस्करण मिलेगा।
 
-## गहरी चर्चा:
+सेम्पल `example.html` फाइल:
 
-HTML पार्सिंग का काम 1990 के दशक से ही किया जा रहा है, जब से ही वेब ब्राउज़ेर बनाई गई है। अन्य विकल्पों में BeautifulSoup (Python) और Nokogiri (Ruby) शामिल हैं। हास्केल के `Text.HTML.DOM` पैकेज में, बाइट-स्तरीस (ByteString) का इस्तेमाल करके वेब पेज को पार्स किया जाता है।
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>मेरा टाइटल</title>
+</head>
+<body>
+    <p>मेरा पैरा</p>
+</body>
+</html>
+```
 
-## जाने के लिए:
+सेम्पल आउटपुट:
 
-यदि आप और अधिक जानना चाहते हैं, तो निम्नलिखित लिंक्स मददगार हो सकते हैं:
+```plaintext
+[TagOpen "!DOCTYPE" [("html","")],TagOpen "html" [],TagOpen "head" [],TagOpen "title" [],TagText "मेरा टाइटल",TagClose "title",TagClose "head",TagOpen "body" [],TagOpen "p" [],TagText "मेरा पैरा",TagClose "p",TagClose "body",TagClose "html"]
+```
 
-- [Haskell पर विस्तृत HTML पार्सिंग गाइड](http://chimera.labs.oreilly.com/books/1230000000929/ch05.html)
+## Deep Dive: गहरी जानकारी
+HTML पार्सिंग जरूरत होती है क्योंकि HTML डॉक्युमेंट अक्सर जटिल होते हैं और डेटा को मैन्युअली निकालना कठिन हो सकता है। ऐतिहासिक रूप से, पार्सर्स जैसे कि `tagsoup` ने इसे सरल बनाया है जो बहुत सारे स्ट्रक्चर के साथ काम कर सकता है, भले ही वे मानकों से पूरी तरह मेल न खाते हों। 
+
+`tagsoup` के अलावा, प्रोग्रामर्स अक्सर `pandoc`, `hxt` या शायद `jsoup` (जो कि जावा के लिए है) जैसे अल्टरनेटिव्स का भी इस्तेमाल कर सकते हैं। महत्वपूर्ण बात यह है कि पार्सिंग लाइब्रेरी का चुनाव HTML द्वारा निर्धारित टास्क पर निर्भर करेगा। 
+
+`tagsoup` गैर-सख्त पार्सिंग की प्रक्रिया अपनाता है, इसलिए यह त्रुटियों और अनुपालन की कमी वाले HTML के साथ भी काम कर सकता है। यह अक्सर वैब स्क्रैपिंग के लिए उपयोगी होता है जहाँ स्रोत कोड अनियमित हो सकता है।
+
+## See Also: यह भी देखें
+- `tagsoup` हैस्कल पैकेज: [Tagsoup on Hackage](https://hackage.haskell.org/package/tagsoup)

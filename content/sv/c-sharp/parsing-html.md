@@ -1,7 +1,8 @@
 ---
-title:                "Analysera html"
-html_title:           "Arduino: Analysera html"
-simple_title:         "Analysera html"
+title:                "Tolka HTML"
+date:                  2024-01-20T15:30:44.788950-07:00
+html_title:           "Arduino: Tolka HTML"
+simple_title:         "Tolka HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,41 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att tolka HTML (Parsing HTML) innebär att bearbeta HTML-dokument till en struktur som koden kan förstå och interagera med. Vi utför detta när vi vill läsa, manipulera, och extrahera information från webbsidor.
+Att parsa HTML innebär att man analyserar HTML-kod för att plocka ut specifik data eller strukturer. Programmerare gör detta för att kunna interagera med webbsidor, extrahera information eller automatisera webb-baserade uppgifter.
 
-## Så här gör du:
-Ett enkelt sätt att analysera HTML i C# är att använda HtmlAgilityPack-biblioteket. Här är ett exempel:
+## Hur man gör:
+I C# kan vi använda HtmlAgilityPack för att parsa HTML enkelt. Här är ett grunt dyk med exempel:
 
 ```C#
+// Installera HtmlAgilityPack med NuGet
+// Install-Package HtmlAgilityPack
+
 using HtmlAgilityPack;
-    
-static void Main(string[] args)
-{
-    var webGet = new HtmlWeb();
-    var document = webGet.Load("https://www.yourwebsite.com");
-    
-    // Hitta alla 'h1' taggar på webbsidan
-    var nodes = document.DocumentNode.SelectNodes("//h1");
-    
-    foreach (var node in nodes)
-    {
-        Console.WriteLine(node.InnerHtml);
-    }
-    
-    Console.ReadLine();
-}
+
+var html = @"<!DOCTYPE html>
+<html>
+<body>
+    <h1>Hej Sverige!</h1>
+    <p>Det här är ett paragraf.</p>
+</body>
+</html>";
+
+var htmlDoc = new HtmlDocument();
+htmlDoc.LoadHtml(html);
+
+var headerNode = htmlDoc.DocumentNode.SelectSingleNode("//h1");
+var paragraphNode = htmlDoc.DocumentNode.SelectSingleNode("//p");
+
+Console.WriteLine(headerNode.InnerText); // Skriver ut: Hej Sverige!
+Console.WriteLine(paragraphNode.InnerText); // Skriver ut: Det här är ett paragraf.
 ```
 
-I det här exemplet laddar vi HTML från en webbsida, letar efter alla 'h1'-element och skriver ut deras innehåll.
+## Fördjupning
+Parsing av HTML är inte nytt. En av de äldsta metoderna är att använda reguljära uttryck, men det är opraktiskt och skört för komplex HTML. HtmlAgilityPack är ett C# bibliotek som har använts sedan början av 2000-talet. Det fungerar genom att skapa en DOM-trädstruktur av HTML-koden som kan navigeras och manipuleras.
 
-## Djupdykning
-Historiskt sett har programvaror för HTML-parsing funnits sedan början på World Wide Web, men C# -språket och .NET Core har effektiviserat och förenklat processen.
+Alternativ till HtmlAgilityPack inkluderar AngleSharp, en modernare bibliotek som följer de senaste webbstandarderna.
 
-Alternativa bibliotek inkluderar AngleSharp, vilket har stöd för många webbstandarder inklusive HTML5 och CSS3.
+I termer av utförande använder HtmlAgilityPack XPath- och Linq-querys för att hämta specifika noder, vilket är kraftfullt men kräver förståelse för frågespråken.
 
-En viktig aspekt av att analysera HTML är att förstå hur DOM (Document Object Model) fungerar. Detta är strukturen som HTML tolkas till och det som programmet sedan interagerar med.
-
-## Se även
-1. HtmlAgilityPack Tutorial: [link](https://html-agility-pack.net/)
-2. Mer om DOM: [link](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-3. AngleSharp: [link](https://anglesharp.github.io/)
+## Se också
+- HtmlAgilityPack GitHub-repo: https://github.com/zzzprojects/html-agility-pack
+- AngleSharp GitHub-repo: https://github.com/AngleSharp/AngleSharp
+- XPath tutorial: https://www.w3schools.com/xml/xpath_intro.asp
+- LINQ to XML-dokumentation: https://docs.microsoft.com/en-us/dotnet/standard/linq/linq-xml-overview

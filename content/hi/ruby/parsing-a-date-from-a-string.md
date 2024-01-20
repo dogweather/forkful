@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:38:09.329927-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,40 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? ("What & Why?")
-स्ट्रिंग से तारीख पार्स करना मतलब हाश या array में संग्रहित तारीख को पढ़ने और उसे मान्य डेटा टाइप में बदलना होता है। प्रोग्रामर इसे इसलिए करते हैं ताकि वे तारीख से संबंधित कम्प्लेक्स कार्यवाही, जैसे कि समय की गणना, सोर्टिंग या फ़िल्टर करना सकें।
+## What & Why? (क्या और क्यों?)
+String se date parse karna matlab ek text format mein likhe gaye date ko Ruby ke `Date` object mein badalna hota hai. Programmers isliye karte hain kyunki data har jagah standard format mein nahi milta aur usse process karne ke liye hume usse samajhne layak format mein convert karna padta hai.
 
-## कैसे करें: ("How to:")
-Ruby में आप DateTime पुस्तिका का उपयोग करके स्ट्रिंग से तारीख पार्स कर सकते हैं। 
-
+## How to: (कैसे करें:)
 ```Ruby
 require 'date'
-date_str = '07-09-2021'
-parsed_date = Date.parse(date_str)
+
+# Ek simple string jo date ko represent karta hai
+date_string = "2023-03-14"
+# String ko parse karke Date object mein convert karna
+parsed_date = Date.parse(date_string)
 puts parsed_date
+# Output: 2023-03-14
+
+# Custom date format ke saath parse karna
+custom_date_string = "14-03-2023"
+custom_format_date = Date.strptime(custom_date_string, '%d-%m-%Y')
+puts custom_format_date
+# Output: 2023-03-14
 ```
 
-ऊपरी कोड का आउटपुट निम्नलिखित होगा:
+## Deep Dive (गहराई से जानकारी):
+### Historical Context (ऐतिहासिक संदर्भ)
+Ruby mein date parsing ka concept bahut pehle se hai. Ruby 1.9 ke release ke baad se `Date` aur `Time` classes kaafi improve ho chuki hain. Pehle custom parsing thoda tough tha, lekin ab Ruby's built-in `date` library ke `parse` aur `strptime` methods se ye kaafi easy ho gaya hai.
+
+### Alternatives (विकल्प)
+Date parsing ke aur bhi methods hain jaise `time` library ka use karke. Wahi `strptime` method `Time` class mein bhi available hota hai, lekin thoda alag context mein.
 
 ```Ruby
-# 2021-07-09
+require 'time'
+
+time_string = "2023-03-14 05:23:17"
+parsed_time = Time.strptime(time_string, '%Y-%m-%d %H:%M:%S')
+puts parsed_time
+# Output: 2023-03-14 05:23:17 +0000
 ```
 
-## गहरा दिवे ("Deep Dive")
+### Implementation Details (कार्यान्वयन विवरण)
+Ruby ke `Date.parse` method automatically common formats ko pehchanta hai lekin `Date.strptime` ka use karke hum custom formats define kar sakte hain. Ye flexibility tab kaam aati hai jab hum non-standard date formats se deal kar rahe ho.
 
-रूबी में Date.parse विधि का इतिहास 1990 के दशक के बाद शुरू हुआ। यह विधि मालूम करने में मदद करती है कि स्ट्रिंग तारीख में कौन सा होना चाहिए। यदि स्ट्रिंग युरोपीय तारीख फ़ार्मेट (दिन-महिना-वर्ष) का उपयोग करता है, तो Date.parse विधि युरोपीय फ़ार्मेट का अनुमान लगाएगी। 
-
-पार्स करने का अन्य तरीका है Date.strptime इसका उपयोग तब किया जाता है जब आप तारीख के फ़ार्मेट का पता रखते हैं।
-
-```Ruby
-require 'date'
-date_str = '07-09-2021'
-parsed_date = Date.strptime(date_str, '%d-%m-%Y')
-puts parsed_date
-```
-
-## देखें भी ("See Also")
-
-[Date.parse डॉक्युमेंटेशन](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html#method-c-parse)
-[Date.strptime डॉक्युमेंटेशन](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html#method-c-strptime)
-[Ruby तारीख और समय गाइड](https://www.rubyguides.com/2015/12/ruby-time/)
+## See Also (यह भी देखें):
+- Ruby's official Date class documentation: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- Ruby's Time class documentation: [https://ruby-doc.org/core-3.0.0/Time.html](https://ruby-doc.org/core-3.0.0/Time.html)
+- Ruby's official programming tutorials: [https://www.ruby-lang.org/en/documentation/](https://www.ruby-lang.org/en/documentation/)
+- Stack Overflow, for any specific questions about date parsing in Ruby: [https://stackoverflow.com/questions/tagged/ruby+date](https://stackoverflow.com/questions/tagged/ruby+date)

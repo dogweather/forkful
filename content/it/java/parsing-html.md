@@ -1,7 +1,8 @@
 ---
-title:                "Analisi sintattica dell'HTML"
-html_title:           "C++: Analisi sintattica dell'HTML"
-simple_title:         "Analisi sintattica dell'HTML"
+title:                "Analisi dell'HTML"
+date:                  2024-01-20T15:32:05.303264-07:00
+html_title:           "Bash: Analisi dell'HTML"
+simple_title:         "Analisi dell'HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,48 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos'è e Perché?
+## What & Why? - Cosa e Perché?
+Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne dati o manipolarlo. I programmatori lo fanno perché vogliono lavorare con il contenuto di pagine web: per esempio, per estrarre informazioni, automatizzare azioni o testare l'accessibilità.
 
-L'analisi HTML è la pratica di interpretare una pagina web e suddividerla nei suoi elementi fondamentali. I programmatori la eseguono per estrarre dati specifici, manipolare gli elementi HTML o monitorare le modifiche al contenuto della pagina web.
+## How to - Come fare:
+In Java, puoi utilizzare la libreria jsoup per fare il parsing dell'HTML. Ecco un esempio semplice:
 
-## Come Fare:
-
-Iniziamo con un esempio di base utilizzando la libreria Jsoup. Assicurati che il tuo progetto includa questa dipendenza per poterla usare.
-
-```Java
-//Includi la dipendenza Jsoup
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-public class HtmlParsing {
+public class HtmlParserExample {
     public static void main(String[] args) {
-        String html = "<p>Un semplice <a href='https://www.google.com'>link</a>.</p>";
+        String html = "<html><head><title>Esempio</title></head>"
+                + "<body><p>Questo è un esempio di parsing HTML.</p></body></html>";
         Document doc = Jsoup.parse(html);
-        Element link = doc.select("a").first();
         
-        String text = doc.body().text(); // "Un semplice link."
-        String linkHref = link.attr("href"); // "https://www.google.com"
-        
-        System.out.println(text);
-        System.out.println(linkHref);
+        Elements paragraphs = doc.select("p");
+        System.out.println(paragraphs.text());
     }
 }
 ```
-
-Ecco l'output del nostro esempio:
-
+Output:
 ```
-Un semplice link.
-https://www.google.com
+Questo è un esempio di parsing HTML.
 ```
 
-## Approfondimento:
+## Deep Dive - Approfondimento
+Storicamente, il parsing di HTML è stato complesso a causa dei markup non standard e dei browser che interpretano l'HTML in modi differenti. Prima dell'arrivo di librerie come jsoup, gli sviluppatori dovevano gestire molte eccezioni e differenze. Con jsoup, hai un parser HTML che sa come gestire queste inconsistenze.
 
-(1) L'analisi HTML è stata implementata fin dai primi giorni del web per consentire ai browser di visualizzare correttamente le pagine web. (2) Se Jsoup non è l'ideale per il tuo progetto, ci sono molte alternative come HtmlCleaner e Jericho HTML Parser. (3) L'implementazione dell'analisi HTML può diventare molto complessa quando si tratta di pagine web pesantemente annidate o mal formattate.
+Alternative al jsoup includono HtmlUnit e la classe org.w3c.dom in Java. Quest'ultima richiede più codice e non gestisce bene l'HTML malformato.
 
-## Guarda Anche:
+Il parsing con jsoup è fondato su una rappresentazione DOM (Document Object Model) dell'HTML che permette di navigare e manipolare facilmente la struttura del documento. 
 
-- Documentazione ufficiale Jsoup: [https://jsoup.org/](https://jsoup.org/)
-- Alternativa HtmlCleaner: [https://htmlcleaner.sourceforge.io/](https://htmlcleaner.sourceforge.io/)
-- Alternativa Jericho HTML Parser: [http://jericho.htmlparser.net/docs/index.html](http://jericho.htmlparser.net/docs/index.html)
+## See Also - Vedi anche
+- [W3C DOM](https://www.w3.org/DOM/) - Informazioni sul Document Object Model per capire meglio come jsoup manipola l'HTML.
+- [Java API for HTML & XML](https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/package-summary.html) - Documentazione dell'API DOM di Java.

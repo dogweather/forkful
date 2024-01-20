@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:34:09.632447-07:00
+html_title:           "Bash: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O quê e Por quê?
+## O Que é e Porquê?
+Analisar HTML é o processo de converter string contendo HTML em algo que possamos manipular no código, como um DOM (Document Object Model). Programadores fazem isso para poder extrair informações, modificar o conteúdo ou interagir com páginas web de forma programática.
 
-Analisar HTML (ou parsing HTML) é o processo de transformar uma string de HTML em uma estrutura de dados que pode ser manipulada e consultada. Os programadores fazem isso para extrair informações, como metadados, textos e links, de documentos HTML.
+## Como Fazer:
+Para analisar HTML em TypeScript, você pode usar a biblioteca `node-html-parser`. Aqui está um exemplo de código simples para começar:
 
-## Como fazer:
+```typescript
+import { parse } from 'node-html-parser';
 
-Aqui está um exemplo simples usando a biblioteca cheerio em TypeScript para parsear HTML. 
+// Exemplo de HTML para analisar
+const html = `<ul class="frutas">
+  <li>Maçã</li>
+  <li>Banana</li>
+  <li>Laranja</li>
+</ul>`;
 
-```TypeScript
-import * as cheerio from 'cheerio';
+// Analisando o HTML
+const root = parse(html);
 
-let htmlString = `<html><body><h1>Olá Mundo!</h1></body></html>`;
-
-let $ = cheerio.load(htmlString);
-
-let titulo = $('h1').text();
-
-console.log(titulo); // imprime: Olá Mundo!
+// Acessando elementos
+const frutas = root.querySelectorAll('li').map(ele => ele.innerText);
+console.log(frutas);
 ```
 
-Neste código, a função `cheerio.load` cria uma função `$` que pode ser usada para consultar a estrutura de dados do documento HTML.
+Saída esperada:
 
-## Aprofundando:
+```
+[ 'Maçã', 'Banana', 'Laranja' ]
+```
 
-Historicamente, a análise de HTML era um processo complicado e propenso a erros, pois cada navegador tinha seu próprio método de lidar com HTML malformado. No entanto, bibliotecas modernas como o Cheerio simplificaram muito essa tarefa, oferecendo uma API JQuery-like que é familiar para muitos desenvolvedores.
+## Mergulho Profundo
+O ato de analisar HTML existe desde o início da web, permitindo que servidores e clientes comunicassem conteúdo dinâmico. Hoje, além do `node-html-parser`, existem outras bibliotecas como `Cheerio` ou `jsdom`, cada uma com suas peculiaridades e casos de uso específicos. 
 
-Existem também alternativas ao Cheerio, como o JSDOM, que oferece uma simulação de navegador mais completa e pode ser mais adequado para determinadas tarefas, como renderização de JavaScript de lado do servidor.
+O `node-html-parser` é leve e rápido, mas não simula um navegador real, então é melhor para análise de HTML estático. `Cheerio` oferece uma API similar ao jQuery, o que pode ser conveniente para quem já conhece jQuery. Já `jsdom` é mais pesado, mas pode simular um ambiente de navegador inteiro, com suporte a eventos e interações mais complexas.
 
-Em relação aos detalhes de implementação, o Cheerio em particular usa uma biblioteca chamada htmlparser2 para fazer o parsing do HTML e gerar uma árvore DOM. Em seguida, fornece funções para consultar e manipular essa árvore.
+Detalhes importantes ao analisar HTML incluem lidar com HTML mal formado e evitar ataques de injeção de scripts.
 
-## Veja também:
-
-Para mais detalhes e exemplos, veja a documentação oficial dessas bibliotecas:
-
-- Cheerio: https://cheerio.js.org/
-- JSDOM: https://github.com/jsdom/jsdom
-
-E para uma visão mais profunda da análise de HTML, o padrão da WHATWG é um ótimo recurso: https://html.spec.whatwg.org/multipage/parsing.html#parsing
+## Veja Também
+- [node-html-parser - GitHub](https://github.com/taoqf/node-html-parser)
+- [Cheerio](https://cheerio.js.org/)
+- [jsdom](https://github.com/jsdom/jsdom)
+- [DOM - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)

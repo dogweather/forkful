@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+date:                  2024-01-20T15:34:11.911480-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "TypeScript"
@@ -10,36 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+HTML-Parsing ist das Einlesen und Umwandeln von HTML-Dokumenten in eine strukturierte Form, die von Programmen genutzt werden kann. Programmierer machen das, um Inhalte zu extrahieren, zu manipulieren oder um HTML-Dokumente maschinell zu analysieren.
 
-Das Parsen von HTML ist der Prozess, in dem eine HTML-Datei analysiert und in eine für Computer verständlichere Struktur umgewandelt wird. Dies ist für Programmierer nützlich, um Daten zu extrahieren, Websites zu scrapen und Webinhalte zu manipulieren.
-
-## Wie macht man das?
-
-Einfaches HTML Parsen in TypeScript kann mit der Bibliothek "jsdom" erreicht werden. Installiere sie mit npm:
-
-```TypeScript 
-npm install jsdom
-```
-
-Erstelle danach eine rex.js Datei und füge den folgenden Code ein:
-
+## How to (Wie geht das?)
 ```TypeScript
-import { JSDOM } from 'jsdom';
+import { parse } from 'node-html-parser';
 
-const html = `<body> Willkommen bei meinem Artikel </body>`;
-const dom = new JSDOM(html);
-console.log(dom.window.document.body.textContent); // "Willkommen bei meinem Artikel"
+const html = '<html><body><p>Hello, World!</p></body></html>';
+const root = parse(html);
+
+// Zugriff auf den Inhalt des Paragraphen
+const paragraphText = root.querySelector('p').innerText;
+console.log(paragraphText); // Hello, World!
+
+// Ausgabe der HTML-Struktur
+console.log(root.toString()); // Gibt das Original-HTML zurück
+```
+Sample Output:
+```
+Hello, World!
+<html><body><p>Hello, World!</p></body></html>
 ```
 
-## Deep Dive 
+## Deep Dive (Tiefer eintauchen)
+HTML-Parsing ist seit den Anfängen des Web ein Thema. Ursprünglich nutzten Browser-integrierte Parser, aber serverseitige Anforderungen führten zur Entwicklung von Tools wie BeautifulSoup für Python oder JSoup für Java.
 
-HTML-Parsing hat eine lange Geschichte, die bis in die Anfänge des Internets zurückreicht. Zunächst bestanden Webseiten nur aus einfachem html. Heute gibt es viele Alternativen zum HTML-Parsing, wie zum Beispiel XML oder JSON.
+In TypeScript bzw. JavaScript hat sich das NPM-Paket `node-html-parser` als praktikable Lösung etabliert. Es wandelt HTML in ein DOM-ähnliches Objekt um, wodurch der Zugriff auf Elemente und die Manipulation erleichtert wird.
 
-JSDOM bietet uns eine einfache und effiziente Möglichkeit, HTML in TypeScript zu parsen. Es simuliert einen Webbrowser und ermöglicht es uns, DOM-Operationen auf der serverseite durchzuführen.
+Warum nicht einfach `RegExp`? Reguläre Ausdrücke sind nicht für verzweigte Strukturen wie HTML ausgelegt und können zu fehleranfälligem Code führen.
 
-## Siehe auch
+Alternativen? Der HTML Living Standard empfiehlt das DOM Parsing API für Browser, während in Node.js Cheerio oder JSDOM beliebt sind.
 
-Weitere Informationen über HTML-Parsing und JSDOM findest du hier: 
-- [JSdom Dokumentation](https://github.com/jsdom/jsdom)
-- [XML vs HTML](https://www.w3schools.com/xml/xml_whatis.asp)
+## See Also (Siehe auch)
+- MDN Web Docs zum DOM Parsing API: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+- node-html-parser auf NPM: https://www.npmjs.com/package/node-html-parser
+- Cheerio NPM Paket: https://www.npmjs.com/package/cheerio
+- JSDOM NPM Paket: https://www.npmjs.com/package/jsdom

@@ -1,7 +1,8 @@
 ---
-title:                "Розбір html"
-html_title:           "Javascript: Розбір html"
-simple_title:         "Розбір html"
+title:                "Парсинг HTML"
+date:                  2024-01-20T15:33:35.284486-07:00
+html_title:           "Arduino: Парсинг HTML"
+simple_title:         "Парсинг HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це & Навіщо?
+## What & Why? (Що та чому?)
+Parsing HTML means you're extracting useful info from web pages. Programmers parse HTML to automate data collection or interact with websites programmatically.
 
-Парсинг HTML – це процес вибору специфічних даних з HTML документа. Програмісти парсять HTML, щоб автоматикувати збір та обробку веб-даних, що призводить до більш ефективної роботи.
-
-## Як це робити:
-
-Ось простий приклад того, як парсити HTML за допомогою бібліотеки BeautifulSoup в Python:
+## How to: (Як зробити:)
+To parse HTML in Python, `BeautifulSoup` from `bs4` is a great tool. You'll also need `requests` to fetch webpage content. If you haven't installed these, do it with: `pip install beautifulsoup4 requests`.
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-site = requests.get("https://www.example.com")
-soup = BeautifulSoup(site.content, 'html.parser')
+# Fetch the webpage
+response = requests.get('http://example.com')
+html_doc = response.text
 
-print(soup.prettify())
+# Parse the HTML
+soup = BeautifulSoup(html_doc, 'html.parser')
+
+# Find data within the HTML
+title = soup.find('title').get_text()
+print(f'Page Title: {title}')
+# Find all links
+links = [a['href'] for a in soup.find_all('a', href=True)]
+print(f'Links: {links}')
 ```
-Вищенаведений код витягує весь вихідний код веб-сторінки https://www.example.com і друкує його у відформатованому вигляді.
 
-## Поглиблено
+Sample output might be:
 
-Усталено, що парсинг HTML почався як спосіб обробки і візуалізації HTML задокументів. Насправді, переглядачі використовують парсинг усередині, щоб обробити вихідний код HTML і відтворити його у вигляд, що ви бачите.
+```
+Page Title: Example Domain
+Links: ['https://www.iana.org/domains/example']
+```
 
-Але існують і альтернативи. Регулярні вирази можуть бути використані для парсингу HTML, але їхня складність і виключность змушують віддати перевагу парсерам HTML.
+## Deep Dive (Поглиблений аналіз)
+HTML (HyperText Markup Language) structures content on the web. Parsing HTML has been a thing since early web days, manually at first, then via various libraries. `BeautifulSoup` stands out due to its ease of use and powerful features. It handles different parsers, like `html.parser` for simple cases, or `lxml` for speed. 
 
-Деякі глибинні деталі реалізації включають те, як парсери обробляють неправильний HTML і вихідні різні об'єкти DOM.
+Alternatives to `BeautifulSoup` include `lxml` directly, or even `PyQuery` if you prefer a jQuery-like syntax. Implementation-wise, remember that web pages can change – your parsing code might break if the structure of the HTML it relies on changes.
 
-## Дивіться також
-
-[BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-
-[Python requests module](https://docs.python.org/3/library/requests.html)
-
-Ці посилання стануть корисними, адже дають докладніше розуміння процесів, що стосуються парсингу HTML.
+## See Also (Дивіться також)
+- BeautifulSoup documentation: https://beautiful-soup-4.readthedocs.io/en/latest/
+- Requests library documentation: https://requests.readthedocs.io/en/master/
+- Web scraping guide with Python: https://realpython.com/beautiful-soup-web-scraper-python/

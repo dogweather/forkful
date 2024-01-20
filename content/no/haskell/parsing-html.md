@@ -1,7 +1,8 @@
 ---
-title:                "Analysering av html"
-html_title:           "C#: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analyse av HTML"
+date:                  2024-01-20T15:32:21.911835-07:00
+html_title:           "Arduino: Analyse av HTML"
+simple_title:         "Analyse av HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,49 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML i Haskell
-
 ## Hva & Hvorfor?
+Parsing HTML betyr å tolke og forstå HTML-koden som en struktur å jobbe med i programmering. Programmerere gjør dette for å kunne hente ut data, manipulere innhold, eller integrere websider med software.
 
-Parsing av HTML handler om å analysere HTML-kode for å forstå dens struktur og innhold. Programmerere gjør det for å høste, manipulere, eller presentere data hentet fra HTML-dokumenter.
-
-## Hvordan:
-
-Først, installer `tagsoup` biblioteket ved å kjøre dette i terminalen:
+## Slik gjør du:
+`hxt`-biblioteket i Haskell lar deg gjøre dette smertefritt. Her er et raskt eksempel:
 
 ```Haskell
-cabal install tagsoup
+import Text.XML.HXT.Core
+
+parseHTML :: String -> IOStateArrow s b XmlTree
+parseHTML html = readString [withParseHTML yes, withWarnings no] html
+
+main :: IO ()
+main = do
+    htmlData <- readFile "eksempel.html"
+    result <- runX $ parseHTML htmlData >>> deep (isElem >>> hasName "a") >>> getAttrValue "href"
+    print result
 ```
 
-La oss lage en enkel parser som henter alle lenkene fra en HTML-tekst:
+Kjører du dette med en `eksempel.html` som inneholder linker, vil output bli en liste av `href`-verdier fra `<a>`-tagger.
 
-```Haskell
-import Text.HTML.TagSoup
+## Dypdykk:
+I begynnelsen var HTML parsing i funksjonelle språk som Haskell tungvint, men med bibliotek som `hxt`, `tagsoup` og `pandoc` ble det mer tilgjengelig og effektivt. Alternativer til `hxt` inkluderer `tagsoup`, som er mer feiltolerant og kan håndtere dårlig formatert HTML. På implementasjonsnivået bruker `hxt` en kombinasjon av funksjonelle teknikker og parse-transformere for å håndtere HTML/XHTML-strukturer.
 
-lenkeParser :: String -> [String]
-lenkeParser html = [href | TagOpen "a" atts <- parseTags html, ("href",href) <- atts]
-```
-
-Bruk det slik:
-
-```Haskell
-print $ lenkeParser "<a href='https://www.example.com'>Eksempel</a>"
-```
-Dette vil gi resultatet:
-
-```Haskell
-["https://www.example.com"]
-```
-
-## Dyp Dykk
-
-**Historisk Kontekst**: Parsing av HTML har vært sentralt siden World Wide Webs fødsel, å kunne ha innsikt i hvordan nettsider innhold og struktur er framstilt har en rekke applikasjoner. Først og fremst innen data mining, web scraping, og web-crawling.
-
-**Alternativer**: Det er mange alternative biblioteker for HTML-parsing i Haskell, som `html-conduit`, og `hxt`. Hvert med sine egne fordeler og ulemper.
-
-**Implementeringsdetaljer**: Under panseret konverterer `TagSoup`-biblioteket HTML-strengen til en strøm av merkelapper. Disse merkelappene kan være åpne koder (f.eks. `<p>`), lukkede koder (f.eks. `</p>`), eller tekst. Deretter brukes listekomprimering for å filtrere ut og hente verdier fra disse taggene.
-
-## Se Også
-
-- [TagSoup på Hackage](https://hackage.haskell.org/package/tagsoup)
-- [Andre parsing biblioteker på Hackage](https://hackage.haskell.org/packages/#cat:Parsing)
+## Se Også:
+- HXT tutorial: https://wiki.haskell.org/HXT/Practical
+- TagSoup's GitHub repo: https://github.com/ndmitchell/tagsoup
+- Pandoc hjemmeside: https://pandoc.org

@@ -1,7 +1,8 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Arduino: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+date:                  2024-01-20T15:30:02.953227-07:00
+html_title:           "Arduino: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,49 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## O Que & Porquê?
 
-Analisar HTML implica em desmontar uma página da web, identificando corretamente seus tags e o conteúdo de cada tag. Programadores fazem isso para extrair informações úteis, automatizar tarefas da web e integrar aplicações.
+Interpretar HTML significa extrair informações específicas de uma página web. Programadores fazem isso para automatizar a coleta de dados, monitorar mudanças e integrar recursos da web em outros projetos.
 
-## Como fazer:
+## Como Fazer:
 
-Para extrair informações de uma página da web usando Arduino, utilizaremos a biblioteca Ethernet e a biblioteca arduino-html-parser. Aqui está um exemplo básico:
+Interpretar HTML com Arduino requer um módulo de Wi-Fi para conectar à internet. Vamos usar a biblioteca ESP8266WiFi e HTTPClient para isso.
 
-```Arduino
-#include <Ethernet.h>
-#include <HTMLParser.h>
+```cpp
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-EthernetClient client;
-HTMLParser html_parser((char *)EthernetClient::available, (char *)EthernetClient::read);
+const char* ssid = "SEU_SSID";
+const char* password = "SUA_SENHA";
 
-void setup()
-{
-  html_parser.begin();
-  // conectar e realizar uma requisição GET
+WiFiClient client;
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin(client, "http://exemplo.com/pagina.html");
+    int httpCode = http.GET();
+
+    if(httpCode > 0) {
+      String payload = http.getString();
+      Serial.println(payload);
+      // Aqui você adicionaria o seu código para interpretar o HTML
+    } else {
+      Serial.println("Erro na conexão HTTP");
+    }
+
+    http.end();
+  }
 }
 
-void loop()
-{
-  if (client.available()) {
-    char c = client.read();
-    html_parser.parse(c);
-  }
+void loop() {
+  // Normalmente nada é feito no loop para esse tipo de operação
 }
 ```
 
-Na saída, você verá os tags HTML corretamente identificados.
+## Mergulho Profundo
 
-## Mergulho profundo
+Historicamente, interpretar HTML em dispositivos como o Arduino é desafiador devido à limitada memória e capacidade de processamento. Métodos convencionais de parsing em Python ou JavaScript podem não ser viáveis. Alternativas incluem usar expressões regulares para encontrar padrões específicos ou bibliotecas leves projetadas para esses ambientes com restrições de hardware, como a library TinyXML ou o parser HTML Mini.
 
-Analisar HTML tem uma história interessante. Durante os primeiros dias da web, as páginas eram estáticas e a análise de HTML era um pouco inútil. No entanto, com a chegada das páginas dinâmicas, a análise do HTML tornou-se uma importante técnica de extração de dados.
+Cabe mencionar que interpretar HTML corretamente pode ser complexo, pois o HTML de uma página web pode mudar com o tempo. Automatizar completamente essa tarefa pode requerer manutenção constante das regras de parsing para se adaptarem a essas mudanças.
 
-Existem várias alternativas para a biblioteca arduino-html-parser, tais como HtmlStreamParser e HtmlParserGeneratorSlave. Embora sejam bastante eficazes, essas bibliotecas não são tão otimizadas quanto a biblioteca arduino-html-parser.
+## Veja Também
 
-A implementação da análise HTML no Arduino é bastante simples. Ela envolve a leitura do HTML via Ethernet, usando uma variável de tipo 'char' para armazenar cada caracter individual e, em seguida, a biblioteca de análise HTML identifica corretamente os tags e o conteúdo.
-
-## Veja também
-
-Para conhecer mais sobre o assunto, visite os links abaixo:
-
-- [Documentação Arduino](https://www.arduino.cc/reference/pt/)
-- [Biblioteca Ethernet Arduino](https://www.arduino.cc/en/Reference/Ethernet)
+- Documentação oficial da ESP8266: https://arduino-esp8266.readthedocs.io/en/latest/
+- Tutorial sobre expressões regulares (Regex): https://www.regular-expressions.info/
+- Uma discussão sobre parsing de HTML em fóruns do Arduino: http://forum.arduino.cc/index.php?topic=55119.0
+- Biblioteca TinyXML para parsing de XML no Arduino: https://github.com/leethomason/tinyxml2

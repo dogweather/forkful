@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
+title:                "Merkkijonosta päivämäärän jäsentäminen"
+date:                  2024-01-20T15:35:16.666305-07:00
+html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
+simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,65 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä & Miksi?
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärän lukemista ja ymmärtämistä tekstiformaatista. Ohjelmoijat tarvitsevat tätä toimintoa, koska päivämääriä tallennetaan ja siirretään usein tekstimuodossa ja ne täytyy muuttaa käsiteltävään muotoon.
 
-Päivämäärän jäsennys merkkijonosta on merkkijonon muuttamista päivämääräobjektiksi. Ohjelmoijat tekevät tämän, jotta voidaan käsitellä päivämäärätietoja helpommin ja tehokkaammin.
+## How to: - Kuinka:
+```Arduino
+#include <Wire.h>
+#include <RTClib.h>
 
-## Näin teet:
+RTC_DS3231 rtc;
 
-Tässä on esimerkkikoodi päivämäärän jäsennyksestä Arduino-ympäristössä:
-
-```Arduino 
-#include <TimeLib.h>
-#define TIME_MSG_LEN 11 
-#define TIME_HEADER  'T'   
-
-void setup() {   
+void setup() {
   Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("RTC ei löydy!");
+    while (1);
+  }
+  rtc.adjust(DateTime(__DATE__, __TIME__));
 }
 
-void loop() {   
-  processSyncMessage();
-} 
+void loop() {
+  DateTime now = rtc.now();
 
-void processSyncMessage() {
-  String receivedString = "T1624389600"; 
-  if(receivedString.length() == TIME_MSG_LEN){
-    if(receivedString[0] == TIME_HEADER) {
-      time_t pctime;
-      pctime = (time_t)receivedString.substring(1).toInt();
-      setTime(pctime);   
-      Serial.println(year());   
-      Serial.println(month());  
-      Serial.println(day());
-      Serial.println(hour());  
-      Serial.println(minute()); 
-      Serial.println(second());
-    }
-  }
-}    
+  Serial.print("Päivämäärä: ");
+  Serial.print(now.day());
+  Serial.print('/');
+  Serial.print(now.month());
+  Serial.print('/');
+  Serial.println(now.year());
+
+  delay(1000);
+}
+```
+Tulostus:
+```
+Päivämäärä: 7/12/2023
 ```
 
-Tämän ohjelman tulostus saattaa näyttää seuraavalta:
+## Deep Dive - Syväluotaus:
+Päivämäärän jäsentäminen merkkijonosta on yleinen tehtävä ohjelmoinnissa. Historiallisesti lukuisia kirjastoja ja funktioita on kehitetty tämän toiminnallisuuden tarjoamiseksi. Arduinossa käytetään usein `RTClib`-kirjastoa yhdessä reaaliaikakellomoduulin kanssa, kuten osoitetaan esimerkissä. Vaihtoehtoja kuten `strftime`- ja `strptime`-funktiot ovat suosittuja C-kielessä, mutta Arduino-kirjastoissa ne ovat harvemmin tuettuja.
 
-```Arduino
-2021
-6
-22
-17
-40
-0
-```
-## Sukellus syvyyksiin
+Jäsentämisen toteutuksessa keskeistä on ymmärtää käytetty päivämääräformaatti. Eri alueet käyttävät eri formaatteja (esim. kuukausi/päivä/vuosi tai päivä/kuukausi/vuosi), joten ohjelmoijan on tunnettava konteksti johon sovellus on tarkoitettu. Arduinon tapauksessa olemme usein vuorovaikutuksessa laitteiston, kuten RTC-moduulin, kanssa, mikä poikkeaa puhtaasti ohjelmistopohjaisista ratkaisuista.
 
-Päivämäärän tulkitseminen merkkijonosta on perinteinen tehtävä, joka liittyy lukemattomiin sovelluksiin, kuten tapahtumien ajastukseen. Sinulla on erilaisia tapoja toteuttaa tämä, kuten manuaalinen tulkitseminen tai luotettavan kirjaston, kuten TimeLibin, käyttäminen, joka on esitetty yllä. TimeLib-kirjasto tarjoaa monipuolisen kokoelman päivämäärä- ja aikatoimintoja, jotka auttavat sinua selviämään vaativista tehtävistä. 
-
-TimeLib-kirjastossa päivämäärän jäsennys saavutetaan muuntamalla tiettyyn aikaan liittyvä merkkijono kokonaislukuarvoon (UNIX-aikaleimaan) ja asettamalla tämä arvo järjestelmän kellonaikaan. Tämä menetelmä on yksinkertainen, tehokas, ja se toimii hyvin pienillä mikro-ohjaimilla, kuten Arduinolla.
-
-## Lisätietoja
-
-Jos haluat tutustua tarkemmin Arduino-ohjelmointiin ja päivämäärän jäsennyksen, tutustu seuraaviin linkkeihin:
-
-- [Arduino virallinen verkkosivusto](https://www.arduino.cc/)
-- [TimeLib-kirjaston GitHub-sivu](https://github.com/PaulStoffregen/Time)
-- [Tutorial on Date and Time functions in Arduino](https://startingelectronics.org/software/arduino/date-time-arduino/)
+## See Also - Katso Myös:
+- RTClib-kirjasto: https://github.com/adafruit/RTClib
+- Arduino DateString nimiavaruuden dokumentaatio: https://www.arduino.cc/reference/en/libraries/rtclib/datetime/
+- Arduinon virallinen Time-kirjasto: https://www.arduino.cc/en/Reference/Time

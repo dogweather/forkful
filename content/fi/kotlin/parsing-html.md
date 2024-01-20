@@ -1,5 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
+date:                  2024-01-20T15:32:28.787617-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Kotlin"
@@ -10,40 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+HTML-tiedostojen jäsentäminen eli parsing tarkoittaa HTML-koodin muuttamista rakenteelliseksi tiedoksi, mitä ohjelma voi käyttää hyödyksi. Koodaajat tekevät tätä sisällön automaattiseen käsittelyyn ja tiedon uuttamiseen verkkosivuilta.
 
-HTML-tulkitseminen on prosessi, jolla sivustojen koodi muunnetaan strukturoiduksi datarakenteeksi. Ohjelmoijat tekevät sen usein datan poimimiseksi verkkosivuilta tai sivuston rakenteen ymmärtämiseksi.
-
-## Näin teet:
-
-Kotlinissa voit käyttää esimerkiksi jsoup-kirjastoa tähän tarkoitukseen. Katso alla olevan koodiesimerkin:
+## How to:
+Kotlin-kehittäjät käyttävät usein jsoup-kirjastoa HTML-dokumenttien jäsentämiseen. Alla on yksinkertainen esimerkki:
 
 ```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val doc = Jsoup.connect("https://example.com").get()
+    val html = "<html><head><title>Otsikko</title></head><body><p>Hei maailma!</p></body></html>"
+    val doc = Jsoup.parse(html)
+    
     val title = doc.title()
-    println("Otsikko : $title")
+    val bodyText = doc.body().text()
 
-    val links = doc.select("a[href]")
-    for (link in links) {
-        println("Linkki : ${link.attr("abs:href")}")
-    }
+    println("Otsikko: $title")
+    println("Leipäteksti: $bodyText")
 }
 ```
+Tuloste:
+```
+Otsikko: Otsikko
+Leipäteksti: Hei maailma!
+```
 
-Koodi käy läpi 'example.com' -sivuston, tulostaa sen otsikon ja kaikki linkit.
+## Deep Dive
+HTML-jäsentämisen tarpeellisuus nousi 1990-luvulla, kun internet alkoi yleistyä. Historiallisesti jäsentäminen on ollut hankalaa kielen löyhän syntaksin vuoksi. Nykyään kirjastoja kuten jsoup on kehitetty helpottamaan prosessia ja parantamaan luotettavuutta.
 
-## Syvemmälle
+Vaihtoehtoja jsoupille ovat esimerkiksi HtmlCleaner ja Jericho HTML Parser. Nämä kirjastot eroavat toisistaan niin suorituskyvyn, joustavuuden kuin API:nkin osalta.
 
-HTML:n tulkitseminen sai alkunsa 1990-luvulla, kun verkkosivustot olivat tekstimuotoisia ja niiden kaivaminen oli välttämätöntä tiedonsaannin kannalta. Alternatiivit HTML-tulkitsemiselle sisältävät XML- tai JSON-tulkitsemisen, riippuen tiedon esittämisformaatin ja tarpeiden mukaan.
+Jäsennettäessä HTML:ää on tärkeää muistaa dokumentin rakennetta koskevat oletukset. Esimerkiksi jsoup käsittelee HTML-dokumentit käyttäen DOM-mallia (Document Object Model), joka muuntaa dokkarin puurakenteeksi (node tree).
 
-Tulkkauskirjastoissa, kuten Jsoup, on erityisen huolellinen tapa käsitellä erilaisia HTML-tageja ja niiden attribuutteja. Jsoup myös käsittelee poikkeukset hyvin, jotka saattavat syntyä huonosti muotoillun HTML:n kanssa.
-
-## Katso myös
-
-- Jsoup dokumentaatio: https://jsoup.org/
-- Jsoup GitHub page: https://github.com/jhy/jsoup
-- XML parsing Kotlinissa: https://kotlinlang.org/docs/xml.html
-- JSON parsing Kotlinissa: https://kotlinlang.org/docs/kotlinx-serialization.html
+## See Also
+- jsoup: Java HTML Parser: https://jsoup.org
+- HtmlCleaner Project: http://htmlcleaner.sourceforge.net 
+- Jericho HTML Parser: http://jericho.htmlparser.net/docs/index.html
+- W3C's HTML parser comparison: https://www.w3.org/html/wg/drafts/html/master/single-page.html#parsing

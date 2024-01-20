@@ -1,6 +1,7 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C recipe: Parsing a date from a string"
+date:                  2024-01-20T15:36:52.638876-07:00
+html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,44 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# String Date Parsing with Haskell
-
 ## What & Why?
-Parsing a date from a string is the action of reading a date format from a string data type. Programmers do this to transform date information stored in strings into useable date objects for computations and manipulations.
+
+Parsing a date from a string means transforming text into a date data type. Programmers often need to convert user input or text file contents into structured dates for processing and manipulation.
 
 ## How to:
-We'll use the `parseTimeM` function from `Data.Time.Format` module in Haskell, along with functions `defaultTimeLocale`, `True`, and `%Y-%m-%d` to specify the desired date format.
 
-```Haskell
-import Data.Time
-import Data.Time.Format
+Haskell offers multiple ways to parse dates, but let's focus on the `time` library and a simple example using `parseTimeM`. Ensure you have the `time` package installed.
 
--- A simple date string
-dateStr = "2022-10-15" 
+```haskell
+import Data.Time.Format (parseTimeM, defaultTimeLocale)
 
--- Call to parseTimeM function
-maybeDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" dateStr :: Maybe UTCTime
-```
+main :: IO ()
+main = do
+  let dateString = "2023-03-21"
+  let parsedDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" dateString :: IO (Maybe Day)
+  
+  result <- parsedDate
+  case result of
+    Just day -> putStrLn $ "Parsed date: " ++ show day
+    Nothing -> putStrLn "Failed to parse date."
 
-The **result** `Maybe UTCTime` instance might be `Just <UTCTime value>` if parsing succeeds and `Nothing` if it fails.
-
-Now let's **print** our date.
-
-```Haskell
-case maybeDate of
-    Just date -> print date
-    Nothing -> putStrLn "Oops, invalid date format."
+-- Output should be: Parsed date: 2023-03-21
 ```
 
 ## Deep Dive
-Historically, date parsing was more manual, with coders specifying each part of the date. Now, libraries like `Data.Time.Format` offer simplified methods. 
 
-Alternative libraries exist, like `time-parsers` and `formatted-time`, each with their distinct advantages. 
+Historically, date parsing has been handled differently across languages and libraries, with many using variations on the `strftime` patterns from C. Haskell's `time` library mirrors this approach for consistency. Alternatives to `time` include using the `old-time` package, which is now deprecated, or third-party libraries like `thyme` or `chronos`.
 
-The `parseTimeM` functions are locale-aware that parses time textual representation, returning a `Maybe Time` value according to a format specification, where `Nothing` indicates a parsing failure. It allows programmers to handle date parsing errors more explicitly.
+Implementation-wise, parsing in Haskell is type-safe, hence the use of `Maybe` in the example to handle parsing failures. The `parseTimeM` function utilizes type inference to determine the return type, making it flexible. Understanding the format specifiers, like `%Y-%m-%d` for year-month-day, is crucial.
+
+Haskell's strong type system ensures that once a date is parsed, it is clear and unmistakable what type it is, reducing runtime errors related to date manipulation. However, this strictness means you must handle cases when the input does not match the expected pattern, hence the pattern-matching on `Just` and `Nothing`.
 
 ## See Also
-For more details and date formatting options, check the following links:
 
-- [`Data.Time.Format` module documentation](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time-Format.html)
-- [Haskell date and time utility libraries](https://haskell.libhunt.com/categories/310-date)
+- Haskell `time` library documentation: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
+- "Learn You a Haskell" guide on dates and times: [http://learnyouahaskell.com/](http://learnyouahaskell.com/) - (search for the "Data.Time" section)
+- Format specifiers for `Data.Time.Format`: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)

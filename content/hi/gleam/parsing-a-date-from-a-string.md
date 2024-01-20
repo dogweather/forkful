@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग से तारीख पार्स करना"
-html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
-simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
+title:                "स्ट्रिंग से दिनांक पार्स करना"
+date:                  2024-01-20T15:37:17.679826-07:00
+html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
+simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीख को एक स्ट्रिंग से पार्स करना मतलब है उसे पढ़ पाने योग्य और प्रोग्राम करने योग्य फॉर्मेट में बदलना। प्रोग्रामर इसलिए ऐसा करते हैं क्योंकि यूजर इनपुट या डेटा स्टोरेज के समय स्ट्रिंग्स में तारीखें आमतौर पर सेव होती हैं और इन्हें संभालना, मैनिप्युलेट करना, और विश्लेषण के लिए सही फॉर्मेट में पार्स करना पड़ता है।
 
-एक तारिक को स्ट्रिंग से पार्स करना, मूल रूप से एक चरित्र श्रृंखला (जैसे "2023/04/15") को कार्यान्वयन योग्य तारीख में बदलने का प्रक्रिया होता है। प्रोग्रामर्स इसे डेटा को और अच्छी तरह से प्रबंधित करने, और उपयोगकर्ता सहुलियत के लिए करते हैं।
+## How to: (कैसे करें:)
+```gleam
+import gleam/expect
+import gleam/date_time.{StringToDateParser, Date}
 
-## कैसे करें:
-
-आप Gleam में इसे इस तरह से कर सकते हैं:
-
-```Gleam
-import gleam/uri
-
-fn parse_date() {
-  let date_str = "2023/04/15"
-  let result = uri.parse(date_str)
-
-  case result {
-     Ok(timestamp) -> io.println(timestamp)
-     Error(_) -> io.println("Could not parse date")
+pub fn demo() {
+  // उदाहरण के तौर पर "2023-01-15" वाली एक स्ट्रिंग
+  let date_string = "2023-01-15"
+  let parser = StringToDateParser.default()
+  
+  // स्ट्रिंग को पार्स करना
+  let date_result = StringToDateParser.parse(parser, date_string)
+  
+  case date_result {
+    Ok(date) -> 
+      date
+    Error(e) -> 
+      panic(e)
   }
 }
 ```
 
-## गहरी डाइव:
+सैंपल आउटपुट:
+```gleam
+Date(year: 2023, month: 1, day: 15)
+```
 
-तारीख को स्ट्रिंग से पार्स करने का विचार सोफ्टवेयर में काफी समय से मौजूद है। यह श्रृंखलाओं में महत्वपूर्ण तारीख डेटा को संग्रहित और पुनर्प्राप्त करने के लिए एक आसान तरीका प्रदान करता है। 
+## Deep Dive (गहराई से जानकारी)
+पहले, तारीखों को पार्स करने के लिए प्रोग्रामर रेगुलर एक्सप्रेशन और मैनुअल पार्सिंग का उपयोग करते थे, जो थकाऊ और एरर-प्रोन हो सकता था। आजकल, लाइब्रेरीज़ जैसे कि `gleam/date_time` इस प्रोसेस को सरल बनाती हैं। ग्लीम में, `StringToDateParser.default()` एक डिफ़ॉल्ट डेट पार्सर प्रदान करता है जो ISO 8601 स्टैंडर्ड का समर्थन करता है। `StringToDateParser.parse` फंक्शन इस पार्सर का इस्तेमाल करके स्ट्रिंग को `Date` स्ट्रक्चर में कन्वर्ट करता है। यह काम करते समय, यह तारीखों की वैधता भी चेक करता है, जैसे कि फरवरी में 30 तारीख होना अवैध है।
 
-एक विकल्प हो सकता है की हम तारीख को unix timestamp की तरह संग्रहित कर सकें, लेकिन यह पढ़ने में कठिन होता है। 
+## See Also (और जानकारी के लिए)
+- ISO 8601 डेट और टाइम फॉर्मेट स्टैंडर्ड: [ISO 8601 Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
 
-Gleam में, यह एक `Uri.parse` कॉल से किया जाता है जो दिए गए स्ट्रिंग को `Ok(Timestamp)` या `Error(_)` में पार्स करता है, जिसके आधार पर एक क्रिया निष्पादित की जाती है।
-
-## अन्य उपयोगी स्रोत:
-
-2. [Parsing in Functional Programming](http://book.realworldhaskell.org/read/using-parsec.html)
-3. [DateTime Libraries](https://hex.pm/packages?search=datetime&sort=downloads)
-4. [Gleam Date and Time package](https://github.com/gleam-experiments/time)
+ध्यान रहे, ये लिंक्स अंग्रेज़ी में हैं क्योंकि हिंदी में इसकी अधिक जानकारी न होने का सम्भावना है। Gleam और उसकी पार्सिंग टेकनीक्स पर और जानने के लिए इंटरनेट में सर्च कर सकते हैं।
