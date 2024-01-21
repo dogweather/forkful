@@ -13,7 +13,7 @@ A special programming cookbook:
 
 **Polyglot**: 23 programming languages
 
-**My idea is to create a hybrid resource**: AI writes the draft text, and then people review and error-correct. Or, potentially, the other way around: people write the initial content and then AI points out possible errors and style issues. IMO this is the best way to use AI circa January 2024.
+**My idea is to create a hybrid resource**: AI writes the draft text, and then people review and error-correct. Or, potentially, the other way around: people write the initial content and then AI points out possible errors and style issues. A sort of pair-programmer for technical documentation. IMO this is the best way to use AI for content generation, circa January 2024.
 
 ---
 
