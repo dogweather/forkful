@@ -9,9 +9,9 @@ A special programming cookbook:
 2. Open source contributors (you)
 3. AI (OpenAI GPT-4 Turbo)
  
-**Multilingual**: 16 world languages
+**Multilingual**: *16* world languages
 
-**Polyglot**: 23 programming languages
+**Polyglot**: *23* programming languages
 
 **My idea is to create a hybrid resource**: AI writes the draft text, and then people review and error-correct. Or, potentially, the other way around: people write the initial content and then AI points out possible errors and style issues. A sort of pair-programmer for technical documentation. IMO this is the best way to use AI for content generation, circa January 2024.
 
