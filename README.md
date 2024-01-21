@@ -13,6 +13,8 @@ A special programming cookbook:
 
 **Polyglot**: 23 programming languages
 
+My idea is to create a hybrid resource: AI writes the draft text, and then people review and error-correct. Or, potentially, the other way around: people write the initial content and then AI points out possible errors or style issues. IMO this is the best way to use AI circa January 2024.
+
 ---
 
 This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
