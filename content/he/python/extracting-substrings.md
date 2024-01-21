@@ -1,0 +1,47 @@
+---
+title:                "חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:49.383998-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "חילוץ תת-מחרוזות"
+programming_language: "Python"
+category:             "Python"
+tag:                  "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/extracting-substrings.md"
+---
+
+{{< edit_this_page >}}
+
+## מה ולמה?
+חילוץ תת-מחרוזות זה לקחת חלקים ממחרוזת. זה נורא נדיר בפיתוח תוכנה, כי לעתים קרובות רק חלק מהמידע נחוץ לנו.
+
+## איך לעשות:
+```Python
+# דוגמה לחילוץ תת-מחרוזת בפייתון
+
+# מחרוזת דוגמה
+text = "שלום, עולם!"
+
+# חילוץ תת-מחרוזת על ידי טווח אינדקסים
+substring = text[7:12]
+print(substring)  # עולם
+
+# חילוץ תת-מחרוזת באמצעות שיטת slice()
+slice_substring = text[slice(7, 12)]
+print(slice_substring)  # עולם
+
+# חילוץ תת-מחרוזת מהתחלה עד אינדקס ספציפי
+start_substring = text[:5]
+print(start_substring)  # שלום,
+
+# חילוץ תת-מחרוזת מאינדקס ספציפי ועד הסוף
+end_substring = text[6:]
+print(end_substring)  # עולם!
+```
+
+## עומק המידע
+מאז הקדמון של פייתון, חילוץ תת-מחרוזות היה חלק מהשפה. אינדקסים בפייתון מתחילים מ-0. האינדקס השני בטווח נפסל מהחילוץ. גם פונקציה slice() עובדת עם אינדקסים בדומה. אם שכחת את האינדקס הראשון, היא תתחיל מההתחלה. אם שכחת את האינדקס השני, היא תלך עד הסוף. יש גם רשימות ומחרוזות וגם מאפיינים מעניינים אחרים, כולל חלוקה לתת-מחרוזות לפי מחרוזת חותך עם split(), וחיפוש תת-מחרוזת עם find() או index().
+
+## לראות גם
+- דוקומנטציה של פייתון על מחרוזות: https://docs.python.org/3/library/stdtypes.html#string-methods
+- מדריך פייתון לחילוץ תת-מחרוזות: https://www.programiz.com/python-programming/methods/string
+- W3Schools - מחרוזות בפייתון: https://www.w3schools.com/python/python_strings.asp

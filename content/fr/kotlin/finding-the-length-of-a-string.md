@@ -1,0 +1,49 @@
+---
+title:                "Trouver la longueur d'une chaîne de caractères"
+date:                  2024-01-20T17:47:52.257249-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
+programming_language: "Kotlin"
+category:             "Kotlin"
+tag:                  "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/finding-the-length-of-a-string.md"
+---
+
+{{< edit_this_page >}}
+
+## What & Why?
+Trouver la longueur d'une chaîne de caractères c’est découvrir le nombre de caractères qu'elle contient. Les programmeurs font cela pour valider des entrées, tronquer des textes, ou toute opération nécessitant la connaissance de la dimension de la chaîne.
+
+## How to:
+En Kotlin, utilisez la propriété `length` pour obtenir la longueur d'une chaîne.
+
+```kotlin
+fun main() {
+    val greeting = "Bonjour!"
+    println("La longueur de la chaîne est : ${greeting.length}")
+}
+```
+Sample output:
+```
+La longueur de la chaîne est : 8
+```
+
+## Deep Dive
+Historiquement, la longueur des chaînes a toujours été cruciale pour la manipulation des textes. Kotlin simplifie cette opération avec la propriété `length`. Autrefois, des langages comme C requéraient des fonctions (comme `strlen()`) pour parcourir la chaîne jusqu'au caractère null final.
+
+Alternatives:
+- Boucler sur chaque caractère (pas efficace).
+- Utiliser des méthodes Kotlin pour les collections, comme `count()`, qui peuvent servir à des cas plus spécifiques.
+
+Détails d'implémentation:
+La longueur d'une chaîne en Kotlin compte les unités de code UTF-16, pas forcément les caractères Unicode individuels. Pour des chaînes avec des caractères hors du Plan Multilingue de Base (BMP), ça peut être trompeur. Exemple, un émoji tel que 🧡 est composé de deux unités de code UTF-16.
+
+```kotlin
+val heartEmoji = "🧡"
+println("Longueur UTF-16 : ${heartEmoji.length}") // Output: 2
+```
+
+## See Also
+- Kotlin Documentation: [Basic Types](https://kotlinlang.org/docs/basic-types.html#strings)
+- Unicode Consortium: [FAQ - UTF-8, UTF-16, UTF-32 & BOM](https://unicode.org/faq/utf_bom.html)
+- Oracle Java Tutorial: [String Length](https://docs.oracle.com/javase/tutorial/java/data/strings.html) (Je sais que ce n'est pas Kotlin, mais il donne du contexte sur la manipulation des chaînes en Java, qui influence Kotlin.)

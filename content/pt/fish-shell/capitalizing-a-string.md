@@ -43,4 +43,3 @@ Em termos de implementação, a função `string ucfirst` modifica apenas o prim
 ## Veja Também:
 
 - Documentação oficial do comando `string` no Fish: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
-- Exemplos de capitalização de string em outros shells para comparação: [stackoverflow.com/search?q=capitalize+string+shell](https://stackoverflow.com/search?q=capitalize+string+shell)

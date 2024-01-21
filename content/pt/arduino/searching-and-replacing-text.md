@@ -1,0 +1,35 @@
+---
+title:                "Pesquisando e substituindo texto"
+date:                  2024-01-20T17:57:10.180624-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Pesquisando e substituindo texto"
+programming_language: "Arduino"
+category:             "Arduino"
+tag:                  "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/searching-and-replacing-text.md"
+---
+
+{{< edit_this_page >}}
+
+## O Quê & Porquê?
+Procurar e substituir texto é um processo básico para trocar uma sequência de caracteres por outra num bloco de texto. Programadores fazem isso para corrigir erros, atualizar códigos ou alterar dados de forma eficiente.
+
+## Como Fazer:
+```Arduino
+String original = "Folha de Flandres";
+String substituido = original.replace("Flandres", "Bananeira");
+Serial.begin(9600);
+Serial.println(substituido);
+```
+Saída esperada:
+```
+Folha de Bananeira
+```
+
+## Mergulho Profundo:
+Procurar e substituir texto é uma necessidade antiga - pense em editores de texto dos anos 60 que já tinham essa função. No mundo do Arduino, essa necessidade surge quando lidamos com strings - para, por exemplo, adaptar mensagens de LCDs. Embora o exemplo acima use o método `replace` de `String`, há alternativas mais rápidas e com menor uso de memória como o uso de `char` arrays e funções como `strncpy` e `strstr`. A escolha do método depende do tamanho do texto e das restrições de memória do microcontrolador.
+
+## Veja Também:
+- Documentação oficial do Arduino sobre strings: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Tutorial sobre manipulação de strings no Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringReplace
+- Discussões no Arduino Forum sobre substituição de texto: https://forum.arduino.cc/
