@@ -34,10 +34,10 @@ $ cd myproject
 $ stack build
 
 -- 3. Running your new Haskell project
-$ stack exec myproject-exe
+$ stack run
 
 -- Sample output:
-Hello, Haskell!
+someFunc
 ```
 
 ## Deep Dive
