@@ -17,7 +17,7 @@ A special programming cookbook:
 
 ---
 
-This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
+This repo contains all the [Forkful](https://forkful.ai) pages starting [here at `/content`](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
 
 ## World Languages
 
